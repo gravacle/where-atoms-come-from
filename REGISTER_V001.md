@@ -156,3 +156,93 @@ recorded rather than silently fixed.
 the ready-state support condition is shown to follow from the incidence rather than being free ·
 the rate `lambda` fails to vary with the connection at S4 · or a lineage-independent lane fails
 to reproduce the character-ratio criterion.
+
+---
+
+## ERRATUM AGAINST W-02 — THE RATE AS REGISTERED IS WRONG (registrar error, 2026-08-16)
+
+W-02 records `lambda = -0.766802`. **That number is wrong under every reading and the error is
+mine, not the build's.** It is S3's **N = 4000 finite-stage value of an oscillating sequence**,
+transcribed into the register as if it were a converged rate. The corrected statement of record:
+S3's headline connection `f = 2.0, c = 1.1` is **exactly resonant** (`-11f + 20c = 0`), so its
+orbit is not dense in `T^2` and its average is taken over a **subtorus**; it converges to
+**`-0.767014993`**, while the generic torus value is **`-0.767507880` = m(0.4+0.3x+0.3y)**.
+S3 section 6(f)'s "rationally independent: orbit dense in T^2" is FALSE and section 4.3's
+"Weyl equidistribution AGREES" is a false agreement. Every row of S3 section 5.7 is a subtorus
+value. **No W-02 verdict is withdrawn** — the crossing, the UHF limit and the nine stand — but
+the mechanism sentence and the rate are corrected here.
+
+---
+
+## W-03 — S4, THE MEASUREMENT, AND ITS AUDIT: **THE HEADLINE IS REFUTED. THE STRUCTURE IS NOT UNIVERSAL.**
+
+**RULING: "THE TOPOLOGY IS INERT; FORMATION SEES LOOP INCIDENCE" IS NOT EARNED. THE FIRST HALF
+IS TRUE BUT IS A THEOREM OF THE TRANSPORT'S DEFINITION, NOT A FINDING OF THE CONTROLS. THE
+SECOND HALF IS FALSE.**
+
+Build `S4_THE_MEASUREMENT_V001.md` (`4277f0ef…`). Audit: six independent lanes re-deriving from
+scratch with their own code, refuters attacking each lane's load-bearing claim, a completeness
+critic. **31 agents. Every reproducible number in the build reproduced** — worst agreement
+`0.0e+00`, and thirteen of thirteen rows of the S3 corpus block verified for the first time.
+**The arithmetic was never the problem.**
+
+**WHY THE CONTROLS COULD NOT HAVE FAILED.** All four controls vary exactly **one** object: the
+pushforward of the ready state onto the four vertex classes, `pi = (p_00,p_10,p_01,p_11)`.
+Control 1 (the fill) is **vacuous** — `pi` is unchanged, so `lambda` is unchanged **by
+identity**. And `d2` — the 2-cells, the entire topological content — **enters the formation
+functional nowhere**. "Topology is inert" is therefore an **analytic fact about the
+construction**, true before any carrier was built. The controls tested nothing.
+
+**AND FORMATION DOES NOT SEE INCIDENCE.** `lambda_B` is a function of the **MULTISET** of the
+four class weights — 24 of 24 permutations invariant, worst spread `2.4e-15`. **The incidence
+labels are invisible.** Two exact refutations of the build's own key exhibits:
+- A carrier **retaining the pinch** (filled triangle + unfilled square at `v0`) reproduces the
+  full `0.0634` shift, `|diff| = 0.0e+00`. The pinch is **not necessary** for it.
+- Moving weight **off** the pinch with the incidence **untouched** closes the gap continuously
+  to exactly zero. The pinch is **not sufficient** either.
+- **PINCH AND SPECTATOR ARE THE SAME OBJECT**, exactly: multiplying `Z_k` by
+  `conj(u)^k conj(v)^k` leaves `|Z_k|` fixed and maps class `(a,b) -> (1-a,1-b)`, so
+  `00 <-> 11` and `10 <-> 01` is an exact symmetry at **every** connection (max deviation
+  `6.55e-15` over 2000 samples).
+
+**THE MODALITY NAMED IN S4'S OWN BRIEF AND NEVER RUN: CHARGE.** Named again in the sealed
+upstream S2 as "**this is the S4 knob**". The build never ran it; six audit lanes and their
+refuters never noticed. The critic ran it: **THEOREM S4-1 FAILS.** Exponents `(1,0),(2,0),(3,0)`
+give `|S| = 3` with `rank G = 1`, against S4-1's "rank 2 iff `|S| >= 3`"; and `q = (1,2,2,2,2)`
+moves `lambda` from `-0.767508` to `-1.200555`. **The four-class taxonomy is a charge-1
+statement.** Winding was also never non-vacuously run; the critic ran it and it **discriminates
+the two schedules** — bearing directly on F1, the flag S4 declared undecidable.
+
+**THE UNIVERSALITY QUESTION, ANSWERED EARLY AND NEGATIVELY.** Two of S4's three deepest results
+are theorems about the **character lattice of an abelian group** — "`lambda_B` is a function of
+`L` alone" is Pontryagin duality on `T^2`, and Theorem S4-1 is the four corners of a square in
+`Hom(U(1)^2, U(1)) = Z^2`. **Neither has an SU(2) analogue.** Section 2's foundational sentence,
+"every vertex phase of `s` cancels", is **false the moment the holonomy is not a scalar**:
+six ready states with **identical class weights** give `|Z_1|` spread **0.4247** under SU(2),
+against exactly `0.0` under U(1). **The construction's core is group-specific.**
+
+**FURTHER CORRECTIONS SURVIVING ATTACK.** `B0b` is `log(4/9) = -0.8109302162163288` exactly, so
+**nine of nine** carrier rates are exact, not eight; `(pi,pi)` is a **third strict saddle**, not
+a local minimum (the build's own table contradicts `chi(T^2) = 0` at `1-2+2 = +1`); the
+exceptional-value split is **527/314/213**, not 638/380/258; section 5 misquotes a reopen clause
+**the register does not contain**. Lawton's theorem (1983) is missing from the IMPORT AUDIT.
+
+**THE CARRIER AXIS IS A LIST, NOT A FAMILY.** No cellular collapse, quotient, or map connects
+any two of the ten complexes. And the entire C*-algebraic layer of W-02 is **absent from S4** —
+which silently moves the first factor from `M_5(C)` to `M_V(C)` as `V` runs 4 to 11, and never
+says so.
+
+**CORRECTED HEADLINE OF RECORD:** *under a U(1) connection at unit charge with two designated
+loops, formation's rate is a function of exactly two things — the pushforward of the ready state
+onto the four vertex classes, and (under the canonical clock) the relation lattice of the two
+holonomies; the carrier's topology is inert **by construction rather than by experiment**, the
+incidence labels are invisible off a dense measure-zero set, and whether any of it survives
+charge, a non-abelian group, or a third loop was never tested.*
+
+**GRADE: ADVERSARIALLY-CHECKED on the axes it ran; NOT INDEPENDENTLY-CORROBORATED, and not
+adversarially checked at all on the axes it did not run.** Route to corroboration specified:
+a lane outside this model lineage; the charge and three-loop runs with the four controls re-run
+under each; publication of `d1`, `d2`, grid and seed conventions; this erratum entered.
+
+**REOPENS ON:** the charge run · the SU(2) run · a third loop · a third schedule (only two exist
+anywhere on the page, and the A/B dichotomy may be a knife-edge between two arbitrary choices).
