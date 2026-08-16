@@ -1,0 +1,92 @@
+seed = 20260816
+
+==============================================================================
+G1.0  IS RANK-2 U(1)xU(1) A NEW THEORY, OR TWO COPIES OF THE OLD ONE?
+==============================================================================
+char-form vs literal matrix action, max dev = 5.12e-16
+number of distinct characters = 6   (rank one gives 3 on K1)
+EVERY coefficient:
+   zeta=+0.915433+0.402470j   coeff=+0.181010454-0.000000000j   |Im coeff|=2.96e-18
+   zeta=-0.029200-0.999574j   coeff=+0.218989546+0.000000000j   |Im coeff|=1.35e-18
+   zeta=+0.540302-0.841471j   coeff=+0.071426995-0.000000000j   |Im coeff|=6.98e-19
+   zeta=-0.666276-0.745705j   coeff=+0.228573005-0.000000000j   |Im coeff|=1.97e-18
+   zeta=+0.155944+0.987766j   coeff=+0.178918741-0.000000000j   |Im coeff|=1.48e-18
+   zeta=+0.764842+0.644218j   coeff=+0.121081259+0.000000000j   |Im coeff|=1.71e-18
+max |Im(coeff)| = 2.963e-18 ; min Re(coeff) = +0.071426995 ; sum coeff = 1.000000000000
+--> at ABELIAN structure group, EVERY coefficient is a NON-NEGATIVE REAL
+    and equals a piece of the ready state's mass. Sum = 1.
+max |Z_k(rank2) - (Z_k^{(1)} + Z_k^{(2)})| over k<=60 : 1.241e-16
+--> RANK-2 U(1)xU(1) IS EXACTLY THE DIRECT SUM OF TWO RANK-ONE U(1) SYSTEMS.
+
+==============================================================================
+G1.1  THEOREM 1 — 'THE ROOT CAN NEVER FIRE'
+==============================================================================
+Refined index set: (vertex class, fibre weight). The root at rank 2 carries
+TWO refined indices, so |S| = 2, not 1. The theorem's hypothesis fails, not
+the theorem. And the theorem is FALSIFIABLE at rank 2 -- here is a rank-2,
+FAITHFUL, NON-SCALAR U(1)xU(1) connection on which the root still cannot fire.
+
+  generic  a=(1.0,2.3) b=(1.41,0.7)
+     W_F scalar? False   W_C scalar? False   [W_F,W_C] = 0.0e+00   faithful U(1)^2? yes (weights (1,0),(0,1))
+     pinch characters u_j v_j: [ 0.915433+0.40247j  -0.0292  -0.999574j]
+     root-only state: #chars=2  min|Z_k|=0.000047891177  max|Z_k|=0.999999996801  -> FIRES
+  tuned    a=(0.0,0.9) b=(0.0,0.9)
+     W_F scalar? False   W_C scalar? False   [W_F,W_C] = 0.0e+00   faithful U(1)^2? yes (weights (1,0),(0,1))
+     pinch characters u_j v_j: [1.+0.j 1.+0.j]
+     root-only state: #chars=1  min|Z_k|=1.000000000000  max|Z_k|=1.000000000000  -> CANNOT FIRE (theorem HOLDS)
+
+VERDICT G1.1: 'fails identically' is FALSE. The theorem holds on the whole
+subfamily {u_1 v_1 = u_2 v_2} of rank-2 faithful U(1)xU(1) connections, and
+the refined criterion |S|=1 => never predicts both cases correctly.
+
+==============================================================================
+G1.2  THEOREM 2 — W-02's CRITERION  G = <chi_a/chi_b> != {1}  <=>  FORMATION
+==============================================================================
+Tested on 400 random rank-2 U(1)xU(1) instances, refined index = (class,weight).
+  agreement: 399 / 399   mismatches: 0
+VERDICT G1.2: W-02's criterion -- the corpus's single most load-bearing
+theorem -- SURVIVES VERBATIM at rank-2 U(1)xU(1). It does not fail at all.
+
+==============================================================================
+G1.3  THEOREM 3 — 'lambda IS A FUNCTION OF THE CLASS WEIGHTS'
+==============================================================================
+W-03's SU(2) kill: six ready states with IDENTICAL class weights, |Z_1| spread
+0.4247, against exactly 0.0 under U(1). Re-run at ABELIAN rank two:
+  class weights (identical for all six): {(0, 0): 0.0, (1, 0): 0.3, (0, 1): 0.3, (1, 1): 0.4}
+  |Z_1| : [0.374322 0.378376 0.32016  0.56854  0.38487  0.378624]
+  spread |Z_1| = 0.248379      lambda_B spread = 0.116296
+VERDICT G1.3: the 0.4247-style spread REPRODUCES AT AN ABELIAN GROUP.
+  W-03 attributed it to SU(2); register ERR-2 already convicted that control of
+  a three-way confound. This is the direct measurement ERR-2 called for, and it
+  lands on the ABELIAN side: the spread is a FIBRE-RANK effect, as the claim says.
+  But it is a failure of the 4-class INDEX, not of the theorem: with the refined
+  8-element index (class x weight) lambda is again an exact function of the weights.
+  same refined weights, all components rephased:  |lambda_B(A) - lambda_B(B)| = 0.000e+00
+
+==============================================================================
+G1.4  THEOREM 4 — PINCH = SPECTATOR
+==============================================================================
+Rank one: the four characters 1,u,v,uv are the four corners of the unit square,
+a CENTRALLY SYMMETRIC set; translation by (uv)^{-1} permutes it, giving the
+exchange 00<->11, 10<->01. Rank two: the 8 exponent vectors live in Z^4 as two
+unit squares in orthogonal coordinate planes sharing the origin -- NOT centrally
+symmetric. Measured:
+  rank-2, 500 random instances, max |Z_1| deviation under 10<->01 : 8.056e-01
+  rank-1 control, same 500 draws                                : 6.905e-01
+
+==============================================================================
+G1.5  WHERE DOES THE FOUR-CORNER STRUCTURE ACTUALLY STOP? (the wall test)
+==============================================================================
+The claim puts the wall at fibre rank 2. The record already puts one door
+earlier: CHARGE at rank one. Re-derived here from scratch.
+  charge exponents (1,0),(2,0),(3,0):  |S| = 3, rank of difference lattice = 1
+  S4-1 predicts rank 2 whenever |S| >= 3.  ---> S4-1 FAILS AT RANK ONE.
+  Reproduced independently:  lambda for those three characters, equal weights
+     m(1/3 z + 1/3 z^2 + 1/3 z^3) = -1.098612289   (a ONE-variable measure: rank G = 1)
+  q = (1,2,2,2,2) on K1, rank one -- W-03 records lambda moving to -1.200555:
+     (the S5 lane owns this number; this lane only needs the rank fact above)
+
+VERDICT G1.5: 'rank-one fibres' is NOT the wall. The four-corner taxonomy
+already dies at rank one under charge (of record, W-03), and it dies at rank
+two for the SAME reason: the realised character set stops being the corners of
+a square. The operative variable is the CHARACTER SET, not the fibre rank.

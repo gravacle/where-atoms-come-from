@@ -1,0 +1,170 @@
+
+================================================================================================
+B1.  CLASS-HOMOGENEOUS CHARGE SWEEP ON K1.  q = (q11, q10, q01) in {-3..3}^3, 343 runs.
+     weights (p11,p10,p01) = (0.4,0.3,0.3)  [S3's own state].  FULL SUPPORT THROUGHOUT.
+================================================================================================
+  rank Delta over the 343 assignments:  rank0 = 1, rank1 = 24, rank2 = 318
+  UNIT CHARGE (1,1,1) is one of the 318 rank-2 points.
+
+  THE RANK-1 AND RANK-0 ASSIGNMENTS AT FULL SUPPORT (S4-1 says these cannot exist):
+     q=  (-3, 0, 0)  rank Delta = 1  -> lambda sees only  -1*f +1*c   (period 2pi/3)
+     q= (-2, -1, 2)  rank Delta = 1  -> lambda sees only  -1*f +2*c
+     q=  (-2, 0, 0)  rank Delta = 1  -> lambda sees only  -1*f +1*c   (period 2pi/2)
+     q= (-2, 2, -1)  rank Delta = 1  -> lambda sees only  -2*f +1*c
+     q=(-1, -2, -2)  rank Delta = 1  -> lambda sees only  -1*f -1*c
+     q=  (-1, 0, 0)  rank Delta = 1  -> lambda sees only  -1*f +1*c
+     q=  (0, -3, 0)  rank Delta = 1  -> lambda sees only  -1*f +0*c   (period 2pi/3)
+     q=  (0, -2, 0)  rank Delta = 1  -> lambda sees only  -1*f +0*c   (period 2pi/2)
+     q=  (0, -1, 0)  rank Delta = 1  -> lambda sees only  -1*f +0*c
+     q=  (0, 0, -3)  rank Delta = 1  -> lambda sees only  +0*f +1*c   (period 2pi/3)
+     q=  (0, 0, -2)  rank Delta = 1  -> lambda sees only  +0*f +1*c   (period 2pi/2)
+     q=  (0, 0, -1)  rank Delta = 1  -> lambda sees only  +0*f +1*c
+     q=   (0, 0, 1)  rank Delta = 1  -> lambda sees only  +0*f +1*c
+     q=   (0, 0, 2)  rank Delta = 1  -> lambda sees only  +0*f +1*c   (period 2pi/2)
+     q=   (0, 0, 3)  rank Delta = 1  -> lambda sees only  +0*f +1*c   (period 2pi/3)
+     q=   (0, 1, 0)  rank Delta = 1  -> lambda sees only  -1*f +0*c
+     q=   (0, 2, 0)  rank Delta = 1  -> lambda sees only  -1*f +0*c   (period 2pi/2)
+     q=   (0, 3, 0)  rank Delta = 1  -> lambda sees only  -1*f +0*c   (period 2pi/3)
+     ... 24 such assignments in total (of 343), all with |S| = 3.
+
+  EXACT GENERIC RATES FOR A REPRESENTATIVE SET (Nx = 16384 where 2-variable):
+        q=(q11,q10,q01)  rkD  index    lambda_B generic   lambda_A(1,sqrt2)  sees
+              (1, 1, 1)    2      1        -0.767507879        -0.493553117  both f and c
+              (1, 2, 2)    1   None        -1.203972804        -3.033397022  -1*f -1*c
+              (2, 1, 1)    2      3        -0.767507881        -0.532988216  both f and c
+              (1, 3, 3)    2      3        -0.767507880        -1.813502169  both f and c
+              (2, 3, 3)    2      3        -0.767507880        -1.813502169  both f and c
+            (1, -1, -1)    2      3        -0.767507881        -0.532988216  both f and c
+              (3, 2, 2)    2      8        -0.767507895        -1.066561369  both f and c
+              (2, 2, 2)    2      4        -0.767507889        -1.711144636  both f and c
+              (1, 1, 2)    2      1        -0.767507879        -1.415282766  both f and c
+              (1, 2, 3)    2      1        -0.767507880        -0.932133961  both f and c
+              (0, 1, 1)    2      1        -0.767507879        -0.493553117  both f and c
+              (1, 0, 1)    2      1        -0.767507879        -0.166028542  both f and c
+              (2, 1, 3)    2      5        -0.767507880        -0.987544418  both f and c
+
+================================================================================================
+B2.  ARMED FALSIFIER F-A, RE-RUN UNDER CHARGE.
+     S4: 'F-A does not fire on full support'.  UNDER CHARGE IT FIRES ON FULL SUPPORT.
+================================================================================================
+  q = [1 2 2 2 2] on K1  ->  E_v = [(np.int64(1), np.int64(1)), (np.int64(2), np.int64(0)), (np.int64(2), np.int64(0)), (np.int64(0), np.int64(2)), (np.int64(0), np.int64(2))]
+  Delta = ((1, -1),)  (rank 1)    => |Z_k| is a function of  -1*f -1*c  ALONE.
+  Algebraically:  Z_1 = 0.4 u v + 0.3 u^2 + 0.3 v^2 = u v ( 0.4 + 0.3 (u/v) + 0.3 (v/u) )
+                       = u v ( 0.4 + 0.6 cos(f+c) )        [u = e^{-if}, v = e^{ic}]
+  |Z_1| vs |0.4 + 0.6 cos(f+c)| over 4000 random connections, seed 5150010 : max dev 6.106e-16
+
+  DIRECT WITNESSES -- pairs with the SAME product f+c but wildly different (f,c):
+     f=+0.400 c=+2.600  f+c=3.000   lambda_A = -1.639920326578
+     f=+1.500 c=+1.500  f+c=3.000   lambda_A = -1.639920326578
+     f=+2.900 c=+0.100  f+c=3.000   lambda_A = -1.639920326578
+     f=-1.000 c=+4.000  f+c=3.000   lambda_A = -1.639920326578
+  S4's four witnesses at unit charge separated these to 5e-2.  Under charge they agree to 1e-12.
+
+  FOURIER SUPPORT of |Z_1|^2 on a 64x64 grid in (f,c)  [grid: f_j = 2pi j/64, c_k = 2pi k/64]:
+     unit charge q=(1,1,1,1,1)    support (m,n) = [(-1, -1), (-1, 0), (0, -1), (0, 0), (0, 1), (1, 0), (1, 1)]   lattice rank = 2
+     charge   q=(1,2,2,2,2)       support (m,n) = [(-2, -2), (-1, -1), (0, 0), (1, 1), (2, 2)]   lattice rank = 1
+     charge   q=(1,1,1,2,2)       support (m,n) = [(-1, -2), (-1, -1), (0, -1), (0, 0), (0, 1), (1, 1), (1, 2)]   lattice rank = 2
+  PROPOSITION (charge form).  The Fourier support of |Z_1|^2 on the dual of T^2 is exactly
+  the difference SET {E_x - E_y}.  Hence lambda_A is a function of a single combination
+  iff rank Delta <= 1.  At unit charge with |S|>=3 the corners force rank 2 (S4's proof).
+  Under charge the corners are gone and rank 1 is reachable with full support.  QED
+
+================================================================================================
+B3.  THE NON-FORMATION LOCUS AND THE EXACT-FIRING LOCUS GAIN A DIMENSION.
+================================================================================================
+  Unit charge, full support:  no formation only at (f,c) = (0,0)  -- ONE POINT of T^2.
+  Charge q=(1,2,2,2,2):  Delta = <(1,-1)>, so Delta <= L  <=>  u v^{-1} = 1  <=>  f + c = 0 (2pi)
+  which is a CIRCLE.  Checked: |Z_k| = 1 for all k on that circle, for non-trivial holonomies:
+     f=+0.30000 c=-0.30000  (W_F,W_C) = (0.9553+0.2955j,0.9553-0.2955j)   min|Z_k| k<=300 = 1.000000000000000
+     f=+1.00000 c=-1.00000  (W_F,W_C) = (0.5403+0.8415j,0.5403-0.8415j)   min|Z_k| k<=300 = 1.000000000000000
+     f=+2.00000 c=-2.00000  (W_F,W_C) = (-0.4161+0.9093j,-0.4161-0.9093j)   min|Z_k| k<=300 = 1.000000000000000
+     f=+3.14159 c=-3.14159  (W_F,W_C) = (-1.0000+0.0000j,-1.0000-0.0000j)   min|Z_k| k<=300 = 1.000000000000000
+     f=+5.00000 c=-5.00000  (W_F,W_C) = (0.2837-0.9589j,0.2837+0.9589j)   min|Z_k| k<=300 = 1.000000000000000
+  DIMENSION OF THE NON-FORMATION LOCUS:  0 at unit charge, 1 under charge.
+
+  EXACT FIRING (lambda = -infinity).  Unit charge: exactly 2 points on T^2 (S4 section 3.1).
+  Under q=(1,2,2,2,2):  Z_1 = 0 <=> 0.4 + 0.6 cos(f+c) = 0 <=> f+c = +-arccos(-2/3):
+     f=+0.0000  c=+2.3005   |Z_1| = 5.929e-17
+     f=+0.0000  c=-2.3005   |Z_1| = 5.929e-17
+     f=+1.0000  c=+1.3005   |Z_1| = 1.144e-16
+     f=+1.0000  c=-3.3005   |Z_1| = 1.388e-17
+     f=+2.5000  c=-0.1995   |Z_1| = 5.551e-17
+     f=+2.5000  c=-4.8005   |Z_1| = 2.776e-17
+  arccos(-2/3) = 2.300523983.  TWO CIRCLES, not two points: the firing locus is codimension 1.
+
+================================================================================================
+B4.  S4-1 REPLACED.  THEOREM C-2 (the affine rank theorem) AND ITS ENUMERATION.
+================================================================================================
+  THEOREM C-2.  With E_v = q_v (a_v,b_v) and support S,
+       rank G  =  rank Delta(S) - rank(Delta(S) ^ L),
+       rank Delta(S) = dim of the AFFINE span over Q of { E_v : v in S } in Q^2.
+  Corollaries:
+    (C2a) If the charge is HOMOGENEOUS (q_v = q != 0 for all v in S), the configuration is
+          q * (corners of the unit square) and S4-1 holds VERBATIM: rank 2 iff |S| >= 3.
+          S4-1 is therefore a theorem about CHARGE HOMOGENEITY, not about charge 1.
+    (C2b) With INHOMOGENEOUS charge, |S| >= 3 no longer implies rank 2: any number of
+          exponent vectors on one affine line gives rank 1, and on one point gives rank 0.
+    (C2c) The four-case |S|=2 table of S4-1 is replaced by: for |S| = 2, G = <phi(E_1-E_2)>,
+          a single character, whose (m,n) is now an ARBITRARY element of Z^2 rather than one
+          of the four differences of square corners.
+
+  C2a checked: homogeneous charge q on all vertices, all 15 support subsets, q = 1..4:
+     q=1:  rank2 = 5, rank1 = 6, rank0 = 4   (S4-1 predicts 5 / 6 / 4)
+     q=2:  rank2 = 5, rank1 = 6, rank0 = 4   (S4-1 predicts 5 / 6 / 4)
+     q=3:  rank2 = 5, rank1 = 6, rank0 = 4   (S4-1 predicts 5 / 6 / 4)
+     q=4:  rank2 = 5, rank1 = 6, rank0 = 4   (S4-1 predicts 5 / 6 / 4)
+     S4-1's 5/6/4 holds for every homogeneous charge tested: True
+
+  C2b checked: the critic's counterexample and a systematic search on K1-like supports:
+     E = (1,0),(2,0),(3,0)  [|S|=3]  ->  Delta = ((1, 0),)  rank 1   AGAINST S4-1
+     charges in {0..3}^3 on K1's three classes with |S|=3 (3 DISTINCT exponent vectors)
+     but rank Delta < 2 :  1 assignments, e.g. [(1, 2, 2)]
+
+================================================================================================
+B5.  MULTISET INVARIANCE.  PROVED AT UNIT CHARGE; BROKEN BY CHARGE.
+================================================================================================
+  PROOF at unit charge (rank L = 0, four corners).  By Jensen in y,
+      lambda_B = m(p00 + p10 x + p01 y + p11 x y) = int_0^1 log max(|p00+p10 x|, |p01+p11 x|) dt.
+  Now |A + B e^{i t}|^2 = A^2 + B^2 + 2 A B cos t is SYMMETRIC IN (A,B) POINTWISE IN t.
+  Hence the integrand is invariant under (p00 p10) and under (p01 p11) separately; it is
+  invariant under (p00 p01)(p10 p11) (swap the two arguments of max); and the substitution
+  x <-> y is measure preserving and realises (p10 p01).  The transpositions (p00 p10),
+  (p10 p01), (p01 p11) generate the full symmetric group S_4.  QED  -- this proves W-03's
+  24/24 permutation invariance rather than sampling it.
+  CHECKED: p = (0.4,0.3,0.2,0.1) on the four corners, all 24 permutations, Nx=16384
+     spread = 3.775e-15   value = -0.916290731874
+
+  UNDER CHARGE THE INVARIANCE DIES.  Exponents (1,1),(2,0),(0,2) [q=(1,2,2,2,2)],
+  weights permuted among the three positions -- these are the SAME MULTISET of weights:
+     weights (0.4,0.3,0.3) permuted : distinct lambda values = [-1.203972804326, -0.916290731874]
+       p = (0.4, 0.3, 0.3)  ->  lambda = -1.203972804326
+       p = (0.3, 0.4, 0.3)  ->  lambda = -0.916290731874
+       p = (0.3, 0.3, 0.4)  ->  lambda = -0.916290731874
+  At unit charge the same three weights on classes (1,1),(1,0),(0,1) give one value:
+       p = (0.4, 0.3, 0.3)  ->  lambda = -0.767507879061
+       p = (0.3, 0.4, 0.3)  ->  lambda = -0.767507880712
+       p = (0.3, 0.3, 0.4)  ->  lambda = -0.767507879061
+
+================================================================================================
+B6.  THE PINCH/SPECTATOR SYMMETRY UNDER CHARGE.
+================================================================================================
+  W-03: multiplying Z_k by conj(u)^k conj(v)^k fixes |Z_k| and maps class (a,b)->(1-a,1-b),
+  so 00<->11 and 10<->01 exactly, at every connection.
+  GENERAL FORM:  |Z| is invariant under  E_v -> t - E_v  for ANY t in Z^2
+     [ E -> E + t  is multiplication by a unimodular monomial;  E -> -E is conjugation ].
+  W-03's involution is the case t = (1,1).  SO THE SYMMETRY SURVIVES CHARGE -- as a symmetry
+  of the FUNCTIONAL.  What does NOT survive is its reading as a carrier statement:
+  E -> t - E  leaves |Z_k| fixed : 2000 random samples, seed 5150030, max dev 7.050e-14
+
+  REALIZABILITY.  A charge configuration lives on the FOUR RAYS Z*(0,0), Z*(1,0),
+  Z*(0,1), Z*(1,1).  For the involution E -> t - E to map charge configurations to
+  charge configurations we need t - R contained in R.  Testing t = (T,T):
+     t=(0,0): exponents with charge <= 3 whose image leaves the rays: 0  e.g. []
+     t=(1,1): exponents with charge <= 3 whose image leaves the rays: 4  e.g. [(2, 0), (0, 2), (3, 0), (0, 3)]
+     t=(2,2): exponents with charge <= 3 whose image leaves the rays: 4  e.g. [(1, 0), (0, 1), (3, 0), (0, 3)]
+     t=(3,3): exponents with charge <= 3 whose image leaves the rays: 4  e.g. [(1, 0), (0, 1), (2, 0), (0, 2)]
+     t=(4,4): exponents with charge <= 3 whose image leaves the rays: 6  e.g. [(1, 0), (0, 1), (2, 0), (0, 2)]
+  At unit charge every exponent has entries in {0,1} and t=(1,1) maps the four corners to
+  themselves -- the pinch (1,1) to the spectator (0,0).  AT CHARGE >= 2 THE INVOLUTION LEAVES
+  THE REALIZABLE SET: (1,1)-(2,0) = (-1,1) is on no ray.  The identity 'pinch = spectator'
+  is therefore a UNIT-CHARGE COINCIDENCE, not a structural fact about the two vertex roles.

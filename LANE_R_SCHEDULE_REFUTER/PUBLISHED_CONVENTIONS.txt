@@ -1,0 +1,54 @@
+LANE R -- SCHEDULE REFUTER.  PUBLISHED CONVENTIONS (W-03 route-to-corroboration item).
+
+CODE PROVENANCE.  rx_lib.py, rx_0..rx_4 written from scratch in this lane.  No line
+taken from S1/S2/S3/S4, from LANE_S5_CHARGE_CODE, or from the schedule axis lane
+(r2_alpha.log / r3_mechanism.log were never read; they are not present in this repo).
+python3 3.x + numpy 2.0.2 + stdlib decimal/fractions/math only.
+
+SEEDS.  NONE.  No random number generator is called anywhere in this lane.  Every
+number is deterministic: either exact modular arithmetic on Z/m, exact rational
+arithmetic in Q(i), or a deterministic midpoint quadrature grid.
+
+GRIDS.
+  subtorus Haar mean (rx_0): H = ker(chi_{11,20}) parametrised by
+      theta_j = (j + 1/2) * 2pi / T,  j = 0..T-1,  T = 4,000,000 ;  (x,y) = (e^{20 i th}, e^{-11 i th}).
+  full-torus mean (rx_0): tensor midpoint grid, G = 3000 per axis, 9,000,000 nodes,
+      theta_j = (j + 1/2) * 2pi / G.
+  No adaptive refinement, no importance sampling.
+
+INCIDENCE MATRICES.  d1 (5x6) and d2 (6x1) are written out in full in the rx_lib.py
+header and printed by rx_0_validate.py.  Checks run: d1 @ d2 = 0 (max |.| = 0);
+each declared loop is a cycle (max |d1 x| = 0); the two triangles share exactly {v0}.
+d2 is an argument to NO function in this lane -- W-03's "topology is inert" is
+reproduced structurally, not measured.
+
+ARITHMETIC HYGIENE (a defect this lane found in its OWN first pass, rx_1_attack.py).
+floor(n^alpha) for alpha >= 2.5 and N = 1e7 exceeds 2^53 (float64 exact-integer range)
+and 2^63-1 (int64).  rx_1's rows at alpha >= 2.5 are therefore CONTAMINATED and are
+retained only as a record of the error.  rx_2/rx_3/rx_4 recompute with:
+  integer alpha : k mod m = pow(n, alpha, m)              exact, no big ints
+  alpha = p/2   : k = isqrt(n^p)                          exact big-int square root
+  other alpha   : k = int(Decimal(n)**Decimal(alpha))     Decimal at 50-60 digits
+  huge angles   : (k*f) mod 2pi in Decimal at 60 digits before the float sin/cos.
+
+CONNECTION PARAMETRISATION.  u = conj(W_F) = e^{-i f}, v = W_C = e^{+i c}, exactly as
+S3 sec 4.1.  A finite-orbit connection of order m with parameters (s,t) means
+u = e^{2pi i s/m}, v = e^{2pi i t/m}, i.e. f = -2pi s/m, c = +2pi t/m.
+
+CORPUS REPRODUCTION (rx_0_validate.OUT.txt), all from scratch:
+  Z_k matrix action vs closed form, k<=200            max dev 1.048e-14
+  min|Z_k| k<=400 = 0.024654 at k=42                  S3 sec4.1  MATCH
+  sup|Z_k| k<=4000 = 0.999941 at k=377                S3 sec4.1  MATCH
+  #{|Z_k|>0.99, k<=4000} = 37                         S3 sec4.1  MATCH
+  all 13 rows of S3 sec4.3 including -0.766802 (N=4000), -0.767026 (N=2e5)  MATCH
+  subtorus Haar mean at f=2,c=1.1 = -0.767014993      REGISTER ERRATUM  MATCH (9 s.f.)
+  full-torus mean m(0.4+0.3x+0.3y) = -0.767508064     REGISTER -0.767507880 (grid err 1.8e-7)
+  S3 sec6(f) rows 1,2 reproduced to 6 d.p.
+  S3 sec6(f) rows 3,4: at the PRINTED decimals f=3.14159, c=1.57080 the orbit is NOT
+    finite and lambda_B(N=2e5) = -0.860699 / -0.831362, NOT -0.804719.  At the plainly
+    intended EXACT connection (f=pi, c=pi/2) and (f=pi, c=3pi/2) the orbit order is 4
+    and the exact cyclic mean is -0.804718956, matching S3 to all printed digits.
+    S3's table prints truncated decimals for connections whose whole point is that
+    they are exact rational multiples of pi.  Minor, but it is a publication defect
+    of the same species W-03 convicted: the printed input does not produce the
+    printed output.

@@ -1,0 +1,32 @@
+connection f=pi c=pi/2, orbit order m=4, lambda_B = -0.804718956
+
+  alpha  beta=1/alpha-1   Abel L(beta,M=1e7)   TRUE lambda(floor(n^alpha))
+   0.10       +9.0000         -0.804718554         -0.146341594   <== MISMATCH
+   0.25       +3.0000         -0.804718795         -0.819221614   <== MISMATCH
+   0.50       +1.0000         -0.804718876         -0.804703407   <== MISMATCH
+   1.00       +0.0000         -0.804718956         -0.804718956
+   2.00       -0.5000         -0.804783082         -0.575646273   <== MISMATCH
+   3.00       -0.6667         -0.805346529         -0.575646273   <== MISMATCH
+   4.00       -0.7500         -0.806538548         -0.575646273   <== MISMATCH
+  10.00       -0.9000         -0.814567993         -0.575646273   <== MISMATCH
+
+READ IT:  the Abel column is flat at lambda_B for every alpha, including
+the alphas where the actual schedule is nowhere near lambda_B.  The
+instrument returns the answer the claim wanted for reasons that have
+nothing to do with the schedule.  It is the S4 Control-1 defect again:
+a control that could not have failed.
+
+==============================================================================
+EXACT ARITHMETIC on the amplifier (fractions, no floating point)
+==============================================================================
+  Z_0 = 1 + 0 i     |Z_0|^2 = 1
+  Z_1 = -1/2 + 1/2 i     |Z_1|^2 = 1/2
+  Z_2 = 0 + 0 i     |Z_2|^2 = 0
+  Z_3 = -1/2 + -1/2 i     |Z_3|^2 = 1/2
+
+  Z_2 = 0 EXACTLY (= 2*p0 - 1 with p0 = 1/2).  Therefore:
+    schedule k_n = n     : Omega_N = 0 EXACTLY for all N >= 2,  lambda_B = -infinity
+    schedule k_n = n^2   : n^2 mod 4 in {0,1} only, so Z=0 is NEVER reached;
+                           lambda = (log 1 + log 2^{-1/2})/2 = -(1/4) log 2
+                                  = -0.173286795140
+  The gap between the two is INFINITE, not numerical.

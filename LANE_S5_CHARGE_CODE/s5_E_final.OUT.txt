@@ -1,0 +1,77 @@
+
+====================================================================================================
+E1.  S4-B REDONE UNDER CHARGE.  TEN CARRIERS x THREE CHARGE REGIMES, SENSE U (p_v = 1/V).
+     REGIME 1 unit charge  |  REGIME 2 homogeneous q = 2  |  REGIME 3 q_v = 1 + (v mod 2)
+====================================================================================================
+  carrier chi b1 b2              classes (unit charge)  #pts rk   lam_B^gen R1  #pts rk   lam_B^gen R2  #pts rk   lam_B^gen R3
+  B0a      0  2  1  {(0, 1): 3, (1, 0): 4, (0, 0): 2}     3  2   -0.747659835     3  2   -0.747659820     5  2   -1.126733440
+  B0b      0  2  1 {(1, 1): 2, (1, 0): 2, (0, 0): 4, (0, 1): 1}     4  2   -0.810930216     4  2   -0.810930216     6  2   -0.810930216
+  B3       1  1  1  {(1, 1): 1, (1, 0): 2, (0, 1): 2}     3  2   -0.756573591     3  2   -0.756573585     5  2   -1.232125968
+  B1       0  1  0  {(1, 1): 1, (1, 0): 2, (0, 1): 2}     3  2   -0.756573591     3  2   -0.756573585     5  2   -1.232125968
+  B4       2  1  2 {(1, 1): 3, (1, 0): 1, (0, 1): 1, (0, 0): 1}     4  2   -0.693147181     4  2   -0.693147181     5  2   -1.084678003
+  B5       2  0  1          -- no gamma_C (b1 = 0) --   formation datum does not exist at ANY charge
+  B2       1  0  0  {(1, 1): 1, (1, 0): 2, (0, 1): 2}     3  2   -0.756573591     3  2   -0.756573585     5  2   -1.232125968
+  B1p      0  1  0             {(1, 0): 3, (0, 1): 3}     2  1   -0.693147181     2  1   -0.693147181     4  2   -0.868066650
+  B1q      0  1  0  {(1, 0): 3, (0, 1): 3, (0, 0): 1}     3  2   -0.741029583     3  2   -0.741029575     5  2   -0.994510437
+  B1s      0  1  0  {(1, 1): 1, (1, 0): 5, (0, 1): 5}     3  2   -0.724759921     3  2   -0.724759920     5  2   -1.036117671
+  READ IT.  Under unit charge S4 found SIX distinct SENSE-U values across the family.
+  Homogeneous charge q=2 changes NONE of them (Theorem C-3 where |S|=3; and the 4-class
+  carriers B0a/B0b/B4/B1q also do not move, because q*corners is the corners rescaled and the
+  reduction to the Delta basis is the same polynomial).  The alternating charge, which is
+  inhomogeneous WITHIN classes, moves seven of the nine.
+
+====================================================================================================
+E2.  DIRECT SCHEDULE-B SIMULATION UNDER CHARGE -- the exact values cross-checked.
+====================================================================================================
+  (f,c) = (1.0, sqrt2);  N = 2e6;  no closed form used in the 'direct' column.
+  configuration                            exact / quadrature     direct N=2e6        dev
+  K1 unit charge (0.4,0.3,0.3)                   -0.767507881     -0.767507297    5.8e-07
+  K1 q=(1,2,2,2,2)                               -1.203972804     -1.203963982    8.8e-06
+  K1 q=(2,1,1,1,1)                               -0.767507880     -0.767506978    9.0e-07
+  K1 q=(1,1,2,1,1) 4 pts                         -0.916290732     -0.916291071    3.4e-07
+  K1 q=(1,1,2,1,2) 5 pts                         -1.101754524     -1.101755382    8.6e-07
+  4 corners charge (0,1,1,2)                     -0.980691404     -0.980691443    3.9e-08
+
+====================================================================================================
+E3.  INTEGER PERIODICITY IN THE WINDING (the design's named S4 external contact) UNDER CHARGE.
+====================================================================================================
+  500 random (charge, connection, winding) samples, seed 5150050 : max deviation 7.883e-15
+  Integer periodicity is EXACT at every integer charge, because E_v in Z^2 always.
+  It would FAIL at fractional charge -- which is why the charge must be an integer, and
+  that is the only quantization statement this construction supports.
+
+====================================================================================================
+E4.  CHARGE vs MULTIPLICITY -- restricted to the loop re-designations the carrier ALLOWS.
+====================================================================================================
+  S2 section 2: the based loop group of K1's 1-skeleton is FREE OF RANK 2 on (gamma_F, gamma_C),
+  so a change of designated pair is an element of GL2(Z).  But S4's CHOICE LEDGER C4 pins the
+  pair: gamma_F must BOUND and gamma_C must NOT.  gamma_F^m gamma_C^n bounds iff n = 0, so the
+  admissible changes are gamma_F -> gamma_F^{+-1}, gamma_C -> gamma_C^{+-1} gamma_F^k -- a
+  TRIANGULAR subgroup of GL2(Z), not all of it.  The equivalence test is run under BOTH.
+
+  target multiplicity configuration E = [(np.int64(2), np.int64(1)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1))] , p = (0.4,0.3,0.3)
+  charge assignments (q11,q10,q01) in [-6,6]^3 matching it
+     under the FULL GL2(Z) (all loop bases, C4 ABANDONED)  : 28   e.g. [(-4, -1, 2), (-4, 2, -1), (-2, -4, -3), (-2, -3, -4), (-2, -1, 0), (-2, -1, 4)]
+     under the TRIANGULAR subgroup (C4 RESPECTED)          : 8   [(-2, -1, 0), (-2, -1, 4), (0, -2, -1), (0, -2, 1), (0, 2, -1), (0, 2, 1)]
+  DECISION.  If one is willing to re-designate which loop is the curvature -- i.e. to give up
+  S4's C4 and K1's whole reason for existing (S1 section 5) -- then charge can reproduce a
+  multiplicity configuration.  If C4 is kept, IT CANNOT: charge and multiplicity are
+  INEQUIVALENT modalities.  C11 was closed on an unexamined premise, and the answer depends on
+  a choice made three stages earlier.
+
+====================================================================================================
+E5.  WHAT HAPPENS TO S3's THEOREM S3-2 UNDER CHARGE.
+====================================================================================================
+  S3-2: 'Take k_n = n and a ready state with p_0, p_1+p_2, p_3+p_4 > 0.  If (W_F,W_C) != (1,1)
+  then sum (1-|Z_n|) = infinity and lambda < 0.'
+  UNDER CHARGE THIS IS FALSE AS STATED.  Its proof step is: '|Z| = 1 requires the three unit
+  vectors uv, u, v to coincide on the support; with p fully supported that forces u = v = 1.'
+  Under charge the three characters are u^{q0}v^{q0}, u^{q1}, v^{q2}, and they coincide on a
+  POSITIVE-DIMENSIONAL subgroup of T^2 whenever the exponent vectors are collinear.
+  CORRECTED STATEMENT (Theorem C-1(iii)):  the crossing escapes recurrence iff Delta(S) is NOT
+  contained in L -- full support is neither necessary nor sufficient.
+  EXHIBITED: q = (1,2,2,2,2), full support, W_F = e^{2i} != 1, W_C = e^{-2i} != 1 :
+     min |Z_k| over k <= 2000 = 1.000000000000000   sum(1-|Z_k|) over k<=2000 = 1.188e-14
+     |Omega_2000| = prod |Z_k| = 0.999999999999988   THE RECORD NEVER FORMS.
+     Every one of the nine requirements that depends on |Omega_N| -> 0 fails here.
+     The escape is CONDITIONAL IN A THIRD WAY, flagged nowhere in the corpus: THE CHARGE.

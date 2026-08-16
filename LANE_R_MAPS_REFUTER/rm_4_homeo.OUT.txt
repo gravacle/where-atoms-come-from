@@ -1,0 +1,48 @@
+==============================================================================
+RM-4  THE HOMEOMORPHISM CHECKS
+==============================================================================
+
+   B1s vs B1  -- S4's Control 3 pair (every edge subdivided)
+     V 5 -> 11   E 6 -> 12   F 1 -> 1
+     +1 vertex and +1 edge per inserted vertex, faces unchanged: True
+     inserted vertex  5: degree 2, neighbours [0, 1], parent edge (0, 1) present in the small complex: True
+     inserted vertex  6: degree 2, neighbours [1, 2], parent edge (1, 2) present in the small complex: True
+     inserted vertex  7: degree 2, neighbours [0, 2], parent edge (0, 2) present in the small complex: True
+     inserted vertex  8: degree 2, neighbours [0, 3], parent edge (0, 3) present in the small complex: True
+     inserted vertex  9: degree 2, neighbours [3, 4], parent edge (3, 4) present in the small complex: True
+     inserted vertex 10: degree 2, neighbours [0, 4], parent edge (0, 4) present in the small complex: True
+     Betti (b0,b1,b2): (1, 1, 0) -> (1, 1, 0)   equal: True
+     chi: 0 -> 0   equal: True
+     VERDICT: elementary-subdivision pair, |K| homeomorphic to |K'|: True
+
+   B1q vs B1p -- the pair this lane uses as counterexample (A3)
+     V 6 -> 7   E 7 -> 8   F 1 -> 1
+     +1 vertex and +1 edge per inserted vertex, faces unchanged: True
+     inserted vertex  6: degree 2, neighbours [0, 3], parent edge (0, 3) present in the small complex: True
+     Betti (b0,b1,b2): (1, 1, 0) -> (1, 1, 0)   equal: True
+     chi: 0 -> 0   equal: True
+     VERDICT: elementary-subdivision pair, |K| homeomorphic to |K'|: True
+
+   K1[nF,nC] family (A5): verified by construction and by invariants --
+       nF   nC     V     E   F  chi   (b0,b1,b2)  all deg-2 inserts
+        0    0     5     6   1    0    (1, 1, 0)               True
+        1    0     6     7   1    0    (1, 1, 0)               True
+        0    1     6     7   1    0    (1, 1, 0)               True
+        2    0     7     8   1    0    (1, 1, 0)               True
+        3    3    11    12   1    0    (1, 1, 0)               True
+        5    2    12    13   1    0    (1, 1, 0)               True
+       10   10    25    26   1    0    (1, 1, 0)               True
+     every member has chi=0, (b0,b1,b2)=(1,1,0), V-1 vertices of degree 2 and one
+     vertex of degree 4 (the pinch v0): the homeomorphism type of K1.  ok = True
+
+==============================================================================
+ALL HOMEOMORPHISM CHECKS PASS: True
+==============================================================================
+
+NOTE ON WHAT THE HOMEOMORPHISM DOES AND DOES NOT CARRY.
+The homeomorphism |B1s| -> |B1| is the IDENTITY of the underlying space.  It does NOT
+send vertices to vertices: the six midpoints go to interior points of B1's edges, which
+carry no fibre.  So there is NO transport of a ready state along the homeomorphism at
+all.  The claim's c3 is therefore not the homeomorphism; it is a degree-1 cellular
+homotopy equivalence chosen from 64, and then chosen class-compatible from 4.  Two
+substitutions, neither ledgered.

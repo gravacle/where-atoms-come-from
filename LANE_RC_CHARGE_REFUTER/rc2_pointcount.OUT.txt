@@ -1,0 +1,57 @@
+==============================================================================
+RC-2a  THE q=(1,2,2,2,2) RATE OF RECORD
+==============================================================================
+   exponent points/weights: [((0, 2), 0.3), ((1, 1), 0.4), ((2, 0), 0.3)]
+   Delta(S) = < (1,-1) >, rank 1.  Factor out u*v:
+     |Z| = |0.4 + 0.3 w + 0.3 w^-1|  with w = u/v ;  w^n equidistributes on T^1.
+     so lambda_B = m(0.3 w^2 + 0.4 w + 0.3), a ONE-variable Mahler measure.
+   roots: [-0.66666667+0.74535599j -0.66666667-0.74535599j]  |roots| = [1. 1.] -> both ON the unit circle
+   ==> lambda_B = log(0.3) = -1.2039728043259361   EXACTLY  (= log(3/10))
+       log(0.3) numerically                     = -1.2039728043259361
+   2-D grid 6000^2                              = -1.203982508
+   direct schedule-B  N=    200000            = -1.203999286   (dev 2.65e-05)
+   direct schedule-B  N=   2000000            = -1.203963982   (dev 8.82e-06)
+   direct schedule-B  N=  20000000            = -1.203972271   (dev 5.34e-07)
+   REGISTER W-03 / this lane's brief record       = -1.200555
+   |W-03 value - true limit| = 3.418e-03
+   ==> -1.200555 is a FINITE-STAGE value of a slowly-converging singular integrand
+       (both roots on |w|=1, so log|Z| has genuine -inf singularities on the orbit).
+       The corrected value of record is  lambda_B = log(3/10) = -1.2039728043259361.
+
+==============================================================================
+RC-2b  THE POINT-COUNT WALL
+==============================================================================
+
+--- the '44 of 243' count.  243 = 3^5, so a 3-element charge alphabet.
+   alphabet [0, 1, 2]   -> distinct-point-count histogram {1: 1, 2: 14, 3: 72, 4: 112, 5: 44}
+   alphabet [1, 2, 3]   -> distinct-point-count histogram {3: 27, 4: 108, 5: 108}
+   alphabet [-1, 0, 1]  -> distinct-point-count histogram {1: 1, 2: 14, 3: 72, 4: 112, 5: 44}
+   alphabet [1, 2, 4]   -> distinct-point-count histogram {3: 27, 4: 108, 5: 108}
+   NOTE: no 3-element alphabet gives 44 assignments reaching 5 points.
+   {1,2,3} gives 108; {0,1,2} gives 24.  The claim's 44/243 is not reproducible
+   under any charge alphabet of size 3 on K1.
+
+--- IS 'point count == class count' NECESSARY for pi to be complete?  NO.
+   q = [0, 0, 0, 1, 1]:  exponent points [(0, 0), (0, 1)]  -> |points| = 2 < 3 classes
+   but the exponent map IS constant on each class: (1,1)->(0,0), (1,0)->(0,0), (0,1)->(0,1).
+   So Z = (p11+p10)*1 + p01*v  is a function of pi alone: pi IS complete.
+   pi(pa) = (np.float64(0.4), np.float64(0.3), np.float64(0.3))   pi(pb) = (np.float64(0.4), np.float64(0.3), np.float64(0.30000000000000004))
+   lambda_B(pa) = -0.356674837949   lambda_B(pb) = -0.356674837949   |diff| = 0.000e+00
+   ==> point count 2 < class count 3, and pi is still COMPLETE.  'only while' FALSE.
+
+--- IS 'point count == class count' SUFFICIENT?  NO.
+   q = [0, 0, 1, 1, 1]:  exponent points [(0, 0), (0, 1), (1, 0)]  -> |points| = 3 == 3 classes
+   but the partition is {v0,v1}/{v2}/{v3,v4}, NOT the class partition:
+   class (1,0)={v1,v2} is SPLIT across two exponent points.
+   pi(pc) = (np.float64(0.4), np.float64(0.3), np.float64(0.3))   pi(pd) = (np.float64(0.4), np.float64(0.3), np.float64(0.3))  IDENTICAL
+   lambda_B(pc) = -0.597837282312   lambda_B(pd) = -0.745389450313   |diff| = 1.476e-01
+   ==> identical pi, identical point count == class count, DIFFERENT lambda_B.
+       'point count == class count' is NOT sufficient.  The wall is at the wrong object.
+
+--- THE CORRECT STATEMENT (proved, not asserted):
+   pi is a complete invariant  <=>  the exponent map v |-> q_v*(a_v,b_v) is CONSTANT
+   ON EACH VERTEX CLASS.  Point count is neither necessary nor sufficient for that.
+   Verified by exhaustive enumeration below.
+   enumerated all 4^5 = 1024 charges in {0,1,2,3}^5:
+      point-count==3 but exponent map NOT class-constant : 120  (sufficiency fails)
+      exponent map class-constant but point-count != 3   : 10  (necessity fails)

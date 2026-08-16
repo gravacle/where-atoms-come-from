@@ -1,0 +1,69 @@
+==============================================================================
+A1  IS lambda_B A FUNCTION OF THE UNORDERED MULTISET?  (S4/W-03 says yes)
+==============================================================================
+  weights (0.1, 0.2, 0.3, 0.4)  distinct perms 24  spread = 0.000e+00   lambda = -0.916290731874
+  weights (0.05, 0.11, 0.37, 0.47)  distinct perms 24  spread = 0.000e+00   lambda = -0.755022584278
+  weights (0.0, 0.3, 0.3, 0.4)  distinct perms 12  spread = 0.000e+00   lambda = -0.767507880358
+  weights (0.25, 0.25, 0.25, 0.25)  distinct perms  1  spread = 0.000e+00   lambda = -1.386294361120
+
+  PROOF (mine, not the corpus's).  m(a1+a2X+a3Y+a4XY) = (1/2pi) int log max(|a1+a2 e^{it}|,
+  |a3+a4 e^{it}|) dt  (Jensen in Y).  For REAL a_i, |a1+a2 e^{it}| = |a2+a1 e^{it}| POINTWISE
+  (both = sqrt(a1^2+a2^2+2 a1 a2 cos t)), so the transpositions (a1 a2) and (a3 a4) are
+  pointwise identities.  X<->Y is a monomial substitution of the torus, giving (a2 a3).
+  <(12),(23),(34)> = S_4.   Hence lambda_B is a SYMMETRIC function of the four class weights. QED
+  => the loop-incidence LABELS are invisible to lambda: only the MULTISET survives.
+
+==============================================================================
+A2  A CLASS-MERGING ELEMENTARY EDGE COLLAPSE THAT PRESERVES lambda EXACTLY
+==============================================================================
+  phi : K1 -> K1/e4  collapses e4 (v0->v3), identifying v0 [class (1,1)] with v3 [class (0,1)].
+  It is an elementary edge collapse and a homotopy equivalence.  CLASS-MERGING.
+  L4 incidence d1 =
+ [[-1  0  1 -1  1]
+ [ 1 -1  0  0  0]
+ [ 0  1 -1  0  0]
+ [ 0  0  0  1 -1]]
+  L4 betti (b0,b1,b2,chi) = (np.int64(1), np.int64(1), np.int64(0), 0)  classes: {'w': (1, 1), 'v1': (1, 0), 'v2': (1, 0), 'v4': (0, 1)}
+
+  S3/S4 state  p=(0.4,.15,.15,.15,.15)
+    source class wts (0.000000,0.300000,0.300000,0.400000)   ->  target (0.000000,0.300000,0.150000,0.550000)
+    lambda_B  source -0.767507880358   target -0.597837000756   GAP = 1.697e-01
+    formation True rank G 2    ->  True rank G 2
+
+  SENSE U      p=(0.2,0.2,0.2,0.2,0.2)
+    source class wts (0.000000,0.400000,0.400000,0.200000)   ->  target (0.000000,0.400000,0.200000,0.400000)
+    lambda_B  source -0.756573585640   target -0.756573585640   GAP = 0.000e+00
+    formation True rank G 2    ->  True rank G 2
+
+  MY STATE     p=(0.25,.15,.15,.20,.25)
+    source class wts (0.000000,0.300000,0.450000,0.250000)   ->  target (0.000000,0.300000,0.250000,0.450000)
+    lambda_B  source -0.745388621571   target -0.745388621571   GAP = 0.000e+00
+    formation True rank G 2    ->  True rank G 2
+
+  READ IT.  The SAME class-merging elementary edge collapse has gap 1.70e-01 on the corpus's
+  own S3/S4 state and EXACTLY 0.000e+00 on SENSE U -- the uniform-on-vertices state that produced
+  the claim's own source number -0.756573585640.  The gap is a property of the (map, STATE) PAIR,
+  not of the map.  The exactness is not numerical luck: the
+  collapse moves mass p(v3) from class (0,1) to class (1,1), and p(v0)=p(v4) makes the new pair
+  (p01',p11') = (p01,p11) TRANSPOSED, which A1 proves lambda cannot see.
+  A ONE-PARAMETER FAMILY of exactly-preserving states (all weights strictly positive):
+    p=(0.3, 0.05, 0.05, 0.3, 0.3)  gap = 0.000e+00
+    p=(0.266667, 0.1, 0.1, 0.266667, 0.266667)  gap = 0.000e+00
+    p=(0.213333, 0.18, 0.18, 0.213333, 0.213333)  gap = 0.000e+00
+    p=(0.133333, 0.3, 0.3, 0.133333, 0.133333)  gap = 0.000e+00
+
+==============================================================================
+A3  A CLASS-COMPATIBLE MAP THAT DOES *NOT* PRESERVE lambda  (SENSE U)
+==============================================================================
+  phi : B1s -> K1  collapses the six subdivision half-edges.  CLASS-COMPATIBLE: True
+  It is a homotopy equivalence AND the two carriers are HOMEOMORPHIC spaces.
+    SENSE U  source (0.000000,0.454545,0.454545,0.090909)  lambda = -0.724759919461
+    SENSE U  target (0.000000,0.400000,0.400000,0.200000)  lambda = -0.756573585640
+    GAP = 3.181e-02      (S4 Control 3: 3.181e-02)
+    pushforward of the source state: (0.000000,0.454545,0.454545,0.090909)  lambda = -0.724759919461  GAP = 0 BY IDENTITY
+
+  So 'class-compatible => lambda preserved EXACTLY' holds only under the PUSHFORWARD (=SENSE C)
+  normalisation, where the class weights are preserved BY CONSTRUCTION and Z_k^K = Z_k^L is an
+  IDENTITY, not a measurement.  Under SENSE U -- S4's other sense, recorded in its CHOICE LEDGER
+  as C2 'OPEN and load-bearing' -- the same class-compatible map moves lambda by 3.18e-02.
+  And the claim's own source number -0.756573585640 IS the SENSE U value of K1.

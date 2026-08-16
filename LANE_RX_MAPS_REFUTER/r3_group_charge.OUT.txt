@@ -1,0 +1,53 @@
+==============================================================================
+A4  'FOR ANY CHARGE'  --  a CLASS-COMPATIBLE collapse that moves lambda
+==============================================================================
+  phi : K1 -> K1/e2  identifies v1 with v2, both class (1,0).  CLASS-COMPATIBLE.
+  L2 d1 (rows v0,w,v3,v4 ; cols e1,e3,e4,e5,e6) =
+ [[-1  1 -1  0  1]
+ [ 1 -1  0  0  0]
+ [ 0  0  1 -1  0]
+ [ 0  0  0  1 -1]]
+  L2 classes: {'v0': (1, 1), 'w': (1, 0), 'v3': (0, 1), 'v4': (0, 1)}  betti(b0,b1,b2,chi): (np.int64(1), np.int64(1), np.int64(0), 0)
+
+  charge q = {'v0': 1, 'v1': 1, 'v2': 2, 'v3': 1, 'v4': 1}   (q(v1)=1 but q(v2)=2)
+  class weights source {(0, 0): 0.0, (1, 0): 0.35, (0, 1): 0.4, (1, 1): 0.25}
+  class weights target {(0, 0): 0.0, (1, 0): 0.35, (0, 1): 0.4, (1, 1): 0.25}  -- IDENTICAL: the class pushforward R is preserved
+  lambda_B  source = -0.916290828
+  lambda_B  target with q(w)=1 : -0.764996041   GAP = 1.513e-01   |Z_1| 0.520781247 vs source 0.387270747
+  lambda_B  target with q(w)=2 : -0.764995050   GAP = 1.513e-01   |Z_1| 0.229543767 vs source 0.387270747
+  No charge on the target reproduces the source: the source's single class (1,0) emits TWO
+  characters u^1 and u^2, and one merged vertex can carry only one.  The invariant that is
+  actually preserved is the (class x charge) partition -- strictly finer than loop-incidence.
+
+  --- and the NET sentence dies on ONE carrier, with no map at all ---
+  K1: SAME carrier, SAME loop-incidence partition, SAME state pushforward (0,.3,.3,.4)
+    q=(1,1,1,1,1)  lambda_B direct = -0.767507704    exact m(.4+.3x+.3y) = -0.767507880358
+    q=(1,2,2,2,2)  lambda_B direct = -1.203968932    exact = log(0.3) = -1.203972804326
+      derivation: Z_k = .4 u^k v^k + .3 u^2k + .3 v^2k ; on the generic torus
+      |Z| = |0.4 e^{i(A+B)} + 0.3 e^{2iA} + 0.3 e^{2iB}| = |0.4 + 0.6 cos(A-B)| ,
+      whose Mahler measure is m(0.3 + 0.4T + 0.3T^2) = log 0.3 (both roots on |T|=1).
+    W-03 records -1.200555 for this row; the exact value is log(0.3) = -1.203972804326.
+    Deviation 3.4e-03 -- consistent with a finite-N schedule-B estimate.  FLAG R-F1.
+
+==============================================================================
+A5  'FOR ANY STRUCTURE GROUP VIA THE CLASS DENSITY PUSHFORWARD R'  --  SU(2)
+==============================================================================
+  source lambda_B (SU(2), N=200000) = -1.157653038    class weights (0, 0.35, 0.40, 0.25)
+  |s_v1>, |s_v2> overlap |<s1,s2>|/(|s1||s2|) = 0.170737  (NOT collinear)
+  target: the merged vertex w carries ONE vector of norm^2 = 0.35 -- the class DENSITY
+  pushforward R fixes the norm and NOTHING ELSE.  Scan the whole Bloch sphere of directions:
+    lambda_target ranges over [-1.157673848, -0.917921619]  -- SPREAD 0.239752
+    lambda_source = -1.157653038.  R does NOT determine lambda: it leaves an interval of width 0.240.
+    min over directions of max_{k<=4000} |Z_k^L - Z_k^K| = 3.756386e-05  -- NEVER 4.5e-16, for ANY direction.
+    (a two-parameter family of directions meeting a one-dimensional target does contain
+     accidental lambda matches: best gap in the scan 6.53e-07.  That is coincidence, not transport.)
+
+    AND ON ONE CARRIER, NO MAP: two K1 states with IDENTICAL class density (0,.35,.40,.25)
+      lambda_B = -1.157653038   vs   -1.059816628     |difference| = 9.783641e-02
+      => at SU(2) the class density pushforward R is not even a FUNCTION of lambda's argument.
+  STRUCTURAL, not numerical.  The source contributes
+      <H^k s_v1, s_v1> + <H^k s_v2, s_v2> = tr( (H^k)^dag rho ),  rho = s1 s1* + s2 s2*  (rank 2)
+  and the target can contribute only tr( (H^k)^dag t t* )  (rank 1, same trace).  Agreement for
+  all k forces rho rank one, i.e. s_v1 || s_v2.  So a CLASS-COMPATIBLE map fails at SU(2) for
+  every non-collinear pair: the class DENSITY pushforward R is not enough data once the holonomy
+  is not a scalar.  (W-03 already records the underlying break; the map claim ignores it.)

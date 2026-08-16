@@ -1,0 +1,33 @@
+==============================================================================
+RC-0  VALIDATION -- carrier, incidence, closed form, S4 baselines
+==============================================================================
+
+d1 (5 x 6), rows v0..v4, cols e1..e6:
+[[-1  0  1 -1  0  1]
+ [ 1 -1  0  0  0  0]
+ [ 0  1 -1  0  0  0]
+ [ 0  0  0  1 -1  0]
+ [ 0  0  0  0  1 -1]]
+
+d2 (6 x 1), rows e1..e6, col F:
+[[1 1 1 0 0 0]] (transposed for display)
+
+d1 @ d2 = [0 0 0 0 0]    -> d^2 = 0 : True
+rank d1 = 4   rank d2 = 1
+b0=1 b1=1 b2=0   chi = 5-6+1 = 0   (S1 sec.2: b0=1 b1=1 b2=0)
+
+a_v (on gamma_F) = [1 1 1 0 0]    b_v (on gamma_C) = [1 0 0 1 1]
+classes: (1,1)={v0}  (1,0)={v1,v2}  (0,1)={v3,v4}   -- S4 sec.2
+
+-- Z_k : closed form vs direct 5x5 matrix action, random (f,c,k,q,p)
+   4000 trials, max |closed - direct| = 2.865e-14
+
+-- W-01 firing on S1's own connection: Z_1 = -6.12323399574e-17+0j  |Z_1| = 6.123e-17
+
+-- generic connection f=1.0, c=sqrt(2):  rank L = 0  (searched |m|,|n|<=120)
+   m(0.4 + 0.3x + 0.3y)  Jensen-in-y, 4e6 nodes  = -0.767507880
+   register of record                            = -0.767507880
+   2-D midpoint grid 3000^2                      = -0.767508064
+   direct schedule-B, N=2e6, f=1,c=sqrt2         = -0.767507297
+
+-- S3 headline f=2.0 c=1.1 : -11f+20c = 0.000  (resonant, erratum)

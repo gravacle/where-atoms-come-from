@@ -1,0 +1,37 @@
+
+==============================================================================
+R2.1  THE CONTRACTION DOES NOT SMUGGLE A CONNECTION CHANGE (explicit gauge)
+==============================================================================
+Contracting edge e is gauge-fixing a_e = 0.  Verified explicitly: build the gauge
+theta_v that zeroes the contracted edge, apply a_e -> a_e + theta_tgt - theta_src,
+and check both holonomies are unchanged to machine precision.
+  max over 500 random connections x 6 edges of
+  ( |W_F' - W_F| , |W_C' - W_C| , |a_e'| ) = 3.637e-15
+  => the contraction is a legitimate move: holonomies EXACTLY preserved.
+
+==============================================================================
+R2.2  THE lambda_A SHIFT IS NOT A FLUKE OF THE TEST POINT (2.0, 1.1)
+==============================================================================
+Sup over T^2 of |lambda_A(K1) - lambda_A(K1/e1)|, 2001x2001 midpoint grid
+(theta_j = 2pi(j+1/2)/2001), SENSE U and SENSE C:
+
+  SENSE U (uniform)      sup|diff| = 7.514206   mean|diff| = 0.402621   frac{diff>1e-9} = 1.0000
+  SENSE C (S3's own p)   sup|diff| = 7.199918   mean|diff| = 0.225127   frac{diff>1e-9} = 1.0000
+
+  lambda_A differs almost everywhere on the torus after ONE edge contraction, with a
+  sup difference of order 1.  The (2.0,1.1) reading is typical, not selected.
+
+==============================================================================
+R2.3  FORMATION DIES WITH NO MAP AT ALL
+==============================================================================
+K1 untouched -- 5 vertices, 6 edges, 1 face, Betti (1,1,0), chain map intact --
+with the ready state moved onto the root alone (S3's own W-02 correction of record:
+'four exhibited families never form, one of them on K1's own published ready state'):
+  p uniform           pi=[0.  0.4 0.4 0.2] |S|=3 rkG=2 FORMS=True  lambda_A(2.0,1.1)=-1.536645461686
+  p all on v0 (root)  pi=[0. 0. 0. 1.] |S|=1 rkG=0 FORMS=False lambda_A(2.0,1.1)=+0.000000000000
+  p on v1,v2 only     pi=[0. 1. 0. 0.] |S|=1 rkG=0 FORMS=False lambda_A(2.0,1.1)=+0.000000000000
+
+  |S| 3 -> 1, rank G 2 -> 0, FORMS True -> False, lambda -> 0.000000000000 exactly:
+  the CLAIM'S ENTIRE OUTCOME VECTOR, reproduced with the cell structure untouched and
+  no map applied.  The tree collapse is not necessary for the outcome it is credited
+  with, and therefore cannot be what causes it.

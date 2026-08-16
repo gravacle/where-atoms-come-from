@@ -1,0 +1,60 @@
+==============================================================================
+A5b  SU(2): a CLASS-COMPATIBLE merge of two class-(1,1) vertices -- NO pushforward works
+==============================================================================
+  THETA carrier  d1 =
+ [[-1  0  1 -1  0  1]
+ [ 0  1 -1  0  1 -1]
+ [ 1 -1  0  0  0  0]
+ [ 0  0  0  1 -1  0]]
+  betti(b0,b1,b2,chi) = (np.int64(1), np.int64(2), np.int64(0), -1)   classes: {'a': (1, 1), 'b': (1, 1), 'c': (1, 0), 'd': (0, 1)}
+  a and b are BOTH class (1,1).  Collapse f3 (b->a): CLASS-COMPATIBLE merge.
+  source lambda_B (N=100000) = -1.059745802   class weights: (00:0, 10:0.30, 01:0.25, 11:0.45)
+  the merged vertex A must carry ONE vector with |t|^2 = 0.45 (that is ALL R specifies).
+    lambda_target over 7381 directions: [-1.134718366, -0.939252555]
+    MIN |lambda_target - lambda_source|            = 8.698609e-06
+    MIN over directions of max_k<=5000 |Z_k^L-Z_k^K| = 1.977327e-01   (claim asserts <= 4.5e-16)
+  REASON.  The merged vertex is seen only through  Tr[ (H_F^k)^dag H_C^k  rho ].  When BOTH
+  holonomies act and generate a non-abelian group, {(H_F^k)^dag H_C^k} spans M_2(C), so rho is
+  fully visible: the source's rank-2 rho = s_a s_a* + s_b s_b* (3 real parameters at fixed trace)
+  cannot be matched by any rank-1 t t* (2 parameters).  Deficiency 1: NO pushforward exists.
+
+==============================================================================
+A6  'CODIMENSION-1 PULLBACK IMAGE => THE FAMILY SEES ONLY A MEASURE-ZERO SLICE'
+==============================================================================
+  K_A = K1 + a third (undesignated) unfilled triangle hung at v1 ;  K_B = K1 + a whisker.
+  phi: v6->v5, e7->e7', e8->constant, e9->reverse(e7').  v5,v6 are class (0,0) in K_A and
+  v5 is class (0,0) in K_B  => CLASS-COMPATIBLE.
+  betti K_A (np.int64(1), np.int64(2), np.int64(0), -1)   gauge-invariant dim = 3   (f, c, h)
+  betti K_B (np.int64(1), np.int64(1), np.int64(0), 0)   gauge-invariant dim = 2   (f, c)
+  2000 random K_B connections pulled back:  max |h_A| = 0.000e+00  -> image = {h=0},
+     a CODIMENSION-1 subtorus of K_A's 3-torus: measure zero, exactly as the claim says.
+  BUT the projection onto the pair lambda can see is onto: (f,c) covers T^2 --
+     12x12 grid of (f,c): 144/144 cells occupied, min count 7.
+  class weights  source {(0, 0): 0.3, (1, 0): 0.2, (0, 1): 0.3, (1, 1): 0.2}
+                 target {(0, 0): 0.3, (1, 0): 0.2, (0, 1): 0.3, (1, 1): 0.2}
+  lambda_B  source -1.203972804326   target -1.203972804326   GAP = 0.000e+00
+  So a codimension-1 pullback image coexists with EXACT preservation of lambda on the whole
+  of the relevant torus.  lambda and G read the connection through exactly TWO coordinates,
+  (W_F, W_C).  Codimension in the other 23 is codimension in coordinates the functional is blind
+  to -- S4 already established that ('topology is inert', d2 enters nowhere).  'Measure-zero
+  slice of the connection space' is therefore not a wall; it is a statement about gauge-invariant
+  directions that carry no formation datum.
+
+==============================================================================
+A7  THE TERMINAL WALL: b1 = 0 AND gamma_C -> ZERO CHAIN, YET FORMATION OCCURS
+==============================================================================
+  psi : K1 -> D2 sends v3,v4 -> v5, e4 -> e7'(v0->v5), e5 -> constant, e6 -> reverse(e7').
+  psi_*(gamma_C) = e7' + 0 - e7' = THE ZERO CHAIN.   D2 d1 =
+ [[-1  0  1 -1]
+ [ 1 -1  0  0]
+ [ 0  1 -1  0]
+ [ 0  0  0  1]]
+  betti(b0,b1,b2,chi) = (np.int64(1), np.int64(0), np.int64(0), 1)   ->  b1 = 0, NO free cycle, gamma_C cannot be re-designated.
+  vertex classes on D2: {'v0': (1, 0), 'v1': (1, 0), 'v2': (1, 0), 'v5': (0, 0)}     class weights {(0, 0): 0.3, (1, 0): 0.7000000000000001, (0, 1): 0.0, (1, 1): 0.0}
+  S = [(0, 0), (1, 0)]   |S| = 2   rank G = 1   FORMATION = True   (G = <u> = <conj(W_F)>)
+  lambda_B = -0.356674943939      exact: Jensen gives log max(p00,p10) = -0.356674943939
+  A terminal carrier with b1 = 0 on which the pushed-forward formation datum is ALIVE:
+  G is non-trivial and lambda is finite and negative.  What dies at b1 = 0 is the DESIGNATION
+  of a fresh free cycle (choice C4), not formation.  The claim reads a designation wall as a
+  mathematical one, and generalises from one terminal object (S4's B5, on which every class
+  collapses to a single one) to every terminal object.

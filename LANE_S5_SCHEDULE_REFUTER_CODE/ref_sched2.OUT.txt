@@ -1,0 +1,38 @@
+
+==============================================================================
+CORRECTION: 2pi/gold + 2pi/gold^2 = 2pi EXACTLY -> that pair is RESONANT, L = Z(1,-1)
+==============================================================================
+f + c - 2pi = 0.000e+00   => c = -f mod 2pi   => L = { (m,n) : m = -n } = Z*(1,-1)
+on H = {(-t,-t)} : Z = 0.6 e^{i t} + 0.4 e^{2 i t}, so |Z| = |0.6 + 0.4 e^{i t}|
+   inf_H G = log 0.2 = -1.609437912   sup_H G = log 1.0 = 0
+   min_{k<=2e6} G = -1.609437912   (approaches log 0.2 from ABOVE, never below)
+   max_{k<=2e6} G = -5.228e-13
+   #{k : G < log 0.2 } = 0   <== LOWER BOUND IS HARD
+   int_H G dHaar = m(0.4 z^2 + 0.6 z) = log 0.4 ... check:
+      quadrature -0.510825624   vs log(0.6)=-0.510825624  vs log(0.4)=-0.916290732
+
+==============================================================================
+GENUINELY rank-0 BADLY-APPROXIMABLE PAIR: f = 2pi*gold, c = 2pi*sqrt2
+==============================================================================
+1, gold, sqrt2 are Q-linearly independent (gold in Q(sqrt5)), so L = {0}, H = T^2
+   lambda_B, N=4e6 : -0.767508543   (generic value of record -0.767507880)
+   min_{k<=4e6} G  : -8.030522  at k=3558294   => inf_H G = -infinity (conical zeros on T^2)
+
+==============================================================================
+lambda = 0 EXACTLY AT A TORSION CONNECTION (f=pi, c=3pi/2, orbit order 4)
+==============================================================================
+   |Z_k| for k=1..8 : [0.316227766017 0.4            0.316227766017 1.
+ 0.316227766017 0.4            0.316227766017 1.            ]
+   |Z_k| = 1 iff k = 0 mod 4  (NOT k=2: S3 4.1's |Z_2|=1 uses weights (1/2,0,1/2), not (0.4,0.3,0.3))
+   schedule k_n = 4 : lambda = 0.0  EXACTLY (every factor has modulus exactly 1)
+   max |1-|Z_{k_n}|| over the schedule = 0.000e+00
+
+==============================================================================
+AT A NON-TORSION CONNECTION lambda=0 IS A LIMIT ONLY - NO TERM ATTAINS |Z|=1
+==============================================================================
+   max_{k<=4e6} |Z_k| = 0.999999402845237  < 1 strictly ; deficiency 5.972e-07
+   every cell of every schedule contributes a STRICTLY negative term here.
+   running lambda at N=10,1e2,1e3,1e4,1e5,4e5 : ['-9.375e-02', '-1.067e-02', '-1.080e-03', '-1.086e-04', '-1.139e-05', '-3.296e-06']
+   -> 0 monotonically in magnitude.  The limit is exactly 0; no partial sum is.
+
+DONE.

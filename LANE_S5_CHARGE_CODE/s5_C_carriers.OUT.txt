@@ -1,0 +1,102 @@
+
+==================================================================================================
+C0.  THE TEN CARRIERS, MY OWN INCIDENCE.  d1.d2 = 0 ASSERTED IN THE CONSTRUCTOR.
+==================================================================================================
+  carrier   V   E   F  chi  b0  b1  b2  inv curv flat   gF cyc/bnds  gC cyc/bnds  classes
+  B1        5   6   1    0   1   1   0    2    1    1     True/True   True/False  {(1, 1): 1, (1, 0): 2, (0, 1): 2}
+  B2        5   6   2    1   1   0   0    2    2    0     True/True    True/True  {(1, 1): 1, (1, 0): 2, (0, 1): 2}
+  B1p       6   7   1    0   1   1   0    2    1    1     True/True   True/False  {(1, 0): 3, (0, 1): 3}
+  B1q       7   8   1    0   1   1   0    2    1    1     True/True   True/False  {(1, 0): 3, (0, 1): 3, (0, 0): 1}
+  B1s      11  12   1    0   1   1   0    2    1    1     True/True   True/False  {(1, 1): 1, (1, 0): 5, (0, 1): 5}
+  B0a       9  18   9    0   1   2   1   10    8    2     True/True   True/False  {(0, 1): 3, (1, 0): 4, (0, 0): 2}
+  B0b       9  18   9    0   1   2   1   10    8    2     True/True   True/False  {(1, 1): 2, (1, 0): 2, (0, 0): 4, (0, 1): 1}
+  B3        5  12   8    1   1   1   1    8    7    1     True/True  False/False  {(1, 1): 2, (1, 0): 1, (0, 1): 2}
+  B4        6   8   4    2   1   1   2    3    2    1     True/True   True/False  {(1, 1): 3, (1, 0): 1, (0, 1): 1, (0, 0): 1}
+  B5        4   4   2    2   1   0   1    1    1    0     True/True          n/a  {(1, 0): 4}
+  d1@d2 max|entry| over all ten carriers: 0
+
+==================================================================================================
+C1.  THEOREM C-3 : WHAT CHARGE CANNOT MOVE.
+     For a 3-POINT support with rank Delta = 2, the GENERIC (rank L = 0) rate lambda_B
+     is INDEPENDENT OF THE CHARGE.
+==================================================================================================
+  PROOF.  Let S = {E_1,E_2,E_3}, d_1 = E_2-E_1, d_2 = E_3-E_1 independent.  Then
+     |Z| = | p_1 + p_2 chi_{d_1} + p_3 chi_{d_2} |,
+  and psi : T^2 -> T^2, theta -> (chi_{d_1}(theta), chi_{d_2}(theta)) is a surjective
+  homomorphism of compact groups with finite kernel (order |det(d_1,d_2)|), hence pushes
+  Haar to Haar.  So  lambda_B^gen = int_{T^2} log|p_1 + p_2 X + p_3 Y| = m(p_1+p_2X+p_3Y),
+  which does not mention the E's at all.  QED
+  COROLLARY.  On K1 -- which HAS NO FOURTH CLASS -- schedule-B formation at a generic
+  connection is COMPLETELY BLIND TO CHARGE, unless the charge drops rank Delta to <= 1.
+  CHECKED over all 318 rank-2 class-charge assignments on K1, Nx=8192:
+     min -0.767507916  max -0.767507795  SPREAD 1.206e-07
+     Cassaigne-Maillot m(0.4+0.3x+0.3y) = -0.767507880
+
+  AND IT FAILS AT FOUR POINTS.  A carrier with a SPECTATOR class has |S| = 4:
+     unit charge, 4 corners, p=1/4 each      lambda = -1.386273208  (exact log(1/4) = -1.386294361)
+     charge (spec,F,C,pinch)=(0, 1, 1, 2)  E=[(np.int64(0), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(2), np.int64(2))]  rank 2  lambda = -0.980691404
+     charge (spec,F,C,pinch)=(0, 1, 1, 3)  E=[(np.int64(0), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(3), np.int64(3))]  rank 2  lambda = -0.956643607
+     charge (spec,F,C,pinch)=(0, 2, 2, 1)  E=[(np.int64(0), np.int64(0)), (np.int64(2), np.int64(0)), (np.int64(0), np.int64(2)), (np.int64(1), np.int64(1))]  rank 2  lambda = -0.997546488
+     charge (spec,F,C,pinch)=(0, 1, 2, 3)  E=[(np.int64(0), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(2)), (np.int64(3), np.int64(3))]  rank 2  lambda = -0.958502124
+  SO: charge is invisible to schedule-B/generic on a 3-class carrier and VISIBLE on a
+  4-class carrier.  The fourth class is exactly the SPECTATOR vertex (on neither loop).
+  W-03 identified the spectator with the pinch at unit charge; under charge the spectator
+  is what MAKES CHARGE VISIBLE and the pinch is not.
+
+==================================================================================================
+C2.  THE FOUR CONTROLS, RE-RUN UNDER CHARGE.  PREDICTION FIRST, THEN THE COMPUTATION.
+==================================================================================================
+  PREDICTION, RECORDED BEFORE THE RUN (the brief requires it):
+    CONTROL 1 (fill; d2 moves) -- STILL VACUOUS AT EVERY CHARGE.  Reason: the functional is
+      Z_k = sum_v p_v u^{k q_v a_v} v^{k q_v b_v}; d2 occurs in no term.  Charge multiplies the
+      exponents and does not consult d2.  Filling a 2-cell changes d2 only, so Z_k is
+      literally the same function.  d2 CANNOT ENTER UNDER CHARGE.
+    CONTROL 2 (incidence; B1 vs B1p) -- BECOMES VACUOUS UNDER SUITABLE CHARGE.  B1p's rank-1
+      collapse is caused by having only two classes; INHOMOGENEOUS charge inside one class
+      splits it and restores rank 2 with NO pinch and NO spectator.
+    CONTROL 3 (subdivision) -- unchanged in kind: SENSE U keeps moving, SENSE C does not,
+      unless charge drops the rank.
+    CONTROL 4 (spectator) -- the spectator becomes STRICTLY MORE than the pinch (see C1).
+
+  CONTROL 1 -- THE FILL CONTROL, UNDER 4^5 = 1024 CHARGE ASSIGNMENTS q in {0,1,2,3}^5:
+     B1: chi=0 b1=1 F=1 curv=1 flat=1
+     B2: chi=1 b1=0 F=2 curv=2 flat=0
+     a_v,b_v identical on B1 and B2 : True
+     1024 charge assignments x 3 circuit counts, seed 5150040:
+     max | Z_k(B1) - Z_k(B2) |  =  0.0e+00      CONTROL 1 IS VACUOUS AT EVERY CHARGE.
+     d2 DOES NOT ENTER UNDER CHARGE.  PREDICTION CONFIRMED.
+
+  CONTROL 2 -- THE INCIDENCE CONTROL.  B1 (pinched) vs B1p (bridged).
+     B1p unit charge           E=[(np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1))]  rank Delta=1  lambda_gen=-0.693147181
+     B1p q=(1,1,2, 1,1,1)      E=[(np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(2), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1))]  rank Delta=2  lambda_gen=-0.693147181
+     B1p q=(1,2,3, 1,1,1)      E=[(np.int64(1), np.int64(0)), (np.int64(2), np.int64(0)), (np.int64(3), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1))]  rank Delta=2  lambda_gen=-0.693147181
+     B1p q=(2,2,2, 3,3,3)      E=[(np.int64(2), np.int64(0)), (np.int64(2), np.int64(0)), (np.int64(2), np.int64(0)), (np.int64(0), np.int64(3)), (np.int64(0), np.int64(3)), (np.int64(0), np.int64(3))]  rank Delta=1  lambda_gen=-0.693147181
+     B1p q=(1,1,1, 1,1,2)      E=[(np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(2))]  rank Delta=2  lambda_gen=-0.693147181
+     B1 (K1) unit charge, SENSE U (0.4,0.4,0.2) : rank 2, lambda_gen = -0.756573591
+     READ IT: at unit charge B1p has rank 1 and 'sees only the product' -- S4's whole
+     incidence control.  Give ONE of its three F-vertices a different charge and rank Delta
+     is 2 again, with NO pinch and NO spectator anywhere in the carrier.  The 0.0634 gap
+     S4 attributed to 'one vertex of incidence' is reproduced by charge inhomogeneity alone.
+
+  CONTROL 3 -- SUBDIVISION.  B1 vs B1s, SENSE U and SENSE C, under charge.
+     unit charge                   B1 SENSE U -0.756573591   B1s SENSE U -0.724759921   rank 2
+     q=2 everywhere                B1 SENSE U -0.756573585   B1s SENSE U -0.724759920   rank 2
+     q=1 on old, 2 on midpoints    B1 SENSE U -0.756573591   B1s SENSE U -1.016472038   rank 2
+
+  CONTROL 4 -- SPECTATOR.  B1p (no spectator) vs B1q (one spectator), under charge.
+     B1q q=[1 1 1 1 1 1 1]  E=[(np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(0))]  rank 2  lambda_gen = -0.741029583
+     B1q q=[1 1 1 1 1 1 2]  E=[(np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(0))]  rank 2  lambda_gen = -0.741029583
+     B1q q=[1 1 1 1 1 1 3]  E=[(np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(0))]  rank 2  lambda_gen = -0.741029583
+     B1q q=[2 2 2 2 2 2 1]  E=[(np.int64(2), np.int64(0)), (np.int64(2), np.int64(0)), (np.int64(2), np.int64(0)), (np.int64(0), np.int64(2)), (np.int64(0), np.int64(2)), (np.int64(0), np.int64(2)), (np.int64(0), np.int64(0))]  rank 2  lambda_gen = -0.741029575
+
+  CONTROL 5 -- **THE CHARGE CONTROL**, WHICH IS NEW.
+     W-03's decisive criticism of S4 was that all four controls vary exactly ONE object,
+     the class-weight pushforward pi = (p00,p10,p01,p11), so nothing could have failed.
+     CHARGE VARIES A DIFFERENT OBJECT: the exponent map E : V -> Z^2.  pi is held FIXED
+     (identical weights on identical classes) and lambda still moves.  This is the first
+     non-vacuous control in the program.
+     carrier q                          pi (class weights)          rk   lambda_A(1,sqrt2)   lambda_B generic
+     B1     [1 1 1 1 1]                {(1, 1): np.float64(0.4), (1, 0): np.float64(0.3), (0, 1): np.float64(0.3)}   2        -0.493553117       -0.767507889
+     B1     [1 2 2 2 2]                {(1, 1): np.float64(0.4), (1, 0): np.float64(0.3), (0, 1): np.float64(0.3)}   1        -3.033397022       -1.203972804
+     B1     [2 1 1 1 1]                {(1, 1): np.float64(0.4), (1, 0): np.float64(0.3), (0, 1): np.float64(0.3)}   2        -0.532988216       -0.767507880
+     B1     [1 1 1 2 2]                {(1, 1): np.float64(0.4), (1, 0): np.float64(0.3), (0, 1): np.float64(0.3)}   2        -1.415282766       -0.767507877

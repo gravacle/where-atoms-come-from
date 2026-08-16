@@ -1,0 +1,64 @@
+==============================================================================
+RC-1  THE HOMOGENEITY WALL
+==============================================================================
+
+--- 1A.  q = (1,2,2,2,2):  is it class-homogeneous?
+   class (1,1) = {v0}      charges [1]   -> constant
+   class (1,0) = {v1,v2}   charges [2, 2] -> constant
+   class (0,1) = {v3,v4}   charges [2, 2] -> constant
+   WITHIN-CLASS INHOMOGENEITY: NONE.  It IS class-homogeneous.
+   exponent points [(np.int64(0), np.int64(2)), (np.int64(1), np.int64(1)), (np.int64(2), np.int64(0))]  weights [np.float64(0.3), np.float64(0.4), np.float64(0.3)]
+   |S| = 3   rank Delta = 1   <- S4-1 predicts rank 2 for |S|>=3
+   ==> S4-1 FAILS at a CLASS-HOMOGENEOUS charge.  Wall (1) is refuted as stated.
+
+--- 1B.  all class-homogeneous q = (alpha; beta,beta; gamma,gamma), 1..6
+     alpha beta gamma | |S| rankD | collinear?   (S4-1 predicts rank 2 whenever |S|>=3)
+   class-homogeneous (alpha,beta,gamma) in 1..6 with |S|=3 but rank Delta = 1:
+       (1, 2, 2)    condition beta*gamma = alpha*(beta+gamma): 4 == 4
+       (2, 3, 6)    condition beta*gamma = alpha*(beta+gamma): 18 == 18
+       (2, 4, 4)    condition beta*gamma = alpha*(beta+gamma): 16 == 16
+       (2, 6, 3)    condition beta*gamma = alpha*(beta+gamma): 18 == 18
+       (3, 6, 6)    condition beta*gamma = alpha*(beta+gamma): 36 == 36
+   count = 5 of 216 class-homogeneous assignments -- ALL with zero
+   within-class inhomogeneity.  The S4-1 failure locus is an ALGEBRAIC SURFACE
+   beta*gamma = alpha*(beta+gamma) inside the class-homogeneous set, not its boundary.
+
+--- 1C.  class-homogeneous, class-NON-uniform charge under which S4 SURVIVES EXACTLY
+   baseline  m(0.4+0.3x+0.3y) = -0.767507880   (unit charge)
+   q=[1, 1, 1, 1, 1]    |S|=3 rk=2 det=   1  grid=-0.767507853  direct=-0.767507297  d(base)=2.73e-08
+   q=[2, 2, 2, 2, 2]    |S|=3 rk=2 det=   4  grid=-0.767508397  direct=-0.767508602  d(base)=5.16e-07
+   q=[1, 2, 2, 3, 3]    |S|=3 rk=2 det=   1  grid=-0.767507861  direct=-0.767508825  d(base)=1.94e-08
+   q=[3, 1, 1, 2, 2]    |S|=3 rk=2 det=   7  grid=-0.767507861  direct=-0.767508649  d(base)=1.94e-08
+   q=[1, 5, 5, 7, 7]    |S|=3 rk=2 det=  23  grid=-0.767507853  direct=-0.767506797  d(base)=2.73e-08
+   q=[2, 3, 3, 7, 7]    |S|=3 rk=2 det=   1  grid=-0.767507853  direct=-0.767503276  d(base)=2.73e-08
+   q=[-1, 2, 2, 3, 3]   |S|=3 rk=2 det= -11  grid=-0.767507861  direct=-0.767512438  d(base)=1.94e-08
+   q=[1, 2, 2, -3, -3]  |S|=3 rk=2 det=  -5  grid=-0.767506864  direct=-0.767511898  d(base)=1.02e-06
+
+   ==> every class-homogeneous, rank-2 charge reproduces S4's lambda EXACTLY,
+       including charges that are NOT proportional to the unit assignment.
+       So the wall is NOT at 'proportional exponents' either: it is drawn TOO EARLY.
+
+--- 1D.  THE EXCEPTIONAL SET.  Class-homogeneous charge on rank L = 2.
+   S4's Q3 headline: 'lambda_B is a function of L alone'.  Test it under charge.
+
+   connection u,v primitive cube roots:  f=2.094395 c=2.094395
+      q=[1, 1, 1, 1, 1]  |S|=3 rk=2  orbit period T=  3  lambda_B = -1.535056729
+      q=[1, 2, 2, 3, 3]  |S|=3 rk=2  orbit period T=  3  lambda_B = -0.331417424
+      q=[2, 2, 2, 2, 2]  |S|=3 rk=2  orbit period T=  3  lambda_B = -1.535056729
+      q=[3, 1, 1, 2, 2]  |S|=3 rk=2  orbit period T=  3  lambda_B = -0.424321892
+
+   connection 4th roots:  f=1.570796 c=1.570796
+      q=[1, 1, 1, 1, 1]  |S|=3 rk=2  orbit period T=  4  lambda_B = -0.860504844
+      q=[1, 2, 2, 3, 3]  |S|=3 rk=2  orbit period T=  4  lambda_B = -0.804718956
+      q=[2, 2, 2, 2, 2]  |S|=3 rk=2  orbit period T=  4  lambda_B = -0.804718956
+      q=[3, 1, 1, 2, 2]  |S|=3 rk=2  orbit period T=  4  lambda_B = -0.804718956
+
+   connection 5th roots:  f=1.256637 c=2.513274
+      q=[1, 1, 1, 1, 1]  |S|=3 rk=2  orbit period T=  5  lambda_B = -0.777466079
+      q=[1, 2, 2, 3, 3]  |S|=3 rk=2  orbit period T=  5  lambda_B = -0.353803996
+      q=[2, 2, 2, 2, 2]  |S|=3 rk=2  orbit period T=  5  lambda_B = -0.777466079
+      q=[3, 1, 1, 2, 2]  |S|=3 rk=2  orbit period T=  5  lambda_B = -0.486083693
+
+   ==> L is IDENTICAL across the rows (same f,c); lambda_B is NOT.
+       'lambda_B is a function of L alone' is FALSE under class-homogeneous charge.
+       This is exactly where S4's Tier-1/Tier-2 exact values of record live.

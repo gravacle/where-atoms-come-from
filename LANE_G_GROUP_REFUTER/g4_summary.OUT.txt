@@ -1,0 +1,45 @@
+==============================================================================
+G4.1  THEOREM S4-1 AT RANK TWO — full enumeration, my own
+==============================================================================
+  RANK ONE  U(1), unit charge : 4 distinct characters, 15 non-empty subsets
+     |S| = 1  ->  rank G = 0   : 4 subsets
+     |S| = 2  ->  rank G = 1   : 6 subsets
+     |S| = 3  ->  rank G = 2   : 4 subsets
+     |S| = 4  ->  rank G = 2   : 1 subsets
+  RANK TWO  U(1)xU(1) : 7 distinct characters, 127 non-empty subsets
+     |S| = 1  ->  rank G = 0   : 7 subsets
+     |S| = 2  ->  rank G = 1   : 21 subsets
+     |S| = 3  ->  rank G = 2   : 35 subsets
+     |S| = 4  ->  rank G = 2   : 2 subsets
+     |S| = 4  ->  rank G = 3   : 33 subsets
+     |S| = 5  ->  rank G = 3   : 6 subsets
+     |S| = 5  ->  rank G = 4   : 15 subsets
+     |S| = 6  ->  rank G = 4   : 7 subsets
+     |S| = 7  ->  rank G = 4   : 1 subsets
+
+  S4-1 says: rank 2 iff |S| >= 3.
+  RANK ONE : exactly that (5 rank-2 / 6 rank-1 / 4 rank-0).
+  RANK TWO : |S| >= 3 still forces rank >= 2 -- the 'iff' half that carries the
+  physics SURVIVES -- but rank reaches 3 and 4, so the exact numeric statement
+  'rank 2' is superseded, not refuted. The theorem generalises; it does not fail.
+
+==============================================================================
+G4.2  DECISION TABLE — every load-bearing theorem, five boxes
+==============================================================================
+  theorem                                                   rk1 U(1) rk2 U(1)^2 gen rk2 on u1v1=u2v2 rk2 SU(2) rk1 charge    
+  ---------------------------------------------------------------------------------------------------------------------------
+  W-02 criterion G != {1} <=> formation, refined support    HOLDS    HOLDS          HOLDS            FAILS     holds         
+  |S| = 1 => never fires ('the root can never fire')        HOLDS    HOLDS          HOLDS            FAILS     holds         
+  the ROOT VERTEX can never fire (coarse, vertex-indexed)   HOLDS    FAILS          HOLDS            FAILS     holds         
+  lambda a function of the FOUR class weights               HOLDS    FAILS          FAILS            FAILS     holds         
+  lambda a function of the refined weight multiset          HOLDS    HOLDS          HOLDS            FAILS     holds         
+  S4-1 'rank 2 iff |S|>=3' verbatim                         HOLDS    superseded     superseded       FAILS     FAILS (record)
+  pinch = spectator exchange symmetry                       HOLDS    FAILS          HOLDS            FAILS     holds         
+  all coefficients non-negative real (the type of every theorem above)HOLDS    HOLDS          HOLDS            FAILS     holds         
+  ergodic / Mahler skeleton (trig polynomial in eigen-angles)HOLDS    HOLDS          HOLDS            HOLDS     holds         
+
+  READ THE COLUMNS. The claim says rank-2 abelian is where everything dies.
+  Column 3 has four HOLDS. Column 4 (a 3-parameter subfamily of the 4-parameter
+  rank-2 abelian connection space) has six. Column 5 -- SAME RANK, SAME SCALARITY,
+  SAME SPECTRA, only [W_F,W_C] changed -- is the only column that is uniformly
+  FAILS. And column 6 shows S4-1 already dead at rank one.

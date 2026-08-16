@@ -1,0 +1,68 @@
+
+==============================================================================
+R0.1  K1 -- PUBLISHED INCIDENCE MATRICES
+==============================================================================
+vertices: ['v0', 'v1', 'v2', 'v3', 'v4']
+edges   : [('e1', 'v0->v1'), ('e2', 'v1->v2'), ('e3', 'v2->v0'), ('e4', 'v0->v3'), ('e5', 'v3->v4'), ('e6', 'v4->v0')]
+faces   : [('F', [('e1', 1), ('e2', 1), ('e3', 1)])]
+loopF   : [('e1', 1), ('e2', 1), ('e3', 1)]   loopC: [('e4', 1), ('e5', 1), ('e6', 1)]
+
+d1 (rows=v0..v4, cols=e1..e6):
+ [[-1  0  1 -1  0  1]
+ [ 1 -1  0  0  0  0]
+ [ 0  1 -1  0  0  0]
+ [ 0  0  0  1 -1  0]
+ [ 0  0  0  0  1 -1]]
+
+d2 (rows=e1..e6, cols=F):
+ [[1 1 1 0 0 0]]  (transposed for display)
+
+d1 @ d2  max|.| = 0    (d^2 = 0)
+loopF closed? d1.chain max|.| = 0
+loopC closed? d1.chain max|.| = 0
+chi = 0   rank d1 = 4  rank d2 = 1   betti = (1, 1, 0)
+
+==============================================================================
+R0.2  TRANSPORT BY EXPLICIT MATRICES vs THE CLASS FORMULA
+==============================================================================
+S1 worked instance a=(pi/3 x3, pi/2 x3):  W_F=-1.000000000000+0.000000000000j  W_C=-0.000000000000-1.000000000000j
+   max|Z_k(matrix) - Z_k(class formula)| over k<=59 = 7.969e-16
+S3 headline f=2.0 c=1.1:  W_F=-0.416146836547+0.909297426826j  W_C=0.453596121426+0.891207360061j
+   max|Z_k(matrix) - Z_k(class formula)| over k<=59 = 8.327e-16
+
+==============================================================================
+R0.3  K1 UNDER SENSE U (uniform vertex weights) -- the CLAIM's normalisation
+==============================================================================
+pi (00,10,01,11) = [0.  0.4 0.4 0.2]    sum = 1.0
+|S| = 3   rank G = 2   S = [(1, 0), (0, 1), (1, 1)]   FORMS = True
+lambda_A at (f,c)=(2.0,1.1) = -1.536645461686
+   CLAIM cites                  -1.536645461686
+   check via matrices           -1.536645461686
+
+lambda_B, four independent routes:
+  generic point used for the direct Weyl average: (f,c) = (1+sqrt2, 1+sqrt3)
+  direct  k_n=n  N=4e6      : -0.756572802740
+  grid    3000x3000 midpoint: -0.756573538039
+  grid    6001x6001 midpoint: -0.756573603693
+  MonteCarlo N=2e7 seed 20260816: -0.756753278171
+  Cassaigne-Maillot (IMPORT) : -0.756573585640
+  CLAIM cites                  -0.756573585640
+  S4 sec.4.4 CONTROL 1 cites   -0.756573585634   (of record)
+
+==============================================================================
+R0.4  K1 UNDER THE CORPUS'S OWN PUBLISHED READY STATE (SENSE C)
+==============================================================================
+p = (0.4,0.15,0.15,0.15,0.15)  ->  pi = [0.  0.3 0.3 0.4]
+  Cassaigne-Maillot          : -0.767507880358
+  grid 6001                  : -0.767507868846
+  register erratum of record  -0.767507880
+
+==============================================================================
+R0.5  THE CLAIM'S RING-TORUS NUMBER, IDENTIFIED
+==============================================================================
+claim's ring-torus lambda_B = -0.613104472886    exp = 0.5416666666668881
+log(13/24) = -0.613104472886    <-- exact match
+S4 of-record ring tori: B0a -0.747659833   B0b -0.810930216 = log(4/9) = -0.810930216216
+=> the claim's ring torus is NEITHER B0a NOR B0b.  It is a THIRD object,
+   and log(max weight) is the Mahler measure precisely when one class
+   weight EXCEEDS 1/2 (no-triangle branch): 13/24 = 0.541667 > 1/2.

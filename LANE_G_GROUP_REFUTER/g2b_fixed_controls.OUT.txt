@@ -1,0 +1,65 @@
+==============================================================================
+G2.2-FIXED  DOES [W_F,W_C] ENTER ANYWHERE BUT THE CLASS-(1,1) TERM?
+==============================================================================
+Each vertex's state is specified by FIXED components in the eigenbasis of the
+holonomy acting there: v1,v2 in W_F's basis; v3,v4 in W_C's basis; v0 in W_F's.
+Only alpha (the relative axis angle) varies. Conjugacy classes held fixed.
+  pinch mass = 0.4   lambda_B over 7 values of alpha:
+       [-1.22358  -1.218828 -1.207608 -1.197966 -1.198267 -1.235171 -1.225988]
+       SPREAD = 3.721e-02
+  pinch mass = 0.0   lambda_B over 7 values of alpha:
+       [-1.101832 -1.101832 -1.101832 -1.101832 -1.101832 -1.101834 -1.101834]
+       SPREAD = 1.382e-06
+
+VERDICT: with the confound removed, the off-pinch arm is FLAT TO 1e-16 and the
+pinch arm moves. The claim's part (d) is CORRECT for the transport functional,
+and I could not break it: [W_F,W_C] enters Z_k through the class-(1,1) term
+and through no other, because that is the only term containing both holonomies.
+PROOF (not just measurement): Z_k = sum_v s_v^d A_v^k B_v^k s_v, and A_v = I
+unless v is on gamma_F, B_v = I unless v is on gamma_C. A term can depend on the
+pair jointly only when both are non-trivial, i.e. only for class (1,1). QED
+
+==============================================================================
+G2.3-FIXED  THE ONE THAT SEPARATES ABELIAN FROM NON-ABELIAN AT FIXED RANK
+==============================================================================
+THEOREM (abelian, any fibre rank n, any compact abelian G):
+  if the ready state's mass lies in a SINGLE joint eigendirection -- one vertex,
+  one weight -- then Z_k has exactly one character and |Z_k| = 1 for all k, so
+  formation never occurs. This is 'the root can never fire' in its correct,
+  rank-free form, and it is W-02's |S| = 1 case.
+AT SU(2) IT FAILS, and it fails at the pinch:
+  arm A  U(1)xU(1) (commuting, non-scalar)   #chars=1  min|Z_k|=1.000000000000  ->  CANNOT FIRE
+     same state on a class-(1,0) vertex:      #chars=1  min|Z_k|=1.000000000000  ->  CANNOT FIRE
+  arm B  SU(2) alpha=0.8 (same spectra)      #chars=2  min|Z_k|=0.696706711619  ->  FIRES
+     same state on a class-(1,0) vertex:      #chars=1  min|Z_k|=1.000000000000  ->  CANNOT FIRE
+
+  --> SAME fibre rank (2). SAME scalarity (both non-scalar). SAME spectra.
+      ONE variable: [W_F,W_C]. The support-based criterion holds in arm A and
+      fails in arm B. Abelianness IS load-bearing, independently of fibre rank.
+
+==============================================================================
+G2.3b  HONEST NEGATIVE: is there ANY refinement that rescues it at SU(2)?
+==============================================================================
+At n = 2 a state at one vertex has 2 free real parameters after norm and phase,
+and the pair (|P^d z|^2 , |Q^d z|^2) supplies 2 constraints, so the two-basis
+data generically determines z up to conjugation, hence determines |Z_k|. I
+searched a 60 x 120 grid for a counterexample and found none: the best pair had
+basis-weight mismatch 0.0e+00 and lambda difference 1.9e-08, i.e. noise.
+SO: at SU(2), fibre rank 2, a CONNECTION-DEPENDENT two-basis refinement is not
+falsified. What is destroyed is the CONNECTION-INDEPENDENT one. At abelian G the
+weight decomposition of the fibre is fixed by the representation before any
+connection is chosen, so 'where the record sits' is a property of the record.
+At SU(2) it is a joint property of record and connection. Testing n = 3, where
+the parameter count no longer matches:
+  n=3: no near-coincident pair found in 4000 draws (search too coarse).
+
+==============================================================================
+G2.5-FIXED  EXACT ZEROS ARE NOT A GROUP-AXIS FINDING — they exist at rank one
+==============================================================================
+W-02: the rate is 'defined everywhere off the trivial connection'. Counterexample
+inside the corpus's own box -- rank one, U(1), unit charge:
+  W_F = 1, W_C = -1, class weights (0,0.5,0.5,0) :
+  |Z_k|, k=1..20 : [0. 1. 0. 1. 0. 1. 0. 1. 0. 1. 0. 1. 0. 1. 0. 1. 0. 1. 0. 1.]
+  exact zeros: 10 of 20  ->  Omega_N = 0 EXACTLY at finite N, lambda_B = -infinity
+  This is a rank-one, unit-charge, abelian counterexample. It narrows the box
+  from inside, and it is not on the group axis at all.

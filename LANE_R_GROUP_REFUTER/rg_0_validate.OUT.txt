@@ -1,0 +1,55 @@
+==============================================================================
+V0.  THE CARRIER, PUBLISHED AND CHECKED
+==============================================================================
+d1 (rows v0..v4, cols e1..e6):
+[[-1  0  1 -1  0  1]
+ [ 1 -1  0  0  0  0]
+ [ 0  1 -1  0  0  0]
+ [ 0  0  0  1 -1  0]
+ [ 0  0  0  0  1 -1]]
+d2^T (row = the single face F, cols e1..e6): [1 1 1 0 0 0]
+  d1 @ d2 = [0 0 0 0 0]   -> d^2 = 0: True
+  V,E,F = 5,6,1   chi = 0   rank d1 = 4   rank d2 = 1
+  b0 = 1   b1 = 1   b2 = 0
+  classes (a_v,b_v), v0..v4 = [(1, 1), (1, 0), (1, 0), (0, 1), (0, 1)]   occupied: [(0, 1), (1, 0), (1, 1)]
+
+==============================================================================
+V1.  THEOREM S4-1's OWN ENUMERATION, my code, from the character map
+     class (a,b) -> exponent (-a, b)   [chi = u^a v^b, u = conj(W_F)]
+==============================================================================
+  rank2 = 5  rank1 = 6  rank0 = 4   [S4 4.3 records 5 / 6 / 4]
+  MATCH: True
+
+==============================================================================
+V2.  THE CORPUS'S OWN K1 RATES, three independent ways
+==============================================================================
+  SENSE U  p_v = 1/5   [corpus of record -0.756573585640]
+     Haar T^2 4096^2   = -0.756573527902    dev vs record 5.77e-08
+     direct N=4e5      = -0.756574103768    dev vs record 5.18e-07
+     Cassaigne-Maillot = -0.756573585640    dev vs record 2.25e-13
+  SENSE C  (0.4,0.3,0.3)   [corpus of record -0.767507880358]
+     Haar T^2 4096^2   = -0.767507880865    dev vs record 5.07e-10
+     direct N=4e5      = -0.767512724258    dev vs record 4.84e-06
+     Cassaigne-Maillot = -0.767507880358    dev vs record 2.24e-13
+
+==============================================================================
+V3.  THE CLAIM'S OWN FFT EXHIBITS, reproduced
+==============================================================================
+  U(1) unit charge, d=1, SENSE C
+     3 characters: [(-1, 0), (-1, 1), (0, 1)]
+     rank G = 2
+     independent FFT at M=64 and M=128 agrees exactly
+     CLAIM reports 3 characters: CONFIRMED
+  SU(2) fundamental, axes z and x (NON-commuting), random fibre directions
+     8 characters: [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
+     rank G = 2
+     independent FFT at M=64 and M=128 agrees exactly
+     CLAIM reports 8 characters: CONFIRMED
+  SU(2) fundamental, both axes z (COMMUTING), random fibre directions
+     6 characters: [(-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0)]
+     rank G = 2
+     independent FFT at M=64 and M=128 agrees exactly
+     CLAIM reports 6 characters: CONFIRMED
+
+  VALIDATION GATE: PASSED.  Every corpus number and every CLAIM exhibit
+  reproduced with independent code.  The attack proceeds.

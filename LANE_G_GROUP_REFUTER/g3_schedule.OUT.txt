@@ -1,0 +1,82 @@
+==============================================================================
+G3.1  THEOREM — WHY ABELIANNESS IS FORCED, STATED WITH ITS ACTUAL HYPOTHESIS
+==============================================================================
+
+S3 sec.3.5: 'Cell n consists of: the carrier, in ready state s, runs k_n circuits of
+each of K1's two loops, producing the branch pair (M_dF^{k_n} s, M_c^{k_n} s).'
+A SCHEDULE is the sequence (k_n) and nothing else.
+
+THEOREM. For any compact group G, any faithful unitary rep on C^n, and any
+W_F, W_C in G, the set {(W_F^k, W_C^k) : k in Z} is a CYCLIC subgroup of G x G.
+The closure of a cyclic subgroup of a topological group is ABELIAN (if a,b are
+limits of powers of one element they commute, by continuity of multiplication).
+Hence the branch pair at every k lies in a compact ABELIAN group A, and
+    Z_k = Phi(a^k),  a = (W_F, W_C),  Phi continuous on A,
+so Z_k is a finite sum of characters of A -- exhibited constructively in glib as
+    Z_k = sum_{v,m,n} (s_v^d P)_m (P^d Q)_{mn} (Q^d s_v)_n * (alpha_m beta_n)^k .
+THE HYPOTHESIS IS 'EACH BRANCH IS A CYCLIC POWER OF ONE FIXED OPERATOR'.
+THE SEQUENCE (k_n) APPEARS NOWHERE IN IT.
+
+CONSEQUENCE, MEASURED: the character set and the coefficients are identical
+under every schedule, because they are defined before any schedule is chosen.
+  SU(2) instance: 8 characters, coefficients fixed. Now six schedules:
+    B  k_n = n              lambda = -1.040501275   (same characters, same coefficients: 8 / 8)
+    A  k_n = 1              lambda = -0.610764739   (same characters, same coefficients: 8 / 8)
+       k_n = n^2            lambda = -1.038882270   (same characters, same coefficients: 8 / 8)
+       k_n = n-th prime     lambda = -1.038782606   (same characters, same coefficients: 8 / 8)
+       k_n = Fibonacci      lambda = -0.973535980   (same characters, same coefficients: 8 / 8)
+       adversarial (4.6)    lambda = -0.008171559   (same characters, same coefficients: 8 / 8)
+
+  The rate moves. The ABELIANNESS does not, and cannot: every one of these
+  numbers is an average of log|sum_j c_j zeta_j^k| over a different sampling of
+  the SAME abelian character decomposition. VERDICT: 'forced by the schedule' is
+  a MISATTRIBUTION. The schedule is the only object in the construction that is
+  provably incapable of affecting the answer.
+
+==============================================================================
+G3.2  CAN IT BE ESCAPED? THE MINIMAL CHANGE, AND WHAT IT COSTS
+==============================================================================
+
+IMPORT, DECLARED: the corpus's branch is 'k circuits of ONE loop'. I generalise it
+to 'k circuits taken in the order of a word w in {F,C}' -- an INTERLEAVED BRANCH.
+This is not a schedule in S3 sec.3.5's sense; it is a new object, and it is entered
+in this lane's IMPORT AUDIT. W-03's reopen clause names 'a third schedule' and says
+'the A/B dichotomy may be a knife-edge between two arbitrary choices' -- this is the
+variation that clause invites, and it turns out to be the ONLY one that bites.
+   branch F : word x   branch C : word y      Z_k = < X_k s , Y_k s >
+   corpus case: x = FFFF..., y = CCCC...
+
+TEST 1 — at RANK-ONE U(1) the WORD IS INVISIBLE: only letter counts matter.
+   |Z_k(word CFCFCF..) - Z_k(word CCFFCCFF..)| at k = 4,8,...,40 : max 2.001e-16
+   (both words have exactly k/2 C's and k/2 F's at these k)
+
+TEST 2 — at SU(2) the WORD IS VISIBLE, at the same letter counts.
+   same comparison at SU(2)                                     : max 6.865e-01
+
+TEST 3 — IS THE CLOSURE STILL ABELIAN? Measure the commutator of the realised
+   branch operators at the pinch, corpus branch vs interleaved branch.
+   corpus branch  y = CCCC...      max ||[Y_i, Y_j]|| over i,j <= 60 : 0.000000
+   periodic word  y = CFCF...      max ||[Y_i, Y_j]|| over i,j <= 60 : 1.285896
+   Sturmian word  y = Fibonacci    max ||[Y_i, Y_j]|| over i,j <= 60 : 1.991867
+   --> the corpus branch realises a COMMUTATIVE family of operators even at
+       SU(2). The interleaved branch does not. That is the escape.
+
+TEST 4 — DOES THE MAHLER SKELETON SURVIVE THE ESCAPE?
+   The corpus branch gives Z_k = sum_j c_j zeta_j^k, a trig polynomial in two
+   eigen-angles. For the interleaved branch, test that form directly: fit the
+   best 9-character model to k = 1..40 and check it at k = 41..120.
+   corpus branch  y = CCCC...      out-of-sample max |pred - actual| : 1.566e-14
+   Sturmian word  y = Fibonacci    out-of-sample max |pred - actual| : 1.024e+00
+   --> for the corpus branch the 9-character model is EXACT out of sample.
+       For the interleaved branch it is not: the trig-polynomial / Mahler form
+       is gone, because the realised group is no longer monothetic.
+
+==============================================================================
+G3.3  AND AT AN ABELIAN GROUP, THE ESCAPE DOES NOTHING
+==============================================================================
+Same interleaved branch, arm A (U(1)xU(1), rank 2, non-scalar, commuting):
+   |Z_k(CFCF..) - Z_k(CCFF..)| at abelian rank two : max 2.220e-16
+   --> the escape is available EXACTLY WHEN THE GROUP IS NON-ABELIAN.
+       So 'abelianness cannot be escaped' and 'the results are not an accident
+       of abelianness' cannot both be load-bearing: the one variable that
+       controls whether the escape exists is commutativity itself.

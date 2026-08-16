@@ -1,0 +1,51 @@
+=== COMPLEX SANITY ===
+{'d1_d2': 0, 'cycle_F': 0, 'cycle_C': 0, 'shared_vertices': [np.int64(0)]}
+d1 =
+ [[-1  0  1 -1  0  1]
+ [ 1 -1  0  0  0  0]
+ [ 0  1 -1  0  0  0]
+ [ 0  0  0  1 -1  0]
+ [ 0  0  0  0  1 -1]]
+d2^T = [1 1 1 0 0 0]
+
+=== Z_k: matrix action vs closed form (f=2.0,c=1.1,p=S3), k<=200 ===
+max deviation = 1.0477352974017885e-14    (S3 sec4.1 reports 1.538e-14)
+
+=== S3 sec 4.1 recurrence facts ===
+min |Z_k| over k<=400 = 0.024654 at k=42   (S3: 0.024654 at k=42)
+sup |Z_k| over k<=4000 = 0.999941 at k=377  (S3: 0.999941 at k=377)
+count |Z_k|>0.99 among first 4000 = 37  (S3: 37)
+
+=== S3 sec 4.3 schedule-B finite stages, f=2.0 c=1.1 ===
+  N=     1  (1/N)log|Omega_N| = -0.888504
+  N=     2  (1/N)log|Omega_N| = -0.821353
+  N=     5  (1/N)log|Omega_N| = -0.806574
+  N=    10  (1/N)log|Omega_N| = -0.733234
+  N=    20  (1/N)log|Omega_N| = -0.759800
+  N=    42  (1/N)log|Omega_N| = -0.800483
+  N=    50  (1/N)log|Omega_N| = -0.819895
+  N=   100  (1/N)log|Omega_N| = -0.768925
+  N=   200  (1/N)log|Omega_N| = -0.769663
+  N=   400  (1/N)log|Omega_N| = -0.768673
+  N=  1000  (1/N)log|Omega_N| = -0.768205
+  N=  2000  (1/N)log|Omega_N| = -0.768470
+  N=  4000  (1/N)log|Omega_N| = -0.766802
+  N=200000            -> -0.767026   (S3: -0.767026)
+
+=== ERRATUM check: f=2.0,c=1.1 is EXACTLY RESONANT, -11f+20c = 0.000e+00 ===
+  subtorus average (register: -0.767014993):
+  Haar mean over the subtorus H = ker(chi_{11,20}) : -0.767014993
+  generic full-torus value m(0.4+0.3x+0.3y) (register: -0.767507880):
+   -0.767508064
+
+=== S3 sec 6(f) table, reproduced ===
+  f=2.00000 c=1.10000  lambda_B(N=2e5) = -0.767026   S3 says -0.767026
+  f=2.00000 c=2.00000  lambda_B(N=2e5) = -1.203587   S3 says -1.203587
+  f=3.14159 c=1.57080  lambda_B(N=2e5) = -0.860699   S3 says -0.804719
+  f=3.14159 c=4.71239  lambda_B(N=2e5) = -0.831362   S3 says -0.804719
+
+=== EXACT finite-orbit connections (pi and pi/2, pi and 3pi/2) ===
+  f=3.141593 c=1.570796  orbit order m=4  lambda_B(exact cyclic mean)=-0.804718956
+     |Z_k| for k=0..3 : [1.       0.316228 0.4      0.316228]
+  f=3.141593 c=4.712389  orbit order m=4  lambda_B(exact cyclic mean)=-0.804718956
+     |Z_k| for k=0..3 : [1.       0.316228 0.4      0.316228]

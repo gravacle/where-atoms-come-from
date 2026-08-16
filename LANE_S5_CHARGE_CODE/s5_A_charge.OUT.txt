@@ -1,0 +1,81 @@
+
+==============================================================================================
+A1.  WHAT 'CHARGE' CAN LEGITIMATELY MEAN -- THREE CANDIDATES, TWO OF THEM VACUOUS
+==============================================================================================
+CANDIDATE 1  PER-EDGE charge q_e, charged holonomy exp(i sum_e q_e a_e).
+   Gauge:  a_e -> a_e + theta_tgt - theta_src.  Around gamma_F = e1.e2.e3 (v0->v1->v2->v0):
+     delta = q1(t1-t0) + q2(t2-t1) + q3(t0-t2) = t0(q3-q1) + t1(q1-q2) + t2(q2-q3)
+   which vanishes for all theta IFF q1 = q2 = q3.   => PER-EDGE CHARGE IS NOT GAUGE INVARIANT
+   unless it is constant around each loop, in which case it is a PER-LOOP charge.
+  2000 random (connection,gauge) pairs, seed 5150001:
+     q=(1,2,3) on the face loop : max |W_F(gauged) - W_F| = 2.000000   NOT INVARIANT
+     q=(2,2,2) on the face loop : max |W_F(gauged) - W_F| = 7.216e-15   INVARIANT
+
+CANDIDATE 2  PER-LOOP charge (Q_F,Q_C):  W_F -> W_F^{Q_F}, W_C -> W_C^{Q_C}, i.e. (f,c) -> (Q_F f, Q_C c).
+   This is a SURJECTIVE endomorphism of the connection torus T^2 whenever Q_F,Q_C != 0.
+   It relabels points of T^2 and changes NO function's range.  VACUOUS as a modality.
+
+CANDIDATE 3  PER-VERTEX FIBRE charge q_v:  U(1) acts on L_v by z -> z^{q_v}, so W(gamma)
+   acts on L_v as W(gamma)^{q_v} and the exponent vector is  E_v = q_v (a_v, b_v).
+   Gauge acts fibrewise as g_v^{q_v}; |s_v|^2 = p_v is untouched; Z_k is unchanged.
+   THIS IS THE ONLY NON-VACUOUS READING, and it is the one S2:173-175 names.
+   NOTE, and it is load-bearing: q_v may vary with v ONLY because W-01's operator
+   (M_gamma s)(v) = W(gamma) s(v) is a DIAGONAL multiplication, not an edge transport.
+   Edge transport L_u -> L_v would force q_u = q_v.  Charge inhomogeneity is definable
+   here exactly to the extent that W-01 replaced transport by multiplication.
+
+  CHARGED functional: 200 random (q in [-3,3]^5, connection, section, gauge), seed 5150002
+     max | Z_k(gauged) - Z_k |  and  | matrix - closed form |   =  8.556e-15
+
+==============================================================================================
+A2.  HOMOGENEOUS CHARGE q: k -> qk.  IT DISCRIMINATES THE TWO SCHEDULES.
+==============================================================================================
+  Z_k(q homogeneous) = Z_{qk}(unit charge)  -- identity, checked:
+     500 random samples, seed 5150003 : max deviation 1.324e-13
+
+    q    lambda_A = log|Z_1|    lambda_B (direct N=2e6)   lambda_B generic exact
+    1           -0.493553117               -0.767507297             -0.767507889
+    2           -1.711144636               -0.767508602             -0.767507881
+    3           -1.166126204               -0.767508689             -0.767507889
+    5           -0.153445432               -0.767508564             -0.767507889
+    7           -0.711826836               -0.767506333             -0.767507889
+  READ IT: lambda_A moves with q (it is log|Z_1| at the rescaled point (qf,qc));
+  lambda_B does NOT (the closure of <(u^q,v^q)> has the same identity component as that of
+  <(u,v)>, so on the generic set both are T^2).  HOMOGENEOUS CHARGE SEPARATES THE SCHEDULES.
+  This bears on S4 FLAG F1 / CHOICE LEDGER C1, which S4 declared undecidable.
+
+==============================================================================================
+A3.  THEOREM C-1 : THE FORMATION CRITERION AT ARBITRARY EXPONENT DATA
+==============================================================================================
+  Setting: weights p_v>0 on a support S, exponent vectors E_v in Z^2, connection (u,v),
+     Z_k = sum_v p_v u^{k m_v} v^{k n_v},
+     L     = { (m,n) : u^m v^n = 1 }                      (relation lattice)
+     Delta = < E_x - E_y : x,y in S >  <= Z^2             (difference lattice)
+     G     = < chi_x/chi_y : x,y in S > <= U(1)           (W-02's formation group)
+
+  (i)   G = phi(Delta) where phi(m,n) = u^m v^n;  hence  G  =  Delta / (Delta ^ L).
+  (ii)  |Z_k| = 1  <=>  k*Delta  <=  L.
+        [equality in |sum p_v z_v| <= 1 for unit z_v and a strictly positive convex weight
+         holds iff all z_v coincide, i.e. iff phi(k(E_x-E_y))=1 for all x,y in S.]
+  (iii) FORMATION NEVER OCCURS  <=>  Delta <= L  <=>  G = {1}.
+  (iv)  sup_k |Z_k| = 1 is ATTAINED  <=>  G is FINITE (take k = exp(G)); if G is infinite,
+        |Z_k| < 1 for every k but sup = 1 by equidistribution (W-02's recurrence).
+  (v)   rank G = rank Delta - rank(Delta ^ L).
+  (vi)  lambda_B = int_{L^perp} log|Z| dHaar, and since |Z| = |sum p_v chi_{E_v - E_{v0}}|
+        depends only on the images of the DIFFERENCES in Z^2/L -- i.e. only on G --
+             lambda_B  =  int_{Ghat} log| sum_v p_v psi(g_v) | dHaar_Ghat ,  g_v = [E_v - E_{v0}].
+        [restriction L^perp -> Ghat is a surjection of compact groups, so it pushes Haar to Haar.]
+
+  W-02's criterion  FORMATION <=> G != {1}  SURVIVES CHARGE VERBATIM.
+  What fails under charge is S4-1, which COMPUTES rank G from the four corners of a square.
+  (iii) verified: 4000 random (configuration, rational connection) pairs, seed 5150004
+        'Delta <= L' vs '|Z_k| = 1 for k<=60' :  4000 agree, 0 disagree
+
+  (vi) verified on a matched pair -- SAME quotient data, DIFFERENT (charge, lattice):
+     unit charge, L = <(1,1)>            lambda_B = -1.203972804326
+     charge q=(1,2,2,2,2), L = 0 (generic) lambda_B = -1.203972804326
+     |difference| = 0.000e+00    <-- CHARGE AND RESONANCE ARE INTERCHANGEABLE
+     direct schedule-B under charge, N=4e6, (f,c)=(1,sqrt2) : -1.203968932
+     W-03's critic reported -1.200555 for q=(1,2,2,2,2); the converged value is
+     -1.203972804 = m(0.3 z^2 + 0.4 z + 0.3) = log(0.3) (both roots on |z|=1).
+     log(0.3) = -1.203972804326

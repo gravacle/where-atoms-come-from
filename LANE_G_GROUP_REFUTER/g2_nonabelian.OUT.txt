@@ -1,0 +1,115 @@
+seed = 20260816 for every rng below unless stated
+
+==============================================================================
+G2.1  THE COEFFICIENT DICHOTOMY — the exact place abelianness is load-bearing
+==============================================================================
+Z_k = sum_j c_j zeta_j^k  with, for each vertex v,
+     c_{mn} = (s_v^d P)_m (P^d Q)_{mn} (Q^d s_v)_n ,  zeta_{mn} = alpha_m beta_n
+where A_v = P diag(alpha) P^d and B_v = Q diag(beta) Q^d.
+If [A_v,B_v] = 0 then P = Q, so P^d Q = I, so c_{mn} = delta_{mn} |(P^d s_v)_m|^2:
+EVERY coefficient is a NON-NEGATIVE REAL and is a piece of the state's mass.
+If [A_v,B_v] != 0 the off-diagonal coefficients are COMPLEX. Measured:
+  arm A  U(1)xU(1)          #chars=2  max|Im c|=9.083e-18  min Re c=+0.415016  sum c=1.000000000  (matrix dev 8.0e-16)
+  arm B  SU(2) alpha=0.8    #chars=4  max|Im c|=1.384e-01  min Re c=-0.021146  sum c=1.000000000  (matrix dev 7.0e-15)
+
+  --> W-01's convex-hull criterion, S4-1's 'corners of a square', the class-weight
+      multiset theorem and pinch=spectator are ALL theorems about NON-NEGATIVE
+      MASS coefficients indexed by a support. Abelian rank 2 keeps that type.
+      Non-abelian rank 2 destroys it. THIS is what abelianness buys, and it is
+      not something the schedule can supply.
+
+==============================================================================
+G2.2  IS NON-COMMUTATIVITY VISIBLE ONLY AT THE PINCH? (the claim's part (d))
+==============================================================================
+Hold both conjugacy classes fixed, vary ONLY the relative axis angle alpha.
+State (i) puts all mass on the pinch v0; state (ii) puts all mass off it.
+  (i)  all mass ON the pinch   lambda_B over alpha: [-0.536174 -0.478355 -0.472409 -0.494245 -0.497861 -0.552141]
+       spread = 7.973e-02
+  (ii) all mass OFF the pinch  lambda_B over alpha: [-1.122632 -1.057202 -0.968567 -0.924613 -0.926639 -1.043577]
+       spread = 1.980e-01
+  --> CONFIRMED for the transport functional: [W_F,W_C] enters Z_k through the
+      class-(1,1) term and nowhere else, because that is the only term in which
+      both holonomies appear. This half of the claim is a theorem and I could
+      not break it. What I CAN break is 'in the whole construction' -- see G2.6.
+
+==============================================================================
+G2.3  THE DECISIVE CONTROL: what fails at SU(2) that does NOT fail at U(1)x U(1)
+==============================================================================
+W-02's headline: 'FORMATION IS A GROUP-THEORETIC CONDITION ON WHERE THE RECORD
+SITS.' At any ABELIAN group the two holonomies share an eigenbasis, so 'where
+the record sits' has a canonical refinement (vertex class x fibre weight) that
+is fixed BEFORE the connection is chosen. At SU(2) there are two incompatible
+candidate refinements and neither works. Measured, at fibre rank 2 in both arms:
+
+  Family: all mass on the pinch; |components|^2 in W_F's eigenbasis held FIXED
+  at (cos^2 t, sin^2 t) with t = 0.7; only the relative phase psi varies.
+  arm A  U(1)xU(1)     class weights CONSTANT (0,0,0,1); W_F-basis weight CONSTANT 0.584983571
+      lambda_B : [-0.536174 -0.536174 -0.536174 -0.536174 -0.536174 -0.536174]
+      SPREAD   : 0.000000e+00        W_C-basis weight spread: 0.000e+00
+  arm B  SU(2) a=0.8   class weights CONSTANT (0,0,0,1); W_F-basis weight CONSTANT 0.584983571
+      lambda_B : [-0.396007 -0.431027 -0.496129 -0.53071  -0.555059 -0.517589]
+      SPREAD   : 1.590525e-01        W_C-basis weight spread: 7.034e-01
+
+  --> arm A: zero. arm B: not zero. FIBRE RANK, SCALARITY AND THE SPECTRA ARE
+      IDENTICAL IN BOTH ARMS. The only difference is [W_F,W_C]. The support-based
+      content of W-02's criterion survives abelian rank two and DIES at SU(2).
+
+  Can a two-basis refinement rescue it? Search for two pinch states with the SAME
+  class weights, SAME W_F-basis weights and SAME W_C-basis weights, different lambda:
+     pair found, basis-weight mismatch 0.0e+00 :  lambda = -0.146050783  vs  -0.146050764   diff 1.903e-08
+
+==============================================================================
+G2.4  DOES THE ERGODIC/MAHLER SKELETON SURVIVE AT SU(2)? (the claim's part (c))
+==============================================================================
+THEOREM (proved by construction in glib.characters, not asserted): for ANY
+W_F, W_C in U(n), Z_k = sum_j c_j zeta_j^k with at most n^2 * (#classes) terms,
+because the closure of the CYCLIC group {(W_F^k, W_C^k)} in U(n)xU(n) is a
+compact ABELIAN group. Verified numerically at SU(2):
+  #characters = 8   max |char form - matrix action| over k<=120 : 1.044e-14
+  exponent vectors in the eigen-angles (theta, phi) -- read off the characters:
+    [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
+  rank-one U(1) realises 4 exponents (corners of the UNIT square);
+  SU(2) at rank 2 realises the 3x3 box -- a different lattice configuration.
+  schedule-B simulation N=1.5e6 : -1.040345790
+  2-torus Mahler quadrature     : -1.040345871      deviation 8.12e-08
+  --> (c) CONFIRMED, and confirmed more strongly than claimed: the skeleton needs
+      no group at all, only unitarity, and it survives because BOTH BRANCHES USE
+      THE SAME EXPONENT k. But the surviving skeleton is a Mahler measure with
+      COMPLEX coefficients, which is not the object any of the four theorems is
+      about. 'The skeleton survives' and 'the results survive' are different claims.
+
+==============================================================================
+G2.5  WHERE THE SKELETON DOES STOP: a compact group with no generic stratum
+==============================================================================
+Take G finite (compact). Then the relation lattice has rank 2 at EVERY point of
+the parameter space -- S4's 'full-measure generic torus' stratum is EMPTY -- and
+lambda can be exactly -infinity on an open set of states, not on a measure-zero
+exceptional set. Q8 = quaternion group, non-abelian, order 8:
+  Q8  W_F=i, W_C=j (non-abelian)              |Z_k| for k=1..24 has 0 exact zeros -> lambda = -infinity: False
+  Z4  W_F=diag(i,1), W_C=diag(1,i) (abelian)  |Z_k| for k=1..24 has 12 exact zeros -> lambda = -infinity: True
+  --> at a finite compact group the corpus's 'rate defined everywhere off the
+      trivial connection' (W-02) is false: the record functional hits EXACTLY
+      zero at a finite stage. This narrows the box on the OTHER side from the claim.
+
+==============================================================================
+G2.6  'EXACTLY ONE PLACE IN THE WHOLE CONSTRUCTION' — two more places
+==============================================================================
+(1) THE TRANSPORT OPERATOR IS NOT EVEN DEFINED AT NON-ABELIAN G WITHOUT A NEW
+    CONVENTION, AND THE CONVENTION IS NEEDED AT EVERY LOOP VERTEX, NOT THE PINCH.
+    W-01's operator is 'multiply by W(gamma) at vertices on gamma'. At rank one
+    W(gamma) is basepoint-free. At SU(2) it is not. Take the NAIVE reading (use
+    v0's holonomy at all three loop vertices) and gauge-transform at v1 only:
+      NAIVE     transport:  max ||Z_k| - |Z_k^gauged||  over k<=30 = 1.679e-02  -> NOT gauge invariant
+      BASED     transport:  max ||Z_k| - |Z_k^gauged||  over k<=30 = 1.943e-15  -> gauge invariant
+    The gauge transformation was at v1, which is NOT on both loops.
+
+(2) THE GAUGE-INVARIANT PARAMETER COUNT CHANGES, AND S1 sec.4's COUNT IS U(1)-ONLY.
+    Rank of the infinitesimal gauge orbit at a generic connection, measured:
+      SU(2): connection space dim 6*3 = 18, gauge group dim 5*3 = 15,
+             measured orbit rank = 15  ->  invariants = 18 - 15 = 3
+      U(1) : connection space dim 6, gauge dim 5, measured orbit rank = 4
+             -> invariants = 6 - 4 = 2   [S1 sec.4: 2]
+    S1 sec.4 says 'exactly two invariants exist, so the count is saturated and
+    nothing is hidden.' At SU(2) there are THREE. The third is the relative
+    invariant of the pair -- which the claim is right to locate at the pinch, but
+    which S1's sealed, unaudited saturation argument silently forbids.

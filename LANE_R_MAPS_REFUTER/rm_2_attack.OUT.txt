@@ -1,0 +1,143 @@
+==============================================================================
+A1  THE VACUITY THEOREM -- the claim's control could not have failed
+==============================================================================
+
+THEOREM (rm-1).  Let c : K -> K' be any map of vertex sets with
+class_{K'}(c(w)) = class_K(w) for all w  ("class-compatible"), and let
+p' = c_* p, i.e. p'_{v} = sum_{w : c(w)=v} p_w.  Then for EVERY k, EVERY (f,c),
+EVERY schedule and EVERY gauge group action of this construction,
+    Z_k(K', p') = Z_k(K, p)   IDENTICALLY.
+PROOF.  Z_k(K,p) = sum_w u^{k a_w} v^{k b_w} p_w = sum_{(a,b)} u^{ka} v^{kb} pi_{ab}(K,p).
+The carrier enters ONLY through pi (S4 :133-146; W-03: d2 enters nowhere).  Class
+compatibility says c_* commutes with the class map, so pi(K',p') = pi(K,p).  Two equal
+arguments to the same function.  QED -- no computation is possible that returns
+anything but 0.
+
+This is W-03's Control-1 defect verbatim: "pi is unchanged, so lambda is unchanged
+BY IDENTITY. The controls tested nothing."  The corpus now has TWO vacuous controls.
+
+   demonstration: lambda(B1, pi_t) = -0.724759919461
+                  lambda(B1s,pi_t) = -0.724759919461   |dlambda| = 0.0  <- same number twice
+
+   WHAT THE 3.342e-16 MEASURES.  Z_k over 11 vertices vs over 5 vertices is the
+   SAME SUM IN A DIFFERENT ORDER.  The residual is floating-point associativity.
+   seed 31337, 500 random (f,c,k):
+     max|Z_k gap|, naive left-to-right sum : 3.342e-16   (claim reports 3.342e-16)
+     max|Z_k gap|, math.fsum both sides    : 1.570e-16
+     max|Z_k gap|, one side summed reversed: 4.518e-16
+   -> the number moves with summation order and vanishes under exact summation.
+      It is a measurement of IEEE-754, not of the carrier, the map, or topology.
+
+==============================================================================
+A2  THE CLAIM'S OWN EVIDENCE SENTENCE IS FALSE
+    'the map is not unique but the transported class weights ARE'
+==============================================================================
+
+B1s -> B1 un-subdivision: each midpoint m_i sits on a subdivided edge and must be sent
+to ONE of that edge's two endpoints.  6 midpoints -> 2^6 = 64 elementary cellular maps,
+every one of them degree 1 onto B1 and a homotopy equivalence.  The claim checked TWO of
+them, both class-compatible, and concluded the transported weights are unique.
+
+   64 elementary collapses enumerated.  class-compatible: 4.  NOT class-compatible: 60.
+   distinct transported class-weight multisets (x11): 4
+
+      multiset/11  #maps  cls-compat           lambda   |d vs B1s own|
+        (3, 4, 4)     32       False  -0.770928006031        4.617e-02
+        (3, 3, 5)     12       False  -0.742577208967        1.782e-02
+        (2, 4, 5)     16       False  -0.739555032106        1.480e-02
+        (1, 5, 5)      4        True  -0.724759919461        2.220e-16
+
+   -> FALSE. The transported class weights take 4 distinct values over the
+      64 maps; only 4 maps give the claim's (0,5/11,5/11,1/11).
+      max |dlambda| over the elementary collapses = 4.617e-02
+      S4's Control 3 figure                        = 3.181e-02
+      -> the collapse the claim did not check gives a LARGER gap than the one it attacked.
+
+==============================================================================
+A3  THE WALL IS IN THE WRONG PLACE -- B1q -> B1p, a map IS present, lambda MOVES
+==============================================================================
+
+B1q is B1p with the BRIDGE subdivided once (S4 :711).  Same topological space --
+exactly the relation S4's Control 3 calls 'homeomorphic'.  The un-subdivision map
+c : B1q -> B1p exists and is the ONLY kind of map there is: m -> v0 or m -> w0.
+NEITHER is class-compatible: class(m) = (0,0) and B1p HAS NO (0,0) VERTEX.
+
+   B1p classes {(1, 0): 3, (0, 1): 3}   B1q classes {(1, 0): 3, (0, 1): 3, (0, 0): 1}
+   SENSE U:  B1p -0.693147180560   B1q -0.741029582571   |dlambda| = 4.788e-02
+   rank G:   B1p 1 (product only)      B1q 2 (separates)   <- the CRITERION changes too
+   axis-lane recipe, transport along m -> v0 (filled side): pi' = (0.0000,0.5714,0.4286,0.0000)  lambda = -0.559615787935  |d vs B1q own| = 1.814e-01
+   axis-lane recipe, transport along m -> w0 (unfilled side): pi' = (0.0000,0.4286,0.5714,0.0000)  lambda = -0.559615787935  |d vs B1q own| = 1.814e-01
+
+   -> The claim's own recipe, run on the corpus's OTHER homeomorphism pair, returns
+      |dlambda| = 1.8e-01 -- nearly SIX TIMES the 3.181e-02 it set out to explain away.
+      'Once a map is present' is false: the map is present and lambda moves further.
+
+==============================================================================
+A4  THE IDENTITY MAP COUNTEREXAMPLE -- B0a and B0b are the SAME COMPLEX
+==============================================================================
+   d1(B0a) == d1(B0b) and d2(B0a) == d2(B0b) and V,E,F equal : True
+   they differ ONLY in gamma_C:  B0a gC=[6, 7, 8]   B0b gC=[0, 1, 2]
+   SENSE U:  B0a -0.747659833081   B0b -0.810930216216   |dlambda| = 6.327e-02
+   S4's Control 3 figure = 3.181e-02;  this is 1.99x larger.
+
+   The map here is the IDENTITY -- the strongest map that can be present.  It is not
+   class-compatible, because CLASS IS NOT TOPOLOGICAL DATA: it is read off the DESIGNATED
+   LOOPS, which are extra structure the homeomorphism does not carry.  'Class-compatible'
+   therefore does not weaken to 'a map is present'; it presupposes that the two carriers
+   already agree on the thing lambda is a function of.  The claim's condition is its
+   conclusion.
+
+==============================================================================
+A5  THE FAILURE IS NOT 3.181e-02.  WITH MAPS PRESENT THROUGHOUT IT IS ~0.76
+==============================================================================
+
+K1[nF,nC] := K1 with nF extra vertices inserted in the filled loop and nC in the
+unfilled loop.  Every member is HOMEOMORPHIC to K1, and every member admits a
+class-compatible collapse onto K1 (inserted vertices on the filled loop are class
+(1,0); on the unfilled loop, class (0,1) -- send each to a same-class original).
+So a class-compatible map -- the exact object the claim says closes the gap -- is
+present for EVERY member.  Each carrier is then given its OWN canonical state (SENSE U).
+
+      nF    nC      V        p11        p10        p01    lambda(SENSE U)  cc-map?
+       0     0      5   0.200000   0.400000   0.400000    -0.756573585640     True
+       0  1000   1005   0.000995   0.001990   0.997015    -0.002989538848     True
+       1     0      6   0.166667   0.500000   0.333333    -0.693147180560     True
+       1     1      7   0.142857   0.428571   0.428571    -0.741029582571     True
+       2     0      7   0.142857   0.571429   0.285714    -0.559615787935     True
+       3     0      8   0.125000   0.625000   0.250000    -0.470003629246     True
+       3     3     11   0.090909   0.454545   0.454545    -0.724759919461     True
+       5     0     10   0.100000   0.700000   0.200000    -0.356674943939     True
+      10     0     15   0.066667   0.800000   0.133333    -0.223143551314     True
+      10    10     25   0.040000   0.480000   0.480000    -0.707440791599     True
+      10  1000   1015   0.000985   0.011823   0.987192    -0.012890609831     True
+     100     0    105   0.009524   0.971429   0.019048    -0.028987536873     True
+     100   100    205   0.004878   0.497561   0.497561    -0.694916476529     True
+    1000     0   1005   0.000995   0.997015   0.001990    -0.002989538848     True
+    1000  1000   2005   0.000499   0.499751   0.499751    -0.693328383554     True
+
+   all 81 members admit a class-compatible collapse onto K1: True
+   min lambda over the family = -0.756573585640   (at K1 itself)
+   max lambda over the family = -0.002989538848
+   SPREAD over ONE homeomorphism type, maps present throughout = 0.753584
+   S4's Control 3 figure = 0.031810;  ratio = 23.7x
+   sup as nF -> inf with nC = 0 is 0^- : lambda is dense in [-0.756574, 0).
+
+==============================================================================
+A6  THE UNSTATED NORMALISATION -- the claim rediscovered S4's OWN SENSE C row
+==============================================================================
+
+'Transport the state along a class-compatible map' is, by rm-1, EXACTLY 'fix the class
+weights by hand across the two carriers'.  That is S4's SENSE C, definitionally --
+S4 :569: 'SENSE C -- fixed at the CLASS level ... the carrier feeds in only through
+WHICH classes exist.'  S4 printed |diff| = 0.0e+00 for SENSE C on the line IMMEDIATELY
+BELOW the Control-3 line the claim attacks (S4 :702).
+
+   S4 SENSE C, 3 classes (0.4,0.3,0.3): lambda = -0.767507880358 on both, |diff| = 0.0
+   claim's SENSE C', weights (5/11,5/11,1/11): lambda = -0.724759919461 on both, |diff| = 0.0
+   Same statement, different numerical choice of the hand-fixed weights.  The claim
+   contains no information S4 had not already published one line further down, and does
+   not touch S4's SENSE U sentence, which is what Control 3 actually asserts.
+
+==============================================================================
+VERDICT: the claim is REFUTED on A2, A3, A4 and A5 independently.
+==============================================================================

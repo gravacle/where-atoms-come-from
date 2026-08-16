@@ -1,0 +1,154 @@
+
+==============================================================================
+R1.0  THE CLAIM, REPRODUCED EXACTLY (SENSE U = uniform vertex weights)
+==============================================================================
+K1  (as handed, SENSE U)           V=5 E=6 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.4 0.4 0.2] |S|=3 rkG=2 FORMS=True  lA=-1.536645461686 lB=-0.756573585640
+K1/T  (tree collapsed)             V=1 E=2 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0. 0. 0. 1.] |S|=1 rkG=0 FORMS=False lA=+0.000000000000 lB=+0.000000000000
+
+  remaining edges after the collapse: [('e3', 'v0v1v2v3v4->v0v1v2v3v4'), ('e6', 'v0v1v2v3v4->v0v1v2v3v4')]
+  loopF -> [('e3', 1)]    loopC -> [('e6', 1)]
+  |Z_k| on K1/T at 12 random connections, k=1..40:
+    max | |Z_k| - 1 | = 5.218e-15   (so lambda = 0 under EVERY schedule)
+
+==============================================================================
+R1.1  ATTACK 1 -- THE CONTROL COULD NOT HAVE FAILED (vacuous by identity)
+==============================================================================
+THEOREM R-1 (one-vertex vacuity).  Let K' be ANY CW complex with exactly one
+vertex w, rank-one fibre, U(1) connection, and two designated loops.  Then
+  (i) the incidence map v |-> (a_v,b_v) has a one-point image, so |S| = 1 and
+      G = <chi_a/chi_b : a,b in S> = <chi_w/chi_w> = {1}: FORMS = False;
+  (ii) any ready state has p_w = 1, so Z_k = chi_w^k * 1 with |chi_w| = 1,
+       hence |Z_k| = 1 for every k, every connection, every charge, every schedule;
+  (iii) lambda = lim (1/N) sum log|Z_{k_n}| = 0 EXACTLY, for every schedule.
+No property of any MAP, of homotopy type, of Betti numbers, of a chain map, or of
+the tree is used.  The values are properties of the TARGET's vertex count alone. QED
+
+Corollary: the claim's entire evidence block is the statement 'the target has one
+vertex', restated.  This is the corpus's SECOND vacuous control (W-03 convicted S4's
+Control 1 of the same defect).  Demonstrated on three targets that share nothing:
+  (a) K1, all weight on v0         V=5 E=6 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0. 0. 0. 1.] |S|=1 rkG=0 FORMS=False lA=+0.000000000000 lB=+0.000000000000
+  (a) collapsed                    V=1 E=2 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0. 0. 0. 1.] |S|=1 rkG=0 FORMS=False lA=+0.000000000000 lB=+0.000000000000
+  (b) 199-vertex wedge             V=199 E=200 F=0 chi=-1 b=(1, 2, 0) d1d2=0 pi=[0.       0.497487 0.497487 0.005025] |S|=3 rkG=2 FORMS=True  lA=-3.676565626514 lB=-0.694969718658
+  (b) collapsed to 1 vertex        V=1 E=2 F=0 chi=-1 b=(1, 2, 0) d1d2=0 pi=[0. 0. 0. 1.] |S|=1 rkG=0 FORMS=False lA=+0.000000000000 lB=+0.000000000000
+
+  -> identical output (FORMS False, rkG 0, lA 0, lB 0) on a carrier that NEVER
+     formed and on a 199-vertex carrier with no relation to K1.  A control whose
+     output is fixed by the target's vertex count tests nothing about the map.
+
+==============================================================================
+R1.2  ATTACK 2 -- THE WALL IS IN THE WRONG PLACE.  HOMOTOPY EQUIVALENCES SIT ON BOTH SIDES
+==============================================================================
+Every row below is a contraction of ONE edge: a quotient by a contractible
+subcomplex, hence a homotopy equivalence, with the claim's own certificate
+(chain map defect d1.d2 = 0, Betti preserved).  SENSE U weights.
+
+K1  (baseline, SENSE U)            V=5 E=6 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.4 0.4 0.2] |S|=3 rkG=2 FORMS=True  lA=-1.536645461686 lB=-0.756573585640
+  contract e1                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.2 0.4 0.4] |S|=3 rkG=2 FORMS=True  lA=-0.984677740826 lB=-0.756573585640
+  contract e2                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.4 0.4 0.2] |S|=3 rkG=2 FORMS=True  lA=-1.536645461686 lB=-0.756573585640
+  contract e3                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.2 0.4 0.4] |S|=3 rkG=2 FORMS=True  lA=-0.984677740826 lB=-0.756573585640
+  contract e4                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.4 0.2 0.4] |S|=3 rkG=2 FORMS=True  lA=-0.638799552212 lB=-0.756573585640
+  contract e5                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.4 0.4 0.2] |S|=3 rkG=2 FORMS=True  lA=-1.536645461686 lB=-0.756573585640
+  contract e6                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.4 0.2 0.4] |S|=3 rkG=2 FORMS=True  lA=-0.638799552212 lB=-0.756573585640
+
+READ THE TABLE.
+  * contract e2 (merges v1,v2 -- BOTH in class (1,0)) and contract e5 (merges v3,v4
+    -- both in class (0,1)) are HOMOTOPY EQUIVALENCES under which pi, lambda_A and
+    lambda_B are EXACTLY unchanged, bit for bit.
+  * contract e1/e3/e4/e6 are HOMOTOPY EQUIVALENCES under which lambda_A MOVES, while
+    every diagnostic the claim offers is unchanged: Betti (1,1,0), chain-map defect 0,
+    |S| = 3, rank G = 2, FORMS = True.  Formation is fully alive and lambda has moved.
+  => 'homotopy equivalence' is not the wall.  Homotopy equivalences fall on both sides.
+
+==============================================================================
+R1.3  THE MAXIMAL CLASS-PRESERVING COLLAPSE -- the wall is at 3 vertices, not 1
+==============================================================================
+K1 / {e2,e5}  (3 vertices)         V=3 E=4 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.4 0.4 0.2] |S|=3 rkG=2 FORMS=True  lA=-1.536645461686 lB=-0.756573585640
+  pi identical to K1's to the bit: True
+  lambda_A identical to the bit  : True
+  This is the LARGEST subcomplex of the spanning tree whose collapse preserves
+  everything.  The tree T = {e1,e2,e4,e5} contains {e2,e5}; collapsing the OTHER two
+  tree edges is what kills formation.  The claim's wall ('the spanning tree') is two
+  edges too late: the destructive content of the tree collapse is e1 and e4, and each
+  of those, taken alone, leaves FORMS = True.
+
+==============================================================================
+R1.4  ATTACK 3 -- THE NORMALISATION IS DOING THE WORK (SENSE U vs SENSE C)
+==============================================================================
+Same six one-edge contractions, but with the CORPUS'S OWN published ready state
+p = (0.4,0.15,0.15,0.15,0.15) (S3 sec.3.3 / S4 sec.3) instead of uniform:
+
+K1  (baseline, SENSE C)            V=5 E=6 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.3 0.3 0.4] |S|=3 rkG=2 FORMS=True  lA=-0.888503902056 lB=-0.767507880358
+  contract e1                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.   0.15 0.3  0.55] |S|=3 rkG=2 FORMS=True  lA=-0.668575481196 lB=-0.597837000756
+  contract e2                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.3 0.3 0.4] |S|=3 rkG=2 FORMS=True  lA=-0.888503902056 lB=-0.767507880358
+  contract e3                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.   0.15 0.3  0.55] |S|=3 rkG=2 FORMS=True  lA=-0.668575481196 lB=-0.597837000756
+  contract e4                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.   0.3  0.15 0.55] |S|=3 rkG=2 FORMS=True  lA=-0.450577517669 lB=-0.597837000756
+  contract e5                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.3 0.3 0.4] |S|=3 rkG=2 FORMS=True  lA=-0.888503902056 lB=-0.767507880358
+  contract e6                      V=4 E=5 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.   0.3  0.15 0.55] |S|=3 rkG=2 FORMS=True  lA=-0.450577517669 lB=-0.597837000756
+
+  Under the corpus's OWN weights, contracting a single edge moves lambda_B as well as
+  lambda_A -- e.g. e1: -0.767507880 -> -0.597837000756, a shift of 1.697e-01 -- with FORMS = True,
+  |S| = 3, rank G = 2, Betti (1,1,0), chain-map defect 0.  The claim reports lambda_B
+  as surviving every move until the full collapse ONLY because uniform weights make
+  K1's four class weights {0,2/5,2/5,1/5} and the contracted {0,1/5,2/5,2/5} the SAME
+  MULTISET, and lambda_B is a multiset function (W-03, of record).  The claim's silent
+  choice of uniform weights is exactly what hides the earlier wall.
+
+==============================================================================
+R1.5  ATTACK 4 -- TRAFFIC THE OTHER WAY: DESTROY THE HOMOTOPY TYPE, KEEP lambda EXACTLY
+==============================================================================
+K1  (b1=1, homotopy type S^1)      V=5 E=6 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.4 0.4 0.2] |S|=3 rkG=2 FORMS=True  lA=-1.536645461686 lB=-0.756573585640
+K1 + F2  (b1=0, CONTRACTIBLE)      V=5 E=6 F=2 chi=+1 b=(1, 0, 0) d1d2=0 pi=[0.  0.4 0.4 0.2] |S|=3 rkG=2 FORMS=True  lA=-1.536645461686 lB=-0.756573585640
+  chi 0 -> +1, b1 1 -> 0: the homotopy type is destroyed outright (S^1 -> point),
+  the flat holonomy is no longer flat -- and lambda_A and lambda_B do not move by one
+  bit.  So NON-homotopy-equivalences preserve lambda exactly while homotopy
+  equivalences (R1.2) change it.  A wall with traffic in both directions is not a wall.
+  (This is S4's registered CONTROL 1, already ruled VACUOUS BY IDENTITY at W-03.)
+
+==============================================================================
+R1.6  ATTACK 5 -- lambda = 0 AND G = {1} ARE NOT SIGNATURES OF THE COLLAPSE
+==============================================================================
+Uncollapsed K1, connection W_F = W_C = 1 (f = c = 0):
+  |Z_k| for k=1..10 : [np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0)]
+  lambda_A = 0.000000000000   lambda_B = 0.000000000000
+  characters chi_(1,0)=chi_(0,1)=chi_(1,1)=1  ->  G = {1}  ->  FORMS = False
+  The claim's ENTIRE signature -- |Z_k| = 1 for every k, lambda = 0 exactly,
+  G = {1}, FORMS False -- is produced on the UNCOLLAPSED five-vertex carrier by
+  moving the connection to one point of T^2.  The signature reports degeneracy of
+  the CHARACTER SET, not anything about the complex or the map.
+
+==============================================================================
+R1.7  ATTACK 6 -- THERE IS NO MORPHISM OF CARRIERS, SO THERE IS NO 'STOPS AT'
+==============================================================================
+A carrier is (complex, rank-one Hermitian bundle, U(1) connection, ready state).
+The tree collapse psi: K1 -> K1/T is a map of COMPLEXES.  For it to be a map of
+CARRIERS it must carry the state space Gamma(L) = C^V:
+   push  C^5 -> C^1 : no linear isometry exists (rank).                 max rank 1 < 5
+   pull  C^1 -> C^5 : psi^*s has norm sqrt(5)|s(w)|, not |s(w)|.        NOT an isometry
+So the ready state does not transport; the lane must CHOOSE a pushforward of p, and it
+chose summation.  That choice is an IMPORT the corpus does not define.  W-03 already
+records of record: 'No cellular collapse, quotient, or map connects any two of the ten
+complexes.  The family is a LIST.'  The claim's wall is drawn across a morphism that,
+by the corpus's own registered finding, does not exist.
+
+==============================================================================
+R1.8  THE ACTUAL WALL, STATED AND VERIFIED
+==============================================================================
+THEOREM R-2.  Let psi: K -> K' be any cellular map with psi(gamma_F) = gamma'_F,
+psi(gamma_C) = gamma'_C and psi_* p = p'.  Then pi' = pi implies Z'_k = Z_k for every k
+and every connection with matched holonomies, hence lambda' = lambda EXACTLY under
+EVERY schedule.  Conversely lambda moves only when pi moves.  Formation dies iff |S|
+drops to 1, i.e. iff psi merges ALL occupied classes.
+The wall is: 'psi fails to be injective on the occupied loop-incidence classes.'
+It is not homotopy, not homeomorphism, not Betti, not the chain map, not the tree.
+  Z_k(K1) == Z_k(K1/e2) and Z_k(K1/e5) at 400 random (W_F,W_C,k): True
+  (seed 31415926, k drawn uniform on 1..49)
+
+==============================================================================
+R1.9  SUBDIVISION -- THE WALL IS EARLIER STILL (a HOMEOMORPHISM moves lambda)
+==============================================================================
+K1            (SENSE U)            V=5 E=6 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.  0.4 0.4 0.2] |S|=3 rkG=2 FORMS=True  lA=-1.536645461686 lB=-0.756573585640
+K1 subdivided (SENSE U)            V=6 E=7 F=1 chi=+0 b=(1, 1, 0) d1d2=0 pi=[0.       0.5      0.333333 0.166667] |S|=3 rkG=2 FORMS=True  lA=-1.231349605394 lB=-0.693147180560
+  Same topological space, same homotopy type, same everything -- and under the
+  claim's own SENSE U normalisation lambda_A and lambda_B both move.  The earliest
+  wall is not even at a homotopy equivalence: it is at a REFINEMENT OF THE CELL
+  STRUCTURE that changes nothing at all.  (S4 CONTROL 3 already recorded this.)

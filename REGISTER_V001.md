@@ -362,3 +362,130 @@ program's spine would then be an artefact of a convention nobody chose.
 NOBODY AUDITED THEM.** Verified twice at bytes (ERR-1, ERR-2). **The corpus's negatives are not
 more reliable than its positives — they came off the same production line with the same failure
 mode, one floor higher.** Discount an audit finding by the same factor as a build finding.
+
+---
+
+## W-05 — THE TWO DECISIVE TESTS: **NO FIELD. THE CROSSING WAS NEVER NECESSARY. RECOMMENDATION OF RECORD: STOP.**
+
+Both tests W-04 commissioned ran, each verified on two independent lenses (isolation; mathematics).
+
+### ISOLATION HELD ON NEITHER TEST — ALL FOUR VERIFIERS RETURNED "DOES NOT HOLD"
+
+**The action test's positive half is destroyed twice, independently.** Its headline compared two
+carriers "differing only in which triangle the 2-cell is glued to." **`K1^F` and `K1^C` are the
+SAME 2-COMPLEX** — four explicit simplicial automorphisms carry `FACE_F` to `FACE_C`,
+`max|P·D1 - D1·P| = 0.0`. And the entire `0.267` effect is **reproduced bit-for-bit with the face
+never moved**, by the transposition `p10 <-> p01` of the class weights alone, **max deviation
+`0.000e+00` over 400 random `(p,beta)`**. Its declared held-fixed background (weights 0.45/0.15)
+is an unledgered import supplying **100% of the signal**; under every symmetric ready state in the
+corpus the effect is **exactly zero**.
+
+**The scalarity test's headline arm is a four-variable move**, driving the face holonomy from
+S1's published `W_F = -1` to `+1` — **zeroing the curvature on the one carrier built to separate
+curvature from flat holonomy** — with a ready state supported on `v0` alone, so the four non-root
+fibres carry weight exactly zero and the computation reduces to W-04's abstract 2x2 exhibit.
+
+**THIS MAKES FOUR CONSECUTIVE CONFOUNDED HEADLINES: S4's controls (caught by W-03), W-03's SU(2)
+run (caught by W-04), and now BOTH W-05 tests — the last two committed by lanes that had READ the
+conviction and opened with ISOLATION LEDGERS written to prevent it. That is not bad luck. It is a
+property of the production line.** Anything from either test requiring an experiment is WITHDRAWN.
+
+### HAS A FIELD: **NO** — ESTABLISHED, NOT MERELY UNESTABLISHED
+
+For any fixed connection the rate is a deterministic function of `(f,c)` and does not depend on
+`beta` under either schedule. **The action supplies a PRIOR over a fixed background, not a field:**
+no backreaction, no Gauss law, no constraint, no equation of motion. The build's own flag conceded
+it — *"What was built is an ENSEMBLE, not a field. The coupling runs one way."*
+**And the affirmative claim is not merely unsupported, it is INVERTED:** a genuine topological
+change (two 2-cells on one triangle, `chi 0->1`, `b2 0->1`) is **exactly absorbed by
+`beta -> 2*beta`, deviation `0.000e+00`**, while two carriers sharing `chi` and `F` differ by
+`0.349`. **The action did not make topology matter. It made the plaquette COUNT matter, and the
+lane read one for the other.** The "two schedules, opposite verdicts" result is an **order-of-limits
+artefact**: `Omega_1 = Z_1`, so A and B coincide exactly at `N=1` and differ by `C(beta)/N`.
+
+### CROSSING NECESSARY: **NO. IT WAS NEVER NECESSARY.**
+
+**LEG ONE — THEOREM S3-0 IS VACUOUS, WHICH IS WORSE THAN FALSE.** W-01's loop transport
+`M_gamma` is **literally an element of the gauge group `U(1)^V`** —
+`||M_gamma - gauge_op||_F = 0.000e+00` on S1's published connection and over 2000 random ones;
+`max||M* X M - X||_F = 9.7e-16` over 2000 random gauge-invariant `X`. **So S3-0 is the identity
+that gauge-invariant observables are invariant under gauge transformations.** S3's own proof says
+it twice — *"M_gamma is diagonal"* and *"the gauge-invariant algebra is exactly the diagonal"* are
+the same fact. **It could not have failed under any variation of rank, group, scalarity or
+commutativity — which is exactly why it survived the test designed to break it. The program's
+spine is a definition.** Shrink the gauge group to the global U(1) and an ordinary carrier
+observable separates the branches at **2.0000000000000004**.
+
+**LEG TWO — THE SLOT IS ALREADY INSIDE THE CARRIER.** S3 §2.5 specifies `R` as non-abelian,
+holding both branches as PURE states with overlap the cell's comparison value `Z`, `dim_C >= 4`.
+**The compression of `M_5(C)` to `span{M_dF s, M_c s}` supplies exactly that with nothing
+adjoined:** `dim_C = 4`, non-abelian, both branches pure (norms `1.000000000000`), overlap
+agreeing with `Z` to `6.2e-17` — **on GENERIC ready states**, not the root-delta state.
+**S3 proved `dim R >= 4` by the two-non-parallel-vectors argument and then looked for the `C^2`
+outside instead of inside.** What the crossing actually bought was ONE thing: **exemption from an
+undeclared premise.** "The record must be gauge-invariant" (COR-J, sealed) is applied
+**asymmetrically** — fatal inside the complex, waived by fiat outside it, since S3's own F6 says
+*"The record slots carry no gauge action."* The same `M_2(C)` is excluded in the carrier and
+admitted outside it, by a premise waived at the boundary.
+
+**LEG THREE — RECURRENCE DOES NOT FORCE ADJUNCTION, BY S3'S OWN LEDGER.** The obstruction is real
+and is NOT withdrawn: `K1` is finite and closed, `sup|Z_k| = 1`, so no finite stage holds a durable
+record. **But that forces infinitely many CELLS, not an algebra outside the carrier.** S3's CHOICE
+LEDGER C1 considered the adjunction-free system `M_5(C)^(x)N` and recorded it **"LEGITIMATE BUT NOT
+MINIMAL: 24 extra complex dimensions per cell where §2.5 proves 4 is the floor."** It was rejected
+on **a dimension count**, not on necessity. The two alternatives rejected on necessity were killed
+by S3-0 (the tautology) and by `5 ∤ 9, 5 ∤ 7` (an accident of five vertices being prime).
+**Strip the tautology and the prime and nothing forces the crossing at all.**
+
+### THE CONVERSION, HANDLED HONESTLY IN BOTH DIRECTIONS
+
+W-04's condition — *"if the scalarity test returns 'S3-0 FAILS', the recommendation converts to
+STOP"* — **DID NOT TRIGGER ON ITS LETTER. S3-0 SURVIVED**, at rank two, abelian, non-scalar, and
+non-abelian too. **The conversion is made anyway, on a ground W-04 did not anticipate and which is
+strictly stronger: a theorem that FAILS is contentful. S3-0 is VACUOUS.** And the entailment fails
+independently of whether S3-0 is true, because the slot is already in the carrier.
+
+### **RECOMMENDATION OF RECORD: STOP — THE PROGRAM AS CONSTITUTED**
+
+*"The object it was built to explain — a forced crossing out of the carrier — does not exist."*
+**STOP is not "burn it": it is "the thing you were chasing is not there, and here is the real thing
+you found while not finding it."**
+
+### WHAT SURVIVES — THE PUBLISHABLE RESULT
+
+**N1. THE RATE IS A LOGARITHMIC MAHLER MEASURE:**
+`lambda = m(p00 + p10·x + p01·y + p11·xy)` — the per-cell decay rate of a branch comparison on a
+gauge-theoretic carrier is exactly the Mahler measure of the polynomial whose coefficients are the
+ready state's pushforward onto the four loop-membership classes. **The identification is new; it
+inherits the entropy theory of algebraic `Z^d`-actions wholesale.** Six to eight pages, one theorem.
+
+**N2. THE MULTISET / INVISIBILITY THEOREM** with its exact involution — *the one thing in the
+corpus that survived every attack, including this round's.*
+
+**N3. THE NULL, INVERTED AND CORRECTLY STATED:** the rate is invariant under every absolutely
+continuous connection measure, so **no local Wilson action of any form at any finite coupling can
+move it** — because the whole resonance structure lives on a Haar-null set. **Averaging does not
+blur the resonance structure, it DELETES it.** `P(rank L > 0) = 0`.
+
+**N4. THE VACUITY OF THE SPINE**, as a methodological result that generalises past this program:
+**defining transport as scalar multiplication by the holonomy collapses transport into gauge, and
+every "the carrier cannot hold it" conclusion downstream is then a tautology.**
+
+**WITHDRAWN — DO NOT PUBLISH OR CITE:** X1 "the 2-cells enter under an action" · X2 "scalarity
+governs the gate" (the gate is written at rank one, abelian, scalar, at exactly zero — W-01's own
+ruling, reproduced at `3.5e-17`) · X3 T1-2's criterion · X4 "the slot bought rank two" ·
+X5 "two physical clocks."
+
+**REDISCOVERY, ALL UNCITED IN 309,047 SEALED BYTES:** P-9 = the SBS condition verbatim (Korbicz) ·
+P-5 = quantum Darwinism's `R_delta`, P-2/P-3/P-6 the einselection cluster (Zurek) · P-7 = Hepp 1972
+disjointness, the directed system = the Coleman-Hepp model · **"P-1 and P-9 hold in the limit and
+fail at every finite stage with an explicit reversing unitary" IS Bell's 1975 objection to Hepp —
+the corpus's most celebrated result, and it is fifty years old** (and correct: re-derived honestly
+from five vertices, *"a good sign about the machinery and a bad sign about the literature search"*) ·
+the flat holonomy carrying all formation weight at strong coupling = discrete Aharonov-Bohm 1959 ·
+one-qubit-per-cell on a non-factorizing algebra = Donnelly-Wall edge modes ·
+Mahler / Lind-Schmidt-Ward / Lawton 1983.
+
+**THE LEDGER IN ONE LINE:** *the corpus imports its mathematics by name and reinvents its physics
+anonymously, and the reinventions are competent — which is why the honest publication is a short
+mathematical note with six citations, not a foundations paper.*

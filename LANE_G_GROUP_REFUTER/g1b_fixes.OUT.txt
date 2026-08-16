@@ -1,0 +1,39 @@
+==============================================================================
+G1.2-FIXED  W-02's CRITERION AT RANK 2 -- A TEST THAT CAN FAIL
+==============================================================================
+PREDICTION uses ONLY the refined SUPPORT (which (class,weight) indices carry
+mass) and the connection -> G = <chi_a/chi_b : a,b in S>.
+OBSERVATION is lambda_B from a 300000-term schedule-B simulation: formation
+means lambda_B < 0, i.e. |Omega_N| -> 0. These are independent quantities:
+the prediction never looks at a coefficient VALUE, only at whether it is > 0.
+Connections are drawn so that G = {1} happens OFTEN (tuned degeneracies),
+otherwise the control could not fail. Reported: how many of each cell.
+   pred G!={1} & formed : 562
+   pred G!={1} & NOT    : 0   <-- criterion would be REFUTED here
+   pred G=={1} & formed : 0   <-- criterion would be REFUTED here
+   pred G=={1} & NOT    : 38   (the cell that makes this control non-vacuous)
+VERDICT: W-02's criterion survives verbatim at rank-2 U(1)xU(1), with the
+index set refined from vertex-class to (vertex-class x fibre-weight).
+
+==============================================================================
+G1.4-FIXED  PINCH = SPECTATOR, tested as the record states it
+==============================================================================
+The symmetry is p_(a,b) -> p_(1-a,1-b) on ALL FOUR classes at once. K1 has no
+(0,0) vertex, so the test needs a carrier that has all four classes. Test is
+done at the character level, which is carrier-independent.
+  RANK ONE   max |Z_k| deviation over 2000 draws, k in {1,2,3,5,11} : 3.580e-15
+  RANK TWO   same test, generic connection                          : 9.063e-01
+  RANK TWO   restricted to the subfamily u_1 v_1 = u_2 v_2          : 8.549e-15
+VERDICT: pinch=spectator genuinely FAILS at generic rank-2 U(1)xU(1) and
+HOLDS EXACTLY on the subfamily u_1 v_1 = u_2 v_2 -- the same subfamily on
+which 'the root can never fire' also holds. So two of the claim's four
+theorems fail and hold TOGETHER, on a condition that is not 'fibre rank'.
+
+==============================================================================
+G1.4b  WHAT IS THE ACTUAL CONDITION? -- centrally symmetric character set
+==============================================================================
+pinch<->spectator is translation of the exponent set by -(exponent of uv).
+It preserves |Z_k| iff the exponent MULTISET is invariant under x -> e-x for
+e = exponent of uv. Checked directly:
+   rank1 corners of a square                         symmetric? True
+   rank2 generic (two squares in orthogonal planes)  symmetric? False

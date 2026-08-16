@@ -1,0 +1,56 @@
+S5-CHARGE LANE -- PUBLISHED INCIDENCE, GRIDS AND SEEDS
+(S4's failure to publish these is a defect of record; this file discharges it for this lane.)
+
+--- K1 (B1), from S1_CARRIER_K1_V001.md sections 1 and 3 ---
+vertices v0..v4 = 0..4
+edges  e1..e6 = (0,1) (1,2) (2,0) (0,3) (3,4) (4,0)
+face   F      = e1+e2+e3
+d1[v,e] = +1 if v = tgt(e), -1 if v = src(e), 0 otherwise   (rows v0..v4, cols e1..e6)
+   [[-1  0  1 -1  0  1]
+    [ 1 -1  0  0  0  0]
+    [ 0  1 -1  0  0  0]
+    [ 0  0  0  1 -1  0]
+    [ 0  0  0  0  1 -1]]
+d2[e,F] (transposed) = [1 1 1 0 0 0]
+d1 @ d2 = 0 exactly (integer arithmetic).  V=5 E=6 F=1 chi=0 b0=1 b1=1 b2=0
+gamma_F = e1+e2+e3  (cycle: True, bounds: True)
+gamma_C = e4+e5+e6  (cycle: True, bounds: False)
+a_v = [1 1 1 0 0]   b_v = [1 0 0 1 1]
+
+--- the other nine carriers: constructed in s5_E_final.py lines 10-40, each with its own
+    edge list and face list; d1@d2 = 0 asserted in the CW constructor for all ten
+    (max |entry| = 0).  Betti numbers are ranks over Q (numpy matrix_rank); no torsion
+    is present in any of these complexes.  B3's designated cycle was CORRECTED between
+    part C and part D (part C's chain was not a cycle); the corrected chain is
+    {e6:+1, e10:+1, e3:-1}.
+
+--- COORDINATES ---
+u = conj(W_F) = e^{-if},  v = W_C = e^{ic};  theta = (theta_u,theta_v) = (-f, c)
+Z_k = sum_v p_v exp( i k ( -m_v f + n_v c ) ),  E_v = (m_v,n_v) = q_v (a_v,b_v)
+L = { (m,n) : -m f + n c = 0 mod 2pi }   Delta = < E_x - E_y >   G = Delta/(Delta ^ L)
+
+--- GRIDS ---
+Fourier support of |Z_1|^2 : 64 x 64,  f_j = 2 pi j/64, c_k = 2 pi k/64, threshold 1e-9
+charge-vs-multiplicity sup-distance : 48 x 48 on the same convention
+Mahler measure mahler2: EXACT (Jensen, numpy.roots) in y; midpoint quadrature in x with
+   Nx nodes, t_i = (i+0.5)/Nx, x_i = e^{2 pi i t_i}.  Nx stated at every call site
+   (4096 / 8192 / 16384 / 32768).  Where rank Delta <= 1 the routine reduces EXACTLY to a
+   one-variable Mahler measure and no quadrature is used.
+direct schedule-B: (1/N) sum_{n=1}^{N} log|Z_n|, N stated at every call site, float64.
+
+--- SEEDS (numpy.random.default_rng; no implicit/global seeding anywhere) ---
+20260816  corpus reproduction: random section phases and 8 gauge transformations
+5150001   per-edge charge gauge test (2000 samples)
+5150002   charged functional gauge invariance + matrix-vs-closed-form (200 samples)
+5150003   homogeneous charge identity Z_k(q) = Z_{qk} (500 samples)
+5150004   Theorem C-1 (iii) enumeration (4000 random configuration/connection pairs)
+5150010   |Z_1| = |0.4+0.6 cos(f+c)| under q=(1,2,2,2,2) (4000 samples)
+5150020   multiset permutation test
+5150030   E -> t - E symmetry (2000 samples)
+5150040   fill control under 1024 charge assignments (connection draws)
+5150050   winding periodicity under charge (500 samples)
+
+--- FENCE ---
+No quantity on this page is compared to any measured physical constant.  Alpha is not
+engaged: no coupling, no target, no measured number, no target-driven selection.  Every
+number is connection-, charge- and carrier-determined and is fitted to nothing.

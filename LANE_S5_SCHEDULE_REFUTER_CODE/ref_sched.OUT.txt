@@ -1,0 +1,220 @@
+
+==============================================================================
+0.  CARRIER K1 - PUBLISHED INCIDENCE MATRICES (built here, not cited)
+==============================================================================
+d1 (rows v0..v4, cols e1..e6) =
+ [[-1  0  1 -1  0  1]
+ [ 1 -1  0  0  0  0]
+ [ 0  1 -1  0  0  0]
+ [ 0  0  0  1 -1  0]
+ [ 0  0  0  0  1 -1]]
+d2 (rows e1..e6, col F) =
+ [[1 1 1 0 0 0]]  (transposed for display)
+d1 @ d2 = [0 0 0 0 0]    d^2 = 0 : True
+chi = 0   rank d1 = 4   b0 = 1   b1 = 1   b2 = 0
+
+==============================================================================
+1.  THE ONE-CELL OVERLAP Z_k, DERIVED HERE FROM THE TWO LOOP TRANSPORTS
+==============================================================================
+SEED 20260816
+direct diag transport vs closed form, 400 random (f,c,k<60): max dev = 1.503e-14
+=> Z_k = p11 e^{i(th1+th2)} + p10 e^{i th1} + p01 e^{i th2} + p00,
+   with (th1,th2) = k*w,  w = (-f, c),  p11=p_v0, p10=p_v1+p_v2, p01=p_v3+p_v4, p00=0
+   [K1 has NO spectator vertex: p00 = 0]
+
+S1 worked instance f=pi, c=3pi/2 : [(1, np.float64(0.316227766017)), (2, np.float64(0.4)), (3, np.float64(0.316227766017)), (4, np.float64(1.0)), (5, np.float64(0.316227766017)), (6, np.float64(0.4))]
+
+==============================================================================
+2.  G = log|Z| ON THE TORUS; HAAR AVERAGES CHECKED TWO WAYS
+==============================================================================
+GRID: midpoint, M=4000 per axis, theta_j=(j+0.5)*2pi/M
+int_{T^2} log|Z| dHaar   (quadrature)      = -0.767508021
+Cassaigne-Maillot m(0.4+0.3x+0.3y) of record= -0.767507880
+int_H log|0.4+0.6 cos t| dHaar (quadrature) = -1.203972168
+closed form log(0.3) = -1.203972804   (roots of 0.3z^2+0.4z+0.3 both ON |z|=1)
+S4 3.1 table value for L=<(1,1)>            = -1.203972804
+
+==============================================================================
+TEST 1  ***  'B IS THE BARYCENTRE HAAR' IS FALSE AT A CONNECTION S4 ITSELF PUBLISHES
+==============================================================================
+phi = arccos(-2/3) = 2.300523983   (S4 3.1 lists (phi,phi) as an EXACT zero of |Z_1|)
+
+f=c=1.0     generic on the diagonal
+   |Z_k|, k=1..12: [0.724181384 0.150311898 0.193995498 0.007813827 0.570197311 0.976102172 0.852341353 0.31269998  0.146678157 0.103442917 0.402655419
+ 0.906312375]
+   lambda_B at N=     1 : -0.322713388
+   lambda_B at N=     2 : -1.108878106
+   lambda_B at N=     5 : -1.854261943
+   lambda_B at N=    50 : -1.320762951
+   lambda_B at N=  2000 : -1.206199555
+
+f=c=phi     S4's own exact-zero point
+   |Z_k|, k=1..12: [0.          0.333333333 0.888888889 0.185185185 0.691358025 0.596707819 0.153635117 0.941472337 0.231672001 0.082964995 0.991041339
+ 0.071020113]
+   lambda_B at N=     1 : -inf
+   lambda_B at N=     2 : -inf
+   lambda_B at N=     5 : -inf
+   lambda_B at N=    50 : -inf
+   lambda_B at N=  2000 : -inf
+
+f=c=phi/7   zero first hit at k=7
+   |Z_k|, k=1..12: [0.967888083 0.874989584 0.731248332 0.552050351 0.356576942 0.165751525 0.          0.122935636 0.189896387 0.193714793 0.133982133
+ 0.017092173]
+   lambda_B at N=     1 : -0.032638815
+   lambda_B at N=     2 : -0.083091056
+   lambda_B at N=     5 : -0.420901106
+   lambda_B at N=    50 : -inf
+   lambda_B at N=  2000 : -inf
+
+L(f=c=1.0)   = { (m,n) : (n-m)*1.0   = 0 mod 2pi } = Z*(1,1)    [1/2pi irrational]
+L(f=c=phi)   = { (m,n) : (n-m)*phi   = 0 mod 2pi } = Z*(1,1)    [phi/2pi irrational, Niven]
+L(f=c=phi/7) = { (m,n) : (n-m)*phi/7 = 0 mod 2pi } = Z*(1,1)    [same]
+IDENTICAL relation lattice, identical orbit closure H (the full diagonal circle),
+identical Haar_H, identical int_H G = log 0.3.  lambda_B differs: finite vs -infinity.
+Z_1 at f=c=phi   = 0.4+0.6cos(phi) = 0.4+0.6*(-2/3) = 0  EXACTLY. |Z_1| computed = 0.000e+00
+Z_7 at f=c=phi/7 = 0.4+0.6cos(phi) = 0                EXACTLY. |Z_7| computed = 0.000e+00
+
+==============================================================================
+TEST 1b  THE EMPIRICAL MEASURE AT f=c=phi IS EXACTLY THE SAME HAAR AS AT f=c=1.0
+==============================================================================
+f=c=1.0  N=   10000  |Weyl sums| m=1,2,3,7 : ['2.061e-04', '3.632e-05', '8.957e-05', '1.326e-04']
+f=c=1.0  N= 1000000  |Weyl sums| m=1,2,3,7 : ['3.709e-07', '4.159e-07', '5.123e-07', '2.707e-06']
+f=c=phi  N=   10000  |Weyl sums| m=1,2,3,7 : ['1.039e-04', '8.046e-05', '1.872e-04', '6.415e-05']
+f=c=phi  N= 1000000  |Weyl sums| m=1,2,3,7 : ['7.408e-07', '1.337e-06', '2.602e-06', '9.016e-07']
+Both empirical measures -> uniform on the circle.  Same measure, different lambda.
+
+==============================================================================
+TEST 2  SAME LIMITING MEASURE (HAAR on T^2), DELIBERATE FINITE SHIFT IN lambda
+==============================================================================
+connection f=1.0, c=sqrt(2)  (rank L = 0, H = T^2)
+min over k<=4000000 of log|Z_k| = -8.467457  at k=2821971
+cells N = 10000 ; perturbed cells = the 100 perfect squares (density 0.0100 -> 0)
+achieved sum of perturbation targets / N = -0.029987 (design: -0.030000)
+lambda (pure schedule B, same N)  = -0.767503
+lambda (perturbed schedule)       = -0.789814
+difference                        = -0.022310
+Weyl sum m=(1, 0)   perturbed 6.3568e-03   pure B 2.0607e-04
+Weyl sum m=(0, 1)   perturbed 5.5605e-03   pure B 9.4044e-05
+Weyl sum m=(1, 1)   perturbed 6.8516e-03   pure B 3.3441e-04
+Weyl sum m=(2, -3)  perturbed 5.3324e-03   pure B 4.9130e-03
+Both empirical measures converge to Haar on T^2 (the perturbed cells have density
+J/J^2 -> 0, so they cannot move any weak-* limit), yet lambda differs by ~alpha, and alpha
+was CHOSEN.  Taking J -> infinity with alpha fixed makes the difference exact in the limit.
+
+==============================================================================
+TEST 3  lambda EXISTS WHERE THE LIMITING EMPIRICAL MEASURE DOES NOT (EXACT)
+==============================================================================
+f = 2pi/7, c = 4pi/7 ; orbit is the 7 points {k w}, H finite of order 7
+G(k w), k=0..6 : [ 0.                -0.647207517121227 -0.850254362839086 -0.727605211983967 -0.727605211983967 -0.850254362839085 -0.647207517121227]
+G(1w) - G(6w) = 4.441e-16 ;  G(2w) - G(5w) = -4.441e-16 ;  G(3w) - G(4w) = 1.110e-16  (exact by Z(-th)=conj Z(th))
+running lambda at N=1,10,100,1e3,1e4,1e5,265720 : ['-0.647207517121227', '-0.647207517121227', '-0.647207517121226', '-0.647207517121231', '-0.647207517121329', '-0.647207517120150', '-0.647207517119220']
+constant to 2.38e-12  =>  lambda EXISTS and equals G(w) = -0.647207517121227
+   N=      3 : fraction of cells at k=1 = 0.3333  (empirical measure oscillates)
+   N=     12 : fraction of cells at k=1 = 0.7500  (empirical measure oscillates)
+   N=    120 : fraction of cells at k=1 = 0.7500  (empirical measure oscillates)
+   N=   1200 : fraction of cells at k=1 = 0.6833  (empirical measure oscillates)
+   N=  12000 : fraction of cells at k=1 = 0.6151  (empirical measure oscillates)
+   N= 120000 : fraction of cells at k=1 = 0.5536  (empirical measure oscillates)
+   N= 265720 : fraction of cells at k=1 = 0.2500  (empirical measure oscillates)
+The empirical measure has NO weak-* limit (it oscillates between delta_{1w} and
+delta_{6w}); lambda exists and is exact.  The claimed functional is not even total.
+
+==============================================================================
+TEST 4  lambda = 0 AT EVERY CONNECTION - AND WHAT THE SCHEDULE MUST LOOK LIKE
+==============================================================================
+
+S3 headline (11f=20c resonant)                 f=2.000000 c=1.100000
+   record near-recurrences k = [   1    2    4    6   63  154  377 6723] ...
+   deepest |Z_k| reached      = 0.999999999843  (deficiency 1.567e-10)
+   lambda on this schedule, N=40000 : -0.000070796
+   max over the last 10% of cells of ||k_n w||_inf = 2.901e-05  <== LOCKED TO RECURRENCE
+
+rank L = 0                                     f=1.000000 c=1.414214
+   record near-recurrences k = [    1     5    13   138   151   622 10694 29443] ...
+   deepest |Z_k| reached      = 0.999999402845  (deficiency 5.972e-07)
+   lambda on this schedule, N=40000 : -0.000019946
+   max over the last 10% of cells of ||k_n w||_inf = 1.474e-03  <== LOCKED TO RECURRENCE
+
+badly approximable pair                        f=3.883222 c=2.399963
+   record near-recurrences k = [ 1  2  3  5  8 13 21 34] ...
+   deepest |Z_k| reached      = 1.000000000000  (deficiency 1.998e-13)
+   lambda on this schedule, N=40000 : -0.000044618
+   max over the last 10% of cells of ||k_n w||_inf = 9.805e-05  <== LOCKED TO RECURRENCE
+
+K1's own published connection (finite orbit, order 4) f=3.141593 c=4.712389
+   record near-recurrences k = [1 2 4] ...
+   deepest |Z_k| reached      = 1.000000000000  (deficiency 0.000e+00)
+   lambda on this schedule, N=40000 : -0.000051690
+   max over the last 10% of cells of ||k_n w||_inf = 0.000e+00  <== LOCKED TO RECURRENCE
+
+near-trivial                                   f=0.001000 c=0.000600
+   record near-recurrences k = [      1   31415   31416  408407  439823  848230 1288053 2136283] ...
+   deepest |Z_k| reached      = 0.999999999996  (deficiency 3.882e-12)
+   lambda on this schedule, N=40000 : -0.000000000
+   max over the last 10% of cells of ||k_n w||_inf = 4.441e-06  <== LOCKED TO RECURRENCE
+
+THEOREM (proved in the report): lambda = 0 forces ||k_n w|| -> 0 in density, i.e. the
+schedule must sit on the carrier's near-recurrence times.  So lambda = 0 is reachable at
+every connection - and ONLY adversarially, in exactly S3 4.6's sense.
+
+==============================================================================
+TEST 4b  DIRICHLET CERTIFICATE - 2000 RANDOM CONNECTIONS, SEED 777
+==============================================================================
+over 2000 random (f,c): worst deficiency min_over-connections of (1 - max_{k<=2e5}|Z_k|)
+   = 1.834e-05   at (f,c) = (6.145752, 5.714057)
+Dirichlet bound: for any Q there is 1<=k<=Q^2 with ||kf||,||kc|| <= 1/Q, so
+1-|Z_k| = O(1/Q^2) uniformly.  Holds at EVERY connection, resonant or not.
+
+==============================================================================
+TEST 5  THE REACHABLE SET  [inf_H G, 0]  - CONFIRMED, AND NOTHING BELOW IT
+==============================================================================
+f,c = 2pi/gold, 2pi/gold^2 : H = T^2, inf_H G = -infinity (Z has 2 conical zeros)
+   min_{k<=2e6} G = -1.609438   max_{k<=2e6} G = -5.227e-13 (<= 0 always)
+   sup G over T^2 = G(0,0) = 0 exactly ; |Z| <= sum of weights = 1 always
+
+K1's published connection f=pi,c=3pi/2 : orbit closure H is order 4
+   G on H: [ 0.             -1.151292546497 -0.916290731874 -1.151292546497]  => [inf_H G, 0] = [-inf, 0]
+
+two-block schedules k in {2,4} at f=pi,c=3pi/2 (both give |Z|=1) -> lambda = 0 EXACTLY
+   lambda = -0.5  (exact, not a limit: this connection is torsion)
+
+mixed schedules at f=1.0,c=sqrt(2): frequency-theta mix of k=1 and k=3
+   theta=0.00  predicted -1.166126204   computed -1.166126204
+   theta=0.25  predicted -0.997982933   computed -0.997982933
+   theta=0.50  predicted -0.829839661   computed -0.829839661
+   theta=0.75  predicted -0.661696389   computed -0.661696389
+   theta=1.00  predicted -0.493553117   computed -0.493553117
+Every convex combination is realised => the reachable set IS an interval. Its top is 0.
+LOWER BOUND IS FORCED: every k_n w lies in H, so G(k_n w) >= inf_H G, so lambda >= inf_H G.
+
+==============================================================================
+TEST 6  'A IS THE EXTREME POINT delta_w' - THERE ARE COUNTABLY MANY OF THEM
+==============================================================================
+constant schedules k_n = k are ALL extreme (empirical measure = delta_{kw}):
+   k_n =  1 : mu = delta_{1w},  lambda = -0.493553117
+   k_n =  2 : mu = delta_{2w},  lambda = -1.711144636
+   k_n =  3 : mu = delta_{3w},  lambda = -1.166126204
+   k_n =  4 : mu = delta_{4w},  lambda = -0.798766467
+   k_n =  5 : mu = delta_{5w},  lambda = -0.153445432
+   k_n =  6 : mu = delta_{6w},  lambda = -0.500663592
+   k_n =  7 : mu = delta_{7w},  lambda = -0.711826836
+   k_n =  8 : mu = delta_{8w},  lambda = -0.307069117
+   k_n =  9 : mu = delta_{9w},  lambda = -0.845313971
+   k_n = 10 : mu = delta_{10w},  lambda = -0.721742767
+   k_n = 11 : mu = delta_{11w},  lambda = -1.019289340
+   k_n = 12 : mu = delta_{12w},  lambda = -0.551889988
+delta_w is one of infinitely many extreme points; 'A' names the smallest k and nothing else.
+And EVERY probability measure mu on H satisfies mu = int delta_x dmu(x): 'barycentre'
+is a property of every measure, so 'extreme point vs barycentre' does not separate A from B.
+
+==============================================================================
+TEST 7  THE UNSTATED NORMALISATION: PER-CELL vs PER-CIRCUIT
+==============================================================================
+N = 20000 cells, f=1.0 c=sqrt(2)
+per-CELL    : lambda_A = -0.493553117   lambda_B = -0.767498421
+per-CIRCUIT : lambda_A = -0.493553117   lambda_B = -0.000076746
+Under the per-circuit (carrier-time) normalisation B collapses to 0 and A does not:
+the A/B dichotomy REAPPEARS.  The claim's dissolution is normalisation-dependent and
+the normalisation is never stated.
+
+DONE.

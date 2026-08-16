@@ -1,0 +1,97 @@
+
+==================================================================================================
+D0.  CORRECTION AGAINST MY OWN PART C -- B3's DESIGNATED CYCLE WAS NOT A CYCLE.
+==================================================================================================
+  part C used gC = {6:1,11:-1,3:-1} : is_cycle = False.  CORRECTED to {6:1,10:1,3:-1}.
+  gF3 cycle/bounds = True/True   gC3 cycle/bounds = True/False
+  B3 classes = {(1, 1): 1, (1, 0): 2, (0, 1): 2}   (S4 reports {01:2,10:2,11:1} -- identical to K1's profile)
+
+==================================================================================================
+D1.  THEOREM C-3, VERIFIED EXACTLY (reduction to the Delta-basis) NOT BY QUADRATURE.
+==================================================================================================
+     q=(q11,q10,q01)  |det|  reduced (exact route)   unreduced quadrature        dev
+           (1, 1, 1)      1           -0.767507881           -0.767507879    1.5e-09
+           (2, 1, 1)      3           -0.767507881           -0.767507881    6.9e-10
+           (1, 1, 2)      1           -0.767507881           -0.767507879    1.0e-09
+           (3, 2, 2)      8           -0.767507881           -0.767507895    1.4e-08
+           (2, 2, 2)      4           -0.767507881           -0.767507889    8.3e-09
+           (1, 2, 3)      1           -0.767507881           -0.767507880    4.0e-10
+           (2, 1, 3)      5           -0.767507881           -0.767507880    4.0e-10
+           (3, 1, 1)      5           -0.767507881           -0.767507880    2.7e-10
+           (1, 3, 2)      1           -0.767507881           -0.767507879    1.0e-09
+           (2, 3, 1)      5           -0.767507881           -0.767507881    6.9e-10
+  worst deviation between the two independent routes: 1.4e-08
+  ALL EQUAL to m(0.4 + 0.3X + 0.3Y) = -0.767507880.  THEOREM C-3 CONFIRMED EXACTLY.
+
+==================================================================================================
+D2.  BUT K1 IS NOT BLIND TO CHARGE -- CORRECTION TO MY OWN COROLLARY IN PART C.
+     C-3 needs THREE exponent POINTS.  Charge that is inhomogeneous WITHIN a class
+     creates a fourth point, and then the generic schedule-B rate moves.
+==================================================================================================
+  Per-vertex charge on K1, q in {0,1,2}^5 = 243 assignments, p = (0.4,0.15,0.15,0.15,0.15):
+   #distinct exponent points  rank Delta   count   example q
+                           1           0       1   (np.int64(0), np.int64(0), np.int64(0), np.int64(0), np.int64(0))
+                           2           1      14   (np.int64(0), np.int64(0), np.int64(0), np.int64(0), np.int64(1))
+                           3           1       5   (np.int64(0), np.int64(0), np.int64(0), np.int64(1), np.int64(2))
+                           3           2      67   (np.int64(0), np.int64(0), np.int64(1), np.int64(0), np.int64(1))
+                           4           2     112   (np.int64(0), np.int64(0), np.int64(1), np.int64(1), np.int64(2))
+                           5           2      44   (np.int64(0), np.int64(1), np.int64(2), np.int64(1), np.int64(2))
+
+  GENERIC RATES for representative per-vertex charges (Nx = 16384):
+     q= (1, 1, 1, 1, 1)  pts=3 rank=2  lambda_B^gen = -0.767507879   lambda_A(1,sqrt2) = -0.493553117
+     q= (1, 1, 2, 1, 1)  pts=4 rank=2  lambda_B^gen = -0.916290732   lambda_A(1,sqrt2) = -0.747675050
+     q= (1, 1, 2, 1, 2)  pts=5 rank=2  lambda_B^gen = -1.101754524   lambda_A(1,sqrt2) = -1.268623338
+     q= (1, 2, 3, 1, 1)  pts=4 rank=2  lambda_B^gen = -0.916290732   lambda_A(1,sqrt2) = -1.017534306
+     q= (2, 1, 1, 1, 1)  pts=3 rank=2  lambda_B^gen = -0.767507881   lambda_A(1,sqrt2) = -0.532988216
+     q= (1, 2, 2, 2, 2)  pts=3 rank=1  lambda_B^gen = -1.203972804   lambda_A(1,sqrt2) = -3.033397022
+     q= (0, 1, 1, 1, 1)  pts=3 rank=2  lambda_B^gen = -0.767507879   lambda_A(1,sqrt2) = -0.493553117
+     q= (1, 1, 1, 1, 0)  pts=4 rank=2  lambda_B^gen = -0.916290732   lambda_A(1,sqrt2) = -0.351056987
+  SO THE CORRECT COROLLARY IS:  CLASS-HOMOGENEOUS charge is invisible to schedule-B at a
+  generic connection on a 3-class carrier (Theorem C-3).  PER-VERTEX charge is not: it makes
+  the number of exponent points exceed the number of vertex CLASSES, and the class-weight
+  pushforward pi ceases to be a complete invariant.  THIS IS THE SHARPEST BREAK ON THE PAGE:
+  W-03's 'lambda is a function of the multiset of the four class weights' is FALSE under
+  per-vertex charge, because the four classes no longer determine the functional.
+
+==================================================================================================
+D3.  CONTROL 2, DONE HONESTLY (correcting my own part C claim).
+==================================================================================================
+  In part C I wrote that charge on B1p 'reproduces the 0.0634 gap'.  IT DOES NOT, and I
+  record the correction rather than deleting the claim.  With uniform weights B1p's F-side and
+  C-side masses are each exactly 1/2, and |sum over the F side| <= 1/2 whatever the charges,
+  so Jensen's max is pinned at 1/2 and lambda_B^gen = log(1/2) for EVERY charge.  What charge
+  actually does to Control 2 is change the RANK, i.e. the separation, not the value:
+                   q on B1p  rank   lam_A(0.4,2.6)   lam_A(1.5,1.5)  separates?    lam_B^gen
+         (1, 1, 1, 1, 1, 1)     1     -2.648783654     -2.648783654       False -0.693147181
+         (1, 1, 2, 1, 1, 1)     2     -4.612887588     -1.727007300        True -0.693147181
+         (1, 2, 3, 1, 1, 1)     2     -2.054638594     -0.701028089        True -0.693147181
+         (1, 2, 3, 1, 2, 3)     2     -1.018888538     -0.976349441        True -1.163089580
+         (1, 1, 1, 1, 1, 2)     2     -1.187887084     -1.727007300        True -0.693147181
+     Rows 1 and 4 share f+c = 3.0.  At unit charge B1p CANNOT tell them apart (S4's
+     incidence finding).  With charges (1,2,3 | 1,2,3) it tells them apart by 0.30, on a
+     carrier with NO pinch and NO spectator.  AND the last column shows the generic
+     schedule-B rate finally leaves log(1/2) = -0.693147181 when BOTH sides are charged.
+
+==================================================================================================
+D4.  CHARGE x RESONANCE.  DOES 'lambda_B IS A FUNCTION OF L ALONE' SURVIVE?
+==================================================================================================
+  YES for a FIXED exponent configuration -- Pontryagin duality never used the corners.
+  What must be redefined is WHICH lattice: the invariant is not L, it is the pair, through
+  the quotient  G = Delta/(Delta ^ L).  Two checks:
+
+  (a) 143 rational pairs with denominator 12, grouped by L (Hermite basis), under charge:
+     unit charge            143 pairs ->  49 lattice classes, MAX spread inside a class = 0.000e+00, 29 distinct values
+     q=(2,1,1)              143 pairs ->  49 lattice classes, MAX spread inside a class = 0.000e+00, 13 distinct values
+     q=(1,2,2) [rank 1]     143 pairs ->  49 lattice classes, MAX spread inside a class = 0.000e+00, 6 distinct values
+
+  (b) charge and resonance are INTERCHANGEABLE, exhibited as an exact identity:
+     unit charge, L = <(1,1)>            lambda_B = -1.203972804326
+     q=(1,2,2), L = 0 (generic)          lambda_B = -1.203972804326
+     unit charge, L = <(1,0)>            lambda_B = -0.356674943939
+     q=(0,1,1) [pinch charge 0], L=0     lambda_B = -0.767507879061
+     q=(1,1,0) [C charge 0], L=0         lambda_B = -0.767507880712
+     log(0.4) = -0.916290731874   log(0.3) = -1.203972804326
+
+==================================================================================================
+D5.  CHARGE vs LOOP MULTIPLICITY -- S4's CHOICE LEDGER C11, DECIDED.
+==================================================================================================
