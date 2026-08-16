@@ -88,3 +88,71 @@ lineage (custody §4). A failure mode common to that lineage passes through both
 the convex-hull criterion fails on a carrier where it should hold · or the three-way split's
 derivability is shown to depend on K1's particular vertex count rather than on its incidence.
 
+---
+
+## W-02 — DOES A DIRECTED SYSTEM OVER K1 ESCAPE RECURRENCE, AND DOES IT PRODUCE THE NINE? (S3; construction pair. **AUDIT CONFIRMED-WITH-CORRECTIONS — every computable claim reproduced in a fresh independent implementation, no arithmetic error found anywhere.**)
+
+**RULING: THE CROSSING EXISTS. THE LIMIT ESCAPES. SEVEN OF THE NINE HOLD OUTRIGHT; TWO HOLD IN THE LIMIT AND FAIL AT EVERY FINITE STAGE — WHICH IS WHY THE PREDECESSOR RECORDED ONE OF THEM FALSE.**
+
+**THE SYSTEM.** `A_N = M_5(C) (x) M_2(C)^(x)N`, dimension `25·4^N`, embeddings
+`iota_N(X) = X (x) I_2` — verified unital, multiplicative, *-preserving and isometric — with
+`A_infinity = UHF(5·2^inf)`: simple, unital, infinite-dimensional. **Cost: one qubit per cell,
+proved minimal. This is not zero addition.** The record slot is non-abelian by necessity: a
+unitary write onto a reset carrier leaves *pure* slot states, and pure states of an abelian
+algebra have overlap only 0 or 1.
+
+**THE TRAP WAS REAL AND IS DISARMED BY COMPUTATION.** Repeated circuits of one loop span
+**3 dimensions at N=1 and 3 at N=100.** Circuits grow no algebra and escape nothing.
+
+**THE MECHANISM IS NOT WHAT IT LOOKS LIKE, AND THE AUDIT'S CORRECTION IS THE FINDING.**
+The escape is **not** "recurrence is gone" — **the carrier's recurrence is untouched**,
+`sup |Z_k| = 1`. It is **"the record grew."** And the monotonicity theorem carrying the escape
+is a **tautology of any per-cell tensor system**: it holds identically on families that never
+form at all. **All the content sits in the divergence `Sum (1 - z_n) = inf`.**
+
+**AND THE ESCAPE IS CONDITIONAL IN TWO WAYS, NOT ONE.** The build flagged the **cell schedule**
+— an adversarial schedule locked to the carrier's near-recurrences defeats the crossing
+entirely. The audit found the second, flagged nowhere: **the support of the ready state.**
+
+**THE CRITERION, CORRECTED AND PROVED, VERIFIED 10/10 ACROSS ALL FOUR SUPPORT CLASSES.**
+With `u = conj(W_F)`, `v = W_C`, characters `chi_0 = uv`, `chi_F = u`, `chi_C = v`,
+support `S = supp(p)`, and `G = <chi_a/chi_b : a,b in S>`:
+
+```
+FORMATION OCCURS  <=>  G != {1}
+```
+
+`|S|=3 -> G=<u,v>` · `S={0,C} -> <u>` · `S={0,F} -> <v>` · `S={F,C} -> <u/v>` ·
+`|S|=1 -> never`, which **recovers W-01's "the root can never fire" as a special case.**
+**Formation is a group-theoretic condition on where the record sits.**
+
+**THE NINE.** P-2 persistence · P-3 thresholded non-return (**exactly, not asymptotically**) ·
+P-4 recoverability · P-5 redundancy · P-6 asymptotic centrality · P-7 sector-hood ·
+P-8 inductive compatibility — **all HOLD**, each with its computation.
+**P-1 durability-with-irreversibility and P-9 orthogonal reduced supports HOLD IN THE LIMIT AND
+FAIL AT EVERY FINITE STAGE**, exhibited with an explicit reversing unitary at N = 1..5.
+**P-9 is resolved: `||omega_F^N - omega_C^N|| -> 2.000000000000`. The predecessor recorded it
+false because it is a limit property and was evaluated at a finite stage.**
+
+**TRANSPORT (Q5): YES, MULTIPLICATIVELY.** `Phi_{N+1} = Phi_N · Z_{N+1}`, and the difference
+functional is compatible with the embeddings. **Firing is absorbing.** And the limit converts
+W-01's **binary** convex-hull criterion into a **rate** `lambda = -0.766802`, defined everywhere
+off the trivial connection.
+
+**CORRECTIONS THAT MATTER.** A claimed unital embedding of `M_5 (x) M_2^{(x)N}` into
+`M_5^{(x)(N+1)}` is **false for every N**, by the divisibility criterion the same section
+states. And the universal claim that every non-trivial connection forms is **false** — four
+exhibited families never form, one of them **on K1's own published ready state**.
+
+**WHERE THE PROOF IS.** Build `S3_THE_CROSSING_V001.md`
+sha256 `cbf1d79679ca2ecf3ee260e8a6467062e3a93260b2325cfc287c261e9b4469cb`;
+audit `S3_THE_CROSSING_AUDIT_V001.md` per its sidecar. The build self-reported eleven defects
+including a one-character digest error in its own custody block, caught by the pointer rule and
+recorded rather than silently fixed.
+
+**GRADE: ADVERSARIALLY-CHECKED, NOT INDEPENDENTLY-CORROBORATED** (custody §4).
+
+**REOPENS IF:** a schedule condition is found that is carrier-intrinsic rather than adversarial ·
+the ready-state support condition is shown to follow from the incidence rather than being free ·
+the rate `lambda` fails to vary with the connection at S4 · or a lineage-independent lane fails
+to reproduce the character-ratio criterion.
