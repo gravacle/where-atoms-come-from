@@ -1,0 +1,20 @@
+== C1  THE CONTROL: what S3's own (undressed diagonal) test returns on the same branches ==
+  max_v | |x_v|^2 - |y_v|^2 |  (every diagonal / S3-gauge-invariant observable) = 6.939e-18
+  | conj(t_2) t_3 [x] - conj(t_2) t_3 [y] |  (the DRESSED observable)            = 0.384349931183
+  -> W-06's core claim stands independently: the dressed algebra SEES what S3's test cannot.
+
+== C2  HOW DEEP DOES THE NEAR-RETURN GO?  amp*|rho^k - 1|, rho = conj(W_F)/W_C ==
+          K         PUBLISHED (rho=-i)    GENERIC (rho=e^{2pi i/phi^2})
+       1000                  0.000e+00                        2.847e-03   (zeros: 250 vs 0)
+      10000                  0.000e+00                        4.154e-04   (zeros: 2251 vs 0)
+     100000                  0.000e+00                        3.745e-05   (zeros: 6803 vs 0)
+    1000000                  0.000e+00                        3.377e-06   (zeros: 11522 vs 0)
+   10000000                  0.000e+00                        3.057e-07   (zeros: 16359 vs 0)
+  -> published: EXACTLY zero on K/4 cells at every K.  generic: never zero, floor falls like ~1/K.
+
+== C3  THE 52-PARTITION SWEEP — re-run, and its degrees of freedom counted ==
+  partitions swept: 52   (Bell(5) = 52)
+  invariant-count distribution: {np.int64(2): 1, np.int64(3): 10, np.int64(4): 25, np.int64(5): 15, np.int64(6): 1}
+  partitions giving 2 = b1 + #faces : 1  ->  [[[0], [1], [2], [3], [4]]]
+  one-line reason: a k-block subgroup acts through <= k-1 parameters (constants act trivially),
+  so rank <= k-1; rank 4 forces k = 5. THE SWEEP COULD NOT HAVE RETURNED ANY OTHER ANSWER.

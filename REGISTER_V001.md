@@ -634,3 +634,104 @@ only now, inside the one result W-05 offered for publication.** W-04 wrote the a
 downward, and **did not apply it to itself. The chain wrote its own discount and did not take it.**
 **FIVE consecutive layers have each been caught by the next, and the rate has not fallen. Discount
 this layer too.**
+
+---
+
+## W-07 — THE LINEAGE-INDEPENDENT LANE, RUN AT LAST: **THE RECURRENCE OBSTRUCTION WAS MEASURED AT `ord(rho) = 4`. W-06's RESTORATION SURVIVES. W-06's COMPUTATIONAL CONTENT IS NOT ON DISK.**
+
+The lane W-03 specified and nobody ran. All 9 commits of this repo carry `Co-Authored-By: Claude
+Fable 5`; this lane is **Claude Opus 5**, so custody §4's shared-lineage caveat does not apply
+between it and the corpus it audits. Sealed corrections read first, in full, before any computation:
+S3 audit **COR-A…COR-L** including **COR-F** at `S3_THE_CROSSING_AUDIT_V001.md:794`; S2 audit
+**COR-A…COR-H**; **S1 entire**; the erratum against W-02.
+
+**WHERE THE PROOF IS.** `W07_RECURRENCE_ISOLATION_V001.md`
+sha256 `0f84fa564b1324837f2187070db2a2b5184ad13f9e3ff64f0abd8480a4a24397`. Lane code, conventions, seeds, grid
+and outputs: `LANE_W07_RECURRENCE_ISOLATION/`, `SEALS.sha256`, 15 files, all OK.
+
+### W-06 REPRODUCED FIRST, INDEPENDENTLY — TWO OF ITS THREE FIGURES
+
+The dressed observable, rebuilt from S1's own edge transports under the **full** gauge action
+(S1:63 on the connection *and* on the section — the half S3 did not implement), is gauge-invariant
+at `3.600e-16` (W-06: `4.45e-16`) and separates the branches at `0.384349931183` where every
+diagonal S3-gauge-invariant observable returns `6.939e-18`. **S3:187-188 is FALSE, and W-06's
+restoration of S3-0's broad form from VACUOUS to FALSE is CONFIRMED from outside the lineage.**
+And W-06's recurrence figure reproduces exactly: **`1000 of 4000` cells below `1e-9`, min `6.7e-19`.**
+
+### THE FINDING: **`W_F = -1`, `W_C = -i`, `<W_F, W_C> = Z_4`. S1's PUBLISHED CONNECTION HAS FINITE ORDER 4.**
+
+`1000 = 4000/4` is `ord(rho)`, the order of the branch ratio in `U(1)`. **Isolating that one variable
+— carrier, ready state, observable, dressing, `k`-range and code path all held fixed — the effect
+disappears five times out of five:**
+
+```
+ord(rho) = 4  (S1 published)      1000 of 4000 below 1e-9,  min 6.729e-19
+ord(rho) = inf  sqrt2/sqrt3          0 of 4000,             min 1.567e-04
+ord(rho) = inf  random seeds 1,2,3   0 of 4000,             min 1.7e-05 .. 3.1e-04
+```
+
+Scaling to `K = 1e7`: on the published connection the dressed record is annihilated **to exact zero
+on exactly `K/4` cells at every `K`, forever**; off it the separation is **never zero at any `k`**
+and the worst near-return floor falls like `~2pi/K`. **THE OPERATIVE VARIABLE IS `ord(rho)`, FINITE
+VERSUS INFINITE** — not "the connection", which is too coarse to be a finding.
+
+### AND THE SAME CUT ONE LEVEL DOWN, ON THE FOUNDING OBSTRUCTION
+
+`FOUNDING_DESIGN §4` promotes *"a finite discrete spectrum is recurrent"* to the obstruction the
+construction must answer **at the start**. On S1's published connection `sup_k |Z_k| = 1` is
+**ATTAINED**, exactly and periodically — `500000` of `10^6` cells at the published ready state,
+`250000` at a generic one. On a generic connection and on S3/S4's headline `f=2.0,c=1.1` alike it is
+`0.9999999999986` and **`0` cells**: **APPROACHED, never reached.** **COR-E saw half of this and
+labelled the number a lower bound. Nothing in this register distinguishes ATTAINED from APPROACHED,
+and they are different obstructions** — one is absolute, the other is a Diophantine rate question
+nobody has asked. **The corpus has two distinguished connections — S1's, of order 4, and S3/S4's,
+exactly resonant (erratum against W-02) — and both are arithmetically degenerate in different ways.**
+
+### CUSTODY: **W-06 HAS NO ARTIFACT AND NO LANE CODE**
+
+`4.45e-16`, `3*sqrt(3)/10`, `2.221e-16`, `1000 of 4000`, `4.11e-01`, `8.42e-04`, the 52-subgroup
+sweep, the Bell `R_N` transplant, the Schmidt `[1,0]`, the wedge sequence — **every figure W-06
+produced traces to exactly one file: this register.** W-01/W-02 left sealed build+audit artifacts;
+W-03/W-05 left ten lane directories. **W-06 left nothing.** By its own IMP-1 test — *"no digest, no
+file:line, no named ruling makes it flagged, not inherited"* — **W-06's computational content is
+flagged, not inherited, and the disposition of record rests on it.** Mitigating and recorded: two of
+its three figures reproduce exactly from an independent reconstruction, which is not what one expects
+of numbers that were never computed. **`3*sqrt(3)/10` does not reproduce** — a factor `sqrt(3)` needs
+an element of order 3 and `Z_4` has none. Unresolvable while the code does not exist.
+
+### THE 52-PARTITION SWEEP IS A VACUOUS CONTROL
+
+Re-run and the figure is right — `Bell(5)=52`, distribution `{2:1, 3:10, 4:25, 5:15, 6:1}`, unique
+winner the discrete partition. **And it could not have come out otherwise:** a `k`-block subgroup
+acts through at most `k-1` parameters, so `invariants >= 7-k`, so `2` forces `k=5`. One line, no
+sweep. **"Could not have failed" voids a CONTROL** — and this is a control. **W-06's leg (b) is
+void; its leg (a) — `U(1)^V` is the 0-cochain group of the complex S1 §5 already deploys in
+`f = da` — is an argument, not a sweep, and SURVIVES. The gauge-group hypothesis stays refuted.**
+
+### WHAT THIS DOES NOT ESTABLISH — STATED BEFORE THE VERDICT, NOT AFTER
+
+**No durable record is shown.** Generically `|Z_k|` still returns to within `1.4e-12` of complete
+indistinguishability by `k = 10^6`, which may erase a record as thoroughly as exact recurrence.
+**The reading is TWO-WAY** — either the founding obstruction is an artefact of a degenerate
+connection, **or** it survives generically in quantitative form and only the register's phrasing is
+defective. **This lane does not distinguish them and does not score itself as having.** The dressed
+observable is a **reconstruction**, not W-06's code. **And this is layer six**: five layers have each
+been caught by the next and the rate has not fallen. **Discount this one.** Its likeliest failure
+mode is the corpus's recurring one — misnaming the operative variable. It is named `ord(rho)` here.
+
+**GRADE: INDEPENDENTLY-DERIVED (Opus 5 against a Fable 5 corpus), NOT ADVERSARIALLY-CHECKED.** No
+refuter has read it. That is the inverse of every other grade in this corpus, and the missing half
+is the weaker one.
+
+**NOTHING HERE TAKES ANY OF THE PRINCIPAL'S THREE DECISIONS.** It changes the **shape** of the first:
+STOP-FALLS-REBUILD was issued with the recurrence obstruction standing as *"the one thing no
+demolition and no restoration has dented"*, and its rebuild cost line reads *"the untouched
+recurrence obstruction may kill it."* Both are measured at `ord(rho) = 4`.
+
+**REOPENS / NEXT, AND IT IS ONE CALCULATION, NOT A REBUILD:** `lambda = m(p00 + p10 x + p01 y +
+p11 xy)` is the entropy of an algebraic `Z^2`-action; the near-return depth of `|rho^k - 1|` is
+governed by the same arithmetic. **Does the record's growth rate outrun the near-return floor?**
+Both sides are already computed objects here, and it decides whether the founding obstruction
+survives off the degenerate point. **W-07 is superseded if:** a refuter shows the dressed
+reconstruction is not W-06's object · `ord(rho)` is shown not to be the operative variable ·
+or W-06's lane code is produced and contradicts §2.

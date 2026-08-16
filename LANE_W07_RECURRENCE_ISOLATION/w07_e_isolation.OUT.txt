@@ -1,0 +1,28 @@
+== LEG E — THE ISOLATION.  ONE VARIABLE: ord(rho). ==
+  S1 PUBLISHED  a=(pi/3 x3, pi/2 x3)
+    W_F=-1.000000+0.000000j  W_C=-0.000000-1.000000j   W_F==W_C? False
+    rho = +0.000000-1.000000j   arg/2pi = -0.250000000   ORDER in U(1) = 4
+    min D over k<=4000 = 6.729e-19     cells with D < 1e-9 : 1000 of 4000
+
+  GENERIC  sqrt2 / sqrt3            
+    W_F=-0.858216+0.513288j  W_C=-0.112539-0.993647j   W_F==W_C? False
+    rho = -0.413445-0.910529j   arg/2pi = -0.317837245   ORDER in U(1) = None
+    min D over k<=4000 = 1.567e-04     cells with D < 1e-9 : 0 of 4000
+
+  RANDOM seed 1                     
+    W_F=-0.784558-0.620055j  W_C=-0.404014-0.914753j   W_F==W_C? False
+    rho = +0.884170-0.467166j   arg/2pi = -0.077362414   ORDER in U(1) = None
+    min D over k<=4000 = 1.722e-05     cells with D < 1e-9 : 0 of 4000
+
+  RANDOM seed 2                     
+    W_F=-0.704119+0.710082j  W_C=-0.878047+0.478574j   W_F==W_C? False
+    rho = +0.958077-0.286512j   arg/2pi = -0.046247977   ORDER in U(1) = None
+    min D over k<=4000 = 3.095e-04     cells with D < 1e-9 : 0 of 4000
+
+  RANDOM seed 3                     
+    W_F=+0.712708+0.701460j  W_C=+0.772841+0.634600j   W_F==W_C? False
+    rho = +0.995957+0.089832j   arg/2pi = +0.014316520   ORDER in U(1) = None
+    min D over k<=4000 = 3.057e-04     cells with D < 1e-9 : 0 of 4000
+
+  ord(rho) = 4        -> 1000 of 4000, min 6.7e-19.   W-06's registered figure, reproduced.
+  ord(rho) = infinite -> 0 of 4000, five times out of five, min 1.6e-05 .. 3.1e-04.

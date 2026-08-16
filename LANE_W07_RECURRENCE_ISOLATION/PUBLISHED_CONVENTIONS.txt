@@ -1,0 +1,38 @@
+LANE W07 — RECURRENCE ISOLATION — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE.  All 9 commits of this repo carry the trailer `Co-Authored-By: Claude Fable 5`.
+This lane was built and run by Claude Opus 5.  Custody sec4's shared-lineage caveat therefore
+does NOT apply between this lane and the corpus it audits.  This is the lineage-independent
+lane W-03 specified and nobody ran.  It is still ONE lane and it is graded accordingly.
+
+CARRIER K1 — from S1_CARRIER_K1_V001.md sec1, restated:
+  vertices v0..v4 = 0..4, root r = v0
+  EDGES index 0..5 = e1..e6:  e1=(0,1) e2=(1,2) e3=(2,0)  e4=(0,3) e5=(3,4) e6=(4,0)
+  FACE F attached along e1+e2+e3.  FACE_V = {0,1,2}.  CYC_V = {0,3,4}.
+  d1[v,e] = +1 if v=target(e), -1 if v=source(e).  d2^T = [1 1 1 0 0 0].
+  V=5 E=6 F=1  chi=0  rank d1=4  rank d2=1  b0=1 b1=1 b2=0.
+
+CONNECTION.  U_e = exp(i a_e).  W_F = exp(i(a1+a2+a3)), W_C = exp(i(a4+a5+a6))  [S1 sec4].
+GAUGE, FULL ACTION.  a_e -> a_e + theta_target - theta_source   [S1:63]
+                     s_v -> exp(i theta_v) s_v
+  S3 implemented the first line with the connection HELD FIXED; W-06 caught that.  Both move here.
+
+BRANCHES [W-01 / S3].  M_dF multiplies s_v by W_F for v in FACE_V, identity elsewhere.
+                       M_c  multiplies s_v by W_C for v in CYC_V,  identity elsewhere.
+
+DRESSING.  Spanning tree T = {e1: v0->v1, e2: v1->v2, e4: v0->v3, e5: v3->v4}, root v0.
+  t_v = W(tree path v0->v)^{-1} s_v.   Under the FULL gauge action t_v -> exp(i theta_0) t_v,
+  a GLOBAL phase, so every sesquilinear form conj(t_u) t_v is exactly gauge-invariant.
+  The dressed observable used throughout is A_uv[s] = conj(t_u) t_v, built ONLY from S1's own
+  edge transports.  This is a RECONSTRUCTION of W-06's dressed observable: W-06's own code is
+  not on disk (see the register entry).  It is offered as the same object because it reproduces
+  W-06's two registered numbers exactly.
+
+READY STATES.  S1 published: p = (1/2, 0, 0, 1/4, 1/4).  Generic: complex normal, seeded.
+SEEDS.  numpy default_rng.  Master seed 20260816; per-case seeds 1,2,3 where stated.
+GRID.  k = 1..K with K in {4000, 1e3, 1e4, 1e5, 1e6, 1e7} as labelled.
+
+THE ONE VARIABLE.  Across every comparison in this lane the carrier, the ready state, the
+observable, the k-range and the code path are held fixed.  The only thing that moves is the
+ARITHMETIC OF THE CONNECTION — specifically the ORDER of the branch ratio in U(1).
