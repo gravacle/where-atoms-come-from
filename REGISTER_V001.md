@@ -246,3 +246,119 @@ under each; publication of `d1`, `d2`, grid and seed conventions; this erratum e
 
 **REOPENS ON:** the charge run · the SU(2) run · a third loop · a third schedule (only two exist
 anywhere on the page, and the A/B dichotomy may be a knife-edge between two arbitrary choices).
+
+---
+
+## W-04 — THE STEP-BACK: FOUR ERRATA, THE EXPLANANDUM ADJUDICATED, AND THE RESIDUE LOCATED
+
+Nine lanes: archaeology at the bytes, two opposed positions argued at full strength, three judges
+on distinct lenses, an explanandum lane with literature access, a synthesis required to commit to
+one of four recommendations including STOP. **22/22 sidecars verified; 309,047 bytes swept.**
+
+### ERR-1 — S2's CENTRAL CONDITION IS GLOSSED FALSELY, AND THE FALSE HALF PROPAGATED EVERYWHERE
+
+S2 states its gate condition **correctly** at `:414-416` — **(R1)** `dim H >= 2`, **(R2)** `T, T'`
+not both **scalars** — and correctly again at `:514`. It then glosses it at `:421` as *"The
+connection must be non-abelian in its action"* and titles §4.3 *"Rank 2 with a non-abelian
+structure group."* **THE GLOSS IS FALSE.** One line refutes it: `T_F = I`,
+`T_C = diag(1,-1)`, `z = (1,1)/sqrt(2)` gives overlap **exactly 0** with commutator **exactly 0**.
+**An abelian, commuting, non-scalar connection writes the gate.** The only control S2 offered for
+the gloss tested the scalar case — a vacuous control. **The operative variable is SCALARITY, not
+COMMUTATIVITY.** The false half propagated into S3, S4, W-03, and into every lane and judge of
+this synthesis. **This is the single most consequential undetected error in the corpus.**
+
+### ERR-2 — W-03's UNIVERSALITY KILL IS NOT ESTABLISHED (registrar error in reporting)
+
+**SU(2) has no faithful rank-one representation.** The SU(2) run therefore changed the **fibre
+rank**, the **transport's scalarity**, and the **group's commutativity** simultaneously, and the
+resulting `|Z_1|` spread of `0.4247` was attributed to the group alone. **That is a three-way
+confounded control assigned to one factor — structurally the identical defect W-03 convicted S4's
+controls of committing.** W-03's own ruling reads "the controls vary exactly one object" and calls
+that vacuity; its own control varied three and named one. **CORRECTED TEXT OF RECORD:** *the core
+is specific to **scalar transport on a rank-one fibre**; the gauge group was never independently
+varied.* The universality question is **OPEN**, not answered.
+
+### ERR-3 — THE GRAVITATIONAL TERM WAS DROPPED BEFORE ANY CONSTRUCTION, UNRECORDED
+
+`grep -in "gravit"` over all 11 sealed artifacts returns **EXACTLY ONE LINE** in 309,047 bytes:
+`FOUNDING_DESIGN_V001.md:13`, inside the target question. **Zero** in S1, S2, S3, S4, their
+audits, the register, custody. §1 poses a tri-partite target (gravitational, electromagnetic,
+alpha); **§3 declares the object to be the durability map and the gravitational term is simply
+gone.** No register row records the drop. Structurally there is also **no action, no coupling
+constant, no Gauss law, no plaquette weight, no backreaction** anywhere — and *a U(1) connection
+with no action is a fixed background phase assignment, not a field.* **The tri-partite target has
+ZERO of three terms built, not one of three: the electromagnetic term is not banked either.**
+
+### ERR-4 — S1 IS UNAUDITED AND ITS ONE STATED REASON IS FALSE
+
+`S1:43-44` claims K1 is *"the smallest complex carrying one face and one independent cycle at the
+same time."* **False at the bytes:** two triangles sharing an **edge**, one filled — `V=4, E=5,
+F=1`, `chi=0`, `b1=1`, `rank(d2)=1`, **2 invariants** — is K1's complete invariant profile on one
+fewer vertex and one fewer edge, **and it has no pinch.** S1 carries **no CHOICE LEDGER, no
+IMPORT AUDIT, no FLAG BLOCK, no register row, and no paired default-refute audit**, against
+custody §4. **The artifact fixing the carrier, the fibre rank, the gauge group and the
+two-invariant split is the only one in the corpus no adversary ever read.** The pinch itself is
+provenance *"Carrier chosen by the principal, 2026-08-16"* with no reason recorded; the word
+"pinch" enters at S4, retrofitted.
+
+### THE EXPLANANDUM: **PARTIAL-RESIDUE** — MOSTLY SOLVED AND UNRECOGNISED
+
+**The nine crossing properties map one-for-one onto published criteria.** P-5 redundancy is
+quantum Darwinism's `R_delta`. **P-9 is verbatim the Spectrum Broadcast Structure condition
+`rho_k^i rho_k^j = 0`** (Korbicz et al.). P-7 sector-hood is **Hepp disjointness**. And the
+construction meeting them is **the Coleman-Hepp model, with Bell's 1975 objection re-derived as a
+discovery** — S3's "P-1 and P-9 hold in the limit and fail at every finite stage, with an explicit
+reversing unitary" **is Bell's objection**. Corpus literature contact: Zurek **0**, Hepp **0**,
+Bell **0**, Haag **0**, Araki **0**, "superselection" **0**, "decoherence" **1** (an aside).
+**The corpus imports its mathematics by name (Mahler 12, Cassaigne 18, Glimm 2, Lawton 1) and
+reinvents its physics anonymously.**
+
+### THE RESIDUE — REAL, AND NOT WHAT THE PROGRAM WAS CHASING
+
+**In a gauge theory the physical (gauge-invariant) algebra does not factorize into system and
+environment. Every version of the decoherence / einselection / quantum-Darwinism account
+presupposes a given tensor factorization — so on gauge-invariant ground it has no place to
+stand — and nothing in the literature or in this corpus DERIVES which adjoined boundary degrees
+of freedom constitute the record rather than stipulating them.**
+
+**S2 Theorem 2's no-factorization result IS that non-factorization, and the one-qubit-per-cell
+adjunction IS the edge-mode construction** (Donnelly-Wall; Donnelly-Giddings) — which exists
+precisely because a gauge theory's Hilbert space must be extended to factorize. **The program
+arrived there from a direction that field does not take, did not recognise it, and did not stay.**
+It arrived by way of **5 being prime**, not by way of the constraint. Corpus occurrences of
+"edge mode", "entangling", "Gauss law", "constraint" in the gauge sense: **0**.
+
+### WHAT K1 WAS
+
+**Inert.** The complex is invisible to the functional. Everything that mattered was decided in
+**four unledgered choices laid on top of it**: (i) **rank-one fibres** (S1 §3, an inherited
+predecessor convention) — which *entails* U(1) and entails S2's no-go; (ii) **loop transport as
+scalar multiplication** rather than edge-by-edge parallel transport — the entire content of
+Theorem S3-0, already refuted in scope by the corpus's own sealed **COR-F**, which exhibits a
+bona fide non-diagonal unitary transport `T` around the same cycle with `T^3` exactly W-01's
+operator; (iii) **no action on the 2-cells** — the complete and trivial explanation of "topology
+is inert"; (iv) **five vertices being prime** — which forced the central architectural move.
+**U(1) was never chosen.** It is the connected automorphism group of a one-dimensional Hermitian
+space; the group follows by necessity from the fibre. The U(1)-versus-SU(2) question is malformed.
+
+### RECOMMENDATION OF RECORD: **NARROW**
+
+Publish the one real result — *formation is a function of exactly the weight multiset and the
+relation lattice, blind to topology, to incidence labels and to the pinch, with pinch and
+spectator exchanged by an exact symmetry* — **with the Hepp / Bell / Zurek / SBS /
+Aharonov-Bohm / Lind-Schmidt-Ward placements it lacks.** Enter these errata. Run **exactly two
+cheap decisive tests**: (1) **THE ACTION TEST** — write any action (`beta*Re(W_F)`) and sample the
+connection; if `lambda` moves the program has a field for the first time, and if it does not the
+construction is provably a statement about a fixed background phase; (2) **THE SCALARITY TEST** —
+re-run the S2 gate and Theorem S3-0 at **rank two under U(1)xU(1)**, abelian by construction,
+commutator exactly zero, non-scalar. **And rename the project.** Confidence HIGH on the diagnosis.
+
+**IF THE SCALARITY TEST RETURNS "S3-0 FAILS", THE HONEST RECOMMENDATION CONVERTS TO STOP** — the
+program's spine would then be an artefact of a convention nobody chose.
+
+### THE FINDING THAT GOVERNS HOW EVERYTHING ABOVE IS WEIGHED
+
+**THE AUDITS COMMITTED THE EXACT DEFECT THEY CONVICTED THE BUILDS OF, AT THEIR OWN HEADLINE, AND
+NOBODY AUDITED THEM.** Verified twice at bytes (ERR-1, ERR-2). **The corpus's negatives are not
+more reliable than its positives — they came off the same production line with the same failure
+mode, one floor higher.** Discount an audit finding by the same factor as a build finding.
