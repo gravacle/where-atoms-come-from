@@ -1,0 +1,119 @@
+================================================================================================
+A1.  IS THE CLAIM'S SUPPORTING CHECK CAPABLE OF FAILING?   (homogeneous charge, 5/6/4)
+================================================================================================
+The claim's evidence for 'S4-1 holds verbatim for homogeneous charge' is the 5/6/4
+enumeration re-run at q = 1,2,3,4.  Re-run here at every q in -12..12, q != 0:
+  every q in -12..12 (q!=0) gives exactly 5 / 6 / 4 : True
+  PROOF that it could not have done otherwise:  x -> q*x is a Q-linear ISOMORPHISM
+  of Q^2 for every q != 0, so Delta(q*S) = q*Delta(S) and rank is preserved for EVERY
+  point configuration on EVERY carrier -- not just the square.  Check on 3000 random
+  integer configurations, comparing rank at q=1 against rank at q=2,3,5,-7:
+  configurations whose rank moved under homogeneous charge: 0 of 12000
+  ==> THE CHECK IS VACUOUS BY IDENTITY.  It is the same defect W-03 convicted S4's
+      CONTROL 1 of committing (a control that varies nothing the functional reads).
+
+================================================================================================
+A2.  'HOLDS VERBATIM FOR ANY HOMOGENEOUS q != 0' -- BROKEN BY EXACT ARITHMETIC.
+================================================================================================
+S4-1 concludes about G = <chi_x/chi_y> <= U(1): 'rank 2', and for |S|=2 'G = <u>' etc.
+W-01/S2's formation criterion is a statement about G:  formation <=> G != {1}.
+Take the connection (f,c) = (pi,pi), K1's three classes, weights (0.4,0.3,0.3):
+   q=1:  |Z_k| for k=1,2,3,5,7 = ['0.200000', '1.000000', '0.200000', '0.200000', '0.200000']   G = {+1,-1}   formation: True
+   q=2:  |Z_k| for k=1,2,3,5,7 = ['1.000000', '1.000000', '1.000000', '1.000000', '1.000000']   G = {1}   formation: False
+   q=3:  |Z_k| for k=1,2,3,5,7 = ['0.200000', '1.000000', '0.200000', '0.200000', '0.200000']   G = {+1,-1}   formation: True
+   q=4:  |Z_k| for k=1,2,3,5,7 = ['1.000000', '1.000000', '1.000000', '1.000000', '1.000000']   G = {1}   formation: False
+   q=6:  |Z_k| for k=1,2,3,5,7 = ['1.000000', '1.000000', '1.000000', '1.000000', '1.000000']   G = {1}   formation: False
+  EXACT: u = v = e^{i pi} = -1.  chi_(1,1)=(uv)^q=1, chi_(1,0)=u^q, chi_(0,1)=v^q.
+  q EVEN  ->  all three characters equal 1  ->  G = {1}  ->  |Z_k| = 1 for every k,
+  lambda = 0 EXACTLY, NO FORMATION EVER -- while |S| = 3 and rank Delta = 2.
+  q ODD   ->  G = {+1,-1} != {1}, formation occurs, |Z_1| = 0.2, lambda_A = log(0.2).
+  ==> homogeneous charge 2 DESTROYS formation at a connection where charge 1 has it.
+      S4-1's conclusion and the criterion it feeds are NOT invariant under homogeneous
+      charge.  'Holds VERBATIM for any q != 0' is FALSE.
+  Same break on the |S|=2 table: S={1,u} at u = e^{2 pi i/q} gives G = <u^q> = {1},
+  where the table asserts G = <u> (order q).  Verified exactly:
+     q=2: u = e^(2 pi i/2), <u> has order 2, but <u^q> = {1} (|u^q - 1| = 2.45e-16)
+     q=3: u = e^(2 pi i/3), <u> has order 3, but <u^q> = {1} (|u^q - 1| = 5.26e-16)
+     q=5: u = e^(2 pi i/5), <u> has order 5, but <u^q> = {1} (|u^q - 1| = 2.08e-16)
+
+================================================================================================
+A3.  THE WALL IS NOT AT CHARGE 1 EITHER: S4-1 FAILS AT UNIT CHARGE ON THE CORPUS'S
+     OWN HEADLINE CONNECTION (f,c) = (2.0, 1.1).
+================================================================================================
+  L = {(m,n) : -m f + n c = 0 mod 2pi}.  At f=2.0, c=1.1:  -m*2 + n*1.1 is RATIONAL,
+  so it lies in 2pi Z only when it is 0, i.e. -20m + 11n = 0, i.e. L = <(11,20)>.
+  check: -11*2.0 + 20*1.1 = 0.0  (this is the S3 audit's resonance)
+  Unit charge, full support: Delta = Z^2, so Delta ^ L = L, rank 1.
+  G = image of Z^2 under (m,n) -> e^{i(-2m + 1.1n)} = e^{0.1 i (-20m + 11n)};
+  gcd(20,11) = 1 so {-20m+11n : m,n in Z} = Z and G = <e^{0.1 i}> = Z, RANK 1.
+  S4-1 asserts rank G = 2 whenever |S| >= 3.  Here |S| = 3 and rank G = 1.
+  Numerical corroboration -- the orbit (u^k,v^k) fills a 1-dimensional subgroup:
+     max dist of 11*theta_u + 20*theta_v from 0 mod 2pi over k<=2e5 : 5.821e-10
+     (a 2-dimensional orbit would have this equidistributed on [0,pi])
+  ==> at UNIT CHARGE, on the connection S3 and S4 actually work at, S4-1 is FALSE.
+
+================================================================================================
+A4.  'FAILS THE MOMENT THE CHARGE IS INHOMOGENEOUS' -- REFUTED BY CENSUS.
+================================================================================================
+  (a) the claim's own parameter space: class-constant charge (r,s,t) in {-3..3}^3
+      r on class (1,1), s on class (1,0), t on class (0,1).
+      assignments: 343;  with 3 DISTINCT exponent points: 324;
+      of those, rank Delta <= 1 (S4-1 broken): 6
+      the failing set: [(-2, -1, 2), (-2, 2, -1), (-1, -2, -2), (1, 2, 2), (2, -2, 1), (2, 1, -2)]
+      INHOMOGENEOUS assignments in the same box: 336 of 343
+      fraction of inhomogeneous assignments that break S4-1: 6/336 = 0.0179
+  (b) the ACTUAL charge space of K1: per-vertex q in {-3..3}^5 (charge is a per-vertex
+      fibre weight -- it need not be constant on a class).
+      assignments: 16807;  with >=3 distinct exponent points: 16764;
+      of those, rank Delta <= 1: 66   (0.394% of them)
+      INHOMOGENEOUS q in the box: 16800;  breaking S4-1: 66 = 0.393% of them
+  ==> inhomogeneity is nowhere near sufficient.  The failure locus is a thin set.
+
+================================================================================================
+A5.  WHERE THE WALL ACTUALLY IS -- THEOREM R-1, DERIVED AND THEN CHECKED EXHAUSTIVELY.
+================================================================================================
+  THEOREM R-1.  On K1 with per-vertex charges q = (q0; q1,q2; q3,q4), let S be the set
+  of DISTINCT exponent points.  Then |S| >= 3 and rank Delta(S) <= 1 hold iff exactly
+  one of:
+     (A) AXIAL / LINEARLY degenerate:  q0 = 0, and either
+         (q3=q4=0, q1 != q2, q1 q2 != 0)  or  (q1=q2=0, q3 != q4, q3 q4 != 0);
+     (B) HARMONIC / AFFINELY degenerate:  q1 = q2 = s != 0, q3 = q4 = t != 0,
+         q0 != 0, and  1/q0 = 1/s + 1/t   (equivalently s t = q0 (s+t)).
+  PROOF SKETCH.  Points are (q0,q0),(q1,0),(q2,0),(0,q3),(0,q4).  If a line contains
+  two distinct nonzero points of the x-axis it IS the x-axis, forcing q0 = 0 and the
+  y-axis points to the origin: case (A).  Otherwise q1=q2=s, q3=q4=t and the line
+  through (s,0),(0,t) is x/s + y/t = 1, which contains (q0,q0) iff q0/s + q0/t = 1.
+  EXHAUSTIVE CHECK over q in {-6..6}^5  (371293 assignments): mismatches = 0
+  Consequences, all immediate from R-1:
+   * homogeneous q0=q1=q2=q3=q4=q!=0 gives case (B) condition q*q = q*2q, i.e. q=0.
+     So homogeneity IS sufficient for S4-1's rank clause -- but only in the rank sense,
+     and A2 shows the rank sense is not what S4-1 states.
+   * the failure locus in Z^5 has codimension >= 2 (A: 3 linear conditions;
+     B: 2 linear + 1 quadratic).  'Fails the moment charge is inhomogeneous' is false.
+   * case (A) needs a class ZEROED OUT, i.e. it is a SUPPORT collapse dressed as charge.
+
+================================================================================================
+A6.  ARE THE TWO COUNTEREXAMPLES 'THE SAME PHENOMENON'?  NO -- AND ONE IS OFF-CARRIER.
+================================================================================================
+   (1,1),(2,0),(0,2):  rank Delta = 1   rank of the LINEAR span of E = 2
+   (1,0),(2,0),(3,0):  rank Delta = 1   rank of the LINEAR span of E = 1
+   They differ in the linear rank, and that decides WHAT lambda sees:
+     (1,0),(2,0),(3,0): every character is a power of u   -> |Z_k| depends on f ONLY.
+     (1,1),(2,0),(0,2): characters span rank 2, ratios rank 1 -> |Z_k| depends on f+c ONLY.
+   checked, 2000 random (f,c), seed 70251103:  |Z_1|(f,c) vs |Z_1|(0,f+c) for ex1: 6.66e-16;   |Z_1|(f,c) vs |Z_1|(f,0) for ex2: 0.00e+00
+   In S4-1's own vocabulary ex1 'sees the PRODUCT' and ex2 'sees W_F only' -- two
+   DIFFERENT rows of the table S4-1 was replaced for.  Not the same phenomenon.
+   AND: (1,0),(2,0),(3,0) needs THREE vertices of class (1,0).  K1 has TWO.
+   per-vertex charges on K1 realising exactly {(1,0),(2,0),(3,0)}: 0
+   The K1-realisable axial case always contains the ORIGIN, e.g. q=(0,1,2,0,0) -> [(np.int64(0), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(2), np.int64(0))]
+
+================================================================================================
+A7.  DOES lambda ACTUALLY MOVE?  THE ONE NUMBER THE CLAIM'S FAMILY IS CARRIED BY.
+================================================================================================
+  generic connection (f,c) = (1.0, sqrt2), weights (0.4, 0.3, 0.3), N = 2e6:
+     unit charge   E = [(1, 1), (1, 0), (0, 1)]  lambda_B = -0.767507297
+     q=(1,2,2,2,2) E = [(1, 1), (2, 0), (0, 2)]  lambda_B = -1.203963982
+     q=(0,1,2,0,0) E = [(np.int64(0), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(2), np.int64(0))]  lambda_B = -0.356675076
+  and at the resonant corpus connection (2.0, 1.1), unit charge, N = 2e6:
+     lambda_B = -0.767014774
+     (S3 audit of record: subtorus value -0.767014993; generic torus -0.767507880)

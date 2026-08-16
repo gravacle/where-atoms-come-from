@@ -1,0 +1,61 @@
+LANE G — GROUP AXIS REFUTER — PUBLISHED CONVENTIONS
+(W-03 convicted S4 of failing to publish d1, d2, grid and seed conventions.
+ Everything S4 withheld is here.)
+
+CARRIER K1 — vertices v0..v4 = 0..4, root r = v0.
+EDGES (source,target), index 0..5 = e1..e6:
+    e1=(0,1) e2=(1,2) e3=(2,0)   e4=(0,3) e5=(3,4) e6=(4,0)
+FACE F attached along the 1-chain e1+e2+e3.
+
+d1 (5x6), d1[v,e] = +1 if v = target(e), -1 if v = source(e):
+   [[-1  0  1 -1  0  1]
+    [ 1 -1  0  0  0  0]
+    [ 0  1 -1  0  0  0]
+    [ 0  0  0  1 -1  0]
+    [ 0  0  0  0  1 -1]]
+d2 (6x1), transposed:  [1 1 1 0 0 0]
+d1 @ d2 = [0 0 0 0 0].  V=5 E=6 F=1  chi=0  rank d1=4  rank d2=1  b0=1 b1=1 b2=0.
+
+LOOPS  gamma_F = e1,e2,e3 forward (vertices {0,1,2});
+       gamma_C = e4,e5,e6 forward (vertices {0,3,4}).
+VERTEX CLASS (a,b) = (on gamma_F ?, on gamma_C ?).  K1: (1,1)={v0}, (1,0)={v1,v2},
+(0,1)={v3,v4}, (0,0)=empty.
+
+FIBRE  C^n at every vertex (n=1 recovers S1).  Connection U_e in U(n).
+BASED HOLONOMY at w on a loop: traverse the loop's cyclic order from w.
+  W^(v0)(gamma_F) = U_e3 U_e2 U_e1  (rightmost acts first).
+TRANSPORT OPERATOR  (M_gamma s)(v) = W^(v)(gamma) s(v) if v on gamma, else s(v).
+  At n=1 all based holonomies coincide and this is exactly W-01's operator.
+  At n>1 the BASED reading is the unique gauge-covariant one; the NAIVE reading
+  (use v0's holonomy at every loop vertex) is implemented and shown NOT gauge
+  invariant in g2_nonabelian.py G2.6.
+
+BRANCH OVERLAP  Z_k = <M_F^k s, M_C^k s> = sum_v s_v^d A_v^k B_v^k s_v,
+  A_v = (W_F^(v))^d if v on gamma_F else I ;  B_v = W_C^(v) if v on gamma_C else I.
+  At n=1: Z_k = (uv)^k p_(1,1) + u^k p_(1,0) + v^k p_(0,1) + p_(0,0),
+  u = conj(W_F), v = W_C.  Exponent vectors in (f,c): (-1,1), (-1,0), (0,1), (0,0).
+
+CHARACTER DECOMPOSITION (exact, any n, any group):
+  A = P diag(alpha) P^d, B = Q diag(beta) Q^d  =>
+  s^d A^k B^k s = sum_{m,n} (s^d P)_m (P^d Q)_{mn} (Q^d s)_n (alpha_m beta_n)^k.
+  If [A,B] = 0 then P = Q, P^d Q = I, and every coefficient is delta_{mn}|(P^d s)_m|^2
+  -- a NON-NEGATIVE REAL piece of the state's mass.
+
+SCHEDULES  A: k_n = 1.  B: k_n = n.  lambda = lim (1/N) sum_n log|Z_{k_n}|.
+  Also run: k_n = n^2, n-th prime, Fibonacci, and S3 sec.4.6's adversarial schedule.
+
+MAHLER ROUTES (both mine, cross-checked):
+  mahler1_jensen  : Jensen's formula, log|lead| + sum_{|root|>1} log|root|.
+  mahler_box      : m(A(x) + y B(x)) = (1/2pi) int log max(|A|,|B|) dx, ngrid = 2000001
+                    (Jensen in y first -- removes the log singularity that made a
+                    plain 2-D midpoint grid err by 1.5e-2 on m(0.5+0.5z)).
+  mahler_torus    : plain 2-D midpoint grid, ngrid as stated per call.
+
+GRIDS AND SEEDS — every rng is numpy.random.default_rng(seed):
+  g0  20260816, 7771        g1  20260816, 31337, 99, 4242, 606
+  g2  20260816, 11, 5, 808  g2b 2718      g3  (deterministic)  g4 1234, 99
+  n=3 two-basis root scan: 241 x 241 phase grid, Newton-polished to residual 0.0.
+  Haar averages at n=3: Monte Carlo, 4e6 draws, seed 4004.
+
+FENCES: no quantity anywhere in this lane is compared to any measured physical
+constant. Alpha is not named, sought, fitted or approached.

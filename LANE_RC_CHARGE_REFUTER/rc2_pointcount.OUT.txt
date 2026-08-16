@@ -27,9 +27,12 @@ RC-2b  THE POINT-COUNT WALL
    alphabet [1, 2, 3]   -> distinct-point-count histogram {3: 27, 4: 108, 5: 108}
    alphabet [-1, 0, 1]  -> distinct-point-count histogram {1: 1, 2: 14, 3: 72, 4: 112, 5: 44}
    alphabet [1, 2, 4]   -> distinct-point-count histogram {3: 27, 4: 108, 5: 108}
-   NOTE: no 3-element alphabet gives 44 assignments reaching 5 points.
-   {1,2,3} gives 108; {0,1,2} gives 24.  The claim's 44/243 is not reproducible
-   under any charge alphabet of size 3 on K1.
+   FINDING: 44 of 243 reproduces EXACTLY -- but ONLY for the alphabet {0,1,2},
+   i.e. ONLY IF ZERO CHARGE IS ADMITTED.  For {1,2,3} the answer is 108 of 243.
+   So the claim's own enumeration universe silently contains q_v = 0, while its
+   wall (1) is stated for 'any single integer q != 0'.  UNSTATED NORMALISATION.
+   And the count does not only go 3 -> 5: on {0,1,2} it also goes 3 -> 2 (14 cases)
+   and 3 -> 1 (1 case).  'takes that count from 3 to 5' reports one direction of three.
 
 --- IS 'point count == class count' NECESSARY for pi to be complete?  NO.
    q = [0, 0, 0, 1, 1]:  exponent points [(0, 0), (0, 1)]  -> |points| = 2 < 3 classes

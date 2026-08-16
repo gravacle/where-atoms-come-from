@@ -1,0 +1,46 @@
+==============================================================================
+RC-4  THE CRITERION, THE LOCUS, AND d2
+==============================================================================
+
+--- 4.1  CRITERION SWEEP.  Random charges x connections, generic AND on-locus.
+   880 (charge, connection) pairs tested, K = 50000 circuits each
+   criterion mismatches: 0
+   ==> Delta(S) not-subset L reproduces formation/non-formation with NO exceptions.
+       I COULD NOT BREAK THE CRITERION.
+
+--- 4.2  NON-FORMATION LOCUS.  Unit charge vs charge, full support.
+   unit charge: Delta = <(0,1),(1,0)> = Z^2 -> non-formation iff L = Z^2 iff f=c=0.
+   120x120 grid on T^2, unit charge: non-forming grid points = 1  (a POINT)
+   q=[1, 2, 2, 2, 2] Delta = <(1,-1)>   generator g=(1, -1)  content d=1
+       -> locus = { f + c = 0 mod 2pi/1 } : 1 DISJOINT PARALLEL CIRCLES
+   q=[2, 4, 4, 4, 4] Delta = <(2,-2)>   generator g=(2, -2)  content d=2
+       -> locus = { f + c = 0 mod 2pi/2 } : 2 DISJOINT PARALLEL CIRCLES
+   q=[3, 6, 6, 6, 6] Delta = <(3,-3)>   generator g=(3, -3)  content d=3
+       -> locus = { f + c = 0 mod 2pi/3 } : 3 DISJOINT PARALLEL CIRCLES
+   q=[0, 0, 0, 0, 0] Delta = {0}        generator g=(0, 0)  content d=0
+       -> locus = ALL of T^2 : formation NEVER happens, anywhere
+   ==> 'grows from a point to a CIRCLE' is the d=1 case only.  q=(2,4,4,4,4) gives
+       TWO circles, q=(3,6,6,6,6) gives THREE, q=0 gives the WHOLE TORUS.
+       And the corpus ALREADY has a circle at UNIT charge: the S3 audit's
+       S = {F,C} row, G = <u/v>, trivial iff W_F.W_C = 1.  Verified:
+       unit charge, support {F,C} (p_0 = 0): non-forming grid points = 360
+       -> a CIRCLE, at unit charge, already of record in W-02.  Charge did not
+          introduce the one-parameter family; it moved it to full support.
+
+--- 4.3  d2 UNDER CHARGE.
+   d2 appears in: R.d2_matrix() only.  Search the formation pipeline for it:
+   lines mentioning d2 in rclib.py:
+       d2 : C_2 -> C_1 , 6 x 1, d2[e,F] = coefficient of e in boundary of F
+       def d2_matrix():
+       d2 = np.zeros((E, 1), dtype=int)
+       d2[0, 0] = 1
+       d2[1, 0] = 1
+       d2[2, 0] = 1
+       return d2
+   Z_closed / Z_direct / lambda_B_* take (k, f, c, q, p) and A_INC/B_INC only.
+   A_INC, B_INC are read off gamma_F and gamma_C -- 1-CHAINS.  d2 enters NOWHERE.
+   ==> d2 is inert under every charge.  TRUE -- and TRUE BY THE SAME IDENTITY
+       W-03 already convicted.  Calling this 'confirmed on a second, INDEPENDENT
+       axis' is the vacuous-control move itself: an axis that cannot touch d2
+       supplies no independent evidence that d2 is inert.  The claim reproduces
+       the exact defect it inherits as settled.

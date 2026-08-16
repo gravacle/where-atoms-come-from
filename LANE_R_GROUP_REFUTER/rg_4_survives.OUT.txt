@@ -1,0 +1,33 @@
+==============================================================================
+S1.  THE CONTAINMENT.  supp(z) subset UNION_(a,b) a(-Lambda) x b(Lambda).
+==============================================================================
+
+  PROOF.  A(x) = V_A diag(e^{i wA_j x}) V_A^{-1} with wA in -Lambda, and
+  B(y) likewise with wB in Lambda.  Every term of
+     <s_v, A(x)^a B(y)^b s_v> = SUM_{j,m} c_{jm} e^{i(a wA_j x + b wB_m y)}
+  carries an exponent (a wA_j, b wB_m).  There are no others.   QED
+  The CLAIM's formula is therefore a correct UPPER BOUND.  It is not an
+  equality, and every kill in rg_1/rg_2 exploits the gap.
+
+   2400 random configurations, containment violations: 0
+   THE CONTAINMENT HELD EVERYWHERE.  I could not break it.
+
+==============================================================================
+S3.  A SINGLE OCCUPIED CLASS CAN ALREADY FORM (the claim's true half).
+==============================================================================
+   SU(2), non-commuting, ONE class (1,1): support [(-1, -1), (-1, 1), (1, -1), (1, 1)], rank 2
+   lambda (Haar T^2, 4096^2) = -0.513572285455   < 0 => FORMATION
+   SU(2), COMMUTING,     ONE class (1,1): support [(-1, 1), (1, -1)], rank 1
+   lambda (Haar T^2, 4096^2) = -0.223143551314   < 0 => FORMATION
+
+   BOTH FORM.  So the claim's 'a single occupied class already' is right about
+   FORMATION and wrong about RANK.  The corrected statement:
+
+     a single occupied class suffices for FORMATION as soon as the transport
+     on that class's fibre is NON-SCALAR (two distinct weights);
+     it suffices for RANK 2 only when the two holonomies additionally FAIL TO
+     COMMUTE and the ready state is not an eigenvector of either.
+
+   That is a three-condition statement.  The CLAIM states one condition, and
+   the one it states (d = 2) is not among the three.
+

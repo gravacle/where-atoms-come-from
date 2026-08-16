@@ -1,0 +1,95 @@
+==============================================================================
+A1.  d = 2 IS NOT SUFFICIENT.  RANK-TWO FIBRE, SCALAR REPRESENTATION.
+     Structure group U(1); fibre C^2; representation chi (+) chi,
+     weight set Lambda = {1,1}, i.e. rho(W) = e^{i theta} I_2.
+==============================================================================
+  d = 1, U(1) unit charge, SENSE C
+     support (3): [(-1, 0), (-1, 1), (0, 1)]
+     rank G = 2   
+  d = 2, SCALAR rep chi(+)chi, SENSE C, RANDOM fibre directions
+     support (3): [(-1, 0), (-1, 1), (0, 1)]
+     rank G = 2   
+     supports identical: True
+     lambda(d=1) = -0.767507880865116
+     lambda(d=2) = -0.767507880865116      |difference| = 1.110e-16
+
+  THEOREM A1 (proved, not sampled).  If rho(W_F) = e^{if} I_d and
+  rho(W_C) = e^{ic} I_d then
+     <s_v, rho(W_F)^{-ka} rho(W_C)^{kb} s_v> = |s_v|^2 e^{ik(-af+bc)}
+  identically, so Z_k is the d=1 functional with p_v = |s_v|^2 and EVERY
+  conclusion of S4-1 holds verbatim at every d.  The fibre DIRECTION
+  cancels exactly -- S4 section 2's cancellation survives d=2 unharmed.
+  Exhaustive check of the S4-1 enumeration at d = 2, scalar rep:
+     rank2 = 5  rank1 = 6  rank0 = 4   [S4-1 predicts 5 / 6 / 4]   MATCH: True
+
+==============================================================================
+A2.  d = 2 IS NOT NECESSARY.  S4-1 FAILS AT d = 1 UNDER CHARGE.
+     Structure group U(1), rank-ONE fibres, SCALAR transport, ABELIAN.
+     Per-vertex charge q_v: the fibre at v carries the rep z -> z^{q_v}.
+==============================================================================
+
+  A2a.  THE CHARGE VECTOR ALREADY OF RECORD, q = (1,2,2,2,2), SENSE C.
+  q = (1,2,2,2,2), classes {(1,1),(1,0),(0,1)} all occupied
+     support (3): [(-2, 0), (-1, 1), (0, 2)]
+     rank G = 1     <-- |S| = 3 OCCUPIED CLASSES
+     S4-1 predicts rank 2 for |S| = 3.  COMPUTED rank = 1.
+     S4-1 FALSIFIED AT d = 1: True
+     lambda (Haar T^2, 4096^2) = -1.203747547055
+     lambda (direct N=4e5)     = -1.203965379921
+     EXACT: Z_k = e^{ik(c-f)}(0.4 + 0.6 cos k(f+c)), so
+       lambda = m(0.3 + 0.4 z + 0.3 z^2) = log(0.3) = -1.203972804325936
+       (both roots of 0.3z^2+0.4z+0.3 lie ON |z|=1: product = 1,
+        discriminant = -0.200 < 0, so Jensen gives log 0.3)
+     dev(Haar, exact)   = 2.253e-04
+     dev(direct, exact) = 7.424e-06
+
+  A2b.  THE STRONGER HALF: |S| = 1 AND FORMATION OCCURS ANYWAY.
+        All weight on ONE class, (1,0) = vertices v1,v2, charges 1 and 2.
+  |S| = 1 (only class (1,0) occupied), charges q_v1=1, q_v2=2
+     support (2): [(-2, 0), (-1, 0)]
+     rank G = 1     <-- S4-1 says G = {1}, NO FORMATION EVER
+     G != trivial: True   -> FORMATION OCCURS.
+     lambda (Haar) = -0.692977955174   EXACT Jensen: log max(0.5,0.5) = -0.693147180559945
+     dev = 1.692e-04
+     S4-1's |S| = 1 clause -- 'there is no formation, ever' -- IS FALSE
+     at d = 1, rank-one fibre, U(1), scalar transport, abelian group.
+
+==============================================================================
+A3.  THE PROPOSED REPLACEMENT IS FALSE WHERE THE CLAIM EXTENDS IT.
+     CLAIM: 'A single occupied class already generates rank 2', and
+     'the character support is a(-Lambda_F) + b(Lambda_C)' (a product).
+==============================================================================
+
+  A3a.  ABELIAN G = U(1), d = 2, weight set Lambda = {1,2}.
+  single occupied class (1,1)
+     support (2): [(-2, 2), (-1, 1)]
+     rank G = 1   
+     CLAIM's product set a(-Lambda)+b(Lambda) = [(-2, 1), (-2, 2), (-1, 1), (-1, 2)]  -> rank 2
+     TRUE support = [(-2, 2), (-1, 1)]  -> rank 1.  CLAIM OVER-COUNTS BY 2 MODES.
+     'A single occupied class already generates rank 2' is FALSE here: True
+
+  A3b.  SU(2) -- THE CLAIM'S OWN GROUP -- WITH COMMUTING HOLONOMIES.
+  single occupied class (1,1), both axes = z
+     support (2): [(-1, 1), (1, -1)]
+     rank G = 1   
+     CLAIM's product set {-1,+1} x {-1,+1} = 4 points -> rank 2
+     TRUE support = [(-1, 1), (1, -1)]  -> rank 1.
+
+  A3c.  SU(2) NON-COMMUTING: the claim's headline IS true here.
+  single occupied class (1,1), axes z and x
+     support (4): [(-1, -1), (-1, 1), (1, -1), (1, 1)]
+     rank G = 2   
+     -> the headline is a statement about the NON-COMMUTING LOCUS only.
+
+  A3d.  AND EVEN THERE IT DEPENDS ON THE READY STATE, NOT THE GROUP.
+        Same non-commuting SU(2), single class, fibre direction = an
+        eigenvector of A (i.e. of rho(W_F)).
+  s_v = eigenvector of rho(W_F)
+     support (2): [(-1, -1), (-1, 1)]
+     rank G = 1   
+     rank 1, not 2, at the SAME group, SAME representation, SAME class.
+     The CLAIM's replacement is indexed by (occupied classes, Lambda).
+     The true support is also a function of the READY STATE's fibre
+     DIRECTIONS -- a variable that does not exist at d = 1 and which
+     W-03 ALREADY RECORDED as moving the observable ('six ready states
+     with identical class weights give |Z_1| spread 0.4247').

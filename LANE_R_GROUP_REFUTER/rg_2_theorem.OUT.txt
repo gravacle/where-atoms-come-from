@@ -1,0 +1,94 @@
+==============================================================================
+T1.  THEOREM.  COMMUTING HOLONOMIES => SINGLE CLASS => rank G <= 1.
+==============================================================================
+
+  PROOF.  Let rho(W_F), rho(W_C) commute and lie in a common one-parameter
+  subgroup, so in a common eigenbasis  A(x) = diag(e^{-i w_j x}),
+  B(y) = diag(e^{+i w_j y})  with the SAME integer weight vector w.  For a
+  vertex of class (a,b),
+
+      <s_v, A(x)^a B(y)^b s_v> = SUM_j |s_{v,j}|^2 e^{i w_j (-a x + b y)}
+
+  -- the mixing matrix V_A^{-1} V_B is the identity, so no (j,l) cross term
+  survives.  Every mode is w_j.(-a,b): they are COLLINEAR.  With one occupied
+  class every mode lies on the single line R.(-a,b), so the difference lattice
+  has rank <= 1.   QED
+
+  The CLAIM's formula a(-Lambda_F) + b(Lambda_C) is the MINKOWSKI PRODUCT set,
+  which assumes the (j,l) cross terms all survive.  That assumption is exactly
+  non-commutativity.  So the CLAIM's replacement is not a d-statement at all.
+
+  EXHAUSTIVE CHECK, all abelian, all d, single occupied class (1,1):
+     d = 1..5, 1000 random integer weight sets, single class:  MAX rank G observed = 1   (theorem says <= 1)
+
+  AND FOR SU(2) WITH COMMUTING HOLONOMIES, 200 random axes/angles:
+     MAX rank G observed = 1   (theorem says <= 1)
+
+==============================================================================
+T2.  THE CORRECT GENERAL SUPPORT FORMULA -- THREE SELECTORS.
+==============================================================================
+
+      supp(z)  =  UNION over occupied classes (a,b) and vertices v in that class
+                  of  { ( a*wA_j , b*wB_m ) :
+                         (1) wA_j in the weight set of A, wB_m of B     [WEIGHTS]
+                         (2) (V_A^{-1} V_B)_{jm} != 0                   [MIXING]
+                         (3) (s_v* V_A)_j (V_B^{-1} s_v)_m != 0      [READY STATE] }
+
+  The CLAIM keeps selector (1) and drops (2) and (3).  Selector (2) is what
+  distinguishes abelian from non-abelian and is therefore the whole content of
+  the "group axis".  Selector (3) does not exist at d = 1 (a phase, cancelled --
+  S4 section 2) and is a genuinely new free variable at d >= 2; the corpus has
+  ALREADY recorded it as load-bearing (W-03: 'six ready states with identical
+  class weights give |Z_1| spread 0.4247').  A taxonomy that omits (3) cannot
+  be the replacement for S4-1, because S4-1 was a COMPLETE classification and
+  its replacement is not even a function of the same arguments.
+
+  Demonstration that all three selectors bite, non-commuting SU(2),
+  single occupied class (1,1), axes z and x:
+     generic direction          support [(-1, -1), (-1, 1), (1, -1), (1, 1)]  rank 2
+     eigenvector of rho(W_F)    support [(-1, -1), (-1, 1)]  rank 1
+     eigenvector of rho(W_C)    support [(-1, -1), (1, -1)]  rank 1
+
+==============================================================================
+T3.  lambda IS NOT A FUNCTION OF THE CLAIM'S LATTICE.
+     Same class weights, same (theta_F,theta_C) = (2.0, 1.1)-generic,
+     same 8-point support, same rank-2 lattice; only the ANGLE BETWEEN
+     THE TWO SU(2) AXES moves.  seed 20260816 for fibre directions.
+==============================================================================
+    axis angle  #chars  rank G     lambda (Haar 4096^2)
+          90 deg       8       2          -1.086399140663
+          75 deg       8       2          -1.101940830462
+          60 deg       8       2          -1.118745001792
+          45 deg       8       2          -1.136712165027
+          30 deg       8       2          -1.148310933149
+
+   support identical across all rows: True
+   lambda SPREAD over the SAME lattice = 0.061912
+   -> the CLAIM's lattice fixes rank, and rank alone is not S4-1's
+      content: S4-1's |S| = 2 CASE LIST said WHICH holonomy lambda sees.
+      There is no analogue of that list here.  The replacement replaces
+      a complete classification with a rank bound.
+
+==============================================================================
+T4.  'H = T^2' IS FALSE AT RESONANCE.  THE FFT IS ON THE AMBIENT TORUS.
+     S3's headline connection f = 2.0, c = 1.1 satisfies -11f + 20c = 0.
+==============================================================================
+   support [(-1, 0), (-1, 1), (0, 1)], rank on the AMBIENT T^2 = 2
+   relation: -11f + 20c = 0.000000000000000  -> the character (11,20)
+   is trivial on the orbit, so the closure H is a 1-TORUS and
+   dual(H) = Z^2 / <(11,20)> = Z, in which EVERY subgroup has rank <= 1.
+   direct lambda at (f,c) = (2.0,1.1), N =   200000: -0.767026255
+   direct lambda at (f,c) = (2.0,1.1), N =   800000: -0.767017235
+   direct lambda at (f,c) = (2.0,1.1), N =  3200000: -0.767015650
+   generic-torus (Haar) value                    : -0.767507904
+   register erratum of record: subtorus -0.767014993 ; generic -0.767507880
+   -> two different numbers.  The rank computed on the ambient T^2 is not
+      the rank on the closure, and the CLAIM labels its FFT 'on the
+      closure H'.  This is the SAME defect the register's ERRATUM AGAINST
+      W-02 already convicted S3 of, repeated one level up.
+
+==============================================================================
+T5.  1-D HIGH-RESOLUTION CONFIRMATION OF THE A2 EXACT VALUES.
+==============================================================================
+   A2a  (1/2pi) int log|0.4 + 0.6 cos t| dt = -1.203973687899   vs log(0.3) = -1.203972804326   dev 8.84e-07
+   A2b  (1/2pi) int log|0.5 + 0.5 e^{it}| dt = -0.693147015301   vs log(0.5) = -0.693147180560   dev 1.65e-07

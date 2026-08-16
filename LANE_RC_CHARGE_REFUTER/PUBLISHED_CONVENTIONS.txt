@@ -1,0 +1,67 @@
+LANE_RC_CHARGE_REFUTER -- PUBLISHED CONVENTIONS
+(published in full because W-03 convicted S4 of failing to publish these)
+
+CARRIER K1 (S1_CARRIER_K1_V001.md, seal verified this session)
+  V=5 E=6 F=1.  edges (source,target):
+    e1 (v0,v1)  e2 (v1,v2)  e3 (v2,v0)  e4 (v0,v3)  e5 (v3,v4)  e6 (v4,v0)
+  face F attached along e1.e2.e3.
+
+d1 (5x6), d1[v,e] = +1 if e targets v, -1 if e sources v:
+   [[-1  0  1 -1  0  1]
+    [ 1 -1  0  0  0  0]
+    [ 0  1 -1  0  0  0]
+    [ 0  0  0  1 -1  0]
+    [ 0  0  0  0  1 -1]]
+d2 (6x1), column F:   [1 1 1 0 0 0]^T
+d1 @ d2 = 0 (verified).  rank d1 = 4, rank d2 = 1, b0=1, b1=1, b2=0, chi=0.
+
+LOOPS AND INCIDENCE VECTORS
+  gamma_F = e1.e2.e3   -> a = (1,1,1,0,0)
+  gamma_C = e4.e5.e6   -> b = (1,0,0,1,1)
+  a_v, b_v in {0,1}: a vertex visited twice counts once (S4 choice-ledger C11).
+
+HOLONOMIES.  f = a1+a2+a3, c = a4+a5+a6.  u := conj(W_F) = e^{-if}, v := W_C = e^{ic}.
+
+CHARGE CONVENTION (declared, the only one used)
+  q_v in Z at each vertex.  (M_gamma s)(v) = W(gamma)^{q_v} s(v) if v on gamma, else s(v).
+  q_v = 1 for all v recovers S4 exactly.
+  EXPONENT VECTOR  E(v) = q_v * (a_v, b_v) in Z^2.
+  Z_k = <M_F^k s, M_C^k s> = sum_v u^{k E(v)_1} v^{k E(v)_2} p_v ,  p_v = |s_v|^2.
+  (First argument of the inner product is conjugated: numpy vdot convention.)
+
+LATTICES
+  Delta(S) = < E(a) - E(b) : a,b in supp(p) >   <= Z^2
+  L        = { (m,n) in Z^2 : u^m v^n = 1 }     <= Z^2
+  membership test tolerance 1e-9 on (-m f + n c) mod 2pi
+
+SCHEDULES
+  A: k_n = 1,  lambda_A = log|Z_1|
+  B: k_n = n,  lambda_B = lim (1/N) sum_{n=1..N} log|Z_n|   (the canonical clock)
+
+lambda_B ESTIMATORS (three, cross-checked)
+  (1) direct schedule-B partial average, N as stated per line, chunked 200000
+  (2) 2-D MIDPOINT grid on T^2: theta_j = (j+0.5)*2pi/n, j=0..n-1, n as stated
+      (n = 2400 / 3000 / 6000 per line)
+  (3) exact: 1-variable Mahler measure via Jensen (m = log|lead| + sum_{|root|>1} log|root|)
+      or, for m(p0+p1x+p2y), Jensen in y: m = mean_theta log max(|p0+p1 e^{i theta}|, p2),
+      midpoint rule with 4e6 or 8e6 nodes.
+  (4) rank L = 2: exact finite average over the orbit period T.
+
+GENERIC CONNECTION used throughout: f = 1.0, c = sqrt(2).  rank L = 0 verified by
+exhaustive search over |m|,|n| <= 120 with tolerance 1e-9.
+
+SEEDS (all numpy default_rng)
+  rc0_validate.py   11223344   (closed-vs-direct cross-check, 4000 trials)
+  rc1               none (deterministic enumeration)
+  rc2               987654321  (unused in the reported figures; enumeration is exhaustive)
+  rc3               24681357   (200 random 3-point exponent triples)
+  rc4               1357924680 (10% subsample of {0,1,2,3}^5 charges)
+  rc5               none (deterministic)
+  Z_direct default internal seed 20260816 unless overridden.
+
+TOY_SEPARATION
+  ACTUAL SURFACE: K1 with per-vertex charge; every lambda_B, every lattice, every
+  enumeration in rc0-rc5 except where marked.
+  ILLUSTRATION: the carrier "K1+" in rc3 section 3.3 (K1 plus a pendant vertex v5 on
+  neither loop) -- used only to exhibit that a spectator's exponent point is (0,0)
+  under every charge.  No lambda is computed on it and nothing depends on it.

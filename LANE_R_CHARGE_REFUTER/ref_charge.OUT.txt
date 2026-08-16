@@ -1,0 +1,192 @@
+==================================================================================================
+0.  K1 REBUILT FROM S1 SECTION 1 -- INCIDENCE PUBLISHED
+==================================================================================================
+d1 (rows v0..v4, cols e1..e6) =
+ [[-1  0  1 -1  0  1]
+ [ 1 -1  0  0  0  0]
+ [ 0  1 -1  0  0  0]
+ [ 0  0  0  1 -1  0]
+ [ 0  0  0  0  1 -1]]
+d2^T (cols e1..e6) = [[1 1 1 0 0 0]]
+d1 @ d2 = [0 0 0 0 0]   (exact integer)
+V=5 E=6 F=1  chi=0  rank d1=4 rank d2=1  b0=1 b1=1 b2=0
+a_v = [1 1 1 0 0]   b_v = [1 0 0 1 1]    (a=on gamma_F, b=on gamma_C)
+gamma_F is a cycle: True  gamma_C is a cycle: True
+
+==================================================================================================
+1.  CORPUS REPRODUCED BEFORE DEPARTURE (unit charge)
+==================================================================================================
+unit-charge exponent vectors E_v: [(np.int64(1), np.int64(1)), (np.int64(1), np.int64(0)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1)), (np.int64(0), np.int64(1))]  -> classes (1,1):v0  (1,0):v1,v2  (0,1):v3,v4
+seed 7700001, 400 samples: max |matrix action - closed form| = 1.154e-14
+gauge invariance (200 random g): max deviation = 3.140e-16
+S4 section 2.1 identity, 2000 samples: max deviation = 2.159e-14
+unit charge Fourier support of |Z_1|^2 (64x64, thresh 1e-9):
+    [((0, 0), 0.34), ((-1, 0), 0.12), ((0, -1), 0.12), ((0, 1), 0.12), ((1, 0), 0.12), ((-1, -1), 0.09), ((1, 1), 0.09)]    rank = 2
+S4 3.2 witnesses reproduced:
+   lambda_A(1.0,0.3) = -0.145776
+   lambda_A(1.0,3.0) = -1.083946
+   lambda_A(0.3,1.0) = -0.145776
+   lambda_A(3.0,1.0) = -1.083946
+   lambda_A(0.4,2.6) = -0.865231
+   lambda_A(1.5,1.5) = -0.815445
+   lambda_A(0.5,0.5) = -0.076288
+   lambda_A(2.5,2.5) = -2.517188
+   same-product pair (0.4,2.6) vs (1.5,1.5) separation = 0.049785
+
+==================================================================================================
+2.  THE CLAIM'S ARITHMETIC, RE-DERIVED (per-vertex charge q=(1,2,2,2,2))
+==================================================================================================
+exponent vectors: [(np.int64(1), np.int64(1)), (np.int64(2), np.int64(0)), (np.int64(2), np.int64(0)), (np.int64(0), np.int64(2)), (np.int64(0), np.int64(2))]
+  collinear? (1,1),(2,0),(0,2) all satisfy m+n=2 : True
+seed 7700002, 4000 samples: max | |Z_1| - |0.4+0.6cos(f+c)| | = 1.166e-15
+four connections with f+c = 3.0:
+   lambda_A(0.4,2.6) = -1.639920326578
+   lambda_A(1.5,1.5) = -1.639920326578
+   lambda_A(2.9,0.1) = -1.639920326578
+   lambda_A(-1.0,4.0) = -1.639920326578
+   exact log|0.4+0.6cos 3| = -1.639920326578
+charged Fourier support of |Z_1|^2 (64x64, thresh 1e-9):
+    [((0, 0), 0.34), ((-1, -1), 0.24), ((1, 1), 0.24), ((-2, -2), 0.09), ((2, 2), 0.09)]    rank = 1
+VERDICT ON THE ARITHMETIC: every number in the claim reproduces.
+
+==================================================================================================
+3.  REFUTATION R1 -- THE CORPUS'S OWN DEFINITION OF CHARGE NEVER FIRES F-A
+==================================================================================================
+S2_FORMATION_CONDITION_ON_K1_V001.md:173-175 (sealed) defines the S4 charge knob as
+    "higher charge  U_e |-> exp(i q a_e)  ... this is the S4 knob"
+and repeats it at :525  'NOT A FIX  higher charge q'.  That is a SINGLE SCALAR q
+applied to the EDGE transport.  Its effect on the exponent data is E_v = q*(a_v,b_v).
+
+READING 1 -- S2's charge, scalar q on every edge:  E_v = q (a_v,b_v)
+  q :  exponent set                         rank Delta   F-A fires?   lambda_A(0.4,2.6)  lambda_A(1.5,1.5)  sep
+  -5 :  [(-5, -5), (-5, 0), (0, -5)]   rank=2   fires=no       -0.567895      -0.497611   0.070284
+  -4 :  [(-4, -4), (-4, 0), (0, -4)]   rank=2   fires=no       -0.524555      -0.024188   0.500367
+  -3 :  [(-3, -3), (-3, 0), (0, -3)]   rank=2   fires=no       -0.643837      -1.296371   0.652534
+  -2 :  [(-2, -2), (-2, 0), (0, -2)]   rank=2   fires=no       -0.116291      -1.639920   1.523629
+  -1 :  [(-1, -1), (-1, 0), (0, -1)]   rank=2   fires=no       -0.865231      -0.815445   0.049785
+   1 :  [(1, 1), (1, 0), (0, 1)]   rank=2   fires=no       -0.865231      -0.815445   0.049785
+   2 :  [(2, 2), (2, 0), (0, 2)]   rank=2   fires=no       -0.116291      -1.639920   1.523629
+   3 :  [(3, 3), (3, 0), (0, 3)]   rank=2   fires=no       -0.643837      -1.296371   0.652534
+   4 :  [(4, 4), (4, 0), (0, 4)]   rank=2   fires=no       -0.524555      -0.024188   0.500367
+   5 :  [(5, 5), (5, 0), (0, 5)]   rank=2   fires=no       -0.567895      -0.497611   0.070284
+   6 :  [(6, 6), (6, 0), (0, 6)]   rank=2   fires=no       -1.570034      -1.919514   0.349481
+   7 :  [(7, 7), (7, 0), (0, 7)]   rank=2   fires=no       -0.788970      -2.165628   1.376659
+   8 :  [(8, 8), (8, 0), (0, 8)]   rank=2   fires=no       -1.216238      -0.098371   1.117867
+  -> rank Delta = 2 for EVERY q != 0.  F-A does not fire at any scalar charge.
+  -> q = 0 kills the functional entirely (|Z_k| = 1, no formation), the |S|=1 row.
+
+READING 2 -- per-LOOP charge (Q_F,Q_C): M_F multiplies by W_F^{Q_F} on all of gamma_F,
+  M_C by W_C^{Q_C} on all of gamma_C.   E_v0=(Q_F,Q_C) E_v1=(Q_F,0) E_v3=(0,Q_C).
+  PROOF that this can never collapse: the line through (Q_F,0) and (0,Q_C) is
+  x/Q_F + y/Q_C = 1; the pinch (Q_F,Q_C) evaluates to 1+1 = 2 != 1 for ALL nonzero
+  Q_F,Q_C.  Three affinely independent points => rank Delta = 2 identically.
+  enumerated 16x16 = 256 nonzero (Q_F,Q_C): number with rank != 2 = 0
+
+READING 3 -- per-VERTEX charge q_v (the claim's).  COLLAPSE CONDITION, SOLVED:
+  E = {(q0,q0),(qF,0),(0,qC)} collinear  <=>  q0/qF + q0/qC = 1  <=>  q0 = qF qC/(qF+qC).
+  For positive charges q0 = harmonic-mean/2 < min(qF,qC) STRICTLY.
+  Hence the pinch v0 and the vertex v1 -- BOTH ON gamma_F -- must carry DIFFERENT
+  powers of the SAME holonomy W_F.  Enumerated solutions with 1<=q<=12:
+   q=(1,2,2,2,2)  E={(1,1),(2,0),(0,2)}  rank=1  generator (1, -1)  q0<min(qF,qC): True
+   q=(2,3,3,6,6)  E={(2,2),(3,0),(0,6)}  rank=1  generator (1, -2)  q0<min(qF,qC): True
+   q=(2,4,4,4,4)  E={(2,2),(4,0),(0,4)}  rank=1  generator (1, -1)  q0<min(qF,qC): True
+   q=(3,4,4,12,12)  E={(3,3),(4,0),(0,12)}  rank=1  generator (1, -3)  q0<min(qF,qC): True
+   q=(2,6,6,3,3)  E={(2,2),(6,0),(0,3)}  rank=1  generator (2, -1)  q0<min(qF,qC): True
+   q=(3,6,6,6,6)  E={(3,3),(6,0),(0,6)}  rank=1  generator (1, -1)  q0<min(qF,qC): True
+   q=(4,6,6,12,12)  E={(4,4),(6,0),(0,12)}  rank=1  generator (1, -2)  q0<min(qF,qC): True
+   q=(4,8,8,8,8)  E={(4,4),(8,0),(0,8)}  rank=1  generator (1, -1)  q0<min(qF,qC): True
+   q=(5,10,10,10,10)  E={(5,5),(10,0),(0,10)}  rank=1  generator (1, -1)  q0<min(qF,qC): True
+   q=(3,12,12,4,4)  E={(3,3),(12,0),(0,4)}  rank=1  generator (3, -1)  q0<min(qF,qC): True
+   q=(4,12,12,6,6)  E={(4,4),(12,0),(0,6)}  rank=1  generator (2, -1)  q0<min(qF,qC): True
+   q=(6,12,12,12,12)  E={(6,6),(12,0),(0,12)}  rank=1  generator (1, -1)  q0<min(qF,qC): True
+
+==================================================================================================
+4.  REFUTATION R2 -- THE COLLAPSE IS NOT ALWAYS 'THE PRODUCT'
+==================================================================================================
+F-A as ARMED (S4:366, S4:1110) is: 'only W_F.W_C survives'.  Under per-vertex charge
+the surviving combination is W_F^m W_C^n for the generator (m,n) of Delta:
+   q=(1,2,2,2,2): gen (1, -1)   -> lambda sees W_F.W_C   (the PRODUCT)            level-set invariance 6.1e-16   F-A-as-armed: FIRES
+   q=(2,3,3,6,6): gen (1, -2)   -> lambda sees W_F^1 W_C^2  ~ form 1f+2c          level-set invariance 2.8e-15   F-A-as-armed: DOES NOT FIRE (no row in S4 taxonomy)
+   q=(2,4,4,4,4): gen (1, -1)   -> lambda sees W_F.W_C   (the PRODUCT)            level-set invariance 1.2e-15   F-A-as-armed: FIRES
+   q=(3,4,4,12,12): gen (1, -3)   -> lambda sees W_F^1 W_C^3  ~ form 1f+3c          level-set invariance 3.9e-15   F-A-as-armed: DOES NOT FIRE (no row in S4 taxonomy)
+   q=(2,6,6,3,3): gen (2, -1)   -> lambda sees W_F^2 W_C^1  ~ form 2f+1c          level-set invariance 2.3e-15   F-A-as-armed: DOES NOT FIRE (no row in S4 taxonomy)
+   q=(3,6,6,6,6): gen (1, -1)   -> lambda sees W_F.W_C   (the PRODUCT)            level-set invariance 3.2e-15   F-A-as-armed: FIRES
+   q=(4,6,6,12,12): gen (1, -2)   -> lambda sees W_F^1 W_C^2  ~ form 1f+2c          level-set invariance 8.0e-15   F-A-as-armed: DOES NOT FIRE (no row in S4 taxonomy)
+   q=(4,8,8,8,8): gen (1, -1)   -> lambda sees W_F.W_C   (the PRODUCT)            level-set invariance 2.1e-15   F-A-as-armed: FIRES
+   q=(5,10,10,10,10): gen (1, -1)   -> lambda sees W_F.W_C   (the PRODUCT)            level-set invariance 4.8e-15   F-A-as-armed: FIRES
+   q=(3,12,12,4,4): gen (3, -1)   -> lambda sees W_F^3 W_C^1  ~ form 3f+1c          level-set invariance 3.1e-15   F-A-as-armed: DOES NOT FIRE (no row in S4 taxonomy)
+   q=(4,12,12,6,6): gen (2, -1)   -> lambda sees W_F^2 W_C^1  ~ form 2f+1c          level-set invariance 4.7e-15   F-A-as-armed: DOES NOT FIRE (no row in S4 taxonomy)
+   q=(6,12,12,12,12): gen (1, -1)   -> lambda sees W_F.W_C   (the PRODUCT)            level-set invariance 7.8e-15   F-A-as-armed: FIRES
+
+==================================================================================================
+5.  REFUTATION R3 -- 'WEIGHT ON THE PINCH' WAS NEVER SUFFICIENT, AT UNIT CHARGE
+==================================================================================================
+S4:1110 'separation does work IF AND ONLY IF the ready state puts weight on the pinch'.
+  p=(1,0,0,0,0)   all weight ON the pinch    p0=1.00>0  rank Delta=0 gen=None
+      |Z_1|(0.4,2.6)=1.000000  |Z_1|(1.5,1.5)=1.000000   |Z_1|(1.0,0.3)=1.000000  |Z_1|(1.0,3.0)=1.000000
+  p=(0.5,0.5,0,0,0) pinch + face             p0=0.50>0  rank Delta=1 gen=(0, 1)
+      |Z_1|(0.4,2.6)=0.267499  |Z_1|(1.5,1.5)=0.731689   |Z_1|(1.0,0.3)=0.988771  |Z_1|(1.0,3.0)=0.070737
+  p=(0.5,0,0,0.5,0) pinch + cycle            p0=0.50>0  rank Delta=1 gen=(1, 0)
+      |Z_1|(0.4,2.6)=0.980067  |Z_1|(1.5,1.5)=0.731689   |Z_1|(1.0,0.3)=0.877583  |Z_1|(1.0,3.0)=0.877583
+  p=(0.4,0.15,0.15,0.15,0.15) full           p0=0.40>0  rank Delta=2 gen=None
+      |Z_1|(0.4,2.6)=0.420954  |Z_1|(1.5,1.5)=0.442442   |Z_1|(1.0,0.3)=0.864351  |Z_1|(1.0,3.0)=0.338258
+  -> p=(1,0,0,0,0): weight on the pinch, |Z_k| == 1 for all k, NO formation, NO
+     separation.  The 'if' half of S4's iff is false at UNIT CHARGE, on K1, with
+     weight on the pinch.  It is S4's own |S|=1 row, which the gloss overrode.
+
+==================================================================================================
+6.  WHAT THE PER-VERTEX KNOB ACTUALLY IS -- S4's OWN CHOICE LEDGER C11
+==================================================================================================
+S4:995 C11: 'a_v in {0,1} -- a vertex visited twice by a loop still counts once |
+  count multiplicity | ... closed; but note it makes Theorem S4-1's corners-of-a-square
+  argument exact, and MULTIPLICITY WOULD BREAK IT'.
+Per-vertex charge q_v is exactly per-vertex multiplicity: a_v in {0,1} -> q_v a_v in {0,q_v}.
+Demonstration -- the SAME collapse produced with unit charge and a multiplicity
+convention (gamma_F traversed twice at v1,v2; gamma_C twice at v3,v4; once at v0):
+   E(multiplicity) = [(1, 1), (2, 0), (2, 0), (0, 2), (0, 2)]   identical to E(q=(1,2,2,2,2)) : True
+   seed 7700004, 1000 samples: max |Z_k(multiplicity) - Z_k(charge)| = 0.000e+00
+   -> the two knobs are THE SAME KNOB.  S4 priced it in C11 and declared what it breaks.
+
+==================================================================================================
+7.  HOW RARE IS THE COLLAPSE IN PER-VERTEX CHARGE SPACE
+==================================================================================================
+  (q0,qF,qC) in {1..6}^3 : 5 of 216 collapse  (2.3%) -- a codimension-1 slice {q0(qF+qC)=qF qC}
+  full q in {1..4}^5 : 2 of 1024 collapse (0.2%)
+
+==================================================================================================
+8.  SCHEDULE B UNDER THE CLAIM'S CHARGE -- CHECKED, NOT ASSUMED
+==================================================================================================
+  q=(1,2,2,2,2) (f,c)=(1.000000,1.414214)  lambda_B(N=2e6) = -1.203963982   vs log(0.3) = -1.203972804
+  q=(1,2,2,2,2) (f,c)=(0.700000,1.359141)  lambda_B(N=2e6) = -1.203976285   vs log(0.3) = -1.203972804
+  -> under B the charged rate is also a function of the product alone; the claim's
+     A-only run does not overstate on this point.
+
+==================================================================================================
+9.  SCALAR-CHARGE SEPARATION WITNESSES -- F-A EXPLICITLY DOES NOT FIRE
+==================================================================================================
+  q=2:  same-product pair differ by 1.523629 ;  same-W_F pair differ by 0.223909
+  q=3:  same-product pair differ by 0.652534 ;  same-W_F pair differ by 0.611053
+  q=5:  same-product pair differ by 0.070284 ;  same-W_F pair differ by 0.348595
+  q=7:  same-product pair differ by 1.376659 ;  same-W_F pair differ by 0.029131
+  -> at every scalar charge, lambda_A still separates W_F from W_C on full support.
+==================================================================================================
+10.  IS 'rank Delta(S) = 2' ITSELF THE CORRECT CONDITION?  TESTED, NOT ASSUMED
+==================================================================================================
+PROOF SKETCH (mine): |Z_1|^2 = sum_{x,y in S} p_x p_y chi_{E_x - E_y}.  The coefficient
+of frequency d is sum_{E_x-E_y=d} p_x p_y > 0 -- ALL TERMS POSITIVE, so no cancellation
+can remove a frequency.  Hence Fourier support of |Z_1|^2 = Delta(S) exactly, and
+lambda_A is a function of a single linear form iff rank Delta(S) <= 1.  QED
+seed 7700005, 597 random (exponent set, weight) pairs on a 32x32 grid:
+   rank Delta(S) vs rank of Fourier support of |Z_1|^2 : mismatches = 0
+   -> the replacement criterion is CORRECT.  This half of the claim survives.
+
+==================================================================================================
+11.  BUT 'NOT ABOUT WHICH VERTEX CARRIES WEIGHT' IS FALSE AS STATED
+==================================================================================================
+S = {E_v : p_v > 0}.  Which vertices carry weight is HALF the input to rank Delta(S).
+charge q=(1,1,1,2,2), E = [(1, 1), (1, 0), (1, 0), (0, 2), (0, 2)]
+   full support             rank Delta = 2  gen=None
+   p0,p1 only (pinch+face)  rank Delta = 1  gen=(0, 1)
+   p1,p3 only (no pinch)    rank Delta = 1  gen=(1, -2)
+   -> at FIXED charge the rank still moves with the support.  The correct statement is
+      'the affine rank of the exponent vectors OF THE WEIGHTED VERTICES' -- both inputs.

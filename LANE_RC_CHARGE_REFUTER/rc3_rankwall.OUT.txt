@@ -1,0 +1,68 @@
+==============================================================================
+RC-3  THE RANK WALL AND THE 'FOUR RAYS' HEADLINE
+==============================================================================
+
+--- 3.0  THE HEADLINE WALL IS NEVER CROSSED.
+   enumerated all 7^5 = 16807 charges in {-3..3}^5, all 5 exponent points each:
+   exponent points NOT in Z(0,0) u Z(1,0) u Z(0,1) u Z(1,1) : 0
+   E(v) = q_v * (a_v,b_v) lies on the ray through (a_v,b_v) BY CONSTRUCTION.
+   ==> per-vertex charge on K1 NEVER leaves the union of the four rays, yet the
+       claim's own three walls all fall INSIDE it.  The headline names a wall that
+       none of the phenomena it explains ever crosses.  VACUOUS AS STATED.
+
+--- 3.1  THEOREM C-3 (3-point rank-2 rigidity) -- HARD TEST, NOT ASSERTION.
+   Proof to be checked: for points {e0,e1,e2} with M = [e1-e0; e2-e0], det M != 0,
+   the map (x,y) |-> (x^M11 y^M12, x^M21 y^M22) is a surjective endomorphism of T^2
+   with finite kernel, so it pushes Haar to Haar; hence
+       m(p0 x^e0 + p1 x^e1 + p2 x^e2) = m(p0 + p1 x + p2 y),  independent of M.
+   reference m(0.4+0.3x+0.3y) = -0.767507880358
+   random 3-point rank-2 configs (exponents NOT restricted to K1's rays):
+   175 random rank-2 triples, |det| up to 61:
+   worst |lambda_grid - m(0.4+0.3x+0.3y)| = 9.616e-06   (grid discretisation floor)
+   ==> THEOREM C-3 SURVIVES.  I could not break it.
+
+--- 3.2  'CHARGE-SENSITIVE FOR 4-POINT SUPPORTS' -- EXACT COUNTEREXAMPLES.
+   (a) GLOBAL RESCALING.  q -> c*q multiplies every exponent by c; (x,y)|->(x^c,y^c)
+       is a surjective endomorphism of T^2, so lambda_B is EXACTLY invariant at any
+       point count.  Charge changes; lambda does not.
+   q=[1, 1, 2, 1, 1] |S|=4  grid: -0.916290732 -0.916290732 -0.916290732
+                         direct(f=1,c=sqrt2, N=4e6): -0.916290880  vs 2q: -0.916290955  |diff|=7.53e-08
+   q=[1, 1, 2, 3, 1] |S|=5  grid: -0.871209545 -0.871209545 -0.871209545
+                         direct(f=1,c=sqrt2, N=4e6): -0.871209707  vs 2q: -0.871209718  |diff|=1.09e-08
+   q=[1, 2, 3, 4, 5] |S|=5  grid: -0.896182600 -0.896183832 -0.896184452
+                         direct(f=1,c=sqrt2, N=4e6): -0.896185732  vs 2q: -0.896183871  |diff|=1.86e-06
+
+   (b) THE F/C SWAP.  M = [[0,1],[1,0]] in GL_2(Z) fixes the (1,1) ray and exchanges
+       the (1,0) and (0,1) rays, so it maps K1 charge configs to K1 charge configs.
+       With class-symmetric weights it is a charge symmetry of lambda_B:
+   q=[1, 1, 2, 1, 1] <-> q'=[1, 1, 1, 1, 2] |S|=4  -0.916290732  -0.916290732  |diff|=2.22e-16
+   q=[1, 3, 1, 2, 2] <-> q'=[1, 2, 2, 3, 1] |S|=4  -0.924697413  -0.924697413  |diff|=2.22e-16
+   q=[2, 1, 3, 2, 1] <-> q'=[2, 2, 1, 1, 3] |S|=5  -0.916290732  -0.916290732  |diff|=1.11e-16
+   ==> a 4- and 5-point support carries an EXACT infinite charge-rigidity group.
+       'charge-sensitive for 4-point supports' is false as a universal; the true
+       invariant is the weighted exponent configuration MODULO integer matrices of
+       non-zero determinant, at every point count.
+
+--- 3.3  THE SPECTATOR.  [ILLUSTRATION carrier K1+ : K1 plus e7: v0->v5, v5 on
+    neither loop.  a_v5 = b_v5 = 0, so E(v5) = (0,0) for EVERY charge q_v5.]
+   The spectator's exponent point is (0,0) whatever its charge:
+      q_v5 =   0  ->  E(v5) = (0, 0)
+      q_v5 =   1  ->  E(v5) = (0, 0)
+      q_v5 =   2  ->  E(v5) = (0, 0)
+      q_v5 =   5  ->  E(v5) = (0, 0)
+      q_v5 =  -3  ->  E(v5) = (0, 0)
+   ==> the spectator vertex is the ONE vertex on which charge acts trivially, exactly.
+       It cannot be the wall.  And K1 HAS NO SPECTATOR, yet charge already does
+       everything on K1 (RC-1, RC-2).  The wall is mislocated a second time.
+   What actually happens at 4 points: on K1 a 4th point requires WITHIN-CLASS
+   inhomogeneity (q_v1 != q_v2 or q_v3 != q_v4) -- the pinch and the spectator are
+   both irrelevant to it.
+
+--- 3.4  'AND FOR ANY RANK DROP'.  Rank-1 (collinear) 3-point configs:
+   q=[1, 2, 2, 2, 2] pts=[(0, 2), (1, 1), (2, 0)] rk=1  grid=-1.203532370 direct=-1.203972742
+   q=[2, 3, 3, 6, 6] pts=[(0, 6), (2, 2), (3, 0)] rk=1  grid=-0.681980359 direct=-0.681980475
+   q=[2, 4, 4, 4, 4] pts=[(0, 4), (2, 2), (4, 0)] rk=1  grid=-1.203703248 direct=-1.203972906
+   q=[3, 6, 6, 6, 6] pts=[(0, 6), (3, 3), (6, 0)] rk=1  grid=-1.204297338 direct=-1.203972942
+   q=[2, 6, 6, 3, 3] pts=[(0, 3), (2, 2), (6, 0)] rk=1  grid=-0.681980359 direct=-0.681980384
+   ==> rank drop does move lambda.  This half of wall (3) SURVIVES.
+   NOTE q=(2,4,4,4,4) = 2*(1,2,2,2,2): rank drop AND exact rigidity under rescaling.

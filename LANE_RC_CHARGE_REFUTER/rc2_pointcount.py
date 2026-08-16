@@ -51,9 +51,12 @@ for alpha in ([0, 1, 2], [1, 2, 3], [-1, 0, 1], [1, 2, 4]):
         pts, w = R.support_points(list(q), np.ones(5) / 5)
         cnt[len(pts)] = cnt.get(len(pts), 0) + 1
     print(f"   alphabet {str(alpha):11s} -> distinct-point-count histogram {dict(sorted(cnt.items()))}")
-print("   NOTE: no 3-element alphabet gives 44 assignments reaching 5 points.")
-print("   {1,2,3} gives 108; {0,1,2} gives 24.  The claim's 44/243 is not reproducible")
-print("   under any charge alphabet of size 3 on K1.")
+print("   FINDING: 44 of 243 reproduces EXACTLY -- but ONLY for the alphabet {0,1,2},")
+print("   i.e. ONLY IF ZERO CHARGE IS ADMITTED.  For {1,2,3} the answer is 108 of 243.")
+print("   So the claim's own enumeration universe silently contains q_v = 0, while its")
+print("   wall (1) is stated for 'any single integer q != 0'.  UNSTATED NORMALISATION.")
+print("   And the count does not only go 3 -> 5: on {0,1,2} it also goes 3 -> 2 (14 cases)")
+print("   and 3 -> 1 (1 case).  'takes that count from 3 to 5' reports one direction of three.")
 
 print("\n--- IS 'point count == class count' NECESSARY for pi to be complete?  NO.")
 q = [0, 0, 0, 1, 1]

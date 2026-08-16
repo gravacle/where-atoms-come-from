@@ -1,0 +1,88 @@
+====================================================================================================
+B1.  THE DECISIVE EXHIBIT AGAINST 'UNIFIES ... INTO ONE STATEMENT'.
+     IDENTICAL Delta, IDENTICAL L, IDENTICAL G (the same subgroup of U(1), not merely
+     an isomorphic one), IDENTICAL weight multiset -- and lambda_B differs by 0.288.
+====================================================================================================
+      E1 = {(0,0),(1,-1),(-1,1)}   [= charge q=(1,2,2,2,2) on K1, translated by (1,1)]
+          Delta basis = [[1, -1]]   rank = 1   G = <chi^(1,-1)> in every row
+          lambda_B (generic, exact 1-variable Jensen) = -1.203972804326
+      E2 = {(0,0),(1,-1),( 2,-2)}  [= a loop-MULTIPLICITY map, S4 CHOICE LEDGER C11]
+          Delta basis = [[1, -1]]   rank = 1   G = <chi^(1,-1)> in every row
+          lambda_B (generic, exact 1-variable Jensen) = -0.916290731874
+      E3 = {(0,0),(1,-1),( 3,-3)}
+          Delta basis = [[1, -1]]   rank = 1   G = <chi^(1,-1)> in every row
+          lambda_B (generic, exact 1-variable Jensen) = -0.702184290449
+      log(0.3) = -1.203972804326   log(0.4) = -0.916290731874
+      Delta, L, G and the weights are the SAME in all three rows.  lambda_B is not.
+      The containment Delta not-in L is a BINARY criterion; the relation-lattice
+      theorem is a statement about the VALUE of lambda_B.  No single statement whose
+      content is 'G = Delta/(Delta ^ L)' can contain both.  THE UNIFICATION IS FALSE.
+
+====================================================================================================
+B2.  AND S4-1's CONTENT IS NOT RECOVERABLE FROM THE QUOTIENT EITHER.
+====================================================================================================
+      S = {u,v}    Delta basis [[1, -1]]   lambda_B^gen = -0.510825623766   log(0.6) = -0.510825623766
+      S = {1,uv}   Delta basis [[1, 1]]   lambda_B^gen = -0.510825623766   log(0.6) = -0.510825623766
+      Both quotients are infinite cyclic at a generic connection and both rates are
+      log(max weight).  S4-1 distinguishes them (product vs ratio) using the EMBEDDED
+      generator of Delta -- data the quotient Delta/(Delta ^ L) has thrown away.
+
+====================================================================================================
+B3.  'CHARGE' REACHES ONLY A THIN SLICE OF THE EXPONENT MAPS THE THEOREM IS PROVED FOR,
+     AND THE RATE OF RECORD FOR ITS HEADLINE EXAMPLE IS EXACTLY log(3/10).
+====================================================================================================
+      Per-vertex charge on K1's three classes gives E = {q0(1,1), q1(1,0), q3(0,1)}:
+      an exponent map is charge-reachable ONLY if its three points lie on the three
+      RAYS through (1,1), (1,0), (0,1).  rank Delta = 1 forces (q1-q0)(q3-q0) = q0^2.
+      SELF-CORRECTION: I first asserted the collinear coordinates are always {0,k,-k}.
+      THAT IS FALSE -- q=(2,3,3,6,6) gives {0,1,-2}.  The enumeration below is the
+      record; the assertion it refutes was mine.
+      class-homogeneous charges in [-6,6]^3 with 3 distinct exponent points and
+      rank Delta = 1: 30 assignments, distinct lambda values: {-0.916290731874: 12, -0.763846179664: 4, -1.203972804326: 6, -0.702184290449: 4, -0.681980358627: 4}
+      log(3/10) = -1.203972804325936   log(2/5) = -0.916290731874155
+      BUT the sub-slice is rigid where the register's example lives: Delta = Z(1,-1)
+      forces q = beta*(1,2,2,2,2) exactly, hence ONE rate for the whole family:
+        beta =   1  Delta basis [[1, -1]]   lambda_B^gen = -1.203972804326
+        beta =   2  Delta basis [[2, -2]]   lambda_B^gen = -1.203972804326
+        beta =   3  Delta basis [[3, -3]]   lambda_B^gen = -1.203972804326
+        beta =  -1  Delta basis [[1, -1]]   lambda_B^gen = -1.203972804326
+        beta =  -4  Delta basis [[4, -4]]   lambda_B^gen = -1.203972804326
+      So the register's 'q=(1,2,2,2,2) moves lambda to -1.200555' is a FINITE-STAGE
+      value of a quantity with an exact closed form; the converged rate is log(3/10):
+        direct schedule-B, (f,c)=(2.0,1.1), N=    1000 : -1.203054683   dev from log(0.3) = 9.18e-04
+        direct schedule-B, (f,c)=(2.0,1.1), N=   10000 : -1.204167348   dev from log(0.3) = 1.95e-04
+        direct schedule-B, (f,c)=(2.0,1.1), N=  100000 : -1.204011114   dev from log(0.3) = 3.83e-05
+        direct schedule-B, (f,c)=(2.0,1.1), N= 1000000 : -1.203977407   dev from log(0.3) = 4.60e-06
+      (this is the W-02 erratum's defect repeated: a limit read off at a finite stage)
+
+====================================================================================================
+B4.  CHARGE IS NUMERICALLY IDENTICAL TO THE OBJECT S4's CHOICE LEDGER C11 ALREADY NAMED.
+     S4:995 C11 -- 'a_v in {0,1}: a vertex visited twice by a loop still counts once' /
+     rejected alternative 'count multiplicity' / 'multiplicity would break it' (it =
+     Theorem S4-1's corners-of-a-square argument).
+====================================================================================================
+      multiplicity map E = [(1, 1), (2, 0), (2, 0), (0, 2), (0, 2)]
+      charge       map E = [(1, 1), (2, 0), (2, 0), (0, 2), (0, 2)]
+      max |difference| = 0   -> the SAME functional,
+      hence the same rank drop and the same rate.
+      HONEST LIMIT OF THIS EXHIBIT: I am NOT claiming a closed walk on K1 realises
+      mu_v0 = 1 with mu_v1 = 2 (it does not: K1's face triangle is a 3-cycle, and any
+      closed walk visiting v1 twice visits v0 at least twice).  The claim is narrower
+      and sufficient: the OBJECT that charge edits -- the exponent map E : V -> Z^2 --
+      is the object C11 named, ruled on, and predicted would break S4-1's
+      corners-of-a-square argument, one stage before the charge run.  The 'first
+      modality' is therefore not first even in the corpus's own written record of what
+      it chose not to vary.
+
+====================================================================================================
+B5.  WHAT I COULD NOT BREAK -- THEOREM C-1 UNDER THE CANONICAL CLOCK, BRUTE-FORCED.
+     Exact integer lattice arithmetic on rational connections; no floating-point
+     lattice test anywhere.
+====================================================================================================
+      6000 random (exponent map, rational connection) pairs, seed 90210007,
+      denominators M <= 12, |S| <= 5, exponents in [-5,5]^2:
+        (ii)  '|Z_k| = 1  <=>  k Delta <= L'  disagreements over k <= 40 : 0
+        (iii) 'never forms <=> Delta <= L'    disagreements over k <= 120: 0
+      Theorem C-1 (ii) and (iii) STAND at arbitrary exponent data -- and they stand at
+      unit charge too.  They are Pontryagin duality plus the strict-convexity equality
+      case; nothing in the proof knows what a charge is.

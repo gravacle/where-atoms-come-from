@@ -489,3 +489,148 @@ Mahler / Lind-Schmidt-Ward / Lawton 1983.
 **THE LEDGER IN ONE LINE:** *the corpus imports its mathematics by name and reinvents its physics
 anonymously, and the reinventions are competent — which is why the honest publication is a short
 mathematical note with six citations, not a foundations paper.*
+
+---
+
+## W-06 — THE AUDIT OF THE AUDITS: **THREE IMPORTS FOUND. THE SPINE WAS KILLED BY NONE OF THEM. DISPOSITION: STOP-FALLS-REBUILD.**
+
+Commissioned at the principal's direction — *"let's make sure that we aren't importing machinery
+that isn't suitable for the record level to destroy observations."* Four legs, eight refuters.
+**Answer: IN PART — and the single largest correction is not an import at all.**
+
+### THE THREE IMPORTS
+
+**IMP-1 — THE VACUOUS-CONTROL DISQUALIFIER, AND IT IS THE ONE THAT CARRIED STOP.**
+*"It could not have failed under variation, therefore it is void"* entered this record **lawfully**
+at REGISTER:191 against one of S4's **CONTROLS**, and was then carried across a category boundary
+at :414-416 onto a **THEOREM**. **On a control the norm is sound. On a theorem it is incoherent —
+a proved statement cannot fail; that is what "theorem" means.** Applied to Theorem S3-0 it produced
+the word "vacuous", and that word carried the STOP. It entered a governing clause with **no digest,
+no file:line, no named ruling** — which under custody §1 makes it **flagged, not inherited**.
+
+**IMP-2 — THE GAUGE NON-FACTORIZATION PREMISE**, imported from Donnelly-Wall/Giddings and pinned to
+S2's Theorem 2 — **a theorem this register had ALREADY REFUTED two rows earlier at REGISTER:63**,
+and which W-04's own ERR-3 disqualifies. *A refuted theorem cannot BE a correct one.* **Registrar
+error: both halves of that contradiction are in this register and are corrected here.**
+
+**IMP-3 — IDENTIFICATION BY HEADLINE PARAPHRASE.** Decoherence and Bell attributions matched on
+words rather than papers. See the bibliography corrections below.
+
+### AND THE PROCEDURAL VOID
+
+W-04 pre-registered: *"IF THE SCALARITY TEST RETURNS 'S3-0 FAILS', THE RECOMMENDATION CONVERTS TO
+STOP."* **W-05 reports the test returned NEGATIVE — "S3-0 SURVIVED" — and converts anyway**, on a
+post-hoc ground built from IMP-1. **Replacing a pre-registered falsifier that came back negative
+with a post-hoc one is precisely the abuse the experimental-design norm exists to forbid —
+committed in the act of importing that norm.** No registered reopen condition fired.
+
+### **BUT THE THING THAT DECIDED THE SPINE WAS NEVER IMPORTED — AND THE CORPUS ALREADY KNEW**
+
+It was an **unledgered stipulation the corpus made about itself**: that loop transport means
+**multiplying by the whole-circuit holonomy** `M_gamma`, rather than moving **edge by edge** via `T`
+with `T^3 = M_gamma`. S3's CHOICE LEDGER C3 ledgers only *which circuit schedule*; the edge tick
+appears in **no alternatives column in any sealed artifact.**
+
+**THE CORPUS'S OWN SEALED AUDIT FOUND THIS AND WROTE IT DOWN AS COR-F, AT
+`S3_THE_CROSSING_AUDIT_V001.md:794`, BEFORE W-03, W-04 AND W-05 RAN.** W-04 cited it in one
+subordinate clause. W-05 reached past it. `grep -n "COR-" REGISTER_V001.md` returns **two hits in
+491 lines, neither in the W-02 row that records S3-0's ruling.** Two independent legs of this audit,
+starting from unrelated suspicions, walked straight into it.
+
+> **THE CHAIN WAS NOT UNDER-ADVERSARIAL. IT WAS UNDER-READ.**
+
+**This is a registrar failure, not a lane failure: I registered W-02 without carrying COR-F into it.**
+
+### THE GAUGE-GROUP HYPOTHESIS: REFUTED, AND THE QUESTION RETIRED
+
+The registrar's suspicion — that local `U(1)^V` is a continuum import and global U(1) the
+record-native choice — is **WRONG, twice over.**
+**(a) `U(1)^V` is derivable from S1's own bytes:** S1 §5 writes `f = da` and verifies `dd = 0`,
+deploying K1's cochain complex; the gauge parameter is that complex's **0-cochain**, and U(1)-valued
+0-cochains on K1 **ARE** `U(1)^V` by definition. Intrinsic to a bundle over a CW base, not a
+discretisation of anything. **(b) It is UNIQUELY correct on K1's own count:** sweeping all **52**
+partition subgroups of `U(1)^5`, **exactly ONE** yields S1 §4's invariant parameter count
+`2 = b1 + #faces = E - rank(d1)` — the full local group. Global U(1) gives 6; the class group 4.
+**And the escape route W-05 advertised is itself the import:** "global U(1)" smuggles in a
+cross-vertex phase frame the complex does not contain — the same *"Let"* that FOUNDING_DESIGN's S2
+clause exists to catch. **Across all 52 subgroups the invariant separation is exactly zero in
+precisely the 4 that CONTAIN the transports, and 1.32-2.00 in the other 48: S3-0 IS TRUE IF AND
+ONLY IF IT IS VACUOUS, AND EVERY EXIT FROM VACUITY IS AN EXIT INTO FALSITY.**
+
+### WHAT IS RESTORED — A QUESTION, NOT A HEADLINE
+
+**THE QUESTION S3-0 WAS BUILT TO CLOSE IS RESTORED TO OPEN: can the carrier's own gauge-invariant
+algebra hold the record? THE ANSWER: IT SEES THE RECORD AND IT DOES NOT HOLD IT.**
+S3 cited the whole gauge law (S1:59-63) and **implemented half of it** — it computed the fixed
+algebra with the **connection held fixed**, while S1:63 (`a_e -> a_e + theta_v - theta_u`) *is* the
+connection law. Under the FULL action, a **Wilson-line-dressed observable built only from S1's own
+edge transports** is gauge-invariant to `4.45e-16` and separates the branches at exactly
+**`3*sqrt(3)/10`** where S3's own test returns zero. **So S3:187-188's "indistinguishable by EVERY
+gauge-invariant carrier observable" is FALSE, not vacuous** — and on W-05's own criterion, *a
+theorem that fails is contentful*. **S3-0's load-bearing BROAD form (S3:16-22, :206-207), the form
+that killed CHOICE LEDGER C1's alternatives, is RESTORED FROM VACUOUS TO FALSE.**
+
+**BUT IT RECURS.** Over `n <= 4000` cells the dressed separation returns to `2.221e-16` and falls
+below `1e-9` on **1000 of 4000 cells**. **The recurrence obstruction is the one thing in this corpus
+that no demolition and no restoration has dented.**
+
+**N4's MECHANISM RESTORED CORRECTED:** not *scalar* multiplication — **FIBRE-WISE-NESS**. Any
+fibre-wise unitary lies in the local gauge group at every rank (`dim A^G = 5` at rank 1, 2 and 3,
+verified against genuinely non-scalar and non-abelian transports). W-05 named the wrong variable —
+**the same error as ERR-1, recurring one floor up.**
+
+### THE CORPUS IS SMALLER AFTER THIS AUDIT, NOT LARGER
+
+- **THE BELL 1975 ATTRIBUTION IS STRUCK AND REPLACED BY HEPP 1972** — two years older; the register's
+  own phrase "reversing unitary" occurs **0 times** in the ten non-register artifacts; Bell's abstract
+  draws the **opposite** moral.
+- **AND BELL'S ACTUAL OBJECTION TRANSPLANTS INTO S3'S SYSTEM AND WORKS.** An explicit
+  Hermitian-unitary `R_N`, one factor per slot, has branch cross-expectation of modulus **exactly
+  1.000000000000 at every `N = 1..9`** while `|Omega_N|` falls from `4.11e-01` to `8.42e-04`. That is
+  Bell's `lambda_n = c` with `c = 1`. **The record is undone at every finite stage by an observable
+  of Bell's own type. This is new, and it cuts against the corpus.**
+- **THE AHARONOV-BOHM DEMOTION FALLS ON ITS STATED SUBJECT** — it demoted an observation the corpus
+  does not contain, and S4:672 asserts its **negation**.
+- **NEW, UNCONTESTED: THE CROSSING CONTAINS NO MEASUREMENT.** S3's write map produces Schmidt
+  spectrum `[1, 0]` — entanglement entropy `<= 1.6e-15` — on every superposition; the carrier is the
+  same pure state in both branches (trace distance `0.0`). **Carrier and record are never correlated.
+  The "record" records which of two counterfactual transports was applied — a CONTROL SETTING, not a
+  property of any system.**
+- **P-5 = quantum Darwinism and P-9 = the SBS condition SURVIVE.** The leg that struck them tested
+  Korbicz's **macrofraction-indexed, asymptotic** condition **at single-slot grain**. Both refuters
+  caught it; **the audit recorded the error against itself.**
+- **ZERO OF NINE crossing properties are novel, and the corrected bibliography is WORSE:** not four
+  rediscoveries spanning 1972-2021 but substantially **ONE body of work** (Hepp, Coleman-Hepp, Bell,
+  Lanford-Ruelle) rediscovered whole.
+
+### WHAT STAYS DEAD
+
+Theorem S3-0 as stated · "the carrier cannot hold the record, therefore a crossing is necessary"
+(dead four times over) · any hope that a different gauge group restores anything · both of W-05's
+own test headlines · "has a field: no" · W-03's kill of "formation sees loop incidence" ·
+**all four of W-04's errata, attacked and unbroken** · the novelty of the nine.
+
+### **DISPOSITION: STOP-FALLS-REBUILD**
+
+**STOP's OBJECT is correctly dead and the restorations make it DEADER** — a carrier-internal
+observable that holds the branch distinction is one more reason nothing forced a crossing.
+**STOP's GROUND has flipped sign** — a vacuous spine is a dead end; a false spine with an exhibited
+counterexample is a construction site. **STOP's DISPOSITION was issued on an unpointered import
+after the pre-registered falsifier came back negative.** The live route: the carrier's own dressed
+gauge-invariant algebra over a **wedge-growth sequence** (`V = 4k+1`; `k = 1,6,31,156,781` gives
+`V = 5,25,125,625,3125`, every consecutive pair dividing — **so S3's rejection of C1(b)/(c) on
+`5∤9` and `5∤7` is an accident of two arithmetic progressions, not a theorem**). Zero adjoined
+dimensions, at S2's zero-addition standard. **Cost, stated: the identification `C^25 ≅ C^5 (x) C^5`
+is a labelling not derived from incidence, and the untouched recurrence obstruction may kill it.**
+
+### CHAIN RELIABILITY
+
+**Reliable at arithmetic. Unreliable at disposition.** Every demolition's numbers survived four
+independent audits. But the demolitions' failure mode is **MISNAMING THE OPERATIVE VARIABLE** —
+S2 said commutativity where it was scalarity; W-03 said the group where it was three things;
+W-05 said scalarity where it is fibre-wise-ness — **each caught only by the next level, the third
+only now, inside the one result W-05 offered for publication.** W-04 wrote the antidote
+(*"discount an audit finding by the same factor as a build finding"*), W-05 quoted it, applied it
+downward, and **did not apply it to itself. The chain wrote its own discount and did not take it.**
+**FIVE consecutive layers have each been caught by the next, and the rate has not fallen. Discount
+this layer too.**

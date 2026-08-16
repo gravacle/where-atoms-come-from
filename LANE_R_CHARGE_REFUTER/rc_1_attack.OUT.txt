@@ -1,0 +1,129 @@
+====================================================================================================
+A1.  CLAUSE 'CHARGE IS THE FIRST MODALITY THAT VARIES SOMETHING OTHER THAN pi'
+     Two objects already in the corpus vary lambda at pi HELD EXACTLY FIXED.
+====================================================================================================
+      pi = (p_00,p_10,p_01,p_11) = (0, 0.3, 0.3, 0.4)    unit charge, carrier K1, held fixed in every row below.
+      (f,c)                 lambda_A = log|Z_1|      lambda_B (generic/exact)
+      (1.000000,1.414214)         -0.493553117        -0.767507889
+      (2.000000,1.100000)         -0.888503902        -0.767507889
+      (3.141593,4.712389)         -1.151292546        -0.767507889
+      (0.400000,2.600000)         -0.865230535        -0.767507889
+      (1.500000,1.500000)         -0.815445171        -0.767507889
+      THE CONNECTION moves lambda_A over the whole of [-inf, 0] at fixed pi.
+      THE SCHEDULE moves lambda at fixed pi AND fixed connection:
+        at (1,sqrt2):  schedule A -0.493553117   schedule B -0.767507879   gap 0.273954762
+      Neither the connection nor the schedule is pi.  Both are of record BEFORE charge:
+      S4 section 2.2 defines both schedules; W-03's corrected headline names TWO
+      determinants, 'the pushforward pi AND (under the canonical clock) the relation
+      lattice'.  W-03 also records that the critic RAN winding, which varies the
+      circuit index, not pi.  CHARGE IS AT BEST THIRD.
+
+====================================================================================================
+A2.  CLAUSE 'IT DESTROYS THE FOUR-CLASS TAXONOMY OUTRIGHT'
+     (a) homogeneous charge is a SCHEDULE REPARAMETRISATION, not a new object
+====================================================================================================
+      Z_k(homogeneous charge q) == Z_{qk}(unit charge):  max dev 7.318e-14   (500 samples, seed 90210002)
+      So homogeneous charge q IS the clock k -> qk.  It cannot be a modality that
+      'varies something other than pi' unless the SCHEDULE already was one.
+
+     (b) the taxonomy survives EVERY class-homogeneous charge, exactly
+      q = [1, 1, 1, 1, 1]      lambda_B^gen = -0.767507879061   |dev from unit charge| = 0.00e+00
+      q = [2, 2, 2, 2, 2]      lambda_B^gen = -0.767507879061   |dev from unit charge| = 0.00e+00
+      q = [3, 3, 3, 3, 3]      lambda_B^gen = -0.767507879061   |dev from unit charge| = 0.00e+00
+      q = [2, 1, 1, 1, 1]      lambda_B^gen = -0.767507879061   |dev from unit charge| = 0.00e+00
+      q = [1, 2, 2, 3, 3]      lambda_B^gen = -0.767507879061   |dev from unit charge| = 0.00e+00
+      q = [3, 1, 1, 2, 2]      lambda_B^gen = -0.767507880712   |dev from unit charge| = 1.65e-09
+      q = [-1, 2, 2, 5, 5]     lambda_B^gen = -0.767507879061   |dev from unit charge| = 0.00e+00
+      Class-homogeneous charge NEVER moves the generic rate on K1.  The 'four-class'
+      object is exactly what survives; what breaks is charge INHOMOGENEOUS WITHIN a
+      class -- which is not a property of charge, it is a refusal to be a class function.
+
+     (c) how much of the taxonomy actually dies: enumeration over q in {0,1,2}^5
+      243 charge assignments: rank Delta = 2 in 223, = 1 in 19, = 0 in 1
+      lambda_B^gen equal to the unit-charge value in 19 of 243; 33 distinct values
+      S4-1 has TWO implications.  Only ONE of them fails under charge:
+        SURVIVES at every exponent map E:  |S| = 1  =>  Delta = 0  =>  no formation, ever
+        SURVIVES at every exponent map E:  |S| = 2  =>  rank Delta <= 1  (two points have
+                                           one difference; nothing about corners is used)
+        FAILS under inhomogeneous charge:  |S| >= 3  =>  rank 2
+      4000 random exponent sets with |S| <= 3 (seed 90210003): rank counts {0: 1307, 1: 1378, 2: 1315}; |S|<=2 with rank 2: 0
+      'OUTRIGHT' IS FALSE.  One implication of S4-1 dies; two live; and the criterion
+      itself (W-02's G != 1) is untouched by charge -- as the claim's own next clause says.
+
+====================================================================================================
+A3.  CLAUSE 'THE CORRECT CRITERION AT ARBITRARY CHARGE IS Delta(S) not-contained-in L'
+     (a) it is not a criterion for FORMATION in W-01's sense -- the sense the
+         project's own first ruling fixed.  It is necessary, never sufficient.
+====================================================================================================
+      p = (0.8,0.05,0.05,0.05,0.05), unit charge, (f,c)=(1,sqrt2)
+        Delta basis = [[1, 0], [0, 1]]  -> Delta = Z^2, L = 0, so Delta not-contained-in L: criterion says FORMATION
+        min_k |Z_k| over k <= 20000 = 0.600017052212   (the overlap NEVER vanishes)
+        lambda_B^gen = -0.223143551314  (< 0: it DECAYS)
+      W-01's ruling of record is a CONVEX-HULL condition -- 0 in the hull of the
+      characters -- and it is a condition on the WEIGHTS (it needs max class weight
+      <= 1/2).  No containment of lattices can carry a weight condition.  The lattice
+      statement decides lambda < 0; it does not decide firing.  The claim states an iff.
+
+     (b) and the containment is CLOCK-NORMALISED -- unstated in the claim.
+      S1 section 6's OWN published connection: W_F = -1, W_C = -i, i.e. (f,c) = (2pi*2/4, 2pi*3/4)
+        L = {(m,n) : -2m + 3n = 0 mod 4};  Delta = Z^2 basis [[1, 0], [0, 1]]
+        Delta contained in L ? False  -> criterion says FORMATION
+        schedule k_n = 1n :  min|Z| = 0.316227766017   sum(1-|Z|) = 2.459e+02   log|Omega_500| = -402.359478
+        schedule k_n = 2n :  min|Z| = 0.400000000000   sum(1-|Z|) = 1.500e+02   log|Omega_500| = -229.072683
+        schedule k_n = 4n :  min|Z| = 1.000000000000   sum(1-|Z|) = 0.000e+00   log|Omega_500| = 0.000000
+      Under the clock k_n = 4n the record NEVER FORMS on this connection, while
+      Delta not-contained-in L holds.  The correct clock-free statement is
+      'formation <=> k Delta not-contained-in L for infinitely many k of the schedule'.
+      W-03's corrected headline says 'under the canonical clock' and the claim drops it.
+      S4 FLAG F1 / CHOICE LEDGER C1: which clock is physical is OPEN.
+
+====================================================================================================
+A4.  CLAUSE 'WHICH UNIFIES S4-1 AND THE RELATION-LATTICE THEOREM INTO ONE STATEMENT'
+     G = Delta/(Delta ^ L) DOES NOT DETERMINE lambda_B.  Same Delta, same L, same
+     weights, two values of lambda 0.29 apart -- both reachable by per-vertex charge.
+====================================================================================================
+      q = (1,2,2,2,2)    E = [(1, 1), (2, 0), (0, 2)]  Delta basis [[1, -1]]  rank 1  lambda_B^gen = -1.203972804326
+      q = (2,3,3,6,6)    E = [(2, 2), (3, 0), (0, 6)]  Delta basis [[1, -2]]  rank 1  lambda_B^gen = -0.681980358627
+      q = (2,6,6,3,3)    E = [(2, 2), (6, 0), (0, 3)]  Delta basis [[2, -1]]  rank 1  lambda_B^gen = -0.681980358627
+      q = (3,4,4,12,12)  E = [(3, 3), (4, 0), (0, 12)]  Delta basis [[1, -3]]  rank 1  lambda_B^gen = -0.767783712479
+      log(0.3) = -1.203972804326    log(0.4) = -0.916290731874
+      Every row above has rank Delta = 1, generic L = 0, hence G = Delta ~ Z in every
+      row -- the SAME group, the SAME quotient, the SAME weights (0.4,0.3,0.3).
+      lambda_B is not constant across them.  A statement whose content is the quotient
+      G CANNOT contain the relation-lattice theorem, which is a statement about the
+      VALUE of lambda_B.  The containment is binary; the rate needs the embedded
+      exponent multiset, not the abstract quotient.  'One statement' is two statements.
+
+====================================================================================================
+A5.  CLAUSE 'd2 STILL ENTERS NOWHERE, SO CONTROL 1 STAYS VACUOUS BY IDENTITY AT EVERY
+     CHARGE'  --  A CONTROL THAT COULD NOT HAVE FAILED, RE-RUN 1024 TIMES.
+====================================================================================================
+      Arguments of the functional Z_k: (p_v), (E_v) = (q_v a_v, q_v b_v), (f,c), k.
+      Control 1 (fill the second triangle) changes: the face list, hence d2, hence chi,
+      b1, b2.  It changes NO vertex, NO edge, NO loop, hence no a_v, no b_v, no p_v,
+      no q_v, no (f,c).  Every argument is fixed, so Z_k is fixed pointwise in k.
+      Verified as an identity rather than a statistic:
+        max |Z_k(filled) - Z_k(unfilled)| over 1024 charges = 0.0e+00   (seed 90210005)
+      This is 0 because the two sides are the SAME EXPRESSION, not because charge was
+      tested.  A control whose two arms are literally the same function of the same
+      arguments cannot fail at any charge, any connection, any schedule or any carrier.
+      Reporting its survival as a result is the exact defect W-03 convicted S4 of.
+
+      AND THE UNIVERSAL IS OVER THE WRONG INDEX SET.  Nothing indexed by charge can
+      make d2 enter, because d2 has no slot in Z_k.  The object that gives d2 a slot is
+      an ACTION on the 2-cells -- W-04's RECOMMENDATION OF RECORD, test (1).
+      ILLUSTRATION (not actual surface; the action is an IMPORT, see IMPORT AUDIT):
+      Gibbs weight exp(beta * sum over FILLED faces of Re W), K1 (one filled) vs B2
+      (both filled), same pi, same charge, ensemble average of lambda_A:
+        q=[1, 1, 1, 1, 1]  beta=0.0  E[lambda_A] K1 = -0.767507746   B2 = -0.767507746   |diff| = 0.000e+00
+        q=[1, 1, 1, 1, 1]  beta=1.0  E[lambda_A] K1 = -0.563685581   B2 = -0.368471911   |diff| = 1.952e-01
+        q=[1, 1, 1, 1, 1]  beta=2.0  E[lambda_A] K1 = -0.456511516   B2 = -0.171387822   |diff| = 2.851e-01
+        q=[1, 2, 2, 2, 2]  beta=0.0  E[lambda_A] K1 = -1.204093006   B2 = -1.204093006   |diff| = 0.000e+00
+        q=[1, 2, 2, 2, 2]  beta=1.0  E[lambda_A] K1 = -1.204093006   B2 = -0.937262288   |diff| = 2.668e-01
+        q=[1, 2, 2, 2, 2]  beta=2.0  E[lambda_A] K1 = -1.204093006   B2 = -0.549172244   |diff| = 6.549e-01
+        q=[1, 1, 2, 1, 1]  beta=0.0  E[lambda_A] K1 = -0.916290732   B2 = -0.916290732   |diff| = 0.000e+00
+        q=[1, 1, 2, 1, 1]  beta=1.0  E[lambda_A] K1 = -0.609352939   B2 = -0.505215801   |diff| = 1.041e-01
+        q=[1, 1, 2, 1, 1]  beta=2.0  E[lambda_A] K1 = -0.466411727   B2 = -0.252795832   |diff| = 2.136e-01
+      At beta = 0 the fill is invisible; at beta > 0 it is not, and the size of the
+      gap depends on the charge.  'd2 enters nowhere' is a statement about a
+      ZERO-ACTION construction, not a statement that survives 'at every charge'.

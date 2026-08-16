@@ -1,0 +1,25 @@
+================================================================================================
+R1.  K1 REBUILT FROM S1 SECTION 1.  d1, d2 PUBLISHED.
+================================================================================================
+d1 (rows v0..v4, cols e1..e6) =
+[[-1  0  1 -1  0  1]
+ [ 1 -1  0  0  0  0]
+ [ 0  1 -1  0  0  0]
+ [ 0  0  0  1 -1  0]
+ [ 0  0  0  0  1 -1]]
+d2^T (cols e1..e6) = [[1 1 1 0 0 0]]
+d1 @ d2 = [[0 0 0 0 0]]    max|entry| = 0
+V=5 E=6 F=1  chi=0  b0=1 b1=1 b2=0   (ranks over Q)
+gamma_F is a cycle: True  bounds: True (= d2 column)
+gamma_C is a cycle: True  bounds: False
+a_v = [1 1 1 0 0]   b_v = [1 0 0 1 1]
+classes: v0=(1,1)  v1,v2=(1,0)  v3,v4=(0,1)
+
+matrix operator vs closed form, 400 random (f,c,q,section,k), seed 70251101:  max |diff| = 8.249e-15
+  (vertex phases of s cancel: confirmed -- only p_v = |s_v|^2 enters)
+
+================================================================================================
+R2.  S4-1's OWN CONFIGURATION, REPRODUCED.  (unit charge, all 15 support subsets)
+================================================================================================
+  rank2=5  rank1=6  rank0=4   (S4-1 predicts 5 / 6 / 4)
+  reproduced: True
