@@ -2104,3 +2104,66 @@ does the charge stay correlated with what wrote it; and is there a regime that i
 
 **REOPENS IF:** a fringe is shown to carry a flux or a current after all · or the closed-curve
 carrier reproduces the same forced results, which would move the cause elsewhere.
+
+---
+
+## W-25 — THE CLOSED-CURVE CARRIER: **THE FIX WORKS. THE BOUNDARY CARRIES CHIRALITY AND IS MORE THAN ITS PIECES. AND THE WHEEL CANNOT DISTINGUISH AREA FROM PERIMETER, WHICH IS THE NEXT CARRIER'S REQUIREMENT.**
+
+Built at the principal's direction after W-24 identified that every prior carrier put its boundary on
+dangling links. `LANE_W25_CLOSED_CURVE/`, sealed, 4 scripts.
+
+### THE CARRIER, AND THE TEST EVERY PREVIOUS ONE FAILED
+
+**Wheel `W_n`:** hub = interior, **rim = a closed curve = the boundary**, `n` spokes, `n` interior
+triangles. **All rim links lie on cycles** — so a flux can thread the boundary and a current can
+circulate on it, which no earlier carrier permitted. Physical dims `16 / 81 / 256` at `Z_2/Z_3/Z_4`.
+**DISCRETE STOKES VERIFIED EXACTLY AT EVERY GROUP:** `W_rim = T_0 T_1 T_2 T_3`, residual `0.00e+00`.
+**The boundary flux equals the enclosed curvature** — the first relation in this program between a
+boundary quantity and a bulk one.
+
+### THE CHIRALITY REACHES THE BOUNDARY
+
+`Im<W_rim>` is `-0.006997 / +0.002180 / -0.011434` at `Z_3` and **exactly `0.000000` at `Z_2` at
+every theta, structurally** — the Wilson loop is its own adjoint there, so the two senses of the
+circuit are one object. **On every fringe carrier this read zero because the boundary touched no
+plaquette. The rim touches `n`.**
+
+### THE BOUNDARY IS MORE THAN ITS PIECES — AND IT GROWS
+
+The four `<T_k>` are **identical** (`+0.23272-0.06043j`), forced by the wheel's `n`-fold symmetry,
+**so they cannot cancel by sign.** And `|<W_rim>|` **exceeds** the product of the individual
+expectations in every case. Enhancement `|<W_rim>| / |prod_k <T_k>|`, at `theta = 1.0`:
+
+```
+   rim n :      3       4       5       6
+   Z_2   :   2.17    2.66    3.34    4.23
+   Z_3   :   2.13    2.60    3.24    4.09
+```
+
+**Monotone growth, ~`1.25^n` — a constant connected correlation per boundary link.**
+**AND IT IS THE SAME AT BOTH GROUPS**, while the chirality is zero at one of them. **So the
+enhancement is NOT a chirality effect; it is generic plaquette correlation and would appear with no
+orientation at all.** Recorded so it is not later attributed to orientation.
+
+### REGISTRAR ERROR CORRECTED — A NEW CLASS
+
+The previous turn claimed `Im<W_rim>` was "20-30x smaller than a single triangle despite Stokes, so
+they must nearly cancel." **False, and the reasoning was invalid.** Stokes is an **operator**
+identity and says nothing about expectations; comparing a four-operator product to a single operator
+is comparing `<x^4>` to `<x>`. **Not a forced measurement this time — INCOMMENSURABLE OBJECTS
+COMPARED.** Both hypotheses it generated (screening; resolution floor) are dead: symmetry forbids
+cancellation, and exact diagonalisation at dim 81 has no resolution floor.
+
+### **THE NEXT CARRIER'S REQUIREMENT, AND IT IS STRUCTURAL**
+
+**On a wheel the enclosed area and the perimeter are BOTH `n`.** They scale identically, so this
+carrier **cannot distinguish an area law from a perimeter law** — and that distinction is the
+boundary-versus-bulk question, the one gravitational signature phrased natively in information
+language. **Same failure mode as the fringe: the question is sound, the carrier cannot carry it.**
+
+> **NEXT: a carrier where AREA AND PERIMETER SCALE DIFFERENTLY** — a 2-D lattice patch, where a
+> region of side `k` has area `~k^2` and perimeter `~k`. Only there can `<W>` be tested for an area
+> law against a perimeter law, and only there is the boundary-versus-bulk scaling askable.
+
+**REOPENS IF:** the enhancement is shown to be a finite-size artefact rather than a correlation per
+link · or a wheel is exhibited on which area and perimeter can be separated.

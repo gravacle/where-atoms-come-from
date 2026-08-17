@@ -1,0 +1,9 @@
+LANE W25 — THE CLOSED-CURVE CARRIER. Wheel W_n: hub 0 (interior), rim 1..n (a CLOSED CURVE = the
+boundary), n spokes, n interior triangles. Links 0..n-1 are spokes (0,k+1); links n..2n-1 are rim
+(k+1, k+2 mod n). Z_N clock/shift; Gauss at v = product of Z on outgoing minus incoming, imposed at
+ALL vertices. The physical sector is built COMBINATORIALLY in the electric basis (Gauss operators
+are diagonal there), not by matrix products -- the dense-projector version timed out.
+Plaquette T_k = (spoke k forward, rim k forward, spoke k+1 backward), applied as ONE simultaneous
+move; applying it as sequential shifts passes through a non-physical intermediate and fails.
+H = -sum_k (e^{i theta} T_k + h.c.) - g^2 sum_links (Z + Z-dagger); g^2 = 1, theta as tabulated.
+Discrete Stokes verified exactly at N=2,3,4: W_rim = T_0 T_1 ... T_{n-1}.
