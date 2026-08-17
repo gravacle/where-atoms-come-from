@@ -1,0 +1,49 @@
+W-17 RULING LANE — CONFOUNDS, recorded rather than fixed.
+
+C1  FLOATING-POINT, NOT PHYSICS.  In the R1/F5 strengthening block, the row
+    "dim = 1000000  E_n = n^2  |A(t=2*pi)| = 0.999999987890023" is a numerical
+    artefact, not a partial revival.  exp(-i n^2 2pi) = 1 EXACTLY for every
+    integer n; the deficit comes from reducing arguments of size n^2*2pi ~ 6.3e12
+    in double precision (relative eps 2.2e-16 -> absolute phase error ~1e-3 rad
+    at the top of the range).  The E_n = n rows, whose arguments are 1e6 times
+    smaller, return 1.000000000000000 at every dimension.  The claim rests on
+    the exact arithmetic, not on the quadrature.  Left in place unedited.
+
+C2  THE CONTROLS ARE NOT ROUTE DECISIONS.  FRAME_CHALLENGE_V001.md section 0
+    restricts the instrument to decisions that determine what gets built next.
+    Neither PARITY nor DIAGONAL/NON-DIAGONAL is one.  A defender may say the
+    instrument was never meant to be pointed at them.  The answer is that F1..F5
+    as written contain no clause excluding them, that W-15 nominated
+    diagonal/non-diagonal itself as the paradigm of a sound binary, and that a
+    test whose specificity is only claimed on the class of frames it was
+    reverse-engineered from has no measured specificity at all.  But the
+    objection is real and is recorded, not answered away.
+
+C3  I DID NOT BUILD A SOUND ROUTE DECISION.  The ideal control -- a route
+    decision in this program whose binary is forced, with a proof under it --
+    does not exist on disk to my knowledge, and I did not construct one.  The
+    controls therefore bound the instrument's FALSE-POSITIVE rate on sound
+    partitions; they do not measure its false-positive rate on sound ROUTES.
+
+C4  F4's CONTROL-2 RESULT IS A DEMONSTRATION OF DISCRETION, NOT A MEASUREMENT
+    OF F4.  I chose both presupposition sentences myself.  That is exactly the
+    point being made -- the lane chooses the sentence and the sentence chooses
+    the verdict -- but it means the "INDETERMINATE" score is an exhibit, not a
+    statistic.
+
+C5  CONTROL 2's F2 FAMILY IS HAND-BUILT.  U = P.D with P the 3-cycle is a
+    3-real-parameter slab I constructed because it makes (P.D)^3 diagonal by
+    inspection.  I did not measure the full dimension of {U in U(3) : U^3
+    diagonal}; I established only that it is at least 3, which is enough for
+    the claim (a positive-dimensional subset of arm B lands in arm A).
+
+C6  LINEAGE.  I am Claude Opus 5.  So are all four frame lanes, both auditors,
+    and every register row from W-07 on.  This ruling is adversarial checking
+    inside one lineage (CUSTODY_V001.md section 4), never independent
+    corroboration.  The lineage-independent lane W-03 specified
+    (REGISTER_V001.md:87, :158) still does not exist for anything after W-06.
+
+C7  I READ THE WHOLE CORPUS.  I am the ruling, not a cutoff lane, so no cutoff
+    applies to me -- but that means my judgement of what was "genuinely new" in
+    the round is made with the answers in hand, and hindsight makes novelty
+    look easier to reach than it was.

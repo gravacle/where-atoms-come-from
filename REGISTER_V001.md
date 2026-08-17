@@ -1694,3 +1694,93 @@ found ten hours before W-13 opened, and it was under-read. Again.**
 **REOPENS IF:** a counterexample with algebraic angles is exhibited (it would refute W-13's Baker
 argument) · or the Sudler literature settles the curve stratum, which would close the one line
 still open.
+
+---
+
+## W-17 — THE FRAME INSTRUMENT, VALIDATED BY RETRODICTION: **IT WORKS AT TWO FIFTHS OF ITS SIZE. AND ITS ONE CERTIFIED CATCH IS THAT THE SENTENCE WHICH LICENSED THE PROGRAM'S CENTRAL STAGE IS AN INVALID INFERENCE THAT SIXTEEN REGISTER ROWS NEVER EXAMINED.**
+
+Directed by the principal, 2026-08-17: a process, applied at route decisions, that challenges the
+binary frame — testing not only whether there are more options but **whether the binary is false**.
+Instrument: `FRAME_CHALLENGE_V001.md`. Validation: **retrodiction under reading cutoffs** over four
+route decisions, each lane forbidden to read the corpus past the point its decision was taken, plus
+a cutoff auditor and an instrument auditor told to argue the instrument is ceremony. 7 agents,
+0 errors. `W17_INSTRUMENT_VALIDATION_V001.md`, sealed. Reduced instrument: `FRAME_CHALLENGE_V002.md`.
+
+### THE SUBSTANTIVE FINDING — **T1/F5 AT R1, AND IT IS NEW AGAINST THE WHOLE CORPUS**
+
+`FOUNDING_DESIGN_V001.md:63-65`: *"An inductive limit of finite objects is not finite — **which is
+precisely how it escapes recurrence**."* That sentence is the founding design's **single stated
+escape** from its own §4 obstruction, and `:99-102` sends stage S3 out *"with the inductive-limit
+template as the starting point."* **It is the sentence that licensed the program's central stage.**
+
+**IT INFERS NON-RECURRENCE FROM NON-FINITENESS, AND NON-FINITENESS IS NECESSARY, NOT SUFFICIENT.**
+Registrar-verified, needing no complex, no gauge group and no fibre — only a commensurate spectrum:
+
+```
+   dim = 10, 100, 10000, 1000000     E_n = n     |A(t = 2 pi)| = 1.000000000000000
+   contrast, incommensurate spectra: max|A| over t in [1,1e4] = 0.9476 / 0.9618 / 0.9592
+```
+
+**An infinite commensurate spectrum recurs exactly, at every dimension including the limit.**
+Two lines of arithmetic. **And it was never run:** across all **1696 lines** of this register,
+W-01 through W-16, occurrences of **`inductive limit`: 0. `quasi-local`: 0.** Sixteen rows, eleven
+adversarial, **and not one examined the escape route that licensed S3.** W-08's *"the founding
+obstruction is false as an inference"* attacks a **different** defect — single-cell `|Z_k|` versus
+the product — and neither restates the other. **This attacks the ESCAPE, not the obstruction.**
+
+**AND IT IS THE ONE CATCH NO LEAK REACHES**, which matters because the round was contaminated (below):
+the instrument's worked examples cover F2 and F4 only; **F5 has no worked example anywhere.**
+
+### THE INSTRUMENT IS PART FAULT MACHINE, AND THE CONTROL THAT PROVED IT WAS OMITTED FROM THE ROUND
+
+The ruling ran the control the round did not: **point the instrument at frames known to be sound.**
+
+| frame | F1 | F2 | F3 | F4 | F5 | fired |
+|---|---|---|---|---|---|---|
+| **PARITY** (evens / odds) | FIRE | **FIRE** | ok | ok | ok | **2/5** |
+| **`diagonal / non-diagonal`** on `U(3)` | FIRE | **FIRE** | **FIRE** | indeterminate | ok | **3.5/5** |
+
+**The second control is W-15's own named paradigm of a binary the mathematics handed over** —
+*"`diagonal / non-diagonal` was forced and has a proof under it"* (`REGISTER:1509-1511`).
+**F2 fires on evens versus odds**: `f(n) = n+1` carries the odd arm exactly onto the even arm,
+symmetric difference `2` of `100000`. **F2 fires on diagonality**: for a 3-cycle `P` and any diagonal
+`D`, `(P·D)^3` is diagonal — off-diagonal norm of `U^3` **`0.000e+00`** over 20000 draws, on a
+positive-dimensional slab. **A map exists between almost any two arms. F3** voids a predicate whose
+cell is measure-zero, and `mu(diagonal) = 0` under Haar while the predicate partitions `U(3)`
+exactly — **and this corpus's own interesting sets are all measure-zero** (N3's resonances, W-11's
+correlated locus). **F4's verdict is chosen by the lane**: two defensible presupposition sentences
+give opposite answers on the same frame.
+
+**AND F1 AS WRITTEN IS TRIVIALLY SATISFIABLE** — two arms always lie in some space. The missing
+clause is **EXCLUSION**: exhibit a point in **neither** arm. Parity: `0 of 100000`. Diagonality:
+`0 of 20000`. **Both controls clear under it, and F1 keeps every productive result of the round.**
+
+### **RULING: ADOPT TWO TESTS, NOT FIVE.** `FRAME_CHALLENGE_V002.md`
+
+**KEEP `T1` (the null option), run first** — it produced the round's only certified catch at a cost
+of two lines. **KEEP `T2` (embed), amended with EXCLUSION + RELEVANCE + PROVENANCE.**
+**DELETE `F2` and `F3`. DEMOTE `F4`** to a grep gate: keep the requirement to *write* the
+presupposition, drop the requirement to *score* it.
+
+### REGISTRAR DEFECT — **I CONTAMINATED MY OWN EXPERIMENT**
+
+`FRAME_CHALLENGE_V001.md:54-56` carries **R1's own F4 answer as a worked example**, citing a register
+row far past that lane's cutoff — and the brief **ordered every lane to read the instrument first.**
+The R1 lane detected this itself and refused to certify its own retrodiction, writing:
+*"Availability is demonstrated. Discoverability is not."* **A second leak: the session auto-memory
+line carried "forced crossing does not exist" — R1's answer — at turn zero.** **Worked examples in a
+frame instrument are leak vectors.** V002 carries none.
+
+### WHAT READS TWO WAYS
+
+**Can a frame lane's brief be kept clean by THIS registrar at all?** The round says no on the first
+attempt and the fix is mechanical (delete the examples), **or** it says the contamination is
+structural because the registrar writes the brief. **Not scored.** The lineage-independent lane
+W-03 specified still does not exist for anything after W-06, and **this is layer fourteen of one
+block.**
+
+**ADOPTION IS THE PRINCIPAL'S ACT.** `FOUNDING_DESIGN_V001.md` reads *"PROPOSED, NOT ADOPTED.
+Governing only at the principal's seal"*, and no principal act is on disk.
+
+**REOPENS IF:** a sound frame is exhibited on which `T1` or amended `T2` fires · or the founding
+escape inference is shown to have been tested somewhere in the corpus after all.

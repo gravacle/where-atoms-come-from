@@ -1,0 +1,134 @@
+
+==============================================================================
+CONTROL 1 — PARITY  (arms: n even / n odd).  Unimpeachably sound partition.
+==============================================================================
+F1 (letter): embedding space = congruence classes mod m, m in [2, 3, 4, 5, 6, 7, 8, 12]
+            the named binary is the m=2 slice; dimension of the family = 1 (the modulus m)
+            off-axis points exist at every m != 2, e.g. residue classes mod 3: [0, 1, 2]
+            -> AN EMBEDDING EXISTS.  By the letter of F1, FIRES.
+F1 (amended, EXCLUSION): integers lying in NEITHER arm: 0 of 100000  fraction = 0.000000
+F1 (amended, RELEVANCE): mod-3 coordinate constrains the branch in 0 of 6 cells  -> the off-axis coordinate is DECISION-IRRELEVANT
+            -> AMENDED F1: SOUND.
+
+F2: map = change of coordinates f(n) = n+1.
+    |A \ f(B)| + |f(B) \ A| = 2   (boundary term only: 2 of 100000)
+    density of symmetric difference = 0.00002000   ->  DISTANCE 0 in the limit
+    map = power n -> n^2: parity violations 0 of 100000 (power PRESERVES the arms)
+    -> ONE listed map carries arm B exactly onto arm A.  By the letter of F2, FIRES.
+    (and it is a SYMMETRY EXCHANGING the arms, which is EVIDENCE OF A GOOD PARTITION,
+     not evidence of degeneracy.  F2 as written cannot tell the two apart.)
+
+F3: natural density  mu(even) = 0.500000   mu(odd) = 0.500000   overlap = 0.000000   union = 1.000000
+    -> both cells positive measure, no overlap, exhaustive.  F3: SOUND.
+
+F4: presupposition = 'every input is an integer'.  Tested: 100000 of 100000 hold.  -> TRUE.  F4: SOUND.
+    BUT the verdict is set by WHICH sentence the lane elects to write.  A second,
+    equally defensible sentence - 'the cost of the two branches is comparable' - is
+    contingent and can be made false by choosing the algorithm.  F4 has unbounded
+    lane discretion and returns no forced number.
+
+F5: witness for arm A: n = 2 (even).  witness for arm B: n = 3 (odd).
+    both branches obtain.  F5: SOUND.
+
+==============================================================================
+CONTROL 2 — DIAGONAL / NON-DIAGONAL on U(3).  W-15's own certified-sound binary.
+==============================================================================
+F3: Haar measure on U(3), 20000 draws.
+    mu(DIAGONAL cell)     = 0.000000   (count below 1e-9: 0)
+    mu(NON-DIAGONAL cell) = 1.000000
+    min off-diagonal norm observed = 2.466693e-01
+    -> ONE CELL HAS MEASURE EXACTLY ZERO.  F3's stated rule reads: 'an empty cell,
+       A MEASURE-ZERO CELL, or an overlap means the predicate does not partition'.
+       BY THE LETTER OF F3, FIRES - on a binary that partitions U(3) exactly,
+       with overlap 0 and union 1.  THIS IS A FALSE POSITIVE, AND IT CONVICTS
+       THE COROLLARY W-15 CERTIFIED AS THE PARADIGM OF A SOUND ONE.
+
+F2: map = POWER, f(U) = U^3.  Family U = P.D, P the 3-cycle, D diagonal unitary, 20000 draws.
+    min off-diagonal norm of U itself (arm B, NON-diagonal): 1.732051
+    max off-diagonal norm of U^3      (lands in arm A)     : 0.000e+00
+    -> || A - f(B) || = 0.000e+00.  BY THE LETTER OF F2, FIRES.
+    The family is 3-real-dimensional inside U(3) (dim 9), so this is not a
+    measure-zero accident of one operator: a positive-dimensional slab of arm B
+    is carried into arm A by a listed map.
+    THE CORPUS'S OWN INSTANCE IS THE SAME FACT: ||T_F^3 - M_dF|| = 6.18e-16,
+    ||T_C^3 - M_c|| = 4.34e-16 (ERRATUM AGAINST W-11, REGISTER_V001.md:1519-1534).
+
+F1 (letter): embedding space = U(3), real dimension 9.  Coordinate: delta =
+    off-diagonal Frobenius norm, range [0, sqrt(6)] = [0, 2.449490].
+    arm A = {delta = 0} (the diagonal subgroup, real dim 3);  arm B = {delta > 0}.
+    decision-relevant functional: phase-blindness spread of Z = <s, U s> at fixed moduli
+    theta      delta(U)      blindness spread
+    0.0000     0.000000      0.000000
+    0.0200     0.028282      0.000072
+    0.0500     0.070681      0.000450
+    0.1000     0.141186      0.001798
+    0.3000     0.417929      0.016027
+    0.7854     1.000000      0.103101
+    1.5708     1.414214      0.325605
+    -> interior points exist and the functional DIFFERS there.  BY THE LETTER OF F1,
+       and even under R4's stronger (a)+(b) discriminator, FIRES.
+F1 (amended, EXCLUSION): every interior point delta in (0, 2.449490] LIES IN ARM B.
+    points lying in NEITHER arm: 0 of 20000 Haar draws and 0 of the interpolation path
+    -> the coordinate refines one arm, it does not exhibit a third option.
+    -> AMENDED F1: SOUND.
+
+F4: sentence 1 = 'a basis is designated' -> TRUE in-corpus (S1's vertex classes).
+    sentence 2 = 'diagonality is a property of the operator alone' -> FALSE:
+    2000 of 2000 Haar unitaries are diagonal in their OWN eigenbasis, so under
+    a free basis arm B is EMPTY.  BOTH SENTENCES ARE DEFENSIBLE READINGS OF THE SAME
+    QUESTION AND THEY GIVE OPPOSITE VERDICTS.  F4's output is set by lane discretion,
+    not by the frame.  SCORED: INDETERMINATE.
+
+F5: witness for arm A: M_gamma, diagonal (REGISTER_V001.md:29-33).
+    witness for arm B: COR-F's T, non-diagonal (S3_THE_CROSSING_AUDIT_V001.md:182).
+    both branches obtain, each with a sealed exhibit.  F5: SOUND.
+
+==============================================================================
+SCORECARD — FIRE RATE ON FRAMES KNOWN TO BE SOUND
+==============================================================================
+
+                       F1(letter)  F2   F3   F4          F5     fired/5
+  CONTROL 1 PARITY        FIRE    FIRE  ok   ok          ok       2/5
+  CONTROL 2 DIAG/NONDIAG  FIRE    FIRE  FIRE indeterminate ok     3.5/5
+
+  SAME FRAMES, AMENDED INSTRUMENT (F1 + exclusion clause; F2 deleted;
+  F3 demoted to a reporting line; F4 demoted to a grep gate; F5 unchanged):
+
+                       F1(amended)      F5     fired/2
+  CONTROL 1 PARITY          ok          ok       0/2
+  CONTROL 2 DIAG/NONDIAG    ok          ok       0/2
+
+  READ: as written, the instrument convicts the partition of the integers into
+  evens and odds, and convicts the one binary W-15 itself certifies as forced with
+  a proof under it.  A 19/20 fire rate on R1-R4 therefore carries FAR less
+  information than it appears to.  The two tests that clear BOTH controls are
+  F5 and the amended F1 - and those are the same two tests that produced 4 of the
+  5 genuinely-new findings in the round.
+
+
+==============================================================================
+R1/F5 STRENGTHENED — 'an inductive limit of finite objects is not finite, which is
+==============================================================================
+precisely how it escapes recurrence' (FOUNDING_DESIGN_V001.md:63-65) — refuted with
+no carrier at all.  Any INFINITE spectrum that is commensurate revives exactly.
+
+    dim =       10   E_n = n   |A(t=2*pi)| = 1.000000000000000
+    dim =      100   E_n = n   |A(t=2*pi)| = 1.000000000000000
+    dim =    10000   E_n = n   |A(t=2*pi)| = 1.000000000000000
+    dim =  1000000   E_n = n   |A(t=2*pi)| = 1.000000000000000
+
+    and the same for E_n = n^2 (K1's own electric spectrum shape, but the point
+    does not need it):
+    dim =       10   E_n = n^2  |A(t=2*pi)| = 1.000000000000000
+    dim =      100   E_n = n^2  |A(t=2*pi)| = 1.000000000000000
+    dim =    10000   E_n = n^2  |A(t=2*pi)| = 1.000000000000000
+    dim =  1000000   E_n = n^2  |A(t=2*pi)| = 0.999999987890023
+
+    NON-FINITENESS IS NECESSARY FOR NON-RECURRENCE, NOT SUFFICIENT.  The founding
+    design's single stated escape from its own §4 obstruction does not follow from
+    the premise it is drawn from, and the counterexample is two lines of arithmetic
+    requiring nothing but the sentence itself.
+
+    REGISTER CHECK: occurrences of 'inductive limit' in REGISTER_V001.md (1696 lines,
+    W-01 through W-16): 0.  Occurrences of 'quasi-local': 0.  The escape route that
+    licensed stage S3 was never examined by any register row.
