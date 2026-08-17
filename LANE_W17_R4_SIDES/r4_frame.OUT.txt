@@ -1,0 +1,266 @@
+
+==============================================================================
+CONTROL C0 — the Mahler routine, against two register values it CAN fail
+==============================================================================
+  m(0.4 + 0.3x + 0.3y)                       = -0.767507879711   register -0.767507880   |diff| = 2.889e-10
+  m(4/9 + (1/9)x + (2/9)y + (2/9)xy)         = -0.810930216216   log(4/9) = -0.810930216216   |diff| = 0.000e+00
+  NEGATIVE CTRL m(uniform) = -1.386259703761   log(1/4) = -1.386294361120  (agrees only because (1+x)(1+y)/4 factors; m(1+x)=0)
+  -> the routine reproduces two independent register figures and is not tuned to either.
+
+==============================================================================
+F1 — EMBED.  Every argument Z_k actually takes.  Is the count two?
+==============================================================================
+
+F1-A. THE SPECTRAL EMBEDDING.  Under the corpus's fibre-wise convention (REGISTER:577,
+      REGISTER:1171-1172) Z_k is ALWAYS of the form  Z_k = sum_j w_j chi_j^k  with w_j >= 0,
+      sum w_j = 1, |chi_j| = 1.  So Z_k = mu-hat(k) for a probability measure
+              mu = sum_j w_j delta_{chi_j}   on the unit circle.
+      Both named arms are moves of the SAME object mu:
+              "act on the ready state"  = move the WEIGHTS w
+              "act on the connection"   = move the ATOMS  chi
+      The embedding space is E_n = P_n(U(1)) (n-atom probability measures), modulo the
+      global rotation chi_j -> a*chi_j which leaves every |Z_k| fixed.
+              dim E_4 = (4-1 weights) + (4 angles) - (1 rotation) = 6.
+      The corpus's slice is chi = (1, u, v, uv): angles (0, f, c, f+c), i.e. 3 weights
+      + 2 angles = 5.   6 - 5 = 1 UNREACHED DIMENSION, and it is exactly the additive
+      relation  th_11 - th_10 - th_01 = 0,  which is W-11's class-constancy of the
+      relative branch operator Q (REGISTER:1171-1176).
+
+  singular values, corpus parametrisation (pi,f,c), 5 params:
+    [48.0568 37.2162  9.2064  3.7159  0.8305]
+    numerical rank at tol 1e-07: 5
+  singular values, free-atom parametrisation (w, angles), 6 params, SAME point:
+    [45.4656 28.6096 17.0783  9.1909  3.7146  0.7654]
+    numerical rank at tol 1e-07: 6
+
+  => the binary {connection, ready state} spans a rank-5 tangent space
+     inside a rank-6 one.  MISSING DIMENSIONS: 1
+  the direction (dth_10, dth_01, dth_11) = (1, 1, -1) breaks th_11 = th_10 + th_01;
+  its response is NOT in the span of the two arms:  ||residual||/||response|| = 0.808089
+
+  STEELMAN CHECK (this test could have come out either way): inside the convention,
+    rank(state block d/dpi)      = 3
+    rank(connection block d/dfc) = 2
+    rank(both together)          = 5   = 3 + 2, so the two arms are
+    INDEPENDENT and TOGETHER EXHAUST the convention-scoped tangent space.
+    => the binary is a SOUND partition CONDITIONAL ON THE TRANSPORT CONVENTION.
+    It under-enumerates only once the convention is allowed to move — and W-11,
+    the row immediately preceding this decision, ruled the convention a STIPULATION
+    (REGISTER:1149-1152 'reached by substitution'; H1 at REGISTER:1223 'a stipulation,
+    not a theorem, and the corpus's own sealed COR-F exhibits an admissible
+    alternative under which it fails').
+
+F1-B. THE LOOP DESIGNATION — a third locus, ALREADY EXHIBITED IN THE CORPUS.
+      ERRATUM AGAINST W-09 (REGISTER:994-1009): class occupancy is a property of the
+      LOOP DESIGNATION, not of the complex.  On B0b's own complex, with S4's own gamma_F,
+      the STATE fixed (uniform 1/9) and the CONNECTION fixed, sweeping gamma_C over
+      admissible simple cycles reaches 16 distinct class multisets.
+      Source: LANE_W10_A_CARRIERS_REFUTE_1/r1_rebuild.OUT.txt:81 (cited by the erratum).
+      lambda over four of those designations, recomputed here:
+        pi = (0.0000,0.0000,0.5556,0.4444)   lambda = -0.587786665
+        pi = (0.0000,0.1111,0.5556,0.3333)   lambda = -0.587786665
+        pi = (0.1111,0.1111,0.4444,0.3333)   lambda = -0.810930216
+        pi = (0.2222,0.2222,0.3333,0.2222)   lambda = -1.098612289
+      SPREAD over the loop-designation axis alone: 0.510825624 nats,
+      at fixed complex, fixed ready state, fixed connection.  Neither arm names it.
+
+F1-C. THE SCHEDULE — a fourth locus, and it is the one W-08 already measured.
+      REGISTER:820: durability is a property of the (connection, SCHEDULE) pair, and
+      "the corpus has never stated a schedule stipulation".  An adversary writing only the
+      sqrt(K) cells of smallest 1-|Z_k| holds |Omega| ~ 0.55 forever.  Reproduced here at
+      the corpus's own resonant test point f=2.0, c=1.1, pi=(0.4,0.3,0.3,0).
+      A schedule supported on a density-zero subset of N IS a singular constraint —
+      and it acts on NEITHER the connection NOR the state.
+      K =    10000   honest schedule k_n=n :       7668.943 nats     adversarial sqrt(K)-schedule :   0.6866 nats
+      K =   100000   honest schedule k_n=n :      76674.295 nats     adversarial sqrt(K)-schedule :   0.3629 nats
+      K =  1000000   honest schedule k_n=n :     766737.540 nats     adversarial sqrt(K)-schedule :   0.1148 nats
+      honest rate is linear in K; adversarial accumulation is O(1) and K-independent.
+      RATIO at K=1e6: 6,678,379 : 1
+
+F1-D. THE CHARGE — a fifth locus.  REGISTER:208-215 (W-03): "THE MODALITY NAMED IN S4'S
+      OWN BRIEF AND NEVER RUN: CHARGE ... q = (1,2,2,2,2) moves lambda".  A non-uniform
+      charge splits an incidence class into two atoms at different characters WITHOUT
+      touching the class pushforward pi, the connection, or the state's class weights.
+      Exhibit, built here: K1's class-10 weight 0.3 carried by two vertices at 0.15 each.
+      unit charge   P = 0.4 + 0.30x        + 0.3y   lambda = -0.767507880
+      charges (1,2) P = 0.4 + 0.15x+0.15x^2 + 0.3y   lambda = -0.878257714
+      MOVED BY 0.110749834 nats at IDENTICAL pi, IDENTICAL (f,c).
+
+F1 VERDICT INPUTS: named arms = 2.  Arguments of the functional established in the
+corpus at the cutoff = at least 6:  pi (state) | (u,v) (connection) | the relative branch
+operator Q / transport convention (W-11 H1, REGISTER:1171, 1223) | the loop designation
+(erratum vs W-09, REGISTER:994, :1007) | the schedule (W-08, REGISTER:820) | the charge
+(W-03, REGISTER:208).  Fibre rank / gauge group (W-04 ERR-2, REGISTER:270-279) and the loop
+COUNT (W-03 reopen, REGISTER:248-249) make eight.
+
+==============================================================================
+F2 — DEGENERACY.  Are the two arms the same object under a map?
+==============================================================================
+
+F2-A. EXACT MAP 1 — change of coordinates (the W-03 involution, REGISTER:203-206).
+      Z_k(pi;u,v) * conj(uv)^k = Z_k(sigma pi; conj u, conj v)  with sigma: 00<->11, 10<->01.
+      So a CONNECTION move (complex conjugation) is EXACTLY a STATE move (class swap).
+      || |Z_k(pi;u,v)| - |Z_k(sigma pi; ubar,vbar)| ||_inf over 2000 draws x 59 cells
+        = 5.413e-14     -> the arms OVERLAP on a Z_2 subgroup, distance 0 to machine eps.
+
+F2-B. EXACT MAP 2 — restriction to the target functional.  The route wants to move THE
+      RATE.  Under H2 (REGISTER:1225: (conj W_F, W_C) generates a dense subgroup of T^2)
+      Weyl gives lambda = m(P), a function of pi ALONE.  So the FORGET-THE-CONNECTION map
+      f(pi,u,v) = pi collapses the whole connection arm to a POINT for the rate.
+      m(P) at pi = (0.42, 0.19, 0.27, 0.12): -0.867500568
+      400 random (f,c), lambda_N at N=2e5:  max|lambda_N - m(P)| = 2.245e-04
+                                            DIAMETER of connection orbit = 3.936e-04   (Weyl truncation error, shrinking in N)
+      400 random pi at fixed (f,c):         DIAMETER of state orbit      = 1.223604
+      RATIO state-diameter : connection-diameter = 3,109 : 1
+      The two arms are NOT symmetric rivals.  On a full-measure set of connections the
+      connection arm is degenerate to a point and only the state arm has any extent.
+
+F2-C. MAP 3 — monomial substitution (the natural 'power' map, and the one charge suggests).
+      x -> x^q, y -> y^q is measure-preserving on T^2, so m is invariant: a UNIFORM charge
+      cannot move the rate.  Only a NON-uniform charge can (F1-D), and that is an atom-set
+      move, i.e. the F1 missing dimension, not a connection move.
+      m(0.4 + 0.3x + 0.3y)     = -0.767507880
+      m(0.4 + 0.3x^2 + 0.3y^2) = -0.767507885   (uniform charge 2: unchanged)
+
+==============================================================================
+F3 — CARVING.  Measure both cells.
+==============================================================================
+
+Predicate under test: "a singular constraint moves the rate BY ACTING ON THE CONNECTION"
+                  vs "                                    BY ACTING ON THE READY STATE".
+
+MEASURE 1 — the natural measures on the two arms (Haar on T^2; Lebesgue on the 3-simplex).
+            Cell A = {(f,c) : lambda(pi;f,c) != m(P)} .  This is N3 (REGISTER:465-468).
+      Haar sample of 400 connections above: 0 exceed the Weyl error floor 2.24e-04.  Cell A has Haar measure 0 (N3: P(rank L > 0) = 0).
+      Cell B = {pi : m(P) != m(P')} has Lebesgue measure 1 on the simplex (diameter 1.2236).
+      MEASURE-ZERO CELL vs FULL-MEASURE CELL: the predicate does not partition anything
+      under the measure the corpus itself uses.  This is F3's stated failure mode.
+
+MEASURE 2 — the achievable RANGE of lambda under a SINGULAR constraint on each arm.
+            This is the measure the question actually needs, since it stipulates singular.
+      CONNECTION ARM, singular constraints, at fixed pi = (0.4,0.3,0.3,0):
+        delta at (f,c)=(0,0)  [trivial connection]        lambda = +0.000000000   (= 0, never writes)
+        delta at (f,c)=(2.300524,-2.300524)  [a ZERO of P]   |Z_1| = 0.000e+00   lambda = -inf  (writes instantly)
+        S1's published order-4 connection (u=-1, v=-i), pi = (0.42, 0.19, 0.27, 0.12):
+          subgroup average = -1.024768934   m(P) = -0.867500568   |deviation| = 1.5727e-01
+          (REGISTER:1226 reports 3.7e-02 at S1's own connection for its own pi — same order.)
+        => achievable range on the CONNECTION arm under singular constraints: [-inf, 0].  UNBOUNDED.
+      READY-STATE ARM, at fixed generic (f,c): the achievable range of m(P) over the simplex:
+        4000 draws: max = -0.001063   min = -1.222490
+        sup is 0 (pi = delta on one class: Z_k == 1); inf is finite (P cannot vanish
+        identically for a probability vector) -> range approx [-1.2225, 0].
+      BOTH CELLS ARE NON-EMPTY, AND THE CONNECTION CELL'S RANGE STRICTLY CONTAINS THE
+      STATE CELL'S.  'Can it move the rate' is answered YES on both arms and cannot
+      come out otherwise.  Under process rule 'could not have failed', the predicate
+      carries no discriminating weight.
+
+MEASURE 3 — the OVERLAP cell the binary has no name for.  A Gauss-law-type constraint is
+            by definition a RELATION between the state and the connection, not a condition
+            on either separately.  Exhibited: the locus {(pi,f,c) : Z_1(pi,f,c) = 0} —
+            W-01's own convex-hull firing condition (REGISTER:43).  It is a constraint that
+            is singular in the joint variable and is a condition on NEITHER arm alone.
+      three-class carrier, 0 in conv{1,u,v}: 49749/200000 = 0.248745  (W-09 exact value 1/4, REGISTER:939)
+      four-class carrier,  0 in conv{1,u,v,uv} <=> cos f + cos c <= 0: 99882/200000 = 0.499410  (W-09 exact value 1/2, REGISTER:940)
+      The joint cell has POSITIVE codimension-1 measure in the joint space and is
+      empty in each arm's own variable at fixed other.  The binary has no cell for it.
+
+==============================================================================
+F4 — PRESUPPOSITION.
+==============================================================================
+
+THE SENTENCE THE QUESTION ASSUMES, in one line:
+
+  "This construction has a CONSTRAINT that can be imposed, the rate is blocked without one,
+   and the loci at which such a constraint could act are exhausted by {the connection,
+   the ready state}."
+
+TESTED AS THREE CLAIMS IN THEIR OWN RIGHT, independently of the choice:
+
+ (i) "there is a constraint to impose."   FALSE AT THE BYTES.
+     grep -ic 'constraint' over all ten sealed artifacts standing at the cutoff
+     (S1, S2, S2-audit, S3, S3-audit, S4, W07, W08, W10, W11; 427,872 bytes) = 0.
+     'gauss' occurs 5 times, every one of them 'Gauss-Bonnet' or 'Gaussian rationals';
+     'Gauss law' occurs 0 times.  The register says so twice in its own voice:
+       REGISTER:287-288 (W-04 ERR-3) "there is no action, no coupling constant, no Gauss law,
+         no plaquette weight, no backreaction anywhere"
+       REGISTER:397 (W-05)       "no backreaction, no Gauss law, no constraint, no equation
+         of motion"
+       REGISTER:329 (W-04)       corpus occurrences of 'Gauss law', 'constraint' in the
+         gauge sense: 0.
+     A constraint is a feature of a variational structure.  The corpus has no action
+     (W-04 ERR-3, unbroken through four rounds of attack, REGISTER:610).
+
+ (ii) "the rate is blocked."   TRUE ONLY OF ONE ARM, AND THE QUESTION INHERITS IT AS IF OF BOTH.
+     N3 (REGISTER:465-466) reads: "the rate is invariant under every absolutely continuous
+     CONNECTION measure".  It is a statement about connection measures only.  Nothing in
+     N3, or anywhere at the cutoff, blocks the state arm.  The state arm never needed a
+     singular constraint, so the two arms are not rivals for the same job.
+
+ (iii) "the loci are exhausted by two."   FALSE — F1, six to eight loci, four of them with
+     numbers already in the register at the cutoff.
+
+==============================================================================
+F5 — THE NULL OPTION.  Does EITHER branch obtain?
+==============================================================================
+
+NEITHER BRANCH OBTAINS AS A MECHANISM, and the evidence is positive, not residual:
+
+  1. NO CONSTRAINT EXISTS TO PLACE ON EITHER SIDE.  0/427,872 bytes (F4(i)).  W-05's
+     "HAS A FIELD: NO ... the action supplies a PRIOR over a fixed background, not a field"
+     (REGISTER:393-397) is a ruling of record, and W-06 did not disturb it: its list of
+     what stays dead includes "has a field: no" (REGISTER:610).
+
+  2. BOTH BRANCHES OBTAIN TRIVIALLY AS ARITHMETIC (F3, Measure 2): a delta measure at a
+     zero of P sends lambda to -inf; a delta at pi = (1,0,0,0) sends it to 0.  So the
+     question's literal answer is "both, unboundedly", which is a control that could not
+     have failed, and therefore decides no route.
+
+  3. THE THING THAT IS ACTUALLY OPEN AT THE CUTOFF IS ADMISSIBILITY, AND THE REGISTER
+     SAYS SO TWICE, ON TWO DIFFERENT AXES, IN ITS OWN REOPEN CLAUSES:
+       REGISTER:910  (W-08 reopens) "an INTRINSIC admissibility criterion for SCHEDULES is
+         written down under which the corpus's own SUM(1-z_n) test is recovered and the
+         K^{-1/2} adversary excluded"
+       REGISTER:1007 (erratum vs W-09) "deciding it needs an ADMISSIBILITY CRITERION FOR
+         LOOP DESIGNATIONS, which the corpus has never written — the structural twin of
+         W-08's missing schedule-admissibility criterion."
+     Two registered open admissibility questions, neither on the connection and neither on
+     the ready state.  The route decision ranged over neither of them.
+
+==============================================================================
+CONFOUNDS OF THIS LANE — recorded, not fixed (process rule)
+==============================================================================
+
+ C1. THE NEGATIVE CONTROL IS 3.5e-05 OFF, NOT MACHINE-EPS OFF.  m(uniform) came out
+     -1.386259703761 against log(1/4) = -1.386294361120.  Cause: (1+x)(1+y)/4 vanishes on
+     the torus, so log|P| is unbounded and the y-quadrature converges slowly.  Every
+     conclusion above uses differences of order 1e-1 or larger, or exact Jensen branches,
+     so this does not reach any of them — but it bounds this lane's Mahler accuracy near
+     zeros of P at ~1e-4, not 1e-12.
+
+ C2. I DID NOT REPRODUCE W-08's FOUR SCHEDULE CONSTANTS.  W-08 (REGISTER:822-823) reports the
+     adversary accumulating 0.606 / 0.615 / 0.588 / 0.601 nats at K = 1e4..1e7.  My
+     sqrt(K)-adversary accumulates 0.687 / 0.363 / 0.115 — bounded and DECREASING, not
+     level.  Either W-08 measured SUM(1-|Z_k|) rather than -SUM log|Z_k|, or its adversary
+     is a different one.  W-10's own scope table already marks "W-08's four schedule
+     constants (not reproduced)" as UNDETERMINED (REGISTER:1052-1053), so this is a known gap
+     and not a new contradiction.  THE F1-C CLAIM USED ABOVE IS ONLY THE BOUNDED-vs-LINEAR
+     contrast, which is robust to which of the two functionals is meant.
+
+ C3. THE ORDER-4 DEVIATION IS NOT A REPRODUCTION OF W-11's 3.7e-02.  I measured 1.57e-01
+     at pi = (0.42,0.19,0.27,0.12), a pi of my own choosing; W-11 measured 3.7e-02 at S1's
+     own ready state, which I did not use.  Different inputs, so no comparison is claimed
+     beyond "a singular connection measure moves lambda by an amount of order 1e-1".
+
+ C4. I COULD NOT REPRODUCE W-03's CHARGE FIGURE -1.200555 from the register's own data.
+     Under the two class assignments for K1 I could construct from S1/S4, q = (1,2,2,2,2)
+     gives log(0.3) = -1.203973 or leaves lambda at -0.767508.  W-03's charge run has no
+     lane directory at the cutoff.  F1-D therefore uses an exhibit I built myself, not
+     W-03's, and only cites W-03 for the existence of the modality.
+
+ C5. THIS LANE IS OPUS 5 AND SO IS EVERY ROW FROM W-07 ON (REGISTER:1112, :1245).  It is NOT a
+     lineage-independent check of W-07..W-11.  It is lineage-independent of S1-S4 and
+     W-01..W-06 only.  Discount accordingly.
+
+ C6. F3 MEASURE 2 IS A CONTROL THAT COULD NOT HAVE FAILED, AND THAT IS THE FINDING, NOT A
+     DEFECT OF THE LANE.  It is reported as carrying no weight AS EVIDENCE ABOUT THE
+     ROUTE, and full weight as evidence about the QUESTION.

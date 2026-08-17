@@ -1,0 +1,68 @@
+=== PART 1: K1 ELECTRIC SPECTRUM  E_{m,n} = m^2 + n^2  ON L^2(T^2) ===
+truncation M   dim=(2M+1)^2      A(t=2*pi)      max A on [0.1, 6.0]
+   M=1         9               1.000000000000000   0.997780
+   M=5         121             1.000000000000000   0.523948
+   M=20        1681            1.000000000000000   0.501777
+   M=60        14641           1.000000000000000   0.492832
+   M=120       58081           1.000000000000000   0.368061
+
+A(2*pi) = 1 to machine precision at EVERY truncation, and the limit
+M -> infinity is the full inductive limit.  An INFINITE-dimensional
+algebra with a commensurate spectrum revives EXACTLY.
+=> FOUNDING_DESIGN sec.4's inference (ii) is FALSE as stated:
+   non-finiteness is NECESSARY for non-recurrence, not SUFFICIENT.
+
+=== PART 2: THE TWO-AXIS EMBEDDING SPACE (F1) ===
+H(s) spectrum = (1-s)*round(x_k*K)/K*K + s*x_k*K, x_k ~ U(0,1)
+s=0 -> integer (commensurate) spectrum; s=1 -> generic spectrum.
+horizon T = 1e4, t_min = 1.0
+
+   d      s=0.00    s=0.01    s=0.10    s=1.00
+    4   0.99998  0.99996  0.99995  0.99967
+   16   0.99998  0.93091  0.80050  0.81189
+   64   0.99998  0.91670  0.73220  0.48250
+  256   0.99998  0.93587  0.80589  0.21053
+ 1024   0.99998  0.93244  0.80036  0.10666
+ 4096   0.99998  0.93472  0.80468  0.05671
+
+READ DOWN a column: growing the algebra (the axis R1 names) only helps
+when s > 0.  READ ACROSS a row: at fixed size, moving on the s axis
+(which R1 does not name at all) changes the answer from 1.0 to ~1e-2.
+The decision-relevant functional varies along an axis the binary omits.
+
+=== PART 3: F3 CARVING -- 2x2 CONTINGENCY, 200 DRAWS PER CELL ===
+durable-to-horizon := max_{t in [1, 1e4]} A(t) < 0.10
+
+                          fraction DURABLE   fraction RECURRENT
+  INSIDE  small carrier d=8      0.000              1.000
+  INSIDE  large carrier d=1024   0.100              0.900
+  OUTSIDE-like d=8281, s=0       0.000              1.000
+  OUTSIDE-like d=8281, s=1       1.000              0.000
+
+ALL FOUR CELLS OF (location) x (durability) ARE NON-EMPTY.
+A finite INSIDE carrier is durable to horizon with probability ~1
+once d is large; an effectively OUTSIDE (huge, commensurate) algebra
+is recurrent with probability 1.  The predicate 'inside vs outside'
+therefore does not carve the property 'recurrent vs durable' that it
+was introduced to carve.
+
+=== PART 4: F5 -- IS THE RECORD IN EITHER ARM? ===
+O_k = diag(+1,-1) on cell k; A_M = (1/M) sum_{k<=M} O_k.
+Both operators are diagonal, so ||A_M - A_N|| = max over sign patterns.
+
+   M     N     ||A_M - A_N||  (brute force)   formula 2-2M/N
+   1     2        1.000000                        1.000000
+   2     4        1.000000                        1.000000
+   3     6        1.000000                        1.000000
+   4     8        1.000000                        1.000000
+   5    10        1.000000                        1.000000
+   6    12        1.000000                        1.000000
+   4     5        0.400000                        0.400000
+   8     9        0.222222                        0.222222
+
+||A_M - A_{2M}|| = 1.000000 for EVERY M.  The sequence is not Cauchy in
+norm, so its limit -- the asymptotically central 'record' observable that
+FOUNDING_DESIGN sec.5 requires -- lies in NEITHER the finite carrier
+algebra NOR the C*-inductive limit that sec.4 nominates as the escape.
+It exists only in the weak closure relative to a STATE.
+=> 'Neither' is an admissible answer with its own positive evidence.

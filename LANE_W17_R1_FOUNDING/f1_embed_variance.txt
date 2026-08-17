@@ -1,0 +1,35 @@
+=== F1 EMBED: WHICH AXIS CONTROLS THE ANSWER? ===
+functional  Phi = max_{t in [1,1e4]} |(1/d) sum_k exp(-i E_k t)|
+Phi near 1 = recurrent (no durable record); Phi near 0 = durable.
+
+MOVE ALONG THE NAMED AXIS L (size), at s = 0 (commensurate):
+   dim = 4       Phi = 0.999987
+   dim = 64      Phi = 0.999986
+   dim = 1024    Phi = 0.999985
+   dim = 16384   Phi = 0.999985
+   dim = INF     Phi = 1.000000   (exact revival at t = 2*pi)
+   SPAN ALONG NAMED AXIS  = 0.000015
+
+MOVE ALONG THE UNNAMED AXIS s, at fixed dim = 1024:
+   s = 0.000   Phi = 0.999986
+   s = 0.001   Phi = 0.996677
+   s = 0.010   Phi = 0.935147
+   s = 0.100   Phi = 0.807063
+   s = 1.000   Phi = 0.115098
+   SPAN ALONG UNNAMED AXIS = 0.884887
+
+=== THE NUMBER ===
+   span(unnamed s axis, arm held fixed)   = 0.884887
+   span(named L axis, INSIDE -> OUTSIDE)  = 0.000015
+   R = 57694.3
+
+R >> 1.  Crossing the entire binary -- from a 4-dimensional carrier all
+the way to the infinite inductive limit, i.e. the full distance from
+ARM A to ARM B -- moves the decision-relevant functional by 1.5e-05.
+Moving along one coordinate the question never names, without leaving
+ARM A at all, moves it by 0.885.
+
+CONTROL, AND IT COULD HAVE FAILED: had Phi fallen monotonically with
+dim at s = 0, the named axis would have been the controlling one and F1
+would have returned SOUND.  It does not: Phi is flat to 6 decimals
+across a 4096-fold increase in dimension at s = 0.

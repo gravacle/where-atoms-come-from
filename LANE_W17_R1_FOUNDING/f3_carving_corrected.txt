@@ -1,0 +1,26 @@
+=== F3 CARVING (CORRECTED LABELS) ===
+measure mu = Lebesgue on spectra, MC estimate, seed 20260817
+DURABLE := max_{t in [1,1e4]} A(t) < 0.10
+
+  arm of R1        dim d     s     draws   frac DURABLE   median max A
+  INSIDE (finite)  8         1.00  200     0.000          0.95519
+  INSIDE (finite)  64        1.00  100     0.000          0.41343
+  INSIDE (finite)  1024      1.00  30      0.100          0.10425
+  INSIDE (finite)  4096      1.00  12      1.000          0.05163
+  INSIDE (finite)  16384     1.00  5       1.000          0.02543
+  INSIDE (finite)  1024      0.00  10      0.000          0.99961
+  OUTSIDE (inductive limit, commensurate) 58081     0.00  exact   0.000          1.00000
+
+HEADLINE NUMBERS
+  CELL A non-empty: a FINITE carrier at d=16384 is durable to the
+    horizon with mu-fraction 1.000.  So 'MUST be adjoined' is false.
+  CELL B does not deliver: the INFINITE inductive limit with a
+    commensurate spectrum has A(2*pi) = 1.000000000000000 -- a perfect revival.
+  BORDERLINE, RECORDED: d=1024 sits at the threshold (median max A
+    ~0.107 vs cut 0.10), which is why its fraction is small.  The
+    threshold, not the arm, decides that row.  That dependence on an
+    UNSTATED horizon/tolerance is itself the F3 finding.
+
+CONCLUSION: the cells of R1 do not align with the property R1 was
+introduced to decide.  Both (INSIDE, durable) and (OUTSIDE, recurrent)
+are populated with mu-fraction 1.000.  The predicate does not partition.

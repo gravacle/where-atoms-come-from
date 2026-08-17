@@ -1,0 +1,55 @@
+=== MAP 1: f_relabel  (adjoin, then rename the union 'the carrier') ===
+rank_inv(K1)                       = 2   (S1 sec.4: W_F, W_C)
+rank_inv(R alone)                  = 1
+rank_inv(K1 adjoin R)              = 3
+
+Now ask R1 of the SAME object under two names:
+  reading B: 'the record lives in R, ADJOINED OUTSIDE the carrier K1'
+  reading A: 'the carrier is K1+R, and the record lives INSIDE it'
+  algebra under reading B: rank 3,  under reading A: rank 3
+  || A - f_relabel(B) || = 0.0   (identical algebra, identical state)
+
+S1 fixes the extent of 'the carrier' by fiat -- sec.7 line 'Carrier
+chosen by the principal' -- and exhibits NO invariant that distinguishes
+K1 from K1+R as 'the carrier'.  So arms A and B are related by a
+relabelling with distance 0, not by a physical difference.
+
+=== MAP 2: f_closure  (A_inf = closure of the directed union) ===
+K_n := n copies of K1 wedged at the root v0.  rank_inv(K_n):
+   n=1    vertices=6    edges=6     rank_inv = 2
+   n=2    vertices=11   edges=12    rank_inv = 4
+   n=4    vertices=21   edges=24    rank_inv = 8
+   n=8    vertices=41   edges=48    rank_inv = 16
+   n=16   vertices=81   edges=96    rank_inv = 32
+rank_inv(K_n) = 2n : the ladder is strictly increasing, so the
+directed system is genuinely directed and A_inf is its closure.
+
+By construction of a C*-inductive limit, the union of the finite-level
+algebras is DENSE in A_inf:
+   dist( union_n A(K_n),  A_inf )  =  0   exactly, in the C* norm.
+Every element of the OUTSIDE arm is a norm limit of elements of the
+INSIDE arm at some finite level.  The arms are a set and its closure.
+
+=== MAP 3: f_trunc  (truncate winding number at M) ===
+observable  f = exp(cos wF + 0.7 cos wC + 0.3 cos(wF - wC))
+   M      || f - f_M ||_sup        || f - f_M ||_2
+    0     5.866857e+00        1.566125e+00
+    1     1.866878e+00        4.466080e-01
+    2     3.634086e-01        8.452667e-02
+    3     5.289853e-02        1.236924e-02
+    5     6.231500e-04        1.518872e-04
+    8     2.878155e-07        7.395976e-08
+   12     2.696510e-12        7.049828e-13
+   20     5.329071e-15        6.510260e-16
+
+|| f - f_M || -> 0 : the truncation map has dense range, confirming
+MAP 2 numerically on the project's own invariant space.
+
+=== F2 RESULT ===
+distance under f_relabel : 0   (exact, identical algebra)
+distance under f_closure : 0   (exact, dense inclusion)
+distance under f_trunc   : -> 0 (table above, 1e-13 by M=20)
+The two arms of R1 are NOT two objects. At the level of the ALGEBRA --
+which is the only level the question names -- they are the same object
+under a relabelling and a closure.  The one thing genuinely NOT
+degenerate between them (see F5) is the STATE, which R1 never mentions.

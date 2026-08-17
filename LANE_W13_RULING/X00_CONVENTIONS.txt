@@ -1,0 +1,48 @@
+LANE W-13 / RULING — PUBLISHED CONVENTIONS
+Register head W-12.  Registrar's own lane for the N1 convergence ruling.  Opus 5.
+
+WHAT THIS LANE IS.  Not a fifth build lane and not a fifth refuter.  It re-derives, from
+scratch and with code importing nothing from any W-13 lane, the small number of facts on
+which the four lanes DISAGREE, and it settles the one question the round was opened for.
+Everything it accepts from a lane without re-deriving is marked ACCEPTED, with the lane named.
+
+READ BEFORE ANY CODE WAS WRITTEN (in this order):
+  REGISTER_V001.md entire (1515 lines), including the errata against W-02, W-07, W-09, W-14.
+  S3_THE_CROSSING_AUDIT_V001.md:785-800  (COR-A .. COR-L).
+  LANE_W08_M1_IDENTIFICATION/M1_08_THEOREMS.txt entire, and M1_06_liouville.out.txt.
+  LANE_W12_BIANCHI/PUBLISHED_CONVENTIONS.txt.
+  The four lanes' own statement files: W13C_05_THEOREMS.txt, Z_THEOREMS.txt,
+  R_07_THEOREMS.txt / R_08_FINDINGS.txt, THEOREMS_AND_CITATIONS.txt.
+  The four refutations as returned.
+  S4_THE_MEASUREMENT_V001.md:560-610 (SENSE C, SENSE U, the carrier table, f=1.0/c=sqrt2).
+
+CARRIED, NOT REDISCOVERED (register + sealed lanes):
+  * Every rational (f,c) is exactly resonant — W-10 N-4.  The only generic connection this
+    corpus publishes is f = 1.0, c = sqrt(2)  (S4:603).
+  * COR-E: sup/min figures read off a fixed window are window artefacts.
+  * A four-class P has torus zeros on exactly half the connection space — W-09, and on
+    exactly 1/4 of the STATE simplex — W-08/M3, lane Z z3(d).
+  * (W_F,W_C) ranges over all of T^2 with Haar pushforward on every carrier — W-12.
+  * Boyd–Lawton cannot license N1 — W-08 M1_08 T2(d), confirmed at the source by lane L.
+
+CONVENTIONS OF RECORD.
+  u = conj(W_F) = e^{-i f},  v = W_C = e^{i c}   (M1_08 T1, convention A).
+  alpha = arg(u)/2pi = -f/2pi,  beta = arg(v)/2pi = c/2pi.  theta = (alpha,beta) in T^2.
+  P(x,y) = p00 + p10 x + p01 y + p11 x y.   Z_k = P(u^k, v^k).
+  A_N = (1/N) SUM_{k<=N} log|Z_k|.   m(P) = INT_{T^2} log|P|.
+  K1_REG := pi = (0, 3/10, 3/10, 2/5)  — the register's N1 state, M1_08 T2(e), W13C, Z, R, L.
+  K1_ALT10 := (0, 2/5, 3/10, 3/10) and K1_ALT01 := (0, 3/10, 2/5, 3/10) — the two other
+    readings of S4:566's "(0.4,0.3,0.3) for 3 classes", which S4 does not disambiguate.
+
+ARITHMETIC.  Exact where it can be: fractions.Fraction, and the quadratic field Q(i sqrt 5)
+represented as pairs of Fractions.  Where a limit is claimed, at least four decades of N are
+shown with the trend.  Phases are advanced in exact integers modulo 2^64 (and cross-checked
+against a 2^128 two-limb path and against Python-int arithmetic) — never by float64 addition.
+Quadrature: the Jensen reduction m(P) = (1/2pi) INT log max(|A(e^it)|,|B(e^it)|) dt, whose
+integrand is CONTINUOUS but only C^0 at the branch crossing; convergence is TABULATED, not
+asserted to be spectral.  Seeds: numpy default_rng(20260817) where randomness is used.
+
+ISOLATION.  Every comparison in this lane prints, in the output, the exact inputs of every arm
+and a hash of the per-arm input tuple, so that a zero-variable arm is visible in the OUTPUT and
+not only in the ledger (W-08's isolation finding: the commonest fatal defect is zero variables
+moved, and a ledger cannot detect it).

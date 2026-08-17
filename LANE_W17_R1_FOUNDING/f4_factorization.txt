@@ -1,0 +1,27 @@
+=== F4 / K1 GAUGE-INVARIANT CONTENT ===
+incidence rank(B)            = 4
+total invariants rank_inv(E) = 2   (S1 sec.4 states 6 - 4 = 2)
+
+B @ W_F = [0, 0, 0, 0, 0]   (0 => gauge invariant)
+B @ W_C = [0, 0, 0, 0, 0]   (0 => gauge invariant)
+
+=== ALL 2^6 = 64 INSIDE/OUTSIDE CUTS OF K1 ===
+  deficit 0 :   4 cuts  (  6.25%)
+  deficit 1 :  24 cuts  ( 37.50%)
+  deficit 2 :  36 cuts  ( 56.25%)
+
+CUTS THAT PRESERVE THE PHYSICAL ALGEBRA : 4 / 64  = 0.0625
+CUTS THAT DESTROY AT LEAST ONE OBSERVABLE: 60 / 64  = 0.9375
+MAX DEFICIT OVER ALL CUTS                : 2 of 2 invariants
+
+=== WORKED CUT: INSIDE = {e1,e2}, OUTSIDE = {e3,e4,e5,e6} ===
+rank_inv(INSIDE)  = 0   (no closed loop lies in {e1,e2})
+rank_inv(OUTSIDE) = 1   (the cycle e4.e5.e6 lies in it)
+sum               = 1   vs rank_inv(K1) = 2
+DEFICIT           = 1   -- the FACE holonomy W_F = exp(i(a1+a2+a3))
+                      is in NEITHER the inside nor the outside algebra.
+
+=== VERDICT ON P4 ===
+P4 is FALSE on K1 for 60 of 64 cuts. The presupposition that a cut of
+the carrier sorts the physical observables into inside/outside fails on
+the project's own S1 carrier, for the project's own gauge group.

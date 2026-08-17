@@ -1,0 +1,140 @@
+==============================================================================
+F2  DEGENERACY -- ARE THE TWO NAMED CONVENTIONS THE SAME OBJECT UNDER A MAP?
+==============================================================================
+
+MAP 1: POWER.  f(T) = T^L,  L = loop length = 3 on K1 for both loops.
+
+  S1 published connection:  W_F = -1.000000000000+0.000000000000j   W_C = -0.000000000000-1.000000000000j
+  ||T_F^*T_F - I||_F                = 0.000e+00   (T_F unitary)
+  ||T_C^*T_C - I||_F                = 0.000e+00   (T_C unitary)
+  T_F diagonal?                      False
+  T_C diagonal?                      False
+
+  ||T_F^3 - M_dF||_F                = 4.609219e-16
+  ||T_C^3 - M_c ||_F                = 0.000000e+00
+  worst ||T^3 - M_gamma||_F over 2000 random connections = 4.680416e-15
+
+  >>> F2 NUMBER, MAP=POWER:  ||T^L - M_gamma||_F = 0 (exactly, to fp noise).
+  >>> READ AGAINST THE FRAME: at the CIRCUIT clock the two named 'rival
+  >>> conventions' are THE SAME OPERATOR.  They are not rivals there.
+
+MAP 2: CONJUGACY (change of coordinates).  Is T similar to M_gamma?
+  spec(T_C) = [-0.866025404-0.5j  0.         +1.j   0.866025404-0.5j  1.         +0.j
+  1.         +0.j ]
+  spec(M_c) = [-0.-1.j -0.-1.j -0.-1.j  1.+0.j  1.+0.j]
+  sorted-spectrum L2 distance      = 2.449490
+  >>> NOT degenerate under conjugacy.  T is an L-th ROOT of M_gamma, not a
+  >>> conjugate of it.  The map collapses one way only.
+
+MAP 3: THE REVERSE MAP.  How many non-diagonal L-th roots does M_gamma have?
+  M_c restricted to its loop is W_C * I_3.  Every unitary S with S^3 = W_C*I_3
+  is an L-th root.  Dimension of that set inside U(3):
+  random conjugates S = Q R Q* with S^3 = W_C I_3 verified: 4000/4000
+  The conjugacy orbit of a primitive cube root is U(3)/T^3, real dim 9-3 = 6.
+  >>> the fibre of f(S)=S^L over M_gamma has real dimension 6 on K1's C-loop.
+  >>> DEGENERACY IS ASYMMETRIC: M_gamma is a FUNCTION of any edge transport,
+  >>> no edge transport is a function of M_gamma.  M_gamma is a QUOTIENT, not
+  >>> an alternative at the same level of description.
+
+==============================================================================
+F1  EMBED -- WHAT SPACE ARE THE ARMS POINTS IN?
+==============================================================================
+
+Candidate space: TRANSPORT PRESCRIPTIONS ON A DESIGNATED LOOP PAIR,
+coordinatised by TICK STRIDE s (how many edges one elementary tick advances).
+  s = L  -> whole-circuit scalar multiplication M_gamma   (Reading B's convention)
+  s = 1  -> COR-F's edge tick T                            (the named rival)
+  1 < s < L -> UNNAMED INTERIOR POINTS.  K1 has L=3 so exactly one: s=2.
+
+  ready state: W-01's published p = (1/2,0,0,1/4,1/4)  (REGISTER_V001.md:37)
+
+  stride s :  ||[T_F^s, T_C^s]||_F   |Z(s)|          T^s diagonal?
+    s = 1   :  2.449490            0.603553390593    False
+    s = 2   :  2.449490            0.603553390593    False
+    s = 3   :  0.000000            0.000000000000    True
+
+  W-10's own second coordinate, THE CLOCK (W10_SCOPE_TABLE_V001.md:110-115):
+  on K1 both loops have length 3, so circuit-clock and edge-clock coincide and
+  the coordinate COLLAPSES.  Off K1 it does not.  Synthetic control, L_F=4, L_C=3:
+    edge tick n =   1 :  F-circuits = 0.2500   C-circuits = 0.3333   equal? False
+    edge tick n =   2 :  F-circuits = 0.5000   C-circuits = 0.6667   equal? False
+    edge tick n =   3 :  F-circuits = 0.7500   C-circuits = 1.0000   equal? False
+    edge tick n =   4 :  F-circuits = 1.0000   C-circuits = 1.3333   equal? False
+    edge tick n =   6 :  F-circuits = 1.5000   C-circuits = 2.0000   equal? False
+    edge tick n =  12 :  F-circuits = 3.0000   C-circuits = 4.0000   equal? False
+    edge tick n =  24 :  F-circuits = 6.0000   C-circuits = 8.0000   equal? False
+  >>> the two branches sit at different circuit counts at every n not a
+  >>> multiple of 12.  STRIDE and CLOCK are independent coordinates off K1.
+
+Now the DIMENSION the functional actually lives on, under each arm.
+One-variable moves over all 16 raw real parameters (a1..a6, |x_v| x5, arg x_v x5).
+
+  s=L=3  M_gamma  (Reading B's convention)
+      LIVE parameters (11): ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', '|x0|', '|x1|', '|x2|', '|x3|', '|x4|']
+      BLIND to        ( 5): ['arg x0', 'arg x1', 'arg x2', 'arg x3', 'arg x4']
+  s=2    UNNAMED interior point
+      LIVE parameters (16): ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', '|x0|', '|x1|', '|x2|', '|x3|', '|x4|', 'arg x0', 'arg x1', 'arg x2', 'arg x3', 'arg x4']
+      BLIND to        ( 0): []
+  s=1    COR-F's T (the named rival)
+      LIVE parameters (16): ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', '|x0|', '|x1|', '|x2|', '|x3|', '|x4|', 'arg x0', 'arg x1', 'arg x2', 'arg x3', 'arg x4']
+      BLIND to        ( 0): []
+
+  >>> F1 RESULT: the arms are points s=L and s=1 of a stride family with an
+  >>> unnamed interior; the functional's live-parameter count MOVES along it.
+  >>> The binary SAMPLES the space; it does not partition it.
+
+==============================================================================
+F3  CARVING -- DOES 'FINDING vs RESTATEMENT' PARTITION ANYTHING?
+==============================================================================
+
+Stated measure.  Universe = transport prescriptions on the loop pair.
+  cell_B = { prescriptions under which the functional is carrier/state-blind
+             AND the blindness is ENTAILED by the prescription }
+  cell_A = { prescriptions under which the functional is carrier/state-blind
+             AND the blindness is NOT entailed by the prescription }
+
+Test the biconditional  BLIND  <=>  FIBRE-WISE(diagonal)  [W-06's N4 correction].
+Blindness probe: hold the class weights pi fixed, move only the WITHIN-CLASS
+split and the state phases; a blind functional cannot move.
+    stride s=1:  fibre-wise = False   blindness spread = 8.996000e-01
+    stride s=2:  fibre-wise = False   blindness spread = 8.208841e-01
+    stride s=3:  fibre-wise = True    blindness spread = 2.775558e-16
+
+  Haar control -- 3000 random unitary transports on the two loop blocks:
+    diagonal draws                     : 0 / 3000
+    NON-diagonal draws                 : 3000 / 3000
+    NON-diagonal draws that were BLIND : 0 / 3000
+
+  >>> cell_A is EMPTY: 0 of 3000 prescriptions are blind without being
+  >>> fibre-wise, and 3/3 strides obey BLIND <=> FIBRE-WISE exactly.
+  >>> measure(cell_A) = 0 (empty).  measure(cell_B) = the diagonal subgroup,
+  >>> real dim 3 inside U(3) of real dim 9 per loop -> codimension 6 per loop.
+  >>> A predicate with an EMPTY cell does not partition.  NON_CARVING.
+
+==============================================================================
+F5  NULL -- DOES EITHER BRANCH OBTAIN?  Test the object, not the readings.
+==============================================================================
+
+The question is about 'the formation functional'.  The corpus uses that phrase
+for TWO objects with OPPOSITE scope verdicts in the very table that poses it:
+  (i)  W-01's FORMATION CONDITION (does it fire?)  -- W-10: THREE_CLASS_SCOPED
+  (ii) N1's RATE lambda = m(p00 + p10 x + p01 y + p11 xy) -- CARRIER_INDEPENDENT
+
+Re-derive (i)'s carrier-DEPENDENCE, from W-09's own construction:
+    three-class occupancy (K1 as handed)  firing region = 0.250000   (W-09: exactly 1/4)
+    four-class occupancy  (B0b, B4)       firing region = 0.500000   (W-09: exactly 1/2)
+    ratio = 2.000000
+
+  W-01's ADVERTISED VIRTUE, f -> -f, on both occupancies:
+    three-class: verdict flips on 0.500000 of the torus
+    four-class : verdict flips on 0.000000 of the torus
+
+  >>> F5: for object (i), the formation condition, CARRIER-INDEPENDENCE IS FALSE
+  >>> (1/4 vs 1/2, a factor of 2; virtue present vs identically absent).
+  >>> So for (i) NEITHER branch obtains: there is no carrier-independence there
+  >>> to be either a finding or a restatement.  NULL OBTAINS on the reading of
+  >>> 'formation functional' that W-01 built and that S3/S4/W-03 quote forward.
+
+==============================================================================
+DONE
+==============================================================================

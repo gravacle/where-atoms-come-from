@@ -1594,3 +1594,103 @@ proposes an amendment to custody §1 and does not make one.**
 
 **REOPENS IF:** a round runs under all four gates and still destroys a frame objection · or a frame
 lane is shown to inherit the registrar's shape through its brief despite carrying no answers.
+
+---
+
+## W-13 — N1's CONVERGENCE, SETTLED: **TRUE AT THE CORPUS'S OWN PUBLISHED CONNECTION BY BAKER'S THEOREM. FALSE ON A COMEAGER SET AND AT ALL FOUR PUBLISHED RESONANT PAIRS. THE IDENTIFICATION IS NOT NEW — THE THIRD TIME THIS PROGRAM HAS RE-DERIVED A NAMED RESULT.**
+
+The one open mathematical question in the corpus and the ground of the principal's second standing
+decision. Four build lanes, four refuters, a ruling that re-derives what they disagree on and
+**decides against three of them.** 9 agents, 0 errors. `W13_N1_CONVERGENCE_V001.md` sha256 `a0d131762263bc78b42a7cd2dec45565bb7486991bd29bbf6e4d9ce9bce84097`;
+lanes `LANE_W13_*`; registrar's own check at `LANE_W13_REGISTRAR_VERIFY/`.
+
+### THE SHARP HYPOTHESIS — THREE CONDITIONS, AND THE THIRD IS THE ONE THAT DECIDES
+
+`(H2)` `L(theta) = {0}` · **(D1)** a polynomial **homogeneous** Diophantine bound on
+`(alpha, beta)` · **(D2)** a polynomial **inhomogeneous** bound on `dist((u^k,v^k), Z(P))`.
+**(D1) and (D2) are independent and neither follows from H2.** W-11's H2 alone is **not
+sufficient**. And **(D2) is a joint condition on the connection AND the ready state**, because
+`Z(P)` is fixed by the state — so the hypothesis that decides N1 is not a condition on the
+connection at all. Priority belongs to `LANE_W08_M1_IDENTIFICATION/M1_08_THEOREMS.txt` T2(c),
+sealed 2026-08-16, which named it and which the register never carried.
+
+### **N1 IS TRUE AT `f = 1.0, c = sqrt(2)` — UNCONDITIONALLY**
+
+**(D1) and (D2) both follow from Baker's theorem on INHOMOGENEOUS linear forms in logarithms
+(Baker III, Mathematika 14 (1967) 220-228) whenever the two loop ANGLES are algebraic reals with
+irrational ratio and the ready state has algebraic weights.** `f = 1.0, c = sqrt(2)` is such a pair
+— **W-10 N-4's "the only generic connection the corpus publishes", and the pair S4:603 used to
+verify its entire `lambda` column.**
+
+**Two lanes ruled the opposite and were overturned.** Lane C: *"N1 is not verified at any named
+connection in this corpus and cannot be with present mathematics."* Lane L: *"no effective
+Diophantine result covers `u = e^{-i}`, `v = e^{i sqrt2}` … Baker requires algebraic arguments."*
+**Both false, on one inference:** *u and v are transcendental, therefore Baker does not apply.*
+**The transcendence of `u` is not an obstruction — it is the hypothesis.** What enters the linear
+form is the **angle** `f`, not `e^{if}`. **Lane L's refuter confirmed the error instead of catching
+it.**
+
+### AND IT IS FALSE ON A COMEAGER SET — MEASURE AND CATEGORY DISAGREE
+
+**THEOREM (Baire).** There is a dense `G_delta` in `T^2` on which **H2 holds** and
+`liminf_N A_N = -infinity`. Three independent proofs, one explicit ladder, verified over four
+decades: perturbation falling like `1/(2k)` while the depth is held at exactly **3 nats per unit
+`k`** (`-3.0627, -3.0081, -3.0004, -3.0000`). **The failure set is Lebesgue-null AND comeager.**
+**The corpus's entire N3/W-12 apparatus is measure-theoretic and has no vocabulary for the second.**
+**And no counterexample can have algebraic angles** — so the corpus's own pair is safe, and the
+corpus's numerics could never have found the failure.
+
+**THE THREE-WAY STATEMENT OF RECORD:** algebraic angles with irrational ratio — **TRUE** (Baker) ·
+Lebesgue-a.e. connection — **TRUE** (Borel-Cantelli) · a comeager set — **FALSE** (Baire) · both
+angles rational multiples of `pi`, which is **all four published resonant pairs** — **FALSE** ·
+`pi` on a curve stratum, **which is S1's own registered ready state** — **OPEN, and it is a
+one-variable Sudler product where the classical literature applies.**
+
+### NOVELTY: **NOT NEW, FOR THE THIRD TIME**
+
+*"The rate is a logarithmic Mahler measure"* is the normal state of affairs in this corner —
+Lind-Schmidt-Ward 1990, Kenyon-Okounkov-Sheffield 2006, Lyons 2005. **Worse: `Omega_N` is the
+transfer product of a scalar quasi-periodic cocycle and `lambda` is its LYAPUNOV EXPONENT, and
+using Jensen and the Mahler measure to evaluate it is the opening move of Herman 1983** (*Comment.
+Math. Helv.* **58**, 453-502). **Forty-three years old, in every survey of one-frequency
+Schrödinger operators, and the word "Lyapunov" occurs twice in the whole sealed corpus, in no
+register row and no lane directory.** After Hepp/Bell (W-04) and Cassaigne-Maillot, this is the
+third. **Score the novelty claim weak and leaning negative.**
+
+**AND S1's OWN REGISTERED READY STATE IS A 65-YEAR-OLD NAMED PROBLEM.** `p = (1/2,0,0,1/4,1/4)`
+gives `pi = (0,0,1/2,1/2)`, so `P = (1/2) y (1+x)` and **`|Z_k| = |cos(pi k alpha)|` exactly**
+— registrar-verified to `3.33e-16` over `k <= 2e5`, with the average approaching
+`m(P) = -log 2 = -0.693147181`. **That is a Sudler product** (Sudler 1964; Erdos-Szekeres 1959;
+Lubinsky 1999). **No lane looked it up.**
+
+---
+
+## ERRATUM AGAINST W-10 — N2 IS STATED WITHOUT ITS HYPOTHESIS, AND N1 AND N2 ARE ONE RESULT (registrar error, 2026-08-17)
+
+`REGISTER:196-197` and `W10_SCOPE_TABLE_V001.md` §3.2 state W-03/N2's multiset theorem —
+*"24 of 24 permutations invariant"* — **with no connection qualification**, and W-10 marked it
+**CARRIER_INDEPENDENT**. **Registrar-verified, one variable moving (the permutation), same
+connection, same estimator, `N = 2e6`, K1's registered weights:**
+
+```
+f=1, c=sqrt2   GENERIC     spread 3.670e-06   (Birkhoff noise; all -> m(P))
+f=2.0, c=1.1   RESONANT    spread 7.247e-04   6 distinct values
+f=pi, c=pi/2   ORDER 4     spread 5.579e-02   2 distinct values
+```
+
+**The `S_4` invariance is a theorem about `m(P)`, not about `lambda`.** It holds **exactly where
+`lambda = m(P)`, i.e. exactly under W-13's hypotheses.** What survives at *every* connection is only
+**W-03's own involution `00<->11, 10<->01`** — registrar-verified at `0.000e+00`, `0.000e+00`,
+`1.110e-16` at the three connections above. **N1 and N2 are one result with one hypothesis.**
+
+**AND THE CUSTODY FAILURE IS THE PROGRAM'S NAMED ONE.** This was sealed on disk in
+`LANE_W10_B_MULTISET/b4_involution_labels.OUT.txt` leg E on 2026-08-16 — *"W-03's 'the incidence
+labels are invisible' is a statement about the GENERIC connection, and the corpus computed almost
+nothing at a generic connection"* — attacked and **strengthened** by its own refuter, and entered
+in **no register row**, while W-10's scope table states the unqualified opposite one row away.
+**Two of the four results this corpus proposes to publish were entangled, the entanglement was
+found ten hours before W-13 opened, and it was under-read. Again.**
+
+**REOPENS IF:** a counterexample with algebraic angles is exhibited (it would refute W-13's Baker
+argument) · or the Sudler literature settles the curve stratum, which would close the one line
+still open.

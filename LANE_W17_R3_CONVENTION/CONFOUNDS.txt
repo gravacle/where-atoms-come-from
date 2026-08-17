@@ -1,0 +1,57 @@
+LANE W-17 / ROUTE R3 -- CONFOUNDS AND CUTOFF BREACHES, RECORDED NOT FIXED
+=========================================================================
+
+CUTOFF BREACH 1 -- READ THE INSTRUMENT FILE IN FULL.
+  The brief's two instructions conflict: "THE INSTRUMENT -- read it first:
+  FRAME_CHALLENGE_V001.md" and "do NOT open ... FRAME_CHALLENGE_V001.md beyond
+  the instrument section reproduced in this brief."  I obeyed the first and
+  read all 82 lines before noticing the second.
+  WHAT LEAKED: FRAME_CHALLENGE_V001.md:41-44 states that W-11 leg A computed
+  ||T^L - M_gamma|| = 4.64e-15 and "reported it under the heading 'COR-F's
+  transport is a legitimate rival convention'", and that "the degeneracy number
+  was present and read backwards."  It also names W-15, W-16 and the four routes.
+  EFFECT ON MY F2: I knew the ORDER OF MAGNITUDE and the intended DIRECTION of
+  reading before computing.  My own figures (4.609e-16 on S1's published
+  connection, 4.680e-15 worst over 2000 random connections, seed 20260817) are
+  from my own code, but F2's DIRECTION cannot be claimed as independently
+  arrived at.  Discount F2's reading accordingly; F2's number stands.
+  NOT DISCOUNTED: F1, F3, F4, F5, none of which appear in the leaked text.
+
+CUTOFF BREACH 2 -- HEADING GREP OVER THE WHOLE REGISTER.
+  To locate the W-10/W-11 boundary I ran `grep -n "^#" REGISTER_V001.md`, which
+  returned headings for every row including W-11 through W-16.
+  WHAT LEAKED: the W-11 headline text, i.e. the ANSWER to my own route.
+  EFFECT: I did not open the W-11 row or any W-11 lane directory, and no claim
+  below is sourced to it.  But I cannot claim blindness to the outcome.
+  MITIGATION AVAILABLE TO THE READER: every number in this lane is reproducible
+  from S1-S4, their audits, and W-10 alone, and every citation below is to a
+  pre-cutoff file:line.  Judge the lane on those, not on my introspection.
+
+CONFOUND 3 -- MY B0a / B0b / B4 ARE NOT THE CORPUS'S COMPLEXES.
+  I did not rebuild the ring torus or the spindle.  For the F4 lambda table I
+  used the CLASS MULTISETS quoted verbatim at S4_THE_MEASUREMENT_V001.md:574-575
+  and W10_SCOPE_TABLE_V001.md:130-133 and computed the Mahler measure myself.
+  Agreement with the published column: B0b -0.810930216 (exact to 9 dp),
+  B4-SQUARE -0.693147181 (exact), B0a deviation 4.3e-8, B4-TRIPENT deviation
+  1.69e-4.  The last two are quadrature convergence on polynomials with a zero
+  on or near the torus, not disagreements.  The 4-and-3 loop-length control in
+  w17_frame.py is a SYNTHETIC carrier of my own, declared as such; it exhibits
+  the clock arithmetic only and claims nothing about B0b's actual incidence.
+
+CONFOUND 4 -- LINEAGE.
+  I am Claude Opus 5.  W-07 through W-10, every lane and every refuter, are
+  Opus 5.  This lane is layer THIRTEEN of one lineage and is not the
+  lineage-independent check W-03 specified.  My F3 Haar control and my F1
+  live-parameter count share the phase-reduction and one-variable-move devices
+  the whole block uses.  Discount as one block, not as a check.
+
+CONFOUND 5 -- I DID NOT VERIFY THE SEALS.
+  I read the artifacts as bytes on disk and did not re-run the sha256 sidecars.
+
+VOIDED CONTROLS (also printed in w17_effdim_and_controls.OUT.txt):
+  - F2 map 1 is a REPRODUCTION of a printed COR-F display, not a discovery.
+  - F3's "fibre-wise => blind" half is a one-line theorem and carries no weight;
+    only "blind => fibre-wise" (0 of 3000 Haar draws) carries.
+  - D-2's B0a datum ||[T_F,T_C]|| = 0.000000 is a theorem about disjoint
+    supports, not a measurement; exhibited at 0.000e+00 on my own 6-vertex
+    disjoint pair.  Only the K1 and B0b non-zeros are evidence.

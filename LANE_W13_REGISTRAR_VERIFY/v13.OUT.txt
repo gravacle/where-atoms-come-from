@@ -1,0 +1,31 @@
+== V1  N2's 24-of-24 PERMUTATION INVARIANCE: does it hold at EVERY connection? ==
+   REGISTER:196-197 and W10_SCOPE_TABLE 3.2 state it with NO connection qualification.
+   One variable moving: the permutation. Same connection, same estimator, same N.
+   weights (0.0, 0.3, 0.3, 0.4)   m(P) = -0.767507880   N = 2000000
+   connection                         #distinct pi   spread of lambda  distinct values
+   f=1, c=sqrt2   GENERIC                       12          3.670e-06                4
+   f=2.0, c=1.1   RESONANT                      12          7.247e-04                6
+   f=pi, c=pi/2   ORDER 4                       12          5.579e-02                2
+   -> the invariance is a theorem about m(P). It holds for lambda ONLY where lambda = m(P).
+      N2 inherits N1's hypothesis exactly. My W-10 scope table states it unqualified.
+
+== V2  W-03's INVOLUTION (00<->11, 10<->01) AT THE SAME THREE CONNECTIONS ==
+   GENERIC      |lambda(pi) - lambda(involution pi)| = 0.000e+00
+   RESONANT     |lambda(pi) - lambda(involution pi)| = 0.000e+00
+   ORDER 4      |lambda(pi) - lambda(involution pi)| = 1.110e-16
+   -> the involution survives at EVERY connection. Only the full S_4 needs the hypothesis.
+
+== V3  S1's OWN REGISTERED READY STATE IS A CLASSICAL OBJECT ==
+   S1 sec6 publishes p = (1/2,0,0,1/4,1/4); v0 is class 11, v1,v2 class 10, v3,v4 class 01,
+   so pi = (0, 0, 1/2, 1/2)  ->  P = (1/2) y (1 + x),  which FACTORS.
+   max | |Z_k| - |cos(pi k alpha)| | over k<=2e5 = 3.33e-16
+   m(P) = log(1/2) = -0.693147181     [Jensen: m(1+x) = 0, m(y) = 0]
+          N      (1/N) sum log|Z_k|
+        100            -0.691955400
+       1000            -0.691818454
+      10000            -0.693168155
+     100000            -0.693138593
+     200000            -0.693146981
+   -> sum log|Z_k| is a SUDLER-TYPE PRODUCT. Sudler 1964, Erdos-Szekeres 1959, Lubinsky 1999.
+      The corpus's own published ready state is a 65-year-old named problem and no lane
+      looked it up until now.

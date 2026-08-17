@@ -1,0 +1,97 @@
+==============================================================================
+F4 — PRESUPPOSITION
+==============================================================================
+SENTENCE UNDER TEST:
+  "A disposition is a single program-global value; the two named arms exhaust
+   it; and setting it determines what the program does next."
+
+LEG 1 — custody §8 / REGISTER:3-8: the register's unit is the QUESTION.
+  row       scope     proof ptr  digest   reopen  
+  W-01      question  True       True     True    
+  W-02      question  True       True     True    
+  ERRATUM   question  False      False    False   
+  W-03      question  False      False    True    
+  W-04      PROGRAM   False      False    False   
+  W-05      PROGRAM   False      False    False   
+  W-06      PROGRAM   False      False    False   
+
+  P(no proof pointer | PROGRAM-scoped row) = 3/3 = 1.00
+  P(no proof pointer | question-scoped row)= 2/4 = 0.50
+  P(no reopen cond.  | PROGRAM-scoped row) = 3/3 = 1.00
+  P(no reopen cond.  | question-scoped row)= 1/4 = 0.25
+  CONFOUND, RECORDED: n = 7 rows. The one-sided pattern is perfect but tiny.
+  one-sided Fisher exact, no-proof-pointer  (3/3 vs 2/4) : p = 0.286
+  one-sided Fisher exact, no-reopen-cond.   (3/3 vs 1/4) : p = 0.114
+  The finding is the PATTERN and its custody-§8 consequence, NOT a p-value.
+  CONSEQUENCE (custody §8, REGISTER:8): 'A row with no reopen condition is closed
+  permanently.'  Both arms of R2 live in rows that register no reopen condition,
+  so BOTH are permanently-closed rows by the program's own convention — which
+  contradicts STOP-FALLS-REBUILD's own words 'The live route' at REGISTER:619.
+
+LEG 2 — FOUNDING_DESIGN §7: the program's own state variable is a LADDER.
+  stages declared            : 6  ['S1', 'S2', 'S3', 'S4', 'S5', 'S6']
+  per-stage falsifiers        : 5
+  a per-stage state vector over {not-run, run, refuted} has 3^6 = 729 values; the disposition binary has 2.
+  occurrences of 'alpha' in the W-05 row : 0
+  occurrences of 'alpha' in the W-06 row : 0
+  S5 ('LOOK FOR THE SLOT', FOUNDING:108-111) is where alpha — one of the three
+  terms of the target at FOUNDING:13-14 — enters. NEITHER ARM MENTIONS IT.
+
+LEG 3 — the posing text decomposes the very thing it asks to be scalar.
+  REGISTER:615  **STOP's OBJECT is correctly dead and the restorations make it DEADER** — a carrier-inte
+  REGISTER:617  **STOP's GROUND has flipped sign** — a vacuous spine is a dead end; a false spine with a
+  REGISTER:618  counterexample is a construction site. **STOP's DISPOSITION was issued on an unpointered
+  W-06 needs THREE components — OBJECT, GROUND, DISPOSITION — to state its own
+  position, and assigns them DIFFERENT values (dead / flipped / defective).
+  A question demanding one value on a 3-vector has a false presupposition.
+
+  F4 RESULT: PRESUPPOSITION FALSE, on all three legs, from in-cut text alone.
+
+==============================================================================
+F5 — THE NULL OPTION.  Does EITHER branch obtain?
+==============================================================================
+(a) ADMISSIBILITY UNDER CUSTODY §1 (a governing clause needs a pointer)
+    digests in the W-05 row                     : 0
+    digests in the W-06 row                     : 0
+    file:line pointers in the W-05 row          : 0  []
+    file:line pointers in the W-06 row          : 1  ['S3_THE_CROSSING_AUDIT_V001.md:794']
+    lane directories on disk for W-01..W-06     : 0  []
+    STOP's ground (g1, vacuity/IMP-1): W-06 itself finds it entered 'with no digest,
+      no file:line, no named ruling' — REGISTER:508-510 — hence FLAGGED, not inherited.
+    SFR's ground (g2, S3-0 false with an exhibited counterexample) rests on figures
+      (4.45e-16, 3*sqrt(3)/10, 1000-of-4000) that carry no digest and no artifact.
+    ADMISSIBLE ARMS UNDER CUSTODY §1 : 0 of 2.
+
+(b) THE LAYER CATCH RATE (REGISTER:635: 'FIVE consecutive layers have each been
+    caught by the next, and the rate has not fallen. Discount this layer too.')
+    observed                       : 5/5 = 1.000
+    Laplace  P(layer 6 also caught): (5+1)/(5+2) = 0.857
+    Jeffreys P(layer 6 also caught): (5+0.5)/(5+1) = 0.917
+    => P(the ground of EITHER arm survives the next layer) <= 0.143
+    CONTROL VOID, DECLARED: with 5/5 and no failures every standard estimator is
+    forced high. This sub-test COULD NOT have come out low and carries NO WEIGHT
+    as a test. It is reported only as an order of magnitude.
+
+(c) THE THIRD OPTION, POSITIVELY EVIDENCED — SUSPEND, DO NOT DISPOSE:
+    b08  run the lineage-independent lane   REGISTER:87 (W-01 reopen), :158 (W-02 reopen)
+    b07  audit S1                           REGISTER:292-299 (ERR-4)
+    Both are REGISTERED reopen conditions or registered defects, both are unrun, and
+    custody §4 names lineage independence as the remedy for this corpus's grade.
+    2 of the 11 registered reopen conditions name the lineage-independent lane;
+    lane directories that would carry it: 0.
+    => NEITHER is not a residue here. It is the option the register's own reopen
+       conditions select, and it is the only one either arm's ground could be
+       tested by.
+
+==============================================================================
+SIDE CHECK — the ONE concrete claim inside the SFR arm, verified
+==============================================================================
+  W-06 REGISTER:620-621: 'V = 4k+1; k = 1,6,31,156,781 gives V = 5,25,125,625,3125'
+  computed k = [1, 6, 31, 156, 781]   V = [5, 25, 125, 625, 3125]
+  all V are powers of 5              : True
+  every consecutive pair divides     : True
+  reason: 5 = 1 (mod 4), so 5^n = 1 (mod 4) for every n — the chain is FORCED,
+  which is exactly W-06's 'accident of two arithmetic progressions'. VERIFIED.
+  BUT the same construction works for EVERY V0 = 1 (mod 4): [5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57]
+  so b01 is not a single route: it is a one-parameter family with 14 members below V0=60 alone.
+  The binary's 'rebuild' arm is itself an unenumerated family, not a point.

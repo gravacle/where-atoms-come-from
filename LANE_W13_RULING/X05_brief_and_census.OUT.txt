@@ -1,0 +1,40 @@
+================================================================================================
+X05 — THE BRIEF'S BICONDITIONAL, THE CARRIER CENSUS, AND THE EXACT MEASURES
+================================================================================================
+
+(a) THE BRIEF'S BICONDITIONAL, TESTED EXACTLY ON THE FOUR-CLASS SIMPLEX.
+    Named counterexample first (L-refuter's):
+      pi = (1/2, 3/10, 1/10, 1/10):  max = 1/2 <= 1/2 = sum of the others -> HULL FIRES: True
+      (S1-S2)(D1-D2) = (3/5)(1/5) = 3/25  ->  stratum EMPTY
+      CONFIRMED: the hull fires and P HAS NO TORUS ZERO.  The brief is wrong as
+      stated, and wrong in the same way W-09 convicted W-01's advertised virtue.
+
+    denominator 12 :  four-class points    455, DISAGREEMENTS    52 (11.4%) ;  three-class (p00=0) points    91, DISAGREEMENTS 0
+    denominator 18 :  four-class points   1330, DISAGREEMENTS   200 (15.0%) ;  three-class (p00=0) points   190, DISAGREEMENTS 0
+    denominator 24 :  four-class points   2925, DISAGREEMENTS   500 (17.1%) ;  three-class (p00=0) points   325, DISAGREEMENTS 0
+    READ-OFF.  On the p00 = 0 face the biconditional is EXACT (0 disagreements at
+    every denominator).  On the full four-class simplex it fails on a positive
+    fraction.  The one direction that survives everywhere is TORUS ZERO => HULL.
+
+(b) THE CARRIER CENSUS, from S4:575's own class counts, B0b AS S4 WRITES IT.
+    B0a ring torus, disjoint  SENSE U pi = (2/9,4/9,1/3,0)  stratum TWO     m(P) = -0.747659833081
+    B0b ring torus, meeting   SENSE U pi = (4/9,2/9,1/9,2/9)  stratum EMPTY   m(P) = -0.810930216216
+    B3  horn torus            SENSE U pi = (0,2/5,2/5,1/5)  stratum TWO     m(P) = -0.756573585640
+    B1  K1                    SENSE U pi = (0,2/5,2/5,1/5)  stratum TWO     m(P) = -0.756573585640
+    B4  spindle               SENSE U pi = (1/6,1/6,1/6,1/2)  stratum EMPTY   m(P) = -0.693147180560
+    B2  K1 both filled        SENSE U pi = (0,2/5,2/5,1/5)  stratum TWO     m(P) = -0.756573585640
+    B1p K1-bridged            SENSE U pi = (0,1/2,1/2,0)  stratum CURVE   m(P) = -0.693147180560
+    B1q K1-bridged+spectator  SENSE U pi = (1/7,3/7,3/7,0)  stratum TWO     m(P) = -0.741029582571
+    B1s K1 subdivided         SENSE U pi = (0,5/11,5/11,1/11)  stratum TWO     m(P) = -0.724759919461
+    SENSE U census over the nine runnable rows: {'TWO': 6, 'EMPTY': 2, 'CURVE': 1}
+    SENSE C rows (S4:566): 3 classes -> (0,3/10,3/10,2/5) stratum TWO ;
+                            4 classes -> (1/4,1/4,1/4,1/4) stratum CURVE ;
+                            2 classes -> (0,1/2,1/2,0)     stratum CURVE
+    S1's OWN PUBLISHED READY STATE (0,0,1/2,1/2) stratum CURVE
+
+(c) THE EXACT MEASURES, by counting on the simplex lattice (not Monte Carlo).
+    D= 60  four-class: singular fraction 0.285337 (target 1/4 = 0.250000)   three-class: 0.262295
+    D=120  four-class: singular fraction 0.268194 (target 1/4 = 0.250000)   three-class: 0.256198
+    D=240  four-class: singular fraction 0.259234 (target 1/4 = 0.250000)   three-class: 0.253112
+
+DONE X05

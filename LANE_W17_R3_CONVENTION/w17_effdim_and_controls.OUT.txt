@@ -1,0 +1,65 @@
+==============================================================================
+EFFECTIVE DIMENSION -- WHAT DOES THE FUNCTIONAL ACTUALLY FACTOR THROUGH?
+==============================================================================
+
+  compensating move inside one loop's edge phases (a1+e, a2-e): loop holonomy fixed
+    M_gamma (s=L): worst |dZ| over 500 draws = 4.888843e-16
+    T       (s=1): worst |dZ| over 500 draws = 1.659270e-01
+
+  compensating move inside one class's moduli (|x1|^2 + |x2|^2 fixed, both class 10)
+    M_gamma (s=L): worst |dZ| over 500 draws = 3.608225e-16
+    T       (s=1): worst |dZ| over 500 draws = 4.661719e-01
+
+  >>> under M_gamma the functional factors through (class weights, W_F, W_C):
+  >>> EFFECTIVE REAL DIMENSION 4 on K1 (2 free class weights + 2 holonomies),
+  >>> out of 14 free physical parameters.  Under T nothing is quotiented:
+  >>> EFFECTIVE REAL DIMENSION 14.  The binary's two arms differ by 10
+  >>> suppressed real dimensions and the question names none of them.
+
+==============================================================================
+THE EXPERIMENT W-10's 'NEXT' CLAUSE ASKS FOR -- ALREADY IN W-10's OWN BODY
+==============================================================================
+
+  REGISTER_V001.md:1127-1128 / W10:487-489 NEXT: 'run the whole formation
+  functional under COR-F's T instead of M_gamma on K1 and on B0b, and see
+  whether the incidence becomes visible.  It is the one experiment that would
+  tell reading A from reading B.'
+  W10_SCOPE_TABLE_V001.md:393 (row 6.7) already reports refuter D-2 having
+  run it, on B0b AND K1.  Reproduced here from independent code:
+
+    ||[T_F, T_C]||_F on K1              = 2.449490    (D-2 printed 2.449490)
+    ||[M_dF, M_c]||_F on K1             = 0.000000    (diagonals always commute)
+
+  W-01's HEADLINE, both conventions, on S1's published connection
+  (REGISTER_V001.md:35-37: 'IT FIRES ON S1'S OWN PUBLISHED CONNECTION ...
+   the overlap is i/2 - i/2 = 0 exactly'):
+    |<M_dF x, M_c x>|  =  0.000000000000000   -> FIRES
+    |<T_F  x, T_C  x>| =  0.603553390593274   -> DOES NOT FIRE
+
+  >>> the corpus's single most-quoted positive result is CONVENTION_SCOPED
+  >>> and inverts under the corpus's own sealed alternative.  This is one
+  >>> line of code and was available at W-10.
+
+==============================================================================
+SELF-AUDIT -- WHICH OF MY TESTS COULD NOT HAVE FAILED?
+==============================================================================
+
+  F2 map-1 (||T^L - M_gamma|| = 0): COULD NOT HAVE FAILED AS A DISCOVERY.
+    COR-F prints T^3 = diag(W_C,1,1,W_C,W_C) at S3 audit :180-182, which IS
+    W-01's M_gamma by definition.  My number is a REPRODUCTION.  What carries
+    weight is the DIRECTION it is read in, not the number.  Marked: control.
+
+  F3 biconditional, <= direction (fibre-wise => blind): COULD NOT HAVE FAILED.
+    A diagonal unitary acts on |x_v| alone; blindness is immediate.  VOID.
+  F3 biconditional, => direction (blind => fibre-wise): COULD have failed and
+    did not: 0 of 3000 non-diagonal Haar draws were blind.  CARRIES WEIGHT.
+
+  D-2's 'non-zero exactly when class 11 is occupied' -- the <= half is a
+    THEOREM, not a measurement: vertex-disjoint loops have disjoint supports,
+    so [T_F,T_C] = 0 identically.  Exhibited:
+      disjoint loops on 6 vertices: ||[T_F,T_C]||_F = 0.000e+00
+    So B0a's 0.000000 is void as evidence; only the K1/B0b non-zeros carry.
+
+  F1 live-parameter count, F4 lambda spread, F5 firing regions: all could have
+    come out otherwise.  CARRY WEIGHT.
+

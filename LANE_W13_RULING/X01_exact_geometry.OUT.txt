@@ -1,0 +1,110 @@
+============================================================================================
+X01 — EXACT GEOMETRY OF N1's POLYNOMIAL, AND m(P) WITH ITS CONVERGENCE TABULATED
+============================================================================================
+
+(a)(b)  THE ZERO SET, EXACTLY, FOR ALL THREE ADMISSIBLE READINGS OF S4:566.
+  S4:566 fixes SENSE C as '(0.4,0.3,0.3) for 3 classes' and does NOT say which
+  class carries the 0.4.  The register and M1_08 T2(e) fix pi = (0,0.3,0.3,0.4),
+  i.e. 0.4 on class 11.  The other two readings are computed here beside it.
+  K1_REG     pi = (0, 3/10, 3/10, 2/5)
+      C = -4/25   D = -6/25
+      cos s0 = -C/D = -2/3   (EXACT RATIONAL)
+      sin^2 s0 = 5/9 ;  sin s0 = 1/3 * sqrt5 ?  YES (exact)
+      x0 = (-2/3 + 1/3*i*sqrt5)      |x0|^2 = 1
+      |A(x0)|^2 = 9/100   |B(x0)|^2 = 9/100   equal: True
+      y0 = -A/B = (-2/3 - 1/3*i*sqrt5)      |y0|^2 = 1
+      P(x0,y0) = (0 + 0*i*sqrt5)   EXACTLY ZERO: True
+      min poly of x0 over Q : 3 z^2 +4 z +3
+      min poly of y0 over Q : 3 z^2 +4 z +3
+      x0*y0 = (1 + 0*i*sqrt5)   ANTI-DIAGONAL (x0 y0 = 1): True
+      s0/pi rational?  cos s0 = -2/3 is not in {0,+-1/2,+-1} => NO, by NIVEN. (so exp(i s0) is NOT a root of unity)
+
+  K1_ALT10   pi = (0, 2/5, 3/10, 3/10)
+      C = -1/50   D = -9/50
+      cos s0 = -C/D = -1/9   (EXACT RATIONAL)
+      sin^2 s0 = 80/81 ;  sin s0 = 4/9 * sqrt5 ?  YES (exact)
+      x0 = (-1/9 + 4/9*i*sqrt5)      |x0|^2 = 1
+      |A(x0)|^2 = 4/25   |B(x0)|^2 = 4/25   equal: True
+      y0 = -A/B = (-2/3 - 1/3*i*sqrt5)      |y0|^2 = 1
+      P(x0,y0) = (0 + 0*i*sqrt5)   EXACTLY ZERO: True
+      min poly of x0 over Q : 9 z^2 +2 z +9
+      min poly of y0 over Q : 3 z^2 +4 z +3
+      x0*y0 = (22/27 - 7/27*i*sqrt5)   ANTI-DIAGONAL (x0 y0 = 1): False
+      s0/pi rational?  cos s0 = -1/9 is not in {0,+-1/2,+-1} => NO, by NIVEN. (so exp(i s0) is NOT a root of unity)
+
+  K1_ALT01   pi = (0, 3/10, 2/5, 3/10)
+      C = -4/25   D = -6/25
+      cos s0 = -C/D = -2/3   (EXACT RATIONAL)
+      sin^2 s0 = 5/9 ;  sin s0 = 1/3 * sqrt5 ?  YES (exact)
+      x0 = (-2/3 + 1/3*i*sqrt5)      |x0|^2 = 1
+      |A(x0)|^2 = 9/100   |B(x0)|^2 = 9/100   equal: True
+      y0 = -A/B = (-1/9 - 4/9*i*sqrt5)      |y0|^2 = 1
+      P(x0,y0) = (0 + 0*i*sqrt5)   EXACTLY ZERO: True
+      min poly of x0 over Q : 3 z^2 +4 z +3
+      min poly of y0 over Q : 9 z^2 +2 z +9
+      x0*y0 = (22/27 + 7/27*i*sqrt5)   ANTI-DIAGONAL (x0 y0 = 1): False
+      s0/pi rational?  cos s0 = -2/3 is not in {0,+-1/2,+-1} => NO, by NIVEN. (so exp(i s0) is NOT a root of unity)
+
+(c)  m(P):  Jensen midpoint over five node decades, TREND, plus a second route.
+  K1_REG     n        m_n(P)              m_n - m_{2^24}
+             4096     -0.767507880963893   -6.061e-10
+             16384    -0.767507879061052   +1.297e-09
+             65536    -0.767507880400316   -4.253e-11
+             262144   -0.767507880360843   -3.058e-12
+             1048576  -0.767507880358075   -2.897e-13
+             4194304  -0.767507880357824   -3.875e-14
+             16777216 -0.767507880357785   +0.000e+00
+             Cassaigne-Maillot closed form on the multiset {0.4,0.3,0.3}: -0.767507880360  dev -2.64e-12
+
+  K1_ALT10   n        m_n(P)              m_n - m_{2^24}
+             4096     -0.767507899302827   -1.895e-08
+             16384    -0.767507880711679   -3.539e-10
+             65536    -0.767507880378096   -2.033e-11
+             262144   -0.767507880358608   -8.388e-13
+             1048576  -0.767507880357730   +3.919e-14
+             4194304  -0.767507880357755   +1.421e-14
+             16777216 -0.767507880357769   +0.000e+00
+             Cassaigne-Maillot closed form on the multiset {0.4,0.3,0.3}: -0.767507880360  dev -2.66e-12
+
+  K1_ALT01   n        m_n(P)              m_n - m_{2^24}
+             4096     -0.767507880963893   -6.061e-10
+             16384    -0.767507879061052   +1.297e-09
+             65536    -0.767507880400316   -4.253e-11
+             262144   -0.767507880360843   -3.058e-12
+             1048576  -0.767507880358075   -2.897e-13
+             4194304  -0.767507880357824   -3.875e-14
+             16777216 -0.767507880357785   +0.000e+00
+             Cassaigne-Maillot closed form on the multiset {0.4,0.3,0.3}: -0.767507880360  dev -2.64e-12
+
+(d)  THE LOCAL SHAPE AT THE ZERO — is it conical (|P| ~ r) or tangential (~r^2)?
+  K1_REG:
+      r          min |P|/r        max |P|/r      (conical zero <=> both O(1)>0)
+      1e-2      0.282833292670   0.317225108928
+      1e-3      0.282842619919   0.316327736216
+      1e-4      0.282842722610   0.316237754830
+      1e-5      0.282842729353   0.316228675439
+      1e-6      0.282842715269   0.316227865853
+      1e-7      0.282842712448   0.316227769561
+      1e-8      0.282842722408   0.316227771850
+
+  K1_ALT10:
+      r          min |P|/r        max |P|/r      (conical zero <=> both O(1)>0)
+      1e-2      0.193803318321   0.461395542120
+      1e-3      0.194079633286   0.460844743627
+      1e-4      0.194107103465   0.460789433077
+      1e-5      0.194110183666   0.460783911321
+      1e-6      0.194110236818   0.460783230345
+      1e-7      0.194110172337   0.460783297050
+      1e-8      0.194110169112   0.460783135793
+
+  K1_ALT01:
+      r          min |P|/r        max |P|/r      (conical zero <=> both O(1)>0)
+      1e-2      0.193803960924   0.461395866226
+      1e-3      0.194079587473   0.460844793744
+      1e-4      0.194108696350   0.460789400961
+      1e-5      0.194109855307   0.460783911302
+      1e-6      0.194110128890   0.460783333865
+      1e-7      0.194110670924   0.460782837818
+      1e-8      0.194110167479   0.460783283261
+
+DONE X01
