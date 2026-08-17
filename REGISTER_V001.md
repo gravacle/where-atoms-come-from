@@ -1253,3 +1253,83 @@ publishable, under H1 and H2 stated, with one framing sentence withdrawn.**
 **REOPENS IF:** the holonomy reading is closed in either direction · an admissible operator is
 exhibited whose relative operator is class-constant diagonal but which is not fibre-wise, or vice
 versa (it would break the biconditional) · or a **lineage-independent** lane reads this row.
+
+---
+
+## W-12 — THE TOPOLOGICAL-CONSTRAINT ROUTE: **CLOSED, ON EVERY CARRIER. THE PROPOSAL WAS THE REGISTRAR'S AND IT IS REFUTED — AND THE REFUTATION UPGRADES N3 FROM ARGUED TO PROVED AND FIXES N1's SECOND HYPOTHESIS AS PURELY ARITHMETIC.**
+
+Commissioned by the principal, 2026-08-17, on an idea borrowed from **DNA supercoiling**: the
+linking number `Lk` is an **integer** topological invariant, conserved under every continuous
+deformation and changed only by cutting, and the physics is driven by the mismatch it enforces
+(`Lk = Tw + Wr`). **The registrar's proposal:** N3 kills every **absolutely continuous** connection
+measure — a Wilson action is one — because the resonance structure is Haar-null; a **topological**
+constraint is **singular** and so escapes N3's own wording. `S1:102-104` states that Bianchi is
+vacuous on K1 because `b2 = 0`; `S4:511-515` owns five carriers with `b2 >= 1` on which it is not,
+and no lane ever imposed it. `LANE_W12_BIANCHI/`, 5 files, sealed, all verify.
+
+### THE PROPOSAL FAILS, AND THE FIRST REASON IS THAT BIANCHI IS NOT A CONSTRAINT AT ALL
+
+For a 2-cycle `z`, `SUM_F z_F f(F) = a(boundary of z) = a(0) = 0`. **With the connection given by
+edge phases — which is how `S1 §3` defines it — this holds IDENTICALLY for every `a`.** Verified on
+B0b over 2000 random connections: `max |SUM_F z_F f(F)| = 1.69e-14`. **Bianchi restricts which
+CURVATURE ASSIGNMENTS are realizable; it does not restrict which connections exist.** And it never
+pins a single designated holonomy — `W_F` is one face curvature among nine and one relation among
+nine quantities leaves any one of them free. `(W_F, W_C)` covers `T^2`: 20000 draws fill **400 of
+400** grid cells.
+
+### AND THE SECOND REASON IS A THEOREM THAT CLOSES THE ROUTE EVERYWHERE
+
+> **The map `phi : (R/2piZ)^E -> T^2`, `a |-> (<gamma_F,a>, <gamma_C,a>)`, is a continuous
+> homomorphism of compact connected groups, so its image is a CONNECTED CLOSED subgroup of `T^2` —
+> hence `{1}`, a circle, or `T^2` — of dimension equal to the R-rank of the `2 x E` incidence
+> matrix. For any two DISTINCT designated loops that rank is 2, because a simple cycle has
+> `0, +-1` coefficients and two simple cycles are R-dependent only if they share support.
+> **So the image is all of `T^2` and `phi` pushes Haar to Haar.**
+
+Verified: rank 2 on every corpus carrier and designation, including an adversarial pair sharing two
+of three edges; and the pushforward is uniform on `T^2` to sampling error (`chi2/dof = 1.007, 0.918,
+0.914`; **576 of 576** cells occupied on each).
+
+**COROLLARY 1 — NO CARRIER AND NO DESIGNATION CAN CONSTRAIN `(W_F, W_C)`.** Leg A's null is
+structural, not a property of B0b. **The topological-constraint route is closed for every complex,
+and it cannot be reopened by choosing a different carrier.**
+
+**COROLLARY 2 — N1's HYPOTHESIS H2 IS PURELY ARITHMETIC.** It is a condition on the individual
+connection and is **never violable by the carrier or by the loop designation.** The one degenerate
+designation that confines the pair — `gamma_C = +- gamma_F`, which CHOICE LEDGER C4's *"any two
+loops"* permits — is disposed of twice over: at `gamma_C = +gamma_F`, `uv = 1` and `Z_k = 1` for all
+`k`, so `G = {1}` and **W-02's own criterion excludes it**; at `gamma_C = -gamma_F` the pair is
+confined to the diagonal circle and H2 genuinely fails, **but only classes 00 and 11 are occupied,
+so `P = p00 + p11 xy` depends on the product alone and the subtorus average equals `m(P)` exactly**
+— deterministic trapezoid at `2^20`, difference `5.55e-17`. **Whenever formation occurs at all, H2
+cannot fail for topological or designational reasons.** This is a strengthening of N1: its second
+hypothesis has no structural failure mode.
+
+**COROLLARY 3 — N3 UPGRADES FROM ARGUED TO PROVED, AND FROM K1-SCOPED TO CARRIER-INDEPENDENT.**
+W-10's scope table marked N3 carrier-independent on **basis [A], argued only**. Since `phi` pushes
+Haar to Haar on every carrier, **any** absolutely continuous measure on connections pushes forward
+absolutely continuous on `T^2`, where the resonant set is Haar-null. **So no local action of any
+form at any finite coupling can move the rate, on any carrier, for any designation.** Basis [A] -> [T].
+
+### WHAT THIS DOES AND DOES NOT SAY
+
+It does **not** say the borrowed idea was empty: the diagnosis it produced — that the corpus's three
+missing admissibility criteria are missing because there is no energy function — is untouched.
+**What is now closed is the specific escape hatch N3's wording appeared to leave open.** The wall
+that N3 describes is not a feature of K1 and cannot be walked around by changing the carrier.
+**A null here reads TWO WAYS and is scored as neither:** the topological route is closed, **or** the
+registrar's formulation of it was the wrong one and a different singular constraint — one on the
+*state* rather than on the connection — is untested. Nothing here touched the state side.
+
+### REGISTRAR DEFECT, RECORDED RATHER THAN PATCHED
+
+Leg B's diagonal-circle average was first computed by 400000 Monte Carlo draws and printed a
+difference of `1.10e-03` — about two sigma of MC noise on a bounded smooth periodic integrand, and
+**not evidence of a gap**. Replaced with a deterministic trapezoid, which converges spectrally
+there; the difference is `5.55e-17`. The first version and its correction are in the sealed script.
+
+**NOTHING HERE TAKES ANY OF THE PRINCIPAL'S THREE DECISIONS.**
+
+**REOPENS IF:** a singular constraint on the **ready state** rather than on the connection is
+exhibited that moves the rate · or a carrier is exhibited whose designated loops are R-dependent
+without collapsing the occupied classes to `{00,11}`.

@@ -1,0 +1,35 @@
+== B1  THE RANK, ON EVERY CARRIER AND DESIGNATION THE CORPUS OWNS ==
+  K1        gF=filled tri, gC=unfilled tri     rank = 2   image = T^2
+  B0b       gF=face(0,0),  gC=row j=0          rank = 2   image = T^2
+  B0b alt   gF=row j=0,    gC=row j=1          rank = 2   image = T^2
+  adversarial: loops SHARE two of three edges  rank = 2   image = T^2
+  DEGENERATE: gC = gF exactly                  rank = 1   image = a circle
+  DEGENERATE: gC = gF reversed                 rank = 1   image = a circle
+
+  -> rank 2 for every pair of DISTINCT loops; rank 1 only when gamma_C = +/- gamma_F,
+     because a simple cycle has 0/+-1 coefficients, so two simple cycles are R-dependent
+     ONLY IF they have the same support.
+
+== B2  AND THE ONLY DEGENERATE DESIGNATION IS EXCLUDED BY W-02's OWN CRITERION ==
+  If gamma_C = +/- gamma_F the two loops have the SAME VERTEX SET, so only classes 00 and 11
+  are occupied and P = p00 + p11*x*y.  Two sub-cases:
+    gC = +gF  : (u,v) = (conj W, W), so uv = 1 and Z_k = p00 + p11 = 1 for all k.
+                G = {1}. NO FORMATION -- W-02's criterion excludes it.
+    gC = -gF  : (u,v) = (u,u), confined to the diagonal circle. H2 DOES fail.
+                But P = p00 + p11*x*y depends only on the PRODUCT, and on the diagonal
+                the product is equidistributed, so the subtorus average EQUALS m(P).
+    measured: diagonal-circle average = -0.430782916092
+              m(p00 + p11 xy)         = -0.430782916092   (Jensen, two-term)
+              difference              = 5.55e-17
+
+  ==> WHENEVER FORMATION OCCURS AT ALL, H2 CANNOT FAIL BY TOPOLOGY OR DESIGNATION.
+      The one designation that confines the pair also collapses P onto the confined
+      direction, so the average is unchanged. N1's H2 is arithmetic, and only arithmetic.
+
+== B3  THE PUSHFORWARD IS HAAR -- so N3 holds on EVERY carrier, not just K1 ==
+  K1        gF=filled tri, gC=unfilled tri     cells 576/576  chi2/dof = 0.882
+  B0b       gF=face(0,0),  gC=row j=0          cells 576/576  chi2/dof = 1.011
+  B0b alt   gF=row j=0,    gC=row j=1          cells 576/576  chi2/dof = 1.059
+  -> uniform on T^2 to sampling error. Any absolutely continuous measure on connections
+     pushes forward absolutely continuous, and the resonant set is Haar-null there.
+     N3 IS THEREFORE A THEOREM ON EVERY CARRIER, not an argued K1 fact.

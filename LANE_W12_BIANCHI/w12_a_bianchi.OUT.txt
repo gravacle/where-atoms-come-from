@@ -1,0 +1,19 @@
+== A1  B0b: b2, the 2-cycles, and what Bianchi actually says ==
+  E=18 F=9  rank(d2)=8  dim ker(d2) = b2 = 1
+  the 2-cycle (up to scale): [-1. -1. -1. -1. -1. -1. -1. -1. -1.]   -> it is the sum of ALL NINE faces
+
+  BIANCHI for a 2-cycle z:  sum_F z_F * f(F) = a(boundary of z) = a(0) = 0.
+  With the connection given by EDGE PHASES a_e -- which is how S1 sec3 defines it --
+  this holds IDENTICALLY for every a. Verified over 2000 random connections:
+    max | sum_F z_F f(F) |  = 1.69e-14    (exactly 0 up to float)
+
+  ==> BIANCHI IS NOT A CONSTRAINT ON THE CONNECTION. It is an IDENTITY.
+      It restricts which CURVATURE ASSIGNMENTS are realizable, not which connections exist.
+      MY PROPOSAL WAS WRONG AS STATED, and this is the reason.
+
+== A2  AND IT NEVER PINS A SINGLE DESIGNATED HOLONOMY ==
+  W_F is ONE face curvature among nine; one linear relation among nine quantities
+  leaves any single one of them free. Verified: sweep the connection and see whether
+  (W_F, W_C) covers the torus.
+  20000 draws into a 20x20 torus grid: cells occupied 400 of 400,  min 29, max 67
+  -> (W_F, W_C) covers T^2. Bianchi constrains it nowhere.
