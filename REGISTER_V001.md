@@ -914,3 +914,77 @@ that would restore the founding obstruction, and nobody in this corpus has attem
 **NEXT, AND IT IS ONE SCRIPT AGAINST TWO OBJECTS THE CORPUS ALREADY OWNS:** run W-01's criterion,
 in this register's own words, on carriers `B1q` and `B0b` (`S4_THE_MEASUREMENT_V001.md:519, :582`)
 and report which reading each obeys, quantifier restored. It decides the weakest claim above.
+
+---
+
+## W-09 — W-01's CRITERION OFF K1: **THE OPERATIVE VARIABLE IS ALL FOUR CLASSES OCCUPIED, WHICH NEEDS A PINCH *AND* A SPECTATOR. K1 HAS ONLY ONE OF THEM, AND SO DOES EVERY CARRIER THE CORPUS EVER RAN.**
+
+The computation W-08 named as next. **One script, against carriers the corpus already owns** —
+class multisets quoted verbatim from `S4_THE_MEASUREMENT_V001.md:575-590`; nothing new constructed.
+`LANE_W09_W01_OFF_K1/`, `SEALS.sha256`, 8 files, all verify. Isolation: hull test, grid, seed and
+evaluator identical in every row; **the one thing that moves is which characters the incidence
+occupies.**
+
+### THE RESULT
+
+| carrier (S4's own row) | occupied | characters | firing region | `f -> -f` flips |
+|---|---|---|---|---|
+| `B1` K1 as handed, `B2`, `B1s`, `B3` | `{01,10,11}` | `v u uv` | **exactly 1/4** | 99785/200000 |
+| **`B1q` K1-bridged + SPECTATOR** | `{00,01,10}` | `1 v u` | **exactly 1/4** | 99785/200000 |
+| `B1p` K1-bridged | `{01,10}` | `v u` | `0` — never fires | 0 |
+| **`B0b` ring torus loops meet, `B4` spindle** | **all four** | `1 v u uv` | **exactly 1/2** | **0/200000** |
+
+**BOTH VALUES ARE EXACT, NOT MEASURED.** Three occupied classes reduce, on dividing by one
+character, to `{1, e^{i th1}, e^{i th2}}` with the two angles independent uniform — so
+**Wendel's theorem (1962)** gives `P(0 in hull) = 1 - 2^{-2}(C(2,0)+C(2,1)) = 1/4`. With all four,
+`uv` is determined by `u` and `v`, Wendel does **not** apply, and the closed form does:
+`0 in conv{1,u,v,uv} <=> cos f + cos c <= 0` (agrees on **400000 of 400000**), which is exactly
+`1/2` because `(f,c) -> (pi-f, pi-c)` preserves the measure and flips the sign.
+
+### AND THE NAMING — W-08's SYNTHESIS NAMED THIS WRONG, AND SO DID I
+
+W-08 §6 called the operative variable *"three unit-modulus coefficients"*, i.e. `p00 = 0`.
+**`B1q` refutes that: it has `p00 > 0` and reproduces K1 to the last digit.** The reason is in this
+register already — **W-03's involution, `00 <-> 11` and `10 <-> 01`, exchanges K1's occupied set
+`{01,10,11}` with `B1q`'s `{00,01,10}` exactly.** K1 has a vertex in **both** loops and none in
+neither; `B1q` has one in **neither** and none in both. *Pinch-only and spectator-only are the same
+carrier for this criterion, by a symmetry the corpus proved at W-03 and never applied here.*
+
+> **CORRECTED NAME OF RECORD: the operative variable is whether the incidence occupies ALL FOUR
+> CLASSES — which requires a vertex in both loops AND a vertex in neither. Not the coefficient
+> count, not `p00`, not the pinch.** Every three-class carrier fires on exactly `1/4` and is
+> curvature-aware; the four-class carriers fire on exactly `1/2` and are **curvature-blind**.
+> **This is the fourth consecutive layer to misname the operative variable, and the third time the
+> correct name was already in an earlier row.**
+
+### WHAT FALLS
+
+**W-01's ADVERTISED VIRTUE IS A THREE-CLASS ACCIDENT.** *"It distinguishes curvature from flat
+holonomy, which K1 exists to separate"* (`REGISTER_V001.md:47`). Reversing the **curvature alone**
+and leaving the flat holonomy untouched changes the verdict at `99785/200000` on every three-class
+carrier and at **`0` of `200000`** on every four-class one — `cos f + cos c` is even in `f`.
+**The property the register advertises as the criterion's virtue disappears the moment a carrier
+carries both a pinch and a spectator, and no carrier the corpus ever ran carries both.** The ten
+carriers of `S4:519` include exactly two four-class rows, `B0b` and `B4`; neither was run against
+W-01's criterion by any lane before this one.
+
+**NO W-01 VERDICT IS WITHDRAWN.** The criterion is correct on K1, the firing on S1's connection is
+correct, and the `FIRE => HULL` direction is unconditional. What falls is its **scope** and its
+**stated reason for existing**, both quoted forward unqualified by S3, S4, W-03 and every W-08 lane.
+
+### REGISTRAR DEFECT, RECORDED RATHER THAN PATCHED
+
+`w09c_exact.py`'s hull helper first read `np.diff(..., 0)`, where the second positional argument is
+the difference **order**, not the axis — so leg C2 printed `0.000000` and a meaningless agreement
+count on its first run. Legs A and B pass `axis=0` by keyword and were never affected; their
+figures stand unchanged. The defect and its correction are in the sealed file.
+
+**NOTHING HERE TAKES ANY OF THE PRINCIPAL'S THREE DECISIONS.**
+
+**REOPENS IF:** a four-class carrier is exhibited on which the firing region is not `1/2` · or the
+`f -> -f` blindness is shown to depend on the uniform measure on `(f,c)` rather than on the parity
+of `cos f + cos c` · or a lineage-independent lane fails to reproduce the two exact values.
+**NEXT:** every registered result derived on K1 that is quoted forward without a carrier
+qualification — W-01's criterion, W-02's character-ratio criterion, W-03's multiset theorem, N1's
+polynomial — should be re-stated with the class-occupancy condition attached. **The corpus has
+never run a four-class carrier through anything.**

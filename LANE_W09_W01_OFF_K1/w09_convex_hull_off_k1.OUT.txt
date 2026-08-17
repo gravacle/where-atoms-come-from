@@ -1,0 +1,21 @@
+== W-01's FIRING REGION, ONE VARIABLE MOVING: WHICH CHARACTERS THE INCIDENCE OCCUPIES ==
+  carrier                        #chars characters      firing region  cos f+cos c<=0?  f->-f flips
+  B1  K1 (as handed)                  3 v u uv               0.250700     150355/200000        99785
+  B2  K1 both filled                  3 v u uv               0.250700     150355/200000        99785
+  B1s K1 subdivided                   3 v u uv               0.250700     150355/200000        99785
+  B3  horn torus                      3 v u uv               0.250700     150355/200000        99785
+  B1p K1-bridged                      2 v u                  0.000000     100215/200000            0
+  B1q K1-bridged + SPECTATOR          3 1 v u                0.250700     150355/200000        99785
+  B0b ring torus, loops meet          4 1 v u uv             0.498925     200000/200000            0
+  B4  spindle                         4 1 v u uv             0.498925     200000/200000            0
+
+  READING THE COLUMNS:
+  * firing region 1/4 on every carrier whose occupied characters are {u,v,uv} -- K1's set.
+  * firing region 1/2 the moment class 00 is occupied AND uv is too: the criterion
+    acquires the closed form cos f + cos c <= 0 and agrees with it on every draw.
+  * B1p ({u,v}) NEVER fires: two unit points can only hull 0 if antipodal, measure zero.
+  * B1q is the sharp case. It HAS a spectator (p00>0) but NO vertex in both loops (p11=0),
+    so its three characters are {1,u,v} -- a DIFFERENT three from K1's {u,v,uv}.
+  * LAST COLUMN IS W-01's ADVERTISED VIRTUE: 'it distinguishes curvature from flat
+    holonomy, which K1 exists to separate.' Sending f -> -f alone (curvature reversed,
+    flat holonomy untouched) must change the verdict if the criterion sees curvature.

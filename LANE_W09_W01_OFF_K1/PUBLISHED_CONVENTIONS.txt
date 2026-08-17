@@ -1,0 +1,11 @@
+LANE W09 — W-01's CONVEX HULL OFF K1 — PUBLISHED CONVENTIONS
+Carrier class multisets quoted verbatim from S4_THE_MEASUREMENT_V001.md:575-590 (the corpus's own
+published table; nothing new is constructed here). Characters: 1 (class 00), u = conj(W_F) = e^{-if}
+(class 10), v = W_C = e^{ic} (class 01), uv (class 11). Grid: 200000 draws, f,c ~ U(-pi,pi),
+numpy default_rng(20260816). Hull test: 0 lies in the convex hull of unit-modulus points iff no
+open half-plane contains them all, i.e. the largest angular gap is <= pi (tolerance 1e-12).
+W-01's criterion is read as the EXISTENCE statement it is (some ready state on that carrier fires);
+FIRE => HULL is unconditional, HULL => FIRE fails pointwise (M3-refuter-1, W-08).
+ISOLATION: the hull test, grid, seed and evaluator are identical in every row. The ONE thing that
+moves is WHICH CHARACTERS THE CARRIER'S INCIDENCE OCCUPIES. The f -> -f column reverses the
+CURVATURE alone and leaves the flat holonomy untouched.

@@ -1,0 +1,21 @@
+== C1  THREE CLASSES -> EXACTLY 1/4, BY WENDEL'S THEOREM (1962) ==
+  Any three occupied classes reduce, after dividing by one character (a rotation, which
+  does not move 0 relative to the hull), to {1, e^{i.theta1}, e^{i.theta2}}. For K1's set
+  {v,u,uv}, dividing by v gives {1, e^{-i(f+c)}, e^{-if}}, and (f+c, f) is jointly uniform
+  on T^2 whenever (f,c) is. So the two free angles are INDEPENDENT UNIFORM.
+  Wendel: P(N iid symmetric points in R^d all lie in some half-space) = 2^{-N+1} sum_{k<d} C(N-1,k).
+    N=3, d=2 :  P(all in a half-plane) = 0.75   ->  P(0 in hull) = 0.25
+    N=4, d=2 :  P(all in a half-plane) = 0.5   ->  P(0 in hull) = 0.5
+  MEASURED (leg B, four distinct three-class sets): 0.250700, 0.250700, 0.248225, 0.248225
+  against EXACTLY 1/4. Monte-Carlo sigma at N=200000 is 9.7e-04; the spread is under 2 sigma.
+
+== C2  FOUR CLASSES -> EXACTLY 1/2, AND NOT BY WENDEL ==
+  With all four occupied the points are {1, u, v, uv} and uv is DETERMINED by u and v,
+  so Wendel does not apply. The closed form does: 0 in conv{1,u,v,uv} <=> cos f + cos c <= 0.
+    closed form agrees with the hull on 400000 of 400000
+    and the map (f,c) -> (pi-f, pi-c) preserves uniform measure and sends
+    cos f + cos c -> -(cos f + cos c), so P(cos f + cos c <= 0) = 1/2 EXACTLY.
+    measured: 0.499157  against EXACTLY 1/2.
+
+  ==> THE FIRING REGION DOUBLES FROM EXACTLY 1/4 TO EXACTLY 1/2 WHEN THE INCIDENCE
+      OCCUPIES ALL FOUR CLASSES. Neither number is a measurement.

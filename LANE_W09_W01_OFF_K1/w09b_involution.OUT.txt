@@ -1,0 +1,27 @@
+== B1  IS B1q's CLASS SET THE INVOLUTION IMAGE OF K1's? ==
+  K1  occupies ['01', '10', '11']
+  its involution image ['00', '01', '10']
+  B1q occupies ['00', '01', '10']
+  EQUAL: True
+  -> K1 and B1q are exchanged by W-03's registered involution. That, and not the
+     coefficient count, is why leg A's two rows are identical to the last digit.
+
+== B2  THE OPERATIVE VARIABLE, ISOLATED ==
+   One variable: whether the incidence occupies ALL FOUR classes. Everything else fixed.
+   occupied classes        #  firing region  f->-f flips  curvature-aware?
+   ['01', '10']            2       0.000000            0                NO
+   ['00', '01']            2       0.000000            0                NO
+   ['01', '10', '11']      3       0.250700        99785               YES
+   ['00', '01', '10']      3       0.250700        99785               YES
+   ['00', '10', '11']      3       0.248225        99785               YES
+   ['00', '01', '11']      3       0.248225        99785               YES
+   ['00', '01', '10', '11']  4       0.498925            0                NO
+
+   EVERY three-class carrier: firing region 1/4, curvature-aware.
+   The ONLY four-class carrier: region 1/2, curvature-BLIND (0 of 200000 flips).
+   FOUR CLASSES REQUIRES a vertex in BOTH loops AND a vertex in NEITHER.
+   K1 has the first and not the second. B1q has the second and not the first.
+
+   ==> THE OPERATIVE VARIABLE IS NOT 'three versus four coefficients' AND NOT 'p00 = 0'.
+       IT IS WHETHER THE INCIDENCE OCCUPIES ALL FOUR CLASSES -- pinch AND spectator
+       together. Either alone reproduces K1 exactly, by an involution already of record.
