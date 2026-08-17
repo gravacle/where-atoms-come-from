@@ -1,0 +1,147 @@
+====================================================================================================
+BLOCK 7 -- LITERATURE VERIFICATION.  EVERY CLAIM IN THE BRIEF, CHECKED AGAINST A SOURCE.
+Retrieved 2026-08-17 by this lane via web search and arXiv abstract fetch.  Where a claim in the
+brief is wrong or over-stated, it is marked CORRECTION and the correction is stated.
+====================================================================================================
+
+--------------------------------------------------------------------------------------------------
+[1] CASINI, HUERTA, ROSABAL -- "Remarks on entanglement entropy for gauge fields"
+    arXiv:1312.1183, submitted 4 Dec 2013, Phys. Rev. D 89, 085012 (2014).
+--------------------------------------------------------------------------------------------------
+VERIFIED, and the brief's paraphrase is broadly right but incomplete in a way that matters.
+
+What the paper actually says, in order:
+  (a) In gauge theories the constraints obstruct writing the global Hilbert space as a tensor
+      product across complementary regions.  Algebraically this is the presence of a CENTRE in
+      the gauge-invariant algebra of a finite region.
+  (b) A UNIQUE ENTROPY CAN BE ASSIGNED TO AN ALGEBRA WITH CENTRE.  This is the half of the paper
+      the brief omits, and it is decisive for the round: given the algebra, the entropy is
+      DETERMINATE.  What is not determinate is the correspondence ALGEBRA <-> REGION.
+  (c) It is always possible, in many different ways, to choose local algebras with TRIVIAL centre
+      for any region, giving a genuine entanglement entropy.  Those choices are in correspondence
+      with MAXIMAL TREES OF LINKS ON THE BOUNDARY, which the authors interpret as PARTIAL GAUGE
+      FIXINGS.
+  (d) In the CONTINUUM LIMIT the ambiguities are boundary-local terms, so that relative entropy
+      and mutual information are finite, universal and gauge-independent.
+
+CORRECTION TO THE BRIEF.  The brief describes this as "a live, unsettled problem".  Points (b)
+and (d) are the authors' own resolution of it: the ambiguity is in the QUESTION, not the ANSWER,
+and it cancels in the quantities they regard as physical.  What remains genuinely open is which
+algebra deserves the name "the region", and that is a question about physical input, not about
+mathematics.  This lane's k2b measured (b) exhaustively -- 67 admissible algebras, 41 distinct
+determinate entropies -- and confirms it.
+
+CAVEAT THIS LANE ADDS.  (d) is a CONTINUUM statement.  On a finite lattice there is no continuum
+limit to take, and k2b block 2.3 finds mutual information between complementary regions as
+ambiguous as the entropy (spread 3.998776 bits at g^2 = 0.10).  Nothing in CHR predicts otherwise
+for touching regions on a lattice.  Do not import (d) to a finite carrier.
+
+--------------------------------------------------------------------------------------------------
+[2] DONNELLY -- "Decomposition of entanglement entropy in lattice gauge theory"
+    arXiv:1109.0036.
+--------------------------------------------------------------------------------------------------
+VERIFIED.  The entropy of an arbitrary state decomposes into three non-negative terms: a Shannon
+entropy of the distribution over boundary representations; a term depending on the DIMENSIONS of
+those representations, present only for NON-ABELIAN groups; and a term of nonlocal correlations.
+
+CONSEQUENCE FOR THIS PROGRAM, AND IT IS A HARD ONE.  Z_2 IS ABELIAN.  Every irrep is
+one-dimensional, so the middle term is IDENTICALLY ZERO on every carrier this program has ever
+used.  The "edge mode / log dim R" content that motivates the extended-Hilbert-space literature
+DOES NOT EXIST IN Z_N.  Any Z_N result presented as exhibiting edge-mode entropy is exhibiting
+the zero of that term.
+
+--------------------------------------------------------------------------------------------------
+[3] DONNELLY, WALL -- "Entanglement entropy of electromagnetic edge modes"
+    arXiv:1412.1895, Phys. Rev. Lett. 114, 111603 (2015).
+--------------------------------------------------------------------------------------------------
+VERIFIED.  The vacuum entanglement entropy of Maxwell theory contains a term with no known
+statistical interpretation; the authors identify it as the entanglement entropy of EDGE MODES --
+classical solutions determined by the electric field normal to the entangling surface -- obtained
+by extending the Hilbert space with degrees of freedom on the entangling surface.  This resolves
+a puzzle about logarithmic divergences of gauge fields in 3+1 dimensions.
+
+CORRECTION TO A PARAPHRASE THIS LANE ITSELF MADE AND THEN RETRACTED (see k2b block 2.4).  The
+extended-Hilbert-space construction SPLITS each boundary link into two half-links carrying matched
+edge modes.  It is NOT the same as assigning a whole boundary link to one side, and the two do not
+agree numerically.  Filed as this lane's own instance of identification-by-headline-paraphrase.
+
+--------------------------------------------------------------------------------------------------
+[4] TYPE III_1 FOR LOCAL ALGEBRAS IN QFT -- Buchholz, D'Antoni, Fredenhagen;
+    uniqueness of the hyperfinite III_1 factor by Connes and Haagerup.
+--------------------------------------------------------------------------------------------------
+VERIFIED.  Under mild assumptions (Reeh-Schlieder for the vacuum, approximate locality,
+Poincare covariance), the local algebra of a bounded region in QFT is isomorphic to THE UNIQUE
+HYPERFINITE TYPE III_1 FACTOR.  The structure is universal: free electrodynamics, interacting
+Yang-Mills and any other reasonable Poincare-covariant theory all give the same abstract factor.
+
+A type III factor admits no non-zero normal semifinite trace, hence no density matrices, hence
+von Neumann entropy is UNDEFINED rather than divergent.  The brief states this correctly.
+
+--------------------------------------------------------------------------------------------------
+[5] WITTEN -- "Gravity and the crossed product", arXiv:2112.12828.
+--------------------------------------------------------------------------------------------------
+VERIFIED.  Abstract, in substance: Leutheusser and Liu identified an emergent Type III_1 algebra
+in large-N N=4 super Yang-Mills; including 1/N corrections turns it into a Type II_infinity
+algebra, which is the crossed product of the Type III_1 algebra by its modular automorphism
+group.  In that setting the entropy of a black hole state is "well-defined up to an additive
+constant, independent of the state", which Witten calls somewhat analogous to classical entropy.
+
+CORRECTION TO THE BRIEF, AND IT IS A REAL ONE.  The brief says "including gravity ... yields a
+TYPE II algebra".  What actually enters is (i) 1/N corrections in a specific holographic setting,
+and (ii) the crossed product by the MODULAR AUTOMORPHISM GROUP, which is forced because the boost
+/ ADM generator must be an operator of the algebra.  "Gravity" is not a general input to the
+theorem; a constraint tying the algebra to a global generator is.  Also: "well-defined up to an
+additive constant" means RENORMALISED, not finite -- the divergence is absorbed into the constant,
+not removed.
+
+--------------------------------------------------------------------------------------------------
+[6] CHANDRASEKARAN, LONGO, PENINGTON, WITTEN -- "An algebra of observables for de Sitter space"
+    arXiv:2206.10780, JHEP 02 (2023) 082.
+--------------------------------------------------------------------------------------------------
+VERIFIED.  The algebra of the static patch, with operators gravitationally dressed to an
+OBSERVER'S WORLDLINE, is of Type II_1 and has a natural entropy.  Restricting the observer to
+positive (or bounded-below) energy is implemented by a projection in the crossed product, and
+Type II_1 has a MAXIMAL entropy state.  The entropy of a semiclassical state agrees with the
+expected generalized entropy up to a state-independent additive constant.
+
+NOTE.  The observer is not decoration.  Without an added degree of freedom to dress to, the
+construction does not go through.  That is the piece the brief's question (3) is about, and k3
+answers it: in finite dimensions the added degree of freedom factorises off (Skolem-Noether), so
+the finite analogue of this step is empty.
+
+--------------------------------------------------------------------------------------------------
+[7] THE LITERATURE THE BRIEF DID NOT CITE, AND WHERE W-19'S BIT ACTUALLY LIVES.
+    Casini, Huerta, Magan, Pontello -- "Entropic order parameters for the phases of QFT",
+    arXiv:2008.11748.  Also Casini, Magan, Martinez, arXiv:2110.02980.
+--------------------------------------------------------------------------------------------------
+VERIFIED and DIRECTLY ON POINT.  These papers analyse exactly two properties of the net of
+algebras attached to regions: ADDITIVITY (is the algebra of a union the join of the algebras of
+the parts?) and HAAG DUALITY.  Different types of generalized symmetry are associated with the
+BREAKING of these properties on regions of different topology.  The existence of an area-law order
+parameter -- the Wilson loop in the confining phase, the 't Hooft loop in the dual Higgs phase --
+is shown to IMPLY more than one possible choice of algebra for the same underlying theory, and an
+entropic order parameter arises from that non-uniqueness.
+
+THIS IS THE CORRECT HOME FOR W-19'S ONE FULL BIT.  k4 shows the bit is exactly the failure of
+ADDITIVITY: A(S u F) strictly contains A(S) v A(F), the excess being the Wilson loop of the cycle
+inside S u F, and the coupling dependence W-19 read as a phase index is the coupling dependence of
+<W_loop>, i.e. confinement versus deconfinement.  It is an order parameter for the Z_2 one-form
+symmetry.  It is a determinate structural fact about gauge theory.  It is NOT the centre
+ambiguity, it is NOT gauge-variance, and it has NOTHING to do with von Neumann type.
+
+--------------------------------------------------------------------------------------------------
+[8] THE ONE CLAIM THAT NEEDS NO SOURCE, AND SETTLES THE ROUND.
+--------------------------------------------------------------------------------------------------
+Artin-Wedderburn: every finite-dimensional von Neumann algebra is a finite direct sum of matrix
+algebras.  It is therefore ALWAYS type I, ALWAYS has a faithful normal trace, ALWAYS has minimal
+projections, and NEVER has the "entropy undefined" problem.  k1 exhibits the decomposition, a
+minimal projection and a trace for every region algebra it builds, rather than citing this.
+
+Skolem-Noether: every automorphism of a finite-dimensional central simple algebra is inner.  The
+entire content of the crossed-product construction is that modular flow on a type III_1 factor is
+OUTER.  Finitely it cannot be.  k3 exhibits the collapse: A x|_sigma Z_N = A (x) C^N, dimension
+64 = 16 x 4 measured by explicit closure, with an explicit untwisting unitary.
+
+====================================================================================================
+END BLOCK 7
+====================================================================================================

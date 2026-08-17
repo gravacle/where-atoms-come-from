@@ -117,7 +117,7 @@ class LogAlgebra:
                 x, z = unpack(e, self.n)
                 M = self.sec.mat(x, z)
                 cache[e] = M
-            om += np.trace(rho @ M) * M
+            om += np.sum(rho * M.T) * M          # = Tr(rho M), O(D^2) not O(D^3)
         return om / D
 
     def entropy(self, rho, cache):

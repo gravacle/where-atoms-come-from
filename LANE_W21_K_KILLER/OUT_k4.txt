@@ -1,0 +1,150 @@
+====================================================================================================
+BLOCK 4A -- THEOREM: THE EXTENDED HILBERT SPACE ADDS NOTHING TO Z_N PURE GAUGE THEORY.
+====================================================================================================
+STATEMENT.  Let R be any set of links, |psi> any state in the Gauss-physical sector.  Let
+S_ext(R) = von Neumann entropy of Tr_{R^c}|psi><psi| in the UNCONSTRAINED tensor product, and let
+A_gi(R) be the gauge-invariant algebra of R.  Then S_ext(R) = S(rho|_{A_gi(R)}) EXACTLY.
+
+PROOF.  (i) A Pauli supported on R is gauge-invariant iff its Z-part is a cycle of R; any other
+Pauli anticommutes with some Gauss operator G_v, so <psi|O|psi> = <psi|G_v O G_v|psi> = -<psi|O|psi>
+= 0.  Hence rho_R, expanded in the Pauli basis of R, is supported ENTIRELY on A_gi(R), so the
+Hilbert-Schmidt projection of the state onto A_gi(R) is rho_R itself: omega is the same matrix in
+both computations.
+(ii) The block data also agree.  A_gi(R) = {(x,z) : x in F_2^{|R|}, z in Cyc(R)}, of F_2-dimension
+|R| + c_R where c_R = dim Cyc(R).  Its symplectic radical is {(x,0) : x . z = 0 for all z in
+Cyc(R)} = the CUT SPACE of R, of dimension |R| - c_R.  So r = |R| - c_R and k = c_R, giving
+r + k = |R|, which is exactly the k of the full |R|-link matrix algebra (r=0).  The multiplicity
+m = 2^{L-r-k} is therefore the same for both.  Same omega, same m, same entropy.  QED.
+
+CONSEQUENCE, AND IT IS THE ONE THAT MATTERS FOR THIS ROUND: no gap between an "extended" channel
+and a "gauge-invariant" channel can be attributed to gauge-variance.  If a gap is measured, the
+gauge-invariant side was a PROPER SUBALGEBRA of the region's own algebra, and the gap is the
+content of the generators that were dropped.
+
+The exhibit below is a CODE CHECK on a proved statement.  It could not have failed and is void
+as evidence; it is here to certify the code, and because this program has three times published
+a forced identity as a result.
+
+    carrier    g^2               region R  |R|  c_R          S_ext     S(A_gi(R))       diff
+    theta_6   0.10           [2, 3, 4, 5]    4    3    1.000000000    1.000000000   2.44e-15
+    theta_6   0.10           [1, 3, 4, 5]    4    3    1.000000000    1.000000000   4.44e-16
+    theta_6   0.10                 [1, 4]    2    1    0.999999993    0.999999993   2.11e-15
+    theta_6   0.10                 [3, 5]    2    1    0.999999993    0.999999993   2.66e-15
+    theta_6   1.00                 [2, 3]    2    1    0.662082287    0.662082287   1.67e-15
+    theta_6   1.00                 [0, 2]    2    1    0.810647487    0.810647487   1.78e-15
+    theta_6   1.00                 [3, 5]    2    1    0.662082287    0.662082287   1.11e-16
+    theta_6   1.00           [1, 2, 3, 5]    4    3    0.810647487    0.810647487   0.00e+00
+    theta_6   3.00              [2, 3, 5]    3    2    0.023741427    0.023741427   4.30e-16
+    theta_6   3.00                    [3]    1    0    0.009195428    0.009195428   2.43e-17
+    theta_6   3.00                 [1, 2]    2    1    0.016781969    0.016781969   4.14e-15
+    theta_6   3.00              [0, 2, 4]    3    2    0.023741427    0.023741427   9.61e-16
+    ladder3   0.10                 [0, 1]    2    0    1.999090038    1.999090038   1.78e-15
+    ladder3   0.10              [0, 4, 6]    3    0    1.999090038    1.999090038   0.00e+00
+    ladder3   0.10                    [5]    1    0    0.999914259    0.999914259   3.55e-15
+    ladder3   0.10                    [6]    1    0    0.999337803    0.999337803   3.33e-15
+    ladder3   1.00                 [2, 3]    2    0    0.180740430    0.180740430   2.78e-16
+    ladder3   1.00                 [1, 3]    2    0    0.063910558    0.063910558   4.16e-17
+    ladder3   1.00              [1, 2, 6]    3    0    0.180740430    0.180740430   2.05e-15
+    ladder3   1.00              [0, 2, 5]    3    0    0.180740430    0.180740430   1.75e-15
+    ladder3   3.00                 [0, 1]    2    0    0.003942354    0.003942354   2.57e-15
+    ladder3   3.00                    [4]    1    0    0.003691724    0.003691724   4.27e-16
+    ladder3   3.00                 [1, 2]    2    0    0.003942354    0.003942354   2.31e-15
+    ladder3   3.00           [0, 2, 5, 6]    4    0    0.003942354    0.003942354   1.91e-15
+         k4   0.10                 [3, 4]    2    0    1.999831534    1.999831534   4.44e-16
+         k4   0.10                 [0, 5]    2    0    1.999905849    1.999905849   2.22e-16
+         k4   0.10              [2, 4, 5]    3    0    1.999831534    1.999831534   8.88e-16
+         k4   0.10                    [1]    1    0    0.999980940    0.999980940   1.44e-15
+         k4   1.00              [1, 2, 5]    3    1    0.377780625    0.377780625   4.44e-16
+         k4   1.00           [1, 2, 3, 5]    4    1    0.377780625    0.377780625   4.44e-16
+         k4   1.00                 [1, 2]    2    0    0.535173590    0.535173590   0.00e+00
+         k4   1.00                    [4]    1    0    0.189283087    0.189283087   3.61e-16
+         k4   3.00                 [0, 5]    2    0    0.012639273    0.012639273   1.67e-16
+         k4   3.00              [2, 3, 5]    3    0    0.013331141    0.013331141   1.39e-15
+         k4   3.00           [0, 3, 4, 5]    4    1    0.013321771    0.013321771   2.05e-15
+         k4   3.00              [1, 3, 5]    3    0    0.008887525    0.008887525   8.33e-16
+
+  >>> 36 checks, worst |S_ext - S(A_gi)| = 4.139e-15.  [FORCED -- a code check]
+====================================================================================================
+BLOCK 4B -- W-19'S ONE FULL BIT, REPRODUCED FROM SCRATCH AND DECOMPOSED.
+====================================================================================================
+
+  carrier theta_6: V=2 L=6 cycle_dim=5 physical dim=32
+    magnetic GHZ vs the g^2=0.02 ground state: |<GHZ|psi_0>| = 0.999999899200   Gauss residual 2.2e-16
+    S_ext(S)=1.000000000  S_ext(F)=1.000000000  S_ext(S u F)=1.000000000
+    I_EXTENDED  (W-19's 'EXT'  channel)                          = 1.000000000 bits
+    I with the FULL gauge-invariant algebra of S u F             = 1.000000000 bits
+    I with alg{X_l} on each side (W-19's gauge-invariant channel) = 0.000000000 bits
+    W-19 reported 1.000000 and 0.000000 for these two.  Reproduced independently.
+    ALGEBRA DIMENSIONS: A_gi(S) v A_gi(F) has dim_F2 = 2; A_gi(S u F) has dim_F2 = 3
+    THE GENERATOR THE JOIN IS MISSING: X-part 0b0 Z-part 0b11  -> the Wilson loop of the 2-link cycle {0,1}.  GAUGE-INVARIANT: True
+    S(alg{X_0,X_1}) = 2.000000000   S(A_gi({0,1})) = 1.000000000   DIFFERENCE = 1.000000000 bits
+    >>> THE ENTIRE BIT IS THAT ONE WILSON LOOP.  It is gauge-INVARIANT, so the bit is
+        NOT gauge-variance; and A_gi(S u F) is UNIQUELY determined by the link set, so
+        the bit is NOT a centre choice either.  It is the failure of the region-to-
+        algebra map to be a join: A(S u F) strictly contains A(S) v A(F).
+    same structure at larger |F|:
+      |F|=2: I_EXT=1.000000000  I_full-gi=1.000000000  I_join(no loops)=0.000000000  loops missing from the join: 1
+      |F|=3: I_EXT=1.000000000  I_full-gi=1.000000000  I_join(no loops)=0.000000000  loops missing from the join: 1
+
+  carrier theta_8: V=2 L=8 cycle_dim=7 physical dim=128
+    magnetic GHZ vs the g^2=0.02 ground state: |<GHZ|psi_0>| = 0.999999859592   Gauss residual 2.2e-16
+    S_ext(S)=1.000000000  S_ext(F)=1.000000000  S_ext(S u F)=1.000000000
+    I_EXTENDED  (W-19's 'EXT'  channel)                          = 1.000000000 bits
+    I with the FULL gauge-invariant algebra of S u F             = 1.000000000 bits
+    I with alg{X_l} on each side (W-19's gauge-invariant channel) = 0.000000000 bits
+    W-19 reported 1.000000 and 0.000000 for these two.  Reproduced independently.
+    ALGEBRA DIMENSIONS: A_gi(S) v A_gi(F) has dim_F2 = 2; A_gi(S u F) has dim_F2 = 3
+    THE GENERATOR THE JOIN IS MISSING: X-part 0b0 Z-part 0b11  -> the Wilson loop of the 2-link cycle {0,1}.  GAUGE-INVARIANT: True
+    S(alg{X_0,X_1}) = 2.000000000   S(A_gi({0,1})) = 1.000000000   DIFFERENCE = 1.000000000 bits
+    >>> THE ENTIRE BIT IS THAT ONE WILSON LOOP.  It is gauge-INVARIANT, so the bit is
+        NOT gauge-variance; and A_gi(S u F) is UNIQUELY determined by the link set, so
+        the bit is NOT a centre choice either.  It is the failure of the region-to-
+        algebra map to be a join: A(S u F) strictly contains A(S) v A(F).
+    same structure at larger |F|:
+      |F|=2: I_EXT=1.000000000  I_full-gi=1.000000000  I_join(no loops)=0.000000000  loops missing from the join: 1
+      |F|=3: I_EXT=1.000000000  I_full-gi=1.000000000  I_join(no loops)=0.000000000  loops missing from the join: 1
+====================================================================================================
+BLOCK 4C -- THE ISOLATING DIFF.  ONE VARIABLE: DOES S u F CARRY A CYCLE.
+====================================================================================================
+Two link pairs on the SAME carrier, same state, same coupling, same algebras rule.
+
+    carrier     S     F  cycle in SuF?    g^2        I_EXT    I_full-gi       I_join   EXT - join
+    ladder3   [0]   [1]          False   0.10  0.000078691  0.000078691  0.000078691  0.000000000
+    ladder3   [0]   [2]          False   0.10  0.999830926  0.999830926  0.999830926 -0.000000000
+    ladder3   [0]   [1]          False   1.00  0.036481265  0.036481265  0.036481265 -0.000000000
+    ladder3   [0]   [2]          False   1.00  0.153311136  0.153311136  0.153311136 -0.000000000
+    ladder3   [0]   [1]          False   3.00  0.001032618  0.001032618  0.001032618 -0.000000000
+    ladder3   [0]   [2]          False   3.00  0.003691724  0.003691724  0.003691724  0.000000000
+    theta_6   [0]   [1]           True   0.10  0.999924985  0.999924985  0.000000000  0.999924985
+    theta_6   [0] [1, 2]           True   0.10  0.999997107  0.999997107  0.000000000  0.999997106
+    theta_6   [0]   [1]           True   1.00  0.490353059  0.490353059  0.035200453  0.455152606
+    theta_6   [0] [1, 2]           True   1.00  0.731085777  0.731085777  0.093047391  0.638038386
+    theta_6   [0]   [1]           True   3.00  0.015422289  0.015422289  0.006235572  0.009186717
+    theta_6   [0] [1, 2]           True   3.00  0.029551680  0.029551680  0.012782778  0.016768901
+
+  THE COLUMN 'EXT - join' IS ZERO EXACTLY WHEN S u F CARRIES NO CYCLE AND NON-ZERO WHEN IT DOES.
+  That is the whole of W-19's finding restated with its mechanism visible.  The coupling
+  dependence W-19 read as a PHASE INDEX is the coupling dependence of <W_loop>: at small g^2 the
+  ground state is a Wilson-loop eigenstate and the loop carries a full bit; at large g^2 it is an
+  electric eigenstate and the loop carries nothing.  Nothing in it is about von Neumann type, and
+  nothing in it is about a choice of centre.
+====================================================================================================
+BLOCK 4D -- THE TWO QUANTITIES SIDE BY SIDE, SO THEY ARE NOT CONFUSED AGAIN.
+====================================================================================================
+  QUANTITY 1 -- W-19's bit.  A(S u F) minus A(S) v A(F).  Region-to-algebra assignment is
+    FIXED and unique; nothing is chosen.  The gap is the region's own Wilson loops.  Size here:
+    exactly 1.000000000 bits on theta_6 in the magnetic phase, 0 in the electric phase.
+    THIS IS NOT AN AMBIGUITY.  It is a determinate structural fact about gauge theory:
+    the map region -> algebra is not a lattice homomorphism.
+
+  QUANTITY 2 -- the Casini-Huerta-Rosabal centre ambiguity.  Region FIXED; the algebra assigned
+    to it is CHOSEN from every subalgebra between "what is strictly inside" and "the commutant of
+    what is strictly inside the complement".  Measured exhaustively in k2b on grid3x3, region
+    (0,1,2,4): 67 admissible algebras, 41 distinct entropies, spread 3.998925600 bits at
+    g^2 = 0.10 and 2.851355785 bits at g^2 = 0.50.
+    THIS IS THE AMBIGUITY.  It is larger than W-19's bit, it is not phase-indexed in the same
+    way, and W-19 did not measure it.
+
+  Both are finite, exact, and fully computable.  NEITHER involves a trace that fails to exist.
+====================================================================================================
+END BLOCK 4

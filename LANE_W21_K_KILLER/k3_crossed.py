@@ -123,8 +123,19 @@ line()
 print("BLOCK 3B -- THE CROSSED PRODUCT COLLAPSES.  A x|_sigma Z_N  ==  A (x) C^N.")
 line()
 N = 4
-u = mpow(rhoA, 1j * 1.0)                      # unitary in A implementing sigma_1
-print(f"clock: Z_{N}.  action alpha_k = Ad(u^k) with u = rho_A^i in A (inner, by 3A).")
+print("clock: Z_%d.  BUG FOUND AND RECORDED: the first version of this block used u = rho_A^i,\n"
+      "the actual modular unitary.  That is inner (3A) but it has INFINITE ORDER, so Ad(u^k) is\n"
+      "not a Z_%d action -- the wrap-around block %d -> 0 carries u^(-%d) instead of u, and the\n"
+      "closure returned dim 256 = dim M_16 rather than 64.  The failure was a BROKEN GROUP ACTION,\n"
+      "not a non-trivial crossed product, and reporting that 256 as 'the crossed product is big'\n"
+      "would have been this program's fifth forced artefact.  Fixed by taking an order-%d inner\n"
+      "unitary, which is what a Z_%d action requires.  3A already establishes that the modular flow\n"
+      "itself is inner; the statement for the real line is A x|_sigma R = A (x) L^inf(R) whenever\n"
+      "sigma is inner, and that is a theorem, not something a finite lattice can test."
+      % (N, N, N - 1, N - 1, N, N))
+u = np.diag(np.exp(2j * np.pi * np.arange(4) / N)).astype(complex)   # order N, inner in A
+print(f"  u = diag(exp(2 pi i k / {N})), order {N}: ||u^{N} - 1|| = "
+      f"{np.linalg.norm(np.linalg.matrix_power(u, N) - np.eye(4)):.1e}")
 
 # crossed product on C^4 (x) C^N : pi(a) block-diagonal, lambda = shift
 def blockdiag(blocks):
@@ -199,24 +210,32 @@ n = G.L
 psi_g, physdim, e0 = G.ground_state(0.5)
 print(f"carrier ladder3, ground state at g^2 = 0.50, Gauss residual {G.gauss_residual(psi_g):.1e}")
 
-lnk = 4
-A_free = PauliAlgebra([pack((1 << lnk, 0), n), pack((0, 1 << lnk), n)], n, f"M_2 on link {lnk}, UNCONSTRAINED")
 GI = gauge_invariant_subspace(G)
-A_con = PauliAlgebra(intersect([pack((1 << lnk, 0), n), pack((0, 1 << lnk), n)], GI, n), n,
-                     f"gauge-invariant part of link {lnk}")
-print(f"  BEFORE the constraint: {A_free.describe()}")
-print(f"     -> a FACTOR (trivial centre). Entropy = ordinary von Neumann entropy: "
-      f"{A_free.entropy(psi_g):.9f} bits")
-print(f"  AFTER  the constraint: {A_con.describe()}")
-print(f"     -> an algebra WITH A CENTRE. Entropy = classical + quantum split: "
-      f"{A_con.entropy(psi_g):.9f} bits")
+for label, links in (("single link {4}", [4]),
+                     ("plaquette P1 links {0,2,4,5}", [0, 2, 4, 5]),
+                     ("tree {0,1,2}", [0, 1, 2])):
+    gens = []
+    for l in links:
+        gens += [pack((1 << l, 0), n), pack((0, 1 << l), n)]
+    A_free = PauliAlgebra(gens, n, f"UNCONSTRAINED full algebra on {label}")
+    A_con = PauliAlgebra(intersect(gens, GI, n), n, f"GAUGE-INVARIANT algebra on {label}")
+    print(f"\n  region = {label}")
+    print(f"    BEFORE constraint: centre dim {A_free.nblocks}, blocks {A_free.nblocks} x "
+          f"M_{2**A_free.k}, S = {A_free.entropy(psi_g):.9f} bits   -> a FACTOR: the number is an")
+    print(f"                       ENTANGLEMENT entropy of a tensor factorisation.")
+    print(f"    AFTER  constraint: centre dim {A_con.nblocks}, blocks {A_con.nblocks} x "
+          f"M_{2**A_con.k}, S = {A_con.entropy(psi_g):.9f} bits   -> HAS A CENTRE: the same number")
+    print(f"                       is now a Shannon term over superselection sectors PLUS a")
+    print(f"                       quantum term, and it is NOT an entanglement entropy.")
 print("""
-  The constraint changed the algebra, hence the centre, hence what the word 'entropy of this
-  region' even denotes.  That is a real finite change in what is well-defined -- and it is the
-  Gauss law, which this theory already has.  It is NOT the crossed-product mechanism, it does
-  not require an observer, and it produces a centre rather than a trace.  Anyone importing the
-  type-II story as a model for 'adding gravity fixes the ambiguity' is importing a mechanism
-  whose finite analogue is a constraint we already imposed on line one.""")
+  READ THE COINCIDENCE OF THE NUMBERS, NOT PAST IT.  The constraint does not move the number --
+  that equality is the theorem proved in k4 block 4A and it holds for every region and every
+  physical state.  What the constraint moves is the CENTRE: from trivial (a factor, an honest
+  entanglement entropy) to non-trivial (a superselection decomposition).  So a constraint changes
+  what the quantity MEANS while leaving its value alone, and the crossed product changes neither
+  finitely.  The type-II story's finite analogue is therefore not 'adding an observer' at all --
+  it is a constraint, and the Gauss law is one we imposed on line one.  If gravity is to do
+  something here it has to do something a constraint does not already do.""")
 
 line()
 print("END BLOCK 3")

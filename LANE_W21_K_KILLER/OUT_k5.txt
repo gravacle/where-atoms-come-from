@@ -1,0 +1,68 @@
+====================================================================================================
+BLOCK 5A -- IS THE SET OF COMPETING BOOKKEEPINGS A DYNAMICAL OBJECT?  NO, AND HERE IS
+THE MEASUREMENT THAT SAYS SO.
+====================================================================================================
+carrier grid3x3 V=9 L=12 physical dim 16; region = vertices [0, 1, 2, 4]
+V_min and V_max are built from: the graph's link/cycle structure and the Gauss law.
+grep the constructor: NO HAMILTONIAN, NO COUPLING, NO STATE enters region_data().
+  q_phys = 4   number of assignable algebras = 67
+
+Recomputed under five different dynamics (the function is state-independent, so this is
+a tautology check -- printed because the tautology IS the answer to the hypothesis):
+   g^2=0.10                 ->  67 algebras, identical set: True
+   g^2=3.00                 ->  67 algebras, identical set: True
+   backreaction lam=0.5     ->  67 algebras, identical set: True
+   backreaction lam=2.0     ->  67 algebras, identical set: True
+   random H                 ->  67 algebras, identical set: True
+
+>>> THE SET OF COMPETING BOOKKEEPINGS IS FIXED BEFORE ANY HAMILTONIAN EXISTS.  It is a property
+    of the graph and the constraint.  NO term added to H -- backreaction, matter, anything --
+    can delete an algebra from that list, because the list was never a function of H.  The
+    hypothesis as written asks a dynamical mechanism to collapse a KINEMATICAL set.  On a finite
+    lattice that is not a hard experiment; it is a category error, and it is the finding.
+====================================================================================================
+BLOCK 5B/5C -- WHAT THE DYNAMICS DOES MOVE: THE STATE, HENCE THE NUMBERS.
+====================================================================================================
+  dynamics                                 E0  #distinct S        min S        max S       SPREAD
+  standard g^2=0.10                -40.007507           41  0.000149380  3.999074980  3.998925600
+  standard g^2=0.50                 -9.382631           41  0.022909827  2.874265612  2.851355785
+  standard g^2=1.00                -12.420753           41  0.000783970  0.370253601  0.369469631
+  standard g^2=3.00                -36.015434           41  0.000000230  0.007887393  0.007887163
+  BACKREACT g^2=0.10 lam=0.5       -42.897470           41  0.026668480  3.625828326  3.599159846
+  BACKREACT g^2=0.10 lam=2.0       -67.583939           41  0.161931051  2.630959031  2.469027980
+  BACKREACT g^2=0.50 lam=0.5       -11.051090           41  0.021798107  2.486714258  2.464916151
+  BACKREACT g^2=0.50 lam=2.0       -16.719904           41  0.127147117  2.235686263  2.108539146
+  BACKREACT g^2=1.00 lam=2.0       -14.999726           41  0.035167630  1.221354718  1.186187088
+  random Hermitian, seed 7          -6.404719           67  1.009841893  3.466790904  2.456949011
+  random Hermitian, seed 8          -6.559949           67  1.067056167  3.445962202  2.378906035
+  Haar physical state s=11                nan           67  1.177042164  3.587278838  2.410236674
+  Haar physical state s=12                nan           67  0.853481199  3.367453753  2.513972554
+  Haar physical state s=13                nan           67  1.172583962  3.574250437  2.401666475
+
+  THE ARM DIFF THE BRIEF ASKS FOR (one variable: lambda, everything else held):
+    g^2=0.10  spread(lam=0) = 3.998925600   spread(lam=0.5) = 3.599159846   DIFF = -0.399765754 bits   collapsed? NO
+    g^2=0.10  spread(lam=0) = 3.998925600   spread(lam=2.0) = 2.469027980   DIFF = -1.529897620 bits   collapsed? NO
+    g^2=0.50  spread(lam=0) = 2.851355785   spread(lam=0.5) = 2.464916151   DIFF = -0.386439634 bits   collapsed? NO
+    g^2=0.50  spread(lam=0) = 2.851355785   spread(lam=2.0) = 2.108539146   DIFF = -0.742816639 bits   collapsed? NO
+    g^2=1.00  spread(lam=0) = 0.369469631   spread(lam=2.0) = 1.186187088   DIFF = +0.816717457 bits   collapsed? NO
+====================================================================================================
+BLOCK 5D -- BOTH READINGS, NEITHER SCORED.
+====================================================================================================
+READING ONE.  The backreaction analogue does not collapse the spread, therefore the
+hypothesis is wrong: the ambiguity is not the absence of gravity, it is the absence of a physical
+reason to prefer one subalgebra, and no term in a Hamiltonian on a fixed graph supplies one.
+
+READING TWO.  The backreaction analogue on this carrier is not backreaction.  There is no metric,
+no 2-cell with its own dynamics, no arena to respond -- W-05 established attempt one had none and
+this carrier has none either.  A term that makes a plaquette's coefficient depend on nearby
+electric flux changes the STATE and nothing else, and the null is therefore a null about a toy,
+not about gravity.  A classical-shaped null at the record level is VOID by this program's own
+standing rule, and this one is close enough to that shape to be treated the same way.
+
+WHAT DECIDES BETWEEN THEM IS 5A, AND 5A IS NOT A NULL.  5A is a structural statement with no arm
+and no state: the list of admissible algebras is computed before any dynamics exists.  Whatever
+gravity is, if it is a term in a Hamiltonian on a fixed carrier, it cannot shorten that list.  So
+the hypothesis cannot be tested by adding backreaction to a finite lattice REGARDLESS of which
+reading of the null is right.  That is what ends the round, not the null.
+====================================================================================================
+END BLOCK 5

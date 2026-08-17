@@ -1,0 +1,8 @@
+LANE W24 — Z_2 VERSUS Z_3, ORIENTATION, AND WHY NOTHING FLOWS ON A FRINGE.
+Carrier: triangle {0,1,2} in the bulk, two dangling links to boundary vertices 3 and 4.
+Links 0:(0,1) 1:(1,2) 2:(2,0) [the plaquette], 3:(0,3) 4:(1,4) [dangling]. Gauss imposed at bulk
+vertices only, via the projector (1/N) sum_k G_v^k. Z_N clock and shift; Gauss at v takes Z on
+outgoing links and Z-dagger on incoming, which is vacuous at N=2 and not at N=3.
+Hamiltonian: -(e^{i theta} W + e^{-i theta} W-dagger) - g^2 sum_l (Z_l + Z_l-dagger), g^2 = 1.
+Persistent current by central difference in theta, h = 1e-4. Entropies in log base N so ratios
+are group-independent. Seeds where used: default_rng(20260831).

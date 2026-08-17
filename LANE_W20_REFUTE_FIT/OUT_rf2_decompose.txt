@@ -1,0 +1,211 @@
+
+====================================================================================================
+BLOCK 1 -- THE SAME KNOB APPEARS IN TWO LEDGER SLOTS.  PRINT THE KNOB.
+====================================================================================================
+Every arm backing 'the charge sector' AND every arm backing 'boundary FORMATION', in BOTH
+lanes, is the same move: pick a different eta among the 128 admissible charge sectors.
+Neither lane's formation arm contains a route, a history, or a time.  R1/R2/R3 are STATIC
+ground states of DIFFERENT superselection sectors, compared at equal g2.
+
+  arm                 sector a    sector b    flux_a flux_b  equal?   ledger slot it was scored in
+  A1  CHARGE SECTOR   vacuum      eta{0,4}    +1     -1      False    ledgered CAUSAL_EARNED by BOTH lanes as 'the charge sector'
+  R1  FORMATION a     eta{0,4}    eta{1,5}    -1     -1      True     ledgered CAUSAL_EARNED by BOTH lanes as 'boundary FORMATION'
+  R2  FORMATION b     vacuum      eta{4,5}    +1     +1      True     ledgered CAUSAL_EARNED by BOTH lanes as 'boundary FORMATION'
+  R3  FORMATION c     vacuum      eta{0,1}    +1     +1      True     ledgered CAUSAL_EARNED by BOTH lanes as 'boundary FORMATION'
+
+>>> THE ONLY STRUCTURAL DIFFERENCE between the arm scored as 'the charge sector' and the arms
+    scored as 'boundary FORMATION' is WHETHER THE TWO SECTORS HAPPEN TO SHARE A FLUX SIGN.
+    One knob, split into two ledger slots by a one-bit label.  Both slots then received an
+    independent CAUSAL_EARNED verdict, in both lanes.  THAT IS THE FITTING, IN ITS EXACT
+    MECHANICAL FORM: six ingredients were asked for and the knobs were subdivided until six
+    were available.
+
+====================================================================================================
+BLOCK 2 -- THE DECOMPOSITION NEITHER LANE PRINTED.  dH_FULL = dH_CENTRE + dC.
+====================================================================================================
+H_CENTRE = Shannon of the 4 central weights = the entropy of the SURFACE'S OWN DATA
+           (Z(A_S) = A_Sigma, operator identity, rf1 BLOCK 1).
+C        = H_FULL - H_CENTRE = the record's content BEYOND its boundary.  Ceiling 1 bit.
+D_Sigma  = trace distance of the two arms restricted to A_Sigma = total variation of the
+           boundary's own 2-bit data.  THIS IS THE NUMBER THAT SAYS WHETHER THE ARM HELD
+           THE BOUNDARY FIXED.  Both lanes held only the flux, which is a scalar, not this.
+
+----------------------------------------------------------------------------------------------------
+A1  CHARGE SECTOR  :  vacuum  vs  eta{0,4}      [ledgered CAUSAL_EARNED by BOTH lanes as 'the charge sector']
+  g2      dH_FULL     dH_CENTRE   dC          |dC|/|dH_FULL|   D_Sigma(boundary moved)  H_FULL_a  H_FULL_b
+  0.05    0.0000183   0.0000183   0.00000000  8.6656e-11       0.0025125                1.999976  1.999994 
+  0.10    0.0003033   0.0003033   0.00000000  5.9241e-09       0.0102014                1.999605  1.999908 
+  0.20    0.0056304   0.0056304   0.00000001  1.2267e-06       0.0432710                1.992819  1.998450 
+  0.30    0.0360533   0.0360524   0.00000098  2.7055e-05       0.1064876                1.955477  1.991531 
+  0.45    0.2632436   0.2631215   0.00012202  4.6352e-04       0.2677144                1.689408  1.952652 
+  0.60    0.7787343   0.7773486   0.00138570  1.7794e-03       0.4172132                1.077757  1.856491 
+  0.80    1.1935070   1.1902356   0.00327142  2.7410e-03       0.4793490                0.491388  1.684895 
+  1.00    1.3003870   1.2978968   0.00249020  1.9150e-03       0.4924470                0.245303  1.545690 
+  1.30    1.2941864   1.2934178   0.00076864  5.9392e-04       0.4974960                0.103979  1.398165 
+  1.70    1.2131047   1.2129975   0.00010718  8.8349e-05       0.4991602                0.041931  1.255035 
+  2.20    1.1233755   1.1233658   0.00000962  8.5665e-06       0.4997025                0.017146  1.140521 
+  3.00    1.0518256   1.0518252   0.00000037  3.4755e-07       0.4999142                0.005724  1.057550 
+  5.00    1.0098030   1.0098030   0.00000000  1.1676e-09       0.4999889                0.000906  1.010709 
+  >>> max|dH_FULL| = 1.30038704    max|dC| = 0.00327142    max D_Sigma = 0.49998889
+      FRACTION OF THE REPORTED RECORD MOVE THAT IS A BOUNDARY-DATA MOVE: 99.74843%
+----------------------------------------------------------------------------------------------------
+R1  FORMATION a    :  eta{0,4}  vs  eta{1,5}      [ledgered CAUSAL_EARNED by BOTH lanes as 'boundary FORMATION']
+  g2      dH_FULL     dH_CENTRE   dC          |dC|/|dH_FULL|   D_Sigma(boundary moved)  H_FULL_a  H_FULL_b
+  0.05    0.0000000   0.0000000   -0.00000000 1.8429e-05       0.0012500                1.999994  1.999994 
+  0.10    0.0000005   0.0000005   -0.00000000 2.4252e-04       0.0049995                1.999908  1.999909 
+  0.20    0.0000341   0.0000342   -0.00000010 2.9719e-03       0.0199688                1.998450  1.998484 
+  0.30    0.0003614   0.0003660   -0.00000456 1.2616e-02       0.0445984                1.991531  1.991892 
+  0.45    0.0026061   0.0027645   -0.00015842 6.0791e-02       0.0956966                1.952652  1.955258 
+  0.60    -0.0005629  0.0005534   -0.00111637 1.9831e+00       0.1464192                1.856491  1.855928 
+  0.80    -0.0554836  -0.0528054  -0.00267814 4.8269e-02       0.1719044                1.684895  1.629411 
+  1.00    -0.1343982  -0.1322405  -0.00215769 1.6054e-02       0.1538147                1.545690  1.411292 
+  1.30    -0.1835971  -0.1829003  -0.00069681 3.7953e-03       0.1068820                1.398165  1.214568 
+  1.70    -0.1547499  -0.1546507  -0.00009916 6.4080e-04       0.0575559                1.255035  1.100286 
+  2.20    -0.0950919  -0.0950829  -0.00000895 9.4086e-05       0.0258440                1.140521  1.045429 
+  3.00    -0.0410224  -0.0410221  -0.00000034 8.2695e-06       0.0083877                1.057550  1.016528 
+  5.00    -0.0078605  -0.0078605  -0.00000000 1.3849e-07       0.0011422                1.010709  1.002848 
+  >>> max|dH_FULL| = 0.18359712    max|dC| = 0.00267814    max D_Sigma = 0.17190444
+      FRACTION OF THE REPORTED RECORD MOVE THAT IS A BOUNDARY-DATA MOVE: 98.54130%
+----------------------------------------------------------------------------------------------------
+R2  FORMATION b    :  vacuum  vs  eta{4,5}      [ledgered CAUSAL_EARNED by BOTH lanes as 'boundary FORMATION']
+  g2      dH_FULL     dH_CENTRE   dC          |dC|/|dH_FULL|   D_Sigma(boundary moved)  H_FULL_a  H_FULL_b
+  0.05    0.0000001   0.0000001   -0.00000000 1.0290e-06       0.0000063                1.999976  1.999976 
+  0.10    0.0000059   0.0000059   -0.00000000 1.3349e-05       0.0001010                1.999605  1.999611 
+  0.20    0.0004147   0.0004147   -0.00000006 1.4928e-04       0.0016538                1.992819  1.993234 
+  0.30    0.0053265   0.0053291   -0.00000262 4.9191e-04       0.0084687                1.955477  1.960804 
+  0.45    0.0613905   0.0614331   -0.00004259 6.9382e-04       0.0345622                1.689408  1.750799 
+  0.60    0.1469274   0.1469089   0.00001847  1.2574e-04       0.0406312                1.077757  1.224684 
+  0.80    0.0983601   0.0983310   0.00002915  2.9635e-04       0.0176457                0.491388  0.589748 
+  1.00    0.0523085   0.0523035   0.00000498  9.5296e-05       0.0077286                0.245303  0.297612 
+  1.30    0.0234177   0.0234174   0.00000033  1.4288e-05       0.0028719                0.103979  0.127396 
+  1.70    0.0097850   0.0097849   0.00000002  1.7133e-06       0.0010164                0.041931  0.051716 
+  2.20    0.0040722   0.0040722   0.00000000  2.1588e-07       0.0003675                0.017146  0.021218 
+  3.00    0.0013743   0.0013743   0.00000000  1.7788e-08       0.0001069                0.005724  0.007099 
+  5.00    0.0002193   0.0002193   0.00000000  2.9277e-10       0.0000139                0.000906  0.001125 
+  >>> max|dH_FULL| = 0.14692741    max|dC| = 0.00004259    max D_Sigma = 0.04063121
+      FRACTION OF THE REPORTED RECORD MOVE THAT IS A BOUNDARY-DATA MOVE: 99.97101%
+----------------------------------------------------------------------------------------------------
+R3  FORMATION c    :  vacuum  vs  eta{0,1}      [ledgered CAUSAL_EARNED by BOTH lanes as 'boundary FORMATION']
+  g2      dH_FULL     dH_CENTRE   dC          |dC|/|dH_FULL|   D_Sigma(boundary moved)  H_FULL_a  H_FULL_b
+  0.05    0.0000001   0.0000001   -0.00000000 6.1470e-07       0.0050188                1.999976  1.999976 
+  0.10    0.0000065   0.0000065   -0.00000000 8.1227e-06       0.0203019                1.999605  1.999611 
+  0.20    0.0004655   0.0004656   -0.00000004 8.9858e-05       0.0848882                1.992819  1.993285 
+  0.30    0.0061697   0.0061715   -0.00000175 2.8427e-04       0.2045066                1.955477  1.961647 
+  0.45    0.0765351   0.0765552   -0.00002013 2.6300e-04       0.5008665                1.689408  1.765943 
+  0.60    0.2169065   0.2168260   0.00008048  3.7106e-04       0.7937951                1.077757  1.294664 
+  0.80    0.1918639   0.1918139   0.00004992  2.6017e-04       0.9410522                0.491388  0.683252 
+  1.00    0.1035732   0.1035653   0.00000791  7.6386e-05       0.9771764                0.245303  0.348876 
+  1.30    0.0372282   0.0372277   0.00000051  1.3601e-05       0.9921211                0.103979  0.141207 
+  1.70    0.0122634   0.0122634   0.00000002  2.0177e-06       0.9973040                0.041931  0.054194 
+  2.20    0.0044744   0.0044744   0.00000000  2.8736e-07       0.9990375                0.017146  0.021620 
+  3.00    0.0014154   0.0014154   0.00000000  2.5207e-08       0.9997215                0.005724  0.007140 
+  5.00    0.0002202   0.0002202   0.00000000  4.2590e-10       0.9999639                0.000906  0.001126 
+  >>> max|dH_FULL| = 0.21690651    max|dC| = 0.00008048    max D_Sigma = 0.99996389
+      FRACTION OF THE REPORTED RECORD MOVE THAT IS A BOUNDARY-DATA MOVE: 99.96289%
+
+====================================================================================================
+BLOCK 3 -- THE VERDICT OF BLOCK 2, STATED ONCE
+====================================================================================================
+  arm                 max|dH_FULL|  max|dC|       max D_Sigma   what the arm actually moved
+  A1  CHARGE SECTOR   1.30038704    0.00327142    0.49998889    THE BOUNDARY
+  R1  FORMATION a     0.18359712    0.00267814    0.17190444    THE BOUNDARY
+  R2  FORMATION b     0.14692741    0.00004259    0.04063121    THE BOUNDARY
+  R3  FORMATION c     0.21690651    0.00008048    0.99996389    THE BOUNDARY
+
+>>> EVERY ARM SCORED AS 'boundary FORMATION' MOVES THE BOUNDARY'S OWN DATA BY MORE THAN IT
+    MOVES ANYTHING ELSE.  The record content past the boundary moves by at most 0.003271 bits
+    in ANY of these arms, against a claimed record move of up to 1.300387 bits.
+    THE ARMS DID NOT HOLD THE BOUNDARY FIXED.  They held one scalar (the flux) out of a
+    2-bit surface algebra, and then attributed the motion of the other bits to 'formation'.
+
+====================================================================================================
+BLOCK 4 -- THE REPAIRED FORMATION ARM.  CONDITION ON THE BOUNDARY, THEN COMPARE.
+====================================================================================================
+If the boundary cannot be held fixed as a whole, it can be CONDITIONED ON.  rho|A_S is a
+classical 2-bit label k (the boundary's own data) plus a conditional qubit rho_k on
+alg{X_1, W_S}.  The commissioning arm -- SAME BOUNDARY, DIFFERENT ROUTE -- is then well posed
+for the first time in this round:
+      hold k, compare rho_k across the two arms.
+Labelling is INTRINSIC: k is the joint eigenvalue of X_1X_2 and X_1X_3, which are operators
+INSIDE A_S and are the same operators in every sector.  No relabelling freedom is used and
+none is needed.  Blocks with p_k < 1e-6 in either arm are skipped and the skip is printed.
+
+  arm                 g2      max_k D_tr(rho_k)  argmax k    p_k(a)    p_k(b)   blocks used
+  A1  CHARGE SECTOR   0.05    0.000003152        (-1, -1)    0.249057  0.250313 4/4
+  A1  CHARGE SECTOR   0.10    0.000051728        (-1, -1)    0.246164  0.251266 4/4
+  A1  CHARGE SECTOR   0.20    0.000913965        (-1, -1)    0.233578  0.255244 4/4
+  A1  CHARGE SECTOR   0.30    0.005387149        (-1, -1)    0.208738  0.262423 4/4
+  A1  CHARGE SECTOR   0.45    0.035952598        (-1, 1)     0.093216  0.219826 4/4
+  A1  CHARGE SECTOR   0.60    0.132077292        (-1, 1)     0.021971  0.195546 4/4
+  A1  CHARGE SECTOR   0.80    0.327546817        (-1, 1)     0.002267  0.162783 4/4
+  A1  CHARGE SECTOR   1.00    0.493314557        (-1, 1)     0.000350  0.132966 4/4
+  A1  CHARGE SECTOR   1.30    0.650699038        (-1, 1)     0.000041  0.091714 4/4
+  A1  CHARGE SECTOR   1.70    0.757707053        (-1, 1)     0.000005  0.050046 4/4
+  A1  CHARGE SECTOR   2.20    0.118497667        (1, -1)     0.001185  0.000704 3/4
+  A1  CHARGE SECTOR   3.00    0.074119953        (1, -1)     0.000343  0.000187 3/4
+  A1  CHARGE SECTOR   5.00    0.029035823        (1, -1)     0.000044  0.000023 3/4
+  >>> A1  CHARGE SECTOR   MAX CONDITIONAL RECORD MOVE OVER THE GRID = 0.757707053 at g2=1.7, k=(-1, 1)
+
+  R1  FORMATION a     0.05    0.000001566        (-1, 1)     0.249687  0.249062 4/4
+  R1  FORMATION a     0.10    0.000025214        (-1, 1)     0.248734  0.246235 4/4
+  R1  FORMATION a     0.20    0.000414664        (-1, 1)     0.244756  0.234771 4/4
+  R1  FORMATION a     0.30    0.002210091        (-1, 1)     0.237577  0.215242 4/4
+  R1  FORMATION a     0.45    0.012690313        (-1, 1)     0.219826  0.171090 4/4
+  R1  FORMATION a     0.60    0.045736967        (-1, 1)     0.195546  0.115951 4/4
+  R1  FORMATION a     0.80    0.144667125        (-1, 1)     0.162783  0.054139 4/4
+  R1  FORMATION a     1.00    0.282597848        (-1, 1)     0.132966  0.022754 4/4
+  R1  FORMATION a     1.30    0.475332487        (-1, 1)     0.091714  0.007062 4/4
+  R1  FORMATION a     1.70    0.643194710        (-1, 1)     0.050046  0.002107 4/4
+  R1  FORMATION a     2.20    0.749690987        (-1, 1)     0.022601  0.000684 4/4
+  R1  FORMATION a     3.00    0.820847132        (-1, 1)     0.007329  0.000185 4/4
+  R1  FORMATION a     5.00    0.869528632        (-1, 1)     0.000993  0.000023 4/4
+  >>> R1  FORMATION a     MAX CONDITIONAL RECORD MOVE OVER THE GRID = 0.869528632 at g2=5.0, k=(-1, 1)
+
+  R2  FORMATION b     0.05    0.000000008        (-1, -1)    0.249057  0.249060 4/4
+  R2  FORMATION b     0.10    0.000000513        (-1, -1)    0.246164  0.246215 4/4
+  R2  FORMATION b     0.20    0.000035354        (-1, -1)    0.233578  0.234407 4/4
+  R2  FORMATION b     0.30    0.000445407        (-1, -1)    0.208738  0.213044 4/4
+  R2  FORMATION b     0.45    0.005693486        (-1, 1)     0.093216  0.108665 4/4
+  R2  FORMATION b     0.60    0.024611061        (-1, 1)     0.021971  0.035250 4/4
+  R2  FORMATION b     0.80    0.046279919        (-1, 1)     0.002267  0.004905 4/4
+  R2  FORMATION b     1.00    0.046164359        (-1, 1)     0.000350  0.000843 4/4
+  R2  FORMATION b     1.30    0.034569189        (-1, 1)     0.000041  0.000104 4/4
+  R2  FORMATION b     1.70    0.022182400        (-1, 1)     0.000005  0.000012 4/4
+  R2  FORMATION b     2.20    0.003908331        (-1, -1)    0.000297  0.000663 3/4
+  R2  FORMATION b     3.00    0.002112146        (-1, -1)    0.000086  0.000193 3/4
+  R2  FORMATION b     5.00    0.000761706        (-1, -1)    0.000011  0.000025 3/4
+  >>> R2  FORMATION b     MAX CONDITIONAL RECORD MOVE OVER THE GRID = 0.046279919 at g2=0.8, k=(-1, 1)
+
+  R3  FORMATION c     0.05    0.000007833        (1, 1)      0.252202  0.249061 4/4
+  R3  FORMATION c     0.10    0.000126252        (1, 1)      0.258988  0.246233 4/4
+  R3  FORMATION c     0.20    0.002071416        (1, 1)      0.288987  0.234644 4/4
+  R3  FORMATION c     0.30    0.010732106        (1, 1)      0.350152  0.213854 4/4
+  R3  FORMATION c     0.45    0.051090435        (1, 1)      0.533257  0.159056 4/4
+  R3  FORMATION c     0.60    0.135031239        (1, -1)     0.153021  0.036100 4/4
+  R3  FORMATION c     0.80    0.262302598        (-1, 1)     0.002267  0.088461 4/4
+  R3  FORMATION c     1.00    0.308405372        (-1, 1)     0.000350  0.037468 4/4
+  R3  FORMATION c     1.30    0.274984742        (-1, 1)     0.000041  0.011761 4/4
+  R3  FORMATION c     1.70    0.195672062        (-1, 1)     0.000005  0.003621 4/4
+  R3  FORMATION c     2.20    0.087454738        (1, -1)     0.001185  0.000002 3/4
+  R3  FORMATION c     3.00    0.031564082        (-1, -1)    0.000086  0.999461 2/4
+  R3  FORMATION c     5.00    0.011420039        (-1, -1)    0.000011  0.999930 2/4
+  >>> R3  FORMATION c     MAX CONDITIONAL RECORD MOVE OVER THE GRID = 0.308405372 at g2=1.0, k=(-1, 1)
+
+
+====================================================================================================
+BLOCK 5 -- WHAT THE CONDITIONAL TEST SAYS ABOUT THE FORMATION VERDICT
+====================================================================================================
+  arm                 max_k D_tr(rho_k)   max|dH_FULL| (as ledgered)   ratio
+  A1  CHARGE SECTOR   0.757707053         1.30038704                   0.5827
+  R1  FORMATION a     0.869528632         0.18359712                   4.7361
+  R2  FORMATION b     0.046279919         0.14692741                   0.3150
+  R3  FORMATION c     0.308405372         0.21690651                   1.4218
+
+A NULL READS TWO WAYS AND I AM NOT SCORING THIS ONE AS CONFIRMATION OF ANYTHING.
+Reading 1: with the boundary conditioned on, the charge-placement route leaves the region's
+           remaining record essentially untouched -> FORMATION-BY-CHARGE-PLACEMENT IS
+           NARRATION and the CAUSAL_EARNED verdict is unearned.
+Reading 2: the conditional record is ONE QUBIT and on a ground state it is nearly PURE
+           (C <= 0.0033 bits, rf1 BLOCK 5), so there is very little room for it to move; the
+           test may be too small rather than the effect absent.
+THE DISCRIMINATOR IS RUN IN rf3 (a route that DOES move C: the quench) AND IN rf4.

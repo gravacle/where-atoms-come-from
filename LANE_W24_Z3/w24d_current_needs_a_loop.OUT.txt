@@ -1,0 +1,19 @@
+  which links lie on a cycle, hence can be threaded by a flux?
+    link 0 = (0, 1)   on a cycle: True
+    link 1 = (1, 2)   on a cycle: True
+    link 2 = (2, 0)   on a cycle: True
+    link 3 = (0, 3)   on a cycle: False   <- BOUNDARY (dangling)
+    link 4 = (1, 4)   on a cycle: False   <- BOUNDARY (dangling)
+  -> the two boundary links lie on NO cycle. There is no flux parameter for them,
+     therefore no persistent current, therefore nothing to flow. BY CONSTRUCTION.
+
+  THE BULK PERSISTENT CURRENT, J = -dE0/dtheta, by central difference (h=1e-4):
+     theta           N=2           N=3
+    0.0000     -0.000000     -0.000000
+    0.4000     -0.228588     -0.064754
+    1.0000     -0.298300     -0.009940
+    2.0000      0.249875      0.019297
+
+  A nonzero J at N=3 is a genuine persistent current circulating the bulk plaquette.
+  At N=2 it must vanish where the two senses coincide.
+  AND THERE IS NO BOUNDARY COLUMN TO PRINT, because the boundary has no cycle to thread.

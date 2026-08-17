@@ -1,0 +1,24 @@
+====================================================================================================
+carrier grid3x4: V=12 L=17 cycle_dim=6 physical dim D=64
+edges [(0, (0, 1)), (1, (1, 2)), (2, (2, 3)), (3, (4, 5)), (4, (5, 6)), (5, (6, 7)), (6, (8, 9)), (7, (9, 10)), (8, (10, 11)), (9, (0, 4)), (10, (1, 5)), (11, (2, 6)), (12, (3, 7)), (13, (4, 8)), (14, (5, 9)), (15, (6, 10)), (16, (7, 11))]
+----------------------------------------------------------------------------------------------------
+COMPLEMENTARY (touching)
+  A = vertices [0, 1, 4, 5] (internal links [0, 3, 9, 10]), B = vertices [2, 3, 6, 7, 8, 9, 10, 11] (internal links [2, 5, 6, 7, 8, 11, 12, 15, 16])
+  links directly joining A and B: [1, 4, 13, 14]  -> ADJACENT
+  q_A = 1 -> 2 algebras for A ;  q_B = 1 -> 2 algebras for B ;  4 pairs
+    g^2=0.10  4 pairs -> 4 distinct I ; min=1.999946788 max=2.999848629 SPREAD=0.999901841 bits
+    g^2=0.50  4 pairs -> 4 distinct I ; min=1.796240413 max=2.581497999 SPREAD=0.785257586 bits
+    g^2=1.00  4 pairs -> 4 distinct I ; min=0.276811782 max=0.314363540 SPREAD=0.037551758 bits
+    g^2=3.00  4 pairs -> 4 distinct I ; min=0.006177504 max=0.006500207 SPREAD=0.000322703 bits
+----------------------------------------------------------------------------------------------------
+SEPARATED  (corridor >= 1 vertex)
+  A = vertices [0, 1, 4, 5] (internal links [0, 3, 9, 10]), B = vertices [10, 11] (internal links [8])
+  links directly joining A and B: []  -> SEPARATED
+  q_A = 7 -> 29212 algebras for A ;  q_B = 7 -> 29212 algebras for B ;  853340944 pairs
+  (CONFOUND, RECORDED: exhaustive enumeration is out of reach here; 40 algebras sampled uniformly per side, seed 66.  A SAMPLED spread is a LOWER
+   BOUND on the true spread, so a large spread is safe and a small one is not.)
+    g^2=0.10  600 pairs -> 599 distinct I ; min=1.001780949 max=6.998827752 SPREAD=5.997046803 bits
+    g^2=0.50  600 pairs -> 600 distinct I ; min=1.030547589 max=5.763987860 SPREAD=4.733440271 bits
+    g^2=1.00  600 pairs -> 600 distinct I ; min=-0.653984680 max=4.134952078 SPREAD=4.788936758 bits
+    g^2=3.00  600 pairs -> 589 distinct I ; min=-0.993087002 max=4.002659796 SPREAD=4.995746798 bits
+----------------------------------------------------------------------------------------------------

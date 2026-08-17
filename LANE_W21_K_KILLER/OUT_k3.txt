@@ -1,17 +1,88 @@
 ====================================================================================================
-BLOCK 3A -- MODULAR FLOW IN FINITE DIMENSIONS IS INNER.  MEASURED.
+BLOCK 3A -- MODULAR FLOW IN FINITE DIMENSIONS IS INNER.
+DECLARED FIRST: THIS IS A THEOREM EXHIBIT, NOT A MEASUREMENT.  IT COULD NOT HAVE FAILED.
 ====================================================================================================
-H = C^8 = C^4 (x) C^2 ;  A = M_4 (x) 1  (the 'region'),  A' = 1 (x) M_2.
-cyclic separating vector: random pure state, seed 21.
-  rho_A eigenvalues = [-0.          0.          0.33521997  0.66478003]
-  rho_A' eigenvalues = [0.33521997 0.66478003]  (separating: min eig 3.352e-01 > 0)
-  t =  0.3:  max_a || Delta^it a Delta^-it  -  rho_A^it a rho_A^-it || = 1.956e+00   and rho_A^it IS an element of A (unitary in M_4 (x) 1): residual 0.0e+00
-  t =  1.0:  max_a || Delta^it a Delta^-it  -  rho_A^it a rho_A^-it || = 3.193e+00   and rho_A^it IS an element of A (unitary in M_4 (x) 1): residual 0.0e+00
-  t =  2.5:  max_a || Delta^it a Delta^-it  -  rho_A^it a rho_A^-it || = 3.841e+00   and rho_A^it IS an element of A (unitary in M_4 (x) 1): residual 0.0e+00
->>> The modular automorphism group of a finite-dimensional algebra is implemented BY AN
-    ELEMENT OF THE ALGEBRA.  It is inner.  This is Skolem-Noether and it could not have come out
-    otherwise; it is exhibited here so the next block's collapse is not a surprise.
+In finite dimensions Delta = rho_A (x) rho_{A'}^{-1}, the two factors commute, and the
+adjoint action on A involves only the first.  So Ad(Delta^{it})|_A = Ad(rho_A^{it})|_A is TRUE BY
+CONSTRUCTION and the residual below is a code check, nothing more.  The content is the theorem
+underneath it (Skolem-Noether: every automorphism of a finite-dimensional central simple algebra
+is inner), and the program's own rule -- 'could not have failed' voids a control, never a theorem
+-- is what lets this stand as the premise of 3B.  Stated plainly so it is not read as evidence.
+
+H = C^16 = C^4 (x) C^4 ;  A = M_4 (x) 1 ;  A' = 1 (x) M_4 ; random pure Omega, seed 21.
+  rho_A eigenvalues  = [0.000295383 0.070256836 0.256472168 0.672975612]
+  rho_A' eigenvalues = [0.000295383 0.070256836 0.256472168 0.672975612]
+  Omega is CYCLIC AND SEPARATING: min eig(rho_A) = 2.954e-04 > 0, min eig(rho_A') = 2.954e-04 > 0
+  t =  0.3:  max_a || Delta^it a Delta^-it - rho_A^it a rho_A^-it || = 3.719e-15   [FORCED]   rho_A^it unitary in A: ||u u* - 1|| = 2.1e-15
+  t =  1.0:  max_a || Delta^it a Delta^-it - rho_A^it a rho_A^-it || = 3.517e-15   [FORCED]   rho_A^it unitary in A: ||u u* - 1|| = 2.3e-15
+  t =  2.5:  max_a || Delta^it a Delta^-it - rho_A^it a rho_A^-it || = 3.140e-15   [FORCED]   rho_A^it unitary in A: ||u u* - 1|| = 2.5e-15
 ====================================================================================================
 BLOCK 3B -- THE CROSSED PRODUCT COLLAPSES.  A x|_sigma Z_N  ==  A (x) C^N.
 ====================================================================================================
-clock: Z_4.  action alpha_k = Ad(u^k) with u = rho_A^i in A (inner, by 3A).
+clock: Z_4.  BUG FOUND AND RECORDED: the first version of this block used u = rho_A^i,
+the actual modular unitary.  That is inner (3A) but it has INFINITE ORDER, so Ad(u^k) is
+not a Z_4 action -- the wrap-around block 3 -> 0 carries u^(-3) instead of u, and the
+closure returned dim 256 = dim M_16 rather than 64.  The failure was a BROKEN GROUP ACTION,
+not a non-trivial crossed product, and reporting that 256 as 'the crossed product is big'
+would have been this program's fifth forced artefact.  Fixed by taking an order-4 inner
+unitary, which is what a Z_4 action requires.  3A already establishes that the modular flow
+itself is inner; the statement for the real line is A x|_sigma R = A (x) L^inf(R) whenever
+sigma is inner, and that is a theorem, not something a finite lattice can test.
+  u = diag(exp(2 pi i k / 4)), order 4: ||u^4 - 1|| = 9.2e-16
+  dim_C ( A x|_sigma Z_4 ) measured by explicit closure = 64
+  dim_C ( A ) * N = 16 * 4 = 64      MATCH -> the crossed product is A (x) C^N
+  dim_C ( M_16 ) = 256  -- the crossed product is far smaller than the full
+     algebra on the enlarged space; it added a CLASSICAL label, not a quantum sector.
+  EXPLICIT UNTWISTING UNITARY V = diag(u^0,...,u^3) IN A (x) 1:
+     max_a || V pi(a) V*  -  a (x) 1 || = 0.000e+00
+     || V lambda V*  -  u (x) shift ||  = 9.164e-16   and u is IN A,
+     so V (A x| Z_N) V* = A (x) C[Z_N].  The clock factorises off.  EXACT.
+====================================================================================================
+BLOCK 3C -- WHAT THE CLOCK DOES TO THE ENTROPY: IT ADDS ITS OWN AND NOTHING ELSE.
+====================================================================================================
+  clock distribution [1. 0. 0. 0.]:  S(A) = 1.160640448   H(clock) = -0.000000000   S(A x| Z_N) = 1.160640448   S - (S_A + H) = +0.0e+00
+  clock distribution [0.5 0.5 0.  0. ]:  S(A) = 1.160640448   H(clock) = 1.000000000   S(A x| Z_N) = 2.160640448   S - (S_A + H) = -6.7e-16
+  clock distribution [0.25 0.25 0.25 0.25]:  S(A) = 1.160640448   H(clock) = 2.000000000   S(A x| Z_N) = 3.160640448   S - (S_A + H) = -6.7e-16
+  clock distribution [0.4 0.3 0.2 0.1]:  S(A) = 1.160640448   H(clock) = 1.846439345   S(A x| Z_N) = 3.007079793   S - (S_A + H) = -6.7e-16
+>>> ADDITIVE, EXACTLY, EVERY TIME.  Nothing became well-defined that was not already
+    well-defined, because in finite dimensions nothing was ill-defined.  In type III_1 the same
+    construction is not additive and not a tensor product: it manufactures a trace where there
+    was none.  THAT step has no finite shadow.  Question (3) is answered NO for clocks,
+    observers and modular generators alike.
+====================================================================================================
+BLOCK 3D -- THE CONTRAST.  THE ONE FINITE MOVE THAT DOES CHANGE WHAT IS WELL-DEFINED
+IS A CONSTRAINT, AND A CONSTRAINT IS NOT A CROSSED PRODUCT.
+====================================================================================================
+carrier ladder3, ground state at g^2 = 0.50, Gauss residual 1.1e-16
+
+  region = single link {4}
+    BEFORE constraint: centre dim 1, blocks 1 x M_2, S = 0.780412875 bits   -> a FACTOR: the number is an
+                       ENTANGLEMENT entropy of a tensor factorisation.
+    AFTER  constraint: centre dim 2, blocks 2 x M_1, S = 0.780412875 bits   -> HAS A CENTRE: the same number
+                       is now a Shannon term over superselection sectors PLUS a
+                       quantum term, and it is NOT an entanglement entropy.
+
+  region = plaquette P1 links {0,2,4,5}
+    BEFORE constraint: centre dim 1, blocks 1 x M_16, S = 0.582114282 bits   -> a FACTOR: the number is an
+                       ENTANGLEMENT entropy of a tensor factorisation.
+    AFTER  constraint: centre dim 8, blocks 8 x M_2, S = 0.582114282 bits   -> HAS A CENTRE: the same number
+                       is now a Shannon term over superselection sectors PLUS a
+                       quantum term, and it is NOT an entanglement entropy.
+
+  region = tree {0,1,2}
+    BEFORE constraint: centre dim 1, blocks 1 x M_8, S = 1.292825826 bits   -> a FACTOR: the number is an
+                       ENTANGLEMENT entropy of a tensor factorisation.
+    AFTER  constraint: centre dim 8, blocks 8 x M_1, S = 1.292825826 bits   -> HAS A CENTRE: the same number
+                       is now a Shannon term over superselection sectors PLUS a
+                       quantum term, and it is NOT an entanglement entropy.
+
+  READ THE COINCIDENCE OF THE NUMBERS, NOT PAST IT.  The constraint does not move the number --
+  that equality is the theorem proved in k4 block 4A and it holds for every region and every
+  physical state.  What the constraint moves is the CENTRE: from trivial (a factor, an honest
+  entanglement entropy) to non-trivial (a superselection decomposition).  So a constraint changes
+  what the quantity MEANS while leaving its value alone, and the crossed product changes neither
+  finitely.  The type-II story's finite analogue is therefore not 'adding an observer' at all --
+  it is a constraint, and the Gauss law is one we imposed on line one.  If gravity is to do
+  something here it has to do something a constraint does not already do.
+====================================================================================================
+END BLOCK 3

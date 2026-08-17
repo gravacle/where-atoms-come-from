@@ -2038,3 +2038,69 @@ question was sound, the construction could not carry it.
 subspace vary **within** a fixed `Q` sector? If it does not, the Hamiltonian is a boundary term and
 the structure is gravity-shaped. If it does, energy is a bulk density and the structure is
 EM-shaped. **The test is live for the first time, and the carrier exists.**
+
+---
+
+## W-24 — **OUR BOUNDARY WAS NEVER A BOUNDARY. IT WAS A FRINGE — AND A FRINGE CANNOT CARRY ANYTHING.**
+
+Commissioned by the principal, 2026-08-17, after the observation *"lot of pairs"*. `LANE_W24_Z3/`,
+sealed, 4 scripts.
+
+### **THE STRUCTURAL FINDING, AND IT EXPLAINS A CLASS OF FAILURES AT ONCE**
+
+**The boundary links of every carrier in this program lie on NO CYCLE.** Measured directly: links
+0, 1, 2 on a cycle `True`; links 3 and 4 — the boundary — `False`.
+
+> **No cycle means no flux can thread it, no persistent current can circulate on it, and nothing can
+> flow there. By construction, at any group, at any coupling.**
+
+**This is the common cause of results the register has been carrying as separate findings.** The
+boundary charge was frozen (`[H,Q] = 0.000e+00`) because nothing in the bulk could drive it. The
+chirality could not reach the surface because there was no channel. Every boundary measurement came
+back **forced** because a fringe has no degrees of freedom of its own to be otherwise.
+
+**THE BOUNDARY OF A REGION IS A CLOSED CURVE. OURS WAS A SET OF LOOSE ENDS.** That is what makes a
+surface a surface, and every carrier here — K1, the theta graph, tri_chain12, Heawood, the open
+graphs of the erratum against W-22 — has had dangling ends where it needed a cycle. **This is one
+error, not five, and it has one fix.**
+
+### ORIENTATION: WHAT Z_2 STRUCTURALLY CANNOT EXPRESS
+
+**Z_2 forces every charge to be its own inverse**, so the two senses of a circuit are the same
+object and the Wilson loop is its own adjoint. **`Im<W> = 0.000000` at every `theta`, structurally,
+not numerically.** At **Z_3** the identical term with the identical coefficient gives
+`-0.059329`, `-0.151602`, `-0.222120` as `theta` runs `0.4 -> 2.0`. **The ground state acquires a
+sense of rotation.** `theta` is dimensionless, periodic, and sets no scale — the first slot of that
+kind to appear in this program, and it appeared without being installed.
+**AND IT IS CONFINED TO THE BULK:** every boundary observable reads `0.000000` at every `theta`,
+for the reason above — the dangling links touch no plaquette.
+
+### AND THE PAIRS ARE OURS, WITH THE SCOPE STATED
+
+Tripling the group changed **nothing** in the measured structure: same three-way operator split
+(4 invariant, 3 junk, 1 sector-changing), same Gauss identity at machine zero, same
+`I(S:F)/H(S) = 1.000000`. **So the two-valuedness is the registrar's, not the carrier's** (W-15).
+**Scope, stated:** every quantity compared there is one a constraint already fixes, so the
+comparison could not have separated the groups. **No evidence the pairs come from `Z_2`; no strong
+evidence either way.** What Z_3 *does* add is orientation, and that is a different axis.
+
+### CORRECTIONS CARRIED
+
+`-dE_0/dtheta` is **not** a chirality and is **larger at Z_2** (`-0.229`) than at Z_3 (`-0.065`):
+`theta` reweights the plaquette in both groups. **`Im<W>` is the orientation-sensitive quantity;
+the energy derivative is not.** Recorded because the registrar conflated them.
+Five measurements in this stretch were of quantities a constraint already fixes — including
+`<psi|i[H,Q]|psi>`, which vanishes in any eigenstate identically. **Standing rule adopted here:
+before measuring any quantity, compute whether the constraint determines it. One commutator, first,
+every time.**
+
+### **NEXT STEP — ONE FIX FOR THE WHOLE CLASS**
+
+**A carrier whose boundary is a CLOSED CURVE**: an interior region separated from an exterior by a
+cycle of links, so that the boundary has flux through it, can carry a persistent current, and is a
+surface in the sense this program has been assuming it had. **On that carrier, and only there, the
+open questions become askable** — does the boundary carry a current; does the chirality reach it;
+does the charge stay correlated with what wrote it; and is there a regime that is *allowed but held*.
+
+**REOPENS IF:** a fringe is shown to carry a flux or a current after all · or the closed-curve
+carrier reproduces the same forced results, which would move the cause elsewhere.

@@ -1,0 +1,104 @@
+
+====================================================================================================
+BLOCK 0 -- WHAT THIS INSTRUMENT IS, AND WHAT IT SHARES WITH THE LANES IT AUDITS
+====================================================================================================
+INHERITED (must be identical or the audit is meaningless): carrier tri_chain12 (V=8, L=12),
+PLAQ, H = -(1/g2) sum_p W_p - g2 sum_l X_l, region A={0,1,2}, S=links{1,2,3},
+Sigma=delta(A)=links{0,4,5}, 13-point grid.
+BUILT FROM SCRATCH HERE: physical sector as an explicit 4096x32 isometry; algebra entropy
+from concrete central projectors P_k = (1+s1 X_1X_2)/2 (1+s2 X_1X_3)/2 and a concrete
+conditional Bloch vector on alg{X_1, W_S}.  NO GF(2) symplectic normal form is used.
+
+====================================================================================================
+BLOCK 1 -- STRUCTURE CHECKS THAT NEED NO STATE
+====================================================================================================
+dim physical sector (vacuum)                : 32   (expected 32)
+||c1^2 - I||, ||c2^2 - I||                  : 1.256e-15  1.256e-15
+||[c1,c2]||                                 : 0.000e+00
+||[c1,bx]||, ||[c1,bz]||                    : 0.000e+00  0.000e+00
+||{bx,bz}||  (must be 0: bx,bz ANTIcommute) : 0.000e+00
+
+THE OPERATOR IDENTITY THAT MAKES 2 OF THE 3 RECORD BITS THE SURFACE ITSELF
+(this is the CATEGORY-ERROR argument both lanes make; re-derived here, not taken on trust):
+  vacuum     ||X_1X_2 - eta_0 X_0|| = 0.000e+00   ||X_1X_3 - eta_1 X_4|| = 0.000e+00   ||X^Sigma - flux*I|| = 6.280e-16
+  eta{0,4}   ||X_1X_2 - eta_0 X_0|| = 0.000e+00   ||X_1X_3 - eta_1 X_4|| = 0.000e+00   ||X^Sigma - flux*I|| = 6.280e-16
+  eta{1,5}   ||X_1X_2 - eta_0 X_0|| = 0.000e+00   ||X_1X_3 - eta_1 X_4|| = 0.000e+00   ||X^Sigma - flux*I|| = 6.280e-16
+  eta{4,5}   ||X_1X_2 - eta_0 X_0|| = 0.000e+00   ||X_1X_3 - eta_1 X_4|| = 0.000e+00   ||X^Sigma - flux*I|| = 6.280e-16
+=> Z(A_S) = alg{X_1X_2, X_1X_3} = alg{X_0, X_4} = A_Sigma  EXACTLY, in every sector.
+   So H_CENTRE IS the surface's own recorded data.  2 of the record's 3 bits ARE the boundary.
+   The remaining content of the record is C = H_FULL - H_CENTRE, ceiling 1 bit.
+
+====================================================================================================
+BLOCK 2 -- THE PRIMARY FALSIFIER, RE-DERIVED WITHOUT A STATE
+====================================================================================================
+A_env = A_S' (commutant).  For pure |psi> and A = (+)_k M_{d_k} (x) 1_{m_k}:
+   S(A) = H(p) + sum p_k E_k ;  S(A') = H(p) + sum p_k E_k  (each block state is pure) ;
+   A v A' = (+)_k M_{d_k} (x) M_{m_k}  =>  S(A v A') = H(p).
+   => I(A_S : A_env) = 2 H_FULL - H_CENTRE.
+A_Sigma = Z(A_S) is a SUBalgebra of A_S  =>  A_S v A_Sigma = A_S  =>  I(A_S:A_Sigma) = H_CENTRE.
+   => Delta_surf = I(A_S:A_env) - I(A_S:A_Sigma) = 2(H_FULL - H_CENTRE) = 2C.
+
+>>> INDEPENDENT CONFIRMATION OF LANE R's F1 AND LANE C's C-1.  The pre-registered PRIMARY
+    FALSIFIER never touches the environment.  It is a function of rho|A_S alone.  I record
+    this as CONFIRMED, and I do NOT score it as a finding of my own.
+
+====================================================================================================
+BLOCK 3 -- REPRODUCING LANE R's SEALED VACUUM TABLE (OUT_summary.txt)
+====================================================================================================
+  g2     H_FULL(mine)  H_FULL(R)   diff        H_BLOCK(mine) H_BLOCK(R)  diff        C(mine)       C(R)          diff
+  0.05   1.999976      1.999976    7.72e-08    0.000040      0.000040    1.67e-07    0.000000000   0.000000000   1.32e-11   
+  0.10   1.999605      1.999605    1.97e-07    0.000528      0.000528    3.40e-07    0.000000003   0.000000003   2.01e-10   
+  0.20   1.992819      1.992819    3.67e-07    0.006945      0.006945    2.96e-07    0.000000582   0.000000582   1.11e-10   
+  0.30   1.955477      1.955477    2.81e-07    0.031918      0.031918    3.11e-07    0.000012480   0.000012480   2.49e-10   
+  0.45   1.689408      1.689408    3.78e-07    0.128611      0.128611    3.21e-07    0.000153910   0.000153910   2.88e-10   
+  0.60   1.077757      1.077757    2.11e-08    0.182463      0.182463    4.45e-07    0.000162564   0.000162564   3.64e-10   
+  0.80   0.491388      0.491388    1.93e-07    0.110795      0.110795    1.15e-07    0.000015990   0.000015990   2.15e-10   
+  1.00   0.245303      0.245303    1.13e-08    0.057602      0.057602    4.55e-07    0.000001157   0.000001157   2.87e-10   
+  1.30   0.103979      0.103979    3.02e-07    0.024341      0.024341    4.05e-07    0.000000046   0.000000046   3.25e-10   
+  1.70   0.041931      0.041931    2.56e-07    0.009671      0.009671    2.07e-07    0.000000002   0.000000002   1.35e-10   
+  2.20   0.017146      0.017146    4.54e-07    0.003897      0.003897    1.35e-07    0.000000000   0.000000000   9.00e-11   
+  3.00   0.005724      0.005724    4.82e-07    0.001281      0.001281    4.42e-07    0.000000000   0.000000000   2.40e-12   
+  5.00   0.000906      0.000906    4.12e-07    0.000199      0.000199    1.17e-07    0.000000000   0.000000000   6.16e-15   
+>>> WORST DISCREPANCY AGAINST LANE R's SEALED VACUUM TABLE : 4.816e-07
+    (their rounding is 6 d.p. / 9 d.p., so anything at 1e-6 or below is agreement)
+
+====================================================================================================
+BLOCK 4 -- REPRODUCING THE OTHER LANES' HEADLINE ARM NUMBERS
+====================================================================================================
+  A1 charge arm   max|dH_FULL| (R: 1.300387 @ g2=1.00)      mine = 1.30038704 at g2=1.00   |diff| = 3.70e-08
+  R1 formation    max|dH_FULL| (R: 0.18359712)              mine = 0.18359712 at g2=1.30   |diff| = 4.34e-09
+  R2 formation    max|dH_FULL| (R: 0.14692741)              mine = 0.14692741 at g2=0.60   |diff| = 4.09e-10
+  R3 formation    max|dH_FULL| (R: 0.21690651)              mine = 0.21690651 at g2=0.60   |diff| = 1.48e-09
+
+  LANE C C-6  H_FULL(g2=5.00): A0 = 0.000906 (C: 0.000906)   A1 = 1.010709 (C: 1.010709)
+  LANE C C-5  H_BLOCK(g2=5.00): A0 = 0.000199 (C: 0.000205)   A1 = 0.999431 (C: 0.999427)
+
+>>> THE INSTRUMENT AGREES WITH BOTH LANES.  Everything I say from here on is said with an
+    instrument that reproduces their sealed numbers, built by a different method.
+
+====================================================================================================
+BLOCK 5 -- THE FIRST THING NEITHER LANE PRINTED: HOW BIG IS THE NON-BOUNDARY RECORD?
+====================================================================================================
+H_FULL = H_CENTRE + C.  H_CENTRE IS the surface's own data (BLOCK 1).  C is everything else.
+  g2      H_FULL    H_CENTRE  C           C / H_FULL   H_BLOCK
+  0.05    1.999976  1.999976  0.000000000 6.603e-12    0.000040 
+  0.10    1.999605  1.999605  0.000000003 1.400e-09    0.000528 
+  0.20    1.992819  1.992819  0.000000582 2.920e-07    0.006945 
+  0.30    1.955477  1.955465  0.000012480 6.382e-06    0.031918 
+  0.45    1.689408  1.689254  0.000153910 9.110e-05    0.128611 
+  0.60    1.077757  1.077594  0.000162564 1.508e-04    0.182463 
+  0.80    0.491388  0.491372  0.000015990 3.254e-05    0.110795 
+  1.00    0.245303  0.245302  0.000001157 4.715e-06    0.057602 
+  1.30    0.103979  0.103979  0.000000046 4.455e-07    0.024341 
+  1.70    0.041931  0.041931  0.000000002 4.447e-08    0.009671 
+  2.20    0.017146  0.017146  0.000000000 5.248e-09    0.003897 
+  3.00    0.005724  0.005724  0.000000000 4.196e-10    0.001281 
+  5.00    0.000906  0.000906  0.000000000 6.806e-12    0.000199 
+>>> ON THE VACUUM GROUND STATE, C NEVER EXCEEDS 0.000162564 BITS OF ITS 1-BIT CEILING.
+    i.e. the ground-state record on S is the boundary's own data to within 0.0081%.
+    sector vacuum    max C over the grid = 0.000162564 bits
+    sector eta{0,4}  max C over the grid = 0.003287414 bits
+    sector eta{1,5}  max C over the grid = 0.000609276 bits
+    sector eta{4,5}  max C over the grid = 0.000181039 bits
+    sector eta{0,1}  max C over the grid = 0.000243048 bits
+>>> MAX C OVER ALL 5 SECTORS x 13 COUPLINGS = 0.003287414 bits (Lane R: 0.003287414)
