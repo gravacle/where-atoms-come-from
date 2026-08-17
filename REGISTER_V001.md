@@ -1876,3 +1876,55 @@ can fail.**
 
 **REOPENS IF:** a carrier in this class is exhibited satisfying P1-P5 · or the phase-indexing of the
 algebra disagreement fails to reproduce on a second carrier.
+
+---
+
+## C-1 — **A CLAIM, NOT A FINDING: THE RECORD IS GAUGE-VARIANT.** (registrar, 2026-08-17)
+
+**A new row type, entered at the principal's direction** — *"if we engage in fitting we find it, we
+slap our own hands and get on with it; we can't tiptoe around the process if we hope to learn
+something."* **Detection changes the calculus:** the sham-target test caught a live doubt in one
+script, so the cost of a wrong claim has fallen and the optimal boldness has risen. **A CLAIM row is
+a commitment stated flat so it can be shot at.** It is not evidence and must never be cited as one.
+
+> **C-1. THE RECORD IS GAUGE-VARIANT. That is why every gauge-invariant measurement this program
+> has made has come back either FORCED or FLAT.**
+
+**THE EVIDENCE, ALL ALREADY ON DISK.**
+- **W-19:** the redundancy plateau in the gauge-invariant channel is a **Gauss identity** —
+  `I(S:F) = H(S)` for every state, coupling and history. Forced; carries no information.
+- **W-19:** its only live control lay **entirely in the gauge-variant part**, recorded there as a
+  defect of the lane rather than as a result.
+- **FT-1** (`LANE_FT_SHAM/`, sealed): across the whole coupling sweep the gauge-invariant channel
+  swings **exactly `0.000000`**, while gauge-variant descriptions swing `0.021611` to `0.990639`.
+  Invariance checked, not asserted: `Z` commutes with every Gauss operator at `0.000e+00`, `X` fails
+  at `1.6e+01`.
+- **Attempt one:** `Z_k` moved, but the crossing it motivated adjoined a record slot **carrying no
+  gauge action at all** — S3's own flag F6.
+- **AND THE CORPUS FLAGGED IT ON DAY ONE AND NEVER READ IT.** **COR-J**, sealed in the S3 audit:
+  *the premise "the record must be gauge-invariant" is undeclared, load-bearing, and applied
+  asymmetrically — fatal inside the complex, vacuous on the added slots.* **Attempt one built a
+  gauge-variant record, noticed the inconsistency, and excused it. Attempt two has been measuring
+  the invariant channel and finding nothing there.** This is the program's signature failure —
+  a sealed correction, unread, for the whole life of the program.
+
+**WHAT IT WOULD MEAN.** A gauge-variant record lives in the **edge modes** — the degrees of freedom
+that must be added to factorize a gauge theory's Hilbert space (Donnelly-Wall). That is **W-04's
+located residue**, it is the principal's **boundary**, and it is TERRITORY_MAP region **R-III**.
+**Four objects that have been circling each other are one object.**
+
+**THE FALSIFIER, AND IT IS CHEAP.** Exhibit a **gauge-invariant** quantity carrying record structure
+that is **not a constraint identity**. Every lane that has measured an invariant channel has had the
+opportunity to produce one and none has. **One counterexample kills C-1.**
+
+**FITTING DISCLOSURE, PER THE STANDING GUARD.** C-1 was assembled **after** the measurements, from
+findings gathered for other purposes. It is exactly the shape of a fitted story. It is entered as a
+CLAIM for that reason — **so that the fitting tests can be pointed at it** rather than at a
+conclusion already dressed as a result. **What the registrar got wrong by hedging:** the
+`0.000000` appeared in the registrar's own sham output and was reported as a limitation of the test.
+**It is the result.**
+
+**NEXT STEP.** W-20's ledger arms are already pointed at this without having been designed for it:
+its ARM 1 removes the gauge structure and its ARM 3 varies the boundary's formation. **Add the
+falsifier as a standing arm in every subsequent round: measure a gauge-invariant channel and try to
+make it carry something that is not forced.**
