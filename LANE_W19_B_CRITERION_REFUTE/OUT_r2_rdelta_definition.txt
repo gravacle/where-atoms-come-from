@@ -1,0 +1,103 @@
+
+========================================================================================================
+r2  R_delta: THE LANE'S COUNT versus THE PUBLISHED REDUNDANCY
+========================================================================================================
+
+========================================================================================================
+PART B  --  ONE STATE, ONE CARRIER, ONE ALGEBRA, ONE delta.  ONLY THE PARTITION MOVES.
+========================================================================================================
+
+  Carrier theta_10.  State: the Wilson-loop GHZ of b3 PART C (the target's own BRD_W).
+  System region S = the plaquette {0,1}; system algebra = the target's own declared pointer
+  alg{W_01} = alg{Z_0 Z_1} (finding B-10's repair).  Fragment algebras = C3_FULL, the target's own.
+  delta = 0.1.  THE ONLY THING THAT DIFFERS BETWEEN THE TWO ARMS BELOW IS HOW E IS PARTITIONED.
+  H(W_01) = 1.000000 bits.   environment E = links [2, 3, 4, 5, 6, 7, 8, 9] (N = 8 links)
+  ARM 1: partition into 8 single links  I(W_01:F_k) = ['0.000000', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000']
+                                        lane R_delta = 0 of 8
+  ARM 2: partition into 4 plaquettes    I(W_01:F_k) = ['1.000000', '1.000000', '1.000000', '1.000000']
+                                        lane R_delta = 4 of 4
+
+  SAME STATE. SAME CARRIER. SAME ALGEBRA RULE. SAME delta.  R_delta = 0 or R_delta = 4 according
+  to a partition that appears NOWHERE in the target's PUBLISHED_CONVENTIONS, its isolation ledger,
+  or its four-item next_step.  b3 PART B partitions into single links (and reports 0); b4 PART 3
+  partitions into plaquettes (and reports 5).  THE PARTITION IS A FIFTH UNDECLARED CONVENTION AND
+  IT IS WORTH THE WHOLE VERDICT.
+
+  THE OTHER TWO DEFINITIONS ON THE SAME OBJECT (neither chooses a partition by hand):
+    size m    mean I(W_01:F)   max I(W_01:F)   (all C(8,m) fragments)
+         1          0.000000        0.000000
+         2          0.571429        1.000000
+         3          0.857143        1.000000
+         4          0.971429        1.000000
+  PUBLISHED (Z):  m* = 4, R_delta = N/m* = 2.00
+  BRIEF'S   (B):  exact max disjoint packing = 4   (fragment sizes searched: 1..4)
+  Both recover redundancy on a state the lane's ARM 1 scores at zero.  The zero is an
+  artefact of the hand-chosen partition -- not of the state, the algebra, delta, or the criterion.
+
+========================================================================================================
+PART C  --  A STATE THE LANE'S R_delta SCORES AT ZERO AND WHICH IS A PERFECT BROADCAST
+========================================================================================================
+
+  CONSTRUCTION (electric-basis parity broadcast, on the target's own b1 carrier theta_8).
+  In the X (electric) basis, link 0 carries a bit s; the three pairs {1,2} {3,4} {5,6} each carry
+  a uniformly random label whose PARITY equals s; link 7 is a |+> spectator.  Total X-parity =
+  s + 3s + 0 = 0 mod 2, so every basis element is already in the physical sector.
+     - every SINGLE link is uniformly random and statistically independent of s;
+     - every MATCHED PAIR determines s with certainty.
+  THIS IS THE SHAPE A HOLONOMY RECORD MUST HAVE: a Wilson loop is a PRODUCT over >= girth links,
+  never a single link.  A criterion that only ever reads single links is blind to it by
+  construction -- which is the situation of b3 PART B, whose verdict is finding B-7.
+  ||psi - P_phys psi|| = 6.661e-16   (0 => already physical; no projection applied)
+
+  PAR  parity broadcast      H(S) = 1.000000
+     mean I(S:F) by size 1..7 : 0.0000 0.1429 0.6571 1.3429 1.8571 2.0000 2.0000
+     max  I(S:F) by size 1..7 : 0.0000 1.0000 1.0000 2.0000 2.0000 2.0000 2.0000
+     (L) lane's count over the SINGLE-LINK partition ....... 0 of 7
+     (L) lane's count over the MATCHED-PAIR partition ...... 3 of 3
+     (Z) published N/m* .................................... 1.75  (m* = 4)
+     (B) exact maximum disjoint packing .................... 3
+
+  SCR  Haar physical seed 101 (control, same carrier & cut)      H(S) = 0.998836
+     mean I(S:F) by size 1..7 : 0.0195 0.1173 0.5279 1.4698 1.8804 1.9781 1.9977
+     max  I(S:F) by size 1..7 : 0.0349 0.1934 0.7180 1.5521 1.9484 1.9929 1.9977
+     (L) lane's count over the SINGLE-LINK partition ....... 0 of 7
+     (L) lane's count over the MATCHED-PAIR partition ...... 0 of 3
+     (Z) published N/m* .................................... 1.75  (m* = 4)
+     (B) exact maximum disjoint packing .................... 1
+
+  READING, AND IT CUTS BOTH WAYS.
+  On the PAR state three disjoint fragments each determine the system bit with certainty.  The
+  exact disjoint packing (B) -- the statement THIS PROGRAM'S BRIEF makes -- returns 3 against 1
+  for the Haar control on the same carrier and cut, so it separates them and the test had a way
+  to fail.  The lane's (L) returns 0, a FALSE NEGATIVE of the implementation.
+  BUT THE PUBLISHED (Z) IS ALSO BLIND HERE: 1.75 for PAR and 1.75 for the Haar control, identical
+  to two decimals, because averaging over ALL fragments of a size washes out a record that lives
+  in 3 fragments out of C(7,2) = 21.  So this is NOT 'the lane paraphrased and the literature is
+  fine'.  A HOLONOMY-SHAPED RECORD -- one carried by a PRODUCT over >= girth links and by no
+  single link -- IS INVISIBLE TO BOTH THE LANE'S COUNT AND THE PUBLISHED PARTIAL-INFORMATION PLOT,
+  and visible only to the disjoint-packing reading.  That is a defect of quantum Darwinism as
+  usually written when it is carried into a gauge theory, and it is not in the lane's list.
+
+========================================================================================================
+PART D  --  RE-SCORING THE TARGET'S OWN b1 TABLE.  ONLY THE SCORING RULE MOVES.
+========================================================================================================
+  Carrier theta_8, S = {link 0}, E = links 1..7, extended-Hilbert-space estimator,
+  delta = 0.1 -- b1_discrimination.py exactly.  Every arm below is the target's own state.
+  ARM                                 H(S)  (L) count  (Z) N/m*   m*  (B) packing
+--------------------------------------------------------------------------------------------------------
+  BRD_M magnetic GHZ              1.000000          7      7.00    1            7
+  BRD_E electric GHZ              1.000000          7      7.00    1            7
+  BRD_Ew elec GHZ a=0.99          0.140879          7      7.00    1            7
+  LOC   Bell(0,1) x |+>^6         1.000000          1      1.75    4            1
+  VAC   |+>^8                    -0.000000          7      7.00    1            7
+  SCR   Haar seed 101             0.998836          0      1.75    4            1
+  SCR   Haar seed 202             0.994468          0      1.75    4            1
+  PAR   parity broadcast [new]    1.000000          0      1.75    4            3
+
+  WHAT SURVIVES THE RE-SCORING.  B-1 (the criterion discriminates): the broadcast/scrambled
+  separation is 7 vs 0 under (L), 7.00 vs 1.75 under (Z), 7 vs 1 under (B).  SURVIVES under all
+  three.  B-2 (H(S) = 0 is trivially satisfied): VAC scores maximally under all three -- so it is
+  a defect of the PUBLISHED criterion, correctly identified.  B-3 (blind to how much is recorded):
+  BRD_Ew scores maximally under all three at H(S) = 0.14 -- also correctly identified.
+  WHAT DOES NOT SURVIVE: the identification of the lane's hand-partitioned count WITH R_delta.
+  The LOC row moves 1 -> 1.75 -> 1 and the PAR row moves 0 -> 1.75 -> 3.

@@ -1,0 +1,183 @@
+
+========================================================================================================
+r3  SBS: THE LANE'S TEST versus KORBICZ'S CONDITION
+========================================================================================================
+
+========================================================================================================
+PART 0  --  MY DEFECT FUNCTIONS REPRODUCE b2's, SO EVERY LATER NUMBER IS COMPARABLE
+========================================================================================================
+  b2 reports (its own table):  GHZ 0.00e+00/0.00e+00/0.00e+00 ; SBSm 0/0/0 ;
+     QDNS D_coh 0.00e+00  D_prod 8.75e-01  D_orth 0.00e+00 ; HAAR 4.87e-01/9.30e-01/9.92e-01
+  ARM                                                        D_coh    D_prod    D_orth
+  GHZ    magnetic GHZ                                     0.00e+00  0.00e+00  0.00e+00
+  SBSm   mixed orthogonal conditional fragment states     0.00e+00  0.00e+00  0.00e+00
+  QDNS   QD saturated, fragments correlated given S       0.00e+00  8.75e-01  0.00e+00
+  HAAR   Haar physical seed 777                           4.87e-01  9.30e-01  9.92e-01
+  MATCH.  (rlib.sbs_defects is b2's arithmetic with the basis lifted out as an argument.)
+
+========================================================================================================
+PART 1  --  A FALSE NEGATIVE OF THE LANE'S SBS TEST
+========================================================================================================
+
+  STATE: the ELECTRIC GHZ (|+^9> + |-^9>)/sqrt2 -- an arm the target itself uses in b1 and b3.
+  In the X basis, link 0 carries a bit s and every environment link carries the same s.  Tracing
+  out U = {7,8} (whose two branches are |++> and |-->, orthogonal) leaves
+        rho = 1/2 |+><+|_0 (x) |+ + + + + +>< ... |  +  1/2 |-><-|_0 (x) |- - - - - -><...|,
+  which is EXACTLY of SBS form, with pointer basis {|+>,|->} and product, orthogonal conditional
+  fragment states.  It is a spectrum broadcast structure by inspection.
+  Below: the SAME defect functions, the SAME state, the SAME cut; ONLY THE POINTER BASIS MOVES.
+  pointer basis of S                         D_coh      D_prod      D_orth    SBS?
+--------------------------------------------------------------------------------------------------------
+  Z (what b2 hard-codes)                  5.00e-01    0.00e+00    1.00e+00      no
+  X (electric -- the right one)           2.24e-17    2.22e-16    2.24e-17     YES
+  minimum over a 25x24 basis grid + local refine: worst defect = 1.009e-16 at (theta,phi) = (1.5708,0.0000)
+  => b2's test, run verbatim on this state, returns D_coh = 5.00e-01 and 'SBS = no' for a
+  state that IS a spectrum broadcast structure.  A FALSE NEGATIVE.  Every 'SBS = no' the lane
+  reports is of this type until a basis search is run -- including the headline of B-4.
+
+========================================================================================================
+PART 2  --  THE EXISTENTIAL DONE PROPERLY.  DOES B-4 SURVIVE?
+========================================================================================================
+  Same carrier, same cut, same functions.  For each arm: the Z-basis defects the lane
+  reports, then the MINIMUM over all pointer bases of S of max(D_coh, D_prod, D_orth).
+  ARM                                                    Z: worst  min over bases     verdict
+--------------------------------------------------------------------------------------------------------
+  GHZ    magnetic GHZ                                   0.000e+00       0.000e+00         SBS
+  SBSm   mixed orthogonal conditional fragment states   0.000e+00       0.000e+00         SBS
+  QDNS   QD saturated, fragments correlated given S     8.750e-01       8.750e-01     NOT SBS
+  HAAR   Haar physical seed 777                         9.924e-01       9.912e-01     NOT SBS
+  BRD_E  electric GHZ                                   1.000e+00       1.009e-16         SBS
+
+  B-4 SURVIVES, AND NOW WITH A PROOF THE LANE DID NOT HAVE.  QDNS is not SBS in ANY basis.
+  The reason is structural, and worth stating because it is what makes the basis search
+  unnecessary here: rho = 1/2 |0><0| (x) sigma_0 + 1/2 |1><1| (x) sigma_1 with sigma_0, sigma_1
+  of ORTHOGONAL SUPPORT (D_orth = 0).  For any other basis {|+n>,|-n>} the off-diagonal block is
+  proportional to (sigma_0 - sigma_1), which is nonzero, so no other basis block-diagonalises rho.
+  Z is the unique candidate, and D_prod = 0.875 there.  QD saturates, SBS fails.
+  BUT the arm the lane used to report the SAME structure -- the electric GHZ, which it never ran
+  through b2 -- would have been mis-verdicted, so the instrument was not sound when it was used.
+
+========================================================================================================
+PART 3  --  B-4's OVER-CLAIM: THE GAP IS *NOT* 'EXACTLY' STRONG INDEPENDENCE
+========================================================================================================
+
+  B-4 asserts: 'the gap is exactly SBS's STRONG-INDEPENDENCE clause'.  One example in which only
+  clause (b) fails shows the gap CONTAINS clause (b).  It cannot show the gap IS clause (b).
+  Here is a state in the gap where clause (b) HOLDS EXACTLY and clause (c) fails.
+
+  CONSTRUCTION on theta_5.  S = {link 0}, fragments {1} {2} {3}, unobserved U = {4}.
+     |psi> = ( |0>_0 (x) |a>|a>|a>|0>_4  +  |1>_0 (x) X^{(x)4}(|a>|a>|a>|0>_4) ) / sqrt2 ,
+     |a> = cos t |0> + sin t |1>.
+  Gauge invariant because G = X^{(x)5} exchanges the two branches.  U decoheres S exactly.  The
+  conditional environment state is a PRODUCT across fragments by construction (clause (b) exact),
+  but the two conditional single-link states |a> and X|a> are NOT orthogonal: overlap sin 2t.
+       t  |<a|X a>|     H(S)   I(S:F_k)  R_delta     D_coh    D_prod    D_orth   SBS?
+--------------------------------------------------------------------------------------------------------
+    0.00   0.000000 1.000000   1.000000        3  0.00e+00  0.00e+00  0.00e+00    YES
+    0.06   0.119712 1.000000   0.989638        3  0.00e+00  2.24e-16  1.20e-01     no
+    0.12   0.237703 1.000000   0.958849        3  0.00e+00  2.60e-17  2.38e-01     no
+    0.18   0.352274 1.000000   0.908533        3  0.00e+00  5.80e-17  3.52e-01     no
+    0.25   0.479426 1.000000   0.827179        0  0.00e+00  7.59e-17  4.79e-01     no
+    0.35   0.644218 1.000000   0.675442        0  0.00e+00  8.07e-17  6.44e-01     no
+    0.79   1.000000 1.000000   0.000000        0  0.00e+00  3.67e-17  1.00e+00     no
+
+  THE ROW THAT DOES THE WORK, t = 0.12:
+     R_delta = 3 of 3 with I(S:F_k) = 0.958849 >= 0.9 * H(S) = 0.900000  -- QD SATURATES.
+     D_coh   = 0.00e+00   (clause (a) exact)
+     D_prod  = 2.60e-17   (clause (b) STRONG INDEPENDENCE EXACT -- the clause B-4 names)
+     D_orth  = 0.237703   (clause (c) FAILS)
+     minimum over ALL pointer bases of max defect = 0.237703  -- NOT SBS in any basis.
+  CONTROL IN THE SAME TABLE, one variable moved (t only): at t = 0 the state is the SBS/GHZ limit
+  and all three defects are 0; at t = pi/4 the two conditional states coincide, the record is
+  destroyed, and R_delta drops.  The test had a way to fail at both ends and did not.
+  CONCLUSION: QD is strictly weaker than SBS -- B-4's DIRECTION is right -- but the gap is NOT
+  'exactly' clause (b).  It contains clause (c) as well, and it must, because R_delta is a
+  (1-delta)-inequality while SBS's clause (c) is an exact orthogonality.  Any delta > 0 opens
+  this gap.  B-4's status should be EXHIBITED-IN-ONE-DIRECTION, not the equality it asserts.
+
+========================================================================================================
+PART 4  --  B-5 RE-READ: 'SBS NEEDS A TRACE-OUT' IS A THEOREM ABOUT PURITY
+========================================================================================================
+
+  THEOREM.  If rho on S (x) F_1 (x) ... (x) F_m is PURE and of SBS form, then exactly one p_i is
+  nonzero and every rho_i^{F_k} is pure, i.e. rho is a PRODUCT STATE and H(S) = 0.
+  PROOF.  A pure state that is a convex mixture is a mixture of one term; a pure product over the
+  cut S|rest forces each factor pure.  QED.
+  So 'GHZ with all 8 environment links observed is not SBS' is not a disagreement between two
+  criteria: it is the observation that a pure entangled state is not separable.  It carries no
+  information about SBS versus R_delta, and it holds for EVERY state with H(S) > 0.
+  MEASURED, on every arm of b2 with nothing traced out (the b2 'U OBSERVED' configuration):
+  ARM                                                      H(S)   D_coh (Z)  min over bases
+  GHZ    magnetic GHZ                                  1.000000    5.00e-01       5.000e-01
+  SBSm   mixed orthogonal conditional fragment states  1.000000    5.00e-01       5.000e-01
+  QDNS   QD saturated, fragments correlated given S    1.000000    5.00e-01       8.750e-01
+  HAAR   Haar physical seed 777                        0.999583    5.00e-01       9.949e-01
+  Every arm with H(S) > 0 fails in every basis, as the theorem says it must.  B-5's
+  'the verdict flips' is CORRECT AS ARITHMETIC and EMPTY AS A COMPARISON.
+
+========================================================================================================
+PART 5  --  B-6 RE-READ: TRUE WHERE IT IS VACUOUS, FALSE WHERE IT WOULD BITE
+========================================================================================================
+
+  B-6 (status PROVED): 'the Gauss law forces the eigenbasis of rho_S on a gauged link to be
+  ELECTRIC or degenerate, so SBS ... can never certify a magnetic (holonomy) record'.
+  (i) THE ARITHMETIC IS RIGHT.  <Z_l> = <Y_l> = 0 for physical states, on every carrier, because
+      Z_l anticommutes with the Gauss operator at either endpoint of l.  Verified beyond theta:
+     theta_6    max|<Z_l>| = 7.459e-17   max|<Y_l>| = 3.301e-17   (8 Haar physical states, every link)
+     fan_3      max|<Z_l>| = 6.765e-17   max|<Y_l>| = 1.171e-16   (8 Haar physical states, every link)
+     fan_4      max|<Z_l>| = 1.266e-16   max|<Y_l>| = 2.437e-16   (8 Haar physical states, every link)
+     wheel_4    max|<Z_l>| = 1.334e-16   max|<Y_l>| = 2.031e-17   (8 Haar physical states, every link)
+     wheel_5    max|<Z_l>| = 5.554e-17   max|<Y_l>| = 3.134e-17   (8 Haar physical states, every link)
+
+  (ii) BUT THE CONCLUSION IS VACUOUS AT ITS OWN SCOPE.  The premise is about ONE LINK.  By the
+      lane's OWN theorem B-8, a single link has NO gauge-invariant holonomy at all.  'SBS cannot
+      certify a magnetic record on a gauged link' is therefore a statement about the empty set.
+  (iii) AND IT IS FALSE ONE STEP OUT.  Take the smallest region that CAN carry a holonomy,
+      |S| = girth = 2 on theta.  Then rho_S is not (I + <X>X)/2 and its magnetic expectation is
+      free.  Measured on theta_10, S = the plaquette {0,1}:
+     magnetic GHZ (all W_p = +1)    <W_01> =  1.000000   <X_0X_1> =  0.000000   ||[rho_S, W_01]|| = 0.00e+00   spec(rho_S) = [0.  0.  0.5 0.5]
+     Wilson-loop GHZ (W_01 = +-1)   <W_01> =  0.000000   <X_0X_1> =  0.000000   ||[rho_S, W_01]|| = 0.00e+00   spec(rho_S) = [0.25 0.25 0.25 0.25]
+     ground state g^2 = 0.30        <W_01> =  0.995924   <X_0X_1> =  0.001014   ||[rho_S, W_01]|| = 9.02e-02   spec(rho_S) = [0.     0.     0.4995 0.5005]
+     Haar physical seed 66          <W_01> =  0.023603   <X_0X_1> = -0.047985   ||[rho_S, W_01]|| = 6.06e-02   spec(rho_S) = [0.2008 0.2387 0.2752 0.2853]
+      => on the magnetic GHZ, <W_01> = 1 EXACTLY and rho_S commutes with W_01: the
+      holonomy IS diagonal in an eigenbasis of rho_S.  So SBS's pointer basis can be magnetic as
+      soon as the system region is large enough to have a holonomy -- which is exactly the regime
+      the lane's own B-8 corollary says any magnetic record must live in.
+  VERDICT SO FAR: the two-line proof is correct; the conclusion drawn from it is not.  It is
+  vacuous for |S| = 1 and its mechanism dies for |S| >= girth.  A third defect, not in the lane's
+  text: SBS does NOT 'read its pointer basis off rho_S' -- the definition quantifies existentially
+  over bases, and b2's own output flags 'rho_S degenerate: True' on all three broadcast arms,
+  where an eigenbasis is not even unique.
+
+  (iv) THE DIRECT REFUTATION.  B-6 says SBS 'can never certify a magnetic (holonomy) record on its
+      own terms'.  Here is a gauge-invariant state on which SBS certifies exactly that, with all
+      three defects zero, at |S| = girth = 2.
+
+      CONSTRUCTION on theta_8.  Group the links into four pairs P_0 = {0,1} (= S), P_1 = {2,3},
+      P_2 = {4,5}, U = {6,7}.  On each pair use the BELL BASIS, i.e. the simultaneous eigenbasis
+      of the HOLONOMY W = Z_aZ_b and the pair electric flux e = X_aX_b:
+         |j=0> = (|00>+|11>)/sqrt2   (W=+1, e=+1)      |j=2> = (|01>+|10>)/sqrt2   (W=-1, e=+1)
+         |j=1> = (|00>-|11>)/sqrt2   (W=+1, e=-1)      |j=3> = (|01>-|10>)/sqrt2   (W=-1, e=-1)
+      and take   |psi> = (1/2) sum_j |j>_S (x) |j>_{P_1} (x) |j>_{P_2} (x) |j>_U .
+      G = prod_l X_l acts on this as e_j^4 = +1, so |psi> IS PHYSICAL, with no projection.
+      Tracing out U (whose four branches are orthogonal) leaves an exact SBS state whose pointer
+      basis DIAGONALISES THE HOLONOMY W_01, and H(W_01) = 1 bit -- a real, non-deterministic
+      magnetic record, not the b1 H=0 trap.
+      ONE VARIABLE MOVES BELOW: the pointer basis of the system pair.  The state is identical.
+      ||psi - P_phys psi|| = 3.331e-16   (physical, unprojected)
+      H(W_01) = 1.000000 bits    <W_01> = -0.000000    I(W_01 : W_23) = 1.000000 bits
+      pointer basis of S = links {0,1}                  D_coh     D_prod     D_orth   SBS?
+      --------------------------------------------------------------------------------------------
+      Z product basis of links {0,1}                 5.00e-01   5.00e-01   1.00e+00     no
+      X (ELECTRIC) product basis -- B-6's basis      5.00e-01   5.00e-01   1.00e+00     no
+      BELL basis -- W_01 diagonal (MAGNETIC)         7.05e-18   0.00e+00   3.49e-32    YES
+      => SBS = YES with a pointer basis in which the HOLONOMY is diagonal, on a physical
+      state of a Z_2 gauge theory, with one full bit of holonomy entropy redundantly recorded in
+      two disjoint fragments.  B-6's conclusion is REFUTED, not merely narrowed.
+      THE CONTROL IN THE SAME TABLE COULD HAVE FAILED AND DID: the X (electric) product basis --
+      the one B-6 says the Gauss law forces -- is NOT an SBS basis for this state, and neither is
+      the Z product basis.  Only the magnetic Bell basis works.
+      AND NOTE WHERE B-6 ACTUALLY LIVES: its own escape clause.  rho_S here is I/4, degenerate, so
+      "the eigenbasis of rho_S is electric OR DEGENERATE" is satisfied by the degenerate branch --
+      and b2's own output prints "rho_S degenerate: True" on ALL THREE of its broadcast arms.  The
+      electric-basis conclusion therefore applies to none of the states the lane tested.

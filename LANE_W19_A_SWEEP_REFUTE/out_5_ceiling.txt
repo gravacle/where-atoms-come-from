@@ -1,0 +1,70 @@
+==========================================================================================================================
+W19-A REFUTER / 5  THE CEILING, AND AN INSTRUMENT THAT GOES PAST IT
+==========================================================================================================================
+
+[5a] VALIDATION OF THE ORBIT-BASIS RDM against lane A's full-vector answers.
+     carrier          L   C                  link set   S full-vector   S orbit-basis     |diff|
+     theta            3   2                       [0]    0.9734172494    0.9734172494   0.00e+00
+     theta            3   2                    [0, 1]    0.9335898969    0.9335898969   0.00e+00
+     cube_Q3         12   5                       [0]    0.9376781900    0.9376781900   0.00e+00
+     cube_Q3         12   5                    [0, 1]    1.8311998633    1.8311998633   2.22e-16
+     cube_Q3         12   5              [1, 2, 3, 4]    2.7108050843    2.7108050843   8.88e-16
+     cube_Q3         12   5     [1, 2, 3, 4, 5, 6, 7]    3.5657718702    3.5657718702   0.00e+00
+     tri_chain12     12   5                       [0]    0.6632690432    0.6632690432   6.66e-16
+     tri_chain12     12   5                    [0, 1]    1.5063642566    1.5063642566   2.22e-16
+     tri_chain12     12   5              [1, 2, 3, 4]    1.5065707889    1.5065707889   4.44e-16
+     tri_chain12     12   5     [1, 2, 3, 4, 5, 6, 7]    1.5065707889    1.5065707889   8.88e-16
+     heawood         21   8                       [0]    0.9948272157    0.9948272157   1.15e-13
+     heawood         21   8                    [0, 1]    1.9558116440    1.9558116440   3.73e-14
+     heawood         21   8              [1, 2, 3, 4]    3.4342509397    3.4342509397   1.76e-13
+     heawood         21   8     [1, 2, 3, 4, 5, 6, 7]    5.0090673530    5.0090673530   9.68e-14
+
+     Full reproduction of lane A's sealed EXHIBIT (out_06_exhibit.txt) with the new instrument:
+     E0 = -34.626367676  gap = 6.062318935  H(S) = 0.994827216   (sealed: -34.626367676 / 6.062318935 / 0.994827216)
+       k=1 |F|=2   I = 0.994827216  I/H = 1.000000000
+       k=2 |F|=6   I = 0.994827216  I/H = 1.000000000
+       k=3 |F|=14  I = 0.994827216  I/H = 1.000000000
+       k=4 |F|=18  I = 0.994827216  I/H = 1.000000000
+       k=5 |F|=20  I = 1.989654431  I/H = 2.000000000
+
+[5b] LANE A's CRITERION ABOVE LANE A's CEILING.  N^L for these carriers is 2^24 ... 2^45,
+     i.e. 1.7e7 to 3.5e13 -- the full-vector method CANNOT touch them (its limit is 4.5e6).
+     The orbit-basis RDM works in N^C, and where N^C is still too big for dense eigh the state
+     used is a RANDOM PHYSICAL STATE, which lane A's own F6 proves gives the identical plateau.
+     carrier            V   L    C  dim_phys  girth   d     state        H(S)  pts  R_d              2^L  verdict
+     heawood           14  21    8       256      6   5    ground 0.994827216    4    5          2097152  EXHIBITED (disjoint=True, 0.1s)
+       rule-A fragment sizes [2, 6, 14, 18, 20], small sides [2, 6, 7, 3, 1]; rule-C cut sizes [2, 4, 8, 4, 2]
+     moebius_kantor    16  24    9       512      6   5    ground 0.991801218    4    5         16777216  EXHIBITED (disjoint=True, 0.2s)
+       rule-A fragment sizes [2, 6, 14, 21, 23], small sides [2, 6, 10, 3, 1]; rule-C cut sizes [2, 4, 8, 7, 2]
+     pappus            18  27   10      1024      6   5    ground 0.984847820    3    4        134217728  MARGINAL [+1 rule-A frag BEYOND REACH] [+1 cuts BEYOND REACH] (disjoint=True, 0.3s)
+       rule-A fragment sizes [2, 6, 14, 24, 26], small sides [2, 6, 13, 3, 1]; rule-C cut sizes [2, 4, 8, 10, 2]
+     prism10           20  30   11      2048      4   3    ground 0.830341863    2    3       1073741824  FAIL [+1 rule-A frag BEYOND REACH] (disjoint=True, 0.2s)
+       rule-A fragment sizes [2, 6, 11], small sides [2, 6, 11]; rule-C cut sizes [2, 4, 5]
+     mcgee_(3,7)cage   24  36   13      8192      7   6    random 0.999999152    4    6      68719476736  EXHIBITED [+1 rule-A frag BEYOND REACH] (disjoint=True, 2.7s)
+       rule-A fragment sizes [2, 6, 14, 26, 33, 35], small sides [2, 6, 14, 10, 3, 1]; rule-C cut sizes [2, 4, 8, 8, 4, 2]
+     tutte_coxeter_(3,8)  30  45   16     65536      8   7    random 0.999969889    4    6   35184372088832  EXHIBITED [+2 rule-A frag BEYOND REACH] [+1 cuts BEYOND REACH] (disjoint=True, 25.1s)
+       rule-A fragment sizes [2, 6, 14, 30, 38, 42, 44], small sides [2, 6, 14, 15, 7, 3, 1]; rule-C cut sizes [2, 4, 8, 16, 8, 4, 2]
+
+     READ: above the ceiling the closed form F2 (pts = d-1, R_delta = d) continues to hold on
+     every fragment that is REACHABLE, and nothing new appears.  Where fragments are marked
+     BEYOND REACH the middle rule-A fragment has a large SMALL SIDE and this method stops too --
+     that is reported, not papered over.  The threshold question is nevertheless a FLOOR
+     question: the floor is L = 9 (multigraph) / L = 12 (simple), far BELOW every ceiling here.
+
+[5c] WHAT THE CEILING ACTUALLY BINDS.  Cost of each quantity, measured, not asserted:
+     full-vector RDM : N^L memory                          -> Z_2 hard stop at L = 22
+     orbit RDM       : N^min(|A|,L-|A|) x |H| <= N^|A| x N^C -> cheap iff the SMALL side is small
+     dense eigh      : N^C x N^C                            -> hard stop near C = 12-13
+     Lane A's next_step says the orbit basis 'lifts the ceiling from L <= 22 to roughly L = 40'.
+     MEASURED VERDICT: PARTLY TRUE.  The lift is real but it is a lift in |A|, not in L: any
+     entropy whose SMALL SIDE exceeds ~13 links is still out of reach at any L.  So rule C (small
+     cuts) and the ENDS of rule A scale to L = 45; the MIDDLE of rule A and all of rule B do not.
+     Timings on the (3,8)-cage, L = 45, where the full-vector route would need 2^45 = 3.5e13:
+       |A|=1   S=0.99999  0.55s
+       |A|=3   S=2.999876  0.51s
+       |A|=6   S=5.998977  0.66s
+       |A|=9   S=8.989404  1.99s
+       |A|=10  S=8.989404  3.75s
+       |A|=11  S=None  0.00s
+
+DONE 5.

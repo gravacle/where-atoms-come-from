@@ -1,0 +1,73 @@
+
+========================================================================================================
+r0  SELF-TEST OF THE REFUTATION INSTRUMENT
+========================================================================================================
+
+[1] reduce_rho(|psi><psi|) == lib_b.reduce_links(psi)   (my trace vs theirs)
+  [ok ] theta_6 R=[0]                                                  0.978091011686  vs  0.978091011686
+  [ok ] theta_6 R=[0, 1]                                               1.910745926441  vs  1.910745926441
+  [ok ] theta_6 R=[1, 2, 3]                                            2.488382970381  vs  2.488382970381
+  [ok ] theta_7 R=[0]                                                  0.996448933223  vs  0.996448933223
+  [ok ] theta_7 R=[0, 1]                                               1.977155428250  vs  1.977155428250
+  [ok ] theta_7 R=[1, 2, 3]                                            2.733676104441  vs  2.733676104441
+  [ok ] fan_3 R=[0]                                                    0.777457092932  vs  0.777457092932
+  [ok ] fan_3 R=[0, 1]                                                 1.719288877273  vs  1.719288877273
+  [ok ] fan_3 R=[1, 2, 3]                                              1.675505573256  vs  1.675505573256
+
+[2] algebra_entropy(MixE, full matrix algebra on R) == vn_entropy of the mixed rho_R
+  [ok ] theta_6 w=0.5 R=[0]                                            0.999984766587  vs  0.999984766587
+  [ok ] theta_6 w=0.5 R=[0, 1]                                         1.969985360961  vs  1.969985360961
+  [ok ] theta_6 w=0.5 R=[0, 1, 2]                                      2.717704502308  vs  2.717704502308
+  [ok ] theta_7 w=0.3 R=[0]                                            0.999714712451  vs  0.999714712451
+  [ok ] theta_7 w=0.3 R=[0, 1]                                         1.950944577070  vs  1.950944577070
+  [ok ] theta_7 w=0.3 R=[0, 1, 2]                                      2.817776401761  vs  2.817776401761
+  [ok ] fan_3 w=0.75 R=[0]                                             0.999261937790  vs  0.999261937790
+  [ok ] fan_3 w=0.75 R=[0, 1]                                          1.925050463267  vs  1.925050463267
+  [ok ] fan_3 w=0.75 R=[0, 1, 2]                                       1.467059324026  vs  1.467059324026
+
+[2b] MixE on an ABELIAN algebra == Shannon entropy of the X-measurement distribution
+  [ok ] abelian alg{X_l} R=[0]                                         0.973547729059  vs  0.973547729059
+  [ok ] abelian alg{X_l} R=[0, 1]                                      1.961852489529  vs  1.961852489529
+  [ok ] abelian alg{X_l} R=[0, 1, 2]                                   2.899912805982  vs  2.899912805982
+
+[2c] MixE with a single component == the target's pure-state PauliExpect
+  [ok ] max |MixE - PauliExpect| over all 4^7 strings                  0.000000000000  vs  0.000000000000
+
+[3] all_subspaces(n) counts == Galois numbers G_n (complete enumeration, not a sample)
+  [ok ] n=1                                                            2  vs  2
+  [ok ] n=2                                                            5  vs  5
+  [ok ] n=3                                                            16  vs  16
+  [ok ] n=4                                                            67  vs  67
+  [ok ] n=5                                                            374  vs  374
+  [ok ] n=6                                                            2825  vs  2825
+     and every enumerated set is genuinely closed under XOR:
+  [ok ] closure violations over n=3,4                                  0  vs  0
+
+[4] rdelta_packing: maximum number of pairwise-disjoint qualifying fragments
+  [ok ] N=6, all three matched pairs {0,1}{2,3}{4,5} qualify           3  vs  3
+  [ok ] N=6, only ONE fragment qualifies                               1  vs  1
+  [ok ] N=6, overlapping pairs {0,1}{1,2}{2,3} -> at most 2 disjoint   2  vs  2
+  [ok ] N=7, all seven singletons qualify                              7  vs  7
+  [ok ] N=7, nothing qualifies                                         0  vs  0
+  [ok ] N=8, four disjoint plaquettes qualify                          4  vs  4
+
+[5] rot_link / rot_block: unitarity, and agreement with an explicit kron
+  [ok ] rot_link preserves norm                                        1.000000000000  vs  1.000000000000
+  [ok ] rot_link == explicit kron on link 2                            0.000000000000  vs  0.000000000000
+  [ok ] rot_block preserves norm                                       1.000000000000  vs  1.000000000000
+  [ok ] rot_block is an involution with its inverse                    0.000000000000  vs  0.000000000000
+
+[6] sbs_defects (2-dim system) == sbs_defects_multi (general) on the same input
+  [ok ] GHZ D_coh                                                      0.000000000000  vs  0.000000000000
+  [ok ] GHZ D_prod                                                     0.000000000000  vs  0.000000000000
+  [ok ] GHZ D_orth                                                     0.000000000000  vs  0.000000000000
+  [ok ] Haar 777 D_coh                                                 0.487211963658  vs  0.487211963658
+  [ok ] Haar 777 D_prod                                                0.930001359805  vs  0.930001359805
+  [ok ] Haar 777 D_orth                                                0.992405732582  vs  0.992405732582
+
+[7] rdelta_count and rdelta_packing agree when the chosen partition IS the best packing
+  [ok ] GHZ on theta_8: count over single links vs exact packing       7  vs  7
+
+========================================================================================================
+r0 SELF-TEST  PASSED
+========================================================================================================

@@ -1,0 +1,181 @@
+======================================================================================================================
+W19-A / 01 LADDER.  Z_2, g^2=1.0 (mag=2.0, elec=2.0), delta=0.1.  ONE VARIABLE MOVED PER ROW: the carrier.
+======================================================================================================================
+
+### theta_3link:  V=2 L=3 C=2 dim_phys=4  |plaq|=2 (lengths [2, 2])
+    system link l=0=(0, 1)   girth_through=2   d=dist_(G-l)(u,v)=1   E0=-6.987918 gap=6.768086
+    H(S)=S(rho_l) = 0.492556 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=2   I(S:F)=0.985112  I/H(S)=2.0000  encloses_cycle_through_l=True  
+    RULE C  the 1 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=2   links=[1, 2]  I(S:C)=0.985112  I/H(S)=2.0000
+    >>> plateau points = 0   R_delta = 1   cuts pairwise disjoint = True   VERDICT = FAIL
+
+### theta_subdiv1:  V=5 L=6 C=2 dim_phys=4  |plaq|=2 (lengths [4, 4])
+    system link l=0=(0, 2)   girth_through=4   d=dist_(G-l)(u,v)=3   E0=-12.499542 gap=13.952855
+    H(S)=S(rho_l) = 0.195506 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=2   I(S:F)=0.195506  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=4   I(S:F)=0.195506  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=3  |F|=5   I(S:F)=0.391011  I/H(S)=2.0000  encloses_cycle_through_l=True  
+    RULE C  the 3 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=2   links=[2, 4]  I(S:C)=0.195506  I/H(S)=1.0000
+      C_2  |C|=2   links=[3, 5]  I(S:C)=0.195506  I/H(S)=1.0000
+      C_3  |C|=1   links=[1]  I(S:C)=0.195506  I/H(S)=1.0000
+    >>> plateau points = 2   R_delta = 3   cuts pairwise disjoint = True   VERDICT = FAIL
+
+### theta_subdiv2:  V=8 L=9 C=2 dim_phys=4  |plaq|=2 (lengths [6, 6])
+    system link l=0=(0, 2)   girth_through=6   d=dist_(G-l)(u,v)=5   E0=-18.333271 gap=21.685977
+    H(S)=S(rho_l) = 0.104372 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=2   I(S:F)=0.104372  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=4   I(S:F)=0.104372  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=3  |F|=6   I(S:F)=0.104372  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=4  |F|=7   I(S:F)=0.104372  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=5  |F|=8   I(S:F)=0.208744  I/H(S)=2.0000  encloses_cycle_through_l=True  
+    RULE C  the 5 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=2   links=[3, 6]  I(S:C)=0.104372  I/H(S)=1.0000
+      C_2  |C|=2   links=[4, 7]  I(S:C)=0.104372  I/H(S)=1.0000
+      C_3  |C|=2   links=[5, 8]  I(S:C)=0.104372  I/H(S)=1.0000
+      C_4  |C|=1   links=[2]  I(S:C)=0.104372  I/H(S)=1.0000
+      C_5  |C|=1   links=[1]  I(S:C)=0.104372  I/H(S)=1.0000
+    >>> plateau points = 4   R_delta = 5   cuts pairwise disjoint = True   VERDICT = EXHIBITED
+
+### torus_2x2:  V=4 L=8 C=5 dim_phys=32  |plaq|=5 (lengths [2, 2, 2, 2, 4])
+    system link l=0=(0, 2)   girth_through=2   d=dist_(G-l)(u,v)=1   E0=-18.179694 gap=8.200560
+    H(S)=S(rho_l) = 0.375696 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=3   I(S:F)=0.685896  I/H(S)=1.8257  encloses_cycle_through_l=True  
+    RULE C  the 1 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=3   links=[1, 3, 4]  I(S:C)=0.685896  I/H(S)=1.8257
+    >>> plateau points = 0   R_delta = 1   cuts pairwise disjoint = True   VERDICT = FAIL
+
+### ladder_2sq:  V=6 L=7 C=2 dim_phys=4  |plaq|=2 (lengths [4, 4])
+    system link l=0=(0, 1)   girth_through=4   d=dist_(G-l)(u,v)=3   E0=-14.494798 gap=16.060274
+    H(S)=S(rho_l) = 0.113789 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=1   I(S:F)=0.113789  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=2   I(S:F)=0.113789  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=3  |F|=4   I(S:F)=0.227508  I/H(S)=1.9994  encloses_cycle_through_l=True  
+    RULE C  the 3 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=1   links=[4]  I(S:C)=0.113789  I/H(S)=1.0000
+      C_2  |C|=1   links=[2]  I(S:C)=0.113789  I/H(S)=1.0000
+      C_3  |C|=2   links=[3, 5]  I(S:C)=0.113789  I/H(S)=1.0000
+    >>> plateau points = 2   R_delta = 3   cuts pairwise disjoint = True   VERDICT = FAIL
+
+### ladder_3sq:  V=8 L=10 C=3 dim_phys=8  |plaq|=3 (lengths [4, 4, 4])
+    system link l=0=(0, 1)   girth_through=4   d=dist_(G-l)(u,v)=3   E0=-20.743440 gap=15.838613
+    H(S)=S(rho_l) = 0.113834 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=1   I(S:F)=0.113834  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=2   I(S:F)=0.113834  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=3  |F|=4   I(S:F)=0.227594  I/H(S)=1.9994  encloses_cycle_through_l=True  
+    RULE C  the 3 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=1   links=[6]  I(S:C)=0.113834  I/H(S)=1.0000
+      C_2  |C|=1   links=[3]  I(S:C)=0.113834  I/H(S)=1.0000
+      C_3  |C|=2   links=[4, 7]  I(S:C)=0.113834  I/H(S)=1.0000
+    >>> plateau points = 2   R_delta = 3   cuts pairwise disjoint = True   VERDICT = FAIL
+
+### ladder_5sq:  V=12 L=16 C=5 dim_phys=32  |plaq|=5 (lengths [4, 4, 4, 4, 4])
+    system link l=0=(0, 1)   girth_through=4   d=dist_(G-l)(u,v)=3   E0=-33.240725 gap=15.692752
+    H(S)=S(rho_l) = 0.113835 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=1   I(S:F)=0.113835  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=2   I(S:F)=0.113835  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=3  |F|=4   I(S:F)=0.227596  I/H(S)=1.9993  encloses_cycle_through_l=True  
+    RULE C  the 3 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=1   links=[10]  I(S:C)=0.113835  I/H(S)=1.0000
+      C_2  |C|=1   links=[5]  I(S:C)=0.113835  I/H(S)=1.0000
+      C_3  |C|=2   links=[6, 11]  I(S:C)=0.113835  I/H(S)=1.0000
+    >>> plateau points = 2   R_delta = 3   cuts pairwise disjoint = True   VERDICT = FAIL
+
+### grid_3x3_open:  V=9 L=12 C=4 dim_phys=16  |plaq|=4 (lengths [4, 4, 4, 4])
+    system link l=0=(0, 3)   girth_through=4   d=dist_(G-l)(u,v)=3   E0=-24.994571 gap=15.600085
+    H(S)=S(rho_l) = 0.115799 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=1   I(S:F)=0.115799  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=3   I(S:F)=0.115799  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=3  |F|=7   I(S:F)=0.231521  I/H(S)=1.9993  encloses_cycle_through_l=True  
+    RULE C  the 3 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=1   links=[1]  I(S:C)=0.115799  I/H(S)=1.0000
+      C_2  |C|=2   links=[2, 3]  I(S:C)=0.115799  I/H(S)=1.0000
+      C_3  |C|=4   links=[4, 6, 7, 8]  I(S:C)=0.115799  I/H(S)=1.0000
+    >>> plateau points = 2   R_delta = 3   cuts pairwise disjoint = True   VERDICT = FAIL
+
+### cube_Q3:  V=8 L=12 C=5 dim_phys=32  |plaq|=5 (lengths [4, 4, 4, 4, 4])
+    system link l=0=(0, 1)   girth_through=4   d=dist_(G-l)(u,v)=3   E0=-25.251316 gap=14.297197
+    H(S)=S(rho_l) = 0.201192 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=2   I(S:F)=0.201192  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=6   I(S:F)=0.201192  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=3  |F|=11  I(S:F)=0.402384  I/H(S)=2.0000  encloses_cycle_through_l=True  
+    RULE C  the 3 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=2   links=[1, 2]  I(S:C)=0.201192  I/H(S)=1.0000
+      C_2  |C|=4   links=[5, 6, 8, 9]  I(S:C)=0.201192  I/H(S)=1.0000
+      C_3  |C|=5   links=[3, 4, 7, 10, 11]  I(S:C)=0.201192  I/H(S)=1.0000
+    >>> plateau points = 2   R_delta = 3   cuts pairwise disjoint = True   VERDICT = FAIL
+
+### torus_3x3:  V=9 L=18 C=10 dim_phys=1024  |plaq|=10 (lengths [3, 3, 3, 3, 3, 3, 4, 4, 4, 4])
+    system link l=0=(0, 3)   girth_through=3   d=dist_(G-l)(u,v)=2   E0=-39.021669 gap=10.796688
+    H(S)=S(rho_l) = 0.333087 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=3   I(S:F)=0.333087  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=11  I(S:F)=0.523964  I/H(S)=1.5731  encloses_cycle_through_l=True  
+    RULE C  the 2 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=3   links=[1, 5, 12]  I(S:C)=0.333087  I/H(S)=1.0000
+      C_2  |C|=7   links=[2, 4, 6, 13, 14, 16, 17]  I(S:C)=0.333087  I/H(S)=1.0000
+    >>> plateau points = 1   R_delta = 2   cuts pairwise disjoint = True   VERDICT = FAIL
+
+### petersen:  V=10 L=15 C=6 dim_phys=64  |plaq|=6 (lengths [5, 5, 5, 5, 5, 5])
+    system link l=0=(0, 1)   girth_through=5   d=dist_(G-l)(u,v)=4   E0=-31.218656 gap=15.645246
+    H(S)=S(rho_l) = 0.244652 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=2   I(S:F)=0.244652  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=6   I(S:F)=0.244652  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=3  |F|=12  I(S:F)=0.244652  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=4  |F|=14  I(S:F)=0.489303  I/H(S)=2.0000  encloses_cycle_through_l=True  
+    RULE C  the 4 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=2   links=[4, 10]  I(S:C)=0.244652  I/H(S)=1.0000
+      C_2  |C|=4   links=[3, 5, 8, 14]  I(S:C)=0.244652  I/H(S)=1.0000
+      C_3  |C|=4   links=[2, 6, 9, 12]  I(S:C)=0.244652  I/H(S)=1.0000
+      C_4  |C|=2   links=[1, 11]  I(S:C)=0.244652  I/H(S)=1.0000
+    >>> plateau points = 3   R_delta = 4   cuts pairwise disjoint = True   VERDICT = MARGINAL
+
+### heawood_honeycomb7:  V=14 L=21 C=8 dim_phys=256  |plaq|=8 (lengths [6, 6, 6, 6, 6, 6, 6, 6])
+    system link l=0=(0, 1)   girth_through=6   d=dist_(G-l)(u,v)=5   E0=-43.365355 gap=18.211442
+    H(S)=S(rho_l) = 0.307291 bits   (weight floor 0.10; WEIGHTED)
+    RULE A  nested fragments F_k = links of G-l touching BFS-ball of radius k-1 around tail(l):
+      k=1  |F|=2   I(S:F)=0.307291  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=2  |F|=6   I(S:F)=0.307291  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=3  |F|=14  I(S:F)=0.307291  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=4  |F|=18  I(S:F)=0.307291  I/H(S)=1.0000  encloses_cycle_through_l=False PLATEAU
+      k=5  |F|=20  I(S:F)=0.614583  I/H(S)=2.0000  encloses_cycle_through_l=True  
+    RULE C  the 5 disjoint level cuts (each satisfies X_l = X(C_i)^dag exactly):
+      C_1  |C|=2   links=[13, 14]  I(S:C)=0.307291  I/H(S)=1.0000
+      C_2  |C|=4   links=[4, 5, 12, 20]  I(S:C)=0.307291  I/H(S)=1.0000
+      C_3  |C|=8   links=[3, 6, 7, 8, 11, 17, 18, 19]  I(S:C)=0.307291  I/H(S)=1.0000
+      C_4  |C|=4   links=[2, 9, 10, 16]  I(S:C)=0.307291  I/H(S)=1.0000
+      C_5  |C|=2   links=[1, 15]  I(S:C)=0.307291  I/H(S)=1.0000
+    >>> plateau points = 4   R_delta = 5   cuts pairwise disjoint = True   VERDICT = EXHIBITED
+
+======================================================================================================================
+SUMMARY TABLE  (Z_2, g^2=1)
+carrier                  V   L   C   dimP  link  girth_l   d   H(S) bits  plateau pts  R_delta   verdict
+theta_3link              2   3   2      4     0        2   1    0.492556            0        1   FAIL
+theta_subdiv1            5   6   2      4     0        4   3    0.195506            2        3   FAIL
+theta_subdiv2            8   9   2      4     0        6   5    0.104372            4        5   EXHIBITED
+torus_2x2                4   8   5     32     0        2   1    0.375696            0        1   FAIL
+ladder_2sq               6   7   2      4     0        4   3    0.113789            2        3   FAIL
+ladder_3sq               8  10   3      8     0        4   3    0.113834            2        3   FAIL
+ladder_5sq              12  16   5     32     0        4   3    0.113835            2        3   FAIL
+grid_3x3_open            9  12   4     16     0        4   3    0.115799            2        3   FAIL
+cube_Q3                  8  12   5     32     0        4   3    0.201192            2        3   FAIL
+torus_3x3                9  18  10   1024     0        3   2    0.333087            1        2   FAIL
+petersen                10  15   6     64     0        5   4    0.244652            3        4   MARGINAL
+heawood_honeycomb7      14  21   8    256     0        6   5    0.307291            4        5   EXHIBITED
+
+PREDICTION UNDER TEST (stated in the module docstring, before running):
+  plateau points = d - 1 = girth_through(l) - 2   and   R_delta = d = girth_through(l) - 1.
+  holds on every row above: True
+
+DONE 01.

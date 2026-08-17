@@ -1,0 +1,68 @@
+========================================================================================================================
+W19-A REFUTER / 4  LATENT DEFECTS AND THE AUDITS
+========================================================================================================================
+
+[4a] COMPLEX PHYSICAL STATES.  carrier = heawood (lane A's threshold carrier), l = 0,
+     fragments = lane A's rule-A F_1..F_4 (|F| = 2,6,14,18).  Three ensembles.
+     ensemble                                       H(S) laneA      H(S) conj    max|dS|   I/H(S) (conjugating rdm)
+     real Gaussian (what lane A called Haar)       0.999846350    0.999846350  0.000e+00   1.000000000 1.000000000 1.000000000 1.000000000 2.000000000
+     COMPLEX Haar (Ginibre, unitary-invariant)     0.340069081    0.999979290  2.320e+00   1.000000000 1.000000000 1.000000000 1.000000000 2.000000000
+     COMPLEX Haar, second draw                     0.545126326    0.996285496  2.332e+00   1.000000000 1.000000000 1.000000000 1.000000000 2.000000000
+     READ: with a conjugating rdm the plateau is still exactly 1.000000000 on complex states,
+     so F6's CONCLUSION survives; but lane A's rdm() is only valid for real amplitudes and its
+     'Haar-random' label is wrong.  The defect is latent, not active.  Recorded, not scored.
+
+[4b] IS THE PLAQUETTE SET A BASIS MOD N, OR ONLY MOD 2?  min_cycle_basis selects by GF(2)
+     rank.  The magnetic term is right for every N only if the chord minor has |det| = 1.
+     carrier                  C   |det chord minor|   basis mod 3 ?   basis mod 2 ?
+     theta_3link              2            1.000000            True            True
+     theta_subdiv1            2            1.000000            True            True
+     theta_subdiv2            2            1.000000            True            True
+     torus_2x2                5            1.000000            True            True
+     ladder_2sq               2            1.000000            True            True
+     ladder_3sq               3            1.000000            True            True
+     ladder_5sq               5            1.000000            True            True
+     grid_3x3_open            4            1.000000            True            True
+     cube_Q3                  5            1.000000            True            True
+     torus_3x3               10            1.000000            True            True
+     petersen                 6            1.000000            True            True
+     heawood_honeycomb7       8            1.000000            True            True
+     tri_chain12              5            1.000000            True            True
+     dbl_chain9               4            1.000000            True            True
+     petersen                 6            1.000000            True            True
+     mg_chain6                5            1.000000            True            True
+     Carriers whose plaquette set FAILS to generate the cycle group mod 3: NONE
+     -> F12's Z_3 arm is not corrupted by the GF(2) selection on any carrier actually used.
+     The risk is real in principle (a GF(2)-independent set can have det divisible by an odd
+     prime); it did not materialise here.  This test could have refuted F12 and did not.
+
+[4c] DOES THE WEIGHT FLOOR RESCUE THE 21-LINK CLAIM?  H(S) vs g^2, floor = 0.10 bits.
+     If the counterexamples were only ever above the floor at couplings where heawood is not,
+     lane A could still claim 21.  ONE VARIABLE MOVED per column: the carrier.
+        g^2         heawood     tri_chain12      dbl_chain9       mg_chain6   (H(S) bits; * = below floor)
+       0.20       0.999980        0.994591        0.988871        0.988574 
+       0.30       0.999882        0.967029        0.940809        0.937420 
+       0.40       0.999423        0.872605        0.815191        0.799302 
+       0.50       0.994827        0.663269        0.610001        0.574257 
+       0.70       0.753293        0.239102        0.245359        0.207659 
+       1.00       0.307291        0.064094*       0.067006*       0.052835*
+       1.50       0.087061*       0.015240*       0.015441*       0.011853*
+     READ: at g^2 <= 0.50 every counterexample is well above the floor at the SAME coupling
+     lane A used for its own exhibit (g^2 = 0.50).  The floor does not rescue the claim.
+
+[4d] FRAGMENT AUDIT (the refuter's assigned check).  For each carrier: are the rule-C fragments
+     (i) pairwise disjoint, (ii) disjoint from S, (iii) GENUINE u-v edge cuts in G-l (removing
+     the cut must disconnect tail from head), (iv) do they satisfy <X_l X(C_i)> = +1 exactly?
+     carrier         l  #cuts  pairwise disjoint  disjoint from S  all genuine cuts  min <X_l X(C)>  nested F_k are NOT disjoint
+     heawood         0      5               True             True              True  1.000000000000                         True
+     petersen        0      4               True             True              True  1.000000000000                         True
+     tri_chain12     0      5               True             True              True  1.000000000000                         True
+     dbl_chain9      0      5               True             True              True  1.000000000000                         True
+     cube_Q3         0      3               True             True              True  1.000000000000                         True
+     READ: rule C's fragments ARE disjoint and ARE real cuts -- R_delta is correctly computed.
+     But rule A's F_k, the fragments the PLATEAU is read off, are NESTED, hence NOT disjoint.
+     Lane A reports plateau (nested) and R_delta (disjoint) from two different families; the
+     brief asks for a plateau on DISJOINT fragments.  On the disjoint family the 5 cuts all sit
+     at exactly I = H(S), which is the Gauss identity F3 restated, not an accumulation curve.
+
+DONE 4.

@@ -1,0 +1,81 @@
+======================================================================================================================
+W19-A / 05 RULE DEPENDENCE AND FAILURE MODE
+======================================================================================================================
+
+[5a] RULE A' (nested balls around l, growing from BOTH endpoints).  Z_2, g^2=1.
+     carrier                  L   d       H(S)  A pts  A-prime pts   A-prime (|F|, I/H(S))
+     theta_3link              3   1   0.492556      0            0   (2,2.0000)
+     theta_subdiv1            6   3   0.195506      2            1   (3,1.0000) (5,2.0000)
+     theta_subdiv2            9   5   0.104372      4            2   (3,1.0000) (6,1.0000) (8,2.0000)
+     torus_2x2                8   1   0.375696      0            0   (5,1.8258) (7,2.0000)
+     ladder_2sq               7   3   0.113789      2            1   (3,1.0000) (6,2.0000)
+     ladder_3sq              10   3   0.113834      2            1   (3,1.0000) (7,2.0000) (9,2.0000)
+     ladder_5sq              16   3   0.113835      2            1   (3,1.0000) (7,2.0000) (10,2.0000) (13,2.0000) (15,2.0000)
+     grid_3x3_open           12   3   0.115799      2            1   (3,1.0000) (8,1.9993) (11,2.0000)
+     cube_Q3                 12   3   0.201192      2            1   (4,1.0000) (10,1.9997) (11,2.0000)
+     torus_3x3               18   2   0.333087      1            0   (6,1.5712) (16,2.0000) (17,2.0000)
+     petersen                15   4   0.244652      3            1   (4,1.0000) (12,1.9977) (14,2.0000)
+     heawood_honeycomb7      21   5   0.307291      4            2   (4,1.0000) (12,1.0000) (20,2.0000)
+     READ: rule A' is strictly harsher.  NO carrier in the ladder reaches 4 points under rule A'.
+     Under rule A' the plateau length is about ceil((d-1)/2), so girth ~10 would be needed;
+     the smallest min-degree-3 girth-10 graph is the (3,10)-cage, 70 vertices / 105 links -- FAR
+     over the exact-diagonalisation ceiling (2^105).  Recorded as a ROUTE CLOSED BY RULE CHOICE.
+
+[5b] RULE B (uniformly random fragments) across the FULL ladder, 48 samples/size.
+     carrier                  L   C   dimP   d       H(S)  ruleB pts  verdict
+     theta_3link              3   2      4   1   0.492556          1  FAIL
+     theta_subdiv1            6   2      4   3   0.195506          0  FAIL
+     theta_subdiv2            9   2      4   5   0.104372          3  MARGINAL
+     torus_2x2                8   5     32   1   0.375696          0  FAIL
+     ladder_2sq               7   2      4   3   0.113789          1  FAIL
+     ladder_3sq              10   3      8   3   0.113834          1  FAIL
+     ladder_5sq              16   5     32   3   0.113835          1  FAIL
+     grid_3x3_open           12   4     16   3   0.115799          3  MARGINAL
+     cube_Q3                 12   5     32   3   0.201192          1  FAIL
+     torus_3x3               18  10   1024   2   0.333087          1  FAIL
+     petersen                15   6     64   4   0.244652          2  FAIL
+     heawood_honeycomb7      21   8    256   5   0.307291          5  EXHIBITED
+     CONFOUND ON THIS BLOCK: rule-B counts are SAMPLING NOISY at the +/-1 level, because a size
+     is counted whenever the sampled MEAN falls inside [0.9,1.1] and the mean crosses 1 smoothly.
+     Step 04a, an independent draw at 32 samples/size, gave heawood 5 rather than 4.  Only the
+     ORDER of the counts is load-bearing, not their exact value.
+
+[5c] FAILURE MODE vs g^2.  carrier=heawood, l=0.  F_5 (the first rule-A fragment that encloses
+     a cycle through l) and the C1 enclosure arm B.  ONE VARIABLE MOVED: g^2.
+         g^2        H(S)   I/H(F4) no cycle   I/H(F5) cycle   I/H(armB) cycle |F|=14
+        0.20  0.99998025        1.000000000     2.000000000              1.997965668
+        0.30  0.99988243        1.000000000     2.000000000              1.987841450
+        0.50  0.99482722        1.000000000     2.000000000              1.819995277
+        0.70  0.75329266        1.000000000     2.000000000              1.355305923
+        1.00  0.30729143        1.000000000     2.000000000              1.213848345
+        1.50  0.08706111        1.000000000     2.000000000              1.176043837
+        3.00  0.00819677        1.000000000     2.000000000              1.156603066
+     READ: the plateau value (no enclosed cycle) is 1.000000000 at every coupling -- ALGEBRAIC.
+     The BREAK value (enclosed cycle) moves with g^2 -- DYNAMICAL.  The only dynamical content
+     of this criterion sits in the height H(S) and in the size of the break, not in the plateau.
+
+[5d] LOCATING THE CROSSOVER.  carrier=heawood, l=0.  ONE VARIABLE MOVED: g^2 (fine scan).
+     H(S) is the plateau HEIGHT -- the only part of the criterion with dynamical content.
+         g^2        gap     <W_p>     <X_e>   H(S) bits   phase read
+        0.35     9.9898   0.98171   0.10336  0.99974437   deconfined (magnetic)
+        0.40     8.3357   0.96377   0.15151  0.99942331   deconfined (magnetic)
+        0.45     7.0191   0.92991   0.22229  0.99847918   deconfined (magnetic)
+        0.50     6.0623   0.86667   0.32823  0.99482722   deconfined (magnetic)
+        0.55     5.6648   0.76093   0.47377  0.97972709   deconfined (magnetic)
+        0.60     6.0252   0.62752   0.62764  0.93454560   confined (electric)
+        0.65     7.0548   0.50562   0.74706  0.85317474   confined (electric)
+        0.70     8.4806   0.41234   0.82544  0.75329266   confined (electric)
+        0.75    10.0838   0.34366   0.87546  0.65310493   confined (electric)
+        0.80    11.7447   0.29221   0.90822  0.56167080   confined (electric)
+        0.90    15.0426   0.22114   0.94617  0.41365813   confined (electric)
+        1.00    18.2114   0.17474   0.96594  0.30729143   confined (electric)
+        1.10    21.2423   0.14226   0.97725  0.23165356   confined (electric)
+        1.30    26.9821   0.10026   0.98861  0.13800804   confined (electric)
+     gap minimum at g^2 = 0.55 (gap 5.6648) -- the finite-carrier crossover.
+     <W_p> falls below <X_e> first at g^2 = 0.60.
+     H(S) first drops below 0.5 bits at g^2 = 0.90; below the 0.10 weight floor
+     at g^2 = nan.
+     READ: the RECORD'S CONTENT switches off across the confinement crossover; the record's
+     SHAPE (the plateau) does not notice the crossover at all.
+
+DONE 05.

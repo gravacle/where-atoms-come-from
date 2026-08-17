@@ -1,0 +1,78 @@
+LANE W19-A-REFUTE  --  CONVENTIONS AND DECLARED LIMITS
+Register head W-17.  Program: WHERE ATOMS COME FROM.  Attacking LANE_W19_A_SWEEP.
+Lens: ISOLATION AND CEILING.
+
+1. WHAT WAS INHERITED AND NOT CHANGED
+   Every number in this lane is produced by LANE A's OWN CODE, imported unmodified:
+     /Users/bgm/MB Work/where-atoms-come-from/LANE_W19_A_SWEEP/zn_gauge.py
+     /Users/bgm/MB Work/where-atoms-come-from/LANE_W19_A_SWEEP/carriers.py
+   Lane A's SEALS.sha256 verified OK (21/21 files) before anything was run.
+   Lane A's scripts 00, 01, 06 were re-executed and their captured outputs are BYTE-IDENTICAL to
+   the sealed ones.  Lane A is reproducible.  Nothing below is a reproducibility complaint.
+
+   Criterion held fixed exactly as lane A fixed it: delta = 0.10; rule A = nested fragments by BFS
+   distance from tail(l) in G-l; rule C = the d level cuts; system-link rule = the link maximising
+   d with ties to lowest index; weight floor H(S) >= 0.10*log2(N); EXHIBITED iff >= 4 rule-A
+   plateau points, MARGINAL iff exactly 3.  Couplings g^2 = 0.50 (lane A's exhibit) and g^2 = 1.00
+   (lane A's ladder) are both reported so every comparison is like-for-like.
+
+2. THE ONE VARIABLE MOVED, PER SCRIPT
+   r19a_1_instrument.py  variable: the CONSTRUCTION of the physical sector (gauge fixing vs orbit
+                         averaging in the full N^L space).  Carrier, N, g^2, plaquette set held fixed;
+                         the plaquette set is taken FROM lane A's object so a plaquette error would
+                         be shared rather than hidden.
+   r19a_2_minimality.py  variable: the CARRIER.  N, g^2, criterion, fragment rules, delta held fixed.
+   r19a_3_ruleB_prism.py variable: the FRAGMENT RULE (3a/3b) and, in the matched arm, d ALONE --
+                         heawood vs prism7 have identical V=14, L=21, C=8, dim_phys=256, min degree 3.
+   r19a_4_defects.py     4a variable: the STATE ENSEMBLE (real Gaussian vs complex Ginibre), all else
+                         fixed.  4b variable: the modulus (2 vs 3) at fixed carrier.  4c variable: g^2
+                         at fixed carrier per column, carrier at fixed g^2 per row.  4d: audit, no arms.
+   r19a_5_ceiling.py     variable: the CARRIER, pushed above lane A's declared N^L <= 4.5e6 ceiling.
+   r19a_6_girth.py       variable: the CARRIER at fixed girth class.
+   No two arms in this lane are byte-identical.  Where two variables move (mg_chain family: L and d
+   move together by construction) it is stated in the output and the row is not counted as an
+   isolation result -- it is a floor exhibit.
+
+3. DECLARED CEILINGS
+   Lane A's: N^L <= 4.5e6 inside zn_gauge.full_vector -> Z_2 stops at L = 22, Z_3 at L = 13.
+   Lane A's threshold carrier is L = 21, ONE LINK below that ceiling, and carriers.py labels the next
+   two girth-6 cubic graphs "OVER THE CEILING".
+   This lane's: the orbit-basis RDM in r19a_5_ceiling.py costs N^min(|A|,L-|A|) x |H_B| and I capped
+   the small side at 10 links (SMALL_SIDE_CAP = 10).  Fragments past that cap are printed as
+   "BEYOND REACH" and are NEVER counted as either passing or failing.  On pappus, mcgee and
+   tutte_coxeter one or two rule-A fragments are beyond reach; the pappus MARGINAL verdict is a
+   REACH artefact, not a physics result, and must not be quoted as one.
+   Dense eigh on the orbit basis stops near C = 12-13; above that this lane uses a RANDOM PHYSICAL
+   STATE, which is legitimate ONLY because lane A's own F6 (which this lane re-verified, including
+   on complex states) shows the plateau is state-independent.  It is not a ground-state claim.
+
+4. COULD-NOT-HAVE-FAILED, DECLARED FOR THIS LANE TOO
+   The counterexample carriers in section 2 inherit lane A's own F3: once F contains a Gauss cut
+   through l and S u F contains no cycle through l, I(S:F) = H(S) is FORCED.  So my exhibits could
+   not have failed to plateau either.  They are therefore NOT evidence that a 9-link or 12-link
+   carrier forms records.  They are evidence about a NUMBER: that 21 is not the floor of the class
+   lane A named.  Read as physics they are weightless; read as arithmetic they are decisive.
+
+5. A NULL READS TWO WAYS -- STATED, NOT RESOLVED
+   The 9/12-link counterexamples read either as "the true floor is 9 (multigraph) / 12 (simple)" or
+   as "the criterion is degenerate and no link count is meaningful".  Lane A already argued the
+   second via F7 (subdivision), and defended 21 by excluding degree-2 vertices.  This lane shows the
+   min-degree-3 restriction does not restore the criterion.  I do NOT score that as proof of
+   degeneracy; I report both readings and the number under each.
+
+6. TESTS RUN THAT COULD HAVE BROKEN THIS REFUTATION AND DID NOT
+   - lane A's physical sector rebuilt independently: spectra agree to 3.6e-14, [H,P] = 0 exactly,
+     orbit multiplicities exactly N^(V-1), and the lifted 21-link ground state is an eigenvector of
+     the full 2^21 Hamiltonian to 5.3e-14.  The instrument is sound.
+   - the weight floor: if the counterexamples were above the floor only where heawood is not, lane A
+     could keep 21.  They are above it at g^2 = 0.50, lane A's own exhibit coupling.
+   - the GF(2) cycle-basis selection could have corrupted the Z_3 arm.  It does not: |det| = 1 on
+     every carrier used.
+   - rule-C cuts could have been non-disjoint or not genuine cuts.  They are disjoint, they are
+     genuine, and <X_l X(C_i)> = +1.000000000000 on all of them.
+
+7. ONE TEST WENT AGAINST ME
+   r19a_3_ruleB_prism.py [3b], READ 2.  I predicted rule B would award the matched control prism7
+   as many in-band sizes as heawood, which would have made rule B a pure environment-size counter.
+   It did not: prism7 scores 2, heawood 5.  Rule B does order the two carriers the way d does.  That
+   arm is reported as REFUTING my objection and is not scored for me.

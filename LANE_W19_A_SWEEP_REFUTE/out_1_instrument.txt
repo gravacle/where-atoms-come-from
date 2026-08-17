@@ -1,0 +1,37 @@
+==============================================================================================================
+W19-A REFUTER / 1  INDEPENDENT RECONSTRUCTION OF THE PHYSICAL SECTOR
+==============================================================================================================
+
+[1a] FULL SPECTRUM COMPARISON.  arm 1 = lane A's gauge-fixed orbit-basis H (zn_gauge.ZNGauge).
+     arm 2 = this script's full N^L H compressed onto the orbit-uniform basis.  SAME g^2, SAME
+     plaquette set (taken FROM lane A's object, so a plaquette-set error would be shared, not hidden).
+     carrier           N   L   C  dimP(lane)  dimP(orbits)     max|dE|        E0 lane       E0 indep
+     theta             2   3   2           4             4   1.776e-15   -6.987918415   -6.987918415
+     theta_subdiv2     2   9   2           4             4   5.329e-15  -18.333270806  -18.333270806
+     ladder_2sq        2   7   2           4             4   1.776e-15  -14.494798477  -14.494798477
+     ladder_2sq        3   7   2           9             9   2.087e-14  -14.359260295  -14.359260295
+     dbl_chain9        2   9   4          16            16   1.599e-14  -19.594130855  -19.594130855
+     cube_Q3           2  12   5          32            32   2.309e-14  -25.251316223  -25.251316223
+     tri_chain12       2  12   5          32            32   3.553e-14  -25.487562097  -25.487562097
+     grid_3x3_open     2  12   4          16            16   1.243e-14  -24.994571044  -24.994571044
+
+[1b] IS THE COMPRESSION LOSSLESS?  Does [H_full, P_phys] = 0, i.e. is the physical sector
+     actually H-invariant?  If it were not, lane A's whole spectrum would be a fiction.
+     theta            ||[H_full,P]||_inf = 0.000e+00   rank P = 4 (= dim_phys 4)
+     ladder_2sq       ||[H_full,P]||_inf = 0.000e+00   rank P = 4 (= dim_phys 4)
+     dbl_chain9       ||[H_full,P]||_inf = 0.000e+00   rank P = 16 (= dim_phys 16)
+
+[1c] THE CHECK LANE A DID NOT RUN: is the lifted 21-link ground state an EIGENVECTOR of the
+     FULL 2^21 Hamiltonian with lane A's reported E0?  matvec only, no matrix formed.
+     heawood    g^2=0.5  L=21  2^L=2097152  E0=-34.626367676  gap=6.062318935  ||H_full Psi - E0 Psi||_2 = 5.314e-14  <Psi|H_full|Psi> = -34.626367676
+     heawood    g^2=1.0  L=21  2^L=2097152  E0=-43.365354988  gap=18.211441587  ||H_full Psi - E0 Psi||_2 = 5.182e-14  <Psi|H_full|Psi> = -43.365354988
+     petersen   g^2=1.0  L=15  2^L=32768  E0=-31.218656358  gap=15.645245622  ||H_full Psi - E0 Psi||_2 = 4.763e-14  <Psi|H_full|Psi> = -31.218656358
+
+[1d] ORBIT COUNT / MULTIPLICITY.  Each gauge orbit must have exactly N^(V-1) members for
+     Psi = psi(Gamma z)/N^((V-1)/2) to be normalised.  Counting them on the small carriers:
+     theta          Z_2: orbits=4  orbit sizes: min=2 max=2 expected N^(V-1)=2  -> uniform: True
+     ladder_2sq     Z_2: orbits=4  orbit sizes: min=32 max=32 expected N^(V-1)=32  -> uniform: True
+     ladder_2sq     Z_3: orbits=9  orbit sizes: min=243 max=243 expected N^(V-1)=243  -> uniform: True
+     dbl_chain9     Z_2: orbits=16  orbit sizes: min=32 max=32 expected N^(V-1)=32  -> uniform: True
+
+DONE 1.

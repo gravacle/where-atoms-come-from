@@ -1,0 +1,82 @@
+==========================================================================================================================
+W19-A REFUTER / 2  THE 21-LINK THRESHOLD IS NOT A THRESHOLD
+==========================================================================================================================
+
+[2a] LANE A's CRITERION, LANE A's CODE, NEW CARRIERS.  g^2 = 0.50 (the exhibit's coupling).
+     Every carrier below has min degree >= 3 -- lane A's stated hypothesis -- and satisfies
+     girth_through(l) = d+1, exactly the quantity lane A's own closed form F2 says is decisive.
+     carrier            V   L   C   dimP  mindeg  girth  g_thru_l   d   H(S) bits  pts  R_d  disj  verdict
+     heawood(ref)      14  21   8    256       3      6         6   5 0.994827216    4    5  True  EXHIBITED
+     petersen(ref)     10  15   6     64       3      5         5   4 0.979582461    3    4  True  MARGINAL
+     tri_chain12        8  12   5     32       3      3         6   5 0.663269043    4    5  True  EXHIBITED
+     dbl_chain9         6   9   4     16       3      2         6   5 0.610000609    4    5  True  EXHIBITED
+     tri_chain11        7  11   5     32       3      3         5   4 0.801372042    3    4  True  MARGINAL
+     mg_chain4          5   8   4     16       3      2         5   4 0.738303126    3    4  True  MARGINAL
+     mg_chain5          6   9   4     16       3      2         6   5 0.610000609    4    5  True  EXHIBITED
+     mg_chain6          7  11   5     32       3      2         7   6 0.574256916    5    6  True  EXHIBITED
+     mg_chain7          8  12   5     32       3      2         8   7 0.472436177    6    7  True  EXHIBITED
+
+     PER-FRAGMENT DETAIL for the two carriers that break the claim (rule A, l = link 0):
+       heawood(ref)   L=21  |F| =   2   6  14  18  20
+                            I/H = 1.0 1.0 1.0 1.0 2.0   cut sizes (rule C) = [2, 4, 8, 4, 2]
+       tri_chain12    L=12  |F| =   2   5   6   8  11
+                            I/H = 1.0 1.0 1.0 1.0 2.0   cut sizes (rule C) = [2, 2, 1, 2, 2]
+       dbl_chain9     L=9   |F| =   2   3   5   6   8
+                            I/H = 1.0 1.0 1.0 1.0 2.0   cut sizes (rule C) = [2, 1, 2, 1, 2]
+
+[2b] SAME TABLE AT g^2 = 1.00, the ladder's coupling, so the comparison with lane A's
+     out_01_ladder.txt summary table is like-for-like.
+     carrier            V   L   C   dimP  mindeg  girth  g_thru_l   d   H(S) bits  pts  R_d  disj  verdict
+     heawood(ref)      14  21   8    256       3      6         6   5 0.307291435    4    5  True  EXHIBITED
+     petersen(ref)     10  15   6     64       3      5         5   4 0.244651644    3    4  True  MARGINAL
+     tri_chain12        8  12   5     32       3      3         6   5 0.064094448    4    5  True  EXHIBITED (WEIGHTLESS)
+     dbl_chain9         6   9   4     16       3      2         6   5 0.067006413    4    5  True  EXHIBITED (WEIGHTLESS)
+     tri_chain11        7  11   5     32       3      3         5   4 0.087880683    3    4  True  MARGINAL (WEIGHTLESS)
+     mg_chain4          5   8   4     16       3      2         5   4 0.093069287    3    4  True  MARGINAL (WEIGHTLESS)
+     mg_chain5          6   9   4     16       3      2         6   5 0.067006413    4    5  True  EXHIBITED (WEIGHTLESS)
+     mg_chain6          7  11   5     32       3      2         7   6 0.052835224    5    6  True  EXHIBITED (WEIGHTLESS)
+     mg_chain7          8  12   5     32       3      2         8   7 0.041352842    6    7  True  EXHIBITED (WEIGHTLESS)
+
+[2c] EXHAUSTIVE SEARCH -- the search lane A declared it did not run.
+     All CONNECTED LABELLED SIMPLE graphs with min degree >= 3 on V = 5,6,7 vertices, any L.
+     (min degree 3 forces L >= ceil(3V/2); V=7 => L >= 11.  V >= 8 => L >= 12 automatically,
+      so if no V <= 7 graph reaches d = 5 then the SIMPLE floor for 4 plateau points is L = 12.)
+     V=5: 26 degree-feasible edge sets, 26 connected;  MAX d over ALL of them = 2 (first attained at L = 8);  d-histogram = {2: 26}
+     V=6: 1858 degree-feasible edge sets, 1858 connected;  MAX d over ALL of them = 3 (first attained at L = 9);  d-histogram = {2: 1278, 3: 580}
+     V=7: 236926 degree-feasible edge sets, 236926 connected;  MAX d over ALL of them = 4 (first attained at L = 11);  d-histogram = {2: 130596, 3: 105700, 4: 630}
+
+     All labelled CUBIC simple graphs on V=8 (the only V,L combination that can give L=12):
+     19355 labelled cubic graphs on 8 vertices; 19320 connected; 2520 of them reach d >= 5, i.e. 4 rule-A plateau points at L = 12.
+     girth histogram of the L=12 winners: {3: 2520}   (lane A's argument assumed girth >= 6; every
+     winner has girth 3, which its own criterion never forbids)
+
+[2d] THE CORRECTED FLOOR.  P plateau points require d = P+1 (lane A's own F2, which this lane
+     re-verified on every row above).  d = P+1 requires a shortest u-v path of length P+1 in G-l,
+     hence V >= P+2 distinct vertices; min degree 3 then forces 2L >= 3V, L >= ceil(3(P+2)/2).
+     The mg_chain family ATTAINS that bound for every d, so the bound is exact for multigraphs.
+     P (plateau pts)      d  V_min    L_min = ceil(3(P+2)/2)     attained by   lane A said
+     2                    3      4                         6  mg_chain(3) ok             -
+     3                    4      5                         8  mg_chain(4) ok 15 (petersen)
+     4                    5      6                         9  mg_chain(5) ok  21 (heawood)
+     5                    6      7                        11  mg_chain(6) ok             -
+     6                    7      8                        12  mg_chain(7) ok             -
+
+[2e] WHY LANE A's LADDER COULD NOT HAVE FOUND THIS.  Its 12 carriers, by (girth, girth_through(l)):
+     carrier                  L  mindeg  girth  girth_thru_l
+     theta_3link              3       3      2             2
+     theta_subdiv1            6       2      4             4
+     theta_subdiv2            9       2      6             6
+     torus_2x2                8       4      2             2
+     ladder_2sq               7       2      4             4
+     ladder_3sq              10       2      4             4
+     ladder_5sq              16       2      4             4
+     grid_3x3_open           12       2      4             4
+     cube_Q3                 12       3      4             4
+     torus_3x3               18       4      3             3
+     petersen                15       3      5             5
+     heawood_honeycomb7      21       3      6             6
+     The ladder contains NO carrier with (min degree >= 3, small girth, LARGE girth_through(l)).
+     That cell is exactly where the counterexamples live.  The ladder's 'heawood is the only one'
+     is a property of the ladder, not of the class.
+
+DONE 2.

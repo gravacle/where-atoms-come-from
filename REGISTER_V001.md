@@ -1784,3 +1784,95 @@ Governing only at the principal's seal"*, and no principal act is on disk.
 
 **REOPENS IF:** a sound frame is exhibited on which `T1` or amended `T2` fires · or the founding
 escape inference is shown to have been tested somewhere in the corpus after all.
+
+---
+
+## W-19 — ATTEMPT TWO, FIRST COMPUTATION: **NO CARRIER OF THIS CLASS WORKS AT ANY SIZE. THE PLATEAU IS A GAUSS IDENTITY. AND THE RESIDUE IS PHASE-INDEXED — ZERO BITS ON THE ELECTRIC RECORD, ONE FULL BIT ON THE MAGNETIC, AND THE COUPLING DECIDES WHICH.**
+
+Commissioned under R-1 as amended. **First row entered under the gates adopted 2026-08-17**: frame
+objections reported first and never as votes, and a next step named or the row is returned.
+5 agents, 0 errors. `W19_CARRIER_THRESHOLD_V001.md` sha256 `abf83e5b971e9d394abb847e090b6029a32151d5f6fe110e96350faf4b7ef7dd`; lanes `LANE_W19_*`; registrar's own
+check at `LANE_W19_REGISTRAR_VERIFY/`.
+
+### THE FRAME OBJECTIONS, FIRST AND SEPARATELY — **BOTH SUSTAINED**
+
+**The question named a minimum without naming the class it minimises over**, and the class does all
+the work: degree-2 allowed gives 9 · min degree 3 with multi-edges 9 · simple 12 · girth >= 4 15 ·
+girth >= 6 21 · nested-from-both-endpoints unreachable — **every one a correct answer to the question
+as written.** And *"report a THRESHOLD, not an impression"* — **the registrar's own instruction** —
+rewarded a number and penalised the finding that the number is not the object.
+
+**THE MEASUREMENT THAT SETTLES IT.** Hold carrier, state, coupling, algebra, fragment count and
+`delta` fixed; move **only the partition** into disjoint fragments:
+
+```
+heawood (L=21)   R_delta on the chosen BFS-cut partition : 5 of 5
+                 over 200 random equal-size disjoint partitions : mean 0.400, max 2, ZERO in 127
+```
+
+**`R_delta` as computed is a property of the partition, and the partition was chosen — correctly and
+knowingly — to be the one the Gauss law guarantees.**
+
+### THE NUMBER, DELIVERED AND MARKED — AND LANE A's PROOF IS FALSE
+
+`L = 12` simple (`tri_chain12`, V=8, cubic, girth 3), `L = 9` multigraph. **Lane A claimed 21
+(Heawood) and marked it PROVED**; the proof conflates *girth through `l` >= 6* with *global girth
+>= 5*, and cycles avoiding `l` are unconstrained. Both counterexamples were run **through lane A's
+own code at lane A's own coupling.** Exhaustive: no simple graph on `V <= 7` with min degree 3
+reaches `d = 5`; `V >= 8` forces `L >= 12`; **2520 of 19355 labelled cubic graphs on 8 vertices
+attain it.** General floor `L_min = ceil(3(P+2)/2)`.
+
+### **BUT UNDER A CRITERION THAT CAN FAIL, NO CARRIER OF THIS CLASS WORKS — AT ANY `L`**
+
+Pin the criterion: **P1** gauge-invariant system algebra · **P2** fragments pairwise disjoint ·
+**P3** `|F| <= |E|/2` · **P4** four points · **P5** *the plateau must be able to fail.*
+**The obstruction is structural, not computational, and two halves exhaust the class:**
+
+**(1) WHERE THE GAUSS LAW CARRIES THE PLATEAU, P5 FAILS IDENTICALLY. REGISTRAR-VERIFIED:**
+if `F` contains a `u`-`v` cut of `G - l`, then `Z_l · prod_cut Z = I` on the physical sector —
+**`0.000e+00`** — so `I(S:F) = H(S)` **exactly, for every state.** Measured on three independent
+Haar physical states sharing nothing but the constraint: `I/H(S) = 1.000000` on all three.
+The ruling's own arms: ground state at `g^2 = 0.50`, ground state at `g^2 = 3.00` **where
+`H_elec(S) = 0.001283` — an EMPTY record** — and two Haar states, **all giving `1.000000 x5`.**
+**"Could not have failed" voids a control, and this was being read as evidence.**
+
+**(2) WHERE P5 CAN BE SATISFIED, THE PLATEAU HAS NO GAUGE CONTENT.** On `d = 1` carriers a plateau
+is carried by the state and does fail — `R_delta = 5` for a constructed electric GHZ, **`0` for the
+ground state at every coupling and for Haar.** And what it certifies is **a classical repetition code
+in the X basis, whose curves are identical on `L` bare qubits with no Gauss law and no plaquettes.**
+**Zero variables moved with respect to gauge invariance.**
+
+### **THE FINDING: THE BOUNDARY-ALGEBRA DEPENDENCE IS REAL AND IT IS PHASE-INDEXED**
+
+One object moves — the algebra assigned to the system link. `EXT` = full matrix algebra in the
+extended Hilbert space; gauge-invariant = `alg{X_l}`, the only non-trivial gauge-invariant
+subalgebra of a single link.
+
+| record | `EXT/H(S)` | gauge-invariant`/H` | **difference** |
+|---|---|---|---|
+| **ELECTRIC**, non-enclosing `F` | `1.000000000` | `1.000000000` | **`0.000000000` bits, exactly, on every fragment** |
+| **MAGNETIC** (the exact `g^2 -> 0` ground state) | `1.000000000` | **`0.000000000`** | **`1.000000000` bits. Full swing.** |
+
+**Small `g^2` is where the ground state is magnetic and the algebra disagreement is one full bit.
+Large `g^2` is where it is electric and the disagreement is exactly zero.** So *which boundary
+algebra* is **not a free convention — it is undetermined precisely in the phase the dynamics selects
+at small coupling**, and Gauss-forced in the other. **This is W-04's residue, located, with a
+Hamiltonian and a coupling underneath it for the first time — and it is the only thing in this round
+that required attempt two's genuine dynamics to say.**
+Consequence recorded: the algebra choice also moves the plateau count, so the answers now on the
+table are **8, 9, 12, 15, 21 and unreachable — all correct under different unstated conventions.**
+
+### NEXT STEP — NAMED, AS THE STANDING RULE REQUIRES
+
+**ONE RUN. `Z_2` GAUGE + STATIC CHARGE ON `tri_chain12`, MAGNETIC SYSTEM REGION, CRITERION PINNED IN
+WRITING BEFORE ANY STATE IS BUILT.** `S` = the triangle `{1,2,3}` — the smallest region on a simple
+min-degree-3 carrier whose gauge-invariant algebra is **non-abelian and carries a Wilson loop**.
+Nine environment links, four disjoint fragments **declared before the state is computed**.
+**The isolated variable is the charge sector and nothing else**: `G_v = +1` everywhere versus
+`G_v = -1` at two vertices, arms byte-identical apart from the sign pattern — **and the diff printed**.
+Physical dimension `2^13 = 8192` with matter against `2^22` on Heawood, a **512x saving**, so there
+is no ceiling. **And the question is INVERTED: do not ask where the plateau appears — ask where it
+can fail.**
+
+**REOPENS IF:** a carrier in this class is exhibited satisfying P1-P5 · or the phase-indexing of the
+algebra disagreement fails to reproduce on a second carrier.

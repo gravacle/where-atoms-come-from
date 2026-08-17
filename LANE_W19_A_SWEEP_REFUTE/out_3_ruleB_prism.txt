@@ -1,0 +1,64 @@
+========================================================================================================================
+W19-A REFUTER / 3  RULE B IS A CROSSING COUNTER, NOT A PLATEAU DETECTOR
+========================================================================================================================
+
+[3a] ARM DIFF FIRST.  heawood vs prism7 -- everything held fixed except d.
+     heawood    V=14 L=21 C=8 dim_phys=256 min_degree=3 girth=6 d_max=5  plaquette lengths=[6, 6, 6, 6, 6, 6, 6, 6]
+     prism7     V=14 L=21 C=8 dim_phys=256 min_degree=3 girth=4 d_max=3  plaquette lengths=[4, 4, 4, 4, 4, 4, 4, 7]
+     -> V, L, C, dim_phys, min degree ALL EQUAL.  The single moved variable is d (5 vs 3).
+
+[3b] RULE B CURVES, 64 samples/size, Z_2, g^2 = 1.0 (lane A's rule-B coupling).
+     heawood      L=21  d=5  H(S)=0.307291  ruleB in-band sizes=5   in-band total variation=0.1649  max step=0.0675  longest run with step<0.01 = 1   (44.4s)
+       mean I/H(S) by |F|: 0.179 0.305 0.479 0.602 0.737 0.798 0.890 0.929 0.969 0.996 1.026 1.094 1.131 1.243 1.270 1.392 1.528 1.654 1.821 2.000
+     prism7       L=21  d=3  H(S)=0.146395  ruleB in-band sizes=2   in-band total variation=0.0179  max step=0.0179  longest run with step<0.01 = 2   (45.3s)
+       mean I/H(S) by |F|: 0.109 0.211 0.372 0.490 0.571 0.709 0.784 0.889 0.868 0.996 0.978 1.165 1.163 1.350 1.445 1.482 1.594 1.715 1.891 2.000
+     tri_chain12  L=12  d=5  H(S)=0.064094  ruleB in-band sizes=4   in-band total variation=0.1383  max step=0.0628  longest run with step<0.01 = 1   (0.1s)
+       mean I/H(S) by |F|: 0.285 0.563 0.749 0.924 0.986 1.006 1.062 1.207 1.437 1.715 2.000
+     dbl_chain9   L=9   d=5  H(S)=0.067006  ruleB in-band sizes=3   in-band total variation=0.1364  max step=0.0682  longest run with step<0.01 = 1   (0.0s)
+       mean I/H(S) by |F|: 0.399 0.733 0.932 1.000 1.068 1.267 1.601 2.000
+     petersen     L=15  d=4  H(S)=0.244652  ruleB in-band sizes=2   in-band total variation=0.0663  max step=0.0663  longest run with step<0.01 = 1   (0.3s)
+       mean I/H(S) by |F|: 0.180 0.378 0.528 0.669 0.829 0.930 0.996 1.100 1.198 1.335 1.484 1.639 1.820 2.000
+     cube_Q3      L=12  d=3  H(S)=0.201192  ruleB in-band sizes=1   in-band total variation=0.0000  max step=0.0000  longest run with step<0.01 = 1   (0.1s)
+       mean I/H(S) by |F|: 0.159 0.355 0.540 0.770 0.849 1.077 1.210 1.521 1.645 1.841 2.000
+
+     READ 1 (FLATNESS) -- SUSTAINED.  A plateau means the curve does not move.  Lane A's rule-A
+     plateau has total variation 0.000000000 across its 4 points.  The rule-B window lane A calls
+     a plateau moves by 0.1649 across its 5 in-band sizes, with a largest single step of
+     0.0675, and its longest genuinely flat run (step < 0.01) is 1 size(s).
+     Rule B produces a MONOTONE CROSSING of the band, not a plateau -- the same shape the sealed
+     T1 null was rejected for.  Lane A's headline 'flat to 1e-9 across 10%-90% of the environment'
+     is a rule-A statement ONLY; rule B does not reproduce flatness on any carrier tested.
+
+     READ 2 (MATCHED CONTROL) -- THIS TEST WENT AGAINST THE OBJECTION AND IS REPORTED AS SUCH.
+     prism7 (V,L,C,dim_phys,min degree all identical to heawood; d=3 not 5) scores
+     2 in-band sizes against heawood's 5.  So rule B is NOT purely an environment-size
+     counter: at matched L it does order the two carriers the way d does.  The objection that
+     rule B is a pure artefact of |E| is REFUTED by this arm and I do not score it.
+
+     READ 3 (WHAT RULE B ACTUALLY TRACKS).  Its count moves with BOTH d and L:
+       d=5 fixed, L=9   -> in-band 3
+       d=5 fixed, L=12  -> in-band 4
+       d=5 fixed, L=21  -> in-band 5
+       d=3 fixed, L=12  -> in-band 1
+       d=3 fixed, L=21  -> in-band 2
+     A bar of '>= 4 in-band sizes' is therefore not a carrier-independent criterion: it can be
+     met by raising L at fixed d.  Under rule B the corrected floor for 4 points is tri_chain12
+     at L = 12 (in-band 4), not heawood at L = 21; dbl_chain9 at L = 9 scores 3, because an
+     8-link environment has too few sizes to resolve four of them.  RULE A FLOOR = 9, RULE B FLOOR = 12.
+     Both are below 21 and the disagreement between them is itself a rule dependence.
+
+[3c] THE HALF-ENVIRONMENT CONVENTION.  In quantum Darwinism the plateau is the region of SMALL
+     fragments; the rise to 2H(S) is the antisymmetric partner at large f.  Lane A counts
+     |F| = 18 of 20 (90% of the environment) as a plateau point.  Restricting rule A to
+     |F| <= |E|/2, the standard convention, gives:
+     carrier          L   d  |E|              rule-A sizes  pts (all)   pts (|F|<=|E|/2)
+     heawood         21   5   20        [2, 6, 14, 18, 20]          4                  2
+     petersen        15   4   14            [2, 6, 12, 14]          3                  2
+     tri_chain12     12   5   11          [2, 5, 6, 8, 11]          4                  2
+     dbl_chain9       9   5    8           [2, 3, 5, 6, 8]          4                  2
+     cube_Q3         12   3   11                [2, 6, 11]          2                  1
+     Under that convention NO carrier tested here reaches 4 points, heawood included (it reaches 2).
+     Lane A flagged rule A' as an unresolved rule dependence; this is a SECOND, more standard one,
+     and it is not in lane A's self_flags.
+
+DONE 3.

@@ -1,0 +1,166 @@
+======================================================================================================================
+W-19 RULING -- INDEPENDENT VERIFICATION.  Z_2 pure gauge, exact, numpy only, no lane code imported.
+======================================================================================================================
+
+[0] INSTRUMENT VALIDATION -- reproduce the SEALED LANE_T1_NEW_PROGRAM null by a third route.
+    T1: theta graph, 3 links, G = X0 X1 X2, plaquettes W01 = Z0 Z1 and W12 = Z1 Z2,
+    H = -0.7 sum_l X_l - (W01 + W12), ground state in the physical sector.
+    dim_phys = 4   gauss residual on the lifted state = 0.000e+00
+    I(0:1) = 0.690763    I(0:2) = 0.384496    I(0:{1,2}) = 1.075259
+    SEALED T1 :  0.690763            0.384496            1.075259
+
+[1] CARRIERS.  Built here from their definitions; d = dist_{G-l}(tail,head) for l = link 0.
+    carrier          V   L   C  dim_ph  mindeg  girth    d   plaquette weights
+    theta_3          2   3   2       4       3      2    1   [2, 2]
+    theta_6          2   6   5      32       6      2    1   [2, 2, 2, 2, 2]
+    theta_8          2   8   7     128       8      2    1   [2, 2, 2, 2, 2, 2, 2]
+    dbl_chain9       6   9   4      16       3      2    5   [2, 2, 2, 6]
+    tri_chain12      8  12   5      32       3      3    5   [3, 3, 3, 3, 6]
+    petersen        10  15   6      64       3      5    4   [5, 5, 5, 5, 5, 5]
+    heawood         14  21   8     256       3      6    5   [6, 6, 6, 6, 6, 6, 6, 6]
+
+[2] IS THE GAUSS-LAW PROJECTION INERT ON THE GROUND STATE?  (lane B refuter's Perron-Frobenius)
+    Full 2^L Hamiltonian, NO projection, vs the physical-sector Hamiltonian.  Tested here on
+    lane A's own min-degree-3 carriers, which the refuter did not test.
+    carrier           g2     E0(full 2^L)     E0(physical) |<free|proj>|   min<G_v>
+    theta_6         0.30    -16.736748479    -16.736748479  1.000000000   1.000000
+    theta_6         1.00     -7.403357919     -7.403357919  1.000000000   1.000000
+    theta_6         3.00    -18.046403184    -18.046403184  1.000000000   1.000000
+    dbl_chain9      0.30    -13.536216054    -13.536216054  1.000000000   1.000000
+    dbl_chain9      1.00     -9.797065428     -9.797065428  1.000000000   1.000000
+    dbl_chain9      3.00    -27.030845703    -27.030845703  1.000000000   1.000000
+    tri_chain12     0.30    -16.844783328    -16.844783328  1.000000000   1.000000
+    tri_chain12     1.00    -12.743781048    -12.743781048  1.000000000   1.000000
+    tri_chain12     3.00    -36.027775092    -36.027775092  1.000000000   1.000000
+    CONTROL THAT CAN FAIL: flip the sign of the electric term (H' = -(1/g2)sum W + g2 sum X).
+    dbl_chain9     L= 9  min<G_v> of the free ground state = -1.000000000   physical? False
+    tri_chain12    L=12  min<G_v> of the free ground state = -1.000000000   physical? False
+
+[3] THE THREE ALGEBRA CHANNELS ON GROUND STATES.  g2 = 0.50 (lane A's exhibit coupling).
+    Rule-A nested fragments.  ONE VARIABLE MOVES between EXT / CHI / CL: the system algebra.
+  -- theta_6      L= 6  E0=-10.321272643  gap=4.086221  gauss residual=0.00e+00
+  theta_6 ground g2=0.50 d=1  H_EXT(S)=0.997960051  H_elec(S)=0.997960051
+      |F|  :          5
+      EXT  :   2.000000
+      CHI  :   1.000000
+      CL   :   1.000000
+      plateau points (delta=0.10):  EXT=0  CHI=1  CL=1
+  -- theta_8      L= 8  E0=-14.440193244  gap=4.116448  gauss residual=0.00e+00
+  theta_8 ground g2=0.50 d=1  H_EXT(S)=0.998999761  H_elec(S)=0.998999761
+      |F|  :          7
+      EXT  :   2.000000
+      CHI  :   1.000000
+      CL   :   1.000000
+      plateau points (delta=0.10):  EXT=0  CHI=1  CL=1
+  -- dbl_chain9   L= 9  E0=-9.032171243  gap=4.056989  gauss residual=0.00e+00
+  dbl_chain9 ground g2=0.50 d=5  H_EXT(S)=0.610000609  H_elec(S)=0.610000609
+      |F|  :          2          3          5          6          8
+      EXT  :   1.000000   1.000000   1.000000   1.000000   2.000000
+      CHI  :   1.000000   1.000000   1.000000   1.000000   1.000000
+      CL   :   1.000000   1.000000   1.000000   1.000000   1.000000
+      plateau points (delta=0.10):  EXT=4  CHI=5  CL=5
+  -- tri_chain12  L=12  E0=-11.097097710  gap=3.610745  gauss residual=0.00e+00
+  tri_chain12 ground g2=0.50 d=5  H_EXT(S)=0.663269043  H_elec(S)=0.663269043
+      |F|  :          3          5          6          9         11
+      EXT  :   1.000000   1.000000   1.000000   1.000000   2.000000
+      CHI  :   1.000000   1.000000   1.000000   1.000000   1.000000
+      CL   :   1.000000   1.000000   1.000000   1.000000   1.000000
+      plateau points (delta=0.10):  EXT=4  CHI=5  CL=5
+  -- petersen     L=15  E0=-12.972204668  gap=3.114825  gauss residual=0.00e+00
+  petersen ground g2=0.50 d=4  H_EXT(S)=0.979582461  H_elec(S)=0.979582461
+      |F|  :          2          8         12         14
+      EXT  :   1.000000   1.000000   1.000000   2.000000
+      CHI  :   1.000000   1.000000   1.000000   1.000000
+      CL   :   1.000000   1.000000   1.000000   1.000000
+      plateau points (delta=0.10):  EXT=3  CHI=4  CL=4
+  -- heawood      L=21  E0=-17.313183838  gap=3.031159  gauss residual=0.00e+00
+  heawood ground g2=0.50 d=5  H_EXT(S)=0.994827216  H_elec(S)=0.994827216
+      |F|  :          2          6         14         18         20
+      EXT  :   1.000000   1.000000   1.000000   1.000000   2.000000
+      CHI  :   1.000000   1.000000   1.000000   1.000000   1.000000
+      CL   :   1.000000   1.000000   1.000000   1.000000   1.000000
+      plateau points (delta=0.10):  EXT=4  CHI=5  CL=5
+
+[4] THE SAME CARRIERS DEEP IN THE MAGNETIC PHASE, g2 = 0.10.
+  theta_6 ground g2=0.10 d=1  H_EXT(S)=0.999997114  H_elec(S)=0.999997114
+      |F|  :          5
+      EXT  :   2.000000
+      CHI  :   1.000000
+      CL   :   1.000000
+      plateau points (delta=0.10):  EXT=0  CHI=1  CL=1
+  theta_8 ground g2=0.10 d=1  H_EXT(S)=0.999998528  H_elec(S)=0.999998528
+      |F|  :          7
+      EXT  :   2.000000
+      CHI  :   1.000000
+      CL   :   1.000000
+      plateau points (delta=0.10):  EXT=0  CHI=1  CL=1
+  dbl_chain9 ground g2=0.10 d=5  H_EXT(S)=0.999338097  H_elec(S)=0.999338097
+      |F|  :          2          3          5          6          8
+      EXT  :   1.000000   1.000000   1.000000   1.000000   2.000000
+      CHI  :   1.000000   1.000000   1.000000   1.000000   1.000000
+      CL   :   1.000000   1.000000   1.000000   1.000000   1.000000
+      plateau points (delta=0.10):  EXT=4  CHI=5  CL=5
+  tri_chain12 ground g2=0.10 d=5  H_EXT(S)=0.999699700  H_elec(S)=0.999699700
+      |F|  :          3          5          6          9         11
+      EXT  :   1.000000   1.000000   1.000000   1.000000   2.000000
+      CHI  :   1.000000   1.000000   1.000000   1.000000   1.000000
+      CL   :   1.000000   1.000000   1.000000   1.000000   1.000000
+      plateau points (delta=0.10):  EXT=4  CHI=5  CL=5
+    and the EXACT g2->0 state on theta_8: the magnetic GHZ (|0..0>+|1..1>)/sqrt(2).
+      gauss residual = 0.000e+00
+  theta_8 magnetic GHZ   d=1  H_EXT(S)=1.000000000  H_elec(S)=1.000000000
+      |F|  :          7
+      EXT  :   2.000000
+      CHI  :   1.000000
+      CL   :   1.000000
+      plateau points (delta=0.10):  EXT=0  CHI=1  CL=1
+
+[5] DOES THE CRITERION DISCRIMINATE?  Same carrier, same cut, same fragments, same estimator.
+    ONLY THE STATE MOVES: ground state vs three HAAR-RANDOM PHYSICAL states (complex Ginibre).
+  tri_chain12 HAAR seed=11 d=5  H_EXT(S)=0.997064307  H_elec(S)=0.997064307
+      |F|  :          3          5          6          9         11
+      EXT  :   1.000000   1.000000   1.000000   1.000000   2.000000
+      CHI  :   1.000000   1.000000   1.000000   1.000000   1.000000
+      CL   :   1.000000   1.000000   1.000000   1.000000   1.000000
+      plateau points (delta=0.10):  EXT=4  CHI=5  CL=5
+  tri_chain12 HAAR seed=22 d=5  H_EXT(S)=0.947928640  H_elec(S)=0.947928640
+      |F|  :          3          5          6          9         11
+      EXT  :   1.000000   1.000000   1.000000   1.000000   2.000000
+      CHI  :   1.000000   1.000000   1.000000   1.000000   1.000000
+      CL   :   1.000000   1.000000   1.000000   1.000000   1.000000
+      plateau points (delta=0.10):  EXT=4  CHI=5  CL=5
+  tri_chain12 HAAR seed=33 d=5  H_EXT(S)=0.811703716  H_elec(S)=0.811703716
+      |F|  :          3          5          6          9         11
+      EXT  :   1.000000   1.000000   1.000000   1.000000   2.000000
+      CHI  :   1.000000   1.000000   1.000000   1.000000   1.000000
+      CL   :   1.000000   1.000000   1.000000   1.000000   1.000000
+      plateau points (delta=0.10):  EXT=4  CHI=5  CL=5
+  theta_8 HAAR seed=11   d=1  H_EXT(S)=0.996264607  H_elec(S)=0.996264607
+      |F|  :          7
+      EXT  :   2.000000
+      CHI  :   1.000000
+      CL   :   1.000000
+      plateau points (delta=0.10):  EXT=0  CHI=1  CL=1
+  theta_8 HAAR seed=22   d=1  H_EXT(S)=0.998021445  H_elec(S)=0.998021445
+      |F|  :          7
+      EXT  :   2.000000
+      CHI  :   1.000000
+      CL   :   1.000000
+      plateau points (delta=0.10):  EXT=0  CHI=1  CL=1
+  theta_8 HAAR seed=33   d=1  H_EXT(S)=0.990193724  H_elec(S)=0.990193724
+      |F|  :          7
+      EXT  :   2.000000
+      CHI  :   1.000000
+      CL   :   1.000000
+      plateau points (delta=0.10):  EXT=0  CHI=1  CL=1
+    and a SCRAMBLED-but-physical control on theta_8 that lane B used: Bell pair on links 0,1
+    lifted into the physical sector by gauge averaging.
+      gauss residual = 0.000e+00
+  theta_8 Bell(0,1) gauge-averaged d=1  H_EXT(S)=-0.000000000  H_elec(S)=0.000000000
+      |F|  :          7
+      EXT  :   0.000000
+      CHI  :   0.000000
+      CL   :   0.000000
+      plateau points (delta=0.10):  EXT=0  CHI=0  CL=0
+
+elapsed 52.9 s

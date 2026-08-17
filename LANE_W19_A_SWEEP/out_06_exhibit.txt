@@ -1,0 +1,35 @@
+====================================================================================================
+W19-A THRESHOLD EXHIBIT
+====================================================================================================
+carrier      : heawood_honeycomb7 (Heawood graph = honeycomb torus, 7 hexagonal plaquettes)
+               V=14 vertices, L=21 links, cyclomatic C=8, dim_phys = 2^8 = 256
+               all degrees 3, girth 6, edge-transitive; plaquette set = 8 hexagons (min cycle basis)
+Hamiltonian  : H = -(1/g^2) sum_p (W_p+W_p^dag) - g^2 sum_e (X_e+X_e^dag),  g^2 = 0.5
+               E0 = -34.626367676   gap = 6.062318935   (nondegenerate ground state)
+system S     : link 0 = (0, 1);  d = dist_(G-l)(u,v) = 5
+CUT          : S = link 0  |  E = the remaining 20 links
+H(S)         : 0.994827216 bits   (ceiling log2 2 = 1 bit; deconfined phase)
+
+PLATEAU (rule A, nested fragments growing by BFS distance from tail(l) inside G-l):
+    k   |F|     I(S:F) bits        I/H(S)  encloses cycle through l ?
+    1     2     0.994827216   1.000000000  False
+    2     6     0.994827216   1.000000000  False
+    3    14     0.994827216   1.000000000  False
+    4    18     0.994827216   1.000000000  False
+    5    20     1.989654431   2.000000000  True
+  -> PLATEAU: 4 fragment sizes (|F| = 2, 6, 14, 18 of 20 environment links,
+     i.e. 10% to 90% of the environment) at I = 0.994827216 bits = 1.000000000 * H(S).
+
+R_delta (rule C, the 5 pairwise DISJOINT level cuts; each obeys X_l = X(C_i)^dag exactly):
+  C_1  |C|= 2  links=[13, 14]   I(S:C)=0.994827216   I/H(S)=1.000000000
+  C_2  |C|= 4  links=[4, 5, 12, 20]   I(S:C)=0.994827216   I/H(S)=1.000000000
+  C_3  |C|= 8  links=[3, 6, 7, 8, 11, 17, 18, 19]   I(S:C)=0.994827216   I/H(S)=1.000000000
+  C_4  |C|= 4  links=[2, 9, 10, 16]   I(S:C)=0.994827216   I/H(S)=1.000000000
+  C_5  |C|= 2  links=[1, 15]   I(S:C)=0.994827216   I/H(S)=1.000000000
+  -> R_delta = 5  (pairwise disjoint: True; they use 20 of the 20 environment links)
+
+NEGATIVE CONTROL in the same run: theta graph, 3 links (the carrier T1 failed).
+  H(S)=0.973417249 bits, d=1, only fragment |F|=2: I/H(S)=2.000000000  -> 0 plateau points, R_delta=1.
+
+ARMS DIFF (theta vs heawood): V 2->14, L 3->21, C 2->8, dim_phys 4->256, girth 2->6, d 1->5.
+The SINGLE variable that moves the verdict is d; steps 01/03/04 hold the rest fixed to show it.

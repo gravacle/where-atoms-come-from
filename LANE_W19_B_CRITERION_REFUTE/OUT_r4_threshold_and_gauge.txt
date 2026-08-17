@@ -1,0 +1,249 @@
+
+========================================================================================================
+r4  THE THRESHOLD, AND HOW MUCH GAUGE THEORY IS IN IT
+========================================================================================================
+
+========================================================================================================
+PART 1  --  IS THE GAUSS LAW DOING ANY WORK ON THE GROUND STATES THIS LANE USES?
+========================================================================================================
+
+  THEOREM.  Let H = -(1/g^2) sum_p W_p - g^2 sum_l X_l with g^2 > 0 on any of these carriers.
+  In the Z (link-configuration) basis, H has a diagonal part and OFF-DIAGONAL ENTRIES ALL EQUAL
+  TO -g^2 < 0 (the plaquette term is diagonal for Z_2).  So cI - H has non-negative entries and is
+  irreducible, and by Perron-Frobenius the ground state of H is UNIQUE with STRICTLY POSITIVE
+  entries.  Every Gauss operator G_v is a permutation of basis states and commutes with H, so the
+  ground state is a G_v eigenvector; a strictly positive vector cannot have eigenvalue -1 under a
+  permutation.  Hence the unconstrained ground state is ALREADY PHYSICAL, for every v, every
+  carrier, every g^2 > 0.  THE PROJECTION IN lib_b.ground_state IS INERT.
+  MEASURED: |<psi_free | psi_projected>| and the Gauss expectations of the UNPROJECTED state.
+  carrier      g^2  |<free|proj>|   min <G_v> (free)  ||psi_free - P psi_free||
+--------------------------------------------------------------------------------------------------------
+  theta_5     0.30 1.000000000000     1.000000000000                  2.360e-10
+  theta_5     1.00 1.000000000000     1.000000000000                  2.182e-15
+  theta_5     3.00 1.000000000000     1.000000000000                  1.353e-15
+  theta_6     0.30 1.000000000000     1.000000000000                  3.408e-10
+  theta_6     1.00 1.000000000000     1.000000000000                  1.275e-15
+  theta_6     3.00 1.000000000000     1.000000000000                  7.915e-16
+  theta_7     0.30 1.000000000000     1.000000000000                  5.991e-09
+  theta_7     1.00 1.000000000000     1.000000000000                  9.191e-15
+  theta_7     3.00 1.000000000000     1.000000000000                  9.094e-16
+  theta_8     0.30 1.000000000000     1.000000000000                  1.129e-07
+  theta_8     1.00 1.000000000000     1.000000000000                  1.001e-14
+  theta_8     3.00 1.000000000000     1.000000000000                  8.696e-16
+  fan_3       0.30 1.000000000000     1.000000000000                  9.832e-13
+  fan_3       1.00 1.000000000000     1.000000000000                  9.799e-16
+  fan_3       3.00 1.000000000000     1.000000000000                  6.967e-16
+  fan_4       0.30 1.000000000000     1.000000000000                  1.233e-13
+  fan_4       1.00 1.000000000000     1.000000000000                  1.416e-15
+  fan_4       3.00 1.000000000000     1.000000000000                  9.741e-16
+  wheel_4     0.30 1.000000000000     1.000000000000                  4.370e-13
+  wheel_4     1.00 1.000000000000     1.000000000000                  1.818e-15
+  wheel_4     3.00 1.000000000000     1.000000000000                  8.303e-16
+
+  CONTROL THAT CAN FAIL, AND DOES.  Flip the SIGN of the electric term: H' = -(1/g^2) sum_p W_p
+  + g^2 sum_l X_l.  Now the off-diagonals are POSITIVE, Perron-Frobenius applies to the TOP of the
+  spectrum instead, and on an ODD number of links the ground state lands in the G = -1 sector.
+  carrier     L parity   g^2    <G> of free ground state   physical?
+  theta_5          odd  1.00             -1.000000000000       False
+  theta_7          odd  1.00             -1.000000000000       False
+  theta_6         even  1.00              1.000000000000        True
+  theta_8         even  1.00              1.000000000000        True
+
+  CONSEQUENCE.  Under READING 1 the estimator is lib_b.mi_ext, which takes (psi, L, A, B) and
+  never touches car['gauss'] or car['plaq'].  The state it is fed is, by the theorem above, the
+  state the SAME Hamiltonian would have without any Gauss law.  So b1 in its entirety, b3 PART B's
+  C1 column, and b4 PARTS 1 and 2 are computations in which the gauge structure enters NOWHERE --
+  neither the state nor the estimator.  They are redundancy measurements on the ground state of a
+  transverse-field Ising model on a star (theta) or on fan/wheel graphs.  That does not make the
+  numbers wrong.  It makes 'SIX LINKS is the smallest GAUGE CARRIER' an overstatement: six is the
+  smallest carrier of ANY kind, and the demonstration has ZERO VARIABLES MOVED with respect to
+  gauge invariance.  Shown directly:
+    L    theta_L, GHZ = g^2->0 GS    L bare qubits, GHZ, no Gauss law  identical?
+    3                 1.000 2.000                         1.000 2.000        True
+    4           1.000 1.000 2.000                   1.000 1.000 2.000        True
+    5     1.000 1.000 1.000 2.000             1.000 1.000 1.000 2.000        True
+    61.000 1.000 1.000 1.000 2.000       1.000 1.000 1.000 1.000 2.000        True
+    71.000 1.000 1.000 1.000 1.000 2.000 1.000 1.000 1.000 1.000 1.000 2.000        True
+    81.000 1.000 1.000 1.000 1.000 1.000 2.0001.000 1.000 1.000 1.000 1.000 1.000 2.000        True
+
+========================================================================================================
+PART 2  --  WHAT CARRIES THE READING-1 PLATEAU?  THE LANE DECLINED TO ADJUDICATE; THIS DOES.
+========================================================================================================
+
+  The lane's last self-flag: 'either the extended-Hilbert-space plateau is a real record of a
+  variable no gauge-invariant measurement can read ... or the null means the magnetic record is
+  simply not localised in one link ... no number here can settle it.'
+  A number can.  A_S under C1 is the full 2x2 matrix algebra on link 0.  Split it into subalgebras
+  and ask which one carries the bit.  Same state, same carrier, same cut, same code; only the
+  SYSTEM ALGEBRA and the matching FRAGMENT ALGEBRA move, and both are printed.
+  A_S             A_F (link 1)    gauge-inv?     S_A(S)   S_A(F)   I(S:F)
+--------------------------------------------------------------------------------------------------------
+  alg{X_0}        alg{X_1}        True         1.000000 1.000000 0.000000
+  alg{Z_0}        alg{Z_1}        False        1.000000 1.000000 1.000000
+  alg{Y_0}        alg{Y_1}        False        1.000000 1.000000 0.000000
+  B(H_0) = C1     B(H_1) = C1     False        1.000000 1.000000 1.000000
+
+  ADJUDICATED.  The whole of C1's one bit is the Z_0-Z_1 correlation.  alg{Z_0} is NOT gauge
+  invariant -- Z_0 anticommutes with G = prod_l X_l -- and the gauge-invariant part alg{X_0}
+  carries EXACTLY ZERO.  So the reading-1 plateau on theta_L is the redundancy of an operator that
+  no measurement in this theory can perform.  B-7's two readings are NOT symmetric: one of them
+  is measuring a quantity that is not an observable.  That is a disposition the lane could have
+  reached with three lines of its own instrument and did not.
+  THE HONEST RESIDUE, WHICH IS THE LANE'S REAL POINT AND SURVIVES: the gauge-invariant null is
+  about the REGION, not about the record.  b3's own PART C shows it -- enlarge S to a plaquette
+  and the gauge-invariant algebra sees a flat I = 1.000000.
+
+========================================================================================================
+PART 3  --  IS THE THRESHOLD TIGHT?  B-12's PURITY CAVEAT, TESTED.
+========================================================================================================
+
+  B-12: 'plateau points = L - |S| - 1 <= L - 2 for a pure global state on ANY graph, so four points
+  force L >= 6'.  Recorded caveat: 'a mixed global state (no final jump) could reach four points at
+  L = 5 -- untested here'.  Tested here, on both readings.
+
+  3a. READING 1 at L = 5.  rho = 1/2(|0^5><0^5| + |1^5><1^5|), the classical GHZ.  ONLY PURITY
+      MOVES: same carrier, same cut, same estimator, same delta.
+      gauge invariant?  ||G rho G - rho|| = 0.000e+00
+      IN THE PHYSICAL SECTOR?  Tr(rho P_+) = 0.500000   <-- NOT 1
+      H(S) = 1.000000
+      |F| = 1   I(S:F) mean 1.000000  min 1.000000  max 1.000000   (4 fragments)
+      |F| = 2   I(S:F) mean 1.000000  min 1.000000  max 1.000000   (6 fragments)
+      |F| = 3   I(S:F) mean 1.000000  min 1.000000  max 1.000000   (4 fragments)
+      |F| = 4   I(S:F) mean 1.000000  min 1.000000  max 1.000000   (1 fragments)
+      => FOUR flat points at I = H(S) = 1 on FIVE links.  B-12's caveat is real.
+      BUT I MUST SAY WHAT THIS STATE IS: it is gauge-invariant as an operator (G rho G = rho) and
+      it is an EQUAL MIXTURE OF THE TWO GAUSS SECTORS, Tr(rho P_+) = 0.5, so it is not a state of
+      the physical Hilbert space.  For READING 1 the correction is therefore CONDITIONAL: the
+      bound is 5 for gauge-invariant density matrices on H_ext and I have NOT exhibited a
+      physical-sector state achieving 5.  A physical-sector thermal state is tested next.
+
+  3b. READING 1 at L = 5, PHYSICAL-SECTOR GIBBS STATE -- the dynamical version of the same test.
+      rho_beta = P exp(-beta H) P / Z at g^2 = 0.30.  Same carrier, same cut; beta moves.
+         beta      H(S)   I |F|=1   I |F|=2   I |F|=3   I |F|=4   4 pts within 10%?
+          0.5  0.999501  0.780236  0.918838  0.981608  1.990339               False
+          1.0  0.999624  0.980074  0.996935  1.005306  1.999235               False
+          2.0  0.999628  0.993781  0.999623  1.005443  1.999256               False
+          4.0  0.999628  0.993812  0.999628  1.005444  1.999256               False
+          8.0  0.999628  0.993812  0.999628  1.005444  1.999256               False
+         20.0  0.999628  0.993812  0.999628  1.005444  1.999256               False
+      => no beta gives four points inside 10% on theta_5: at high beta the state is the
+      pure GHZ and the last point jumps to 2H(S); at low beta the plateau height itself decays.
+      SO: READING 1's SIX-LINK FLOOR STANDS FOR PHYSICAL-SECTOR STATES OF THIS THEORY, and falls
+      to five only if one admits gauge-invariant mixtures across Gauss sectors.  That is a
+      correction to the word 'tight', not to the number.
+
+  3c. READING 2's THRESHOLD IS TEN LINKS, NOT TWELVE -- AND THE TARGET'S OWN SEALED OUTPUT
+      ALREADY SHOWS IT.  b4 PART 3 announces TWELVE links after computing five values of
+      I(W_01 : F_1..F_m) that are ALL 1.000000, then reporting `cum[:-1]` under the label
+      'plateau points before the final rise: 4'.  THERE IS NO FINAL RISE.  The purity jump
+      I -> 2H(S) is a theorem about a FULL FACTOR and its commutant; with the pointer restricted
+      to the one-bit algebra alg{W_01} and the fragments restricted to C3_FULL, neither is a full
+      factor and no jump occurs.  b4 imported reading 1's discard rule into a setting where it
+      does not hold, and threw away a good point.
+      The target's OWN b3 PART C2 line, on theta_10, reads
+          BRD_W ... H(W_01) = 1.00000   I(W_01 : F) = 1.00000 1.00000 1.00000 1.00000  Rdelta = 4
+      -- four flat points at TEN links.  b4 PART 3 and b3 PART C2 are inconsistent, and PART C2
+      is the correct one.  Reproduced below as ARM 1, with a mixed-state ARM 2 to show the answer
+      is not a purity artefact in either direction.  ONLY PURITY MOVES between the two arms.
+  ARM 1  PURE  (|psi_a>+|psi_b>)/sqrt2 -- the target's BRD_W
+     H(W_01) = 1.000000   I(W_01 : F_1..F_m) for m = 1,2,3,4 = ['1.000000', '1.000000', '1.000000', '1.000000']
+     per-fragment = ['1.000000', '1.000000', '1.000000', '1.000000']   R_delta = 4 of 4   plateau points within 10% = 4
+  ARM 2  MIXED 1/2(|psi_a><psi_a| + |psi_b><psi_b|), both branches physical
+     H(W_01) = 1.000000   I(W_01 : F_1..F_m) for m = 1,2,3,4 = ['1.000000', '1.000000', '1.000000', '1.000000']
+     per-fragment = ['1.000000', '1.000000', '1.000000', '1.000000']   R_delta = 4 of 4   plateau points within 10% = 4
+
+  => FOUR plateau points at I = H(W_01) = 1.000000, R_delta = 4 of 4, on TEN links, in the
+  gauge-invariant algebra with the declared pointer -- for the PURE state as well as the mixed one.
+  READING 2's THRESHOLD IS AT MOST 10, NOT 12, AND THE CORRECTION HAS NOTHING TO DO WITH PURITY.
+  *** WARNING TO THE READER: 10 IS STILL WRONG.  PART 4 BELOW TAKES IT TO 6 AND SHOWS THAT THIS
+  *** SECTION REPEATS HALF OF THE TARGET'S OWN LOGICAL ERROR.  THE WRONG STEP IS LEFT IN PLACE.
+
+  AND 10 WOULD BE TIGHT, IF the lane's own reason for the fragment cost held: four plateau points
+  need four fragments; by theorem B-8 every fragment must contain a cycle to have any magnetic
+  content, so each costs >= girth links, and so must the system region -- 2 + 4*2 = 10 on girth 2.
+  THAT REASON IS FALSE AND PART 4 BREAKS IT.  A fragment does not need magnetic content of its own
+  to be correlated with a holonomy.  This paragraph is the target's error reproduced, and it is
+  left standing so the correction in PART 4 has something to correct.
+  THE NEGATIVE SIDE OF TIGHTNESS -- theta_8, three plaquette fragments, everything else identical:
+     theta_8, S = {0,1}, pointer W_01, 3 plaquette fragments:  H(W_01) = 1.000000   I = ['1.000000', '1.000000', '1.000000']
+     -> only 3 points on the fragment-count axis.  A four-point plateau is not available at L = 8.
+
+  CONTROL, SAME CARRIER / CUT / ALGEBRA / delta, only the state moved -- a Haar physical state and
+  a classical mixture of two Haar physical states, on theta_10:
+     Haar physical seed 24680 (pure)              H = 0.998774  I = ['0.011517', '0.109106', '0.613481', '0.938025']  R_delta = 0 of 4
+     mixture of Haar seeds 111 and 222 (mixed)    H = 0.999999  I = ['0.004286', '0.043745', '0.355870', '0.906077']  R_delta = 0 of 4
+     -- neither purity nor mixedness manufactures a plateau: both Haar arms are flat-free.
+     What the BRD_W arms exhibit at L = 10 is a record, not an artefact.
+
+========================================================================================================
+PART 4  --  READING 2's THRESHOLD IS SIX LINKS.  THE DERIVATION OF 12 HAS A LOGICAL ERROR,
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+            AND SO DOES MY OWN 10 OF PART 3c.  I REPORT BOTH.
+--------------------------------------------------------------------------------------------------------
+
+  b4 PART 3's derivation: 'by the PART A theorem the system region must contain a cycle, and EACH
+  FRAGMENT MUST CONTAIN A CYCLE FOR ITS ALGEBRA TO HAVE ANY MAGNETIC CONTENT, so on a girth-2
+  graph every region costs 2 links'.  The second clause does not follow from theorem B-8.
+  B-8 says where a magnetic OPERATOR can be LOCALISED.  A record is not a localisation: a fragment
+  needs no magnetic content of its own to be CORRELATED with a holonomy.  Z_0 Z_1 X_l is a
+  perfectly good gauge-invariant operator, so a state can pin the ELECTRIC operator X_l of a single
+  link to the HOLONOMY W_01 of a distant plaquette.  A purely electric single-link fragment then
+  records a magnetic bit.  My PART 3c inherited half of the same error and said 10.
+
+  CONSTRUCTION.  Take the stabiliser group generated by the independent Gauss operators together
+  with  S_l = W_S X_l  for each fragment link l, where W_S is the system region's Wilson loop.
+  Every generator is gauge invariant, they mutually commute, and W_S itself is NOT in the group, so
+  the stabilised space splits into W_S = +1 and W_S = -1 halves.  Their equal superposition is a
+  PHYSICAL state with H(W_S) = 1 bit in which every fragment's electric operator reads it.
+  ONE VARIABLE MOVES between the two rows of each block: the state (broadcast versus Haar), with
+  carrier, cut, pointer, fragment algebras (C3_FULL) and delta held fixed.
+
+  theta_6  L = 6  (girth 2).  S = [0, 1], cyclomatic(S) = 1, pointer W_S = +ZZIIII
+     fragments = [[2], [3], [4], [5]], each a SINGLE link with a purely electric algebra alg{X_l}
+     ||psi - P_phys psi|| = 0.00e+00   (physical, no projection applied)
+     BROADCAST (constructed)  H(W_S) = 1.000000
+        per-fragment I(W_S:F_k) = ['1.000000', '1.000000', '1.000000', '1.000000']   R_delta = 4 of 4
+        cumulative, JOIN reading  = ['1.000000', '1.000000', '1.000000', '1.000000']
+        cumulative, UNION reading = ['1.000000', '1.000000', '1.000000', '1.000000']
+     HAAR physical control    H(W_S) = 0.999752
+        per-fragment I(W_S:F_k) = ['0.018922', '0.002118', '0.011172', '0.055193']   R_delta = 0 of 4
+        cumulative, JOIN reading  = ['0.018922', '0.143285', '0.193739', '0.315405']
+        cumulative, UNION reading = ['0.018922', '0.211832', '0.628168', '0.910364']
+
+  fan_3  L = 7  (girth 3, interior vertices).  S = [0, 1, 2], cyclomatic(S) = 1, pointer W_S = +ZZZIIII
+     fragments = [[3], [4], [5], [6]], each a SINGLE link with a purely electric algebra alg{X_l}
+     ||psi - P_phys psi|| = 1.57e-16   (physical, no projection applied)
+     BROADCAST (constructed)  H(W_S) = 1.000000
+        per-fragment I(W_S:F_k) = ['1.000000', '1.000000', '1.000000', '1.000000']   R_delta = 4 of 4
+        cumulative, JOIN reading  = ['1.000000', '1.000000', '1.000000', '1.000000']
+        cumulative, UNION reading = ['1.000000', '1.000000', '1.000000', '1.000000']
+     HAAR physical control    H(W_S) = 0.998179
+        per-fragment I(W_S:F_k) = ['0.001239', '0.001239', '0.002986', '0.002986']   R_delta = 0 of 4
+        cumulative, JOIN reading  = ['0.001239', '0.001239', '0.076930', '0.076930']
+        cumulative, UNION reading = ['0.001239', '0.001239', '0.076930', '0.245363']
+
+  wheel_4  L = 8  (girth 3, interior vertices).  S = [0, 1, 4], cyclomatic(S) = 1, pointer W_S = +ZZIIZIII
+     fragments = [[2], [3], [5], [6]], each a SINGLE link with a purely electric algebra alg{X_l}
+     NO SUCH STATE: 4 independent Gauss operators + 4 fragment stabilisers = 8 = L, so the stabilised space is
+     one-dimensional and W_S is deterministic.  The construction needs
+     L >= (independent Gauss operators) + (fragments) + 1.  RECORDED AS A NULL.
+
+  RESULT.  FOUR plateau points at I = H(W_S) = 1.000000 bit, R_delta = 4 of 4, plateau defect 0,
+  in the FULL GAUGE-INVARIANT ALGEBRA C3_FULL with a declared Wilson-loop pointer, on a PHYSICAL
+  state, at SIX LINKS on a girth-2 carrier and SEVEN on a girth-3 carrier.  The JOIN and UNION
+  readings agree here, so B-11's ambiguity does not rescue the larger numbers.
+  The Haar control on the identical carrier, cut, pointer and algebra returns R_delta = 0 and no
+  flat curve, so the test had a way to fail.
+
+  THE THRESHOLD TABLE, CORRECTED:
+     the target says   reading 1 = 6 links,   reading 2 = 12 links (18 on girth 3)
+     PART 3c said      reading 1 = 6 links,   reading 2 = 10 links   <-- MY OWN INTERMEDIATE ERROR
+     this part says    reading 1 = 6 links,   reading 2 =  6 links (7 on girth 3)
+  AND 6 IS TIGHT under BOTH readings for the same reason: four plateau points need four disjoint
+  fragments, each at least one link, plus a system region that must contain a cycle -- at least
+  girth links -- so L >= girth + 4.  theta_6 attains it.
+  WHAT THIS COSTS THE TARGET'S HEADLINE: 'the two readings differ by a factor of two in link count'
+  is REFUTED.  They agree, at six.  The thing that genuinely differs between the readings is the
+  VERDICT ON A GIVEN STATE (B-7), not the carrier size -- and B-7 survives this file untouched.

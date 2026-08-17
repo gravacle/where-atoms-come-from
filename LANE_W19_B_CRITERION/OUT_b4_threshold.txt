@@ -1,0 +1,148 @@
+========================================================================================================
+b4  THE THRESHOLD
+========================================================================================================
+
+========================================================================================================
+PART 0  --  REPRODUCTION OF THE SEALED T1 NULL (an external check on this lane's code)
+========================================================================================================
+  LANE_T1_NEW_PROGRAM reports, on the three-link theta graph with
+     H = -0.7*(X1+X2+X3) - (W12 + W23),  W12 = Z1 Z2,  W23 = Z2 Z3, physical sector:
+     I(1:2) = 0.690763   I(1:3) = 0.384496   I(1:{2,3}) = 1.075259
+     reproduced I(1:2)       = 0.690763
+     reproduced I(1:3)       = 0.384496
+     reproduced I(1:{2,3})   = 1.075259
+  MATCH.  The instrument in lib_b.py reproduces the sealed prior lane to 6 decimals.
+
+========================================================================================================
+PART 1  --  READING 1: SWEEP OVER CARRIER SIZE.  WHEN DOES THE AXIS HAVE FOUR POINTS?
+========================================================================================================
+  carrier       L  |E|  plateau pts  I(S:F) for |F| = 1,2,...,|E|                         Rdelta   verdict
+--------------------------------------------------------------------------------------------------------
+  theta_3       3    2            1  1.0000 2.0000                                             2   too few
+  theta_4       4    3            2  1.0000 1.0000 2.0000                                      3   too few
+  theta_5       5    4            3  1.0000 1.0000 1.0000 2.0000                               4   too few
+  theta_6       6    5            4  1.0000 1.0000 1.0000 1.0000 2.0000                        5   PLATEAU
+  theta_7       7    6            5  1.0000 1.0000 1.0000 1.0000 1.0000 2.0000                 6   PLATEAU
+  theta_8       8    7            6  1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 2.0000          7   PLATEAU
+  theta_9       9    8            7  1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 2.0000      8   PLATEAU
+  theta_10     10    9            8  1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 2.0000      9   PLATEAU
+
+  theta_3 is the sealed T1 failure: one point on the axis, R_delta <= 2.  The axis reaches four
+  points first at L = 6, and since the number of plateau points is L - |S| - 1 <= L - 2 on ANY
+  graph, SIX LINKS IS A HARD FLOOR AND theta_6 ATTAINS IT.
+
+  theta_6 in full, with EVERY fragment of each size (not an average):
+    GHZ = g^2 -> 0 ground state        H(S) = 1.000000
+       |F|=1  mean  1.000000   min  1.000000   max  1.000000   (5 fragments)
+       |F|=2  mean  1.000000   min  1.000000   max  1.000000   (10 fragments)
+       |F|=3  mean  1.000000   min  1.000000   max  1.000000   (10 fragments)
+       |F|=4  mean  1.000000   min  1.000000   max  1.000000   (5 fragments)
+       |F|=5  mean  2.000000   min  2.000000   max  2.000000   (1 fragments)
+    ground state at g^2 = 0.30         H(S) = 0.999763
+       |F|=1  mean  0.993955   min  0.993955   max  0.993955   (5 fragments)
+       |F|=2  mean  0.999716   min  0.999716   max  0.999716   (10 fragments)
+       |F|=3  mean  0.999811   min  0.999811   max  0.999811   (10 fragments)
+       |F|=4  mean  1.005571   min  1.005571   max  1.005571   (5 fragments)
+       |F|=5  mean  1.999527   min  1.999527   max  1.999527   (1 fragments)
+    ground state at g^2 = 0.50         H(S) = 0.997960
+       |F|=1  mean  0.954738   min  0.954738   max  0.954738   (5 fragments)
+       |F|=2  mean  0.995485   min  0.995485   max  0.995485   (10 fragments)
+       |F|=3  mean  1.000435   min  1.000435   max  1.000435   (10 fragments)
+       |F|=4  mean  1.041182   min  1.041182   max  1.041182   (5 fragments)
+       |F|=5  mean  1.995920   min  1.995920   max  1.995920   (1 fragments)
+    Haar-random physical (control)     H(S) = 0.999214
+       |F|=1  mean  0.108979   min  0.054197   max  0.290524   (5 fragments)
+       |F|=2  mean  0.533173   min  0.302231   max  0.925048   (10 fragments)
+       |F|=3  mean  1.465254   min  1.073379   max  1.696196   (10 fragments)
+       |F|=4  mean  1.889448   min  1.707903   max  1.944231   (5 fragments)
+       |F|=5  mean  1.998427   min  1.998427   max  1.998427   (1 fragments)
+
+========================================================================================================
+PART 2  --  THE COUPLING IS PART OF THE THRESHOLD.  g^2 SWEEP AT FIXED CARRIER theta_8.
+========================================================================================================
+  The plateau is not a property of the carrier alone: the SAME carrier has it at small g^2
+  and loses it at large g^2.  g^2 is the slot where a dimensionless constant lives.
+      g^2      H(S)   I(|F|=1)   I(|F|=4)    defect  Rdelta  plateau
+--------------------------------------------------------------------------------------------------------
+     0.10  0.999999   0.999926   0.999999  0.000072       7      YES
+     0.20  0.999976   0.998824   0.999976  0.001153       7      YES
+     0.30  0.999879   0.994074   0.999880  0.005806       7      YES
+     0.40  0.999610   0.981516   0.999623  0.018101       7      YES
+     0.50  0.999000   0.956065   0.999153  0.042978       7      YES
+     0.60  0.997708   0.912870   0.998764  0.085033       7      YES
+     0.70  0.994834   0.848312   0.999568  0.147283       0       no
+     0.80  0.987575   0.759996   1.002263  0.230442       0       no
+     1.00  0.921617   0.524607   0.975589  0.430776       0       no
+     1.50  0.429511   0.151845   0.481945  0.646469       0       no
+     2.00  0.182285   0.058895   0.206275  0.676909       0       no
+     3.00  0.048547   0.015047   0.055132  0.690049       0       no
+  The plateau survives to roughly g^2 ~ 0.5 and is gone by g^2 = 0.7 on this carrier.
+
+========================================================================================================
+PART 3  --  READING 2: THE GAUGE-INVARIANT THRESHOLD.  theta_12, PLAQUETTE FRAGMENTS.
+========================================================================================================
+  System = the plaquette {0,1}; pointer observable = its Wilson loop W_01 = Z_0 Z_1.
+  Fragments = the five disjoint plaquettes {2,3} {4,5} {6,7} {8,9} {10,11}, each of which has its
+  own Wilson loop and therefore its own magnetic content.  Algebra choice = C3_FULL throughout.
+  STATE: the Wilson-loop GHZ, constructed (NOT a ground state -- L = 12 is past the dense-eigh
+  ceiling of this lane, and that limitation is stated rather than papered over).
+  H(W_01) = 1.000000 bits
+     fragments 1..1  (2 links)   I(W_01 : F) = 1.000000
+     fragments 1..2  (4 links)   I(W_01 : F) = 1.000000
+     fragments 1..3  (6 links)   I(W_01 : F) = 1.000000
+     fragments 1..4  (8 links)   I(W_01 : F) = 1.000000
+     fragments 1..5  (10 links)   I(W_01 : F) = 1.000000
+  per-fragment I(W_01 : F_k) = ['1.000000', '1.000000', '1.000000', '1.000000', '1.000000']
+  plateau points before the final rise: 4  values ['1.000000', '1.000000', '1.000000', '1.000000']
+  R_delta (pointer-restricted, delta = 0.1) = 5 of 5
+  plateau defect = 0.000e+00
+
+  FOUR plateau points at exactly H(W_01), five disjoint fragments each saturating it, on a
+  gauge-invariant algebra with a declared pointer observable.  TWELVE LINKS.
+
+  CONTROL, so this is not a criterion that could not have failed: the same computation on a
+  Haar-random physical state of the SAME carrier, SAME cut, SAME algebra.
+     H(W_01) = 0.999556   I(W_01 : F_1..F_m) = ['0.003869', '0.025635', '0.177383', '0.821050', '0.973443']
+     per-fragment = ['0.003869', '0.003609', '0.003977', '0.002648', '0.001360']   R_delta = 0 of 5
+     plateau defect = 0.996129   -> NO PLATEAU.
+
+========================================================================================================
+THE THRESHOLD, STATED
+========================================================================================================
+  READING 1 (extended Hilbert space, C1):  6 LINKS.  theta_6, S = one link, E = 5 links,
+     four plateau points at I = 1.000000 = H(S), R_delta = 5.  Tight: plateau points = L - 2.
+  READING 2 (gauge-invariant algebra C3_FULL + declared pointer):  12 LINKS on a girth-2 graph.
+     theta_12, S = plaquette {0,1}, pointer W_01, five plaquette fragments, four plateau points at
+     I = H(W_01) = 1.000000, R_delta = 5.  On a girth-3 carrier the same count costs 18 links.
+  THE TWO READINGS DIFFER BY A FACTOR OF TWO IN LINK COUNT AND BY THE WHOLE VERDICT ON theta_6:
+     under C1 theta_6 has a plateau; under C3_FULL, with S a single link, it has I = 0 identically.
+
+========================================================================================================
+PART 4  --  A FOURTH CHOICE, FOUND BY BEING FORCED INTO IT: JOIN versus UNION
+========================================================================================================
+  PART 3 above had to decide what algebra a COMPOSITE fragment carries.  Two readings:
+     JOIN   A_{F1} v A_{F2}  -- what the two observers hold between them;
+     UNION  A_{F1 u F2}      -- every gauge-invariant operator supported on their combined links.
+  On a gauge carrier these are NOT equal, because a Wilson loop can run through both fragments and
+  belong to neither.  On theta_12 the union algebra of m plaquette-fragments has cyclomatic number
+  2m - 1 while the join has only m independent loops, so the gap grows with m.  This is the
+  non-factorisation of the physical algebra in its most elementary form, and it means I(S:F) is not
+  determined by the fragment's LINK CONTENT alone.
+   state = Wilson-loop GHZ
+     m=1 (2 links)  JOIN 2^1xM_2^1  S=2.000000 I=1.000000   |   UNION 2^1xM_2^1  S=2.000000 I=1.000000   |   dI = 0.000000
+     m=2 (4 links)  JOIN 2^2xM_2^2  S=3.000000 I=1.000000   |   UNION 2^1xM_2^3  S=2.000000 I=1.000000   |   dI = 0.000000
+     m=3 (6 links)  JOIN 2^3xM_2^3  S=4.000000 I=1.000000   |   UNION 2^1xM_2^5  S=2.000000 I=1.000000   |   dI = 0.000000
+   state = Haar-random physical, seed 24680
+     m=1 (2 links)  JOIN 2^1xM_2^1  S=1.997662 I=0.003869   |   UNION 2^1xM_2^1  S=1.997662 I=0.003869   |   dI = 0.000000
+     m=2 (4 links)  JOIN 2^2xM_2^2  S=3.969956 I=0.025635   |   UNION 2^1xM_2^3  S=3.948762 I=0.047085   |   dI = 0.021449
+     m=3 (6 links)  JOIN 2^3xM_2^3  S=5.822326 I=0.177383   |   UNION 2^1xM_2^5  S=5.274058 I=0.614049   |   dI = 0.436666
+   THE ENTROPIES DIFFER FROM m = 2 ONWARD ON BOTH STATES (3.000000 against 2.000000 on the
+   broadcast state).  THE MUTUAL INFORMATION DIFFERS ONLY ON THE GENERIC STATE -- dI = 0.000000 on
+   the Wilson-loop GHZ, dI = 0.436666 at m = 3 on the Haar state.  THAT IS THE DANGEROUS SHAPE:
+   the ambiguity is INVISIBLE on exactly the constructed broadcast states one would use to
+   demonstrate a plateau, and appears on the states a real dynamics produces.  A sweep validated
+   only on GHZ-like states would never see it.
+   NEXT STEP THIS FORCES: the union reading is the one a field theorist would write down and it is
+   the one that is computationally out of reach here (k = 9 hyperbolic pairs at m = 5, past this
+   lane's kmax = 6).  Whichever reading the next program adopts must be adopted EXPLICITLY, stated
+   in the conventions, and carried through the whole sweep.

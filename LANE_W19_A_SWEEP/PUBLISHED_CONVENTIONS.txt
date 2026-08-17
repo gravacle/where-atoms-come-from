@@ -1,0 +1,168 @@
+LANE W19-A -- THE SWEEP: SMALLEST CARRIER WITH A REDUNDANCY PLATEAU
+Register head W-17.  Program: WHERE ATOMS COME FROM, attempt two.
+Question: WHAT IS THE SMALLEST GAUGE CARRIER ON WHICH A REDUNDANCY PLATEAU CAN ACTUALLY BE EXHIBITED?
+
+================================================================================================
+0. CONVENTIONS (all fixed before measuring; source of truth is zn_gauge.py)
+================================================================================================
+Z_N pure gauge theory on a finite connected graph G=(V,L). Link e = (tail,head), multi-edges allowed.
+Each link carries Z_N: Z|j>=w^j|j>, X|j>=|j+1 mod N>, w=exp(2 pi i/N).
+Gauss operator G_v = prod_e X_e^{d[e,v]}, d[e,v]=delta(v,head_e)-delta(v,tail_e).
+PHYSICAL = +1 eigenspace of every G_v.  dim_phys = N^C, C = L-V+1 = cyclomatic number.
+Wilson loop W_p = prod_e Z_e^{p_e} for p in the cycle space.
+    H = -(1/g^2) sum_p (W_p + W_p^dag) - g^2 sum_e (X_e + X_e^dag)
+g^2 is the dimensionless slot attempt one had nowhere to put. Plaquette set P = a MINIMUM WEIGHT
+CYCLE BASIS (Horton greedy over GF(2)); on a planar lattice this is the faces, on the theta graph it
+is the two 2-cycles T1 used, on a cubic cage it is the girth cycles.
+
+METHOD. The Hamiltonian is built DIRECTLY on the physical sector by gauge-fixing to a spanning tree
+(orbit label m = Gamma z mod N, Gamma = the C x L matrix of fundamental cycles). Then exactly:
+    X_e translates m by Gamma[:,e];  W_p is diagonal with phase w^{a_p . m};
+    Psi(z) = psi(Gamma z mod N) / N^((V-1)/2).
+No penalty term, no projection; every state is physical by construction. (T1 used a 1e6 penalty.)
+
+CEILINGS AND WHERE THEY BIND. Physical-sector diagonalisation is CHEAP (largest run: torus_3x3,
+dim_phys=1024). The BINDING ceiling is the FULL N^L amplitude vector, needed only for the reduced
+density matrices: declared at N^L <= 4.5e6, i.e. Z_2 up to L=22, Z_3 up to L=13. Hit at:
+Moebius-Kantor (L=24, girth 6), Pappus (L=27), McGee/(3,7)-cage (L=36), Balaban/(3,10)-cage (L=105).
+
+PLATEAU CRITERION, FIXED BEFORE ANY MEASUREMENT (delta = 0.10):
+  H_S = S(rho_l) in bits.  WEIGHT FLOOR: the plateau is WEIGHTLESS unless H_S >= 0.10*log2 N.
+  plateau point = a fragment size with | I(S:F)/H_S - 1 | <= delta.
+  EXHIBITED (strict) iff >= 4 points; MARGINAL iff exactly 3.  (The brief: "three or four points".)
+  R_delta = number of pairwise DISJOINT fragments with I(S:F)/H_S >= 1-delta.
+FRAGMENT RULES, all three reported because the verdict is rule-dependent:
+  A  nested by BFS distance from ONE endpoint of l, inside G-l.
+  A' nested balls around l (grow from BOTH endpoints).  Harsher.
+  B  uniformly random fragments of each size, averaged.  The textbook partial-information plot.
+  C  the d level cuts (used only for R_delta).
+  D  cherry-picked (everything except star(head(l))). REPORTED WEIGHTLESS BY CONSTRUCTION.
+
+INSTRUMENT VALIDATION (out_00_validate.txt). The sealed T1 numbers were reproduced EXACTLY by this
+different method: I(1:2)=0.690763, I(1:3)=0.384496, I(1:{2,3})=1.075259, physical dim 4. Gauss-law
+residual 0.000e+00 on every carrier tested (Z_2 and Z_3). <Z_l>=0 and X-basis off-diagonal 5.1e-18.
+
+================================================================================================
+1. THE THRESHOLD
+================================================================================================
+CARRIER: the HEAWOOD GRAPH = the hexagonal (honeycomb) tiling of the TORUS with 7 hexagons.
+   14 vertices, 21 LINKS, all degrees 3, girth 6, edge-transitive, cyclomatic C=8, dim_phys=2^8=256.
+   It is the (3,6)-cage.  Plaquette set = 8 hexagons.
+CUT: system S = one link (link 0); environment E = the other 20 links.
+EXHIBIT at g^2 = 0.50 (deconfined phase, so the plateau is not sitting on the weight floor),
+Z_2, ground state, gap 6.062318935, nondegenerate:
+   H(S) = 0.994827216 bits
+   |F| =  2  I(S:F) = 0.994827216 bits   I/H(S) = 1.000000000
+   |F| =  6  I(S:F) = 0.994827216 bits   I/H(S) = 1.000000000
+   |F| = 14  I(S:F) = 0.994827216 bits   I/H(S) = 1.000000000
+   |F| = 18  I(S:F) = 0.994827216 bits   I/H(S) = 1.000000000
+   |F| = 20  I(S:F) = 1.989654431 bits   I/H(S) = 2.000000000   (full environment: purification)
+   -> FOUR plateau points spanning 10% to 90% of the environment.
+   R_delta = 5, from five PAIRWISE DISJOINT cuts of sizes 2,4,8,4,2 (using all 20 environment links).
+NEGATIVE CONTROL in the same run: theta graph (T1's carrier), d=1, 0 plateau points, R_delta=1.
+CROSS-CHECK under the UNBIASED rule B (out_05_ruledep.txt, 48 samples/size): heawood is the ONLY
+carrier in the 12-carrier ladder reaching >= 4 plateau points. Petersen 2, cube 1, torus_3x3 1.
+
+================================================================================================
+2. WHY THIS IS A THRESHOLD AND NOT A SEARCH RESULT -- THE THEOREM
+================================================================================================
+Let |psi> be ANY state of the physical sector (not necessarily a ground state). S = link l = (u,v),
+F a set of links with l not in F.  Write d = dist_{G-l}(u,v) = girth_through(l) - 1.
+  (i)   rho_l is diagonal in the ELECTRIC (X) basis.  [Gauge-averaging kills every Weyl term whose
+        Z-part is not a cycle vector; no cycle fits inside one link.]  So H(S) = H(electric flux).
+  (ii)  For A a vertex set, prod_{v in A} G_v = X(boundary of A).  If l crosses that boundary and
+        F contains the rest of it, then X_l = X(F-part)^{-1} EXACTLY, at every coupling, for every N.
+        [verified numerically: <X_0 X(C_i)> = +1.000000000000 on every cut, step 00 (3b).]
+  (iii) If moreover S u F contains NO cycle through l, then every surviving Weyl term of rho_{S u F}
+        has zero Z-exponent on l, so rho_{S u F} is exactly a classical-quantum state
+        sum_x p_x |x><x|_l tensor sigma_x, and by (ii) the sigma_x have orthogonal supports.
+        Hence I(S:F) = Holevo chi = H(S) EXACTLY.
+  (iv)  The maximum number of edge-disjoint u-v cuts in G-l is d (BFS level sets attain it; any u-v
+        path meets each cut once, so d is also the ceiling). The nested rule-A fragments F_1..F_{d-1}
+        contain no u-v path and F_d does.
+  THEREFORE:  rule-A plateau points = d - 1 = girth_through(l) - 2,   R_delta = d = girth_through(l) - 1.
+  Confirmed on all 12 carriers of the ladder with zero deviations (out_01_ladder.txt).
+COUNTING FLOOR. If all degrees >= 3 and d >= 5 (needed for 4 plateau points): BFS from u in G-l gives
+levels of size >= 1,2,4 (two level-1 vertices cannot share a level-2 vertex without making a cycle of
+length <= 4); the same from v; the six level sets are pairwise disjoint because d = 5. So V >= 14 and
+L >= 3*14/2 = 21. The Heawood graph attains 14 and 21, so 21 LINKS IS EXACT.
+Same counting for d >= 4 (3 points) gives V >= 10, L >= 15, attained by the Petersen graph.
+
+================================================================================================
+3. DOES THE PLATEAU DEPEND ON g^2 ?  (the charter question)
+================================================================================================
+Swept g^2 = 0.20 .. 5.00 on heawood and on cube_Q3 (out_02_coupling.txt, out_05_ruledep.txt 5d).
+  SHAPE: I/H(S) on every non-enclosing fragment is 1.000000000 at EVERY coupling.
+         max |I/H(S) - 1| over the whole sweep = 1.93e-09.  THE PLATEAU DOES NOT DEPEND ON g^2.
+  HEIGHT: H(S) = 0.999980 bits at g^2=0.20  ->  0.001324 bits at g^2=5.00.
+         gap minimum (the finite-carrier confinement crossover) at g^2 = 0.55, gap 5.6648.
+         <W_p> falls below <X_e> at g^2 = 0.60.  H(S) crosses 0.5 bits at g^2 = 0.90 and the 0.10
+         weight floor between g^2 = 1.20 and 1.50.
+  BREAK: once F does enclose a cycle through l, I/H(S) = 2.000000000 for the rule-A fragment but
+         1.9980 -> 1.1566 as g^2 goes 0.20 -> 3.00 for a general enclosing fragment of size 14.
+READ: records in this theory switch OFF across the confinement crossover, but what switches off is
+the CONTENT (H(S)), not the SHAPE. In the confined phase the electric flux is pinned, so there is
+nothing to record; the redundancy structure is still there, recording nothing.
+CAUTION, both directions: a plateau of height 0.0013 bits still passes the normalised criterion.
+Any use of R_delta must carry the height, or it will certify empty records.
+
+================================================================================================
+4. WHAT COULD NOT HAVE FAILED -- THE WEIGHTLESS PART, STATED PLAINLY
+================================================================================================
+The plateau's LOWER side is FORCED by the Gauss law: I(S:F) >= H(S) whenever F contains a cut through
+l, for every state and every coupling. The plateau's FLATNESS is forced by (iii). Neither is a
+measurement of dynamics.
+DECISIVE TEST (out_03_controls.txt, block C2): the identical plateau, 1.000000000 on all four
+fragments, is produced by ground states at g^2 = 0.3/1.0/3.0, by the 7th excited state, by the
+HIGHEST state of H, and by three HAAR-RANDOM physical states with no Hamiltonian involved at all.
+    -> THE PLATEAU IS CARRIED BY THE GAUSS CONSTRAINT, NOT BY THE DYNAMICS.
+As a control for "does this carrier form records", the plateau is WEIGHTLESS. As a statement about
+gauge theory it is real: the environment's copies of a link's electric flux ARE the Gauss surfaces
+enclosing it, and R_delta counts how many disjoint Gauss surfaces fit between the link's two ends.
+The control is nevertheless LIVE, not vacuous: block C1 holds the carrier, state, coupling and
+FRAGMENT SIZE fixed (|F|=14) and moves only the fragment's shape; arm A (no enclosed cycle) gives
+I/H(S)=1.000000000, arm B (enclosed cycle) gives 1.213848345. Arms diff in 10 of 14 links.
+
+================================================================================================
+5. CONFOUNDS OF RECORD (not quietly fixed)
+================================================================================================
+CF-1  SUBDIVISION.  Inserting degree-2 vertices leaves C, hence dim_phys = N^C, UNCHANGED, yet raises
+      d without limit. theta (L=3, dim_phys=4, d=1): 0 points, FAIL. theta_subdiv2 (L=9, dim_phys=4,
+      d=5): 4 points, R_delta=5, EXHIBITED, and at g^2=0.30 with H(S)=0.967386 bits, so the weight
+      floor does NOT cure it. theta_subdiv3 (L=12, dim_phys=4, d=7): 6 points, R_delta=7.
+      CONSEQUENCE: R_delta IS NOT AN INVARIANT OF THE GAUGE THEORY. It is a graph distance. A chain
+      of degree-2 vertices is a repetition code and the criterion cannot tell it from a record.
+      The 21-link threshold is therefore CONDITIONAL ON min degree >= 3. Without that condition the
+      answer is 9 links and means nothing.  Rule B softens but does not remove this: theta_subdiv2
+      scores 3 (MARGINAL) under the unbiased rule.
+CF-2  RULE DEPENDENCE.  Rule A gives heawood 4 points, rule B gives 4-5, rule A' (balls from both
+      endpoints) gives 2. Under rule A' the plateau length is about floor((d-1)/2), so 4 points would
+      need girth >= 10; the smallest min-degree-3 girth-10 carrier is the (3,10)-cage, 70 vertices /
+      105 links -- 2^105, far past any exact method. THAT ROUTE IS CLOSED BY RULE CHOICE, and which
+      rule is "the" rule was not settled by anything in the brief.
+CF-3  RULE B SAMPLING NOISE at the +/-1 point level (48 samples/size; step 04a with an independent
+      draw gave heawood 5 where step 05 gave 4). Only the ORDER of the counts is load-bearing.
+CF-4  SYSTEM-SIZE.  Enlarging S beyond one link makes things WORSE, not better (block 4d): two
+      adjacent links 1 point, two disjoint links 0 points, three links 1 point, versus 2 for one link
+      under the same growth rule. One link is the best case for this criterion, not a limitation.
+CF-5  TOPOLOGICAL NEAR-DEGENERACY was watched for and did not occur in the swept range: the smallest
+      gap seen on heawood is 5.66 at g^2=0.55; the ground state is nondegenerate everywhere reported.
+CF-6  PLAQUETTE-SET CHOICE. The minimum weight cycle basis is canonical but not unique. On the theta
+      graph the choice matters for H (W13 = W12*W23), which is why the T1 reproduction hard-codes
+      T1's two cycles rather than taking the MCB.
+CF-7  Z_3 was only reachable up to L=13, so no Z_3 run sits at or above the threshold. The N-control
+      (block C3) is therefore only run on FAILING carriers; it shows d, plateau length and R_delta are
+      identical for Z_2 and Z_3 on the same graph and that N moves only the ceiling on H(S).
+
+================================================================================================
+6. FILES
+================================================================================================
+zn_gauge.py            the instrument (physical-sector construction, entropies, fragment rules)
+carriers.py            the 12-carrier ladder
+w19a_00_validate.py    T1 reproduction, Gauss-law check, exact-structure checks   -> out_00_validate.txt
+w19a_01_ladder.py      the ladder at g^2=1, rules A and C                         -> out_01_ladder.txt
+w19a_02_coupling.py    g^2 sweep, machine-precision flatness                      -> out_02_coupling.txt
+w19a_03_controls.py    C1 enclosure, C2 dynamics, C3 group, C4 subdivision, C5 rule -> out_03_controls.txt
+w19a_04_threshold.py   rule B across the ladder, counting floor, |S| probe        -> out_04_threshold.txt
+w19a_05_ruledep.py     rule A', rule B full ladder, failure mode, crossover       -> out_05_ruledep.txt
+w19a_06_exhibit.py     the threshold exhibit in full                              -> out_06_exhibit.txt

@@ -1,0 +1,77 @@
+========================================================================================================
+b2  SBS versus R_delta
+========================================================================================================
+carrier theta_9  L=9  indep Gauss = [511]  dim H_phys = 256
+S = [0]   fragments = [[1, 2], [3, 4], [5, 6]]   unobserved U = [7, 8]   delta = 0.1
+
+========================================================================================================
+ARM                                                         H(S)  Rdelta     D_coh    D_prod    D_orth   SBS
+--------------------------------------------------------------------------------------------------------
+GHZ    magnetic GHZ (the textbook broadcast state)       1.00000       3  0.00e+00  0.00e+00  0.00e+00   YES
+SBSm   SBS with MIXED orthogonal conditional fragment states 1.00000       3  0.00e+00  0.00e+00  0.00e+00   YES
+QDNS   constructed: QD plateau saturated, fragments CORRELATED given S 1.00000       3  0.00e+00  8.75e-01  0.00e+00    no
+HAAR   Haar-random physical state, seed 777              0.99958       0  4.87e-01  9.30e-01  9.92e-01    no
+
+PER-FRAGMENT AND CUMULATIVE MUTUAL INFORMATIONS (the QD plateau axis has 3 points here)
+--------------------------------------------------------------------------------------------------------
+GHZ    magnetic GHZ (the textbook broadcast state)
+     H(S) = 1.000000   p(pointer) = [0.5 0.5]   rho_S degenerate: True
+     I(S:F_k) for k=1,2,3      = ['1.000000', '1.000000', '1.000000']
+     I(S:F_1..F_j) for j=1,2,3 = ['1.000000', '1.000000', '1.000000']
+SBSm   SBS with MIXED orthogonal conditional fragment states
+     H(S) = 1.000000   p(pointer) = [0.5 0.5]   rho_S degenerate: True
+     I(S:F_k) for k=1,2,3      = ['1.000000', '1.000000', '1.000000']
+     I(S:F_1..F_j) for j=1,2,3 = ['1.000000', '1.000000', '1.000000']
+QDNS   constructed: QD plateau saturated, fragments CORRELATED given S
+     H(S) = 1.000000   p(pointer) = [0.5 0.5]   rho_S degenerate: True
+     I(S:F_k) for k=1,2,3      = ['1.000000', '1.000000', '1.000000']
+     I(S:F_1..F_j) for j=1,2,3 = ['1.000000', '1.000000', '1.000000']
+HAAR   Haar-random physical state, seed 777
+     H(S) = 0.999583   p(pointer) = [0.5 0.5]   rho_S degenerate: False
+     I(S:F_k) for k=1,2,3      = ['0.051681', '0.053336', '0.021142']
+     I(S:F_1..F_j) for j=1,2,3 = ['0.051681', '1.006583', '1.901661']
+
+========================================================================================================
+THE DISAGREEMENT, IN ONE ROW
+========================================================================================================
+  QDNS:  R_delta = 3 of 3   (every disjoint fragment saturates H(S) = 1.000000),
+         plateau across |F| = 1,2,3 fragments at I = ['1.000000', '1.000000', '1.000000'],
+         and yet SBS FAILS: D_prod = 0.875000 while D_coh = 0.00e+00
+         and D_orth = 0.00e+00.
+  READING: the ONLY SBS clause that fails is STRONG INDEPENDENCE -- the environment
+  fragments are correlated with each other GIVEN the system's pointer value.  QD's
+  mutual-information test cannot see this because it never evaluates a joint fragment
+  state.  QD IS STRICTLY WEAKER THAN SBS, and the gap is exactly clause (b).
+
+========================================================================================================
+THE SECOND DISAGREEMENT: SBS NEEDS A TRACE-OUT, QD DOES NOT
+========================================================================================================
+  Evaluated on rho_{S:F1F2F3} with U = {7,8} traced out, GHZ is SBS.  Evaluated on the
+  SAME state with NOTHING traced out (all 8 environment links observed), rho is pure and
+  entangled, hence not separable, hence not of SBS form -- while R_delta is unchanged.
+  GHZ, U traced out   : D_coh = 0.00e+00  D_prod = 0.00e+00  D_orth = 0.00e+00  SBS = True
+  GHZ, U OBSERVED     : D_coh = 5.00e-01  D_prod = 0.00e+00  D_orth = 0.00e+00  SBS = False
+  GHZ, 4 fragments, QD: H(S) = 1.000000  R_delta = 4 of 4  I(S:F_k) = ['1.000000', '1.000000', '1.000000', '1.000000']
+  => the two criteria do not even take the same argument.  R_delta is a function of the
+     global state and a fragment; SBS is a function of a STATE AFTER A PARTIAL TRACE, and
+     its verdict flips when the observer's cut of the environment changes with the state
+     held fixed.  A sweep that reports 'a record' must say WHICH criterion and WHICH cut.
+
+========================================================================================================
+THE THIRD DISAGREEMENT, AND IT IS GAUGE-SPECIFIC:
+SBS TAKES ITS POINTER BASIS FROM rho_S, AND THE GAUSS LAW FIXES THAT BASIS TO BE ELECTRIC
+========================================================================================================
+  CLAIM.  On theta_L the single-link Gauss operator G = prod_l X_l anticommutes with Z_0 and
+  with Y_0.  For any PHYSICAL rho (G rho G = rho),  <Z_0> = Tr(rho Z_0) = Tr(rho G Z_0 G)
+  = -<Z_0>, so <Z_0> = 0, and likewise <Y_0> = 0.  Hence rho_{link 0} = (I + <X_0> X)/2 for
+  EVERY physical state: its eigenbasis is the ELECTRIC (X) basis, or is degenerate.
+  CONSEQUENCE.  Korbicz's SBS reads the pointer basis off rho_S.  On a gauged link that
+  basis is never the magnetic one.  A magnetic (holonomy) record therefore cannot be
+  certified by SBS on its own terms -- the pointer basis must be imported from outside.
+
+  MEASURED, over every state used in this file plus 40 Haar-random physical states:
+     max |<Z_0>| over 44 physical states = 2.917e-17
+     max |<Y_0>| over 44 physical states = 2.841e-17
+     |<X_0>| ranges over [0.000000, 0.113504] -- the only surviving direction.
+  CONTROL (this could have failed): the same three expectations on NON-physical states.
+     max |<Z_0>| over 10 UNPROJECTED random states = 0.085401  (nonzero, as it must be)

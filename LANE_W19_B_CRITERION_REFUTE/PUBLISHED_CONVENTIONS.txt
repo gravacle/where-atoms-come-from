@@ -1,0 +1,156 @@
+LANE W19-B REFUTER -- MATHEMATICS LENS.  ATTACK ON LANE_W19_B_CRITERION.
+Register head W-17.  Z_2 pure lattice gauge theory on finite graphs, exact, double precision.
+Files: rlib.py (additions only), r0_selftest.py, r1_enumeration.py, r2_rdelta_definition.py,
+r3_sbs_definition.py, r4_threshold_and_gauge.py, r5_reproduction.py, one OUT_*.txt per script.
+
+--------------------------------------------------------------------------------------------------
+INSTRUMENT.  THE TARGET'S OWN lib_b.py IS IMPORTED UNMODIFIED AND IS THE ONLY ENTROPY ENGINE USED.
+rlib.py adds five things and nothing else: mixed-state Pauli expectations (MixE), mixed-state
+partial traces (reduce_rho), exhaustive GF(2) subspace enumeration (all_subspaces), exact
+set-packing redundancy (rdelta_packing), and basis rotations (rot_link/rot_block) so that the SBS
+pointer basis becomes an argument instead of a hard-coded constant.  r0 checks all five against
+independent routes -- PASSED, 40 checks.  r5 verifies the target's 12 seals and re-runs all five of
+its scripts: ALL FIVE REPRODUCE BYTE-IDENTICALLY.  Nothing below disputes an unreproduced number.
+
+--------------------------------------------------------------------------------------------------
+WHAT SURVIVES (agreed on the target's own sealed output, not on a paraphrase of it)
+  B-1 DISCRIMINATION.  Re-scored under three inequivalent definitions of R_delta: broadcast vs
+      scrambled separates 7 vs 0 (lane's), 7.00 vs 1.75 (Zurek's N/m*), 7 vs 1 (exact packing).
+  B-2 / B-3 THE TWO TRIVIAL-SATISFACTION TRAPS.  H(S) = 0 and the 0.14-bit record both score
+      MAXIMALLY under all three definitions, so these are defects of the published criterion,
+      correctly identified, not artefacts of the lane's implementation.
+  B-8 MAGNETIC CONTENT = CYCLE SPACE.  Confirmed independently: the count of gauge-invariant Pauli
+      subalgebras on a region R is exactly the Galois number G_(|R| + cyclomatic(R)), for every
+      region tested (r1 PART 3, assertions in code).
+  B-9 C5 COLLAPSES ONTO C1 ON PHYSICAL STATES.  The proof is correct as written.
+  B-4 QD IS STRICTLY WEAKER THAN SBS -- direction confirmed, and now with the basis search the
+      lane never ran (r3 PART 2: QDNS is not SBS in ANY pointer basis, min defect 8.750e-01).
+  B-14 THE PLATEAU IS A PROPERTY OF (CARRIER, COUPLING, STATE).  Untouched.
+
+--------------------------------------------------------------------------------------------------
+WHAT FALLS
+ (1) THE SBS TEST IS NOT KORBICZ'S SBS.  Korbicz's condition is EXISTENTIAL over pointer bases;
+     b2_sbs_vs_rdelta.py dephases in the Z basis only.  DEMONSTRATED FALSE NEGATIVE: the ELECTRIC
+     GHZ, an arm the lane itself uses in b1 and b3, is of exact SBS form; b2's arithmetic returns
+     D_coh = 5.00e-01, "SBS = no".  In the X basis the same functions on the same state return
+     2.24e-17 / 2.22e-16 / 2.24e-17, "SBS = YES".  Every "no" the lane reports is of this type.
+ (2) B-6 IS REFUTED.  Its two-line proof is right; its conclusion is not.  It is VACUOUS at |S| = 1
+     (by the lane's own B-8 a single link has no gauge-invariant holonomy at all), and FALSE at
+     |S| = girth: exhibited a physical Z_2 state on theta_8 with H(W_01) = 1.000000 bit recorded in
+     two disjoint fragments, on which SBS returns YES with a pointer basis that DIAGONALISES THE
+     HOLONOMY (Bell basis: 7.05e-18 / 0.00e+00 / 3.49e-32), while the electric product basis B-6
+     says is forced returns 5.00e-01 / 5.00e-01 / 1.00e+00.
+ (3) B-4's EQUALITY IS AN OVER-CLAIM.  "The gap is EXACTLY strong independence" is refuted by a
+     constructed gauge-invariant state (theta_5, t = 0.12) with R_delta = 3 of 3 at I = 0.958849,
+     D_coh = 0.00e+00, D_prod = 2.60e-17 (clause (b) EXACT), D_orth = 0.237703 (clause (c) fails).
+     The gap must contain clause (c): R_delta is a (1-delta) inequality, clause (c) is exact.
+ (4) B-5 IS EMPTY.  "SBS needs a trace-out" is the theorem that a pure state of SBS form is a
+     product state.  It holds for every state with H(S) > 0 and says nothing about SBS vs R_delta.
+ (5) R_delta AS COMPUTED IS PARTITION-RELATIVE, AND THE PARTITION IS AN UNDECLARED CONVENTION.
+     Same state, same carrier, same algebra, same delta, theta_10 BRD_W with pointer alg{W_01}:
+     partition E into 8 single links -> R_delta = 0 of 8;  partition into 4 plaquettes -> 4 of 4.
+     b3 PART B uses single links; b4 PART 3 uses plaquettes.  This is not in the lane's conventions,
+     its isolation ledger, or its four-item next_step, and it is worth the whole verdict.
+ (6) THE FALSE NEGATIVE THIS CAUSES IS EXACTLY HOLONOMY-SHAPED.  Constructed PARITY BROADCAST on
+     theta_8 (physical, unprojected): every single link is independent of the system bit, every
+     matched pair determines it with certainty, three disjoint fragments carry it.  Lane's
+     R_delta = 0 of 7.  Exact disjoint packing = 3 (Haar control on the same cut = 1).
+     AND THE PUBLISHED PARTIAL-INFORMATION-PLOT R_delta IS ALSO BLIND: 1.75 for the broadcast and
+     1.75 for the Haar control.  A record carried by a PRODUCT over >= girth links -- which is what
+     a Wilson loop is -- is invisible to both.  That is a defect of quantum Darwinism carried into
+     a gauge theory, and it is not in the lane's list.
+ (7) THE BOUNDARY-ALGEBRA LIST IS A SAMPLE, NOT A CLASSIFICATION, AND IT MIXES TYPES.
+     TYPE AUDIT (r1 PART 1): of the five, C1_EXT and C5_MAG are NOT gauge-invariant (they contain
+     Z_l); C6_DRESS is NOT SUPPORTED IN R (its generators carry the reference link 7, so under C6
+     all six "disjoint" fragments share link 7 and so does the system -- ill-typed for a redundancy
+     criterion, not merely weightless).  Exactly two, C2_ELEC and C3_FULL, are gauge-invariant
+     region algebras, and on a single-link region they are the SAME algebra.
+     CENTRE AUDIT (r1 PART 2): every non-trivial centre in the list is ELECTRIC, including C5's,
+     whose centre is the interior Gauss operators (pure X).  THE LIST CONTAINS NO MAGNETIC-CENTRE
+     ALGEBRA.  This is a mislabel of the mathematics, beyond the attribution the lane self-flagged.
+     COMPLETE ENUMERATION (r1 PART 3, counts checked against the Galois numbers): a single link
+     carries 5 Pauli subalgebras of which 2 are gauge-invariant; a plaquette carries 67 of which 16
+     are gauge-invariant.  Sweeping all 16 on the b3 PART C cut gives EIGHT DISTINCT VERDICTS.
+     The choice is not three-fold.
+ (8) THE "POINTER SUBALGEBRA" IS NOT A SECOND CONVENTION.  alg{W_01} is row 4 of the 16 enumerated
+     gauge-invariant region algebras.  next_step items (i) and (ii) are one item.
+ (9) READING 1's THRESHOLD HAS NO GAUGE CONTENT.  THEOREM (Perron-Frobenius): for
+     H = -(1/g^2) sum_p W_p - g^2 sum_l X_l with g^2 > 0, the off-diagonals in the Z basis are all
+     -g^2 < 0, so the UNCONSTRAINED ground state is unique and strictly positive, hence a +1
+     eigenvector of every Gauss operator.  MEASURED: |<free|projected>| = 1.000000000000 and
+     min<G_v> = 1.000000000000 on theta_5..8, fan_3, fan_4, wheel_4 at g^2 = 0.30, 1.00, 3.00.
+     THE PROJECTION IN lib_b.ground_state IS INERT.  And mi_ext never reads car['gauss'].  So b1
+     entirely, b3 PART B's C1 column, and b4 PARTS 1-2 have zero gauge input in state OR estimator.
+     Shown directly: the theta_L GHZ curves equal the bare-qubit GHZ curves for L = 3..8.
+     CONTROL THAT FAILS AS IT SHOULD: flip the electric sign, and on odd L the free ground state
+     has <G> = -1.000000000000.
+(10) AND THE READING-1 PLATEAU IS CARRIED BY A NON-OBSERVABLE.  Decomposing C1's one bit:
+     I(alg{X_0} : alg{X_1}) = 0.000000 (gauge-invariant part), I(alg{Z_0} : alg{Z_1}) = 1.000000
+     (gauge-VARIANT part), I(C1 : C1) = 1.000000.  The lane's last self-flag says no number can
+     settle which reading is right.  This number settles half of it: the reading-1 plateau is the
+     redundancy of Z_0, which anticommutes with the Gauss law and is not measurable.
+(11) READING 2's THRESHOLD IS SIX LINKS, NOT TWELVE.  b4 PART 3 derives 12 from "each fragment
+     must contain a cycle for its algebra to have any magnetic content".  THAT DOES NOT FOLLOW FROM
+     B-8.  B-8 says where a magnetic OPERATOR can be LOCALISED; a RECORD is not a localisation.
+     Z_0 Z_1 X_l is a gauge-invariant operator, so a state can pin the purely ELECTRIC algebra
+     alg{X_l} of ONE link to the HOLONOMY W_01 of a distant plaquette.  CONSTRUCTED (r4 PART 4):
+     the stabiliser state of {independent Gauss operators} u {W_S X_l : l a fragment}, superposed
+     across its W_S = +-1 halves.  On theta_6 -- SIX links, S = {0,1}, pointer W_01, four
+     SINGLE-LINK fragments, algebra C3_FULL, physical with no projection:
+        H(W_S) = 1.000000, per-fragment I = 1.000000 x4, cumulative 1.000000 x4 under BOTH the
+        JOIN and the UNION reading, R_delta = 4 of 4, plateau defect 0.
+     Haar control, same carrier/cut/pointer/algebra: R_delta = 0 of 4, per-fragment 0.018922,
+     0.002118, 0.011172, 0.055193.  On the girth-3 carrier fan_3 the same construction gives
+     SEVEN links, not the 18 the lane states.  Recorded null: on wheel_4 the construction has no
+     room (4 independent Gauss operators + 4 fragment stabilisers = 8 = L), so it needs
+     L >= (independent Gauss operators) + (fragments) + 1.
+     TIGHT AT 6 UNDER BOTH READINGS: four points need four disjoint fragments of >= 1 link plus a
+     system region containing a cycle, so L >= girth + 4.
+     CONSEQUENCE FOR THE HEADLINE: "the two readings differ by a factor of two in link count" is
+     REFUTED.  They agree at six.  What genuinely differs between the readings is the VERDICT ON A
+     GIVEN STATE (B-7), which survives this attack untouched.
+     I MADE HALF OF THE SAME ERROR MYSELF FIRST.  An earlier part of r4 argued the threshold down
+     to TEN by removing only the spurious purity discard (b4 PART 3 computes five values all equal
+     to 1.000000 on theta_12, then reports cum[:-1] as "plateau points before the final rise: 4" --
+     there is no final rise, because with the pointer restricted to alg{W_01} neither side of the
+     cut is a full factor and the theorem I -> 2H(S) does not apply; the lane's OWN b3 PART C2 line
+     already shows four flat points at TEN links, inconsistent with its own b4 PART 3).  That
+     intermediate 10 is wrong for the same reason 12 is, one step less far, and both the wrong step
+     and the correction are left in the output rather than tidied away.
+(12) B-12's WORD "TIGHT" NEEDS ITS PURITY QUALIFIER.  On theta_5 the classical GHZ mixture gives
+     FOUR flat points at I = H(S) = 1.000000 on five links.  I ALSO REPORT WHAT KILLS IT: that
+     state has Tr(rho P_+) = 0.500000, an equal mixture of the two Gauss sectors, so it is not a
+     state of the physical Hilbert space; and a physical-sector Gibbs sweep on theta_5 (beta = 0.5
+     to 20) reaches four points at NO temperature.  READING 1's SIX STANDS for physical states.
+
+--------------------------------------------------------------------------------------------------
+CONFOUNDS AND LIMITS OF THIS LANE, RECORDED RATHER THAN FIXED
+  * THE SBS BASIS SEARCH IS A GRID (25 x 24) PLUS LOCAL REFINEMENT, NOT A PROOF OF THE MINIMUM.
+    A first version used a 24-point theta grid, MISSED theta = pi/2 entirely, and reported a
+    minimum of 1.000 for a state whose X basis gives 2e-17.  That bug is recorded in rlib.py and an
+    assertion now forces an odd grid.  Where a verdict matters (QDNS not SBS) I give a structural
+    argument as well as the search.
+  * THE SBS BASIS SEARCH ONLY VARIES THE SYSTEM BASIS FOR A 2-DIMENSIONAL SYSTEM.  The 4-dimensional
+    case in r3 PART 5(iv) tests three named bases, not all of U(4).  The YES verdict there is a
+    WITNESS and needs no search; the two "no" rows are not exhaustive verdicts.
+  * THE SUBALGEBRA ENUMERATION IS COMPLETE ONLY FOR PAULI-GENERATED SUBALGEBRAS.  Subalgebras not
+    spanned by Pauli strings exist and are not enumerated.  The counts match the Galois numbers,
+    which is the correct check for the Pauli-generated class and no more.
+  * THE 16-ALGEBRA SWEEP IS ON ONE CARRIER (theta_10), ONE STATE (Wilson-loop GHZ), ONE FRAGMENT
+    RULE (C3_FULL plaquettes).  "Eight distinct verdicts" is that cell, not a general count.
+  * Z_2 ONLY, exactly as the target.  Every structural conclusion here inherits the target's own
+    self-flag that abelian coincidences may not survive Z_N for N > 2 or a non-abelian group.
+  * theta_L IS A DEGENERATE GRAPH and most of my numbers are theta numbers, for comparability with
+    the target.  fan and wheel appear only in the type/centre audits and the Perron-Frobenius test.
+  * THE PARITY-BROADCAST AND BELL-BASIS STATES ARE CONSTRUCTED, NOT DYNAMICAL.  Whether any
+    Hamiltonian of this class produces them is UNTESTED, and finding (9) makes that question
+    sharper rather than softer.
+  * THE SIX-LINK READING-2 STATE IS A CONSTRUCTED STABILISER STATE, NOT A GROUND STATE.  Whether
+    any Hamiltonian of this class produces it at any g^2 is UNTESTED -- the same limitation the
+    target records for its own theta_12 state, and it is the weakest point of the corrected
+    threshold exactly as it was of the original.
+  * THE "L >= girth + 4" TIGHTNESS ARGUMENT ASSUMES THE FOUR PLATEAU POINTS MUST COME FROM FOUR
+    DISJOINT FRAGMENTS OF THE ENVIRONMENT.  If a plateau were allowed to be read off nested
+    fragments of a partition with fewer parts, the count would change.  I did not explore that.
+  * CEILING: dense eigh to L = 10 (2^10); constructed and mixed states to L = 12; algebra entropies
+    to k = 6 hyperbolic pairs.  I did not exceed the target's ceiling and inherit its consequences.

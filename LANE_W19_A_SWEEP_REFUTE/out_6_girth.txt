@@ -1,0 +1,50 @@
+==========================================================================================================================
+W19-A REFUTER / 6  GIRTH DOES NOT SET THE PLATEAU LENGTH; GIRTH-THROUGH-l DOES
+==========================================================================================================================
+
+[6a] THE SQUARE-PLAQUETTE COUNTEREXAMPLE TO F8.  g^2 = 0.50, Z_2, lane A's criterion.
+     carrier          V   L   C  mindeg  girth   d        H(S)  pts  R_d   plaquette lengths (min cycle basis)
+     sq_chain15      10  15   6       3      4   5 0.893042774    4    5   [4, 4, 4, 4, 6, 6]  EXHIBITED
+     grid_3x3_open    9  12   4       2      4   3 0.704792868    2    3   [4, 4, 4, 4]  FAIL
+     cube_Q3          8  12   5       3      4   3 0.937678190    2    3   [4, 4, 4, 4, 4]  FAIL
+     ladder_5sq      12  16   5       2      4   3 0.650651347    2    3   [4, 4, 4, 4, 4]  FAIL
+     tri_chain12      8  12   5       3      3   5 0.663269043    4    5   [3, 3, 3, 3, 6]  EXHIBITED
+     petersen        10  15   6       3      5   4 0.979582461    3    4   [5, 5, 5, 5, 5, 5]  MARGINAL
+     heawood         14  21   8       3      6   5 0.994827216    4    5   [6, 6, 6, 6, 6, 6, 6, 6]  EXHIBITED
+
+     sq_chain15 detail: |F| = [2, 6, 8, 12, 14],  I/H(S) = 1.000000000 1.000000000 1.000000000 1.000000000 2.000000000
+     Its minimum cycle basis is [4, 4, 4, 4, 6, 6]: 4 of 6 plaquettes are SQUARES, the rest hexagons.
+     HONEST LIMIT OF THIS EXHIBIT: it is a girth-4 carrier, NOT a pure square-plaquette one --
+     with d = 5 the cycle through l has length 6, so a hexagon is forced into any basis.  I did
+     not find, and do not claim, a carrier whose basis is ALL squares with d = 5.
+     WHAT IS REFUTED: F8's stated mechanism, 'Girth 4 fixes d = 3 and therefore exactly 2
+     plateau points'.  sq_chain15 has girth 4 and d = 5, giving 4 plateau points at L = 15.
+     WHAT SURVIVES: the narrower claim that on a lattice in which EVERY LINK lies on a square
+     face, d = 3 for every link.  That is a property of the embedding, not of the girth, and
+     F8 states it as the latter.
+
+[6b] GIRTH vs GIRTH-THROUGH-l vs d, across every carrier in play.  If girth set the plateau
+     length, these two columns would agree.  They do not.
+     carrier            L  mindeg  girth  max girth_through(l)   d  pts = d-1
+     theta_3link        3       3      2                     2   1          0
+     theta_subdiv1      6       2      4                     4   3          2
+     theta_subdiv2      9       2      6                     6   5          4
+     torus_2x2          8       4      2                     2   1          0
+     ladder_2sq         7       2      4                     4   3          2
+     ladder_3sq        10       2      4                     4   3          2
+     ladder_5sq        16       2      4                     4   3          2
+     grid_3x3_open     12       2      4                     4   3          2
+     cube_Q3           12       3      4                     4   3          2
+     torus_3x3         18       4      3                     3   2          1
+     petersen          15       3      5                     5   4          3
+     heawood_honeycomb7  21       3      6                     6   5          4
+     sq_chain15        15       3      4                     6   5          4
+     tri_chain12       12       3      3                     6   5          4
+     tri_chain11       11       3      3                     5   4          3
+     dbl_chain9         9       3      2                     6   5          4
+     mg_chain6         11       3      2                     7   6          5
+     mg_chain7         12       3      2                     8   7          6
+     tri_chain12: girth 3 (worse than any square lattice) yet d = 5 (better than petersen's 4).
+     The ordering by girth and the ordering by d are DIFFERENT ORDERINGS.
+
+DONE 6.

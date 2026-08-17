@@ -1,0 +1,54 @@
+======================================================================================================================
+W19-A / 04 THRESHOLD
+======================================================================================================================
+
+[4a] RULE B -- UNIFORMLY RANDOM FRAGMENTS.  Z_2, g^2=1, system link l=0.  32 samples/size
+     (exact enumeration where the number of subsets is <= 32).  ONE VARIABLE MOVED: the carrier.
+     plateau point under rule B := a fragment size m whose MEAN I/H(S) lies within 0.10 of 1.
+     ladder_2sq           L=7   d=3  H(S)=0.113789  ruleB plateau pts=1   FAIL       (0.0s)
+       mean I/H(S) by |F|: 0.449 0.800 1.000 1.200 1.551 2.000
+     cube_Q3              L=12  d=3  H(S)=0.201192  ruleB plateau pts=2   FAIL       (0.0s)
+       mean I/H(S) by |F|: 0.159 0.332 0.585 0.730 0.925 1.050 1.287 1.500 1.645 1.841 2.000
+     torus_3x3            L=18  d=2  H(S)=0.333087  ruleB plateau pts=2   FAIL       (1.9s)
+       mean I/H(S) by |F|: 0.063 0.133 0.196 0.333 0.419 0.563 0.796 1.078 1.073 1.165 1.360 1.501 1.657 1.729 1.841 1.937 2.000
+     petersen             L=15  d=4  H(S)=0.244652  ruleB plateau pts=1   FAIL       (0.2s)
+       mean I/H(S) by |F|: 0.180 0.346 0.641 0.690 0.828 0.891 1.009 1.114 1.198 1.369 1.458 1.662 1.820 2.000
+     heawood_honeycomb7   L=21  d=5  H(S)=0.307291  ruleB plateau pts=5   EXHIBITED  (22.4s)
+       mean I/H(S) by |F|: 0.179 0.295 0.522 0.627 0.752 0.786 0.875 0.917 0.935 0.987 1.032 1.089 1.134 1.184 1.334 1.377 1.496 1.690 1.821 2.000
+
+[4b] WHY 21 LINKS IS A FLOOR, NOT A SEARCH RESULT.
+     Claim: if every vertex has degree >= 3 and the shortest cycle through the system link l
+     has length >= 6 (needed for d >= 5, i.e. >= 4 rule-A plateau points), then L >= 21.
+     Proof by BFS level counting; the code below verifies each counted level on the two cages.
+     petersen             min degree=3  girth_through(l)=5  d=4  V=10 L=15
+       BFS level sizes from tail(l) in G-l: |L0|=1 |L1|=2 |L2|=4 |L3|=2 |L4|=1   sum=10
+       counting floor for this d: 1+2+4 from u, 1+2 from v (disjoint) = 10 vertices, L >= 3*10/2 = 15
+     heawood_honeycomb7   min degree=3  girth_through(l)=6  d=5  V=14 L=21
+       BFS level sizes from tail(l) in G-l: |L0|=1 |L1|=2 |L2|=4 |L3|=4 |L4|=2 |L5|=1   sum=14
+       counting floor for this d: 1+2+4 from u, 1+2+4 from v (disjoint) = 14 vertices, L >= 3*14/2 = 21
+     Realised: petersen = the (3,5)-cage, 10 vertices / 15 links, d=4 -> 3 plateau points (MARGINAL).
+               heawood  = the (3,6)-cage, 14 vertices / 21 links, d=5 -> 4 plateau points (EXHIBITED).
+     Both cages are extremal, so both floors are ATTAINED and the threshold is exact.
+
+[4c] SUBDIVISION CONFOUND vs THE WEIGHT FLOOR.  Does a smaller g^2 keep H(S) above 0.10
+     while the subdivision still supplies the plateau?  If yes the confound is not curable by the floor.
+     carrier             g^2   L   C  dimP   d       H(S)  plateau pts  R_delta  verdict
+     theta              0.30   3   2     4   1   0.997933            0        1  FAIL
+     theta              0.50   3   2     4   1   0.973417            0        1  FAIL
+     theta              1.00   3   2     4   1   0.492556            0        1  FAIL
+     theta_subdiv2      0.30   9   2     4   5   0.967386            4        5  EXHIBITED
+     theta_subdiv2      0.50   9   2     4   5   0.653480            4        5  EXHIBITED
+     theta_subdiv2      1.00   9   2     4   5   0.104372            4        5  EXHIBITED
+     theta_subdiv3      0.30  12   2     4   7   0.930226            6        7  EXHIBITED
+     theta_subdiv3      0.50  12   2     4   7   0.492556            6        7  EXHIBITED
+     theta_subdiv3      1.00  12   2     4   7   0.065481            6        7  EXHIBITED (WEIGHTLESS)
+
+[4d] DOES ENLARGING S MOVE THE THRESHOLD?  carrier=heawood, g^2=1.  ONE VARIABLE MOVED: |S|.
+     S=[0]          one link                             H(S)=0.307291  pts=2  (|F|,I/H(S)) = (4,1.0000) (12,1.0000) (20,2.0000)
+     S=[0, 1]       two adjacent links (share a vertex)  H(S)=0.381174  pts=1  (|F|,I/H(S)) = (5,1.0000) (15,1.4991) (19,2.0000)
+     S=[0, 7]       two disjoint links                   H(S)=0.348178  pts=0  (|F|,I/H(S)) = (8,1.1887) (16,1.7388) (19,2.0000)
+     S=[0, 1, 15]   three links                          H(S)=0.381174  pts=1  (|F|,I/H(S)) = (6,1.0000) (18,2.0000)
+     READ: enlarging S ADDS internal Gauss laws and internal cycles to S, which lowers, not raises,
+     the number of plateau points.  The one-link system is the BEST case for this criterion.
+
+DONE 04.
