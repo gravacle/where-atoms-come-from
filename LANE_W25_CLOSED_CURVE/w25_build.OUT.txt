@@ -1,0 +1,20 @@
+  THE TEST EVERY PREVIOUS CARRIER FAILED:
+    link 0 = (0, 1)  on a cycle:  True   spoke (interior)
+    link 1 = (0, 2)  on a cycle:  True   spoke (interior)
+    link 2 = (0, 3)  on a cycle:  True   spoke (interior)
+    link 3 = (0, 4)  on a cycle:  True   spoke (interior)
+    link 4 = (1, 2)  on a cycle:  True   RIM (boundary)
+    link 5 = (2, 3)  on a cycle:  True   RIM (boundary)
+    link 6 = (3, 4)  on a cycle:  True   RIM (boundary)
+    link 7 = (4, 1)  on a cycle:  True   RIM (boundary)
+  -> boundary links on a cycle: 4 of 4. A flux CAN thread this boundary.
+
+  N=2:  full    256   physical    16   rim loop: NONTRIVIAL             triangle: NONTRIVIAL
+         rim loop == product of the 4 interior triangles?  True   (discrete Stokes)
+  N=3:  full   6561   physical    81   rim loop: NONTRIVIAL             triangle: NONTRIVIAL
+         rim loop == product of the 4 interior triangles?  True   (discrete Stokes)
+  N=4:  full  65536   physical   256   rim loop: NONTRIVIAL             triangle: NONTRIVIAL
+         rim loop == product of the 4 interior triangles?  True   (discrete Stokes)
+
+  The rim loop is a nontrivial gauge-invariant operator on the physical sector.
+  THAT is what a boundary is: a closed curve carrying a flux. No previous carrier had one.
