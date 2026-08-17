@@ -1928,3 +1928,67 @@ conclusion already dressed as a result. **What the registrar got wrong by hedgin
 its ARM 1 removes the gauge structure and its ARM 3 varies the boundary's formation. **Add the
 falsifier as a standing arm in every subsequent round: measure a gauge-invariant channel and try to
 make it carry something that is not forced.**
+
+---
+
+## W-22 — THE FRAME CHALLENGE ON TWO INHERITED BINARIES: **BOTH ARE TWO-POINT SAMPLES, AND WHAT THEY EXCLUDE IS A VALUE GETTING ITS START.**
+
+Commissioned by the principal, 2026-08-17: *"let's question all imported assumptions — variant /
+invariant — allow / require — we shouldn't be afraid to ask — could we be looking at a point where
+certain values are just getting their start."* First application of `FRAME_CHALLENGE_V002` to
+inherited machinery. `LANE_FC_BINARIES/`, sealed.
+
+### **VARIANT / INVARIANT — EXCLUSION CLAUSE FIRES.**
+
+On an **open** carrier — six bulk vertices constrained, one dangling link whose far end is boundary
+and carries no Gauss operator — the boundary charge `Q = Gauss(6)` is verified **central** against
+every bulk constraint at `0.000e+00`, with `Q^2 = I`, giving exactly **two superselection sectors**.
+All twenty single-link operators then sort by two **computed** predicates into **three** categories:
+
+```
+ INVARIANT (bulk observables)   10 operators
+ VARIANT (genuinely junk)        9 operators
+ SECTOR-CHANGING                 1 operator   -- X_9, on the dangling link
+```
+
+**`X_9` lies in NEITHER named arm.** It fails to commute with the bulk constraint, so the binary
+files it under *variant* and discards it — **and it is the unique operator that moves between
+superselection sectors, i.e. that creates or destroys boundary charge.** The classification throws
+away the one thing that makes a value.
+
+**AND THAT IS THE PRINCIPAL'S QUESTION IN THE ARITHMETIC.** A superselection sector is a value that
+is or is not there, with no superposition between. `X_9` is the operator that starts one. **What
+variant/invariant cannot see is precisely a value getting its start.**
+*Caveat of record: `X_9` is unique because the construction has one dangling link — the COUNT is a
+property of the construction. The three-way SPLIT is not; it follows from `Q` being central.*
+
+### **ALLOW / REQUIRE — FAILS T1 AND T2, AND NO COMPUTATION IS NEEDED.**
+
+**T1, the null option:** both branches presuppose the value **already exists**, to be permitted or
+forced. If it **originates** at the surface, neither obtains and the question is malformed there.
+**T2, embed:** the modal axis is not even two-valued — **forbid** is missing — so allow/require is a
+two-point sample of a three-point axis. **And origination is not on that axis at all**: it is
+generative, not modal. The binary samples two of three points on one axis while the live option sits
+on a different axis entirely.
+
+**WHAT THIS COSTS A REGISTERED INFERENCE.** The predecessor found alpha **allow-side** — permitted,
+forced by nothing — and `FOUNDING_DESIGN §2` read that as the warrant for treating alpha as an
+INPUT: *"a process that leaves the coupling's slot open is exactly what a process should look like
+when the coupling comes from outside."* **Under the third option that inference does not go
+through.** A slot that looks open because nothing forces the value is **indistinguishable** from a
+slot where the value is being made, to any test that asks only whether something is forced.
+**Allow-side and origination have the same signature under the test that produced the finding.**
+
+### WHAT THIS DOES AND DOES NOT SAY
+
+It does **not** show that any value originates anywhere. It shows that **two classifications this
+program inherited cannot represent the possibility**, and that one registered inference depends on
+the missing option not existing. **A null under a classification that cannot express the alternative
+is not evidence about the alternative** — the same form as the standing correction on classical-shaped
+nulls.
+
+**NEXT STEP.** The sector-changing operator is now a named object on a carrier we own. **Ask whether
+it is dynamical**: does any Hamiltonian built from the carrier's own data move amplitude between
+superselection sectors, or is the boundary charge frozen by construction? A frozen charge is a label;
+a charge the dynamics can change is a value with a history. **That is the difference between a
+bookkeeping sector and a value getting its start, and it is computable on this carrier.**

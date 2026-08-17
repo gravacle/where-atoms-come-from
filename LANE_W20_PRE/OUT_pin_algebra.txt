@@ -1,0 +1,124 @@
+
+====================================================================================================
+BLOCK A1 -- THE GAUGE-INVARIANT ALGEBRA OF S, BUILT EXPLICITLY ON 3 QUBITS
+====================================================================================================
+local qubit 0,1,2  <->  links 1,2,3 = [(0, 1), (0, 2), (1, 2)]
+generators: X_1, X_2, X_3 (electric, each gauge invariant), and W_S = Z_1 Z_2 Z_3 (the Wilson
+loop of the triangle; gauge invariant because {1,2,3} is a cycle).
+
+commutators, printed rather than asserted:
+   || X_1 W_S + W_S X_1 ||  = 0.000000000   (0 means ANTICOMMUTE)
+   || X_2 W_S + W_S X_2 ||  = 0.000000000   (0 means ANTICOMMUTE)
+   || X_3 W_S + W_S X_3 ||  = 0.000000000   (0 means ANTICOMMUTE)
+   || X_1 X_2 - X_2 X_1 ||  = 0.000000000   (0 means COMMUTE)
+   || (X_1 X_2) W_S - W_S (X_1 X_2) || = 0.000000000  (0 means the PAIR commutes with W_S)
+   || X_1 X_3 - X_3 X_1 ||  = 0.000000000   (0 means COMMUTE)
+   || (X_1 X_3) W_S - W_S (X_1 X_3) || = 0.000000000  (0 means the PAIR commutes with W_S)
+   || X_2 X_3 - X_3 X_2 ||  = 0.000000000   (0 means COMMUTE)
+   || (X_2 X_3) W_S - W_S (X_2 X_3) || = 0.000000000  (0 means the PAIR commutes with W_S)
+   || (X_1X_2X_3) W_S + W_S (X_1X_2X_3) || = 0.000000000  (0 means the TRIPLE anticommutes)
+
+>>> A_S IS NON-ABELIAN.  It carries a Wilson loop.  Both requirements of the brief, verified.
+linear span of {X^a W^b : a in F_2^3, b in F_2} has dimension 16 (16 expected)
+centre Z(A_S) = span of the strings ['X^[] W^0', 'X^[0, 1] W^0', 'X^[0, 2] W^0', 'X^[1, 2] W^0']
+dim Z(A_S) = 4
+>>> Z(A_S) = { I, X_1X_2, X_1X_3, X_2X_3 } -- the EVEN-WEIGHT electric strings on S.
+    A_S has dim 16 with a 4-dim centre acting on an 8-dim space:  A_S = M_2 + M_2 + M_2 + M_2 .
+    Maximum entropy of a state restricted to A_S = log2(4) + log2(2) = 2 + 1 = 3 bits.
+
+====================================================================================================
+BLOCK A2 -- THE CENTRE OF A_S *IS* THE SURFACE.  EXACT, 2 BITS, DERIVED.
+====================================================================================================
+From the Gauss relations (pin_carrier BLOCK 4), ON THE PHYSICAL SECTOR:
+    X_1 X_2 = eta_0 * X_0     X_1 X_3 = eta_1 * X_4     X_2 X_3 = eta_2 * X_5
+and X_0 X_4 X_5 = eta_0 eta_1 eta_2 .  So:
+
+    Z(A_S)  =  alg{ X_0, X_4, X_5 } / (X_0 X_4 X_5 = scalar)  =  the SURFACE ALGEBRA.
+    dim 4 on both sides.  This is not an analogy; it is an operator identity.
+
+>>> CONSEQUENCE, AND IT IS THE WHOLE VACUITY MAP:
+    THE RECORD ON S IS EXACTLY 3 BITS.  2 OF THEM ARE THE CENTRE, AND THE CENTRE IS THE
+    SURFACE, GAUSS-FORCED, FOR EVERY STATE / COUPLING / SECTOR / HISTORY.  Any criterion that
+    reads the centre CANNOT FAIL.  The remaining 1 bit lives inside the M_2 blocks.
+    Inside a block the surviving generators are X_1 and W_S, and they ANTICOMMUTE:
+       block algebra = alg{X_1, W_S} = M_2 , one electric pole and one magnetic pole.
+    (X_2 = x12 X_1 and X_3 = x13 X_1 once the central labels x12, x13 are fixed, so the whole
+     electric content collapses to X_1 inside a block.)
+
+>>> THEREFORE, BEFORE ANY STATE EXISTS:  as g^2 -> infinity the state is an X eigenstate,
+    <X_1> -> 1, the block is pure, the LIVE bit is EMPTY.  As g^2 -> 0 the state is a W
+    eigenstate, <W_S> -> 1, the block is pure, the LIVE bit is EMPTY AGAIN.  Anticommutation
+    forbids both being sharp at once, so the live bit is nonzero ONLY IN THE CROSSOVER.
+    THE TEST IS LIVE IN A WINDOW AND VACUOUS AT BOTH ENDS, AND THAT IS DERIVED FROM AN
+    ANTICOMMUTATOR, NOT MEASURED.
+
+====================================================================================================
+BLOCK B -- THE BOUNDARY-ALGEBRA CHOICE: THREE CANDIDATES, ONE COLLAPSE
+====================================================================================================
+NARROW  S = E[A] = {1,2,3}         : 8 X-strings x 2^1 Z-strings = 16 ; scalars from cocycles inside: 2^0 ; dim on physical sector = 16
+WIDE    S u Sigma = {0,1,2,3,4,5}  : 64 X-strings x 2^2 Z-strings = 256 ; scalars from cocycles inside: 2^3 ; dim on physical sector = 32
+
+CENTER choice (Casini-Huerta-Rosabal electric centre): A_S^narrow with X_Sigma adjoined as
+central elements.  ON THE PHYSICAL SECTOR X_0 = eta_0 X_1X_2 , X_4 = eta_1 X_1X_3 ,
+X_5 = eta_2 X_2X_3 -- all three are ALREADY in Z(A_S^narrow).  Adjoining them adds nothing.
+>>> CENTER == NARROW ON THE PHYSICAL SECTOR.  The three-way boundary-algebra choice this
+    program inherited COLLAPSES TO TWO on this carrier: NARROW(=CENTER) vs WIDE.
+    WIDE's extra content is magnetic: cycles inside S u Sigma are [[1, 2, 3], [3, 4, 5], [1, 2, 4, 5]]
+    i.e. WIDE adds the SECOND triangle W_{3,4,5} = Z_3Z_4Z_5, an operator not in A_S^narrow.
+    NARROW is PINNED PRIMARY.  WIDE is ARM A2 and the gap is at least one magnetic bit.
+
+====================================================================================================
+BLOCK C -- Aut(tri_chain12), AND THE COULD-NOT-HAVE-FAILED TRAP INSIDE MY OWN ARMS
+====================================================================================================
+|Aut(tri_chain12)| = 16
+the automorphisms:
+   (0, 1, 2, 3, 4, 5, 6, 7)
+   (0, 1, 2, 3, 4, 6, 5, 7)
+   (0, 2, 1, 3, 4, 5, 6, 7)
+   (0, 2, 1, 3, 4, 6, 5, 7)
+   (3, 1, 2, 0, 7, 5, 6, 4)
+   (3, 1, 2, 0, 7, 6, 5, 4)
+   (3, 2, 1, 0, 7, 5, 6, 4)
+   (3, 2, 1, 0, 7, 6, 5, 4)
+   (4, 5, 6, 7, 0, 1, 2, 3)
+   (4, 5, 6, 7, 0, 2, 1, 3)
+   (4, 6, 5, 7, 0, 1, 2, 3)
+   (4, 6, 5, 7, 0, 2, 1, 3)
+   (7, 5, 6, 4, 3, 1, 2, 0)
+   (7, 5, 6, 4, 3, 2, 1, 0)
+   (7, 6, 5, 4, 3, 1, 2, 0)
+   (7, 6, 5, 4, 3, 2, 1, 0)
+
+orbits of the four triangle regions under Aut:
+   region on vertices [0, 1, 2]    -> orbit [[0, 1, 2], [1, 2, 3], [4, 5, 6], [5, 6, 7]]
+   region on vertices [1, 2, 3]    -> orbit [[0, 1, 2], [1, 2, 3], [4, 5, 6], [5, 6, 7]]
+   region on vertices [4, 5, 6]    -> orbit [[0, 1, 2], [1, 2, 3], [4, 5, 6], [5, 6, 7]]
+   region on vertices [5, 6, 7]    -> orbit [[0, 1, 2], [1, 2, 3], [4, 5, 6], [5, 6, 7]]
+
+>>> READ THIS AS A TRAP WARNING, WHICH IS WHY IT IS COMPUTED BEFORE THE RUN:
+    ANY two arms related by an element of Aut MUST return identical record content.  A null
+    across such a pair is a THEOREM ABOUT THE SYMMETRY, not a measurement, and scoring it as
+    'formation does not matter' would be exactly the W-19 defect in a new costume.
+
+stabiliser of the declared region A = {0,1,2} (these fix S and Sigma setwise):
+   (0, 1, 2, 3, 4, 5, 6, 7)
+   (0, 1, 2, 3, 4, 6, 5, 7)
+   (0, 2, 1, 3, 4, 5, 6, 7)
+   (0, 2, 1, 3, 4, 6, 5, 7)
+|Stab(A)| = 4
+
+CHARGE-ROUTE PAIRS, CHECKED AGAINST Stab(A).  A route pair is VACUOUS if some g in Stab(A)
+carries one charge set onto the other.
+   C1 -> C2 : 0 symmetry maps in Stab(A) -> LIVE (no symmetry forces equality)
+   C0 -> C3 : 0 symmetry maps in Stab(A) -> LIVE (no symmetry forces equality)
+   C0 -> C4 : 0 symmetry maps in Stab(A) -> LIVE (no symmetry forces equality)
+   C3 -> C4 : 0 symmetry maps in Stab(A) -> LIVE (no symmetry forces equality)
+   C1 -> C4 : 0 symmetry maps in Stab(A) -> LIVE (no symmetry forces equality)
+
+region pairs for the SURFACE-VARIATION replacement test, checked against Aut:
+   region[0, 1, 2] -> region[1, 2, 3] : 4 automorphisms -> VACUOUS BY SYMMETRY
+   region[0, 1, 2] -> region[4, 5, 6] : 4 automorphisms -> VACUOUS BY SYMMETRY
+   region[0, 1, 2] -> region[5, 6, 7] : 4 automorphisms -> VACUOUS BY SYMMETRY
+   region[1, 2, 3] -> region[4, 5, 6] : 4 automorphisms -> VACUOUS BY SYMMETRY
+   region[1, 2, 3] -> region[5, 6, 7] : 4 automorphisms -> VACUOUS BY SYMMETRY
+   region[4, 5, 6] -> region[5, 6, 7] : 4 automorphisms -> VACUOUS BY SYMMETRY

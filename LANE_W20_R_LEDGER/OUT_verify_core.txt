@@ -1,0 +1,119 @@
+
+====================================================================================================
+V1 -- THE CARRIER AND THE TWO FORCED SUBSPACES
+====================================================================================================
+V = 8  L = 12  edges = [(0, 7), (0, 1), (0, 2), (1, 2), (1, 3), (2, 3), (3, 4), (4, 5), (4, 6), (5, 6), (5, 7), (6, 7)]
+degrees [3, 3, 3, 3, 3, 3, 3, 3]  cubic=True
+dim Z_1 (cycles)   = 5   |Z_1| = 32
+dim B^1 (cocycles) = 7   |B^1| = 128
+odd pairings <z,c> over Z_1 x B^1 : 0 of 4096  (0 => mutual annihilators)
+
+====================================================================================================
+V2 -- THE PHYSICAL SECTOR IS BUILT CORRECTLY:  G_v |psi> = eta_v |psi>, PRINTED
+====================================================================================================
+vacuum             dim = 32
+   max || G_v |e_i> - eta_v |e_i> ||  over all v,i = 0.000000000000
+charges at {0,4}   dim = 32
+   max || G_v |e_i> - eta_v |e_i> ||  over all v,i = 0.000000000000
+
+====================================================================================================
+V3 -- THE EFFECTIVE OPERATOR SPACE IS EXACTLY B(H_phys):  2^10 = 1024 = 32^2
+====================================================================================================
+label-space dim n = 10   -> algebra dim = 1024   (32^2 = 1024)
+radical dim r = 0   symplectic pairs s = 5   max entropy = 5 bits
+
+====================================================================================================
+V4 -- ENTROPY CALIBRATION.  A pure state must give S(B(H)) = 0 EXACTLY.
+====================================================================================================
+   Haar pure state 0 :  S(rho | B(H)) = -0.000000000000 bits   (must be 0)
+   Haar pure state 1 :  S(rho | B(H)) = 0.000000000000 bits   (must be 0)
+   Haar pure state 2 :  S(rho | B(H)) = -0.000000000000 bits   (must be 0)
+
+====================================================================================================
+V5 -- THE FOUR CHANNELS OF A_S, AND THE PRE-REGISTERED DIMENSIONS REPRODUCED
+====================================================================================================
+A_S FULL     n=4 dim=16   r=2 s=1  maxent=3 bits   (pre-registered dim 16, max 3)
+A_S CENTRE   n=2 dim=4    r=2 s=0  maxent=2 bits   (pre-registered dim 4, max 2)
+A_S BLOCK    n=2 dim=4    r=0 s=1  maxent=1 bits   (pre-registered dim 4, max 1)
+A_S MAG      n=1 dim=2    r=1 s=0  maxent=1 bits   (pre-registered dim 2, max 1)
+
+====================================================================================================
+V6 -- Z(A_S) IS THE CENTRE OF A_S, COMPUTED NOT ASSERTED
+====================================================================================================
+centre label set size = 4  -> centre dim = 4  (pre-registration says 4)
+centre labels as (a,b) with a reduced mod B^1: [([], []), ([0], []), ([1, 3], []), ([0, 1, 3], [])]
+
+====================================================================================================
+V7 -- Z(A_S) *IS* THE SURFACE ALGEBRA.  OPERATOR IDENTITY, NORM PRINTED.
+====================================================================================================
+vacuum           ||X1X2 - eta0 X0||=0.0000000000  ||X1X3 - eta1 X4||=0.0000000000  ||X2X3 - eta2 X5||=0.0000000000  ||X^Sigma - flux*I||=0.0000000000
+charges {0,4}    ||X1X2 - eta0 X0||=0.0000000000  ||X1X3 - eta1 X4||=0.0000000000  ||X2X3 - eta2 X5||=0.0000000000  ||X^Sigma - flux*I||=0.0000000000
+charges {4,5}    ||X1X2 - eta0 X0||=0.0000000000  ||X1X3 - eta1 X4||=0.0000000000  ||X2X3 - eta2 X5||=0.0000000000  ||X^Sigma - flux*I||=0.0000000000
+
+====================================================================================================
+V8 -- THE VACUITY THEOREM V1, MEASURED:  I(Z(A_S) : A_Sigma) = H(Z(A_S)) FOR EVERY STATE
+====================================================================================================
+A_Sigma: n=2 dim=4 r=2 s=0 maxent=2 bits   D(Sigma)=1
+   random state 0 :  H(Z(A_S)) = 1.956175891   I(Z(A_S):A_Sigma) = 1.956175891   gap = 0.00e+00
+   random state 1 :  H(Z(A_S)) = 1.999228768   I(Z(A_S):A_Sigma) = 1.999228768   gap = 0.00e+00
+   random state 2 :  H(Z(A_S)) = 1.984812070   I(Z(A_S):A_Sigma) = 1.984812070   gap = 0.00e+00
+   random state 3 :  H(Z(A_S)) = 1.991076102   I(Z(A_S):A_Sigma) = 1.991076102   gap = 0.00e+00
+>>> CONFIRMED AS A THEOREM, NOT A FINDING.  This is FIT-1 and it is now quarantined.
+
+====================================================================================================
+V9 -- FRAGMENTS: D(F) REPRODUCED FROM THE PRE-REGISTRATION
+====================================================================================================
+PRIMARY partition:
+   F1 links [0, 4, 5]    |F|=3  D(F)=1  cycles-inside=0  n=2 dim=4 r=2 s=0 maxent=2
+   F2 links [7, 8, 9]    |F|=3  D(F)=0  cycles-inside=1  n=4 dim=16 r=2 s=1 maxent=3
+   F3 links [11]         |F|=1  D(F)=0  cycles-inside=0  n=1 dim=2 r=1 s=0 maxent=1
+   F4 links [6, 10]      |F|=2  D(F)=0  cycles-inside=0  n=2 dim=4 r=2 s=0 maxent=2
+   union == E_env : True
+SECONDARY partition:
+   G1 links [0, 4, 5]    |F|=3  D(F)=1  cycles-inside=0  n=2 dim=4 r=2 s=0 maxent=2
+   G2 links [6, 9]       |F|=2  D(F)=0  cycles-inside=0  n=2 dim=4 r=2 s=0 maxent=2
+   G3 links [7, 11]      |F|=2  D(F)=0  cycles-inside=0  n=2 dim=4 r=2 s=0 maxent=2
+   G4 links [8, 10]      |F|=2  D(F)=0  cycles-inside=0  n=2 dim=4 r=2 s=0 maxent=2
+   union == E_env : True
+A_env: |F|=9 D=5 cycles-inside-dim=2  n=6 dim=64 r=2 s=2 maxent=4 bits
+
+====================================================================================================
+V10 -- JOIN != UNION, MEASURED (the G3 v G4 magnetic gap the pre-registration predicted)
+====================================================================================================
+dim(G3 v G4) = 8 (n=3)    dim A_{7,8,10,11} = 16 (n=4)   gap = 1 bit(s) of label space
+the extra generator is the cycle {7,8,10,11}: is it inside the JOIN label space? False
+
+====================================================================================================
+V11 -- MONOTONICITY GUARD: A_Sigma is a SUBALGEBRA of A_env (so Delta_surf >= 0 is forced)
+====================================================================================================
+every A_Sigma label lies in A_env's label space : True
+
+====================================================================================================
+V12 -- LANCZOS AGREES WITH EXACT DIAGONALISATION ON THE 32-DIM SECTOR
+====================================================================================================
+   g2=0.200000   eigh E0 = -25.047648880874   lanczos E0 = -25.047648880874   diff = 0.00e+00   gap E1-E0 = 9.508028047
+   g2=0.645497   eigh E0 = -10.384550294301   lanczos E0 = -10.384550294301   diff = 3.55e-15   gap E1-E0 = 3.803839826
+   g2=3.000000   eigh E0 = -36.027775091592   lanczos E0 = -36.027775091592   diff = 2.84e-14   gap E1-E0 = 17.986252159
+
+====================================================================================================
+V13 -- THE FREE (UNGAUGED) BACKEND: 4096 DIMS, LANCZOS CONVERGENCE PRINTED
+====================================================================================================
+   g2=0.2000   E0 = -25.047648880874   || (H-E0)psi || = 9.125e-14   norm = 1.000000000000
+   g2=3.0000   E0 = -36.027775091592   || (H-E0)psi || = 1.892e-13   norm = 1.000000000000
+
+====================================================================================================
+V14 -- W-19's PERRON-FROBENIUS CLAIM, RE-MEASURED ON THIS CARRIER
+====================================================================================================
+|<free ground state | projected into vacuum sector>| -- the overlap W-19 reported as 1.000000000
+   g2=0.200000  || P_vac psi_free || = 1.000000000     E0(free) = -25.047648881   E0(sector) = -25.047648881  equal=True
+   g2=0.645497  || P_vac psi_free || = 1.000000000     E0(free) = -10.384550294   E0(sector) = -10.384550294  equal=True
+   g2=1.000000  || P_vac psi_free || = 1.000000000     E0(free) = -12.743781048   E0(sector) = -12.743781048  equal=True
+   g2=3.000000  || P_vac psi_free || = 1.000000000     E0(free) = -36.027775092   E0(sector) = -36.027775092  equal=True
+
+====================================================================================================
+V15 -- SEED-STABILITY OF THE ENTROPY MACHINERY (same state, permuted generator order)
+====================================================================================================
+S(rho|A_S) under 5 generator orderings: ['2.713676433790', '2.713676433790', '2.713676433790', '2.713676433790', '2.713676433790']
+max spread = 4.44e-16   (the block decomposition must not depend on generator order)
+
+ALL CORE CHECKS PASSED.

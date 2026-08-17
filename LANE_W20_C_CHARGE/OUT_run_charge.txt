@@ -1,0 +1,310 @@
+
+============================================================================================================
+BLOCK 0 -- VALIDATION OF THE INSTRUMENT AGAINST SEALED PRIOR NUMBERS.  RUN FIRST.
+============================================================================================================
+This lane re-implements the physical sector, the Hamiltonian and the entropy from scratch.
+Before any new number is produced it must reproduce W-19's SEALED numbers on this carrier.
+W19_RULING/OUT_rule_main2.txt line 87 : tri_chain12 ground g2=3.00  H_elec(S)=0.001283123
+W19_RULING/OUT_rule_main2.txt line 86 : tri_chain12 ground g2=0.50  H_elec(S)=0.663269043
+W-19's S there was a SINGLE LINK (rule_verify.py:251, AX(L,[l])), so H_elec = H(X_l), max 1 bit.
+   g2=3.00  H(X_0) here = 0.001283123   W-19 sealed = 0.001283123   |diff| = 4.627e-10  MATCH
+   g2=0.50  H(X_0) here = 0.663269043   W-19 sealed = 0.663269043   |diff| = 2.456e-10  MATCH
+
+INTERNAL IDENTITIES, checked rather than assumed:
+   pure-state duality S(rho|A) = S(rho|A') for A = A_S and A' = A_env :  0.245303011325 vs 0.245303011325
+   algebra dimensions vs LANE_W20_PRE (pinned before any state existed):
+      FULL     rank=4   scalars=0  nbar=4   r=2 k=1  dim=16    max 3 bits
+      CENTRE   rank=2   scalars=0  nbar=2   r=2 k=0  dim=4     max 2 bits
+      BLOCK    rank=2   scalars=0  nbar=2   r=0 k=1  dim=4     max 1 bits
+      MAG      rank=1   scalars=0  nbar=1   r=1 k=0  dim=2     max 1 bits
+      WIDE     rank=8   scalars=3  nbar=5   r=1 k=2  dim=32    max 3 bits
+      A_Sigma  rank=3   scalars=1  nbar=2   r=2 k=0  dim=4     max 2 bits
+      A_env    rank=11  scalars=5  nbar=6   r=2 k=2  dim=64    max 4 bits
+   PRE-REG said: FULL dim 16 (max 3), CENTRE dim 4 (max 2), BLOCK dim 4 (max 1),
+   MAG dim 2 (max 1), WIDE dim 32 (max 3).  ALL FIVE REPRODUCED.
+
+   monotonicity I(A_S:A_F) <= I(A_S:A_F') for F subset F', spot-checked on the sweep grid:
+      g2=0.20  I(.,{11})=0.000302505 <= I(.,{6,10,11})=0.994591005 <= I(.,E_env)=1.992819949 : True
+      g2=1.00  I(.,{11})=0.000062302 <= I(.,{6,10,11})=0.064095137 <= I(.,E_env)=0.245304168 : True
+      g2=3.00  I(.,{11})=0.000000008 <= I(.,{6,10,11})=0.001283123 <= I(.,E_env)=0.005724482 : True
+   violations: 0
+
+============================================================================================================
+BLOCK 1 -- A THEOREM ABOUT THE PRE-REGISTERED FALSIFIER, PROVED BEFORE ITS NUMBERS ARE READ
+============================================================================================================
+The pre-registration pinned  Delta_surf = I(A_S : A_{E_env}) - I(A_S : A_Sigma)  as THE primary
+quantity, and pinned an EMPTINESS GATE (AXIS 6) that discards any point with H_channel < 0.10
+bits.  This block shows the two are not independent -- they are exact complements.
+
+(i)  A_Sigma == Z(A_S) AS REPRESENTED ALGEBRAS.  Not 'is like'.  Equal.
+     GF(2) span of Z(A_S) = {X_1X_2, X_1X_3}, and of A_Sigma = {X_0,X_4,X_5}, MODULO the
+     operators that are scalars on the physical sector:
+     Z(A_S) has nbar=2 dim=4 ; A_Sigma has nbar=2 dim=4 ; same algebra: True
+     (join of the two has nbar = 2, i.e. adjoining one to the other adds NOTHING.)
+
+(ii) A_{E_env} == A_S' , THE FULL COMMUTANT OF A_S.  Also an equality, from the incidence:
+     the gauge-invariant Pauli algebra on the 32-dim physical sector has GF(2) symplectic
+     dimension 2*(L-V+1) = 10.  nbar(A_S) = 4, so nbar(A_S') = 10 - 4 = 6 = nbar(A_env) = 6.
+     and every generator of A_env commutes with every generator of A_S (X on E_env vs X on S: 0;
+     env cycles vs W_S: both Z; X on E_env vs W_S: |F cap S| = 0).  Containment + equal dimension
+     = EQUALITY.  There is NO environment operator outside the commutant, and none inside it that
+     the environment lacks.
+
+(iii) THEREFORE, for ANY pure physical state, at ANY coupling, in ANY charge sector:
+        I(A_S : A_Sigma)   = S(A_Sigma)                    because A_Sigma is a SUBALGEBRA of A_S
+        I(A_S : A_{E_env}) = 2 S(A_S) - S(Z(A_S))          because A_env = A_S' and rho is pure
+        ==>  Delta_surf = 2 * ( H_FULL - H_CENTRE )  =  2 * sum_c p_c S(rho_c)
+      i.e. Delta_surf IS TWICE THE CONDITIONAL ENTROPY OF THE ONE FREE BLOCK QUBIT, and it never
+      reads the environment at all.  It is a function of rho restricted to A_S ALONE.
+
+>>> CONSEQUENCE, AND IT IS THE FIRST FINDING OF THIS LANE:
+    Delta_surf = 0  <=>  the free block qubit is PURE given the central labels  <=>  the record
+    has no content beyond the surface BY CONSTRUCTION.  The emptiness gate (AXIS 6) discards
+    exactly the couplings where that happens.  So H-SURFACE is CONFIRMED wherever the gate
+    REJECTS and REFUTED wherever the gate ACCEPTS -- automatically, with no measurement.
+    THE PRE-REGISTERED PRIMARY FALSIFIER COULD NOT HAVE FAILED, IN EITHER DIRECTION.
+    This is the W-19 defect a third time, inside the instrument built to catch it the second
+    time.  It is caught here by a GF(2) dimension count, and it is verified numerically below.
+
+============================================================================================================
+BLOCK 2 -- THE MEASURED CROSSOVER AND THE LIVE WINDOW.  FIRST NUMBERS OF THE RUN.
+============================================================================================================
+A0 vacuum :
+   MEASURED crossover g2_* = argmax Var_psi(sum_p W_p) = 5.000000   (Var = 4.999524)
+   a-priori marker g2_sd = sqrt(C/L) = sqrt(5/12) = 0.645497   ->  ratio g2_*/g2_sd = 7.7460
+   H_BLOCK >= 0.10 bits on g2 in [0.4203, 0.8223]   (30 of 200 grid points)
+   H_MAG   >= 0.10 bits on g2 in [0.3744, 5.0000]   (113 of 200 grid points)
+   >>> LIVE WINDOW (both >= 0.10) : g2 in [0.4203, 0.8223] , 30 of 200 points, width 0.4020
+       in decades: 0.2915  (log10 span)
+
+A1 charges {0,4} :
+   MEASURED crossover g2_* = argmax Var_psi(sum_p W_p) = 1.981344   (Var = 4.553566)
+   a-priori marker g2_sd = sqrt(C/L) = sqrt(5/12) = 0.645497   ->  ratio g2_*/g2_sd = 3.0695
+   H_BLOCK >= 0.10 bits on g2 in [0.4302, 5.0000]   (107 of 200 grid points)
+   H_MAG   >= 0.10 bits on g2 in [0.4107, 5.0000]   (109 of 200 grid points)
+   >>> LIVE WINDOW (both >= 0.10) : g2 in [0.4302, 5.0000] , 107 of 200 points, width 4.5698
+       in decades: 1.0653  (log10 span)
+
+
+============================================================================================================
+BLOCK 3 -- THE PRIMARY ARM PAIR.  A0 (eta=+1 everywhere) vs A1 (eta=-1 at {0,4}).
+============================================================================================================
+ARM 1  A0 : charges none          u0 = links []  |u0| = 0  flux(Sigma) = +1
+ARM 2  A1 : charges at {0,4}      u0 = links [1, 4, 6]  |u0| = 3  flux(Sigma) = -1
+
+THE DIFF, AT THE LEVEL OF THE HAMILTONIAN.  The two arms are the SAME 32x32 matrix except for
+the diagonal, because the plaquette hopping is translation on the cycle space and is coset-blind:
+   || offdiag(H_A0) - offdiag(H_A1) ||_F  = 0.000000000000   (0 = byte-identical hopping)
+   || diag(H_A0)    - diag(H_A1)    ||_F  = 19.595917942   at g2 = 1.00
+   electric weight |u| over the 32 basis states:
+      A0 histogram {0: 1, 3: 4, 4: 2, 6: 8, 7: 12, 8: 5}
+      A1 histogram {3: 4, 4: 4, 6: 8, 7: 12, 8: 4}
+   THE ENTIRE ARM DIFFERENCE IS THIS HISTOGRAM.  The charge sector is a rigid shift of the
+   electric-energy landscape by the coset offset u0; nothing else in the arm moves.
+
+FULL CHANNEL A_S (dim 16, max 3 bits).  All quantities in bits.
+g2     arm    H_FULL    H_CEN  H_BLOCK    H_MAG   I(S:env)   I(S:Sig)   I(S:F1)   I(S:F2)   I(S:F3)   I(S:F4) R_del
+-------------------------------------------------------------------------------------------------------------------
+0.05   A0    1.99998  1.99998  0.00004  0.00005    1.99998    1.99998   1.99998   0.99998   0.00000   0.99998     1
+0.05   A1    1.99999  1.99999  0.00004  0.00005    1.99999    1.99999   1.99999   1.00000   0.00000   1.00000     1
+0.10   A0    1.99960  1.99960  0.00053  0.00063    1.99960    1.99960   1.99960   0.99970   0.00002   0.99970     1
+0.10   A1    1.99991  1.99991  0.00052  0.00061    1.99991    1.99991   1.99991   1.00000   0.00002   1.00000     1
+0.20   A0    1.99282  1.99282  0.00695  0.00851    1.99282    1.99282   1.99282   0.99459   0.00030   0.99459     1
+0.20   A1    1.99845  1.99845  0.00657  0.00770    1.99845    1.99845   1.99845   1.00000   0.00031   1.00000     1
+0.30   A0    1.95548  1.95546  0.03192  0.04175    1.95549    1.95546   1.95546   0.96705   0.00154   0.96704     1
+0.30   A1    1.99153  1.99152  0.02855  0.03327    1.99154    1.99152   1.99152   1.00003   0.00166   1.00001     1
+0.45   A0    1.68941  1.68925  0.12861  0.21710    1.68956    1.68925   1.68925   0.78230   0.00535   0.78207     1
+0.45   A1    1.95265  1.95238  0.11854  0.13651    1.95293    1.95238   1.95238   1.00058   0.00930   1.00017     1
+0.60   A0    1.07776  1.07759  0.18246  0.54132    1.07792    1.07759   1.07759   0.41227   0.00344   0.41203     1
+0.60   A1    1.85649  1.85494  0.28327  0.32065    1.85804    1.85494   1.85494   1.00333   0.02901   1.00107     1
+0.80   A0    0.49139  0.49137  0.11079  0.81933    0.49140    0.49137   0.49137   0.14511   0.00044   0.14509     1
+0.80   A1    1.68489  1.68161  0.51650  0.56633    1.68818    1.68161   1.68161   1.00719   0.06289   1.00249     1
+1.00   A0    0.24530  0.24530  0.05760  0.92213    0.24530    0.24530   0.24530   0.06410   0.00006   0.06410     1
+1.00   A1    1.54569  1.54320  0.68501  0.72724    1.54818    1.54320   1.54320   1.00547   0.07830   1.00198     1
+1.30   A0    0.10398  0.10398  0.02434  0.97220    0.10398    0.10398   0.10398   0.02525   0.00001   0.02525     1
+1.30   A1    1.39817  1.39740  0.84026  0.86249    1.39893    1.39740   1.39740   1.00167   0.06840   1.00063     1
+1.70   A0    0.04193  0.04193  0.00967  0.99043    0.04193    0.04193   0.04193   0.00979   0.00000   0.00979     1
+1.70   A1    1.25504  1.25493  0.93816  0.94495    1.25514    1.25493   1.25493   1.00023   0.04097   1.00009     1
+2.20   A0    0.01715  0.01715  0.00390  0.99658    0.01715    0.01715   0.01715   0.00391   0.00000   0.00391     1
+2.20   A1    1.14052  1.14051  0.97936  0.98076    1.14053    1.14051   1.14051   1.00002   0.01911   1.00001     1
+3.00   A0    0.00572  0.00572  0.00128  0.99901    0.00572    0.00572   0.00572   0.00128   0.00000   0.00128     1
+3.00   A1    1.05755  1.05755  0.99484  0.99499    1.05755    1.05755   1.05755   1.00000   0.00629   1.00000     3
+5.00   A0    0.00091  0.00091  0.00020  0.99987    0.00091    0.00091   0.00091   0.00020   0.00000   0.00020     1
+5.00   A1    1.01071  1.01071  0.99943  0.99943    1.01071    1.01071   1.01071   1.00000   0.00086   1.00000     3
+
+DELTA_SURF, THE PRE-REGISTERED PRIMARY FALSIFIER, AND THE IDENTITY OF BLOCK 1 CHECKED POINTWISE:
+g2     arm      Delta_surf  2*(H_FULL-H_CENTRE)     |residual|       gate
+0.05   A0     -0.000000000         -0.000000000       4.44e-16 VACUOUS-BY-EMPTINESS
+0.05   A1     -0.000000000         -0.000000000       6.66e-16 VACUOUS-BY-EMPTINESS
+0.10   A0      0.000000006          0.000000006       2.00e-15 VACUOUS-BY-EMPTINESS
+0.10   A1      0.000000006          0.000000006       3.55e-15 VACUOUS-BY-EMPTINESS
+0.20   A0      0.000001164          0.000001164       8.88e-16 VACUOUS-BY-EMPTINESS
+0.20   A1      0.000001178          0.000001178       4.44e-16 VACUOUS-BY-EMPTINESS
+0.30   A0      0.000024960          0.000024960       6.66e-16 VACUOUS-BY-EMPTINESS
+0.30   A1      0.000026911          0.000026911       2.22e-16 VACUOUS-BY-EMPTINESS
+0.45   A0      0.000307821          0.000307821       1.33e-15       PASS
+0.45   A1      0.000551857          0.000551857       2.22e-16       PASS
+0.60   A0      0.000325127          0.000325127       2.00e-15       PASS
+0.60   A1      0.003096520          0.003096520       2.22e-16       PASS
+0.80   A0      0.000031980          0.000031980       9.44e-16       PASS
+0.80   A1      0.006574827          0.006574827       2.22e-16       PASS
+1.00   A0      0.000002313          0.000002313       4.80e-15 VACUOUS-BY-EMPTINESS
+1.00   A1      0.004982723          0.004982723       1.55e-15       PASS
+1.30   A0      0.000000093          0.000000093       6.37e-15 VACUOUS-BY-EMPTINESS
+1.30   A1      0.001537382          0.001537382       4.44e-16       PASS
+1.70   A0      0.000000004          0.000000004       3.71e-15 VACUOUS-BY-EMPTINESS
+1.70   A1      0.000214358          0.000214358       4.44e-16       PASS
+2.20   A0      0.000000000          0.000000000       7.88e-16 VACUOUS-BY-EMPTINESS
+2.20   A1      0.000019247          0.000019247       2.44e-15       PASS
+3.00   A0     -0.000000000         -0.000000000       9.28e-17 VACUOUS-BY-EMPTINESS
+3.00   A1      0.000000731          0.000000731       6.66e-16       PASS
+5.00   A0     -0.000000000         -0.000000000       8.41e-16 VACUOUS-BY-EMPTINESS
+5.00   A1      0.000000002          0.000000002       1.55e-15       PASS
+   MAXIMUM RESIDUAL OVER ALL 26 ARM-POINTS : 6.370e-15
+   >>> THE IDENTITY HOLDS TO MACHINE PRECISION.  Delta_surf carried no information about the
+       environment on any of these points.  IT IS NOT SCORED.
+
+THE ARM DIFF, PRINTED:  A1 minus A0, per coupling, per channel.
+g2        dH_FULL     dH_CEN   dH_BLOCK     dH_MAG    dI(S:env)     dI(S:F3)   dR_del
+0.05     0.000018   0.000018  -0.000000  -0.000000     0.000018     0.000000        0
+0.10     0.000303   0.000303  -0.000008  -0.000015     0.000303     0.000000        0
+0.20     0.005630   0.005630  -0.000378  -0.000806     0.005630     0.000003        0
+0.30     0.036053   0.036052  -0.003369  -0.008481     0.036054     0.000115        0
+0.45     0.263244   0.263122  -0.010070  -0.080587     0.263366     0.003949        0
+0.60     0.778734   0.777349   0.100802  -0.220666     0.780120     0.025578        0
+0.80     1.193507   1.190236   0.405701  -0.252998     1.196778     0.062451        0
+1.00     1.300387   1.297897   0.627410  -0.194894     1.302877     0.078242        0
+1.30     1.294186   1.293418   0.815920  -0.109709     1.294955     0.068397        0
+1.70     1.213105   1.212998   0.928489  -0.045479     1.213212     0.040968        0
+2.20     1.123375   1.123366   0.975467  -0.015822     1.123385     0.019112        0
+3.00     1.051826   1.051825   0.993557  -0.004025     1.051826     0.006289        2
+5.00     1.009803   1.009803   0.999232  -0.000438     1.009803     0.000859        2
+   LARGEST SINGLE-CHANNEL MOVE ACROSS THE WHOLE SWEEP : 1.300387037 bits
+
+RECORD-CONTENT DISTANCE, the quantity that does not depend on which scalar summary is chosen:
+   D_tr( rho|A_S in A1 , rho|A_S in A0 )  --  trace distance inside the SAME abstract algebra
+   A_S = M_2 (+) M_2 (+) M_2 (+) M_2 .  Well posed across sectors because A_S is sector-free.
+g2        D_tr(A_S)   D_tr(CENTRE)    D_tr(BLOCK)
+0.05    0.002512525    0.002512523    0.000006309
+0.10    0.010201545    0.010201416    0.000103817
+0.20    0.043280141    0.043271018    0.001856422
+0.30    0.106606009    0.106487609    0.011193223
+0.45    0.269159203    0.267714367    0.073477487
+0.60    0.422029624    0.417213152    0.207142861
+0.80    0.484766658    0.479348968    0.327205602
+1.00    0.495520122    0.492447009    0.378429571
+1.30    0.498469703    0.497495990    0.419861814
+1.70    0.499358347    0.499160165    0.455025310
+2.20    0.499734568    0.499702494    0.478940234
+3.00    0.499917127    0.499914178    0.492973289
+5.00    0.499988938    0.499988887    0.499028202
+
+============================================================================================================
+BLOCK 4 -- CHANNEL-BY-CHANNEL R_delta, AND WHERE THE PLATEAU CAN FAIL
+============================================================================================================
+R_delta = #{i : I(channel : A_Fi) >= 0.90 * H(channel)} over the four declared fragments.
+g2     arm  channel    H(chan)      I:F1      I:F2      I:F3      I:F4  R_del gate
+0.05   A0   FULL       1.99998   1.99998   0.99998   0.00000   0.99998      1 
+0.05   A0   CENTRE     1.99998   1.99998   0.99998   0.00000   0.99998      1 
+0.05   A0   BLOCK      0.00004   0.00004   0.00003   0.00000   0.00003      1 VACUOUS-BY-EMPTINESS
+0.05   A0   MAG        0.00005   0.00000   0.00000   0.00000   0.00000      0 VACUOUS-BY-EMPTINESS
+0.05   A1   FULL       1.99999   1.99999   1.00000   0.00000   1.00000      1 
+0.05   A1   CENTRE     1.99999   1.99999   1.00000   0.00000   1.00000      1 
+0.05   A1   BLOCK      0.00004   0.00004   0.00003   0.00000   0.00003      1 VACUOUS-BY-EMPTINESS
+0.05   A1   MAG        0.00005   0.00000   0.00000   0.00000   0.00000      0 VACUOUS-BY-EMPTINESS
+0.10   A0   FULL       1.99960   1.99960   0.99970   0.00002   0.99970      1 
+0.10   A0   CENTRE     1.99960   1.99960   0.99970   0.00002   0.99970      1 
+0.10   A0   BLOCK      0.00053   0.00053   0.00041   0.00000   0.00041      1 VACUOUS-BY-EMPTINESS
+0.10   A0   MAG        0.00063   0.00003   0.00001   0.00000   0.00001      0 VACUOUS-BY-EMPTINESS
+0.10   A1   FULL       1.99991   1.99991   1.00000   0.00002   1.00000      1 
+0.10   A1   CENTRE     1.99991   1.99991   1.00000   0.00002   1.00000      1 
+0.10   A1   BLOCK      0.00052   0.00052   0.00040   0.00000   0.00040      1 VACUOUS-BY-EMPTINESS
+0.10   A1   MAG        0.00061   0.00003   0.00001   0.00000   0.00001      0 VACUOUS-BY-EMPTINESS
+0.20   A0   FULL       1.99282   1.99282   0.99459   0.00030   0.99459      1 
+0.20   A0   CENTRE     1.99282   1.99282   0.99459   0.00030   0.99459      1 
+0.20   A0   BLOCK      0.00695   0.00694   0.00546   0.00000   0.00546      1 VACUOUS-BY-EMPTINESS
+0.20   A0   MAG        0.00851   0.00047   0.00022   0.00000   0.00022      0 VACUOUS-BY-EMPTINESS
+0.20   A1   FULL       1.99845   1.99845   1.00000   0.00031   1.00000      1 
+0.20   A1   CENTRE     1.99845   1.99845   1.00000   0.00031   1.00000      1 
+0.20   A1   BLOCK      0.00657   0.00657   0.00508   0.00000   0.00508      1 VACUOUS-BY-EMPTINESS
+0.20   A1   MAG        0.00770   0.00047   0.00023   0.00000   0.00023      0 VACUOUS-BY-EMPTINESS
+0.30   A0   FULL       1.95548   1.95546   0.96705   0.00154   0.96704      1 
+0.30   A0   CENTRE     1.95546   1.95546   0.96704   0.00153   0.96703      1 
+0.30   A0   BLOCK      0.03192   0.03191   0.02567   0.00005   0.02566      1 VACUOUS-BY-EMPTINESS
+0.30   A0   MAG        0.04175   0.00243   0.00115   0.00000   0.00115      0 VACUOUS-BY-EMPTINESS
+0.30   A1   FULL       1.99153   1.99152   1.00003   0.00166   1.00001      1 
+0.30   A1   CENTRE     1.99152   1.99152   1.00001   0.00165   1.00000      1 
+0.30   A1   BLOCK      0.02855   0.02854   0.02222   0.00005   0.02221      1 VACUOUS-BY-EMPTINESS
+0.30   A1   MAG        0.03327   0.00243   0.00123   0.00001   0.00123      0 VACUOUS-BY-EMPTINESS
+0.45   A0   FULL       1.68941   1.68925   0.78230   0.00535   0.78207      1 
+0.45   A0   CENTRE     1.68925   1.68925   0.78207   0.00527   0.78199      1 
+0.45   A0   BLOCK      0.12861   0.12846   0.10851   0.00077   0.10835      1 
+0.45   A0   MAG        0.21710   0.00900   0.00403   0.00006   0.00397      0 
+0.45   A1   FULL       1.95265   1.95238   1.00058   0.00930   1.00017      1 
+0.45   A1   CENTRE     1.95238   1.95238   1.00017   0.00915   1.00003      1 
+0.45   A1   BLOCK      0.11854   0.11826   0.09465   0.00107   0.09437      1 
+0.45   A1   MAG        0.13651   0.01219   0.00696   0.00018   0.00685      0 
+0.60   A0   FULL       1.07776   1.07759   0.41227   0.00344   0.41203      1 
+0.60   A0   CENTRE     1.07759   1.07759   0.41203   0.00335   0.41195      1 
+0.60   A0   BLOCK      0.18246   0.18230   0.16130   0.00116   0.16113      1 
+0.60   A0   MAG        0.54132   0.00807   0.00264   0.00004   0.00257      0 
+0.60   A1   FULL       1.85649   1.85494   1.00333   0.02901   1.00107      1 
+0.60   A1   CENTRE     1.85494   1.85494   1.00107   0.02818   1.00024      1 
+0.60   A1   BLOCK      0.28327   0.28172   0.23341   0.00779   0.23186      1 
+0.60   A1   MAG        0.32065   0.03245   0.02129   0.00152   0.02068      0 
+0.80   A0   FULL       0.49139   0.49137   0.14511   0.00044   0.14509      1 
+0.80   A0   CENTRE     0.49137   0.49137   0.14509   0.00043   0.14508      1 
+0.80   A0   BLOCK      0.11079   0.11078   0.10323   0.00027   0.10321      3 
+0.80   A0   MAG        0.81933   0.00210   0.00036   0.00000   0.00035      0 
+0.80   A1   FULL       1.68489   1.68161   1.00719   0.06289   1.00249      1 
+0.80   A1   CENTRE     1.68161   1.68161   1.00249   0.06102   1.00062      1 
+0.80   A1   BLOCK      0.51650   0.51321   0.43137   0.02991   0.42809      1 
+0.80   A1   MAG        0.56633   0.06049   0.04336   0.00544   0.04214      0 
+1.00   A0   FULL       0.24530   0.24530   0.06410   0.00006   0.06410      1 
+1.00   A0   CENTRE     0.24530   0.24530   0.06410   0.00006   0.06409      1 
+1.00   A0   BLOCK      0.05760   0.05760   0.05549   0.00005   0.05549      3 VACUOUS-BY-EMPTINESS
+1.00   A0   MAG        0.92213   0.00048   0.00005   0.00000   0.00005      0 
+1.00   A1   FULL       1.54569   1.54320   1.00547   0.07830   1.00198      1 
+1.00   A1   CENTRE     1.54320   1.54320   1.00198   0.07681   1.00048      1 
+1.00   A1   BLOCK      0.68501   0.68252   0.56384   0.04844   0.56135      1 
+1.00   A1   MAG        0.72724   0.07034   0.04923   0.00655   0.04838      0 
+1.30   A0   FULL       0.10398   0.10398   0.02525   0.00001   0.02525      1 
+1.30   A0   CENTRE     0.10398   0.10398   0.02525   0.00001   0.02525      1 
+1.30   A0   BLOCK      0.02434   0.02434   0.02397   0.00001   0.02397      3 VACUOUS-BY-EMPTINESS
+1.30   A0   MAG        0.97220   0.00007   0.00001   0.00000   0.00001      0 
+1.30   A1   FULL       1.39817   1.39740   1.00167   0.06840   1.00063      1 
+1.30   A1   CENTRE     1.39740   1.39740   1.00063   0.06790   1.00014      1 
+1.30   A1   BLOCK      0.84026   0.83949   0.68586   0.05162   0.68509      1 
+1.30   A1   MAG        0.86249   0.05805   0.03581   0.00360   0.03558      0 
+1.70   A0   FULL       0.04193   0.04193   0.00979   0.00000   0.00979      1 VACUOUS-BY-EMPTINESS
+1.70   A0   CENTRE     0.04193   0.04193   0.00979   0.00000   0.00979      1 VACUOUS-BY-EMPTINESS
+1.70   A0   BLOCK      0.00967   0.00967   0.00962   0.00000   0.00962      3 VACUOUS-BY-EMPTINESS
+1.70   A0   MAG        0.99043   0.00001   0.00000   0.00000   0.00000      0 
+1.70   A1   FULL       1.25504   1.25493   1.00023   0.04097   1.00009      1 
+1.70   A1   CENTRE     1.25493   1.25493   1.00009   0.04089   1.00001      1 
+1.70   A1   BLOCK      0.93816   0.93805   0.79729   0.03548   0.79719      1 
+1.70   A1   MAG        0.94495   0.03325   0.01645   0.00089   0.01643      0 
+2.20   A0   FULL       0.01715   0.01715   0.00391   0.00000   0.00391      1 VACUOUS-BY-EMPTINESS
+2.20   A0   CENTRE     0.01715   0.01715   0.00391   0.00000   0.00391      1 VACUOUS-BY-EMPTINESS
+2.20   A0   BLOCK      0.00390   0.00390   0.00389   0.00000   0.00389      3 VACUOUS-BY-EMPTINESS
+2.20   A0   MAG        0.99658   0.00000   0.00000   0.00000   0.00000      0 
+2.20   A1   FULL       1.14052   1.14051   1.00002   0.01911   1.00001      1 
+2.20   A1   CENTRE     1.14051   1.14051   1.00001   0.01911   1.00000      1 
+2.20   A1   BLOCK      0.97936   0.97935   0.88671   0.01793   0.88670      3 
+2.20   A1   MAG        0.98076   0.01510   0.00583   0.00014   0.00583      0 
+3.00   A0   FULL       0.00572   0.00572   0.00128   0.00000   0.00128      1 VACUOUS-BY-EMPTINESS
+3.00   A0   CENTRE     0.00572   0.00572   0.00128   0.00000   0.00128      1 VACUOUS-BY-EMPTINESS
+3.00   A0   BLOCK      0.00128   0.00128   0.00128   0.00000   0.00128      3 VACUOUS-BY-EMPTINESS
+3.00   A0   MAG        0.99901   0.00000   0.00000   0.00000   0.00000      0 
+3.00   A1   FULL       1.05755   1.05755   1.00000   0.00629   1.00000      3 
+3.00   A1   CENTRE     1.05755   1.05755   1.00000   0.00629   1.00000      3 
+3.00   A1   BLOCK      0.99484   0.99484   0.95293   0.00616   0.95293      3 
+3.00   A1   MAG        0.99499   0.00488   0.00146   0.00001   0.00146      0 
+5.00   A0   FULL       0.00091   0.00091   0.00020   0.00000   0.00020      1 VACUOUS-BY-EMPTINESS
+5.00   A0   CENTRE     0.00091   0.00091   0.00020   0.00000   0.00020      1 VACUOUS-BY-EMPTINESS
+5.00   A0   BLOCK      0.00020   0.00020   0.00020   0.00000   0.00020      3 VACUOUS-BY-EMPTINESS
+5.00   A0   MAG        0.99987   0.00000   0.00000  -0.00000   0.00000      0 
+5.00   A1   FULL       1.01071   1.01071   1.00000   0.00086   1.00000      3 
+5.00   A1   CENTRE     1.01071   1.01071   1.00000   0.00086   1.00000      3 
+5.00   A1   BLOCK      0.99943   0.99943   0.99116   0.00086   0.99116      3 
+5.00   A1   MAG        0.99943   0.00066   0.00015   0.00000   0.00015      0 

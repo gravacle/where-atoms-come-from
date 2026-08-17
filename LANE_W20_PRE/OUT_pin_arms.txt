@@ -1,0 +1,304 @@
+
+====================================================================================================
+BLOCK 1 -- THE CATCH, RESTATED, BECAUSE IT REDESIGNS THE ARM
+====================================================================================================
+pin_algebra BLOCK C: |Aut(tri_chain12)| = 16 and Aut is TRANSITIVE on the four triangle
+regions.  The 'well posed replacement' I proposed for the boundary-EXISTENCE category error --
+hold the state, move S across the four triangles, see whether the record moves -- IS VACUOUS.
+All four give identical numbers by a theorem about the automorphism group.  A lane running it
+would have returned a confident null and called it 'the record is geographic'.
+
+>>> THIS IS THE W-19 DEFECT REAPPEARING INSIDE THE INSTRUMENT BUILT TO CATCH IT, EXACTLY AS THE
+    BRIEF WARNED.  It is caught here, before a state exists, which is the only reason the phase
+    is worth running.  The surface-variation arm must therefore use surfaces in DISTINCT
+    Aut-ORBITS.  Those orbits are enumerated next.
+
+====================================================================================================
+BLOCK 2 -- THE 127 SURFACES, SORTED INTO Aut-ORBITS.  ARMS MUST CROSS ORBITS.
+====================================================================================================
+number of distinct nonzero surfaces : 127
+number of Aut-orbits of surfaces    : 28
+orbit  |orb|  |Sigma|  representative delta(A) (links)
+0      1      2        [0, 6]
+1      4      3        [0, 1, 2]
+2      4      3        [1, 3, 4]
+3      4      3        [0, 4, 5]
+4      2      4        [1, 2, 4, 5]
+5      2      4        [1, 2, 7, 8]
+6      2      4        [4, 5, 7, 8]
+7      8      4        [0, 2, 3, 4]
+8      4      5        [0, 1, 3, 4, 6]
+9      8      5        [2, 3, 4, 7, 8]
+10     2      6        [0, 1, 2, 4, 5, 6]
+11     2      6        [0, 1, 2, 6, 7, 8]
+12     2      6        [0, 4, 5, 6, 7, 8]
+13     4      6        [1, 3, 4, 7, 9, 10]
+14     4      6        [2, 3, 4, 8, 9, 10]
+15     8      6        [0, 1, 3, 4, 7, 8]
+16     8      6        [1, 3, 4, 6, 7, 8]
+17     4      7        [0, 1, 2, 4, 5, 7, 8]
+18     4      7        [1, 2, 4, 5, 6, 7, 8]
+19     4      7        [1, 2, 4, 5, 7, 9, 10]
+20     8      7        [0, 2, 3, 4, 6, 7, 8]
+21     16     7        [0, 2, 3, 4, 7, 9, 10]
+22     1      8        [1, 2, 4, 5, 7, 8, 10, 11]
+23     4      8        [0, 1, 3, 4, 6, 7, 9, 10]
+24     4      8        [0, 2, 3, 4, 6, 8, 9, 10]
+25     8      8        [0, 1, 2, 4, 5, 8, 9, 10]
+26     4      9        [0, 1, 2, 4, 5, 6, 7, 9, 10]
+27     1      10       [0, 1, 2, 4, 5, 6, 7, 8, 10, 11]
+
+Sigma = [0, 4, 5] lies in the orbit of size 4, |Sigma| = 3.
+members of Sigma's own orbit (all VACUOUS against Sigma, cannot be used as contrast arms):
+    [0, 4, 5]
+    [1, 2, 6]
+    [0, 7, 8]
+    [6, 10, 11]
+
+MINIMUM surface on this carrier has |Sigma| = 2 :
+    delta(A) = [0, 6]  -- the 2-edge cut separating {0,1,2,3} from {4,5,6,7}
+   tri_chain12 is 2-edge-connected, NOT 3-edge-connected.  The carrier has a bottleneck, and
+   the bottleneck links are 0 and 6 -- one of which is IN Sigma.  Recorded, not fixed.
+
+====================================================================================================
+BLOCK 3 -- THE FOUR ENVIRONMENT FRAGMENTS.  DECLARED NOW.  FINAL.
+====================================================================================================
+PRIMARY PARTITION  (F1 IS THE SURFACE ITSELF):
+   disjoint = True   union == E_env = True   sizes [3, 3, 1, 2]   cap |F| <= 4 : True
+   frag links        |F|    |F cap Sig| D(F)      magnetic status
+   F1   [0, 4, 5]    3      3         2         0        POSITIVE CONTROL, electric channel CANNOT FAIL
+   F2   [7, 8, 9]    3      0         1         1        electric channel PARTLY VACUOUS (1 forced bit)
+   F3   [11]         1      0         0         0        GAUSS-FREE: electric channel FULLY LIVE
+   F4   [6, 10]      2      0         1         0        electric channel PARTLY VACUOUS (1 forced bit)
+   ALL  E_env        9      3         2         2        the whole environment
+
+SECONDARY PARTITION (partition-robustness arm; answers W-19 sec 0):
+   disjoint = True   union == E_env = True   sizes [3, 2, 2, 2]   cap |F| <= 4 : True
+   frag links        |F|    |F cap Sig| D(F)      magnetic status
+   G1   [0, 4, 5]    3      3         2         0        POSITIVE CONTROL, electric channel CANNOT FAIL
+   G2   [6, 9]       2      0         1         0        electric channel PARTLY VACUOUS (1 forced bit)
+   G3   [7, 11]      2      0         0         0        GAUSS-FREE: electric channel FULLY LIVE
+   G4   [8, 10]      2      0         0         0        GAUSS-FREE: electric channel FULLY LIVE
+   ALL  E_env        9      3         2         2        the whole environment
+   JOIN != UNION: G3 v G4 magnetic 0 + 0 -> 1  (gap 1 bit)
+
+>>> WHY THIS PARTITION AND NOT W-19's SUGGESTED [0,4]/[5,6]/[7,8,9]/[10,11]:
+    W-19 suggested sizes 2,2,2,3 chosen by size.  Computed here, that partition has D = 2,2,1,1
+    -- EVERY fragment Gauss-forced, NO fragment free.  The naive rule 'a fragment with no
+    surface link is free' IS FALSE on this carrier: delta({0,7}) = {1,2,10,11} and
+    delta({0,5,6,7}) = {1,2,7,8} are Gauss surfaces that avoid Sigma entirely and still hand
+    X_1X_2 to fragments containing no link of Sigma.  THE SURFACE FORCING A GIVEN RECORD BIT IS
+    A COSET, NOT A SET.  32 distinct environment supports force X_1X_2; the smallest are
+    [0], [6], [7,8], [10,11], [4,5].
+
+MAXIMAL GAUSS-FREE ENVIRONMENT FRAGMENTS (D = 0), exhaustively: [[7, 9, 10], [8, 9, 11], [7, 11], [8, 10]]
+   -> every Gauss-free fragment lives inside {7,8,9,10,11}; links 0,4,5,6 each force a bit on
+      their own.  THERE IS NO PARTITION OF E_env INTO FOUR GAUSS-FREE FRAGMENTS.  The electric
+      channel is structurally contaminated on this carrier and no design choice removes it.
+   -> and NO fragment that carries a Wilson loop is Gauss-free: the environment cycles are [[7, 8, 9], [9, 10, 11], [7, 8, 10, 11]],
+      each contains {7,8} or {10,11}, each of which forces X_1X_2.  MAGNETIC AND GAUSS-FREE ARE
+      INCOMPATIBLE IN THE ENVIRONMENT.  Recorded as a confound of the carrier, not fixed.
+
+====================================================================================================
+BLOCK 4 -- THE SIX CRITERION AXES, PINNED
+====================================================================================================
+AXIS 1  SYSTEM ALGEBRA.  A_S = NARROW = the gauge-invariant Pauli algebra supported on
+        S = {1,2,3}.  dim 16, non-abelian, = M_2 + M_2 + M_2 + M_2, centre dim 4.
+        DERIVED: a Pauli string X^a Z^b on S is gauge invariant iff b lies in the cycle space,
+        and the only cycles inside S are 0 and {1,2,3}; a is unconstrained.  8 x 2 = 16.
+        CENTER (Casini-Huerta-Rosabal) COLLAPSES ONTO NARROW on the physical sector.
+        WIDE (S u Sigma) is ARM A2, not the primary.
+        FOUR CHANNELS REPORTED SIDE BY SIDE, always:
+           FULL   A_S               dim 16   max 3 bits   (2 central + 1 block)
+           CENTRE Z(A_S)            dim  4   max 2 bits   VACUOUS BY THEOREM, = the surface
+           BLOCK  alg{X_1, W_S}     dim  4   max 1 bit    THE ONLY LIVE PART
+           MAG    alg{W_S}          dim  2   max 1 bit    never Gauss-forced
+AXIS 2  FRAGMENT ALGEBRA, AND CF-R1 SETTLED.  A_F = the gauge-invariant Pauli algebra supported
+        on F (X^a for a in F; Z^z for z a cycle inside F).  The criterion is the ALGEBRAIC
+        mutual information
+            I(A_S : A_F) = S(rho|A_S) + S(rho|A_F) - S(rho|A_S v A_F)
+        which is defined for NON-ABELIAN algebras with centre and reduces to classical mutual
+        information when both sides are abelian.  CHI IS RETIRED: it restricts only one side,
+        so it cannot be the criterion once the system algebra is non-abelian.  CF-R1 CLOSED.
+AXIS 3  DISJOINTNESS AND THE PARTITION.  BLOCK 3.  Declared before any state.  Two partitions,
+        primary and secondary, so partition-relativity (W-19 sec 0) is measured, not assumed.
+AXIS 4  SIZE CAP.  |F| <= floor(|E_env|/2) = 4.  Max declared size 3.
+AXIS 5  COMPOSITES.  NOT USED IN R_delta.  Any composite reported carries JOIN semantics and
+        the magnetic gap quoted in BLOCK 3.
+AXIS 6  EMPTINESS GATE.  H_channel(A_S) is reported beside EVERY number.  Any R_delta or
+        Delta_surf reported with H_channel(A_S) < 0.10 bits is stamped VACUOUS-BY-EMPTINESS and
+        never scored.  Threshold 0.10 bits: COINED, declared here, before any state.
+
+PLATEAU TOLERANCE delta = 0.10, inherited from W-19 unchanged.
+R_delta = #{ i : I(A_S : A_Fi) >= (1 - delta) H(A_S) } over the four declared fragments.
+
+====================================================================================================
+BLOCK 5 -- THE COUPLING SWEEP, PINNED
+====================================================================================================
+H = -(1/g2) sum_{p in PLAQ} W_p  -  g2 sum_l X_l     (W-19 convention, unchanged)
+PLAQ pinned in pin_carrier BLOCK 7: [1,2,3],[3,4,5],[7,8,9],[9,10,11],[0,1,4,6,7,10]
+   -- the 4-fold tie in the 5th generator is RECORDED; varying it is ARM D2.
+C = 5 plaquettes, L = 12 links.
+A-PRIORI TERM-BALANCE MARKER (no state needed): (1/g2)*C = g2*L  =>  g2_sd = sqrt(C/L) = 0.645497
+PINNED GRID (13 points, straddles g2_sd and both asymptotes):
+   [0.05, 0.1, 0.2, 0.3, 0.45, 0.6, 0.8, 1.0, 1.3, 1.7, 2.2, 3.0, 5.0]
+PINNED CROSSOVER ESTIMATOR, to be MEASURED in the run and never coined:
+   g2_* = argmax over a 200-point log grid on [0.05, 5.00] of  Var_psi( sum_p W_p ).
+   ALL phase labels ('magnetic', 'electric') are assigned relative to the MEASURED g2_*.
+   g2_sd = 0.645497 is reported beside it as the a-priori marker; if they disagree, that is a
+   result about the carrier, not an error.
+
+SECTOR DIMENSIONS (combinatorics, not a state): each of the 2^(V-1) = 128 admissible charge
+sectors is 2^(L-V+1) = 2^5 = 32 dimensional.  Exact diagonalisation is a 32x32 problem.
+Dynamical Z_2 matter (2^13 = 8192) is AVAILABLE and is NOT USED: static charges give the same
+isolated variable with a 256x smaller arm and a byte-identical Hamiltonian.
+
+====================================================================================================
+BLOCK 6 -- THE ARMS.  ISOLATED VARIABLE NAMED, DIFF NAMED, VACUITY CHECKED.
+====================================================================================================
+
+A0  REFERENCE
+   arm            : vacuum sector eta = +1 everywhere, primary partition, primary PLAQ, full grid
+   ISOLATED       : -
+   live/vacuous   : the baseline every other arm diffs against
+
+A1  CHARGE SECTOR
+   arm            : eta = -1 at {0,4}; everything else byte-identical
+   ISOLATED       : the sign pattern in the Gauss constraints, and nothing else
+   live/vacuous   : LIVE: W-19 measured |<free|projected>| = 1.000000000 in the vacuum sector (Perron-Frobenius), so the vacuum arm's Gauss law is inert ON THE STATE.  It cannot be inert in a charged sector.
+
+A2  BOUNDARY ALGEBRA
+   arm            : A_S = WIDE (S u Sigma, dim 32 on the physical sector) vs NARROW (dim 16)
+   ISOLATED       : the algebra assigned to S; state, partition, coupling all fixed
+   live/vacuous   : LIVE only where the state is magnetic: W-19 measured this disagreement at ONE FULL BIT in the magnetic phase and EXACTLY ZERO in the electric phase.
+
+R1  FORMATION, PAIR ALPHA
+   arm            : eta=-1 at {0,4}  vs  eta=-1 at {1,5}
+   ISOLATED       : WHERE the charge sits.  Sigma = {0,4,5} identical.  flux(Sigma) = -1 in BOTH.
+   live/vacuous   : LIVE: 0 elements of Stab(A) map one onto the other (pin_algebra BLOCK C).
+
+R2  FORMATION, PAIR BETA
+   arm            : vacuum  vs  eta=-1 at {4,5} (charge pair entirely OUTSIDE A)
+   ISOLATED       : the presence of a charge pair that the surface cannot see.  flux(Sigma) = +1 in BOTH.
+   live/vacuous   : LIVE: 0 symmetry maps.  THIS IS THE SHARPEST FORMATION ARM -- same surface, same flux through it, and the only difference is a history the surface does not record.
+
+R3  FORMATION, PAIR GAMMA
+   arm            : vacuum  vs  eta=-1 at {0,1} (charge pair entirely INSIDE A)
+   ISOLATED       : a charge pair inside the region.  flux(Sigma) = +1 in BOTH.
+   live/vacuous   : LIVE: 0 symmetry maps.
+
+D1  DYNAMICS REMOVAL
+   arm            : Haar-random state of the SAME physical sector, same partition
+   ISOLATED       : the existence of a state-selecting Hamiltonian
+   live/vacuous   : W-19 measured this in the ELECTRIC channel and got IDENTICAL curves (NARRATION).  UNTESTED and LIVE in the BLOCK and MAG channels.  A plateau a Haar state also produces is not a result.
+
+D2  PLAQUETTE SET -- WITHDRAWN
+   arm            : 5th plaquette [0,1,4,6,7,10] -> [0,2,5,6,8,11]
+   ISOLATED       : the coined 2-complex inside the dynamics; carrier, sector, partition all fixed
+   live/vacuous   : VACUOUS BY SYMMETRY, PROVED IN BLOCK 8.  All 4 minimum-weight cycle bases lie in ONE orbit of Stab(A), the subgroup that fixes S and Sigma setwise.  Their record content on S is therefore IDENTICAL BY THEOREM.  THE ARM IS WITHDRAWN BEFORE THE RUN, NOT RUN AND SCORED AS A NULL.
+
+P1  PARTITION
+   arm            : secondary partition G1..G4 vs primary F1..F4
+   ISOLATED       : the partition alone
+   live/vacuous   : LIVE: W-19 sec 0 measured R_delta moving 5 -> mean 0.400 under randomised partitions on heawood.
+
+S1  SURFACE VARIATION
+   arm            : Sigma -> a surface in a DIFFERENT Aut-orbit (BLOCK 2 table)
+   ISOLATED       : which surface is called the boundary
+   live/vacuous   : THE FOUR-TRIANGLE VERSION IS VACUOUS BY SYMMETRY (BLOCK 1).  Only cross-orbit pairs are admissible.
+
+X1  GAUGE REMOVAL
+   arm            : no Gauss projection: the same H on the unconstrained 2^12 space
+   ISOLATED       : the Gauss law itself
+   live/vacuous   : PARTLY A CATEGORY ERROR -- see the constitutive audit.  Predicted NARRATION on the vacuum arm by Perron-Frobenius; the CENTRE channel is UNDEFINED after the removal and must not be reported.
+
+====================================================================================================
+BLOCK 7 -- THE FALSIFIER, AND EXACTLY WHERE IT IS LIVE
+====================================================================================================
+H-SURFACE (the principal's hypothesis, as this program states it):
+   the record is boundary data fixed by the surface and the flux, not by the dynamics.
+
+PRIMARY QUANTITY, PINNED:
+   Delta_surf  =  I(A_S : A_{E_env})  -  I(A_S : A_Sigma)        [bits]
+   with A_Sigma = the algebra of the surface fragment F1 = {0,4,5}.
+   Delta_surf >= 0 always, by monotonicity (A_Sigma is a subalgebra of A_{E_env}).
+   H-SURFACE PREDICTS Delta_surf = 0: the surface is a SUFFICIENT STATISTIC for the record.
+   Delta_surf > 0 falsifies it: the environment beyond the surface carries record content that
+   the surface does not.
+
+WHY THIS QUANTITY AND NOT R_delta: the two Gauss-forced central bits appear in BOTH terms and
+CANCEL.  Delta_surf SUBTRACTS THE THEOREM.  R_delta does not, which is why W-19's criterion
+could not fail.  R_delta is still reported, marked, and never scored alone.
+
+WHERE THE TEST IS VACUOUS -- stated now, before any state:
+  V1  THE CENTRE CHANNEL, EVERYWHERE.  Z(A_S) = the surface algebra, exactly, as an operator
+      identity.  I(Z(A_S) : A_Sigma) = H(Z(A_S)) for every state, coupling, sector and history.
+      2 of the record's 3 bits are boundary data BY DEFINITION.  Reporting that as evidence for
+      H-SURFACE is the W-19 defect verbatim.  IT IS NOT EVIDENCE.  IT IS THE DEFINITION.
+  V2  g2 >> g2_* .  <X_1> -> 1, the block is pure, H_BLOCK(A_S) -> 0.  W-19 measured
+      H_elec(S) = 0.001283123 bits at g2 = 3.00 on this very carrier while R_delta read 5.
+  V3  g2 << g2_* .  <W_S> -> 1, the block is pure, H_MAG(A_S) -> 0.  The mirror trap, and the
+      one W-19 never reached because it never had a magnetic system region.
+  V4  ANY ARM PAIR RELATED BY AN ELEMENT OF Aut THAT FIXES S AND Sigma SETWISE.  Checked for
+      every declared arm in BLOCK 6; the four-triangle surface variation FAILED this check and
+      was removed.
+  V5  THE ELECTRIC CHANNEL ON F1 (D=2) AND PARTIALLY ON F2, F4 (D=1).  BLOCK 3 table.
+
+WHERE THE TEST IS LIVE -- a window, not a point:
+  THE BLOCK CHANNEL alg{X_1, W_S} ON FRAGMENT F3 = {11} (D = 0, the only Gauss-free fragment)
+  AND ON THE FULL ENVIRONMENT VIA Delta_surf, AT COUPLINGS WHERE BOTH
+        H_BLOCK(A_S) >= 0.10 bits   AND   H_MAG(A_S) >= 0.10 bits.
+  X_1 and W_S ANTICOMMUTE, so this window is guaranteed non-empty in the interior and
+  guaranteed empty at both ends.  ITS WIDTH IS THE FIRST NUMBER THE RUN SHOULD REPORT.
+
+AND THE NULL READS TWO WAYS, PRE-COMMITTED:
+  If Delta_surf = 0 in the live window, that reads EITHER as 'the record is boundary data' OR
+  as 'the block qubit is too small to carry a difference' -- 1 bit total.  The discriminator,
+  declared now: a Haar-random physical state (ARM D1) in the SAME sector on the SAME partition.
+  If Haar also gives Delta_surf = 0, the result is about the algebra's size and IS NOT REPORTED
+  AS A FINDING.  If Haar gives Delta_surf > 0 and the ground state gives 0, the dynamics has
+  done something and the number is real.
+
+====================================================================================================
+BLOCK 8 -- THE SECOND CATCH: ARM D2 IS ALSO VACUOUS BY SYMMETRY.  WITHDRAWN.
+====================================================================================================
+Stab(A), the automorphisms fixing S = {1,2,3} and Sigma = {0,4,5} setwise: 4 elements
+   (0, 1, 2, 3, 4, 5, 6, 7)   maps the four triangles to [[1, 2, 3], [3, 4, 5], [7, 8, 9], [9, 10, 11]]
+   (0, 1, 2, 3, 4, 6, 5, 7)   maps the four triangles to [[1, 2, 3], [3, 4, 5], [7, 8, 9], [9, 10, 11]]
+   (0, 2, 1, 3, 4, 5, 6, 7)   maps the four triangles to [[1, 2, 3], [3, 4, 5], [7, 8, 9], [9, 10, 11]]
+   (0, 2, 1, 3, 4, 6, 5, 7)   maps the four triangles to [[1, 2, 3], [3, 4, 5], [7, 8, 9], [9, 10, 11]]
+=> Stab(A) fixes the SET of four triangles pointwise-as-a-set in every element.
+
+the four minimum-weight cycle bases differ only in the 5th generator.  Under Stab(A):
+   [0, 1, 4, 6, 7, 10] -> orbit [[0, 1, 4, 6, 7, 10], [0, 1, 4, 6, 8, 11], [0, 2, 5, 6, 7, 10], [0, 2, 5, 6, 8, 11]]
+   [0, 1, 4, 6, 8, 11] -> orbit [[0, 1, 4, 6, 7, 10], [0, 1, 4, 6, 8, 11], [0, 2, 5, 6, 7, 10], [0, 2, 5, 6, 8, 11]]
+   [0, 2, 5, 6, 7, 10] -> orbit [[0, 1, 4, 6, 7, 10], [0, 1, 4, 6, 8, 11], [0, 2, 5, 6, 7, 10], [0, 2, 5, 6, 8, 11]]
+   [0, 2, 5, 6, 8, 11] -> orbit [[0, 1, 4, 6, 7, 10], [0, 1, 4, 6, 8, 11], [0, 2, 5, 6, 7, 10], [0, 2, 5, 6, 8, 11]]
+
+pairwise, are two choices related by an element of Stab(A)?
+   [0, 1, 4, 6, 7, 10] <-> [0, 1, 4, 6, 8, 11] : 1 map(s) -> VACUOUS
+   [0, 1, 4, 6, 7, 10] <-> [0, 2, 5, 6, 7, 10] : 1 map(s) -> VACUOUS
+   [0, 1, 4, 6, 7, 10] <-> [0, 2, 5, 6, 8, 11] : 1 map(s) -> VACUOUS
+   [0, 1, 4, 6, 8, 11] <-> [0, 2, 5, 6, 7, 10] : 1 map(s) -> VACUOUS
+   [0, 1, 4, 6, 8, 11] <-> [0, 2, 5, 6, 8, 11] : 1 map(s) -> VACUOUS
+   [0, 2, 5, 6, 7, 10] <-> [0, 2, 5, 6, 8, 11] : 1 map(s) -> VACUOUS
+
+>>> ALL SIX PAIRS VACUOUS: True .  THE 4-FOLD PLAQUETTE TIE (CF-R4, carried by this program since
+    W-19) IS PROVABLY IMMATERIAL TO THE RECORD ON THIS S.  That is a real result of the
+    pre-registration -- an inherited confound RETIRED BY A THEOREM rather than by a run -- and
+    it is also the second arm this phase had to withdraw for could-not-have-failed.
+    CF-R4 is CLOSED for S = {1,2,3} on tri_chain12.  It is NOT closed for other regions.
+
+====================================================================================================
+BLOCK 9 -- SCORECARD OF THIS PHASE
+====================================================================================================
+ARMS PROPOSED : 11
+ARMS WITHDRAWN BEFORE ANY STATE EXISTED : 2
+   S1 (four-triangle surface variation) -- Aut is transitive on the four triangles.
+   D2 (plaquette-set swap)              -- all 4 minimum bases lie in one Stab(A) orbit.
+PARTITIONS PROPOSED AND REJECTED : 1  (W-19 sec 8.1's, D = 2,2,1,1, no free fragment)
+STRATIFICATION RULES PROPOSED AND REFUTED : 1  ('no surface link => Gauss-free', false)
+INHERITED CONFOUNDS CLOSED : 2  (CF-R1 by retiring CHI for the algebraic MI; CF-R4 by BLOCK 8)
+BOUNDARY-ALGEBRA CHOICES COLLAPSED : 1  (CENTER == NARROW on the physical sector)
+
+NO STATE WAS BUILT.  NO HAMILTONIAN WAS DIAGONALISED.  NO COUPLING WAS EVALUATED.

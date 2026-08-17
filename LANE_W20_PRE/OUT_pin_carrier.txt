@@ -1,0 +1,274 @@
+
+====================================================================================================
+BLOCK 1 -- THE CARRIER, PUBLISHED
+====================================================================================================
+carrier name        : tri_chain12   (inherited from W-19 sec 2a / sec 8.1; edge list byte-identical)
+V = 8   L = 12
+EDGE LIST, link index first (this is the published carrier):
+   link  0 = (0,7)
+   link  1 = (0,1)
+   link  2 = (0,2)
+   link  3 = (1,2)
+   link  4 = (1,3)
+   link  5 = (2,3)
+   link  6 = (3,4)
+   link  7 = (4,5)
+   link  8 = (4,6)
+   link  9 = (5,6)
+   link 10 = (5,7)
+   link 11 = (6,7)
+degrees             : [3, 3, 3, 3, 3, 3, 3, 3]   -> cubic: True
+simple              : True
+connected           : True
+
+====================================================================================================
+BLOCK 2 -- THE INCIDENCE, AND THE DERIVATION OF 'SURFACE'
+====================================================================================================
+The carrier is a 1-complex.  Its ONLY given structure is the incidence map
+     d : C_1 -> C_0 ,  d(edge) = its two endpoints        (over GF(2))
+and its transpose, the coboundary
+     delta : C^0 -> C^1 ,  delta(v) = star(v) = the edges at v .
+Two subspaces of C_1 are therefore FORCED, and nothing else is:
+   Z_1 = ker d      the CYCLE space      (Z-strings that are gauge invariant)
+   B^1 = im delta   the COCYCLE / CUT space (X-strings that are FIXED TO A SCALAR by Gauss)
+
+dim Z_1 (cycle space)   = L - V + 1 = 5      |Z_1| = 32
+dim B^1 (cocycle space) = V - 1     = 7      |B^1| = 128   (nonzero: 127)
+dim Z_1 + dim B^1 = 12 = L  : each is the ANNIHILATOR of the other under the GF(2)
+intersection-form pairing <x,y> = |x AND y| mod 2 .  Verified exhaustively below.
+pairs (z in Z_1, c in B^1) with |z AND c| ODD : 0   of 4096 checked
+BUT THEY ARE NOT COMPLEMENTARY AS SUBSPACES.  Over GF(2) a space can meet its own annihilator.
+Z_1 cap B^1 (the BICYCLE space) has dimension 3, 8 elements:
+   bicycle: links [1, 2, 4, 5] (weight 4) -- simultaneously a Wilson loop and a Gauss surface
+   bicycle: links [0, 2, 3, 4, 6, 8, 9, 10] (weight 8) -- simultaneously a Wilson loop and a Gauss surface
+   bicycle: links [0, 1, 3, 5, 6, 8, 9, 10] (weight 8) -- simultaneously a Wilson loop and a Gauss surface
+   bicycle: links [0, 2, 3, 4, 6, 7, 9, 11] (weight 8) -- simultaneously a Wilson loop and a Gauss surface
+   bicycle: links [0, 1, 3, 5, 6, 7, 9, 11] (weight 8) -- simultaneously a Wilson loop and a Gauss surface
+   bicycle: links [7, 8, 10, 11] (weight 4) -- simultaneously a Wilson loop and a Gauss surface
+   bicycle: links [1, 2, 4, 5, 7, 8, 10, 11] (weight 8) -- simultaneously a Wilson loop and a Gauss surface
+CORRECTION TO THE OBVIOUS READING: 'the magnetic and electric surfaces are disjoint objects' is
+FALSE on this carrier.  7 supports are both.  What IS true is the commutation statement above:
+X^{delta A} and Z^z always commute, because the PAIRING vanishes even where the SUPPORTS coincide.
+
+>>> DERIVED READING E  (ELECTRIC SURFACE).  A surface is a nonzero element of B^1, i.e. an EDGE
+    CUT delta(A) indexed by a VERTEX SET A.  It is forced by the Gauss law as an OPERATOR
+    IDENTITY:  prod_{v in A} G_v = X^{delta(A)} = prod_{v in A} eta_v , a SCALAR.
+    Count of distinct nonzero electric surfaces on this carrier: 127
+    (delta has kernel {empty, V}, so A and its complement name the same surface: 2^8/2 - 1 = 127.)
+>>> DERIVED READING M  (MAGNETIC SURFACE).  A surface is a nonzero element of Z_1, i.e. a CYCLE.
+    It is forced by gauge invariance of Z-strings: Z^z commutes with every G_v iff z in ker d.
+    Count of distinct nonzero magnetic surfaces: 31
+>>> BOTH READINGS SURVIVE DERIVATION AND BOTH ARE CARRIED, as the brief instructs.  They are
+    MUTUAL ANNIHILATORS (not complements -- see the bicycle space), hence X^{delta A} and Z^z
+    ALWAYS COMMUTE (0 odd pairs above), while their SUPPORTS may coincide.
+>>> READING P (PLAQUETTE SET) DOES NOT SURVIVE.  A graph has no 2-cells.  A plaquette set is a
+    CHOICE of cycle basis, not an incidence datum -- see BLOCK 7, where the choice is 4-fold
+    degenerate on this very carrier.  It is COINED, and it is pinned in BLOCK 7 rather than
+    derived here.
+
+====================================================================================================
+BLOCK 3 -- THE SYSTEM REGION S, AND THE COLLAPSE OF READING R (REGION BOUNDARY)
+====================================================================================================
+S (declared, inherited from W-19 sec 8.1) = links [1, 2, 3] = [(0, 1), (0, 2), (1, 2)]
+S is a cycle (triangle) on vertices {0,1,2}:  d(S) = 0  (0 means closed)
+A = [0, 1, 2] .  Links with BOTH endpoints in A: [1, 2, 3]
+=> S IS VERTEX-INDUCED:  S = E[A].  This is what makes the third reading collapse.
+delta(A) = star(0) XOR star(1) XOR star(2) = links [0, 4, 5] = [(0, 7), (1, 3), (2, 3)]
+links with EXACTLY ONE endpoint in A (the 'region boundary' reading R): [0, 4, 5]
+=> READING R == READING E EXACTLY, because S is vertex-induced.  Reading R is not independent
+   and is not carried separately.  SURFACE OF S := Sigma = delta({0,1,2}) = [0, 4, 5] , |Sigma| = 3.
+boundary vertices of S (incident to both S and E\S): [0, 1, 2]
+ENVIRONMENT E_env = [0, 4, 5, 6, 7, 8, 9, 10, 11]   (|E_env| = 9)
+
+====================================================================================================
+BLOCK 4 -- THE GAUSS RELATIONS AT S.  THIS IS THE VACUITY MAP'S FOUNDATION.
+====================================================================================================
+G_0 = X^{star(0)} = X on links [0, 1, 2]  =  eta_0
+G_1 = X^{star(1)} = X on links [1, 3, 4]  =  eta_1
+G_2 = X^{star(2)} = X on links [2, 3, 5]  =  eta_2
+product over A: X on links [0, 4, 5] = eta_0*eta_1*eta_2   <-- the surface identity
+
+Rewritten so the forcing is visible (each vertex of A has star = 1 surface link + 2 S links):
+   X_1 X_2  =  eta_0 * X_0        (S-pair [1, 2] forced by the single surface link [0])
+   X_1 X_3  =  eta_1 * X_4        (S-pair [1, 3] forced by the single surface link [4])
+   X_2 X_3  =  eta_2 * X_5        (S-pair [2, 3] forced by the single surface link [5])
+
+=> THE THREE PAIRWISE X-PRODUCTS INSIDE S ARE EACH FORCED BY ONE SURFACE LINK.
+   Only 2 of the 3 are independent (their product is the surface identity), so the Gauss law
+   pins EXACTLY 2 BITS of S's electric algebra, and pins them TO THE SURFACE.
+   What is NOT forced: any single X_i on S, and the whole Z sector.
+
+====================================================================================================
+BLOCK 5 -- THE NAIVE PARTITION, AND THE MEASUREMENT THAT REFUTES IT BEFORE IT IS USED
+====================================================================================================
+This block evaluates W-19 sec 8.1's suggested partition (sizes 2,2,2,3, chosen BY SIZE) and
+the naive stratification rule 'a fragment with no surface link is Gauss-free'.  BOTH FAIL.
+The partition actually adopted is declared in pin_arms.py BLOCK 3.
+F1 = [0, 4] = [(0, 7), (1, 3)]
+F2 = [5, 6] = [(2, 3), (3, 4)]
+F3 = [7, 8, 9] = [(4, 5), (4, 6), (5, 6)]
+F4 = [10, 11] = [(5, 7), (6, 7)]
+pairwise disjoint   : True
+union == E_env      : True   (sizes [2, 2, 3, 2], total 9)
+size cap |F| <= floor(|E_env|/2) = 4 : max declared size = 3  -> satisfied
+
+PER-FRAGMENT STRATIFICATION  --  computed from the incidence alone, before any state:
+frag links        |F cap Sigma| electric bits  electric bits    magnetic  
+                           of S FORCED    of S FREE (of 3) bits in F 
+------------------------------------------------------------------------------------
+F1   [0, 4]       2        2              1                0         
+F2   [5, 6]       1        2              1                0         
+F3   [7, 8, 9]    0        1              2                1         
+F4   [10, 11]     0        1              2                0         
+------------------------------------------------------------------------------------
+ALL  E_env        3        2              1                2         
+
+>>> READ COLUMN 3 AGAINST COLUMN 4.  THE NAIVE RULE IS REFUTED BY ITS OWN TABLE:
+    F3 = [7,8,9] and F4 = [10,11] contain ZERO surface links and STILL each force one bit of
+    S's electric algebra.  The witnesses, printed rather than asserted:
+       F3 : delta([1, 2, 3, 4]) = links [1, 2, 7, 8]  =>  X on [1, 2] = eta * X on [7, 8]
+       F4 : delta([0, 7]) = links [1, 2, 10, 11]  =>  X on [1, 2] = eta * X on [10, 11]
+    Sigma = [0,4,5] is NOT the only Gauss surface enclosing S's electric pairs.  delta({0,7}) =
+    [1,2,10,11] and delta({0,5,6,7}) = [1,2,7,8] enclose the SAME pair X_1X_2 while avoiding
+    Sigma entirely.  THE SURFACE THAT FORCES A GIVEN RECORD BIT IS A COSET, NOT A SET.
+
+>>> CONSEQUENCE FOR THE DESIGN, AND IT IS WHY THIS PHASE EXISTS: the vacuity of a fragment is
+    NOT |F cap Sigma|.  It is D(F), a GF(2) rank over all 2^8 vertex subsets.  A lane that
+    stratified by surface-link count would have called F3 and F4 'live', measured a plateau
+    that the Gauss law had already guaranteed one bit of, and reported it.
+>>> W-19's SUGGESTED PARTITION HAS D = 2,2,1,1 : NO FRAGMENT IS FREE.  IT IS NOT ADOPTED.
+
+====================================================================================================
+BLOCK 6 -- MAGNETIC CONTENT: WHAT CAN CARRY A WILSON LOOP, AND WHAT CANNOT
+====================================================================================================
+all triangles (weight-3 cycles): 4
+   links [1, 2, 3]  on vertices [0, 1, 2]
+   links [3, 4, 5]  on vertices [1, 2, 3]
+   links [7, 8, 9]  on vertices [4, 5, 6]
+   links [9, 10, 11]  on vertices [5, 6, 7]
+
+cycle space restricted to the ENVIRONMENT E_env = [0, 4, 5, 6, 7, 8, 9, 10, 11] : dimension 2
+   env cycle: links [7, 8, 9] (weight 3)
+   env cycle: links [9, 10, 11] (weight 3)
+   env cycle: links [7, 8, 10, 11] (weight 4)
+=> the three environment cycles PAIRWISE INTERSECT (all contain link 9 or overlap on 7,8):
+   |[7, 8, 9] AND [9, 10, 11]| = 1
+   |[7, 8, 9] AND [7, 8, 10, 11]| = 2
+   |[9, 10, 11] AND [7, 8, 10, 11]| = 2
+>>> DERIVED, AND IT FORCES THE DESIGN: AT MOST ONE PAIRWISE-DISJOINT ENVIRONMENT FRAGMENT CAN
+    CARRY A WILSON LOOP.  There is no partition of E_env into disjoint fragments with two
+    magnetic fragments.  F3 = [7,8,9] is that fragment, and it is the SHAPE TWIN of S:
+    S = triangle on {0,1,2}, F3 = triangle on {4,5,6}, both weight 3, disjoint, and F3 shares
+    NO surface link with S.
+
+W_S := Z_1 Z_2 Z_3, the Wilson loop of S.  Is it determined by any environment operator?
+   Gauss forces X-strings on B^1 to scalars.  Z_1 (cycles) is the ORTHOGONAL COMPLEMENT of B^1
+   (BLOCK 2: zero odd pairs).  NOTHING in the Gauss law constrains any Z-string.
+   env cycle space = span[[7, 8, 9], [9, 10, 11], [7, 8, 10, 11]] ;  is S's cycle [1, 2, 3] a member?  False
+   => NO.  W_S is not equal to any environment Wilson loop, and no Gauss constraint touches it.
+>>> THE MAGNETIC CHANNEL ON S CANNOT BE GAUSS-FORCED.  That is the derived reason the falsifier
+    is LIVE there and VACUOUS in the electric channel on F1/F2.
+
+====================================================================================================
+BLOCK 7 -- THE PLAQUETTE SET IS COINED, IT IS 4-FOLD DEGENERATE, AND IT IS PINNED HERE
+====================================================================================================
+cycle weight spectrum: {3: 4, 4: 2, 6: 8, 7: 12, 8: 5}
+matroid-greedy min-weight cycle basis (weight, then edge-index tuple, ascending):
+   plaquette links [1, 2, 3] (weight 3)
+   plaquette links [3, 4, 5] (weight 3)
+   plaquette links [7, 8, 9] (weight 3)
+   plaquette links [9, 10, 11] (weight 3)
+   plaquette links [0, 1, 4, 6, 7, 10] (weight 6)
+total basis weight = 18
+number of DISTINCT minimum-weight cycle bases (total weight 18): 4
+they differ ONLY in the 5th generator; the four triangles are in every one of them:
+   candidate 5th plaquette: links [0, 1, 4, 6, 7, 10] (weight 6)
+   candidate 5th plaquette: links [0, 1, 4, 6, 8, 11] (weight 6)
+   candidate 5th plaquette: links [0, 2, 5, 6, 7, 10] (weight 6)
+   candidate 5th plaquette: links [0, 2, 5, 6, 8, 11] (weight 6)
+
+>>> PINNED, BY AN EXPLICIT RULE STATED BEFORE ANY STATE:
+    PLAQ = the 4 triangles, plus the lexicographically smallest edge-index tuple among the
+    minimum-weight 5th generators.  That is:
+       [1, 2, 3]
+       [3, 4, 5]
+       [7, 8, 9]
+       [9, 10, 11]
+       [0, 1, 4, 6, 7, 10]
+    THE TIE IS 4-FOLD AND IT IS RECORDED, NOT HIDDEN.  Changing sum_p W_p changes H, so the
+    plaquette set is NOT a convention -- it is part of the dynamics.  ARM D2 varies it.
+
+====================================================================================================
+BLOCK 8 -- THE 127 ELECTRIC SURFACES, AND WHERE Sigma SITS AMONG THEM
+====================================================================================================
+distinct nonzero cocycles by size |delta(A)|:
+   |Sigma| =  2 :   1 surfaces
+   |Sigma| =  3 :  12 surfaces
+   |Sigma| =  4 :  14 surfaces
+   |Sigma| =  5 :  12 surfaces
+   |Sigma| =  6 :  30 surfaces
+   |Sigma| =  7 :  36 surfaces
+   |Sigma| =  8 :  17 surfaces
+   |Sigma| =  9 :   4 surfaces
+   |Sigma| = 10 :   1 surfaces
+total distinct nonzero surfaces = 127
+minimum surface size = 2 .  NOT a vertex star (the carrier is cubic, every star has 3 links):
+   the unique 2-link surface is [0, 6] -- tri_chain12 is 2-EDGE-CONNECTED, NOT 3-edge-connected.
+   Links 0 and 6 are a bottleneck separating {0,1,2,3} from {4,5,6,7}, and link 0 is IN Sigma.
+   CONFOUND, RECORDED NOT FIXED: the declared surface shares a link with the carrier's
+   global bottleneck, so 'surface' and 'bottleneck' are not independent on this carrier.
+Sigma = delta({0,1,2}) has |Sigma| = 3 -- it is a MINIMUM-SIZE surface, and it is a GENUINE cut
+   (both sides connected: A side True, complement side True)
+surfaces of size 3 whose enclosed region induces a TRIANGLE (i.e. candidate system regions):
+   A = [0, 1, 2]  ->  S = links [1, 2, 3] ,  Sigma = links [0, 4, 5]
+   A = [1, 2, 3]  ->  S = links [3, 4, 5] ,  Sigma = links [1, 2, 6]
+   A = [4, 5, 6]  ->  S = links [7, 8, 9] ,  Sigma = links [6, 10, 11]
+   A = [5, 6, 7]  ->  S = links [9, 10, 11] ,  Sigma = links [0, 7, 8]
+
+====================================================================================================
+BLOCK 9 -- THE CHARGE SECTOR: WHAT IS ADMISSIBLE, AND THE FORMATION-ROUTE PAIRS
+====================================================================================================
+prod_{v in V} G_v = X^{delta(V)} = X^0 = I  =>  prod_v eta_v = +1 : an EVEN number of charges.
+admissible charge sectors: 2^(V-1) = 128
+The electric flux through Sigma is FIXED BY THE CHARGE SECTOR ALONE:
+     X^Sigma = eta_0 * eta_1 * eta_2  =  the enclosed charge parity of A = {0,1,2}.
+
+FORMATION-ROUTE PAIRS.  'Same surface, same flux through it, different formation.'
+Sigma is held byte-identical in all of them; only WHERE the charge sits moves.
+route                  eta = -1 at flux(Sigma)  note
+C0  vacuum             []         +1           reference
+C1  charges at {0,4}   [0, 4]     -1           one charge INSIDE A, one outside -> flux(Sigma) = -1
+C2  charges at {1,5}   [1, 5]     -1           one charge INSIDE A, one outside -> flux(Sigma) = -1
+C3  charges at {4,5}   [4, 5]     +1           BOTH outside A                   -> flux(Sigma) = +1
+C4  charges at {0,1}   [0, 1]     +1           BOTH inside A                    -> flux(Sigma) = +1
+
+>>> THE TWO FORMATION-ROUTE CONTRASTS, BOTH WITH THE SURFACE AND ITS FLUX HELD FIXED:
+    PAIR ALPHA : C1 vs C2 .  Same Sigma, flux(Sigma) = -1 in both, charge placed at a DIFFERENT
+                 vertex of A (0 vs 1) and a different vertex outside (4 vs 5).
+    PAIR BETA  : C0 vs C3 .  Same Sigma, flux(Sigma) = +1 in both, but C3 has a real charge pair
+                 sitting entirely OUTSIDE A.  The surface and its flux are identical; the
+                 formation of the configuration is not.
+    PAIR GAMMA : C0 vs C4 .  Same Sigma, flux(Sigma) = +1 in both, charge pair entirely INSIDE A.
+  If the record content on S is the same across a pair, FORMATION is NARRATION on that pair and
+  only the surface + its flux matter.  If it differs, FORMATION is CAUSAL_EARNED and the number
+  is the difference.  NEITHER OUTCOME IS SCORED AS CONFIRMATION OF THE PREFERRED HYPOTHESIS.
+
+====================================================================================================
+BLOCK 10 -- JOIN vs UNION: THE GAP, MEASURED FROM THE INCIDENCE
+====================================================================================================
+F3 cup F4 : magnetic bits  1 (in F3) + 0 (in F4) = 1   vs   2 in the union
+F1 cup F2 : magnetic bits  0 (in F1) + 0 (in F2) = 0   vs   0 in the union
+F2 cup F3 : magnetic bits  0 (in F2) + 1 (in F3) = 1   vs   1 in the union
+>>> F3 cup F4 gains ONE FULL BIT that neither fragment has: the Wilson loop [9,10,11] straddles
+    them.  So JOIN != UNION-OF-ALGEBRAS by exactly 1 bit on this partition.  AXIS 5 is pinned
+    by NOT USING COMPOSITES IN R_delta at all; any composite reported is reported separately
+    with the join algebra named and this 1-bit gap quoted.
+
+====================================================================================================
+BLOCK 11 -- WHAT THIS FILE DID NOT DO
+====================================================================================================
+No Hilbert space was constructed.  No Hamiltonian was diagonalised.  No coupling was evaluated.
+No state, ground or random, exists anywhere in this lane.  Every number above is incidence
+combinatorics on an 8-vertex 12-edge graph, exhaustively enumerated (2^12 = 4096 edge masks,
+2^8 = 256 vertex masks).  Nothing here can be embarrassed by a state because nothing here
+depends on one -- which is the entire point of running this phase first.
