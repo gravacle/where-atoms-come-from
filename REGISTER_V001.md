@@ -1333,3 +1333,86 @@ there; the difference is `5.55e-17`. The first version and its correction are in
 **REOPENS IF:** a singular constraint on the **ready state** rather than on the connection is
 exhibited that moves the rate · or a carrier is exhibited whose designated loops are R-dependent
 without collapsing the occupied classes to `{00,11}`.
+
+---
+
+## W-14 — THE STATE SIDE, AND A RELEVANCE TEST FOR BORROWED MACHINERY: **THE STATE SIDE IS OPEN AND IS A KNOB, NOT A CHANNEL. THE INVENTORY OF WHAT THIS CONSTRUCTION CAN SEE IS NOW COMPLETE.**
+
+Commissioned by the principal, 2026-08-17, on W-12's own REOPENS clause — *"a singular constraint on
+the READY STATE rather than on the connection is untested"* — together with a standing instruction
+that borrowed ideas be checked for relevance **at the record level** and **tested, not assumed**.
+`LANE_W14_STATE_SIDE/`, 7 files, sealed, all verify.
+
+### THE STATE SIDE IS STRUCTURALLY UNLIKE THE CONNECTION SIDE, AND IS GENUINELY OPEN
+
+W-12 closed the connection side by a theorem: `a |-> (W_F, W_C)` is onto `T^2` with Haar
+pushforward, so `lambda` is **constant almost everywhere** in the connection and no absolutely
+continuous measure moves it. **On the state side there is no such constant.** Over 4000 uniform
+draws on the 3-simplex, `lambda` ranges `-1.331196` to `-0.027776` — **a spread of `1.303420` nats
+against exactly `0` across the whole connection torus.** And averaging does not collapse, because
+`m` is not affine: `E[m(P(pi))] = -0.673126` against `m(P(E[pi])) = -1.380508`. **There is no N3 for
+states, and there cannot be one.**
+
+### BUT IT IS A KNOB, NOT A CHANNEL — AND THAT IS WHAT CLOSES IT
+
+A constraint helps only if it lets the functional **see** something it could not see before. With
+`pi` pinned exactly on **B0b, a four-class carrier**, and 60 states differing in **both** within-class
+weight and phase:
+
+```
+  k        min |Z_k|            max |Z_k|            spread
+  1   0.38232295728697   0.38232295728697          3.33e-16
+  2   0.98022550160520   0.98022550160520          5.55e-16
+ 20   0.33432356245583   0.33432356245583          2.78e-16
+```
+
+**Exactly blind.** The state reaches the functional only through `pi`. **So a singular constraint on
+the ready state selects a `pi` and cannot make the construction sensitive to anything new.** The
+"wrong side" possibility is closed — for a different reason than the connection side: not because
+the rate cannot move, but because nothing else gets in.
+
+### THE ONE STATE RULE THAT IS NOT A STIPULATION, AND EXACTLY WHAT IT BUYS
+
+Every ready state in this corpus was **chosen**. The exception is **SENSE U**, the uniform state,
+where `pi` is fixed by the carrier's own class **sizes**. Under it `lambda` is a function of the
+carrier alone — so the carrier does enter. **All seven recomputed values match S4's published
+column exactly.** And the channel is narrow:
+
+> **THE CARRIER ENTERS ONLY THROUGH THE MULTISET OF CLASS SIZES, AND S4's OWN TABLE CONTAINS THE
+> EXHIBIT UNREMARKED.** `B3` (horn torus), `B1` (K1) and `B2` (K1 both triangles filled) share the
+> class multiset `{01:2, 10:2, 11:1}` and differ in **every topological invariant on the page** —
+> `chi = 1, 0, 1`; `b1 = 1, 1, 0`; `b2 = 1, 0, 0` — and give the **identical** rate
+> `-0.756573585640`, **spread `0.000e+00`**. Nothing about `chi`, `b1`, `b2`, the pinch, the faces
+> or the 2-cells survives.
+
+### **THE RELEVANCE TEST FOR BORROWED MACHINERY** — the methodological result of this row
+
+The functional sees **exactly three things: `pi`, `u`, `v`.** Every imported idea acts on some
+variable. **Before importing, name the variable and check the functional can see it.**
+
+| the import acts on | status | authority |
+|---|---|---|
+| the **connection** | **CLOSED.** The map is onto `T^2` with Haar pushforward on every carrier, so no absolutely continuous measure moves the rate | W-12, proved |
+| the **ready state** | **OPEN but a KNOB.** It selects a `pi`; it is not a channel and cannot add sensitivity | W-14, exhibited on a four-class carrier |
+| the **transport convention** | **THE ONLY LIVE CHANNEL.** Changing it is what makes the incidence visible — at the cost of firing at the trivial connection | W-11 |
+| **anything else** | the functional cannot see it at all | the definition of `Z_k` |
+
+**COROLLARY, AND IT SORTS THE TWO BORROWS THIS PROGRAM HAS TRIED.** The only import that can change
+what this construction sees is one that changes the transport convention or **adds a dynamics**.
+The DNA/topological-constraint borrow acted on the **connection** and was therefore closed before it
+was run (W-12) — the relevance test would have predicted it. The kinetic-proofreading borrow adds a
+**dynamics**, and is the right kind of import; it remains untested and its literature contact in
+this corpus is **zero** (Landauer 0, Hopfield 0, proofreading 0, dissipation 0, entropy production 0,
+free energy 0, Bennett 0, detailed balance 0, ratchet 0).
+
+### WHAT READS TWO WAYS
+
+**The narrowness of the carrier channel** reads as *"the construction is blind to the complex, so it
+is not about geometry at all"* **or** as *"class-size multiset is exactly the right coarse-graining
+and the rest is gauge"*. **Not scored.** W-11's ruling bears on it — the blindness is a consequence
+of the convention — but which reading is right is a question about what the object is for.
+
+**NOTHING HERE TAKES ANY OF THE PRINCIPAL'S THREE DECISIONS.**
+
+**REOPENS IF:** an import is exhibited that acts on none of `pi`, `u`, `v` and still moves the rate
+(it would refute the inventory) · or the uniform-state rule is shown to be a stipulation after all.

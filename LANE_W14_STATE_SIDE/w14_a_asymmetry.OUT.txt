@@ -1,0 +1,17 @@
+== A1  THE CONNECTION SIDE: lambda is CONSTANT almost everywhere (N3, now proved at W-12) ==
+   pi held fixed = [0.  0.3 0.3 0.4];  m(P) = -0.767507880357
+   the rate is m(P) for EVERY connection off a Haar-null set -- so no a.c. measure on
+   connections can move it. That is the wall W-12 proved holds on every carrier.
+
+== A2  THE STATE SIDE: lambda is CONTINUOUS AND NON-CONSTANT. There is no analogue of N3. ==
+   4000 uniform draws on the simplex:  lambda ranges -1.331196 .. -0.027776
+   spread 1.303420 nats, versus 0 across the whole connection torus.
+   -> ANY constraint on the state moves the rate. The state side cannot be closed the way
+      the connection side was, because there is no generic value to swallow the constraint.
+
+== A3  AND AVERAGING OVER STATES DOES NOT COLLAPSE, BECAUSE m IS NOT AFFINE ==
+   E[ m(P(pi)) ]      = -0.673126266
+   m(P( E[pi] ))      = -1.380507930
+   difference         = 0.707382   -> NOT equal: m is strictly concave-ish here,
+      so a prior over states is NOT equivalent to its mean state. On the connection side the
+      corresponding statement was an equality and that is exactly what made N3 bite.

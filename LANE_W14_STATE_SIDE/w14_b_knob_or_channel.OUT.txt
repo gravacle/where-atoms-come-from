@@ -1,0 +1,16 @@
+  carrier B0b (FOUR classes). class map [(1, 1), (1, 1), (0, 1), (1, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+  pi PINNED at [0.44 0.25 0.09 0.22]
+
+  60 states, identical pi, differing in BOTH within-class weight and phase:
+    k          min |Z_k|          max |Z_k|       spread
+    1   0.38232295728697   0.38232295728697     3.33e-16
+    2   0.98022550160520   0.98022550160520     5.55e-16
+    3   0.39924242033999   0.39924242033999     3.89e-16
+    7   0.45071584480654   0.45071584480654     3.33e-16
+   20   0.33432356245583   0.33432356245583     2.78e-16
+
+  ==> EXACTLY BLIND, on a four-class carrier. The state reaches the functional ONLY
+      through pi. So a singular constraint on the state is a KNOB -- it selects a pi --
+      and NOT a CHANNEL. It cannot make the construction sensitive to anything new.
+      The 'wrong side' possibility is therefore CLOSED, for a different reason than the
+      connection side: not because the rate cannot move, but because nothing else gets in.
