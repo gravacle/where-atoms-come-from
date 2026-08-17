@@ -1,0 +1,24 @@
+  patch 3x3, Z_2, physical dim 16
+  PERIMETER = [0, 1, 4, 5, 6, 8, 9, 11]  (8 links) -- a cycle AND a separator
+  CUT at the interior vertex = [2, 3, 7, 10]  (4 links) -- a separator, not a cycle
+
+  BOTH HALVES OF EM ON THE PERIMETER:
+    electric (prod Z on perimeter)  nontrivial: False
+    magnetic (prod X on perimeter)  nontrivial: True
+    || [E_perim, M_perim] || = 0.000e+00   (8 links, even)
+
+  AND ON A HALF-PERIMETER, WHERE THE COUNT IS ODD:
+    links [0]                    |S|=1  || [E,M] || = M leaves the physical sector
+    links [0, 1, 4]              |S|=3  || [E,M] || = M leaves the physical sector
+    links [0, 1, 4, 5]           |S|=4  || [E,M] || = M leaves the physical sector
+    links [0, 1, 4, 5, 6]        |S|=5  || [E,M] || = M leaves the physical sector
+
+  ANY link subset whose X-product stays physical is a closed loop, and a closed loop on this
+  lattice touches an EVEN number of links -- so E and M on the SAME set always commute.
+  The uncertainty is between a loop and a CUT THAT CROSSES IT, not between the two halves
+  of the field on one boundary.
+    || [E_cut, M_perim] || = 0.000e+00  (disjoint sets)
+    || [Z on [0]               , M_perim] || = 8.000e+00
+    || [Z on [0, 1]            , M_perim] || = 0.000e+00
+    || [Z on [0, 1, 4]         , M_perim] || = 8.000e+00
+    || [Z on [0, 1, 4, 5]      , M_perim] || = 0.000e+00

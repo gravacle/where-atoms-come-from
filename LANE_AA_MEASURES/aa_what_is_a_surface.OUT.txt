@@ -1,0 +1,17 @@
+  wheel n=4:  V=5 L=8   components with nothing removed: 1
+    remove the RIM    -> components 1   is a cycle: True
+    remove the SPOKES -> components 2   is a cycle: False
+  wheel n=5:  V=6 L=10   components with nothing removed: 1
+    remove the RIM    -> components 1   is a cycle: True
+    remove the SPOKES -> components 2   is a cycle: False
+  wheel n=6:  V=7 L=12   components with nothing removed: 1
+    remove the RIM    -> components 1   is a cycle: True
+    remove the SPOKES -> components 2   is a cycle: False
+
+  A SURFACE MUST BE BOTH: a SEPARATOR (removing it disconnects) and a CYCLE (a flux can
+  thread it). The rim is a cycle and separates NOTHING. The spokes separate and are NOT a
+  cycle. THE WHEEL HAS NEITHER OBJECT. W-24 required only the cycle half and I built to that.
+
+  And note what this says about the labels: the edge boundary of the region {hub} is the
+  SPOKE SET, not the rim. I have been calling the rim the boundary because it is drawn as a
+  circle. That is a picture, not a property of the graph.

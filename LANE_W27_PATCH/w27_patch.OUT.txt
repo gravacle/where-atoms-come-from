@@ -1,0 +1,14 @@
+  3x3 grid: V=9 L=12  (planar, 4 plaquettes)
+  ELECTRIC BOUNDARY of the interior vertex = links [2, 3, 7, 10]
+    is it a separator?  components after removal = 2  (1 means no)
+    is it a cycle?      every touched vertex degree 2? False   -> a STAR, not a cycle
+  MAGNETIC BOUNDARY (perimeter) = links [0, 1, 4, 5, 6, 8, 9, 11]  (8 links)
+    is it a cycle?      degrees [2]  -> CYCLE
+    is it a separator?  components after removal = 5
+
+  ==> the two objects EXIST and are DIFFERENT sets, exactly as duality requires.
+
+  Z_2: full 4096, physical 16 = 2^4  (cycle rank 4)
+  plaquettes gauge-invariant (stay in the physical sector): True
+  perimeter loop stays in the physical sector: True
+  DISCRETE STOKES on the patch: || prod of 4 plaquettes - perimeter loop || = 0.00e+00

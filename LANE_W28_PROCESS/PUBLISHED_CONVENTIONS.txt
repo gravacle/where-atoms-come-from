@@ -1,0 +1,8 @@
+LANE W28 — THE PROCESS, ASSEMBLED. Carrier: 3x3 planar patch, Z_2, 12 links, 9 vertices,
+4 plaquettes, physical dim 16 (cycle rank 4). Perimeter = 8 links, verified BOTH a cycle (all
+degrees 2) and a separator (removal -> 5 components). Interior cut = the 4 links at vertex (1,1).
+H = -sum_plaquettes W - g^2 sum_links Z. Lindblad drho/dt = -i[H,rho] + gamma sum_k (L rho L^dag - rho),
+gamma = 0.5, T = 10, Heun, 3000 steps, trace renormalised each step.
+BATHS: "magnetic" = the four plaquette operators; "electric" = Z on the four cut links.
+RECORD = the perimeter flux sector: rho_A supported on the W_perim = +1 eigenspace, rho_B on -1.
+READOUT = trace distance between the two evolved states, and <W_perim> in each.

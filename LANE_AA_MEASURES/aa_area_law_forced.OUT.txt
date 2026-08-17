@@ -1,0 +1,20 @@
+  Z_3. Ground state at theta=1.0, g^2=1.0. Entropy in log base 3.
+   wheel n              region (links)  |region|  |boundary|   S(region)
+         4                         [4]         1           2    0.101391
+         4                      [4, 5]         2           2    0.202693
+         4                   [4, 5, 6]         3           2    0.303995
+
+         5                         [5]         1           2    0.101389
+         5                      [5, 6]         2           2    0.202689
+         5                   [5, 6, 7]         3           2    0.303990
+         5                [5, 6, 7, 8]         4           2    0.405290
+
+         6                         [6]         1           2    0.101389
+         6                      [6, 7]         2           2    0.202689
+         6                   [6, 7, 8]         3           2    0.303989
+         6                [6, 7, 8, 9]         4           2    0.405289
+         6            [6, 7, 8, 9, 10]         5           2    0.506589
+
+  If S depends only on |boundary| it would be CONSTANT down each block (boundary is always 2).
+  If S grows with |region| the entropy is NOT determined by the boundary count, and an
+  area law here would be a real statement rather than bookkeeping.

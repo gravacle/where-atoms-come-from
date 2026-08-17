@@ -2235,3 +2235,72 @@ carrier that thermalises, or an open one.**
 
 **REOPENS IF:** the distribution retention is shown to be non-thermalisation · or a carrier is
 exhibited whose boundary is both separator and cycle and behaves differently.
+
+---
+
+## W-27 — THE PLANAR PATCH: **A BOUNDARY THAT IS BOTH A CYCLE AND A SEPARATOR, AND WHERE EM'S TWO HALVES FINALLY MEET**
+
+3x3 planar patch, `Z_2`, 12 links, 4 plaquettes, physical dim 16 (cycle rank 4).
+**PERIMETER = 8 links: all degrees `2` (a CYCLE) and removal gives `5` components (a SEPARATOR).**
+The registrar had claimed duality forbids one set being both. **It does not, and the patch has the
+object** — the wheel's rim was a cycle that separated nothing, the fringe was neither.
+**Discrete Stokes exact:** product of the 4 plaquettes = the perimeter loop, `0.00e+00`.
+
+### WHERE EM WAS WHILE WE WERE MISSING THIS — **WE HAD HALF OF IT AT A TIME**
+
+Electric flux is a **cut** quantity (Gauss); magnetic flux is a **cycle** quantity (Wilson). Every
+prior carrier could express only one at its boundary: the fringe's dangling links lie on no cycle,
+so **no magnetic structure at the boundary at all**; the wheel's rim is a cycle with no cut and its
+spokes a cut with no cycle. **So the mirror result (Gauss, electric) and the chirality result
+(Wilson, magnetic) were measured on different sets and could never interact.**
+
+### AND THE CONJUGATE PAIR IS NOT WHAT THE REGISTRAR EXPECTED
+
+Electric flux on the **whole perimeter is the IDENTITY** on the physical sector — `nontrivial: False`
+— because a closed `Z`-loop is fixed by the Gauss laws it encloses. And `[E, M]` on the **same** set
+is `0.000e+00` always: any subset whose `X`-product stays physical is a closed loop, and closed loops
+here touch an **even** number of links, so anticommutations pair off.
+**THE CONJUGATE PAIR IS A LOOP AND A CUT THAT PIERCES IT AN ODD NUMBER OF TIMES:** `Z` on an odd
+subset of the perimeter against the perimeter loop gives `8.000e+00`; even subsets give `0.000e+00`.
+**A boundary cannot hold a definite loop flux and a definite odd-piercing cut at once. First
+structural limit in this program on what a boundary can record that is not a Gauss identity.**
+
+---
+
+## W-28 — **THE PROCESS, ASSEMBLED AND WORKING: A RECORD SURVIVES THE ENTROPY BEING PAID, IFF IT COMMUTES WITH THE DYNAMICS**
+
+`LANE_W28_PROCESS/`, sealed. Carrier W-27's patch; open system via Lindblad, `gamma = 0.5`, `T = 10`.
+**RECORD = the perimeter flux sector.** Write `rho_A` on `W = +1`, `rho_B` on `W = -1`, evolve, read.
+
+```
+  phase      bath        ||[H,W]||   S(global)      TD    <W>_A    <W>_B
+  magnetic   magnetic     0.00e+00      3.0000  1.0000   1.0000  -1.0000
+  magnetic   electric     0.00e+00      3.0000  1.0000   1.0000  -1.0000
+  mixed      magnetic     3.20e+01      4.0000  0.0000   0.0000  -0.0000
+  mixed      electric     3.20e+01      4.0000  0.0016   0.0008  -0.0008
+```
+
+**IN THE MAGNETIC PHASE THE RECORD SURVIVES PERFECTLY WHILE THREE BITS OF ENTROPY ARE PAID.** The
+written values hold at `+1.0000` and `-1.0000`; the states stay perfectly distinguishable. **In the
+mixed phase, where the record no longer commutes with `H`, it is destroyed completely.** Same
+carrier, same bath, same coupling — **one variable: whether the recorded quantity is conserved.**
+
+**THE POINTER CONDITION, MEASURED NOT IMPORTED:** *a record survives dissipation exactly when the
+recorded quantity commutes with the dynamics.*
+
+**WHAT DOES NOT HOLD, AND IT WEAKENS THE CLAIM.** In the magnetic phase **the bath choice does not
+matter** — magnetic and electric baths both give `TD = 1.0000`. If einselection were doing the work
+the electric bath should have damaged it. **So the conservation is doing everything and the
+monitoring nothing.** This is a conservation result, not a decoherence result, and the einselection
+half of the pointer story is **untested here**.
+
+**AND WHY W-27b FAILED, NOW DIAGNOSED.** That run dephased in `Z` on the cut while `H`'s plaquette
+terms rotate states out of the electric basis: Hamiltonian moves the record, bath measures it, and
+the pair random-walks the distinction to zero (`TD 0.019` at `gamma = 1`). **Not a construction
+failure — the recorded quantity was not conserved.**
+
+**NEXT.** (1) Separate conservation from monitoring: find a bath that damages a conserved record, or
+show none can. (2) The record here is a **global** flux sector, not a local one — test whether a
+record localised to part of the boundary also survives. (3) The `gamma = 0` control in W-27b drifted
+`S` to `0.0035` where it must be exactly `0`; the Heun integrator does not conserve purity and the
+small-`gamma` numbers there carry unbounded error.

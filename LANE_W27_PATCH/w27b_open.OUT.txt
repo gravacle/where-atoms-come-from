@@ -1,0 +1,14 @@
+  patch 3x3, Z_2, physical dim 16.  electric boundary = links [2, 3, 7, 10]
+  A cut-config (0, 0, 0, 0) vs B (0, 1, 0, 1)  (same total)
+
+    gamma     T   S(global)  S(boundary)  TD on boundary
+     0.00   2.0    0.000045     1.265879        0.758496
+     0.00  10.0    0.003493     1.233783        0.741749
+     0.20   2.0    1.361855     1.561170        0.684045
+     0.20  10.0    3.176037     2.610808        0.290583
+     1.00   2.0    2.770551     2.437376        0.413017
+     1.00  10.0    3.989426     2.997166        0.018659
+
+  gamma=0 is the closed control: S(global) must stay 0 and nothing is paid.
+  gamma>0 pays entropy. If TD stays high while S(global) rises, the boundary keeps the
+  distinction THROUGH the dissipation -- which is what a written record does.

@@ -1,0 +1,25 @@
+  wheel n=5, Z_3: V=6 vertices, L=10 links.  All entropies in log base 3.
+
+  1. THERMODYNAMIC / GLOBAL ENTROPY OF THE STATE
+     S(whole system) = 0.000000000000
+     ZERO, and it stays zero under unitary evolution. The system is closed and pure.
+     There is no bath, no coarse-graining, no dissipation. NOTHING CAN BE PAID HERE.
+
+  2. ENTANGLEMENT ENTROPY OF A REGION  (what I have been measuring)
+     S(first 1 rim links) = 0.101389
+     S(first 2 rim links) = 0.202689
+     S(first 3 rim links) = 0.303990
+     Linear in the link count. This is a bookkeeping of correlations INSIDE a pure state.
+     It is not produced, not dissipated, and not conserved-and-transferred. It is a ledger.
+
+  3. CONFIGURATIONAL ENTROPY -- NATIVE, imported from nothing
+     dim(full) = 3^10 = 59049;  dim(physical) = 243 = 3^5
+     S_config = log_3 dim(physical) = 5.0000 = the CYCLE RANK of the graph
+     This is a CAPACITY: how many states a record could occupy. It is combinatorial,
+     needs no state, no Hamiltonian and no coupling, and is fixed by the carrier alone.
+
+  4. GAUGE ENTROPY -- the information DISCARDED by imposing gauge invariance
+     gauge orbit size = 3^(V-1) = 243;  S_gauge = 5.0000
+     physical 5 + gauge 5 = 10 = L = 10. Exactly half each on a wheel.
+     AND PER C-1 THIS IS WHERE THE RECORD WOULD LIVE: the coarse-graining that would
+     produce entropy is exactly the one that throws the record away.

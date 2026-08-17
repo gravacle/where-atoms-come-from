@@ -1,0 +1,10 @@
+  patch 3x3, Z_2, physical dim 16. RECORD = the perimeter flux (+1 vs -1 sector).
+       phase       bath  gamma  ||[H,W]||  S(global)      TD    <W>_A    <W>_B
+    magnetic   magnetic   0.50   0.00e+00     3.0000  1.0000   1.0000  -1.0000
+    magnetic   electric   0.50   0.00e+00     3.0000  1.0000   1.0000  -1.0000
+       mixed   magnetic   0.50   3.20e+01     4.0000  0.0000   0.0000  -0.0000
+       mixed   electric   0.50   3.20e+01     4.0000  0.0016   0.0008  -0.0008
+
+  ||[H,W]|| = 0 means the record commutes with the dynamics -- a genuine pointer.
+  TD near 1 with S(global) > 0 means the distinction SURVIVED the entropy being paid.
+  <W>_A and <W>_B are the written values; they should stay near +1 and -1 if the record holds.
