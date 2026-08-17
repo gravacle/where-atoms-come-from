@@ -1,0 +1,169 @@
+LANE W-13 / L-REFUTE — RL7.  EVERY CITATION IN THE TARGET, CHECKED AT THE SOURCE.
+Method: the PDF was fetched and run through pdftotext, and the theorem statement was read in
+the extracted text.  SHA-256 of each PDF as fetched is recorded so the reading is auditable.
+Where only the bibliographic record was checked (not the mathematics), the line says so.
+
+================================================================================
+0.  DIGESTS OF THE PRIMARY SOURCES I READ AT THE BYTES
+================================================================================
+85a23a10fc349ad3b13c7cacf25ed9e78a5b01ebd22de1a2eff32b97dccc6419
+    Dobrowolski, "A Note on Lawton's Theorem", Canad. Math. Bull. 60(3) 2017, 484-489
+    (Cambridge Core PDF, DOI 10.4153/CMB-2016-066-x)
+f46cca16a0a53cc3e73c917668cd9dc99e94abd090d1c3c40f31fef07c4890b6
+    Lind-Schmidt-Verbitskiy, "Entropy and Growth Rate of Periodic Points of Algebraic
+    Z^d-actions", arXiv:0912.5169v1  (= Contemp. Math. 532 (2010) 195-211)
+6f70a84db9c8a466d13c476c4ca91ba38ca9cc08e24667560f56039001f02bc5
+    Aitken-Ayers-Smith, "General Boyd-Lawton Theorems with Multivariable Limits",
+    arXiv:2508.05910v1 (8 Aug 2025)
+383c5c09fda7a0562517ea0044447f5edb76bc72ec422f68022301a95ce994c6
+    Issa-Lalin, "A Generalization of a Theorem of Boyd and Lawton", Canad. Math. Bull.
+    56(4) 2013, 759-768
+cc871e48828da27f6b37db96bdc057273e1198a15d714b95862548df419efe85
+    Dimitrov, "Convergence to the Mahler measure and the distribution of periodic points for
+    algebraic Noetherian Z^d-actions", arXiv:1611.04664v2 (1 Jan 2017)
+1680dd9110fc48ba3782610d8cd2afe77fd8a03386a02f520f4a373609a539dc
+    Schmidt-Verbitskiy, "New Directions in Algebraic Dynamical Systems",
+    Regul. Chaotic Dyn. 16 (2011) 79-89 (Groningen repository copy)
+
+================================================================================
+1.  THE TARGET'S QUOTATIONS.  EVERY ONE CHECKED CHARACTER BY CHARACTER.
+================================================================================
+VERDICT UP FRONT: THE TARGET'S QUOTATIONS ARE ACCURATE.  I found no misquotation, no
+paraphrase presented as a quote, and no attribution to the wrong paper in the five sources it
+claims to have read.  On its own declared lens the target passes.
+
+  1.1 LAWTON THEOREM 1, as recalled by Dobrowolski Sec. 1 ("Theorem 1 of Lawton's seminal
+      paper"): monic P in C[x], k nonzero coefficients, k >= 2, measure bound C_k v^{1/(k-1)}.
+      >>> CONFIRMED VERBATIM, including the coefficient field C[x].
+  1.2 DOBROWOLSKI THEOREM 1.1, constant C_k = (k-1)(12 sqrt2 / pi)^{(k-2)/(k-1)}.
+      >>> CONFIRMED VERBATIM, including the constant.
+  1.3 DOBROWOLSKI THEOREM 1.4 (several variables), bound C(k_1..k_l)(v/h)^{1/sum(k_i-1)},
+      C = C_{k_1} + ... + C_{k_l}, h = h(P) the maximum modulus of the coefficients, k_i the
+      number of terms of P as a polynomial in z_i over the remaining variables.
+      >>> CONFIRMED VERBATIM.  The target's specialisation to N1's polynomial (k_1=k_2=2,
+      >>> C_2 = 1, C = 2, exponent 1/2, bound 2(v/max pi)^{1/2}) is ARITHMETICALLY CORRECT.
+  1.4 LSV LEMMA 2.1, REMARK 2.2, THEOREM 9.1 (Gelfond), the Proposition-4.2 sentence, the
+      "such estimates, however, do not appear to be available" sentence, the Lawton /
+      compact-connected-subgroups / "the diophantine issues disappear" paragraph, and the
+      "It is not known whether (1.3) holds for all cyclic actions" sentence.
+      >>> ALL SIX CONFIRMED VERBATIM at arXiv:0912.5169v1.
+  1.5 BOYD-LAWTON as stated in arXiv:2508.05910: m_n(P) = lim_{mu(r)->inf} m_1(P^(r)),
+      mu(r) = min{||v||_inf : v in Z^n, v != 0, v.r = 0}, P in C[Z_1^{+-1},...,Z_n^{+-1}].
+      >>> CONFIRMED VERBATIM, INCLUDING THE COEFFICIENT FIELD C.  And that paper's own
+      >>> framing -- "in terms of composition with continuous homomorphisms T -> T^n" --
+      >>> independently supports the target's L-1: the object is a CONNECTED one-parameter
+      >>> subgroup, not a Z-orbit.  L-1 IS CONFIRMED AT THE SOURCE.
+  1.6 BAKER-WUSTHOLZ constant C = 18(n+1)! n^{n+1}(32 d)^{n+2} log(2 n d), J. reine angew.
+      Math. 442 (1993) 19-62.  >>> CONFIRMED against the published record.  The target flags
+      this as second-hand from Wikipedia (its D-3); the statement it took is CORRECT.
+  1.7 BIBLIOGRAPHIC RECORDS SPOT-CHECKED AND CORRECT: Lawton, J. Number Theory 16 (1983)
+      356-362 (confirmed in LSV's and Aitken et al.'s reference lists) · Lind-Schmidt-Ward,
+      Invent. Math. 101 (1990) 593-629 (LSV ref [9]) · Gelfond, Dover 1960 (LSV ref [4]) ·
+      Lind, ETDS 2 (1982) 49-68 (LSV ref [7], and LSV's "deep results in number theory"
+      pointer -- the target's annotation on its [14] is right) · Cassaigne-Maillot, J. Number
+      Theory 83 (2000) 226-255 · Kenyon-Okounkov-Sheffield, Ann. of Math. 163 (2006)
+      1019-1056 · Lyons, Combin. Probab. Comput. 14 (2005) 491-522 · Lubinsky, J. Number
+      Theory 76 (1999) 217-247 · Herman, Comment. Math. Helv. 58 (1983) 453-502 · Avila,
+      Acta Math. 215 (2015) 1-54 · Erdos-Szusz-Turan, Colloq. Math. 6 (1958) 119-126 ·
+      Brunault-Zudilin, CUP 2020 · Issa-Lalin, Canad. Math. Bull. 56(4) 2013 759-768.
+  1.8 AITKEN-AYERS-SMITH IS DATED 8 AUGUST 2025 AND THE TARGET DATES ITS READING 2026-08-17.
+      Consistent.  ATZ "On the order of magnitude of Sudler products" is Amer. J. Math. 145
+      (2023) 721-764 and the sharp transition IS at partial quotient a = 6, as the target's
+      finding L-11 says.  CONFIRMED.
+
+================================================================================
+2.  WHAT THE CITATION AUDIT FOUND AGAINST THE TARGET.  FOUR ITEMS.
+================================================================================
+
+C-1.  **THE TARGET QUOTES A 2010 OPEN PROBLEM AS THE STATE OF THE FIELD, AND THE PAPER THAT
+      CLOSES IT IS IN THE TARGET'S OWN READING QUEUE, UNCITED.**
+      THEOREMS_AND_CITATIONS.txt Sec. 0 heads its evidence block "AND THE AUTHORITY SAYS THE
+      HARD PART IS HARD, IN SO MANY WORDS" and quotes LSV: "It is not known whether (1.3)
+      holds for all cyclic actions."  LSV is 2009/2010.
+      VESSELIN DIMITROV, arXiv:1611.04664 (v2, 1 Jan 2017), ANSWERS IT.  Read at the bytes:
+        * abstract: "we prove a sub-Liouville bound ... on the distance from an N-torsion
+          point of G_m^d to an algebraic subset" and "for all non-zero integer Laurent
+          polynomials P in d commuting variables, we prove that the averages of log|P(x)|
+          over zeta in mu_N^d, P(zeta) != 0, converge as N -> infinity to the Mahler measure";
+        * introduction: "This addresses the problem left open in T. Ward's thesis and then in
+          K. Schmidt's book, and the papers [63, 64] of D. Lind, K. Schmidt and E. Verbitskiy";
+        * "In the present paper, we solve (B) for ALL Laurent polynomials P in the case that
+          Gamma runs over the cubical sublattices N.Z^d";  "Theorem 1.  The hypotheses (A) and
+          (B) are true for Gamma = N.Z^d, N -> infinity."
+      CONSEQUENCES, EACH ONE A CORRECTION TO A TARGET FINDING:
+        (a) The LSV "not known" sentence is NOT the field's current word and must not be
+            printed as one.  It is nine years out of date on the cyclic case at Gamma = N Z^d.
+        (b) Sec. 2.5's flat claim "NO theorem covers the case Z(P) infinite" is FALSE in the
+            torsion-point setting: Dimitrov covers ALL Laurent polynomials, including the
+            three zero-CIRCLE loci of M1_02 -- one of which is S1's own published ready state.
+            L-5's parallel remark inherits the same correction.
+        (c) L-9 rules that "the correct citation from that family is LIND-SCHMIDT-VERBITSKIY
+            (2010)".  On the target's own criterion -- name the paper that actually treats the
+            hard case -- the correct citation from that family in 2026 is DIMITROV 2017 (with
+            LSV as the partial result it supersedes, and Habegger's Diophantine approximation
+            to definable sets as the alternative route Dimitrov names).  L-9 convicts W-10 of
+            "a second misattribution in the act of correcting the first" and then stops one
+            paper short itself.
+        (d) The recommended CITATION LIST for the note (Sec. 4, "CORE -- the note cannot be
+            written without these") omits it.
+      WHAT SURVIVES.  Dimitrov's averages are over TORSION points -- the corpus's FINITE-ORDER
+      connections -- not over a single Z-orbit at an infinite-order connection.  So Dimitrov
+      does NOT license N1, and the target's HEADLINE ("no published theorem licenses N1 as
+      registered") is untouched.  What falls is the evidence the headline is resting on and
+      one of the eighteen findings.
+
+C-2.  **THE TARGET CITES THE WRONG BOYD 1981 FOR THE BOYD HEIGHT, AND ITS OWN PRIMARY SOURCE
+      SAYS SO ON THE SAME PAGE IT QUOTES.**  The target's [2] is Boyd, "Speculations concerning
+      the range of Mahler's measure", Canad. Math. Bull. 24 (1981) 453-469, and its Sec. 1.1
+      quotes the Boyd height mu(r) from arXiv:2508.05910.  That paper attributes the classical
+      Boyd-Lawton theorem to its [5] and [16], and defines the Boyd height with the pointer
+      "(cp. [5, p. 118])" -- and its [5] is BOYD, "Kronecker's Theorem and Lehmer's Problem for
+      Polynomials in Several Variables", J. Number Theory 13 (1981) 116-121, a DIFFERENT paper.
+      Issa-Lalin (read at the bytes) cite the theorem as [Bo81a, Bo81b, La83], i.e. BOTH.
+      So the target's [2] is not wrong, it is HALF: the paper that defines the quantity its own
+      R1_08 A2 computes is missing from the list.  The target instructs "CITE LAWTON TWICE";
+      BOYD ALSO NEEDS TWO ENTRIES.  Severity: low.  Verifiable: completely.
+
+C-3.  **AN UNATTRIBUTED VERBATIM QUOTE, IN THE LANE THAT CONVICTS S4 OF EXACTLY THIS.**
+      THEOREMS_AND_CITATIONS.txt Sec. 3.1 ends: 'The survey formulation found in that
+      literature: "the logarithmic Mahler measure of certain multivariate polynomials occurs
+      frequently as the entropy or the free energy of solvable lattice models, especially
+      dimer models."'  No source is given.  IT IS THE FIRST SENTENCE OF THE ABSTRACT of
+      K. SCHMIDT and E. VERBITSKIY, "New Directions in Algebraic Dynamical Systems",
+      Regul. Chaotic Dyn. 16 (2011) 79-89 -- read at the bytes, digest above -- i.e. by two
+      of the three authors of the target's own [5].  Under custody Sec. 1 (the pointer rule)
+      that is the same breach class as the target's own finding L-14(a) against S4.
+      AND THE OMITTED CONTINUATION CHANGES THE READING: the next two sentences of that same
+      abstract are "It is also known that the entropy of an algebraic dynamical system is the
+      logarithmic Mahler measure of the defining polynomial.  The connection between the
+      lattice models and the algebraic dynamical systems is still rather mysterious."  The
+      target uses the first sentence to argue N1's identification is routine.  The survey it
+      is quoting says the corresponding correspondence is OPEN.  Sec. 1.5 of that survey is
+      headed "No Coincidences!" and says "The problem remains open even in the case of the
+      dimer model."  L-10's conclusion (make no novelty claim about the FORMULA) survives;
+      its supporting quote is doing less work than the target makes it do.
+
+C-4.  **TWO MORE PAPERS FETCHED AND NOT USED.**  Also in the target's own reading queue and
+      cited nowhere: Issa-Lalin 2013 (the generalisation of Boyd-Lawton, and the paper that
+      settles which Boyd 1981 is which, C-2 above) and Akhtari-Vaaler, "Lower bounds for
+      Mahler measure that depend on the number of monomials", arXiv:1810.12413 -- which is the
+      paper Dobrowolski's own Sec. 1 points at for the sharper coefficient-dependent bound
+      ("in [1, Theorem 1] a stronger result was established in a different way").  Not a
+      defect in any finding; recorded because a literature lane's unused reading is evidence
+      about the search, and the search reached the right shelf and then did not take the
+      newest book off it.
+
+================================================================================
+3.  WHAT I COULD NOT CHECK
+================================================================================
+  * LAWTON 1983 ITSELF.  Same paywall as the target.  Both of its theorems remain SECOND-HAND
+    for me as for the target -- but they are now second-hand from TWO independent readers of
+    two different secondary sources, which is one notch better than the target's D-1.
+  * BOYD 1981 (either paper).  Bibliographic record only.
+  * BAKER 1966-68, MATHEMATIKA.  Bibliographic record only.
+  * SUDLER 1964 and ERDOS-SZEKERES 1959.  Bibliographic record only; the CONTENT claim about
+    them is carried by Lubinsky and by ATZ, both of which I did check, and both of which
+    define the Sudler product as PROD |2 sin(pi r alpha)| = PROD |1 - q^r| -- which is the
+    basis of RL2's refutation of the target's d = 1 identity.
+  * GELFOND 1960 and KUIPERS-NIEDERREITER 1974.  Bibliographic record only.  Gelfond Thm III
+    is quoted here at second hand from LSV Thm 9.1, which I did read.

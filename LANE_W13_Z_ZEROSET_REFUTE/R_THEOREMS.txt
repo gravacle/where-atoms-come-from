@@ -1,0 +1,197 @@
+LANE W-13 / Z_REFUTE -- THE STATEMENTS, WITH THEIR PROOFS, THEIR BASIS TAGS, AND WHAT EACH
+ONE DOES TO LANE Z.  Every number quoted here is produced by r1..r4 in this directory and is in
+the .OUT.txt files beside them.  BASIS tags: [T] theorem proved here · [E] exhibited/exhaustively
+checked · [C] custody/reading finding checked at the bytes · [N] numerical only.
+
+WHAT WAS TESTED THAT COULD HAVE BROKEN LANE Z, LISTED FIRST SO THE NULLS ARE NOT BURIED:
+  1. THE CLASSIFICATION ITSELF, by three routes lane Z never used (the other Jensen grouping;
+     the S_4-invariant triple product; sorted weights).  80182 exact simplex points at four
+     denominators lane Z did not use.  0 disagreements.  LANE Z SURVIVES.
+  2. THE DIMENSION COUNT -- points versus curves -- by 2-D Newton with NO Jensen reduction at
+     all, the only route that can SEE the difference.  Cluster counts stable under quadrupling
+     the starts on every point stratum, growing on every curve stratum.  LANE Z SURVIVES.
+  3. 'AT MOST TWO'.  1994 random states, brute-force root count.  No state anywhere with three
+     or more distinct isolated torus zeros.  LANE Z SURVIVES.
+  4. A FOURTH SUBLEVEL EXPONENT theta = 4/3, which would exist if the kernel curvature could
+     vanish on the ONE stratum.  Decided exactly: it cannot, and the algebra says why.
+     LANE Z's LIST {1, 3/2, 2} IS COMPLETE.  LANE Z SURVIVES.
+  5. THE SUBLEVEL CONSTANT (1/4pi) SUM 1/|det M|, by 2-D importance-sampled Monte Carlo that
+     shares nothing with lane Z's 1-D arc formula.  Agrees inside 2 sigma over five decades.
+     LANE Z SURVIVES.
+  6. THE p00 = 0 FACE, by plane geometry (two circles) instead of Jensen, at four denominators
+     lane Z did not use.  0 disagreements; the curve locus is the predicted three states.
+     LANE Z SURVIVES.
+THE LANE'S MATHEMATICS IS CORRECT.  WHAT FALLS IS SOME OF ITS BASIS, ONE OF ITS TRANSCRIPTIONS,
+THE SCOPE OF TWO OF ITS THEOREMS, AND THE SIGN OF ITS HEADLINE.
+
+--------------------------------------------------------------------------------------------
+R1.  THE CRITERION IS A MULTISET PREDICATE, AND SAYING SO PROVES IT.            BASIS [T]
+
+    (S1^2 - S2^2)(D1^2 - D2^2)  =  T_A T_B T_C,
+        T_A = p00+p10-p01-p11,  T_B = p00+p11-p10-p01,  T_C = p00+p01-p10-p11,
+    the three 2+2 pairing differences.  Hence
+
+        P HAS A ZERO ON T^2   <=>   T_A T_B T_C <= 0,
+
+    manifestly invariant under S_4 on the four weights.  In sorted form w1>=w2>=w3>=w4:
+        CURVE  <=>  w1 = w2 and w3 = w4  (the multiset is {a,a,b,b});
+        else   EMPTY <=> w1+w4 > w2+w3 and w1+w2 > 1/2;  TWO <=> w1+w4 < w2+w3;  ONE otherwise.
+    CONSEQUENCE FOR THE REGISTER: W-03/N2's MULTISET THEOREM EXTENDS FROM lambda TO THE ZERO
+    SET AND TO THE WHOLE STRATIFICATION.  No register row says this and lane Z's pairing-
+    dependent form hides it.  M3 has priority on the product form (LANE_W08_M3_ZEROSET,
+    2026-08-16, m3_2 (b2)); what is new here is the two-line derivation from (S1,S2,D1,D2), the
+    sorted form, and the S_4 consequence.
+    CHECKED: 13033 exact points, identity exact, 0 failures.  80182 exact points at
+    denominators 30/42/48/60, three classifiers, 0 disagreements.  r1(a)(b).
+
+--------------------------------------------------------------------------------------------
+R2.  det M IN CLOSED FORM.  LANE Z COMPUTES IT BY SVD; IT HAS A THREE-FACTOR FORM.  BASIS [T]
+
+        det M  =  - Delta * Delta' * sin(s0) / |B(x0)|^2
+        Delta  = p10 p01 - p00 p11   (Delta  = 0  <=>  P FACTORS)
+        Delta' = p10 p11 - p00 p01
+    Proof in r2(a): beta = -A(x0) and alpha = x0 Delta / B(x0), because p10 B - p11 A = Delta
+    identically in x; the imaginary part of conj(x0) A B is sin(s0) Delta'.
+    CHECKED against lane Z's SVD route at every named state with an isolated zero: worst
+    difference 2.78e-17.  r2(b).
+
+--------------------------------------------------------------------------------------------
+R3.  SIMPLICITY IS A THEOREM ABOUT THE STRATUM, NOT A TABLE OF FOURTEEN STATES.  BASIS [T]+[E]
+
+    Delta = 0 => the state is EMPTY or CURVE.  (P = (A0+B0 x)(C0+D0 y) gives
+        (S1-S2)(D1-D2) = (A0+B0)|A0-B0|(C0-D0)^2 >= 0.)
+    Delta' = 0 => the state is EMPTY or CURVE.  (Substituting p10 = p00 p01/p11 makes both
+        (S1^2-S2^2) and (D1^2-D2^2) equal to a positive multiple of (p00^2-p11^2), so their
+        product is a square.)
+    THEREFORE on the TWO stratum Delta != 0, Delta' != 0, sin s0 != 0, so det M != 0 at BOTH
+    zeros of EVERY state: the zeros are SIMPLE and CONICAL throughout the stratum.  On the ONE
+    stratum sin s0 = 0 identically, so det M = 0 throughout.
+    THIS IS EXACTLY THE INPUT M1_08 T2(c)'s PROOF SKETCH NEEDED ('|P| ~ L*d near a simple
+    zero').  LANE Z's Z-3 asserts it with status PROVED and supports it with a 14-state table;
+    the table is an EXHIBIT.  CORRECTION OF BASIS, NOT OF CONTENT.
+    CHECKED: 57040 exact points at denominators 20/32/44/56, 0 counterexamples.  r2(c).
+
+--------------------------------------------------------------------------------------------
+R4.  H2 IS NOT SUFFICIENT AT K1's REGISTERED pi, AND THE FAILURE SET IS COMEAGRE.  BASIS [T]
+
+    For EVERY state with Z(P) non-empty -- i.e. exactly where T_A T_B T_C <= 0 --
+        { (alpha,beta) : H2 holds AND liminf_N (1/N) SUM_{k<=N} log|Z_k| = -infinity }
+    is a COMEAGRE (dense G_delta) subset of T^2.  Baire proof in r4(a): the sets
+    {F_N < -M, some N >= N0} are open (log|Z_k| is continuous into [-inf,0]) and dense (any
+    (alpha,beta) can be moved by less than 1/N to make the N-th orbit point land exactly on a
+    zero), and the H2 set is residual.
+    THREE CONSEQUENCES.
+      (i) THE COUNTEREXAMPLE THE ROUND ASKED FOR EXISTS AT N1's REGISTERED STATE, and not as
+          one pathological pair but as a topologically generic set.  M1_06's exhibit is at the
+          CENTROID (0,1/3,1/3,1/3), whose zero sits at a ROOT OF UNITY (cos s0 = -1/2), which
+          is what makes M1_06's decimal-digit construction work.  K1's registered zero has
+          cos s0 = -2/3, so by Niven's theorem s0/pi is IRRATIONAL and the construction does
+          not transfer verbatim.  Lane Z's "the counterexample already exists on disk" is a
+          citation to a different state.
+      (ii) LANE Z's THEOREM Z4 IS INERT FOR N1.  It forbids EXACT hits; R4's density argument
+          passes through exact hits and keeps only their neighbours, at which no relation holds.
+          THE LADDER IN r4(c) IS BUILT IN THE (sigma,tau) = (+d,+d) DIRECTION PRECISELY SO THAT
+          (uv)^N = e^{4 pi i d} != 1: Z4's forbidden relation is never formed, and Z4's own
+          "near-relation of size 2k with defect O(delta)" clause is confirmed, with defect 2d.
+          Z4 IS TRUE AND IT PROTECTS NOTHING.
+      (iii) MEASURE AND CATEGORY DISAGREE.  Lane Z's Z-12 (Borel-Cantelli) makes the failure
+          set Lebesgue-NULL; R4 makes it comeagre.  Both are right.  The corpus's entire N3 /
+          W-12 apparatus is measure-theoretic, so the register has no vocabulary for the second
+          statement, and N1 as registered carries no quantifier at all.
+    LADDER, r4(c): four decades N = 1e2..1e5, connection rebuilt within 1/N of a fixed baseline
+    at each N, F_N sitting 3.0000 nats below m(P) = -0.767507880 at every N (dev -3.0627,
+    -3.0081, -3.0004, -3.0000).  Local expansion validated against direct evaluation at four
+    offsets and against a 140-digit mpmath evaluation at d = 1e-60 (relative deviation 3.9e-17).
+
+--------------------------------------------------------------------------------------------
+R5.  THE HEADLINE'S SIGN IS INVERTED, AND THE INVERSION IS IN LANE Z's OWN CITATION.  BASIS [C]
+
+    Lane Z's two facts about the EMPTY 3/4 are both true:
+        (a) there H2 alone settles N1 (Z-8);
+        (b) there m(P) = log(p_max), an elementary logarithm (Z-7).
+    TOGETHER THEY SAY: the 3/4 that is settled is the 3/4 where N1 has NO Mahler-measure
+    content, and the 1/4 where the 2-variable Mahler measure is the object N1 is FOR is exactly
+    the 1/4 left open.  LANE_W08_M3_ZEROSET/m3_2_fourclass.OUT.txt (d), sealed 2026-08-16 and
+    cited by lane Z's own Z-7, states it: "the Mahler measure is a LOGARITHM OF A WEIGHT off
+    the firing region, and only inside it does the dilogarithm/Cassaigne-Maillot regime begin.
+    The firing region is exactly where the analytically interesting rate lives."
+    LANE Z CITES THAT BLOCK AND INVERTS ITS SIGN.  Z-13 is lane Z's own finding that this
+    program fails by UNDER-READING; the headline is that failure one directory later.
+    CHECKED, r3(c): over 200 TWO-stratum states the smallest |m(P) - log(any weight)| is
+    9.42e-05, so on the crossing quarter m(P) is never the log of a class weight.
+    AND THE MISSING IMPORT: the three-class half of lane Z's THEOREM Z2 is the elementary
+    branch of CASSAIGNE-MAILLOT (1997).  The corpus cites it 18 times (REGISTER_V001.md:313
+    counts them) and S4:590-597 uses it for five of its nine carrier rates.
+    `grep -ril 'cassaigne|maillot|dilog' LANE_W13_Z_ZEROSET` returns NOTHING.
+
+--------------------------------------------------------------------------------------------
+R6.  THE 3/4 IS LEBESGUE, AND THE CORPUS'S OWN SAMPLE IS 4/5 THE OTHER WAY.        BASIS [E]
+
+    Stratum census over the corpus's own published (carrier, state) rows -- S4:575's nine
+    carrier rows AS S4 WROTE THEM, plus SENSE C at three and four classes and S1 sec6's ready
+    state:  TWO 7, CURVE 3, EMPTY 2.  SINGULAR 10 of 12 = 0.833; deduped (B1 = B2 = B3 are one
+    state) 8 of 10 = 0.800.  LANE Z's Lebesgue figure is EMPTY = 0.750.
+    W-14 records that every ready state in this corpus was CHOSEN except SENSE U, where pi is
+    fixed by the carrier's class sizes -- so S4:575's column is the ONLY non-stipulated sample
+    the corpus has, and it points the other way by a factor of three.
+    THE ARITHMETIC 1/4 AND 3/4 IS EXACT AND THIS REFUTER RE-DERIVED IT.  WHAT IS CORRECTED IS
+    WHAT IT WEIGHS: a measure nobody adopted is doing the work in lane Z's headline.
+    SMALLER SLIP IN THE SAME FINDING: Z-9 says m(P) = 0 "except at the three corners
+    max p_a = 1".  The four-class simplex has FOUR such corners; three is M1_08 T4's count and
+    M1_08 T4 is K1-scoped (p00 = 0).  Z-9 mixes a three-class corner count with a four-class
+    volume.  r3(d).
+
+--------------------------------------------------------------------------------------------
+R7.  B0b's MULTISET IS MISQUOTED, AND THE MISQUOTE FACTORS THE POLYNOMIAL.         BASIS [C]
+
+    S4_THE_MEASUREMENT_V001.md:575 row B0b:   {00:4, 01:1, 10:2, 11:2} -> (4/9, 2/9, 1/9, 2/9).
+    LANE_W13_Z_ZEROSET/z0_lib.py NAMED entry: {00:4, 10:2, 01:2, 11:1} -> (4/9, 2/9, 2/9, 1/9).
+    p01 and p11 are transposed.  W-10 defect N-3's own certificate -- "p00*p11 = 8/81 != 2/81 =
+    p10*p01" -- is TRUE of S4's state and FALSE of lane Z's, whose cross-products are both
+    4/81, so lane Z's state FACTORS: 9P = (2+x)(2+y) (checked to 3.6e-15 on a 997x991 grid).
+    WHY IT SURVIVED, AND IT IS WORTH STATING: the transposition is WITHIN the pair {p01,p11},
+    and |B(t)|^2 = p01^2+p11^2+2 p01 p11 cos t is symmetric in that pair, so |A|, |B|, min|P|,
+    m(P) and the stratum are IDENTICAL (checked: 0.0e+00, 1.1e-16, both 1/9, both log(4/9),
+    both EMPTY).  EVERY FIGURE LANE Z COMPUTES FROM B0b IS UNAFFECTED AND Z-6's WITNESS STANDS.
+    WHAT FALLS: Z-14's header "THE GEOMETRIC TYPE OF EVERY CARRIER ROW OF S4:575" (one row is
+    not S4's row), and the reading that z4(b)/z4(c)'s EMPTY-stratum exhibit is B0b's -- the two
+    states have different |P|(x,y) (max difference 0.222 over 20000 torus points) and hence
+    different Z_k sequences.  Lane Z's only EMPTY-stratum convergence exhibit runs on a
+    polynomial that splits into two independent one-variable factors.  r3(a).
+
+--------------------------------------------------------------------------------------------
+R8.  Z-2's CLOSED FORM AND Z-10 REST ON A LABELLING S4 DOES NOT FIX.               BASIS [E]
+
+    S4:566 defines SENSE C as "(0.4,0.3,0.3) for 3 classes" and does not say which class takes
+    the 0.4.  Under the three assignments:
+        0.4 on p11 (lane Z / the brief): cos s0 = -2/3,  x0 y0 = 1        ANTI-DIAGONAL
+        0.4 on p01                     : cos s0 = -2/3,  x0 y0 != 1       NOT
+        0.4 on p10                     : cos s0 = -1/9,  x0 y0 != 1       NOT
+    m(P) = -0.767507880358 and stratum TWO in all three (multiset invariance, as N2 requires),
+    so Z-1, Z-4 and Z-8 are labelling-independent and stand.  Z-2's headline closed form and
+    Z-10 (THEOREM Z4) are NOT.  Lane Z names the operative variable correctly in Z4's body
+    ("indeed whenever p10 = p01") and incorrectly in its headline and in Z-10's claim field,
+    where it is attributed to "K1's REGISTERED pi".  r3(b).
+
+--------------------------------------------------------------------------------------------
+R9.  WHAT THE REGISTER SHOULD CARRY, IF ANYTHING FROM THIS ROUND IS CARRIED.
+
+    N1 is publishable with a SIDE CONDITION THAT CAN BE PRINTED IN THE STATEMENT, because the
+    predicate is exact, rational and one line:
+
+        T_A T_B T_C  >  0   (equivalently: the sorted weights satisfy w1 + w4 > w2 + w3,
+                             equivalently: the Jensen branches do not cross)
+            ==> log|P| is continuous and bounded, H2 ALONE gives lambda = m(P), and
+                m(P) = log(p_max), an elementary logarithm.        [lane Z Z-8, confirmed]
+
+        T_A T_B T_C <= 0
+            ==> H2 alone does NOT give lambda = m(P): the failure set of connections is
+                Lebesgue-null AND COMEAGRE, at every such state including K1's registered pi.
+                A third hypothesis H3 is required -- M1_08 T2(c)(ii)'s inhomogeneous
+                Diophantine condition, which M1_08 states explicitly is not implied by H2.
+                                                                    [THEOREM R4, this lane]
+
+    W-11 registers N1 under H1 and H2 only; W-12 Corollary 2 strengthens H2 and adds nothing.
+    NEITHER ROW CARRIES H3, AND M1_08 T2(b),(c) HAD IT ON DISK BEFORE EITHER WAS WRITTEN.
+    That is lane Z's own Z-13 failure mode one level up: not a lane failing to read a lane, but
+    the REGISTER failing to carry a hypothesis a lane had already isolated.

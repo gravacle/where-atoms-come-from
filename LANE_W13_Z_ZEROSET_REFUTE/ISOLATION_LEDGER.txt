@@ -1,0 +1,114 @@
+LANE W-13 / Z_REFUTE -- ISOLATION LEDGER
+One line per comparison.  HELD FIXED | THE ONE THING THAT MOVES | WHERE | ARMS DIFFED.
+W-08's isolation audit says the commonest FATAL defect in this program is not "two variables
+moved" but "ZERO variables moved", and that a ledger records only what an author INTENDED, so it
+is evidence of nothing.  This ledger therefore prints, for every comparison, the measured
+difference between the arms' INPUTS and their OUTPUTS, and marks explicitly which entries are
+NOT controlled comparisons.
+
+--------------------------------------------------------------------------------------------
+R-A.  THREE CLASSIFIERS ON ONE EXACT SWEEP.
+      HELD FIXED: the exact rational 4-tuple (the SAME Fraction tuple feeds all three), the
+                  simplex grid, the arithmetic (integers/Fractions only).
+      MOVES:      only WHICH DERIVATION decides the stratum.
+      ARMS DIFFED: ROUTE 1 pairs the weights (p00,p01) vs (p10,p11) -- the OTHER Jensen
+                  grouping; ROUTE 3 uses no pairing at all, only the sorted multiset; LANE Z
+                  pairs (p00,p10) vs (p01,p11).  The three functions share no line of code and
+                  ROUTE 3 does not compute S1, S2, D1 or D2.
+      DENOMINATORS 30/42/48/60 -- LANE Z SWEPT 24 AND 36, so the grids are disjoint from its.
+      OUTPUT DIFF: 80182 exact points, 0 / 0 / 0 disagreements.  r1(b).
+      STATUS: an IDENTITY CHECK between routes, not an effect claim.
+
+R-B.  POINTS VERSUS CURVES, WITH THE REDUCTION REMOVED.
+      HELD FIXED: the Newton solver, the tolerance, the clustering radius, the state.
+      MOVES:      only the NUMBER OF RANDOM STARTS, 4000 -> 16000.
+      WHY THIS IS THE RIGHT ONE VARIABLE: the dimension of a solution set is not visible in a
+      single run; it is visible in how the number of distinct solutions RESPONDS to more starts.
+      ARMS DIFFED: point strata 2 -> 2 and 1 -> 1 (no change); curve strata cap (200+) -> cap.
+      r1(c).
+
+R-C.  THE p00 = 0 FACE: JENSEN vs PLANE GEOMETRY.
+      HELD FIXED: the exact 3-tuple on the face, the arithmetic, the grid.
+      MOVES:      only whether the predicate is the two-circle condition
+                  |p01-p11| <= p10 <= p01+p11 (no Jensen anywhere) or T_A T_B T_C <= 0.
+      DENOMINATORS 24/40/55/72 -- LANE Z USED 40 ONLY.
+      OUTPUT DIFF: 5483 exact points, 0 disagreements; curve locus = the 3 predicted states.
+      r1(d).
+
+R-D.  det M: CLOSED FORM vs SVD.
+      HELD FIXED: the state, the zero, the float arithmetic.
+      MOVES:      only WHICH DERIVATION produces det M -- a three-factor algebraic identity, or
+                  lane Z's numerically assembled 2x2.
+      ARMS DIFFED: printed side by side at every named state with an isolated zero; worst
+                  |difference| 2.78e-17.  r2(b).
+      STATUS: identity check.  The EFFECT claim is R3, and its evidence is the exact sweep.
+
+R-E.  THE FOURTH EXPONENT.  ONE DECLARED PREDICATE, EVALUATED EXACTLY ON A WHOLE STRATUM.
+      HELD FIXED: nothing is varied; this is an exhaustive evaluation, not a comparison.
+      THE QUESTION: does the kernel curvature q vanish anywhere on the ONE stratum?
+      9624 exact ONE-stratum states at denominators 24/40/60/84: q = 0 in 0 of them, AND the
+      algebra shows q = 0 forces a CURVE stratum in every branch.
+      STATUS: THIS IS A NEGATIVE RESULT FOR THE REFUTER AND IS SCORED AS ONE.  r2(d).
+
+R-F.  THE SUBLEVEL CONSTANT: 1-D ARC FORMULA vs 2-D IMPORTANCE SAMPLING.
+      HELD FIXED: the state (K1's registered pi), the eps-ladder, the predicted constant.
+      MOVES:      only the ESTIMATOR -- lane Z integrates a closed-form y-arc fraction on a
+                  refined 1-D mesh; this refuter samples 2-D boxes around the zeros and counts.
+                  The two share no formula: the 2-D route never uses |A|, |B| or the arc.
+      ARMS DIFFED: five decades printed with the Monte Carlo 1-sigma beside each row; every row
+                  inside 2 sigma of the prediction 1.779406; slope -1.9996, -1.9995, -1.9977,
+                  -1.9992 over four consecutive decades.  r2(e).
+
+R-G.  B0b: S4's ROW vs LANE Z's TRANSCRIPTION.
+      HELD FIXED: everything -- same evaluator, same grid, same code path.
+      MOVES:      only WHICH FOUR NUMBERS.  The two tuples differ in exactly two coordinates
+                  (p01 and p11 transposed), printed.
+      ARMS DIFFED, INPUTS: p00*p11 = 8/81 vs 4/81; p10*p01 = 2/81 vs 4/81; FACTORS False vs True.
+      ARMS DIFFED, OUTPUTS: |A| identical to 0.0e+00; |B| identical to 1.1e-16; min|P| identical;
+                  m(P) identical; stratum identical -- BUT |P|(x,y) differs by up to 0.222 over
+                  20000 random torus points.  THE ARMS ARE NOT BYTE-IDENTICAL AND THE DIFFERENCE
+                  IS MEASURED IN BOTH DIRECTIONS.  r3(a).
+
+R-H.  SENSE C: THE THREE LABELLINGS.
+      HELD FIXED: the multiset {0, 3/10, 3/10, 2/5}, the evaluator, the code path.
+      MOVES:      only WHICH CLASS CARRIES THE 0.4 -- one discrete choice with three values.
+      ARMS DIFFED: m(P) identical to 12 decimals in all three (as N2 requires); cos s0 is -2/3,
+                  -2/3, -1/9; x0 y0 is 1, 0.8148+0.5797i, 0.8148-0.5797i.  r3(b).
+
+--------------------------------------------------------------------------------------------
+DECLARED NON-COMPARISONS, WHICH ARE NOT SCORED AS CONTROLS:
+ * r3(d)'s carrier census is an ENUMERATION of the corpus's published rows, not a controlled
+   comparison against Lebesgue measure.  Its force is that the two numbers are computed in
+   different measures and both are stated.  It is reported deduped AND not deduped.
+ * r4(c)'s ladder is an ADVERSARIAL CONSTRUCTION.  It moves the connection AND N together, on
+   purpose, because the Baire statement it illustrates is precisely "for every N there is a
+   nearby bad connection".  IT IS NOT A CONTROLLED COMPARISON AND CLAIMS NOTHING AS ONE.  The
+   load-bearing statement is THEOREM R4, which is a proof.
+ * r4's exhibited alpha, beta are RATIONAL and therefore violate H2 (W-10 N-4).  Said in the
+   output, not patched.  The H2-satisfying statement is about the perturbed FAMILY and is
+   measure-theoretic, and is stated as such.
+
+MY OWN CONFOUND, RECORDED RATHER THAN PATCHED OUT (r1(e)):
+   My first ROUTE-4 root count used clustering radius 1e-6 with Newton tolerance 1e-13, and the
+   ONE stratum over-counted in 28 of 1994 states (up to 12 'zeros' where there is one).  IT IS A
+   RESOLUTION ARTEFACT OF EXACTLY THE COR-E CLASS: at a TANGENTIAL zero |P| ~ q r^2, so
+   {|P| < 1e-13} is a blob of diameter ~ sqrt(1e-13/q) ~ 1e-6 -- the clustering radius itself.
+   Both radii are printed side by side (1e-6: 28 mismatches; 1e-4: 0).  Note which way it fails:
+   the artefact appears ONLY on the stratum lane Z's theorem calls degenerate and NEVER on the
+   TWO stratum, so it is an unplanned second confirmation of the degeneracy.  The load-bearing
+   reading -- no state anywhere with three or more isolated zeros -- is identical at both radii.
+
+NAMING GUARD, RUN BEFORE ANYTHING WAS NAMED:
+   `grep -n` over REGISTER_V001.md for the terms already in use, then attach to an existing one.
+   The operative variable in this refuter is the SAME one lane Z named -- WHETHER THE TWO JENSEN
+   BRANCHES CROSS -- and no eighth name is coined.  What is added is that the predicate is a
+   function of the MULTISET alone (R1), which lets it be stated without naming a pairing at all:
+   "the sorted weights satisfy w1 + w4 > w2 + w3".  That is not a new name; it is the same
+   variable written so that W-03/N2's invariance is visible in it.
+
+CONVENTIONS CARRIED, NOT REDISCOVERED:
+   No rational (f,c) is called generic anywhere (W-10 N-4); r4's are explicitly called resonant.
+   Every eps- and N-ladder spans >= 4 decades with the per-decade trend printed.
+   Every grid minimum is labelled an UPPER bound (COR-E).
+   M3's priority on the four-class criterion, the polygon refutation and the volumes 1/4 and 1/2
+   is confirmed, not contested: see PRIOR_ART_ON_DISK.txt.

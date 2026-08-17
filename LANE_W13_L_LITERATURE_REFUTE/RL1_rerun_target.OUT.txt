@@ -1,0 +1,31 @@
+==============================================================================
+RL1 — SEAL VERIFICATION AND BYTE-FOR-BYTE RERUN OF THE TARGET LANE.
+==============================================================================
+  L1_zeros_are_algebraic.OUT.txt         OK
+  L1_zeros_are_algebraic.py              OK
+  L2_periodic_points.OUT.txt             OK
+  L2_periodic_points.py                  OK
+  L3_licensed_vs_unlicensed.OUT.txt      OK
+  L3_licensed_vs_unlicensed.py           OK
+  L4_lawton_small_values.OUT.txt         OK
+  L4_lawton_small_values.py              OK
+  PUBLISHED_CONVENTIONS.txt              OK
+  THEOREMS_AND_CITATIONS.txt             OK
+
+  SEALS: 10 files, 0 mismatches.
+
+  RERUN (fresh interpreter, cwd = target dir):
+    L1_zeros_are_algebraic             rc=0  stdout 3510 bytes  BYTE-IDENTICAL TO SEALED OUTPUT: True
+    L2_periodic_points                 rc=0  stdout 4078 bytes  BYTE-IDENTICAL TO SEALED OUTPUT: True
+    L3_licensed_vs_unlicensed          rc=0  stdout 5863 bytes  BYTE-IDENTICAL TO SEALED OUTPUT: True
+    L4_lawton_small_values             rc=0  stdout 4083 bytes  BYTE-IDENTICAL TO SEALED OUTPUT: True
+
+  ALL FOUR REPRODUCE EXACTLY: True
+
+  READING.  The target lane is fully reproducible: 10 sealed files, 0 seal mismatches, and
+  all four scripts regenerate their sealed outputs byte for byte on a different machine state
+  (numpy 2.0.2, mpmath present).  NO ARITHMETIC DEFECT IS FOUND BY RERUNNING.  Everything this
+  refutation reports is found by (a) reading the cited sources and (b) testing claims the
+  target's own code does not test.
+
+DONE RL1

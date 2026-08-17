@@ -1,0 +1,64 @@
+==============================================================================
+RL8 — RECOUNT OF THE TARGET'S GREP-BASED FINDINGS.  16 sealed .md artifacts.
+==============================================================================
+
+  'inhomogeneous'   TARGET CLAIM: L-8: REGISTER 0, W10_SCOPE_TABLE 2, W08_THE_RACE 1
+     occurrences by file: {'W08_THE_RACE_V001.md': 1, 'W10_SCOPE_TABLE_V001.md': 2}   TOTAL 3
+     LINES by file      : {'W08_THE_RACE_V001.md': 1, 'W10_SCOPE_TABLE_V001.md': 2}   TOTAL 3
+
+  'lyapunov'   TARGET CLAIM: L-12: exactly TWO occurrences in the sealed corpus
+     occurrences by file: {'S3_THE_CROSSING_AUDIT_V001.md': 1, 'S3_THE_CROSSING_V001.md': 1}   TOTAL 2
+     LINES by file      : {'S3_THE_CROSSING_AUDIT_V001.md': 1, 'S3_THE_CROSSING_V001.md': 1}   TOTAL 2
+
+  'lawton'   TARGET CLAIM: L-14: 11 total = REGISTER 3, W10 3, W08 4, HANDOFF 1
+     occurrences by file: {'HANDOFF_2026-08-16.md': 1, 'REGISTER_V001.md': 3, 'W08_THE_RACE_V001.md': 4, 'W10_SCOPE_TABLE_V001.md': 3}   TOTAL 11
+     LINES by file      : {'HANDOFF_2026-08-16.md': 1, 'REGISTER_V001.md': 3, 'W08_THE_RACE_V001.md': 4, 'W10_SCOPE_TABLE_V001.md': 3}   TOTAL 11
+
+  'cassaigne'   TARGET CLAIM: L-14(a): S4 = 17, REGISTER = 1, all others 0
+     occurrences by file: {'HANDOFF_2026-08-16.md': 1, 'REGISTER_V001.md': 1, 'S4_THE_MEASUREMENT_V001.md': 18}   TOTAL 20
+     LINES by file      : {'HANDOFF_2026-08-16.md': 1, 'REGISTER_V001.md': 1, 'S4_THE_MEASUREMENT_V001.md': 17}   TOTAL 19
+
+  'wendel'   TARGET CLAIM: L-14(b): Wendel 4
+     occurrences by file: {'REGISTER_V001.md': 2, 'W10_SCOPE_TABLE_V001.md': 2}   TOTAL 4
+     LINES by file      : {'REGISTER_V001.md': 2, 'W10_SCOPE_TABLE_V001.md': 2}   TOTAL 4
+
+  ABSENT-CITATION CLAIM (L-14b).  Occurrences over the sealed .md corpus:
+     verbitskiy     0   
+     gelfond        0   
+     baker          0   
+     dobrowolski    0   
+     kenyon         0   
+     okounkov       0   
+     sheffield      0   
+     lyons          0   
+     everest        0   
+     sudler         0   
+     lubinsky       0   
+     herman         0   
+     avila          0   
+     kuipers        0   
+     niederreiter   0   
+     dimitrov       0   
+     habegger       0   
+     issa           0   
+     lalin          0   
+     boyd           4   {'HANDOFF_2026-08-16.md': 1, 'W08_THE_RACE_V001.md': 2, 'W10_SCOPE_TABLE_V001.md': 1}
+
+--------------------------------------------------------------------------------
+VERDICT.
+  L-8  CONFIRMED EXACTLY.  'inhomogeneous': REGISTER 0, W10_SCOPE_TABLE 2, W08_THE_RACE 1.
+       The hypothesis N1 needs was proposed one round earlier and never entered the register.
+  L-12 CONFIRMED EXACTLY.  'Lyapunov' occurs twice, at S3_THE_CROSSING_V001.md:472 and
+       S3_THE_CROSSING_AUDIT_V001.md:629, and in no register row and no lane directory.
+  L-14 CONFIRMED on 'Lawton' (11 = 3 + 3 + 4 + 1) and on the zero-citation list, which is
+       zero for every name checked.
+  ONE CORRECTION, TRIVIAL BUT IT IS A NUMBER IN A FINDING: 'Cassaigne' occurs 18 times in
+  S4, on 17 LINES.  The target reports 17 and attributes it to `grep -c`, which counts lines.
+  THE REGISTER'S OWN W-05 ROW ALREADY SAYS 18 ("Mahler 12, Cassaigne 18, Glimm 2, Lawton 1").
+  So the target restated a corpus figure with a different counting convention and did not
+  notice the register disagreeing with it.  Nothing depends on which is right.
+  AND 'boyd' -- the corpus mentions Boyd but never with a paper attached, consistent with the
+  target's B-6.
+--------------------------------------------------------------------------------
+
+DONE RL8

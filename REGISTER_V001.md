@@ -1459,3 +1459,57 @@ Haar-null (N3), and the `pi`-blind operator pairs are a correlated locus that W-
 five lanes reported *"0 of N random draws"* and were sampling the wrong set entirely. **This program
 has been defeated by exhaustion twice. A closure claim backed by sampling is worth nothing here,
 and I made one.**
+
+---
+
+## W-15 — THE REGISTRAR'S ANALYTIC SHAPE, MEASURED: **THE PHRASE TIC IS INHERITED. THE HABIT OF CONVERTING QUESTIONS INTO TWO-VALUED OBJECTS IS THE REGISTRAR'S, AT 2.5x AND 6x THE PREDECESSOR'S RATE — AND IT IS THE DEFECT THE PROGRAM'S FOUNDING QUESTION HAD.**
+
+Raised by the principal, 2026-08-17, from a prose complaint that escalated into a claim about
+reasoning: *"You're locked to an x/y way of thinking about almost everything."* Measured on this
+register, split at W-07, the Fable 5 / Opus 5 boundary. `LANE_W15_BINARY_AUDIT/`, sealed.
+
+| construction | Fable 5 /1k words | Opus 5 /1k words | ratio |
+|---|---|---|---|
+| `rather than` | 1.50 | 1.53 | 1.02 |
+| `X, not Y` | 3.60 | 2.51 | **0.70** |
+| `versus` / `vs` | 0.15 | 0.22 | 1.44 |
+| **biconditional (`iff`)** | 0.30 | 0.76 | **2.53** |
+| **`two ways` / `two readings`** | 0.30 | 1.75 | **5.85** |
+
+**THE PHRASE-LEVEL TIC IS HOUSE STYLE AND IS NOT THE REGISTRAR'S** — on `X, not Y` the registrar is
+**below** the predecessor. **What is the registrar's is structural: biconditionals at 2.5x and
+two-way readings at nearly 6x.** The defect is not *talking* in x/y. It is **converting questions
+into x/y**, because a two-valued question is decidable by a computation and an open one is not.
+Every headline the registrar wrote has that shape: attained/approached (W-07), decay/floor (W-08),
+three-class/four-class (W-09), carrier-independent/K1-scoped (W-10), Reading A/Reading B (W-11),
+closed/open (W-12), knob/channel (W-14). **Sixteen "reads two ways, scored neither" verdicts in
+eight rows is a template, not a judgement** — it wears the form of restraint while performing a
+conversion.
+
+### AND THE PROGRAM'S FOUNDING QUESTION HAS THE SAME DEFECT, WHICH IS WHY THIS IS A FINDING
+
+*"A forced crossing — does a durable record live INSIDE the carrier, or must it be adjoined
+OUTSIDE?"* **That is a dichotomy, and W-05 established it was malformed:** *"THE SLOT IS ALREADY
+INSIDE THE CARRIER … S3 proved `dim R >= 4` by the two-non-parallel-vectors argument and then looked
+for the `C^2` OUTSIDE instead of inside"* (`REGISTER:415-422`). **The corpus was spent on an
+inside/outside binary that was never real.** So the instrument this registrar has been auditing the
+program with carries the program's own defect — **the W-04 pattern (*"the audits committed the exact
+defect they convicted the builds of"*) recurring one floor up, structurally rather than locally.**
+
+### THE DISCRIMINATOR, SINCE "USE FEWER DICHOTOMIES" IS NOT A RULE
+
+> **DID THE MATHEMATICS HAND ME THE TWO BRANCHES, OR DID I NAME THEM?**
+> `diagonal / non-diagonal` was forced and has a proof under it. `knob / channel` was coined — the
+> words are the registrar's and nothing guarantees the options are exhaustive. **Every coined pair
+> is a place to look for a third thing.**
+
+**Corroborating evidence from the corpus's own quality ordering:** the two most useful artifacts
+this registrar produced are the ones that are **not** two-valued — W-10's **four**-valued scope
+table with its BASIS tags, and W-14's relevance test, a **three**-way inventory over `pi`, `u`, `v`.
+Both reached further than any of the oppositions.
+
+**REOPENS / APPLIES TO:** every coined pair in W-07 through W-14 is now flagged for a third-option
+check. **The first three to check, in order: `knob / channel` (W-14), `finding / restatement`
+(W-10 §0.4.1, which W-11 in fact split THREE ways and scored better for it), and
+`theorem / exhaustion` (which omits the middle case that carries most real evidence — exhibited
+with a live failure mode).**

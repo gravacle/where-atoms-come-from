@@ -147,8 +147,13 @@ for lbl, a in ALPHAS:
     cs = np.cumsum(lz)
     print("     %-34s" % lbl + "".join("%13.2e" % (cs[N - 1] / N - np.log(0.3)) for N in DECS))
     del fa, fb, lz, cs
-print("""     BAD-alpha converges too -- from ABOVE and slowly.  A big inhomogeneous approximation
-     constant is the benign direction; the malign direction is R-3's ladder.  This row is
-     printed so the finding is not over-read: what X_03 refutes is R-8's MECHANISM and
-     R_04's 'Dirichlet FORCES it' sentence, not R-8's verdict that the two problems differ.""")
+print("""     BAD-alpha has NOT reached the subtorus value inside seven decades: it sits +0.399 above
+     log(0.3) at every decade from 10 to 1e7, because the approach cannot begin until
+     N ~ 1/delta ~ 2.4e9, and delta is free.  Its limit IS log(0.3) -- the closure is the
+     circle and equidistribution holds -- but the onset is unbounded.  So the resonant locus
+     is not 'where the limit is the subtorus value' in any sense a seven-decade window can
+     see either.  A big inhomogeneous approximation constant is the BENIGN direction (it makes
+     the sum too large, not too small); the malign direction is R-3's ladder.  What X_03
+     refutes is R-8's MECHANISM and R_04's 'Dirichlet FORCES it' sentence -- not R-8's verdict
+     that the two problems differ, which survives as a statement about the RATE.""")
 print("\nDONE X_03")

@@ -1,0 +1,57 @@
+===============================================================================
+X_04 — INDEPENDENT VERIFICATION OF WHAT SURVIVES
+===============================================================================
+
+A. m(P) ACROSS EIGHT NODE COUNTS, AND BY A SECOND METHOD
+     nq = 2^10   m(P) = -0.767508470861118   change --
+     nq = 2^12   m(P) = -0.767507865526524   change 6.05e-07
+     nq = 2^14   m(P) = -0.767507881012676   change 1.55e-08
+     nq = 2^16   m(P) = -0.767507880275938   change 7.37e-10
+     nq = 2^18   m(P) = -0.767507880352467   change 7.65e-11
+     nq = 2^20   m(P) = -0.767507880357400   change 4.93e-12
+     nq = 2^22   m(P) = -0.767507880357744   change 3.44e-13
+     nq = 2^24   m(P) = -0.767507880357789   change 4.51e-14
+     second method (split + Jensen in y)          m(P) = -0.767507880357746   dev 4.32e-14
+     lane R_01/R_04 report -0.767507880358  -> AGREES
+
+B. THE TWO TORUS ZEROS
+     zeta = e(theta*) = -0.666666666667+0.745355992500i     |zeta| - 1 = 0.00e+00
+     3 zeta^2 + 4 zeta + 3 = 1.601e-15   (algebraic of degree 2, ON the unit circle)
+     |P(e(+0.366140), e(-0.366140))| = 1.683e-16 ;  |dP/dx| = 0.300000 (simple)
+     |P(e(-0.366140), e(+0.366140))| = 1.683e-16 ;  |dP/dx| = 0.300000 (simple)
+     sign changes of |p00+p10 x| - |p01+p11 x| over a 2^20 grid: 2  -> exactly two zeros
+
+C. R-4's SPLIT IDENTITY ON A DETERMINISTIC 2000x2000 GRID (the lane used random points)
+     max deviation over 4e6 grid points: 1.137e-13   (lane: 2.398e-14 over 2e5 random)
+
+D. THE SIXTEEN PUBLISHED SUBTORUS ROWS, FROM MY OWN Q_{m,n}
+     worst deviation over the 16 rows: 4.792e-10   (lane: 4.792e-10)  -> REDUCTION FORMULA AGREES
+
+E. R-5's SINGULARITY CRITERION, RE-DERIVED AND SCANNED OVER A BIGGER BOX (|m|,|n|<=30)
+     my route: |0.3(z^{m+n}+1)| = 0.4 forces cos(pi(m+n)psi) = +-2/3, and the phase
+     condition forces psi(m-n) in (1/2)Z; if m != n then psi is rational and Niven
+     forbids cos(pi(m+n)psi) = +-2/3.  So m = n; primitivity gives (1,1).
+     primitive (m,n), |m|,|n| <= 30 with min_{|z|=1}|Q| < 1e-4 : [(-1, -1), (1, 1)]
+     -> exactly the two, as R-5 says FOR PRIMITIVE (m,n).  R-5's PROOF IS CORRECT.
+     WHAT IS WRONG IS THE 'i.e. u v = 1, i.e. c = f' THAT FOLLOWS IT -- see X_01.
+
+F. R-2's TWO ANALYTIC INGREDIENTS
+     |A| = 0.300000  |B| = 0.300000  |det(A,B)| = 0.089443  -> the local map is INVERTIBLE
+     M=2  delta=1.3534e-01   analytic area 3.259096e-02   grid 3.419761e-02   ratio 1.0493
+     M=4  delta=1.8316e-02   analytic area 5.969243e-04   grid 5.973889e-04   ratio 1.0008
+     M=6  delta=2.4788e-03   analytic area 1.093305e-05   grid 1.088889e-05   ratio 0.9960
+     min over a 1500^2 grid of |P|/dist(.,Z(P)) = 1.026166  > 0  -> the (D2) truncation step
+     |P| >= c dist is available with c ~ 1.026.  R-2's PROOF STANDS.
+
+G. R-3's LADDER, REBUILT FROM SCRATCH AT 900 DIGITS
+     gamma1 + gamma2 = 1   (exactly 1, which proof step (d) needs)
+     rungs k = [10, 1490] ; k_3 has 780 digits
+     j=1  log eps  =      -5.213   log eps' =      -6.672   bound log(2k_j/k_{j+1}) =      -4.311   both>0: True
+     j=2  log eps  =   -1788.425   log eps' =   -1790.625   bound log(2k_j/k_{j+1}) =   -1787.627   both>0: True
+     k =     10   log eps =      -5.213   log|Z_k| (local expansion) =       -4.5779
+                   S_k <= (1/k) log|Z_k| =    -0.4578   against m(P) = -0.767508  -> dip 0.3097
+     k =   1490   log eps =   -1788.425   log|Z_k| (local expansion) =    -1787.7971
+                   S_k <= (1/k) log|Z_k| =    -1.1999   against m(P) = -0.767508  -> dip -0.4324
+     lane R_05 reports log|Z_10| = -4.578, log|Z_1490| = -1787.797, dips -0.281 and -1.199.
+
+DONE X_04
