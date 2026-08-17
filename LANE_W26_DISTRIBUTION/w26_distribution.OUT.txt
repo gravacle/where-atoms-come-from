@@ -1,0 +1,16 @@
+  wheel n=4, Z_3, physical dim 81
+  state A spokes (0, 0, 0, 0)  total 0
+  state B spokes (0, 0, 1, 2)  total 0   <- SAME total, different distribution
+
+        t   TD on the BOUNDARY (spokes)   TD on the RIM (control)
+      0.0                      1.000000                  1.000000
+      0.5                      0.895032                  0.948508
+      1.0                      0.833028                  0.890230
+      2.0                      0.908372                  0.974711
+      5.0                      0.724768                  0.778098
+     20.0                      0.891065                  0.953538
+    100.0                      0.907952                  0.969600
+
+  TD = 1 means perfectly distinguishable, 0 means the difference is gone.
+  If the boundary TD stays high while the total is pinned by Gauss, the DISTRIBUTION is
+  carrying something the total structurally cannot.

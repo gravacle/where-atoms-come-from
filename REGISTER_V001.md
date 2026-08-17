@@ -2167,3 +2167,71 @@ language. **Same failure mode as the fringe: the question is sound, the carrier 
 
 **REOPENS IF:** the enhancement is shown to be a finite-size artefact rather than a correlation per
 link · or a wheel is exhibited on which area and perimeter can be separated.
+
+---
+
+## W-26 — **THE BOUNDARY TOTAL IS A MIRROR, NOT A MEMORY. THE DISTRIBUTION IS NOT.** — and a relabelling that inverts three earlier readings
+
+Directed by the principal, 2026-08-17: *"It's the boundary."*
+
+### THE RELABELLING, AND IT CHANGES WHAT EARLIER RESULTS SAID
+
+**On a graph, a surface is a SEPARATOR.** Measured on wheels `n = 4,5,6`: removing the **rim** leaves
+`1` component and removing the **spokes** gives `2`. **The rim separates nothing. The spokes are the
+edge boundary of the region `{hub}`.** The registrar called the rim "the boundary" because it is
+drawn as a circle — a picture, not a property of the graph.
+
+**Three consequences.** (i) W-25's "the chirality reaches the boundary" was measured on the **rim**,
+which is not the boundary — that result is about the exterior's internal structure and is
+**relabelled, not withdrawn**. (ii) The residual order surviving thermalisation (one trit at
+`T = 50`) is **on the boundary**, not the interior. (iii) **W-24's requirement was half right**: a
+surface must be a separator **and** a cycle. The fringe was neither; the wheel's rim is a cycle that
+separates nothing; the wheel's spokes separate but are not a cycle. **No carrier in this program has
+had both.**
+
+### "FORCED BY GAUSS" WAS BEING MISREAD, INCLUDING BY ME
+
+The hub's Gauss law fixes the **sum** of the spokes — which is *flux through the boundary equals
+charge enclosed*. **That is the physical law, not bookkeeping.** The registrar has been voiding
+constraint-determined results as vacuous; this one is the constraint **being** the physics, and
+W-19's `I(S:F) = H(S)` is the same statement. **Max `S(spokes) = 4.0000` exactly at `n=5, Z_3`
+against `5` for the rim: the trit is real and it is what Gauss says.**
+
+**BUT IT MAKES THE BOUNDARY A MIRROR, AND THIS NEEDS NO MEASUREMENT.** Gauss holds at **every
+instant**, so the boundary total can never disagree with the present interior charge and can never
+retain one the interior has left. **Perfect fidelity, zero retention. A memory must be able to
+disagree with the present; the constraint forbids it.**
+
+### **THE DISTRIBUTION IS UNCONSTRAINED, AND IT RETAINS**
+
+Gauss fixes **one** quantity — the sum of `n` boundary links. **`n-1` boundary degrees of freedom
+are unconstrained by the interior.** Every boundary measurement in this program has been of the
+total. Measured (`wheel n=4`, `Z_3`, dim 81): two physical states with the **same** boundary total
+`0` and **different** distributions `(0,0,0,0)` vs `(0,0,1,2)`:
+
+```
+   t        0.0     0.5     1.0     2.0     5.0    20.0   100.0
+   boundary TD    1.000   0.895   0.833   0.908   0.725   0.891   0.908
+   rim TD (ctrl)  1.000   0.949   0.890   0.975   0.778   0.954   0.970
+```
+
+**The boundary distribution stays distinguishable while the total is pinned. The first quantity in
+this program that is neither forced nor absent.**
+
+**CAVEAT, LOAD-BEARING:** the rim control behaves the same way, so **nothing decays on this
+carrier** — it may simply not thermalise at dimension 81. *"Stays distinguishable"* may be a
+statement about a small closed system. **Not established as a boundary property until run on a
+carrier that thermalises, or an open one.**
+
+### NEXT
+
+1. **A carrier whose boundary is BOTH a separator AND a cycle** — a 2-D lattice patch, where the
+   edge boundary of a block of plaquettes is a closed curve *and* removing it disconnects.
+2. **Rerun the distribution test where things decay** — larger, or open (coupled to a bath), so the
+   control can fail.
+3. **An open system is now required for a further reason** (W-25/AA): the global entropy is exactly
+   `0` and stays `0` under unitary evolution. **Nothing can be paid in a closed pure system**, and
+   every physical account of record formation involves paying.
+
+**REOPENS IF:** the distribution retention is shown to be non-thermalisation · or a carrier is
+exhibited whose boundary is both separator and cycle and behaves differently.
