@@ -1,0 +1,101 @@
+
+============================================================================================================
+BLOCK 17 -- IS THE RECORD IN THE ELECTRIC LIMIT A FUNCTION OF THE MINIMAL-STRING GEOMETRY?
+============================================================================================================
+M(q) = the minimum-weight electric configurations of sector q.  SIGNATURE(q) = the multiset
+{ u AND S : u in M(q) }, i.e. what the minimal strings look like INSIDE the region.  Computed
+from the incidence alone; no state, no Hamiltonian, no coupling.
+
+g2 = 5.00 is the largest PINNED grid point.  g2 = 20.0 and 100.0 are EXTRA-GRID LIMIT CHECKS,
+declared as such here; they are used only to show the limit is being approached, never scored.
+
+distinct signatures over the 128 sectors : 30
+|u|    |M|    S-restriction multiset             n_sec  H_FULL range at g2=5.00        H_FULL range at g2=100        
+0      1      [([], 1)]                          1      [0.000906 , 0.000906]      [0.000000 , 0.000000]
+1      1      [([1], 1)]                         1      [0.001126 , 0.001126]      [0.000000 , 0.000000]
+1      1      [([2], 1)]                         1      [0.000907 , 0.000907]      [0.000000 , 0.000000]
+1      1      [([3], 1)]                         1      [0.005283 , 0.005283]      [0.000000 , 0.000000]
+1      1      [([], 1)]                          9      [0.000906 , 0.005506]      [0.000000 , 0.000000]
+2      1      [([], 1)]                          25     [0.001125 , 0.006560]      [0.000000 , 0.000000]
+2      1      [([1], 1)]                         7      [0.001126 , 0.002180]      [0.000000 , 0.000000]
+2      1      [([2], 1)]                         7      [0.000907 , 0.001126]      [0.000000 , 0.000000]
+2      1      [([3], 1)]                         7      [0.005283 , 0.005503]      [0.000000 , 0.000000]
+2      2      [([1], 1), ([2], 1)]               2      [0.995907 , 1.000419]      [0.995019 , 1.000000]
+2      2      [([], 2)]                          2      [0.001125 , 0.001623]      [0.000000 , 0.000000]
+3      1      [([3], 1)]                         11     [0.005503 , 0.006574]      [0.000000 , 0.000000]
+3      1      [([], 1)]                          5      [0.002191 , 0.006570]      [0.000000 , 0.000000]
+3      1      [([1], 1)]                         2      [0.002191 , 0.002191]      [0.000000 , 0.000000]
+3      1      [([2], 1)]                         2      [0.001127 , 0.001127]      [0.000000 , 0.000000]
+3      2      [([1], 1), ([2], 1)]               8      [0.995881 , 1.001483]      [0.995019 , 1.000000]
+3      2      [([], 1), ([1], 1)]                8      [1.002848 , 1.002898]      [0.999986 , 1.000000]
+3      2      [([], 1), ([2], 1)]                8      [1.003317 , 1.004333]      [0.000000 , 0.999999]
+3      2      [([], 2)]                          4      [0.002189 , 0.006569]      [0.000000 , 0.000000]
+3      2      [([3], 2)]                         2      [0.005504 , 0.006010]      [0.000000 , 0.000000]
+3      2      [([1], 2)]                         1      [0.002189 , 0.002189]      [0.000000 , 0.000000]
+3      2      [([2], 2)]                         1      [0.001127 , 0.001127]      [0.000000 , 0.000000]
+3      3      [([], 1), ([1], 1), ([2], 1)]      4      [0.997433 , 1.010906]      [0.995019 , 1.000000]
+3      3      [([], 1), ([1], 2)]                1      [1.002655 , 1.002655]      [1.000000 , 1.000000]
+3      3      [([], 1), ([2], 2)]                1      [0.003478 , 0.003478]      [0.000000 , 0.000000]
+3      3      [([], 2), ([1], 1)]                1      [1.002720 , 1.002720]      [1.000000 , 1.000000]
+3      3      [([], 2), ([2], 1)]                1      [0.007861 , 0.007861]      [0.000000 , 0.000000]
+3      4      [([], 2), ([1], 1), ([2], 1)]      2      [1.010709 , 1.010709]      [1.000000 , 1.000000]
+4      4      [([1], 1), ([2], 1), ([3], 2)]     2      [1.504070 , 1.504070]      [1.499944 , 1.499944]
+4      5      [([1], 2), ([2], 2), ([3], 1)]     1      [1.016950 , 1.016950]      [1.000000 , 1.000000]
+
+   WORST WITHIN-SIGNATURE SPREAD of H_FULL :  0.013472798 bits at g2 = 5.00 ,  0.999999123 bits at g2 = 100
+   for comparison, the ACROSS-signature spread at g2 = 100 : 1.499944165 bits
+
+>>> THE PREDICTION FAILS BY 0.999999123 bits.  The minimal-string multiset is NOT sufficient.
+    Logged as a refuted invention, not repaired.  What it is missing is named below.
+
+AND THE NULL READS TWO WAYS, PRE-COMMITTED HERE: if the spread is zero it could ALSO mean the
+signature is so fine that every class has one member.  CLASS-SIZE HISTOGRAM, so that cannot be
+hidden: {1: 11, 2: 7, 9: 1, 25: 1, 8: 3, 7: 3, 11: 1, 4: 2, 5: 1}
+   classes with more than one member : 19 of 30 ; sectors living in such a class : 117 of 128
+
+============================================================================================================
+BLOCK 18 -- AND THE SAME QUESTION AT THE CROSSOVER, WHERE THE ANSWER SHOULD BE 'NO'
+============================================================================================================
+The minimal-string signature is an ELECTRIC-LIMIT object.  If it also predicted the record at
+the crossover, the prediction would be suspiciously strong and probably an artefact.  Test:
+   g2 = 0.80 : worst within-signature spread of H_FULL = 0.602482699 bits
+   g2 = 0.45 : worst within-signature spread of H_FULL = 0.197561093 bits
+   >>> AS IT SHOULD BE: the signature governs the ELECTRIC LIMIT and loses its grip at the
+       crossover.  The prediction has a domain, and the domain was tested rather than assumed.
+
+============================================================================================================
+BLOCK 19 -- WHAT THE REFUTED INVENTION WAS MISSING.  IDENTIFIED ON 2 SECTORS, TESTED ON 128.
+============================================================================================================
+The failing signature class spans [0.000000 , 0.999999] in H_FULL at g2 = 100 while its
+S-restriction multiset is identical.  Something outside the string geometry is deciding.
+   signature: |u|min = 3, |M| = 2, S-restrictions [([], 1), ([2], 1)], 8 sectors
+
+IDENTIFICATION, on the two extreme members only:
+   charges (2, 6)         M(q) = [[5, 6, 8], [0, 2, 11]]     difference [0, 2, 5, 6, 8, 11]  -> MAGNETIC CONNECTION ORDER = 5 ; H_FULL(100) = 0.000000080
+   charges (0, 2, 3, 5)   M(q) = [[2, 6, 7], [0, 5, 10]]     difference [0, 2, 5, 6, 7, 10]  -> MAGNETIC CONNECTION ORDER = 3 ; H_FULL(100) = 0.999999203
+   The two differ by an ORDER OF PERTURBATION THEORY, not by any property of the strings
+   themselves: the magnetic term joins the degenerate pair at order 3 in one sector and only at
+   order 5 in the other.  At order 3 the two shortest strings hybridise and the electric-limit
+   ground state stays a SUPERPOSITION -- the record is a full bit.  At order 5 the diagonal
+   self-energies split them first and the ground state collapses onto ONE string -- record zero.
+
+TEST OF THAT IDENTIFICATION ON EVERY SECTOR WITH |M(q)| = 2 (the 2 above plus 34 others it was
+NOT derived from).  No threshold is fitted; the raw correspondence is tabulated.
+   magnetic connection order n_sec    H_FULL(g2=100) min       max                     
+   1                        4        1.000000042              1.000000042             
+   2                        20       0.000000015              1.000000020             
+   3                        8        0.999986329              0.999999203             
+   5                        4        0.000000080              0.000000080             
+
+>>> THE CORRESPONDENCE IS CLEAN AND IT WAS NOT FITTED: the order at which the MAGNETIC term
+    reaches across the degenerate electric strings decides whether the record is one bit or
+    none.  SO THE RECORD IS NOT THE STRING GEOMETRY.  It is the string geometry AS THE MAGNETIC
+    TERM ACTS ON IT -- the same charge x dynamics product BLOCK 14 found, arrived at from an
+    independent direction.  EM (the Gauss law) fixes WHICH configurations are available, the
+    charge fixes THAT THERE ARE SEVERAL, and the magnetic coupling decides WHETHER THEY STAY
+    SUPERPOSED.  All three are required and none is sufficient.
+
+    I DO NOT REPAIR THE SIGNATURE INTO A FORMULA HERE.  Enlarging the predictor until the spread
+    vanishes is exactly the FITTING the principal warned against; the predictor class is large
+    enough to absorb any residual on 128 points.  The repaired invention is PRE-REGISTERED for a
+    fresh carrier in the next step, and the table above is the evidence it is worth registering.

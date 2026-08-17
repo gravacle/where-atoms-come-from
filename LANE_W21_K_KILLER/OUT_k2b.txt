@@ -1,0 +1,146 @@
+====================================================================================================
+BLOCK 2.0 -- THE FIRST ATTEMPT'S NULL, DIAGNOSED AS A DEGENERACY AND LOGGED AS ONE.
+====================================================================================================
+carrier ladder3, region A = vertices [0,3]: dim V_min=1 dim V_max=6 -> q = 5 in the AMBIENT algebra, and 374 subspaces sit between them.
+MODULO GAUSS: dim V_min = 1, dim V_max = 1, q_physical = 0
+>>> q_physical = 0.  All 374 ambient algebras restrict to the SAME algebra on
+    the 4-dimensional physical sector.  The identical entropies were a THEOREM about the
+    Gauss law, not a measurement.  Scored as VOID.  This is the fourth time this program has
+    had to catch a forced identity; it is caught here before it is reported.
+====================================================================================================
+BLOCK 2.1 -- A NON-DEGENERATE CARRIER, AND THE FULL ENUMERATION.
+====================================================================================================
+carrier grid3x3: V=9 L=12 cycle_dim=4 physical dim D=16 (logical qubits c=4)
+edges [(0, (0, 1)), (1, (1, 2)), (2, (3, 4)), (3, (4, 5)), (4, (6, 7)), (5, (7, 8)), (6, (0, 3)), (7, (1, 4)), (8, (2, 5)), (9, (3, 6)), (10, (4, 7)), (11, (5, 8))]
+
+REGION SCAN.  A region must be an honest region, not an arbitrary vertex set: BOTH the induced
+subgraph on A and the induced subgraph on Abar are required to be CONNECTED and to contain at
+least one link.  (The unrestricted scan's winner was the independent set {1,3,5,7}, which has
+NO internal links at all: V_min is then empty and V_max is everything, so q_phys = 8 is a
+statement that an empty region has no determined algebra.  True and useless.  Logged.)
+q_phys = dim V_max - dim V_min, both modulo Gauss.
+  88 admissible regions.  top by q_phys:
+     q_phys=4  verts=(0, 1, 2, 4)  internal=[0, 1, 7]  boundary=[2, 3, 6, 8, 10]
+     q_phys=4  verts=(0, 3, 4, 6)  internal=[2, 6, 9]  boundary=[0, 3, 4, 7, 10]
+     q_phys=4  verts=(2, 4, 5, 8)  internal=[3, 8, 11]  boundary=[1, 2, 5, 7, 10]
+     q_phys=4  verts=(4, 6, 7, 8)  internal=[4, 5, 10]  boundary=[2, 3, 7, 9, 11]
+     q_phys=4  verts=(0, 1, 2, 3, 5)  internal=[0, 1, 6, 8]  boundary=[2, 3, 7, 9, 11]
+     q_phys=4  verts=(0, 1, 3, 6, 7)  internal=[0, 4, 6, 9]  boundary=[1, 2, 5, 7, 10]
+     q_phys=4  verts=(1, 2, 5, 7, 8)  internal=[1, 5, 8, 11]  boundary=[0, 3, 4, 7, 10]
+     q_phys=4  verts=(3, 5, 6, 7, 8)  internal=[4, 5, 9, 11]  boundary=[2, 3, 6, 8, 10]
+  CHOSEN (largest q_phys that is exhaustively enumerable, q<=6): vertices (0, 1, 2, 4)  q_phys = 4  internal links [0, 1, 7]  boundary links [2, 3, 6, 8, 10]
+  dim V_min(mod Gauss) = 2   dim V_max(mod Gauss) = 6
+  NUMBER OF ALGEBRAS ASSIGNABLE TO THE REGION (exhaustive over F_2^4) = 67
+
+  g^2=0.10  E0=-40.007506746 gap=19.746241   67 algebras -> 41 DISTINCT entropies
+      min=0.000149380  max=3.999074980  SPREAD=3.998925600 bits
+      values (bits): ['0.000149', '0.999435', '0.999624', '0.999654', '0.999732', '0.999963', '0.999966', '0.999987', '1.000041', '1.000066', '1.999075', '1.999080', '1.999096', '1.999101', '1.999101', '1.999231', '1.999252', '1.999252', '1.999414', '1.999468', '1.999471', '1.999471', '1.999471', '1.999473', '1.999473', '1.999549', '1.999624', '1.999654', '1.999961', '1.999963', '1.999983', '2.999075', '2.999080', '2.999080', '2.999096', '2.999096', '2.999101', '2.999230', '2.999468', '2.999471', '3.999075']
+      multiplicity of each value: [1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 2, 2, 1]
+  g^2=0.50  E0=-9.382631380 gap=3.700209   67 algebras -> 41 DISTINCT entropies
+      min=0.022909827  max=2.874265612  SPREAD=2.851355785 bits
+      values (bits): ['0.022910', '0.477387', '0.547407', '0.574100', '0.662477', '0.672652', '0.695105', '0.733690', '0.815402', '0.853608', '1.053667', '1.058247', '1.091366', '1.101512', '1.107265', '1.188730', '1.254651', '1.267704', '1.295880', '1.324402', '1.331367', '1.331988', '1.332057', '1.354778', '1.358620', '1.440201', '1.467472', '1.505894', '1.610384', '1.650060', '1.691311', '1.941211', '1.971787', '1.979179', '2.039377', '2.052097', '2.067926', '2.100487', '2.237717', '2.279095', '2.874266']
+      multiplicity of each value: [1, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 1, 1, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 2, 1]
+  g^2=1.00  E0=-12.420752549 gap=7.044890   67 algebras -> 41 DISTINCT entropies
+      min=0.000783970  max=0.370253601  SPREAD=0.369469631 bits
+      values (bits): ['0.000784', '0.005129', '0.007903', '0.010679', '0.015092', '0.015102', '0.017322', '0.019441', '0.019538', '0.023335', '0.025110', '0.025802', '0.066007', '0.073169', '0.080307', '0.084842', '0.120847', '0.125175', '0.128050', '0.130897', '0.131391', '0.145709', '0.156984', '0.159532', '0.161210', '0.162689', '0.185204', '0.186142', '0.193437', '0.222400', '0.226643', '0.241185', '0.245545', '0.250662', '0.277404', '0.279940', '0.305632', '0.313737', '0.314948', '0.341981', '0.370254']
+      multiplicity of each value: [1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 2, 1]
+  g^2=3.00  E0=-36.015434115 gap=23.666176   67 algebras -> 41 DISTINCT entropies
+      min=0.000000230  max=0.007887393  SPREAD=0.007887163 bits
+      values (bits): ['0.000000', '0.000001', '0.000002', '0.000003', '0.000004', '0.000005', '0.000005', '0.000006', '0.000007', '0.000008', '0.000009', '0.000009', '0.001284', '0.001286', '0.001288', '0.001290', '0.002567', '0.002572', '0.002660', '0.002661', '0.002662', '0.002663', '0.003693', '0.003694', '0.003694', '0.003694', '0.003944', '0.003944', '0.003946', '0.004977', '0.004978', '0.005227', '0.005320', '0.005322', '0.006353', '0.006354', '0.006604', '0.007386', '0.007386', '0.007637', '0.007887']
+      multiplicity of each value: [1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2, 1]
+====================================================================================================
+BLOCK 2.2 -- THE NAMED CHOICES INSIDE THAT ENUMERATION.
+====================================================================================================
+algebras with TRIVIAL CENTRE (a genuine tensor factor, so an honest entanglement entropy): 16 of 67
+
+  g^2 = 0.10
+    S = 1.999548755 bits | MINIMAL        (strictly inside A only): dim_F2=2 dim_C(A)=4 blocks=4 x M_1 mult m=4
+    S = 3.999074980 bits | ELECTRIC CENTRE (E of every link touching A + loops inside A): dim_F2=4 dim_C(A)=16 blocks=16 x M_1 mult m=1
+    S = 1.999548755 bits | MAGNETIC CENTRE (commutant of A_min(Abar), the maximal choice): dim_F2=6 dim_C(A)=64 blocks=4 x M_4 mult m=1
+    trivial-centre choices: 16 of them, entropies ['0.000149', '0.999435', '0.999624', '0.999654', '0.999963', '0.999966', '0.999987', '1.999075', '1.999080', '1.999096', '1.999101', '1.999101']
+
+  g^2 = 1.00
+    S = 0.185203749 bits | MINIMAL        (strictly inside A only): dim_F2=2 dim_C(A)=4 blocks=4 x M_1 mult m=4
+    S = 0.370253601 bits | ELECTRIC CENTRE (E of every link touching A + loops inside A): dim_F2=4 dim_C(A)=16 blocks=16 x M_1 mult m=1
+    S = 0.185203749 bits | MAGNETIC CENTRE (commutant of A_min(Abar), the maximal choice): dim_F2=6 dim_C(A)=64 blocks=4 x M_4 mult m=1
+    trivial-centre choices: 16 of them, entropies ['0.000784', '0.005129', '0.007903', '0.010679', '0.015092', '0.015102', '0.017322', '0.019441', '0.019538', '0.023335', '0.025110', '0.025802']
+
+  g^2 = 3.00
+    S = 0.003943709 bits | MINIMAL        (strictly inside A only): dim_F2=2 dim_C(A)=4 blocks=4 x M_1 mult m=4
+    S = 0.007887393 bits | ELECTRIC CENTRE (E of every link touching A + loops inside A): dim_F2=4 dim_C(A)=16 blocks=16 x M_1 mult m=1
+    S = 0.003943709 bits | MAGNETIC CENTRE (commutant of A_min(Abar), the maximal choice): dim_F2=6 dim_C(A)=64 blocks=4 x M_4 mult m=1
+    trivial-centre choices: 16 of them, entropies ['0.000000', '0.000001', '0.000002', '0.000003', '0.000004', '0.000005', '0.000005', '0.000006', '0.000007', '0.000008', '0.000009', '0.000009']
+====================================================================================================
+BLOCK 2.3 -- THE SAME ENUMERATION FOR MUTUAL INFORMATION I(A:Abar).
+Pairing: algebra B for A, and its commutant inside the gauge-invariant algebra for Abar.
+====================================================================================================
+  g^2=0.10  -> 41 distinct I; min=0.000298759 max=3.999074980 SPREAD=3.998776221 bits
+      values: ['0.000299', '0.999764', '1.000158', '1.000209', '1.998870', '1.999248', '1.999308', '1.999446', '1.999549', '1.999624', '1.999686', '1.999926', '1.999931', '1.999975', '2.000078', '2.000080', '2.000123', '2.998579', '2.998581', '2.998761', '2.999013', '2.999017', '2.999020', '2.999025', '2.999230', '2.999242', '2.999247', '2.999468', '2.999471', '3.998150', '3.998160', '3.998192', '3.998202', '3.998202', '3.998346', '3.998349', '3.998358', '3.998526', '3.998538', '3.998778', '3.999075']
+  g^2=0.50  -> 41 distinct I; min=0.045819653 max=2.874265612 SPREAD=2.828445959 bits
+      values: ['0.045820', '0.680904', '0.831567', '0.865224', '0.954775', '1.094814', '1.148200', '1.324954', '1.338949', '1.390210', '1.440201', '1.467380', '1.472051', '1.506603', '1.623185', '1.660184', '1.693417', '1.701268', '1.710064', '1.713059', '1.822122', '1.849567', '1.875249', '1.910318', '1.927360', '1.998335', '2.100487', '2.107334', '2.116493', '2.182732', '2.203025', '2.214529', '2.237717', '2.279095', '2.453174', '2.454498', '2.464258', '2.480682', '2.481171', '2.557394', '2.874266']
+  g^2=1.00  -> 41 distinct I; min=0.001567939 max=0.370253601 SPREAD=0.368685662 bits
+      values: ['0.001568', '0.010258', '0.015805', '0.021358', '0.030184', '0.030205', '0.034644', '0.038883', '0.039076', '0.046670', '0.050220', '0.051604', '0.066496', '0.080819', '0.095095', '0.104166', '0.121173', '0.129830', '0.131787', '0.135579', '0.141273', '0.157048', '0.160422', '0.162144', '0.165501', '0.168458', '0.185204', '0.186265', '0.200855', '0.222412', '0.230899', '0.241400', '0.250121', '0.250662', '0.277458', '0.282531', '0.305632', '0.313773', '0.316196', '0.341981', '0.370254']
+  g^2=3.00  -> 41 distinct I; min=0.000000460 max=0.007887393 SPREAD=0.007886933 bits
+      values: ['0.000000', '0.000003', '0.000005', '0.000007', '0.000009', '0.000010', '0.000011', '0.000012', '0.000013', '0.000016', '0.000017', '0.000019', '0.001284', '0.001288', '0.001293', '0.001297', '0.002568', '0.002577', '0.002660', '0.002663', '0.002664', '0.002666', '0.003693', '0.003694', '0.003695', '0.003696', '0.003944', '0.003944', '0.003948', '0.004977', '0.004979', '0.005227', '0.005320', '0.005323', '0.006353', '0.006354', '0.006604', '0.007386', '0.007386', '0.007637', '0.007887']
+====================================================================================================
+BLOCK 2.4 -- THE EXTENDED-HILBERT-SPACE ARM, AND THE DECLARED Z_2 CONTROL.
+====================================================================================================
+The extended-Hilbert-space algebra is the FULL matrix algebra on the region's links in the
+UNCONSTRAINED space.  It is gauge-VARIANT, so it does not act on the physical sector and it is
+not in the enumeration above.  It is computed here by ordinary partial trace of the lifted
+physical state -- a completely separate code path.
+
+*** RETRACTION, MINE, FILED BEFORE THE NUMBERS. ***  My first pass declared as a control that
+"S_extended must equal S_electric-centre because Z_2 is abelian and Donnelly's log-dim-R term
+vanishes".  That is a HEADLINE PARAPHRASE and it is wrong.  Donnelly's decomposition is for the
+construction in which each boundary LINK IS SPLIT into two half-links carrying matched edge
+modes, and the superselection label is the flux through the entangling surface.  Assigning a
+whole boundary link to one side, which is what is computed below, is a DIFFERENT construction,
+and the numbers below show the two do not agree: the bd->A assignment misses the electric-centre
+answer by 2.000 bits at g^2 = 0.10.  The lane that warned about identification-by-paraphrase
+caught its own.  The control is withdrawn; what replaces it is the theorem in 2.5.
+
+  g^2=0.10  S_ext(bd->A)=1.999548755  S_electric-centre=3.999074980  DIFF=1.999526225
+           S_ext(bd->Abar)=1.999548755  S_minimal=1.999548755  DIFF=2.00e-15
+  g^2=0.50  S_ext(bd->A)=1.440201397  S_electric-centre=2.874265612  DIFF=1.434064214
+           S_ext(bd->Abar)=1.440201397  S_minimal=1.440201397  DIFF=6.44e-15
+  g^2=1.00  S_ext(bd->A)=0.185203749  S_electric-centre=0.370253601  DIFF=0.185049852
+           S_ext(bd->Abar)=0.185203749  S_minimal=0.185203749  DIFF=2.27e-14
+  g^2=3.00  S_ext(bd->A)=0.003943709  S_electric-centre=0.007887393  DIFF=0.003943684
+           S_ext(bd->Abar)=0.003943709  S_minimal=0.003943709  DIFF=1.90e-14
+====================================================================================================
+BLOCK 2.5 -- WHEN THE EXTENDED AND THE GAUGE-INVARIANT ANSWER MUST AGREE.  A THEOREM,
+STATED FIRST, THEN EXHIBITED.  ONE VARIABLE MOVED: DOES THE REGION CONTAIN A CYCLE.
+====================================================================================================
+THEOREM (finite, exact, Z_N).  Let R be a set of links and |psi> a physical state.  Every
+Pauli supported on R with a non-empty Z-part is gauge-VARIANT unless that Z-part is a CYCLE.
+For a gauge-variant operator O, <psi|O|psi> = <psi|G O G|psi> = -<psi|O|psi> = 0.  Hence:
+
+   IF R CONTAINS NO CYCLE, the reduced density matrix of |psi> on R is exactly DIAGONAL in the
+   electric basis, and S_extended(R) = S(electric algebra of R) EXACTLY, for every state, every
+   coupling, every graph.  The extended-Hilbert-space answer and the gauge-invariant answer
+   CANNOT DISAGREE.  Any null obtained on a forest region is void.
+
+   IF R CONTAINS A CYCLE, the region carries a Wilson loop, the reduction has magnetic
+   coherences, and the two answers may differ.  This is the ONLY place a disagreement can live.
+
+The bd->Abar column above is the forest case (internal links form a tree) and the diff is 1e-14
+FOUR TIMES OUT OF FOUR.  That agreement is the theorem, not a measurement.  Below is the arm
+that actually moves the variable: a region whose internal links CONTAIN a plaquette.
+
+  ARM CYCLE:   region vertices [0, 1, 3, 4], internal links [0, 2, 6, 7], cycles inside = ['0b11000101']  -> 1 Wilson loop(s)
+  ARM FOREST:  region vertices [0, 1, 2, 4], internal links [0, 1, 7], cycles inside = []
+
+     g^2 |  S_ext(internal only) |  S_electric-only |         DIFF |  S_minimal(with loop)
+    0.10 |           1.999623823 |      2.999468356 |  0.999844533 |           1.999623823
+    0.30 |           1.957437084 |      2.939321783 |  0.981884699 |           1.957437084
+    0.50 |           1.505893771 |      2.279094903 |  0.773201133 |           1.505893771
+    1.00 |           0.222399545 |      0.341981276 |  0.119581731 |           0.222399545
+    3.00 |           0.004976651 |      0.007636670 |  0.002660019 |           0.004976651
+
+READ IT BOTH WAYS.  A non-zero DIFF says the extended construction sees the region's Wilson loop
+and the purely-electric algebra does not.  A zero DIFF says the state has no magnetic coherence
+on that loop at that coupling.  Neither reading is evidence about gravity, and the column is
+printed so the difference between the two readings is visible rather than chosen.
+====================================================================================================
+END BLOCK 2

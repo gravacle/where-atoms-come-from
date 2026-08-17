@@ -1,0 +1,16 @@
+== ONE DANGLING LINK: the bulk constraints FORCE the boundary charge ==
+   || prod_bulk G_v  -  Z_9 || = 0.000e+00
+   Each link with BOTH ends in the bulk contributes Z twice and cancels. The dangling link
+   contributes ONCE. So prod_bulk G_v = Z_9 = Q exactly, and imposing bulk Gauss = +1
+   FORCES Q = +1. ONE SECTOR, NOT TWO.
+   physical dim 16;  distinct eigenvalues of Q there: see below
+   eigenvalues of Q restricted to the physical subspace: [np.float64(1.0)]
+
+== TWO DANGLING LINKS: now the boundary charge is FREE ==
+   physical dim 32 of 2048
+   eigenvalues of Q_6 on the physical subspace     : [np.float64(-1.0), np.float64(1.0)]
+   eigenvalues of Q_6*Q_7 (total) on physical      : [np.float64(1.0)]
+
+   -> with TWO boundary links the individual boundary charge takes BOTH values while the
+      TOTAL is still forced. That is the real structure: boundary charge is free to be
+      DISTRIBUTED, and only its sum is fixed by the bulk. ONE dangling link cannot show it.

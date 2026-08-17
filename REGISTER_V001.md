@@ -1992,3 +1992,49 @@ it is dynamical**: does any Hamiltonian built from the carrier's own data move a
 superselection sectors, or is the boundary charge frozen by construction? A frozen charge is a label;
 a charge the dynamics can change is a value with a history. **That is the difference between a
 bookkeeping sector and a value getting its start, and it is computable on this carrier.**
+
+---
+
+## ERRATUM AGAINST W-22 — "TWO SUPERSELECTION SECTORS" IS FALSE ON THE PHYSICAL SUBSPACE, AND THE DISCRIMINATOR THAT FOLLOWED IT WAS VOID (registrar error, 2026-08-17)
+
+Found by a diagnostic the registrar printed and nearly read past. Both defects are the same defect.
+
+**E-1. THE CARRIER WAS TOO SMALL TO CARRY THE CLAIM.** W-22 reported `Q^2 = I` and inferred **two**
+superselection sectors. On the **physical** subspace there is **one**. With a single dangling link,
+every link with both ends in the bulk contributes `Z` twice and cancels, while the dangling link
+contributes once — so `prod_bulk G_v = Z_9 = Q` **exactly** (`0.000e+00`), and imposing bulk Gauss
+`= +1` **forces** `Q = +1`. Measured: eigenvalues of `Q` on the physical subspace `= [1.0]`.
+**W-22's three-way operator split stands** — it rests on `Q` being central, which is independently
+verified — **but the sector count does not.**
+
+**E-2. AND THE DISCRIMINATOR BUILT ON IT COULD NOT HAVE FAILED.** The registrar then tested whether
+`H` is a function of `Q` alone — the property separating the gravitational structure (where the
+Hamiltonian **is** the boundary term) from the electromagnetic one (where charge is a surface term
+and energy a bulk density) — and reported **EM-shaped**. **With `Q` constant on the physical
+subspace, `H` cannot be a function of it, and the verdict was forced.** The run printed
+`distinct eigenvalues of Q on the physical subspace : 1` in its own output. **VOID. The EM-versus-
+gravity question is UNTESTED, not answered.**
+
+**E-3. AND THE CORRECTED STRUCTURE IS BETTER THAN THE ONE CLAIMED.** With **two** dangling links
+(physical dimension 32): `Q_6` takes **both** values `[-1.0, +1.0]` while the total `Q_6·Q_7` remains
+forced at `[1.0]`. **The boundary charge is not free in total — it is free to be DISTRIBUTED, with
+only its sum fixed by the bulk.** That is a different and richer object than a global label, and a
+single dangling link cannot exhibit it.
+
+**RECORDED WITH IT — THE INERTNESS RESULT STANDS AND IS NOT AFFECTED.** `[H, Q] = 0.000e+00` at
+every coupling: the dangling link lies on **no cycle**, so no plaquette term can contain it, and in
+**pure** gauge theory nothing in the Hamiltonian can move boundary charge. **The sector is frozen;
+it is a label, not a process. Only matter can unfreeze it** — adding a term containing the
+sector-changing operator gives `||[H,Q]|| = 4.480e+01`.
+
+**AND A CORRECTION TO THE REGISTRAR'S LANGUAGE, AT THE PRINCIPAL'S DIRECTION.** The registrar wrote
+that a negative result would "kill it". **It would not.** Under the charter (R-3) a failed test kills
+**one assembly**, never the program — and this one did not even do that. **It killed one carrier that
+was too small to show the structure**, which is the same failure as the theta graph at T1: the
+question was sound, the construction could not carry it.
+
+**NEXT STEP, AND IT IS NOW CHEAP AND SPECIFIED.** Re-run the EM-versus-gravity discriminator on the
+**two-dangling-link** carrier where `Q` genuinely varies: does `H` restricted to the physical
+subspace vary **within** a fixed `Q` sector? If it does not, the Hamiltonian is a boundary term and
+the structure is gravity-shaped. If it does, energy is a bulk density and the structure is
+EM-shaped. **The test is live for the first time, and the carrier exists.**

@@ -1,0 +1,168 @@
+
+============================================================================================================
+BLOCK 13 -- THE SECTOR-EQUIVALENCE THEOREM.  THE CHARGE SECTOR, ON ITS OWN, IS NARRATION.
+============================================================================================================
+CLAIM.  Let q be any admissible charge pattern and u0 any 1-chain with d(u0) = q.  Then
+        Z^{u0} : sector(0) -> sector(q)   is a UNITARY BIJECTION of the two 32-dim sectors,
+        and it conjugates the gauge-invariant Pauli algebra to itself:
+            Z^{u0} X^a Z^{u0} = (-1)^{|a AND u0|} X^a       Z^{u0} Z^c Z^{u0} = Z^c .
+        So it maps A_S onto A_S, A_F onto A_F, and every subalgebra used in this lane onto
+        itself -- changing only the SIGNS of the electric labels.  Signs are an automorphism.
+CONSEQUENCE.  EVERY entropy, EVERY algebraic mutual information, EVERY R_delta and Delta_surf
+        is IDENTICAL in all 128 sectors for corresponding states.  The charge sector cannot
+        move a record quantity by itself.  It can only move the STATE.
+
+MEASURED, not asserted.  Same 32-component coefficient vector (Haar seed 7) placed in all 128
+sectors; every record quantity recomputed from scratch in each:
+   quantity  min over 128       max over 128       SPREAD        
+   H_FULL    2.548613858582378  2.548613858582378  4.441e-16     
+   H_CEN     1.860516315807276  1.860516315807277  2.220e-16     
+   H_BLOCK   0.993410956868300  0.993410956868300  0.000e+00     
+   H_MAG     0.999476960300931  0.999476960300931  0.000e+00     
+   I_F1      1.860516315807276  1.860516315807276  4.441e-16     
+   I_F3      0.319805104003613  0.319805104003614  4.441e-16     
+   R_del     1.000000000000000  1.000000000000000  0.000e+00     
+
+>>> SPREAD ZERO TO MACHINE PRECISION ACROSS ALL 128 CHARGE SECTORS.
+    THE CHARGE SECTOR, TAKEN AS A KINEMATIC INGREDIENT WITH THE DYNAMICS REMOVED, IS NARRATION.
+    This is not a null I am reading as confirmation: it is a measured consequence of a unitary
+    equivalence, and it is exactly what a NARRATION verdict is supposed to look like.
+
+============================================================================================================
+BLOCK 14 -- WHAT THE CHARGE ACTUALLY IS: A FRUSTRATION PATTERN ON THE ELECTRIC TERM.
+============================================================================================================
+Conjugating the Hamiltonian by the SAME unitary Z^{u0}:
+   Z^{u0} H Z^{u0} = -(1/g2) sum_p W_p  -  g2 sum_l (-1)^{u0_l} X_l .
+The magnetic term is invariant.  The electric term FLIPS SIGN ON THE LINKS OF THE STRING u0.
+So: A CHARGE PAIR IS EXACTLY A SIGN-FLIPPED ELECTRIC COUPLING ALONG A STRING JOINING THE TWO
+CHARGES, AND NOTHING ELSE.  This is a testable identity, not a picture.  ARM: vacuum sector,
+no charge anywhere, electric term flipped on links u0 = {1,4,6}.  It must reproduce ARM A1
+EXACTLY in every record quantity.
+   u0 = links [1, 4, 6] (the minimum-weight 0-4 string chosen by the code)
+g2        H_FULL A1  H_FULL frus     H_MAG A1   H_MAG frus      I:F3 A1    I:F3 frus
+0.05    1.999994338  1.999994338  0.000047398  0.000047398  0.000001131  0.000001131
+0.10    1.999908125  1.999908125  0.000614599  0.000614599  0.000018305  0.000018305
+0.20    1.998449788  1.998449788  0.007704017  0.007704017  0.000305982  0.000305982
+0.30    1.991530614  1.991530614  0.033271821  0.033271821  0.001656240  0.001656240
+0.45    1.952651943  1.952651943  0.136512881  0.136512881  0.009295850  0.009295850
+0.60    1.856491346  1.856491346  0.320649277  0.320649277  0.029013133  0.029013133
+0.80    1.684894819  1.684894819  0.566331000  0.566331000  0.062886440  0.062886440
+1.00    1.545690048  1.545690048  0.727240591  0.727240591  0.078304388  0.078304388
+1.30    1.398165121  1.398165121  0.862488091  0.862488091  0.068403534  0.068403534
+1.70    1.255035428  1.255035428  0.944953868  0.944953868  0.040968482  0.040968482
+2.20    1.140521003  1.140521003  0.980760507  0.980760507  0.019112355  0.019112355
+3.00    1.057550046  1.057550046  0.994985705  0.994985705  0.006289193  0.006289193
+5.00    1.010708619  1.010708619  0.999433474  0.999433474  0.000858901  0.000858901
+   WORST DISCREPANCY OVER THE WHOLE SWEEP : 1.332e-15
+
+>>> THE EQUIVALENCE IS EXACT.  'Two static charges' and 'a sign-flipped electric coupling along
+    a string' are the same arm.  THE CHARGE IS NOT AN EXTRA INGREDIENT; IT IS A MODIFICATION OF
+    THE DYNAMICS.  That is why BLOCK 13 finds the sector inert and run_charge finds it worth
+    1.010 bits: the ingredient that acts is the PRODUCT charge x dynamics, and neither factor
+    moves the record alone.  Neither 'the charge sector' nor 'the dynamics' is separately the
+    cause; the pre-registration's list of six ingredients does not have a slot for that, and
+    this lane reports it as the main structural result rather than forcing it into one.
+
+============================================================================================================
+BLOCK 15 -- THE RELABELLING CONTROL ON EVERY FORMATION ARM
+============================================================================================================
+An arm difference can be one of two things:
+   (a) the Gauss law forcing a SIGN on the region's electric labels -- X_1X_2 = eta_0 X_0, so
+       flipping eta_0 flips a recorded value BY DEFINITION.  That is the W-19 defect again.
+   (b) the record actually moving.
+DISCRIMINATOR: minimise the trace distance over the 8 electric sign relabellings of S (the
+automorphisms X_i -> +-X_i of A_S, which fix W_S).  Whatever survives is (b).
+The raw distance is reported beside it so nothing is hidden.
+arm                                      g2          D_tr raw D_tr minimised      surviving
+R1 alpha  {0,4} vs {1,5}   flux -1 both  0.45     0.095919812    0.095919812            YES
+R1 alpha  {0,4} vs {1,5}   flux -1 both  0.80     0.175362479    0.175362479            YES
+R1 alpha  {0,4} vs {1,5}   flux -1 both  1.00     0.160352432    0.160352432            YES
+R1 alpha  {0,4} vs {1,5}   flux -1 both  3.00     0.009394886    0.009394886            YES
+R1 alpha  {0,4} vs {1,5}   flux -1 both  5.00     0.001292110    0.001292110            YES
+R2 beta   vac  vs {4,5}    flux +1 both  0.45     0.034788703    0.034788703            YES
+R2 beta   vac  vs {4,5}    flux +1 both  0.80     0.018155285    0.018155285            YES
+R2 beta   vac  vs {4,5}    flux +1 both  1.00     0.007831685    0.007831685            YES
+R2 beta   vac  vs {4,5}    flux +1 both  3.00     0.000106914    0.000106914            YES
+R2 beta   vac  vs {4,5}    flux +1 both  5.00     0.000013885    0.000013885            YES
+R3 gamma  vac  vs {0,1}    flux +1 both  0.45     0.502699030    0.126694222            YES
+R3 gamma  vac  vs {0,1}    flux +1 both  0.80     0.943068885    0.281900730            YES
+R3 gamma  vac  vs {0,1}    flux +1 both  1.00     0.977820713    0.246782459            YES
+R3 gamma  vac  vs {0,1}    flux +1 both  3.00     0.999721624    0.036914471            YES
+R3 gamma  vac  vs {0,1}    flux +1 both  5.00     0.999963893    0.013332022            YES
+B8 max+   vac  vs {0,2}    flux +1 both  0.45     0.509137981    0.185710869            YES
+B8 max+   vac  vs {0,2}    flux +1 both  0.80     0.964586100    0.306298383            YES
+B8 max+   vac  vs {0,2}    flux +1 both  1.00     0.991753146    0.256186951            YES
+B8 max+   vac  vs {0,2}    flux +1 both  3.00     0.999998006    0.036890982            YES
+B8 max+   vac  vs {0,2}    flux +1 both  5.00     0.999999966    0.013326489            YES
+B8 max-   {0,7} vs {2,7}   flux -1 both  0.45     0.230989207    0.147017315            YES
+B8 max-   {0,7} vs {2,7}   flux -1 both  0.80     0.887011951    0.346612121            YES
+B8 max-   {0,7} vs {2,7}   flux -1 both  1.00     0.977405321    0.269284184            YES
+B8 max-   {0,7} vs {2,7}   flux -1 both  3.00     0.999995907    0.036911357            YES
+B8 max-   {0,7} vs {2,7}   flux -1 both  5.00     0.999999931    0.013327441            YES
+
+AND THE SAME CONTROL APPLIED TO THE WHOLE 128-SECTOR SCAN, at g2 = 0.80 (inside the A0 live
+window and inside the A1 live window simultaneously).  For each flux class, the maximum
+RELABELLING-MINIMISED distance over Stab(A)-inequivalent pairs:
+   flux(Sigma) = +1 : 64 sectors, 1976 Stab(A)-inequivalent pairs
+      H_FULL spread inside the flux class          : 1.403638285 bits  [0.491388 , 1.895026]
+      MAX relabelling-minimised D_tr(rho|A_S)      : 0.649476487   between () and (1, 2, 3, 7)
+      pairs surviving the relabelling control      : 1960 of 1976 (99.2%)
+   flux(Sigma) = -1 : 64 sectors, 1976 Stab(A)-inequivalent pairs
+      H_FULL spread inside the flux class          : 1.243564041 bits  [0.658138 , 1.901702]
+      MAX relabelling-minimised D_tr(rho|A_S)      : 0.617639516   between (0, 1, 2, 4) and (0, 7)
+      pairs surviving the relabelling control      : 1960 of 1976 (99.2%)
+
+>>> THE SURFACE AND ITS FLUX DO NOT DETERMINE THE RECORD, AND THE FAILURE IS NOT A RELABELLING.
+
+============================================================================================================
+BLOCK 16 -- THE NUMBERS THE LEDGER IS BUILT FROM
+============================================================================================================
+1  EM / GAUGE STRUCTURE
+   CONSTITUTIVE part : Z(A_S) = alg{X_0,X_4,X_5}/(product fixed) = A_Sigma, an OPERATOR
+      IDENTITY.  2 of the record's 3 bits are the surface by definition.  Removing the Gauss
+      law takes the state space from dim 32 to dim 4096 -- 'the same state' does not exist
+      across the removal, so removal is a category error for those 2 bits.
+   CAUSAL part, MEASURED : |<free ground|projected ground>| = 1.000000000 at all 13 couplings
+      (BLOCK 10).  On the vacuum arm the Gauss law is INERT ON THE STATE: removing it moves
+      every number by exactly 0.  On a charged arm removal is not a removal -- it returns the
+      vacuum state, 4.462396 in energy away at g2 = 1.00.
+   AND THE PART THAT IS NEITHER : the Gauss law is what makes the plateau.  Of 255 environment
+      fragments (run_probe BLOCK 12), the D(F) values of the fragments meeting the 0.90 plateau
+      are: g2=0.45 A0 {2}, A1 {2} ; g2=1.00 A0 {1,2}, A1 {2} ; g2=3.00 A0 {1,2}, A1 {0,1,2}.
+      So through the crossover the plateau IS the Gauss rank and nothing else.  The ONLY place a
+      Gauss-FREE fragment (D=0) ever reaches the plateau is the CHARGED arm deep in the electric
+      phase -- 238 of 255 fragments at g2=3.00 A1 vs 149 at A0.  Redundancy that is not the
+      Gauss identity exists on this carrier, and only charge produces it.
+
+2  THE COUPLING / PHASE
+   CAUSAL_EARNED.  H_FULL(A0) runs 1.999976 bits at g2=0.05 to 0.000906 bits at g2=5.00:
+      a 1.999070 bit swing with the sector and the algebra held byte-identical.
+   FALSE REMOVAL NAMED AND MEASURED: g2 -> 0 or infinity is not a removal, it is the emptiness
+      trap.  TRUE REMOVAL is the Haar arm (ingredient 6).
+   REPAIR LOGGED: the pinned crossover estimator argmax Var(sum_p W_p) returns the grid edge
+      g2 = 5.000000 and is degenerate; repaired estimators give g2_steep = 0.652451 and
+      g2_bal = 0.637526 on A0, both within 1.1 per cent of the a-priori marker sqrt(5/12) = 0.645497.
+
+3  BOUNDARY EXISTENCE
+   CONSTITUTIVE, by a dimension argument: delta(A) = empty iff A is empty or A = V, and then
+      I(A_S:A_F) has no arguments.  A removal test could not have failed.  NOT RUN.
+   VARIATION INSTEAD, cross-orbit: I(A_S : A_Sigma) - I(A_S : A_{0,6}) = 0.907280 bits at g2=0.45
+
+4  BOUNDARY FORMATION
+   CAUSAL_EARNED, and it survives the relabelling control.  Sharpest number: R2 (vacuum vs a
+      charge pair entirely OUTSIDE the region, same Sigma, same flux, and u0 = {7} does not
+      touch S at all so NO relabelling is available) gives D_tr(rho|A_S) = 0.041499919 at g2 = 0.60.
+   Largest formation effect overall: R3 (charge pair INSIDE the region) D_tr = 0.999964 at
+      g2 = 5.00, relabelling-minimised residual reported in BLOCK 15.
+
+5  THE CHARGE SECTOR
+   SPLIT, and the split is the finding.
+      kinematically           : NARRATION.  spread 0.000e+00 over all 128 sectors (BLOCK 13).
+      through the dynamics    : CAUSAL_EARNED.  H_FULL(g2=5.00) = 0.000906 (A0) vs 1.010709 (A1),
+                                a gap of 1.009803 bits from two sign changes in the constraint.
+
+6  THE DYNAMICS
+   CAUSAL_EARNED, and it is the factor that makes ingredient 5 non-inert.  Removing it (Haar)
+      collapses the entire charge-sector effect to 0.000e+00 (BLOCK 13) while leaving the record
+      itself large (H_FULL = 2.548614 bits, Haar seed 7).  Its plaquette-set sub-choice is
+      CONSTITUTIVE-but-immaterial here: vacuous by Stab(A) symmetry, proved in W20_PRE BLOCK 8.

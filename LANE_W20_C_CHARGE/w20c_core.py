@@ -154,11 +154,15 @@ class Sector:
         w, vv = np.linalg.eigh(self.H(g2))
         return w[0], vv[:, 0].astype(complex), w
 
-    def expect(self, op, psi):
+    def expect(self, op, psi, twist=0):
+        """<psi|O|psi>.  `twist` conjugates by Z^twist: X^a -> (-1)^{|a AND twist|} X^a, Z^c fixed.
+        Used only by the RELABELLING CONTROL, which asks how much of an arm difference is a forced
+        sign change of the region's electric labels rather than a movement of the record."""
         a, c, ph = op
         pr = self.perm(c)
         phase = self.parity(a)
-        val = np.vdot(psi, ph * phase * psi[pr])
+        sgn = -1.0 if (pop(a & twist) & 1) else 1.0
+        val = sgn * np.vdot(psi, ph * phase * psi[pr])
         return val
 
 # ---------------------------------------------------------------- algebra structure (state-free)
@@ -230,31 +234,35 @@ class Alg:
             self._mats = out
         return self._mats
 
-    def state(self, sec, psi):
-        """returns (p[s], rho_s) for each of the 2^r central sectors"""
+    def state(self, sec, psi, twist=0):
+        """returns rho_s (trace p_s) for each of the 2^r central sectors.
+
+        NOTE ON PHASES, AND IT IS A REAL TRAP.  A monomial A_j B_j in an anticommuting hyperbolic
+        pair is ANTI-Hermitian (it is the 'Y' direction: Z X = i Y).  Its expectation is purely
+        imaginary.  The correct reconstruction is rho_s = 2^-k sum_M conj(t_M) sigma_M, because
+        Tr(sigma_M^dagger rho) = conj(t_M).  Taking real parts instead silently deletes the whole
+        Y component.  That is invisible on REAL states (ground states here are real by Perron-
+        Frobenius, so their Y components vanish) and wrong on complex ones (the Haar arm).
+        """
         ev = {}
         for T, oT in self.CT:
             for M, oM in self.MON:
-                o = op_mul(oT, oM)
-                val = sec.expect(o, psi)
-                assert abs(val.imag) < 1e-9, ("non-Hermitian expectation", val)
-                ev[(T, M)] = val.real
+                ev[(T, M)] = sec.expect(op_mul(oT, oM), psi, twist)
         mats = self.block_mats()
         blocks = {}
         for s in range(1 << self.r):
-            sgn = {}
-            for T, _ in self.CT:
-                sgn[T] = -1.0 if (pop(T & s) & 1) else 1.0
+            sgn = {T: (-1.0 if (pop(T & s) & 1) else 1.0) for T, _ in self.CT}
             R = np.zeros((1 << self.k, 1 << self.k), dtype=complex)
             for M, _ in self.MON:
                 t = sum(sgn[T] * ev[(T, M)] for T, _ in self.CT) / (1 << self.r)
-                R = R + t * mats[M]
+                R = R + np.conj(t) * mats[M]
             R = R / (1 << self.k)
+            assert np.linalg.norm(R - R.conj().T) < 1e-8, ("non-Hermitian block", self.name)
             blocks[s] = R
         return blocks
 
-    def entropy(self, sec, psi):
-        blocks = self.state(sec, psi)
+    def entropy(self, sec, psi, twist=0):
+        blocks = self.state(sec, psi, twist)
         tot = 0.0
         for s, R in blocks.items():
             w = np.linalg.eigvalsh((R + R.conj().T) / 2).real

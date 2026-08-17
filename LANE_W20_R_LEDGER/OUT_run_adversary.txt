@@ -1,0 +1,99 @@
+
+========================================================================================================
+X1 -- IS IT JUST PERRON-FROBENIUS POSITIVITY?  THE ARM THAT COULD KILL THE RESULT.
+========================================================================================================
+H = -(1/g2) sum_p W_p - g2 sum_l X_l .  In the Z (coset) basis both terms have NON-POSITIVE
+off-diagonal entries, so H is STOQUASTIC and its ground state is real, nodeless and strictly
+positive.  CHECK THAT FIRST, then ask whether positivity ALONE explains C ~ 0.
+  max off-diagonal entry of H at g2=0.60 : 0.000000000   (<=0 means stoquastic)
+  min component of the ground state      : 0.015398040   (>0 means nodeless)
+  max |imaginary part|                   : 0.00e+00
+
+NOW THE ATTACK.  Random NONNEGATIVE states (each component |N(0,1)|, then normalised).  These
+are nodeless and positive exactly like the ground state, but carry NO dynamical information.
+If C is small for these, the finding belongs to the SIGN STRUCTURE, not to the dynamics.
+  NONNEG (positive, nodeless)  n=200   C(S)  mean 0.354127  min 0.134465  max 0.765126   |   C(S') mean 0.718286  min 0.342933
+  REAL   (signed)              n=200   C(S)  mean 0.661820  min 0.247356  max 0.968474   |   C(S') mean 1.235470  min 0.745719
+  HAAR   (complex)             n=200   C(S)  mean 0.731164  min 0.476872  max 0.920396   |   C(S') mean 1.327315  min 1.002514
+
+  GROUND STATE FOR COMPARISON, same region, same sector: C(S) = 0.000162564  C(S') = 0.000344015 at g2=0.60
+
+SHARPER: hold POSITIVITY fixed and vary only how the weights are chosen.  Take the ground state
+and RANDOMLY REWEIGHT it: psi_i -> psi_i * exp(t * n_i) with n_i ~ N(0,1), renormalise.  Still
+strictly positive and nodeless; only the ground state's particular weights are destroyed.
+   t        min component   |<gs|psi>|^2   C(S)          C(S')
+   0.00     0.015398040     1.000000000    0.000162564   0.000344015
+   0.01     0.015562581     0.999817858    0.000345305   0.000498528
+   0.03     0.015093103     0.999186807    0.000430479   0.000587088
+   0.10     0.016949592     0.995412647    0.009586620   0.015303228
+   0.30     0.006833133     0.938732438    0.039956181   0.100173196
+   1.00     0.001799798     0.713470913    0.050653388   0.062650090
+   3.00     0.000002536     0.046714860    0.409847529   0.465104735
+
+========================================================================================================
+X2 -- IS THE GROUND STATE'S C SMALL BECAUSE OF THE HAMILTONIAN, OR BECAUSE OF ITS SPECTRUM?
+========================================================================================================
+Ground states of RANDOM STOQUASTIC Hamiltonians with the SAME SPARSITY PATTERN as H.
+Same off-diagonal support (same terms), random NEGATIVE magnitudes, random diagonal.
+If C stays ~0 the property belongs to the stoquastic ground-state class, not to gauge dynamics.
+  sparsity: 352 of 992 off-diagonal entries nonzero (35.5%)
+  RANDOM STOQUASTIC ground states, n=200:  C(S)  mean 0.042423  min 0.009174  max 0.115549
+                                           C(S') mean 0.082384  min 0.033124  max 0.176995
+  THE ACTUAL GAUGE GROUND STATE:           C(S)  0.000162564     C(S') 0.000344015
+
+AND THE SAME WITH THE FULL SPARSITY REMOVED (dense random stoquastic, 200 samples):
+  DENSE RANDOM STOQUASTIC ground states:   C(S)  mean 0.015271  min 0.002763  max 0.040763
+
+========================================================================================================
+X3 -- THE GAUGE REMOVAL, MEASURED ON BOTH SIDES.  WHERE IT IS NARRATION AND WHERE IT IS VOID.
+========================================================================================================
+The free (unprojected) ground state's overlap with EVERY charge sector.  A charge sector with
+overlap 0 has NO IMAGE under the removal: 'the same state without the Gauss law' does not exist
+there, which is the category error the pre-registration predicted -- now with a number on it.
+  g2       vacuum        eta{0,4}      eta{1,5}      eta{4,5}      eta{0,1}      
+  0.2      1.000000000   0.000000000   0.000000000   0.000000000   0.000000000   
+  0.6455   1.000000000   0.000000000   0.000000000   0.000000000   0.000000000   
+  1        1.000000000   0.000000000   0.000000000   0.000000000   0.000000000   
+  3        1.000000000   0.000000000   0.000000000   0.000000000   0.000000000   
+
+>>> VACUUM: overlap 1.000000000 at every coupling -- the Gauss projection removes NOTHING from
+    the state, so removing the Gauss law moves the vacuum numbers by EXACTLY 0.000000 (run_extra E4).
+>>> EVERY CHARGED SECTOR: overlap 0.000000000.  The free ground state is in the vacuum sector at
+    every coupling, so there is no 'same state' to compare across the removal.  W-19's survival
+    result IS NOT GENERAL: it is exactly the vacuum sector and it is Perron-Frobenius, not physics
+    about records.
+
+========================================================================================================
+X4 -- SYMMETRY AUDIT OF EVERY REPORTED ARM PAIR.  FIT-3 GUARD, RUN AGAIN AFTER THE NUMBERS.
+========================================================================================================
+|Aut(tri_chain12)| = 16
+  pair          #g in Aut with g(S)=S, g(Sigma)=Sigma AND g(charges_a)=charges_b   verdict
+  R1 on S       0   LIVE (no symmetry forces equality)
+  R2 on S       0   LIVE (no symmetry forces equality)
+  R3 on S       0   LIVE (no symmetry forces equality)
+  R2/R3 on S    0   LIVE (no symmetry forces equality)
+  R2 on S'      0   LIVE (no symmetry forces equality)
+  R3 on S'      0   LIVE (no symmetry forces equality)
+  R2/R3 on S'   0   LIVE (no symmetry forces equality)
+
+NOTE ON A NULL I DID NOT PREDICT: on S' the pairs eta{4,5} and eta{0,1} returned IDENTICAL
+numbers to 8 decimals (max|dH_FULL| = 0.12722545 for both).  The audit above says no element of
+Aut fixing S' and Sigma' carries one onto the other, so this is NOT explained by the symmetry
+group and I am recording it as an UNEXPLAINED COINCIDENCE rather than claiming either reading.
+  |Stab(S  and its surface)| = 4
+  |Stab(S' and its surface)| = 8
+
+========================================================================================================
+X5 -- THE EXCITED STATES WITH C = 0 EXACTLY.  A CAVEAT, NOT NOISE.
+========================================================================================================
+E2 found eigenstates other than the ground state with C = 0 to machine precision.  If they are
+inside DEGENERATE multiplets the eigenvector is arbitrary and the number is meaningless; if they
+are non-degenerate the caveat is real and 'C = 0' is NOT a unique signature of the ground state.
+  g2 = 0.45
+     n=13  E=-1.49755534    C=0.000e+00      nearest gap=0.17533312    NON-DEGENERATE -- REAL CAVEAT
+     n=25  E=3.29755534     C=0.000e+00      nearest gap=0.17533312    NON-DEGENERATE -- REAL CAVEAT
+     (6 degenerate adjacent pairs in this spectrum of 32)
+  g2 = 0.60
+     n=13  E=-0.85372291    C=0.000e+00      nearest gap=0.34676484    NON-DEGENERATE -- REAL CAVEAT
+     n=25  E=3.25372291     C=0.000e+00      nearest gap=0.38705624    NON-DEGENERATE -- REAL CAVEAT
+     (6 degenerate adjacent pairs in this spectrum of 32)

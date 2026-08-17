@@ -1,0 +1,310 @@
+
+============================================================================================================
+BLOCK 5 -- THE PINNED CROSSOVER ESTIMATOR IS DEGENERATE.  MEASURED, THEN REPAIRED.
+============================================================================================================
+PIN: 'g2_* = argmax over a 200-point log grid of Var_psi(sum_p W_p)'.  Measured in run_charge:
+   A0 vacuum      : argmax at g2 = 5.000000, THE RIGHT-HAND EDGE OF THE GRID.
+   A1 charges{0,4}: argmax at g2 = 1.981344.
+The A0 answer is not a crossover, it is the grid boundary, and it is forced:
+   as g2 -> infinity the state -> an X-eigenstate, <W_p> -> 0 for every p, and W_p^2 = I, so
+   Var(sum_p W_p) -> C = 5 MONOTONICALLY FROM BELOW.  The estimator's argmax is at g2 = infinity
+   for any carrier.  IT MEASURES THE ELECTRIC LIMIT, NOT THE CROSSOVER.
+
+   the curve, printed rather than asserted (A0):
+   g2         Var(sumW)    <sumW>       <sum X_l>   
+   0.0500     0.000088     4.999965     0.027703    
+   0.2000     0.026303     4.989699     0.495775    
+   0.6000     2.918961     3.543528     7.520265    
+   1.0000     4.697996     1.474524     11.269257   
+   2.2000     4.987281     0.309709     11.968016   
+   5.0000     4.999524     0.059998     11.998800   
+
+REPAIRED ESTIMATORS, both MEASURED, both declared here as coined replacements:
+   (a) g2_steep = argmax over the same 200-point grid of |d<sum_p W_p>/d ln g2|  (steepest
+       change of the magnetic order parameter -- a crossover by definition).
+   (b) g2_bal   = the g2 where the two ENERGY TERMS balance: (1/g2)|<sum_p W_p>| = g2|<sum_l X_l>|.
+   A0 : g2_steep = 0.652451   g2_bal = 0.637526   (a-priori marker g2_sd = 0.645497)
+   A1 : g2_steep = 0.861293   g2_bal = 0.881457   (a-priori marker g2_sd = 0.645497)
+   >>> THE A-PRIORI MARKER sqrt(C/L) = 0.645497 LANDS INSIDE BOTH REPAIRED ESTIMATES AND
+       NOWHERE NEAR THE PINNED ONE.  THE PINNED ESTIMATOR IS RETIRED, WITH ITS NUMBER SHOWN.
+       ALL PHASE LABELS BELOW ARE ASSIGNED RELATIVE TO g2_steep, NOT TO THE PINNED VALUE.
+
+============================================================================================================
+BLOCK 6 -- THE MECHANISM.  WHY THE CHARGED ARM'S RECORD DOES NOT EMPTY AT THE ELECTRIC END.
+============================================================================================================
+PRE-REGISTERED VACUITY CLAIM V2: 'g2 >> g2_*: <X_1> -> 1, block pure, H_BLOCK -> 0.'
+MEASURED: A0 H_BLOCK(g2=5.00) = 0.000205 bits.  A1 H_BLOCK(g2=5.00) = 0.999427 bits.
+V2 IS TRUE IN THE VACUUM SECTOR AND FALSE IN A CHARGED SECTOR.  It was written as a property of
+the coupling; it is a property of the SECTOR.  Here is the incidence reason, computed:
+   A0 vacuum : minimum electric weight |u| = 0, DEGENERACY 1
+        u = links []                restricted to S = []
+   A1 charges {0,4} : minimum electric weight |u| = 3, DEGENERACY 4
+        u = links [1, 4, 6]         restricted to S = [1]
+        u = links [2, 5, 6]         restricted to S = [2]
+        u = links [0, 7, 10]        restricted to S = []
+        u = links [0, 8, 11]        restricted to S = []
+
+>>> THE g2 -> infinity GROUND STATE IS THE UNIFORM SUPERPOSITION OF THE MINIMUM-WEIGHT ELECTRIC
+    CONFIGURATIONS.  In the vacuum sector that set has ONE element (u = 0) and the record is
+    empty.  In the {0,4} sector it has FOUR elements -- the four shortest flux strings joining
+    the two charges -- and they DISAGREE ON S.  THE RECORD IS WHICH ROUTE THE FLUX STRING TOOK.
+    That is not a narration: the number is H_FULL(A0, g2=5) = 0.00091 vs H_FULL(A1, g2=5) =
+    1.01071 bits, a 1.010 bit gap produced by two minus signs in the Gauss constraint.
+
+    AND THE HONEST SECOND READING, RECORDED: 4-fold degeneracy of the shortest 0-4 path is a
+    property of tri_chain12's geometry, not of charge as such.  A carrier with a UNIQUE shortest
+    path between the two charged vertices would give a non-degenerate electric ground state and
+    an empty record at large g2 even with charges present.  THIS IS A CARRIER-DEPENDENT
+    MECHANISM AND IT IS LOGGED AS ONE.  Counted here: pairs (v,w) of vertices at distance 3 with
+    a UNIQUE shortest path on tri_chain12:
+       (0,1)d=1 n=1, (0,2)d=1 n=1, (0,3)d=2 n=2, (0,4)d=3 n=4, (0,5)d=2 n=1, (0,6)d=2 n=1, (0,7)d=1 n=1, (1,2)d=1 n=1, (1,3)d=1 n=1, (1,4)d=2 n=1, (1,5)d=3 n=2, (1,6)d=3 n=2, (1,7)d=2 n=1, (2,3)d=1 n=1, (2,4)d=2 n=1, (2,5)d=3 n=2, (2,6)d=3 n=2, (2,7)d=2 n=1, (3,4)d=1 n=1, (3,5)d=2 n=1, (3,6)d=2 n=1, (3,7)d=3 n=4, (4,5)d=1 n=1, (4,6)d=1 n=1, (4,7)d=2 n=2, (5,6)d=1 n=1, (5,7)d=1 n=1, (6,7)d=1 n=1
+       -> 20 of 28 vertex pairs have a UNIQUE geodesic.  The declared pair {0,4} has 4.
+
+============================================================================================================
+BLOCK 7 -- FORMATION ARMS.  SAME SURFACE, SAME FLUX, DIFFERENT ROUTE.
+============================================================================================================
+Sigma = {0,4,5} is byte-identical in every arm.  flux(Sigma) = eta_0 eta_1 eta_2 is held fixed
+inside each pair.  Only WHERE the charge sits moves.  The comparison is well posed across
+sectors because A_S = M_2^(+4) is the SAME abstract algebra in every sector -- the record lives
+in the region's own algebra, not in the sector's Hilbert space.
+
+R1 alpha : eta=-1 at [0, 4]  vs  [1, 5] .  flux(Sigma) = -1 vs -1 .  Stab(A) maps: 0 -> LIVE
+   minimum-weight route: |u0| = 3 at links [1, 4, 6]   vs   |u0| = 3 at links [4, 6, 7]
+   g2       H_FULL a   H_FULL b    H_CEN a    H_CEN b    D_tr(A_S)  D_tr(BLOCK)
+   0.05     1.999994   1.999994   1.999994   1.999994  0.001249994  0.000002344
+   0.10     1.999908   1.999909   1.999908   1.999909  0.004999581  0.000037492
+   0.20     1.998450   1.998484   1.998449   1.998483  0.019970753  0.000597734
+   0.30     1.991531   1.991892   1.991517   1.991883  0.044620553  0.002975558
+   0.45     1.952652   1.955258   1.952376   1.955140  0.095919812  0.013679099
+   0.60     1.856491   1.855928   1.854943   1.855497  0.147396789  0.033258131
+   0.80     1.684895   1.629411   1.681607   1.628802  0.175362479  0.059377762
+   1.00     1.545690   1.411292   1.543199   1.410958  0.160352432  0.076042120
+   1.30     1.398165   1.214568   1.397396   1.214496  0.114618531  0.073962709
+   1.70     1.255035   1.100286   1.254928   1.100278  0.063006787  0.048135348
+   2.20     1.140521   1.045429   1.140511   1.045428  0.028647780  0.023516427
+   3.00     1.057550   1.016528   1.057550   1.016528  0.009394886  0.007963298
+   5.00     1.010709   1.002848   1.010709   1.002848  0.001292110  0.001108589
+
+R2 beta  : eta=-1 at none  vs  [4, 5] .  flux(Sigma) = +1 vs +1 .  Stab(A) maps: 0 -> LIVE
+   minimum-weight route: |u0| = 0 at links []   vs   |u0| = 1 at links [7]
+   g2       H_FULL a   H_FULL b    H_CEN a    H_CEN b    D_tr(A_S)  D_tr(BLOCK)
+   0.05     1.999976   1.999976   1.999976   1.999976  0.000006266  0.000000016
+   0.10     1.999605   1.999611   1.999605   1.999611  0.000100969  0.000001037
+   0.20     1.992819   1.993234   1.992819   1.993234  0.001654151  0.000073493
+   0.30     1.955477   1.960804   1.955465   1.960794  0.008478383  0.000961520
+   0.45     1.689408   1.750799   1.689254   1.750688  0.034788703  0.011100461
+   0.60     1.077757   1.224684   1.077594   1.224503  0.041499919  0.025379628
+   0.80     0.491388   0.589748   0.491372   0.589703  0.018155285  0.015429867
+   1.00     0.245303   0.297612   0.245302   0.297605  0.007831685  0.007340747
+   1.30     0.103979   0.127396   0.103979   0.127396  0.002884234  0.002822913
+   1.70     0.041931   0.051716   0.041931   0.051716  0.001017688  0.001010551
+   2.20     0.017146   0.021218   0.017146   0.021218  0.000367620  0.000366723
+   3.00     0.005724   0.007099   0.005724   0.007099  0.000106914  0.000106840
+   5.00     0.000906   0.001125   0.000906   0.001125  0.000013885  0.000013883
+
+R3 gamma : eta=-1 at none  vs  [0, 1] .  flux(Sigma) = +1 vs +1 .  Stab(A) maps: 0 -> LIVE
+   minimum-weight route: |u0| = 0 at links []   vs   |u0| = 1 at links [1]
+   g2       H_FULL a   H_FULL b    H_CEN a    H_CEN b    D_tr(A_S)  D_tr(BLOCK)
+   0.05     1.999976   1.999976   1.999976   1.999976  0.005018785  0.000014922
+   0.10     1.999605   1.999611   1.999605   1.999611  0.020302126  0.000242559
+   0.20     1.992819   1.993285   1.992819   1.993284  0.084905541  0.004133708
+   0.30     1.955477   1.961647   1.955465   1.961636  0.204707090  0.023140546
+   0.45     1.689408   1.765943   1.689254   1.765810  0.502699030  0.135486439
+   0.60     1.077757   1.294664   1.077594   1.294420  0.797542891  0.377757315
+   0.80     0.491388   0.683252   0.491372   0.683186  0.943068885  0.659074054
+   1.00     0.245303   0.348876   0.245302   0.348867  0.977820713  0.816707075
+   1.30     0.103979   0.141207   0.103979   0.141206  0.992233561  0.923711954
+   1.70     0.041931   0.054194   0.041931   0.054194  0.997319101  0.971901905
+   2.20     0.017146   0.021620   0.017146   0.021620  0.999039534  0.989709509
+   3.00     0.005724   0.007140   0.005724   0.007140  0.999721624  0.996991386
+   5.00     0.000906   0.001126   0.000906   0.001126  0.999963893  0.999608561
+
+============================================================================================================
+BLOCK 8 -- ALL 128 CHARGE SECTORS.  IS THE RECORD A FUNCTION OF THE SURFACE FLUX ALONE?
+============================================================================================================
+THIS IS THE NON-DEGENERATE FORM OF H-SURFACE, and it is the one arm in this lane that no
+theorem in the pre-registration forces either way.  Delta_surf could not fail (BLOCK 1).  This
+can: nothing whatsoever requires two sectors with the SAME flux through Sigma to give the SAME
+rho|A_S.  If the record is boundary data fixed by the surface and the flux, the 64 sectors with
+flux(Sigma) = +1 must all give the same record, and so must the 64 with flux = -1.
+admissible sectors (even charge parity): 128
+
+g2 = 0.45
+   flux(Sigma) = +1 : 64 sectors.  H_FULL ranges [1.689408 , 1.976534] , spread 0.287126 bits
+      MAX pairwise D_tr(rho|A_S) inside the flux class : 0.509137981   between () and (0, 2)
+      MAX over Stab(A)-INEQUIVALENT pairs only (LIVE)   : 0.509137981   between () and (0, 2)
+      pairs with D_tr > 1e-6 : 2000 of 2016
+   flux(Sigma) = -1 : 64 sectors.  H_FULL ranges [1.814466 , 1.976534] , spread 0.162068 bits
+      MAX pairwise D_tr(rho|A_S) inside the flux class : 0.446241480   between (2, 3) and (0, 1, 2, 3)
+      MAX over Stab(A)-INEQUIVALENT pairs only (LIVE)   : 0.446241480   between (2, 3) and (0, 1, 2, 3)
+      pairs with D_tr > 1e-6 : 2000 of 2016
+
+g2 = 1.00
+   flux(Sigma) = +1 : 64 sectors.  H_FULL ranges [0.245303 , 1.839604] , spread 1.594301 bits
+      MAX pairwise D_tr(rho|A_S) inside the flux class : 0.991753146   between () and (0, 2)
+      MAX over Stab(A)-INEQUIVALENT pairs only (LIVE)   : 0.991753146   between () and (0, 2)
+      pairs with D_tr > 1e-6 : 2000 of 2016
+   flux(Sigma) = -1 : 64 sectors.  H_FULL ranges [0.313493 , 1.839604] , spread 1.526110 bits
+      MAX pairwise D_tr(rho|A_S) inside the flux class : 0.977405321   between (0, 7) and (2, 7)
+      MAX over Stab(A)-INEQUIVALENT pairs only (LIVE)   : 0.977405321   between (0, 7) and (2, 7)
+      pairs with D_tr > 1e-6 : 2000 of 2016
+
+g2 = 3.00
+   flux(Sigma) = +1 : 64 sectors.  H_FULL ranges [0.005724 , 1.525354] , spread 1.519630 bits
+      MAX pairwise D_tr(rho|A_S) inside the flux class : 0.999998006   between () and (0, 2)
+      MAX over Stab(A)-INEQUIVALENT pairs only (LIVE)   : 0.999998006   between () and (0, 2)
+      pairs with D_tr > 1e-6 : 1972 of 2016
+   flux(Sigma) = -1 : 64 sectors.  H_FULL ranges [0.007105 , 1.525354] , spread 1.518250 bits
+      MAX pairwise D_tr(rho|A_S) inside the flux class : 0.999995907   between (0, 7) and (2, 7)
+      MAX over Stab(A)-INEQUIVALENT pairs only (LIVE)   : 0.999995907   between (0, 7) and (2, 7)
+      pairs with D_tr > 1e-6 : 1992 of 2016
+
+>>> READ THE SPREAD.  If it is 0, the record on S is a function of flux(Sigma) alone and
+    H-SURFACE survives its one non-degenerate test in this lane.  If it is not 0, the surface
+    and its flux DO NOT determine the record, and the number is the size of the failure.
+
+============================================================================================================
+BLOCK 9 -- D1 DYNAMICS REMOVAL (HAAR), P1 PARTITION, A2 BOUNDARY ALGEBRA
+============================================================================================================
+D1.  Removal of the state-selecting Hamiltonian.  Haar-random state of the SAME physical sector,
+same partition, same algebra.  STANDING RULE: a plateau a Haar state also produces is not a
+result.  W-19 established NARRATION in the electric channel; BLOCK and MAG were untested.
+state             H_FULL     H_CEN   H_BLOCK     H_MAG      I:F1      I:F3     Dsurf  R_del
+A0 ground 0.45   1.68941   1.68925   0.12861   0.21710   1.68925   0.00535  0.000308      1
+A0 ground 0.80   0.49139   0.49137   0.11079   0.81933   0.49137   0.00044  0.000032      1
+A0 ground 3.00   0.00572   0.00572   0.00128   0.99901   0.00572   0.00000 -0.000000      1
+A0 HAAR s7       2.54861   1.86052   0.99341   0.99948   1.86052   0.31981  1.376195      1
+A0 HAAR s8       2.76257   1.94495   0.93883   0.96625   1.94495   0.23036  1.635247      1
+A0 HAAR s9       2.35091   1.94397   0.82018   0.84687   1.94397   0.23632  0.813866      0
+A1 ground 0.45   1.95265   1.95238   0.11854   0.13651   1.95238   0.00930  0.000552      1
+A1 ground 0.80   1.68489   1.68161   0.51650   0.56633   1.68161   0.06289  0.006575      1
+A1 ground 3.00   1.05755   1.05755   0.99484   0.99499   1.05755   0.00629  0.000001      3
+A1 HAAR s7       2.54861   1.86052   0.99341   0.99948   1.86052   0.31981  1.376195      1
+A1 HAAR s8       2.76257   1.94495   0.93883   0.96625   1.94495   0.23036  1.635247      1
+A1 HAAR s9       2.35091   1.94397   0.82018   0.84687   1.94397   0.23632  0.813866      0
+
+P1.  PARTITION.  primary F1..F4 vs secondary G1..G4, same state, same algebra.
+g2     arm     H_FULL      I:G1      I:G2      I:G3      I:G4  R_del
+0.45   A0     1.68941   1.68925   0.78200   0.05469   0.05469      1
+0.45   A1     1.95265   1.95238   1.00004   0.05515   0.05515      1
+1.00   A0     0.24530   0.24530   0.06410   0.03421   0.03421      1
+1.00   A1     1.54569   1.54320   1.00102   0.55861   0.55861      1
+3.00   A0     0.00572   0.00572   0.00128   0.00097   0.00097      1
+3.00   A1     1.05755   1.05755   1.00000   0.97999   0.97999      4
+   D(F) vacuity numbers: primary [2, 1, 0, 1] ; secondary [2, 1, 0, 0]
+
+A2.  BOUNDARY ALGEBRA.  WIDE (S u Sigma, nbar=5, max 3 bits) vs NARROW (nbar=4, max 3 bits).
+   CONFOUND RECORDED: WIDE's support overlaps F1 = Sigma, so only F2,F3,F4 remain disjoint.
+g2     arm    H_NARROW     H_WIDE H_WIDE-H_NAR     I_W:F2     I_W:F3
+0.05   A0     1.999976   0.999982    -0.999994   0.999982   0.000001
+0.05   A1     1.999994   1.000000    -0.999994   1.000000   0.000001
+0.10   A0     1.999605   0.999700    -0.999905   0.999700   0.000018
+0.10   A1     1.999908   1.000000    -0.999908   1.000000   0.000018
+0.20   A0     1.992819   0.994592    -0.998228   0.994592   0.000303
+0.20   A1     1.998450   1.000001    -0.998449   1.000002   0.000306
+0.30   A0     1.955477   0.967054    -0.988424   0.967066   0.001546
+0.30   A1     1.991531   1.000027    -0.991504   1.000040   0.001662
+0.45   A0     1.689408   0.782292    -0.907116   0.782446   0.005415
+0.45   A1     1.952652   1.000571    -0.952081   1.000847   0.009417
+0.60   A0     1.077757   0.412268    -0.665490   0.412430   0.003509
+0.60   A1     1.856491   1.003346    -0.853146   1.004894   0.029738
+0.80   A0     0.491388   0.145114    -0.346274   0.145130   0.000442
+0.80   A1     1.684895   1.007535    -0.677360   1.010823   0.064646
+1.00   A0     0.245303   0.064097    -0.181206   0.064098   0.000063
+1.00   A1     1.545690   1.006099    -0.539591   1.008590   0.079934
+1.30   A0     0.103979   0.025247    -0.078732   0.025247   0.000007
+1.30   A1     1.398165   1.002071    -0.396094   1.002840   0.069071
+1.70   A0     0.041931   0.009792    -0.032139   0.009792   0.000001
+1.70   A1     1.255035   1.000313    -0.254722   1.000421   0.041084
+2.20   A0     0.017146   0.003914    -0.013231   0.003914   0.000000
+2.20   A1     1.140521   1.000029    -0.140492   1.000039   0.019124
+3.00   A0     0.005724   0.001283    -0.004441   0.001283   0.000000
+3.00   A1     1.057550   1.000001    -0.057549   1.000001   0.006290
+5.00   A0     0.000906   0.000199    -0.000707   0.000199   0.000000
+5.00   A1     1.010709   1.000000    -0.010709   1.000000   0.000859
+
+============================================================================================================
+BLOCK 10 -- X1 GAUGE REMOVAL, DONE EXACTLY (NO 4096x4096 DIAGONALISATION NEEDED)
+============================================================================================================
+Removing the Gauss projection means diagonalising the SAME H on the unconstrained 2^12 space.
+But H is BLOCK DIAGONAL in the charge sectors: the plaquette hopping translates u by a cycle,
+which preserves d(u) = q.  So the unconstrained spectrum is the union of the 128 sector spectra,
+and the unconstrained ground state is the ground state of whichever sector is lowest.  EXACT.
+g2         E0(vacuum) E0(best charged)        gap |<free|proj>|
+0.05   -100.000690872 -100.000690006   0.000001  1.000000000
+0.10    -50.005609127  -50.005580813   0.000028  1.000000000
+0.20    -25.047648881  -25.046659806   0.000989  1.000000000
+0.30    -16.844783328  -16.836123556   0.008660  1.000000000
+0.45    -11.856466759  -11.772791769   0.083675  1.000000000
+0.60    -10.418039726  -10.064579210   0.353461  1.000000000
+0.80    -11.033504946  -10.097210046   0.936295  1.000000000
+1.00    -12.743781048  -11.206092947   1.537688  1.000000000
+1.30    -15.940417766  -13.599657446   2.340760  1.000000000
+1.70    -20.552512015  -17.280362758   3.272149  1.000000000
+2.20    -26.470412162  -22.131654598   4.338758  1.000000000
+3.00    -36.027775092  -30.052306704   5.975468  1.000000000
+5.00    -60.005999925  -50.011328747   9.994671  1.000000000
+   >>> THE UNCONSTRAINED GROUND STATE IS THE VACUUM-SECTOR GROUND STATE AT EVERY COUPLING.
+       |<free|projected>| = 1.000000000, reproducing W-19's Perron-Frobenius result.
+       ON THE VACUUM ARM, REMOVING THE GAUSS LAW MOVES THE STATE BY EXACTLY ZERO -> the numbers
+       do not move -> NARRATION on that arm.
+   >>> ON A CHARGED ARM IT IS NOT A REMOVAL AT ALL.  Deleting the constraint does not leave the
+       charged state weakened; it DELETES the state and hands back the vacuum one, 4.462396 in
+       energy away at g2=1.00.  'The same state across the removal' does not exist.  The well-
+       posed question is the one BLOCK 8 asks instead.
+
+============================================================================================================
+BLOCK 11 -- BOUNDARY EXISTENCE: THE CATEGORY ERROR, AND WHAT VARYING IT MEASURES
+============================================================================================================
+delta(A) = empty iff A is empty or A = V.  Either way S is empty or is everything and
+I(A_S : A_F) has no arguments.  Worse, Z(A_S) IS the surface algebra as an operator identity
+(BLOCK 1(i)), so deleting the surface deletes 2 of the record's 3 bits BY DEFINITION.
+A REMOVAL TEST HERE COULD NOT HAVE FAILED.  It is a CATEGORY ERROR and is not run.
+
+WHAT VARYING IT MEANS INSTEAD -- and the four-triangle version is vacuous by Aut, so this uses
+a CROSS-ORBIT surface.  Sigma = {0,4,5} (|Sigma| = 3) vs Sigma' = {0,6}, the carrier's unique
+2-link surface, which is in a DIFFERENT Aut-orbit (sizes differ, so no automorphism relates them).
+   A_Sigma  : nbar=2 dim=4 max 2 bits    A_Sigma' : nbar=1 dim=2 max 1 bits
+g2     arm    I(A_S:Sig)  I(A_S:Sig')     difference
+0.45   A0       1.689254     0.781974       0.907280
+0.45   A1       1.952376     1.000000       0.952376
+1.00   A0       0.245302     0.064094       0.181207
+1.00   A1       1.543199     1.000000       0.543199
+3.00   A0       0.005724     0.001283       0.004441
+3.00   A1       1.057550     1.000000       0.057550
+   >>> WHICH SURFACE IS CALLED THE BOUNDARY CHANGES THE NUMBER.  The 2-link bottleneck surface
+       {0,6} carries at most 1 bit; Sigma = {0,4,5} carries 2.  'The surface' is not one object.
+
+============================================================================================================
+BLOCK 12 -- EXHAUSTIVE: WHERE CAN THE PLATEAU FAIL?  ALL 255 FRAGMENTS WITH |F| <= 4.
+============================================================================================================
+The brief says ask where the plateau CAN fail, not where it appears.  Every fragment of the
+environment with |F| <= floor(|E_env|/2) = 4 is enumerated and scored against the SAME criterion.
+fragments enumerated: 255
+   g2=0.45  A0  H_FULL=1.689408  fragments meeting the plateau: 125 of 255 (49.0%)
+        min I/H = 0.000621 at F=[9] ;  max = 1.000044 at F=[5, 7, 8, 9]
+        D(F) of every plateau-meeting fragment: [2]
+        smallest plateau-meeting fragments: [[0, 5], [4, 5], [4, 6], [0, 4]]
+   g2=0.45  A1  H_FULL=1.952652  fragments meeting the plateau: 125 of 255 (49.0%)
+        min I/H = 0.000627 at F=[9] ;  max = 1.000068 at F=[4, 9, 10, 11]
+        D(F) of every plateau-meeting fragment: [2]
+        smallest plateau-meeting fragments: [[5, 6], [4, 6], [0, 4], [0, 5]]
+   g2=1.00  A0  H_FULL=0.245303  fragments meeting the plateau: 137 of 255 (53.7%)
+        min I/H = 0.000254 at F=[8] ;  max = 1.000002 at F=[5, 9, 10, 11]
+        D(F) of every plateau-meeting fragment: [1, 2]
+        smallest plateau-meeting fragments: [[4, 7], [4, 10], [5, 6], [0, 4]]
+   g2=1.00  A1  H_FULL=1.545690  fragments meeting the plateau: 125 of 255 (49.0%)
+        min I/H = 0.025146 at F=[9] ;  max = 1.000645 at F=[5, 7, 8, 9]
+        D(F) of every plateau-meeting fragment: [2]
+        smallest plateau-meeting fragments: [[5, 6], [0, 4], [0, 5], [4, 5]]
+   g2=3.00  A0  H_FULL=0.005724  fragments meeting the plateau: 149 of 255 (58.4%)
+        min I/H = 0.000001 at F=[8] ;  max = 1.000000 at F=[5, 6]
+        D(F) of every plateau-meeting fragment: [1, 2]
+        smallest plateau-meeting fragments: [[4], [4, 8], [4, 11], [5, 7]]
+   g2=3.00  A1  H_FULL=1.057550  fragments meeting the plateau: 238 of 255 (93.3%)
+        min I/H = 0.001925 at F=[9] ;  max = 1.000000 at F=[5, 7, 8, 9]
+        D(F) of every plateau-meeting fragment: [0, 1, 2]
+        smallest plateau-meeting fragments: [[4], [0], [6], [7, 9]]
+
+>>> THE PLATEAU FAILS ON MOST OF THE ENVIRONMENT.  It is not a property of the state; it is a
+    property of D(F).  Reported with the D(F) column so it cannot be read as redundancy.

@@ -1,0 +1,38 @@
+====================================================================================================
+HEADLINE NUMBER TABLE -- C = sum_k p_k E_k, the CONDITIONAL FREE ENTROPY of S given its surface
+Delta_surf = 2C exactly (identity verified to 6.4e-15).  H-SURFACE predicts C = 0.
+====================================================================================================
+  g2      H_FULL(A_S)  H_BLOCK   C=sum p_k E_k   C/H_FULL
+  0.05    1.999976     0.000040  0.000000000     6.603e-12
+  0.1     1.999605     0.000528  0.000000003     1.400e-09
+  0.2     1.992819     0.006945  0.000000582     2.920e-07
+  0.3     1.955477     0.031918  0.000012480     6.382e-06
+  0.45    1.689408     0.128611  0.000153910     9.110e-05
+  0.6     1.077757     0.182463  0.000162564     1.508e-04
+  0.8     0.491388     0.110795  0.000015990     3.254e-05
+  1       0.245303     0.057602  0.000001157     4.715e-06
+  1.3     0.103979     0.024341  0.000000046     4.455e-07
+  1.7     0.041931     0.009671  0.000000002     4.447e-08
+  2.2     0.017146     0.003897  0.000000000     5.233e-09
+  3       0.005724     0.001281  0.000000000     4.196e-10
+  5       0.000906     0.000199  0.000000000     6.806e-12
+  >>> MAX C OVER THE WHOLE VACUUM GRID = 0.000162564 bits  (ceiling 1 bit)
+
+  sector vacuum     max C over grid = 0.000162564 bits
+  sector eta{0,4}   max C over grid = 0.003287414 bits
+  sector eta{1,5}   max C over grid = 0.000609276 bits
+  sector eta{4,5}   max C over grid = 0.000181039 bits
+  sector eta{0,1}   max C over grid = 0.000243048 bits
+  >>> MAX C OVER ALL 5 SECTORS x 13 COUPLINGS = 0.003287414 bits
+
+====================================================================================================
+THE CONTRAST LADDER FOR THE SAME QUANTITY, SAME REGION, SAME SECTOR, SAME ALGEBRA
+====================================================================================================
+  state class                                    C (bits)
+  gauge ground state (max over 5x13 arms)        0.003287414
+  random stoquastic GS, same sparsity (n=200)    0.042423 mean / 0.009174 min
+  dense random stoquastic GS (n=200)             0.015271 mean / 0.002763 min
+  random NONNEGATIVE state (n=200)               0.354127 mean / 0.134465 min
+  random REAL state (n=200)                      0.661820 mean / 0.247356 min
+  Haar random physical state (n=200)             0.731164 mean / 0.476872 min
+  quenched state, same surface+flux+sector       0.844990 (g2=0.20, T=10)
