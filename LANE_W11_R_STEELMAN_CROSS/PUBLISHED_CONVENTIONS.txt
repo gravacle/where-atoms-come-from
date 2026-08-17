@@ -1,0 +1,66 @@
+LANE W11-R-CROSS -- CROSS-REFUTER OF LANE_W11_R_STEELMAN -- PUBLISHED CONVENTIONS
+Register program WHERE ATOMS COME FROM, head W-10.  Author: Claude Opus 5, 2026-08-17.
+LENS: ADVERSARY ON THE STEELMAN.  Default to refute.  Attacked: the case LANE_W11_R_STEELMAN
+makes for READING A of W-10 section 0.4.1.
+
+WHAT I DID FIRST, BEFORE WRITING ANY CODE OF MY OWN
+  1. shasum -a 256 -c SEALS.sha256 in LANE_W11_R_STEELMAN: 17/17 OK.
+  2. Re-ran all seven of its scripts.  ALL SEVEN OUTPUTS ARE BIT-IDENTICAL to the sealed ones.
+     Its lane is reproducible and I have no arithmetic dispute with it or with the registrar.
+  3. Read its code, not only its outputs, and resolved its four load-bearing citations at the
+     bytes with digests (leg G).
+
+CARRIERS, REBUILT MYSELF FROM THE SEALED BYTES
+  K1  : S1_CARRIER_K1_V001.md sec1 -- 5 vertices, 6 edges, gamma_F = e1.e2.e3, gamma_C = e4.e5.e6.
+  B0b : 3x3 torus grid built here from an explicit vertex/edge list (xlib._build_b0b), NOT copied
+        from LANE_W10_A_CARRIERS or from either W-11 lane.  gamma_F = boundary of face (0,0),
+        length 4; gamma_C = the row j=0, length 3.  Class multiset CHECKED against
+        S4_THE_MEASUREMENT_V001.md:575 {00:4, 01:1, 10:2, 11:2} -- matches (leg A0).
+
+THE OPERATORS
+  M_gamma : the corpus's whole-circuit operator (W-01 / REGISTER:31-35; S3 sec2.3).  Diagonal.
+  T       : COR-F's EDGE TICK (S3_THE_CROSSING_AUDIT_V001.md:160-209, :794).  Non-diagonal.
+  D       : the uniform (principal) root, diag(W^{1/L} on the loop, 1 off).  D^L = M_gamma.
+  the ROOT VARIETY of M_gamma: every unitary U with U^L = M_gamma.  Sampled generically
+            (xlib.random_root), and -- new here -- enumerated EXHAUSTIVELY in the gauge-covariant
+            sub-class on K1 (27 branch choices per loop; T and D are two of them).
+  Lambda.R : my counterexample family of leg D (pi-only, non-diagonal, non-class-constant).
+  the E1 family : Lambda_F.R  vs  Lambda_C.G(a) R G(a)*  -- passes the trivial-connection contact
+            point EXACTLY and SEES the incidence.
+
+ISOLATION LEDGER.  Held fixed in every comparison: the carrier, the connection, the observable
+  <branch_F, branch_C>, the code path, the seed, and pi BY CONSTRUCTION.  Every state arm and
+  every operator arm is BYTE-DIFFED (xlib.arms_differ) before a number is read, and the legs
+  assert on collapse.  Moved, one at a time:
+    leg B -- the TRANSPORT, over the whole root variety, clock held at joint loop closure.
+    leg C -- nothing: leg C's purpose is to show that three of the steelman's four 2x2 cells
+             ARE THE SAME OBJECT.  It diffs cells rather than varying anything.
+    leg D -- the ROOT PAIR, along the correlated direction an independent sampler cannot reach.
+    leg E -- the CONNECTION (generic -> trivial) at fixed operator family; then the OPERATOR
+             family at fixed trivial connection; then gauge covariance on/off.
+    leg F -- the two tick counts (a,b) independently; then the carrier (K1 vs B0b) with the
+             functional's FORM held fixed.
+
+SEEDS numpy default_rng(20260817).  DOUBLE PRECISION IS THE DEFAULT throughout.
+  Exact / closed-form checks where precision could matter:
+    - the trivial-connection firing of the edge tick, in fractions.Fraction (leg A4);
+    - the covariant root variety on K1, enumerated exactly as 27 branch labels (leg E3);
+    - the class-level-set identity of leg B2, checked against the closed class formula;
+    - m(P) by Jensen quadrature at n = 2^20, agreeing with the register's -0.767507880357.
+
+WHAT I CONCEDE BEFORE ARGUING
+  The steelman's leg A concession is FORCED, not lazy: T is gauge-COVARIANT, so Z^T_n is
+  gauge-INVARIANT at every partial tick (my own code, 2000 draws per carrier, 8.5e-16 / 5.4e-16).
+  The brief's objection (1) is dead and I do not revive it.
+  And its arithmetic is right everywhere I checked it, including the exact rational witness.
+
+KNOWN WEAKNESSES OF MY OWN CASE, DECLARED BEFORE ANY REFUTER
+  1. My leg E1 counterexample family is NOT gauge-covariant, and leg E2 says so in the same leg.
+     Whether that disqualifies it depends on COR-J -- a premise the corpus never ledgered.  My
+     case is that the premise is doing the work, not that the premise is wrong.
+  2. My leg E3 is exhaustive only on K1 and only for roots supported on the loop with the
+     identity off it.  I did not enumerate the covariant variety on B0b (lengths 4 and 3).
+  3. Everything here is U(1), unit charge, two loops, two carriers.  No charge axis, no SU(2),
+     no third loop.
+  4. LINEAGE: I am Claude Opus 5, the same lineage as W-07..W-11 and as both lanes I am judging.
+     THIS IS LAYER FOURTEEN OF ONE LINEAGE.  Discount this lane as one block with them.

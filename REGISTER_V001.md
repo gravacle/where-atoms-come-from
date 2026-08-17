@@ -1124,3 +1124,132 @@ crossing properties runnable · or a **lineage-independent** lane reads this tab
 **NEXT, IF ANYTHING:** the convention question above is decidable — run the whole formation
 functional under COR-F's `T` instead of `M_gamma` on K1 and on B0b, and see whether the incidence
 becomes visible. It is the one experiment that would tell reading A from reading B.
+
+---
+
+## W-11 — THE CONVENTION RULING: **READING B. CARRIER-INDEPENDENCE IS A RESTATEMENT OF THE TRANSPORT CONVENTION. N1 IS NOT, SURVIVES INTACT, AND IS PUBLISHABLE UNDER TWO HYPOTHESES IT DOES NOT CURRENTLY CARRY.**
+
+Commissioned at the principal's direction, who deferred the disposition decision a **second** time
+to obtain it. The registrar's test (4 legs), then eleven agents sent to refute it: a uniqueness
+attack on `T`, a clock-correspondence attack, a mathematics attack, a full-strength steelman of
+Reading A, a blind independent rebuild, one cross-refuter each, and a ruling. **11 agents, 0
+errors.** Thirteen sealed lane directories, all verify. Every load-bearing claim re-verified by the
+registrar, **including the one that cuts against the registrar's own test.**
+
+**WHERE THE PROOF IS.** `W11_CONVENTION_RULING_V001.md` sha256 `4a71ca885ade912dc672d99c2e8e3b82e3041a3e159527e36658efdc5e3cf027`.
+Test: `LANE_W11_CONVENTION_TEST/`. Registrar's check: `LANE_W11_REGISTRAR_VERIFY/`.
+
+### THE RULING, AND IT IS NOT A JUDGEMENT CALL
+
+`W-01` **defines** `(M_gamma s)(v) = W(gamma)·s(v)` on the loop and `s(v)` off it. So `M_gamma`'s
+diagonal **is the incidence indicator**, the four classes are the joint level sets of the two
+operators' diagonals **by the definition of both**, and
+
+```
+Z_k = SUM_v (class character)_v |s_v|^2 = p00 + p10 u^k + p01 v^k + p11 (uv)^k
+```
+
+**is reached by substitution. No lemma intervenes. No other outcome was available.** That is what
+"restatement" means, and it is prior to K1, prior to B0b, prior to any carrier.
+**The corpus owns three-quarters of this and never assembled it:** W-03's *"an analytic fact about
+the construction, true before any carrier was built"* (`:191`), W-06's *"not scalar multiplication —
+FIBRE-WISE-NESS"* (`:577`), W-10's *"`M_gamma` is literally an element of the gauge group"* (`:409`).
+
+**AND THE SENTENCE CONFLATES THREE CLAIMS OF THREE DIFFERENT STATUSES.** (1) the functional depends
+on the state only through `pi` — **restatement**; (2) on the carrier only through `pi` —
+**restatement**; (3) `lambda = m(P)` — **theorem with a hypothesis**. Reading A's own wording is
+*"the physics does not depend on the complex, **which is why** one short note is publishable."*
+**That "which is why" is a non-sequitur and is the whole of Reading A's apparent strength.**
+
+### THE OPERATIVE VARIABLE, NAMED ON THE SEVENTH ATTEMPT — WITH THE GUARD RUN FIRST
+
+Six names have failed in this program, three of them from refuters commissioned to catch misnaming
+(W-10 N-7). The ruling grepped the register first and **attached a clause to an existing term
+rather than coining a seventh.**
+
+> **`|Z_n|` is a function of `pi` alone IFF the RELATIVE BRANCH OPERATOR
+> `Q_n = (branch_F^n)^* (branch_C^n)`, at the tick the record is read, is MULTIPLICATION BY A
+> FUNCTION OF THE INCIDENCE CLASS — fibre-wise (`REGISTER:577`) AND class-constant.**
+
+Registrar-verified over 600 cells across four operator families: **AGREE 600, DISAGREE 0**, with
+**316 blind and 284 not**, so the test could have failed. **The corpus's convention makes `Q_k`
+class-constant diagonal BY CONSTRUCTION** — its diagonal is literally `conj(W_F)^{ka} W_C^{kb}`.
+**That sentence is Reading B.** `Q` appears in no register row, and every result in the functional
+layer is a statement about it.
+
+### `T`'s CANONICITY — THE REGISTRAR'S OWN DECLARED WEAK POINT, DISSOLVED RATHER THAN DEFENDED
+
+`T` is **not** canonical among all unitaries with `U^L = M_gamma`; that family is
+positive-dimensional. **It is canonical under the corpus's own admissibility clause** — S2 audit
+CHOICE LEDGER A1 (`:657`), whose clause (c) the ruling **strikes as circular** (it presupposes
+fibre-wise-ness, the property at issue) and whose clauses (a) and (b), with locality from S1's own
+definition of parallel transport (`S1:52-53`), give a four-line theorem: `U = Lam·T`, COR-F's `T`
+times an `(L-1)`-torus of per-vertex phases the carrier does not supply.
+
+**AND THE FINDING NEEDS NEITHER FACT.** The load-bearing result is a **biconditional quantified
+over the whole family**, with `U^L = M_gamma` **dropped entirely** — 40 gradient descents over
+`U(3)xU(3)`, 18 free parameters, 38/40 converged, positive control `5.49e-12`, **0 non-fibre-wise
+solutions**. So the degradation if `T` is not canonical is: from *"the corpus's canonical rival
+makes incidence visible"* to *"**every** admissible edge tick does, and the corpus's operator is the
+one point of the family at which it does not."* **Logically stronger.**
+
+**AND BOTH HORNS OF THE BRIEF'S DISJUNCTION — MINE — ARE FALSE AS WRITTEN.** The diagonal `L`-th
+root `D` restores invisibility, but `D` is not an edge tick: it moves no fibre value and its
+diagonal is the class indicator again — **the corpus's own convention at a finer clock**. And
+"only the diagonal ones are blind" is false: **correlated non-diagonal pairs are `pi`-blind, 200 of
+200, registrar-verified.** The blind set is the **correlated locus**, measure zero for independent
+draws — **so every lane in this program that reported "0 of N random draws preserve invisibility"
+ran a control that could not have failed.**
+
+### THE COST TO READING B, CARRIED RATHER THAN BURIED
+
+**COR-F's `T` FIRES AT THE TRIVIAL CONNECTION.** `FOUNDING_DESIGN:117-118` and `S2:583`
+pre-register *"no formation at trivial connection"*. Registrar-verified at `a = 0`: under
+`M_gamma`, `min|Z_n| = 1.000000000000` **exactly** — contact point met; under `T`, `0.429`. At zero
+field the transports are pure cyclic shifts and the branches differ because the **paths** differ.
+**The edge convention fails the corpus's own pre-registered contact point.** So the corpus has a
+*reason* for its convention. **The ruling's distinction, which decides the question and which I
+adopt: MOTIVATING A STIPULATION DOES NOT CONVERT ITS ANALYTIC CONSEQUENCES INTO FINDINGS.** Granting
+the contact point in full buys the convention a **justification**, not its consequences a
+**discovery** — `Z_k = SUM over classes` is still substitution.
+
+### N1 — THE RESULT PROPOSED FOR PUBLICATION — **SURVIVES INTACT**
+
+**N1 is NOT a restatement.** It is a theorem about `(pi, characters)`, and it **survives replacing
+`M_gamma`**: under the fibre-wise root `D` — a finer clock, fractional winding, neither branch ever
+closed — the identification holds at every tick to `2.5e-16` and the rate is `m(pi)` to `3.9e-07`.
+A restatement of `M_gamma` would not survive replacing `M_gamma`. **PUBLISH IT — under two
+hypotheses it does not currently carry.** *H1: the relative branch operator is multiplication by a
+function of the incidence class — **a stipulation, not a theorem**, and the corpus's own sealed
+COR-F exhibits an admissible alternative under which it fails.* *H2: `(conj(W_F), W_C)` generates a
+dense subgroup of `T^2`* — without which the limit is the average over the proper closed subgroup,
+differing from `m(P)` by `4.8e-04` at the resonant connection and `3.7e-02` at S1's own.
+**H2 IS THE ERRATUM AGAINST W-02 (`:162-175`), AND N1 AS REGISTERED DOES NOT CARRY IT.**
+**WITHDRAW from N1's framing:** *"the physics does not depend on the complex, which is why one
+short note is publishable."* The note is publishable. **That is not why.**
+
+### WHAT READS TWO WAYS, SCORED NEITHER WAY
+
+**THE HOLONOMY READING** — if the corpus's object is *by nature* a closed-loop invariant, `T` is not
+a rival at all and mid-path comparison is a category error. **No lane closed it and neither does the
+ruling.** What the record shows is that the corpus is **not entitled to it for free: twice, the
+warrant offered for the circuit clock is a fact about edges.** CHOICE LEDGER A2 (`S2 audit :658`)
+warrants the circuit clock by citing *"edge count is carrier-supplied combinatorics (S1 :16-22)"* —
+and `S1:16-22` **is the edge list**; S3's C3 (`:981`) cites COR-F, whose text reads *"edge traversals
+**/** circuits"* — **a disjunction cited to close one disjunct**, the edge unit absent from its
+alternatives column. All four quotations verified at the bytes. **The verdict survives either
+reading, because under the holonomy reading `Z_k = SUM over classes` is still substitution.**
+
+### LINEAGE, AND A DISAGREEMENT LEFT UNADJUDICATED
+
+Every lane, every cross-refuter, the ruling and the registrar are Opus 5. **W-10 says layer twelve;
+the brief said thirteen; all five cross-refutations say fourteen. Three numbers for one round, in a
+program whose central discipline is applied by number. Recorded, not adjudicated.**
+
+**NOTHING HERE TAKES ANY OF THE PRINCIPAL'S THREE DECISIONS.** It answers the question the second
+deferral was for, and it attaches an answer to the second decision: **the Mahler note is
+publishable, under H1 and H2 stated, with one framing sentence withdrawn.**
+
+**REOPENS IF:** the holonomy reading is closed in either direction · an admissible operator is
+exhibited whose relative operator is class-constant diagonal but which is not fibre-wise, or vice
+versa (it would break the biconditional) · or a **lineage-independent** lane reads this row.

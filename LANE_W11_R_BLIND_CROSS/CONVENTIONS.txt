@@ -1,0 +1,54 @@
+LANE_W11_R_BLIND_CROSS -- PUBLISHED CONVENTIONS
+Cross-refuter of LANE_W11_R_BLIND (lane I, the blind independent rebuild), which attacks
+LANE_W11_CONVENTION_TEST (the registrar's W-11 lane).  Lens: DIFF AUDIT.
+
+WHAT I READ, AND WHEN.  Everything.  I am NOT a blind lane and do not claim to be: I read the
+registrar's four .py files, the blind lane's eight .py files, both SEALS.sha256, COR-F at
+S3_THE_CROSSING_AUDIT_V001.md:160-215 and :794, COR-J at :798, S1 in full, CHOICE LEDGER A1/A2 at
+S2_FORMATION_CONDITION_ON_K1_AUDIT_V001.md:657-658 with G2 at :686, S3's CHOICE LEDGER C1-C3 at
+S3_THE_CROSSING_V001.md:979-981, and REGISTER_V001.md rows W-01, W-02+erratum, W-03, W-04, W-05
+(N1-N4), W-06, W-07+erratum, W-08, W-09+erratum, W-10.  My independence claim is over CODE ONLY:
+xcore.py was written before either lane's implementation was opened in this session's working
+context, and it uses a different internal representation (T = P.D, a permutation times a diagonal)
+than either.  Every number below is reproducible from the files in this directory alone.
+
+CARRIERS.
+  K1  -- S1 sec.1 verbatim.  gamma_F = v0->v1->v2->v0 (filled), gamma_C = v0->v3->v4->v0
+          (unfilled, COR-F's own loop).  L_F = L_C = 3.
+  B0b -- run in BOTH published reconstructions, because they are different objects:
+          B0b/reg   = the registrar's (gamma_C = the row 0->1->2->0; the two loops traverse the
+                      shared edge in the SAME direction)
+          B0b/blind = the blind lane's (gamma_C = the column 0->3->6->0; the shared edge is
+                      traversed in OPPOSITE directions)
+          Both give S4:575's class multiset {00:4, 01:1, 10:2, 11:2}, L_F = 4, L_C = 3.
+          Neither is S4's own object; S4's carrier code is not in the repo (W-10 N-10).
+
+CONNECTION.  f = 1.0, c = sqrt(2) throughout -- S4:603, the ONLY generic connection the corpus
+publishes (W-10 N-4).  Per-edge phase splits are FIXED AND PUBLISHED IN xcore.py (K1: splitF
+proportional to (0.31,0.47,1.0), splitC to (0.23,0.91,1.0); B0b: shared-edge phase g = 0.37 and
+the splits named in the B0b builders).  This parameter is stated because the edge convention is
+more sensitive to it than to anything else (blind lane R-4, confirmed).
+
+OPERATORS.  T = the edge tick (P.D).  M = the circuit operator, = T^L exactly (X6.1, in exact
+Fractions).  S = diag(W^{1/L}) on the loop, the 'smeared' L-th root.  R = a diagonal L-th root of
+M whose labels differ WITHIN a class.  All four satisfy A^L = M_gamma exactly.
+
+ADVANCE.  Y(a,b) = <T_F^a s, T_C^b s>.  CIRCUIT = the line (L_F k, L_C k); EDGE = the line (n,n).
+
+ARMS.  Three ready states with EXACTLY equal pi, differing only (i) in the within-class split of
+|s_v|^2 or (ii) in phases.  equal_pi_triple() ASSERTS pi agreement to 1e-14 AND asserts the arms
+are not byte-identical, and auto_moves() derives the within-class moves FROM THE CARRIER'S OWN
+CLASS PARTITION so an arm cannot silently cross a class boundary.  (This guard fired on the first
+run of X1 and caught a cross-class move on B0b/reg; recorded, not hidden.)  Where a stronger test
+is wanted (X4) I sample 16 random states per cell at fixed pi instead of using three arms.
+
+SEEDS.  90210 (X1), 4242 / 80808 (X3), 5150 (X4), 31337 / 777 (X5).  Deliberately disjoint from
+both prior lanes' seeds so that no agreement can be a shared-draw artefact.
+
+PRECISION.  numpy float64 (double precision) is the default everywhere.  T^L = M is checked in
+exact Fractions (X6.1).  Mahler measures are Jensen-reduced quadratures reported with their grid
+and cross-checked by a Jensen-free 2-D quadrature; log(4/9) is obtained in closed form via branch
+domination, verified on 2^22 points.  Rates are finite-N Birkhoff averages, NOT proved limits.
+
+REPRODUCE.  python3 X1..X6 in this directory; each writes its own .OUT.txt.  numpy 2.0.2,
+python 3.9.6.  rerun_blind/ and rerun_registrar/ hold my byte-diffs of both prior lanes.

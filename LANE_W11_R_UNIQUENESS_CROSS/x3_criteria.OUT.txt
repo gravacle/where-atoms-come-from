@@ -1,0 +1,82 @@
+== X3.1  CRITERION (b) AS THE UNIQUENESS LANE ACTUALLY TESTED IT IS VOID ==
+   Its leg T3.1 declares (b) 'DECISIVE' and its returned verdict says: "COR-F's T is
+   unchanged (4.97e-16) while the rival's L-th root multiplies by a primitive root of
+   unity."  ITS OWN SEALED OUTPUT ON THE SAME LINE READS  |w(a')-w(a)| = 0.000000  and
+   w(a')/w(a) = 1.000000-0.000000j.  The labels 'root: CHANGED' and '(= a cube root of
+   unity)' are hard-coded strings sitting next to numbers that refute them.  Reproduced:
+      2000 draws, a_e -> a_e + 2pi.k for a random edge and k in [-3,3]:
+         max || T(a') - T(a) ||   = 2.53e-15      COR-F: unchanged
+         max |  w(a') - w(a) |    = 1.74e-15      ROOT: ALSO UNCHANGED
+   REASON: the lane's own root_op takes the principal root OF THE HOLONOMY W, i.e.
+   exp(i.angle(W)/L).  W is a point of U(1) and is unchanged by a 2pi shift of any a_e, so
+   the root is unchanged too.  The 2pi test cannot discriminate BY CONSTRUCTION, and the
+   verdict's claim that it does is contradicted by the lane's own sealed .OUT file.
+   CONSEQUENCE: 'R is a function of a LIFT of the connection to R, which S1 does not carry'
+   IS FALSE.  R is a function of W alone, and W is exactly what S1 sec4 publishes as the
+   complete gauge-invariant content of the connection.  CRITERION (b) FALLS.
+
+== X3.2  WHAT SURVIVES OF (b), STATED CORRECTLY -- AND IT IS NOT NOTHING ==
+   The lane's OTHER argument in the same leg is sound and is a different argument:
+   no CONTINUOUS h : U(1) -> U(1) has h(W)^L = W (deg(h).L = 1 is unsolvable in Z), so the
+   root rule has a cut.  Independent exhibition, with COR-F's T as the control arm:
+      W swept once around U(1), 4000 points: max step in the root  = 1.7318  (a JUMP)
+                                             max step in COR-F's T = 1.57e-03  (continuous)
+   AND THAT REPAIRS CRITERION (a), WHICH THE LANE DISMISSED AS '(b) IN DISGUISE'.  (a) says
+   the tick is a graph automorphism composed with EDGE PHASES, i.e. its entries are
+   monomials prod U_e^{m_e}, m_e in Z.  Monomials are exactly the CONTINUOUS characters of
+   the connection torus; w is discontinuous, so w is no monomial.  Exhaustive check:
+      integer exponent vectors m in [-3,3]^3 with prod U_e^m = W^(1/3) on 12 connections: []
+      (none exists for any range: 3m_e = 1 has no integer solution).  So (a) DISCRIMINATES
+      and is NOT (b) in disguise.  THE LANE UNDERSOLD THE ONE CRITERION THAT SURVIVES ITS
+      OWN ARITHMETIC AND OVERSOLD THE ONE THAT DOES NOT.
+
+== X3.3  A CRITERION NEITHER LANE PROPOSED: IS THE TICK LOCAL *IN THE CONNECTION*? ==
+   S1 sec3 gives the connection edge by edge.  A tick that moves a value across edge e
+   should depend on a_e and on nothing else.  Jacobian support, computed numerically:
+      COR-F tick T : entries [(0, 2), (1, 0), (2, 1)] depend on [1, 1, 1] edge phases each
+      root tick R  : entries [(0, 0), (1, 1), (2, 2)] depend on [3, 3, 3] edge phases each
+      circuit M    : entries [(0, 0), (1, 1), (2, 2)] depend on [3, 3, 3] edge phases each
+      max edges per entry:  T = 1   R = 3   M = 3
+   Each ENTRY of T is a single U_e; R's every entry needs all three.  So a sub-circuit tick
+   built as an L-th root of the holonomy is NON-LOCAL IN THE CONNECTION at sub-circuit
+   resolution: it must consult edges the fibre has not reached yet.  M_gamma is non-local
+   too, but M_gamma is a WHOLE-CIRCUIT operator, so for it that is not a defect.
+   THIS IS A DISCRIMINATOR THAT IS NEITHER (d) NOR CONTINUITY, AND IT IS THE CARRIER'S OWN
+   DATA LAYOUT (S1:16-22, one phase per edge).  It repairs part of what X3.1 removed.
+
+== X3.4  CRITERION (d), AND ITS CIRCULARITY, TESTED RATHER THAN CONCEDED ==
+      max |T^k[v_{i+k},v_i] - transport along that k-path|, k<=6 = 2.22e-16  (reproduced)
+      max |R^k[v_{i+k},v_i] - transport along that k-path|, k<=6 = 1.00e+00  (reproduced)
+   THE CIRCULARITY IS REAL AND I DO NOT LET THE LANE OFF IT: (d) says 'a tick must be one
+   edge of parallel transport', which is 'T is canonical because it is parallel transport'.
+   A reader who holds the object is the HOLONOMY -- a closed-loop invariant -- rejects (d)
+   outright.  BUT THE CORPUS ITSELF DOES NOT GET THAT READING FOR FREE: its own W-01 row
+   extends the transport off L_v0 to Gamma(L) = C^5 precisely so it can act on SECTIONS,
+   and S3 needs Omega_N = prod Z_k, a PROCESS in time.  (d) is not neutral, and neither is
+   its denial.  X3.3 is the discriminator that does NOT presuppose the process reading.
+
+== X3.5  DISCOUNTING THE LANE'S KILL OF CHOICE LEDGER A1 -- ONE WITNESS SMUGGLES, ONE DOES NOT ==
+   A1 (S2 audit :657) claims M_gamma is the UNIQUE extension that is (a) unitary, (b) uses
+   no data beyond fibres/edges/orientation/connection, (c) reduces to W. on L_v0.
+   The lane's X1 = M_gamma . (phased swap of v1,v2 ALONG e2) SMUGGLES: it singles out ONE
+   edge of the loop.  The carrier supplies the edge LIST, not a marked edge, and A1's own
+   clause (b) is exactly about what data may be used.  I DISCOUNT X1.  Its X2 = diag(W, W^2,
+   conj(W), 1, 1) needs an ORDERING of the loop's vertices -- which orientation does supply
+   (S1:27), so X2 stands.  AND HERE IS A THIRD THAT NEEDS NOTHING AT ALL:
+      X3 = diag(W, conj(W), conj(W), 1, 1)
+         unitary  ||X*X - I||                = 0.00e+00
+         gauge-covariant ||X(a^th) - D X D*|| = 1.57e-16
+         (c) |X[v0,v0] - W|                  = 0.00e+00
+         acts on every loop vertex, fixes v3,v4: True
+         uses NO ordering, NO marked edge, NO root choice -- only W and the loop's
+         vertex SET, and the root is distinguished by the incidence itself (S1:14).
+         || X3 - M_gamma || = 1.432
+      -> A1's UNIQUENESS IS FALSE, AND IT IS FALSE WITHOUT SMUGGLING ANYTHING.  The lane's
+         finding SURVIVES my discount, on a cleaner witness than either of its own.
+         The missing axiom on THIS witness is HOMOGENEITY (the same scalar, and specifically
+         W itself, at every loop vertex).  FIBRE-WISE-NESS is needed only to kill the lane's
+         discounted X1, so its 'A1 NEEDS TWO AXIOMS' is one axiom too many on the witnesses
+         that survive scrutiny.  THE CONCLUSION IS UNHARMED: W-10 0.4.1's phrase is
+         'FIBRE-WISE SCALAR MULTIPLICATION BY THE WHOLE-CIRCUIT HOLONOMY', and homogeneity
+         is its second half.  The lane's finding lands -- on the other half of the phrase
+         than it named.

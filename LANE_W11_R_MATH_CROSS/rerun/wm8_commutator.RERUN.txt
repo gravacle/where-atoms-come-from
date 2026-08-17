@@ -1,0 +1,21 @@
+  V(gamma_F) = [0, 1, 3, 4]   V(gamma_C) = [6, 7, 8]   overlap = []
+  class vector = [1 1 0 1 1 0 2 2 2]   class 11 occupied? False   (0=00, 1=10, 2=01, 3=11)
+  || [T_F, T_C] ||  =  0.00e+00    <-- EXACTLY ZERO, as on B0a
+  ARMS DIFF: min ||s_i - s_j|| over the 40-state ensemble = 1.183
+  pi identical across the ensemble to 2.2e-16
+    n     EDGE spread    CIRCUIT spread (k=n)
+    1       5.931e-01               2.776e-16
+    2       5.533e-01               2.776e-16
+    3       4.743e-01               2.498e-16
+    4       4.185e-01               3.331e-16
+    6       5.110e-01               3.331e-16
+    8       5.037e-01               2.220e-16
+    9       5.279e-01               3.886e-16
+   12       1.110e-16               3.886e-16
+   24       3.331e-16               2.220e-16
+  -> the commutator is EXACTLY 0 and class 11 is EMPTY, and the edge convention STILL makes
+     the incidence visible at every n not divisible by lcm(4,3) = 12, with spreads up to
+     O(1).  W-10's 'non-zero precisely when class 11 is occupied' is a true statement ABOUT
+     THE COMMUTATOR and a FALSE diagnostic for visibility: [T_F,T_C] = 0 is neither
+     necessary nor sufficient.  The operative object is sigma_F^n versus sigma_C^n (Leg 3).
+     A SEVENTH MISNAMING OF THE OPERATIVE VARIABLE, and it is in a registered W-10 row.

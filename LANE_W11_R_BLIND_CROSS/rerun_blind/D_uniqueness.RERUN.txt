@@ -1,0 +1,53 @@
+D1  THE SOLUTION SET OF  A unitary, A^3 = M_gamma  ON K1
+    A commutes with A^3 = M, so A preserves M's eigenspaces.  For gamma_F,
+    M_F = diag(W_F,W_F,W_F,1,1): A = A|_{span e0,e1,e2} (+) A|_{span e3,e4},
+    with A|_1^3 = W_F I_3 and A|_2^3 = I_2.  Sampled below; 8 free real parameters
+    generically (U(3)/U(1)^3 = 6, U(2)/U(1)^2 = 2) plus discrete cube-root labels.
+
+    %d draws each, seed 11235813.  'spread' = max over n<=24 of the |Z_n| spread across
+    the three ready states that share pi exactly.
+      generic pair (random cube roots, both loops)          min 1.46e-01  med 5.15e-01  max 8.35e-01   #(<1e-12)=0/400
+      both DIAGONAL, class-constant labels                  min 2.22e-16  med 4.44e-16  max 7.77e-16   #(<1e-12)=400/400
+      both DIAGONAL, per-vertex labels (NOT class-constant)  min 2.22e-16  med 2.25e-01  max 3.97e-01   #(<1e-12)=54/400
+
+    NAMED members of the solution set, each with A^3 = M exactly:
+      COR-F edge tick T (moves one edge)             A^3=M:True  Q_1 diag+class-const:False  spread=7.063e-01
+      'smeared holonomy' root diag(W^{1/3}) on loop  A^3=M:True  Q_1 diag+class-const:True   spread=2.220e-16
+      diagonal root, labels differing within a class A^3=M:True  Q_1 diag+class-const:False  spread=3.362e-01
+      V T_F V* / T_C   (V diagonal, commutes with M_F) A^3=M:True  Q_1 diag+class-const:False  spread=5.972e-01
+      T_C = T_F * D for some diagonal D ?   False
+
+D2  THE EXACT INVISIBILITY CRITERION
+    <A_F^n s, A_C^n s> = <s, Q_n s> with Q_n = (A_F^n)^* A_C^n = A_F^{-n} A_C^n.
+    <s,Q s> is a function of pi(s) alone for every s  <=>  Q is diagonal with
+    class-constant diagonal.  (=>: off-diagonals are read by phase changes that fix
+    every |s_v|; within-class variation of the diagonal is read by moving weight
+    inside a class.  <=: <s,Q s> = sum_ab q_ab p_ab.)   VERIFIED, 600 random pairs:
+      criterion agrees with observation on 600 of 600 pairs; mismatches: []
+
+D3  CANONICITY THEOREM FOR T -- AND IT CUTS FOR THE REGISTRAR, NOT AGAINST IT
+    THEOREM (proved here, verified below).  Let gamma be a cycle w_0->...->w_{L-1}->w_0,
+    L>=3.  Let A be unitary, identity off gamma, with support inside gamma contained in
+    the diagonal together with the loop's own directed edges (each fibre value either
+    stays put or moves one edge forward).  Then A is EITHER diagonal OR a pure shift.
+    PROOF. On the loop A[j,j]=d_j, A[j+1,j]=t_j, all else 0.  Columns j and j+1 overlap
+    only in row j+1, so orthogonality gives conj(t_j) d_{j+1} = 0 for every j.  If some
+    t_j != 0 then d_{j+1}=0, so |t_{j+1}|=1 by normalisation, so t_{j+1} != 0; going
+    round the cycle kills every d and forces |t_j|=1 for all j -- a pure shift.  Else
+    every t_j = 0 and A is diagonal.  QED  -- no intermediate 'partly moving' unitary.
+    COROLLARY.  Adding A^L = M_gamma: the shift branch has prod t_j = W_gamma, and if
+    each t_j is required to be a function of its OWN edge's transport U_e alone then
+    t_j = zeta*U_{e_j} with zeta^L = 1: T IS UNIQUE UP TO AN L-TH ROOT OF UNITY.
+    The diagonal branch is the 'smeared holonomy' family diag(W^{1/L}) -- which needs
+    the WHOLE circuit to write down, so it is NOT built from edge-local data.
+    => among LOCAL transports there are exactly TWO conventions, MOVE and DON'T MOVE,
+       and only MOVE is edge-local.  Verification, 4000 random local unitaries:
+      random support-pattern matrices that are unitary AND mixed (both d and t nonzero): 0
+      (the theorem says 0; a random draw is measure-zero on the unitary locus, so this is
+       a consistency check only -- the proof above is the content.)
+      pure-shift family unitary: True    diagonal family unitary: True
+      rate check on the diagonal ('smeared') convention -- invisibility holds, but the
+      per-tick rate is NOT m(P)/3 either:
+        sA  per-tick rate = -0.767506621   (m(P) = -0.767507880,  m(P)/3 = -0.255835960)
+        sB  per-tick rate = -0.767506621   (m(P) = -0.767507880,  m(P)/3 = -0.255835960)
+        sC  per-tick rate = -0.767506621   (m(P) = -0.767507880,  m(P)/3 = -0.255835960)

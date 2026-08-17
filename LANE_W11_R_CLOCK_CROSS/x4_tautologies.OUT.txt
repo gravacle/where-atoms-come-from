@@ -1,0 +1,45 @@
+== X4a  LEG 4b: 'T^m is gauge-INVARIANT iff L | m' IS THE COMMUTANT OF THE DIAGONAL GROUP ==
+   Lane C's leg 4 verifies, with 200 random gauge transforms at each of 14 ticks on two
+   carriers, that {m : T^m gauge-invariant} = {m : L | m}, and calls the coincidence with
+   leg 1's invisibility sublattice 'the stipulation, correctly identified -- NEW'.
+   But T(g.a) = G T(a) G* (leg 4a, its own number), so
+        T^m(g.a) = G T^m(a) G*  for EVERY m,
+   and X is fixed by conjugation by ALL diagonal unitaries  <=>  X IS DIAGONAL.
+   That is a fact about U(1)^V, true of EVERY matrix, and it needs no T.  Exhibited:
+   400 random matrices: max ||G X_diag G* - X_diag|| = 1.08e-15   (invariant)
+                        min over non-diagonal X of max ||G X G* - X|| = 2.959e+00
+   => 'gauge-INVARIANT OPERATOR' and 'DIAGONAL OPERATOR' ARE THE SAME PREDICATE.
+   Leg 4b therefore re-derives leg 1a in different words; the 'same set, two descriptions'
+   line is literally right and is not a second, independent identification.
+   AND THE REGISTER ALREADY HOLDS THE NAME: W-05 leg one -- 'M_gamma is LITERALLY AN ELEMENT
+   OF THE GAUGE GROUP U(1)^V' -- and W-06's corrected N4 mechanism -- 'not scalar
+   multiplication: FIBRE-WISE-NESS.  Any fibre-wise unitary lies in the local gauge group.'
+
+== X4b  LEG 3A's 'IDENTITY CHECK' IS TRUE OF ANY SEQUENCE OF NUMBERS WHATEVER ==
+   Lane C files as a NEW DEFECT: "the registrar's 'EDGE rescaled x3' ROW IS A UNIT ERROR,
+   exhibited as an identity: 3 x (mean over all n) = sum of the three residue means,
+   0.00e+00 at N=3e5".  That is the definition of an arithmetic mean split by residue.
+   random sequence #1:  3*mean(all) - sum(residue means) = 1.73e-18
+   random sequence #2:  3*mean(all) - sum(residue means) = 1.30e-18
+   random sequence #3:  3*mean(all) - sum(residue means) = 8.67e-19
+   The identity carries NO information about the registrar's row.  What the row actually
+   claims -- 'the EDGE per-tick rate is not m(P)/3' -- is ARITHMETICALLY TRUE and lane C
+   reproduces it (its own -0.864991741 vs m(P)/3 = -0.255836).  The charge that survives is
+   a charge of PRESUPPOSITION ('x3 presupposes one factor per edge tick'), which is a
+   framing objection, NOT a unit error.  Filing it under new_defects as 'A UNIT ERROR'
+   overstates it: no unit is misconverted anywhere in w11_d_rate.py.
+   for the record: m(P) = -0.767507880,  m(P)/3 = -0.255835960,  registrar's edge/tick = -0.864939
+
+== X4c  LEG 3B's HEADER SAYS 'ONE VARIABLE: THE CARRIER'.  DIFF THE ARMS. ==
+   arm 1: {'carrier': 'K1', 'nv': 5, 'LF': 3, 'LC': 3, 'pi': array([0. , 0.3, 0.3, 0.4]), 'nedges': 6}
+   arm 2: {'carrier': 'B0b', 'nv': 9, 'LF': 4, 'LC': 3, 'pi': array([0.44, 0.25, 0.09, 0.22]), 'nedges': 18}
+   connection arm 1 (6 phases)  = [-1.444932  1.904155  0.540777 -0.030561  0.829801  0.614974]
+   connection arm 2 (18 phases) = [ 1.22045  -0.17557   0.369333  0.826543  1.318716  0.238979  1.774338
+  1.737289  0.279748  1.644358  2.250451  1.452123  0.479     1.444916
+  1.925541  1.972973  1.393931  0.494459]
+   m(P) arm 1 = -0.767507880     m(P) arm 2 = -0.820980552
+   THINGS THAT MOVE BETWEEN THE TWO ARMS: ['carrier', 'nv', 'LF', 'nedges'] + pi + the connection + m(P)
+   SIX+ variables move.  The header 'ONE VARIABLE: the carrier (K1 vs B0b)' is false as
+   written; pi is a FREE choice, not forced by the carrier (only its zero pattern is).
+   Lane C's self_flag reports the 30x spread difference as unscored and 'not chased' --
+   correct -- but the leg is labelled as an isolated one-variable comparison and is not.

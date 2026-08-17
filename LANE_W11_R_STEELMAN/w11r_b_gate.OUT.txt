@@ -1,0 +1,45 @@
+== B0  THE EXACT WITNESS.  K1, TRIVIAL CONNECTION, EDGE CONVENTION, GATE FIRES AT ZERO ==
+  At a_e = 0 the edge tick is a pure permutation:  T_F s = (s2,s0,s1,s3,s4),
+  T_C s = (s4,s1,s2,s0,s3), so  Z^T_1 = conj(s2)s4 + conj(s0)s1 + conj(s1)s2 + conj(s3)s0
+  + conj(s4)s3.  Take the RATIONAL normalised ready state s = (6/11, 7/11, -6/11, 0, 0):
+    ||s||^2 = 1   (EXACT, in Fraction)
+    Z^T_1   = 0   (EXACT, in Fraction)   <-- THE GATE FIRES.  W_F = W_C = 1.
+    double-precision check |Z^T_1| = 0.000e+00
+    SAME STATE, CIRCUIT convention:  |Z_1| = 1.000000000000   (identically 1)
+  This state has support {11,10}, so W-02's registered CARRIER_INDEPENDENT criterion
+  FORMATION <=> G != {1} says NO FORMATION here (G = <W_C> = {1}).  The edge convention
+  fires anyway, exactly, with no field.
+
+== B1  AND NOT ONLY ON A DEGENERATE SUPPORT.  FULL-SUPPORT ZERO AT THE TRIVIAL CONNECTION ==
+  s = [-0.83880329 -0.06048931  0.19991789  0.28557643  0.41379828]   ||s||^2 = 1.000000000000
+  pi(s) = [0.         0.04362612 0.25278291 0.70359097]   (all three K1 classes occupied)
+  EDGE    convention at the TRIVIAL connection:  |Z^T_1| = 1.839e-16  <-- FIRES
+  CIRCUIT convention at the TRIVIAL connection:  |Z_1|   = 1.000000000000  <-- cannot fire
+
+== B2  IT IS NOT A KNIFE-EDGE: THE WHOLE RATE IS THERE WITH NO FIELD ==
+  ARM 1 (generic connection f=1.0,c=sqrt(2))  vs  ARM 2 (trivial connection).  ONE VARIABLE.
+                                            state A        state B        state C
+  EDGE    lambda/tick  GENERIC  f=1.0,c=sqrt(2)   -0.864256422   -0.969816715   -1.133806600
+  CIRCUIT lambda/circ  GENERIC  f=1.0,c=sqrt(2)   -0.767517534   -0.767517534   -0.767517534
+  EDGE    lambda/tick  TRIVIAL  a_e = 0   -0.041324716   -0.369469252   -0.796974619
+  CIRCUIT lambda/circ  TRIVIAL  a_e = 0    0.000000000    0.000000000    0.000000000
+  -> at the TRIVIAL connection the CIRCUIT rate is exactly 0 (no formation, as the founding
+     design demands) and the EDGE rate is strongly negative (formation, with no field).
+
+== B3  THE SAME ON B0b, WHERE THE TWO LOOP LENGTHS DIFFER (4 and 3) ==
+  GENERIC   EDGE lambda/tick =   -0.820514418    CIRCUIT lambda/circ =   -0.821609492
+  TRIVIAL   EDGE lambda/tick =   -0.002709213    CIRCUIT lambda/circ =   -0.000000000
+  -> same verdict.  The edge convention reports a durable record forming on a carrier with
+     ZERO connection, zero curvature and zero holonomy.
+
+== B4  THE RULING, IN THE CORPUS'S OWN WORDS ==
+  S2 sec3.2 disqualified reading (i) -- the pair (W_F z, W_C z) in C^2 -- with exactly this
+  test: 'it fires identically at the trivial connection, failing the criterion ... This
+  reading is bookkeeping wearing the costume of a result.'  And reading (ii), the
+  orthogonality of the two loops as chains: 'it holds for every connection and indeed
+  before any connection exists.  DISQUALIFIED BY THE CRITERION.  It is geometry, not
+  formation.'
+  COR-F's edge tick under the edge clock fails the SAME test in the SAME way: at a_e = 0
+  its Z is the overlap of two PERMUTATIONS of the ready state -- pure carrier combinatorics,
+  true before any connection exists.  On CHOICE LEDGER C4, which is CLOSED and entailed by
+  a contact point NAMED IN ADVANCE in FOUNDING_DESIGN sec8, it is not a formation condition.

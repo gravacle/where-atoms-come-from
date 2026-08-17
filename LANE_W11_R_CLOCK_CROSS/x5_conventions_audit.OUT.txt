@@ -1,0 +1,33 @@
+DECLARED (PUBLISHED_CONVENTIONS.txt):
+   Primary : generic_conn -> (f,c) = (1.0, sqrt2)  [the corpus's only generic point]
+   Secondary (LEG 3A ONLY): the registrar's a = (1.0,0.37,0.91,sqrt2,0.23,1.77)
+
+WHAT THE CODE ACTUALLY DOES, per file:
+   w11c_1_lattice.py            ["aK = np.array([1.0, 0.37, 0.91, 2**0.5, 0.23, 1.77])     # registrar's leg-B connection", 'aB = np.random.default_rng(20260817).uniform(0, 2*np.pi, 18)']
+   w11c_2_clockrays.py          ['a = generic_conn(K, np.random.default_rng(7 + K.nv))']
+   w11c_3_rate_decomp.py        ['aK = np.array([1.0, 0.37, 0.91, 2**0.5, 0.23, 1.77])', 'a = generic_conn(carrier, np.random.default_rng(7+carrier.nv))']
+   w11c_4_gauge.py              ['a = generic_conn(K, np.random.default_rng(7 + K.nv))']
+   w11c_5_correspondences.py    ['a = generic_conn(K, np.random.default_rng(7 + K.nv))']
+   w11c_7_closedform.py         ['a = generic_conn(K, np.random.default_rng(7 + K.nv))']
+   leg1 K1    (f,c) = (2.280000000, 3.414213562)
+   leg1 B0b   (f,c) = (3.074237529, 5.123454712)
+   declared primary on K1   (f,c) = (1.000000000, 1.414213562)
+   declared primary on B0b  (f,c) = (1.000000000, 1.414213562)
+
+FINDING X5-1.  LEG 1 -- the leg that produces the lane's headline set-equality, its 81/676 and
+63/676 counts, its 9.18e-01 / 9.04e-01 off-sublattice spreads, and its named operative variable --
+USES NEITHER DECLARED CONNECTION.  On K1 it uses the SECONDARY connection, which the conventions
+restrict to "leg 3A only"; on B0b it uses a THIRD connection, an undeclared uniform(0,2pi) draw
+that appears nowhere in PUBLISHED_CONVENTIONS.  The lane's own self_flag says "ONE pi PER CARRIER
+AND ONE GENERIC CONNECTION ... Leg 3A additionally uses the registrar's".  There are THREE.
+This does not change leg 1's arithmetic (its content is a diagonality theorem, connection-free),
+but the conventions block is false as written and the B0b connection is unledgered.
+
+FINDING X5-2.  LEG 1's B0b STATE FAMILY IS NOT REPRODUCIBLE FROM ITS PUBLISHED SEED ALONE.
+w11c_1_lattice.py draws both state families from ONE module-level rng = default_rng(20260817),
+so the B0b family depends on the K1 block having consumed 64 dirichlet+uniform draws first.
+Re-running the B0b block alone gives a different family (my x1 got only-F-mid-loop min 1.566e-01
+against the lane's 1.667e-01; only-C 3.271e-01 against 3.669e-01).  The set-equality, the counts
+and the orders of magnitude reproduce exactly; the quadrant minima do not, and those minima are
+quoted as figures in the lane's what_survives.
+

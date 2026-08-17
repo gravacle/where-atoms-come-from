@@ -1,0 +1,43 @@
+X6.1  T^L = M_gamma IN EXACT ARITHMETIC, AS A COMPOSITION OF SYMBOLIC MAPS
+      T is represented as v |-> (image vertex, exact phase in units of 2pi, a Fraction).
+      T^L is obtained by composing that map L times; no float ever touches it.
+      loop [0, 1, 2]    L=3  phases ['1/7', '2/7', '3/7']  ->  T^L fixes every loop vertex: True ; carries the SAME exact angle 6/7 at each: True
+      loop [0, 1, 2]    L=3  phases ['1/5', '1/3', '-2/15']  ->  T^L fixes every loop vertex: True ; carries the SAME exact angle 2/5 at each: True
+      loop [0, 1, 4, 3] L=4  phases ['3/11', '-1/4', '5/6', '1/3']  ->  T^L fixes every loop vertex: True ; carries the SAME exact angle 157/132 at each: True
+      loop [0, 3, 6]    L=3  phases ['0', '0', '1/2']  ->  T^L fixes every loop vertex: True ; carries the SAME exact angle 1/2 at each: True
+      ALL EXACT: True.  M_gamma is not a rival of T; it is the L-th power of T, as a
+      combinatorial identity in the free group on the loop's edges.  (This is the blind
+      lane's structural point, and it survives at exact arithmetic in a third code.)
+
+X6.2  THE CONNECTIONS EACH LANE ACTUALLY USED, AND WHETHER THEY ARE GENERIC
+      W-10 N-4: every RATIONAL (f,c) is exactly resonant; the corpus publishes exactly one
+      generic pair, S4:603's f = 1.0, c = sqrt(2).  PUBLISHED_CONVENTIONS.txt states no
+      (f,c) at all, so the registrar's pair has to be read out of w11_b_decisive.py:31.
+      registrar: a = [1.0, 0.37, 0.91, sqrt2, 0.23, 1.77]  =>  f = 2.280000 = 57/25 exactly,
+                 c = 3.414213562373 = 2 + sqrt(2) exactly.
+      EXACT ARGUMENT.  Suppose m*f + n*c = 2*pi*j with integers (m,n) != (0,0).
+        j = 0 : m*(57/25) + 2n + n*sqrt2 = 0 forces n*sqrt2 rational, so n = 0, so m = 0.
+        j != 0: pi = (m*57/25 + 2n + n*sqrt2)/(2j) would put pi in Q(sqrt2); pi is
+                transcendental.  Contradiction.  So the registrar's pair IS generic --
+        but no lane checked it, and it is not the pair the corpus publishes.
+      S4:603 published generic  f=1, c=sqrt2         min |m f + n c| mod 2pi over |m|,|n|<=200 = 3.437e-05 at (-163, -98)
+      registrar's pair          f=57/25, c=2+sqrt2   min |m f + n c| mod 2pi over |m|,|n|<=200 = 9.900e-06 at (-92, 78)
+      KNOWN-RESONANT control    f=2.0, c=1.1         min |m f + n c| mod 2pi over |m|,|n|<=200 = 0.000e+00 at (-88, 160)
+      the control returns EXACTLY 0, at (-88,160) = 8 x (-11,20), a multiple of W-10 N-4's
+      registered relation (11,-20) -- the search finds the whole relation subgroup, not
+      only its generator.  Neither working pair returns 0 at 200x the search radius.
+      Small-but-nonzero is not a proof and is not scored as one; the exact argument above
+      is what carries the genericity of both working pairs.
+
+X6.3  m(P) BY THREE ROUTES
+      Jensen-in-y, grid 2^14                      : -0.767507881012676
+      Jensen-in-y, grid 2^18                      : -0.767507880352467
+      Jensen-in-y, grid 2^20                      : -0.767507880357400
+      Jensen-in-y, grid 2^22                      : -0.767507880357744
+      Jensen-in-y, grid 2^24                      : -0.767507880357789
+      2-D midpoint quadrature 4096x4096, no Jensen  : -0.767507880865
+      register W-02 erratum / W-10 published      : -0.767507880
+      B0b SENSE U: pi = ['4/9', '2/9', '1/9', '2/9'] ; N-3 says one Jensen branch dominates and m = log(4/9).
+      min over 2^22 grid points of |A| - |B| = 0.111111  > 0, so branch A dominates EVERYWHERE
+      m by Jensen at 2^22 = -0.810930216216    log(4/9) = -0.810930216216    difference 0.00e+00
+      EXACT: with branch A dominating, m = m(4/9 + (2/9)x) = log max(4/9, 2/9) = log(4/9).

@@ -1,0 +1,51 @@
+LEG B -- INVISIBILITY OF INCIDENCE UNDER THE TWO CLOCKS.  K1, f=1.0, c=sqrt(2) (generic).
+   edge-phase split gamma_F: [0.174157303371 0.26404494382  0.561797752809]  sum = 1.0
+   edge-phase split gamma_C: [0.151994915582 0.601371187738 0.660847459053]  sum = 1.414213562373095
+
+B.0  *** ARMS DIFF -- proving the three arms are not the same bytes ***
+   sA (published)           |s|^2 = [0.4  0.15 0.15 0.15 0.15]
+                            arg s = [0. 0. 0. 0. 0.]
+   sB (within-class moved)  |s|^2 = [0.4  0.25 0.05 0.02 0.28]
+                            arg s = [0. 0. 0. 0. 0.]
+   sC (phases only)         |s|^2 = [0.4  0.15 0.15 0.15 0.15]
+                            arg s = [ 0.   0.7 -1.9  2.3  0.4]
+   ||sA - sB|| = 0.346517   ||sA - sC|| = 0.995539   ||sB - sC|| = 0.809467
+   pi(sA) = [0.  0.3 0.3 0.4]
+   pi(sB) = [0.  0.3 0.3 0.4]
+   pi(sC) = [0.  0.3 0.3 0.4]
+   max |pi(sA)-pi(sB)| = 5.55e-17   max |pi(sA)-pi(sC)| = 5.55e-17   -> pi IDENTICAL, states NOT
+
+B.1  CIRCUIT clock  (tick = one whole circuit in each branch; branch op = M = T^3)
+   |Z_k| spread across the three states, max over k<=2000 : 2.609e-15
+   k=1..6 for each state:
+      sA (published)           [0.610453523184 0.18065888553  0.311571571094 0.44988356809  0.857747568458 0.606128304395]
+      sB (within-class moved)  [0.610453523184 0.18065888553  0.311571571094 0.44988356809  0.857747568458 0.606128304395]
+      sC (phases only)         [0.610453523184 0.18065888553  0.311571571094 0.44988356809  0.857747568458 0.606128304395]
+
+B.2  EDGE clock  (tick = one edge in each branch; branch op = T)
+   |Z^T_n| spread across the three states, max over n<=2000 : 7.956e-01
+   spread at n = 1..12 : [5.983e-01 7.063e-01 1.110e-16 6.788e-02 4.401e-01 2.776e-17 3.768e-01 1.554e-01 1.110e-16 2.557e-01 2.922e-02 0.000e+00]
+   spread on n in 3Z (n=3,6,...,1998): max = 2.665e-15
+   spread off 3Z                    : min = 1.092e-02
+   n=1..6 for each state:
+      sA (published)           [0.902807558356 0.762796780921 0.610453523184 0.223966283623 0.130001632588 0.18065888553 ]
+      sB (within-class moved)  [0.687425838535 0.597710992353 0.610453523184 0.291850842154 0.232706364796 0.18065888553 ]
+      sC (phases only)         [0.304478396932 0.056526769194 0.610453523184 0.236261182435 0.570103330087 0.18065888553 ]
+
+B.3  *** THE ISOLATION.  Hold the CLOCK fixed at whole circuits and swap the
+     transport operator M <-> T.  This moves the variable the question NAMES. ***
+   max |<M_F^k s, M_C^k s> - <T_F^{3k} s, T_C^{3k} s}>| over 3 states, k<=50 : 6.82e-15
+   ZERO VARIABLES MOVED.  At every time BOTH conventions name, they are the same number.
+   The reported difference lives entirely at times the circuit clock does not name.
+
+B.4  RATES
+   m(P), P = [0.  0.3 0.3 0.4]   (N1's polynomial)   = -0.767507880357
+   N=   2000  circuit rate/tick: ['-0.766422387', '-0.766422387', '-0.766422387']  spread 4.44e-16
+             edge    rate/tick: ['-0.797918245', '-0.835279633', '-1.064474031']  spread 2.67e-01
+             3 x edge rate    : ['-2.393754736', '-2.505838899', '-3.193422092']   (compare m(P)=-0.767507880)
+   N=  20000  circuit rate/tick: ['-0.767498421', '-0.767498421', '-0.767498421']  spread 1.67e-15
+             edge    rate/tick: ['-0.799439287', '-0.836699637', '-1.062685805']  spread 2.63e-01
+             3 x edge rate    : ['-2.398317860', '-2.510098911', '-3.188057414']   (compare m(P)=-0.767507880)
+   N= 200000  circuit rate/tick: ['-0.767504139', '-0.767504139', '-0.767504139']  spread 4.22e-15
+             edge    rate/tick: ['-0.799551742', '-0.836645515', '-1.062674015']  spread 2.63e-01
+             3 x edge rate    : ['-2.398655227', '-2.509936544', '-3.188022046']   (compare m(P)=-0.767507880)

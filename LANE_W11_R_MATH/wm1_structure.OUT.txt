@@ -1,0 +1,31 @@
+== M1  THE STRUCTURE THEOREM, VERIFIED ==
+   max | Z^T_n  -  [ c00 + c10 x^qF + c01 y^qC + c11 x^qF y^qC ] |   over n = 1..240
+    K1  L_F=3 L_C=3 lcm= 3   worst residual = 6.57e-15
+        rho=0 coefficients   c = [0. +0.j 0.3+0.j 0.3+0.j 0.4+0.j]
+        pushforward          pi = [0.  0.3 0.3 0.4]
+        || c(rho=0) - pi ||  = 0.00e+00      <-- N1's polynomial IS the rho=0 block
+        rho=1  c = [0.      +0.j       0.272196-0.26036j  0.184248+0.276149j 0.097866+0.113676j]   ||c-pi|| = 5.123e-01
+        rho=2  c = [ 0.      +0.j       -0.001055-0.38148j  -0.167831+0.237898j  0.112771+0.098908j]   ||c-pi|| = 7.771e-01
+
+   B0b  L_F=4 L_C=3 lcm=12   worst residual = 2.90e-15
+        rho=0 coefficients   c = [0.44+0.j 0.25+0.j 0.09+0.j 0.22+0.j]
+        pushforward          pi = [0.44 0.25 0.09 0.22]
+        || c(rho=0) - pi ||  = 0.00e+00      <-- N1's polynomial IS the rho=0 block
+        rho=1  c = [ 0.44    +0.j        0.143578+0.19097j  -0.014488-0.102908j  0.06271 +0.105875j]   ||c-pi|| = 3.244e-01
+        rho=2  c = [0.44    +0.j       0.062042+0.08674j  0.085845-0.040382j 0.009918+0.210619j]   ||c-pi|| = 3.647e-01
+        rho=3  c = [ 0.44    +0.j        0.020055+0.160533j  0.09    +0.j       -0.102392-0.021467j]   ||c-pi|| = 4.278e-01
+
+== M1b  THE COEFFICIENTS ARE BILOCAL: they see WITHIN-CLASS SPLIT and PHASE, pi does not ==
+  state A:  pi = [0.  0.3 0.3 0.4]
+            rho=0  c = [0. +0.j 0.3+0.j 0.3+0.j 0.4+0.j]
+            rho=1  c = [0.        +0.j         0.2721956 -0.26035977j 0.18424821+0.27614888j 0.09786562+0.11367638j]
+            rho=2  c = [ 0.        +0.j         -0.00105543-0.38148046j -0.16783111+0.23789792j  0.11277086+0.0989077j ]
+  state B:  pi = [0.  0.3 0.3 0.4]
+            rho=0  c = [0. +0.j 0.3+0.j 0.3+0.j 0.4+0.j]
+            rho=1  c = [0.        +0.j         0.18716621-0.2914941j  0.13091298+0.16517986j 0.        +0.j        ]
+            rho=2  c = [ 0.        +0.j          0.        +0.j         -0.13489758+0.31061218j  0.09207702+0.0807578j ]
+  state C:  pi = [0.  0.3 0.3 0.4]
+            rho=0  c = [0. +0.j 0.3-0.j 0.3+0.j 0.4+0.j]
+            rho=1  c = [ 0.        +0.j          0.12648854-0.03220429j  0.10665265-0.03881146j -0.05691777+0.13878173j]
+            rho=2  c = [ 0.        +0.j          0.03212933-0.20157461j  0.10640697+0.37939857j -0.00737757+0.14981846j]
+  -> rho=0 row identical across A,B,C (= pi).  rho=1,2 rows differ.  That is the whole effect.

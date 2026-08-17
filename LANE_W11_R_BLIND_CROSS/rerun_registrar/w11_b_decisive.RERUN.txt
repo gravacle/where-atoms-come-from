@@ -1,0 +1,31 @@
+  pi(A) = [0.  0.3 0.3 0.4]   |s|^2 = [0.4  0.15 0.15 0.15 0.15]
+  pi(B) = [0.  0.3 0.3 0.4]   |s|^2 = [0.4  0.3  0.   0.05 0.25]
+  pi(C) = [0.  0.3 0.3 0.4]   |s|^2 = [0.4  0.15 0.15 0.15 0.15]
+  -> all three have IDENTICAL pi. Under the corpus's own theorems they are indistinguishable.
+
+== B1  UNDER THE CORPUS'S CONVENTION (M_gamma), CIRCUIT k ==
+    k           |Z(A)|           |Z(B)|           |Z(C)|    max spread
+    1   0.319750930010   0.319750930010   0.319750930010      1.11e-16
+    2   0.760050706869   0.760050706869   0.760050706869      2.22e-16
+    3   0.586994870469   0.586994870469   0.586994870469      0.00e+00
+    4   0.307756757635   0.307756757635   0.307756757635      5.55e-17
+    5   0.456532066199   0.456532066199   0.456532066199      5.55e-17
+    6   0.513844088442   0.513844088442   0.513844088442      1.11e-16
+  -> identical. The invisibility theorem, working exactly as registered.
+
+== B2  UNDER COR-F's CONVENTION (T), EDGE TICK n.  ONE VARIABLE MOVED: THE CONVENTION ==
+    n           |Z(A)|           |Z(B)|           |Z(C)|    max spread  circuit?
+    1   0.569227769927   0.342242104303   0.188803928486      3.80e-01  
+    2   0.071727337054   0.393705552451   0.352919489322      3.22e-01  
+    3   0.319750930010   0.319750930010   0.319750930010      5.55e-17  = circuit 1
+    4   0.581125277232   0.449269120933   0.374524718749      2.07e-01  
+    5   0.234214852448   0.230739783502   0.388787327833      1.58e-01  
+    6   0.760050706869   0.760050706869   0.760050706869      0.00e+00  = circuit 2
+    7   0.647209237845   0.523398662989   0.057478642739      5.90e-01  
+    8   0.199740989173   0.451559362712   0.340709111745      2.52e-01  
+    9   0.586994870469   0.586994870469   0.586994870469      0.00e+00  = circuit 3
+
+== B3  DO THE TWO CONVENTIONS AGREE WHERE THEY OVERLAP? ==
+  max | Z_edge(3k) - Z_circuit(k) | over 3 states, k<=7 = 1.97e-15
+  -> on K1 both loops have length 3, so the circuit convention is EXACTLY the edge
+     convention SAMPLED EVERY THIRD TICK. It is a subsequence, not a different object.

@@ -1,0 +1,56 @@
+
+================ K1  L_F=3 L_C=3  lcm=3  gcd=3 ================
+   24 same-pi states, pi = [0.  0.3 0.3 0.4];  m(P) = -0.767507880358;  (f,c)=(1.000000,1.414214)
+   every row below: same states, same connection, same evaluator, 240 readings
+   CORR-E   pairs#0d948c2273ae out#823dcb4b4ecb  max|Z|-spread 8.789e-01   rate spread 4.806e-01   mean rate -1.007618861   equal edges              <- EDGE CLOCK
+   CORR-C   pairs#47dbe20152a6 out#9a0347140c08  max|Z|-spread 6.661e-16   rate spread 4.441e-16   mean rate -0.763258545   equal circuits           <- CIRCUIT CLOCK (S3:395 'k_n circuits of EACH')
+   CORR-D   pairs#fa4c655ee765 out#e901f71481a2  max|Z|-spread 6.661e-16   rate spread 4.441e-16   mean rate -0.764561029   whole circuits, rates 1:2
+   CORR-X   pairs#47dbe20152a6 out#9a0347140c08  max|Z|-spread 6.661e-16   rate spread 4.441e-16   mean rate -0.763258545   equal edges AND both closed
+   CORR-R   pairs#0d948c2273ae out#823dcb4b4ecb  max|Z|-spread 8.789e-01   rate spread 4.806e-01   mean rate -1.007618861   equal circuit FRACTION phi in (1/3)Z  -> [(np.int64(1), np.int64(1)), (np.int64(2), np.int64(2)), (np.int64(3), np.int64(3))]...
+   CORR-P   pairs#79ec75fa4cb9 out#7f2e2a48a56d  max|Z|-spread 8.897e-01   rate spread 3.780e-01   mean rate -1.073335232   equal holonomy phase, max residual 0.235 rad
+   COLLAPSE REPORT (arms with identical output hashes are the SAME arm):
+      CORR-E  ==  CORR-R   <- COLLAPSED, counts once
+      CORR-C  ==  CORR-X   <- COLLAPSED, counts once
+      CORR-D
+      CORR-P
+      distinct arms on K1: 4 of 6
+   ---- rate on CORR-C minus m(P) = +4.25e-03   rate on CORR-R minus m(P) = -2.40e-01
+   NOTE: gcd(L_F,L_C) = 3, so 'the same fraction' admits phi = 1/3, which IS
+         the edge clock.  On this carrier the two conventions are commensurable.
+
+================ B0b  L_F=4 L_C=3  lcm=12  gcd=1 ================
+   24 same-pi states, pi = [0.44 0.25 0.09 0.22];  m(P) = -0.820980552070;  (f,c)=(1.000000,1.414214)
+   every row below: same states, same connection, same evaluator, 240 readings
+   CORR-E   pairs#0d948c2273ae out#242b0963290e  max|Z|-spread 8.382e-01   rate spread 4.135e-02   mean rate -0.831092455   equal edges              <- EDGE CLOCK
+   CORR-C   pairs#a66ed4257254 out#3848697a41da  max|Z|-spread 6.661e-16   rate spread 3.331e-16   mean rate -0.823978841   equal circuits           <- CIRCUIT CLOCK (S3:395 'k_n circuits of EACH')
+   CORR-D   pairs#095669b22d14 out#f12555a5b346  max|Z|-spread 5.551e-16   rate spread 3.331e-16   mean rate -0.821076638   whole circuits, rates 1:2
+   CORR-X   pairs#24040ba3788f out#0048ee95a30d  max|Z|-spread 4.441e-16   rate spread 3.331e-16   mean rate -0.828975725   equal edges AND both closed
+   CORR-R   pairs#a66ed4257254 out#3848697a41da  max|Z|-spread 6.661e-16   rate spread 3.331e-16   mean rate -0.823978841   equal circuit FRACTION phi in (1/1)Z  -> [(4, 3), (8, 6), (12, 9)]...
+   CORR-P   pairs#a1a9e0f60ef2 out#aedfa215abdb  max|Z|-spread 8.752e-01   rate spread 3.456e-01   mean rate -0.771733364   equal holonomy phase, max residual 0.235 rad
+   COLLAPSE REPORT (arms with identical output hashes are the SAME arm):
+      CORR-E
+      CORR-C  ==  CORR-R   <- COLLAPSED, counts once
+      CORR-D
+      CORR-X
+      CORR-P
+      distinct arms on B0b: 5 of 6
+   ---- rate on CORR-C minus m(P) = -3.00e-03   rate on CORR-R minus m(P) = -3.00e-03
+   NOTE: gcd(L_F,L_C) = 1, so 'the same FRACTION of a circuit' has NO solution in
+         integer edge counts except whole circuits.  CORR-R COLLAPSES ONTO CORR-C.
+
+================ WHAT LEG 5 SETTLES ================
+  THE EFFECT DOES NOT SURVIVE EVERY FAIR CORRESPONDENCE, AND IT DOES NOT DIE UNDER EVERY ONE.
+
+  DIES (|Z|-spread exactly 0 at machine precision) under CORR-C, CORR-D, CORR-X on both
+  carriers, and under CORR-R on B0b.
+  SURVIVES under CORR-E on both carriers, under CORR-P on both, and under CORR-R on K1.
+
+  THE LINE BETWEEN THEM IS NOT circuit-versus-edge.  It is: does the reading happen when BOTH
+  branches are at a CLOSED loop?  Every correspondence that guarantees it kills the effect;
+  every correspondence that does not, exhibits it.
+
+  AND THE TWO CARRIERS DISAGREE ABOUT WHICH SIDE 'THE SAME FRACTION OF A CIRCUIT' FALLS ON:
+  on K1 (gcd 3) that reading INCLUDES the edge clock, on B0b (gcd 1) it EXCLUDES everything
+  except whole circuits.  So 'the same time' is not decided by the construction: it is decided
+  by an arithmetic accident of the two loop lengths.
+

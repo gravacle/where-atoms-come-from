@@ -1,0 +1,67 @@
+== M7a  ON K1 THE TWO CONVENTIONS ARE THE SAME OBJECT AT CIRCUIT-COMPLETION TIMES ==
+   |gamma_F| = |gamma_C| = 3, so T^3 = M in BOTH branches at the SAME tick.
+   max_k |Z_edge(3k) - Z_circuit(k)|, k <= 40, three states = 2.77e-15
+   spread at per-circuit times n = 3,6,9,12 : ['5.6e-17', '0.0e+00', '0.0e+00', '5.6e-17']
+   edge rate SAMPLED at circuit times (N=2e5): ['-0.767500322', '-0.767500322', '-0.767500322']
+   circuit rate                       (N=2e5): ['-0.767500322', '-0.767500322', '-0.767500322']
+   -> IDENTICAL.  On K1, adopting COR-F's transport and keeping the corpus's per-circuit
+      clock changes NOTHING -- not one figure, not the rate, not the invisibility.
+      K1 CANNOT DECIDE THE CONVENTION QUESTION.  It is a carrier on which the two
+      conventions coincide wherever the corpus ever looks.
+
+== M7b  ON B0b THE CORPUS'S OWN CLOCK RUNS THE TWO BRANCHES AT DIFFERENT EDGE SPEEDS ==
+   M_F^k, M_C^k advance branch F by 4k edges and branch C by 3k edges.  At k = 1 that is
+   4 edges against 3.  The EDGE convention is the one that holds the edge count equal.
+   clock                                         spread at 1st         2nd         3rd         4th
+   per F-circuit  (n = 4,8,12,16)                     2.26e-01    1.58e-01    5.55e-17    1.74e-01
+   per C-circuit  (n = 3,6,9,12)                      1.15e-01    5.39e-01    3.51e-01    5.55e-17
+   per lcm        (n = 12,24,36,48)                   5.55e-17    5.55e-17    2.36e-16    3.33e-16
+   corpus's circuit convention  M^k                   5.55e-17    0.00e+00    1.67e-16    0.00e+00
+   -> the ONLY edge clock that restores invisibility is the lcm one, and 12 ticks is
+      3 F-circuits AND 4 C-circuits -- not 'one write per circuit' for either branch.
+      The pro-Reading-A move dies on B0b.
+
+   And the RATES on B0b, which the registrar never computed (N = 2e5):
+   clock                                               state A        state B        state C    spread
+   edge tick, per tick                            -0.820623461   -0.816620332   -0.810437841   1.0e-02
+   edge, sampled per F-circuit (step 4)           -0.821009901   -0.820999322   -0.821015498   1.6e-05
+   edge, sampled per C-circuit (step 3)           -0.820973648   -0.807907406   -0.813978912   1.3e-02
+   edge, sampled per lcm       (step 12)          -0.821015887   -0.821015887   -0.821015887   1.0e-15
+   corpus's circuit convention                    -0.820886436   -0.820886436   -0.820886436   3.2e-15
+   m(pi) = N1's registered value on this pi = -0.820980552070
+
+== M7c  THE 1.6e-05 AT THE PER-F-CIRCUIT CLOCK WAS SAMPLING NOISE, AND WHAT IS UNDER IT ==
+   IS THE DEFECT CLASS THE REGISTER HAS MISNAMED SIX TIMES (W-10 N-7, N-3).
+   At 5e4 samples the noise is itself O(1e-5), so the time average cannot decide it.
+   Settle it with LEG 2's closed form restricted to the residue subset.
+   clock                                      state A         state B         state C     spread
+   every tick (rho = 0..11)              -0.820641719    -0.816607197    -0.810420557   1.02e-02
+   per F-circuit (rho = 0,4,8)           -0.820980552    -0.820980552    -0.820980552   1.11e-16
+   per C-circuit (rho = 0,3,6,9)         -0.820980552    -0.807860488    -0.813970054   1.31e-02
+   per lcm (rho = 0)                     -0.820980552    -0.820980552    -0.820980552   2.22e-16
+   The per-F-circuit spread is EXACTLY 0, not 1.6e-05.  The time average was noise and I
+   was about to score a null.  THE REASON IT IS ZERO IS NOT INVISIBILITY:
+
+   STRUCTURE.  At n = 0 mod L_F the tick B = T_F^0 T_C^{r_C} = T_C^{r_C} is the IDENTITY off
+   gamma_C, and classes 00 and 10 both lie OUTSIDE gamma_C.  So c00 = p00 and |c10| = p10
+   EXACTLY, for every state and every such n: THE FIRST JENSEN BRANCH IS N1's OWN, always.
+   All the state dependence is pushed into the second branch (c01, c11).  Hence:
+     whenever N1's first branch DOMINATES the second everywhere on the circle -- W-10 N-3's
+     exact mechanism, the one that makes B0b's lambda = log(4/9) closed-form -- the rate at
+     the F-circuit clock is EXACTLY N1's lambda for every state with that pi, even though
+     |Z_n| itself is visibly state-dependent (2.26e-01) at every one of those very ticks.
+   IT IS A PROPERTY OF THE STATE, NOT OF THE CONSTRUCTION.  Exhibited, one variable moved:
+     registrar's state, p00 = 0.44 (branch 1 dominates)
+       pi = [0.44 0.25 0.09 0.22]   m(pi) = -0.820980552
+       min(|branch1| - |branch2|) at rho = 0,4,8 : +0.06000 +0.00062 +0.10618
+       m at rho = 0,4,8 : -0.820980552 -0.820980552 -0.820980552   mean -0.820980552
+     same carrier, p00 = 0.10 (branches cross)         
+       pi = [0.1  0.34 0.14 0.42]   m(pi) = -0.867500568
+       min(|branch1| - |branch2|) at rho = 0,4,8 : -0.12000 -0.11671 +0.06976
+       m at rho = 0,4,8 : -0.867500568 -0.989498065 -1.078809661   mean -0.978602765
+   -> at p00 = 0.44 all three equal m(pi) and the F-circuit clock looks invisible.
+      At p00 = 0.10 the branches cross and the same clock gives -0.8675 / -0.9895 / -1.0788.
+      A NULL THAT READS TWO WAYS, AND I SCORE IT AS NEITHER: it is not a restoration of
+      invisibility and it is not nothing.  It is BRANCH DOMINATION -- the second of the two
+      mechanisms W-10 N-7 says no proposed name covers -- reappearing one convention down.
+      And it is invisible on K1, where L_F = L_C makes the F-circuit clock the lcm clock.

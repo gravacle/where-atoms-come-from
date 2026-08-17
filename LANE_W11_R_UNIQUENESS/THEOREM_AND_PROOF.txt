@@ -1,0 +1,97 @@
+LANE W-11-R-T — THE CLOSED-FORM CONTENT.  Everything here is proof, not floating point; the .OUT
+files carry the corroborating arithmetic and the sharp counts that the proof predicts in advance.
+
+NOTATION.  Carrier with vertex set V.  Two designated simple loops gamma_F, gamma_C, of lengths
+L_F, L_C, with vertex sets also written gamma_F, gamma_C.  J = gamma_F ^ gamma_C, which IS class 11.
+Section space C^V.  M_gamma = W(gamma) on the loop, 1 off it.  Z_n(s) = <T_F^n s, T_C^n s>.
+pi(s) = pushforward of |s_v|^2 onto the four classes.  "Invisibility at n" = "Z_n(s) depends on s
+only through pi(s), for every s".
+
+-------------------------------------------------------------------------------------------------
+PROP 1 (THE FAMILY).  { T unitary on C^V : T = T_S (+) I off gamma, T^L = M_gamma }
+                    = { T_S unitary on C^gamma : T_S^L = W I }
+                    = { V diag(w_{j_1},...,w_{j_L}) V^* : V in U(L), j in {0..L-1}^L },
+w_j = rho.zeta^j the L-th roots of W.  PROOF: M_gamma is W.I ON the loop; a unitary is normal, and
+T_S^L = W I says the minimal polynomial divides z^L - W, i.e. spec(T_S) is inside the L-th roots.
+It is a disjoint union of flag manifolds U(L)/(U(m_0)x...xU(m_{L-1})) indexed by the multiplicity
+vector; the generic component has real dimension L^2 - L (= 6 on K1's loops).  COR-F's T lies in the
+generic component; M_gamma^{1/L} lies in the most degenerate one.  [checked: t1_family.OUT.txt T1.3]
+
+PROP 2 (THE LOCAL FAMILY).  Add: T_{vu} = 0 unless u = v or (u->v) is an edge of gamma.  Write
+T_S = D + N, D = diag(d_i), N_{i+1,i} = n_i.  Unit columns give |d_i|^2+|n_i|^2 = 1; columns i and
+i+1 overlap only in row i+1, so conj(n_i) d_{i+1} = 0 for every i.  Hence for each i, n_i = 0 or
+d_{i+1} = 0; and if any n_i != 0 then d_{i+1} = 0, so |n_{i+1}| = 1, so d_{i+2} = 0, and the
+implication runs around the cycle.  THEREFORE EXACTLY TWO BRANCHES AND NO THIRD:
+   (A) DIAGONAL   T = diag(d_v) with d_v^L = W          — a FINITE set, L^L members;
+   (B) SHIFT      (Ts)(v_{i+1}) = n_i s(v_i), |n_i| = 1, prod n_i = W — an (L-1)-torus.
+COR-F's T is the member of (B) with n_i = U_i.  [corroborated exhaustively: t1 T1.4, 91^3 grid,
+exactly 2 unitary points, one per branch]
+
+PROP 3 (WHAT INVISIBILITY IS).  Z_n(s) = s^* Q_n s with Q_n = (T_F^n)^* T_C^n.  Replacing s by
+diag(e^{i phi_v}) s leaves pi fixed, so invisibility forces every off-diagonal entry of Q_n to
+vanish; then Z_n = sum_v (Q_n)_{vv} |s_v|^2 depends only on class sums iff diag(Q_n) is constant on
+each class.  Conversely both conditions clearly suffice.  SO:
+      INVISIBILITY AT n  <=>  Q_n DIAGONAL AND diag(Q_n) CLASS-CONSTANT.
+This is the instrument D(n) of PUBLISHED_CONVENTIONS.  It quantifies over ALL states, so unlike a
+three-state sample it cannot return a false confirmation.
+
+THEOREM 4 (THE STRUCTURE OF EVERY INVISIBILITY-RESTORING MEMBER).  Fix n and suppose invisibility
+holds at n.  For any v not in gamma_C, column v of T_C^n is e_v, so Q_n[u,v] = conj((T_F^n)[v,u]);
+diagonality of Q_n therefore forces row v of T_F^n to be diagonal for every v outside gamma_C — in
+particular for every v in gamma_F \ J.  Unitarity of T_F^n then makes those rows equal to phases
+times e_v, hence their columns too, so
+      T_F^n = (a unitary A_n on C^J)  (+)  (a diagonal on gamma_F \ J)  (+)  I,
+and symmetrically T_C^n = B_n (+) diagonal (+) I.  The cross blocks of Q_n then vanish
+automatically, and the surviving conditions are exactly
+   (i)   diag(T_F^n) constant on class 10, diag(T_C^n) constant on class 01;
+   (ii)  A_n^* B_n = q_n I_J  (class 11 is J, so class-constancy there IS scalarity), i.e. B_n = q_n A_n.
+Invisibility AT EVERY n is the case n = 1 of this, applied to T_F and T_C themselves.
+
+COROLLARY 5 (BOTH CORPUS CARRIERS).  With A = T_F|_J, A^{L_F} = W_F I and, from B = qA,
+A^{L_C} = q^{-L_C} W_C I; so A^{gcd(L_F,L_C)} is scalar.  IF |J| <= 1 OR gcd(L_F,L_C) = 1 THEN A IS
+SCALAR, and every invisibility-restoring member is DIAGONAL WITH CLASS-CONSTANT DIAGONAL — i.e.
+fibre-wise multiplication by an L-th root of the whole-circuit holonomy, constant along each loop
+except possibly at the shared block.  K1: |J| = 1.  B0b: |J| = 2 and gcd(4,3) = 1.  BOTH COVERED.
+COUNTS PREDICTED IN ADVANCE AND THEN MEASURED EXHAUSTIVELY (t2 T2.2, T2.3):
+   K1  : 3 (root at v0) x 3 (common root at v1,v2) x same for C  =  81 of 729   — MEASURED 81.
+   B0b : alpha_0 = alpha_1 and beta_0 = beta_1 are forced because mu_4 ^ mu_3 = {1};
+         4 x 4 x 3 x 3 = 144 of 6912                                           — MEASURED 144.
+
+COROLLARY 6 (COR-F's T).  T_F^n is diagonal iff L_F | n.  So under COR-F's transport invisibility
+holds exactly on the sublattice n = 0 mod lcm(L_F, L_C), where both branch operators are integer
+powers of the circuit operators and Z_n(edge) EQUALS Z_{n/L}(circuit) identically.  K1: n = 3,6,9,...
+B0b: n = 12, 24, ....  The registrar's tables are this corollary, sampled.
+
+SHARPNESS 7 (RECORDED AGAINST THIS LANE).  If |J| >= 2 AND gcd(L_F,L_C) >= 2 the hypothesis of
+Cor. 5 fails and NON-DIAGONAL invisibility-restorers exist: take any non-scalar A on C^J with
+A^{L_F} = W_F I and set T_C|_J = qA.  Exhibited on the lane-built carrier SYNTH-D (two 4-cycles
+sharing two vertices), D = 2.1e-15 with ||offdiag T_F|| = 0.997.  IT IS NOT A TRANSPORT: it is not
+supported on the loop's adjacency, and T_F[v2,v1] = 0 where a tick along edge v1->v2 must put U_e.
+The unconditional sentence "invisibility requires diagonality" would be FALSE; the sentence
+restricted to K1 and B0b is a theorem.
+
+-------------------------------------------------------------------------------------------------
+WHY COR-F's T AND NOT ANOTHER MEMBER (leg T3, each criterion computed, not asserted)
+
+PASSES, DECISIVE   (b) EDGE DATA ONLY.  S1 sec3 gives the connection as U_e in U(1), a_e in R/2piZ.
+   COR-F's T's entries ARE the U_e, so adding 2pi to any a_e leaves T unchanged (4.97e-16).  The
+   rival needs an L-th root of W: adding 2pi to one a_e multiplies it by a primitive L-th root of
+   unity.  AND NO REPAIR EXISTS: a rule w = h(W) with h continuous and h(W)^L = W would need
+   deg(h).L = 1, impossible for L >= 2.  Every branch rule has a cut on U(1); T has none.
+PASSES, DECISIVE   (d) SUB-PATH RESTRICTION.  T^k carries the fibre at v_i to v_{i+k} by exactly the
+   parallel transport along that k-edge path (2.5e-16 for k <= 6); the rival's error is 1.0 at every
+   k because it never relates two distinct fibres.  At k = 1 the criterion is the equation n_i = U_i,
+   whose UNIQUE solution in the entire family is COR-F's T (6.2e-17).
+PASSES, WEAK       (a) AUTOMORPHISM x EDGE PHASES.  T = P_gamma . diag(U_e) exactly (0.00e+00), with
+   P_gamma the loop's cyclic rotation.  But this is criterion (b) restated; not independent evidence.
+DOES NOT DISCRIMINATE  (c) STARTING-VERTEX RELABELLING.  Both pass at 0.00e+00.  Reported as a
+   failed criterion, not as evidence.
+DOES NOT DISCRIMINATE  (e) ORIENTATION REVERSAL — A CRITERION THIS LANE PROPOSED AND THEN LOST.
+   T(reversed) = T^{-1} exactly (2.2e-16), but with the symmetric branch arg in (-pi,pi] the root
+   operator is orientation-covariant too (3.1e-16).  Recorded, not dropped.
+PASSES             (f) SUBDIVISION STABILITY.  Splitting an edge leaves every path transport under T
+   unchanged (identical to 1e-16) while the rival's scalar jumps from W^{1/3} to W^{1/4} (0.1178).
+RESIDUE            gauge covariance + "the same rule at every edge" leave n_i = c U_i with c^L = 1,
+   an L-fold ambiguity.  THIS LANE PREDICTED IT WOULD BE INVISIBLE TO |Z_n| AND WAS WRONG: zeta
+   multiplies only the loop components, so it does not factor out, and |Z_n| moves by up to 4.3e-01.
+   Criterion (d) — which is S1 sec3's own definition of transport — is what removes it.

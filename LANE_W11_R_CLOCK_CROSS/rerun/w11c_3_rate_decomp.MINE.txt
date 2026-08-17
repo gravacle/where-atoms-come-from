@@ -1,0 +1,51 @@
+== 3A  REPRODUCING THE REGISTRAR'S D1 SETUP EXACTLY (K1, its connection, its 3 states) ==
+    ARMS-DIFF [registrar states A,B,C]: ['605a487db1560ef3', '916700a59f05e5cd', 'f48c340fbb48e76c']  ->  DISTINCT
+   pi = [0.  0.3 0.3 0.4]   m(P) = -0.767507880358
+   genericity of (f,c) = (2.280000000, 3.414213562): c = 2+sqrt(2) is algebraic irrational, f = 2.28 rational -> no relation m f + n c = 2 pi j.
+
+   N = 30000 edge ticks
+                                   state A        state B        state C     spread
+     mean over n = 0 mod 3    -0.767342500   -0.767342500   -0.767342500   1.55e-15   <- CIRCUIT CLOCK, = m(P)
+     mean over n = 1 mod 3    -0.898023760   -1.060017013   -1.703261383   8.05e-01   <- PARTIAL CIRCUIT
+     mean over n = 2 mod 3    -0.928473489   -1.082839553   -0.931332690   1.54e-01   <- PARTIAL CIRCUIT
+     mean over ALL n          -0.864613250   -0.970066355   -1.133978858   2.69e-01   <- registrar's EDGE rate/tick
+     the same x3              -2.593839749   -2.910199065   -3.401936574              <- registrar's 'per circuit'
+     IDENTITY CHECK  3 x (mean over all n)  ==  sum of the three residue means:  max |diff| = 4.44e-16
+     residue 0 minus m(P): 1.65e-04   (finite-N ergodic error)
+
+   N = 300000 edge ticks
+                                   state A        state B        state C     spread
+     mean over n = 0 mod 3    -0.767530134   -0.767530134   -0.767530134   2.00e-15   <- CIRCUIT CLOCK, = m(P)
+     mean over n = 1 mod 3    -0.898300196   -1.060115032   -1.702502480   8.04e-01   <- PARTIAL CIRCUIT
+     mean over n = 2 mod 3    -0.929144893   -1.082814696   -0.931303166   1.54e-01   <- PARTIAL CIRCUIT
+     mean over ALL n          -0.864991741   -0.970153287   -1.133778593   2.69e-01   <- registrar's EDGE rate/tick
+     the same x3              -2.594975223   -2.910459862   -3.401335780              <- registrar's 'per circuit'
+     IDENTITY CHECK  3 x (mean over all n)  ==  sum of the three residue means:  max |diff| = 0.00e+00
+     residue 0 minus m(P): 2.23e-05   (finite-N ergodic error)
+
+   READING.  The registrar's 'EDGE rescaled x3' number is
+        (circuit rate)  +  (mean over n=1 mod 3)  +  (mean over n=2 mod 3),
+   i.e. the circuit rate PLUS TWO EXTRA FACTORS PER CIRCUIT in the product |Omega|.  It is not
+   m(P) rescaled and was never going to be.  The x3 is not a unit conversion: it PRESUPPOSES that
+   the record accrues one factor per edge tick, which is the very stipulation under test.
+   WHAT SURVIVES OF D1: the state-dependence of the residue-1 and residue-2 means, which is real.
+   WHAT FALLS: 'the EDGE rate is NOT m(P)/3' as evidence -- it is a comparison of a mean over one
+   sample set with three times a mean over a larger one.
+
+== 3B  IS THE *RATE* STATE-DEPENDENT UNDER THE EDGE CLOCK?  N1 IS A RATE STATEMENT. ==
+   ONE VARIABLE: the carrier (K1 vs B0b).  Same clock (1,1), same generic connection
+   construction, same state family size, same seed, same code path.
+
+   --- K1  L=(3,3)  m(P) = -0.767507880358
+               N   EDGE rate spread   CIRCUIT rate spread      edge mean
+            5000          2.925e-01             2.964e-14   -0.967224889
+           50000          2.927e-01             2.800e-13   -0.967920640
+          500000          2.928e-01             2.875e-12   -0.967882197
+       circuit-clock rate - m(P) = 1.40e-05  [converging to m(P)]
+
+   --- B0b  L=(4,3)  m(P) = -0.820980552070
+               N   EDGE rate spread   CIRCUIT rate spread      edge mean
+            5000          1.073e-02             1.110e-15   -0.818074627
+           50000          9.883e-03             4.330e-15   -0.818354275
+          500000          9.842e-03             4.663e-15   -0.818377885
+       circuit-clock rate - m(P) = 4.44e-06  [converging to m(P)]

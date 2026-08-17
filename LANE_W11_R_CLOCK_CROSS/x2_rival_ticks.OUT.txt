@@ -1,0 +1,89 @@
+
+================ K1   L=(3,3)   pi=[0.  0.3 0.3 0.4] ================
+  D unitary?  ||D*D-I|| = 0.00e+00    ||D_F^3 - M_F|| = 0.00e+00    ||D_C^3 - M_C|| = 1.92e-16
+  T unitary?  ||T*T-I|| = 2.22e-16    ||T_F^3 - M_F|| = 1.11e-16
+  D is FIBRE-WISE (diagonal): True   -> lies in the local gauge group U(1)^V, exactly as M_gamma does (W-05 REGISTER:414-416)
+
+  2a  THE SAME CLOCK, TWO TICKS WITH THE SAME L-th POWER.  ONE VARIABLE: THE TICK.
+        m |  spread under COR-F T |  spread under D |  branch state at m
+        1 |             7.099e-01 |       4.441e-16 |  BOTH mid-loop
+        2 |             7.986e-01 |       3.331e-16 |  BOTH mid-loop
+        3 |             2.220e-16 |       3.331e-16 |  BOTH CLOSED
+        4 |             7.676e-01 |       3.886e-16 |  BOTH mid-loop
+        5 |             7.480e-01 |       3.608e-16 |  BOTH mid-loop
+        6 |             2.220e-16 |       2.220e-16 |  BOTH CLOSED
+        7 |             7.522e-01 |       2.776e-16 |  BOTH mid-loop
+        8 |             7.389e-01 |       2.776e-16 |  BOTH mid-loop
+        9 |             3.886e-16 |       2.776e-16 |  BOTH CLOSED
+       10 |             7.482e-01 |       2.776e-16 |  BOTH mid-loop
+       11 |             7.163e-01 |       3.886e-16 |  BOTH mid-loop
+       12 |             4.441e-16 |       3.886e-16 |  BOTH CLOSED
+       13 |             8.249e-01 |       3.331e-16 |  BOTH mid-loop
+      ARMS-DIFF  T-arm out#e609a9b4a0b5   D-arm out#4d234b9e3ee1   DISTINCT
+      max spread under D over ALL m<= 13 : 4.44e-16    max under T at m not divisible by L : 8.249e-01
+      => AT EVERY TICK WHERE A BRANCH IS MID-LOOP, INVISIBILITY HOLDS UNDER D AND FAILS
+         UNDER T.  'READ WHILE MID-LOOP' IS THEREFORE NOT THE OPERATIVE VARIABLE.
+
+  2c  N1 UNDER THE FIBRE-WISE EDGE TICK D.  Closed form and rate, EVERY tick.
+      max | <D_F^m s, D_C^n s> - [p00 + p10 conj(W_F)^(m/L_F) + p01 W_C^(n/L_C) + p11 ...] | = 7.02e-16
+      -> N1's POLYNOMIAL, at EVERY (m,n), with FRACTIONAL winding.  No sublattice needed.
+      EDGE-clock rate under D, N=  10000: -0.766901355    m(P) = -0.767507880    diff +6.07e-04
+      EDGE-clock rate under D, N= 100000: -0.767443600    m(P) = -0.767507880    diff +6.43e-05
+      EDGE-clock rate under D, N=1000000: -0.767503017    m(P) = -0.767507880    diff +4.86e-06
+      SAME NUMBER FROM THE OPERATOR ITSELF (no closed form), N=200000: -0.767506621
+      => N1'S RATE IS m(P) ON THE *EDGE* CLOCK UNDER A FIBRE-WISE TICK.
+
+================ B0b   L=(4,3)   pi=[0.44 0.25 0.09 0.22] ================
+  D unitary?  ||D*D-I|| = 0.00e+00    ||D_F^4 - M_F|| = 8.01e-16    ||D_C^3 - M_C|| = 1.92e-16
+  T unitary?  ||T*T-I|| = 0.00e+00    ||T_F^4 - M_F|| = 3.14e-16
+  D is FIBRE-WISE (diagonal): True   -> lies in the local gauge group U(1)^V, exactly as M_gamma does (W-05 REGISTER:414-416)
+
+  2a  THE SAME CLOCK, TWO TICKS WITH THE SAME L-th POWER.  ONE VARIABLE: THE TICK.
+        m |  spread under COR-F T |  spread under D |  branch state at m
+        1 |             8.592e-01 |       4.441e-16 |  BOTH mid-loop
+        2 |             6.626e-01 |       4.441e-16 |  BOTH mid-loop
+        3 |             6.776e-01 |       3.331e-16 |  F mid-loop
+        4 |             4.413e-01 |       4.441e-16 |  C mid-loop
+        5 |             5.359e-01 |       4.441e-16 |  BOTH mid-loop
+        6 |             7.374e-01 |       3.886e-16 |  F mid-loop
+        7 |             8.117e-01 |       3.886e-16 |  BOTH mid-loop
+        8 |             4.228e-01 |       3.608e-16 |  C mid-loop
+        9 |             5.944e-01 |       2.220e-16 |  F mid-loop
+       10 |             7.460e-01 |       3.053e-16 |  BOTH mid-loop
+       11 |             6.661e-01 |       2.914e-16 |  BOTH mid-loop
+       12 |             3.053e-16 |       3.192e-16 |  BOTH CLOSED
+       13 |             7.375e-01 |       2.359e-16 |  BOTH mid-loop
+      ARMS-DIFF  T-arm out#df69a3dfe8bc   D-arm out#5e76f272520e   DISTINCT
+      max spread under D over ALL m<= 13 : 4.44e-16    max under T at m not divisible by L : 8.592e-01
+      => AT EVERY TICK WHERE A BRANCH IS MID-LOOP, INVISIBILITY HOLDS UNDER D AND FAILS
+         UNDER T.  'READ WHILE MID-LOOP' IS THEREFORE NOT THE OPERATIVE VARIABLE.
+
+  2b  A NON-FIBRE-WISE RIVAL ON gamma_F (L_F = 4 is even):  U = W_F^(-1/4) T_F^2
+      ||U*U - I|| = 2.48e-16    ||U^4 - M_F|| = 5.87e-16    U diagonal? False
+      diagonality set of U : [0, 2, 4, 6, 8]   vs COR-F's T : [0, 4, 8]   SAME SET: False
+      => a NON-DIAGONAL unitary with the SAME L-th power and a STRICTLY LARGER
+         diagonality set.  Lane C's parenthetical (i) is FALSE.
+
+  2c  N1 UNDER THE FIBRE-WISE EDGE TICK D.  Closed form and rate, EVERY tick.
+      max | <D_F^m s, D_C^n s> - [p00 + p10 conj(W_F)^(m/L_F) + p01 W_C^(n/L_C) + p11 ...] | = 4.48e-16
+      -> N1's POLYNOMIAL, at EVERY (m,n), with FRACTIONAL winding.  No sublattice needed.
+      EDGE-clock rate under D, N=  10000: -0.820910156    m(P) = -0.820980552    diff +7.04e-05
+      EDGE-clock rate under D, N= 100000: -0.821079714    m(P) = -0.820980552    diff -9.92e-05
+      EDGE-clock rate under D, N=1000000: -0.820990583    m(P) = -0.820980552    diff -1.00e-05
+      SAME NUMBER FROM THE OPERATOR ITSELF (no closed form), N=200000: -0.821028531
+      => N1'S RATE IS m(P) ON THE *EDGE* CLOCK UNDER A FIBRE-WISE TICK.
+
+================ WHAT X2 SETTLES ================
+ 1. LANE C's PARENTHETICAL "any rival tick with the same L-th power gives the same sublattice"
+    IS FALSE, exhibited twice: D (all m) and U = W^{-1/L}T^2 on an even loop (even m).
+ 2. LANE C's NAME FOR THE OPERATIVE VARIABLE -- "whether the record is read while a branch is
+    MID-LOOP" -- IS THEREFORE WRONG.  Mid-loop is invisible under D at every tick.
+ 3. THE CORRECT NAME IS THE ONE LANE C's OWN LEG 4 COMPUTES AND THEN DOES NOT ADOPT: whether the
+    BRANCH OPERATOR APPLIED AT THE TICK READ IS FIBRE-WISE-AND-LOOP-CONSTANT -- i.e. scalar
+    multiplication of the loop's fibres by one phase.  That is W-01/S3's transport convention with
+    "the whole-circuit holonomy" weakened to "any loop-constant phase", and it is W-06's already
+    registered correction to N4: FIBRE-WISE-NESS, REGISTER_V001.md (W-06, 'N4's MECHANISM RESTORED
+    CORRECTED').  The name was in the register before either lane ran.
+ 4. CONSEQUENCE FOR THE QUESTION: the clock is not the stipulation.  A finer clock on the corpus's
+    OWN kind of operator preserves N1 entirely.  The stipulation is on the OPERATOR.
+

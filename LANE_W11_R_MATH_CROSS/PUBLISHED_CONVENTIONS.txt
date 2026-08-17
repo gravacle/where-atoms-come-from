@@ -1,0 +1,61 @@
+LANE_W11_R_MATH_CROSS — CROSS-REFUTER OF LANE_W11_R_MATH (lens: ISOLATION)
+Commissioned to attack lane M, which was itself commissioned to refute LANE_W11_CONVENTION_TEST.
+LENS AS BRIEFED: verify each connection is the arithmetic type it claims (every rational (f,c) is
+exactly resonant, W-10 N-4), and that convergence claims are convergence and not a window.
+
+CONVENTIONS.  Identical to LANE_W11_CONVENTION_TEST/PUBLISHED_CONVENTIONS.txt and to
+LANE_W11_R_MATH/PUBLISHED_CONVENTIONS.txt.
+  CIRCUIT (corpus's, S3 sec2.3 / W-01): (M_gamma s)(v) = W(gamma) s(v) on the loop, s(v) off it.
+  EDGE (COR-F, S3_THE_CROSSING_AUDIT_V001.md:160-209 and :794): (T s)(dst) = U_e s(src) along the
+     loop walk, identity off it;  T^L = M_gamma.
+  Observable Z = <branch_F, branch_C>, <z,w> = sum_v conj(z_v) w_v.
+CODE INDEPENDENCE.  xc0_lib.py re-derives every carrier and operator from the walk lists; it
+shares no line with wm0_lib.py.  The Mahler measure is computed by TWO paths that share nothing:
+a Jensen quadrature, and the EXACT Cassaigne-Maillot closed form with a Bloch-Wigner dilogarithm
+summed from Bernoulli numbers (validated against Cl_2(pi/3) = 1.0149416064 and against three of
+S4:582-590's own published exact closed forms).  The exact-arithmetic block xc5 works in
+Q(sqrt3, i) with basis (1, sqrt3, i, i sqrt3), NOT in wm5's Z[zeta_12] basis (1,z,z^2,z^3).
+
+CARRIERS.  K1 (S1 sec1); B0b (incidence re-derived here, class multiset reproduced against
+S4:575 {00:4,01:1,10:2,11:2}); REV4 (the lane's own wm3 M3b carrier); and SHARE2 — NEW, built
+here: two 4-cycles 0-1-2-3-0 and 0-1-4-5-0 sharing the edge (0,1), plus a spectator v6.
+|class 11| = 2 and gcd(L_F,L_C) = 4 > 1.  SHARE2 is the carrier LANE_W11_R_MATH's self-flag 6
+names as the live gap in its strongest theorem and says it did not construct.
+
+SEEDS.  numpy default_rng(20260817) as in both lanes upstream; auxiliary streams (3),(5),(7),(11),
+(31),(77),(4242),(1000+trial) named at their use sites.  DOUBLE PRECISION IS THE DEFAULT.
+GRIDS.  Jensen quadrature at 2^20-2^22; every load-bearing value is additionally checked against
+an EXACT closed form (X4d), which is the only check that can catch a converged wrong number.
+Relation search over |m|,|n| <= 1500, plus a DEPTH SCAN at M = 50,150,450,1350 (X1b).
+
+ISOLATION LEDGER.  Held fixed in every comparison: carrier, connection, observable, code path,
+seed, and pi BY CONSTRUCTION.  Moved, one at a time: (i) the state at fixed pi (X3a: 12-state and
+15-state ensembles, arms diffed at min||s_i-s_j|| = 0.897 and 0.925, pi equal to 1e-16);
+(ii) p00 at fixed ratios of the other three (X3b); (iii) the tick operator (X2c, X2e, X6c);
+(iv) the connection (X1b, X1c).  ARMS ARE DIFFED, not ledgered.
+
+RERUN OF THE LANE UNDER TEST.  All 9 scripts copied and re-executed from their sealed bytes in
+rerun/; all 8 captured outputs reproduce BYTE-IDENTICALLY (diff empty).  LANE_W11_R_MATH's
+SEALS.sha256 verifies 18/18.
+
+MY OWN ERRORS, RECORDED RATHER THAN PATCHED OUT.
+ (1) My first draft of X1c concluded the resonant-connection closed form is "off by O(1e-2)".
+     MY OWN NUMBERS SAID 1.1e-4.  I caught it from the table I had just printed, replaced the
+     block with the decisive form (torus average versus ORBIT average versus time average), and
+     the corrected finding is smaller and better: torus is wrong by 1.5e-4, orbit is right to
+     1e-6.  I nearly over-claimed by two orders of magnitude against a lane I was auditing.
+ (2) My first draft of X3a concluded "ARM 1: the lane's mechanism is CONFIRMED ... 12 states give
+     the SAME F-clock rate."  The table directly above it showed SPREAD 1.47e-02.  I wrote the
+     conclusion before reading my own output.  Corrected in place; the corrected finding is the
+     strongest thing in this lane.  Before publishing it I re-derived the lane's own M7c row from
+     my code and got its three numbers to the digit, so the disagreement is not a bug of mine.
+ (3) X2c printed "smallest off-diagonal mass" over a variable accumulating a MAXIMUM.  Relabelled.
+ (4) LINEAGE: I am Opus 5, as are LANE_W11_R_MATH, LANE_W11_CONVENTION_TEST and every lane from
+     W-07 on.  This is LAYER FOURTEEN of one lineage.  Six-plus consecutive layers have each been
+     caught by the next with the rate not falling, and I caught this one three times.  Discount
+     this lane as one block with W-07 through W-11, not as an independent check.
+ (5) SHARE2 is my construction and no other lane has seen it.  Its admissibility as a corpus
+     carrier rests on the same fiat as B0b's own loop designation (S4 CHOICE LEDGER C4, and
+     W-10's erratum against W-09: class occupancy is a property of the DESIGNATION).  The corpus
+     still has no admissibility criterion for loop designations, so "is SHARE2 in scope" is
+     exactly as undecided as "is B0b's own gamma_C in scope".

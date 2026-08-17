@@ -1,0 +1,58 @@
+LANE W-11 R/C — THE CLOCK CORRESPONDENCE — PUBLISHED CONVENTIONS
+Refuter lane against LANE_W11_CONVENTION_TEST (the registrar's W-11 convention test), 2026-08-17.
+Register head W-10.  Lineage: Opus 5 — the SAME lineage as W-07..W-11.  This is layer THIRTEEN.
+Discount it as one block with them, not as an independent check.
+
+QUESTION ASSIGNED: attack the CLOCK CORRESPONDENCE.  Is comparing CIRCUIT k against EDGE n a fair
+comparison?  What is "the same time"?  Does CHOICE LEDGER A2 close the clock question with a
+reason or a restatement?  Is a partial circuit a legitimate state of this construction?
+
+THE OBJECTS, AS I DEFINE THEM (all three legs use one and only one general object).
+  Z(mF, mC) = < T_F^{mF} s , T_C^{mC} s >, where T is COR-F's EDGE TICK
+    (S3_THE_CROSSING_AUDIT_V001.md:160-209, :794): move each fibre value one edge along the loop,
+    identity off it.  T is unitary; T^L = M_gamma, the corpus's whole-circuit operator.
+  THE TWO "CONVENTIONS" ARE RAYS IN THAT ONE LATTICE:
+    EDGE clock     (mF, mC) = (n, n)
+    CIRCUIT clock  (mF, mC) = (L_F k, L_C k)      [S3_THE_CROSSING_V001.md:395]
+  M_gamma appears in NO sweep in this lane except as a cross-check, because it is a power of T.
+
+CARRIERS.  K1 rebuilt from S1_CARRIER_K1_V001.md sec 1 (vertices, edge list :16-22, both loops
+length 3).  B0b rebuilt from LANE_W10_A_CARRIERS/w10a_lib.py:182-213 (sealed), verified against
+S4_THE_MEASUREMENT_V001.md:575's class multiset {00:4, 01:1, 10:2, 11:2}; loops length 4 and 3.
+Both carriers are rebuilt in w11c_lib.py from the bytes; NOTHING is copied from the registrar's
+lane, so a shared implementation error cannot pass through both.
+
+CONNECTIONS.  Primary: a connection with EVERY edge phase non-zero and holonomies
+(f, c) = (1.0, sqrt(2)) — THE ONLY GENERIC CONNECTION THE CORPUS PUBLISHES (W-10 N-4; S4:603).
+Secondary (leg 3A only, for direct comparability with the registrar's D1): the registrar's own
+a = (1.0, 0.37, 0.91, sqrt(2), 0.23, 1.77), giving (f, c) = (2.28, 2+sqrt(2)), argued generic in
+one line at w11c_3_rate_decomp.py:47.  No rational (f,c) is used anywhere (W-10 N-4).
+
+ISOLATION.  Held fixed in every comparison: the carrier, the connection, the observable
+<branch_F, branch_C>, the ready-state family, the evaluator function, the seed, the number of
+readings, and pi BY CONSTRUCTION.  Moved, one at a time: the lattice point (mF, mC) / the clock
+ray (a, b) / the correspondence / the gauge transformation / the residue class of the tick.
+ANTI-ZERO-VARIABLE GUARD: arms are sha256-hashed as OUTPUT arrays, not only as inputs
+(W-10 N-6's defect).  Leg 5 prints a COLLAPSE REPORT naming which correspondences are the same
+arm on which carrier; on K1 only 4 of 6 rows are distinct, on B0b only 5 of 6.  Recorded, not
+patched.
+
+SEEDS.  numpy default_rng(20260817) for state families (the registrar's seed, so figures are
+comparable); default_rng(7 + n_vertices) for the connection; default_rng(11), (3) for leg 4's
+exhibits.  Double precision is the default throughout.  The two precision-sensitive claims —
+that the observable equals N1's polynomial on the sublattice, and that the rate converges to
+m(P) — are checked in closed form (leg 7A, 1.2e-15) and to N = 10^6 (leg 7B) respectively.
+m(P) is Jensen quadrature at n = 2^22.
+
+WHAT IS A THEOREM AND WHAT IS EVIDENCE.  Marked [T] in the outputs.  T^m is diagonal iff L | m
+(T restricted to the loop is a cyclic shift with phases), and on the sublattice only class sums
+can enter, so the invisibility nulls of legs 1, 5 and 7A COULD NOT HAVE FAILED.  Under this
+program's rule that voids a CONTROL and not a THEOREM, so they are reported as theorems with the
+numerics as an implementation check, never as experimental confirmation.
+
+DECLARED WEAKNESSES, BEFORE ANY VERDICT.  (i) One pi per carrier; pi was not swept.  (ii) One
+generic connection; the connection torus was not swept.  (iii) CORR-P is approximate — its
+residual phase mismatch reaches 0.235 rad — so part of its non-null is attributable to the
+mismatch and it is the weakest row in leg 5.  (iv) Rank one and U(1) throughout, as in the
+corpus; nothing here tests charge, a third loop, or a non-abelian group.  (v) Same lineage as
+the object under test.

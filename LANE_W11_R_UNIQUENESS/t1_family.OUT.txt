@@ -1,0 +1,50 @@
+== T1.1  COR-F's SEALED EXHIBIT, REBUILT INDEPENDENTLY ==
+  ||T*T - I||                = 0.00e+00   [audit: 0.00e+00]
+  T diagonal?                  False                 [audit: False]
+  diag(T^3)                  = [-0.0292+0.999574j  1.    +0.j        1.    +0.j       -0.0292+0.999574j -0.0292+0.999574j]
+  W_C                        = -0.029200+0.999574j   [audit: -0.029200+0.999574j]
+  diag(T rho T*)             = [0.15 0.15 0.15 0.4  0.15]  [audit: 0.15 0.15 0.15 0.40 0.15]
+  -> the sealed exhibit reproduces from the audit's TEXT, not from the registrar's code.
+
+== T1.2  T^L = M_gamma AND GAUGE COVARIANCE, RE-VERIFIED INDEPENDENTLY ==
+  max||T_F^3 - M_dF||        = 4.64e-15     [registrar: 4.64e-15]
+  max||T_C^3 - M_c ||        = 3.25e-15     [registrar: 3.25e-15]
+  max gauge-covariance defect= 4.78e-15     [registrar: 4.78e-15]
+  LEG A OF THE REGISTRAR'S REPORT IS CONFIRMED. It is also EXACT, not numerical:
+  (T^L s)(v_i) = (U_{i-1}...U_i around the whole loop) s(v_i) = W s(v_i) identically,
+  and T's only non-zero entries are the U_e themselves, which carry gauge weight
+  exp(i(th_dst - th_src)) by S1:63 -- so both facts hold in CLOSED FORM for every loop,
+  every connection and every carrier. No sampling was ever needed.
+
+== T1.3  THE FULL FAMILY, AND THE PARAMETERISATION IS ONTO ==
+  F(gamma) = { T unitary, T = T_S (+) I off the loop, T^L = M_gamma }
+           = { T_S unitary : T_S^L = W.I }  -- because M_gamma is W.I ON the loop.
+  Spectral theorem: T_S normal, T_S^L = W.I  <=>  spec(T_S) c {L-th roots of W}, so
+  T_S = V diag(w_{j_1}..w_{j_L}) V^*.  Verified BOTH directions on 4000 draws:
+  max( ||T^3 - M||, ||T*T-I|| ) over 4000 sampled members = 5.55e-15
+  max distance from any eigenvalue to the L-th roots of W  = 1.81e-15
+  -> the family is EXACTLY the flag-manifold union U(L)/(U(m_0)x..xU(m_{L-1})) over
+     multiplicity vectors (m_0..m_{L-1}), sum m_j = L.  Generic component: real dim
+     L^2 - L = 6 for L=3.  COR-F's T sits in it (all m_j = 1: distinct roots) --
+     spec(COR-F's T_F) = [-0.768945-0.639315j -0.16919 +0.985583j  0.938135-0.346269j]
+     the 3 cube roots  = [-0.768945-0.639315j -0.16919 +0.985583j  0.938135-0.346269j]   max|diff| = 7.02e-16
+  SO THE REGISTRAR'S DECLARED WEAKNESS IS REAL AND IS BIGGER THAN DECLARED: the rivals
+  are not a few operators, they are a 6-REAL-DIMENSIONAL MANIFOLD per loop on K1.
+
+== T1.4  THE LOCAL FAMILY -- ADD ONE AXIOM AND THE MANIFOLD COLLAPSES TO TWO BRANCHES ==
+  AXIOM (LOCALITY): a tick moves a fibre value at most one edge, i.e. T_{vu} = 0 unless
+  u = v or (u->v) is an edge of gamma.  Then on the loop T_S = D + N with D = diag(d_i)
+  and N_{i+1,i} = n_i.  Column norms: |d_i|^2+|n_i|^2 = 1.  Columns i, i+1 overlap in row
+  i+1 only: conj(n_i) d_{i+1} = 0 for every i.  So for each i, n_i = 0 or d_{i+1} = 0.
+  If some n_i != 0 then d_{i+1} = 0, hence |n_{i+1}| = 1, hence d_{i+2} = 0, ... around the
+  cycle: ALL d = 0.  Therefore exactly two branches, with no third:
+     (A) DIAGONAL:  T = diag(d_v), d_v^L = W.        A FINITE SET, L^L members.
+     (B) SHIFT:     (Ts)(v_{i+1}) = n_i s(v_i), |n_i| = 1, prod n_i = W.   AN (L-1)-TORUS.
+  COR-F's T is the member of (B) with n_i = U_i.  CHECKED, not asserted:
+  200000 random local-support matrices: 0 unitary (a positive-codimension condition).
+  20000 draws from branch (A) and (B): max(||X*X-I||, ||X^3-W I||) = 2.75e-15
+  EXHAUSTIVE 91^3 = 753571 grid over the FULL local support: 2 unitary points,
+     of which all-t=0 (branch A, pure diagonal): 1;  all-t=pi/2 (branch B, pure
+     shift): 1;  ANYTHING ELSE: 0.
+     smallest unitarity defect among the 753569 non-solutions = 2.47e-02
+  -> THE LOCAL FAMILY IS EXACTLY (A) u (B).  Branch (B) is the only one that MOVES anything.

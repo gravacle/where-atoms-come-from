@@ -1,0 +1,44 @@
+== M2a  K1.  CLOSED FORM versus TIME AVERAGE, three states with IDENTICAL pi ==
+  N1's lambda = m(pi) : registrar reduction -0.767507880357 | my complex-Jensen -0.767507880357 | diff 5.6e-16
+   state     closed form      m(rho=0)      m(rho=1)      m(rho=2)
+       A    -0.864927049  -0.767507880  -0.898283180  -0.928990087
+       B    -0.970152102  -0.767507880  -1.060131768  -1.082816657
+       C    -1.133777715  -0.767507880  -1.702516603  -0.931308661
+  -> m(rho=0) equals N1's m(pi) for all three states (that is N1, unchanged).
+     The state dependence lives ENTIRELY in the rho != 0 terms.
+
+          N      timeavg A      timeavg B      timeavg C   |timeavg-closed| max
+       2000   -0.864316851   -0.969348581   -1.137207438      3.43e-03
+      20000   -0.864256422   -0.969816715   -1.133806600      6.71e-04
+     200000   -0.864938828   -0.970177687   -1.133822683      4.50e-05
+    2000000   -0.864939168   -0.970155244   -1.133779404      1.21e-05
+  -> the edge rate IS a genuine limit and the closed form is exact.  The registrar's
+     N=2e5 figures were not converged: the drift is O(1/sqrt N) and is visible.
+
+== M2b  THE REGISTRAR'S COMPARATOR m(P)/3 IS THE WRONG NULL ==
+  registrar's stated null   m(pi)/3            = -0.255835960
+  correct convention-matched null (state A)    = -0.864927049
+  A convention that PRESERVES invisibility does NOT give m(pi)/3 either.  Take the
+  fibre-wise cube-root tick  U = M^(1/3)  (diagonal, unitary, gauge-covariant, U^3 = M):
+    || U_F^3 - M_F || = 4.30e-16   || U_C^3 - M_C || = 4.81e-16
+    per-tick rate at N=200000: A -0.767525553  B -0.767525553  C -0.767525553  spread 1.4e-14
+    and m(pi) = -0.767507880 -- the invisible convention's per-tick rate is m(pi), NOT m(pi)/3.
+    So 'the edge rate is not m(pi)/3' carries NO weight against the edge convention.
+    The weight is carried by the SPREAD alone.
+
+== M2c  B0b (L_F=4, L_C=3, lcm=12).  CLOSED FORM versus TIME AVERAGE ==
+  pi = [0.44 0.25 0.09 0.22]    m(pi) = -0.820980552070  (= N1's lambda on this carrier)
+   state     closed form     timeavg N=2e5     timeavg N=2e6
+       A    -0.820641719      -0.820623461      -0.820644311
+       B    -0.816607197      -0.816620332      -0.816612272
+       C    -0.810420557      -0.810437841      -0.810420123
+  CIRCUIT rate (per circuit) N=2e5: -0.820886436 -0.820886436 -0.820886436  spread 3.2e-15
+
+== M2d  QUADRATURE CONVERGENCE OF m_poly (the closed form must not rest on one grid) ==
+      n grid             m(pi)    m(rho=1) state C    m(rho=2) state C
+       16384   -0.767507881013     -1.828435828614     -1.366583516017
+       65536   -0.767507880276     -1.828435829315     -1.366583513993
+      262144   -0.767507880352     -1.828435829290     -1.366583513965
+     1048576   -0.767507880357     -1.828435829289     -1.366583513965
+     4194304   -0.767507880358     -1.828435829289     -1.366583513965
+  -> stable to 1e-11 from 2^18 up; every closed-form figure in this lane uses 2^20 or 2^21.

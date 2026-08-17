@@ -1,0 +1,41 @@
+
+================ K1  L=(3,3)   m(P) = -0.767507880358 ================
+  7A  CLOSED FORM ON THE SUBLATTICE  (exact identity, checked over 12 states x 100 cells)
+      max | Z(L_F i, L_C j) - [p00 + p10 conj(W_F)^i + p01 W_C^j + p11 ...] | = 1.15e-15
+      -> on the sublattice the observable IS N1's polynomial, with i and j DECOUPLED.
+         The corpus evaluates it only on the diagonal i = j (S3:395, 'k_n circuits of
+         EACH loop').  Off the sublattice no such closed form exists: T^m is not
+         diagonal, so the vertex weights do not group into class sums at all.
+
+  7B  CONVERGENCE OF THE RATE ALONG SUBLATTICE RAYS  (state 0; all states identical)
+         ray (a,b)          N=1e4          N=1e5          N=1e6   note
+            (3, 3)   -0.767503342   -0.767546540   -0.767511152   CIRCUIT CLOCK
+            (3, 6)   -0.767839505   -0.767501190   -0.767507595   
+            (9, 3)   -0.767229078   -0.767548710   -0.767507485   
+      (np.int64(3), np.int64(3))   -0.767503342   -0.767546540   -0.767511152   CIRCUIT CLOCK
+      m(P) (Jensen, n = 2^22)            -0.767507880    <- every ray converges to this, none to a multiple of it
+
+================ B0b  L=(4,3)   m(P) = -0.820980552070 ================
+  7A  CLOSED FORM ON THE SUBLATTICE  (exact identity, checked over 12 states x 100 cells)
+      max | Z(L_F i, L_C j) - [p00 + p10 conj(W_F)^i + p01 W_C^j + p11 ...] | = 7.22e-16
+      -> on the sublattice the observable IS N1's polynomial, with i and j DECOUPLED.
+         The corpus evaluates it only on the diagonal i = j (S3:395, 'k_n circuits of
+         EACH loop').  Off the sublattice no such closed form exists: T^m is not
+         diagonal, so the vertex weights do not group into class sums at all.
+
+  7B  CONVERGENCE OF THE RATE ALONG SUBLATTICE RAYS  (state 0; all states identical)
+         ray (a,b)          N=1e4          N=1e5          N=1e6   note
+            (4, 3)   -0.821007280   -0.820993853   -0.820980128   CIRCUIT CLOCK
+            (4, 6)   -0.821024732   -0.820992573   -0.820981438   
+           (12, 3)   -0.821033253   -0.820987093   -0.820981250   
+      (np.int64(12), np.int64(12))   -0.821119884   -0.820998723   -0.820982355   lcm clock: F at 3 circuits, C at 4
+      m(P) (Jensen, n = 2^22)            -0.820980552    <- every ray converges to this, none to a multiple of it
+
+================ WHAT LEG 7 SETTLES ================
+  N1's polynomial is the closed form of the observable at EVERY point of the invisibility
+  sublattice, with the two circuit counts DECOUPLED -- so the corpus's 'k_n circuits of EACH
+  loop' (S3:395) is a further, separate stipulation on top of the clock, and N1 does not need it.
+  And the RATE is m(P) on every one of those rays, at any winding rates.  N1's number is
+  therefore invariant under a two-parameter family of clocks that includes the corpus's own,
+  and it does NOT rescale by loop length.  'The edge rate is not m(P)/3' compares the wrong pair.
+

@@ -1,0 +1,56 @@
+
+================ K1    |gamma_F| = 3, |gamma_C| = 3,   pi = [0.  0.3 0.3 0.4]
+  ARM DIFF: T_F vs D_F bytes differ = True;  ||T_F - D_F|| = 2.4495
+            ||T_F^3 - M_dF|| = 1.57e-16   ||D_F^3 - M_dF|| = 4.30e-16
+            ||[T_F,T_C]|| = 2.4495    ||[D_F,D_C]|| = 0.00e+00
+  cell                        n           |Z(A)|          |Z(B)|          |Z(C)|     spread
+  T = COR-F edge tick / EDGE clock     1   0.569227769927  0.342242104303  0.188803928486    3.8e-01
+  T = COR-F edge tick / EDGE clock     2   0.071727337054  0.393705552451  0.352919489322    3.2e-01
+  T = COR-F edge tick / EDGE clock     3   0.319750930010  0.319750930010  0.319750930010    5.6e-17
+                                                                  worst spread n<=6    3.8e-01
+  T = COR-F edge tick / CIRCUIT clock  1   0.319750930010  0.319750930010  0.319750930010    5.6e-17
+  T = COR-F edge tick / CIRCUIT clock  2   0.760050706869  0.760050706869  0.760050706869    0.0e+00
+  T = COR-F edge tick / CIRCUIT clock  3   0.586994870469  0.586994870469  0.586994870469    0.0e+00
+                                                                  worst spread n<=6    5.6e-17
+  D = uniform root   / EDGE clock     1   0.910422703014  0.910422703014  0.910422703014    1.1e-16
+  D = uniform root   / EDGE clock     2   0.661839885887  0.661839885887  0.661839885887    1.1e-16
+  D = uniform root   / EDGE clock     3   0.319750930010  0.319750930010  0.319750930010    1.7e-16
+                                                                  worst spread n<=6    2.2e-16
+  D = uniform root   / CIRCUIT clock  1   0.319750930010  0.319750930010  0.319750930010    1.7e-16
+  D = uniform root   / CIRCUIT clock  2   0.760050706869  0.760050706869  0.760050706869    2.2e-16
+  D = uniform root   / CIRCUIT clock  3   0.586994870469  0.586994870469  0.586994870469    1.1e-16
+                                                                  worst spread n<=6    2.2e-16
+  ==> max | Z[COR-F's T, at each branch's own loop closure] - Z[corpus's M_gamma] | = 5.55e-16
+
+================ B0b   |gamma_F| = 4, |gamma_C| = 3,   pi = [0.44 0.25 0.09 0.22]
+  ARM DIFF: T_F vs D_F bytes differ = True;  ||T_F - D_F|| = 2.8284
+            ||T_F^4 - M_dF|| = 1.69e-16   ||D_F^4 - M_dF|| = 2.48e-16
+            ||[T_F,T_C]|| = 2.8284    ||[D_F,D_C]|| = 0.00e+00
+  cell                        n           |Z(A)|          |Z(B)|          |Z(C)|     spread
+  T = COR-F edge tick / EDGE clock     1   0.660894986456  0.660000000000  0.624960054938    3.6e-02
+  T = COR-F edge tick / EDGE clock     2   0.650698044893  0.799226546730  0.387407751792    4.1e-01
+  T = COR-F edge tick / EDGE clock     3   0.465043830794  0.483060297737  0.483532715711    1.8e-02
+                                                                  worst spread n<=6    4.1e-01
+  T = COR-F edge tick / CIRCUIT clock  1   0.157787872257  0.157787872257  0.157787872257    5.6e-17
+  T = COR-F edge tick / CIRCUIT clock  2   0.542911929181  0.542911929181  0.542911929181    1.1e-16
+  T = COR-F edge tick / CIRCUIT clock  3   0.331950055873  0.331950055873  0.331950055873    1.7e-16
+                                                                  worst spread n<=6    2.2e-16
+  D = uniform root   / EDGE clock     1   0.891290633342  0.891290633342  0.891290633342    1.1e-16
+  D = uniform root   / EDGE clock     2   0.598983225326  0.598983225326  0.598983225326    0.0e+00
+  D = uniform root   / EDGE clock     3   0.221698212650  0.221698212650  0.221698212650    5.6e-17
+                                                                  worst spread n<=6    1.1e-16
+  D = uniform root   / CIRCUIT clock  1   0.157787872257  0.157787872257  0.157787872257    5.6e-17
+  D = uniform root   / CIRCUIT clock  2   0.542911929181  0.542911929181  0.542911929181    1.1e-16
+  D = uniform root   / CIRCUIT clock  3   0.331950055873  0.331950055873  0.331950055873    2.2e-16
+                                                                  worst spread n<=6    2.2e-16
+  ==> max | Z[COR-F's T, at each branch's own loop closure] - Z[corpus's M_gamma] | = 2.78e-16
+
+== C-RULING ==
+  The 2x2 separates cleanly:
+     (T, EDGE clock)    -> incidence VISIBLE
+     (T, CIRCUIT clock) -> incidence INVISIBLE, and the functional is the corpus's, exactly
+     (D, EDGE clock)    -> incidence INVISIBLE
+     (D, CIRCUIT clock) -> incidence INVISIBLE
+  Visibility needs BOTH a non-fibre-wise root AND an edge clock.  Neither alone is 'the
+  convention'.  The registrar moved TWO things at once on B0b and, on K1, moved the
+  TRANSPORT NOT AT ALL -- its own leg B3 proves M_gamma = T^3 there.

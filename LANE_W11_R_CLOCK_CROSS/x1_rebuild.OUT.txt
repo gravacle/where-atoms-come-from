@@ -1,0 +1,14 @@
+== X1  INDEPENDENT REBUILD ==  double precision is the default.
+
+--- K1  nv=5  L=(3,3)  multiset {'11': 1, '10': 2, '01': 2}  pi=[0.  0.3 0.3 0.4]
+    ||T_F*T_F - I|| = 0.00e+00   ||T_F^3 - M_F|| = 1.57e-16   ||T_C^3 - M_C|| = 1.24e-16
+    LANE LEG-1 HEADLINE, MY CODE: invisible cells 81/676  predicted 81  SETS EQUAL True  max ON 5.55e-16  max OFF 9.178e-01
+    only-F-mid-loop min 6.622e-01   only-C-mid-loop min 6.200e-01   [lane: K1 6.622e-01/6.200e-01, B0b 1.667e-01/3.669e-01]
+
+--- B0b  nv=9  L=(4,3)  multiset {'11': 2, '01': 1, '10': 2, '00': 4}  pi=[0.44 0.25 0.09 0.22]
+    ||T_F*T_F - I|| = 1.57e-16   ||T_F^4 - M_F|| = 1.69e-16   ||T_C^3 - M_C|| = 1.36e-16
+    LANE LEG-1 HEADLINE, MY CODE: invisible cells 63/676  predicted 63  SETS EQUAL True  max ON 7.77e-16  max OFF 8.471e-01
+    only-F-mid-loop min 1.566e-01   only-C-mid-loop min 3.271e-01   [lane: K1 6.622e-01/6.200e-01, B0b 1.667e-01/3.669e-01]
+
+  VERDICT X1: the lane's leg 1 REPRODUCES from an independent implementation.
+  Its set-equality, its magnitudes and its quadrant minima are not artefacts.

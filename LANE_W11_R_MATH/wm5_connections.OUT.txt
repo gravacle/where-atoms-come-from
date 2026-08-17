@@ -1,0 +1,61 @@
+== M5a  ARITHMETIC TYPE CENSUS.  smallest relation m f + n c = 0 mod 2pi, |m|,|n| <= 1500 ==
+  connection                                                           f           c   (m,n)          |residual|
+  W-11 registrar's K1 (a = 1.0,0.37,0.91 | sqrt2,0.23,1.77)     2.280000    3.414214   ( -833, 1320)   1.470e-07   no exact relation at this depth
+  corpus's ONLY published generic  S4:603  f=1.0, c=sqrt(2)     1.000000    1.414214   ( -556,-1073)   1.057e-06   no exact relation at this depth
+  S3/S4 headline  f=2.0, c=1.1  (known exactly resonant)        2.000000    1.100000   ( -704, 1280)   0.000e+00   EXACTLY RESONANT
+  S1 sec6 published, order 4:  f=pi, c=3pi/2                    3.141593    4.712389   (-1500,-1500)   0.000e+00   EXACTLY RESONANT
+  W-11 registrar's B0b connection (rng uniform, W_F/W_C)        3.074238   -1.159731   (-1111,  544)   9.495e-07   no exact relation at this depth
+  Dirichlet bound at depth M = 1500 for a point with NO exact relation: 2 pi / M^2 = 2.79e-06.  Every non-resonant row above sits BELOW it, which is what generic
+  Diophantine behaviour looks like -- so no row is anomalously close to a relation, and I
+  refuse to award any of them the word 'near-resonant', which would be a fifth mislabelling.
+  The registrar's K1 connection has f = 2.28, c = 2 + sqrt(2).  It is NOT the corpus's
+  published generic point (f=1.0, c=sqrt2); its script's comment 'generic: c involves sqrt(2)'
+  is not a genericity argument.  It IS generic, but the reason has to be given:
+  m(2.28) + n(2+sqrt2) + 2 pi k = 0 splits over the Q-independent set {1, sqrt2, pi} into
+  n = 0, k = 0, 2.28 m = 0, so m = 0.  Certified -- by an argument the lane did not make.
+  CAVEAT OF RECORD (W-10 N-4 taken literally): sqrt(2) as an IEEE double is the dyadic
+  rational 6369051672525773/2^52, so the connection ACTUALLY EXECUTED is exactly resonant
+  with |m|,|n| ~ 2^52.  Genericity is a statement about the depth of the run, never about
+  the float.  Every 'generic' row in this corpus carries that caveat.
+
+== M5b  IS THE CONVENTION VERDICT CONNECTION-DEPENDENT?  ONE VARIABLE MOVED: THE CONNECTION ==
+  connection                        CIRC spread k=1,2  EDGE spread n=1,2   EDGE n=3,6
+  registrar's  f=2.28, c=2+sqrt2             1.11e-16           3.80e-01     5.55e-17
+  corpus generic f=1.0, c=sqrt2              1.11e-16           2.66e-01     1.11e-16
+  resonant  f=2.0, c=1.1                     1.11e-16           3.31e-01     1.11e-16
+  S1 order-4  f=pi, c=3pi/2                  5.55e-17           2.18e-01     5.55e-17
+  rank-1  f=1.0, c=0.0                       0.00e+00           7.89e-01     0.00e+00
+  -> the verdict is NOT connection-dependent.  Circuit invisible / edge visible at every one,
+     including the resonant and the order-4 points.  (At the rank-1 point c = 0 the cycle
+     holonomy is trivial and the edge tick still separates: the effect is not a curvature effect.)
+
+  connection                        CIRCUIT rate (N=2e5)   EDGE rate A      EDGE B      EDGE C
+  registrar's  f=2.28, c=2+sqrt2            -0.767500322  -0.864938828-0.970177687-1.133822683
+  corpus generic f=1.0, c=sqrt2             -0.767504139  -0.846688296-0.892071436-1.153357964
+  resonant  f=2.0, c=1.1                    -0.767026255  -0.877424517-0.891890374-1.028186828
+  S1 order-4  f=pi, c=3pi/2                 -0.804718956  -0.693231854-0.884374818-1.316103886
+  rank-1  f=1.0, c=0.0                      -0.356675073  -0.600384017-0.755119846-0.973924991
+
+== M5c  THE K1 TEST IN EXACT ARITHMETIC, ON S1's OWN PUBLISHED CONNECTION (S1 sec6) ==
+   a1=a2=a3=pi/3 -> U = zeta^2 ;  a4=a5=a6=pi/2 -> U = zeta^3 ;  W_F = zeta^6 = -1,
+   W_C = zeta^9 = -i.  Every matrix entry and every amplitude below is an EXACT element of
+   Z[zeta_12] over Q.  No floating point is used in this block.
+   W_F exact = (Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))  (= -1)      W_C exact = (Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(-1, 1))  (= -i, since zeta^3 = i)
+   pi(A) = (Fraction(16, 25), Fraction(1, 25), Fraction(8, 25))   pi(B) = (Fraction(16, 25), Fraction(1, 25), Fraction(8, 25))   pi(C) = (Fraction(16, 25), Fraction(1, 25), Fraction(8, 25))
+   pi identical as EXACT RATIONALS (not to 1e-16).  States pairwise distinct.
+     n  |Z|^2 exact, CIRCUIT convention               equal?
+     1  (Fraction(13, 125), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))  True
+     2  (Fraction(529, 625), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))  True
+     3  (Fraction(13, 125), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))  True
+     4  (Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))  True
+     n  |Z|^2 exact, EDGE convention (COR-F)          equal?
+     1  (Fraction(108784, 390625), Fraction(-1728, 15625), Fraction(0, 1), Fraction(864, 15625))  False   max |difference| = 0.123467
+     2  (Fraction(112444, 390625), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))  False   max |difference| = 0.089457
+     3  (Fraction(13, 125), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))  True   max |difference| = 0.000000
+     4  (Fraction(68944, 390625), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))  False   max |difference| = 0.062041
+     5  (Fraction(108364, 390625), Fraction(2208, 15625), Fraction(0, 1), Fraction(-1104, 15625))  False   max |difference| = 0.124592
+     6  (Fraction(529, 625), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))  True   max |difference| = 0.000000
+   -> EXACT, in rationals: identical at every n under the circuit convention; DIFFERENT
+      exactly at n not divisible by 3 under the edge convention.  The 1e-16 agreements and
+      the O(1) disagreements of the registrar's tables are both confirmed WITHOUT floating
+      point, on S1's own published connection rather than on an invented one.

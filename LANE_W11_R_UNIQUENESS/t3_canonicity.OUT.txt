@@ -1,0 +1,116 @@
+== T3.0  THE ONLY RIVAL THAT MATTERS ==
+  Leg T2 leaves exactly one rival SHAPE that restores invisibility on K1 and B0b:
+  R = (an L-th root of W) on the loop, identity off it.  Everything below compares
+  COR-F's T against R.  R is in the family:
+     ||R^3 - M_gamma||     = 2.72e-16
+     ||R*R - I||           = 0.00e+00
+     D(invisibility) with R on both loops = 0.00e+00   -> R RESTORES INVISIBILITY.
+
+== T3.1  CRITERION (b) -- 'DEPENDS ONLY ON THE EDGE DATA U_e, NO EXTRA STRUCTURE'.  DECISIVE. ==
+  S1 sec3: the connection is U_e = exp(i a_e) with a_e in R/2piZ.  The a_e are ONLY defined
+  modulo 2pi.  So a candidate transport must be unchanged when one a_e moves by 2pi.
+     a_1 -> a_1 + 2pi :   ||T(a') - T(a)||   = 4.97e-16      COR-F: UNCHANGED
+                          |w(a') - w(a)|     = 0.000000      root: CHANGED
+                          w(a')/w(a)         = 1.000000-0.000000j   (= a cube root of unity)
+  AND THE OBSTRUCTION IS TOPOLOGICAL, NOT A BAD BRANCH CHOICE.  A rule producing the root
+  from the holonomy is a continuous h : U(1) -> U(1) with h(W)^L = W.  Winding numbers give
+  deg(h).L = 1, impossible for L >= 2.  SO NO CONTINUOUS RULE EXISTS AT ALL.  Exhibited:
+     sweeping W once around U(1) (2000 points): max jump in the principal root = 1.7315
+                                                 max jump in COR-F's T          = 1.00e-04
+  VERDICT (b): COR-F's T PASSES on the carrier's own published data type; R FAILS, and no
+  repair exists.  R is a function of a LIFT of the connection to R, which S1 does not carry.
+
+== T3.2  CRITERION (d) -- 'RESTRICTS CORRECTLY TO A SUBLOOP'.  DECISIVE, AND IT PINS T EXACTLY. ==
+  Read as: after k ticks, the fibre value at v_i must have arrived at v_{i+k} multiplied by
+  the parallel transport along that k-edge sub-path (S1 sec3's own definition of transport).
+     max | T^k[v_{i+k}, v_i] - (parallel transport along the k-edge path) |, k<=6 = 2.48e-16
+     max | R^k[v_{i+k}, v_i] - (parallel transport along the k-edge path) |, k<=6 = 1.00e+00
+  AND AT k = 1 THE CRITERION HAS A UNIQUE SOLUTION IN THE WHOLE FAMILY.  Any shift member
+  has weights n_i; requiring n_i = U_i is one equation per edge with one solution:
+     || (the unique k=1 solution) - COR-F's T || = 6.21e-17
+  VERDICT (d): COR-F's T PASSES and is the UNIQUE member that does.  R fails at every k:
+  it never relates two distinct fibres, so it transports nothing and no sub-path statement
+  about it is even expressible.
+
+== T3.3  CRITERION (a) -- 'A GRAPH AUTOMORPHISM COMPOSED WITH EDGE PHASES'. PASSES, WEAKLY. ==
+     || T - P_gamma . diag(U_e) || = 0.00e+00
+     with P_gamma the cyclic rotation of the loop -- a graph automorphism of gamma.
+     R = (identity automorphism) . diag(w,w,w,1,1), and w is NOT an edge phase: it is not
+     any monomial prod U_e^{m_e} with integer m_e (leg T3.1's 2pi test is exactly that test).
+  VERDICT (a): passes for COR-F, but only because 'edge phases' is doing the work -- this
+  criterion is criterion (b) in disguise and is not independent evidence.
+
+== T3.4  CRITERION (c) -- 'COVARIANT UNDER RELABELLING THE LOOP'S STARTING VERTEX'. NON-DISCRIMINATING. ==
+     || T(loop written from v1) - T(loop written from v0) || = 0.00e+00
+     || R(loop written from v1) - R(loop written from v0) || = 0.00e+00
+  VERDICT (c): BOTH pass (on U(1) the holonomy is base-point independent).  REPORTED AS A
+  FAILURE OF THE CRITERION, not as evidence for either side.
+
+== T3.5  A CRITERION I PROPOSED AND THAT FAILED: ORIENTATION REVERSAL SHOULD INVERT THE TICK ==
+     || T(gamma reversed) - T(gamma)^-1 || = 2.24e-16   COR-F: EXACT
+     max | w(W^-1) - w(W)^-1 | over 2000 connections, principal branch arg in (-pi,pi]
+                                             = 3.14e-16   root: ALSO EXACT
+  VERDICT (e): I PROPOSED THIS CRITERION AND IT DOES NOT DISCRIMINATE.  With numpy's
+  symmetric branch arg in (-pi,pi] the root operator is orientation-covariant too.  I
+  record it as a failed discriminator rather than dropping it.  What survives of the
+  intuition is T3.1's DISCONTINUITY, which is branch-independent: every branch rule has a
+  cut somewhere on U(1), and T has none.
+
+== T3.6  A SECOND ONE: STABILITY UNDER SUBDIVIDING AN EDGE (a change with no physics in it) ==
+  Split e5 : v3->v4 into v3->x->v4 with U'U'' = U_{e5}.  gamma_C's length goes 3 -> 4;
+  W_C, and every path transport, are unchanged.
+     W_C before = 0.155944+0.987766j   W_C after = 0.155944+0.987766j   |diff| = 5.55e-17
+     ||T_sub^4 - M_c(subdivided)|| = 2.29e-16
+     transport v3 -> v4 along the SUBDIVIDED path, from T_sub^2  : 0.830190+0.557481j
+     transport v3 -> v4 before subdivision, from T_C           : 0.830190+0.557481j
+     the root operator, by contrast: w = W_C^(1/3) = 0.890931+0.454138j  ->  W_C^(1/4) = 0.938148+0.346234j
+                                     |change| = 0.117783 for a change with no physics in it
+  VERDICT (f): COR-F's T transports identically across the subdivision; R's scalar jumps.
+
+== T3.7  WHAT GAUGE COVARIANCE + HOMOGENEITY LEAVE OF THE SHIFT BRANCH -- AND IT IS NOT NOTHING ==
+  Gauge covariance forces the tick's (v_{i+1}, v_i) entry to carry weight exp(i(th_{i+1}-th_i)),
+  i.e. n_i = c_i U_i with c_i gauge-INVARIANT.  'Same rule at every edge' forces c_i = c.
+  T^L = M_gamma then forces c^L = 1.  So the shift branch collapses to the L members zeta^j.T.
+  I EXPECTED THAT AMBIGUITY TO BE INVISIBLE TO |Z_n|.  IT IS NOT -- because zeta multiplies
+  only the LOOP components of the section, so it does not factor out of the inner product:
+     max_n | |Z_n| under zeta.T  -  |Z_n| under T |  = 4.28e-01   -> VISIBLE.
+     but every one of the L members is still a SHIFT, so none restores invisibility:
+        D(zeta.T_F, T_C) = 2.236   D(T_F, T_C) = 2.236
+  SO: gauge covariance + homogeneity leave an L-FOLD AMBIGUITY THAT THE OBSERVABLE SEES.
+  CRITERION (d) IS WHAT REMOVES IT: 'one tick = one edge of S1 sec3's own parallel
+  transport' is the equation n_i = U_i, whose unique solution is COR-F's T (leg T3.2).
+  RECORDED AGAINST MYSELF: I predicted this ambiguity would be invisible and it is not.
+  The canonicity therefore rests on (d) ALONE, not on (b)+homogeneity, and (d) is not a
+  free-standing axiom -- it is the corpus's own definition of transport, S1:57-58.
+
+== T3.8  NEW DEFECT: THE CORPUS'S ONLY WRITTEN UNIQUENESS ARGUMENT FOR M_gamma IS FALSE ==
+  S2_FORMATION_CONDITION_ON_K1_AUDIT_V001.md:650, CHOICE LEDGER A1 -- the entry that closed
+  the extension question -- claims M_gamma is 'the UNIQUE extension that is (a) unitary,
+  (b) uses no data beyond fibres/edges/orientation/connection, (c) reduces to the build's
+  T_gamma on L_v0'.  TWO COUNTEREXAMPLES, both built only from K1's own data:
+     X1 = M_gamma . (phased swap of v1,v2 along e2)
+        unitary            ||X*X-I||        = 3.85e-16
+        gauge-covariant    ||X(a^th)-D X D*|| = 2.40e-15
+        (c) on L_v0        |X[v0,v0] - W|   = 0.00e+00
+        acts on every loop vertex, fixes v3,v4:  True
+        BUT  ||X - M_gamma|| = 2.000   -> A1's 'unique' IS FALSE
+     X2 = diag(W, W^2, W^-1, 1, 1), fibre-wise
+        unitary            ||X*X-I||        = 8.31e-16
+        gauge-covariant    ||X(a^th)-D X D*|| = 1.04e-15
+        (c) on L_v0        |X[v0,v0] - W|   = 0.00e+00
+        acts on every loop vertex, fixes v3,v4:  True
+        BUT  ||X - M_gamma|| = 1.937   -> A1's 'unique' IS FALSE
+  A1 needs TWO axioms it does not state: FIBRE-WISE-NESS (kills X1) and HOMOGENEITY --
+  the same scalar at every loop vertex (kills X2).  Fibre-wise-ness is exactly the
+  stipulation at issue in W-10 0.4.1, and it is unledgered inside the ledger entry that
+  was supposed to close the question.
+
+== T3.9  THE 'FINER CLOCK' ROUTE LANDS INSIDE THE SAME FAMILY AND ADDS NOTHING ==
+  S2 audit CHOICE LEDGER A2 rejected 'a real parameter t with a Hamiltonian'.  Suppose one
+  takes it anyway: H Hermitian with exp(iH) = M_gamma, tick = exp(iH/L).  Every such tick
+  satisfies (exp(iH/L))^L = M_gamma, so it IS a member of the family of leg T1.3 --
+  the continuous-time route buys no new operators at all.  Checked on 4000 draws:
+     max ||exp(iH/3)^3 - M_gamma|| over 4000 draws = 2.75e-14  -> all inside the family
+     how many restore invisibility (against COR-F's T_C): 0;  best D = 1.73e+00
+  -> the clock question and the transport question are the SAME question.  Refining the
+     clock without refining the transport is not an available option.

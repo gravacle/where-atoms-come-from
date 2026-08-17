@@ -1,0 +1,30 @@
+F.1  gauge transform BOTH the connection and the section (S1:59-63 is a law on both)
+     max | |Z^T_n[a^g, g s]| - |Z^T_n[a, s]| |, n<=12, 2000 gauge maps = 1.72e-15
+     -> the edge-clock functional is GAUGE-INVARIANT on the PAIR (connection, section).
+
+F.2  change only the edge-phase SPLIT at fixed holonomies, section held fixed
+     |Z^T_n| n=1..6 for six different splits with IDENTICAL W_F, W_C, identical s:
+       [0.721597056 0.689706592 0.610453523 0.191832906 0.045816493 0.180658886]
+       [0.575408344 0.503082135 0.610453523 0.176102928 0.039673085 0.180658886]
+       [0.583625233 0.464690814 0.610453523 0.093953428 0.341868552 0.180658886]
+       [0.723293414 0.441727173 0.610453523 0.160749409 0.373340704 0.180658886]
+       [0.33347177  0.349712667 0.610453523 0.378236694 0.386527767 0.180658886]
+       [0.830504016 0.701695188 0.610453523 0.533164353 0.245268804 0.180658886]
+     spread across splits, max over n<=6 = 4.970e-01
+     -> holding s fixed while re-gauging the connection MOVES the answer.  So the extra
+        content the edge clock sees is not a function of (W_F, W_C, |s_v|^2); it is a
+        function of gauge-invariant DRESSED relative phases  arg( conj(s_u) U_e s_v ),
+        i.e. exactly the Wilson-line-dressed data W-06/W-07 built their observable from.
+
+F.3  the dressed invariants, exhibited
+     For the loop gamma_C = v0->v3->v4->v0 the quantities
+       D_j = conj(s_{w_j}) U_{e_j} s_{w_{j+1}}   are NOT invariant, but
+       their arguments' differences and the closed product are.  Check:
+      dressed edge pairings, gauged: [-0.133665479-0.20526456j  -0.120294522+0.08960596j   0.119567585+0.213783986j]
+      dressed edge pairings, gauged: [-0.133665479-0.20526456j  -0.120294522+0.08960596j   0.119567585+0.213783986j]
+      dressed edge pairings, gauged: [-0.133665479-0.20526456j  -0.120294522+0.08960596j   0.119567585+0.213783986j]
+      ungauged                        : [-0.133665479-0.20526456j  -0.120294522+0.08960596j   0.119567585+0.213783986j]
+      ungauged                        : [-0.133665479-0.20526456j  -0.120294522+0.08960596j   0.119567585+0.213783986j]
+     -> identical.  These L dressed pairings per loop are the extra PHYSICAL data the
+        circuit clock integrates away and the edge clock reads.  They are gauge-invariant,
+        carrier-supplied (S1:16-22 supplies the edges), and absent from pi.

@@ -1,0 +1,43 @@
+== M3a  ON THE TWO CARRIERS RUN: algebraic condition versus measured invisibility ==
+  K1: L_F=3 L_C=3 lcm=3  |V(F) sym-diff V(C)| = 4   arms-diff min||s_i - s_j|| = 1.019  (40 states, same pi to 1e-16)
+     n with measured invisibility : [3, 6, 9, 12]
+     n with A_n a class-function  : [3, 6, 9, 12]
+     n with BOTH T^n diagonal     : [3, 6, 9, 12]
+     algebraic condition == measured on all 12 ticks: True
+     worst spread at a NON-invisible tick = 8.057e-01
+     worst spread at an     invisible tick = 4.441e-16
+
+  B0b: L_F=4 L_C=3 lcm=12  |V(F) sym-diff V(C)| = 3   arms-diff min||s_i - s_j|| = 1.219  (40 states, same pi to 1e-16)
+     n with measured invisibility : [12, 24, 36, 48]
+     n with A_n a class-function  : [12, 24, 36, 48]
+     n with BOTH T^n diagonal     : [12, 24, 36, 48]
+     algebraic condition == measured on all 48 ticks: True
+     worst spread at a NON-invisible tick = 8.556e-01
+     worst spread at an     invisible tick = 5.551e-16
+
+== M3b  NECESSITY FAILS IN GENERAL.  EXHIBIT: gamma_C = gamma_F REVERSED, L = 4 ==
+  V(gamma_F) = [0, 1, 2, 3]   V(gamma_C) = [0, 1, 2, 3]   classes [3 3 3 3]  (all four vertices are 11)
+  || T_C - T_F^(-1) || = 0.00e+00   so A_n = T_F^(-2n)
+    n  T_F^n diag  T_C^n diag  A_n classfun   measured spread
+    1       False       False         False         7.931e-01
+    2       False       False          True         6.661e-16
+    3       False       False         False         7.931e-01
+    4        True        True          True         7.772e-16
+    5       False       False         False         7.931e-01
+    6       False       False          True         7.772e-16
+    7       False       False         False         7.931e-01
+    8        True        True          True         6.661e-16
+  -> at n = 2 NEITHER branch operator is diagonal and invisibility HOLDS EXACTLY.
+     lcm(4,4) = 4, so n = 2 is NOT on the registrar's sublattice.  Necessity is FALSE.
+     Cost, stated: this designation has W_C = conj(W_F), so the character lattice <x,y>
+     collapses from Z^2 to Z.  Every counterexample below shares that vertex set.
+
+== M3c  EXHAUSTIVE SEARCH: when can sigma_F^n = sigma_C^n at n not divisible by lcm? ==
+  All ordered pairs of simple cycles (as cyclic permutations) on up to 6 labelled vertices,
+  loops of length 2..6, checking every n < 2*lcm.
+  pairs examined                                             : 167281
+  pairs with sigma_F^n = sigma_C^n at some n not div by lcm  : 1579
+     of which V(gamma_F) != V(gamma_C)                       : 0   []
+     of which V(gamma_F) == V(gamma_C)                       : 1579
+  -> (C3) confirmed exhaustively: when the two loops have DIFFERENT vertex sets there is
+     no such n.  Every counterexample requires V(gamma_F) = V(gamma_C).

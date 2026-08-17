@@ -1,0 +1,78 @@
+== X2.0  B0b's INCIDENCE, CHECKED AGAINST S4:575 IN MY OWN CODE ==
+   gamma_F verts [0, 1, 3, 4] (L=4)  gamma_C verts [0, 1, 2] (L=3)  J=[0, 1]
+   class multiset {'11': 2, '01': 1, '10': 2, '00': 4}   [S4:575 00:4 01:1 10:2 11:2]
+
+== X2.1  SEARCH, NOT SAMPLING: MINIMISE D OVER THE FULL FAMILY, K1 AND B0b ==
+   K1 : POSITIVE CONTROL descent from a random start with a solvable root-vector
+      reached D = 1.16e-14  -> the optimiser HAS power; a null below is informative.
+      250 descents from random root-vectors: 4 reached D < 1e-9 (most
+      root-vectors admit NO solution at all, so this count is small by construction),
+      best D over all = 1.62e-14,
+      of the 4 solutions, NON-fibre-wise: 0
+   B0b: POSITIVE CONTROL descent from a random start with a solvable root-vector
+      reached D = 5.62e-14  -> the optimiser HAS power; a null below is informative.
+      120 descents from random root-vectors: 1 reached D < 1e-9 (most
+      root-vectors admit NO solution at all, so this count is small by construction),
+      best D over all = 6.20e-14,
+      of the 1 solutions, NON-fibre-wise: 0
+   -> DESCENT CANNOT LEAVE THE FIBRE-WISE SET ON EITHER CORPUS CARRIER.
+
+== X2.2  THEOREM 4 TESTED AT FULL GENERALITY -- THE ROOT CONDITION DROPPED ENTIRELY ==
+   Theorem 4's hypotheses are only 'unitary' and 'identity off the loop'.  So I drop
+   T^L = M_gamma and search U(3) x U(3) freely for a pair with D(n=1) = 0.  If the theorem
+   is right the solution set is exactly {fibre-wise, class-uniform} -- a 4-dimensional set
+   inside 18 dimensions; if the theorem is wrong, a counterexample lives here, because the
+   constraint that was doing the work is gone.  SMOOTH OBJECTIVE + NUMERICAL-GRADIENT
+   DESCENT WITH MOMENTUM, because a random walk has no power against a measure-zero set
+   (my first attempt used one and returned 0 of 400 -- a fact about the optimiser only).
+      known fibre-wise point: F(x_sol) = 0.00e+00
+      POSITIVE CONTROL, started 0.30 away from it: F -> 5.49e-12  -> THE OPTIMISER HAS POWER
+      40 gradient descents from random starts: 38 converged to F < 1e-09
+      (threshold set at the positive control's own floor, 5.5e-12, not below it);
+      of those, pairs with EITHER operator NON-fibre-wise: 0;  best F = 9.75e-13
+      at the best point: ||offdiag T_F|| = 9.25e-07, ||offdiag T_C|| = 3.05e-07
+   -> THEOREM 4 SURVIVES ITS STRONGEST AVAILABLE TEST ON K1: every solution the search
+      finds is fibre-wise and class-uniform, and the search demonstrably finds solutions.
+
+== X2.3  AN ESCAPE NEITHER LANE CONSIDERED: A TIME-DEPENDENT TICK ==
+   Both lanes assume ONE operator applied repeatedly.  Nothing in the corpus requires that.
+   Let the F branch tick by T^(1), T^(2), ..., with P_k the ordered partial product and
+   P_{L_F} = M_dF.  MY CLAIM: Theorem 4 applies to each P_k, because its only inputs are
+   'unitary' and 'identity off the loop', and both are closed under products.  So every P_k
+   is fibre-wise and class-uniform, hence so is every T^(k) = P_k P_{k-1}^{-1}.  X2.2 IS
+   THE TEST OF THAT: it searched the partial products themselves, with no relation between
+   consecutive ticks assumed, and found no non-fibre-wise solution.
+   CONSEQUENCE: the kill condition cannot be met by a SCHEME either, only by an operator,
+   and there is no operator.  THIS CLOSES AN ESCAPE THE UNIQUENESS LANE LEFT OPEN.
+
+== X2.4  PROP 2's 'EXACTLY TWO BRANCHES AND NO THIRD' IS SCOPED TO *DIRECTED* LOCALITY ==
+   S1:52-53 carries the reverse traversal explicitly ('Reverse traversal transports by
+   U_e^{-1}').  If a tick may move a fibre value one edge in EITHER direction, the allowed
+   support is the loop's UNDIRECTED adjacency plus the diagonal.  On a 3-cycle:
+      directed local support,  L = 3 : 6 of 9 entries
+      undirected local support, L = 3: 9 of 9 entries  <-- NO CONSTRAINT AT ALL
+   So on K1 the locality axiom is VACUOUS unless ORIENTATION is imported into it.  It is
+   legitimate to import (S1:27, 'Oriented: every cell carries the orientation displayed'),
+   but PROP 2 as written does not say which locality it means, and on K1 the two readings
+   differ by the entire 6-dimensional manifold.  RECORDED AS SCOPE.  It costs no verdict:
+      20000 undirected-local (= unrestricted) members: non-fibre-wise restorers = 0.
+      Theorem 4 never uses locality, so widening the axiom changes nothing.
+
+== X2.5  THE SHIFT BRANCH'S FLOOR, IN CLOSED FORM.  THE LANE MEASURED 2.236 / 3.000. ==
+   For ANY shift member on K1, Q_1 = T_F* T_C has EXACTLY FIVE non-zero entries, all of
+   modulus 1, all off the diagonal, and a diagonal that is identically ZERO:
+      Q[v0,v1]=conj(n_0)  Q[v1,v2]=conj(n_1)  Q[v2,v4]=conj(n_2)m_2  Q[v3,v0]=m_0  Q[v4,v3]=m_1
+   so ||offdiag Q_1||_F = sqrt(5) = 2.2360679... EXACTLY, for every member of the torus and
+   every connection.  A PROVED FLOOR, not a sampled minimum.  (I first wrote sqrt(4) and the
+   arithmetic below caught me; the entry Q[v2,v4] is the fifth and I had dropped it.)
+   50000 shift members: min ||offdiag Q_1||_F = 2.236067977   [sqrt(5) = 2.236067977]
+                        max |diag Q_1| = 0.00e+00  -> the diagonal is identically zero
+   ON B0b I GUESSED A CLOSED FORM AND THE ARITHMETIC BELOW REFUTED IT.  I wrote 'nine unit
+   entries, floor 3.000000'.  The measured n=1 floor is 2.000000 and the diagonal of Q_1 is
+   NOT zero there (|diag| reaches 1), because on B0b the two loops share TWO vertices, so
+   the shared block contributes diagonal weight.  The lane's 3.00 is its max over n <= 24,
+   which I reproduce but do NOT close in closed form.  K1's sqrt(5) stands; B0b's 3.00
+   remains a measured minimum over 4000 (its) / 20000 (my) draws, not a proved floor.
+   B0b, 20000 shift members: min ||offdiag Q_1||_F = 2.000000000  max |diag Q_1| = 1.00e+00
+   -> my guessed closed form (3.000000) is FALSE; the n=1 floor is 2.000000.  RECORDED.
+   B0b, min D over n<=24 across 4000 shift members = 3.000000   [lane reported 3.00]

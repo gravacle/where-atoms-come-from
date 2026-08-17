@@ -1,0 +1,31 @@
+== R1.1  COR-F's SEALED EXHIBIT, S3_THE_CROSSING_AUDIT_V001.md:174-186 ==
+  ||T*T - I||        = 0.00e+00          [sealed 0.00e+00]
+  T diagonal?          False                      [sealed False]
+  W_C                = -0.029200+0.999574j        [sealed -0.029200+0.999574j]
+  ||T^3 - diag(W_C,1,1,W_C,W_C)|| = 1.57e-16
+  diag(T rho T*)     = [0.15 0.15 0.15 0.4  0.15]   [sealed 0.15 0.15 0.15 0.40 0.15]
+  diag(rho)          = [0.4  0.15 0.15 0.15 0.15]   NOT PRESERVED
+
+== R1.2  T^L = M_gamma IN EXACT GAUSSIAN RATIONALS -- no float anywhere ==
+  L=3: T^L == M_gamma exactly in Fraction arithmetic:  True   (W = -1104/1105 + -47/1105i)
+  L=4: T^L == M_gamma exactly in Fraction arithmetic:  True   (W = -21093/32045 + -24124/32045i)
+
+== R1.3  T IS UNITARY AND GAUGE-COVARIANT; M IS GAUGE-INVARIANT.  2000 connections each ==
+  K1   ||T*T-I||=3.33e-16  ||T_F^LF-M_F||=4.11e-16  ||T_C^LC-M_C||=3.85e-16  covariance(T)=4.81e-15  covariance(M)=8.76e-15
+  B0b  ||T*T-I||=3.51e-16  ||T_F^LF-M_F||=7.20e-16  ||T_C^LC-M_C||=4.44e-16  covariance(T)=4.79e-15  covariance(M)=9.22e-15
+  -> COR-F's T is unitary, gauge-COVARIANT, and its L-th power IS the corpus's operator.
+     Registrar leg A reproduces on BOTH carriers and in exact arithmetic.  LEG A STANDS.
+
+== R1.4  THE DECISIVE ARMS, MY OWN STATES AND THE CORPUS'S PUBLISHED GENERIC CONNECTION ==
+   f = 1.0, c = sqrt(2)  (S4:603 -- the ONLY generic connection the corpus publishes; W-10 N-4)
+  K1: 40 states, pi held BY CONSTRUCTION, max|pi_i - pi_0| = 3.33e-16
+       ARMS DIFFED: min_{i<j} ||s_i - s_j|| = 0.3238  (NOT byte-identical)
+       CIRCUIT convention, spread of |Z_k| over k<=24 : 5.55e-16
+       EDGE    convention, spread of |Z_n| over n<=24 : 7.52e-01
+       EDGE, restricted to n = 0 mod lcm(3,3) = [3, 6, 9, 12, 15, 18, 21, 24] : 5.55e-16
+  B0b: 40 states, pi held BY CONSTRUCTION, max|pi_i - pi_0| = 2.22e-16
+       ARMS DIFFED: min_{i<j} ||s_i - s_j|| = 0.7673  (NOT byte-identical)
+       CIRCUIT convention, spread of |Z_k| over k<=24 : 4.44e-16
+       EDGE    convention, spread of |Z_n| over n<=24 : 8.88e-01
+       EDGE, restricted to n = 0 mod lcm(4,3) = [12, 24] : 4.44e-16
+       edge ticks n<=20000 at which BOTH branches sit at the SAME circuit count: []

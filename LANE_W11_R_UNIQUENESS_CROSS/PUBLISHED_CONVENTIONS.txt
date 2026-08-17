@@ -1,0 +1,41 @@
+LANE W-11-R-T-CROSS — CROSS-REFUTER AGAINST LANE_W11_R_UNIQUENESS — PUBLISHED CONVENTIONS
+Lens assigned: STEELMAN COR-F.  The uniqueness lane defaults to attacking canonicity, which biases
+it toward finding rivals; my job is to check whether the rivals it exhibits are genuinely as
+natural or smuggle in structure the carrier does not supply, and to DISCOUNT ITS KILLS EXACTLY AS
+HARD AS ITS CONFIRMATIONS.  Both directions produced findings.
+
+DOUBLE PRECISION IS THE DEFAULT.  numpy float64/complex128 throughout.  The one identity that
+carries weight, T^L = M_gamma, is settled in EXACT Gaussian-rational (Fraction) arithmetic with no
+floating point anywhere in the check (leg X1.2), on the unimodular rationals (3+4i)/5, (5+12i)/13,
+(8+15i)/17 and their conjugates.  No rate is taken at a rational connection, so W-10 N-4 is not
+engaged by that choice; where a rate IS taken (X4.2) the connection is the registrar's own.
+
+SEEDS.  numpy default_rng(11072026) — DELIBERATELY NOT 20260817.  Both lanes under audit use the
+registrar's seed; a cross-refuter re-running on the same seed would share any draw-specific
+accident.  All my sampling is on independent draws.  Where I reproduce a sealed figure I re-run
+the sealed script itself (see REPRODUCTION.txt) rather than re-deriving on my seed.
+
+CARRIERS.  K1 rebuilt by hand from S1_CARRIER_K1_V001.md sec1 and sec3 (V=5, edges e1..e6,
+gamma_F = v0v1v2, gamma_C = v0v3v4, both length 3, J = {v0}).  B0b's incidence rebuilt in my own
+code and checked against S4:575's class multiset {00:4, 01:1, 10:2, 11:2} before use (leg X2.0);
+the index functions are the same grid construction both lanes use — I re-derived the walks and the
+class map, not the grid, and that limit is flagged.
+
+THE INSTRUMENT.  D(n) = ||offdiag Q_n||_F + max_class(spread of diag Q_n), Q_n = (T_F^n)* T_C^n.
+I did NOT accept it.  Leg X1.3 validates it against the criterion the corpus's claims are actually
+about — "|Z_n| depends on s only through pi" — by direct state sampling on 8000 independent
+members plus five named ones; 0 disagreements at 1e-9.
+
+ISOLATION.  Held fixed in every comparison: the carrier, the connection, the observable, the class
+map, the code path.  Moved, one at a time: (i) which member of the operator family is used [X1,
+X2]; (ii) a 2pi shift of ONE edge phase, with the two operators as the two arms [X3.1]; (iii) the
+convention [X4.2]; (iv) the connection, trivial vs generic [X4.3].
+EVERY SEARCH LEG CARRIES A POSITIVE CONTROL.  A null from an optimiser that cannot find a known
+solution is a fact about the optimiser.  X2.1 and X2.2 both report the control first; my FIRST
+attempt at X2.2 used a random walk, returned "0 of 400", and was VOID — that is recorded in the
+leg rather than deleted, and the leg was rewritten with a numerical-gradient descent whose
+positive control reaches 5.5e-12 and whose random starts converge 38 times in 40.
+
+WHAT THIS LANE DOES NOT DO.  It does not re-decide the clock question, it constructs nothing
+durable, it runs no carrier the corpus does not own except through the uniqueness lane's own
+SYNTH-D, which I do not re-run and do not score.

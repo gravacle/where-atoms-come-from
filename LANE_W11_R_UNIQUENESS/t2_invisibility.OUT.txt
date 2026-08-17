@@ -1,0 +1,77 @@
+== T2.0  THE INSTRUMENT, AND WHY IT IS STRONGER THAN THE REGISTRAR'S THREE STATES ==
+  Q_n = (T_F^n)* T_C^n and Z_n(s) = s* Q_n s.  Z_n depends on s only through pi FOR ALL s
+  <=> Q_n is DIAGONAL and its diagonal is CONSTANT ON EACH CLASS.  D(n) measures exactly
+  that.  The registrar sampled three states; three states can agree by accident, and a
+  three-state agreement is the very 'could not have failed' shape this program keeps
+  finding.  D is a statement about the quantifier, so it cannot.
+  agreement check on K1, connection f=1.0 c=sqrt(2):
+     D(CIRCUIT convention M) over n<=12 = 0.00e+00   (registrar leg B1: 1e-16 spreads)
+     D(EDGE convention  T)  over n<=12 = 2.24e+00   (registrar leg B2: up to 5.9e-01)
+     D per tick n=1..9, EDGE: ['2.2e+00', '2.2e+00', '5.6e-17', '2.2e+00', '2.2e+00', '0.0e+00', '2.2e+00', '2.2e+00', '2.2e-16']
+     -> zero exactly at n = 3,6,9. The registrar's table, derived rather than sampled.
+
+== T2.1  THE THEOREM THIS LANE PROVES (statement; the proof is in the FINDINGS block) ==
+  Let J = gamma_F ^ gamma_C (this is exactly class 11).  Then invisibility holds at tick n
+  IFF  T_F^n and T_C^n are both block-diagonal w.r.t. J, DIAGONAL and class-constant off J,
+  and equal up to a scalar ON J:  T_C^n|_J = q_n T_F^n|_J.
+  Since T_F^{L_F} = W_F.I and T_C^{L_C} = W_C.I on their loops, the J-block A satisfies
+  A^{L_F} = scalar and A^{L_C} = scalar, so A^{gcd(L_F,L_C)} is scalar.
+  COROLLARY.  If |J| <= 1  OR  gcd(L_F,L_C) = 1, then A is scalar and EVERY
+  invisibility-restoring member is FIBRE-WISE (diagonal) and CLASS-UNIFORM.
+  K1: |J| = 1.   B0b: |J| = 2 but gcd(4,3) = 1.   BOTH CORPUS CARRIERS ARE COVERED.
+
+== T2.2  K1   (|J| = 1) ==
+  FULL family, 20000 Haar-random pairs      : 234 restore invisibility (fraction 0.0117); best D = 3.56e-15
+     of those 234 hits, 234 have BOTH branch operators exactly DIAGONAL (off-diagonal < 1e-9).
+     they are the degenerate-spectrum members T_S = w.I, for which the Haar direction V
+     is irrelevant -- i.e. the SAME finite set as branch (A), reached with probability
+     (3/27)x(3/27) = 0.0123 by the root-index draw.
+  FULL family, GENERIC component only (all L roots distinct, 979 of 20000 draws): 0 restore invisibility; best D = 2.26e+00
+  SHIFT branch (B), 20000 random members  : 0 restore invisibility; best D = 2.24e+00
+  DIAGONAL branch (A), EXHAUSTIVE   729 pairs: 81 restore invisibility   [theorem predicts 3^2 x 3^2 = 81 of 729]
+     one witness: root-index vectors jF=(0, 0, 0) jC=(0, 0, 0)
+  COR-F's T: invisible exactly at n = [3, 6, 9, 12]   [lcm(L_F,L_C) = 3]
+     max D over n<=12 = 2.236e+00
+
+== T2.3  B0b  (|J| = 2, gcd(4,3) = 1) ==
+  FULL family, 4000 Haar-random pairs      : 6 restore invisibility (fraction 0.0015); best D = 1.79e-14
+     of those 6 hits, 6 have BOTH branch operators exactly DIAGONAL (off-diagonal < 1e-9).
+     they are the degenerate-spectrum members T_S = w.I, for which the Haar direction V
+     is irrelevant -- i.e. the SAME finite set as branch (A), reached with probability
+     (4/256)x(3/27) = 0.0017 by the root-index draw.
+  FULL family, GENERIC component only (all L roots distinct, 80 of 4000 draws): 0 restore invisibility; best D = 2.63e+00
+  SHIFT branch (B), 4000 random members  : 0 restore invisibility; best D = 3.00e+00
+  DIAGONAL branch (A), EXHAUSTIVE  6912 pairs: 144 restore invisibility   [theorem predicts 4x4x3x3 = 144 of 6912]
+     one witness: root-index vectors jF=(0, 0, 0, 0) jC=(0, 0, 0)
+  COR-F's T: invisible exactly at n = [12, 24]   [lcm(L_F,L_C) = 12]
+     max D over n<=24 = 3.000e+00
+
+== T2.4  THE REGISTRAR'S CONCLUSION SENTENCE IS FALSE AS WRITTEN — COUNTEREXAMPLE ==
+  Registrar: 'the invisibility of incidence holds exactly where both branch operators are
+  DIAGONAL'.  DIAGONALITY IS NOT SUFFICIENT.  Take T_F = diag(w, w.zeta, w.zeta^2, 1, 1) on
+  K1 -- perfectly diagonal, T_F^3 = M_dF exactly -- but the two class-10 vertices v1, v2 get
+  DIFFERENT cube roots, so the within-class distribution becomes visible:
+     ||T_F^3 - M_dF||        = 1.33e-15
+     T_F diagonal?             True
+     D (invisibility score)  = 1.732   -> INVISIBILITY BROKEN
+     pi(A) = [0.  0.3 0.3 0.4]   pi(B) = [0.  0.3 0.3 0.4]
+     |Z_1(A)| = 0.574439633869   |Z_1(B)| = 0.463335428306   spread 1.11e-01
+  CORRECTED NAME OF THE OPERATIVE VARIABLE: not DIAGONAL -- FIBRE-WISE AND CLASS-UNIFORM.
+  'Fibre-wise' is the register's own word (REGISTER:578, W-06's correction of N4); the
+  class-uniformity half is new here.  The correction STRENGTHENS the registrar's reading:
+  the stipulation that buys invisibility is narrower than the one it named.
+
+== T2.5  THE BOUNDARY OF MY OWN THEOREM, EXHIBITED AGAINST MYSELF (SYNTH-D, NOT A CORPUS CARRIER) ==
+  If |J| >= 2 AND gcd(L_F,L_C) >= 2 the corollary's hypothesis fails and a NON-DIAGONAL
+  invisibility-restorer exists.  SYNTH-D: two 4-cycles sharing {0,1}, spectator v6.
+     ||T_F^4 - M_dF||   = 9.52e-16
+     ||T_C^4 - M_c ||   = 1.11e-15
+     T_F diagonal?        False     ||offdiag T_F|| = 0.364
+     D over n<=16       = 1.20e-14   -> INVISIBILITY IS RESTORED.
+     but is it an EDGE TICK?  largest T_F entry OFF the loop's directed adjacency = 0.257
+     and does it transport?  T_F[2,1] (the entry a tick along edge 1->2 must fill) = 0.000
+  -> IT IS NOT LOCAL AND IT MOVES NOTHING ALONG EITHER LOOP.  It is a rotation inside the
+     shared block, i.e. a re-labelling of the class-11 fibres, and it needs an eigenbasis
+     the carrier does not supply.  It restores invisibility and it is not a transport.
+     RECORDED AGAINST MYSELF: my corollary is CONDITIONAL on |J|<=1 or gcd = 1, and both
+     corpus carriers satisfy it -- but the unconditional sentence would be FALSE.

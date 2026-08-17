@@ -1,0 +1,27 @@
+== X6a  THE REGISTRAR'S OWN TABLES, FROM MY INDEPENDENT OPERATOR CODE ==
+   W-11 leg B1, six circuit rows : max |mine - registrar's| = 4.72e-13   [wm6 reports 4.72e-13]
+   W-11 leg B2, nine edge rows   : max |mine - registrar's| = 3.53e-13   [wm6 reports 3.53e-13]
+   W-11 leg C3, B0b circuit rows : max |mine - registrar's| = 4.85e-13
+   W-11 leg C3, B0b edge rows    : max |mine - registrar's| = 4.93e-13   (leg C was never
+      re-run by the lane under test at the |Z| level; I re-run it here.  It reproduces.)
+   || T_F^4 - M_F || on B0b = 1.69e-16   || T_C^3 - M_C || = 1.36e-16
+   B0b class multiset from my own incidence: {'00': 4, '10': 2, '01': 1, '11': 2}   [S4:575 {00:4,01:1,10:2,11:2}]
+
+== X6b  THE LANE'S 'THE DRIFT IS O(1/sqrt N)' IS AN UNSUPPORTED RATE CLAIM ==
+   N        : [2000, 8000, 32000, 128000, 512000, 2048000]
+   |ta-clsd|: ['6.10e-04', '1.67e-04', '2.70e-04', '2.15e-04', '4.47e-05', '1.37e-06']
+   log-log slope = -0.71   (the lane asserts -0.50 ; -1.00 would be the Birkhoff rate
+   for a Diophantine rotation).  The claim 'the drift is O(1/sqrt N)' is stated from four
+   non-monotone ratios and is not what the data shows.  Nothing downstream depends on it:
+   the closed form is confirmed independently (X4d), so the LIMIT is right either way.
+
+== X6c  THEOREM C1 STRESS-TESTED OFF ITS OWN HYPOTHESIS ==
+   C1 is stated for arbitrary unitary ticks: Z_n pi-determined for every s  <=>  A_n
+   diagonal with class-constant diagonal.  I test the BICONDITIONAL on ticks that are NOT
+   L-th roots of M at all -- random unitaries supported on each loop -- on three carriers.
+        K1: 3000 random tick pairs   algebraic condition true  1031   measured pi-determined  1031   AGREE 3000/3000
+       B0b: 3000 random tick pairs   algebraic condition true   984   measured pi-determined   984   AGREE 3000/3000
+    SHARE2: 3000 random tick pairs   algebraic condition true   983   measured pi-determined   983   AGREE 3000/3000
+   -> the biconditional holds on every draw on all three carriers, including the carrier
+      the lane did not build.  C1 is the lane's real result and it survives everything I
+      threw at it.  U4 -- the corollary that turns C1 into 'therefore DIAGONAL' -- does not.

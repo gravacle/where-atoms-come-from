@@ -1,0 +1,39 @@
+LANE W-11-R-T — THE DOCUMENTARY HALF.  Four quotations from the sealed corpus, verified at the
+byte and at the line, bearing on W-10 sec0.4.1.  No computation is involved in any of them.
+
+D-1.  S2_FORMATION_CONDITION_ON_K1_AUDIT_V001.md:639-641, CORRECTION COR-F (that audit's COR-F,
+      not S3's):
+        "K1 supplies no *continuous* time; it does supply a discrete one (EDGE TRAVERSALS /
+         CIRCUITS), which is enough to write the gate's time clause."
+      The sealed correction names TWO clocks, in a disjunction, in that order.
+
+D-2.  S3_THE_CROSSING_V001.md:981, CHOICE LEDGER C3, "Why" column:
+        "circuit count is carrier-supplied discrete time (AUDIT COR-F)"
+      The ledger entry cites D-1 BY NAME and reports one half of its disjunction as if it were
+      the whole.  The alternatives column of C3 lists schedules (`k_n = 1`; any other schedule),
+      never the other clock.  W-06 found that "the edge tick appears in no alternatives column in
+      any sealed artifact"; what is new here is that the edge clock IS in the artifact C3 cites as
+      its warrant, and was dropped in the act of citing it.
+
+D-3.  S2_FORMATION_CONDITION_ON_K1_AUDIT_V001.md:658, CHOICE LEDGER A2 — the entry that closed the
+      clock question — chooses "Time = number of CIRCUITS n of the loop", and its "Why" column reads
+        "EDGE COUNT is carrier-supplied combinatorics (S1 `:16-22`); a real `t` is not."
+      S1:16-22 is the EDGE LIST (`e1 : v0 -> v1` ... `e6 : v4 -> v0`).  The warrant offered for the
+      circuit clock is a fact about edges, and the alternatives column lists only "a real parameter
+      t with a Hamiltonian" and "no time at all" — the finer DISCRETE clock is absent.
+      (And leg T3.9 shows the rejected Hamiltonian alternative lands inside the same operator family
+      as the edge tick, so A2's two listed alternatives do not span the choice it was making.)
+
+D-4.  S2_FORMATION_CONDITION_ON_K1_AUDIT_V001.md:657, CHOICE LEDGER A1, claims M_gamma is
+        "the UNIQUE extension that is (a) unitary, (b) uses no data beyond fibres/edges/
+         orientation/connection, (c) reduces to the build's `T_gamma` on `L_v0`."
+      THAT UNIQUENESS CLAIM IS FALSE.  Two counterexamples built only from K1's own data, both
+      unitary, both gauge-covariant, both acting on every loop vertex and fixing v3, v4, both
+      equal to multiplication by W on L_v0, and both different from M_gamma:
+         X1 = M_gamma . (the phased swap of v1 and v2 along e2)        ||X1 - M_gamma|| = 2.000
+         X2 = diag(W_F, W_F^2, conj(W_F), 1, 1)                        ||X2 - M_gamma|| = 1.937
+      X1 is killed by FIBRE-WISE-NESS, X2 by HOMOGENEITY (the same scalar at every loop vertex).
+      A1 states neither.  Fibre-wise-ness is the register's own name for the operative variable
+      (REGISTER_V001.md:578, W-06's correction of N4) and is exactly the stipulation W-10 sec0.4.1
+      is asking about.  IT IS UNLEDGERED INSIDE THE LEDGER ENTRY WRITTEN TO CLOSE THE QUESTION.
+      [computed: t3_canonicity.OUT.txt, T3.8]

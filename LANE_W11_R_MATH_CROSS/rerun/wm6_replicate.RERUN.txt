@@ -1,0 +1,66 @@
+== M6a  LEG A REPRODUCED (COR-F's sealed exhibit, S3_THE_CROSSING_AUDIT_V001.md:160-209) ==
+   ||T*T - I||              0.00e+00    [COR-F 0.00e+00, registrar 0.00e+00]
+   T diagonal?              False       [COR-F False]
+   W_C                      -0.029200+0.999574j   [COR-F -0.029200+0.999574j]
+   diag(T rho T*)           [0.15 0.15 0.15 0.4  0.15]  [COR-F 0.15 0.15 0.15 0.40 0.15]
+   max||T_F^3 - M_dF||      4.15e-16   [registrar 4.64e-15]
+   max||T_C^3 - M_c||       4.24e-16   [registrar 3.25e-15]
+   gauge covariance         4.78e-15   [registrar 4.78e-15]   AGREES
+   The two T^L residuals are one digit smaller than the registrar's, and the cause is not
+   the operator identity: the registrar forms W = exp(i(a1+a2+a3)) while T^3's entries are
+   exp(ia1)exp(ia2)exp(ia3).  Sum-before-exp versus product-after-exp differ by ~1 ulp and
+   that difference, not the identity, is what both figures measure.  Same theorem, better
+   conditioned.  This is a reproduction, not a disagreement.
+
+== M6b  LEG B AND LEG D REPRODUCED ON K1 ==
+   ARMS DIFF (the defect class W-08 names as commonest and FATAL):
+     ||sA - sB|| = 0.463932   ||sA - sC|| = 0.889117   ||sB - sC|| = 0.911985
+     bytes(sA)==bytes(sB): False   bytes(sA)==bytes(sC): False
+     pi(A)=pi(B)=pi(C) to 1.1e-16   -> the arms are genuinely different states with genuinely equal pi.  NOT a zero-variable control.
+   max |mine - registrar's| over B1's six circuit rows : 4.72e-13
+   max |mine - registrar's| over B2's nine edge rows   : 3.53e-13    NO ARITHMETIC DISAGREEMENT
+   B3: max|Z_edge(3k) - Z_circuit(k)| over 3 states, k<=7 = 4.20e-16 [registrar 1.97e-15]
+
+== M6c  DEFECT 1 -- LEG C2 IS A VACUOUS SEARCH REPORTED AS A SCAN, AND ITS PREMISE IS IDLE ==
+   the registrar's own predicate, run: []
+   n//4 == n//3 with 12 | n and n > 0 is arithmetically impossible -- 3n = 4n forces n = 0.
+   The scan over n <= 2000 could not have returned anything else.  It is a one-line identity
+   dressed as a search.  (COULD-NOT-HAVE-FAILED does not void a theorem, and this IS one --
+   what is void is presenting it as evidence.)
+   AND THE PREMISE IS IDLE: at n = 12 the two branches ARE at different circuit counts
+   (3 and 4) and the spread is 5.55e-17 anyway.  Equal circuit counts
+   are neither necessary nor sufficient for invisibility; only A_n = T_F^-n T_C^n matters.
+   The registrar's own C3 table refutes its own C2 narrative.
+
+== M6d  DEFECT 2 -- LEG D's NULL, m(pi)/3, IS NOT THE NULL OF ANY CONVENTION ==
+   see wm2_rate.OUT.txt M2b: the invisibility-PRESERVING fibre-wise cube-root tick
+   U = M^(1/3) has per-tick rate m(pi) = -0.767508, not m(pi)/3 = -0.255836.
+   'the EDGE rate is not m(pi)/3' is therefore true of every convention including the
+   corpus's own, and carries no weight.  The finding is the SPREAD, and the spread is real.
+
+== M6e  DEFECT 3 -- 'MAX SPREAD' LUMPS TWO DISTINCT INVISIBILITIES.  SEPARATE THEM. ==
+   (I)  PHASE-BLINDNESS   : Z depends on s only through (|s_v|^2)_v   <=>  A_n diagonal
+   (II) INCIDENCE-BLINDNESS: it depends only on the CLASS SUMS        <=>  + class-constant
+   N2/W-03's multiset theorem is (II).  S4 sec2's 'every vertex phase of s cancels' is (I).
+   They are different statements with different algebraic conditions, and the registrar's
+   single max-spread column cannot tell which one broke.
+     n   (II) A vs B  within-class     (I) A vs C  phase only
+     1                   2.270e-01                  3.804e-01
+     2                   3.220e-01                  2.812e-01
+     3                   5.551e-17                  0.000e+00
+     4                   1.319e-01                  2.066e-01
+     5                   3.475e-03                  1.546e-01
+     6                   0.000e+00                  0.000e+00
+     7                   1.238e-01                  5.897e-01
+     8                   2.518e-01                  1.410e-01
+     9                   0.000e+00                  0.000e+00
+   -> BOTH break, at the same ticks, and the registrar's verdict survives the separation.
+      But the two columns are the honest report and 'max spread' was not.
+
+== M6f  AND THE OBJECT IS NOT A LYAPUNOV EXPONENT.  NAME IT CORRECTLY. ==
+   ||T_F^n s|| and ||T_C^n s|| over n <= 500: max deviation from 1 = 1.53e-14
+   Both branch cocycles are UNITARY, so BOTH Lyapunov exponents are exactly 0 and there is
+   no Lyapunov characterisation to be had.  The decay lives entirely in the ANGLE between the
+   branches, and (1/N) sum log|Z_n| is a Birkhoff average of log|P| over a torus rotation --
+   i.e. a LOGARITHMIC MAHLER MEASURE, the same object N1 already names.  Under the edge
+   convention it is an AVERAGE OF lcm(L_F,L_C) OF THEM.  Same theory, more terms.

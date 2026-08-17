@@ -1,0 +1,57 @@
+== X3a  wm7 M7c's BREAK ARM DOES NOT MOVE THE STATE.  I MOVE IT. ==
+   The claim under test: 'at the per-F-circuit clock the rate is EXACTLY N1's lambda for
+   every state with that pi whenever N1's first Jensen branch dominates, and it BREAKS
+   when the branches cross.'  Arm 1 is the lane's own; arm 2 is the lane's break state
+   with the state axis actually varied -- 12 states per pi, same pi to 1e-16, arms diffed.
+
+   branch 1 dominates  (the lane's B0b state)
+     pi = [0.44 0.25 0.09 0.22]   m(pi) = -0.820980552   CM exact = nan
+     ARMS: 12 states, pi equal to 1.1e-16, min||s_i-s_j|| = 0.8970
+     wm7's own three numbers (rho = 0,4,8 of ONE state) : ['-0.820981', '-0.820981', '-0.820981']
+     F-CLOCK RATE ACROSS 12 DIFFERENT STATES AT FIXED pi:
+       min -0.820980552   max -0.806262326   SPREAD 1.47e-02
+     min over states of min_circle(|branch1| - |branch2|) at rho=0,4,8 = -0.08851
+
+   branches cross      (the lane's break state)
+     pi = [0.1  0.34 0.14 0.42]   m(pi) = -0.867500568   CM exact = nan
+     ARMS: 12 states, pi equal to 2.2e-16, min||s_i-s_j|| = 0.9250
+     wm7's own three numbers (rho = 0,4,8 of ONE state) : ['-0.867501', '-0.989498', '-1.078810']
+     F-CLOCK RATE ACROSS 12 DIFFERENT STATES AT FIXED pi:
+       min -0.999595259   max -0.910564154   SPREAD 8.90e-02
+     min over states of min_circle(|branch1| - |branch2|) at rho=0,4,8 = -0.25859
+
+   -> THE LANE'S THREE STATES ALL HAVE POSITIVE DOMINANCE AT rho = 0,4,8 AND ITS STATE A
+      IS AT +0.00062 AT rho = 4 -- A RAZOR EDGE.  Six of my twelve states at the SAME pi
+      cross, and their F-clock rates move by up to 1.47e-02.  So:
+      * TRUE and confirmed: at rho = 0 mod L_F the first Jensen branch is p00 + p10 X for
+        EVERY state (my dominance column at rho = 0 is +0.06000 for all 15 states, exactly).
+      * TRUE and confirmed: for a state whose branch 1 dominates at every such rho, the
+        F-clock rate is m(pi) exactly.
+      * FALSE AS THE LANE STATES IT: 'the RATE at the F-circuit clock equals N1's lambda
+        EXACTLY for every state with that pi'.  Dominance is a property of the BILOCAL
+        coefficients c01, c11, which depend on the within-class split and the phases --
+        i.e. of the STATE, not of pi.  The lane's own prose says exactly this one line
+        later ('IT IS A PROPERTY OF THE STATE') and its claim quantifies over pi.
+      * THE LANE CAUGHT ITSELF SCORING A NULL HERE ONCE (its self-flag 1, the 1.6e-05
+        sampling-noise null) AND THE REPLACEMENT BLOCK SCORES A SECOND ONE, from a
+        three-state ensemble read as a universal quantifier over states.
+
+== X3b  AND THE SAME ARM MOVES FOUR VARIABLES UNDER A ONE-VARIABLE CAPTION ==
+   wm7 caption: 'IT IS A PROPERTY OF THE STATE... Exhibited, one variable moved:'
+     pi arm 1 = [0.44 0.25 0.09 0.22]
+     pi arm 2 = [0.1  0.34 0.14 0.42]
+     componentwise change = [-0.34  0.09  0.05  0.2 ]   -> 4 of 4 components move,
+   and the report names the move as 'moving p00 from 0.44 to 0.10'.  A one-variable
+   version exists and I run it: hold p10,p01,p11 in fixed ratio and sweep p00 alone.
+       p00         m(pi)    F-clock rate   min dominance   state-spread
+      0.44  -0.820980552    -0.817473330        -0.07268       1.13e-02
+      0.35  -0.974689140    -0.960532975        -0.24355       8.22e-02
+      0.28  -1.008325051    -0.996729742        -0.29446       1.04e-01
+      0.22  -1.014135316    -0.991090132        -0.23868       9.32e-02
+      0.18  -1.003682577    -0.973669363        -0.20238       7.38e-02
+      0.10  -0.911836382    -0.901637818        -0.13334       3.16e-02
+   -> the transition is at min-dominance crossing zero, and it is p00 alone that drives it
+      HERE only because the other three were rescaled together.  The operative variable is
+      NOT p00: it is  min_circle(|p00 + p10 X| - |c01 + c11 X|),  which is a property of
+      the pi AND of the bilocal coefficients, i.e. of the state.  The lane named the state
+      correctly in prose ('IT IS A PROPERTY OF THE STATE') and its arm names p00.

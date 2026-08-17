@@ -1,0 +1,58 @@
+== X4a  wm2 M2d's 'state C' COLUMNS ARE COMPUTED FROM A STALE VARIABLE ==
+   wm2_rate.py runs M2a on K1 with sA,sB,sC (5 components), then M2c REBINDS sA,sB,sC to
+   B0b's 9-component states, then M2d does  car=L.K1() ; rows=coeff_rows(car,a,sC).
+   coeff_rows indexes s[0..4] only, so it silently consumes the FIRST FIVE COMPONENTS OF
+   B0b's state C.  No exception is raised.  The printed columns are headed 'state C'.
+   K1's actual state C (what the caption says):  m(rho=1) = -1.702516603054   m(rho=2) = -0.931308660790
+   first 5 entries of B0b's state C (what ran):  m(rho=1) = -1.828435829289   m(rho=2) = -1.366583513965
+   wm2 M2d printed              :  m(rho=1) = -1.828435829289   m(rho=2) = -1.366583513965
+   wm2 M2a printed for state C  :  m(rho=1) = -1.702516603      m(rho=2) = -0.931308661
+   -> M2d's two right-hand columns match NEITHER the caption's state NOR M2a's own table.
+      COR-K defect class exactly ('not reproducible from the displayed parameters').
+      THE CONVERGENCE CONCLUSION IS UNHARMED -- the grid study is still a grid study of
+      three genuine polynomials, and the m(pi) column is correct -- but the labels are
+      false and the numbers cannot be regenerated from anything the lane states.
+
+== X4b  THE REPORT'S T_C GAUGE-COVARIANCE FIGURE IS IN NO SEALED FILE.  I COMPUTE IT. ==
+   The lane's report claims, twice: 'gauge-covariant in BOTH branches (3.23e-15; the
+   registrar tested T_F only)' and 'I checked both: max defect 3.23e-15.'
+   wm6_replicate.py's gauge loop builds Top(car['walkF'],...) ONLY; grep for 3.23e-15 over
+   the 18 sealed files returns nothing.  Under the lane's own rule ('unreproducible numbers
+   are treated as absent') the figure is absent.  Recomputed here, both branches:
+   max gauge defect, T_F : 4.78e-15      max gauge defect, T_C : 4.64e-15   (2000 draws,
+   unnormalised complex Gaussian s, the lane's own convention in wm6).  Both are covariant;
+   the CLAIM is true and the FIGURE is unpublished.  Note the value depends on ||s||, which
+   the lane does not normalise, so '3.23e-15' is not a reproducible quantity in any case.
+
+== X4c  W-10's COMMUTATOR ROW IS REFUTED HARDER BY THE LANE'S OWN REV4 THAN BY ITS wm8 ==
+   W-10 (REGISTER_V001.md:1042-1046): '||[T_F,T_C]|| is 2.828 on B0b, 2.449 on K1 and
+   exactly 0 on B0a -- NON-ZERO PRECISELY WHEN CLASS 11 IS OCCUPIED.'
+   wm8 exhibits class 11 EMPTY with commutator 0 -- which is CONSISTENT with W-10's
+   correlation, and refutes only the diagnostic role wm8 reads into it.  The correlation
+   itself needs class 11 OCCUPIED and commutator ZERO.  The lane already owns that carrier
+   and did not connect it: REV4, its own wm3 M3b counterexample.
+   REV4: class vector [3 3 3 3]  -> class 11 occupied: True   |class 11| = 4
+         || [T_F, T_C] || = 0.00e+00   <-- EXACTLY ZERO
+         and the edge convention still separates: spread at n=1 = 7.931e-01
+   -> class 11 FULLY occupied and the commutator EXACTLY zero.  W-10's stated correlation
+      is false in the 'only if' direction too, on a carrier inside the lane's own wm3.
+      Any two loops with the same vertex set and sigma_C = sigma_F^{-1} do this.
+
+== X4d  CONVERGENCE, CHECKED AGAINST EXACT CLOSED FORMS, NOT AGAINST A FINER GRID ==
+   A finer grid agreeing with a coarser one is not convergence to the right number.  Every
+   load-bearing quadrature in the lane is checked here against a closed form computed by a
+   different route (Cassaigne-Maillot with a Bloch-Wigner dilogarithm, or Jensen exactly).
+   N1's lambda, m(0.4+0.3x+0.3y)   [W-02 erratum, wm2 M2a]
+      quadrature 2^22 -0.767507880358   closed form -0.767507880358   |diff| 3.21e-14   lane/register printed -0.767507880357
+   B0b pi=(.44,.25,.09,.22): m = log(0.44) by branch domination [wm7 M7c]
+      quadrature 2^22 -0.820980552070   closed form -0.820980552070   |diff| 1.11e-16   lane/register printed -0.820980552070
+   W-10 N-3's B0b lambda = log(4/9) [S4:599 corrected]
+      quadrature 2^22 -0.810930216216   closed form -0.810930216216   |diff| 0.00e+00   lane/register printed -0.810930216216
+   rank-1 f=1.0,c=0.0 circuit rate: lane N=2e5 gives -0.356675073 ; mine -0.356675073 ;
+      EXACT value log(0.7) = -0.356674943939   |lane - exact| = 1.29e-07
+   S1 order-4 f=pi,c=3pi/2 circuit rate: lane N=2e5 gives -0.804718956 ; mine -0.804718956 ;
+      EXACT value (1/4)log(1/25) = -0.804718956217   |lane - exact| = 2.17e-10
+      (the period-4 orbit gives |Z| = sqrt(1/10), 2/5, sqrt(1/10), 1, so the average of the
+       logs is (1/4) log(0.1*0.4) = -(1/4) log 25.  COR-K's '-0.804719' is that number, and
+       NEITHER the corpus NOR the lane states the closed form.)
+   -> every convergence claim I could reach a closed form for is CONVERGENCE, not a window.

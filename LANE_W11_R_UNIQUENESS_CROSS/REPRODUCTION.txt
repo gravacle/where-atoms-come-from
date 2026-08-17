@@ -1,0 +1,21 @@
+LANE W-11-R-T-CROSS — REPRODUCTION OF BOTH LANES UNDER AUDIT, BEFORE ANY ATTACK.
+
+SEALS.  Both sealed lanes verify at the bytes:
+   LANE_W11_CONVENTION_TEST/SEALS.sha256   9 files, all OK
+   LANE_W11_R_UNIQUENESS/SEALS.sha256     12 files, all OK
+
+RE-RUN.  Every script of both lanes was re-run on this machine from the sealed source and the
+stdout diffed against the sealed .OUT.txt:
+   w11_a_edge_transport   BIT-IDENTICAL
+   w11_b_decisive         BIT-IDENTICAL
+   w11_c_b0b              BIT-IDENTICAL
+   w11_d_rate             BIT-IDENTICAL
+   t1_family              BIT-IDENTICAL
+   t2_invisibility        BIT-IDENTICAL
+   t3_canonicity          BIT-IDENTICAL
+   t4_registrar_recheck   BIT-IDENTICAL
+Copies of the re-run source and the re-run stdout are in ./rerun/ and ./rerun_reg/.
+So EVERY number reported below is a statement about what the sealed code computes, never about
+whether it computes.  The defects found are defects of REPORTING and of SCOPE, not of arithmetic:
+in two places the lane's prose and returned verdict state numbers that its own sealed output
+contradicts, and those are the two places the arithmetic is fine and the sentence is not.

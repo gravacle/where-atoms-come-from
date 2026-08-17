@@ -1,0 +1,45 @@
+== M4a  THEOREM U1, DIRECTLY: solve the edge-local unitarity constraints on an L-cycle ==
+   parametrise d0_u = cos(t_u) e^{i al_u}, d1_u = sin(t_u) e^{i be_u}; the ONLY constraint
+   beyond column normalisation is conj(d1_u) d0_{u+1} = 0 for every u.  Solve it exactly.
+   L = 3:  edge-local UNITARIES found  50299   pure shift  25156   diagonal  25143   MIXED 0
+   L = 4:  edge-local UNITARIES found  24881   pure shift  12552   diagonal  12329   MIXED 0
+   L = 5:  edge-local UNITARIES found  12678   pure shift   6290   diagonal   6388   MIXED 0
+   L = 6:  edge-local UNITARIES found   6229   pure shift   3007   diagonal   3222   MIXED 0
+   -> MIXED count is 0 at every L.  U1 holds.
+
+== M4b  THEOREM U2: the non-diagonal edge-local gauge-covariant family, honestly sized ==
+   U_lam: (U s)_v = lam_e U_e s_u on the loop.  Gauge-covariant for any unimodular lam.
+   2000 random lam with prod lam = 1:  max ||U_lam^3 - M_F|| = 2.14e-15
+   so the family is (L-1)-dimensional and COR-F's lam = 1 is ONE point of it.  Registrar's
+   declared weakness CONFIRMED, not repaired.
+
+== M4c  THEOREM U3: and it is immaterial -- the whole family is visible at the same ticks ==
+   over 2000 random members of the family:
+     MINIMUM spread at n = 1 or 2 (off the sublattice) = 5.103e-01   (never invisible)
+     MAXIMUM spread at n = 3 or 6 (on the sublattice)  = 6.661e-16   (always invisible)
+   The weights lam never enter the verdict.  Only the PERMUTATION does.
+
+== M4d  THEOREM U4, THE DECISIVE SEARCH.  Drop locality.  Every unitary U_F on gamma_F with ==
+        U_F^3 = M_F is  exp(i arg W_F /3) * Q diag(w^a,w^b,w^c) Q^*.  20000 Haar draws.
+   all 20000 satisfy ||U^3 - M|| <= 6.7e-15
+   pi-INVISIBLE at n = 1,2,4,5 : 269      both ticks diagonal : 269
+   INVISIBLE and NOT both diagonal : 0   <-- U4 says this must be 0
+   (the two counts coincide: a Haar Q gives a diagonal U only when all three exponents
+    agree, probability (3/27)^2 = 1/81, i.e. ~247 of 20000.)
+
+== M4e  THE ADVERSARIAL SUB-FAMILY my own proof names as the last hope: U_F class-block- ==
+        preserving but NON-diagonal on class 10 = {v1,v2}.  If anything survives, it is here.
+   2684 draws, all with U_F^3 = M_F exactly and U_F non-diagonal on class 10,
+   AND with U_C the invisibility-preserving diagonal tick (so U_F alone carries the test):
+     smallest spread produced = 1.238e-01   largest = 5.192e-01   -> none invisible.
+
+== M4f  THE ONE FAMILY THAT DOES RESTORE INVISIBILITY -- AND WHAT IT IS ==
+   U = zeta M^(1/3), zeta = w^0:  ||U_F^3-M_F|| = 4.3e-16   max spread, n <= 12 = 4.44e-16
+   U = zeta M^(1/3), zeta = w^1:  ||U_F^3-M_F|| = 1.0e-15   max spread, n <= 12 = 4.44e-16
+   U = zeta M^(1/3), zeta = w^2:  ||U_F^3-M_F|| = 2.3e-15   max spread, n <= 12 = 4.44e-16
+   Invisible at EVERY tick -- and it is FIBRE-WISE SCALAR MULTIPLICATION BY A POWER OF THE
+   WHOLE-CIRCUIT HOLONOMY.  It is the corpus's own stipulation with a finer clock, not an
+   independent transport: it moves no fibre value along any edge, and it is the one operator
+   in the search that is NOT edge-local in the moving sense.  So the answer to the
+   registrar's declared weakness is: YES another tick restores invisibility, and it is the
+   stipulation.  No transport that MOVES anything does.

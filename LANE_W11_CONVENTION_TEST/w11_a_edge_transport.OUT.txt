@@ -1,0 +1,16 @@
+== A1  VALIDATE AGAINST COR-F's SEALED EXHIBIT ==
+  || T*T - I ||            = 0.00e+00      [COR-F: 0.00e+00]
+  T diagonal?                False                    [COR-F: False]
+  T^3 = diag(...)          = [-0.0292+0.999574j  1.    +0.j        1.    +0.j       -0.0292+0.999574j
+ -0.0292+0.999574j]
+  W_C                      = -0.029200+0.999574j      [COR-F: -0.029200+0.999574j]
+  diag(T rho T*)           = [0.15 0.15 0.15 0.4  0.15]   [COR-F: 0.15 0.15 0.15 0.40 0.15]
+  diag(rho)                = [0.4  0.15 0.15 0.15 0.15]   NOT PRESERVED
+
+== A2  T^L = M_gamma, AND GAUGE COVARIANCE ==
+  max || T_F^3 - M_dF ||                      = 4.64e-15   (2000 connections)
+  max || T_C^3 - M_c  ||                      = 3.25e-15
+  max || T_F(g.s, g.a) - g.(T_F s) ||         = 4.78e-15   -> T is gauge-COVARIANT,
+     so <T_F^n s, T_C^n s> is gauge-INVARIANT, exactly as <M_dF^k s, M_c^k s> is.
+  ==> COR-F's transport is a legitimate rival convention on the corpus's own terms:
+      unitary, gauge-covariant, and its L-th power IS the corpus's own operator.

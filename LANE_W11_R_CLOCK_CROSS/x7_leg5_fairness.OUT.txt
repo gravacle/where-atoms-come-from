@@ -1,0 +1,38 @@
+
+================ K1  L=(3,3)  lcm=3 gcd=3 ================
+   CORR-E   out#823dcb4b4ecb   max|Z|-spread 8.789e-01   ALL readings on the sublattice? False
+   CORR-C   out#9a0347140c08   max|Z|-spread 6.661e-16   ALL readings on the sublattice? True
+   CORR-D   out#e901f71481a2   max|Z|-spread 6.661e-16   ALL readings on the sublattice? True
+   CORR-X   out#9a0347140c08   max|Z|-spread 6.661e-16   ALL readings on the sublattice? True
+   CORR-R   out#823dcb4b4ecb   max|Z|-spread 8.789e-01   ALL readings on the sublattice? False
+   CORR-P   out#7f2e2a48a56d   max|Z|-spread 8.897e-01   ALL readings on the sublattice? False
+   COLLAPSE (my code): CORR-E=CORR-R | CORR-C=CORR-X | CORR-D | CORR-P    distinct arms 4 of 6
+   INDEPENDENT BEHAVIOURS: 2 -- SOME-OFF-SUBLATTICE: ['CORR-E', 'CORR-R', 'CORR-P']; ALL-ON-SUBLATTICE: ['CORR-C', 'CORR-D', 'CORR-X']
+   Every ON row is the SAME theorem (T^m diagonal iff L|m) sampled again; every OFF row
+   is its negation.  Leg 5 therefore contains ONE discriminator, not six, and lane C's
+   own [T] mark on its leg-5 nulls concedes half of that.
+   CORR-P residual test: 10 of 240 readings have residual < 0.01 rad (max residual overall 0.235);
+      of those, 0 land on the sublattice.  max|Z|-spread on the low-residual subset = 7.697e-01
+      -> the non-null SURVIVES at near-zero residual, so lane C's own caveat ('part of
+         its non-null is attributable to the mismatch') is too generous to itself: the
+         residual is irrelevant, because equal accumulated PHASE never makes T^m
+         diagonal.  CORR-P is a third sample of the same theorem, not a third test.
+
+================ B0b  L=(4,3)  lcm=12 gcd=1 ================
+   CORR-E   out#242b0963290e   max|Z|-spread 8.382e-01   ALL readings on the sublattice? False
+   CORR-C   out#3848697a41da   max|Z|-spread 6.661e-16   ALL readings on the sublattice? True
+   CORR-D   out#f12555a5b346   max|Z|-spread 5.551e-16   ALL readings on the sublattice? True
+   CORR-X   out#0048ee95a30d   max|Z|-spread 4.441e-16   ALL readings on the sublattice? True
+   CORR-R   out#3848697a41da   max|Z|-spread 6.661e-16   ALL readings on the sublattice? True
+   CORR-P   out#aedfa215abdb   max|Z|-spread 8.752e-01   ALL readings on the sublattice? False
+   COLLAPSE (my code): CORR-E | CORR-C=CORR-R | CORR-D | CORR-X | CORR-P    distinct arms 5 of 6
+   INDEPENDENT BEHAVIOURS: 2 -- SOME-OFF-SUBLATTICE: ['CORR-E', 'CORR-P']; ALL-ON-SUBLATTICE: ['CORR-C', 'CORR-D', 'CORR-X', 'CORR-R']
+   Every ON row is the SAME theorem (T^m diagonal iff L|m) sampled again; every OFF row
+   is its negation.  Leg 5 therefore contains ONE discriminator, not six, and lane C's
+   own [T] mark on its leg-5 nulls concedes half of that.
+   CORR-P residual test: 10 of 240 readings have residual < 0.01 rad (max residual overall 0.235);
+      of those, 0 land on the sublattice.  max|Z|-spread on the low-residual subset = 8.466e-01
+      -> the non-null SURVIVES at near-zero residual, so lane C's own caveat ('part of
+         its non-null is attributable to the mismatch') is too generous to itself: the
+         residual is irrelevant, because equal accumulated PHASE never makes T^m
+         diagonal.  CORR-P is a third sample of the same theorem, not a third test.

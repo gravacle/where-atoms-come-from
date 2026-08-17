@@ -1,0 +1,41 @@
+  K1 classes by vertex: [(1, 1), (1, 0), (1, 0), (0, 1), (0, 1)]    (11={v0}, 10={v1,v2}, 01={v3,v4})
+
+== D1  THE COUNTEREXAMPLE FAMILY: NON-DIAGONAL, NON-CLASS-CONSTANT, AND pi-ONLY ==
+  200 sampled pairs from the family:  max ||U^L - M|| = 4.61e-15
+     NON-DIAGONAL U_F in 200/200 draws;  NOT class-constant-diagonal in 200/200
+     WORST pi-spread over 41 pi-identical states and n <= 12:  9.44e-15
+  one explicit witness, U_F (real part rounded):
+[[-0.959   0.      0.      0.      0.    ]
+ [ 0.     -0.1784 -0.5813  0.      0.    ]
+ [ 0.      0.6124 -0.5465  0.      0.    ]
+ [ 0.      0.      0.      0.0019  0.7429]
+ [ 0.      0.      0.      0.6665  0.4981]]
+     ||U_F - diag(U_F)|| = 1.6411   class-constant diagonal? False   ||U_F^3 - M_F|| = 2.12e-15   pi-spread = 2.05e-15
+  -> THE 'ONLY IF' HALF OF THE STEELMAN'S CHARACTERISATION IS FALSE, and the preserving set
+     is NOT measure zero -- this family is positive-dimensional (R ranges over a product of
+     conjugacy manifolds of order-3 unitaries, one per class block).
+
+== D2  THE CORRECT CRITERION IS ON THE PAIR: K_n = (U_F*)^n U_C^n CLASS-CONSTANT DIAGONAL ==
+  COR-F edge tick T          K_n class-constant diagonal for n=1..7: [False, False, True, False, False, True, False]    pi-spread 8.63e-01
+  uniform root D             K_n class-constant diagonal for n=1..7: [True, True, True, True, True, True, True]    pi-spread 4.44e-16
+  counterexample Lambda.R    K_n class-constant diagonal for n=1..7: [True, True, True, True, True, True, True]    pi-spread 2.05e-15
+  -> the criterion tracks pi-only-ness exactly, and it is a statement about the PAIR.
+     'Both roots diagonal and class-constant' is SUFFICIENT and NOT NECESSARY.
+
+== D3  WHY 4000 INDEPENDENT DRAWS FOUND 0 COUNTEREXAMPLES: THE SAMPLER CANNOT PRODUCE ONE ==
+  independent sampler, 4000 pairs: pi-only draws = 4   (steelman leg G1 reports 4,
+  all class-constant diagonal).  Reproduced in kind.  But the counterexample family lives on
+  the DIAGONAL of the pair space (U_F and U_C share R), which an independent sampler visits
+  with probability zero.  On W-08's own norm, G1 IS A CONTROL THAT COULD NOT HAVE FAILED.
+
+== D4  WHAT THIS DOES AND DOES NOT COST THE STEELMAN ==
+  COSTS: the characterisation, the 'measure zero' claim, and the sentence 'every
+  non-class-constant root breaks it'.  All three are false as stated.
+  DOES NOT COST: the trivial-limit selection.  Every member of my family has
+  U_F(0) = U_C(0) = R and therefore ALSO passes the trivial-connection contact point --
+  it enlarges the ADMITTED set without adding a single incidence-VISIBLE member.
+  Checked at a = 0 explicitly:
+     ||Lambda_F(0) - I|| = 0.00e+00  so U_F(0) = U_C(0) = R,  max_n,s |Z_n| at a=0 over the family:
+     draw 1:  min |Z_n(a=0)| = 1.000000000000   max = 1.000000000000   (no formation, exactly)
+     draw 2:  min |Z_n(a=0)| = 1.000000000000   max = 1.000000000000   (no formation, exactly)
+     draw 3:  min |Z_n(a=0)| = 1.000000000000   max = 1.000000000000   (no formation, exactly)

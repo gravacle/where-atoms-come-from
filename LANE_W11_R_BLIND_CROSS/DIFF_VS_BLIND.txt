@@ -1,0 +1,236 @@
+LANE_W11_R_BLIND_CROSS -- CROSS-REFUTATION OF LANE I (LANE_W11_R_BLIND)
+LENS: DIFF AUDIT.  Lane I claims independence.  Verified below, then its arithmetic checked, then
+its two headline DISAGREEMENTS with the registrar attacked.
+
+=========================== PART 0.  BOTH LANES REPRODUCE AT THE BYTES =========================
+shasum -a 256 -c on both SEALS.sha256: 16/16 OK (blind), 9/9 OK (registrar).
+Reran all 7 blind scripts and all 4 registrar scripts under python 3.9.6 / numpy 2.0.2:
+    A_transport B_invisibility C_residue D_uniqueness E_b0b_clock F_gauge_content G_exact_and_diff
+    w11_a_edge_transport w11_b_decisive w11_c_b0b w11_d_rate
+ALL ELEVEN BYTE-IDENTICAL to their sealed .OUT.txt.  Neither lane has an unreproducible number.
+(Directories rerun_blind/ and rerun_registrar/.)
+
+=========================== PART 1.  IS LANE I'S INDEPENDENCE REAL? ============================
+VERDICT: CODE-INDEPENDENT -- YES, and the evidence is positive, not merely an absence.
+  1  Different internal representation.  Registrar: entrywise from (src,dst,edge-index) triples,
+     module-level globals, one file per leg.  Blind: a Carrier class holding vertex cycles plus
+     per-STEP phases, shared wcore.py.  Mine: T = P.D.  No shared idiom, no shared identifier.
+  2  Different connection.  Registrar's a = [1.0,0.37,0.91,sqrt2,0.23,1.77] gives f = 57/25,
+     c = 2+sqrt2 and lives ONLY in w11_b_decisive.py:31 (PUBLISHED_CONVENTIONS.txt states no
+     (f,c) at all).  The blind lane uses f = 1.0, c = sqrt(2) -- S4:603, the corpus's published
+     generic pair.  A code-reader would have matched the registrar; it did not.
+  3  Its own R-4 complains that the connection and the phase split are unstated WITHOUT NAMING
+     THEIR VALUES.  A lane that had opened w11_b_decisive.py would have quoted them.
+  4  Different ready states (its arm B = [.40,.25,.05,.02,.28] vs the registrar's
+     [.40,.30,.00,.05,.25]; different phase arm), different B0b (COLUMN 0->3->6 vs the
+     registrar's ROW 0->1->2; shared edge traversed OPPOSITELY vs identically), different seeds
+     in six of seven scripts.
+  5  Grep of the blind lane's 17 files for registrar-code-only strings (LOOP_F, Top(, w10a_lib,
+     Wg(, the phase list 0.91/1.77, the state [0.30,0.00]): ZERO hits.  Its only occurrences of
+     '0.37' and '2.28' are its own B0b shared-edge phase and its own printed f-value.
+  THE ONE DATUM THAT CUTS THE OTHER WAY, RECORDED: A_transport.py seeds default_rng(20260817),
+  which is the registrar's seed and is stated in PUBLISHED_CONVENTIONS.txt -- a file the blind
+  lane says it opened only after leg G.  20260817 is the date, and the date is in both lanes'
+  context, so this is consistent with convergence rather than copying; it is not decidable from
+  the artifacts and I do not score it either way.  Its other five seeds are Fibonacci, e, pi and
+  phi -- none matching the registrar.
+VERDICT: RESULT-INDEPENDENT -- NO, AND THE LANE SAYS SO.  Its commissioning brief quoted the
+  registrar's headline numbers AND its conclusion.  Every AGREEMENT in its H-table is therefore
+  corroboration of STRUCTURE under different parameters (which is real and which I now make a
+  fourth of), not independent corroboration of the registrar's VERDICT.
+VERDICT: LINEAGE-INDEPENDENT -- NO.  Opus 5, layer thirteen.  It says so.  So am I: layer
+  fourteen.  Two Opus 5 lanes agreeing about a naming question is exactly the failure mode
+  W-10's LINEAGE block warns about, and the corpus's misnaming rate has not fallen in six layers.
+NET: its agreement with the registrar is INDEPENDENT CORROBORATION OF THE STRUCTURE AND
+  CONVERGENT RECONSTRUCTION OF THE VERDICT.  The place independence would have mattered most is
+  its two disagreements -- and that is where it is wrong.
+
+=========================== PART 2.  ITS ARITHMETIC.  WHAT I COULD BREAK, AND DID NOT ==========
+Reproduced in a third implementation, on the corpus's published generic connection, with my own
+arms and my own seeds (X1):
+  * COR-F's sealed exhibit, at COR-F's own a4,a5,a6:  ||T*T-I|| 0.00e+00, T not diagonal,
+    W_C = -0.029200+0.999574j, ||T^3 - diag(W_C,1,1,W_C,W_C)|| = 2.62e-16,
+    diag(T rho T*) = [0.15 0.15 0.15 0.40 0.15].
+  * T unitary 3.85e-16; T^3 = M 1.67e-15 / 2.36e-15; T gauge-COVARIANT 1.47e-15; M gauge-
+    INVARIANT 3.20e-15 (2000 connections).
+  * CIRCUIT spread 5.11e-15 over k<=2000; EDGE spread 8.29e-01, on 3Z 2.22e-15, off 3Z >= 6.5e-03.
+  * B0b, BOTH reconstructions: T^4 = M_F, T^3 = M_C; circuit spread ~2e-15; edge spread 5.8e-01
+    (reg) / 5.9e-01 (blind); zero on 12Z; and no n at all with n/L_F = n/L_C.
+  * M = T^L IN EXACT ARITHMETIC (X6.1): T composed L times as a symbolic map on Fractions fixes
+    every loop vertex and carries the identical exact angle at each.  No float involved.  The
+    blind lane's structural point is correct and is not a numerical artefact.
+  * ITS D2 CRITERION -- |<A_F^a s, A_C^b s>| is a function of pi alone iff Q = A_F^{-a}A_C^b is
+    diagonal with a class-constant diagonal -- SURVIVES 11,201 test cells (625 each on
+    K1 / B0b-reg / B0b-blind, 100 on each of two degenerate carriers, 169 on a disjoint-loop
+    carrier, 169 on each of three singleton-class carriers, 169 on each of 50 random carriers),
+    16 random equal-pi states per cell: ZERO mismatches (X4).  This is the strongest thing in lane I and
+    it holds.  Its own S-5 worry (degenerate class structure) is discharged: I built the
+    singleton-class carriers it could not, and the criterion holds there too.
+  * ITS P-1 -- Z^T_{Pq+r} = sum_ab c^(r)_ab U^{aq} V^{bq} with c^(0) = pi EXACTLY -- verified as
+    an IDENTITY (max |Z_n - formula| <= 1.9e-14 over n<=400) on K1 and both B0bs, 3 states each,
+    and c^(r)_00 = p00 for EVERY residue.  Rate prediction (1/P) sum_r m(P_r) agrees with direct
+    Birkhoff averages to 3.7e-06..4.5e-05 at N ~ 2e5 (X5.1, X5.2).
+  * ITS P-3 (the edge functional is gauge-invariant on the PAIR) -- consistent with my X1.2
+    covariance figures; not re-run separately.
+  * Register N-3's log(4/9) reproduced, and CLOSED-FORM rather than quadrature: the class-00
+    Jensen branch beats the other by 0.111111 at every one of 2^22 grid points (X6.3).
+  * The registrar's UNPUBLISHED connection f = 57/25, c = 2+sqrt2 IS generic -- proved exactly
+    (X6.2), a check neither prior lane ran.
+
+=========================== PART 3.  WHERE LANE I IS WRONG =====================================
+C-1  ** ITS R-1 IS A COORDINATE CHOICE PRESENTED AS A REFUTATION, AND ITS OWN LEG D REFUTES IT.**
+     R-1: 'the operative variable is not the transport convention (M = T^L, one operator) but the
+     ADVANCE PAIR', and therefore Reading B's mechanism sentence is 'FALSE AT THE BYTES'.
+     X2 fills in the cells neither lane ran.  Per-tick operator x advance, one variable moved
+     between adjacent cells, every operator an exact L-th root of M, three carriers:
+                                    EDGE (n,n)      CIRCUIT (L_F k, L_C k)
+         T  edge tick               8.3e-01 VISIBLE      1.3e-15 invisible
+         S  smeared root W^{1/L}    1.7e-15 invisible    1.7e-15 invisible
+         R  diagonal root, labels   2.3e-01 VISIBLE      2.2e-14 invisible
+            not a class function
+     Moving ONLY the advance flips it.  Moving ONLY the per-tick operator ALSO flips it (row T
+     -> row S, left column).  So the advance pair is one of TWO sufficient moves, not 'the'
+     operative variable, and lane I exhibited the counterexample itself (its own smeared root)
+     three sections before asserting the claim.  The registrar's 'transport convention' and lane
+     I's 'advance pair' are two coordinates on one two-dimensional design space whose two arms
+     are the same two corners.  R-1's headline falls; what survives of R-1 is the true and useful
+     observation that M = T^L, so the two arms are NOT two unrelated operators.
+C-2  ** THE CORRECT NAME IS W-06'S, PLUS ONE CLAUSE THE CORPUS NEVER WROTE. **  Row R is
+     fibre-wise (diagonal) at every tick, is an exact root of M, and STILL separates the arms.
+     So the property is not diagonality (the registrar's stated conclusion) and not the advance
+     (lane I's).  It is: THE COMPARED OPERATOR IS FIBRE-WISE **AND** ITS FIBRE PHASE DEPENDS ON
+     THE VERTEX ONLY THROUGH ITS INCIDENCE CLASS.  M_gamma = diag(W^{1[v in gamma]}) has both BY
+     CONSTRUCTION -- its diagonal is literally a function of the incidence indicator -- and that,
+     alone, is why only pi can enter.  Clause one is W-06's own correction of N4 (REGISTER :577,
+     'not scalar multiplication -- FIBRE-WISE-NESS').  Clause two is new.  I add a clause to an
+     existing register term rather than coin a seventh name (W-10 N-7).  NAMING GUARD RUN: not
+     S4's 'canonical clock' (the cell schedule k_n, S4:170); not W-03's 'relation lattice'
+     (REGISTER :237); the strings 'advance', 'class function', 'class-constant' occur nowhere in
+     the register.
+C-3  ** ITS R-2 -- ' "UNLEDGERED" IS FALSE ' -- IS BUILT ON THE WRONG LEDGER ENTRY, AND IT MISSED
+     THE ONE THREE LINES ABOVE IT INSIDE THE BYTE RANGE ITS BRIEF NAMED. **  A2 (:658) ledgers the
+     CLOCK.  Reading B's sentence is about the TRANSPORT.  The entry that bears on the transport
+     is A1 (:657): 'Extend loop transport to Gamma(L) by acting on every vertex of the loop', and
+     its stated why is 'the unique extension that is (a) unitary, (b) uses no data beyond
+     fibres/edges/orientation/connection, (c) reduces to the build's T_gamma on L_v0'.  Clause
+     (c) is what excludes COR-F's T -- an edge tick is not an endomorphism of L_v0 at all -- and
+     clause (c) is therefore CIRCULAR for this purpose: it presupposes fibre-wise-ness, which is
+     the very stipulation at issue.  So the correct finding is neither lane's: the choice is
+     HALF-LEDGERED, at A1 and A2, and A1's why-clause assumes the conclusion.  W-06 said this
+     already, at REGISTER :529-532, and said it while explicitly knowing T^3 = M_gamma -- which
+     is by itself sufficient to refute R-1's 'the corpus cannot have meant a choice between M and
+     T, because M = T^L'.
+C-4  ** ITS CANONICITY COROLLARY IS FALSE AS WRITTEN; AN (L-1)-TORUS IS MISSING. **  Its D3
+     corollary reads: 'imposing A^L = M and requiring each entry to be a function of its OWN
+     edge's transport gives A = zeta.T with zeta^L = 1'.  Take A = D.T with D diagonal on the
+     loop and prod_{v in loop} d_v = 1.  Then A[w_{j+1},w_j] = d_{w_{j+1}} U_{e_j} -- still a
+     function of that edge's own transport -- A is unitary, A^L = M EXACTLY (200 draws, max
+     2.22e-15), A is gauge-COVARIANT (8.49e-16), and A is zeta.T in 0 of 200 draws (X3.b).  The
+     corollary is repaired by strengthening 'a function of' to 'IS' (the per-step factor is the
+     edge's own U_e, i.e. the definition of discrete parallel transport), or equivalently by
+     demanding the same rule at every edge.  The repaired corollary is true and lane I's VERDICT
+     is unaffected -- every member of the torus breaks invisibility too (0/200 preserve it).
+     Defect in a proof that lane I offers as its main new mathematical content.
+C-5  ** ITS 0/400 SWEEP IS DRAWN FROM THE WRONG FAMILY. **  rand_root() puts a random unitary on
+     the OFF-LOOP block, so most 'roots of M_gamma_F' it draws move fibre values at v3 and v4,
+     vertices not on gamma_F.  Restricted to operators that are the identity off their own loop
+     (X3.a), the table is qualitatively the same but the headline number is not 0/400: it is
+     3/400, and I show the three survivors are EXACTLY the draws whose loop block came out scalar
+     (predicted 400/81 = 4.94).  Recorded; does not change lane I's conclusion.
+C-6  ** ITS G.4 'ONE-LINE THEOREM THAT IS THE WHOLE ANSWER' NEEDS A HYPOTHESIS IT DOES NOT STATE.
+     ** 'INCIDENCE IS INVISIBLE <=> (a,b) in L_F Z x L_C Z' is false without a distinctness
+     assumption on the two loops.  Two counterexample carriers, 18 counterexample cells each
+     (X4.2): gamma_C = gamma_F (then Q = T^{b-a}, invisible whenever L | b-a, e.g. at (1,1)), and
+     gamma_C = gamma_F traversed backwards with the reversed phases so that T_C = T_F^{-1}
+     exactly (then invisible on the anti-diagonal L | a+b).  Its D2 criterion, which is a
+     statement about Q rather than about a and b, survives both.  The corpus's carriers satisfy
+     the missing hypothesis; the published theorem does not say so.
+C-7  ** ITS P-2 IS SCORED HERE, NOT LEFT TWO-WAY. **  It says: either the rate's convention-
+     dependence is a K1 artefact, or B0b's spectator weight swamps it, and 'this lane does not
+     distinguish them'.  Sweeping p00 ON B0b ITSELF, one variable moved (X5.3), the circuit/edge
+     rate gap runs 2.1e-07 -> 1.0e-02 absolute and 2.0e-06 -> 9.7e-03 relative as p00 falls from
+     0.90 to 0.15.  And the mechanism is exhibited (X5.5): for the uniform real state the
+     class-00 Jensen branch dominates at all 4096 grid points for ALL TWELVE residues, so every
+     m(P_r) collapses to log(4/9) and the two rates coincide EXACTLY rather than approximately;
+     with phases on, domination fails at r = 4,6,7 and the rate moves.  IT IS SPECTATOR
+     DOMINANCE, NOT A K1 ARTEFACT.
+C-8  ** ITS 'N1 IS PUBLISHABLE UNDER EITHER READING' OVERSTATES ITS OWN P-1. **  What survives
+     the convention change is the FORM (a log Mahler measure of a 4-term polynomial in powers of
+     the two holonomy characters).  The REGISTERED STATEMENT lambda = m(p00+p10x+p01y+p11xy) does
+     NOT survive: it becomes one of P terms, and on B0b the characters become u^3 and v^4.  Its
+     what_survives line 'with coefficients from the class pushforward' is also loose -- for
+     r != 0 the coefficients are class sums of DRESSED pairings conj(T_F^r s)(T_C^r s), which are
+     not a pushforward of any measure.
+
+=========================== PART 4.  WHAT I FOUND THAT NEITHER LANE DID ========================
+D-1  ** HOW MUCH OF THE STATE EACH CONVENTION DISCARDS, MEASURED (X5.4). **  Jacobian rank of the
+     state -> observable map, modulo the global phase both conventions ignore:
+        K1      : rank d(pi)/ds = 3 of 9    rank d({c^(r)})/ds = 9 of 9
+        B0b/reg : rank d(pi)/ds = 4 of 17   rank d({c^(r)})/ds = 10 of 17
+     Both conventions factor through CLASS-INDEXED data -- the edge advance does not abandon the
+     class structure, it refines it from one real 4-vector to P complex ones.  But on K1 the
+     refined object determines the ready state up to the global phase, so there the statement
+     'the functional depends on the state only through a class summary' is VACUOUS under the edge
+     advance and discards 6 of 9 dimensions under the circuit advance.  On B0b it discards 7 of
+     17 versus 13 of 17.  THE SIZE OF THE SUMMARY IS ITSELF NOT CARRIER-INDEPENDENT, which no
+     row of the register says.
+D-2  ** 'COR-F' NAMES TWO DIFFERENT SEALED CORRECTIONS, AND THEY ARE PRECISELY THE CLOCK AND THE
+     TRANSPORT -- THE TWO CANDIDATE NAMES IN THIS VERY DISPUTE. **
+       S2 audit COR-F (:639): 'K1 supplies no continuous time; it does supply a discrete one
+         (edge traversals / circuits)'.
+       S3 audit COR-F (:794): the edge-tick transport T.
+     The S3 BUILD cites 'audit COR-F' three times (:275, :401, and CHOICE LEDGER C3 at :981) and
+     means the first.  The register means the second at :337, :534, :1034, :1121, :1125 and
+     distinguishes them only at :645.  W-11's whole lane is named after one of them.
+     AND THE CITATION IS A NON-SEQUITUR OF THE SAME SHAPE LANE I FOUND AT A2: C3 closes 'the
+     carrier's own circuit clock' by citing a correction whose text reads 'edge traversals /
+     circuits' -- a disjunction, cited to close one disjunct, with 'k_n = 1; any other schedule'
+     in the alternatives column and the edge UNIT nowhere in it.  This is the better-targeted
+     version of lane I's R-2, and it is in the ledger W-06 already pointed at.
+D-3  ** THE REGISTRAR'S CONNECTION IS UNPUBLISHED AND UNCHECKED, AND IT IS NOT THE CORPUS'S. **
+     f = 57/25, c = 2 + sqrt(2), recoverable only from w11_b_decisive.py:31.  It IS generic
+     (exact argument, X6.2), but no lane checked that, and W-10 N-4 makes genericity a live
+     hazard.  The corpus publishes exactly one generic pair and this is not it.  Strengthens
+     lane I's R-4 by naming the omitted value and discharging the risk it created.
+D-4  ** THE INVISIBILITY-PRESERVING FAMILY IS LARGER THAN 'THE CIRCUIT CONVENTION'S OWN ROOT'
+     (X3.c). **  S times class-constant L-th roots of unity preserves invisibility exactly; the
+     same roots attached to VERTICES within a class do not.  So the dividing line is the class
+     function, once more, and not 'is a power of M'.
+
+=========================== PART 5.  THE TEXT CHECK THAT DECIDES THE VERDICT ===================
+Lane I returns REFUTED_AS_POSED on the ground that TWO sentences of Reading B are 'false at the
+bytes'.  Both survive.
+
+  (i) 'transport was DEFINED as fibre-wise scalar multiplication by the whole-circuit holonomy'.
+      TRUE, verbatim.  REGISTER W-01 (:33-36) states the construction as
+          (M_gamma s)(v) = W(gamma).s(v) for v on the loop,  s(v) otherwise.
+      Lane I's counter -- 'M = T^L, so there is only one transport and no convention to restate'
+      -- is a non sequitur, and W-06 refutes it in advance: at REGISTER :529-531 it names the
+      stipulation as 'loop transport means multiplying by the whole-circuit holonomy M_gamma,
+      RATHER THAN moving edge by edge via T WITH T^3 = M_gamma'.  The corpus made the naming
+      while already knowing the identity lane I offers as its refutation.  And X2 shows the
+      clause does real work: at a FIXED advance (n,n), replacing the fibre-wise operator by the
+      edge tick flips invisible -> visible.
+
+ (ii) 'an unledgered stipulation'.  VERIFIED AT THE BYTES, exhaustively.  Every alternatives
+      column in every sealed CHOICE LEDGER -- S2 build C1-C6, S2 audit A1-A5, S3 build C1-C6,
+      S3 audit A1-A6, S4 C1-C4 -- was extracted and read.  NOT ONE lists an edge-by-edge
+      transport as an alternative.  A1 (:657) is the nearest entry and its alternatives are
+      'extend by zero off the loop; act only at the root'; the edge tick is excluded only by A1's
+      why-clause (c), 'reduces to the build's T_gamma on L_v0', which presupposes that the
+      operator is an endomorphism of each fibre -- i.e. presupposes fibre-wise-ness, the very
+      stipulation at issue.  So the precise statement is: LISTED AS AN ALTERNATIVE NOWHERE, AND
+      EXCLUDED ONLY BY A WHY-CLAUSE THAT ASSUMES THE CONCLUSION.  That is what W-06 meant, and
+      lane I's R-2 ('unledgered is FALSE') is answering about the CLOCK (A2), which is a
+      different choice, because R-1 renamed the variable.  R-1 falls (Part 3, C-1) and R-2 falls
+      with it.
+
+CONSEQUENCE.  Reading B stands as posed, with one refinement rather than a refutation:
+'unledgered' should read 'ledgered nowhere as an alternative, and excluded only circularly'.
+Reading A's stated payload -- 'the physics does not depend on the complex' -- is FALSE: the loop
+lengths L_F, L_C and the within-loop arrangement of the ready state re-enter under every
+admissible convention except the fibre-wise class-function one, and the rate itself moves.
+What lane I is RIGHT about, and what the register should carry, is that Reading A's PUBLICATION
+consequence does not follow from Reading B: N1's identification survives the convention change in
+form (P-1, verified here), so W-10's 'the two readings have opposite consequences for a rebuild'
+is overstated on the publication axis while remaining correct on the portability axis.

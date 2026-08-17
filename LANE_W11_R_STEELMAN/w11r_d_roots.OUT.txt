@@ -1,0 +1,35 @@
+== D1  ANY L-th ROOT COMMUTES WITH M, AND THE ROOT VARIETY IS A CONTINUUM ==
+  || [T_F, M_dF] || = 0.00e+00    || [T_C, M_c] || = 0.00e+00
+  generic          400 sampled roots: non-diagonal 382   pi-only   1   pi-BROKEN 399   median spread 4.07e-01   max 7.74e-01
+  diag             400 sampled roots: non-diagonal   0   pi-only  41   pi-BROKEN 359   median spread 2.21e-01   max 4.32e-01
+  diag_classconst  400 sampled roots: non-diagonal   0   pi-only 400   pi-BROKEN   0   median spread 2.22e-16   max 4.44e-16
+
+== D2  THE CHARACTERISATION IS EXACT IN BOTH DIRECTIONS ==
+  DIAGONAL BUT NOT CLASS-CONSTANT breaks invisibility too -- so 'diagonal' is NOT the
+  criterion; 'diagonal AND constant on the four classes' is.  (row 'diag' above.)
+  COR-F's T          spread = 3.80e-01     (BREAKS)
+  uniform root D     spread = 2.22e-16     (PRESERVES)
+  corpus's M_gamma   spread = 1.11e-16     (PRESERVES)
+
+== D3  THE PRE-REGISTERED TRIVIAL-LIMIT FILTER, AND IT IS DECISIVE ==
+  at a_e = 0:  M_dF = I ?  True     D_F = I ?  True     T_F = I ?  False
+  || T_F(0) - I || = 2.4495   || D_F(0) - I || = 0.00e+00
+  CONTINUITY CHECK of the uniqueness argument: switch on the connection with t -> 0 and
+  ask for the root of M(t.a) NEAREST the identity.  It must be D, and the distance must ->0.
+           t     ||D(t)-I||     ||T(t)-I||   min over 400 sampled roots ||U-I||
+       1e-01       0.131604       2.449490                             0.131604
+       1e-02       0.013164       2.449490                             0.013164
+       1e-03       0.001316       2.449490                             0.001316
+       1e-04       0.000132       2.449490                             0.000132
+  -> D(t) -> I; every other sampled root stays a fixed distance away.  The identity has an
+     isolated preimage, exactly as the component argument says, so the continuous family
+     obeying the founding design's trivial-connection contact point IS the uniform root.
+
+== D4  SETTLED ==
+  NEITHER of the two extremes the brief names is right:
+   * T is NOT canonical -- it is one point of a positive-dimensional root variety, and the
+     uniform root D is another point with the same L-th power, exactly.
+   * but 'every non-diagonal root breaks invisibility' is TRUE, and more: every root that is
+     not class-constant-diagonal breaks it.  The preserving set is measure zero.
+  What decides between them is NOT measure and NOT naturalness-by-assertion.  It is the
+  pre-registered trivial-connection contact point, which admits exactly the preserving set.

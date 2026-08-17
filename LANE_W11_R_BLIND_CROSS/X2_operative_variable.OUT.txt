@@ -1,0 +1,47 @@
+========================================================================================================
+CARRIER K1   L_F=3 L_C=3   pi = [0.  0.3 0.3 0.4]   (three arms, identical pi, arms diffed in X1)
+  per-tick operator                          A^L=M      fibre-wise class-fn        EDGE (n,n) CIRCUIT (L_F k,L_C k)
+  T  edge tick (COR-F)                       True       False     False            8.334e-01      1.291e-15
+  S  smeared root diag(W^{1/L})              True       True      True             1.665e-15      1.665e-15
+  R  diagonal root, NOT a class function     True       True      False            2.323e-01      2.245e-14
+  reading: spread ~1e-15 = incidence INVISIBLE ; spread ~1e-1 = incidence VISIBLE
+========================================================================================================
+CARRIER B0b/reg   L_F=4 L_C=3   pi = [0.444444 0.222222 0.111111 0.222222]   (three arms, identical pi, arms diffed in X1)
+  per-tick operator                          A^L=M      fibre-wise class-fn        EDGE (n,n) CIRCUIT (L_F k,L_C k)
+  T  edge tick (COR-F)                       True       False     False            5.847e-01      1.832e-15
+  S  smeared root diag(W^{1/L})              True       True      True             1.110e-15      1.554e-15
+  R  diagonal root, NOT a class function     True       True      False            9.992e-02      4.774e-15
+  reading: spread ~1e-15 = incidence INVISIBLE ; spread ~1e-1 = incidence VISIBLE
+========================================================================================================
+CARRIER B0b/blind   L_F=4 L_C=3   pi = [0.444444 0.222222 0.111111 0.222222]   (three arms, identical pi, arms diffed in X1)
+  per-tick operator                          A^L=M      fibre-wise class-fn        EDGE (n,n) CIRCUIT (L_F k,L_C k)
+  T  edge tick (COR-F)                       True       False     False            5.677e-01      1.776e-15
+  S  smeared root diag(W^{1/L})              True       True      True             1.110e-15      1.887e-15
+  R  diagonal root, NOT a class function     True       True      False            9.992e-02      5.274e-15
+  reading: spread ~1e-15 = incidence INVISIBLE ; spread ~1e-1 = incidence VISIBLE
+
+==========================================================================================
+WHAT THE TABLE SETTLES
+
+1. Moving ONLY the advance (row T, left cell -> right cell) flips visible -> invisible.
+   Moving ONLY the per-tick operator (left column, row T -> row S) ALSO flips it.
+   So the advance pair is NOT 'the operative variable'; it is ONE OF TWO SUFFICIENT MOVES.
+   R-1's headline is a coordinate choice, exactly as the registrar's 'transport convention' is.
+   The registrar's two arms and the blind lane's two arms are the SAME two corners; the lanes
+   disagree about which coordinate moved because both arms differ in both coordinates unless
+   you first fix the T-generated parametrisation, which is itself a choice.
+
+2. What all the invisible cells share and the visible one lacks is NOT diagonality.  Row R is
+   fibre-wise (diagonal) at every tick, satisfies A^L = M exactly, and STILL separates the arms.
+   The property is: THE COMPARED OPERATOR IS FIBRE-WISE **AND** ITS FIBRE PHASE IS A FUNCTION OF
+   THE VERTEX'S INCIDENCE CLASS.  M_gamma = diag(W^{1[v in gamma]}) has both by construction --
+   its diagonal is literally a function of the incidence indicator, which is why, and the only
+   why, that only pi can enter.
+   Clause one is W-06's own correction of N4 ('not scalar multiplication -- FIBRE-WISE-NESS',
+   REGISTER :577).  Clause two the corpus has never written down, and the registrar's stated
+   conclusion ('holds exactly where both branch operators are DIAGONAL') is clause one only.
+   NAMING GUARD: 'fibre-wise' is W-06's term and I am adding a clause to it rather than coining
+   a seventh name (W-10 N-7).  Not S4's 'canonical clock' (the cell schedule k_n, S4:170);
+   not W-03's 'relation lattice' ({(m,n): u^m v^n = 1}, REGISTER :237); no other occurrence of
+   'advance', 'class function' or 'class-constant' exists in the register.
+==========================================================================================

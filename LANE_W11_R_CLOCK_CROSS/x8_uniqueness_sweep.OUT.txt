@@ -1,0 +1,39 @@
+== X8a  BRANCH ROBUSTNESS OF THE FIBRE-WISE ROOT D (L choices of the L-th root) ==
+   K1  : all 3x3 branch pairs give D^L = M to <1e-14 and invisibility
+          to <1e-12 at every m<=9.  The counterexample is not a branch accident.
+   B0b : all 4x3 branch pairs give D^L = M to <1e-14 and invisibility
+          to <1e-12 at every m<=9.  The counterexample is not a branch accident.
+
+== X8b  HAAR SWEEP OF { U : U^L = M_gamma } -- 4000 draws per loop, per carrier ==
+   U = omega V,  omega^L = W (random branch),  V = Q diag(zeta^k) Q* with Q Haar,
+   zeta = exp(2 pi i / L), exponents k drawn uniformly.  ONE VARIABLE: the unitary U.
+   K1  : max || U^L - M_gamma || over 4000 draws = 5.49e-15   (constraint holds)
+          smallest positive m with U_F^m diagonal: {1: 446, 3: 3554}   (divisors of L_F=3)
+          smallest positive m with U_C^m diagonal: {1: 443, 3: 3557}   (divisors of L_C=3)
+          invisibility already at m = 1: 4 of 400 draws
+          EVERY observed d DIVIDES its loop length, as the structure theorem requires.
+   B0b : max || U^L - M_gamma || over 4000 draws = 6.73e-15   (constraint holds)
+          smallest positive m with U_F^m diagonal: {1: 63, 2: 456, 4: 3481}   (divisors of L_F=4)
+          smallest positive m with U_C^m diagonal: {1: 422, 3: 3578}   (divisors of L_C=3)
+          invisibility already at m = 1: 0 of 400 draws
+          EVERY observed d DIVIDES its loop length, as the structure theorem requires.
+
+================ WHAT X8 SETTLES ================
+ A  {m : U^m is diagonal} = d.Z with d | L, for EVERY unitary U with U^L = M_gamma.  The
+    invisibility set of ANY rival tick is therefore a sublattice {d_F | m_F} x {d_C | m_C},
+    and the only free content is the pair of divisors.  Lane C's leg 1 computed ONE point of
+    this family (d = (L_F, L_C), COR-F's T) and named it "the operative variable".
+ B  A HAAR-RANDOM tick with U^L = M_gamma almost never restores invisibility at m = 1: the
+    generic d is L.  SO THE REGISTRAR'S SECOND HORN IS THE TRUE ONE FOR THE GENERIC TICK --
+    almost every rival breaks invisibility off the sublattice, and Reading B is stronger than
+    the registrar claimed, NOT weaker.
+ C  BUT THE EXCEPTIONS ARE NOT A NULL SET OF THE CONSTRUCTION -- they are exactly the ticks that
+    are FIBRE-WISE AND LOOP-CONSTANT, i.e. the corpus's OWN operator M_gamma and its roots.
+    The corpus did not land on the generic tick.  It landed, by stipulation, on the one measure-
+    zero family in which the clock question is empty.
+ D  SO THE BRIEF'S DISJUNCTION IS NOT EXHAUSTIVE.  "A different equally natural edge tick
+    restores invisibility" is TRUE (D does), and Reading B does NOT fall, because D is not a
+    rival to the CONVENTION -- it is the convention's own shape at a finer clock.  What decides
+    invisibility, over the whole family, is the divisor d, and d = 1 exactly when the tick is
+    fibre-wise-and-loop-constant.  THE STIPULATION IS ON THE OPERATOR.
+

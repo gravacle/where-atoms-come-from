@@ -1,0 +1,37 @@
+G.1  T^L = M_gamma IN EXACT ARITHMETIC (angles as Fractions of 2pi; the identity is
+     combinatorial, not numerical: T = P.D with P the cyclic permutation of the loop,
+     so T^L = diag over the loop of the PRODUCT of all L edge phases = W_gamma.)
+     split ['1/7', '2/7', '3/7']  ->  loop angle sum = 6/7 (exact);  every loop vertex of T^3 carries exactly this. IDENTITY HOLDS EXACTLY.
+     split ['1/5', '1/3', '-2/15']  ->  loop angle sum = 2/5 (exact);  every loop vertex of T^3 carries exactly this. IDENTITY HOLDS EXACTLY.
+     split ['0', '0', '1/2']  ->  loop angle sum = 1/2 (exact);  every loop vertex of T^3 carries exactly this. IDENTITY HOLDS EXACTLY.
+     numerical corroboration on 2000 random splits already at LEG A: max dev 1.74e-15.
+
+G.2  m(P) FOR P = 0.4 + 0.3x + 0.3y  -- convergence and a second, independent method
+     Jensen-in-y, grid 2^14 : -0.767507881012676
+     Jensen-in-y, grid 2^16 : -0.767507880275938
+     Jensen-in-y, grid 2^18 : -0.767507880352467
+     Jensen-in-y, grid 2^20 : -0.767507880357400
+     Jensen-in-y, grid 2^22 : -0.767507880357744
+     Jensen-in-y, grid 2^24 : -0.767507880357789
+     2-D midpoint quadrature 4096x4096 (no Jensen)   : -0.767507880865
+     REGISTER W-02 erratum / W-10 publish        : -0.767507880
+     S4:'SENSE C, 3 classes = m(0.4+0.3x+0.3y)'  : -0.767507880358
+
+G.3  ARMS GUARD ON OUTPUTS, NOT INPUTS  (W-10 N-6)
+     CIRCUIT |Z_k| k<=200  output hashes: ['0f0d0368b31f864c', '0f0d0368b31f864c', '0f0d0368b31f864c']   distinct=1/3
+     EDGE    |Z_n| n<=200  output hashes: ['5caea58fa81a702b', '3ba85141f72d3d32', '978987b71623e877']   distinct=3/3
+     CIRCUIT: 1 distinct hash = the three arms COLLAPSE in the output. That collapse is
+     the claim, and it is a THEOREM (one line), so 'could not have failed' is no charge.
+     EDGE:    3 distinct hashes = the arms genuinely separate. Neither arm is byte-identical
+     to another at the INPUT either: ||sA-sB||=0.3465 ||sA-sC||=0.9955 ||sB-sC||=0.8095
+
+G.4  THE ONE-LINE THEOREM THAT IS THE WHOLE ANSWER
+     <A_F^a s, A_C^b s> = <s, Q s>, Q = A_F^{-a} A_C^b.  If Q is diagonal with a
+     class-constant diagonal q_ab then <s,Qs> = SUM_ab q_ab p_ab -- a function of pi ALONE.
+     T_gamma^m is diagonal with class-constant diagonal iff L_gamma | m.  Hence:
+       INCIDENCE IS INVISIBLE  <=>  (a,b) in L_F Z x L_C Z   [the ADVANCE LATTICE].
+     The corpus's convention samples the line (a,b) = (L_F k, L_C k), which lies inside
+     that sublattice BY CONSTRUCTION.  Carrier-independence beyond pi is therefore an
+     analytic consequence of the ADVANCE RULE, not of any property of the transport.
+     NAMING GUARD: 'advance pair/lattice' is NOT S4's 'canonical clock' (that is the CELL
+     SCHEDULE k_n, S4:170) and NOT W-03's 'relation lattice' (that is {(m,n): u^m v^n = 1}).

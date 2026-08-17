@@ -1,0 +1,63 @@
+LANE W-11-R-T — "IS COR-F's T CANONICAL?" — THE UNIQUENESS ATTACK — PUBLISHED CONVENTIONS
+Refuter lane against LANE_W11_CONVENTION_TEST (which reports READING B and has no refuter).
+Default posture: REFUTE. Kill condition set by the brief: exhibit an equally natural edge tick
+that RESTORES invisibility.
+
+DOUBLE PRECISION IS THE DEFAULT. numpy float64/complex128 throughout. Every claim that is
+precision-sensitive is additionally settled in CLOSED FORM (stated in the .OUT files) or in exact
+integer/Fraction arithmetic; those are marked EXACT.
+
+SEED numpy default_rng(20260817) — the registrar's seed, kept so arms are comparable.
+No grid sweeps; all sampling is Haar-random unitary + uniform connection phases, N stated per leg.
+
+CARRIERS.
+  K1        S1 sec1 verbatim. V=5. gamma_F = v0->v1->v2->v0 (edges e1,e2,e3), gamma_C =
+            v0->v3->v4->v0 (e4,e5,e6). L_F = L_C = 3. J = gamma_F ^ gamma_C = {v0}, |J| = 1.
+  B0b       incidence verbatim from LANE_W10_A_CARRIERS/w10a_lib.py:182-213 as reproduced in
+            LANE_W11_CONVENTION_TEST/w11_c_b0b.py. V=9. L_F = 4 (verts {0,1,3,4}),
+            L_C = 3 (verts {0,1,2}). J = {0,1}, |J| = 2, gcd(L_F,L_C) = 1.
+  SYNTH-D   a lane-constructed carrier, NOT of the corpus, used ONLY to exhibit the boundary of
+            my own theorem: two 4-cycles sharing the two vertices {0,1}. |J| = 2, gcd = 4.
+
+CONNECTIONS. Generic runs use S4:603's f = 1.0, c = sqrt(2) -- the ONLY generic connection the
+corpus publishes (W-10 N-4: EVERY rational (f,c) is exactly resonant). Individual edge phases are
+drawn uniformly and then rescaled so the two holonomies hit (f,c); no rational connection is
+anywhere labelled generic. Family-sampling legs draw the connection uniformly at random and report
+worst-case over draws; resonance is irrelevant there because no rate is taken.
+
+THE FAMILY (the object of this lane). For a simple loop gamma with vertex set S, |S| = L, the
+operators the brief asks me to characterise are
+      F(gamma) = { T unitary on C^V : T = T_S (+) I_{V\S},  T^L = M_gamma }.
+Since M_gamma is W.I on S, this is exactly { T_S unitary : T_S^L = W I_S }, i.e. by the spectral
+theorem T_S = V diag(w_{j_1},...,w_{j_L}) V^*, V in U(L) arbitrary, w_j = rho.zeta^j the L-th roots
+of W (rho any fixed root, zeta = e^{2pi i/L}). SAMPLED AS: Haar V (QR of complex Gaussian with the
+R-diagonal phase correction) times a uniformly drawn root-assignment vector j in {0..L-1}^L.
+This parameterisation is ONTO the family and is verified onto in leg T1.
+
+THE OBSERVABLE. Z_n(s) = <T_F^n s, T_C^n s> with <x,y> = conj(x).y (numpy vdot(x,y)).
+pi(s) = (p00,p10,p01,p11), the pushforward of |s_v|^2 onto the four classes
+(is v in gamma_F?, is v in gamma_C?).
+
+THE INVISIBILITY INSTRUMENT -- AND IT IS NOT THE REGISTRAR'S. The registrar tested three sampled
+ready states. I test the quantifier itself. Write Q_n = (T_F^n)^* T_C^n, so Z_n(s) = s^* Q_n s.
+    Z_n depends on s only through pi, FOR ALL s   <=>   Q_n is diagonal AND its diagonal is
+    constant on each of the four classes.
+(=>: conjugating s by any diagonal phase leaves pi fixed, which kills every off-diagonal entry;
+then Z_n = sum_v q_v |s_v|^2 depends only on class sums iff q is class-constant. <=: immediate.)
+So I score a member by  D(n) = ||offdiag Q_n||_F + max_class (spread of diag Q_n within that class),
+which is EXACT, STATE-FREE, and cannot miss a state the way a three-state sample can.
+INVISIBILITY RESTORED  <=>  D(n) = 0 for every n. Threshold 1e-9; observed values are 1e-16 or O(1).
+
+ISOLATION LEDGER. Held fixed in every comparison: the carrier, the connection, the observable,
+the class map, the code path, the seed, and pi by construction. Moved, ONE at a time:
+  (i)   which member of F(gamma_F) x F(gamma_C) is used   [legs T1, T2]
+  (ii)  the within-class distribution of |s_v|^2 at fixed class sums, arms diffed and printed
+        with no zero entries introduced (the registrar's arms introduce zeros; I re-run without) [T4]
+  (iii) the phases of s at fixed |s_v|                                                            [T4]
+  (iv)  the transport convention, M_gamma versus T                                                [T4]
+ARMS ARE DIFFED AND THE DIFF IS PRINTED in every leg that compares two arms (W-08's fatal
+zero-variable defect; W-10 N-6's five more).
+
+WHAT THIS LANE DOES NOT DO. It does not re-decide the clock question, it does not construct a
+durable record, and it runs nothing off K1/B0b except the one synthetic carrier declared above,
+which is used only against my own theorem and never as evidence for a verdict.

@@ -1,0 +1,79 @@
+X5.1  THE RESIDUE IDENTITY, CHECKED AS AN IDENTITY (not as a rate agreement)
+   K1          state A  P=lcm= 3   max|Z_n - formula| over n<=400 = 1.86e-14   ||c^(0)-pi|| = 0.00e+00   max_r |c^(r)_00 - p00| = 0.00e+00
+   K1          state B  P=lcm= 3   max|Z_n - formula| over n<=400 = 1.88e-14   ||c^(0)-pi|| = 0.00e+00   max_r |c^(r)_00 - p00| = 0.00e+00
+   K1          state C  P=lcm= 3   max|Z_n - formula| over n<=400 = 1.81e-14   ||c^(0)-pi|| = 5.78e-18   max_r |c^(r)_00 - p00| = 0.00e+00
+   B0b/reg     state A  P=lcm=12   max|Z_n - formula| over n<=400 = 9.42e-15   ||c^(0)-pi|| = 0.00e+00   max_r |c^(r)_00 - p00| = 0.00e+00
+   B0b/reg     state B  P=lcm=12   max|Z_n - formula| over n<=400 = 8.24e-15   ||c^(0)-pi|| = 5.55e-17   max_r |c^(r)_00 - p00| = 5.55e-17
+   B0b/reg     state C  P=lcm=12   max|Z_n - formula| over n<=400 = 8.80e-15   ||c^(0)-pi|| = 6.37e-17   max_r |c^(r)_00 - p00| = 2.11e-18
+   B0b/blind   state A  P=lcm=12   max|Z_n - formula| over n<=400 = 7.58e-15   ||c^(0)-pi|| = 0.00e+00   max_r |c^(r)_00 - p00| = 0.00e+00
+   B0b/blind   state B  P=lcm=12   max|Z_n - formula| over n<=400 = 6.50e-15   ||c^(0)-pi|| = 5.55e-17   max_r |c^(r)_00 - p00| = 5.55e-17
+   B0b/blind   state C  P=lcm=12   max|Z_n - formula| over n<=400 = 6.29e-15   ||c^(0)-pi|| = 7.97e-17   max_r |c^(r)_00 - p00| = 5.55e-17
+   -> the identity is exact, c^(0) IS pi, and c^(r)_00 is p00 for EVERY residue r
+      (class 00 is fixed by both transports).  The blind lane's P-1 reproduces.
+
+X5.2  THE RATE PREDICTION (1/P) sum_r m(P_r), against a direct Birkhoff average
+   K1          A  predicted -0.799560798  measured(N=199998) -0.799531977  dev 2.9e-05   | circuit rate -0.767498421  m(pi) -0.767507880
+   K1          B  predicted -0.833204235  measured(N=199998) -0.833249652  dev 4.5e-05   | circuit rate -0.767498421  m(pi) -0.767507880
+   K1          C  predicted -1.028253122  measured(N=199998) -1.028283848  dev 3.1e-05   | circuit rate -0.767498421  m(pi) -0.767507880
+   B0b/reg     A  predicted -0.810930216  measured(N=199992) -0.810958123  dev 2.8e-05   | circuit rate -0.810925815  m(pi) -0.810930216
+   B0b/reg     B  predicted -0.810930216  measured(N=199992) -0.810954809  dev 2.5e-05   | circuit rate -0.810925815  m(pi) -0.810930216
+   B0b/reg     C  predicted -0.806836592  measured(N=199992) -0.806832915  dev 3.7e-06   | circuit rate -0.810925815  m(pi) -0.810930216
+   B0b/blind   A  predicted -0.810930216  measured(N=199992) -0.810949403  dev 1.9e-05   | circuit rate -0.810925815  m(pi) -0.810930216
+   B0b/blind   B  predicted -0.810930216  measured(N=199992) -0.810946813  dev 1.7e-05   | circuit rate -0.810925815  m(pi) -0.810930216
+   B0b/blind   C  predicted -0.806143497  measured(N=199992) -0.806178989  dev 3.5e-05   | circuit rate -0.810925815  m(pi) -0.810930216
+
+X5.3  P-2 TESTED, NOT LEFT AS A NULL: SWEEP THE SPECTATOR WEIGHT p00 ON B0b
+      If the edge/circuit rate agreement on B0b is spectator dominance, the gap should
+      grow monotonically as p00 falls.  One variable moved: p00 (the rest of pi held
+      in fixed proportion, the within-class split and phases held fixed).
+           p00     circuit rate        edge rate        |gap|
+        0.9000     -0.105362296     -0.105362502     2.06e-07   rel 1.95e-06
+        0.7500     -0.287685964     -0.287689857     3.89e-06   rel 1.35e-05
+        0.5556     -0.587709707     -0.587733136     2.34e-05   rel 3.99e-05
+        0.4444     -0.811025812     -0.811081087     5.53e-05   rel 6.82e-05
+        0.3000     -1.067217982     -1.064298249     2.92e-03   rel 2.74e-03
+        0.1500     -1.059354930     -1.049063744     1.03e-02   rel 9.71e-03
+        0.0200     -0.792581116     -0.797849369     5.27e-03   rel 6.65e-03
+      and the same sweep with a PHASE-VARIED state (the arm that moved in the blind lane):
+        0.9000     -0.105362296     -0.105360931     1.36e-06   (phases on)
+        0.5556     -0.587709707     -0.587711277     1.57e-06   (phases on)
+        0.1500     -1.059354930     -1.014294058     4.51e-02   (phases on)
+
+X5.4  *** HOW MUCH OF THE STATE EACH CONVENTION KEEPS -- RANK OF THE STATE MAP ***
+      s (2V real coordinates, one of them a global phase both maps ignore) mapped to
+        (i)  pi           -- 4 real numbers   [what the CIRCUIT advance can see]
+        (ii) {c^(r)}_r    -- 8P real numbers  [what the EDGE advance can see]
+      Numerical Jacobian rank at a generic state, central differences h=1e-6, SVD
+      cut at 1e-6 of the top singular value.
+   K1          V=5  2V=10  (max possible rank after the global phase = 9)
+        rank d(pi)/ds        = 3   -> the CIRCUIT advance factors through a 3-dimensional summary;
+                                      it DISCARDS 6 of the 9 state dimensions.
+        rank d({c^(r)})/ds   = 9   -> the EDGE advance's class-indexed data has rank 9;
+                                      it DISCARDS 0.
+   B0b/reg     V=9  2V=18  (max possible rank after the global phase = 17)
+        rank d(pi)/ds        = 4   -> the CIRCUIT advance factors through a 4-dimensional summary;
+                                      it DISCARDS 13 of the 17 state dimensions.
+        rank d({c^(r)})/ds   = 10   -> the EDGE advance's class-indexed data has rank 10;
+                                      it DISCARDS 7.
+      READING, STATED AT THE PRECISION THE NUMBERS SUPPORT.  Both conventions' functionals
+      factor through CLASS-INDEXED data: the edge advance does not abandon the class
+      structure, it REFINES it from one real 4-vector to P complex ones.  But the refined
+      object is far bigger: rank 9 of 9 on K1 (it determines the ready state up to the
+      global phase, so the factorisation is VACUOUS there) and rank 10 of 17 on B0b (it
+      still discards 7 dimensions, so on B0b the edge advance also has a genuine, larger
+      class summary).  'The functional depends on the state only through a class summary'
+      is therefore INFORMATIVE under the circuit advance (3 of 9, 4 of 17) and either
+      vacuous or much weaker under the edge advance -- carrier-dependently so, which is
+      itself a result: the SIZE of the summary is not carrier-independent.
+
+X5.5  WHY P-2 HAPPENS -- WHICH JENSEN BRANCH DOMINATES, MEASURED
+      m(P_r) = mean_x log max(|c00 + c10 x|, |c01 + c11 x|).  If the class-00 branch
+      dominates for every x and every r, then m(P_r) = m(c00 + c10 x) for every r and
+      the edge rate collapses onto the circuit rate EXACTLY, not approximately.
+      uniform real        branch-00 dominates at all 4096 grid x for r = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                          (1/12)sum m(P_r) = -0.810930216216   log(4/9) = -0.810930216216
+      uniform, phases on  branch-00 dominates at all 4096 grid x for r = [0, 1, 2, 3, 5, 8, 9, 10, 11]
+                          (1/12)sum m(P_r) = -0.808626904908   log(4/9) = -0.810930216216
+      -> P-2 IS SCORED, not left two-way: on B0b the agreement is SPECTATOR DOMINANCE
+         (X5.3 sweep: the gap grows ~5 orders of magnitude as p00 falls, absolutely and
+         relatively, ON THE SAME CARRIER), not a K1 artefact.

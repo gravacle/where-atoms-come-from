@@ -1,0 +1,49 @@
+== X1a  THE 'SMALLEST RELATION' COLUMN OF wm5 M5a DOES NOT REPORT THE SMALLEST RELATION ==
+  connection                                          wm5 prints    actual minimal  ratio
+  W-11 registrar's K1     f=2.28, c=2+sqrt2          (-833,1320)none at depth 1500   residual 1.470e-07
+  corpus's ONLY generic   S4:603 f=1, c=sqrt2       (-556,-1073)none at depth 1500   residual 1.057e-06
+  S3/S4 headline          f=2.0, c=1.1               (-704,1280)         (-11, 20)   wm5's row is 64x the generator
+  S1 sec6 order-4         f=pi,  c=3pi/2           (-1500,-1500)           (-2, 0)   wm5's row is 750x the generator
+  wm5 M5b rank-1 row      f=1.0, c=0.0                 (0,-1500)           (0, -1)   wm5's row is 1500x the generator
+  W-11 registrar's B0b   rng(20260817)               (-1111,544)none at depth 1500   residual 9.495e-07
+  -> for BOTH exactly-resonant rows wm5 prints a NON-MINIMAL multiple of the generator,
+     under a header that says 'smallest'.  The quantity the lane itself declares operative
+     ('not rationality but the SIZE of the smallest relation, W-08's (q,delta)') is the one
+     its census does not compute.  The TYPE verdicts (RESONANT / not) are unaffected.
+
+== X1b  THE DIRICHLET TEST COULD NOT HAVE FAILED.  DEPTH SCALING IS THE TEST THAT CAN. ==
+  Pigeonhole forces min residual <= ~2pi/M^2 at depth M for EVERY (f,c).  What separates a
+  generic point from a near-resonant one is whether the residual keeps FALLING like M^-2
+  (generic) or COLLAPSES to 0 at a finite depth (resonant).  Both are run:
+  connection                                          M=50       M=150       M=450      M=1350   verdict
+  W-11 registrar's K1     f=2.28, c=2+sqrt2       1.01e-04    9.90e-06    9.90e-06    1.47e-07   no relation; log-log slope -1.79 (Dirichlet -2)
+  corpus's ONLY generic   S4:603 f=1, c=sqrt2     4.59e-04    1.68e-04    8.45e-06    1.06e-06   no relation; log-log slope -1.93 (Dirichlet -2)
+  S3/S4 headline          f=2.0, c=1.1            0.00e+00    0.00e+00    0.00e+00    0.00e+00   EXACTLY RESONANT, first at depth 50
+  S1 sec6 order-4         f=pi,  c=3pi/2          0.00e+00    0.00e+00    0.00e+00    0.00e+00   EXACTLY RESONANT, first at depth 50
+  wm5 M5b rank-1 row      f=1.0, c=0.0            0.00e+00    0.00e+00    0.00e+00    0.00e+00   EXACTLY RESONANT, first at depth 50
+  W-11 registrar's B0b   rng(20260817)            4.76e-04    8.83e-05    3.17e-06    9.49e-07   no relation; log-log slope -2.00 (Dirichlet -2)
+  -> every row typed by wm5 is confirmed, by a statistic that CAN come out the other way.
+     The rank-1 row f=1.0, c=0.0 is EXACTLY RESONANT at depth 1 -- wm5 M5b runs it and
+     wm5 M5a does not census it, so the corpus's own N-4 rule is applied to four of the
+     five connections the lane executes.
+
+== X1c  THE RIVAL RATE FORMULA CARRIES THE ERRATUM-AGAINST-W-02 TRAP AND IS NOT FLAGGED ==
+  wm2's theorem is stated 'IF (x^gF, y^gC) generates a dense subgroup of T^2 (Weyl)'.
+  That hypothesis is FALSE at the corpus's own headline connection f=2.0, c=1.1, which is
+  exactly resonant (11f - 20c = 0, generator confirmed in X1a) -- the erratum against W-02
+  exists for precisely this.  Neither wm2 nor wm5 ever evaluates the hypothesis.
+  DECISIVE FORM: compute the SUBTORUS average (the true limit) as well as the lane's
+  TORUS average (its closed form), and see which one the time average converges to.
+  connection                    st   wm2 TORUS form   ORBIT average   time avg 2e6  |torus-ta|  |orbit-ta|
+  generic f=2.28,c=2+sq2         A     -0.864927049    -0.864928711   -0.864939168    1.21e-05    1.05e-05
+  generic f=2.28,c=2+sq2         B     -0.970152102    -0.970152093   -0.970155244    3.14e-06    3.15e-06
+  RESONANT f=2.0, c=1.1          A     -0.877543225    -0.877427345   -0.877430483    1.13e-04    3.14e-06
+  RESONANT f=2.0, c=1.1          B     -0.892066306    -0.891901767   -0.891902726    1.64e-04    9.59e-07
+  -> at the GENERIC point torus == orbit == time average, all three agree to ~1e-5.
+     at the RESONANT point the torus form is WRONG BY ~1.5e-04 and the ORBIT average is
+     right to ~1e-06: two orders better.  The size of the error is the same order as the
+     4.9e-04 that the erratum against W-02 was written for (-0.767014993 subtorus versus
+     -0.767507880 torus).  IT IS NOT LARGE.  IT IS ALSO NOT NOISE, AND IT DOES NOT FALL
+     WITH N.  wm2's hypothesis is load-bearing, false at the corpus's headline connection,
+     and never tested in the lane -- the same omission, one convention down, that produced
+     the erratum.  Scope defect, not an arithmetic error.

@@ -1,0 +1,76 @@
+== X4.1  THE LANE'S B0b CONNECTION IS NOT THE CONNECTION ITS CONVENTIONS FILE PUBLISHES ==
+   PUBLISHED_CONVENTIONS: 'Generic runs use S4:603's f = 1.0, c = sqrt(2) ... edge phases are
+   drawn uniformly and then RESCALED SO THE TWO HOLONOMIES HIT (f,c)'.  Its rlib.a_with_
+   holonomies sets  a[lastF] = (f - angle(hol))%2pi  -- correct only when the last edge is
+   traversed FORWARDS.  B0b's gamma_F traverses its last two edges BACKWARDS (signF =
+   [1,1,-1,-1]), so that edge enters the holonomy conjugated and the assignment overshoots.
+      500 draws on B0b: max |angle(W_F) - 1.0|      = 3.1384   TARGET MISSED
+                        mean|angle(W_F) - 1.0|      = 1.6338
+                        max |angle(W_C) - sqrt(2)|  = 4.44e-16   (C is fine)
+   IMPACT, STATED HONESTLY: none of the lane's B0b VERDICTS depend on the connection being
+   that one -- the 144-of-6912 count, the shift null and Corollary 5 are connection-free.
+   What falls is the PUBLISHED CONVENTION: on B0b the F holonomy is a uniform random angle,
+   not S4:603's 1.0.  Since it is uniform it is generic almost surely, so W-10 N-4's
+   'no rational connection labelled generic' is not breached either.  A LEDGER DEFECT, NOT
+   A RESULT DEFECT -- but the lane's arms on K1 and B0b are not the same connection family
+   it says they are.  (K1's gamma_F and gamma_C are traversed forwards, so K1 is unaffected:
+    max |angle(W_F) - 1.0| on K1 over 200 draws = 4.44e-16.)
+
+== X4.2  ITS STRIKE OF THE REGISTRAR'S LEG D CLAUSE 2, RE-JUDGED.  I DO NOT UPHOLD IT. ==
+      N1's m(P) = -0.767507880   for pi = (0, 0.30, 0.30, 0.40)
+      state A : circuit/circuit = -0.767517534   edge/tick = -0.864256422   3 x edge = -2.592769266
+      state B2: circuit/circuit = -0.767517534   edge/tick = -0.918983935   3 x edge = -2.756951804
+      state C : circuit/circuit = -0.767517534   edge/tick = -1.133806600   3 x edge = -3.401419801
+   The registrar wrote 'the EDGE rate is state-dependent AND is not m(P)/3'.  The lane
+   struck the second clause as 'comparing incommensurables'.  I DISAGREE, AND THE NUMBERS
+   ABOVE ARE WHY: 3 x (edge rate) is EXACTLY the per-circuit decay under the edge clock,
+   because the n = 3k subsequence of the edge product IS the circuit product; the three
+   ticks of a circuit are a REFINEMENT of that circuit, not a different object.  So the
+   comparison is between two per-circuit rates on the same carrier, connection and state.
+   It is well posed, and what it says is STRONGER than clause 1: under the finer clock the
+   record decays MORE per circuit than m(P), by a state-dependent amount.  W-08's
+   'incommensurables' was about a floor and a rate with different UNITS; here the units
+   agree after the factor of 3, which the registrar itself supplied.  CLAUSE 2 STANDS.
+
+== X4.3  NEW-4 (the convention-scope of S3's 'circuits grow no algebra') REPRODUCED ==
+      N=  1  dim span(M_F^n,M_C^n) = 3  [S3 sec3.1: 3]     dim span(T_F^n,T_C^n) = 3
+      N=  2  dim span(M_F^n,M_C^n) = 3  [S3 sec3.1: 3]     dim span(T_F^n,T_C^n) = 5
+      N=  5  dim span(M_F^n,M_C^n) = 3  [S3 sec3.1: 3]     dim span(T_F^n,T_C^n) = 7
+      N=100  dim span(M_F^n,M_C^n) = 3  [S3 sec3.1: 3]     dim span(T_F^n,T_C^n) = 7
+      *-algebra <M_F,M_C> in M_5(C): dim = 3   [S3 sec2.3: 3]
+      *-algebra <T_F,T_C> in M_5(C): dim = 25   [= all of M_5(C)]
+   REPRODUCED INDEPENDENTLY.  I add the caveat the lane did not: the *-algebra figure is
+   sensitive to the CONNECTION, not only to the convention -- at the trivial connection
+   T_F, T_C are permutation matrices and the algebra is still large, but at W = 1 the
+   CIRCUIT operators are the identity and the span collapses to 1, not 3.  Checked:
+      trivial connection: dim span(M) = 1   dim span(T) = 5   *-alg(T) = 17
+   So NEW-4 is CONNECTION-scoped as well as convention-scoped.  Recorded as scope; scored
+   as evidence for neither reading, exactly as the lane scored it.
+
+== X4.4  TWO REPORTING DEFECTS IN THE LANE'S OWN SEALED PROSE ==
+   (i)  THEOREM_AND_PROOF.txt SHARPNESS 7 and the returned verdict both report the SYNTH-D
+        witness as 'D = 2.1e-15 with ||offdiag T_F|| = 0.997'.  Its own sealed
+        t2_invisibility.OUT.txt T2.5 reads 'D over n<=16 = 1.20e-14' and '||offdiag T_F||
+        = 0.364'.  NEITHER FIGURE IS REPRODUCIBLE FROM THE SEALED CODE.  The qualitative
+        claim (a non-diagonal restorer exists when |J|>=2 and gcd>=2) IS reproducible and
+        stands; the two numbers are ABSENT under this program's own rule.  COR-K class.
+   (ii) t3_canonicity.py prints the A1 pointer as S2 audit ':650'; DOCUMENTARY_FINDINGS.txt
+        prints ':657'.  The CHOICE LEDGER A1 row is at :657.  A pointer-rule slip, minor,
+        and it is inside the leg that carries the lane's biggest documentary finding.
+
+== X4.5  A COULD-NOT-HAVE-FAILED CONTROL INSIDE THE LANE COMMISSIONED TO CATCH THEM ==
+   t1_family.py T1.3 says 'Verified BOTH directions on 4000 draws' for the claim that the
+   spectral parameterisation is ONTO the family.  Its second loop builds A = V diag(rho.
+   zeta^j) V*, then computes eig(A) and checks the eigenvalues are the L-th roots of W.
+   THAT IS THE SPECTRAL THEOREM EVALUATED ON ITS OWN OUTPUT.  It could not have failed and
+   it tests the SAME direction as the first loop; ontoness (every family member is
+   REACHED) is never tested at all.  Demonstrated: the check returns ~0 for a deliberately
+   WRONG root set too, as long as the matrix is built from it.
+      the lane's check, with the CORRECT cube roots : 1.74e-15
+      the same check with FIFTH roots (A^3 != M)    : 2.19e-15   <- passes equally
+      ||A5^3 - W.I|| for that bogus family          = 2.520
+   -> the control passes on a family that is NOT the family.  VOID AS EVIDENCE.  The claim
+      it was meant to support is a THEOREM (PROP 1, the spectral theorem), and this
+      program's rule is that 'could not have failed' voids a control and never a theorem --
+      so PROP 1 stands and nothing downstream moves.  But this is the program's signature
+      defect, committed by a lane whose brief names it, and it is worth exactly one line.

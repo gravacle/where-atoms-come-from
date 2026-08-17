@@ -1,0 +1,33 @@
+== C1  THE TWO 'CIRCUIT CLOCK' CELLS OF THE 2x2 ARE THE SAME OPERATOR ==
+  carrier   ||T_F-D_F||  arms differ   ||T_F^L - D_F^L||   ||T_F^L - M_F||   ||D_F^L - M_F||
+  K1            2.4495         True            4.84e-16          1.57e-16          4.30e-16
+  B0b           2.8284         True            2.17e-16          1.69e-16          2.48e-16
+  -> the TRANSPORT arms differ in bytes (2.4495 / 2.8284 apart, as the steelman reports) and
+     their L-th POWERS -- the only thing the circuit clock ever evaluates -- are identical to
+     machine zero.  Under the circuit clock the transport axis of the 2x2 MOVES NOTHING.
+
+== C2  THE (D, EDGE) CELL IS THE CORPUS'S FUNCTIONAL AT RELABELLED HOLONOMIES ==
+  K1   max_n,s | Z^D_n(a) - [p00 + p10 conj(w_F)^n + p01 w_C^n + p11 (conj(w_F)w_C)^n] | = 4.16e-16
+       with (w_F, w_C) = (W_F^(1/3), W_C^(1/3)) = (0.724836+0.688921j, 0.576528-0.817078j)
+  B0b  max_n,s | Z^D_n(a) - [p00 + p10 conj(w_F)^n + p01 w_C^n + p11 (conj(w_F)w_C)^n] | = 1.86e-16
+       with (w_F, w_C) = (W_F^(1/4), W_C^(1/3)) = (0.718913+0.695100j, 0.926205-0.377020j)
+  -> the (D, EDGE) cell IS W-01's functional, written at the L-th-root connection.  It is
+     not an independent arm: it is the corpus's own object with its argument relabelled.
+
+== C3  THE SCORECARD OF THE 2x2 ==
+  cell                 what it actually is                                     independent?
+  (T, CIRCUIT)         M_gamma^k, the corpus's own operator (T^L = M)           NO
+  (D, CIRCUIT)         M_gamma^k, the SAME matrix as the cell above             NO -- same object
+  (D, EDGE)            the corpus's functional at (W^{1/L_F}, W^{1/L_C})        NO -- relabelled
+  (T, EDGE)            COR-F's rival                                            YES -- the only one
+  Three of the four cells are the corpus's convention.  The steelman's conclusion from this
+  design -- 'neither the root alone nor the clock alone is the convention' -- rests on three
+  cells that could not have shown anything else.  ZERO VARIABLES MOVED in two of them.
+
+== C4  AND THE SAME COLLAPSE ONE LEVEL UP: 'D IS AN EQUALLY NATURAL EDGE TICK' IS NOT A 
+        MOTION AT ALL, AS THE STEELMAN'S OWN FLAG SAYS.  QUANTIFIED HERE ==
+  K1   T_F moves the excitation from v0 to v1 (|overlap with start| = 0.000);  D_F leaves it at v0 (|overlap| = 1.000)
+  B0b  T_F moves the excitation from v0 to v1 (|overlap with start| = 0.000);  D_F leaves it at v0 (|overlap| = 1.000)
+  -> D transports nothing.  The steelman's rival to COR-F's transport is a phase clock, and
+     the brief's decisive question -- 'if a different, EQUALLY NATURAL EDGE TICK restores
+     invisibility, Reading B falls' -- is therefore NOT answered by D.  D is not a tick.

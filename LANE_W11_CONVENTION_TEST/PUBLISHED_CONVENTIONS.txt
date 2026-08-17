@@ -1,0 +1,31 @@
+LANE W11 — THE CONVENTION TEST — PUBLISHED CONVENTIONS
+Commissioned by the principal, 2026-08-17, who deferred the disposition decision to obtain it.
+QUESTION: is "the formation functional is carrier-independent" a FINDING, or a restatement of the
+transport convention? (W-10 section 0.4.1, "the single most consequential undecided question".)
+
+THE TWO CONVENTIONS.
+  CIRCUIT (the corpus's, S3 sec2.3 / W-01):  M_gamma multiplies s_v by the whole-circuit holonomy
+    for every v on the loop, identity elsewhere.  DIAGONAL by construction.
+  EDGE (COR-F's, S3_THE_CROSSING_AUDIT_V001.md:160-209 and :794):  T moves each fibre value one
+    edge along the loop, identity off it.  NOT diagonal.  T^L = M_gamma where L = |loop|.
+COR-F is a SEALED correction of this corpus, graded CONFIRMED-WITH-CORRECTIONS at D1, and it has
+never been carried into any register row. W-06 named this convention as the thing that decided the
+program's spine.
+
+CARRIERS. K1 from S1 sec1 (both loops length 3). B0b's incidence verbatim from
+LANE_W10_A_CARRIERS/w10a_lib.py:182-213 (sealed; reproduced there against S4:512/:539/:575 by a
+build lane and two refuters). B0b's loops have lengths 4 and 3.
+
+ISOLATION LEDGER. Held fixed in every comparison: the carrier, the connection, the observable
+<branch_F, branch_C>, the code path, the seed, and pi = (p00,p10,p01,p11) BY CONSTRUCTION.
+Moved, one at a time: (i) the within-class distribution of |s_v|^2 at fixed class sums;
+(ii) the phases of s at fixed |s_v|; (iii) the transport convention.
+Ready states A, B, C on each carrier have IDENTICAL pi and differ only by (i) or (ii).
+
+SEEDS numpy default_rng(20260817). Double precision throughout; the Jensen reduction for m(P)
+is at n = 2^20 and is checked for convergence in LANE_W10_REGISTRAR_VERIFY.
+
+KNOWN WEAKNESS, DECLARED BY THE AUTHOR BEFORE ANY REFUTER: T is NOT UNIQUE. Many unitaries
+satisfy T^L = M_gamma, and COR-F picked one. It is the natural one -- "move each fibre value one
+edge along the loop" IS what parallel transport means, and it is the one the sealed audit
+exhibits -- but its canonicity is asserted, not proved, and it is the first thing to attack.

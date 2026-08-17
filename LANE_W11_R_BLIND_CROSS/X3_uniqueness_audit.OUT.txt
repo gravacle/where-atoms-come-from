@@ -1,0 +1,49 @@
+X3.a  THE SWEEP, RESTRICTED TO OPERATORS THAT ARE THE IDENTITY OFF THEIR OWN LOOP
+      The blind lane's rand_root() does NOT impose this: for gamma_F it puts a random
+      cube root of the identity on span{e3,e4}, vertices that are not on gamma_F.  Such
+      an operator is not a transport around gamma_F under any reading, and it breaks
+      invisibility for a reason that has nothing to do with the loop.  Restricted rerun:
+        generic unitary root on the loop block, identity off it min 2.22e-15 med 4.69e-01 max 9.10e-01  #(<1e-12)=  3/400
+        DIAGONAL root, labels a function of the class          min 2.22e-16 med 3.33e-16 max 4.44e-16  #(<1e-12)=400/400
+        DIAGONAL root, per-vertex labels                       min 2.22e-16 med 1.17e-01 max 2.33e-01  #(<1e-12)= 43/400
+      DIAGNOSIS of the survivors in row 1 (the blind lane reports 0/400 on its wider
+      family; restricted, a few survive).  A generic unitary root is diagonal only when
+      its three cube-root labels COINCIDE, i.e. when the block is scalar; P = (1/9)^2 per
+      draw for the pair = 4.94 expected in 400.  Counted directly:
+        scalar-block draws 3/400 ; invisibility-preserving draws 3/400 ; identical sets: True
+        -> every survivor is a SCALAR block (= a power of M^{1/L} times the identity), i.e.
+           fibre-wise and class-constant.  No non-fibre-wise root preserved invisibility.
+      VERDICT ON CHARGE (a): the restricted sweep gives the same qualitative table, so the
+      blind lane's confound did not change its conclusion -- but its published numbers were
+      measured on the wrong family and the row headed 'generic pair' is not a sweep over
+      transports around the loops.  Recorded as a defect, scored as NOT changing the verdict.
+
+X3.b  THE COROLLARY OMITS AN (L-1)-TORUS OF EDGE-LOCAL SHIFTS
+      Take A = D.T with D = diag(d_v) on the loop, d off-loop = 1, prod_{v in loop} d_v = 1.
+      Then A[w_{j+1},w_j] = d_{w_{j+1}} U_{e_j}: still 'moves one edge, multiplying by a
+      function of that edge's own transport'.  A^L = M EXACTLY, A is unitary, A is
+      gauge-COVARIANT, and A is NOT zeta.T for any scalar zeta.
+      200 draws:  max ||A^L - M|| = 2.22e-15   max gauge-covariance defect = 8.49e-16
+      invisibility spread: min 3.01e-01  med 5.75e-01  max 8.21e-01   #(<1e-12) = 0/200
+      A_F is zeta.T (i.e. D scalar on the loop) in 0 / 200 draws.
+      [SELF-DEFECT S-X, RECORDED: the first run of this script printed a placeholder
+       '%d / 200' fed by a constant instead of this count.  No other number was affected;
+       the corrected count is the line above.]
+      witness: d = (e^{0.9i}, e^{-0.4i}, e^{-0.5i}) on gamma_F, product = 1.000000000000+0.000000000000j
+               ||A_F^3 - M_F|| = 3.85e-16 ;  A_F T_F^{-1} scalar? False
+      VERDICT ON CHARGE (b): the corollary as written ('a function of its OWN edge's
+      transport') admits this torus and is FALSE.  It is repaired by strengthening the
+      premise from 'a function of' to 'IS' -- i.e. the per-step factor is the edge's own
+      U_e and nothing else, which is the definition of discrete parallel transport, or
+      equivalently by demanding the SAME local rule at every edge (position-uniformity).
+      The repaired corollary is TRUE and the blind lane's CONCLUSION is unaffected: every
+      member of the torus breaks invisibility too.  Defect in a proof, not in a verdict.
+
+X3.c  THE INVISIBILITY-PRESERVING FAMILY IS LARGER THAN 'THE CIRCUIT CONVENTION'S ROOT'
+      S.(class-constant L-th roots of unity) is invisible too, so 'the diagonal branch is
+      diag(W^{1/L})' understates it.  Exhibit on K1:
+        class labels (0, 0) : ||A^L-M|| = 1.9e-16 / 1.4e-16   spread = 3.33e-16
+        class labels (1, 0) : ||A^L-M|| = 7.9e-16 / 1.4e-16   spread = 2.22e-16
+        class labels (2, 1) : ||A^L-M|| = 2.4e-15 / 3.6e-16   spread = 2.78e-16
+      (labels attached to CLASSES stay invisible; the same labels attached to VERTICES
+       within a class do not -- X2 row R.)

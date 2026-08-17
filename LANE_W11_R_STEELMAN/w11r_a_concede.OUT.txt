@@ -1,0 +1,46 @@
+== A0  COR-F's SEALED EXHIBIT, REBUILT FROM S1's BYTES (not from the registrar's code) ==
+  || T*T - I ||        = 0.00e+00   [COR-F: 0.00e+00]
+  T diagonal?            False                 [COR-F: False]
+  T^3 diag             = [-0.0292+0.999574j  1.    +0.j        1.    +0.j       -0.0292+0.999574j -0.0292+0.999574j]
+  W_C                  = -0.029200+0.999574j   [COR-F: -0.029200+0.999574j]
+  diag(T rho T*)       = [0.15 0.15 0.15 0.4  0.15]   [COR-F: 0.15 0.15 0.15 0.40 0.15]
+
+== A1  IS THE PARTIAL-TICK COMPARISON A SAME-FIBRE COMPARISON? ==
+  Structural, not numerical: T maps Gamma(L) -> Gamma(L).  T_F^n s and T_C^n s are both
+  SECTIONS, and <.,.> = sum_v conj(x_v) y_v pairs the two values AT THE SAME VERTEX v,
+  i.e. inside the SAME fibre L_v.  Nothing is compared across fibres in either convention.
+  Checked: both branch objects have shape (NV,) on the same index set --
+    K1: branch_F shape (5,), branch_C shape (5,), same index set -> same fibres
+    B0b: branch_F shape (9,), branch_C shape (9,), same index set -> same fibres
+  ==> THE OBJECTION AS POSED FAILS.  Both branch objects live in Gamma(L); the pairing is
+      fibre-wise at every n, partial tick or not.
+
+== A2  IS <T_F^n s, T_C^n s> GAUGE-INVARIANT?  (COR-J's premise, tested independently) ==
+  K1   max || T_F(g.a, g.s) - g.(T_F s) ||        = 5.18e-15   -> T is gauge-COVARIANT
+       max | Z^T_n(gauged) - Z^T_n |  (n = 1, 2)   = 2.30e-14   -> Z^T IS GAUGE-INVARIANT
+       max || T_F^L_F - M_dF ||                     = 4.59e-16
+       max || D_C^L_C - M_c   ||                    = 1.12e-15   (the UNIFORM root also works)
+  B0b  max || T_F(g.a, g.s) - g.(T_F s) ||        = 5.22e-15   -> T is gauge-COVARIANT
+       max | Z^T_n(gauged) - Z^T_n |  (n = 1, 2)   = 1.52e-14   -> Z^T IS GAUGE-INVARIANT
+       max || T_F^L_F - M_dF ||                     = 7.02e-16
+       max || D_C^L_C - M_c   ||                    = 1.23e-15   (the UNIFORM root also works)
+  ==> COR-J's premise 'the record must be gauge-invariant' does NOT discriminate.
+      The edge convention's observable is gauge-invariant at every partial tick, on both
+      carriers, under the FULL local group U(1)^V.  I concede this; it costs me the
+      natural version of objection (1).
+
+== A3  AND THE REFINED OBJECTION FAILS TOO, ON THE CORPUS'S OWN SEALED BYTES ==
+  Refined form: at a partial tick Z^T pairs s(v') with s(v'') through an OPEN Wilson line,
+  so it reads JOINT (connection,state) invariants the circuit convention cannot see.
+  That is true -- and it is LEGITIMATE on the corpus's own record:
+    * S2 audit COR-E: '(connection,state) mod gauge has 16-5 = 11 invariants; the page
+      exhibits 7.  State phases are pure gauge only when the connection is ignored.'
+    * W-06 (REGISTER:570): a 'Wilson-line-dressed observable built only from S1's own edge
+      transports is gauge-invariant to 4.45e-16 and separates the branches'.
+  Counting on K1: 6 edge + 10 state real params, U(1)^5 acts with 5 effective params
+  (the global phase acts on the state), so 16-5 = 11 joint invariants.  The circuit
+  convention's observable is a function of (W_F, W_C, |s_v|^2) = 7 of them.
+  Independent count on K1: joint invariants = 16 - 5 = 11; circuit-visible = 2 + 5 = 7
+  ==> the 4 invariants the edge convention adds are REAL invariants, sealed as such.
+      OBJECTION (1) IS DEAD IN BOTH ITS FORMS.  Reading A cannot be defended on
+      ill-formedness of the registrar's observable.  It must be defended on the GATE.

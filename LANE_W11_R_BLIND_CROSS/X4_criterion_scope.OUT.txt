@@ -1,0 +1,34 @@
+X4.1  THE TWO STATEMENTS ON THE CORPUS'S OWN CARRIERS, a,b <= 24, 16 equal-pi states/cell
+   K1          cells 625   D2-criterion mismatches 0   G.4-lattice mismatches 0
+   B0b/reg     cells 625   D2-criterion mismatches 0   G.4-lattice mismatches 0
+   B0b/blind   cells 625   D2-criterion mismatches 0   G.4-lattice mismatches 0
+   -> on the carriers of record both statements hold exactly.  Now the hypothesis.
+
+X4.2  THE G.4 LATTICE STATEMENT IS FALSE WITHOUT A HYPOTHESIS THE BLIND LANE DID NOT STATE
+      Degenerate carrier D1: gamma_C = gamma_F as a DIRECTED cycle (the two designated
+      loops coincide).  Then T_C = T_F and Q_{a,b} = T^{b-a}, which is diagonal and
+      class-constant whenever L | (b-a) -- e.g. at (a,b) = (1,1), which is NOT in LZ x LZ.
+      cells 100   D2-criterion mismatches 0   G.4-lattice mismatches 18
+      first eight lattice-rule counterexamples (a,b,predicted,observed): [(1, 1, False, np.True_), (1, 4, False, np.True_), (1, 7, False, np.True_), (2, 2, False, np.True_), (2, 5, False, np.True_), (2, 8, False, np.True_), (4, 1, False, np.True_), (4, 4, False, np.True_)]
+      Degenerate carrier D2: gamma_C = gamma_F traversed BACKWARDS, with the reversed
+      traversal's own phases (-p2,-p1,-p0), so that T_C = T_F^{-1} EXACTLY and hence
+      Q_{a,b} = T_F^{-(a+b)}: invisibility on the ANTI-diagonal L | (a+b), off L Z x L Z.
+      check T_C = T_F^{-1} : 0.00e+00
+      cells 100   D2-criterion mismatches 0   G.4-lattice mismatches 18 ; e.g. [(1, 2, False, np.True_), (1, 5, False, np.True_), (1, 8, False, np.True_), (2, 1, False, np.True_), (2, 4, False, np.True_), (2, 7, False, np.True_)]
+      -> the D2 criterion (a statement about Q) survives every case; the G.4 lattice
+         statement (a statement about a and b) needs 'the two loops are distinct enough
+         that Q is diagonal only when both factors are'.  The corpus's carriers satisfy
+         it; the theorem as published does not say so.
+
+X4.3  DEGENERATE CLASS STRUCTURE -- the blind lane's own S-5, tested rather than argued
+      (a) loops sharing NO vertex: class 11 empty.
+          cells 169   D2 mismatches 0   G.4 mismatches 0
+      (b) SINGLETON classes.  Two triangles sharing TWO vertices give |10| = |01| = 1,
+          so 'class-constant' constrains nothing there and the criterion could weaken.
+          It is constructible, contrary to a first guess, so it is TESTED, not argued:
+          11={0,1} 10={2} 01={3} 00={4}      classes {'00': 1, '10': 1, '01': 1, '11': 2}  cells 169  D2 mism 0  G.4 mism 0 
+          shared edge traversed oppositely   classes {'00': 1, '10': 1, '01': 1, '11': 2}  cells 169  D2 mism 0  G.4 mism 0 
+          no spectator at all                classes {'00': 0, '10': 1, '01': 1, '11': 2}  cells 169  D2 mism 0  G.4 mism 0 
+
+X4.4  RANDOM CARRIERS -- 60 random pairs of simple cycles, a,b <= 12, 16 states each
+   carriers tested 50 ; with a D2-criterion mismatch 0 ; with a G.4-lattice mismatch 0

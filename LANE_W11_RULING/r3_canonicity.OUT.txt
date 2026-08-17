@@ -1,0 +1,50 @@
+== R3.1  THE STRUCTURE OF THE ROOT VARIETY.  U^L = M on the loop  <=>  U = w.V, V^L = I ==
+   Hence {n : U^n is diagonal} is closed under addition and contains L: it is d.Z, d | L.
+  K1   gamma_F (L=3):  max||U^L - M|| = 6.41e-15   observed d: {1: 122, 3: 1078}   every d divides L: True
+  K1   gamma_C (L=3):  max||U^L - M|| = 6.82e-15   observed d: {1: 126, 3: 1074}   every d divides L: True
+  B0b  gamma_F (L=4):  max||U^L - M|| = 7.42e-15   observed d: {1: 24, 2: 123, 4: 1053}   every d divides L: True
+  B0b  gamma_C (L=3):  max||U^L - M|| = 6.90e-15   observed d: {1: 127, 3: 1073}   every d divides L: True
+
+== R3.2  THE TWO CRITERIA THAT ACTUALLY DISCRIMINATE, AND ONE THAT DOES NOT ==
+  (i) CONTINUITY IN THE CONNECTION.  Degree argument: a continuous h:U(1)->U(1) with
+      h(W)^L = W would give L.deg(h) = 1, impossible for L>1.  So EVERY branch rule has a cut.
+      max step over a 4001-point sweep of one full winding:  T = 1.571e-03   D = 3.000e+00
+      -> COR-F's T is CONTINUOUS in the connection.  The fibre-wise root D is NOT.
+  (ii) CARRIER DATA ONLY (A1 clause (b)).  Every entry must be built from the U_e.
+      integer m in [-4,4]^3 with prod U_e^m_e = W^(1/3):  []   (exhaustive, 729 candidates)
+      COR-F's T's entries: T[v,u] = U_e -- a SINGLE edge transport, m = one-hot.
+      -> D needs a LIFT of the holonomy to R.  S1 sec4 publishes W itself as the complete
+         gauge-invariant content; it publishes no lift.  D FAILS A1(b).  T PASSES.
+  (iii) GAUGE COVARIANCE (COR-J's unledgered premise) DOES *NOT* DISCRIMINATE:
+      covariance defect over 600 gauge transforms:  T = 4.60e-15   D = 3.32e-15   M = 9.42e-15
+      All three pass.  COR-J excludes none of them.
+
+== R3.3  T IS *NOT* UNIQUE.  Three admissible-looking rivals, all with U^L = M_gamma ==
+  --- K1 ---
+    M_gamma  (the corpus's convention)  ||U^L-M||=n/a (M is the operator, not a root of itself)  diag=True   Q_1 class-const=True   pi-spread(n<=12)=4.44e-16
+    T        (COR-F's edge tick)        ||U^L-M||=1.6e-16  diag=False  Q_1 class-const=False  pi-spread(n<=12)=7.56e-01
+    D        (fibre-wise L-th root)     ||U^L-M||=2.7e-16  diag=True   Q_1 class-const=True   pi-spread(n<=12)=5.55e-16
+    Lam.T    ((L-1)-torus rival)        ||U^L-M||=4.3e-16  diag=False  Q_1 class-const=False  pi-spread(n<=12)=7.67e-01
+    Haar root (generic member)          ||U^L-M||=2.1e-15  diag=False  Q_1 class-const=False  pi-spread(n<=12)=8.84e-01
+  --- B0b ---
+    M_gamma  (the corpus's convention)  ||U^L-M||=n/a (M is the operator, not a root of itself)  diag=True   Q_1 class-const=True   pi-spread(n<=12)=4.44e-16
+    T        (COR-F's edge tick)        ||U^L-M||=0.0e+00  diag=False  Q_1 class-const=False  pi-spread(n<=12)=4.12e-01
+    D        (fibre-wise L-th root)     ||U^L-M||=3.1e-16  diag=True   Q_1 class-const=True   pi-spread(n<=12)=5.55e-16
+    Lam.T    ((L-1)-torus rival)        ||U^L-M||=1.2e-15  diag=False  Q_1 class-const=False  pi-spread(n<=12)=3.93e-01
+    Haar root (generic member)          ||U^L-M||=1.9e-15  diag=False  Q_1 class-const=False  pi-spread(n<=12)=3.74e-01
+
+== R3.4  THE BRIEF'S DISJUNCTION IS NOT EXHAUSTIVE, AND BOTH HORNS ARE FALSE AS WRITTEN ==
+  HORN 1 'a different EQUALLY NATURAL edge tick restores invisibility, so Reading B falls':
+     D restores it -- but D moves NO fibre value along any edge, is DISCONTINUOUS in the
+     connection, and fails A1(b).  It is not an edge tick.  It is the corpus's own
+     fibre-wise class-constant convention at a finer clock: diag(D)_v = w^(1[v in gamma]).
+     K1   |<e0, T e0>| = 0.000  (T MOVES the excitation)   |<e0, D e0>| = 1.000  (D moves NOTHING)
+     B0b  |<e0, T e0>| = 0.000  (T MOVES the excitation)   |<e0, D e0>| = 1.000  (D moves NOTHING)
+  HORN 2 'every unitary with U^L = M except the DIAGONAL ones breaks invisibility':
+     FALSE.  Correlated non-diagonal pairs are pi-blind (leg R2.2 mode 2).  The census
+     below shows why an INDEPENDENT sampler can never find them -- a control that
+     could not have failed, in either direction.
+     K1   INDEPENDENT sampling of the root variety, 2000 pairs: 21 pi-blind at n=1
+     B0b  INDEPENDENT sampling of the root variety, 2000 pairs: 3 pi-blind at n=1
+     0 or near-0 is a fact about the SAMPLER, not about the variety: the pi-blind set is
+     the CORRELATED locus and has measure zero for an independent sampler AT ANY SIZE.

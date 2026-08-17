@@ -1,0 +1,67 @@
+
+================ K1  (equal loop lengths -- circuit clock and edge clock are COMMENSURABLE)   L_F=3 L_C=3 ================
+  connection: every edge phase non-zero; (f, c) = (1.000000000000, 1.414213562373)  [target (1.0, sqrt2=1.414213562373)]
+  24 same-pi states, pi = [0.  0.3 0.3 0.4], max pi deviation 2.2e-16
+    ARMS-DIFF [states 0,1,2]: ['b1daea199f3cbf85', '74df0975c49a7fb4', '539b7a2eaf6166c3']  ->  DISTINCT
+  N1's registered value  lambda = m(P) = -0.767507880358   (Jensen quadrature, n = 2^22)
+
+  2a/2b  ONE VARIABLE: the clock ray (a,b).  N = 4000 ticks in every row.
+       a   b | invisible?   max spread |  mean rate/tick   rate - m(P)   note
+       3   3 |        YES     4.44e-16 |    -0.767215821      2.92e-04   CIRCUIT CLOCK
+       3   6 |        YES     5.55e-16 |    -0.768589475     -1.08e-03   
+       3   9 |        YES     4.44e-16 |    -0.764803967      2.70e-03   
+       3  12 |        YES     4.44e-16 |    -0.768203350     -6.95e-04   
+       6   3 |        YES     3.89e-16 |    -0.768122712     -6.15e-04   
+       6   6 |        YES     5.00e-16 |    -0.767820790     -3.13e-04   
+       6   9 |        YES     4.44e-16 |    -0.770937272     -3.43e-03   
+       6  12 |        YES     5.00e-16 |    -0.767921776     -4.14e-04   
+       9   3 |        YES     3.89e-16 |    -0.768039623     -5.32e-04   
+       9   6 |        YES     3.61e-16 |    -0.767698107     -1.90e-04   
+       9   9 |        YES     5.00e-16 |    -0.767390876      1.17e-04   
+       9  12 |        YES     4.44e-16 |    -0.768281947     -7.74e-04   
+      12   3 |        YES     3.33e-16 |    -0.767413065      9.48e-05   
+      12   6 |        YES     3.33e-16 |    -0.767829447     -3.22e-04   
+      12   9 |        YES     4.44e-16 |    -0.767061654      4.46e-04   
+      12  12 |        YES     5.55e-16 |    -0.767948321     -4.40e-04   
+     ... invisible clocks: 16 of 144  = 1/(L_F*L_C) = 1/9   set equals predicted: True
+     VISIBLE clocks: 128.  min |Z|-spread over them = 6.178e-01   max = 8.972e-01
+     EDGE CLOCK (1,1): |Z|-spread = 7.522e-01   rate/tick spread across states = 4.462e-01
+
+     RATE ON THE INVISIBLE SUBLATTICE: min -0.770937272  max -0.764803967  spread 6.13e-03
+     ALL EQUAL m(P) = -0.767507880 TO 3.43e-03  -> N1's number is the SAME on EVERY invisible clock, not just the circuit one.
+
+================ B0b (unequal loop lengths -- the two clocks NEVER coincide at n>0)   L_F=4 L_C=3 ================
+  connection: every edge phase non-zero; (f, c) = (1.000000000000, 1.414213562373)  [target (1.0, sqrt2=1.414213562373)]
+  24 same-pi states, pi = [0.44 0.25 0.09 0.22], max pi deviation 1.1e-16
+    ARMS-DIFF [states 0,1,2]: ['e5ac4719115f446a', 'a1a4617be212b99a', 'c5b8783bd8d579ce']  ->  DISTINCT
+  N1's registered value  lambda = m(P) = -0.820980552070   (Jensen quadrature, n = 2^22)
+
+  2a/2b  ONE VARIABLE: the clock ray (a,b).  N = 4000 ticks in every row.
+       a   b | invisible?   max spread |  mean rate/tick   rate - m(P)   note
+       4   3 |        YES     2.78e-16 |    -0.821392883     -4.12e-04   CIRCUIT CLOCK
+       4   6 |        YES     3.89e-16 |    -0.821069170     -8.86e-05   
+       4   9 |        YES     3.33e-16 |    -0.821181631     -2.01e-04   
+       4  12 |        YES     3.33e-16 |    -0.821085269     -1.05e-04   
+       8   3 |        YES     3.33e-16 |    -0.820826638      1.54e-04   
+       8   6 |        YES     3.33e-16 |    -0.821051229     -7.07e-05   
+       8   9 |        YES     3.33e-16 |    -0.820898370      8.22e-05   
+       8  12 |        YES     3.33e-16 |    -0.821800797     -8.20e-04   
+      12   3 |        YES     2.78e-16 |    -0.821187514     -2.07e-04   
+      12   6 |        YES     2.78e-16 |    -0.820699416      2.81e-04   
+      12   9 |        YES     3.33e-16 |    -0.821100684     -1.20e-04   
+      12  12 |        YES     3.33e-16 |    -0.821572127     -5.92e-04   
+     ... invisible clocks: 12 of 144  = 1/(L_F*L_C) = 1/12   set equals predicted: True
+     VISIBLE clocks: 132.  min |Z|-spread over them = 3.854e-01   max = 8.602e-01
+     EDGE CLOCK (1,1): |Z|-spread = 7.621e-01   rate/tick spread across states = 1.260e-02
+
+     RATE ON THE INVISIBLE SUBLATTICE: min -0.821800797  max -0.820699416  spread 1.10e-03
+     ALL EQUAL m(P) = -0.820980552 TO 8.20e-04  -> N1's number is the SAME on EVERY invisible clock, not just the circuit one.
+
+================ WHAT LEG 2 SETTLES ================
+  (1) The set of clocks on which the incidence is invisible is exactly the sublattice
+      {L_F | a} x {L_C | b}: density 1/(L_F L_C).  Invisibility is a property of the
+      CLOCK, not of the transport operator -- the operator never changed in this leg.
+  (2) N1's rate m(P) is attained on EVERY clock in that sublattice, not only on the
+      corpus's circuit clock.  So N1 is NOT a restatement of the CIRCUIT convention.
+      It is a restatement of a WEAKER stipulation: read the record only at ticks where
+      BOTH branches have closed their loops.  That is a real narrowing of Reading B.

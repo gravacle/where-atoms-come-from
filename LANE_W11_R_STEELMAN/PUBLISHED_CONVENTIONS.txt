@@ -1,0 +1,58 @@
+LANE W11-R -- STEELMAN READING A -- PUBLISHED CONVENTIONS
+Register program WHERE ATOMS COME FROM, head W-10.  Lane: defend Reading A at full strength.
+Commissioned as the refuter LANE_W11_CONVENTION_TEST does not have.  Author: Claude Opus 5.
+
+WHAT I AM DEFENDING, AND IN WHAT CORRECTED FORM.
+  Reading A as posed: "carrier-independence is a substantive result -- the physics does not depend
+  on the complex."  I do NOT defend that slogan; W-09 and W-10 already scoped it (three-class vs
+  four-class; the loop-length axis).  I defend the proposition the disposition actually turns on:
+  THE INVISIBILITY OF INCIDENCE IS A THEOREM WITH CONTENT, CONDITIONED ON A HYPOTHESIS THAT IS
+  SELECTED BY A PRE-REGISTERED EXTERNAL CONTACT POINT AND NOT BY A FREE STIPULATION.
+
+CARRIERS, REBUILT FROM SEALED BYTES, NOT FROM THE REGISTRAR'S CODE.
+  K1  : S1_CARRIER_K1_V001.md sec1 -- 5 vertices, 6 edges, gamma_F = e1.e2.e3, gamma_C = e4.e5.e6.
+  B0b : 3x3 torus grid; gamma_F = face(0,0) boundary (length 4), gamma_C = row j=0 (length 3).
+        Incidence identical to LANE_W10_A_CARRIERS/w10a_lib.py:182-213; the walk is re-derived here
+        and the class multiset is CHECKED against S4:575 {00:4, 01:1, 10:2, 11:2} -- it matches.
+
+THE FOUR OPERATORS.  All satisfy (.)^L = M_gamma exactly; all are unitary.
+  M_gamma : the corpus's whole-circuit operator (W-01, S3 sec2.3).  Diagonal, class-constant.
+  T       : COR-F's EDGE TICK (S3_THE_CROSSING_AUDIT_V001.md:160-209, :794).  Non-diagonal.
+  D       : the UNIFORM (PRINCIPAL) ROOT diag(W^{1/L} on the loop, 1 off).  Diagonal, class-constant,
+            equal to the identity at the trivial connection.  D^L = M_gamma, checked to 1.2e-15.
+  random roots of M_gamma, sampled from the full root variety (leg D).
+
+ISOLATION LEDGER.  Held fixed in every comparison: the carrier, the connection, the observable
+  <branch_F, branch_C>, the code path, the seed, and pi = (p00,p10,p01,p11) BY CONSTRUCTION.
+  Moved, ONE AT A TIME, and BYTE-DIFFED before any number is read (w11r_lib.arms_differ):
+    leg B  -- the CONNECTION (generic -> trivial), convention fixed;  then the CONVENTION at fixed
+              trivial connection.
+    leg C  -- a 2x2: TRANSPORT (T vs D) x CLOCK (edge vs each branch's own loop closure).
+    leg D  -- the ROOT, over the full root variety, at fixed carrier/connection/states.
+    leg E  -- the two tick counts (a,b) independently, no clock in the question at all.
+    leg F1 -- the connection scaled a -> t.a.
+    leg F3 -- the CELLULATION of gamma_C (subdivision), everything gauge-invariant held fixed.
+
+SEEDS numpy default_rng(20260817).  DOUBLE PRECISION IS THE DEFAULT throughout.
+  Precision-sensitive claims checked in closed form or exact rationals:
+    - the trivial-connection firing (leg B0) is EXACT in fractions.Fraction on the rational
+      normalised ready state s = (6/11, 7/11, -6/11, 0, 0):  ||s||^2 = 1, Z^T_1 = 0.
+    - the root-variety characterisation (leg D/G1) is proved structurally, then sampled.
+  m(P) by Jensen quadrature at n = 2^20.  Rates by stepwise accumulation, no matrix powers.
+
+WHAT I CONCEDE BEFORE ARGUING (leg A, run first on purpose).
+  Z^T_n is GAUGE-INVARIANT at every partial tick under the full local group U(1)^V (2.3e-14 on K1,
+  1.5e-14 on B0b, 2000 draws each).  The comparison is SAME-FIBRE at every n.  The extra joint
+  invariants the edge convention reads are legitimate on the corpus's own sealed record (S2 audit
+  COR-E: 11 joint invariants, 7 exhibited; W-06's dressed observable).  The brief's objection (1)
+  therefore FAILS IN BOTH ITS FORMS and Reading A cannot be defended on ill-formedness.
+
+KNOWN WEAKNESS OF MY OWN CASE, DECLARED BEFORE ANY REFUTER.
+  My load-bearing move is that FOUNDING_DESIGN_V001.md:117-118 ("S2 the trivial-connection limit
+  must give the known trivial answer", named IN ADVANCE in sec8) plus S2's CHOICE LEDGER C4
+  disqualifies the edge convention.  C4's LETTER is about CONSTANCY in (W_F,W_C); the edge
+  convention is not constant, it merely fires with no field.  The disqualification therefore rests
+  on the FOUNDING CONTACT POINT directly (with S2:583 supplying "the known trivial answer" = no
+  formation), and on C4 only derivatively.  That mapping is mine and is where to attack first.
+  Second weakness: the uniqueness argument of leg D is LOCAL -- W^{1/L} has monodromy on the torus,
+  so no globally continuous tick-level root exists.  M_gamma, being the L-th power, is global.

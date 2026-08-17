@@ -1,0 +1,47 @@
+LANE_W11_R_MATH — REFUTER LANE M (the mathematics: limits, characterisation, precision)
+Commissioned against LANE_W11_CONVENTION_TEST, which reports READING B and has no refuter.
+
+CONVENTIONS.  Identical to LANE_W11_CONVENTION_TEST/PUBLISHED_CONVENTIONS.txt and restated in
+wm0_lib.py:1-20.  CIRCUIT: (M_gamma s)(v) = W(gamma) s(v) on the loop, s(v) off it — DIAGONAL.
+EDGE (COR-F, S3_THE_CROSSING_AUDIT_V001.md:160-209 and :794): (T s)(dst) = U_e s(src) along the
+loop walk, identity off it; T^L = M_gamma.  Observable Z = <branch_F, branch_C>, <z,w> = sum conj(z)w.
+
+CARRIERS.  K1 from S1 sec1 (both loops length 3).  B0b's incidence verbatim from
+LANE_W10_A_CARRIERS/w10a_lib.py:182-213, re-derived independently in wm0_lib.py:24-45 and checked
+against S4:575's class multiset {00:4,01:1,10:2,11:2}.  Plus REV4, a 4-cycle with gamma_C = gamma_F
+reversed, built in wm3 as an explicit counterexample carrier; and B0b/disjoint, B0b's own complex
+with S4's own gamma_F and gamma_C moved to the row j = 2 (vertices {6,7,8}), admissible under S4's
+CHOICE LEDGER C4 exactly as B0b's own designation is (W-10's erratum against W-09).
+
+SEEDS.  numpy default_rng(20260817) throughout, matching the lane under test; auxiliary streams
+default_rng(3), (5), (7), (11) are named at their use sites.  DOUBLE PRECISION IS THE DEFAULT.
+Every precision-sensitive claim is re-run in EXACT arithmetic in Z[zeta_12] over Fraction in
+wm5_connections.py M5c, on S1 sec6's own published connection, with no floating point in the block.
+
+GRIDS.  Mahler-measure quadrature m_poly at n = 2^20 (2^21 in wm7); convergence to 1e-11 from
+2^18 up is exhibited in wm2 M2d.  Relation search over |m|,|n| <= 1500 in wm5 M5a.
+
+ISOLATION LEDGER.  Held fixed in every comparison: carrier, connection, observable, code path,
+seed, and pi BY CONSTRUCTION.  Moved, one at a time: (i) within-class distribution at fixed class
+sums; (ii) phases at fixed moduli; (iii) the transport convention; (iv) the connection (wm5 M5b);
+(v) the clock (wm7); (vi) the tick operator within the U^L = M family (wm4).
+ARMS ARE DIFFED, not ledgered: wm6 M6b prints ||sA-sB||, ||sA-sC||, ||sB-sC|| and the raw
+byte comparison; wm3 prints min||s_i-s_j|| over its 40-state ensembles; wm5 M5c asserts the exact
+rational states are pairwise unequal and their pi exactly equal.
+
+MY OWN CONFOUNDS AND ERRORS, RECORDED RATHER THAN PATCHED.
+ (1) wm7 M7c originally reported a 1.6e-05 spread at the per-F-circuit clock as a genuine effect
+     "reading two ways".  IT WAS SAMPLING NOISE.  The closed form returns exactly 0 there.  The
+     first draft of that block is superseded by the block now in the file, which also identifies
+     the real mechanism (branch domination).  I nearly scored a null as a finding.
+ (2) wm4's first version tested Theorem U1 by QR-projecting random edge-local patterns, which
+     leaves the edge-local support and silently skipped nearly every draw; the reported "0 mixed"
+     was therefore vacuous.  Replaced by a direct solve of the unitarity constraints (M4a now
+     reports how many unitaries were actually FOUND at each L).
+ (3) wm5 M5a's first version labelled rows "near-resonant" / "generic" on a 1e-6 threshold with no
+     basis.  Replaced by the residual, the depth, and the Dirichlet bound at that depth; no row is
+     awarded a genericity adjective it has not earned.
+ (4) The exhaustive permutation search in wm3 M3c covers loops of length 2..6 on at most 6
+     labelled vertices.  It is exhaustive within that box and says nothing outside it.
+ (5) LINEAGE: I am Opus 5, as is the lane I am refuting and every lane from W-07 on.  This is
+     layer THIRTEEN of one lineage.  Discount it as one block, not as an independent check.

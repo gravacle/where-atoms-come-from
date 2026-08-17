@@ -1,0 +1,61 @@
+LANE W-11 R/C-CROSS — CROSS-REFUTER OF LANE C (THE CLOCK CORRESPONDENCE) — PUBLISHED CONVENTIONS
+Target: /Users/bgm/MB Work/where-atoms-come-from/LANE_W11_R_CLOCK  (verdict REFUTED_AS_POSED).
+Register head W-10.  Lineage: Opus 5 — the SAME lineage as W-07..W-11, as the registrar's
+LANE_W11_CONVENTION_TEST, and as LANE_W11_R_CLOCK itself.  THIS IS LAYER FOURTEEN OF ONE LINEAGE.
+Discount it as one block with them, not as an independent check.
+
+LENS: MATHEMATICS.  Brief: check lane C's constructions actually compute what it says; verify its
+"fairest comparison" is not itself a zero-variable control; verify it did not quietly change the
+observable while changing the clock.  Read its code and rerun it.
+
+WHAT I DID FIRST.  Verified LANE_W11_R_CLOCK/SEALS.sha256 (16/16 OK) and RE-RAN all seven of its
+scripts.  ALL SEVEN OUTPUTS REPRODUCE BYTE-IDENTICALLY (rerun/*.MINE.txt vs its sealed .OUT.txt,
+`diff` empty).  Lane C is reproducible.  Nothing below is a reproducibility charge.
+
+MY OBJECTS, REBUILT FROM THE SEALED BYTES IN x_lib.py — NOT imported from either lane:
+  K1  from S1_CARRIER_K1_V001.md sec1 (:10-25); B0b from LANE_W10_A_CARRIERS/w10a_lib.py:182-213,
+  checked against S4_THE_MEASUREMENT_V001.md:575's multiset {00:4,01:1,10:2,11:2}.
+  T  = COR-F's edge tick (S3_THE_CROSSING_AUDIT_V001.md:160-209, :794).
+  M  = W-01's circuit operator (REGISTER_V001.md:31-35).
+  D  = THE FIBRE-WISE L-th ROOT OF M: diag(W^{1/L}) on the loop, identity off it.  D^L = M
+       exactly, D is unitary, D is fibre-wise (so it lies in U(1)^V, W-05 REGISTER:414-416 and
+       W-06's corrected N4 "FIBRE-WISE-NESS"), and D^m is diagonal for EVERY m.  D IS THE OBJECT
+       BOTH THE REGISTRAR AND LANE C DECLINED TO CONSTRUCT.
+CROSS-VALIDATION OF MY LIBRARY: x7 reproduces lane C's leg-5 output hashes EXACTLY
+(823dcb4b4ecb, 9a0347140c08, e901f71481a2, 7f2e2a48a56d, 242b0963290e, 3848697a41da,
+f12555a5b346, 0048ee95a30d, aedfa215abdb) from my own independent code.  Same objects.
+
+CONNECTIONS.  Primary everywhere in x2, x4c, x6, x7, x8: generic_conn -> (f,c) = (1.0, sqrt2),
+the ONLY generic connection the corpus publishes (W-10 N-4; S4:603).  x1 additionally rebuilds
+lane C's leg-1 connections verbatim (the registrar's on K1; the undeclared uniform draw on B0b)
+in order to reproduce leg 1.  NO RATIONAL (f,c) IS USED AS A GENERIC POINT ANYWHERE (W-10 N-4).
+
+ISOLATION.  Held fixed in every comparison: carrier, connection, ready-state family, pi BY
+CONSTRUCTION, the observable |<branch_F s, branch_C s>|, the evaluator, the seed, the tick index.
+MOVED, ONE THING AT A TIME: (x2, x6d) WHICH UNITARY IS THE TICK, with the clock held at EDGE;
+(x8) the unitary U subject to U^L = M_gamma; (x4a) the matrix, over 400 random ones; (x7) the
+correspondence.  ANTI-ZERO-VARIABLE GUARD: arms are sha256-hashed as OUTPUT arrays (x2 ARMS-DIFF,
+x7 out#), never only as inputs (W-10 N-6's defect).
+
+SEEDS.  numpy default_rng(20260817) for state families (both prior lanes' seed, so figures are
+comparable); default_rng(7 + n_vertices) for the primary connection; default_rng(4242), (31415),
+(999) for the substitution, tautology and Haar legs, each named at its call site.
+DOUBLE PRECISION IS THE DEFAULT THROUGHOUT.  The precision-sensitive claims are structural rather
+than numerical: "U^m diagonal" is a support fact about a monomial matrix, and
+"{m : U^m diagonal} = d.Z with d | L" is proved in one line in x8's header and then checked.
+I RAN NO Fraction-ARITHMETIC CENSUS ANYWHERE.
+
+DECLARED WEAKNESSES, BEFORE ANY VERDICT.
+ (i)   D IS NOT PARALLEL TRANSPORT.  It moves no fibre value.  Neither does the corpus's own
+       M_gamma, which is the whole point — but a reader who adopts "a tick must be edge-wise
+       parallel transport" (S1:52) excludes D, and then lane C's sublattice is right.  x6e gives
+       that reading in full and scores neither side.
+ (ii)  ONE pi PER CARRIER; pi was not swept.  ONE connection per carrier in the decisive legs.
+ (iii) x8's Haar measure on {V : V^L = I} (Q Haar, exponents uniform) is natural but not
+       canonical; the FREQUENCIES 446/4000 etc. are measure-dependent.  The STRUCTURE THEOREM
+       d | L is not.
+ (iv)  RANK ONE AND U(1) THROUGHOUT, as in the corpus.  Nothing here tests charge > 1, a third
+       loop, or a non-abelian group.
+ (v)   I attacked LANE C.  I did not re-audit the registrar's lane except where lane C's charges
+       against it required checking.
+ (vi)  SAME LINEAGE AS BOTH OBJECTS UNDER TEST.  A shared failure mode passes through all three.

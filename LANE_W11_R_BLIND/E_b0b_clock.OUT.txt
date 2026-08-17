@@ -1,0 +1,55 @@
+LEG E -- B0b, S4:512/:575 'ring torus 3x3 grid, loops meet'. V=9.
+   gamma_F = [0, 1, 4, 3] (L=4, bounds a 2-cell)   gamma_C = [0, 3, 6] (L=3)
+   class counts (mine)  : 00:4 01:1 10:2 11:2
+   class counts (S4:575): 00:4  01:1  10:2  11:2      -> RECONSTRUCTION MATCHES S4
+   SENSE U pi = [0.444444 0.222222 0.111111 0.222222] ; m(P) = -0.810930216216 ; S4/N-3 exact log(4/9) = -0.810930216216
+
+E.0  ARMS DIFF
+   sA |s|^2 = [0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111]
+   sB |s|^2 = [0.111111 0.171111 0.161111 0.111111 0.051111 0.061111 0.111111 0.111111 0.111111]
+   sC |s|^2 = [0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111]
+   pi identical? max dev = 8.33e-17 ; ||sA-sB||=0.1732 ||sA-sC||=1.1322
+
+E.1  CIRCUIT clock spread, max over k<=2000 : 1.610e-15
+E.2  EDGE clock spread,    max over n<=2000 : 5.993e-01
+     spread at n=1..14 : [2.278e-02 3.263e-01 2.817e-01 2.046e-01 5.872e-02 2.714e-01 1.957e-01 6.301e-02 1.552e-01 7.171e-02 4.570e-02 1.388e-16 4.731e-02 1.218e-01]
+     spread on n in 12Z : max 1.443e-15   off 12Z : min 1.872e-04
+     at n=12 the branches sit at circuit counts (n/4, n/3) = (3,4)  -- MISMATCHED.
+     n<=20000 with n/4 == n/3 (both branches at equal circuit count): []  (only n=0 ever)
+
+E.3  *** THE EXPONENT LATTICE -- THE OBJECT BOTH CONVENTIONS ARE SAMPLES OF ***
+     Both conventions evaluate the SAME family  Y(a,b) = <T_F^a s, T_C^b s>.
+       CIRCUIT convention samples the line (a,b) = (L_F k, L_C k) = (4k, 3k)
+       EDGE    convention samples the line (a,b) = (n, n)
+     Invisibility (|Y| a function of pi alone) holds EXACTLY on the sublattice
+     L_F Z x L_C Z = 4Z x 3Z, because that is where BOTH T_F^a and T_C^b are diagonal
+     with class-constant diagonal.  Map of |Y| spread over a,b <= 12:
+        b\a      0     1     2     3     4     5     6     7     8     9    10    11    12
+           0      .     X     X     X     .     X     X     X     .     X     X     X     .
+           1      X     X     X     X     X     X     X     X     X     X     X     X     X
+           2      X     X     X     X     X     X     X     X     X     X     X     X     X
+           3      .     X     X     X     .     X     X     X     .     X     X     X     .
+           4      X     X     X     X     X     X     X     X     X     X     X     X     X
+           5      X     X     X     X     X     X     X     X     X     X     X     X     X
+           6      .     X     X     X     .     X     X     X     .     X     X     X     .
+           7      X     X     X     X     X     X     X     X     X     X     X     X     X
+           8      X     X     X     X     X     X     X     X     X     X     X     X     X
+           9      .     X     X     X     .     X     X     X     .     X     X     X     .
+          10      X     X     X     X     X     X     X     X     X     X     X     X     X
+          11      X     X     X     X     X     X     X     X     X     X     X     X     X
+          12      .     X     X     X     .     X     X     X     .     X     X     X     .
+     '.' = incidence invisible, 'X' = visible.  The dots are exactly 4Z x 3Z.
+     The circuit convention's line (4k,3k) lies INSIDE the dot lattice by construction.
+     The edge convention's line (n,n) meets it only at the origin-multiples of 12,
+     where the two branches have completed DIFFERENT numbers of circuits.
+
+E.4  RATES on B0b
+   N=   2000 circuit ['-0.811278479', '-0.811278479', '-0.811278479'] spread 0.00e+00   edge ['-0.813585178', '-0.813206744', '-0.808766384'] spread 4.82e-03
+   N=  20000 circuit ['-0.810925815', '-0.810925815', '-0.810925815'] spread 0.00e+00   edge ['-0.811212627', '-0.811191060', '-0.806189917'] spread 5.02e-03
+   N= 200000 circuit ['-0.810935359', '-0.810935359', '-0.810935359'] spread 0.00e+00   edge ['-0.810966658', '-0.810965379', '-0.806201608'] spread 4.77e-03
+   m(P) = -0.810930216216 = log(4/9) = -0.810930216216
+
+E.5  residue decomposition on B0b (period lcm(4,3)=12)
+   sA  predicted (1/12)sum_j m(P_j) = -0.810930216   measured = -0.810972384   dev 4.2e-05
+   sB  predicted (1/12)sum_j m(P_j) = -0.810930216   measured = -0.810971840   dev 4.2e-05
+   sC  predicted (1/12)sum_j m(P_j) = -0.806143497   measured = -0.806198482   dev 5.5e-05

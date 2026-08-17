@@ -1,0 +1,153 @@
+LANE_W11_R_BLIND -- DIFF AGAINST THE REGISTRAR'S SEALED OUTPUTS
+Blind rebuild: the registrar's four .py files were NEVER opened. PUBLISHED_CONVENTIONS.txt and the
+four .OUT.txt files were opened only AFTER every number below was produced (see order of files).
+
+================================ AGREEMENTS (10 of 10 structural claims) ==================
+ 1  COR-F's sealed exhibit reproduces bit-for-bit in both lanes:
+      ||T*T-I|| 0.00e+00 both;  T diagonal? False both;  W_C = -0.029200+0.999574j both;
+      diag(T rho T*) = [0.15 0.15 0.15 0.40 0.15] both;  T^3 = diag(W_C,1,1,W_C,W_C) both.
+ 2  T unitary over 2000 random connections.        mine 3.85e-16   registrar 0.00e+00 exhibit
+ 3  T^L = M_gamma.       mine ||T_F^3-M_F|| 1.59e-15, ||T_C^3-M_C|| 1.74e-15
+                    registrar 4.64e-15                 3.25e-15        AGREE (both ~eps)
+ 4  T gauge-COVARIANT.   mine 1.53e-15    registrar 4.78e-15           AGREE
+    (mine adds: M is gauge-INVARIANT, 3.87e-15 -- registrar did not separate the two)
+ 5  CIRCUIT convention: three states with identical pi give identical |Z_k|.
+       mine  max spread 2.61e-15 over k<=2000        registrar ~1e-16 over k<=6   AGREE
+ 6  EDGE convention: the same three states separate.
+       mine  max spread 7.96e-01 over n<=2000        registrar 5.90e-01 at n=7    AGREE in kind
+       (numbers differ because the per-edge phase SPLIT differs; see DEFECT R-4)
+ 7  On K1 the spread returns to 0 at every third tick.
+       mine  max spread on 3Z = 2.67e-15, min off 3Z = 1.09e-02   registrar 0.00e+00 / --  AGREE
+ 8  Circuit = edge sampled every L-th tick on K1.
+       mine  max|Z_circ(k)-Z_edge(3k)| = 6.82e-15    registrar 1.97e-15           AGREE
+ 9  B0b: no edge tick at which both branches sit at the same circuit count.
+       mine  none for n<=20000 AND none EVER (n/4=n/3 forces n=0)   registrar [] for n<=2000  AGREE
+       (mine strengthens: registrar's bounded search becomes a one-line proof)
+10  Rates: CIRCUIT -> m(P) = -0.767507880358, blind to the state (spread 4e-15);
+          EDGE state-dependent, spread mine 2.63e-01, registrar 2.7e-01.            AGREE
+    B0b reconstructed independently from S4:575's class multiset; mine {00:4,01:1,10:2,11:2}
+    on loops of length 4 and 3, identical to registrar's up to vertex relabelling.
+    m(P) on B0b SENSE U = -0.810930216216 = log(4/9) exactly, matching register N-3.
+
+================================ DISAGREEMENTS AND NEW DEFECTS ============================
+R-1  ** THE OPERATIVE VARIABLE IS MISNAMED, AND THE REGISTRAR'S OWN B3 LINE SAYS SO. **
+     The registrar names the moved variable "the transport convention" (ISOLATION LEDGER item
+     (iii), and the CONCLUSION). But M_gamma = T^L EXACTLY -- the registrar measures this itself
+     (A2: 4.64e-15) and writes at B3 "it is a subsequence, not a different object". There is only
+     ONE transport operator on the table; M lies in the cyclic group it generates. What the two
+     arms actually differ in is HOW MANY EDGES OF ITS OWN LOOP EACH BRANCH ADVANCES BETWEEN
+     COMPARISONS -- the ADVANCE PAIR (a,b) in <T_F^a s, T_C^b s>.
+       CIRCUIT samples the line (a,b) = (L_F k, L_C k).   EDGE samples (a,b) = (n,n).
+     Verified exhaustively on B0b (E.3 map, 13x13): incidence is invisible at exactly the points
+     of L_F Z x L_C Z and nowhere else.
+     NAMING GUARD: this is NOT S4's "canonical clock" (that is the CELL SCHEDULE k_n, S4:170)
+     and NOT W-03's "relation lattice" (that is {(m,n): u^m v^n = 1} in the character group).
+     Consequence: Reading B's mechanism sentence -- "transport was DEFINED as fibre-wise scalar
+     multiplication by the whole-circuit holonomy" -- is FALSE AT THE BYTES. Loop transport IS
+     multiplication by the holonomy; that is the definition of holonomy, not a convention. The
+     convention is the advance rule.
+
+R-2  ** "UNLEDGERED" IS FALSE ON K1, AND TRUE OFF IT -- FOR A DIFFERENT REASON. **
+     CHOICE LEDGER A2 (S2_FORMATION_CONDITION_ON_K1_AUDIT_V001.md:650-665) ledgers the advance
+     rule as "Time = number of circuits n of the loop", status CLOSED. So Reading B's "an
+     unledgered stipulation" is wrong on its face. But A2 is defective in two ways, and this is
+     a NEW DEFECT OF RECORD:
+       (a) its ALTERNATIVES column lists only "a real parameter t with a Hamiltonian" and
+           "no time at all". THE EDGE ADVANCE IS NOT AMONG THE ALTERNATIVES CONSIDERED.
+       (b) its WHY reads "edge count is carrier-supplied combinatorics (S1 :16-22); a real t is
+           not." That is an argument FOR the edge advance, cited to close the CIRCUIT advance.
+           S1:16-22 is literally the edge list.
+     AND: A2 was written on K1, where both loops have length 3, so "one circuit each" and "equal
+     edge counts" COINCIDE. A2 therefore does not determine the SYNCHRONISATION RULE for loops of
+     unequal length. On B0b the two rules never meet again (E.2: no n, ever, with equal circuit
+     counts). ** THE GENUINELY UNLEDGERED STIPULATION IS THE SYNCHRONISATION RULE OFF K1 --
+     and it is the one that carries carrier-independence on every carrier except K1. **
+
+R-3  ** THE DECLARED WEAKNESS IS SETTLED -- BOTH WAYS, AND THE REGISTRAR HAD NEITHER HALF. **
+     (a) Within the solution set {A unitary : A^L = M_gamma}, invisibility-breaking is GENERIC:
+         400 random pairs drawn from the set, 0/400 preserve invisibility (spread 1.5e-01..8.4e-01).
+         The exact invisibility criterion is proved and verified 600/600: |<A_F^a s, A_C^b s>| is a
+         function of pi alone iff A_F^{-a}A_C^b is DIAGONAL with a CLASS-CONSTANT diagonal.
+         So the registrar's stronger branch -- "every unitary except the diagonal ones breaks
+         invisibility" -- IS TRUE, and it was never measured.
+     (b) BUT the diagonal branch is NOT empty and contains an equally natural-SOUNDING member:
+         the "smeared holonomy" root A = diag(W_gamma^{1/L}) on the loop, identity off it. It
+         satisfies A^L = M_gamma exactly, restores invisibility EXACTLY (spread 2.22e-16), and
+         returns the per-tick rate -0.767506621 = m(P). ** So "T is not unique" is not merely a
+         formal worry: a root of M exists that restores everything. **
+     (c) The tie-break, PROVED here and asserted-only by the registrar:
+         THEOREM. Let A be unitary, identity off a cycle gamma of length L>=3, with support
+         inside gamma contained in the diagonal together with gamma's own directed edges. Then A
+         is EITHER diagonal OR a pure shift -- nothing in between. (Columns j and j+1 overlap
+         only at row j+1, so conj(t_j) d_{j+1} = 0; one nonzero t propagates round the cycle.)
+         COROLLARY. Imposing A^L = M_gamma and requiring each entry to be a function of its OWN
+         edge's transport gives A = zeta*T with zeta^L = 1. T IS UNIQUE UP TO AN L-TH ROOT OF UNITY.
+         The diagonal branch needs the WHOLE circuit to write down: diag(W^{1/L}) is the circuit
+         convention's own L-th root, not an edge tick.
+         ** THE INVISIBILITY-PRESERVING CONVENTIONS ARE EXACTLY THE ONES THAT ALREADY KNOW THE
+            WHOLE CIRCUIT BEFORE THEY TAKE A STEP. ** That is the sharp form of Reading B, and it
+         needs the LOCALITY premise, which the registrar never stated.
+
+R-4  ** THE REGISTRAR'S EDGE-CONVENTION NUMBERS ARE NOT REPRODUCIBLE FROM ITS PUBLISHED
+        CONVENTIONS. ** PUBLISHED_CONVENTIONS.txt states the carriers, the seed, the precision and
+     the Jensen grid, but states NEITHER the connection (f,c) NOR -- decisively -- the per-edge
+     PHASE SPLIT within each loop. LEG F.2: six splits with IDENTICAL W_F, W_C and an identical
+     ready state give |Z^T_n| differing by up to 4.970e-01, the same order as the state-dependence
+     the lane reports as its headline. The numbers are recoverable from the sealed .py, so this is
+     an incomplete conventions document rather than an absent result -- but the omitted parameter
+     is the single one the edge convention is most sensitive to.
+
+R-5  ** THE REGISTRAR'S NULL FOR THE RATE IS A NULL NO CONVENTION PREDICTS. ** D1 reports "the
+     EDGE rate is NOT m(P)/3". m(P)/3 is the value only if the intermediate ticks were transparent
+     (|Z|=1). The other root of M on the table -- the smeared diagonal one -- gives per-tick rate
+     m(P) itself, not m(P)/3. Reporting "not m(P)/3" therefore excludes nothing.
+
+R-6  ** MINOR: the registrar's state B sits on the boundary of the within-class simplex. **
+     |s(B)|^2 = [0.4, 0.3, 0.0, 0.05, 0.25] -- vertex v2 carries EXACTLY zero. Vertex-level
+     support is a variable this corpus has twice found decisive (COR-B; W-02's G != {1}). Class-
+     level support is unchanged so no registered criterion is touched, but the arm is extremal.
+     My arm B is interior ([0.4,0.25,0.05,0.02,0.28]) and reproduces the effect at the same
+     magnitude, so the effect is NOT a support artefact. This CONFIRMS the registrar.
+
+================================ WHAT I FOUND THAT THE REGISTRAR DID NOT ==================
+P-1  ** THE EDGE ADVANCE COMPUTES AN AVERAGE OF MAHLER MEASURES, AND N1's POLYNOMIAL IS ONE OF
+        THEM -- EXACTLY. ** Because T^L = M is diagonal, writing n = Lq + r gives
+          Z^T_{Lq+r} = SUM_{classes ab} c^{(r)}_{ab} u^{a q} v^{b q},
+          c^{(r)}_{ab} = SUM_{w in class ab} conj((T_F^r s)(w)) (T_C^r s)(w)      [COMPLEX]
+     so by Weyl on a generic connection the edge-advance rate is
+          lambda_edge = (1/lcm) SUM_j m(P_j),      P_0 = pi   EXACTLY (||P_0 - pi|| = 0.00e+00).
+     Verified on K1 (L=3) and B0b (lcm 12), three states each, agreement 8e-08 .. 5.5e-05 at
+     N = 2e5 (finite-N sampling error only). CONSEQUENCE: N1's IDENTIFICATION -- the rate is a
+     logarithmic Mahler measure of a 4-term polynomial in the two holonomy characters whose
+     coefficients come from the ready state's class pushforward -- SURVIVES THE CHANGE OF
+     CONVENTION. What does not survive is the narrower claim that those coefficients are the REAL
+     probability vector pi. ** Reading A's stated payload ("which is why the short note N1 is
+     publishable") therefore survives even if Reading B's verdict is granted. W-10's "the two
+     readings have opposite consequences for a rebuild" is overstated on the publication axis. **
+P-2  ** ON B0b THE RATE IS CONVENTION-BLIND FOR REAL-POSITIVE STATES. ** Class 00 is fixed by both
+     transports, so c^{(r)}_{00} = p00 for every r and every state. On B0b, p00 = 4/9 dominates
+     and lambda_edge = log(4/9) = m(P) to 4.2e-05 for both real states; only the phase-varied
+     state moves (-0.806143). ** A NULL THAT READS TWO WAYS AND IS SCORED AS NEITHER: either the
+     convention-dependence of the rate is a K1 artefact, or B0b's spectator weight simply swamps
+     it. This lane does not distinguish them. **
+P-3  ** THE EDGE ADVANCE READS GAUGE-INVARIANT PHYSICAL DATA, NOT GAUGE NOISE. ** LEG F: the edge
+     functional is invariant under the FULL gauge action on the pair (connection, section),
+     1.72e-15 over 2000 maps; the extra data it reads are the dressed edge pairings
+     D_j = conj(s_v) U_e s_u, each individually gauge-invariant (exhibited identical under three
+     random gauge maps). These are exactly the Wilson-line-dressed quantities W-06/W-07 built
+     their observable from. ** So the invisibility of incidence under the circuit advance is the
+     DISCARDING of real gauge-invariant, carrier-supplied data, not the absence of it. This
+     STRENGTHENS the registrar's verdict on a ground the registrar did not run. **
+
+================================ MY OWN DEFECTS, RECORDED NOT PATCHED =====================
+S-1  D_uniqueness.py prints a literal "%d draws each" -- the format argument was omitted. No
+     number is affected; NS = 400 in every row of that table.
+S-2  My B0b is a RECONSTRUCTION from S4:512/:539/:575 (V=9 ring torus, gF bounds, gC does not,
+     class multiset {00:4,01:1,10:2,11:2}), not from S4's code, which is not in the repo (W-10
+     N-10). It matches the registrar's labelling up to a vertex relabelling but neither of us is
+     reading S4's own object.
+S-3  The rate figures are double-precision Birkhoff averages at finite N, not proved limits; the
+     Mahler measures are Jensen-reduced quadratures converged to 1e-12 (G.2, grids 2^14..2^24)
+     and cross-checked by an independent 2-D quadrature at 5e-10.
+S-4  This lane is Opus 5, the same model family as the registrar and as W-07..W-10. It is blind
+     to that lane's code, NOT lineage-independent. Discount it as layer THIRTEEN.

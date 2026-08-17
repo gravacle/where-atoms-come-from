@@ -1,0 +1,36 @@
+== X5a  THE FIELD ELEMENTS, IN MY BASIS ==
+   U_F = exp(i pi/3) = (Fraction(1, 2), Fraction(0, 1), Fraction(0, 1), Fraction(1, 2))   U_F^3 = W_F = (Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))   (expect (-1,0,0,0))
+   U_C = exp(i pi/2) = (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(0, 1))   U_C^3 = W_C = (Fraction(0, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1))   (expect (0,0,-1,0) = -i)
+
+   pi(A) = (Fraction(16, 25), Fraction(1, 25), Fraction(8, 25))   pi(B) = (Fraction(16, 25), Fraction(1, 25), Fraction(8, 25))   pi(C) = (Fraction(16, 25), Fraction(1, 25), Fraction(8, 25))
+   pi EXACTLY equal as rationals; the three states pairwise distinct.  (wm5 M5c prints
+   16/25, 1/25, 8/25 for p11, p10, p01 -- reproduced here in a different basis.)
+
+== X5b  |Z|^2 EXACTLY, MY BASIS, AGAINST wm5 M5c's PRINTED Z[zeta_12] VALUES ==
+     n  CIRCUIT |Z|^2 (mine, exact)         equal across A,B,C?   wm5 printed
+     1  13/125                                             True   13/125
+     2  529/625                                            True   529/625
+     3  13/125                                             True   13/125
+     4  1                                                  True   1
+   -> all four circuit rows match wm5 M5c EXACTLY, as rationals, in a different basis.
+
+     n  EDGE |Z|^2 (mine, exact, state A)             equal A,B,C?
+     1  108784/390625 + (-864/15625) sqrt3                   False   numeric 0.182711559
+     2  112444/390625                                        False   numeric 0.287856640
+     3  13/125                                                True   numeric 0.104000000
+     4  68944/390625                                         False   numeric 0.176496640
+     5  108364/390625 + (1104/15625) sqrt3                   False   numeric 0.399791622
+     6  529/625                                               True   numeric 0.846400000
+   -> EXACTLY equal at n = 3 and 6, EXACTLY unequal at n = 1,2,4,5.  wm5 M5c reproduced
+      in an independent representation.  Note my n=1 value carries an IRRATIONAL part
+      (a multiple of sqrt3) while wm5 prints it in the zeta basis as (108784/390625,
+      -1728/15625, 0, 864/15625); the two agree numerically to the last digit:
+      mine  0.182711558545+0.000000000000j      lane's zeta-basis element 0.182711558545+0.000000000000j      |diff| 2.86e-17
+
+== X5c  AND THE SAME EXACT TEST ON THE OBJECT THAT ACTUALLY DECIDES: |Z| AT n NOT DIV 3 ==
+   The exact rationals show the invisibility break is not a floating-point artefact.
+   Magnitudes of the difference, exactly, at each n:
+   n=1:  |Z_A|^2 - |Z_B|^2 = +0.059733061   |Z_A|^2 - |Z_C|^2 = -0.123467028    both exactly nonzero: True
+   n=2:  |Z_A|^2 - |Z_B|^2 = +0.089456640   |Z_A|^2 - |Z_C|^2 = +0.068065819    both exactly nonzero: True
+   n=4:  |Z_A|^2 - |Z_B|^2 = -0.002703360   |Z_A|^2 - |Z_C|^2 = -0.062041242    both exactly nonzero: True
+   n=5:  |Z_A|^2 - |Z_B|^2 = +0.124591622   |Z_A|^2 - |Z_C|^2 = -0.008247121    both exactly nonzero: True

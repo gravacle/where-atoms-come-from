@@ -1,0 +1,32 @@
+== X3a  SUBSTITUTION TEST: replace T and the ready states with garbage, re-run leg 7 ==
+  7A WITH THE REAL T:       max | Z(L_F i, L_C j) - [p00 + p10 conj(W_F)^i + p01 W_C^j + p11 ...] | = 1.15e-15
+      max | Z(L_F i, L_C j) - [p00 + 
+  7A WITH T REPLACED:       max | Z(L_F i, L_C j) - [p00 + p10 conj(W_F)^i + p01 W_C^j + p11 ...] | = 1.77e+00
+      max | Z(L_F i, L_C j) - [p00 + 
+  -> 7A IS a computation on T: destroying T destroys it.  GOOD.
+
+  7B block sha256 with real T : dea25bff9266c5c6
+  7B block sha256 with T KILLED: dea25bff9266c5c6
+  IDENTICAL: True
+  -> LEG 7B IS UNCHANGED WHEN BOTH EDGE TICKS ARE REPLACED BY RANDOM UNITARIES.
+     It is NOT 'built from COR-F's T'.  It is a numerical evaluation of Jensen's formula
+     for m(P) along an arithmetic progression on the torus.  The substitution is LICENSED
+     by 7A -- but the claim that the rate is re-derived FROM THE TRANSPORT is not what 7B
+     computes, and 7B is the only leg carrying the Reading-A tilt.
+
+== X3b  COULD LEG 7B HAVE FAILED?  Sweep the winding rates it did not sweep. ==
+   pi = [0.  0.3 0.3 0.4]   m(P) = -0.767507880   (f,c) = (1.0, sqrt2), the corpus's only generic point
+     (i_step, j_step)          N=1e5          N=1e6   diff from m(P)
+               (1, 1)   -0.767546540   -0.767511152        -3.27e-06
+               (1, 2)   -0.767501190   -0.767507595         2.85e-07
+               (3, 1)   -0.767548710   -0.767507485         3.95e-07
+               (4, 4)   -0.767516826   -0.767510787        -2.91e-06
+             (17, 43)   -0.767497092   -0.767506823         1.06e-06
+             (101, 7)   -0.767437523   -0.767502459         5.42e-06
+            (1, 1000)   -0.767664917   -0.767511035        -3.15e-06
+          (999, 1000)   -0.767349707   -0.767521431        -1.36e-05
+   ALL EIGHT converge to m(P).  max |rate - m(P)| at N=1e6 = 1.36e-05
+   THIS IS WEYL EQUIDISTRIBUTION + JENSEN, AND IT COULD NOT HAVE COME OUT OTHERWISE for
+   ANY non-zero integer rates at a generic (f,c).  Lane C marks legs 1, 5 and 7A as [T]
+   'could not have failed'.  IT DOES NOT MARK 7B.  7B is the same kind of object, and it
+   is the leg its 'content beyond the hypothesis' argument rests on.

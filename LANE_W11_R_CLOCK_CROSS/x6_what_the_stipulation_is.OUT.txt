@@ -1,0 +1,56 @@
+== X6a  ON THE SUBLATTICE, THE OPERATOR APPLIED *IS* WHOLE-CIRCUIT SCALAR TRANSPORT ==
+   Lane C: 'W-10 PRECONDITION P.4 -- whole-circuit scalar transport (M_gamma, not COR-F's T)
+   -- the convention on which the entire CARRIER_INDEPENDENT column rests -- FALSE as stated:
+   the column is re-derived from T alone on the sublattice (leg 7A/7B).'
+   K1  : max_i || T_F^(L_F i) - M_F^i || = 1.05e-15   max_j || T_C^(L_C j) - M_C^j || = 2.38e-15   (i,j <= 9)
+   B0b : max_i || T_F^(L_F i) - M_F^i || = 2.84e-15   max_j || T_C^(L_C j) - M_C^j || = 3.34e-15   (i,j <= 9)
+   => EVERY OPERATOR LEG 7A EVALUATES IS A POWER OF M_gamma, TO 1e-15.  Writing M as T^L
+      renames the operator; it does not remove it.  P.4 SAYS THE COLUMN RESTS ON THAT
+      OPERATOR AND IT DOES.  P.4 STANDS; lane C's new_defect against it is a re-description.
+
+== X6b  WHAT ACTUALLY MAKES ONLY pi ENTER.  NO HOLONOMY, NO CLOCK, NO CIRCUIT. ==
+   CLAIM: if A_F = alpha on gamma_F's fibres and 1 elsewhere, A_C = beta on gamma_C's fibres
+   and 1 elsewhere -- FIBRE-WISE and LOOP-CONSTANT, with alpha, beta ANY unit phases at all,
+   unrelated to any holonomy -- then <A_F s, A_C s> = p00 + p10 conj(a) + p01 b + p11 conj(a)b.
+   K1  : 300 random (alpha,beta) x 40 same-pi states -> max deviation 4.00e-16
+   B0b : 300 random (alpha,beta) x 40 same-pi states -> max deviation 4.58e-16
+   => THE WHOLE 'CARRIER-INDEPENDENT' CONTENT IS THIS ONE LINE.  max 4.58e-16
+      It uses NO holonomy, NO circuit count, NO clock, NO equidistribution, NO Mahler
+      measure.  It is the algebraic shape of the branch operators and nothing else.
+
+== X6c  AND 'FIBRE-WISE' ALONE IS NOT ENOUGH -- LOOP-CONSTANCY IS THE OTHER HALF ==
+   W-06's registered correction names the mechanism FIBRE-WISE-NESS.  Sharpened here:
+   K1  : fibre-wise but per-vertex phases -> max spread across same-pi states 7.733e-01   (invisibility FAILS)
+   B0b : fibre-wise but per-vertex phases -> max spread across same-pi states 7.112e-01   (invisibility FAILS)
+   => CORRECT NAME: the branch operator must be FIBRE-WISE *AND* CONSTANT ON ITS LOOP.
+      'Whole-circuit scalar multiplication by the holonomy' (P.4) is the special case the
+      corpus stipulated; the general condition is weaker and is still a condition ON THE
+      OPERATOR, not on the clock.
+
+== X6d  THE TWO EMBEDDINGS.  LANE C's 'ONE TRANSPORT SEMIGROUP' IS A CHOICE, NOT A FACT ==
+   M_gamma sits inside TWO one-parameter semigroups, both with the same L-th power:
+      T-semigroup (COR-F, edge-wise parallel transport): ||T^3 - M|| = 1.11e-16   T diagonal? False
+      D-semigroup (fibre-wise, the corpus's OWN kind):   ||D^3 - M|| = 0.00e+00   D diagonal? True
+   EDGE clock in the T-semigroup : max spread over n<=9 = 7.986e-01   DISAGREES with circuit
+   EDGE clock in the D-semigroup : max spread over n<=9 = 4.441e-16   AGREES with circuit
+   CIRCUIT clock (M^k)           : max spread over k<=9 = 4.441e-16
+   => THE REGISTRAR'S B1-vs-B2 DISAGREEMENT IS NOT A DISAGREEMENT BETWEEN TWO CLOCKS.
+      Hold the clock at EDGE and move only the semigroup: the disagreement appears and
+      disappears.  So the clock is not the operative variable; the OPERATOR FAMILY is.
+      Lane C's leg 1 held the operator family fixed at T and moved the ray, so it could
+      not have found this: within one family the ray is the only thing left to move.
+
+== X6e  THE HONEST OTHER SIDE, SCORED FOR NEITHER ==
+ S1:52 defines parallel transport EDGE-WISE ("along e : u -> v is z |-> U_e z").  If one adds the
+ admissibility criterion "a tick must be an edge-wise parallel transport of the fibre values",
+ then D is inadmissible and lane C's sublattice is the right answer.  BUT THE SAME CRITERION
+ EXCLUDES THE CORPUS'S OWN M_gamma, which moves no fibre value at all and is an element of the
+ gauge group (W-05, REGISTER:414-416).  So S1:52 cannot be the criterion that saves lane C's
+ reading without killing the object the corpus actually uses.
+ THE CORPUS HAS NO ADMISSIBILITY CRITERION FOR TICKS -- lane C's own eighth new_defect says so,
+ about CLOCKS.  The missing criterion is one level lower: it is about OPERATORS.
+ READS TWO WAYS AND I SCORE NEITHER: either (i) the edge-wise criterion is right, the corpus's
+ M_gamma is inadmissible, and the whole functional layer is scoped to a convention the corpus's
+ own S1 contradicts; or (ii) fibre-wise operators are admissible, D is a legitimate tick, and
+ the clock question is empty because a finer clock on the corpus's own operator changes nothing.
+

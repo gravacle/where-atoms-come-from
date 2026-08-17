@@ -1,0 +1,18 @@
+== D1  THE RATE UNDER EACH CONVENTION, SAME pi, SAME CONNECTION ==
+  N1's registered value      lambda = m(P) = -0.767507880357   for pi = [0.  0.3 0.3 0.4]
+
+                                       state A         state B         state C     spread
+  CIRCUIT  N=2000    per circuit    -0.769224600    -0.769224600    -0.769224600    3.3e-16
+  EDGE     N=2000    per tick       -0.864316851    -0.969348581    -1.137207438    2.7e-01
+  EDGE, rescaled x3 (per circuit, |gamma|=3)   -2.592950552    -2.908045744    -3.411622314
+
+  CIRCUIT  N=20000   per circuit    -0.767517534    -0.767517534    -0.767517534    1.1e-15
+  EDGE     N=20000   per tick       -0.864256422    -0.969816715    -1.133806600    2.7e-01
+  EDGE, rescaled x3 (per circuit, |gamma|=3)   -2.592769266    -2.909450144    -3.401419801
+
+  CIRCUIT  N=200000  per circuit    -0.767500322    -0.767500322    -0.767500322    6.6e-15
+  EDGE     N=200000  per tick       -0.864938828    -0.970177687    -1.133822683    2.7e-01
+  EDGE, rescaled x3 (per circuit, |gamma|=3)   -2.594816484    -2.910533060    -3.401468048
+
+  -> the CIRCUIT rate is m(P) and is blind to which state it is, as registered.
+     the EDGE rate is NOT m(P)/3 and is NOT the same number for the three states.

@@ -1,0 +1,37 @@
+LEG C -- THE EDGE CLOCK COMPUTES AN AVERAGE OF MAHLER MEASURES.  K1, L=3, f=1.0, c=sqrt(2)
+
+  state sA
+     P_0 coeffs = [0. +0.j 0.3+0.j 0.3+0.j 0.4+0.j]
+     pi(s)      = [0. +0.j 0.3+0.j 0.3+0.j 0.4+0.j]      ||P_0 - pi|| = 0.00e+00
+     m(P_0)=-0.767507880357  m(P_1)=-0.818573562822  m(P_2)=-0.812600951833
+     PREDICTED edge rate (1/3)sum m(P_r) = -0.799560798337
+     MEASURED  edge rate  N=200000          = -0.799551742369    dev = 9.06e-06
+        residue r=0: measured -0.767514367   m(P_0) -0.767507880   dev 6.5e-06
+        residue r=1: measured -0.818523299   m(P_1) -0.818573563   dev 5.0e-05
+        residue r=2: measured -0.812617081   m(P_2) -0.812600952   dev 1.6e-05
+
+  state sB
+     P_0 coeffs = [0. +0.j 0.3+0.j 0.3+0.j 0.4+0.j]
+     pi(s)      = [0. +0.j 0.3+0.j 0.3+0.j 0.4+0.j]      ||P_0 - pi|| = 0.00e+00
+     m(P_0)=-0.767507880357  m(P_1)=-0.849338957936  m(P_2)=-0.893089461858
+     PREDICTED edge rate (1/3)sum m(P_r) = -0.836645433384
+     MEASURED  edge rate  N=200000          = -0.836645514616    dev = 8.12e-08
+        residue r=0: measured -0.767514367   m(P_0) -0.767507880   dev 6.5e-06
+        residue r=1: measured -0.849324386   m(P_1) -0.849338958   dev 1.5e-05
+        residue r=2: measured -0.893096754   m(P_2) -0.893089462   dev 7.3e-06
+
+  state sC
+     P_0 coeffs = [0. +0.000000000e+00j 0.3+1.989516458e-19j 0.3+8.042974810e-19j 0.4+0.000000000e+00j]
+     pi(s)      = [0. +0.j 0.3+0.j 0.3+0.j 0.4+0.j]      ||P_0 - pi|| = 5.55e-17
+     m(P_0)=-0.767507880357  m(P_1)=-1.276340597667  m(P_2)=-1.144100426007
+     PREDICTED edge rate (1/3)sum m(P_r) = -1.062649634677
+     MEASURED  edge rate  N=200000          = -1.062674015224    dev = 2.44e-05
+        residue r=0: measured -0.767514367   m(P_0) -0.767507880   dev 6.5e-06
+        residue r=1: measured -1.276344221   m(P_1) -1.276340598   dev 3.6e-06
+        residue r=2: measured -1.144159030   m(P_2) -1.144100426   dev 5.9e-05
+
+CONSEQUENCE, STATED PLAINLY:
+  * the r=0 term of the edge-clock rate is EXACTLY N1's polynomial m(p00+p10x+p01y+p11xy);
+  * the whole edge-clock rate is still a Mahler measure average of 4-term polynomials in
+    the SAME two characters u,v.  The IDENTIFICATION N1 publishes survives the convention.
+  * what does NOT survive is 'the coefficients are the real pushforward pi'.

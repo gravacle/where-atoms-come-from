@@ -1,0 +1,67 @@
+== X2a  THE CARRIER THE LANE SAID IT DID NOT CONSTRUCT ==
+   V(gamma_F) = [0, 1, 2, 3]   V(gamma_C) = [0, 1, 4, 5]   L_F = 4  L_C = 4   gcd = 4   lcm = 4
+   class vector (0=00,1=10,2=01,3=11) = [3 3 1 1 2 2 0]   |class 11| = 2   all four classes occupied: True
+   COR-F's own edge tick on this carrier:  ||T_F^4 - M_F|| = 1.76e-16   ||T_C^4 - M_C|| = 3.14e-16
+   ARMS DIFF over the 40-state ensemble: min ||s_i - s_j|| = 0.9790 ; pi equal to 2.2e-16  -> NOT a zero-variable control
+
+== X2b  COR-F's TICK ON SHARE2: visible, exactly as the lane's C1/C2/C3 predict ==
+     n     EDGE spread    CIRCUIT spread
+     1       6.729e-01         2.220e-16
+     2       7.234e-01         3.331e-16
+     3       6.930e-01         4.441e-16
+     4       2.776e-16         3.608e-16
+     5       5.797e-01         4.441e-16
+     6       4.265e-01         3.331e-16
+     8       3.331e-16         3.331e-16
+    12       4.441e-16         3.053e-16
+   -> lcm(4,4) = 4, and the edge tick is invisible exactly on 4Z.  Nothing new so far.
+
+== X2c  THE COUNTEREXAMPLE TO THEOREM U4.  A NON-DIAGONAL TICK THAT MOVES FIBRE VALUE ==
+        AND IS pi-INVISIBLE AT EVERY SINGLE TICK.
+   class 11 = [np.int64(0), np.int64(1)]   class 10 = [np.int64(2), np.int64(3)]   class 01 = [np.int64(4), np.int64(5)]
+   FIRST WITNESS.  ||U_F^4 - M_F|| = 1.76e-15   ||U_C^4 - M_C|| = 1.51e-15
+     U_F is NOT diagonal:  ||U_F - diag(U_F)|| = 0.5711
+     it MOVES fibre value: |<e_1, U_F e_0>| = 0.403847   (the amplitude at v0 is transported to v1)
+     U_F block on class 11 =
+[[-0.913552+0.04827j  -0.328375+0.23508j ]
+ [-0.351319-0.199166j  0.913552-0.04827j ]]
+     A_1 = U_F^-1 U_C off-diagonal norm = 6.21e-17   diag = [-0.503992-0.863708j -0.503992-0.863708j  0.998607+0.052764j  0.998607+0.052764j -0.548863-0.835912j -0.548863-0.835912j  1.      +0.j      ]
+     max spread over 40 same-pi states, n = 1..12 = 4.441e-16
+   200 witnesses built; WORST spread over all of them, n = 1..12 = 8.549e-15 ; LARGEST off-diagonal mass 1.4141
+   -> pi-INVISIBLE AT EVERY TICK, NON-DIAGONAL, AND IT TRANSPORTS.  THEOREM U4 IS FALSE
+      OUTSIDE ITS TWO CARRIERS, exactly in the case the lane flagged and did not build.
+
+== X2d  WHAT SURVIVES THE COUNTEREXAMPLE, AND WHAT DOES NOT ==
+   (i)  THE LANE'S THEOREM C1 SURVIVES: my witness is invisible because its RELATIVE
+        operator A_n is a class-function multiplication operator, which is C1 exactly.
+   (ii) WHAT FALLS is U4's corollary 'therefore U_F and U_C are DIAGONAL', and with it the
+        report's sentence 'no transport that transports anything is invisible'.  The
+        correct statement is about A_n, never about the individual ticks.
+   (iii) IT DOES NOT RESTORE READING A ON EITHER CORPUS CARRIER: K1 has |class 11| = 1 and
+        B0b has gcd(4,3) = 1, so on both of them U4's conclusion still holds and the
+        registrar's verdict is untouched.  And the mechanism is honest about itself: the
+        witness is invisible because U_C|_11 = c U_F|_11 makes the two branches move IN
+        STEP on the shared class.  It is the stipulation again, wearing a 2x2 block.
+        WHAT IT IS NOT is a free numerical block: X2e builds it from the connection's own
+        edge transport, so it is gauge-covariant, which is the corpus's own admissibility
+        test and the one LEG A uses to admit COR-F's T.
+   (iv) BUT IT IS A FOURTH FAMILY, and the lane reported the family count as ONE
+        ('Exactly one family restores invisibility: U = zeta M^(1/L)').  That census is
+        complete only under U4's unstated hypothesis.
+
+== X2e  AND THE WITNESS CAN BE MADE GAUGE-COVARIANT, WHICH IS THE CORPUS'S OWN TEST ==
+   LEG A of the lane under test admits COR-F's T because it is unitary, gauge-COVARIANT and
+   T^L = M.  My witness passes the same three.  Construction: on the shared edge e0 = (v0,v1)
+   put  V = Lam V0 Lam*  with Lam = diag(1, U_e0) and V0 ANY non-diagonal 4th root of W_F I_2.
+   Then V_{10} = U_e0 (V0)_{10} and V_{01} = conj(U_e0) (V0)_{01}: every off-diagonal entry is
+   a multiple of the connection's own parallel transport along a real edge of the complex, so
+   V(a + dtheta) = G V(a) G*.  V^4 = Lam V0^4 Lam* = W_F I.  Verified over 2000 gauge maps:
+     max || U_F(g.a) (g.s) - g.(U_F(a) s) || over 2000 gauge transforms = 1.13e-15
+     max || U_C(g.a) (g.s) - g.(U_C(a) s) || over 2000 gauge transforms = 1.20e-15
+     || U_F* U_F - I || = 7.89e-16   || U_F^4 - M_F || = 1.48e-15
+     || U_C* U_C - I || = 7.53e-16   || U_C^4 - M_C || = 1.63e-15
+     U_F non-diagonal: ||U_F - diag|| = 0.8831   |<e_1,U_F e_0>| = 0.624475
+     max pi-spread over 40 same-pi states, n = 1..24 = 6.883e-15
+   -> UNITARY, GAUGE-COVARIANT, U^L = M_gamma, NON-DIAGONAL, MOVES FIBRE VALUE ALONG A REAL
+      EDGE -- and pi-INVISIBLE AT EVERY TICK.  It passes every admissibility test the lane
+      under test applies to COR-F's own T, and it is not diagonal.

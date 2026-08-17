@@ -1,0 +1,26 @@
+== R4.1  STEP 1, ON THE DIAGONAL, BY FOURIER EXTRACTION IN a_v = t + b_v ==
+  L=3  max |DIAGONAL Fourier coeff off {-L,0,+L}| = 4.44e-16   max|A_+L - (prod c) W| = 8.97e-16   max|A_-L - (prod d) conj(W)| = 9.49e-16
+  L=4  max |DIAGONAL Fourier coeff off {-L,0,+L}| = 8.88e-16   max|A_+L - (prod c) W| = 6.33e-16   max|A_-L - (prod d) conj(W)| = 2.00e-15
+  L=5  max |DIAGONAL Fourier coeff off {-L,0,+L}| = 3.55e-15   max|A_+L - (prod c) W| = 1.37e-15   max|A_-L - (prod d) conj(W)| = 1.27e-15
+  (Same statistic on the FULL matrix, INCLUDING off-diagonal entries: nonzero in 60/60
+   draws -- that is self-defect (2).  Off-diagonal entry (v,w) sums walks of net displacement
+   congruent to v-w, not 0, so its support is wider.  The claim is about the diagonal,
+   and on the diagonal it is exact.)
+
+== R4.2  STEP 2 AS A DISCRIMINATOR.  Sweep the diagonal and backward bands to zero ==
+   Set c_v unimodular with prod c_v = 1, then give every column a diagonal part s and a
+   backward part r, re-normalising c.  Root defect ||U^L - W.I|| against (s, r):
+      s | r         0.00        0.05        0.20        0.50
+     0.00    1.41e-15    1.51e-01    6.01e-01    1.47e+00
+     0.05    2.60e-01    2.93e-01    6.22e-01    1.42e+00
+     0.20    1.02e+00    1.01e+00    1.06e+00    1.45e+00
+     0.50    2.30e+00    2.26e+00    2.13e+00    1.92e+00
+   -> ZERO in exactly one cell, s = r = 0.  Any admixture of a diagonal or a reverse band
+      destroys the root condition.  Steps 3-4 say why: prod|c_v| = 1 leaves no room.
+
+== R4.3  AND THE FREE PHASES CHANGE NOTHING: THE WHOLE ADMISSIBLE FAMILY IS pi-VISIBLE ==
+  K1   400 draws from the FULL admissible local family (800 root checks all passed): 0 pi-blind; SMALLEST spread over n<=2.L_F.L_C = 6.028e-01
+  B0b  400 draws from the FULL admissible local family (800 root checks all passed): 0 pi-blind; SMALLEST spread over n<=2.L_F.L_C = 5.021e-01
+  -> EVERY admissible edge tick, not only COR-F's, makes the incidence VISIBLE.
+     T's canonicity is therefore NOT load-bearing.  The finding needs ADMISSIBILITY only,
+     and one admissible witness suffices -- which the corpus's own sealed audit supplies.
