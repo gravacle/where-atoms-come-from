@@ -1,0 +1,48 @@
+W-30b v2   3x3 patch Z_2, physical dim 16. R = rim loop. EXACT Lindblad exponential.
+           bath = electric on the cut links (the W-29b conjugate), gamma=0.5.
+           LASTS = time-average of <R> over t in [10,20]; OSC = same with gamma=0.
+
+      g^2  MOVES=||[H,R]||/dim  LASTS(gam=.5)   OSC(gam=0)   LASTS-OSC  MOVESxLASTS
+  ----------------------------------------------------------------------------------
+     0.00               0.0000       1.000000     1.000000    0.000000     0.000000
+     0.01               0.0400       0.952075     0.998332   -0.046257     0.038083
+     0.03               0.1200       0.646844     0.985428   -0.338584     0.077621
+     0.10               0.4000       0.016774     0.856770   -0.839995     0.006710
+     0.20               0.8000       0.000156     0.583476   -0.583320     0.000125
+     0.30               1.2000       0.000125     0.401117   -0.400992     0.000150
+     0.50               2.0000       0.000112     0.285863   -0.285750     0.000225
+     0.70               2.8000       0.000058     0.226056   -0.225997     0.000164
+     1.00               4.0000       0.000076     0.211098   -0.211023     0.000304
+     1.50               6.0000       0.001116     0.097069   -0.095953     0.006699
+     2.00               8.0000       0.008072     0.263048   -0.254976     0.064577
+     3.00              12.0000       0.047808     0.293738   -0.245930     0.573694
+     5.00              20.0000       0.134427     0.275549   -0.141122     2.688542
+     8.00              32.0000       0.195524     0.383340   -0.187817     6.256759
+    12.00              48.0000       0.224010     0.311247   -0.087237    10.752479
+    20.00              80.0000       0.240293     0.319244   -0.078951    19.223443
+
+  peak of MOVESxLASTS at g^2 = 20.0  value 19.223443  -> AT THE EDGE OF THE SCAN, not an optimum
+
+  CONTROL A -- gamma=0 at g2=0 must give exactly 1 (R is conserved, nothing can move it).
+    <R> over [10,20], g2=0, gamma=0   : 1.000000000000
+    <R> over [10,20], g2=0, gamma=0.5 : 1.000000000000
+
+  CONTROL B -- magnetic bath (commutes with R) at several g2.
+    g2=  0.00 magnetic bath  <R>[10,20] = 1.000000000
+    g2=  0.50 magnetic bath  <R>[10,20] = 0.000017195
+    g2=  2.00 magnetic bath  <R>[10,20] = 0.000000086
+    g2= 20.00 magnetic bath  <R>[10,20] = 0.000000218
+
+  CONTROL C -- large-g2 diagnostic: does the electric bath still act, or has it become
+               a symmetry of H?  ||[H, L_el]|| tells us. If it -> 0, the bath stops working.
+    g2=  0.50  max||[H,L_el]|| =    22.6274   ||[H,R]||/dim =    2.0000
+    g2=  2.00  max||[H,L_el]|| =    22.6274   ||[H,R]||/dim =    8.0000
+    g2=  5.00  max||[H,L_el]|| =    22.6274   ||[H,R]||/dim =   20.0000
+    g2= 20.00  max||[H,L_el]|| =    22.6274   ||[H,R]||/dim =   80.0000
+
+  CONTROL D -- is the exponential right? Compare against fine-step RK integration.
+    g2= 0.00  RK4(200k steps) <R>(5) = 1.000000000   exact expm = 1.000000000   diff = 4.44e-15
+    g2= 0.50  RK4(200k steps) <R>(5) = 0.008885279   exact expm = 0.008885279   diff = 1.38e-15
+    g2= 2.00  RK4(200k steps) <R>(5) = 0.066375389   exact expm = 0.066375389   diff = 1.39e-14
+
+[exited with code 0]

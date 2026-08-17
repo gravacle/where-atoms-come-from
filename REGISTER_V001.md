@@ -2361,3 +2361,81 @@ ones the geometry hands you, and those are precisely the ones nothing can write 
 **NEXT.** (1) A bath with **two** absorbing sectors — does the system select, and does the selection
 correlate with anything in the initial state? (2) **A carrier that responds to the field** — the
 missing term, and the first construction in this program with a dynamical geometry.
+
+---
+
+## W-30 — **THE W-29 OBSTRUCTION IS NOT A FEATURE OF OUR PATCH. IT IS GENERAL, AND NO VALUE OF THE COUPLING ESCAPES IT.**
+
+`LANE_W30_DYNAMIC_CARRIER/`, sealed. W-29 found the conjugacy on one carrier. **A finding on one
+carrier is a property of that carrier until tested elsewhere.**
+
+### W-30a — FOUR CARRIERS, TWO GROUPS, ONE ANSWER
+
+Carriers: the 3×3 patch, a single 2×2 plaquette, a triangle (3-cycle), and the theta graph (two
+vertices, three parallel links, **two** independent cycles). Groups `Z_2` and `Z_3`. `R` = rim loop
+built as the **product of plaquettes**, so orientation is correct by construction. At `g^2 = 0`:
+
+```
+  carrier         N  dim   ||R||  unitarity  ||[H,R]||  ||[L,R]||  max|d<R>/dt|
+  3x3 patch       2   16   4.000  0.000e+00  0.000e+00  0.000e+00     1.110e-16
+  3x3 patch       3   81   9.000  0.000e+00  0.000e+00  0.000e+00     2.252e-17
+  2x2 plaquette   2    2   1.414  0.000e+00  0.000e+00  0.000e+00     0.000e+00
+  triangle        3    3   1.732  0.000e+00  0.000e+00  0.000e+00     1.144e-16
+  theta graph     3    9   3.000  0.000e+00  0.000e+00  0.000e+00     1.241e-16      (8 rows, all)
+```
+
+`R` is **unitary** (defect `0.000e+00`) and **nontrivial** — exactly `N` distinct eigenvalues on
+every carrier, so it can label `N` sectors. It is a perfectly good record-bearing observable.
+**`d<R>/dt` is zero to machine precision on every carrier, at every group, for every random state.**
+
+> **THE NO-GO.** A perfectly conserved quantity cannot be written, **because that is what conserved
+> means.** Its value does not change, so it was never acquired — it always was. And a quantity that
+> is not conserved is one the bath can reach. **On a static carrier there is no third option.**
+
+### W-30b — THE COUPLING IS THE DIAL BETWEEN THE HORNS, AND IT DOES NOT REACH A WAY OUT
+
+Exact Lindblad exponential (RK4 agrees to `~1e-14`, CONTROL D — this also **retires the `w27b_open`
+Heun defect** for this lane). `LASTS` = time-average of `<R>` over `t ∈ [10,20]`; `OSC` = the same at
+`gamma = 0`, separating precession from survival.
+
+```
+     g^2   MOVES=||[H,R]||/dim   LASTS(gam=.5)   OSC(gam=0)   LASTS-OSC
+    0.00                0.0000        1.000000     1.000000    0.000000
+    0.01                0.0400        0.952075     0.998332   -0.046257
+    0.03                0.1200        0.646844     0.985428   -0.338584
+    0.10                0.4000        0.016774     0.856770   -0.839995
+    1.00                4.0000        0.000076     0.211098   -0.211023
+   20.00               80.0000        0.240293     0.319244   -0.078951
+```
+
+**At `g^2 = 0` the record is untouchable: `<R>` = `1.000000000000` with the bath ON** (CONTROL A).
+**The bath cannot damage a conserved record at all.** And `MOVES` is exactly `0` — nothing can write
+it. **Switch the coupling on and both change together.** By `g^2 = 0.1` survival is `1.7%`.
+
+**The apparent revival at large `g^2` is not survival.** There `LASTS ≈ OSC` — the same value with
+the bath off — so it is the **dephasing residue** (the projection onto the commutant of a
+now-dominant electric term), and it is flat at `~0.3`, not rising. The `MOVES×LASTS` product peaks
+at the **edge** of the scan only because `MOVES = 4g^2` grows without bound; that is the metric
+inflating, not a record persisting.
+
+> **NO VALUE OF THE COUPLING SOLVES IT. THE OBSTRUCTION IS TOTAL ON A STATIC CARRIER.**
+
+### WHAT THIS ESTABLISHES — GRAVITY'S ROLE, DERIVED FROM ITS ABSENCE
+
+The charter asks for the roles of EM, gravity and alpha in record formation. **EM** supplies the
+field, the boundary that is both cycle and separator, and the loop that is a candidate record.
+**Alpha (`g^2`)** is the dial along the axis of the obstruction — it is what trades writability
+against durability, and it lands on that axis without being put there. **And the missing ingredient
+is now specified by what it must do:**
+
+> **A record can only form if a quantity can BECOME conserved. On a fixed `H` the conserved
+> quantities are fixed for all time, so nothing can become one. The carrier must respond.**
+
+**This is not "gravity would be nice to have." It is: without a responsive carrier there are no
+records at all.** Record formation REQUIRES the ingredient we have been calling gravity, and the
+requirement is derived from a null, not assumed.
+
+**CAVEAT, STANDING.** The escape not yet tested is **approximate** conservation — einselection uses
+pointer states stable on observation timescales, not forever. That is a hierarchy of timescales, and
+a timescale ratio is a pure number. **Whether alpha sets that ratio is untested and is the obvious
+next question if the dynamical carrier fails.**

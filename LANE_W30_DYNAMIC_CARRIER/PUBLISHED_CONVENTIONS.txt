@@ -1,0 +1,12 @@
+LANE W30 -- IS THE W-29 CONJUGACY GENERAL, AND WHERE DOES THE COUPLING SIT?
+w30a: four carriers (3x3 patch, 2x2 plaquette, triangle, theta graph) x two groups (Z_2, Z_3).
+      R = rim loop built as the PRODUCT OF PLAQUETTES (oriented by construction; an all-(+1)
+      rim is a genuine loop only at N=2 and silently degenerates at N=3). ||R||, the unitarity
+      defect and the eigenvalue count are printed so the operator proves it is nontrivial
+      BEFORE its commutator is allowed to mean anything.
+w30b: g^2 scan, 0 -> 20. Lindblad generator vectorised to a D^2 x D^2 superoperator and
+      EXPONENTIATED EXACTLY (scaling-and-squaring Taylor; scipy unavailable). No Heun, no
+      step error, no purity drift. CONTROL D checks it against RK4 -- agrees to ~1e-14.
+      LASTS = time-average of <R> over t in [10,20] (a single-time sample is meaningless once
+      g^2>0, because R then precesses). OSC = the same with gamma=0, to separate coherent
+      oscillation from dissipative survival.

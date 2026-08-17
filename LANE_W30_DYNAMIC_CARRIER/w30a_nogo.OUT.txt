@@ -1,0 +1,33 @@
+PURE MAGNETIC  g2 = 0  -- the point where W-28 measured ||[H,W]|| = 0
+  carrier         N  dim   ||R||  unitarity  ||[H,R]||  ||[L,R]||  max|d<R>/dt|  verdict
+  ---------------------------------------------------------------------------------------------------
+  3x3 patch       2   16   4.000  0.000e+00  0.000e+00  0.000e+00     1.110e-16  FROZEN: <R> can never change
+  3x3 patch       3   81   9.000  0.000e+00  0.000e+00  0.000e+00     2.252e-17  FROZEN: <R> can never change
+  2x2 plaquette   2    2   1.414  0.000e+00  0.000e+00  0.000e+00     0.000e+00  FROZEN: <R> can never change
+  2x2 plaquette   3    3   1.732  0.000e+00  0.000e+00  0.000e+00     1.110e-16  FROZEN: <R> can never change
+  triangle        2    2   1.414  0.000e+00  0.000e+00  0.000e+00     0.000e+00  FROZEN: <R> can never change
+  triangle        3    3   1.732  0.000e+00  0.000e+00  0.000e+00     1.144e-16  FROZEN: <R> can never change
+  theta graph     2    4   2.000  0.000e+00  0.000e+00  0.000e+00     1.110e-16  FROZEN: <R> can never change
+  theta graph     3    9   3.000  0.000e+00  0.000e+00  0.000e+00     1.241e-16  FROZEN: <R> can never change
+
+MIXED          g2 = 1  -- an electric term is switched on
+  carrier         N  dim   ||R||  unitarity  ||[H,R]||  ||[L,R]||  max|d<R>/dt|  verdict
+  ---------------------------------------------------------------------------------------------------
+  3x3 patch       2   16   4.000  0.000e+00  6.400e+01  0.000e+00     1.755e+00  R can move
+  3x3 patch       3   81   9.000  0.000e+00  8.818e+01  0.000e+00     2.541e-01  R can move
+  2x2 plaquette   2    2   1.414  0.000e+00  2.263e+01  0.000e+00     1.381e+01  R can move
+  2x2 plaquette   3    3   1.732  0.000e+00  1.697e+01  0.000e+00     4.207e+00  R can move
+  triangle        2    2   1.414  0.000e+00  1.697e+01  0.000e+00     1.039e+01  R can move
+  triangle        3    3   1.732  0.000e+00  1.273e+01  0.000e+00     4.962e+00  R can move
+  theta graph     2    4   2.000  0.000e+00  1.131e+01  0.000e+00     3.263e+00  R can move
+  theta graph     3    9   3.000  0.000e+00  1.039e+01  0.000e+00     5.904e-01  R can move
+
+INTERPRETATION CHECK -- is 'frozen' forced by R being trivial on the physical space?
+  3x3 patch      N=2 dim=  16  distinct eigenvalues of R: 2  -> nontrivial: R separates states
+  3x3 patch      N=3 dim=  81  distinct eigenvalues of R: 3  -> nontrivial: R separates states
+  2x2 plaquette  N=2 dim=   2  distinct eigenvalues of R: 2  -> nontrivial: R separates states
+  2x2 plaquette  N=3 dim=   3  distinct eigenvalues of R: 3  -> nontrivial: R separates states
+  triangle       N=2 dim=   2  distinct eigenvalues of R: 2  -> nontrivial: R separates states
+  triangle       N=3 dim=   3  distinct eigenvalues of R: 3  -> nontrivial: R separates states
+  theta graph    N=2 dim=   4  distinct eigenvalues of R: 2  -> nontrivial: R separates states
+  theta graph    N=3 dim=   9  distinct eigenvalues of R: 3  -> nontrivial: R separates states
