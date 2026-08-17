@@ -1,0 +1,40 @@
+LANE W-08 / M2 — REFUTER 1 — LENS: MATHEMATICS (the scaling claims) — PUBLISHED CONVENTIONS
+Everything needed to re-run this refutation from scratch is on this page.
+
+LINEAGE.  Claude Opus 5.  M2 was Opus 5 and W-07 was Opus 5.  THIS REFUTER IS THE THIRD OPUS 5
+LAYER ON THE SAME OBJECT: same-lineage, shared failure modes, and the caveat that discounts M2-8
+discounts this page by the same factor (feedback_read_sealed_corrections_first).  Grade accordingly.
+
+READ BEFORE COMPUTING (in this order, done):  LANE_W07_RECURRENCE_ISOLATION/PUBLISHED_CONVENTIONS
+.txt ; S1_CARRIER_K1_V001.md in full ; S3 audit :785-800 (COR-A..COR-L) ; S2 audit :600-650
+(COR-A..COR-H) ; REGISTER_V001.md W-01 row, ERRATUM AGAINST W-02, W-07 row ; and — the thing M2
+did not read — LANE_W07_RECURRENCE_ISOLATION/w07_d_carrier_recur.py and w07_e_isolation.py, plus
+every file of LANE_W08_M2_FLOOR.
+
+CORRECTIONS CARRIED, NOT REDISCOVERED: COR-B, COR-E, COR-F, COR-K, COR-L, ERRATUM v W-02, and
+W-07's OWN leg E self-correction ("I built the 'generic' connection from phi and phi^2, and
+phi^2 = phi+1, so W_F == W_C exactly").
+
+OBJECTS.  Exactly M2's, re-derived not copied: carrier K1 (S1 sec1); branches M_dF, M_c (W-01/S3);
+Z_k = <M_dF^k s, M_c^k s>.  R1 rebuilds Z_k from the five-vertex diagonal operators in EXACT
+Gaussian-rational arithmetic and shows it equals p11 (xy)^k + p10 x^k + p01 y^k with x = conj(W_F),
+y = W_C, p00 = 0 by K1's incidence.  READY STATES: RS-G (p11,p10,p01)=(0.4,0.3,0.3); RS-P =
+(0.5,0,0.5) from S1's published p=(1/2,0,0,1/4,1/4).  Never mixed inside a comparison except in
+R6, where the whole point is the 2x2 and both cells of both factors are present.
+
+PRECISION.  Double precision is the default and is said so.  Residues k*alpha mod 1 use a 3-limb
+split of a 60-digit mpmath value (k*a_hi and k*a_mid exact for k < 2^27; absolute error ~1.1e-16
+in the fractional part).  EVERY reported argmin is re-checked in EXACT big-integer arithmetic
+against the 2^-120 truncation of the constant (R2's "EXACT-ARITHMETIC RE-CHECK" block); the
+algebraic identity and the |H|=4 rate are done in exact Fractions with no float; the rates of R4
+are mpmath at 50 dps with the integrand's kinks AND log-singularities split by hand.
+
+SEEDS.  numpy default_rng.  20260816 (M2's master seed, to reproduce its rows); 424242 (R2.3);
+31415 (R7.1); 9000+/7000+ (R1.3).  Grid k = 1..K, K in {1e3,1e4,1e5,1e6,1e7}, chunked 1e6 or 2e6.
+
+WHAT MOVES.  See ISOLATION_LEDGER.txt.  One variable per comparison, always, and where a
+comparison could not be isolated that is said instead of finessed.
+
+FILES.  r1_objects_identity_theorem · r2_floor_exponents · r3_vwa_confound · r4_rates_independent
+· r5_schedule_and_deff · r6_m2_8_missing_cell · r7_overlap_fixed_height (.py and .OUT.txt each),
+r2_cluster_fits.npy, SEALS.sha256.

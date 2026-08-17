@@ -1,0 +1,103 @@
+LANE W-08 / M2 — ISOLATION LEDGER
+Required by the program's process rules.  One variable per comparison, every comparison listed.
+FIVE confounded headlines are of record, two of them from lanes that had written ledgers.  This
+ledger is therefore written to be CHECKABLE: each row names what is held fixed and the ONE thing
+that moves, and where a comparison could not be isolated that is said instead of finessed.
+
+THE FIXED BACKGROUND (identical in every row unless that row names it as the moving variable):
+  carrier K1 (S1 sec1) · p00 = 0 by incidence · branches M_dF, M_c (W-01/S3) ·
+  Z_k = p11 (xy)^k + p10 x^k + p01 y^k with x = conj(W_F), y = W_C ·
+  k = 1..K on the grid {1e3,1e4,1e5,1e6,1e7} · double precision with the exact-identity and
+  3-limb protocol of PUBLISHED_CONVENTIONS.txt · code path identical across rows of a table.
+
+ROW 1  (leg B, leg F1/F2)  ---------------------------------------------------------------------
+  HELD: ready state (RS-G in one table, RS-P in the other; NEVER mixed inside a table), K-grid,
+        observable, code path, precision protocol.
+  MOVES: the connection (alpha,beta) = (f,c)/2pi, and NOTHING else.
+  MEASURES: F(K), the distribution N(eps), SUM(1-|Z_k|), SUM log|Z_k|.
+
+ROW 2  (leg C1)  -------------------------------------------------------------------------------
+  HELD: ready state; the functional (1-|Z|) and log|Z|.
+  MOVES: the orbit closure H only — evaluated as an exact Haar integral, no sampling, so the
+        finite-K comparison of ROW 1 and the infinite-K value of ROW 2 are independent routes to
+        the same number.  Agreement to 6-9 digits is the check, not the claim.
+
+ROW 3  (leg C2)  -------------------------------------------------------------------------------
+  NOT A COMPARISON.  A proved inequality, valid for every connection and every ready state.
+  Nothing moves; nothing is held.  Reported as a theorem, and per the program's rule the vacuity
+  disqualifier is NOT applied to it.
+
+ROW 4  (leg C3)  -------------------------------------------------------------------------------
+  HELD: ready state RS-G, K = 2e5, code path.
+  MOVES: (alpha,beta) over a 121x121 grid.
+  DEFECT FOUND AND RECORDED: my first conclusion from this row was the exact opposite of the
+  truth and was refuted by my own ROW 3.  Corrected in place, both versions on the page.
+
+ROW 5  (leg D1)  -------------------------------------------------------------------------------
+  HELD: ready state RS-G, N-grid, code path.
+  MOVES: the connection, across the attained/approached boundary.
+  CONFOUND DECLARED, NOT HIDDEN: "attained" cannot be moved alone.  |Z_k| = 1 for some k >= 1
+  IFF alpha,beta are both rational IFF H is finite.  So this row moves TWO things at once
+  (attainment AND H) and is therefore NOT an isolation of attainment.  Rows 6 and 7 exist
+  because of that, and the finding is stated from them, not from this row.
+
+ROW 6  (leg D2)  -------------------------------------------------------------------------------
+  HELD: ATTAINMENT ITSELF (true in every row), ready state RS-G, code path, the direction of the
+        rational approximation (the cubic pair).
+  MOVES: the order |H| = n only, n = 2 ... 1000003.
+  RESULT: lambda_n moves anyway and converges to the generic torus value.  This is the row that
+  disqualifies "attained" as the operative variable.
+
+ROW 7  (leg D3)  -------------------------------------------------------------------------------
+  HELD: ATTAINMENT (true), ready state RS-G, code path, and the ORDER's growth (same n-values).
+  MOVES: the DIRECTION of the finite subgroup — a fixed rational direction instead of a 2D
+        equidistributing one.
+  RESULT: lambda_n converges to the CIRCLE value, not the torus value, though the order grows
+  identically.  This is the row that disqualifies "the order" as the operative variable.
+  ROWS 6+7 TOGETHER name the operative variable: the orbit closure H — its dimension first, then
+  the discrepancy of its Haar measure against Haar on T^2.
+
+ROW 8  (leg D4)  -------------------------------------------------------------------------------
+  HELD: ready state RS-G, the N-grid.
+  MOVES: a single scalar t, the distance from the attained point along a fixed direction.
+  Reports the finite-N and the asymptotic answers SEPARATELY because they disagree, and says so.
+
+ROW 9  (leg E1/E2)  ----------------------------------------------------------------------------
+  HELD: connection, ready state, carrier, K.
+  MOVES: THE SCHEDULE — a different variable from every row above, and labelled as such.  Never
+  compared against a row in which the connection also moves.
+
+ROW 10 (leg E3)  -------------------------------------------------------------------------------
+  HELD: ready state RS-G, K = 1e6, the schedule RULE (write the delta*K cells of smallest
+        1-|Z_k|), delta.
+  MOVES: the connection, across the attained/approached boundary.
+  This IS an isolation of the attained/approached distinction, because the schedule rule is
+  defined intrinsically (by rank of 1-|Z_k|) rather than by the connection's arithmetic, and the
+  same rule is applied to every row.
+
+ROW 11 (leg F3)  -------------------------------------------------------------------------------
+  HELD: ready state RS-G, d_eff = 2, K-grid, code path.
+  MOVES: the Diophantine QUALITY of the pair at fixed d_eff (badly approximable / random /
+        very well approximable).  Rules out "Diophantine type" as the exponent's cause.
+
+ROW 12 (leg F4)  -------------------------------------------------------------------------------
+  HELD: everything W-07 leg D held.  Reproduces its numbers FIRST (to 1 ulp or exactly), and only
+  then changes the connection to a genuinely rank-2 one.  The correction is therefore a
+  one-variable move away from a reproduced baseline, not a rival calculation.
+
+DEFECTS IN THIS LANE, RECORDED RATHER THAN FIXED SILENTLY:
+  D-1  Leg A5's first version initialised its worst-case tracker at 0.0 for a quantity that is
+       <= 0 by construction: a control that could not fail.  Replaced by the max plus the
+       distribution of the slack.  (The program's own rule caught this, not a reviewer.)
+  D-2  Leg C4's first version mislabelled a non-forming family: for S = {0,C} the criterion is
+       G = <conj(W_F)>, so the non-forming case is W_F = 1, not W_C = 1.  The control returned
+       7.27e4 instead of 0 and was right to.  Both rows are on the page.
+  D-3  Legs C/E/F first used a hard-coded pair labelled D_RAND1 that was NOT the seeded stream
+       leg B used — an unreproducible number, which this program treats as absent.  All three
+       scripts now draw from the master seed exactly as leg B does.
+  D-4  Leg C3's first conclusion was refuted by leg C2, this lane's own theorem.  Recorded above.
+  D-5  Leg D1's first version passed alpha = 1/4 for the connection labelled alpha = 1/2.  Caught
+       because the row disagreed with leg B and leg C on a number all three compute.
+  D-6  Leg F3's double-precision alpha cannot represent the VWA pair's 1e-18 perturbation; that
+       table's VWA row reads F = 0 exactly where leg B's 60-digit version reads 3.609e-23.  The
+       artefact is printed next to the number.

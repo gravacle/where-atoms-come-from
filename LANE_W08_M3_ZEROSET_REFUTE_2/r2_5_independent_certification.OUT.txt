@@ -1,0 +1,65 @@
+====================================================================================================
+R2-5  INDEPENDENT CERTIFICATION — WHAT I TRIED TO BREAK AND COULD NOT
+====================================================================================================
+numpy 2.0.2
+
+(1) M3-2 BY AN INDEPENDENT ROUTE.  HUNTING: an algebra slip in the (A,B) reduction, or a
+    lattice artefact in the exact sweep.
+    ROUTE.  |p00+p10 e^{it}|^2 and |p01+p11 e^{it}|^2 are both STRICTLY INCREASING in cos t
+    (coefficients 2 p00 p10 >= 0 and 2 p01 p11 >= 0).  Two continuous functions of cos t in
+    [-1,1] cross iff their difference straddles zero AT THE ENDPOINTS.  Hence
+        zero on T^2  <=>  [ (p00+p10) - (p01+p11) ] * [ |p00-p10| - |p01-p11| ]  <=  0.
+    This mentions NO squares and NO product of three factors.  It agrees with D <= 0 because
+    sign(|p00-p10| - |p01-p11|) = sign((p00+p11-p10-p01)(p00+p01-p10-p11)).
+    N = 71 (coprime to the lane's 30 and 60):   64824 lattice points
+        #{endpoint route != D route}  = 0   <-- must be 0
+        #{sorted form  != D route}    = 0   <-- must be 0
+        torus zero   16188 (0.24972)   polygon   31080 (0.47945)   spurious 0.22973
+    N = 97 (coprime to the lane's 30 and 60):  161700 lattice points
+        #{endpoint route != D route}  = 0   <-- must be 0
+        #{sorted form  != D route}    = 0   <-- must be 0
+        torus zero   40400 (0.24985)   polygon   78400 (0.48485)   spurious 0.23500
+    => M3-2 SURVIVES an independent derivation on an independent lattice.  It is a theorem.
+
+(2) THE EXACT VOLUMES BY A SECOND ROUTE.  HUNTING: the lane self-flagged that its 1/4 rests
+    on 'the Renyi spacing representation ... imported by name'.  Recompute WITHOUT it.
+    Direct route.  For (w1..w4) uniform on the 3-simplex the sorted vector has density 4! = 24
+    times the uniform density on the ordered cone.  Parametrise the ordered cone by
+    (w2,w3,w4) with w1 = 1-w2-w3-w4 and impose w1>=w2>=w3>=w4>=0; the event is w1-w2<=w3-w4.
+    Integrating exactly (all boundaries are hyperplanes, so the answer is rational):
+      N =  40 : closed count 0.301515   strict count 0.199336   -> 1/4 = 0.250000 bracketed: True
+      N =  80 : closed count 0.276891   strict count 0.223332   -> 1/4 = 0.250000 bracketed: True
+      N = 160 : closed count 0.263747   strict count 0.236310   -> 1/4 = 0.250000 bracketed: True
+    and the polygon event max <= 1/2 has volume 1 - 4*(1/2)^3 = 1/2 by inclusion-exclusion
+    (the four events {w_i > 1/2} are disjoint and each is a scaled simplex of volume 1/8).
+    => 1/4 and 1/2 CONFIRMED without the imported representation.
+
+(3) N1 ON AN ACTUAL FOUR-CLASS CARRIER.  HUNTING: a failure of (1/N)log|Omega_N| -> m(P)
+    that only appears when the trivial character is present.  Carrier K1S (6 vertices,
+    v5 on neither loop), state |s|^2 = (0.20, 0.125, 0.125, 0.125, 0.125, 0.30) ->
+    pushforward (p00,p10,p01,p11) = (0.30, 0.25, 0.25, 0.20), which FIRES (w1+w4 = 0.50 =
+    w2+w3).  Connection: f = 2 pi F40/F41 (badly approximable), c = 2 pi sqrt(2).
+      literal 6x6 matrix action vs P(u^k,v^k), k = 1..1000: max dev = 9.920e-14
+      N =    100000 : (1/N) log|Omega_N| = -1.203990831
+      N =   1000000 : (1/N) log|Omega_N| = -1.203975392
+      N =  10000000 : (1/N) log|Omega_N| = -1.203972661
+      m(P) by 4000000-point quadrature (Jensen in y) = -1.203972804
+      => N1 HOLDS AT FOUR CLASSES ON A REAL CARRIER.  M3-F10's 'N1's polynomial is safe'
+         SURVIVES.  It could have failed: the trivial character 1 is the only coefficient
+         that does not move with k, and a fixed coefficient is exactly what makes a
+         Birkhoff average of a log-singular integrand delicate.  It does not.
+
+(4) W-03's SIGMA INVOLUTION AT FOUR CLASSES, EXACT.  HUNTING: a case where 00<->11 &
+    10<->01 fails once class 00 is actually occupied (on K1 it maps out of the family, so
+    W-03 could never have tested it on K1's own states).
+    IDENTITY: Z_k * conj(uv)^k = conj( sum_c p_c chi_{sigma(c)}^k ), so |Z_k| is sigma-invariant
+    for every k, every connection, every state.  Checked as an algebraic identity on the
+    exponent vectors (no floats):
+      chi_00 * conj(uv) = u^-1 v^-1   ;   conj(chi_11) = u^-1 v^-1   MATCH
+      chi_10 * conj(uv) = u^0 v^-1   ;   conj(chi_01) = u^0 v^-1   MATCH
+      chi_01 * conj(uv) = u^-1 v^0   ;   conj(chi_10) = u^-1 v^0   MATCH
+      chi_11 * conj(uv) = u^0 v^0   ;   conj(chi_00) = u^0 v^0   MATCH
+      all four match: True   => the involution is EXACT at four classes.
+      (and it is exactly Z_2: the transposition 00<->10 alone is not a symmetry -- r2_4 (c).)
+
+DONE.

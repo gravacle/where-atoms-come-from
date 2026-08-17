@@ -1,0 +1,64 @@
+====================================================================================================
+R4  THE REGISTERED VALUES, RE-DERIVED BY INDEPENDENT ROUTES
+====================================================================================================
+
+(a) TWO INDEPENDENT ROUTES FOR m(a + b x + c y), CALIBRATED ON FIVE VALUES S4 PUBLISHES.
+    route J = exact Jensen reduction + 400-node Gauss-Legendre on the smooth piece
+    route C = Cassaigne-Maillot + Bloch-Wigner from its series
+
+    weights                     S4's published value    route J          route C          max dev
+    (0.4, 0.3, 0.3)   SENSE C    -0.767507880358   -0.767507880358   -0.767507880358   2.27e-13
+    (1/7, 3/7, 3/7)   B1q U      -0.741029582571   -0.741029582571   -0.741029582571   3.50e-13
+    (2/9, 4/9, 3/9)   B0a U      -0.747659833081   -0.747659833081   -0.747659833081   4.11e-13
+    (0.4, 0.4, 0.2)   B3/B1/B2   -0.756573585640   -0.756573585640   -0.756573585648   7.90e-12
+    (5/11, 5/11, 1/11) B1s U     -0.724759919461   -0.724759919461   -0.724759919489   2.78e-11
+    (1/3, 1/3, 1/3)   m(1+x+y)   -0.775546341449   -0.775546341449   -0.775546341442   7.34e-12
+    max deviation of EITHER route from S4's published values = 2.785e-11
+    => THE REGISTERED GENERIC VALUE -0.767507880 IS CONFIRMED TWICE OVER, and so is the
+       lane's F11 quadrature figure -0.767507880358.  The lane used ONE route (midpoint
+       quadrature); this is two, one of them a closed form.
+
+(b) THE RESONANT VALUE -0.767014993 WITHOUT ANY BIRKHOFF SUM.
+    S3/S4's headline connection is f = 2.0, c = 1.1, and -11 f + 20 c = -22 + 22 = 0
+    EXACTLY (the erratum against W-02).  The orbit point is (x_k, y_k) = (u^k, v^k) =
+    (e^{-i k f}, e^{i k c}), so the orbit's angle vector is k(-2.0, 1.1).
+    ANNIHILATOR of the closed subgroup it generates: {(m,n) in Z^2 : -2m + 1.1n in 2 pi Z}
+    = Z.(11,20), because 0.1(11 n - 20 m) = 2 pi j forces j = 0 (rational = irrational
+    otherwise) and then 20 m = 11 n.  So the orbit closure is the CLOSED GEODESIC
+        H = { (e^{i 20 s}, e^{-i 11 s}) : s in R/2piZ },   traversed injectively (gcd(20,11)=1),
+    and (-2.0, 1.1) = -0.1 (20, -11) points along it.  Therefore the subtorus average is
+        lambda_res = (1/2pi) int_0^{2pi} log |P(e^{i20s}, e^{-i11s})| ds
+    and with P = 0.3 x + 0.3 y + 0.4 x y this is the Mahler measure of the ONE-variable
+        Q(z) = 0.3 z^31 + 0.4 z^20 + 0.3      (multiply through by e^{i 11 s}),
+    computable from Q's 31 roots by Jensen's formula.  NO ORBIT SUM ANYWHERE.
+    Q has 31 roots; #{|root| > 1} = 13 ; max |root| = 1.049995356 ; min |root| = 0.965684759
+    lambda_res = log(0.3) + sum_{|z|>1} log|z| = -0.767014992998
+    REGISTERED (erratum against W-02)          = -0.767014993
+    lane's 1e7-term orbit average              = -0.767015028
+    deviation of MY route from the register    = 2.336e-12
+    => the erratum's corrected resonant value is CONFIRMED by arithmetic that shares
+       nothing with the orbit average: polynomial root-finding, not equidistribution.
+       This also independently confirms the erratum's structural claim (subtorus, not
+       dense orbit) -- if the orbit were dense in T^2 the answer would be -0.767507880,
+       and the two differ by 4.929e-04, far outside either method's error.
+
+(c) K1's PUBLISHED READY STATE ON THE SAME RESONANT CONNECTION, EXACTLY.
+    P = (y/2)(1+x); on the geodesic this is (1/2) e^{-i11s} (1 + e^{i20s}), so
+      lambda = log(1/2) + m(1 + z^20) = -log 2 + 0 = -log 2  EXACTLY.
+    -log 2                              = -0.693147180560
+    lane's 1e7-term orbit average       = -0.693147704   (dev 5.23e-07)
+    => F8(ii) -- 'the erratum's resonant/generic distinction does not exist at this
+       state' -- CONFIRMED EXACTLY, not to 5e-7.  m(1+z^20) = 0 because z^20 is a
+       monomial substitution and Mahler measure is invariant under z -> z^n.
+
+(d) THE REMAINING QUOTED NUMBERS, CHECKED.
+    B4 (1/6,1/6,1/6,1/2): lane says min|P| = 0.272166.  2e6-point x-circle: 0.272166
+      (this is a MINIMUM OVER A GRID of an exactly y-minimised function, so it is an
+       upper bound on the true min; the LOWER bound is the exact one: |A|-|B| > 0 with
+       A = -0.222222, B = -0.111111, so no zero, certified.
+    B4 rate:  m(P) = log(1/2) = -0.693147180560  (F12/S4 both)  
+    B0b (4/9,1/9,2/9,2/9): non-firing, so m(P) = log(4/9) = -0.810930216216 (register's W-03
+      correction, and the lane's F10 evidence).  D = 0.012346 > 0.
+    F11's differences: -log2 - (-0.767507880) = 0.074360699 ; -log2 - (-0.767014993) = 0.073867812
+
+DONE.

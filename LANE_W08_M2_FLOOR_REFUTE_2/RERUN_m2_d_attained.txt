@@ -1,0 +1,93 @@
+== D1  (1/N) log|Omega_N| ON BOTH SIDES OF THE DISTINCTION, ready state RS-G held fixed ==
+   Omega_N = prod_{k<=N} Z_k.  Reported as (1/N) log|Omega_N|, never as |Omega_N|.
+   case                                                          N=1e2           N=1e3           N=1e4           N=1e5           N=1e6           N=1e7
+   ATTAINED   A_S1PUB  alpha=1/2,beta=3/4  (|H|=4)        -0.804718956    -0.804718956    -0.804718956    -0.804718956    -0.804718956    -0.804718956
+   APPROACHED C_BADAPP cubic pair          (H=T^2)        -0.779208889    -0.766734843    -0.767794300    -0.767500979    -0.767508935    -0.767508004
+   APPROACHED B_S3RES  f=2.0,c=11/10       (H=S^1)        -0.768924789    -0.768204530    -0.767035368    -0.767029486    -0.767016017    -0.767015028
+   APPROACHED E_W07GEN f=2pi.phi,c=2pi.phi^2 (H=S^1)      -1.184438180    -1.205199379    -1.203934622    -1.203965640    -1.203973248    -1.203972754
+   exact lambda (leg C)                                                                                                               
+     A_S1PUB  -0.804718956217 (exact, |H|=4) | C_BADAPP,D_RAND -0.767507880358 (m, closed form)
+     B_S3RES  -0.767014992998 (subtorus)     | E_W07GEN        -1.203972804326 = log(0.3)
+   -> ALL FOUR are linear in N with a NEGATIVE rate.  The attained case is not slower; it is
+      the FASTEST of the four after E_W07GEN.  No stalling, no sublinearity, on either side.
+
+== D2  THE ISOLATION.  ATTAINMENT HELD **TRUE**; ONLY THE ORDER n MOVES. ==
+   alpha_n = round(n*alpha*)/n, beta_n = round(n*beta*)/n with (alpha*,beta*) the cubic pair.
+   Every row below is ATTAINED: |Z_k| = 1 EXACTLY on k = 0 mod n, a fraction 1/n of cells.
+     denom n  |H| = ord  fraction |Z_k|=1         lambda_n  lambda_n - lambda_T2          D_n
+           2          2         5.000e-01     -0.458145366           0.309362514     0.300000
+           3          3         3.333e-01     -0.424321892           0.343185988     0.313900
+           4          4         2.500e-01     -0.804718956          -0.037211076     0.491886
+           5          5         2.000e-01     -0.777466079          -0.009958198     0.480912
+           8          4         2.500e-01     -0.804718956          -0.037211076     0.491886
+          16         16         6.250e-02     -0.729045488           0.038462392     0.465867
+          64         16         6.250e-02     -0.729045488           0.038462392     0.465867
+         256        256         3.906e-03     -0.764781699           0.002726182     0.469124
+        1024       1024         9.766e-04     -0.770305838          -0.002797958     0.469208
+        4096       4096         2.441e-04     -0.768395682          -0.000887802     0.469194
+       65536      32768         3.052e-05     -0.767535764          -0.000027883     0.469189
+     1000003    1000003         1.000e-06     -0.767507430           0.000000450     0.469189
+           -   infinity         0.000e+00     -0.767507880           0.000000000     0.469189
+   (rows n=8 and n=64 repeat n=4 and n=16 exactly: rounding the cubic pair to those
+    denominators lands on a subgroup of smaller order.  |H| is the order, not the denominator.)
+   -> ATTAINMENT IS TRUE IN EVERY ROW AND THE RATE MOVES ANYWAY, converging to the generic
+      value.  Attainment is therefore NOT the operative variable for the asymptotics.
+
+== D3  THE COMPETITOR RULED OUT: it is not the ORDER either. ==
+   Same construction but along the FIXED RATIONAL DIRECTION beta_n = alpha_n (a=b), so H is
+   cyclic of order n sitting inside the DIAGONAL CIRCLE.  Order -> infinity exactly as above.
+      n = |H|         lambda_n   -> log(0.3) =   lambda_n - lambda_circle
+            4     -0.860504844     -1.203972804               0.343467960
+           16     -1.222597254     -1.203972804              -0.018624450
+          256     -1.200842674     -1.203972804               0.003130131
+         4096     -1.203747547     -1.203972804               0.000225257
+        65536     -1.203955919     -1.203972804               0.000016885
+      1000003     -1.203973152     -1.203972804              -0.000000348
+   -> order -> infinity, attainment true, and lambda converges to the CIRCLE value
+      -1.20397, not the torus value -0.76751.  So neither 'attained' nor 'the order' names
+      the effect.  THE OPERATIVE VARIABLE IS THE ORBIT CLOSURE H AND HOW WELL ITS HAAR
+      MEASURE APPROXIMATES HAAR ON T^2 — dimension first, then discrepancy.
+
+== D4  THE OTHER DIRECTION: approaching the degenerate point through generic connections ==
+   (alpha,beta) = (1/2 + t*astar, 3/4 + t*bstar), t -> 0.  Every t != 0 row is APPROACHED.
+            t           N=1e4           N=1e6           N=1e8   asymptotic lambda       F(1e6)
+        1e-01    -0.767654528    -0.767507848    -0.767508016        -0.767507880    2.189e-06
+        1e-02    -0.767737871    -0.767504649    -0.767507829        -0.767507880    1.899e-06
+        1e-03    -0.770010189    -0.767507740    -0.767508493        -0.767507880    1.235e-06
+        1e-04    -0.784473764    -0.767500561    -0.767506242        -0.767507880    3.226e-07
+        1e-05    -0.795769923    -0.769942367    -0.767507571        -0.767507880    3.226e-09
+        1e-06    -0.804623650    -0.784424087    -0.767500054        -0.767507880    3.226e-11
+        0e+00    -0.804718956    -0.804718956    -0.804718956        -0.804718956    0.000e+00   <- the attained point
+   -> TWO STATEMENTS, AND THEY MUST NOT BE CONFLATED:
+      (i) ASYMPTOTICALLY the distinction is REAL: lambda is discontinuous at every attained
+          point, jumping 4.8% at |H| = 4 (-0.804719 vs -0.767508).  Not cosmetic.
+      (ii) AT FINITE N it is INACCESSIBLE near the degenerate set: the N needed to see the
+          generic rate grows like 1/t, so at t = 1e-6 even N = 1e8 still reads the
+          degenerate value.  A finite record cannot tell attained from nearly-attained.
+      The corpus's own point sits at t = 0 with |H| = 4, where (i) bites at N = 100.
+
+== D5  THE NEAR-RETURN BUDGET: what the deep cells actually contribute to the record ==
+   Fraction of SUM(1-|Z_k|) contributed by the cells with 1-|Z_k| < delta, K = 1e6, RS-G.
+   C_BADAPP (H=T^2)
+      delta=1e-02: cells    8406  their total 4.205590e+01  fraction of the record 8.963530e-05
+      delta=1e-03: cells     835  their total 4.163236e-01  fraction of the record 8.873259e-07
+      delta=1e-04: cells      86  their total 4.497118e-03  fraction of the record 9.584875e-09
+      delta=1e-05: cells       8  their total 4.194975e-05  fraction of the record 8.940907e-11
+      delta=1e-06: cells       1  their total 9.414393e-07  fraction of the record 2.006524e-12
+   B_S3RES (H=S^1)
+      delta=1e-02: cells    9039  their total 4.711922e+01  fraction of the record 1.004282e-04
+      delta=1e-03: cells    1166  their total 3.881494e-01  fraction of the record 8.272877e-07
+      delta=1e-04: cells     368  their total 1.224564e-02  fraction of the record 2.609991e-08
+      delta=1e-05: cells     115  their total 3.852458e-04  fraction of the record 8.210990e-10
+      delta=1e-06: cells      36  their total 1.214775e-05  fraction of the record 2.589127e-11
+   -> the near-return cells are not merely rare, their TOTAL contribution is O(delta^2 K)
+      for H = T^2 and O(delta^{3/2} K) for H = S^1.  The floor cannot compete with the sum:
+      it is the SAME arithmetic that makes the cells deep and makes them rare.
+
+== D6  COR-L's UNDERFLOW POINT, and what it does and does not mean ==
+   ATTAINED   A_S1PUB  alpha=1/2,beta=3/4  (|H|=4)    log|Omega_968| =      -778.9679   |Omega_968| = e^-778.9679 = underflows float64
+   APPROACHED C_BADAPP cubic pair          (H=T^2)    log|Omega_968| =      -743.7798   |Omega_968| = e^-743.7798 = representable
+   APPROACHED B_S3RES  f=2.0,c=11/10       (H=S^1)    log|Omega_968| =      -745.1452   |Omega_968| = e^-745.1452 = underflows float64
+   APPROACHED E_W07GEN f=2pi.phi,c=2pi.phi^2 (H=S^1)  log|Omega_968| =     -1170.2439   |Omega_968| = e^-1170.2439 = underflows float64
+   -> COR-L's N = 968 is a property of float64, not of the object.  In logs there is no
+      event at N = 968 on any connection class.

@@ -1,0 +1,32 @@
+== S6a  M2-1's IDENTITY, EXACTLY (Fractions), and its constant on RS-G ==
+   |Z_k|^2 = 1 - 2*sum_{j<l} w_j w_l (1 - cos(k(phi_j - phi_l)))
+           = 1 -   sum_{j<l} w_j w_l |chi_j^k - chi_l^k|^2
+   worst |LHS-RHS| over 3 states x 6 root-of-unity orders x q^3 character choices x k<=6 : 4.441e-16
+   RS-G pairwise products w_j w_l : 0.12 0.12 0.090   -> M2's published race constant 0.12 = w11*w10 = 0.12
+   CONSEQUENCE (the race, in one line): for ANY pair j!=l with chi_j != chi_l,
+     SUM_{k<=K}(1-|Z_k|) >= (1/2)SUM(1-|Z_k|^2) >= w_j w_l (K - 1/|sin(tau/2)|),
+   LINEAR in K.  No Diophantine hypothesis anywhere.  The floor is a per-cell quantity;
+   the decay is a per-K quantity.  They are not commensurable and cannot race.
+
+== S6b  THE RANK-1 LOCUS uv = 1 (i.e. W_C = W_F).  T4 SAYS THE FRAGILITY NEEDS H = T^2. ==
+   On H = {(z, 1/z)}:  P|_H * z = p10 z^2 + p11 z + p01.  At RS-G that is 0.3z^2+0.4z+0.3.
+   EXACT over Z (clear denominators): 3z^2 + 4z + 3.
+   self-reciprocal (coeffs 3,4,3 palindromic) -> roots come in pairs r, 1/r
+   discriminant = 4^2 - 4*3*3 = 16 - 36 = -20 < 0 -> roots are complex conjugates
+   conjugate AND reciprocal  =>  |r|^2 = r * conj(r) = r * (1/r) = 1  =>  BOTH ROOTS ON |z|=1.
+   numerical check: |roots| = [1. 1.]   max ||r|-1| = 2.220e-16
+   m(0.3z^2+0.4z+0.3) = log(0.3) = -1.203972804326   (no root outside the circle)
+   So log|Z_k| is UNBOUNDED BELOW on this codimension-1 locus and its Birkhoff average
+   carries exactly the inhomogeneous Diophantine hypothesis T4 confines to H = T^2.
+   T4's SCOPING FALLS.  T4's CONCLUSION (durability iff G != {1}) does not: 1-|P| stays
+   continuous, and every pathology on this locus drives lambda DOWN, never toward 0.
+
+== S6c  THE REGISTER'S '3*sqrt(3)/10 CANNOT ARISE, Z_4 HAS NO ELEMENT OF ORDER 3' ==
+   On S1's published connection the pair (v0,v3) has (dF,dC) = (-1,0), so
+   D_k = amp*|W_F^{-k} - 1| = amp*|(-1)^k - 1| in {0, 2*amp}.  EXACT, in Fractions:
+   |s|^2 = ['3/4', '4/25', '0', '9/100', '0']   sum = 1
+   amp^2 = |s_0|^2 |s_3|^2 = 27/400;   (2*amp)^2 = 27/100
+   (3*sqrt(3)/10)^2 = 27/100 = 27/100   EQUAL: True
+   So 3*sqrt(3)/10 IS an attainable separation at k=1 on the order-4 connection, with
+   NO element of order 3 anywhere.  The sqrt(3) comes from the READY STATE's amplitudes,
+   not from the group.  THE REGISTER'S W-07 ROW IS WRONG ON THIS SENTENCE.

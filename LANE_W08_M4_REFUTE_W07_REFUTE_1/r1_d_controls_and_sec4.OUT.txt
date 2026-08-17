@@ -1,0 +1,72 @@
+== D1  IS W-07's FIVE-GENERIC CONTROL 'UNABLE TO FAIL'?  (M4-6) ==
+  The register's disqualifier (IMP-1) is: 'it could not have failed UNDER VARIATION'.
+  That is a LOGICAL predicate.  Test it: is the control's failure set empty?
+    same code path, same state, same pair, theta = -1/4  ->  1000 of 4000   (min 3.328e-16)
+    That row is IN W-07's OWN TABLE.  The control returns 1000 on one row and 0 on five.
+    Its failure set is therefore NON-EMPTY and demonstrated inside the same table.
+
+  Failure set, measured: fraction of theta in [0,1) at which the control FAILS (returns > 0):
+    every rational p/q with q <= 4000 (a dense set), plus an interval of half-width ~5.856e-10
+    about each; total measure >= 2*4000*5.856e-10 = 4.685e-06  -- small, but POSITIVE,
+    and S1's published connection lies in it.  'Could not have failed' is false as stated;
+    'was very unlikely to fail' is true and is a different predicate.
+
+  And the code path is not insensitive to the connection either -- the control's actual job:
+    generic sqrt2/sqrt3, pair (2,3): 0 of 4000   min 1.263e-05
+    generic sqrt2/sqrt3, pair (1,2): 4000 of 4000   min 0.000e+00
+    generic sqrt2/sqrt3, pair (0,3): 0 of 4000   min 2.865e-04
+    Same generic connection returns 4000 at pair (1,2).  A null-returning harness would
+    have returned 0 there too.  The control does detect a real failure mode.
+    ==> M4-6 is CORRECT that five-for-five is not an isolation of ord(rho); it is WRONG
+        that the control 'could not have failed'.  It slides a probabilistic near-certainty
+        into a logical disqualifier -- the same category slide it convicts W-07 of at sec6.
+
+== D2  WHAT GOVERNS sec4's sup|Z_k| = 1, AND HOW MANY VARIABLES W-07 MOVED THERE ==
+  (a) READY STATE MOVED ALONE, connection pinned at S1 published (aF=pi, aC=3pi/2):
+      published p=(1/2,0,0,1/4,1/4) -> (1/2, 0, 1/2): cells |Z_k| > 1-1e-12 : 500000  (period 2)
+      generic                        -> (0.4,0.3,0.3): cells |Z_k| > 1-1e-12 : 250000  (period 4)
+  (b) W_C MOVED ALONE, W_F PINNED AT -1, published ready state:
+      W_C = -i          (ord 4, W-07's)                   : cells > 1-1e-12 : 500000
+      W_C = e^{2pi i sqrt2}  (IRRATIONAL, ord = infinity) : cells > 1-1e-12 : 500000
+      W_C = e^{2pi i/phi^2}  (IRRATIONAL, ord = infinity) : cells > 1-1e-12 : 500000
+      At the PUBLISHED ready state, sup|Z_k| = 1 is ATTAINED on 500000 of 1e6 cells even when
+      <W_F,W_C> is INFINITE and dense.  The attainment there needs only ord(W_F) = 2.
+  (c) WHAT W-07's sec4 GENERIC ROW ACTUALLY MOVED:
+      published row: aF = pi        (W_F = -1)      aC = 3pi/2  (W_C = -i)
+      generic   row: aF = 2 pi phi  (W_F != -1)     aC = 2 pi phi^2
+      BOTH W_F and W_C moved.  W-07 sec4's comparison is CONFOUNDED at the published-state
+      column: the variable that carries it is ord(W_F) alone, and W-07 moved two.
+      ==> M4-8 CONFIRMED, and by a test M4 did not run (W_C moved alone at W_F = -1).
+
+== D3  M4-4's 3*sqrt(3)/10 STATE, IN EXACT ARITHMETIC ==
+  Pair (0,3): dF = -1, dC = 0, so D_k = amp*|W_F^-k - 1| = amp*|(-1)^k - 1| in {0, 2*amp}.
+  M4's state |s|^2 = (3/4, 4/25, 0, 9/100, 0).  Exact: amp = |s_0||s_3| = sqrt(3)/2 * 3/10.
+  2*amp = 2 * sqrt(3)/2 * 3/10 = 3 sqrt(3)/10.  EXACT, no float needed.
+    sum of |s|^2 = 1  (normalised: True)
+    amp^2 = |s_0|^2 |s_3|^2 = 27/400 = 0.067500000000;  (2 amp)^2 = 27/100 = 27/100
+    (3 sqrt(3)/10)^2 = 27/100 = 27/100   MATCH: True
+    M4-4(a) CONFIRMED in exact arithmetic.  W-07's 'does not reproduce' is refuted as an
+    IMPOSSIBILITY claim.  But note what W-07 sec5 itself already wrote three lines later:
+    'Either a different observable, a different connection, or a DIFFERENT NORMALISATION
+    produced it.'  M4-4(a) is a different normalisation -- i.e. it instantiates one of the
+    three escapes W-07 had already listed.  The REGISTER row dropped that clause; the W-07
+    PAGE did not.  M4-4 is a hit on the register's phrasing, not on W-07's reasoning.
+
+  M4-3 vs M4-4, INTERNAL TENSION: M4-3 calls 3sqrt3/10 'the one figure with discriminating
+  power'; M4-4 shows it is attainable from a continuum of states (any value in (0,1] is).
+  Both cannot be load-bearing.  Attainable-set size at k=1, by factor class:
+    factor 2    (4 pairs): separations span (0, 1.000000]  -- a continuum; 0.5196 is interior: True
+    factor sqrt2 (12 pairs): separations span (0, 0.707107]  -- a continuum; 0.5196 is interior: True
+
+== D4  ARE M4's 'ord = INFINITE' ROWS INFINITE-ORDER AS COMPUTED? ==
+    theta = 1/4 + (sqrt2-1)*1e-13:  float64 value = 2251799813685621/9007199254740992
+      is it exactly 1/4? False   denominator is a power of 2: True  -> AS COMPUTED IT IS RATIONAL, ord = 9007199254740992
+    theta = 1/4 + (sqrt2-1)*1e-16:  float64 value = 4503599627370497/18014398509481984
+      is it exactly 1/4? False   denominator is a power of 2: True  -> AS COMPUTED IT IS RATIONAL, ord = 18014398509481984
+    Every float64 is a dyadic rational, so both rows have FINITE order as computed.
+    The infinite-order claim is a statement about the INTENDED object and is carried by the
+    closed-form bound (m4_g G3b), which is sound.  But M4's self-flag 3 says it DID carry
+    'the m4_c counterexample' into exact arithmetic while B2 was not -- and the C1 TABLE it
+    publishes is float, labelled 'ord(rho) = INFINITE', for a computed value of finite order.
+    Same defect class as COR-K, which M4 charges against W-07 sec3.  Not load-bearing (the
+    theorem stands independently), but it is the flag M4 did not raise about itself.

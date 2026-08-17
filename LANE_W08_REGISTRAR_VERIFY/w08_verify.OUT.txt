@@ -1,0 +1,27 @@
+== V1  WHERE WERE W-01's RECURRENCE FIGURES ACTUALLY MEASURED? ==
+  f=2.0 c=1.1 :  min |Z_k| over k<=400 = 0.024654 at k = 42   [register/S2-audit: 0.024654 at n=42]
+                 sup |Z_k| over k<=4000 = 0.999941 at k = 377   [register: 0.99994 / S3: 0.999941 at k=377]
+  -11f + 20c = 0.0   -> EXACTLY RESONANT (erratum against W-02)
+  branch ratio order at f=2.0,c=1.1 : None  (None = infinite)
+  S1 PUBLISHED (order 4): |Z_k| takes 3 distinct values: [np.float64(0.316228), np.float64(0.4), np.float64(1.0)]
+  distance from 0.024654 to nearest attained value there = 0.291574
+  ==> W-01's recurrence figures were measured at the RESONANT connection, NOT at order 4.
+      MY W-07 HEADLINE IS FALSE OF THEM. It is true of W-06's 1000-of-4000 figure only.
+
+== V2  IS 3*sqrt(3)/10 REACHABLE ON S1's ORDER-4 CONNECTION?  (exact) ==
+  sum of |s_v|^2 = 1   (must be 1: True)
+  amp^2 = |s_0|^2 |s_3|^2 = 27/400      (2*amp)^2 = 27/100
+  (3*sqrt(3)/10)^2 = 27/100 = 27/100   EQUAL: True
+  numerically: 2*amp = 0.5196152422706632   3*sqrt(3)/10 = 0.5196152422706632
+  ==> REACHABLE, exactly. The sqrt(3) is in the READY STATE's amplitudes, not the group.
+      MY W-07 REGISTER SENTENCE 'a factor sqrt3 needs an element of order 3' IS FALSE.
+      (The W-07 PAGE listed 'a different normalisation' as an escape; the ROW did not.)
+
+== V3  IS |Omega_N| MONOTONE?  i.e. does a near-return UN-WRITE earlier cells? ==
+  resonant f=2.0,c=1.1     max_k(|Z_k| - 1) = -1.446e-09   exceedances of 1: 0
+  S1 published (order 4)   max_k(|Z_k| - 1) = +0.000e+00   exceedances of 1: 0
+  random                   max_k(|Z_k| - 1) = -1.399e-07   exceedances of 1: 0
+  |Z_k| <= 1 always (triangle inequality on non-negative weights summing to 1),
+  so |Omega_N| = prod |Z_k| is MONOTONE NON-INCREASING. A cell that writes nothing
+  does not un-write the previous N-1.  The founding obstruction reads the SINGLE-CELL
+  observable |Z_k| and infers a property of the RECORD. That inference does not hold.

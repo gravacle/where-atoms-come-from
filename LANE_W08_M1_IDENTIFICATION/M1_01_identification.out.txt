@@ -1,0 +1,31 @@
+==============================================================================
+M1_01 — THE IDENTIFICATION Z_k = P(u^k, v^k) ON K1
+==============================================================================
+
+T1  float64 sweep: 4000 draws, random connection, random complex ready state, k<=60
+    CONVENTION A   u = conj(W_F), v = W_C   worst |Z_k - P(u^k,v^k)|  = 4.743e-16
+    CONVENTION B   u = W_F,       v = W_C   worst |Z_k - P(u^k,v^k)|  = 1.857e+00
+    -> CONVENTION A is the one that makes the identity exact.  B is wrong by O(1).
+    and |Z_k| vs |P(W_F^k, W_C^k)| under B: worst discrepancy = 8.325e-01  (B fails in modulus too)
+    CONVENTION C   u = W_F, v = conj(W_C):  worst |conj(Z_k) - P(u^k,v^k)| = 4.475e-16
+    -> C is A composed with complex conjugation; it changes Z_k but not |Z_k|, not
+       Omega_N and not lambda.  A is the convention of record because <z,w>=conj(z)w
+       conjugates the FIRST slot and M_dF acts there.
+
+T2  EXACT (Gaussian-rational) check: 960 cases  [W_F,W_C in 4th roots of unity;
+    5 rational ready states incl. S1's published p=(1/2,0,0,1/4,1/4); k=1..12]
+    max exact deviation |Z_k - P(u^k,v^k)| = 0   (Fraction, printed exactly)
+    -> the identification is an ALGEBRAIC IDENTITY, not a numerical coincidence.
+
+T3  full gauge action (connection AND section): worst |Z_k - Z_k^gauge| = 9.660e-14  (float64)
+T4  tree dressing t_v = W(path)^-1 s_v: worst |Z_k[s] - Z_k[t]| = 5.567e-16
+    (expected 0: |t_v| = |s_v| for a U(1) dressing, and Z_k sees only |s_v|^2)
+
+T5  max(|p00|, |sum p - 1|) over 5000 random ready states = 6.661e-16
+    p00 = 0 is forced by K1's incidence (no vertex outside both loops), not chosen.
+
+COROLLARIES (checked here, used in M1_02/03/04):
+  Z_0 = P(1,1) = sum p = 1;  |Z_k| <= 1 for every k and every connection.
+  max |Z_k| over 20000 random (connection, state, k) draws = 0.999966506195824  (<= 1)
+
+DONE M1_01

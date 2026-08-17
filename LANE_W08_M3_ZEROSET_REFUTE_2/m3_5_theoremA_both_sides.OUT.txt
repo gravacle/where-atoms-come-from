@@ -1,0 +1,42 @@
+================================================================================================
+M3-5  THE ONE VARIABLE: WHICH SIDE IS QUANTIFIED.  BOTH SIDES x BOTH CLASS COUNTS.
+================================================================================================
+numpy 2.0.2 ; IEEE double unless a line says EXACT.
+
+(A) CONNECTION SIDE, THREE CLASSES = W-01's THEOREM A, reproduced independently.
+    coefficients {uv, u, v} = {e^{i(c-f)}, e^{-if}, e^{ic}} ; quantifier: EXISTS p in Delta.
+    37 x 37 = 1369 grid points of (f,c), matching the S2 audit's own grid size.
+      #{hull criterion says firing possible} = 342 of 1369
+      #{hull criterion disagrees with brute-force simplex minimisation} = 0
+      => W-01's Theorem A REPRODUCED from outside the lineage, 0 mismatches.
+
+(B) CONNECTION SIDE, FOUR CLASSES.  coefficients {1, u, v, uv}; quantifier: EXISTS p.
+    Theorem A's proof only needs the p's to sweep the simplex, so it should still hold.
+      19 x 19 grid: #{hull says firing possible} = 180 of 361 ; #{disagreements} = 0
+      => THE CONNECTION-SIDE CRITERION SURVIVES AT FOUR CLASSES, UNCHANGED.
+
+(C) STATE SIDE.  quantifier: EXISTS (f,c).  This is the side that breaks, and only at four.
+      three classes (p00 = 0): zero on T^2  <=>  triangle inequality      -- m3_1, 0 mismatches
+      four  classes          : zero on T^2  <=>  w1 + w4 <= w2 + w3       -- m3_2, 0 mismatches
+                               polygon inequality is STRICTLY WEAKER: 1/2 vs 1/4 of the simplex
+
+    THE OPERATIVE VARIABLE, NAMED.  Not 'the number of classes'.  It is whether the
+    unit-modulus coefficients have FREE RELATIVE PHASES.  With three coefficients
+    {uv, u, v} the two independent ratios are uv/u = v and uv/v = u -- both free, so the
+    coefficient triple sweeps ALL of T^3 modulo global rotation and 'zero-sum of three
+    vectors with prescribed lengths' is unobstructed: triangle inequality.  With four
+    coefficients {1, u, v, uv} the three ratios from the base point 1 are u, v, uv -- and
+    the THIRD IS THE PRODUCT OF THE FIRST TWO.  One relative phase is spent.  That single
+    spent phase is the entire difference, and it is exactly what p00 = 0 hides on K1.
+
+    RULED OUT, EXPLICITLY, as alternative names for the effect:
+      - 'four classes rather than three': refuted by (B) -- the connection side is fine at
+        four classes.  The class count alone does not decide anything.
+      - 'p00 is special': refuted below -- ANY one weight vanishing restores the triangle
+        inequality, not just p00.  It is the vanishing, not the label.
+        4000 random 3-weight vectors x 4 choices of which slot is the zero: #mismatch = 0
+      - 'the multiset': refuted -- the criterion IS a multiset function (m3_2 (c)), so the
+        multiset cannot be what distinguishes the two readings.  Both readings are
+        multiset functions; they are simply different multiset functions.
+
+DONE.

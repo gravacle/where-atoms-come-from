@@ -1,0 +1,92 @@
+================================================================================================
+M3-2  THE ZERO SET AT p00 != 0 — THE CASE K1 DOES NOT CONTAIN
+================================================================================================
+numpy 2.0.2 ; IEEE double unless a line says EXACT.
+
+DERIVATION.  P = (p00 + p10 x) + y (p01 + p11 x).  For |x| = |y| = 1 the y-phase is free,
+so min_y |P| = | |p00+p10 x| - |p01+p11 x| |.  Hence P has a zero on T^2 iff
+     exists t :  |p00+p10 e^{it}|^2 = |p01+p11 e^{it}|^2 ,
+i.e.  A + B cos t = 0 has a solution with
+     A = p00^2+p10^2-p01^2-p11^2 ,  B = 2(p00 p10 - p01 p11).
+Since cos t sweeps [-1,1] exactly, that is A^2 <= B^2, i.e. (A-B)(A+B) <= 0, and
+     A-B = (p00-p10)^2-(p01-p11)^2 = (p00-p10-p01+p11)(p00-p10+p01-p11)
+     A+B = (p00+p10)^2-(p01+p11)^2 = (p00+p10-p01-p11)(p00+p10+p01+p11).
+The total p00+p10+p01+p11 = 1 > 0 divides out, leaving  D <= 0  with
+     D = (p00+p11-p10-p01)(p00+p01-p10-p11)(p00+p10-p01-p11).
+D is the product over the three ways of splitting the FOUR classes into two PAIRS.
+
+AT p00 = 0 THIS COLLAPSES TO M3-1: D = (p11-p10-p01)(p01-p10-p11)(p10-p01-p11) and, for
+non-negative weights, at most one factor can be positive, so D <= 0 iff all three are <= 0,
+iff the triangle inequality holds.  (Checked exactly below.)
+
+(a) EXACT ARITHMETIC SWEEP over the 3-simplex at integer denominator N.
+    Every predicate below is an integer comparison; no float is involved.
+    N =  30 :   5456 simplex points
+        #{ P has a torus zero }              =   1728   (0.3167)
+        #{ polygon inequality holds }        =   2736   (0.5015)
+        #{ the two predicates DISAGREE }     =   1008   (0.1848)
+        every disagreement is polygon-TRUE / zero-FALSE: yes
+        witnesses (i,j,k,l)/N with polygon TRUE but NO torus zero: (1, 1, 13, 15), (1, 1, 15, 13), (1, 2, 12, 15), (1, 2, 15, 12), (1, 3, 11, 15), (1, 3, 15, 11)
+    N =  60 :  39711 simplex points
+        #{ P has a torus zero }              =  11331   (0.2853)
+        #{ polygon inequality holds }        =  19871   (0.5004)
+        #{ the two predicates DISAGREE }     =   8540   (0.2151)
+        every disagreement is polygon-TRUE / zero-FALSE: yes
+        witnesses (i,j,k,l)/N with polygon TRUE but NO torus zero: (1, 1, 28, 30), (1, 1, 30, 28), (1, 2, 27, 30), (1, 2, 30, 27), (1, 3, 26, 30), (1, 3, 30, 26)
+
+    => THE POLYGON (CONVEX-HULL) READING IS STRICTLY WRONG AT FOUR CLASSES.  The four
+       unit-modulus coefficients are 1, x, y, xy: they are a COSET OF A RANK-2 SUBGROUP
+       of T^4, so only TWO of their three relative arguments are free.  At three classes
+       (any one weight = 0) the surviving three coefficients have ALL relative arguments
+       free and the constraint costs nothing -- which is why K1 never sees this.
+
+(b) BRUTE-FORCE CONFIRMATION of the closed form (float, 1440-point x-circle,
+    exact minimisation in y).  1000 random simplex points, seed 20260816.
+    mismatches (closed form says zero but grid min > 5e-3, or vice versa) = 0
+    NOTE the asymmetry, stated: a grid minimum is an UPPER bound on the true minimum, so
+    'grid min small' can never certify a zero; only the closed form does.  The closed form
+    was derived, not fitted, and its exact-arithmetic agreement is the load-bearing check.
+    p = (0.4, 0.2, 0.2, 0.2)       D = +0.008000  zero? False polygon? True  grid min = 1.414215e-01   [polygon holds (0.4 <= 0.6) but NO torus zero]
+    p = (0.166667, 0.166667, 0.166667, 0.5) D = +0.037037  zero? False polygon? True  grid min = 2.721656e-01   [S4's carrier B4 (spindle), uniform state]
+    p = (0.25, 0.25, 0.25, 0.25)   D = +0.000000  zero? True  polygon? True  grid min = 0.000000e+00   [the balanced 4-class state, P = (1+x)(1+y)/4]
+    p = (0.0, 0.3, 0.3, 0.4)       D = -0.032000  zero? True  polygon? True  grid min = 3.138361e-04   [S3 sense-C on K1 (p00 = 0)]
+    p = (0.0, 0.0, 0.5, 0.5)       D = -0.000000  zero? True  polygon? True  grid min = 6.123234e-17   [K1's PUBLISHED ready state]
+
+(b2) THE CRITERION IN ITS CLEANEST FORM.  Sort the four class weights w1>=w2>=w3>=w4.
+     Then w1+w2-w3-w4 >= 0 and w1+w3-w2-w4 >= 0 ALWAYS, so the sign of D is the sign of
+     the remaining pairing, and
+            P HAS A ZERO ON T^2   <=>   w1 + w4 <= w2 + w3   <=>   w1 - w2 <= w3 - w4.
+     'The top gap is no wider than the bottom gap.'  At p00 = 0 (so w4 = 0) this is
+     w1 <= w2 + w3, the triangle inequality: M3-1 recovered.
+     20000 random states: #{sorted criterion != D-criterion} = 0
+
+(b3) EXACT VOLUMES.  With w sorted, w1-w2 <= w3-w4 is, in Renyi spacing coordinates
+     Y_k = k(w_k - w_{k+1}) (which are again uniform on the simplex), the event 3Y_1 <= Y_3.
+     The (Y_1,Y_3) marginal has density 6(1-x-y), and
+        P(3x <= y) = int_0^{1/4} 3(1-4x)^2 dx = 1/4   EXACTLY.
+     The polygon inequality is w1 <= 1/2, with P = 1 - 4*(1/2)^3 = 1/2   EXACTLY.
+     And {zero} is CONTAINED in {polygon} (w1+w4<=w2+w3 => w1<=w2+w3+w4).  Therefore:
+        FIRING REGION  = 1/4 of the 4-class simplex
+        POLYGON REGION = 1/2 of the 4-class simplex
+        SPURIOUS HALF  = 1/4 of the simplex -- EXACTLY HALF of every state that the
+                         convex-hull/polygon reading calls a firer does NOT fire.
+     Monte Carlo, 400000 draws each, seed 20260816 (continuation): firing 0.24934, polygon 0.50163
+     (the exact-arithmetic lattice counts above approach 1/4 and 1/2 from above; the
+      excess is the boundary layer of a 'closed' inequality on a lattice, as expected)
+
+(c) IS THE ZERO CRITERION A MULTISET FUNCTION?  YES, and exactly.
+    D is a product over the three 2+2 pairings; a transposition of two classes permutes
+    the pairings and flips exactly two of the three factors' signs, so D is S_4-invariant.
+    2000 random p, all 24 permutations: max spread of D = 3.331e-16 ; predicate ever disagreed? no
+    This SITS BESIDE the multiset theorem for lambda already proved in the corpus at
+    LANE_S5_CHARGE_CODE/s5_B_sweep.OUT.txt B5 (Jensen in y + |A+Be^{it}| symmetric in (A,B)).
+    I re-derived that proof independently before finding it on disk; it is THEIRS, not mine.
+
+(d) OFF THE FIRING REGION, m(P) = log(p_max) EXACTLY.  (The 4-term analogue of the
+    classical 3-term fact m(a+bx+cy) = log max(a,b,c) when the triangle inequality fails.)
+    3029 random NON-firing states, 40000-point quadrature: max |m(P) - log p_max| = 2.220e-16, #bad = 0
+    (so the Mahler measure is a LOGARITHM OF A WEIGHT off the firing region, and only
+     inside it does the dilogarithm/Cassaigne-Maillot regime begin.  The firing region is
+     exactly where the analytically interesting rate lives.)
+
+DONE.

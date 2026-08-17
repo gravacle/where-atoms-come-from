@@ -1,0 +1,20 @@
+  W-07 sec3 table, as published (from leg E, rho_E = conj(W_F)^dF W_C^-dC)
+  vs the same table computed with rho_true = W_F^dF W_C^-dC on the same inputs.
+
+  connection                         arg(rho_E)/2pi  arg(rho_true)/2pi    W-07 min    TRUE min  cells<1e-9
+  S1 PUBLISHED (pi/3 x3, pi/2 x3)      -0.250000000       -0.250000000   6.729e-19   3.328e-16        1000
+  GENERIC sqrt2/sqrt3                  -0.317837245       -0.146264370   1.567e-04   1.263e-05           0
+  RANDOM seed 1                        -0.077362414       -0.290252282   1.722e-05   1.316e-04           0
+  RANDOM seed 2                        -0.046247977        0.205093987   3.095e-04   1.950e-04           0
+  RANDOM seed 3                         0.014316520       -0.233151757   3.057e-04   2.331e-04           0
+
+  The 'arg(rho)/2pi' column of W-07 sec3 is the argument of a DIFFERENT group element on
+  four of five rows.  The 'min over k<=4000' column is a min of a different sequence on
+  those four rows.  The 'cells < 1e-9' column is unaffected (both elements are irrational
+  there), so the VERDICT of the table survives its own arithmetic — but the table's own
+  numbers are not reproducible from the quantity the page says it is tabulating.
+  This is COR-K's defect class, of record against S3 sec6(f), recurring at W-07 sec3.
+
+  And row 1's 'min = 6.729e-19': the exact value is 0 (m4_g G3a).  W-07's own leg C2
+  prints 0 for the same quantity.  The page publishes the float residue in sec3 and the
+  exact 0 in the sec3 scaling table, three lines apart, without noting they are the same k.

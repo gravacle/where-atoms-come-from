@@ -1,0 +1,26 @@
+== R1.1  Z_k FROM THE CARRIER'S OWN BRANCH OPERATORS vs M2's CLOSED FORM (EXACT) ==
+   connection W_F = i^m, W_C = i^n (exact Gaussian units); ready state amplitudes rational.
+   336 exact comparisons over (m,n) in Z_4^2, three ready states, k in {1,2,3,4,5,7,11}:  worst |Z_brute - Z_closed|^2 = 0  (EXACT ZERO required)
+   -> M2's closed form IS W-01's branch comparison on K1.  CONFIRMED, exactly.
+
+== R1.2  THE IDENTITY  |Z_k|^2 = 1 - sum_{j<l} w_j w_l |chi_j^k - chi_l^k|^2, EXACTLY ==
+   768 exact cases: worst |lhs - rhs| = 0   (EXACT ZERO required)
+   -> leg A3's identity is not merely 8.6e-15; it is an ALGEBRAIC identity.  CONFIRMED.
+
+== R1.3  THE THEOREM, EACH LINK CHECKED SEPARATELY ==
+   link 1: 1-|Z| >= (1/2)(1-|Z|^2)      [true iff |Z| <= 1; |Z| <= sum w = 1 always]
+   link 2: (1-|Z|^2) >= w_j w_l |g^k-1|^2 for ANY single pair   [drop the other terms]
+   link 3: SUM_{k=1..K}|g^k-1|^2 = 2K - 2Re(SUM g^k) >= 2K - 2/|sin(tau/2)|
+   link 3 checked at 50 dps on 400 random (t,K): min (actual - bound) = +2.000265e+00   (>= 0 required)
+
+   THE CONSTANT.  RS-G w=(0.4,0.3,0.3).  The bound's slope is max over pairs with
+   DISTINCT characters of w_j w_l.  Enumerated over the degeneracy types:
+     generic  x!=1, y!=1, x!=y        distinct pairs: ['(0,F)', '(0,C)', '(F,C)']    best w_j w_l = 0.12
+     y=1 (W_C=1), x!=1                distinct pairs: ['(0,C)', '(F,C)']             best w_j w_l = 0.12
+     x=1 (W_F=1), y!=1                distinct pairs: ['(0,F)', '(F,C)']             best w_j w_l = 0.12
+     x=y (rho=1)                      distinct pairs: ['(0,F)', '(0,C)', '(F,C)']    best w_j w_l = 0.12
+     x=1/y (chi_0=1, the W-07 row)    distinct pairs: ['(0,F)', '(0,C)']             best w_j w_l = 0.12
+     TRIVIAL x=y=1                    distinct pairs: []                             best w_j w_l = 0.00
+   -> 0.12 survives every degeneracy except the trivial connection, where it is 0 and
+      formation fails.  M2-1's constant is CORRECT and its 0.12 is not an accident of
+      the generic case.  THE THEOREM STANDS.  (Vacuity disqualifier NOT applied: theorem.)

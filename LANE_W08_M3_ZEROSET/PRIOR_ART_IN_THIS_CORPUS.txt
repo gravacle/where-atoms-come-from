@@ -1,0 +1,45 @@
+LANE W08 / M3 — WHAT WAS ALREADY ON DISK BEFORE THIS LANE RAN
+Written so that no reader has to work out which parts of this lane are new.
+The program's most expensive lesson was a correction that sat UNREAD.  The cheap version of that
+lesson is claiming as new something the corpus already computed.  Both are avoided by listing it.
+
+ALREADY IN THE CORPUS, AND NOT MINE
+ 1. THE THREE-CLASS STATE-SIDE CRITERION ITSELF.
+    S4_THE_MEASUREMENT_V001.md:229-231 — "Singular locus (lambda = -infinity) ... This is W-01's
+    convex-hull criterion; it is non-empty iff max(p0,q,r) <= 1/2, i.e. iff the weights obey the
+    triangle inequality."  ASSERTED in one line, inside a discussion of the diagonal slice c = f
+    with q = r where the zeros were solved from Z_1 = 0.4 + 0.6 cos f.  No proof of the general
+    statement, no sweep of the simplex.  M3-1 supplies the proof, the exact-arithmetic sweep of
+    the whole simplex, and the corner/degeneracy structure.  The STATEMENT is theirs.
+ 2. THE MULTISET THEOREM'S PROOF.
+    LANE_S5_CHARGE_CODE/s5_B_sweep.OUT.txt section B5 — Jensen in y, then |A + B e^{it}|^2 is
+    symmetric in (A,B) pointwise in t, then x <-> y; the three transpositions generate S_4.
+    I re-derived exactly this before finding it on disk.  It is theirs.  My only addition is that
+    the SAME two-line argument makes the zero-set criterion S_4-invariant too.
+ 3. MULTISET INVARIANCE FAILS AT RANK TWO.
+    LANE_G_GROUP_REFUTER/g4b_multiset.OUT.txt — spread 0.2792 on refined weights.  m3_4 (c2)
+    reproduces the failure for the FOUR CLASS weights on K1's own published connection and finds
+    the spread is not 0.279 but INFINITE there; the phenomenon is theirs.
+ 4. THE ORBIT APPROACHING THE ZERO SET.
+    LANE_S5_SCHEDULE_REFUTER_CODE/ref_sched2.OUT.txt — "min_{k<=4e6} G = -8.030522 at k=3558294
+    => inf_H G = -infinity (conical zeros on T^2)".  Reproduced here to -8.030523 at the same k.
+    They measured it; nobody asked what it does to the convergence of the average.  That question
+    is what m3_3 (e) answers.
+ 5. Omega_N = 0 FOR ALL N >= 1 ON K1's PUBLISHED DATA.
+    S3_THE_CROSSING_AUDIT_V001.md COR-D.  Theirs.  m3_3 supplies the CAUSE (the state puts the
+    zero set on the subtorus {x = -1}; the connection puts the orbit on it) and the fact that
+    neither half suffices alone.
+ 6. log(1/2) AND log(4/9) AS EXACT CARRIER RATES.  S4:785 and the register's W-03 row.
+    Reproduced here as cross-checks, not claimed.
+ 7. ord(rho) = 4 ON S1's PUBLISHED CONNECTION.  W-07.  Used here, not rediscovered.
+
+NEW IN THIS LANE, AS FAR AS THE CORPUS SHOWS
+ A. Z_k = P(u^k, v^k) stated as an identity — W-01's overlap IS N1's polynomial along the orbit.
+ B. The proof of M3-1 and the quantifier separation (connection side vs state side).
+ C. M3-2: the four-class criterion  w1 + w4 <= w2 + w3 , the failure of the polygon reading,
+    and the exact volumes 1/4 (true firing region) vs 1/2 (polygon region).
+ D. m(P) = log p_max exactly off the firing region, at four terms.
+ E. K1's published ready state identified as a CORNER of the firing region, with a 1-dimensional
+    zero set, and the resulting non-uniform-convergence statement (the exact eps table).
+ F. The Sudler-product identification of the published state's Birkhoff problem.
+ G. The scope audit: 18 of 24 of the multiset theorem's permutations leave K1's family.

@@ -1,0 +1,40 @@
+== R5.1  THE SCHEDULE LAW  total(delta) ~ K delta^{1+2/d_eff}  (M2's leg E3b) ==
+   connection                                   d_eff         1e-03         1e-04         1e-05         1e-06      fit  theory
+   B_S3RES   d_eff=1                                1    2.4514e+00    2.4580e-03    2.5285e-06    3.2095e-09    2.964     3.0
+   C_BADAPP  d_eff=2                                2    5.9601e+00    5.9702e-02    5.9928e-04    6.7699e-06    1.983     2.0
+   D_RAND1   d_eff=2                                2    5.9597e+00    5.9667e-02    6.0617e-04    8.8158e-06    1.948     2.0
+   F_VWA     d_eff=2  <- E3b OMITS THIS ROW TOO     2    5.9053e+00    5.4867e-02    2.4533e-04    2.4856e-07    2.448     2.0
+   -> the law is recovered on the rows E3b ran (1.98, 1.95 vs 2; 2.96 vs 3) AND breaks on
+      the d_eff = 2 row it did not run.  Same pattern as the floor law: the exponent is a
+      function of d_eff ONLY ON THE BADLY-APPROXIMABLE/TYPICAL PAIRS THAT WERE TABULATED.
+
+== R5.2  ARE F2's N(eps) EXPONENTS ACTUALLY FITTED?  COUNTS AND POISSON BARS ==
+   B_S3RES   d_eff=1                            counts [863831, 90416, 11660, 3685, 1167, 366, 114, 34]
+                                                fit over eps<=1e-3, N>20 (6 pts): 0.506 +- 0.011   theory 0.50   deviation +0.5 sigma
+   C_BADAPP  d_eff=2                            counts [861930, 84105, 8386, 835, 85, 9, 0, 0]
+                                                fit over eps<=1e-3, N>20 (3 pts): 0.997 +- 0.024   theory 1.00   deviation -0.1 sigma
+   D_RAND1   d_eff=2                            counts [861992, 84074, 8396, 840, 80, 5, 1, 0]
+                                                fit over eps<=1e-3, N>20 (3 pts): 1.010 +- 0.024   theory 1.00   deviation +0.4 sigma
+   F_VWA     d_eff=2  <- E3b OMITS THIS ROW TOO counts [863703, 85180, 8413, 934, 115, 38, 10, 3]
+                                                fit over eps<=1e-3, N>20 (4 pts): 0.795 +- 0.022   theory 1.00   deviation -9.5 sigma
+   -> C_BADAPP / D_RAND1 are 3-point fits whose smallest bin holds ~85 counts: the
+      exponent 1.00 is genuinely FITTED and genuinely agrees.  F_VWA's 0.795 is NOT
+      noise -- its eps=1e-6 bin holds ~38 where the law predicts ~8.  M2-4's evidence
+      quotes the four agreeing d_eff=2 rows and omits this one.
+
+   WHERE F_VWA's EXCESS COUNTS LIVE (the tail that is 3,3,3,3,3 in leg B's own table):
+      k with 1-|Z_k| < 1e-8: [2999999, 5999998, 8999997]   = the multiples of Q = 2999999
+      depths: ['3.609e-23', '1.444e-22', '3.248e-22']
+      i.e. the 'law' fails exactly where the pair's rational core reasserts itself.
+
+== R5.3  THE d_eff RULE ON RS-P IS WRONG FOR ONE CONNECTION TYPE ==
+   M2 publishes: 'RS-P (p10 = 0) -> only chi_0/chi_C = conj(W_F) survives, so d_eff = 1
+   FOR EVERY CONNECTION' and codes it as d_eff = min(1, dim H).  But on RS-P the only
+   live ratio is x = e^{-2 pi i alpha}: d_eff is decided by ALPHA ALONE.
+   alpha = 1/2 (RATIONAL), beta = cubic irrational dim H = 1, M2's rule -> d_eff = 1
+      cells with 1-|Z_k| = 0 (to 1e-15) out of 1e5: 50000   -> TRUE d_eff = 0
+   alpha = cubic irrational, beta = 0             dim H = 1, M2's rule -> d_eff = 1
+      cells with 1-|Z_k| = 0 (to 1e-15) out of 1e5: 0   -> TRUE d_eff = 1
+   The first row is ATTAINED on RS-P and has d_eff = 0, not 1.  No table in the lane
+   contains such a row, so nothing published is wrong because of it -- but the RULE as
+   published is, and this lane's whole claim is that d_eff is the operative variable.

@@ -1,0 +1,60 @@
+==============================================================================
+M1_03 — BIRKHOFF AVERAGE OF log|Z_k| ON THREE CONNECTIONS.  K = 1e7, float64.
+==============================================================================
+
+ready state pushforward pi = (p00,p10,p01,p11) = (0.0, 0.3, 0.3, 0.4)   HELD FIXED
+m(P)  (1-D reduction)          = -0.767507880358
+m(P)  (Cassaigne-Maillot)      = -0.767507880358
+max weight = 0.40 <= 1/2  ->  P HAS ZEROS ON T^2  ->  log|P| is NOT Riemann-integrable
+
+--- A  DIOPHANTINE  alpha = -2^(1/3) mod 1 = 0.740078950105127 , beta = 4^(1/3) mod 1 = 0.587401051968199
+       rank L = 0 (Schmidt).  running (1/N) sum log|Z_k|:
+         N = 1000        -0.768194820808   dev from m(P) = -6.869e-04
+         N = 10000       -0.767573512643   dev from m(P) = -6.563e-05
+         N = 100000      -0.767501598430   dev from m(P) = +6.282e-06
+         N = 1000000     -0.767507873838   dev from m(P) = +6.519e-09
+         N = 10000000    -0.767507816121   dev from m(P) = +6.424e-08
+       min_k |Z_k| = 1.996920e-04   #{Z_k = 0} = 0
+
+--- B  S1 PUBLISHED CONNECTION  W_F = -1, W_C = -i   ->  u = -1, v = -i, ord(rho) = 4
+       rank L = 2 (the whole orbit is 4 points).  running (1/N) sum log|Z_k|:
+         N = 1000        -0.804718956217   dev from m(P) = -3.721e-02
+         N = 10000       -0.804718956217   dev from m(P) = -3.721e-02
+         N = 100000      -0.804718956217   dev from m(P) = -3.721e-02
+         N = 1000000     -0.804718956220   dev from m(P) = -3.721e-02
+         N = 10000000    -0.804718956220   dev from m(P) = -3.721e-02
+       |Z_1..Z_4| = 0.316227766, 0.400000000, 0.316227766, 1.000000000
+       CLOSED FORM  (1/4) sum_{k=1}^{4} log|Z_k| = -0.804718956217
+       (this is COR-K's 'exact order-4 value -0.804719' — reproduced from the
+        pushforward alone, and it is NOT m(P): the gap is -0.037211)
+
+--- C  S3/S4 HEADLINE  f = 2.0, c = 1.1  ->  -11f + 20c = 0, u^11 v^20 = 1
+       exactness of the relation in the representation: 11*A + 20*B = 0 (must be 0)
+       rank L = 1, primitive (11,20).  running (1/N) sum log|Z_k|:
+         N = 1000        -0.768204530239   dev from m(P) = -6.966e-04
+         N = 10000       -0.767035369003   dev from m(P) = +4.725e-04
+         N = 100000      -0.767029485182   dev from m(P) = +4.784e-04
+         N = 1000000     -0.767016017537   dev from m(P) = +4.919e-04
+         N = 10000000    -0.767015029162   dev from m(P) = +4.929e-04
+       min_k |Z_k| = 2.301160e-02   #{Z_k = 0} = 0
+       EXACT subtorus value  m(p10 z^31 + p11 z^20 + p01) by Jensen = -0.767014992998
+       register/S4 record for (11,20): -0.767014993      difference = 2.34e-12
+       same relation (11,20), DIFFERENT point on the resonance line, N=1e6: -0.767016018
+
+--- D  NOT AN ISOLATED COMPARISON, LABELLED AS SUCH.  S1's published connection AND
+       S1's published READY STATE p = (1/2,0,0,1/4,1/4) -> pi = (0, 0, 1/2, 1/2).
+       |Z_1..Z_8| = 0.000, 1.000, 0.000, 1.000, 0.000, 1.000, 0.000, 1.000
+       Z_k = 0 EXACTLY for every odd k  ->  (1/N) sum log|Z_k| = -infinity for all N>=1,
+       while m(P) = -0.693147180560.  The Birkhoff average does not merely miss m(P); it does
+       not exist.  (Consistent with S3 audit COR-D: Omega_N = 0 for all N >= 1.)
+
+--- THE TRUNCATED AVERAGES (the limsup half of the theorem, which needs NO Diophantine
+    hypothesis).  f_eps = max(log|P|, log eps) is CONTINUOUS on T^2, so Weyl alone gives
+    convergence of its orbit average to its torus mean, for EVERY equidistributing (u,v).
+    Since log|P| <= f_eps, limsup (1/N) sum log|Z_k| <= int f_eps  ->  m(P) as eps -> 0.
+      eps =  1e-01   orbit avg of f_eps (N=1e6) = -0.758503420   torus mean = -0.758503816   dev 4.0e-07
+      eps =  1e-02   orbit avg of f_eps (N=1e6) = -0.767418102   torus mean = -0.767418907   dev 8.1e-07
+      eps =  1e-03   orbit avg of f_eps (N=1e6) = -0.767506494   torus mean = -0.767506966   dev 4.7e-07
+      eps =  1e-04   orbit avg of f_eps (N=1e6) = -0.767507874   torus mean = -0.767508002   dev 1.3e-07
+
+DONE M1_03

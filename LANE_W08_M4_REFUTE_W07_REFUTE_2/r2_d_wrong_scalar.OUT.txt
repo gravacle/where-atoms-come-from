@@ -1,0 +1,68 @@
+  K = 4000   tol = 1e-9   amp = 0.27177644268802675   eps = 5.856098e-10
+  (D_k < tol  <=>  ||k theta|| < eps, exactly; see m4_c C3 and leg A.)
+
+== D1  TWO IRRATIONAL theta WITH IDENTICAL min_{k<=4000} ||k theta|| ==
+  theta_A = 1/4    + (sqrt2-1)e-13      irrational, ord(rho) = INFINITY
+  theta_B = 1/1000 + (sqrt2-1)e-13/250  irrational, ord(rho) = INFINITY
+
+                     min_(k<=K) ||k theta||    at k   cells D_k < 1e-9
+  theta_A        0.000000000000165685424949       4               1000
+  theta_B        0.000000000000165685424949    1000                  4
+  min_A - min_B = 0.0e-58   (EXACTLY zero: 4*lam = 1000*mu by construction)
+  min D_A = 2 amp sin(pi min_A) = 2.829280e-13
+  min D_B = 2 amp sin(pi min_B) = 2.829280e-13   -- identical
+
+  SAME NAMED SCALAR.  COUNTS 1000 AND 4.  M4's 'the effect is a function of ONE quantity,
+  min_{k<=K}||k theta||' is FALSE for the effect its own decisive test reports.
+
+== D2  WHAT DOES DETERMINE THE COUNT?  THE DENOMINATOR OF THE NEARBY RATIONAL. ==
+  For theta = p/q + delta with q*K*|delta| < eps and gcd(p,q)=1, the qualifying k are
+  exactly the multiples of q, so   count = floor(K/q)   -- and q is the ORDER of the
+  root of unity exp(2 pi i p/q).  Checked over a family, one variable moved (q):
+        q      theta = 1/q + lam/(q/4)    count   floor(K/q)      min ||k theta||
+        2                  1/2 + delta     2000         2000 0.000000000000165685
+        4                  1/4 + delta     1000         1000 0.000000000000165685
+        5                  1/5 + delta      800          800 0.000000000000165685
+        8                  1/8 + delta      500          500 0.000000000000165685
+       10                 1/10 + delta      400          400 0.000000000000165685
+      100                1/100 + delta       40           40 0.000000000000165685
+     1000               1/1000 + delta        4            4 0.000000000000165685
+     2000               1/2000 + delta        2            2 0.000000000000165685
+  count = floor(K/q) in every row while min ||k theta|| is HELD FIXED at 1.657e-13.
+  THE COUNT IS A FUNCTION OF q AND THE MIN IS A FUNCTION OF delta.  They are independent
+  coordinates of the same point, and M4 named only the second while reporting only the first.
+
+== D3  WHAT THIS DOES TO THE TWO NAMES ==
+  W-07 registered:  count = K / ord(rho).            Wrong only in that ord(rho) must be
+                    read as the order q of the NEAREST root of unity within tolerance,
+                    and the count is floor(K/q), zero when q > K.
+  M4 registered:    the effect is a function of min_{k<=K}||k theta|| alone.  Refuted by D1.
+  CORRECT NAME, and it contains both:  the effect at (K, tol) is a function of the PAIR
+      ( q , delta )  =  ( denominator of the best rational approximation to theta with
+                          q <= K , the residual |theta - p/q| ),
+  with, whenever q K |delta| stays below 1/2,
+      count = min( floor(K/q) , ceil(eps/(q|delta|)) - 1 )      and      min = q|delta|.
+  W-07's name is the q coordinate; M4's is the delta coordinate.  W-07 named the one that
+  carries its own headline number 1000; M4 named the one that carries the min, then
+  convicted W-07 of misnaming.  Formula checked against brute force on the D2 family:
+      q=2      brute force 2000   formula 2000   OK
+      q=4      brute force 1000   formula 1000   OK
+      q=5      brute force 800    formula 800    OK
+      q=8      brute force 500    formula 500    OK
+      q=10     brute force 400    formula 400    OK
+      q=100    brute force 40     formula 40     OK
+      q=1000   brute force 4      formula 4      OK
+      q=2000   brute force 2      formula 2      OK
+  formula reproduces brute force on all rows: True
+
+== D4  AND THE COUNTEREXAMPLE DID NOT NEED TO BE IRRATIONAL AT ALL ==
+  M4 built its infinite-order side out of an irrational theta and defended it with a
+  closed-form argument about irrationality (m4_g G3b).  None of that is needed: a RATIONAL
+  theta of large finite order does it, entirely inside exact arithmetic.
+    theta = 1/4 + 1e-13 = 2500000000001/10000000000000   ->  ord(rho) = 10000000000000  (FINITE, and > K)
+    min_(k<=4000) ||k theta|| = 4.000000e-13    cells D_k < 1e-9 : 1000
+    W-07's own formula floor(K/ord) predicts 0.  Observed 1000.
+    So W-07's 'count = K/ord(rho)' is refuted by a FINITE-ORDER ratio, with no appeal to
+    irrationality and no float anywhere -- a cleaner refutation than M4's, and one that
+    also refutes M4's own framing of the question as 'finite versus infinite order'.
+    It is the (q, delta) pair that governs, and NEITHER lane named it.

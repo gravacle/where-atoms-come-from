@@ -1,0 +1,53 @@
+== C1  THE DICHOTOMY, BOTH EDGES.  amp is printed so nothing hides in it. ==
+  ready state = W-07 leg E's own (seed 20260816); observable A_23; K = 4000; threshold 1e-9
+
+  connection                                     arg(rho)/2pi  ord(rho)        min D  cells<1e-9
+  ord(rho) = 4     [S1 PUBLISHED]               -0.2500000000         4    6.729e-19        1000
+  ord(rho) = 4001  [FINITE, > K]                +0.0002499375      4001    4.268e-04           0
+  ord(rho) = 8000  [FINITE, > K]                +0.0001250000      8000    2.135e-04           0
+  ord(rho) = 2000  [FINITE, < K]                +0.0005000000      2000    2.141e-13           2
+  ord(rho) = INFINITE  theta = 1/4 + (sqrt2-1)e-13    +0.2500000000       inf    2.828e-13        1000
+  ord(rho) = INFINITE  theta = 1/4 + (sqrt2-1)e-16    +0.2500000000       inf    6.657e-17        1000
+
+  BOTH EDGES OF W-07's DICHOTOMY FAIL:
+   * FINITE order 4001 and 8000 behave EXACTLY like W-07's 'generic, infinite' rows: 0 of 4000.
+   * INFINITE order reproduces W-06's registered figure 1000 of 4000 with min ~1e-13.
+  What separates the rows is not finiteness of ord(rho).  It is  min_{k<=K} ||k*theta||,
+  the quality of rational approximation to theta = arg(rho)/2pi at denominators <= K.
+
+== C2  THE SAME CUT WITH W_F HELD AT -1 THROUGHOUT — 'the curvature left -1' RULED OUT ==
+  Every row above already holds arg(W_F) = pi.  Confirming, and printing W_F per row:
+    ord(rho) = 4     [S1 PUBLISHED]          W_F = -1.000000+0.000000j  W_C = +0.000000-1.000000j  cells<1e-9 = 1000
+    ord(rho) = 4001  [FINITE, > K]           W_F = -1.000000+0.000000j  W_C = -0.999999+0.001570j  cells<1e-9 = 0
+    ord = INFINITE (theta=1/4+eps)               W_F = -1.000000+0.000000j  W_C = +0.000000+1.000000j  cells<1e-9 = 1000
+  W_F = -1 in all three.  The curvature is NOT the moving variable.  Neither is <W_F,W_C>
+  generating a finite subgroup of U(1)^2: in the INFINITE row it generates a dense subgroup
+  of a circle in T^2 and the effect is present anyway.
+
+== C3  WHY 'FIVE FOR FIVE' COULD NOT HAVE COME OUT OTHERWISE — A ONE-LINE DENSITY COUNT ==
+  D_k = 2*amp*|sin(pi k theta)|, so D_k < d  <=>  ||k theta|| < arcsin(d/(2 amp))/pi.
+  For irrational theta, Weyl: #{k<=K : ||k theta|| < e}/K -> 2e.  Expected count = 2 K e.
+    amp = 0.20:  e = 7.958e-10   expected #cells<1e-9 in K=4000 : 6.366e-06
+    amp = 0.27:  e = 5.895e-10   expected #cells<1e-9 in K=4000 : 4.716e-06
+    amp = 0.30:  e = 5.305e-10   expected #cells<1e-9 in K=4000 : 4.244e-06
+  A random connection returns 0 of 4000 with probability ~ 1 - 1e-6.  Drawing five and
+  getting 0 five times is not an isolation; it is the density estimate, restated.
+  BY W-07's OWN STANDARD (sec 6: 'could not have failed voids a CONTROL'), W-07's five
+  generic rows ARE a control and they could not have failed.  The disqualifier it applies
+  to W-06's sweep applies to W-07's own table, where — unlike the sweep — it is apt.
+
+== C4  THE THEOREM THAT KILLS THE DICHOTOMY (no computation required) ==
+  For any K, any n <= K and any d > 0 there is an IRRATIONAL theta with
+      #{k <= K : |exp(2pi i k theta) - 1| < d}  =  floor(K/n).
+  Proof: at theta0 = 1/n the count is floor(K/n), the qualifying terms are exactly 0 and the
+  non-qualifying ones are bounded below by 2|sin(pi/n)| > 0.  Both conditions are open in
+  theta and finite in number, so they persist on a neighbourhood of 1/n; irrationals are
+  dense in it.  QED.  Finiteness of ord(rho) is therefore neither necessary nor (C1 rows
+  4001, 8000) sufficient for the effect W-07 measures at fixed K and fixed threshold.
+
+  WHAT IS TRUE, AND IT IS THE ONLY SURVIVING FORM:
+   (i)  D_k = 0 EXACTLY for some k <= K   <=>   ord(rho) is finite AND ord(rho) <= K.
+        Not 'finite versus infinite' — finite AND at most K.  Rows 4001/8000 are the
+        counterexamples to the version W-07 registered.
+   (ii) D_k < d for some k <= K  is governed by min_{k<=K} ||k theta||, a DIOPHANTINE
+        quantity that is continuous in theta and blind to rationality.

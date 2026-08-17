@@ -1,0 +1,37 @@
+== R4.1  lambda ON T^2 BY JENSEN — A THIRD, INDEPENDENT ROUTE ==
+   m(p11 XY + p10 X + p01 Y): fix X = e^{2 pi i phi}; the Y-integral is Jensen's formula for
+   the linear polynomial (p11 X) Y + p10 X, giving log max(|p11 X + p10|, p01) -- wait: the
+   Y-coefficient is p11 X + p01 ... so group as  Y*(p11 X) + (p10 X + 0) is WRONG.  Group
+   correctly:  Z = X*(p11 Y + p10) + p01 Y  is not linear in one variable alone either.
+   USE INSTEAD:  Z = Y*(p11 X + p01) + p10 X.  Jensen in Y:
+       int log|Z| dY = log max( |p11 X + p01| , |p10 X| ) = log max(|p11 X + p01|, p10).
+   RS-G: lambda = -0.767507880357776   kinks at phi = ['0.36613976', '0.63386024']   log-singularities split at []
+   RS-P: lambda = -0.693147180559945   kinks at phi = []   log-singularities split at ['0.5']
+   M2 reports  RS-G -0.767507880358   RS-P -0.693147180560  (= -log 2: -0.693147180559945)
+
+== R4.2  THE dim-1 RATES BY DIRECT QUADRATURE (M2 used np.roots + Jensen) ==
+   B_S3RES 11a-20b=0  lambda(quadrature) = -0.7670149929977   M2: -0.767014992998
+   E_W07GEN a-b=0      lambda(quadrature) = -1.203972804326    M2: -1.203972804326
+   B_S3RES RS-P        lambda(quadrature) = -inf               M2: -0.693147180560
+   E_W07GEN's polynomial is 0.3 + 0.4 z + 0.3 z^2 (after the monomial shift).  Its roots:
+     roots ['(-0.6666666667 - 0.7453559925j)', '(-0.6666666667 + 0.7453559925j)']   |roots| = ['1.0', '1.0']
+     both EXACTLY on the unit circle (self-reciprocal, discriminant 0.16-0.36 < 0), so
+     Jensen gives lambda = log(0.3) = -1.20397280432594 EXACTLY.  M2's
+     -1.203972804326 is right, and 'exactly log 0.3' is right.
+
+== R4.3  THE |H| = 4 RATE, EXACT RATIONALS ==
+   |Z_k|^2, k=1..4 (exact) = ['1/10', '4/25', '1/10', '1']   product = 1/625
+   lambda = (1/8) log(prod) = -0.80471895621705   M2: -0.804718956217
+   and (1/4) log(1/25) = -0.80471895621705  (M2 writes (1/4)log(0.04))
+
+== R4.4  D_H ON RS-P: M2-9 SAYS 'D_H = 1-2/pi = 0.363380227639' ==
+   1 - 2/pi to 30 digits = 0.36338022763241865692446494651
+   i.e. 1-2/pi = 0.363380227632...  M2's C1 prints 0.363380227639 for the T^2 row and
+   0.363380227633 / 0.363380227632 for its two circle rows.  The T^2 row's last two
+   digits are wrong (its mp.quad of the elliptic-integral form is not split at m=1);
+   the value quoted in finding M2-9 as an EQUALITY with 1-2/pi is that wrong one.
+   Size of the error: 6.581e-12.  Immaterial to every
+   claim, but this corpus has two corrections of record (COR-E, COR-K) for exactly this
+   class of defect: a computed figure printed as an identity to digits it does not have.
+   reproduction of M2's route on RS-P: 1 - E|Z| = 0.363380227642183  (integrand is the
+   CONSTANT 2/pi there, so the whole error is mp.quad/ellipe at m = 1)

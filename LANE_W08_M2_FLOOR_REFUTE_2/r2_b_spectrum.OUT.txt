@@ -1,0 +1,53 @@
+== B1  THE COMPLETE ATTAINED SPECTRUM (every finite orbit closure of order <= 120) ==
+   lambda_H = (1/|H|) SUM_{k<=|H|} log|Z_k|, computed on the orbit itself (exact average).
+   Generic (rank-2, approached) value for comparison: -0.767507880358
+   points enumerated (pairs of roots of unity of exact order <= 120): 483671
+   DEEPEST 6 (record decays FASTEST):
+      |H|=   3  (a,b)=(2,1)/3  lambda =   -1.53505672866  deviation vs generic  -100.01%
+      |H|=   3  (a,b)=(1,2)/3  lambda =   -1.53505672866  deviation vs generic  -100.01%
+      |H|=  11  (a,b)=(5,6)/11  lambda =   -1.52316931801  deviation vs generic   -98.46%
+      |H|=  11  (a,b)=(6,5)/11  lambda =   -1.52316931801  deviation vs generic   -98.46%
+      |H|=  11  (a,b)=(3,8)/11  lambda =   -1.52316931801  deviation vs generic   -98.46%
+      |H|=  11  (a,b)=(8,3)/11  lambda =   -1.52316931801  deviation vs generic   -98.46%
+   SHALLOWEST 6 (record decays SLOWEST):
+      |H|=   3  (a,b)=(2,0)/3  lambda =  -0.331417424448  deviation vs generic   +56.82%
+      |H|=   3  (a,b)=(0,2)/3  lambda =  -0.331417424448  deviation vs generic   +56.82%
+      |H|=   3  (a,b)=(1,0)/3  lambda =  -0.331417424448  deviation vs generic   +56.82%
+      |H|=   3  (a,b)=(0,1)/3  lambda =  -0.331417424448  deviation vs generic   +56.82%
+      |H|=   5  (a,b)=(3,0)/5  lambda =  -0.353803996452  deviation vs generic   +53.90%
+      |H|=   5  (a,b)=(0,3)/5  lambda =  -0.353803996452  deviation vs generic   +53.90%
+   FRACTION OF ATTAINED POINTS WHOSE RECORD DECAYS **SLOWER** THAN GENERIC: 292410/483671 = 0.605
+   FRACTION DEVIATING BY MORE THAN THE HEADLINE'S 4.8%: 55503/483671 = 0.115
+
+== B2  THE SMALL ORDERS, ONE ROW EACH — the lane's own leg D2 stopped short of these ==
+    |H|  min lambda over H of this order       dev    max lambda over H of this order       dev
+      2                  -0.804718956217    -4.85%                    -0.458145365937   +40.31%
+      3                   -1.53505672866  -100.01%                    -0.331417424448   +56.82%
+      4                  -0.860504844046   -12.12%                    -0.365254476829   +52.41%
+      5                   -1.19829290942   -56.13%                    -0.353803996452   +53.90%
+      6                   -1.15465966438   -50.44%                     -0.35771088979   +53.39%
+      7                   -1.01155984257   -31.80%                    -0.356296075486   +53.58%
+      8                   -1.40825817338   -83.48%                    -0.356817289191   +53.51%
+     12                   -1.09792410637   -43.05%                    -0.356678143612   +53.53%
+     16                   -1.22259725406   -59.29%                    -0.356675024895   +53.53%
+     64                   -1.18301054494   -54.14%                    -0.356674943939   +53.53%
+    120                    -1.2194679707   -58.89%                    -0.356674943939   +53.53%
+   S1's published point for reference: (a,b)=(1,3)/4 in the lane's convention,
+      lambda = -0.804718956217  (the lane's -0.804718956217, |H|=4),
+      deviation -4.85%  <- THE HEADLINE'S 4.8%
+
+== B3  THE APPROACHED SPECTRUM: how far apart are two APPROACHED connections? ==
+   Rank-1 closures H = {(t^p, t^q)} (coprime p,q; realised by (x,y)=(e^{2pi i p theta},
+   e^{2pi i q theta}) with theta irrational -- sup|Z_k| = 1 APPROACHED, never attained,
+   and G != {1} so formation occurs).  lambda = m(0.4 z^{p+q} + 0.3 z^p + 0.3 z^q).
+     p   q    lambda (rank-1)   deviation vs generic
+    -1   1       -1.203971649                -56.87%
+     1  -1       -1.203971649                -56.87%
+    -2  -1       -0.916290732                -19.39%
+     1   0       -0.356674944                +53.53%
+     0  -1       -0.356674944                +53.53%
+     0   1       -0.356674944                +53.53%
+   RANGE OVER APPROACHED, FORMING CONNECTIONS: [-1.203972, -0.356675]
+   = a spread of 110.4% of |lambda_generic|, against the
+     headline's 4.8% BETWEEN the attained and approached classes.
+   exact endpoints: xy=1 circle -> log(0.3) = -1.203972804;  y=1 circle -> log(0.7) = -0.356674944

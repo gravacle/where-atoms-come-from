@@ -1,0 +1,41 @@
+==============================================================================
+M1_05 — m(P) OVER THE SIMPLEX p00 = 0
+==============================================================================
+
+S1  max > 1/2  =>  m(P) = log(max) exactly.
+    worst |m(P) - log(max)| over the 60309 grid points with max > 1/2 : 2.842e-14
+S4  worst value of  m(P) + (1 - max)   over the whole grid : 0.000e+00   (must be <= 0)
+S3  grid points with m(P) > -1e-9 :
+      (p10,p01,p11) = (0.000, 0.000, 1.000)   m = +0.000e+00
+      (p10,p01,p11) = (0.000, 1.000, 0.000)   m = +0.000e+00
+      (p10,p01,p11) = (1.000, 0.000, 0.000)   m = +0.000e+00
+    -> exactly the three vertices.  m(P) = 0 iff one class carries all the weight.
+S2  minimum on the grid: m = -0.775542234913 at (p10,p01,p11) = (0.3325, 0.3325, 0.3350)
+    centroid closed form  log(1/3) + m(1+x+y) = -0.775546341449 ; computed -0.775546341449 ; diff 2.11e-15
+    boundary of the triangle region (max = 1/2): m = log(1/2) = -0.693147180560
+    so on the whole triangle region  m(P) in [-0.775542235, -0.693147181]
+
+THE THREE VERTICES, IN CARRIER TERMS
+    p11 = 1  : ready state on v0 alone, THE ROOT.  m = 0.  This is W-01's registered
+               'the root can never fire', recovered as a Mahler-measure statement.
+    p10 = 1  : ready state on {v1,v2} (filled triangle, not the cycle).  m = 0.
+    p01 = 1  : ready state on {v3,v4} (unfilled cycle, not the face).  m = 0.
+    Any other ready state whatsoever has m(P) < 0 STRICTLY.
+
+CARRIER-SPECIFIC VALUES
+   S1 published p=(1/2,0,0,1/4,1/4) -> (0, 1/2, 1/2)    m(P) = -0.693147180560   bound -(1-max) = -0.500000
+   uniform on all 5 vertices        -> (2/5, 2/5, 1/5)  m(P) = -0.756573585640   bound -(1-max) = -0.600000
+   S3/S4 generic                    -> (3/10, 3/10, 2/5) m(P) = -0.767507880358   bound -(1-max) = -0.600000
+   uniform on the 4 non-root vtcs   -> (1/2, 1/2, 0)    m(P) = -0.693147180560   bound -(1-max) = -0.500000
+   root only                        -> (0, 0, 1)        m(P) = +0.000000000000   bound -(1-max) = -0.000000
+
+NO UNIFORM GAP — m(P) near a vertex (approach along p11 -> 1):
+    1 - p11 =  1.0e-01   m(P) = -1.0536051566e-01   ratio m/(1-p11) = -1.053605
+    1 - p11 =  1.0e-02   m(P) = -1.0050335854e-02   ratio m/(1-p11) = -1.005034
+    1 - p11 =  1.0e-03   m(P) = -1.0005003336e-03   ratio m/(1-p11) = -1.000500
+    1 - p11 =  1.0e-04   m(P) = -1.0000500033e-04   ratio m/(1-p11) = -1.000050
+    1 - p11 =  1.0e-06   m(P) = -1.0000005000e-06   ratio m/(1-p11) = -1.000001
+    m(P) ~ -(1-p11) as the state concentrates: the rate degrades CONTINUOUSLY to 0.
+    A Lehmer-type gap cannot exist over a simplex of real weights.
+
+DONE M1_05

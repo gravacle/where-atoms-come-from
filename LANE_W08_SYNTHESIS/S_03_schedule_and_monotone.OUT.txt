@@ -1,0 +1,28 @@
+== S3a  |Omega_N| IS MONOTONE NON-INCREASING.  |Z_k| <= p11+p10+p01 = 1 by the triangle
+        inequality, so no circuit can ever RESTORE the record.  Checked, not assumed:
+   RESONANT    max_k |Z_k| - 1 = -1.446e-09   (must be <= 0)   #(|Z_k|>1) = 0
+   DIOPH       max_k |Z_k| - 1 = -1.591e-06   (must be <= 0)   #(|Z_k|>1) = 0
+
+== S3b  THE HONEST SCHEDULE k_n = n, and the ADVERSARIAL schedule of M2-refuter-2 ==
+   Adversary writes only the delta_K*K cells of SMALLEST 1-|Z_k| with delta_K = K^{-1/2}.
+           K   honest SUM(1-|Z|)  #writes adv  adversarial SUM  |Omega| adv
+       10000           4691.8397          100           0.6008       0.5484
+      100000          46918.7154          316           0.5965       0.5507
+     1000000         469188.6502         1000           0.5967       0.5507
+    10000000        4691887.4124         3162           0.5961       0.5509
+   The adversary writes J = sqrt(K) -> infinity cells and the record stays bounded away
+   from 0.  Under the corpus's OWN registered criterion (W-02: divergence of SUM(1-z_n))
+   durability FAILS on an approached connection too.  Two-way, and said as such.
+
+== S3c  SHARE OF THE DECAY BUDGET CARRIED BY THE NEAR-RETURN BAND (DIOPH, K=1e7) ==
+   total decay budget SUM(1-|Z_k|) = 4691887.4124   density c = 0.469189
+    threshold eps    #cells         #/K  0.8388*eps   band SUM   band SHARE
+            1e-01    861917   8.619e-02   8.388e-02 43491.0606    9.269e-03
+            1e-02     84115   8.412e-03   8.388e-03   421.0086    8.973e-05
+            1e-03      8393   8.393e-04   8.388e-04     4.1986    8.949e-07
+            1e-04       840   8.400e-05   8.388e-05     0.0421    8.975e-09
+            1e-05        85   8.500e-06   8.388e-06     0.0004    9.193e-11
+            1e-06         8   8.000e-07   8.388e-07     0.0000    9.168e-13
+   #cells/K reproduces M2's UNFITTED prediction N(eps)/K = 0.838820*eps (Haar measure of
+   the quadratic sublevel set, det M = 0.036).  The band's SHARE of the budget is
+   ~ 0.8388*eps^2/2c, i.e. it FALLS quadratically in eps and is INDEPENDENT of K.

@@ -1,0 +1,33 @@
+== SEALS ==
+  files verifying OK: 15
+
+== RE-RUN AND DIFF (empty diff = byte-identical reproduction) ==
+  w07_a_carrier.py : IDENTICAL to sealed output
+  w07_b_dressed.py : IDENTICAL to sealed output
+  w07_c_scaling.py : IDENTICAL to sealed output
+  w07_c2_exact.py : IDENTICAL to sealed output
+  w07_d_carrier_recur.py : IDENTICAL to sealed output
+  w07_e_isolation.py : IDENTICAL to sealed output
+  w07_f_custody.sh : DIFFERS
+      2,7c2,7
+      <   4.45e-16         -> ./REGISTER_V001.md 
+      <   3\*sqrt(3)       -> ./REGISTER_V001.md 
+      <   2.221e-16        -> ./REGISTER_V001.md 
+      <   8.42e-04         -> ./REGISTER_V001.md 
+      <   4.11e-01         -> ./REGISTER_V001.md 
+      <   1000 of 4000     -> ./REGISTER_V001.md 
+      ---
+      >   4.45e-16         -> ./REGISTER_V001.md ./W07_RECURRENCE_ISOLATION_V001.md 
+      >   3\*sqrt(3)       -> ./REGISTER_V001.md ./W07_RECURRENCE_ISOLATION_V001.md 
+      >   2.221e-16        -> ./REGISTER_V001.md ./W07_RECURRENCE_ISOLATION_V001.md 
+      >   8.42e-04         -> ./REGISTER_V001.md ./W07_RECURRENCE_ISOLATION_V001.md 
+      >   4.11e-01         -> ./REGISTER_V001.md ./W07_RECURRENCE_ISOLATION_V001.md 
+      >   1000 of 4000     -> ./REGISTER_V001.md ./W07_RECURRENCE_ISOLATION_V001.md 
+      9c9
+      <   0.5196           -> 
+      ---
+      >   0.5196           -> ./W07_RECURRENCE_ISOLATION_V001.md 
+      21a22
+      > LANE_W08_M2_FLOOR/
+
+  Platform: python3 3.9.6, numpy 2.0.2, double precision throughout.

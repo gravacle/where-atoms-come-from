@@ -1,0 +1,34 @@
+==============================================================================
+R1_09 — RESOLUTION OF THE QUADRATURE BRANCH OF M1_07
+==============================================================================
+
+  ROW (610,377)   deg Q = 987
+      log2 M     quadrature m(Q)        deviation from m(P)
+        20      -0.767507349373        +5.3098e-07
+        21      -0.767507354594        +5.2576e-07
+        22      -0.767507355304        +5.2505e-07
+        23      -0.767507355304        +5.2505e-07   <-- the lane's M
+        24      -0.767507355304        +5.2505e-07
+        25      -0.767507355304        +5.2505e-07
+        26      -0.767507355304        +5.2505e-07
+
+  ROW (2584,1597)   deg Q = 4181
+      log2 M     quadrature m(Q)        deviation from m(P)
+        20      -0.767508449619        -5.6926e-07
+        21      -0.767508045564        -1.6521e-07
+        22      -0.767507773495        +1.0686e-07
+        23      -0.767507875642        +4.7157e-09   <-- the lane's M
+        24      -0.767507839966        +4.0392e-08
+        25      -0.767507837943        +4.2415e-08
+        26      -0.767507837926        +4.2432e-08
+
+  READ-OFF.
+  (610,377): the value is stable from M = 2^22 on; the lane's +5.251e-07 stands.
+  (2584,1597): the value is STILL MOVING at M = 2^26, by more than the deviation the lane
+  reports.  Its "+4.716e-09" is therefore not a measurement of a Boyd-Lawton gap; it is the
+  point at which the quadrature's own error happened to cross zero.  This is precisely the
+  defect COR-E names in this corpus -- a window figure stated as a value -- reappearing in
+  the lane that cites COR-E.  The correct statement for that row is a BOUND: the gap is
+  below ~1e-06 and the method cannot resolve it further.
+
+DONE R1_09

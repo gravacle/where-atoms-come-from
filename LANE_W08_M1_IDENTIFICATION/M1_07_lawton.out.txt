@@ -1,0 +1,43 @@
+==============================================================================
+M1_07 — SUBTORUS RATES, AND BOYD-LAWTON ACCUMULATION
+==============================================================================
+
+weights (p10,p01,p11) = (0.3, 0.3, 0.4);  m(P) = -0.767507880358
+
+Independent recomputation of S4's exceptional-locus table (S4 line 258 ff.):
+    (m,n)      this lane        S4 record        |diff|
+   (  1,   0)    -0.356674944     -0.356674944    6.13e-11
+   (  0,   1)    -0.356674944     -0.356674944    6.13e-11
+   (  1,   1)    -1.203972804     -1.203972804    3.26e-10
+   (  1,  -1)    -0.510825624     -0.510825624    2.34e-10
+   (  2,   1)    -0.681980359     -0.681980359    3.73e-10
+   (  2,  -1)    -0.916290732     -0.916290732    1.26e-10
+   (  3,   1)    -0.767783712     -0.767783712    4.79e-10
+   (  3,   2)    -0.732940865     -0.732940865    1.20e-10
+   (  4,   1)    -0.784966659     -0.784966659    9.59e-11
+   (  5,   1)    -0.749392712     -0.749392712    3.19e-10
+   (  5,   3)    -0.765224351     -0.765224351    4.74e-10
+   (  7,   3)    -0.759305247     -0.759305247    3.60e-10
+   (  7,  11)    -0.764712281     -0.764712281    4.00e-10
+   ( 11,  20)    -0.767014993     -0.767014993    2.34e-12
+   ( 13,   8)    -0.768271734     -0.768271734    2.11e-10
+   ( 29,  17)    -0.767138179     -0.767138179    2.54e-10
+    worst deviation over the 16 published rows: 4.79e-10
+
+BOYD-LAWTON ACCUMULATION (S4's second table, recomputed):
+   (    1,    1)  |m|+|n| =      2   lambda = -1.203972804   deviation from m(P) = -4.365e-01
+   (    5,    3)  |m|+|n| =      8   lambda = -0.765224351   deviation from m(P) = +2.284e-03
+   (   11,   20)  |m|+|n| =     31   lambda = -0.767014993   deviation from m(P) = +4.929e-04
+   (   41,   53)  |m|+|n| =     94   lambda = -0.767416955   deviation from m(P) = +9.092e-05
+   (   97,   61)  |m|+|n| =    158   lambda = -0.767515568   deviation from m(P) = -7.687e-06
+   (  610,  377)  |m|+|n| =    987   lambda = -0.767507355   deviation from m(P) = +5.251e-07
+   ( 2584, 1597)  |m|+|n| =   4181   lambda = -0.767507876   deviation from m(P) = +4.716e-09
+   -> the subtorus rates accumulate on m(P).  THIS is Lawton's theorem in action, and
+      it is the only place in this corpus where Lawton is the right citation.
+
+THE GAP THE ERRATUM RECORDS, NAMED:
+   S3/S4's headline is the (11,20) row.  Its rate is -0.767014993; the generic rate is
+   -0.767507880; the difference +4.929e-04 is a BOYD-LAWTON APPROXIMATION GAP at a relation
+   of size 31 — not an arithmetic error and not a convergence failure.
+
+DONE M1_07

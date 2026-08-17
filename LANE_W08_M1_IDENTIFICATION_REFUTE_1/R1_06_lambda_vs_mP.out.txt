@@ -1,0 +1,47 @@
+==============================================================================
+R1_06 — lambda VERSUS m(P): FOUR PLACES THE LANE CONFLATES THEM
+==============================================================================
+
+(1) THE CLAIM  'lambda <= -1/n for a ready state uniform on n cells; on K1 lambda <= -1/5'
+    INSTANCE THAT REFUTES IT, taken from the lane's OWN M1_04 row 4:
+      ready state uniform on the 4 non-root vertices v1,v2,v3,v4
+        -> (p10,p01,p11) = (1/2, 1/2, 0),  n = 4,  the bound asserts lambda <= -1/4
+      connection with u = v = e^{0.7 i}  (i.e. W_C = conj(W_F) e^{...}: W_F W_C = 1),
+      which is a NON-TRIVIAL connection.
+      min|Z_k| = 1.000000000000000   max|Z_k| = 1.000000000000006   (float64, k<=2e5)
+      lambda = (1/N) sum log|Z_k| = -1.084e-17   -- it is 0, not <= -1/4.
+      m(P) = -log 2 = %.12f, so the JENSEN bound on m(P) is fine; the bound on LAMBDA
+      is false.  Same failure on n = 5: a connection with G = {1} and the uniform state
+      gives lambda = 0 > -1/5.  Exhibited:
+        at FULL support G={1} forces u = v = uv, hence u = v = 1: the TRIVIAL connection.
+        trivial connection, uniform-on-5 state: min|Z_k| = 1.0, lambda = 0.000e+00 > -1/5
+      -> the -1/n line is TRUE OF m(P) AND FALSE OF lambda.  It is stated of lambda in
+         F12, in M1_05's docstring S5, and in M1_08 T4's closing paragraph.
+
+(2) THE CLAIM  'lambda = m(P) is TRUE EXACTLY ON THE COMPLEMENT of a dense, Haar-null
+    set of connections'  (M1_04 printed output, PART 3).
+    The lane's OWN Liouville pair lies in that complement and violates the conclusion.
+    Relation lattice of the Liouville pair, checked exactly on the truncation used:
+      integer relations with |m|,|n| <= 40 on the TRUNCATED pair: [(-40, 20), (-20, 10), (20, -10), (40, -20)]
+      (the full pair has none at all, by the sparse-series argument -- verified as an
+       argument in R1_08, not as a search)
+    -> the pair is in the complement of the relation locus, and the lane's own F4 says
+       its liminf is -infinity.  'TRUE EXACTLY ON THE COMPLEMENT' is FALSE.  The true
+       statement is 'on a set of FULL HAAR MEASURE'.
+
+(3)(4) RANK L DOES NOT DETERMINE lambda, AND lambda_H IS NOT BOUNDED ABOVE BY m(P).
+      m(P) = -0.76750788035777587165
+      rank L = 1, relation (  1,  1):  lambda_H = -1.203972804325936   lambda_H - m(P) = -0.43646
+      rank L = 1, relation (  1,  0):  lambda_H = -0.3566749439387324   lambda_H - m(P) = 0.41083
+      rank L = 1, relation ( 11, 20):  lambda_H = -0.7670149929976717   lambda_H - m(P) = 0.00049289
+      rank L = 1, relation ( 29, 17):  lambda_H = -0.7671381787455547   lambda_H - m(P) = 0.0003697
+      rank L = 1, relation ( 13,  8):  lambda_H = -0.7682717342109969   lambda_H - m(P) = -0.00076385
+      -> within rank L = 1 the limit ranges over [-1.2039728, -0.3566749] on these rows alone;
+         rank alone fixes nothing.
+      -> and lambda_H(11,20) and lambda_H(29,17) are BOTH GREATER than m(P): the rate
+         can be SLOWER than the Mahler measure, so no upper bound of the form
+         'lambda <= m(P)' or 'lambda <= -(1-max)' is available for the true rate.
+      -> the ORDER-4 case goes the other way: lambda = -(1/2) log 5 = -0.804718956217 < m(P).
+         lambda straddles m(P) from both sides.  Any inequality between them is false.
+
+DONE R1_06

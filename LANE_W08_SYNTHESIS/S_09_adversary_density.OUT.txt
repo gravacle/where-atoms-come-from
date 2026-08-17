@@ -1,0 +1,31 @@
+PREDICTION, derived from M2-4's own N(eps) law and nothing else:
+  N(eps) ~ C_d K eps^{d/2}  =>  the J-th smallest gap over k<=K is eps_J ~ (J/(C_d K))^{2/d}
+  =>  SUM of the J smallest ~ (d/(d+2)) J (J/(C_d K))^{2/d}  =>  at fixed budget
+        d_eff = 2 :  J_max ~ K^{1/2},  write density ~ K^{-1/2}
+        d_eff = 1 :  J_max ~ K^{2/3},  write density ~ K^{-1/3}
+  i.e. a RANK-1 connection is MORE exposed to the adversary than a rank-2 one, not less.
+
+   connection                            J(K=1e+04)   J(K=1e+05)   J(K=1e+06)   J(K=1e+07)  fitted exp  theory
+   d_eff=2  DIOPH  -2^(1/3),4^(1/3)             129          409         1294         4095       0.501   0.500
+   d_eff=2  RANDOM seed 20260816                129          409         1294         4095       0.501   0.500
+   d_eff=1  RESONANT f=2.0,c=1.1                129          377         1598         7416       0.591   0.667
+   d_eff=1  W07GEN 2pi.phi,2pi.phi^2            465         2163        10043        46619       0.667   0.667
+
+   And the ATTAINED case, for contrast: on S1's order-4 connection 1-|Z_k| = 0 EXACTLY on
+   a fraction 1/4 of all cells -- 250000 of 10^6 -- so J_max = infinity at
+   ZERO budget.  THAT, and only that, is what 'ATTAINED' buys the adversary: a FIXED
+   positive density instead of a density that must fall like K^{-1/2} or K^{-1/3}.
+LOCAL SLOPE over the LAST decade only (K=1e6 -> 1e7), which is where the asymptotic
+regime has set in.  The 4-point fits above are contaminated by the pre-asymptotic first
+decade for RESONANT, whose primitive relation (11,20) has height 31.
+   DIOPH      J(1e6)=  1294  J(1e7)=  4095   local exponent = 0.5003
+   RANDOM     J(1e6)=  1294  J(1e7)=  4095   local exponent = 0.5003
+   RESONANT   J(1e6)=  1598  J(1e7)=  7416   local exponent = 0.6666
+   W07GEN     J(1e6)= 10043  J(1e7)= 46619   local exponent = 0.6667
+
+   d_eff=2 rows -> 0.5004, 0.5004     theory 1/2
+   d_eff=1 rows -> 0.6667, 0.6668     theory 2/3
+   RECORDED AS A NULL THAT READS TWO WAYS: the RESONANT row 4-point fit 0.591 is NOT
+   scored as confirmation of anything.  Its last decade agrees; its first does not; and
+   a window in which a relation of height 31 has not yet resolved is exactly the COR-E
+   defect class.  Stated as a lower bound on the exponent, not an equality.

@@ -1,0 +1,18 @@
+== A0  brute force: apply M_dF^k and M_c^k literally, dress, subtract.  (u,v)=(2,3), dF=-1, dC=1
+  connection                         max|brute-legB|  max|brute-legE|   arg rho_true    arg rho_E
+  S1 PUBLISHED (pi/3 x3, pi/2 x3)          3.268e-13        3.457e-13   -0.250000000 -0.250000000
+  GENERIC sqrt2/sqrt3                      4.661e-13        5.408e-01   -0.146264370 -0.317837245
+  RANDOM seed 1                            5.446e-13        5.414e-01   -0.290252282 -0.077362414
+  RANDOM seed 2                            7.690e-13        5.434e-01    0.205093987 -0.046247977
+  RANDOM seed 3                            1.938e-13        5.409e-01   -0.233151757  0.014316520
+
+  VERDICT ON M4-2: brute force agrees with leg B's formula to float noise on all five rows,
+  and disagrees with leg E's on the four where W_F^2 != 1.  M4-2's derivation is CONFIRMED
+  by direct measurement, not merely by algebra.
+
+== A1  BUT: W-07's LEG B PRINTS conj(W_F)/W_C, WHICH *IS* rho_true. ==
+  S1 PUBLISHED (pi/3 x3, pi/2 x3):  conj(W_F)/W_C = -0.250000000   rho_true = -0.250000000
+  GENERIC sqrt2/sqrt3            :  conj(W_F)/W_C = -0.146264370   rho_true = -0.146264370
+  For (dF,dC)=(-1,+1), conj(W_F)/W_C = W_F^-1 W_C^-1 = rho_true EXACTLY.  So W-07 had the
+  right element in leg B and the wrong one in leg E; the sec3 table was built from leg E.
+  M4-2 stands, and is if anything understated: W-07 contradicts ITSELF between its own legs.

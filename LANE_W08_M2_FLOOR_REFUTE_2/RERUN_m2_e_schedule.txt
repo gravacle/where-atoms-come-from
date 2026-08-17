@@ -1,0 +1,98 @@
+== E1  THE LOG-DENSITY ADVERSARIAL SCHEDULE: write ONLY at record near-returns. ==
+   Schedule = the running-minimum records of (1-|Z_k|) with depth < 1e-02, k <= 1e7.
+   ready  connection dimH  J = cells written        k_J  SUM_j (1-|Z_{k_j}|)   PROD_j |Z_{k_j}|
+   RS-G   A_S1PUB      0                  1          4          0.000000000        1.000000000
+   RS-G   B_S3RES      1                 11    4272943          0.005326722        0.994673856
+   RS-G   C_BADAPP     2                 13    3494078          0.015464365        0.984605639
+   RS-G   D_RAND1      2                 10    1301991          0.016377877        0.983698743
+   RS-G   D_RAND2      2                 11    4778879          0.002101501        0.997900003
+   RS-G   D_RAND3      2                 14    5379945          0.000714158        0.999286036
+   RS-G   E_W07GEN     1                 28    9227465          0.008673571        0.991347214
+   RS-G   F_VWA        2                  3    2999999          0.000721640        0.999278360
+   RS-P   A_S1PUB      0                  1          2          0.000000000        1.000000000
+   RS-P   B_S3RES      1                 11    5419351          0.000078082        0.999921920
+   RS-P   C_BADAPP     2                 12    5373136          0.000878014        0.999122102
+   RS-P   D_RAND1      2                 11     870809          0.011103379        0.988929170
+   RS-P   D_RAND2      2                 10    2164095          0.002296096        0.997704248
+   RS-P   D_RAND3      2                 16    6770703          0.001573567        0.998427111
+   RS-P   E_W07GEN     1                 29    9227465          0.009465070        0.990559676
+   RS-P   F_VWA        2                 10    2999999          0.000165775        0.999834232
+   REPRODUCTION, not a new number: RS-G / B_S3RES over ALL its records gives
+   SUM = 1.533095 and PROD = 0.117102 — S3 sec4.6's own two figures, and COR-L(ii)'s
+   corrected count of 11 record-breakers.  S3 had already computed this object without
+   naming it: it is the adversarial schedule's total.
+
+== E2  IS THAT TAIL CONVERGENT, OR MERELY SMALL SO FAR? ==
+   RS-G C_BADAPP  dimH=2 d_eff=2  J=13  k_j grows x2.49 per record  d log(1-|Z|)/d log k = -0.977   (theory: -2/d_eff = -1.0)
+   RS-G D_RAND1   dimH=2 d_eff=2  J=10  k_j grows x2.51 per record  d log(1-|Z|)/d log k = -1.298   (theory: -2/d_eff = -1.0)
+   RS-G B_S3RES   dimH=1 d_eff=1  J=11  k_j grows x2.70 per record  d log(1-|Z|)/d log k = -1.885   (theory: -2/d_eff = -2.0)
+   RS-P D_RAND1   dimH=2 d_eff=1  J=11  k_j grows x2.55 per record  d log(1-|Z|)/d log k = -2.573   (theory: -2/d_eff = -2.0)
+   -> k_j grows geometrically and the depths fall like a fixed power of k_j.  The series is
+      dominated by a geometric one: IT CONVERGES.  On this schedule durability is killed,
+      the limit product is bounded away from zero, and this holds for EVERY class.
+   COST: J ~ 15 cells written out of K = 1e7 — density ~ log K / K.  The adversary must
+      discard 99.9999% of the circuits and must know the connection's continued fraction.
+
+== E3  THE SHARP CONSEQUENCE OF ATTAINED vs APPROACHED: POSITIVE-DENSITY SCHEDULES ==
+   A log-density schedule is a caricature; it wastes almost every circuit.  Ask instead the
+   question the distinction actually decides: CAN THE ADVERSARY BLANK THE RECORD WHILE STILL
+   WRITING ON A POSITIVE FRACTION delta OF CIRCUITS?  The best such schedule writes on the
+   delta*K cells with the SMALLEST (1-|Z_k|).  Its total is computed here EXACTLY by sorting.
+   K = 1e6, ready state RS-G held fixed; the connection is the only thing that moves.
+   connection                         delta=0.5      delta=0.25       delta=0.1      delta=0.01     delta=0.001
+   A_S1PUB  ATTAINED  |H|=4        1.500000e+05    0.000000e+00    0.000000e+00    0.000000e+00    0.000000e+00
+   B_S3RES  APPROACHED H=S^1       1.330278e+05    3.529963e+04    5.850656e+03    5.741547e+01    2.450169e-01
+   E_W07GEN APPROACHED H=S^1       1.090141e+05    1.495256e+04    9.821032e+02    9.871230e-01    9.873006e-04
+   C_BADAPP APPROACHED H=T^2       1.330363e+05    3.530915e+04    5.837133e+03    5.949537e+01    5.972368e-01
+   D_RAND1  APPROACHED H=T^2       1.330363e+05    3.530932e+04    5.837142e+03    5.949617e+01    5.967872e-01
+   READ THIS ROW BY ROW.  On the ATTAINED connection the best delta=0.25 schedule accumulates
+   EXACTLY 0.000000 — not small, ZERO — because a quarter of all cells have |Z_k| = 1 exactly,
+   forever, and a schedule that writes only there leaves |Omega| = 1 for all time.  On every
+   APPROACHED connection the same delta gives a positive total that GROWS LINEARLY in K.
+   That is the consequence, and it is exact:
+
+     sup_k |Z_k| = 1 is ATTAINED  <=>  there is a POSITIVE-DENSITY schedule on which the record
+                                       is exactly and permanently blank.
+     sup_k |Z_k| = 1 is APPROACHED <=> every positive-density schedule still accumulates linearly.
+
+   The register asked whether the distinction is cosmetic.  ON THE HONEST SCHEDULE IT VERY NEARLY
+   IS -- worth 4.8% in lambda at |H| = 4 and nothing at all as the order grows (leg D2).  ON THE
+   SCHEDULE QUESTION IT IS ABSOLUTE.  Both halves are true and neither may be quoted alone.
+
+== E3b  HOW FAST DOES THE APPROACHED RATE FALL WITH delta?  MEASURED, NOT ASSERTED. ==
+   Predicted from N(eps) ~ K eps^{d_eff/2}: best-delta-schedule total ~ K delta^{1+2/d_eff},
+   i.e. delta^2 for d_eff = 2 and delta^3 for d_eff = 1.  The delta values in E3 are ABOVE
+   the asymptotic regime (leg F2: the eps-law only sets in below eps ~ 1e-3), so it is
+   measured here at K = 1e7 and small delta instead.
+   connection                  d_eff     delta=1e-03    delta=1e-04    delta=1e-05    delta=1e-06  fitted d log S/d log delta  theory
+   B_S3RES  APPROACHED H=S^1       1      2.4514e+00     2.4580e-03     2.5285e-06     3.2095e-09                       2.964     3.0
+   E_W07GEN APPROACHED H=S^1       1      9.8707e-03     9.8867e-06     1.0037e-08     1.1724e-11                       2.977     3.0
+   C_BADAPP APPROACHED H=T^2       2      5.9601e+00     5.9702e-02     5.9928e-04     6.7699e-06                       1.983     2.0
+   D_RAND1  APPROACHED H=T^2       2      5.9597e+00     5.9667e-02     6.0617e-04     8.8158e-06                       1.948     2.0
+   -> the predicted exponents are recovered.  The adversary's return on a positive-density
+      schedule falls off as a POWER of delta but never reaches zero on an approached
+      connection, and reaches EXACTLY zero on an attained one.  That is the whole content
+      of ATTAINED vs APPROACHED for durability.
+
+== E4  THE HONEST SCHEDULE, FOR CONTRAST (leg C restated) ==
+   ready  connection dimH    SUM_{k<=1e7}(1-|Z_k|)      SUM/K
+   RS-G   A_S1PUB      0             4918861.1699   0.491886
+   RS-G   B_S3RES      1             4691828.5972   0.469183
+   RS-G   C_BADAPP     2             4691887.2985   0.469189
+   RS-G   D_RAND1      2             4691886.7961   0.469189
+   RS-G   D_RAND2      2             4691886.9711   0.469189
+   RS-G   D_RAND3      2             4691885.0203   0.469189
+   RS-G   E_W07GEN     1             5294713.7230   0.529471
+   RS-G   F_VWA        2             4692147.6958   0.469215
+   RS-P   A_S1PUB      0             5000000.0000   0.500000
+   RS-P   B_S3RES      1             3633802.3520   0.363380
+   RS-P   C_BADAPP     2             3633801.9919   0.363380
+   RS-P   D_RAND1      2             3633802.5839   0.363380
+   RS-P   D_RAND2      2             3633802.1604   0.363380
+   RS-P   D_RAND3      2             3633802.2500   0.363380
+   RS-P   E_W07GEN     1             3633802.1472   0.363380
+   RS-P   F_VWA        2             3633802.5099   0.363380
+   4.7e6 on the honest schedule against < 2 on the log-density adversarial one, at the same K,
+   the same connection, the same ready state.  THE SCHEDULE IS WORTH SIX ORDERS OF MAGNITUDE AND
+   THE CONNECTION IS WORTH 13%.  Whatever threatens durability on K1, it is not the connection's
+   arithmetic — and W-02's flagged schedule conditionality is the whole of the exposure.

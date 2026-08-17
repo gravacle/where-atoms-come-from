@@ -1,0 +1,38 @@
+LANE W08 / M3 ZEROSET — REFUTER 1 — PUBLISHED CONVENTIONS
+Lens 1: MATHEMATICS.  Attack the equivalence proof.  Everything needed to re-run is here.
+
+LINEAGE, STATED FIRST.  I am Claude Opus 5.  So is the lane I am refuting (LANE_W08_M3_ZEROSET).
+We are NOT lineage-independent of each other.  Anything below that agrees with the lane is
+ADVERSARIALLY-CHECKED WITHIN ONE LINEAGE, which is the weaker grade, and a failure mode common
+to Opus 5 passes through both of us.  Read every CONFIRMED here with that discount.
+
+CARRIER, CONNECTION, BRANCHES, CLASSES.  As published in S1 and in LANE_W07's conventions;
+re-derived from incidence in r1 (0) rather than inherited:
+  V=5 E=6 F=1, FACE_V={0,1,2}, CYC_V={0,3,4}; U_e = exp(i a_e);
+  W_F = exp(i f) = exp(i(a1+a2+a3)), W_C = exp(i c) = exp(i(a4+a5+a6));
+  u = conj(W_F) = e^{-if},  v = W_C = e^{ic};
+  Z_k = <M_dF^k s, M_c^k s> = p00 + p10 u^k + p01 v^k + p11 (uv)^k,  <z,w> = conj(z) w;
+  p11 = p_{v0}, p10 = p_{v1}+p_{v2}, p01 = p_{v3}+p_{v4}, p00 = 0 IDENTICALLY on K1.
+  P(x,y) = p00 + p10 x + p01 y + p11 x y.
+
+ARITHMETIC.  Every load-bearing predicate is decided in EXACT integer or Fraction arithmetic,
+or by an exact closed form on exact rationals.  Double precision is used only where a line says
+FLOAT, and never decides a load-bearing predicate.  A grid minimum is treated as an UPPER bound
+on the true minimum throughout (COR-E discipline): it can refute a zero, never certify one.
+Every "no zero here" verdict rests on an exact positive lower bound; every "a zero exists here"
+verdict rests on an exhibited certificate, not on a small grid value.
+
+SEEDS.  numpy default_rng.  20260817 (r2 Monte Carlo — DELIBERATELY NOT the lane's 20260816),
+11081999 (r1), 31415926 and 27182818 (r3).  Stated so that agreement is not seed-shared.
+
+GRIDS.  r1: connection grids = q-th roots of unity, q in {12,20,36}; simplex denominator 24.
+r2: simplex denominators 240 (three-class) and 40, 70, 60 (four-class); Monte Carlo 2e6 draws.
+r3: simplex denominator 90 per face; 90^3 torus brute force; 2e5 Dirichlet draws.
+r4: 400-node Gauss-Legendre; 2e6-point x-circle; numpy.roots on a degree-31 polynomial.
+r5: q in {12,15} (15 is ODD so a gap of exactly pi is unreachable and no boundary case can be
+mis-decided); simplex denominator 24.
+
+THE ONE VARIABLE, PER COMPARISON.  See ISOLATION_LEDGER.txt.
+
+FILES.  r1_three_statements.py, r2_zeroset_exact.py, r3_operative_variable.py,
+r4_values_independent_routes.py, r5_implication_ledger.py, and the matching .OUT.txt files.

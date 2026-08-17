@@ -1,0 +1,74 @@
+====================================================================================================
+R2-2  THE CONNECTION-SIDE FIRING REGION DOUBLES WHEN A SPECTATOR VERTEX IS ADDED
+====================================================================================================
+numpy 2.0.2 ; IEEE double for grid checks; counts are exact integers; measures proved on paper.
+
+PROOF, FOUR CLASSES.  The coefficients are z = (1, u, v, uv) with u = e^{-if}, v = e^{ic}.
+Because 1*(uv) = u*v, BOTH PAIRS {1,uv} and {u,v} have the same product, so both pairs are
+exchanged by the SAME reflection R(z) = (uv) conj(z), i.e. reflection in the line at angle
+m = arg(uv)/2.  Rotate by e^{-im}: the four points sit at angles  +-m  and  +-e  with
+      m = (c-f)/2 ... i.e. arg(uv)/2      e = arg(u/v)/2 = -(f+c)/2 ,
+a MIRROR-SYMMETRIC configuration about the real axis.  If an OPEN half-plane H contains all
+four, so does conj(H), hence so does H n conj(H) -- and that intersection is an open wedge
+symmetric about the real axis (on the + side or the - side), of half-angle < pi/2.  Hence
+      0 NOT in conv   <=>   cos m and cos e are BOTH > 0, or BOTH < 0   <=>   cos m cos e > 0.
+And  cos m cos e = (cos(m+e) + cos(m-e))/2 = (cos f + cos c)/2  after substituting
+      m+e = (c-f)/2 - (f+c)/2 = -f ,     m-e = (c-f)/2 + (f+c)/2 = c .
+THEREFORE   0 in conv{1,u,v,uv}   <=>   cos f + cos c <= 0.   [R2-2A]
+Its Haar measure is EXACTLY 1/2: (f,c) -> (pi-f, pi-c) is measure preserving and sends
+cos f + cos c to its negative, so the two closed regions have equal measure and overlap in
+the null set {cos f + cos c = 0}.
+
+PROOF, THREE CLASSES (K1).  Coefficients {uv, u, v} at angles s+t, s, t with s=-f, t=c.
+Rotate by e^{-i(s+t)/2}: angles become  m = (s+t)/2  and  +-e  with e = (s-t)/2.  Only ONE
+mirror pair now, so the above collapse does not happen.  With eps = |e| reduced to [0,pi]:
+  eps <= pi/2 : the gap NOT containing 0 has width 2pi-2eps >= pi and m must split it:
+                m in [pi-eps, pi+eps], an arc of length 2eps.
+  eps >  pi/2 : the gap containing 0 has width 2eps > pi and m must split it:
+                m in [eps-pi, pi-eps], an arc of length 2(pi-eps).
+m is uniform on [0,2pi) and eps has density 1/pi on [0,pi], independently, so
+  P = (1/pi) int_0^{pi/2} (2 eps)/(2pi) d eps + (1/pi) int_{pi/2}^{pi} 2(pi-eps)/(2pi) d eps
+    = (1/pi^2)(pi^2/8 + pi^2/8) = 1/4   EXACTLY.   [R2-2B]
+
+(a) VERIFY [R2-2A] AGAINST THE ANGULAR-GAP CRITERION.  Random (f,c), and the lane's own grid.
+    200000 random (f,c): #{gap criterion != (cos f + cos c <= 0)} = 0
+    the lane's own 19x19 grid: gap criterion fires 180 of 361 ; [R2-2A] fires 180 of 361
+    (the lane printed 180 of 361 = 0.4986 and read it as 'unchanged'.)
+
+(b) THE TWO MEASURES, side by side.  ONE THING MOVES: whether a fourth (trivial) character
+    is present.  The carrier, the observable Z_1, the quantifier (EXISTS a ready state),
+    the criterion (0 in conv) and the grid are all held fixed.
+    grid   37x37   : THREE classes (K1)      342/1369     = 0.249817   FOUR classes (K1S)      684/1369     = 0.499635
+    grid  181x181  : THREE classes (K1)     8190/32761    = 0.249992   FOUR classes (K1S)    16380/32761    = 0.499985
+    grid  721x721  : THREE classes (K1)   129960/519841   = 0.250000   FOUR classes (K1S)   259920/519841   = 0.499999
+    grid 1441x1441 : THREE classes (K1)   519120/2076481  = 0.250000   FOUR classes (K1S)  1038240/2076481  = 0.500000
+    -> 1/4 and 1/2, the two closed forms [R2-2B] and [R2-2A].
+
+*** THE CORRECTION.  'The connection-side criterion holds unchanged at four classes' is true
+*** only of the criterion's FORM, and its form could not have been otherwise: '0 in conv of
+*** the coefficients' is the definition of the range of a simplex-weighted sum, for any
+*** number of coefficients.  m3_5 (B) is therefore a CONTROL THAT COULD NOT HAVE FAILED,
+*** and by this program's own rule that voids the control -- not the theorem.  The CONTENT
+*** of the criterion doubles: half the torus fires on K1S, a quarter on K1.  The lane used
+*** (B) to rule out 'four classes' as the operative variable; (B) cannot do that work,
+*** because it is insensitive to the class count BY CONSTRUCTION.
+
+(c) WHAT THIS COSTS THE REGISTER.  W-01's row reports its criterion verified on '1369 grid
+    points, 0 mismatches' and reports firing on S1's published connection.  Both are K1
+    facts.  On K1S the same sentence, same quantifier, same proof, cuts out TWICE the torus.
+    S1's published connection (f,c) = (pi, 3pi/2): cos f + cos c = -1.000000 <= 0, so it fires on
+    K1S too -- the register's headline exhibit is NOT what breaks.
+    What breaks is the COMPLEMENT: the set of connections at which NO ready state can fire
+    shrinks from 3/4 of the torus to 1/2.  A carrier's spectator vertex makes formation
+    STRICTLY EASIER on the connection side and STRICTLY HARDER on the state side.
+    (state side: firing volume is 1/4 of the simplex at BOTH class counts -- m3_1 and m3_2 --
+     so it is the CONNECTION side, the one the lane called unchanged, that moves.)
+
+(d) OUT OF LENS, RECORDED NOT SCORED.  With a THIRD loop the coefficients are the 8 vertices
+    of a cube in the character lattice and the same reflection argument fails (the four
+    pairs do not share one axis).  P = A(x,y) + z B(x,y) and a zero exists iff |A| = |B|
+    somewhere on T^2 -- a codimension-1 condition on a 2-torus, not a finite inequality on
+    the weights.  No closed-form weight criterion is claimed here; only that neither M3-2
+    nor the polygon reading can be it.  This lane did not run three loops.
+
+DONE.

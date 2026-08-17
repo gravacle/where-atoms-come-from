@@ -1,0 +1,46 @@
+LANE W-08 / M1 — THE IDENTIFICATION AND THE EXACT DURABILITY CRITERION
+PUBLISHED CONVENTIONS.  Everything needed to re-run this lane is on this page.
+
+LINEAGE.  Claude Opus 5, against a corpus whose 9 commits carry `Co-Authored-By: Claude Fable 5`.
+Same lineage-independence status as W-07.  This is ONE lane and is graded as one.
+
+CARRIER K1 (S1_CARRIER_K1_V001.md sec1-4, restated, nothing new):
+  V=5 E=6 F=1, chi=0, b1=1.  e1=(0,1) e2=(1,2) e3=(2,0) e4=(0,3) e5=(3,4) e6=(4,0).
+  Face F glued along e1+e2+e3.   FACE_V={0,1,2}   CYC_V={0,3,4}.
+  Fibre C at each vertex; INNER PRODUCT <z,w> = conj(z)*w  (S1 sec3), conjugate-linear in the
+  FIRST slot.  numpy's vdot(a,b) = sum(conj(a)*b) implements exactly this.  Stated because the
+  identification's convention question (u = conj(W_F) vs u = W_F) is decided by this choice.
+  Connection U_e = exp(i a_e).  W_F = exp(i(a1+a2+a3)),  W_C = exp(i(a4+a5+a6)).
+
+BRANCHES (W-01 / S3):  M_dF multiplies s_v by W_F for v in FACE_V, identity elsewhere.
+                       M_c  multiplies s_v by W_C for v in CYC_V,  identity elsewhere.
+PER-CELL BRANCH COMPARISON:  Z_k = <M_dF^k s, M_c^k s>.
+
+FOUR-CLASS PUSHFORWARD of a ready state s in C^5, ||s||=1, by (v in F?, v in C?):
+  p11 = |s_0|^2                    (v0 is in BOTH loops)
+  p10 = |s_1|^2 + |s_2|^2          (FACE only)
+  p01 = |s_3|^2 + |s_4|^2          (CYCLE only)
+  p00 = 0                          IDENTICALLY ON K1 — no vertex is outside both loops.
+  p00 = 0 is a FACT ABOUT K1's INCIDENCE, not a modelling choice, and it is load-bearing:
+  it is why the polynomial of record has three terms, not four, and why its Mahler measure is
+  a function of a 2-simplex rather than a 3-simplex.
+
+POLYNOMIAL OF RECORD:  P(x,y) = p00 + p10 x + p01 y + p11 x y.
+CLAIMED IDENTIFICATION (this lane's item 1):  Z_k = P(u^k, v^k), u = conj(W_F), v = W_C.
+
+DRESSING.  Not used as a separate object here.  |t_v| = |s_v| for any U(1) tree dressing, so the
+four-class pushforward — and therefore Z_k — is dressing-invariant.  Verified in M1_01.
+
+PRECISION.  IEEE double (float64) is the default everywhere and is SAID SO at each claim.
+Precision-sensitive claims are re-checked in exact arithmetic: Python `fractions.Fraction` /
+integer Gaussian rationals (M1_01 exact block, M1_05 exact block), or closed form (M1_02).
+Large-k phase accumulation uses an int64 exact-modular split (M1_03) so that frac(k*alpha) is
+computed to ~1e-20 rather than to double's ~1e-9 at k = 1e7.
+
+SEEDS.  numpy default_rng.  Master seed 20260816 (inherited from W-07's page so the two lanes
+draw from a comparable stream); per-script seeds stated in each script header.
+
+THE ONE VARIABLE — see ISOLATION LEDGER in M1_03 output.  Across the three-connection comparison
+the carrier, the ready state (pushforward held at pi = (0, 0.3, 0.3, 0.4)), the observable, the
+k-range and the code path are fixed.  The only thing that moves is the ARITHMETIC TYPE OF THE
+PAIR (u,v): Diophantine / finite order / rank-one multiplicative relation.

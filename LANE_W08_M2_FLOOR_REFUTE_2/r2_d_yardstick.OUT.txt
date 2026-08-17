@@ -1,0 +1,63 @@
+== D1  THE MATCHED-DENSITY COMPARISON THE LANE DID NOT RUN ==
+   An ATTAINED connection of order n has EXACTLY ONE blank positive-density schedule and
+   its density is EXACTLY 1/n (|Z_k| = 1 iff n | k).  So 'positive density' is not a free
+   parameter: it is 1/n.  Charge the APPROACHED connection at the SAME density and the
+   'absolute' gap becomes a number that goes to zero with n -- exactly like the honest-
+   schedule gap the lane calls nearly cosmetic.   K = 1e7, RS-G, cubic pair as approached.
+    n = |H|   delta=1/n   ATTAINED total   APPROACHED total   per written cell  |Omega| approached   honest-axis gap
+          2   5.000e-01     0.000000e+00       1.330361e+06       2.660722e-01        0.000000e+00            40.31%
+          4   2.500e-01     0.000000e+00       3.530909e+05       1.412364e-01        0.000000e+00             4.85%
+          5   2.000e-01     0.000000e+00       2.284968e+05       1.142484e-01        0.000000e+00             1.30%
+         16   6.250e-02     0.000000e+00       2.298265e+04       3.677225e-02        0.000000e+00             5.01%
+        256   3.906e-03     0.000000e+00       9.088107e+01       2.326585e-03        3.395107e-40             0.36%
+       1024   9.766e-04     0.000000e+00       5.683324e+00       5.820097e-04        3.402229e-03             0.36%
+       4096   2.441e-04     0.000000e+00       3.552946e-01       1.455529e-04        7.009669e-01             0.12%
+      32768   1.526e-05     0.000000e+00       1.381873e-03       9.091271e-06        9.986191e-01             0.00%
+    1000003   1.000e-06     0.000000e+00       5.673118e-06       6.303464e-07        9.999943e-01             0.00%
+   READ THE LAST TWO COLUMNS TOGETHER.  Both gaps -- the 'absolute' one and the 'cosmetic'
+   one -- are functions of the SAME variable n and both go to zero with it.  At n = 65536
+   the adversary on an APPROACHED connection, writing at the same density the attained
+   blank schedule uses, leaves |Omega| = 0.999+ : operationally as blank as exactly blank.
+   The dichotomy 'cosmetic here, absolute there' is an artefact of using a RELATIVE
+   yardstick on one axis and an EXACT-ZERO yardstick on the other.
+
+== D2  THE STIPULATION DOING ALL THE WORK: 'POSITIVE DENSITY' IS NOT THE CORPUS'S TEST ==
+   W-02's registered mechanism sentence: 'All the content sits in the divergence
+   Sum (1 - z_n) = inf.'  DIVERGENCE is the corpus's durability test, not density.
+   On an APPROACHED connection take delta_K = K^{-1/2}: the number of cells written grows
+   without bound (J = sqrt(K)) and the record stays BOUNDED.  Measured:
+            K  J = K^1/2   SUM over the J best cells      |Omega|
+        10000        100                    0.607263     0.544840
+       100000        316                    0.596159     0.550923
+      1000000       1000                    0.597237     0.550330
+     10000000       3162                    0.596067     0.550974
+   -> unboundedly many writes, a record that never accumulates: durability fails on an
+      APPROACHED connection too, by the corpus's own criterion.  The lane's separation
+      needs the extra stipulation 'at FIXED positive density', which appears nowhere in
+      the register and which the lane itself concedes it cannot prove (self-flag 3).
+
+== D3  THE OTHER YARDSTICK, APPLIED TO THE AXIS THE LANE CALLED COSMETIC ==
+   On the ATTAINED connection the honest schedule ALSO contains exactly-blank cells at
+   positive density -- a fraction 1/|H| of the record's own cells contribute EXACTLY 0.
+   A_S1PUB |H|=4    cells with 1-|Z_k| = 0 exactly, k <= 1e6:   250000 = 0.2500 of the record
+   |H|=2            cells with 1-|Z_k| = 0 exactly, k <= 1e6:   500000 = 0.5000 of the record
+   |H|=3            cells with 1-|Z_k| = 0 exactly, k <= 1e6:   333333 = 0.3333 of the record
+   So 'a positive-density set of exactly blank cells' is a property of the ATTAINED
+   CONNECTION, visible on the honest schedule, not a discovery about schedules.  And it
+   follows in one line from attainment: if |Z_{k0}| = 1 then all three characters agree
+   at k0, hence at every multiple of k0, hence |Z_{m k0}| = 1 for all m.  No computation,
+   no Diophantine input, no sorting of 1e6 cells is needed to know it.
+
+== D4  AND THE SAME ONE-LINE ARGUMENT BOUNDS THE ADVERSARY'S REACH ON BOTH SIDES ==
+   The lane's E3 delta=0.25 row is the attained blank set exactly (density 1/4 = 1/|H|).
+   For delta > 1/|H| the attained adversary is forced off the blank set and its total
+   jumps to a POSITIVE, linear-in-K number -- the lane's own delta=0.5 row, 1.5e5 at
+   K = 1e6, which is LARGER THAN ALL FOUR approached rows at the same delta
+   (lane E3, delta=0.5: attained 1.500e5 vs 1.330e5, 1.330e5, 1.330e5, 1.090e5).
+      attained |H|=4, delta=0.25 : total over the best delta*K cells = 0.000000e+00
+      attained |H|=4, delta=0.26 : total over the best delta*K cells = 6.000000e+03
+      attained |H|=4, delta=0.3  : total over the best delta*K cells = 3.000000e+04
+      attained |H|=4, delta=0.5  : total over the best delta*K cells = 1.500000e+05
+   -> the attained connection is blank ONLY at density <= 1/|H| and is the WORST carrier
+      for the adversary above it.  'ATTAINED => the adversary wins' is true on a single
+      density and false immediately above it.

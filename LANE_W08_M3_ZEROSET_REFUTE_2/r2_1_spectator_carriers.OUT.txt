@@ -1,0 +1,93 @@
+====================================================================================================
+R2-1  CARRIERS WITH A VERTEX IN NEITHER LOOP — BUILT, NOT ASSUMED
+====================================================================================================
+numpy 2.0.2 ; IEEE double for the matrix action, EXACT integer arithmetic for every predicate.
+
+CARRIER K1 (S1 sec1)
+   V=5 E=6 F=1  chi=0  rank d1=4 rank d2=1  b0=1 b1=1 b2=0
+   gauge-invariant real parameters E-(V-1) = 2   (W_F and W_C exactly, as on K1)
+   vertex classes (inF,inC) = [(1, 1), (1, 0), (1, 0), (0, 1), (0, 1)]
+   OCCUPIED CLASSES: [(0, 1), (1, 0), (1, 1)]      EMPTY BY INCIDENCE: [(0, 0)]
+
+CARRIER K1S = K1 + pendant v5 on the root
+   V=6 E=7 F=1  chi=0  rank d1=5 rank d2=1  b0=1 b1=1 b2=0
+   gauge-invariant real parameters E-(V-1) = 2   (W_F and W_C exactly, as on K1)
+   vertex classes (inF,inC) = [(1, 1), (1, 0), (1, 0), (0, 1), (0, 1), (0, 0)]
+   OCCUPIED CLASSES: [(0, 0), (0, 1), (1, 0), (1, 1)]      EMPTY BY INCIDENCE: []
+
+CARRIER BARB = filled triangle --x-- unfilled triangle
+   V=7 E=8 F=1  chi=0  rank d1=6 rank d2=1  b0=1 b1=1 b2=0
+   gauge-invariant real parameters E-(V-1) = 2   (W_F and W_C exactly, as on K1)
+   vertex classes (inF,inC) = [(1, 0), (1, 0), (1, 0), (0, 0), (0, 1), (0, 1), (0, 1)]
+   OCCUPIED CLASSES: [(0, 0), (0, 1), (1, 0)]      EMPTY BY INCIDENCE: [(1, 1)]
+
+*** THE FIRST SCOPE FACT, AND IT IS NOT TOPOLOGICAL. ***
+K1 and K1S have IDENTICAL chi, b0, b1, b2, one face, one independent cycle, and the SAME
+two gauge invariants W_F, W_C.  They differ only in that K1S has one vertex on neither loop.
+So 'p00 = 0' is NOT a topological property of the carrier class the corpus works in -- it is
+an accident of K1's MINIMALITY (S1 sec2: 'the smallest complex carrying one face and one
+independent cycle').  Every K1 result whose proof uses p00 = 0 is a statement about a
+codimension-1 FACE of the four-class simplex, i.e. a measure-zero family, on a carrier that
+is not distinguished from K1S by any invariant the corpus computes.
+
+(a) DOES THE IDENTITY  Z_k = P(u^k,v^k)  SURVIVE A SPECTATOR VERTEX?  (M3-F1's scope)
+    K1S = K1 + pendant v5 on the root              400 states x k=1..12, max dev = 4.460e-16
+    BARB = filled triangle --x-- unfilled triangle 400 states x k=1..12, max dev = 5.579e-16
+    => M3-F1 SURVIVES.  The identity is a statement about the class map, not about K1.
+       (It could have failed: the class map on K1S sends a vertex to the trivial character,
+        which is the one character the K1 derivation never had to carry.)
+
+(b) THE HEADLINE SENTENCE UNDER TEST.  The lane's headline reads:
+      "...but that equivalence is an artefact of p00 = 0, IT FAILS ON ANY CARRIER WITH A
+       SPECTATOR VERTEX..."
+    BARB HAS A SPECTATOR VERTEX (v3, in neither loop) AND THE EQUIVALENCE HOLDS ON IT AT
+    EVERY STATE, because BARB has NO vertex in both loops: p11 = 0 identically, by incidence.
+    So on BARB the occupied coefficients are {1, u, v} -- three of them, all ratios free --
+    and the state-side criterion is the triangle inequality again.  EXACT CHECK:
+      BARB's family (p11 = 0), EXACT integer simplex denominator N=200, 20301 points:
+        #{triangle predicate != torus-zero predicate} = 0   <-- must be 0
+        firing fraction 5151/20301 = 0.253731  (-> 1/4, the medial triangle, exactly as on K1)
+
+    AND THE CORPUS ALREADY OWNS THIS CARRIER.  S4's control list, line 519:
+        'B1q  K1-bridged + spectator vertex   V=7 E=8 ...'
+    and S4:582 gives its class multiset: {00:1, 01:3, 10:3}.  A SPECTATOR VERTEX AND NO
+    SHARED VERTEX -- exactly BARB.  Its characters are listed on the same line as '1 v u'.
+    B1q's own uniform state is p = (1/7, 3/7, 3/7, 0): triangle inequality HOLDS (3/7 <= 1/2)
+    and the torus zero EXISTS (sorted w1+w4 = 3/7 <= 4/7 = w2+w3).  The two predicates agree,
+    at that state and at every other state of B1q.
+    *** AND THE LANE PRINTED IT ITSELF: m3_4_threeclass_vs_fourclass.py:34 / .OUT.txt:13 reads
+    *** 'B1q K1-bridged+spectator {00:1,01:3,10:3}.  So the p00 > 0 regime is NOT vacuous'.
+    *** The lane cited B1q as evidence that p00 > 0 is realisable, read the multiset that
+    *** shows 11 is EMPTY on it, and still wrote 'it fails on any carrier with a spectator
+    *** vertex' in the headline.  This is the corpus's signature failure mode -- UNDER-READ,
+    *** not under-adversarial -- committed by the lane against its own output file.
+
+    *** CORRECTION TO THE LANE'S HEADLINE.  A spectator vertex is NECESSARY for the break
+    *** and NOT SUFFICIENT.  What is needed is ALL FOUR CLASSES NON-EMPTY.  The lane's own
+    *** m3_5 (C) proves this ('ANY one of the four slots being zero restores the triangle
+    *** inequality') -- so the headline contradicts the lane's own isolation C5.
+
+(c) THE BREAK, REALISED ON AN ACTUAL CARRIER (not a weight vector).  K1S ready state:
+      |s_v|^2 = [0.2, 0.1, 0.1, 0.1, 0.1, 0.4]   (norm 1.000000000000)
+      pushforward (p00,p10,p01,p11) = (0.4, 0.2, 0.2, 0.2)
+      polygon / convex-hull reading : max = 0.4000 <= 1/2  ->  SAYS IT FIRES
+      D = +0.008000 > 0                                     ->  NO ZERO ON T^2, NEVER FIRES
+      sorted criterion w1+w4 = 0.6000  >  w2+w3 = 0.4000     ->  NO ZERO
+      LITERAL 6x6 MATRIX ACTION over a 400x400 (f,c) grid: min |Z_1| = 0.141421
+      exact partial-minimisation closed form              : min |Z_1| = 0.141421
+      (a grid minimum is an UPPER bound -- COR-E discipline -- so the grid CANNOT certify
+       a zero; it agrees with the closed form, and the closed form is what decides.)
+      => on K1S this state can never fire at any connection, while W-01's convex-hull
+         sentence read on the state side says it can.  THE BREAK IS REALISED ON A CARRIER.
+
+(d) HOW MUCH OF K1S's STATE SPACE.  The lane reports the break as a simplex volume (1/2 vs
+    1/4).  That is the volume in the FOUR-CLASS SIMPLEX under a flat Dirichlet(1,1,1,1)
+    prior on the CLASS WEIGHTS.  On an actual carrier the natural prior is on the STATE, and
+    K1S's class map is 1:2:2:1, not 1:1:1:1 -- the pushforward of a uniform state is NOT
+    uniform on the simplex.  Reported because the lane's 1/4 and 1/2 are prior-dependent:
+      Dirichlet(1,1,1,1) on the CLASSES (the lane's prior)  fires 0.24938   polygon says 0.50081   SPURIOUS 0.25143
+      uniform |s_v|^2 on K1S's SIX vertices, pushed forward  fires 0.28057   polygon says 0.55985   SPURIOUS 0.27928
+    Both priors are declared; neither is 'the' answer.  The QUALITATIVE break (polygon
+    strictly weaker) is prior-free; the numbers 1/4 and 1/2 are not.
+
+DONE.

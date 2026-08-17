@@ -1,0 +1,45 @@
+==============================================================================
+M1_02 — MAHLER MACHINERY.  Three independent routes; float64.
+==============================================================================
+
+CALIBRATION against a value known in closed form:
+  m(1+x+y) = L'(chi_-3,-1) = 0.32306594...   this code: 0.323065947219
+  D(exp(i pi/3)) (max of Bloch-Wigner, = 1.0149416...): 1.014941606410
+  m(1+x)   = 0 exactly.  R1 gives 1.599e-17 ; CM gives 0.000e+00
+
+AGREEMENT OF THE THREE ROUTES on K1 weights (p00 = 0):
+   p10     p01     p11    |   R1 (1-D reduction)   R2 (Cassaigne-Maillot)  R3 (grid)        |R1-R2|
+  0.300   0.300   0.400  |     -0.767507880358     -0.767507880358    -0.767507881   2.78e-15
+  0.000   0.500   0.500  |     -0.693147180560     -0.693147180560    -0.692977955   0.00e+00
+  0.333   0.333   0.333  |     -0.775546341449     -0.775546341449    -0.775546341   2.33e-15
+  0.600   0.250   0.150  |     -0.510825623766     -0.510825623766    -0.510825624   0.00e+00
+  0.200   0.500   0.300  |     -0.693147180560     -0.693147180070    -0.693146968   4.90e-10
+  0.050   0.050   0.900  |     -0.105360515658     -0.105360515658    -0.105360516   4.16e-17
+  1.000   0.000   0.000  |      0.000000000000      0.000000000000    -0.000000000   0.00e+00
+
+Z2  m(P) depends only on the MULTISET {p10,p01,p11} — independent check of N2.
+    worst spread of m over all 6 permutations, 300 random weights: 3.053e-14
+
+Z1  THE ZERO SET OF P ON T^2 (p00 = 0).
+    P = 0 on T^2  <=>  exists |w1|=|w2|=1 with p11 + p10 w1 + p01 w2 = 0
+                  <=>  p11,p10,p01 obey the triangle inequality
+                  <=>  max(p10,p01,p11) <= 1/2   (they sum to 1)
+    p=(0.300,0.300,0.400)  max=0.400  #zeros=2  max|P| at them = 0.00e+00
+    p=(0.000,0.500,0.500)  max=0.500  ZERO SET IS A CIRCLE (1-dimensional)
+    p=(0.333,0.333,0.333)  max=0.333  #zeros=2  max|P| at them = 1.58e-16
+    p=(0.600,0.250,0.150)  max=0.600  #zeros=0  max|P| at them = -
+    p=(0.200,0.500,0.300)  max=0.500  #zeros=1  max|P| at them = 6.12e-17
+    p=(0.050,0.050,0.900)  max=0.900  #zeros=0  max|P| at them = -
+    p=(1.000,0.000,0.000)  max=1.000  #zeros=0  max|P| at them = -
+    -> GENERICALLY the zero set is FINITE (<=2 points): log|P| has finitely many
+       isolated LOGARITHMIC singularities on T^2.  In the three exceptional weight
+       vectors (one weight 0, the other two = 1/2) it is a CIRCLE — and one of those
+       three IS S1's published ready state.  Either way log|P| is in L^1 but is NOT
+       Riemann-integrable whenever max(p10,p01,p11) <= 1/2.
+
+Z3  JENSEN BOUND  m(P) <= (1/2) log(sum_a p_a^2) <= 0,  equality on the right
+    iff one class carries all the weight.  (int_{T^2}|P|^2 = sum p_a^2, characters
+    1,x,y,xy orthonormal.)
+    violations in 2000 random weights: 0 ;  min slack (bound - m) = 1.651e-08
+
+DONE M1_02

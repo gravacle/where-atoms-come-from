@@ -1,0 +1,34 @@
+==============================================================================
+R1_01 — THE IDENTIFICATION, ATTACKED IN THREE CYCLOTOMIC RINGS
+==============================================================================
+
+RING Zi   (Z[i]        4th roots of unity)
+   1248 exact cases  [W_F,W_C over all 4 roots; 6 rational states incl. ASYMMETRIC; k=0..12]
+   CONVENTION A  u = conj(W_F):  max EXACT deviation = 0
+   CONVENTION B  u = W_F      :  max EXACT deviation = 2
+
+RING Zw   (Z[omega]    3rd roots of unity  (order 3: conj != +-1 * elt))
+   702 exact cases  [W_F,W_C over all 3 roots; 6 rational states incl. ASYMMETRIC; k=0..12]
+   CONVENTION A  u = conj(W_F):  max EXACT deviation = 0
+   CONVENTION B  u = W_F      :  max EXACT deviation = 3
+
+RING Z12   (Z[zeta_12]  12th roots of unity)
+   11232 exact cases  [W_F,W_C over all 12 roots; 6 rational states incl. ASYMMETRIC; k=0..12]
+   CONVENTION A  u = conj(W_F):  max EXACT deviation = 0
+   CONVENTION B  u = W_F      :  max EXACT deviation = 4
+
+(4) OPERATOR FORM (float64).  M_dF, M_c built as 5x5 MATRICES from the incidence,
+    then M^k by repeated matrix multiplication -- not by exponentiating a vector.
+    worst |Z_k - P(u^k,v^k)| over 3000 draws, k<=39 = 3.140e-15
+
+(5) SCOPE ATTACK.  Is T1 a theorem about K1, or about ANY pair of diagonal unitaries?
+    Take an ARBITRARY complex 'carrier': n vertices, arbitrary subsets S_F, S_C, and
+    arbitrary unimodular W_F, W_C.  Define M_F, M_C diagonally the same way.
+    worst deviation over 3000 RANDOM complexes (n=2..11, random loop supports) = 3.484e-15
+    -> T1 holds verbatim on every one of them.  THE IDENTIFICATION IS NOT A FACT ABOUT
+       K1.  It is a two-line consequence of `both branch operators are diagonal in the
+       vertex basis'.  K1's ONLY contribution to it is which of the four classes is
+       empty (p00 = 0).  The lane says this; it is recorded here as CONFIRMED and as
+       the reason F1 cannot be evidence for anything carrier-specific.
+
+DONE R1_01

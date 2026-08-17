@@ -1,0 +1,56 @@
+LANE W08 / M3 — REFUTER 2 — LENS: SCOPE — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE.  All commits of this repo carry `Co-Authored-By: Claude Fable 5`.  This refuter was run
+by Claude Opus 5, the same model family as the lane it attacks (LANE_W08_M3_ZEROSET).  SAME-
+LINEAGE ADVERSARY: by the corpus's own sealed correction (feedback_read_sealed_corrections_first),
+same-lineage adversaries share failure modes.  This grade is ADVERSARIALLY-CHECKED BY A SAME-
+LINEAGE LANE, which is the weaker half, and it is layer eight.  Discount accordingly.
+
+PRECISION.  numpy 2.0.2, python 3.9.6, IEEE double UNLESS a line says otherwise.  Every predicate
+that decides an inclusion ("is there a zero", "is the triangle inequality satisfied", "is G
+trivial", "is Z_k exactly zero") is evaluated in EXACT arithmetic — Python ints, Fractions, or
+integer character-exponent vectors — never by a float comparison against a tolerance.  The lane
+under attack self-flagged THREE separate defects of the class "a float stood in for an exact
+zero"; this lane avoids the class by construction rather than by care.
+Every reported grid minimum is an UPPER bound on the true minimum (COR-E discipline) and is never
+used to certify a zero, only to refute one.
+
+CARRIERS.  All three are finite oriented regular CW complexes of dimension <= 2, per S1 sec1,
+with C at each vertex and a U(1) connection on edges.  d1[v,e] = +1 at target, -1 at source;
+d2 = the face's boundary 1-chain.  Betti numbers are computed by EXACT Fraction Gaussian
+elimination on d1 and d2, not asserted.
+
+  K1   (S1 sec1)   V=5 E=6 F=1   e1=(0,1) e2=(1,2) e3=(2,0) e4=(0,3) e5=(3,4) e6=(4,0)
+                   F glued along e1+e2+e3.  FACE_V={0,1,2} CYC_V={0,3,4}.
+                   chi=0 b0=1 b1=1 b2=0.  Classes {10:2, 01:2, 11:1}.  p00 = 0 by incidence.
+
+  K1S  K1 + ONE pendant vertex v5 on the root, e7=(0,5).   V=6 E=7 F=1.
+                   FACE_V={0,1,2} CYC_V={0,3,4}; v5 in NEITHER loop.
+                   chi=0 b0=1 b1=1 b2=0 — IDENTICAL to K1.  Gauge invariants E-(V-1) = 2 — the
+                   same W_F, W_C.  Classes {00:1, 10:2, 01:2, 11:1}.  ALL FOUR OCCUPIED.
+
+  BARB filled triangle (0,1,2) + unfilled triangle (4,5,6), joined by the path 0->3->4.
+                   V=7 E=8 F=1.  FACE_V={0,1,2} CYC_V={4,5,6}; v3 in NEITHER loop and NO vertex
+                   in both.  chi=0 b0=1 b1=1 b2=0.  Gauge invariants 2.
+                   Classes {00:1, 10:3, 01:3}.  p11 = 0 BY INCIDENCE.
+                   BARB is the same configuration as the corpus's own control carrier B1q
+                   (S4:519, class multiset at S4:582), which was already on disk.
+
+CONNECTION.  U_e = exp(i a_e).  W_F = exp(if), W_C = exp(ic).  u = conj(W_F) = e^{-if},
+v = W_C = e^{ic}.  Characters: class 00 -> 1, 10 -> u, 01 -> v, 11 -> uv.
+BRANCHES.  M_dF multiplies s_v by W_F for v in FACE_V; M_c multiplies s_v by W_C for v in CYC_V.
+Z_k = <M_dF^k s, M_c^k s>, <z,w> = conj(z) w (S1 sec3; numpy vdot conjugates its FIRST argument).
+P(x,y) = p00 + p10 x + p01 y + p11 xy.  Identity Z_k = P(u^k, v^k) re-checked on K1S and BARB.
+
+SEEDS.  numpy default_rng, master seed 20260816 (the same master the attacked lane published, so
+that a shared-seed artefact would show as agreement rather than hide as disagreement).
+GRIDS.  Simplex lattices at integer denominators 40, 71, 80, 97, 160, 200 — 71 and 97 are COPRIME
+to the attacked lane's 30 and 60, so a lattice-alignment artefact cannot survive both.  Torus
+grids at 37, 181, 400, 721, 1441 points per circle, all stated at use.
+
+REPRODUCTION OF THE ATTACKED LANE.  All five of its scripts were copied here and re-run.  All
+five .OUT.txt files are BYTE-IDENTICAL to the sealed originals (verified by diff).  The lane's
+arithmetic is not in question; its SCOPE is.
+
+THE ONE VARIABLE, PER COMPARISON.  ISOLATION_LEDGER.txt in this directory.

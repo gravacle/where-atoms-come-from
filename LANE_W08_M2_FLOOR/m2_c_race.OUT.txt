@@ -1,0 +1,99 @@
+== C1  EXACT ASYMPTOTIC RATES,  RS-G (0.4,0.3,0.3) ==
+   H = T^2 (dim 2, generic):   D_H = 1 - INT|Z| = 0.469188699222     lambda = m(...) = -0.767507880358
+        CLOSED-FORM CHECK (Cassaigne-Maillot, Bloch-Wigner):  m = -0.767507880358   |quad - closed form| = 1.815e-35
+   H = circle (dim 1): B_S3RES  11a-20b=0  -> (x,y)=(e^{-2pi i 20 s}, e^{2pi i 11 s})
+        D_H = 0.469182840122     lambda = -0.767014992998
+   H = circle (dim 1): E_W07GEN a-b=0      -> (x,y)=(e^{-2pi i s},    e^{2pi i s})
+        D_H = 0.529471360874     lambda = -1.203972804326
+   H = Z_4 (dim 0): A_S1PUB   |Z_k|^2 for k=1..4 (exact rationals) = ['1/10', '4/25', '1/10', '1']
+        D_H = 0.491886116992     lambda = -0.804718956217   (exact-arithmetic row)
+
+== C1  EXACT ASYMPTOTIC RATES,  RS-P (0.5,0,0.5) ==
+   H = T^2 (dim 2, generic):   D_H = 1 - INT|Z| = 0.363380227639     lambda = m(...) = -0.693147180560
+        CLOSED-FORM CHECK (Cassaigne-Maillot, Bloch-Wigner):  m = -0.693147180560   |quad - closed form| = 0.000e+00
+   H = circle (dim 1): B_S3RES  11a-20b=0  -> (x,y)=(e^{-2pi i 20 s}, e^{2pi i 11 s})
+        D_H = 0.363380227633     lambda = -0.693147180560
+   H = circle (dim 1): E_W07GEN a-b=0      -> (x,y)=(e^{-2pi i s},    e^{2pi i s})
+        D_H = 0.363380227632     lambda = -0.693147180560
+   H = Z_4 (dim 0): A_S1PUB   |Z_k|^2 for k=1..4 (exact rationals) = ['0', '1', '0', '1']
+        D_H = 0.500000000000     lambda = -INFINITY EXACTLY: |Z_k| = 0 on every odd k, so Omega_N = 0 for all
+        N >= 1 — not underflow, an exact zero.  This is COR-D's case, and it is the
+        MAXIMUM of durability (branches exactly orthogonal), not a failure of it.
+
+== C2  THE THEOREM.  No Diophantine input, no equidistribution, no genericity. ==
+   From leg A's exact identity, for ANY j<l and ANY k:
+       1-|Z_k| >= (1/2)(1-|Z_k|^2) >= (1/2) w_j w_l |chi_j^k - chi_l^k|^2 .
+   Put g = chi_j/chi_l = e^{i tau}.  Then SUM_{k=1..K} |g^k-1|^2 = 2K - 2 Re(SUM_{k=1..K} g^k),
+   and |SUM_{k=1..K} g^k| <= 1/|sin(tau/2)| for every K.  Hence for every K
+
+       SUM_{k<=K} (1 - |Z_k|)  >=  w_j w_l * ( K - 1/|sin(tau/2)| ).                        (*)
+
+   The right-hand side is LINEAR IN K with a positive slope whenever some pair of characters
+   with nonzero weight differs, i.e. whenever W-02's G != {1}, i.e. WHENEVER FORMATION OCCURS.
+   There is no connection, generic or not, on which the sum converges.  The Diophantine
+   structure of the near-returns cannot enter: (*) never mentions it.
+   The three pairs on K1 (p00 = 0, so exactly three characters):
+     (0,F): g = W_C        (0,C): g = conj(W_F)      (F,C): g = rho = conj(W_F)/W_C
+
+   connection                               ready  best pair   w_j w_l  K0=1/|sin(tau/2)|  bound slope   measured SUM/K (K=1e7)
+   A_S1PUB                                  RS-G   (0,F)       0.1200              1.414     0.120000                 0.491886
+   A_S1PUB                                  RS-P   (0,C)       0.2500              1.000     0.250000                 0.500000
+   B_S3RES                                  RS-G   (0,F)       0.1200              1.913     0.120000                 0.469183
+   B_S3RES                                  RS-P   (0,C)       0.2500              1.188     0.250000                 0.363380
+   C_BADAPP                                 RS-G   (0,F)       0.1200              1.015     0.120000                 0.469189
+   C_BADAPP                                 RS-P   (0,C)       0.2500              1.428     0.250000                 0.363380
+   D_RAND1                                  RS-G   (0,F)       0.1200              1.708     0.120000                 0.469189
+   D_RAND1                                  RS-P   (0,C)       0.2500              2.387     0.250000                 0.363380
+   E_W07GEN                                 RS-G   (0,F)       0.1200              1.073     0.120000                 0.529471
+   E_W07GEN                                 RS-P   (0,C)       0.2500              1.073     0.250000                 0.363380
+   F_VWA                                    RS-G   (0,F)       0.1200              1.392     0.120000                 0.469215
+   F_VWA                                    RS-P   (0,C)       0.2500              1.040     0.250000                 0.363380
+   -> every measured slope exceeds the proved slope; the bound is a floor, not a fit.
+
+== C3  THE DICHOTOMY, SWEPT — AND A SELF-CORRECTION THAT STRENGTHENS THE RESULT ==
+   SELF-CORRECTION, RECORDED NOT SILENTLY FIXED.  The first run of this block concluded:
+   "D_H is continuous and -> 0 at the trivial connection, so the INFIMUM of the slope over
+   non-trivial connections is 0."  THAT IS FALSE, and my OWN bound (*) refutes it: (*) gives
+   liminf (1/K) SUM >= w_j w_l for EVERY non-trivial connection, a constant that does not
+   depend on the connection at all.  The truth is the opposite of what I wrote and it is a
+   STRONGER statement: the durability rate does not decay to zero as the connection approaches
+   triviality — it JUMPS.  What does degrade continuously is the ONSET SCALE K0 = 1/|sin(tau/2)|,
+   the K after which the linear growth is visible.  Both halves are measured below.
+   Grid 121x121 over [0,1)^2 at K = 200000, ready state RS-G (so every grid denominator
+   divides 120 and K = 200000 is far beyond every K0 on the grid).
+   grid points with mean(1-|Z_k|) < 1e-3 : 4  (all of them exactly 0)
+        alpha=0.0000 beta=0.0000  mean = 0.000e+00   TRIVIAL CONNECTION (W_F=W_C=1): G={1}, no formation (COR-B)
+        alpha=0.0000 beta=1.0000  mean = 0.000e+00   TRIVIAL CONNECTION (W_F=W_C=1): G={1}, no formation (COR-B)
+        alpha=1.0000 beta=0.0000  mean = 0.000e+00   TRIVIAL CONNECTION (W_F=W_C=1): G={1}, no formation (COR-B)
+        alpha=1.0000 beta=1.0000  mean = 0.000e+00   TRIVIAL CONNECTION (W_F=W_C=1): G={1}, no formation (COR-B)
+   MINIMUM over all 14641-4 NON-TRIVIAL grid points: 0.261150 at (alpha,beta) = (0.0000, 0.3333)
+   proved uniform lower bound from (*) for RS-G: 0.120000
+   -> measured minimum 0.261150 >= proved bound 0.12: THE GAP IS REAL AND UNIFORM.
+      Formation/durability is not a matter of degree in the connection.  It is all-or-nothing
+      with a uniform gap in the RATE; only the ONSET K0 degrades as the connection -> trivial.
+   near-trivial connection             K0 = 1/|sin(tau/2)|   (1/K)SUM at K=1e4     at K=1e7
+   alpha=10^-2, beta=0                                31.8            0.267470     0.267470
+   alpha=10^-3, beta=0                               318.3            0.267470     0.267470
+   alpha=10^-4, beta=0                              3183.1            0.267470     0.267470
+   alpha=10^-5, beta=0                             31831.0            0.013718     0.267470
+   -> exactly as (*) predicts: below K0 the rate is small, above K0 it is back above 0.12.
+
+== C4  THE SEARCH FOR A CONVERGENT CONNECTION — result, and why it had to be this result ==
+   Convergence of SUM (1-|Z_k|) requires 1-|Z_k| -> 0, hence (leg A4) chi_j^k/chi_l^k -> 1
+   for every pair with weight, hence g^k -> 1 for g = chi_j/chi_l in U(1).  But for g in U(1),
+   g^k -> 1 forces g = 1: if g = e^{2pi i t} with t irrational the sequence is equidistributed,
+   and if t = a/q in lowest terms with q > 1 the sequence is periodic hitting e^{2pi i /q}
+   infinitely often.  So the ONLY connections with a convergent sum are those with g = 1 for
+   every weighted pair -- exactly W-02's G = {1}, exactly COR-B's non-forming families.
+   NO CONNECTION EXHIBITED, AND NONE EXISTS.  This is the second-most-valuable outcome the lane
+   asked for, and it is a proof rather than a failed search.
+   Verified against COR-B's four non-forming families on K1 (RS-G unless the family fixes p):
+   W_F=W_C=1 (trivial)                  SUM_{k<=2e5} (1-|Z_k|) = 0.000000e+00
+   supp p = {v0} only  (|S|=1)          SUM_{k<=2e5} (1-|Z_k|) = 0.000000e+00
+   supp p = {v1,v2} only (|S|=1)        SUM_{k<=2e5} (1-|Z_k|) = 0.000000e+00
+   supp p = {v3,v4} only (|S|=1)        SUM_{k<=2e5} (1-|Z_k|) = 0.000000e+00
+   supp {v0,v3,v4}, W_F=1 -> G=<u>={1}  SUM_{k<=2e5} (1-|Z_k|) = 0.000000e+00
+   [the mislabel: same supp, W_C=1, W_F!=1 -- FORMS] SUM_{k<=2e5} (1-|Z_k|) = 7.267605e+04
+   -> zero, exactly, on every non-forming family: the sum CONVERGES there and only there,
+      and there it converges because it is identically zero.  Durability and formation are
+      the same condition; there is no third regime in between.

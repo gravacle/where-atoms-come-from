@@ -1,0 +1,52 @@
+==============================================================================
+M1_06 — EQUIDISTRIBUTION IS NOT SUFFICIENT.  A LIOUVILLE COUNTEREXAMPLE.
+==============================================================================
+
+weights (1/3,1/3,1/3):  m(P) = -0.775546341449
+
+VALIDATION of the local expansion (must agree with direct evaluation):
+    offset  1.0e-04 :  direct |P| = 3.626940516176e-04   expansion = 3.627598728468e-04   rel dev 1.81e-04
+    offset  1.0e-06 :  direct |P| = 3.627592148824e-06   expansion = 3.627598728468e-06   rel dev 1.81e-06
+    offset  1.0e-08 :  direct |P| = 3.627598647484e-08   expansion = 3.627598728468e-08   rel dev 2.23e-08
+
+alpha = 1/3 + 1e-1 + 1e-301   (plus a tail below 10^-(10^301), immaterial to k<=10)
+beta  = 2/3 + 1e-1 + 2e-301
+
+   k   frac(k alpha)-1/3      frac(k beta)-2/3      |Z_k|            log|Z_k|
+   1    +1.0000000000e-01   +1.0000000000e-01    2.06011e-01        -1.5798
+   2    -4.6666666667e-01   -1.3333333333e-01    3.91857e-01        -0.9369
+   3    -3.3333333333e-02   -3.6666666667e-01    6.46695e-01        -0.4359
+   4    +4.0000000000e-01   +4.0000000000e-01    6.34038e-01        -0.4556
+   5    -1.6666666667e-01   +1.6666666667e-01    6.66667e-01        -0.4055
+   6    +2.6666666667e-01   -6.6666666667e-02    4.42710e-01        -0.8148
+   7    -3.0000000000e-01   -3.0000000000e-01    5.39345e-01        -0.6174
+   8    +1.3333333333e-01   +4.6666666667e-01    3.91857e-01        -0.9369
+   9    -4.3333333333e-01   +2.3333333333e-01    9.56618e-01        -0.0444
+  10   +1.0000000000e-300  +2.0000000000e-300   3.62760e-300      -689.4870  <- local expansion (offset 3.0e-300)
+
+  (1/10) sum_{k<=10} log|Z_k| = -69.571408        m(P) = -0.775546
+  DIP BELOW m(P) = -68.7959    [predicted -(a_2-a_1) log 10 / k_1 = -69.0776]
+
+  This is one dip.  The same construction with a_{j+1} - a_j = C_j 10^{a_j} puts a dip
+  of depth ~ C_j log 10 at N = 10^{a_j} for every j, so with C_j -> infinity
+      liminf_N (1/N) sum_{k<=N} log|Z_k| = -infinity   while   m(P) = -0.7755463.
+  The pair (u,v) = (e^{2 pi i alpha}, e^{2 pi i beta}) has NO multiplicative relation,
+  so its orbit IS dense and equidistributed in T^2.  EQUIDISTRIBUTION IS NOT ENOUGH.
+
+------------------------------------------------------------------------------
+CONTRAST: how close does a DIOPHANTINE orbit get to the zeros?  alpha = -2^(1/3),
+beta = 4^(1/3) (Schmidt), weights (1/3,1/3,1/3), k <= 10^7, exact int64 phase reduction.
+        N        min_{k<=N} |Z_k|     min dist to a zero    sqrt(N)*dist
+         1000       1.746084e-02       7.043687e-03       0.2227
+        10000       5.189768e-03       2.138595e-03       0.2139
+       100000       2.352803e-03       1.022441e-03       0.3233
+      1000000       8.343923e-04       3.515176e-04       0.3515
+     10000000       2.110997e-04       9.711970e-05       0.3071
+   The closest approach shrinks like N^{-1/2} — the spacing of N points in T^2 — so
+   its contribution to the average is O(log N / N) and dies.  The Liouville pair above
+   makes that same quantity e^{-C N} instead, and the contribution is O(1).
+   THE HYPOTHESIS THAT DECIDES IT is a lower bound on dist((u^k,v^k), Z(P)), i.e. an
+   INHOMOGENEOUS DIOPHANTINE CONDITION relative to the two zeros of P — not merely
+   the homogeneous one that gives equidistribution.
+
+DONE M1_06

@@ -1,0 +1,18 @@
+== F1  THE DURABILITY RATE ACROSS THE WHOLE CONNECTION AXIS (RS-G) ==
+   D_H = asymptotic slope of SUM(1-|Z_k|)/K ;  lambda_H = asymptotic (1/N)log|Omega_N|.
+   MIN slope D_H = 0.261149  at ('finite', 3, 0, 1)      (proved lower bound, lane C2: 0.120000)
+   MAX slope D_H = 0.600000  at ('finite', 3, 1, 2)
+   rank-2 (generic) D_T2 = 0.469189;  the lane's eight sampled rows spanned 0.4692-0.5295 = 13%
+   TRUE SPREAD OF THE CONNECTION AXIS: 2.30x  (72% of the generic rate), not 13%.
+   MIN lambda_H = -1.535057 at ('finite', 3, 1, 2)
+   MAX lambda_H = -0.331417 at ('finite', 3, 0, 1)
+   TRUE SPREAD OF lambda ACROSS CONNECTIONS: 4.63x  (157% of |lambda_generic|).
+
+== F2  THE SAME NUMBERS RESTRICTED TO EACH SIDE OF THE ATTAINED/APPROACHED CUT ==
+   ATTAINED (finite H)      D_H in [0.261149, 0.600000]   lambda in [-1.535057, -0.331417]
+   APPROACHED (rank-1 H)    D_H in [0.267470, 0.529471]   lambda in [-1.203972, -0.356675]
+   APPROACHED (rank-2 H)    D_H = 0.469189                lambda = -0.767508
+   -> THE TWO SIDES OVERLAP ALMOST COMPLETELY.  Neither D_H nor lambda separates attained
+      from approached: the attained interval strictly CONTAINS the approached one except
+      at its two ends.  A partition that does not separate the observable is not a
+      partition of the observable's consequences.

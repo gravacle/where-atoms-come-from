@@ -1,0 +1,70 @@
+== G1/G2  THE RESOLUTION: recurrence DENSITY as a function of TOLERANCE ==
+  D_k = 2 amp |sin(pi k theta)|.  Two regimes, both computed on the same code path:
+  amp = 0.271776443 (W-07 leg E's), theta_generic = 1/phi^2 = 0.381966011250, theta_pub = 1/4
+
+     tolerance |   ord=4: density      count/K |  irrational: density      count/K
+         1e-01 |         0.250000     0.250000 |            1.178e-01    1.178e-01
+         1e-02 |         0.250000     0.250000 |            1.171e-02    1.171e-02
+         1e-03 |         0.250000     0.250000 |            1.171e-03    1.171e-03
+         1e-04 |         0.250000     0.250000 |            1.171e-04    1.170e-04
+         1e-06 |         0.250000     0.250000 |            1.171e-06    1.000e-06
+         1e-09 |         0.250000     0.250000 |            1.171e-09    0.000e+00
+
+  ATTAINED (ord finite = n): density of {D_k < tol} is 1/n for EVERY tol > 0, including 0.
+  APPROACHED (irrational):   density is 2 arcsin(tol/2amp)/pi ~ tol/(pi amp), -> 0 as tol -> 0.
+
+  RESOLUTION.  The distinction is REAL but W-07 states it at the wrong place.  It is not
+  'zero versus not-zero' (unobservable at any finite precision, and unobservable in W-07's
+  own float64 output, which prints 2.565e-16 / 6.729e-19 / 1.349e-16 for the same exact 0).
+  It is the SCALING OF RECURRENCE DENSITY WITH TOLERANCE: constant 1/n versus O(tol).
+  At any fixed tolerance tol and any K < ~1/tol the two are indistinguishable — which is
+  exactly W-07's regime (tol = 1e-9, K = 4000) and why its table splits 1000 / 0 so cleanly.
+  So: A DISTINCTION WITH A DIFFERENCE, but the difference is Diophantine, not categorical,
+  and it is measurable only by varying the tolerance — which W-07 never does.
+
+== G3  EXACT ARITHMETIC ON THE PRECISION-SENSITIVE CLAIMS ==
+  (a) S1 published: rho = -i, rho^k = 1 iff 4 | k.  Exact over Z[i], no floats:
+      k : ['1->(0, -1)', '2->(-1, 0)', '3->(0, 1)', '4->(1, 0)', '5->(0, -1)', '6->(-1, 0)', '7->(0, 1)', '8->(1, 0)']
+      exact zeros among k<=4000 : 1000
+      W-07 leg B reported min 2.565e-16 and leg E reported 6.729e-19 for this exact 0.
+      Both are float residue; neither is a measurement.  W-07 sec3's table publishes
+      6.729e-19 as 'min over k<=4000' where the exact value is 0.  Its own C2 says 0.
+
+  (b) The INFINITE-ORDER counterexample of m4_c, verified in CLOSED FORM (no float):
+      theta = 1/4 + lam with lam = (sqrt2 - 1)*1e-13 irrational, so ord(rho) = infinity.
+      For k = 4m <= 4000:  ||k theta|| = ||m + 4m lam|| = 4m lam   (since 4000 lam < 1/2),
+      so D_k = 2 amp sin(pi 4m lam) <= 2 amp pi 4000 lam.
+        upper bound on D at every multiple of 4 : 2.829280e-10  <  1e-9   -> all 1000 qualify
+      For k not divisible by 4:  ||k theta|| >= 1/4 - 4000 lam, so
+        D_k >= 2 amp sin(pi(1/4 - 4000 lam)) = 0.384350  -> none qualify
+      EXACTLY 1000 of 4000, with ord(rho) = INFINITY.  This is a closed-form fact, not a
+      float artefact: the only inputs are 4000*lam < 1/2 and sin monotone on [0, pi/2].
+
+  (c) W-07 sec7's caveat number 1.4e-12 is itself forced, not measured:
+      for irrational theta, min_{k<=K}(1-|Z_k|) ~ C/K^2 because 1-|Z| is quadratic in the
+      phase and min_k ||k theta|| ~ c/K.  Check the K-scaling on W-07's own generic case:
+        K =    10000   1 - max|Z_k| = 2.157e-08   (K^2 * that) = 2.1566
+        K =   100000   1 - max|Z_k| = 1.753e-10   (K^2 * that) = 1.7534
+        K =  1000000   1 - max|Z_k| = 1.426e-12   (K^2 * that) = 1.4264
+      The product is ~constant: the '1.4e-12' is 2.5/K^2 at K=1e6, i.e. a restatement of K.
+
+== G4  THE DEGENERACY W-07 MEASURED AND DID NOT NAME ==
+  On S1's PUBLISHED connection AND S1's PUBLISHED ready state p = (1/2,0,0,1/4,1/4):
+    P0 = 1/2 (v0), PF = 0 (v1,v2 carry no weight), PC = 1/2 (v3,v4)
+    Z_k = W_C^k [ P0 conj(W_F)^k + PC ] = (-i)^k [ (1/2)(-1)^k + 1/2 ]
+      k=1:  |Z_k| = 0  (exact)
+      k=2:  |Z_k| = 1  (exact)
+      k=3:  |Z_k| = 0  (exact)
+      k=4:  |Z_k| = 1  (exact)
+      k=5:  |Z_k| = 0  (exact)
+      k=6:  |Z_k| = 1  (exact)
+      k=7:  |Z_k| = 0  (exact)
+      k=8:  |Z_k| = 1  (exact)
+    |Z_k| = 1 for k EVEN and Z_k = 0 EXACTLY for k ODD.
+    So on the published point the branch comparison does not 'recur': it alternates with
+    PERIOD 2 between total overlap and total annihilation, and Omega_N = 0 for all N >= 1
+    (S3 audit COR-D, already of record).  The operative group element there is W_F, of
+    ORDER 2 — not rho, of order 4.  W-07 sec4 reports 500000 of 1e6 (= K/2, period 2) in
+    the same table as sec3's 1000 of 4000 (= K/4, period 4) and names ONE variable for both.
+    Two different group elements govern the two rows.  The name is wrong in sec4 as well,
+    and in a second way: at the published state there is no record for recurrence to undo.

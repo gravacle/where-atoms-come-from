@@ -1,0 +1,52 @@
+== F1  THE SWEEP, RE-RUN WITH EXACT RANK (W-07 used float rank; both agree, asserted above) ==
+  partitions swept: 52   invariant-count distribution: {2: 1, 3: 10, 4: 25, 5: 15, 6: 1}
+  W-07 reported                                {2: 1, 3: 10, 4: 25, 5: 15, 6: 1}   -> MATCHES
+  winners at invariant count 2: [[[0], [1], [2], [3], [4]]]
+  (rank, invariants) achievable per block-count k: {1: {(0, 6)}, 2: {(1, 5)}, 3: {(2, 4)}, 4: {(3, 3)}, 5: {(4, 2)}}
+
+== F2  IS W-07's ONE-LINE ARGUMENT RIGHT?  AND IS IT MORE THAN IT CLAIMS? ==
+  W-07: 'a k-block subgroup acts through <= k-1 parameters; rank <= k-1; invariants >= 7-k;
+        reaching 2 needs rank 4 needs k = 5.'   The bound is CORRECT.  It is also LOOSE:
+  on a CONNECTED complex the rank is exactly k - (#components of the quotient) = k - 1, so
+  invariants = E - k + 1 = 7 - k EXACTLY, for every one of the 52.  Checked:
+    invariants = 7 - k holds for all 52 partitions: True
+    multiplicities by k = Stirling S(5,k) = {1: 1, 2: 15, 3: 25, 4: 10, 5: 1}  (1,15,25,10,1)
+  So the ENTIRE distribution {6,5,4,3,2} with those multiplicities is forced by ONE fact:
+  K1 is connected.  W-07 proved half of a sharper theorem than it noticed.
+
+== F3  IS THE SWEEP'S OUTCOME CONTINGENT ON ITS INPUT?  MOVE THE COMPLEX, HOLD THE SWEEP. ==
+  A control is void when it could not have come out otherwise ON ANY INPUT.  Feed the SAME
+  procedure a different carrier: the 5-cycle C5 (V=5, E=5, no faces).
+  C5 distribution: {1: 1, 2: 10, 3: 25, 4: 15, 5: 1}
+  partitions of C5 giving invariant count 2: 10  -> e.g. [[[0], [1], [2], [3, 4]], [[0], [1], [2, 3], [4]], [[0], [1], [2, 4], [3]]]
+  On C5 the count 2 is achieved by TEN 4-block partitions and NOT by the discrete one
+  (which gives 1).  The sweep therefore DISCRIMINATES: run on a different carrier it
+  returns a different winner and a different multiplicity.  Its K1 outcome is a fact
+  ABOUT K1, not an artefact of the sweep's design.
+
+== F4  THE CATEGORY QUESTION, SETTLED ==
+  W-06 leg (b) asserts: 'among the 52 partition subgroups of U(1)^5, EXACTLY ONE yields
+  invariant count 2.'  That is a UNIVERSALLY QUANTIFIED STATEMENT OVER A FINITE DOMAIN,
+  offered as a premise.  Exhaustive enumeration over a finite domain IS a proof.  It is a
+  PROPOSITION — true, and now proved twice (by enumeration, and by W-07's counting bound).
+  It is NOT a control: it has no treatment arm, no failure mode it was designed to detect,
+  and nothing about it is falsified by being provable.
+
+  THE PROGRAM'S RULE, AS THE PROGRAM WROTE IT (REGISTER:503-509, IMP-1):
+    'On a control the norm is sound.  On a theorem it is incoherent — a proved statement
+     cannot fail; that is what "theorem" means.'
+  W-07 SUPPLIED THE PROOF AND THEN USED THE EXISTENCE OF THE PROOF TO VOID THE STATEMENT.
+  That is IMP-1 exactly, one floor up — the defect W-06 convicted the chain of, committed
+  by the lane auditing W-06, in the section auditing W-06's treatment of that very defect.
+
+== F5  THE REDUCTIO: W-07's STANDARD APPLIED TO W-07 ==
+  Every one of these 'could not have come out otherwise':
+    leg A   ord(-1)=2, ord(-i)=4, <W_F,W_C>=Z_4          — arithmetic, forced
+    leg C2  exactly K/4 exact zeros at every K           — 4 | k, forced
+    leg C3  the {2:1,3:10,4:25,5:15,6:1} distribution    — F2 above, forced by connectivity
+    leg D   sup|Z_k| = 1 attained on the published pair  — |Z_k| is periodic with period 2
+  If 'forced' voided results, W-07's sec3 and sec4 would be void along with W-06 sec(b).
+  They are not void, and neither is the sweep.  The disqualifier applies to CONTROLS, and
+  W-07 has exactly one control — the five generic connections of leg E — whose null result
+  IS forced (m4_c: expected count 6.4e-06 at K=4000, threshold 1e-9).  W-07 applied the rule
+  to the one object in view that is a theorem, and withheld it from its own control.

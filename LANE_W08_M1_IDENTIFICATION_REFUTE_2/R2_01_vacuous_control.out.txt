@@ -1,0 +1,35 @@
+==============================================================================
+R2_01 — THE (11,20) 'DIFFERENT POINT' CONTROL IS THE SAME POINT
+==============================================================================
+
+  1/pi as float64                    = 0.31830988618379069
+  the literal used for the 'other' pt = 0.31830988618379003
+  difference                          = 6.661e-16
+  S = 2^35 = 34359738368 ;  difference * S = 2.2888e-05   (needs > 0.5 to change round())
+
+  A0 = round(1/pi * S)                = 10937044409
+  A2 = round(0.31830988618379 * S)    = 10937044409
+  A2 - A0                             = 0
+  ==> IDENTICAL.  THE CONTROL IS THE ORIGINAL ORBIT RE-RUN.  IT COULD NOT HAVE FAILED.
+  A0 (case C)               (1/N)sum log|Z_k| at N=1e6 = -0.767016017537
+  A2 ('different point')    (1/N)sum log|Z_k| at N=1e6 = -0.767016017537
+
+------------------------------------------------------------------------------
+PART 2 — THE CONTROL THAT WAS INTENDED: GENUINELY DIFFERENT POINTS ON THE SAME CIRCLE.
+  H = {(z^20, z^-11)}.  Parametrise by alpha = -t, beta = 11 t / 20 for t in (0,1),
+  i.e. A_num = (-20*T) % D, B_num = (11*T) % D with T = round(t*S) and t VARIED.
+  HELD FIXED: relation (11,20), weights, D, K, code path.  MOVES: t only.
+  Exact subtorus value (Jensen, computed in part 3) is the prediction.
+
+     t                     N=1e5           N=1e6           min|Z_k|
+   0.318309886183791     -0.767029485    -0.767016018   2.301e-02
+   0.123456789012345     -0.761682025    -0.761681765   8.089e-02
+   0.388888888888889     -0.766422720    -0.766399162   4.283e-02
+   0.414213562373095     -0.767006847    -0.767016768   2.301e-02
+   0.718281828459045     -0.767035987    -0.767015667   2.301e-02
+   0.809016994374947     -0.767015168    -0.767015508   2.301e-02
+
+  EXACT subtorus value m(p10 z^31 + p11 z^20 + p01) by Jensen = -0.767014992998
+  (this is the prediction every row of Part 2 must approach)
+
+DONE R2_01

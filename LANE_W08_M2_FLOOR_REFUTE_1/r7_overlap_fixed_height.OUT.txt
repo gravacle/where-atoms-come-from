@@ -1,0 +1,21 @@
+== R7.1  OVERLAP TEST WITH THE RELATION HEIGHT HELD FIXED (beta = alpha, height 1) ==
+   dim H = 1, relation 1a-1b=0 (height 1): n=40  mean -1.932 sd 0.353  min -2.503  max -0.402   theory -2.0
+   dim H = 2                             : n=40  mean -0.986 sd 0.135  min -1.280  max -0.702   theory -1.0
+   OVERLAP?  max(dim1) = -0.402  vs  min(dim2) = -1.280  ->  CLUSTERS OVERLAP
+   dim1 rows shallower than -1.379 (leg F1's shallowest d_eff=1 row): 2/40
+   dim2 rows deeper   than -1.379                                   : 0/40
+   -> the LAW survives in the mean (means within ~0.03 of theory, both classes); the
+      EVIDENCE M2-4 rests on -- 'the two clusters do not overlap' -- does not survive
+      resampling.  A 5-point fit of a running minimum is not a d_eff classifier.
+
+== R7.2  WHAT THE 'H = T^2' ROWS ARE ==
+   leg B's D_RAND1 alpha = 0.1375961892906249
+   as an EXACT rational: 1239356293633717 / 9007199254740992   (den = 2^53)
+   so alpha is RATIONAL, the orbit is periodic with period dividing 9007199254740992, and H is a
+   FINITE cyclic group of order ~9.007e+15 -- dim H = 0, not 2.  The period is 9.0e15 >> 1e7,
+   so NO MEASURED NUMBER IN THE LANE CHANGES.  What changes is the status of B0's line
+   'no relation up to height 60 -> H = T^2': that is a statement about the WINDOW k<=1e7,
+   not about the object, and the lane prints it as a fact about the object.  The honest
+   form is: no relation of height <= H0 is visible below k ~ H0, and d_eff must be read
+   relative to the window.  (This is why leg F3's rational pair, height 3e6 < 1e7, DID
+   show up as an exact return and broke the table -- same defect, different scale.)

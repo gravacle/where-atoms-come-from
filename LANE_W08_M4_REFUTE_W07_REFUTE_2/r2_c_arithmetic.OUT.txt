@@ -1,0 +1,80 @@
+== C1  'BY WEYL EQUIDISTRIBUTION THE EXPECTED COUNT IS 2*K*eps' — WRONG THEOREM ==
+  window eps = 5.8561e-10,  K = 4000,  K*eps = 2.3424e-06
+  Weyl's theorem says #{k<=K : ||k theta|| < eps}/K -> 2 eps as K -> infinity at FIXED eps.
+  Effective forms (Erdos-Turan) need K eps >> 1 to say anything about the count; here
+  K eps = 2.342e-06 << 1, so equidistribution has NO content at this window and this K.
+  It is also the wrong KIND of statement: for a FIXED irrational theta the count is not a
+  random variable and has no 'expected' value.  Two correct arguments, both computed here:
+
+  (a) FUBINI over Lebesgue-random theta (this is what M4's number actually is):
+      E[#{k<=K : ||k theta||<eps}] = sum_k P(||k theta||<eps) = 2 K eps  (exact, no Weyl),
+      = 4.6849e-06;  Markov: P(count >= 1) <= 4.6849e-06.
+      empirical over 200000 Lebesgue draws: 0 hits (bound predicts <= 0.94).
+
+  (b) DETERMINISTIC for W-07's actual rows, which were NOT random.  Two of W-07's five
+      generic connections are named algebraic irrationals (sqrt2/sqrt3 at leg E, phi at
+      leg B).  For a quadratic irrational the partial quotients are bounded, so
+      ||k theta|| >= c/k for an explicit c > 0 and min_{k<=K}||k theta|| >= c/K.
+      sqrt2+sqrt3 (W-07 leg E's rho, corrected): min_(k<=4000)||k theta|| = 7.3981e-06 at k=3480;  K*min = 0.0296
+      sqrt2-sqrt3 (W-07 leg E's rho as coded) : min_(k<=4000)||k theta|| = 9.1758e-05 at k=1979;  K*min = 0.3670
+      1/phi^2     (W-07 leg B / m4_g generic) : min_(k<=4000)||k theta|| = 1.7307e-04 at k=2584;  K*min = 0.6923
+      K*min is O(1) in every row -- the Liouville/CF bound, deterministic.  W-07's control
+      could not have failed, and for these rows it PROVABLY could not.  M4-6's CONCLUSION
+      is right and its stated reason is not the one that applies.
+
+== C2  m4_c's CONSTRUCTOR CANNOT BUILD A FINITE-ORDER rho AT ALL ==
+  Every angle m4_c stores is a float64, i.e. a dyadic rational a = m/2^e.  exp(i a) is a
+  root of unity iff a is a rational multiple of 2 pi, i.e. iff pi is rational.  So for every
+  nonzero float angle, ord(exp(i a)) = INFINITY.  Checking the realised psi of the row
+  labelled 'ord(rho) = 4  [S1 PUBLISHED]' against the rationals with denominator <= 10^6:
+    exact value of the realised psi (60 digits) = 0.249999999999999965108251472206
+    psi - 1/4 = -3.4892e-17   -- NOT zero; the float pipeline lands 3.5e-17 short
+    (float64 evaluation of the same expression PRINTS 0.25, which is why the row reads as
+     exact; the exactness is an artefact of the print, not of the object).
+    ord(rho) as realised = infinite in EVERY row of C1, including all four rational rows.
+    The decisive test therefore never instantiates the side of the dichotomy it names, and
+    separates its rows by exactly the quantity it concludes with -- rational-approximation
+    quality.  The conclusion is not thereby wrong (leg A's INTENDED column reproduces every
+    count), but 'THE DECISIVE TEST' is decided in exact arithmetic that m4_c does not run;
+    only the e-13 row has a closed-form backstop (m4_g G3b).  The four rational rows have
+    none, and m4_g G3(a) supplies exact arithmetic only for rho = -i.
+
+== C3  W-07's OWN ORDER DETECTOR, ON M4's COUNTEREXAMPLES.  (THIS GOES M4's WAY.) ==
+  W-07 leg E line:  ordr = next((n for n in range(1,10001) if abs(rho**n - 1) < 1e-12), None)
+    theta = 1/4 + (sqrt2-1)e-13:  ORDER reported = None   (true order: INFINITE)
+    theta = 1/4 + (sqrt2-1)e-16:  ORDER reported = 4   (true order: INFINITE)
+    theta = 1/4 + (sqrt2-1)e-15:  ORDER reported = 4   (true order: INFINITE)
+  W-07's instrument reports ORDER = 4 for irrational ratios.  Its 'ord(rho)' column is a
+  1e-12-thresholded Diophantine statistic wearing a group-theoretic name.  That is M4-1's
+  thesis, demonstrated on W-07's own code rather than on a new connection, and it is a
+  BETTER argument than the one M4 gave.  IT SURVIVES THIS LANE.
+
+== C4  WHICH GROUP ELEMENT GOVERNS A_uv — M4-2 RE-DERIVED FROM SCRATCH ==
+  BRUTE FORCE: apply the branch operators to the state, then measure.  No formula assumed.
+  connection                       k                   A[M_dF^k s]/A[s]                 W_F^(dF k)   match
+  S1 published                     1    -1.000000000000-0.000000000000j -1.000000000000-0.000000000000j    True
+  S1 published                     3    -1.000000000000-0.000000000000j -1.000000000000-0.000000000000j    True
+  generic sqrt2/sqrt3              1    -0.858216185669-0.513288397157j -0.858216185669-0.513288397157j    True
+  generic sqrt2/sqrt3              3     0.046223450489-0.998931125066j 0.046223450489-0.998931125066j    True
+
+  connection                        rho_TRUE = W_F^dF W_C^-dC    rho as W-07 leg E codes it
+  S1 published                                   -0.250000000                  -0.250000000
+  generic sqrt2/sqrt3                            -0.146264370                  -0.317837245
+  random seed 1                                  -0.290252282                  -0.077362414
+  M4-2 CONFIRMED independently: leg E's element is rho_true * W_F^2, equal only when W_F^2=1.
+  The decisive test's `profile` computes D from W_F, W_C directly, NOT from rho, so m4_c's
+  D column is immune to the slip; only its 'arg(rho)/2pi' label depends on it.
+
+== C5  WHERE THE COUNTEREXAMPLE LIVES — THE STRUCTURE OF THE EFFECT SET ==
+  E(K,eps) = {theta : exists k<=K with ||k theta|| < eps} = union over k<=K, |j|<=k of
+  the interval (j/k - eps/k, j/k + eps/k).  It is a union of intervals CENTRED AT RATIONALS
+  OF DENOMINATOR <= K, and nothing else.
+    |E| <= 2 K eps = 4.6849e-06   (Lebesgue measure, K=4000, eps=5.856e-10)
+    M4's counterexample theta = 1/4 + 4.1421e-14 sits at distance 4.142e-14 from 1/4,
+    i.e. inside the interval of half-width eps/4 = 1.464e-10 around the order-4 rational.
+    Every irrational counterexample to 'finite order' at fixed (K,tol) is, necessarily, a
+    point within eps/q of a rational of denominator q <= K.  So the corrected name is not
+    a rival to 'order' but its tolerance-aware closure: PROXIMITY TO A LOW-ORDER RATIONAL,
+    of which finite order is the eps -> 0 limit.  M4-1's verdict word -- W-07's name is
+    'WRONG' -- is stronger than what the mathematics supports; 'INCOMPLETE: needs the
+    quantifiers ord <= K and the tolerance eps' is what the decisive test establishes.

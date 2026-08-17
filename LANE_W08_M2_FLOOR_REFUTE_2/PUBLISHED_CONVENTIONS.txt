@@ -1,0 +1,36 @@
+LANE W-08 / M2 — REFUTER 2 (LENS: CONSEQUENCE) — PUBLISHED CONVENTIONS
+Everything needed to re-run this refutation from scratch is on this page.
+
+LINEAGE.  Opus 5, as W-07 and the M2 build were.  SAME LINEAGE AS THE LANE I ATTACK.  Discount
+this page by exactly the factor a build finding would be discounted (program rule; and
+feedback_read_sealed_corrections_first: same-lineage adversaries share failure modes).
+
+READ BEFORE COMPUTING (done, in this order): LANE_W07_RECURRENCE_ISOLATION/PUBLISHED_CONVENTIONS.txt ;
+S1_CARRIER_K1_V001.md in full ; S3 audit COR-A..COR-L (:785-800) ; S2 audit COR-A..COR-H (:600-650) ;
+REGISTER_V001.md W-01 row, ERRATUM AGAINST W-02, W-07 row ; then the M2 lane's own
+PUBLISHED_CONVENTIONS.txt, ISOLATION_LEDGER.txt and all six scripts.
+
+WHAT WAS RERUN BEFORE ANYTHING WAS CLAIMED.
+  shasum -a 256 -c SEALS.sha256 in LANE_W08_M2_FLOOR: 14/14 OK.
+  python3 m2_e_schedule.py  -> byte-identical to m2_e_schedule.OUT.txt (diff empty).
+  python3 m2_d_attained.py  -> byte-identical to m2_d_attained.OUT.txt (diff empty).
+  Copies of both reruns are in this directory as RERUN_*.txt.
+
+CARRIER, BRANCHES, READY STATES: exactly as the M2 lane publishes them.  K1 (S1 sec1),
+FACE_V={0,1,2}, CYC_V={0,3,4}, p00 = 0 by incidence, Z_k = <M_dF^k s, M_c^k s>.
+  RS-G  (p11,p10,p01) = (0.4,0.3,0.3)      RS-P  = (1/2, 0, 1/2)  [S1's published p=(1/2,0,0,1/4,1/4)]
+CONVENTION CHECKED, NOT ASSUMED: the M2 kernel's third pair term is sin^2(pi k (alpha+beta)) --
+the SUM.  That is correct only under x = conj(W_F) = e^{-2 pi i alpha}, y = W_C = e^{+2 pi i beta},
+which is the lane's stated convention.  I expected a bug here and there is none: leg A1 checks the
+kernel against the BRANCH OPERATORS on C^5 over 24000 cells, worst discrepancy 1.137e-12, and the
+lane's clamp min(S,1) never binds (max S-1 = 0.000e+00).
+
+INDEPENDENCE.  Nothing in legs B..F uses the lane's kernel or its pickle.  lambda_H and D_H are
+computed as EXACT ORBIT AVERAGES over the closure H (finite orbits: n terms at the n-th roots of
+unity; rank-1 circles: 2^20-point trapezoid; rank-2: the closed-form 1-D reduction of the Mahler
+measure, mpmath 40 dps).  Leg D re-derives 1-|Z_k| with its own two-limb phase split.
+PRECISION.  Double precision except where mpmath 40 dps is named in the output.  Every extreme
+quoted in the findings is re-evaluated at 40 dps and printed there.
+GRID/SEEDS.  Attained sweep: ALL pairs of roots of unity of exact order n <= 120 (483671 points),
+no seed, no sampling.  Rank-1 sweep: all coprime (p,q) with |p|,|q| <= 8.  Leg D: K = 1e7, the
+cubic pair (2cos(2pi/7), (2cos(2pi/7))^2) mod 1 as the approached representative, as the lane uses.

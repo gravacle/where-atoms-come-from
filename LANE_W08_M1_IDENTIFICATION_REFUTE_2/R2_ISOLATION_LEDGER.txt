@@ -1,0 +1,71 @@
+REFUTER 2 (LENS: ISOLATION) — ISOLATION LEDGER FOR MY OWN COMPARISONS
+Target: LANE_W08_M1_IDENTIFICATION.  Every comparison below states what is HELD FIXED and
+the ONE thing that moves.  Where a comparison is not one-variable I say so and do not score it.
+
+C1  (R2_01)  THE (11,20) "DIFFERENT POINT" CONTROL.
+    HELD FIXED: relation vector (11,20); D = 20*2^35; weights (0.3,0.3,0.4); K; code path.
+    MOVES: the point t on the resonance circle.  In the TARGET's code it does not move at all
+    (A2 == A0 exactly).  In mine, t takes six values.  ONE VARIABLE.
+
+C2  (R2_02 A)  ROW 5's RELATION LATTICE.  No comparison: an exact algebraic identity
+    (13*0.7 - 7*1.3 = 0 in Fractions) plus two closed-form Mahler measures.  Nothing moves.
+
+C3  (R2_02 B / R2_06 P3)  THE OPEN REGION.
+    HELD FIXED: u = 1 (relation (1,0)), observable, evaluator, N = 2e6, float64.
+    MOVES: p10 across the threshold 1/2 along p01 = p11 = (1-p10)/2.  ONE VARIABLE.
+    Second pass HELD FIXED p10 = 0.7 and MOVES arg(v) only.  ONE VARIABLE.
+
+C4  (R2_02 C)  RANK-1 RATES AT S3/S4's WEIGHTS.
+    HELD FIXED: weights (0.3,0.3,0.4), evaluator (Jensen on the specialisation).
+    MOVES: the primitive relation vector (m,n).  ONE VARIABLE.
+
+C5  (R2_03 A1)  PHASE REPRESENTATION.
+    HELD FIXED: the pair (-2^(1/3), 4^(1/3)), weights, observable, k-grid, evaluator.
+    MOVES: the phase representation (2^39 + float64 residue -> exact 2^62 from an integer
+    cube root).  ONE VARIABLE.
+
+C6  (R2_03 A2)  THE WEIGHTS UNDER F5's MIN-DISTANCE TABLE.
+    HELD FIXED: the Schmidt pair, the k-grid, the evaluator, the zero-solver.
+    MOVES: the weight vector (1/3,1/3,1/3) -> (0.3,0.3,0.4).  ONE VARIABLE.
+
+C7  (R2_04 P1)  THE MISSING ARM OF THE TARGET's COMPARISON 5.
+    HELD FIXED: weights (1/3,1/3,1/3), observable, evaluator, N (10 / 100 / 1000), the
+    statistic (Birkhoff average on both arms).  MOVES: the pair, Schmidt vs Liouville.
+    ONE VARIABLE — which is what the target's version was not.
+
+C8  (R2_04 P3)  DOES THE N=10 DIP ISOLATE DIOPHANTINE TYPE?
+    HELD FIXED: weights, observable, evaluator, N = 10, order of magnitude of the distance
+    to the zero.  MOVES: rank L, 0 -> 2 (a torsion pair with the same offset).  ONE VARIABLE.
+
+C9  (R2_05)  int f_eps.
+    HELD FIXED: P, eps, the definition of f_eps.  MOVES: the evaluation method (3000^2
+    midpoint grid -> closed-form reduction + 70-level graded Gauss-Legendre).  ONE VARIABLE.
+    Convergence of my method demonstrated by doubling the mesh (agreement 0.0e+00).
+
+C10 (R2_06 P1)  rank L of the nine table rows.  No comparison: exact rational arithmetic.
+
+C11 (R2_06 P2)  THE SWEEP MINIMUM.
+    HELD FIXED: carrier, observable, N, evaluator, the Dirichlet family within each pair.
+    MOVES, ONE AT A TIME: (i) the seed, 1000 draws; (ii) the draw count 1000 -> 20000 at fixed
+    family; (iii) the Dirichlet concentration 1.0 -> 0.2 at fixed draw count.  Each is a
+    one-variable move off the target's single window.  The direct exhibit moves nothing and
+    is not a comparison.
+
+C12 (R2_07)  IMPLEMENTATION ROUTE.
+    HELD FIXED: carrier, ready state (S3/S4's own amplitudes), k-grid, float64, the three
+    connections.  MOVES: the implementation (5x5 diagonal branch operators + vdot  vs  the
+    3-term polynomial).  ONE VARIABLE.
+
+NOT ISOLATED, AND LABELLED SO: nothing in this lane. Every block above is one-variable or is
+an exact identity with no moving part.
+
+DEFECT IN MY OWN CODE, FOUND ON RE-READ AND RECORDED RATHER THAN SILENTLY FIXED
+    R2_03's first version accumulated min|Z_k| and min-dist over the whole 1e6 chunk BEFORE
+    the checkpoint loop, so the N = 1e3, 1e4, 1e5 rows printed minima over k <= 1e6.  They
+    reproduced M1_06's N=1e6 row three times and would have supported a FALSE claim that
+    M1_06's min-distance table is wrong.  M1_06's table is RIGHT and reproduces exactly.
+    Fixed with np.minimum.accumulate; the defect and its consequence are documented in-line
+    in R2_03_precision_and_weights.py.
+
+LINEAGE / DISCOUNT.  This refuter is Claude Opus 5 attacking a Claude Opus 5 lane.  Same
+lineage: a failure mode common to that lineage passes through both.  Discount accordingly.

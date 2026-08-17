@@ -1,0 +1,42 @@
+LANE W-08 / M2 — REFUTER 2 — ISOLATION LEDGER
+One variable per comparison.  FIXED BACKGROUND in every row unless the row names it as moving:
+carrier K1, p00 = 0 by incidence, branches M_dF/M_c, Z_k = p11(xy)^k + p10 x^k + p01 y^k,
+x = e^{-2pi i alpha}, y = e^{+2pi i beta}, the functionals lambda_H = E_H log|Z| and
+D_H = E_H(1-|Z|) evaluated as EXACT closure averages (so no finite-K window enters, and COR-E's
+window-artefact class cannot arise), code path identical within a table.
+
+ROW A (leg A1/A2/A3).  NOT a comparison: a reimplementation check.  The lane's trig kernel is
+  tested against the branch OPERATORS, and its four registered lambda values are recomputed from
+  the operators and from an independent closed form.  Nothing moves; this row can only fail.
+ROW B (leg B1/B2).  HELD: RS-G, the functional, the exactness of the average.  MOVES: the
+  connection, over the COMPLETE set of finite closures of order <= 120.  This is the lane's own
+  leg-D2 row with the sampling removed -- D2 walked one path (roundings of the cubic pair) through
+  a space this row enumerates.
+ROW C (leg B3, leg F).  HELD: RS-G, the functional.  MOVES: the connection over rank-1 closures.
+  Reported separately from ROW B and never averaged with it.
+ROW D (leg C).  HELD: everything in ROW B.  MOVES: the READY STATE ONLY, RS-G -> RS-P.  Separate
+  table, never mixed, exactly as the lane's own convention requires.
+ROW E (leg D1).  MATCHED-DENSITY comparison, and it is labelled as such rather than passed off as
+  an isolation: the order n and the density delta = 1/n move TOGETHER, BY CONSTRUCTION, because
+  an attained connection of order n has exactly one blank schedule and its density is exactly 1/n.
+  Held: RS-G, K = 1e7, the schedule rule, the approached representative.
+ROW F (leg D2).  HELD: connection (cubic pair), RS-G, the schedule rule.  MOVES: K only, with the
+  density tied to it as delta_K = K^{-1/2}.  Two things move together and the row says so; the
+  claim taken from it is only "the total stays bounded while the number of writes diverges".
+ROW G (leg D3/D4).  HELD: connection, RS-G, K.  MOVES: delta only.
+ROW H (leg E).  HELD: RS-P, carrier, observable, alpha = 1/2.  MOVES: beta only (rational ->
+  irrational).  Exhibits attained-with-infinite-H, which the lane's ledger ROW 5 says cannot exist.
+
+DEFECTS IN THIS REFUTATION, RECORDED NOT SILENTLY FIXED:
+  R-1  Leg C's first version predicted "-> 2/3" for the even-order share of the attained set next
+       to a printed 0.3335.  The printed number was right, the prediction wrong; the limit is 1/3
+       (odd-order Dirichlet factor (1-2^-1)/(1-2^-2) = 2/3 at s=2).  Both are on the page.
+  R-2  I opened leg A expecting to find a sign bug in the lane's kernel (sum vs difference in the
+       third pair term).  There is none.  Recorded because a refuter who only prints the checks
+       that fired is running a control that could not fail.
+  R-3  Leg B's sweep is capped at order 120 and leg C's rank-1 sweep at |p|,|q| <= 8.  The extremes
+       reported are extremes OVER THOSE SETS.  The rank-1 infimum is separately PROVED (Jensen:
+       m(P) >= log of the extreme coefficient = log 0.3), the attained minimum is not proved
+       minimal -- a finite orbit of order > 120 could go below -1.535057.  That would make the
+       refutation stronger, not weaker, so the cap is not load-bearing for the direction of the
+       finding, but the number is a bound and is labelled as one.

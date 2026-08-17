@@ -1,0 +1,52 @@
+== R2.1 / R2.2  LEG F1's TABLE, REPRODUCED AND THEN COMPLETED ==
+   'naive' = leg F1's own (k*alpha)%1.0 in float64.  'exact' = the 3-limb protocol that
+   this lane's PUBLISHED_CONVENTIONS promises and leg B uses.  d_eff: RS-G -> dim H;
+   RS-P -> 1 (p10 = 0 kills one character).
+   connection                      ready d_eff      F(1e3)      F(1e4)      F(1e5)      F(1e6)      F(1e7) fit(exact) fit(naive)  theory
+   B_S3RES  f=2.0,c=11/10          RS-G      1   5.877e-05   2.708e-07   1.450e-07   1.446e-09   2.250e-13     -1.911     -1.911    -2.0
+   B_S3RES  f=2.0,c=11/10          RS-P      1   4.543e-10   4.543e-10   4.543e-10   2.675e-12   7.296e-16     -1.382     -1.379    -2.0
+   E_W07GEN 2pi.phi,2pi.phi^2      RS-G      1   2.432e-06   5.176e-08   4.208e-10   3.422e-12   2.782e-14     -2.006     -2.003    -2.0
+   E_W07GEN 2pi.phi,2pi.phi^2      RS-P      1   1.013e-06   2.157e-08   1.753e-10   1.426e-12   1.159e-14     -2.006     -2.003    -2.0
+   C_BADAPP cubic pair             RS-G      2   1.767e-03   9.096e-05   1.973e-05   9.414e-07   2.456e-07     -0.970     -0.970    -1.0
+   C_BADAPP cubic pair             RS-P      1   1.881e-07   1.813e-09   6.169e-11   1.506e-12   1.553e-14     -1.725     -1.725    -2.0
+   D_RAND1                         RS-G      2   5.055e-04   1.472e-04   2.749e-05   1.349e-06   3.876e-08     -1.027     -1.027    -1.0
+   D_RAND1                         RS-P      1   6.622e-07   6.506e-12   6.506e-12   2.019e-15   2.019e-15     -2.054     -2.054    -2.0
+   D_RAND2                         RS-G      2   1.024e-03   2.932e-04   3.244e-06   7.666e-07   8.015e-08     -1.080     -1.080    -1.0
+   D_RAND2                         RS-P      1   3.027e-06   2.960e-09   1.039e-12   1.039e-12   3.529e-14     -1.932     -1.932    -2.0
+   D_RAND3                         RS-G      2   2.479e-04   2.113e-04   1.125e-05   7.278e-07   2.521e-07     -0.845     -0.845    -1.0
+   D_RAND3                         RS-P      1   9.553e-07   3.340e-08   6.727e-11   3.861e-12   7.491e-15     -2.015     -2.014    -2.0
+   F_VWA  <- LEG F1 OMITS THIS ROW RS-G      2   3.551e-08   3.551e-08   3.551e-08   3.551e-08   3.609e-23     -2.999    -58.510    -1.0
+   F_VWA  <- LEG F1 OMITS THIS ROW RS-P      1   7.765e-09   7.765e-09   2.654e-10   5.483e-13   7.619e-24     -3.417    -58.793    -2.0
+
+   EXACT-ARITHMETIC RE-CHECK of every reported argmin (big-int k*alpha mod 2^120):
+     B_S3RES  RS-G   k*= 4272943  float64 F(1e7)=2.250331e-13  exact=2.250331e-13  rel.err=4.77e-12
+     B_S3RES  RS-P   k*= 5419351  float64 F(1e7)=7.296382e-16  exact=7.296381e-16  rel.err=3.18e-09
+     E_W07GEN RS-G   k*= 9227465  float64 F(1e7)=2.781930e-14  exact= 2.78193e-14  rel.err=2.91e-09
+     E_W07GEN RS-P   k*= 9227465  float64 F(1e7)=1.159137e-14  exact=1.159137e-14  rel.err=2.91e-09
+     C_BADAPP RS-G   k*= 3494078  float64 F(1e7)=2.455960e-07  exact=  2.45596e-7  rel.err=6.37e-13
+     C_BADAPP RS-P   k*= 5373136  float64 F(1e7)=1.552784e-14  exact=1.552784e-14  rel.err=3.74e-09
+     D_RAND1  RS-G   k*= 1301991  float64 F(1e7)=3.876293e-08  exact= 3.876293e-8  rel.err=1.23e-12
+     D_RAND1  RS-P   k*=  870809  float64 F(1e7)=2.019111e-15  exact=2.019111e-15  rel.err=2.63e-16
+     D_RAND2  RS-G   k*= 4778879  float64 F(1e7)=8.014663e-08  exact= 8.014663e-8  rel.err=2.23e-12
+     D_RAND2  RS-P   k*= 2164095  float64 F(1e7)=3.529028e-14  exact=3.529028e-14  rel.err=2.63e-09
+     D_RAND3  RS-G   k*= 5379945  float64 F(1e7)=2.520720e-07  exact=  2.52072e-7  rel.err=2.84e-17
+     D_RAND3  RS-P   k*= 6770703  float64 F(1e7)=7.491017e-15  exact=7.491017e-15  rel.err=2.54e-17
+     F_VWA  < RS-G   k*= 2999999  float64 F(1e7)=3.609072e-23  exact=3.609008e-23  rel.err=1.79e-05
+     F_VWA  < RS-P   k*= 2999999  float64 F(1e7)=7.619134e-24  exact=7.620099e-24  rel.err=1.27e-04
+
+   THE OMITTED ROW, READ OFF:  F_VWA has dim H = 2 (leg B's own B0 block says so, no
+   relation to height 60) and its 5-point fit is printed above.  Compare the d_eff = 2
+   cluster leg F1 reports: -0.970, -1.027, -1.080, -0.845.
+
+== R2.3  IS THE 'TWO CLUSTERS DO NOT OVERLAP' EVIDENCE ROBUST?  FRESH SAMPLES. ==
+   40 rank-2 pairs (alpha,beta ~ U[0,1)) and 40 rank-1 pairs (beta = (n1*alpha - m)/n2,
+   n1,n2 coprime <= 12, so 'n1 alpha - n2 beta = m' and dim H = 1), IDENTICAL fit, K-grid,
+   ready state RS-G, code path.  Seed 424242.  ONE VARIABLE MOVES: dim H.
+   dim H = 2 (theory -1.0): n=40  mean -1.010  sd 0.155  min -1.503  max -0.547
+   dim H = 1 (theory -2.0): n=40  mean -1.979  sd 0.298  min -2.742  max -1.098
+   OVERLAP?  max(dimH=1 fits) = -1.098 vs min(dimH=2 fits) = -1.503   ->  CLUSTERS OVERLAP
+   dim H=1 fits shallower than leg F1's shallowest d_eff=1 row (-1.379): 1/40
+   dim H=1 fits shallower than leg F1's deepest d_eff=2 row (-1.080): 0/40
+   dim H=2 fits deeper than -1.379: 1/40
+   misclassification rate of a -1.5 threshold applied to the fitted exponent: 2/80
+   (fits saved to r2_cluster_fits.npy)

@@ -1,0 +1,57 @@
+==============================================================================
+R2_06 — CLASSIFICATION TABLE COVERAGE, SWEEP WINDOW, AND THE OPEN REGION
+==============================================================================
+
+PART 1 — rank L FOR EVERY ROW OF M1_04's NINE-CASE TABLE (exact).
+  u = e^{i a}, v = e^{i b} with a,b RATIONAL multiples of 1 (not of pi) in every row
+  the target uses, so u^m v^n = 1  <=>  m a + n b = 2 pi j  <=>  (pi transcendental,
+  m a + n b rational)  j = 0 and m a + n b = 0.  rank L = 2 only when a,b in 2 pi Q.
+   full support, generic connection   [LABEL] rank L = 1   L = Z*(-11,-20)
+   full support, S1 published (ord 4)         rank L = 2   (roots of unity: u,v torsion)
+   full support, TRIVIAL connection           rank L = 2   (roots of unity: u,v torsion)
+   S={10,01} and u = v  (W_F W_C = 1)         rank L = 1   L = Z*(-1,1)
+   S={10,01}, u != v                          rank L = 1   L = Z*(-13,7)
+   S={10,11} and W_C = 1                      rank L = 1   L = Z*(0,1)
+   S={01,11} and W_F = 1                      rank L = 1   L = Z*(1,0)
+   S={11} only  (the ROOT alone)              rank L = 1   L = Z*(-11,-20)
+   S1 published conn + S1 published state     rank L = 2   (roots of unity: u,v torsion)
+   ---------------------------------------------------------------------------
+   ROWS WITH rank L = 0 : 0 of 9.   Row 1's label 'generic connection' is S3/S4's
+   EXACTLY RESONANT headline (register ERRATUM AGAINST W-02): L = Z*(11,20).
+   Row 5, offered by the ledger as COMPARISON 3's isolated arm, is L = Z*(13,-7),
+   and its lambda = m(P) is a SUBTORUS coincidence (R2_02), not the generic case.
+
+PART 2 — THE 1000-DRAW MINIMUM DENSITY IS A WINDOW ARTEFACT.
+   draws=  1000  Dirichlet(1.0)  seed=20260856 :  min density = 8.891422e-03  at pi=(0.9911,0.0006,0.0083)
+   draws=  1000  Dirichlet(1.0)  seed=20260857 :  min density = 2.753380e-02  at pi=(0.9724,0.0133,0.0143)
+   draws= 20000  Dirichlet(1.0)  seed=20260858 :  min density = 3.280482e-03  at pi=(0.9967,0.0027,0.0005)
+   draws=  2000  Dirichlet(0.2)  seed=20260859 :  min density = 2.481748e-10  at pi=(0.0000,1.0000,0.0000)
+   The target reports 8.887867e-03 from ONE window of 1000 Dirichlet(1,1,1) draws.
+   The infimum over the parameter space is 0 (approached as any pi -> a vertex, and
+   as u -> v on the two-element supports).  The number bounds nothing; it is a
+   LOWER BOUND on a sample minimum.  Same defect class as COR-E / COR-H.
+   Direct exhibit, no sampling: pi = (1-1e-6, 5e-7, 5e-7), generic connection:
+      Cesaro density = 1.000006e-06   (8888 times below the reported 'minimum')
+
+PART 3 — THE OPEN REGION WHERE A RANK-1 CONNECTION REPRODUCES m(P) EXACTLY.
+   u = 1 (W_F = 1: the FACE holonomy trivial, the flat holonomy W_C free).
+   HELD FIXED: u = 1, observable, evaluator, N = 2e6.  MOVES: p10 across 1/2, then v.
+     p10      m(P)            lambda_H (closed form)   orbit avg N=2e6     |orbit-m(P)|
+    0.30     -0.774050999     -0.356674944          -0.356674928     4.17e-01
+    0.45     -0.745627459     -0.597837001          -0.597837014     1.48e-01
+    0.50     -0.693147181     -0.693147181          -0.693147863     6.82e-07
+    0.55     -0.597837001     -0.597837001          -0.597837014     1.34e-08
+    0.70     -0.356674944     -0.356674944          -0.356674928     1.59e-08
+    0.85     -0.162518929     -0.162518929          -0.162518926     3.65e-09
+   For p10 > 1/2 the three columns coincide: lambda = m(P) with rank L = 1 and NO
+   Diophantine hypothesis.  For p10 < 1/2 they separate.  So whether the identification
+   holds is a JOINT condition on (L, pi) -- it is NOT a function of L, and it is NOT
+   'rank L = 0'.  Durability is unaffected: G = <v> != {1} in every row above.
+   Several v, p10 = 0.7 (m(P) = log 0.7 = -0.356674944):
+      arg v = 0.700000 :  orbit avg = -0.356675070   dev = -1.26e-07
+      arg v = 1.300000 :  orbit avg = -0.356675065   dev = -1.21e-07
+      arg v = 2.000000 :  orbit avg = -0.356675114   dev = -1.70e-07
+      arg v = 1.570796 :  orbit avg = -0.365254477   dev = -8.58e-03
+      arg v = 1.414214 :  orbit avg = -0.356674876   dev = +6.83e-08
+
+DONE R2_06

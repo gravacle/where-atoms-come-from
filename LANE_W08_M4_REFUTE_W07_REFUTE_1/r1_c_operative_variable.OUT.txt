@@ -1,0 +1,43 @@
+== C0  D_k = 2*amp*|sin(pi k theta)|;  amp = 0.271776443;  K = 4000;  tol = 1e-09
+        threshold on ||k theta||:  e = 5.856098e-10
+
+== C1  THE FINITE EDGE OF M4-1, AGAINST W-07's OWN PUBLISHED SCALING LAW ==
+  W-07 sec3 scaling: 'annihilated to EXACT ZERO on exactly K/4 cells, at every K, forever.'
+  Generalised from its own arithmetic (1000 = 4000/4 = K/ord), the law is  count = floor(K/ord).
+    ord(rho)  floor(K/ord)  exact zeros  cells<1e-9 (exact crit)  W-07's law predicts?
+           4          1000         1000                     1000  YES
+        2000             2            2                        2  YES
+        4001             0            0                        0  YES
+        8000             0            0                        0  YES
+           3          1333         1333                     1333  YES
+           7           571          571                      571  YES
+        1000             4            4                        4  YES
+
+  M4-1's finite-edge counterexamples ord = 4001 and 8000 return 0, which is EXACTLY what
+  W-07's own published scaling law floor(K/ord) predicts.  They refute W-07's loose VERBAL
+  binary ('finite versus infinite'); they do NOT refute anything W-07 computed or tabulated.
+  M4's own 'WHAT SURVIVES' states the correct form.  'Refuted at BOTH edges' overstates:
+  one edge is a refutation (the irrational side), the other is a rephrasing W-07 already had.
+
+== C2  M4's REGISTERED OPERATIVE VARIABLE DOES NOT DETERMINE THE EFFECT ==
+  M4: 'The effect W-07 measures is a function of ONE quantity: min_{1<=k<=K} ||k theta||,
+       compared against arcsin(tol/(2 amp))/pi.'
+  The effect W-07 measures is a CELL COUNT (1000 of 4000, 0 of 4000).  min ||k theta||
+  determines only whether that count is zero or nonzero.  Two thetas, SAME min, different count:
+    theta_A = 1/4 + 1e-14      min_k ||k theta|| = 4.000000e-14   cells < 1e-9 : 1000
+    theta_B = 1/3989           min_k ||k theta|| = 0.000000e+00   cells < 1e-9 : 1
+    Both mins are 0 or below the threshold; the counts are 1000 and 1.  Same value of M4's
+    named variable, counts differing by a factor of 1000.
+
+  Sharper, with the two mins EXACTLY EQUAL (constructed: theta = 1/n + d has min = n*d,
+  count = K/n, so choose d so that n*d matches):
+    theta_C = 1/4    + 1e-13    min_k ||k theta|| = 4.000000e-13   cells < 1e-9 : 1000
+    theta_D = 1/1000 + 4e-16    min_k ||k theta|| = 4.000000e-13   cells < 1e-9 : 4
+    mins identical as exact rationals: True      counts: 1000 vs 4
+
+  ==> M4 has misnamed its own operative variable in the SAME defect class it convicts W-07 of,
+      and NOT in the way its self-flag 2 admits (that flag names only amp).  The quantity that
+      determines the count is the WHOLE multiset { ||k theta|| : k <= K } against tol/amp --
+      equivalently the DENOMINATOR of the best rational approximation, not the min alone.
+      W-07's 'ord(rho)' is a special case of that denominator; M4's 'min' is a different
+      special case.  Both are shorthands for the same underlying object; neither is 'the' name.

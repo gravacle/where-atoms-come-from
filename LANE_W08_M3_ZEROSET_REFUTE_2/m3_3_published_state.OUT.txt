@@ -1,0 +1,133 @@
+================================================================================================
+M3-3  K1's PUBLISHED READY STATE: THE DEGENERATE CASE, AND WHERE N1 BREAKS
+================================================================================================
+numpy 2.0.2 ; IEEE double unless a line says EXACT.
+
+(a) THE POLYNOMIAL.  p_v = (1/2,0,0,1/4,1/4) pushes forward to
+      p11 = 1/2 (v0, the only vertex in BOTH loops)
+      p10 = 0   (v1,v2 carry no weight)
+      p01 = 1/2 (v3 + v4 = 1/4 + 1/4)
+      p00 = 0   (K1 HAS NO VERTEX OUTSIDE F u C -- incidence, not choice)
+    P(x,y) = (1/2) y + (1/2) x y = (y/2)(1 + x).   IT FACTORS.
+    ZERO SET = { x = -1 } x T  --  a CIRCLE.  One real codimension, not two.
+    This is one of the three CORNERS of the firing region (m3_1 (d)(iii)); at K1's own
+    published state the firing criterion holds WITH EQUALITY (p01 = p11 = 1/2, p10 = 0):
+    the 'triangle' is degenerate -- two sides of length 1/2 and one of length 0, collinear.
+
+    ONLY TWO CLASSES ARE OCCUPIED, 11 and 01, at exactly 1/2 each.  In W-02's language
+    S = {root, C}, G = <chi_11/chi_01> = <u> = <conj(W_F)>: the FLAT holonomy W_C cannot
+    appear in |Z_k| at all.  Checked below.  K1's published state is the UNIQUE balanced
+    two-class state, and the two-class family fires ONLY when balanced.
+
+(b) m(P) FOR K1's PUBLISHED STATE, EXACTLY.
+    m((y/2)(1+x)) = log(1/2) + m(y) + m(1+x) = -log 2 + 0 + 0 = -log 2.
+    -log 2 = -0.693147180559945
+      midpoint quadrature n =     1000 : -0.692454033379385   dev from -log2 = 6.931e-04
+      midpoint quadrature n =    10000 : -0.693077865841889   dev from -log2 = 6.931e-05
+      midpoint quadrature n =   100000 : -0.693140249088140   dev from -log2 = 6.931e-06
+      midpoint quadrature n =  1000000 : -0.693146487412765   dev from -log2 = 6.931e-07
+    (the integrand log|(1+x)/2| has an integrable log singularity at x = -1; midpoint
+     quadrature avoids the singular abscissa, which is why it converges at all)
+
+(c) ON S1's PUBLISHED CONNECTION (W_F = -1, W_C = -i) THE ORBIT LIES ON THE ZERO CIRCLE.
+    u = conj(W_F) = -1, v = W_C = -i.   Z_k = (1/2)(uv)^k + (1/2) v^k = (v^k/2)(u^k + 1).
+    u^k = (-1)^k, so u^k + 1 = 0 for EVERY ODD k.  EXACT, at every odd k, forever.
+    |Z_k|, k = 1..12 (double): 6.123e-17 1.000e+00 1.837e-16 1.000e+00 3.062e-16 1.000e+00 4.286e-16 1.000e+00 5.511e-16 1.000e+00 6.736e-16 1.000e+00
+    EXACT (integer arithmetic on the order-4 cyclic group): Z_k = cos(k*pi/2) =
+      k mod 4 = 0 -> +1 ; 1 -> 0 ; 2 -> -1 ; 3 -> 0.   Half of all cells are EXACTLY ZERO.
+    Omega_N = prod_{k<=N} Z_k = 0 for EVERY N >= 1, so (1/N) log|Omega_N| = -infinity
+    for every N >= 1.   m(P) = -log 2 is FINITE.   THE TWO DISAGREE BY AN INFINITE AMOUNT
+    AT K1's OWN PUBLISHED DATA.  (This is S3-audit COR-D's 'Omega_N = 0 for all N>=1',
+    now with its cause: the state puts the zero set ON a subtorus and the connection puts
+    the orbit ON that subtorus.)
+
+    THE DOUBLE DEGENERACY IS MATCHED, AND NEITHER HALF SUFFICES ALONE:
+      published STATE + generic connection   : |Z_k| = |cos(k f/2)| > 0 for all k  (f/2pi irr.)
+        f=1.0,c=0.7 : 0.877583 0.540302 0.070737 0.416147 0.801144 0.989992 0.936457 0.653644
+      published CONNECTION + S3's state (0,.3,.3,.4) : 0.316228 0.400000 0.316228 1.000000 0.316228 0.400000 0.316228 1.000000
+        min over k = 0.316228  -- never zero: the order-4 orbit misses the two conical zeros.
+      => the annihilation needs BOTH.  Isolating either one alone kills it.
+
+(d) AT THE PUBLISHED STATE W_C IS INVISIBLE.  |Z_k| = |1 + u^k| / 2 = |cos(k f / 2)|.
+    300 random f, two independent random c each, k in {1,2,3,7,13,100}:
+      max | |Z_k|(c1) - |Z_k|(c2) |  and  max | |Z_k| - |cos(kf/2)| |  = 7.955e-14
+    CONSEQUENCE FOR W-03: at this state lambda_B is a function of f ALONE.  The relation
+    lattice L of the PAIR (W_F,W_C) is not the operative invariant here -- the Diophantine
+    type of f/2pi is.  K1's published state is exactly where S4's two-variable resonance
+    taxonomy degenerates to a one-variable one.
+
+(e) WHAT CAN GO WRONG, PRECISELY.  Write G_k = log|Z_k| = -log 2 + log|1 + u^k|,
+    u = e^{i phi}, phi = -f.  Then
+        (1/N) sum_{k<=N} G_k  =  -log 2  +  (1/N) log prod_{k<=N} |1 + e^{i k phi}| .
+    The product is the SHIFTED SUDLER PRODUCT: |1+e^{ik phi}| = 2|sin(pi(k alpha + 1/2))|
+    with alpha = phi/(2pi).  Three failure modes, all realised on K1:
+      (i)   alpha rational with even denominator -> the orbit HITS the zero circle,
+            Omega_N = 0, average = -infinity.  S1's published connection is alpha = 1/2.
+      (ii)  alpha irrational but LIOUVILLE -> the orbit approaches the zero circle faster
+            than exponentially in k; single terms carry O(N) weight and the average has
+            liminf = -infinity while m(P) = -log 2 stays finite.
+      (iii) alpha badly approximable (bounded partial quotients) -> convergence holds.
+    NON-UNIFORMITY, the sharp statement: for EVERY N and every M > 0 there is a connection
+    within any delta of the published one with (1/N) log|Omega_N| < -M.  Take phi = pi + eps:
+    for odd k, |1+u^k| = |1 - e^{i k eps}| ~ k eps.  The convergence in N is therefore NOT
+    UNIFORM in the connection anywhere near W_F = -1, at any N whatsoever.
+
+    *** CONFOUND FOUND IN MY OWN FIRST PASS, RECORDED NOT SILENTLY FIXED.  I first computed
+    *** these tables in double: frac(k*alpha) then |cos(pi*frac)|.  At alpha = 1/2 that
+    *** returns 6.1e-17 instead of 0 and the table read '-18.67' where the truth is -inf;
+    *** at alpha = 0.501 the k = 500 exact hit came back as ~1e-17 for the same reason.
+    *** EVERY Birkhoff number below is therefore computed in EXACT RATIONAL ARITHMETIC:
+    *** alpha = p/q, r_k = (k*p) mod q exactly in Python integers, d_k = (2 r_k - q)/(2q)
+    *** formed from an EXACT integer numerator (no cancellation), and |Z_k| = |sin(pi d_k)|.
+    *** An exact hit is r_k*2 == q and is reported as -inf, not as 1e-17.
+
+    (e1) NON-UNIFORMITY TABLE.  alpha = 1/2 + eps, eps = 1/(2*10^m), EXACT rationals.
+         alpha = (10^m + 1) / (2*10^m).  m = inf means eps = 0 = S1's published connection.
+         entries are (1/N) log|Omega_N| ; m(P) = -log 2 = -0.693147180560
+         eps                      N=10          N=100         N=1000        N=10000
+         0 (published)            -inf           -inf           -inf           -inf     EXACT: u^k = -1 at every odd k
+         5e-41              -45.140792     -44.019868     -42.871686     -41.720706
+         5e-21              -22.114941     -20.994017     -19.845835     -18.694855
+         5e-10               -9.450723      -8.329799      -7.181617      -6.030637
+         5e-07               -5.996845      -4.875921      -3.727740      -2.576787
+         5e-04               -2.543002      -1.424853           -inf           -inf
+         5e-02                    -inf           -inf           -inf           -inf
+         READ IT DOWN A COLUMN: at FIXED N the value dives without bound as eps -> 0.
+         READ IT ACROSS A ROW: at fixed eps it climbs back toward -0.693 as N grows.
+         => (1/N) log|Omega_N| -> m(P) POINTWISE in the connection and NEVER UNIFORMLY.
+         The eps = 5e-41 row is far below double precision and is only computable because
+         the arithmetic here is exact.  m = 1 (eps = 0.05) has an exact hit inside N and
+         is reported as -inf rather than as a large negative float.
+
+    (e2) GOOD alpha (badly approximable): the Fibonacci ratio F40/F41 = 102334155/165580141,
+         whose continued fraction is [0;1,1,1,...] to depth 40, so for k <= 10^7 it is
+         indistinguishable from the golden rotation.  EXACT integer arithmetic.
+         N =      1000 : (1/N) log|Omega_N| = -0.691987722   dev from -log2 = +1.159e-03
+         N =     10000 : (1/N) log|Omega_N| = -0.693187403   dev from -log2 = -4.022e-05
+         N =    100000 : (1/N) log|Omega_N| = -0.693169282   dev from -log2 = -2.210e-05
+         N =   1000000 : (1/N) log|Omega_N| = -0.693146307   dev from -log2 = +8.732e-07
+         N =  10000000 : (1/N) log|Omega_N| = -0.693147084   dev from -log2 = +9.669e-08
+         => at a badly approximable connection the published state's record decays at
+            EXACTLY the Mahler rate -log 2.  N1 holds here.
+
+    (e3) LIOUVILLE-TYPE alpha.  A genuine Liouville number cannot be held in double, and
+         a float 'Liouville' is just a nearby rational -- so no float experiment can
+         demonstrate this and I do not run one.  What the (e1) table proves EXACTLY is
+         the statement that matters: the eps = 5e-41 row shows (1/N) log|Omega_N| ~ -46
+         at N = 10^4 where m(P) = -0.693.  A Liouville alpha is precisely a number whose
+         convergents make that happen at infinitely many N at once, so liminf_N of the
+         average is -infinity while m(P) stays finite.  The finite-eps table is the
+         constructive half; the Liouville statement is the limit of it and is asserted
+         as a consequence, not as a measurement.
+
+    (e4) THE SAME DELICACY AT A GENERIC (NON-DEGENERATE) STATE, for contrast.
+         S3's state (0,.3,.3,.4) has TWO ISOLATED conical zeros on T^2, and a rank-0 orbit
+         must approach them; the corpus already saw this without naming it --
+         LANE_S5_SCHEDULE_REFUTER_CODE/ref_sched2.OUT.txt reports min_{k<=4e6} log|Z_k| =
+         -8.030522 at k = 3558294 for f = 2pi*golden, c = 2pi*sqrt2.  Reproduced here:
+         min_{k<=4e6} log|Z_k| = -8.030523 at k = 3558294 ; (1/K) sum = -0.767508543 (generic m = -0.767508)
+         NOTE the difference in KIND: at a generic state the near-approach costs O(log k)
+         and is absorbed by the 1/N; at K1's published state the approach is to a CIRCLE,
+         which the orbit meets in a set of density 1/2 rather than density 0.
+
+DONE.

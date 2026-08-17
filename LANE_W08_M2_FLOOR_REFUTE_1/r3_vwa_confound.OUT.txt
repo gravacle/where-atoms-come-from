@@ -1,0 +1,61 @@
+== R3.1  THE F3 'VWA' PAIR IS RATIONAL: d_eff = 0, NOT 2.  EXACT INTEGER ARITHMETIC. ==
+   alpha = 1234567/2999999   beta = 765431/2999999    gcd(alpha)=1  gcd(beta)=1
+   orbit {(k*alpha, k*beta) mod 1} is PERIODIC with period lcm = 2999999
+   -> H = closure = a FINITE cyclic group of order 2999999;  dim H = 0;  d_eff = 0.
+   leg F3's table header says 'Same d_eff = 2, ... only the arithmetic quality moves'.
+   ISOLATION_LEDGER ROW 11 says 'HELD: d_eff = 2 ... MOVES: Diophantine QUALITY only'.
+   BOTH ARE FALSE FOR THE ROW THAT CARRIES THE CONCLUSION.
+
+== R3.2  AND ITS ZERO IS THE OBJECT, NOT THE FLOAT.  EXACT. ==
+   k = 2999999:  k*alpha mod 1 = 0   k*beta mod 1 = 0   (EXACT rationals)
+            all three characters equal 1  ->  Z_k = w11+w10+w01 = 1  ->  1-|Z_k| = 0 EXACTLY
+   leg F3 prints: '(the VWA row reads F(1e7) = 0 EXACTLY here: at k = 2999999 the DOUBLE
+    value of alpha rounds k*alpha to an integer.  That is a precision artefact of this
+    table, not the object)'.  THAT DIAGNOSIS IS WRONG.  k*alpha IS an integer, in Q, for
+    the pair the row names.  The double is right and the label is wrong: the row is an
+    ATTAINED, d_eff = 0 connection, which is the OTHER end of the lane's own taxonomy.
+   The number substituted for it (3.609e-23) belongs to leg B's DIFFERENT pair
+   (rational core + 1e-18*(sqrt2-1)) — so the table's row and its footnote are two
+   different connections.
+
+== R3.3  QUALITY AT GENUINELY FIXED d_eff = 2.  (leg B's own F_VWA pair is irrational.) ==
+   pair (all dim H = 2)                              F(1e3)      F(1e4)      F(1e5)      F(1e6)      F(1e7)      fit  theory
+   cubic field  (badly approximable)              1.767e-03   9.096e-05   1.973e-05   9.414e-07   2.456e-07   -0.970    -1.0
+   uniform random, stream 1                       5.055e-04   1.472e-04   2.749e-05   1.349e-06   3.876e-08   -1.027    -1.0
+   uniform random, stream 2                       1.024e-03   2.932e-04   3.244e-06   7.666e-07   8.015e-08   -1.080    -1.0
+   leg B's OWN F_VWA (irrational, dim H = 2)      3.551e-08   3.551e-08   3.551e-08   3.551e-08   3.609e-23   -2.999    -1.0
+   Liouville-style pair (dim H = 2)               2.783e-07   2.305e-07   2.254e-09   0.000e+00   0.000e+00  -88.025    -1.0
+   -> at FIXED d_eff = 2 the fitted exponent moves from -0.97 to -3.0 as the quality moves.
+      'Quality sets the constant, d_eff sets the exponent' is FALSE as stated.  The spread
+      in the implied constant C = F(1e7)*1e7 is 16 orders of magnitude, not 'a factor ~4'.
+
+== R3.4  WHAT SURVIVES AND IS A THEOREM: THE DIRICHLET UPPER BOUND, ONE-SIDED. ==
+   Dirichlet: for every K there is k <= K with max(||k alpha||,||k beta||) <= K^{-1/2}.  With
+   1-|Z| <= 1-|Z|^2 = 4[w11w10 sin^2(pi||kb||)+w11w01 sin^2(pi||ka||)+w10w01 sin^2(pi||k(a+b)||)]
+   <= 4 pi^2 (w11w10 + w11w01 + 4 w10w01) max^2, hence
+       F(K) <= C_2 K^{-1},   C_2 = 4 pi^2 (0.12+0.12+4*0.09) = 23.6871      (d_eff = 2)
+   and the d_eff = 1 analogue with the relation's height in the constant.  THIS IS ONE-SIDED.
+   The matching LOWER bound F(K) >= c K^{-2/d} is equivalent to the system being BADLY
+   APPROXIMABLE — a measure-zero hypothesis, false for every VWA pair.  M2-4 states the law
+   two-sidedly ('F(K) ~ K^{-2/d_eff}', 'fixed by d_eff alone') and its own F_VWA row breaks the
+   lower half by 16 orders of magnitude.
+   check of the upper bound on every row above and in R2:  F(1e7)*1e7 <= 23.687 ?
+     cubic field  (badly approximable)            F(1e7)*1e7 = 2.455960e+00   OK
+     uniform random, stream 1                     F(1e7)*1e7 = 3.876293e-01   OK
+     uniform random, stream 2                     F(1e7)*1e7 = 8.014663e-01   OK
+     leg B's OWN F_VWA (irrational, dim H = 2)    F(1e7)*1e7 = 3.609072e-16   OK
+     Liouville-style pair (dim H = 2)             F(1e7)*1e7 = 0.000000e+00   OK
+
+== R3.5  THE HALF THAT SURVIVES INTACT: N(eps) ~ K eps^{d/2}, EXPONENT **AND** CONSTANT ==
+   Near the identity 1-|Z| = 2 pi^2 [ (w11w10+w10w01) v^2 + 2 w10w01 uv + (w11w01+w10w01) u^2 ]
+   + O(res^4): a POSITIVE DEFINITE quadratic form.  Haar measure of {1-|Z| < eps} on T^2 is
+   therefore exactly  pi*eps/(2 pi^2 sqrt(det M)) + O(eps^2)  -- exponent 1 EXACTLY, and a
+   predicted constant.  On the circle H it is the 1-d analogue, exponent 1/2.
+   det M = 0.036000   predicted N(eps)/K = 0.838820 * eps
+   leg B's measured counts /1e7 (C_BADAPP, dim H = 2):
+     eps=1e-03  measured 8.3860e-04   predicted 8.3882e-04   ratio 0.9997
+     eps=1e-04  measured 8.3500e-05   predicted 8.3882e-05   ratio 0.9954
+     eps=1e-05  measured 8.5000e-06   predicted 8.3882e-06   ratio 1.0133
+     eps=1e-06  measured 9.0000e-07   predicted 8.3882e-07   ratio 1.0729
+   -> the equidistribution half of M2-4 is right to the CONSTANT, not just the exponent.
+      It is the extreme-value half (the floor F(K)) that quality breaks, and only that half.

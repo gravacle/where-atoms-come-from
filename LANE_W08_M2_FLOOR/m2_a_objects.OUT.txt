@@ -1,0 +1,39 @@
+== A1  K1 INCIDENCE: the four classes, and p00 = 0 ==
+   vertex -> (in F?, in C?): {0: (1, 1), 1: (1, 0), 2: (1, 0), 3: (0, 1), 4: (0, 1)}
+   class census: {(1, 1): 1, (1, 0): 2, (0, 1): 2}
+   class 00 population: []
+   -> p00 = 0 IDENTICALLY on K1, for EVERY ready state.  Incidence, not choice.
+
+== A2  BRUTE FORCE vs CLOSED FORM (this is the only place the closed form is taken on trust) ==
+   200 random (connection, ready state) x 5 values of k:  worst |brute - closed| = 1.817e-15
+   complex-phase ready state, k=3: |Z_brute - Z_closed| = 1.144e-16   (state phases cancel)
+
+== A3  THE EXACT IDENTITY  |Z_k|^2 = 1 - sum_{j<l} w_j w_l |chi_j^k - chi_l^k|^2 ==
+   (weights nonneg summing to 1; chi unit modulus.  This is what makes leg C a theorem.)
+   500 random cases: worst |lhs - rhs| = 8.604e-15   -> identity holds exactly
+
+== A4  |Z_k| = 1  <=>  all characters with nonzero weight agree at k ==
+   full support (p11,p10,p01 all > 0): requires (xy)^k = x^k = y^k  <=>  x^k = y^k = 1
+   <=>  k*f = 0 and k*c = 0 mod 2pi  <=>  f/2pi and c/2pi are BOTH RATIONAL (ATTAINED),
+   and then it happens on exactly the multiples of n = lcm(den(f/2pi), den(c/2pi)).
+   S1 published f=pi,c=3pi/2    n= 4  |Z_k|=1 at k in [np.int64(4), np.int64(8), np.int64(12), np.int64(16)]...  count/16 = 4
+   f=2pi/3, c=2pi/5             n=15  |Z_k|=1 at k in [np.int64(15), np.int64(30), np.int64(45), np.int64(60)]...  count/60 = 4
+   trivial connection           n= 1  |Z_k|=1 at k in [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]...  count/4 = 4
+
+== A5  THE BOUND THAT DECIDES THE RACE (stated here, measured in leg C) ==
+   1-|Z| >= (1/2)(1-|Z|^2) = (1/2) sum_{j<l} w_j w_l |chi_j^k - chi_l^k|^2
+   and for a single pair with g = chi_j/chi_l = e^{i tau} != 1,
+   sum_{k=1..K} |g^k-1|^2 = 2K - 2 Re( sum_{k=1..K} g^k ) >= 2K - 2/|sin(tau/2)|.
+   Hence  SUM_{k<=K} (1-|Z_k|) >= w_j w_l ( K - 1/|sin(tau/2)| )  — LINEAR, no Diophantine input.
+   300 random (tau,K): max of [bound - actual] = -2.022e+00  (<= 0 required)
+   actual/(2K) over the same draws: min 0.991441  median 1.000187  max 1.056594
+   -> the bound is not merely valid, it is TIGHT: the sum is 2K + O(1) for every fixed tau != 0.
+
+== A6  WHAT THE THREE CHARACTER RATIOS ARE ON K1  (p00 = 0 removes the constant character) ==
+   chi_0/chi_F = y = W_C     chi_0/chi_C = x = conj(W_F)     chi_F/chi_C = x/y = rho  (W-07's rho)
+   If p00 were nonzero a fourth character chi_00 = 1 would appear and the three further
+   ratios would be chi_a itself.  K1 has no class-00 vertex, so the polynomial
+   p00 + p10 X + p01 Y + p11 XY loses its constant term and is a MONOMIAL times a 3-term
+   linear form:  p10 X + p01 Y + p11 XY = X ( p10 + p01 (Y/X) + p11 Y ),  and (X,Y)->(X,Y/X)
+   is in GL_2(Z), so  lambda = m(p10 + p01 U + p11 V).  This is why the register's
+   lambda = m(p00+p10x+p01y+p11xy) and the erratum's m(0.4+0.3x+0.3y) are the same number.

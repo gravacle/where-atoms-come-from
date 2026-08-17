@@ -1,0 +1,40 @@
+LANE W08 — M3 — THE ZERO SET OF P ON T^2, AND W-01's CONVEX HULL — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE.  All commits of this repo carry `Co-Authored-By: Claude Fable 5`.  This lane was built
+and run by Claude Opus 5, like W-07.  Custody sec4's shared-lineage caveat therefore does NOT
+apply between this lane and the corpus it audits.  It is ONE lane and is graded accordingly.
+
+PRECISION.  numpy 2.0.2, python 3.9.6, IEEE double throughout UNLESS a line says otherwise.
+Every predicate that decides an inclusion (triangle inequality, sign of a product, "is there a
+zero") is ALSO evaluated in EXACT INTEGER ARITHMETIC on an integer-denominator simplex grid, and
+the exact and floating verdicts are compared.  Where a float minimum is reported it is reported
+as an UPPER bound on the true minimum (COR-E discipline: grid minima are window artefacts unless
+the direction of the inequality is stated).
+
+CARRIER K1 — S1 sec1, restated (identical to LANE_W07's page):
+  v0..v4, root v0.  e1=(0,1) e2=(1,2) e3=(2,0) e4=(0,3) e5=(3,4) e6=(4,0).
+  FACE F attached along e1+e2+e3.  FACE_V={0,1,2}.  CYC_V={0,3,4}.
+  V=5 E=6 F=1 chi=0 b1=1.
+  CLASS MAP (is v in F?, is v in C?):  v0 -> 11 ; v1,v2 -> 10 ; v3,v4 -> 01 ; NOTHING -> 00.
+  p00 = 0 IDENTICALLY ON K1.  This is a fact about K1's incidence (F u C = all five vertices),
+  not a modelling choice, and it is load-bearing everywhere below.
+
+CONNECTION.  U_e = exp(i a_e).  W_F = exp(i(a1+a2+a3)) = exp(i f), W_C = exp(i(a4+a5+a6)) = exp(i c).
+S1 sec6 PUBLISHED instance: a1=a2=a3=pi/3, a4=a5=a6=pi/2  =>  W_F = -1, W_C = -i.
+BRANCHES.  M_dF = diag(W_F,W_F,W_F,1,1);  M_c = diag(W_C,1,1,W_C,W_C).
+Z_k = <M_dF^k s, M_c^k s>  with the convention <z,w> = conj(z) w (S1 sec3).
+
+VARIABLES USED THROUGHOUT.  u = conj(W_F) = e^{-if},  v = W_C = e^{ic}.
+  P(x,y) = p00 + p10 x + p01 y + p11 x y.
+  IDENTITY (proved and checked in m3_1): Z_k = P(u^k, v^k).
+
+READY STATES.  S1/W-01 published: p_v = (1/2,0,0,1/4,1/4) -> (p00,p10,p01,p11) = (0,0,1/2,1/2).
+  S3/S4 "SENSE C" three-class state: p_v = (0.4,0.15,0.15,0.15,0.15) -> (0,0.3,0.3,0.4).
+SEEDS.  numpy default_rng.  Master seed 20260816 (same master as W-07); per-script seeds stated
+  in each script's header and echoed in its .OUT.txt.
+GRIDS.  Simplex grids by integer denominator n (all (i,j,k[,l]) >= 0 summing to n).  Torus grids
+  by N_theta equally spaced points per circle.  Both stated at every use.
+
+THE ONE VARIABLE, PER COMPARISON.  Written out in ISOLATION_LEDGER.txt in this directory.
+No comparison in this lane moves two things.

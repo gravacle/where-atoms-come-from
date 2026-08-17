@@ -1,0 +1,121 @@
+====================================================================================================
+R3  THE OPERATIVE VARIABLE: p00 = 0 / 'SPECTATOR VERTEX' IS NOT IT, AND THE CORPUS
+    ALREADY CONTAINS THE COUNTEREXAMPLE
+====================================================================================================
+
+(a) THE TEN S4 CARRIERS, THEIR CLASS COUNTS AS S4 PUBLISHES THEM (S4:575-585), AND
+    WHICH READING IS CORRECT ON EACH.  Weights are the SENSE-U (uniform on vertices)
+    states S4 itself uses.  All predicates EXACT integer arithmetic on the counts.
+
+    carrier                       class counts (00,10,01,11)  p00>0  #occupied  torus-zero  polygon  AGREE?
+    B0a ring torus, loops disjoint (2, 4, 3, 0)                YES    3          True        True     yes
+    B0b ring torus, loops meet     (4, 2, 1, 2)                YES    4          False       True     *** NO ***
+    B3  horn torus                 (0, 2, 2, 1)                no     3          True        True     yes
+    B1  K1 (as handed)             (0, 2, 2, 1)                no     3          True        True     yes
+    B4  spindle                    (1, 1, 1, 3)                YES    4          False       True     *** NO ***
+    B2  K1 both filled             (0, 2, 2, 1)                no     3          True        True     yes
+    B1p K1-bridged                 (0, 3, 3, 0)                no     2          True        True     yes
+    B1q K1-bridged + SPECTATOR     (1, 3, 3, 0)                YES    3          True        True     yes
+    B1s K1 subdivided              (0, 5, 5, 1)                no     3          True        True     yes
+
+    CARRIERS WITH p00 > 0 (a spectator vertex, or loops that miss some vertex): B0a ring torus, loops disjoint, B0b ring torus, loops meet, B4  spindle, B1q K1-bridged + SPECTATOR
+    CARRIERS WHERE THE POLYGON READING IS ACTUALLY WRONG:                       B0b ring torus, loops meet, B4  spindle
+
+    ==> THE HEADLINE SENTENCE 'it fails on ANY CARRIER WITH A SPECTATOR VERTEX' IS FALSE,
+        AND THE CORPUS'S OWN CARRIER NAMED 'K1-bridged + SPECTATOR VERTEX' IS THE
+        COUNTEREXAMPLE.  B1q has p00 = 1/7 > 0 and the polygon/triangle reading is
+        EXACTLY RIGHT on it, because its FOURTH class is empty (p11 = 0: no vertex of
+        B1q lies on both loops).  S4:592 even computes its rate by the three-term
+        Cassaigne-Maillot formula m(1/7 + (3/7)x + (3/7)y), which is the three-class
+        object.  B0a is a second such carrier: p00 = 2/9 > 0, p11 = 0, reading correct.
+    ==> THE SELF-FLAG'S 'the corpus already owns THREE such carriers' IS WRONG TWICE:
+        there are FOUR carriers with p00 > 0 (B0a, B0b, B4, B1q -- the lane lists three
+        and omits B0a), and only TWO of them (B0b, B4) are carriers on which the
+        polygon reading actually fails.  The lane counted the wrong property.
+
+(b) SEPARATING (V2) 'some class weight is zero' FROM (V3) 'p00 = 0'.  EXACT lattice sweep:
+    for each of the four slots, force that slot to 0 and ask whether the polygon reading
+    equals the torus-zero criterion on the whole remaining face.
+    slot 0 forced to 0 :  4186 exact lattice states, #{torus-zero != polygon} = 0
+    slot 1 forced to 0 :  4186 exact lattice states, #{torus-zero != polygon} = 0
+    slot 2 forced to 0 :  4186 exact lattice states, #{torus-zero != polygon} = 0
+    slot 3 forced to 0 :  4186 exact lattice states, #{torus-zero != polygon} = 0
+    => (V2) is the right variable INSIDE the two-loop / four-class setting, and (V3) is
+       not: slot 3 (p11 = 0) works exactly as well as slot 0 (p00 = 0), and that is the
+       case B0a and B1q actually occupy.  The lane's own C5 tested this and got 0
+       mismatches -- and then its headline and its self-flag both reverted to (V3).
+
+(c) SEPARATING (V1) 'free relative phases' FROM (V2) 'some class weight vanishes'.
+    Two loops can never do this: with four classes, 'a weight vanishes' and 'the
+    occupied characters have all relative phases free' are the same condition.  THREE
+    loops separate them, and the separation is in BOTH directions.
+
+    A THREE-LOOP CARRIER, built the way S1 builds K1.  Root v0; three triangles
+      T_i = v0 -> a_i -> b_i -> v0, i = 1,2,3; T_1 FILLED (a face), T_2, T_3 unfilled;
+      plus one spectator vertex w joined by an edge to v0.
+      V = 1 + 6 + 1 = 8, E = 9 + 1 = 10, F = 1 -> chi = 8 - 10 + 1 = -1, b1 = 2 ... 
+      designated loops gamma_1, gamma_2, gamma_3 = the three triangles; their holonomies
+      u_1, u_2, u_3 are independently assignable (gamma_1 bounds -> a curvature; the
+      other two are flat).  Class of a vertex = which loops contain it.
+      vertex classes: v0:111, a1:100, b1:100, a2:010, b2:010, a3:001, b3:001, w:000
+
+    CASE 1 -- occupy the SINGLETON classes {100},{010},{001} and the EMPTY class {000}.
+      Put the weight on a1, a2, a3 and the spectator w; v0 gets none.
+      Occupied characters: {1, u_1, u_2, u_3}.  FOUR of them.  FOUR class weights are
+      non-zero and FOUR of the eight classes are empty, so (V2) 'a class weight
+      vanishes' HOLDS -- indeed four do.  All three relative phases u_1,u_2,u_3 are
+      FREE, so (V1) says the POLYGON inequality is the exact criterion.
+    CASE 2 -- occupy {000},{100},{010},{110}: weight on w, a1, a2 and a vertex in both
+      loop 1 and loop 2.  Occupied characters {1, u_1, u_2, u_1 u_2}: the third ratio is
+      the PRODUCT of the first two, so (V1) says the D-criterion, NOT the polygon one.
+      (V2) holds here too -- five of the eight classes are empty.
+    So (V2) is TRUE in both cases and the criterion DIFFERS between them.  Checked:
+
+    CASE 1, the classical fact, VERIFIED not assumed.  With all of x,y,z free on T the
+    four terms w0, w1 x, w2 y, w3 z have three free relative phases, so
+        min_{T^3} |P| = max(0, 2 max(w) - sum(w))       (polygon closure)
+    and 'a zero exists' IS the polygon inequality.  Full 3-D brute force, FLOAT:
+      w = (0.2856,0.1384,0.2402,0.3358)  90^3 grid min = 0.000998  closed form = 0.000000  polygon True
+      w = (0.0325,0.0710,0.0451,0.8515)  90^3 grid min = 0.702946  closed form = 0.702946  polygon False
+      w = (0.4127,0.0111,0.5203,0.0559)  90^3 grid min = 0.040559  closed form = 0.040559  polygon False
+      w = (0.1503,0.3218,0.0748,0.4531)  90^3 grid min = 0.001165  closed form = 0.000000  polygon True
+      max over 12 weights of |90^3 grid min - max(0,2max-sum)| = 1.1650e-03  (grid error O(1/n))
+
+    CASE 2 uses the SAME weights but the constrained character set {1,u1,u2,u1u2}; its
+    criterion is D <= 0, established in r2 by two independent groupings.  Comparing the
+    TWO PREDICATES EXACTLY (no grid, no tolerance) on 200000 Dirichlet draws:
+      P(CASE 1 has a zero) = P(polygon) = 0.50030    (exact 1/2)
+      P(CASE 2 has a zero) = P(D <= 0)  = 0.24993    (exact 1/4)
+      #{CASE 1 fires, CASE 2 does not} / N = 0.25037   (exact 1/4)
+      #{CASE 2 fires, CASE 1 does not} / N = 0.00000   (exact 0 -- the containment)
+
+    ONE EXHIBITED WITNESS, with a CERTIFIED positive lower bound on the CASE 2 side
+    (COR-E discipline: a grid min is an upper bound and cannot certify 'no zero'; the
+    closed form min_y |P| = | |w0+w1 x| - |w2+w3 x| | minimised exactly over x can):
+      w = (0.4, 0.24, 0.2, 0.16) : polygon 2max-sum = -0.200000 <= 0 so CASE 1 HAS a zero.
+        CASE 2: A = 0.152000, B = 0.128000, |A| - |B| = 0.024000 > 0 so A + B cos t NEVER vanishes;
+        D = 0.006720 > 0.  min over a 200000-point x-circle of the exact y-minimised |P| = 0.117757.
+        The two readings differ on this single weight vector by 'a zero exists' vs
+        'no zero exists'.  Same multiset, same four weights, same 'a class weight
+        vanishes' status -- only the CHARACTER LATTICE moved.
+
+    ==> THE 'equivalently, whether at least one class weight vanishes' IN THE LANE'S
+        operative_variable FIELD IS A TWO-LOOP-ONLY EQUIVALENCE, STATED UNSCOPED, and
+        the lane's headline and self-flag then replace it with the WEAKER AND FALSE
+        'p00 = 0 / spectator vertex' form.  The FIRST half of the lane's naming -- the
+        number of free relative phases -- is the correct invariant and SURVIVES.
+        Its exact form: the occupied characters chi_1..chi_n, as elements of the
+        character lattice Z^r of the loop holonomies, have free relative phases iff
+        chi_2-chi_1, ..., chi_n-chi_1 are Z-linearly independent AND span a direct
+        summand of Z^r.  Exact integer check on every case in play:
+          K1, 3 occupied  {u,v,uv}        free relative phases: True
+          4 occupied      {1,u,v,uv}      free relative phases: False
+          3 loops CASE 1  {1,u1,u2,u3}    free relative phases: True
+          3 loops CASE 2  {1,u1,u2,u1u2}  free relative phases: False
+          p10 = 0         {1,v,uv}        free relative phases: True
+          p01 = 0         {1,u,uv}        free relative phases: True
+          p11 = 0         {1,u,v}         free relative phases: True
+        -- reproduces every case the lane tested (all four single-slot deletions), plus
+        the two three-loop cases its 'equivalently' clause gets wrong.
+
+DONE.

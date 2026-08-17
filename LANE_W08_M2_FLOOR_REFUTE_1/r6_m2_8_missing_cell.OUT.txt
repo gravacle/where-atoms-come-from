@@ -1,0 +1,48 @@
+== R6.1  REPRODUCTION OF W-07 LEG D, BOTH TABLES (leg D's own code path) ==
+   TABLE 1  RS-P published p
+      W-07 'GENERIC (badly approximable)' 2pi.phi, 2pi.phi^2   max|Z_k| = 0.999999999998574   1-max = 1.4264e-12
+      S3/S4 headline f=2.0, c=1.1                              max|Z_k| = 0.999999999997325   1-max = 2.6749e-12
+      S1 published f=pi, c=3pi/2                               max|Z_k| = 1.000000000000000   1-max = 0.0000e+00
+   TABLE 2  RS-G generic p
+      W-07 'GENERIC (badly approximable)' 2pi.phi, 2pi.phi^2   max|Z_k| = 0.999999999996579   1-max = 3.4215e-12
+      S3/S4 headline f=2.0, c=1.1                              max|Z_k| = 0.999999998553642   1-max = 1.4464e-09
+      S1 published f=pi, c=3pi/2                               max|Z_k| = 1.000000000000000   1-max = 0.0000e+00
+   (W-07 leg D printed 0.999999999998574 / 0.999999999997325 / 1.000000000000000 and
+    0.999999999996579 / 0.999999998553642 / 1.000000000000000.  Reproduced.)
+
+== R6.2  THE MISSING CELL OF THE 2x2:  GENUINELY RANK-2 CONNECTIONS ON RS-P ==
+   RS-P is the ready state W-07 leg D TABLE 1 uses and the one the register's 1.4e-12
+   figure comes from.  M2-9 (this lane's own finding) says p10 = 0 forces d_eff = 1 there
+   FOR EVERY CONNECTION -- so on table 1 the connection's rank cannot be what makes the
+   floor deep, and replacing it should change nothing.  Measured:
+   connection                               RS-P 1-max|Z_k| (K=1e6)    argmin     RS-G 1-max|Z_k|
+   W-07's 'GENERIC' (phi,phi^2)  RANK 1                  1.4256e-12    832040          3.4215e-12
+   S3/S4 headline                RANK 1                  2.6748e-12    833719          1.4464e-09
+   cubic pair (t,t^2)            RANK 2                  1.5055e-12    573683          9.4144e-07
+   uniform random stream 1       RANK 2                  2.0191e-15    870809          1.3495e-06
+   uniform random stream 2       RANK 2                  1.0392e-12     81712          7.6662e-07
+   uniform random stream 3       RANK 2                  3.8612e-12    279555          7.2778e-07
+
+   READ THE RS-P COLUMN.  The register's figure is 1.426e-12.  Genuinely RANK-2
+   connections on the SAME ready state give 1.5e-12, 2.0e-15, 1.0e-12, 3.9e-12 -- the same
+   order or DEEPER.  On the ready state the sentence is about, the register's 1.4e-12 is
+   TYPICAL, not 'six orders of magnitude too deep', and generic near-returns are NOT
+   'far shallower than the register believes'.  M2-8's direction is reversed there.
+   The 1.349e-06 M2-8 answers with is the RS-G column: it moves the READY STATE as well as
+   the connection, and by M2-9's own argument the ready state is what produced 1e-12.
+
+== R6.3  WHAT OF M2-8 SURVIVES ==
+   (i) phi^2 - phi = 1 so W_C = W_F exactly and the row labelled 'GENERIC (badly
+       approximable)' is rank 1: TRUE, and checked at 60 digits below.
+       |W_C - W_F| = 2.2e-61
+   (ii) W-07 HAD ALREADY RECORDED THIS ITSELF.  LANE_W07_RECURRENCE_ISOLATION/
+        w07_e_isolation.py lines 1-3: "Leg B(ii) carried a confound OF MY OWN MAKING: I
+        built the 'generic' connection from phi and phi^2, and phi^2 = phi+1, so W_F ==
+        W_C exactly.  Redone here with independent irrationals ... Recorded rather than
+        silently fixed."  W-07 fixed leg B and did not propagate the fix to leg D.
+        M2-8 is therefore the PROPAGATION of a correction W-07 already holds, presented
+        as a new correction TO W-07; M2's own conventions page lists what it read, and
+        W-07's lane code is not on the list.  Carry, do not rediscover.
+   (iii) On a GENERIC ready state the figure would indeed be ~1.3e-6 rather than ~3.4e-12,
+        and that is a real and useful statement -- about RS-G, i.e. about table 2, not
+        about the sentence in the register.

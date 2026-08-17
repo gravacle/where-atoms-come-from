@@ -1,0 +1,41 @@
+== C1  RS-P IN CLOSED FORM (reproducing the lane's own M2-9, from the operators) ==
+   p = (1/2,0,0,1/4,1/4) -> (p11,p10,p01) = (1/2,0,1/2), so
+   Z_k = (1/2) y^k (x^k + 1)  and  |Z_k| = |cos(pi k alpha)|, alpha = f/2pi.  W_C invisible.
+   checked from the operators, 50 random (f,c), k<=80:  max discrepancy 3.086e-14
+   APPROACHED (alpha irrational): lambda = int_0^1 log|cos(pi t)| dt = -log 2 = -0.693147180560   (the lane's M2-9 measured -0.6931467..0.6931477)
+
+== C2  ATTAINED ON RS-P: THE DISTINCTION IS NOT 4.8%.  IT IS INFINITE. ==
+   x = conj(W_F) of finite order m.  |Z_k| = 0 EXACTLY iff x^k = -1, i.e. iff m is EVEN.
+   Then Omega_N = 0 exactly for every N >= m/2: the branches are exactly orthogonal, the
+   record is complete at a finite cell, and lambda = -infinity.  Computed in exact
+   rational/root-of-unity arithmetic below (no float is involved in the zero).
+    ord(x)=m  first k with Z_k = 0         lambda on RS-P   deviation vs -log2
+           2                     1                   -inf             infinite
+           3                 never        -0.462098120373              +33.33%
+           4                     2                   -inf             infinite
+           5                 never        -0.554517744448              +20.00%
+           6                     3                   -inf             infinite
+           7                 never        -0.594126154766              +14.29%
+           8                     4                   -inf             infinite
+           9                 never        -0.616130827164              +11.11%
+          15                 never        -0.646937368523               +6.67%
+          16                     8                   -inf             infinite
+         101                 never        -0.686284337188               +0.99%
+   S1's PUBLISHED CONNECTION IS THE m = 2 ROW: W_F = -1 -> x = -1 -> Z_1 = 0 EXACTLY.
+   That is W-01's registered firing and S3 sec4.5 / COR-D's 'Omega_N = 0 for all N>=1'.
+   DENSITY OF THE INFINITE CASE INSIDE THE ATTAINED SET (counting roots of unity of
+   order <= 2000 by Euler phi): 405723/1216587 = 0.3335  (-> 1/3 exactly: the odd-order
+   Dirichlet factor at s=2 is (1-2^-1)/(1-2^-2) = 2/3, so even orders carry 1/3).
+   MY OWN DEFECT, RECORDED NOT SILENTLY FIXED: the first version of this line predicted
+   2/3 for the even-order share and printed 0.3335 next to it.  The printed number was
+   right and the prediction was wrong; 1/3 is the correct limit.  It is not exotic either.
+   ODD-ORDER attained points on RS-P still deviate by up to +33.33% (m=3), never 4.8%.
+
+== C3  WHAT THE HEADLINE SAYS AND WHAT THE SAME OBJECT SAYS ON THE PUBLISHED STATE ==
+   RS-G, |H|=4  : lambda -0.804719 vs -0.767508   ->  4.85%   [the registered headline]
+   RS-G, |H|=3  : lambda -1.535057 vs -0.767508   -> 100.01%  [leg B1, same object]
+   RS-G, |H|=2/3: lambda -0.458145 / -0.331417    -> +40.3% / +56.8%, OPPOSITE SIGN
+   RS-P, |H|=2  : lambda -infinity vs -log 2      ->  INFINITE [this leg, and the lane's
+                  own M2-10, which files it as NOT load-bearing]
+   The distinction has no single value.  4.8% is the value at one point of one ready state,
+   and it is the smallest of the four.

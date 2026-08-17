@@ -1,0 +1,85 @@
+LANE W-08 / M2 — REFUTER 1 — ISOLATION LEDGER
+Required by the program's process rules.  One variable per comparison, every comparison listed.
+
+FIXED BACKGROUND (identical in every row unless the row names it as moving):
+  carrier K1 · p00 = 0 by incidence · branches M_dF, M_c · Z_k = p11(xy)^k + p10 x^k + p01 y^k ·
+  k-grid {1e3..1e7} · 3-limb residue protocol with exact big-integer re-check of every argmin ·
+  code path identical across the rows of a table · the fit is always np.polyfit on the same
+  5 log10 checkpoints M2 used, so that a fitted number here is comparable to a fitted number there.
+
+ROW 1 (R1.1/R1.2)  NOT A COMPARISON.  An exact algebraic verification: the branch operators
+  against the closed form, and the identity, in Fractions.  Nothing moves.  A control here CAN
+  fail (a wrong closed form would show as a nonzero exact residue), and it did not.
+
+ROW 2 (R1.3)  NOT A COMPARISON.  The theorem's three links, each checked separately, plus an
+  enumeration of the six degeneracy types of the connection to test whether the constant 0.12 is
+  an accident of the generic case.  Per the program's rule the vacuity disqualifier is NOT
+  applied to a theorem; it IS applied to M2's leg C4 (see ROW 9).
+
+ROW 3 (R2.1)  HELD: connection set, ready state (RS-G and RS-P in separate rows, never mixed),
+  K-grid, fit, observable.  MOVES: the ARITHMETIC PATH ONLY — leg F1's naive (k*alpha)%1.0 versus
+  the 3-limb protocol the lane's own conventions page publishes.  Purpose: to test whether F1's
+  departure from its own published protocol moves its fitted exponents.  RESULT: it does not
+  (<= 0.003 in every row).  A refuter must report the attacks that fail; this one failed.
+
+ROW 4 (R2.2)  HELD: everything in leg F1's table.  MOVES: NOTHING — the table is COMPLETED with
+  the one connection class leg B computed and leg F1 omitted (F_VWA, dim H = 2 by leg B's own B0
+  block).  Same fit, same grid, same ready states.
+
+ROW 5 (R2.3)  HELD: ready state RS-G, K-grid, fit, code path.  MOVES: dim H only (40 rank-2 pairs
+  against 40 rank-1 pairs).  DECLARED IMPERFECTION: the rank-1 construction beta = (n1 alpha-m)/n2
+  also varied the relation's HEIGHT, which enters the constant.  ROW 6 exists because of that.
+
+ROW 6 (R7.1)  HELD: ready state RS-G, K-grid, fit, code path, AND the relation height (fixed at
+  1: beta = alpha, the same relation E_W07GEN carries).  MOVES: dim H only.  This is the clean
+  isolation, and the overlap is LARGER here than in ROW 5, not smaller.
+
+ROW 7 (R3.1/R3.2)  NOT A COMPARISON.  Exact integer arithmetic on the pair leg F3 labels "VERY
+  well approximable ... same d_eff = 2", establishing what that pair is.
+
+ROW 8 (R3.3)  HELD: ready state RS-G, dim H = 2 (checked, not assumed — every pair here is
+  irrational and carries no relation of small height), K-grid, fit, code path.  MOVES: the
+  Diophantine QUALITY only.  This is leg F3 / ISOLATION_LEDGER ROW 11 re-run with pairs that
+  actually have the d_eff the row claims to hold fixed.
+
+ROW 9 (R3.4/R3.5)  NOT A COMPARISON.  A one-sided theorem (Dirichlet) checked against every row,
+  and the exact Haar measure of the quadratic sublevel set against leg B's counts — a predicted
+  CONSTANT, not just an exponent, so this control could have failed and did not.
+
+ROW 10 (R5.1)  HELD: ready state RS-G, K = 1e7, the delta grid, and the schedule RULE (write the
+  delta*K cells of smallest 1-|Z_k|).  MOVES: the connection.  Reproduces leg E3b's three rows to
+  three digits and adds the d_eff = 2 row E3b omitted.
+
+ROW 11 (R5.2)  HELD: K = 1e7, ready state RS-G, the eps-grid and the fit window.  MOVES: the
+  connection.  Adds Poisson error bars, which leg F2 does not carry, so that "0.997" and "0.795"
+  can be compared as measurements rather than as digits.
+
+ROW 12 (R5.3)  HELD: ready state RS-P, K, code path.  MOVES: the RATIONALITY OF ALPHA only.
+  Tests the published rule "on RS-P, d_eff = 1 for every connection" / "d_eff = min(1, dim H)".
+
+ROW 13 (R6.1/R6.2)  THE 2x2, AND IT IS A 2x2 ON PURPOSE.  FACTORS: ready state (RS-P = W-07 leg D
+  table 1 = the source of the register's 1.4e-12; RS-G = table 2) x connection rank (rank 1 as
+  W-07 used; rank 2, four different pairs).  ALL FOUR CELLS PRESENT, at fixed K = 1e6, fixed
+  observable (W-07 leg D's own code, transcribed), fixed code path.  M2's leg F4 runs three of
+  the four and states its correction across the diagonal; the fourth cell is the one that decides
+  the direction, and it is computed here.
+
+ROW 14 (R7.2)  NOT A COMPARISON.  What a numpy-drawn double actually is, exactly.
+
+DEFECTS IN THIS REFUTATION, RECORDED RATHER THAN FIXED SILENTLY:
+  D-1  R4's first run returned lambda = -inf on two rows and -1.203818 on a third, because I did
+       not split the quadrature at the integrand's LOG-SINGULARITIES.  I had labelled it "an
+       INDEPENDENT route" while it was silently wrong on three of five rows.  Split and re-run;
+       the note is in the script, and one row (B_S3RES on RS-P) is STILL -inf in the output
+       because my splitting rule uses the wrong period for that polynomial.  Its analytic value
+       is log(1/2) and M2's -0.693147180560 is right.
+  D-2  R3.3's "Liouville-style pair" row reads F = 0 from K = 1e6 and fits -88.0.  That is a
+       float64 artefact of MY table (the pair is a rational with denominator 1e25), exactly the
+       artefact I convict leg F3 of mis-diagnosing.  It is NOT load-bearing: the finding is
+       carried by leg B's own F_VWA pair, which is irrational, verified at 60 digits and
+       re-checked in big-integer arithmetic.
+  D-3  My exact re-check of F_VWA's floor gives 3.609008e-23 where M2 prints 3.609072e-23: M2's
+       figure is right to 4 significant digits, not the 7 it displays.  Immaterial — the finding
+       quotes 3.609e-23 — but it is the same class as COR-E/COR-K and I record it rather than
+       let a 7-digit number stand.
+  D-4  ROW 5's height confound, declared above and cured in ROW 6.

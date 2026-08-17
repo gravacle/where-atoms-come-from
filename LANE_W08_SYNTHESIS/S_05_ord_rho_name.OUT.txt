@@ -1,0 +1,18 @@
+amp (W-07 leg E, pair (2,3), seed 20260816) = 0.271776442688027
+
+== S5a  W-07's OWN ROW, AND A FINITE-ORDER COUNTEREXAMPLE TO ITS OWN SHARP FORM ==
+   W-07 sec3: '1000 = 4000/4 is ord(rho)' -> the sharp form is count = floor(K/ord).
+   theta                                            ord(rho)  floor(K/ord)  ACTUAL count<1e-9        min D
+   S1 PUBLISHED  theta = -1/4                              4          1000               1000    0.000e+00
+   theta = 1/4 + 1e-13   (EXACT rational)     10000000000000             0               1000    6.830e-13
+   theta = 1/1000 + 4e-16 (EXACT rational)  2500000000000000             0                  4    6.830e-13
+   theta = 1/2                                             2          2000               2000    0.000e+00
+   theta = 1/2000                                       2000             2                  2    0.000e+00
+   ROW 2 IS THE KILL:  ord(rho) = 10^13 > K, so W-07's own formula predicts 0 exact zeros
+   -- correct, there are none -- while the observable W-07 TABULATES returns 1000.
+   Irrationality was never needed.  'finite versus infinite' was never the axis.
+
+== S5b  ROWS 2 AND 3 HAVE IDENTICAL min D AND COUNTS 1000 vs 4 ==
+   min_k ||k theta|| is held to the last digit (4*1e-13 = 1000*4e-16 = 4e-13) and the
+   count moves by 250x.  M4's OWN named variable, min_k ||k theta||, does not carry it.
+   The count is carried by the DENOMINATOR q of the nearby rational: count = floor(K/q).

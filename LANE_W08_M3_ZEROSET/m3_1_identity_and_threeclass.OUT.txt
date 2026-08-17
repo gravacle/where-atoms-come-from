@@ -1,0 +1,86 @@
+================================================================================================
+M3-1  THE IDENTITY  Z_k = P(u^k, v^k)  ON K1, AND THE ZERO-SET THEOREM AT p00 = 0
+================================================================================================
+numpy 2.0.2 ; IEEE double unless a line says EXACT.
+
+(a) IDENTITY CHECK.  s random complex normalised, (f,c) random, k = 1..12.
+    400 states x 12 k-values, max |Z_k(direct) - P(u^k,v^k)| = 5.118e-16
+    => Z_k IS the Mahler polynomial evaluated at the k-th orbit point.  Same object twice.
+
+(b) THEOREM M3-1 (p00 = 0).  P = x(p10 + p11 y) + p01 y.
+    min_{T^2}|P| = dist( p01 , [ |p10-p11| , p10+p11 ] )  -- an EXACT closed form.
+    Zero exists  <=>  |p10-p11| <= p01 <= p10+p11  <=>  each of the three <= sum of others.
+    With p10+p01+p11 = 1 this is  max(p10,p01,p11) <= 1/2.
+
+    EXACT ARITHMETIC, integer simplex denominator N = 200, 20301 grid points:
+      #{triangle inequality holds}                      = 5151
+      #{triangle predicate != closed-form predicate}     = 0   <-- must be 0
+
+    BRUTE FORCE, 360x360 torus grid, simplex denominator N = 60, 1891 points:
+      max | brute-grid min  -  closed-form min |  over the NON-firing region = 3.331e-16
+      (the grid minimum is an UPPER bound on the true min; on the firing region
+       the true min is exactly 0 and the grid returns O(1/n) -- reported, not hidden)
+      #{grid min < 3e-03 while triangle inequality FAILS} = 0
+      #{triangle FAILS but true min < 3e-03 (undecidable band, |p_max-1/2| tiny)} = 0
+
+    Inside the firing region the zero is generically CONICAL; grid min ~ C/n:
+    *** CONFOUND RECORDED, NOT SILENTLY FIXED.  My first pass used n = 90,180,360,720,1440.
+    *** Every one is a multiple of 90, so the SAME lattice point recurred and the grid
+    *** minimum was CONSTANT at 1.478364e-03 for four successive n -- which reads as
+    *** 'the minimum is not going to zero' and is a pure grid artefact.  The refinement
+    *** ratio, not the value, is the observable.  Both ladders are printed.
+      [multiples of 90]  p=(0.30,0.30,0.40)  n=   90  grid min |P| = 1.478364e-03
+      [multiples of 90]  p=(0.30,0.30,0.40)  n=  180  grid min |P| = 1.478364e-03
+      [multiples of 90]  p=(0.30,0.30,0.40)  n=  360  grid min |P| = 1.478364e-03
+      [multiples of 90]  p=(0.30,0.30,0.40)  n=  720  grid min |P| = 1.478364e-03
+      [multiples of 90]  p=(0.30,0.30,0.40)  n= 1440  grid min |P| = 4.710004e-04
+      [near-coprime   ]  p=(0.30,0.30,0.40)  n=   97  grid min |P| = 1.295500e-02
+      [near-coprime   ]  p=(0.30,0.30,0.40)  n=  199  grid min |P| = 1.947419e-03
+      [near-coprime   ]  p=(0.30,0.30,0.40)  n=  401  grid min |P| = 1.245425e-03
+      [near-coprime   ]  p=(0.30,0.30,0.40)  n=  797  grid min |P| = 6.574788e-04
+      [near-coprime   ]  p=(0.30,0.30,0.40)  n= 1601  grid min |P| = 3.331626e-04
+
+(c) THE QUANTIFIER.  Two DIFFERENT projections of the one incidence variety
+      {(p,(f,c)) in Delta x T^2 : Z_1 = 0}.
+    W-01/Theorem A (S2 audit :246-252) fixes the CONNECTION and quantifies over STATES:
+      exists p in Delta with Z_1 = 0  <=>  0 in conv{ e^{i(c-f)}, e^{-if}, e^{ic} }
+                                       <=>  every consecutive angular gap <= pi.
+    THEOREM M3-1 fixes the STATE and quantifies over CONNECTIONS:
+      exists (f,c) with Z_1 = 0  <=>  P has a zero on T^2  <=>  triangle inequality on p.
+    THESE ARE NOT THE SAME PREDICATE; they have different arguments.
+
+    REGISTER_V001.md:43 drops the quantifier: '...which vanishes IFF 0 lies in the convex
+    hull of three unit-modulus coefficients'.  Read literally (fixed p AND fixed (f,c))
+    that iff is FALSE.  Counterexample on K1's OWN published connection:
+      published p=(1/2,0,0,1/4,1/4)       Z_1 = -0.000000+0.000000i   |Z_1| = 6.123e-17
+      all weight at the root              Z_1 = +0.000000+1.000000i   |Z_1| = 1.000e+00
+      S3 sense-C p=(.4,.15,.15,.15,.15)   Z_1 = -0.300000+0.100000i   |Z_1| = 3.162e-01
+      the three unit-modulus coefficients here are {uv, u, v} = {i, -1, -i}: angles
+      90, 180, 270 deg, gaps 90/90/180, all <= 180, so 0 IS in their convex hull.
+      Yet Z_1 != 0 for the root state.  The register's sentence needs '...CAN BE MADE TO
+      vanish by some ready state iff...'.  The SOURCE (S2 audit Theorem A) has it right.
+
+(d) COROLLARIES OF M3-1, each checked:
+    (i)  'the root can never fire' (W-01) = the extreme non-triangle p=(0,0,1)  ->  P = xy,
+         |P| == 1 on T^2, no zero.  min over 720x720 grid = 1.000000
+    (ii) firing region = {max <= 1/2} has simplex-area fraction 1/4 exactly
+         (the medial triangle).  EXACT count at denominator N=200: 5151 of 20301 = 0.253731
+         (-> 1/4 as N -> inf; the finite-N count exceeds 1/4 by the boundary layer)
+    (iii) DIMENSION OF THE ZERO SET.  |P| = 0 is two real equations in two real unknowns,
+         so the zero set is generically 0-dimensional.  It is 1-DIMENSIONAL exactly when P
+         FACTORS, which at p00 = 0 happens iff ONE weight is 0 and the other two are equal
+         (hence both = 1/2):  (0,1/2,1/2) -> P = (y/2)(1+x) ; (1/2,0,1/2) -> P = (x/2)(1+y) ;
+         (1/2,1/2,0) -> P = (1/2)(x+y).  Those are the three VERTICES of the medial
+         triangle, i.e. the three CORNERS of the firing region.  Everywhere else on the
+         boundary the two circles |p10+p11 y| and p01 are TANGENT: one degenerate zero point.
+         *** CORRECTION TO MY OWN FIRST PASS: I wrote '1-dimensional on the boundary of the
+         *** firing region'.  That is FALSE -- only at the three corners.  Recorded.
+         interior  (.30,.30,.40) : sign changes of |p10+p11 y|-p01 =    2 ; |g|<1e-14 on    0 of 2000 grid y
+         CORNER    (.00,.50,.50) : sign changes of |p10+p11 y|-p01 =   80 ; |g|<1e-14 on 2000 of 2000 grid y
+         bdy edge  (.25,.25,.50) : sign changes of |p10+p11 y|-p01 =    0 ; |g|<1e-14 on    1 of 2000 grid y
+         exterior  (.10,.20,.70) : sign changes of |p10+p11 y|-p01 =    0 ; |g|<1e-14 on    0 of 2000 grid y
+         (2 sign changes = 2 transverse conical zeros; g == 0 identically = the corner,
+          a whole circle of zeros -- its 'sign changes' count is pure float noise on 0;
+          1 touching point = the tangential boundary case; 0 and 0 = no zero at all)
+
+DONE.

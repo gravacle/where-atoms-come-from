@@ -1,0 +1,53 @@
+==============================================================================
+R1_10 — 'ord(rho) IS EXACTLY THE RANK-2 CASE' IS FALSE
+==============================================================================
+
+  DEFINITION USED (W-07 PUBLISHED_CONVENTIONS / W-07 register row): rho is the branch ratio
+  in U(1); on S1's published connection W_F = -1, W_C = -i it has order 4.
+
+  COUNTEREXAMPLE, AND IT IS ROW 4 OF THE LANE'S OWN M1_04 TABLE:
+      u = v = e^{0.7 i}   (the lane's "S={10,01} and u = v (W_F W_C = 1)" row).
+      rho = u/v = 1, so ord(rho) = 1 -- FINITE, indeed minimal.
+      But u^m v^n = e^{0.7 i (m+n)} = 1  iff  0.7 (m+n) in 2 pi Z  iff  m + n = 0,
+      because 0.7/(2 pi) is irrational (pi is transcendental and 0.7 is rational).
+      So L = Z.(1,-1):  RANK 1, not rank 2.  H is a CIRCLE, not a finite group.
+  Confirmed numerically (float64): the orbit (u^k, v^k) visits infinitely many points.
+      distinct values of arg(u^k) to 9 decimals over k <= 2e4: 20000  (a finite H would
+      have at most ord(rho) * something bounded; it does not)
+
+  CONSEQUENCE.  The lane's ruling-out of ord(rho) is right in its OPERATIVE half (ord(rho)
+  cannot separate S3/S4's resonant point from a Diophantine point -- both have ord = infinity;
+  checked below) and WRONG in its stated reason.  ord(rho) is not the rank-2 case; it is the
+  condition "(1,-1) direction lies in L", which cuts across ranks 1 and 2.  Since the whole
+  point of the naming rule in this program is that the reason must be right and not only the
+  conclusion, this is recorded as a defect of the same class the rule exists to catch.
+
+  CHECK OF THE OPERATIVE HALF (both have ord(rho) = infinity):
+    S3/S4 headline: u = e^{-2i}, v = e^{1.1 i}, rho = e^{-3.1 i};  3.1/(2 pi) is
+      irrational (pi transcendental, 3.1 rational)  ->  ord(rho) = infinity.
+    Diophantine:    rho = e^{2 pi i (alpha - beta)} with alpha-beta = -2^(1/3)-4^(1/3),
+      irrational  ->  ord(rho) = infinity.   The two are indistinguishable by ord(rho),
+      and their limits differ by 4.929e-04.  THE LANE'S CONCLUSION HERE STANDS.
+
+==============================================================================
+C2 — rank L DOES NOT DETERMINE lambda, IN ANY RANK
+==============================================================================
+
+  RANK 2, two different finite subgroups, same weights (0.3,0.3,0.4):
+     u=-1, v=-i   (S1 published, |H| = 4)     lambda = -0.804718956217
+     u=v=zeta_3  (|H| = 3)                    lambda = -0.424321891942
+     u=i, v=zeta_5 (|H| = 20)                 lambda = -0.743881106266
+     u=v=-1      (|H| = 2)                    lambda = -0.804718956217
+     -> four rank-2 connections, four different rates.  'rank L = 2 gives a finite
+        average' is a TYPE statement, not a value statement; the lane's isolation
+        ledger reads its three-row comparison as if rank explained the three values.
+
+  RANK 1: R1_06 gives lambda_H over the relation vectors, spanning -1.2040 to -0.3567.
+  RANK 0: the lane's own F4 gives two rank-0 pairs, one with lambda = m(P) and one with
+          liminf = -infinity.
+  SO: the variable that determines the RATE is (L, inhomogeneous Diophantine type of the
+  orbit relative to Z(P restricted to H)).  The lane's Comparison 5 says precisely this and
+  its operative_variable field says L.  The two are inconsistent, and the field is the one
+  that will be read.
+
+DONE R1_10

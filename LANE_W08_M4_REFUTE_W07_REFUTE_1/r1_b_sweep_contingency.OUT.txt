@@ -1,0 +1,29 @@
+== B1  K1, EXACT RANK.  Reproduces W-07 and M4. ==
+  distribution {2: 1, 3: 10, 4: 25, 5: 15, 6: 1}   winners at 2: [[[0], [1], [2], [3], [4]]]
+  K1's OWN invariant count E - rank(d1) = 2   (S1 sec4: 6 - 4 = 2)  -> target 2 is correct FOR K1
+
+== B2  M4's F3, WITH THE TARGET COMPUTED FROM THE COMPLEX INSTEAD OF COPIED FROM K1 ==
+  K1  (V=5,E=6): rank(d1)=4  ITS OWN invariant count = E - rank = 2
+      distribution {2: 1, 3: 10, 4: 25, 5: 15, 6: 1}
+      winners at ITS OWN target 2: 1  -> [[[0], [1], [2], [3], [4]]]
+      winners at M4's copied numeral 2 : 1
+  C5  (V=5,E=5): rank(d1)=4  ITS OWN invariant count = E - rank = 1
+      distribution {1: 1, 2: 10, 3: 25, 4: 15, 5: 1}
+      winners at ITS OWN target 1: 1  -> [[[0], [1], [2], [3], [4]]]
+      winners at M4's copied numeral 2 : 10
+
+  M4's F3 compares C5 at target 2.  C5's own invariant count is 1.  At its OWN target the
+  sweep on C5 returns EXACTLY ONE winner and it IS the discrete partition -- the same answer
+  as on K1.  M4 manufactured contingency by holding a numeral fixed while moving the object
+  that DEFINES the numeral.  That is this program's cardinal defect, committed by the lane
+  whose headline convicts W-07 of it.
+
+== B3  AND THE SWEEP IS FORCED ON EVERY CONNECTED GRAPH, WHICH IS STRONGER THAN W-07 SAID ==
+  For a connected complex and a k-block partition the quotient is connected, so
+  rank = k-1 exactly and invariants = E-k+1.  The target E-rank(d1) = E-V+1 is therefore
+  attained iff k = V: the DISCRETE partition, always, uniquely, on ANY connected graph.
+  connected random graphs tested: 178   graphs where the unique winner is NOT the
+  discrete partition: 0
+  ==> the 52-sweep 'could not have come out otherwise' ON ANY CONNECTED INPUT -- which is
+      M4's OWN stated criterion for voiding a control (m4_f F3, first line).  Applied with
+      the target the sweep actually uses, M4's F3 REFUTES M4-5 instead of supporting it.

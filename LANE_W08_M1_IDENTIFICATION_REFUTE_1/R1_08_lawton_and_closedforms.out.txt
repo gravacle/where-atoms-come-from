@@ -1,0 +1,70 @@
+==============================================================================
+R1_08 (A) — LAWTON 1983: INVOKED CORRECTLY, OR MERELY NAMED?
+==============================================================================
+
+A2  q(r) for r = (n,-m):  the primitive s with s.r = 0 is s = (m,n)/gcd, so
+    q(r) = max(|m|,|n|)/gcd(m,n).  All 16 rows have gcd = 1:
+    rows with gcd != 1: NONE
+    q values: [1, 1, 1, 1, 2, 2, 3, 3, 4, 5, 5, 7, 11, 20, 13, 29]
+    -> q(r) -> infinity along the lane's accumulation sequence (1,1),(5,3),(11,20),
+       (41,53),(97,61),(610,377),(2584,1597): q = 1,5,20,53,97,610,2584.  LAWTON'S
+       HYPOTHESIS IS SATISFIED AND IS THE CORRECT ONE.  The citation is used, not named.
+
+A3  INTEGER-COEFFICIENT READING.  m(10*P_r) - log 10 must equal m(P_r):
+    ( 5,  3)  m(P_r) = -0.76522435052588189   m(10 P_r)-log10 = -0.76522435052588189   diff 2.3e-41
+    (11, 20)  m(P_r) = -0.76701499299767172   m(10 P_r)-log10 = -0.76701499299767172   diff 2.3e-41
+    (29, 17)  m(P_r) = -0.767138178745554682   m(10 P_r)-log10 = -0.767138178745554682   diff 2.3e-41
+    -> the lane's citation survives even the narrowest (integer-coefficient) reading of
+       Lawton, because its weights are RATIONAL.  It does NOT survive that reading on
+       the irrational weights its own simplex (M1_05) ranges over; there the
+       complex-coefficient version is required.  The lane does not say which it uses.
+
+A4  IS THE ACCUMULATION MONOTONE?  (the lane prints it as an approach)
+    (   1,    1)  q =     1   lambda_H = -1.203972804325936   dev = -0.43646
+    (   5,    3)  q =     5   lambda_H = -0.7652243505258819   dev = 0.0022835
+    (  11,   20)  q =    20   lambda_H = -0.7670149929976717   dev = 0.00049289
+    (  41,   53)  q =    53   lambda_H = -0.7674169554067893   dev = 9.0925e-5
+    (  97,   61)  q =    97   lambda_H = -0.7675155678175162   dev = -7.6875e-6
+    -> the deviation CHANGES SIGN (+ at (5,3),(11,20),(41,53); - at (97,61)).  Lawton
+       gives convergence, not monotone convergence, and the lane's table is consistent
+       with the theorem.  No defect; recorded because it was checked.
+
+==============================================================================
+R1_08 (B) — THE ORDER-4 VALUE, EXACTLY (no floats)
+==============================================================================
+   k=1  Z_k = -3/10 + 1/10 i   |Z_k|^2 = 1/10
+   k=2  Z_k = -2/5 + 0 i   |Z_k|^2 = 4/25
+   k=3  Z_k = -3/10 + -1/10 i   |Z_k|^2 = 1/10
+   k=4  Z_k = 1 + 0 i   |Z_k|^2 = 1
+   prod_{k=1}^{4} |Z_k|^2 = 1/625   so prod |Z_k| = sqrt(1/625) = 1/25 exactly
+   lambda = (1/4) log(1/25) = -(1/2) log 5 = -0.8047189562170501873
+   lane: -0.804718956217050  -- EXACT AGREEMENT.  m(P) - lambda = 0.037211076
+
+==============================================================================
+R1_08 (C) — THE RESONANT ORBIT, EXACT RATIONAL PHASES, DIFFERENT SCHEME
+==============================================================================
+
+  The lane substitutes a DIFFERENT point of the resonance line for f=2.0,c=1.1 in order to
+  make 11*alpha + 20*beta = 0 exact in its int64 representation, arguing that the limit
+  depends only on (m,n).  That argument is correct (H depends only on the primitive relation,
+  and every non-torsion point of H equidistributes on H), but it means the lane never ran
+  S3/S4's actual connection.  Run here: the ACTUAL point alpha = -2/(2 pi), beta = 1.1/(2 pi),
+  with the phase kept exactly on the subtorus by construction z = e^{-0.1 i}, and separately
+  a check that -11f + 20c = 0 in exact rational arithmetic for f = 2, c = 11/10.
+
+  exact check: -11 f + 20 c = 0   (must be 0)
+  so u^11 v^20 = 1 with u = e^{-2i}, v = e^{1.1 i}; the rotation on H is z = e^{-0.1 i},
+  rotation number rho = -0.1/(2 pi) = -1/(20 pi), irrational since pi is.
+
+  Q(z) = 0.3 z^31 + 0.4 z^20 + 0.3 ; averaging log|Q(e^{-2 pi i k rho})| over k<=N
+  (phases reduced EXACTLY in big integers, only cos/sin/log in float64)
+      N = 1000       (1/N) sum log|Z_k| = -0.768204529837   dev from m(Q) = -1.190e-03
+      N = 10000      (1/N) sum log|Z_k| = -0.767035367659   dev from m(Q) = -2.037e-05
+      N = 100000     (1/N) sum log|Z_k| = -0.767029486232   dev from m(Q) = -1.449e-05
+      N = 1000000    (1/N) sum log|Z_k| = -0.767016016640   dev from m(Q) = -1.024e-06
+  m(Q) at 40 dps = -0.767014992997672     [lane: -0.767014992998; register erratum: -0.767014993]
+  -> the resonant limit REPRODUCES on S3/S4's ACTUAL connection, not merely on a
+     substituted point of the same line.  The lane's substitution argument is sound and
+     is now checked rather than argued.
+
+DONE R1_08

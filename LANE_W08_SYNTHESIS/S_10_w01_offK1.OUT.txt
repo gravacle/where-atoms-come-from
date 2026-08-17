@@ -1,0 +1,17 @@
+== S10a  MEASURE OF THE FIRING REGION, ONE VARIABLE (occupied characters) ==
+   K1, THREE characters {uv,u,v}          fires on 0.250850 of T^2   (exact 1/4)
+   spectator carrier, FOUR {1,u,v,uv}     fires on 0.501075 of T^2   (exact 1/2)
+   closed form  cos f + cos c <= 0 :        agrees with the 4-char hull on 200000 of 200000  (mismatches 0)
+   -> THE FIRING REGION DOUBLES.  The register's word 'three' is p00 = 0, i.e. K1's
+      incidence, and it is not flagged as a hypothesis anywhere in the W-01 row.
+
+== S10b  W-01's ADVERTISED VIRTUE, ONE VARIABLE (the same) ==
+   'it DISTINGUISHES CURVATURE FROM FLAT HOLONOMY, which K1 exists to separate':
+   K1  (3 chars): sending f -> -f alone CHANGES the verdict at 100215 of 200000 points
+   spectator (4): sending f -> -f alone CHANGES the verdict at 0 of 200000 points
+   -> the criterion becomes SEPARABLE in (f,c) the moment a fourth character appears.
+      The property the register advertises as the criterion's virtue is a coincidence
+      of p00 = 0.  Witness: (pi/2, pi/2) fires on K1, (-pi/2, pi/2) does not; both fire
+      on the spectator carrier.
+      f=+1.5708 c=+1.5708   K1 fires: True   spectator fires: True
+      f=-1.5708 c=+1.5708   K1 fires: False   spectator fires: True

@@ -1,0 +1,54 @@
+====================================================================================================
+R5  IMPLICATION LEDGER: EVERY ARROW, BOTH DIRECTIONS, WITH A COUNT
+====================================================================================================
+
+  HULL(u,v)  :  0 in conv{uv, u, v}                          [about the CONNECTION]
+  ZERO(p)    :  P_p has a zero somewhere on T^2              [about the STATE]
+  TRI(p)     :  |p10-p11| <= p01 <= p10+p11                  [about the STATE]
+  FIRE(p,u,v):  Z_1 = p10 u + p01 v + p11 uv = 0             [about BOTH]
+
+  q = 12 : 46800 (connection, state) pairs ; 71 of them fire
+    ARROW                                                  counterexamples   VERDICT
+    FIRE(p,u,v)  =>  HULL(u,v)                    [1]             0      HOLDS
+    HULL(u,v)    =>  FIRE(p,u,v)                  [2]         17154      FAILS
+    FIRE(p,u,v)  =>  TRI(p)                       [3]             0      HOLDS
+    TRI(p)       =>  FIRE(p,u,v)                  [4]         13033      FAILS
+    (EXISTS p) FIRE  =>  HULL(u,v)                [5]             0      HOLDS
+    HULL(u,v)    =>  (EXISTS p) FIRE              [6]            18      FAILS
+    (EXISTS u,v) FIRE  =>  TRI(p)                 [7]             0      HOLDS
+    TRI(p)       =>  (EXISTS u,v on this grid) FIRE [8]          54      FAILS
+
+  q = 15 : 73125 (connection, state) pairs ; 2 of them fire
+    ARROW                                                  counterexamples   VERDICT
+    FIRE(p,u,v)  =>  HULL(u,v)                    [1]             0      HOLDS
+    HULL(u,v)    =>  FIRE(p,u,v)                  [2]         18198      FAILS
+    FIRE(p,u,v)  =>  TRI(p)                       [3]             0      HOLDS
+    TRI(p)       =>  FIRE(p,u,v)                  [4]         20473      FAILS
+    (EXISTS p) FIRE  =>  HULL(u,v)                [5]             0      HOLDS
+    HULL(u,v)    =>  (EXISTS p) FIRE              [6]            54      FAILS
+    (EXISTS u,v) FIRE  =>  TRI(p)                 [7]             0      HOLDS
+    TRI(p)       =>  (EXISTS u,v on this grid) FIRE [8]          90      FAILS
+
+  READING OF THE LEDGER.
+   [1][3]   hold unconditionally and are THEOREMS: a firing pair certifies both HULL
+            and TRI.  These are the halves that W-01's own exhibit travels on.
+   [2][4]   fail, and heavily.  This is F3's content -- and F3 does not say that only
+            these two halves fail.
+   [5]      holds.
+   [6][8]   show POSITIVE COUNTS, and both counts are DISCRETISATION ARTEFACTS OF MY OWN
+            SWEEP, not failures of anything.  RECORDED, NOT SILENTLY FIXED, because the
+            uncorrected reading would be a false refutation:
+              [6] quantifies p over a RATIONAL simplex grid of denominator 24; the exact
+                  p that zeroes a given coefficient triple is generally irrational, so a
+                  finite grid misses it.  Over the real simplex [5]+[6] together ARE the
+                  definition of a convex hull and hold identically -- proved, and
+                  demonstrated numerically in r1 (2) against exact polygon geometry.
+              [8] quantifies (u,v) over a q-th-root grid, which cannot realise the
+                  continuum of angles TRI needs.  M3-1's hard direction is certified
+                  CONSTRUCTIVELY over the reals in r2 (a): 29161 exact lattice states,
+                  0 certificate failures, exact residual 0.
+            A grid quantifier is a LOWER bound on an existential.  Both counts are
+            upper bounds on nothing.  This is the same defect class as COR-E.
+   [7]      holds: it is M3-1's easy direction.
+
+DONE.

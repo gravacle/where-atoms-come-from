@@ -1,0 +1,92 @@
+LANE W08 / M3 — REFUTER 2 — LENS: SCOPE — ISOLATION LEDGER
+One line per comparison.  HELD FIXED | THE ONE THING THAT MOVES | WHERE.
+
+THE ENABLING LEMMA THAT MAKES THESE ISOLATIONS ONE-VARIABLE.  Z_k depends on the carrier ONLY
+through the pushforward pi = (p00,p10,p01,p11) and on the connection only through (u,v).  This is
+re-verified on K1S and BARB at 4.5e-16 and 5.6e-16 (r2_1 (a)), NOT taken from the attacked lane.
+Consequently two carriers with the same SET OF OCCUPIED CLASSES are indistinguishable to every
+observable in this program, and "which classes are occupied" is a legitimate single variable even
+when the two carriers differ in V, E and edge list.  Without this lemma, R2 below would be a
+three-way confound.
+
+--------------------------------------------------------------------------------------------
+R1.  K1  vs  K1S  (add ONE vertex on neither loop)
+     HELD FIXED: chi, b0, b1, b2, the face count, the two gauge invariants W_F/W_C, the class
+                 map rule, the observable Z_k, the connection space T^2, the code path.
+     MOVES:      only whether SOME vertex lies on neither loop.
+     RESULT: the identity Z_k = P(u^k,v^k) survives; the state-side zero criterion changes from
+     the triangle inequality to w1+w4 <= w2+w3.  r2_1 (a)(c).
+
+R2.  K1S  vs  BARB  (both have a spectator vertex)
+     HELD FIXED: the presence of a spectator vertex, chi=0/b1=1/one face, the two invariants,
+                 the observable, the enabling lemma above.
+     MOVES:      only whether SOME vertex lies on BOTH loops (i.e. whether class 11 is occupied).
+     RESULT: on BARB the triangle equivalence HOLDS at every state (0 mismatches, 20301 exact
+     lattice points); on K1S it fails.  THIS IS THE COMPARISON THAT REFUTES THE HEADLINE.
+     Without it, "a spectator vertex" would stand as the operative variable, which R2 refutes
+     directly.  The correct variable is ALL FOUR CLASSES OCCUPIED.  r2_1 (b).
+
+R3.  CONNECTION side, three coefficients {uv,u,v}  vs  four {1,u,v,uv}
+     HELD FIXED: the quantifier (EXISTS a ready state), the criterion (0 in conv), the carrier's
+                 role, the torus grid, the code path.
+     MOVES:      only whether the trivial character is present.
+     RESULT: firing measure 1/4 -> 1/2, both EXACT (closed forms proved).  r2_2 (a)(b).
+
+R4.  STATE side, three classes  vs  four
+     HELD FIXED: the quantifier (EXISTS a connection), exact lattice arithmetic.
+     MOVES:      only the class count.
+     RESULT: firing measure 1/4 -> 1/4, UNCHANGED.  R3 and R4 together invert the attacked
+     lane's framing: the side it called "unchanged" is the side whose content moves, and the
+     side it called "broken" keeps its measure.  r2_2 (b), r2_5 (1)(2).
+
+R5.  the SUPPORT ENUMERATION of the corrected formation criterion
+     HELD FIXED: the criterion itself (G != {1}), the character assignment, exact integer
+                 exponent arithmetic.
+     MOVES:      only which classes exist on the carrier.
+     RESULT: K1's five rows become fifteen; one new never-forming curve, {c = f}, is disjoint
+     from all three K1 curves.  Realised on K1S at f = c = 1 rad: |Z_k| = 1 for all k while
+     m(P) = -log 2.  r2_3 (A).
+
+R6.  the DOUBLE-DEGENERACY LOCUS
+     HELD FIXED: the connection at f = pi (K1's own published curvature), exact rationals.
+     MOVES:      only the state, along the arc {p00=p10, p01=p11} vs off it.
+     RESULT: on the arc, Z_k = 0 for every odd k and EVERY c; off it, either isolated c or no
+     zero at all.  So the state half of the pathology is a CURVE at four classes and three
+     ISOLATED POINTS at three classes.  r2_3 (B).
+
+R7.  which CLOSED FORM is evaluated for m(P) at four terms
+     HELD FIXED: the state, the quadrature, the carrier.
+     MOVES:      only the closed form — Cassaigne-Maillot on each three-term reduction vs the
+                 two-arc split derived here.
+     RESULT: CM deviates by 2.9e-2 to 6.9e-1 under every reduction; the arc split agrees to
+     4.4e-16 .. 4.6e-12.  CM implementation validated first against the register's own
+     -0.767507880 (dev 3.6e-10).  r2_4 (a).
+
+R8.  WHICH PERMUTATION of the four class weights
+     HELD FIXED: the weight multiset, the connection, the observable, the code path.
+     MOVES:      only which permutation is applied — sigma (00<->11 & 10<->01) vs the single
+                 transposition 00<->10.
+     RESULT: |Z_1| moves by up to 7.9e-01 under 00<->10 (not a symmetry) while lambda moves by
+     3.3e-16 (a symmetry).  So sigma is pointwise-but-Z_2 and the multiset theorem is
+     integrated-but-S_4: INCOMPARABLE, neither stronger.  r2_4 (c).
+
+R9.  the DERIVATION ROUTE and the LATTICE for M3-2
+     HELD FIXED: the predicate being decided, exact integer arithmetic.
+     MOVES:      only the route (three-factor product D vs endpoint sign-straddle) and the
+                 lattice denominator (71, 97 — coprime to the lane's 30, 60).
+     RESULT: 0 disagreements over 63367 + 161700 lattice points.  M3-2 is a theorem.  r2_5 (1).
+
+--------------------------------------------------------------------------------------------
+NOT ISOLATED, AND SAID SO:
+ * BARB differs from K1 in TWO ways at once (gains a spectator, loses the shared vertex).  It is
+   used ONLY as an existence witness against a universal sentence ("fails on ANY carrier with a
+   spectator vertex"), which needs only one counterexample and attributes nothing.  Every
+   attribution in this lane runs through R1 or R2, each of which moves one occupied-class slot.
+ * The volumes 1/4 and 1/2 are under the FLAT Dirichlet(1,1,1,1) prior on CLASS WEIGHTS.  Under
+   a uniform prior on |s_v|^2 on K1S's six vertices the same quantities are 0.28057 and 0.55985
+   (r2_1 (d)).  The QUALITATIVE break is prior-free; the numbers are not.  Both are printed.
+ * The eight-class probe in r2_4 (b) decides "non-firing" from a 400x400 float grid and skips
+   ambiguous cases.  It is a spot check, not a certification, and is scored as OPEN.
+ * NOT TESTED HERE AT ALL: charge != 1, SU(2) or any non-abelian group, a third loop beyond the
+   one numerical probe, a face whose boundary passes a vertex more than once, and any schedule
+   other than the canonical clock k_n = n.

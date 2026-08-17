@@ -1,0 +1,40 @@
+== A0  THE ISOLATION-LEDGER CLAIM THAT amp IS HELD FIXED — CHECKED, NOT ASSUMED ==
+  |s_2||s_3| = 0.27177644268802675   (dressing is diagonal unit-modulus, so |t_v| = |s_v| exactly)
+  distinct float amp over the six rows : 3 -> [0.27177644268802664, 0.2717764426880267, 0.27177644268802675]
+  spread = 1.110e-16  (4.09e-16 relative) -- 1 ulp of round-off,
+  not a moving variable.  M4's ledger claim 'amp held fixed' is CORRECT.
+  Aside: M4 quotes amp = 0.271776443 in m4_g and in M4-7; the value is 0.271776442688.
+
+== A1  THE ANGLE THE MACHINE ACTUALLY REALISED, ROW BY ROW ==
+  psi is the row's own quantity, normalised to [0,1/2] (psi and 1-psi give the same D).
+  row                                            psi INTENDED                 psi REALISED      |diff|
+  ord(rho)=4     [S1 PUBLISHED]    0.250000000000000000000000   0.249999999999999965108251   3.489e-17
+  ord(rho)=4001  [FINITE, > K]     0.000249937515621094726318   0.000249937515621121661456   2.694e-17
+  ord(rho)=8000  [FINITE, > K]     0.000125000000000000000000   0.000124999999999928649309   7.135e-17
+  ord(rho)=2000  [FINITE, < K]     0.000500000000000000000000   0.000499999999999985160638   1.484e-17
+  INFINITE 1/4+(sqrt2-1)e-13       0.250000000000041421356237   0.250000000000041440886421   1.953e-17
+  INFINITE 1/4+(sqrt2-1)e-16       0.250000000000000041421356   0.250000000000000060601217   1.918e-17
+
+== A2  min D AND CELL COUNT — THREE ARITHMETICS ON THE SAME SIX ROWS ==
+  PUBLISHED  = the number m4_c C1 prints (float64).
+  REALISED   = 60-digit evaluation of the angle m4_c's float pipeline actually built.
+  INTENDED   = 60-digit evaluation of the mathematical object the row's LABEL names.
+  row                             PUBLISHED min     REALISED min     INTENDED min  cells P/R/I
+  ord(rho)=4     [S1 PUBLISHED]       6.729e-19     2.383276e-16     0.000000e+00   1000/1000/1000
+  ord(rho)=4001  [FINITE, > K]        4.268e-04     4.267987e-04     4.267987e-04      0/   0/   0
+  ord(rho)=8000  [FINITE, > K]        2.135e-04     2.134527e-04     2.134527e-04      0/   0/   0
+  ord(rho)=2000  [FINITE, < K]        2.141e-13     5.068004e-14     0.000000e+00      2/   2/   2
+  INFINITE 1/4+(sqrt2-1)e-13          2.828e-13     2.830614e-13     2.829280e-13   1000/1000/1000
+  INFINITE 1/4+(sqrt2-1)e-16          6.657e-17     4.139358e-16     2.829280e-16   1000/1000/1000
+
+  FINDINGS FROM THIS TABLE:
+   (1) ord=4 and ord=2000: the INTENDED min is 0 EXACTLY (rho^k=1 at k=4, k=2000).  m4_c C1
+       publishes 6.729e-19 and 2.141e-13 in a column headed 'min D'.  That is verbatim the
+       defect m4_g G3(a) convicts W-07 of -- 'W-07 sec3's table publishes 6.729e-19 as min
+       where the exact value is 0' -- committed by M4 in its own decisive table.
+   (2) The e-16 row: intended psi and realised psi differ by ~1.9e-17, which is 46% of the
+       intended perturbation itself (4.14e-17).  The published min 6.657e-17 matches NEITHER
+       the intended value (2.829e-16) NOR a correct float evaluation of what was built.
+       The row is inside the noise floor of its own constructor.
+   (3) The e-13 row survives exactly: intended 2.829280e-13, published 2.828e-13, 1000 cells
+       under all three arithmetics.  THIS ROW, ALONE, CARRIES M4-1.

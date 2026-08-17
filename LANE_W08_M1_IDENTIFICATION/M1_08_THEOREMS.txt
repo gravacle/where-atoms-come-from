@@ -1,0 +1,169 @@
+LANE W-08 / M1 — THE FOUR STATEMENTS, WITH THEIR PROOFS AND THEIR HYPOTHESES.
+Every number quoted here is produced by M1_01..M1_07 in this directory and is in the .out.txt
+files beside them.  Precision: IEEE double unless a line says EXACT.
+
+--------------------------------------------------------------------------------------------
+T1.  THE IDENTIFICATION.  ESTABLISHED, AS AN ALGEBRAIC IDENTITY.
+
+  Let s in C^5, ||s||=1, be a ready state on K1; let W_F, W_C be the two gauge invariants;
+  let M_dF, M_c be the W-01/S3 branch operators; and let
+      p11 = |s_0|^2,  p10 = |s_1|^2+|s_2|^2,  p01 = |s_3|^2+|s_4|^2,  p00 = 0.
+  Then for every integer k >= 0,
+                    Z_k := <M_dF^k s, M_c^k s>  =  P(u^k, v^k),
+                    P(x,y) = p00 + p10 x + p01 y + p11 xy,   u = conj(W_F),  v = W_C.
+
+  PROOF (one line).  M_dF^k and M_c^k are diagonal, so
+    Z_k = sum_v conj((W_F^k)^[v in F]) (W_C^k)^[v in C] |s_v|^2,
+  and grouping the five vertices by their membership pair gives exactly the four monomials of
+  P evaluated at (u^k, v^k), with u = conj(W_F) because <z,w> = conj(z) w conjugates the FIRST
+  slot and M_dF stands in it.  []
+
+  CONVENTION, FIXED EXPLICITLY.  u = conj(W_F), v = W_C.
+    A  u = conj(W_F), v = W_C     worst deviation 4.743e-16 (float64), EXACTLY 0 in exact
+                                  Gaussian-rational arithmetic over 960 cases  [M1_01 T1,T2]
+    B  u = W_F,       v = W_C     worst deviation 1.857e+00 — wrong, and wrong in modulus too
+                                  (worst 8.325e-01).  NOT a sign convention: a different map.
+    C  u = W_F,   v = conj(W_C)   returns conj(Z_k) (P has real coefficients); |Z_k|, Omega_N
+                                  and lambda are unchanged.  Worst deviation 4.475e-16.
+  A is the convention of record.
+
+  CARRIER FACT, LOAD-BEARING: p00 = 0 IDENTICALLY ON K1.  Every vertex of K1 lies on at least
+  one of the two loops (v0 on both).  So P has THREE terms, the parameter space of ready states
+  is a 2-simplex, and the "four-class pushforward" is really a three-class one on this carrier.
+
+  ALSO CHECKED: Z_k is invariant under the FULL gauge action, connection and section together
+  (9.660e-14), and under the tree dressing t_v = W(path)^{-1} s_v (5.567e-16) — because both
+  leave |s_v|^2 alone.  |Z_k| <= 1 with Z_0 = 1.
+
+--------------------------------------------------------------------------------------------
+T2.  THE LIMIT.  ITS HYPOTHESES, SEPARATED INTO THE HALF THAT IS FREE AND THE HALF THAT IS NOT.
+
+  Let H := closure{ (u^k, v^k) : k in Z } <= T^2, a closed (monothetic) subgroup.  Weyl's
+  criterion on H gives, for every CONTINUOUS g on T^2,
+      (1/N) sum_{k<=N} g(u^k,v^k)  ->  int_H g dHaar_H          (no other hypothesis).
+  H = T^2 exactly when L := {(m,n) in Z^2 : u^m v^n = 1} = {0}.
+
+  (a) THE UPPER HALF IS FREE.  For eps>0, f_eps := max(log|P|, log eps) is continuous, so its
+      orbit average converges to int_H f_eps; and log|P| <= f_eps, so
+          limsup_N (1/N) sum_{k<=N} log|Z_k|  <=  int_H f_eps  --(eps->0)-->  lambda_H,
+      by monotone convergence (log|P| in L^1).  NO Diophantine hypothesis is used.
+      Verified: M1_03's truncation block, eps = 1e-1..1e-4, deviations 1.3e-07..8.1e-07.
+
+  (b) THE LOWER HALF IS NOT FREE, AND EQUIDISTRIBUTION DOES NOT SUPPLY IT.
+      log|P| is NOT Riemann-integrable when P has zeros on T^2, and (M1_02, Z1)
+          P has zeros on T^2  <=>  max(p10,p01,p11) <= 1/2,
+      the zero set being 2 points generically, 1 point on the degenerate-triangle locus, and
+      A WHOLE CIRCLE in the three cases {one weight 0, the other two = 1/2} — one of which is
+      S1's own published ready state.  M1_06 EXHIBITS a pair (u,v) with L = {0} — so its orbit
+      is dense and equidistributed in T^2, every hypothesis of the "orbit dense in T^2" clause
+      satisfied — for which
+          liminf_N (1/N) sum_{k<=N} log|Z_k| = -infinity   while   m(P) = -0.7755463414.
+      First dip computed exactly: at N = 10, average -69.571408 against m(P) = -0.775546.
+      SO: "the orbit is dense in T^2, therefore the average converges to m(P)" IS A NON-SEQUITUR.
+
+  (c) WHAT IS ACTUALLY NEEDED.  Convergence to m(P) holds if, in addition to L = {0},
+        (i)  the discrepancy of {(u^k,v^k)}_{k<=N} is o(1/(log N)^2)   [a Diophantine condition
+             on (alpha,beta): Erdos-Turan-Koksma gives it from ||m alpha + n beta|| >=
+             c max(|m|,|n|)^{-tau}], and
+        (ii) an INHOMOGENEOUS Diophantine condition relative to the zero set:
+             dist((u^k,v^k), Z(P)) >= c k^{-tau} for all k.
+      PROOF SKETCH.  Split f_eps - log|P| over dyadic shells d in [2^{-j-1}delta, 2^{-j}delta]
+      around each zero.  |P| ~ L*d near a simple zero, so the shell contributes at most
+      (j+1)log2 + log(1/delta) + O(1) per point, and the shell contains at most
+      N(pi 4^{-j} delta^2 + D_N) points by discrepancy.  (ii) truncates the sum at
+      j_max ~ tau log N / log 2.  Summing: O(delta^2 log(1/delta)) + O(D_N (log N)^2).  Let
+      N -> infinity, then delta -> 0.  []
+      Hypothesis (ii) is exactly what M1_06's Liouville pair destroys, and it is NOT implied
+      by (i) or by L = {0}.
+      NUMERICAL FACE OF (ii): on the Schmidt-Diophantine connection, min_{k<=N} dist to the
+      zero set behaves like ~0.3 N^{-1/2} up to N = 1e7 (M1_06 second table) — the spacing of
+      N points in T^2, i.e. as far from Liouville as a lattice can be.
+
+  (d) LAWTON 1983 IS NOT THE THEOREM THAT LICENSES (b), AND W-03's IMPORT AUDIT NOTE SHOULD
+      SAY SO.  Boyd-Lawton concerns Mahler measures of one-parameter SPECIALISATIONS, i.e.
+      continuous averages over subtori, not discrete Birkhoff averages.  Where it IS exactly
+      right: on the rank-one locus (one primitive relation u^m v^n = 1) the orbit closure is
+      H = {(z^n, z^{-m})} and the limit is the one-variable Mahler measure
+          lambda_(m,n) = m( p10 z^{m+n} + p11 z^{n} + p01 ),
+      and Boyd-Lawton is the statement that lambda_(m,n) -> m(P) as the relation grows.  All
+      16 of S4's exceptional rows reproduce here to <= 4.79e-10 (M1_07), and the accumulation
+      runs to 4.7e-09 at (2584,1597).
+
+  (e) THE THREE LIMITS ASKED FOR, ready state HELD FIXED at pi = (0, 0.3, 0.3, 0.4), K = 1e7:
+        DIOPHANTINE  alpha=-2^(1/3), beta=4^(1/3) (Schmidt: a THEOREM, not an assumption)
+             -0.767507816   ->  m(P) = -0.767507880358          AGREES  (6.4e-08 at N=1e7)
+        S1 PUBLISHED (finite order 4, W_F=-1, W_C=-i)
+             -0.804718956217  = -(1/2) log 5 EXACTLY             DOES NOT AGREE (gap 3.7e-02)
+             [this is S3-audit COR-K's "exact order-4 value -0.804719", here in closed form]
+        S3/S4 HEADLINE f=2.0, c=1.1 (exactly resonant, primitive relation (11,20))
+             -0.767015029  ->  subtorus value -0.767014992998    DOES NOT AGREE (gap 4.9e-04)
+             [matches the register's erratum figure -0.767014993 to 2.34e-12]
+        AND, NOT ISOLATED but of record: S1's published connection WITH S1's published ready
+        state gives Z_k = 0 for every odd k, so the average is -infinity for every N, while
+        m(P) = -log 2.
+      TWO OF THE FOUR CONNECTION/STATE CONFIGURATIONS THIS CORPUS HAS PUBLISHED ARE POINTS
+      WHERE N1's IDENTIFICATION lambda = m(P) IS FALSE.
+
+--------------------------------------------------------------------------------------------
+T3.  THE PRODUCT LEMMA — AND THE HYPOTHESIS THE BRIEF'S FORM OMITS.
+
+  LEMMA.  a_k in [0,1].  Then prod_{k<=N} a_k -> 0 iff ( some a_k = 0 ) or ( sum(1-a_k) = inf ).
+  With the stated hypothesis "0 <= |Z_k| <= 1" ALONE the claimed equivalence is FALSE:
+  a_1 = 0, a_k = 1 otherwise has product 0 and sum (1-a_k) = 1.  The missing hypothesis is
+  a_k > 0, and it FAILS on S1's published connection with S1's published ready state.
+  PROOF.  -log a >= 1-a on (0,1] gives one direction; -log a <= 2(1-a) on [1/2,1] the other.
+  Both inequalities checked on 2e6-point grids (M1_04 Part 1).  []
+
+--------------------------------------------------------------------------------------------
+T4.  THE DURABILITY CRITERION ON K1, STATED EXACTLY.  THIS IS THE LANE'S ANSWER.
+
+  Write chi_10 = u, chi_01 = v, chi_11 = uv for the three characters K1's incidence allows,
+  S = supp(pi) subset {10,01,11}, and  G = < chi_a / chi_b : a,b in S > <= U(1).
+
+  THEOREM.  On K1, for every connection and every ready state:
+        |Omega_N| = prod_{k<=N} |Z_k| -> 0    <=>    G != {1}.
+     Moreover:
+        - if G = {1} then |Z_k| = 1 for every k and |Omega_N| = 1 for every N;
+        - if G != {1} then sum_k (1-|Z_k|) diverges LINEARLY, with density
+          c = int_H (1-|P|) dHaar_H > 0, and |Omega_N| -> 0 EXPONENTIALLY:
+              limsup (1/N) log|Omega_N| <= lambda_H = int_H log|P| <= log(1 - c) < 0.
+     There is no intermediate case.
+  PROOF.  1-|P| is CONTINUOUS on T^2, so Weyl on H gives (1/N)sum(1-|Z_k|) -> c with no
+  further hypothesis.  c = 0 iff |P| = 1 everywhere on H; since the coefficients p_a are
+  non-negative and sum to 1, |sum_a p_a chi_a(h)| = 1 forces all chi_a(h) to coincide (strict
+  triangle inequality), i.e. every ratio chi_a/chi_b is trivial on H, i.e. G = {1}.  If G={1}
+  then |Z_k| = 1 identically.  If G != {1} then c > 0, the sum diverges linearly, no |Z_k| can
+  be exempt from the T3 lemma's positivity clause in a way that matters (a zero only helps),
+  and Jensen gives lambda_H <= log int_H |P| = log(1-c) < 0.  []
+
+  THE HYPOTHESIS THAT ACTUALLY CARRIES IT is Weyl equidistribution on the orbit-closure H
+  applied to a CONTINUOUS function.  It is available for EVERY connection and every ready
+  state on K1 — Diophantine, resonant, or finite-order alike.  DURABILITY IS ROBUST.
+  What is fragile is only the NAMING of the exponential rate as m(P): that needs H = T^2 plus
+  the inhomogeneous Diophantine condition of T2(c).
+
+  DOES THE HYPOTHESIS HOLD ON THE CONNECTIONS THIS CORPUS USED?  YES for durability, on all of
+  them.  NO for the rate identification, on both of the corpus's distinguished connections.
+
+  WHEN IS lambda = 0?  Two independent ways, and both are visible on K1:
+    (i) READY STATE.  m(P) = 0 <=> max(p10,p01,p11) = 1 <=> one class carries the whole state.
+        Exactly three points of the simplex, each with a carrier meaning:
+          p11=1 the state sits on v0 THE ROOT (W-01's "the root can never fire");
+          p10=1 on {v1,v2}; p01=1 on {v3,v4}.
+        Everywhere else m(P) < 0 STRICTLY, with the uniform bound
+              m(P) <= -(1 - max(p10,p01,p11)),
+        m(P) = log(max) exactly when max > 1/2, m(P) <= -log 2 on max <= 1/2, and the minimum
+        -0.7755463414 = log(1/3) + m(1+x+y) at the centroid.
+    (ii) CONNECTION.  Even with m(P) < 0, lambda = 0 whenever G = {1}.  EXHIBITED at
+        S = {10,01} with u = v (i.e. W_F W_C = 1): a NON-TRIVIAL connection, m(P) = -log 2,
+        and yet |Z_k| = 1 for all k and nothing decays.  These are S3-audit COR-B's "four
+        families of non-trivial connections that never form", re-derived as the G = {1} locus
+        of the four possible supports.  m(P) < 0 DOES NOT IMPLY DURABILITY.
+
+  KRONECKER AND LEHMER, PLACED.  Both are about INTEGER coefficients.  Here the coefficients
+  are probabilities, and the vanishing question is settled by Jensen alone:
+  m(P) <= (1/2) log(sum_a p_a^2) <= 0 with equality iff some p_a = 1.  There is provably NO
+  uniform gap below 0 — m(P) ~ -(1-p_max) as the state concentrates — so no Lehmer-type
+  theorem can be brought to bear on the simplex.  The one place they do bite: for a ready
+  state UNIFORM on n cells, n*P has non-negative integer coefficients and max <= (n-1)/n
+  unless the state sits in one class, so lambda <= -1/n; on K1 (n=5) lambda <= -1/5.

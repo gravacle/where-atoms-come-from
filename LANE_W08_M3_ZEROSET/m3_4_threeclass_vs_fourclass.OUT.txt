@@ -1,0 +1,136 @@
+================================================================================================
+M3-4  THREE CLASSES vs FOUR, THE SCOPE OF THE MULTISET THEOREM, AND THE MAHLER VALUES
+================================================================================================
+numpy 2.0.2 ; IEEE double unless a line says EXACT.
+
+(a) p00 = 0 ON K1 IS FORCED BY INCIDENCE, NOT CHOSEN.
+    FACE_V u CYC_V = [0, 1, 2, 3, 4]  =  all five vertices.
+    class counts on K1: {'01': 2, '10': 2, '11': 1}
+    class 00 is EMPTY, so p00 = 0 for EVERY ready state on K1.  Any statement about a
+    weight vector with p00 > 0 is a statement about some OTHER carrier.
+    S4's own carrier list contains three such carriers (S4_THE_MEASUREMENT_V001.md:582,
+    :519, :546): B0b {00:4,01:1,10:2,11:2}, B4 spindle {00:1,01:1,10:1,11:3},
+    B1q K1-bridged+spectator {00:1,01:3,10:3}.  So the p00 > 0 regime is NOT vacuous
+    for the corpus -- only for K1.
+
+(b) HOW MUCH OF W-03's 24-of-24 PERMUTATION INVARIANCE IS ABOUT K1 AT ALL?
+    A permutation sigma of the four classes maps a K1 weight vector (0,a,b,c) to a vector
+    realisable on K1 iff it leaves 0 in slot 00, i.e. iff sigma^{-1}(00) carries weight 0.
+      generic K1 state (0, .3, .3, .4)     :  6 of 24 permutations stay inside K1's family
+      K1 PUBLISHED state (0, 0, .5, .5)    : 12 of 24 permutations stay inside K1's family
+      K1 uniform state  (0, .4, .4, .2)    :  6 of 24 permutations stay inside K1's family
+    So at a generic K1 ready state EIGHTEEN of the twenty-four permutations move weight
+    INTO the empty class 00 and leave K1 entirely.  The surviving six are exactly S_3 on
+    {10,01,11} -- and those six are the ones that matter for K1, because they are the ones
+    that say the loop-incidence LABELS (curvature loop vs flat loop vs root) are invisible.
+    VERDICT: three quarters of the multiset theorem's permutation content is a statement
+    about carriers K1 does not contain.  It is a true and proved statement (the proof is
+    in the corpus, LANE_S5_CHARGE_CODE/s5_B_sweep.OUT.txt B5), it is non-vacuous for the
+    corpus's OTHER carriers, and on K1 itself it says exactly six things, not twenty-four.
+
+(c) DOES ANY REGISTERED RESULT SILENTLY USE THE FOUR-CLASS FORM WHERE p00 = 0 IS DOING
+    UNDECLARED WORK?  Four candidates, each tested.
+
+    (c1) N1, lambda = m(p00+p10 x+p01 y+p11 xy).  SAFE.  Its proof (Jensen in y, then
+         Weyl on the rank-0 orbit) never uses p00 = 0.  Checked on a p00 > 0 carrier state:
+         B4 spindle uniform (1/6,1/6,1/6,1/2)   m(P) = -0.693147181   orbit avg N=2e6 = -0.693147222   dev 4.13e-08
+         B0b uniform        (4/9,1/9,2/9,2/9)   m(P) = -0.810930216   orbit avg N=2e6 = -0.810930129   dev 8.73e-08
+         balanced           (1/4,1/4,1/4,1/4)   m(P) = -1.386292628   orbit avg N=2e6 = -1.386295002   dev 2.37e-06
+         (B0b uniform reproduces the register's log(4/9) = -0.810930216216 exactly:
+          m = -0.810930216216, log(4/9) = -0.810930216216)
+         NOTE ON THE THIRD ROW, stated rather than buried: the balanced state has
+         P = (1+x)(1+y)/4, whose zero set is TWO CIRCLES, so both the quadrature and the
+         orbit average converge slowly around an integrable log singularity.  The exact
+         value is log(1/4) = -1.386294361120; quadrature n=4e5 gives -1.386292628 and the N=2e6 orbit gives
+         -1.386295002.  Agreement to 2.4e-06 is the CONVERGENCE RATE, not the accuracy of N1.
+
+    (c2) W-03's MULTISET THEOREM.  SAFE AS A RANK-0 THEOREM, and it does NOT need p00 = 0.
+         24 permutations of a p00 > 0 state, quadrature n = 4e5:
+         p = (0.4,0.3,0.2,0.1): spread over 24 permutations = 5.551e-16 ; value = -0.916290731874
+         BUT IT IS A RANK-0 STATEMENT ONLY.  At a TORSION connection (rank L = 2) the
+         average is over a finite orbit and permutation invariance dies.  S1's own
+         published connection, order 4, is such a point.  EXACT ARITHMETIC (the orbit is
+         u = -1, v = -i, uv = i, period 4), so no float can hide an exact zero:
+           Z_1 = (p00-p10) + i(p11-p01)      Z_3 = conj(Z_1)
+           Z_2 = p00+p10-p01-p11             Z_4 = 1
+           lambda = (1/4)[ 2 log|Z_1| + log|Z_2| ]
+         p = (2/5,3/10,1/5,1/10) at (f,c) = (pi, 3pi/2), all 24 permutations:
+           distinct lambda values = ['-inf', '-1.207078434', '-1.033791639']
+           8 of 24 permutations give lambda = -infinity EXACTLY (Z_2 = 0, since
+           2/5 + 1/10 = 1/2 = 3/10 + 1/5 -- a pairing coincidence in this multiset).
+         SPREAD = INFINITE -> multiset invariance FAILS at rank two, and fails hardest.
+         *** CONFOUND RECORDED: my first pass computed this in double over 4000 cells and
+         *** got a finite spread of 7.102087, because an exactly-zero |Z_k| came back as
+         *** ~1e-17.  Same float trap as m3_3(e).  The exact answer is -infinity.
+         This is the SAME defect LANE_G_GROUP_REFUTER/g4b_multiset.OUT.txt found for the
+         refined weights (spread 0.2792).  It is here reproduced for the FOUR CLASS
+         weights on K1's OWN published connection, which is where it bites this corpus.
+         DISCOUNT: this is a re-finding, not a new finding.  Credit is theirs.
+
+    (c3) W-03's PINCH = SPECTATOR INVOLUTION (00<->11, 10<->01).  SAFE, and stronger than
+         the multiset theorem: it is exact POINTWISE in k and at every connection, not
+         only after integration.  Verified, and contrasted with a non-involution swap:
+         2000 random (p,f,c,k): max | |Z_k| - |Z_k| under 00<->11,10<->01 | = 2.220e-16
+                                max | |Z_k| - |Z_k| under 00<->10 only     | = 7.355e-01
+         The first is an identity; the second is not.  The multiset theorem's other 22
+         permutations hold ONLY after averaging over the full torus.
+
+    (c4) W-01's CONVEX-HULL CRITERION, READ ON THE STATE SIDE.  ***THIS IS THE ONE THAT
+         BREAKS.***  'Fires iff the weights obey the triangle/polygon inequality' is TRUE
+         at three classes (M3-1) and FALSE at four (M3-2).  On K1 nobody can notice,
+         because p00 = 0 makes the two coincide.  Quantified in m3_2: the polygon reading
+         calls exactly 1/2 of the four-class simplex a firer; the truth is exactly 1/4.
+         The corpus's own B4 spindle at its own uniform state (1/6,1/6,1/6,1/2) satisfies
+         the polygon inequality WITH EQUALITY (1/2 = 1/6+1/6+1/6) and has NO torus zero:
+           min_{T^2} |P| = 0.272166   (not 0)
+         and S4's own closed form for it, lambda = log(1/2), is exactly the 'no zero'
+         value m(P) = log p_max.  The counterexample was already sitting in the corpus,
+         computed and published, with nobody having asked the question it answers.
+         NOTE THE READING IS TWO-WAY: this does NOT show any registered SENTENCE is false.
+         The register states the criterion with THREE coefficients (REGISTER_V001.md:43)
+         and S4 states it for (p0,q,r) (S4:229-231).  Both are correct as written and
+         both are K1-only.  What is established is that the obvious four-class
+         generalisation -- the one N1's own polynomial invites -- is FALSE, and that no
+         page in the corpus says so.
+
+================================================================================================
+(4)  m(P) AT K1's PUBLISHED READY STATE, AGAINST THE REGISTERED VALUES
+================================================================================================
+    K1 published p_v=(1/2,0,0,1/4,1/4) -> (p00,p10,p01,p11) = (0, 0, 1/2, 1/2)
+      P = (y/2)(1+x),  m(P) = log(1/2) + m(y) + m(1+x) = -log 2   EXACTLY
+      -log 2                       = -0.693147180560
+      quadrature n = 4e5           = -0.693145447692
+      quadrature n = 4e6           = -0.693147007273
+
+    S3/S4 sense-C state (0, .3, .3, .4)  [ = S3's p=(0.4,.15,.15,.15,.15) ]
+      m(P) quadrature n = 4e6      = -0.767507880358
+      registered generic value     = -0.767507880   (Cassaigne-Maillot, S4:912)
+      m(0.4+0.3x+0.3y) same state, other Jensen grouping = -0.767507880358
+
+    THE RESONANT POINT OF THE ERRATUM AGAINST W-02: f = 2.0, c = 1.1, -11f + 20c = 0.
+      check: -11*2.0 + 20*1.1 = 0.0e+00
+      S3 state (0,.3,.3,.4)      orbit average N=1e7 on the resonant connection = -0.767015028   (registered corrected value -0.767014993, dev 3.5e-08)
+      K1 PUBLISHED (0,0,.5,.5)   orbit average N=1e7 on the resonant connection = -0.693147704
+      AT THE PUBLISHED STATE THE RESONANCE IS INVISIBLE: c does not enter |Z_k| at all,
+      so the subtorus average equals the full-torus average equals -log 2 = -0.693147181.
+      The erratum against W-02 corrects a number that, at K1's own published ready state,
+      does not exist as a separate number.
+
+    THE FOUR VALUES SIDE BY SIDE
+      -0.767507880   registered GENERIC (rank L = 0), S3/S4 sense-C state
+      -0.767014993   registered RESONANT subtorus value, same state, f=2.0 c=1.1
+      -0.693147181   m(P) at K1's OWN PUBLISHED ready state          [= -log 2, EXACT]
+      -infinity      the ACTUAL per-cell rate at K1's own published state AND connection
+    differences:  -log2 - (-0.767507880) = +0.074360699
+                  -log2 - (-0.767014993) = +0.073867812
+    The published state is SLOWER than generic by 0.0744 in the Mahler reading and
+    INFINITELY FASTER than generic in the actual-orbit reading.  Both are correct; they
+    are answers to different questions, and only the second is a rate of anything.
+
+    CROSS-CHECK AGAINST THE CORPUS'S OWN TABLE (S4:785, :582).  -log 2 = log(1/2) is
+    already in S4 twice, as B1p's and B4's uniform-state rate.  K1's published ready
+    state is the same degenerate two-class point reached by a different route:
+      S4 B1p K1-bridged, uniform, classes {01:3,10:3}: log max(1/2,1/2) = -0.693147180560
+      M3 K1, PUBLISHED state, classes {11:1/2, 01:1/2}: -log 2      = -0.693147180560
+
+DONE.

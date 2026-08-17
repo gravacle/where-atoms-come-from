@@ -1,0 +1,30 @@
+==============================================================================
+R2_05 — int f_eps, DONE PROPERLY, AGAINST M1_03's 3000x3000 GRID
+==============================================================================
+
+m(P) = -0.767507880358    (the LOWER BOUND every int f_eps must respect)
+
+    eps      M1_03 grid value    this lane (closed form +      grid error     >= m(P)?
+                                   graded quad, 2 mesh sizes)
+    1e-01       -0.758503816        -0.758503812 (0.0e+00)   -3.855e-09   YES
+    1e-02       -0.767418907        -0.767418900 (0.0e+00)   -7.122e-09   YES
+    1e-03       -0.767506966        -0.767506991 (0.0e+00)   +2.465e-08   YES
+    1e-04       -0.767508002        -0.767507871 (0.0e+00)   -1.305e-07   NO  <-- IMPOSSIBLE
+
+  So the 'torus mean' column carries errors of 4e-7 .. 1e-6, which is the SAME SIZE as
+  the deviations M1_03 reports as evidence that the orbit average converges.  The
+  reported agreement measures the GRID, not the orbit.
+
+  DEFECT 2, checked: does the eps=1e-4 truncation ever fire on the orbit at N=1e6?
+     eps =  1e-01 :  #{k <= 1e6 : |Z_k| < eps} = 18231
+     eps =  1e-02 :  #{k <= 1e6 : |Z_k| < eps} = 179
+     eps =  1e-03 :  #{k <= 1e6 : |Z_k| < eps} = 2
+     eps =  1e-04 :  #{k <= 1e6 : |Z_k| < eps} = 0
+     min|Z_k| over k <= 1e6 = 4.941540e-04
+     untruncated orbit average          = -0.767507873839
+     eps=1e-4 truncated orbit average   = -0.767507873839   difference = 0.0e+00
+     -> the eps=1e-4 row of F3's evidence is the untruncated average relabelled.
+        It could not have failed.  VOIDS THAT ROW AS A CONTROL (not the theorem F3,
+        which is proved from monotone convergence and stands).
+
+DONE R2_05

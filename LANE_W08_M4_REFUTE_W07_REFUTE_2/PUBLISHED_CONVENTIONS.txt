@@ -1,0 +1,74 @@
+LANE W-08 / M4-REFUTE-2 — REFUTER ON M4, LENS 2 (MATHEMATICS) — PUBLISHED CONVENTIONS
+Target: the DECISIVE TEST of LANE_W08_M4_REFUTE_W07/m4_c_diophantine.py, block C1
+        (large-finite-order versus well-approximable-irrational), on which finding M4-1 rests.
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE, DECLARED FIRST.  W-07 is Claude Opus 5.  M4 is Claude Opus 5 and declared its own
+shared lineage with W-07.  THIS LANE IS ALSO CLAUDE OPUS 5.  This is the THIRD consecutive
+layer of the same lineage.  Discount accordingly; the register should treat all three as
+sharing failure modes.  I compensated by attacking on arithmetic M4 did not run (60-digit
+Decimal reconstruction of the float pipeline M4 actually executed; exact Fraction constructions
+that hold M4's own named scalar fixed) rather than by re-deriving M4's route.  That is a
+mitigation, not a cure.
+
+ENVIRONMENT.  python3 3.9.6 (Clang 17.0.0), numpy 2.0.2, macOS Darwin 25.5.0.
+Double precision (float64) is the default EVERYWHERE numpy is used and is SAID SO in place.
+Every precision-sensitive claim in this lane is decided in one of:
+  * decimal.Decimal at getcontext().prec = 60, with pi carried to 60 significant digits
+    ("3.14159265358979323846264338327950288419716939937510582097494"), sine by Taylor series
+    truncated at |term| <= 1e-58 on [0, pi/2];
+  * fractions.Fraction (exact rationals), for the constructions in leg D.
+Float64 values are carried into exact arithmetic losslessly via Decimal(repr(x)).
+
+CARRIER, CONNECTION, BRANCHES, DRESSING, READY STATE: identical to
+LANE_W07_RECURRENCE_ISOLATION/PUBLISHED_CONVENTIONS.txt and to LANE_W08_M4_REFUTE_W07.  K1 with
+V=5 E=6 F=1, FACE_V={0,1,2}, CYC_V={0,3,4}, tree {e1,e2,e4,e5} rooted v0, observable
+A_uv[s] = conj(t_u) t_v, ready state numpy default_rng(20260816) normal+i*normal, normalised
+(byte-identical to W-07 leg E's and to m4_c's).  amp = |s_2||s_3| = 0.27177644268802675.
+
+THE OBSERVABLE IDENTITY USED THROUGHOUT, re-derived from scratch in leg C4 by brute force
+(apply the branch operator to the state, then measure — no formula assumed):
+  A_uv[M_dF^k s] = W_F^(dF k) A_uv[s],  dF = [v in FACE_V] - [u in FACE_V];  likewise W_C, dC.
+  D_k = |A_uv[M_dF^k s] - A_uv[M_c^k s]| = amp |rho^k - 1| = 2 amp |sin(pi k theta)|,
+  rho = W_F^dF W_C^-dC, theta = arg(rho)/2pi.  For (u,v) = (2,3): dF = -1, dC = +1.
+  Hence, exactly:  D_k < tol  <=>  ||k theta|| < eps := arcsin(tol/(2 amp))/pi   [needs tol < 2 amp].
+  At K=4000, tol=1e-9, amp as above:  eps = 5.856098e-10.
+
+GRID.  K = 4000 unless labelled; leg B5 sweeps K over W-07's own published grid 4e3..1e7.
+Threshold 1e-9 throughout, W-07's and M4's own.  Vertex pair held at A_23 throughout, W-07's
+and M4's own.
+
+SEEDS.  numpy default_rng(20260816) for the ready state (W-07 leg E's / m4_c's).
+default_rng(7) for leg C1's 200000 Lebesgue draws of theta.  default_rng(1) for the "random
+seed 1" connection in leg C4 (W-07 leg E's own).
+
+ISOLATION LEDGER.  Printed in the header of every script and repeated per block in the output.
+Every comparison moves exactly one variable:
+  A0  MOVED: theta (6 rows).  HELD: everything else.  Tests M4's ledger claim that amp is fixed.
+  A1/A2  MOVED: the ARITHMETIC MODEL alone (float64 as m4_c ran it / 60-digit exact evaluation
+      of the angle m4_c actually built / 60-digit exact evaluation of the object its label names).
+      HELD: carrier, state, observable, dressing, k-range, threshold, row list, evaluator.
+  B1  MOVED: ord(rho) = q alone, q = 1..59 and 100..8000.  HELD: K, tol, amp, evaluator.
+  B3  MOVED: the tolerance d alone, into the range C4's quantifier claims and its proof does not.
+  B4  MOVED: the ready state alone (generic seed-20260816 / S1's PUBLISHED p=(1/2,0,0,1/4,1/4)).
+      HELD: connection, observable, K, tol.
+  B5  MOVED: K alone, over 4e3, 1e4, 1e5, 1e6, 1e7.  HELD: lam, tol, amp, observable.
+  C1  MOVED: theta alone (three named algebraic irrationals, then 200000 Lebesgue draws).
+  C2  MOVED: nothing — exact arithmetic on m4_c's own constructor output.
+  C3  MOVED: the connection alone, through W-07 leg E's `ordr` line copied verbatim.
+  C4  MOVED: the ratio FORMULA alone (rho_true vs rho as W-07 leg E codes it), same connection.
+  D1/D2  MOVED: the denominator q of the nearby rational ALONE.  HELD FIXED BY CONSTRUCTION:
+      min_{k<=K}||k theta|| itself, equal to 22 significant digits across every row (exact
+      Fraction/Decimal, 4*lam = 1000*mu identically).  Also held: K, tol, amp, observable, counter.
+  D4  MOVED: nothing — one exact rational exhibited and evaluated in Fraction arithmetic.
+
+NOT ISOLATED, DECLARED.  Leg B5 moves K at fixed lam; it therefore reports how far M4's
+particular counterexample reaches, not the reach of the C4 existence theorem, which is stated
+for every fixed K and is not touched by B5.  Leg C1(a)'s 200000-draw experiment is a check on a
+measure bound, not on any lane's claim; the bound is what carries the argument.
+
+FILES.  r2_a_decisive_exact.py / .OUT.txt  — exact reconstruction of the decisive test.
+        r2_b_discrimination.py / .OUT.txt  — discriminating power, quantifiers, K-reach.
+        r2_c_arithmetic.py     / .OUT.txt  — Weyl, realisability, order detector, group element.
+        r2_d_wrong_scalar.py   / .OUT.txt  — refutation of M4's own named operative variable.
+        RERUN_m4_*.txt                     — byte-identical reruns of all 7 M4 python legs.

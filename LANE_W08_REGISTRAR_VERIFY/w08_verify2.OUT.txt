@@ -1,0 +1,21 @@
+== V4  THE ADVERSARIAL SCHEDULE — does the record survive a chosen cell schedule? ==
+          K   honest -log|Omega_K|    adversary J=sqrt(K)   |Omega| adversary
+      10000               7678.301                 0.6061              0.5455
+     100000              76776.271                 0.6151              0.5406
+    1000000             767531.714                 0.5882              0.5553
+   10000000            7675061.012                 0.6005              0.5485
+  -> honest schedule: the record decays linearly and irreversibly.
+     adversary writing only sqrt(K) best-chosen cells: |Omega| ~ 0.55 FOREVER,
+     with unboundedly many writes. Durability is a (connection, SCHEDULE) property.
+     The corpus never stated a schedule stipulation. This is where the obstruction survives.
+
+== V5  W-01's CONVEX HULL OFF K1 — one variable: the number of occupied characters ==
+  K1 (three characters, p00=0)      firing region = 0.250700   [exact 1/4 = 0.25]
+  spectator carrier (four chars)    firing region = 0.498925   [exact 1/2 = 0.50]
+  closed form  cos f + cos c <= 0  agrees with the four-character hull on 200000 of 200000
+  -> the firing region DOUBLES on one added vertex, and the criterion acquires a closed form.
+
+  W-01's advertised virtue: 'it distinguishes curvature from flat holonomy'. Test it:
+    f -> -f changes the verdict on K1               : 99785 of 200000
+    f -> -f changes the verdict on spectator carrier: 0 of 200000
+  -> the property the register advertises is a coincidence of p00 = 0.

@@ -1,0 +1,91 @@
+====================================================================================================
+R2-4  RESIDUAL SCOPE PROBES
+====================================================================================================
+numpy 2.0.2 ; IEEE double throughout this script; quadrature errors reported.
+
+(a) IS THE FOUR-TERM FIRING-REGION RATE A CASSAIGNE-MAILLOT VALUE?  NO.
+    FIRST, VALIDATE THE IMPORTED CM FORMULA against numbers this corpus already owns:
+      CM(1.00, 1.00, 1.00) = +0.3230659472   vs  m(1+x+y) = L'(chi_-3,-1)         +0.3230659472   dev 1.94e-11
+      CM(0.40, 0.30, 0.30) = -0.7675078804   vs  the register's generic K1 rate   -0.7675078800   dev 3.58e-10
+      CM(0.50, 0.50, 0.00) = -0.6931471806   vs  K1's published state (degenerate) -0.6931471806   dev 4.01e-11
+    => the CM implementation reproduces the register's own -0.767507880.  It is validated.
+
+    NOW AT FOUR TERMS.  Take firing four-class states and ask whether m(P) is a CM value
+    under ANY natural three-term reduction (drop a class; or merge the two smallest).
+      p = (0.3, 0.25, 0.25, 0.2)  firing=True  m(P) = -1.203972804
+          drop#0 -1.129278 (dev 7.5e-02)  drop#1 -1.054089 (dev 1.5e-01)  drop#2 -1.054089 (dev 1.5e-01)  drop#3 -0.995799 (dev 2.1e-01)  merge2small -0.745389 (dev 4.6e-01)
+      p = (0.28, 0.27, 0.25, 0.2)  firing=True  m(P) = -1.222814776
+          drop#0 -1.099544 (dev 1.2e-01)  drop#1 -1.084512 (dev 1.4e-01)  drop#2 -1.057578 (dev 1.7e-01)  drop#3 -0.997996 (dev 2.2e-01)  merge2small -0.745618 (dev 4.8e-01)
+      p = (0.25, 0.25, 0.25, 0.25)  firing=True  m(P) = -1.386292628
+          drop#0 -1.063228 (dev 3.2e-01)  drop#1 -1.063228 (dev 3.2e-01)  drop#2 -1.063228 (dev 3.2e-01)  drop#3 -1.063228 (dev 3.2e-01)  merge2small -0.693147 (dev 6.9e-01)
+      p = (0.35, 0.25, 0.22, 0.18)  firing=False  m(P) = -1.049822124
+          drop#0 -1.200677 (dev 1.5e-01)  drop#1 -1.020770 (dev 2.9e-02)  drop#2 -0.994100 (dev 5.6e-02)  drop#3 -0.956335 (dev 9.3e-02)  merge2small -0.764994 (dev 2.8e-01)
+    => no reduction reproduces m(P); the smallest deviations are O(1e-2), a thousand times
+       the quadrature error.  'Cassaigne-Maillot' is a THREE-TERM theorem (Newton polygon a
+       TRIANGLE).  At four terms the Newton polygon is the unit SQUARE.
+
+    THE CORRECT FOUR-TERM STATEMENT, derived and checked.  |p00+p10 x|^2 and |p01+p11 x|^2
+    are both AFFINE in cos t, so they cross at a single cos t0 = -A/B (A,B as in M3-2), and
+        m(P) = (1/2pi)[ int_{|t|<t0} log|p00+p10 e^{it}| dt + int_{t0<|t|<pi} log|p01+p11 e^{it}| dt ]
+    i.e. TWO ARC INTEGRALS of log|a+b e^{it}|, which are Lobachevsky/Clausen values.  So the
+    word 'dilogarithm' survives at four terms and the name 'Cassaigne-Maillot' does not.
+      p = (0.3, 0.25, 0.25, 0.2)          arc-split -1.203972804   quadrature -1.203972804   dev 4.44e-16
+      p = (0.28, 0.27, 0.25, 0.2)         arc-split -1.222814776   quadrature -1.222814776   dev 4.58e-12
+      p = (0.25, 0.25, 0.25, 0.25)        arc-split -1.386294361   quadrature -1.386292628   dev 1.73e-06
+      p = (0.35, 0.25, 0.22, 0.18)        arc-split -1.049822124   quadrature -1.049822124   dev 2.22e-16
+
+(b) M3-F12's MISSING STEP, SUPPLIED (the lane flagged it 'numerically exact, structurally
+    unproved').  Off the firing region one branch dominates everywhere.  |p00+p10 e^{it}|^2
+    = p00^2+p10^2+2 p00 p10 cos t and |p01+p11 e^{it}|^2 are BOTH INCREASING IN cos t, so
+    pointwise domination is equivalent to domination at the two ENDPOINTS cos t = +-1:
+        p00+p10 > p01+p11   and   |p00-p10| > |p01-p11| .
+    Adding these gives 2 max(p00,p10) > 2 max(p01,p11).  So the dominating branch carries
+    the global maximum weight, and m(P) = m(p00+p10 x) = log max(p00,p10) = log p_max.  QED.
+    SCOPE LIMIT OF THE STEP, and it is a real one: the argument uses that a TWO-TERM Mahler
+    measure is log of the larger coefficient.  With a THIRD loop the dominating branch is a
+    FOUR-term 2-variable polynomial and the step becomes 'the dominating branch is itself
+    non-firing', which needs M3-2 again.  Checked numerically at eight classes:
+      1193 random NON-firing EIGHT-class weight vectors, 400x400 quadrature:
+        max |m(P) - log p_max| = 6.661e-16 ; #{dev > 1e-3} = 0
+      => the CONCLUSION survives to eight classes numerically; the PROOF above does not, and
+         nothing in this corpus proves the eight-class case.  Recorded as open, not scored.
+
+(c) 'THE INVOLUTION IS STRONGER THAN THE MULTISET THEOREM' (M3-F10) -- THEY ARE INCOMPARABLE.
+    W-03's involution sigma: 00<->11 and 10<->01 simultaneously.  Z_k * conj(uv)^k sends
+    chi_c -> conj(chi_{sigma(c)}), so |Z_k(p)| = |Z_k(sigma p)| POINTWISE in k.  That is a
+    Z_2 statement.  W-03's multiset theorem is an S_4 statement that holds only for lambda.
+    DIRECTION 1 -- the involution does NOT give the multiset theorem:
+      2000 random (p,f,c): max ||Z_1(p)| - |Z_1(00<->10 p)||           = 7.921e-01  (NOT a symmetry)
+      the SAME 2000 p:     max |lambda(p) - lambda(00<->10 p)|          = 3.331e-16  (IS a symmetry)
+    DIRECTION 2 -- the multiset theorem does NOT give the involution: lambda is an integral,
+    and S_4-invariance of an integral says nothing pointwise in k.  The involution's
+    pointwise content at k = 1 is exactly the quantity that is 7.4e-01 in the row above for
+    a NON-sigma transposition.
+    => neither implies the other.  'STRONGER' is the wrong relation; the right one is that
+       sigma is the unique transposition-pair whose invariance is pointwise.
+
+(d) M3-F12's EVIDENCE LINE vs THE LANE'S OWN OUTPUT FILE (COR-K defect class).
+    F12 evidence reads: '3028 random NON-firing four-class states, 40000-point quadrature,
+    max |m(P) - log p_max| = 3.331e-16, 0 bad'.
+    m3_2_fourclass.OUT.txt line (d) reads:  '3029 random NON-firing states, 40000-point
+    quadrature: max |m(P) - log p_max| = 2.220e-16, #bad = 0'.
+    3.331e-16 is the number from m3_1 (b) (and from m3_2 (c)); it is not F12's number.
+    Reproduced bit-for-bit by re-running the lane's own script -- so the SCRIPT is right and
+    the REPORT's transcription is wrong.  Same defect class as COR-K, one order less severe.
+
+(e) W-01's ADVERTISED PROPERTY 'IT DISTINGUISHES CURVATURE FROM FLAT HOLONOMY, WHICH K1
+    EXISTS TO SEPARATE' -- UNDER SCOPE.  On K1S the connection-side criterion is
+        cos f + cos c <= 0     [R2-2A]
+    which is SEPARABLE: a function of f PLUS a function of c.  It is therefore invariant
+    under f -> -f alone and under c -> -c alone.  K1's three-class criterion is NOT:
+      WITNESS  (f,c) = (pi/2, pi/2):   K1 fires? True      K1 at (-f,c) = (-pi/2,pi/2) fires? False
+      same two points on K1S:          fires? True      fires? True
+      200000 random (f,c): #{K1 criterion changes under f -> -f}  = 100416
+                           #{K1S criterion changes under f -> -f} = 0
+    => the coupling of curvature to flat holonomy that W-01 advertises is a K1 fact.  Adding
+       one vertex on neither loop makes the connection-side firing criterion DECOUPLE into
+       an additive condition on the two invariants separately.  Not fatal to anything -- but
+       the property W-01 lists as showing 'K1 exists to separate them' does not survive the
+       smallest enlargement of the carrier.
+
+DONE.

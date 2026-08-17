@@ -1,0 +1,25 @@
+== A1  THE LANE'S KERNEL, CHECKED AGAINST THE OPERATORS (I nearly called it a bug) ==
+   The third pair term uses sin^2(pi k (alpha+BETA)), the SUM.  That is correct ONLY under
+   the lane's own sign convention x = e^{-2pi i alpha}, y = e^{+2pi i beta} (x = conj(W_F)).
+   Under the opposite convention it would be the DIFFERENCE and every rank-1 row would be
+   wrong.  Tested here from the operators, both ready states, 200 random connections:
+   max |  |Z_k|_operators  -  |Z_k|_lane-kernel  | over 200x2x60 = 24000 cells : 1.137e-12
+   max (S - 1) over the same cells (the lane clamps S at 1; a WRONG third term would
+   drive S above 1 and the clamp would hide it): 0.000e+00  -> the clamp never binds.
+   VERDICT: the kernel is RIGHT.  Recorded because I tested it expecting it to be wrong.
+
+== A2  THE FOUR REGISTERED lambda VALUES, RECOMPUTED FROM THE OPERATORS ==
+   A_S1PUB   f=pi, c=3pi/2      (attained,|H|=4) (1/N)log|Omega_N| at N=2e5 =    -0.804718956   lane's exact lambda    -0.804718956
+   C_BADAPP  cubic pair          (H=T^2)         (1/N)log|Omega_N| at N=2e5 =    -0.767513603   lane's exact lambda    -0.767507880
+   B_S3RES   f=2.0, c=1.1        (H=S^1)         (1/N)log|Omega_N| at N=2e5 =    -0.767026255   lane's exact lambda    -0.767014993
+   E_W07GEN  f=2pi.phi,c=2pi.phi^2(H=S^1)        (1/N)log|Omega_N| at N=2e5 =    -1.203968413   lane's exact lambda    -1.203972804
+
+== A3  THE GENERIC (RANK-2) VALUE, INDEPENDENTLY, BY 1-D REDUCTION + mpmath QUADRATURE ==
+   m(0.4+0.3x+0.3y): integrate y first in closed form, int log|A+0.3 e^{i phi}| = log max(|A|,0.3).
+   kink at theta* = 2.3005239830218629827  (cos theta* = -2/3 : -0.66666666666666666667)
+   m(0.4+0.3x+0.3y) = -0.76750788035777587165     lane: -0.767507880358
+   difference to the lane's value: 2.2413e-13
+   log(0.3) = -1.2039728043259359926   lane's E_W07GEN/circle value -1.203972804326
+   B_S3RES subtorus: 11f=20c so H = {(e^{-20is}, e^{11is})}; lambda = m(0.4 z^-9+0.3 z^-20+0.3 z^11)
+      =    -0.767014993   lane/erratum: -0.767014992998
+   diagonal circle xy=1 (D3's limit): m(0.4+0.3z+0.3z^-1) = -1.203984979   = log 0.3 = -1.203972804

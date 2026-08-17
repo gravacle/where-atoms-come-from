@@ -1,0 +1,62 @@
+==============================================================================
+R1_03 — THE DIOPHANTINE CASE WITH EXACT 200-BIT PHASES
+==============================================================================
+
+alpha_true = -2^(1/3) mod 1 = 0.7400789501051268352327893927217716494297
+beta_true  =  4^(1/3) mod 1 = 0.5874010519681994747517056392723082603915
+lane float64 alpha          = 0.74007895010512681    it is EXACTLY the rational 3333019283918197/2^52
+lane float64 beta           = 0.58740105196819936    it is EXACTLY the rational 661354789690255/2^50
+|alpha_lane - alpha_true|   = 2.5899e-17
+|beta_lane  - beta_true |   = 1.1335e-16
+=> phase divergence at k = 1e7:  alpha 2.59e-10   beta 1.134e-9
+   (the lane's docstring claims its scheme 'loses ~1e-17'; that is true of the DOUBLE
+    alpha, not of -2^(1/3).  Against the true irrational the loss is the ~1e-9 the
+    docstring says it avoided.  ALSO: a dyadic-rational (alpha,beta) has rank L = 2.)
+
+--- EXACT-PHASE RUN, alpha = -2^(1/3), beta = 4^(1/3), 200-bit exact reduction
+        N            (1/N) sum log|Z_k|        dev from m(P)
+         1000      -0.768194820808102      -6.8694e-04
+        10000      -0.767573512643285      -6.5632e-05
+       100000      -0.767501598430018      +6.2819e-06
+      1000000      -0.767507873838614      +6.5192e-09
+     10000000      -0.767507816120661      +6.4237e-08
+   min_k |Z_k| = 1.996909537e-04  at k = 5601084
+
+--- THE LANE'S OWN SCHEME, RE-RUN HERE (D = 2^39 + float64 residue, its float alphas)
+        N            lane scheme              exact-phase            difference
+         1000      -0.768194820808103      -0.768194820808102      -7.772e-16
+        10000      -0.767573512643281      -0.767573512643285      +4.330e-15
+       100000      -0.767501598429952      -0.767501598430018      +6.650e-14
+      1000000      -0.767507873838483      -0.767507873838614      +1.312e-13
+     10000000      -0.767507816120559      -0.767507816120661      +1.017e-13
+
+READ-OFF.
+  The two schemes agree to 1.3e-13 at N = 1e7.  The lane's reported value -0.767507816121
+  is NOT a precision artefact at the size of its own residual deviation (+6.4e-08):
+  the true-irrational orbit gives -0.767507816121, deviation +6.424e-08.
+  SELF-FLAG 4 IS THEREFORE RESOLVED IN THE LANE'S FAVOUR ON THE NUMBER, AND AGAINST IT
+  ON THE REASON GIVEN: the phase representation is NOT good to 1e-17 against 2^(1/3);
+  it happens not to matter at this N because the orbit stays 2.0e-04 away from Z(P).
+
+--- IS THE 1e6 -> 1e7 NON-MONOTONICITY DISCREPANCY OSCILLATION?  Finer checkpoints,
+    exact phases.  If the deviation changes SIGN and size smoothly on a log grid it is
+    oscillation; if it grows monotonically with k it is a precision leak.
+      N = 1000        dev = -6.8694e-04
+      N = 1778        dev = +6.2431e-04
+      N = 3162        dev = -2.6615e-04
+      N = 5623        dev = -9.8053e-05
+      N = 10000       dev = -6.5632e-05
+      N = 17783       dev = +4.1067e-05
+      N = 31623       dev = -2.0686e-05
+      N = 56234       dev = -1.5925e-05
+      N = 100000      dev = +6.2819e-06
+      N = 177828      dev = -4.0208e-06
+      N = 316228      dev = +2.3273e-07
+      N = 562341      dev = +2.0623e-07
+      N = 1000000     dev = +6.5192e-09
+      N = 1778279     dev = +4.9082e-07
+      N = 3162278     dev = -2.1995e-07
+      N = 5623413     dev = -4.0388e-07
+      N = 10000000    dev = +6.4237e-08
+
+DONE R1_03

@@ -1,0 +1,84 @@
+==============================================================================
+R1_07 (A) — THE G != {1} CRITERION, STRESSED ON THE DEGENERATE COINCIDENCES
+==============================================================================
+
+  case                                                 G={1}?      density      min|Z|   logOmega/N
+  full support, u = uv (i.e. v = 1), W_F non-trivial   False     2.675e-01   4.000e-01    -0.356679
+  full support, v = uv (i.e. u = 1), W_C non-trivial   False     2.675e-01   4.000e-01    -0.356679
+  full support, u = v  (W_F W_C = 1), both non-trivial False     3.312e-01   2.000e-01    -0.510831
+  full support, u = v = uv  => u = v = 1 (trivial)     True      0.000e+00   1.000e+00     0.000000
+  S={10,01}, u = v                                     True      1.084e-17   1.000e+00    -0.000000
+  S={10,11}, u = uv (v=1)                              True      1.084e-17   1.000e+00    -0.000000
+  S={01,11}, v = uv (u=1)                              True      1.084e-17   1.000e+00    -0.000000
+  S={10,01}, u = -v  (ratio order 2)                   False     5.000e-01   0.000e+00   -13.439047
+  S={10,01}, u/v of order 3                            False     3.333e-01   5.000e-01    -0.462100
+  full support, u = v, p11 = 1e-9 (support just opened) False     1.000e-09   1.000e+00    -0.000000
+
+  READ-OFF.  Rows 1-3 have THREE characters present with exactly two coinciding:
+  G != {1} in every one, the density is bounded away from 0, and log|Omega_N|/N < 0.
+  The strict-triangle step does NOT leak when two of three characters coincide: two
+  equal unit vectors sum to a vector of modulus 2*p, and |2p*w + q*w'| = 2p+q still
+  forces w = w'.  T4's proof survives the sub-case its author did not test.
+  The last row is the discontinuity the criterion PREDICTS: opening the third class
+  by 1e-9 turns lambda from 0 to %.3e.  The criterion is a SUPPORT condition and is
+  therefore discontinuous in the weights -- true, and worth stating where it is not.
+
+==============================================================================
+R1_07 (B) — F4's FIRST DIP, BY DIRECT 400-DIGIT EVALUATION (NO LOCAL EXPANSION)
+==============================================================================
+
+   k    |Z_k| (direct, 420 dps)         log|Z_k|
+    9    0.956618348228      -0.0443507672508
+   10    3.62759872847e-300      -689.486956976
+
+   LANE REPORTS: |Z_10| = 3.62760e-300, log|Z_10| = -689.4870,
+                 (1/10) sum = -69.571408,  m(P) = -0.775546
+   THIS SCRIPT :  log|Z_10| = -689.486956976
+                 (1/10) sum = -69.5714081559
+                 dip below m(P) = -68.795862   [lane: -68.796; predicted -69.078]
+   -> F4's dip REPRODUCES by direct evaluation.  The local-expansion route was not
+      load-bearing after all, and its validation gap is closed here.
+
+   ALSO CHECKED, AND IT IS A REAL (SMALL) DEFECT: the pair actually evaluated by
+   M1_06 is the RATIONAL truncation alpha = 1/3+1e-1+1e-301, beta = 2/3+1e-1+2e-301.
+   That pair is rational, so its relation lattice has RANK 2, not 0 -- e.g.
+   -20*alpha + 10*beta = -1 exactly.  It is NOT an equidistributing pair.  The dip is
+   nevertheless valid for the true (irrational) pair because the omitted tail is below
+   10^-(10^301) and cannot move k <= 10.  Checked: no relation with |m|,|n| <= 40
+   survives adding a single further term, and the sparse-series argument disposes of
+   all of them.  So the numerics stand; the labelling in M1_06's table does not.
+
+==============================================================================
+R1_07 (C) — 'THE HYPOTHESIS ACTUALLY NEEDED' IS SUFFICIENT, NOT NECESSARY
+==============================================================================
+
+   F5 and T2(c) establish:  [ L = {0} ]  +  [ discrepancy o(1/(log N)^2) ]
+                            +  [ dist((u^k,v^k), Z(P)) >= c k^{-tau} ]   ==>  lambda = m(P).
+   That is a SUFFICIENCY proof.  F5 states it as 'THE HYPOTHESIS ACTUALLY NEEDED', which
+   asserts necessity.  Necessity is false, and the counterexample is the same construction
+   with a different growth rate.
+
+   Take M1_06's recipe with gaps a_{j+1} - a_j = a_j^2 instead of C_j 10^{a_j}.  Then at
+   k_j = 10^{a_j} the orbit is within 10^{-a_j^2} of a zero, so
+        dist(k_j) ~ 10^{-a_j^2} = k_j^{-a_j},
+   which violates dist >= c k^{-tau} for EVERY fixed tau (take j with a_j > tau).  Yet the
+   dip's contribution to the average at N = k_j is
+        -a_j^2 log 10 / 10^{a_j}  ->  0,
+   and the same bound holds at every N >= k_j.  So the singular contributions vanish and the
+   average still converges to m(P).  Tabulated:
+
+      a_j    k_j = 10^{a_j}     dist ~ 10^{-a_j^2}     dip contribution at N = k_j
+        2    1e2              1e-4                  -9.210e-02
+        3    1e3              1e-9                  -2.072e-02
+        4    1e4              1e-16                 -3.684e-03
+        6    1e6              1e-36                 -8.289e-05
+       10    1e10             1e-100                -2.303e-08
+       20    1e20             1e-400                -9.210e-18
+
+   -> every one of those k violates any fixed polynomial lower bound, and the contribution
+      to the Birkhoff average tends to 0 geometrically.  The pointwise Diophantine condition
+      is therefore NOT necessary.  The honest statement is the one T2(c) proves:
+      it is a SUFFICIENT condition, and no necessary-and-sufficient condition is offered
+      anywhere in the lane.  F5's 'ACTUALLY NEEDED' and T4's 'that needs ...' both overstate.
+
+DONE R1_07

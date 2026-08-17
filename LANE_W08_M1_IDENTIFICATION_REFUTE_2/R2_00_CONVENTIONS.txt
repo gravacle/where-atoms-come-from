@@ -1,0 +1,21 @@
+LANE W-08 / M1 — REFUTER 2, LENS: ISOLATION.  PUBLISHED CONVENTIONS.
+
+TARGET: /Users/bgm/MB Work/where-atoms-come-from/LANE_W08_M1_IDENTIFICATION
+LINEAGE: Claude Opus 5, refuting an Opus 5 lane against a Fable 5 corpus.  SAME-LINEAGE as the
+lane it attacks — feedback_read_sealed_corrections_first says same-lineage adversaries share
+failure modes.  DISCOUNT THIS LANE ACCORDINGLY AND SAY SO.
+
+CARRIER / OBJECTS: exactly as M1_00_conventions.txt (restated in the brief).  Nothing new.
+  u = conj(W_F), v = W_C.  P(x,y) = p00 + p10 x + p01 y + p11 x y.  p00 = 0 on K1.
+  Z_k = P(u^k, v^k).  lambda = lim (1/N) sum_{k<=N} log|Z_k|.
+  H = closure{(u^k,v^k)} <= T^2;  L = H^perp = {(m,n): u^m v^n = 1} the RELATION LATTICE.
+
+PRECISION.  IEEE double (float64) unless a block says EXACT or HIGH-PRECISION.
+  HIGH-PRECISION phase reduction (R2_04) uses a TWO-LIMB exact int64 scheme modulo 2^62:
+  A = A_hi*2^31 + A_lo, (k*A) mod 2^62 computed with every intermediate < 2^63.  The numerator
+  A is obtained from an EXACT integer cube root, so the represented alpha differs from the true
+  -2^(1/3) by < 2^-62 = 2.2e-19 rather than by float64's ~1e-17.
+SEEDS. numpy default_rng, master seed 20260816 (same stream family as the target lane).
+GRIDS. stated at each block.
+
+THE ONE VARIABLE, per comparison, is stated in R2_ISOLATION_LEDGER.txt.

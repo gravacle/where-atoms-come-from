@@ -1,0 +1,73 @@
+====================================================================================================
+R1  THE THREE STATEMENTS, AND EVERY IMPLICATION BETWEEN THEM, IN BOTH DIRECTIONS
+====================================================================================================
+numpy 2.0.2 ; predicates decided in EXACT integer/Fraction arithmetic unless a line says FLOAT.
+
+(0) THE IDENTITY Z_k = P(u^k,v^k), RE-DERIVED FROM S1's INCIDENCE AND CHECKED EXACTLY.
+    vertex classes (in F?, in C?) = [(1, 1), (1, 0), (1, 0), (0, 1), (0, 1)]
+    class 00 EMPTY on K1: FACE_V u CYC_V = [0, 1, 2, 3, 4] = all five vertices (incidence, not choice).
+    EXACT Gaussian-rational check, 512 cases (16 order-4 connections x 4 states x k=1..8):
+      #{ <M_dF^k s, M_c^k s>  !=  p00 + p10 u^k + p01 v^k + p11 (uv)^k } = 0   <-- must be 0
+    F1 CONFIRMED at EXACT arithmetic, not only at 5.118e-16 in double.
+
+(1) (HULL)  0 in conv{unit-modulus z_i}  <=>  max consecutive angular gap <= pi.
+    EXACT on q-th roots of unity: angles are integers mod q; 'all points in an OPEN
+    half-plane' is decided by enumerating the 2q half-lattice normals, with the strict
+    inequality cos((pi/q) d) > 0 rendered as the exact integer test 2d<q or 2d>3q.
+    q = 12 : 3 coeffs {uv,u,v}   #hull =   53 of  144 (0.3681) ; #(gap != hull) = 0
+             4 coeffs {1,u,v,uv} #hull =   83 of  144 (0.5764) ; #(gap != hull) = 0
+    q = 20 : 3 coeffs {uv,u,v}   #hull =  129 of  400 (0.3225) ; #(gap != hull) = 0
+             4 coeffs {1,u,v,uv} #hull =  219 of  400 (0.5475) ; #(gap != hull) = 0
+    q = 36 : 3 coeffs {uv,u,v}   #hull =  377 of 1296 (0.2909) ; #(gap != hull) = 0
+             4 coeffs {1,u,v,uv} #hull =  683 of 1296 (0.5270) ; #(gap != hull) = 0
+    => the gap criterion IS hull membership at three AND at four points.  NO DEFECT.
+    NOTE, not in the lane: the 3-coefficient hull fraction -> 1/4 and the 4-coefficient
+    fraction -> 1/2 EXACTLY.  Reason for the 3-case: rotating by f sends {uv,u,v} to
+    {c, 0, c+f}, and (c, c+f) is uniform on T^2 when (f,c) is, so the configuration is
+    distributed exactly as three i.i.d. uniform points, for which P(0 in hull) =
+    1 - 3/2^2 = 1/4.  The lane's '342 of 1369' is that 1/4 and it did not say so.
+
+(2) IS m3_5 (B) -- 'THE CONNECTION-SIDE CRITERION SURVIVES AT FOUR CLASSES' -- A TEST
+    THAT COULD HAVE FAILED?
+    The statement is: exists p in Delta_{n-1} with sum p_i z_i = 0  <=>  0 in conv{z_i}.
+    { sum_i p_i z_i : p in Delta } IS conv{z_i}: that is the DEFINITION of convex hull.
+    So it holds for every n and every z_i -- unit modulus or not, coset-constrained or
+    not.  Demonstrated by computing, for random points that are NOT on any coset and NOT
+    even on the unit circle, dist(0, conv) two ways: (i) exact 2-D polygon geometry,
+    (ii) the same simplex-grid minimisation m3_5 uses.  FLOAT.
+      n   grid   max |grid-min  -  dist(0,conv)|   (12 random point-sets each)
+      2    2000   7.2975e-07      (grid spacing ~ 0.002, so this IS the grid error)
+      3     300   4.5204e-03      (grid spacing ~ 0.010, so this IS the grid error)
+      4      80   3.1311e-03      (grid spacing ~ 0.037, so this IS the grid error)
+      5      36   1.8009e-02      (grid spacing ~ 0.083, so this IS the grid error)
+      6      22   2.9106e-02      (grid spacing ~ 0.136, so this IS the grid error)
+    VERDICT ON m3_5 (B): the connection-side statement is TRUE AT EVERY CLASS COUNT
+    BECAUSE IT IS THE DEFINITION OF A CONVEX HULL.  Its '0 disagreements on 361 grid
+    points' is not evidence that the connection side SURVIVES four classes -- it is a
+    re-check of the gap criterion of section (1).  As the ISOLATION ARM that the lane's
+    ledger calls 'THE COMPARISON THAT NAMES THE OPERATIVE VARIABLE' (C4), it COULD NOT
+    HAVE FAILED.  That voids the CONTROL, not the theorem: the asymmetry the lane names
+    is real and is proved in one line.  It was not measured, and the report presents it
+    as measured ('0 disagreements on 361 grid points [m3_5 (B)]').
+
+(3) REGISTER_V001.md:43 -- 'which vanishes iff 0 lies in the convex hull of three
+    unit-modulus coefficients'.  The lane's F3 calls this, read literally, FALSE.
+    IT FAILS IN EXACTLY ONE DIRECTION AND THE LANE DOES NOT SAY WHICH.  Swept over the
+    order-q connection grid x an exact rational simplex grid (FLOAT only to test |Z_1|,
+    with every hit re-certified exactly below):
+    q = 12, 46800 (connection,state) pairs, 71 of them with Z_1 = 0:
+      #{ Z_1 = 0  AND  0 NOT in conv }  = 0
+           <-- ZERO, and it is a THEOREM: a convex combination of the z_i that equals 0
+               IS a certificate that 0 lies in their hull.  THIS HALF OF THE REGISTER'S
+               'IFF' IS TRUE FOR EVERY p AND EVERY CONNECTION.
+      #{ 0 in conv  AND  Z_1 != 0 }     = 17154
+           <-- the half that needs the existential quantifier over p, and it fails on
+               most of the grid.
+    CONSEQUENCE FOR F3.  W-01's load-bearing USE of the sentence is the exhibit at S1's
+    published connection, and that exhibit EXHIBITS Z_1 = 0 directly -- it travels on the
+    TRUE half.  F3 is a correction to one line of register prose, not to any W-01 result,
+    and it should have named the surviving half.  Also: the same register sentence ends
+    '-- verified against brute-force simplex MINIMISATION', which discloses the
+    quantifier it is accused of dropping.  F3 STANDS AS A CORRECTION, DOWNGRADED.
+
+DONE.

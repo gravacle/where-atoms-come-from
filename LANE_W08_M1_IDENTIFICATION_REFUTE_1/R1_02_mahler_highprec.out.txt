@@ -1,0 +1,59 @@
+==============================================================================
+R1_02 — m(P) AT 50 DECIMAL DIGITS, THREE INDEPENDENT ROUTES
+==============================================================================
+
+D. CALIBRATION against closed forms:
+   m(1+x+y)  route B      = 0.323065947219450514093636510724
+   m(1+x+y)  route A      = 0.323065947219450514093636510724
+   Smyth  L'(chi_-3,-1) = (3 sqrt3 / 4pi) L(chi_-3,2):
+                          = 0.323065947219450514093636510724   |diff| = 6.6819e-52
+
+A/B/C ON THE LANE'S LOAD-BEARING WEIGHT VECTORS  (p00 = 0):
+  S3/S4 generic  (0.3,0.3,0.4)  
+      A reduction  = -0.767507880357775871645874051819
+      B Cassaigne-Maillot = -0.767507880357775871645874051819   |A-B| = 1.336e-51
+      C other-variable    = -0.767507880357775871645874051819   |A-C| = 0.0
+      LANE float64 value  = -0.767507880358        |A - lane| = 2.241e-13
+  S1 published   (0, 1/2, 1/2)  
+      A reduction  = -0.693147180559945309417232121458
+      B Cassaigne-Maillot = -0.693147180559945309417232121458   |A-B| = 1.336e-51
+      C other-variable    = -0.693147180559945309417232121458   |A-C| = 3.114e-49
+      LANE float64 value  = -0.693147180560        |A - lane| = 5.469e-14
+  centroid       (1/3,1/3,1/3)  
+      A reduction  = -0.775546341448659177301608726199
+      B Cassaigne-Maillot = -0.775546341448659177301608726199   |A-B| = 1.336e-51
+      C other-variable    = -0.775546341448659177301608726199   |A-C| = 0.0
+      LANE float64 value  = -0.775546341449        |A - lane| = 3.408e-13
+  uniform on 5   (2/5,2/5,1/5)  
+      A reduction  = -0.756573585639774825074418666212
+      B Cassaigne-Maillot = -0.756573585639774825074418666212   |A-B| = 0.0
+      C other-variable    = -0.756573585639774825074418666212   |A-C| = 0.0
+      LANE float64 value  = -0.756573585640        |A - lane| = 2.252e-13
+  non-triangle   (0.6,.25,.15)  
+      A reduction  = -0.510825623765990683205514096304
+      B Cassaigne-Maillot = -0.510825623765990683205514096304   |A-B| = 0.0
+      C other-variable    = -0.510825623765990683205514096304   |A-C| = 0.0
+  degenerate     (0.2,0.5,0.3)  
+      A reduction  = -0.693147180559945309417232121458
+      B Cassaigne-Maillot = -0.693147180559945309417232121458   |A-B| = 1.336e-51
+      C other-variable    = -0.693147180559945309417232121458   |A-C| = 0.0
+  asym triangle  (.45,.3,.25)   
+      A reduction  = -0.745388621571194598984901917862
+      B Cassaigne-Maillot = -0.745388621571194598984901917862   |A-B| = 2.673e-51
+      C other-variable    = -0.745388621571194598984901917862   |A-C| = 0.0
+
+THE CENTROID CLOSED FORM the lane quotes: log(1/3) + m(1+x+y)
+   log(1/3)+m(1+x+y) = -0.775546341448659177301608726199
+   direct m(P)       = -0.775546341448659177301608726199   |diff| = 1.3364e-51
+
+S1 (lane): m(P) = log(max) EXACTLY when max > 1/2.  Tested at 50 dps on 12 points:
+   worst |m(P) - log(max)| over the 12 non-triangle points = 6.682e-52
+
+S2 (lane): m(P) <= -log 2 on the triangle region max <= 1/2, equality on its boundary.
+   -log 2 = -0.6931471805599453094172321
+   (p10,p01,p11) = (0.5,0.5,0.0)  max=0.5   m = -0.69314718055994530942
+   (p10,p01,p11) = (0.5,0.25,0.25)  max=0.5   m = -0.69314718055994530942
+   (p10,p01,p11) = (0.5,0.3,0.2)  max=0.5   m = -0.69314718055994530942
+   (p10,p01,p11) = (0.4,0.4,0.2)  max=0.4   m = -0.75657358563977482507
+
+DONE R1_02

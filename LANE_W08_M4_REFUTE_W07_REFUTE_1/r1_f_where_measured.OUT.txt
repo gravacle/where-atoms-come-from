@@ -1,0 +1,41 @@
+== F1  REPRODUCE THE CORPUS'S OWN RECURRENCE FIGURES AT ITS OWN STATED TEST POINT ==
+  f=2.0 c=1.1 p=(0.4,0.15,0.15,0.15,0.15):  min |Z_k| over k<=400  = 0.024654 at k = 42
+                                            corpus records          0.024654 at k = 42
+                                            sup |Z_k| over k<=4000 = 0.999941 at k = 377
+                                            corpus records          0.999941 at k = 377
+                                            sup |Z_k| over k<=2e5  = 0.999999981 at k = 106123
+                                            COR-E records           0.999999981 at k = 106123
+
+== F2  THE SAME FIGURES AT S1's PUBLISHED CONNECTION — WHERE W-07 SAYS THEY WERE MEASURED ==
+  f=pi c=3pi/2 (ord 4), same p:  min |Z_k| over k<=400 = 0.316228 at k = 387
+                                 sup |Z_k| over k<=400 = 1.000000 at k = 4
+  0.024654 and 0.999941 DO NOT OCCUR at S1's published connection at any k.  On the order-4
+  connection |Z_k| takes only FOUR values, exactly and periodically -- there is no k=42, no
+  k=377, and no near-miss to five decimal places, because there are no near-misses at all:
+    |Z_k| for k = 1..8 : [0.31622777 0.4        0.31622777 1.         0.31622777 0.4
+ 0.31622777 1.        ]
+    distinct values of |Z_k| over k<=4000: [np.float64(0.316227766016), np.float64(0.316227766017), np.float64(0.316227766018), np.float64(0.4), np.float64(1.0)]
+
+== F3  W-07's OWN sec4 TABLE ALREADY CONTRADICTS ITS OWN sec1/sec4 PROSE ==
+  W-07 sec4 lists 'S3/S4 HEADLINE f=2.0,c=1.1' as a SEPARATE ROW from 'S1 PUBLISHED', and
+  scores it 0 cells > 1-1e-12 (APPROACHED).  Recomputed here at K=1e6, W-07's own grid:
+    S1 PUBLISHED  f=pi, c=3pi/2  published p=(1/2,0,0,1/4,1/4)        max|Z_k| = 1.000000000000000  cells>1-1e-12 : 500000
+    S1 PUBLISHED  f=pi, c=3pi/2  corpus test p=(0.4,.15,.15,.15,.15)  max|Z_k| = 1.000000000000000  cells>1-1e-12 : 250000
+    S3/S4 HEADLINE f=2.0, c=1.1  published p=(1/2,0,0,1/4,1/4)        max|Z_k| = 0.999999999997325  cells>1-1e-12 : 0
+    S3/S4 HEADLINE f=2.0, c=1.1  corpus test p=(0.4,.15,.15,.15,.15)  max|Z_k| = 0.999999998553642  cells>1-1e-12 : 0
+
+  CONCLUSION.  The corpus's recurrence figures that the REGISTER cites — W-01's 0.0247/0.99994,
+  S3 sec4.1's 0.024654 at k=42 and 0.999941 at k=377, COR-E's 0.999999981 at k=106123, and
+  S2's 0.994373 (S2 build :448-455, a CONTINUOUS-time overlap at f=3.663319822, c=2.194049746;
+  the S2 audit's replacement figure :440 uses f=2.0, c=1.1) — NONE were measured at S1's
+  published connection.  The k-indexed ones were all at f=2.0, c=1.1, the
+  EXACTLY RESONANT connection of the erratum against W-02, whose ord is INFINITE and at which
+  W-07's own leg D scores APPROACHED, 0 cells.  W-06's '1000 of 4000' is the ONLY recurrence
+  figure in the corpus measured at S1's order-4 point.
+
+  W-07 sec1's headline sentence is FALSE as written, and W-07 sec4's rhetorical answer
+  ('On which connection was it measured? On S1's.') is FALSE.  M4-9 ratified both.
+  This does not touch W-07's degeneracy FACT (ord = 4 at S1's published connection) nor its
+  second, correct observation that the corpus has TWO distinguished connections and both are
+  arithmetically degenerate.  It refutes the UNIVERSAL QUANTIFIER W-07 built its sec1
+  headline on, and it is the one claim in the exchange that neither lane tested.

@@ -1,0 +1,51 @@
+==============================================================================
+R1_05 — PART A: TWO CONNECTIONS ON THE SAME RANK-1 LOCUS, DIFFERENT LIMITS
+==============================================================================
+
+Q(z) = 0.3 z^2 + 0.4 z + 0.3;  roots EXACTLY on |z|=1 at additive phase +- 0.3661397635993849946273831 turns
+m(Q) = log(0.3) = -1.2039728043259359926      [S4 row (1,1) = -1.203972804]
+
+A1  BENIGN POINT OF THE LOCUS.  rho = 1/(20 pi) (the erratum's own rotation number),
+    as a 60-digit rational.  Weights and relation lattice as above.
+      N = 1000       (1/N) sum log|Z_k| = -1.214125254039
+      N = 10000      (1/N) sum log|Z_k| = -1.202819594517
+      N = 100000     (1/N) sum log|Z_k| = -1.204057541181
+      N = 1000000    (1/N) sum log|Z_k| = -1.203979773931
+      -> converging on log(0.3) = -1.203972804326
+
+A2  LIOUVILLE POINT OF THE SAME LOCUS.  rho = (3 + T)/10, T = tstar truncated at 1e-220.
+    (rho becomes irrational on appending M1_06's own sparse tail, which is below
+     10^-(10^220) and cannot move k <= 10.)
+    distance of the k=10 orbit point to the singular phase = 7.81128e-221 turns
+    |Z_10| = 2.1949115e-220   log|Z_10| = -505.782578711
+    (1/10) sum_{k<=10} log|Z_k| = -52.025306617657   against m(Q) = -1.2039728043259
+    DIP BELOW m(Q) = -50.82133381
+
+  CONSEQUENCE.  Two connections with IDENTICAL relation lattice L = Z(1,1) -- the lane's
+  NAMED OPERATIVE VARIABLE -- and identical weights have different limits; iterating with
+  growing gaps drives the second to liminf = -infinity.  Therefore:
+   (i)  T4's sentence "What is fragile is only the NAMING of the exponential rate as m(P):
+        that needs H = T^2 plus the inhomogeneous Diophantine condition of T2(c)" is FALSE.
+        The same fragility lives on a rank-1 locus, on row 3 of the lane's own table.
+   (ii) F6/M1_07's 16-row table is presented as a table of LIMITS.  Row (1,1) is not a
+        limit; it is a Mahler measure that the orbit average need not converge to.
+   (iii)The other 15 rows ARE limits, and freely so -- R1_04 proves exactly, over Q, that
+        their Q has no root on |z| = 1, so log|Q| is continuous there and Weyl alone
+        suffices.  The lane gives no such argument for any of them.
+
+==============================================================================
+R1_05 — PART B: THE ACCUMULATION'S NOISE FLOOR
+==============================================================================
+
+  (m,n)          M=2^20            M=2^22            M=2^24        spread    dev vs m(P)
+  (   11,   20)  -0.767014992998  -0.767014992998  -0.767014992998  1.3e-15   +4.9289e-04
+  (   97,   61)  -0.767515567818  -0.767515567818  -0.767515567818  4.4e-16   -7.6875e-06
+  (  610,  377)  -0.767507349373  -0.767507355304  -0.767507355304  5.9e-09   +5.2505e-07
+  ( 2584, 1597)  -0.767508449619  -0.767507773495  -0.767507839966  6.8e-07   +4.0392e-08
+
+  lane reported deviations: (11,20) +4.929e-04 ; (97,61) -7.687e-06 ;
+                            (610,377) +5.251e-07 ; (2584,1597) +4.716e-09
+  -> the M-spread above is the quadrature's own resolution.  Read the last row's
+     +4.716e-09 against it before treating it as a measured convergence rate.
+
+DONE R1_05

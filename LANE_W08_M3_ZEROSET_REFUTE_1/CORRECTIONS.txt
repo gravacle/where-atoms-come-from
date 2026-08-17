@@ -1,0 +1,89 @@
+LANE W08 / M3 ZEROSET — REFUTER 1 — CORRECTIONS AGAINST THE LANE, IN SEVERITY ORDER
+Lens 1 (MATHEMATICS).  Every item is reproducible from this directory's scripts.
+
+RC-A  THE HEADLINE SENTENCE "it fails on ANY CARRIER WITH A SPECTATOR VERTEX" IS FALSE, AND THE
+      COUNTEREXAMPLE IS THE CORPUS'S OWN CARRIER CALLED "K1-bridged + SPECTATOR VERTEX".
+      B1q (S4:583) has classes {00:1, 01:3, 10:3}: p00 = 1/7 > 0 — a genuine spectator vertex —
+      and p11 = 0, so only THREE characters are occupied and the triangle/polygon reading is
+      EXACTLY correct on it.  S4:592 even computes its rate with the THREE-term Cassaigne-Maillot
+      formula m(1/7 + (3/7)x + (3/7)y).  B0a (classes {00:2, 01:3, 10:4}) is a second such
+      carrier.  Of the FOUR corpus carriers with p00 > 0, the polygon reading fails on exactly
+      TWO (B0b, B4).  r3 (a).
+      The lane's own operative_variable field names the right variable and then its headline
+      replaces it with a strictly weaker and false one.  This is the program's recurring defect
+      (naming the wrong operative variable) reappearing between two fields of one report.
+
+RC-B  THE SELF-FLAG'S "the corpus already owns THREE such carriers" IS WRONG TWICE.  There are
+      FOUR carriers with p00 > 0 (B0a, B0b, B4, B1q; the lane lists three and omits B0a), and
+      only TWO of them (B0b, B4) are carriers on which the criterion the lane found actually
+      differs from the polygon reading.  The lane counted p00 > 0 where the operative property
+      is "all four classes occupied".  r3 (a).
+
+RC-C  "equivalently, whether at least one class weight vanishes" IS A TWO-LOOP-ONLY EQUIVALENCE,
+      STATED UNSCOPED.  On a three-loop carrier with occupied characters {1, u1, u2, u3} FOUR of
+      eight class weights vanish and the POLYGON inequality is exactly the criterion; with
+      {1, u1, u2, u1u2} FIVE vanish and the D-criterion is.  Same "a weight vanishes" status,
+      different criterion, on the same weight vectors.  The correct invariant is the lane's own
+      FIRST formulation: whether chi_2-chi_1, ..., chi_n-chi_1 are Z-linearly independent and
+      span a direct summand of the character lattice.  r3 (c).
+
+RC-D  m3_5 (B) COULD NOT HAVE FAILED.  "exists p in Delta with sum p_i z_i = 0 <=> 0 in
+      conv{z_i}" is the DEFINITION of a convex hull; it holds at every n and for every z_i.
+      Its "0 disagreements on 361 grid points" re-measures the angular-gap criterion, not the
+      class count.  The lane's ISOLATION LEDGER calls C4 "THE COMPARISON THAT NAMES THE
+      OPERATIVE VARIABLE"; one of its two arms is a definition.  Per this program's rule that
+      voids the CONTROL, never the theorem: the asymmetry the lane names is real and is proved
+      in one line.  It was not measured.  r1 (2), r5 arrows [5][6].
+
+RC-E  F3 IS RIGHT BUT UNDIRECTED.  The register's "iff" fails in EXACTLY ONE direction.
+      "Z_1 = 0 => 0 in conv{uv,u,v}" is TRUE for every state and every connection (a vanishing
+      convex combination IS a hull certificate); only the converse needs the quantifier.  W-01's
+      load-bearing use — the exhibit on S1's published connection — travels on the TRUE half, so
+      no W-01 result is touched.  The same register sentence ends "verified against brute-force
+      simplex MINIMISATION", which discloses the quantifier it is accused of dropping.  F3
+      should be graded a prose correction, not "FALSE read literally" without a direction.
+      r1 (3), r5 arrows [1]-[4].
+
+RC-F  AN ASSERTION FORMATTED AS A COMPUTED RESULT.  m3_2's output line
+        "every disagreement is polygon-TRUE / zero-FALSE: yes"
+      comes from  out(... "yes" if disagree_poly and witnesses else "n/a"),  which prints "yes"
+      whenever at least one witness of that type exists and NEVER counts the opposite type.
+      The claim is true — it follows in one line from w1+w4<=w2+w3 => w1<=w2+w3+w4 — but the
+      displayed check does not check it.  Verified exhaustively here: 0 states with a torus zero
+      and no polygon, at N = 40 and N = 70.  r2 (b).
+
+RC-G  A NUMBER IN THE REPORT DOES NOT MATCH ITS OWN SEALED ARTEFACT (COR-K defect class).
+      F12's evidence reads "3028 random NON-firing four-class states ... max |m(P) - log p_max|
+      = 3.331e-16".  m3_2_fourclass.OUT.txt reads "3029 random NON-firing states ... = 2.220e-16".
+      3.331e-16 is m3_1's figure for a different quantity.  Two transcription errors in one
+      evidence line.
+
+RC-H  PRIOR ART INSIDE W08 ITSELF, NOT LISTED.  LANE_W08_M1_IDENTIFICATION/M1_02_mahler_
+      machinery.out.txt (written 18:39:47, before every M3 output file) already states
+      "P = 0 on T^2 <=> p11,p10,p01 obey the triangle inequality <=> max <= 1/2" AND
+      "In the three exceptional weight vectors (one weight 0, the other two = 1/2) it is a
+      CIRCLE — and one of those three IS S1's published ready state".  That is the M3 lane's
+      claimed-new items B (in part) and E.  M1_05_simplex.out.txt additionally publishes
+      m(P) = -0.693147180560 at S1's published state and -0.767507880358 at the S3/S4 generic
+      state (M3's F11 values), and "max > 1/2 => m(P) = log(max)" at three terms (the three-term
+      half of F12).  The M3 lane's PRIOR_ART_IN_THIS_CORPUS.txt does not mention M1, and its own
+      self-flag describes the scan as "grep across the TEN lane directories" when there are more.
+      M1 and M3 ran CONCURRENTLY, so this is a scan-completeness and priority observation, not
+      an allegation of taking.  M3-2 (the four-class criterion) does appear to be genuinely new:
+      no other file in the corpus contains it.
+
+WHAT I COULD NOT BREAK (named, so this is not a "looks fine")
+  * F1: exact at Gaussian-rational arithmetic, 512 cases, 0 disagreements.
+  * F2 / M3-1: both directions, with a CONSTRUCTIVE exact certificate on the firing side and an
+    exact positive lower bound off it, 29161 exact states, 0 failures.
+  * F4 / M3-2: reproduced by a SECOND Jensen grouping the lane never ran; the polynomial identity
+    (A-B)(A+B) = (A'-B')(A'+B') = D holds exactly; the sorted form w1+w4 <= w2+w3 is exact; the
+    volumes 1/4 and 1/2 confirmed by a route independent of the Renyi representation.
+  * F5, F6, F8, F9: verified by hand and exactly; F8(ii) is confirmed EXACTLY here, better than
+    the lane's own 5e-7 orbit average.
+  * F11: -0.767507880358 reproduced by TWO independent routes (Cassaigne-Maillot closed form,
+    and an exact Jensen reduction with Gauss-Legendre), both calibrated against FIVE values S4
+    publishes; and -0.767014993 reproduced to 2.3e-12 with NO orbit average at all, by
+    identifying the resonant orbit closure as the closed geodesic (e^{i20s}, e^{-i11s}) and
+    evaluating m(0.3 z^31 + 0.4 z^20 + 0.3) from its roots.
+  * F12: I supplied the two-line proof the lane said it had not written, so it is now a theorem.

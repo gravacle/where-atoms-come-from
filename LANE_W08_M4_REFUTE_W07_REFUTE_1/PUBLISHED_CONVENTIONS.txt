@@ -1,0 +1,47 @@
+LANE W-08 / M4-REFUTE-1 — REFUTER ON M4, LENS 1 (STEELMAN W-07) — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE, DECLARED FIRST.  W-07 is Claude Opus 5.  M4 is Claude Opus 5.  THIS LANE IS ALSO CLAUDE
+OPUS 5.  Three consecutive layers of one lineage.  No lineage independence exists anywhere in this
+sub-chain and the register must discount all three together.  Mitigation, not cure: this lane
+attacks on axes neither used — brute-force simulation of the branch operators with no closed form
+(leg A), the sweep's TARGET as a function of the complex rather than as a numeral (leg B), exact
+Fraction counts at fixed min (leg C), the logical-vs-probabilistic reading of the vacuity
+disqualifier (leg D1), W_C moved alone at W_F = -1 (leg D2), and a source-line audit of where the
+corpus's recurrence figures were actually measured (leg F).
+
+WHAT WAS READ BEFORE ANY COMPUTATION.  LANE_W07.../PUBLISHED_CONVENTIONS.txt; S1 in full;
+S3 audit COR-A..COR-L (:785-800); S2 audit COR-A..COR-H (:600-650); REGISTER_V001.md W-01 row,
+ERRATUM AGAINST W-02, IMP-1 (:503-509), W-06 row, W-07 row in full; W07_RECURRENCE_ISOLATION_V001.md
+in full; all 8 W-07 lane files; all 9 M4 lane files including PUBLISHED_CONVENTIONS and SEALS;
+S3_THE_CROSSING_V001.md sec4.1 and sec5.3; S2 build sec4.2 — the two pages that state the
+connection at which the corpus's recurrence figures were measured.
+
+CARRIER, CONNECTION, BRANCHES, DRESSING, READY STATES, SEEDS, GRID.  Identical to W-07's and M4's
+published conventions, deliberately.  K1 EDGES e1..e6 = (0,1)(1,2)(2,0)(0,3)(3,4)(4,0);
+FACE_V={0,1,2}; CYC_V={0,3,4}; W_F=exp(i(a1+a2+a3)), W_C=exp(i(a4+a5+a6)); dressing tree
+{e1,e2,e4,e5} rooted v0; A_uv[s]=conj(t_u)t_v; ready state numpy default_rng(20260816), complex
+normal, normalised (byte-identical to W-07 leg E's and M4's); K=4000, tol=1e-9 unless labelled.
+
+PRECISION.  numpy float64 (double) is the default and is stated at each use.  Every claim turning
+on exact-vs-small is decided in exact arithmetic: Fraction throughout leg B (fraction-free rank
+over Q on integer incidence matrices, no floats), leg C (counts and mins as exact rationals),
+and leg D3/D4 (amp^2 as a Fraction; float64 values converted to their exact dyadic rationals).
+
+FILES.
+  r1_a_groundtruth.py       brute force, no algebra: which group element governs A_uv (audits M4-2)
+  r1_b_sweep_contingency.py M4's m4_f F3 contingency test, with the target computed from the
+                            complex instead of copied from K1 (audits M4-5); 200 random graphs
+  r1_c_operative_variable.py W-07's floor(K/ord) law vs M4-1's finite edge; two thetas with EQUAL
+                            min ||k theta|| and counts 1000 vs 4 (audits M4's own operative variable)
+  r1_d_controls_and_sec4.py  is W-07's control logically unable to fail (audits M4-6); W_C moved
+                            alone at W_F=-1 (confirms M4-8); 3sqrt3/10 in exact arithmetic
+                            (audits M4-4); float representability of M4's "infinite order" rows
+  r1_e_rerun.sh             seals + byte-identical re-run of all 13 python legs of W-07 and M4
+  r1_f_where_measured.py    ON WHICH CONNECTION the corpus's recurrence figures were measured
+Each has a .OUT.txt captured from the run that produced the numbers reported.
+
+THE ONE VARIABLE, PER COMPARISON.  Stated in the ISOLATION LEDGER header of every file.  The single
+declared non-isolation: leg B3 varies V and E together across random graphs, because the theorem
+being tested (unique winner = discrete partition on any connected graph) is a statement about the
+pair; the per-graph target is recomputed from that graph, which is the correction being made.

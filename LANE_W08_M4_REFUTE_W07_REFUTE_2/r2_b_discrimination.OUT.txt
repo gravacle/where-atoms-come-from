@@ -1,0 +1,72 @@
+  amp = 0.27177644268802675   eps = arcsin(tol/2amp)/pi = 5.856098e-10
+
+== B1  THE RATIONAL SIDE, EXACTLY.  q = ord(rho) from 1 to 8000, theta = 1/q. ==
+  For theta = p/q in lowest terms, min_{k<=K}||k theta|| = 0 if q<=K, and >= 1/q if q>K.
+  q values checked: 1..59 plus 100,999,1000,1999,2000,2001,3999,4000,4001,5000,8000
+  rows where observed cell count != W-07's floor(K/ord) : 0   []
+  W-07 sec3's OWN formula ('1000 = 4000/4 is ord(rho)') therefore PREDICTS, exactly:
+      ord(rho) = 4     ->  floor(4000/4) = 1000   observed 1000
+      ord(rho) = 2000  ->  floor(4000/2000) = 2      observed 2
+      ord(rho) = 4001  ->  floor(4000/4001) = 0      observed 0
+      ord(rho) = 8000  ->  floor(4000/8000) = 0      observed 0
+  m4_c C1's four rational rows return 1000 / 0 / 0 / 2.  ALL FOUR ARE W-07's OWN FORMULA.
+  On rationals of SMALL denominator the two names agree: ord(rho)<=K <=> min||k theta||=0.
+  (They part company on rationals of denominator > 1/eps = 1.7e9; see leg D block D4, which
+   exhibits a FINITE-order counterexample and needs no irrationality at all.)
+  So rows 4001 and 8000 -- M4's entire 'FINITE edge' -- discriminate NOTHING between the two
+  names.  They refute the four-word paraphrase 'finite versus infinite', not the measurement.
+
+== B2  WHICH ROWS OF THE DECISIVE TEST ACTUALLY DISCRIMINATE? ==
+  row                                W-07 name predicts   M4 name predicts  discriminates?
+  ord=4    (S1 published)                   1000 (=K/4)               1000              no
+  ord=4001                           0 (=floor(K/4001))                  0              no
+  ord=8000                           0 (=floor(K/8000))                  0              no
+  ord=2000                           2 (=floor(K/2000))                  2              no
+  irrational 1/4+lam e-13              0 (ord infinite)               1000             YES
+  irrational 1/4+lam e-16              0 (ord infinite)               1000             YES
+  TWO of six rows carry any discriminating power, and leg A showed one of those two (e-16)
+  is realised at 46% error by its own float constructor.  The decisive test is ONE ROW.
+
+== B3  C4's QUANTIFIER IS WRONG.  'for any K, any n <= K and any d > 0' ==
+  C4 claims: there is an irrational theta with #{k<=K : |exp(2pi i k theta)-1| < d} = floor(K/n).
+  Its proof needs the non-qualifying terms bounded below by 2 sin(pi/n) AND d <= that bound.
+  Counterexamples inside C4's own quantifier, at theta = 1/n itself and hence on a whole
+  neighbourhood of irrationals around it:
+    n=2   d=2.5     K=10      2 sin(pi/n) = 2.000000   count = 10     floor(K/n) = 5
+    n=4   d=1.5     K=4000    2 sin(pi/n) = 1.414214   count = 3000   floor(K/n) = 1000
+    n=3   d=1.8     K=100     2 sin(pi/n) = 1.732051   count = 100    floor(K/n) = 33
+    n=4   d=1.4143  K=4000    2 sin(pi/n) = 1.414214   count = 3000   floor(K/n) = 1000
+  The statement is TRUE for d <= 2 sin(pi/n) and FALSE above it.  As written it is false;
+  the correction is one clause and it does not touch M4-1's application (d/amp = 3.68e-9).
+
+== B4  M4's 'ONLY SURVIVING FORM' IS FALSE AT S1's OWN PUBLISHED READY STATE ==
+  M4: 'D_k = 0 EXACTLY for some k <= K  iff  ord(rho) is finite AND ord(rho) <= K.'
+  D_k = amp |rho^k - 1| with amp = |s_u| |s_v|.  The 'iff' silently assumes amp != 0.
+    S1's PUBLISHED ready state p = (1/2, 0, 0, 1/4, 1/4)  ->  |s_1| = |s_2| = 0 EXACTLY.
+    Observable A_23 = conj(t_2) t_3 :  amp = |s_2||s_3| = 0 EXACTLY.
+    Hence D_k = 0 for EVERY k and EVERY rho, including every irrational one.
+    The right-to-left direction of M4's iff therefore fails on the corpus's own published
+    state -- the same state M4's own leg G4 computes with.  On K1 at that state the ordered
+    pairs with amp = 0 are those meeting {v1,v2}:
+      pairs with amp = 0 : 14 of 20  -> [(0, 1), (0, 2), (1, 0), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 3), (2, 4), (3, 1), (3, 2), (4, 1), (4, 2)]
+  Correct form:  amp != 0  =>  ( D_k = 0 for some k <= K  <=>  ord(rho) finite and <= K ).
+  M4 also drops the companion hypothesis tol < 2 amp; m4_g's own code carries min(1.0, tol/(2amp)),
+  so the lane knew, and the finding text does not say it.
+
+== B5  HOW FAR IN K DOES THE COUNTEREXAMPLE REACH?  W-07's OWN GRID. ==
+  W-07 sec3 publishes a K-scaling table at K = 1e3,1e4,1e5,1e6,1e7 and states the claim
+  there: 'exact zero on exactly K/4 cells, at EVERY K, FOREVER' vs 'never zero at any k'.
+  M4's counterexample is built at K=4000 with lam = (sqrt2-1)e-13.  Run the SAME lam over
+  W-07's grid, changing K ALONE:
+           K  cells<1e-9 (irrational)    K/4 (ord=4)   ratio to K/4
+        4000                     1000           1000         1.0000
+       10000                     2500           2500         1.0000
+      100000                     3534          25000         0.1414
+     1000000                     3534         250000         0.0141
+    10000000                     3534        2500000         0.0014
+  The count SATURATES at 3534 and the density collapses like 1/K.
+  At K = 1e6 the irrational row gives 0.35% of the cells the ord=4 row gives; at 1e7, 0.035%.
+  To hold '1000 of 4000'-style agreement out to K = 1e7 the counterexample needs
+    lam < eps/K = 5.856e-17, i.e. below the ~2e-17 float noise floor leg A measured in
+  m4_c's own constructor.  The counterexample is a FIXED-(K,tol) object.  M4-1 says it holds
+  'on W-07's own ... k-range'; W-07's k-range is 1e3..1e7, not 4000.

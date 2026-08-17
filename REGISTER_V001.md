@@ -735,3 +735,182 @@ Both sides are already computed objects here, and it decides whether the foundin
 survives off the degenerate point. **W-07 is superseded if:** a refuter shows the dressed
 reconstruction is not W-06's object · `ord(rho)` is shown not to be the operative variable ·
 or W-06's lane code is produced and contradicts §2.
+
+---
+
+## ERRATUM AGAINST W-07 — TWO SENTENCES OF THAT ROW ARE FALSE (registrar error, 2026-08-16)
+
+Both found by W-08's refuters, both re-verified by me from the corpus's own bytes before being
+carried here (`LANE_W08_REGISTRAR_VERIFY/`, 5 files sealed).
+
+**E-1. W-07's HEADLINE IS FALSE OF THE FIGURES IT NAMES.** W-07 §1 states that *"every recurrence
+figure in this corpus was measured"* at S1's order-4 connection. **The corpus states its own test
+point verbatim, twice, and it is a different connection:** `S2_FORMATION_CONDITION_ON_K1_AUDIT_V001.md:439-440`
+and `S3_THE_CROSSING_V001.md:423-427` both give `f = 2.0, c = 1.1, p = (0.4,0.15,0.15,0.15,0.15)`.
+Recomputed independently: `min|Z_k| = 0.024654 at k = 42` and `sup|Z_k| = 0.999941 at k = 377` —
+**W-01's registered `0.0247 at n=42` and `0.99994`, the figures STOP-FALLS-REBUILD was issued
+against.** That connection is the **exactly resonant** one of the erratum against W-02
+(`-11f + 20c = 0`), of **INFINITE order**, where the supremum is APPROACHED and never attained.
+At the order-4 point `|Z_k|` takes exactly three values `{1/sqrt(10), 2/5, 1}` and `0.024654` is
+`0.2916` from the nearest. **W-07's claim is true of exactly one figure — W-06's `1000 of 4000` —
+and W-06 is the lane with no artifact.** The ATTAINED/APPROACHED distinction is not withdrawn; the
+claim about where the corpus measured is.
+
+**E-2. "A FACTOR `sqrt(3)` NEEDS AN ELEMENT OF ORDER 3 AND `Z_4` HAS NONE" IS FALSE.** Exactly, in
+rationals: with `|s_v|^2 = (3/4, 4/25, 0, 9/100, 0)` (sums to 1) the pair `(v0,v3)` has
+`(dF,dC) = (-1,0)`, so `D_k = amp|(-1)^k - 1|`, `amp^2 = 27/400`, `(2·amp)^2 = 27/100 = (3√3/10)^2`
+**exactly**. The `sqrt(3)` is in the ready state's amplitudes, not in the group. **`3√3/10` is
+reachable on S1's own published connection.** The W-07 *page* listed "a different normalisation"
+among three escapes; the *row* did not, and the row is what is corrected. **The custody finding is
+untouched — reachability is not reproduction, and W-06's code still does not exist.**
+
+---
+
+## W-08 — THE RACE: **THE DECAY OUTRUNS THE FLOOR, AND THE TWO NEVER COMPETE. THE FOUNDING OBSTRUCTION IS FALSE AS AN INFERENCE. WHAT SURVIVES OF IT IS A SCHEDULE STATEMENT WITH AN EXPONENT.**
+
+Commissioned on W-07's REOPENS clause. Four build lanes (identification, floor, zero set, and a
+refuter aimed at W-07), eight refuters on distinct lenses, an isolation audit over **64 comparisons**,
+and a synthesis required to commit. **14 agents, 0 errors.** Every finding carried below was
+re-verified by the registrar from the corpus's own bytes before entry.
+
+**WHERE THE PROOF IS.** `W08_THE_RACE_V001.md` sha256 `3a9fa0ebfe88b3f19562e6251132fd11faebddca62d30d295f693352bf133e79`. Lane code:
+fourteen directories `LANE_W08_*`, each with `SEALS.sha256`, **all verify**.
+
+### THE ANSWER: **YES, UNCONDITIONALLY — AND THE QUESTION COMPARES INCOMMENSURABLES**
+
+**`|Z_k| <= 1` always**, by the triangle inequality on non-negative weights summing to one — so
+**`|Omega_N| = prod_{k<=N} |Z_k|` is MONOTONE NON-INCREASING.** Checked, not asserted: over
+`k <= 10^6`, `max_k(|Z_k| - 1) = -1.446e-09` at the resonant connection, `0` exceedances anywhere.
+**A near-return means that circuit writes nothing. It does not un-write the previous `N-1`.**
+
+> **THE FOUNDING OBSTRUCTION IS FALSE AS AN INFERENCE.** *"It fires, and then it un-fires. A
+> reversible write, not a record"* (`S2..._AUDIT_V001.md:447`, repeated `S3_THE_CROSSING_V001.md:429`)
+> is drawn from the **single-cell** observable `|Z_k|` and never from the product, **which is the
+> object durability is a property of.** W-07 looked for the fault in *where* the obstruction was
+> measured. **The fault is in *what* was measured.** The corpus already half-owned this: COR-C
+> struck `|Omega_N| <= e^{lambda N}` and replaced it with *"the monotonicity … that §4.3-4.4
+> actually prove"* — **the monotonicity was in the record and was never turned on the recurrence
+> sentence.** Under-read again, and this time the correction was the registrar's own to make.
+
+**THE DECAY IS LINEAR WITH AN EXPLICIT CONSTANT, WITH NO DIOPHANTINE HYPOTHESIS.** From the
+character identity `|Z_k|^2 = 1 - sum_{j<l} w_j w_l |chi_j^k - chi_l^k|^2` (exact `0` residual in
+`Fraction` arithmetic over 768 and 336 cases, two independent refuters): for any pair with
+`chi_j != chi_l`, `SUM_{k<=K}(1-|Z_k|) >= w_j w_l (K - 1/|sin(tau/2)|)`. Measured densities at
+`K = 10^7`, one variable moving: `0.4919` (order-4), `0.4692` (resonant), `0.5295` (rank 1),
+`0.4692` (random) — every one far above the proved floor `0.12`.
+
+**THE FLOOR'S ENTIRE CONTRIBUTION IS `O(1)` AND `K`-INDEPENDENT.** At `K = 10^7` the whole
+near-return band below `eps = 1e-3` contributes `8.9e-07` of the decay budget; below `1e-6`,
+`9.2e-13`. **And the floor can be driven five orders deeper without moving the rate at all** —
+approaching the order-4 point, `F(10^6)` falls `2.189e-06 -> 3.226e-11` while `lambda` reads
+`-0.767507880` in every row. **THE FLOOR AND THE RATE ARE INDEPENDENT COORDINATES. THEY DO NOT
+RACE.** The floor is a property of ONE cell; the rate is a property of ALL of them.
+
+### WHAT ACTUALLY DEFEATS DURABILITY — AND RECURRENCE IS NEITHER
+
+**(1) `G = {1}`.** `|Omega_N| -> 0` **iff** `G = <chi_a/chi_b : a,b in supp(pi)> != {1}` — proved by
+Weyl on the *continuous* function `1-|P|` plus the strict triangle inequality, no Diophantine
+input. This is **COR-B's four non-forming families re-derived as a criterion**, and it survived all
+four refuters who attacked it.
+
+**(2) THE SCHEDULE — AND THIS IS WHERE THE FOUNDING OBSTRUCTION GENUINELY SURVIVES.** Verified by
+the registrar: an adversary writing only the `sqrt(K)` cells of smallest `1-|Z_k|` accumulates
+`0.606, 0.615, 0.588, 0.601` nats at `K = 10^4..10^7` — **`|Omega| ~ 0.55` forever, with
+unboundedly many writes** — while the honest schedule `k_n = n` accumulates `7678 -> 7675061`.
+**Durability is a property of the (connection, SCHEDULE) pair, and the corpus has never stated a
+schedule stipulation.** The admissible adversarial write density is `K^{-1/2}` at `d_eff = 2` and
+`K^{-1/3}` at `d_eff = 1` (measured last-decade exponents `0.5003, 0.5003, 0.6666, 0.6667` against
+theory `0.500, 0.500, 0.667, 0.667`).
+
+**AND THIS IS WHERE W-07's ATTAINED/APPROACHED CUT DOES ITS WORK — THE SCHEDULE AXIS, AND NO OTHER.**
+At the order-4 point `1-|Z_k| = 0` exactly on `250000` of `10^6` cells, so the adversary has a
+**fixed positive** write density at **zero** budget. Off it the density must fall like `K^{-1/2}`
+or `K^{-1/3}`. **A difference of EXPONENT — not the "absolute versus cosmetic" dichotomy.**
+**W-07 was right that the register distinguished neither, and wrong about which axis it lives on.**
+
+**AND ONE NON-UNIFORMITY, NEW AND IN NO PRIOR ROW:** `lambda < 0` at every non-trivial connection,
+but the **onset** diverges — the circuits needed to write one nat run `2, 10, 47, 216, 1000, 4642`
+as `t -> 1e-5` on the rank-1 locus, with `lambda = log 0.3` in every row (`K_0 ~ t^{-2/3}`).
+**Durability holds for every non-trivial connection and holds uniformly for none.**
+
+### RULING ON W-07
+
+**SURVIVES:** the reproduction of W-06 (a third independent confirmation, `D_1 = 0.384349931183`
+to `7.85e-14` from code sharing nothing with W-07's; `1000 of 4000` exact in 60-digit rationals) ·
+the **vacuity ruling on the 52-partition sweep**, whose attacker's counterexample was itself wrong
+(the discrete partition is the unique winner on **178 of 178** random connected graphs) · the
+ATTAINED/APPROACHED observation, relocated · and its own limitation block, which W-08 vindicates.
+**FALLS:** `ord(rho)` **as the operative variable** — an exact rational `theta = 1/4 + 1e-13` has
+**finite** order `10^13`, so W-07's own sharp form predicts `0` and the observable returns `1000`;
+the replacement name `min_k||k theta||` fails too, and the correct name at fixed `(K, tol, amp)` is
+the pair `(q, delta)`. **W-07 is superseded on its own clause** — *"superseded if `ord(rho)` is
+shown not to be the operative variable."* Plus the two errata above. **The corpus's recurring
+defect, committed by the row that named it.**
+
+### THE WEAKEST LOAD-BEARING CLAIM IN THE CORPUS — AND IT IS NOT IN W-08
+
+**`W-01`'s convex-hull criterion as this register states it at `:43`, and specifically the clause
+"three unit-modulus coefficients".** Registrar-verified, 200000 draws, one variable moving (the
+number of occupied characters, same hull test and grid in both arms):
+
+- **"three" is `p00 = 0`, an incidence fact about K1** — no vertex lies outside both loops. With
+  one spectator vertex there are **four** characters, the criterion acquires the closed form
+  `cos f + cos c <= 0` (agreeing with the hull on **200000 of 200000**), and **the firing region
+  doubles from `0.2507` to `0.4989`** — exactly `1/4` to `1/2`.
+- **W-01's own advertised virtue does not survive one added vertex.** *"It distinguishes curvature
+  from flat holonomy, which K1 exists to separate"*: sending `f -> -f` alone changes the verdict at
+  **99785 of 200000** points on K1 and at **0 of 200000** on the spectator carrier. **The property
+  the register advertises as the criterion's virtue is a coincidence of `p00 = 0`.**
+- The quantifier is dropped: `iff` is false read literally; `Z_1 = 0 => 0 in conv` is the true half
+  and is the one W-01's exhibit travels on.
+
+**No W-01 result is touched — and that is exactly why it has survived seven layers unexamined.**
+It is quoted forward by S3, S4, W-03 and every W-08 lane; it is the sentence a rebuild would be
+built on; and it is the only load-bearing claim in the corpus never checked on a second carrier by
+a lane whose job it was.
+
+### THE ISOLATION AUDIT'S FINDING, WHICH GENERALISES PAST THIS PROGRAM
+
+**The commonest FATAL defect across twelve lanes is not "two variables moved" — it is "ZERO
+variables moved."** Five of eleven FATALs are controls that could not have failed, one of them a
+control in which the two arms were byte-identical (`difference exactly 0`) and which was reported
+as a confirmation. **An isolation ledger cannot detect any of these, because a ledger records what
+the author intended to vary.** Three build lanes wrote ledgers; five of the seven FATAL build
+confounds sit in the arm the lane's own ledger names as decisive. **Treat "the ledger says one
+variable" as evidence of nothing — read the code.**
+
+### WHAT READS TWO WAYS, AND IS SCORED AS NEITHER
+
+**The adversarial schedule** reads as *"durability is a schedule stipulation the corpus never
+made"* **or** as *"`K^{-1/2}` write density is not an admissible schedule and the stipulation is
+right."* W-08 supplies the exponent, not the admissibility criterion, and does not distinguish
+them. **W-07 leg E's five-for-five null** is a density statement, not an isolation of `ord(rho)`.
+**And `lambda` can be ~40% slower at degenerate points than generic** — which reads as "degeneracy
+helps the record persist" or as "`lambda` is simply non-monotone in `H`"; the second is better
+supported and neither is scored. **Every one of those rates is strongly negative, so the race
+verdict does not depend on which reading is right.**
+
+### WHAT W-08 DOES NOT ESTABLISH
+
+**No durable record is constructed.** §1 decides a race between two computed objects on K1; it
+builds nothing. **The schedule half has an exponent and no admissibility criterion. Nothing off K1
+is decided** — all four build lanes ran on K1 alone. **The dressed observable is still a
+reconstruction and W-06's code still does not exist.** **And this is layer NINE of one lineage:**
+W-07, M1-M4, all eight refuters and the synthesis are Opus 5. Three of them named an operative
+variable and the next caught it each time. **Discount this row as one block with W-07, not as an
+independent check.** The lineage-independent lane W-03 specified still does not exist for anything
+in W-08.
+
+**NOTHING HERE TAKES ANY OF THE PRINCIPAL'S THREE DECISIONS.** It bears on the first: the
+disposition's cost line — *"the untouched recurrence obstruction may kill it"* — names an
+obstruction that is **false as an inference** and survives only as a schedule statement the corpus
+never wrote down.
+
+**REOPENS IF:** a connection with `G != {1}` is exhibited on which `SUM(1-|Z_k|)` is sublinear ·
+an **intrinsic** admissibility criterion for schedules is written down under which the corpus's own
+`SUM(1-z_n)` test is recovered and the `K^{-1/2}` adversary excluded · **or someone states a
+durability observable on which a single-cell near-return DOES undo earlier writes — the one move
+that would restore the founding obstruction, and nobody in this corpus has attempted it.**
+**NEXT, AND IT IS ONE SCRIPT AGAINST TWO OBJECTS THE CORPUS ALREADY OWNS:** run W-01's criterion,
+in this register's own words, on carriers `B1q` and `B0b` (`S4_THE_MEASUREMENT_V001.md:519, :582`)
+and report which reading each obeys, quantifier restored. It decides the weakest claim above.

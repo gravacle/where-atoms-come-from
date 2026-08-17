@@ -1,0 +1,61 @@
+LANE W-08 / M2 — THE NEAR-RETURN FLOOR, QUANTITATIVELY — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE.  Run by Claude Opus 5, as W-07 was.  This lane is therefore NOT lineage-independent of
+W-07 (it is the same model family), and one of its findings is a correction TO W-07.  Grade it
+accordingly: same-lineage adversary, shared failure modes (feedback_read_sealed_corrections_first).
+
+READ BEFORE COMPUTING (in this order, done):
+  LANE_W07_RECURRENCE_ISOLATION/PUBLISHED_CONVENTIONS.txt ; S1_CARRIER_K1_V001.md (full) ;
+  S3_THE_CROSSING_AUDIT_V001.md:785-800 (COR-A..COR-L) ; S2_..._AUDIT_V001.md:600-650 (COR-A..COR-H) ;
+  REGISTER_V001.md W-01 row, ERRATUM AGAINST W-02, W-07 row.
+CORRECTIONS CARRIED, NOT REDISCOVERED: COR-B (formation is not universal), COR-E (sup|Z_k| figures
+are window artefacts; lower bounds only), COR-F (loop transport not diagonal in general),
+COR-K (two rows non-reproducible), ERRATUM v W-02 (f=2.0,c=1.1 is exactly resonant, -11f+20c=0),
+COR-L (|Omega_N| first underflows float64 at N=968 -> ALL products are done in logs here).
+
+CARRIER K1 (S1 sec1).  V=5 E=6 F=1, chi=0, b1=1.  e1=(0,1) e2=(1,2) e3=(2,0) e4=(0,3) e5=(3,4)
+e6=(4,0); face F glued along e1+e2+e3.  FACE_V={0,1,2}, CYC_V={0,3,4}.
+INCIDENCE FACT, LOAD-BEARING HERE: v0 in BOTH loops (class 11); v1,v2 class 10; v3,v4 class 01;
+NO vertex is in neither, so p00 = 0 IDENTICALLY on K1.  Not a choice.  Consequences used below.
+
+CONNECTION.  U_e=exp(i a_e); W_F=exp(i f), f=a1+a2+a3; W_C=exp(i c), c=a4+a5+a6.  Gauge-invariant.
+BRANCHES (W-01/S3).  M_dF multiplies s_v by W_F for v in FACE_V; M_c multiplies s_v by W_C for
+v in CYC_V; identity elsewhere.  Per-cell branch comparison Z_k = <M_dF^k s, M_c^k s>.
+
+THE CLOSED FORM USED THROUGHOUT (derived and verified against brute force in m2_a_objects.py):
+  x := conj(W_F) = e^{-i f},   y := W_C = e^{+i c},   w := (p11, p10, p01),  p00 = 0 on K1
+  Z_k = p11 (xy)^k + p10 x^k + p01 y^k          (three unit-modulus characters, positive weights)
+  chi_0 = xy (root v0), chi_F = x (v1,v2), chi_C = y (v3,v4).
+This is W-01's <M_dF s, M_c s> = conj(W_F) W_C p_0 + conj(W_F)(p1+p2) + W_C(p3+p4) at k=1, and
+is the same object W-07 leg D integrates.  NOTE the k-th power acts on the CHARACTERS, not on Z.
+
+READY STATES (the ONLY two used; never mixed inside a comparison):
+  RS-G  "generic"   (p11,p10,p01) = (0.4, 0.3, 0.3)   e.g. p=(0.4,.15,.15,.15,.15). All three live.
+                    lambda = m(0.4+0.3u+0.3v) = -0.767507880 (erratum v W-02's generic torus value).
+  RS-P  "S1 published" p=(1/2,0,0,1/4,1/4) -> (p11,p10,p01) = (1/2, 0, 1/2).  p10 = 0.
+                    DEGENERACY, stated once and carried: with p10=0 only chi_0/chi_C = x survives,
+                    so on RS-P the near-return problem is ONE-DIMENSIONAL FOR EVERY CONNECTION.
+RS-G is the primary. RS-P is reported as a SEPARATE comparison in which only the ready state moves.
+
+CONNECTION CLASSES (alpha := f/2pi, beta := c/2pi are the operative numbers):
+  (a) S1 PUBLISHED    f=pi, c=3pi/2      -> alpha=1/2, beta=3/4        H finite, |H|=4
+  (b) S3/S4 HEADLINE  f=2.0, c=1.1       -> -11f+20c=0 exactly (erratum) H = a closed 1-dim circle
+  (c) BADLY APPROX.   (alpha,beta)=(t,t^2)/norm, t=2cos(2pi/7) (cubic field Q(cos 2pi/7); 1,t,t^2
+                      a Q-basis) -> H = T^2.  Badly-approximable-ness MEASURED here, not asserted.
+  (d) RANDOM          alpha,beta ~ U[0,1), numpy default_rng, master seed 20260816, per-case 1,2,3.
+  (e) W07-GENERIC     f=2pi*phi, c=2pi*phi^2 — W-07 leg D's row LABELLED "GENERIC (badly
+                      approximable)".  phi^2-phi=1 so c-f=2pi EXACTLY: W_C=W_F, chi_0=1.  RANK 1.
+  (f) LIOUVILLE       alpha=sum 10^{-j!}, beta=sum 10^{-(j!+1)} style, very well approximable, H=T^2.
+  (g) HIGH-ORDER RATIONAL  alpha=a/n, beta=b/n for n = 4,8,...,2^20: H finite, order n, attained.
+
+GRID.  k = 1..K, K in {1e3,1e4,1e5,1e6,1e7} (1e8 where stated), chunked 1e6 at a time.
+PRECISION.  Double precision is the default and is SAID so.  k*alpha mod 1 is NOT computed by
+naive multiplication: alpha is split alpha = a_hi + a_lo with a_hi = round(alpha*2^26)/2^26, so
+k*a_hi is EXACT for k < 2^27 and frac() of it is exact; the residual k*a_lo is <= 0.08 in
+magnitude and carries ~1e-17 absolute error.  Rational classes (a),(g) are done in EXACT INTEGER
+arithmetic (k*a mod n).  Every record-setting k in the irrational classes is re-checked in exact
+rational arithmetic against a 60-digit mpmath value of the constant (m2_b_floor.py, EXACT CHECK
+block).  Where a claim is precision-sensitive it is stated with its check.
+
+WHAT MOVES.  See ISOLATION_LEDGER.txt.  One variable per comparison, always.

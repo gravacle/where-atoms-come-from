@@ -1,0 +1,60 @@
+==============================================================================
+M1_04 — THE DURABILITY CRITERION ON K1
+==============================================================================
+
+PART 1.  The two inequalities the lemma runs on (checked on a 2e6 grid, float64):
+   min over (0,1] of ( -log a - (1-a) )        = -0.000e+00   (must be >= 0)
+   min over [1/2,1] of ( 2(1-b) + log b )      = 0.000e+00   (must be >= 0)
+   COUNTEREXAMPLE to the lemma as stated with only 0<=a_k<=1:
+     a_1 = 0, a_k = 1 (k>=2):  prod = 0 for all N;  sum (1-a_k) = 1 < infinity.
+
+PART 2.  For each case: G trivial?  Cesaro density of (1-|Z_k|) at N=2e5;
+         sum_{k<=N}(1-|Z_k|); min|Z_k|; log|Omega_N|/N; and m(P) for comparison.
+  case                                       G={1}      density      min|Z|  logOmega/N        m(P)      #Z_k=0
+  full support, generic connection           False    4.692e-01   2.301e-02     -0.7670   -0.767508           0
+  full support, S1 published (ord 4)         False    4.919e-01   3.162e-01     -0.8047   -0.767508           0
+  full support, TRIVIAL connection           True     0.000e+00   1.000e+00      0.0000   -0.767508           0
+  S={10,01} and u = v  (W_F W_C = 1)         True     1.084e-17   1.000e+00     -0.0000   -0.693147           0
+  S={10,01}, u != v                          False    3.634e-01   3.305e-06     -0.6932   -0.693147           0
+  S={10,11} and W_C = 1                      True     1.084e-17   1.000e+00     -0.0000   -0.693147           0
+  S={01,11} and W_F = 1                      True     1.084e-17   1.000e+00     -0.0000   -0.693147           0
+  S={11} only  (the ROOT alone)              True     1.061e-17   1.000e+00     -0.0000    0.000000           0
+  S1 published conn + S1 published state     False    5.000e-01   0.000e+00        -inf   -0.693147          50
+
+  READ-OFF:
+   * Every G={1} row has density EXACTLY 0 and log|Omega_N|/N = 0: the record is written
+     and un-written; |Omega_N| = 1 for all N.  Three of those rows are NON-TRIVIAL
+     connections (W_F != 1 or W_C != 1) — S3-audit COR-B's 'four families that never
+     form', re-derived here as the G={1} locus of the four possible supports.
+   * Every G!={1} row has density bounded away from 0 -> sum (1-|Z_k|) diverges LINEARLY.
+   * ROW 4 IS THE HYPOTHESIS SEPARATION: u = v, non-trivial connection, m(P) = -0.693147
+     yet lambda = 0 and NOTHING DECAYS.  m(P) < 0 does not imply durability.
+   * The last row has Z_k = 0 on odd k: durable via the branch the brief's lemma excludes.
+
+PART 2b.  Is the Cesaro density bounded away from 0 off the G={1} locus?  1000 random
+          (connection, ready state) draws, N = 20000, float64, seed 20260816+40.
+   min density over 1000 draws = 8.887867e-03   at f=1.4519 c=1.1964 pi=(0.991,0.001,0.008)
+   (it is small only when the draw is NEAR the G={1} locus; it is 0 only ON it.)
+
+PART 3.  lambda_H vs m(P): the three regimes, one line each (from M1_03).
+   rank L = 0 (Diophantine)   lambda = m(P)          = -0.767507880   [= the N1 claim]
+   rank L = 1 (11,20)         lambda = subtorus mean = -0.767014993   != m(P)
+   rank L = 2 (order 4)       lambda = 4-point mean  = -0.804718956   != m(P)
+   and on the G={1} locus     lambda = 0                              != m(P) < 0
+
+   So N1's identification lambda = m(P) is TRUE EXACTLY ON THE COMPLEMENT of a dense,
+   Haar-null set of connections, and NOT on either of the two connections this corpus
+   has actually published.
+
+PART 4.  |Omega_N| itself, on the Diophantine connection (float64 underflows; we track
+         log|Omega_N| = sum log|Z_k|, which does not).
+      N        log|Omega_N|      log|Omega_N|/N     sum(1-|Z_k|)   first N with |Omega|<1e-300
+         10           -8.2585      -0.825850184             5.08
+        100          -75.4798      -0.754798000            46.78
+       1000         -768.1948      -0.768194821           469.59
+      10000        -7675.7351      -0.767573513          4691.97
+     100000       -76750.1598      -0.767501598         46919.04
+    1000000      -767507.8738      -0.767507874        469188.73
+   float64 underflow of |Omega_N| (|Omega_N| < 1e-300) first at N = 900
+
+DONE M1_04
