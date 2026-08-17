@@ -1,0 +1,15 @@
+  patch 3x3, Z_2, dim 16. START: maximally mixed. <W> at t=0 = 0.000000
+  Does the record become definite ON ITS OWN?  |<W>| -> 1 would mean the dynamics wrote it.
+
+          bath   g2  gamma     T         <W>     |<W>|   S(final)
+     plaquette  1.0   0.50  20.0    0.000000  0.000000     4.0000
+     plaquette  0.0   0.50  20.0    0.000000  0.000000     4.0000
+      electric  1.0   0.50  20.0    0.000000  0.000000     4.0000
+      electric  0.0   0.50  20.0    0.000000  0.000000     4.0000
+       proj +1  1.0   0.50  20.0    0.860064  0.860064     1.3657
+       proj +1  0.0   0.50  20.0    0.999909  0.999909     3.0007
+          none  1.0   0.00  20.0    0.000000  0.000000     4.0000
+          none  0.0   0.00  20.0    0.000000  0.000000     4.0000
+
+  A bath whose Lindblad operator is a PROJECTOR onto a flux sector is the one that could
+  select. If even that leaves |<W>| at 0, no dynamics of this form writes a record here.

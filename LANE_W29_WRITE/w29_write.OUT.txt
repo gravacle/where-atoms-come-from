@@ -1,0 +1,15 @@
+  patch 3x3, Z_2, physical dim 16
+  INTERIOR observable: Z on cut link 2.   RECORD: perimeter flux W.
+  || [Z_interior, W] || = 0.000e+00   (nonzero = the interior can drive the record)
+
+  THE WRITE. Record starts UNDETERMINED (maximally mixed over both flux sectors).
+  Interior prepared in +1 or -1. Evolve, then read the record.
+     g2  gamma     T   <W> | interior +1   <W> | interior -1   SEPARATION
+    0.0   0.50  10.0            0.000000            0.000000     0.000000
+    1.0   0.50  10.0           -0.000001            0.000001     0.000002
+    1.0   0.00  10.0           -0.007726            0.007726     0.015452
+    0.5   0.50  20.0           -0.000000            0.000000     0.000001
+    2.0   0.50  20.0           -0.000000            0.000000     0.000000
+
+  SEPARATION > 0 means the record ENDED UP carrying the interior's state -- it was written.
+  SEPARATION = 0 means nothing was written: the record is blind to what happened inside.

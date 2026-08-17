@@ -1,0 +1,7 @@
+LANE W29 — THE WRITE STEP. Carrier: 3x3 planar patch, Z_2, physical dim 16 (W-27).
+H = -sum_plaquettes W - g^2 sum_links Z. Lindblad drho/dt = -i[H,rho] + gamma sum (L rho L^dag - rho),
+Heun, 3000-4000 steps, trace renormalised each step. RECORD = the perimeter flux W.
+w29  : writer = Z on a cut link at the interior vertex. [Z,W] = 0, so it cannot write. Null.
+w29b : writer = Z on an ODD-piercing subset (the conjugate identified at W-27). [Z,W] = 8.000e+00.
+w29c : no writer at all -- start maximally mixed and ask whether the dynamics selects a sector.
+       Baths: the four plaquettes; Z on the cut links; a PROJECTOR onto the W=+1 sector; none.

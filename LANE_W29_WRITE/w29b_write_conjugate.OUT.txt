@@ -1,0 +1,14 @@
+  find an operator that DOES NOT commute with the record (so it can write to it):
+    Z on (0,)           || [Z_S, W] || = 8.000e+00
+    Z on (0, 1, 4)      || [Z_S, W] || = 8.000e+00
+  WRITER = Z on (0,) -- an ODD-piercing cut, the conjugate W-27 identified.
+
+  Record starts UNDETERMINED. The WRITER is prepared +1 or -1. Evolve, then read the record.
+     g2  gamma     T   <W> | writer +1   <W> | writer -1   SEPARATION
+    0.0   0.50  10.0          0.000000          0.000000     0.000000
+    1.0   0.50  10.0         -0.000008          0.000008     0.000016
+    1.0   0.00  10.0          0.028979         -0.028979     0.057958
+    1.0   0.50   2.0          0.000323         -0.000323     0.000646
+    2.0   0.50  10.0         -0.000001          0.000001     0.000001
+
+  SEPARATION > 0 means the record ACQUIRED a value carrying what the writer did.

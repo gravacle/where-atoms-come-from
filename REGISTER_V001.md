@@ -2304,3 +2304,60 @@ show none can. (2) The record here is a **global** flux sector, not a local one 
 record localised to part of the boundary also survives. (3) The `gamma = 0` control in W-27b drifted
 `S` to `0.0035` where it must be exactly `0`; the Heun integrator does not conserve purity and the
 small-`gamma` numbers there carry unbounded error.
+
+---
+
+## W-29 — THE WRITE STEP: **WRITABLE AND DURABLE ARE CONJUGATE, AND THEY ARE CONJUGATE BECAUSE THE GEOMETRY IS FROZEN**
+
+`LANE_W29_WRITE/`, sealed. Carrier: W-27's patch. **W-28 measured PERSISTENCE, not formation** — the
+value was put in by hand and stayed. **Formation means the record ACQUIRES a value it did not have.**
+
+**W-29, the null and its cause.** Writer = `Z` on a cut link at the interior vertex.
+`||[Z_interior, W]|| = 0.000e+00` — **they commute, so nothing can be written.** Separation `0` at
+every setting. **The registrar used an operator W-27 had already shown cannot conjugate the loop.**
+
+**W-29b, the right operator, still null.** The conjugate of a loop is a cut that **pierces it an odd
+number of times** — `||[Z_S, W]|| = 8.000e+00`. Best separation `0.058`, and only in the **closed**
+case; with dissipation `~1e-5`.
+
+> **THE OBSTRUCTION, STATED SHARPLY. W-28: the record survives dissipation IFF it commutes with `H`.
+> W-29b: it can be written ONLY by something that does NOT commute with it. So the property that
+> makes a record durable is exactly the property that makes it unwritable.** Preparing the writer
+> definite leaves the record maximally uncertain, and conservation keeps it there forever.
+
+**W-29c, the dynamics on its own.** *"If the dynamics of the parts force the record creation that's
+a process as well"* (the principal). Start **maximally mixed**, nothing written, and let it run:
+
+```
+   bath          g2   gamma    T        <W>     |<W>|   S(final)
+   plaquette    1.0    0.50  20.0   0.000000  0.000000    4.0000
+   electric     1.0    0.50  20.0   0.000000  0.000000    4.0000
+   proj +1      0.0    0.50  20.0   0.999909  0.999909    3.0007
+   none         1.0    0.00  20.0   0.000000  0.000000    4.0000
+```
+
+**`|<W>| = 0.999909` — the dynamics drives the record to a definite sector from nothing.** BUT
+**only for the `proj +1` bath, which is a projector onto the answer.** Every physically motivated
+bath leaves `<W>` at exactly `0.000000` with entropy pinned at the maximum. **This is dissipative
+state preparation: the selection is in the registrar's Lindblad operator, not in the physics.**
+**What is missing is specific — a bath with TWO absorbing sectors and a broken tie**, so the system
+selects rather than being told. That is spontaneous symmetry breaking, and it is untested.
+
+### THE DESCRIPTION OF THE PROCESS AND ITS TERMS — `PROCESS_DESCRIPTION_V001.md`
+
+**EM: PRESENT** — both Hamiltonian terms **and** the constraint; electric, magnetic and Gauss are
+Maxwell's equations. **ALPHA: PRESENT, AND THERE ARE TWO SLOTS** — `g^2`, and `theta` which is
+dimensionless, periodic and does nothing at `Z_2`. **GRAVITY: ABSENT, AND THE TEMPTING FILL IS
+WRONG** — assigning it to the Gauss constraint counts EM twice, because Gauss is Maxwell's first
+equation.
+
+> **WHAT IS MISSING IS THAT THE CARRIER IS STATIC.** The graph is fixed and nothing the field does
+> changes it. Every gravitational functional signature reduces to this. **A gravitational term would
+> be the carrier responding to the field.**
+
+**AND THAT IS WHY THE WRITE FAILED.** With a frozen geometry the only conserved quantities are the
+ones the geometry hands you, and those are precisely the ones nothing can write to.
+
+**NEXT.** (1) A bath with **two** absorbing sectors — does the system select, and does the selection
+correlate with anything in the initial state? (2) **A carrier that responds to the field** — the
+missing term, and the first construction in this program with a dynamical geometry.
