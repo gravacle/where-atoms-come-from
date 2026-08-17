@@ -1,0 +1,14 @@
+  carrier: V=5 L=5, matter at every vertex, 10 qubits, dim 1024
+  Gauss operators are products of the matter charge and the incident electric fields.
+
+  gauge invariance of the hopping term (max commutator with any bulk Gauss):
+    max || [hop_l, G_v] || = 0.000e+00
+  physical dim (Gauss imposed on the 3 bulk vertices only) = 128 of 1024
+
+  boundary charge Q_3 on the physical subspace : [np.float64(-1.0), np.float64(1.0)]
+  total Q_3*Q_4 on the physical subspace       : [np.float64(-1.0), np.float64(1.0)]
+
+  == THE TEST PURE GAUGE FAILED: DOES THE CHARGE MOVE? ==
+    J=0.0:  || [H, Q_3] || = 0.000e+00   || [H, Q_3*Q_4] || = 0.000e+00
+    J=0.8:  || [H, Q_3] || = 0.000e+00   || [H, Q_3*Q_4] || = 0.000e+00
+    J is the matter hopping. At J=0 this is pure gauge and the charge is frozen.

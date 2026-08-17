@@ -1,0 +1,15 @@
+== ARM 1: CLOSED GRAPH (every carrier this program has ever used) ==
+   V=6 L=9;  || prod_v G_v - I || = 0.000e+00
+   dim with all 6 constraints = 16;  dim dropping one = 16;  ratio = 1.00
+
+== ARM 2: OPEN GRAPH — one dangling link, its far end is boundary and carries no Gauss ==
+   V=6 bulk + 1 boundary, L=10;  || prod_bulk G_v - I || = 4.525e+01
+   dim with all 6 constraints = 16;  dim dropping one = 32;  ratio = 2.00
+
+== THE W-19 IDENTITY ON EACH, ONE VARIABLE MOVED: OPEN VERSUS CLOSED ==
+   CLOSED  cut at vertex 0 = links [2, 7, 8];  || (Z_l * prod_cut Z - I) P || = 0.000e+00
+   OPEN    cut at vertex 0 = links [2, 7, 8, 9];  || (Z_l * prod_cut Z - I) P || = 0.000e+00
+
+== AND THE CONSEQUENCE FOR I(S:F)/H(S), 3 RANDOM PHYSICAL STATES EACH ==
+   CLOSED  I/H(S) = 1.000000  1.000000  1.000000
+   OPEN    I/H(S) = 1.000000  1.000000  1.000000

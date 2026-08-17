@@ -1,0 +1,15 @@
+  The value is WRITTEN to +1 at t=0, then left alone. Does it stay written?
+     g^2     J     m      <Q>(0)  time-avg  min over T      std   reading
+    1.00  0.80  0.50      1.0000    0.1301     -0.2199   0.1032   free
+    1.00  0.80  3.00      1.0000    0.1900     -0.0585   0.0891   free
+    1.00  0.20  3.00      1.0000    0.4805      0.2177   0.1369   partly held
+    1.00  0.05  5.00      1.0000    0.7406      0.4709   0.1479   partly held
+    0.30  0.05  5.00      1.0000    0.4421      0.0933   0.2428   partly held
+    3.00  0.05  5.00      1.0000    0.6597      0.4880   0.1609   partly held
+    1.00  0.01  8.00      1.0000    0.6216      0.3474   0.1970   partly held
+    1.00  0.00  5.00      1.0000    1.0000      1.0000   0.0000   FROZEN (J=0, forced)
+
+  FREE  : the value wanders the whole allowed range -> ALLOW-side, nothing holds it.
+  HELD  : the value CAN move (J>0, the commutator is nonzero) and DOESN'T -> the fourth
+          modality, and the only one that is a record.
+  FROZEN: J=0, the commutator vanishes -- pinned by the constraint, a LABEL not a record.

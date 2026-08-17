@@ -1,0 +1,22 @@
+  OPEN carrier: 6 bulk vertices, 1 boundary, L=10
+
+== IS THE BOUNDARY CHARGE CENTRAL? (commutes with every bulk constraint) ==
+   max || [Q, G_v] || over bulk v  =  0.000e+00
+   Q^2 = I ?  True   -> two sectors, Q = +1 and Q = -1
+
+== THE THREE-WAY CLASSIFICATION, ON EVERY SINGLE-LINK OPERATOR ==
+   operator      commutes w/ bulk Gauss   changes the sector                  category
+   Z_0                             True                False      INVARIANT (bulk obs)
+   X_0                            False                False         VARIANT (neither)
+   Z_9                             True                False      INVARIANT (bulk obs)
+   X_9                            False                 True           SECTOR-CHANGING
+
+   INVARIANT (bulk obs)        10 operators   e.g. ['Z_0', 'Z_1', 'Z_2', 'Z_3']
+   VARIANT (neither)            9 operators   e.g. ['X_0', 'X_1', 'X_2', 'X_3']
+   SECTOR-CHANGING              1 operators   e.g. ['X_9']
+
+   >>> EXCLUSION CLAUSE: the SECTOR-CHANGING operators lie in NEITHER named arm.
+       They are not bulk-invariant, so the binary calls them 'variant' and discards them.
+       But they are exactly the operators that move between superselection sectors --
+       i.e. the ones that would CREATE or DESTROY boundary charge. They are not junk.
+       VARIANT/INVARIANT IS A TWO-POINT SAMPLE OF A THREE-WAY STRUCTURE.

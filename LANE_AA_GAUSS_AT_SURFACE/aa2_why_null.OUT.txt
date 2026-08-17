@@ -1,0 +1,21 @@
+== WHY AA1 WAS A ZERO-VARIABLE CONTROL: THE CONSTRAINTS ARE NOT INDEPENDENT ==
+   || prod over ALL vertices of G_v  -  I ||  =  0.000e+00
+   Every link touches exactly TWO vertices, so each Z appears twice in the product and
+   squares to the identity. ON A CLOSED GRAPH THE GAUSS CONSTRAINTS SATISFY ONE RELATION.
+   So dropping ONE of them removes NOTHING -- it is implied by the other five.
+   'Impose Gauss at the cut vertex' was never an assumption I made. IT IS FORCED.
+
+== WHAT ACTUALLY FREES A BOUNDARY CHARGE: SEVER THE LINK, DO NOT RELAX THE CONSTRAINT ==
+   severed carrier: V=7 L=10, full space 1024
+   Gauss imposed at the new endpoint : physical dim = 16
+   new endpoint's charge LEFT FREE   : physical dim = 16
+   ratio = 1.0x  <-- NOW the arms differ
+
+   the W-19 identity, constrained arm : || (Z_l1 * prod_cut Z - I) P || = 0.000e+00
+   the W-19 identity, FREE-charge arm : || (Z_l1 * prod_cut Z - I) P || = 0.000e+00
+
+   ==> THE ASSUMPTION IS STILL UNEXAMINED, BUT NOW I KNOW WHAT EXAMINING IT COSTS:
+       an edge mode requires SEVERING the graph and carrying the new endpoints as degrees of
+       freedom. W-19 never did that -- it cut a CLOSED graph, where the constraint cannot be
+       relaxed. Its 'Gauss-forced' verdict is therefore a verdict about a construction that
+       has no edge modes in it AT ALL.
