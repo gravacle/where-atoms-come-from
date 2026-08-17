@@ -1,0 +1,98 @@
+LANE W-13 / R — REFUTER.  LENS: MATHEMATICS, ATTACK THE REDUCTION.
+Target: /Users/bgm/MB Work/where-atoms-come-from/LANE_W13_R_REDUCTION (18 files, SEALS.sha256).
+Register head W-12.  Opened 2026-08-17.  Model: Claude Opus 5.
+
+================================================================================
+0.  WHAT WAS READ FIRST, IN FULL
+================================================================================
+REGISTER_V001.md entire (1418 lines): W-01, W-02 + ERRATUM, W-03, W-04, W-05 (N1..N4), W-06,
+W-07 + ERRATUM, W-08, W-09 + ERRATUM, W-10, W-11, W-12, W-14.
+S3_THE_CROSSING_AUDIT_V001.md:785-800 (COR-A..COR-L).
+LANE_W12_BIANCHI/PUBLISHED_CONVENTIONS.txt.
+LANE_W08_M1_IDENTIFICATION/ : M1_06_liouville.out.txt, M1_07_lawton.out.txt, AND
+   M1_08_THEOREMS.txt IN FULL -- which the target lane's own R_00_CONVENTIONS.txt:12-13 does
+   NOT list among what it read.  That omission is finding X-5.
+LANE_W08_M1_IDENTIFICATION_REFUTE_1/ : R1_04_subtorus_singularities.out.txt and
+   R1_05_rank1_gap.out.txt IN FULL.  The target lists this directory as read and cites
+   nothing from it anywhere (grep for "R1_0" in LANE_W13_R_REDUCTION returns nothing).
+The target lane in full: all 18 files, code line by line.
+
+================================================================================
+1.  REPRODUCTION FIRST
+================================================================================
+All six of the target's scripts were rerun by me from the sealed sources.  All six outputs
+REPRODUCE BYTE-IDENTICAL to the sealed .out.txt files (X_rerun/*.MYRERUN.txt; the diff is
+empty for every one).  SEALS.sha256 of the target verifies.  NOTHING IN THIS REFUTATION IS
+A REPRODUCIBILITY FINDING.
+
+================================================================================
+2.  NOTATION (the target's, unchanged, so the comparison is direct)
+================================================================================
+u = conj(W_F) = e(alpha), v = W_C = e(beta), e(x) = exp(2 pi i x), alpha = -f/2pi,
+beta = c/2pi, omega = (alpha,beta), P(x,y) = p00+p10 x+p01 y+p11 xy, Z_k = P(u^k,v^k),
+S_N = (1/N) sum_{k<=N} log|Z_k|, L(omega) = {(m,n) : m alpha + n beta in Z},
+theta* = arccos(-2/3)/(2pi), K1's pi = (0,0.3,0.3,0.4).
+
+================================================================================
+3.  ISOLATION LEDGER — ONE VARIABLE PER SCRIPT, NAMED AFTER GREPPING THE REGISTER
+================================================================================
+X_01  ONE VARIABLE: d = THE ORDER OF u.v AS A ROOT OF UNITY, equivalently the index
+      [primitive direction : generator of L(omega)].  THE WINDING RATIO IS HELD FIXED AT
+      (1,1) IN ALL FOUR ARMS -- verified by printing L(omega) exactly, in Fraction
+      arithmetic, for each arm.  alpha = sqrt2 - 1 fixed; pi fixed; estimator, N-grid,
+      phase reducer fixed.  Only beta = 1/d - alpha moves.
+      NAMING GUARD: I grepped REGISTER_V001.md and the whole repo for "root of unity",
+      "primitive", "parallel circles" before naming this variable.  The only prior uses are
+      S4:401/:854/:1049 (rank L = 2, both holonomies roots of unity -- a DIFFERENT case,
+      finite orbit) and the target's own R-1 dichotomy line.  No earlier row names d.
+X_02  ONE VARIABLE: L(omega).  Four arms, three algebraic pairs with three different
+      rank-1 lattices and one transcendental pair with L = {0}.  pi, estimator, N-grid,
+      reducer identical.
+X_03  ONE VARIABLE: THE SHIFT g in N * min_{k<=N} ||k alpha - g||, g = 0 against g = theta*.
+      Same alpha, same grid, same reducer in the two columns of every row.
+X_04  no comparison: independent second implementation of the target's own numbers.
+X_05  no comparison: an exact computation of a family of Mahler measures.
+
+ARMS-DIFF GUARD, HASHING OUTPUTS.  X_01 and X_02 print sha256 of the per-k vector log|Z_k|
+for every arm and the first orbit points read off the arms.  X_01: 4 distinct of 4.
+X_02: 4 distinct of 4.  NO COMPARISON HERE HAS BYTE-IDENTICAL ARMS.
+CROSS-CHECK, DELIBERATE: X_01's d=1 arm and X_02's arm A are the same omega and DO hash
+equal (41e9b237c74d48feb6e18b71) -- across scripts, not across arms of one comparison, and
+it is stated here rather than discovered later.
+
+================================================================================
+4.  INDEPENDENCE
+================================================================================
+X_lib.py is written from scratch.  The target's R_lib.py, R_ladder.py and every R_0*.py are
+NOT imported anywhere in this directory.  m(P), theta*, pi, sqrt2, the phase reducer, the
+relation lattice and the Mahler-measure-by-roots routine are all second implementations.
+Where my number agrees with the target's, that is a CONTROL THAT COULD HAVE FAILED.
+
+================================================================================
+5.  DECLARED IN ADVANCE — WHAT COULD NOT HAVE FAILED, AND IS NOT SCORED
+================================================================================
+- Reproducing the target's six outputs byte-for-byte from its own sealed scripts.  Run, and
+  reported, as a precondition, not as evidence.
+- Reproducing the register's sixteen subtorus rows.  A control on my reduction formula.
+- "0 of N random draws have u.v a root of unity."  NOT RUN: Haar-null, the pattern W-11
+  already convicted.
+- Verifying that the target's R-5 proof is correct FOR PRIMITIVE (m,n).  It is, over a box
+  2.5x larger than the target's; a disagreement would have been the finding, and there is
+  none.  The defect is not in the proof.
+
+================================================================================
+6.  A NULL READS TWO WAYS — PRE-DECLARED
+================================================================================
+If the d >= 2 arms had converged to log(0.3), that would have read as (i) R-5 is right and
+my closure analysis is wrong, or (ii) seven decades is not enough.  They did not: they
+converge to values I computed IN ADVANCE from the closure decomposition (X_01 section 2,
+printed before section 4's measurements), to 4.3e-07 or better at N = 1e7.  A prediction
+made before the measurement and hit to seven digits is not a window.
+
+================================================================================
+7.  LINEAGE — THE SAME DEFECT THIS ROUND KEEPS FINDING
+================================================================================
+I am Claude Opus 5, the same block as W-07..W-12 and as the lane I am attacking.  This is
+NOT the lineage-independent check W-03/W-10/W-11 ask for.  Discount it as one block.
+Specifically: my X_01 finding is of exactly the kind this lineage keeps producing and
+catching one layer later, and it should be assumed that this refutation has one of its own.

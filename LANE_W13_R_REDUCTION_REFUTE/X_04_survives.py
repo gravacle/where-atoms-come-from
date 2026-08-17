@@ -168,7 +168,8 @@ for j, kj in enumerate(ksA[:2]):
     r_ = float(Fraction(d2_.numerator * d1_.denominator, d2_.denominator * d1_.numerator))
     logZ = math.log(2 * math.pi) + lf(d1_) + math.log(abs(A + B * r_))
     print("     k = %6d   log eps = %11.3f   log|Z_k| (local expansion) = %13.4f" % (kj, lf(epsA[j]), logZ))
-    print("                   S_k <= (1/k) log|Z_k| = %10.4f   against m(P) = %.6f  -> dip %.4f"
-          % (logZ / kj, MP, logZ / kj - MP))
+    print("                   UPPER BOUND on S_k, namely (1/k) log|Z_k| = %10.4f   (m(P) = %.6f)"
+          % (logZ / kj, MP))
+    print("                   [this is R-3's step (c) bound, not S_k itself; S_k is lower still]")
 print("     lane R_05 reports log|Z_10| = -4.578, log|Z_1490| = -1787.797, dips -0.281 and -1.199.")
 print("\nDONE X_04")

@@ -1513,3 +1513,84 @@ check. **The first three to check, in order: `knob / channel` (W-14), `finding /
 (W-10 §0.4.1, which W-11 in fact split THREE ways and scored better for it), and
 `theorem / exhaustion` (which omits the middle case that carries most real evidence — exhibited
 with a live failure mode).**
+
+---
+
+## ERRATUM AGAINST W-11 — ITS HEADLINE NAMES THE WRONG OBJECT, AND TWO LANES SAID SO AND WERE OVERRIDDEN (registrar error, 2026-08-17)
+
+W-11 registered: *"CARRIER-INDEPENDENCE IS A RESTATEMENT OF THE TRANSPORT CONVENTION."*
+**Two W-11 lanes returned `REFUTED_AS_POSED` against that framing, independently, and the synthesis
+folded them into a seven-to-one majority for READING_B.** `LANE_W11_R_BLIND` (a blind rebuild that
+never opened the registrar's code) and `LANE_W11_R_CLOCK` both wrote: **there is no transport
+convention to restate.**
+
+**VERIFIED BY THE REGISTRAR** (`LANE_W16_ADVANCE_LATTICE/`, sealed):
+`||T_F^3 - M_dF|| = 6.18e-16`, `||T_C^3 - M_c|| = 4.34e-16`. **`M_gamma` lies inside the cyclic group
+`T` generates — the corpus's operator is a POWER of COR-F's.** There is **one** transport and **two
+schedules on it**: both conventions are rays in one family `Y(mF,mC) = <T_F^mF s, T_C^mC s>`, the
+corpus's being `(L_F k, L_C k)` and COR-F's `(n,n)`.
+
+**AND THE OPERATIVE VARIABLE IS THE ADVANCE LATTICE.** Over a `26x26` lattice with 64 same-`pi`
+states, one variable moving: **invisible cells `81`, advance sublattice `L_F Z x L_C Z` `81`,
+SET EQUALITY `True`**, max spread off the lattice `9.085e-01`. **Invisibility is a property of
+WHERE THE RECORD IS READ — whether a branch is mid-loop — not of a choice of transport.**
+
+**W-11's VERDICT SURVIVES; ITS NAME DOES NOT.** Carrier-independence is still not a finding — it
+holds exactly on the advance lattice and fails everywhere else, and the corpus reads only there.
+**Corrected text of record:** *carrier-independence is a consequence of reading the record only on
+the advance lattice `L_F Z x L_C Z`, where both branch operators are simultaneously diagonal.*
+**This is the SEVENTH consecutive misnaming of the operative variable in this program, and the
+first one where the correct name was supplied, in writing, by lanes the registrar overruled.**
+
+---
+
+## W-16 — A PROCESS AGAINST THE BINARY, PROPOSED FOR THE PRINCIPAL'S SEAL: **THE ESCAPE HATCH WAS NOT MISSING. IT WAS OUTVOTED.**
+
+Commissioned by the principal, 2026-08-17: *"Is there a process more than a log note that can be
+used to free ourselves from this tyranny of the binary?"* **A log note will not do it, and this
+corpus already proves that** — W-08's isolation audit found three build lanes wrote isolation
+ledgers and it did not stop them, with five of seven fatal confounds sitting in the arm the lane's
+own ledger named as decisive. **A check that requires self-report gets self-reported.**
+
+### THE FAILURE, MEASURED
+
+Across all workflow journals: **46 agent results, 30 carrying a verdict. `REFUTED_AS_POSED`
+returned 2 times (7%). `UNDECIDABLE_AS_STATED`, present in every schema, returned 0 times.**
+The mechanism: **the brief poses the binary, which RECRUITS.** Eight of ten lanes answer inside the
+frame; the two who reject it are a minority the brief created; the synthesis reads verdicts as
+votes; the majority wins; the register records it. **Frame-level findings are destroyed by a step
+the registrar wrote.**
+
+**AND A SCHEMA DEFECT UNDERNEATH IT.** `REFUTED_AS_POSED` was an ALTERNATIVE to answering. A lane
+that wants to say *"B, and the question is also wrong"* **could not**. Both objectors had to
+surrender their answer to raise the objection. **Frame-refusal was made to compete with answering.**
+
+### THE FOUR GATES — mechanical, executed, greppable
+
+1. **THE FRAME LANE RUNS FIRST AND ALONE.** Its brief carries the QUESTION and no candidate
+   answers. Its only deliverable is the enumeration of options, each tagged **DERIVED** (with the
+   citation that forces it) or **COINED** (a registrar word). Answer lanes are commissioned against
+   ITS enumeration. This removes the binarization from the one point where it occurs.
+2. **`frame_objection` BECOMES A SEPARATE FIELD, NOT A VERDICT.** A lane answers *and* objects.
+   Removing the competition is most of the fix.
+3. **A FRAME OBJECTION BLOCKS SYNTHESIS AND IS NEVER A VOTE.** The round re-poses and re-runs, or
+   the register headline records the question as unresolved.
+4. **AT REGISTRATION, MECHANICALLY:** grep the round's journal for frame objections; **no register
+   row may close a question over a frame objection it does not name and address.** This is the
+   pointer rule (custody §1) applied to dissent, and its absence is detectable by `grep` and not by
+   the registrar's honesty.
+
+### WHAT THIS DOES NOT FIX
+
+**The registrar still writes the frame lane's brief.** Keeping candidate answers out of it is as far
+out of the registrar's hands as this goes without a different model — and the lineage-independent
+lane W-03 specified still does not exist for anything after W-06. **Whether these gates generalise
+past this program is untested.** And gate 1 is itself a coined structure; per W-15's own
+discriminator it is a place to look for a third thing.
+
+**ADOPTION IS THE PRINCIPAL'S ACT, NOT THE REGISTRAR'S.** `FOUNDING_DESIGN_V001.md` reads *"PROPOSED,
+NOT ADOPTED. Governing only at the principal's seal"*, and no principal act is on disk. **This row
+proposes an amendment to custody §1 and does not make one.**
+
+**REOPENS IF:** a round runs under all four gates and still destroys a frame objection · or a frame
+lane is shown to inherit the registrar's shape through its brief despite carrying no answers.

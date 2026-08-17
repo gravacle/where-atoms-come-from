@@ -1,0 +1,204 @@
+LANE W-13 / L-REFUTE — FINDINGS.  ADVERSARY ON THE LITERATURE, AIMED AT LANE_W13_L_LITERATURE.
+
+VERDICT: CONFIRMED WITH CORRECTIONS.  The headline stands.  Two findings fall, four are
+rescoped, and the single largest item is one the target's own reading queue already contained.
+
+================================================================================
+0.  WHAT I TESTED THAT COULD HAVE BROKEN IT.  NAMED PRECISELY, IN ORDER OF SEVERITY.
+================================================================================
+ 1. WHETHER THE TARGET'S SOURCES SAY WHAT IT SAYS THEY SAY.  Six PDFs fetched and read with
+    pdftotext, digests in RL7.  Six LSV quotations, three Dobrowolski statements, the
+    Boyd-Lawton statement and the Baker-Wustholz constant checked character by character.
+    COULD HAVE BROKEN IT: a single misquoted hypothesis would have voided Theorem L.
+    RESULT: every quotation is accurate.  THE TARGET PASSES ITS OWN LENS.
+ 2. WHETHER THE FIELD HAS MOVED SINCE THE PAPER THE TARGET TREATS AS AUTHORITY.
+    COULD HAVE BROKEN IT: a post-2010 theorem covering the corpus's case would refute the
+    headline.  RESULT: DIMITROV 2016/2017 EXISTS, IS IN THE TARGET'S OWN FETCH QUEUE, IS
+    CITED NOWHERE, AND ANSWERS THE OPEN PROBLEM THE TARGET QUOTES -- but only for TORSION
+    points, so the headline survives and its evidence does not.
+ 3. WHETHER THE d=1 IDENTITY IN L-11 IS TRUE.  COULD HAVE BROKEN IT: it is a formula the
+    target proposes for the note's first paragraph.  RESULT: IT IS FALSE, off by 689 nats in
+    an explicit exhibit.  The corpus's object is PROD(1+q^k), the Sudler product is
+    PROD(1-q^k), and the correct identity is a RATIO of two Sudler products.
+ 4. WHETHER DOBROWOLSKI IS ACTUALLY LOAD-BEARING.  COULD HAVE BROKEN IT: the target's one
+    stated CORRECTION to W-08's sealed M1 refuter rests on it.  RESULT: it is a sufficient
+    and optional ingredient, and the reason given for its necessity names a limit Theorem L
+    never takes.  THE CORRECTION TO W-08 DOES NOT FOLLOW.
+ 5. WHETHER THE ARITHMETIC REPRODUCES.  All four scripts rerun byte-identical (RL1); m(P)
+    re-derived by the Cassaigne-Maillot CLOSED FORM to 3.2e-14 and by corner-split
+    Gauss-Legendre to 7.9e-43 (RL5); the five-decade table reproduced on an independent
+    128-bit fixed-point phase path (RL5); arm A confirmed in EXACT integer arithmetic at the
+    N=10^4 DECADE, which the target's own exact check stopped short of; L2's eight
+    determinants reproduced by a resultant PRS sharing no code with its Bareiss (RL6).
+    COULD HAVE BROKEN IT: any of these disagreeing.  RESULT: NO ARITHMETIC DEFECT ANYWHERE.
+ 6. WHETHER THE GREP-BASED FINDINGS RECOUNT.  RESULT: L-8, L-12 and L-14 recount exactly,
+    except 'Cassaigne' which is 18 occurrences on 17 lines.
+ 7. WHETHER L-17's "ONE OBJECT SEEN TWICE" IS GENERAL.  RESULT: it is a fact about
+    p10 = p01 -- the loop-symmetric ready states -- not about P.
+ 8. WHETHER THE ESTIMATOR CONVERGES AS THE CONVENTIONS FILE CLAIMS.  RESULT: NO.  Measured
+    n^-1.97 / n^-1.91 / n^-1.78, not spectral.  No number changes; the justification does.
+ 9. WHETHER L4's "20/20" COULD HAVE FAILED.  RESULT: 7 of the 20 rows could not.
+10. WHETHER THE BRIEF'S OWN FRAMING SENTENCE IS TRUE.  RESULT: NO, off the three-class locus.
+
+================================================================================
+1.  WHAT FALLS
+================================================================================
+F-1  L-11's IDENTITY.  "sum_{k<=N} log|Z_k| is the log of the SUDLER PRODUCT prod|2 sin(pi k
+     alpha)| up to N log 2" is FALSE.  With P = (1+x)/2 the object is PROD|1+q^k|, and
+        sum_{k<=N} log|Z_k| = log P_N(2 alpha) - log P_N(alpha) - N log 2   EXACTLY,
+     where P_N is the Sudler product.  RL2 verifies the exact identity to round-off over five
+     decades and three arithmetic types of alpha, and RL2(B) exhibits an alpha (the corpus's
+     own M1_06 digit-block device, exact Fraction phases) at which the target's claimed
+     right-hand side misses the left by 689.6 nats at N = 10.  The remainder it calls O(1) is
+     log P_N(2a) - 2 log P_N(alpha) and is not O(1).
+     L-11's CONCLUSION SURVIVES: both terms are that literature's object, and the
+     Diophantine-type dependence is that literature's central fact.  Only the formula falls --
+     and it is the formula the target recommends printing.
+
+F-2  L-9's RECOMMENDED CITATION IS ONE PAPER SHORT, AND SO IS THE HEADLINE'S EVIDENCE.
+     The target rules that "the correct citation from that family is LIND-SCHMIDT-VERBITSKIY
+     (2010)" and heads its evidence "THE AUTHORITY SAYS THE HARD PART IS HARD" on LSV's
+     sentence "It is not known whether (1.3) holds for all cyclic actions."
+     V. DIMITROV, arXiv:1611.04664v2 (2017) -- IN THE TARGET'S OWN PDF FETCH QUEUE, digest in
+     RL7, CITED NOWHERE IN THE LANE OR THE CORPUS -- proves exactly that limit for Gamma =
+     N.Z^d and for ALL non-zero integer Laurent polynomials, by supplying precisely the
+     inhomogeneous estimate LSV called unavailable ("a sub-Liouville bound ... on the distance
+     from an N-torsion point of G_m^d to an algebraic subset").  It names LSV as the problem
+     it is closing.  Consequences: (a) the LSV open-problem quote is nine years stale; (b)
+     Sec. 2.5's "NO theorem covers the case Z(P) infinite" is false in the torsion setting,
+     and L-5's parallel remark inherits the correction; (c) L-9 commits, in softer form, the
+     defect it convicts W-10 of; (d) the CORE citation list is incomplete.
+     WHAT SURVIVES: Dimitrov averages over torsion points, not along a single Z-orbit at an
+     infinite-order connection, SO THE HEADLINE "NO PUBLISHED THEOREM LICENSES N1 AS
+     REGISTERED" IS UNTOUCHED.  This is a defect in the evidence, not in the verdict.
+
+================================================================================
+2.  WHAT IS RESCOPED
+================================================================================
+R-1  THE HEADLINE'S "CORRECTED ON ONE WORD" OVER-STATES.  Dobrowolski/Lawton Thm 1 is a
+     SUFFICIENT and OPTIONAL shell-measure input.  Theorem L fixes pi before any limit, so
+     the stated reason for its necessity -- "a pi-dependent constant would not survive the
+     limit" -- names a limit Theorem L does not contain.  At K1's registered pi the local
+     expansion gives the TRUE exponent 2 with a computable constant (RL3 Leg B derives
+     c = 1.7794 and measures 1.7798), against Dobrowolski's uniform 1/2, which is loose by
+     4 to 9 orders of magnitude at the shell scales the assembly visits.  Dobrowolski earns
+     its keep only for a statement uniform over pi, or for isolated zeros of unknown
+     multiplicity.  W-08 / M1_08 T2(d)'s ruling needed no correction.
+
+R-2  THEOREM L's ASSEMBLY HAS A DISCREPANCY GAP, INHERITED FROM THE SEALED M1_08 T2(c).
+     "the number of points is at most N(mu_2 + 4 D_N) by discrepancy" uses BOX discrepancy to
+     count points in a SUBLEVEL SET.  The repair is isotropic discrepancy, bounded by
+     D_N^{1/d}; in d = 2 the error term becomes N^{-delta'/2}(log N)^2, not
+     N^{-delta'}(log N)^2.  RL3 Leg C shows the sublevel set is two components below v ~ 0.1
+     at K1's pi, so the repair applies.  THEOREM L IS NOT BROKEN; its printed exponent is.
+
+R-3  L-17 IS pi-SPECIFIC.  A torus zero lies on {xy = 1} iff x is a modulus-1 root of
+     p10 x^2 + (p00+p11)x + p01; BOTH roots lie there iff p10 = p01.  RL4(B): |xy - 1| is
+     0 to round-off on every p10 = p01 row and is 2.0 and 0.97 on rows with p10 != p01.
+     W-08's uv=1 fragility and N1's zero set coincide at K1's registered state because that
+     state is SYMMETRIC IN THE TWO LOOPS, not because they are one object.
+
+R-4  L-16's OPERATIVE VARIABLE IS RIGHT IN GENERAL AND NOT MINIMAL AT THE CORPUS'S OWN pi.
+     RL4(C): at pi = (0,3/10,3/10,2/5) the whole zero set lies in {xy = 1}, and xy is
+     1-Lipschitz, so dist((u^k,v^k), Z(P)) >= (1/2)|(uv)^k - 1| -- checked over k <= 2e5 on
+     both arms, ratio maxing at 0.9998 <= 1.  So H3, the INHOMOGENEOUS condition, FOLLOWS
+     FROM A HOMOGENEOUS CONDITION ON THE SINGLE CHARACTER uv = conj(W_F)W_C, at the state
+     every published N1 number is computed at.  This STRENGTHENS L-15 (Theorem L's hypotheses
+     can be weakened there to "uv algebraic and not a root of unity") and NARROWS L-16.
+     IT DOES NOT RESCUE ARM B: arg(uv)/2pi = (sqrt2-1)/(2 pi) is still a linear form in
+     1, sqrt2 and pi.  L-4 STANDS.
+
+================================================================================
+3.  SMALLER CORRECTIONS, ALL VERIFIABLE
+================================================================================
+S-1  PUBLISHED_CONVENTIONS.txt: "the integrand is continuous ... so the deterministic
+     trapezoid converges SPECTRALLY" is FALSE.  The Jensen integrand is a max of two smooth
+     functions whose branches CROSS at cos t = -2/3 -- the argument of the torus zero the
+     target's own L1 computes -- so it is C^0 and not C^1.  Measured order n^-1.97, n^-1.91,
+     n^-1.78 against the Cassaigne-Maillot closed form (RL5 leg 1b).  The 2^22 value is right
+     to 3.2e-14; only the justification for not tabulating convergence falls.
+S-2  L4's "HOLDS 20/20" contains 7 rows that could not have failed: 3 where the bound is >= 1
+     (a measure bound on a probability space) and 4 where P has no torus zero so the measured
+     area is identically 0.  Live count 13 (RL3 Leg A).
+S-3  L-7 states the LSV Lemma 2.1 identification without discharging the lemma's own
+     hypothesis Omega_Gamma \ U(f).  RL6 discharges it exactly: the zero coordinates are
+     roots of 3z^2+4z+3, not an algebraic integer, hence never a root of unity, hence the
+     intersection is empty for every Gamma.  The target is right and was lucky.
+S-4  BOYD IS CITED HALF.  The target's [2] is Boyd, CMB 24 (1981) 453-469; the Boyd HEIGHT
+     mu(r) it quotes comes, per its own primary source, from Boyd, J. Number Theory 13 (1981)
+     116-121, which appears nowhere in the list.  Issa-Lalin cite both.  The target says
+     "CITE LAWTON TWICE"; Boyd needs two entries too.
+S-5  AN UNATTRIBUTED VERBATIM QUOTE IN THE LANE THAT CONVICTS S4 OF THE SAME.  Sec. 3.1's
+     "survey formulation found in that literature" is the opening sentence of the abstract of
+     Schmidt-Verbitskiy, Regul. Chaotic Dyn. 16 (2011) 79-89 -- two of the three authors of
+     the target's own [5].  Its next two sentences say the correspondence is "still rather
+     mysterious" and its Sec. 1.5 ("No Coincidences!") says the problem "remains open even in
+     the case of the dimer model".  L-10's conclusion survives; the quote is doing less work
+     than the target makes it do.
+S-6  'Cassaigne' occurs 18 times in S4 on 17 lines; the target reports `grep -c` = 17 and the
+     REGISTER'S OWN W-05 ROW ALREADY SAYS 18.  Also HANDOFF has one, so "all other artifacts
+     0" is not exact.  Nothing depends on it.
+
+================================================================================
+4.  A NEW DEFECT AGAINST THE BRIEF AND THE REGISTER, NOT AGAINST THE TARGET
+================================================================================
+N-1  "P HAS A TORUS ZERO IF AND ONLY IF W-01's CRITERION FIRES" IS THREE-CLASS-SCOPED.
+     Exact counterexample (RL4 A): pi = (1/2, 3/10, 1/10, 1/10) has max(pi) = 1/2 and NO
+     torus zero -- t = -8/7, |t| > 1, brute-force min|P| = 0.193 on a 4096^2 grid.  On the
+     three-class locus p00 = 0 the biconditional IS a theorem (both halves reduce to
+     max(pi) <= 1/2 and are re-derived exactly).  On the four-class locus it fails, for
+     exactly W-09's reason: uv is determined by u and v, so hull reasoning does not transfer.
+     Every leg of the target runs at p00 = 0, so NOTHING IN IT DEPENDS ON THIS -- but the
+     target repeats the brief's framing unqualified, and this is one more instance of the
+     defect W-09 registered and the ERRATUM AGAINST W-09 refined.
+
+================================================================================
+5.  WHAT SURVIVES INTACT AND IS NOW CONFIRMED FROM OUTSIDE
+================================================================================
+  L-1  Boyd-Lawton cannot license N1.  CONFIRMED TWICE AT THE SOURCE: LSV Sec. 9 verbatim,
+       and independently by Aitken-Ayers-Smith's own framing of Boyd-Lawton as composition
+       with CONTINUOUS HOMOMORPHISMS T -> T^n.  W-08's M1 refuter is right.
+  L-4  N1 is unlicensed at f = 1.0, c = sqrt(2), the corpus's only published generic
+       connection.  CONFIRMED, and it survives RL4(C)'s reduction.
+  L-5  Z(P) has coordinates algebraic over Q(pi), closed form in pi.  RE-DERIVED EXACTLY.
+  L-6, L-7  The "inherits the entropy theory wholesale" sentence is false; the link exists
+       only at finite-order connections, which are exactly where N1 fails.  L2's eight
+       determinants CONFIRMED BY AN INDEPENDENT EXACT ROUTE (resultant PRS vs Bareiss).
+  L-8  CONFIRMED EXACTLY by recount: 'inhomogeneous' is 0 in the register, 2 in W-10, 1 in
+       W-08.  The hypothesis this round was commissioned to find was one round old.
+  L-12 CONFIRMED EXACTLY: 'Lyapunov' occurs twice, both in S3, in no register row.
+  L-13 Both arms reproduce on an independent phase path, and arm A is confirmed in EXACT
+       integer arithmetic at N = 10^4 (the target stopped at k = 3000).
+  L-14 CONFIRMED (Lawton 11 = 3+3+4+1; every absent name absent).
+  L-18 ESZ-T 1958 is Colloq. Math. 6, 119-126 and is about the distribution of Diophantine
+       approximations.  CONFIRMED.
+  m(P) = -0.7675078803577759 CONFIRMED BY CLOSED FORM (Cassaigne-Maillot, dilogarithm, no
+       quadrature), calibrated against m(1+x+y) = 0.32306594721945051409 to 5e-82.
+
+================================================================================
+6.  MY OWN DEFECTS AND LIMITS, RECORDED RATHER THAN PATCHED
+================================================================================
+ D-A  LINEAGE.  I am Opus 5 and so is the target.  LAYER FOURTEEN.  Discount this as one
+      block with W-07..W-13.  A failure mode common to that lineage passes through both.
+ D-B  I DID NOT READ LAWTON 1983 EITHER (same ScienceDirect paywall), nor Boyd (either
+      paper), nor Baker 1966-68, nor Gelfond, nor Kuipers-Niederreiter, nor Sudler, nor
+      Erdos-Szekeres.  Bibliographic record only for those; see RL7 Sec. 3.
+ D-C  RL2 LEG A IS NOT A PROOF.  R_N wandering over five decades is not evidence of
+      unboundedness and is not scored as such.  The decisive item is RL2(B)'s exhibit.
+ D-D  RL3 LEG C's REPAIR IS CITED, NOT PROVED.  The isotropic-discrepancy bound
+      J_N << D_N^{1/d} is quoted from Kuipers-Niederreiter Ch. 2 Thm 1.6, WHICH I DID NOT
+      READ.  Same defect class as the target's D-3, and I am naming it rather than leaving
+      it.  The convexity of the sublevel components is checked to grid resolution only.
+ D-E  I DID NOT TEST whether Dimitrov's sub-Liouville bound extends off torsion points.  If
+      it did it would bear directly on H3 and could move the headline.  UNRESOLVED, and it is
+      the most consequential thing I leave open.
+ D-F  RL5's Cassaigne-Maillot implementation was CALIBRATED on m(1+x+y) before use.  A
+      one-point calibration; the second point (agreement with corner-split Gauss-Legendre at
+      K1's pi to 7.9e-43) makes it two, and both are reported.
+ D-G  I FOUND NO ARITHMETIC DEFECT IN THE TARGET.  A refuter that reruns everything and finds
+      nothing has either a sound target or a blind spot; I cannot tell which from inside, and
+      the corpus's record says the second is not rare.
+ D-H  A NULL READ TWO WAYS AND SCORED AS NEITHER.  That every one of the target's quotations
+      checked out reads as "this lane did its job" OR as "I checked the quotations it chose
+      to make, which is the sample it controls".  The Dimitrov finding is evidence for the
+      second reading, and it is the only place I went outside the target's own citation list.
