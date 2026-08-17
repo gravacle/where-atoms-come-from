@@ -1416,3 +1416,46 @@ of the convention — but which reading is right is a question about what the ob
 
 **REOPENS IF:** an import is exhibited that acts on none of `pi`, `u`, `v` and still moves the rate
 (it would refute the inventory) · or the uniform-state rule is shown to be a stipulation after all.
+
+---
+
+## ERRATUM AGAINST W-14 — ITS EVIDENCE WAS A CONTROL THAT COULD NOT HAVE FAILED (registrar error, 2026-08-17)
+
+Raised by the principal, who asked what *"we know it by theorem rather than by exhaustion"* meant.
+The audit that question forced is against me.
+
+**W-14 leg B pinned `pi` on B0b and reported 60 states seen identically to `3e-16` as the finding
+that the state side is a knob rather than a channel. THAT RUN COULD NOT HAVE FAILED.** `W-01`
+defines `M_gamma` diagonal, so `Z_k = SUM_v (class character)_v |s_v|^2` **by substitution**, and
+the state cannot enter except through class sums. The run was a check on my implementation of
+B0b's class map, not evidence for the claim — **and it is exactly the defect class W-08's isolation
+audit named as the commonest fatal one in this program, committed in the row that registers the
+test for it.** Under the program's own rule, *"could not have failed" voids a CONTROL, never a
+THEOREM*: **leg B is void; the claim stands on the theorem below.**
+
+**THE PROOF W-14 SHOULD HAVE CARRIED, IN TWO LINES.** `Z_k = <s, Q_k s> = SUM_{u,v} conj(s_u)
+Q_k[u,v] s_v`.
+**(a)** If `Q` has any off-diagonal entry the sum contains a cross-vertex product `conj(s_u) s_v`
+with `u != v`, which `pi` does not determine — hold `|s|` fixed and rotate the phase of `s_v` alone
+and the term moves. So `pi`-dependence **forces `Q` diagonal**.
+**(b)** For diagonal `Q`, `Z_k = SUM_v d_v |s_v|^2`, a function of the class sums **iff** `d_v` is
+constant on each class. **QED.**
+This also supplies **W-11's biconditional**, which that row verified over 9000 cells rather than
+proving. **Both rows now rest on the same two lines.**
+
+**AND THE PROOF PREDICTS WHERE A RUN WOULD SEE SOMETHING, WHICH IS THE TEST LEG B SHOULD HAVE BEEN**
+(`LANE_W14_STATE_SIDE/w14_d_proofs.py`, sealed): everything held fixed, **one** off-diagonal entry
+added **within a class** — spread over 200 phase draws goes from `2.220e-16` to `1.200e-01`.
+**A live failure mode, found exactly where (a) says it is.**
+
+**THE INVENTORY, RE-GRADED.** `connection` — **theorem** (W-12). `ready state` — **theorem** (the two
+lines above), not W-14's run. `transport convention` — **theorem** (the same two lines), not W-11's
+9000 cells. `anything else` — **definitional**: `Z_k` contains `s`, `W_F`, `W_C` and no other symbol.
+**The inventory is closed by proof. W-14's verdict is unchanged and its stated ground is replaced.**
+
+**WHY THIS MATTERS BEYOND THE ROW.** Exhaustion over a sample is structurally blind to measure-zero
+sets, and **the interesting sets in this problem are measure-zero** — the resonant connections are
+Haar-null (N3), and the `pi`-blind operator pairs are a correlated locus that W-11 found only after
+five lanes reported *"0 of N random draws"* and were sampling the wrong set entirely. **This program
+has been defeated by exhaustion twice. A closure claim backed by sampling is worth nothing here,
+and I made one.**

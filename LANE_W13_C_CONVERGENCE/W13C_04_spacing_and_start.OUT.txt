@@ -1,0 +1,110 @@
+==============================================================================
+W13C_04 (A) -- THE ZERO SET IN CLOSED FORM, AND THE SPACING LEMMA
+==============================================================================
+
+DERIVATION.  P = 0.3x + 0.3y + 0.4xy = 0 on T^2, x=e(a), y=e(b).  Divide by x:
+   0.3 + 0.3 e(b-a) + 0.4 e(b) = 0.   Put phi = b-a, psi = b.
+   |0.4| = 0.3|1+e(phi)| => 2+2cos(2 pi phi) = 16/9 => cos(2 pi phi) = -1/9.
+   1+e(phi) = 2 cos(pi phi) e(phi/2), and cos(pi phi) = sqrt((1-1/9)/2) = 2/3, so
+   0.4 e(psi) = -0.3 * 2 * (2/3) e(phi/2) = -0.4 e(phi/2)  =>  psi = 1/2 + phi/2.
+   Hence   b = 1/2 + phi/2,  a = psi - phi = 1/2 - phi/2,  and  a + b = 1 EXACTLY.
+   THE TWO ZEROS ARE  (1/2 -+ phi/2, 1/2 +- phi/2),  phi = arccos(-1/9)/(2 pi).
+   closed form      z = (0.3661397635993849946273831, 0.6338602364006150053726169)
+   numerical solve  z = (0.3661397635993849946273831, 0.6338602364006150053726169)
+   |difference| = 1.233e-41   ;  z1 + z2 - 1 = 0.000e+00
+   |P| at the closed-form point (float64) = 1.984e-16
+
+   CONSEQUENCE 1.  z2 = 1 - z1, so ||q z|| (sup norm to Z^2) = ||q z1|| for every q:
+   THE INHOMOGENEOUS 2-D PROBLEM COLLAPSES TO THE 1-D IRRATIONALITY OF
+       z1 = 1/2 - arccos(-1/9)/(4 pi).
+   CONSEQUENCE 2.  z1 is irrational: cos(2 pi phi) = -1/9 with phi rational would violate
+   Niven's theorem (the only rational cosines of rational angles are 0, +-1/2, +-1).
+   So ||q z|| > 0 for every q != 0 and the lemma below is never vacuous.
+
+   ||q z1|| along the continued-fraction convergents of z1 (record approximations):
+   partial quotients: [0, 2, 1, 2, 1, 2, 1, 1, 2, 1, 7, 6, 1, 1, 5, 4, 9, 1] ...
+   q              ||q z1||         q^2 ||q z1||  
+   1              3.661398e-01     0.3661        
+   2              2.677205e-01     1.0709        
+   3              9.841929e-02     0.8858        
+   8              7.088189e-02     4.5364        
+   11             2.753740e-02     3.3320        
+   30             1.580709e-02     14.2264       
+   41             1.173031e-02     19.7186       
+   71             4.076784e-03     20.5511       
+   183            3.576739e-03     119.7814      
+   254            5.000458e-04     32.2610       
+   1961           7.641839e-05     293.8685      
+   12020          4.153539e-05     6001.0501     
+   13981          3.488300e-05     6818.5232     
+   26001          6.652391e-06     4497.3621     
+   143986         1.621048e-06     33607.5122    
+   601945         1.681994e-07     60945.0010    
+   5561491        1.072532e-07     3317359.6270  
+   6163436        6.094625e-08     2315222.8345  
+   11724927       4.630690e-08     6365990.9497  
+   17888363       1.463935e-08     4684498.0382  
+   measured  c := min over convergents q <= 410228459  of  q^2 ||q z1|| = 0.36614
+   (record approximations are always convergents, so this IS the true min over q <= 410228459)
+   NOT PROVED beyond that range: nothing is known about the irrationality measure of
+   z1 = 1/2 - arccos(-1/9)/(4 pi).  The lemma below is therefore stated CONDITIONALLY,
+   and an UNCONDITIONAL form is given after it.
+   the partial quotients are small and unremarkable: z1 shows NO Liouville behaviour
+   in this range.  s = 2 is the exponent to use in the lemma below on this evidence.
+
+   THE IDENTITY BEHIND THE LEMMA, EXACT.  Write k_i theta = z + h_i + n_i, n_i in Z^2.
+   Then  k1 h2 - k2 h1 = k1(k2 theta - z - n2) - k2(k1 theta - z - n1)
+                       = (k2 - k1) z + (k2 n1 - k1 n2),
+   so  ||(k2-k1) z||  =  ||k1 h2 - k2 h1||  <=  k1|h2| + k2|h1|.   No hypothesis at all.
+   identity verified on 20000 random (theta,k1,k2): worst residual mod 1 = 2.253e-08
+   (float64 roundoff on this check is ~k1*k2*2^-52 ~ 2e-8, so the residual IS the roundoff)
+
+   THE BOUND, EVALUATED.  |P| >= 1.026056 * dist (W13C_01), so a dip of depth D nats
+   means dist <= e^-D / 1.026056.  With ||q z|| >= c q^-2, c = 0.36614:
+   depth D      dist = e^-D/L            k2 >= (c/(2 dist))^(1/3)    
+   1150.7       10^(-499.8)              10^(166.3)                  
+   4604.6       10^(-1999.8)             10^(666.3)                  
+   18420.5      10^(-7999.9)             10^(2666.4)                 
+   39999.9      10^(-17371.7)            10^(5790.3)                 
+
+   READ-OFF.  For the deepest arm of W13C_03 (D = 40000 nats) a second dip of the same
+   depth cannot occur before k2 ~ 10^5790.  The number of atoms in the observable universe
+   is about 10^80.  NO COMPUTATION WILL EVER SEE THE SECOND DIP.  The divergence
+   liminf A_N = -infinity is real, and it is FORMALLY UNOBSERVABLE by simulation.
+   UNCONDITIONAL FORM, needing nothing about z.  From ||(k2-k1)z|| <= (k1+k2) d1 <= 2 k2 d1:
+   a second dip of depth >= D anywhere below k2 = 10^80 (more indices than there are atoms
+   in the observable universe) would force  ||q z1|| <= 2 * 10^80 * e^-D / L  for some
+   q <= 10^80, i.e. for D = 40000 an approximation of z1 to 10^(-17290) by a rational of
+   denominator <= 10^80 -- an irrationality measure >= 216 in that range.  The continued
+   fraction above (partial quotients 0,2,1,2,1,2,1,1,2,1,7,6,1,1,5,4,9,1,... up to q=1.8e7)
+   gives no hint of any such thing.  EITHER WAY THE SECOND DIP IS NOT COMPUTABLE.
+   AND THE UN-ENGINEERED SPACING IS WORSE STILL: dips of depth D occur along a generic
+   orbit with density (2 pi/|det J|) e^{-2D} = 1.779 e^{-2D} per k, so the expected gap
+   between depth-D dips is ~ e^{2D}/1.779 -- 10^34743 for D = 40000.
+
+==============================================================================
+W13C_04 (B) -- THE STARTING POINT.  ONE VARIABLE: x_0.  SAME theta, SAME EVERYTHING ELSE.
+==============================================================================
+theta = the L=17372 Liouville pair of W13C_03; A = (13651266023196500832, 10834942060245557982)
+m(P) = -0.767507880358 ;  the engineered dip is at k = 10000 with log|Z_k| = -39999.9 nats
+
+STRUCTURAL FACT FIRST: |P| <= 1 on T^2 with equality ONLY at x = 0 (all three
+occupied characters equal 1).  So the corpus's orbit STARTS AT THE GLOBAL MAXIMUM
+of |P| -- f(0) = 0 exactly -- which is the most favourable start there is, and it
+is still not enough.  |P(0,0)| = 1.000000000000000
+
+starting point                                             A_1000  A_10000  A_100000  A_1000000  A_2000000
+x0 = 0  -- THE CORPUS'S OBJECT (Z_k = P(u^k,v^k), no offse    -0.766669     -4.767319     -1.167509     -0.807491     -0.787500
+x0 = Haar-random draw 0 (Birkhoff's a.e. starting point)      -0.766070     -0.767396     -0.767434     -0.767512     -0.767507
+x0 = Haar-random draw 1 (Birkhoff's a.e. starting point)      -0.765640     -0.767502     -0.767543     -0.767509     -0.767514
+x0 = Haar-random draw 2 (Birkhoff's a.e. starting point)      -0.768436     -0.767387     -0.767451     -0.767518     -0.767516
+x0 = Haar-random draw 3 (Birkhoff's a.e. starting point)      -0.766694     -0.767414     -0.767556     -0.767494     -0.767502
+
+READ-OFF.  Same theta.  Same estimator.  Same grid.  Same code path.  The ONLY
+thing that moves is x_0, and the corpus's x_0 = 0 is the ONLY row that fails.
+SO: BIRKHOFF'S THEOREM (a.e. x, theta fixed) IS NOT AVAILABLE TO N1, AND THE
+DIFFERENCE IS NOT COSMETIC -- IT IS THE WHOLE OF THE FAILURE.
+The a.e. result that IS available runs the other way: a.e. THETA, x_0 = 0 fixed.
+It is proved in W13C_05, and it needs Borel-Cantelli in theta, not Birkhoff in x.
+
+DONE W13C_04

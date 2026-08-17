@@ -1,0 +1,149 @@
+================================================================================================
+r2  THE LOCAL SINGULARITY: A CLOSED FORM FOR det M, AND THE COMPLETENESS OF theta
+================================================================================================
+numpy 2.0.2 ; EXACT means fractions.Fraction, no float.
+
+------------------------------------------------------------------------------------------------
+(a) THEOREM R2 -- det M IN CLOSED FORM.  DERIVATION.
+
+    At a zero (x0,y0) put x = x0 e^{i sigma}, y = y0 e^{i tau}.  Lane Z has
+        alpha = x0 (p10 + p11 y0),   beta = y0 B(x0),   det M = Im(conj(alpha) beta),
+    and computes det M by SVD at named states.  Two substitutions close it:
+
+      beta  = y0 B(x0) = (-A/B) B = -A(x0).
+      alpha = x0 (p10 + p11 y0) = x0 (p10 B - p11 A)/B, and
+              p10 B - p11 A = p10 p01 - p00 p11 =: Delta, a CONSTANT in x.  So alpha = x0 Delta / B.
+
+    Hence conj(alpha) beta = -Delta conj(x0) A B / |B|^2, and with x0 = e^{i s0},
+        conj(x0) A(x0) B(x0) = p00 p01 e^{-i s0} + (p00 p11 + p10 p01) + p10 p11 e^{i s0},
+    whose imaginary part is sin(s0) (p10 p11 - p00 p01) =: sin(s0) Delta'.  THEREFORE
+
+        det M  =  - Delta * Delta' * sin(s0) / |B(x0)|^2 ,
+        Delta  = p10 p01 - p00 p11        Delta' = p10 p11 - p00 p01.
+
+    THE THREE WAYS det M CAN VANISH ARE NOW VISIBLE AND EACH IS A NAMED LOCUS:
+      Delta  = 0  <=>  P FACTORS as (a+bx)(c+dy)  (p00 p11 = p10 p01).
+      Delta' = 0  <=>  the OTHER cross-product vanishes (p00 p01 = p10 p11).
+      sin s0 = 0  <=>  the zero sits at x0 = +-1, i.e. the crossing is at an ENDPOINT of the
+                       Jensen interval -- lane Z's ONE-point (tangential) stratum.
+
+------------------------------------------------------------------------------------------------
+(b) THE CLOSED FORM AGAINST LANE Z's SVD ROUTE.  ONE THING MOVES: WHICH DERIVATION
+    PRODUCES det M.  Same state, same zero, same float arithmetic.
+
+    state                                          s0    det (closed form)    det (SVD, lane Z)     |diff|
+    K1_REG (0,3/10,3/10,2/5)              2.300523983      -0.089442719100      -0.089442719100    2.8e-17
+    K1_REG (0,3/10,3/10,2/5)             -2.300523983       0.089442719100       0.089442719100    2.8e-17
+    B0a ('2/9', '4/9', '1/3', '0')        2.328837092       0.071721913819       0.071721913819    1.4e-17
+    B0a ('2/9', '4/9', '1/3', '0')       -2.328837092      -0.071721913819      -0.071721913819    1.4e-17
+    B3 ('0', '2/5', '2/5', '1/5')         1.823476582      -0.077459666924      -0.077459666924    1.4e-17
+    B3 ('0', '2/5', '2/5', '1/5')        -1.823476582       0.077459666924       0.077459666924    1.4e-17
+    B1q ('1/7', '3/7', '3/7', '0')        1.738244406       0.060368161052       0.060368161052    6.9e-18
+    B1q ('1/7', '3/7', '3/7', '0')       -1.738244406      -0.060368161052      -0.060368161052    6.9e-18
+    B1s ('0', '5/11', '5/11', '1/11')     1.670963748      -0.041115183352      -0.041115183352    6.9e-18
+    B1s ('0', '5/11', '5/11', '1/11')    -1.670963748       0.041115183352       0.041115183352    6.9e-18
+    TANGENT (1/10,1/5,3/10,2/5)           3.141592654      -0.000000000000      -0.000000000000    4.6e-33
+    worst |closed form - SVD| = 2.78e-17
+
+------------------------------------------------------------------------------------------------
+(c) THEOREM R3 -- SIMPLICITY ON THE WHOLE TWO STRATUM.  PROOF, NOT A TABLE.
+
+    CLAIM.  Delta = 0  ==>  the stratum is EMPTY or CURVE (never TWO, never ONE).
+    PROOF.  Delta = 0 is p00 p11 = p10 p01, i.e. P = (A0 + B0 x)(C0 + D0 y) with A0,B0,C0,D0 >= 0.
+    Then S1 = C0(A0+B0), S2 = D0(A0+B0), D1 = C0|A0-B0|, D2 = D0|A0-B0|, so
+        (S1-S2)(D1-D2) = (A0+B0) |A0-B0| (C0-D0)^2  >=  0,
+    which is EMPTY unless it is 0; and it is 0 only when A0 = B0 (stratum I) or C0 = D0
+    (stratum II).  []
+
+    CLAIM.  Delta' = 0  ==>  the stratum is EMPTY or CURVE.
+    PROOF.  Delta' = 0 is p00 p01 = p10 p11.  Write a=p00,b=p10,c=p01,d=p11 with b = ac/d (d>0).
+    Then (S1^2-S2^2) = (c+d)^2 (a^2-d^2)/d^2 and (D1^2-D2^2) = (c-d)^2 (a^2-d^2)/d^2, whose
+    product is a SQUARE, hence >= 0.  It vanishes only at c = d (with b = a: stratum I) or
+    a = d (with b = c: stratum III).  The cases d = 0 and a = 0 are checked directly and give
+    EMPTY or CURVE too.  []
+
+    COROLLARY (THEOREM R3).  On the TWO stratum Delta != 0, Delta' != 0 and sin s0 != 0, so
+        det M != 0 AT BOTH ZEROS OF EVERY STATE IN THE STRATUM.
+    Every isolated pair of torus zeros is SIMPLE and CONICAL -- not just at the fourteen
+    states lane Z tabulated.  On the ONE stratum sin s0 = 0 exactly, so det M = 0 there.
+    THIS IS THE INPUT M1_08 T2(c) NEEDED ('|P| ~ L*d near a simple zero'), and it is now a
+    theorem about the stratum rather than a property checked at named points.
+
+    EXACT sweep, 57040 simplex points at denominators 20, 32, 44, 56:
+      states with an isolated zero and Delta = 0 or Delta' = 0 : 0.  MUST BE 0.
+      census {'EMPTY': 40208, 'CURVE': 232, 'ONE': 4872, 'TWO': 11728}
+    ==> THEOREM R3 CONFIRMED EXHAUSTIVELY AT FOUR DENOMINATORS.  LANE Z's Z-3 IS TRUE
+        AND ITS BASIS IN THE LANE IS EXHIBITED, NOT PROVED.  Corrected here.
+
+------------------------------------------------------------------------------------------------
+(d) THE ATTACK THAT COULD HAVE BROKEN LANE Z's theta LIST.  Lane Z reports exactly
+    three sublevel exponents, theta in {1, 3/2, 2}.  theta = 3/2 comes from a RANK-1
+    linear part whose SECOND-order term is non-zero along the kernel.  If that second-
+    order term could ALSO vanish somewhere on the ONE stratum, the local model would be
+    cubic along the kernel and theta would be 4/3 -- A FOURTH EXPONENT LANE Z DOES NOT
+    LIST AND DID NOT TEST FOR.  It is decided exactly here.
+
+    At an x0 = +-1 zero, a = p10 x0, b = p01 y0, c = p11 x0 y0 are ALL REAL, so
+        P = i(alpha sigma + beta tau) + Q(sigma,tau) + O(r^3),
+        Q = -(1/2)[a sigma^2 + b tau^2 + c(sigma+tau)^2],  alpha = a+c, beta = b+c REAL.
+    The kernel of the linear part is (sigma,tau) prop (beta,-alpha), and the kernel curvature is
+        q := Q(beta,-alpha) = -(1/2)[a beta^2 + b alpha^2 + c(beta-alpha)^2].
+    q != 0 gives |P| ~ |q| r^2 along the kernel and theta = 3/2;  q = 0 would give theta = 4/3.
+
+    EXACT sweep of the ENTIRE ONE stratum at denominators 24, 40, 60, 84: 9624 states.
+    states with q = 0 (which would give theta = 4/3): 0
+
+    AND THE ALGEBRA BEHIND THE NULL, so that it is a theorem and not a sweep.  Writing the
+    S1 = S2 branch with p10 = t, p11 = w, p00 = 1/2-t, p01 = 1/2-w, the bracket collapses to
+        q  prop  delta (1 - 2 delta - 4w),   delta = t - w,
+    whose roots are delta = 0 (which is p10 = p11 and p00 = p01: stratum II) and t + w = 1/2
+    (which is p00 = p11 and p10 = p01: stratum III).  The D1 = D2 branch collapses the same way
+    to d(...)=0 with the two roots being strata I and II (y0 = -1) or I and III (y0 = +1).
+    IN EVERY BRANCH q = 0 EXACTLY ON A CURVE STRATUM, WHICH IS NOT IN THE ONE STRATUM AT ALL.
+    ==> theta = 4/3 IS UNREACHABLE.  LANE Z's LIST {1, 3/2, 2} IS COMPLETE.
+        THIS IS A NEGATIVE RESULT FOR THE REFUTER AND IT IS SCORED AS ONE.
+
+------------------------------------------------------------------------------------------------
+(e) AN INDEPENDENT ESTIMATE OF THE SUBLEVEL CONSTANT.  Lane Z's mu(eps) comes from a
+    1-D arc formula on a crossing-refined mesh -- ONE estimator, and its own (f) block
+    shows the unrefined version collapsing to zero.  Here mu(eps) is estimated in 2-D
+    by importance sampling in boxes around the zeros, which shares NOTHING with it.
+
+    K1_REG: |det M| = 0.089442719100, 0.089442719100
+    PREDICTED  mu/eps^2 -> (1/4pi) SUM 1/|det| = 1.779406358543
+    LANE Z's refined 1-D quadrature reports 1.779406 - 1.780161 over eps 1e-3..1e-7.
+
+          eps  box half-width       hits      mu (2-D MC)       mu/eps^2  +-1 sigma MC    slope
+        1e-02       2.000e-01      87483   1.77277622e-04     1.77277622      5.93e-03      nan
+        1e-03       2.000e-02      87555   1.77423525e-06     1.77423525      5.93e-03  -1.9996
+        1e-04       2.000e-03      87657   1.77630220e-08     1.77630220      5.93e-03  -1.9995
+        1e-05       2.000e-04      88128   1.78584665e-10     1.78584665      5.95e-03  -1.9977
+        1e-06       2.000e-05      88300   1.78933210e-12     1.78933210      5.95e-03  -1.9992
+    PREDICTED 1.77940636.  Every row agrees with the prediction inside 2 sigma of the
+    Monte Carlo, and the eps = 1e-2 row is low by the O(eps) correction the conical
+    model predicts.  THE SLOPE IS -2 TO THREE DECIMALS OVER FOUR CONSECUTIVE DECADES.
+    ==> a 2-D estimator that never touches the Jensen reduction reproduces the
+        PREDICTED constant and theta = 2.  LANE Z's Z-4 CONFIRMED BY A SECOND ROUTE.
+
+------------------------------------------------------------------------------------------------
+(f) THE ONE PLACE LANE Z's QUADRATURE IS BIASED, AND IT IS IN ITS OWN OUTPUT.
+
+    Stratum I at S1's published state is P = (1/2) y (1+x), so |P| = |cos(s/2)| and
+        mu(eps) = (2/pi) arcsin(eps)   EXACTLY,   mu/eps -> 2/pi = 0.636619772368.
+    Lane Z's refined estimator returns 6.365895901e-01 at eps = 1e-2, 1e-3 AND 1e-4 -- the same
+    ten digits at three different eps.  That is not convergence; it is a SCALE-INVARIANT
+    quadrature bias: the refinement window is chosen proportional to eps, so the estimator is
+    homogeneous of degree theta in eps and its relative error is eps-independent.  The bias is
+    below, against the exact value.  LANE Z QUOTES THE FIGURE AS 'a quadrature value against
+    the exact 2/pi', so this is a CONFIRMATION OF ITS OWN CAVEAT, not a new defect -- but it
+    also means the 'local slope = 1.000000' printed for the two CURVE arms COULD NOT HAVE BEEN
+    ANYTHING ELSE, and a slope that could not have failed is not evidence for theta = 1.
+    The theta = 1 value is right; the arm that reports it carries no weight.
+
+      eps = 1e-02   EXACT mu = 6.366303831746e-03   EXACT mu/eps = 0.636630383175   lane Z printed 6.365895901e-01 at the first three
+      eps = 1e-03   EXACT mu = 6.366198784709e-04   EXACT mu/eps = 0.636619878471   lane Z printed 6.365895901e-01 at the first three
+      eps = 1e-04   EXACT mu = 6.366197734286e-05   EXACT mu/eps = 0.636619773429   lane Z printed 6.365895901e-01 at the first three
+      eps = 1e-05   EXACT mu = 6.366197723782e-06   EXACT mu/eps = 0.636619772378   lane Z printed 6.365895901e-01 at the first three
+      exact limit 2/pi = 0.636619772368;  lane Z's value 0.6365895901;  relative bias 4.74e-05
+
+DONE r2

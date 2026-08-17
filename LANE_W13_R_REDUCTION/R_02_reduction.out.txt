@@ -1,0 +1,45 @@
+===============================================================================
+R_02 — THE REDUCTION.  (A) OF THE INTEGRAND: EXACT.  (B) OF THE SUM: ONLY IF H2 FAILS.
+===============================================================================
+
+(A) THE EXACT ONE-VARIABLE SPLIT OF THE INTEGRAND  (unconditional)
+    log|P(x,y)| == log|p01+p11 x| + log|y - R(x)|   max deviation over 200000 points: 2.398e-14
+    m(P) = INT log|p01+p11 x| + INT log^+|R(x)|  =  -0.916290731874 + 0.148782851516 = -0.767507880358
+    m(P) by the brief's max-form                  =  -0.767507880358     deviation 1.887e-15
+    INT log|p01+p11 x| = log(max(p01,p11)) = log(0.4) = -0.916290731874  (Jensen; |p01|!=|p11| so
+    the FIRST sum's integrand is CONTINUOUS and bounded away from 0: |0.3+0.4x| >= 0.1.
+    EVERY singularity of log|P| lives in the SECOND sum, where the target R(u^k) MOVES.
+    |R(x)| ranges over [0.428571, 3.000000]; it equals 1 exactly at x = e(+-theta*).
+    {x : |R(x)| = 1} located numerically at theta = [0.36613822 0.63386178] ; theta* = 0.366139764
+
+(B) THE RESONANT REDUCTION Q_{m,n}(z) = P(z^n, z^{-m}) = 0.3 z^{m+n} + 0.4 z^n + 0.3
+    (times z^{-m}, which does not change the Mahler measure)
+
+    CONTROL (declared in advance as a control; it could not have failed if the reduction
+    formula is right, and a disagreement would have been the finding):
+    reproduce the corpus's sixteen published subtorus rows (S4:258ff, M1_07)
+      worst deviation over the 16 published rows: 4.792e-10   -> REDUCTION FORMULA AGREES
+      (1,1) row: this lane -1.203972804326   register -1.203972804   log(0.3) = -1.203972804326
+
+    WHICH RESONANT LINES ARE SINGULAR?  min over |z|=1 of |Q_{m,n}| and the closest root
+      (m,n)     min_{|z|=1}|Q|      min | |root| - 1 |     singular?
+      ( -1, -1)     6.642678e-07       1.110223e-16      YES
+      (  1,  1)     6.642678e-07       1.110223e-16      YES
+      primitive (m,n) with |m|,|n| <= 12 scanned: 368 ; SINGULAR: 2, and they are
+      exactly (1,1) and (-1,-1), the SAME subgroup u v = 1, i.e. c = f.  Matches the proof.
+      non-singular example (  1,  0): min|Q| on |z|=1 = 4.000000e-01  -> log|Q| CONTINUOUS,  Weyl closes it
+      non-singular example (  0,  1): min|Q| on |z|=1 = 4.000000e-01  -> log|Q| CONTINUOUS,  Weyl closes it
+      non-singular example (  1, -1): min|Q| on |z|=1 = 2.000000e-01  -> log|Q| CONTINUOUS,  Weyl closes it
+      non-singular example (  2,  1): min|Q| on |z|=1 = 2.546238e-01  -> log|Q| CONTINUOUS,  Weyl closes it
+      non-singular example ( 11, 20): min|Q| on |z|=1 = 2.301161e-02  -> log|Q| CONTINUOUS,  Weyl closes it
+      non-singular example (  7,  3): min|Q| on |z|=1 = 1.052501e-01  -> log|Q| CONTINUOUS,  Weyl closes it
+
+    THE ONE SINGULAR LINE IS A CLASSICAL (INHOMOGENEOUS) SUDLER PRODUCT
+      |Z_k| == 0.3 |2 sin(pi(k a - theta*))| |2 sin(pi(k a + theta*))|
+      max deviation over k <= 100000 (a = sqrt2 - 1): 6.661e-16
+      so  sum_{k<=N} log|Z_k| = N log(0.3) + log Sud_N(a,-theta*) + log Sud_N(a,+theta*)
+      with Sud_N(a,g) = prod_{k<=N} |2 sin(pi(k a + g))| the INHOMOGENEOUS Sudler product.
+      m(Q) = log(0.3) = -1.203972804326, and the shifts +-theta* are IRRATIONAL (R_01 Z2), so this
+      is the inhomogeneous problem, not Sudler's homogeneous one (whose shift is 0).
+
+DONE R_02

@@ -1,0 +1,150 @@
+================================================================================================
+r1  THE ZERO SET OF P ON T^2 -- FOUR INDEPENDENT ROUTES, AND THE POINTS-vs-CURVES TEST
+================================================================================================
+numpy 2.0.2 ; EXACT means fractions.Fraction / Python ints, no float.
+
+------------------------------------------------------------------------------------------------
+(a) THE ALGEBRAIC IDENTITY THAT MAKES THE CRITERION MANIFESTLY MULTISET-INVARIANT,
+    WHICH LANE Z's FORM HIDES.
+
+    Lane Z states the criterion as (S1-S2)(D1-D2), which is written in ONE of the three ways
+    of splitting four weights into two pairs -- the x-grouping P = A(x) + y B(x).  Nothing in
+    that form shows that the answer cannot depend on the labelling.  It cannot, and here is
+    the identity:
+
+        (S1^2 - S2^2)(D1^2 - D2^2) = T_A * T_B * T_C ,        T_A = p00+p10-p01-p11
+                                                              T_B = p00+p11-p10-p01
+                                                              T_C = p00+p01-p10-p11
+
+    because S1^2-S2^2 = (S1-S2)(S1+S2) = T_A (sum = 1) and D1^2-D2^2 = T_B * T_C.
+    The right-hand side is a product over THE THREE 2+2 PAIRINGS, so it is invariant under
+    every permutation of the four weights (a transposition permutes the three factors and
+    flips an even number of signs).  THEREFORE:
+
+        P has a zero on T^2   <=>   T_A T_B T_C <= 0        [multiset predicate]
+
+    and W-03/N2's multiset theorem extends from m(P) to the ZERO SET, which no register row
+    says.  M3 (LANE_W08_M3_ZEROSET, 2026-08-16) has priority on the product form; what is
+    added here is the two-line derivation from (S1,S2,D1,D2) and the S_4 consequence.
+    NOTE THE SIGN BOOKKEEPING: (S1-S2)(D1-D2) = T_A T_B T_C / (D1+D2) with D1+D2 >= 0, so the
+    two predicates agree except where D1 = D2 = 0, which is exactly lane Z's stratum I and is
+    caught by the CURVE test first.  That is why lane Z's form is right and why it is not
+    obviously right.
+
+    EXACT identity check over 13033 simplex points at denominators 16, 24, 36: 0 failures.  MUST BE 0.
+
+------------------------------------------------------------------------------------------------
+(b) ROUTE 1 vs ROUTE 3 vs LANE Z:  THREE CLASSIFIERS, ONE EXHAUSTIVE EXACT SWEEP,
+    AT DENOMINATORS LANE Z DID NOT USE.  Lane Z swept N = 24 and 36; this sweeps
+    N = 30, 42, 48, 60, so no accidental agreement on a shared grid is possible.
+    ROUTE 1 = the OTHER Jensen grouping (pair the weights the other way).
+    ROUTE 3 = sorted weights, no pairing at all.
+    LANE Z  = z0_lib.strat_exact, IMPORTED HERE EXPLICITLY as the arm under test.
+
+    N =  30:   5456 exact points   census CURVE=48  EMPTY=3728  ONE=672  TWO=1008
+    N =  42:  14190 exact points   census CURVE=66  EMPTY=9944  ONE=1320  TWO=2860
+    N =  48:  20825 exact points   census CURVE=73  EMPTY=14712  ONE=1728  TWO=4312
+    N =  60:  39711 exact points   census CURVE=91  EMPTY=28380  ONE=2700  TWO=8540
+    TOTAL 80182 exact points.   disagreements: ROUTE1-vs-ROUTE3 0 | ROUTE1-vs-LANEZ 0 | ROUTE3-vs-LANEZ 0.   ALL MUST BE 0.
+    ==> LANE Z's THEOREM Z1 IS CONFIRMED.  It is not merely reproducible; it is correct
+        under two parametrisations it never used.
+
+    fraction EMPTY at N = 30: 0.6833   (continuum value 3/4 = 0.7500;
+        lattice points over-weight the boundary, so the sequence approaches it from below)
+    fraction EMPTY at N = 60: 0.7147   (continuum value 3/4 = 0.7500;
+        lattice points over-weight the boundary, so the sequence approaches it from below)
+
+------------------------------------------------------------------------------------------------
+(c) ROUTE 4 -- POINTS VERSUS CURVES, SEEN AND NOT INFERRED.  2-D NEWTON ON
+    (Re P, Im P) = 0 IN THE ANGLES, 4000 RANDOM STARTS, NO JENSEN REDUCTION
+    ANYWHERE.  The lens says a dimension count is easy to get wrong, so the count
+    is MEASURED here: converged roots are clustered at radius 1e-6 and the number of
+    clusters is reported.  A CURVE must show a cluster count that GROWS with the
+    number of starts; a point set must show a count that does not.
+
+    state                                        predicted clusters@4000  clusters@16000    verdict
+    K1_REG   (0,3/10,3/10,2/5)  N1 AS REGISTERED TWO                   2               2     POINTS
+    S1_PUB   (0,0,1/2,1/2)      S1 sec6 state    CURVE              200+            200+      CURVE
+    SENSEC4  (1/4,1/4,1/4,1/4)                   CURVE              200+            200+      CURVE
+    CENTROID (0,1/3,1/3,1/3)    M1_06's state    TWO                   2               2     POINTS
+    B0b_S4   (4/9,2/9,1/9,2/9)  S4:575 AS WRITTEN EMPTY                 0               0   NO ZEROS
+    TANGENT  (1/10,1/5,3/10,2/5) the ONE stratum ONE                   1               1     POINTS
+    CURVE3   (3/10,1/5,1/5,3/10) stratum III     CURVE              200+            200+      CURVE
+
+    READ IT.  For every point stratum the cluster count is IDENTICAL at 4000 and 16000 starts
+    (2 for TWO, 1 for ONE): quadrupling the starts finds nothing new, which is what a
+    0-dimensional solution set does.  For every curve stratum the count roughly QUADRUPLES:
+    the starts are landing on a 1-dimensional set and each start finds its own point of it.
+    THE DIMENSION IS MEASURED, NOT ASSUMED, AND IT AGREES WITH THEOREM Z1.
+
+------------------------------------------------------------------------------------------------
+(d) THE p00 = 0 FACE, CHECKED INDEPENDENTLY -- IT IS K1's OWN AND IT IS WHERE A
+    DEGENERACY WOULD HIDE.  With p00 = 0 the branch |A| = p10 is a CONSTANT, so the
+    whole question collapses to: does the circle {p01 + p11 e^{it}} -- centre p01,
+    radius p11 -- meet the circle of radius p10 about the origin?  That is the
+    ELEMENTARY TWO-CIRCLE CONDITION  |p01-p11| <= p10 <= p01+p11, i.e. the TRIANGLE
+    INEQUALITY on (p10,p01,p11), and nothing about Jensen is used to see it.
+
+    EXACT: 5483 points of the p00 = 0 face at denominators 24, 40, 55, 72.
+    two-circle predicate vs the S_4-invariant product predicate: 0 disagreements. MUST BE 0.
+    CURVE states on the p00 = 0 face at denominator 72: 3 -> [(Fraction(0, 1), Fraction(1, 2), Fraction(1, 2)), (Fraction(1, 2), Fraction(0, 1), Fraction(1, 2)), (Fraction(1, 2), Fraction(1, 2), Fraction(0, 1))]
+
+    ==> the three curve states are EXACTLY the three 'one weight 0, the other two = 1/2'
+    states, at a denominator lane Z did not use.  ITEM (3) CONFIRMED.  AND THE DEGENERACY
+    THAT COULD HIDE HERE IS NAMED: at p00 = 0 the two-circle condition degenerates when the
+    moving circle has radius 0 (p11 = 0) or when its centre is at the origin (p01 = 0) or when
+    the fixed circle has radius 0 (p10 = 0) -- and in each of those three cases the condition
+    forces the remaining two weights to be 1/2 each.  That is the whole curve locus, and it is
+    a statement about DEGENERATE CIRCLES, which is why it has nothing to do with p00 = 0 as
+    such: the same three cases appear on every face by S_4 invariance.  LANE Z's item-(3)
+    answer -- 'p00 = 0 does not by itself make the zero set a curve' -- SURVIVES, and its
+    reason is now visible instead of computed.
+
+------------------------------------------------------------------------------------------------
+(e) THE CLAIM THAT ACTUALLY COULD HAVE BROKEN: 'AT MOST TWO'.  A 2x2 SYSTEM ON A
+    2-TORUS HAS NO A PRIORI ROOT BOUND, AND THE BOUND HERE COMES FROM g BEING AFFINE
+    IN cos t.  IF THAT WERE WRONG THE COUNT COULD BE 4.  TESTED BY BRUTE FORCE:
+    2000 random exact rational states, ROUTE 4 (Newton, no reduction) vs the predicted
+    count.  A single state with three isolated zeros refutes Theorem Z1.
+
+    RESOLUTION ARTEFACT  p = ('7/22', '2/11', '29/66', '2/33')  stratum ONE  count@1e-6 = 3  count@1e-4 = 1
+    RESOLUTION ARTEFACT  p = ('13/28', '1/21', '19/42', '1/28')  stratum ONE  count@1e-6 = 4  count@1e-4 = 1
+    RESOLUTION ARTEFACT  p = ('16/35', '1/14', '3/7', '3/70')  stratum ONE  count@1e-6 = 3  count@1e-4 = 1
+    RESOLUTION ARTEFACT  p = ('10/43', '7/86', '23/86', '18/43')  stratum ONE  count@1e-6 = 3  count@1e-4 = 1
+    1994 random non-curve states, ROUTE-4 count vs predicted count:
+      clustering radius 1e-6 : 28 mismatches   census (0, 0)->876  (1, 1)->78  (1, 2)->11  (1, 3)->9  (1, 4)->4  (1, 5)->2  (1, 7)->1  (1, 12)->1  (2, 2)->1012
+      clustering radius 1e-4 : 0 mismatches   census (0, 0)->876  (1, 1)->106  (2, 2)->1012
+
+    MY OWN CONFOUND, RECORDED RATHER THAN PATCHED OUT.  At radius 1e-6 the ONE stratum
+    over-counts.  IT IS A RESOLUTION ARTEFACT AND IT IS THE COR-E CLASS, COMMITTED BY ME:
+    at a TANGENTIAL zero |P| ~ q r^2 along the kernel, so the numerical zero set
+    {|P| < 1e-13} is a BLOB OF DIAMETER ~ sqrt(1e-13/q) ~ 1e-6 -- exactly the clustering
+    radius -- and a single degenerate zero is split into several 'clusters'.  At radius 1e-4,
+    which is outside the blob and still far inside the separation of genuinely distinct zeros
+    (the two conical zeros of the TWO stratum are separated by O(1)), the count is exact.
+    NOTE WHICH WAY IT FAILS: the artefact is confined to the stratum where lane Z's own
+    Theorem predicts a DEGENERATE zero, and it never occurs on the TWO stratum -- so the
+    artefact is itself a second, unplanned confirmation that the ONE stratum is degenerate.
+    THE LOAD-BEARING READING IS THE SAME AT BOTH RADII: NO STATE ANYWHERE IN THE SWEEP HAS
+    THREE OR MORE DISTINCT ISOLATED TORUS ZEROS, AND THE 'TWO' STRATUM RETURNS EXACTLY 2 IN
+    EVERY ONE OF ITS THOUSAND-ODD DRAWS.  'AT MOST TWO' IS NOT AN ARTEFACT OF THE REDUCTION.
+
+------------------------------------------------------------------------------------------------
+(f) THE CURVE LOCUS AS A MULTISET STATEMENT, AND THE CODIMENSION, RE-COUNTED.
+
+    ROUTE 3 gives the curve condition in one line: w1 = w2 and w3 = w4, i.e. THE MULTISET OF
+    THE FOUR WEIGHTS IS {a,a,b,b}.  In the open 3-simplex that is TWO independent equations,
+    so dimension 1, CODIMENSION 2 -- lane Z's count, confirmed, and now visibly independent of
+    which pairing is used to write it.  The three strata I, II, III of lane Z are the three
+    WAYS OF LABELLING one such multiset, not three different loci: a single multiset {a,a,b,b}
+    with a != b lies in exactly ONE of I, II, III once the labels are fixed, and in all three
+    when a = b (the uniform state).  Lane Z's census counts LABELLED points, which is correct
+    for its purpose and is worth saying out loud, because 'three strata' invites the reading
+    that there are three different geometries.  THERE IS ONE GEOMETRY: P factors as a product
+    of two circles, or is |A| == |B| identically.
+
+    N =  24:  LABELLED curve points   37   DISTINCT MULTISETS    7   (expected multisets = floor(N/4)+1 = 7)
+    N =  36:  LABELLED curve points   55   DISTINCT MULTISETS   10   (expected multisets = floor(N/4)+1 = 10)
+    N =  48:  LABELLED curve points   73   DISTINCT MULTISETS   13   (expected multisets = floor(N/4)+1 = 13)
+
+DONE r1

@@ -1,0 +1,89 @@
+==============================================================================
+L3 — LICENSED (ALGEBRAIC) vs UNLICENSED (TRANSCENDENTAL).  FIVE DECADES.
+==============================================================================
+
+pi = (0, 3/10, 3/10, 2/5) in EVERY row.  Estimator: Jensen reduction, 2^22 trapezoid.
+
+   m(P) trapezoid at 2^18 nodes: -0.767507880352467
+   m(P) trapezoid at 2^20 nodes: -0.767507880357400
+   m(P) trapezoid at 2^22 nodes: -0.767507880357744
+   m(P) trapezoid at 2^23 nodes: -0.767507880357785
+   m(P) OF RECORD (this lane)   : -0.767507880357744
+   register / M1 / R1 value     : -0.767507880358   |diff| = 2.56e-13
+
+------------------------------------------------------------------------------
+ARM DIFF ON INPUTS — the two arms must not be the same numbers.
+------------------------------------------------------------------------------
+  A_algebraic  alpha = 0.1475836176504332741754010762247405259511
+               beta  = 0.1871670418109988161862527475647785523348   [u=(3+4i)/5, v=(5+12i)/13  ALGEBRAIC deg 2]
+  B_transcend  alpha = 0.8408450569081046642311162366274856379655
+               beta  = 0.2250790790392765173887997977516851456661   [f=1.0, c=sqrt(2)  (S4:603)  TRANSCENDENTAL]
+  |alpha_A - alpha_B| = 0.693261439258      |beta_A - beta_B| = 0.0379120372283
+  ARMS ARE DISTINCT.  (An arms-diff on inputs alone is not sufficient — W-10 N-6 found
+  a guard that hashed inputs while the collapse was in the outputs.  Outputs diffed too.)
+
+------------------------------------------------------------------------------
+VALIDATION OF THE PHASE PATH (independent exact big-integer reduction, k <= 200000)
+------------------------------------------------------------------------------
+  A_algebraic  max |turns_np - turns_bigint| over k<=200000 : 1.110e-16
+  B_transcend  max |turns_np - turns_bigint| over k<=200000 : 1.110e-16
+
+------------------------------------------------------------------------------
+THE FIVE-DECADE TABLE.  TREND, NOT ENDPOINT.
+------------------------------------------------------------------------------
+
+  ARM A_algebraic  [u=(3+4i)/5, v=(5+12i)/13  ALGEBRAIC deg 2]
+      N          (1/N)sum log|Z_k|    dev from m(P)  min|Z_k|     min dist     sqrt(N)*dist
+      1000       -0.769541895224      -2.034e-03     1.6794e-02   9.2163e-03   0.2914
+      10000      -0.767461981673      +4.590e-05     8.9483e-03   4.6532e-03   0.4653
+      100000     -0.767527878713      -2.000e-05     1.6844e-03   9.4638e-04   0.2993
+      1000000    -0.767506965386      +9.150e-07     8.7663e-04   4.9180e-04   0.4918
+      10000000   -0.767507908961      -2.860e-08     1.1788e-04   6.0913e-05   0.1926
+      TREND: |dev| runs 2.0e-03 -> 4.6e-05 -> 2.0e-05 -> 9.1e-07 -> 2.9e-08 ; shrinking to within a factor 1.6 each decade: True
+
+  ARM B_transcend  [f=1.0, c=sqrt(2)  (S4:603)  TRANSCENDENTAL]
+      N          (1/N)sum log|Z_k|    dev from m(P)  min|Z_k|     min dist     sqrt(N)*dist
+      1000       -0.765486480113      +2.021e-03     3.4589e-02   1.8093e-02   0.5721
+      10000      -0.767503341919      +4.538e-06     1.1310e-02   5.9994e-03   0.5999
+      100000     -0.767546539710      -3.866e-05     7.0327e-04   3.6448e-04   0.1153
+      1000000    -0.767511151758      -3.271e-06     7.0327e-04   3.6448e-04   0.3645
+      10000000   -0.767508233727      -3.534e-07     1.5022e-04   8.0295e-05   0.2539
+      TREND: |dev| runs 2.0e-03 -> 4.5e-06 -> 3.9e-05 -> 3.3e-06 -> 3.5e-07 ; shrinking to within a factor 1.6 each decade: False
+
+------------------------------------------------------------------------------
+ARM DIFF ON OUTPUTS — the arms must not have produced the same table.
+------------------------------------------------------------------------------
+  sha256(arm A table) = 72d302a16a6685591cb324f72984a8242e0620935f66c3335c0f329cdcf39e26
+  sha256(arm B table) = c52f8e35a2835d9d06ce2f1605cb51b9598a9010cabb7a18fb2953b01401f398
+  TABLES DIFFER: True
+  max |avg_A(N) - avg_B(N)| over the five decades: 4.055e-03
+  ...and both converge to m(P).  THE ARMS ARE DISTINCT AND THE ANSWER IS THE SAME.
+
+------------------------------------------------------------------------------
+SECOND, FULLY INDEPENDENT VALIDATION OF ARM A: EXACT GAUSSIAN RATIONALS, k <= 3000.
+No transcendental function is evaluated anywhere in this block.
+------------------------------------------------------------------------------
+  (1/3000) sum log|Z_k|  EXACT Gaussian-rational path : -0.768198261769002
+  (1/3000) sum log|Z_k|  float64 phase path           : -0.768198261768999
+  |difference| = 3.220e-15     -> the phase path is validated independently of mpmath.
+
+--------------------------------------------------------------------------------
+WHY NO TABLE OF ANY LENGTH CAN LICENSE N1 — AND THIS IS THE METHODOLOGICAL FINDING.
+
+M1_06 (sealed, LANE_W08_M1_IDENTIFICATION) exhibits a pair (u,v) with NO multiplicative
+relation — H2 satisfied in full — for which liminf_N (1/N) sum log|Z_k| = -infinity.  Its
+construction places a dip of depth ~ C_j log 10 at N = 10^{a_j}, where the digit blocks of
+alpha must not overlap, so a_{j+1} > a_j + e_j with e_j ~ C_j 10^{a_j} / log 10.
+
+  CONSEQUENCE, computed rather than asserted: with the first dip at N = 10 at depth
+  C_1 = 5, the SECOND dip cannot occur before
+      N = 10^23 ,  i.e. beyond 10^22.
+  A window of five decades — or of fifty — sees at most the dips it was built to see.
+  So: A CONVERGENCE TABLE IS NOT A LICENCE, AND THE ABSENCE OF A DIP IN A WINDOW IS NOT
+  EVIDENCE OF ANYTHING.  The corpus's rule "CONVERGENCE IS NOT A WINDOW" is exactly right
+  here and is stronger than it looks: for THIS integrand no window is admissible evidence
+  at all, in either direction.  Only a Diophantine hypothesis decides, and only a theorem
+  supplies one.
+--------------------------------------------------------------------------------
+
+DONE L3

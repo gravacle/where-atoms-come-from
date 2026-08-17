@@ -1,0 +1,66 @@
+===============================================================================
+R_04 — THE TWO-DIMENSIONAL BIRKHOFF SUM, SEVEN DECADES, FOUR ARMS, ONE VARIABLE MOVED
+===============================================================================
+
+m(P) at K1's pi (Jensen, 2^24 nodes) = -0.767507880358
+subtorus value at the (11,20) relation, register erratum against W-02 = -0.767014993
+
+ARMS-DIFF GUARD (sha256 of the first 200000 log|Z_k| of each arm)
+   BA-cubic      dbeedc405b985d9753287f56   first four orbit points (alpha side) [0.25992105 0.5198421  0.77976315 0.0396842 ]
+   CORPUS        62b09f37387eca28ae2dcaf8   first four orbit points (alpha side) [0.84084506 0.68169011 0.52253517 0.36338023]
+   BA-algebraic  62afb3a28719f91e64ae58ca   first four orbit points (alpha side) [0.41421356 0.82842713 0.24264069 0.65685425]
+   RESONANT      12fdd2266cf9eead1606a198   first four orbit points (alpha side) [0.68169011 0.36338023 0.04507034 0.72676045]
+   distinct hashes: 4 of 4  -> arms differ
+
+(1/N) sum_{k<=N} log|Z_k|      (target for the three generic arms: m(P) = -0.767507880)
+   N                          10             100            1000           10000          100000         1000000        10000000
+   BA-cubic         -0.747572450    -0.774777537    -0.767645903    -0.767396776    -0.767495134    -0.767508073    -0.767507954
+   CORPUS           -0.740965214    -0.770148036    -0.765486480    -0.767503342    -0.767546540    -0.767511152    -0.767508234
+   BA-algebraic     -0.763941699    -0.759169455    -0.770043202    -0.767180715    -0.767526846    -0.767509078    -0.767507893
+   RESONANT         -0.733234038    -0.768924789    -0.768204530    -0.767035368    -0.767029486    -0.767016017    -0.767015028
+
+DEVIATION FROM m(P)
+   N                          10             100            1000           10000          100000         1000000        10000000
+   BA-cubic           +1.994e-02      -7.270e-03      -1.380e-04      +1.111e-04      +1.275e-05      -1.930e-07      -7.381e-08
+   CORPUS             +2.654e-02      -2.640e-03      +2.021e-03      +4.538e-06      -3.866e-05      -3.271e-06      -3.534e-07
+   BA-algebraic       +3.566e-03      +8.338e-03      -2.535e-03      +3.272e-04      -1.897e-05      -1.197e-06      -1.224e-08
+   RESONANT           +3.427e-02      -1.417e-03      -6.966e-04      +4.725e-04      +4.784e-04      +4.919e-04      +4.929e-04
+
+   THE RESONANT ROW IS THE CONTROL THAT COULD HAVE FAILED AND DID NOT:
+   it converges to -0.767015028, deviating from m(P) by +4.929e-04 and from the register's
+   published subtorus value -0.767014993 by -3.467e-08.  The estimator can tell a
+   2-dimensional orbit closure from a 1-dimensional one.  (Carried fact C1: this pair
+   is EXACTLY RESONANT and is NOT a generic connection.)
+
+DECAY EXPONENT r in |S_N - m(P)| ~ N^{-r}, fitted over the last four decades
+   BA-cubic      r = +1.135   (target m(P))
+   CORPUS        r = +0.440   (target m(P))
+   BA-algebraic  r = +1.448   (target m(P))
+   RESONANT      r = +0.946   (target subtorus)
+
+THE TWO-DIMENSIONAL DIAGNOSTIC:  sqrt(N) * min_{k<=N} dist(orbit, Z(P))
+   N                      10         100        1000       10000      100000     1000000    10000000
+   BA-cubic           0.3666      0.1305      0.3878      0.1819      0.5303      0.2632      0.2876
+   CORPUS             0.3057      0.2345      0.5721      0.5999      0.1153      0.3645      0.2539
+   BA-algebraic       0.3457      0.5183      0.2612      0.3005      0.4687      0.5161      0.2105
+   RESONANT           0.5806      0.1349      0.4095      1.2941      4.0906     12.9355     40.9056
+   min dist         1.84e-01    1.35e-02    1.29e-02    1.29e-02    1.29e-02    1.29e-02    1.29e-02   <- RESONANT only
+   BOUNDED, O(1), OVER SEVEN DECADES ON THE THREE GENERIC ARMS -- AND NOT ON THE FOURTH.
+   The RESONANT row GROWS like sqrt(N), and that is not a defect: its orbit closure is a
+   CIRCLE that misses both zeros, so min dist SATURATES at 1.294e-02 and sqrt(N) times a
+   constant grows.  That is an independent confirmation of PROP R-5 from the other side:
+   the (11,20) subtorus is NON-SINGULAR, which is why its Birkhoff average converges at
+   all, and converges to the subtorus value rather than to m(P).
+   For the three generic arms: N points in T^2 sit ~N^{-1/2} apart, and the orbit does
+   not do better than that against a fixed point.  So the deepest single term is
+   ~ (1/2) log N and its share of the average is O(log N / N).
+   COMPARE the ONE-dimensional diagnostic of R_03, N * min ||k a - theta*||, also O(1):
+   same shape, but there Dirichlet FORCES it to be O(1) and here nothing does -- which is
+   exactly the room in which R_05's counterexample lives.
+
+WHAT THIS DOES NOT ESTABLISH
+   Seven decades of a bounded diagnostic is not a lower bound on dist for all k.  This
+   script measures; it proves nothing.  The proof is in R_06, and it covers only
+   rotations reachable by Baker's theorem.
+
+DONE R_04

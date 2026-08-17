@@ -1,0 +1,101 @@
+==============================================================================
+RW13C_01 -- PRECISION AND WINDOW AUDIT
+==============================================================================
+
+(D) m(P) BY THREE ROUTES
+   target lane's Jensen split (reproduced) : -0.76750788035777587165
+   direct log-max on each smooth piece      : -0.76750788035777587165   dev 0.000e+00
+   2-D grid with the two discs replaced by an exact polar quadrature
+                                            : -0.767507894807   dev -1.445e-08
+   register value -0.767507880358           :               dev 2.242e-13
+   VERDICT: m(P) CONFIRMED.  The Jensen split is not sitting on an artefact.
+
+(E) THE GEOMETRY CONSTANTS, INDEPENDENTLY
+   closed form z = (0.3661397635993849946273831, 0.6338602364006150053726169)
+   |P(z)| at 50 dps = 6.6819118e-52
+   z1 + z2 - 1 = 0.0   -> the SECOND zero z' = (z2,z1) satisfies z' = -z mod 1
+   CONSEQUENCE THE TARGET LANE DOES NOT STATE: its SPACING LEMMA is written for
+   two dips at the SAME zero and gives ||(k2-k1)z||.  A dip at z followed by one
+   at z' = -z gives ||(k1+k2)z|| instead.  Both reduce to ||q z1|| with q <= 2 k2,
+   so the CONCLUSION survives -- but the lemma as written does not cover the case.
+   |det J| analytic = 3.531057   finite-difference = 3.531057   dev 1.36e-09
+   (target lane reports 3.531057 -- CONFIRMED)
+   L = min |P|/dist = 1.026086   U = max |P|/dist = 2.492571  (6001x6001 offset grid; target lane: 1.026056 / 2.492571)
+
+(A) IS THE uint64 MODULAR CUMSUM EXACT?  ONE THING TESTED: the wrap.
+   k = 1..200000 checked against Python-int (k*A) mod 2^64 : MISMATCHES = 0
+   number of wraps of coordinate 1 in that range        : 168169  (so the wrap IS tested)
+   VERDICT: the phase reduction is exact modular arithmetic.  NO int64 wrap bug.
+
+(B) DOES THE 64-BIT TRUNCATION OF theta MOVE A_N?
+    ONE VARIABLE: the phase representation.  Same theta, same arms, same grid.
+   arm                                                  N            A_N plain        A_N +k*residual  difference  
+   f=1.0 c=sqrt(2)  [the corpus's ONLY generic connecti 1000         -0.765486480113  -0.765486480113  +0.000e+00
+                                                        10000        -0.767503341919  -0.767503341919  +1.110e-16
+                                                        100000       -0.767546539710  -0.767546539710  +5.551e-16
+                                                        1000000      -0.767511151758  -0.767511151758  +2.887e-15
+                                                        10000000     -0.767508233727  -0.767508233727  +1.332e-15
+   residual r = (2.731e-20, 3.307e-20) turns;  k*r at k=1e7 = (2.73e-13, 3.31e-13)
+   (-2^(1/3), 4^(1/3)) badly approximable               1000         -0.768194820808  -0.768194820808  -1.110e-16
+                                                        10000        -0.767573512643  -0.767573512643  +2.220e-16
+                                                        100000       -0.767501598430  -0.767501598430  +0.000e+00
+                                                        1000000      -0.767507873839  -0.767507873839  +1.887e-15
+                                                        10000000     -0.767507816121  -0.767507816121  +2.331e-15
+   residual r = (4.111e-20, 1.186e-21) turns;  k*r at k=1e7 = (4.11e-13, 1.19e-14)
+   VERDICT: the truncation moves A_1e7 by << the reported deviation from m(P).
+   The reported deviations are properties of theta, not of the surrogate rational.
+
+(C) THE FIFTH DECADE.  The target lane stops at 10^7.  ONE VARIABLE: the arm.
+
+   ARMS DIFF GUARD (uint64 pair actually fed to the estimator):
+      GENERIC f=1.0 c=sqrt(2)  (H2 PROVED)       (15510853570427550389,  4151976167383777855)
+      BADLY-APPROX (-2^(1/3), 4^(1/3))           (13652046986928935389, 10835636874285140011)
+      BADLY-APPROX (rho, rho^2)                  ( 5989989053431590316, 13925035116211876495)
+      BADLY-APPROX (sig, sig^2)                  (12586726371591769034,  8588273362512426082)
+      HAAR-RANDOM seed 20260818 draw 0           ( 7383986782535978923,  8393943719687503236)
+      HAAR-RANDOM seed 20260818 draw 1           ( 5936823503987436129,  7510650604717738927)
+      CONTROL order-4 (f=pi, c=3pi/2)  H2 FAILS  ( 9223372036854775808, 13835058055282163712)
+      CONTROL f=2.0 c=1.1 resonant     H2 FAILS  (12574963067145549163,  3229479553610201349)
+      all 8 pairwise distinct: OK
+
+   arm                                            A_1e+05      A_1e+06      A_1e+07      A_1e+08
+   GENERIC f=1.0 c=sqrt(2)  (H2 PROVED)        -0.7675465   -0.7675112   -0.7675082   -0.7675079
+   BADLY-APPROX (-2^(1/3), 4^(1/3))            -0.7675016   -0.7675079   -0.7675078   -0.7675079
+   BADLY-APPROX (rho, rho^2)                   -0.7674987   -0.7675080   -0.7675082   -0.7675079
+   BADLY-APPROX (sig, sig^2)                   -0.7675006   -0.7675074   -0.7675080   -0.7675079
+   HAAR-RANDOM seed 20260818 draw 0            -0.7674685   -0.7674527   -0.7674788   -0.7675050
+   HAAR-RANDOM seed 20260818 draw 1            -0.7675531   -0.7675091   -0.7675078   -0.7675080
+   CONTROL order-4 (f=pi, c=3pi/2)  H2 FAILS   -0.8047190   -0.8047190   -0.8047190   -0.8047190
+   CONTROL f=2.0 c=1.1 resonant     H2 FAILS   -0.7670295   -0.7670160   -0.7670150   -0.7670150
+
+   SIGNED deviation A_N - m(P), all eleven checkpoints (sign matters: |dev| passes
+   through accidental zero crossings and a log-log fit sits on them)
+   arm                                             1e3.0      1e3.5      1e4.0      1e4.5      1e5.0      1e5.5      1e6.0      1e6.5      1e7.0      1e7.5      1e8.0
+   GENERIC f=1.0 c=sqrt(2)  (H2 PROVED)        +2.02e-03  +5.80e-05  +4.54e-06  +2.42e-05  -3.87e-05  -2.55e-06  -3.27e-06  -1.92e-07  -3.53e-07  -5.00e-08  +7.07e-09
+   BADLY-APPROX (-2^(1/3), 4^(1/3))            -6.87e-04  -2.66e-04  -6.56e-05  -2.07e-05  +6.28e-06  +2.33e-07  +6.52e-09  -2.20e-07  +6.42e-08  +4.18e-09  -1.34e-08
+   BADLY-APPROX (rho, rho^2)                   +1.48e-03  +1.63e-04  -8.91e-05  -5.57e-06  +9.21e-06  -5.57e-06  -9.66e-08  -6.05e-08  -3.33e-07  -4.66e-08  -1.77e-08
+   BADLY-APPROX (sig, sig^2)                   -9.69e-04  -4.48e-05  -5.77e-05  -4.73e-05  +7.27e-06  -1.28e-06  +4.46e-07  -2.49e-07  -1.49e-07  -4.90e-09  -1.31e-08
+   HAAR-RANDOM seed 20260818 draw 0            -7.77e-04  +4.19e-04  -9.15e-05  -2.54e-06  +3.94e-05  +4.91e-05  +5.52e-05  +5.29e-05  +2.91e-05  +6.72e-07  +2.86e-06
+   HAAR-RANDOM seed 20260818 draw 1            +3.82e-04  -4.72e-04  +6.20e-05  +1.57e-05  -4.52e-05  -8.89e-06  -1.18e-06  +7.01e-07  +9.06e-08  -2.98e-07  -1.28e-07
+   CONTROL order-4 (f=pi, c=3pi/2)  H2 FAILS   -3.72e-02  -3.74e-02  -3.72e-02  -3.72e-02  -3.72e-02  -3.72e-02  -3.72e-02  -3.72e-02  -3.72e-02  -3.72e-02  -3.72e-02
+   CONTROL f=2.0 c=1.1 resonant     H2 FAILS   -6.97e-04  -1.94e-04  +4.73e-04  +4.71e-04  +4.78e-04  +4.93e-04  +4.92e-04  +4.93e-04  +4.93e-04  +4.93e-04  +4.93e-04
+
+   FITTED EXPONENT: 4 decades (10^3..10^7, the target lane's window) vs 5 (..10^8)
+   arm                                        N^(4 dec)      N^(5 dec)      shift          min|Z_k|, k<=1e8        
+   GENERIC f=1.0 c=sqrt(2)  (H2 PROVED)       -0.791         -0.875         -0.084         9.054e-05 at k=33354400
+   BADLY-APPROX (-2^(1/3), 4^(1/3))           -1.177         -1.068         +0.110         4.628e-05 at k=79477363
+   BADLY-APPROX (rho, rho^2)                  -1.027         -0.945         +0.082         5.528e-05 at k=7288554
+   BADLY-APPROX (sig, sig^2)                  -0.927         -0.977         -0.050         4.708e-05 at k=95870882
+   HAAR-RANDOM seed 20260818 draw 0           -0.252         -0.401         -0.149         3.111e-05 at k=43562095
+   HAAR-RANDOM seed 20260818 draw 1           -0.889         -0.781         +0.108         6.305e-05 at k=3377605
+   CONTROL order-4 (f=pi, c=3pi/2)  H2 FAILS  -0.000         -0.000         +0.000         3.162e-01 at k=1
+   CONTROL f=2.0 c=1.1 resonant     H2 FAILS  0.022          0.018          -0.005         2.301e-02 at k=54438125
+
+   READ THIS THE RIGHT WAY.  The FIFTH decade does not change any verdict: the H2
+   arms keep falling and the two H2-failing controls stay flat at their own limit.
+   What it DOES show is that the target lane's phrase 'a clean ~N^{-1} trend' is a
+   fit whose exponent moves by up to the amounts above when one decade is added,
+   because |dev| is an oscillating quantity crossing zero.  The QUALITATIVE claim
+   (converging vs flat) is robust; the EXPONENT is not a measured constant.
+
+DONE RW13C_01

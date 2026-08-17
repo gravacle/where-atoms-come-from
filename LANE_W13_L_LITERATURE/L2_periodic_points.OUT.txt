@@ -1,0 +1,52 @@
+==============================================================================
+L2 — FINITE-ORDER CONNECTIONS AS PERIODIC-POINT COUNTS.  EXACT INTEGER ARITHMETIC.
+==============================================================================
+
+ROW 1 IS S1's OWN PUBLISHED CONNECTION.  W_F = -1, W_C = -i, so u = conj(W_F) = -1,
+v = W_C = -i, and (u,v) = (w^2, w^3) with w = exp(2 pi i/4).  Order 4.
+
+  S1 PUBLISHED (order 4)             q=  4  |det C| = 400                     pred 4.000000000000e-02
+                                            float64 PROD|Z_k| = 4.000000000000e-02   |diff| = 0.00e+00   lambda_q = -0.804718956217
+  order 4, v trivial                 q=  4  |det C| = 2320                    pred 2.320000000000e-01
+                                            float64 PROD|Z_k| = 2.320000000000e-01   |diff| = 2.78e-17   lambda_q = -0.365254476829
+  order 3 diagonal                   q=  3  |det C| = 280                     pred 2.800000000000e-01
+                                            float64 PROD|Z_k| = 2.800000000000e-01   |diff| = 1.67e-16   lambda_q = -0.424321891938
+  order 5                            q=  5  |det C| = 2050                    pred 2.050000000000e-02
+                                            float64 PROD|Z_k| = 2.050000000000e-02   |diff| = 3.47e-18   lambda_q = -0.777466078568
+  order 7                            q=  7  |det C| = 116770                  pred 1.167700000000e-02
+                                            float64 PROD|Z_k| = 1.167700000000e-02   |diff| = 1.73e-18   lambda_q = -0.635733454841
+  order 12                           q= 12  |det C| = 194042800               pred 1.940428000000e-04
+                                            float64 PROD|Z_k| = 1.940428000000e-04   |diff| = 8.13e-20   lambda_q = -0.712285983723
+  order 24                           q= 24  |det C| = 1828229943921920        pred 1.828229943922e-09
+                                            float64 PROD|Z_k| = 1.828229943922e-09   |diff| = 2.07e-24   lambda_q = -0.838329899247
+  order 40                           q= 40  |det C| = 459445793056082353372467200  pred 4.594457930561e-14
+                                            float64 PROD|Z_k| = 4.594457930561e-14   |diff| = 1.89e-29   lambda_q = -0.767783513062
+
+  EVERY |det C| ABOVE IS A NON-NEGATIVE INTEGER BY CONSTRUCTION (Bareiss over Z).
+  Worst float64 deviation of PROD|Z_k| from |det C|/D^q over 8 rows: 1.67e-16
+
+--------------------------------------------------------------------------------
+THE ONE ROW THAT MATTERS, SPELLED OUT.
+
+  S1 PUBLISHED (order 4) [repeat]    q=  4  |det C| = 400                     pred 4.000000000000e-02
+                                            float64 PROD|Z_k| = 4.000000000000e-02   |diff| = 0.00e+00   lambda_q = -0.804718956217
+  |det C| = 400,  D^q = 10^4 = 10000,  so PROD_{k=1}^{4}|Z_k| = 400/10000 = 1/25
+  and lambda_4 = (1/4) log(1/25) = -0.804718956217050
+  R1_08(B) (sealed, LANE_W08_M1_IDENTIFICATION_REFUTE_1) computes the same product in
+  exact Gaussian rationals and gets 1/25, i.e. -(1/2) log 5 = -0.804718956217050.
+  1/25 = True  ->  AGREE EXACTLY.
+
+  SO: at S1's published connection the corpus's product is 400/10^4, and 400 is the number of
+  Gamma-periodic components of the algebraic Z^2-action defined by f = 3u + 3v + 4uv, by
+  LSV Lemma 2.1.  The register's N1 sentence is right in KIND on the rational locus and wrong
+  in SCOPE: nothing is inherited when pi is irrational, and the constant -log D is not optional.
+
+  AND THE CAVEAT THAT MATTERS MORE.  This link exists only at FINITE-ORDER connections, which
+  are exactly the connections at which N1 IS FALSE (M1_08 T2(e): the order-4 value is
+  -(1/2) log 5 = -0.804719 against m(P) = -0.767508).  The entropy theory of algebraic
+  Z^d-actions attaches to the corpus's object precisely where the corpus's headline identity
+  does not hold.  Where the identity holds — generic (u,v) — there is no finite subgroup, no
+  periodic-point count, and no algebraic Z^2-action in play at all: only Weyl plus a
+  Diophantine hypothesis.
+
+DONE L2

@@ -1,0 +1,152 @@
+================================================================================================
+r3  WHAT LANE Z's CORPUS ROWS ACTUALLY SAY, AND WHICH WAY ITS HEADLINE POINTS
+================================================================================================
+numpy 2.0.2 
+
+------------------------------------------------------------------------------------------------
+(a) DEFECT 1 -- B0b's MULTISET IS MISQUOTED FROM S4:575, AND THE MISQUOTE FACTORS
+    THE POLYNOMIAL THAT S4 AND W-10 N-3 BOTH CERTIFY AS NON-FACTORING.
+
+    S4_THE_MEASUREMENT_V001.md:575 row B0b reads   {00:4, 01:1, 10:2, 11:2}
+      -> pi = (p00,p10,p01,p11) = (4/9, 2/9, 1/9, 2/9)
+    LANE_W13_Z_ZEROSET/z0_lib.py NAMED entry reads {00:4,10:2,01:2,11:1}
+      -> pi = (4/9, 2/9, 2/9, 1/9)        <- p01 and p11 TRANSPOSED
+
+    S4:575 as written  pi = ('4/9', '2/9', '1/9', '2/9')   p00*p11 = 8/81   p10*p01 = 2/81   FACTORS: False
+    LANE Z as coded    pi = ('4/9', '2/9', '2/9', '1/9')   p00*p11 = 4/81   p10*p01 = 4/81   FACTORS: True
+
+    W-10 defect N-3, REGISTER_V001.md (W-10 row), verbatim: "The non-factoring half is
+    exact (p00*p11 = 8/81 != 2/81 = p10*p01)".  That arithmetic is TRUE of S4's state
+    and FALSE of lane Z's, whose two cross-products are BOTH 4/81.  Lane Z's z3(e)
+    quotes N-3 as "the counterexample the corpus already owns" while running a state
+    for which N-3's own certificate of non-factoring fails.
+
+    LANE Z's STATE FACTORS EXPLICITLY:  9*P = 4 + 2x + 2y + xy = (2+x)(2+y).
+      max | 4+2x+2y+xy - (2+x)(2+y) | over a 997x991 torus grid = 3.553e-15
+
+    WHY IT SURVIVED: the transposition is WITHIN the pair {p01,p11}, and the Jensen
+    branch |B(t)|^2 = p01^2+p11^2+2 p01 p11 cos t is SYMMETRIC in that pair.  So
+    |A|, |B|, min|P|, m(P) and the stratum are IDENTICAL for the two states, and every
+    figure lane Z computes from B0b is unaffected.  Checked, not asserted:
+      max | |A|_S4 - |A|_laneZ | = 0.000e+00
+      max | |B|_S4 - |B|_laneZ | = 1.110e-16
+      min_T^2 |P| : S4 0.111111111111   lane Z 0.111111111111   (both 1/9 = 0.111111111111)
+      m(P)        : S4 -0.810930216216   lane Z -0.810930216216   log(4/9) = -0.810930216216
+      stratum     : S4 EMPTY   lane Z EMPTY
+
+    SO THE FINDING SURVIVES AND THE CLAIM DOES NOT.  Z-6's existential witness is still a
+    witness (the multiset is the same, so max p_a = 4/9 <= 1/2 and the zero set is still
+    empty), and Z-14's stratum for B0b is still EMPTY.  What falls is Z-14's own header --
+    "THE GEOMETRIC TYPE OF EVERY CARRIER ROW OF S4:575" -- because one of the ten rows is not
+    the row S4 wrote; and what falls with it is the implicit claim that a Z_k SEQUENCE
+    computed from that entry (z4(b) and the EMPTY row of z4(c)) is B0b's.  IT IS NOT: the two
+    states have identical Jensen branches but DIFFERENT Z_k, because Z_k depends on (u^k,v^k)
+    separately and not only on the pair-symmetric moduli.  Lane Z's only EMPTY-stratum
+    convergence exhibit therefore runs on a polynomial that splits into two independent
+    one-variable factors -- the easiest possible case, and not the corpus's own.
+
+    max | |P|_S4(x,y) - |P|_laneZ(x,y) | over 20000 random torus points = 0.222207
+      (0 would mean the two states are the same function; they are not)
+
+------------------------------------------------------------------------------------------------
+(b) DEFECT 2 -- THEOREM Z4 AND THE CLOSED FORM cos s0 = -2/3 REST ON A LABELLING
+    S4 DOES NOT FIX.  S4:566 defines SENSE C as "(0.4,0.3,0.3) for 3 classes" and
+    says nothing about WHICH class carries the 0.4.  There are three assignments.
+    The MULTISET quantities are the same in all three, exactly as W-03/N2 requires.
+    THE ZERO LOCATION IS NOT, AND THEOREM Z4's HYPOTHESIS p10 = p01 HOLDS IN ONLY TWO
+    OF THE THREE.
+
+    assignment (p00,p10,p01,p11)         stratum    cos s0           m(P)                      x0*y0  ANTI-DIAG?
+    0.4 on p11  <- lane Z / the brief    TWO          -2/3 -0.767507880358  +1.000000000+0.000000000i        True
+    0.4 on p01                           TWO          -2/3 -0.767507880358  +0.814814815+0.579721327i       False
+    0.4 on p10                           TWO          -1/9 -0.767507880358  +0.814814815-0.579721327i       False
+
+    ==> stratum and m(P) are identical in all three (multiset invariance, as N2 says), so
+    lane Z's Z-1/Z-4/Z-8 verdicts are labelling-independent and stand.  BUT Z-2's headline
+    closed form and Z-10 (THEOREM Z4, "no connection satisfying H2 ever lands exactly on a
+    zero") are stated as facts about "K1's REGISTERED pi", and they are facts about ONE OF
+    THREE READINGS OF S4's SENSE C.  Under the third reading x0 y0 != 1, the two zeros are
+    NOT on the anti-diagonal subtorus, and the exact-hit obstruction Theorem Z4 asserts does
+    not exist.  THE OPERATIVE VARIABLE FOR Z-10 IS p10 = p01, NOT "K1's REGISTERED pi", AND
+    LANE Z NAMES IT CORRECTLY IN THE THEOREM'S BODY ("indeed whenever p10 = p01") AND
+    INCORRECTLY IN ITS HEADLINE AND IN FINDING Z-10's CLAIM FIELD.
+
+------------------------------------------------------------------------------------------------
+(c) DEFECT 3 -- THE HEADLINE'S SIGN.  Lane Z's headline calls the EMPTY 3/4 "THE
+    DECISIVE STRUCTURAL FACT" because there H2 settles N1 and m(P) is an elementary
+    logarithm.  BOTH HALVES ARE TRUE AND TOGETHER THEY SAY THE OPPOSITE.
+
+    On the EMPTY stratum m(P) = log(p_max): N1's content there is 'the rate is the log
+    of the largest class weight', and NO MAHLER MEASURE IS INVOLVED.  The 2-variable Mahler
+    measure -- the object N1 is FOR, the thing that "inherits the entropy theory of algebraic
+    Z^d-actions wholesale" -- is only non-elementary on the crossing quarter.  So:
+
+        THE 3/4 WHERE LANE Z SETTLES THE CONVERGENCE IS EXACTLY THE 3/4 WHERE N1 HAS NO
+        MAHLER-MEASURE CONTENT, AND THE 1/4 WHERE N1 HAS CONTENT IS EXACTLY THE 1/4 LANE Z
+        LEAVES OPEN.  The two facts are the same fact with opposite signs.
+
+    AND THIS IS NOT NEW.  LANE_W08_M3_ZEROSET/m3_2_fourclass.OUT.txt (d), sealed 2026-08-16,
+    the lane Z itself convicts the register of not reading, says it in one line:
+
+      "(so the Mahler measure is a LOGARITHM OF A WEIGHT off the firing region, and only
+       inside it does the dilogarithm/Cassaigne-Maillot regime begin.  The firing region is
+       exactly where the analytically interesting rate lives.)"
+
+    LANE Z CITES THAT EXACT BLOCK (Z-7's evidence field cites "M3-2(d)") AND INVERTS ITS SIGN.
+    Z-13 is lane Z's own finding that this program fails by UNDER-READING.  Z-7 and the
+    headline are that failure, one directory later, in the lane that found it.
+
+    AND THE IMPORT IS MISSING TOO.  The three-class half of lane Z's THEOREM Z2 -- 'no
+    crossing => m = log max' -- is the elementary branch of CASSAIGNE-MAILLOT (1997), which
+    this corpus cites EIGHTEEN TIMES (REGISTER_V001.md:313 counts them) and which S4:590-597
+    uses for five of its own nine carrier rates.  `grep -ril 'cassaigne\|maillot\|dilog'`
+    over LANE_W13_Z_ZEROSET returns NOTHING.  Z-7 presents the statement as one 'nobody
+    generalised'; what nobody did was cite the 1997 theorem that is half of it.
+
+    CHECKED: is m(P) the log of a weight on the crossing quarter?  If it ever were,
+    the inversion above would be wrong.  200 random TWO-stratum states:
+      200 TWO-stratum states: SMALLEST |m(P) - log(any weight)| = 9.418552e-05
+      (on the EMPTY stratum the same quantity is 0 to 2.2e-16 -- M3-2(d), 3029 states)
+      ==> on the crossing quarter m(P) is NEVER the log of a class weight.
+
+------------------------------------------------------------------------------------------------
+(d) AND THE MEASURE THE 3/4 IS TAKEN IN.  Lane Z's 3/4 is LEBESGUE measure on the
+    simplex.  The corpus has no measure on ready states -- W-14 says every ready state
+    in the corpus was CHOSEN, with ONE exception, SENSE U, where pi is fixed by the
+    carrier's own class sizes and is 'the one state rule that is not a stipulation'.
+    SO THE ONLY NON-STIPULATED SAMPLE THE CORPUS HAS IS S4:575's CARRIER COLUMN.
+    HERE IS ITS STRATUM CENSUS -- computed from S4's rows AS WRITTEN, not from lane Z's
+    transcription.
+
+    carrier row (S4:575, verbatim)                   pi (p00,p10,p01,p11)           stratum  
+    B0a ring torus, disjoint   {00:2, 01:3, 10:4}    ('2/9', '4/9', '1/3', '0')     TWO      
+    B0b ring torus, meeting    {00:4, 01:1, 10:2, 11:2} ('4/9', '2/9', '1/9', '2/9')   EMPTY    
+    B3  horn torus             {01:2, 10:2, 11:1}    ('0', '2/5', '2/5', '1/5')     TWO      
+    B1  K1                     {01:2, 10:2, 11:1}    ('0', '2/5', '2/5', '1/5')     TWO      
+    B4  spindle                {00:1, 01:1, 10:1, 11:3} ('1/6', '1/6', '1/6', '1/2')   EMPTY    
+    B2  K1 both filled         {01:2, 10:2, 11:1}    ('0', '2/5', '2/5', '1/5')     TWO      
+    B1p K1-bridged             {01:3, 10:3}          ('0', '1/2', '1/2', '0')       CURVE    
+    B1q K1-bridged + spectator {00:1, 01:3, 10:3}    ('1/7', '3/7', '3/7', '0')     TWO      
+    B1s K1 subdivided          {01:5, 10:5, 11:1}    ('0', '5/11', '5/11', '1/11')  TWO      
+    SENSE C, three classes  = N1 AS REGISTERED       ('0', '3/10', '3/10', '2/5')   TWO      
+    SENSE C, four classes   (S4:597)                 ('1/4', '1/4', '1/4', '1/4')   CURVE    
+    S1 sec6 published ready state (M1_08 T1)         ('0', '0', '1/2', '1/2')       CURVE    
+
+    CENSUS over the corpus's own 12 published (carrier, state) rows: {'TWO': 7, 'EMPTY': 2, 'CURVE': 3}
+    SINGULAR (zero set non-empty): 10 of 12 = 0.833
+    DEDUPED (B1 = B2 = B3 are one state): 8 of 10 DISTINCT states = 0.800   -- reported both ways so the count cannot be read as inflated
+    LANE Z's LEBESGUE FIGURE:      EMPTY on 3/4 = 0.750 of the simplex
+
+    ==> THE CORPUS'S OWN SAMPLE POINTS THE OTHER WAY, BY A FACTOR OF THREE.  Lane Z's Z-9
+    ("on 3/4 of all FORMING states there is no singularity at all... the corpus does not live
+    in the hard regime by necessity; it lives there at its two registered states") is true of
+    Lebesgue measure and false of every state the corpus has ever computed with but two.
+    THIS IS NOT A CORRECTION TO THE ARITHMETIC -- the 1/4 and 3/4 are exact and this refuter
+    re-derived them -- IT IS A CORRECTION TO WHAT THEY WEIGH.  A measure nobody adopted is
+    doing the work in the headline.
+    AND A SECOND, SMALLER SCOPE SLIP IN THE SAME FINDING: Z-9 says m(P) = 0 "except at the
+    three corners max p_a = 1".  On the FOUR-class simplex, where the 1/4 and 3/4 live, there
+    are FOUR such corners.  Three is M1_08 T4's count and M1_08 T4 is K1-scoped (p00 = 0).
+    Z-9 mixes a three-class corner count with a four-class volume.
+
+DONE r3

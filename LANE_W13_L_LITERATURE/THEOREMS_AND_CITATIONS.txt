@@ -1,0 +1,597 @@
+LANE W-13 / L — WHAT THEOREM ACTUALLY LICENSES N1.
+Every statement below that is attributed to a source was READ AT THE SOURCE and is quoted.
+Where a source could not be reached, that is said in the line, not hidden in a footnote.
+
+================================================================================
+0.  THE ANSWER, BEFORE THE EVIDENCE
+================================================================================
+
+NO PUBLISHED THEOREM LICENSES N1 AS REGISTERED.  Two theorems license restrictions of it, and
+the corpus's own published generic connection falls in neither.
+
+  (L-a)  AT EVERY ALGEBRAIC CONNECTION, N1 IS LICENSED, by BAKER'S THEOREM on linear forms in
+         the logarithms of algebraic numbers — used exactly as Lind-Schmidt-Verbitskiy use
+         Gelfond's Theorem III in the structurally identical periodic-point problem.
+  (L-b)  AT LEBESGUE-ALMOST EVERY CONNECTION, N1 is licensed by a Borel-Cantelli argument
+         (inhomogeneous metric Diophantine approximation).  "Almost every" is not "every", and
+         the failure set is a dense G_delta containing the corpus's own counterexample.
+  (L-c)  AT  f = 1.0, c = sqrt(2)  — W-10 N-4: "the ONLY generic connection the corpus
+         publishes", and the connection S4 used to verify its entire lambda column — u and v
+         are TRANSCENDENTAL by Lindemann-Weierstrass.  NEITHER (L-a) NOR ANY OTHER EFFECTIVE
+         RESULT APPLIES.  N1 at that point is covered only by (L-b), i.e. by a measure
+         statement about other connections, not by anything about that one.
+
+AND THE AUTHORITY SAYS THE HARD PART IS HARD, IN SO MANY WORDS.  Lind-Schmidt-Verbitskiy, on
+their own limit (1.3), which is the same shape as N1:
+
+    "It is not known whether (1.3) holds for all cyclic actions.  Even when d = 1 the
+     existence of this limit involves some deep results in number theory."
+
+W-08's M1 REFUTER IS CONFIRMED ON ITS CENTRAL CLAIM AND CORRECTED ON ONE WORD.  Boyd-Lawton
+cannot license N1 — confirmed at the source, in the source's own words.  But "Lawton 1983" is
+not one theorem; it is two, and the SECOND one is an ingredient of the licence.  The corpus
+should cite Lawton twice, for two different results.  COUNTED, NOT ASSERTED: "Lawton" occurs 11
+times across the sealed .md artifacts (REGISTER 3, W10_SCOPE_TABLE 3, W08_THE_RACE 4, HANDOFF 1)
+and NOT ONCE WITH A STATEMENT OF EITHER THEOREM, and never distinguishing the two.
+
+================================================================================
+1.  WHAT LAWTON 1983 ACTUALLY SAYS.  BOTH THEOREMS.
+================================================================================
+
+W. M. Lawton, "A problem of Boyd concerning geometric means of polynomials",
+J. Number Theory 16 (1983), no. 3, 356-362.  doi:10.1016/0022-314X(83)90063-X.
+
+  CUSTODY NOTE, RECORDED NOT PATCHED: the paper itself is behind ScienceDirect and this lane
+  DID NOT READ IT.  Both statements below are quoted from sources this lane DID read at the
+  bytes.  Treat them as second-hand and mark them so in the note's bibliography.
+
+--- 1.1  THE BOYD-LAWTON THEOREM (the one the corpus means, and the one that does NOT license N1)
+
+Quoted from the introduction of "General Boyd-Lawton Theorems with Multivariable Limits"
+(arXiv:2508.05910), read 2026-08-17:
+
+    "m_n(P) = lim_{mu(r) -> infinity} m_1(P^(r))"
+    "mu(r) = min{ ||v||_inf : v in Z^n, v != 0, and v . r = 0 }"
+
+  with P^(r)(Z) = P(Z^{r_1},...,Z^{r_n}) and P a nonzero Laurent polynomial in
+  C[Z_1^{+-1},...,Z_n^{+-1}], n >= 2.  NOTE THE COEFFICIENT FIELD: C, NOT Z.  Boyd (1981)
+  conjectured it; Lawton (1983) proved it.
+  mu(r) is the corpus's q(r) of R1_08 A2 (sealed) under a different name.
+
+  THE OBJECT IT IS ABOUT.  P^(r) is the restriction of P to the ONE-PARAMETER SUBGROUP
+  q_r : T -> T^n, z |-> (z^{r_1},...,z^{r_n}).  m_1(P^(r)) is the HAAR AVERAGE of log|P| over
+  that CONNECTED subgroup — an integral, not a sum.  Boyd-Lawton says these integrals converge
+  to the integral over T^n as the subgroups equidistribute.
+
+  WHY THAT IS NOT N1.  N1's lambda is  lim (1/N) SUM_{k<=N} log|P(u^k,v^k)| — a DISCRETE
+  Birkhoff sum along a SINGLE Z-orbit.  The orbit is dense in its closure but is not a
+  subgroup, carries no Haar measure, and gives no dominated-convergence control on a
+  log-singular integrand.
+
+  AND THE AUTHORITY DRAWS EXACTLY THIS DISTINCTION, UNPROMPTED.  Lind-Schmidt-Verbitskiy,
+  "Entropy and Growth Rate of Periodic Points of Algebraic Z^d-actions", Sec. 9, read at the
+  bytes:
+
+    "We remark that if we replace averages of log|f| over the finite subgroups Omega_Gamma by
+     averages over a sequence {K_n} of COMPACT CONNECTED SUBGROUPS in S^d that become
+     uniformly distributed, then a result of Lawton [5] shows that for every nonzero f in R_d
+     we do have convergence,
+         INT_{K_n} log|f| dlambda_{K_n} -> INT_{S^d} log|f| dlambda_{S^d}  as n -> infinity,
+     AND SO THE DIOPHANTINE ISSUES DISAPPEAR."          (emphasis added; [5] is Lawton 1983)
+
+  >>> THE DIOPHANTINE ISSUES DISAPPEAR *BECAUSE* THE SUBGROUPS ARE CONNECTED.  N1's are not.
+  >>> M1_08 T2(d) AND THE M1 REFUTER ARE CORRECT, AND ARE NOW CORRECT ON THE RECORD OF THE
+  >>> FIELD RATHER THAN ON THIS PROGRAM'S OWN REASONING.
+
+  WHERE BOYD-LAWTON *IS* THE RIGHT CITATION FOR THIS CORPUS, unchanged from M1_07 (sealed):
+  the exceptional locus.  On a rank-1 relation u^m v^n = 1 the orbit closure IS a connected
+  circle subgroup, the limit IS a one-variable Mahler measure, and Boyd-Lawton is exactly the
+  statement that those values accumulate on m(P) as mu(r) -> infinity.  M1_07's 16-row table is
+  that theorem in action and nothing in it is disturbed.
+  CORRECTION CARRIED, NOT REPEATED: the accumulation's headline figure is NOT 4.716e-09.
+  W08_THE_RACE_V001.md:371-379 struck it — "the true value is ~+4.24e-08, NINE TIMES LARGER",
+  because M1_07's np.roots branch caps at degree 1200 and that row alone fell through to a
+  2^23-point quadrature sitting on an accidental zero-crossing; converged values at 2^26 and
+  2^27 both give +4.2432e-08 and an independent degree-4181 np.roots run gives +4.2491e-08.
+  THIS LANE QUOTED THE STRUCK FIGURE IN ITS FIRST DRAFT AND CAUGHT IT ONLY BY GREPPING THE
+  CORPUS FOR ITS OWN CITATIONS OF LAWTON.  Recorded as defect D-9, not silently fixed.
+
+--- 1.2  LAWTON'S OTHER THEOREM — THE SMALL-VALUE BOUND.  THIS ONE *IS* PART OF THE LICENCE.
+
+Quoted VERBATIM from E. Dobrowolski, "A Note on Lawton's Theorem", Canad. Math. Bull. 60 (3)
+(2017) 484-489, Section 1, where it is recalled as "Theorem 1 of Lawton's seminal paper".
+This lane read that PDF at the bytes.
+
+    "Let P(x) in C[x] be a monic polynomial and let k be the number of nonzero coefficients
+     of P.  Then if k >= 2, there is a positive constant C_k that depends only on k such that
+         mu{ x in [0,1) : |P(e^{2 pi i x})| < v } <= C_k v^{1/(k-1)}
+     for every real v > 0."
+
+  C[x].  COMPLEX COEFFICIENTS.  So it applies to this corpus's P on the WHOLE simplex,
+  including the irrational ready states R1_08 A3 (sealed) correctly flagged as outside the
+  integer-coefficient reading of Boyd-Lawton.  THAT GAP IS CLOSED HERE.
+
+  Dobrowolski 2017 removes monicity (Thm 1.1, C_k = (k-1)(12 sqrt2/pi)^{(k-2)/(k-1)}) and
+  supplies the SEVERAL-VARIABLE version this corpus needs (Thm 1.4, verbatim):
+
+    "Let P(z_l) be a polynomial with complex coefficients.  If P has at least two monomials,
+     then
+        mu_l{ z in T^l : |P(z)| <= v } <= C(k_1,...,k_l) (v/h)^{1/(sum_{i=1}^{l}(k_i - 1))},
+     where C(k_1,...,k_l) = C_{k_1} + ... + C_{k_l}"
+
+  h = max modulus of the coefficients; k_i = number of terms of P read as a polynomial in z_i
+  over the remaining variables.
+
+  SPECIALISED TO N1's OWN POLYNOMIAL, computed here: P = p00 + p10 x + p01 y + p11 xy has
+  k_1 = k_2 = 2, so sum(k_i - 1) = 2 and C = C_2 + C_2 = 2, giving for EVERY pi
+
+        mu_2{ (x,y) in T^2 : |P| <= v }  <=  2 (v / max(pi))^{1/2}.            (*)
+
+  (*) is checked in L4 on five ready states x four values of v: HOLDS on 20 of 20, worst
+  (measured - bound) = -2.24e-02.  Measured true exponents: s ~ 2 at isolated simple zeros
+  (K1's registered pi: 2.11), s ~ 1 on the zero-CIRCLE loci (S1's published ready state:
+  0.94; four-class uniform: 0.88), mu = 0 identically when max(pi) > 1/2.
+  (*) is not sharp.  ITS VALUE IS THAT ITS CONSTANT DOES NOT DEPEND ON pi, which is what a
+  shell argument needs, because P's zero structure degenerates on three loci and a
+  pi-dependent constant would not survive the limit.
+
+================================================================================
+2.  THE THEOREM THAT LICENSES N1.  ASSEMBLED, WITH EVERY PIECE CITED.
+================================================================================
+
+--- 2.1  THE STRUCTURALLY IDENTICAL PROBLEM IN THE LITERATURE
+
+D. Lind, K. Schmidt, E. Verbitskiy, "Entropy and Growth Rate of Periodic Points of Algebraic
+Z^d-actions" (in: Dynamical Numbers, Contemp. Math.; arXiv:0912.5169), read at the bytes.
+
+  Their Lemma 2.1:   "P_Gamma(alpha) = PROD_{omega in Omega_Gamma \ U(f)} |f(omega)|."
+  Their Remark 2.2:  "Suppose that alpha_{R_d/<f>} is expansive, so that U(f) = empty.  Then f
+     does not vanish on S^d, so log|f| is continuous there. ... is a Riemann sum approximation
+     to m(f), and so converges to m(f) = h(alpha) as <Gamma> -> infinity."
+  And then, exactly our problem:
+     "When U(f) != empty there are two issues to deal with.  The vanishing of f at some points
+      of Omega_Gamma creates connected components, so we count those.  MORE DIFFICULT ARE
+      VARIOUS DIOPHANTINE PROBLEMS CONCERNING POINTS OF U(f) COMING ABNORMALLY CLOSE TO
+      Omega_Gamma."
+
+  >>> U(f) = the unitary variety = the zero set of f on the torus.  U(f) != empty is EXACTLY
+  >>> W-01's firing case (max(pi) <= 1/2).  The register's own observation — "the singular
+  >>> case IS the formation case" — is the non-expansive case of algebraic Z^d-dynamics, and
+  >>> the field's word for the difficulty is the same word: DIOPHANTINE.
+
+--- 2.2  THE DIOPHANTINE INPUT THE FIELD USES
+
+GELFOND, quoted verbatim from LSV Theorem 9.1 (their [4] = A. O. Gelfond, "Transcendental and
+Algebraic Numbers", Dover 1960, Thm III):
+
+    "Suppose that xi = (xi_1,...,xi_d) has algebraic coordinates that are multiplicatively
+     independent.  Then for every epsilon > 0 there are only finitely many n in Z^d for which
+     |xi^n - 1| < e^{-epsilon ||n||}, where ||n|| = max{|n_1|,...,|n_d|}."
+
+LSV then say how they use it:
+
+    "Now log|f| has only finitely many logarithmic singularities, and by Proposition 4.2 these
+     all have ALGEBRAIC COORDINATES.  We can therefore use Gelfond's result to control the few
+     potentially large negative values of log_0|f| for omega in Omega_Gamma near one of these
+     singularities, to show that the Riemann sums in (9.1) will converge to the limit
+     m(f) = h(alpha_{R_d/<f>})."
+  And the limitation, which is also ours:
+    "To make a similar argument work when U(f) is infinite, we would need an estimate of the
+     form dist(U(f), omega) >= e^{-epsilon o(omega)} ... SUCH ESTIMATES, HOWEVER, DO NOT APPEAR
+     TO BE AVAILABLE."
+
+BAKER, the stronger (polynomial) form, which is what a SINGLE ORBIT needs where LSV's
+finite-subgroup Riemann sums can get by with Gelfond's exponential form.
+A. Baker, "Linear forms in the logarithms of algebraic numbers I-IV", Mathematika 13-15
+(1966-1968); effective version A. Baker and G. Wustholz, "Logarithmic forms and group
+varieties", J. reine angew. Math. 442 (1993) 19-62.  Statement as given on the Wikipedia
+article "Baker's theorem", read 2026-08-17 (SECOND-HAND; the papers were not read):
+
+    Baker 1966-67:  if lambda_1,...,lambda_n are logarithms of algebraic numbers, linearly
+    independent over Q, then for algebraic beta_0,...,beta_n not all zero,
+        |beta_0 + beta_1 lambda_1 + ... + beta_n lambda_n| > H^{-C},
+    H the maximum height of the beta_i, C effectively computable.
+    Baker-Wustholz 1993:  either Lambda = 0, or
+        log|Lambda| > -C h(alpha_1)...h(alpha_n) log(max{|beta_1|,...,|beta_n|}),
+        C = 18(n+1)! n^{n+1} (32 d)^{n+2} log(2 n d).
+
+  THE POINT: Baker's bound is POLYNOMIAL in the coefficient size (H^{-C}), Gelfond's is
+  EXPONENTIAL (e^{-eps||n||}).  A single Z-orbit visits ~N points in T^2 while the deepest
+  admissible dip is at k ~ N, so an exponential bound leaves a residue of size ~eps N per
+  visit and does not close; a polynomial bound leaves ~C log N and does.  THIS IS WHY THE
+  LICENCE FOR N1 IS BAKER AND NOT GELFOND, EVEN THOUGH THE FIELD'S NEAREST WRITTEN ARGUMENT
+  USES GELFOND.
+
+--- 2.3  THEOREM L.  THE LICENCE, STATED.
+
+  THEOREM L.  Let pi = (p00,p10,p01,p11) be a probability vector with ALGEBRAIC entries and
+  P = p00 + p10 x + p01 y + p11 xy.  Let u, v be ALGEBRAIC numbers of modulus 1 that are
+  MULTIPLICATIVELY INDEPENDENT.  Assume the zero set Z(P) subset T^2 is finite and that
+  (u^k, v^k) not in Z(P) for every k >= 1.  Then
+        lim_{N -> infinity} (1/N) SUM_{k<=N} log|P(u^k, v^k)|  =  m(P).
+
+  INGREDIENTS, EACH A PUBLISHED THEOREM:
+   (i)   Z(P) HAS ALGEBRAIC COORDINATES.  Proved in L1 of this lane, elementarily and exactly:
+         on T^2, P = 0 forces cos(arg x) = (p01^2+p11^2-p00^2-p10^2)/(2(p00 p10 - p01 p11)),
+         a RATIONAL FUNCTION OF pi.  (This is the analogue of LSV's Proposition 4.2, which
+         they get free from integer coefficients and we do not.)
+   (ii)  WEYL/KRONECKER on the continuous truncation max(log|P|, log eps) — free, no
+         Diophantine input.  Already in M1_08 T2(a) (sealed), verified there to 1.3e-07.
+   (iii) BAKER-WUSTHOLZ on the HOMOGENEOUS form gives |u^m v^n - 1| >> max(|m|,|n|)^{-C},
+         hence by ERDOS-TURAN-KOKSMA the discrepancy D_N = O(N^{-delta}) for some delta > 0.
+   (iv)  BAKER-WUSTHOLZ on the INHOMOGENEOUS form relative to each of the finitely many
+         algebraic zeros gives dist((u^k,v^k), Z(P)) >> k^{-C'}.
+   (v)   LAWTON 1983 Thm 1 / DOBROWOLSKI 2017 Thm 1.4 give the shell measure UNIFORMLY IN pi:
+         mu_2{|P| <= w} <= 2 (w/max(pi))^{1/2}.
+
+  ASSEMBLY (dyadic shells; structurally M1_08 T2(c)'s sketch with (v) replacing its local
+  expansion).  Write log|P| = f_delta + g_delta, f_delta = max(log|P|, log delta) continuous,
+  g_delta <= 0 supported on {|P| < delta}.  (ii) handles f_delta.  For g_delta, shell
+  j has |P| in [2^{-j-1}delta, 2^{-j}delta] and contributes at most (j+1)log2 per point;
+  the number of points is at most N(mu_2 + 4 D_N) <= N(2(2^{-j}delta/h)^{1/2} + 4 D_N) by (v);
+  and (iv) truncates at j_max = O(log N).  Summing,
+        (1/N) SUM |g_delta|  <=  C_5 (delta/h)^{1/2} + C_7 N^{-delta'} (log N)^2,
+  which -> C_5 (delta/h)^{1/2} as N -> infinity, and -> 0 as delta -> 0.  []
+
+  STATUS, STATED HONESTLY.  (i) is proved here.  (ii)-(v) are published theorems, quoted.
+  THE ASSEMBLY IS A PROOF SKETCH, NOT A WRITTEN PROOF, and this lane marks it EXHIBITED, not
+  PROVED.  It is not new mathematics; it is the standard argument, and the reason to write it
+  down is that N1 as registered carries none of it.
+
+  NOTE WHAT THEOREM L RECOVERS.  Its hypotheses (iii) and (iv) ARE M1_08 T2(c)'s conditions
+  (i) and (ii) — the sealed lane got the conditions right and had no theorem supplying them.
+  BAKER SUPPLIES BOTH AT ONCE.  That is the whole of this lane's positive contribution to (2).
+
+--- 2.4  THE ALMOST-EVERYWHERE LICENCE, AND WHY IT IS WEAKER THAN IT SOUNDS
+
+  For a FIXED target z in T^2 and psi(k) = k^{-1/2-eps}, SUM_k psi(k)^2 < infinity, so by
+  Borel-Cantelli, for Lebesgue-a.e. (alpha,beta) only finitely many k satisfy
+  ||k alpha - z_1|| < psi(k) AND ||k beta - z_2|| < psi(k).  That is hypothesis (iv) with
+  C' = 1/2 + eps, and the homogeneous half is Khintchine/Groshev.  So N1 holds for a.e.
+  connection.  Standard references: V. G. Sprindzuk, "Metric Theory of Diophantine
+  Approximations" (1979); Beresnevich-Bernik-Dodson-Velani, "Classical metric Diophantine
+  approximation revisited" (2009).  NEITHER WAS READ BY THIS LANE; the argument above is
+  elementary and self-contained and is the citation-free route.
+
+  WHY IT DOES NOT SETTLE THE CORPUS'S CASE.  W-12 COROLLARY 2 established that H2 has no
+  structural failure mode — it is "purely arithmetic", never violable by carrier or
+  designation.  THE SAME IS TRUE OF THE DIOPHANTINE HYPOTHESIS, AND WITH THE SAME CONSEQUENCE
+  READ THE OTHER WAY: because nothing structural constrains (W_F,W_C) — W-12's Corollary 1,
+  the map pushes Haar to Haar on every carrier — THE CONNECTION IS A FREE POINT OF T^2 AND
+  NOTHING IN THE CONSTRUCTION SELECTS A GOOD ONE.  A measure-one statement is the right
+  statement about a randomly drawn connection.  It is not a statement about the connection a
+  physical setup hands you, and it is not a statement about f = 1.0, c = sqrt(2).
+
+--- 2.5  WHAT IS *NOT* AVAILABLE, STATED PLAINLY
+
+  * NO effective Diophantine result covers u = e^{-i}, v = e^{i sqrt2}.  Both are
+    TRANSCENDENTAL (Lindemann-Weierstrass: e^a is transcendental for algebraic a != 0).
+    Baker requires algebraic arguments.  Gelfond requires algebraic coordinates.
+  * NO theorem covers the case Z(P) infinite (the three zero-CIRCLE loci of M1_02, one of
+    which is S1's own published ready state).  LSV say so about their own analogue in
+    the words quoted in 2.2.
+  * NO theorem gives an unconditional a.e.-INDEPENDENT statement, and none can: M1_06's
+    Liouville counterexample (sealed) is a proof that the unconditional statement is FALSE.
+
+================================================================================
+3.  IS N1 NEW?  --  THE FORMULA IS NOT.  THE SETTING IS UNSEARCHED, WHICH IS NOT THE SAME.
+================================================================================
+
+W-04's ledger — "the corpus imports its mathematics by name and reinvents its physics
+anonymously" — cuts here in the OTHER direction, and it cuts harder.
+
+--- 3.1  "MAHLER MEASURE IS A PHYSICAL RATE" IS A POPULATED FIELD, NOT A NEW IDENTIFICATION
+
+  * DIMERS.  R. Kenyon, A. Okounkov, S. Sheffield, "Dimers and amoebae", Ann. of Math. 163
+    (2006) 1019-1056: the free energy per fundamental domain of a dimer model IS the
+    logarithmic Mahler measure of the model's characteristic polynomial P(z,w).
+  * SPANNING TREES.  R. Lyons, "Asymptotic enumeration of spanning trees", Combin. Probab.
+    Comput. 14 (2005) 491-522: the spanning-tree entropy of a Z^d-periodic graph is a
+    logarithmic Mahler measure.  (See also Guttmann-Rogers, "Spanning tree generating
+    functions and Mahler measures", arXiv:1207.2815.)
+  * ALGEBRAIC DYNAMICS.  D. Lind, K. Schmidt, T. Ward, "Mahler measure and entropy for
+    commuting automorphisms of compact groups", Invent. Math. 101 (1990) 593-629: the
+    topological and measure-theoretic entropy of the algebraic Z^d-action defined by
+    f in Z[u_1^{+-1},...,u_d^{+-1}] IS m(f).
+  * ISING.  G. M. Viswanathan, "Mahler measures, elliptic curves and L-functions for the free
+    energy of the Ising model" (arXiv:2407.19531, 2024): the square/triangular/honeycomb Ising
+    free energy written as a Mahler measure.
+  * The survey formulation found in that literature: "the logarithmic Mahler measure of certain
+    multivariate polynomials occurs frequently as the entropy or the free energy of solvable
+    lattice models, especially dimer models."
+
+  >>> "A DECAY RATE IS A LOG MAHLER MEASURE" IS THE NORMAL STATE OF AFFAIRS IN THIS CORNER OF
+  >>> MATHEMATICAL PHYSICS.  N1's identification is an INSTANCE of a well-known family, and
+  >>> the note must say so in its first paragraph or it will be read as unaware of the family.
+
+--- 3.2  AND THE OBJECT ITSELF HAS A STANDARD NAME THE CORPUS DOES NOT USE
+
+  Omega_N = PROD_{k<=N} P(u^k, v^k) is the transfer product of a ONE-DIMENSIONAL (GL(1,C))
+  QUASI-PERIODIC COCYCLE over the rotation of T^2 by (alpha,beta), and lambda is its LYAPUNOV
+  EXPONENT.  For a.e. STARTING PHASE the Lyapunov exponent is INT log|P| = m(P) by Birkhoff's
+  ergodic theorem; N1 evaluates it at ONE phase, the identity, so Birkhoff does not apply and
+  the entire content is the Diophantine question of Section 2.  The relevant literature:
+  M. R. Herman, "Une methode pour minorer les exposants de Lyapounov ...", Comment. Math. Helv.
+  58 (1983) 453-502 (subharmonicity, Jensen, and lower bounds of Mahler-measure type); and
+  A. Avila, "Global theory of one-frequency Schrodinger operators", Acta Math. 215 (2015)
+  1-54, whose "acceleration" is the slope structure of exactly this kind of complexified
+  Mahler measure.  THE CORPUS CITES NEITHER AND HAS NO OCCURRENCE OF "LYAPUNOV" ANYWHERE.
+
+--- 3.3  THE d = 1 SPECIAL CASE OF N1 IS A 65-YEAR-OLD NAMED PROBLEM
+
+  Take P = (1 + x)/2 (two classes, equal weights — the corpus's own S1 ready state up to
+  relabelling).  Then |P(u^k)| = |cos(pi k alpha)| and
+      SUM_{k<=N} log|Z_k| = log PROD_{k<=N} |2 sin(pi k alpha)| - N log 2 + O(1),
+  i.e. N1 in one variable IS THE SUDLER PRODUCT.  Literature:
+    C. Sudler, "An estimate for a restricted partition function", Quart. J. Math. 15 (1964);
+    P. Erdos, G. Szekeres, "On the product PROD (1 - z^{a_i})" (1959);
+    D. S. Lubinsky, "The size of (q;q)_n for q on the unit circle", J. Number Theory 76 (1999)
+      217-247 — growth is controlled for alpha with BOUNDED PARTIAL QUOTIENTS and liminf = 0
+      for alpha with unbounded partial quotients;
+    S. Grepstad, L. Neumuller, A. Zafeiropoulos, and C. Aistleitner, N. Technau,
+      A. Zafeiropoulos, "On the order of magnitude of Sudler products" (arXiv:2002.06602),
+      with a threshold at partial quotient a = 6/7 for quadratic irrationals.
+  >>> THE CORPUS'S OWN "IT DEPENDS ON THE DIOPHANTINE TYPE" IS THE CENTRAL FACT OF THAT
+  >>> LITERATURE AND WAS RE-DERIVED HERE FROM FIVE VERTICES.  THIS IS THE SAME EVENT AS
+  >>> W-04's BELL 1975 FINDING, ONE FLOOR OVER, AND IT IS THE THIRD TIME.
+
+--- 3.4  WHAT MIGHT ACTUALLY BE NEW — SCORED AS UNRESOLVED, LEANING NEGATIVE
+
+  Searches for "Mahler measure" jointly with Wilson loop / gauge theory / holonomy / decoherence
+  / branch overlap returned NO paper making N1's identification.  THAT IS WEAK EVIDENCE AND IS
+  SCORED AS SUCH: W-04 found Zurek 0, Hepp 0, Bell 0 in this corpus and then discovered it had
+  re-derived Bell's 1975 objection from scratch, and W-06 found the corrected bibliography was
+  WORSE, not better, on a second look.  A null literature search in this program has a bad
+  record.  The honest statement for the note:
+      "The identification of this particular branch-comparison rate with m(P) does not appear
+       in the literature we found.  The general phenomenon — a log Mahler measure as the
+       exponential rate of a lattice or dynamical quantity — is standard, and we make no
+       novelty claim about it."
+
+================================================================================
+4.  THE CITATION LIST FOR A SIX-TO-EIGHT PAGE NOTE
+================================================================================
+
+CORE — the note cannot be written without these.
+ [1] W. M. Lawton, A problem of Boyd concerning geometric means of polynomials,
+     J. Number Theory 16 (1983) 356-362.   [CITE TWICE: Boyd's conjecture, AND Theorem 1.]
+ [2] D. W. Boyd, Speculations concerning the range of Mahler's measure,
+     Canad. Math. Bull. 24 (1981) 453-469.
+ [3] E. Dobrowolski, A Note on Lawton's Theorem, Canad. Math. Bull. 60 (2017) 484-489.
+     [the several-variable small-value bound; this is the one that applies to P on T^2]
+ [4] D. Lind, K. Schmidt, T. Ward, Mahler measure and entropy for commuting automorphisms of
+     compact groups, Invent. Math. 101 (1990) 593-629.
+ [5] D. Lind, K. Schmidt, E. Verbitskiy, Entropy and growth rate of periodic points of
+     algebraic Z^d-actions, in: Dynamical Numbers, Contemp. Math. 532 (2010) 195-211.
+     [the non-expansive case; Lemma 2.1; Remark 2.2; Sec. 9 on the Diophantine issues]
+ [6] A. O. Gelfond, Transcendental and Algebraic Numbers, Dover, New York, 1960.  [Thm III]
+ [7] A. Baker, Linear forms in the logarithms of algebraic numbers I-IV,
+     Mathematika 13 (1966) 204-216; 14 (1967) 102-107, 220-228; 15 (1968) 204-216.
+ [8] A. Baker, G. Wustholz, Logarithmic forms and group varieties,
+     J. reine angew. Math. 442 (1993) 19-62.
+ [9] K. Schmidt, Dynamical Systems of Algebraic Origin, Birkhauser, 1995.
+[10] J. Cassaigne, V. Maillot, Hauteur des hypersurfaces et fonctions zeta d'Igusa,
+     J. Number Theory 83 (2000) 226-255.   [the closed form for m(a + bx + cy); S4 uses it 17
+     times and NO register row cites it]
+
+CONTEXT — needed so the note is not read as unaware of its own field.
+[11] R. Kenyon, A. Okounkov, S. Sheffield, Dimers and amoebae, Ann. of Math. 163 (2006)
+     1019-1056.
+[12] R. Lyons, Asymptotic enumeration of spanning trees, Combin. Probab. Comput. 14 (2005)
+     491-522.
+[13] G. Everest, T. Ward, Heights of Polynomials and Entropy in Algebraic Dynamics,
+     Springer Universitext, 1999.
+[14] D. Lind, Dynamical properties of quasihyperbolic toral automorphisms, Ergodic Theory
+     Dynam. Systems 2 (1982) 49-68.   [the d = 1 case; LSV's "deep results in number theory"]
+[15] F. Brunault, W. Zudilin, Many Variations of Mahler Measures: A Lasting Symphony,
+     Cambridge Univ. Press, 2020.  [the standard modern survey]
+
+THE ONE-VARIABLE SHADOW — cite if the note states the two-class case at all.
+[16] C. Sudler, An estimate for a restricted partition function, Quart. J. Math. 15 (1964).
+[17] P. Erdos, G. Szekeres, On the product PROD_{k=1}^{n} (1 - z^{a_k}), Publ. Inst. Math.
+     (Beograd) 13 (1959) 29-34.
+[18] D. S. Lubinsky, The size of (q;q)_n for q on the unit circle, J. Number Theory 76 (1999)
+     217-247.
+[19] C. Aistleitner, N. Technau, A. Zafeiropoulos, On the order of magnitude of Sudler
+     products, Amer. J. Math. / arXiv:2002.06602.
+[20] S. Grepstad, L. Neumuller, A. Zafeiropoulos, on Sudler products at quadratic irrationals.
+
+DISCREPANCY / METRIC THEORY — for hypothesis (iii) and for Section 2.4.
+[21] L. Kuipers, H. Niederreiter, Uniform Distribution of Sequences, Wiley, 1974.
+     [Weyl; Erdos-Turan-Koksma]
+[22] V. G. Sprindzuk, Metric Theory of Diophantine Approximations, Winston/Wiley, 1979.
+
+ALREADY CORRECTLY IN THE CORPUS — keep.
+[23] J. G. Wendel, A problem in geometric probability, Math. Scand. 11 (1962) 109-111.
+     [W-09's exact 1/4; correctly used]
+
+OPTIONAL, only if the note frames lambda as a Lyapunov exponent.
+[24] M. R. Herman, Une methode pour minorer les exposants de Lyapounov ...,
+     Comment. Math. Helv. 58 (1983) 453-502.
+[25] A. Avila, Global theory of one-frequency Schrodinger operators, Acta Math. 215 (2015) 1-54.
+
+================================================================================
+5.  WHERE THE CORPUS'S BIBLIOGRAPHY IS WRONG OR MISSING
+================================================================================
+
+B-1.  **REGISTER N1: "it inherits the entropy theory of algebraic Z^d-actions wholesale" IS
+      FALSE AS WRITTEN.**  Lind-Schmidt-Ward is stated over R_d = Z[u_1^{+-1},...,u_d^{+-1}] —
+      INTEGER Laurent polynomials.  There is no algebraic Z^d-action attached to a polynomial
+      with irrational coefficients, and N1's coefficients are a probability vector ranging over
+      a 2-simplex.  What survives, and only on the RATIONAL locus with common denominator D:
+      m(P) = m(D P) - log D = h(alpha_{D P}) - log D — an entropy MINUS A NORMALISATION.
+      L2 of this lane makes that concrete and exact: at S1's own published connection
+      (u,v) = (-1,-i), order 4, with f = 10 P = 3u + 3v + 4uv,
+          PROD_{k=1}^{4} |Z_k| = |det C| / 10^4 = 400/10000 = 1/25 EXACTLY,
+      C the integer circulant, det by Bareiss over Z; and by LSV Lemma 2.1 the integer 400 IS
+      the number of Gamma-periodic components of the algebraic Z^2-action defined by f.
+      Eight finite-order rows checked, every |det C| an integer, worst float64 deviation
+      1.67e-16.  The exact value 1/25 agrees with the sealed R1_08(B) Gaussian-rational
+      computation.
+      AND THE CAVEAT THAT MATTERS MORE THAN THE CORRECTION: this link exists ONLY at
+      finite-order connections, which are EXACTLY the connections at which N1 IS FALSE
+      (order 4: -(1/2)log5 = -0.804719 against m(P) = -0.767508).  Where N1 holds there is no
+      finite subgroup, no periodic-point count and no algebraic Z^2-action in play at all.
+      >>> THE ENTROPY THEORY ATTACHES WHERE THE HEADLINE FAILS, AND DETACHES WHERE IT HOLDS.
+
+B-2.  **"LAWTON 1983" IS TREATED AS ONE THEOREM AND IS TWO.**  W-03 records it as "missing
+      from the IMPORT AUDIT"; W-05's REDISCOVERY list has it as a bare entry; M1_08 T2(d)
+      rules it out.  The ruling is right about the Boyd conjecture and silent about Theorem 1,
+      which is an ingredient of the licence (Section 1.2, Section 2.3(v)).
+
+B-3.  **CASSAIGNE-MAILLOT IS USED 17 TIMES IN S4 AND CITED IN NO REGISTER ROW.**  Verified:
+      `grep -c Cassaigne` gives S4 = 17, REGISTER = 1 (a list entry), every other artifact = 0.
+      It supplies the exact closed form for m(a + bx + cy) on which S4's whole lambda column
+      and the register's -0.767507880 rest.  Under custody Section 1 that is a pointer-rule
+      breach of the same class as COR-G.
+
+B-4.  **THE CORPUS HAS ZERO CITATIONS TO EVERY WORK THAT BEARS ON N1's CONVERGENCE.**
+      Counted with `grep -ric` over the sealed .md artifacts:
+      Lind-Schmidt-Verbitskiy 0, Gelfond 0, Baker 0, Dobrowolski 0, Kenyon-Okounkov-Sheffield 0,
+      Lyons 0, Everest-Ward 0, Sudler 0, Lubinsky 0, Herman 0, Avila 0, Kuipers-Niederreiter 0.
+      (Wendel 4 and Cassaigne 18 are the only correctly-placed number-theoretic citations.)
+
+      **AND ONE COUNT I GOT WRONG IN DRAFT, WHICH IS THE MORE INTERESTING ONE.**  I wrote
+      '"Lyapunov" occurs 0 times' and then counted.  IT OCCURS TWICE, and both are load-bearing:
+        S3_THE_CROSSING_V001.md:472  "Lyapunov rate      lambda = lim (1/N) log|Omega_N|
+                                      =  -0.766802   (N = 4000)"
+        S3_THE_CROSSING_AUDIT_V001.md:629  "...the monotonicity and the Lyapunov limit that
+                                      SS4.3-4.4 actually [prove]"
+      **THE CORPUS NAMED ITS OWN OBJECT A LYAPUNOV EXPONENT IN S3, ATTACHED THE NAME TO THE ONE
+      NUMBER THE ERRATUM AGAINST W-02 LATER STRUCK AS A FINITE-STAGE VALUE OF AN OSCILLATING
+      SEQUENCE, AND THEN DROPPED THE NAME.**  It appears in no register row, in no W-04..W-12
+      row, and in no lane directory.  The quasi-periodic-cocycle literature — where a scalar
+      cocycle's Lyapunov exponent being INT log|P| is the standard framing, and where the
+      Diophantine obstruction to evaluating it at ONE phase is the standard difficulty — is
+      reachable from that word alone, and nobody searched under it.
+
+B-5.  **THE BRIEF'S OWN CANDIDATE LIST CONTAINS ONE WRONG REFERENCE, FLAGGED.**  Erdos-Szusz-
+      Turan, "Remarks on the theory of diophantine approximation", Colloq. Math. 6 (1958)
+      119-126, is about the DISTRIBUTION of Diophantine approximations (the Erdos-Szusz-Turan
+      distribution) and has nothing to do with Birkhoff sums of log|P|.  The intended reference
+      is almost certainly ERDOS-SZEKERES 1959, the origin of the Sudler product.  Corrected here.
+
+B-6.  **"BOYD'S CONJECTURES" IS AMBIGUOUS AND ONE OF THE TWO IS IRRELEVANT.**  The Boyd item
+      that bears on N1 is Boyd 1981 (the conjecture Lawton proved).  Boyd's OTHER famous
+      conjectures — Mahler measures as special values of L-functions (Boyd 1998) — bear on N1
+      not at all, and citing them would be the "identification by headline paraphrase" defect
+      W-06 registered as IMP-3.
+
+B-7.  **W-11's H2 IS NECESSARY AND NOT SUFFICIENT, AND THE FIELD SAYS SO IN PRINT.**  H2 as
+      registered is "(conj(W_F), W_C) generates a dense subgroup of T^2" — i.e. L = {0}, i.e.
+      H = T^2.  That is exactly LSV's expansiveness-free setting, and their Section 9 is a
+      whole section about what H = T^2 does NOT give you.  The registrar's own verification is
+      confirmed by the literature, not merely by this program's reasoning.
+      N1 NEEDS A THIRD HYPOTHESIS.  Proposed wording, to be attached to N1 alongside H1 and H2:
+        H3 (DIOPHANTINE).  dist((u^k,v^k), Z(P)) >= c k^{-tau} for some c, tau > 0.
+        H3 holds automatically if u, v are algebraic and multiplicatively independent
+        (Baker); it holds for Lebesgue-a.e. (u,v) (Borel-Cantelli); it FAILS on a dense
+        G_delta (M1_06, sealed); and it is NOT IMPLIED BY H2.
+
+B-8.  **THE HYPOTHESIS THIS ROUND WAS COMMISSIONED TO FIND WAS PROPOSED ONE ROUND AGO AND
+      NEVER ENTERED THE REGISTER.**  `W10_SCOPE_TABLE_V001.md:483-489` carries a PROPOSED
+      erratum against `REGISTER:456-460` (N1) reading, verbatim:
+        "...and it is publishable only with (i) `L = {0}` plus either the strict zero-free
+         inequality `hi.lo > 0` (under which Weyl suffices with no Diophantine input) or an
+         INHOMOGENEOUS DIOPHANTINE CONDITION; (ii) Lind-Schmidt-Ward 1990, not Lawton 1983,
+         named as the governing theorem; ..."
+      COUNTED: the word "inhomogeneous" occurs **0 times in REGISTER_V001.md**, twice in
+      W10_SCOPE_TABLE_V001.md and once in W08_THE_RACE_V001.md.  W-11 then registered N1 with
+      **H1 and H2 and no third hypothesis**, under the words "two hypotheses it does not
+      currently carry".
+      >>> THE CORPUS WAS UNDER-READ AGAIN, AND THIS TIME THE CORRECTION WAS ONE ROUND OLD AND
+      >>> SAT IN THE ARTIFACT OF THE ROUND IMMEDIATELY BEFORE.  Same class as W-06's
+      >>> self-recorded COR-F failure.  H3 in B-7 is not a new hypothesis: it is W-10's
+      >>> clause (i) with a theorem attached to it.
+
+B-9.  **AND W-10's CLAUSE (ii) IS ITSELF WRONG, WHICH IS WHY B-1 MATTERS.**  W-10 proposes
+      "Lind-Schmidt-Ward 1990, not Lawton 1983, named as the governing theorem".  LSW 1990 is
+      stated over `R_d = Z[u_1^{+-1},...,u_d^{+-1}]` and cannot govern a polynomial whose
+      coefficients are a probability vector; and even on the rational locus it governs an
+      ENTROPY at FINITE-ORDER connections, which is exactly where N1 is FALSE (B-1, L2).
+      The governing theorem is neither: it is Weyl plus BAKER, and the correct citation from
+      that family is LIND-SCHMIDT-VERBITSKIY (2010), which treats precisely the non-expansive
+      case and says in its own Section 9 that the residual difficulty is Diophantine.
+      **BOTH HALVES OF W-10's PROPOSED N1 ERRATUM NEED WORK BEFORE ENTRY: CLAUSE (i) IS RIGHT
+      AND WAS NEVER ENTERED; CLAUSE (ii) IS WRONG AND WOULD HAVE ENTERED A SECOND
+      MISATTRIBUTION IN THE ACT OF CORRECTING THE FIRST.**
+
+B-10. **A CROSS-CHECK THE CORPUS ALREADY OWNS AND NEVER CONNECTED.**  `W08_THE_RACE_V001.md`
+      item 3 derives, on the `uv = 1` subtorus, the polynomial `3z^2 + 4z + 3` and proves both
+      its roots lie exactly on `|z| = 1`.  L1 of this lane derives, independently and from the
+      torus zero set of the FULL two-variable P, that the zero coordinate satisfies
+      `3z^2 + 4z + 3 = 0`.  **SAME POLYNOMIAL, TWO ROUTES, AND NOT A COINCIDENCE:** P's zeros
+      on T^2 are (x, xbar) with x + xbar = -4/3, which is that quadratic.  So the `uv = 1`
+      subtorus is exactly the circle through P's two torus zeros, and W-08's codimension-one
+      Diophantine fragility and N1's zero set are ONE object seen twice from two directions.
+
+================================================================================
+6.  WHAT READS TWO WAYS, SCORED AS NEITHER
+================================================================================
+
+R-1.  L3's five-decade agreement of the LICENSED arm (algebraic (3+4i)/5, (5+12i)/13; Baker
+      applies) and the UNLICENSED arm (f=1.0, c=sqrt2; transcendental) reads as
+        (A) "N1 is true at both, so the hypothesis is a technicality", or
+        (B) "no finite window can see the failure mode, so the agreement is uninformative".
+      (B) is the better supported and is COMPUTED, not argued: M1_06's construction forces the
+      second dip beyond N = 10^23 when the first sits at N = 10 at depth 5.  NOT SCORED AS
+      EVIDENCE FOR N1 IN EITHER DIRECTION.
+
+R-2.  "No published theorem licenses N1 as registered" reads as
+        (A) "N1 needs a hypothesis it does not carry", or
+        (B) "the literature has not been asked this exact question and the assembly is routine".
+      BOTH ARE TRUE.  The assembly IS routine — which is a reason to STATE the hypothesis in
+      the note, not a reason to omit it, and not a reason to claim a theorem.
+
+R-3.  The null literature search of Section 3.4 reads as "the physical identification is new"
+      or as "the search terms were wrong".  Given W-04's Bell finding and W-06's worse-on-second-
+      look bibliography, THIS LANE SCORES IT UNRESOLVED, LEANING NEGATIVE, and recommends the
+      note make no novelty claim.
+
+================================================================================
+7.  THIS LANE'S OWN DEFECTS AND LIMITATIONS, RECORDED RATHER THAN PATCHED
+================================================================================
+
+D-1.  LAWTON 1983 WAS NOT READ.  ScienceDirect paywall.  Both of its theorems are quoted from
+      sources this lane DID read at the bytes (Dobrowolski 2017 CMB PDF; LSV Sec. 9;
+      arXiv:2508.05910 introduction).  Second-hand, and marked so in [1].
+D-2.  BOYD 1981 WAS NOT READ.  Cited on its bibliographic record only.
+D-3.  BAKER AND BAKER-WUSTHOLZ WERE NOT READ.  The statement in 2.2 is from the Wikipedia
+      article "Baker's theorem".  The QUALITATIVE input Theorem L needs is also available in a
+      source this lane read at the bytes (Gelfond Thm III, verbatim in LSV Thm 9.1); only the
+      strengthening from exponential to polynomial rests on the unread source, and that
+      strengthening is what makes the single-orbit case work.  THIS IS THE WEAKEST LINK IN
+      THEOREM L AND IT IS NAMED HERE RATHER THAN LEFT TO A REFUTER.
+D-4.  THEOREM L's ASSEMBLY IS A SKETCH, NOT A PROOF.  Marked EXHIBITED.
+D-5.  L4's exponent fit for the isolated-zero rows uses only 4 points, because the 8192^2 grid
+      returns area exactly 0 at v = 1e-4.  s = 2.11 is therefore coarse; the qualitative split
+      (s ~ 2 isolated / s ~ 1 circle / 0 no zeros) is robust and the uniform bound (*) — the
+      only thing Theorem L uses — is checked 20/20 with large slack.
+D-6.  L3's trend test reports arm B as NON-MONOTONE (deviation 4.5e-06 at N = 1e4 rising to
+      3.9e-05 at N = 1e5).  The test was not retuned to make it pass.  Both arms are consistent
+      with convergence; neither is monotone evidence of it.
+D-7.  ISOLATION.  L3 moves exactly one variable (the arithmetic type of (u,v)); arms are diffed
+      on inputs (|alpha_A - alpha_B| = 0.693) AND on outputs (sha256 of the decade tables
+      differ; max |avg_A - avg_B| = 4.06e-03), because W-08's isolation audit found the
+      commonest fatal defect is a control whose arms are byte-identical.  L1, L2 and L4 are
+      NOT controls: they are hypothesis checks and exact computations, and are not scored as
+      evidence for anything.
+D-9.  I QUOTED A FIGURE MY OWN CORPUS HAD ALREADY STRUCK.  The first draft of Section 1.1
+      repeated M1_07's `+4.716e-09` Boyd-Lawton accumulation figure, which
+      `W08_THE_RACE_V001.md:371-379` had already corrected to `~+4.24e-08` — nine times larger,
+      a quadrature sitting on an accidental zero-crossing, and the very defect class the brief
+      warned about.  Caught only by grepping the corpus for its own citations of Lawton, AFTER
+      the draft was written.  **A LITERATURE LANE THAT READS THE OUTSIDE LITERATURE CAREFULLY
+      AND THE INSIDE CORPUS LOOSELY COMMITS THIS PROGRAM'S SIGNATURE DEFECT WITH THE DIRECTION
+      REVERSED.**  Corrected in place; recorded here rather than patched out.
+
+D-8.  LINEAGE.  W-07 through W-12 and this lane are all Opus 5.  THIS IS LAYER THIRTEEN OF ONE
+      LINEAGE.  Six consecutive layers have each been caught by the next and the rate has not
+      fallen.  DISCOUNT THIS ROW AS ONE BLOCK WITH W-07 THROUGH W-12.  Its likeliest failure
+      mode is the program's recurring one — misnaming the operative variable.  THE GUARD WAS
+      RUN: "Diophantine", "Lyapunov", "Baker", "Gelfond" were grepped against the register
+      before anything was named, and the name attached here is not a new coinage but an
+      existing term from the cited field: THE OPERATIVE VARIABLE IS WHETHER
+      dist((u^k,v^k), Z(P)) ADMITS A POLYNOMIAL LOWER BOUND — the INHOMOGENEOUS DIOPHANTINE
+      TYPE OF THE CONNECTION RELATIVE TO THE ZERO SET OF P.  It is not "H2", not "density",
+      not "irrationality", not "ord(rho)", and not "the connection".

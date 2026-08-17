@@ -1,0 +1,104 @@
+==============================================================================
+RW13C_02 -- THE STARTING POINT.  ONE VARIABLE: x_0.  theta HELD AT THE CORPUS'S
+           OWN PUBLISHED GENERIC CONNECTION f = 1.0, c = sqrt(2).
+==============================================================================
+m(P) = -0.767507880357776
+
+==============================================================================
+(A) THE ARMS-DIFF OF W13C_04(B).  Their five arms, THEIR theta, THEIR grid, with
+    the single hard-coded branch `if (s1,s2)==(0,0)` DISABLED.  Nothing else moved.
+==============================================================================
+
+    starting point                                     A_1000       A_10000      A_100000     A_1000000     A_2000000
+    -- BRANCH DISABLED (splice_log = the float64 value, i.e. no substitution) --
+    x_0 = 0   (their row 1)                         -0.766669     -0.770775     -0.767855     -0.767526     -0.767517
+    x_0 = Haar-random draw 0 (their row 2)          -0.766070     -0.767396     -0.767434     -0.767512     -0.767507
+    x_0 = Haar-random draw 1 (their row 3)          -0.765640     -0.767502     -0.767543     -0.767509     -0.767514
+    x_0 = Haar-random draw 2 (their row 4)          -0.768436     -0.767387     -0.767451     -0.767518     -0.767516
+    x_0 = Haar-random draw 3 (their row 5)          -0.766694     -0.767414     -0.767556     -0.767494     -0.767502
+    -- BRANCH AS PUBLISHED (substitution in arm 1 only) --
+    x_0 = 0   (their row 1)                         -0.766669     -4.767319     -1.167509     -0.807491     -0.787500
+    x_0 = Haar-random draw 0 (their row 2)          -0.766070     -0.767396     -0.767434     -0.767512     -0.767507
+    x_0 = Haar-random draw 1 (their row 3)          -0.765640     -0.767502     -0.767543     -0.767509     -0.767514
+    x_0 = Haar-random draw 2 (their row 4)          -0.768436     -0.767387     -0.767451     -0.767518     -0.767516
+    x_0 = Haar-random draw 3 (their row 5)          -0.766694     -0.767414     -0.767556     -0.767494     -0.767502
+
+    READ-OFF.  With the branch disabled ALL FIVE ROWS AGREE to ~1e-3 and none of them fails.
+    Every digit of the published contrast is the constant logpv = -39999.9 nats divided by N,
+    injected into one arm by a literal test on that arm's own coordinates.  The exhibit is
+    a CONTROL THAT COULD NOT HAVE FAILED: theta was built in W13C_03 so that the dip exists
+    at x_0 = 0, so moving x_0 destroys it with probability 1 and no other outcome was
+    available.  (W-08's isolation finding, the commonest FATAL defect in this program.)
+    THE ARITHMETIC IS RIGHT.  WHAT IS NOT EARNED IS THE INFERENCE.
+
+==============================================================================
+(B) THE TEST THE CLAIM NEEDS.  theta FIXED at the corpus's own f=1.0, c=sqrt(2).
+    ONE VARIABLE: x_0.  SPLICE APPLIED UNCONDITIONALLY TO EVERY ARM.
+==============================================================================
+theta (uint64) = (15510853570427550389, 4151976167383777855)   [identical to W13C_01's GENERIC arm]
+H2: m*(-1/2pi) + n*(sqrt2/2pi) in Z  =>  -m + n sqrt2 = 2 pi j  =>  j = 0 (LHS
+    algebraic, RHS transcendental)  =>  m = n = 0.  PROVED, not assumed.
+
+    ARMS DIFF GUARD.  (A_1,A_2) is the same in every arm BY DESIGN -- theta is the
+    held-fixed variable.  What must be pairwise distinct is the STARTING STATE and
+    the SPLICED VALUE; both are printed and asserted.
+    arm                                                  X_1 (uint64)          X_2 (uint64)          spliced log|Z_k1|
+    x_0 = 0   THE CORPUS'S OBJECT                        0                     0                     0.27506712
+    x_0 = Haar-random draw 0                             7383986782535978923   8393943719687503236   0.58838301
+    x_0 = Haar-random draw 1                             5936823503987436129   7510650604717738927   0.53863213
+    x_0 = Haar-random draw 2                             1347546442311099034   4353442817730100162   0.39910093
+    x_0 = Haar-random draw 3                             12211389947866616382  18261934063417323052  0.6928856
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *  16889298062442015263  15551893641805311774  2.5132741e-500
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *  16889298062442015263  15551893641805311774  2.5132741e-2000
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *  16889298062442015263  15551893641805311774  2.5132741e-8000
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *  16889298062442015263  15551893641805311774  2.5132741e-17372
+    all 9 arms pairwise distinct in (X_1, X_2, spliced value): OK
+
+    A_N, SEVEN DECADES.  Splice applied in EVERY row.  m(P) = -0.767507880
+    arm                                                       A_1000      A_9999     A_10000    A_100000   A_1000000  A_10000000
+    x_0 = 0   THE CORPUS'S OBJECT                          -0.765486   -0.767451   -0.767503   -0.767547   -0.767511   -0.767508
+    x_0 = Haar-random draw 0                               -0.768381   -0.767473   -0.767449   -0.767515   -0.767508   -0.767508
+    x_0 = Haar-random draw 1                               -0.766796   -0.767287   -0.767273   -0.767508   -0.767510   -0.767508
+    x_0 = Haar-random draw 2                               -0.766762   -0.767344   -0.767359   -0.767502   -0.767508   -0.767508
+    x_0 = Haar-random draw 3                               -0.766366   -0.767453   -0.767413   -0.767506   -0.767504   -0.767508
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *    -0.767050   -0.767422   -0.882383   -0.778974   -0.768649   -0.767622
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *    -0.767050   -0.767422   -1.227771   -0.813513   -0.772103   -0.767968
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *    -0.767050   -0.767422   -2.609322   -0.951668   -0.785919   -0.769349
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *    -0.767050   -0.767422   -4.767304   -1.167467   -0.807499   -0.771507
+
+    THE SAME ROWS WITH THE SPLICED TERM REMOVED (background only) -- this is the
+    control that shows the splice is not doing the work in the un-engineered arms:
+    arm                                                       A_1000     A_10000    A_100000   A_1000000  A_10000000
+    x_0 = 0   THE CORPUS'S OBJECT                          -0.765486   -0.767503   -0.767547   -0.767511   -0.767508
+    x_0 = Haar-random draw 0                               -0.768381   -0.767449   -0.767515   -0.767508   -0.767508
+    x_0 = Haar-random draw 1                               -0.766796   -0.767273   -0.767508   -0.767510   -0.767508
+    x_0 = Haar-random draw 2                               -0.766762   -0.767359   -0.767502   -0.767508   -0.767508
+    x_0 = Haar-random draw 3                               -0.766366   -0.767413   -0.767506   -0.767504   -0.767508
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *    -0.767050   -0.770836   -0.767820   -0.767534   -0.767511
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *    -0.767050   -0.770836   -0.767820   -0.767534   -0.767511
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *    -0.767050   -0.770836   -0.767820   -0.767534   -0.767511
+    x_0 = ENGINEERED, dist(x_0 + k1 theta, z) = sqrt2 *    -0.767050   -0.770836   -0.767820   -0.767534   -0.767511
+
+    DEPTH LADDER AT FIXED theta AND FIXED x_0-CONSTRUCTION -- A_{k1} IS UNBOUNDED
+    BELOW IN x_0 ALONE, at the connection the corpus publishes:
+    10^-L offset   log|Z_k1| (nats)       A_k1               A_k1 - m(P)       
+    500            -1150.4                -0.882382751       -0.114875         
+    2000           -4604.2                -1.227770514       -0.460263         
+    8000           -18419.8               -2.609321570       -1.841814         
+    17372          -39999.6               -4.767304319       -3.999796         
+
+    VERDICT ON C8.  At a connection whose H2 is PROVED and at which the target
+    lane's own table reports convergence to 3.5e-07, the starting point alone
+    drives A_{k1} to any prescribed level.  x_0 = 0 IS NOT PRIVILEGED.  The
+    failure is the LOG SINGULARITY of the observable, which is symmetric in
+    (theta, x_0): both are measure-good and category-bad.  C8's narrow logical
+    point -- Birkhoff gives a.e. x_0 and {0} is null, so Birkhoff alone does not
+    license N1 -- SURVIVES.  Its headline -- 'the tied starting point ... is THE
+    WHOLE OF THE FAILURE' -- IS REFUTED, by the target lane's own C6 argument
+    transposed from theta to x_0, and by this exhibit.
+    AND THE TARGET LANE'S OWN C1/C2 SAY SO ALREADY: under H2 the rotation is
+    UNIQUELY ERGODIC, so (1/N)SUM f_eps(x_0 + k theta) -> INT f_eps for EVERY x_0,
+    not almost every.  All of the x_0-dependence lives in E_N(eps), i.e. in the
+    singularity.  The starting point is a carrier of the failure, not its cause.
+
+DONE RW13C_02

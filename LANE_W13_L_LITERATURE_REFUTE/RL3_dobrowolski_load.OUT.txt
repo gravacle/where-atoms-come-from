@@ -1,0 +1,104 @@
+==============================================================================
+RL3 — THE ROLE OF DOBROWOLSKI IN THEOREM L, TESTED.
+==============================================================================
+
+--------------------------------------------------------------------------------
+LEG A — VACUITY AUDIT OF L4's "HOLDS 20/20".
+A row CANNOT FAIL if the Dobrowolski bound is >= 1 (mu_2 <= 1 always), or if P has no torus
+zero at all so the measured area is identically 0 for small v.  Both are EXACT tests.
+--------------------------------------------------------------------------------
+  case                                     v        bound        measured     could it have failed?     
+  K1 REGISTERED (0, .3, .3, .4)            1e-01    1.0000       1.8234e-02   NO: BOUND>=1 (vacuous)    
+                                           1e-02    0.3162       1.7804e-04   yes                       
+                                           1e-03    0.1000       1.6689e-06   yes                       
+                                           1e-04    0.0316       0.0000e+00   yes                       
+  three-class centroid                     1e-01    1.0954       1.6798e-02   NO: BOUND>=1 (vacuous)    
+                                           1e-02    0.3464       1.6567e-04   yes                       
+                                           1e-03    0.1095       1.6093e-06   yes                       
+                                           1e-04    0.0346       0.0000e+00   yes                       
+  four-class uniform (two zero circles)    1e-01    1.2649       1.9014e-01   NO: BOUND>=1 (vacuous)    
+                                           1e-02    0.4000       2.8349e-02   yes                       
+                                           1e-03    0.1265       3.7436e-03   yes                       
+                                           1e-04    0.0400       5.1580e-04   yes                       
+  S1 published (one zero circle)           1e-01    0.8944       6.3843e-02   yes                       
+                                           1e-02    0.2828       6.4697e-03   yes                       
+                                           1e-03    0.0894       6.1035e-04   yes                       
+                                           1e-04    0.0283       1.2207e-04   yes                       
+  non-firing max > 1/2                     1e-01    0.7071       0.0000e+00   NO: NO TORUS ZERO (mu==0 exactly)
+                                           1e-02    0.2236       0.0000e+00   NO: NO TORUS ZERO (mu==0 exactly)
+                                           1e-03    0.0707       0.0000e+00   NO: NO TORUS ZERO (mu==0 exactly)
+                                           1e-04    0.0224       0.0000e+00   NO: NO TORUS ZERO (mu==0 exactly)
+
+  ROWS THAT COULD NOT HAVE FAILED: 7 of 20.
+  L4 reports the check as 'HOLDS on 20 of 20'.  The live count is 13.
+  This is NOT a fatal defect -- L4's own ledger declares L4 'NOT a control' -- but the
+  headline count 20/20 is quoted in finding L-2 as evidence, and 7 of those 20 rows
+  are arithmetically incapable of violating the bound.  W-08's isolation audit calls
+  this the commonest FATAL defect class in this program; here it is non-fatal because
+  the surviving 13 rows do carry the check.
+
+--------------------------------------------------------------------------------
+LEG B — IS THE UNIFORMITY IN pi LOAD-BEARING FOR THEOREM L?  NO, AND HERE IS WHY.
+
+THEOREM L (target, Sec. 2.3) begins: "Let pi = (p00,p10,p01,p11) be a probability vector with
+ALGEBRAIC entries".  pi is FIXED before the limits are taken, and the limits are N -> infinity
+THEN delta -> 0.  NO LIMIT IN pi IS EVER TAKEN.  A pi-dependent constant therefore survives
+every limit in the proof, and the sentence "a pi-dependent constant would not survive the
+limit" describes a limit that Theorem L does not contain.
+
+What the shell step actually needs at a FIXED pi with isolated zeros is the local expansion
+|P| ~ L*d, which gives shell measure ~ pi*d^2 -- exponent 2, not 1/2.  Both make the shell
+sum converge.  Measured below, at K1's registered pi, over four decades of shell scale.
+--------------------------------------------------------------------------------
+  local gradient moduli at the zero: |dP/da| = 0.300000   |dP/db| = 0.300000
+  |Im(conj(A) B)| = 0.089443  (equals |A||B| = 0.090000 here, i.e. the two directions are orthogonal)
+
+  v          measured mu_2    Dobrowolski 2(v/h)^.5 local ~ c v^2      ratio D/local
+  1e-02      1.7798e-04       3.1623e-01         1.7794e-04         1.777e+03   
+  1e-03      1.7807e-06       1.0000e-01         1.7794e-06         5.620e+04   
+  1e-04      2.2352e-08       3.1623e-02         1.7794e-08         1.777e+06   
+  1e-05      0.0000e+00       1.0000e-02         1.7794e-10         5.620e+07   
+
+  At the shell scales a dyadic argument actually visits (v down to delta*2^-j_max with
+  j_max = O(log N)), Dobrowolski's uniform bound is larger than the truth by 4 to 9 ORDERS OF
+  MAGNITUDE and rising.  It is a correct bound and a very loose one.
+
+  VERDICT ON THE TARGET'S ONE-WORD CORRECTION.
+  * The CITATION is verified verbatim and the specialisation is arithmetically right.
+  * Dobrowolski/Lawton Thm 1 is a SUFFICIENT shell-measure input, and it is the RIGHT one
+    for a statement UNIFORM OVER pi, or for isolated zeros of unknown multiplicity, since it
+    needs no case analysis.  That is a real use and it is worth citing.
+  * It is NOT NECESSARY for Theorem L as the target states it, because Theorem L fixes pi;
+    and the reason the target gives for its necessity -- that a pi-dependent constant "would
+    not survive the limit" -- names a limit Theorem L does not take.
+  * So "the second one IS an ingredient of the licence" over-states an OPTIONAL ingredient,
+    and W-08/M1_08 T2(d)'s ruling (Lawton is not the theorem that licenses N1) needed no
+    correction at all.  M1_08 T2(c) already carried the local expansion that does the job.
+
+--------------------------------------------------------------------------------
+LEG C — A GAP IN THE ASSEMBLY THAT NEITHER M1_08 T2(c) NOR THE TARGET FLAGS.
+
+Both write "the number of points is at most N(mu_2 + 4 D_N) ... by discrepancy".  D_N is the
+ordinary (box) discrepancy that Erdos-Turan-Koksma bounds.  Box discrepancy bounds counts in
+AXIS-PARALLEL BOXES, not in the sublevel set {|P| <= w}, which is a neighbourhood of an
+algebraic curve.  The standard repair is ISOTROPIC discrepancy J_N (Kuipers-Niederreiter,
+Ch. 2, Thm 1.6), which is bounded by a CONSTANT TIMES D_N^{1/d} -- in d = 2, a SQUARE ROOT.
+The assembly's error term therefore reads C_7 N^{-delta'/2}(log N)^2, not C_7 N^{-delta'}(log N)^2.
+Still a power of N, so THEOREM L IS NOT BROKEN -- but the exponent as printed is wrong, and it
+is wrong in the sealed lane it was inherited from as well.
+Below: how many connected components the sublevel set has, and whether they are convex, at
+K1's registered pi -- the geometry that decides whether the isotropic-discrepancy repair even
+applies.
+--------------------------------------------------------------------------------
+   v = 3e-01     connected components on a 1024^2 torus grid: 1     cells: 195507
+   v = 1e-01     connected components on a 1024^2 torus grid: 2     cells: 19138
+   v = 3e-02     connected components on a 1024^2 torus grid: 2     cells: 1692
+   v = 1e-02     connected components on a 1024^2 torus grid: 2     cells: 190
+
+   READING.  Below v ~ 0.1 the sublevel set is TWO small components, one per zero, and each
+   is convex to grid resolution -- so isotropic discrepancy applies with a factor 2 and the
+   repair above is available.  The target's assembly does not carry it; neither does the
+   sealed M1_08 T2(c) sketch it was built from.  RECORDED AS A CORRECTION TO BOTH.
+--------------------------------------------------------------------------------
+
+DONE RL3

@@ -1,0 +1,103 @@
+==============================================================================
+RL2 — 'N1 AT d=1 IS THE SUDLER PRODUCT' IS FALSE AS AN IDENTITY.  IT IS A RATIO.
+==============================================================================
+
+IDENTITY UNDER TEST, EXACT:   sum log|Z_k|  =  S_sud(2a) - S_sud(a) - N log 2
+TARGET'S CLAIM:               sum log|Z_k|  =  S_sud(a)              - N log 2 + O(1)
+so the target's remainder is  R_N = S_sud(2a) - 2 S_sud(a),  claimed O(1).
+
+------------------------------------------------------------------------------
+ARM alpha = 0.4142135623730950488016887   (sqrt2-1  (bounded p.q. [2,2,2,...]))
+   N          sum log|Z_k|           exact identity RHS     |residual|       R_N (claimed O(1))
+   100        -69.1955399860         -69.1955399860         1.421e-14        -1.549449
+   1000       -691.8184540361        -691.8184540361        2.274e-13        -1.153043
+   10000      -6931.6815534061       -6931.6815534061       9.095e-13        -5.758953
+   100000     -69313.8592657081      -69313.8592657081      0.000e+00        -5.737667
+   1000000    -693147.6424639423     -693147.6424639423     0.000e+00        -9.446451
+   R_N over five decades: -1.549  -1.153  -5.759  -5.738  -9.446
+   |R_N| grew by a factor 6.1 from N=1e2 to N=1e6.
+------------------------------------------------------------------------------
+ARM alpha = 0.6180339887498948482045868   (golden   (p.q. all 1))
+   N          sum log|Z_k|           exact identity RHS     |residual|       R_N (claimed O(1))
+   100        -69.2387508176         -69.2387508176         0.000e+00        -2.505443
+   1000       -691.9877222450        -691.9877222450        1.137e-13        -0.602108
+   10000      -6931.8740293962       -6931.8740293962       6.366e-12        -5.723101
+   100000     -69316.9281746658      -69316.9281746657      1.455e-10        -9.571151
+   1000000    -693146.3073954331     -693146.3073954327     3.492e-10        -3.837116
+   R_N over five decades: -2.505  -0.602  -5.723  -9.571  -3.837
+   |R_N| grew by a factor 1.5 from N=1e2 to N=1e6.
+------------------------------------------------------------------------------
+ARM alpha = 0.1591549430918953357688838   (1/(2pi)  (generic))
+   N          sum log|Z_k|           exact identity RHS     |residual|       R_N (claimed O(1))
+   100        -70.1425245919         -70.1425245919         4.263e-14        -2.636202
+   1000       -694.9094316799        -694.9094316799        1.478e-12        -0.904832
+   10000      -6953.7491408048       -6953.7491408048       1.182e-11        -5.577814
+   100000     -69300.3108212446      -69300.3108212446      1.455e-11        -6.270313
+   1000000    -693137.5190356872     -693137.5190356872     0.000e+00        -6.379424
+   R_N over five decades: -2.636  -0.905  -5.578  -6.270  -6.379
+   |R_N| grew by a factor 2.4 from N=1e2 to N=1e6.
+
+--------------------------------------------------------------------------------
+ARM DIFF ON OUTPUTS (not only on inputs).
+   sha256 0755b19f34352bcc93154ef8  sqrt2-1  (bounded p.q. [2,2,2,...])
+   sha256 e9fe029a54cc7991a5fc36c6  golden   (p.q. all 1)
+   sha256 9133ed8ea340556e3a2d75a4  1/(2pi)  (generic)
+   ALL THREE TABLES DISTINCT: True
+
+--------------------------------------------------------------------------------
+READING.
+
+1. THE EXACT IDENTITY HOLDS TO ROUND-OFF IN EVERY ROW.  sum log|Z_k| is
+   S_sud(2 alpha) - S_sud(alpha) - N log 2, EXACTLY, for every alpha.  This is elementary:
+   (1+q^r) = (1-q^{2r})/(1-q^r).
+
+2. THE TARGET'S REMAINDER R_N = S_sud(2 alpha) - 2 S_sud(alpha) IS NOT O(1).  It is a
+   difference of two Sudler sums whose own literature (Lubinsky 1999; Aistleitner-Technau-
+   Zafeiropoulos, Amer. J. Math. 145 (2023) 721-764) is precisely about their unbounded
+   fluctuation.  Reported above across five decades as a TREND, not an endpoint.
+
+3. WHAT SURVIVES OF L-11, AND IT IS MOST OF IT.  The one-variable shadow of N1 does live
+   inside the Sudler-product literature: it is a DIFFERENCE of two Sudler sums, both terms
+   are that literature's object, and the dependence on the Diophantine type of alpha is that
+   literature's central fact.  L-11's CONCLUSION stands.  Its stated IDENTITY does not, and
+   a note that printed it would be printing a false formula in the paragraph where it
+   concedes priority.
+
+4. AND THE d=1 OBJECT IS NAMED IN THAT LITERATURE TOO: PROD |2 cos(pi k alpha)| is the
+   "cosine product" / (-q;q)_n, treated by exactly the same authors.  L-11 cites the
+   (q;q)_n papers for a (-q;q)_n object.
+--------------------------------------------------------------------------------
+==============================================================================
+RL2(B) — R_N IS NOT O(1): AN EXPLICIT alpha, EXACT PHASES, NO FLOAT REDUCTION.
+==============================================================================
+
+The numerics above show R_N wandering; wandering over five decades is not a proof of
+unboundedness and is NOT scored as one.  Here is the proof, by exhibit, using the corpus's
+own device (M1_06's digit-block construction, sealed):
+
+    alpha = 1/20 + 10^-301 (+ an irrational tail below 10^-(10^301), immaterial to k <= 20).
+
+Then 10*alpha = 1/2 + 10^-300, so |cos(pi*10*alpha)| ~ pi*10^-300 -- a dip of depth ~689 in
+sum log|Z_k| at N = 10 -- while |2 sin(pi*10*alpha)| ~ 2, i.e. the SUDLER sum at alpha has
+NO dip there at all.  The dip is carried entirely by the S_sud(2 alpha) term of the exact
+identity.  Hence S_Z(10) - (S_sud(alpha,10) - 10 log 2) is about -689, not O(1).
+
+   k    frac(k a) - 1/2            log|Z_k|         log|2 sin(pi k a)|
+   9    -5.000e-02                 -1.8551          0.6808          
+   10   1.000e-300                 -689.6308        0.6931          
+      N=10   sum log|Z_k| = -694.7178         exact identity RHS = -694.7178         |resid| = 0.00e+00
+      N=10   TARGET'S claimed RHS = S_sud(a) - N log2 = -5.0870            R_N = -689.6308
+   11   5.000e-02                  -1.8551          0.6808          
+   20   -5.000e-01                 0.0000           -688.2445       
+      N=20   sum log|Z_k| = -699.8049         exact identity RHS = -699.8049         |resid| = 3.41e-13
+      N=20   TARGET'S claimed RHS = S_sud(a) - N log2 = -699.1117          R_N = -0.6931
+
+   READING.  At N = 10 the target's claimed right-hand side misses the left-hand side by
+   about 689 nats.  R_N = S_sud(2a) - 2 S_sud(a) is therefore NOT O(1), and the constant
+   cannot be absorbed: the same construction with a deeper block makes it arbitrarily large.
+   THE IDENTITY IN L-11's EVIDENCE FIELD IS FALSE.  L-11's conclusion -- that the d=1 case
+   of N1 sits inside the Sudler-product literature and that the Diophantine-type dependence
+   is that literature's central fact -- SURVIVES, because the correct identity is a
+   difference of two Sudler sums and both terms are that literature's object.
+
+DONE RL2

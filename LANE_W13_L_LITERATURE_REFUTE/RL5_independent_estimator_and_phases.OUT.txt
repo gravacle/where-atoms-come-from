@@ -1,0 +1,94 @@
+==============================================================================
+RL5 — INDEPENDENT RE-DERIVATION OF m(P) AND OF THE FIVE-DECADE TABLE.
+==============================================================================
+
+(1) CASSAIGNE-MAILLOT CLOSED FORM.  CALIBRATION FIRST, ON A VALUE KNOWN INDEPENDENTLY.
+    m(1 + x + y)  by Cassaigne-Maillot : 0.32306594721945051409
+    known value   (3 sqrt3 / 4 pi) L(chi_-3, 2) = L'(chi_-3,-1):
+                                                  0.32306594721945051409
+    |difference| = 5.2711e-82   -> the closed form and my angle convention are CALIBRATED.
+
+    NOW K1's REGISTERED pi.  P = 0.3 x + 0.3 y + 0.4 x y = x y (0.4 + 0.3/x + 0.3/y), and
+    Mahler measure is invariant under x -> 1/x and under multiplication by a monomial, so
+    m(P) = m(0.4 + 0.3 x + 0.3 y).  a = 2/5, b = c = 3/10; 2/5 < 3/5 so the triangle case.
+    m(P) CASSAIGNE-MAILLOT, 80 dps, NO QUADRATURE : -0.7675078803577758716458741
+    m(P) mpmath Gauss-Legendre, split at the corner: -0.7675078803577758716458741
+       |CM - split quadrature| = 7.94625e-43
+    target lane's 2^22 trapezoid  -0.767507880357744  |diff from CM| = 3.18716e-14
+    register / M1 / R1  -0.767507880358              |diff from CM| = 2.24128e-13
+    VERDICT: the target's m(P), the register's figure, an independent quadrature and
+    the Cassaigne-Maillot CLOSED FORM all agree.  m(P) IS NOT WHERE ANY DEFECT LIVES, and
+    finding L-14(a) is right that this number rests on Cassaigne-Maillot.
+
+--------------------------------------------------------------------------------
+(1b) A CORRECTION TO THE TARGET'S PUBLISHED CONVENTIONS, MEASURED NOT ASSERTED.
+
+  PUBLISHED_CONVENTIONS.txt (target, sealed) states:
+     "The integrand is continuous (both branches vanish only if pi = 0), so the deterministic
+      trapezoid converges SPECTRALLY.  Used at 2^22 nodes."
+
+  CONTINUITY DOES NOT GIVE SPECTRAL CONVERGENCE; SMOOTHNESS DOES.  The Jensen integrand is
+  max(|p00+p10 e^{it}|, |p01+p11 e^{it}|), a max of two smooth functions, and at K1's pi the
+  two branches CROSS -- at cos t = -2/3, which is precisely the argument of the torus zero
+  found by the target's own L1.  A max at a transversal crossing has a corner, the integrand
+  is C^0 and not C^1, and Euler-Maclaurin gives the periodic trapezoid O(n^-2), not
+  exponential.  Measured against the Cassaigne-Maillot closed form:
+--------------------------------------------------------------------------------
+   n        trapezoid                |err vs CM|    observed order vs previous
+   2^16     -0.767507880275938       8.184e-11      
+   2^18     -0.767507880352467       5.309e-12      n^-1.97
+   2^20     -0.767507880357400       3.756e-13      n^-1.91
+   2^22     -0.767507880357744       3.197e-14      n^-1.78
+   2^24     -0.767507880357789       1.310e-14      n^-0.64
+   OBSERVED ORDER ~ n^-2, NOT SPECTRAL.  No number in the target lane changes -- its
+   2^22 value is right to 3e-14 -- but the CONVENTIONS FILE STATES A FALSE PROPERTY OF ITS OWN
+   ESTIMATOR, and states it in the sentence that justifies not showing a convergence table.
+   Under this program's own rule ("CONVERGENCE IS NOT A WINDOW") the justification was the
+   load-bearing part.
+
+--------------------------------------------------------------------------------
+(2) THE FIVE-DECADE TABLE, INDEPENDENT PHASE PATH (128-bit fixed point, uint64 wraparound).
+--------------------------------------------------------------------------------
+
+  ARM A_algebraic  [u=(3+4i)/5, v=(5+12i)/13  ALGEBRAIC deg 2]
+    alpha 128-bit numerator hi = 2722437224269746380  lo = 12471010208143059807
+    N          (1/N)sum log|Z_k|    dev from m(P)    target's sealed row  |mine - target|
+    1000       -0.769541895224      -2.034e-03       -0.769541895224      3.19e-13
+    10000      -0.767461981673      +4.590e-05       -0.767461981673      3.48e-13
+    100000     -0.767527878713      -2.000e-05       -0.767527878713      4.43e-13
+    1000000    -0.767506965386      +9.150e-07       -0.767506965386      3.03e-13
+    10000000   -0.767507908961      -2.860e-08       -0.767507908961      1.22e-15
+    TREND of |dev|: 2.0e-03 -> 4.6e-05 -> 2.0e-05 -> 9.1e-07 -> 2.9e-08
+
+  ARM B_transcend  [f=1.0, c=sqrt(2)  (S4:603)  TRANSCENDENTAL]
+    alpha 128-bit numerator hi = 15510853570427550389  lo = 9292661110051358863
+    N          (1/N)sum log|Z_k|    dev from m(P)    target's sealed row  |mine - target|
+    1000       -0.765486480113      +2.021e-03       -0.765486480113      3.12e-13
+    10000      -0.767503341919      +4.538e-06       -0.767503341919      4.81e-13
+    100000     -0.767546539710      -3.866e-05       -0.767546539710      2.89e-13
+    1000000    -0.767511151758      -3.271e-06       -0.767511151758      3.24e-13
+    10000000   -0.767508233727      -3.534e-07       -0.767508233727      3.99e-13
+    TREND of |dev|: 2.0e-03 -> 4.5e-06 -> 3.9e-05 -> 3.3e-06 -> 3.5e-07
+
+  ARM DIFF ON OUTPUTS: max |avg_A(N) - avg_B(N)| over the five decades = 4.055e-03 ; tables
+  distinct: True.
+  VERDICT: BOTH ARMS OF L3 REPRODUCE on a phase path sharing no code with the target's.
+  Nothing in L3's arithmetic is wrong.  L-13 stands as arithmetic.
+
+--------------------------------------------------------------------------------
+(3) ARM A AT A DECADE BOUNDARY IN EXACT GAUSSIAN-INTEGER ARITHMETIC, k <= 10^4.
+    The target's exact cross-check stopped at k = 3000, short of every decade it tabulates.
+    No transcendental function is evaluated anywhere below.
+--------------------------------------------------------------------------------
+    (1/10^4) sum log|Z_k|  EXACT integer path : -0.767461981672628
+    target's sealed arm-A N=10^4 row         : -0.767461981673000
+    my 128-bit fixed-point path              : -0.767461981672651
+    |exact - target| = 3.717e-13      |exact - mine| = 2.320e-14
+    dev from m(P) (exact path) = +4.590e-05
+
+    VERDICT: the target's arm-A decade row is confirmed EXACTLY at N = 10^4, by integer
+    arithmetic alone.  Its phase machinery is sound and its D-7 worry about mpmath is
+    unnecessary at this decade.
+--------------------------------------------------------------------------------
+
+DONE RL5

@@ -1,0 +1,50 @@
+==============================================================================
+L1 — THE TORUS ZEROS OF P, AND WHETHER THEY ARE ALGEBRAIC
+==============================================================================
+
+CLAIM L1 CHECKED CASE BY CASE.  't' is EXACT (Fraction); |P(x,y)| is float64.
+
+  case                                           t = cos(arg x) |t|<=1?   max |P(zero)|
+  K1 REGISTERED pi (W-11 H2 row; the singular case) -2/3           YES       2.758e-18
+  K1 centroid three-class                        -1/2           YES       1.726e-17
+  S1 published ready state (W-01)                denominator 0  -         degenerate: handled below
+  B0b four-class (S4:590 multiset 2/9,3/9,4/9 + 0) -11/16         YES       0.000e+00
+  B0b genuine four-class 1/4 each                denominator 0  -         degenerate: handled below
+  NON-firing: max > 1/2                          -4             NO        nan
+
+  READING.  Wherever |t| <= 1 the two exhibited points are zeros of P on T^2 to float64
+  round-off, and t is an EXACT RATIONAL.  Wherever |t| > 1 there is no zero.  The firing
+  criterion max(pi) <= 1/2 (M1_02 Z1, sealed) and |t| <= 1 agree on every row above.
+
+------------------------------------------------------------------------------
+THE REGISTERED CASE, IN CLOSED FORM AND EXACTLY.
+------------------------------------------------------------------------------
+  pi = (0, 3/10, 3/10, 2/5).   t = -2/3  EXACTLY.
+  So x = -2/3 + i sqrt(5)/3 and its conjugate.  MINIMAL POLYNOMIAL, verified exactly:
+      3x^2 + 4x + 3 :  REAL part exactly 0   (must be 0)
+      IMAG part: 3*2*(-2/3)(sqrt5/3)/1 + 4*sqrt5/3 = -4sqrt5/3 + 4sqrt5/3 = 0 exactly.
+  => x is ALGEBRAIC OF DEGREE 2 over Q (root of 3z^2+4z+3), NOT an algebraic integer.
+  => Gelfond / Baker apply to it.  Algebraic INTEGER is not required by either.
+      zero (-0.666666666666667+0.745355992499930i , -0.666666666666667-0.745355992499930i)   |x|-1 = 0.00e+00  |y|-1 = -1.11e-16  |P| = 2.76e-18
+      zero (-0.666666666666667-0.745355992499930i , -0.666666666666667+0.745355992499930i)   |x|-1 = 0.00e+00  |y|-1 = -1.11e-16  |P| = 2.76e-18
+  y = conj(x) on this row (the zero set is {(x,xbar),(xbar,x)}), consistent with
+  M1_02's 'the zero set is 2 points generically' (sealed, LANE_W08_M1_IDENTIFICATION).
+
+--------------------------------------------------------------------------------
+WHERE THE DERIVATION BREAKS, RECORDED RATHER THAN HIDDEN.
+  (i) p00 p10 = p01 p11 makes the denominator vanish.  Then the condition on cos th is either
+      vacuous (a WHOLE CIRCLE of zeros — M1_02's third case, which includes S1's own published
+      ready state) or empty.  On a circle of zeros the singularity is not isolated and NO
+      theorem in this lane's citation list applies: Gelfond/Baker control finitely many
+      algebraic singular points, and LSV say explicitly that the infinite case needs estimates
+      that "do not appear to be available".
+  (ii) pi with transcendental entries gives transcendental t, and Baker does not apply.  The
+      corpus has never published such a pi; every registered ready state is rational.
+
+  CHECK of (i) on S1's own published ready state pi = (0,1/2,1/2,0):
+      p00*p10 - p01*p11 = 0   -> denominator 0, CIRCLE of zeros.
+      P = (x+y)/2, which vanishes on the whole circle y = -x.  Confirmed by inspection.
+      This is the case where the corpus's own registered numbers give Z_k = 0 for odd k
+      (M1_08 T2(e), sealed) and lambda = -infinity, not m(P) = -log 2.
+
+DONE L1

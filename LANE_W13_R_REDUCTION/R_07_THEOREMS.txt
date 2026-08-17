@@ -1,0 +1,228 @@
+LANE W-13 / R — THEOREMS, PROOFS, AND THE STATUS OF EACH
+Every statement below is either PROVED here, EXHIBITED (a construction plus a verified
+computation), or MEASURED (numerical only).  Nothing is marked PROVED that rests on a
+window, and every appeal to an imported theorem is named.
+
+NOTATION.  u = conj(W_F) = e(alpha), v = W_C = e(beta), e(x) = exp(2 pi i x),
+omega = (alpha,beta) in T^2 = (R/Z)^2, P(x,y) = p00 + p10 x + p01 y + p11 xy,
+Z_k = P(u^k, v^k), S_N = (1/N) sum_{k<=N} log|Z_k|, m(P) = INT_{T^2} log|P|.
+L(omega) = {(m,n) in Z^2 : m alpha + n beta in Z}   (the RELATION LATTICE).
+H2 (W-11, as registered) = "(conj W_F, W_C) generates a dense subgroup of T^2" = "L(omega)={0}".
+K1's registered pi = (0, 0.3, 0.3, 0.4).  theta* = arccos(-2/3)/(2 pi).
+
+================================================================================
+R-0.  THE SINGULAR CASE IS THE FORMATION CASE.                          [PROVED]
+================================================================================
+P vanishes somewhere on T^2 iff max(pi) <= sum of the other three, which is exactly W-01's
+convex-hull firing criterion (carried fact C3).  At K1's pi, 0.4 <= 0.6: it fires, and P has
+EXACTLY TWO zeros on T^2,
+        (x,y) = (zeta, conj zeta)  and  (conj zeta, zeta),    zeta = (-2 + i sqrt5)/3,
+i.e. in additive coordinates (theta*, -theta*) and (-theta*, theta*).
+PROOF.  On T^2 divide P by xy and conjugate: P = 0 <=> 0.3(x+y) = -0.4 <=> x + y = -4/3.
+Two unit vectors summing to a negative real are conjugate, so y = conj x, x = e^{i phi},
+2 cos phi = -4/3.  []
+Both zeros are SIMPLE: dP/dx = p10 + p11 y has modulus 0.3 there.  Hence log|P| is in
+L^1(T^2) and m(P) is finite.  All verified in R_01_zeros_and_mP.out.txt.
+COROLLARY, and it is why this round exists: log|P| is NOT Riemann-integrable at K1's pi, so
+Weyl equidistribution -- all that H2 delivers -- does not deliver Birkhoff convergence.
+
+================================================================================
+R-1.  THE REDUCTION DICHOTOMY.                                          [PROVED]
+================================================================================
+X_omega := closure{k omega : k in Z} is a closed subgroup of T^2 and
+   rank L(omega) = 0  <=>  X_omega = T^2                     (dimension 2)
+   rank L(omega) = 1  <=>  X_omega = a finite union of parallel circles  (dimension 1)
+   rank L(omega) = 2  <=>  X_omega is finite                 (dimension 0).
+In the rank-1 case with L = Z.(m,n), (m,n) primitive, X_omega is the single circle
+{(z^n, z^{-m}) : |z| = 1} and, ON IT,
+        log|P| = log|Q_{m,n}|,   Q_{m,n}(z) := P(z^n, z^{-m}) = p10 z^n + p01 z^{-m} + p11 z^{n-m}
+                                (at K1's pi, times z^m: 0.3 z^{m+n} + 0.4 z^n + 0.3),
+so S_N is EXACTLY the Birkhoff average of the one-variable function log|Q_{m,n}| over the
+circle rotation by t0, where omega = (n t0, -m t0).
+PROOF.  X_omega is the closure of a subgroup, hence a closed subgroup; its annihilator in the
+character lattice Z^2 is L(omega); Pontryagin duality gives dim X_omega = 2 - rank L.  The
+rank-1 parametrisation is immediate from ker chi_{(m,n)} being connected for primitive (m,n),
+and the substitution is the definition of Q.  []
+
+  >> THE ONE-VARIABLE REDUCTION EXISTS IF AND ONLY IF H2 FAILS. <<
+
+DECLARED IN ADVANCE, AND IT IS THE TRAP THIS LANE WAS SENT TO WALK INTO (CHOICE LEDGER L1):
+"log|P| becomes a one-variable function of k" is TRUE and VACUOUS if the one-variable function
+is allowed to be arbitrary -- k -> k omega is injective for irrational alpha, so ANY sequence
+is F(k) for some F.  Such a reduction could not have failed and is not a reduction.  The
+content is entirely in requiring the one-variable object to be log|Q| for a Laurent polynomial
+(equivalently: to be a function on the orbit CLOSURE).  Under that requirement, R-1 is sharp.
+
+================================================================================
+R-2.  SUFFICIENCY.                                                      [PROVED]
+================================================================================
+Suppose P has finitely many zeros on T^2, all of finite order, and let Z(P) be the zero set.
+Suppose omega satisfies
+  (D1)  ||m alpha + n beta|| >= C1 (|m|+|n|)^{-tau}   for all (m,n) != 0
+        [equivalently, by Erdos-Turan-Koksma, discrepancy D_N(k omega) = O(N^{-eta}), eta>0]
+  (D2)  dist(k omega, Z(P)) >= C2 k^{-sigma}          for all k >= 1.
+Then S_N -> m(P).
+PROOF.  Write f = log|P| and f_M = max(f, -M).  f_M is continuous on T^2; (D1) gives
+equidistribution, so (1/N) sum f_M(k omega) -> INT f_M.  Since f is in L^1 (R-0), INT f_M
+decreases to m(P) as M -> infinity.  It remains to show
+        E_N(M) := (1/N) sum_{k<=N} (f_M - f)(k omega)   ->  0   as M -> infinity, uniformly in N.
+f_M - f is non-negative and supported on {|P| < e^{-M}}.  Decompose into shells
+S_i = {e^{-M-i-1} <= |P| < e^{-M-i}}, i >= 0, on which f_M - f <= i+1.  Because the zeros are
+simple, {|P| < e^{-M-i}} is contained in TWO axis-parallel boxes of side r_i = O(e^{-(M+i)})
+(one per zero), of total area O(e^{-2(M+i)}) -- verified analytically and against a grid in
+R_06: area{|P|<delta} = delta^2/(2 pi |det|).  By the box-discrepancy bound,
+        #{k <= N : k omega in S_i}  <=  #{k <= N : k omega in the two boxes}
+                                    <=  N * O(e^{-2(M+i)}) + 8 N D_N.
+By (D2), |P(k omega)| >= c dist >= c C2 k^{-sigma}, so no shell with M + i > sigma log N + O(1)
+is ever occupied: the sum over i truncates at I_max = O(log N).  Hence
+        E_N(M) <= sum_{i>=0} (i+1) K e^{-2(M+i)}  +  D_N sum_{i<=I_max} (i+1)
+                = O(M e^{-2M})  +  O(D_N (log N)^2).
+The first term is uniform in N and tends to 0 as M -> infinity; the second is
+O(N^{-eta}(log N)^2) -> 0.  []
+REMARK, AND IT IS THE POINT OF R-3: (D1) ALONE IS NOT ENOUGH, AND H2 IS WEAKER THAN (D1).
+H2 gives equidistribution only; (D1) gives a RATE; (D2) is a different condition entirely and
+is not implied by either.
+
+================================================================================
+R-3.  H2 IS NOT SUFFICIENT — AT K1's REGISTERED READY STATE.  [PROVED + EXHIBITED]
+================================================================================
+There is an explicit omega = (alpha,beta) with L(omega) = {0} -- so H2 holds and the orbit is
+dense and equidistributed in T^2 -- and
+        liminf_N S_N = -infinity,     while  m(P) = -0.767507880358.
+CONSTRUCTION AND PROOF: the docstring of R_05_counterexample.py, in full, with the four steps
+(a) targets, (b) monotone ladder, (c) divergence from |Z_k| <= 1 (carried fact C5) plus the exact
+Lipschitz bound |Z_{k_j}| <= 2 pi[(p10+p11) eps_j + (p01+p11) eps'_j] <= 2 pi (eps_j + eps'_j), (d) non-resonance from the STRICT POSITIVITY of the ladder offsets together
+with gamma1 + gamma2 = 1 and the irrationality of theta* (Niven).
+EXHIBITED at k_1 = 10 and k_2 = 1490: log|Z_{k_1}| = -4.578, log|Z_{k_2}| = -1787.797, which
+throw the running average to m(P) - 0.281 and m(P) - 1.199.  Two terms out of ten million.
+WHAT IS COMPUTED VS STATED: rungs 1 and 2 computed exactly; rung 3 sits at ~10^780 and is
+stated.  The computation uses the ladder truncated at rung 3 with theta* replaced by a
+900-digit rational; both effects are bounded and disclosed in the script.
+RELATION TO M1_06 (sealed, W-08): M1_06 established the same insufficiency at
+pi = (0,1/3,1/3,1/3), where the zeros are RATIONAL and a sparse-digit construction reaches
+them.  THAT WORK IS NOT REDONE.  R-3 is at the corpus's own pi, where the zeros are
+irrational, by a different construction with a different non-resonance argument.
+
+================================================================================
+R-4.  THE EXACT ONE-VARIABLE SPLIT OF THE INTEGRAND.                    [PROVED]
+================================================================================
+For every (x,y) on T^2,
+        log|P(x,y)| = log|p01 + p11 x|  +  log|y - R(x)|,   R(x) = -(p00+p10 x)/(p01+p11 x),
+and integrating in y by Jensen gives the brief's own formula
+        m(P) = (1/2pi) INT log max(|p00+p10 e^{it}|, |p01+p11 e^{it}|) dt.
+Hence S_N splits EXACTLY as
+   (i)  (1/N) sum_k log|p01 + p11 u^k|          -- integrand CONTINUOUS (|0.3+0.4x| >= 0.1 at
+                                                   K1's pi), so Weyl closes it for every
+                                                   irrational alpha; limit log(0.4).
+   (ii) (1/N) sum_k log|v^k - R(u^k)|           -- ALL the singularity, and the target MOVES.
+This is the precise sense in which our object generalises a Sudler product: a Sudler product
+is (ii) with a FIXED target and a one-dimensional orbit.  Verified to 2.4e-14 over 200000
+points, and the two pieces sum to m(P) to 1.9e-15.  R_02_reduction.out.txt.
+
+================================================================================
+R-5.  ON THE RESONANT LOCUS THE REDUCED PROBLEM IS ALMOST ALWAYS
+      NON-SINGULAR, AND THE ONE SINGULAR LINE IS EXACTLY THE REGISTER'S
+      (1,1) SUBTORUS ROW.                                    [PROVED + EXHIBITED]
+================================================================================
+At K1's pi, Q_{m,n} has a root on |z| = 1 for a primitive (m,n) IF AND ONLY IF (m,n) = +-(1,1),
+i.e. u v = 1, i.e. c = f.
+PROOF.  0.3 z^{m+n} + 0.4 z^n + 0.3 = 0 with z = e(psi) gives, after dividing by e(n psi),
+0.3(e(m psi) + e(-n psi)) = -0.4; two unit vectors summing to a negative real are conjugate, so
+(m-n) psi in Z and cos(2 pi m psi) = -2/3, i.e. m psi = +-theta* mod 1.  If m != n then psi is
+rational and m psi cannot equal the irrational theta*.  So m = n, and primitivity gives 1.  []
+Scanned: 368 primitive (m,n) with |m|,|n| <= 12; SINGULAR: exactly 2, being (1,1) and (-1,-1).
+ON THAT LINE, exactly,
+        |Z_k| = 0.3 |2 sin(pi(k alpha - theta*))| |2 sin(pi(k alpha + theta*))|
+(max deviation 6.7e-16 over k <= 10^5), so
+        sum_{k<=N} log|Z_k| = N log(0.3) + log Sud_N(alpha,-theta*) + log Sud_N(alpha,+theta*)
+with Sud_N(alpha,g) = prod_{k<=N}|2 sin(pi(k alpha + g))| the INHOMOGENEOUS SUDLER PRODUCT,
+and m(Q_{1,1}) = log(0.3) = -1.203972804326, WHICH IS THE REGISTER'S OWN PUBLISHED (1,1)
+SUBTORUS ROW.  All sixteen published subtorus rows are reproduced to 4.8e-10 as a control.
+
+================================================================================
+R-6.  THE HYPOTHESIS THAT DECIDES CONVERGENCE IS NOT A CONDITION ON THE
+      CONNECTION.                                            [PROVED + EXHIBITED]
+================================================================================
+(D2) is a condition on the orbit's approach to Z(P), and Z(P) is determined by pi.  So the
+sufficient hypothesis H2' := (D1) and (D2) is a condition on the PAIR (pi, omega), not on the
+connection alone.  H2 as registered has the wrong SHAPE, not merely the wrong strength.
+EXHIBITED with one variable moved (R_06 part 2): R-3's counterexample omega, byte-identical
+orbit, evaluated at four ready states.  It throws the average by -1.199 at N=1490 at K1's pi
+and at (.1,.3,.3,.3), and not at all at (0,1/3,1/3,1/3) or (0,.30,.35,.35).
+AND THE ARM THAT LOOKS LIKE A CONFOUND IS THE ONE THAT PROVES THE POINT: (.1,.3,.3,.3) has
+EXACTLY K1's two torus zeros, because on y = conj(x) the zero condition reads
+(p00+p11) + 2 p10 cos(2 pi theta) = 0 whenever p10 = p01.  The effect tracks the ZEROS.
+BEARING ON W-12 COROLLARY 2, STATED CAREFULLY AND NOT OVERCLAIMED: W-12 proves H2 has no
+structural failure mode, because phi : (R/2piZ)^E -> T^2 pushes Haar to Haar on every carrier,
+so no carrier and no loop designation can confine (W_F,W_C).  THAT THEOREM IS NOT TOUCHED.
+What does not transfer is its CONSEQUENCE for N1: the hypothesis N1 actually needs is not a
+condition on (W_F,W_C), so "the carrier cannot violate it" is not the same statement about it.
+W-12's REOPENS clause asks for "a singular constraint on the READY STATE rather than on the
+connection".  H2' is not such a constraint -- it does not move the rate -- but it is a
+statement in which the ready state and the connection are not separable, which is the same
+axis, and no lane has been on it.
+
+================================================================================
+R-7.  WHERE (D1) AND (D2) ARE VERIFIABLE: LINEAR FORMS IN LOGARITHMS.
+      [PROVED: the reduction and the non-vanishing.  QUOTED: Baker's lower bound.]
+================================================================================
+At K1's pi, e(theta*) = zeta = (-2 + i sqrt5)/3 satisfies 3 zeta^2 + 4 zeta + 3 = 0, so zeta is
+ALGEBRAIC of degree 2 on the unit circle and phi* := arccos(-2/3) = -i Log(zeta) is a
+LOGARITHM OF AN ALGEBRAIC NUMBER.  At the corpus's only published generic connection
+f = 1.0, c = sqrt2 (S4:603; W-10 N-4), alpha = -1/(2 pi), beta = sqrt2/(2 pi), and
+        2 pi ||k alpha + theta*|| = |Lam_1|,  Lam_1 = k + phi* - 2 pi j
+        2 pi ||k beta  - theta*|| = |Lam_2|,  Lam_2 = k sqrt2 - phi* - 2 pi j
+        2 pi ||m alpha + n beta|| = |Lam_3|,  Lam_3 = -m + n sqrt2 - 2 pi p.
+Since 2 pi = -2i Log(-1) and phi* = -i Log(zeta), each Lam is
+        beta_0 + beta_1 Log(zeta) + beta_2 Log(-1)
+with ALGEBRAIC coefficients of height O(k) (resp. O(max(|m|,|n|,|p|))).
+NON-VANISHING [PROVED]:
+   Lam_1 = 0 => zeta = e^{ik}, k a non-zero rational integer => e^{ik} algebraic, contradicting
+      Lindemann-Weierstrass.  (k = 0 gives zeta = 1, false.)
+   Lam_2 = 0 => zeta^{-1} = e^{i k sqrt2}, k sqrt2 a non-zero algebraic number, same contradiction.
+   Lam_3 = 0 with p != 0 => pi algebraic, false; with p = 0 => m + n sqrt2 = 0 => m = n = 0.
+BAKER'S THEOREM (effective, inhomogeneous form) then gives |Lam| > H^{-C} with C effective,
+which is exactly (D1) with some tau and (D2) with some sigma.  BY R-2, N1's LIMIT HOLDS AT THE
+CORPUS'S OWN PUBLISHED GENERIC CONNECTION AND ITS OWN REGISTERED READY STATE, and by the same
+argument at every algebraic (alpha,beta) and more generally whenever alpha, beta lie in the
+Q-span of 1, algebraic numbers, and logarithms of algebraic numbers.
+FLAGGED, AND NOT DRESSED UP: this lane proves the REDUCTION and the NON-VANISHING and QUOTES
+the lower bound from Baker by theorem-shape.  Constants are not tracked.  A reader who does
+not grant the quoted theorem should read R-7 as reducing N1's remaining hypothesis to a named,
+standard, effective statement of transcendence theory -- which is itself the finding.
+
+================================================================================
+R-8.  THE STRUCTURAL DIFFERENCE FROM THE SUDLER PROBLEM.   [PROVED + MEASURED]
+================================================================================
+In one dimension the singularity of log|1-x| sits at the group identity and Dirichlet FORCES
+min_{k<=N}||k alpha|| <= 1/N: near-hits are unavoidable for every alpha, which is why the
+Sudler problem is delicate for every alpha and why the continued fraction decides it.
+In two dimensions the singular set of log|P| is a set of POINTS -- codimension 2 -- and nothing
+forces a near-hit at all.  N orbit points in T^2 leave a fixed point about N^{-1/2} away.
+MEASURED over seven decades, sqrt(N) min_{k<=N} dist(orbit, Z(P)):
+        BA-cubic 0.37 0.13 0.39 0.18 0.53 0.26 0.29
+        CORPUS   0.31 0.23 0.57 0.60 0.12 0.36 0.25
+        BA-alg   0.35 0.52 0.26 0.30 0.47 0.52 0.21
+and -log min|Z_k| grows against log N with slope 0.563 -- the codimension-2 prediction is 1/2.
+CONSEQUENCE: the deepest single term is ~ (1/2) log N, contributing O(log N / N) to S_N.
+GENERICALLY OUR PROBLEM IS EASIER THAN SUDLER'S; ON A NULL SET IT IS WORSE, because the
+inhomogeneous target can be approached at any rate whatever (R-3).
+AND THE FOURTH ARM CONFIRMS R-5 FROM THE OTHER SIDE: the RESONANT arm's diagnostic GROWS like
+sqrt(N) because its orbit closure is a circle that misses both zeros, min dist saturating at
+1.294e-02.  That is why it converges at all -- to the subtorus value -0.767015028, agreeing
+with the register's published -0.767014993 to 3.5e-08, and NOT to m(P).
+
+================================================================================
+WHAT THIS LANE DOES NOT ESTABLISH
+================================================================================
+* No claim that N1 is false.  R-3 refutes the SUFFICIENCY OF H2 AS REGISTERED, and R-2/R-7
+  supply a hypothesis that works and is verifiable at the corpus's own published point.
+* R-2's proof uses the standard box-discrepancy estimate and Erdos-Turan-Koksma without
+  re-deriving them, and R-7 quotes Baker.  Both are named imports, both are load-bearing.
+* Nothing here decides the FIRST hypothesis H1 (that the relative branch operator is
+  class-constant diagonal), which W-11 records as a stipulation with a sealed admissible
+  alternative (COR-F).  This lane is entirely downstream of H1.
+* Nothing here decides the holonomy reading, the schedule-admissibility criterion, the
+  loop-designation admissibility criterion, or any of the three principal's decisions.
+* LINEAGE: Opus 5, the same lineage as W-07 through W-12.  This is not the
+  lineage-independent lane those rows ask for.  Discount it as one block with them.

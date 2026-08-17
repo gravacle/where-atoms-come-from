@@ -1,0 +1,217 @@
+LANE W-13 / Z — THE FOUR STATEMENTS, WITH THEIR PROOFS, THEIR HYPOTHESES, AND THEIR SCOPE.
+Every number quoted is produced by z1..z4 in this directory and sits in the .OUT.txt files
+beside them.  Precision: IEEE double unless a line says EXACT.
+Notation throughout: P(x,y) = p00 + p10 x + p01 y + p11 xy on T^2, p_a >= 0, sum p_a = 1;
+  A(x) = p00 + p10 x, B(x) = p01 + p11 x  (the two JENSEN BRANCHES);
+  S1 = |A(+1)| = p00+p10, S2 = |B(+1)| = p01+p11, D1 = |A(-1)| = |p00-p10|, D2 = |B(-1)| = |p01-p11|.
+
+============================================================================================
+Z1.  THE ZERO SET OF P ON T^2, CLASSIFIED AND COUNTED.  ESTABLISHED.
+
+  Because |y| = 1 is free at fixed x, P(x,y) = 0 for some y iff |A(x)| = |B(x)|, and then
+  y = -A(x)/B(x) is DETERMINED unless B(x) = 0, in which case A(x) = 0 too and the whole
+  fibre {x} x T lies in Z(P).  And
+        g(t) := |A(e^{it})|^2 - |B(e^{it})|^2 = C + D cos t,
+        C = p00^2+p10^2-p01^2-p11^2 ,  D = 2(p00 p10 - p01 p11),
+  is AFFINE IN cos t, with endpoint values g(0) = S1^2 - S2^2 and g(pi) = D1^2 - D2^2.
+  Since S1 + S2 = 1 > 0 and D1, D2 >= 0:
+
+     Z(P) is EMPTY                     <=>  (S1-S2)(D1-D2) > 0
+     Z(P) is TWO POINTS, a COMPLEX-CONJUGATE PAIR
+                                       <=>  (S1-S2)(D1-D2) < 0
+     Z(P) is ONE POINT                 <=>  (S1-S2)(D1-D2) = 0 and not a curve stratum;
+                                            the point is (+1,-1) if S1 = S2, and (-1,+-1)
+                                            if D1 = D2
+     Z(P) is a CURVE                   <=>  exactly one of three codimension-2 strata:
+        (I)   p00 = p10 and p01 = p11   ->  Z = {x = -1} x T          [A and B share a zero]
+        (II)  p00 = p01 and p10 = p11   ->  Z = T x {y = -1}          [P = (1+y)(p00+p10 x)]
+        (III) p00 = p11 and p10 = p01   ->  Z = {(x, -A(x)/B(x))}, a graph over the x-circle
+
+  SO "THE INTERSECTION OF A COMPLEX CURVE WITH T^2 IS GENERICALLY ISOLATED POINTS" IS
+  ESTABLISHED, WITH THE COUNT 2, AND IS REFUTED AS A UNIVERSAL: on a codimension-2 set of
+  weight vectors the intersection is one-dimensional.  The four types are STRATA — {EMPTY}
+  and {TWO} are open, {ONE} is the codimension-1 wall between them, and the three CURVE
+  families lie inside that wall.
+  CLOSED FORM: cos s0 = -C/D is EXACT RATIONAL whenever pi is rational, and
+  y0 = -A(x0)/B(x0).
+  PROOF-BY-CHECK: 12064 exact simplex points, classifier vs an independent exact root count,
+  0 mismatches [z1 (b)].  |P| at every closed-form zero of every named state <= 5.7e-17, and
+  EXACTLY 0 in Gaussian-rational arithmetic at K1's registered pi [z1 (c)(e)].
+
+  N1's REGISTERED POLYNOMIAL.  pi = (0, 3/10, 3/10, 2/5).  Because p10 = p01 the equation
+  collapses to 2 p10 cos s + p11 = 0, so cos s0 = -2/3 and
+
+        Z(P) = { ( (-2 + i sqrt5)/3 , (-2 - i sqrt5)/3 ) ,  its complex conjugate }
+
+  EXACTLY TWO POINTS, algebraic of degree 2 over Q, at angles s0 = +- arccos(-2/3) =
+  +- 2.300523983022 rad, t0 = -s0.  Verified with no float: cos^2+sin^2 = 4/9+5/9 = 1,
+  Re P = 0, and the sqrt5 coefficient is p10 - p01 = 0 [z1 (e)].
+  min_{T^2} |P| is EXACTLY 0.  The 2.0e-04 quoted from a 2048^2 grid is a WINDOW ARTEFACT of
+  the class COR-E convicts; the 1-D Jensen minimum falls 9.5e-05 -> 1.1e-08 as the grid runs
+  2^12 -> 2^22, i.e. like 1/n, which is what a conical zero gives.
+
+  THE GEOMETRIC TYPE OF EVERY CARRIER ROW OF S4:575, WHICH THE CORPUS HAS NEVER HAD:
+     B0b uniform (4/9,2/9,2/9,1/9)   EMPTY      min|P| = 1/9
+     B4  uniform (1/6,1/6,1/6,1/2)   EMPTY      min|P| = 0.272165526976
+     B0a uniform (2/9,4/9,3/9,0)     TWO        cos s0 = -11/16
+     B1 = B3 = B2 uniform (0,2/5,2/5,1/5)  TWO  cos s0 = -1/4
+     B1q uniform (1/7,3/7,3/7,0)     TWO        cos s0 = -1/6
+     B1s uniform (0,5/11,5/11,1/11)  TWO        cos s0 = -1/10
+     B1p uniform (0,1/2,1/2,0)       CURVE-III  Z = {y = -x}
+     S4 sense-C, 3 classes (0,.3,.3,.4)    TWO        <- N1 as registered
+     S4 sense-C, 4 classes (1/4,1/4,1/4,1/4) CURVE-I+II+III  Z = two circles
+     S1's own published ready state (0,0,1/2,1/2) CURVE-I  Z = {x = -1} x T
+
+============================================================================================
+Z2.  NO CROSSING ==> A CLOSED FORM AND A CONTINUOUS INTEGRAND.  ESTABLISHED.
+
+  If (S1-S2)(D1-D2) > 0 — equivalently Z(P) = empty, equivalently the Jensen branches never
+  cross — then one branch dominates throughout and
+        m(P) = log max(p00, p10)   if S1 > S2,       m(P) = log max(p01, p11)   if S2 > S1,
+  and log|P| is CONTINUOUS AND BOUNDED on T^2, with
+        log( min_t ||A|-|B|| )  <=  log|P|  <=  0.
+  PROOF.  m(P) = (1/2pi) INT log max(|A|,|B|) dt (Jensen in y); with one branch dominating
+  this is m of a linear binomial, which is Jensen's log max of its two coefficients.  []
+  CHECK: 3026 non-crossing Dirichlet states, max |m(P) - log(the predicted weight)| = 2.2e-16.
+  SCOPE NOTE: M3-2(d) already verified "m(P) = log p_max off the firing region" numerically.
+  What is added is the proof, WHICH weight it is, and the CONTINUITY half.
+  THE CORPUS ALREADY OWNED AN INSTANCE AND DID NOT SEE THE THEOREM: W-10's defect N-3
+  ("one Jensen branch dominates everywhere ... branches never cross ... lambda = log(4/9)
+  EXACTLY") is this theorem at B0b's uniform state.
+
+============================================================================================
+Z3.  THE LOCAL SINGULARITY, AND THE SUBLEVEL EXPONENT.  ESTABLISHED.
+
+  At a zero (x0,y0), put x = x0 e^{i sigma}, y = y0 e^{i tau}.  Then
+     P = i(alpha sigma + beta tau) - (1/2)(a sigma^2 + b tau^2 + c(sigma+tau)^2) + O(r^3),
+     a = p10 x0, b = p01 y0, c = p11 x0 y0,
+     alpha = x0(p10 + p11 y0),   beta = y0(p01 + p11 x0) = y0 B(x0),
+  and the linear part is the real 2x2 matrix M = [[Re a, Re b],[Im a, Im b]] (columns
+  alpha, beta), with  det M = Im(conj(alpha) beta).
+
+  (i)  det M != 0  <=>  the Jensen branches cross TRANSVERSALLY  <=>  Z(P) is TWO points.
+       Then |P| = |M(sigma,tau)|(1+O(r)), so  s_min r <= |P| <= s_max r  with s_min > 0:
+       A SIMPLE, CONICAL ZERO.  log|P| ~ log r.  The sublevel set near the zero is an
+       ELLIPSE of area pi eps^2 / |det M|.
+       MEASURED at K1's registered pi over SIX decades of r: min |P|/r -> s_min =
+       0.282842712475 and max |P|/r -> s_max = 0.316227766017, both like O(r) [z2 (b)].
+  (ii) det M = 0  <=>  the branches touch (ONE-point stratum) or coincide (CURVE strata).
+       At the ONE-point stratum alpha and beta are both REAL, the linear image is a line, and
+       along its kernel |P| ~ (const) r^2.  MEASURED: |P|/r -> 0 and |P|/r^2 -> 0.100000000
+       over six decades [z2 (c)].
+
+  THE SUBLEVEL MEASURE mu(eps) = Haar{|P| < eps}, computed by the EXACT y-arc formula
+  (a 1-D quadrature of a CONTINUOUS integrand; no 2-D grid anywhere in this lane):
+
+     stratum          Z(P)                  theta   measured last-decade slope   constant
+     EMPTY            no zeros              --      mu = 0 for eps < min|P|      --
+     TWO   (open)     2 conjugate points    2       1.999818                     1.7794071
+     ONE   (wall)     1 tangential point    3/2     1.499980                     1.2523800
+     CURVE (cod 2)    a circle              1       1.000038 / 1.000107          1.2223844 / 0.6365896
+
+  The stratum-I curve constant is PREDICTED EXACTLY: at pi = (0,0,1/2,1/2), |P| = |cos(s/2)|,
+  so mu(eps) = 2 arcsin(eps)*2/(2pi) -> (2/pi) eps = 0.6366198 eps.  The quadrature returns
+  0.6365896, a relative 4.7e-05 — the residue of a trapezoid on an integrand with a square-root
+  kink, and it is quoted as a quadrature value, not as an equality.
+
+  AND THE CONSTANT IS PREDICTED, NOT FITTED: mu/eps^2 -> (1/4pi) SUM_zeros 1/|det M_j|.
+  At K1's registered pi that predicts 1.779406358543 and the quadrature returns 1.779405570
+  at eps = 1e-4 and 1.779407092 at eps = 1e-5 — agreement to 1e-6 relative, over six decades.
+  log|P| is in L^1(T^2) in EVERY stratum (m(P) is always finite); theta is what a Birkhoff
+  sum feels, through the truncation identity
+     INT (max(log|P|, log eps) - log|P|) = INT_0^eps log(eps/u) d mu(u) = C eps^theta / theta.
+
+  WINDOW ARTEFACT, SHOWN RATHER THAN HIDDEN: a UNIFORM t-mesh returns mu = 0 once eps falls
+  below the mesh spacing (2^18 mesh: mu(1e-6) = 0; 2^20 mesh: mu(1e-7) = 0), which reads as
+  "the singularity went away".  Every figure above uses a crossing-refined mesh, self-
+  consistent to 2.4e-06 between two fine-mesh sizes [z2 (f)].
+
+============================================================================================
+Z4.  WHAT THIS DOES TO N1's CONVERGENCE.  THE DICHOTOMY.
+
+  (i)  Z(P) = EMPTY  ==>  log|P| is CONTINUOUS AND BOUNDED, hence Riemann-integrable, so for
+       EVERY connection whose orbit is equidistributed — i.e. under H2 ALONE —
+             (1/N) SUM_{k<=N} log|Z_k|  ->  m(P),
+       and by Z2 that limit is an elementary logarithm.  NO DIOPHANTINE HYPOTHESIS.  NO
+       DISCREPANCY RATE.  N1 IS UNCONDITIONAL ON THIS STRATUM.
+       AND THE STRATUM IS THE MAJORITY: measure 3/4 of the four-class simplex (the crossing
+       region is exactly 1/4, M3-2(b3), re-derived here by a second route in z3 (d)) and 3/4
+       of the three-class simplex K1 lives on.
+       THEOREM CHECK (not a control): over 8e6 evaluations, 400 connections x 20000 cells,
+       |Z_k| never fell below min_{T^2}|P| = 1/9 [z4 (b)].
+  (ii) Z(P) != EMPTY  ==>  H2 alone is NOT sufficient (M1_06's exhibit), and the exceptional
+       set of connections has a different SHAPE in the two sub-cases:
+         TWO points  — an exact hit needs two simultaneous conditions, so the exact-hit set of
+           connections is COUNTABLE; near-hits are simultaneous approximation to a POINT, and
+           the measured geometric-mean min distance over 200 connections falls like N^{-0.50}
+           across four consecutive decades [z4 (d)].  Diophantine exponent needed: tau > 1/2.
+         CURVE       — in stratum I an exact hit needs only u^k = -1, ONE condition, so the
+           exact-hit set is a DENSE UNION OF CIRCLES: CODIMENSION 1, not 2.  Min distance
+           falls like N^{-0.99}.  Diophantine exponent needed: tau > 1.
+       BOREL-CANTELLI gives both exponents for ALMOST EVERY connection, so N1 holds a.e. in
+       every stratum: THE STRATA DIFFER IN THE SHAPE OF THE EXCEPTIONAL SET, NOT ITS MEASURE.
+
+  THEOREM Z4-a (found by a confound in this lane's own design, recorded not patched).
+  Whenever p10 = p01 — which includes K1's REGISTERED pi — the two zeros satisfy y0 = conj(x0),
+  so x0 y0 = 1 EXACTLY: they lie on the anti-diagonal subtorus {xy = 1}.  An orbit point can
+  equal a zero only if (uv)^k = 1, i.e. only if (k,k) is a relation.  THEREFORE
+        NO CONNECTION SATISFYING H2 EVER LANDS EXACTLY ON A ZERO OF N1's REGISTERED
+        POLYNOMIAL; only near-approaches occur, and forcing a delta-approach at step k
+        forces a near-relation of size 2k with defect O(delta).
+  This is why the "hostile connection" column of z4 (c) cannot be made to move one variable.
+
+  THE RESONANT CASE DOES NOT ESCAPE THE ZERO SET; IT CHANGES ITS CODIMENSION.  If H2 fails
+  with primitive relation (m,n) the orbit closure is a circle H and the limit is a
+  one-variable Mahler measure (M1_08 T2(d)).  Z(P) is 0-dimensional and H is 1-dimensional in
+  a 2-torus, so they GENERICALLY MISS.  CHECKED at both of the corpus's distinguished
+  connections, at K1's registered pi: the (11,20) subtorus has min_H |P| = 0.023011613, and
+  the order-4 orbit's min distance to Z(P) is 0.164246.  BOTH MISS.  So the erratum against
+  W-02's 4.9e-04 gap is a BOYD-LAWTON APPROXIMATION GAP (M1_07), not a singularity effect,
+  and the order-4 gap of 3.7e-02 is a finite-orbit average, -(1/2)log 5 exactly.
+
+============================================================================================
+Z5.  ITEM (4): THE TORUS ZERO AND W-01's CONVEX HULL, BOTH DIRECTIONS, QUANTIFIERS RESTORED.
+
+  FOR ALL pi:   [ EXISTS (x,y) in T^2 : P = 0 ]  ==>  [ max_a p_a <= 1/2 ]            TRUE
+                (one line: p_a chi_a = -(sum of the other three) forces p_a <= 1 - p_a)
+                EXACT check: 0 violations in 53823 simplex points at three denominators.
+  FOR ALL pi WITH SOME p_a = 0 — in particular EVERY state on K1, where p00 = 0 by incidence:
+                [ max_a p_a <= 1/2 ]  <=>  [ EXISTS (x,y) : P = 0 ]                    TRUE
+                (with p00 = 0, S1 = D1 = p10 and the criterion becomes p10 <= 1/2 together
+                 with p10 >= |p01-p11|, which IS p01 <= 1/2 and p11 <= 1/2, term for term)
+                EXACT check: 0 disagreements in 38433 points of the p00 = 0 face.
+  EXISTS pi WITH ALL FOUR CLASSES OCCUPIED:
+                [ max_a p_a <= 1/2 ]  AND  [ NO torus zero ]                           TRUE
+                WITNESS, AND IT IS THE CORPUS'S OWN: B0b's uniform state (4/9,2/9,2/9,1/9),
+                S4:575.  max = 4/9 <= 1/2, and (S1-S2)(D1-D2) = 1/27 > 0, min|P| = 1/9.
+  MEASURE: the zero region is EXACTLY 1/4 of the four-class simplex and the polygon region is
+  EXACTLY 1/2, so HALF of every state the polygon reading calls a firer does not fire.
+
+  SO THE REGISTRAR'S REPORT — "P has a torus zero IF AND ONLY IF W-01's criterion fires" — IS
+  CORRECT ON K1 AND FALSE AS STATED, and it is correct for a reason that is a THREE-CLASS
+  ACCIDENT (p00 = 0), which is the same accident W-09 convicted W-01's advertised virtue of.
+  ALL OF THIS EXCEPT THE B0b WITNESS AND THE SECOND-ROUTE DERIVATION WAS ALREADY PROVED AND
+  SEALED IN LANE_W08_M3_ZEROSET ON 2026-08-16 AND IS IN NO REGISTER ROW.
+
+============================================================================================
+Z6.  "THE SINGULAR CASE IS THE FORMATION CASE" IS FALSE, AND IT IS THE FRAMING SENTENCE.
+
+  The brief for this round concludes: "So P has a torus zero IF AND ONLY IF W-01's criterion
+  fires.  THE SINGULAR CASE IS THE FORMATION CASE.  The corpus lives in the regime where its
+  own theorem is hardest."  The second sentence conflates two different criteria that live on
+  two different sets:
+
+     FORMATION (W-02, re-proved as M1_08 T4):  |Omega_N| -> 0  <=>  G != {1},
+        a condition on the CONNECTION and the SUPPORT.  At any connection with G != {1} it
+        holds for EVERY ready state, and lambda = m(P) < 0 STRICTLY except at the three
+        corners max_a p_a = 1 (M1_08 T4).  So formation occupies the WHOLE simplex bar a
+        3-point set.
+     SINGULARITY (this lane):  Z(P) != empty  <=>  the Jensen branches cross,
+        a condition on the STATE alone.  It occupies EXACTLY 1/4 of the four-class simplex
+        and EXACTLY 1/4 of K1's three-class one.
+
+  THEREFORE: on 3/4 of all forming states log|P| is CONTINUOUS AND BOUNDED, H2 alone settles
+  N1, and m(P) is an elementary logarithm (Z2).  THE CORPUS DOES NOT LIVE IN THE HARD REGIME
+  BY NECESSITY — IT LIVES THERE AT ITS TWO REGISTERED STATES, AND AT ONE OF THE TWO IT LIVES
+  IN THE HARDEST STRATUM OF ALL (S1's published ready state: a CURVE).  Two of S4's own ten
+  uniform-state carrier rows, B0b and B4, are in the EASY regime and were never noticed to be.

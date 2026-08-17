@@ -1,0 +1,228 @@
+"""LANE W-13 / Z  --  z3: THE TORUS ZERO vs W-01's CONVEX-HULL CRITERION, BOTH DIRECTIONS,
+QUANTIFIERS RESTORED.  Item (4).
+MOST OF THIS QUESTION WAS ALREADY SETTLED ON DISK BY LANE_W08_M3_ZEROSET (2026-08-16) AND IS
+CITED, NOT RECLAIMED.  See PRIOR_ART_ON_DISK.txt.  What this script adds is (i) an INDEPENDENT
+derivation of the exact volumes from the (S1,S2,D1,D2) parametrisation rather than M3's Renyi
+spacings, (ii) the corpus's OWN carrier B0b as a counterexample living inside a register row,
+and (iii) the exact statement of what the registrar's brief for this round gets right and wrong."""
+import sys, math
+import numpy as np
+from fractions import Fraction as F
+sys.path.insert(0, __file__.rsplit('/', 1)[0])
+from z0_lib import strat_exact, polygon_exact, min_abs_P, mahler, fr, NAMED
+
+W = 96
+def hdr(s):
+    print("=" * W); print(s); print("=" * W)
+
+hdr("z3  TORUS ZERO vs W-01's CONVEX HULL: BOTH DIRECTIONS, WITH THE QUANTIFIER STATED")
+print("numpy", np.__version__, "\n")
+
+print("-" * W)
+print("(0) WHAT WAS ALREADY ON DISK BEFORE THIS LANE RAN -- READ FIRST, NOT REDONE.")
+print("""
+    LANE_W08_M3_ZEROSET/m3_2_fourclass.OUT.txt, sealed 2026-08-16, ALREADY CONTAINS:
+      * the four-class existence criterion, as D = (product over the three 2+2 pairings) <= 0;
+      * its sorted form  w1 + w4 <= w2 + w3  ('the top gap is no wider than the bottom gap');
+      * the collapse to the triangle inequality at p00 = 0;
+      * the exact volumes: FIRING REGION 1/4 of the 4-class simplex, POLYGON REGION 1/2,
+        so HALF of every state the polygon reading calls a firer does NOT fire;
+      * exhaustive exact sweeps at simplex denominators 30 and 60 with 0 mismatches;
+      * m3_5's quantifier separation (connection side vs state side) and its naming of the
+        operative variable as 'whether the unit-modulus coefficients have FREE RELATIVE
+        PHASES', with 'four classes', 'p00 is special' and 'the multiset' explicitly ruled out.
+    THE REGISTRAR'S BRIEF FOR THIS ROUND STATES: 'P has a torus zero IF AND ONLY IF W-01's
+    convex-hull criterion fires.'  THAT SENTENCE WAS REFUTED ON DISK ELEVEN LANE-DIRECTORIES
+    AGO AND THE REFUTATION IS IN NO REGISTER ROW.  `grep -n 'M3\\|polygon' REGISTER_V001.md`
+    returns nothing from that lane.  THIS IS THE UNDER-READING FAILURE MODE, AGAIN, AND IT IS
+    CAUGHT BY READING, NOT BY COMPUTING.
+    My criterion (S1-S2)(D1-D2) <= 0 IS M3's D <= 0: with S1+S2 = 1,
+        D = (S1^2-S2^2)(D1^2-D2^2) = (S1-S2)(D1-D2)(D1+D2),  D1+D2 >= 0.
+    Same predicate, different route.  M3 has priority.  What follows is a cross-check from a
+    different parametrisation plus three things M3 did not do.
+""")
+
+# ---------------------------------------------------------------------------------------
+print("-" * W)
+print("(a) THE TWO READINGS, WRITTEN OUT WITH THEIR QUANTIFIERS.")
+print("""
+    The one incidence variety is  V = { (pi, (f,c)) : P_pi(e^{-if}, e^{ic}) = 0 }.
+    W-01's sentence, REGISTER_V001.md:43, has no quantifier, and there are exactly two:
+
+      READING C  (fix the CONNECTION, quantify over STATES) -- this is what W-01's algebra
+        actually computes and what W-09 measures the region of:
+            EXISTS pi in Delta : Z_1 = 0     <=>   0 in conv{ chi_a(u,v) : a in S }
+        Region: 1/4 of connection space at three occupied classes, 1/2 at four (W-09).
+
+      READING F  (fix the STATE, quantify over CONNECTIONS) -- this is the reading the
+        registrar's brief uses when it writes 'max(0.4) <= sum of the others (0.6)':
+            EXISTS (f,c) : Z_1 = 0           <=>   P_pi has a zero on T^2.
+
+    THEY ARE DIFFERENT PREDICATES OF DIFFERENT ARGUMENTS.  The polygon inequality
+    max_a p_a <= 1/2 is the answer to a THIRD question -- 'is 0 in the convex hull of four
+    FREE unit vectors with lengths p_a' -- and the four characters (1,u,v,uv) are NOT free:
+    the fourth is the product of the other two.
+""")
+
+print("-" * W)
+print("(b) DIRECTION 1: TORUS ZERO ==> POLYGON.  TRUE UNCONDITIONALLY, ALL CLASS COUNTS.")
+print("    Proof: if P(x,y) = 0 with |x|=|y|=1 then p_a chi_a = -(sum of the other three),")
+print("    so p_a <= 1 - p_a for every a, i.e. max_a p_a <= 1/2.  One line, no hypothesis.")
+print("    EXACT CHECK over the whole simplex at three denominators:")
+for N in (20, 40, 60):
+    bad = tot = zc = pc = 0
+    for i in range(N + 1):
+        for j in range(N + 1 - i):
+            for k in range(N + 1 - i - j):
+                l = N - i - j - k
+                p = (F(i, N), F(j, N), F(k, N), F(l, N))
+                z = strat_exact(p)[0] != 'EMPTY'
+                q = polygon_exact(p)
+                tot += 1; zc += z; pc += q
+                if z and not q:
+                    bad += 1
+    print(f"    N = {N:3d}: {tot:7d} exact points   zero {zc:7d} ({zc/tot:.4f})   "
+          f"polygon {pc:7d} ({pc/tot:.4f})   #(zero AND NOT polygon) = {bad}   MUST BE 0")
+print()
+
+print("-" * W)
+print("(c) DIRECTION 2: POLYGON ==> TORUS ZERO.  TRUE AT THREE OCCUPIED CLASSES.")
+print("    FALSE AT FOUR.  BOTH HALVES PROVED HERE FROM (S1,S2,D1,D2), M3's RESULT REACHED")
+print("    BY A SECOND ROUTE.")
+print("""
+    THREE CLASSES (take p00 = 0; the criterion is S_4-invariant so the label does not matter):
+      S1 = D1 = p10 exactly, so (S1-S2)(D1-D2) <= 0 becomes (2 p10 - 1)(p10 - |p01-p11|) <= 0.
+      * p10 > 1/2 forces p10 <= |p01-p11| <= p01+p11 = 1-p10 < 1/2: contradiction.  So no zero,
+        and the polygon fails too (p10 > 1/2).  Agree.
+      * p10 <= 1/2: the condition is p10 >= |p01-p11|, and with p01+p11 = 1-p10 that is
+        EXACTLY (p01 <= 1/2 AND p11 <= 1/2).  Together with p10 <= 1/2 that is the polygon
+        inequality, term for term.  EQUIVALENT.  []
+    FOUR CLASSES: the equivalence fails, because S1 and D1 are then INDEPENDENT.
+""")
+print("    EXACT CHECK, p00 = 0 FACE, three denominators (must be 0 disagreements):")
+for N in (60, 120, 240):
+    bad = tot = 0
+    for j in range(N + 1):
+        for k in range(N + 1 - j):
+            l = N - j - k
+            p = (F(0), F(j, N), F(k, N), F(l, N))
+            if (strat_exact(p)[0] != 'EMPTY') != polygon_exact(p):
+                bad += 1
+            tot += 1
+    print(f"    p00 = 0, N = {N:3d}: {tot:6d} exact points, disagreements = {bad}")
+print()
+print("    EXACT CHECK, FULL SIMPLEX: every disagreement must be polygon-TRUE / zero-FALSE.")
+for N in (30, 60):
+    wrongway = spurious = tot = 0
+    for i in range(N + 1):
+        for j in range(N + 1 - i):
+            for k in range(N + 1 - i - j):
+                l = N - i - j - k
+                p = (F(i, N), F(j, N), F(k, N), F(l, N))
+                z = strat_exact(p)[0] != 'EMPTY'; q = polygon_exact(p)
+                tot += 1
+                if q and not z: spurious += 1
+                if z and not q: wrongway += 1
+    print(f"    N = {N:3d}: {tot:6d} points   spurious (polygon TRUE, no zero) = {spurious}"
+          f"   impossible (zero, polygon FALSE) = {wrongway}")
+print()
+
+print("-" * W)
+print("(d) THE EXACT VOLUMES, DERIVED HERE FROM (S1,D1,S2,D2) -- AN INDEPENDENT ROUTE TO")
+print("    M3's 1/4 AND 1/2.")
+print("""
+    Under Dirichlet(1,1,1,1): S1 = p00+p10 ~ Beta(2,2) with density 6 s(1-s); GIVEN S1 = s,
+    p00/s ~ U(0,1) and p01/(1-s) ~ U(0,1) independently, so D1 = s*U1 and D2 = (1-s)*U2 with
+    U1,U2 ~ U(0,1) independent.  The zero condition is (s - (1-s))(sU1 - (1-s)U2) <= 0:
+        s > 1/2 : need U1 <= ((1-s)/s) U2, probability ((1-s)/s)/2
+        s < 1/2 : need U2 <= (s/(1-s)) U1, probability (s/(1-s))/2
+    P(zero) = INT_{1/2}^1 6s(1-s) (1-s)/(2s) ds + INT_0^{1/2} 6s(1-s) s/(2(1-s)) ds
+            = 3 INT_{1/2}^1 (1-s)^2 ds + 3 INT_0^{1/2} s^2 ds = 3/24 + 3/24 = 1/4   EXACTLY.
+    P(polygon) = 1 - 4 (1/2)^3 = 1/2   EXACTLY (the complement is four disjoint scaled simplices
+    of ratio 1/2).  AGREES WITH M3's Renyi-spacing derivation, by a different route.
+""")
+rng = np.random.default_rng(20260817)
+n = 2_000_000
+g = rng.gamma(1.0, size=(n, 4)); g /= g.sum(1, keepdims=True)
+S1 = g[:, 0] + g[:, 1]; S2 = g[:, 2] + g[:, 3]
+D1 = np.abs(g[:, 0] - g[:, 1]); D2 = np.abs(g[:, 2] - g[:, 3])
+zero = (S1 - S2) * (D1 - D2) <= 0
+poly = g.max(1) <= 0.5
+print(f"    Monte Carlo, {n} Dirichlet draws, seed 20260817:")
+print(f"      P(torus zero) = {zero.mean():.6f}   exact 0.25    dev {zero.mean()-0.25:+.2e}")
+print(f"      P(polygon)    = {poly.mean():.6f}   exact 0.50    dev {poly.mean()-0.5:+.2e}")
+print(f"      P(polygon AND no zero) = {(poly & ~zero).mean():.6f}   exact 0.25")
+print(f"      P(zero AND not polygon) = {(zero & ~poly).mean():.6f}   MUST BE 0")
+print()
+
+print("-" * W)
+print("(e) THE COUNTEREXAMPLE THE CORPUS ALREADY OWNS: B0b's OWN UNIFORM STATE.")
+print("""
+    W-10's defect N-3 (REGISTER_V001.md, W-10 row) computes, for S4's carrier B0b under the
+    uniform ready state, that  |a+b e^{it}|^2 - |c+d e^{it}|^2 = 5/27 + (4/27) cos t, 'which
+    would need cos t = -5/4 to vanish, so ONE JENSEN BRANCH DOMINATES EVERYWHERE and
+    lambda = m(4/9 + (2/9)x) = log(4/9) EXACTLY.  Branches never cross.'
+    THAT IS THIS LANE'S CRITERION, ALREADY IN A REGISTER ROW, WITH THE OPPOSITE SIGN TO THE
+    REGISTRAR'S COINCIDENCE CLAIM -- and nobody noticed that it is a counterexample to it.
+""")
+B0b = fr(F(4, 9), F(2, 9), F(2, 9), F(1, 9))
+S1_, S2_ = B0b[0] + B0b[1], B0b[2] + B0b[3]
+D1_, D2_ = abs(B0b[0] - B0b[1]), abs(B0b[2] - B0b[3])
+print(f"    B0b uniform pi = (4/9, 2/9, 2/9, 1/9)   S4:575 class counts {{00:4,10:2,01:2,11:1}}/9")
+print(f"      max_a p_a = {max(B0b)} <= 1/2      POLYGON HOLDS  -> W-01's criterion 'fires'")
+print(f"      (S1-S2)(D1-D2) = ({S1_}-{S2_})({D1_}-{D2_}) = {(S1_-S2_)*(D1_-D2_)} > 0"
+      f"   -> NO TORUS ZERO")
+print(f"      min_{{T^2}} |P| = min_t ||A|-|B|| = 1/9 = {1/9:.12f}   measured "
+      f"{min_abs_P(B0b):.12f}")
+print(f"      m(P) = log max(p00,p10) = log(4/9) = {math.log(4/9):.12f}   Jensen quadrature "
+      f"{mahler(B0b):.12f}")
+print("      W-10 N-3's -0.810930216216 reproduced independently.  THE CLOSED FORM AND THE")
+print("      ABSENCE OF A TORUS ZERO ARE THE SAME FACT.")
+print()
+
+print("-" * W)
+print("(f) AND THE GENERAL THEOREM BEHIND N-3, WHICH THE CORPUS STATES ONLY AS AN INSTANCE:")
+print("""
+    THEOREM Z2.  If the Jensen branches do not cross -- equivalently (S1-S2)(D1-D2) > 0,
+    equivalently Z(P) = empty -- then
+        m(P) = log max(p00, p10)   if S1 > S2,      m(P) = log max(p01, p11)   if S2 > S1,
+    an ELEMENTARY CLOSED FORM, and moreover log|P| is CONTINUOUS AND BOUNDED on T^2.
+    PROOF.  m(P) = (1/2pi) INT log max(|A|,|B|); no crossing means one branch dominates
+    throughout, and m of a linear binomial is Jensen's log max of its two coefficients.  []
+    (M3-2(d) verified 'm(P) = log p_max off the firing region' numerically on 3029 states;
+     what is added is the two-line proof, the identification of WHICH weight, and the
+     CONTINUITY half -- which is the half that decides N1's convergence, in z4.)
+""")
+rng2 = np.random.default_rng(20260818)
+gg = rng2.gamma(1.0, size=(4000, 4)); gg /= gg.sum(1, keepdims=True)
+worst = 0.0; cnt = 0
+for row in gg:
+    p = tuple(row)
+    S1_, S2_ = p[0] + p[1], p[2] + p[3]
+    D1_, D2_ = abs(p[0] - p[1]), abs(p[2] - p[3])
+    if (S1_ - S2_) * (D1_ - D2_) <= 0:
+        continue
+    cnt += 1
+    pred = math.log(max(p[0], p[1])) if S1_ > S2_ else math.log(max(p[2], p[3]))
+    worst = max(worst, abs(mahler(p, 1 << 16) - pred))
+print(f"    {cnt} non-crossing states of 4000 Dirichlet draws (seed 20260818):")
+print(f"      max | m(P) - log(the predicted weight) | = {worst:.3e}")
+print()
+
+print("-" * W)
+print("(g) THE VERDICT ON ITEM (4), STATED WITH ITS QUANTIFIERS.")
+print("""
+    FOR ALL pi:              [ EXISTS (x,y) in T^2 : P = 0 ]  ==>  [ max_a p_a <= 1/2 ]   TRUE
+    FOR ALL pi with some p_a = 0 (in particular ALL of K1, where p00 = 0 by incidence):
+                             [ max_a p_a <= 1/2 ]  <=>  [ EXISTS (x,y) : P = 0 ]          TRUE
+    EXISTS pi with all four occupied:
+                             [ max_a p_a <= 1/2 ]  AND  [ NO torus zero ]                 TRUE
+                             witness: B0b's own uniform state (4/9,2/9,2/9,1/9), S4:575.
+
+    SO THE REGISTRAR'S REPORT IS CORRECT ON K1 AND FALSE AS STATED.  It is correct for a
+    reason that is a THREE-CLASS ACCIDENT -- p00 = 0 -- which is the SAME accident W-09
+    convicted W-01's advertised virtue of, and the SAME accident M3-5 named a round earlier.
+    On the four-class simplex the polygon reading calls a firer of exactly HALF the states
+    that do not fire.
+""")
+print("DONE z3")

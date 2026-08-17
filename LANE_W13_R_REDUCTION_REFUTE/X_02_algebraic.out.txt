@@ -1,0 +1,64 @@
+===============================================================================
+X_02 — 'AT EVERY ALGEBRAIC (alpha,beta)' IS FALSE
+===============================================================================
+
+m(P) = -0.767507880358    log(0.3) = -1.203972804326
+
+1. THE RELATION LATTICE OF EACH ARM, EXACT (Fraction arithmetic), |m|,|n| <= 12
+   A  alg, L=<(1,1)>   a=sqrt2-1, b=2-sqrt2        ALGEBRAIC deg 2 both
+      L(omega) cap box = [(-12, -12), (-11, -11), (-10, -10), (-9, -9), (-8, -8), (-7, -7), (-6, -6), (-5, -5), (-4, -4), (-3, -3), (-2, -2), (-1, -1), (1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7), (8, 8), (9, 9), (10, 10), (11, 11), (12, 12)]
+   B  alg, L=<(-2,1)>  a=frac(sqrt2), b=frac(2 sqrt2)  ALGEBRAIC deg 2 both
+      L(omega) cap box = [(-12, 6), (-10, 5), (-8, 4), (-6, 3), (-4, 2), (-2, 1), (2, -1), (4, -2), (6, -3), (8, -4), (10, -5), (12, -6)]
+   C  alg, L=<(2,2)>   a=sqrt2-1, b=3/2-sqrt2      ALGEBRAIC deg 2 both
+      L(omega) cap box = [(-12, -12), (-10, -10), (-8, -8), (-6, -6), (-4, -4), (-2, -2), (2, 2), (4, 4), (6, 6), (8, 8), (10, 10), (12, 12)]
+   D  CORPUS f=1,c=sqrt2  a=-1/2pi, b=sqrt2/2pi    NOT algebraic (Lindemann)
+      L(omega) cap box = {0}  -> H2 HOLDS
+
+2. THE SUBTORUS VALUE EACH RESONANT ARM MUST CONVERGE TO (Jensen on roots)
+   A  m(Q_{1,1})  = -1.203972804326   ( = log 0.3, the register's published (1,1) row )
+   B  m(Q_{-2,1}) = -0.916290731874
+   C  d=2 two-circle closure = -0.891400245701   (X_01)
+   D  m(P)        = -0.767507880358
+
+3. SEVEN DECADES.  ARMS-DIFF GUARD ON THE OUTPUT VECTORS.
+   A  alg, L=<(1,1)>   a=sqrt2-1, b=2-sqrt2       41e9b237c74d48feb6e18b71
+   B  alg, L=<(-2,1)>  a=frac(sqrt2), b=frac(2 sqrt2) cf33abe7b7e0aa125fec339c
+   C  alg, L=<(2,2)>   a=sqrt2-1, b=3/2-sqrt2     8b09588bb8ac61db7da3816c
+   D  CORPUS f=1,c=sqrt2  a=-1/2pi, b=sqrt2/2pi   b20b37f2e671301e65b6b817
+   distinct hashes: 4 of 4
+
+   S_N
+   N                                                          10            100           1000          10000         100000        1000000       10000000
+   A  alg, L=<(1,1)>   a=sqrt2-1, b=2-sqrt2         -1.107549518   -1.206239993   -1.202970089   -1.204010188   -1.203999149   -1.203972253   -1.203973305
+   B  alg, L=<(-2,1)>  a=frac(sqrt2), b=frac(2 sqrt2)   -1.007739115   -0.917598027   -0.916519649   -0.916378002   -0.916298586   -0.916291797   -0.916290820
+   C  alg, L=<(2,2)>   a=sqrt2-1, b=3/2-sqrt2       -0.944325859   -0.913747317   -0.891791058   -0.891670456   -0.891412382   -0.891402025   -0.891400674
+   D  CORPUS f=1,c=sqrt2  a=-1/2pi, b=sqrt2/2pi     -0.740965214   -0.770148036   -0.765486480   -0.767503342   -0.767546540   -0.767511152   -0.767508234
+
+   S_N - m(P)      <- R-7 claims this goes to 0 on EVERY algebraic (alpha,beta)
+   N                                                          10            100           1000          10000         100000        1000000       10000000
+   A  alg, L=<(1,1)>   a=sqrt2-1, b=2-sqrt2            -3.40e-01      -4.39e-01      -4.35e-01      -4.37e-01      -4.36e-01      -4.36e-01      -4.36e-01
+   B  alg, L=<(-2,1)>  a=frac(sqrt2), b=frac(2 sqrt2)      -2.40e-01      -1.50e-01      -1.49e-01      -1.49e-01      -1.49e-01      -1.49e-01      -1.49e-01
+   C  alg, L=<(2,2)>   a=sqrt2-1, b=3/2-sqrt2          -1.77e-01      -1.46e-01      -1.24e-01      -1.24e-01      -1.24e-01      -1.24e-01      -1.24e-01
+   D  CORPUS f=1,c=sqrt2  a=-1/2pi, b=sqrt2/2pi         2.65e-02      -2.64e-03       2.02e-03       4.54e-06      -3.87e-05      -3.27e-06      -3.53e-07
+
+   S_N - (its own subtorus value)
+   N                                                          10            100           1000          10000         100000        1000000       10000000
+   A  alg, L=<(1,1)>   a=sqrt2-1, b=2-sqrt2             9.64e-02      -2.27e-03       1.00e-03      -3.74e-05      -2.63e-05       5.52e-07      -5.01e-07
+   B  alg, L=<(-2,1)>  a=frac(sqrt2), b=frac(2 sqrt2)      -9.14e-02      -1.31e-03      -2.29e-04      -8.73e-05      -7.85e-06      -1.06e-06      -8.78e-08
+   C  alg, L=<(2,2)>   a=sqrt2-1, b=3/2-sqrt2          -5.29e-02      -2.23e-02      -3.91e-04      -2.70e-04      -1.21e-05      -1.78e-06      -4.28e-07
+   D  CORPUS f=1,c=sqrt2  a=-1/2pi, b=sqrt2/2pi         2.65e-02      -2.64e-03       2.02e-03       4.54e-06      -3.87e-05      -3.27e-06      -3.53e-07
+
+4. READ.
+   Arms A, B, C are ALGEBRAIC PAIRS.  None converges to m(P); each converges to its own
+   subtorus value, to 1e-6 or better at N = 1e7, across seven decades and monotonically in
+   trend.  Arm A IS the target lane's own R_03 'BA-silver' row (R_03_sudler_1d.out.txt,
+   first orbit point 0.41421356 = sqrt2 - 1, on the line u v = 1), reported there as
+   converging to log(0.3) with fitted r = 0.736.
+   SO THE LANE'S OWN SEALED ARM IS A COUNTEREXAMPLE TO ITS OWN R-7.
+   Arm D -- the corpus's published generic connection, which is NOT algebraic -- is the one
+   that converges to m(P).  R-7's THEOREM AT f=1, c=sqrt2 IS NOT TOUCHED BY ANY OF THIS.
+   THE REPAIR IS ONE CLAUSE: 'at every algebraic (alpha,beta) WITH L(omega) = {0}', i.e. with
+   1, alpha, beta linearly independent over Q.  Under that clause Liouville's inequality gives
+   (D1) and Baker gives (D2) and R-7's conclusion stands.
+
+DONE X_02

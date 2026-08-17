@@ -1,0 +1,92 @@
+==============================================================================
+RL4 — ZERO SET: THE BICONDITIONAL, L-17's SCOPE, AND A REDUCTION OF H3.
+==============================================================================
+
+--------------------------------------------------------------------------------
+(A) "TORUS ZERO  <=>  max(pi) <= 1/2".  EXACT, ON BOTH LOCI.
+--------------------------------------------------------------------------------
+  pi                                 max(pi)    max<=1/2?      torus zero?    agree?
+  ('0', '3/10', '3/10', '2/5')       2/5        YES            YES            yes
+  ('0', '1/3', '1/3', '1/3')         1/3        YES            YES            yes
+  ('0', '1/10', '1/10', '4/5')       4/5        no             no             yes
+  ('0', '1/2', '1/4', '1/4')         1/2        YES            YES            yes
+  ('1/2', '3/10', '1/10', '1/10')    1/2        YES            no             *** NO ***
+  ('1/4', '1/4', '1/4', '1/4')       1/4        YES            YES            yes
+  ('2/9', '4/9', '1/3', '0')         4/9        YES            YES            yes
+  ('9/20', '7/20', '3/20', '1/20')   9/20       YES            YES            yes
+
+  DISAGREEMENTS: 1
+     FOUR-CLASS counterexample : pi = ('1/2', '3/10', '1/10', '1/10')
+       |p00 + p10 x| ranges over [0.2000, 0.8000];  |p01 + p11 x| over [0.0000, 0.2000]
+       both are AFFINE in cos(arg x) with the SAME argument, so equality needs
+       cos(arg x) = t = -8/7, and |t| = 8/7 > 1.  NO TORUS ZERO, while max(pi) <= 1/2.
+       brute force 4096^2 grid: min |P| = 1.932184e-01   (min over x of ||a(x)|-|b(x)|| = 1.932184e-01)
+
+  READING.  On the THREE-class locus p00 = 0 the biconditional is a theorem: p10 <= p01+p11
+  is max <= 1/2, and p10 >= |p01-p11| is also exactly max(p01,p11) <= 1/2.  On the FOUR-class
+  locus it FAILS, and the failure is not exotic -- it happens at pi with max(pi) EQUAL to the
+  registered threshold.  THE BRIEF'S SENTENCE "P has a torus zero if and only if W-01's
+  criterion fires" IS THREE-CLASS-SCOPED, exactly like every other W-01 statement W-09
+  rescoped.  Nothing in the target lane depends on it -- every leg runs at p00 = 0 -- but the
+  target repeats the brief's framing without the qualification, and this is the fifth time in
+  this program that a three-class result has been quoted forward unqualified.
+
+--------------------------------------------------------------------------------
+(B) L-17's SCOPE.  WHEN DO THE TORUS ZEROS LIE ON THE SUBTORUS {xy = 1}?
+    y = 1/x requires q(x) = p10 x^2 + (p00+p11) x + p01 = 0 with |x| = 1.  The product of q's
+    roots is p01/p10, so BOTH roots lie on |x|=1 iff p10 = p01.  A degenerate single root at
+    x = -1 (when p10 - p00 - p11 + p01 = 0) also lies there -- row 8 below is that case, and
+    it is NOT a counterexample to the analysis, only to the naive "iff".  EXACT test:
+--------------------------------------------------------------------------------
+  pi                                   p10 == p01?  zeros exist?   max |x*y - 1| over Z(P)
+  ('0', '3/10', '3/10', '2/5')         YES          yes            1.386748e-16
+  ('0', '1/3', '1/3', '1/3')           YES          yes            5.551115e-17
+  ('0', '1/10', '1/10', '4/5')         YES          no             -
+  ('0', '1/2', '1/4', '1/4')           no           yes            2.000000e+00
+  ('1/2', '3/10', '1/10', '1/10')      no           no             -
+  ('1/4', '1/4', '1/4', '1/4')         YES          yes            degenerate (zero CIRCLE)
+  ('2/9', '4/9', '1/3', '0')           no           yes            9.682458e-01
+  ('9/20', '7/20', '3/20', '1/20')     no           yes            4.440892e-16
+
+  READING.  |xy - 1| = 0 to round-off on every row with p10 = p01, and equals 2 and 0.97 --
+  i.e. O(1) -- on rows 4 and 7, which have p10 != p01 and honest two-point zero sets.  Row 8
+  has p10 != p01 and t = -1 exactly, a DEGENERATE single zero at (x,y) = (-1,-1), which lies
+  on {xy=1} for a different reason; it is recorded rather than hidden.
+  So L-17's sentence "P's zeros on T^2 are (x, xbar) with x + xbar = -4/3, which is exactly
+  that quadratic" is a fact about pi with p10 = p01 -- which K1's registered state satisfies
+  -- and NOT a general fact about P.  L-17's CONCLUSION at K1's pi is correct; its stated
+  generality is not.  W-08's uv=1 locus and N1's zero set coincide there because the
+  registered ready state is SYMMETRIC IN THE TWO LOOPS, not because the two phenomena are
+  one object.  On a carrier whose designated loops carry different weight they separate.
+
+--------------------------------------------------------------------------------
+(C) THE REDUCTION THE TARGET MISSED.  H3 AT K1's REGISTERED pi IS HOMOGENEOUS.
+--------------------------------------------------------------------------------
+  Z(P) = {(x0, conj x0), (conj x0, x0)},  and x0 * conj(x0) = |x0|^2 = 1 EXACTLY.
+  So Z(P) is contained in the subtorus S = {(x,y) in T^2 : xy = 1}.
+  phi(x,y) = xy is 1-Lipschitz for the sup-metric on T^2 (|x1y1 - x2y2| <= |x1-x2|+|y1-y2|),
+  and phi == 1 on Z(P).  Hence for every k
+        |(uv)^k - 1| = |phi(u^k,v^k) - phi(z)| <= 2 * dist_inf((u^k,v^k), Z(P)).
+  i.e.  dist((u^k,v^k), Z(P)) >= (1/2)|(uv)^k - 1|.   H3 FOLLOWS FROM A BOUND ON ONE NUMBER.
+
+  NUMERICAL CHECK OF THE INEQUALITY (it is an inequality, so it CAN fail; it does not):
+   arm A algebraic uv = (-33+56i)/65      max over k<=2e5 of |(uv)^k-1| / (2 dist) = 0.999798   (must be <= 1)  min dist = 4.608e-03
+   arm B transcendental f=1, c=sqrt2      max over k<=2e5 of |(uv)^k-1| / (2 dist) = 0.999048   (must be <= 1)  min dist = 2.235e-03
+
+  CONSEQUENCE, AND IT CUTS BOTH WAYS.
+  * IT STRENGTHENS L-15.  At the corpus's own registered ready state, H3 is implied by the
+    single homogeneous condition  || k * arg(uv)/2pi || >= c k^{-tau}.  That is a statement
+    about ONE character of the connection, checkable, and supplied by Baker whenever uv is
+    algebraic and not a root of unity -- which is a weaker hypothesis than "u and v algebraic
+    and multiplicatively independent".  THEOREM L's hypotheses can be weakened at this pi.
+  * IT NARROWS L-16.  The target names the operative variable "the INHOMOGENEOUS Diophantine
+    type of the connection relative to the zero set of P".  That is right in general and is
+    NOT the minimal name at the corpus's own registered state, where the inhomogeneous
+    condition collapses to a homogeneous condition on the product character uv.  Since every
+    number the corpus publishes for N1 is computed at that pi, the operative variable AS
+    EXERCISED BY THE CORPUS is one degree simpler than the name the target attached.
+  * AND IT DOES NOT RESCUE ARM B.  arg(uv)/2pi = (sqrt2 - 1)/(2 pi) is still a linear form in
+    1, sqrt2 and pi, so no effective bound is available there either.  L-4 STANDS.
+--------------------------------------------------------------------------------
+
+DONE RL4

@@ -1,0 +1,88 @@
+===============================================================================
+R_03 — THE SUDLER ARM: THE ONE LINE (u v = 1, c = f) ON WHICH OUR PROBLEM IS CLASSICAL
+===============================================================================
+
+theta* to 900 digits, pure-integer fixed point.  m(Q) = log(0.3) = -1.203972804326
+
+THE LIOUVILLE LADDER (R_ladder; rungs, and the offsets they force)
+   rungs k_j            : [10, 1490, 'k_3 = k_2 * 2^2580 (780 digits)']
+   eps_1 = k_1(alpha - alpha_1):  log(eps) =      -5.213   proved bound log(2k_1/k_2) =      -4.311
+   eps_2 = k_2(alpha - alpha_2):  log(eps) =   -1788.425   proved bound log(2k_2/k_3) =   -1787.627
+   eps_1, eps_2 both STRICTLY POSITIVE (asserted in code, not claimed in prose).
+   NOTE, DISCLOSED: alpha is the ladder TRUNCATED AT RUNG 3.  Rung 3 sits at k_3 ~ 10^780,
+   far outside the window, so inside k <= 1e7 this alpha is identical to the infinite
+   construction; eps_3 = 0 is an artefact of the truncation and is never used.
+
+VALIDATION OF THE SPECIAL-CASE FORM (must agree with the direct evaluation)
+   eps =  1.0e-03   direct 2.802011746336e-03   local form 2.809925892416e-03   rel dev 2.82e-03
+   eps =  1.0e-05   direct 2.809846933732e-05   local form 2.809925892416e-05   rel dev 2.81e-05
+   eps =  1.0e-07   direct 2.809925102848e-07   local form 2.809925892416e-07   rel dev 2.81e-07
+   eps =  1.0e-09   direct 2.809925884521e-09   local form 2.809925892416e-09   rel dev 2.81e-09
+
+ARMS-DIFF GUARD (hashes the OUTPUT vectors log|Z_k|, per W-10 N-6)
+   ARMS-DIFF GUARD  BA-golden                    07b77ea43604024467b1f416
+                    BA-silver                    59616a7cb4def5306461767e
+                    max|A-B| over 200000 terms = 1.224518e+01   -> arms differ
+   ARMS-DIFF GUARD  BA-silver                    59616a7cb4def5306461767e
+                    CORPUS f=1                   6cbeae3769cda4724ccef134
+                    max|A-B| over 200000 terms = 1.372338e+01   -> arms differ
+   ARMS-DIFF GUARD  CORPUS f=1                   6cbeae3769cda4724ccef134
+                    LIOUVILLE                    98d684d9b68cd5e26b601799
+                    max|A-B| over 200000 terms = 1.787143e+03   -> arms differ
+   all consecutive pairs differ: True
+   first five orbit points frac(k a), each arm (printed from the arms, not the ledger):
+      BA-golden   [0.61803399 0.23606798 0.85410197 0.47213595 0.09016994]
+      BA-silver   [0.41421356 0.82842713 0.24264069 0.65685425 0.07106781]
+      CORPUS f=1  [0.15915494 0.31830989 0.47746483 0.63661977 0.79577471]
+      LIOUVILLE   [0.33715848 0.67431697 0.01147545 0.34863393 0.68579241]
+
+(1/N) sum_{k<=N} log|Z_k|  MINUS  m(Q) = log(0.3).   SEVEN DECADES.
+   N                       1            10           100          1000         10000        100000       1000000      10000000
+   BA-golden       -1.956131     +0.023432     +0.019535     -0.001227     +0.000038     +0.000007     -0.000000     +0.000000
+   BA-silver       -0.959462     +0.096423     -0.002267     +0.001003     -0.000037     -0.000026     +0.000001     -0.000000
+   CORPUS f=1      +0.881259     -0.276630     -0.047902     -0.001380     -0.004620     +0.000182     +0.000017     +0.000002
+   LIOUVILLE       -1.231009     -0.709193     -0.085192     -0.001141     -0.177695     -0.017763     -0.001776     -0.000178
+
+   READ, AND THE NON-MONOTONICITY IS REPORTED RATHER THAN SMOOTHED: the three arms whose
+   rotation is badly approximable or 'ordinary' fall toward 0 across the seven decades.
+   The fall is NOT monotone -- CORPUS f=1 worsens from -1.4e-03 at N=1e3 to -4.6e-03 at
+   N=1e4 (one close approach) before resuming -- so no row is quoted at one endpoint.
+   Fitted decay |S_N - m(Q)| ~ N^{-r} over the last four decades:
+      BA-golden   r = +0.995
+      BA-silver   r = +0.736
+      CORPUS f=1  r = +1.088
+      LIOUVILLE   r = +1.000
+   The LIOUVILLE row does not fall: it is thrown at N = 10 and again, five times harder,
+   at N = 1490, and each throw is a SINGLE term of the sum.  Its apparent r = 1 after the
+   second throw is the 1/N decay of ONE bad term, not convergence: the next throw is at
+   k_3 ~ 10^780 and would carry it to -1.2.
+
+THE SAME ROWS ON A GRID THAT STRADDLES THE TWO LIOUVILLE RUNGS
+   N                   5         9        10        11        20       100      1000      1489      1490      1491      2000      5000     10000    100000
+   BA-golden     +0.0088   -0.0606   +0.0234   +0.0812   -0.0776   +0.0195   -0.0012   -0.0029   -0.0022   -0.0025   -0.0006   +0.0003   +0.0000   +0.0000
+   BA-silver     -0.0227   +0.0015   +0.0964   +0.0321   -0.0142   -0.0023   +0.0010   +0.0007   +0.0013   +0.0006   -0.0016   -0.0001   -0.0000   -0.0000
+   CORPUS f=1    -0.6503   -0.1891   -0.2766   -0.2247   +0.0363   -0.0479   -0.0014   -0.0065   -0.0059   -0.0061   -0.0022   -0.0058   -0.0046   +0.0002
+   LIOUVILLE     -0.6529   -0.4573   -0.7092   -0.6627   -0.3970   -0.0852   -0.0011   -0.0021   -1.2009   -1.2002   -0.8895   -0.3573   -0.1777   -0.0178
+
+THE CLASSICAL SUDLER DIAGNOSTIC:  N * min_{k<=N} ||k a - theta*||
+   (bounded  <=>  inhomogeneous approximation no better than Dirichlet forces)
+   N                      10           100          1000         10000        100000       1000000      10000000
+   BA-golden          0.3990        0.5460        0.2981        0.4799        0.1176        0.3060        0.2621
+   BA-silver          0.4807        0.1393        0.3405        0.1844        0.3496        0.1811        0.5254
+   CORPUS f=1         0.4783        0.0058        0.0580        0.5796        0.2656        0.8503        0.2663
+   LIOUVILLE          0.0545        0.1075        0.5373        0.0000        0.0000        0.0000        0.0000
+   The LIOUVILLE entries printed as 0.0000 from N=1e4 on are float64's rendering of the
+   k = 1490 term: frac(k a) rounds to exactly theta* in double precision.
+   LIOUVILLE's row is computed from the float64 phases and therefore UNDERSTATES its own
+   case: the true min at k = 1490 is eps_2 ~ e^{-1788}, which float64 cannot represent.
+   N * that = 10^{-774}.
+
+WHAT THIS ARM DOES NOT SETTLE — STATED BEFORE THE VERDICT
+   The three convergent rows read TWO WAYS: (i) convergence holds for these rotations,
+   or (ii) seven decades is not enough to see a failure that begins later.  Nothing in
+   this script distinguishes them.  R_06 does, and only for algebraic-type rotations.
+   'BA' here is a property of a ALONE; the literature's condition is a property of the
+   PAIR (a, theta*).  Badly-approximable a does NOT by itself bound ||k a - theta*||
+   from below -- see R_06.  No row here is scored as evidence that it does.
+
+DONE R_03

@@ -1,0 +1,92 @@
+===============================================================================
+X_01 — THE CLOSURE IS NOT DETERMINED BY THE WINDING RATIO
+===============================================================================
+
+pi = (0.0, 0.3, 0.3, 0.4)   m(P) = -0.767507880358   theta* = 0.366139763599   log(0.3) = -1.203972804326
+
+1. WHICH RANK-1 CLOSURES CONTAIN A TORUS ZERO?  EXHAUSTIVE, d = 1..6.
+   closure L^perp for L = Z.(d m, d n); contains (e(th*),e(-th*)) iff d(m-n)th* in Z.
+   Tested numerically: is (theta*, -theta*) annihilated by (dm,dn)?  (exact test m==n)
+   primitive directions (m,n), |m|,|n|<=6, d<=6 giving a SINGULAR closure:
+      [(-1, -1), (1, 1)]  for every d in 1..6
+   -> the singular set is indexed by (winding ratio (1,1)) x (EVERY d>=1),
+      i.e. by u.v being ANY root of unity, i.e. (c-f)/2pi rational.
+      R-5 reports only d = 1 (c = f).  MISSING: every d >= 2.
+
+2. THE TRUE SUBTORUS VALUE ON EACH d, BY JENSEN ON THE ROOTS (exact, no quadrature)
+   d=1  uv = e(1/1)   limit = -1.203972804326    branch values -1.203973
+   d=2  uv = e(1/2)   limit = -0.891400245701    branch values -1.203973 -0.578828
+   d=3  uv = e(1/3)   limit = -0.823368645974    branch values -1.203973 -0.633067 -0.633067
+   d=5  uv = e(1/5)   limit = -0.787136551431    branch values -1.203973 -0.767875 -0.597980 -0.597980 -0.767875
+   lane R-5 predicts log(0.3) = -1.203972804326 on EVERY one of these (its formula depends
+   only on the primitive (m,n) = (1,1), which is the same in every row).
+
+3. THE FOUR ARMS.  alpha = sqrt2 - 1 FIXED; beta = 1/d - alpha; d is the only mover.
+   d=1  L(omega) within |m|,|n|<=12 : [(-12, -12), (-11, -11), (-10, -10), (-9, -9), (-8, -8), (-7, -7), (-6, -6), (-5, -5), (-4, -4), (-3, -3), (-2, -2), (-1, -1), (1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7), (8, 8), (9, 9), (10, 10), (11, 11), (12, 12)]
+        primitive directions present : [(np.int64(-1), np.int64(-1)), (np.int64(1), np.int64(1))]   -> WINDING RATIO IDENTICAL IN ALL ARMS
+   d=2  L(omega) within |m|,|n|<=12 : [(-12, -12), (-10, -10), (-8, -8), (-6, -6), (-4, -4), (-2, -2), (2, 2), (4, 4), (6, 6), (8, 8), (10, 10), (12, 12)]
+        primitive directions present : [(np.int64(-1), np.int64(-1)), (np.int64(1), np.int64(1))]   -> WINDING RATIO IDENTICAL IN ALL ARMS
+   d=3  L(omega) within |m|,|n|<=12 : [(-12, -12), (-9, -9), (-6, -6), (-3, -3), (3, 3), (6, 6), (9, 9), (12, 12)]
+        primitive directions present : [(np.int64(-1), np.int64(-1)), (np.int64(1), np.int64(1))]   -> WINDING RATIO IDENTICAL IN ALL ARMS
+   d=5  L(omega) within |m|,|n|<=12 : [(-10, -10), (-5, -5), (5, 5), (10, 10)]
+        primitive directions present : [(np.int64(-1), np.int64(-1)), (np.int64(1), np.int64(1))]   -> WINDING RATIO IDENTICAL IN ALL ARMS
+
+4. THE BIRKHOFF AVERAGE, SEVEN DECADES.  ARMS-DIFF GUARD HASHES THE OUTPUT VECTORS.
+   arm hashes (first 200000 log|Z_k|):
+      d=1  41e9b237c74d48feb6e18b71
+      d=2  8b09588bb8ac61db7da3816c
+      d=3  f05d17fc41bdfdd3aa52c606
+      d=5  e61bfbc279ed3f6443b2db5d
+   distinct hashes: 4 of 4  -> arms differ
+   first five orbit points (beta side), read off the arms:
+      d=1  [0.58578644 0.17157288 0.75735931 0.34314575 0.92893219]
+      d=2  [0.08578644 0.17157288 0.25735931 0.34314575 0.42893219]
+      d=3  [0.91911977 0.83823954 0.75735931 0.67647908 0.59559885]
+      d=5  [0.78578644 0.57157288 0.35735931 0.14314575 0.92893219]
+
+   S_N = (1/N) sum_{k<=N} log|Z_k|
+   N                   10             100            1000           10000          100000         1000000        10000000
+   d=1       -1.107549518    -1.206239993    -1.202970089    -1.204010188    -1.203999149    -1.203972253    -1.203973305
+   d=2       -0.944325859    -0.913747317    -0.891791058    -0.891670456    -0.891412382    -0.891402025    -0.891400674
+   d=3       -0.793305282    -0.837582671    -0.826654376    -0.823201990    -0.823378593    -0.823360906    -0.823368270
+   d=5       -0.704191555    -0.802281330    -0.786662511    -0.786956568    -0.787168212    -0.787138945    -0.787137397
+
+   S_N MINUS the LANE'S prediction log(0.3) = -1.203972804   [R-5's closed form]
+   N                   10             100            1000           10000          100000         1000000        10000000
+   d=1           9.64e-02       -2.27e-03        1.00e-03       -3.74e-05       -2.63e-05        5.52e-07       -5.01e-07
+   d=2           2.60e-01        2.90e-01        3.12e-01        3.12e-01        3.13e-01        3.13e-01        3.13e-01
+   d=3           4.11e-01        3.66e-01        3.77e-01        3.81e-01        3.81e-01        3.81e-01        3.81e-01
+   d=5           5.00e-01        4.02e-01        4.17e-01        4.17e-01        4.17e-01        4.17e-01        4.17e-01
+
+   S_N MINUS the TRUE subtorus value for that d   [this refuter's X_01 sec.2]
+   N                   10             100            1000           10000          100000         1000000        10000000
+   d=1           9.64e-02       -2.27e-03        1.00e-03       -3.74e-05       -2.63e-05        5.52e-07       -5.01e-07
+   d=2          -5.29e-02       -2.23e-02       -3.91e-04       -2.70e-04       -1.21e-05       -1.78e-06       -4.28e-07
+   d=3           3.01e-02       -1.42e-02       -3.29e-03        1.67e-04       -9.95e-06        7.74e-06        3.76e-07
+   d=5           8.29e-02       -1.51e-02        4.74e-04        1.80e-04       -3.17e-05       -2.39e-06       -8.46e-07
+
+   S_N MINUS m(P) = -0.767507880  (N1's claimed value)
+   N                   10             100            1000           10000          100000         1000000        10000000
+   d=1          -3.40e-01       -4.39e-01       -4.35e-01       -4.37e-01       -4.36e-01       -4.36e-01       -4.36e-01
+   d=2          -1.77e-01       -1.46e-01       -1.24e-01       -1.24e-01       -1.24e-01       -1.24e-01       -1.24e-01
+   d=3          -2.58e-02       -7.01e-02       -5.91e-02       -5.57e-02       -5.59e-02       -5.59e-02       -5.59e-02
+   d=5           6.33e-02       -3.48e-02       -1.92e-02       -1.94e-02       -1.97e-02       -1.96e-02       -1.96e-02
+
+5. THE SINGULARITY IS PRESENT ON EVERY d, NOT ONLY d=1:  min_{k<=N} |Z_k|
+   N                   10             100            1000           10000          100000         1000000        10000000
+   d=1          6.855e-02       3.898e-03       4.694e-04       5.181e-05       7.569e-06       3.653e-07       3.273e-09
+   d=2          6.855e-02       3.898e-03       9.577e-04       1.213e-04       9.823e-06       3.653e-07       3.273e-09
+   d=3          1.974e-01       3.898e-03       9.577e-04       2.248e-04       7.569e-06       5.459e-06       1.532e-07
+   d=5          2.511e-01       1.641e-02       9.577e-04       5.181e-05       1.987e-05       5.087e-07       1.467e-07
+   All four DECREASE across seven decades: every one of these closures passes through
+   BOTH torus zeros.  Contrast the lane's own RESONANT arm (11,20), whose min distance
+   SATURATES at 1.294e-02 (R_04_2d_arms.out.txt) because its closure misses the zeros.
+
+6. R-5's CLOSED FORM  |Z_k| = 0.3|2 sin(pi(k a - th*))||2 sin(pi(k a + th*))|
+   evaluated on each arm over k <= 100000 (the lane's own check window).
+   d=1   max |actual - R5 closed form| = 8.882e-16   HOLDS
+   d=2   max |actual - R5 closed form| = 6.000e-01   FAILS  <-- R-5 formula is d=1 only
+   d=3   max |actual - R5 closed form| = 5.196e-01   FAILS  <-- R-5 formula is d=1 only
+   d=5   max |actual - R5 closed form| = 5.706e-01   FAILS  <-- R-5 formula is d=1 only
+
+DONE X_01

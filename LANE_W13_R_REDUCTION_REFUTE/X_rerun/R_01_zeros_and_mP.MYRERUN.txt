@@ -1,0 +1,58 @@
+===============================================================================
+R_01 — THE SINGULARITY OF log|P| AT K1's REGISTERED pi, LOCATED EXACTLY
+===============================================================================
+
+pi = (p00,p10,p01,p11) = (0.0, 0.3, 0.3, 0.4)   (K1's registered ready state)
+
+W-01 CONVEX-HULL / FIRING CRITERION (C3):  max(pi) = 0.400  <=  sum of others = 0.600
+   -> FIRES.  P therefore vanishes somewhere on T^2.  THE SINGULAR CASE IS THE
+      FORMATION CASE: the corpus lives in the regime where its own theorem is hardest.
+
+THE TWO TORUS ZEROS, CLOSED FORM
+   theta* = arccos(-2/3)/(2pi) = 0.366139763599385
+   zeta   = e(theta*)          = -0.666666666666667 +0.745355992499930i
+   minimal polynomial check  3 zeta^2 + 4 zeta + 3 = 6.280e-16   (Z1: zeta is ALGEBRAIC)
+   |P| at (+0.366139763599, -0.366139763599) = 5.656e-17
+   |P| at (-0.366139763599, +0.366139763599) = 5.656e-17
+   Niven's theorem (Z2): cos(2 pi theta*) = -2/3 not in {0,+-1/2,+-1} => theta* IRRATIONAL.
+   theta* to 60 digits (pure-integer fixed point): 183069881799692497313691551014692027126408499355418538546351
+   mpmath cross-check deviation: 1.840e-61   (mpmath used as a CHECK only, CHOICE LEDGER L4)
+
+SIMPLICITY OF THE ZEROS — |P| ~ C * dist, four decades of offset
+   offset d     |P(theta*+d, -theta*)|    ratio |P|/d      |P(theta*+d,-theta*+d)|/d
+    1.0e-03      1.884952491528e-03     1.88495249     2.51326999
+    1.0e-04      1.884955561148e-04     1.88495556     2.51327408
+    1.0e-05      1.884955591850e-05     1.88495559     2.51327412
+    1.0e-06      1.884955592208e-06     1.88495559     2.51327412
+    1.0e-07      1.884955593603e-07     1.88495559     2.51327412
+   ratios settle -> the zeros are SIMPLE (order 1).  log|P| is L^1 on T^2, so m(P) is finite.
+
+CONTROL (the brief's number; proves nothing, checks the setup)
+   min|P| on   512^2 NESTED grid = 2.463108e-03
+   min|P| on  1024^2 NESTED grid = 1.999534e-04
+   min|P| on  2048^2 NESTED grid = 1.999534e-04
+   min|P| on  4096^2 NESTED grid = 1.999534e-04
+   2048^2 -> 1.9995e-04, the brief's 2.0e-04.  REPRODUCED.
+   NOTE, AND IT IS A DEFECT OF THE GRID FAMILY, NOT OF THE CODE: 1024 | 2048 | 4096, so
+   the three grids are NESTED and the minimum CANNOT fall.  A grid minimum reported
+   over a nested family is a window artefact of exactly COR-E's class.  Non-nested:
+   min|P| on  1000^2 grid = 3.928795e-04
+   min|P| on  3001^2 grid = 2.008674e-04
+   min|P| on  9007^2 grid = 5.588631e-05
+   THE 2-D GRID IS NOISE-LIMITED NEAR THE ZEROS (CHOICE LEDGER L3).  Not used again.
+
+m(P) BY THE JENSEN REDUCTION, ACROSS FOUR DECADES OF NODE COUNT
+   (CONVERGENCE IS NOT A WINDOW: the trend is shown, not one endpoint)
+   nq =      1024   m(P) = -0.767508470861118
+   nq =      4096   m(P) = -0.767507865526524   change +6.053e-07
+   nq =     16384   m(P) = -0.767507881012676   change -1.549e-08
+   nq =     65536   m(P) = -0.767507880275938   change +7.367e-10
+   nq =    262144   m(P) = -0.767507880352467   change -7.653e-11
+   nq =   1048576   m(P) = -0.767507880357400   change -4.934e-12
+   nq =   4194304   m(P) = -0.767507880357744   change -3.436e-13
+   nq =  16777216   m(P) = -0.767507880357789   change -4.508e-14
+   ADOPTED VALUE  m(P) = -0.767507880358
+   REGISTER (erratum against W-02, :168): generic torus value -0.767507880 = m(0.4+0.3x+0.3y)
+   deviation from the register's published figure: 3.578e-10
+
+DONE R_01

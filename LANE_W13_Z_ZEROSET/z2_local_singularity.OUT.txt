@@ -1,0 +1,242 @@
+================================================================================================
+z2  THE LOCAL SINGULARITY: |P| ~ c(theta) r AT AN ISOLATED ZERO, AND THE SUBLEVEL EXPONENT
+================================================================================================
+numpy 2.0.2 ; IEEE double unless a line says EXACT.
+
+------------------------------------------------------------------------------------------------
+(a) THE LOCAL EXPANSION, DERIVED.
+
+    Put x = x0 e^{i sigma}, y = y0 e^{i tau} at a zero (x0,y0).  Then
+        P = i (alpha sigma + beta tau) - (1/2)(a sigma^2 + b tau^2 + c (sigma+tau)^2) + O(r^3)
+    with  a = p10 x0,  b = p01 y0,  c = p11 x0 y0, and
+        alpha = x0 dP/dx = a + c = x0 (p10 + p11 y0)
+        beta  = y0 dP/dy = b + c = y0 (p01 + p11 x0) = y0 B(x0).
+    (sigma,tau) |-> i(alpha sigma + beta tau) is a REAL-LINEAR map R^2 -> C = R^2 with matrix
+        M = [[Re alpha, Re beta],[Im alpha, Im beta]],   det M = Im(conj(alpha) beta).
+    SO:
+      * det M != 0  ==>  |P| = |M (sigma,tau)| (1 + O(r))  with  s_min r <= |P| <= s_max r:
+        a NON-DEGENERATE (simple, conical) zero.  log|P| ~ log r.  INTEGRABLE.
+        The sublevel set { |P| < eps } near this zero is an ELLIPSE of area pi eps^2/|det M|.
+      * det M = 0  ==>  alpha, beta are REAL-PARALLEL; the image of the linear part is a LINE,
+        and along its kernel |P| vanishes to SECOND order.  A degenerate (tangential) zero.
+    THE ARITHMETIC FACT THAT MAKES THIS CLEAN: det M = 0 happens EXACTLY on the ONE-point and
+    CURVE strata of z1(a).  Transversal branch crossing <=> simple zero.  Verified below.
+
+    ZERO-BY-ZERO LOCAL DATA (all named states of z1 with isolated zeros):
+    state                          alpha                       beta      s_min      s_max          det
+    K1_REG      +0.200000  +0.223607i   +0.200000  -0.223607i   0.282843   0.316228   -8.944e-02
+    K1_REG      +0.200000  -0.223607i   +0.200000  +0.223607i   0.282843   0.316228    8.944e-02
+    B0a_U       -0.305556  +0.322749i   +0.083333  -0.322749i   0.132964   0.539410    7.172e-02
+    B0a_U       -0.305556  -0.322749i   +0.083333  +0.322749i   0.132964   0.539410   -7.172e-02
+    B1_U        +0.100000  +0.387298i   +0.100000  -0.387298i   0.141421   0.547723   -7.746e-02
+    B1_U        +0.100000  -0.387298i   +0.100000  +0.387298i   0.141421   0.547723    7.746e-02
+    B1q_U       -0.071429  +0.422577i   -0.071429  -0.422577i   0.101015   0.597614    6.037e-02
+    B1q_U       -0.071429  -0.422577i   -0.071429  +0.422577i   0.101015   0.597614   -6.037e-02
+    B1s_U       +0.045455  +0.452267i   +0.045455  -0.452267i   0.064282   0.639602   -4.112e-02
+    B1s_U       +0.045455  -0.452267i   +0.045455  +0.452267i   0.064282   0.639602    4.112e-02
+    TANGENT     +0.200000  -0.000000i   +0.100000  +0.000000i   0.000000   0.223607    0.000e+00
+    TWO4        +0.050000  +0.223607i   +0.076190  -0.106479i   0.090156   0.248022   -2.236e-02
+    TWO4        +0.050000  -0.223607i   +0.076190  +0.106479i   0.090156   0.248022    2.236e-02
+
+    ==> every TWO-point state has det != 0 (simple zeros); the TANGENT state's single
+        zero has det = 0.  Simplicity is DECIDED by the stratum, not assumed.
+
+------------------------------------------------------------------------------------------------
+(b) |P| / r ACROSS SIX DECADES OF r, AT K1's REGISTERED pi.  THE PREDICTED BAND IS
+    [s_min, s_max]; the measured min and max over 4096 directions must sit in it and
+    must STOP MOVING as r falls.  A single r would prove nothing (CONVERGENCE IS NOT
+    A WINDOW); six decades and the trend are printed.
+
+    zero at x0 = -0.666666666667+0.745355992500j, y0 = -0.666666666667-0.745355992500j
+    PREDICTED  s_min = 0.282842712475   s_max = 0.316227766017   det = -0.089442719100
+             r        min |P|/r        max |P|/r    min/s_min - 1    max/s_max - 1
+       1.0e-02   0.282833299699   0.317225126625       -3.328e-05        3.154e-03
+       1.0e-03   0.282842618273   0.316327739660       -3.331e-07        3.161e-04
+       1.0e-04   0.282842712416   0.316237765753       -2.070e-10        3.162e-05
+       1.0e-05   0.282842712472   0.316228766012       -8.911e-12        3.162e-06
+       1.0e-06   0.282842712451   0.316227865893       -8.424e-11        3.158e-07
+       1.0e-07   0.282842711869   0.316227776187       -2.143e-09        3.216e-08
+       1.0e-08   0.282842706316   0.316227766195       -2.177e-08        5.634e-10
+       1.0e-09   0.282842710422   0.316227730787       -7.256e-09       -1.114e-07
+    TREND: both ratios converge to 1 like O(r).  |P| ~ c(theta) r with c in [s_min,s_max],
+    c > 0 in EVERY direction.  THE ZERO IS SIMPLE AND CONICAL.  log|P| ~ log r.
+
+------------------------------------------------------------------------------------------------
+(c) THE DEGENERATE (TANGENTIAL) ZERO: |P| ~ r ALONG MOST DIRECTIONS BUT ~ r^2 ALONG
+    THE KERNEL LINE.  Same code path, same r-ladder; the ONE thing that moves is the
+    weight vector, hence the stratum.
+
+    TANGENT pi = ('1/10', '1/5', '3/10', '2/5')   zero at (-1.000000+0.000000j, -1.000000-0.000000j)
+    alpha = 0.200000000-0.000000000j   beta = 0.100000000+0.000000000j   det = 0.000e+00  (BOTH REAL -> rank 1)
+    kernel direction (sigma,tau) = (+0.447213595, -0.894427191)
+             r     |P| along kernel             /r           /r^2    min over dirs
+       1.0e-02   9.999959333410e-06   9.999959e-04    0.099999593     1.003165e-05
+       1.0e-03   9.999999588683e-08   1.000000e-04    0.099999996     1.319708e-07
+       1.0e-04   9.999999720781e-10   1.000000e-05    0.099999997     8.675815e-09
+       1.0e-05   1.000000082744e-11   1.000000e-06    0.100000008     8.618633e-10
+       1.0e-06   9.997558336750e-14   9.997558e-08    0.099975583     8.618059e-11
+       1.0e-07   9.992007221626e-16   9.992007e-09    0.099920072     8.618053e-12
+       1.0e-08   5.551115123126e-17   5.551115e-09    0.555111512     8.618053e-13
+       1.0e-09   0.000000000000e+00   0.000000e+00    0.000000000     8.618053e-14
+    TREND: |P|/r  -> 0   and   |P|/r^2 -> a POSITIVE CONSTANT along the kernel.
+    A SECOND-ORDER (tangential) zero.  log|P| ~ 2 log r on a line, still integrable,
+    but the SUBLEVEL SET is fatter -- quantified in (d).
+
+------------------------------------------------------------------------------------------------
+(d) THE SUBLEVEL MEASURE mu(eps) = Haar{ |P| < eps }, THE OBJECT THAT ACTUALLY DECIDES
+    INTEGRABILITY AND THE DIOPHANTINE CONDITION.  Computed by the EXACT y-arc formula
+    (a 1-D quadrature of a CONTINUOUS integrand -- no 2-D grid, no noise floor).
+    Six decades of eps; the LOCAL slope d log mu / d log eps is printed per decade.
+
+    ARM 1 -- TWO simple conical zeros.  PREDICTED theta = 2, and PREDICTED constant
+             mu/eps^2 -> (1/(4 pi)) * SUM_zeros 1/|det M_j|.
+             PREDICTED limit of mu/eps^2 = 1.779406358543
+    K1_REG    pi = ('0', '3/10', '3/10', '2/5')   stratum TWO
+             eps          mu(eps)       mu/eps^theta   local slope
+         1.0e-01  1.823451157e-02    1.823451157e+00           nan
+         1.0e-02  1.779812923e-04    1.779812923e+00      2.010520
+         1.0e-03  1.779407702e-06    1.779407702e+00      2.000099
+         1.0e-04  1.779405570e-08    1.779405570e+00      2.000001
+         1.0e-05  1.779407092e-10    1.779407092e+00      2.000000
+         1.0e-06  1.779417092e-12    1.779417092e+00      1.999998
+         1.0e-07  1.780161447e-14    1.780161447e+00      1.999818
+      LAST-DECADE slope = 1.999818   PREDICTED theta = 2
+
+    ARM 2 -- ONE tangential zero.  PREDICTED theta = 3/2.
+    TANGENT   pi = ('1/10', '1/5', '3/10', '2/5')   stratum ONE-D1=D2
+             eps          mu(eps)       mu/eps^theta   local slope
+         1.0e-01  4.397494445e-02    1.390609844e+00           nan
+         1.0e-02  1.265313489e-03    1.265313489e+00      1.541007
+         1.0e-03  3.964457392e-05    1.253671505e+00      1.504014
+         1.0e-04  1.252510057e-06    1.252510057e+00      1.500403
+         1.0e-05  3.960417460e-08    1.252393966e+00      1.500040
+         1.0e-06  1.252379985e-09    1.252379985e+00      1.500005
+         1.0e-07  3.960553153e-11    1.252436876e+00      1.499980
+      LAST-DECADE slope = 1.499980   PREDICTED theta = 1.5
+
+    ARM 3 -- a CURVE (stratum III).  PREDICTED theta = 1.
+    CURVE3    pi = ('3/10', '1/5', '1/5', '3/10')   stratum CURVE-III
+             eps          mu(eps)       mu/eps^theta   local slope
+         1.0e-01  1.241613066e-01    1.241613066e+00           nan
+         1.0e-02  1.222561879e-02    1.222561879e+00      1.006715
+         1.0e-03  1.222386125e-03    1.222386125e+00      1.000062
+         1.0e-04  1.222384369e-04    1.222384369e+00      1.000001
+         1.0e-05  1.222384363e-05    1.222384363e+00      1.000000
+         1.0e-06  1.222385696e-06    1.222385696e+00      1.000000
+         1.0e-07  1.222277740e-07    1.222277740e+00      1.000038
+      LAST-DECADE slope = 1.000038   PREDICTED theta = 1.0
+
+    ARM 4 -- a CURVE (stratum I) = K1's OWN S1-PUBLISHED READY STATE.  PREDICTED 1.
+    S1_PUB    pi = ('0', '0', '1/2', '1/2')   stratum CURVE-I
+             eps          mu(eps)       mu/eps^theta   local slope
+         1.0e-01  6.376491486e-02    6.376491486e-01           nan
+         1.0e-02  6.365895901e-03    6.365895901e-01      1.000722
+         1.0e-03  6.365895901e-04    6.365895901e-01      1.000000
+         1.0e-04  6.365895901e-05    6.365895901e-01      1.000000
+         1.0e-05  6.366897247e-06    6.366897247e-01      0.999932
+         1.0e-06  6.366897247e-07    6.366897247e-01      1.000000
+         1.0e-07  6.365332638e-08    6.365332638e-01      1.000107
+      LAST-DECADE slope = 1.000107   PREDICTED theta = 1.0
+
+    ARM 5 -- EMPTY zero set (B0b's own uniform state, S4:575).  |P| >= 1/9 everywhere,
+             so mu(eps) = 0 for eps <= 1/9 and log|P| is CONTINUOUS AND BOUNDED.
+      eps =  1.0e-01   mu = 0.000000e+00
+      eps =  1.0e-02   mu = 0.000000e+00
+      eps =  1.0e-03   mu = 0.000000e+00
+      eps =  1.0e-04   mu = 0.000000e+00
+      eps =  1.0e-05   mu = 0.000000e+00
+      eps =  1.0e-06   mu = 0.000000e+00
+      eps =  1.0e-07   mu = 0.000000e+00
+
+------------------------------------------------------------------------------------------------
+(e) THE ONE-VARIABLE ISOLATION, DESIGNED FROM z1(a)'s STRATUM GEOMETRY.
+
+    The four types are STRATA: {EMPTY} and {TWO} are open, {ONE} is the codimension-1 wall
+    between them, and the three CURVE families are codimension 2 INSIDE that wall.  So:
+      * a generic one-parameter path crosses the wall transversally: EMPTY -> ONE -> TWO.
+        FAMILY A below is such a path, in ONE declared scalar eta.
+      * NO one-parameter path reaches a CURVE transversally.  A curve arm therefore has to
+        be reached by a path that STAYS IN THE WALL.  FAMILY B below is such a path, in ONE
+        declared scalar mu, with (S1-S2)(D1-D2) == 0 EXACTLY at every mu.
+    Both families move exactly one scalar.  BOTH ARMS ARE DIFFED -- inputs and outputs.
+
+    FAMILY A  pi(eta) = (1/10, 1/5, 3/10 + eta, 2/5 - eta).   ONE scalar: eta.
+           eta    stratum     (S1-S2)(D1-D2)   theta (eps 1e-4->1e-6)
+        -3/100      EMPTY       2.400000e-02                      nan
+        -1/100      EMPTY       8.000000e-03                      nan
+             0        ONE       0.000000e+00                 1.500023
+         1/100        TWO      -8.000000e-03                 2.000000
+         3/100        TWO      -2.400000e-02                 2.000000
+          1/20        TWO      -4.000000e-02                 2.000000
+
+    FAMILY B  pi(mu) = (1/10, 2/5, mu, 1/2 - mu).  ONE scalar: mu.  S1 = S2 = 1/2 for
+              EVERY mu, so the path never leaves the wall; the CURVE strata are hit
+              exactly at mu = 1/10 (stratum II) and mu = 2/5 (stratum III).
+            mu      stratum   theta (eps 1e-4->1e-6)       mu(1e-4)
+             0    ONE-S1=S2                 1.500014   8.856284e-07
+          1/20    ONE-S1=S2                 1.500031   1.339048e-06
+          1/10     CURVE-II                 0.999999   8.086658e-05
+          3/20    ONE-S1=S2                 1.500036   1.584419e-06
+           1/4    ONE-S1=S2                 1.500019   1.180862e-06
+          7/20    ONE-S1=S2                 1.500036   1.584419e-06
+           2/5    CURVE-III                 0.999999   8.086658e-05
+          9/20    ONE-S1=S2                 1.500031   1.339048e-06
+           1/2    ONE-S1=S2                 1.500014   8.856284e-07
+
+    ARMS DIFFED (the defect W-08's isolation audit calls the commonest FATAL one:
+    byte-identical arms reported as a confirmation).  Family A eta = -1/100 vs +1/100:
+      arm1 pi = ('1/10', '1/5', '29/100', '41/100')   arm2 pi = ('1/10', '1/5', '31/100', '39/100')
+      inputs differ in 2 of 4 coordinates
+      strata: EMPTY  vs  TWO
+      mu(1e-5): 0.000000e+00  vs  8.388198e-10   ratio 8.388e+290
+
+------------------------------------------------------------------------------------------------
+(f) QUADRATURE STABILITY, AND THE WINDOW ARTEFACT SHOWN RATHER THAN HIDDEN.
+    LEFT: the UNIFORM-mesh estimator at three mesh sizes.  RIGHT: the crossing-refined
+    estimator.  Once eps falls below the uniform mesh spacing the uniform estimator
+    COLLAPSES TO ZERO -- which reads as 'the singularity went away' and is exactly the
+    defect class COR-E convicts.  This lane uses the refined estimator everywhere.
+
+           eps     uniform 2^18     uniform 2^20     uniform 2^22          REFINED
+       1.0e-03  1.779405199e-06  1.779393477e-06  1.779411938e-06  1.779407702e-06
+       1.0e-04  1.778387813e-08  1.779162079e-08  1.779273212e-08  1.779405570e-08
+       1.0e-05  1.905490061e-10  1.783396417e-10  1.782000779e-10  1.779407092e-10
+       1.0e-06  0.000000000e+00  1.967344373e-12  1.865377607e-12  1.779417092e-12
+       1.0e-07  0.000000000e+00  0.000000000e+00  5.037106917e-14  1.780161447e-14
+
+    REFINED estimator, self-consistency at two fine-mesh sizes (must agree):
+    K1_REG   mu(1e-5) = 1.779403517e-10  vs  1.779405598e-10   rel diff 1.17e-06
+    CURVE3   mu(1e-5) = 1.222384363e-05  vs  1.222384363e-05   rel diff 1.04e-10
+    TANGENT  mu(1e-5) = 3.960424540e-08  vs  3.960415002e-08   rel diff 2.41e-06
+
+------------------------------------------------------------------------------------------------
+(g) WHAT THE LOCAL BEHAVIOUR DECIDES.
+
+    log|P| is in L^1(T^2) in EVERY stratum -- m(P) is finite always -- but the three strata
+    give three different SUBLEVEL EXPONENTS theta, and theta is the quantity that a Birkhoff
+    sum feels:
+
+        stratum          Z(P)                theta      what the orbit must avoid
+        ---------------  ------------------  ---------  -----------------------------------
+        EMPTY            no zeros            (none)     NOTHING.  log|P| is CONTINUOUS and
+                                                        BOUNDED on T^2.
+        TWO   (generic)  2 conjugate points  2          two POINTS of T^2 (codimension 2)
+        ONE   (wall)     1 tangential point  3/2        one POINT, approached along a
+                                                        parabola
+        CURVE (cod 2)    a circle            1          a CIRCLE (codimension 1)
+
+    The truncation error of the eps-regularisation is exactly governed by theta:
+        INT (max(log|P|,log eps) - log|P|) = INT_0^eps log(eps/u) d mu(u) = C eps^theta/theta,
+    so at fixed eps the CURVE case costs eps^1 where the generic case costs eps^2.
+
+    AND THE DISCRETE SIDE, WHICH IS WHERE THE CONVERGENCE QUESTION LIVES:
+      * a Kronecker orbit of length N has minimum distance ~ N^{-1/2} to a fixed POINT and
+        ~ N^{-1} to a fixed CIRCLE, so the CURVE case is the one the orbit meets often;
+      * an EXACT hit needs (u^k,v^k) = (x0,y0): TWO simultaneous conditions in the point
+        strata -- a countable set of (u,v) -- but only ONE condition in the curve strata,
+        e.g. u^k = -1 in stratum I, whose solution set is a FINITE UNION OF CIRCLES in the
+        connection torus for each k, and DENSE over k.
+      THAT is the sense in which the curve case is materially harder: the bad set of
+      connections goes from codimension 2 to codimension 1.
+
+DONE z2

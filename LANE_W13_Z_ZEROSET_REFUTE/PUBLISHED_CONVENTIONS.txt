@@ -1,0 +1,59 @@
+LANE W-13 / Z_REFUTE -- REFUTER ON LANE Z (THE ZERO SET OF P ON T^2, AND THE LOCAL SINGULARITY)
+LENS: MATHEMATICS.  Attack the zero-set characterisation.  Points versus curves; the dimension
+count; and the p00 = 0 case checked independently, because that is K1's own and it is where a
+degeneracy would hide.
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE.  This refuter is Claude Opus 5, like W-07..W-12 and like the lane it attacks.  IT IS NOT
+LINEAGE-INDEPENDENT OF LANE Z.  Same-lineage adversaries share failure modes (register: "read your
+own sealed corrections first").  Grade this row as one block with W-07..W-13, not as an independent
+check.  It IS lineage-independent of S1-S4 and W-01..W-06.
+
+PRECISION.  python 3.9.6, numpy 2.0.2, mpmath 1.4.1.  IEEE double UNLESS a line says EXACT or says
+mpmath.  Every predicate that decides an inclusion is evaluated in EXACT rational / integer
+arithmetic (fractions.Fraction, Python ints).  Grid minima are printed as UPPER bounds (COR-E).
+
+WHAT WAS RE-RUN BEFORE ANYTHING WAS WRITTEN.
+  shasum -a 256 -c LANE_W13_Z_ZEROSET/SEALS.sha256  -> 13 of 13 OK.
+  python3 z1_classification.py / z2_local_singularity.py / z3_hull_quantifiers.py /
+  z4_convergence_consequence.py  -> all four reproduce their .OUT.txt BYTE-IDENTICALLY
+  (diff -q, 0 differences).  The lane is reproducible.  Nothing below is a reproducibility
+  failure; every finding below is a mathematical or custody finding.
+
+THE OBJECT (same as the lane's, restated so this page stands alone).
+  P(x,y) = p00 + p10 x + p01 y + p11 xy,  p_a >= 0,  sum p_a = 1,  (x,y) in T^2.
+  A(x) = p00 + p10 x,  B(x) = p01 + p11 x,  P = A + yB.
+  S1 = p00+p10, S2 = p01+p11, D1 = |p00-p10|, D2 = |p01-p11|.
+
+THE THREE ROUTES THIS REFUTER USES, NONE OF WHICH IS THE LANE'S.
+  ROUTE 1 -- THE OTHER JENSEN GROUPING.  Group P in y instead of x:
+      P = A'(y) + x B'(y),  A' = p00 + p01 y,  B' = p10 + p11 y,
+  giving a DIFFERENT existence predicate (S1'-S2')(D1'-D2') <= 0 with S1' = p00+p01 etc.
+  The lane's predicate and this one must agree; that is a real cross-check, not a restatement,
+  because neither is derivable from the other without the identity of ROUTE 2.
+  ROUTE 2 -- THE MANIFESTLY S_4-INVARIANT PRODUCT.  With
+      T_A = p00+p10-p01-p11,  T_B = p00+p11-p10-p01,  T_C = p00+p01-p10-p11
+  (the three 2+2 pairing differences),
+      (S1^2-S2^2)(D1^2-D2^2) = T_A T_B T_C          [proved in r1(a), checked exactly]
+  so the existence predicate is  T_A T_B T_C <= 0, which is INVARIANT UNDER EVERY PERMUTATION
+  OF THE FOUR WEIGHTS.  M3 has priority on this form (LANE_W08_M3_ZEROSET, 2026-08-16).
+  ROUTE 3 -- SORTED WEIGHTS, NO PAIRING AT ALL.  With w1>=w2>=w3>=w4,
+      CURVE  <=>  w1 = w2 and w3 = w4
+      else EMPTY <=> (w1+w4-w2-w3) > 0 and (w1+w2) > 1/2 ; TWO <=> (w1+w4-w2-w3) < 0 ;
+      ONE otherwise.
+  ROUTE 4 -- 2-D, NO JENSEN REDUCTION ANYWHERE.  Newton from many starts on the real 2x2 system
+  (Re P, Im P) = 0 in the angles (s,t), then cluster the solutions.  This is the ONLY route that
+  can see "points versus curves" without assuming the reduction, and it is the route the brief's
+  lens asks for.
+
+SEEDS.  numpy default_rng, master seed 20260817 (echoed per script).  mpmath mp.dps stated inline.
+GRIDS/LADDERS.  Every eps- or N-ladder spans >= 4 decades and prints the per-decade TREND.
+
+CONVENTIONS CARRIED, NOT REDISCOVERED.
+  EVERY RATIONAL (f,c) IS EXACTLY RESONANT (W-10 N-4).  No rational pair is called generic here.
+  COR-E: a grid sup/inf is a window artefact unless the inequality direction is stated.
+  W-03/N2: |Z_k| and m(P) depend on the MULTISET of the four class weights only.
+  W-12: the connection is a free point of T^2 and Haar pushes to Haar on every carrier.
+  M1_08 T2(b),(c) and M1_06 (the Liouville exhibit) are READ and CITED, not redone.
+  LANE_W08_M3_ZEROSET has priority on the four-class criterion, the polygon refutation and the
+  exact volumes 1/4 and 1/2.  Lane Z said so; this refuter confirms the priority assignment.

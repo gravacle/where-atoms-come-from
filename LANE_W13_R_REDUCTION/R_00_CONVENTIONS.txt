@@ -1,0 +1,128 @@
+LANE W-13 / R — THE ONE-VARIABLE REDUCTION, AND SUDLER PRODUCTS
+PUBLISHED CONVENTIONS, CHOICE LEDGER, ISOLATION LEDGER, AND CARRIED FACTS
+Register head W-12.  Lane opened 2026-08-17.  Model: Claude Opus 5 (same lineage as W-07..W-12;
+see LINEAGE below — this lane is NOT a lineage-independent check of W-07..W-12).
+
+================================================================================
+0.  WHAT WAS READ FIRST, IN FULL, BEFORE ANY COMPUTATION
+================================================================================
+REGISTER_V001.md entire (1335 lines): W-01, W-02 + ERRATUM AGAINST W-02, W-03, W-04, W-05,
+W-06, W-07 + ERRATUM AGAINST W-07, W-08, W-09 + ERRATUM AGAINST W-09, W-10, W-11, W-12.
+S3_THE_CROSSING_AUDIT_V001.md:785-800 — COR-A .. COR-L.
+LANE_W08_M1_IDENTIFICATION/  (M1_06_liouville.py/.out.txt and M1_07_lawton.py/.out.txt read
+line by line), LANE_W08_M1_IDENTIFICATION_REFUTE_1/, LANE_W08_M1_IDENTIFICATION_REFUTE_2/.
+LANE_W12_BIANCHI/PUBLISHED_CONVENTIONS.txt.
+
+================================================================================
+1.  NOTATION AND THE ONE PLACE A SIGN ENTERS
+================================================================================
+u = conj(W_F) = e^{-i f},  v = W_C = e^{i c}   (W-02's characters; REGISTER:118-125).
+Additive coordinates on T^2 = (R/Z)^2:  u = e(alpha), v = e(beta), e(x) := exp(2 pi i x), so
+        alpha = -f / (2 pi),      beta = +c / (2 pi).
+The orbit is the cyclic sequence  k * omega,  omega = (alpha, beta) in T^2.
+P(x,y) = p00 + p10 x + p01 y + p11 x y  and  Z_k = P(u^k, v^k)  (REGISTER:1163, W-11's
+substitution identity).  N1:  lambda = lim (1/N) sum_{k<=N} log|Z_k|  claimed = m(P).
+THE SIGN OF alpha IS IMMATERIAL to every statement below: the zero set of P on T^2 and the
+Diophantine conditions are invariant under (alpha,beta) -> (-alpha,-beta) together with
+complex conjugation of P's coefficients, which are real.  Recorded so no reader has to guess.
+
+K1's REGISTERED READY STATE:  pi = (p00,p10,p01,p11) = (0, 0.3, 0.3, 0.4).
+    All work in this lane is at that pi unless a line says otherwise.
+
+================================================================================
+2.  CARRIED FACTS — TAKEN FROM THE REGISTER, NOT REDISCOVERED
+================================================================================
+C1  EVERY RATIONAL (f,c) IS EXACTLY RESONANT (W-10 N-4, W-12).  The only generic connection
+    the corpus publishes is f = 1.0, c = sqrt(2) (S4:603).  No rational pair is called generic
+    anywhere in this lane.
+C2  COR-E: sup|Z_k| figures in this corpus are WINDOW ARTEFACTS stated as equalities.  No
+    sup/inf over a finite window is reported here as an equality; every such number is
+    labelled a window value and shown across four or more decades.
+C3  A four-class P has torus zeros on exactly half the connection space (W-09); the firing
+    criterion is W-01's convex hull, equivalently max(p) <= sum of the others.
+C4  The map from connections to (W_F,W_C) is onto T^2 and pushes Haar to Haar on every
+    carrier (W-12).  Hence any (alpha,beta) exhibited in this lane IS realizable as a
+    connection on K1 and on every other carrier.  This is what makes the counterexample of
+    R-3 a statement about the corpus's own object and not about an abstract torus.
+C5  |Z_k| <= 1 always (W-08, triangle inequality on non-negative weights summing to 1).
+    Used as an unconditional upper bound in the proof of R-3.  Verified again here.
+C6  Boyd-Lawton CANNOT license N1 (W-08 M1_07): it concerns continuous averages over
+    subtori, not discrete Birkhoff sums.  Lawton IS the right citation for the accumulation
+    of subtorus rates on m(P), and for nothing else.  NOT REDONE.  Cited, and built past.
+C7  M1_06 already exhibited a Liouville pair defeating equidistribution AT pi=(0,1/3,1/3,1/3),
+    where the torus zeros sit at the RATIONAL points (1/3,2/3),(2/3,1/3).  NOT REDONE.
+    This lane's R-3 is at K1's OWN registered pi, where the zeros are irrational, and its
+    non-resonance proof is different in kind (a monotone-ladder positivity argument, not a
+    sparse-digit argument).
+
+================================================================================
+3.  CHOICE LEDGER
+================================================================================
+L1  DEFINITION OF "ONE-VARIABLE REDUCTION".  Alternatives considered:
+    (a) ANY function G with F(k omega) = G(k t + s0)  -- REJECTED AS VACUOUS.  k -> k omega is
+        injective for irrational alpha, so such a G always exists on the countable orbit and
+        the "reduction" could not have failed.  A control of exactly the kind W-08's isolation
+        audit convicts.  Recorded here so it cannot be mistaken for content.
+    (b) G Riemann-integrable / continuous off finitely many points  -- adequate but awkward.
+    (c) CHOSEN: log|P| restricted to the CLOSURE of the orbit is the restriction of log|Q|
+        for a one-variable Laurent polynomial Q, and the Birkhoff sum is then literally a
+        one-variable Birkhoff sum over a circle rotation.  This is the only reading under
+        which "the existing one-variable theory answers our question" could be true.
+L2  WHICH BADLY-APPROXIMABLE PAIR.  Alternatives: (a) (2^{1/3}, 4^{1/3}) -- the classical
+    badly-approximable pair in dimension two, and the one M1_06 used, so the comparison to
+    the sealed lane is direct; (b) random algebraic pairs; (c) THE CORPUS'S OWN PUBLISHED
+    GENERIC CONNECTION f=1, c=sqrt(2).  ALL THREE ARE RUN.  (c) is the one that decides
+    anything about the corpus.
+L3  QUADRATURE FOR m(P).  Grid evaluation of log|P| on T^2 is noise-limited near the zeros
+    (brief; min|P| on 2048^2 is 2.0e-04, reproduced here).  CHOSEN: the Jensen reduction
+    m(P) = (1/2pi) INT log max(|p00+p10 e^{it}|, |p01+p11 e^{it}|) dt, whose integrand is
+    continuous and, at K1's pi, real-analytic except at two points.  Shown across four
+    decades of node count, not at one node count.
+L4  PRECISION.  Phases are reduced by the exact-integer split of M1_06 (An = floor(alpha*2^39),
+    dA = alpha - An/2^39; (k*An) mod 2^39 in int64 plus k*dA in float64).  Residual phase
+    error at k = 10^7 is ~2e-21.  Where an offset is smaller than float64 can hold, the
+    exact Fraction offset is used with a VALIDATED local expansion of P (M1_06's method,
+    revalidated here at K1's pi).  High-precision constants are computed in pure Python
+    integer fixed-point (Machin pi, isqrt, argument-halving arctan) and CROSS-CHECKED against
+    mpmath; mpmath is used only as a check, never as the source of a reported number.
+
+================================================================================
+4.  ISOLATION LEDGER — AND THE ARMS-DIFF GUARD
+================================================================================
+THE ONE VARIABLE THIS LANE MOVES IS THE ARITHMETIC TYPE OF THE ROTATION VECTOR omega.
+Held fixed in every comparison: pi = (0,0.3,0.3,0.4); the polynomial P; the estimator
+(1/N) sum_{k<=N} log|Z_k|; the N-grid; the phase-reduction code path; the local-expansion
+cutoff; the seed (none is used -- every arm is deterministic).
+W-08's isolation audit found that the commonest FATAL defect is ZERO variables moved.
+EVERY comparison in this lane therefore prints, from the ARMS THEMSELVES AND NOT FROM THE
+LEDGER, (i) the first ten orbit points of each arm, (ii) a sha256 of the full vector of
+per-k values log|Z_k| for each arm, and (iii) max_k |log|Z_k|^armA - log|Z_k|^armB|.
+A comparison whose arms hash equal is reported as VOID, not as a confirmation.
+W-10 N-6 records an arms-diff guard that hashed INPUTS while the collapse was in the OUTPUTS.
+The guard here hashes the OUTPUTS.
+
+================================================================================
+5.  WHAT COULD NOT HAVE FAILED, DECLARED IN ADVANCE
+================================================================================
+- The reproduction of M1_07's sixteen subtorus rows is a CONTROL.  It is expected to pass and
+  proves nothing about convergence.  It is run because R_02's reduction formula must agree
+  with the corpus's own, and a disagreement would be a finding.
+- "0 of N random draws are resonant" is a control that could not have failed (the resonant
+  locus is Haar-null; W-11 already convicted this pattern).  NOT RUN.
+- min|P| on a grid reproducing the brief's 2.0e-04 is a CONTROL on the setup, not evidence.
+
+================================================================================
+6.  A NULL READS TWO WAYS — PRE-DECLARED
+================================================================================
+If the badly-approximable arms converge to m(P), that reads as (i) N1's limit holds under a
+Diophantine hypothesis, OR (ii) four decades is not enough to see a failure that begins later.
+This lane distinguishes them only where it PROVES something (R-2, R-7); everywhere else the
+two readings are printed side by side and neither is scored.
+
+================================================================================
+7.  LINEAGE
+================================================================================
+This lane is Claude Opus 5, the same lineage as W-07 through W-12.  It is NOT the
+lineage-independent check those rows ask for.  W-10 counts layer twelve, W-11 records three
+different numbers for one round; this lane does not adjudicate that and does not claim to be
+an independent check of anything in W-07..W-12.  Discount it as one block with them.

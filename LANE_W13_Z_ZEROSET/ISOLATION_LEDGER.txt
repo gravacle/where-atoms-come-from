@@ -1,0 +1,88 @@
+LANE W-13 / Z — ISOLATION LEDGER
+One line per comparison.  HELD FIXED | THE ONE THING THAT MOVES | WHERE | ARMS DIFFED.
+W-08's isolation audit found the commonest FATAL defect in this program is not "two variables
+moved" but "ZERO variables moved": arms that are byte-identical, reported as a confirmation.
+A ledger records what an author INTENDED to vary, so W-08 says to treat a ledger as evidence of
+nothing and read the code.  This ledger therefore prints, for every comparison, the measured
+difference between the arms' INPUTS and their OUTPUTS.
+
+--------------------------------------------------------------------------------------------
+Z1.  strat_exact (the classifier)  vs  independent_type (a root count of g(t))
+     HELD FIXED: the weight vector (the SAME Fraction 4-tuple feeds both), exact arithmetic,
+                 the simplex grid.
+     MOVES:      only WHICH DERIVATION decides the type.
+     This is an identity check between two routes, NOT an effect claim.
+     ARMS DIFFED: the two functions share no line of code; independent_type never calls
+                  strat_exact and reasons from C, D and the shared-zero test.
+     12064 exact simplex points, 0 mismatches.                            z1 (b).
+
+Z2.  closed-form zero location  vs  direct evaluation of P
+     HELD FIXED: the weight vector, the point.
+     MOVES:      only whether the point is PRODUCED by the closed form or TESTED by P.
+     ARMS DIFFED: |P| at the closed-form point printed for every named state; max 5.7e-17.
+     For K1's registered pi the check is EXACT (Gaussian rationals), not float.   z1 (c)(e).
+
+Z3.  SUBLEVEL EXPONENT theta:  FAMILY A,  pi(eta) = (1/10, 1/5, 3/10+eta, 2/5-eta)
+     HELD FIXED: the eps-ladder, the quadrature (crossing-refined, same mesh rule), the
+                 estimator, the code path, the arithmetic.
+     MOVES:      ONE declared scalar, eta.
+     ARMS DIFFED: eta = -1/100 vs +1/100 — inputs differ in 2 of 4 coordinates (they must:
+                  the simplex has 3 free coordinates, so no path moves one weight alone —
+                  DECLARED, not hidden); OUTPUTS differ by a factor 8.4e+290 at eps = 1e-5
+                  (one arm is EMPTY, mu = 0 exactly).
+     RESULT: theta = nan (empty) -> 3/2 (eta = 0, tangential) -> 2 (eta > 0).       z2 (e).
+
+Z4.  SUBLEVEL EXPONENT theta:  FAMILY B,  pi(mu) = (1/10, 2/5, mu, 1/2-mu)
+     HELD FIXED: everything as Z3, AND the stratum wall itself — (S1-S2)(D1-D2) = 0 EXACTLY
+                 at every mu, verified as an integer identity, so the path never leaves it.
+     MOVES:      ONE declared scalar, mu.
+     WHY THIS FAMILY EXISTS: the CURVE strata have codimension 2 and lie inside the
+     codimension-1 wall, so NO transversal one-parameter path reaches a curve.  Stated in
+     z1 (a) BEFORE the family was built, not after it failed.
+     ARMS DIFFED: mu = 1/10 and mu = 2/5 give theta = 1.000; all other mu give theta = 1.500;
+                  mu(1e-4) differs by a factor 51 between the two.                z2 (e).
+
+Z5.  TORUS-ZERO predicate  vs  POLYGON predicate,  at three classes and at four
+     HELD FIXED: the weight vector (the same exact 4-tuple feeds both), exact arithmetic,
+                 the simplex grid, the direction of every inequality.
+     MOVES:      only WHICH PREDICATE is evaluated.
+     ARMS DIFFED: at four classes the two disagree on 8540 of 39711 exact points, every
+                  disagreement polygon-TRUE / zero-FALSE; at three classes 0 of 29161.
+     NOTE: this comparison REPRODUCES LANE_W08_M3_ZEROSET/m3_2 by a second route and is
+     scored as a cross-check, not as a discovery.                                 z3 (b)(c).
+
+Z6.  CONVERGENCE:  the stratum (rows) x the connection's arithmetic (columns)
+     HELD FIXED: the N-ladder, the exact-integer orbit machinery, the evaluator, the code
+                 path, the float floor.
+     MOVES:      down a column, ONLY the weight vector; across a row, ONLY the connection.
+     *** NOT ISOLATED, AND SAID SO IN THE OUTPUT RATHER THAN DISCOVERED LATER.  The second
+     *** column moves TWO things at K1's registered pi — proximity to the zero AND proximity
+     *** to a relation — and THEOREM Z4 proves the two cannot be separated there.  The
+     *** near-relation defect is measured and printed (7(alpha+beta)-1 = 2.0e-12) rather than
+     *** patched out.  The row that IS isolated is the EMPTY row, where the columns agree to
+     *** 1e-5 from N = 1000 on.                                                    z4 (c).
+
+Z7.  APPROACH RATE:  POINT target vs CIRCLE target
+     HELD FIXED: the 200 connections (the SAME 200 feed both columns), the N-ladder, the
+                 distance convention, the code path.
+     MOVES:      only the CODIMENSION of the target set.
+     ARMS DIFFED: geometric-mean min distance at N = 1e6 is 4.03e-04 vs 2.98e-07, a factor
+                  1350; measured slopes -0.50 vs -0.99 over four consecutive decades.  z4 (d).
+
+--------------------------------------------------------------------------------------------
+DECLARED THEOREM CHECKS, WHICH ARE NOT CONTROLS AND ARE NOT SCORED AS ANY:
+ * z4 (b): |Z_k| >= min_{T^2}|P| on the EMPTY stratum, over 8e6 evaluations.  This COULD NOT
+   HAVE FAILED.  "Could not have failed" voids a CONTROL, never a THEOREM (REGISTER W-06
+   IMP-1), and this is a theorem check.  It is reported as a check that the code computes the
+   object the theorem is about, and carries no evidential weight beyond that.
+ * z1 (b) and z2 (a): the classifier/root-count agreement and det M = 0 exactly on the wall.
+   Same status.
+
+NOT ISOLATED, AND SAID SO:
+ * "K1's registered pi is the mildest singular case, S1's published state the hardest" moves
+   the WEIGHT VECTOR between two named points of the simplex.  It is a statement about two
+   named objects, not a controlled comparison, and no third variable is claimed constant.
+ * The B0b counterexample of z3 (e) is ONE exhibited state.  Its role is existential
+   (refuting a universal claim), which one witness discharges; no measure is claimed from it.
+ * The two connections of z4 (c) are exact rationals, hence EXACTLY RESONANT (W-10 N-4), with
+   primitive relations of size > 10^29.  NEITHER IS CALLED GENERIC anywhere in this lane.

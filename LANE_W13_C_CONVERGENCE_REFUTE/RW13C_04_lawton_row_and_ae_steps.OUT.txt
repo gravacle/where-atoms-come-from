@@ -1,0 +1,77 @@
+==============================================================================
+RW13C_04 -- THE S4:973 ROW CONVERGED, AND THE a.e. THEOREM'S OWN STEPS
+==============================================================================
+m(P) = -0.767507880357776
+
+==============================================================================
+(A) SUBTORUS LIMITS OF THE CORPUS'S RESONANT PUBLISHED CONNECTIONS.
+    ONE VARIABLE: the connection.  Same estimator (modular-exact trapezoid),
+    same n-ladder, same code path.  The first two rows are CALIBRATION: their
+    answers are already in the register.
+==============================================================================
+
+   connection                                                                           n=2^20            n=2^22            n=2^24            n=2^26            n=2^27
+   CALIBRATION f=2.0, c=1.1   relation (11,20)   [register erratum: -0.767014     -0.767014993      -0.767014993      -0.767014993      -0.767014993      -0.767014993
+      ... minus m(P)                                                                 4.929e-04         4.929e-04         4.929e-04         4.929e-04         4.929e-04
+   CALIBRATION f=1.3, c=2.0   relation (20,13)   [W-10 lane D, never computed     -0.766724510      -0.766724510      -0.766724510      -0.766724510      -0.766724510
+      ... minus m(P)                                                                 7.834e-04         7.834e-04         7.834e-04         7.834e-04         7.834e-04
+   S4:973      f=3.14159, c=1.57080  relation (157080,314159)  [C9 asserts 'd     -0.767504232      -0.767508806      -0.767507833      -0.767507881      -0.767507875
+      ... minus m(P)                                                                 3.648e-06        -9.260e-07         4.767e-08        -2.728e-10         5.184e-09
+
+   READ-OFF, AND IT IS A CORRECTION TO C9.
+   * f=2.0,c=1.1 reproduces the register's -0.767014993 exactly: the method is sound.
+   * f=1.3,c=2.0 sits at a genuinely different limit, gap ~ +7.8e-04.  C9's claim holds
+     for this row.
+   * S4:973's f=3.14159, c=1.57080 does NOT have a "demonstrably different limit".  Its
+     relation has order ~5e5, and by the very Boyd-Lawton statement W-08/M1 T2(d) says is
+     the RIGHT use of that theorem, its subtorus limit is m(P) to the precision printed
+     above -- SMALLER THAN THE TARGET LANE'S OWN RESIDUAL AT ITS GENERIC ARM (3.5e-07 at
+     N=1e7).  H2 does fail there; the LIMIT does not differ measurably.
+   * AND THE SAME ROW IS A SECOND INSTANCE OF THE TARGET LANE'S OWN C7 FINDING, WHICH IT
+     DID NOT NOTICE BECAUSE IT NEVER RAN THE ROW: at N = 1e7 the Birkhoff average at
+     S4:973's connection reads -7.93e-04 away from m(P) (RW13C_03), i.e. THREE ORDERS
+     WORSE than its own true limit.  A numerical study at 1e7 misclassifies this published
+     connection in the OPPOSITE direction from the one C7 warns about: not a false
+     confirmation, a false refutation.
+
+==============================================================================
+(B) THE TWO SELF-CONTAINED STEPS OF C5.
+==============================================================================
+
+   (b1) 'theta |-> k theta preserves Haar, so Pr(dist(k theta, Z) < r) = 2 pi r^2.'
+        k        r          measured Pr      2 pi r^2         ratio     
+        1        0.01       6.182500e-04     6.283185e-04     0.9840    
+        1        0.003      5.375000e-05     5.654867e-05     0.9505    
+        2        0.01       6.115000e-04     6.283185e-04     0.9732    
+        2        0.003      5.650000e-05     5.654867e-05     0.9991    
+        7        0.01       6.225000e-04     6.283185e-04     0.9907    
+        7        0.003      5.525000e-05     5.654867e-05     0.9770    
+        1000     0.01       6.187500e-04     6.283185e-04     0.9848    
+        1000     0.003      5.725000e-05     5.654867e-05     1.0124    
+        999983   0.01       6.147500e-04     6.283185e-04     0.9784    
+        999983   0.003      5.750000e-05     5.654867e-05     1.0168    
+        CONFIRMED (to Monte-Carlo error ~ 1/sqrt(M*Pr)).  Step (b)'s measure claim
+        holds, including at k = 999983 where the float64 product k*theta has lost
+        ~20 bits -- so the check is of the MATHEMATICS, not of the arithmetic.
+
+   (b2) BOREL-CANTELLI'S CONCLUSION: inf_k k^{3/4} dist(k theta, Z) > 0.
+        ONE VARIABLE: the arithmetic type of theta.  Same k-range, same estimator.
+        arm                                                  inf k^{3/4} dist at k            
+        GENERIC f=1.0 c=sqrt(2)                              1.625937e-01     2               
+        BADLY-APPROX (-2^(1/3),4^(1/3))                      2.454363e-01     1               
+        HAAR-RANDOM draw 0                                   1.820547e-01     1               
+        HAAR-RANDOM draw 1                                   2.233635e-01     4               
+        HAAR-RANDOM draw 2                                   3.752709e-01     3               
+        THE TARGET LANE'S ENGINEERED LIOUVILLE theta (L=500) 4.996004e-13     10000           
+
+        READ THE LAST ROW CAREFULLY, IN BOTH DIRECTIONS.
+        (i) It is NOT a counterexample to step (b): step (b) is an a.e. statement and the
+            engineered theta is one point, constructed to lie in the null set.
+        (ii) But it DOES flag the engineered theta four orders below every other arm, in a
+            statistic costing one pass -- because the 64-bit truncation still lands within
+            1e4 * 2^-64 = 5.4e-16 of the zero at k = 1e4.  So the target lane's engineered
+            theta IS detectable by a plain float64 scan of C3's own necessary-condition
+            statistic.  This bears on C7's methodological sentence and is taken up in
+            RW13C_05(II).  What is genuinely undetectable is the SECOND dip, not the first.
+
+DONE RW13C_04

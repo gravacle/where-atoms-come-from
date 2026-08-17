@@ -1,0 +1,55 @@
+LANE W-13 / C — REFUTER.  LENS: ISOLATION AND WINDOWS.
+PUBLISHED CONVENTIONS.  Everything needed to re-run this lane is on this page.
+
+LINEAGE.  Claude Opus 5.  The lane under attack (LANE_W13_C_CONVERGENCE) is Opus 5, as are
+W-07..W-12.  THIS REFUTER IS NOT LINEAGE-INDEPENDENT OF IT.  Graded accordingly: a shared
+failure mode passes through both (feedback_read_sealed_corrections_first).
+
+WHAT WAS DONE FIRST, BEFORE ANY NEW CODE.
+  * REGISTER_V001.md read in full (W-01, W-02 + erratum, W-03..W-06, W-07 + erratum, W-08,
+    W-09 + erratum, W-10, W-11, W-12, W-14).
+  * S3_THE_CROSSING_AUDIT_V001.md:785-800, COR-A..COR-L.
+  * LANE_W08_M1_IDENTIFICATION/M1_08_THEOREMS.txt (T1..T4) and M1_06_liouville.py/.out.txt,
+    plus both _REFUTE_ directories' file lists.  M1's Lawton ruling T2(d) is NOT re-argued.
+  * LANE_W12_BIANCHI/PUBLISHED_CONVENTIONS.txt.
+  * The target lane's four scripts read line by line BEFORE re-running them.
+
+REPRODUCTION, FIRST STEP.  `shasum -a 256 -c SEALS.sha256` in LANE_W13_C_CONVERGENCE: 10/10 OK.
+All four scripts re-run on this machine (python 3.9.6, numpy 2.0.2, mpmath 1.4.1) and produce
+output BYTE-IDENTICAL to the sealed .OUT.txt files.  Nothing in this lane rests on a
+reproduction failure; every finding below is about what the code MEANS, not whether it runs.
+
+THE OBJECT, UNCHANGED FROM THE TARGET LANE (so the arms can be compared):
+    pi = (0, 3/10, 3/10, 2/5),  P(x,y) = 0.3x + 0.3y + 0.4xy,
+    Z_k = P(u^k, v^k),  u = conj(W_F), v = W_C,  A_N = (1/N) SUM_{k<=N} log|Z_k|,
+    theta = (arg u, arg v)/2pi in T^2,  f(x) = log|P(e(x_1),e(x_2))|,
+    A_N(x_0) = (1/N) SUM_{k<=N} f(x_0 + k theta).   The corpus's object is x_0 = 0.
+    m(P) = -0.767507880357776.
+
+ARITHMETIC.
+  Background orbit: exact uint64 modular arithmetic (same as the target lane), OPTIONALLY
+  corrected by the exact residual r = theta - A/2^64 carried in float64 (RW13C_01 leg B).
+  Any term whose |Z_k| falls below what float64 can resolve is computed in mpmath at
+  dps >= L+50 and SPLICED — and in this lane the splice is applied to EVERY ARM
+  UNCONDITIONALLY, which is the single code change that turns the target lane's item-(4)
+  exhibit from a control that could not have failed into one that could.
+  m(P) cross-checked by a method the target lane does not use (2-D log-average with the
+  singularity handled by the exact shell correction, and a 1-D Jensen split independent of
+  theirs).
+
+SEEDS.  numpy default_rng.  Master seed 20260818 (DELIBERATELY DIFFERENT from the target
+lane's 20260817, so the Haar draws are not the same points).
+
+THE ONE VARIABLE, PER SCRIPT.
+  RW13C_01  arm = the arithmetic type of theta; everything else byte-identical.  Plus a
+            pure PRECISION leg where the ONLY thing that moves is the phase representation.
+  RW13C_02  arm = the STARTING POINT x_0, at a FIXED theta which is the corpus's own
+            published generic connection f = 1.0, c = sqrt(2).  theta does not move.
+            The mpmath splice at k = k_1 is applied to every arm, so the code path is
+            identical and no arm carries a hard-coded branch keyed to its own label.
+  RW13C_03  arm = the published connection; the estimator, grid and code path fixed.
+
+ARMS-DIFF GUARD.  Every script prints the uint64 pair actually fed to the estimator AND the
+spliced value actually substituted, for every arm, and asserts pairwise distinctness of the
+tuple (A_1, A_2, X_1, X_2) before any run.  "The ledger says one variable" is evidence of
+nothing (W-08); the printed tuples are the evidence.

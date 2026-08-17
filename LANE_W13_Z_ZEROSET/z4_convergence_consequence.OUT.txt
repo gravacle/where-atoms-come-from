@@ -1,0 +1,183 @@
+================================================================================================
+z4  THE ZERO SET AND N1's CONVERGENCE: THE DICHOTOMY, AND WHAT IT LEAVES OPEN
+================================================================================================
+numpy 2.0.2 
+
+------------------------------------------------------------------------------------------------
+(a) THEOREM Z3 -- THE DICHOTOMY.  THIS IS THE LANE'S ANSWER TO 'SETTLE THE CONVERGENCE'.
+
+  (i)  IF Z(P) = EMPTY  --  equivalently (S1-S2)(D1-D2) > 0, equivalently the Jensen branches
+       do not cross  --  THEN log|P| is CONTINUOUS AND BOUNDED on T^2, with
+             log(min_t ||A|-|B||)  <=  log|P|  <=  log(max_t (|A|+|B|)) = 0,
+       so log|P| is Riemann-integrable and WEYL EQUIDISTRIBUTION ALONE GIVES
+             (1/N) SUM_{k<=N} log|Z_k|  ->  m(P) = log(an explicit weight)   [Theorem Z2].
+       ==> ON THIS STRATUM H2 (density of <(conj W_F, W_C)>) IS SUFFICIENT.  NO DIOPHANTINE
+           HYPOTHESIS IS NEEDED, NO DISCREPANCY RATE IS NEEDED, AND N1 IS UNCONDITIONAL.
+       The stratum has measure 3/4 of the four-class simplex and 3/4 of K1's three-class one.
+
+  (ii) IF Z(P) != EMPTY, H2 IS NOT SUFFICIENT, and the exceptional set of connections has a
+       DIFFERENT SHAPE in the two sub-cases:
+         Z = TWO POINTS (theta = 2).  An exact hit needs (u^k,v^k) = (x0,y0): TWO conditions.
+           For each k the solution set is FINITE (k^2 points), so the exact-hit set of
+           connections is COUNTABLE.  Near-hits are controlled by SIMULTANEOUS approximation
+           to a point; Borel-Cantelli gives dist >= c k^{-1/2-delta} for a.e. (alpha,beta).
+         Z = A CURVE (theta = 1).  In stratum I an exact hit needs only u^k = -1: ONE
+           condition.  For each k the solution set is a FINITE UNION OF CIRCLES in the
+           connection torus, and the union over k is DENSE.  The exact-hit set of connections
+           goes from CODIMENSION 2 TO CODIMENSION 1.
+       THAT is the precise sense in which the p00 = 0 curve states are materially harder.
+
+  THE ANSWER TO THE ROUND'S QUESTION, FOR K1's REGISTERED pi:  IT IS IN CASE (ii), SUB-CASE
+  'TWO POINTS' -- THE MILDEST SINGULAR CASE.  Its zeros are SIMPLE and CONICAL (z2), theta = 2,
+  and the Diophantine condition N1 needs there is the weakest one in the stratification.
+
+------------------------------------------------------------------------------------------------
+(b) THE THEOREM-CHECK ON (i).  THIS IS A THEOREM CHECK, NOT A CONTROL: it COULD NOT
+    HAVE FAILED, and 'could not have failed' voids a control, never a theorem.
+    On the EMPTY stratum |Z_k| >= min_{T^2}|P| for EVERY connection and EVERY k.
+    B0b uniform pi, 400 random connections x 20000 cells = 8e6 evaluations
+      min over ALL of them of |Z_k| = 0.111111393423
+      theoretical floor min_{T^2}|P| = 1/9 = 0.111111111111   (never breached: True)
+      => |log|Z_k|| <= 2.197225 for every k and every connection.
+
+------------------------------------------------------------------------------------------------
+(c) A THEOREM THAT WAS FOUND BY A CONFOUND IN MY OWN FIRST DESIGN, RECORDED RATHER
+    THAN PATCHED OUT.
+
+    I set out to build a 2x2: rows = the stratum, columns = 'benign' vs 'a connection whose
+    orbit passes very close to K1_REG's torus zero', with nothing else moving.  THE SECOND
+    COLUMN CANNOT BE BUILT AT K1's REGISTERED pi, and the reason is a theorem:
+
+      THEOREM Z4.  At K1's registered pi = (0, 3/10, 3/10, 2/5) -- indeed whenever
+      p10 = p01 -- the two torus zeros satisfy  y0 = conj(x0), hence  x0 y0 = 1: THEY LIE ON
+      THE ANTI-DIAGONAL SUBTORUS {xy = 1}.  An orbit point (u^k, v^k) can therefore equal a
+      zero only if (uv)^k = 1, i.e. only if (k,k) is a relation of (u,v).  SO:
+        * NO CONNECTION SATISFYING H2 EVER LANDS EXACTLY ON A ZERO OF N1's REGISTERED
+          POLYNOMIAL.  Under H2 only NEAR-approaches are possible, never exact hits.
+        * and driving the orbit to within delta of a zero at step k forces
+          |(uv)^k - 1| = O(delta), i.e. a NEAR-RELATION of size 2k with defect O(delta).
+      MY FIRST 'HOSTILE' COLUMN HAD EXACTLY THAT DEFECT AND I DID NOT NOTICE IT UNTIL THE
+      N = 10^6 ROW FAILED TO RECOVER: alpha_h + beta_h = (1 + 2e-12)/7, a near-relation (7,7)
+      with defect 2e-12, so for every k << 5e11 the orbit is confined near a rank-1 subtorus
+      and the average is a SUBTORUS average, not m(P).  TWO VARIABLES MOVED, and the second
+      one is not removable.  It is printed below as what it is.
+
+    THEOREM Z4 CHECKED EXACTLY: p10 = p01 ? True.  x0*y0 for both zeros:
+      x0*y0 = +1.000000000000000-0.000000000000000i   |x0*y0 - 1| = 1.387e-16
+      x0*y0 = +1.000000000000000+0.000000000000000i   |x0*y0 - 1| = 1.387e-16
+      EXACT: x0 = cos+isin, y0 = cos-isin, x0 y0 = cos^2+sin^2 = 4/9 + 5/9 = 1
+
+    ARM DIFF (inputs), printed so a reader can check rather than trust:
+      alpha_benign  = 0.618033988749894903     alpha_near = 0.052305680514340716
+      beta_benign   = 0.414213562373095201     beta_near  = 0.090551462343087863
+      numerators differ: True, True
+      7*(alpha+beta) - 1 :  benign +6.225733e+00   near +1.999956e-12   <- THE CONFOUND, MEASURED
+      pi rows differ: K1_REG ('0', '3/10', '3/10', '2/5') | B0b ('4/9', '2/9', '2/9', '1/9') | S1_PUB ('0', '0', '1/2', '1/2')
+      strata: TWO | EMPTY | CURVE-I
+
+    COLUMN BENIGN
+                               N =            10           100          1000         10000        100000       1000000
+      m(P) = -0.810930216216 (EXACT)   min_k |Z_k|, k<=1e6 = 1.111e-01
+      B0b_U  EMPTY                   -0.821207     -0.815491     -0.811002     -0.810951     -0.810938     -0.810931
+        dev from m(P)                -1.03e-02     -4.56e-03     -7.15e-05     -2.11e-05     -8.03e-06     -4.44e-07
+      m(P) = -0.767507880358 (quadrature)   min_k |Z_k|, k<=1e6 = 1.297e-03
+      K1_REG TWO                     -0.859529     -0.776205     -0.768955     -0.767960     -0.767501     -0.767511
+        dev from m(P)                -9.20e-02     -8.70e-03     -1.45e-03     -4.52e-04      7.00e-06     -2.64e-06
+      m(P) = -0.693147180560 (EXACT)   min_k |Z_k|, k<=1e6 = 8.442e-07
+      S1_PUB CURVE                   -0.688135     -0.692388     -0.691988     -0.693187     -0.693169     -0.693146
+        dev from m(P)                 5.01e-03      7.60e-04      1.16e-03     -4.02e-05     -2.21e-05      8.73e-07
+
+    COLUMN NEAR-ZERO (and, unavoidably, NEAR-RESONANT)
+                               N =            10           100          1000         10000        100000       1000000
+      m(P) = -0.810930216216 (EXACT)   min_k |Z_k|, k<=1e6 = 1.111e-01
+      B0b_U  EMPTY                   -0.936539     -0.795594     -0.810504     -0.810952     -0.810938     -0.810932
+        dev from m(P)                -1.26e-01      1.53e-02      4.27e-04     -2.20e-05     -7.39e-06     -2.00e-06
+      m(P) = -0.767507880358 (quadrature)   min_k |Z_k|, k<=1e6 = 2.513e-12
+      K1_REG TWO                     -3.400779     -1.008858     -0.795884     -0.778773     -0.777529     -0.777329
+        dev from m(P)                -2.63e+00     -2.41e-01     -2.84e-02     -1.13e-02     -1.00e-02     -9.82e-03
+      m(P) = -0.693147180560 (EXACT)   min_k |Z_k|, k<=1e6 = 2.014e-07
+      S1_PUB CURVE                   -0.869031     -0.676556     -0.690040     -0.693276     -0.693133     -0.693154
+        dev from m(P)                -1.76e-01      1.66e-02      3.11e-03     -1.29e-04      1.39e-05     -6.41e-06
+
+    READ IT, WITH THE CONFOUND CARRIED:
+      * THE EMPTY ROW IS THE SAME IN BOTH COLUMNS from N = 1000 on, to 1e-5.  Neither
+        the near-zero targeting nor the near-resonance can touch it -- log|P| is
+        BOUNDED there, so no connection can produce a dive.  That is Theorem Z3(i).
+      * THE TWO ROW dives to -3.40 at N = 10 in the second column (a factor 4.4 in the
+        average) and does NOT return to m(P) by N = 10^6.  BOTH causes are present and
+        Theorem Z4 says they cannot be separated.  The residual -9.8e-03 is the
+        SUBTORUS offset, not the singularity: it is flat in N from 10^5 to 10^6.
+      * THE CURVE ROW is governed by ONE angle, not two (M3-3(d)), so the second
+        column's beta is irrelevant to it and both columns converge.
+
+------------------------------------------------------------------------------------------------
+(d) THE APPROACH-RATE LAWS THAT SET THE DIOPHANTINE EXPONENT, 5 DECADES, 200 CONNECTIONS.
+    A minimum over ONE Kronecker orbit is not self-averaging, so one connection claims
+    nothing.  GEOMETRIC MEAN over 200 independent connections, same connections used
+    for both targets -- the ONE thing that moves between the two columns is whether the
+    target is a POINT (codim 2) or a CIRCLE (codim 1).
+            N   geo-mean min dist POINT     slope   geo-mean min dist CIRCLE     slope
+          100                 3.972e-02       nan                  2.846e-03       nan
+         1000                 1.313e-02   -0.4808                  2.304e-04   -1.0918
+        10000                 4.086e-03   -0.5069                  2.770e-05   -0.9199
+       100000                 1.362e-03   -0.4772                  2.706e-06   -1.0103
+      1000000                 4.029e-04   -0.5289                  2.976e-07   -0.9586
+    PREDICTED slopes -0.5 (point, codim 2) and -1.0 (circle, codim 1).  The TREND over
+    four consecutive decades is what is claimed; no single decade is quoted.
+    CONSEQUENCE: the inhomogeneous Diophantine exponent N1 needs is tau > 1/2 in the
+    TWO-point stratum and tau > 1 in the CURVE stratum.  Borel-Cantelli gives both for
+    almost every connection, so N1 holds a.e. in EVERY stratum -- the strata differ in
+    the SHAPE of the exceptional set, not in its measure.
+
+------------------------------------------------------------------------------------------------
+(e) THE RESONANT CASE DOES NOT ESCAPE THE ZERO SET -- IT CHANGES ITS CODIMENSION.
+
+    If H2 fails with a primitive relation (m,n), the orbit closure is the circle
+    H = {(z^n, z^{-m})} and the Birkhoff limit is the ONE-VARIABLE Mahler measure
+        lambda_(m,n) = m( p00 + p10 z^n + p01 z^{-m} + p11 z^{n-m} )
+    (M1_08 T2(d); Boyd-Lawton then gives lambda_(m,n) -> m(P) as the relation grows).
+    THE ZERO-SET QUESTION REAPPEARS ON H, ONE DIMENSION DOWN: does H meet Z(P)?
+      * Z(P) is 0-dimensional and H is 1-dimensional inside a 2-torus, so GENERICALLY THEY
+        MISS -- and then log|P| restricted to H is CONTINUOUS and the subtorus average is
+        unproblematic.
+      * They meet only on a codimension-1 set of relations, and then the one-variable
+        restriction has a circle zero and the classical Sudler/log|2 sin| problem starts.
+    CHECKED at the corpus's own two distinguished connections, on K1's REGISTERED pi:
+
+      K1_REG zeros at angles (s,t)/2pi = (0.366139764, 0.633860236) and (0.633860236, 0.366139764)
+      S3/S4 headline f=2.0,c=1.1  relation (11,-20): subtorus H = {(z^20, z^-11)}
+        min_{H} |P| over a 200000-point sweep = 0.023011613  -> MISSES Z(P)
+        so log|P| is CONTINUOUS on H, the subtorus average is unproblematic,
+        and the erratum's 4.9e-04 gap is a BOYD-LAWTON APPROXIMATION GAP
+        (M1_07), NOT a singularity effect.  m(P|H) by quadrature = -0.767014993
+      S1 published W_F=-1,W_C=-i  order 4 (finite): the orbit is 4 points of T^2 (u=-1, v=-i);
+        min distance from the whole orbit to Z(P) = 0.164246  -> MISSES.
+        Its average is the finite-orbit value -(1/2)log5 = -0.804718956217, not m(P).  M1_08 T2(e), reproduced.
+
+------------------------------------------------------------------------------------------------
+(f) WHAT THIS LANE DOES NOT ESTABLISH -- BEFORE THE VERDICT, NOT AFTER.
+
+  * IT DOES NOT PROVE N1 ON THE SINGULAR STRATA.  On Z(P) != empty this lane supplies the
+    GEOMETRY (count, simplicity, theta) and the SHAPE of the exceptional set.  The sufficient
+    condition -- discrepancy o(1/(log N)^2) plus an inhomogeneous Diophantine condition
+    dist >= c k^{-tau} -- is M1_08 T2(c)'s proof sketch, and it is a SKETCH there and is not
+    upgraded here.  What is added is that theta = 2 (not 1) at K1's registered pi, which is
+    the input that sketch's dyadic shell count needs and did not have.
+  * THE LIOUVILLE COUNTEREXAMPLE IS M1_06's, NOT MINE.  M1_06 exhibits (u,v) with L = {0}
+    (so H2 HOLDS) and liminf (1/N) sum log|Z_k| = -infinity while m(P) is finite.  That is
+    the counterexample the round asks for and IT ALREADY EXISTS ON DISK.  This lane's
+    contribution is to say WHICH STATES ADMIT IT: exactly the 1/4 of the simplex where the
+    Jensen branches cross, and nowhere else.
+  * THE HOSTILE COLUMN OF (c) IS AN ADVERSARIAL EXHIBIT, NOT A MEASUREMENT.  It shows a dive
+    and a recovery at ONE tuned k.  It does not show liminf = -infinity and is not scored as
+    doing so.
+  * FLOAT FLOOR, STATED.  The orbit position is exact in Python integers but the angle is
+    converted to double, so |Z_k| below about 1e-15 is not resolved.  Every dive reported
+    here is above 1e-13.
+  * A NULL READS TWO WAYS.  The EMPTY row of (c) showing no sensitivity to the connection's
+    arithmetic reads as 'the singularity is the whole difficulty' OR as 'the two connections
+    were not different enough'.  The theorem check in (b) is what distinguishes them, and it
+    is a THEOREM, so it settles the first reading -- but only because it is a theorem, not
+    because the null was informative.
+
+DONE z4

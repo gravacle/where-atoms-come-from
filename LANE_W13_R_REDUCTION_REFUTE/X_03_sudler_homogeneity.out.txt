@@ -1,0 +1,60 @@
+===============================================================================
+X_03 — HOMOGENEOUS vs INHOMOGENEOUS: THE FORCING IS NOT WHERE R-8 PUTS IT
+===============================================================================
+
+(i)  Q_{m,n}(1) = P(1,1) = sum(pi) = 1 FOR EVERY (m,n).  Exhaustive check.
+     primitive (m,n) with |m|,|n| <= 12 scanned: 368   |Q_{m,n}(1) - 1| > 1e-15 in 0 of them
+     (the lane's own count for this box is 368 -- reproduced: YES)
+     and on the d-twisted branches of X_01, Q_r(1) = 0.3 + 0.4 zeta^r + 0.3 zeta^r:
+        d=2  |Q_r(1)| = 1.0000 0.4000   min = 0.4000  -> never 0
+        d=3  |Q_r(1)| = 1.0000 0.6083 0.6083   min = 0.6083  -> never 0
+        d=5  |Q_r(1)| = 1.0000 0.8425 0.4901 0.4901 0.8425   min = 0.4901  -> never 0
+     SO THE CLASSICAL (HOMOGENEOUS) SUDLER PRODUCT IS NOT THE REDUCED OBJECT ANYWHERE.
+
+(ii) THE TWO DIAGNOSTICS ON THE SAME alpha.  ONE VARIABLE MOVED: THE SHIFT g.
+     column H : N * min_{k<=N} ||k a - 0||        (HOMOGENEOUS -- Dirichlet applies)
+     column I : N * min_{k<=N} ||k a - theta*||   (INHOMOGENEOUS -- Dirichlet does not)
+
+     N                                            10          100         1000        10000       100000      1000000     10000000
+     BA-silver   a = sqrt2 - 1   H            0.7107       0.5051       0.3589       0.6158       0.4377       0.7509       0.5337
+     BA-silver   a = sqrt2 - 1   I            0.4807       0.1393       0.3405       0.1844       0.3496       0.1810       0.5220
+
+     N                                            10          100         1000        10000       100000      1000000     10000000
+     BA-golden   a = (sqrt5-1)/2   H          0.5573       0.5025       0.4531       0.6611       0.5961       0.5375       0.4847
+     BA-golden   a = (sqrt5-1)/2   I          0.3990       0.5460       0.2981       0.4799       0.1176       0.3061       0.2611
+
+     N                                            10          100         1000        10000       100000      1000000     10000000
+     BAD-alpha   a = 1/2 + (sqrt2-1)*1e-9   H       0.0000       0.0000       0.0000       0.0000       0.0001       0.0008       0.0083
+     BAD-alpha   a = 1/2 + (sqrt2-1)*1e-9   I       1.3386      13.3860     133.8602    1338.6024   13386.0237  133860.2368 1338602.3681
+
+     READ.  H is <= 1 in every row and at every decade, exactly as Dirichlet forces.
+     I is O(1) for the two badly-approximable rotations -- but it is NOT forced to be, and
+     BAD-alpha shows it: I GROWS LINEARLY OVER ALL SEVEN DECADES while H stays under 1 on the
+     SAME alpha and the SAME grid.  Only the shift moved.  BAD-alpha is irrational, and with
+     beta = 1 - alpha it sits on the target lane's own singular line u v = 1 (c = f), so this
+     is not an object beside the corpus: it is a connection on it (W-12 Corollary 1).
+
+(iii) WHAT ACTUALLY FORCES I = O(1): the THREE-DISTANCE theorem + bounded partial
+      quotients.  Largest gap of {k a : k <= N} times N (if this is O(1), EVERY target
+      is within O(1/N) and I is forced for every shift g):
+     N                                            10          100         1000        10000       100000
+     BA-silver   a = sqrt2 - 1                1.7157       1.2193       1.2255       1.4868       1.4943
+     BA-golden   a = (sqrt5-1)/2              1.4590       1.3156       1.1862       1.7307       1.5606
+     BAD-alpha   a = 1/2 + (sqrt2-1)*1e-9       5.0000      50.0000     499.9996    4999.9586   49995.8580
+     BA-silver and BA-golden: bounded -> the forcing is real for THEM, and it comes from
+     bounded partial quotients, not from Dirichlet.  BAD-alpha: grows -> no forcing.
+     BAD-alpha's partial quotients are unbounded; its rotation is still irrational and its
+     orbit is still dense and equidistributed.
+
+(iv) THE CONSEQUENCE ON THE LANE'S OWN SINGULAR LINE (beta = 1 - alpha, c = f).
+     S_N against the (1,1) subtorus value log(0.3) = -1.203972804
+     N                                            10          100         1000        10000       100000      1000000     10000000
+     BA-silver   a = sqrt2 - 1              9.64e-02    -2.27e-03     1.00e-03    -3.74e-05    -2.63e-05     5.52e-07    -5.01e-07
+     BA-golden   a = (sqrt5-1)/2            2.34e-02     1.95e-02    -1.23e-03     3.82e-05     7.16e-06    -4.44e-07     4.52e-08
+     BAD-alpha   a = 1/2 + (sqrt2-1)*1e-9     3.99e-01     3.99e-01     3.99e-01     3.99e-01     3.99e-01     3.99e-01     3.99e-01
+     BAD-alpha converges too -- from ABOVE and slowly.  A big inhomogeneous approximation
+     constant is the benign direction; the malign direction is R-3's ladder.  This row is
+     printed so the finding is not over-read: what X_03 refutes is R-8's MECHANISM and
+     R_04's 'Dirichlet FORCES it' sentence, not R-8's verdict that the two problems differ.
+
+DONE X_03

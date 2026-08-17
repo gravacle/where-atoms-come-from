@@ -1,0 +1,52 @@
+==============================================================================
+RL6 — L2's INTEGRALITY BY A SECOND EXACT ROUTE, AND TWO DROPPED HYPOTHESES.
+==============================================================================
+
+  row                        q    |det C| Bareiss |Res| PRS      agree?    [Z^2:Gam]  ord(u,v)
+  S1 PUBLISHED (order 4)     4    400            400            YES       4          4
+  order 4, v trivial         4    2320           2320           YES       4          4
+  order 3 diagonal           3    280            280            YES       3          3
+  order 5                    5    2050           2050           YES       5          5
+  order 7                    7    116770         116770         YES       7          7
+  order 12                   12   194042800      194042800      YES       12         12
+  order 24                   24   1828229943921920 1828229943921920 YES       24         24
+  order 40                   40   459445793056082353372467200 459445793056082353372467200 YES       40         40
+
+  TWO INDEPENDENT EXACT ROUTES AGREE ON ALL 8 ROWS: True
+  AND [Z^2 : Gamma] = ord(u,v) = q ON ALL ROWS, so Omega_Gamma = <(u,v)> and the
+  target's product over k = 1..q IS the product over Omega_Gamma.  Hypothesis (iii) OK.
+
+--------------------------------------------------------------------------------
+HYPOTHESIS (ii), WHICH THE TARGET DROPPED: Omega_Gamma  INTERSECT  U(f)  MUST BE EMPTY.
+--------------------------------------------------------------------------------
+  U(f) for f = 3u + 3v + 4uv is {(x0, conj x0), (conj x0, x0)} with 3 x0^2 + 4 x0 + 3 = 0.
+  Omega_Gamma consists of ROOTS OF UNITY.  A root of unity is an algebraic INTEGER.
+  x0 is a root of 3z^2 + 4z + 3, which is primitive and NOT monic; by the rational-root
+  / Gauss argument x0 is an algebraic integer only if the minimal polynomial is monic.
+  EXACT CHECK: is 3z^2+4z+3 proportional to a monic integer polynomial? leading 3, and
+  3 | 4 is false, so no.  Also, the only degree-<=2 cyclotomic polynomials are
+  z-1, z+1, z^2+1, z^2+z+1, z^2-z+1; none is a rational multiple of 3z^2+4z+3:
+      z-1        degree 1 != 2 -> not proportional
+      z+1        degree 1 != 2 -> not proportional
+      z^2+1      ratio on leading coeff = 3      proportional? False
+      z^2+z+1    ratio on leading coeff = 3      proportional? False
+      z^2-z+1    ratio on leading coeff = 3      proportional? False
+
+  SO Omega_Gamma INTERSECT U(f) = EMPTY FOR EVERY Gamma, and Lemma 2.1's product over
+  Omega_Gamma \ U(f) coincides with the product over all of Omega_Gamma, which is |det C|.
+  L-7's IDENTIFICATION IS CORRECT -- but the target states it with the hypothesis unchecked,
+  in a lane whose stated lens is that "any theorem the lane cites without quoting its
+  hypotheses should be treated as unverified".  The hypothesis is quoted (the "\ U(f)" is in
+  the target's own verbatim quote) and then not discharged.  DISCHARGED HERE.
+--------------------------------------------------------------------------------
+
+  ONE MORE, AND IT IS THE PART OF L-7 THAT DOES NOT SURVIVE UNCHANGED:
+  LSV's standing hypotheses (their Sec. 1, read at the bytes) are d >= 2 AND f IRREDUCIBLE in
+  R_d AND |U(f)| < infinity.  d = 2 and |U(f)| = 2 here.  IRREDUCIBILITY: f = 3v + (3+4v)u is
+  degree 1 in u over Z[v^{+-1}] with content gcd(3v, 3+4v) = 1, hence irreducible.  All three
+  hold at K1's registered pi.  THEY DO NOT HOLD AT S1's OWN PUBLISHED READY STATE
+  pi = (0,1/2,1/2,0), where f = u + v has |U(f)| = INFINITE (a circle) -- the case LSV
+  explicitly say they cannot handle.  The target says this in words in L-5 and then still
+  lists S1's ready state inside the same table.
+
+DONE RL6

@@ -1,0 +1,214 @@
+==============================================================================
+W13C_01 -- THE CENTRAL COMPUTATION AT K1's REGISTERED pi = (0, 3/10, 3/10, 2/5)
+==============================================================================
+
+m(P) by the Jensen reduction, split at the exact crossing cos t = -2/3:
+   m(P) = -0.76750788035777587165
+   corpus value (REGISTER erratum vs W-02 / M1_07): -0.767507880358
+   |difference| = 2.242e-13
+   plain trapezoid n=4096       -0.767507865526524   dev 1.483e-08
+   plain trapezoid n=65536      -0.767507880275938   dev 8.184e-11
+   plain trapezoid n=1048576    -0.767507880357400   dev 3.756e-13
+   plain trapezoid n=16777216   -0.767507880357789   dev -1.310e-14
+
+DOES P VANISH ON T^2 AT THIS pi?  W-01's convex-hull criterion: max(0.4) <= 0.6 = sum of others -> YES.
+   zero 1 at (a,b) = (0.3661397635993849946273831, 0.6338602364006150053726169) turns   |P| there = 1.984e-16
+   zero 2 at (a,b) = (0.6338602364006150053726169, 0.3661397635993849946273831) turns   |P| there = 1.777e-16
+   zero 1: real Jacobian of P, |det| = 3.531057, smallest singular value = 1.777153
+           (nonzero => SIMPLE zero => |P| ~ (const)*dist locally)
+   zero 2: real Jacobian of P, |det| = 3.531057, smallest singular value = 1.777153
+           (nonzero => SIMPLE zero => |P| ~ (const)*dist locally)
+   GLOBAL TWO-SIDED BOUND on a 4096x4096 grid:  L*dist <= |P(x)| <= U*dist,  L = 1.026056, U = 2.492571
+   analytic upper bound: Lip(P) <= 2 pi * sqrt((0.3+0.4)^2+(0.3+0.4)^2) = 6.220036  (>= U, OK: True)
+   (L>0 confirms both zeros are SIMPLE and is the constant the sufficiency proof needs;
+    U<inf is the constant the necessity and Baire-category proofs need)
+
+ARMS DIFF GUARD -- the uint64 pair actually fed to the estimator, per arm:
+   GENERIC (S4:603, W-10 N-4: the ONLY generic connection the corpus publishes) f=1.0 c=sqrt(2)      A = (15510853570427550389,  4151976167383777855)
+   BADLY-APPROX A  theta = (-2^(1/3), 4^(1/3)) mod 1   [Cassels/Davenport cubic]                     A = (13652046986928935389, 10835636874285140011)
+   BADLY-APPROX B  theta = (rho, rho^2) mod 1, rho^3=rho+1  [Cassels/Davenport cubic]                A = ( 5989989053431590316, 13925035116211876495)
+   BADLY-APPROX C  theta = (sig, sig^2) mod 1, sig^3+sig=1  [Cassels/Davenport cubic]                A = (12586726371591769034,  8588273362512426082)
+   HAAR-RANDOM seed 20260817 draw 0                                                                  A = ( 3731431192015738759, 13424422484124981928)
+   HAAR-RANDOM seed 20260817 draw 1                                                                  A = (16332792429203210796,  2784919183542859643)
+   HAAR-RANDOM seed 20260817 draw 2                                                                  A = ( 1736133647595850346, 13495915611935996438)
+   HAAR-RANDOM seed 20260817 draw 3                                                                  A = (11106960887135185371,  2543418382371981149)
+   CONTROL: S1 PUBLISHED  W_F=-1, W_C=-i  (f=pi, c=3pi/2; finite order 4)                            A = ( 9223372036854775808, 13835058055282163712)
+   CONTROL: S3/S4 HEADLINE f=2.0, c=1.1  (exactly resonant, relation (11,20))                        A = (12574963067145549163,  3229479553610201349)
+   all 10 arms pairwise distinct: OK  (no zero-variable control)
+
+==============================================================================
+A_N = (1/N) SUM_{k<=N} log|Z_k|      m(P) = -0.767507880358
+FOUR DECADES OF N (10^3 .. 10^7).  TREND, not an endpoint.
+==============================================================================
+
+GENERIC (S4:603, W-10 N-4: the ONLY generic connection the corpus publishes) f=1.0 c=sqrt(2)
+   H2 PROVED (Lindemann-Weierstrass)
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.765486480112687     +2.021400e-03   0.0639
+   3162         -0.767449913978787     +5.796638e-05   0.0033
+   10000        -0.767503341919480     +4.538438e-06   0.0005
+   31623        -0.767483652511408     +2.422785e-05   0.0043
+   100000       -0.767546539709719     -3.865935e-05   0.0122
+   316228       -0.767510428141652     -2.547784e-06   0.0014
+   1000000      -0.767511151757703     -3.271400e-06   0.0033
+   3162278      -0.767508071968740     -1.916110e-07   0.0003
+   10000000     -0.767508233726606     -3.533688e-07   0.0011
+   TREND over the four decades 10^3 -> 10^7: |dev| 2.021e-03 -> 3.534e-07   (ratio 5720.4)
+   TREND as an exponent: |A_N - m(P)| ~ N^(-0.791)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 1.502199e-04 at k = 9062341
+   uint64-vs-exact phase deviation: k=1000: 1.11e-16  k=100000: 3.33e-15  k=10000000: 3.31e-13
+
+BADLY-APPROX A  theta = (-2^(1/3), 4^(1/3)) mod 1   [Cassels/Davenport cubic]
+   H2 PROVED (cubic field)
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.768194820808102     -6.869405e-04   0.0217
+   3162         -0.767774028404867     -2.661480e-04   0.0150
+   10000        -0.767573512643285     -6.563229e-05   0.0066
+   31623        -0.767528566609332     -2.068625e-05   0.0037
+   100000       -0.767501598430018     +6.281928e-06   0.0020
+   316228       -0.767507647626241     +2.327315e-07   0.0001
+   1000000      -0.767507873838609     +6.519167e-09   0.0000
+   3162278      -0.767508100306605     -2.199488e-07   0.0004
+   10000000     -0.767507816120663     +6.423711e-08   0.0002
+   TREND over the four decades 10^3 -> 10^7: |dev| 6.869e-04 -> 6.424e-08   (ratio 10693.8)
+   TREND as an exponent: |A_N - m(P)| ~ N^(-1.177)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 1.996910e-04 at k = 5601084
+   uint64-vs-exact phase deviation: k=1000: 4.16e-17  k=100000: 4.11e-15  k=10000000: 4.11e-13
+
+BADLY-APPROX B  theta = (rho, rho^2) mod 1, rho^3=rho+1  [Cassels/Davenport cubic]
+   H2 PROVED (cubic field)
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.766031316825836     +1.476564e-03   0.0467
+   3162         -0.767345138341579     +1.627420e-04   0.0092
+   10000        -0.767596934194903     -8.905384e-05   0.0089
+   31623        -0.767513445575692     -5.565218e-06   0.0010
+   100000       -0.767498673113952     +9.207244e-06   0.0029
+   316228       -0.767513450766365     -5.570409e-06   0.0031
+   1000000      -0.767507976985902     -9.662813e-08   0.0001
+   3162278      -0.767507940887323     -6.052955e-08   0.0001
+   10000000     -0.767508213663837     -3.333061e-07   0.0011
+   TREND over the four decades 10^3 -> 10^7: |dev| 1.477e-03 -> 3.333e-07   (ratio 4430.1)
+   TREND as an exponent: |A_N - m(P)| ~ N^(-1.027)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 5.528134e-05 at k = 7288554
+   uint64-vs-exact phase deviation: k=1000: 0.00e+00  k=100000: 1.44e-15  k=10000000: 1.43e-13
+
+BADLY-APPROX C  theta = (sig, sig^2) mod 1, sig^3+sig=1  [Cassels/Davenport cubic]
+   H2 PROVED (cubic field)
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.768476972060558     -9.690917e-04   0.0306
+   3162         -0.767552643667699     -4.476331e-05   0.0025
+   10000        -0.767565549610563     -5.766925e-05   0.0058
+   31623        -0.767555152503150     -4.727215e-05   0.0084
+   100000       -0.767500610628371     +7.269729e-06   0.0023
+   316228       -0.767509161234786     -1.280877e-06   0.0007
+   1000000      -0.767507434763331     +4.455944e-07   0.0004
+   3162278      -0.767508129246789     -2.488890e-07   0.0004
+   10000000     -0.767508029675735     -1.493180e-07   0.0005
+   TREND over the four decades 10^3 -> 10^7: |dev| 9.691e-04 -> 1.493e-07   (ratio 6490.1)
+   TREND as an exponent: |A_N - m(P)| ~ N^(-0.927)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 2.529274e-04 at k = 232084
+   uint64-vs-exact phase deviation: k=1000: 5.55e-17  k=100000: 1.78e-15  k=10000000: 1.79e-13
+
+HAAR-RANDOM seed 20260817 draw 0
+   H2 a.s.
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.768001304920932     -4.934246e-04   0.0156
+   3162         -0.767305362301219     +2.025181e-04   0.0114
+   10000        -0.767779540286499     -2.716599e-04   0.0272
+   31623        -0.767554946619795     -4.706626e-05   0.0084
+   100000       -0.767497493054451     +1.038730e-05   0.0033
+   316228       -0.767510543133262     -2.662775e-06   0.0015
+   1000000      -0.767506645423026     +1.234935e-06   0.0012
+   3162278      -0.767508408678679     -5.283209e-07   0.0009
+   10000000     -0.767507904684903     -2.432713e-08   0.0001
+   TREND over the four decades 10^3 -> 10^7: |dev| 4.934e-04 -> 2.433e-08   (ratio 20282.9)
+   TREND as an exponent: |A_N - m(P)| ~ N^(-1.030)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 1.377763e-04 at k = 3246774
+   uint64-vs-exact phase deviation: k=1000: 0.00e+00  k=100000: 0.00e+00  k=10000000: 0.00e+00
+
+HAAR-RANDOM seed 20260817 draw 1
+   H2 a.s.
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.769534323996397     -2.026444e-03   0.0641
+   3162         -0.768461975146193     -9.540948e-04   0.0537
+   10000        -0.767502636049645     +5.244308e-06   0.0005
+   31623        -0.767531005507965     -2.312515e-05   0.0041
+   100000       -0.767504038001286     +3.842356e-06   0.0012
+   316228       -0.767517880075048     -9.999717e-06   0.0056
+   1000000      -0.767507059045727     +8.213120e-07   0.0008
+   3162278      -0.767509564954890     -1.684597e-06   0.0030
+   10000000     -0.767507607246796     +2.731110e-07   0.0009
+   TREND over the four decades 10^3 -> 10^7: |dev| 2.026e-03 -> 2.731e-07   (ratio 7419.9)
+   TREND as an exponent: |A_N - m(P)| ~ N^(-0.857)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 1.835889e-04 at k = 4356364
+   uint64-vs-exact phase deviation: k=1000: 0.00e+00  k=100000: 0.00e+00  k=10000000: 0.00e+00
+
+HAAR-RANDOM seed 20260817 draw 2
+   H2 a.s.
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.768672752623145     -1.164872e-03   0.0368
+   3162         -0.767700920766646     -1.930404e-04   0.0109
+   10000        -0.767193821569926     +3.140588e-04   0.0314
+   31623        -0.767461177040846     +4.670332e-05   0.0083
+   100000       -0.767544867299752     -3.698694e-05   0.0117
+   316228       -0.767507672093857     +2.082639e-07   0.0001
+   1000000      -0.767510911132411     -3.030775e-06   0.0030
+   3162278      -0.767509201920439     -1.321563e-06   0.0024
+   10000000     -0.767508073614813     -1.932570e-07   0.0006
+   TREND over the four decades 10^3 -> 10^7: |dev| 1.165e-03 -> 1.933e-07   (ratio 6027.6)
+   TREND as an exponent: |A_N - m(P)| ~ N^(-0.933)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 1.933654e-04 at k = 2766930
+   uint64-vs-exact phase deviation: k=1000: 0.00e+00  k=100000: 0.00e+00  k=10000000: 0.00e+00
+
+HAAR-RANDOM seed 20260817 draw 3
+   H2 a.s.
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.770984734893397     -3.476855e-03   0.1099
+   3162         -0.767567370851189     -5.949049e-05   0.0033
+   10000        -0.767659707375376     -1.518270e-04   0.0152
+   31623        -0.767400566421201     +1.073139e-04   0.0191
+   100000       -0.767518702227114     -1.082187e-05   0.0034
+   316228       -0.767504143667829     +3.736690e-06   0.0021
+   1000000      -0.767512080305398     -4.199948e-06   0.0042
+   3162278      -0.767508580633669     -7.002759e-07   0.0012
+   10000000     -0.767508105613696     -2.252559e-07   0.0007
+   TREND over the four decades 10^3 -> 10^7: |dev| 3.477e-03 -> 2.253e-07   (ratio 15435.1)
+   TREND as an exponent: |A_N - m(P)| ~ N^(-0.904)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 2.398043e-04 at k = 8742234
+   uint64-vs-exact phase deviation: k=1000: 0.00e+00  k=100000: 0.00e+00  k=10000000: 0.00e+00
+
+CONTROL: S1 PUBLISHED  W_F=-1, W_C=-i  (f=pi, c=3pi/2; finite order 4)
+   H2 FAILS (order 4)
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.804718956217056     -3.721108e-02   1.1767
+   3162         -0.804863847224626     -3.735597e-02   2.1006
+   10000        -0.804718956216995     -3.721108e-02   3.7211
+   31623        -0.804744403485078     -3.723652e-02   6.6217
+   100000       -0.804718956216866     -3.721108e-02   11.7672
+   316228       -0.804718956217776     -3.721108e-02   20.9253
+   1000000      -0.804718956219841     -3.721108e-02   37.2111
+   3162278      -0.804719101097883     -3.721122e-02   66.1720
+   10000000     -0.804718956219842     -3.721108e-02   117.6718
+   TREND over the four decades 10^3 -> 10^7: |dev| 3.721e-02 -> 3.721e-02   (ratio 1.0)
+   TREND as an exponent: |A_N - m(P)| ~ N^(-0.000)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 3.162278e-01 at k = 1
+   uint64-vs-exact phase deviation: k=1000: 0.00e+00  k=100000: 0.00e+00  k=10000000: 0.00e+00
+
+CONTROL: S3/S4 HEADLINE f=2.0, c=1.1  (exactly resonant, relation (11,20))
+   H2 FAILS (rank-1 subtorus)
+   N            A_N                    A_N - m(P)     |dev|*sqrt(N) 
+   1000         -0.768204529836540     -6.966495e-04   0.0220
+   3162         -0.767702233081293     -1.943527e-04   0.0109
+   10000        -0.767035367658998     +4.725127e-04   0.0473
+   31623        -0.767036543805940     +4.713366e-04   0.0838
+   100000       -0.767029486232058     +4.783941e-04   0.1513
+   316228       -0.767014617644399     +4.932627e-04   0.2774
+   1000000      -0.767016016640260     +4.918637e-04   0.4919
+   3162278      -0.767015085991093     +4.927944e-04   0.8763
+   10000000     -0.767015027670955     +4.928527e-04   1.5585
+   TREND over the four decades 10^3 -> 10^7: |dev| 6.966e-04 -> 4.929e-04   (ratio 1.4)
+   TREND as an exponent: |A_N - m(P)| ~ N^(+0.022)  (least squares over the 9 checkpoints)
+   min_{k<=1e7} |Z_k| = 2.301160e-02 at k = 7435752
+   uint64-vs-exact phase deviation: k=1000: 0.00e+00  k=100000: 7.91e-16  k=10000000: 7.91e-14
+
+DONE W13C_01

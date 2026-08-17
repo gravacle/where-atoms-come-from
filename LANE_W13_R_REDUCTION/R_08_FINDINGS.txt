@@ -1,0 +1,96 @@
+LANE W-13 / R — FINDINGS LEDGER (one line each, with status and where the evidence is)
+
+THE ROUND'S QUESTION: settle N1's convergence, or exhibit the counterexample.  BOTH ARE DONE.
+The brief's item (4) — "if the reduction fails, say so and say exactly what obstructs it.
+That would be the more interesting outcome" — IS THE OUTCOME.
+
+--------------------------------------------------------------------------------
+R-1  THE ONE-VARIABLE REDUCTION EXISTS IF AND ONLY IF H2 FAILS.            PROVED
+     The orbit closure is a closed subgroup of T^2 of dimension 2 - rank L(omega).  Under H2
+     it is all of T^2 and log|P| on it is irreducibly two-variable.  What obstructs the
+     reduction is not a technicality: it is exactly the hypothesis N1 needs.
+     >> THE SUDLER LITERATURE ANSWERS OUR QUESTION ON A HAAR-NULL SET AND NOWHERE ELSE. <<
+     R_02_reduction.out.txt ; R_07_THEOREMS.txt R-1.
+
+R-5  ON THE RESONANT LOCUS, EXACTLY ONE LINE IS SINGULAR, AND IT IS THE REGISTER'S OWN
+     (1,1) ROW.  u v = 1, i.e. c = f.  There |Z_k| = 0.3|2sin(pi(k a - th*))||2sin(pi(k a +
+     th*))| exactly, so the object IS a product of two INHOMOGENEOUS SUDLER PRODUCTS with
+     Mahler measure log(0.3) = -1.203972804326 -- the register's published (1,1) subtorus
+     value.  Every other resonant line has log|Q| CONTINUOUS and Weyl closes it in one line.
+     368 primitive (m,n) scanned, 2 singular, both the same subgroup.        PROVED+EXHIBITED
+     R_02_reduction.out.txt ; R_03_sudler_1d.out.txt.
+
+R-3  H2 IS NOT SUFFICIENT, AT K1's OWN REGISTERED pi.  Explicit omega with L(omega) = {0}
+     (orbit dense and equidistributed) and liminf S_N = -infinity.  Exhibited: two terms out
+     of ten million throw the average to m(P)-0.281 at N=10 and m(P)-1.199 at N=1490.
+     Different in kind from M1_06's sealed counterexample, which is at pi=(0,1/3,1/3,1/3)
+     where the zeros are rational.  M1_06 IS NOT REDONE.                     PROVED+EXHIBITED
+     R_05_counterexample.out.txt ; R_ladder.py ; R_07_THEOREMS.txt R-3.
+
+R-2  THE SUFFICIENT HYPOTHESIS, WITH PROOF: (D1) a Diophantine rate on omega, plus (D2) an
+     INHOMOGENEOUS Diophantine lower bound dist(k omega, Z(P)) >= C k^{-sigma}.  Shell
+     argument; both ingredients measured over four decades.                            PROVED
+     R_06_sufficiency.out.txt ; R_07_THEOREMS.txt R-2.
+
+R-7  AND (D1),(D2) ARE VERIFIABLE AT THE CORPUS'S OWN PUBLISHED GENERIC CONNECTION.
+     e(theta*) = (-2+i sqrt5)/3 is ALGEBRAIC (3z^2+4z+3=0), so theta* is a logarithm of an
+     algebraic number and both conditions are lower bounds on INHOMOGENEOUS LINEAR FORMS IN
+     LOGARITHMS.  Non-vanishing proved by Lindemann; the bound is Baker's.
+     >> N1's LIMIT HOLDS AT f = 1.0, c = sqrt(2) WITH pi = (0,0.3,0.3,0.4). <<
+     Reduction and non-vanishing PROVED here; the lower bound QUOTED from Baker, flagged.
+     R_06_sufficiency.out.txt ; R_07_THEOREMS.txt R-7.
+
+R-6  THE HYPOTHESIS THAT DECIDES CONVERGENCE IS NOT A CONDITION ON THE CONNECTION.  Z(P) is
+     determined by pi, so H2' couples the ready state and the connection.  EXHIBITED with a
+     byte-identical orbit and four ready states: thrown at two of them, untouched at two.
+     H2 as registered has the wrong SHAPE, not merely the wrong strength.     PROVED+EXHIBITED
+     R_06_sufficiency.out.txt part 2 ; R_07_THEOREMS.txt R-6.
+
+R-4  THE EXACT ONE-VARIABLE SPLIT OF THE INTEGRAND (which does exist, unconditionally):
+     log|P| = log|p01+p11 x| + log|y - R(x)|, R = -(p00+p10x)/(p01+p11x).  The first piece is
+     continuous (Weyl closes it, limit log 0.4); ALL the singularity is in the second, whose
+     target MOVES with k.  That is the exact sense in which our object generalises a Sudler
+     product and the exact sense in which it is not one.                                PROVED
+     R_02_reduction.out.txt.
+
+R-8  THE STRUCTURAL DIFFERENCE: Sudler's singularity is codimension 1 in a 1-torus and sits at
+     the identity, so Dirichlet FORCES near-hits for every rotation.  Ours is codimension 2 in
+     a 2-torus at a point unrelated to the orbit, so nothing forces a near-hit; measured,
+     sqrt(N) min dist is O(1) over seven decades and -log min|Z_k| grows with slope 0.563
+     against log N (codimension-2 prediction: 1/2).  GENERICALLY EASIER THAN SUDLER; ON A NULL
+     SET WORSE, because an inhomogeneous target can be approached at any rate whatever.
+                                                                            PROVED + MEASURED
+     R_04_2d_arms.out.txt ; R_06_sufficiency.out.txt.
+
+--------------------------------------------------------------------------------
+CONTROLS THAT COULD HAVE FAILED AND DID NOT
+  * the sixteen published subtorus rows reproduced from this lane's reduction formula, worst
+    deviation 4.79e-10  (R_02)
+  * the RESONANT arm converging to the register's -0.767014993 rather than to m(P), deviation
+    3.5e-08 at N = 10^7, and its sqrt(N)-diagnostic GROWING because its circle misses the
+    zeros -- which is R-5 confirmed from the other side  (R_04)
+  * float64 rotations vs exact 60-digit rational rotations, agreeing to 6e-13 at N = 10^7 (R_06)
+  * the ladder's positivity and its proved offset bound, asserted in code, not in prose (R_05)
+
+CONTROLS DECLARED VOID IN ADVANCE, AND NOT RUN
+  * "0 of N random draws are resonant"  (the resonant locus is Haar-null; W-11 convicted it)
+  * the trivial reading of "reduce to one variable" (CHOICE LEDGER L1(a))
+
+DEFECTS OF THIS LANE, RECORDED RATHER THAN PATCHED OUT
+  * D-1  My first "different pi" arm for R-6, (.1,.3,.3,.3), is NOT a different pi for this
+         purpose: every pi with p10 = p01 = 0.3 and p00 + p11 = 0.4 has EXACTLY K1's two torus
+         zeros, because on y = conj(x) the zero condition is (p00+p11) + 2 p10 cos = 0.  Kept
+         in the table, relabelled SAME ZEROS, where it now carries the point.
+  * D-2  My first min|P| control used the nested grid family 512|1024|2048|4096, on which the
+         minimum CANNOT fall.  A COR-E artefact of my own making.  Non-nested grids added.
+  * D-3  The numerical Liouville arms use the ladder TRUNCATED at rung 3 with theta* replaced
+         by a 900-digit rational; the truncated pair is technically rational and therefore
+         technically resonant.  Both effects bounded and disclosed in the scripts before any
+         number is reported.  The theorem is about the untruncated construction.
+  * D-4  R-7 quotes Baker's effective bound by theorem-shape without tracking constants.
+
+WHAT THIS LANE DOES NOT TOUCH
+  H1 (the class-constant-diagonal stipulation, W-11) · the holonomy reading · schedule
+  admissibility · loop-designation admissibility · any of the principal's three decisions.
+LINEAGE: Opus 5, same block as W-07..W-12.  Not the lineage-independent lane those rows ask
+for.  Discount accordingly.

@@ -1,0 +1,47 @@
+LANE W-13 / L-REFUTE — ADVERSARY ON THE LITERATURE, AIMED AT LANE_W13_L_LITERATURE.
+Register head W-12.  Commissioned 2026-08-17.  Model: Claude Opus 5.
+LINEAGE WARNING, FIRST NOT LAST: the lane under attack is Opus 5 and so am I.  This is
+LAYER FOURTEEN OF ONE LINEAGE.  A shared failure mode passes through both of us.  Discount
+this refutation as one block with W-07..W-13, not as an independent check.
+
+LENS AS BRIEFED: verify every citation by fetching the actual source; any theorem cited
+without its hypotheses quoted is unverified.  So the primary work here is (a) rerunning the
+target's code, (b) reading the target's cited sources AT THE BYTES, (c) testing the
+mathematical claims that carry citations.
+
+WHAT I READ AT THE BYTES (pdftotext over the actual PDFs; digests in RL7_SOURCES.txt):
+  * Dobrowolski, "A Note on Lawton's Theorem", Canad. Math. Bull. 60(3) 2017, 484-489.
+  * Lind-Schmidt-Verbitskiy, "Entropy and Growth Rate of Periodic Points of Algebraic
+    Z^d-actions", arXiv:0912.5169v1 (= Contemp. Math. 532 (2010) 195-211).
+  * Aitken-Ayers-Smith, "General Boyd-Lawton Theorems with Multivariable Limits",
+    arXiv:2508.05910v1.
+  * Issa-Lalin, "A Generalization of a Theorem of Boyd and Lawton", Canad. Math. Bull.
+    56(4) 2013, 759-768.
+  * Dimitrov, "Convergence to the Mahler measure and the distribution of periodic points
+    for algebraic Noetherian Z^d-actions", arXiv:1611.04664v2.
+
+OBJECT, UNCHANGED FROM THE TARGET: P(x,y) = p00 + p10 x + p01 y + p11 xy on the probability
+simplex; u = conj(W_F), v = W_C; Z_k = P(u^k,v^k); lambda = lim (1/N) sum_{k<=N} log|Z_k|;
+N1 asserts lambda = m(P).  K1's registered pi = (0, 3/10, 3/10, 2/5).
+
+ESTIMATORS.  m(P) is computed here by TWO routes that share no code with the target's:
+(1) the CASSAIGNE-MAILLOT closed form (the target's own citation [10], dilogarithm, no
+quadrature at all), and (2) mpmath quadrature at 30 dps.  The target's Jensen trapezoid is
+reproduced only to check it, never used as the reference.
+
+PHASES.  Independent of the target's mpmath split3: alpha is carried as an exact 128-bit
+integer numerator over 2^128 and reduced with numpy uint64 wraparound (which IS exact
+arithmetic mod 2^64) plus a float64 low limb.  Phase error < 2^-90 turns at k = 10^7.
+Arm A is additionally checked in EXACT Gaussian-integer arithmetic to k = 10^4 -- a full
+decade boundary, where the target stopped at k = 3000.
+
+EXACTNESS.  Every criterion claim (zero sets, class occupancy, the four-class
+counterexample, the circulant determinants) is computed in fractions.Fraction or Python
+integers.  Floats appear only where a line says float64.
+
+ISOLATION.  RL2, RL3 and RL5 each move ONE variable and the arms are diffed on OUTPUTS,
+not only inputs.  RL4 and RL6 are EXACT COMPUTATIONS, not controls, and are not scored as
+evidence for anything.  Where a check could not have failed, it is labelled
+COULD-NOT-HAVE-FAILED and excluded from the count -- including one of the target's.
+
+SEEDS.  None.  Nothing here is random.

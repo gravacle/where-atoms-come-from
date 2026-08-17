@@ -1,0 +1,43 @@
+LANE W-13 / L — WHAT THEOREM ACTUALLY LICENSES N1.  PUBLISHED CONVENTIONS.
+Register head W-12.  Lane commissioned 2026-08-17.  Model: Claude Opus 5 (same lineage as
+W-07..W-12; this lane is layer THIRTEEN of one lineage and is to be discounted as such).
+
+THIS IS A LITERATURE LANE.  Its primary output is citations with quoted statements, obtained
+by web search and by reading the sources, not by reasoning from memory.  The computation below
+is SUPPORTING ONLY: it checks the hypotheses of the theorems found, it does not establish them.
+
+OBJECT.  P(x,y) = p00 + p10 x + p01 y + p11 xy,  pi = (p00,p10,p01,p11) a probability vector.
+u = conj(W_F), v = W_C  (M1_08 T1 convention A, sealed).
+Z_k = P(u^k, v^k).   lambda = lim_N (1/N) sum_{k<=N} log|Z_k|.   N1 asserts lambda = m(P).
+
+READY STATE HELD FIXED at K1's registered pi = (0, 3/10, 3/10, 4/10) in every arm of every leg.
+It is the state at which the register states P vanishes on T^2 (max(0.4) <= 0.6), i.e. the
+singular case, i.e. W-01's firing case.
+
+MAHLER MEASURE ESTIMATOR, ONE ESTIMATOR IN EVERY ROW.  The Jensen reduction in y:
+    m(P) = (1/2pi) INT_0^{2pi} log max(|p00 + p10 e^{it}|, |p01 + p11 e^{it}|) dt.
+The integrand is continuous (both branches vanish only if pi = 0), so the deterministic
+trapezoid converges spectrally.  Used at 2^22 nodes.  NO 2D GRID IS USED ANYWHERE IN THIS LANE.
+
+PHASES.  alpha = arg(u)/2pi, beta = arg(v)/2pi carried at 60 decimal digits (mpmath, standalone,
+NOT sympy — sympy is not importable in this environment and is not used), then converted to
+exact integer numerators over 10^60 and reduced with Python big-integer modular arithmetic.
+The float64 path is used only for cos/sin/log of an exactly-reduced phase.
+CROSS-CHECK, INDEPENDENT OF mpmath: leg C arm A is recomputed at k <= 2000 in EXACT Gaussian
+rational arithmetic (u^k = (3+4i)^k / 5^k as Python integers, |Z_k|^2 as a Fraction).
+
+ISOLATION, LEG C.  ONE variable moves and it is the ARITHMETIC TYPE OF (u,v).  pi, the
+estimator, the reduction path, the decade schedule, the summation order and the code path are
+byte-identical across the three arms; the arms are constructed by the SAME function from
+different (alpha,beta) only.  The arms are diffed on their INPUTS (alpha,beta to 60 digits) and
+on their OUTPUTS (the full decade table), and both diffs are printed, because W-08's isolation
+audit found that the commonest fatal defect in this program is a control whose arms are
+byte-identical and which is reported as a confirmation.
+
+WHAT LEG C CANNOT DO, STATED BEFORE IT RUNS.  Numerics cannot distinguish "licensed" from
+"unlicensed".  An arm that converges is not thereby licensed; an arm that is licensed would
+converge whether or not the licence existed.  Leg C exists to exhibit the Liouville FAILURE
+across four decades and to show that the licensed and unlicensed arms are numerically
+indistinguishable — which is the finding, not a defect.
+
+SEEDS.  None.  Nothing in this lane is random.

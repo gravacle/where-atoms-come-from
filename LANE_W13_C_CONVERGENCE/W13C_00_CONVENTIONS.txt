@@ -1,0 +1,83 @@
+LANE W-13 / C — DOES THE BIRKHOFF SUM REACH m(P)?
+PUBLISHED CONVENTIONS.  Everything needed to re-run this lane is on this page.
+
+LINEAGE.  Claude Opus 5, against a corpus whose sealed artifacts carry `Co-Authored-By:
+Claude Fable 5` (S1-S4, W-01..W-06) and whose W-07..W-12 rows are Opus 5.  THIS LANE IS
+NOT LINEAGE-INDEPENDENT OF W-07..W-12.  It is graded accordingly.
+
+--------------------------------------------------------------------------------------
+THE OBJECT.  K1's registered pushforward (S3_THE_CROSSING_V001.md:423-427 ready state,
+four-class reduction of LANE_W08_M1_IDENTIFICATION/M1_00_conventions.txt):
+
+    pi = (p00, p10, p01, p11) = (0, 3/10, 3/10, 2/5)
+    P(x,y) = p00 + p10 x + p01 y + p11 x y = (3/10) x + (3/10) y + (2/5) x y
+
+    Z_k = P(u^k, v^k),   u = conj(W_F),  v = W_C          [W-08/M1 T1, sealed]
+    A_N := (1/N) SUM_{k=1..N} log|Z_k|
+    N1 as registered:  lambda = m(P) = (1/(2pi)) INT_0^{2pi} log max(|p00+p10 e^{it}|,
+                                                                    |p01+p11 e^{it}|) dt
+
+COORDINATES.  Write u = e(theta_1), v = e(theta_2) with e(t) := exp(2 pi i t) and
+theta = (theta_1, theta_2) in T^2 = (R/Z)^2 ("turns").  Then
+
+    A_N = (1/N) SUM_{k=1..N} f(k theta),      f(x) := log|P(e(x_1), e(x_2))|.
+
+THE ORBIT IS {k theta}, i.e. THE ORBIT OF THE POINT 0 UNDER ROTATION BY theta.  The
+starting point is NOT free: it is 0, and 0 is tied to theta only in the sense that it is
+the same point for every theta.  Birkhoff's theorem fixes theta and varies the start;
+here the start is FIXED at 0 and theta varies.  See W13C_04, item (4) of the brief.
+
+f <= 0 EVERYWHERE, because the coefficients are non-negative and sum to 1, so |P| <= 1
+on T^2 with equality only where all occupied characters coincide.  This one-sided bound
+is used in the proofs and is why the average can only fail DOWNWARD.
+
+--------------------------------------------------------------------------------------
+CARRIED FROM THE REGISTER, NOT REDISCOVERED (each used, none re-derived):
+  * W-08/M1 T1  — the identification Z_k = P(u^k,v^k) is an algebraic identity, exact.
+  * W-08/M1 T2(a) — limsup A_N <= lambda_H with no Diophantine hypothesis.  REUSED.
+  * W-08/M1 T2(b), M1_06 — a Liouville pair with L = {0} on which liminf A_N = -infinity,
+    AT WEIGHTS (1/3,1/3,1/3), ONE DIP, COMPUTED TO k = 10.  Read, cited, BUILT PAST here:
+    this lane moves the exhibit to K1's REGISTERED pi, computes it in exact integer
+    arithmetic, tracks it over SEVEN decades of N, and replaces the asserted general
+    construction with a proof.
+  * W-08/M1 T2(c) — a SUFFICIENT pair of conditions (discrepancy + inhomogeneous
+    Diophantine) with a proof sketch.  REUSED as the sufficiency half.  This lane supplies
+    what T2(c) does not: the NECESSARY half, the exact iff, the a.e. theorem, the
+    Baire-category theorem, and the ruling on which statement N1 needs.
+  * W-08/M1 T2(d) — Boyd-Lawton cannot license N1.  ACCEPTED, not re-argued.
+  * W-08/M1 T4 — DURABILITY (|Omega_N| -> 0) is robust and needs no Diophantine input.
+    Untouched by anything here.  What this lane is about is the NAMING of the rate.
+  * W-12 — phi : (R/2piZ)^E -> T^2 is onto and pushes Haar to Haar on every carrier and
+    designation.  This is what converts a statement about a.e. theta in T^2 into a
+    statement about a.e. CONNECTION, on every carrier.  Load-bearing here.
+  * W-10 N-4 — every rational (f,c) is exactly resonant; f = 1.0, c = sqrt(2) (S4:603) is
+    the ONLY generic connection the corpus publishes.  No rational pair is labelled
+    generic anywhere in this lane.
+  * COR-E — sup|Z_k| figures in this corpus are window artefacts stated as equalities.
+    Every limit claim here is reported as a trend across >= 4 decades, never an endpoint.
+
+--------------------------------------------------------------------------------------
+ARITHMETIC.
+  PHASE REDUCTION is EXACT.  theta is stored as a pair of integers (A_1, A_2) with
+  A_i = floor(theta_i * 2^64); the orbit is x_k = (k*A) mod 2^64 by uint64 cumsum, which
+  is exact modular arithmetic, not floating point.  The ONLY error is the representation
+  error |A_i/2^64 - theta_i| <= 2^-64, which after k steps is <= k * 2^-64; at k = 10^7
+  that is 5.4e-13.  Every claim below states its distance to the zero set so this bound
+  can be checked against it.  Cross-checked against a 256-bit exact reduction on a
+  subsample in W13C_01.
+  MAHLER MEASURE by the Jensen reduction, split at its exact crossing cos t = -2/3 so the
+  integrand is smooth on each piece; mpmath.quad at 50 dps.  Agreement with the corpus's
+  -0.767507880358 reported in W13C_01.
+  THE LIOUVILLE CONSTRUCTION uses exact Python integers throughout for theta, and mpmath
+  at dps 20000-45000 for the one evaluation of |P| at the engineered dip.  The precision
+  at which it runs out is STATED, in W13C_03.
+
+SEEDS.  numpy default_rng.  Master seed 20260817.  Per-script seeds in each header.
+
+--------------------------------------------------------------------------------------
+THE ONE VARIABLE.  Across every comparison in W13C_01 the polynomial (hence pi, hence
+m(P)), the observable, the estimator, the N-grid, the checkpoint list and the code path
+are byte-identical; THE ONLY THING THAT MOVES IS theta — specifically the ARITHMETIC TYPE
+of theta (generic / badly approximable / Haar-random / resonant / finite order /
+Liouville).  ARMS ARE DIFFED: W13C_01 prints the integer pair (A_1,A_2) for every arm and
+asserts pairwise distinctness before running, so no two arms can be byte-identical.

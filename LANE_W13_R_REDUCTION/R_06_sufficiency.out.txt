@@ -1,0 +1,95 @@
+===============================================================================
+R_06 — SUFFICIENCY: THE MECHANISM MEASURED, THE COUPLING EXHIBITED, BAKER APPLIED
+===============================================================================
+
+(1) THE SHELL MECHANISM OF THEOREM R-2, MEASURED OVER FOUR DECADES
+    arm: CORPUS omega = (-1/2pi, sqrt2/2pi)  <->  f = 1.0, c = sqrt(2)
+    rho = |A| = 0.300000, psi = 0.841069, |det| = rho^2|sin 2psi| = 0.089443
+    area{|P|<delta} = delta^2 / (2 pi |det|)   -- cross-check against an 8000^2 grid:
+       M=2  delta=1.353e-01   analytic 3.2591e-02   grid 3.4196e-02   ratio 1.0492
+       M=3  delta=4.979e-02   analytic 4.4107e-03   grid 4.4354e-03   ratio 1.0056
+       M=4  delta=1.832e-02   analytic 5.9692e-04   grid 5.9784e-04   ratio 1.0015
+       M=5  delta=6.738e-03   analytic 8.0785e-05   grid 8.0500e-05   ratio 0.9965
+    THE SHELL COUNTS.  expected = N * area{|P|<e^-M}; observed = #{k<=N : |Z_k| < e^-M}.
+    M     e^-M          N=10000     obs/exp   N=100000    obs/exp   N=1000000   obs/exp   N=10000000  obs/exp
+    2     1.353e-01       343/  325.91   1.05    3429/ 3259.10   1.05   34209/32590.96   1.05  341945/325909.64   1.05
+    4     1.832e-02         6/    5.97   1.01      63/   59.69   1.06     594/  596.92   1.00    5982/ 5969.24   1.00
+    6     2.479e-03         0/    0.11     --       2/    1.09   1.83      10/   10.93   0.91     107/  109.33   0.98
+    8     3.355e-04         0/    0.00     --       0/    0.02     --       0/    0.20     --       4/    2.00   2.00
+    10    4.540e-05         0/    0.00     --       0/    0.00     --       0/    0.00     --       0/    0.04     --
+    Where the expectation exceeds 1 the ratio sits near 1: the orbit visits the shells at
+    their Lebesgue rate.  Where it does not, '--' is printed rather than a ratio computed
+    from a zero count -- COR-E's defect class, avoided rather than committed.
+    THIS IS THE FIRST INGREDIENT OF THE PROOF AND IT IS WHAT EQUIDISTRIBUTION BUYS.
+    It is NOT enough by itself -- R_05 -- because it says nothing about the DEEPEST
+    shell reached, which is what (D2) controls.
+    min_{k<=N} |Z_k| and the depth it implies:
+       N =     10000   min|Z_k| = 1.1310e-02   deepest shell M = 4.48
+       N =    100000   min|Z_k| = 7.0327e-04   deepest shell M = 7.26
+       N =   1000000   min|Z_k| = 7.0327e-04   deepest shell M = 7.26
+       N =  10000000   min|Z_k| = 1.5022e-04   deepest shell M = 8.80
+    (D2) is the statement that the 'deepest shell' column grows like log N, not like N.
+    Measured growth of -log min|Z_k| against log N, last four decades: slope 0.563
+    A slope near 1/2 is what a codimension-2 singularity in a 2-torus predicts.
+
+(2) THE COUPLING: THE SAME omega, A DIFFERENT pi.  ONE VARIABLE MOVED.
+    THE ORBIT IS BYTE-IDENTICAL IN ALL FOUR ROWS (sha256 of frac(k alpha)): c8a3b2ef7edf68f72828a346
+    the ONLY thing that moves is pi.  m(P) recomputed for each pi by the same quadrature.
+    pi                                      m(P)     S_1490-m      S_1e5-m      S_1e6-m
+    K1 registered (0,.3,.3,.4)         -0.767508    -1.199197    -0.017806    -0.001815
+    M1_06's       (0,1/3,1/3,1/3)      -0.775546     0.000533    -0.000045    -0.000009
+    shifted       (0,.30,.35,.35)      -0.774051    -0.002825     0.000036    -0.000001
+    SAME ZEROS    (.1,.3,.3,.3)        -0.975794    -1.199521    -0.017782    -0.001806
+    REGISTRAR-STYLE DEFECT, RECORDED RATHER THAN PATCHED OUT: the fourth row was my first
+    choice for a 'different pi' and it is NOT one.  On the anti-diagonal y = conj(x) the
+    zero condition reads (p00+p11) + 2 p10 cos(2 pi theta) = 0 whenever p10 = p01, so
+    EVERY pi with p10 = p01 = 0.3 and p00 + p11 = 0.4 has EXACTLY K1's two torus zeros.
+    (.1,.3,.3,.3) is such a pi, so it is thrown too -- correctly.  It is kept in the table
+    as the arm that shows the effect tracks the ZEROS and nothing else.
+    THE FIRST AND FOURTH ROWS ARE THROWN BY -1.2 AT N = 1490.  THE OTHER TWO ARE NOT
+    THROWN AT ALL.
+    The connection is identical in all three.  THEREFORE THE FAILING HYPOTHESIS IS NOT
+    A PROPERTY OF THE CONNECTION.  H2 has the wrong SHAPE, not merely the wrong strength.
+    W-12 COROLLARY 2 proves H2 'is never violable by the carrier or by the loop
+    designation' because phi pushes Haar to Haar.  That is a theorem about the
+    connection's law and it is not touched here -- but it does not transfer to H2',
+    which quantifies over (pi, omega) jointly.  RECORDED, NOT SCORED AS A REFUTATION.
+
+(3) WHERE (D1) AND (D2) ARE VERIFIABLE: LINEAR FORMS IN LOGARITHMS
+    zeta = e(theta*) = -0.666666666667 +0.745355992500i ; 3 zeta^2 + 4 zeta + 3 = 6.28e-16  (degree 2, |zeta| = 1.000000000000)
+    phi* = arccos(-2/3) = 2.300523983021863 ;  -i Log(zeta) = 2.300523983021863   dev 0.00e+00
+    AT THE CORPUS'S PUBLISHED GENERIC CONNECTION f = 1, c = sqrt(2):
+       alpha = -1/(2 pi),  beta = sqrt2/(2 pi).
+       ||k alpha + theta*||   = |k + phi* - 2 pi j| / (2 pi)  ... form  Lam_1
+       ||k beta  - theta*||   = |k sqrt2 - phi* - 2 pi j|/(2 pi) ... form  Lam_2
+       ||m alpha + n beta||   = |-m + n sqrt2 - 2 pi p|/(2 pi)  ... form  Lam_3
+    Each is  beta_0 + beta_1 Log(zeta) + beta_2 Log(-1)  with ALGEBRAIC beta_i of height
+    O(k) (resp. O(max(|m|,|n|,|p|))), since 2 pi = -2i Log(-1) and phi* = -i Log(zeta).
+    NON-VANISHING, each by Lindemann-Weierstrass:
+       Lam_1 = 0 => zeta = e^{ik} with k a non-zero rational integer => e^{ik} algebraic, false.
+       Lam_2 = 0 => zeta^{-1} = e^{i k sqrt2}, k sqrt2 non-zero algebraic, same contradiction.
+       Lam_3 = 0 with p != 0 => pi algebraic, false; with p = 0 => m = n = 0.
+    Baker's effective theorem for inhomogeneous linear forms in logarithms then gives
+    |Lam| > H^{-C} with C effective, i.e. exactly (D1) and (D2) with polynomial exponents.
+    SO N1's LIMIT HOLDS AT THE CORPUS'S OWN PUBLISHED GENERIC CONNECTION AND ITS OWN
+    REGISTERED READY STATE -- and the same argument covers every algebraic (alpha,beta).
+    FLAGGED: the constants are not tracked here and the citation is by theorem-shape.
+    What is proved in this lane is the REDUCTION and the NON-VANISHING; the lower bound
+    is quoted from Baker.
+    EMPIRICAL COMPANION (not a proof, and not scored as one): min over k <= 1e7 of
+       ||k alpha + theta*  || = 2.6804e-08 at k =  6248850 ;  k * that = 0.1675
+       ||k beta - theta*   || = 4.5327e-08 at k =   662200 ;  k * that = 0.0300
+
+PRECISION CONTROL THAT COULD HAVE FAILED
+    Rerun BA-cubic with an EXACT 60-digit rational rotation through HighPhaseReducer,
+    against the float64 rotation through M1_06's PhaseReducer.  If the float64 phase
+    drift at k = 1e7 (~1e-10) mattered, these would disagree.
+    exact rationals agree with float64 to 0.00e+00 and 2.22e-16
+    N                     10000            100000           1000000          10000000
+    float64     -0.767396775510   -0.767495133522   -0.767508073394   -0.767507954166
+    exact60     -0.767396775510   -0.767495133522   -0.767508073393   -0.767507954167
+    |diff|             2.13e-14          5.12e-14          8.83e-14          5.84e-13
+    Agreement at 1e-12 or better at every decade -> the float64 rotations of R_03/R_04 are
+    not carrying their results.  The control could have failed and did not.
+
+DONE R_06

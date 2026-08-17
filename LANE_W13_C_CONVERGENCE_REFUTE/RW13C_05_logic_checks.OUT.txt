@@ -1,0 +1,41 @@
+==============================================================================
+RW13C_05 -- TWO COMPARATIVE CLAIMS INSIDE PROVED FINDINGS
+==============================================================================
+
+(I) C3's 'STRICTLY STRONGER THAN THE ORBIT-IS-DENSE CLAUSE'.
+    ONE VARIABLE: the connection.  Same estimator, same grid, same code path.
+    arm                                            A_1e7            sup_{k>1e6} log(1/|Z_k|)/k A_N converges?  
+    S1 PUBLISHED, order 4 (f=pi, c=3pi/2)   H2 FAILS -0.804718956     1.151e-06              YES -> -0.804718956
+    GENERIC f=1.0 c=sqrt(2)                 H2 PROVED -0.767508234     6.376e-06              not settled here
+
+    READ-OFF.  The order-4 row's |Z_k| cycles through {sqrt(0.1), 0.4, sqrt(0.1), 1}, so
+    log(1/|Z_k|) <= 1.1513 for EVERY k and (1/k)log(1/|Z_k|) <= 1.1513/k -> 0: C3's
+    necessary condition holds with room to spare (the tail sup printed above is exactly
+    1.1513/10^6 to three digits).  And A_N converges, to -(1/2) log 5 = -0.804718956,
+    EXACTLY as the register has it.  H2 fails.  So C3's condition holds where density fails: IT IS NOT STRONGER THAN
+    DENSITY, it is INCOMPARABLE WITH IT.  The theorem C3 states is untouched; the sentence
+    comparing it to N1's density clause is wrong, and it is wrong in the direction that
+    OVERSELLS the finding.
+
+(II) C7's 'THE CORPUS'S NUMERICS ON N1 COULD NOT HAVE FAILED'.
+     Quoted from the TARGET LANE'S OWN sealed output, W13C_03_liouville.OUT.txt,
+     at its OWN engineered theta, which is in the failure set and satisfies H2:
+        N = 1e3   A_N = -0.766669   (dev +8.4e-04)
+        N = 1e4   A_N = -4.767319   (dev -4.0e+00)
+        N = 1e5   A_N = -1.167509   (dev -4.0e-01)
+        N = 1e6   A_N = -0.807491   (dev -4.0e-02)
+        N = 1e7   A_N = -0.771508   (dev -4.0e-03)
+     A numerical study of N1 at that connection, over the same four decades the
+     target lane uses everywhere else, reports a deviation of 4.0e-03 -- FOUR
+     ORDERS worse than any of its eight H2 arms.  IT DOES NOT CONFIRM N1.
+     So 'a numerical study will confirm it at every connection it can reach,
+     INCLUDING connections in the failure set' is contradicted by the lane's own
+     table.  What the SPACING LEMMA actually supports is weaker and still worth
+     having: a simulation can never see the SECOND dip, so it can never
+     DISTINGUISH 'one dip, then convergence' from liminf = -infinity.
+     THE 'COULD NOT HAVE FAILED' VERDICT AGAINST THE CORPUS'S NUMERICS IS
+     THEREFORE NOT EARNED AS STATED.  The weaker discrimination claim is earned.
+     (And the program's own norm applies here: 'COULD NOT HAVE FAILED' VOIDS A
+      CONTROL, NEVER A THEOREM -- C6's theorem is untouched either way.)
+
+DONE RW13C_05

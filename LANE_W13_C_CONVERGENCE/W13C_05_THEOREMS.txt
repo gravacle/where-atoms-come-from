@@ -1,0 +1,354 @@
+LANE W-13 / C — THE CONVERGENCE, SETTLED.  STATEMENTS, PROOFS, AND THE RULING ON N1.
+Every number quoted here is produced by W13C_01..W13C_04 in this directory and appears in
+the .OUT.txt files beside them.  Precision stated at each claim.
+
+SETUP.  pi = (p00,p10,p01,p11) = (0, 3/10, 3/10, 2/5) — K1's REGISTERED pushforward.
+  P(x,y) = 0.3x + 0.3y + 0.4xy,  Z_k = P(u^k, v^k),  A_N = (1/N) SUM_{k<=N} log|Z_k|.
+  theta = (arg u, arg v)/2pi in T^2 = (R/Z)^2;  f(x) = log|P(e(x_1),e(x_2))|;
+  A_N = (1/N) SUM_{k<=N} f(k theta) — the orbit of THE POINT 0 under rotation by theta.
+  m(P) = -0.767507880357776  (Jensen reduction split at cos t = -2/3, mpmath 50 dps;
+  agrees with the register's -0.767507880358 to 2.242e-13; four independent trapezoid
+  grids 2^12..2^24 converge onto it, dev 1.5e-08 -> 1.3e-14).  W13C_01.
+
+ZERO SET, IN CLOSED FORM — NEW, AND USED THROUGHOUT.  W13C_04.
+  P vanishes on T^2 exactly when W-01's convex-hull criterion fires (max <= sum of others);
+  at this pi, 0.4 <= 0.6, SO IT DOES.  Solving:
+        Z(P) cap T^2 = { (1/2 - phi/2, 1/2 + phi/2), (1/2 + phi/2, 1/2 - phi/2) },
+        phi = arccos(-1/9)/(2 pi) = 0.2677204728011700...
+  Two points, both SIMPLE (real Jacobian |det| = 3.531057, least singular value 1.777153),
+  and THEY LIE ON THE ANTI-DIAGONAL a + b = 1 EXACTLY (closed form vs numerical solve agree
+  to 1.233e-41; a+b-1 = 0.000e+00).  Consequence, load-bearing below:
+        z_2 = 1 - z_1, so ||q z|| = ||q z_1|| for every q — THE INHOMOGENEOUS 2-D PROBLEM
+        COLLAPSES TO THE 1-D IRRATIONALITY OF  z_1 = 1/2 - arccos(-1/9)/(4 pi),
+  which is irrational by Niven's theorem.  Two-sided global bound, 4096^2 grid:
+        1.026056 * dist(x,Z) <= |P(x)| <= 2.492571 * dist(x,Z)   (Lip(P) <= 6.220036).
+  Call these L and U.  Also |P| <= 1 on T^2, so f <= 0 EVERYWHERE, with f(0) = 0: the orbit
+  starts at the unique global MAXIMUM of |P|.
+
+=======================================================================================
+C1.  THE UPPER HALF IS FREE.  (W-08/M1 T2(a), REUSED, NOT RE-DERIVED.)
+=======================================================================================
+  If H2 holds (the orbit closure is T^2), then  limsup_N A_N <= m(P), with no Diophantine
+  hypothesis.  Proof: f_eps := max(f, log eps) is continuous, Weyl gives (1/N)SUM f_eps ->
+  INT f_eps =: I(eps), f <= f_eps, and I(eps) decreases to INT f = m(P) (log|P| in L^1).
+  ==> THE AVERAGE CAN ONLY FAIL DOWNWARD.  Every failure in this lane is a downward spike.
+
+=======================================================================================
+C2.  THE SHARP CONDITION — AN IDENTITY, NOT AN "IFF".  NEW.
+=======================================================================================
+  Define, for eps > 0,      E_N(eps) := (1/N) SUM_{k<=N, |Z_k|<eps} log(eps/|Z_k|)  >= 0.
+  Then EXACTLY, for every eps and every N,      A_N = (1/N) SUM f_eps(k theta) - E_N(eps).
+  (Verified to 1.2e-13 — machine zero — on every arm and every checkpoint, W13C_02 D1.)
+  Under H2 the first term converges to I(eps), so for EVERY eps > 0:
+
+        limsup_N A_N  =  I(eps) - liminf_N E_N(eps)
+        liminf_N A_N  =  I(eps) - limsup_N E_N(eps)
+
+  and since I(eps) decreases to m(P) and the left sides do not depend on eps, both limits
+  in eps exist and
+
+  >>  liminf_N A_N  =  m(P)  -  lim_{eps->0} limsup_N E_N(eps)
+  >>  limsup_N A_N  =  m(P)  -  lim_{eps->0} liminf_N E_N(eps)
+
+  THEREFORE:  A_N -> m(P)  <=>  lim_{eps->0} limsup_N E_N(eps) = 0.
+  This is the sharp condition asked for in item (3), and it is an EQUALITY, so it also
+  says by how much the average misses when it misses.  E_N(eps) is a pure excess-mass
+  term concentrated on the two zeros; everything else in the problem is continuous.
+  MEASURED, and it matches the geometry exactly: E_N(eps) -> (pi/|det J|) eps^2 =
+  0.8897 eps^2.  Predicted 8.8970e-05 at eps=1e-2, measured 8.919e-05 at N=1e7 on the
+  generic connection (W13C_02 D1/D3).  So on a good orbit the obstruction is O(eps^2) and
+  dies; the whole question is whether a bad orbit can hold E_N(eps) up as eps -> 0.
+
+=======================================================================================
+C3.  THE NECESSARY CONDITION.  NEW, AND ELEMENTARY.
+=======================================================================================
+  If A_N converges to any finite limit, then
+        f(N theta)/N = A_N - ((N-1)/N) A_{N-1} -> 0,
+  i.e.  (1/k) log|Z_k| -> 0, i.e.  |Z_k|^{1/k} -> 1, i.e. (using |P| <= U dist)
+
+  >>  NECESSARY:   dist(k theta, Z(P))  >=  e^{-o(k)}.
+
+  This is not a limsup condition dressed up: it is a statement about EVERY k, it needs no
+  hypothesis beyond convergence, and it is exactly what a Liouville approach destroys.
+  It is strictly weaker than convergence (it controls one term, not the sum), and it is
+  strictly stronger than the "orbit is dense" clause N1 currently carries.
+
+=======================================================================================
+C4.  SUFFICIENCY.  (W-08/M1 T2(c)'s pair of conditions, REUSED, with one repair.)
+=======================================================================================
+  Suppose (i) H2; (ii) an inhomogeneous Diophantine bound dist(k theta, Z) >= C k^{-tau}
+  for all k; and (iii) star discrepancy D*_N of {k theta} with D*_N (log N)^2 -> 0.
+  Then A_N -> m(P).
+  PROOF.  Bound E_N(eps) by dyadic SUP-NORM SQUARE ANNULI around each zero — the repair:
+  M1 T2(c) used balls, which would need the isotropic discrepancy and a further import;
+  square annuli are differences of two axis-aligned boxes, so the ordinary star
+  discrepancy suffices and no extra import is needed.  Shell j has area 3 eps^2 4^{-j} per
+  zero and count <= N(6 eps^2 4^{-j} + 4 D*_N); each point in it contributes at most
+  (j+1)log2 + log(1/L); hypothesis (ii) truncates at j_max = O(log N).  Summing,
+        E_N(eps) <= O(eps^2) + O(D*_N (log N)^2).
+  Let N -> infinity, then eps -> 0.  []
+  NUMERICAL FACE of (ii), W13C_02 D2: on all H2 arms min_{k<=N} dist(k theta,Z)
+  tracks ~N^{-1/2} (sqrt(N)*mindist stays in 0.11..0.60 over four decades) — the spacing
+  of N points in T^2, as far from Liouville as a lattice can be.
+
+=======================================================================================
+C5.  THE A.E. THEOREM.  PROVED.  THIS IS THE ONE N1 NEEDS.
+=======================================================================================
+  >>  THEOREM.  For Lebesgue-almost every theta in T^2,  A_N -> m(P).
+  PROOF.  (a) H2 fails only on the countable union of proper closed subgroups
+  {m theta_1 + n theta_2 in Z}, a null set.  (b) For each fixed k >= 1 the map
+  theta |-> k theta preserves Haar on T^2, so Pr(dist(k theta, Z) < r) = 2 pi r^2 for
+  small r.  With r_k = k^{-3/4}, SUM 2 pi k^{-3/2} < infinity, so by Borel-Cantelli almost
+  every theta admits C(theta) > 0 with dist(k theta, Z) >= C k^{-3/4} for all k: hypothesis
+  (ii) of C4 with tau = 3/4.  (c) For almost every theta in T^2 the star discrepancy
+  satisfies D*_N = O(N^{-1} (log N)^{3} (log log N)^{1+delta})  [IMPORT: the classical a.e.
+  bound, Drmota-Tichy Thm 1.158 / Beck], so D*_N (log N)^2 -> 0: hypothesis (iii).
+  Apply C4 on the intersection of three full-measure sets.  []
+
+  >>  COROLLARY (transfer to connection space, and it needs W-12).  W-12's theorem says
+  phi : (R/2piZ)^E -> T^2, a |-> (<gamma_F,a>, <gamma_C,a>), is onto and pushes Haar to
+  Haar ON EVERY CARRIER AND EVERY DESIGNATION.  Preimages of null sets under a
+  Haar-preserving surjective homomorphism are null.  THEREFORE:
+
+        FOR ALMOST EVERY CONNECTION, ON EVERY CARRIER, FOR EVERY LOOP DESIGNATION,
+        lambda = m(p00 + p10 x + p01 y + p11 xy).
+
+  This EXTENDS W-12's Corollary 2.  W-12 showed H2 has no structural failure mode; the
+  same argument now covers the FULL hypothesis set, because every remaining hypothesis is
+  also an a.e. condition on (W_F,W_C) and phi pushes Haar to Haar.  N1's hypotheses are
+  PURELY ARITHMETIC AND NEVER VIOLABLE BY THE CARRIER OR THE DESIGNATION — all of them,
+  not just H2.
+
+  >>  AND THE SAME NULL SET IS N3's.  N3 says no absolutely continuous connection measure
+  can move the rate because the resonance structure is Haar-null.  N1's exceptional set is
+  Haar-null for the same reason.  N1-a.e. and N3 are two faces of one null-set fact; the
+  register should carry them as such.
+
+=======================================================================================
+C6.  THE COUNTEREXAMPLE.  THE FAILURE SET IS NULL BUT COMEAGER.  PROVED AND EXHIBITED.
+=======================================================================================
+  >>  THEOREM.  There is a COMEAGER (dense G_delta) set G in T^2 on which H2 HOLDS and
+      liminf_N A_N = -infinity,  while limsup_N A_N <= m(P) by C1.
+  PROOF.  Fix a zero z.  For n >= 1 put U_n = { theta : EXISTS k > n with
+  dist(k theta, z) < e^{-nk} }.  U_n is OPEN (union over k of preimages of an open ball
+  under the continuous map theta |-> k theta).  U_n is DENSE: given theta_0 and delta > 0,
+  choose k > n with 2 k delta >= 1; then theta |-> k theta maps the box
+  theta_0 + [-delta,delta]^2 ONTO T^2, so some theta in it has k theta = z exactly, giving
+  dist = 0 < e^{-nk}.  So INTERSECT_n U_n is a dense G_delta.  Remove the meager set where
+  H2 fails (a countable union of closed nowhere-dense lines).  On what remains: for each n
+  there is k_n > n with |Z_{k_n}| <= U e^{-n k_n}; since f <= 0 everywhere,
+        A_{k_n} <= (1/k_n) log|Z_{k_n}| <= (log U)/k_n - n  ->  -infinity.   []
+
+  SO THE ANSWER TO THE ROUND IS BOTH: convergence holds for a.e. connection (C5) and FAILS
+  for a topologically GENERIC connection (C6).  Measure and category disagree, and N1 must
+  be stated in the language of measure or it is false.
+
+  >>  EXHIBITED, AT K1's REGISTERED pi, IN EXACT ARITHMETIC.  W13C_03.
+  theta = theta_rat + (10^-M sqrt2, 10^-M sqrt3), M = 10^6, theta_rat an exact rational
+  built from integers so that k_1 theta = z to L decimals, k_1 = 10^4.  H2 HOLDS AND IS
+  PROVED for this theta (a rational plus 10^-M(m sqrt2 + n sqrt3) is an integer only if
+  m = n = 0, since 1, sqrt2, sqrt3 are Q-independent), so the orbit is dense and
+  equidistributed and the average still fails.  The tail contributes |k tau| <= 2k 10^-M,
+  so the computed orbit is the true orbit for every k up to ~10^982627 — PRECISION IS NOT
+  THE BINDING LIMIT (see C7).  Depth family, one variable (L), background orbit
+  bit-for-bit identical in all four arms (verified: same off-dip minimum 1.0735e-04 at
+  k = 9815000 in all four; exact numerators pairwise distinct, asserted):
+
+        L        log|Z_{k1}| (nats)   A_{k1}          A_{k1} - m(P)
+        500        -1150.7           -0.882397652     -0.114890
+        2000       -4604.6           -1.227787231     -0.460279
+        8000      -18420.5           -2.609371613     -1.841864
+        17372     -39999.9           -4.767319064     -3.999811
+
+  A_{k1} - m(P) = log|Z_{k1}|/k_1 to five digits, and L is free: for any target T there is
+  a theta satisfying H2 with A_{k1} < T.  float64 would have reported |Z_{k1}| = 1.06e-15
+  in EVERY row — wrong by up to 10^17368 — so this exhibit is impossible in double
+  precision, which is worth knowing about a corpus that checks such things numerically.
+
+  TRACKED OVER SEVEN DECADES (deepest arm), which is what "trend, not endpoint" requires:
+        N          A_N              A_N - m(P)      log|Z_{k1}|/N
+        1000       -0.766669        +8.39e-04       (before the dip)
+        9999       -0.767403        +1.05e-04       (before the dip)
+        10000      -4.767319        -4.000e+00      -4.000e+00
+        20000      -2.767166        -2.000e+00      -2.000e+00
+        100000     -1.167509        -4.000e-01      -4.000e-01
+        1000000    -0.807491        -4.000e-02      -4.000e-02
+        10000000   -0.771508        -4.001e-03      -4.000e-03
+  The deviation after the dip tracks the single term log|Z_{k1}|/N to four digits over four
+  decades: THE SPIKE IS ONE TERM AND NOTHING ELSE MOVED.  limsup = m(P), liminf plunges —
+  exactly the one-sided shape C1 forces.
+
+  BUILT PAST, NOT REDONE: LANE_W08_M1_IDENTIFICATION/M1_06 exhibited one dip at k = 10 at
+  weights (1/3,1/3,1/3) — not K1's registered state — in float64, and ASSERTED the general
+  construction.  Here: K1's registered pi, exact integers, mpmath at dps L+50 for the dip,
+  seven decades, and a PROOF (C6) replacing the assertion.  M1_06's finding is confirmed
+  and its scope is enlarged; nothing of it is withdrawn.
+
+=======================================================================================
+C7.  THE SPACING LEMMA — WHY NO COMPUTATION CAN EVER SEE THE DIVERGENCE.  NEW.
+=======================================================================================
+  >>  LEMMA (exact).  If k_i theta = z + h_i (mod 1) then k_1 h_2 - k_2 h_1 = (k_2-k_1) z
+      (mod 1), so  ||(k_2-k_1) z|| <= k_1|h_2| + k_2|h_1|.   No hypothesis.
+      (Verified on 20000 random (theta,k1,k2): residual 2.3e-08 = the float64 roundoff.)
+  >>  COROLLARY (conditional).  If ||q z_1|| >= c q^{-s}, a second dip at least as deep as
+      a first dip of depth D nats cannot occur before k_2 ~ (c L e^{D} / 2)^{1/(s+1)}.
+      With the measured c = 0.36614 (true minimum of q^2||q z_1|| over all convergents to
+      q = 1.8e7; partial quotients 0,2,1,2,1,2,1,1,2,1,7,6,1,1,5,4,9,1,... — no Liouville
+      behaviour) and s = 2:  D = 40000 nats forces k_2 >= 10^5790.
+  >>  COROLLARY (unconditional).  A second dip of depth >= 40000 anywhere below k = 10^80
+      would require ||q z_1|| <= 10^{-17290} for some q <= 10^80 — an irrationality measure
+      of z_1 exceeding 216 in that range.  EITHER WAY, NOT COMPUTABLE.
+  >>  AND THE UN-ENGINEERED SPACING IS WORSE: depth-D dips occur along a generic orbit with
+      density 1.779 e^{-2D} per k, so the expected gap is ~10^34743 at D = 40000.
+
+  THE METHODOLOGICAL FINDING, WHICH GENERALISES PAST THIS PROGRAM:
+  >>  liminf A_N = -infinity is a real, provable phenomenon that NO SIMULATION OF ANY
+      FEASIBLE SIZE CAN EXHIBIT, because the second dip is exponentially far in the depth
+      of the first.  A numerical study of N1 will confirm it at every connection it can
+      reach, including every connection in the failure set.  THE CORPUS'S NUMERICS ON N1
+      WERE NEVER CAPABLE OF FINDING THIS, AND THEIR AGREEMENT IS THEREFORE NOT EVIDENCE.
+      This is a "could not have failed" verdict against a numerical CONTROL — the lawful
+      use of that norm (W-06 IMP-1) — and it is the only such verdict in this lane.
+
+=======================================================================================
+C8.  ITEM (4): THE STARTING POINT IS TIED, AND IT MATTERS — IT IS THE WHOLE FAILURE.
+=======================================================================================
+  A_N = (1/N) SUM f(k theta): the orbit of the SINGLE point 0 under rotation by theta.
+  Birkhoff's pointwise ergodic theorem fixes theta and gives convergence for a.e. STARTING
+  POINT; {0} has measure zero, so Birkhoff says nothing about A_N.  This is not a
+  technicality.  EXHIBITED, one variable, W13C_04(B): same Liouville theta, same estimator,
+  same N-grid, same code path, only x_0 moves —
+
+        starting point                A_1000     A_10000    A_100000   A_1000000  A_2000000
+        x_0 = 0  (THE CORPUS'S OBJECT) -0.766669  -4.767319  -1.167509  -0.807491  -0.787500
+        x_0 = Haar-random draw 0       -0.766070  -0.767396  -0.767434  -0.767512  -0.767507
+        x_0 = Haar-random draw 1       -0.765640  -0.767502  -0.767543  -0.767509  -0.767514
+        x_0 = Haar-random draw 2       -0.768436  -0.767387  -0.767451  -0.767518  -0.767516
+        x_0 = Haar-random draw 3       -0.766694  -0.767414  -0.767556  -0.767494  -0.767502
+
+  The corpus's x_0 = 0 is the only row that fails.  So the theorem that IS available runs
+  the other way — a.e. THETA at x_0 = 0 fixed (C5) — and its proof is Borel-Cantelli in
+  theta, not Birkhoff in x.  ANY CITATION OF BIRKHOFF FOR N1 IS A CATEGORY ERROR.
+  ONE MITIGATING STRUCTURAL FACT, RECORDED: |P| <= 1 with equality ONLY at x = 0 (all
+  occupied characters equal 1, by the strict triangle inequality on non-negative weights
+  summing to one), so the corpus's orbit starts at the unique GLOBAL MAXIMUM of |P| and
+  f(0) = 0 exactly.  The zero set is never at the start point.  This is the most favourable
+  start there is — and C6 shows it is worth nothing.
+
+=======================================================================================
+C9.  THE RULING ON N1.  WHICH STATEMENT IT NEEDS, AND WHETHER IT HAS IT.
+=======================================================================================
+  >>  N1 NEEDS THE A.E. STATEMENT, AND ONLY THE A.E. STATEMENT.  It has it: C5 proves it,
+      and W-12 carries it to every carrier and designation.  PUBLISHABLE, as:
+        "for Lebesgue-almost every connection, lambda = m(P)"
+      — never "for the connection (f,c) = ...", for any named pair whatsoever.
+
+  >>  THE NAMED STATEMENT IS NOT AVAILABLE AT ANY CONNECTION THIS CORPUS PUBLISHES.
+      Registrar-checkable table, W13C_01, one variable (the arithmetic type of theta),
+      four decades 10^3 -> 10^7, deviation trend fitted as an exponent:
+
+  connection                        H2        A_1e7        dev from m(P)   trend
+  f=1.0, c=sqrt(2)  [S4:603]        PROVED   -0.767508234  -3.53e-07       N^(-0.791)
+  (-2^(1/3), 4^(1/3)) badly appr.   PROVED   -0.767507816  +6.42e-08       N^(-1.177)
+  (rho, rho^2), rho^3=rho+1         PROVED   -0.767508214  -3.33e-07       N^(-1.027)
+  (sig, sig^2), sig^3+sig=1         PROVED   -0.767508030  -1.49e-07       N^(-0.927)
+  Haar-random draw 0                a.s.     -0.767507905  -2.43e-08       N^(-1.030)
+  Haar-random draw 1                a.s.     -0.767507607  +2.73e-07       N^(-0.857)
+  Haar-random draw 2                a.s.     -0.767508074  -1.93e-07       N^(-0.933)
+  Haar-random draw 3                a.s.     -0.767508106  -2.25e-07       N^(-0.904)
+  S1 PUBLISHED (order 4)            FAILS    -0.804718956  -3.72e-02       N^(-0.000)
+  S3/S4 HEADLINE f=2.0,c=1.1        FAILS    -0.767015028  +4.93e-04       N^(+0.022)
+
+      EIGHT ARMS WITH H2 CONVERGE, WITH A CLEAN ~N^{-1} TREND ACROSS FOUR DECADES; THE TWO
+      CONTROLS WITH H2 FAILING ARE FLAT AT A DIFFERENT LIMIT (exponent -0.000 and +0.022 —
+      they are not converging slowly, they are converging to something else).  That is the
+      one-variable result, and the controls could have failed and did not.
+
+      BUT: of the five connections this corpus has published, FOUR are resonant (S1's
+      order-4 point; f=2.0,c=1.1; S4:973's 3.14159/1.57080; W-10 lane D's 1.3/2.0 — the
+      last three by W-10 N-4, every rational pair) and lie IN the exceptional set with a
+      DIFFERENT limit; and the fifth, f = 1.0, c = sqrt(2), has H2 provable (Lindemann-
+      Weierstrass: m + n sqrt2 is a nonzero algebraic number and 2 pi q is transcendental,
+      so no relation exists) but its convergence requires an inhomogeneous Diophantine
+      bound on (-1/2pi, sqrt2/2pi) relative to z_1 = 1/2 - arccos(-1/9)/(4 pi), about which
+      NOTHING IS KNOWN.  So:
+
+  >>  N1 IS NOT VERIFIED AT ANY NAMED CONNECTION IN THIS CORPUS AND CANNOT BE WITH PRESENT
+      MATHEMATICS.  The numbers above are consistent with convergence at f=1.0, c=sqrt(2)
+      to 3.5e-07 at N = 1e7; they are not a proof and C7 says they never could be.
+
+  >>  H2 AS W-11 ATTACHED IT IS NECESSARY AND NOT SUFFICIENT, AND THE REGISTRAR'S
+      VERIFICATION OF THAT IS CONFIRMED FROM A SECOND DIRECTION.  The correct hypothesis
+      set for a NAMED connection is H2 + C4(ii) + C4(iii); the correct hypothesis for the
+      publishable statement is neither — it is "a.e.", which needs no hypothesis at all.
+
+  >>  RECOMMENDED REGISTER TEXT FOR N1 (replacing "under H2"):
+      "lambda = m(p00 + p10 x + p01 y + p11 xy) for Lebesgue-almost every connection, on
+      every carrier and every loop designation (W-12 + W-13/C5).  The exceptional set is
+      Haar-null and topologically comeager (W-13/C6); it contains every connection this
+      corpus has published except f = 1.0, c = sqrt(2), at which the identification is
+      numerically consistent to 3.5e-07 at N = 10^7 and is not provable.  H1 stands as
+      W-11 stated it."
+
+=======================================================================================
+C10.  WHAT THIS LANE DOES NOT ESTABLISH, AND WHAT READS TWO WAYS.
+=======================================================================================
+  * DURABILITY IS UNTOUCHED.  W-08/M1 T4 proves |Omega_N| -> 0 iff G != {1} using Weyl on
+    the CONTINUOUS function 1-|P|, with no Diophantine input.  Nothing here bears on it.
+    Everything in this lane is about the NAMING of the rate.  A reader who takes C6 as
+    damaging durability has misread it.
+  * THE a.e. THEOREM IMPORTS ONE CLASSICAL RESULT (the a.e. star-discrepancy bound).  It is
+    named in the IMPORT AUDIT below.  Steps (a) and (b) are self-contained.
+  * NOTHING IS PROVED ABOUT z_1's IRRATIONALITY MEASURE.  C7's conditional corollary rests
+    on a measured constant over q <= 1.8e7; the unconditional corollary does not, and the
+    unconditional one is the one the methodological finding uses.
+  * THE COUNTEREXAMPLE IS ENGINEERED, NOT FOUND.  No naturally-arising connection is shown
+    to fail.  C6 says the failing set is comeager; it does not say any physically motivated
+    connection is in it, and no such notion exists in this corpus.
+  * READS TWO WAYS, SCORED NEITHER WAY.  The measure/category split is either (A) "the a.e.
+    statement is the right one and the comeager failure set is a curiosity, as it is
+    throughout Diophantine analysis", or (B) "a result whose hypothesis fails on a
+    topologically generic point and on four of five published connections is a result about
+    a measure-theoretic idealisation, not about any connection anyone can name."  Reading A
+    is standard practice; reading B is the one this corpus's own discipline points at, since
+    the corpus cannot exhibit a single connection where N1 is established.  BOTH ARE
+    SUPPORTED.  The verdict of C9 survives either, because under both, the a.e. form is
+    what is publishable and the named form is not.
+  * LINEAGE.  This lane is Opus 5, as are W-07 through W-12.  IT IS NOT A LINEAGE-
+    INDEPENDENT CHECK OF ANYTHING IN THEM.  It reuses W-08/M1's T1, T2(a), T2(d) and T4 and
+    W-12's pushforward theorem without re-deriving them; if any of those is wrong, C5's
+    corollary and C9's ruling go with it.  DISCOUNT THIS ROW AS ONE BLOCK WITH W-07..W-12.
+  * SELF-FLAGGED DEFECT, RECORDED RATHER THAN PATCHED.  W13C_02's first version printed the
+    shell count against "2 pi eps^2", the area of a metric ball, while the quantity computed
+    was #{|Z_k| < eps}, whose area is (2 pi/|det J|) eps^2 = 1.7794 eps^2 — a factor 3.53
+    mislabel that would have read as a 3.5x discrepancy in the equidistribution check.  The
+    label was wrong, not the count.  Corrected in the sealed script; the correction is what
+    produced the exact match with E_N(eps) -> 0.8897 eps^2.
+  * SECOND SELF-FLAG.  W13C_01's first version reported the simplicity of the zeros via a
+    symmetric difference of |P|, which is identically 0 at a zero because |P| has a cone
+    point there.  It printed "-0.000000" and would have read as "the zeros are NOT simple",
+    the opposite of the truth.  Replaced by the real Jacobian of P (|det| = 3.531057).
+
+=======================================================================================
+IMPORT AUDIT
+=======================================================================================
+  WEYL'S EQUIDISTRIBUTION THEOREM on a monothetic compact group, applied to CONTINUOUS
+    functions only.  Used in C1, C2, C4.  Already in the corpus (W-08/M1 T2, T4).
+  log|P| in L^1(T^d) for P not identically 0.  Standard; used in C1.  The corpus uses it
+    implicitly whenever it writes m(P) as an integral.
+  BOREL-CANTELLI.  Used in C5(b).  Elementary.
+  THE a.e. STAR-DISCREPANCY BOUND in dimension 2:  D*_N({k theta}) = O(N^{-1}(log N)^3
+    (log log N)^{1+delta}) for a.e. theta.  IMPORT, NOT PROVED HERE.  Drmota-Tichy,
+    "Sequences, Discrepancies and Applications", Thm 1.158; after Beck.  Used only in
+    C5(c).  THIS IS THE ONLY UNPROVED INGREDIENT IN C5.
+  BAIRE CATEGORY THEOREM.  Used in C6.  Elementary.
+  NIVEN'S THEOREM (rational cosines of rational angles are 0, +-1/2, +-1).  Used to show
+    z_1 is irrational.
+  LINDEMANN-WEIERSTRASS (pi transcendental).  Used to prove H2 at f = 1.0, c = sqrt(2).
+  CASSELS / DAVENPORT: (theta, theta^2) is badly approximable for theta a cubic irrational
+    whose field has a complex embedding.  Used only to LABEL the two badly-approximable
+    arms; no claim rests on it.
+  BOYD-LAWTON: NOT USED, and W-08/M1 T2(d)'s ruling that it cannot license N1 is accepted
+    without re-argument.  It is the right citation for the SUBTORUS accumulation
+    lambda_(m,n) -> m(P) and for nothing else in this lane.
+  BIRKHOFF'S POINTWISE ERGODIC THEOREM: EXPLICITLY NOT AVAILABLE.  See C8.

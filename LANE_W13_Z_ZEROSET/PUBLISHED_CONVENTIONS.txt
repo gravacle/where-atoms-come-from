@@ -1,0 +1,50 @@
+LANE W-13 / Z — THE ZERO SET OF P ON T^2, AND THE LOCAL SINGULARITY — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE.  All commits of this repo carry `Co-Authored-By: Claude Fable 5`.  This lane is Claude
+Opus 5, like W-07..W-12.  It is NOT lineage-independent of W-07..W-12 and is graded accordingly.
+It IS lineage-independent of S1-S4 and W-01..W-06.
+
+PRECISION.  python 3.9.6, numpy 2.0.2.  IEEE double UNLESS a line says EXACT.  Every predicate
+that decides an inclusion (which stratum a weight vector is in, how many zeros there are) is
+evaluated in EXACT RATIONAL ARITHMETIC (fractions.Fraction / Python integers).  Where a float
+minimum over a grid is printed it is printed as an UPPER BOUND on the true minimum (COR-E
+discipline: a grid minimum is a window artefact unless the direction of the inequality is said).
+
+THE OBJECT.
+  P(x,y) = p00 + p10 x + p01 y + p11 xy,  p_a >= 0,  sum p_a = 1,  (x,y) in T^2.
+  N1: lambda = m(P) = (1/(2pi)^2) INT INT log|P|.
+  JENSEN REDUCTION (used everywhere here, and it is the reason this lane is not grid-limited):
+      P = A(x) + y B(x),   A(x) = p00 + p10 x,   B(x) = p01 + p11 x.
+      For |y| = 1 the phase of y is free, so
+          min_y |P| = | |A(x)| - |B(x)| |         and       max_y |P| = |A(x)| + |B(x)|,
+      and, for the full distribution of |P| over the y-circle at fixed x,
+          |P|^2 = |A|^2 + |B|^2 + 2|A||B| cos(phi),   phi equidistributed on [0,2pi).
+      Hence  m(P) = (1/2pi) INT log max(|A(e^{it})|, |B(e^{it})|) dt,  which is CONTINUOUS,
+      and the SUBLEVEL MEASURE of |P| is a ONE-DIMENSIONAL integral in closed form:
+          mu(eps) := Haar{ |P| < eps } = (1/2pi) INT_0^{2pi} [ 1 - arccos(R(t,eps))/pi ]_+ dt,
+          R(t,eps) = (eps^2 - |A|^2 - |B|^2) / (2 |A| |B|)   (clipped to [-1,1]).
+      NO 2D GRID IS USED ANYWHERE IN THIS LANE FOR A ZERO-SET OR SINGULARITY FIGURE.
+
+FOUR NUMBERS THAT DECIDE EVERYTHING BELOW (all four are values of the Jensen branches at the
+two real points of the x-circle):
+      S1 = |A(+1)| = p00 + p10        S2 = |B(+1)| = p01 + p11        (S1 + S2 = 1)
+      D1 = |A(-1)| = |p00 - p10|      D2 = |B(-1)| = |p01 - p11|
+
+CARRIED FROM THE REGISTER, NOT REDISCOVERED (read before any computation, in full):
+  REGISTER_V001.md entire, including both errata against W-02/W-07/W-09.
+  S3_THE_CROSSING_AUDIT_V001.md:785-800  COR-A..COR-L.
+  LANE_W08_M1_IDENTIFICATION/ + _REFUTE_1 + _REFUTE_2   (Boyd-Lawton; T1..T4).
+  LANE_W08_M3_ZEROSET/  -- THE LANE THAT ALREADY DID ITEM (4).  See PRIOR_ART_ON_DISK.txt.
+  LANE_W12_BIANCHI/PUBLISHED_CONVENTIONS.txt.
+  EVERY RATIONAL (f,c) IS EXACTLY RESONANT (W-10 N-4).  f=1.0, c=sqrt(2) is the only generic
+  connection the corpus publishes.  No rational pair is labelled generic anywhere below.
+
+SEEDS.  numpy default_rng.  Master seed 20260817; per-script seeds echoed in each .OUT.txt.
+GRIDS.  t-circle grids by point count n, always run at >= 3 values of n with the ratio printed,
+never at one n.  eps-ladders and N-ladders always span >= 4 decades and the TREND is printed,
+never one endpoint.
+
+THE ONE VARIABLE, PER COMPARISON: ISOLATION_LEDGER.txt in this directory.  Every comparison in
+this lane is either (i) a one-parameter family in a single declared scalar, with both arms'
+inputs AND outputs diffed and the diff printed, or (ii) declared NOT a controlled comparison.

@@ -1,0 +1,172 @@
+================================================================================================
+z1  THE ZERO SET OF P ON T^2 -- CLASSIFICATION, COUNT, AND CLOSED FORMS
+================================================================================================
+numpy 2.0.2 ; EXACT means fractions.Fraction / Python ints, no float.
+
+------------------------------------------------------------------------------------------------
+(a) THEOREM Z1, STATED.  P = A(x) + y B(x),  A = p00+p10 x,  B = p01+p11 x.
+
+    For |x|=|y|=1, P = 0 requires |A(x)| = |B(x)|; given that, y = -A/B is DETERMINED
+    (unless B(x) = 0, in which case A(x) = 0 too and the whole fibre {x} x T is in Z).
+    g(t) := |A|^2 - |B|^2 = C + D cos t   is AFFINE IN cos t, with
+        C = p00^2+p10^2-p01^2-p11^2 ,  D = 2(p00 p10 - p01 p11),
+    so its range over t is the interval with endpoints
+        g(0)  = S1^2 - S2^2   (S1 = p00+p10, S2 = p01+p11)
+        g(pi) = D1^2 - D2^2   (D1 = |p00-p10|, D2 = |p01-p11|).
+    THEREFORE, with S1+S2 = 1 > 0 and D1,D2 >= 0:
+
+        Z(P) = EMPTY            <=>  (S1-S2)(D1-D2) > 0
+        Z(P) = TWO POINTS,      <=>  (S1-S2)(D1-D2) < 0    -- and they are a CONJUGATE PAIR
+               conjugate                                       (x0,y0), (conj x0, conj y0),
+                                                               cos s0 = -C/D  RATIONAL if p is
+        Z(P) = ONE POINT        <=>  (S1-S2)(D1-D2) = 0 and NOT a curve stratum
+                                     the point is (+1,-1) if S1=S2, and (-1,+-1) if D1=D2
+        Z(P) = A CIRCLE/CURVE   <=>  one of exactly three exact-equality strata:
+             (I)   p00=p10 and p01=p11  ->  Z = {x=-1} x T          [A,B share a zero]
+             (II)  p00=p01 and p10=p11  ->  Z = T x {y=-1}          [P = (1+y)(p00+p10 x)]
+             (III) p00=p11 and p10=p01  ->  Z = graph {(x, -A(x)/B(x))}   [|A| == |B|]
+    The three curve strata have CODIMENSION 2 in the 3-simplex and lie inside the boundary
+    {(S1-S2)(D1-D2) = 0}, which is codimension 1.  So the four types are STRATA, and no
+    one-parameter path reaches a curve transversally.  (Used in the z2 isolation design.)
+
+------------------------------------------------------------------------------------------------
+(b) EXHAUSTIVE EXACT SWEEP: predicted TYPE vs an INDEPENDENT root count of g(t).
+    The independent evaluator never uses the classifier: it counts sign changes and
+    exact roots of g on the t-circle in EXACT rational arithmetic in the variable
+    z = cos t, then tests the common-zero condition separately.
+
+    simplex denominator N =  24 :   2925 exact points   mismatches classifier-vs-rootcount = 0
+        type census: CURVE=37  EMPTY=1956  ONE=432  TWO=500
+    simplex denominator N =  36 :   9139 exact points   mismatches classifier-vs-rootcount = 0
+        type census: CURVE=55  EMPTY=6336  ONE=972  TWO=1776
+    TOTAL 12064 exact simplex points, 0 mismatches.  MUST BE 0.
+
+------------------------------------------------------------------------------------------------
+(c) THE COUNT IS CERTIFIED NUMERICALLY TOO, AND THE 'ISOLATED POINTS' CLAIM IS
+    ESTABLISHED, NOT ASSUMED.  For each named p the zeros are produced in closed
+    form and then EVALUATED: |P| at the closed-form point, and min|P| over T^2 by
+    the CONTINUOUS 1-D Jensen reduction at three grid sizes (ratio printed).
+
+    name                                                       type   #zeros   |P| at closed form
+    K1_REG   S3/S4 sense-C on K1 (0,.3,.3,.4)  <- N1 AS REGISTERED TWO         2            2.758e-18
+    S1_PUB   K1's published ready state (1/2,0,0,1/4,1/4)      CURVE-I    inf  --- 1-dimensional ---
+    SENSEC4  S4 sense-C, four classes (1/4,1/4,1/4,1/4)        CURVE-I+II+III    inf  --- 1-dimensional ---
+    B0b_U    S4:575 ring torus loops meet, uniform  {00:4,10:2,01:2,11:1}/9 EMPTY       0            0.000e+00
+    B0a_U    S4:575 ring torus loops disjoint       {00:2,10:4,01:3}/9 TWO         2            0.000e+00
+    B4_U     S4:575 spindle, uniform                {00:1,10:1,01:1,11:3}/6 EMPTY       0            0.000e+00
+    B1_U     S4:575 K1 (=B3,B2), uniform           {10:2,01:2,11:1}/5 TWO         2            2.986e-17
+    B1p_U    S4:575 K1-bridged, uniform            {10:3,01:3}/6 CURVE-III    inf  --- 1-dimensional ---
+    B1q_U    S4:575 K1-bridged + spectator         {00:1,10:3,01:3}/7 TWO         2            0.000e+00
+    B1s_U    S4:575 K1 subdivided                  {10:5,01:5,11:1}/11 TWO         2            5.672e-17
+    TANGENT  constructed: (1/10,1/5,3/10,2/5), D1 = D2         ONE         1            0.000e+00
+    TWO4     constructed: (3/20,1/4,3/10,3/10), all four occupied TWO         2            1.388e-17
+    CURVE3   constructed: (3/10,1/5,1/5,3/10), stratum III     CURVE-III    inf  --- 1-dimensional ---
+    NOZERO4  constructed: (9/20,1/4,1/5,1/10), polygon holds, no zero EMPTY       0            0.000e+00
+
+    ==> the claim 'generically ISOLATED POINTS' is ESTABLISHED, with the count 2,
+        and REFUTED as a universal: on a codimension-2 set the zero set is a CURVE.
+
+------------------------------------------------------------------------------------------------
+(d) CLOSED FORMS.  cos s0 = -C/D is EXACT RATIONAL whenever p is rational.
+
+    K1_REG    TWO    cos s0 = -2/3   sin^2 s0 = 5/9
+              x0 = -0.666666666667+0.745355992500i    y0 = -0.666666666667-0.745355992500i    |P| = 2.758e-18
+              x0 = -0.666666666667-0.745355992500i    y0 = -0.666666666667+0.745355992500i    |P| = 2.758e-18
+    S1_PUB    CURVE  Z = {x = -1} x T
+    SENSEC4   CURVE  Z = {x = -1} x T  U  T x {y = -1}
+    B0b_U     EMPTY  min|P| over T^2 = 0.111111111112   (Jensen 1-D, continuous)
+    B0a_U     TWO    cos s0 = -11/16   sin^2 s0 = 135/256
+              x0 = -0.687500000000+0.726184377414i    y0 = +0.250000000000-0.968245836552i    |P| = 0.000e+00
+              x0 = -0.687500000000-0.726184377414i    y0 = +0.250000000000+0.968245836552i    |P| = 0.000e+00
+    B4_U      EMPTY  min|P| over T^2 = 0.272165526976   (Jensen 1-D, continuous)
+    B1_U      TWO    cos s0 = -1/4   sin^2 s0 = 15/16
+              x0 = -0.250000000000+0.968245836552i    y0 = -0.250000000000-0.968245836552i    |P| = 2.986e-17
+              x0 = -0.250000000000-0.968245836552i    y0 = -0.250000000000+0.968245836552i    |P| = 2.986e-17
+    B1p_U     CURVE  Z = graph y = -(p00+p10 x)/(p01+p11 x)
+    B1q_U     TWO    cos s0 = -1/6   sin^2 s0 = 35/36
+              x0 = -0.166666666667+0.986013297183i    y0 = -0.166666666667-0.986013297183i    |P| = 0.000e+00
+              x0 = -0.166666666667-0.986013297183i    y0 = -0.166666666667+0.986013297183i    |P| = 0.000e+00
+    B1s_U     TWO    cos s0 = -1/10   sin^2 s0 = 99/100
+              x0 = -0.100000000000+0.994987437107i    y0 = -0.100000000000-0.994987437107i    |P| = 5.672e-17
+              x0 = -0.100000000000-0.994987437107i    y0 = -0.100000000000+0.994987437107i    |P| = 5.672e-17
+    TANGENT   ONE    cos s0 = -1   sin^2 s0 = 0
+              x0 = -1.000000000000+0.000000000000i    y0 = -1.000000000000-0.000000000000i    |P| = 0.000e+00
+    TWO4      TWO    cos s0 = -19/21   sin^2 s0 = 80/441
+              x0 = -0.904761904762+0.425917710000i    y0 = -0.666666666667-0.745355992500i    |P| = 1.388e-17
+              x0 = -0.904761904762-0.425917710000i    y0 = -0.666666666667+0.745355992500i    |P| = 1.388e-17
+    CURVE3    CURVE  Z = graph y = -(p00+p10 x)/(p01+p11 x)
+    NOZERO4   EMPTY  min|P| over T^2 = 0.100000000002   (Jensen 1-D, continuous)
+
+------------------------------------------------------------------------------------------------
+(e) K1's REGISTERED pi = (0, 3/10, 3/10, 2/5): THE ZEROS IN EXACT CLOSED FORM,
+    VERIFIED IN GAUSSIAN-RATIONAL ARITHMETIC (no float anywhere in this block).
+
+    Because p10 = p01 the zero has y0 = conj(x0), and P collapses to a REAL equation:
+        P = p10 (x + conj x) + p11 |x|^2 = 2 p10 cos s + p11 = 0
+        =>  cos s0 = - p11 / (2 p10) = - (2/5)/(6/10) = -2/3,  sin s0 = +- sqrt5/3
+        =>  (x0, y0) = ( (-2 + i sqrt5)/3 , (-2 - i sqrt5)/3 )   and its conjugate.
+
+    EXACT: |x0|^2 = cos^2 + sin^2 = 4/9 + 5/9 = 1   (must be 1)
+    EXACT: Re P(x0,y0) = 0      (must be 0)
+    EXACT: coefficient of i*sqrt(5)/3 in P(x0,y0) = p10 - p01 = 0   (must be 0)
+    ==> P VANISHES EXACTLY AT BOTH POINTS.  N1's REGISTERED POLYNOMIAL HAS EXACTLY
+        TWO ZEROS ON T^2 AND THEY ARE ALGEBRAIC OF DEGREE 2 OVER Q.
+    In angles: s0 = +- arccos(-2/3) = +- 2.300523983022 rad = +- 131.810314896 deg,  t0 = -s0.
+    min|P| over T^2 is EXACTLY 0.  The registrar's brief quotes 2.0e-04 from a
+    2048^2 grid; that is a WINDOW ARTEFACT of the kind COR-E convicts.  Jensen 1-D:
+        n =     4096   grid min ||A|-|B|| = 9.534191e-05   (UPPER bound; -> 0)
+        n =    65536   grid min ||A|-|B|| = 4.700728e-06   (UPPER bound; -> 0)
+        n =  1048576   grid min ||A|-|B|| = 2.344678e-07   (UPPER bound; -> 0)
+        n =  4194304   grid min ||A|-|B|| = 1.115494e-08   (UPPER bound; -> 0)
+
+------------------------------------------------------------------------------------------------
+(f) ITEM (3): DOES p00 = 0 CHANGE THE ZERO STRUCTURE?  THE ANSWER IS NO BY ITSELF,
+    AND YES ON A THREE-POINT SET -- AND K1's TWO PUBLISHED STATES SIT ON OPPOSITE
+    SIDES OF THAT SPLIT.
+
+    With p00 = 0:  S1 = D1 = p10 (the branch |A| = p10 is CONSTANT in t).  The stratum test
+    becomes  (2 p10 - 1)(p10 - |p01 - p11|) <= 0, and the curve strata require
+        (I)   p10 = 0 and p01 = p11 = 1/2      ->  Z = {x=-1} x T
+        (II)  p01 = 0 and p10 = p11 = 1/2      ->  Z = T x {y=-1}
+        (III) p11 = 0 and p10 = p01 = 1/2      ->  Z = {y = -x}
+    i.e. EXACTLY the three 'one weight 0, the other two = 1/2' states, and nothing else.
+    (M1_08 T2(b) already records those three circles at p00 = 0; what is added here is that
+     they are the COMPLETE curve locus at four classes too, as strata I,II,III.)
+
+    EXACT sweep of the p00 = 0 FACE at denominator 40 (861 pts):
+        CURVE 3   TWO 171   ONE 57   EMPTY 630
+        the CURVE count is 3 -- exactly the three predicted states.
+
+    THE TWO PUBLISHED STATES OF THIS CORPUS, SIDE BY SIDE:
+        K1 REGISTERED  pi = (0, .3, .3, .4)   [N1's own polynomial]  ->  TWO 
+        S1 PUBLISHED   pi = (0, 0, 1/2, 1/2)  [S1 sec6 ready state]  ->  CURVE I
+
+    ==> ANSWER TO ITEM (3), STATED SHARPLY:
+        p00 = 0 does NOT make the zero set a curve.  K1's REGISTERED pi -- the one N1 is
+        stated at -- has TWO ISOLATED CONJUGATE ZEROS, the MILDEST possible singular case.
+        But K1's OTHER published state, S1 sec6's own ready state, IS one of the three
+        curve states.  THE CORPUS'S TWO PUBLISHED STATES LIE IN DIFFERENT STRATA, and the
+        harder one is the older one.  So the answer to 'which case is K1 in' is: BOTH,
+        depending on which of its two published states you mean, and the register does not
+        distinguish them.
+
+------------------------------------------------------------------------------------------------
+(g) THE COMPLEX CURVE vs THE REAL TORUS -- the transversality claim, checked.
+
+    {P = 0} in (C*)^2 is a smooth complex curve wherever dP != 0, and dP/dy = B(x) which
+    vanishes only at x = -p01/p11.  So the complex zero curve is smooth at every point of
+    T^2 it meets except in stratum I.  Its intersection with the 2-real-dimensional T^2 is
+    therefore generically transverse (0-dimensional) and the count 2 is the transverse
+    count.  The failure of transversality is EXACTLY the ONE-point stratum (tangential
+    contact of the Jensen branches) and the CURVE strata (identical branches).
+
+    dP/dy = B(x) on the zero set, evaluated:
+        K1_REG    |dP/dy| at the zeros = 0.300000  0.300000
+        B0a_U     |dP/dy| at the zeros = 0.333333  0.333333
+        B1_U      |dP/dy| at the zeros = 0.400000  0.400000
+        B1q_U     |dP/dy| at the zeros = 0.428571  0.428571
+        B1s_U     |dP/dy| at the zeros = 0.454545  0.454545
+        TANGENT   |dP/dy| at the zeros = 0.100000
+        TWO4      |dP/dy| at the zeros = 0.130931  0.130931
+
+DONE z1

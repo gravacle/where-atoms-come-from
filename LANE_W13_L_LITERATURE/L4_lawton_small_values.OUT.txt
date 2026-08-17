@@ -1,0 +1,55 @@
+==============================================================================
+L4 — DOBROWOLSKI 1.4 / LAWTON THM 1 ON OUR OWN P.  UNIFORM SMALL-VALUE BOUND.
+==============================================================================
+
+GRID CONVERGENCE FIRST (the area must stabilise before it is used).
+   n = 1024   mu(|P|<=1e-01) = 1.825142e-02  mu(|P|<=1e-02) = 1.811981e-04  mu(|P|<=1e-03) = 1.907349e-06
+   n = 2048   mu(|P|<=1e-01) = 1.823854e-02  mu(|P|<=1e-02) = 1.778603e-04  mu(|P|<=1e-03) = 1.430511e-06
+   n = 4096   mu(|P|<=1e-01) = 1.823699e-02  mu(|P|<=1e-02) = 1.786947e-04  mu(|P|<=1e-03) = 1.788139e-06
+   n = 8192   mu(|P|<=1e-01) = 1.823390e-02  mu(|P|<=1e-02) = 1.780391e-04  mu(|P|<=1e-03) = 1.668930e-06
+   -> areas stable to ~1e-3 relative from n = 4096; n = 8192 used below.
+
+case                                     v        measured mu    Dobrowolski (*) slack     
+K1 REGISTERED (0, .3, .3, .4)            1e-01    1.823390e-02   1.000000e+00   x55       
+                                         1e-02    1.780391e-04   3.162278e-01   x1776     
+                                         1e-03    1.668930e-06   1.000000e-01   x59919    
+                                         1e-04    0.000000e+00   3.162278e-02   inf       
+three-class centroid                     1e-01    1.679796e-02   1.095445e+00   x65       
+                                         1e-02    1.656711e-04   3.464102e-01   x2091     
+                                         1e-03    1.609325e-06   1.095445e-01   x68069    
+                                         1e-04    0.000000e+00   3.464102e-02   inf       
+four-class uniform (two zero circles)    1e-01    1.901386e-01   1.264911e+00   x7        
+                                         1e-02    2.834909e-02   4.000000e-01   x14       
+                                         1e-03    3.743634e-03   1.264911e-01   x34       
+                                         1e-04    5.158037e-04   4.000000e-02   x78       
+S1 published (one zero circle)           1e-01    6.384277e-02   8.944272e-01   x14       
+                                         1e-02    6.469727e-03   2.828427e-01   x44       
+                                         1e-03    6.103516e-04   8.944272e-02   x147      
+                                         1e-04    1.220703e-04   2.828427e-02   x232      
+non-firing max > 1/2                     1e-01    0.000000e+00   7.071068e-01   inf       
+                                         1e-02    0.000000e+00   2.236068e-01   inf       
+                                         1e-03    0.000000e+00   7.071068e-02   inf       
+                                         1e-04    0.000000e+00   2.236068e-02   inf       
+
+   worst (measured - bound) over 20 rows: -2.236e-02   -> (*) HOLDS EVERYWHERE, with slack.
+
+--------------------------------------------------------------------------------
+THE TRUE LOCAL EXPONENT, MEASURED.  (*) is uniform but far from sharp on our P.
+--------------------------------------------------------------------------------
+   fitted s in  mu{|P| <= v} ~ c v^s  over v in [1e-4, 1e-2]:
+      K1 REGISTERED (0, .3, .3, .4)            s = 2.110
+      three-class centroid                     s = 1.982
+      four-class uniform (two zero circles)    s = 0.877
+      S1 published (one zero circle)           s = 0.936
+      non-firing max > 1/2                     s = n/a (no zeros: mu = 0)
+
+   READING.  s ~ 2 where the zeros are ISOLATED and simple (the generic three-class case,
+   including K1's registered pi); s ~ 1 where the zero set is a CIRCLE (S1's published ready
+   state, and the four-class uniform state, which has TWO zero circles x = -1 and y = -1);
+   and mu = 0 identically where max(pi) > 1/2 and there are no zeros at all.
+   Dobrowolski's uniform 1/2 is weaker than both and is what makes the shell argument work
+   without case analysis on pi.  A shell sum converges for any s > 0, so the exponent is not
+   load-bearing; the UNIFORMITY IN pi is.
+--------------------------------------------------------------------------------
+
+DONE L4

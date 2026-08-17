@@ -1,0 +1,280 @@
+LANE W-13 / C — REFUTER.  FINDINGS, IN SEVERITY ORDER.
+Lens: ISOLATION AND WINDOWS.  Target: LANE_W13_C_CONVERGENCE (10 files, SEALS 10/10 OK).
+
+REPRODUCTION FIRST.  All four target scripts re-run here produce output BYTE-IDENTICAL to
+the sealed .OUT.txt files.  Nothing below is a reproduction failure.
+
+VERDICT: CONFIRMED WITH CORRECTIONS.  The lane's two theorems (a.e. convergence; comeager
+divergence) and its ruling on N1 SURVIVE and were audited line by line.  ONE FINDING FALLS
+OUTRIGHT (C8), one FINDING'S HEADLINE SENTENCE FALLS (C7's methodological claim), one COUNT
+IN THE RULING IS WRONG (C9's "four of five with a different limit"), and the construction's
+NAME is wrong.
+
+=========================================================================================
+R-1.  FATAL TO C8.  W13C_04(B) IS A CONTROL THAT COULD NOT HAVE FAILED, AND THE CLAIM IT
+      CARRIES IS FALSE.                                              [RW13C_02, legs A + B]
+=========================================================================================
+THE CODE.  W13C_04_spacing_and_start.py:169-170 reads
+
+        if (s1, s2) == (0, 0) and k0 < K1 <= k0+n:
+            lz[K1-k0-1] = logpv          # spliced true value; see W13C_03
+
+The mpmath dip value is substituted into EXACTLY ONE ARM, selected by a literal test on that
+arm's own coordinates.  The other four arms never receive it.  And theta was BUILT in
+W13C_03 so that k_1 theta lands on a zero WHEN x_0 = 0; moving x_0 destroys that with
+probability one.  So the arms were not "same code path, only x_0 moves": one arm has an
+extra hard-coded term and no other outcome was available.
+
+THE DIFF (RW13C_02 leg A, their theta, their seed, their grid, branch disabled):
+        starting point                  A_1000    A_10000   A_100000  A_1e6     A_2e6
+        x_0 = 0   (their row 1)        -0.766669 -0.770775 -0.767855 -0.767526 -0.767517
+        x_0 = Haar draw 0..3           -0.7657.. -0.7674.. -0.7674.. -0.7675.. -0.7675..
+   ALL FIVE ROWS AGREE.  Their published contrast (-4.767319 at N=1e4) is the constant
+   logpv = -39999.9 nats divided by N.  (The x_0=0 row is still distinguishable at 3e-3,
+   because the 64-bit truncation lands 5e-16 from the zero — but by 0.003, not by 4.0.)
+
+THE CLAIM IS ALSO FALSE.  Transpose the lane's OWN C6 argument from theta to x_0:
+  THEOREM.  Fix ANY theta with H2.  V_n = { x : EXISTS k>n, dist(x + k theta, z) < e^{-nk} }
+  is open, and dense because {z - k theta : k>n} is dense by H2.  INTERSECT_n V_n is a dense
+  G_delta, and on it A_{k_n}(x_0) <= (log U)/k_n - n -> -infinity.
+  So a COMEAGER set of STARTING POINTS diverges at EVERY connection satisfying H2 —
+  including every connection at which the lane's own C5 gives convergence at x_0 = 0.
+
+EXHIBITED (RW13C_02 leg B).  theta HELD FIXED at the corpus's own published generic
+connection f = 1.0, c = sqrt(2) (H2 proved; the lane's own table reports convergence to
+3.5e-07 there).  ONE VARIABLE: x_0.  Splice applied UNCONDITIONALLY to all nine arms, so no
+branch keys off an arm's label.  Depth ladder in x_0 alone:
+        10^-L offset   log|Z_k1| (nats)   A_k1          A_k1 - m(P)
+        500              -1150.4          -0.882382751  -0.114875
+        2000             -4604.2          -1.227770514  -0.460263
+        8000            -18419.8          -2.609321570  -1.841814
+        17372           -39999.6          -4.767304319  -3.999796
+   and the four Haar-random x_0 and x_0 = 0 all sit at m(P) to 1e-6 at N = 1e7.
+
+WHAT SURVIVES OF C8: the narrow logical point — Birkhoff's theorem gives a.e. STARTING
+POINT, {0} is null, so Birkhoff alone does not license N1.  That is correct and worth
+keeping.  WHAT FALLS: "the difference is not cosmetic — IT IS THE WHOLE OF THE FAILURE",
+and "the corpus's x_0 = 0 is the ONLY row that fails."  x_0 = 0 is measure-good and
+category-bad in exactly the way theta is.  AND THE LANE'S OWN C1/C2 SAY SO: under H2 the
+rotation is UNIQUELY ERGODIC, so (1/N)SUM f_eps(x_0 + k theta) -> INT f_eps for EVERY x_0,
+not almost every; all the x_0-dependence lives in E_N(eps), i.e. in the singularity.
+THE STARTING POINT IS A CARRIER OF THE FAILURE, NOT ITS CAUSE.
+
+=========================================================================================
+R-2.  "LIOUVILLE" IS A MISNOMER.  THE CONSTRUCTED PAIR IS BADLY APPROXIMABLE. [RW13C_06]
+=========================================================================================
+theta_1 = n_1/DEN + 10^-M sqrt2  and  theta_2 = n_2/DEN + 10^-M sqrt3 with n_i, DEN exact
+integers.  So theta_1 in Q(sqrt2) and theta_2 in Q(sqrt3): each is a QUADRATIC IRRATIONAL,
+with exact integer minimal polynomial
+        DEN^2 10^{2M} t^2 - 2 n_1 DEN 10^{2M} t + (n_1^2 10^{2M} - 2 DEN^2) = 0
+(verified to vanish to 900 dps on a scaled replica).  By Lagrange its continued fraction is
+eventually periodic, its partial quotients are BOUNDED, and its irrationality measure is
+EXACTLY 2 — it is badly approximable, the opposite of Liouville.  Exhibited on a scaled
+replica built by the lane's own build_theta: ONE huge partial quotient at the engineered
+scale (17 and 47 digits at M = 60, 90) and then quotients of size 1..5 forever; against
+M1_06's genuine Liouville alpha, whose quotient sizes recur at 6, 24, 50, ... 140 digits at
+every scale.
+WHAT THIS DOES AND DOES NOT COST.  C6's Baire theorem constructs nothing and is untouched.
+C5's exhibit is exactly what the lane claims for it — one engineered dip of free depth — and
+that claim stands.  WHAT FALLS is the label (finding title, file name, conventions page) and
+the sentence "M1_06 is confirmed and ENLARGED, nothing of it withdrawn": M1_06's alpha IS
+Liouville and its construction DOES give liminf = -infinity for ONE theta; this lane's theta
+gives one dip and no divergence for any single theta.  ON THAT ONE AXIS THE NEW EXHIBIT IS
+WEAKER THAN THE ONE IT SAYS IT BUILT PAST.  Seventh instance of this program's standing
+defect (W-10 N-7, W-11): the operative property misnamed, this time in the file name.
+
+=========================================================================================
+R-3.  C9's COUNT IS WRONG.  S4:973's PUBLISHED CONNECTION HAS THE SAME LIMIT AS m(P).
+                                                              [RW13C_03(1), RW13C_04(A)]
+=========================================================================================
+C9: "four of the five are resonant ... and lie IN the exceptional set with a DIFFERENT
+limit".  Two of the four (the order-4 point, f=2.0 c=1.1) are computed in W13C_01.  The
+other two are carried by INHERITANCE from W-10 N-4 and were never run.  Resonance gives H2
+FALSE; it does NOT give a different limit — W-12's own Corollary 2 exhibits a resonant
+subtorus whose average equals m(P) to 5.55e-17.  Both rows are run here, on the lane's own
+estimator, and independently as one-variable Mahler measures over the orbit closure
+(method calibrated against the register's own -0.767014993 for f=2.0,c=1.1, reproduced to
+all printed digits):
+
+  connection                     relation        subtorus limit    minus m(P)
+  f = 2.0,     c = 1.1           (11,20)         -0.767014993      +4.929e-04
+  f = 1.3,     c = 2.0           (20,13)         -0.766724510      +7.834e-04   [never run]
+  f = 3.14159, c = 1.57080       (157080,314159) -0.767507875      +5.2e-09     [never run]
+                                 (n = 2^20..2^27 ladder; spread over the last two rungs 6e-9)
+
+S4:973's connection lies in the exceptional set (H2 fails) but its limit is m(P) to ~1e-8 —
+smaller than the lane's own residual at its generic arm (3.5e-07 at N = 1e7).  This is the
+Boyd-Lawton regime that W-08/M1 T2(d) names as the one place Boyd-Lawton IS exactly right.
+CORRECTED COUNT: of the five published connections, THREE have a demonstrably different
+limit (3.7e-02, 4.9e-04, 7.8e-04), ONE (S4:973) is in the exceptional set with the SAME
+limit to 1e-8, and ONE (f=1.0, c=sqrt2) is generic with the identification unprovable.
+THE RULING IS UNCHANGED — the a.e. form is what is publishable — but C9's Reading-B rhetoric
+("a result whose hypothesis fails at four of five published connections") is overstated by
+one row, and the recommended register text should not say the exceptional set "contains
+every connection this corpus has published except f = 1.0, c = sqrt(2)" without adding that
+at S4:973's connection the identification is nonetheless true to 1e-8.
+
+AND THE SAME ROW IS A SECOND INSTANCE OF THE LANE'S OWN C7 FINDING THAT IT MISSED BY NOT
+RUNNING IT: at N = 1e7 the Birkhoff average there reads -7.93e-04 from m(P) — three orders
+WORSE than its own true limit, because 1e7 steps have not resolved a relation of order 5e5.
+A numerical study at 1e7 misclassifies this published connection in the direction OPPOSITE
+to the one C7 warns about: not a false confirmation, a FALSE REFUTATION.
+
+=========================================================================================
+R-4.  C7's METHODOLOGICAL SENTENCE IS CONTRADICTED BY THE LANE'S OWN TABLE.   [RW13C_05(II)]
+=========================================================================================
+C7: "A numerical study of N1 will confirm it at every connection it can reach, INCLUDING
+connections in the failure set.  THE CORPUS'S NUMERICS ON N1 COULD NOT HAVE FAILED, AND
+THEIR AGREEMENT IS THEREFORE NOT EVIDENCE."
+W13C_03_liouville.OUT.txt, at the lane's OWN engineered theta (H2 holds; in the failure set):
+        N = 1e3  -0.766669   N = 1e4  -4.767319   N = 1e5  -1.167509
+        N = 1e6  -0.807491   N = 1e7  -0.771508  (deviation -4.0e-03)
+A numerical study there, over the same four decades used everywhere else in the lane,
+returns a deviation FOUR ORDERS worse than any of its eight H2 arms.  It does not confirm
+N1.  RW13C_04(B) makes the same point with C3's own necessary-condition statistic:
+inf_k k^{3/4} dist(k theta, Z) over k <= 1e7 is 1.6e-01 .. 3.8e-01 on five H2 arms and
+5.0e-13 on the engineered theta — a plain float64 scan separates them by four orders.
+WHAT THE SPACING LEMMA ACTUALLY SUPPORTS, and it is worth having: a simulation can never see
+the SECOND dip, so it can never DISTINGUISH "one dip, then convergence" from
+liminf = -infinity.  That is a claim about DISCRIMINATION.  "Could not have failed" is a
+claim about OUTCOME and it is false as written.  The lemma, both corollaries, the density
+1.779 e^{-2D} and the spacing figures are all CONFIRMED; only the sentence they are used to
+license is overstated.  (And the program's norm cuts the right way here: "could not have
+failed" voids a control, never a theorem — C6 is untouched either way.)
+
+=========================================================================================
+R-5.  C3's COMPARATIVE CLAUSE IS FALSE.  THE TWO CONDITIONS ARE INCOMPARABLE. [RW13C_05(I)]
+=========================================================================================
+C3 (status PROVED) ends "...and it is STRICTLY STRONGER than the 'orbit is dense' clause N1
+currently carries."  The theorem is right; the comparison is not.
+  * S1's own published connection (order 4) SATISFIES C3's condition: |Z_k| cycles through
+    {sqrt(0.1), 0.4, sqrt(0.1), 1}, so (1/k)log(1/|Z_k|) <= 1.1513/k -> 0 (measured tail sup
+    over k > 1e6: 1.151e-06).  A_N converges there, to -(1/2)log 5 = -0.804718956.  H2 FAILS.
+    So C3's condition does NOT imply density.
+  * The lane's own C6 theta has H2 and violates C3's condition.  So density does not imply
+    C3's condition.
+NEITHER IS STRONGER.  They are necessary conditions for DIFFERENT statements: C3 for "A_N
+converges at all", H2 for "the limit, if it exists, is m(P)".  Wrong in the direction that
+oversells the finding.
+
+=========================================================================================
+R-6.  "A CLEAN ~N^{-1} TREND" IS SEED-DEPENDENT.                             [RW13C_01(C)]
+=========================================================================================
+C10 reports eight H2 arms with fitted exponents -0.791 .. -1.177 and calls it "a clean
+~N^{-1} trend".  Re-run with the SAME arms and ONE VARIABLE MOVED — the Haar seed
+(20260818 instead of 20260817) — and carried one decade further:
+        arm                              N^(10^3..10^7)   N^(10^3..10^8)
+        GENERIC f=1.0 c=sqrt2              -0.791           -0.875
+        badly-approx x3                    -1.177/-1.027/-0.927   -1.068/-0.945/-0.977
+        HAAR-RANDOM (new seed) draw 0      -0.252           -0.401
+        HAAR-RANDOM (new seed) draw 1      -0.889           -0.781
+        CONTROL order-4                    -0.000           -0.000
+        CONTROL f=2.0 c=1.1                +0.022           +0.018
+A Haar draw under a different seed fits N^{-0.25} over the lane's own window while still
+converging (+2.9e-05 at 1e7, +2.9e-06 at 1e8).  |dev| oscillates in sign and a log-log fit
+sits on its accidental zero crossings — the corpus already has a figure 9x off for exactly
+this reason.  THE QUALITATIVE RESULT IS ROBUST AND IS CONFIRMED HERE AT FIVE DECADES: the
+H2 arms keep falling, the two H2-failing controls stay flat at their own limit.  THE
+EXPONENT IS NOT A MEASURED CONSTANT and should not be quoted as one.
+
+=========================================================================================
+R-7.  FOUR SMALLER DEFECTS, RECORDED.                        [RW13C_03(2a,2b,2c), RW13C_03(3)]
+=========================================================================================
+(a) "float64 would have reported |Z_{k1}| = 1.06e-15 — WRONG BY UP TO 10^17368" (C6; printed
+    by W13C_03_liouville.py:140 as 10^(L-4)).  TRUE ratios: 10^484.8 / 10^1984.8 / 10^7984.9
+    / 10^17356.8.  The exponent is L-15, not L-4; the headline figure is ~11 orders too
+    large.  No verdict moves — the point is that float64 cannot see the dip — but it is a
+    wrong number in a headline claim (COR-K / COR-L defect class).
+(b) W13C_03_liouville.py:96-97 takes the argmin of the WHOLE chunk and then DISCARDS it if
+    it is the splice index, so the chunk containing k_1 contributes nothing to the running
+    minimum.  Recomputed with the dip index masked instead: the discarded chunk's minimum is
+    1.610e-03, above the reported 1.073535e-04 at k = 9815000.  THE FIGURE IS RIGHT BY LUCK;
+    THE CODE IS WRONG.  Not load-bearing: "the background orbit is bit-for-bit identical in
+    all four arms" is established directly by the printed uint64 pair, which IS identical.
+(c) W13C_02 (D2) column 3 is labelled "the TAIL sup over N/10 < k <= N, which is the quantity
+    the NECESSARY CONDITION requires to go to 0".  It is np.maximum.accumulate carried across
+    chunks — a MONOTONE RUNNING MAX, which cannot decrease and therefore CANNOT SHOW what the
+    label says it shows.  The genuine per-decade sup at the generic arm does decay:
+    8.56e-01, 2.08e-01, 2.25e-02, 2.95e-03, 3.90e-04, 4.41e-05, 6.38e-06 over k in
+    (1,10] .. (1e6,1e7].  C3 itself is a proof and is unaffected.
+(d) The SPACING LEMMA is written for two dips at the SAME zero.  Since z_1 + z_2 = 1 the
+    second zero is z' = -z, so a dip at z followed by one at z' gives ||(k_1+k_2) z||, not
+    ||(k_2-k_1) z||.  Both identities verified to the float64 roundoff 2e-08 on 20000 random
+    triples.  The conclusion is UNCHANGED (both corollaries only use q <= 2 k_2), but the
+    lemma as stated does not cover the case and the second zero is never mentioned.
+(e) The isolation ledger says the decomposition "is checked as an IDENTITY ... rather than as
+    a model, SO NO ARM CAN PASS IT BY CONSTRUCTION."  Backwards: because it IS an identity,
+    EVERY arm passes by construction.  The check tests the code, not the model.  (Harmless;
+    the identity itself is correct and is re-verified here.)
+
+=========================================================================================
+WHAT I TESTED THAT COULD HAVE BROKEN THE LANE AND DID NOT — THE CONFIRMATIONS.
+=========================================================================================
+* SEALS 10/10 OK; all four scripts re-run BYTE-IDENTICAL on a different day and process.
+* THE PHASE REDUCTION.  np.cumsum on uint64 checked element-by-element against Python-int
+  (k*A) mod 2^64 for k = 1..200000 with 168169 WRAPS in range: 0 mismatches.  NO int64-style
+  wrap bug of the kind the brief warns about.  [RW13C_01(A)]
+* THE TRUNCATION.  Re-running with the exact residual k*(theta - A/2^64) carried in float64
+  moves A_N by <= 2.9e-15 at N = 1e7, against reported deviations of 6e-08..2e-03.  The
+  reported deviations are properties of theta, NOT of the 64-bit surrogate rational (which,
+  being rational, is by W-10 N-4 exactly resonant).  [RW13C_01(B)]
+* m(P) = -0.767507880357776 by two further routes: the log-max integrated directly on each
+  smooth piece (agrees to 0.0e+00 at 60 dps) and a 2-D grid with the two singular discs
+  replaced by a polar quadrature (agrees to 1.4e-08).  The Jensen split is NOT sitting on a
+  crossing artefact.  [RW13C_01(D)]
+* THE GEOMETRY.  Closed-form zeros, z_1 + z_2 - 1 = 0 exactly, |det J| = 3.531057 by analytic
+  and finite-difference routes (dev 1.4e-09), U = 2.492571, and L = 1.02605636 — attained at
+  (0, 1/2) where |P| = 0.4 and dist = 0.3898421 — stable across 2048^2, 4096^2, 8192^2 and
+  under local descent.  The lane's L is CONFIRMED, not a window artefact.  [RW13C_01(E), RW13C_03(2d)]
+* C2's GEOMETRIC CONSTANT over FIVE decades, not four: E_N(eps) at N = 1e8 reads
+  9.0041e-03 / 8.8978e-05 / 8.8360e-07 against the predicted (pi/|det J|)eps^2 =
+  8.8970e-03 / 8.8970e-05 / 8.8970e-07, and the shell count 1.8234e-02 / 1.7795e-04 /
+  1.7700e-06 against 2(pi/|det J|)eps^2 = 1.7794e-02 / 1.7794e-04 / 1.7794e-06.  CONFIRMED.
+* C5's STEP (b), the half that carries the inhomogeneous Diophantine condition: the
+  pushforward claim Pr(dist(k theta, Z) < r) = 2 pi r^2 measured over 4e6 draws at
+  k = 1, 2, 7, 1000, 999983 and r = 1e-2, 3e-3 — ratios 0.95..1.02.  And the Borel-Cantelli
+  conclusion inf_k k^{3/4} dist(k theta, Z) over k <= 1e7 is 1.6e-01..3.8e-01 on five H2
+  arms.  CONFIRMED.  [RW13C_04(B)]
+* C5's PROOF STRUCTURE audited step by step: (a) the H2-failure set is a countable union of
+  proper closed subgroups, null; (b) Borel-Cantelli with r_k = k^{-3/4}, SUM 2 pi k^{-3/2} <
+  infinity, tau = 3/4 < 1; (c) the named import; C4's dyadic sup-norm square annuli give
+  count <= N(O(eps^2 4^{-j}) + 4 D*_N) with j_max = O(log N), summing to O(eps^2) +
+  O(D*_N (log N)^2).  The corollary's transfer is sound: for a Haar-preserving surjective
+  homomorphism phi, Haar(phi^{-1}(E)) = Haar(E) = 0.  NO GAP FOUND.
+* C6's PROOF audited: U_n open (union over k > n of preimages of an open ball); dense because
+  x |-> k x maps a box of side 2 delta with 2 k delta >= 1 ONTO T^2; the H2-failure set is
+  meager (countable union of nowhere-dense lines); f <= 0 gives A_{k_n} <= (log U)/k_n - n.
+  NO GAP FOUND.  liminf A_N = -infinity on a comeager set STANDS.
+* C1's identity and its consequence liminf A_N = m(P) - lim_eps limsup_N E_N(eps): correct,
+  including the step that liminf(a_N - b_N) = lim a_N - limsup b_N when a_N converges.
+* THE FIFTH DECADE.  Every H2 arm keeps falling to N = 1e8 and both H2-failing controls stay
+  flat at their own limit (-0.8047190 and -0.7670150, exponents -0.000 and +0.018).  The
+  central verdict of C10 is NOT a window.
+* DURABILITY (C12) is untouched by anything here, as the lane says.
+
+=========================================================================================
+SELF-FLAGS ON THIS REFUTER.
+=========================================================================================
+1. LINEAGE.  This refuter is Opus 5, as is the target lane and as are W-07..W-12.  IT IS NOT
+   A LINEAGE-INDEPENDENT CHECK.  It reuses W-08/M1 T1 and T2(d) and W-12's pushforward
+   theorem without re-deriving them, exactly as the target lane does; if either is wrong,
+   both rows fall together.  Discount as one block.
+2. R-1's leg B uses the SAME splice technique it criticises.  The difference is that the
+   splice is applied to every arm unconditionally and the un-spliced background is printed
+   beside every row, so the reader can see the splice does nothing in the un-engineered arms.
+   That is the repair, not an exemption; the exhibit is still an ENGINEERED CONSTRUCTION and
+   the load-bearing generality is carried by the transposed Baire theorem, not by it.
+3. R-3's third row rests on a trapezoid over the orbit closure at n = 2^27 whose last two
+   rungs differ by 6e-09.  I claim "m(P) to ~1e-08", not equality; Boyd-Lawton gives
+   convergence, not equality, and I have not proved the limit is exactly m(P).
+4. NOTHING HERE IS PROVED ABOUT z_1's IRRATIONALITY MEASURE either.  I inherit the target
+   lane's own flag.
+5. R-6 READS TWO WAYS AND IS SCORED NEITHER WAY: either (A) the exponent was never load-
+   bearing and only the sign of the trend matters, in which case the phrase should simply be
+   struck; or (B) an exponent that moves from -0.25 to -1.18 across draws of the same
+   distribution is evidence that four decades is not enough window for ANY rate claim here,
+   including the ones I confirm.  Both are supported.  My confirmations are stated as
+   qualitative (falling vs flat) precisely because of (B).
+6. I did NOT re-derive W-08/M1's Lawton ruling T2(d) and I did not attack C12 or the
+   register's H1.  The literature question (is the a.e. theorem already in print?) is
+   another lane's and is untouched here.
