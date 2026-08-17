@@ -1,0 +1,128 @@
+========================================================================================================
+LEG 1 — THE BRIEF'S PREMISE, CORRECTED BEFORE IT IS USED.
+========================================================================================================
+  'A four-class P HAS zeros on T^2 (W-09: the firing region is exactly 1/2)' conflates:
+     (i)  {(f,c) : SOME non-negative p annihilates Z_1}   — W-09's set, measure 1/2 for four
+          classes and 1/4 for three;  and
+     (ii) {(x,y) in T^2 : P_p(x,y) = 0} for a FIXED p     — the set the integrability question
+          is about, which is measure ZERO for every p (2 points, or one circle).
+  (i) is the UNION over p of (ii).  A union of null sets is not null.  The question 'does the
+  hypothesis bite?' is answered by (ii), i.e. by ONE INEQUALITY ON THE READY STATE:
+        P has a zero on T^2  <=>  ((p00+p10)-(p01+p11)) * (|p00-p10|-|p01-p11|) <= 0.
+  Measure of that set in the ready-state simplex: EXACTLY 1/4 for four classes and EXACTLY 1/4
+  for three (C_03 sec 4).  FOUR-CLASS OCCUPANCY IS NOT THE OPERATIVE VARIABLE HERE.
+
+========================================================================================================
+LEG 2 — B0b*, THE SAME COMPLEX WITH ONE DESIGNATED LOOP MOVED.
+========================================================================================================
+  ARMS.  gamma_F identical in both: True
+         gamma_C differs:  B0b [0, 3, 9, 10]->[0, 1, 2]  B0b* [0, 4, 8, 10, 14, 15]   (byte-identical arms? False)
+
+  B0b ring torus 3x3, loops MEET
+     V=9 E=18 F=9 chi=0 b1=2 b2=1   gF bounds True  gC bounds False  indep True
+     class counts {00:4, 10:2, 01:1, 11:2}   FOUR CLASSES OCCUPIED: True
+     pi = ('4/9', '2/9', '1/9', '2/9')   factors: False   ZEROS ON T^2: False   (hi=1/3, lo=1/9)
+     m(P) [mpmath, kink-split at t = []] = -0.81093021621632876396
+
+  B0b* ring torus 3x3, gamma_C = the (1,1) DIAGONAL
+     V=9 E=18 F=9 chi=0 b1=2 b2=1   gF bounds True  gC bounds False  indep True
+     class counts {00:2, 10:1, 01:3, 11:3}   FOUR CLASSES OCCUPIED: True
+     pi = ('2/9', '1/9', '1/3', '1/3')   factors: False   ZEROS ON T^2: True   (hi=-1/3, lo=1/9)
+     m(P) [mpmath, kink-split at t = ['2.761341']] = -0.98791828803849249057
+
+  ONE VARIABLE MOVED: which non-bounding cycle is designated gamma_C on the SAME complex, with
+  the SAME gamma_F.  Topology, incidence, faces, gauge count and four-class occupancy are all
+  unchanged.  The zero set of P appears.  THE HYPOTHESIS IS TURNED ON BY THE DESIGNATED LOOP,
+  NOT BY THE CARRIER AND NOT BY CLASS OCCUPANCY.
+
+========================================================================================================
+LEG 3 — A FAILURE ALREADY SITTING IN S4's PUBLISHED TABLE.  EXACT ARITHMETIC.
+========================================================================================================
+  S4:582 publishes lambda(SENSE C) = -1.386294361120 for BOTH four-class carriers,
+  with the identity '(1+x+y+xy)/4 = (1+x)(1+y)/4, so lambda = log(1/4) EXACTLY'.
+  At S1 sec6's OWN published connection W_F = -1, W_C = -i  (u = -1, v = -i):
+     k=1:  u^k=-1  v^k=+0-1i   Z_k = 0 + 0i   |Z_k|^2 = 0  ZERO
+     k=2:  u^k=+1  v^k=-1+0i   Z_k = 0 + 0i   |Z_k|^2 = 0  ZERO
+     k=3:  u^k=-1  v^k=+0+1i   Z_k = 0 + 0i   |Z_k|^2 = 0  ZERO
+     k=4:  u^k=+1  v^k=+1+0i   Z_k = 1 + 0i   |Z_k|^2 = 1  
+     k=5:  u^k=-1  v^k=+0-1i   Z_k = 0 + 0i   |Z_k|^2 = 0  ZERO
+     k=6:  u^k=+1  v^k=-1+0i   Z_k = 0 + 0i   |Z_k|^2 = 0  ZERO
+     k=7:  u^k=-1  v^k=+0+1i   Z_k = 0 + 0i   |Z_k|^2 = 0  ZERO
+     k=8:  u^k=+1  v^k=+1+0i   Z_k = 1 + 0i   |Z_k|^2 = 1  
+     Z_k = 0 EXACTLY unless k = 0 mod 4 — odd k kill it through (1+u^k) = 0, and
+     k = 2 mod 4 through (1+v^k) = 0.  Three of every four cells annihilate.
+     So Omega_N = 0 for every N >= 1 and (1/N) sum log|Z_k| = -infinity for every N >= 1.
+     THE PUBLISHED FOUR-CLASS SENSE C RATE IS NOT THE RATE AT THE CORPUS'S OWN CONNECTION.
+     float64 does not see it: C_04 reports a finite -28.088521944 because |Z_2| evaluates to
+     4.13e-17 instead of 0.  A lane trusting float64 would publish a finite wrong number.
+
+========================================================================================================
+LEG 4 — THE FINITE-N FAILURE, ON A NON-FACTORING FOUR-CLASS P WITH AN EXACT m(P).
+========================================================================================================
+  pi = (4,2,3,1)/10   four classes occupied, class-level ready state (the sense S4
+  uses for its SENSE C column).   factors: False   zeros on T^2: True  (hi=1/5, lo=0)
+  ZERO LOCATED EXACTLY: at x = -1, A = p00-p10 = 1/5 and B = p01-p11 = 1/5, so
+  y = -A/B = -1.  P(-1,-1) = 4/10 - 2/10 - 3/10 + 1/10 = 0.   ISOLATED torus zero at (-1,-1).
+  AND m(P) IS EXACT ANYWAY:  |0.4+0.2x|^2 - |0.3+0.1x|^2 = 0.1(1+cos t) >= 0, so the FIRST
+  Jensen branch dominates everywhere and m(P) = m(2/5 + (1/5)x) = log(2/5) EXACTLY.
+  So 'has a torus zero' and 'has a closed form' are INDEPENDENT — a second, independent blow
+  to S4:599's inference that a non-factoring four-term P forces quadrature.
+  m(P) = log(2/5) = -0.91629073187415506518    Jensen check (mpmath) = -0.91629073187415506518
+
+  THE CONNECTION.  alpha = 1/2 + delta*sqrt2, beta = 1/2 + delta*sqrt3.
+  L = {(m,n) : m alpha + n beta in Z} = {0}:  m alpha + n beta = (m+n)/2 + delta(m sqrt2 +
+  n sqrt3), and 1, sqrt2, sqrt3 are linearly independent over Q, so the only solution is
+  m = n = 0.  THE ORBIT IS DENSE AND EQUIDISTRIBUTED IN T^2 — every hypothesis of the corpus's
+  'orbit dense in T^2 therefore the average converges to m(P)' clause is satisfied.
+  For every ODD k, (u^k,v^k) = (-1,-1) * (tiny rotation), i.e. the orbit sits at distance
+  ~2 pi k delta from the zero.  ONE VARIABLE MOVES DOWN THE TABLE: delta.
+
+       delta | N=      100 | N=     4000 | N=    10000 | N=  1000000 | N= 10000000 |  m(P)
+  ----------------------------------------------------------------------------------------------------
+  1e-3        |   -1.102680 |   -0.914298 |   -0.916182 |   -0.916309 |   -0.916291 | -0.916291
+  1e-6        |   -4.541667 |   -2.700612 |   -2.242592 |   -0.917129 |   -0.916206 | -0.916291
+  1e-9        |   -7.995544 |   -6.154476 |   -5.696382 |   -3.393832 |   -2.242627 | -0.916291
+  1e-12       |  -11.449422 |   -9.608353 |   -9.150260 |   -6.847709 |   -5.696417 | -0.916291
+  1e-15       |  -14.903434 |  -13.062239 |  -12.604141 |  -10.301587 |   -9.150294 | -0.916291
+  ----------------------------------------------------------------------------------------------------
+  CROSSOVER CHECK: the N at which the average first comes within 0.01 of m(P)
+     delta = 1e-3   first N within 0.01 of m(P): 1000   (1/delta = 1000)   ratio N/(1/delta) = 1.000
+     delta = 1e-4   first N within 0.01 of m(P): 10000   (1/delta = 10000)   ratio N/(1/delta) = 1.000
+     delta = 1e-5   first N within 0.01 of m(P): 100000   (1/delta = 99999)   ratio N/(1/delta) = 1.000
+     delta = 1e-6   first N within 0.01 of m(P): 1000000   (1/delta = 1000000)   ratio N/(1/delta) = 1.000
+     delta = 1e-7   first N within 0.01 of m(P): 10000000   (1/delta = 10000000)   ratio N/(1/delta) = 1.000
+
+  READ THE 'N = 4000' COLUMN.  4000 is S3's own measurement window (the register's erratum
+  against W-02 is about exactly that window).  At delta = 1e-9 the honest answer is log(2/5) =
+  -0.916291 and the measurement returns -6.154476, a factor of 6.72.  The deficit grows without
+  bound as delta -> 0 AT EVERY FIXED N.  There is therefore NO N at which lambda can be read
+  off without a hypothesis on the connection — and no amount of extra sampling fixes it,
+  because the failure is not statistical.
+
+========================================================================================================
+LEG 5 — THE LIMIT FAILURE, RIGOROUSLY, ON A FOUR-CLASS READY STATE.
+========================================================================================================
+  CONSTRUCTION.  gamma = 2^-3 + 2^-b2 + 2^-b3 + ... with b2 = 256 and b_{j+1} = 2^(2^b_j);
+  alpha = gamma/2; beta = 4^(1/3) mod 1.
+     * alpha is LIOUVILLE, beta is algebraic of degree 3.  L = {0}: m alpha + n beta in Z with
+       n != 0 would make beta Liouville, contradicting Roth's theorem; with n = 0 it would make
+       alpha rational.  SO THE ORBIT IS DENSE AND EQUIDISTRIBUTED IN T^2.
+     * q_j = 2^(b_j) satisfies || q_j alpha - 1/2 || ~ 2^(-b_{j+1}).
+  READY STATE: SENSE C four-class (1,1,1,1)/4, so log|Z_k| = log|1+u^k| + log|1+v^k| - log 4.
+  EVERY TERM IS <= 0 (|Z_k| <= 1, W-08), so for every j
+        (1/q_j) sum_{k<=q_j} log|Z_k|   <=   log|Z_{q_j}| / q_j ,
+  and no summation is needed to bound the average from above.
+     j=1: q_1 = 2^3 = 8   ||q alpha - 1/2|| = eps_1 ~ 2^-254 = 3.45447e-77
+          |1 + u^q| = 2 sin(pi eps_1) = 2.17051e-76   log|Z_q| <= -174.914654
+          => (1/q) sum_{k<=q} log|Z_k|  <=  -21.86433175      while m(P) = -1.386294361   (factor 15.77)
+     j=2: q_2 = 2^256 ~ 1.16e77,  b_3 = 2^(2^256),  eps_2 ~ 2^-(2^256).
+          log|Z_{q_2}| <= log(2 pi eps_2) + log(1/2) ~ -(2^256) log 2, so
+          (1/q_2) sum log|Z_k|  <=  -(2^256) log 2 / 2^256 ... and with
+          b_3 = 2^(2^256) the bound is -2^(2^256) * 0.693 / 1.16e77:
+          ASTRONOMICALLY NEGATIVE, and it is a BOUND, not a measurement.
+
+  THE FIRST BOUND ALREADY EXCEEDS m(P) BY A FACTOR OF ~16, AT N = 8, ON A DENSE ORBIT.
+  The second is beyond any floating-point representation and needs none: it is a bound, not a
+  measurement.  liminf_N (1/N) sum log|Z_k| = -infinity, while m(P) = -log 4 is finite.
+  SO 'THE ORBIT IS DENSE IN T^2, THEREFORE THE AVERAGE CONVERGES TO m(P)' IS A NON-SEQUITUR ON
+  A FOUR-CLASS READY STATE, exactly as M1 showed it is on K1's three-class one.

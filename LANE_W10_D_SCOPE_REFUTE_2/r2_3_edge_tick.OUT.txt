@@ -1,0 +1,140 @@
+========================================================================================================
+== 3B  COR-F's OWN EXHIBIT, REPRODUCED ON K1 (the audit's arm) ==
+========================================================================================================
+  ||T_C* T_C - I||          = 0.00e+00   (unitary)
+  T_C diagonal?              False
+  ||T_C^3 - M_c||           = 1.65e-16   (COR-F: 'T^3 equal to W-01's scalar operator')
+  ||T_F^3 - M_dF||          = 2.48e-16
+  diag(T_C rho T_C*)        = [0.15 0.15 0.15 0.4  0.15]
+  diag(rho)                 = [0.4  0.15 0.15 0.15 0.15]          NOT PRESERVED
+  ||[M_dF, M_c]||_F         = 0.00e+00   (scalar convention: ALWAYS 0)
+  ||[T_F,  T_C ]||_F        = 2.449490   (edge convention on K1)
+  COR-F REPRODUCED at the bytes, from an independent implementation.
+
+========================================================================================================
+== 3A  ARM DIFF: B0a AND B0b ARE THE SAME COMPLEX WITH ONE LOOP MOVED ==
+========================================================================================================
+  B0b loops MEET      gamma_F verts [0, 1, 3, 4]  gamma_C verts [0, 3, 6]  shared [0, 3]
+                      class multiset {'00':4, '01':1, '10':2, '11':2}   |gamma_F| = 4  |gamma_C| = 3
+  B0a loops DISJOINT  gamma_F verts [0, 1, 3, 4]  gamma_C verts [2, 5, 8]  shared []
+                      class multiset {'00':2, '01':3, '10':4, '11':0}   |gamma_F| = 4  |gamma_C| = 3
+  S4:575 B0a PUBLISHED {00:2, 01:3, 10:4}      S4:576 B0b PUBLISHED {00:4, 01:1, 10:2, 11:2}
+  BOTH REPRODUCED.  ONE VARIABLE SEPARATES THEM: which column is gamma_C.  Same complex,
+  same gamma_F, same connection, same loop LENGTHS (4 and 3).  This is the arm lane D
+  does not have: it separates FOUR CLASSES from UNEQUAL LOOP LENGTHS, which are confounded
+  in every four-class row of the scope table (B0b has both; B4 has four classes and equal
+  lengths 4 and 4; B0a has unequal lengths and three classes).
+
+========================================================================================================
+== 3C  COR-F's EDGE TRANSPORT ON THE FOUR-CLASS CARRIER.  ONE VARIABLE: DO THE LOOPS MEET ==
+========================================================================================================
+  arm                   |g_F|  |g_C|  shared  ||T_F^|g_F| - M_dF||  ||T_C^|g_C| - M_c||  ||[M_dF,M_c]||  ||[T_F,T_C]||
+  B0b loops MEET            4      3       2              1.24e-16             1.19e-16        0.00e+00       2.828427
+  B0a loops DISJOINT        4      3       0              1.24e-16             1.24e-16        0.00e+00       0.000000
+  K1 (both len 3)           3      3       1              2.48e-16             1.65e-16        0.00e+00       2.449490
+  T^L = M_gamma HOLDS ON EVERY CARRIER with L = the loop's EDGE LENGTH -- so COR-F's
+  alternative EXISTS off K1 and is not a K1 curiosity.  The scalar transports commute on
+  every carrier (they are diagonal); THE EDGE TRANSPORTS COMMUTE EXACTLY WHEN THE LOOPS
+  ARE DISJOINT, i.e. exactly when class 11 is EMPTY.  ||[T_F,T_C]|| is therefore a
+  function of the INCIDENCE, not of the class multiset alone -- and the corpus's central
+  survivor N2 says the incidence labels are invisible.  THEY ARE INVISIBLE TO THE SCALAR
+  CONVENTION AND VISIBLE TO THE CORPUS'S OWN SEALED ALTERNATIVE.
+
+========================================================================================================
+== 3D  THE CLOCK.  ONE VARIABLE: THE TRANSPORT CONVENTION, CARRIER AND STATE FIXED ==
+========================================================================================================
+  W-01's row: 'Its no-time claim is overstated -- CIRCUIT COUNT IS CARRIER-SUPPLIED
+  DISCRETE TIME.'  S3 sec3.5 makes circuit count the clock.  COR-F: 'Circuits supply
+  discrete time'.  On K1 one circuit of gamma_F and one of gamma_C are BOTH 3 edges, so
+  a circuit clock and an edge clock are the same clock up to a factor 3.  Off K1 they
+  are not, and the corpus has never compared them.
+
+  Scalar convention at circuit k:  Z_k = <M_dF^k s, M_c^k s>
+  Edge   convention at edge e:     Y_e = <T_F^e s, T_C^e s>
+
+    B0b loops MEET       |gamma_F| = 4, |gamma_C| = 3   lcm = 12
+         e   |Y_e| (edge clock) |    k  |Z_k| (circuit clock)   agree?
+         0       1.000000000000 |    0         1.000000000000     True
+         1       0.624906782406 |    -                      -        -
+         2       0.545882812729 |    -                      -        -
+         3       0.598977494665 |    -                      -        -
+         4       0.697930772746 |    -                      -        -
+         5       0.700430572160 |    -                      -        -
+         6       0.388119465982 |    -                      -        -
+         7       0.532192850894 |    -                      -        -
+         8       0.560623679561 |    -                      -        -
+         9       0.864287078330 |    -                      -        -
+        10       0.666071659929 |    -                      -        -
+        11       0.519262950656 |    -                      -        -
+        12       0.316098848859 |    3         0.445344560571    False
+
+    B0a loops DISJOINT   |gamma_F| = 4, |gamma_C| = 3   lcm = 12
+         e   |Y_e| (edge clock) |    k  |Z_k| (circuit clock)   agree?
+         0       1.000000000000 |    0         1.000000000000     True
+         1       0.288909779620 |    -                      -        -
+         2       0.251697092184 |    -                      -        -
+         3       0.409998992592 |    -                      -        -
+         4       0.676554525950 |    -                      -        -
+         5       0.389779520643 |    -                      -        -
+         6       0.236793478009 |    -                      -        -
+         7       0.444114258872 |    -                      -        -
+         8       0.349139850350 |    -                      -        -
+         9       0.310853852992 |    -                      -        -
+        10       0.284159687512 |    -                      -        -
+        11       0.539212360189 |    -                      -        -
+        12       0.308846260253 |    3         0.324058789832    False
+
+    K1 (both len 3)      |gamma_F| = 3, |gamma_C| = 3   lcm = 3
+         e   |Y_e| (edge clock) |    k  |Z_k| (circuit clock)   agree?
+         0       1.000000000000 |    0         1.000000000000     True
+         1       0.188076635732 |    -                      -        -
+         2       0.392028368931 |    -                      -        -
+         3       0.515424301513 |    1         0.515424301513     True
+         4       0.167614080451 |    -                      -        -
+         5       0.118359384963 |    -                      -        -
+         6       0.416634146721 |    2         0.416634146721     True
+         7       0.350152323536 |    -                      -        -
+         8       0.099744962470 |    -                      -        -
+         9       0.697397477526 |    3         0.697397477526     True
+        10       0.250382893049 |    -                      -        -
+        11       0.140723215489 |    -                      -        -
+        12       0.499713326982 |    4         0.499713326982     True
+
+  ON K1 the two clocks agree at EVERY multiple of 3, EXACTLY -- one circuit each, three
+  edges each -- so the corpus never had to choose, and every place it ever looked is a
+  place where the choice does not exist.
+  MY OWN CORRECTION, RECORDED NOT PATCHED: I first wrote that on B0a/B0b the two clocks
+  'coincide only at multiples of 12'.  THE TABLE ABOVE REFUTES MY OWN SENTENCE -- e = 12
+  prints agree? FALSE on both.  The lcm is where the two loops are simultaneously at a
+  whole circuit, but they are at DIFFERENT whole circuits: T_F^12 = M_dF^3 while
+  T_C^12 = M_c^4, so Y_12 = <M_dF^3 s, M_c^4 s>, which is not Z_k for ANY k.  THE TWO
+  CLOCKS NEVER COINCIDE AT ANY e > 0 WHEN THE LOOP LENGTHS DIFFER.  That is stronger
+  than what I first claimed, and it is the version the numbers support.
+  Note also K1's e = 3, 6, 9, 12 rows in leg 3E: the edge convention's branch separation
+  is EXACTLY ZERO there, because T^3 = M_gamma is scalar.  On K1 the two conventions
+  agree at exactly the ticks the corpus clocked, and nowhere else; on B0b they agree
+  nowhere at all.  'Circuit count is carrier-supplied discrete time' (W-01's row) is a
+  well-defined stipulation only when the two designated loops have the SAME LENGTH, and
+  the corpus's ten-carrier table shows two carriers where they do not -- B0a and B0b.
+  NO ROW OF THE REGISTER AND NO ROW OF THE SCOPE TABLE STATES THIS CONDITION.
+
+========================================================================================================
+== 3E  COR-F's PAYLOAD OFF K1: A DIAGONAL OBSERVABLE SEPARATES THE EDGE-TICK BRANCHES ==
+========================================================================================================
+  S3-0's body: the gauge-invariant algebra is the diagonal, and the diagonal cannot tell
+  M_dF s from M_c s.  COR-F: true of W-01's SCALAR transports, false of a bona fide
+  edge transport around the SAME cycle.  ONE VARIABLE: the transport convention.
+  arm                   k/e   max_v |diag scalar branches|   max_v |diag edge branches|
+  B0b loops MEET          1                       2.78e-17               0.244292102384
+  B0b loops MEET          2                       1.67e-16               0.244292102384
+  B0b loops MEET          3                       1.67e-16               0.054517856355
+  B0a loops DISJOINT      1                       1.11e-16               0.131366671633
+  B0a loops DISJOINT      2                       5.55e-17               0.144543215464
+  B0a loops DISJOINT      3                       5.55e-17               0.131366671633
+  K1 (both len 3)         1                       1.11e-16               0.280006393365
+  K1 (both len 3)         2                       1.11e-16               0.325081995081
+  K1 (both len 3)         3                       1.11e-16               0.000000000000
+  THE SCALAR CONVENTION GIVES 0 ON EVERY CARRIER (that IS S3-0, and it is an identity).
+  THE EDGE CONVENTION SEPARATES ON EVERY CARRIER INCLUDING THE FOUR-CLASS ONE.  COR-F is
+  CARRIER-INDEPENDENT, it is not scoped anywhere in lane D's table, and it is the one
+  object W-06's row names as having decided the spine.

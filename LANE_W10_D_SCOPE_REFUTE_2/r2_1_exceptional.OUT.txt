@@ -1,0 +1,173 @@
+========================================================================================================
+ARM DIFF FIRST.  The weight 4-vectors (p00,p10,p01,p11) actually handed to the SAME
+routines.  Two byte-identical arms reported as a confirmation is this corpus's commonest
+FATAL defect, so the arms are printed and pairwise-compared before any result.
+========================================================================================================
+   K1  S3 ready state  (3cl)   [0.  0.3 0.3 0.4]
+   B1  K1 SENSE-U      (3cl)   [0.  0.4 0.4 0.2]
+   B1q spectator       (3cl)   [0.142857143 0.428571429 0.428571429 0.         ]
+   B0b torus, meeting  (4cl)   [0.444444444 0.222222222 0.111111111 0.222222222]
+   B4  spindle         (4cl)   [0.166666667 0.166666667 0.166666667 0.5        ]
+   SENSE-C 4 classes   (4cl)   [0.25 0.25 0.25 0.25]
+   DISTINCT ARMS: 6 of 6
+
+========================================================================================================
+== 1A  VALIDATE THE ROUTINE AGAINST S4 sec3.1's OWN PUBLISHED EXCEPTIONAL-VALUE COLUMN ==
+========================================================================================================
+  S4's table is computed on K1 with the S3 ready state p=(0.4,.15,.15,.15,.15), i.e.
+  class weights (p00,p10,p01,p11) = (0, 0.3, 0.3, 0.4).  If my routine does not
+  reproduce S4's published column, NOTHING BELOW IS ABOUT THE CORPUS'S OBJECT.
+  generic m(P) on those weights = -0.767507880358   S4/erratum publish -0.767507880358   dev 2.22e-13
+       (m,n)     mine (roots)     S4 published        dev      quad xcheck
+      (1, 0)  -0.356674943939     -0.356674944   6.13e-11  -0.356674943939
+      (0, 1)  -0.356674943939     -0.356674944   6.13e-11  -0.356674943939
+      (1, 1)  -1.203972804326     -1.203972804   3.26e-10  -1.203973226453
+     (1, -1)  -0.510825623766     -0.510825624   2.34e-10  -0.510825623766
+      (2, 1)  -0.681980358627     -0.681980359   3.73e-10  -0.681980358627
+     (2, -1)  -0.916290731874     -0.916290732   1.26e-10  -0.916290731874
+      (3, 1)  -0.767783712479     -0.767783712   4.79e-10  -0.767783712479
+      (3, 2)  -0.732940865120     -0.732940865   1.20e-10  -0.732940865120
+      (4, 1)  -0.784966658904     -0.784966659   9.59e-11  -0.784966658904
+      (5, 1)  -0.749392712319     -0.749392712   3.19e-10  -0.749392712319
+      (5, 3)  -0.765224350526     -0.765224351   4.74e-10  -0.765224350526
+      (7, 3)  -0.759305247360     -0.759305247   3.60e-10  -0.759305247360
+     (7, 11)  -0.764712281400     -0.764712281   4.00e-10  -0.764712281400
+    (11, 20)  -0.767014992998     -0.767014993   2.34e-12  -0.767014992998
+     (13, 8)  -0.768271734211     -0.768271734   2.11e-10  -0.768271734211
+    (29, 17)  -0.767138178746     -0.767138179   2.54e-10  -0.767138178746
+  WORST DEVIATION FROM S4's PUBLISHED COLUMN: 4.79e-10.  The routine is S4's object.
+  (S4's column is printed to 9 places, so its own rounding is 5e-10.)
+
+========================================================================================================
+== 1B  THE SAME BLOCK, ONE VARIABLE MOVED: THE CLASS WEIGHT VECTOR ==
+========================================================================================================
+  For each arm: the 16 exceptional values on the SAME 16 primitive loci, the generic
+  value, the range, and the above/below split S4 publishes as '13 above, 6 below'.
+
+  arm                           generic m(P)      min exc      max exc  #above  #below   max|dev|
+  K1  S3 ready state  (3cl)     -0.767507880    -1.203973    -0.356675      11       5   4.36e-01
+  B1  K1 SENSE-U      (3cl)     -0.756573586    -0.916291    -0.223144      10       6   5.33e-01
+  B1q spectator       (3cl)     -0.741029583    -0.847298    -0.154151      10       6   5.87e-01
+  B0b torus, meeting  (4cl)     -0.810930216    -1.056065    -0.405465      12       4   4.05e-01
+  B4  spindle         (4cl)     -0.693147181    -0.773168    -0.405465      10       6   2.88e-01
+  SENSE-C 4 classes   (4cl)     -1.386292610    -1.386294    -0.693147       2      14   6.93e-01
+
+  S4 publishes for K1: 19 distinct values, range [-1.203973, -0.356675], 13 above /
+  6 below.  On the 16 loci above the K1 arm reproduces that shape.  READ THE FOUR-CLASS
+  ROWS AGAINST IT.
+
+  FULL TABLE, all arms, all 16 loci (deviation from that arm's own generic value):
+      (m,n)           K1           B1          B1q          B0b           B4      SENSE-C
+     (1, 0)    +4.11e-01    +2.46e-01    +1.81e-01    +4.05e-01    +2.88e-01    +6.93e-01
+     (0, 1)    +4.11e-01    +2.46e-01    +1.81e-01    +2.23e-01    +2.88e-01    +6.93e-01
+     (1, 1)    -4.36e-01    -1.60e-01    -1.06e-01    +3.45e-01    +2.18e-01    -1.74e-06
+    (1, -1)    +2.57e-01    +5.33e-01    +5.87e-01    +5.55e-16    +6.66e-16    -1.74e-06
+     (2, 1)    +8.55e-02    +2.05e-02    +1.09e-02    -2.45e-01    -8.00e-02    -1.75e-06
+    (2, -1)    -1.49e-01    -1.60e-01    -1.06e-01    +5.55e-16    -2.22e-16    -1.75e-06
+     (3, 1)    -2.76e-04    +1.48e-02    +1.09e-02    +7.89e-02    +2.35e-02    -1.74e-06
+     (3, 2)    +3.46e-02    +5.86e-03    +3.15e-03    +4.65e-02    +8.43e-03    -1.75e-06
+     (4, 1)    -1.75e-02    -8.20e-03    -2.86e-03    -5.59e-02    -8.44e-03    -1.75e-06
+     (5, 1)    +1.81e-02    -2.03e-03    -3.97e-03    +2.14e-02    +2.71e-03    -1.75e-06
+     (5, 3)    +2.28e-03    +3.90e-03    +2.70e-03    +1.05e-02    +3.10e-04    -1.74e-06
+     (7, 3)    +8.20e-03    -9.28e-04    -1.49e-03    +9.78e-03    +3.05e-04    -1.75e-06
+    (7, 11)    +2.80e-03    -3.08e-04    -4.66e-04    -1.45e-05    -1.19e-07    -1.75e-06
+   (11, 20)    +4.93e-04    +2.37e-04    +1.84e-04    +1.17e-08    -4.84e-10    -1.75e-06
+    (13, 8)    -7.64e-04    +5.97e-04    +3.38e-04    -9.06e-05    +8.32e-08    -1.75e-06
+   (29, 17)    +3.70e-04    +1.27e-04    +5.12e-05    +3.27e-08    -5.33e-15    -1.75e-06
+
+========================================================================================================
+== 1C  THE ERRATUM AGAINST W-02's OWN ROW, (m,n) = (11,20), ON EVERY ARM ==
+========================================================================================================
+  The erratum is a REGISTER ROW.  Its content: S3/S4's headline f=2.0, c=1.1 is exactly
+  resonant (-11f+20c=0), so its orbit is on a SUBTORUS and its average is NOT the generic
+  average.  On K1 that is a +4.93e-04 departure.  ONE VARIABLE MOVED (the weight vector):
+
+  arm                                generic   subtorus (11,20)    departure
+  K1  S3 ready state  (3cl)     -0.767507880       -0.767014993   +4.929e-04
+  B1  K1 SENSE-U      (3cl)     -0.756573586       -0.756337009   +2.366e-04
+  B1q spectator       (3cl)     -0.741029583       -0.740845771   +1.838e-04
+  B0b torus, meeting  (4cl)     -0.810930216       -0.810930205   +1.168e-08
+  B4  spindle         (4cl)     -0.693147181       -0.693147181   -4.844e-10
+  SENSE-C 4 classes   (4cl)     -1.386292610       -1.386294361   -1.751e-06
+
+  LANE D's leg 2C measured this same point on B0b by a 4e5-term time average and got
+  a deviation of 9.66e-07, which it read as N3 confirmation ('the resonant points are
+  exactly where the rate departs').  COMPARE THE EXACT SUBTORUS VALUE ABOVE.
+  Reproducing lane D's own measurement, same code path, to show what 9.66e-07 was:
+    B0b torus, meeting  (4cl)  time-avg N=4e5 -0.810931182   exact subtorus -0.810930205   |t-avg - exact| 9.77e-07   |t-avg - generic| 9.66e-07
+    B4  spindle         (4cl)  time-avg N=4e5 -0.693147842   exact subtorus -0.693147181   |t-avg - exact| 6.61e-07   |t-avg - generic| 6.62e-07
+    K1  S3 ready state  (3cl)  time-avg N=4e5 -0.767013534   exact subtorus -0.767014993   |t-avg - exact| 1.46e-06   |t-avg - generic| 4.94e-04
+
+========================================================================================================
+== 1D  S4's ACCUMULATION TABLE (Lawton 1983), ONE VARIABLE MOVED ==
+========================================================================================================
+  S4 publishes, for K1: (1,1) -4.36e-01 · (5,3) +2.28e-03 · (11,20) +4.93e-04 ·
+  (41,53) +9.09e-05 · (97,61) -7.69e-06 · (610,377) +5.25e-07.  Lawton's theorem is the
+  reason and W-03's correction records it MISSING FROM S4's IMPORT AUDIT.
+
+        (m,n)  |m|+|n|            K1            B1           B1q           B0b            B4       SENSE-C
+       (1, 1)        2     -4.36e-01     -1.60e-01     -1.06e-01     +3.45e-01     +2.18e-01     -1.74e-06
+       (5, 3)        8     +2.28e-03     +3.90e-03     +2.70e-03     +1.05e-02     +3.10e-04     -1.74e-06
+     (11, 20)       31     +4.93e-04     +2.37e-04     +1.84e-04     +1.17e-08     -4.84e-10     -1.75e-06
+     (41, 53)       94     +9.09e-05     +3.05e-05     +1.22e-05     +1.55e-14     +6.00e-14     -1.75e-06
+     (97, 61)      158     -7.69e-06     +1.04e-05     -1.09e-05     +3.54e-14     +9.19e-14     -1.75e-06
+   (610, 377)      987     +5.25e-07     +2.29e-07     +1.78e-07     +1.01e-12     +1.95e-12     -1.75e-06
+
+  Every column accumulates on 0 -- Lawton is carrier-independent.  THE RATE AT WHICH
+  IT ACCUMULATES, AND THEREFORE HOW MUCH STRUCTURE THE EXCEPTIONAL SET CARRIES, IS NOT.
+
+========================================================================================================
+== 1E  WHY THE FOUR-CLASS COLUMNS COLLAPSE, AND ONE PRECISION DEFECT OF MY OWN ==
+========================================================================================================
+  (a) TORUS ZEROS.  P(x,y) = (p00+p01 y) + x(p10+p11 y) has a zero on T^2 iff the two
+      Jensen branches meet, i.e. iff  A + B cos t = 0  has a root in [-1,1], with
+      A = p00^2+p01^2-p10^2-p11^2 and B = 2(p00 p01 - p10 p11).  This is lane D's own
+      leg 1D criterion.  Lawton's convergence is SLOW exactly when there is a log
+      singularity to resolve on the shrinking subtorus, i.e. exactly when P has a
+      torus zero -- which is exactly when W-01's criterion can fire at all.
+  arm                                   A            B  torus zero?   |dev| at (41,53)
+  K1  S3 ready state  (3cl)     -0.160000    -0.240000         True           9.09e-05
+  B1  K1 SENSE-U      (3cl)     -0.040000    -0.160000         True           3.05e-05
+  B1q spectator       (3cl)      0.020408     0.122449         True           1.22e-05
+  B0b torus, meeting  (4cl)      0.111111     0.000000        False           1.55e-14
+  B4  spindle         (4cl)     -0.222222    -0.111111        False           6.00e-14
+  SENSE-C 4 classes   (4cl)      0.000000     0.000000         True           1.75e-06
+      EVERY arm with a torus zero has |dev| ~ 1e-5 at (41,53); every arm without one is
+      at 1e-14.  The three-class arms have torus zeros; the two four-class carriers the
+      corpus owns do not, AT THEIR OWN PUBLISHED WEIGHTS.  (SENSE-C is the four-class
+      arm that DOES have them -- a whole curve -- and it is the exception that fixes the
+      variable: the mechanism is the WEIGHTS, not the class count.)
+
+  (b) THE (1,-1) ROW IN CLOSED FORM -- c = -f, the resonance lane D reported as
+      departing by 5.80e-07 on B0b.  Exactly: Q = (p01+p10) + p00 z + p11 z^{-1},
+      so z.Q = p11 + (p01+p10) z + p00 z^2, LEADING COEFFICIENT p00.
+      MY OWN CONFOUND, RECORDED NOT PATCHED: the first version of this block passed the
+      coefficient array to np.roots REVERSED (giving the polynomial p11 z^2 + ... + p00)
+      while still taking log|p00| as the leading coefficient, so the three arms with
+      p00 != 0 printed nonsense (B1q -1.205e+00, B0b +6.931e-01, B4 -1.099e+00 as the
+      'departure').  Both statistics are printed below.  The MAIN tables 1B/1C/1D were
+      never affected -- they call m_one_var(), which takes the leading coefficient of
+      the array it actually factors -- and they already carried the correct figures.
+    arm                              m (CORRECT)           generic    departure    m (DEFECTIVE 1st run)
+    K1  S3 ready state  (3cl)    -0.510825623766   -0.767507880358   +2.567e-01          -0.510825623766   [agrees with 1B to 0.0e+00]
+    B1  K1 SENSE-U      (3cl)    -0.223143551314   -0.756573585640   +5.334e-01          -0.223143551314   [agrees with 1B to 0.0e+00]
+    B1q spectator       (3cl)    -0.154150679827   -0.741029582571   +5.869e-01          -1.945910149055   [agrees with 1B to 0.0e+00]
+    B0b torus, meeting  (4cl)    -0.810930216216   -0.810930216216   +5.551e-16          -0.117783035656   [agrees with 1B to 0.0e+00]
+    B4  spindle         (4cl)    -0.693147180560   -0.693147180560   +6.661e-16          -1.791759469228   [agrees with 1B to 0.0e+00]
+      On BOTH four-class carriers the departure at c = -f is EXACTLY ZERO (the closed
+      form returns the generic value), and lane D printed 5.80e-07 for it.
+
+  (c) MY OWN PRECISION DEFECT, RECORDED NOT PATCHED.  My generic-value routine is
+      split Gauss-Legendre on the Jensen branches.  On SENSE-C the two branches COINCIDE
+      on the whole circle (P = (1+x)(1+y)/4), so the split is degenerate and the routine
+      returns -1.386292610 against the exact log(1/4) = -1.386294361 -- an error of
+      1.75e-06, which is the ENTIRE SENSE-C column of 1B/1D.  That column is therefore
+      MY quadrature error and not an exceptional-value structure; the exact SENSE-C
+      exceptional values are log(1/4) at every (m,n) with m,n both non-zero and log(1/2)
+      at (1,0),(0,1).  Corrected figures:
+        SENSE-C (m,n)=   (1, 0)  m = -0.693147180560   exact generic log(1/4) = -1.386294361120   dep +6.93e-01
+        SENSE-C (m,n)=   (1, 1)  m = -1.386294354431   exact generic log(1/4) = -1.386294361120   dep +6.69e-09
+        SENSE-C (m,n)= (11, 20)  m = -1.386294361120   exact generic log(1/4) = -1.386294361120   dep +8.22e-15
+        SENSE-C (m,n)= (41, 53)  m = -1.386294361120   exact generic log(1/4) = -1.386294361120   dep +1.71e-13
+      No other arm is affected: every other arm's branches cross transversally or not at
+      all, and 1A validates the whole pipeline against S4's published column at 4.8e-10.

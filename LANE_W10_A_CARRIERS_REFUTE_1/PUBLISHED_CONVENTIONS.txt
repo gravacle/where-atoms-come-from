@@ -1,0 +1,71 @@
+LANE W10-A REFUTER 1 — LENS: MATHEMATICS — PUBLISHED CONVENTIONS
+Everything needed to re-run this refutation from scratch is on this page.
+
+ASSIGNMENT.  Attack lane A ("/Users/bgm/MB Work/where-atoms-come-from/LANE_W10_A_CARRIERS").
+Lens 1, MATHEMATICS: attack the reconstructions; if a published S4 row cannot be reproduced
+from the lane's incidence, decide whether S4 or the lane is wrong and say which.
+
+LINEAGE.  Claude Opus 5.  SAME LINEAGE as W-07, W-08, W-09, the registrar's brief AND lane A.
+Under custody sec4 this refutation is NOT lineage-independent of the lane it attacks.  It IS
+lineage-independent of S1-S4 (Fable 5).  Grade accordingly.  This is layer ELEVEN.
+
+WHAT I DID NOT READ.  LANE_W10_A_CARRIERS_REFUTE_2/ and LANE_W10_B_MULTISET/,
+LANE_W10_C_N1/, LANE_W10_D_SCOPE/ exist on disk from this same round.  I did not open any of
+them, so that my findings are mine.  I DID read LANE_R_MAPS_REFUTER/ (an EARLIER round), and
+that reading is itself one of my findings -- see r1_rebuild.OUT.txt Q4.
+
+FIRST STEP, BEFORE ANY ATTACK: REPRODUCTION.
+  shasum -a 256 -c on the lane's SEALS.sha256                     12/12 OK
+  all five lane scripts re-run from the copied sources            all five .OUT.txt BYTE-IDENTICAL
+  to the sealed ones (diff -q, 0 differences)
+  => the lane is exactly reproducible.  Nothing below is a reproducibility complaint.
+
+MY OWN CODE.  r1lib.py is written from scratch and imports nothing from w10a_lib.  Its
+indexing is deliberately different from the lane's (B0b: vertex (i,j) -> 3i+j and vertical
+edges first, where the lane uses 3j+i and horizontals first; B4: interleaved edge order), so
+that agreement is evidence rather than a shared bug.  Its rank routine is a separate
+implementation.  WHERE I DELIBERATELY RUN THE LANE'S OWN CODE I say so and import it by module
+name (r2_lattice.py imports w10a_lib; that is the point of that script).
+
+CARRIER CONVENTIONS (mine, matching the corpus's):
+  d1[v,e] = +1 if v = head(e), -1 if v = tail(e).  faces and loops are signed edge chains.
+  ranks over Q by Fraction elimination.  b0 = V - rk d1;  b1 = (E - rk d1) - rk d2;
+  b2 = F - rk d2;  gauge = V - b0;  invariants = E - gauge;  curvature = rk d2;  flat = b1.
+  class(v) = ([v is an endpoint of an edge of gamma_F], [same for gamma_C]).
+  pi = (p00, p10, p01, p11);  P(x,y) = p00 + p10 x + p01 y + p11 xy;  Z_k = P(u^k, v^k)
+  with u = conj(W_F) = e^{-if}, v = W_C = e^{ic}.
+
+PRECISION.  EXACT (Fraction / integer / group-ring Z[x]/(x^q-1)) in r1, r2, r5 and in the
+branch-dominance and factorisation tests of r3.  mpmath 1.4.1 at mp.dps = 30 for every Mahler
+measure in r3 part A, with the quadrature panels split at the EXACT branch-crossing points
+cos t = -C/D (see the note in r3 -- my first draft lost seven digits on the two crossing rows
+and that is recorded in the file rather than patched away).  IEEE double only where the lane's
+own float code is being re-run on purpose (r2 part C, r3 part D, r4 part F).
+
+SEEDS.  numpy default_rng: 11223344 (r2 lattice fuzzing), 20260816 (r3 part D, the lane's own
+master seed, so my permutation draws are comparable to its).
+
+MY OWN DEFECTS, RECORDED NOT PATCHED:
+  1. r2 part A's first reference implementation compared a BFS lattice closure confined to a
+     box against a direct enumeration, and reported 52 false "hnf2 wrong" hits -- a BFS in a
+     box cannot reach the box's corners.  MY bug, not the lane's.  The closure is now computed
+     at radius 40 and both sides restricted to radius 10; 0 disagreements.  The false alarm is
+     recorded in the file.
+  2. r4 part E originally printed a second "separation test" column for the firing region that
+     returned 1.000000 on every row -- a wrong implementation of the half-plane test.  It is
+     REMOVED, with the removal stated in the docstring, and only the max-gap test (which
+     reproduces W-09's exact 1/4 and 1/2) is reported.
+  3. r3 part A, first draft: mp.quad on the kinked integrand log max(|A|,|B|) without panel
+     splitting gave -0.7565737736 for B1 against S4's -0.756573586.  MY quadrature, not a
+     disagreement with S4.  Fixed by splitting at the exact crossings; recorded in the file.
+
+THE ONE THING THAT MOVES, PER SCRIPT.
+  r1 Q2/Q3: the CW structure and the gamma_C designation, with S4's published columns held
+            fixed.  That is the variable the lane's build validation cannot move, because the
+            lane's target table fixes the answer.
+  r2 C:     the ORDER q of the branch ratio, with support, weights, K, evaluator, verdict rule
+            and code path byte-identical to the lane's (I call the lane's own sweep()).
+  r3 D:     the ARGUMENT of the coefficient vector, with its modulus profile held fixed
+            (e^{i phi} times the same real vector -- the same 24 permutations, same grid).
+  r4 F:     which of the two channels is trivial, on one fixed factoring pi.
+  r5:       the modulus q, with the weights and the class count held fixed.

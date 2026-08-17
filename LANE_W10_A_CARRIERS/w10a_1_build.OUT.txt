@@ -1,0 +1,197 @@
+====================================================================================================
+W10-A SCRIPT 1 — B0b AND B4 BUILT AND VALIDATED AGAINST S4:511-590
+====================================================================================================
+Exact integer/Fraction arithmetic throughout this script.  No float appears in any check.
+
+----------------------------------------------------------------------------------------------------
+CARRIER B1  —  B1  K1 (the pinch, as handed)
+----------------------------------------------------------------------------------------------------
+VERTICES: 0:v0, 1:v1, 2:v2, 3:v3, 4:v4
+EDGES (tail -> head):
+   e0:v0->v1  e1:v1->v2  e2:v2->v0  e3:v0->v3  e4:v3->v4  e5:v4->v0
+FACES (attaching chains, (edge,sign)):
+   F0: +e0 +e1 +e2
+gamma_F = +e0 +e1 +e2
+gamma_C = +e3 +e4 +e5
+
+  d1 . d2 max|entry| = 0        OK 
+  regular (attaching maps injective on the boundary): True
+  V=5 E=6 F=1   rank d1=4 rank d2=1
+     V     got   5  S4   5   OK 
+     E     got   6  S4   6   OK 
+     F     got   1  S4   1   OK 
+     chi   got   0  S4   0   OK 
+     b0    got   1  S4   1   OK 
+     b1    got   1  S4   1   OK 
+     b2    got   0  S4   0   OK 
+     gauge got   4  S4   4   OK 
+     inv   got   2  S4   2   OK 
+     curv  got   1  S4   1   OK 
+     flat  got   1  S4   1   OK 
+     chi = b0-b1+b2 : 0 = 0   OK 
+     curv+flat = inv: 2 = 2   OK 
+  gamma_F: d1(gF)=0 ? True   bounds ? True  OK 
+  gamma_C: d1(gC)=0 ? True   bounds ? False  OK 
+  independent (rank[gF|gC] = 2) ? True  OK 
+  VERTEX CLASSES (a_v = in gamma_F, b_v = in gamma_C):
+     v0:11  v1:10  v2:10  v3:01  v4:01
+  CLASS MULTISET  got {00:0, 01:2, 10:2, 11:1}
+                   S4 {00:0, 01:2, 10:2, 11:1}   OK 
+  OCCUPIED CLASSES: ['10', '01', '11']   (|occ| = 3)
+  SENSE U pushforward pi = (p00,p10,p01,p11) = (0, 2/5, 2/5, 1/5)   sum = 1
+  support difference lattice L_S basis (EXACT) = ((1, 0), (0, 1))   rank 2
+  factorisation test  p00*p11 - p10*p01 = -4/25   (P factors as (a+bx)(c+dy) iff this is 0)
+
+----------------------------------------------------------------------------------------------------
+CARRIER B1q  —  B1q K1-bridged + spectator
+----------------------------------------------------------------------------------------------------
+VERTICES: 0:v0, 1:v1, 2:v2, 3:w0, 4:w1, 5:w2, 6:m
+EDGES (tail -> head):
+   e0:v0->v1  e1:v1->v2  e2:v2->v0  e3:w0->w1  e4:w1->w2  e5:w2->w0  e6:v0->m  e7:m->w0
+FACES (attaching chains, (edge,sign)):
+   F0: +e0 +e1 +e2
+gamma_F = +e0 +e1 +e2
+gamma_C = +e3 +e4 +e5
+
+  d1 . d2 max|entry| = 0        OK 
+  regular (attaching maps injective on the boundary): True
+  V=7 E=8 F=1   rank d1=6 rank d2=1
+     V     got   7  S4   7   OK 
+     E     got   8  S4   8   OK 
+     F     got   1  S4   1   OK 
+     chi   got   0  S4   0   OK 
+     b0    got   1  S4   1   OK 
+     b1    got   1  S4   1   OK 
+     b2    got   0  S4   0   OK 
+     gauge got   6  S4   6   OK 
+     inv   got   2  S4   2   OK 
+     curv  got   1  S4   1   OK 
+     flat  got   1  S4   1   OK 
+     chi = b0-b1+b2 : 0 = 0   OK 
+     curv+flat = inv: 2 = 2   OK 
+  gamma_F: d1(gF)=0 ? True   bounds ? True  OK 
+  gamma_C: d1(gC)=0 ? True   bounds ? False  OK 
+  independent (rank[gF|gC] = 2) ? True  OK 
+  VERTEX CLASSES (a_v = in gamma_F, b_v = in gamma_C):
+     v0:10  v1:10  v2:10  w0:01  w1:01  w2:01  m:00
+  CLASS MULTISET  got {00:1, 01:3, 10:3, 11:0}
+                   S4 {00:1, 01:3, 10:3, 11:0}   OK 
+  OCCUPIED CLASSES: ['00', '10', '01']   (|occ| = 3)
+  SENSE U pushforward pi = (p00,p10,p01,p11) = (1/7, 3/7, 3/7, 0)   sum = 1
+  support difference lattice L_S basis (EXACT) = ((1, 0), (0, 1))   rank 2
+  factorisation test  p00*p11 - p10*p01 = -9/49   (P factors as (a+bx)(c+dy) iff this is 0)
+
+----------------------------------------------------------------------------------------------------
+CARRIER B0b  —  B0b ring torus 3x3 grid, loops MEET
+----------------------------------------------------------------------------------------------------
+VERTICES: 0:(0,0), 1:(1,0), 2:(2,0), 3:(0,1), 4:(1,1), 5:(2,1), 6:(0,2), 7:(1,2), 8:(2,2)
+EDGES (tail -> head):
+   e0:(0,0)->(1,0)  e1:(1,0)->(2,0)  e2:(2,0)->(0,0)  e3:(0,1)->(1,1)  e4:(1,1)->(2,1)  e5:(2,1)->(0,1)  e6:(0,2)->(1,2)  e7:(1,2)->(2,2)  e8:(2,2)->(0,2)  e9:(0,0)->(0,1)  e10:(1,0)->(1,1)  e11:(2,0)->(2,1)  e12:(0,1)->(0,2)  e13:(1,1)->(1,2)  e14:(2,1)->(2,2)  e15:(0,2)->(0,0)  e16:(1,2)->(1,0)  e17:(2,2)->(2,0)
+FACES (attaching chains, (edge,sign)):
+   F0: +e0 +e10 -e3 -e9
+   F1: +e1 +e11 -e4 -e10
+   F2: +e2 +e9 -e5 -e11
+   F3: +e3 +e13 -e6 -e12
+   F4: +e4 +e14 -e7 -e13
+   F5: +e5 +e12 -e8 -e14
+   F6: +e6 +e16 -e0 -e15
+   F7: +e7 +e17 -e1 -e16
+   F8: +e8 +e15 -e2 -e17
+gamma_F = +e0 +e10 -e3 -e9
+gamma_C = +e0 +e1 +e2
+
+  d1 . d2 max|entry| = 0        OK 
+  regular (attaching maps injective on the boundary): True
+  V=9 E=18 F=9   rank d1=8 rank d2=8
+     V     got   9  S4   9   OK 
+     E     got  18  S4  18   OK 
+     F     got   9  S4   9   OK 
+     chi   got   0  S4   0   OK 
+     b0    got   1  S4   1   OK 
+     b1    got   2  S4   2   OK 
+     b2    got   1  S4   1   OK 
+     gauge got   8  S4   8   OK 
+     inv   got  10  S4  10   OK 
+     curv  got   8  S4   8   OK 
+     flat  got   2  S4   2   OK 
+     chi = b0-b1+b2 : 0 = 0   OK 
+     curv+flat = inv: 10 = 10   OK 
+  gamma_F: d1(gF)=0 ? True   bounds ? True  OK 
+  gamma_C: d1(gC)=0 ? True   bounds ? False  OK 
+  independent (rank[gF|gC] = 2) ? True  OK 
+  VERTEX CLASSES (a_v = in gamma_F, b_v = in gamma_C):
+     (0,0):11  (1,0):11  (2,0):01  (0,1):10  (1,1):10  (2,1):00  (0,2):00  (1,2):00  (2,2):00
+  CLASS MULTISET  got {00:4, 01:1, 10:2, 11:2}
+                   S4 {00:4, 01:1, 10:2, 11:2}   OK 
+  OCCUPIED CLASSES: ['00', '10', '01', '11']   (|occ| = 4)
+  SENSE U pushforward pi = (p00,p10,p01,p11) = (4/9, 2/9, 1/9, 2/9)   sum = 1
+  support difference lattice L_S basis (EXACT) = ((1, 0), (0, 1))   rank 2
+  factorisation test  p00*p11 - p10*p01 = 2/27   (P factors as (a+bx)(c+dy) iff this is 0)
+
+----------------------------------------------------------------------------------------------------
+CARRIER B4  —  B4  spindle (two spheres, 2 glue pts)
+----------------------------------------------------------------------------------------------------
+VERTICES: 0:p, 1:q, 2:a1, 3:a2, 4:b1, 5:b2
+EDGES (tail -> head):
+   e0:p->a1  e1:a1->q  e2:q->a2  e3:a2->p  e4:p->b1  e5:b1->q  e6:q->b2  e7:b2->p
+FACES (attaching chains, (edge,sign)):
+   F0: +e0 +e1 +e2 +e3
+   F1: +e0 +e1 +e2 +e3
+   F2: +e4 +e5 +e6 +e7
+   F3: +e4 +e5 +e6 +e7
+gamma_F = +e0 +e1 +e2 +e3
+gamma_C = +e0 +e1 -e5 -e4
+
+  d1 . d2 max|entry| = 0        OK 
+  regular (attaching maps injective on the boundary): True
+  V=6 E=8 F=4   rank d1=5 rank d2=2
+     V     got   6  S4   6   OK 
+     E     got   8  S4   8   OK 
+     F     got   4  S4   4   OK 
+     chi   got   2  S4   2   OK 
+     b0    got   1  S4   1   OK 
+     b1    got   1  S4   1   OK 
+     b2    got   2  S4   2   OK 
+     gauge got   5  S4   5   OK 
+     inv   got   3  S4   3   OK 
+     curv  got   2  S4   2   OK 
+     flat  got   1  S4   1   OK 
+     chi = b0-b1+b2 : 2 = 2   OK 
+     curv+flat = inv: 3 = 3   OK 
+  gamma_F: d1(gF)=0 ? True   bounds ? True  OK 
+  gamma_C: d1(gC)=0 ? True   bounds ? False  OK 
+  independent (rank[gF|gC] = 2) ? True  OK 
+  VERTEX CLASSES (a_v = in gamma_F, b_v = in gamma_C):
+     p:11  q:11  a1:11  a2:10  b1:01  b2:00
+  CLASS MULTISET  got {00:1, 01:1, 10:1, 11:3}
+                   S4 {00:1, 01:1, 10:1, 11:3}   OK 
+  OCCUPIED CLASSES: ['00', '10', '01', '11']   (|occ| = 4)
+  SENSE U pushforward pi = (p00,p10,p01,p11) = (1/6, 1/6, 1/6, 1/2)   sum = 1
+  support difference lattice L_S basis (EXACT) = ((1, 0), (0, 1))   rank 2
+  factorisation test  p00*p11 - p10*p01 = 1/18   (P factors as (a+bx)(c+dy) iff this is 0)
+
+====================================================================================================
+VALIDATION SUMMARY
+====================================================================================================
+ALL 4 CARRIERS REPRODUCE S4's PUBLISHED ROWS EXACTLY:
+  V, E, F, chi, b0, b1, b2, gauge params, invariants, curvature, flat,
+  gF bounds / gC does not / independent, and the CLASS MULTISET — 0 mismatches.
+  S4 was never audited; these rows are audited now and they hold.
+
+----------------------------------------------------------------------------------------------------
+THE FOUR-CLASS FACT THAT IS THE POINT OF THIS SCRIPT
+----------------------------------------------------------------------------------------------------
+B1 (K1)  occupies {01,10,11}  — a vertex in BOTH loops, none in NEITHER.
+B1q      occupies {00,01,10}  — a vertex in NEITHER, none in BOTH.
+B0b, B4  occupy  {00,01,10,11} — BOTH a pinch and a spectator.  These are the only two
+         carriers of S4's ten that do, exactly as W-09 recorded, and they are built here.
+
+A carrier enters Z_k = sum_ab p_ab (u^a v^b)^k ONLY through pi.  So the ONLY thing a
+carrier can decide about any Z-derived result is WHICH pi ARE REALIZABLE, i.e. which
+face of the 3-simplex the pushforward is confined to.  On B0b and B4 that face is the
+WHOLE simplex; on every other carrier the corpus owns it is a proper face.
+
+EXACT: the factorisation locus p00*p11 = p10*p01 is EMPTY on any three-class carrier —
+p00 = 0 forces p10*p01 = 0, i.e. a second empty class.  Symmetrically p11 = 0 forces
+p10*p01 = 0.  So 'P factors into a curvature factor times a flat factor' is a
+FOUR-CLASS-ONLY phenomenon.  It is exercised in script 3.

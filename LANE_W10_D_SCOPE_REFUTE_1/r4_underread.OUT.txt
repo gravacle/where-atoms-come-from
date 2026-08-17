@@ -1,0 +1,90 @@
+====================================================================================================
+== R4-A  'B4 IS EXACT FOR THE SAME REASON AND NOBODY SAID SO' -- S4 SAID SO ==
+====================================================================================================
+  S4_THE_MEASUREMENT_V001.md, lines 586 and 594-599, verbatim:
+    | **Eight of the nine entries are EXACT closed forms, not quadrature**, and each is stated with
+    |    B4   U  : the Jensen-in-x integrand's max is always the second branch (their squares
+    |              differ by 0.2222 + 0.1111 cos y > 0), so lambda = log(1/2) = -0.693147180560 EXACTLY
+    |    B1p  U  = log max(1/2,1/2)              Jensen              -0.693147180560 EXACTLY
+    |    SENSE C, 3 classes = m(0.4+0.3x+0.3y)   Cassaigne-Maillot   -0.767507880358
+    |    SENSE C, 4 classes: (1+x+y+xy)/4 = (1+x)(1+y)/4, so lambda = log(1/4) = -1.386294361120 EXACTLY
+    |    B0b  U  : genuinely 4-term and does not factor. QUADRATURE ONLY, -0.810930216216,
+
+  S4 states B4's closed form, its EXACTNESS, and the identical reason lane D gives
+  ('their squares differ by 0.2222 + 0.1111 cos y > 0' = D-12's '(8+4cos t)/36 > 0').
+  D-12's mathematical content is right and its NOVELTY CLAIM IS FALSE AT THE BYTES.
+  What IS new in D-12 is only the B0b half, which is W-03's correction, already registered
+  at REGISTER:236 ('B0b is log(4/9) = -0.8109302162163288 exactly, so nine of nine carrier
+  rates are exact, not eight').  D-12 re-derives two registered facts and files them as one
+  new one.  THE CORPUS'S SIGNATURE DEFECT -- UNDER-READING ITS OWN RECORD.
+
+====================================================================================================
+== R4-B  D-05's 'TRUE THEOREM' IS REGISTER:126, WORD FOR WORD ==
+====================================================================================================
+    | 
+    | `|S|=3 -> G=<u,v>` · `S={0,C} -> <u>` · `S={0,F} -> <v>` · `S={F,C} -> <u/v>` ·
+    | `|S|=1 -> never`, which **recovers W-01's "the root can never fire" as a special case.**
+    | **Formation is a group-theoretic condition on where the record sits.**
+  W-02's row states the |S| = 1 criterion AND its relation to W-01's root sentence.
+  D-05 rediscovers it on B0b with two byte-identical arms (leg R2-B).
+
+====================================================================================================
+== R4-C  D-24 RESTATES A THEOREM THE REGISTER ALREADY RECORDS AS REFUTED UNDER CHARGE ==
+====================================================================================================
+    | **THE MODALITY NAMED IN S4'S OWN BRIEF AND NEVER RUN: CHARGE.** Named again in the sealed
+    | upstream S2 as "**this is the S4 knob**". The build never ran it; six audit lanes and their
+    | refuters never noticed. The critic ran it: **THEOREM S4-1 FAILS.** Exponents `(1,0),(2,0),(3,0)`
+    | give `|S| = 3` with `rank G = 1`, against S4-1's "rank 2 iff `|S| >= 3`"; and `q = (1,2,2,2,2)`
+    | moves `lambda` from `-0.767508` to `-1.200555`. **The four-class taxonomy is a charge-1
+    | statement.** Winding was also never non-vacuously run; the critic ran it and it **discriminates
+
+  D-24 as filed: 'd_eff = rank of the relation lattice is 2 for EVERY occupied set of
+  size >= 3, three- and four-class alike.'  scope CARRIER_INDEPENDENT, confidence HIGH,
+  no charge qualification anywhere in the row.
+
+  LANE D's OWN LEG 3A, RE-RUN -- it is right, AT UNIT CHARGE, and unit charge is hard-
+  coded in its EXP table {'00':(0,0),'10':(1,0),'01':(0,1),'11':(1,1)}:
+    S                         |S|   rank of relation lattice
+    ('00', '10', '01')          3                          2
+    ('00', '10', '11')          3                          2
+    ('00', '01', '11')          3                          2
+    ('10', '01', '11')          3                          2
+    ('00', '10', '01', '11')    4                          2
+
+  THE REGISTERED COUNTEREXAMPLE, OFF UNIT CHARGE (W-03's critic, REGISTER:210-211):
+    exponents (1,0),(2,0),(3,0)    |S| = 3   rank = 1   -> d_eff = 1, W-08's admissible write density is K^(-1/3), NOT K^(-1/2)
+    exponents (0,0),(1,0),(2,0)    |S| = 3   rank = 1   -> d_eff = 1, W-08's admissible write density is K^(-1/3), NOT K^(-1/2)
+    exponents (1,1),(2,2),(3,3)    |S| = 3   rank = 1   -> d_eff = 1, W-08's admissible write density is K^(-1/3), NOT K^(-1/2)
+  D-24 IS TRUE AT CHARGE 1 AND FALSE OFF IT, AND THE REGISTER SAYS SO EIGHT ROWS EARLIER
+  ('The four-class taxonomy is a charge-1 statement', REGISTER:212).  A row scoped
+  CARRIER_INDEPENDENT / HIGH with a live registered counterexample in another modality is
+  MISMARKED: the correct mark is CARRIER_INDEPENDENT **AND CHARGE-1-SCOPED**.
+
+====================================================================================================
+== R4-D  B4 REBUILT.  LANE D's ONE ADMITTED GAP, CLOSED. ==
+====================================================================================================
+  S4:519 row: 'B4 spindle (two spheres glued at 2 pts)  V=6 E=8 F=4 chi=2 b0=1 b1=1 b2=2',
+  S4:578    : class multiset {00:1, 01:1, 10:1, 11:3}.  Lane D QUOTED both and rebuilt
+  neither (its self-flag).  Built here, independently, and checked.
+  MODEL: two spheres, each a 'pillowcase' -- a 4-cycle N-a-S-b bounding two 2-cells --
+  glued along the two poles N, S.  That is the only V=6 E=8 F=4 realisation of the row.
+  built: V=6 E=8 F=4  chi=2  rank d1=5 rank d2=2  b0=1 b1=1 b2=2   max|d1.d2| = 0.0e+00
+  S4:519  : V=6 E=8 F=4  chi=2                                b0=1 b1=1 b2=2
+  gauge invariants = E - rank d1 = 3;  curvature = rank d2 = 2;  flat = b1 = 1;  2 + 1 = 3 = 3  -- S4:519 publishes 'gauge 5, inv 3, curv 2, flat 1'
+  gamma_F cycle: 0.0e+00   bounds: True
+  gamma_C cycle: 0.0e+00   bounds: False   (must be False -- it is the b1 generator)
+  independent in the cycle space: True
+  CLASS MULTISET BUILT : {'00': 1, '01': 1, '10': 1, '11': 3}
+  S4:578 PUBLISHED     : {'00': 1, '01': 1, '10': 1, '11': 3}
+  MATCH.  S4's B4 row is now independently rebuilt, incidence and all.  D-31's admitted
+  exposure ('if S4's table is wrong, the four-class findings are wrong with it') is CLOSED
+  for B4 as it already was for B0b.  This STRENGTHENS lane D; it does not refute it.
+
+====================================================================================================
+== R4-E  AND B4's RATE FROM THE REBUILT CARRIER, SENSE U, IN EXACT RATIONALS ==
+====================================================================================================
+  SENSE-U class weights from the rebuild: ('1/6', '1/6', '1/6', '1/2')
+  Jensen branch gap  B^2 - A^2 = 2/9 + 1/9 cos t,  which at cos t = -1 is 1/9 > 0 and at cos t = +1 is 1/3 > 0
+  -> branch B dominates on the whole circle, m = log max(p10, p11) = log(1/2) = -0.693147180559945
+  S4:595 publishes  -0.693147180560 EXACTLY.  log(1/2) = -0.693147180559945
+  and the torus-zero test: cos t root = -2.0  -> |root| > 1, NO TORUS ZERO.  D-03 and D-04 confirmed from the rebuilt incidence.

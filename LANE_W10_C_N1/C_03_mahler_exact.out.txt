@@ -1,0 +1,204 @@
+====================================================================================================
+SECTION 1 — THE MECHANISM S4 MISSED.  Why a NON-FACTORING four-term P can still be exact.
+====================================================================================================
+
+  RECIPROCITY.  For |x| = 1 and real a,b:   |a + b x| = |x| * |a xbar + b| = |b + a x|.
+  So the Jensen branch moduli |p00 + p10 x| and |p01 + p11 x| have CONSTANT ratio iff
+      (p00,p10) prop (p01,p11)   [P factors]        or    (p00,p10) prop (p11,p01)   [REVERSAL].
+  On the REVERSAL locus (p00,p10) = kappa (p11,p01), P does NOT factor, yet
+      m(P) = log max(kappa, 1) + log max(p01, p11)          <-- CLOSED FORM, two terms.
+  This is the same reciprocity that supplies the transpositions (00 10) and (01 11) in the
+  multiset theorem.  B0b sits ON the reversal locus.  "Does not factor" never implied
+  "quadrature only", and S4's inference at :599 is the error, not its arithmetic.
+
+  B0b SENSE U  {00:4,10:2,01:1,11:2}/9
+     factors over R ?  False      branch-ratio constant ?  REVERSED  (p00,p10) prop (p11,p01)  — P does NOT factor, m(P) still closed-form
+     zeros on T^2 ?    False   (hi=1/3, lo=1/9, product=1/27)   min|P| over T^2 (numeric) = 0.111111
+  B4  SENSE U  {00:1,10:1,01:1,11:3}/6
+     factors over R ?  False      branch-ratio constant ?  None
+     zeros on T^2 ?    False   (hi=-1/3, lo=-1/3, product=1/9)   min|P| over T^2 (numeric) = 0.272166
+  SENSE C 4-class (1,1,1,1)/4
+     factors over R ?  True      branch-ratio constant ?  PROPORTIONAL (P factors)
+     zeros on T^2 ?    True   (hi=0, lo=0, product=0)   min|P| over T^2 (numeric) = 0.000000
+  K1  SENSE U  (0,2,2,1)/5  [3-class]
+     factors over R ?  False      branch-ratio constant ?  None
+     zeros on T^2 ?    True   (hi=-1/5, lo=1/5, product=-1/25)   min|P| over T^2 (numeric) = 0.000083
+
+  B0b: (p00,p10) = (4,2)/9 = 2 * (2,1)/9 = 2 * (p11,p01).  kappa = 2.
+       m(P) = log max(2,1) + log max(1/9, 2/9) = log 2 + log(2/9) = log(4/9).   EXACT.
+  B4 : not on the reversal locus, but the second branch DOMINATES everywhere
+       (|1+3x|^2 - |1+x|^2 = 8 + 4 cos t >= 4 > 0), so m(P) = log 3 - log 6 = -log 2.  EXACT.
+
+====================================================================================================
+SECTION 2 — INDEPENDENT REPRODUCTION BY THE JENSEN REDUCTION, WITH CONVERGENCE IN n.
+            (float64 trapezoid; the closed form is the reference, not the target.)
+====================================================================================================
+
+  B0b SENSE U  {00:4,10:2,01:1,11:2}/9     S4 publishes -0.810930216216
+     n = 2^8  =       256   m = -0.810930216216329   |m - closed| = 0.000e+00   |m - m(n/2)| =    --    
+     n = 2^9  =       512   m = -0.810930216216329   |m - closed| = 0.000e+00   |m - m(n/2)| = 0.000e+00
+     n = 2^10 =      1024   m = -0.810930216216329   |m - closed| = 0.000e+00   |m - m(n/2)| = 0.000e+00
+     n = 2^11 =      2048   m = -0.810930216216329   |m - closed| = 0.000e+00   |m - m(n/2)| = 0.000e+00
+     n = 2^12 =      4096   m = -0.810930216216329   |m - closed| = 0.000e+00   |m - m(n/2)| = 0.000e+00
+     n = 2^13 =      8192   m = -0.810930216216329   |m - closed| = 1.110e-16   |m - m(n/2)| = 1.110e-16
+     n = 2^14 =     16384   m = -0.810930216216329   |m - closed| = 0.000e+00   |m - m(n/2)| = 1.110e-16
+     n = 2^15 =     32768   m = -0.810930216216329   |m - closed| = 0.000e+00   |m - m(n/2)| = 0.000e+00
+     n = 2^16 =     65536   m = -0.810930216216329   |m - closed| = 1.110e-16   |m - m(n/2)| = 1.110e-16
+     n = 2^17 =    131072   m = -0.810930216216329   |m - closed| = 2.220e-16   |m - m(n/2)| = 1.110e-16
+     n = 2^18 =    262144   m = -0.810930216216329   |m - closed| = 0.000e+00   |m - m(n/2)| = 2.220e-16
+     n = 2^19 =    524288   m = -0.810930216216329   |m - closed| = 1.110e-16   |m - m(n/2)| = 1.110e-16
+     n = 2^20 =   1048576   m = -0.810930216216328   |m - closed| = 5.551e-16   |m - m(n/2)| = 4.441e-16
+     n = 2^21 =   2097152   m = -0.810930216216328   |m - closed| = 5.551e-16   |m - m(n/2)| = 0.000e+00
+     n = 2^22 =   4194304   m = -0.810930216216329   |m - closed| = 2.220e-16   |m - m(n/2)| = 3.331e-16
+     n = 2^23 =   8388608   m = -0.810930216216329   |m - closed| = 1.110e-16   |m - m(n/2)| = 3.331e-16
+     n = 2^24 =  16777216   m = -0.810930216216328   |m - closed| = 3.331e-16   |m - m(n/2)| = 4.441e-16
+
+  B4  SENSE U  {00:1,10:1,01:1,11:3}/6     S4 publishes -0.693147181
+     n = 2^8  =       256   m = -0.693147180559945   |m - closed| = 1.110e-16   |m - m(n/2)| =    --    
+     n = 2^9  =       512   m = -0.693147180559945   |m - closed| = 0.000e+00   |m - m(n/2)| = 1.110e-16
+     n = 2^10 =      1024   m = -0.693147180559945   |m - closed| = 0.000e+00   |m - m(n/2)| = 0.000e+00
+     n = 2^11 =      2048   m = -0.693147180559945   |m - closed| = 1.110e-16   |m - m(n/2)| = 1.110e-16
+     n = 2^12 =      4096   m = -0.693147180559945   |m - closed| = 1.110e-16   |m - m(n/2)| = 0.000e+00
+     n = 2^13 =      8192   m = -0.693147180559945   |m - closed| = 0.000e+00   |m - m(n/2)| = 1.110e-16
+     n = 2^14 =     16384   m = -0.693147180559945   |m - closed| = 1.110e-16   |m - m(n/2)| = 1.110e-16
+     n = 2^15 =     32768   m = -0.693147180559945   |m - closed| = 0.000e+00   |m - m(n/2)| = 1.110e-16
+     n = 2^16 =     65536   m = -0.693147180559945   |m - closed| = 1.110e-16   |m - m(n/2)| = 1.110e-16
+     n = 2^17 =    131072   m = -0.693147180559945   |m - closed| = 0.000e+00   |m - m(n/2)| = 1.110e-16
+     n = 2^18 =    262144   m = -0.693147180559945   |m - closed| = 0.000e+00   |m - m(n/2)| = 0.000e+00
+     n = 2^19 =    524288   m = -0.693147180559946   |m - closed| = 2.220e-16   |m - m(n/2)| = 2.220e-16
+     n = 2^20 =   1048576   m = -0.693147180559945   |m - closed| = 4.441e-16   |m - m(n/2)| = 6.661e-16
+     n = 2^21 =   2097152   m = -0.693147180559945   |m - closed| = 0.000e+00   |m - m(n/2)| = 4.441e-16
+     n = 2^22 =   4194304   m = -0.693147180559945   |m - closed| = 5.551e-16   |m - m(n/2)| = 5.551e-16
+     n = 2^23 =   8388608   m = -0.693147180559946   |m - closed| = 2.220e-16   |m - m(n/2)| = 7.772e-16
+     n = 2^24 =  16777216   m = -0.693147180559946   |m - closed| = 7.772e-16   |m - m(n/2)| = 5.551e-16
+
+  SENSE C 4-class (1,1,1,1)/4     S4 publishes -1.386294361120
+     n = 2^8  =       256   m = -1.383586754945827   |m - closed| = 2.708e-03   |m - m(n/2)| =    --    
+     n = 2^9  =       512   m = -1.384940558032856   |m - closed| = 1.354e-03   |m - m(n/2)| = 1.354e-03
+     n = 2^10 =      1024   m = -1.385617459576380   |m - closed| = 6.769e-04   |m - m(n/2)| = 6.769e-04
+     n = 2^11 =      2048   m = -1.385955910348122   |m - closed| = 3.385e-04   |m - m(n/2)| = 3.385e-04
+     n = 2^12 =      4096   m = -1.386125135734023   |m - closed| = 1.692e-04   |m - m(n/2)| = 1.692e-04
+     n = 2^13 =      8192   m = -1.386209748427014   |m - closed| = 8.461e-05   |m - m(n/2)| = 8.461e-05
+     n = 2^14 =     16384   m = -1.386252054773536   |m - closed| = 4.231e-05   |m - m(n/2)| = 4.231e-05
+     n = 2^15 =     32768   m = -1.386273207946805   |m - closed| = 2.115e-05   |m - m(n/2)| = 2.115e-05
+     n = 2^16 =     65536   m = -1.386283784533673   |m - closed| = 1.058e-05   |m - m(n/2)| = 1.058e-05
+     n = 2^17 =    131072   m = -1.386289072825414   |m - closed| = 5.288e-06   |m - m(n/2)| = 5.288e-06
+     n = 2^18 =    262144   m = -1.386291716975268   |m - closed| = 2.644e-06   |m - m(n/2)| = 2.644e-06
+     n = 2^19 =    524288   m = -1.386293039042508   |m - closed| = 1.322e-06   |m - m(n/2)| = 1.322e-06
+     n = 2^20 =   1048576   m = -1.386293700081531   |m - closed| = 6.610e-07   |m - m(n/2)| = 6.610e-07
+     n = 2^21 =   2097152   m = -1.386294030626140   |m - closed| = 3.305e-07   |m - m(n/2)| = 3.305e-07
+     n = 2^22 =   4194304   m = -1.386294195822488   |m - closed| = 1.653e-07   |m - m(n/2)| = 1.652e-07
+     n = 2^23 =   8388608   m = -1.386294278426472   |m - closed| = 8.269e-08   |m - m(n/2)| = 8.260e-08
+     n = 2^24 =  16777216   m = -1.386294319777033   |m - closed| = 4.134e-08   |m - m(n/2)| = 4.135e-08
+
+  K1  SENSE U  (0,2,2,1)/5  [3-class]     S4 publishes -0.756573586
+     n = 2^8  =       256   m = -0.756573773228961   |m - closed| =    --       |m - m(n/2)| =    --    
+     n = 2^9  =       512   m = -0.756574565831752   |m - closed| =    --       |m - m(n/2)| = 7.926e-07
+     n = 2^10 =      1024   m = -0.756573438552649   |m - closed| =    --       |m - m(n/2)| = 1.127e-06
+     n = 2^11 =      2048   m = -0.756573619717503   |m - closed| =    --       |m - m(n/2)| = 1.812e-07
+     n = 2^12 =      4096   m = -0.756573584548251   |m - closed| =    --       |m - m(n/2)| = 3.517e-08
+     n = 2^13 =      8192   m = -0.756573590791559   |m - closed| =    --       |m - m(n/2)| = 6.243e-09
+     n = 2^14 =     16384   m = -0.756573584838433   |m - closed| =    --       |m - m(n/2)| = 5.953e-09
+     n = 2^15 =     32768   m = -0.756573585546686   |m - closed| =    --       |m - m(n/2)| = 7.083e-10
+     n = 2^16 =     65536   m = -0.756573585723750   |m - closed| =    --       |m - m(n/2)| = 1.771e-10
+     n = 2^17 =    131072   m = -0.756573585626838   |m - closed| =    --       |m - m(n/2)| = 9.691e-11
+     n = 2^18 =    262144   m = -0.756573585637904   |m - closed| =    --       |m - m(n/2)| = 1.107e-11
+     n = 2^19 =    524288   m = -0.756573585640671   |m - closed| =    --       |m - m(n/2)| = 2.767e-12
+     n = 2^20 =   1048576   m = -0.756573585639644   |m - closed| =    --       |m - m(n/2)| = 1.027e-12
+     n = 2^21 =   2097152   m = -0.756573585639816   |m - closed| =    --       |m - m(n/2)| = 1.715e-13
+     n = 2^22 =   4194304   m = -0.756573585639766   |m - closed| =    --       |m - m(n/2)| = 4.929e-14
+     n = 2^23 =   8388608   m = -0.756573585639777   |m - closed| =    --       |m - m(n/2)| = 1.044e-14
+     n = 2^24 =  16777216   m = -0.756573585639769   |m - closed| =    --       |m - m(n/2)| = 8.105e-15
+
+====================================================================================================
+SECTION 3 — THE DIGIT DEFENCE.  mpmath, mp.dps = 50.
+====================================================================================================
+  log(4/9)  = -0.810930216216328763956026230928698273144
+  -log 2    = -0.6931471805599453094172321214581765680755
+  -log 4    = -1.386294361119890618834464242916353136151
+  B0b SENSE U  {00:4,10:2,01:1 n=  256  mp Jensen = -0.810930216216328763956026230929   |v - closed| = 2.67276e-51
+  B0b SENSE U  {00:4,10:2,01:1 n= 1024  mp Jensen = -0.810930216216328763956026230929   |v - closed| = 4.00915e-51
+  B0b SENSE U  {00:4,10:2,01:1 n= 4096  mp Jensen = -0.810930216216328763956026230929   |v - closed| = 2.27185e-50
+  B4  SENSE U  {00:1,10:1,01:1 n=  256  mp Jensen = -0.693147180559945309417232121458   |v - closed| = 4.00915e-51
+  B4  SENSE U  {00:1,10:1,01:1 n= 1024  mp Jensen = -0.693147180559945309417232121458   |v - closed| = 1.33638e-51
+  B4  SENSE U  {00:1,10:1,01:1 n= 4096  mp Jensen = -0.693147180559945309417232121458   |v - closed| = 6.68191e-51
+  SENSE C 4-class (1,1,1,1)/4  n=  256  mp Jensen = -1.38358675494582833246955317994   |v - closed| = 0.00270761
+  SENSE C 4-class (1,1,1,1)/4  n= 1024  mp Jensen = -1.38561745957637504724323647717   |v - closed| = 0.000676902
+  SENSE C 4-class (1,1,1,1)/4  n= 4096  mp Jensen = -1.38612513573401172593665730148   |v - closed| = 0.000169225
+
+  S4's published B0b figure is -0.810930216216 (12 decimal places).
+  log(4/9) = -0.8109302162163287639560... so ALL TWELVE OF S4's PLACES ARE CORRECT
+  (the 12th place rounds 2163|287 -> 216).  Digits defensible: as many as asked for — the
+  value is a closed form in elementary constants, not a quadrature result.  The Jensen
+  trapezoid reproduces it to float64 epsilon by n = 2^12 and to 25+ places in mpmath,
+  because the integrand is real-analytic and periodic (no zero of P on T^2: section 4).
+
+====================================================================================================
+SECTION 4 — THE ZERO SET.  THE LOAD-BEARING FACT ABOUT BOTH FOUR-CLASS CARRIERS.
+====================================================================================================
+  CRITERION (exact, proved on this page).  For non-negative weights,
+      P has a zero on T^2   <=>   ((p00+p10) - (p01+p11)) * (|p00-p10| - |p01-p11|) <= 0.
+  PROOF.  P = A(x) + B(x) y with A = p00+p10 x, B = p01+p11 x.  For fixed x on T, min over
+  |y|=1 of |A + B y| is ||A| - |B||, so P has a torus zero iff |A(x)| = |B(x)| for some x.
+  |A|^2 = p00^2+p10^2+2 p00 p10 cos t and |B|^2 likewise, both AFFINE and INCREASING in cos t
+  (weights non-negative), so |A| sweeps [|p00-p10|, p00+p10] and |B| sweeps [|p01-p11|, p01+p11]
+  monotonically together; they meet iff the two intervals' endpoints interleave.  []
+  It reduces to M1's Z1 on K1: with p00 = 0 it becomes (2 p10 - 1)(1 - 2 p01)(1 - 2 p11) <= 0,
+  i.e. max(p10,p01,p11) <= 1/2.  CHECKED below against a numeric minimiser.
+  ANALYTIC min|P| over T^2 (from the criterion's own proof) vs NUMERIC min over an
+  8192-node x-grid, on the 14982 of 20000 draws with NO crossing:
+       max |analytic - numeric| = 1.648e-07   mean = 4.905e-10
+  BINARY test (does |A|^2-|B|^2 change sign on a 4096-node grid?) vs the criterion:  20000 / 20000 agree,  0 disagree
+
+  HOW BIG IS THE ZERO-HAVING SET IN THE READY-STATE SIMPLEX?  Uniform (Dirichlet(1,1,1,1)):
+     FOUR classes  P(P has a zero on T^2) = 0.250464   over 4000000 draws
+     THREE classes P(P has a zero on T^2) = 0.249925   over 4000000 draws   [the medial triangle]
+  BOTH ARE EXACTLY 1/4, and the four-class value is proved here:
+     write s = p00+p10, d1 = p00-p10, d2 = p01-p11.  Uniform on the 3-simplex is uniform on
+     {0<=s<=1, |d1|<=s, |d2|<=1-s}.  The condition is (2s-1)(|d1|-|d2|) <= 0, whose conditional
+     probability is (1-s)/(2s) for s>1/2 and s/(2(1-s)) for s<1/2; integrating against the
+     density 4s(1-s)/(2/3) gives (3/2)(1/12 + 1/12) = 1/4.  []
+  SO: MOVING FROM THREE CLASSES TO FOUR DOES NOT CHANGE HOW OFTEN log|P| IS SINGULAR.
+  It is 1/4 of ready states either way.  The brief's premise — "a four-class P HAS torus zeros
+  (W-09: the firing region is exactly 1/2)" — CONFLATES TWO DIFFERENT SETS.  W-09's 1/2 is the
+  measure, in the CONNECTION space (f,c), of the set where SOME non-negative weight vector
+  annihilates Z_1.  The Lawton question is about a FIXED weight vector's zero set in T^2.  The
+  first is a union over p of the second, and a union of measure-zero sets is not measure zero.
+
+  APPLIED:
+     B0b SENSE U   hi = +3/9 > 0,  lo = +1/9 > 0   ->  NO ZERO ON T^2.  min|P| = 1/9 exactly
+                   (|A| - |B| = 2|1+2x|/9 - |1+2x|/9 = |1+2x|/9 >= 1/9).
+     B4  SENSE U   hi = -2/6 < 0,  lo = -2/6 < 0   ->  NO ZERO ON T^2.  min|P| = sqrt(6)/9
+                   = 0.2721655269759087, attained at cos t = -2/3 (an INTERIOR critical point
+                   of ||A|-|B||, not an endpoint: 3 sqrt(2+2c) = sqrt(10+6c) gives c = -2/3).
+                   [DEFECT D-5, recorded: the first draft of this line asserted 1/3, the
+                    endpoint value, without computing the interior critical point.]
+     SENSE C 4-cls hi =  0                          ->  A WHOLE CIRCLE of zeros at x = -1.
+  BOTH FOUR-CLASS CARRIERS THE CORPUS OWNS ARE ZERO-FREE ON T^2 UNDER SENSE U.
+  Therefore log|P| is CONTINUOUS on T^2 for them, Weyl alone gives Birkhoff convergence, and
+  the Lawton/Diophantine question the brief calls load-bearing DOES NOT BITE ON EITHER OF THEM.
+  Under SENSE C — the corpus's OTHER published four-class column, lambda = -1.386294361120 —
+  it bites maximally: the zero set is one-dimensional.
+
+====================================================================================================
+SECTION 5 — THE 2D GRID, RUN ONLY TO SHOW WHERE IT FAILS AND WHERE IT DOES NOT.
+====================================================================================================
+
+  B0b SENSE U  {00:4,10:2,01:1,11:2}/9   closed form -0.810930216216
+     2D grid 256x256   m = -0.810930216216   |err| = 1.110e-16
+     2D grid 1024x1024   m = -0.810930216216   |err| = 2.220e-16
+     2D grid 4096x4096   m = -0.810930216216   |err| = 1.110e-15
+
+  B4  SENSE U  {00:1,10:1,01:1,11:3}/6   closed form -0.693147180560
+     2D grid 256x256   m = -0.693147180560   |err| = 1.110e-16
+     2D grid 1024x1024   m = -0.693147180560   |err| = 0.000e+00
+     2D grid 4096x4096   m = -0.693147180560   |err| = 5.551e-16
+
+  SENSE C 4-class (1,1,1,1)/4   closed form -1.386294361120
+     2D grid 256x256   m = -1.380879148772   |err| = 5.415e-03
+     2D grid 1024x1024   m = -1.384940558033   |err| = 1.354e-03
+     2D grid 4096x4096   m = -1.385955910348   |err| = 3.385e-04
+
+  The 2D grid is fine on B0b and B4 (analytic integrand) and is noise-limited only where P has
+  torus zeros.  S4's "QUADRATURE ONLY, stable to 12 places" for B0b was therefore CORRECT
+  ARITHMETIC ON A WRONG PREMISE: the premise was that no closed form exists.

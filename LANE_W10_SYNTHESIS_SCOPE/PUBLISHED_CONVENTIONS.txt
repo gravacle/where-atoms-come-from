@@ -1,0 +1,61 @@
+W-10 SYNTHESIS LANE (register head W-09) — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane is on this page and in s10_verify.py.
+
+LINEAGE.  Claude Opus 5.  So are W-07, W-08, W-09, all four W-10 build lanes and all eight
+W-10 refuters.  This lane is LAYER TWELVE of one lineage and is NOT a lineage-independent
+check of anything downstream of W-06.  Discount it as one block with them.
+
+ROLE.  I am the synthesis.  My job is the scope table, not a build.  This lane exists only so
+that the five points on which the eight refuter verdicts COLLIDE with one another, or on which
+the whole scope ruling turns, are decided by my own code rather than by adjudication between
+other agents' numbers.  Everything else in the synthesis is adjudication and is labelled as such.
+
+CHARACTERS AND OBJECTS (identical to the round's brief).
+  class 00 -> 1 ; 10 -> u = conj(W_F) = e^{-if} ; 01 -> v = W_C = e^{ic} ; 11 -> uv
+  P(x,y) = p00 + p10 x + p01 y + p11 xy ;  Z_k = P(u^k, v^k) ;  Omega_N = prod_{k<=N} Z_k
+  lambda = m(P), the logarithmic Mahler measure.
+
+EVALUATOR.  Jensen-in-y reduction, as the brief mandates:
+  m(P) = (1/2pi) INT_0^{2pi} log max(|p00 + p10 e^{it}|, |p01 + p11 e^{it}|) dt
+Double precision by default; mp.dps = 40 for the 24-permutation spreads of Part D; exact
+Fraction arithmetic for all rank/incidence/typing work and for Part E.
+
+GRID AND SEEDS.  Part A: deterministic midpoint grids n x n on [0,2pi)^2 with n in
+{601, 1201, 2401, 4801} — deliberately NOT the random draws all three prior runs of this
+figure used.  Part D: numpy default_rng(20260816) for the single random draw (exhibit 4).
+Nothing else in the lane is random.
+
+HULL TEST.  For unit-modulus points, 0 in conv(S) iff the maximum angular gap between
+cyclically-sorted points is <= pi.  This is a third algorithm, distinct from W-09's and from
+lane D's two, and carries no LP tolerance.
+
+DECLARED VACUITIES, STATED BEFORE THE NUMBERS AND NOT AFTER.
+  (1) Part A's four-class "f -> -f flips 0 of n^2" column COULD NOT HAVE COME OUT OTHERWISE:
+      cos f + cos c is even in f.  It is an identity, not a test, and is reported as one.
+  (2) Part E is a CONTROL THAT COULD NOT HAVE FAILED.  W-08's character identity is an
+      algebraic identity in the group ring with no class-count index in its proof.  It is run
+      once so the number is on a page, and it is entered as a theorem, not as evidence.
+  (3) Part D exhibit 3 (a probability vector is S4-invariant) could not have failed either;
+      it is printed as the reference regime, not as a result.
+
+ISOLATION LEDGER.
+  Part A   moves: the OCCUPIED CHARACTER SET.  Held: hull algorithm, grid, evaluator.
+                  Arms: {01,10,11} / {00,01,10} / {01,10} / all four — four distinct supports.
+  Part B   moves: the COMPLEX, at fixed published invariant profile.  Held: builder, rank
+                  routine, loop tests, weight convention (SENSE U), evaluator.
+                  Arms: square|square spindle vs triangle|pentagon spindle — 6 vertices and
+                  8 edges in both, different incidence, printed in full.
+  Part C   moves: nothing — it is exact arithmetic on published parameters, no arms.
+  Part D   moves, between exhibits 1 and 2, the MODULUS VECTOR ONLY.  The four phases
+                  (0, 0.7, 1.9, 2.9) are byte-identical in both arms and the three cos D_i
+                  agree to every printed digit (0.955336, -0.574824, -0.128844).  The
+                  24-permutation spread goes 0.000000e+00 -> 3.564783e-01.  THIS IS THE
+                  LANE'S ONE LOAD-BEARING ISOLATION AND IT IS A ONE-VARIABLE MOVE.
+  Part E   moves: q, the class count, and the weights.  Five distinct cases.
+
+WHAT THIS LANE DOES NOT ESTABLISH.
+  It builds no carrier beyond the two spindles of Part B, runs no orbit, and measures no rate.
+  Part B decides only that S4's B4 row is not recoverable from S4's own parameters; it does
+  NOT decide which complex S4 actually built, because S4's carrier code is not in the repo.
+  Part D declines to name the multiset theorem's hypothesis off the non-negative locus and
+  marks it UNDETERMINED rather than offering a seventh name.

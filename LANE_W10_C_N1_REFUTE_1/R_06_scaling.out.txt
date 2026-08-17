@@ -1,0 +1,33 @@
+====================================================================================================
+R_06 — THE SCALING COLLAPSE.  ONE VARIABLE: N*delta.  m(P) = log(2/5) = -0.916290731874
+====================================================================================================
+     N*delta | delta=1e-6 | delta=1e-7 | delta=1e-8 | delta=1e-9 | delta=1e-10 |  spread
+  --------------------------------------------------------------------------------------------
+     1.0e-05 |   -4.746300 |   -4.776669 |   -4.779780 |   -4.780091 |   -4.780123 |  0.03382
+     1.0e-04 |   -3.625376 |   -3.628487 |   -3.628799 |   -3.628830 |   -3.628833 |  0.00346
+     1.0e-03 |   -2.477195 |   -2.477507 |   -2.477538 |   -2.477541 |   -2.477542 |  0.00035
+     1.0e-02 |   -1.326302 |   -1.326333 |   -1.326336 |   -1.326336 |   -1.326336 |  0.00003
+     1.0e-01 |   -0.188777 |   -0.188779 |   -0.188779 |   -0.188779 |   -0.188779 |  0.00000
+
+  THE COLUMNS AGREE ROW BY ROW ACROSS FIVE DECADES OF delta AT MATCHED N*delta.  So the
+  average is a function of N*delta alone in this regime, and C-10's finding -- "the crossover
+  N is proportional to 1/delta" -- IS ESTABLISHED, on a stronger footing than C_05's
+  threshold search.  What is NOT established is the constant.
+
+  THE LAW, FITTED:   avg - m(P) = a * log(N delta) + c
+     a = 0.498978   (theory: 1/2, the density of odd k)     c = 0.970175
+     => |avg - m(P)| < 0.01  at  N delta = exp((-0.01 - c)/a) = 0.1402   and  exp((+0.01-c)/a) = 0.1460
+     C_05's grid reports 1.000.  R_03 leg 3's fine grid reports 0.158.
+
+  AND THE THRESHOLD STATISTIC IS NOT WELL DEFINED ANYWAY: the average crosses the 0.01 band
+  more than once.  Exhibited at delta = 1e-3 on the fine grid:
+     N =       158   |avg - m(P)| enters the 0.01 band
+     N =       168   |avg - m(P)| LEAVES the 0.01 band
+     N =       473   |avg - m(P)| enters the 0.01 band
+     N =       501   |avg - m(P)| LEAVES the 0.01 band
+     N =       750   |avg - m(P)| enters the 0.01 band
+     total crossings of the 0.01 band over N in [1e2, 1e5]: 5
+  A "first N" statistic on a quantity that crosses its threshold repeatedly is a
+  window quantity by construction.  C-10's "exact crossover law N = 1/delta" should read:
+  the deficit is (1/2) log(N delta) + c, so N_cross scales like 1/delta with a constant that
+  depends on the threshold -- proportionality established, equality withdrawn.

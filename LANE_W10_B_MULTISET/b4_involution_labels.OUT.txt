@@ -1,0 +1,197 @@
+LANE W-10 B — LEG D (W-03's EXACT INVOLUTION AT THE LEVEL OF Z_k) and
+                  LEG E (DOES ANY CORPUS QUANTITY SEE THE INCIDENCE LABELS?)
+
+LEG D.  The register states the involution as
+    'multiplying Z_k by conj(u)^k conj(v)^k leaves |Z_k| fixed and maps (a,b) -> (1-a,1-b),
+     so 00 <-> 11 and 10 <-> 01'                                    (REGISTER_V001.md, W-03)
+The first clause is vacuous as written -- multiplying anything by a unit-modulus scalar
+leaves its modulus fixed -- so the content is entirely in the second.  Written out, the
+claim is the exact identity
+
+    conj(u)^k conj(v)^k Z_k[p]  =  conj( Z_k[p~] ),      p~ = (p11, p01, p10, p00),
+
+which is what is tested here, on B0b and B4, at the level of Z_k and not of lambda.
+
+LEG E.  W-03's headline 'the incidence labels are invisible'.  Tested at four occupied
+classes against every quantity the corpus registers: lambda, the firing criterion,
+W-02's group G, the near-return floor, and the rate at the corpus's OWN two distinguished
+connections.
+
+THE ONE VARIABLE throughout: which class each weight is assigned to.  The carrier, the
+state, the connection, the k-range and the code path are identical across arms, and the
+permuted arrays are printed.
+
+
+================================================================================================
+D.1  THE INVOLUTION AT THE LEVEL OF Z_k — REAL PUSHFORWARD
+================================================================================================
+  seed 20260816.  For each carrier: 2000 random (connection, ready state) pairs, each
+  evaluated at 40 random circuit counts k in [1, 10^5].  The ready state is drawn on
+  the carrier's VERTICES and pushed forward, so the class weights are genuine sums of
+  |s_v|^2 with the published multiplicities, not free parameters.
+  B0b {00:4,10:2,01:1,11:2}  max |conj(u)^k conj(v)^k Z_k - conj(Z~_k)| = 3.724e-16     max ||Z_k| - |Z~_k|| = 4.441e-16
+  B4  {00:1,10:1,01:1,11:3}  max |conj(u)^k conj(v)^k Z_k - conj(Z~_k)| = 4.518e-16     max ||Z_k| - |Z~_k|| = 5.551e-16
+  (the register's own figure for the second column, on K1's three classes, is 6.55e-15)
+
+================================================================================================
+D.2  THE INVOLUTION NEEDS REALITY AT THE Z_k LEVEL AND DOES NOT AT THE lambda LEVEL
+================================================================================================
+  Pulling the conjugation out of the sum is the ONLY step, and it uses p real:
+      conj(u)^k conj(v)^k SUM p_ab u^{ak} v^{bk} = SUM p_ab conj( u^{(1-a)k} v^{(1-b)k} )
+  needs conj(p_ab) = p_ab.  At the level of lambda the same map is the monomial
+  substitution (x,y) -> (1/x,1/y), which is measure-preserving on the torus, so it
+  survives arbitrary complex coefficients.  Both halves are tested; the complex arrays
+  are the ones LEG C produces from an inserted observable, not invented here.
+  real non-negative (the construction)   max ||Z_k|-|Z~_k|| = 4.441e-16     max |lambda - lambda~| = 1.972e-31
+  real with one sign flipped           max ||Z_k|-|Z~_k|| = 4.441e-16     max |lambda - lambda~| = 1.972e-31
+  complex, three collinear             max ||Z_k|-|Z~_k|| = 7.571e-01     max |lambda - lambda~| = 1.972e-31
+  complex, generic                     max ||Z_k|-|Z~_k|| = 9.257e-01     max |lambda - lambda~| = 1.972e-31
+  So the involution is TWO different statements.  At the level of lambda it is a Newton
+  polygon symmetry and holds unconditionally.  At the level of |Z_k| -- which is where the
+  register states it, and where the firing criterion and the near-return floor live -- it
+  holds exactly on the real locus and fails by O(1) off it.
+
+================================================================================================
+E.1  AT A FIXED CONNECTION, |Z_k| SEES THE LABELS — AND SEES EXACTLY FOUR PRODUCTS
+================================================================================================
+  Written out for four real classes, with U = u^k = e^{i alpha}, V = v^k = e^{i beta},
+
+    |Z_k|^2 = SUM p_ab^2 + 2[ A cos alpha + B cos beta + C cos(alpha+beta) + D cos(alpha-beta) ]
+        A = p00 p10 + p01 p11     B = p00 p01 + p10 p11     C = p00 p11     D = p10 p01
+
+  -- the three MATCHINGS again: A and B are the two non-diagonal matchings' product sums,
+  and C, D are the diagonal matching's two products, appearing separately.  (This is the
+  four-class form of W-08's identity |Z_k|^2 = 1 - SUM_{j<l} w_j w_l |chi_j^k - chi_l^k|^2,
+  regrouped so that what |Z_k| depends on is visible.)  A permutation preserves |Z_k| at
+  EVERY connection iff it preserves (A, B, C, D); generically that group is exactly
+  {e, 00<->11 with 10<->01} of order two -- the involution and nothing else -- so the 24
+  arrangements take 12 distinct values.  Extra collapse happens only when weights repeat
+  or when A = B by accident, and both of the corpus's carriers have repeated weights.
+  B0b {00:4,10:2,01:1,11:2}  distinct arrays 12, involution orbits  6, observed #distinct |Z_k| -> {5: 500}
+       closed form vs direct |Z_k|^2 : max deviation 1.72e-13
+  B4  {00:1,10:1,01:1,11:3}  distinct arrays  4, involution orbits  2, observed #distinct |Z_k| -> {2: 500}
+       closed form vs direct |Z_k|^2 : max deviation 9.66e-14
+  GEN four distinct weights  distinct arrays 24, involution orbits 12, observed #distinct |Z_k| -> {12: 500}
+       closed form vs direct |Z_k|^2 : max deviation 1.88e-13
+  The generic row is the test: 24 distinct arrays, 12 involution orbits, 12 distinct
+  values at every one of 500 random (f, c, k).  AT A FIXED CONNECTION THE LABELS ARE
+  VISIBLE and the only permutation that hides is W-03's involution.  B0b and B4 collapse
+  further only because their published class multisets repeat weights.
+
+================================================================================================
+E.2  EVERY FULL-TORUS AVERAGE OF A FUNCTION OF |P| IS BLIND — PROOF AND CHECK
+================================================================================================
+  The proof of the multiset theorem never uses the logarithm.  For any F,
+      INT_phi F(|A + e^{i phi} B|) dphi / 2pi  is symmetric in |A| and |B|,
+  because |A + e^{i phi} B| = |B + e^{-i phi} A|; and |a+be^{it}| = |b+ae^{it}| pointwise
+  for real a,b.  Running that in both Jensen pairings gives the four transpositions that
+  generate S4.  So EVERY functional of the form INT INT F(|P|) is multiset-invariant --
+  the rate, the mean modulus, the near-return density, all of them.  Checked on a 2048^2
+  tensor grid (trapezoid on a full period), one variable moving: the permutation.
+  B0b {00:4,10:2,01:1,11:2}  mean |P|            value +0.502722983  spread over 24 permutations = 2.22e-16
+  B0b {00:4,10:2,01:1,11:2}  mean |P|^(1/2)      value +0.688478876  spread over 24 permutations = 3.33e-16
+  B0b {00:4,10:2,01:1,11:2}  mean 1{|P| < 0.10}  value +0.000000000  spread over 24 permutations = 0.00e+00
+  B0b {00:4,10:2,01:1,11:2}  mean log|P| (=lam)  value -0.810930216  spread over 24 permutations = 3.33e-16
+  B4  {00:1,10:1,01:1,11:3}  mean |P|            value +0.538093568  spread over 24 permutations = 0.00e+00
+  B4  {00:1,10:1,01:1,11:3}  mean |P|^(1/2)      value +0.720191703  spread over 24 permutations = 0.00e+00
+  B4  {00:1,10:1,01:1,11:3}  mean 1{|P| < 0.10}  value +0.000000000  spread over 24 permutations = 0.00e+00
+  B4  {00:1,10:1,01:1,11:3}  mean log|P| (=lam)  value -0.693147181  spread over 24 permutations = 1.11e-16
+
+================================================================================================
+E.3  BUT A DEGENERATE CONNECTION SEES THE LABELS — AND THE CORPUS HAS TWO OF THEM
+================================================================================================
+  The proof at E.2 averages over the WHOLE torus.  The corpus's two distinguished
+  connections do not.
+    * S1's published connection (W_F = -1, W_C = -i, S1 sec6) has ORDER 4, so the k-average
+      is over four points.  W-07 measured the recurrence there.
+    * S3/S4's headline f = 2.0, c = 1.1 is EXACTLY RESONANT, -11f + 20c = 0 (ERRATUM
+      AGAINST W-02), so the orbit closes on a SUBTORUS.  Since (f,c) = 0.1*(20,11), the
+      subtorus average is the Mahler measure of the ONE-VARIABLE polynomial
+          Q(w) = p00 w^20 + p10 + p01 w^31 + p11 w^11,
+      computed here exactly from its roots (Jensen), not by simulation.  VALIDATION: for
+      the three-class weights (0.4,0.3,0.3) this method returns the erratum's own
+      registered subtorus value.
+  VALIDATION  lambda_subtorus(0.4, 0.3, 0.3, 0) = -0.767014993   ERRATUM AGAINST W-02: -0.767014993
+              full-torus value for the same weights = -0.767507880   register: -0.767507880
+
+  B0b {00:4,10:2,01:1,11:2}   (24 permutations; distinct arrays 12)
+   S1's own connection, W_F=-1 W_C=-i, order 4 :  2 distinct rates, spread 0.127706
+      -1.098612, -0.970906
+   S3/S4's own connection, f=2.0 c=1.1, resonant:  3 distinct rates, spread 0.000006  (EXACT, from roots)
+      -0.810930, -0.810930, -0.810924
+   the resonant value by direct simulation N=5e5 (independent path): -0.810930 vs exact -0.810930
+   FULL-TORUS rate, all 24 identical              :  1 distinct rate,  -0.810930216
+      stabiliser at order 4  : order 16, subgroup False : e, (01 11), (10 11 01), (10 11), (00 10), (00 10)(01 11), (00 10 01), (00 10 01 11), (00 01), (00 01 11), (00 01)(10 11), (00 01 10 11), (00 11 01 10), (00 11 10), (00 11 10 01), (00 11)(10 01)
+      stabiliser at resonant : order  4, subgroup False : e, (10 11), (00 10 01 11), (00 11)(10 01)
+
+  B4  {00:1,10:1,01:1,11:3}   (24 permutations; distinct arrays 4)
+   S1's own connection, W_F=-1 W_C=-i, order 4 :  1 distinct rates, spread 0.000000
+      -0.823959
+   S3/S4's own connection, f=2.0 c=1.1, resonant:  2 distinct rates, spread 0.000000  (EXACT, from roots)
+      -0.693147, -0.693147
+   the resonant value by direct simulation N=5e5 (independent path): -0.693147 vs exact -0.693147
+   FULL-TORUS rate, all 24 identical              :  1 distinct rate,  -0.693147181
+      stabiliser at order 4  : order 24, subgroup True : e, (01 11), (10 01), (10 01 11), (10 11 01), (10 11), (00 10), (00 10)(01 11), (00 10 01), (00 10 01 11), (00 10 11 01), (00 10 11), (00 01 10), (00 01 11 10), (00 01), (00 01 11), (00 01)(10 11), (00 01 10 11), (00 11 01 10), (00 11 10), (00 11 01), (00 11), (00 11 10 01), (00 11)(10 01)
+      stabiliser at resonant : order 24, subgroup True : e, (01 11), (10 01), (10 01 11), (10 11 01), (10 11), (00 10), (00 10)(01 11), (00 10 01), (00 10 01 11), (00 10 11 01), (00 10 11), (00 01 10), (00 01 11 10), (00 01), (00 01 11), (00 01)(10 11), (00 01 10 11), (00 11 01 10), (00 11 10), (00 11 01), (00 11), (00 11 10 01), (00 11)(10 01)
+
+  GEN four distinct weights   (24 permutations; distinct arrays 24)
+   S1's own connection, W_F=-1 W_C=-i, order 4 :  3 distinct rates, spread 0.323797
+      -1.465285, -1.253059, -1.141487
+   S3/S4's own connection, f=2.0 c=1.1, resonant: 12 distinct rates, spread 0.003428  (EXACT, from roots)
+      -0.970780, -0.970676, -0.970433, -0.970371, -0.970365, -0.970255 ...
+   the resonant value by direct simulation N=5e5 (independent path): -0.969618 vs exact -0.969617
+   FULL-TORUS rate, all 24 identical              :  1 distinct rate,  -0.970461842
+      stabiliser at order 4  : order  8, subgroup True : e, (01 11), (00 10), (00 10)(01 11), (00 01)(10 11), (00 01 10 11), (00 11 10 01), (00 11)(10 01)
+      stabiliser at resonant : order  2, subgroup True : e, (00 11)(10 01)
+
+  At neither distinguished connection is the rate a function of the weight MULTISET, and
+  the two fail differently -- which is itself the point, because it shows the collapse is
+  not one phenomenon:
+    * at S1's order-4 connection the surviving group has order 8 and is the group of the
+      JENSEN pairing {00,10}|{01,11} -- swap inside either pair, or swap the pairs -- so
+      the 24 arrangements carry THREE rates;
+    * at S3/S4's resonant connection only the INVOLUTION survives, order 2, so they carry
+      TWELVE, the same twelve blocks that |Z_k| resolves at E.1.
+  The multiset theorem is a theorem about the full-torus average and about nothing else.
+
+================================================================================================
+E.4  THE TWO REGISTERED CRITERIA ARE BLIND FOR A THIRD REASON — THEY IGNORE WEIGHTS
+================================================================================================
+  W-01's firing criterion (0 in the convex hull of the occupied characters) and W-02's
+  group G = <chi_a/chi_b : a,b in supp> both depend on the SUPPORT only.  With all four
+  classes occupied every permutation leaves the support equal to all four, so they cannot
+  distinguish labels even in principle -- a blindness of a different kind from lambda's,
+  and one that no permutation test can detect.  Checked by enumeration.
+  firing region on a 400x400 (f,c) grid: max disagreement across all 24 permutations and both carriers = 0
+  firing fraction = 0.500056  (W-09's exact 1/2 for a four-class carrier)
+
+================================================================================================
+LEG D / LEG E — VERDICT
+================================================================================================
+  LEG D.  W-03's involution is CONFIRMED at the level of Z_k on both four-class
+  carriers, to 1e-16, at the exact identity conj(u)^k conj(v)^k Z_k = conj(Z~_k) -- which
+  is a strictly stronger statement than the one the register makes, since the register's
+  first clause ('leaves |Z_k| fixed') is true of any unit-modulus factor and carries no
+  content.  THE IDENTITY'S HYPOTHESIS IS REALITY OF THE PUSHFORWARD, and it fails by O(1)
+  the moment the pushforward is complex -- while the SAME involution at the level of
+  lambda is a monomial substitution and survives complexification exactly.  One symmetry,
+  two theorems, different hypotheses, and the register states neither.
+
+  LEG E.  On a four-class carrier the answer to 'does anything see the labels' is YES, and
+  the dividing line is not what W-03's headline suggests:
+    BLIND -- every full-torus average of every function of |P|, not just the rate: the
+      mean modulus, the near-return density below any threshold, the rate.  The proof
+      never uses the logarithm.
+    BLIND FOR A DIFFERENT AND WEAKER REASON -- W-01's firing criterion and W-02's group G,
+      which see only the SUPPORT.  With four classes occupied they are constant across all
+      24 permutations by construction, so they could not have detected labels under any
+      assignment of weights.
+    SIGHTED -- |Z_k| at any fixed connection and any fixed k, which takes 12 distinct
+      values over the 24 permutations, the blocks being exactly the involution's orbits.
+    SIGHTED, AND THIS IS THE ONE THAT MATTERS -- the RATE ITSELF at a degenerate
+      connection.  At S1's own published connection, of order 4, and at S3/S4's own
+      headline connection, exactly resonant, the k-average is over a finite orbit or a
+      subtorus rather than the torus, the reduction that proves the theorem does not
+      apply, and lambda takes several distinct values over the 24 permutations.
+  W-03's 'the incidence labels are invisible' is therefore a statement about the GENERIC
+  connection, and the corpus computed almost nothing at a generic connection.

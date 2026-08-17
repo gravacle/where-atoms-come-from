@@ -1,0 +1,30 @@
+========================================================================================================
+REFUTER 1 / SCRIPT 5 — THE CHARACTER IDENTITY IN Z[x]/(x^q - 1), EXACT, ALL q <= 40
+========================================================================================================
+
+EXACT group-ring identity checks: 24920
+non-zero residuals                : 0
+moduli covered                    : [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 23, 24, 29, 30, 31, 36, 37, 40]
+weight vectors                    : 7 (four 4-class, two 3-class, one 2-class)
+
+READ:
+  * W-08's character identity is EXACT for every modulus tested, at four occupied classes
+    with six pair terms and at three with three.  The lane's Q[sqrt3] check (q | 12) is
+    correct and this extends it to primes it could not reach.  NOTHING FALLS.
+  * The right-hand side is a sum of terms w_j w_l |chi_j^k - chi_l^k|^2 >= 0.  Therefore
+    1 - |Z_k|^2 >= 0 IS A COROLLARY.  The lane reports '0 events of |Z_k| > 1 -- exactly 0,
+    not 1e-16' alongside the identity as if it were a second confirmation; given the
+    identity it could not have been anything else.  It is a THEOREM and stays standing;
+    it is not independent evidence.
+
+  * AND THE CLASS COUNT REALLY IS ABSENT FROM THE PROOF.  The derivation is
+        1 - |Z|^2 = (sum_j w_j)^2 - sum_{j,l} w_j w_l chi_j conj(chi_l)
+                  = sum_{j,l} w_j w_l (1 - chi_j conj(chi_l))
+                  = sum_{j<l} w_j w_l |chi_j - chi_l|^2,
+    which never indexes the number of j.  So the lane's central scope verdict --
+    'the proof never mentions the class count, therefore carrier-independent' -- is
+    CORRECT, and it is correct for a reason that needed no carrier to be built.
+
+========================================================================================================
+0 failures.  W-08's identity, monotonicity and floor survive four classes and every
+modulus tested.  I could not break them and I say what I tried.

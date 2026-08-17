@@ -1,0 +1,138 @@
+====================================================================================================
+W-10 SYNTHESIS LANE -- INDEPENDENT VERIFICATION.  numpy 2.0.2, mpmath 1.4.1
+====================================================================================================
+
+PART A -- FIRING REGION: 0 in conv{occupied characters}?   deterministic 1201x1201 midpoint grid
+----------------------------------------------------------------------------------------------------
+hull test used here: for unit-modulus points, 0 in conv(S) <=> the maximum angular gap between
+consecutive points (sorted) is <= pi.  This is a DIFFERENT algorithm from W-09's simplex/LP and
+from lane D's two; it is exact up to the grid, with no linear-programming tolerance at all.
+
+  occupied set          firing fraction        exact value    |dev|
+  {01,10,11}  K1/B1/B2/B3/B1s   0.250832466          0.2500       8.32e-04
+  {00,01,10}  B1q               0.250832466          0.2500       8.32e-04
+  {01,10}     B1p               0.000000000          0.0000       0.00e+00
+  {00,01,10,11} B0b/B4          0.500000347          0.5000       3.47e-07
+
+  GRID CONVERGENCE (the boundary of the firing region is measure zero; the error is O(1/n)):
+     n =  601   three-class 0.251663201 (dev 1.66e-03)   four-class 0.500001384 (dev 1.38e-06)
+     n = 1201   three-class 0.250832466 (dev 8.32e-04)   four-class 0.500000347 (dev 3.47e-07)
+     n = 2401   three-class 0.250416450 (dev 4.16e-04)   four-class 0.500000087 (dev 8.67e-08)
+     n = 4801   three-class 0.250208279 (dev 2.08e-04)   four-class 0.500000022 (dev 2.17e-08)
+
+  closed form cos f + cos c <= 0 agrees with the four-class hull on 1442401 of 1442401 grid points
+  f -> -f flips the verdict:  three classes 718800/1442401      four classes 0/1442401
+
+  RULING: W-09's two exact values reproduce on a deterministic grid and a third hull algorithm.
+  NOTE, AND IT IS A VACUITY DISCLOSURE: the f -> -f column could not have come out otherwise at
+  four classes -- cos f + cos c is even in f, so the four-class arm is an identity, not a test.
+
+PART B -- S4's B4 ROW.  Two non-isomorphic 'two 2-spheres glued at two points' complexes.
+----------------------------------------------------------------------------------------------------
+
+S4:519 publishes for B4:   V=6 E=8 F=4 chi=2 b0=1 b1=1 b2=2 gauge=5 inv=3 curv=2 flat=1,
+                           d1.d2=0, gF bounds, gC does NOT bound, independent
+S4:580 publishes for B4:   class multiset {00:1, 01:1, 10:1, 11:3}, lambda(SENSE U) = log(1/2)
+
+  B4-SQUARE  (square|square)
+     V=6 E=8 F=4 chi=2 b0=1 b1=1 b2=2 gauge=5 inv=3 curv=2 flat=1  max|d1.d2|=0
+     gF cycle=True bounds=True   gC cycle=True bounds=False   independent=True
+     class multiset {00:1, 10:1, 01:1, 11:3}   pi = ('1/6', '1/6', '1/6', '1/2')
+     p00*p11 == p10*p01 (P factors)?  False
+     lambda(SENSE U), Jensen 2^20 = -0.693147180560   [no torus zero at these weights; branch domination gives log(1/2) exactly]
+  B4-TRIPENT (triangle|pent)
+     V=6 E=8 F=4 chi=2 b0=1 b1=1 b2=2 gauge=5 inv=3 curv=2 flat=1  max|d1.d2|=0
+     gF cycle=True bounds=True   gC cycle=True bounds=False   independent=True
+     class multiset {00:1, 10:1, 01:2, 11:2}   pi = ('1/6', '1/6', '1/3', '1/3')
+     p00*p11 == p10*p01 (P factors)?  True
+     lambda(SENSE U), Jensen 2^20 = -1.098611627631   [P FACTORS (p00 p11 = p10 p01); with non-negative coefficients that forces lambda = log(max p_c) = log(1/3) = -1.098612288668110 EXACTLY, quadrature error 6.6e-07 -- the 2^20 loss is the log singularity of the torus zero the factorisation creates]
+
+  exact closed forms:  log(1/2) = -0.693147180560    log(1/3) = -1.098612288668
+
+  RULING ON THE A-1 / A-2 COLLISION.  Both refuters are right and they answer different
+  questions.  A-2 asked: GIVEN the square|square complex, is gamma_C forced?  It is.
+  A-1 asked: is the COMPLEX forced by what S4 published?  It is not: B4-TRIPENT above matches
+  EVERY published column of S4's B4 row and delivers a different class multiset and a
+  different lambda.  S4's B4 row is UNDER-DETERMINED by its own parameters -- a COR-K defect
+  against S4 -- and any lane that hard-codes S4's multiset as its build target is running a
+  satisfiability check, not an audit.  The scope table must therefore mark the B4 row's
+  lambda and multiset UNDETERMINED-AT-SOURCE, not merely unaudited.
+
+PART C -- ARITHMETIC TYPING OF THE CORPUS'S PUBLISHED CONNECTIONS
+----------------------------------------------------------------------------------------------------
+relation lattice L = {(m,n) in Z^2 : m f + n c in 2 pi Z}.  THE TYPING RULE, which is a
+two-line theorem and not a measurement:  if f and c are both RATIONAL then m f + n c is
+rational, and 2 pi j is irrational for j != 0, so every relation has j = 0 and a nonzero
+(m,n) with m f + n c = 0 always exists.  EVERY RATIONAL CONNECTION IS EXACTLY RESONANT.
+
+  S3/S4 headline           f=2.0     c=1.1          RATIONAL  -> EXACTLY RESONANT, primitive relation (m,n) = (11,-20)
+  S3 sec6 diagonal         f=2.0     c=2.0          RATIONAL  -> EXACTLY RESONANT, primitive relation (m,n) = (1,-1)
+  S4:973 'they are generic' f=3.14159 c=1.57080     RATIONAL  -> EXACTLY RESONANT, primitive relation (m,n) = (157080,-314159)
+  lane D 'generic'         f=1.3     c=2.0          RATIONAL  -> EXACTLY RESONANT, primitive relation (m,n) = (20,-13)
+  lane D 'golden'          f=2pi/phi c=2pi/phi^2    1/phi + 1/phi^2 = 1 EXACTLY, so f + c = 2 pi -> EXACTLY RESONANT, (1,1)
+       residual |f + c - 2pi| = 0.000e+00 (float64 only; the identity is exact)
+  S1 sec6 published        f=pi      c=3pi/2        f=pi, c=3pi/2 -> both in 2 pi Q -> FINITE ORDER (branch ratio order 4)
+  S4:603 verification      f=1.0     c=sqrt2        f rational, c = sqrt2 irrational, pi transcendental -> NO RELATION: GENERIC
+
+  RULING.  Of the connections the corpus publishes, EXACTLY ONE is generic in the sense the
+  corpus's own limit theorems require -- S4:603's f = 1.0, c = sqrt(2), the connection S4 used
+  to VERIFY the lambda column.  S4:973's 'the truncated decimals 3.14159 and 1.57080 ... are
+  GENERIC' is FALSE AT THE BYTES, and it sits inside the paragraph correcting the corpus's
+  first two mislabelled connections.  This is the corpus's THIRD mislabelled connection and
+  lane D's (1.3, 2.0) is the FOURTH.  Verified above by exact rational arithmetic.
+
+PART D -- THE MULTISET THEOREM OFF THE NON-NEGATIVE LOCUS: three names on the table, one exhibit
+----------------------------------------------------------------------------------------------------
+names offered this round:
+  registrar (W-09 brief) : REAL NON-NEGATIVE coefficients
+  lane D / W10D-13       : REALITY of the coefficients ('complex drops |G| to exactly 8')
+  refuter A-2            : cos D1 = cos D2 = cos D3 on Delta = arg(p00 p11 / (p10 p01))
+  refuter A-1            : all four coefficients share one argument mod pi (collinearity)
+  refuter D-1            : how many of the four Jensen-adjacent pairs have conj(p_i)p_j real
+                           (4 or 2 -> 24, 1 -> 16, 0 -> 8)
+
+  exhibit 1  DOMINATED, NON-COLLINEAR, ZERO adjacent-real pairs, arbitrary phases:
+     p = (10 e^{i0}, e^{i0.7}, e^{i1.9}, e^{i2.9})   adjacent-real pairs = 0
+     24-permutation spread = 0.000000e+00      m = log 10 = 2.302585092994  (|10 +- 1| >= 9 > 2 >= other branch)
+     cos D1, cos D2, cos D3 = 0.955336  -0.574824  -0.128844   -- PAIRWISE DISTINCT
+  exhibit 2  same moduli, NOT dominated (all moduli comparable), same kind of phases:
+     p = (1, 0.9 e^{i0.7}, 1.1 e^{i1.9}, 0.95 e^{i2.9})  adjacent-real pairs = 0
+     24-permutation spread = 3.564783e-01     cos D = 0.955336 -0.574824 -0.128844
+  exhibit 3  REAL NON-NEGATIVE (the corpus's actual objects: pi is a probability vector):
+     p = B0b's own pi = (4/9,2/9,1/9,2/9)            24-permutation spread = 0.000000e+00
+     cos D = 1.000000 1.000000 1.000000  -- all 1, as they are for EVERY probability vector
+  exhibit 4  a random NON-collinear complex draw, undominated:
+     adjacent-real pairs = 0                          24-permutation spread = 1.201997e-01
+
+  RULING ON THE NAMING.  Exhibit 1 has ZERO adjacent-real pairs, is not collinear, and has
+  cos D1, cos D2, cos D3 pairwise distinct -- and is FULLY S4-INVARIANT.  So all three of
+  'reality', 'collinearity/one argument mod pi', 'cos D1 = cos D2 = cos D3' and D-1's
+  adjacent-pair trichotomy are SUFFICIENT-ONLY at best, and D-1's trichotomy ('0 real pairs
+  -> exactly 8') is FALSE.  TWO INDEPENDENT MECHANISMS produce invariance: (i) coincidence of
+  the three matching fluxes (phase-side), (ii) branch domination, under which m collapses to
+  log of the largest modulus and the flux drops out entirely (modulus-side).  No name on the
+  table covers both.  SIX consecutive names, three of them produced THIS ROUND by lanes
+  commissioned to catch misnaming.  I decline to supply a seventh and mark it UNDETERMINED.
+  AND IT DOES NOT MATTER FOR ANY REGISTERED RESULT: pi is a probability vector, always real
+  and non-negative, so exhibit 3's regime is the only one the corpus ever occupies.
+
+PART E -- W-08's CHARACTER IDENTITY, EXACT.  DECLARED IN ADVANCE: THIS IS A CONTROL AND IT
+          COULD NOT HAVE FAILED.  It is an algebraic identity in the group ring, with no
+          class-count index anywhere in its proof:
+            1 - |Z|^2 = |sum_j w_j|^2 - |sum_j w_j chi_j|^2 = sum_{j<l} w_j w_l |chi_j - chi_l|^2
+          for ANY finite set of unit-modulus chi_j and non-negative w_j summing to 1.
+          I run it once, exactly, only so the number is on a page and not in a sentence.
+----------------------------------------------------------------------------------------------------
+  4 classes, q=12, B0b weights        worst exact residual over k<=8 : 0
+  4 classes, q=7,  B4 weights         worst exact residual over k<=8 : 0
+  3 classes, q=5,  K1 weights         worst exact residual over k<=8 : 0
+  4 classes, q=37, SENSE C            worst exact residual over k<=8 : 0
+  2 classes, q=6                      worst exact residual over k<=8 : 0
+
+  As declared: zero, and it had to be.  It is entered as a THEOREM with a proof, not as
+  evidence.  Its scope is CARRIER_INDEPENDENT and CLASS-COUNT-INDEPENDENT by the proof, not
+  by these five rows.
+
+====================================================================================================
+END.  Every figure above is reproducible from this file alone.
+====================================================================================================

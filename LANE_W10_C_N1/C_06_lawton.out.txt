@@ -1,0 +1,69 @@
+========================================================================================================
+LEG A — THE SUBTORUS LIMIT IN CLOSED FORM, AT THE CORPUS'S OWN RESONANCE (11,20).
+========================================================================================================
+  ready state                                                m(P)   lambda_(11,20) roots             quad   gap to m(P)
+  B0b   (4,2,1,2)/9   four-class, NO torus zero   -0.810930216216        -0.810930204535  -0.810930204535     1.168e-08
+  B4    (1,1,1,3)/6   four-class, NO torus zero   -0.693147180560        -0.693147181044  -0.693147181044     4.844e-10
+  B0b*  (2,1,3,3)/9   four-class, HAS torus zero  -0.987918288039        -0.987321822861  -0.987321822861     5.965e-04
+  K1    (0,2,2,1)/5   three-class, HAS torus zero  -0.756573585640        -0.756337009107  -0.756337009107     2.366e-04
+
+  The K1 row reproduces the register's erratum figure for the S3/S4 headline connection:
+  the register records -0.767014993 for pi = (0,0.3,0.3,0.4); this table runs S4's SENSE-U
+  K1 state (0,0.4,0.4,0.2) instead, so the numbers are different states of the same theorem.
+  Roots and quadrature agree to the printed figures on every row, so the closed form is not
+  an artefact of either method.
+
+========================================================================================================
+LEG B — THE BOYD-LAWTON LADDER ON A GENUINELY FOUR-TERM P.
+        lambda_(m,n) = m over the rank-one orbit closure;  target m(P).
+========================================================================================================
+  B0b   (4,2,1,2)/9   four-class, NO torus zero   m(P) = -0.810930216216  = log(4/9) exactly
+       relation (m,n)   deg       lambda_(m,n)   |lambda - m(P)|
+               (1, 1)     2    -0.466321295399         3.446e-01
+               (1, 2)     3    -0.916658991929         1.057e-01
+               (2, 3)     5    -0.787515156935         2.342e-02
+               (3, 5)     8    -0.808347305186         2.583e-03
+               (5, 8)    13    -0.810871539969         5.868e-05
+              (8, 13)    21    -0.810933046885         2.831e-06
+             (13, 21)    34    -0.810930210766         5.450e-09
+             (21, 34)    55    -0.810930216216         1.872e-13
+             (34, 55)    89    -0.810930216216         1.310e-14
+             (55, 89)   144    -0.810930216216         3.997e-15
+            (89, 144)   233    -0.810930216216         1.041e-13
+           (144, 233)   377    -0.810930216216         5.891e-13
+           (233, 377)   610    -0.810930216215         1.146e-12
+           (377, 610)   987    -0.810930216215         1.359e-12
+
+========================================================================================================
+LEG C — THE ISOLATION.  ONE VARIABLE: DOES P HAVE A ZERO ON T^2?
+        Same ladder, same evaluator, same relations.  ARMS PRINTED — DIFF THEM.
+========================================================================================================
+  ready state                                     zeros?       (5, 8)     (21, 34)    (89, 144)   (377, 610)
+  B0b   (4,2,1,2)/9   four-class, NO torus zero    False    5.868e-05    1.872e-13    1.041e-13    1.359e-12
+  B4    (1,1,1,3)/6   four-class, NO torus zero    False    3.386e-05    6.661e-15    9.570e-14    1.475e-12
+  B0b*  (2,1,3,3)/9   four-class, HAS torus zero    True    3.208e-03    1.970e-04    9.105e-06    1.161e-06
+  K1    (0,2,2,1)/5   three-class, HAS torus zero    True    1.068e-03    9.144e-06    7.741e-06    2.286e-07
+
+  ARMS DIFFER: the four ready-state vectors are
+     B0b    (0.444444, 0.222222, 0.111111, 0.222222)
+     B4     (0.166667, 0.166667, 0.166667, 0.5)
+     B0b*   (0.222222, 0.111111, 0.333333, 0.333333)
+     K1     (0.0, 0.4, 0.4, 0.2)
+
+  FITTED EXPONENT of |lambda_(m,n) - m(P)| against the relation size n:
+     B0b   (4,2,1,2)/9   four-class, NO torus zero   slope = -7.696 over the 5 relations with err > 1e-9;  noise floor first reached at n = 34
+     B4    (1,1,1,3)/6   four-class, NO torus zero   slope = -7.551 over the 4 relations with err > 1e-9;  noise floor first reached at n = 21
+     B0b*  (2,1,3,3)/9   four-class, HAS torus zero  slope = -1.958 over the 12 relations with err > 1e-9;  noise floor first reached at n = None
+     K1    (0,2,2,1)/5   three-class, HAS torus zero  slope = -2.233 over the 12 relations with err > 1e-9;  noise floor first reached at n = None
+
+  READ TWO WAYS, AND SCORED AS NEITHER.  The zero-free rows converge orders of magnitude
+  faster than the zero-having rows at the same relation size.  That reads as "the torus zero
+  slows Boyd-Lawton down" OR as "the zero-free P here happen to be near-degenerate (one Jensen
+  branch dominating) and near-degenerate polynomials are easy for every method".  The second
+  is at least as well supported: B0b's dominance is EXACT (C_03 sec 1) and B4's margin is
+  8 + 4 cos t >= 4.  Nothing in this lane distinguishes them and neither is scored.
+
+  WHAT IS NOT AMBIGUOUS: Boyd-Lawton is a statement about the SUBTORUS averages lambda_(m,n),
+  i.e. about CONTINUOUS averages over one-parameter subgroups.  Every number in this script is
+  such an average.  NONE of them is a discrete Birkhoff average along {(u^k,v^k)}, and no
+  amount of Boyd-Lawton licenses one.  M1's ruling (d) is confirmed on a four-term P.

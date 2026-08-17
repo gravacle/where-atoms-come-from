@@ -1,0 +1,251 @@
+LANE W-10 / C — REFUTER 2 — LENS 2: ISOLATION OF THE THREE-CONNECTION COMPARISON
+VERDICT: CONFIRMED WITH CORRECTIONS.
+
+WHAT I WAS ASKED.  Attack C_04's three-connection comparison.  The corpus has twice mislabelled
+a resonant or finite-order connection as generic.  Check lane C's connections are the arithmetic
+type they claim.
+
+WHAT I DID FIRST.  `shasum -a 256 -c SEALS.sha256` in LANE_W10_C_N1: 14 of 14 OK.  Re-ran
+C_04_birkhoff.py and C_05_hypothesis.py from lane C's own bytes: BOTH REPRODUCE BYTE-IDENTICALLY
+against their committed .out.txt.  Then rebuilt the whole comparison in independent code with a
+strictly finer phase arithmetic (exact 80-bit two-limb modular accumulation, no K ceiling) and
+drove K from 1e7 to 1e9.  My engine reproduces lane C's K = 1e6 and K = 1e7 numbers to 4e-10
+digit for digit, so we are measuring the same object.
+
+=============================================================================================
+A.  THE PRIMARY QUESTION.  ARE THE THREE CONNECTIONS THE ARITHMETIC TYPE THEY CLAIM?  YES.
+=============================================================================================
+  Computed EXACTLY, on the integers C_04 feeds its orbit, not on the labels.   [R2_01 sec 1]
+
+  ARM O  FINITE ORDER   A=2,B=3,M=4.  ord = M/gcd(A,B,M) = 4.  CLAIM 4.  MATCH.
+  ARM R  RESONANT       11*A_numC + 20*B_numC = 7559142440960 = 11 * D_C, so = 0 mod D_C.
+                        THE ORBIT LIES EXACTLY ON THE (11,20) SUBTORUS, with no rounding to
+                        cancel.  Lagrange-Gauss reduction of the implemented relation lattice
+                        returns (11,20) as the SHORTEST vector, so the arm is not secretly on
+                        a smaller subtorus.  MATCH.
+  ARM D  DIOPHANTINE    the implemented float64 pair is a dyadic rational of denominator 2^52
+                        and therefore has FINITE order 4.5e15; its shortest exact relation is
+                        (-59315748, 30408467), sup-norm 5.93e7, which exceeds K = 1e7 by 5.9x.
+                        Over the run it is not resonant.  The true irrational's badly-
+                        approximable constant, measured, is min_k sqrt(k) max(||k a||,||k b||)
+                        = 0.2959 at k = 46 over k <= 2e6, identical for the implemented pair.
+                        MATCH, with the caveat below.
+
+  THE ONE MISLABEL THE LENS WAS AIMED AT IS NOT THERE.  I tried to break each arm and each
+  attempt failed.  Naming them, because "looks fine" is worthless:
+    - tried: the resonant arm drifts off its subtorus because alpha,beta are rounded.  FAILED:
+      the residue is exactly 0 mod D_C.
+    - tried: the resonant arm sits on a SMALLER subtorus than (11,20) (a shorter relation).
+      FAILED: (11,20) is the shortest vector of the implemented lattice.
+    - tried: the Diophantine arm is secretly resonant over K = 1e7 because float64 makes it
+      rational.  FAILED: shortest relation 5.93e7 > 1e7.
+    - tried: the float64 alpha's drift from the true 2 - 2^(1/3) (2.6e-17 per step, 2.6e-10
+      turns by k = 1e7) biases the reported gap.  FAILED: re-running the arm on the TRUE
+      irrational with 80-bit exact phases gives -0.8109302706 at K = 1e7 against C_04's
+      -0.810930271.  Immaterial.
+    - tried: int64 overflow in k*A_num.  FAILED at K = 1e7 (88% of the ceiling) but see D-3.
+    - tried: the finite-order arm's 4-point orbit is the wrong orbit.  FAILED: {(0,0),(1/2,3/4),
+      (0,1/2),(1/2,1/4)} is correct, and the three closed forms (1/4)log(5/243), -(3/4)log 3,
+      -(1/2)log 5 are confirmed by hand.
+    - tried: C-9's Liouville bound.  FAILED: log|Z_8|/8 = -21.931 against C-9's -21.864, ratio
+      to m(P) 15.82 against C-9's 15.8.  (mp.dps must exceed 80 or 1/2 + 2^-254 collapses to
+      1/2; that trap is real and lane C avoided it.)
+
+=============================================================================================
+B.  WHAT FALLS.  FOUR CORRECTIONS, IN SEVERITY ORDER.
+=============================================================================================
+
+R-A  THE RESONANT ARM CANNOT SEE THE EFFECT IT IS SCORED AS SEEING, ON EITHER FOUR-CLASS
+     CARRIER.  This is the finding.                                        [R2_02, R2_03, R2_05]
+
+     C-4 / C_07 sec C3 write the resonant row as  "-0.810930225 -> subtorus -0.810930204535"
+     and conclude "of the corpus's two distinguished connections, BOTH give a limit that is
+     not m(P), on BOTH four-class carriers."  The effect that arrow asserts, computed EXACTLY
+     by two independent evaluators (2^16 trapezoid and Jensen-on-roots, agreeing to 5e-50):
+
+        case      |m(Q_(11,20)) - m(P)|      lane C's own gap at K=1e7      effect/ruler
+        B0b            1.16813e-08                  2.07e-08                   0.56
+        B4             4.84421e-10                  7.27e-09                   0.07
+        SENSE C        0    EXACTLY                 --                         0.00
+        K1 (3-class)   2.36577e-04                  7.90e-08                2993
+
+     ON B0b LANE C's OWN PRINTED NUMBERS PUT THE MEASURED VALUE NEARER m(P) (8.98e-09) THAN
+     NEARER THE SUBTORUS (2.07e-08).  The arrow is drawn against the datum.  On B4 the two
+     candidates differ by 4.8e-10, a hundred times below the run's own wobble.  The ONLY row
+     in the block where the resonant arm discriminates is K1 — the THREE-CLASS control that
+     this entire round exists to move off.  Under the lane's own process rule ("A NULL READS
+     TWO WAYS.  Never score one as confirmation of the hypothesis you prefer"), the resonant
+     rows on B0b and B4 are nulls scored as confirmations.
+
+     THE THEOREM SURVIVES; ITS EVIDENCE DOES NOT REACH IT.  Driving K to 1e9 with exact 80-bit
+     phases, the average does leave m(P) and converge on the subtorus value:
+
+        B0b  K=1e7  |avg-m(P)|=9.00e-09  |avg-m(Q)|=2.07e-08   NEARER m(P)   <-- lane C's K
+             K=1e8                8.16e-09            3.53e-09  nearer m(Q)
+             K=3e8                1.03e-08            1.39e-09  nearer m(Q)
+             K=1e9                1.14e-08            2.50e-10  nearer m(Q)   effect/ruler 47
+        B4   K=1e7                7.75e-09            7.27e-09  (a coin toss)
+             K=1e9                5.66e-10            8.11e-11  nearer m(Q)   effect/ruler 6.0
+
+     So C-4's CONCLUSION on B0b and B4 SENSE U is CORRECT and is now established.  What is
+     wrong is that lane C established it by QUADRATURE plus Weyl and then presented a K = 1e7
+     Birkhoff comparison as if it were the evidence.  The correct statement of the row is:
+     "the limit is the subtorus measure BY WEYL; the difference from m(P) is 1.2e-08 and
+     4.8e-10 and is BELOW the resolution of this run — see the quadrature, not the run."
+
+R-B  THE SCOPE SENTENCE IS REFUTED BY THE CORPUS'S OWN VERIFICATION CONNECTION.   [R2_03, R2_04]
+
+     Headline: "lambda = m(P) is FALSE at both connections this corpus has ever published".
+     C_07 sec C3: "false at every connection this corpus has ever published, on every carrier
+     it has ever run."
+
+     I typed EVERY connection the corpus publishes, by computation, from S3/S4 line numbers
+     (R2_04 A: twelve rows).  The typing rule, proved on that page: alpha = -f/2pi,
+     beta = c/2pi, so m alpha + n beta in Z iff -mf + nc = 2 pi j; with f,c both RATIONAL the
+     left side is rational, forcing j = 0 — SO EVERY CONNECTION WITH f AND c BOTH RATIONAL IS
+     EXACTLY RESONANT.  The census:
+        finite order (4):  S1 sec6 (-1,-i);  f=pi,c=pi/2;  f=pi,c=3pi/2
+        resonant:          f=2,c=1.1 (11,20) · f=c=2 (1,1) · f=1,c=0.3 (3,10) · f=1,c=3 (3,1)
+                           f=1,c=2.1 (21,10) · f=2,c=1.1+1e-5 (110001,200000)
+                           f=3.14159,c=1.57080 (157080,314159) · f=3.14159,c=4.71239
+        GENERIC, L = {0}:  f = 1.0, c = sqrt(2)      <-- S4:603 AND S4:1054
+     f = 1.0, c = sqrt(2) is the connection S4 used to VERIFY the very lambda column lane C is
+     auditing.  At K = 2e8, exact phases:
+        B0b  -0.8109302156  err to m(P) 5.7e-10       B4  -0.6931471818  err 1.2e-09
+        K1   -0.7565735586  err 2.7e-08
+     falling monotonically from 7.2e-08 / 3.6e-08 / 8.6e-08 at K = 1e7.  LAMBDA = m(P) HOLDS
+     THERE, on both four-class carriers and on the three-class one.
+     AND LANE C PUBLISHED THE REFUTING DATUM ITSELF: C_04.out's own cross-check block runs
+     f = 1.0, c = sqrt(2) at N = 2e6 and reports dev 5.4e-07 (B0b) and 2.4e-07 (B4), nine
+     lines below the paragraph asserting no such connection exists.
+     CORRECTED FORM: "false at both of the corpus's two DISTINGUISHED connections" — which is
+     what C_07 sec C3's preceding sentence actually says, before the universal quantifier.
+
+     A SECOND, INDEPENDENT COUNTEREXAMPLE TO THE SAME SENTENCE, ON THE CORPUS'S OTHER
+     FOUR-CLASS COLUMN.  S4:582 publishes lambda(SENSE C) = -1.386294361120 for BOTH four-class
+     carriers.  On that ready state P = (1+x)(1+y)/4, and its restriction to the (11,20)
+     subtorus is Q = (1+z^11)(1+z^20)/4, so m(Q) = log(1/4) + 0 + 0 = -log 4 = m(P) EXACTLY.
+     AT THE RESONANT CONNECTION, ON THE CORPUS'S OWN PUBLISHED FOUR-CLASS READY STATE, THE
+     LIMIT IS m(P).  "BOTH distinguished connections give a limit that is not m(P), on BOTH
+     four-class carriers" is therefore true only under SENSE U, and false under SENSE C.
+
+R-C  THE ONLY CERTIFICATE C_04 PRINTS FOR THE RESONANT ARM'S ARITHMETIC TYPE IS AN IDENTITY
+     AND COULD NOT HAVE FAILED.                                                     [R2_01 sec 2]
+
+     C_04 prints  RELATION_RESIDUE = 11*(-20*A0) + 20*(11*A0)  labelled "must be 0", and the
+     .out.txt line "resonance exactness in the integer representation: 11*A + 20*B = 0".  The
+     expression is -220 t + 220 t: it is 0 for EVERY A0, for every S, for every D_C, and for
+     any pair of exponents whatever.  Evaluated at A0 = 0, 1, 12345, -7, 2^61 it returns 0
+     every time (printed).  It never touches A_numC or B_numC — the integers the orbit is
+     built from — because both are reduced mod D_C AFTER the expression is formed.
+     THE NON-VACUOUS CHECK, RUN HERE, PASSES: (11*A_numC + 20*B_numC) mod D_C = 0.  So no
+     number moves.  But this is the lane's own named FATAL defect class — a control that
+     could not have failed, printed as a certificate — committed in the one block whose entire
+     purpose is to certify a connection's arithmetic type, in a round whose lens is exactly
+     that.  The isolation ledger's item 4 records "resonance exactness 11A+20B = 0 printed" as
+     evidence the comparison is sound.  It is not evidence of anything.
+
+R-D  THE ARMS' ORBITS ARE ISOLATED; THE ARMS' TARGETS ARE NOT, AND ON ONE PUBLISHED ROW IT
+     MATTERS.                                                                [R2_02, R2_05 sec 1]
+
+     Diffed on every field of the call (R2_05 sec 1): ready state, K, CHUNK, checkpoints and
+     the evaluator function are identical across the three arms, and the three (alpha,beta)
+     are distinct.  The orbit side of the ledger's item 4 is SOUND.
+     But the three arms are compared against three DIFFERENT target evaluators of three
+     different accuracies: Jensen trapezoid 2^20, trapezoid on log|Q| 2^22, and an exact
+     mpmath 4-point average.  On the SENSE C row Q has 31 roots ON the unit circle, where a
+     trapezoid on log|Q| is only O(1/n).  Lane C's published subtorus target there is
+     -1.386293534824; the exact value is -log 4 = -1.386294361120.  ERROR 8.26e-07 — and the
+     error points the wrong way, making a limit that EQUALS m(P) look like one that differs
+     from it by 8e-07.  Nothing in C-1..C-12 leans on that row, but it is a published number
+     in the sealed artifact and it is COR-K's defect class.
+     (On B0b, B4 and K1 the same evaluator is accurate to 4.9e-14, 3.7e-13, 4.3e-13.  Checked.)
+
+=============================================================================================
+C.  WHAT SURVIVES, NAMED PRECISELY.
+=============================================================================================
+  * All fourteen seals verify; C_04 and C_05 reproduce byte-identically.
+  * Every arithmetic type claim about the three connections is CORRECT (section A).
+  * C_04's orbit-side isolation is CORRECT (R-D first paragraph).
+  * Every m(P) lane C publishes is CORRECT to every printed place, re-derived here by
+    kink-split adaptive quadrature at 50 dps: B0b log(4/9) = -0.810930216216328764,
+    B4 -log 2, K1 -0.756573585639774825 (S4's Cassaigne-Maillot value), B0b*
+    -0.987918288038492491 (lane C: -0.987918288038; my own 2^16 trapezoid was the wrong one,
+    defect R-2).  C-11's "NO S4 ARITHMETIC IS FOUND WRONG" survives my attempt on it.
+  * The subtorus values for B0b, B4 and K1 are correct to 5e-13 (Jensen-on-roots check).
+  * C-4's LIMIT statement on B0b and B4 SENSE U is TRUE and is now established at K = 1e9.
+  * C-9's Liouville bound reproduces (-21.93 vs the stated -21.864; ratio 15.82 vs 15.8).
+  * C-3's zero-set criterion: the affine-in-cos-t argument is correct as written, and the
+    exactly-1/4 measure for THREE classes — which lane C calls "obvious" and only measures —
+    is provable in two lines (the condition reduces to all three weights <= 1/2, the medial
+    triangle).  Recorded because lane C flagged the gap itself.
+  * The lane's self-flags are honest and I found no additional confound in the orbit code.
+
+=============================================================================================
+D.  NEW DEFECTS, NOT IN LANE C's OWN LEDGER.
+=============================================================================================
+  D-1  R-C: the vacuous resonance certificate.
+  D-2  R-D: the subtorus target evaluator is wrong by 8.26e-07 on the SENSE C row, and the
+       true value there equals m(P) exactly.
+  D-3  LATENT, not actual: C_04 forms k*A_num directly in int64.  At K = 1e7 the DIOPHANTINE
+       arm reaches 8.14e18, 88% of the int64 ceiling; K = 1.133e7 wraps SILENTLY.  numpy does
+       not raise.  Any successor raising K on this code path gets garbage with no warning.
+  D-4  ATTRIBUTION: C_00 and C_04 attribute "(2^(1/3), 4^(1/3)) is badly approximable" to
+       "W. M. Schmidt's theorem".  The standard source is the CUBIC NORM FORM argument
+       (Perron 1921 / Cassels): the form x^3 + 2y^3 + 4z^3 - 6xyz represents no zero and is
+       bounded below on non-zero integer points.  Schmidt's badly-approximable results are the
+       full-Hausdorff-dimension theorem and the Subspace Theorem; neither yields this pair.
+       The FACT is standard and true (checked numerically here); only the citation is wrong.
+       Inherited unchanged from LANE_W08 M1_03, so the defect is one row older than lane C.
+  D-5  IN THE CORPUS, NOT IN LANE C, AND CAUGHT BY THE SAME CENSUS: S4:973 declares
+       "The truncated decimals 3.14159 and 1.57080 are not pi and pi/2; THEY ARE GENERIC."
+       They are not.  Both are rational, so the connection is exactly resonant with primitive
+       relation (157080, 314159).  S4's numerical CONCLUSION is right to any attainable
+       precision — Boyd-Lawton makes that subtorus measure agree with m(P) far beyond
+       float64 — but its TYPING is wrong.  THIS IS THE CORPUS'S THIRD MISLABELLED CONNECTION,
+       it sits inside the paragraph that corrects the first two, and neither W-08, W-09 nor
+       lane C has caught it.
+  D-6  A SCOPE OVER-READ IN C-6, of the same kind.  C-6 says the SENSE C failure is "ALREADY
+       SITTING IN S4's PUBLISHED TABLE".  S4 sec4.2 declares its connection for that table:
+       "W(gamma_F) = e^{if} and W(gamma_C) = e^{ic} with the same (f,c), GENERIC".  Lane C
+       evaluates that ready state at S1 sec6's FINITE-ORDER connection and reports the -infinity.
+       True, and worth publishing — but it is a failure at a DIFFERENT connection from the one
+       the table declares, not a failure in the table.  What survives of C-6 is (a) S4 never
+       makes "generic" precise, and (b) float64 returns a finite -28.088521944 where the exact
+       answer is -infinity, which is a real and new precision-window finding.
+
+=============================================================================================
+E.  ISOLATION LEDGER FOR THIS REFUTATION.  ONE VARIABLE PER COMPARISON, ARMS DIFFED IN CODE.
+=============================================================================================
+ 1  R2_01 sec 1-2  three arms' relation lattices.  NO VARIABLE — a typing of lane C's own
+                   integers.  Arms are lane C's; nothing of mine moves.
+ 2  R2_01 sec 4    implemented vs intended DIOPHANTINE alpha.  ONE VARIABLE: the phase
+                   representation (float64 dyadic vs 60-dps irrational).  Same K, same p,
+                   same evaluator.  Result: immaterial (4e-10 at K = 1e7).
+ 3  R2_02          effect size by TWO evaluators.  ONE VARIABLE: the evaluator (trapezoid vs
+                   Jensen-on-roots).  Same Q, same dps.  Agree to 5e-50 except where Q has
+                   unit-circle roots, where the trapezoid is O(1/n) and is REJECTED.
+ 4  R2_03 sec 1    the resonant arm at four K.  ONE VARIABLE: K.  Same connection (built ON
+                   the subtorus by construction), same four ready states in ONE pass over k,
+                   same evaluator, same chunking.
+ 5  R2_03 sec 2-4  four connections at fixed K.  ONE VARIABLE: the connection's arithmetic.
+                   Same ready states, same evaluator, same chunking, same checkpoints; the
+                   four (alpha,beta) are printed.
+ 6  R2_04 A        twelve published connections typed.  NO VARIABLE — exact rational
+                   arithmetic on the published (f,c), no simulation involved.
+ CONTROLS DECLARED VACUOUS RATHER THAN REPORTED AS CONFIRMATIONS:
+   (a) R2_04(B)'s confirmation of lane C's m(P) values could not have failed for B0b and B4:
+       both have a single dominant Jensen branch, so any quadrature gets the closed form.  It
+       COULD have failed for K1 and B0b*, which have crossings, and it did not.
+   (b) R2_01 sec 1's confirmation that arm O has order 4 could not have failed: alpha = 1/2
+       and beta = 3/4 are written into the code as the literals 2, 3, 4.
+   (c) Section A's five failed attacks are reported as FAILED ATTACKS, not as confirmations.
+
+=============================================================================================
+F.  THIS REFUTER'S OWN DEFECTS — see R2_05 sec 4 in full.  R-1: I labelled f=1.0, c=3.0
+    "also generic" in R2_03 and RAN it that way; it is exactly resonant with relation (3,1),
+    and I caught it only from the flat error column.  The header is left standing in the
+    output with the correction beside it.  I committed the corpus's characteristic defect
+    inside the refutation commissioned to hunt it.  R-2: my own m(P) trapezoid was unsplit
+    and wrong in the eleventh place (K1) and the fifth (SENSE C); lane C's values are the
+    right ones.  R-5: NOT lineage-independent — Opus 5 on Opus 5.

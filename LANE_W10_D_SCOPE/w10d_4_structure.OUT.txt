@@ -1,0 +1,88 @@
+====================================================================================================
+== 4A  FIX A DEGENERACY IN LEG 3D BEFORE USING IT ==
+====================================================================================================
+  Leg 3D counted 4 permutations preserving |Z_k| pointwise on B0b.  B0b has p10 = p11 =
+  2/9, so two of those four are the SAME weight vector as the other two -- an accidental
+  degeneracy of B0b's multiset, not a symmetry.  Recorded, not silently patched.  Re-run
+  on a GENERIC four-class weight vector with no repeated entry:
+    generic p = [0.31 0.17 0.29 0.23]:  |Z_k|-preserving permutations = 2 of 24 -> [(0, 1, 2, 3), (3, 2, 1, 0)]
+    (0,1,2,3) = identity;  (3,2,1,0) = W-03's involution 00<->11, 10<->01.
+    TWO of 24 at the |Z_k| level; TWENTY-FOUR of 24 at the lambda level.  Leg 3D's
+    conclusion is unchanged and its count is corrected from 4 to 2.
+
+====================================================================================================
+== 4B  THE ARITHMETIC CLAIMS.  V = 5 IS PRIME.  V = 9 AND V = 6 ARE NOT. ==
+====================================================================================================
+  S2 Theorem 2 (via W-01): no tensor factorisation of the state space because dim = 5 is
+  prime.  S3 CHOICE LEDGER C1 rejects the adjunction-free alternatives (b),(c) on 5 | 9
+  and 5 | 7 failing.  W-05 LEG THREE: 'an accident of five vertices being prime'.
+  W-06's rebuild route is the wedge sequence V = 4k+1.  ALL FOUR are statements about 5.
+  carrier            V  V prime?      factorisations of C^V  V = 4k+1?
+  B1  K1             5      True               NONE (prime)       True
+  B1p bridged        6     False                C^2 (x) C^3      False
+  B4  spindle        6     False                C^2 (x) C^3      False
+  B1q spectator      7      True               NONE (prime)      False
+  B0b torus          9     False                C^3 (x) C^3       True
+  B1s subdivided    11      True               NONE (prime)      False
+
+  ON BOTH FOUR-CLASS CARRIERS THE PRIME ARGUMENT IS UNAVAILABLE:
+    B0b: C^9 = C^3 (x) C^3 exists, and 9 | 81 = 9^2, so M_9^(x)N is a directed system with
+         UNITAL embeddings and NO adjunction at all -- S3's C1(b)/(c) rejection ground
+         ('5 does not divide 9, 5 does not divide 7') has no analogue on B0b.
+    B4 : C^6 = C^2 (x) C^3.  A genuine tensor factorisation of the WHOLE space exists.
+  S2 THEOREM 2, S3's C1 REJECTIONS, W-02's 'cost: one qubit per cell, PROVED MINIMAL',
+  and W-06's V = 4k+1 WEDGE ROUTE ARE ALL K1-SCOPED, AND THEY FAIL ON BOTH FOUR-CLASS
+  CARRIERS THE CORPUS OWNS -- not because the theorems are wrong but because their
+  hypothesis (V prime, V = 4k+1) is a property of the number 5.
+  What is NOT K1-scoped: the FLOOR dim_C >= 4 from 'two non-parallel branch vectors'.
+  That needs only two occupied classes with distinct characters -- checked next.
+
+====================================================================================================
+== 4C  W-05's LEG TWO ON A FOUR-CLASS CARRIER: IS THE SLOT ALREADY INSIDE? ==
+====================================================================================================
+  W-05: the compression of M_V(C) to span{M_dF s, M_c s} has dim_C = 4, both branches pure,
+  overlap = Z.  Ingredients: two branch vectors that are NOT parallel.  Off K1:
+  carrier             |<a,b>|    ||a||    ||b||  dim span  dim_C        Z_1
+  B1  K1  (3cl)      0.762211 1.000000 1.000000         2      4   0.142207
+  B1q spec (3cl)     0.806546 1.000000 1.000000         2      4   0.082496
+  B1p brdg (2cl)     0.939373 1.000000 1.000000         2      4   0.079121
+  B0b torus(4cl)     0.749367 1.000000 1.000000         2      4   0.628335
+  B4  spin (4cl)     0.713764 1.000000 1.000000         2      4   0.610667
+  dim_C = (dim span)^2 = 4 wherever the two branch vectors are independent, which happens
+  exactly when two occupied classes have distinct characters -- i.e. exactly when G != {1}.
+  W-05's LEG TWO IS CARRIER-INDEPENDENT, conditioned on G != {1}.  On B1p (2 classes,
+  {10,01}) it still holds; the class that kills it is |S| = 1, on any carrier.
+
+====================================================================================================
+== 4D  W-03's 'THE CARRIER'S TOPOLOGY IS INERT', EXHIBITED ON THE FOUR-CLASS PAIR ==
+====================================================================================================
+  B0b: chi = 0, b1 = 2, b2 = 1, V = 9, F = 9.   B4: chi = 2, b1 = 1, b2 = 2, V = 6, F = 4.
+  Every topological invariant differs.  At SENSE C (class weights 1/4 each) both give
+  P = (1+x)(1+y)/4 and lambda = log(1/4) EXACTLY:
+    B0b  SENSE-C direct (1/N)log|Omega_N| at N=4e5: -1.386428958   log(1/4) = -1.386294361
+    B4  SENSE-C direct (1/N)log|Omega_N| at N=4e5: -1.386428958   log(1/4) = -1.386294361
+  Identical to the last printed digit BECAUSE THE INPUT IS IDENTICAL -- both rows feed the
+  SAME weight 4-vector to the SAME functional.  THIS IS A ZERO-VARIABLE CONTROL AND IS
+  REPORTED AS ONE.  It confirms nothing about topology; it re-exhibits W-03's own ruling
+  that d2 enters the functional NOWHERE, which is an analytic fact, not an experiment.
+  The only non-vacuous version: B0b and B4 at their OWN SENSE-U weights give DIFFERENT
+  rates (log(4/9) vs log(1/2)) -- and that difference is entirely the class multiset,
+  which is incidence, not topology.  'TOPOLOGY IS INERT' IS CARRIER-INDEPENDENT AND
+  UNTESTABLE BY CONSTRUCTION: no experiment on any carrier can bear on it.
+
+====================================================================================================
+== 4E  W-08's SCHEDULE EXPONENT ON FOUR CLASSES ==
+====================================================================================================
+  The adversary writes only the sqrt(K) cells of SMALLEST 1-|Z_k| and accumulates O(1).
+  Same code path, same K sweep; the ONE thing that moves is the weight 4-vector.
+  carrier               K=1e4      K=1e5      K=1e6      K=1e7   honest k_n=n at 1e6
+  B1  K1  (3cl)        0.5718     0.6211     0.3615     0.1143              756973.2
+  B1q spec (3cl)       0.5076     0.5352     0.3863     0.1222              741245.0
+  B1p brdg (2cl)       0.0042     0.0013     0.0004     0.0001              693152.9
+  B0b torus(4cl)       0.7756     0.4786     0.1515     0.0479              810932.0
+  B4  spin (4cl)       0.7309     0.5070     0.1604     0.0508              693147.6
+  The adversarial accumulation is O(1) and K-INDEPENDENT on every carrier including both
+  four-class ones; the honest schedule diverges linearly.  W-08's schedule statement is
+  CARRIER-INDEPENDENT.  Its EXPONENT (K^{-1/2} at d_eff = 2, K^{-1/3} at d_eff = 1)
+  depends on d_eff = rank of the relation lattice, which is 2 for every occupied set of
+  size >= 3 (leg 3A) -- so it is the same on three- and four-class carriers.

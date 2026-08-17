@@ -1,0 +1,66 @@
+====================================================================================================
+W10-A SCRIPT 5 — THE SCHEDULE QUALIFIER ON FOUR CLASSES
+====================================================================================================
+numpy 2.0.2; IEEE double.
+
+ARMS DIFF (sha256[:12] of the float64 weight vector):
+   K1  SENSE U  3-class {10,01,11}      pi = (0.000000, 0.400000, 0.400000, 0.200000)   ef6ce71cf8db
+   B1q SENSE U  3-class {00,10,01}      pi = (0.142857, 0.428571, 0.428571, 0.000000)   a3f45cd0a611
+   B0b SENSE U  4-class                 pi = (0.444444, 0.222222, 0.111111, 0.222222)   7359a4690427
+   B4  SENSE U  4-class                 pi = (0.166667, 0.166667, 0.166667, 0.500000)   615c4506702a
+
+----------------------------------------------------------------------------------------------------
+THE ADVERSARY (W-08's): write only the sqrt(K) cells of SMALLEST cost -log|Z_k|.
+Reported: total nats accumulated by the adversary vs by the honest schedule k_n = n.
+----------------------------------------------------------------------------------------------------
+CONNECTION: generic irrational
+   arm                                 K=1e4                          K=1e5                          K=1e6                          K=1e7                          
+   K1  SENSE U  3-class {10,01,11}     adv  0.5750 | hon     7566.5   adv  0.5635 | hon    75659.2   adv  0.5627 | hon   756569.0   adv  0.5630 | hon  7565708.9   
+   B1q SENSE U  3-class {00,10,01}     adv  0.5169 | hon     7411.0   adv  0.5106 | hon    74104.5   adv  0.5089 | hon   741034.6   adv  0.5087 | hon  7410338.0   
+   B0b SENSE U  4-class                adv  0.7339 | hon     8112.6   adv  0.6999 | hon    81091.1   adv  0.6992 | hon   810933.4   adv  0.6985 | hon  8109299.8   
+   B4  SENSE U  4-class                adv  0.7099 | hon     6933.1   adv  0.6775 | hon    69314.1   adv  0.6767 | hon   693148.4   adv  0.6758 | hon  6931470.7   
+
+CONNECTION: S3/S4 resonant f=2,c=1.1
+   arm                                 K=1e4                          K=1e5                          K=1e6                          K=1e7                          
+   K1  SENSE U  3-class {10,01,11}     adv  0.5742 | hon     7563.9   adv  0.6416 | hon    75629.9   adv  0.3215 | hon   756337.6   adv  0.1017 | hon  7563370.9   
+   B1q SENSE U  3-class {00,10,01}     adv  0.5252 | hon     7411.8   adv  0.5558 | hon    74083.7   adv  0.3428 | hon   740849.7   adv  0.1084 | hon  7408457.2   
+   B0b SENSE U  4-class                adv  0.7746 | hon     8109.9   adv  0.4837 | hon    81093.4   adv  0.1530 | hon   810930.6   adv  0.0484 | hon  8109302.3   
+   B4  SENSE U  4-class                adv  0.7444 | hon     6932.1   adv  0.4747 | hon    69315.0   adv  0.1502 | hon   693147.6   adv  0.0475 | hon  6931471.9   
+
+CONNECTION: S1 published order-4
+   arm                                 K=1e4                          K=1e5                          K=1e6                          K=1e7                          
+   K1  SENSE U  3-class {10,01,11}     adv  0.0000 | hon     8047.2   adv  0.0000 | hon    80471.9   adv  0.0000 | hon   804719.0   adv  0.0000 | hon  8047189.6   
+   B1q SENSE U  3-class {00,10,01}     adv  0.0000 | hon     8182.0   adv  0.0000 | hon    81819.5   adv  0.0000 | hon   818195.3   adv  0.0000 | hon  8181952.7   
+   B0b SENSE U  4-class                adv  0.0000 | hon     9709.1   adv  0.0000 | hon    97090.6   adv  0.0000 | hon   970905.9   adv  0.0000 | hon  9709058.8   
+   B4  SENSE U  4-class                adv  0.0000 | hon     8239.6   adv  0.0000 | hon    82395.9   adv  0.0000 | hon   823959.2   adv  0.0000 | hon  8239592.2   
+
+READ: on EVERY arm, three-class and four-class alike, the adversary's accumulation is
+BOUNDED in K -- flat at the generic connection (0.70, 0.70, 0.70, 0.70 on B0b), DECREASING
+at the resonant one (0.77 -> 0.05), and EXACTLY ZERO at the order-4 one -- while the honest
+schedule's grows linearly.  |Omega_adv| = exp(-adv) stays O(1) with
+unboundedly many writes.  THE SCHEDULE QUALIFIER IS CARRIER-INDEPENDENT AND CLASS-COUNT-
+INDEPENDENT: the four-class move has no purchase on it.
+
+AND AT THE ORDER-4 CONNECTION THE ADVERSARY PAYS EXACTLY ZERO, ON EVERY ARM:
+   K1  SENSE U  3-class {10,01,11}      #{cost = 0} over k <= 1e6 =   250000   adversary's 1000-cell cost = 0.000e+00
+   B1q SENSE U  3-class {00,10,01}      #{cost = 0} over k <= 1e6 =   250000   adversary's 1000-cell cost = 0.000e+00
+   B0b SENSE U  4-class                 #{cost = 0} over k <= 1e6 =   250000   adversary's 1000-cell cost = 1.110e-13
+   B4  SENSE U  4-class                 #{cost = 0} over k <= 1e6 =   250000   adversary's 1000-cell cost = 0.000e+00
+   (density 1/4 on every arm.  |Z_k| = 1 iff k*L_S is contained in L, and all four arms
+    have L_S = Z^2, so this could not have come out otherwise -- DERIVED, NOT A CONTROL.)
+
+----------------------------------------------------------------------------------------------------
+CHUNKING NEUTRALITY CHECK (the code path must not be the variable)
+----------------------------------------------------------------------------------------------------
+   unchunked total = 810933.367281856   chunked total = 810933.367281856   dev = 0.000e+00
+
+====================================================================================================
+VERDICT ON THE SCHEDULE QUALIFIER
+====================================================================================================
+W-02's REGISTER row states 'FORMATION OCCURS <=> G != {1}' with no schedule hypothesis.
+The theorem it registers (S3_THE_CROSSING_AUDIT_V001.md:420-428) says 'Along the canonical
+clock k_n = n'.  W-08's row supplies the missing hypothesis and proves it is load-bearing.
+MEASURED HERE: the gap is CARRIER-INDEPENDENT -- it is the same on three and four classes.
+So W-02's row is UNDER-QUALIFIED, and the missing qualifier is the SCHEDULE, not the CARRIER.
+A lane looking for W-02's scope on the carrier axis finds nothing; the scope defect is on an
+axis this round did not ask about, and it is already fixed in a later row of the same file.

@@ -1,0 +1,68 @@
+LENS 2 (SCOPE), ATTACK 6.  THE LANE LABELS B-05, B-08, B-09 AND B-12 'CARRIER-
+INDEPENDENT' ON EVIDENCE FROM EXACTLY TWO CARRIERS.  MOVE THE CARRIER.
+
+Every one of those four findings is re-run here on a THIRD four-class carrier the lane
+never used -- K1+2S, K1 with a spectator branch, built from incidence in ATTACK 2 -- and
+on a FOURTH with a different class multiset again.  The code is mine, not the lane's.
+
+THE ONE VARIABLE: the CARRIER.  The state distribution, the connection distribution, the
+circuit counts, the seeds and the code path are identical across carriers.
+
+  6.0  the two new carriers, built and checked from incidence
+  6.1  B-05: is the pushforward real, non-negative, and exactly four characters?
+  6.2  B-08: the involution at the level of Z_k
+  6.3  B-09: the |Z_k|^2 closed form and the 12 involution orbits
+  6.4  B-12: the firing region is exactly 1/2 with all four classes occupied
+
+
+================================================================================================
+6.0  TWO CARRIERS THE LANE NEVER USED, BUILT FROM INCIDENCE
+================================================================================================
+  K1+2S  (pinch + spectator pair)    V=7 E=8 F=1 chi=0 b=(1,1,0) |d1.d2|=0.0e+00  classes {00:2,10:2,01:2,11:1}
+       all four classes occupied: True   SENSE U = (0.2857, 0.2857, 0.2857, 0.1429)
+  K1+3S  (longer loop + tail)        V=9 E=10 F=1 chi=0 b=(1,1,0) |d1.d2|=0.0e+00  classes {00:3,10:2,01:3,11:1}
+       all four classes occupied: True   SENSE U = (0.3333, 0.2222, 0.3333, 0.1111)
+
+================================================================================================
+6.1  B-05 ON A THIRD AND FOURTH CARRIER — PUSHFORWARD REAL, NON-NEGATIVE, 4 CHARACTERS
+================================================================================================
+  Direct comparison built from the branch operators, not from the class sums:
+      Z_k = <M_F^k s, M_C^k s>,  (M_F s)(v) = W_F s(v) on gamma_F, s(v) elsewhere.
+  Compared against P(u^k, v^k) with p_ab = SUM_{v in class ab} |s_v|^2.
+  200 random states x 8 circuit counts per carrier, seed 20260816.
+  K1+2S  (pinch + spectator pair)    max |direct - P(u^k,v^k)| = 4.45e-16   min p_ab = 0.000828 (>=0: True)
+  K1+3S  (longer loop + tail)        max |direct - P(u^k,v^k)| = 4.44e-16   min p_ab = 0.000013 (>=0: True)
+
+================================================================================================
+6.2  B-08 ON A THIRD AND FOURTH CARRIER — THE INVOLUTION AT THE LEVEL OF Z_k
+================================================================================================
+  Exact identity tested: conj(u)^k conj(v)^k Z_k[p] = conj( Z_k[p~] ), p~ = (p11,p01,p10,p00).
+  K1+2S  (pinch + spectator pair)    max |identity defect| = 3.93e-16     max ||Z_k|-|Z~_k|| = 5.55e-16
+  K1+3S  (longer loop + tail)        max |identity defect| = 3.72e-16     max ||Z_k|-|Z~_k|| = 4.44e-16
+
+================================================================================================
+6.3  B-09 ON GENERIC WEIGHTS — THE |Z_k|^2 CLOSED FORM AND THE 12 ORBITS
+================================================================================================
+  |Z_k|^2 = SUM p^2 + 2[A cos a + B cos b + C cos(a+b) + D cos(a-b)],
+     A = p00 p10 + p01 p11,  B = p00 p01 + p10 p11,  C = p00 p11,  D = p10 p01.
+  Checked against the direct |Z_k|^2, and the number of distinct values over the 24
+  arrangements counted at 500 random (f, c, k).
+  K1+2S SENSE U (2,2,2,1)/7    distinct arrays  4  closed-form max deviation 1.19e-12  #distinct |Z_k| -> {2: 500}
+  K1+3S SENSE U                distinct arrays 12  closed-form max deviation 1.60e-12  #distinct |Z_k| -> {6: 500}
+  GEN four distinct weights    distinct arrays 24  closed-form max deviation 1.56e-12  #distinct |Z_k| -> {12: 500}
+
+================================================================================================
+6.4  B-12 ON A THIRD AND FOURTH CARRIER — THE FIRING REGION IS EXACTLY 1/2
+================================================================================================
+  0 in conv{1, u, v, uv} <=> cos f + cos c <= 0 (W-09).  Checked against a brute-force
+  hull test on a 400x400 (f,c) grid, and against all 24 permutations of the weights.
+  closed form vs brute-force hull on 4000 random (f,c): disagreements = 0
+  firing fraction on the 400x400 grid = 0.500056   (W-09's exact 1/2)
+  the criterion reads only the SUPPORT, so it is constant across all 24 permutations
+  by construction, on every four-class carrier including the two built here.
+
+  ALL FOUR 'CARRIER-INDEPENDENT' LABELS SURVIVE THE CARRIER MOVING.  This is the one part
+  of the lane's scope labelling that I could not dent: B-05, B-08, B-09 and B-12 are
+  algebraic consequences of the class decomposition and do not know which complex produced
+  it.  The labels are right; the evidence behind them was two carriers wide and is now
+  four.

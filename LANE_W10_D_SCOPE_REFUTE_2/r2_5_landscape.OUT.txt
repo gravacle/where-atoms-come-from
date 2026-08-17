@@ -1,0 +1,97 @@
+========================================================================================================
+ARM DIFF FIRST.  Weight vectors, and the four Fourier coefficients of |Z_1|^2 they
+produce.  C = p00 p11 is the coefficient that exists only when BOTH class 00 and class
+11 are occupied -- the exact condition W-09 named for W-01's criterion.
+========================================================================================================
+  arm                           A (cos f)    B (cos c)   C (cos(c-f))   D (cos(c+f))          S
+  K1  S3 ready state  (3cl)      0.240000     0.240000       0.000000       0.180000   0.340000
+  B1  K1 SENSE-U      (3cl)      0.160000     0.160000       0.000000       0.320000   0.360000
+  B1q spectator       (3cl)      0.122449     0.122449       0.000000       0.367347   0.387755
+  B0a torus disjoint  (3cl)      0.197531     0.148148       0.000000       0.296296   0.358025
+  B0b torus meeting   (4cl)      0.246914     0.197531       0.197531       0.049383   0.308642
+  B4  spindle         (4cl)      0.222222     0.222222       0.166667       0.055556   0.333333
+  DISTINCT ARMS: 6 of 6
+
+========================================================================================================
+== 5A  VALIDATE AGAINST S4 sec3.1's PUBLISHED SCHEDULE-A FORMULA AND TABLE ==
+========================================================================================================
+  S4: lambda_A = (1/2) log[ 0.34 + 0.24 cos c + 0.24 cos f + 0.18 cos(f+c) ]
+  mine        : (1/2) log[ 0.34 + 0.24 cos c + 0.24 cos f + 0.00 cos(c-f) + 0.18 cos(f+c) ]   -- IDENTICAL, with cos(c-f) absent
+  because C = p00 p11 = 0 on K1.  S4's own critical-point table, checked:
+    (0,0)                  |Z_1| = 1.0000000   |grad| =  0.0e+00   Hess eigs [-0.6  -0.24]   -> MAX
+    (pi,pi)                |Z_1| = 0.2000000   |grad| =  2.1e-17   Hess eigs [-0.12  0.24]   -> saddle
+    (0,pi)                 |Z_1| = 0.4000000   |grad| =  5.6e-17   Hess eigs [-0.12  0.48]   -> saddle
+    (pi,0)                 |Z_1| = 0.4000000   |grad| =  5.6e-17   Hess eigs [-0.12  0.48]   -> saddle
+    (arccos(-2/3),same)    |Z_1| = 0.0000000   |grad| =  3.9e-17   Hess eigs [0.16 0.2 ]   -> min
+  S4's table calls (pi,pi) a LOCAL MINIMUM.  It is a SADDLE.  W-03's correction of record
+  is CONFIRMED here from an independent implementation, and S4's |Z_1| values
+  (1.0, 0.2, 0.4, 0.4, 0.0) all reproduce.
+
+========================================================================================================
+== 5B  THE MORSE CENSUS, ONE VARIABLE MOVED.  SELF-CHECK: sum (-1)^index MUST BE 0 ==
+========================================================================================================
+  arm                         #MAX  #saddle  #min  #degen  sum(-1)^i  = chi(T^2)?   min |Z_1|
+  K1  S3 ready state  (3cl)      1        3     2       0          0         True   0.0000000
+  B1  K1 SENSE-U      (3cl)      1        3     2       0          0         True   0.0000000
+  B1q spectator       (3cl)      1        3     2       0          0         True   0.0000000
+  B0a torus disjoint  (3cl)      1        3     2       0          0         True   0.0000000
+  B0b torus meeting   (4cl)      1        2     1       0          0         True   0.1111111
+  B4  spindle         (4cl)      1        3     2       0          0         True   0.2721655
+
+  EVERY ROW BALANCES.  The census is therefore not an artefact of the finder.
+  AND IT IS NOT CONSTANT ACROSS THE ARMS.  Detail:
+
+    K1  S3 ready state  (3cl)
+      (f,c) = (0.000000, 0.000000)   |Z_1| = 1.0000000   MAX
+      (f,c) = (6.283185, 3.141593)   |Z_1| = 0.4000000   saddle
+      (f,c) = (3.141593, 0.000000)   |Z_1| = 0.4000000   saddle
+      (f,c) = (3.141593, 3.141593)   |Z_1| = 0.2000000   saddle
+      (f,c) = (2.300524, 2.300524)   |Z_1| = 0.0000000   min
+      (f,c) = (3.982661, 3.982661)   |Z_1| = 0.0000000   min
+
+    B1  K1 SENSE-U      (3cl)
+      (f,c) = (0.000000, 0.000000)   |Z_1| = 1.0000000   MAX
+      (f,c) = (3.141593, 3.141593)   |Z_1| = 0.6000000   saddle
+      (f,c) = (0.000000, 3.141593)   |Z_1| = 0.2000000   saddle
+      (f,c) = (3.141593, 6.283185)   |Z_1| = 0.2000000   saddle
+      (f,c) = (1.823477, 1.823477)   |Z_1| = 0.0000000   min
+      (f,c) = (4.459709, 4.459709)   |Z_1| = 0.0000000   min
+
+    B1q spectator       (3cl)
+      (f,c) = (0.000000, 0.000000)   |Z_1| = 1.0000000   MAX
+      (f,c) = (3.141593, 3.141593)   |Z_1| = 0.7142857   saddle
+      (f,c) = (6.283185, 3.141593)   |Z_1| = 0.1428571   saddle
+      (f,c) = (3.141593, 0.000000)   |Z_1| = 0.1428571   saddle
+      (f,c) = (1.738244, 1.738244)   |Z_1| = 0.0000000   min
+      (f,c) = (4.544941, 4.544941)   |Z_1| = 0.0000000   min
+
+    B0a torus disjoint  (3cl)
+      (f,c) = (0.000000, 0.000000)   |Z_1| = 1.0000000   MAX
+      (f,c) = (3.141593, 3.141593)   |Z_1| = 0.5555556   saddle
+      (f,c) = (6.283185, 3.141593)   |Z_1| = 0.3333333   saddle
+      (f,c) = (3.141593, 0.000000)   |Z_1| = 0.1111111   saddle
+      (f,c) = (3.954348, 4.965069)   |Z_1| = 0.0000000   min
+      (f,c) = (2.328837, 1.318116)   |Z_1| = 0.0000000   min
+
+    B0b torus meeting   (4cl)
+      (f,c) = (0.000000, 0.000000)   |Z_1| = 1.0000000   MAX
+      (f,c) = (6.283185, 3.141593)   |Z_1| = 0.3333333   saddle
+      (f,c) = (3.141593, 3.141593)   |Z_1| = 0.3333333   saddle
+      (f,c) = (3.141593, 0.000000)   |Z_1| = 0.1111111   min
+
+    B4  spindle         (4cl)
+      (f,c) = (0.000000, 0.000000)   |Z_1| = 1.0000000   MAX
+      (f,c) = (6.283185, 3.141593)   |Z_1| = 0.3333333   saddle
+      (f,c) = (3.141593, 6.283185)   |Z_1| = 0.3333333   saddle
+      (f,c) = (3.141593, 3.141593)   |Z_1| = 0.3333333   saddle
+      (f,c) = (3.982661, 2.300524)   |Z_1| = 0.2721655   min
+      (f,c) = (2.300524, 3.982661)   |Z_1| = 0.2721655   min
+
+  READ.  S4's schedule-A landscape -- 1 max, 3 saddles, 2 conical zeros, the whole
+  structure W-03 corrected -- is a THREE-CLASS landscape.  The cos(c-f) term that only
+  four-class occupancy switches on changes the critical set, and on BOTH four-class
+  carriers the two conical zeros are GONE: min |Z_1| over the whole torus is bounded
+  away from 0, so the singular locus of lambda_A -- 'this is W-01's convex-hull
+  criterion' in S4's own words -- IS EMPTY THERE.  Lane D proved the same emptiness from
+  the Jensen branches (its leg 1D) and never carried it to the Morse row, because the
+  Morse row is in no row of its table.

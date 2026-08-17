@@ -1,0 +1,106 @@
+LENS 2 (SCOPE), ATTACK 1.  IS THE LANE'S OWN VACUITY FLAG (B-04) A FACT ABOUT
+FOUR OCCUPIED CLASSES, ABOUT THE TWO CARRIERS, OR ABOUT TWO WEIGHT VECTORS?
+
+The lane flags, against itself, that on B0b, B4 and SENSE C every one of the 24
+arrangements has a dominated Jensen pairing, so lambda = log(max weight) and the
+permutation arms could not have failed.  That flag is CORRECT.  This script asks the
+scope question the lane does not: WHAT IS THE REGION, and does 'four occupied classes'
+put you in it?
+
+THE ONE VARIABLE in section 1.3: the READY STATE on a FIXED carrier (B0b or B4 or the
+new K1+2S), with the incidence, the class map, the evaluator and the criterion held
+fixed.  The class multiset does not move; only the pushforward does.
+
+SECTIONS
+  1.0  the domination criterion, DERIVED in sorted form and checked exhaustively
+  1.1  the exact measure of the degenerate region in the weight simplex
+  1.2  every carrier of S4:519 classified, SENSE U and SENSE C
+  1.3  THE DECISIVE ARM: on the SAME two carriers, random ready states
+  1.4  lambda >= log(w_max) with equality exactly on the degenerate region
+
+
+================================================================================================
+1.0  THE DOMINATION CRITERION IN SORTED FORM, DERIVED AND CHECKED EXHAUSTIVELY
+================================================================================================
+  For the Jensen pairing {X,Y}|{Z,W} of a REAL NON-NEGATIVE array,
+      SA - SB = (X^2+Y^2-Z^2-W^2) + 2(XY-ZW) cos t
+  is monotone in cos t, so one branch dominates pointwise iff the endpoint values agree
+  in sign, i.e. iff  sign(X+Y-Z-W) = sign(|X-Y|-|Z-W|).  With w1>=w2>=w3>=w4 the three
+  pairings give w1-w2>=w3-w4, w1-w3>=w2-w4, w1+w4>=w2+w3 -- ALL THE SAME INEQUALITY.
+
+      ALL 24 ARRANGEMENTS DOMINATED   <=>   w_max + w_min >= w_mid1 + w_mid2
+      and then lambda = log(w_max) EXACTLY, the other three weights unused.
+
+  Checked exhaustively below in exact rationals: the sorted criterion against the
+  per-arrangement test over all 24 permutations, on every 4-composition of n <= 14.
+  4-compositions tested: 1001      DISAGREEMENTS between the sorted criterion, the
+  24-arrangement exact test, and 'lambda = log(w_max)': 0
+
+================================================================================================
+1.1  THE MEASURE OF THE DEGENERATE REGION — EXACTLY 3/4 OF THE SIMPLEX
+================================================================================================
+  Under the uniform (Dirichlet(1,1,1,1)) measure on the four-class weight simplex,
+  write the ordered gaps D_k = w_(k) - w_(k+1).  Renyi's representation for uniform
+  spacings makes D_k proportional to E_k/k with E_k i.i.d. Exp(1), so
+      w1+w4 >= w2+w3  <=>  D_1 >= D_3  <=>  3 E_1 >= E_3,
+  and P(E_3 <= 3E_1) = 1 - E[e^{-3E_1}] = 1 - 1/(1+3) = 3/4.
+  Three classes (w4 = 0) reduce to w_max >= 1/2, whose Dirichlet(1,1,1) probability is
+  3*(1/2)^2 = 3/4 as well.  Both checked by simulation:
+  four classes, Dirichlet(1,1,1,1)     degenerate fraction = 0.749788   exact 3/4 = 0.750000
+  three classes, Dirichlet(1,1,1)      degenerate fraction = 0.750069   exact 3/4 = 0.750000
+
+================================================================================================
+1.2  EVERY CARRIER OF S4:519 CLASSIFIED — AND THE CORRELATION IS WITH THE WEIGHTS
+================================================================================================
+  SENSE U (p = class counts / V), the corpus's own row, and SENSE C alongside.
+  carrier                    class counts            classes arrays degenerate lambda
+  B0a ring torus, disjoint   (2, 4, 3, 0)                  3     24      False -0.747659833081
+  B0b ring torus, MEET       (4, 2, 1, 2)                  4     12       True -0.810930216216
+  B3  horn torus             (0, 2, 2, 1)                  3     12      False -0.75657358564
+  B1  K1 as handed           (0, 2, 2, 1)                  3     12      False -0.75657358564
+  B4  spindle                (1, 1, 1, 3)                  4      4       True -0.69314718056
+  B2  K1 both filled         (0, 2, 2, 1)                  3     12      False -0.75657358564
+  B1p K1-bridged             (0, 3, 3, 0)                  2      6       True -0.69314718056
+  B1q K1-bridged+spectator   (1, 3, 3, 0)                  3     12      False -0.741029582571
+  B1s K1 subdivided          (0, 5, 5, 1)                  3     12      False -0.724759919461
+  SENSE C, 3 classes         ('0', '2/5', '3/10', '3/10')        3     12      False -0.767507880358
+  SENSE C, 4 classes         ('1/4', '1/4', '1/4', '1/4')        4      1       True -1.38629436112
+
+  READ IT OFF: every THREE-class carrier the corpus ran is in the INFORMATIVE quarter and
+  both FOUR-class carriers are in the DEGENERATE three-quarters -- but the criterion has
+  nothing to do with class occupancy.  A three-class vector is degenerate iff its max
+  weight is >= 1/2, and K1's is 0.4.  SENSE C at four classes sits exactly ON the
+  boundary (1/4+1/4 = 1/4+1/4), which is why (1+x)(1+y)/4 factors.
+
+================================================================================================
+1.3  THE DECISIVE ARM — SAME CARRIER, SAME CLASS MULTISET, THE READY STATE MOVES
+================================================================================================
+  The carrier does NOT determine the weight vector.  p_ab = SUM_{v in class ab} |s_v|^2,
+  so on any carrier with all four classes occupied the weight vector ranges over the WHOLE
+  open 3-simplex as the ready state ranges over the unit sphere.  'B0b is degenerate' is
+  therefore not a statement about B0b; it is a statement about SENSE U on B0b.
+  ONE VARIABLE: the ready state.  Incidence, class map, criterion, evaluator all fixed.
+  200000 Haar-random unit states per carrier, seed 20260816.  (The pushforward measure is
+  Dirichlet(class sizes); SENSE U is its mean.)
+  B0b  {00:4,10:2,01:1,11:2}   SENSE U degenerate = True       random-state degenerate fraction = 0.7199
+  B4   {00:1,10:1,01:1,11:3}   SENSE U degenerate = True       random-state degenerate fraction = 0.7970
+  K1+2S {00:2,10:2,01:2,11:1}  SENSE U degenerate = False      random-state degenerate fraction = 0.6799
+
+  The pushforward of a Haar state onto the classes is EXACTLY Dirichlet(m_00,m_10,m_01,m_11)
+  with the class sizes as parameters, and SENSE U is that Dirichlet's MEAN.  So the
+  question 'is this carrier degenerate' is really 'does the mean of its class-Dirichlet
+  fall in the degenerate 3/4', and 28% of ready states on B0b put it outside.  B-04's 'BOTH FOUR-CLASS CARRIERS THE
+  CORPUS OWNS ARE DEGENERATE FOR THIS TEST AND COULD NOT HAVE FAILED IT' is true of the
+  SENSE-U vectors S4 chose and false of the carriers.  The lane's own LEG C and LEG D
+  already draw random states on these same carriers -- so the lane owned the fix and did
+  not apply it to LEG A.
+
+================================================================================================
+1.4  lambda >= log(w_max), WITH EQUALITY EXACTLY ON THE DEGENERATE REGION
+================================================================================================
+  A sharper statement than 'the other three weights do not enter': the degenerate
+  region is exactly where the rate saturates its own lower bound.
+  400 Dirichlet(1,1,1,1) draws, seed 4242
+  degenerate: 285 draws, worst |lambda - log w_max| = 0.000e+00
+  informative: 115 draws, smallest (lambda - log w_max) = 0.000012  (all strictly > 0)
+  observed degenerate fraction 0.7125 against the exact 3/4

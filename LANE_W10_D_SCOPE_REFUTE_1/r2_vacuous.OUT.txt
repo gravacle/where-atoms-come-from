@@ -1,0 +1,57 @@
+====================================================================================================
+== R2-A  THE f<->c AND c->-c ARMS ARE THE COMPLEX CONJUGATES OF ARMS ALREADY RUN ==
+====================================================================================================
+  u = e^{-if}, v = e^{ic}, uv = e^{i(c-f)}, chi_00 = 1.  Then, as SETS:
+     S(c, f)  = conj( S(f, c) )        [the f<->c exchange]
+     S(f, -c) = conj( S(-f, c) )       [c->-c versus f->-f]
+  and 0 in conv(S) <=> 0 in conv(conj S), because conjugation is a linear isometry of R^2
+  fixing 0.  So the exchange arm CANNOT differ from the base arm and the c->-c arm CANNOT
+  differ from the f->-f arm -- on ANY occupied set, at ANY draw, for ANY carrier.
+
+  EXHIBITED AT THE ELEMENTS, not just at the counts (max over 200000 draws):
+  occupied set                 max|S(c,f) - conj S(f,c)|   max|S(f,-c) - conj S(-f,c)|
+  B1  K1 as handed                             0.000e+00                     0.000e+00
+  B1q K1 + spectator                           0.000e+00                     0.000e+00
+  B1p K1-bridged                               0.000e+00                     0.000e+00
+  B0b/B4 four classes                          0.000e+00                     0.000e+00
+  (sets compared after sorting; sampled every 20000th draw to keep the print small)
+
+  AND THE VERDICT ARRAYS, ELEMENTWISE -- not the counts lane D reports, the ARRAYS:
+  occupied set                 base != swap    (base!=fneg) XOR (base!=cneg)
+  B1  K1 as handed                        0                                0
+  B1q K1 + spectator                      0                                0
+  B1p K1-bridged                          0                                0
+  B0b/B4 four classes                     0                                0
+  ZERO in every cell of both columns.  The 'f<->c flips 0 of 200000' column of lane D's
+  leg 1A is a column of structural zeros, and its 'c->-c flips the SAME 99785' is the
+  f->-f column reprinted.  D-02's NEW half is a VACUOUS CONTROL and is void as evidence.
+  THE STATEMENT IT SUPPORTS SURVIVES AS A THEOREM -- the criterion is conjugation-blind,
+  one line, no draws -- but it was never a measurement and it isolates nothing about
+  class occupancy, which is the variable D-02 claims to be reading.
+
+====================================================================================================
+== R2-B  LEG 3C's TWO 'DIFFERENT' STATES ARE THE SAME ARRAY ==
+====================================================================================================
+  Sealed source, LANE_W10_D_SCOPE/w10d_3_criterion.py, leg 3C:
+    ("B0b, state on ONE class-00 vertex   p=(1,0,0,0)", np.array([1., 0, 0, 0])),
+    ("B0b, state on ALL FOUR class-00 vtcs p=(1,0,0,0)", np.array([1., 0, 0, 0])),
+  np.array_equal(arm1, arm2) = True   arm1.tobytes() == arm2.tobytes() = True
+  BYTE-IDENTICAL.  Two rows of the printed table, one input.  This is verbatim the defect
+  W-08's isolation audit named as the commonest FATAL one and which this lane's own
+  PUBLISHED_CONVENTIONS promises every script will print a diff to prevent.  Leg 3C
+  prints no arm diff.
+
+  What a NON-vacuous version would have looked like -- vertex-level states that are
+  genuinely different objects and only coincide after the class pushforward:
+  B0b's four class-00 vertices are v2, v5, v7, v8 (leg 5A's reconstruction, verified).
+    delta on v2                       vertex vector = [0. 0. 1. 0. 0. 0. 0. 0. 0.]  ->  class weights [1. 0. 0. 0.]
+    delta on v8                       vertex vector = [0. 0. 0. 0. 0. 0. 0. 0. 1.]  ->  class weights [1. 0. 0. 0.]
+    uniform on v2,v5,v7,v8            vertex vector = [0.   0.   0.25 0.   0.   0.25 0.   0.25 0.25]  ->  class weights [1. 0. 0. 0.]
+    skew (.7,.1,.15,.05) on the four  vertex vector = [0.   0.   0.7  0.   0.   0.1  0.   0.15 0.05]  ->  class weights [1. 0. 0. 0.]
+    pairwise arm diff of the four VERTEX vectors: 0.300 (all four genuinely distinct)
+  All four push forward to p = (1,0,0,0) and therefore to rate 0 BY IDENTITY, because the
+  functional is a function of the class weights and of nothing else -- W-03's own ruling.
+  D-05's CLAIM ('|S| = 1 never fires' is the theorem; root-vs-class coincide only on K1)
+  IS TRUE AND IS NOT NEW: REGISTER_V001.md:126 already states
+     "|S|=1 -> never, which recovers W-01's 'the root can never fire' as a special case."
+  W-02 registered the class-level form of the theorem eight rows before this lane ran.

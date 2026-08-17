@@ -1,0 +1,250 @@
+LANE W-10 / C — REFUTER 1.  LENS 1: MATHEMATICS — ATTACK THE CONVERGENCE.
+FINDINGS.  Register head W-09, round W-10.  Target: LANE_W10_C_N1.
+
+VERDICT: CONFIRMED WITH CORRECTIONS.
+  Lane C's arithmetic is correct everywhere this lens reached.  All six scripts rerun
+  BYTE-IDENTICAL on this machine; SEALS.sha256 verifies 15/15.  Every closed form is right;
+  every quoted digit is correctly rounded (worst 0.998 of a half-ulp).  The one number the
+  lane's C-4 turns on -- the resonant subtorus limit -0.810930204535 -- is CONFIRMED in exact
+  rational arithmetic to 28 digits.  Three findings are corrected and one (C-12) is refuted
+  outright and replaced with a theorem.
+
+=============================================================================================
+0.  WHAT I TRIED THAT COULD HAVE BROKEN THE LANE, AND DID NOT
+=============================================================================================
+  (a) RE-DERIVED every closed form from the ready state rather than checking the lane's, in
+      exact rationals + mpmath dps=60.  All six agree; all quoted digits correctly rounded.
+  (b) RECOMPUTED the resonant subtorus limit at (11,20) by an EXACT RATIONAL SERIES
+      (Theorem R2 below) instead of the lane's two float64 routes.  Agreement with an
+      independent mpmath.polyroots(dps=40) run: 3.09e-28.  The 1.168e-08 separation is real.
+  (c) REBUILT the Birkhoff engine with a different phase reduction and PUSHED K from 1e7 to
+      1e8.  The Diophantine gap falls 5.4e-08 -> 6.1e-09 (B0b) and 5.6e-08 -> 2.8e-09 (B4);
+      the two engines agree at K=1e7 to 4.3e-10.  C-4's "AGREES" survives the extension.
+  (d) RE-PROVED the zero-set criterion and INTEGRATED the four-class measure by hand (= 1/4),
+      then PROVED the three-class case the lane self-flagged as unproved (= 1/4, the medial
+      triangle), and remeasured both on 200000 fresh draws with a fresh seed: 0.249945.
+  (e) VERIFIED C-9's Liouville bound arithmetic: q1 = 8, eps1 = 2^-254, |1+u^8| = 2 sin(pi eps1)
+      = 2.170e-76, bound -21.864 against m(P) = -log 4.  The argument is valid and needs no
+      summation because every term is <= 0.  (One loose attribution: the step that forces
+      L = {0} is LIOUVILLE's transcendence theorem when m != 0, with Roth only excluding beta
+      from being Liouville.  The conclusion is right.)
+  (f) RECHECKED C-5's B0b* from incidence by hand: gamma_C diagonal has 6 vertices, 3 shared
+      with gamma_F, so {00:2,10:1,01:3,11:3}; hi = -1/3, lo = +1/9, hi*lo < 0.  Correct.
+  (g) CHECKED C_04's int64 phase products against the int64 ceiling (leg 1 of R_03).
+  (h) CHECKED C_02 leg E's arms: the branch operator is the only thing that moves; the arms
+      differ by 1.27-1.92; the control is not vacuous.
+  NONE OF THESE BROKE ANYTHING.  What follows is what did.
+
+=============================================================================================
+1.  NEW THEOREMS — POSITIVE, AND THEY SUBSUME TWO OF LANE C's FINDINGS INTO ONE
+=============================================================================================
+
+THEOREM R1 (DOMINANCE).  For non-negative p summing to 1, with
+    hi = (p00+p10)-(p01+p11),  lo = |p00-p10|-|p01-p11|,
+if hi*lo >= 0 then one Jensen branch dominates the other at every point of T and
+    m(P) = log max(p00,p10)   if hi >= 0,        m(P) = log max(p01,p11)   if hi <= 0.
+PROOF.  |A|^2-|B|^2 is AFFINE in cos t, equal to hi*(sum of all four p) at cos t = +1 and to
+lo*(|p00-p10|+|p01-p11|) at cos t = -1; both bracket factors are >= 0, so equal signs at the
+two ends force one sign throughout.  Jensen in x finishes.  []
+CONSEQUENCE.  m(P) is a ONE-LINE closed form on 3/4 of the ready-state simplex, and needs
+quadrature exactly on the 1/4 where P has a torus zero -- i.e. C-2 and C-3 ARE ONE THEOREM.
+
+  * S4:599's "genuinely 4-term and does not factor, QUADRATURE ONLY" is refuted for B0b by
+    dominance, not by lane C's reversal identity.  The REVERSAL LOCUS HAS MEASURE ZERO; the
+    dominance set has measure 3/4.  B4, pX = (4,2,3,1)/10 and the SENSE C state are all
+    closed forms by R1 and NONE of them is on the reversal locus (R_01 sec 1 table).
+  * So C-2's stated mechanism is a measure-zero sub-case of C-3's own criterion, and C-2's
+    coda -- "B0b's exactness and the multiset theorem's real hypothesis are ONE IDENTITY" --
+    is a coincidence of B0b, not a structural link.  C-2's CONCLUSION stands; its REASON is
+    subsumed.
+  * And S4:599's sentence WOULD HAVE BEEN CORRECT on lane C's own B0b*, which is four-term,
+    non-factoring, crossing, and the only value in the whole lane that genuinely needs
+    quadrature.
+
+THEOREM R2/R4 (EXACT BOYD-LAWTON).  If branch A dominates and p00 > p10 (so tau = B/A is
+analytic on |x| <= 1), then for a primitive relation (m,n),
+    lambda_(m,n) - m(P)  =  SUM_{r>=1} (-1)^{nr+1} [x^{mr}] tau(x)^{nr} / (n r),
+and since |tau| <= rho := max_T |B/A| < 1 on the boundary, Cauchy gives |[x^j]tau^K| <= rho^K,
+hence the RIGOROUS GEOMETRIC BOUND
+    |lambda_(m,n) - m(P)|  <=  -log(1 - rho^n)/n  <=  rho^n / (n (1 - rho^n)).
+On B0b (where |B| = |A|/2 pointwise, rho = 1/2) this is an exact rational series.  At the
+corpus's own resonance (11,20):
+    lambda_(11,20) - m(P) = 66688318865043190932104161533929418081
+                            / 5708990770823839524233143877797980545530986496
+                          = 1.1681279851748593893e-8,   leading coefficient
+    [w^11] ((1+2w)/(2+w))^20 = -131519505/536870912 = -0.244974168018,  tail < 2.07e-26.
+    lambda_(11,20) = -0.8109302045350489122074   (mpmath polyroots dps=40 agrees to 3.09e-28).
+
+THEOREM R3 (three-class measure, which lane C self-flagged as unproved).  With p00 = 0 the
+criterion reduces to (2p10-1)(1-2max(p01,p11)) <= 0, which holds iff max(p10,p01,p11) <= 1/2:
+the MEDIAL TRIANGLE, area exactly 1/4.  The same holds for any one missing class by the
+S4-symmetry of the criterion.  Measured 0.249925 by lane C; now proved.
+
+=============================================================================================
+2.  WHAT FALLS
+=============================================================================================
+
+F-1.  C-12 IS REFUTED, NOT UNDETERMINED, AND BOTH OF ITS READINGS ARE FALSE.
+  (i)  ITS TWO READINGS ARE THE SAME PROPOSITION.  By lane C's OWN C-3 criterion, "P has no
+       zero on T^2" is EQUIVALENT to "one Jensen branch dominates the other everywhere".
+       "Zero-free" and "near-degenerate (one branch dominating)" are one condition under two
+       names.  A tie cannot be declared between a proposition and itself.
+  (ii) THE REAL VARIABLE IS rho = max_T |B/A|, CONTINUOUS, WITH rho = 1 EXACTLY AT THE ZERO.
+       R_04's one-variable sweep (p00 = 2/5, p10 = 1/5, p01+p11 = 2/5 all FIXED; only
+       d = |p01-p11| moves; ten arms printed and asserted distinct; one evaluator,
+       mpmath.polyroots dps=50) shows the Boyd-Lawton error at (21,34) running CONTINUOUSLY
+       from 3.1e-13 (rho=0.667) to 3.5e-04 (rho=1.5) with NO step at the threshold d = 1/5.
+  (iii) THE COUNTEREXAMPLE C-12 NEEDS, EXHIBITED.  ZERO-FREE d = 199/1000 (rho = 0.995) vs
+       ZERO-HAVING d = 3/10 (rho = 1.5), same ladder, same evaluator:
+         (1,1) 2.795e-01 vs 2.030e-01 · (5,8) 9.018e-03 vs 3.300e-03 · (13,21) 3.938e-03 vs
+         8.522e-04 · (21,34) 8.717e-04 vs 3.481e-04.
+       THE ZERO-FREE ARM IS SLOWER AT 4 OF 5 RELATIONS.  "Zero-free polynomials are easy for
+       every method" is false; "the torus zero slows Boyd-Lawton" is false.
+  (iv) AND THE FITTED EXPONENT DOES NOT DIAGNOSE A TORUS ZERO.  C-12 offers slopes -1.958
+       (B0b*) and -2.233 (K1) as the zero-having signature.  On the same ladder the ZERO-FREE
+       arms at rho = 0.9 and rho = 0.95 fit -2.478 and -1.948 -- straddling both.
+  (v)  WHAT IS TRUE: Theorem R2/R4.  The decay is geometric in n whenever rho < 1, with the
+       visible onset at n ~ 1/log(1/rho) (about 14 at rho = 0.9, beyond 233 at rho = 0.995),
+       and n^-2 at rho = 1 (the Lipschitz corner).  Every "exponent" fitted on a fixed ladder
+       is a WINDOW quantity in COR-E's exact sense.
+
+F-2.  C-10's "EXACT CROSSOVER LAW N = 1/delta ... RATIO N*delta = 1.000 IN ALL FIVE ROWS" IS
+      A GRID ARTEFACT.  C_05 searches int(10^(e/4)), whose spacing is 1.778 AND on which
+      1/delta is a node for every delta = 10^-j.  On a grid with 40 nodes per decade
+      (ONE VARIABLE MOVED: the grid; pi, alpha, beta, threshold and evaluator identical) the
+      ratio is 0.158 in all five rows, not 1.000.
+      WORSE, THE STATISTIC IS NOT WELL DEFINED: at delta = 1e-3 the average crosses the 0.01
+      band FIVE times over N in [1e2, 1e5] (enters 158, leaves 168, enters 473, leaves 501,
+      enters 750).  "First N" on a repeatedly-crossing quantity is a window measurement.
+      THE LAW, STATED CORRECTLY AND ON A STRONGER FOOTING (R_06, scaling collapse over five
+      decades of delta at matched N*delta, spread 3.4e-02 -> 0.0e+00 as N*delta falls):
+           avg - m(P)  =  a log(N delta) + c,   a = 0.498978 (theory 1/2, the density of the
+           odd k that approach the zero),  c = 0.970175,
+      whence the 0.01 crossing is at N delta = 0.140..0.146.  C-10's PROPORTIONALITY SURVIVES
+      and is strengthened; its CONSTANT and its "three figures" are withdrawn.
+
+F-3.  C-6's HEADLINE OVERSTATES WHAT S4 PUBLISHES.  S4_THE_MEASUREMENT_V001.md:562 states the
+      connection sense as: "W(gamma_F) = e^{if} and W(gamma_C) = e^{ic} with the *same* (f,c),
+      GENERIC".  W_F = -1, W_C = -i has ord(rho) = 4 -- the least generic point in the space --
+      so NO hypothesis failure "is ALREADY SITTING IN S4's PUBLISHED TABLE".
+      WHAT SURVIVES, AND IT IS THE VALUABLE PART: (i) the exact arithmetic is right (Z_k = 0
+      unless 4 | k, re-verified here independently in Gaussian integers, 0 violations over
+      k <= 40, so Omega_N = 0 for every N >= 1); (ii) S4's hedge "generic" is UNQUANTIFIED and
+      its exceptional set is now known to contain the corpus's OWN S1 sec6 connection; (iii)
+      the float64 blindness -- a finite -28.088521944 reported for a quantity that is
+      -infinity -- is a PRECISION-window artefact one level below COR-E/COR-H's k-window
+      artefacts, and it is new and untouched.
+
+=============================================================================================
+3.  WHAT IS CORRECTED IN SCOPE (the finding stands, the evidence line does not)
+=============================================================================================
+
+S-1.  C-4's RESONANT ROW IS NOT MEASURED BY ITS OWN RUN ON EITHER FOUR-CLASS CARRIER.
+      C-4's evidence reads "resonant -0.810930225 -> subtorus -0.810930204535 (itself 1.17e-08
+      from m(P))", as though the K = 1e7 run resolved which limit it approaches.  It does not:
+          B0b:  |avg - subtorus| = 2.046e-08   |avg - m(P)| = 8.784e-09   ratio 2.33
+      -- the average is 2.3x CLOSER to the limit the lane says it does NOT converge to.
+          B4:   |avg - subtorus| = 7.261e-09   |avg - m(P)| = 7.746e-09   -- a 6% difference,
+      on a run whose own finite-K wobble is 5.4-5.6e-08 (measured on the Diophantine arm of
+      the same carriers, where the target is known).  The separations being claimed are
+      1.168e-08 (B0b) and 4.84e-10 (B4), i.e. 1/5 and 1/100 of the noise.
+      THE DISTINCTION IS REAL -- Theorem R2 settles it exactly -- but it is carried ENTIRELY by
+      the closed-form subtorus computation.  The one row where the RUN is decisive is K1
+      (|avg-subtorus| = 7.7e-08 against |avg-m(P)| = 2.4e-04) -- the THREE-class control, i.e.
+      the case the lane exists to go beyond.  And on the SENSE C four-class state the row could
+      never have separated them: for P = (1+x)(1+y)/4 the subtorus limit is -log 4 = m(P) for
+      EVERY relation.
+
+S-2.  C_04 VIOLATES LANE C's OWN PUBLISHED CONVENTION, IN THE ROW C_04 ITSELF NAMES AS THE ONLY
+      ONE THAT COULD FAIL.  C_00 promises "Trapezoid on a periodic integrand; convergence in n
+      is PRINTED, never assumed."  C_04's m_jensen() hard-codes n = 2^20 and subtorus_limit()
+      hard-codes N = 2^22, and neither prints any convergence.  On the three analytic rows this
+      costs nothing.  On SENSE C, where log|P| has a log singularity:
+          printed m(P) target       -1.386293700082   exact -log 4 = -1.386294361120   err 6.6e-07
+          printed subtorus target   -1.386293534824   exact -log 4 (one line)          err 8.3e-07
+          printed |avg - m(P)| = 1.405e-06;  true value against -log 4 = 7.442e-07 (1.89x out).
+      No lane-C FINDING rests on those four numbers.  But C_03 sec 2 PRINTS the 1/n convergence
+      of exactly this integrand, so the lane knew, and C_04 used the unconverged value anyway.
+
+S-3.  THE LANE'S TWO SCRIPTS DISAGREE ON THE ONE NUMBER IN IT THAT NEEDS QUADRATURE.
+      B0b*'s m(P): C_05 and the report print -0.987918288038; C_06 LEG A prints
+      -0.987918288039.  Corner-split high-precision reference (mp.quad and mp.quadgl at
+      dps = 50, agreeing to 0.0): -0.9879182880384924905681148.  THE REPORT'S VALUE IS RIGHT;
+      C_06's 12th place is the n^-2 trapezoid's error at 2^22 (~5e-13).  Nothing depends on it.
+      But the lane prints 12 places for its only quadrature-limited quantity, and the lens is
+      exactly about that.
+
+S-4.  LATENT INSTRUMENT DEFECT, NOT A WRONG NUMBER.  C_04 forms (k * A_num) in numpy int64.
+      At K = 1e7 with D = 2^40 the product reaches 8.137e18 against int64's 9.223e18 -- a
+      margin of 1.13x.  It wraps SILENTLY at K ~ 1.133e7.  Every C_04 number is inside the safe
+      range.  The obvious next move under this lens -- extend K -- breaks it with no warning.
+      (R_03 uses the split k = kh*2^20 + kl with the bound asserted in code, and reaches 1e8.)
+
+S-5.  C-7's REPORT LINE SAYS N1 IS PUBLISHABLE "ONLY WITH L = {0} PLUS EITHER (H2a) OR (H2b)".
+      C_07 sec C5 itself says "PROVIDED", i.e. sufficiency, which is what is established.
+      NECESSITY OF THE DISJUNCTION IS NOT SHOWN and neither (H2a) nor (H2b) is necessary; what
+      C-9 shows is that (H1) ALONE is not enough.  Read the report's "only" as the lane's own
+      "PROVIDED" and the clause is right.  (H2a) is correct as stated with the STRICT
+      inequality: hi*lo = 0 is a tangential zero, log|P| is still unbounded, and Weyl does not
+      apply -- while Theorem R1's closed form does.  The two conditions are correctly different.
+
+=============================================================================================
+4.  ISOLATION LEDGER — MINE.  ONE VARIABLE EACH, ARMS DIFFED IN CODE.
+=============================================================================================
+  1. R_01 sec 3.  ONE VARIABLE: the sign of hi*lo.  The SAME closed-form expression and the
+     SAME Jensen evaluator (n = 2^16) are applied in both arms; only the criterion moves.
+     Dominance arm max error 4.4e-15 over 20000 draws; crossing arm median 8.4e-02 over 20000.
+     NOT VACUOUS (asserted in code: ed.max() < 1e-12 and median(ec) > 1e-4).
+  2. R_03 leg 3.  ONE VARIABLE: the search grid (23 nodes at 1.778x vs 221 nodes at 1.059x).
+     pi, alpha, beta, threshold, evaluator and the N-pass identical -- both grids are read off
+     the SAME running average, so the arms cannot differ in anything else.
+  3. R_06.  ONE VARIABLE: N*delta.  delta and N move together to hold the product; the ready
+     state, connection family, phase splitting and evaluator are identical in all 25 cells.
+  4. R_04 legs A-F.  ONE VARIABLE: d = |p01 - p11|.  p00 = 2/5 and p10 = 1/5 are FIXED (so
+     branch A, and m(P) itself, are identical in every zero-free arm -- verified: all six
+     zero-free arms return m(P) = -0.9162907318741551), and p01+p11 = 2/5 is FIXED.  Same
+     relation ladder, same evaluator in every arm.  Ten arms printed;
+     `assert len({tuple(a[1]) for a in arms}) == len(arms)` in code.
+  5. R_02 and R_05 contain NO comparison: R_02 recomputes one number three ways, R_05 quotes
+     corpus bytes and computes exact values.  Nothing in them is offered as a control.
+
+CONTROLS DECLARED VACUOUS RATHER THAN REPORTED AS CONFIRMATIONS:
+  (a) R_01 sec 3's DOMINANCE arm COULD NOT HAVE FAILED: Theorem R1 is proved on the page
+      before it is tested, and the test is a quadrature check of a proof.  Declared before the
+      verdict.  Its content is the crossing arm and the 1/4 measure.
+  (b) R_03 leg 1's overflow exhibit could not have failed either -- it is a property of int64.
+      It is reported as an instrument note, not as a result.
+  (c) The byte-identical rerun of lane C's six scripts is a reproduction, not a control.
+
+=============================================================================================
+5.  FIVE DEFECTS IN THIS REFUTER, RECORDED RATHER THAN PATCHED
+=============================================================================================
+  D-R1  My FIRST reference implementation of [x^j] tau(x)^K was a direct binomial sum.  It
+        loses everything to cancellation by K = 210 at dps = 60 (individual terms reach ~1e190
+        while the answer is ~4.3e-08) and returned relative difference 1.0 against the correct
+        ODE recurrence.  BOTH are printed in R_04 LEG E, together with the dps = 250 rerun in
+        which the binomial sum recovers and agrees to 3.0e-49.  The recurrence is the right
+        one and is independently validated by the dps=50 root-finder on 12 rows.
+  D-R2  R_04 LEG F's prose says "THE SLOPES SETTLE TO A CONSTANT IN EVERY ZERO-FREE ROW".  At
+        rho = 0.9 and rho = 0.95 the local slopes are STILL DESCENDING at n = 233 (-0.1339 and
+        -0.0702, against log rho = -0.1054 and -0.0513).  The geometric conclusion is carried
+        by Theorem R2/R4's PROVED bound, not by the table's last column.  Prose not patched.
+  D-R3  R_03's first phase engine used per-element Python-int products; it was correct but
+        intractable at K = 1e8 and was replaced by the k = kh*2^20 + kl split with the bound
+        asserted in code.  The abandoned version is not in the sealed file.
+  D-R4  R_01 sec 3's crossing arm applies a formula that is KNOWN to be wrong there.  It
+        demonstrates that the arms are not byte-identical; it is not an independent test of
+        anything, and is not offered as one.
+  D-R5  R_02 sec 3's `agree?` column compares exact gaps against lane C's PRINTED 12 decimals,
+        so from (21,34) downward the comparison is limited by the lane's print precision, not
+        by either computation.  The False entries there are the printout's, not a disagreement.
+
+=============================================================================================
+6.  LINEAGE
+=============================================================================================
+  Claude Opus 5, the SAME lineage as W-07/W-08/W-09 and as lane C itself.  This is Opus 5
+  auditing Opus 5 auditing Opus 5.  It is lineage-independent of S1-S4 (all Fable 5) and of
+  NOTHING ELSE.  Discount it as one block with lane C, not as an independent check.
+  It also REUSES lane C's own conventions, weights and carrier construction verbatim -- C_01
+  was rerun byte-identical and its output was accepted, not re-derived.  A carrier-construction
+  error in lane C would pass straight through this refuter.

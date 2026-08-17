@@ -1,0 +1,49 @@
+====================================================================================================
+== 6A  ERR-1's ONE-LINE REFUTATION, RE-RUN ==
+====================================================================================================
+  S2 glosses its gate as 'the connection must be non-abelian in its action'.  W-04: FALSE;
+  the operative variable is SCALARITY.  The exhibit: T_F = I, T_C = diag(1,-1),
+  z = (1,1)/sqrt2 on C^2.
+    <T_F z, T_C z>      = -0.0000000000000000+0.0000000000000000j
+    ||[T_F,T_C]||_F     = 0.000e+00   (ABELIAN, COMMUTING)
+    T_C scalar?          False
+  An abelian, commuting, NON-SCALAR connection writes the gate.  ERR-1 REPRODUCED.
+  This row is about the FIBRE, not the carrier: it holds at V = 5, 9 or any V, and no
+  class occupancy enters.  SCOPE = CARRIER-INDEPENDENT (fibre-rank-scoped).
+
+====================================================================================================
+== 6B  W-05's LEG ONE, AND WHAT W-06 CORRECTED, BOTH ON B0b (V=9) ==
+====================================================================================================
+  M_gamma multiplies s_v by a v-dependent phase, so it lies in the FIBRE-WISE group
+  U(1)^V on ANY carrier -- that is a definition, not a measurement, and V does not enter.
+  W-05 read that as 'S3-0 is the identity that gauge-invariant observables are gauge
+  invariant'.  W-06's correction: the FULL gauge action ALSO moves the connection
+  (a_e -> a_e + theta_t - theta_s), and M_gamma leaves a_e alone.  So M_gamma is a full
+  gauge transformation ONLY IF theta is constant on every edge, i.e. GLOBAL.  Checked on
+  the reconstructed B0b of leg 5A (V=9, E=18):
+    M_dF's vertex phase pattern realised as a gauge parameter theta_v = pi.1[v in gamma_F]
+    the connection shift it WOULD induce: max |theta_t - theta_s| = 3.141593
+    number of edges on which it is non-zero: 8 of 18
+    NON-ZERO -> M_dF is NOT a full gauge transformation on B0b either.  Same as K1.
+  SCOPE = CARRIER-INDEPENDENT.  What decides it is whether the gauge law is implemented
+  on the connection as well as the section -- an implementation fact, not a carrier fact.
+
+====================================================================================================
+== 6C  N4 -- FIBRE-WISE-NESS.  dim A^G = V AT EVERY RANK, ON B0b AS ON K1 ==
+====================================================================================================
+  A = M_{Vr}(C) on (+)_v C^r; G = the FIBRE-WISE group U(r)^V.  Claim (W-06's corrected
+  N4): any fibre-wise unitary lies in G at every rank, and dim_C A^G = V.
+  ONE-LINE PROOF: E_Haar[U_v X_vw U_w^*] = (tr X_vv / r) I_r if v = w and 0 if v != w,
+  because the two blocks' Haar phases are independent.  So A^G = (+)_v C.I_r, dim = V.
+    V  r   dim A   #eig(M) > 0.5   gap to next eig   = V?
+    5  1      25               5            0.0150   True
+    5  2     100               5            0.0131   True
+    5  3     225               5            0.0108   True
+    9  1      81               9            0.0140   True
+    9  2     324               9            0.0130   True
+    9  3     729               9            0.0095   True
+    6  2     144               6            0.0110   True
+  IDENTICAL AT V = 5 AND V = 9, AT RANKS 1, 2, 3.  W-06's N4 is CARRIER-INDEPENDENT and
+  its content is entirely the WORD 'fibre-wise'.  It is not a finding about K1, and no
+  four-class carrier can bear on it.  (W-06's own code for this does not exist; this is a
+  RECONSTRUCTION of the statement, and the one-line proof above is what actually settles it.)

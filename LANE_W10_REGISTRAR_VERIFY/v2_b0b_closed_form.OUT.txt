@@ -1,0 +1,20 @@
+== DOES B0b's P FACTOR? ==
+  P = 4/9 + 2/9x + 1/9y + 2/9xy      p00*p11 = 8/81,  p10*p01 = 2/81
+  factors iff p00*p11 == p10*p01 :  False   -> S4 IS RIGHT, it does not factor.
+
+== BUT DOES IT HAVE A CLOSED FORM ANYWAY? ==
+  Jensen in y:  m(P) = (1/2pi) INT log max(|a+b e^{it}|, |c+d e^{it}|) dt.
+  |a+b e^it|^2 = a^2+b^2+2ab cos t = (20/81) + (16/81) cos t
+  |c+d e^it|^2 = c^2+d^2+2cd cos t = (5/81) + (4/81) cos t
+  difference   = 5/27 + 4/27 cos t   >= 0  iff  cos t >= -5/4
+  and -diffA/diffB = -1.250000 <= -1, so THE FIRST BRANCH DOMINATES EVERYWHERE.
+  Hence m(P) = m(a + b x) = log(max(a,b)) = log(4/9) by Jensen again.
+
+  CLOSED FORM  lambda = log(4/9) = -0.810930216216329
+  S4:599's quadrature value      = -0.810930216216
+  agreement to 3.3e-13
+  independent Jensen quadrature at n=2^22 = -0.810930216216329
+  branches ever cross?  False
+
+  ==> S4:599's 'QUADRATURE ONLY' IS WRONG. lambda = log(4/9) EXACTLY.
+      Non-factoring does not imply no closed form: one Jensen branch dominating suffices.

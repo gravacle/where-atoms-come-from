@@ -1,0 +1,89 @@
+========================================================================================================
+R_05 LEG 1 — C_04's TARGETS IN THE SINGULAR ROW, AGAINST THE EXACT VALUES.
+========================================================================================================
+  SENSE C 4-class: P = (1+x+y+xy)/4 = (1+x)(1+y)/4.
+     m(P)        = m(1+x) + m(1+y) - log 4 = 0 + 0 - log 4 = -log 4         EXACTLY.
+     subtorus at a primitive relation (m,n), H = {(z^n, z^-m)}:
+        int_H log|P| = int log|1+z^n| + int log|1+z^-m| - log 4 = 0 + 0 - log 4 = -log 4
+                                                                             EXACTLY,
+     for EVERY relation -- the subtorus limit and m(P) COINCIDE here, so this row could never
+     have separated them however it was computed.
+     exact  -log 4                       = -1.3862943611198906188
+     C_04's m_jensen(n = 2^20)           = -1.386293700082   ERROR = 6.610e-07
+     C_04's subtorus_limit(N = 2^22)     = -1.386293534824   ERROR = 8.263e-07
+     C_04 PRINTS as its targets:           -1.386293700082  and  -1.386293534824
+
+     CONSEQUENCE FOR THE PRINTED GAPS.  C_04's SENSE C / DIOPHANTINE row prints
+        |avg(1e7) - m(P)| = 1.405e-06 .
+     Against the EXACT m(P) the same average (-1.386295105) is
+        |avg(1e7) - (-log 4)| = 7.439e-07 ,
+     i.e. the printed gap is 1.89x the true one, and the error is entirely in the TARGET.
+     Likewise the RESONANT row prints |avg - subtorus| = 1.894e-06 against a target that is
+     exactly -log 4, so the true figure is 1.067e-06.
+     NO LANE-C FINDING RESTS ON THESE FOUR NUMBERS -- C-6 is about the FINITE-ORDER row, which
+     is exact.  But C_00 promises convergence is "PRINTED, never assumed" and C_04 assumes it,
+     in the row C_04 itself names as the only one that could fail.  Recorded, not patched.
+
+  For completeness, the convergence C_04 did not print:
+     m_jensen n = 2^16: -1.386283784534   |err| = 1.058e-05
+     m_jensen n = 2^18: -1.386291716975   |err| = 2.644e-06
+     m_jensen n = 2^20: -1.386293700082   |err| = 6.610e-07
+     m_jensen n = 2^22: -1.386294195822   |err| = 1.653e-07
+     m_jensen n = 2^24: -1.386294319777   |err| = 4.134e-08
+
+========================================================================================================
+R_05 LEG 2 — C-6 AGAINST S4's OWN HYPOTHESIS LINE.  QUOTED FROM THE CORPUS BYTES.
+========================================================================================================
+  S4_THE_MEASUREMENT_V001.md, lines 560-568 (the sense in which the connection is held):
+     | 
+     | **The stated sense in which the connection is held fixed.** For each carrier: `W(gamma_F) =
+     | e^{if}` and `W(gamma_C) = e^{ic}` with the *same* `(f,c)`, generic; **every other independent
+     | invariant set to 1** (the minimal excitation carrying the designated pair — always
+     | realizable, since `gamma_F` and `gamma_C` are linearly independent in the cycle space, which
+     | is verified above). The ready state is held in **two** senses, because the choice is not
+     | forced and it changes the answer:
+     | 
+     | - **SENSE U** — uniform on vertices, `p_v = 1/V`. The carrier's combinatorics feed in.
+
+  THE WORD IS THERE: "with the *same* (f,c), GENERIC".  W_F = -1, W_C = -i has ord(rho) = 4
+  (W-07's own finding, register head) and is the least generic point in the space.  S4's
+  SENSE C column is therefore NOT published as the rate at S1 sec6's connection, and C-6's
+  headline -- "A hypothesis failure is ALREADY SITTING IN S4's PUBLISHED TABLE" -- overstates
+  what the table says.
+
+  WHAT SURVIVES OF C-6, AND IT IS WORTH KEEPING:
+    (i)   the exact arithmetic is right: Z_k = (1+u^k)(1+v^k)/4 = 0 unless 4 | k, so
+          Omega_N = 0 for every N >= 1 and the rate is -infinity.  Verified below in exact
+          Gaussian integers, independently of C_05.
+    (ii)  S4's hedge "generic" is UNQUANTIFIED, and the exceptional set is now known to
+          contain the corpus's own S1 sec6 connection.  That is a real scope finding.
+    (iii) the float64 blindness is the valuable half and is untouched: a lane trusting float64
+          publishes a finite -28.09 for a quantity that is -infinity.  That is a PRECISION
+          window artefact, one level below COR-E/COR-H's k-window artefacts, and it is new.
+
+  (i) re-verified independently, exact Gaussian integers, u = -1, v = -i:
+     k = 1..40: violations of 'Z_k = 0 iff 4 does not divide k' = 0   (must be 0)
+     so Omega_N = 0 for every N >= 1 and (1/N) log|Omega_N| = -inf.  CONFIRMED.
+
+========================================================================================================
+R_05 LEG 3 — WHAT LANE C's REPORT SAYS vs WHAT LANE C's OWN SCRIPTS PRINT: B0b*.
+========================================================================================================
+  B0b* = (2,1,3,3)/9 is the ONE value in the whole lane that genuinely needs quadrature
+  (Theorem R1: it is the only arm whose Jensen branches cross).  Lane C prints it twice:
+      C_05 / the report:  m(P) = -0.987918288038      (mpmath kink-split)
+      C_06 LEG A:         m(P) = -0.987918288039      (2^22-node float64 trapezoid)
+  They disagree in the 12th place -- the last place either one prints.
+     corner-split mp.quad   (dps=50) : -0.9879182880384924905681148
+     corner-split mp.quadgl (dps=50) : -0.9879182880384924905681148
+     the two agree to 0.0
+     |ref - (-0.987918288038)| = 4.925e-13
+     |ref - (-0.987918288039)| = 5.075e-13
+     float64 midpoint trapezoid n = 2^20: -0.987918288039   |v - ref| = 6.769e-13
+     float64 midpoint trapezoid n = 2^22: -0.987918288039   |v - ref| = 1.158e-13
+     float64 midpoint trapezoid n = 2^24: -0.987918288038   |v - ref| = 2.665e-15
+
+  THE REPORT'S VALUE IS THE CORRECT ONE and C_06's is the last-place casualty of an n^-2
+  trapezoid whose error at 2^22 is ~5e-13, i.e. exactly at the 12th place it prints.  Nothing
+  in C-5 depends on the 12th place.  But the lane prints 12 places for the ONE quantity in it
+  that is quadrature-limited, and its own two scripts disagree there.  This is the defect class
+  the lens exists for, committed on the lane's own most-quoted new number.

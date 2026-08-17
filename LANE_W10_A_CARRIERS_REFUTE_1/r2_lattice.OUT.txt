@@ -1,0 +1,83 @@
+========================================================================================================
+REFUTER 1 / SCRIPT 2 — THE LATTICE MACHINERY, THE EQUIVALENCE, AND THE BATTERY
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+A — BRUTE-FORCE VALIDATION OF hnf2 / sublattice (the lane's hand-rolled Z^2 routines)
+--------------------------------------------------------------------------------------------------------
+NOTE ON MY OWN REFERENCE: a BFS closure confined to a box cannot reach the box's corners
+(paths must leave it and come back), so the closure is computed in a box of radius 40 and
+both sides are then restricted to radius 10.  Found on the first run; recorded, not hidden.
+hnf2 vs brute-force lattice closure, 400 random generating sets: 0 disagreements
+sublattice vs brute-force membership, 500 random pairs:        0 disagreements
+L_conn_rational vs direct congruence enumeration, all (A,B,q): 0 disagreements
+A: the lane's lattice routines are correct on every case I could construct.
+
+--------------------------------------------------------------------------------------------------------
+B — THE EQUIVALENCE  G = {1}  <=>  L_S subset L  <=>  |Z_k| = 1 for all k   (EXACT)
+--------------------------------------------------------------------------------------------------------
+EXACT cases checked: 29775   disagreements: 0
+The lane's reformulation G = {1} <=> L_S subset L is a THEOREM and it verifies exactly.
+It is also a one-line restatement: chi_a/chi_b = u^(da) v^(db), so 'all ratios are 1' IS
+'every difference vector lies in L'.  Both halves are already in the corpus (S4-1's
+difference lattice; W-03's relation lattice).  Correct -- and NOT a variable whose
+movement flips an outcome, which is what 'operative variable' has meant in every prior row.
+
+--------------------------------------------------------------------------------------------------------
+D — THE EXACT-RECURRENCE DENSITY:  |Z_k| = 1  <=>  k * L_S subset L   (EXACT)
+--------------------------------------------------------------------------------------------------------
+disagreements: 0    (the lane's W10A-09 derivation is correct)
+Density at the order-4 connection (alpha=-pi, beta=3pi/2), by derivation not measurement:
+   L = ((1, 2), (0, 4));   k*Z^2 subset L  iff  k = 0 mod 4  ->  density exactly 1/4 for EVERY
+   support with L_S = Z^2, which is all four 3-subsets and the 4-set.  The lane says this
+   and is right.  Note what it means: the density is the same on K1 and on B0b BECAUSE
+   BOTH have L_S = Z^2, i.e. because K1 already has |S| >= 3.  Nothing four-class enters.
+
+--------------------------------------------------------------------------------------------------------
+C — THE BATTERY ATTACK.  RUN THE LANE'S OWN sweep() AND VERDICT RULE ON ONE MORE CONNECTION
+--------------------------------------------------------------------------------------------------------
+The lane's battery (w10a_2_w02.py:75-86) is 7 low-order rationals (q <= 12), one exact
+resonance, and two generic irrationals.  W-08's row already established that at finite K
+the operative name is the PAIR (q, delta) and NOT the group: 'an exact rational
+theta = 1/4 + 1e-13 has FINITE order 10^13'.  So take alpha = 2 pi / q with q large.
+G = <u> != {1}: the lane's own prediction is FORMS.  Its own verdict rule is
+      never if |r| < 1e-12 ; forms if r < -1e-9 ; else '??'.
+
+support         connection alpha = 2pi/q      G       predict  lane r            lane verdict  agrees?
+{00,10}         q = 1e4                       <u>     forms    -6.958900e-01     forms         OK
+{00,10}         q = 1e6                       <u>     forms    -6.861116e-02     forms         OK
+{00,10}         q = 1e8                       <u>     forms    -6.579812e-06     forms         OK
+{00,10}         q = 1e10                      <u>     forms    -6.579786e-10     ??            **MISMATCH**
+{00,10}         q = 1e12                      <u>     forms    -6.585273e-14     never         **MISMATCH**
+{00,11}         q = 1e4                       <u>     forms    -6.958900e-01     forms         OK
+{00,11}         q = 1e6                       <u>     forms    -6.861116e-02     forms         OK
+{00,11}         q = 1e8                       <u>     forms    -6.579812e-06     forms         OK
+{00,11}         q = 1e10                      <u>     forms    -6.579786e-10     ??            **MISMATCH**
+{00,11}         q = 1e12                      <u>     forms    -6.585273e-14     never         **MISMATCH**
+{10,01}         q = 1e4                       <u>     forms    -6.958900e-01     forms         OK
+{10,01}         q = 1e6                       <u>     forms    -6.861116e-02     forms         OK
+{10,01}         q = 1e8                       <u>     forms    -6.579812e-06     forms         OK
+{10,01}         q = 1e10                      <u>     forms    -6.579786e-10     ??            **MISMATCH**
+{10,01}         q = 1e12                      <u>     forms    -6.585273e-14     never         **MISMATCH**
+{00,10,01,11}   q = 1e4                       <u>     forms    -6.958900e-01     forms         OK
+{00,10,01,11}   q = 1e6                       <u>     forms    -6.861116e-02     forms         OK
+{00,10,01,11}   q = 1e8                       <u>     forms    -6.579812e-06     forms         OK
+{00,10,01,11}   q = 1e10                      <u>     forms    -6.579786e-10     ??            **MISMATCH**
+{00,10,01,11}   q = 1e12                      <u>     forms    -6.585241e-14     never         **MISMATCH**
+
+MISMATCHES produced by the lane's own code and its own verdict rule: 8
+
+>>> FINDING.  The lane's '0 mismatches / 150' is a property of ITS BATTERY.  Every
+    connection in the battery has ratio order q <= 12, or is exactly resonant, or is
+    generic irrational -- i.e. the battery contains no point of the (q, delta) regime that
+    W-08's own row identifies as where the finite-K reading of the criterion breaks.
+    NOTHING HERE REFUTES W-02's CRITERION: the criterion is an ASYMPTOTIC statement
+    (K -> infinity) and it is true.  What falls is the EVIDENTIAL WEIGHT of the count.
+    The lane's isolation ledger defends its thresholds with 'min |r| among the 93 forming
+    rows is 0.366', which is exactly the sentence a battery-scoped result produces.
+    And note the direction: this is the SAME defect W-08 caught in W-07 -- reading a
+    finite-K observable as if it named the group -- committed one layer later.
+
+========================================================================================================
+A, B, D: every exact check passes.  The lane's lattice code and its two lattice
+identities are correct.  C: its 150-case count is battery-scoped, not four-class-scoped.

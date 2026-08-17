@@ -1,0 +1,281 @@
+============================================================================================================
+W10-A SCRIPT 2 — W-02's CHARACTER-RATIO CRITERION ON FOUR OCCUPIED CLASSES
+============================================================================================================
+numpy 2.0.2; IEEE double for k-sweeps, K = 200000; EXACT where a line says EXACT.
+
+------------------------------------------------------------------------------------------------------------
+ARMS DIFF — the 15 arms, their weight vectors, and a byte hash of each.  W-08's isolation
+audit found that the commonest FATAL defect is ZERO variables moved.  So: DIFF THE ARMS.
+------------------------------------------------------------------------------------------------------------
+support               pi = (p00,p10,p01,p11)                  sha256[:16]         
+{00}                  (1, 0, 0, 0)                            ed8c9178d7b173b2    
+{10}                  (0, 1, 0, 0)                            c1218e427726b767    
+{01}                  (0, 0, 1, 0)                            fb2a24b21fd0fa33    
+{11}                  (0, 0, 0, 1)                            8562b88724818875    
+{00,10}               (1/2, 1/2, 0, 0)                        f7f38ee961537d35    
+{00,01}               (1/2, 0, 1/2, 0)                        a69cffe96357fe85    
+{00,11}               (1/2, 0, 0, 1/2)                        783af1bdbbfc301d    
+{10,01}               (0, 1/2, 1/2, 0)                        4a816d70e29a2dae    
+{10,11}               (0, 1/2, 0, 1/2)                        83e07865d2fe0e7b    
+{01,11}               (0, 0, 1/2, 1/2)                        a2fdad5d79e1baf1    
+{00,10,01}            (1/3, 1/3, 1/3, 0)                      538e077af0c54683    
+{00,10,11}            (1/3, 1/3, 0, 1/3)                      d49ebd021cef53cc    
+{00,01,11}            (1/3, 0, 1/3, 1/3)                      c868d2014a4f8036    
+{10,01,11}            (0, 1/3, 1/3, 1/3)                      dd506a4633a5e69d    
+{00,10,01,11}         (1/4, 1/4, 1/4, 1/4)                    b8b4629fef2dc15a    
+all 15 arms pairwise distinct at the bytes: True
+
+============================================================================================================
+PART A — THE FULL SUPPORT TABLE ON A FOUR-CLASS CARRIER (all 15 non-empty supports)
+============================================================================================================
+L_S = the support difference lattice (S4-1's object).  G = {1} iff L_S is contained in the
+connection's relation lattice L (W-03's object).  BOTH LATTICES ARE ALREADY IN THE REGISTER;
+THE CONTAINMENT IS NOT.  EXACT integer lattice arithmetic in this table.
+
+#  support         chars         L_S basis             rk  G         G = {1} iff               realizable on
+1  {00}            1             ()                    0   {1}       always trivial (|S| = 1)  B1q, B0a, B0b/B4
+2  {10}            u             ()                    0   {1}       always trivial (|S| = 1)  K1/B1,B2,B1s,B3, B1q, B1p, B0a, B0b/B4
+3  {01}            v             ()                    0   {1}       always trivial (|S| = 1)  K1/B1,B2,B1s,B3, B1q, B1p, B0a, B0b/B4
+4  {11}            uv            ()                    0   {1}       always trivial (|S| = 1)  K1/B1,B2,B1s,B3, B0b/B4
+5  {00,10}         1 u           ((1, 0),)             1   <u>       W_F = 1                   B1q, B0a, B0b/B4
+6  {00,01}         1 v           ((0, 1),)             1   <v>       W_C = 1                   B1q, B0a, B0b/B4
+7  {00,11}         1 uv          ((1, 1),)             1   <uv>      W_C = W_F   [MISSING ROW] B0b/B4
+8  {10,01}         u v           ((1, -1),)            1   <u/v>     W_F * W_C = 1             K1/B1,B2,B1s,B3, B1q, B1p, B0a, B0b/B4
+9  {10,11}         u uv          ((0, 1),)             1   <v>       W_C = 1                   K1/B1,B2,B1s,B3, B0b/B4
+10 {01,11}         v uv          ((1, 0),)             1   <u>       W_F = 1                   K1/B1,B2,B1s,B3, B0b/B4
+11 {00,10,01}      1 u v         ((1, 0), (0, 1))      2   <u,v>     W_F = 1 and W_C = 1       B1q, B0a, B0b/B4
+12 {00,10,11}      1 u uv        ((1, 0), (0, 1))      2   <u,v>     W_F = 1 and W_C = 1       B0b/B4
+13 {00,01,11}      1 v uv        ((1, 0), (0, 1))      2   <u,v>     W_F = 1 and W_C = 1       B0b/B4
+14 {10,01,11}      u v uv        ((1, 0), (0, 1))      2   <u,v>     W_F = 1 and W_C = 1       K1/B1,B2,B1s,B3, B0b/B4
+15 {00,10,01,11}   1 u v uv      ((1, 0), (0, 1))      2   <u,v>     W_F = 1 and W_C = 1       B0b/B4
+
+READ OFF:
+  * rank L_S = 2 for every |S| >= 3 and rank 1 for every |S| = 2 and rank 0 for |S| = 1.
+    S4-1's 'rank 2 iff |S| >= 3' therefore EXTENDS to four classes verbatim (at unit charge;
+    W-03 already refuted it OFF unit charge and that refutation is untouched here).
+  * The 6 two-element supports give only FOUR distinct groups: <u>, <v>, <uv>, <u/v>.
+    W-02's table lists THREE of them.  The missing one is G = <uv>, from S = {00,11}.
+  * S={00,10} gives <u> and S={11,01} gives <u>; S={00,01} and S={11,10} both give <v>.
+    Those two coincidences ARE W-03's involution 00<->11, 10<->01 (REGISTER:184).
+    The involution fixes {00,11} and {10,01} setwise; the first is the row W-02 lacks.
+
+============================================================================================================
+PART B — THE CRITERION ITSELF, EXHAUSTIVE: 15 SUPPORTS x 10 CONNECTIONS = 150 CASES
+============================================================================================================
+PREDICT: forms  <=>  L_S not contained in L.   MEASURE: r = (1/K) sum_{k<=K} log|Z_k|.
+Weights: uniform on the support (Fractions -> float64).  Same K, same evaluator, every row.
+
+Derivations of the relation lattices used (stated, not fitted):
+  rational alpha=2pi A/q, beta=2pi B/q:  L = {(m,n) : mA+nB = 0 mod q}, computed exactly.
+  S3/S4 headline f=2.0, c=1.1: alpha=-2.0, beta=1.1; m alpha + n beta in 2pi Z forces
+     the 2pi-multiple to be 0 (pi transcendental), so -2m + 1.1n = 0, i.e. L = Z(11,20).
+     (-11f + 20c = 0 is the erratum against W-02's own resonance.)
+  irrational rows: {1, alpha/2pi, beta/2pi} are Q-linearly independent, so L = {0}.
+
+support       connection                          L_S<=L  predict  r=(1/K)sum log|Z|   min|Z_k|    verdict  match
+{00}          trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{00}          alpha=pi, beta=0     [u=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{00}          alpha=0, beta=pi     [v=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{00}          alpha=2pi/3, beta=-2pi/3 [uv=1]     True    never     0.000000000000e+00 1.000000e+00never    OK
+{00}          alpha=2pi/3, beta=2pi/3  [u/v=1]    True    never     0.000000000000e+00 1.000000e+00never    OK
+{00}          alpha=2pi/5, beta=3*2pi/5           True    never     0.000000000000e+00 1.000000e+00never    OK
+{00}          S1 published: W_F=-1,W_C=-i         True    never     0.000000000000e+00 1.000000e+00never    OK
+{00}          S3/S4 headline f=2.0,c=1.1          True    never     0.000000000000e+00 1.000000e+00never    OK
+{00}          generic irrational 1/sqrt2,1/sqrt3  True    never     0.000000000000e+00 1.000000e+00never    OK
+{00}          generic irrational sqrt2/7,sqrt5/9  True    never     0.000000000000e+00 1.000000e+00never    OK
+{10}          trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{10}          alpha=pi, beta=0     [u=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{10}          alpha=0, beta=pi     [v=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{10}          alpha=2pi/3, beta=-2pi/3 [uv=1]     True    never    -2.261524301161e-18 1.000000e+00never    OK
+{10}          alpha=2pi/3, beta=2pi/3  [u/v=1]    True    never    -2.261524301161e-18 1.000000e+00never    OK
+{10}          alpha=2pi/5, beta=3*2pi/5           True    never    -1.481981204421e-17 1.000000e+00never    OK
+{10}          S1 published: W_F=-1,W_C=-i         True    never     0.000000000000e+00 1.000000e+00never    OK
+{10}          S3/S4 headline f=2.0,c=1.1          True    never    -1.239841562750e-17 1.000000e+00never    OK
+{10}          generic irrational 1/sqrt2,1/sqrt3  True    never    -1.221023282483e-17 1.000000e+00never    OK
+{10}          generic irrational sqrt2/7,sqrt5/9  True    never    -1.192157483842e-17 1.000000e+00never    OK
+{01}          trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{01}          alpha=pi, beta=0     [u=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{01}          alpha=0, beta=pi     [v=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{01}          alpha=2pi/3, beta=-2pi/3 [uv=1]     True    never     1.463829057968e-18 1.000000e+00never    OK
+{01}          alpha=2pi/3, beta=2pi/3  [u/v=1]    True    never    -2.261524301161e-18 1.000000e+00never    OK
+{01}          alpha=2pi/5, beta=3*2pi/5           True    never    -1.211086786412e-17 1.000000e+00never    OK
+{01}          S1 published: W_F=-1,W_C=-i         True    never     0.000000000000e+00 1.000000e+00never    OK
+{01}          S3/S4 headline f=2.0,c=1.1          True    never    -1.224575996162e-17 1.000000e+00never    OK
+{01}          generic irrational 1/sqrt2,1/sqrt3  True    never    -1.204036870206e-17 1.000000e+00never    OK
+{01}          generic irrational sqrt2/7,sqrt5/9  True    never    -1.218081191467e-17 1.000000e+00never    OK
+{11}          trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{11}          alpha=pi, beta=0     [u=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{11}          alpha=0, beta=pi     [v=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{11}          alpha=2pi/3, beta=-2pi/3 [uv=1]     True    never    -4.496403249732e-20 1.000000e+00never    OK
+{11}          alpha=2pi/3, beta=2pi/3  [u/v=1]    True    never    -2.096545159702e-17 1.000000e+00never    OK
+{11}          alpha=2pi/5, beta=3*2pi/5           True    never    -3.470834730734e-17 1.000000e+00never    OK
+{11}          S1 published: W_F=-1,W_C=-i         True    never     0.000000000000e+00 1.000000e+00never    OK
+{11}          S3/S4 headline f=2.0,c=1.1          True    never    -7.048250871833e-18 1.000000e+00never    OK
+{11}          generic irrational 1/sqrt2,1/sqrt3  True    never    -7.437384041964e-18 1.000000e+00never    OK
+{11}          generic irrational sqrt2/7,sqrt5/9  True    never    -7.496225862269e-18 1.000000e+00never    OK
+{00,10}       trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,10}       alpha=pi, beta=0     [u=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{00,10}       alpha=0, beta=pi     [v=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,10}       alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -4.621004308623e-01 5.000000e-01forms    OK
+{00,10}       alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -4.621004308623e-01 5.000000e-01forms    OK
+{00,10}       alpha=2pi/5, beta=3*2pi/5           False   forms    -5.545177444483e-01 3.090170e-01forms    OK
+{00,10}       S1 published: W_F=-1,W_C=-i         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{00,10}       S3/S4 headline f=2.0,c=1.1          False   forms    -6.932232048729e-01 5.507509e-06forms    OK
+{00,10}       generic irrational 1/sqrt2,1/sqrt3  False   forms    -6.931551268445e-01 2.847570e-06forms    OK
+{00,10}       generic irrational sqrt2/7,sqrt5/9  False   forms    -6.931261246603e-01 7.688412e-06forms    OK
+{00,01}       trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,01}       alpha=pi, beta=0     [u=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,01}       alpha=0, beta=pi     [v=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{00,01}       alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -4.621004308623e-01 5.000000e-01forms    OK
+{00,01}       alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -4.621004308623e-01 5.000000e-01forms    OK
+{00,01}       alpha=2pi/5, beta=3*2pi/5           False   forms    -5.545177444502e-01 3.090170e-01forms    OK
+{00,01}       S1 published: W_F=-1,W_C=-i         False   forms    -9.506250843457e+00 6.123234e-17forms    OK
+{00,01}       S3/S4 headline f=2.0,c=1.1          False   forms    -6.931570844108e-01 3.763242e-07forms    OK
+{00,01}       generic irrational 1/sqrt2,1/sqrt3  False   forms    -6.931451754448e-01 6.457012e-06forms    OK
+{00,01}       generic irrational sqrt2/7,sqrt5/9  False   forms    -6.931183285816e-01 7.621963e-06forms    OK
+{00,11}       trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,11}       alpha=pi, beta=0     [u=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{00,11}       alpha=0, beta=pi     [v=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{00,11}       alpha=2pi/3, beta=-2pi/3 [uv=1]     True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,11}       alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -4.621004308671e-01 5.000000e-01forms    OK
+{00,11}       alpha=2pi/5, beta=3*2pi/5           False   forms    -5.545177444521e-01 3.090170e-01forms    OK
+{00,11}       S1 published: W_F=-1,W_C=-i         False   forms    -9.506250843457e+00 6.123234e-17forms    OK
+{00,11}       S3/S4 headline f=2.0,c=1.1          False   forms    -6.930935589280e-01 6.985337e-06forms    OK
+{00,11}       generic irrational 1/sqrt2,1/sqrt3  False   forms    -6.931312762801e-01 6.481596e-06forms    OK
+{00,11}       generic irrational sqrt2/7,sqrt5/9  False   forms    -6.931589063164e-01 3.003639e-06forms    OK
+{10,01}       trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{10,01}       alpha=pi, beta=0     [u=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{10,01}       alpha=0, beta=pi     [v=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{10,01}       alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -4.621004308671e-01 5.000000e-01forms    OK
+{10,01}       alpha=2pi/3, beta=2pi/3  [u/v=1]    True    never    -2.261524301161e-18 1.000000e+00never    OK
+{10,01}       alpha=2pi/5, beta=3*2pi/5           False   forms    -5.545177444466e-01 3.090170e-01forms    OK
+{10,01}       S1 published: W_F=-1,W_C=-i         False   forms    -9.506250843457e+00 6.123234e-17forms    OK
+{10,01}       S3/S4 headline f=2.0,c=1.1          False   forms    -6.931328033995e-01 1.074033e-06forms    OK
+{10,01}       generic irrational 1/sqrt2,1/sqrt3  False   forms    -6.931361376429e-01 5.861067e-06forms    OK
+{10,01}       generic irrational sqrt2/7,sqrt5/9  False   forms    -6.931311202865e-01 5.648304e-06forms    OK
+{10,11}       trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{10,11}       alpha=pi, beta=0     [u=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{10,11}       alpha=0, beta=pi     [v=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{10,11}       alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -4.621004308623e-01 5.000000e-01forms    OK
+{10,11}       alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -4.621004308623e-01 5.000000e-01forms    OK
+{10,11}       alpha=2pi/5, beta=3*2pi/5           False   forms    -5.545177444502e-01 3.090170e-01forms    OK
+{10,11}       S1 published: W_F=-1,W_C=-i         False   forms    -9.506250843457e+00 6.123234e-17forms    OK
+{10,11}       S3/S4 headline f=2.0,c=1.1          False   forms    -6.931570844108e-01 3.763242e-07forms    OK
+{10,11}       generic irrational 1/sqrt2,1/sqrt3  False   forms    -6.931451754448e-01 6.457012e-06forms    OK
+{10,11}       generic irrational sqrt2/7,sqrt5/9  False   forms    -6.931183285816e-01 7.621963e-06forms    OK
+{01,11}       trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{01,11}       alpha=pi, beta=0     [u=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{01,11}       alpha=0, beta=pi     [v=-1]         True    never     0.000000000000e+00 1.000000e+00never    OK
+{01,11}       alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -4.621004308623e-01 5.000000e-01forms    OK
+{01,11}       alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -4.621004308623e-01 5.000000e-01forms    OK
+{01,11}       alpha=2pi/5, beta=3*2pi/5           False   forms    -5.545177444483e-01 3.090170e-01forms    OK
+{01,11}       S1 published: W_F=-1,W_C=-i         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{01,11}       S3/S4 headline f=2.0,c=1.1          False   forms    -6.932232048729e-01 5.507509e-06forms    OK
+{01,11}       generic irrational 1/sqrt2,1/sqrt3  False   forms    -6.931551268445e-01 2.847570e-06forms    OK
+{01,11}       generic irrational sqrt2/7,sqrt5/9  False   forms    -6.931261246603e-01 7.688412e-06forms    OK
+{00,10,01}    trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,10,01}    alpha=pi, beta=0     [u=-1]         False   forms    -5.493061443341e-01 3.333333e-01forms    OK
+{00,10,01}    alpha=0, beta=pi     [v=-1]         False   forms    -5.493061443341e-01 3.333333e-01forms    OK
+{00,10,01}    alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -1.718643898988e+01 2.020636e-16forms    OK
+{00,10,01}    alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -3.662059272421e-01 5.773503e-01forms    OK
+{00,10,01}    alpha=2pi/5, beta=3*2pi/5           False   forms    -8.788898309342e-01 2.060113e-01forms    OK
+{00,10,01}    S1 published: W_F=-1,W_C=-i         False   forms    -8.239592165011e-01 3.333333e-01forms    OK
+{00,10,01}    S3/S4 headline f=2.0,c=1.1          False   forms    -7.767573204309e-01 6.224683e-05forms    OK
+{00,10,01}    generic irrational 1/sqrt2,1/sqrt3  False   forms    -7.755487122757e-01 1.469405e-03forms    OK
+{00,10,01}    generic irrational sqrt2/7,sqrt5/9  False   forms    -7.755329476785e-01 2.048530e-03forms    OK
+{00,10,11}    trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,10,11}    alpha=pi, beta=0     [u=-1]         False   forms    -5.493061443341e-01 3.333333e-01forms    OK
+{00,10,11}    alpha=0, beta=pi     [v=-1]         False   forms    -5.493061443341e-01 3.333333e-01forms    OK
+{00,10,11}    alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -3.662059272421e-01 5.773503e-01forms    OK
+{00,10,11}    alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -1.718639441435e+01 1.110223e-16forms    OK
+{00,10,11}    alpha=2pi/5, beta=3*2pi/5           False   forms    -8.788898309334e-01 2.060113e-01forms    OK
+{00,10,11}    S1 published: W_F=-1,W_C=-i         False   forms    -8.239592165011e-01 3.333333e-01forms    OK
+{00,10,11}    S3/S4 headline f=2.0,c=1.1          False   forms    -7.745561668403e-01 3.489017e-02forms    OK
+{00,10,11}    generic irrational 1/sqrt2,1/sqrt3  False   forms    -7.755890212390e-01 7.071440e-04forms    OK
+{00,10,11}    generic irrational sqrt2/7,sqrt5/9  False   forms    -7.755553756910e-01 8.649255e-04forms    OK
+{00,01,11}    trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,01,11}    alpha=pi, beta=0     [u=-1]         False   forms    -5.493061443341e-01 3.333333e-01forms    OK
+{00,01,11}    alpha=0, beta=pi     [v=-1]         False   forms    -5.493061443341e-01 3.333333e-01forms    OK
+{00,01,11}    alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -3.662059272421e-01 5.773503e-01forms    OK
+{00,01,11}    alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -1.718639441435e+01 1.110223e-16forms    OK
+{00,01,11}    alpha=2pi/5, beta=3*2pi/5           False   forms    -8.788898309334e-01 2.060113e-01forms    OK
+{00,01,11}    S1 published: W_F=-1,W_C=-i         False   forms    -8.239592165011e-01 3.333333e-01forms    OK
+{00,01,11}    S3/S4 headline f=2.0,c=1.1          False   forms    -7.745561668403e-01 3.489017e-02forms    OK
+{00,01,11}    generic irrational 1/sqrt2,1/sqrt3  False   forms    -7.755890212390e-01 7.071440e-04forms    OK
+{00,01,11}    generic irrational sqrt2/7,sqrt5/9  False   forms    -7.755553756910e-01 8.649255e-04forms    OK
+{10,01,11}    trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{10,01,11}    alpha=pi, beta=0     [u=-1]         False   forms    -5.493061443341e-01 3.333333e-01forms    OK
+{10,01,11}    alpha=0, beta=pi     [v=-1]         False   forms    -5.493061443341e-01 3.333333e-01forms    OK
+{10,01,11}    alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -1.718644019273e+01 1.704720e-16forms    OK
+{10,01,11}    alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -3.662059272421e-01 5.773503e-01forms    OK
+{10,01,11}    alpha=2pi/5, beta=3*2pi/5           False   forms    -8.788898309342e-01 2.060113e-01forms    OK
+{10,01,11}    S1 published: W_F=-1,W_C=-i         False   forms    -8.239592165011e-01 3.333333e-01forms    OK
+{10,01,11}    S3/S4 headline f=2.0,c=1.1          False   forms    -7.767573204309e-01 6.224683e-05forms    OK
+{10,01,11}    generic irrational 1/sqrt2,1/sqrt3  False   forms    -7.755487122757e-01 1.469405e-03forms    OK
+{10,01,11}    generic irrational sqrt2/7,sqrt5/9  False   forms    -7.755329476785e-01 2.048530e-03forms    OK
+{00,10,01,11} trivial (0,0)                       True    never     0.000000000000e+00 1.000000e+00never    OK
+{00,10,01,11} alpha=pi, beta=0     [u=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{00,10,01,11} alpha=0, beta=pi     [v=-1]         False   forms    -1.866592809663e+01 6.123234e-17forms    OK
+{00,10,01,11} alpha=2pi/3, beta=-2pi/3 [uv=1]     False   forms    -9.242008617246e-01 2.500000e-01forms    OK
+{00,10,01,11} alpha=2pi/3, beta=2pi/3  [u/v=1]    False   forms    -9.242008617246e-01 2.500000e-01forms    OK
+{00,10,01,11} alpha=2pi/5, beta=3*2pi/5           False   forms    -1.109035488898e+00 2.500000e-01forms    OK
+{00,10,01,11} S1 published: W_F=-1,W_C=-i         False   forms    -2.808852194349e+01 4.132459e-17forms    OK
+{00,10,01,11} S3/S4 headline f=2.0,c=1.1          False   forms    -1.386380289284e+00 2.464398e-07forms    OK
+{00,10,01,11} generic irrational 1/sqrt2,1/sqrt3  False   forms    -1.386300302289e+00 2.039768e-07forms    OK
+{00,10,01,11} generic irrational sqrt2/7,sqrt5/9  False   forms    -1.386244453242e+00 2.128489e-07forms    OK
+
+CASES 150   forms 93   never 57   MISMATCHES 0
+EXACT integer-congruence cross-check on the 105 rational-connection cases:
+   'all |Z_k| = 1' agrees with 'L_S contained in L' on 105 of 105.
+
+------------------------------------------------------------------------------------------------------------
+PART C — WEIGHT ROBUSTNESS WITHIN A SUPPORT (declared as a robustness pass, not a control)
+------------------------------------------------------------------------------------------------------------
+Same 150 cases with NON-UNIFORM weights on each support (seeded Dirichlet-ish, seed 20260816).
+MISMATCHES under non-uniform weights: 0 of 150
+  The verdict depends on the SUPPORT and the CONNECTION and not on the weights inside the
+  support -- which is exactly what the criterion claims, and it holds at four classes.
+
+============================================================================================================
+PART D — THE ROW W-02's TABLE DOES NOT HAVE, EXHIBITED ON B0b AND B4
+============================================================================================================
+S = {00,11}: a vertex in NEITHER loop and a vertex in BOTH, and no other weight.
+G = <uv> = <conj(W_F) W_C>, trivial iff W_C = W_F.  So there is a NON-TRIVIAL connection
+family that NEVER FORMS and that W-02's table does not contain.  COR-B exhibited FOUR
+non-forming families; this is a FIFTH, and it is unrealizable on every carrier the corpus ran.
+
+  L_S = ((1, 1),),  G = <uv>,  trivial iff W_C = W_F   [MISSING ROW]
+  W_F = W_C = e^{i 2pi/3}  (alpha=-2pi/3, beta=2pi/3) L_S<=L True   r =  0.0000000000e+00  min|Z_k| = 1.000000e+00
+      EXACT: all |Z_k| = 1 ? True      [uv = 1: NEVER FORMS]
+  W_F = W_C = e^{i 2pi/5}                            L_S<=L True   r =  0.0000000000e+00  min|Z_k| = 1.000000e+00
+      EXACT: all |Z_k| = 1 ? True      [uv = 1: NEVER FORMS]
+  W_F = -1, W_C = -1      (alpha=pi, beta=pi)        L_S<=L True   r =  0.0000000000e+00  min|Z_k| = 1.000000e+00
+      EXACT: all |Z_k| = 1 ? True      [uv = 1: NEVER FORMS]
+  W_F = -1, W_C = +1      (alpha=pi, beta=0)         L_S<=L False  r = -1.8665928097e+01  min|Z_k| = 6.123234e-17
+      EXACT: all |Z_k| = 1 ? False      [uv = -1: forms]
+  S1 published W_F=-1,W_C=-i                         L_S<=L False  r = -9.5062508435e+00  min|Z_k| = 6.123234e-17
+      EXACT: all |Z_k| = 1 ? False      [uv = e^{i pi/2}: forms]
+
+AND THE SAME SUPPORT IS UNREACHABLE ON EVERY CARRIER OF S4:511-520 EXCEPT B0b AND B4:
+   K1/B1,B2,B1s,B3      occupies ['10', '01', '11']  -> S={00,11} realizable: False
+   B1q                  occupies ['00', '10', '01']  -> S={00,11} realizable: False
+   B1p                  occupies ['10', '01']  -> S={00,11} realizable: False
+   B0a                  occupies ['00', '10', '01']  -> S={00,11} realizable: False
+   B0b/B4               occupies ['00', '10', '01', '11']  -> S={00,11} realizable: True
+
+============================================================================================================
+PART E — VERDICT ON W-02
+============================================================================================================
+(1) THE CRITERION HOLDS AT FOUR CLASSES, AND ITS PROOF NEVER MENTIONS THE CLASS COUNT.
+    |Z_k| = 1 with non-negative weights summing to 1 forces every occupied character's
+    k-th power to coincide (strict triangle inequality), for ANY number of classes; so
+    |Z_k| = 1 for all k  <=>  every ratio is 1  <=>  G = {1}.  The converse half is Weyl
+    on the closure of G, again class-count-free.  CARRIER-INDEPENDENT.  0 mismatches / 150.
+(2) THE TABLE IS A THREE-CLASS STATEMENT IN EXACTLY ONE PLACE, AND NO ROW OF IT IS FALSE:
+    it enumerates 3 of the 4 rank-1 support lattices.  The missing one, L_S = Z(1,1) from
+    S = {00,11}, needs a vertex in BOTH loops AND a vertex in NEITHER -- W-09's four-class
+    condition exactly.  S4's own Theorem S4-1 (S4:625-640) DOES carry that row; the
+    REGISTER's W-02 row does not, and no lane has ever run it on a carrier that realizes it.
+(3) THE LABELS ARE THREE-CLASS LABELS.  '|S|=3' names the FULL support on K1 and a PROPER
+    subset on B0b/B4; '|S|=4' is a new row (same group <u,v>).  '|S|=1 -> never' has 4
+    instances instead of 3.  The rulings extend; the ENUMERATION does not.

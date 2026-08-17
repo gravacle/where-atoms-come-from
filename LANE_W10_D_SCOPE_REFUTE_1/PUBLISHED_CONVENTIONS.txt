@@ -1,0 +1,67 @@
+LANE W10-D REFUTER 1 -- PUBLISHED CONVENTIONS
+Everything needed to re-run this refutation from scratch is on this page.
+
+LINEAGE.  Claude Opus 5, attacking LANE_W10_D_SCOPE (also Opus 5).  Custody sec4's shared-
+lineage caveat APPLIES between this lane and its target, and between both and W-07/W-08/W-09.
+This is layer ELEVEN of one lineage.  Discount it as one block, not as an independent check.
+
+LENS.  ADVERSARY ON THE TABLE.  Default UNDETERMINED.  For every row lane D marked
+CARRIER_INDEPENDENT, demand the exhibit; a row marked carrier-independent on an argument
+rather than a run is mismarked.  "COULD NOT HAVE FAILED" VOIDS A CONTROL, NEVER A THEOREM.
+
+OBJECTS (lane D's own, restated so nothing is inherited by pointer):
+  classes by (v in gamma_F?, v in gamma_C?);  u = conj(W_F) = e^{-if},  v = W_C = e^{ic}
+  chi_00 = 1, chi_10 = u, chi_01 = v, chi_11 = uv;  index order is always (p00, p10, p01, p11)
+  Z_k = sum p_ab (u^a v^b)^k = P(u^k, v^k),  P(x,y) = p00 + p10 x + p01 y + p11 xy
+  Omega_N = prod_{k<=N} Z_k,  lambda = m(P) (logarithmic Mahler measure)
+  MAHLER by Jensen in x: m(P) = (1/2pi) INT_0^{2pi} log max(|p00+p01 e^{it}|, |p10+p11 e^{it}|) dt
+    Trapezoid on the full circle (NOT assuming evenness, since complex arms are integrated),
+    n = 2^20 unless a line says otherwise; every permutation count re-checked at 2^18 and 2^21.
+
+CARRIERS.  B0b and B4 class multisets from S4_THE_MEASUREMENT_V001.md:575-590.  B4 is REBUILT
+here from incidence (leg R4-D): two "pillowcase" spheres (4-cycle N-a-S-b bounding two 2-cells)
+glued at the two poles; V=6 E=8 F=4 chi=2 b0=1 b1=1 b2=2, d1.d2 = 0, gamma_F = the face
+boundary (bounds), gamma_C = N-a1-S-a2-N (does not bound), class multiset {00:1,01:1,10:1,11:3}
+-- exact match to S4:578.  Lane D quoted B4 and did not rebuild it; that gap is now closed.
+
+CONNECTIONS.  A connection (f,c) is GENERIC iff the relation lattice {(n1,n2) : n1 f + n2 c in
+2 pi Z} is trivial, i.e. d_eff = 2.  Diagnostic used, printed in leg R1-A: the smallest
+|n1 f + n2 c - 2 pi m| over |n| <= 64, plus the measured exponent beta of the counting function
+#{k <= K : 1-|Z_k| < eps} ~ eps^beta   (beta ~ 1 at d_eff = 2, beta ~ 1/2 at d_eff = 1).
+  GENERIC POINTS USED: (2pi(sqrt2-1), 2pi(sqrt3-1)), (e, pi/e), and rng draws from seed 20260816.
+  DEGENERATE POINTS, all of which lane D used: (1.3, 2.0) [20f - 13c = 0 EXACTLY], (2.0, 1.1)
+  [-11f + 20c = 0, the sealed erratum against W-02], the "golden" pair [f + c = 2pi to 1.7e-10],
+  and (pi, 3pi/2) [order 4].
+
+SEEDS / GRIDS.  numpy default_rng, master seed 20260816 (the corpus's).  Hull rows: 200000 draws
+in leg R2 (lane D's sampling, to diff arms elementwise) and a deterministic 1201 x 1201 midpoint
+grid in leg R5-A (a DIFFERENT sampling scheme, so agreement is not an artefact of the draws).
+
+PRECISION.  numpy float64 unless a line says Fraction.  Exact-arithmetic checks actually done in
+Fraction / Z[i]: the torus-zero discriminant (R5-B), B4's SENSE-U rate (R4-E), and the character
+identity |Z_k|^2 = 1 - sum w_j w_l |chi_j^k - chi_l^k|^2 at q = 4 (R5-E, residual exactly 0).
+
+THE ONE VARIABLE, PER LEG.
+  R1  the CONNECTION'S ARITHMETIC (d_eff 1 vs 2).  Weights, K sweep, adversary rule, code path
+      fixed; nine connections printed as an arm diff before any result.
+  R2  NOTHING -- these are the two arms lane D varied, shown to be related by an identity.
+      Reported as VOID CONTROLS, not as confirmations of anything.
+  R3  the GEOMETRY OF THE COEFFICIENT VECTOR IN C.  Moduli, integrator, node count, the 24
+      permutations and the tolerance fixed; 14 pairwise-distinct probes printed.  Every probe
+      prints its CROSSING COUNT, and a probe with 0 crossings (m = log max modulus by
+      domination) is declared degenerate and not used as evidence.
+  R4  byte-level and arithmetic legs; no arms.  R4-D builds a carrier and validates it first.
+  R5  the CARRIER (B0b -> B4: V 9->6, E 18->8, F 9->4, chi 0->2, b1 2->1, b2 1->2, different
+      tree, different class multiset).  Dressing recipe, gauge action, branch definition,
+      k-range fixed.
+  R6  the BRANCH OPERATOR (loop holonomy vs full character), then (V, r) for the fibre-wise
+      group with an exact solve replacing a Monte-Carlo projector.
+
+MY OWN CONFOUND, RECORDED NOT PATCHED.  Leg R3's first probe for "is reality the operative
+variable?" was B0b's weight vector with one entry rotated.  It returned |G| = 24 and it is
+DEGENERATE: B0b's Jensen branches do not cross in any of the 24 arrangements, so m = log(max
+modulus) by domination and 24 could not have come out otherwise.  Both the defective probe and
+its replacement are on the page (leg R3-0), together with the fact that lane D's OWN B0b and B4
+arms in its leg 2D are in the same degenerate class.  My first replacement NAME for the
+operative variable -- COLLINEARITY IN C -- is also refuted on the page by leg R3-B row C4, and
+is left there rather than deleted.

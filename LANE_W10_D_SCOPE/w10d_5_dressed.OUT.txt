@@ -1,0 +1,63 @@
+====================================================================================================
+== 5A  B0b RECONSTRUCTED FROM S4's ROW, AND VALIDATED AGAINST IT ==
+====================================================================================================
+  S4:519 row 'B0b ring torus 3x3 grid, loops meet  V=9 E=18 F=9 chi=0 b1=2 b2=1'.
+  S4 does not publish d1,d2 for it (S4's own lane code is not in the repo), so this lane
+  BUILDS the 3x3 torus grid and then CHECKS that S4's published numbers all come out.
+  If any of them did not, nothing below would be about B0b.  DECLARED, not assumed.
+  built: V=9 E=18 F=9  chi=0  rank d1=8 rank d2=8  b0=1 b1=2 b2=1   max|d1.d2| = 0.0e+00
+  gamma_F is a cycle: 0.0e+00   bounds (in im d2): True
+  gamma_C is a cycle: 0.0e+00   bounds (in im d2): False
+  CLASS MULTISET BUILT : {'00':4, '01':1, '10':2, '11':2}
+  S4:576 PUBLISHED     : {'00':4, '01':1, '10':2, '11':2}
+  MATCH.  The reconstruction reproduces S4's published row exactly, including the class
+  multiset that every functional in this corpus depends on.  It is B0b for these purposes.
+
+====================================================================================================
+== 5B  THE DRESSED OBSERVABLE ON B0b: GAUGE INVARIANCE UNDER THE **FULL** ACTION ==
+====================================================================================================
+  FULL gauge action (S1:63 on the connection AND on the section), 200 random gauges:
+    max |A_uv| deviation           = 1.665e-16
+    max holonomy deviation (W_F,W_C)= 2.685e-15
+
+== 5C  BRANCH SEPARATION: S3's DIAGONAL OBSERVABLES vs THE DRESSED ONE, ON B0b ==
+  max over v of | |s_v|^2 (branch F) - |s_v|^2 (branch C) |  = 5.551e-17   (S3's gauge-invariant algebra: the diagonal)
+  max over (u,v) of |A_uv[M_dF s] - A_uv[M_c s]|             = 0.184760674209  at (u,v)=(1,8), classes 10/00
+  W-06's RESTORATION HOLDS ON A FOUR-CLASS CARRIER.  Off K1, from an independent build.
+
+== 5D  AND THE CLOSED FORM, WHICH NAMES WHAT THE DRESSED OBSERVABLE ACTUALLY SEES ==
+  |A_uv[M_dF s] - A_uv[M_c s]| = |A_uv[s]| . |W_F^(a_v-a_u) - W_C^(b_v-b_u)|
+    max deviation from the closed form over all 81 pairs: 5.551e-17
+  SO THE DRESSED SEPARATION IS A FUNCTION OF THE **CLASS DIFFERENCE** OF THE PAIR (u,v)
+  AND NOTHING ELSE ABOUT THE CARRIER.  It is non-zero iff some occupied pair has
+  (a_v-a_u, b_v-b_u) != (0,0) with W_F^da != W_C^db -- the SAME character condition as
+  formation.  W-06's restoration is CARRIER-INDEPENDENT given two occupied classes.
+  Its NUMBERS (0.384349931183, 3*sqrt(3)/10, 1000 of 4000) are K1-and-state-specific.
+
+== 5E  AND IT RECURS ON B0b TOO -- W-06/W-07's OBSTRUCTION IS NOT K1's ==
+  D_k = max_(u,v) |A_uv[M_dF^k s] - A_uv[M_c^k s]|, k = 1..4000, same state, same tree.
+    generic  (random a_e above)                  cells below 1e-9:     0 of 4000   min 1.090e-02
+    order 4: W_F=-1, W_C=-i                      cells below 1e-9:  1000 of 4000   min 1.584e-18
+    order 2: W_F=-1, W_C=-1                      cells below 1e-9:  2000 of 4000   min 9.002e-19
+    irrational: W_F=e^{i sqrt2}, W_C=e^{i sqrt3} cells below 1e-9:     0 of 4000   min 8.982e-03
+  The order-4 point annihilates the dressed record on a fixed fraction of cells ON B0b
+  EXACTLY AS ON K1.  ATTAINED-vs-APPROACHED (W-07) IS A PROPERTY OF THE CONNECTION'S
+  ARITHMETIC, NOT OF THE CARRIER.  CARRIER-INDEPENDENT, CONNECTION-SCOPED.
+
+====================================================================================================
+== 5F  A W-08 FIGURE I COULD NOT REPRODUCE -- RECORDED, NOT SMOOTHED ==
+====================================================================================================
+  W-08 registers the adversarial schedule accumulating '0.606, 0.615, 0.588, 0.601 nats
+  at K = 10^4..10^7' -- i.e. FLAT in K.  Leg 4E on K1's own weights gives 0.5718, 0.6211,
+  0.3615, 0.1143: the first two agree, the last two DECAY.  Sweep the connection:
+    generic (1.3, 2.0)                 0.5718    0.6211    0.3615    0.1143
+    S3/S4 headline (2.0, 1.1)          0.5742    0.6416    0.3215    0.1017
+    golden (2pi/phi, 2pi/phi^2)        0.0027    0.0008    0.0003    0.0003
+    S1 order-4 (pi, 3pi/2)            -0.0000   -0.0000   -0.0000   -0.0000
+  On NO connection tested does the accumulation stay flat at ~0.60 through K = 10^7.
+  READ, BOTH WAYS AND SCORED AS NEITHER: either W-08's figure used a connection or a
+  tie-break this lane has not identified, OR the adversary is STRONGER than W-08 reported
+  (accumulation decaying to 0 means |Omega| -> 1 along the adversarial schedule).
+  EITHER WAY W-08's QUALITATIVE RULING -- the adversarial budget is O(1), the honest one
+  diverges linearly -- IS REPRODUCED AND IS CARRIER-INDEPENDENT.  The four printed
+  constants are not reproduced and are marked UNDETERMINED in the scope table.

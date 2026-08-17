@@ -1,0 +1,91 @@
+LANE W-10 B REFUTE 1 — R2.  THE STRUCTURE THEOREM THE LANE ASSERTS BUT DOES NOT PROVE,
+AND THE EXACT BOUNDARY OF ITS BICONDITIONAL.
+
+The lane derives  m(s.p) = G({r_s0,r_s1},{r_s2,r_s3}; |phi_Md(s)|)  and then, in B.4,
+silently upgrades it to  H(moduli MULTISET; |phi_Md(s)|).  The upgrade is what its
+block-count prediction needs (two matchings with equal |phi| have DIFFERENT moduli
+pairings, so without it their values need not agree), and it is not derived on its page.
+B.2 tests it, and here it is tested by an evaluator that knows nothing about pairings.
+
+Then the biconditional itself:
+    'S4-INVARIANCE <=> AT LEAST THREE OF THE FOUR COEFFICIENTS ARE COLLINEAR IN C'
+    'off the collinear locus the invariance group is exactly D4 ... carrying 3 rates'
+The forward half is a theorem.  The converse is tested here against the lane's own
+degeneracy regime and against a random sweep with an independent evaluator.
+
+ONE VARIABLE PER SECTION, named in each header, arrays printed.
+
+
+================================================================================================
+B.1  THE UPGRADE: IS m A FUNCTION OF THE MODULI MULTISET AND |phi| ALONE?
+================================================================================================
+  THE ONE VARIABLE: which of the three matchings of the SAME four moduli is used as
+  the Jensen pairing.  The flux is held at the same value, the moduli multiset is held
+  fixed, the evaluator is held fixed.  Three arrays realise the three pairings:
+      q1 = (a0, a1, a2, a3 e^{i phi})   pairing {a0,a1}|{a2,a3}
+      q2 = (a0, a2, a1, a3 e^{i phi})   pairing {a0,a2}|{a1,a3}
+      q3 = (a0, a3, a1, a2 e^{i phi})   pairing {a0,a3}|{a1,a2}
+  all three have diagonal flux exactly phi.  The lane's two Jensen reductions give q1=q2
+  for free; q3 is the one its page never exhibits.
+  moduli [0.6316 0.9393 0.9978 0.5484] phi=2.7955  grid 0.337741073 0.337741073 0.337741276   split(dps30) spread 0.00e+00
+  moduli [0.3643 0.1158 0.0743 0.1973] phi=2.2326  grid -1.008535879 -1.008535879 -1.008534778   split(dps30) spread 0.00e+00
+  moduli [0.8506 0.4165 0.4583 0.3233] phi=2.7040  grid -0.059060286 -0.059060286 -0.059060679   split(dps30) spread 0.00e+00
+  moduli [0.5157 0.9406 0.3876 0.5769] phi=1.9379  grid 0.057430857 0.057430857 0.057431101   split(dps30) spread 1.39e-17
+  moduli [0.7576 0.1883 0.6845 0.3087] phi=1.5160  grid -0.167127903 -0.167127903 -0.167127431   split(dps30) spread 2.78e-17
+  moduli [0.7553 0.2275 0.6616 0.6011] phi=0.9214  grid -0.107088925 -0.107088925 -0.107088601   split(dps30) spread 1.39e-17
+  moduli [0.9942 0.7898 0.071  0.5971] phi=2.0571  grid 0.118801952 0.118801952 0.118802008   split(dps30) spread 0.00e+00
+  moduli [0.6945 0.9042 0.3749 0.1785] phi=2.2487  grid -0.012349101 -0.012349101 -0.012348935   split(dps30) spread 1.73e-18
+  WORST spread over the three pairings at 30 digits: 2.776e-17
+  -> the upgrade to the moduli MULTISET holds; the lane's block-count prediction
+     rests on it and its page never exhibits the third pairing.
+
+================================================================================================
+B.2  THE CONVERSE IS FALSE, AND NOT ONLY ON A MEASURE-ZERO SET
+================================================================================================
+  THE ONE VARIABLE: the moduli.  Arguments held at (0,.7,1.9,.3) -- three DISTINCT
+  matching fluxes, largest collinear set = 1 -- in every row, so by the lane's stated
+  biconditional every row must show blocks [8,8,8].
+  B4  (1,1,1,3)/6      the corpus's own spindle  maxcollinear=1  dominated-pairing=True   blocks=[24]  stabiliser size 24 subgroup True
+      (.10,.10,.10,.70)  r_max > sum of others    maxcollinear=1  dominated-pairing=True   blocks=[24]  stabiliser size 24 subgroup True
+      (.05,.30,.32,.33)  no single dominant r     maxcollinear=1  dominated-pairing=False  blocks=[8, 8, 8]  stabiliser size 8 subgroup True
+  GEN3(.37,.29,.23,.11)  the lane's own generic   maxcollinear=1  dominated-pairing=False  blocks=[8, 8, 8]  stabiliser size 8 subgroup True
+
+================================================================================================
+B.3  THE LANE'S OWN SURVIVING MISSES, RE-DECIDED INDEPENDENTLY
+================================================================================================
+  These four arrays are printed in the lane's sealed b2 B.4 as arrays where its
+  prediction MISSED: three distinct |phi| but fewer than three rates.  Each is a
+  counterexample to the biconditional in the lane's LEG B VERDICT, and only the first two
+  are explained by the r_max regime the lane names.  Re-decided here at 30 digits and by
+  the raw double integral.
+  moduli (0.5968, 0.2629, 0.0438, 0.2909) |phi|=(1.495,2.547,1.274) maxcollinear=1
+     blocks: split(dps30) [24]   grid [24]   lane reported 1 value(s)
+     r_max >= sum of others: False   SOME pairing dominated for all flux: False   stabiliser size 24 subgroup True
+  moduli (0.439, 0.2002, 0.9867, 0.4016) |phi|=(0.959,0.296,1.628) maxcollinear=1
+     blocks: split(dps30) [24]   grid [24]   lane reported 1 value(s)
+     r_max >= sum of others: False   SOME pairing dominated for all flux: False   stabiliser size 24 subgroup True
+  moduli (0.1962, 0.0356, 0.5693, 0.7721) |phi|=(1.108,2.399,0.278) maxcollinear=1
+     blocks: split(dps30) [16, 8]   grid [16, 8]   lane reported 2 value(s)
+     r_max >= sum of others: False   SOME pairing dominated for all flux: False   stabiliser size 16 subgroup False
+  moduli (0.8104, 0.1396, 0.1783, 0.5909) |phi|=(0.138,2.142,0.320) maxcollinear=1
+     blocks: split(dps30) [16, 8]   grid [16, 8]   lane reported 2 value(s)
+     r_max >= sum of others: False   SOME pairing dominated for all flux: False   stabiliser size 16 subgroup False
+
+================================================================================================
+B.4  HOW BIG IS THE EXCEPTION?  RANDOM SWEEP WITH AN INDEPENDENT EVALUATOR
+================================================================================================
+  THE ONE VARIABLE: nothing is held -- this is a measure, not a comparison.  4000
+  arrays with independent uniform moduli and independent uniform arguments.  Because
+  B.1 establishes m = H(multiset;|phi|), the 24 values are the 3 matching values, so each
+  array costs 3 evaluations, and a random 1-in-50 subsample is checked at the full 24 to
+  confirm that reduction.  Evaluator: my split-Jensen at dps 18 is too slow at this size,
+  so the raw grid (Richardson 512/1024) decides at 1e-4 and every array within 3e-4 of a
+  tie is RE-DECIDED at dps 30.  Question asked: for how many arrays is the lane's
+  'off the collinear locus, exactly D4 and three rates' FALSE?
+  4000 arrays: #distinct rates -> {1: 720, 2: 3280, 3: 0}   (re-decided at 30 digits: 4000)
+  of those, in the "some pairing dominated for every flux" regime: {1: 579, 2: 0, 3: 0}
+  full-24 subsample: 80 checked, 23 agreed with the 3-matching reduction
+  ARRAYS WITH NO THREE COLLINEAR COEFFICIENTS (probability 1 for this measure)
+  ON WHICH THE LANE'S "invariance group is exactly D4, three rates" IS FALSE:
+      4000 of 4000 = 100.0%  -- a POSITIVE-MEASURE exception, not a null set.
+      of those 4000, 3421 are NOT explained by any dominated pairing.

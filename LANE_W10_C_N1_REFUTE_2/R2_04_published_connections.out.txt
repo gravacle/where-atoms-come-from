@@ -1,0 +1,64 @@
+============================================================================================================
+R2_04 (A) — CENSUS OF THE CORPUS'S PUBLISHED CONNECTIONS, TYPED BY COMPUTATION
+============================================================================================================
+  connection                                   where                  type                   relation / order
+  S1 sec6 worked instance  W_F=-1, W_C=-i      S1:114-115 / S3:78     FINITE ORDER           ord(rho) = 4
+  S3 headline               f=2.0,  c=1.1      S3:88, S3:310, S4:891  RESONANT (rank 1)      primitive (m,n) = (11, 20)
+  S3 sec6(f)                f=pi,   c=pi/2     S3:700, S4:956         FINITE ORDER           ord(rho) = 4
+  S3 sec6(f)                f=pi,   c=3pi/2    S3:701, S4:957         FINITE ORDER           ord(rho) = 4
+  S3 sec6(f)                f=c=2.0            S4:955                 RESONANT (rank 1)      primitive (m,n) = (1, 1)
+  S3 audit                  f=3.14159, c=1.57080 S3:698, S4:960         RESONANT (rank 1)      primitive (m,n) = (157080, 314159)
+  S3 audit                  f=3.14159, c=4.71239 S3:699                 RESONANT (rank 1)      primitive (m,n) = (471239, 314159)
+  S4 sec3                   f=1.0, c=0.3       S4:330                 RESONANT (rank 1)      primitive (m,n) = (3, 10)
+  S4 sec3                   f=1.0, c=3.0       S4:330                 RESONANT (rank 1)      primitive (m,n) = (3, 1)
+  S4 sec3                   f=1.0, c=2.1       S4:342                 RESONANT (rank 1)      primitive (m,n) = (21, 10)
+  S4 sec7 detune            f=2.0, c=1.1+1e-5  S4:924                 RESONANT (rank 1)      primitive (m,n) = (110001, 200000)
+  S4 VERIFICATION           f=1.0, c=sqrt(2)   S4:603, S4:1054        GENERIC (L = {0})      L = {0}
+
+  EVERY CONNECTION WITH BOTH f AND c RATIONAL IS EXACTLY RESONANT.  That covers
+  every row above except the pi-multiples (finite order) and the ONE row with an
+  irrational ratio.  THE CORPUS HAS PUBLISHED EXACTLY ONE GENERIC CONNECTION:
+     S4 VERIFICATION           f=1.0, c=sqrt(2)
+  and it is the connection S4 used to VERIFY the very lambda column lane C audits
+  (S4:603 'Closed forms verified against direct schedule-B simulation at f = 1.0,
+  c = sqrt(2), N = 2e6'; S4:1054 repeats it in the verification table).
+  R2_03 section 3 runs it at K = 2e8 on both four-class carriers and on K1:
+  the average converges to m(P) with errors 5.7e-10, 1.2e-09 and 2.7e-08.
+  ==> 'lambda = m(P) is FALSE at every connection this corpus has ever published'
+      IS REFUTED BY THE CORPUS'S OWN VERIFICATION CONNECTION, and lane C's own
+      C_04 output prints that connection's agreement ten lines below the claim.
+
+  NOTE, CUTTING AGAINST THE SAME CLAIM FROM THE OTHER SIDE: S4:960's resolution of
+  f = 3.14159, c = 1.57080 calls those truncated decimals 'generic'.  They are NOT:
+  both are rational, so the connection is resonant with primitive relation
+  (157080, 314159).  S4's CONCLUSION is right to any attainable precision (Boyd-
+  Lawton makes the subtorus measure agree with m(P) far beyond float64), but its
+  TYPING is wrong -- the corpus's third mislabelling of a connection, and neither
+  W-08, W-09 nor lane C has caught it.
+
+============================================================================================================
+R2_04 (B) — KINK-SPLIT m(P) FOR THE TWO ROWS WHERE THE JENSEN INTEGRAND HAS A CORNER
+============================================================================================================
+
+  K1   SENSE U (0,2,2,1)/5
+     kink-split adaptive quadrature = -0.756573585639774825   crossing at cos t = -0.25
+     lane C / corpus value          = -0.756573585640  (S4:597 Cassaigne-Maillot; lane C C_04 prints -0.756573585640)
+
+  B0b* SENSE U (2,1,3,3)/9
+     kink-split adaptive quadrature = -0.987918288038492491   crossing at cos t = -0.92857143
+     lane C / corpus value          = -0.987918288038  (lane C C-5)
+
+  B0b  SENSE U (4,2,1,2)/9
+     kink-split adaptive quadrature = -0.810930216216328764   NO crossing (single branch dominates)
+     lane C / corpus value          = -0.810930216216  = log(4/9)
+
+  B4   SENSE U (1,1,1,3)/6
+     kink-split adaptive quadrature = -0.693147180559945309   NO crossing (single branch dominates)
+     lane C / corpus value          = -0.693147180560  = -log 2
+
+  READ: a plain (unsplit) trapezoid on the Jensen integrand is O(n^-2) at a
+  crossing.  This refuter's own R2_02 used an unsplit 2^16 trapezoid and was
+  therefore wrong by ~8e-11 (K1) and ~1.7e-10 (B0b*) -- recorded as defect R-2.
+  Lane C's kink-split values are the accurate ones and are CONFIRMED here.
+
+DONE.

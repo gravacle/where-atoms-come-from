@@ -1,0 +1,93 @@
+========================================================================================================
+C_04 — THE THREE LIMITS.  K = 1e7, float64, exact int64 phase reduction.
+ONE VARIABLE PER BLOCK: the connection's arithmetic.  The arms are printed; DIFF THEM.
+========================================================================================================
+
+  ARM PARAMETERS, so that a byte-identical control is impossible to hide:
+    DIOPHANTINE  alpha=-2^(1/3), beta=4^(1/3) mod 1  (Schmidt: b  alpha = 0.740078950105127   beta = 0.587401051968199
+    RESONANT     f=2.0, c=1.1   ->  -11 f + 20 c = 0, primitive   alpha = 0.681690113822697   beta = 0.175070437397517
+    FINITE ORDER W_F=-1, W_C=-i  ->  alpha=1/2, beta=3/4, ord(rh  alpha = 0.500000000000000   beta = 0.750000000000000
+    all three (alpha,beta) pairs are distinct -> the control is not vacuous
+    resonance exactness in the integer representation: 11*A + 20*B = 0  (must be 0)
+
+--------------------------------------------------------------------------------------------------------
+  B0b  SENSE U  (4,2,1,2)/9   FOUR-CLASS
+     m(P) by Jensen (n=2^20) = -0.810930216216   closed form -0.810930216216   |diff| = 5.55e-16
+     zeros on T^2 ?  False   (hi=+0.3333, lo=+0.1111)
+     DIOPHANTINE  alpha=-2^(1/3), beta=4^(1/3) mod 1  (Schmidt: badly approximable)
+        N=1e3: -0.811189949   N=1e4: -0.810903762   N=1e5: -0.810924965   N=1e6: -0.810929980   N=1e7: -0.810930271
+        target (m(P)) = -0.810930216216   |avg(1e7) - target| = 5.435e-08   |avg(1e7) - m(P)| = 5.435e-08   min|Z_k| = 1.111e-01  zeros hit: 0
+     RESONANT     f=2.0, c=1.1   ->  -11 f + 20 c = 0, primitive relation (11,20)
+        N=1e3: -0.810112301   N=1e4: -0.810985528   N=1e5: -0.810933568   N=1e6: -0.810930648   N=1e7: -0.810930225
+        target (subtorus m over H) = -0.810930204535   |avg(1e7) - target| = 2.066e-08   |avg(1e7) - m(P)| = 8.984e-09   min|Z_k| = 1.115e-01  zeros hit: 0
+     FINITE ORDER W_F=-1, W_C=-i  ->  alpha=1/2, beta=3/4, ord(rho)=4  [S1 sec6]
+        N=1e3: -0.970905883   N=1e4: -0.970905883   N=1e5: -0.970905883   N=1e6: -0.970905883   N=1e7: -0.970905883
+        target (finite-orbit average) = -0.970905882727   |avg(1e7) - target| = 4.351e-12   |avg(1e7) - m(P)| = 1.600e-01   min|Z_k| = 2.485e-01  zeros hit: 0
+
+--------------------------------------------------------------------------------------------------------
+  B4   SENSE U  (1,1,1,3)/6   FOUR-CLASS
+     m(P) by Jensen (n=2^20) = -0.693147180560   closed form -0.693147180560   |diff| = 4.44e-16
+     zeros on T^2 ?  False   (hi=-0.3333, lo=-0.3333)
+     DIOPHANTINE  alpha=-2^(1/3), beta=4^(1/3) mod 1  (Schmidt: badly approximable)
+        N=1e3: -0.693622412   N=1e4: -0.693145619   N=1e5: -0.693145596   N=1e6: -0.693147138   N=1e7: -0.693147237
+        target (m(P)) = -0.693147180560   |avg(1e7) - target| = 5.612e-08   |avg(1e7) - m(P)| = 5.612e-08   min|Z_k| = 2.722e-01  zeros hit: 0
+     RESONANT     f=2.0, c=1.1   ->  -11 f + 20 c = 0, primitive relation (11,20)
+        N=1e3: -0.692581194   N=1e4: -0.693214454   N=1e5: -0.693149550   N=1e6: -0.693147585   N=1e7: -0.693147188
+        target (subtorus m over H) = -0.693147181044   |avg(1e7) - target| = 7.261e-09   |avg(1e7) - m(P)| = 7.746e-09   min|Z_k| = 2.733e-01  zeros hit: 0
+     FINITE ORDER W_F=-1, W_C=-i  ->  alpha=1/2, beta=3/4, ord(rho)=4  [S1 sec6]
+        N=1e3: -0.823959217   N=1e4: -0.823959217   N=1e5: -0.823959217   N=1e6: -0.823959217   N=1e7: -0.823959217
+        target (finite-orbit average) = -0.823959216501   |avg(1e7) - target| = 1.004e-11   |avg(1e7) - m(P)| = 1.308e-01   min|Z_k| = 3.333e-01  zeros hit: 0
+
+--------------------------------------------------------------------------------------------------------
+  K1   SENSE U  (0,2,2,1)/5   three-class CONTROL
+     m(P) by Jensen (n=2^20) = -0.756573585640   [no closed form quoted]
+     zeros on T^2 ?  True   (hi=-0.2000, lo=+0.2000)
+     DIOPHANTINE  alpha=-2^(1/3), beta=4^(1/3) mod 1  (Schmidt: badly approximable)
+        N=1e3: -0.758755365   N=1e4: -0.756606886   N=1e5: -0.756579694   N=1e6: -0.756577429   N=1e7: -0.756573532
+        target (m(P)) = -0.756573585640   |avg(1e7) - target| = 5.402e-08   |avg(1e7) - m(P)| = 5.402e-08   min|Z_k| = 3.162e-04  zeros hit: 0
+     RESONANT     f=2.0, c=1.1   ->  -11 f + 20 c = 0, primitive relation (11,20)
+        N=1e3: -0.757190529   N=1e4: -0.756393296   N=1e5: -0.756298909   N=1e6: -0.756337577   N=1e7: -0.756337086
+        target (subtorus m over H) = -0.756337009107   |avg(1e7) - target| = 7.702e-08   |avg(1e7) - m(P)| = 2.365e-04   min|Z_k| = 1.572e-02  zeros hit: 0
+     FINITE ORDER W_F=-1, W_C=-i  ->  alpha=1/2, beta=3/4, ord(rho)=4  [S1 sec6]
+        N=1e3: -0.804718956   N=1e4: -0.804718956   N=1e5: -0.804718956   N=1e6: -0.804718956   N=1e7: -0.804718956
+        target (finite-orbit average) = -0.804718956217   |avg(1e7) - target| = 6.930e-12   |avg(1e7) - m(P)| = 4.815e-02   min|Z_k| = 2.000e-01  zeros hit: 0
+
+--------------------------------------------------------------------------------------------------------
+  SENSE C 4-class (1,1,1,1)/4  FOUR-CLASS, HAS TORUS ZEROS
+     m(P) by Jensen (n=2^20) = -1.386293700082   closed form -1.386294361120   |diff| = 6.61e-07
+     zeros on T^2 ?  True   (hi=+0.0000, lo=+0.0000)
+     DIOPHANTINE  alpha=-2^(1/3), beta=4^(1/3) mod 1  (Schmidt: badly approximable)
+        N=1e3: -1.386481492   N=1e4: -1.386716717   N=1e5: -1.386289004   N=1e6: -1.386297582   N=1e7: -1.386295105
+        target (m(P)) = -1.386293700082   |avg(1e7) - target| = 1.405e-06   |avg(1e7) - m(P)| = 1.405e-06   min|Z_k| = 1.075e-08  zeros hit: 0
+     RESONANT     f=2.0, c=1.1   ->  -11 f + 20 c = 0, primitive relation (11,20)
+        N=1e3: -1.380739336   N=1e4: -1.384970614   N=1e5: -1.386328381   N=1e6: -1.386335756   N=1e7: -1.386295428
+        target (subtorus m over H) = -1.386293534824   |avg(1e7) - target| = 1.894e-06   |avg(1e7) - m(P)| = 1.728e-06   min|Z_k| = 6.272e-08  zeros hit: 0
+     FINITE ORDER W_F=-1, W_C=-i  ->  alpha=1/2, beta=3/4, ord(rho)=4  [S1 sec6]
+        N=1e3: -28.088521943   N=1e4: -28.088521943   N=1e5: -28.088521944   N=1e6: -28.088521944   N=1e7: -28.088521944
+        target (finite-orbit average) = -inf   |avg(1e7) - target| = inf   |avg(1e7) - m(P)| = 2.670e+01   min|Z_k| = 4.132e-17  zeros hit: 0
+
+========================================================================================================
+S4's OWN CROSS-CHECK CONNECTION, REPRODUCED.  S4:604-612 verifies its closed forms
+against 'direct schedule-B simulation at f = 1.0, c = sqrt(2), N = 2e6' and reports
+B0b direct -0.810929681 (dev 5.4e-07) and B4 direct -0.693146936 (dev 2.4e-07).
+========================================================================================================
+  B0b  SENSE U  (4,2,1,2)/9   FOUR-CLASS N=2e6 direct = -0.810929681   m(P) = -0.810930216   dev = 5.4e-07
+  B4   SENSE U  (1,1,1,3)/6   FOUR-CLASS N=2e6 direct = -0.693146936   m(P) = -0.693147181   dev = 2.4e-07
+  S4's B0b direct -0.810929681 and B4 direct -0.693146936 sit at the same distance
+  from the closed form as this independent run; the finite-N wobble is the whole gap.
+
+========================================================================================================
+READ THIS BLOCK BEFORE THE NUMBERS ARE USED.
+
+  ON B0b AND B4 THE THREE-CONNECTION COMPARISON IS A CONTROL THAT COULD NOT HAVE FAILED IN THE
+  DIRECTION THE BRIEF EXPECTS.  Both carriers' P are ZERO-FREE on T^2 (C_03 section 4), so
+  log|P| is CONTINUOUS there, and Weyl's theorem on the orbit closure H gives convergence for
+  EVERY connection with no Diophantine input whatever.  The three limits therefore exist in all
+  three rows; what separates them is only WHICH limit -- m(P) when H = T^2, the subtorus Mahler
+  measure when H is a circle, the finite-orbit average when H is finite.  That is a statement
+  about H, not about approximation quality, and it was already M1's T4.
+
+  THE ROW WHERE SOMETHING COULD FAIL is SENSE C -- the corpus's OTHER published four-class
+  column (lambda = -1.386294361120 for both B0b and B4, S4:582).  There P = (1+x)(1+y)/4 has a
+  ONE-DIMENSIONAL zero set, log|P| is unbounded, and convergence is NOT free.  It is tested in
+  C_05.

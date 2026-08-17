@@ -1,0 +1,96 @@
+LENS 2 (SCOPE), ATTACK 2.  RUN THE ARM THE LANE SAID COULD NOT FAIL, IN A REGIME
+WHERE IT CAN.
+
+The lane's LEG A tests W-03's multiset theorem on four-class weight vectors that are all
+inside the degenerate region of ATTACK 1, so lambda = log(w_max) and three of the four
+weights are unused.  The lane says so itself.  What it does not do is run the test on a
+four-class CARRIER outside that region -- and it did not have to build one, because both
+of the corpus's own four-class carriers get there with a different ready state.
+
+  2.0  a four-class carrier built from incidence whose SENSE-U vector is INFORMATIVE
+  2.1  the 24-permutation test on it, three independent evaluators
+  2.2  THE DECISIVE ARM: B0b and B4 themselves, with ready states outside the region
+  2.3  ARM-COUNT AUDIT: how many of the '24 permutations' are distinct arrays
+
+THE ONE VARIABLE in 2.1 and 2.2 is the permutation of the four class weights.  The
+carrier, the state, the connection, the evaluator and the code path are held fixed and
+the DISTINCT-ARRAY COUNT is printed for every row, because the corpus's isolation audit
+says a byte-identical arm is the defect a ledger cannot catch.
+
+
+================================================================================================
+2.0  K1+2S — K1 WITH A SPECTATOR PAIR.  FOUR CLASSES, AND SENSE U IS INFORMATIVE
+================================================================================================
+  W-09's corrected name of record is 'all four classes occupied, which requires a
+  vertex in BOTH loops and a vertex in NEITHER'.  K1 supplies the pinch (v0), so the
+  minimal four-class carrier is K1 with a spectator branch attached.  Incidence, in S1's
+  own conventions (d1[v,e] = +1 at the target, -1 at the source):
+
+    V = 7   v0..v6            F = 1, attached along e1+e2+e3 (K1's filled triangle)
+    e1=(0,1) e2=(1,2) e3=(2,0)   e4=(0,3) e5=(3,4) e6=(4,0)   e7=(0,5) e8=(5,6)
+    gamma_F = e1+e2+e3   gamma_C = e4+e5+e6
+
+  Nothing in this lane needs the carrier beyond its class multiset; it is built here so
+  that the informative weight vector is a CARRIER's own SENSE U and not a free vector.
+  K1+2S  V=7 E=8 F=1 chi=0 b=(1,1,0)  |d1.d2| = 0.0e+00
+  gamma_F is a cycle: True and BOUNDS: True      gamma_C is a cycle: True and bounds: False
+  class counts {00:2,10:2,01:2,11:1}   all four occupied: True
+  SENSE U weights = ('2/7', '2/7', '2/7', '1/7')      DEGENERATE (all-24-dominated): False
+  gauge count check, S4's own rule: invariants = E-(V-b0) = 2, curvature = rank d2 = 1, flat = b1 = 1, sum matches: True
+
+================================================================================================
+2.1  THE 24-PERMUTATION TEST ON K1+2S, SENSE U — AN ARM THAT COULD HAVE FAILED
+================================================================================================
+  exact: 0 of 24 arrangements have a dominated Jensen pairing (0 is what makes the arm live)
+  distinct arrays among the 24 permutations: 4
+  R1 Jensen-in-y  dps 30 : spread over 24 = 0.0   value = -1.07494695034759836
+  R1 Jensen-in-x  dps 30 : spread over 24 = 0.0
+  R2 Lawton/roots N=400  : spread over 24 = 9.315e-08   value = -1.074945178  (vs R1: 1.77e-06)
+  R4 ergodic f=0.9 c=pi/e N=2e6, 6 permutations: spread = 2.563e-06  value = -1.074947818
+  lambda - log(w_max) = 0.17781602  (strictly positive: the other three weights DO enter)
+
+================================================================================================
+2.2  THE DECISIVE ARM — B0b AND B4 THEMSELVES, OUTSIDE THE DEGENERATE REGION
+================================================================================================
+  ONE VARIABLE: the permutation.  For each carrier, Haar-random ready states are drawn
+  and only those whose pushforward is (i) OUTSIDE the degenerate region and (ii) has four
+  DISTINCT weights are kept -- so all 24 arrays differ and the branch max genuinely
+  switches.  Every kept state is a legitimate ready state on the corpus's own carrier.
+  seed 20260816, 60 accepted states per carrier, R1 at dps 30 on all 24 permutations.
+  B0b  {00:4,10:2,01:1,11:2}   accepted 60 of 204 states   distinct arrays per state: [24]
+      worst spread over 24 permutations, Jensen-in-y = 2.95823e-31
+      worst spread over 24 permutations, Jensen-in-x = 2.95823e-31
+      worst y-vs-x disagreement                      = 2.95823e-31
+  B4   {00:1,10:1,01:1,11:3}   accepted 60 of 300 states   distinct arrays per state: [24]
+      worst spread over 24 permutations, Jensen-in-y = 5.91646e-31
+      worst spread over 24 permutations, Jensen-in-x = 5.91646e-31
+      worst y-vs-x disagreement                      = 5.91646e-31
+  K1+2S {00:2,10:2,01:2,11:1}  accepted 60 of 200 states   distinct arrays per state: [24]
+      worst spread over 24 permutations, Jensen-in-y = 5.52203e-30
+      worst spread over 24 permutations, Jensen-in-x = 5.52203e-30
+      worst y-vs-x disagreement                      = 5.52203e-30
+
+  THE MULTISET THEOREM SURVIVES THE ARM THAT COULD HAVE FAILED, on the corpus's own two
+  four-class carriers, at 60 ready states each, all 24 arrays distinct, all outside the
+  branch-domination region.  This is the test LEG A did not run and B-04 says LEG A could
+  not have run on these carriers.  B-04 is right about the SENSE-U vectors and wrong about
+  the carriers; B-01's conclusion is right and now rests on something.
+
+================================================================================================
+2.3  ARM-COUNT AUDIT — HOW MANY OF THE '24 PERMUTATIONS' ARE DISTINCT ARRAYS
+================================================================================================
+  The lane's ARM DIFF counts permuted arrays that differ FROM THE IDENTITY ARRAY.  That
+  metric cannot see duplicates among the other 23.  The number that matters is the count
+  of DISTINCT arrays, and it is smaller than 24 in four of LEG A's five cases.
+  LEG A case                 distinct   lane ARM    dominated live arms
+                               arrays       DIFF        of 24 (distinct & not dominated)
+  B0b   (4,2,1,2)/9                12         22           24 0
+  B4    (1,1,1,3)/6                 4         18           24 0
+  SENSE C  (1,1,1,1)/4              1          0           24 0
+  GEN1  (.40,.40,.15,.05)          12         22            0 12
+  GEN2  (.34,.33,.32,.01)          24         23            0 24
+
+  GEN1 -- one of the two cases the lane says carries all of LEG A's information -- has a
+  repeated weight and only 12 distinct arrays.  GEN2 is the only case in LEG A with 24
+  distinct arrays AND a live branch switch.  LEG A's headline rests on ONE weight vector.
+  (It is still a theorem; this voids the CONTROL's advertised width, not the result.)

@@ -1,0 +1,67 @@
+================================================================================================
+LEG A — EXACT.  Gaussian-rational connection and ready state; Fraction arithmetic.
+        Z_k from the OPERATORS on real incidence vs P(u^k,v^k).  Residual must be 0.
+================================================================================================
+  B0b ring torus 3x3, loops MEET               last trial's exact pushforward
+       p00=535/977  p10=473/2931  p01=204/977  p11=241/2931   (sum = 1 exactly)
+  B4 spindle (two spheres, 2 glue pts)         last trial's exact pushforward
+       p00=865/2191  p10=400/2191  p01=73/2191  p11=853/2191   (sum = 1 exactly)
+  B1 = K1 (three-class CONTROL)                last trial's exact pushforward
+       p00=0  p10=314/663  p01=473/1326  p11=75/442   (sum = 1 exactly)
+
+  cases = 300   WORST EXACT RESIDUAL max(|Re|,|Im|) = 0   EXACTLY ZERO
+
+================================================================================================
+LEG B — FLOAT64.  Random connections x random ready states x k = 0..64.
+================================================================================================
+  B0b ring torus 3x3, loops MEET               cases  13000   worst |Z_k - P(u^k,v^k)| = 4.300e-15
+  B4 spindle (two spheres, 2 glue pts)         cases  13000   worst |Z_k - P(u^k,v^k)| = 7.557e-15
+  B1 = K1 (three-class CONTROL)                cases  13000   worst |Z_k - P(u^k,v^k)| = 3.625e-15
+
+================================================================================================
+LEG C — THE CONVENTION TABLE, ON A FOUR-CLASS CARRIER (M1 T1 ran it on K1 only).
+================================================================================================
+  B0b ring torus 3x3, loops MEET
+     A  u=conj(W_F), v=W_C    worst |dev| = 1.966e-15   worst ||Z|-|P|| = 1.776e-15
+     B  u=W_F,       v=W_C    worst |dev| = 1.727e+00   worst ||Z|-|P|| = 6.870e-01
+     C  u=W_F,   v=conj(W_C)  worst |dev| = 1.707e+00   worst ||Z|-|P|| = 1.776e-15
+  B4 spindle (two spheres, 2 glue pts)
+     A  u=conj(W_F), v=W_C    worst |dev| = 5.070e-15   worst ||Z|-|P|| = 5.107e-15
+     B  u=W_F,       v=W_C    worst |dev| = 1.919e+00   worst ||Z|-|P|| = 8.501e-01
+     C  u=W_F,   v=conj(W_C)  worst |dev| = 1.933e+00   worst ||Z|-|P|| = 5.107e-15
+
+================================================================================================
+LEG D — FULL GAUGE ACTION (connection AND section move together).
+================================================================================================
+  B0b ring torus 3x3, loops MEET               worst |Z_k(gauged) - Z_k| = 2.821e-14
+  B4 spindle (two spheres, 2 glue pts)         worst |Z_k(gauged) - Z_k| = 2.410e-14
+
+================================================================================================
+LEG E — THE REFUTATION ARM.  ONE VARIABLE: which branch operator.
+        arm 1 = W-01's DIAGONAL M_gamma (multiply loop vertices by W(gamma))
+        arm 2 = COR-F's EDGE-TRANSPORT T around the SAME loop (a cyclic shift x phase)
+        carrier, connection, ready state, k-range and evaluator identical.
+================================================================================================
+  B0b ring torus 3x3, loops MEET
+     arm 1 diagonal   worst |Z_k - P(u^k,v^k)| = 1.579e-15
+     arm 2 transport  worst |Z_k - P(u^k,v^k)| = 1.266e+00
+     ARMS DIFFER BY (must be > 0 or the control is vacuous) = 1.266e+00
+  B4 spindle (two spheres, 2 glue pts)
+     arm 1 diagonal   worst |Z_k - P(u^k,v^k)| = 3.420e-15
+     arm 2 transport  worst |Z_k - P(u^k,v^k)| = 1.891e+00
+     ARMS DIFFER BY (must be > 0 or the control is vacuous) = 1.891e+00
+  B1 = K1 (three-class CONTROL)
+     arm 1 diagonal   worst |Z_k - P(u^k,v^k)| = 1.669e-15
+     arm 2 transport  worst |Z_k - P(u^k,v^k)| = 1.924e+00
+     ARMS DIFFER BY (must be > 0 or the control is vacuous) = 1.924e+00
+
+================================================================================================
+VERDICT OF STEP 2 — stated with its own vacuity, not after it.
+  The identification HOLDS on both four-class carriers, exactly.  But it is a
+  control that COULD NOT HAVE FAILED as a mathematical matter: M_gamma is DIAGONAL
+  BY DEFINITION on any carrier, so grouping vertices by their membership pair gives
+  the four monomials of P on any carrier whatever.  What four classes add is only
+  that the p00 monomial is now OCCUPIED.  The non-vacuous half of step 2 is leg E:
+  the identification is a fact about the DEFINITION of the branch operator, and it
+  FAILS for the edge-transport operator around the very same loop.
+================================================================================================

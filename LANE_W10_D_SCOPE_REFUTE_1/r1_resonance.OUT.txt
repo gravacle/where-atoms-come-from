@@ -1,0 +1,104 @@
+====================================================================================================
+== R1-A  THE ARITHMETIC OF LANE D's TEST POINTS, IN EXACT RATIONALS WHERE POSSIBLE ==
+====================================================================================================
+  lane D's 'generic'  (f,c) = (1.3, 2.0):   20*f - 13*c = 0   <-- EXACTLY ZERO
+  sealed erratum's    (f,c) = (2.0, 1.1): -11*f + 20*c = 0   (known resonant)
+  lane D's 'golden' (2pi/1.6180339887, 2pi/2.6180339887):  f + c - 2pi = +1.655e-10  (1/phi + 1/phi^2 = 1 EXACTLY; the
+     decimal truncation leaves a defect of 1.7e-10 rad, i.e. the orbit is
+     within 1.7e-03 rad of the subtorus for EVERY k <= 1e7)
+  lane D's 'S1 order-4' (pi, 3pi/2): finite order 4 -- fully degenerate.
+
+  SMALLEST INTEGER RELATION DEFECT min|n1 f + n2 c - 2 pi m|, |n| <= 64:
+    lane D 'generic'      (1.3, 2.0)               defect 0.000e+00  at (n1,n2,m)=(-60, 39, 0)   RESONANT / d_eff = 1
+    erratum's resonant    (2.0, 1.1)               defect 0.000e+00  at (n1,n2,m)=(-33, 60, 0)   RESONANT / d_eff = 1
+    lane D 'golden'                                defect 1.655e-10  at (n1,n2,m)=(-1, -1, -1)   RESONANT / d_eff = 1
+    lane D 'order-4'      (pi,3pi/2)               defect 0.000e+00  at (n1,n2,m)=(-64, -64, -80)   RESONANT / d_eff = 1
+    GENUINELY GENERIC  2pi(sqrt2-1), 2pi(sqrt3-1)  defect 3.272e-04  at (n1,n2,m)=(-35, 28, 6)   generic, d_eff = 2
+    GENUINELY GENERIC  (e, pi/e)                   defect 9.618e-05  at (n1,n2,m)=(-3, -31, -7)   near-resonant
+    GENUINELY GENERIC  rng draw 1                  defect 1.086e-04  at (n1,n2,m)=(-62, 35, 33)   generic, d_eff = 2
+    GENUINELY GENERIC  rng draw 2                  defect 5.640e-04  at (n1,n2,m)=(-19, -5, -3)   generic, d_eff = 2
+    GENUINELY GENERIC  rng draw 3                  defect 3.749e-04  at (n1,n2,m)=(-35, 19, -2)   generic, d_eff = 2
+
+  EVERY ONE OF THE FOUR CONNECTIONS LANE D SWEPT IN LEG 5F IS DEGENERATE.  The sweep it
+  offers as 'sweep the connection' contains ZERO generic arms, so its conclusion 'on NO
+  connection tested does the accumulation stay flat' is a statement about four degenerate
+  points, not about the adversary.
+
+====================================================================================================
+== R1-B  THE COUNTING EXPONENT, WHICH IS WHAT THE ADVERSARY'S BUDGET IS MADE OF ==
+====================================================================================================
+  1-|Z_k| ~ (1/2) sum_{j<l} w_j w_l |chi_j^k - chi_l^k|^2 ~ delta^2 near a return.
+  d_eff = 2: #{k<=K : 1-|Z_k| < eps} ~ C K eps       -> eps_(m) ~ m/(CK)   -> sum over the
+             sqrt(K) smallest ~ (1/CK)(sqrt K)^2/2 = 1/(2C):  FLAT IN K.
+  d_eff = 1: #{...} ~ C K sqrt(eps)                  -> eps_(m) ~ (m/CK)^2 -> sum over the
+             sqrt(K) smallest ~ K^{-1/2}/(3C^2):     DECAYS LIKE K^{-1/2}.
+  MEASURED exponent of the counting function N(eps) ~ eps^beta at K = 10^6, p = K1's:
+  connection                                      beta (fit)                 reading
+    lane D 'generic'      (1.3, 2.0)                  0.5062  d_eff = 1 (beta ~ 1/2)
+    erratum's resonant    (2.0, 1.1)                  0.5017  d_eff = 1 (beta ~ 1/2)
+    lane D 'golden'                                   0.5002  d_eff = 1 (beta ~ 1/2)
+    lane D 'order-4'      (pi,3pi/2)                 -0.0000  d_eff = 1 (beta ~ 1/2)
+    GENUINELY GENERIC  2pi(sqrt2-1), 2pi(sqrt3-1)      0.9872    d_eff = 2 (beta ~ 1)
+    GENUINELY GENERIC  (e, pi/e)                      0.9948    d_eff = 2 (beta ~ 1)
+    GENUINELY GENERIC  rng draw 1                     0.9843    d_eff = 2 (beta ~ 1)
+    GENUINELY GENERIC  rng draw 2                     0.9955    d_eff = 2 (beta ~ 1)
+    GENUINELY GENERIC  rng draw 3                     0.9900    d_eff = 2 (beta ~ 1)
+
+====================================================================================================
+== R1-C  THE SAME ADVERSARY LANE D RAN, AT CONNECTIONS THAT ARE ACTUALLY GENERIC ==
+====================================================================================================
+  IDENTICAL code path to leg 4E/5F: pick the sqrt(K) cells of smallest 1-|Z_k|, accumulate
+  -log|Z_k| over them.  THE ONE THING THAT MOVES IS THE CONNECTION'S ARITHMETIC.
+  ARM DIFF (the (f,c) pairs actually integrated; all pairwise distinct):
+    lane D 'generic'      (1.3, 2.0)               (f,c) = (+1.300000000, +2.000000000)
+    erratum's resonant    (2.0, 1.1)               (f,c) = (+2.000000000, +1.100000000)
+    lane D 'golden'                                (f,c) = (+3.883222078, +2.399963230)
+    lane D 'order-4'      (pi,3pi/2)               (f,c) = (+3.141592654, +4.712388980)
+    GENUINELY GENERIC  2pi(sqrt2-1), 2pi(sqrt3-1)  (f,c) = (+2.602580569, +4.599610878)
+    GENUINELY GENERIC  (e, pi/e)                   (f,c) = (+2.718281828, +1.155727350)
+    GENUINELY GENERIC  rng draw 1                  (f,c) = (-2.277050299, +1.890511086)
+    GENUINELY GENERIC  rng draw 2                  (f,c) = (+0.602159097, +1.481819424)
+    GENUINELY GENERIC  rng draw 3                  (f,c) = (+0.248479745, -0.203681811)
+
+  weights K1  p=(0,2/5,2/5,1/5)   W-08 registers 0.606, 0.615, 0.588, 0.601 (FLAT)
+    connection                                         K=1e4     K=1e5     K=1e6     K=1e7
+    lane D 'generic'      (1.3, 2.0)                  0.5718    0.6211    0.3615    0.1143
+    erratum's resonant    (2.0, 1.1)                  0.5742    0.6416    0.3215    0.1017
+    lane D 'golden'                                   0.0027    0.0008    0.0003    0.0003
+    lane D 'order-4'      (pi,3pi/2)                 -0.0000   -0.0000   -0.0000   -0.0000
+    GENUINELY GENERIC  2pi(sqrt2-1), 2pi(sqrt3-1)     0.5506    0.5642    0.5639    0.5620
+    GENUINELY GENERIC  (e, pi/e)                      0.5716    0.5585    0.5605    0.5615
+    GENUINELY GENERIC  rng draw 1                     0.5707    0.5624    0.5620    0.5623
+    GENUINELY GENERIC  rng draw 2                     0.5603    0.5630    0.5647    0.5623
+    GENUINELY GENERIC  rng draw 3                     0.5727    0.5647    0.5627    0.5622
+
+  weights B0b p=(4,2,1,2)/9       W-08 registers 0.606, 0.615, 0.588, 0.601 (FLAT)
+    connection                                         K=1e4     K=1e5     K=1e6     K=1e7
+    lane D 'generic'      (1.3, 2.0)                  0.7756    0.4786    0.1515    0.0479
+    erratum's resonant    (2.0, 1.1)                  0.7746    0.4837    0.1530    0.0484
+    lane D 'golden'                                   0.0102    0.0032    0.0010    0.0004
+    lane D 'order-4'      (pi,3pi/2)                  0.0000    0.0000    0.0000    0.0000
+    GENUINELY GENERIC  2pi(sqrt2-1), 2pi(sqrt3-1)     0.6953    0.7056    0.6992    0.6987
+    GENUINELY GENERIC  (e, pi/e)                      0.7127    0.7024    0.6963    0.6975
+    GENUINELY GENERIC  rng draw 1                     0.6977    0.6986    0.6990    0.6985
+    GENUINELY GENERIC  rng draw 2                     0.7039    0.6993    0.7009    0.6984
+    GENUINELY GENERIC  rng draw 3                     0.6976    0.6968    0.7004    0.6983
+
+  weights B4  p=(1,1,1,3)/6       W-08 registers 0.606, 0.615, 0.588, 0.601 (FLAT)
+    connection                                         K=1e4     K=1e5     K=1e6     K=1e7
+    lane D 'generic'      (1.3, 2.0)                  0.7309    0.5070    0.1604    0.0508
+    erratum's resonant    (2.0, 1.1)                  0.7444    0.4747    0.1502    0.0475
+    lane D 'golden'                                   0.0092    0.0029    0.0009    0.0004
+    lane D 'order-4'      (pi,3pi/2)                 -0.0000   -0.0000   -0.0000   -0.0000
+    GENUINELY GENERIC  2pi(sqrt2-1), 2pi(sqrt3-1)     0.6717    0.6819    0.6772    0.6760
+    GENUINELY GENERIC  (e, pi/e)                      0.6810    0.6795    0.6738    0.6752
+    GENUINELY GENERIC  rng draw 1                     0.6734    0.6763    0.6768    0.6764
+    GENUINELY GENERIC  rng draw 2                     0.6804    0.6781    0.6783    0.6764
+    GENUINELY GENERIC  rng draw 3                     0.6747    0.6752    0.6779    0.6765
+
+  READ.  At every genuinely generic connection the accumulation is FLAT in K at ~0.5-0.7
+  nats -- W-08's registered 0.606/0.615/0.588/0.601 REPRODUCES, on K1's weights and on
+  BOTH four-class carriers.  The decay lane D reports is the d_eff = 1 signature of its
+  own resonant test points.  D-23's 'reads two ways' is not a two-way reading: the second
+  reading ('the adversary is STRONGER than reported') is an artefact of a mis-specified
+  arm, and the first ('W-08 used a connection this lane has not identified') is correct.

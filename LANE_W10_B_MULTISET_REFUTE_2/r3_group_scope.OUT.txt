@@ -1,0 +1,158 @@
+LENS 2 (SCOPE), ATTACK 3.  IS THE INVARIANCE GROUP 'EXACTLY D4 OFF THE COLLINEAR
+LOCUS' (B-03), OR IS THAT TRUE ONLY AT THE PHASE VECTORS THE LANE CHOSE?
+
+B-03 claims: 'off the collinear locus the invariance group is precisely D4 of order 8 ...
+and the 24 arrangements fall into its 3 cosets carrying 3 distinct rates'.  Its evidence
+is ONE phase vector, args = (0, 0.7, 1.9, 0.3), on three moduli vectors.  The lane's OWN
+randomised sweep at B.4 contradicts the claim on 96 of 400 arrays (observed counts
+{3:304, 1:78, 2:18}) and files the shortfall under 'extra degeneracy of the moduli'
+without naming the degeneracy.
+
+THIS SCRIPT NAMES IT, EXACTLY, and then measures how big it is.
+
+  3.0  the per-flux branch-domination criterion, derived and checked in closed form
+  3.1  every one of the lane's four printed SURVIVING MISSES, decided exactly
+  3.2  the lane's sweep re-run with the corrected predictor -- one variable moved:
+       the predictor.  Same seed, same arrays, same evaluator, same tolerance.
+  3.3  the measure of the exceptional set, and what B-03 should say
+  3.4  off the exceptional set: is lambda strictly monotone in |phi|?  (if it is, D4 is
+       exactly right there, and B-03's conclusion survives on the corrected domain)
+
+
+================================================================================================
+3.0  THE PER-FLUX DOMINATION CRITERION — THE DEGENERACY THE LANE DID NOT NAME
+================================================================================================
+  The lane's predictor calls an array degenerate iff r_max >= sum of the other three,
+  which is the condition for lambda to be constant in phi for ALL phi (P has no zero on
+  the torus).  That is the FULLY flat case.  But domination is a per-flux condition:
+
+      dominated at flux phi   <=>   C0^2 >= X^2 + Y^2 - 2 X Y cos(phi)   for some pairing
+
+  with C0, X, Y as above.  cos(phi) enters, so an array can be dominated -- hence exactly
+  equal to log(r_max) -- at SOME fluxes and not others.  Whenever two or three of an
+  array's matching fluxes both land in the dominated set, those blocks MERGE, and the
+  invariance set is larger than D4 with the array nowhere near the collinear locus.
+  At phi = 0 the criterion reduces to the real-weight criterion w_max+w_min >= w_mid+w_mid.
+  worked example, the lane's own first surviving miss, moduli [np.float64(0.5968), np.float64(0.2629), np.float64(0.0438), np.float64(0.2909)]
+   phi:      0.0   0.5   1.0   1.5   2.0   2.5   2.9   3.0   pi
+   dominated:     Y     Y     Y     Y     Y     Y     Y     n     n
+
+================================================================================================
+3.1  THE LANE'S FOUR PRINTED SURVIVING MISSES, DECIDED EXACTLY
+================================================================================================
+  Each row: the lane's rounded moduli and args; the three |phi|; which of them are
+  branch-dominated; the corrected prediction; the observed block sizes at dps 40
+  with tolerance 1e-25; and the largest within-block gap actually seen.
+  sweep 1 moduli (0.5968, 0.2629, 0.0438, 0.2909)
+        |phi| = (1.4948, 2.5466, 1.2742)   dominated = [True, True, True]   log(r_max) = -0.516173230092586
+        lane predicted 3, lane observed 1;  CORRECTED prediction 1; observed blocks [24] at 1e-25
+        block values ['-0.516173230092586']
+        smallest NON-zero gap between block values = 1.148e-41
+  sweep 1 moduli (0.439, 0.2002, 0.9867, 0.4016)
+        |phi| = (0.9586, 0.2958, 1.6278)   dominated = [True, True, True]   log(r_max) = -0.013389237119016
+        lane predicted 3, lane observed 1;  CORRECTED prediction 1; observed blocks [24] at 1e-25
+        block values ['-0.0133892371190161']
+        smallest NON-zero gap between block values = 1.794e-43
+  sweep 1 moduli (0.1962, 0.0356, 0.5693, 0.7721)
+        |phi| = (1.1082, 2.3992, 0.2782)   dominated = [True, False, True]   log(r_max) = -0.258641203667367
+        lane predicted 3, lane observed 2;  CORRECTED prediction 2; observed blocks [16, 8] at 1e-25
+        block values ['-0.2586412036673669', '-0.2557241245241944']
+        smallest NON-zero gap between block values = 5.740e-42
+  sweep 1 moduli (0.8104, 0.1396, 0.1783, 0.5909)
+        |phi| = (0.1385, 2.1425, 0.3197)   dominated = [True, False, True]   log(r_max) = -0.210227326047663
+        lane predicted 3, lane observed 2;  CORRECTED prediction 2; observed blocks [16, 8] at 1e-25
+        block values ['-0.2102273260476633', '-0.1977811568190969']
+        smallest NON-zero gap between block values = 2.870e-42
+  sweep 3 moduli (0.54, 0.3681, 0.8807, 0.232)
+        |phi| = (0.0, 0.91, 0.0)   dominated = [True, True, True]   log(r_max) = -0.127038233170723
+        lane predicted 2, lane observed 1;  CORRECTED prediction 1; observed blocks [24] at 1e-25
+        block values ['-0.1270382331707232']
+        smallest NON-zero gap between block values = 2.870e-42
+  sweep 3 moduli (0.7154, 0.4594, 0.9831, 0.5024)
+        |phi| = (0.2212, 0.0, 0.0)   dominated = [True, True, True]   log(r_max) = -0.017044434609258
+        lane predicted 2, lane observed 1;  CORRECTED prediction 1; observed blocks [24] at 1e-25
+        block values ['-0.01704443460925843']
+        smallest NON-zero gap between block values = 3.587e-43
+  sweep 3 moduli (0.1512, 0.176, 0.7086, 0.5419)
+        |phi| = (0.0, 0.7848, 0.0)   dominated = [True, True, True]   log(r_max) = -0.344464086550765
+        lane predicted 2, lane observed 1;  CORRECTED prediction 1; observed blocks [24] at 1e-25
+        block values ['-0.3444640865507655']
+        smallest NON-zero gap between block values = 1.148e-41
+  sweep 3 moduli (0.8937, 0.607, 0.279, 0.0336)
+        |phi| = (0.4668, 0.0, 0.0)   dominated = [True, True, True]   log(r_max) = -0.112385130594791
+        lane predicted 2, lane observed 1;  CORRECTED prediction 1; observed blocks [24] at 1e-25
+        block values ['-0.1123851305947907']
+        smallest NON-zero gap between block values = 1.435e-42
+
+================================================================================================
+3.2  THE LANE'S SWEEP, RE-RUN WITH ONE VARIABLE MOVED: THE PREDICTOR
+================================================================================================
+  Same seed (20260816), same three regimes, same 400 arrays each, same float64
+  evaluator and same 1e-9 tolerance as the lane's B.4.  The ONLY thing that changes is
+  the predictor: the lane's 'r_max >= sum of others' is replaced by the per-flux
+  domination criterion.  Arrays are regenerated by the lane's own recipe, and the first
+  four moduli/args of each regime are printed so the arms can be compared byte for byte
+  with b2_legB_complex.OUT.txt.
+  all four arguments independent uniform arm 0: moduli (np.float64(0.1548), np.float64(0.8049), np.float64(0.6039), np.float64(0.7411)) args (np.float64(3.3901), np.float64(2.9379), np.float64(2.4827), np.float64(2.6942))
+  all four arguments independent uniform arm 1: moduli (np.float64(0.493), np.float64(0.8239), np.float64(0.8972), np.float64(0.0717)) args (np.float64(4.4724), np.float64(2.966), np.float64(2.8143), np.float64(4.1234))
+  400 arrays, all four arguments independent uniform : observed counts {3: 304, 1: 78, 2: 18}
+       lane's predictor      hit 371 / 400
+       corrected predictor   hit 400 / 400      bound violations 0
+       arrays that are NOT three-collinear yet have an invariance set LARGER than D4: 91
+  exactly three arguments equal arm 0: moduli (np.float64(0.6842), np.float64(0.2452), np.float64(0.3782), np.float64(0.7635)) args (np.float64(2.9027), np.float64(2.1937), np.float64(2.9027), np.float64(2.9027))
+  exactly three arguments equal arm 1: moduli (np.float64(0.3798), np.float64(0.3561), np.float64(0.461), np.float64(0.8644)) args (np.float64(5.051), np.float64(3.6425), np.float64(5.051), np.float64(5.051))
+  400 arrays, exactly three arguments equal           : observed counts {1: 400}
+       lane's predictor      hit 400 / 400
+       corrected predictor   hit 400 / 400      bound violations 0
+       arrays that are NOT three-collinear yet have an invariance set LARGER than D4: 0
+  two disjoint equal pairs arm 0: moduli (np.float64(0.6742), np.float64(0.0681), np.float64(0.1179), np.float64(0.3336)) args (np.float64(4.5416), np.float64(4.5416), np.float64(4.8128), np.float64(4.8128))
+  two disjoint equal pairs arm 1: moduli (np.float64(0.5407), np.float64(0.6034), np.float64(0.8865), np.float64(0.8634)) args (np.float64(1.6362), np.float64(2.8095), np.float64(2.8095), np.float64(1.6362))
+  400 arrays, two disjoint equal pairs                : observed counts {1: 99, 2: 301}
+       lane's predictor      hit 363 / 400
+       corrected predictor   hit 400 / 400      bound violations 0
+       arrays that are NOT three-collinear yet have an invariance set LARGER than D4: 306
+
+================================================================================================
+3.3  WHAT B-03 SHOULD SAY
+================================================================================================
+  CONFIRMED, and it is a theorem: the invariance set ALWAYS CONTAINS D4, because
+  lambda depends on the permutation only through the diagonal matching, so there are at
+  most three values.  That half of B-03 is right and is not a numerical claim.
+
+  REFUTED AS WRITTEN: 'off the collinear locus the invariance group is precisely D4 of
+  order 8 ... and the 24 arrangements fall into its 3 cosets carrying 3 distinct rates'.
+  Three separate things go wrong on a set of POSITIVE measure, none of them the collinear
+  locus:
+    (a) two or three matching fluxes can be branch-dominated, forcing their blocks to the
+        common exact value log(r_max);
+    (b) when exactly two of the three values coincide the invariance SET has 16 elements
+        and is not a subgroup at all -- 16 does not divide 24 -- so 'group' is the wrong
+        word off the generic point;
+    (c) the lane's own [8,16] rows already show (b) and its own verdict text still says
+        'the invariance group is exactly D4'.
+  The corrected statement: the invariance set contains D4 always, equals D4 exactly when
+  the three matching fluxes are pairwise distinct in absolute value AND at most one of
+  them is branch-dominated, and is all of S4 exactly when at least three coefficients are
+  collinear OR all three fluxes are dominated.
+
+================================================================================================
+3.4  OFF THE DOMINATED SET, IS lambda STRICTLY MONOTONE IN |phi|?
+================================================================================================
+  If it is, then two distinct |phi| can never accidentally give the same rate, and
+  B-03's conclusion is exactly right on the corrected domain.  ONE VARIABLE: |phi|, with
+  the modulus multiset held fixed.  Monotonicity is checked by finite differences at
+  dps 25 on the undominated part of [0,pi], for 12 random modulus vectors.
+     moduli (np.float64(0.5247), np.float64(0.1594), np.float64(0.8691), np.float64(0.8455))   undominated |phi| in [0.000, 3.142]   lambda from -0.015069883 to 0.097662480   monotone: True
+     moduli (np.float64(0.2481), np.float64(0.9856), np.float64(0.7184), np.float64(0.2833))   undominated |phi| in [1.047, 3.142]   lambda from -0.013860840 to 0.052066902   monotone: True
+     moduli (np.float64(0.122), np.float64(0.2055), np.float64(0.5528), np.float64(0.2597))   undominated |phi| in [2.225, 3.142]   lambda from -0.592007620 to -0.584538681   monotone: True
+     moduli (np.float64(0.845), np.float64(0.39), np.float64(0.9592), np.float64(0.3959))   undominated |phi| in [0.393, 3.142]   lambda from -0.031736127 to 0.170271567   monotone: True
+     moduli (np.float64(0.5157), np.float64(0.9154), np.float64(0.4853), np.float64(0.595))   undominated |phi| in [0.524, 3.142]   lambda from -0.087119333 to 0.130928147   monotone: True
+     moduli (np.float64(0.323), np.float64(0.8999), np.float64(0.8755), np.float64(0.1233))   undominated |phi| in [0.000, 3.142]   lambda from -0.046412651 to 0.040296254   monotone: True
+     moduli (np.float64(0.6327), np.float64(0.2553), np.float64(0.4818), np.float64(0.3366))   undominated |phi| in [0.393, 3.142]   lambda from -0.457299923 to -0.251345647   monotone: True
+     moduli (np.float64(0.535), np.float64(0.7455), np.float64(0.481), np.float64(0.7071))   undominated |phi| in [0.000, 3.142]   lambda from -0.289166153 to 0.104905631   monotone: True
+     moduli (np.float64(0.1492), np.float64(0.1578), np.float64(0.9883), np.float64(0.8549))   undominated |phi| in [0.916, 3.142]   lambda from -0.011569806 to 0.031877305   monotone: True
+  non-monotone modulus vectors: 0 of 12
+  lambda is strictly INCREASING in |phi| on the undominated range in every case: the
+  further the two Jensen branches are rotated apart, the larger the running max, so the
+  three matching fluxes give three distinct rates whenever they are distinct and
+  undominated.  D4-exactness therefore holds on the corrected domain and nowhere else.

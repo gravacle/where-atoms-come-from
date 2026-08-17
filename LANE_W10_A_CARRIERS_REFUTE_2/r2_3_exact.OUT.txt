@@ -1,0 +1,123 @@
+============================================================================================================
+R2 SCRIPT 3 — EXACT RE-DERIVATIONS BY ROUTES THE LANE DID NOT USE
+============================================================================================================
+
+------------------------------------------------------------------------------------------------------------
+A. W-08 (iii), THE CHARACTER IDENTITY — VERIFIED AS A FORMAL IDENTITY, NOT AT INSTANCES
+------------------------------------------------------------------------------------------------------------
+The lane checks 1-|Z_k|^2 = sum_{j<l} w_j w_l |chi_j^k - chi_l^k|^2 at 1620 instances in
+Q[sqrt3] with q in {2,3,4,6,12}.  Instances cannot decide an identity for ALL q.  I verify it
+as a POLYNOMIAL IDENTITY: write chi_j^k = C_j + i S_j with C_j = cos th_j, S_j = sin th_j and
+expand both sides in Z[w][C,S] modulo the ONE relation C_j^2 + S_j^2 = 1 (unit modulus).
+Coefficient-by-coefficient equality then holds for EVERY q, EVERY k, EVERY class count.
+
+   n = 2 classes: formal residual has 0 non-zero monomials   IDENTITY
+   n = 3 classes: formal residual has 0 non-zero monomials   IDENTITY
+   n = 4 classes: formal residual has 0 non-zero monomials   IDENTITY
+   n = 5 classes: formal residual has 0 non-zero monomials   IDENTITY
+   n = 6 classes: formal residual has 0 non-zero monomials   IDENTITY
+   The identity is FORMAL and class-count-free, exactly as the lane's prose proof says.
+   W10A-04 (iii) SURVIVES, and on stronger ground than the lane's instance check.
+   NOTE: this also shows the lane's 1620-instance Q[sqrt3] check could not have failed --
+   it is a control, and 'could not have failed' voids a control.  The THEOREM stands.
+
+------------------------------------------------------------------------------------------------------------
+B. |Z_k| <= 1 — EXACT, FOR ALL q AT ONCE, NOT AT INSTANCES
+------------------------------------------------------------------------------------------------------------
+   1 - |Z|^2 = sum_{j<l} w_j w_l |chi_j-chi_l|^2 >= 0 with w >= 0.  Immediate from A.
+   No instance check can add to this and the lane's 1620 'events of |Z_k|>1 = 0' is a control
+   that could not have failed.  W10A-04 (i) SURVIVES as a theorem.
+
+------------------------------------------------------------------------------------------------------------
+C. THE JENSEN BRANCH-DOMINANCE CLAIM AND lambda(B0b,U), lambda(B4,U) — EXACT, MY OWN ROUTE
+------------------------------------------------------------------------------------------------------------
+   m(P) with P = A(y) + x B(y), A = p00 + p01 y, B = p10 + p11 y:
+   m(P) = (1/2pi) INT_0^{2pi} m_x(A(e^{it}) + B(e^{it}) x) dt = (1/2pi) INT log max(|A|,|B|).
+   |A|^2 - |B|^2 = C + D cos t exactly, C = p00^2+p01^2-p10^2-p11^2, D = 2(p00 p01 - p10 p11).
+
+case          C           D           |D|<=|C|  dominant   exact lambda              float
+B0b U         1/9         0           True      A          log(4/9)                  -0.810930216216329
+B4 U          -2/9        -1/9        True      B          log(1/2)                  -0.693147180559945
+B1 U          -1/25       -4/25       False     None       no closed form from dominance
+B1q U         1/49        6/49        False     None       no closed form from dominance
+4-class 1/4   0           0           True      EQUAL      log(1/4)  (both branches) -1.386294361119891
+
+INDEPENDENT CONFIRMATION BY A ROUTE WITH NO JENSEN REDUCTION IN IT AT ALL:
+   lambda = lim (1/N) sum_{k<=N} log|Z_k| along the canonical clock at a connection whose
+   (alpha/2pi, beta/2pi, 1) are Q-independent (Weyl).  I use alpha/2pi = sqrt(3)-1,
+   beta/2pi = sqrt(5)-2 -- NEITHER of the lane's two irrational draws -- and N = 2e7.
+case          schedule-B N=2e7      exact closed form     dev
+B0b U         -0.810930164          -0.810930216          5.25e-08
+B4 U          -0.693147163          -0.693147181          1.71e-08
+B1 U          -0.756573867           nan                  nan
+B1q U         -0.741029834           nan                  nan
+4-class 1/4   -1.386294218          -1.386294361          1.43e-07
+   B0b SENSE U = log(4/9) = -0.810930216216328 and B4 SENSE U = log(1/2) CONFIRMED from a
+   route sharing no code and no quadrature with the lane's.  W10A-07's numbers SURVIVE.
+   NOTE ON NOVELTY, WHICH IS THE PART THAT DOES NOT SURVIVE: S4 itself states this exact
+   argument for B4 at S4:594-595 -- 'the Jensen-in-x integrand's max is always the second
+   branch (their squares differ by 0.2222 + 0.1111 cos y > 0)' -- which IS C + D cos t with
+   C = 8/36, D = 4/36.  The lane calls the criterion 'new here'.  The instance is S4's; what
+   is new is only the |D| <= |C| form and its application to the B0b row.
+
+------------------------------------------------------------------------------------------------------------
+D. THE FACTORISATION LOCUS p00 p11 = p10 p01 — AND THE ONE PLACE THE LANE OVERSTATES IT
+------------------------------------------------------------------------------------------------------------
+   forward direction (a+bx)(c+dy) => p00 p11 = p10 p01: violations in 2000 draws = 0
+   converse, EXACT and constructive: if p00 != 0 set (a,b,c,d) = (p00, p10, 1, p01/p00);
+   then bd = p10 p01/p00 = p11 exactly by the determinant condition.  So the locus is the
+   full factorisation locus.  VERIFIED SYMBOLICALLY: nothing to measure.
+
+   THE OVERSTATEMENT.  W10A-06 says the locus 'is EMPTY on every three-class carrier'.
+   TRUE for EXACTLY three occupied classes -- p00 = 0 forces p10 p01 = 0, a second empty
+   class.  BUT the locus is NOT four-class-only: every support of size <= 2 of the form
+   {00,10}, {00,01}, {10,11}, {01,11} and every singleton LIES ON IT and P factors there
+   (degenerately, one factor constant).  The correct statement is that a factorisation with
+   BOTH factors non-constant needs all four classes.  Check, exact:
+      S = {00,10}    pi = ('1/2', '1/2', '0', '0')   on the locus: True
+      S = {00,01}    pi = ('1/2', '0', '1/2', '0')   on the locus: True
+      S = {10,11}    pi = ('0', '1/2', '0', '1/2')   on the locus: True
+      S = {01,11}    pi = ('0', '0', '1/2', '1/2')   on the locus: True
+      S = {10,01}    pi = ('0', '1/2', '1/2', '0')   on the locus: False
+      S = {00,11}    pi = ('1/2', '0', '0', '1/2')   on the locus: False
+   So of the SIX two-class supports, FOUR are on the factorisation locus.  The four-class
+   claim is about NON-DEGENERATE factorisation only.  This is a scope correction to W10A-06,
+   not a refutation: the corpus's only realized point on the locus is SENSE C (1/4,1/4,1/4,
+   1/4), and S4:596 ALREADY states that factorisation -- '(1+x+y+xy)/4 = (1+x)(1+y)/4'.
+   W10A-06's structure is new as a LOCUS; its only corpus instance is published in S4.
+
+------------------------------------------------------------------------------------------------------------
+E. |Z_k| = 1  <=>  k * L_S SUBSET L — EXACT, AND THE 1/4 DENSITY AT THE ORDER-4 POINT
+------------------------------------------------------------------------------------------------------------
+   |Z_k| = 1 with w>0 on S and sum w = 1 forces all chi_j^k equal (strict triangle ineq.),
+   i.e. (u^k)^{a-a'}(v^k)^{b-b'} = 1 for all pairs in S, i.e. k L_S subset L.  EXACT check
+   against integer congruence at the order-4 connection alpha = 2pi(-6/12), beta = 2pi(9/12):
+   L = ((1, 2), (0, 4))
+   S = {10,01,11}       L_S = ((1, 0), (0, 1))     k with k L_S in L (mod 12): [4, 8, 12]   predicted density 0.250000   measured 0.250000
+   S = {00,10,01}       L_S = ((1, 0), (0, 1))     k with k L_S in L (mod 12): [4, 8, 12]   predicted density 0.250000   measured 0.250000
+   S = {00,10,01,11}    L_S = ((1, 0), (0, 1))     k with k L_S in L (mod 12): [4, 8, 12]   predicted density 0.250000   measured 0.250000
+   S = {00,11}          L_S = ((1, 1),)            k with k L_S in L (mod 12): [4, 8, 12]   predicted density 0.250000   measured 0.250000
+   S = {10,01}          L_S = ((1, -1),)           k with k L_S in L (mod 12): [4, 8, 12]   predicted density 0.250000   measured 0.250000
+   MATCHES on every row.  The lane's W10A-09 is right that this is a DERIVATION, and right
+   to refuse to score its measurement.  I confirm the derivation and the refusal.
+
+------------------------------------------------------------------------------------------------------------
+F. W-02's CRITERION, RE-RUN ON MY OWN LATTICE CODE — AND THE LANE'S OWN COUNTS CHECKED
+------------------------------------------------------------------------------------------------------------
+   150 cases on MY lattice code: forms 93, never 57, MISMATCHES 0
+   min |r| among the 93 forming rows = 0.366206   (the lane reports 93 forming rows and min |r| = 0.366)
+   W10A-02's verdict REPRODUCES EXACTLY, including the forming/never split and the margin.
+
+------------------------------------------------------------------------------------------------------------
+G. THE W-08 CALIBRATION FIGURES (W10A-04's PART E), RECOMPUTED AT W-08's OWN K = 1e7
+------------------------------------------------------------------------------------------------------------
+   The lane compares its K = 1e6 densities against W-08's K = 1e7 figures 0.4919 / 0.4692.
+   I run K = 1e7, the same K W-08 used, so the comparison is like-for-like.
+   order-4      SUM(1-|Z_k|)/K at K = 1e7 = 0.491886
+   resonant     SUM(1-|Z_k|)/K at K = 1e7 = 0.469183
+   generic      SUM(1-|Z_k|)/K at K = 1e7 = 0.469189
+   W-08's registered 0.4919 (order-4) and 0.4692 (resonant) REPRODUCE.  Same lineage: this
+   is a THIRD run of the same family, not corroboration (custody sec4).
+
+============================================================================================================
+SCRIPT 3 FAILURES: 0

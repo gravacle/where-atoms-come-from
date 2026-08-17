@@ -1,0 +1,159 @@
+LANE W-10 B — LEG C.  IS THE FOUR-CLASS PUSHFORWARD REAL AND NON-NEGATIVE?
+                        WHAT MAKES IT SO, AND WHAT BREAKS IT.
+
+The two four-class carriers are BUILT here from incidence and their published rows are
+reproduced before anything is computed on them.
+
+  B0b  the 3x3 grid ring torus with gamma_C = row j=0.  Incidence exactly as in the
+       corpus's own sealed rm_lib.py:388-418 (LANE_R_MAPS_REFUTER, sealed).
+  B4   the spindle.  S4:515 publishes only V=6 E=8 F=4 chi=2 b=(1,1,2) and the class
+       multiset {00:1,01:1,10:1,11:3}; the incidence is NOT in the corpus, so it is
+       constructed here (two 4-cycles sharing two antipodal vertices, each filled by two
+       faces) and CHECKED against every published number before use.
+
+THE ONE VARIABLE in the break tests below is the OBSERVABLE INSERTED IN THE COMPARISON.
+Carrier, ready state, connection, k-range, class map and code path are identical across
+the arms, and each arm prints its own observable so a byte-identical arm is visible.
+
+
+================================================================================================
+C.0  THE TWO CARRIERS, BUILT AND CHECKED AGAINST S4's PUBLISHED ROWS
+================================================================================================
+  B0b ring torus 3x3, loops MEET               V=9 E=18 F=9 chi=0 b=(1,2,1)  |d1.d2|=0.0e+00
+     published (S4:512-515,:539-542,:575-578) V=9 E=18 F=9 chi=0 b=(1,2,1)  MATCH=True
+     class counts {00:4,10:2,01:1,11:2}  published {'00': 4, '10': 2, '01': 1, '11': 2}  MATCH=True
+     gamma_F is a cycle: True and BOUNDS: True      gamma_C is a cycle: True and bounds: False
+  B4 spindle (two spheres, 2 glue points)      V=6 E=8 F=4 chi=2 b=(1,1,2)  |d1.d2|=0.0e+00
+     published (S4:512-515,:539-542,:575-578) V=6 E=8 F=4 chi=2 b=(1,1,2)  MATCH=True
+     class counts {00:1,10:1,01:1,11:3}  published {'00': 1, '10': 1, '01': 1, '11': 3}  MATCH=True
+     gamma_F is a cycle: True and BOUNDS: True      gamma_C is a cycle: True and bounds: False
+
+================================================================================================
+C.1  WHY THE PUSHFORWARD IS REAL AND NON-NEGATIVE — THE IDENTITY, CHECKED
+================================================================================================
+  W-01's branches are FIBRE-WISE and CLASS-CONSTANT:  (M_F s)(v) = W_F s(v) for v in
+  gamma_F and s(v) otherwise; likewise M_C.  The comparison is the inner product on
+  Gamma(L) = (+)_v L_v, which is a SUM OVER VERTICES.  Hence
+
+      Z_k = <M_F^k s, M_C^k s> = SUM_v conj(W_F)^{k a_v} W_C^{k b_v} |s_v|^2
+          = SUM_{ab} p_ab (u^a v^b)^k    with   p_ab = SUM_{v in class ab} |s_v|^2.
+
+  THREE hypotheses, and each is separately load-bearing:
+    H1  both branch operators are FIBRE-WISE (diagonal in the vertex basis).  W-06's
+        corrected name for the mechanism -- 'fibre-wise-ness, not scalarity' -- is this
+        hypothesis, and it is already in the register (REGISTER_V001.md, W-06, N4).
+    H2  each acts on a fibre by a scalar depending only on the vertex's CLASS.  At rank
+        one under U(1) this is automatic; at rank two it is not (W-03's SU(2) run, and
+        ERR-2 which says that run moved three variables at once).
+    H3  the SAME state stands in both slots and NOTHING is inserted between them.  This
+        is what makes each term conj(s_v) s_v = |s_v|^2 rather than conj(s_u) s_v, and it
+        is the reason there is NO INTERFERENCE BETWEEN VERTICES OF THE SAME CLASS: the
+        within-class relative phases cancel between bra and ket.  It is S4 section 2's
+        'every vertex phase of s cancels', stated there without its hypothesis.
+
+  NON-NEGATIVITY comes from H3 alone (a sum of squares).  REALITY comes from H3 too, but
+  survives a weaker condition -- see C.2.  Neither is stated in any register row.
+  B0b ring torus 3x3, loops MEET                seed 20260816, 200 states x 8 circuit counts:  max |direct - P(u^k,v^k)| = 3.51e-16
+       min p_ab over all draws = 0.000008 (>= 0: True);  p_ab is a float, not complex: True
+  B4 spindle (two spheres, 2 glue points)       seed 20260816, 200 states x 8 circuit counts:  max |direct - P(u^k,v^k)| = 3.55e-16
+       min p_ab over all draws = 0.000189 (>= 0: True);  p_ab is a float, not complex: True
+
+================================================================================================
+C.2  WHAT BREAKS IT — ARM 1: AN OBSERVABLE IN THE COMPARISON (H3 MOVED, ALONE)
+================================================================================================
+  Put an operator O between the branches:  Z_k = <M_F^k s, O M_C^k s>.  Then
+
+      Z_k = SUM_{u,v} conj(s_u) O_uv s_v  conj(W_F)^{k a_u} W_C^{k b_v}
+
+  and the character of the (u,v) term is u^{a_u} v^{b_v} -- the F-membership of the BRA
+  vertex and the C-membership of the KET vertex.  So there are STILL EXACTLY FOUR
+  characters and N1's Mahler-measure form SURVIVES ANY O, with coefficients
+
+      q_ab = SUM_{u: a_u = a} SUM_{v: b_v = b} conj(s_u) O_uv s_v
+
+  which are sums over a RECTANGLE of the matrix, not over a class.  O = I collapses the
+  rectangle to its diagonal and returns the class sums.  For any other O the four
+  coefficients are generically COMPLEX AND NOT COLLINEAR, and by LEG B the multiset
+  theorem then fails while D4 survives.  This is the exact break, and it is one variable:
+  the observable.
+
+  B0b ring torus 3x3, loops MEET
+   O = I  (the corpus's comparison)    |O - I|_max = 0.000     four-character residual = 1.2e-16
+        q = [0.4806-0.j, 0.2326-0.j, 0.0995+0.j, 0.1873+0.j]
+        Im q = 3.48e-18   collinearity defect = 0.000     |q|_max dominant = False  distinct lambda over 24 perms = 1
+   O = a random HERMITIAN observable   |O - I|_max = 2.126     four-character residual = 7.0e-16
+        q = [-0.5707+0.269j , -1.1924+0.2739j, -0.0871-0.3138j, -0.0721-0.2291j]
+        Im q = 3.14e-01   collinearity defect = 0.999     |q|_max dominant = True   distinct lambda over 24 perms = 1
+   O = a random DIAGONAL Hermitian     |O - I|_max = 2.126     four-character residual = 8.8e-17
+        q = [-0.0869-0.j, -0.1914+0.j, -0.0475+0.j, -0.165 -0.j]
+        Im q = 3.04e-18   collinearity defect = 0.000     |q|_max dominant = False  distinct lambda over 24 perms = 1
+   O = a random UNITARY                |O - I|_max = 1.345     four-character residual = 1.4e-16
+        q = [ 0.1039-0.1068j, -0.0988+0.0444j, -0.1126-0.1929j, -0.1821+0.0777j]
+        Im q = 1.93e-01   collinearity defect = 0.994     |q|_max dominant = False  distinct lambda over 24 perms = 3
+   sweep, 200 random HERMITIAN O, one fixed state and connection: (#distinct lambda, regime) -> {(1, 'dominant'): 39, (1, 'not dominant'): 6, (2, 'not dominant'): 14, (3, 'not dominant'): 141}
+   sweep, 200 random UNITARY  O, one fixed state and connection: (#distinct lambda, regime) -> {(1, 'dominant'): 31, (1, 'not dominant'): 5, (2, 'not dominant'): 13, (3, 'not dominant'): 151}
+
+  B4 spindle (two spheres, 2 glue points)
+   O = I  (the corpus's comparison)    |O - I|_max = 0.000     four-character residual = 2.3e-16
+        q = [0.1658-0.j, 0.0444+0.j, 0.2495+0.j, 0.5403-0.j]
+        Im q = 1.19e-17   collinearity defect = 0.000     |q|_max dominant = True   distinct lambda over 24 perms = 1
+   O = a random HERMITIAN observable   |O - I|_max = 2.141     four-character residual = 3.1e-16
+        q = [-0.2171-0.36j  , -0.0915+0.4109j,  0.1202-0.4166j,  0.9756+0.3656j]
+        Im q = 4.17e-01   collinearity defect = 0.997     |q|_max dominant = False  distinct lambda over 24 perms = 2
+   O = a random DIAGONAL Hermitian     |O - I|_max = 2.015     four-character residual = 7.9e-17
+        q = [-0.1317+0.j,  0.0596+0.j, -0.2533-0.j,  0.2552-0.j]
+        Im q = 5.84e-18   collinearity defect = 0.000     |q|_max dominant = False  distinct lambda over 24 perms = 1
+   O = a random UNITARY                |O - I|_max = 1.727     four-character residual = 2.3e-16
+        q = [ 0.0107+0.029j , -0.1953+0.1144j, -0.4189-0.0729j, -0.1726+0.2022j]
+        Im q = 2.02e-01   collinearity defect = 0.984     |q|_max dominant = False  distinct lambda over 24 perms = 3
+   sweep, 200 random HERMITIAN O, one fixed state and connection: (#distinct lambda, regime) -> {(1, 'dominant'): 41, (1, 'not dominant'): 5, (2, 'not dominant'): 19, (3, 'not dominant'): 135}
+   sweep, 200 random UNITARY  O, one fixed state and connection: (#distinct lambda, regime) -> {(1, 'dominant'): 48, (1, 'not dominant'): 3, (2, 'not dominant'): 15, (3, 'not dominant'): 134}
+
+================================================================================================
+C.3  WHAT BREAKS IT — ARM 2: COR-F's EDGE-BY-EDGE TRANSPORT (H1 MOVED, ALONE)
+================================================================================================
+  COR-F (S3_THE_CROSSING_AUDIT_V001.md:794, sealed) exhibits a bona fide parallel
+  transport around the same cycle that is NOT diagonal: move each fibre value ONE EDGE
+  along the loop.  Built here on the four-class carriers rather than on K1.  With T the
+  one-edge shift along a loop of length L, T^L is exactly W-01's operator on that loop.
+  Under T the comparison is not a four-character sum at all: the class of a vertex no
+  longer determines its factor, because the amplitude has MOVED to another vertex.
+
+  B0b ring torus 3x3, loops MEET
+   T_F unitary: True   T_F diagonal: False   |T_F^4 - M_F| = 0.0e+00
+   T_C unitary: True   T_C diagonal: False   |T_C^3 - M_C| = 0.0e+00
+   W-01 scalar branches : best four-character fit on n=1..8, residual over n=1..40 = 6.21e-16
+   COR-F edge branches  : best four-character fit on n=1..8, residual over n=1..40 = 4.43e-01
+
+  B4 spindle (two spheres, 2 glue points)
+   T_F unitary: True   T_F diagonal: False   |T_F^4 - M_F| = 0.0e+00
+   T_C unitary: True   T_C diagonal: False   |T_C^4 - M_C| = 0.0e+00
+   W-01 scalar branches : best four-character fit on n=1..8, residual over n=1..40 = 1.54e-15
+   COR-F edge branches  : best four-character fit on n=1..8, residual over n=1..40 = 9.83e-01
+
+================================================================================================
+LEG C — VERDICT
+================================================================================================
+  YES, on the corpus's construction the four-class pushforward is real and non-negative,
+  and the reason is exhibited, not asserted:  p_ab = SUM_{v in class} |s_v|^2 because the
+  branch operators are FIBRE-WISE and CLASS-CONSTANT and the SAME state stands in both
+  slots of the inner product.  There is NO interference between vertices of one class,
+  and that is not an accident of the carrier: it is the cancellation of the within-class
+  relative phases between bra and ket.
+
+  WHAT BREAKS IT, both exhibited on the two four-class carriers:
+    * ANY OPERATOR INSERTED IN THE COMPARISON.  The four-character form -- and therefore
+      N1's identification of lambda as a Mahler measure -- SURVIVES completely: the
+      coefficients just become sums over a RECTANGLE (bra's F-membership, ket's
+      C-membership) instead of over a class.  What dies is exactly reality, and with it
+      the multiset theorem.  The corpus's own dressed observable (W-06/W-07,
+      A_uv = conj(t_u) t_v) is off-diagonal and is of this type.
+    * COR-F's EDGE-BY-EDGE TRANSPORT.  This is worse than a broken hypothesis: the
+      four-character form itself fails, so lambda is not a Mahler measure of any
+      four-term polynomial and neither W-03 nor N1 has anything to say about it.
+
+  THE HYPOTHESIS NO REGISTER ROW STATES.  W-03's multiset theorem and N1's polynomial are
+  both stated unconditionally.  Their true hypothesis is: fibre-wise class-constant
+  branches, rank one, and a comparison with nothing inserted.  Two of those three are
+  already named in the register in other rows (W-06's fibre-wise-ness; W-03's own SU(2)
+  finding for rank one).  The third -- the empty comparison -- is named nowhere.

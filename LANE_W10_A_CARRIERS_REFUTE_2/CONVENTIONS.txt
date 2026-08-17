@@ -1,0 +1,39 @@
+LANE W10-A REFUTE-2 — LENS 2: ISOLATION.  PUBLISHED CONVENTIONS.
+Everything needed to re-run this refutation from scratch is on this page.
+
+LINEAGE.  Claude Opus 5, same lineage as W-07/W-08/W-09 and as the lane under attack.
+Custody sec4: this is NOT an independent-lineage check of LANE_W10_A_CARRIERS.  It is a
+same-session adversary.  Grade accordingly.  DISCOUNT ACCORDINGLY.
+
+THE LENS.  W-08's isolation audit: "the commonest FATAL defect is not 'two variables moved' --
+it is 'ZERO variables moved': a control whose two arms are byte-identical, reported as a
+confirmation.  An isolation ledger cannot catch that, because it records what you INTENDED to
+vary.  DIFF YOUR ARMS."
+
+THE OPERATIONALISATION I USE, AND IT IS DELIBERATELY STRICTER THAN THE LANE'S.
+The lane diffs its arms at the INPUT bytes (sha256 of the weight vector) and asserts the hashes
+are pairwise distinct.  THAT TEST CANNOT DETECT THE DEFECT IT IS AIMED AT.  Two arms with
+distinct inputs can be identical in output by a symmetry -- and this corpus OWNS the symmetry:
+W-03's involution 00<->11, 10<->01 multiplies Z_k by conj(u)^k conj(v)^k, leaves |Z_k| FIXED at
+every k and every connection, and W-09 used it to correct W-08's naming (REGISTER:948-955).
+So I diff at the OUTPUT bytes: for every arm of every comparison in the lane I compute the
+float64 |Z_k| sequence itself, hash it, and count how many arms collapse to one datum.
+
+MY CARRIERS ARE BUILT FRESH AND UNDER DIFFERENT CONVENTIONS FROM THE LANE'S:
+  - d1[v,e] = -1 at head, +1 at tail (the OPPOSITE sign convention to the lane's and to S1's).
+    Ranks and Betti numbers are sign-convention-independent; using the opposite one is a check
+    that no result of mine depends on the convention.
+  - B0b vertices indexed (i,j) -> 3*i + j  (the lane uses 3*j + i), so my vertex labels are a
+    transpose of the lane's and my incidence matrices are NOT row-permutations of the lane's
+    by the identity.
+  - B4 built as an explicit vertex/edge/face list, independently of the lane's.
+  - Ranks over Q by my own Fraction elimination.
+
+PRECISION.  IEEE double unless a line says EXACT.  EXACT means Fraction arithmetic or integer
+arithmetic.  The character identity is checked as a FORMAL identity in the polynomial ring
+Q[c_1,...,c_{q-1}] (coefficient comparison), which verifies it for ALL q at once and needs no
+root-of-unity field at all -- a stronger check than the lane's Q[sqrt3] instances.
+
+SEEDS.  numpy default_rng, master seed 20260817 (deliberately different from the lane's
+20260816, so that no agreement of ours is a shared-draw artefact).
+GRIDS.  k = 1..K with K as labelled.  Jensen quadrature n as labelled.

@@ -1,0 +1,68 @@
+========================================================================================================
+R_02 SECTION 1 — THE RESONANT SUBTORUS LIMIT AT THE CORPUS'S OWN RESONANCE (11,20),
+                 BY THREE METHODS, ONE OF WHICH IS EXACT RATIONAL ARITHMETIC.
+========================================================================================================
+  EXACT (Theorem R2, 3 terms):  lambda_(11,20) - m(P) = 66688318865043190932104161533929418081/5708990770823839524233143877797980545530986496
+                                                     = 1.1681279851748593893e-8
+     tail bound beyond r = 3:  |tail| <= 2.068e-26
+     leading coefficient c^(20)_11 = [w^11] psi(w)^20 = -131519505/536870912  = -0.244974168018
+     => lambda_(11,20) = m(P) + gap = -0.8109302045350489122074
+  mpmath polyroots dps=40:       lambda_(11,20) = -0.8109302045350489122074
+  lane C (numpy.roots, float64): lambda_(11,20) = -0.810930204535
+  lane C (2^22 trapezoid):       lambda_(11,20) = -0.810930204535
+
+  |exact - mpmath polyroots| = 3.09227e-28
+  |exact - lane C's printed 12 places| = 4.89122e-14   (half-ulp of the 12th place = 5e-13)
+  m(P) = log(4/9) = -0.810930216216328763956
+  SEPARATION lambda_(11,20) - m(P) = 1.168127985e-8  (lane C reports 1.168e-08)
+
+========================================================================================================
+R_02 SECTION 2 — SO THE SEPARATION IS REAL.  BUT CAN LANE C's MEASUREMENT SEE IT?
+========================================================================================================
+  C_04 prints, for the RESONANT arm on B0b at K = 1e7:  average = -0.810930225
+     |average - subtorus limit| = 2.046e-8
+     |average - m(P)|           = 8.784e-9
+     ratio = 2.33
+
+  THE MEASUREMENT IS 2.3x CLOSER TO m(P) THAN TO THE LIMIT LANE C SAYS IT CONVERGES TO.
+  At K = 1e7 the Birkhoff average's own finite-K wobble (5.4e-08 on the SAME carrier's
+  DIOPHANTINE arm, where the target is known to be m(P)) is FOUR TIMES the separation being
+  claimed (1.168e-08).  So C_04's resonant row DOES NOT MEASURE the distinction it is offered
+  for.  The distinction is real -- Theorem R2 settles it in exact rationals -- but it is
+  carried entirely by the closed-form subtorus computation, NOT by the K = 1e7 run.
+  C-4's evidence line ("resonant -0.810930225 -> subtorus -0.810930204535") reads as though
+  the run resolved it.  It did not, and on B4 the same row is worse: |avg - subtorus| =
+  7.26e-09 against |avg - m(P)| = 7.75e-09, a 6% difference on a 5.6e-08 noise floor.
+
+========================================================================================================
+R_02 SECTION 3 — THE BOYD-LAWTON DECAY LAW ON B0b IS GEOMETRIC, NOT A POWER OF n.
+            Theorem R2's exact gaps vs lane C's float64 ladder (C_06 LEG B).
+========================================================================================================
+       (m,n)       EXACT gap (Thm R2)     2^-n / n   lane C |lam-m(P)|   lane C gap SIGNED  agree?
+      (1, 1)                3.444e-01    5.000e-01           3.446e-01           3.446e-01  True
+      (1, 2)               -1.057e-01    1.250e-01           1.057e-01          -1.057e-01  True
+      (2, 3)                2.342e-02    4.167e-02           2.342e-02           2.342e-02  True
+      (3, 5)                2.583e-03    6.250e-03           2.583e-03           2.583e-03  True
+      (5, 8)                5.868e-05    4.883e-04           5.868e-05           5.868e-05  True
+     (8, 13)               -2.831e-06    9.390e-06           2.831e-06          -2.831e-06  True
+    (13, 21)                5.450e-09    2.271e-08           5.450e-09           5.450e-09  True
+    (21, 34)                2.047e-13    1.712e-12           3.287e-13           3.287e-13  True
+    (34, 55)               -2.850e-21    5.046e-19           3.287e-13           3.287e-13  False
+    (55, 89)               -2.144e-30    1.815e-29           3.287e-13           3.287e-13  False
+   (89, 144)                2.168e-47    3.114e-46           3.287e-13           3.287e-13  False
+  (144, 233)                2.252e-74    3.109e-73           3.287e-13           3.287e-13  False
+  (233, 377)              -4.852e-118   8.617e-117           1.329e-12           1.329e-12  False
+  (377, 610)               7.123e-189   3.858e-187           1.329e-12           1.329e-12  False
+
+  EXACT AND MEASURED AGREE IN SIGN AND MAGNITUDE ON EVERY ROW WHERE THE MEASUREMENT IS ABOVE
+  ITS OWN NOISE FLOOR.  The exact column falls like 2^-n, so:
+
+    * lane C's fitted "slope = -7.7 over 4-5 relations" for the zero-free rows is not a slow
+      power law measured through a noise floor -- IT IS NOT A POWER LAW AT ALL.  Fitting
+      log(err) vs log(n) on a geometric sequence returns a slope that GROWS with the window,
+      so the number is a window artefact in exactly COR-E's defect class.  Lane C declines to
+      defend it (D-4) for the right reason but names the wrong cause: the noise floor is not
+      what makes the exponent meaningless; the functional form is.
+    * B0b's Boyd-Lawton convergence needs NO root-finder and has NO noise floor.  At (377,610)
+      the exact gap is ~2^-610 = 1e-184; lane C's numpy.roots returns 1.36e-12, which is 172
+      orders of magnitude of pure float64 noise reported as a convergence measurement.

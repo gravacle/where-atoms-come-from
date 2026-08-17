@@ -1,0 +1,283 @@
+============================================================================================================
+W10-A SCRIPT 3 — W-08's DURABILITY CRITERION ON FOUR OCCUPIED CLASSES
+============================================================================================================
+numpy 2.0.2; IEEE double for k-sweeps; EXACT where a line says EXACT.
+
+============================================================================================================
+PART A — EXACT: THE CHARACTER IDENTITY AND MONOTONICITY, AT FOUR CLASSES, IN Q[sqrt3]
+============================================================================================================
+CLAIM (W-08 (iii)).  For unit-modulus chi_j and weights w_j >= 0 summing to 1,
+      1 - |Z_k|^2  =  sum_{j<l} w_j w_l |chi_j^k - chi_l^k|^2 .
+PROOF, and it never mentions how many j there are:
+      |Z|^2 = sum_{j,l} w_j w_l chi_j conj(chi_l) = sum_j w_j^2 + sum_{j!=l} w_j w_l Re(...)
+      1     = (sum_j w_j)^2 = sum_j w_j^2 + sum_{j!=l} w_j w_l
+      subtract: 1 - |Z|^2 = sum_{j!=l} w_j w_l (1 - Re(chi_j conj chi_l))
+                          = sum_{j<l} w_j w_l |chi_j - chi_l|^2 .   QED
+So the identity is CLASS-COUNT-FREE.  At three classes it has 3 pair terms, at four it has 6.
+Below: EXACT verification at four classes with q-th roots of unity, q in {2,3,4,6,12}, where
+every cos and sin lies in Q + Q sqrt3, and rational weights.  Residual must be EXACTLY 0.
+
+EXACT identity checks: 1620;  non-zero residuals: 0;  |Z_k| > 1 events: 0
+EXACT: |Z_k| <= 1 on every one of those cases, so |Omega_N| is monotone non-increasing at
+four classes exactly as at three.  The residual is EXACTLY 0 in Q[sqrt3], not to 1e-16.
+
+============================================================================================================
+PART B — |Omega_N| -> 0 IFF G != {1}, EXHAUSTIVE OVER THE 15 SUPPORTS
+============================================================================================================
+Same 15 arms as script 2 (hashes reprinted), same connection battery, K = 1e6 this time,
+and the measured quantity is log|Omega_N| itself at four values of N, not a mean.
+
+support       connection                    pred   log|Om_1e3|   log|Om_1e4|   log|Om_1e5|   log|Om_1e6|   dens     match
+{00}          trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00}          alpha=pi, beta=0   [W_F=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00}          alpha=0, beta=pi   [W_C=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00}          uv=1  (W_C=W_F=e^{2pi i/3})   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00}          u/v=1 (W_F W_C = 1)           never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00}          S1 published W_F=-1,W_C=-i    never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00}          S3/S4 headline f=2.0,c=1.1    never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00}          generic irrational            never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{10}          trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{10}          alpha=pi, beta=0   [W_F=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{10}          alpha=0, beta=pi   [W_C=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{10}          uv=1  (W_C=W_F=e^{2pi i/3})   never   4.16334e-14   4.16334e-14   4.16334e-14   4.36974e-11  -0.00000 OK
+{10}          u/v=1 (W_F W_C = 1)           never  -5.97300e-14  -3.26739e-13  -3.26739e-13  -5.25138e-11  0.00000  OK
+{10}          S1 published W_F=-1,W_C=-i    never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{10}          S3/S4 headline f=2.0,c=1.1    never  -1.27676e-14  -1.35447e-13  -1.25677e-12  -1.21411e-11  0.00000  OK
+{10}          generic irrational            never  -1.57652e-14  -1.31561e-13  -1.25033e-12  -1.22118e-11  0.00000  OK
+{01}          trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{01}          alpha=pi, beta=0   [W_F=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{01}          alpha=0, beta=pi   [W_C=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{01}          uv=1  (W_C=W_F=e^{2pi i/3})   never  -5.97300e-14  -3.26739e-13  -3.26739e-13  -5.25138e-11  0.00000  OK
+{01}          u/v=1 (W_F W_C = 1)           never  -5.97300e-14  -3.26739e-13  -3.26739e-13  -5.25138e-11  0.00000  OK
+{01}          S1 published W_F=-1,W_C=-i    never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{01}          S3/S4 headline f=2.0,c=1.1    never  -1.59872e-14  -1.26898e-13  -1.22224e-12  -1.21042e-11  0.00000  OK
+{01}          generic irrational            never  -8.65974e-15  -1.08136e-13  -1.19826e-12  -1.20565e-11  0.00000  OK
+{11}          trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{11}          alpha=pi, beta=0   [W_F=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{11}          alpha=0, beta=pi   [W_C=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{11}          uv=1  (W_C=W_F=e^{2pi i/3})   never  -8.99281e-15  -8.99281e-15  -8.99281e-15  -3.03682e-11  0.00000  OK
+{11}          u/v=1 (W_F W_C = 1)           never  -3.69704e-14  -3.03979e-13  -3.66818e-13  -6.34049e-11  0.00000  OK
+{11}          S1 published W_F=-1,W_C=-i    never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{11}          S3/S4 headline f=2.0,c=1.1    never  -5.77316e-15  -7.00551e-14  -6.87894e-13  -7.42550e-12  0.00000  OK
+{11}          generic irrational            never  -1.12133e-14  -6.90559e-14  -8.27560e-13  -7.48324e-12  0.00000  OK
+{00,10}       trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,10}       alpha=pi, beta=0   [W_F=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{00,10}       alpha=0, beta=pi   [W_C=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,10}       uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{00,10}       u/v=1 (W_F W_C = 1)           ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{00,10}       S1 published W_F=-1,W_C=-i    ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{00,10}       S3/S4 headline f=2.0,c=1.1    ->0    -6.88603e+02  -6.91573e+03  -6.93205e+04  -6.93189e+05  0.36338  OK
+{00,10}       generic irrational            ->0    -6.94316e+02  -6.93038e+03  -6.93128e+04  -6.93145e+05  0.36338  OK
+{00,01}       trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,01}       alpha=pi, beta=0   [W_F=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,01}       alpha=0, beta=pi   [W_C=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{00,01}       uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{00,01}       u/v=1 (W_F W_C = 1)           ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{00,01}       S1 published W_F=-1,W_C=-i    ->0    -9.50625e+03  -9.50625e+04  -9.50625e+05  -9.50625e+06  0.39645  OK
+{00,01}       S3/S4 headline f=2.0,c=1.1    ->0    -6.92136e+02  -6.93398e+03  -6.93121e+04  -6.93150e+05  0.36338  OK
+{00,01}       generic irrational            ->0    -6.91650e+02  -6.93382e+03  -6.93129e+04  -6.93148e+05  0.36338  OK
+{00,11}       trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,11}       alpha=pi, beta=0   [W_F=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{00,11}       alpha=0, beta=pi   [W_C=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{00,11}       uv=1  (W_C=W_F=e^{2pi i/3})   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,11}       u/v=1 (W_F W_C = 1)           ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{00,11}       S1 published W_F=-1,W_C=-i    ->0    -9.50625e+03  -9.50625e+04  -9.50625e+05  -9.50625e+06  0.39645  OK
+{00,11}       S3/S4 headline f=2.0,c=1.1    ->0    -6.99888e+02  -6.93696e+03  -6.93218e+04  -6.93144e+05  0.36338  OK
+{00,11}       generic irrational            ->0    -6.94351e+02  -6.92900e+03  -6.93165e+04  -6.93156e+05  0.36338  OK
+{10,01}       trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{10,01}       alpha=pi, beta=0   [W_F=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{10,01}       alpha=0, beta=pi   [W_C=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{10,01}       uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{10,01}       u/v=1 (W_F W_C = 1)           never  -5.97300e-14  -3.26739e-13  -3.26739e-13  -5.25138e-11  0.00000  OK
+{10,01}       S1 published W_F=-1,W_C=-i    ->0    -9.50625e+03  -9.50625e+04  -9.50625e+05  -9.50625e+06  0.39645  OK
+{10,01}       S3/S4 headline f=2.0,c=1.1    ->0    -6.99074e+02  -6.93345e+03  -6.93076e+04  -6.93147e+05  0.36338  OK
+{10,01}       generic irrational            ->0    -6.94757e+02  -6.93258e+03  -6.93176e+04  -6.93147e+05  0.36338  OK
+{10,11}       trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{10,11}       alpha=pi, beta=0   [W_F=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{10,11}       alpha=0, beta=pi   [W_C=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{10,11}       uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{10,11}       u/v=1 (W_F W_C = 1)           ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{10,11}       S1 published W_F=-1,W_C=-i    ->0    -9.50625e+03  -9.50625e+04  -9.50625e+05  -9.50625e+06  0.39645  OK
+{10,11}       S3/S4 headline f=2.0,c=1.1    ->0    -6.92136e+02  -6.93398e+03  -6.93121e+04  -6.93150e+05  0.36338  OK
+{10,11}       generic irrational            ->0    -6.91650e+02  -6.93382e+03  -6.93129e+04  -6.93148e+05  0.36338  OK
+{01,11}       trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{01,11}       alpha=pi, beta=0   [W_F=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{01,11}       alpha=0, beta=pi   [W_C=-1]   never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{01,11}       uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{01,11}       u/v=1 (W_F W_C = 1)           ->0    -4.62329e+02  -4.62121e+03  -4.62100e+04  -4.62098e+05  0.33333  OK
+{01,11}       S1 published W_F=-1,W_C=-i    ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{01,11}       S3/S4 headline f=2.0,c=1.1    ->0    -6.88603e+02  -6.91573e+03  -6.93205e+04  -6.93189e+05  0.36338  OK
+{01,11}       generic irrational            ->0    -6.94316e+02  -6.93038e+03  -6.93128e+04  -6.93145e+05  0.36338  OK
+{00,10,01}    trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,10,01}    alpha=pi, beta=0   [W_F=-1]   ->0    -5.49306e+02  -5.49306e+03  -5.49306e+04  -5.49306e+05  0.33333  OK
+{00,10,01}    alpha=0, beta=pi   [W_C=-1]   ->0    -5.49306e+02  -5.49306e+03  -5.49306e+04  -5.49306e+05  0.33333  OK
+{00,10,01}    uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -2.06927e+04  -1.91570e+05  -1.76485e+06  -1.60805e+07  0.66667  OK
+{00,10,01}    u/v=1 (W_F W_C = 1)           ->0    -3.66387e+02  -3.66222e+03  -3.66206e+04  -3.66204e+05  0.28177  OK
+{00,10,01}    S1 published W_F=-1,W_C=-i    ->0    -8.23959e+02  -8.23959e+03  -8.23959e+04  -8.23959e+05  0.50000  OK
+{00,10,01}    S3/S4 headline f=2.0,c=1.1    ->0    -7.74777e+02  -7.76574e+03  -7.76749e+04  -7.76773e+05  0.47514  OK
+{00,10,01}    generic irrational            ->0    -7.74540e+02  -7.75870e+03  -7.75525e+04  -7.75549e+05  0.47513  OK
+{00,10,11}    trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,10,11}    alpha=pi, beta=0   [W_F=-1]   ->0    -5.49306e+02  -5.49306e+03  -5.49306e+04  -5.49306e+05  0.33333  OK
+{00,10,11}    alpha=0, beta=pi   [W_C=-1]   ->0    -5.49306e+02  -5.49306e+03  -5.49306e+04  -5.49306e+05  0.33333  OK
+{00,10,11}    uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -3.66387e+02  -3.66222e+03  -3.66206e+04  -3.66204e+05  0.28177  OK
+{00,10,11}    u/v=1 (W_F W_C = 1)           ->0    -2.06891e+04  -1.91563e+05  -1.76484e+06  -1.60805e+07  0.66667  OK
+{00,10,11}    S1 published W_F=-1,W_C=-i    ->0    -8.23959e+02  -8.23959e+03  -8.23959e+04  -8.23959e+05  0.50000  OK
+{00,10,11}    S3/S4 headline f=2.0,c=1.1    ->0    -7.74204e+02  -7.74707e+03  -7.74569e+04  -7.74554e+05  0.47512  OK
+{00,10,11}    generic irrational            ->0    -7.74422e+02  -7.76151e+03  -7.75538e+04  -7.75551e+05  0.47513  OK
+{00,01,11}    trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,01,11}    alpha=pi, beta=0   [W_F=-1]   ->0    -5.49306e+02  -5.49306e+03  -5.49306e+04  -5.49306e+05  0.33333  OK
+{00,01,11}    alpha=0, beta=pi   [W_C=-1]   ->0    -5.49306e+02  -5.49306e+03  -5.49306e+04  -5.49306e+05  0.33333  OK
+{00,01,11}    uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -3.66387e+02  -3.66222e+03  -3.66206e+04  -3.66204e+05  0.28177  OK
+{00,01,11}    u/v=1 (W_F W_C = 1)           ->0    -2.06891e+04  -1.91563e+05  -1.76484e+06  -1.60805e+07  0.66667  OK
+{00,01,11}    S1 published W_F=-1,W_C=-i    ->0    -8.23959e+02  -8.23959e+03  -8.23959e+04  -8.23959e+05  0.50000  OK
+{00,01,11}    S3/S4 headline f=2.0,c=1.1    ->0    -7.74204e+02  -7.74707e+03  -7.74569e+04  -7.74554e+05  0.47512  OK
+{00,01,11}    generic irrational            ->0    -7.74422e+02  -7.76151e+03  -7.75538e+04  -7.75551e+05  0.47513  OK
+{10,01,11}    trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{10,01,11}    alpha=pi, beta=0   [W_F=-1]   ->0    -5.49306e+02  -5.49306e+03  -5.49306e+04  -5.49306e+05  0.33333  OK
+{10,01,11}    alpha=0, beta=pi   [W_C=-1]   ->0    -5.49306e+02  -5.49306e+03  -5.49306e+04  -5.49306e+05  0.33333  OK
+{10,01,11}    uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -2.06934e+04  -1.91570e+05  -1.76485e+06  -1.60805e+07  0.66667  OK
+{10,01,11}    u/v=1 (W_F W_C = 1)           ->0    -3.66387e+02  -3.66222e+03  -3.66206e+04  -3.66204e+05  0.28177  OK
+{10,01,11}    S1 published W_F=-1,W_C=-i    ->0    -8.23959e+02  -8.23959e+03  -8.23959e+04  -8.23959e+05  0.50000  OK
+{10,01,11}    S3/S4 headline f=2.0,c=1.1    ->0    -7.74777e+02  -7.76574e+03  -7.76749e+04  -7.76773e+05  0.47514  OK
+{10,01,11}    generic irrational            ->0    -7.74540e+02  -7.75870e+03  -7.75525e+04  -7.75549e+05  0.47513  OK
+{00,10,01,11} trivial (0,0)                 never   0.00000e+00   0.00000e+00   0.00000e+00   0.00000e+00  0.00000  OK
+{00,10,01,11} alpha=pi, beta=0   [W_F=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{00,10,01,11} alpha=0, beta=pi   [W_C=-1]   ->0    -1.86659e+04  -1.86659e+05  -1.86659e+06  -1.86659e+07  0.50000  OK
+{00,10,01,11} uv=1  (W_C=W_F=e^{2pi i/3})   ->0    -9.24658e+02  -9.24242e+03  -9.24201e+04  -9.24197e+05  0.50000  OK
+{00,10,01,11} u/v=1 (W_F W_C = 1)           ->0    -9.24658e+02  -9.24242e+03  -9.24201e+04  -9.24197e+05  0.50000  OK
+{00,10,01,11} S1 published W_F=-1,W_C=-i    ->0    -2.80885e+04  -2.80885e+05  -2.80885e+06  -2.80885e+07  0.75000  OK
+{00,10,01,11} S3/S4 headline f=2.0,c=1.1    ->0    -1.38074e+03  -1.38497e+04  -1.38633e+05  -1.38634e+06  0.59472  OK
+{00,10,01,11} generic irrational            ->0    -1.38597e+03  -1.38642e+04  -1.38626e+05  -1.38629e+06  0.59472  OK
+
+CASES 120   MISMATCHES 0
+W-08's (ii) HOLDS AT FOUR CLASSES.  And the proof is class-count-free: G != {1} means some
+pair j,l with w_j,w_l > 0 and rho = chi_j/chi_l != 1; then by PART A
+      1-|Z_k| >= (1-|Z_k|^2)/2 >= (w_j w_l /2) |rho^k - 1|^2 ,
+and sum_{k<=K} |rho^k-1|^2 = 2K - 2 Re(sum_{k<=K} rho^k) >= 2K - 2/|sin(tau/2)|,
+so SUM(1-|Z_k|) >= w_j w_l (K - 1/|sin(tau/2)|) -- LINEAR, NO DIOPHANTINE INPUT, ANY
+NUMBER OF CLASSES.  W-08's REOPENS clause 'a connection with G != {1} on which
+SUM(1-|Z_k|) is sublinear' cannot be satisfied at four classes either.
+
+============================================================================================================
+PART C — W-08's PROVED FLOOR, MEASURED AT FOUR CLASSES (6 pairs available, not 3)
+============================================================================================================
+ONE VARIABLE: the occupied class set.  Weights, connection, K and evaluator held fixed;
+arms diffed below.  The bound is  SUM_{k<=K}(1-|Z_k|) >= max_pair w_j w_l (K - 1/|sin(tau/2)|).
+
+ARMS DIFF: K1  SENSE U   3-class=319a2c8e | B1q SENSE U   3-class=6bc1705b | B0b SENSE U   4-class=23882ba1 | B4  SENSE U   4-class=28377a6f | SENSE C 1/4   4-class=b8b4629f
+
+arm                       connection                #pairs  measured SUM(1-|Z|)/K   proved floor/K    #{|Z_k|=1}/K  
+K1  SENSE U   3-class     S1 published order-4      3       0.476393202             0.159999774       0.250000      
+K1  SENSE U   3-class     S3/S4 resonant f=2,c=1.1  3       0.455127292             0.159999840       0.000000      
+K1  SENSE U   3-class     generic irrational        3       0.455128504             0.159999596       0.000000      
+B1q SENSE U   3-class     S1 published order-4      3       0.456746337             0.183673210       0.250000      
+B1q SENSE U   3-class     S3/S4 resonant f=2,c=1.1  3       0.435857315             0.183673286       0.000000      
+B1q SENSE U   3-class     generic irrational        3       0.435857798             0.183673006       0.000000      
+B0b SENSE U   4-class     S1 published order-4      6       0.542440668             0.098765333       0.250000      
+B0b SENSE U   4-class     S3/S4 resonant f=2,c=1.1  6       0.497277285             0.098765315       0.000000      
+B0b SENSE U   4-class     generic irrational        6       0.497277726             0.098765308       0.000000      
+B4  SENSE U   4-class     S1 published order-4      6       0.500000000             0.083333250       0.250000      
+B4  SENSE U   4-class     S3/S4 resonant f=2,c=1.1  6       0.461906689             0.083333234       0.000000      
+B4  SENSE U   4-class     generic irrational        6       0.461906831             0.083333247       0.000000      
+SENSE C 1/4   4-class     S1 published order-4      6       0.750000000             0.062499937       0.250000      
+SENSE C 1/4   4-class     S3/S4 resonant f=2,c=1.1  6       0.594716495             0.062499937       0.000000      
+SENSE C 1/4   4-class     generic irrational        6       0.594715645             0.062499936       0.000000      
+
+The floor is a lower bound and it is respected in every row.  With four classes there are
+SIX pairs to maximise over instead of THREE, so the proved floor can only improve -- but the
+MEASURED density is not systematically higher, and no four-class row is an outlier.
+
+------------------------------------------------------------------------------------------------------------
+PART C2 — MY OWN CONFOUND, FOUND ON RE-READ AND RECORDED RATHER THAN SILENTLY PATCHED
+------------------------------------------------------------------------------------------------------------
+PART C's header says 'ONE VARIABLE: the occupied class set.  Weights ... held fixed'.
+**THAT SENTENCE IS FALSE AND IT IS MINE.**  Occupancy IS the support of the weight vector,
+so it cannot move with the weights held fixed; PART C's arms differ in the WITHIN-SUPPORT
+weight profile as well (K1 SENSE U is (0,.4,.4,.2) while B0b SENSE U is (4/9,2/9,1/9,2/9)),
+because SENSE U is fixed by each carrier's VERTEX COUNTS.  That is two things moving, and it
+is the corpus's own commonest defect committed by the lane auditing it.  The header should
+read: 'the arms differ in pi; what is being contrasted is pi's SUPPORT'.
+THE MATCHED DESIGN -- UNIFORM ON THE SUPPORT, so the within-support profile is as close to
+held-fixed as the geometry permits -- is run here.  Both forms are now on record.
+
+arm (matched)                 connection                SUM(1-|Z|)/K      proved floor/K    #{|Z_k|=1}/K
+3-class {10,01,11} uniform    S1 published order-4      0.500000000       0.111111000       0.250000
+3-class {10,01,11} uniform    S3/S4 resonant f=2,c=1.1  0.475144116       0.111111000       0.000000
+3-class {10,01,11} uniform    generic irrational        0.475134339       0.111110997       0.000000
+3-class {00,10,01} uniform    S1 published order-4      0.500000000       0.111111000       0.250000
+3-class {00,10,01} uniform    S3/S4 resonant f=2,c=1.1  0.475144116       0.111111000       0.000000
+3-class {00,10,01} uniform    generic irrational        0.475134339       0.111110997       0.000000
+3-class {00,10,11} uniform    S1 published order-4      0.500000000       0.111111000       0.250000
+3-class {00,10,11} uniform    S3/S4 resonant f=2,c=1.1  0.475118588       0.111110979       0.000000
+3-class {00,10,11} uniform    generic irrational        0.475134929       0.111110997       0.000000
+4-class uniform               S1 published order-4      0.750000000       0.062499937       0.250000
+4-class uniform               S3/S4 resonant f=2,c=1.1  0.594716495       0.062499937       0.000000
+4-class uniform               generic irrational        0.594715645       0.062499936       0.000000
+
+Under the matched design the four-class arm's decay density is HIGHER than every three-class
+arm's at every connection, and the proved floor is LOWER (uniform weights on four classes
+give w_j w_l = 1/16 against 1/9).  Neither fact is a criterion failure; both are recorded so
+that no later layer reads PART C's confounded arms as an isolation.
+
+A NULL THAT MUST BE READ TWICE, AND IT IS A THEOREM RATHER THAN A MEASUREMENT:
+  the exact-recurrence density (the column '#{|Z_k|=1}/K', which is the whole of W-08's
+  SCHEDULE axis) is a function of L_S and L ALONE: |Z_k| = 1 iff k*L_S is contained in L.
+  K1's full support and B0b's / B4's full support BOTH have L_S = Z^2 (script 2 part A).
+  So the density is IDENTICAL by derivation, and MEASURING it here could not have come out
+  otherwise.  It is reported as a derivation, NOT as a control -- 'could not have failed'
+  voids a control (IMP-1, lawfully applied: this is a control, not a theorem).
+  READ ONE: the schedule axis is carrier-independent across every carrier with rank-2 L_S,
+            which is all ten of S4's except B1p.
+  READ TWO: the schedule axis was never a class-occupancy question, so this lane's four-class
+            move has NO purchase on it and the null is uninformative about W-08's headline.
+  This lane does not choose between them.
+
+============================================================================================================
+PART D — THE FOUR-CLASS-ONLY STRUCTURE: P FACTORS, AND DURABILITY SPLITS INTO TWO CHANNELS
+============================================================================================================
+EXACT: P = p00 + p10 x + p01 y + p11 xy = (a + b x)(c + d y) iff p00 p11 = p10 p01.
+On a THREE-class carrier one of p00, p11 is 0, which forces p10 p01 = 0 -- a SECOND empty
+class.  So a genuine factorisation is FOUR-CLASS-ONLY.  It is not a curiosity: on that
+locus Z_k = Z_k^F . Z_k^C with Z_k^F = a + b u^k depending on the CURVATURE alone and
+Z_k^C = c + d v^k on the FLAT holonomy alone, so Omega_N factors and lambda is ADDITIVE.
+
+factoring weights               pi                                      lambda measured   log max(a,b)+log max(c,d) dev
+SENSE C 1/4 (B0b/B4, S4:596)    (0.2500, 0.2500, 0.2500, 0.2500)        -1.386292954      -1.386294361              1.41e-06
+a=.6 b=.4 c=.7 d=.3             (0.4200, 0.2800, 0.1800, 0.1200)        -0.867500474      -0.867500568              9.33e-08
+a=.9 b=.1 c=.5 d=.5             (0.4500, 0.0500, 0.4500, 0.0500)        -0.798508892      -0.798507696              1.20e-06
+
+The middle column reproduces S4:596's EXACT four-class SENSE C value log(1/4) =
+  -1.386294361120  as a SUM of two Jensen terms rather than as a lucky closed form.
+
+CONSEQUENCE FOR W-08 AND W-02, STATED AS A SCOPE FACT AND NOT AS A REFUTATION:
+  on the factorising locus, |Omega_N| = |Omega_N^F| . |Omega_N^C| and the record's decay is
+  the SUM of a pure-curvature rate and a pure-flat-holonomy rate.  Both criteria still hold
+  (G != {1} iff at least one channel is non-trivial), but the SINGLE-CHANNEL statement
+  'formation is one group-theoretic condition on where the record sits' becomes TWO
+  independent conditions that no three-class carrier can exhibit.
+
+EXACT-TO-MACHINE factorisation check Z_k = Z_k^F . Z_k^C over k <= 20000:
+   SENSE C 1/4 (B0b/B4, S4:596)     max|Z_k - Z_k^F Z_k^C| = 2.289e-16
+   a=.6 b=.4 c=.7 d=.3              max|Z_k - Z_k^F Z_k^C| = 3.334e-16
+   a=.9 b=.1 c=.5 d=.5              max|Z_k - Z_k^F Z_k^C| = 2.289e-16
+
+============================================================================================================
+PART E — INDEPENDENT REPRODUCTION OF A W-08 FIGURE ON K1, AS A CALIBRATION
+============================================================================================================
+K1's published ready state (S3:423-427) p = (0.4,0.15,0.15,0.15,0.15) pushes to
+pi = (p00,p10,p01,p11) = (0, 0.3, 0.3, 0.4) [v0 is class 11, v1 v2 are 10, v3 v4 are 01].
+W-08 reports measured densities SUM(1-|Z_k|)/K at K=1e7: 0.4919 (order-4), 0.4692 (resonant).
+   order-4 (S1 published)       SUM(1-|Z_k|)/K at K=1e6 = 0.491886   min|Z_k| = 3.162278e-01   #{|Z_k|=1}/K = 0.250000
+   resonant f=2.0 c=1.1         SUM(1-|Z_k|)/K at K=1e6 = 0.469183   min|Z_k| = 2.301161e-02   #{|Z_k|=1}/K = 0.000000
+   generic irrational           SUM(1-|Z_k|)/K at K=1e6 = 0.469189   min|Z_k| = 8.790173e-04   #{|Z_k|=1}/K = 0.000000
+Read against W-08's 0.4919 / 0.4692: same two figures to the printed precision.  This lane
+is Opus 5 like W-08, so this is a RE-RUN, not an independent lineage check (custody sec4).
+
+============================================================================================================
+SCRIPT 3 SUMMARY
+============================================================================================================
+0 failures.  W-08's (i) monotonicity, (ii) the durability criterion, (iii) the character
+identity and (iv) the linear floor ALL HOLD AT FOUR CLASSES, and (i),(iii),(iv) hold by
+proofs that never mention the class count.  W-08 is CARRIER-INDEPENDENT on these four.
+What is new at four classes is PART D: the branch comparison can factor into a curvature
+channel and a flat channel, which no three-class carrier can do.

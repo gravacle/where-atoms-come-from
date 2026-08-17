@@ -1,0 +1,102 @@
+========================================================================================================
+W10-A SCRIPT 4 — lambda ON B0b AND B4 FROM MY OWN INCIDENCE, AGAINST S4:574-578
+========================================================================================================
+numpy 2.0.2.  IEEE double unless a line says EXACT.
+
+SENSE U = p_v = 1/V (S4's own).  SENSE C = class weights fixed by hand: (1/4,1/4,1/4,1/4)
+for four classes, (0.4,0.3,0.3) on the occupied three otherwise (S4:557-560).
+
+case    pi = (p00,p10,p01,p11)            dominant branch  Jensen 2^22     S4 published   |dev|      exact closed form
+B0b U   (4/9, 2/9, 1/9, 2/9)              A                -0.810930216    -0.810930216   2.16e-10   log max(p00,p01) = log(4/9) = -0.810930216216
+B0b C   (1/4, 1/4, 1/4, 1/4)              branches equal   -1.386294196    -1.386294361   1.65e-07   branches IDENTICAL; log max(p10,p11) = log(1/4) = -1.386294361120 -- BOTH vanish at t=pi, so the Jensen integrand has a log singularity and the quadrature is slow; the exact value comes from the FACTORISATION, not from this grid
+B4 U    (1/6, 1/6, 1/6, 1/2)              B                -0.693147181    -0.693147181   4.40e-10   log max(p10,p11) = log(1/2) = -0.693147180560
+B4 C    (1/4, 1/4, 1/4, 1/4)              branches equal   -1.386294196    -1.386294361   1.65e-07   branches IDENTICAL; log max(p10,p11) = log(1/4) = -1.386294361120 -- BOTH vanish at t=pi, so the Jensen integrand has a log singularity and the quadrature is slow; the exact value comes from the FACTORISATION, not from this grid
+B1 U    (0, 2/5, 2/5, 1/5)                neither (crossing)-0.756573586    -0.756573586   3.60e-10   
+B1 C    (0, 2/5, 3/10, 3/10)              neither (crossing)-0.767507880    -0.767507880   3.58e-10   
+B1q U   (1/7, 3/7, 3/7, 0)                neither (crossing)-0.741029583    -0.741029583   4.29e-10   
+B1q C   (2/5, 3/10, 3/10, 0)              neither (crossing)-0.767507880    -0.767507880   3.58e-10   
+
+--------------------------------------------------------------------------------------------------------
+EXACT: THE BRANCH-DOMINANCE TEST, IN RATIONALS
+--------------------------------------------------------------------------------------------------------
+|p00+p01 e^{it}|^2 - |p10+p11 e^{it}|^2 = C + D cos t with
+   C = p00^2+p01^2-p10^2-p11^2 ,  D = 2(p00 p01 - p10 p11).
+cos t sweeps [-1,1] exactly, so ONE BRANCH DOMINATES FOR ALL t iff |D| <= |C|, and then
+Jensen gives m(P) = log max of that branch's two coefficients -- an EXACT closed form.
+   B0b U    C = 1/9        D = 0          |D| <= |C| ? True   dominant: A
+   B0b C    C = 0          D = 0          |D| <= |C| ? True   dominant: branches EQUAL
+   B4 U     C = -2/9       D = -1/9       |D| <= |C| ? True   dominant: B
+   B4 C     C = 0          D = 0          |D| <= |C| ? True   dominant: branches EQUAL
+   B1 U     C = -1/25      D = -4/25      |D| <= |C| ? False   dominant: neither
+   B1 C     C = -4/25      D = -6/25      |D| <= |C| ? False   dominant: neither
+   B1q U    C = 1/49       D = 6/49       |D| <= |C| ? False   dominant: neither
+   B1q C    C = 4/25       D = 6/25       |D| <= |C| ? False   dominant: neither
+
+B0b SENSE U: pi = (4/9, 2/9, 1/9, 2/9).  C = (16+1-4-4)/81 = 9/81 = 1/9, D = 2(4-4)/81 = 0.
+   |D| = 0 <= |C| = 1/9, branch A dominates everywhere, so
+   lambda(B0b, SENSE U) = log(4/9) = -0.810930216216328  EXACTLY.
+   **S4:599 CALLS THIS ROW 'QUADRATURE ONLY' AND IT IS NOT.  W-03 already corrected it;
+   this is the first time the correction is derived from a BUILT B0b rather than from S4's
+   own number.  S4's flag F-quadrature on that row should be struck.**
+B4 SENSE U: pi = (1/6,1/6,1/6,1/2).  C = (1+1-1-9)/36 = -8/36, D = 2(1-3)/36 = -4/36.
+   |D| <= |C|, branch B dominates, lambda = log(1/2) = -0.693147180559945 EXACTLY,
+   which is S4's own reasoning (S4:594-595) reproduced from my incidence.
+SENSE C on BOTH four-class carriers: pi = (1/4,1/4,1/4,1/4), C = D = 0, so the two Jensen
+   branches are IDENTICAL and BOTH VANISH at t = pi.  That is exactly the log singularity
+   W-09 warned about, and it is visible in the convergence table below: the SENSE C rows
+   are the only ones still moving at n = 2^22 (1.65e-07 from log(1/4)).  THE EXACT VALUE ON
+   THOSE ROWS COMES FROM THE FACTORISATION P = (1+x)(1+y)/4, NOT FROM ANY GRID.
+
+--------------------------------------------------------------------------------------------------------
+QUADRATURE CONVERGENCE (the W-09 warning, respected)
+--------------------------------------------------------------------------------------------------------
+case      n=2^16            n=2^18            n=2^20            n=2^22            
+B0b U     -0.810930216216   -0.810930216216   -0.810930216216   -0.810930216216   
+B0b C     -1.386283784533   -1.386291716973   -1.386293700083   -1.386294195861   
+B4 U      -0.693147180560   -0.693147180560   -0.693147180560   -0.693147180560   
+B4 C      -1.386283784533   -1.386291716973   -1.386293700083   -1.386294195861   
+B1 U      -0.756573585724   -0.756573585638   -0.756573585640   -0.756573585640   
+B1 C      -0.767507880400   -0.767507880361   -0.767507880358   -0.767507880358   
+B1q U     -0.741029582630   -0.741029582570   -0.741029582571   -0.741029582571   
+B1q C     -0.767507880400   -0.767507880361   -0.767507880358   -0.767507880358   
+
+--------------------------------------------------------------------------------------------------------
+DIRECT SCHEDULE-B SIMULATION AT S4's OWN TEST POINT f = 1.0, c = sqrt(2), N = 2e6
+--------------------------------------------------------------------------------------------------------
+case      direct            Jensen 2^22       dev
+B0b U     -0.810929681      -0.810930216      5.35e-07
+B0b C     -1.386307820      -1.386294196      1.36e-05
+B4 U      -0.693146936      -0.693147181      2.45e-07
+B4 C      -1.386307820      -1.386294196      1.36e-05
+B1 U      -0.756576560      -0.756573586      2.97e-06
+B1 C      -0.767508045      -0.767507880      1.65e-07
+B1q U     -0.741029963      -0.741029583      3.81e-07
+B1q C     -0.767507297      -0.767507880      5.84e-07
+
+========================================================================================================
+SIDE-CHECK — THE HYPOTHESIS OF THE MULTISET THEOREM.  NOT THIS LANE'S ASSIGNMENT; ONE BLOCK.
+========================================================================================================
+The registrar reports 24/24 permutations of (p00,p10,p01,p11) leave m(P) invariant with
+spread 0.000e+00, and names the hypothesis REAL NON-NEGATIVITY.  The step that supplies the
+two extra transpositions is  |a + b e^{it}| = |b + a e^{it}| pointwise, and
+     |a + b e^{it}|^2 = a^2 + b^2 + 2 a b cos t
+is SYMMETRIC IN a AND b FOR ANY REAL a, b, SIGN IRRELEVANT.  So the hypothesis is REALITY,
+not non-negativity.  Tested below on mixed-sign real vectors and on complex ones.
+
+coefficient kind                  spread over the 24 permutations (max - min of m)  
+real non-negative (registrar's)   8.025247e-13      (m = -0.066888050)
+real MIXED SIGN                   1.665335e-16      (m =  0.419633815)
+real mixed sign, 2nd draw         4.510281e-17      (m = -0.017209413)
+COMPLEX                           2.302163e-01      (m =  0.585229425)
+COMPLEX, 2nd draw                 1.355818e-01      (m =  0.355524487)
+
+READ: S4-invariance survives MIXED SIGN and DIES on COMPLEX coefficients.  The registrar's
+prediction that the group is S4 rather than the Newton-polygon D4 is CONFIRMED and its
+STATED HYPOTHESIS IS ONE WORD TOO STRONG: the operative hypothesis is REAL COEFFICIENTS.
+Non-negativity is what makes pi a probability vector; it is not what makes m symmetric.
+(This corrects a naming, not a number.  It is the corpus's recurring defect and it is
+ recorded here rather than left for the next layer.)
+
+========================================================================================================
+0 failures.  Both four-class carriers reproduce S4's published lambda column from MY
+incidence, and both SENSE-U values are EXACT closed forms, not quadrature.

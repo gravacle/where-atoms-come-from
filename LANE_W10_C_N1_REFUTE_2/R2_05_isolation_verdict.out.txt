@@ -1,0 +1,90 @@
+==============================================================================================================
+R2_05 (1) — THE THREE ARMS OF C_04, DIFFED ON EVERY FIELD OF THE CALL
+==============================================================================================================
+  field                           DIOPHANTINE                  RESONANT              FINITE ORDER
+  A_num                          813725411112              468453879180                         2
+  B_num                          645854286806              120307488499                         3
+  Dn                            1099511627776              687194767360                         4
+  dA                    7.649436639667329e-13                       0.0                       0.0
+  dB                    8.091305403468141e-13                       0.0                       0.0
+  alpha                  0.740078950105126809      0.681690113822696730      0.500000000000000000
+  beta                   0.587401051968199361      0.175070437397516793      0.750000000000000000
+  TARGET evaluator      Jensen trapezoid n = 2^20  trapezoid on log|Q| n = 2^22  mpmath exact 4-point average
+
+  THE ORBIT SIDE IS ISOLATED: same orbit_average(), same K = 1e7, same CHUNK = 1e6,
+  same checkpoints, same ready state, and the three (alpha,beta) are distinct.
+  TWO THINGS MOVE WITH THE CONNECTION AND ARE NOT NAMED IN THE LEDGER:
+    (i)  the phase REPRESENTATION -- arm 1 carries a nonzero float64 correction
+         (dA,dB); arms 2 and 3 are exact rationals with dA = dB = 0.  FORCED by the
+         arithmetic type, so not a defect, but it is a second moving coordinate.
+         MEASURED IMMATERIAL: R2_03 re-ran arm 1 with exact 80-bit phases on the TRUE
+         irrational and got -0.8109302706 at K = 1e7 against C_04's -0.810930271.
+         THIS ATTACK FAILED.  Named because it was tried, not because it landed.
+    (ii) the TARGET evaluator -- three different quadratures of three different
+         accuracies (row above).  This one is NOT immaterial: see (2).
+
+==============================================================================================================
+R2_05 (2) — RESOLUTION.  CAN THE ARM SEE THE EFFECT IT IS CLAIMED TO SEE?
+            effect = |m(Q_(11,20)) - m(P)|, EXACT (R2_02, roots + trapezoid agree
+            to 5e-50).  ruler = |avg - limit| at that K (R2_03, exact 80-bit phases).
+==============================================================================================================
+  case           effect (exact)       K=1e+07      K=1e+08      K=3e+08      K=1e+09
+  B0b                1.16813e-8          0.56         3.31         8.39        46.69
+  B4                4.84421e-10          0.07         0.09         2.64         5.97
+  K1                0.000236577       2993.13      8525.28     20607.72   2225556.13
+  SENSE C                   0.0          0.00         0.00         0.00         0.00
+  (entries are effect/ruler.  < 3 = the arm cannot tell the two candidate limits
+   apart at that K.  0.00 for SENSE C means the two limits ARE THE SAME NUMBER.)
+
+  AT LANE C's K = 1e7 THE RESONANT ARM RESOLVES ON EXACTLY ONE OF THE FOUR ROWS,
+  AND IT IS K1 -- THE THREE-CLASS CONTROL THIS ROUND EXISTS TO MOVE OFF.
+  On B0b it reads 0.56 and the measured value lands NEARER m(P) than nearer the
+  subtorus (8.78e-09 vs 2.05e-08).  On B4 it reads 0.07.  On SENSE C it is 0.00
+  BY EXACT IDENTITY: Q = (1+z^11)(1+z^20)/4, so m(Q) = -log 4 = m(P).
+  THE LIMIT CLAIM IS NEVERTHELESS TRUE ON B0b AND B4 -- at K = 1e8 .. 1e9 the
+  average leaves m(P) and converges on m(Q) (R2_03 sec 1).  The THEOREM survives;
+  the MEASUREMENT that was offered as its evidence does not reach it.
+
+==============================================================================================================
+R2_05 (3) — SPOT-CHECK OF C-9's q_1 BOUND (the lane's one rigorous limit failure).
+==============================================================================================================
+     |1 + u^8| = 2 sin(pi eps) = 2.17051e-76   (C-9 states 2.17e-76)
+     |1 + v^8|                 = 1.1715431
+     log|Z_8| / 8              = -21.931185   (C-9 states <= -21.864)
+     m(P) for SENSE C          = -1.3862944   ratio = 15.82   (C-9 states factor 15.8)
+     CONFIRMED.  Note this bound uses beta = 4^(1/3), the SAME beta as the
+     DIOPHANTINE arm; only alpha changes.  That is a clean one-variable move and
+     it is the strongest thing in the lane.
+
+==============================================================================================================
+R2_05 (4) — THIS REFUTER'S OWN DEFECTS, RECORDED RATHER THAN PATCHED
+==============================================================================================================
+  R-1  R2_03 section 4 was written and RUN with the header 'f = 1.0, c = 3.0 -- a second
+       published connection [S4:330].  Also generic.'  IT IS NOT GENERIC.  Both f and c are
+       rational, so -3f + c = 0 and the primitive relation is (3,1): the connection is
+       exactly resonant.  The run's flat errors (7.9e-02, 2.4e-02, 1.5e-02, not falling with
+       K) are the correct behaviour of a subtorus limit, not a failure of convergence.  I
+       caught this by RUNNING it, not by reading it.  The header is left in R2_03's output
+       with this correction beside it rather than edited away, because the defect is the
+       exact one this lens was commissioned to hunt -- and I committed it in the act of
+       hunting it.  R2_04 then types every published connection by computation instead.
+  R-2  R2_02 computed m(P) with an UNSPLIT 2^16 Jensen trapezoid.  That is O(n^-2) at a
+       branch crossing and O(n^-1) at a log singularity, so R2_02's m(P) is wrong by 8.4e-11
+       (K1), 1.7e-10 (B0b*) and 1.06e-05 (SENSE C).  Consequences: R2_02's 'effect size' row
+       for SENSE C reads 1.06e-05 when the true effect is EXACTLY 0, and its K1 row is off in
+       the eleventh place.  R2_04(B) recomputes both by kink-split adaptive quadrature and
+       CONFIRMS lane C's values to every printed place; R2_03 and R2_05 use the exact values.
+       R2_02's SENSE C effect-size line is SUPERSEDED, not deleted.
+  R-3  The resolution table above uses, as its 'ruler', the distance from the average to the
+       limit it actually converged to.  That is the right ruler for a power statement but it
+       is measured from THIS refuter's runs, not from lane C's; lane C's own K = 1e7 numbers
+       are reproduced to 4e-10 by an independent evaluator (R2_03 sec 1 vs C_04.out), so the
+       substitution is sound, but it IS a substitution.
+  R-4  I did not re-derive C-2's reversal locus, C-3's zero-set criterion beyond a hand check,
+       C-8's Boyd-Lawton ladder, or C-1's edge-transport arm.  Anything I say about those is
+       a spot-check, not an audit, and is graded as such.
+  R-5  NOT LINEAGE-INDEPENDENT.  Opus 5 refuting Opus 5, sharing the phase-reduction device
+       and the Mahler-measure machinery.  Discount as one block with lane C and with
+       W-07/W-08/W-09.
+
+DONE.

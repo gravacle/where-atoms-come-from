@@ -1,0 +1,96 @@
+====================================================================================================
+== 2A  N1 ON FOUR-CLASS CARRIERS: lambda = m(P), AND BOTH FOUR-CLASS ROWS ARE EXACT ==
+====================================================================================================
+carrier                      Jensen      exact/closed form     |diff|   S4's published
+B1  K1 (3 class)    -0.756573585640       (branches cross)        nan   -0.756573585640  dev 2.3e-13
+B1q spectator(3)    -0.741029582571       (branches cross)        nan   -0.741029582571  dev 3.5e-13
+B1p bridged  (2)    -0.693147180560        -0.693147180560   1.11e-16   -0.693147180560  dev 5.5e-14
+B0b torus    (4)    -0.810930216216        -0.810930216216   6.66e-16   -0.810930216216  dev 3.3e-13
+B4  spindle  (4)    -0.693147180560        -0.693147180560   1.22e-15   -0.693147180560  dev 5.6e-14
+SENSE-C      (4)    -1.386290424823        -1.386294361120   3.94e-06   -1.386294361120  dev 3.9e-06
+
+  B0b: Jensen branches are |4/9 + (1/9)e^{it}| and |2/9 + (2/9)e^{it}|; their squares
+       differ by (17+8cos t)/81 - (8+8cos t)/81 = 9/81 > 0 for ALL t -- a CONSTANT gap,
+       so the first branch dominates everywhere and m = log max(4/9,1/9) = log(4/9).
+       log(4/9) = -0.810930216216329   EXACT.  S4 labelled this row 'QUADRATURE ONLY'.
+  B4 : squares differ by (8+4cos t)/36 > 0, second branch dominates, m = log(1/2) EXACT.
+  BOTH FOUR-CLASS CARRIERS THE CORPUS OWNS HAVE CLOSED-FORM RATES. Nothing is quadrature.
+
+  2D-GRID CONTROL (the noise-limited method):
+    B0b torus    (4)  n=  512  grid -0.810930216   Jensen -0.810930216216
+    B0b torus    (4)  n= 2048  grid -0.810930216   Jensen -0.810930216216
+    B0b torus    (4)  n= 8192  grid -0.810930216   Jensen -0.810930216216
+    SENSE-C      (4)  n=  512  grid -1.383586755   Jensen -1.386290424823
+    SENSE-C      (4)  n= 2048  grid -1.385617460   Jensen -1.386290424823
+    SENSE-C      (4)  n= 8192  grid -1.386125136   Jensen -1.386290424823
+    SENSE-C's grid value drifts (P = (1+x)(1+y)/4 has a CURVE of torus zeros); B0b's does
+    not (no torus zero).  The brief's quadrature warning is weight-scoped, not class-scoped.
+
+====================================================================================================
+== 2B  N1 AGAIN, THE WAY THE CORPUS DEFINES IT: lim (1/N) log|Omega_N| ON FOUR CLASSES ==
+====================================================================================================
+  Direct schedule-B simulation, k = 1..N, Omega_N = prod Z_k, at RANDOM generic (f,c).
+carrier                                   (f,c)          N=1e5          N=1e6           m(P)       dev
+B0b torus    (4)   (-2.27705,+1.89051)   -0.810940559   -0.810928670   -0.810930216  1.55e-06
+B0b torus    (4)   (+0.60216,+1.48182)   -0.810935053   -0.810929985   -0.810930216  2.31e-07
+B4  spindle  (4)   (+0.24848,-0.20368)   -0.693179774   -0.693149213   -0.693147181  2.03e-06
+B4  spindle  (4)   (-0.65894,-0.44740)   -0.693159010   -0.693146821   -0.693147181  3.59e-07
+B1  K1 (3 class)   (-0.10901,+2.01281)   -0.756549462   -0.756569528   -0.756573586  4.06e-06
+B1  K1 (3 class)   (+2.48229,-2.81030)   -0.756561146   -0.756569945   -0.756573586  3.64e-06
+  N1 HOLDS ON FOUR-CLASS CARRIERS.  Nothing in the identification uses p00 = 0, three
+  classes, or K1's incidence: it is Jensen + Weyl on the character lattice.
+
+====================================================================================================
+== 2C  N3 -- THE HAAR-NULL INVERSION, ON A FOUR-CLASS CARRIER ==
+====================================================================================================
+  N3: the rate is invariant under EVERY absolutely continuous connection measure, because
+  the resonance set {(f,c) : rank L > 0} is Haar-null.  Test: 40 random (f,c) on B0b.
+  40 random connections, N=4e5:  mean -0.810932435  sd 1.02e-05  max|dev from m(P)| 4.69e-05
+  RESONANT points on the same carrier (rank L > 0), same N, same code path:
+    c = f      (uv = 1)                            -0.466321458   dev 3.45e-01
+    c = -f     (u = v)                             -0.810930797   dev 5.80e-07
+    f = 2.0, c = 1.1 (S3/S4 headline, -11f+20c=0)  -0.810931182   dev 9.66e-07
+    f = pi/2, c = 3pi/2 (S1 order 4)               -0.732028021   dev 7.89e-02
+  The resonant points are exactly where the rate departs, and they are Haar-null.  N3's
+  statement uses only that there are TWO designated holonomies -- CARRIER-INDEPENDENT
+  given a two-loop designation.  It says nothing about class occupancy.
+
+====================================================================================================
+== 2D  N2 -- THE MULTISET THEOREM.  ARM DIFF, THEN THE ISOLATION OF ITS REAL HYPOTHESIS ==
+====================================================================================================
+  THE REGISTRAR PREDICTED D4 (order 8) off K1 and REFUTED HIS OWN PREDICTION: all 24 agree.
+  He named the operative hypothesis REAL NON-NEGATIVITY.  This leg moves the COEFFICIENT
+  FIELD one step at a time and reads which permutations survive each step.
+
+  ARM DIFF -- the coefficient vectors actually integrated (they are pairwise distinct):
+    non-neg real  B0b  (4/9,2/9,1/9,2/9)  [0.4444 0.2222 0.1111 0.2222]
+    non-neg real  B4   (1/6,1/6,1/6,3/6)  [0.1667 0.1667 0.1667 0.5   ]
+    non-neg real  generic               [0.31 0.17 0.29 0.23]
+    REAL, one NEGATIVE entry            [ 0.55 -0.2   0.4   0.25]
+    REAL, two NEGATIVE entries          [-0.31  0.62 -0.17  0.86]
+    COMPLEX, generic                    [0.4+0.1j  0.2-0.3j  0.3+0.25j 0.1+0.4j ]
+    COMPLEX, phases only                [ 1.    +0.j      0.7648+0.6442j -0.5048+0.8632j  0.2675-0.9636j]
+
+  arm                                      24-perm spread   #distinct values (1e-12)
+  non-neg real  B0b  (4/9,2/9,1/9,2/9)          4.441e-16                          1
+  non-neg real  B4   (1/6,1/6,1/6,3/6)          0.000e+00                          1
+  non-neg real  generic                         1.556e-11                          3
+  REAL, one NEGATIVE entry                      8.200e-12                          3
+  REAL, two NEGATIVE entries                    5.551e-17                          1
+  COMPLEX, generic                              2.975e-01                          6
+  COMPLEX, phases only                          5.007e-01                          5
+
+  WHICH PERMUTATIONS SURVIVE, per arm (index order p00,p10,p01,p11):
+    non-neg real  B0b  (4/9,2/9,1/9,2/9)  |G| = 24
+    non-neg real  B4   (1/6,1/6,1/6,3/6)  |G| = 24
+    non-neg real  generic               |G| = 24
+    REAL, one NEGATIVE entry            |G| = 24
+    REAL, two NEGATIVE entries          |G| = 24
+    COMPLEX, generic                    |G| = 8
+    COMPLEX, phases only                |G| = 8
+
+  READ.  Reality of the coefficients is sufficient and NON-NEGATIVITY IS NOT NEEDED:
+  |a + b e^{it}| = |b + a e^{it}| pointwise requires only conj(a)b = conj(b)a, i.e. ab REAL.
+  For real a,b of ANY sign that holds.  The registrar's name 'REAL NON-NEGATIVITY' is one
+  hypothesis too strong; the operative one is REALITY (equivalently: p_ab is a measure on
+  the class set, whose weights are real by construction on every carrier).

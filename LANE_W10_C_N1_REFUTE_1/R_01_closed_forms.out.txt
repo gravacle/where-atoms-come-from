@@ -1,0 +1,73 @@
+====================================================================================================
+R_01 SECTION 1 — THEOREM R1 APPLIED.  WHICH LANE-C VALUES ARE CLOSED FORMS AT ALL?
+====================================================================================================
+  ready state            hi       lo    hi*lo                        closed form?  lane C's quoted digits
+  B0b  SENSE U          1/3      1/9     1/27  -0.810930216216328764  [A = p00+p10 x]   -0.810930216216  (S4:599 / C-2)
+  B4   SENSE U         -1/3     -1/3      1/9  -0.693147180559945309  [B = p01+p11 x]   -0.693147181  (S4:582 / C-2)
+  SENSE C 4cls            0        0        0  -1.38629436111989062  [A = p00+p10 x]   -1.386294361120  (S4:582 / C-6)
+  K1   SENSE U         -1/5      1/5    -1/25     NO — branches cross, QUADRATURE   -0.756573586  (S4:582 control)
+  B0b* SENSE U         -1/3      1/9    -1/27     NO — branches cross, QUADRATURE   -0.987918288038  (C-5)
+  pX  (4,2,3,1)/10      1/5        0        0  -0.916290731874155065  [A = p00+p10 x]   -0.916291  (C-10)
+
+  READ THE TABLE.  FOUR of the six are closed forms by THEOREM R1, including B4, pX and
+  SENSE C, NONE of which is on lane C's reversal locus.  (K1 crosses, but K1 is THREE-class:
+  with p00 = 0 the polynomial is a monomial times a 3-term one and Cassaigne-Maillot applies,
+  which is how S4 got it.  B0b* -- the carrier lane C had to BUILD to make the hypothesis bite
+  -- is genuinely four-term AND crossing, and is the one value in the whole lane that needs
+  quadrature.)  Lane C's C-2 attributes B0b's exactness to the reversal identity |a+bx|=|b+ax|;
+  that identity is TRUE and is NOT the mechanism -- B0b is exact because ONE BRANCH DOMINATES,
+  which is C-3's own criterion negated.  The reversal locus has measure ZERO in the simplex;
+  the dominance set has measure 3/4.  SO S4:599's sentence "genuinely 4-term and does not
+  factor, QUADRATURE ONLY" is refuted for B0b by a condition that holds on 3/4 of ready states,
+  and would have been CORRECT on lane C's own B0b*.
+
+====================================================================================================
+R_01 SECTION 2 — THE DIGIT AUDIT.  mp.dps = 60.  Exact values to 40 places.
+====================================================================================================
+  log(4/9)      B0b          = -0.810930216216328763956026230928698273144
+  -log 2        B4           = -0.6931471805599453094172321214581765680755
+  -log 4        SENSE C      = -1.386294361119890618834464242916353136151
+  log(2/5)      pX           = -0.9162907318741550651835272117680110714501
+  (1/4)log(5/243) B0b fin    = -0.970905882726612020593866712846610220928
+  -(3/4) log 3  B4 finite    = -0.8239592165010822685464339276918942784856
+
+  AGAINST WHAT LANE C AND S4 PRINT:
+    S4:599  B0b  quotes  -0.810930216216 (12 dp)      |exact - quoted| =    3.288e-13   half-ulp of last printed place =    5.0e-13   CORRECTLY ROUNDED: True
+    S4:582  B4   quotes  -0.693147181    ( 9 dp)      |exact - quoted| =    4.401e-10   half-ulp of last printed place =    5.0e-10   CORRECTLY ROUNDED: True
+    S4:582  SENSE C quotes -1.386294361120 (12dp)     |exact - quoted| =    1.094e-13   half-ulp of last printed place =    5.0e-13   CORRECTLY ROUNDED: True
+    C-4     B0b finite order -0.970905883             |exact - quoted| =    2.734e-10   half-ulp of last printed place =    5.0e-10   CORRECTLY ROUNDED: True
+    C-4     B4  finite order -0.823959217             |exact - quoted| =    4.989e-10   half-ulp of last printed place =    5.0e-10   CORRECTLY ROUNDED: True
+    C-10    pX  m(P)         -0.916291                |exact - quoted| =     2.681e-7   half-ulp of last printed place =     5.0e-7   CORRECTLY ROUNDED: True
+    WORST (|exact-quoted| / half-ulp) over all six = 0.997835   (must be <= 1)
+
+====================================================================================================
+R_01 SECTION 3 — THEOREM R1 TESTED AGAINST QUADRATURE ON 200000 RANDOM READY STATES.
+            float64 Jensen at n = 2^16 vs the one-line closed form.  Seed 20260816+101.
+====================================================================================================
+  DOMINANCE ARM   (hi*lo >= 0): 20000 draws   max|closed - Jensen(2^16)| = 4.441e-15   median = 5.551e-17
+  CROSSING ARM    (hi*lo <  0): 20000 draws   max|WRONG formula - Jensen| = 6.473e-01   median = 8.392e-02
+  fraction of the 200000 draws in the crossing (quadrature-needed) arm = 0.249945   [Theorem: EXACTLY 1/4]
+  The dominance arm agrees to quadrature accuracy on every draw; the crossing arm does
+  not, by a median of ~1e-2.  THE ARMS ARE NOT BYTE-IDENTICAL AND THE CONTROL IS NOT VACUOUS:
+  the SAME formula is applied in both and only the criterion's sign moves.
+
+====================================================================================================
+R_01 SECTION 4 — HOW BAD IS THE TRAPEZOID WHERE QUADRATURE IS ACTUALLY NEEDED?
+            The corner (crossing) gives n^-2; the log singularity gives n^-1.
+====================================================================================================
+  B0b* corner at cos t = -0.92857142857142857143  (t = 2.761341446896859723)
+  B0b* m(P) by CORNER-SPLIT Gauss-Legendre, dps=60: -0.98791828803849249056811480915
+       lane C prints -0.987918288038 ; difference = 4.925e-13
+
+           n      B0b* corner: |trap - ref|     SENSE C log-sing: |trap - (-log4)|
+  2^8 =    256                      3.088e-05                              2.708e-03
+  2^10=   1024                      9.984e-07                              6.769e-04
+  2^12=   4096                      5.306e-08                              1.692e-04
+  2^14=  16384                      6.024e-09                              4.231e-05
+  2^16=  65536                      1.669e-10                              1.058e-05
+  2^18= 262144                      6.491e-12                              2.644e-06
+  2^20=1048576                      6.769e-13                              6.610e-07
+  Ratios halve per doubling for SENSE C (n^-1: log singularity) and quarter for B0b*
+  (n^-2: Lipschitz corner).  THREE regimes, and lane C's self-flag calls the taxonomy 'fitted,
+  not proved'.  It is not fitted here: the corner is EXHIBITED at cos t above, and the
+  singularity is the whole circle x = -1.

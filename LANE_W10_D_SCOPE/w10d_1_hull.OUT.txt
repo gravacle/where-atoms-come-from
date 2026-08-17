@@ -1,0 +1,66 @@
+====================================================================================================
+ARM DIFF FIRST.  The corpus's commonest FATAL defect is two byte-identical arms reported
+as a confirmation.  These are the character sets actually handed to the SAME evaluator:
+   B1  K1 as handed          occupied = ('10', '01', '11')
+   B1q K1 + spectator        occupied = ('00', '10', '01')
+   B1p K1-bridged            occupied = ('10', '01')
+   B0b ring torus, meeting   occupied = ('00', '10', '01', '11')
+   B4  spindle               occupied = ('00', '10', '01', '11')
+   DISTINCT ARMS: 4 of 5 -- B0b and B4 are THE SAME ARM for this criterion (same occupied set); that is reported
+   as one arm below, not as two confirmations.
+====================================================================================================
+
+== 1A  FIRING REGION, f->-f, c->-c, f<->c  (200000 draws, seed 20260816) ==
+carrier                    |S|      fire  f->-f flips  c->-c flips  f<->c flips
+B1  K1 as handed             3  0.250700        99785        99785            0
+B1q K1 + spectator           3  0.250700        99785        99785            0
+B1p K1-bridged               2  0.000000            0            0            0
+B0b ring torus, meeting      4  0.498925            0            0            0
+B4  spindle                  4  0.498925            0            0            0
+
+  READ.  Three classes: the verdict moves under f->-f AND under c->-c, at ~half the
+  grid; four classes: 0 of 200000 under either.  The exchange f<->c moves NEITHER, on
+  three OR four classes -- so 'distinguishes curvature from flat holonomy' was never a
+  distinction between the two ROLES even on K1; it is a sensitivity to the SIGN of each,
+  and THAT is what four classes destroys.  Recorded because it narrows W-09's finding.
+
+== 1B  THE EXACT VALUES, NOT MEASUREMENTS ==
+  Wendel(1962), N=3 points, d=2:  P(0 in hull) = 1 - 0.75 = 0.25  = 1/4 EXACTLY
+     (three occupied classes divide by one character to {1, e^{i a}, e^{i b}} with (a,b)
+      jointly uniform on T^2 -- checked below by exhibiting the reduction for each set)
+     B1  K1 as handed       divide by chi_10: angles become ['chi_10/chi_10', 'chi_01/chi_10', 'chi_11/chi_10']
+     B1q K1 + spectator     divide by chi_00: angles become ['chi_00/chi_00', 'chi_10/chi_00', 'chi_01/chi_00']
+
+  FOUR CLASSES closed form  0 in conv{1,u,v,uv} <=> cos f + cos c <= 0 :  agrees on 200000 of 200000
+     and (f,c) -> (pi-f, pi-c) preserves the uniform measure while flipping the sign of
+     cos f + cos c, so the region is 1/2 EXACTLY.  measured 0.498925
+  BOTH VALUES ARE EXACT.  W-09's ruling is REPRODUCED from an independent implementation
+  with a second, structurally different hull algorithm agreeing on every draw.
+
+== 1C  THE QUANTIFIER, ON A FOUR-CLASS CARRIER'S OWN PUBLISHED WEIGHTS ==
+  W-01 is registered at REGISTER_V001.md:43 as 'vanishes IFF 0 lies in the convex hull'.
+  HULL is an EXISTENCE statement over ready states; VANISHES is a statement about ONE.
+  B0b      p=[0.4444 0.2222 0.1111 0.2222]  hull fires 0.4989 of the grid;  min_grid |Z_1| = 1.111146e-01
+  B4       p=[0.1667 0.1667 0.1667 0.5   ]  hull fires 0.4989 of the grid;  min_grid |Z_1| = 2.721663e-01
+  B1       p=[0.  0.4 0.4 0.2]  hull fires 0.2507 of the grid;  min_grid |Z_1| = 5.537899e-04
+  SENSE-C  p=[0.25 0.25 0.25 0.25]  hull fires 0.4989 of the grid;  min_grid |Z_1| = 2.009667e-07
+  On B0b's and B4's OWN weights the hull says 'fires' on half the connections and the
+  actual overlap |Z_1| is bounded away from zero on the WHOLE grid.  The gap is not a
+  measure-zero technicality off K1: it is half the parameter space.
+
+== 1D  WHY -- AND IT IS EXACT, NOT NUMERICAL ==
+  P(x,y) = (p00 + p01 y) + x (p10 + p11 y) has a zero on T^2 iff
+  |p00 + p01 y| = |p10 + p11 y| for some |y|=1, i.e. iff
+     (p00^2+p01^2-p10^2-p11^2) + 2(p00 p01 - p10 p11) cos t = 0  has a root with |cos t|<=1.
+  B0b      A=+0.111111 B=+0.000000   no cos t term; no root
+  B4       A=-0.222222 B=-0.111111   cos t = -2.000000  ->  NO ROOT
+  B1       A=-0.040000 B=-0.160000   cos t = -0.250000  ->  ROOT EXISTS
+  SENSE-C  A=+0.000000 B=+0.000000   no cos t term; identically zero
+  B0b and B4 have NO torus zero of P at their own published weights.  The four-class
+  'firing region 1/2' is a statement about which (f,c) admit SOME firing state, and on
+  these two carriers the state that would fire is NOT the one the carrier hands you.
+
+  NOTE AGAINST THE BRIEF I WAS GIVEN: 'a four-class P HAS torus zeros' is FALSE as a
+  general statement.  It is true at SENSE-C (1/4,1/4,1/4,1/4), where P factors as
+  (1+x)(1+y)/4 and the zero set is a CURVE, and false at both four-class carriers' own
+  SENSE-U weights.  Torus zeros are a property of the WEIGHTS, not of the class count.

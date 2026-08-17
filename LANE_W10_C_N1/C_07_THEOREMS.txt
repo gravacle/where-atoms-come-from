@@ -1,0 +1,396 @@
+LANE W-10 / C — THE STATEMENTS, WITH THEIR PROOFS, THEIR HYPOTHESES AND THEIR VACUITIES.
+Every number quoted here is produced by C_01..C_06 in this directory and is in the .out.txt
+files beside them.  Precision: IEEE double unless a line says EXACT.
+
+=============================================================================================
+C1.  THE IDENTIFICATION ON FOUR CLASSES.  HOLDS — AND IS A CONTROL THAT COULD NOT HAVE FAILED.
+=============================================================================================
+
+  CLAIM.  On B0b and B4, built from their real incidence, for every connection and every ready
+  state and every k >= 0,     Z_k := <M_dF^k s, M_c^k s>  =  P(u^k, v^k),
+  P(x,y) = p00 + p10 x + p01 y + p11 xy,  u = conj(W_F), v = W_C, p_ab = sum_{v in class ab}|s_v|^2.
+
+  ESTABLISHED.
+    EXACT, Fraction Gaussian rationals, Pythagorean unit connections, 300 cases across B0b, B4
+    and K1, k = 0..24:  WORST RESIDUAL max(|Re|,|Im|) = 0 EXACTLY.        [C_02 leg A]
+    float64, 200 random connections x random ready states x k = 0..64:
+       B0b 4.300e-15   B4 7.557e-15   K1 3.625e-15  over 13000 cases each.  [C_02 leg B]
+    Convention table on a FOUR-class carrier (M1 T1 ran it on K1 only):
+       A u=conj(W_F), v=W_C   dev 1.97e-15 (B0b) / 5.07e-15 (B4)   <- convention of record
+       B u=W_F,       v=W_C   dev 1.73e+00 / 1.92e+00, and wrong in modulus too (6.9e-01/8.5e-01)
+       C u=W_F,   v=conj(W_C) dev 1.71e+00 / 1.93e+00, but |Z| identical (1.78e-15/5.11e-15)
+    Full gauge action, connection and section moving together: 2.82e-14 (B0b), 2.41e-14 (B4).
+
+  AND ITS VACUITY, STATED BEFORE THE VERDICT.  M_gamma is DIAGONAL BY DEFINITION on any
+  carrier, so grouping the vertices by their membership pair produces the four monomials of P
+  on any carrier whatever.  THE CONTROL COULD NOT HAVE FAILED.  W-08 M1's ruling that this is
+  "not a fact about K1" is CONFIRMED, and the confirmation carries no information about
+  carriers: it is an identity of the definition.  What four classes add is only that the p00
+  monomial is now occupied.
+
+  WHAT IS NOT VACUOUS, AND IT REFUTES A LOOSER READING.  [C_02 leg E]
+  Replace the diagonal M_gamma by the EDGE-TRANSPORT operator T around the SAME loop (S3 sec2.4,
+  the object COR-F exhibits when it strikes "every loop transport is a diagonal unitary").  One
+  variable moves; carrier, connection, ready state, k-range and evaluator are identical.
+       arm 1 diagonal   worst |Z_k - P(u^k,v^k)| = 1.6e-15 (B0b), 3.4e-15 (B4), 1.7e-15 (K1)
+       arm 2 transport  worst |Z_k - P(u^k,v^k)| = 1.27e+00, 1.89e+00, 1.92e+00
+       arms differ by   1.27e+00, 1.89e+00, 1.92e+00       (non-vacuous by construction)
+  SO: THE IDENTIFICATION IS A FACT ABOUT THE DEFINITION OF THE BRANCH OPERATOR, NOT ABOUT THE
+  CARRIER AND NOT ABOUT THE CLASSES.  N1 must say so; "on a gauge-theoretic carrier" overstates
+  it, because the carrier is doing no work.  This is N4's vacuity finding reaching N1.
+
+  ALSO ESTABLISHED, AND IT COULD HAVE FAILED (COR-K's defect class).  B0b, B4 and K1 rebuilt
+  from d1, d2: V, E, F, chi, b0, b1, b2, invariant/curvature/flat split, d1.d2 = 0, gF bounds,
+  gC does not, the two loops independent, and the class multisets — ALL THREE ROWS REPRODUCE
+  S4:519 and S4:575-590 exactly.                                            [C_01]
+
+=============================================================================================
+C2.  B0b's RATE IS log(4/9) EXACTLY, AND S4:599's REASON FOR CALLING IT QUADRATURE IS FALSE.
+=============================================================================================
+
+  S4:599: "genuinely 4-term and does not factor.  QUADRATURE ONLY, -0.810930216216."
+  W-03 corrected the value to log(4/9) without giving a mechanism.  THE MECHANISM:
+
+  RECIPROCITY.  For |x| = 1 and real a, b:  |a + b x| = |x| |a xbar + b| = |b + a x|.
+  Hence the two Jensen branches |p00 + p10 x| and |p01 + p11 x| have CONSTANT ratio iff
+      (p00,p10) prop (p01,p11)      [P FACTORS]                         or
+      (p00,p10) prop (p11,p01)      [THE REVERSAL LOCUS — P does NOT factor]
+  (the stationarity condition (p00^2+p10^2) p01 p11 = (p01^2+p11^2) p00 p10 reduces to
+   t + 1/t = s + 1/s with t = p00/p10, s = p01/p11, whose solutions are s = t and s = 1/t).
+
+  THEOREM (REVERSAL LOCUS).  If (p00,p10) = kappa (p11,p01) then
+       m(P) = log max(kappa, 1) + log max(p01, p11)          — CLOSED FORM, TWO TERMS.
+  B0b: (p00,p10) = (4,2)/9 = 2 (2,1)/9 = 2 (p11,p01), kappa = 2, so
+       m(P) = log 2 + log(2/9) = log(4/9) = -0.810930216216328763956026230928698273144.  EXACT.
+  B4: not on the reversal locus, but |1+3x|^2 - |1+x|^2 = 8 + 4 cos t >= 4 > 0, so the second
+       branch dominates everywhere and m(P) = log 3 - log 6 = -log 2.  EXACT.
+
+  "DOES NOT FACTOR" NEVER IMPLIED "QUADRATURE ONLY".  The reversal locus is a second exact
+  locus disjoint from the factoring one, and B0b sits on it.  A THIRD independent case is
+  exhibited at C_05 leg 4: pi = (4,2,3,1)/10 does not factor, HAS a torus zero, and still has
+  m(P) = log(2/5) exactly, because one Jensen branch dominates weakly.
+
+  AND THE RECIPROCITY IS THE SAME FACT THE REGISTRAR FOUND THIS ROUND.  |a+bx| = |b+ax| on
+  |x| = 1 is exactly what supplies the transpositions (00 10) and (01 11) in W-03's multiset
+  theorem.  B0b's exactness and the multiset theorem's real hypothesis are ONE identity.
+
+  DIGITS DEFENSIBLE: as many as asked for.  The value is a closed form in elementary constants.
+  All twelve of S4's published places are correct.  The Jensen trapezoid reaches float64
+  epsilon at n = 2^8 = 256 and holds to n = 2^24 (|m - closed| <= 3.3e-16 every row); mpmath at
+  dps = 50 agrees to 6.7e-51.                                              [C_03 sec 2, 3]
+
+  CONVERGENCE OF THE JENSEN REDUCTION, THE THREE REGIMES — computed, not asserted [C_03 sec 2]:
+    dominant branch zero-free and no branch crossing  -> real-analytic -> SPECTRAL
+         B0b: |err| <= 3.3e-16 from n = 2^8;  B4: same
+    branches cross at isolated x (P has isolated torus zeros) -> Lipschitz kink -> ~ n^-2
+         K1 SENSE U: 1.1e-06 at 2^8  ->  6.2e-15 at 2^24
+    both branches vanish together (P vanishes on a whole circle) -> log singularity -> ~ n^-1
+         SENSE C four-class: 2.7e-03 at 2^8  ->  4.1e-08 at 2^24
+  A 2D grid on log|P| is fine in the first regime (B0b, B4 agree to 1e-15 at 256x256) and is
+  noise-limited only in the third.  S4's "QUADRATURE ONLY, stable to 12 places" was CORRECT
+  ARITHMETIC ON A FALSE PREMISE.
+
+=============================================================================================
+C3.  THE THREE LIMITS, ON BOTH FOUR-CLASS CARRIERS.  ALL THREE EXIST.  TWO ARE NOT m(P).
+=============================================================================================
+  K = 1e7, float64, exact int64 phase reduction, ready state and evaluator held fixed.  [C_04]
+
+    B0b (4,2,1,2)/9,  m(P) = log(4/9) = -0.810930216216
+      DIOPHANTINE  -2^(1/3), 4^(1/3)     -0.810930271   -> m(P),   gap 5.4e-08   AGREES
+      RESONANT     f=2.0, c=1.1          -0.810930225   -> subtorus -0.810930204535, gap 2.1e-08
+                                          (the subtorus value differs from m(P) by 1.17e-08)
+      FINITE ORDER W_F=-1, W_C=-i        -0.970905883   = (1/4) log(5/243) EXACTLY
+                                          gap to m(P) 1.600e-01               DOES NOT AGREE
+
+    B4 (1,1,1,3)/6,  m(P) = -log 2 = -0.693147180560
+      DIOPHANTINE                        -0.693147237   gap to m(P) 5.6e-08     AGREES
+      RESONANT                           -0.693147188   -> subtorus -0.693147181044
+      FINITE ORDER                       -0.823959217   = -(3/4) log 3 EXACTLY
+                                          gap to m(P) 1.308e-01               DOES NOT AGREE
+
+  ON B0b AND B4 THIS IS A CONTROL THAT COULD NOT HAVE FAILED IN THE DIRECTION THE BRIEF
+  EXPECTS.  Neither P has a zero on T^2 (C4 below), so log|P| is CONTINUOUS and Weyl on the
+  orbit closure H gives convergence for EVERY connection with no Diophantine input.  What
+  separates the three rows is only WHICH limit — m(P) when H = T^2, the subtorus Mahler measure
+  when H is a circle, the finite-orbit average when H is finite.  That is M1's T4, re-run.
+
+  AND THE COUNT THAT MATTERS FOR PUBLICATION: of the corpus's two distinguished connections,
+  BOTH give a limit that is not m(P), on BOTH four-class carriers.  N1's identification
+  lambda = m(P) is false at every connection this corpus has ever published, on every carrier
+  it has ever run.  M1 established that on K1; it is now established off K1.
+
+  S4's OWN CROSS-CHECK REPRODUCED TO ALL NINE PRINTED DIGITS.  At S4's verification connection
+  f = 1.0, c = sqrt(2), N = 2e6, this lane's independent code returns B0b -0.810929681 and
+  B4 -0.693146936 — S4:606-608's two figures, digit for digit.
+
+=============================================================================================
+C4.  THE HYPOTHESIS QUESTION.  THE BRIEF'S PREMISE IS FALSE, AND THE TRUE CRITERION IS EXACT.
+=============================================================================================
+
+  THE PREMISE, CORRECTED.  "A four-class P HAS torus zeros (W-09: the firing region is exactly
+  1/2)" conflates two sets:
+     (i)  {(f,c) : SOME non-negative weight vector annihilates Z_1} — W-09's set, measure 1/2
+          for four-class occupancy and 1/4 for three;
+     (ii) {(x,y) in T^2 : P_pi(x,y) = 0} for a FIXED pi — the set the integrability question is
+          about, measure ZERO for every pi (two points generically, one circle degenerately).
+  (i) is the UNION over pi of (ii).  A union of null sets is not null.  FOUR-CLASS OCCUPANCY IS
+  NOT THE VARIABLE THAT TURNS THE HYPOTHESIS ON.
+
+  THE CRITERION (proved, C_03 sec 4; verified 20000/20000 against a grid sign-test).
+       P has a zero on T^2   <=>   ((p00+p10) - (p01+p11)) * (|p00-p10| - |p01-p11|)  <=  0.
+  PROOF.  P = A(x) + B(x) y; min over |y|=1 of |A+By| is ||A|-|B||, so a torus zero exists iff
+  |A| = |B| somewhere.  |A|^2 and |B|^2 are AFFINE and INCREASING in cos t, so |A| sweeps
+  [|p00-p10|, p00+p10] and |B| sweeps [|p01-p11|, p01+p11] monotonically together; they meet
+  iff the endpoints interleave.  []
+  It reduces on K1 (p00 = 0) to (2p10-1)(1-2p01)(1-2p11) <= 0, i.e. M1's Z1 max(p) <= 1/2.
+
+  THE MEASURE OF THE ZERO-HAVING SET IS EXACTLY 1/4 — FOR THREE CLASSES AND FOR FOUR ALIKE.
+  Measured 0.250464 (four-class) and 0.249925 (three-class) over 4e6 uniform draws each, and
+  PROVED for four classes by the substitution s = p00+p10, d1 = p00-p10, d2 = p01-p11:
+  the condition is (2s-1)(|d1|-|d2|) <= 0, conditional probability (1-s)/(2s) for s > 1/2 and
+  s/(2(1-s)) for s < 1/2, integrated against 4s(1-s)/(2/3) gives (3/2)(1/12+1/12) = 1/4.  []
+  MOVING FROM THREE CLASSES TO FOUR DOES NOT CHANGE HOW OFTEN log|P| IS SINGULAR.
+
+  BOTH FOUR-CLASS CARRIERS THE CORPUS OWNS ARE ZERO-FREE UNDER SENSE U.
+     B0b  hi = +1/3, lo = +1/9   ->  no zero, min|P| = 1/9 exactly
+     B4   hi = -1/3, lo = -1/3   ->  no zero, min|P| = sqrt(6)/9 = 0.2721655269759087
+          (attained at cos t = -2/3, an INTERIOR critical point — see defect D-5)
+  SO THE LOAD-BEARING QUESTION DOES NOT BITE ON EITHER.  Running it on them is vacuous, and
+  this lane records that rather than reporting the resulting nulls as confirmations.
+
+  WHAT DOES TURN IT ON — AND IT IS A CARRIER-LEVEL VARIABLE THE CORPUS NEVER NAMED.  [C_05 leg 2]
+  B0b*: THE SAME 3x3 torus complex, the SAME gamma_F, and ONE THING MOVED — gamma_C is the
+  (1,1) diagonal cycle instead of the row-0 horizontal cycle.  Both are non-bounding; topology,
+  incidence, faces, gauge count and FOUR-CLASS OCCUPANCY are identical.
+       B0b   classes {00:4,10:2,01:1,11:2}  pi = (4,2,1,2)/9   NO zero    m(P) = -0.810930216216
+       B0b*  classes {00:2,10:1,01:3,11:3}  pi = (2,1,3,3)/9   HAS zero   m(P) = -0.987918288038
+  THE OPERATIVE VARIABLE FOR THE HYPOTHESIS IS THE DESIGNATED LOOP'S VERTEX SET, i.e. the
+  PUSHFORWARD, NOT THE CARRIER AND NOT THE CLASS COUNT.
+
+  THE FAILURE IS ALREADY IN S4's PUBLISHED TABLE.  [C_05 leg 3, EXACT]
+  S4:582 publishes lambda(SENSE C) = -1.386294361120 for BOTH four-class carriers.  At S1 sec6's
+  OWN published connection (W_F = -1, W_C = -i), with that ready state,
+        Z_k = 0 EXACTLY unless k = 0 mod 4  (odd k through 1+u^k = 0; k = 2 mod 4 through
+        1+v^k = 0), so Omega_N = 0 for every N >= 1 and lambda = -infinity.
+  float64 does NOT see it: C_04 reports a finite -28.088521944 because |Z_2| evaluates to
+  4.13e-17 rather than 0.  A LANE TRUSTING float64 WOULD PUBLISH A FINITE WRONG NUMBER.
+  This is the same defect class as COR-E and COR-H (window artefacts) one level deeper: not a
+  window in k but a window in PRECISION.
+
+  THE FINITE-N FAILURE, SWEPT, ON A NON-FACTORING FOUR-CLASS P.  [C_05 leg 4]
+  pi = (4,2,3,1)/10 — four classes, does not factor, torus zero at (-1,-1) EXACTLY, and
+  m(P) = log(2/5) EXACTLY (the first Jensen branch dominates weakly).
+  Connection alpha = 1/2 + delta sqrt2, beta = 1/2 + delta sqrt3.  L = {0} PROVED (1, sqrt2,
+  sqrt3 independent over Q), so the orbit is dense and equidistributed in T^2 — every hypothesis
+  of the corpus's "orbit dense in T^2 therefore the average converges to m(P)" clause holds.
+
+     delta   N=100      N=4000     N=1e4      N=1e6      N=1e7      m(P)
+     1e-3    -1.102680  -0.914298  -0.916182  -0.916309  -0.916291  -0.916291
+     1e-6    -4.541667  -2.700612  -2.242592  -0.917129  -0.916206  -0.916291
+     1e-9    -7.995544  -6.154476  -5.696382  -3.393832  -2.242627  -0.916291
+     1e-12  -11.449422  -9.608353  -9.150260  -6.847709  -5.696417  -0.916291
+     1e-15  -14.903434 -13.062239 -12.604141 -10.301587  -9.150294  -0.916291
+
+  CROSSOVER LAW, MEASURED: the first N within 0.01 of m(P) is N = 1/delta to three figures at
+  delta = 1e-3 .. 1e-7 (ratio N*delta = 1.000 in all five rows).
+  AT N = 4000 — S3's OWN MEASUREMENT WINDOW — delta = 1e-9 returns -6.15 against the true
+  -0.9163, a factor of 6.7.  The deficit grows without bound as delta -> 0 at EVERY fixed N.
+  NO N SUFFICES WITHOUT A HYPOTHESIS, and no extra sampling helps: the failure is not statistical.
+
+  THE LIMIT FAILURE, RIGOROUSLY, ON A FOUR-CLASS READY STATE.  [C_05 leg 5]
+  gamma = 2^-3 + 2^-256 + 2^-b3 + ... with b_{j+1} = 2^(2^b_j); alpha = gamma/2; beta = 4^(1/3).
+  alpha is Liouville, beta is algebraic of degree 3, and L = {0} by Roth's theorem, so the orbit
+  is dense and equidistributed in T^2.  Every term log|Z_k| <= 0 (|Z_k| <= 1, W-08), so
+        (1/q_j) sum_{k <= q_j} log|Z_k|  <=  log|Z_{q_j}| / q_j
+  with no summation at all.  On SENSE C four-class:
+        q_1 = 8       eps_1 = 2^-254        bound  <=  -21.864       m(P) = -1.386  (factor 15.8)
+        q_2 = 2^256   eps_2 = 2^-(2^256)    bound  <=  -2^(2^256) * 0.693 / 1.16e77
+  liminf_N (1/N) sum log|Z_k| = -infinity while m(P) = -log 4 is finite.
+  "THE ORBIT IS DENSE IN T^2, THEREFORE THE AVERAGE CONVERGES TO m(P)" IS A NON-SEQUITUR ON A
+  FOUR-CLASS READY STATE, exactly as M1 showed it is on K1's three-class one.
+
+=============================================================================================
+C5.  NAMING THE THEOREM.  WHAT IS AVAILABLE, WHAT IS NOT, AND WHAT N1 MUST STATE.
+=============================================================================================
+
+  AVAILABLE, AND SUFFICIENT WHEN P IS ZERO-FREE ON T^2:
+    WEYL 1916 (equidistribution) on the orbit closure H, a closed monothetic subgroup of T^2.
+    For CONTINUOUS g, (1/N) sum g(u^k,v^k) -> int_H g dHaar_H with NO further hypothesis.
+    If P has no zero on T^2 then log|P| is continuous and this is the whole theorem.
+    H = T^2 iff L := {(m,n) : u^m v^n = 1} = {0}; then int_H log|P| = m(P).
+
+  AVAILABLE, AND NOT ENOUGH ON ITS OWN:
+    BIRKHOFF'S POINTWISE ERGODIC THEOREM gives convergence for log|P| in L^1 at HAAR-ALMOST
+    EVERY starting point.  The orbit of a SPECIFIED (u,v) is a Haar-null set, so this says
+    nothing about any connection anyone can write down.  This is the gap the corpus walked past.
+    UNIQUE ERGODICITY of an irrational rotation upgrades a.e. to EVERY point for CONTINUOUS
+    integrands only — the same restriction as Weyl.
+
+  AVAILABLE, AND ABOUT A DIFFERENT OBJECT:
+    BOYD 1981 / LAWTON 1983.  lim m(P(x, x^n)) = m(P): the Mahler measures of ONE-PARAMETER
+    SPECIALISATIONS converge to the two-variable one.  Every such quantity is a CONTINUOUS
+    average over a subtorus, never a discrete Birkhoff average.  M1's ruling (d) is CONFIRMED
+    HERE ON A FOUR-TERM P.  Where it IS exactly right: on the rank-one locus, with primitive
+    relation (m,n), H = {(z^n, z^-m)} and
+         lambda_(m,n) = m( p01 + p00 z^m + p11 z^n + p10 z^{m+n} ),
+    a one-variable Mahler measure, and Boyd-Lawton is the statement lambda_(m,n) -> m(P).
+    Verified on B0b's four-term P along the Fibonacci relations (C_06 leg B):
+       (1,1) 3.4e-01 · (2,3) 2.3e-02 · (5,8) 5.9e-05 · (13,21) 5.5e-09 · (21,34) 1.9e-13,
+    reaching the root-finder's float64 noise floor by relation size 34.
+    ROOTS AND QUADRATURE AGREE ON EVERY ROW, so the closed form is not an artefact of either.
+
+  MISSING FROM THE CORPUS AND STILL MISSING AFTER THIS LANE:
+    LIND-SCHMIDT-WARD 1990 — m(P) is the topological entropy of the algebraic Z^2-action whose
+    dual module is Z[x^{+-1},y^{+-1}]/(P).  This is what MAKES lambda = m(P) a statement worth
+    publishing; it is not what makes the limit exist.  W-03's IMPORT AUDIT note should name
+    Lind-Schmidt-Ward for the meaning and Weyl for the convergence, and should DEMOTE Lawton
+    from "the missing theorem" to "the theorem for the rank-one locus only".
+
+  NOT AVAILABLE, AND THIS IS THE HOLE:
+    There is no theorem giving (1/N) sum log|P(u^k,v^k)| -> m(P) from L = {0} alone.  What is
+    needed is a quantitative pair: (i) a discrepancy bound on {(u^k,v^k)} (Erdos-Turan-Koksma
+    supplies it from a homogeneous Diophantine condition on (alpha,beta)), and (ii) an
+    INHOMOGENEOUS Diophantine condition relative to the zero set,
+         dist( (u^k, v^k), Z(P) )  >=  c k^{-tau}   for all k,
+    which is NOT implied by (i) or by L = {0}.  M1 stated this pair on K1; C_05 legs 4 and 5
+    exhibit its necessity on four classes, and C_05 leg 4 measures the price of assuming it
+    away: the crossover N is 1/delta exactly.
+
+  ---------------------------------------------------------------------------------------
+  WHAT N1 MUST STATE TO BE PUBLISHABLE.  THE MINIMAL HONEST FORM:
+  ---------------------------------------------------------------------------------------
+    THEOREM (N1, hypothesised).  Let a carrier carry two designated loops and a U(1) connection
+    at unit charge; let pi = (p00,p10,p01,p11) be the ready state's pushforward onto the four
+    loop-membership classes, P(x,y) = p00 + p10 x + p01 y + p11 xy, u = conj(W_F), v = W_C, and
+    Z_k = <M_dF^k s, M_c^k s> with M_gamma DEFINED as multiplication by W(gamma) on the loop's
+    vertices.  Then Z_k = P(u^k,v^k) identically, and
+         lim_N (1/N) sum_{k<=N} log|Z_k|  =  m(P)
+    PROVIDED
+      (H1) L = {(m,n) in Z^2 : u^m v^n = 1} = {0}     [else the limit exists but is the Haar
+           average over the orbit closure H, which is a subtorus or a finite group — and the
+           two connections this corpus has published are of the second and third kinds];
+      AND EITHER
+      (H2a) P HAS NO ZERO ON T^2, which is decidable from pi alone by
+              ((p00+p10)-(p01+p11)) * (|p00-p10|-|p01-p11|)  >  0
+            — in which case (H1) alone suffices, by Weyl, with no Diophantine input;
+      OR
+      (H2b) the inhomogeneous Diophantine condition dist((u^k,v^k), Z(P)) >= c k^{-tau}
+            together with discrepancy D_N = o(1/(log N)^2).
+    WITHOUT (H2), (H1) IS NOT ENOUGH: C_05 leg 5 exhibits a connection satisfying (H1) whose
+    average has liminf = -infinity.
+    AND THE THEOREM IS ABOUT THE DEFINITION OF M_gamma, NOT ABOUT THE CARRIER (C1): the carrier
+    enters only through pi.  N1 should be stated for an arbitrary finite set of vertices with a
+    membership map to {0,1}^2, and the complex should appear in an example, not a hypothesis.
+
+    PUBLISHABILITY, PLAINLY.  (H2a) is the clause that makes N1 worth writing: it is a decidable
+    inequality on the ready state under which no Diophantine hypothesis is needed at all, and it
+    is new here.  Six to eight pages with (H2a) as the main theorem and (H2b) as the remark is
+    honest.  Six to eight pages asserting lambda = m(P) is not.
+
+=============================================================================================
+C6.  ISOLATION LEDGER.  ONE VARIABLE PER COMPARISON.  ARMS DIFFED, NOT JUST DECLARED.
+=============================================================================================
+ #  comparison                          THE ONE VARIABLE            arms diffed?   result
+ 1  B0b/B4/K1 rebuilt vs S4:519,575     nothing (a reproduction)    n/a            all agree
+ 2  C_02 leg C conventions A/B/C        which of u,v is conjugated  yes, in code    A only
+ 3  C_02 leg E diagonal vs transport    the branch OPERATOR         yes: arms       identification
+                                        (carrier, connection,        differ by       holds in arm 1,
+                                         state, k, evaluator fixed)  1.27-1.92       fails in arm 2
+ 4  C_04 three connections              the connection's arithmetic  yes: all three  three limits,
+                                        (state, carrier fixed)       (alpha,beta)    two != m(P)
+                                                                     printed+asserted
+ 5  C_05 leg 2 B0b vs B0b*              WHICH non-bounding cycle is  yes: gamma_C    zero set
+                                        designated gamma_C           chains printed  appears
+                                        (complex, gamma_F identical) and asserted
+                                        (four-class occupancy same)  unequal
+ 6  C_05 leg 4 delta sweep              delta (approximation quality) yes: 5 values  deficit
+                                        (pi, carrier, N grid fixed)                  unbounded
+ 7  C_06 leg C Boyd-Lawton rate         whether P has a torus zero    yes: 4 pi     READ TWO WAYS
+                                        (relations, evaluator fixed)  printed+asserted  NOT SCORED
+
+ CONTROLS THIS LANE DECLARES VACUOUS RATHER THAN REPORTING AS CONFIRMATIONS:
+   - C1's identification on four classes.  COULD NOT HAVE FAILED (definitional).
+   - C_04's three-connection block on B0b and B4.  COULD NOT HAVE FAILED IN THE BRIEF'S
+     DIRECTION, because both P are zero-free, so Weyl covers all three rows.
+   - The lane's headline question "does the four-class case need Lawton?" is VACUOUS ON THE
+     CORPUS'S OWN FOUR-CLASS CARRIERS and had to be re-posed on B0b* to have content.
+
+=============================================================================================
+C7.  DEFECTS IN THIS LANE, RECORDED RATHER THAN PATCHED.
+=============================================================================================
+  D-1  The first run of C_05 leg 4 computed np.mod(k*(0.5+delta*sqrt2), 1.0) in float64.  At
+       k = 1e7 that product is ~5e6, whose float64 ulp is ~1e-9 — LARGER than the k*delta being
+       measured.  The delta = 1e-12 and 1e-15 rows of the first run were float noise.  Fixed by
+       splitting the phase exactly as (k mod 2)/2 + k*delta; the fix and the reason are in the
+       script's docstring.  The corrected rows differ from the defective ones in the third
+       decimal (e.g. delta=1e-15, N=100: -14.892039 first run vs -14.903434 corrected).
+  D-2  The first run of C_03 section 4 tested the zero-set criterion against a numeric minimum
+       with a 1e-3 threshold and reported 453 disagreements in 200000.  That was a BAD TEST, not
+       a bad criterion: an 8192-node grid cannot land within 1e-3 of a simple zero.  Replaced by
+       (a) analytic-vs-numeric min|P| on the no-crossing draws (max deviation 1.6e-07) and
+       (b) a grid SIGN-CHANGE test on the affine |A|^2-|B|^2, which agrees 20000/20000.
+  D-3  C_03's Jensen node grid originally started at t = 0, which lands exactly on a degenerate
+       P's zero and returned -inf for the SENSE C row.  Nodes are now offset by half a step;
+       the offset is stated in C_00 as a convention, because it is one.
+  D-5  C_07's first draft asserted B4's min|P| = 1/3, the ENDPOINT value of ||A|-|B||, without
+       checking for an interior critical point.  There is one: 3 sqrt(2+2c) = sqrt(10+6c) gives
+       cos t = -2/3 and min|P| = sqrt(6)/9 = 0.2721655269759087, confirmed against a 2e7-node
+       scan.  The verdict (B4 is zero-free) is unchanged; the number was wrong by 22%.
+       ASSERTED-NOT-COMPUTED, the corpus's own recurring defect, committed in this lane.
+  D-4  C_06's power-law fit to the Boyd-Lawton error would have manufactured an exponent for the
+       zero-free rows, whose errors reach the root-finder's float64 floor (~1e-12 at degree 987)
+       by relation size 21-34.  The fit is now restricted to errors above 1e-9 and the floor is
+       printed.  The zero-free slopes (-7.7, -7.6) are fitted over 4-5 points and are NOT a
+       defensible exponent; they are only evidence that the decay is much faster than the ~n^-2
+       of the zero-having rows.
+
+=============================================================================================
+C8.  WHAT THIS LANE DOES NOT ESTABLISH.
+=============================================================================================
+  - Nothing here is lineage-independent of W-07/W-08/W-09.  This is Opus 5 auditing Opus 5.
+    It IS independent of the S1-S4 corpus (all Fable 5).
+  - No carrier is exhibited realising pi = (4,2,3,1)/10 by vertex counts.  It is used as a
+    CLASS-LEVEL ready state, which is the sense S4's own SENSE C column uses, and that is
+    stated at the point of use.  B0b* IS a real carrier and carries the same conclusion.
+  - The inhomogeneous Diophantine condition (H2b) is not proved sufficient here; the proof
+    sketch is M1's (T2 c) and is not re-derived.  What is added is (H2a) and its measure.
+  - No durability verdict is touched.  W-08's T4/durability result rests on Weyl applied to the
+    CONTINUOUS function 1-|P| and is unaffected by everything above.  What is fragile is only
+    the NAMING of the rate as m(P) — and this lane widens that fragility from K1 to four classes.
+  - The Boyd-Lawton rate difference between zero-free and zero-having P READS TWO WAYS and is
+    scored as neither.
+
+=============================================================================================
+C9.  ITEM (3) OF THE BRIEF, AS A TABLE.  S4:574-578's PUBLISHED lambda COLUMN vs THIS LANE.
+=============================================================================================
+  carrier / sense      S4 PUBLISHES        THIS LANE (closed form)          VERDICT
+  ------------------   -----------------   ------------------------------   ---------------------
+  B0b  SENSE U         -0.810930216        log(4/9) = -0.8109302162163288   AGREES to all printed
+                       "QUADRATURE ONLY"                                    places.  The VALUE
+                                                                            stands; the REASON
+                                                                            ("does not factor, so
+                                                                            quadrature only") is
+                                                                            REFUTED — reversal
+                                                                            locus, C2 above.
+  B4   SENSE U         -0.693147181        -log 2 = -0.6931471805599453     AGREES exactly.  S4's
+                       "= log(1/2) EXACTLY"                                 own dominance argument
+                                                                            (0.2222+0.1111 cos y)
+                                                                            is reproduced and is
+                                                                            correct.
+  B0b / B4 SENSE C     -1.386294361120     -log 4 = -1.3862943611198906     AGREES as a MAHLER
+                       "= log(1/4) EXACTLY"                                 MEASURE.  But it is NOT
+                                                                            the rate at S1's own
+                                                                            published connection,
+                                                                            where Z_k = 0 for 3 of
+                                                                            every 4 cells and the
+                                                                            rate is -infinity.
+                                                                            DISCREPANCY, and it is
+                                                                            a hypothesis failure,
+                                                                            not an arithmetic one.
+  S4's direct check    B0b -0.810929681    -0.810929681 (independent code)  AGREES to all NINE
+  f=1.0, c=sqrt2,      B4  -0.693146936    -0.693146936                     printed digits, both.
+  N=2e6
+
+  NO S4 ARITHMETIC IS FOUND WRONG ANYWHERE IN THIS LANE.  What is wrong is one INFERENCE
+  (S4:599) and one SCOPE (the SENSE C four-class rate quoted without its connection hypothesis).
+  That is the corpus's established pattern — "the arithmetic was never the problem" (W-03).

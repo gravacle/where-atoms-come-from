@@ -1,0 +1,77 @@
+LANE W-10 B REFUTE 1 — MATHEMATICS LENS — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane is on this page or in rlib.py.  Nothing here
+imports the lane under attack; b_lib.py is read, never called.
+
+LINEAGE.  Claude Opus 5, like W-07..W-09 and like LANE_W10_B_MULTISET itself.  This is
+NOT a lineage-independent check of that lane.  It is one refuter on one lens.
+
+CLASS ORDER (identical to the lane's, so arrays are comparable at the digit):
+    0 = class 00 (character 1) · 1 = class 10 (u = conj(W_F)) · 2 = class 01 (v = W_C)
+    3 = class 11 (uv).   P(x,y) = p0 + p1 x + p2 y + p3 xy.   lambda = m(P).
+    Z_k = P(u^k, v^k) with u = e^{-i f k}, v = e^{i c k} — the lane's own convention.
+
+WHY THIS LANE EXISTS.  Every number in the lane's LEG B — the complex-coefficient
+experiment its whole attribution finding rests on — is produced by ONE reduction,
+m(P) = (1/2pi) INT log max(|p0+p1 x|, |p2+p3 x|) dt.  Its E1, E2 and E5 are that reduction
+(in y, in x, and in float64); its exact E3 covers only real non-negative DOMINATED arrays;
+its ergodic E4 was run in LEG A only, i.e. on real arrays.  The complex half is therefore
+single-evaluator.  The first job here is to re-run it with evaluators that do not know
+what a Jensen pairing is.
+
+EVALUATORS (rlib.py), all written here:
+  R1 m_grid      the double integral itself, midpoint tensor grid, Richardson in 1/n^2.
+                 No Jensen, no branch analysis, no splitting.  float64.
+  R2 m_erg       the corpus's OWN direct method (S4 sec4.2 schedule-B), f=1.0, c=sqrt(2),
+                 run on COMPLEX arrays — which the lane never did.  float64.
+  R3 m_split     mpmath dps 30, a DIFFERENT decomposition from the lane's:
+                 m = (1/2)[log max(a0,a1)+log max(a2,a3)] + (1/8pi) INT |log(SA/SB)| dt,
+                 whose smooth half is exact Jensen per branch.  Shares the reduction with
+                 the lane, not the code.
+  R4 m_finite    average over a finite orbit; used at S1's order-4 connection, where the
+                 whole rate is ALSO given in closed form and evaluated in Fractions.
+  R5 m_poly_roots  one-variable Mahler measure from numpy.roots; used at S3/S4's exactly
+                 resonant connection.
+Cross-checks published on the pages: R1 vs R2 vs R3 vs exact log(4/9), log(1/2), log(1/4),
+log(2/5); R1/R2/R3 against every block value the lane prints at its B.3.
+
+PRECISION.  R1 and R2 are float64 and are never used for a claim below 1e-6.  R3 is dps 30.
+C.1's order-4 orbit structure and C.3(b)'s domination certificate are EXACT in
+fractions.Fraction.  Where a sweep decides at 1e-4, every near-tie is re-decided at dps 30
+and the count of re-decisions is printed.
+
+SEEDS.  numpy default_rng: 90210 (R2), 5150 (R4 D.2).  R1 and R3 use no randomness.
+
+GRIDS.  R1 Richardson pairs (1024,2048) and (512,1024) as labelled; R3 adaptive.
+D.1 runs 1024/2048/4096 explicitly to decide whether a spread is quadrature.
+
+ISOLATION.  Every section names its one variable in its own header and prints the arrays.
+The two places where an arm of MINE could not have failed are flagged on the page:
+  (i) A.1's B4 row is dominated, so its 24-fold agreement is forced — it is reported as a
+      COUNTEREXAMPLE to the lane's biconditional, which is what a forced value is good for,
+      and never as a confirmation of the multiset theorem.
+  (ii) B.4 is a measure, not a comparison: nothing is held fixed and it is labelled so.
+
+WHAT I DID NOT RE-RUN.  LEG C's carrier construction (B0b/B4 incidence) and LEG C.3's
+edge-transport arm: they are not on this lens.  B-05's pushforward identity is checked
+algebraically on the page (it is one line) and not re-implemented.
+
+SELF-FLAGS, in the order they happened:
+  1. r2's B.4 sweep is DEFECTIVE and is left on the page with its defect.  Two of its
+     three "representative" permutations, (0,1,2,3) and (0,2,1,3), induce the SAME diagonal
+     matching, so two of my three arms were one arm: exactly the ZERO-VARIABLES-MOVED
+     failure the corpus's isolation audit names as its commonest fatal defect, committed by
+     the refuter sent to look for it.  Its printed counts {1:720, 2:3280, 3:0} are the bug.
+     r5 asserts the three representatives are distinct before using them -- which is how it
+     would have been caught -- and supersedes that section.  r2's B.1, B.2 and B.3 do not
+     use those representatives and stand.
+  2. r2's B.3 labelled the lane's four surviving misses "NOT explained by any dominated
+     pairing".  That used the FLUX-INDEPENDENT test |a-b| >= c+d.  The correct test is
+     per-flux, |C0| >= |K(phi)|, and by it all four ARE explained.  Corrected at r5's E.1,
+     not patched out of r2.
+  3. I began by expecting the lane's complex experiment to be wrong, because its complex
+     half has no evaluator that does not assume the Jensen reduction.  It is right: two
+     evaluators that know nothing about Jensen pairings reproduce every block value it
+     prints.  That prediction of mine failed and the failure is on the page at r1's A.1.
+  4. D.1 exists because my first non-vacuous near-return density showed a 2.0e-05 spread
+     across the 24 permutations, which would have refuted the lane's E.2 if reported.  It
+     is quadrature.  It was settled by a convergence test BEFORE being written down.

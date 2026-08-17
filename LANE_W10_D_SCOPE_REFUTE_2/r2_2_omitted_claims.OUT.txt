@@ -1,0 +1,186 @@
+========================================================================================================
+ARM DIFF FIRST.  The carriers, their vertex-class strings, and their SENSE-U weight
+vectors.  Distinctness is checked on the class STRING, which is what every leg below
+actually consumes -- not on the label.
+========================================================================================================
+  B1  K1 as handed    V= 5  classes = 1010010111   p = [0.  0.4 0.4 0.2]
+  B1q + spectator     V= 7  classes = 00101010010101   p = [0.142857 0.428571 0.428571 0.      ]
+  B1p bridged         V= 6  classes = 101010010101   p = [0.  0.5 0.5 0. ]
+  B1s subdivided      V=11  classes = 1010101010010101010111   p = [0.       0.454545 0.454545 0.090909]
+  B0a torus disjoint  V= 9  classes = 000010101010010101   p = [0.222222 0.444444 0.333333 0.      ]
+  B0b torus meeting   V= 9  classes = 000000001010011111   p = [0.444444 0.222222 0.111111 0.222222]
+  B4  spindle         V= 6  classes = 001001111111   p = [0.166667 0.166667 0.166667 0.5     ]
+  DISTINCT ARMS: 7 of 7
+  NOTE, DECLARED: B0b and B4 have DIFFERENT class strings, so for the legs below they
+  are two arms; for W-01's hull criterion they are one arm (lane D's own finding, kept).
+
+========================================================================================================
+== 2A  W-02's TRAP FIGURE: 'repeated circuits span 3 DIMENSIONS at N=1 and 3 at N=100' ==
+========================================================================================================
+  ONE VARIABLE: the carrier's vertex-class string.  Connection, rank routine, tolerance
+  and N-list identical in every row.  W_F = e^{i}, W_C = e^{i sqrt2} (generic, fixed).
+
+  carrier                V  #classes    span N=1    span N=2    span N=5   span N=10   span N=25  span N=100  ALGEBRA
+  B1  K1 as handed       5         3           3           3           3           3           3           3        3
+  B1q + spectator        7         3           3           3           3           3           3           3        3
+  B1p bridged            6         2           2           2           2           2           2           2        2
+  B1s subdivided        11         3           3           3           3           3           3           3        3
+  B0a torus disjoint     9         3           3           3           3           3           3           3        3
+  B0b torus meeting      9         4           3           3           3           3           3           3        4
+  B4  spindle            6         4           3           3           3           3           3           3        4
+
+  S3:264-271 REPRODUCED ON K1: dim = 3, constant in N, and equal to the class algebra
+  C^3 -- 'circuits generate EXACTLY the three-way split algebra of sec2.3'.
+  OFF K1 THE SENTENCE SPLITS IN TWO AND ONLY ONE HALF SURVIVES:
+    - 'constant in N / circuits grow no algebra'  -- CARRIER-INDEPENDENT (every row flat).
+    - 'the dimension is 3'                        -- THREE-CLASS-SCOPED (it is the number
+      of occupied classes on K1 and B1q; it is 2 on B1p).
+    - 'EXACTLY the class algebra, and nothing more' -- FALSE AT FOUR CLASSES: the span of
+      PURE POWERS is 3 on B0b and B4 while the algebra the same two transports GENERATE
+      is 4.  On a four-class carrier the circuits span a PROPER subspace of the algebra
+      they generate, and the coincidence S3 reports is an artefact of p00 = 0.
+  (Reason, one line: the four class-indicator combinations reachable by pure powers are
+   e10+e11, e00+e01, e01+e11, e00+e10, whose sum-relation (e10+e11)+(e00+e01) =
+   (e01+e11)+(e00+e10) drops the rank to 3; with class 00 empty the relation is vacuous.)
+
+========================================================================================================
+== 2B  P-9 IS A CLOSED FORM IN |Omega_N| -- NO S3 CODE IS REQUIRED TO SCOPE IT ==
+========================================================================================================
+  S3 sec5.9 verbatim: 'The state-norm distance is ||omega_F^N - omega_C^N|| =
+  2 sqrt(1 - |Omega_N|^2), maximal at 2.'  Step one: reproduce S3's OWN published table
+  on K1 at ITS OWN test connection f=2.0, c=1.1, p=(0.4,.15,.15,.15,.15).
+       N   |Omega_N| mine     S3 published    rel dev   ||om_F-om_C|| mine
+       1     4.112706e-01     4.112706e-01   1.51e-08       1.823026602854
+       2     1.934559e-01     1.934559e-01   1.83e-07       1.962217957798
+       5     1.772339e-02     1.772339e-02   5.77e-08       1.999685856739
+      10     6.540411e-04     6.540411e-04   1.98e-08       1.999999572230
+      20     2.514545e-07     2.514545e-07   1.30e-07       2.000000000000
+      42     2.505486e-15     2.505486e-15   1.81e-07       2.000000000000
+     100     4.036647e-34     4.036647e-34   1.21e-07       2.000000000000
+  S3's table REPRODUCED from the class weight vector alone.  P-9's whole content at every
+  finite N is |Omega_N|, and its limit statement is |Omega_N| -> 0, i.e. G != {1}.
+
+  STEP TWO -- THE SCOPE QUESTION LANE D DECLINED, ANSWERED ON BOTH FOUR-CLASS CARRIERS.
+  ONE VARIABLE: the class weight vector.  Same (f,c) = (2.0, 1.1), same code path.
+    carrier                          N=1             N=5            N=20           N=100  ||.|| at N=100
+    B1  K1 as handed        2.151015e-01    3.646248e-03    3.646969e-08    1.307328e-34  2.000000000000
+    B1q + spectator         1.590959e-01    1.613620e-03    2.017863e-08    8.677341e-35  2.000000000000
+    B1p bridged             2.079483e-02    1.339908e-04    6.407295e-09    1.486353e-32  2.000000000000
+    B1s subdivided          1.082443e-01    6.319067e-04    1.180713e-08    3.826794e-34  2.000000000000
+    B0a torus disjoint      2.167538e-01    3.056972e-03    7.032374e-08    4.393590e-35  2.000000000000
+    B0b torus meeting       6.074011e-01    4.507043e-03    5.967902e-08    3.235278e-36  2.000000000000
+    B4  spindle             6.242992e-01    1.024778e-02    6.473680e-07    3.592203e-31  2.000000000000
+  P-9 HOLDS IN THE LIMIT ON EVERY CARRIER WITH G != {1}, FOUR CLASSES INCLUDED, AND ITS
+  SCOPE IS EXACTLY W-08's G != {1} CRITERION -- which lane D itself scoped
+  CARRIER_INDEPENDENT at its rows 2.1 and 8.4.  The verdict was already in the lane's
+  own hands; the row says UNDETERMINED.
+
+========================================================================================================
+== 2C  P-9's FINITE-STAGE EXCEPTION CLAUSE IS EMPTY ON BOTH FOUR-CLASS CARRIERS ==
+========================================================================================================
+  S3 sec5.9: 'At finite N on W-01's firing locus: if Z_{k_n} = 0 for some n -- exactly
+  W-01's convex-hull criterion -- then Omega_N = 0 EXACTLY for all N >= n.  On K1's own
+  published connection this occurs at the FIRST CELL.  HOLDS exactly, at finite stage.'
+  ONE VARIABLE: the class weight vector.  Torus-zero test is exact (a linear equation in
+  cos t); the grid minimum is a 2000x2000 cross-check on the same weights.
+
+  carrier                        A           B  torus zero?   min|Z_1| on 2000^2 grid
+  B1  K1 as handed       -0.040000   -0.160000         True               0.000356763
+  B1q + spectator         0.020408    0.122449         True               0.000575702
+  B1p bridged             0.000000    0.000000         True               0.000000000
+  B1s subdivided         -0.008264   -0.082645         True               0.000328832
+  B0a torus disjoint     -0.037037    0.148148         True               0.000218786
+  B0b torus meeting       0.111111    0.000000        False               0.111111111
+  B4  spindle            -0.222222   -0.111111        False               0.272165790
+
+  BOTH FOUR-CLASS CARRIERS: NO TORUS ZERO AT THEIR OWN PUBLISHED WEIGHTS, so there is
+  NO connection at which W-01's criterion fires, so P-9's finite-stage exception clause
+  is VACUOUS on them.  On K1 the clause is not vacuous and S1's published connection is
+  in it.  Lane D's leg 1D computes the same torus-zero fact and never connects it to
+  P-9, because P-9 sits inside a block it marked UNDETERMINED.
+
+========================================================================================================
+== 2D  P-1 AND P-3 ARE ALSO ALREADY DECIDED BY ROWS LANE D SCOPED ==
+========================================================================================================
+  P-3 'thresholded non-return (EXACT, by monotonicity, not asymptotic)' is W-08's
+  |Z_k| <= 1, which lane D scoped CARRIER_INDEPENDENT at its row 8.1.  Re-exhibited:
+    B1  K1 as handed     max_k(|Z_k| - 1) over k<=2e5 = -2.556e-08   monotone non-increasing: True
+    B1q + spectator      max_k(|Z_k| - 1) over k<=2e5 = -2.726e-08   monotone non-increasing: True
+    B1p bridged          max_k(|Z_k| - 1) over k<=2e5 = -4.600e-11   monotone non-increasing: True
+    B1s subdivided       max_k(|Z_k| - 1) over k<=2e5 = -2.879e-08   monotone non-increasing: True
+    B0a torus disjoint   max_k(|Z_k| - 1) over k<=2e5 = -2.496e-08   monotone non-increasing: True
+    B0b torus meeting    max_k(|Z_k| - 1) over k<=2e5 = -1.217e-08   monotone non-increasing: True
+    B4  spindle          max_k(|Z_k| - 1) over k<=2e5 = -1.195e-08   monotone non-increasing: True
+  P-1 'holds in the limit, FAILS at every finite N NECESSARILY' -- S3 sec5.3's own
+  statement is that this 'is a theorem about ALL finite constructions', i.e. it is
+  carrier-independent by the wording of the claim itself, with no computation needed.
+  THREE OF THE NINE ARE THEREFORE DETERMINABLE WITHOUT S3's CODE.  A fourth, P-7
+  sector-hood, is Hepp disjointness of the two limit states, which is again |Omega_N|
+  -> 0.  Lane D's blanket UNDETERMINED over all nine is over-broad by at least three.
+
+========================================================================================================
+== 2E  THE TOPOLOGICAL PRECONDITION NO ROW OF THE SCOPE TABLE STATES ==
+========================================================================================================
+  S4:519's own table, quoted.  b1 is the number of independent flat cycles; rank(d2) is
+  the number of independent curvatures.  gamma_F needs rank(d2) >= 1 (it must BOUND) and
+  gamma_C needs b1 >= 1 (it must NOT).
+  MY OWN CONFOUND, RECORDED NOT PATCHED.  The first version of this leg tested the single
+  condition b1 >= 1 and flagged BOTH B5 and B2 as 'formation datum does not exist'.  THAT
+  IS WRONG ABOUT B2: S4's designated-loop table gives B2 'gC bounds = TRUE, independent =
+  True', i.e. B2 HAS two designable loops and S4 calls it 'the deliberate exception' --
+  both bound, so its second holonomy is a second CURVATURE, not a flat one.  There are
+  TWO preconditions, not one, and the corpus's own ten-carrier table breaks each of them
+  on a different carrier.  Both statistics are printed.
+  carrier                     V  cyc rk  b1  rk d2  2 loops?  gC flat?  (1st run: b1>=1)
+  B0a ring torus disjoint     9      10   2      8      True      True              True
+  B0b ring torus meeting      9      10   2      8      True      True              True
+  B3  horn torus              5       8   1      7      True      True              True
+  B1  K1 as handed            5       2   1      1      True      True              True
+  B4  spindle                 6       3   1      2      True      True              True
+  B5  double sphere           4       1   0      1     False     False             False  <-- S4: 'the formation datum DOES NOT EXIST on it'
+  B2  K1 both filled          5       2   0      2      True     False             False  <-- S4: 'the deliberate exception -- no flat holonomy at all'
+  B1p K1-bridged              6       2   1      1      True      True              True
+  B1q + spectator             7       2   1      1      True      True              True
+  B1s K1 subdivided          11       2   1      1      True      True              True
+
+  PRECONDITION 1 -- TWO INDEPENDENT DESIGNABLE LOOPS (cycle rank >= 2).  B5 fails it,
+  and on B5 the entire object of this corpus is undefined.  S4 in its own words: 'This is
+  the one place in S4 where topology, and nothing else, decides an outcome.'
+  PRECONDITION 2 -- gamma_C FLAT (b1 >= 1).  B2 fails it.  On B2 both holonomies are
+  curvatures, so W-01's advertised virtue -- 'it distinguishes curvature from flat
+  holonomy' -- has no referent there, for a reason that has nothing to do with class
+  occupancy: B2's class multiset is K1's exactly, {01:2,10:2,11:1}.
+  Lane D row 3.4 rules the topology-inertness claim 'UNTESTABLE BY CONSTRUCTION ... no
+  experiment on any carrier can bear on this row'.  B5 and B2 both bear on it: topology
+  decides whether the functional has an argument, and what the argument MEANS.
+  Every CARRIER_INDEPENDENT verdict in the scope table is conditional on both, and no
+  row of the table states either.  Neither B5 nor B2 appears anywhere in the table.
+
+  AND THE LOOP LENGTHS, WHICH THE SAME TABLE DETERMINES AND NO ROW MENTIONS:
+  carrier               |gamma_F| = |10|+|11|  |gamma_C| = |01|+|11|   equal?
+  B1  K1 as handed                          3                      3     True
+  B1q + spectator                           3                      3     True
+  B1p bridged                               3                      3     True
+  B1s subdivided                            6                      6     True
+  B0a torus disjoint                        4                      3    False
+  B0b torus meeting                         4                      3    False
+  B4  spindle                               4                      4     True
+  EVERY carrier the corpus has ever RUN anything on has two loops of EQUAL length, so
+  'one circuit of each' and 'equal edge time' coincide there.  B0b is the first carrier
+  in the corpus on which they do not.  See leg 3.
+
+========================================================================================================
+== 2F  THE STEP LANE D's HEADLINE RESTS ON, DECLARED AS THE IDENTITY IT IS ==
+========================================================================================================
+  Lane D's headline: 'the formation functional never sees anything but the class-weight
+  vector'.  The step that makes that true is W-03's sec2 sentence 'every vertex phase of
+  s cancels', which the register records and marks FALSE the moment the holonomy is not
+  a scalar.  Lane D never exhibits it at four classes -- every one of its legs starts
+  FROM a weight 4-vector.  Exhibited here on B0b, and DECLARED A ZERO-VARIABLE CONTROL:
+  200 random complex states x 3 values of k on B0b: max |<M_dF^k s, M_c^k s> - P(u^k,v^k)|
+  = 4.089e-15.  IT COULD NOT HAVE FAILED -- the phases cancel term by term because the
+  transport is scalar per fibre.  THAT VOIDS IT AS A CONTROL AND LEAVES IT A ONE-LINE
+  IDENTITY, which is the right status for it; what is not right is that lane D's central
+  claim rests on it and no row of the table carries it.  Its hypothesis is SCALAR
+  FIBRE-WISE TRANSPORT (W-04 ERR-1 / W-06's N4 correction), not class occupancy -- so the
+  headline should read 'carrier-independent GIVEN the scalar-transport convention'.

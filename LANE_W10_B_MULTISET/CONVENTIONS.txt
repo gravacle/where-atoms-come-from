@@ -1,0 +1,73 @@
+LANE W-10 B — THE MULTISET THEOREM AND THE INVOLUTION, OFF K1 — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane from scratch is on this page or in b_lib.py.
+
+LINEAGE.  Built and run by Claude Opus 5 against a corpus whose commits carry
+`Co-Authored-By: Claude Fable 5`.  Custody sec4's shared-lineage caveat does not apply
+between this lane and the S1-S4 corpus.  It DOES apply between this lane and W-07/W-08/
+W-09, which are Opus 5.  This is ONE lane and it is graded as one.  This is layer TEN of
+a chain in which every layer so far has been caught by the next.  Discount it accordingly;
+its likeliest failure mode is the corpus's recurring one, and it occurred twice inside
+this lane (see SELF-FLAGS).
+
+CLASS ORDER, USED EVERYWHERE:
+    index 0 = class 00 (in neither loop)   character 1
+    index 1 = class 10 (in gamma_F only)   character u = conj(W_F)
+    index 2 = class 01 (in gamma_C only)   character v = W_C
+    index 3 = class 11 (in both loops)     character uv
+    P(x,y) = p0 + p1 x + p2 y + p3 xy      Z_k = P(u^k, v^k)      lambda = m(P)
+
+CARRIERS.
+  B0b  3x3 grid ring torus, gamma_C = row j=0.  Incidence identical to the corpus's own
+       sealed LANE_R_MAPS_REFUTER/rm_lib.py:386-418.  Rebuilt in b3_pushforward.py and
+       checked against S4:512 (V=9 E=18 F=9 chi=0 b=(1,2,1)), S4:539 (gamma_F bounds,
+       gamma_C does not) and S4:575 (classes {00:4,10:2,01:1,11:2}).  All match.
+  B4   spindle.  The corpus publishes NO incidence for it.  Constructed here as two
+       4-cycles sharing two antipodal vertices, each filled by two faces, and checked
+       against S4:515 (V=6 E=8 F=4 chi=2 b=(1,1,2)) and S4:578 ({00:1,10:1,01:1,11:3}).
+       All match.  If the corpus's own B4 is a different complex with the same numbers,
+       nothing in this lane changes: every result below depends on the carrier only
+       through the class multiset and, in LEG C, through the loop lengths.
+  GEN  four distinct weights (0.37,0.29,0.23,0.11) — used wherever a repeated weight
+       would collapse orbits and hide the structure.  B0b and B4 both repeat weights.
+
+EVALUATORS (b_lib.py).  E1 mpmath dps=30, Jensen-in-y, integrand split analytically at
+the branch crossings and branch minima, tanh-sinh per piece.  E2 the same at the
+Jensen-in-x pairing (a different code path).  E3 exact rational certificate for the
+"one branch dominates" case, in fractions.Fraction.  E4 the corpus's own direct ergodic
+average at f=1.0, c=sqrt(2), N=2e6 (no quadrature anywhere).  E5 float64 twin of E1,
+Gauss-Legendre 160 nodes per piece, used only for 1e-9 decisions in sweeps.
+Cross-checks on the page: E1 vs E2, E1 vs E3, E1 vs E4, E5 vs E1.
+
+PRECISION.  Double precision is the default for E4/E5 and for all Z_k work; E1/E2 run at
+30 digits; E3 is exact.  Every claim reported below 1e-12 is E1/E2/E3, never E4/E5.
+A stability fix is recorded in b_lib.py: |a+be^{it}|^2 is evaluated as
+(ra-rb)^2 + 4 ra rb cos^2((t+phase)/2), because the textbook form loses every significant
+digit near a branch zero.  The first run of LEG A returned -inf on (1/4,1/4,1/4,1/4)
+under the textbook form.
+
+SEEDS.  numpy default_rng.  20260816 (master, LEG A/B sweeps, LEG C, LEG D.1),
+31415926 (the pointwise identity), 1729 (LEG D.2), 4242 (LEG E.1).  All stated in the
+scripts at the point of use.
+
+GRIDS.  E1/E2: adaptive, no grid.  E5: 160-node Gauss-Legendre per smooth piece.
+LEG E.2: a 2048x2048 tensor trapezoid on the full torus.  LEG E.4: a 400x400 (f,c) grid.
+LEG E.3 resonant arm: EXACT, from the roots of a degree-31 one-variable polynomial.
+
+ISOLATION.  One variable per leg, named in each script's docstring, with the permuted or
+deformed arrays PRINTED so that a byte-identical arm is visible on the page rather than
+recorded in a ledger.  LEG B.2 exists because one of my arms was byte-non-identical but
+variable-identical, and that is on the page rather than in a footnote.
+
+SELF-FLAGS, in the order they happened:
+  1. I predicted the invariance group would be D4 at real non-negative weights and it is
+     S4.  (So did the corpus's own unsealed maps_refuter3.py, in 2026-08-16's W-03 round.)
+  2. I then named the operative variable "flux in {0,pi}", i.e. real up to gauge.  REFUTED
+     by my own computation at B.5(iii): p = (1,i,i,-1).
+  3. I then named it "all four coefficients collinear".  REFUTED at B.5(iv): three
+     collinear and one free is still S4-invariant.  The correct name is AT LEAST THREE OF
+     THE FOUR COLLINEAR, and it is now proved and enumerated over all patterns at B.6.
+  4. My first complex arm put the whole phase on one coefficient — which is a
+     three-collinear array, hence exactly on the invariant locus.  A control that could
+     not have failed, reported at B.2 with its numbers rather than deleted.
+  That is three misnamings of the operative variable inside one lane, each caught by the
+  next computation.  The chain's characteristic defect is alive and this lane has it.

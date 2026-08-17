@@ -1,0 +1,55 @@
+LANE W10-D — THE SCOPE TABLE — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE.  Corpus commits carry `Co-Authored-By: Claude Fable 5`.  This lane is Claude Opus 5.
+It is layer TEN of the Opus 5 block (W-07, W-08, W-09, this).  Custody sec4's shared-lineage
+caveat does NOT apply between this lane and the Fable corpus; it DOES apply between this lane
+and W-07/W-08/W-09.  Discount accordingly.
+
+OBJECTS.  Characters by vertex class (is v in gamma_F?, is v in gamma_C?):
+  class 00 -> chi = 1          class 10 -> chi = u = conj(W_F) = e^{-i f}
+  class 01 -> chi = v = W_C = e^{i c}        class 11 -> chi = uv = e^{i(c-f)}
+  Z_k = sum_ab p_ab (u^a v^b)^k = P(u^k, v^k),  P(x,y) = p00 + p10 x + p01 y + p11 xy
+  Omega_N = prod_{k=1..N} Z_k.   lambda = m(P) (logarithmic Mahler measure).
+
+CARRIERS.  Class multisets quoted VERBATIM from S4_THE_MEASUREMENT_V001.md:575-590.  Nothing
+new is constructed.  Weight vectors are SENSE U (uniform on vertices, p_v = 1/V), S4's own.
+Order of the weight 4-vector is always (p00, p10, p01, p11).
+
+  B1  = K1 as handed    V=5  {01:2, 10:2, 11:1}         p = (0,   2/5, 2/5, 1/5)   3 classes
+  B1q = K1 + spectator  V=7  {00:1, 01:3, 10:3}         p = (1/7, 3/7, 3/7, 0  )   3 classes
+  B1p = K1-bridged      V=6  {01:3, 10:3}               p = (0,   1/2, 1/2, 0  )   2 classes
+  B0b = ring torus 3x3, loops meet   V=9  {00:4,01:1,10:2,11:2}  p=(4/9,2/9,1/9,2/9)  4 classes
+  B4  = spindle, 2 glue points       V=6  {00:1,01:1,10:1,11:3}  p=(1/6,1/6,1/6,3/6)  4 classes
+  SENSE C, 4 classes: p = (1/4,1/4,1/4,1/4).
+
+MAHLER.  Jensen reduction in x, grouping P = (p00 + p01 y) + x (p10 + p11 y):
+  m(P) = (1/2pi) INT_0^{2pi} log max( |p00 + p01 e^{it}| , |p10 + p11 e^{it}| ) dt.
+  For REAL coefficients both branches depend on t only through cos t, so the integrand is even
+  and m(P) = (1/pi) INT_0^{pi} ... dt.  The two branches cross at most twice in [0,2pi); the
+  crossing is the single root of a linear equation in cos t.  This lane splits at that root and
+  applies 400-node Gauss-Legendre on each smooth arc.  When one branch dominates on all of
+  [0,pi], the integral is EXACT by Jensen a second time: m(P) = log max(|p00|,|p01|) or
+  log max(|p10|,|p11|).  Both four-class carriers are in that exact case (proved in w10d_2).
+
+HULL TEST (W-01's criterion).  0 lies in conv{unit-modulus characters} is decided TWICE by two
+independent algorithms and the two are required to agree exactly:
+  (H1) sorted-angle max-gap <= pi + 1e-12
+  (H2) brute force over all 2- and 3-element subsets: 0 in a segment through the origin, or 0
+       inside/on a triangle by the three barycentric sign tests.
+W-01's criterion is read as the EXISTENCE statement it is (SOME ready state on that carrier
+fires).  FIRE => HULL is unconditional; HULL => FIRE is false pointwise for a FIXED p and this
+lane exhibits that on a four-class carrier's own published weights.
+
+SEEDS / GRID.  numpy default_rng.  Master seed 20260816 (the corpus's).  200000 draws per hull
+row, f,c ~ U(-pi,pi).  Direct simulations at N = 10^6 unless stated.
+
+PRECISION.  numpy float64 throughout unless a line says "Fraction" or "exact".  Every
+precision-sensitive claim is additionally settled in closed form or in exact rationals and both
+are printed side by side.
+
+THE ONE VARIABLE.  Every comparison in this lane holds the evaluator, the grid, the seed, the
+k-range and the code path fixed.  The ONLY thing that moves between arms is WHICH CLASSES THE
+CARRIER'S INCIDENCE OCCUPIES (and, where stated once and labelled, the FIELD of the coefficients:
+non-negative real -> real -> complex).  Every script PRINTS A DIFF OF ITS ARMS before reporting,
+because the corpus's commonest fatal defect is a control whose two arms are byte-identical.

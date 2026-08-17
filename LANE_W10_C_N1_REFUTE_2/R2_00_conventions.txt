@@ -1,0 +1,64 @@
+LANE W-10 / C — REFUTER 2 — LENS 2: ISOLATION OF THE THREE-CONNECTION COMPARISON
+PUBLISHED CONVENTIONS.  Everything needed to re-run this refutation is on this page.
+
+TARGET.  "/Users/bgm/MB Work/where-atoms-come-from/LANE_W10_C_N1"  (lane C, round W-10,
+register head W-09).  Its C_04_birkhoff.py is the three-connection comparison under attack.
+
+LINEAGE.  Claude Opus 5.  SAME LINEAGE as lane C, as W-07/W-08/W-09.  THIS REFUTATION IS NOT
+LINEAGE-INDEPENDENT OF ITS TARGET.  Discount it as one block with lane C, not as an outside
+check.  It IS lineage-independent of the S1-S4 corpus (all commits `Co-Authored-By: Claude
+Fable 5`).
+
+PRECISION.  IEEE float64 unless a line says EXACT.  EXACT means one of
+  - Python `int` / `fractions.Fraction` (unbounded), or
+  - mpmath at the working precision printed by the script, or
+  - a closed form proved on the page.
+mpmath 1.4.1, numpy 2.0.2, Python 3.9.6.  sympy NOT available.
+
+THE OBJECTS (unchanged from C_00, restated so this page stands alone).
+  classes 00/10/01/11 by (v in gamma_F ?, v in gamma_C ?);  u = conj(W_F), v = W_C
+  P(x,y) = p00 + p10 x + p01 y + p11 x y ;  Z_k = P(u^k, v^k) ;  lambda = lim (1/N) sum log|Z_k|
+  PHASE CONVENTION OF RECORD (lane C, C_04): u = e^{2 pi i alpha}, v = e^{2 pi i beta},
+  alpha = -f/(2 pi), beta = c/(2 pi).
+  RELATION LATTICE  L = {(m,n) in Z^2 : m alpha + n beta in Z}.  H = orbit closure = L^perp.
+
+READY STATES USED (all four are lane C's own CASES list, byte-for-byte):
+  B0b  SENSE U  (4,2,1,2)/9      B4  SENSE U  (1,1,1,3)/6
+  K1   SENSE U  (0,2,2,1)/5      SENSE C 4-class (1,1,1,1)/4
+
+CONNECTIONS UNDER AUDIT (lane C's three arms, plus the corpus's other published ones).
+  D  DIOPHANTINE   alpha = -2^(1/3) mod 1, beta = 4^(1/3) mod 1        [lane C arm 1]
+  R  RESONANT      f = 2.0, c = 1.1, i.e. alpha = -1/pi, beta = 11/(20 pi)   [lane C arm 2]
+  O  FINITE ORDER  W_F = -1, W_C = -i, i.e. alpha = 1/2, beta = 3/4    [lane C arm 3]
+  V  S4's OWN VERIFICATION CONNECTION  f = 1.0, c = sqrt(2)   [S4:603, S4:1054]
+  and the further published ones enumerated in R2_04 from S3/S4 by line number.
+
+EXACT PHASE ARITHMETIC (this refuter's own, independent of lane C's).
+  For a rational connection alpha = A/M, beta = B/M the orbit phase at step k is (k A mod M)/M.
+  Computed by CHUNKED modular accumulation:  within a chunk of length n the phases are
+  (base + j*A) mod M for j = 1..n, and base <- (base + n*A) mod M.  The largest int64 product
+  is n*A, so with n <= 2^20 and M < 2^42 there is no overflow AT ANY K.  Lane C instead forms
+  k*A directly, which is why its own K = 1e7 sits at 88% of the int64 ceiling (R2_01 sec 3).
+  For an irrational connection the phase is carried in mpmath at 60 dps and only the final
+  fractional part is demoted to float64.
+
+SEEDS.  numpy default_rng, master seed 20260816 (the program's master seed).  No random
+number decides any claim below; seeds appear only in spot-checks.
+
+QUADRATURE.  Two independent evaluators for every Mahler measure, and they are printed side
+by side:
+  (J) the Jensen reduction m(P) = (1/2pi) INT log max(|p00+p10 e^{it}|, |p01+p11 e^{it}|) dt
+      on a half-step-offset trapezoid (lane C's convention D-3, adopted).
+  (S) for a subtorus H = {(z^n, z^-m)} with gcd(m,n)=1, the ONE-VARIABLE Mahler measure
+      m(Q), Q(z) = p01 + p00 z^m + p11 z^n + p10 z^{m+n}, evaluated BOTH by trapezoid AND by
+      Jensen's formula on the roots, log|lead| + sum log^+|root|, in mpmath.  Agreement of
+      the two is printed; a disagreement voids the row.
+
+THE ONE VARIABLE, PER COMPARISON.  Stated in R2_05 section 6.  Where I re-run a lane-C
+comparison I hold everything lane C held and move only what it moved; where I add an arm I
+say which coordinate it adds and why the addition is forced.
+
+WHAT THIS PAGE DOES NOT DO.  It does not re-derive C-2's reversal locus, C-3's zero-set
+criterion, C-8's Boyd-Lawton ladder or C-9's Liouville bound beyond the spot-checks named in
+R2_05.  The lens is isolation of the connection comparison and the arithmetic type of the
+connections; findings outside it are recorded as spot-checks and graded as such.

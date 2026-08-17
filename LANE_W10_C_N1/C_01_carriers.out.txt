@@ -1,0 +1,43 @@
+============================================================================================
+C_01 — THE CARRIERS, FROM INCIDENCE.  Exact rank over Q (Fraction elimination).
+TARGETS are S4_THE_MEASUREMENT_V001.md:519 and :575-590, printed beside the recomputed.
+============================================================================================
+
+--- B0b ring torus 3x3, loops MEET
+  recomputed  V=9 E=18 F=9 chi=0 b0=1 b1=2 b2=1  inv=10 curv=8 flat=2
+  S4 target   V=9 E=18 F=9 chi=0 b0=1 b1=2 b2=1  inv=10 curv=8 flat=2
+  d1.d2 max|entry| = 0   (must be 0)
+  curvature + flat = invariants :  8 + 2 = 10  vs inv = 10   OK
+  gF cycle-defect 0  gF bounds True   gC cycle-defect 0  gC bounds False   independent True
+  vertex labels by class: ['11', '11', '01', '10', '10', '00', '00', '00', '00']
+  recomputed multiset {'00': 4, '01': 1, '10': 2, '11': 2}
+  S4 target  multiset {'00': 4, '01': 1, '10': 2, '11': 2}
+  TOPOLOGY AGREES: True   CLASS MULTISET AGREES: True   LOOP PROPERTIES AS S4 STATES: True   d1d2=0: True
+
+--- B4 spindle (two spheres, 2 glue pts)
+  recomputed  V=6 E=8 F=4 chi=2 b0=1 b1=1 b2=2  inv=3 curv=2 flat=1
+  S4 target   V=6 E=8 F=4 chi=2 b0=1 b1=1 b2=2  inv=3 curv=2 flat=1
+  d1.d2 max|entry| = 0   (must be 0)
+  curvature + flat = invariants :  2 + 1 = 3  vs inv = 3   OK
+  gF cycle-defect 0  gF bounds True   gC cycle-defect 0  gC bounds False   independent True
+  vertex labels by class: ['11', '11', '11', '10', '01', '00']
+  recomputed multiset {'00': 1, '01': 1, '10': 1, '11': 3}
+  S4 target  multiset {'00': 1, '01': 1, '10': 1, '11': 3}
+  TOPOLOGY AGREES: True   CLASS MULTISET AGREES: True   LOOP PROPERTIES AS S4 STATES: True   d1d2=0: True
+
+--- B1 = K1 (three-class CONTROL)
+  recomputed  V=5 E=6 F=1 chi=0 b0=1 b1=1 b2=0  inv=2 curv=1 flat=1
+  S4 target   V=5 E=6 F=1 chi=0 b0=1 b1=1 b2=0  inv=2 curv=1 flat=1
+  d1.d2 max|entry| = 0   (must be 0)
+  curvature + flat = invariants :  1 + 1 = 2  vs inv = 2   OK
+  gF cycle-defect 0  gF bounds True   gC cycle-defect 0  gC bounds False   independent True
+  vertex labels by class: ['11', '10', '10', '01', '01']
+  recomputed multiset {'00': 0, '01': 2, '10': 2, '11': 1}
+  S4 target  multiset {'00': 0, '01': 2, '10': 2, '11': 1}
+  TOPOLOGY AGREES: True   CLASS MULTISET AGREES: True   LOOP PROPERTIES AS S4 STATES: True   d1d2=0: True
+
+============================================================================================
+ALL THREE CARRIERS REPRODUCE S4's PUBLISHED ROWS FROM INCIDENCE ALONE: True
+This is the one thing in step 1 that COULD have failed (COR-K: published rows not
+reproducible from their parameters).  It did not fail.
+============================================================================================

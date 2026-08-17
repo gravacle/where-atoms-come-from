@@ -1,0 +1,133 @@
+========================================================================================================
+REFUTER 1 / SCRIPT 3 — RATE, BRANCH DOMINANCE, FACTORISATION, PERMUTATION NAMING
+========================================================================================================
+mpmath 1.4.1 at mp.dps = 30.  numpy 2.0.2.
+
+--------------------------------------------------------------------------------------------------------
+A — THE TWO FOUR-CLASS SENSE-U ROWS TO 30 DIGITS, BY A QUADRATURE THAT IS NOT THE LANE'S
+--------------------------------------------------------------------------------------------------------
+case          C (exact)   D (exact)   |D|<=|C|  mpmath m(P) (dps=30)                S4 published   dev
+B0b SENSE U   1/9         0           True      -0.8109302162163287639560262        -0.810930216   2.16e-10
+B4  SENSE U   -2/9        -1/9        True      -0.6931471805599453094172321        -0.693147181   4.40e-10
+SENSE C 1/4   0           0           True      -1.386294361119890618834464         -1.386294361   1.20e-10
+B1  SENSE U   -1/25       -4/25       False     -0.7565735856397748250744187        -0.756573586   3.60e-10
+B1q SENSE U   1/49        6/49        False     -0.7410295825713497113057702        -0.741029583   4.29e-10
+
+EXACT CLOSED FORMS, re-derived here and checked against the 30-digit quadrature:
+   B0b SENSE U    one branch dominates -> m = log(4/9) = -0.8109302162163287639560262
+                  quadrature - closed form = 0.0
+   B4  SENSE U    one branch dominates -> m = log(1/2) = -0.6931471805599453094172321
+                  quadrature - closed form = 0.0
+   SENSE C 1/4    C = D = 0: the two branches are IDENTICAL.  P = (1+x)(1+y)/4, so
+                  m = 2 log max(1/2,1/2)... no: m = log(1/4) directly from the
+                  factorisation.  log(1/4) = -1.386294361119890618834464
+                  quadrature - log(1/4)   = 0.0
+
+>>> CONFIRMED.  B0b SENSE U = log(4/9) and B4 SENSE U = log(1/2), EXACTLY, and S4:599's
+    'QUADRATURE ONLY' on the B0b row is wrong.  BUT: W-03's register row already says so
+    ('B0b is log(4/9) = -0.8109302162163288 exactly, so nine of nine carrier rates are
+    exact, not eight'), and the lane says so too.  This is a REPRODUCTION of a standing
+    correction, not a new one.
+
+--------------------------------------------------------------------------------------------------------
+B — IS THE BRANCH-DOMINANCE CRITERION NEW?  (the lane's W10A-07 says it is)
+--------------------------------------------------------------------------------------------------------
+S4_THE_MEASUREMENT_V001.md:594-595, verbatim:
+   'B4   U  : the Jensen-in-x integrand's max is always the second branch (their squares
+              differ by 0.2222 + 0.1111 cos y > 0), so lambda = log(1/2) ... EXACTLY'
+My exact C, D for B4 SENSE U: C = -2/9 = -0.2222, D = -1/9 = -0.1111.
+S4's printed pair is (0.2222, 0.1111) = (0.2222, 0.1111) -- the SAME
+two numbers with the branches named in the other order.  S4 states the criterion, in the
+form 'their squares differ by C + D cos y > 0', and USES it to get an exact closed form.
+>>> THE CRITERION IS NOT NEW.  It is S4's own argument, generalised from one row to a
+    rule.  Generalising it is worth something; calling it new is a novelty overclaim, and
+    the lane's OWN SCRIPT contradicts the lane's OWN FINDING here -- w10a_4_lambda.py:143
+    says 'which is S4's own reasoning (S4:594-595) reproduced from my incidence'.
+
+--------------------------------------------------------------------------------------------------------
+C — THE FACTORISATION LOCUS:  p00 p11 = p10 p01
+--------------------------------------------------------------------------------------------------------
+Claim (W10A-06): the locus is EMPTY on every three-class carrier, so factorisation is a
+FOUR-CLASS-ONLY phenomenon.  Enumerate every support and test.
+support           |S|  uniform pi                        p00 p11 - p10 p01     factors?
+{00}              1    (1, 0, 0, 0)                      0                     True
+{10}              1    (0, 1, 0, 0)                      0                     True
+{01}              1    (0, 0, 1, 0)                      0                     True
+{11}              1    (0, 0, 0, 1)                      0                     True
+{00,10}           2    (1/2, 1/2, 0, 0)                  0                     True
+{00,01}           2    (1/2, 0, 1/2, 0)                  0                     True
+{00,11}           2    (1/2, 0, 0, 1/2)                  1/4                   False
+{10,01}           2    (0, 1/2, 1/2, 0)                  -1/4                  False
+{10,11}           2    (0, 1/2, 0, 1/2)                  0                     True
+{01,11}           2    (0, 0, 1/2, 1/2)                  0                     True
+{00,10,01}        3    (1/3, 1/3, 1/3, 0)                -1/9                  False
+{00,10,11}        3    (1/3, 1/3, 0, 1/3)                1/9                   False
+{00,01,11}        3    (1/3, 0, 1/3, 1/3)                1/9                   False
+{10,01,11}        3    (0, 1/3, 1/3, 1/3)                -1/9                  False
+{00,10,01,11}     4    (1/4, 1/4, 1/4, 1/4)              0                     True
+
+supports that factor, by size: |S|=1: 4/4   |S|=2: 4/6   |S|=3: 0/4   |S|=4: 1/1
+>>> The lane's claim that the locus is EMPTY at |S| = 3 is CORRECT and I confirm it.
+    But 'FOUR-CLASS-ONLY' is not right as stated: FOUR of the six two-class supports
+    factor (trivially -- they are one-variable), and the |S|=1 supports factor too.
+    The accurate statement is: the factorisation locus is empty at |S| = 3 and non-empty
+    at |S| = 4, and NON-DEGENERATE factorisation (both factors genuinely present) requires
+    |S| = 4.  The lane's own script text says the right thing; the finding does not.
+
+AND S4 ALREADY FACTORED THE FOUR-CLASS SENSE-C POLYNOMIAL.  S4:598, verbatim:
+   'SENSE C, 4 classes: (1+x+y+xy)/4 = (1+x)(1+y)/4, so lambda = log(1/4) ... EXACTLY'
+>>> W10A-06's 'which is why S4:596's log(1/4) is exact -- it is a sum of two Jensen terms,
+    not a lucky closed form' is wrong twice: the line is S4:598 (S4:596 is B1p's row), and
+    S4 obtained it BY THE FACTORISATION, printed on that line.  What is genuinely new is
+    the IFF (p00 p11 = p10 p01); the phenomenon and its use are S4's.
+
+--------------------------------------------------------------------------------------------------------
+D — THE PERMUTATION NAMING.  THE LANE'S CORRECTION IS ITSELF ONE STEP TOO STRONG.
+--------------------------------------------------------------------------------------------------------
+Registrar: the multiset theorem's hypothesis is REAL NON-NEGATIVE coefficients.
+Lane W10A-10: 'the operative hypothesis is REAL COEFFICIENTS, not real non-negativity',
+evidenced by spread 1.7e-16 on real mixed sign and 2.302e-01 on COMPLEX.
+
+BUT m(P) is invariant under multiplying P by ANY unimodular constant.  So if v is real
+then e^{i phi} v is not real and m is STILL S4-invariant on it, for every phi.  The
+lane's 'COMPLEX' draws are generic complex vectors, which cannot separate 'real' from
+'real up to one global phase'.  Test below.
+
+coefficient kind                                    spread of m over 24 permutations    m(identity)
+real non-negative                                   8.025247e-13                        -0.066888050
+real MIXED SIGN                                     1.665335e-16                         0.419633815
+COMPLEX generic                                     2.921228e-02                         0.725348653
+COMPLEX generic, 2nd                                2.016673e-01                         0.542407681
+e^{i*0.7391} * (real non-neg)  <-- NOT REAL         8.025525e-13                        -0.066888050
+e^{i*0.7391} * (real mixed)    <-- NOT REAL         1.665335e-16                         0.419633815
+i * (real non-neg)             <-- NOT REAL         8.025247e-13                        -0.066888050
+cross-ratio REAL but not common-phase: (1, i, 1, i) 5.831211e-01                         0.000000661
+
+READ:
+  * real non-negative  -> invariant   (registrar, confirmed)
+  * real mixed sign    -> invariant   (lane's correction, confirmed)
+  * e^{i phi} * real   -> INVARIANT, AND IT IS NOT REAL.  So 'REAL COEFFICIENTS' is a
+    SUFFICIENT condition that is strictly stronger than necessary, exactly as
+    'real NON-NEGATIVE' was.  The sharp sufficient condition is: all four coefficients
+    share one argument mod pi, i.e. e^{-i phi} p is real for some phi.  Proof: m is
+    unchanged by P -> e^{i phi} P, and the S4-generating identities |a+b e^{it}| =
+    |b+a e^{it}| hold for the real vector.
+  * cross-ratio real but NOT common-phase, (1,i,1,i): p00 p11/(p10 p01) = 1 is real and
+    P = (1+ix)(1+y) factors, yet the permutation spread is LARGE.  So 'the cross-ratio is
+    real' -- the natural next weakening, and the same quantity as the factorisation
+    criterion -- does NOT suffice.  The monomial twist that makes the coefficients real
+    does not commute with permuting them.
+
+>>> FINDING.  W10A-10 corrects the registrar's name and lands one step short of the sharp
+    one.  This is the corpus's signature defect (four consecutive layers misnaming the
+    operative variable) committed by the layer that flags itself for exactly that risk,
+    inside the block it labels 'out of lane'.  The DIRECTION of the lane's correction is
+    right and the registrar's D4-vs-S4 prediction stays refuted.
+
+========================================================================================================
+A: both four-class SENSE-U closed forms verified to 30 digits by an independent
+   quadrature.  The lane's arithmetic is right.
+B: the branch-dominance criterion is S4's own, generalised -- not new.
+C: the factorisation IFF is new; 'four-class-only' is imprecise; S4 already factored
+   the SENSE-C row on the line the lane mis-cites.
+D: 'REAL COEFFICIENTS' is not the sharp hypothesis; 'real up to a global phase' is.

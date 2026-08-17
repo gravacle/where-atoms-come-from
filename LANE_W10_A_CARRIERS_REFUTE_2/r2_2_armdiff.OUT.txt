@@ -1,0 +1,140 @@
+================================================================================================================
+R2 SCRIPT 2 — OUTPUT-DIFF OF EVERY ARM IN LANE_W10_A_CARRIERS
+================================================================================================================
+float64; K as labelled.  Two arms are 'OUTPUT-IDENTICAL' iff their float64 |Z_k| arrays are
+equal to within 1e-12 at every k -- a test STRICTER, in the right direction, than the lane's
+input hashing and than byte-equality, because a theorem-forced equality can still differ in
+the last float bits.  Where two arms collapse I state which theorem forced it.
+
+================================================================================================================
+BLOCK 1 — SCRIPT 2 PART B, the lane's headline count '15 SUPPORTS x 10 CONNECTIONS = 150
+           CASES, 0 MISMATCHES', and SCRIPT 3 PART B's '15 x 8 = 120 CASES, 0 MISMATCHES'
+================================================================================================================
+INPUT hashes (what the lane checks) — all 15 distinct, as the lane says:
+   distinct INPUT hashes: 15 of 15   -> the lane's ARMS DIFF assertion passes.
+
+OUTPUT hashes (what W-08's finding actually demands):
+connection              distinct |Z| arrays among the 15 arms   collapsing groups
+trivial (0,0)           1                                       {00}={10}={01}={11}={00,10}={00,01}={00,11}={10,01}={10,11}={01,11}={00,10,01}={00,10,11}={00,01,11}={10,01,11}={00,10,01,11}
+alpha=pi,beta=0         3                                       {00}={10}={01}={11}={00,01}={10,11}; {00,10}={00,11}={10,01}={01,11}={00,10,01,11}; {00,10,01}={00,10,11}={00,01,11}={10,01,11}
+alpha=0,beta=pi         3                                       {00}={10}={01}={11}={00,10}={01,11}; {00,01}={00,11}={10,01}={10,11}={00,10,01,11}; {00,10,01}={00,10,11}={00,01,11}={10,01,11}
+uv=1  (1,-1)/3          6                                       {00}={10}={01}={11}={00,11}; {00,10}={00,01}={10,11}={01,11}; {00,10,01}={10,01,11}; {00,10,11}={00,01,11}
+u/v=1 (1,1)/3           6                                       {00}={10}={01}={11}={10,01}; {00,10}={00,01}={10,11}={01,11}; {00,10,01}={10,01,11}; {00,10,11}={00,01,11}
+(1,3)/5                 8                                       {00}={10}={01}={11}; {00,10}={01,11}; {00,01}={10,11}; {00,10,01}={10,01,11}; {00,10,11}={00,01,11}
+S1 published order-4    5                                       {00}={10}={01}={11}; {00,10}={01,11}; {00,01}={00,11}={10,01}={10,11}; {00,10,01}={00,10,11}={00,01,11}={10,01,11}
+S3/S4 resonant          8                                       {00}={10}={01}={11}; {00,10}={01,11}; {00,01}={10,11}; {00,10,01}={10,01,11}; {00,10,11}={00,01,11}
+generic irr 1           8                                       {00}={10}={01}={11}; {00,10}={01,11}; {00,01}={10,11}; {00,10,01}={10,01,11}; {00,10,11}={00,01,11}
+generic irr 2           8                                       {00}={10}={01}={11}; {00,10}={01,11}; {00,01}={10,11}; {00,10,01}={10,01,11}; {00,10,11}={00,01,11}
+
+SCRIPT 2 PART B: the lane reports 150 cases.  DISTINCT OUTPUTS: 56.
+   94 of the 150 rows (62.7%) are
+   REPEATS of another row in the same table (equal to 4.4e-16, i.e. exactly).
+SCRIPT 3 PART B: the lane reports 120 cases.  DISTINCT OUTPUTS: 40.  80 repeats (66.7%).
+
+WHY, AND IT IS NOT AN ACCIDENT — THREE MECHANISMS, ALL OF THEM IN THE REGISTER ALREADY:
+  (M1) THE TRIVIAL CONNECTION.  u = v = 1, so Z_k = sum p = 1 for EVERY arm.  All 15 rows of
+       that column are one datum.  The lane's own PART A says |S|=1 is 'always trivial'.
+  (M2) THE FOUR SINGLETON SUPPORTS.  |Z_k| = 1 identically at EVERY connection, so those 4
+       arms are output-identical to each other in all 10 columns.
+  (M3) W-03's INVOLUTION 00<->11, 10<->01.  With uniform-on-support weights it maps
+       {00,10}<->{11,01}, {00,01}<->{11,10}, {00,10,01}<->{11,01,10}, {00,10,11}<->{00,01,11}
+       and multiplies Z_k by conj(u)^k conj(v)^k, so |Z_k| is EQUAL AT EVERY k.
+       THE LANE STATES M3 IN SCRIPT 2 PART A -- 'Those two coincidences ARE W-03's involution'
+       -- FOR THE GROUPS G, AND DOES NOT CARRY IT TO ITS OWN ARM COUNT.
+
+----------------------------------------------------------------------------------------------------------------
+M3 VERIFIED AT THE BYTES: involution-paired arms, uniform weights, all 10 connections
+----------------------------------------------------------------------------------------------------------------
+   {00,10}          vs {11,01}          involution image? True   max | |Z_k|(A) - |Z_k|(B) | over k<=2e5, all 10 connections: 4.441e-16
+   {00,01}          vs {11,10}          involution image? True   max | |Z_k|(A) - |Z_k|(B) | over k<=2e5, all 10 connections: 4.441e-16
+   {00,10,01}       vs {10,01,11}       involution image? True   max | |Z_k|(A) - |Z_k|(B) | over k<=2e5, all 10 connections: 4.441e-16
+   {00,10,11}       vs {00,01,11}       involution image? True   max | |Z_k|(A) - |Z_k|(B) | over k<=2e5, all 10 connections: 4.441e-16
+   pairs failing byte-equality: 0
+
+================================================================================================================
+BLOCK 2 — **THE FATAL ONE.  SCRIPT 3 PART C2, THE BLOCK THE LANE WROTE TO CORRECT ITS OWN
+           ISOLATION CONFOUND, CONTAINS A BYTE-IDENTICAL ARM PAIR.**
+================================================================================================================
+The lane's PART C2 reports FOUR arms and concludes: 'the four-class arm's decay density is
+HIGHER than EVERY three-class arm's at every connection'.  Arms 1 and 2 are involution images
+of each other: involute(['0', '1/3', '1/3', '1/3']) = ['1/3', '1/3', '1/3', '0']
+                                                     arm 2 = ['1/3', '1/3', '1/3', '0']
+   equal as exact rationals: True
+
+arm                           connection                SUM(1-|Z|)/K      #{|Z|=1}/K    sha256(|Z_k| array)
+3-class {10,01,11} uniform    S1 published order-4      0.500000000000    0.250000      036a0b2af637f81f
+3-class {10,01,11} uniform    S3/S4 resonant f=2,c=1.1  0.475144115589    0.000000      5a6e2d767c4d60c6
+3-class {10,01,11} uniform    generic irrational        0.475134339377    0.000000      e2eccba47d35fdae
+3-class {00,10,01} uniform    S1 published order-4      0.500000000000    0.250000      036a0b2af637f81f
+3-class {00,10,01} uniform    S3/S4 resonant f=2,c=1.1  0.475144115589    0.000000      039d9e09f69937ac
+3-class {00,10,01} uniform    generic irrational        0.475134339377    0.000000      3d901d3259ecec61
+3-class {00,10,11} uniform    S1 published order-4      0.500000000000    0.250000      049e65323ba55204
+3-class {00,10,11} uniform    S3/S4 resonant f=2,c=1.1  0.475118587773    0.000000      f53152c973a509a7
+3-class {00,10,11} uniform    generic irrational        0.475134928999    0.000000      78aeecc284a9fe86
+4-class uniform               S1 published order-4      0.750000000000    0.250000      3808b9403156f591
+4-class uniform               S3/S4 resonant f=2,c=1.1  0.594716494868    0.000000      c6fde86676b1e71e
+4-class uniform               generic irrational        0.594715644532    0.000000      3608516bb753bbab
+
+BYTE-IDENTICAL ARM PAIRS IN PART C2: 3 of 8 (connection, output) cells
+   at S1 published order-4       arms ['3-class {10,01,11} uniform', '3-class {00,10,01} uniform', '3-class {00,10,11} uniform'] produce IDENTICAL reported columns (SUM/K = 0.5, density = 0.25)
+   at S3/S4 resonant f=2,c=1.1   arms ['3-class {10,01,11} uniform', '3-class {00,10,01} uniform'] produce IDENTICAL reported columns (SUM/K = 0.475144115589, density = 0.0)
+   at generic irrational         arms ['3-class {10,01,11} uniform', '3-class {00,10,01} uniform'] produce IDENTICAL reported columns (SUM/K = 0.4751343393767, density = 0.0)
+   and their |Z_k| arrays agree to max 4.441e-16 over k <= 200000 at every connection --
+   they are EQUAL IN EXACT ARITHMETIC by W-03's involution; only float rounding separates them.
+
+**THIS IS EXACTLY W-08's FATAL DEFECT CLASS, AND IT IS INSIDE THE CORRECTION BLOCK.**
+PART C2 exists because the lane found a confound in PART C and refused to patch it silently.
+The replacement design it ran contains TWO ARMS THAT COULD NOT HAVE DIFFERED, by a theorem
+(W-03's involution) that the lane itself cites two scripts earlier.  Its ARMS-DIFF guard did
+not fire because the guard hashes INPUTS.  Consequences, exactly and no further:
+  (a) 'HIGHER than EVERY three-class arm' rests on TWO distinct three-class arms, not three;
+      the third is a repeat.  The COMPARISON IS NOT FALSE -- 0.5947 > 0.4751 and > 0.4751 --
+      but the count of independent three-class arms is inflated by 50%.
+  (b) The lane's *stated* remedy for the zero-variable trap (input hashing) is shown here to
+      be inoperative.  W-08's finding is that a LEDGER cannot catch this; the lane's addition
+      of an input hash does not repair the ledger, and this block is the proof.
+
+================================================================================================================
+BLOCK 3 — SCRIPT 4's lambda TABLE: TWO OF ITS EIGHT ROWS ARE THE SAME COMPUTATION
+================================================================================================================
+Script 4 validates S4's published lambda column on 8 rows and the lane reports it as 'both
+carriers reproduce S4's published lambda column in SENSE U and SENSE C'.  SENSE C on a
+four-class carrier is DEFINED as (1/4,1/4,1/4,1/4) -- it does not read the carrier at all.
+
+row     pi                                input sha256      Jensen 2^22         multiset (sorted)
+B0b U   (4/9, 2/9, 1/9, 2/9)              23882ba15dd7      -0.810930216216     ('1/9', '2/9', '2/9', '4/9')
+B0b C   (1/4, 1/4, 1/4, 1/4)              b8b4629fef2d      -1.386294195861     ('1/4', '1/4', '1/4', '1/4')
+B4 U    (1/6, 1/6, 1/6, 1/2)              28377a6ff156      -0.693147180560     ('1/2', '1/6', '1/6', '1/6')
+B4 C    (1/4, 1/4, 1/4, 1/4)              b8b4629fef2d      -1.386294195861     ('1/4', '1/4', '1/4', '1/4')
+B1 U    (0, 2/5, 2/5, 1/5)                319a2c8ee934      -0.756573585640     ('0', '1/5', '2/5', '2/5')
+B1 C    (0, 2/5, 3/10, 3/10)              4fe597a6b935      -0.767507880358     ('0', '2/5', '3/10', '3/10')
+B1q U   (1/7, 3/7, 3/7, 0)                6bc1705bd0e5      -0.741029582571     ('0', '1/7', '3/7', '3/7')
+B1q C   (2/5, 3/10, 3/10, 0)              eeee4cf70a20      -0.767507880358     ('0', '2/5', '3/10', '3/10')
+
+**BYTE-IDENTICAL INPUT ROWS: ['B0b C', 'B4 C'] -- same pi, same everything.  ZERO VARIABLES MOVED.**
+**SAME-MULTISET ROWS: ['B1 C', 'B1q C'] -- identical lambda BY W-03's MULTISET THEOREM, which the
+   lane's own finding W10A-10 re-verifies.  Not an independent reproduction either.**
+
+SO: 8 printed rows, 6 independent data.  W10A-01's evidence sentence 'both carriers reproduce
+S4's published lambda column in SENSE U and SENSE C' counts B0b-SENSE-C and B4-SENSE-C as two
+carrier reproductions when they are ONE arithmetic on ONE vector, and the lane's own
+PUBLISHED_CONVENTIONS declares exactly this void: 'ANY carrier control that holds pi fixed
+while changing the complex is a ZERO-VARIABLE CONTROL and is VOID ... This lane never runs one.'
+IT RUNS ONE, IN SCRIPT 4, AND REPORTS BOTH HALVES.
+
+================================================================================================================
+BLOCK 4 — WHAT THE ARM-DIFF DOES *NOT* BREAK.  SCRIPT 5 AND SCRIPT 3 PART C.
+================================================================================================================
+SCRIPT 5 (4 arms):
+   S1 published order-4       distinct outputs 4 of 4   NO COLLAPSE
+   S3/S4 resonant f=2,c=1.1   distinct outputs 4 of 4   NO COLLAPSE
+   generic irrational         distinct outputs 4 of 4   NO COLLAPSE
+SCRIPT 3 PART C (5 arms):
+   S1 published order-4       distinct outputs 5 of 5   NO COLLAPSE
+   S3/S4 resonant f=2,c=1.1   distinct outputs 5 of 5   NO COLLAPSE
+   generic irrational         distinct outputs 5 of 5   NO COLLAPSE
+
+SCRIPT 5's four arms and SCRIPT 3 PART C's five arms are all output-distinct at every
+connection.  W10A-08 and the PART C measurements survive the lens.  The order-4 column's
+equal recurrence density across arms is a DERIVED equality and the lane already labels it so.
+

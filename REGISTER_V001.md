@@ -988,3 +988,139 @@ of `cos f + cos c` · or a lineage-independent lane fails to reproduce the two e
 qualification — W-01's criterion, W-02's character-ratio criterion, W-03's multiset theorem, N1's
 polynomial — should be re-stated with the class-occupancy condition attached. **The corpus has
 never run a four-class carrier through anything.**
+
+---
+
+## ERRATUM AGAINST W-09 — "FOUR-CLASS CARRIER" IS NOT A THING (registrar error, 2026-08-16)
+
+W-09 concluded *"of S4's ten carriers exactly two are four-class"* and *"the corpus has never run a
+four-class carrier through anything."* **Class occupancy is a property of the LOOP DESIGNATION, not
+of the complex.** The four classes are defined by *(is `v` in `gamma_F`? is `v` in `gamma_C`?)*, so
+changing `gamma_C` changes them. Exhibited: on **B0b's own complex with S4's own `gamma_F`**,
+sweeping every admissible simple cycle for `gamma_C` reaches **16 distinct class multisets** — 8
+four-class, 7 three-class, 1 two-class — with `lambda` spanning `log(5/9)`, `log(4/9)`, `log(1/3)`
+(`LANE_W10_A_CARRIERS_REFUTE_1/r1_rebuild.OUT.txt:81`). **CORRECTED TEXT OF RECORD:** *two
+four-class **designations**, chosen under S4's CHOICE LEDGER C4, which closed the loop-designation
+question by fiat.* Nothing in W-09's arithmetic changes — the `1/4` and `1/2` regions and the
+curvature-blindness are properties of class occupancy and stand. **What falls is the phrase "the
+corpus has exactly two four-class carriers", and with it the implicit claim that occupancy is
+forced.** Deciding it needs an **admissibility criterion for loop designations**, which the corpus
+has never written — the structural twin of W-08's missing schedule-admissibility criterion.
+
+---
+
+## W-10 — THE SCOPE TABLE: **THE CORPUS DOES CONTAIN CARRIER-INDEPENDENT RESULTS. THEY ARE THEOREMS, NOT MEASUREMENTS, AND THEIR CARRIER-INDEPENDENCE IS A CONSEQUENCE OF THE TRANSPORT CONVENTION W-06 NAMED AS HAVING DECIDED THE SPINE.**
+
+Commissioned at the principal's direction, who **deferred the disposition decision by one step to
+obtain it**. Four build lanes, eight refuters, a synthesis with its own verification lane, and the
+registrar's own exact re-check of everything that corrects a register row. **13 agents, 0 errors.**
+
+**WHERE THE PROOF IS.** `W10_SCOPE_TABLE_V001.md` sha256 `3b84120c895ea1024ac3de08cb6c5834a230610bdd0ed84c62dcc6917f9a90b1` — full table, ~50 rows, each with a SCOPE mark and
+a **BASIS** tag distinguishing *theorem* from *exhibited* from *could-not-have-failed* from
+*argued-only*. Fourteen sealed lane directories `LANE_W10_*`, all verify.
+
+### THE ANSWER, IN THE FORM THE DECISION NEEDS
+
+**CARRIER_INDEPENDENT:** N1's identification `lambda = m(p00 + p10 x + p01 y + p11 xy)` ·
+W-08's monotonicity and the falsity of the founding obstruction as an inference · W-08's character
+identity and its linear floor · W-02's criterion `FORMATION <=> G != {1}` · W-03/N2's multiset
+theorem and its exact involution · the schedule result qualitatively · N3 and N4.
+**Every one is a statement in `(pi, u, v)` with no carrier symbol in it — so a four-class run is a
+CONTROL, not a test.** The table says so in the BASIS column rather than scoring the runs as
+evidence.
+
+**AND THE QUALIFICATION THAT MATTERS MOST, WHICH NO REGISTER ROW CARRIES:** they are
+carrier-independent **given the transport convention** — whole-circuit scalar multiplication by
+`M_gamma`. Under the corpus's own sealed alternative, **COR-F's edge-tick transport `T` with
+`T^L = M_gamma`**, the transports are non-diagonal and `||[T_F, T_C]||` is `2.828` on B0b, `2.449`
+on K1 and **exactly `0` on B0a — non-zero precisely when class 11 is occupied.** **The incidence
+that N2 calls invisible is visible to the corpus's own sealed alternative transport, and COR-F
+still has no register row.** Honest mark: **CARRIER_INDEPENDENT ∧ CONVENTION_SCOPED.**
+
+**THREE_CLASS_SCOPED:** W-01's convex-hull criterion and its advertised virtue (W-09, now
+reproduced a fourth time on a deterministic grid with a third hull algorithm) · W-02's published
+support table, which is **incomplete, not wrong** — six two-element supports exist, three are
+listed, and the three omitted are exactly those needing class 00.
+
+**K1_SCOPED:** **the entire C\*-algebraic superstructure, and its hypothesis is the primality of 5**
+— `UHF(5·2^inf)`, *"one qubit per cell, proved minimal"*, S3's rejection of its own adjunction-free
+alternative, **and W-06's `V = 4k+1` rebuild route.** On B0b, `9 | 81`, so `M_9^{(x)N}` is a directed
+system with unital embeddings and **no adjunction at all** — the route's own motivation evaporates
+on the very carrier its sequence reaches.
+
+**UNDETERMINED — thirteen rows, none guessed.** Six of the nine crossing properties (**unrunnable:
+S3 published no lane directory**) · everything W-06 computed (no artifact) · W-08's four schedule
+constants (not reproduced) · the multiset theorem's hypothesis off the non-negative locus.
+**P-9 and P-3 are decided here for the first time and are CARRIER_INDEPENDENT.**
+
+### NEW DEFECTS OF RECORD, REGISTRAR-VERIFIED
+
+**N-4 — EVERY RATIONAL CONNECTION IS EXACTLY RESONANT, AND IT CONVICTS THREE MORE PUBLISHED ROWS.**
+One line: if `f, c` are rational then `mf + nc` is rational, `2 pi j` is irrational for `j != 0`, so
+`j = 0`, and `(m,n) = (r q, -p s)` is a nonzero relation. **Exact census, verified in `Fraction`:**
+`f=2.0,c=1.1 -> (11,-20)` (already of record) · `f=2.0,c=2.0 -> (1,-1)` ·
+**`S4:973`'s `3.14159, 1.57080`, published in terms as *"they are generic"*, `-> (157080,-314159)`**
+· W-10 lane D's own hard-coded `1.3, 2.0 -> (20,-13)`. **S4:973's mislabelling sits inside the
+paragraph correcting the corpus's first two mislabelled connections.** **`S4:603`'s `f = 1.0,
+c = sqrt(2)` is the ONLY generic connection the corpus publishes — and it is the one S4 used to
+verify the entire `lambda` column**, which is why that column survives.
+
+**N-1 — S4's B4 ROW IS UNDER-DETERMINED BY ITS OWN PARAMETERS.** A second spindle — a triangle with
+two 2-cells glued to a pentagon with two 2-cells at two points — matches **every published column**
+(`V=6 E=8 F=4 chi=2 b=(1,1,2)`, gauge 5, inv 3, curv 2, flat 1, `d1·d2=0`, `gamma_F` bounds,
+`gamma_C` does not, independent) and delivers class multiset `{00:1,10:1,01:2,11:2}` with
+`lambda = log(1/3)` against S4's `log(1/2)`. **COR-K defect class against S4. And the build lane
+hard-coded S4's multiset as its target, so its match could not have failed** — caught by its own
+refuter.
+
+**N-3 — S4:599's *"genuinely 4-term and does not factor. QUADRATURE ONLY, -0.810930216216"* IS HALF
+WRONG.** The non-factoring half is exact (`p00·p11 = 8/81 != 2/81 = p10·p01`). The other half falls:
+`|a+be^{it}|^2 - |c+de^{it}|^2 = 5/27 + (4/27)cos t`, which would need `cos t = -5/4` to vanish, so
+**one Jensen branch dominates everywhere** and `lambda = m(4/9 + (2/9)x) = log(4/9)` **exactly**.
+Independent Jensen quadrature at `n = 2^22` returns `-0.810930216216329`; branches never cross.
+**Non-factoring does not imply no closed form.**
+
+**N-6 — FIVE MORE ZERO-VARIABLE CONTROLS**, two of them inside blocks written to correct earlier
+zero-variable controls, and an arms-diff guard that hashes **inputs** while the collapse is in the
+**outputs**. **N-7 — the multiset theorem's hypothesis has now been misnamed SIX times, three of
+them this round by refuters commissioned to catch misnaming, and my own "real non-negativity" is
+one of the six.** Two independent mechanisms produce the invariance — flux coincidence and branch
+domination — and no proposed name covers both. **Marked UNDETERMINED; the synthesis declined to
+supply a seventh name and so do I.** It touches no registered result: `pi` is a probability vector,
+so the corpus never leaves the regime where the theorem is proved.
+
+**N-10 — "S4 WAS NEVER AUDITED" IS TOO STRONG, AND I REPEATED IT.** B1, B1q and B0b had their full
+S4 rows — `d1`, `d2^T`, invariants, class multisets, `lambda` by three methods — reproduced in
+`LANE_R_MAPS_REFUTER/rm_1_validate.OUT.txt` during the **W-03** round. The correct statement is that
+**S4's artifact carries no sealed audit document and its carrier code is not in the repo**; parts of
+its table were checked in passing by a lane doing something else.
+
+### WHAT READS TWO WAYS — AND THE SYNTHESIS REFUSED TO SCORE IT, CORRECTLY
+
+**IS "THE FORMATION FUNCTIONAL IS CARRIER-INDEPENDENT" A FINDING OR A RESTATEMENT OF THE
+CONVENTION?** *Reading A:* a substantive result — the physics does not depend on the complex, which
+is why a short mathematical note is publishable. *Reading B:* transport was **defined** as fibre-wise
+scalar multiplication by the whole-circuit holonomy, so only `pi` **can** enter, and the result is an
+analytic consequence of an unledgered stipulation — W-04's *"what K1 was: inert"* and W-06's *"the
+thing that decided the spine"* both say so. **Both readings are supported. They have opposite
+consequences for a rebuild: A says the functional layer is portable; B says portability is what you
+get for free when the carrier was stipulated out.** Not scored. **This is the single most
+consequential undecided question the table produces.**
+
+### LINEAGE
+
+**Layer TWELVE of one lineage.** W-07 through W-10, every lane and every refuter, are Opus 5. The
+last lineage-independent boundary in this corpus is Fable 5 (S1-S4, W-01…W-06) to Opus 5 (W-07 on),
+and everything in this round sits on one side of it. Two refuters accepted an upstream construction
+byte-identical rather than re-deriving it. **Six consecutive layers have each been caught by the
+next and the rate has not fallen. Discount this row as one block with W-07 through W-09.**
+
+**NOTHING HERE TAKES ANY OF THE PRINCIPAL'S THREE DECISIONS.**
+
+**REOPENS IF:** an admissibility criterion for loop designations is written (it would decide N-2 and
+the B0b sweep) · COR-F's edge-tick transport is carried into a register row, which would rescope
+every CARRIER_INDEPENDENT verdict · S3's lane code is produced, which would make six of the nine
+crossing properties runnable · or a **lineage-independent** lane reads this table.
+**NEXT, IF ANYTHING:** the convention question above is decidable — run the whole formation
+functional under COR-F's `T` instead of `M_gamma` on K1 and on B0b, and see whether the incidence
+becomes visible. It is the one experiment that would tell reading A from reading B.

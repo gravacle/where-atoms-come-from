@@ -1,0 +1,80 @@
+========================================================================================================
+R2_02 — EFFECT SIZE OF THE RESONANT ARM vs THE RULER THAT MEASURES IT.  dps = 50
+        subtorus H from the primitive relation (11,20) of f = 2.0, c = 1.1
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+  B0b  SENSE U  (4,2,1,2)/9
+     m(P)                       = -0.810930216216328764
+     m(Q_(11,20)) trapezoid 2^16= -0.810930204535048912
+     m(Q_(11,20)) ROOTS/Jensen  = -0.810930204535048912   |trap - roots| = 5.346e-50
+     roots of Q ON the unit circle: 0 of 31   
+     EFFECT SIZE  m(Q) - m(P)   = 1.16812798517e-8   |eff| = 1.16813e-8
+
+--------------------------------------------------------------------------------------------------------
+  B4   SENSE U  (1,1,1,3)/6
+     m(P)                       = -0.693147180559945309
+     m(Q_(11,20)) trapezoid 2^16= -0.693147181044366374
+     m(Q_(11,20)) ROOTS/Jensen  = -0.693147181044366374   |trap - roots| = 0.0
+     roots of Q ON the unit circle: 0 of 31   
+     EFFECT SIZE  m(Q) - m(P)   = -4.84421064413e-10   |eff| = 4.84421e-10
+
+--------------------------------------------------------------------------------------------------------
+  K1   SENSE U  (0,2,2,1)/5
+     m(P)                       = -0.756573585723749965
+     m(Q_(11,20)) trapezoid 2^16= -0.756337009107433728
+     m(Q_(11,20)) ROOTS/Jensen  = -0.756337009107433728   |trap - roots| = 4.963e-43
+     roots of Q ON the unit circle: 0 of 31   
+     EFFECT SIZE  m(Q) - m(P)   = 0.000236576616316   |eff| = 0.000236577
+
+--------------------------------------------------------------------------------------------------------
+  SENSE C 4-class (1,1,1,1)/4
+     m(P)                       = -1.38628378453327319
+     m(Q_(11,20)) trapezoid 2^16= -1.38624147818680346
+     m(Q_(11,20)) ROOTS/Jensen  = -1.38629436111989062   |trap - roots| = 5.288e-5
+     roots of Q ON the unit circle: 31 of 31     <- log singularities: trapezoid is only O(1/n) here
+     EFFECT SIZE  m(Q) - m(P)   = -1.05765866174e-5   |eff| = 1.05766e-5
+
+--------------------------------------------------------------------------------------------------------
+  B0b* SENSE U  (2,1,3,3)/9
+     m(P)                       = -0.987918287871597032
+     m(Q_(11,20)) trapezoid 2^16= -0.987321822860801995
+     m(Q_(11,20)) ROOTS/Jensen  = -0.987321822860801995   |trap - roots| = 3.475e-50
+     roots of Q ON the unit circle: 0 of 31   
+     EFFECT SIZE  m(Q) - m(P)   = 0.000596465010795   |eff| = 0.000596465
+
+========================================================================================================
+THE POWER TABLE.  Can lane C's K = 1e7 run tell the two candidate limits apart?
+========================================================================================================
+  case                             |m(Q)-m(P)| (effect)    lane C err at K=1e7      ratio  verdict
+  B0b  SENSE U  (4,2,1,2)/9                  1.16813e-8              5.435e-08      0.215  UNRESOLVED — the ruler is coarser than the effect
+  B4   SENSE U  (1,1,1,3)/6                 4.84421e-10              5.612e-08      0.009  UNRESOLVED — the ruler is coarser than the effect
+  K1   SENSE U  (0,2,2,1)/5                 0.000236577              5.402e-08   4379.426  RESOLVED
+  SENSE C 4-class (1,1,1,1)/4                1.05766e-5              1.405e-06      7.528  RESOLVED
+
+========================================================================================================
+AND WHICH TARGET DID LANE C's MEASURED RESONANT VALUE ACTUALLY LAND NEAREST?
+========================================================================================================
+  case                             measured (K=1e7)   |meas-m(P)|   |meas-m(Q)|  nearest
+  B0b  SENSE U  (4,2,1,2)/9            -0.810930225     8.784e-09     2.046e-08  m(P)  <-- THE TARGET IT IS CLAIMED NOT TO CONVERGE TO
+  B4   SENSE U  (1,1,1,3)/6            -0.693147188     7.440e-09     6.956e-09  m(Q) subtorus
+  K1   SENSE U  (0,2,2,1)/5            -0.756337086     2.365e-04     7.689e-08  m(Q) subtorus
+  SENSE C 4-class (1,1,1,1)/4          -1.386295428     1.164e-05     1.067e-06  m(Q) subtorus
+
+========================================================================================================
+LANE C's OWN SUBTORUS EVALUATOR, CHECKED.  C_04.subtorus_limit is a 2^22-node
+trapezoid on log|Q|.  Where Q has roots ON the unit circle that is an O(1/n) rule.
+========================================================================================================
+  B0b  SENSE U  (4,2,1,2)/9      lane C = -0.810930204535   exact =  -0.810930204535   err = 4.89e-14
+  B4   SENSE U  (1,1,1,3)/6      lane C = -0.693147181044   exact = -0.6931471810444   err = 3.66e-13
+  K1   SENSE U  (0,2,2,1)/5      lane C = -0.756337009107   exact = -0.7563370091074   err = 4.34e-13
+  SENSE C 4-class (1,1,1,1)/4    lane C = -1.386293534824   exact =   -1.38629436112   err = 8.26e-07   <- unit-circle roots present
+
+========================================================================================================
+SENSE C, EXACTLY.  P = (1+x)(1+y)/4 restricts on H to Q = (1+z^11)(1+z^20)/4, so
+m(Q) = log(1/4) + m(1+z^11) + m(1+z^20) = -log 4 = m(P) EXACTLY.  The subtorus limit
+and the torus limit COINCIDE there, and lane C's -1.386293534824 is 8.3e-07 of
+trapezoid error, not a distinct limit.
+  -log 4 = -1.38629436111989062
+
+DONE.

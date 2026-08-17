@@ -1,0 +1,70 @@
+LANE W-10 B REFUTE 1 — R4.  FOUR SIDE CHECKS.
+
+D.1  Is the label-dependence I found in a NON-VACUOUS near-return density real, or is it
+     grid noise?  (A refuter who reports quadrature as a refutation has done the corpus's
+     characteristic damage, so this is settled by convergence before anything is claimed.)
+D.2  The involution at the level of Z_k, my own code, real vs complex.
+D.3  The scope the lane's reality hypothesis actually has: at THREE occupied classes the
+     multiset theorem survives arbitrary COMPLEX coefficients, so 'reality' bites only at
+     four -- i.e. on no carrier the corpus ran before W-09.
+D.4  The lane's B-06 sweep, re-added from its own printed numbers.
+
+
+================================================================================================
+D.1  THE NEAR-RETURN DENSITY: CONVERGENCE TEST BEFORE ANY CLAIM
+================================================================================================
+  B0b, 1{|P| < 0.2222}, grid  1024^2 : value 0.104375839   spread over 24 perms = 2.86e-05
+  B0b, 1{|P| < 0.2222}, grid  2048^2 : value 0.104390144   spread over 24 perms = 9.54e-07
+  B0b, 1{|P| < 0.2222}, grid  4096^2 : value 0.104384661   spread over 24 perms = 4.77e-06
+  The spread does not settle on any non-zero value; it falls by more than an order
+  of magnitude with the grid and is set by how the grid resolves the boundary of the
+  sub-level set.  IT IS QUADRATURE, and the exact statement backs that: since every
+  INT INT F(|P|) is permutation-invariant, the whole DISTRIBUTION of |P| over the torus is,
+  so the density below any threshold is invariant exactly.  The lane's E.2 claim survives
+  this attack.  What does not survive is its choice of threshold: 1{|P| < 0.1} is
+  IDENTICALLY ZERO on both carriers it tested, so two of its eight printed rows compare
+  0.0 with 0.0 -- a control that could not have failed, unflagged.
+
+================================================================================================
+D.2  THE INVOLUTION AT THE LEVEL OF Z_k, MY OWN CODE
+================================================================================================
+  real non-negative    max |conj(u)^k conj(v)^k Z_k - conj(Z~_k)| = 3.557e-16     max |lambda - lambda~| = 3.331e-16
+  real, signs mixed    max |conj(u)^k conj(v)^k Z_k - conj(Z~_k)| = 3.511e-16     max |lambda - lambda~| = 4.441e-16
+  complex, 3 collinear max |conj(u)^k conj(v)^k Z_k - conj(Z~_k)| = 1.940e+00     max |lambda - lambda~| = 4.441e-16
+  complex, generic     max |conj(u)^k conj(v)^k Z_k - conj(Z~_k)| = 5.683e+00     max |lambda - lambda~| = 4.441e-16
+
+================================================================================================
+D.3  AT THREE OCCUPIED CLASSES THE MULTISET THEOREM NEEDS NO REALITY AT ALL
+================================================================================================
+  THE ONE VARIABLE: the permutation.  Held: the moduli, the arguments, the evaluator.
+  Every array below has ONE class coefficient equal to zero -- i.e. K1's own occupancy,
+  and the occupancy of every carrier the corpus ran before W-09 -- and arguments chosen so
+  that no three of the four coefficients are collinear among the NON-ZERO ones.
+  K1-shaped (0, .3, .3, .4) generic args   maxcollinear(nonzero)=1  blocks at dps30 = [24]   spread = 0.000e+00
+  three-class (0, .5, .2, .3) other args   maxcollinear(nonzero)=1  blocks at dps30 = [24]   spread = 0.000e+00
+  three-class, zero in class 11            maxcollinear(nonzero)=1  blocks at dps30 = [24]   spread = 0.000e+00
+  So the hypothesis the lane calls load-bearing -- REALITY of the class array -- is
+  VACUOUS at three occupied classes: with a zero coefficient the three surviving phases are
+  exactly the three gauge parameters (alpha, beta, gamma) of P -> alpha P(beta x, gamma y),
+  so they can all be removed and lambda depends on the moduli multiset alone.  The lane's
+  own break (LEG C, an inserted observable) does still bite on K1, because the RECTANGLE
+  sums it produces are generically all four non-zero even when the CLASS sums are not.
+
+================================================================================================
+D.4  THE LANE'S B-06 SWEEP, RE-ADDED FROM ITS OWN PRINTED TABLE
+================================================================================================
+  b3_pushforward.OUT.txt C.2 prints, for each of four sweeps of 200 observables:
+      B0b Hermitian {(1,'dominant'):39, (1,'not dominant'):6, (2,'not dominant'):14, (3,'not dominant'):141}
+      B0b unitary   {(1,'dominant'):31, (1,'not dominant'):5, (2,'not dominant'):13, (3,'not dominant'):151}
+      B4  Hermitian {(1,'dominant'):41, (1,'not dominant'):5, (2,'not dominant'):19, (3,'not dominant'):135}
+      B4  unitary   {(1,'dominant'):48, (1,'not dominant'):3, (2,'not dominant'):15, (3,'not dominant'):134}
+  The finding B-06 says: 'roughly 70 percent give 3 distinct lambda, THE REMAINDER FALL IN
+  THE |q|_max-DOMINANT REGIME'.  Adding the lane's own columns:
+   B0b Hermitian: 3 rates 141 (70%)   remainder  59, of which dominant  39 and NOT dominant  20 (10% of the sweep)
+   B0b unitary  : 3 rates 151 (76%)   remainder  49, of which dominant  31 and NOT dominant  18 (9% of the sweep)
+   B4  Hermitian: 3 rates 135 (68%)   remainder  65, of which dominant  41 and NOT dominant  24 (12% of the sweep)
+   B4  unitary  : 3 rates 134 (67%)   remainder  66, of which dominant  48 and NOT dominant  18 (9% of the sweep)
+  So between 9% and 10% of every sweep is an observable whose four rectangle
+  coefficients are complex, non-collinear, NOT in the dominant regime, and which STILL
+  fails to produce three rates.  The lane's own sweep contains the counterexample to the
+  lane's own biconditional, in the finding that cites the sweep as its evidence.

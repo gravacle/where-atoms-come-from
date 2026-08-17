@@ -1,0 +1,130 @@
+LENS 2 (SCOPE), ATTACK 4.  B-11 SAYS THE MULTISET THEOREM 'FAILS AT BOTH OF THE
+CORPUS'S OWN DISTINGUISHED CONNECTIONS'.  IS THAT A FACT ABOUT THE CONNECTIONS, OR ABOUT
+THE ONE WEIGHT VECTOR (GEN) THAT SHOWS IT?
+
+B-11's claim sentence: 'At S1's published order-4 connection the surviving group has
+order 8 (the Jensen-pairing group) and the 24 arrangements carry THREE rates; at S3/S4's
+exactly resonant f=2.0, c=1.1 only the involution survives, order 2, and they carry
+TWELVE.'  Its evidence cites GEN and B0b.  Its own sealed output ALSO contains B4, and
+B4 carries ONE rate at the order-4 connection and its resonant spread prints as 0.000000.
+This script decides B4 exactly, derives the order-4 rate in closed form, and measures how
+often the failure happens across the four-class weight simplex and across ready states on
+the corpus's own carriers.
+
+  4.0  the order-4 rate in CLOSED FORM, exact, and its exact invariance group
+  4.1  B0b, B4, K1+2S, GEN at both distinguished connections -- B4 decided exactly
+  4.2  how much of the four-class simplex actually shows the failure, and how big it is
+  4.3  the same question asked of READY STATES on the corpus's own carriers
+  4.4  the magnitude against the corpus's own instrument
+
+THE ONE VARIABLE in 4.1-4.3: the permutation of the four class weights.  The connection,
+the evaluator and the code path are fixed within each block; the connection's ARITHMETIC
+is the variable BETWEEN blocks and is named in each header.
+
+
+================================================================================================
+4.0  S1's ORDER-4 CONNECTION: THE RATE IN CLOSED FORM, AND ITS EXACT SYMMETRY
+================================================================================================
+  S1 sec6 publishes W_F = -1, W_C = -i, so u = conj(W_F) = -1 and v = W_C = -i and the
+  pair (u^k, v^k) cycles through (-1,-i), (1,-1), (-1,i), (1,1).  With (a,b,c,d) =
+  (p00,p10,p01,p11) the four values of |Z_k| are
+
+     |a - b - i(c-d)| = sqrt((a-b)^2 + (c-d)^2)   at k=1 and k=3 (complex conjugates)
+     |a + b - c - d|                              at k=2
+     a + b + c + d                                at k=4
+     rate = (1/4)[ log((a-b)^2+(c-d)^2) + log|a+b-c-d| + log(a+b+c+d) ]      EXACT
+
+  Every term is symmetric in (a,b), symmetric in (c,d), and symmetric under swapping the
+  pair {a,b} with the pair {c,d}.  So the rate is invariant under EXACTLY the stabiliser
+  of the partition {{00,10},{01,11}} -- order 8, and NOT the same order-8 subgroup as the
+  full-torus D4, which stabilises the DIAGONAL matching {{00,11},{10,01}}.  Two different
+  order-8 dihedral subgroups; the corpus has never distinguished them.
+  The closed form is checked below against a direct k-average, which is the only place a
+  number is needed at all.
+  |stabiliser of {{00,10},{01,11}}| = 8, is a subgroup: True
+  |D4 (diagonal matching)|          = 8, is a subgroup: True
+  the two order-8 groups are equal: False   their intersection has order 4
+  closed form on GEN = -1.25305914386581   direct k-average over k=1..4000 = -1.253059143865809   diff 2.00e-15
+
+================================================================================================
+4.1  BOTH DISTINGUISHED CONNECTIONS, ALL FIVE WEIGHT VECTORS, DECIDED EXACTLY
+================================================================================================
+  VALIDATION of the resonant route (mpmath polyroots at 40 digits, my own code):
+     lambda_subtorus(0.4,0.3,0.3,0) = -0.767014992998   ERRATUM AGAINST W-02: -0.767014993
+     full torus, same weights       = -0.767507880358   register:            -0.767507880
+
+  weights                       arrays | ORDER 4 (S1's own connection)      | RESONANT f=2.0 c=1.1 (S3/S4's)
+  B0b   (4,2,1,2)/9  SENSE U        12 |  2 blocks spread 0.127706       |  3 blocks spread 5.98114e-6
+                                       | stab 16 subgrp False =STAB_M1 False | stab  4 subgrp False =involution False
+  B4    (1,1,1,3)/6  SENSE U         4 |  1 blocks spread 0.0            |  2 blocks spread 4.84421e-10
+                                       | stab 24 subgrp True  =STAB_M1 False | stab 12 subgrp False =involution False
+  K1+2S (2,2,2,1)/7  SENSE U         4 |  1 blocks spread 0.0            |  2 blocks spread 0.00297479
+                                       | stab 24 subgrp True  =STAB_M1 False | stab 12 subgrp False =involution False
+  GEN   (.37,.29,.23,.11)           24 |  3 blocks spread 0.323797       | 12 blocks spread 0.00342802
+                                       | stab  8 subgrp True  =STAB_M1 True  | stab  2 subgrp True  =involution True
+  SENSE C (1,1,1,1)/4                1 | 24 blocks spread nan            |  1 blocks spread 0.0
+                                       | stab  0 subgrp False =STAB_M1 False | stab 24 subgrp True  =involution False
+
+  READ IT OFF.  B4 -- one of the two four-class carriers the corpus owns, and the one
+  B-11's claim sentence does not mention -- has ONE block at the order-4 connection and
+  ONE block at the resonant connection, at a tolerance of 1e-22.  ON B4 THE MULTISET
+  THEOREM DOES NOT FAIL AT EITHER DISTINGUISHED CONNECTION.  The reason is exhibited at
+  4.0: B4's SENSE-U vector has three equal weights, so the (a,b),(c,d) pairs of the
+  order-4 closed form are the same multiset in every arrangement, and at the resonant
+  connection the same repeat collapses the 4 distinct arrays onto 2 involution orbits
+  whose Mahler measures coincide.
+
+================================================================================================
+4.2  HOW MUCH OF THE FOUR-CLASS SIMPLEX ACTUALLY SHOWS THE FAILURE
+================================================================================================
+  ONE VARIABLE: the permutation, at each of the two fixed connections.  2000 random
+  Dirichlet(1,1,1,1) four-class weight vectors, seed 20260816.  A vector 'shows the
+  failure' if its 24 arrangements do not all give the same rate at that connection.
+  The order-4 column is the EXACT closed form in float64; the resonant column is the
+  float64 root twin, at a 1e-8 decision threshold (headline rows above are mpmath at 40
+  digits and agree).  Spread is reported as a distribution because its SIZE is the scope question.
+  ORDER 4 : 2000 of 2000 vectors show a nonzero spread (100.0%)
+            spread quantiles 10/50/90 = 0.0150 / 0.1350 / 0.4918   max 1.8244
+  RESONANT: 448 of 600 vectors show a nonzero spread (74.7%)
+            spread quantiles 10/50/90 = 1.39e-12 / 2.11e-05 / 4.27e-03   max 2.52e-02
+
+================================================================================================
+4.3  THE SAME QUESTION ASKED OF READY STATES ON THE CORPUS'S OWN CARRIERS
+================================================================================================
+  ONE VARIABLE: the ready state.  The class multiset is the carrier's published one;
+  the connection and the evaluator are fixed.  This is the arm that decides whether B-11
+  is about the connection or about GEN: a carrier whose SENSE-U vector hides the failure
+  may still show it at a generic state, and that is a statement about the state, not the
+  carrier.  400 Haar states per carrier, seed 4242, order-4 closed form.
+  B0b  {00:4,10:2,01:1,11:2}   SENSE U spread = 0.127706 ;  random states: nonzero 400/400, median 0.1303
+  B4   {00:1,10:1,01:1,11:3}   SENSE U spread = 0.000000 ;  random states: nonzero 400/400, median 0.1240
+  K1+2S {00:2,10:2,01:2,11:1}  SENSE U spread = 0.000000 ;  random states: nonzero 400/400, median 0.1768
+
+  B-11's SUBSTANCE SURVIVES AND IS STRONGER THAN ITS EVIDENCE: at the order-4 connection
+  the failure is UNIVERSAL on the four-class simplex (2000 of 2000, median spread 0.13),
+  so it is not a GEN artifact at all.  What does NOT survive is B-11's arithmetic of the
+  surviving GROUP.  'The surviving group has order 8, the Jensen-pairing group' and 'only
+  the involution survives, order 2' are true of GEN and of no other vector tested:
+    B0b at order 4    stabiliser 16, NOT a subgroup, NOT the Jensen-pairing group
+    B4  at order 4    stabiliser 24 -- the theorem does not fail there at all
+    B4  at resonant   spread 4.8e-10, which the lane's 6-decimal print shows as 0.000000
+                      and its tolerance reads as stabiliser 24; at 1e-22 it is 2 blocks
+    SENSE C at order 4  rate = -infinity, because a+b-c-d = 0 makes Z_2 vanish exactly
+  So the operative variable for WHICH GROUP SURVIVES is the weight vector's repeat
+  pattern, and for WHETHER ANYTHING SURVIVES it is the connection.  B-11 states the
+  second and quantifies it with the first.
+
+================================================================================================
+4.4  MAGNITUDE — THE RESONANT FAILURE IS BELOW THE CORPUS'S OWN INSTRUMENT
+================================================================================================
+  S4's own validation of its closed forms was 'direct schedule-B simulation, N=2e6,
+  worst deviation 3.0e-06' (S4:4.2).  The lane's own LEG A prints E1-E4 deviations up to
+  1.35e-05 (SENSE C row).  Against that instrument:
+  B0b   (4,2,1,2)/9  SENSE U   resonant spread 5.981e-6       order-4 spread 0.1277
+  B4    (1,1,1,3)/6  SENSE U   resonant spread 4.844e-10      order-4 spread 0.0
+  K1+2S (2,2,2,1)/7  SENSE U   resonant spread 0.002975       order-4 spread 0.0
+  GEN   (.37,.29,.23,.11)      resonant spread 0.003428       order-4 spread 0.3238
+  The resonant failure on the corpus's own four-class carrier B0b is 6e-06 -- twice
+  S4's stated simulation error and below the lane's own worst evaluator disagreement.  It
+  is real and it is EXACT (from roots), but no instrument the corpus ever used at that
+  connection could have seen it.  The order-4 failure is 1e-1 and is a different matter.

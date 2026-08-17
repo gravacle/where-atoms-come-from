@@ -1,0 +1,46 @@
+====================================================================================================
+== R6-A  THE BRANCH OPERATORS IN LEG 4C ==
+====================================================================================================
+  CONVENTIONS (lane D's own PUBLISHED_CONVENTIONS): u = conj(W_F) = e^{-if}, v = W_C = e^{ic},
+  chi_ab = u^a v^b.  M_dF multiplies s_v by W_F = e^{+if} for v in gamma_F; M_c by W_C.
+  Then <M_dF s, M_c s> = sum_v |s_v|^2 conj(W_F)^{[F]} W_C^{[C]} = sum p_ab u^a v^b = Z_1.
+  IT IS AN IDENTITY.  Any implementation for which |<a,b>| != |Z_1| has the wrong operator.
+
+  carrier              |Z_1|  CORRECT |<a,b>|       dev  LANE D |<a,b>|  dev from Z_1  rank both
+  B1  K1  (3cl)     0.142207         0.142207   2.8e-17        0.762211      0.620004     (2, 2)
+  B1q spec (3cl)    0.082496         0.082496   0.0e+00        0.806546      0.724049     (2, 2)
+  B1p brdg (2cl)    0.079121         0.079121   4.2e-17        0.939373      0.860252     (2, 2)
+  B0b torus(4cl)    0.628335         0.628335   0.0e+00        0.749367      0.121032     (2, 2)
+  B4  spin (4cl)    0.610667         0.610667   1.1e-16        0.713764      0.103097     (2, 2)
+
+  The CORRECT operator reproduces W-05's registered 'overlap agreeing with Z' to 1e-16 on
+  every carrier including both four-class ones.  Lane D's differs from its own adjacent
+  Z_1 column by up to 0.72 and the page does not remark on it.
+  dim span = 2 UNDER BOTH implementations, so D-26's CONCLUSION (dim_C = 4, carrier-
+  independent, conditioned on G != {1}) SURVIVES -- but on the corrected exhibit, which
+  additionally reproduces the registered overlap the lane's own version contradicts.
+
+====================================================================================================
+== R6-B  dim A^G FOR THE FIBRE-WISE GROUP, EXACTLY -- NO MONTE CARLO ==
+====================================================================================================
+  A = M_{Vr}(C) acting on (+)_v C^r;  G = U(r)^V acting by conjugation.
+  Block condition: U_v X_vw U_w^* = X_vw for all U.
+    v = w : U X U^* = X for all U in U(r)  =>  X = scalar          (dim 1 per vertex)
+    v != w: take U_v = I, U_w = e^{i th} I  =>  e^{-i th} X = X    =>  X = 0
+  so A^G = (+)_v C.I_r and dim_C A^G = V, for every V and every r.  Settled exactly below
+  by solving the fixed-point equations for a FINITE generating set that already forces the
+  answer (per-vertex diagonal 4th-root phases + a per-vertex 2-cycle), via exact ranks.
+    V  r   dim A  dim A^G (exact solve)   = V?  smallest sing. val. gap
+    5  1      25                      5   True                      inf
+    5  2     100                      5   True                6.369e+15
+    5  3     225                      5   True                4.406e+15
+    9  1      81                      9   True                      inf
+    9  2     324                      9   True                6.369e+15
+    9  3     729                      9   True                4.406e+15
+    6  2     144                      6   True                6.369e+15
+    6  3     324                      6   True                4.406e+15
+    4  4     256                      4   True                3.706e+15
+  dim A^G = V AT EVERY (V, r) TESTED, INCLUDING TWO LANE D DID NOT RUN (6,3) AND (4,4),
+  with a singular-value gap of 1e+15 or better rather than the 0.01 gap of a 20000-draw
+  Monte-Carlo projector.  D-16 and D-18 SURVIVE, on a statistic that cannot be tuned by a
+  tolerance -- which is what went wrong in lane D's first run of this block.

@@ -1,0 +1,120 @@
+LANE W-10 B — LEG A.  W-03's MULTISET THEOREM AT FOUR OCCUPIED CLASSES, REAL WEIGHTS.
+
+THE ONE VARIABLE: the PERMUTATION of the four class weights.  The polynomial, the
+evaluator, the precision, the split rule and the code path are identical in every row;
+only the assignment of the same four numbers to the four classes moves.
+
+ARM DIFF (the process rule the corpus's isolation audit says a ledger cannot catch):
+every row prints its own coefficient array, so byte-identical arms are visible on the
+page.  Row 1 of each block is the identity permutation; the other 23 arrays differ from
+it in at least two positions unless the weight multiset has a repeat, and repeats are
+flagged explicitly.
+
+FOUR INDEPENDENT EVALUATORS (b_lib.py): E1 Jensen-in-y, E2 Jensen-in-x, E3 exact
+rational domination certificate, E4 the corpus's own direct ergodic average.
+
+
+================================================================================================
+LEG A — B0b  ring torus, loops MEET   S4:575 {00:4,01:1,10:2,11:2}  SENSE U
+================================================================================================
+  base array (00,10,01,11) = ('4/9', '2/9', '1/9', '2/9')      repeated weights present: True
+  E1 Jensen-in-y, 24 permutations : spread = 0.0
+  E2 Jensen-in-x, 24 permutations : spread = 0.0
+  E1 vs E2, worst disagreement    : 0.0
+  E1 value (identity permutation) : -0.810930216216328819
+  E3 exact: 24 of 24 arrangements have a DOMINATED Jensen pairing
+     exact lambda on those = log(4/9) = -0.810930216216328764
+     E1 vs E3 worst deviation = 5.55112e-17
+     >>> ALL 24 ARRANGEMENTS DOMINATED.  lambda = log(max weight) EXACTLY, in
+         rational arithmetic, with no quadrature and no appeal to the multiset
+         theorem: the value does not depend on the other three weights AT ALL.
+  ARM DIFF: 22 of the other 23 permuted arrays differ from the identity array
+  E4 direct ergodic average, f=1.0 c=sqrt(2) N=2e6 (no quadrature anywhere):
+     perm e              array (0.4444, 0.2222, 0.1111, 0.2222)  E4 = -0.810929681   E1-E4 = -5.35e-07
+     perm (01 11)        array (0.4444, 0.2222, 0.2222, 0.1111)  E4 = -0.810930281   E1-E4 = +6.49e-08
+     perm (10 01 11)     array (0.4444, 0.1111, 0.2222, 0.2222)  E4 = -0.810929787   E1-E4 = -4.29e-07
+
+================================================================================================
+LEG A — B4   spindle                  S4:578 {00:1,01:1,10:1,11:3}  SENSE U
+================================================================================================
+  base array (00,10,01,11) = ('1/6', '1/6', '1/6', '1/2')      repeated weights present: True
+  E1 Jensen-in-y, 24 permutations : spread = 0.0
+  E2 Jensen-in-x, 24 permutations : spread = 0.0
+  E1 vs E2, worst disagreement    : 0.0
+  E1 value (identity permutation) : -0.693147180559945309
+  E3 exact: 24 of 24 arrangements have a DOMINATED Jensen pairing
+     exact lambda on those = log(1/2) = -0.693147180559945309
+     E1 vs E3 worst deviation = 9.86076e-32
+     >>> ALL 24 ARRANGEMENTS DOMINATED.  lambda = log(max weight) EXACTLY, in
+         rational arithmetic, with no quadrature and no appeal to the multiset
+         theorem: the value does not depend on the other three weights AT ALL.
+  ARM DIFF: 18 of the other 23 permuted arrays differ from the identity array
+  E4 direct ergodic average, f=1.0 c=sqrt(2) N=2e6 (no quadrature anywhere):
+     perm e              array (0.1667, 0.1667, 0.1667, 0.5)  E4 = -0.693146936   E1-E4 = -2.45e-07
+     perm (01 11)        array (0.1667, 0.1667, 0.5, 0.1667)  E4 = -0.693147328   E1-E4 = +1.48e-07
+     perm (10 01 11)     array (0.1667, 0.1667, 0.5, 0.1667)  E4 = -0.693147328   E1-E4 = +1.48e-07
+
+================================================================================================
+LEG A — SENSE C, four classes         S4:571 (0.25,0.25,0.25,0.25)
+================================================================================================
+  base array (00,10,01,11) = ('1/4', '1/4', '1/4', '1/4')      repeated weights present: True
+  E1 Jensen-in-y, 24 permutations : spread = 0.0
+  E2 Jensen-in-x, 24 permutations : spread = 0.0
+  E1 vs E2, worst disagreement    : 0.0
+  E1 value (identity permutation) : -1.38629436111989062
+  E3 exact: 24 of 24 arrangements have a DOMINATED Jensen pairing
+     exact lambda on those = log(1/4) = -1.38629436111989062
+     E1 vs E3 worst deviation = 1.97215e-31
+     >>> ALL 24 ARRANGEMENTS DOMINATED.  lambda = log(max weight) EXACTLY, in
+         rational arithmetic, with no quadrature and no appeal to the multiset
+         theorem: the value does not depend on the other three weights AT ALL.
+  ARM DIFF: 0 of the other 23 permuted arrays differ from the identity array
+  E4 direct ergodic average, f=1.0 c=sqrt(2) N=2e6 (no quadrature anywhere):
+     perm e              array (0.25, 0.25, 0.25, 0.25)  E4 = -1.386307820   E1-E4 = +1.35e-05
+     perm (01 11)        array (0.25, 0.25, 0.25, 0.25)  E4 = -1.386307820   E1-E4 = +1.35e-05
+     perm (10 01 11)     array (0.25, 0.25, 0.25, 0.25)  E4 = -1.386307820   E1-E4 = +1.35e-05
+
+================================================================================================
+LEG A — GEN1 generic, switching regime (0.40,0.40,0.15,0.05)
+================================================================================================
+  base array (00,10,01,11) = ('2/5', '2/5', '3/20', '1/20')      repeated weights present: True
+  E1 Jensen-in-y, 24 permutations : spread = 1.97215e-31
+  E2 Jensen-in-x, 24 permutations : spread = 1.97215e-31
+  E1 vs E2, worst disagreement    : 1.97215e-31
+  E1 value (identity permutation) : -0.836005630413550326
+  E3 exact: 0 of 24 arrangements have a DOMINATED Jensen pairing
+  ARM DIFF: 22 of the other 23 permuted arrays differ from the identity array
+  E4 direct ergodic average, f=1.0 c=sqrt(2) N=2e6 (no quadrature anywhere):
+     perm e              array (0.4, 0.4, 0.15, 0.05)  E4 = -0.836006578   E1-E4 = +9.48e-07
+     perm (01 11)        array (0.4, 0.4, 0.05, 0.15)  E4 = -0.836004823   E1-E4 = -8.07e-07
+     perm (10 01 11)     array (0.4, 0.15, 0.05, 0.4)  E4 = -0.836002872   E1-E4 = -2.76e-06
+
+================================================================================================
+LEG A — GEN2 generic, switching regime (0.34,0.33,0.32,0.01)
+================================================================================================
+  base array (00,10,01,11) = ('17/50', '33/100', '8/25', '1/100')      repeated weights present: False
+  E1 Jensen-in-y, 24 permutations : spread = 0.0
+  E2 Jensen-in-x, 24 permutations : spread = 0.0
+  E1 vs E2, worst disagreement    : 0.0
+  E1 value (identity permutation) : -0.793763247821770854
+  E3 exact: 0 of 24 arrangements have a DOMINATED Jensen pairing
+  ARM DIFF: 23 of the other 23 permuted arrays differ from the identity array
+  E4 direct ergodic average, f=1.0 c=sqrt(2) N=2e6 (no quadrature anywhere):
+     perm e              array (0.34, 0.33, 0.32, 0.01)  E4 = -0.793762962   E1-E4 = -2.86e-07
+     perm (01 11)        array (0.34, 0.33, 0.01, 0.32)  E4 = -0.793763172   E1-E4 = -7.54e-08
+     perm (10 01 11)     array (0.34, 0.32, 0.01, 0.33)  E4 = -0.793762724   E1-E4 = -5.24e-07
+
+================================================================================================
+LEG A — VERDICT
+================================================================================================
+  W-03's multiset theorem is CONFIRMED at four occupied classes, on both of the
+  corpus's four-class carriers and on two generic vectors, by four independent
+  evaluators, two of them exact.
+
+  BUT TWO OF THE FOUR ARMS COULD NOT HAVE FAILED, and this is recorded before the
+  verdict rather than after it.  On B0b and on B4 -- and on SENSE C -- EVERY one of the
+  24 arrangements has a dominated Jensen pairing, so lambda = log(max class weight)
+  exactly, independently of the other three weights.  A permutation test on a functional
+  that ignores three of its four arguments is not a test of the multiset theorem.
+  The information in this leg is carried entirely by GEN1 and GEN2, where the branch
+  max genuinely switches and the other three weights genuinely enter.

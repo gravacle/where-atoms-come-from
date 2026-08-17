@@ -1,0 +1,110 @@
+LENS 2 (SCOPE), ATTACK 5.  DOES THE LANE'S REPORT SAY WHAT ITS SEALED ARTIFACTS SAY,
+AND DID IT FIND EVERYTHING THE CORPUS ALREADY OWNED ON THIS QUESTION?
+
+Two file audits, both re-runnable, no floating-point anywhere.
+
+  5.0  REPRODUCTION.  All five lane scripts re-run and diffed against their sealed
+       outputs; SEALS.sha256 verified at bytes.
+  5.1  REPORT-VS-ARTIFACT.  Every numeric figure the lane's findings quote, searched for
+       in the sealed file the finding cites.
+  5.2  CUSTODY THE LANE MISSED.  The lane's own LEG F does custody archaeology and finds
+       two items.  There are two more, and one of them is SEALED, which makes it
+       inheritable rather than flagged.
+
+
+================================================================================================
+5.0  REPRODUCTION — SEALS AND BYTE-FOR-BYTE RE-RUN
+================================================================================================
+  SEALS.sha256: 12 of 12 files verify at bytes
+  b1_legA.py               re-run exit 0, output identical to its sealed OUT.txt: True
+  b2_legB_complex.py       re-run exit 0, output identical to its sealed OUT.txt: True
+  b3_pushforward.py        re-run exit 0, output identical to its sealed OUT.txt: True
+  b4_involution_labels.py  re-run exit 0, output identical to its sealed OUT.txt: True
+  b5_custody.py            re-run exit 0, output identical to its sealed OUT.txt: True
+
+================================================================================================
+5.1  REPORT-VS-ARTIFACT — FIGURES QUOTED IN THE FINDINGS, LOOKED FOR ON THE PAGE
+================================================================================================
+  B-07  b3_pushforward.OUT.txt         8.0e-16      present in the cited file: False   (scalar-branch residual on B0b)
+  B-07  b3_pushforward.OUT.txt         1.3e-15      present in the cited file: False   (scalar-branch residual on B4)
+  B-07  b3_pushforward.OUT.txt         7.0e-01      present in the cited file: False   (edge-branch residual on B0b)
+  B-07  b3_pushforward.OUT.txt         1.1e+00      present in the cited file: False   (edge-branch residual on B4)
+  B-06  b3_pushforward.OUT.txt         0.69         present in the cited file: False   (lower end of the quoted collinearity-defect range)
+  B-09  b4_involution_labels.OUT.txt   1.88e-13     present in the cited file: True    (closed form vs direct |Z_k|^2 -- the finding writes 1.9e-13, a fair rounding)
+  B-01  b1_legA.OUT.txt                5.55112e-17  present in the cited file: True    (E1 vs E3 on B0b)
+  B-03  b2_legB_complex.OUT.txt        0.00981      present in the cited file: True    (smallest between-block gap)
+  B-11  b4_involution_labels.OUT.txt   0.323797     present in the cited file: True    (order-4 spread on GEN)
+  B-11  b4_involution_labels.OUT.txt   0.003428     present in the cited file: True    (resonant spread on GEN)
+  B-13  b5_custody.OUT.txt             9.285e-06    present in the cited file: True    (LANE_G's own four-class spread)
+
+  Rows that fail are of two kinds.  B-09's is a ROUNDING (the page prints 1.88e-13,
+  the finding writes 1.9e-13) and is not a defect.  B-06's 0.69 and B-07's four
+  figures are not roundings of anything on the page.
+
+  THE FOUR B-07 FIGURES ARE NOT ON THE PAGE THEY CITE.  What the sealed C.3 block
+  actually prints:
+        W-01 scalar branches : best four-character fit on n=1..8, residual over n=1..40 = 6.21e-16
+        COR-F edge branches  : best four-character fit on n=1..8, residual over n=1..40 = 4.43e-01
+        W-01 scalar branches : best four-character fit on n=1..8, residual over n=1..40 = 1.54e-15
+        COR-F edge branches  : best four-character fit on n=1..8, residual over n=1..40 = 9.83e-01
+  The lane's scripts re-run byte-identically (5.0), so this is not irreproducibility:
+  it is a REPORT that quotes numbers its own sealed artifact does not contain.  That is
+  the defect class the corpus already carries as COR-K against S3 ('published rows not
+  reproducible from their parameters') and it is here again, in the report layer.
+
+  B-01's evidence says the direct ergodic method 'agrees to 1e-6'.  The sealed
+  LEG A block prints these E1-E4 deviations:
+          perm e              array (0.4444, 0.2222, 0.1111, 0.2222)  E4 = -0.810929681   E1-E4 = -5.35e-07
+          perm (01 11)        array (0.4444, 0.2222, 0.2222, 0.1111)  E4 = -0.810930281   E1-E4 = +6.49e-08
+          perm (10 01 11)     array (0.4444, 0.1111, 0.2222, 0.2222)  E4 = -0.810929787   E1-E4 = -4.29e-07
+          perm e              array (0.1667, 0.1667, 0.1667, 0.5)  E4 = -0.693146936   E1-E4 = -2.45e-07
+          perm (01 11)        array (0.1667, 0.1667, 0.5, 0.1667)  E4 = -0.693147328   E1-E4 = +1.48e-07
+          perm (10 01 11)     array (0.1667, 0.1667, 0.5, 0.1667)  E4 = -0.693147328   E1-E4 = +1.48e-07
+          perm e              array (0.25, 0.25, 0.25, 0.25)  E4 = -1.386307820   E1-E4 = +1.35e-05
+          perm (01 11)        array (0.25, 0.25, 0.25, 0.25)  E4 = -1.386307820   E1-E4 = +1.35e-05
+          perm (10 01 11)     array (0.25, 0.25, 0.25, 0.25)  E4 = -1.386307820   E1-E4 = +1.35e-05
+          perm e              array (0.4, 0.4, 0.15, 0.05)  E4 = -0.836006578   E1-E4 = +9.48e-07
+          perm (01 11)        array (0.4, 0.4, 0.05, 0.15)  E4 = -0.836004823   E1-E4 = -8.07e-07
+          perm (10 01 11)     array (0.4, 0.15, 0.05, 0.4)  E4 = -0.836002872   E1-E4 = -2.76e-06
+          perm e              array (0.34, 0.33, 0.32, 0.01)  E4 = -0.793762962   E1-E4 = -2.86e-07
+          perm (01 11)        array (0.34, 0.33, 0.01, 0.32)  E4 = -0.793763172   E1-E4 = -7.54e-08
+          perm (10 01 11)     array (0.34, 0.32, 0.01, 0.33)  E4 = -0.793762724   E1-E4 = -5.24e-07
+  worst is 1.35e-05, an order of magnitude past the quoted 1e-6, and past S4's own
+  stated 3.0e-06 simulation error.  The claim is not wrong in substance; the number
+  quoted for it is.
+
+================================================================================================
+5.2  CUSTODY THE LANE'S OWN LEG F MISSED — AND ONE OF THEM IS SEALED
+================================================================================================
+  (i)  THE REGISTRAR'S ATTRIBUTION IS NOT THE REGISTRAR'S.  It is already in the
+       corpus, SEALED, from the W-03 audit round:
+       LANE_G_GROUP_REFUTER/g2_nonabelian.OUT.txt in that lane's SEALS.sha256: True
+       :10 EVERY coefficient is a NON-NEGATIVE REAL and is a piece of the state's mass.
+       :16       multiset theorem and pinch=spectator are ALL theorems about NON-NEGATIVE
+       So 'the multiset theorem is a theorem about NON-NEGATIVE MASS coefficients'
+       is a SEALED corpus statement, not a registrar improvisation.  B-02's headline
+       'THE REGISTRAR'S ATTRIBUTION IS WRONG' is correct on the merits and misattributes
+       the attribution: it is inherited from a sealed lane, which under the corpus's own
+       pointer rule makes it citable and makes the correction a correction OF THE CORPUS,
+       not of one registrar sentence.  The lane's LEG F searched LANE_R_MAPS_REFUTER and
+       LANE_G_GROUP_REFUTER's g0 and did not read g2.
+
+  (ii) A SIBLING LANE IN THIS SAME W-10 ROUND REACHED THE SAME CHARACTERISATION
+       AND THE SAME COUNTEREXAMPLES, INDEPENDENTLY.  File: LANE_W10_A_CARRIERS_REFUTE_2/r2_4_multiset.OUT.txt
+       :46 this round -- registrar (real non-negative), lane (real), me (collinear), me (cos D).
+       :51 SUFFICIENCY: 90 vectors built with cos D1 = cos D2 = cos D3 (real / collinear / one-phase).
+       :53 NECESSITY: 120 generic complex draws -> {'inv_eq': 0, 'inv_neq': 18, 'var_eq': 0, 'var_neq': 102}
+       :54    The 0 'varying but cos D equal' cases are what would REFUTE SUFFICIENCY: none.
+       :55    The 18 'invariant but cos D unequal' cases REFUTE NECESSITY -- and all of
+       :56    them are DEGENERATE: m = log(max |p_c|) in 18 of 18, i.e. one coefficient
+       :58    do with the symmetry.  So: cos D1 = cos D2 = cos D3 is SUFFICIENT, and is the right name
+       'cos D1 = cos D2 = cos D3' is Lane B's '|phi_a| = |phi_b| = |phi_c|' written
+       with cosines -- the same condition, since cos is injective on [0,pi].  Lane B's
+       'at least three coefficients collinear' is its geometric form.  TWO INDEPENDENT
+       LANES OF THIS ROUND CONVERGED ON ONE NAME, which is corroboration Lane B does not
+       claim and could not have known about.
+       BUT the sibling also states, and Lane B does not, that the condition is SUFFICIENT
+       AND NOT NECESSARY, with its 18 exceptions all in the regime m = log(max|p|).  That
+       is exactly the exceptional set ATTACK 3 measures at 91/400 in the generic regime,
+       and it is what makes Lane B's 'S4-INVARIANCE <=>' and B-03's 'the invariance group
+       is exactly D4' over-strong.

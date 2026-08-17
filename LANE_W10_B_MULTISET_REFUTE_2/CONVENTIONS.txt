@@ -1,0 +1,99 @@
+LANE W-10 B — REFUTER 2, LENS 2 (SCOPE) — PUBLISHED CONVENTIONS
+Target: LANE_W10_B_MULTISET.  Question: are that lane's conclusions about FOUR OCCUPIED
+CLASSES, or about B0b and B4, which are two highly symmetric weight vectors?
+Everything needed to re-run this lane from scratch is on this page or in r_lib.py.
+
+LINEAGE.  Built and run by Claude Opus 5.  So were W-07, W-08, W-09 and the lane under
+attack.  This lane is NOT lineage-independent of its target.  It IS independent of S1-S4
+and W-01..W-06.  It is ONE lane and is graded as one.  It is layer ELEVEN of a chain in
+which every layer so far has been caught by the next.
+
+CLASS ORDER, IDENTICAL TO THE TARGET LANE AND TO THE REGISTER:
+    index 0 = class 00 (neither loop)  char 1        index 2 = class 01 (gamma_C only) char v = W_C
+    index 1 = class 10 (gamma_F only)  char u=conj(W_F)  index 3 = class 11 (both)     char uv
+    P(x,y) = p0 + p1 x + p2 y + p3 xy      Z_k = P(u^k, v^k)      lambda = m(P)
+
+NOTHING IS IMPORTED FROM b_lib.py.  Six evaluators, all written here (r_lib.py):
+  R1 mahler_jensen        mpmath, dps configurable, Jensen in y or x.  Split points are
+                          found by SCAN + BISECTION on SA-SB, not by the target lane's
+                          closed-form acos -- a different code path on purpose.
+  R2 mahler_lawton        Lawton (1983): m(P) = lim_N m(P(x,x^N)), one-variable measure
+                          from the ROOTS by Jensen's formula.  Root finding, not
+                          quadrature.  float64; a 1e-6-class check at N=400, never a
+                          headline digit.
+  R3 sorted_domination /  EXACT in fractions.Fraction.  Derives and checks the criterion
+     dominated_exact_perm w_max + w_min >= w_mid1 + w_mid2 for 'all 24 arrangements have
+                          a dominated Jensen pairing, so lambda = log(w_max) exactly'.
+  R4 mahler_ergodic       direct k-average of log|Z_k| at f = 0.9, c = pi/e -- a
+                          DIFFERENT irrational connection from the target lane's
+                          f = 1.0, c = sqrt(2).  float64.
+  R5 mahler_subtorus_res  EXACT-from-roots average on S3/S4's resonant (f,c)=0.1*(20,11)
+                          subtorus: mpmath polyroots at dps 40 on Q(w) = p00 w^20 + p10
+                          + p01 w^31 + p11 w^11.  Validated against the ERRATUM AGAINST
+                          W-02's registered -0.767014993.
+  R6 rate_order4          CLOSED FORM at S1's published connection (W_F=-1, W_C=-i),
+                          derived on the page: rate = (1/4)[log((a-b)^2+(c-d)^2)
+                          + log|a+b-c-d| + log(a+b+c+d)].  Exact in rationals.
+  plus a float64 twin of each where a sweep needs speed; every such use is labelled in
+  the script and its decision threshold stated.
+
+CROSS-CHECKS PERFORMED.  R1 vs R2 (1e-6 at N=400), R1 vs R3 (exact), R1 vs R4 (2.6e-6),
+R1 vs the target lane's E1 on B0b/B4/SENSE C/GEN2 (agrees to the last printed digit),
+R5 vs the register (-0.767014993 and -0.767507880), R6 vs a direct 4000-term k-average
+(2.0e-15), the hull closed form vs a brute-force half-plane test (0 disagreements/4000).
+
+PRECISION.  Double is the default for R2/R4 and all Z_k work; R1 runs at dps 20-40 as
+stated per call; R3 is exact; R5 is dps 40.  Any figure reported below 1e-12 is R1/R3/R5.
+
+CARRIERS.  B0b and B4 as the target lane built them (class multisets quoted from S4:575
+and S4:578).  TWO NEW ONES ARE BUILT HERE FROM INCIDENCE, because the lens is scope and
+the carrier is the variable that has to move:
+  K1+2S  V=7 E=8 F=1, K1 plus a spectator branch v0-v5-v6.  chi=0 b=(1,1,0), d1.d2=0,
+         gamma_F bounds, gamma_C does not, classes {00:2,10:2,01:2,11:1}.  Its SENSE-U
+         weight vector is the first four-class vector in the corpus OUTSIDE the
+         branch-domination region.
+  K1+3S  V=9 E=10 F=1, K1 with a 4-cycle flat loop and a 3-vertex spectator tail.
+         chi=0 b=(1,1,0), d1.d2=0, classes {00:3,10:2,01:3,11:1}.
+
+SEEDS.  numpy default_rng.  20260816 (master; ATTACK 1 sweeps, ATTACK 2 states, ATTACK 3
+sweep -- the target lane's own seed, so its arrays are regenerated exactly), 4242
+(ATTACK 1.4 and ATTACK 4.3), 31415 (ATTACK 3.4).  All stated at the point of use.
+
+GRIDS.  R1: adaptive, no grid.  ATTACK 3's float twin: 160-node Gauss-Legendre per
+smooth piece, identical to the target lane's E5 so the arms are comparable.  ATTACK 4.2:
+2000 Dirichlet(1,1,1,1) draws at order 4, 600 at resonant.  ATTACK 6.4: 400x400 (f,c).
+
+THE ONE VARIABLE, PER ATTACK.
+  ATTACK 1  the READY STATE, on a fixed carrier with a fixed class map (1.3); elsewhere
+            the weight vector, with the criterion and evaluator fixed.
+  ATTACK 2  the PERMUTATION of the four class weights, with carrier, state, connection,
+            evaluator and code path fixed.  Distinct-array counts printed on every row.
+  ATTACK 3  the PREDICTOR, with seed, arrays, evaluator and tolerance held byte-identical
+            to the target lane's B.4.  (3.4 moves |phi| with the moduli fixed.)
+  ATTACK 4  the PERMUTATION within each connection block; the CONNECTION'S ARITHMETIC
+            between blocks; the READY STATE in 4.3.
+  ATTACK 5  no numerics: file hashes, re-runs, and string presence.
+  ATTACK 6  the CARRIER, with the state and connection distributions, circuit counts,
+            seeds and code path identical across carriers.
+
+VACUITY FLAGS I RAISE AGAINST MY OWN ARMS.
+  (i)   ATTACK 6.4's permutation check on the firing criterion COULD NOT HAVE FAILED --
+        the criterion reads the support only.  It is reported as a support fact, not as a
+        confirmation, exactly as the target lane's B-12 reports it.
+  (ii)  ATTACK 2.1's K1+2S SENSE-U arm has only 4 DISTINCT arrays (three weights are
+        equal), so its 24-permutation spread is really a 4-array spread.  The live arm in
+        ATTACK 2 is 2.2, where 180 states each give 24 distinct arrays.
+  (iii) ATTACK 1.0's exhaustive check ranges over 4-compositions of n <= 14 only; the
+        criterion is proved algebraically on the page and the enumeration is a check of
+        the algebra, not evidence for it.
+  (iv)  ATTACK 4.2's resonant column uses a float64 root twin at a 1e-8 threshold.  Any
+        vector whose true spread is between 0 and 1e-8 is counted as zero, so 74.7% is a
+        LOWER bound on the failure rate at that connection.
+  (v)   ATTACK 3.4 checks monotonicity of lambda in |phi| on 12 modulus vectors by finite
+        differences on 25 nodes.  It is evidence, not a proof, and it is the only step in
+        this lane where 'exactly D4 on the corrected domain' rests on sampling.
+
+WHAT I DID NOT RE-RUN.  LEG C's SU(2) / rank-two break (the target lane also declined it,
+citing ERR-2), and the target lane's B-13/B-14 custody claims beyond re-verifying the two
+file facts they turn on.  I found two further custody items the target lane missed and
+they are in ATTACK 5.2.

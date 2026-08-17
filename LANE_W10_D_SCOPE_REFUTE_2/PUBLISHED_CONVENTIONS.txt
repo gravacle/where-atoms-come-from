@@ -1,0 +1,115 @@
+LANE W10-D-REFUTE-2 — REFUTER OF LANE D, LENS 2 = COMPLETENESS — PUBLISHED CONVENTIONS
+Everything needed to re-run this lane from scratch is on this page.
+
+LINEAGE AND DISCOUNT.  Corpus commits carry `Co-Authored-By: Claude Fable 5`.  This lane is
+Claude Opus 5, and so are W-07, W-08, W-09 and LANE_W10_D_SCOPE.  Custody sec4's shared-lineage
+caveat does NOT apply between this lane and the Fable corpus; it DOES apply between this lane
+and lane D.  I am the SAME lineage as the lane I am attacking, and the register's own finding is
+that same-lineage adversaries share failure modes.  Discount accordingly and do not score this
+as an independent check of lane D — score it as one more layer of the Opus 5 block.
+
+THE LENS.  COMPLETENESS.  The question is not whether lane D's thirty-two rows are correctly
+classified; it is which load-bearing claims of the record it did not classify AT ALL.  Omission,
+not misclassification, is what this lane is for.  Misclassifications are reported only where
+they fall out of an omission.
+
+WHAT WAS RE-RUN BEFORE ANYTHING WAS BUILT.  All seven of lane D's scripts were re-executed and
+their outputs diffed against the sealed .OUT.txt files.  ALL SEVEN REPRODUCE BYTE-IDENTICALLY,
+and `shasum -a 256 -c SEALS.sha256` in LANE_W10_D_SCOPE passes on all 16 files.  Lane D's
+arithmetic is not in question here and was not found wanting anywhere.
+
+OBJECTS (identical to lane D's, quoted from its own conventions so the arms are comparable):
+  class 00 -> chi = 1        class 10 -> u = conj(W_F) = e^{-if}
+  class 01 -> v = W_C = e^{ic}       class 11 -> uv = e^{i(c-f)}
+  Z_k = P(u^k, v^k),  P(x,y) = p00 + p10 x + p01 y + p11 xy,  Omega_N = prod Z_k,  lambda = m(P)
+  Weight 4-vector order is ALWAYS (p00, p10, p01, p11).
+
+CARRIERS.  Class multisets quoted verbatim from S4_THE_MEASUREMENT_V001.md:575-590, plus two
+arms lane D does not have:
+  B1  K1 as handed      {01:2,10:2,11:1}          p = (0, 2/5, 2/5, 1/5)        3 classes
+  K1 at S3's ready state p=(0.4,.15,.15,.15,.15)  p = (0, 0.3, 0.3, 0.4)        3 classes
+        — the weights the ERRATUM AGAINST W-02 and S4 sec3.1 are actually computed on
+  B1q + spectator       {00:1,01:3,10:3}          p = (1/7, 3/7, 3/7, 0)        3 classes
+  B1p bridged           {01:3,10:3}               p = (0, 1/2, 1/2, 0)          2 classes
+  B1s subdivided        {01:5,10:5,11:1}                                        3 classes
+  B0a torus DISJOINT    {00:2,01:3,10:4}          p = (2/9, 4/9, 3/9, 0)        3 classes  ** NEW ARM
+  B0b torus MEETING     {00:4,01:1,10:2,11:2}     p = (4/9, 2/9, 1/9, 2/9)      4 classes
+  B4  spindle           {00:1,01:1,10:1,11:3}     p = (1/6, 1/6, 1/6, 3/6)      4 classes
+  SENSE-C 4 classes                               p = (1/4, 1/4, 1/4, 1/4)      4 classes
+
+  ** B0a IS THE ARM LANE D DOES NOT HAVE, AND IT IS FREE.  In leg 3 B0a and B0b are built as
+  THE SAME 3x3 torus grid, with the SAME gamma_F (one square face), the SAME connection and the
+  SAME loop lengths (4 and 3); the ONLY thing that moves is which column is designated gamma_C
+  (the one that meets the square -> B0b, four classes; the one that does not -> B0a, three
+  classes).  Both reproduce S4's published multisets exactly.  This separates FOUR-CLASS
+  OCCUPANCY from UNEQUAL LOOP LENGTHS, which are confounded in every four-class row of lane D's
+  table.
+
+MAHLER.  Two routines, never mixed:
+  (i) EXCEPTIONAL / SUBTORUS values are ONE-VARIABLE Mahler measures computed by JENSEN'S
+      FORMULA ON THE ROOTS — m(Q) = log|lead| + sum log max(1,|root|), numpy.roots — so there
+      is no log-singularity and no quadrature error.  Cross-checked against a 2^20-point
+      trapezoid and against S4 sec3.1's own published column (worst deviation 4.8e-10 over 16
+      rows, against S4's own 5e-10 print rounding).
+  (ii) GENERIC values are the two-variable m(P) by the Jensen reduction in x, split at the
+      branch crossing, 600-node Gauss-Legendre per arc.  ITS ONE FAILURE IS DECLARED ON THE
+      PAGE: on SENSE-C the two branches coincide identically and the routine returns
+      -1.386292610 against the exact log(1/4) = -1.386294361 (1.75e-06).  That error is the
+      whole SENSE-C column of legs 1B/1D and is labelled as mine, not as structure.
+
+THE RESONANT-LOCUS DERIVATION, since S4 publishes only the three-class form:
+  exceptional locus { (f,c) : -m f + n c = 0 mod 2pi }, gcd(m,n) = 1; theta = (-f, c) lies on
+  the circle t(n,-m); u^k -> e^{int}, v^k -> e^{-imt}, (uv)^k -> e^{i(n-m)t}, so
+      lambda_resonant(m,n) = m( p01 + p00 z^m + p11 z^n + p10 z^{m+n} ).
+  FOUR terms at four classes; it collapses to S4's three-term m(r z^{m+n} + p0 z^m + q) exactly
+  when p00 = 0, which is K1's incidence and no one else's.
+
+EDGE TRANSPORT (COR-F, S3_THE_CROSSING_AUDIT_V001.md:794).  For a closed edge walk
+gamma = v_0 -> v_1 -> ... -> v_{L-1} -> v_0, T moves each fibre value one edge along the walk,
+(Ts)(v_{i+1}) = U_{e_i} s(v_i), identity off the walk.  T is unitary; T^L = M_gamma, the scalar
+operator W-01 uses; T is NOT diagonal.  L = the loop's EDGE LENGTH = |10|+|11| for gamma_F and
+|01|+|11| for gamma_C, so the class multiset determines both lengths.
+
+SEEDS / GRID.  numpy default_rng, master seed 20260816 (the corpus's).  Critical points: 240x240
+Newton seeds, refined to |grad| < 1e-12, de-duplicated at 1e-6, classified by Hessian eigenvalues
+with a 1e-9 degeneracy guard, and validated by sum (-1)^index = chi(T^2) = 0 on every arm.
+Torus grids for min|Z_1|: 2000 x 2000.  Direct time-averages at N = 4e5 where lane D's leg 2C is
+being reproduced, with its own code path.
+
+PRECISION.  numpy float64 / complex128 throughout.  Every precision-sensitive claim is settled
+in closed form or by roots, and both are printed side by side.
+
+ISOLATION.  ONE VARIABLE PER LEG, NAMED AT THE HEAD OF THE LEG, WITH THE ARMS PRINTED AND
+PAIRWISE-COMPARED BEFORE ANY RESULT:
+  leg 1  the class weight 4-vector; the 16 primitive loci, the Mahler routines and the code path
+         fixed.  6 distinct arms of 6.
+  leg 2A/2B/2C/2D  the carrier's vertex-class STRING; connection, rank routine, tolerance,
+         N-list and k-range fixed.  7 distinct arms of 7.
+  leg 2E  no arms — a quotation of S4's own ten-carrier table.  Reported as a reading, not an
+         experiment.
+  leg 2F  DECLARED A ZERO-VARIABLE CONTROL ON THE PAGE.  It could not have failed and it is not
+         reported as a confirmation of anything.
+  leg 3A/3C  WHETHER THE LOOPS MEET.  Same complex, same gamma_F, same connection, same lengths.
+  leg 3B/3D/3E  THE TRANSPORT CONVENTION (scalar M_gamma vs edge-tick T), carrier, state,
+         connection and k-range fixed.
+  leg 4  no arms — a byte-level token scan.  Reported as a scan.
+  leg 5  the class weight 4-vector; finder, grid, tolerances and classifier fixed.  6 of 6.
+
+THREE CONFOUNDS OF MY OWN, FOUND ON RE-READ, RECORDED WITH BOTH FIGURES ON THE PAGE AND NOT
+SILENTLY PATCHED:
+  1. leg 1E(b) first passed the coefficient array to numpy.roots reversed while still taking
+     log|p00| as the leading coefficient, so the three arms with p00 != 0 printed nonsense
+     (B1q -1.205e+00, B0b +6.931e-01, B4 -1.099e+00).  The main tables 1B/1C/1D never used that
+     path and already carried the correct figures.
+  2. leg 2E first tested the single condition b1 >= 1 and flagged B2 as "the formation datum
+     does not exist".  Wrong about B2: S4's designated-loop table gives B2 two designable loops
+     and calls it "the deliberate exception".  There are TWO preconditions and they fail on two
+     different carriers.
+  3. leg 4 first matched tokens case-insensitively and produced TWO false positives against my
+     own finding — "B2" matched the Betti number "b2=1" in the table's topology columns, and
+     "Lind" matched inside the table's own phrase "curvature-BLIND".  The first run therefore
+     reported 17 omissions where the corrected run reports 19.  Both counts are stated.
+
+WHAT THIS LANE DOES NOT DO.  It does not audit S1 or S4, it does not rebuild B4 (whose multiset
+is quoted, exactly as lane D quoted it), it does not run S3's directed system at V = 9 or V = 6,
+and it takes none of the principal's three decisions.

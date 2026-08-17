@@ -1,0 +1,45 @@
+LANE W-10 B — LEG F.  CUSTODY: WHAT THE CORPUS ALREADY OWNED ON THIS QUESTION.
+
+Every claim below is a file test, re-runnable.  Nothing here is a computation about
+lambda; it is about where the four-class multiset test already lives on disk.
+
+================================================================================================
+F.1  A FOUR-CLASS WEIGHT VECTOR HAS ALREADY BEEN RUN THROUGH THE MULTISET TEST,
+     IN A SEALED LANE, AND THE REGISTER'S OWN FIGURE IS THAT RUN
+================================================================================================
+  LANE_G_GROUP_REFUTER/g0_validate.py  sealed and verifying: True
+  its OUT.txt sealed and verifying    : True
+  the weights it permutes  : base = [0.4, 0.3, 0.2, 0.1]
+  the corners it puts them on: allcorn = np.array([[0, 0], [-1, 0], [0, 1], [-1, 1]])
+  -> all four classes occupied.  The line the register quotes at W-03 --
+     '24 of 24 permutations invariant, worst spread 2.4e-15' -- is a FOUR-CLASS figure.
+     OUT: (iii) 4-class multiset invariance: 24 permutations, spread = 9.285e-06  [W-03: 2.4e-15]
+     OUT: (iv)  pinch<->spectator |Z_1| deviation over 2000 random (f,c,weights): 3.331e-16  [W-03: 6.55e-15]
+
+  W-09's closing sentence -- 'The corpus has never run a four-class carrier through
+  anything' -- is therefore true of the CARRIERS and false of the multiset test, which was
+  run on a four-class WEIGHT VECTOR.  Since lambda depends on the carrier only through the
+  pushforward, that distinction is immaterial for W-03's theorem and material only for the
+  question LEG C asks (what makes the pushforward real), which does need the incidence.
+
+================================================================================================
+F.2  AND THE D4-VERSUS-S4 QUESTION WAS ALREADY ASKED, ANSWERED, AND LEFT UNSEALED
+================================================================================================
+  LANE_R_MAPS_REFUTER/maps_refuter3.py exists True   in SEALS.sha256 False   has an OUT.txt False
+  LANE_R_MAPS_REFUTER/perm_exact.py    exists True   in SEALS.sha256 False   has an OUT.txt False
+  LANE_R_MAPS_REFUTER/perm_search.py   exists True   in SEALS.sha256 False   has an OUT.txt False
+  LANE_R_MAPS_REFUTER/prec_check.py    exists True   in SEALS.sha256 False   has an OUT.txt False
+  contains 'I PREDICTED THIS WOULD FAIL' : True
+  contains '3 orbits of 8'              : True
+  contains 'all 24 agree'               : True
+  contains 'K1+'                        : True
+  contains '30 dps'                     : True
+
+  So the exact question this lane was commissioned on -- 'the Newton polygon gives only
+  D4, why do all 24 agree?' -- was posed inside the W-03 audit round, answered 'the
+  multiset invariance is a real identity strictly stronger than the polygon symmetry',
+  and NEVER REACHED THE REGISTER.  The file carries no output and no seal, so under the
+  corpus's own pointer rule its numbers are flagged, not inherited.  This lane's LEG B
+  supplies what that file did not: the mechanism (the pointwise identity in both Jensen
+  pairings) and the hypothesis (at least three coefficients collinear in C), and therefore
+  the boundary at which D4 is all that is left.

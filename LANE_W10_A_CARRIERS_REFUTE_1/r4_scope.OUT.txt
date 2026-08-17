@@ -1,0 +1,87 @@
+========================================================================================================
+REFUTER 1 / SCRIPT 4 — WHAT THE SCOPE VERDICT CAN AND CANNOT BE, AND A CLAIM AUDIT
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+E — 'CARRIER-INDEPENDENT' FOR W-02 AND W-08 IS ANALYTIC, NOT MEASURED
+--------------------------------------------------------------------------------------------------------
+The lane's own premise (PUBLISHED_CONVENTIONS.txt, W10A-05): Z_k = P(u^k, v^k) with
+P determined by pi alone.  Every object in W-02's criterion and in W-08's four claims is
+a function of (pi, u, v) ONLY.  A CARRIER SYMBOL DOES NOT APPEAR IN EITHER STATEMENT.
+So 'does the ruling depend on the carrier?' is answered by inspection of the statement,
+not by 150 or 120 measured rows.  The rows test whether the CRITERION is true; they
+cannot test whether it is carrier-dependent, because carrier-dependence is not a
+proposition about them.
+
+WHERE A CARRIER CAN ENTER, AND IT IS EXACTLY ONE PLACE: a claim QUANTIFIED over pi or
+over (f,c).  W-01's registered claim is of that shape -- 'the firing region' is a MEASURE
+over (f,c) at fixed occupancy -- and it is the one that fell at W-09.  Re-derived here:
+   three classes {10,01,11} (K1)            firing region (max-gap test, 1201x1201 grid) = 0.250000
+   three classes {00,10,01} (B1q)           firing region (max-gap test, 1201x1201 grid) = 0.250000
+   FOUR classes {00,10,01,11} (B0b,B4)      firing region (max-gap test, 1201x1201 grid) = 0.500000
+   W-09's exact values: 1/4 for three classes, 1/2 for four.  Reproduced.
+
+>>> THE SHAPE THAT MAKES A CLAIM CARRIER-SCOPED IS A QUANTIFIER OVER pi OR OVER (f,c).
+    W-01's row has one and fell.  W-02's and W-08's rows are pointwise biconditionals in
+    (pi, connection) and cannot fall for that reason.  The lane's verdict is therefore
+    CORRECT and NOT EARNED BY ITS MEASUREMENTS.  Its own self-flag READ TWO says this;
+    its headline ('BOTH CRITERIA SURVIVE FOUR CLASSES INTACT ... SO THEY ARE CARRIER-
+    INDEPENDENT') leads with the other reading, with '0 mismatches / 150' behind it.
+    'Could not have failed' does not void a THEOREM -- and the class-count-free proofs
+    ARE exhibited, so the verdict stands.  What it voids is the COUNT as evidence.
+
+--------------------------------------------------------------------------------------------------------
+F — DOES FORMATION 'SPLIT INTO TWO INDEPENDENT CONDITIONS' ON THE FACTORING LOCUS?
+--------------------------------------------------------------------------------------------------------
+W10A-06: 'the SINGLE-CHANNEL statement ... becomes TWO independent conditions that no
+three-class carrier can exhibit.'  Test: pi = (1/4,1/4,1/4,1/4) factors.  Put u = 1 and
+v = e^{2 pi i / sqrt(2)}-ish (irrational), so the CURVATURE channel is dead and the FLAT
+channel is alive.  Does formation occur?
+   u = 1, v generic  (curvature channel dead)   lambda = -0.693144727   lambda_F =  0.000000000   lambda_C = -0.693144727   forms: True
+   u generic, v = 1  (flat channel dead)        lambda = -0.693144727   lambda_F = -0.693144727   lambda_C =  0.000000000   forms: True
+   both generic                                 lambda = -1.386283872   lambda_F = -0.693144727   lambda_C = -0.693139145   forms: True
+   u = v = 1 (trivial)                          lambda =  0.000000000   lambda_F =  0.000000000   lambda_C =  0.000000000   forms: False
+
+>>> THE CRITERION DOES NOT SPLIT.  Formation still occurs iff G != {1}, i.e. iff u != 1
+    OR v != 1 -- one condition written as a disjunction, exactly as before.  What splits
+    is the RATE: lambda = lambda_F + lambda_C, additively.  W10A-06's algebra is right and
+    its 'consequence for W-02' sentence promotes an additive decomposition of the RATE
+    into a claimed scope restriction on the CRITERION.  The finding is hedged ('stated as
+    scope and not as refutation') but the headline carries it as one of two new results.
+
+--------------------------------------------------------------------------------------------------------
+G — CLAIM vs ARTIFACT: every quoted number checked against the lane's own sealed bytes
+--------------------------------------------------------------------------------------------------------
+   W10A-01 B0b gauge/inv/curv/flat 8/10/8/2             FOUND
+   W10A-01 B4 multiset                                  FOUND
+   W10A-02 150 cases, 0 mismatches                      FOUND
+   W10A-02 105/105 exact congruence                     FOUND
+   W10A-03 r = 0.000000e+00 on uv=1                     FOUND
+   W10A-04 1620 exact checks, 0 residuals               FOUND
+   W10A-04 B0b floor 0.098765308                        FOUND
+   W10A-04 measured 0.497277726                         FOUND
+   W10A-04 W-08 calibration 0.491886                    FOUND
+   W10A-04 W-08 calibration 0.469183                    FOUND
+   W10A-07 B0b -0.810930216216                          FOUND
+   W10A-07 B4 -0.693147180560                           FOUND
+   W10A-08 honest 8112                                  FOUND
+   W10A-09 density 0.250000                             FOUND
+   W10A-10 mixed sign 1.7e-16 / complex 2.302e-01       FOUND
+
+   quoted 'min |r| among the 93 forming rows is 0.366' -- searched the sealed outputs: NOT PRESENT AS A PRINTED NUMBER
+   (the lane derives it in prose from the 150-row table; the table is printed, so it is
+    checkable, but the figure itself is not in any artifact.  Minor.)
+
+QUOTED FIGURES NOT FOUND IN ANY SEALED OUTPUT: 0
+
+AND THE THRESHOLD DEFENCE, RE-DERIVED FROM THE LANE'S OWN 150-ROW TABLE:
+   rows parsed 150;  forming 93;  never 57
+   min |r| among forming rows = 0.3662059272421   (the lane says 0.366 -- CORRECT)
+   max |r| among never   rows = 3.471e-17
+   So the lane's threshold defence is EXACT FOR ITS BATTERY.  Script 2 part C shows the
+   margin collapses to 6.6e-14 the moment a large-but-finite-order rational is admitted.
+
+========================================================================================================
+E: the scope verdict is analytic for W-02/W-08; the measurements do not carry it.
+F: the criterion does not split; the RATE does.
+G: 15/15 quoted figures traced to the lane's own bytes.

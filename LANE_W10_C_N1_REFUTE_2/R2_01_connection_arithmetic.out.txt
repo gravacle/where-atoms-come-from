@@ -1,0 +1,116 @@
+====================================================================================================
+R2_01 — ARE LANE C's THREE CONNECTIONS THE ARITHMETIC TYPE THEY CLAIM?
+       Audited on the integers C_04 feeds its orbit, not on the labels.
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+1.  RELATION LATTICES L = {(m,n) : m alpha + n beta in Z}, EXACT, AS IMPLEMENTED.
+----------------------------------------------------------------------------------------------------
+
+  ARM O  FINITE ORDER   A=2, B=3, M=4  (alpha=1/2, beta=3/4)
+     basis of L = [(3, -2), (-2, 0)]   shortest relation vector = (-2, 0)
+     order of (alpha,beta) in T^2 = M/gcd(A,B,M) = 4   CLAIMED 4   MATCH
+     => arm O is genuinely FINITE ORDER 4.  Label correct.
+
+  ARM R  RESONANT      A_numC, B_numC, D_C as C_04 builds them
+     A0 = round(2^35/pi) = 10937044409
+     A_numC = 468453879180   B_numC = 120307488499   D_C = 687194767360
+     THE CHECK THAT MATTERS (on the reduced integers actually used):
+       11*A_numC + 20*B_numC = 7559142440960   mod D_C = 0   ON THE SUBTORUS
+     shortest relation vector of the IMPLEMENTED pair = (-11, -20)   |v| = 22.83
+     order of the implemented (alpha,beta) in T^2 = 687194767360 = 6.871948e+11
+     CLAIM: primitive relation (11,20).  gcd(11,20) = 1.
+     IS (11,20) THE SHORTEST?  YES   (a shorter one would mean the arm sits on a SMALLER subtorus than claimed)
+     second-shortest independent direction is at distance ~ index/|v| = 3.011e+10, i.e. the implemented orbit is a FINITE cyclic group of
+     order 6.8719e+11, dense in the (11,20) circle only up to that resolution.
+     K = 1e7 << 6.872e+11, so over the run the arm is indistinguishable from the
+     ideal rank-one resonance.  LABEL CORRECT AT THIS K.
+
+  ARM D  DIOPHANTINE   the float64 dyadic pair C_04 actually runs
+     common denominator M = 4503599627370496 = 2^52
+     order of the IMPLEMENTED (alpha,beta) in T^2 = 4503599627370496 = 4.503600e+15
+     shortest relation vector of the IMPLEMENTED pair = (-59315748, 30408467)   |v|_inf = 59315748
+     ||m alpha + n beta|| at that vector = 0.000000e+00   (0 => an EXACT relation)
+     RUN LENGTH K = 1e+07.  The implemented arm is an EXACTLY PERIODIC (finite-
+     order) connection of order 4.504e+15; it is 'Diophantine' only in the sense
+     that no relation of sup-norm <= 59315748 exists, and
+     59315748 > K.
+
+----------------------------------------------------------------------------------------------------
+2.  C_04's PRINTED 'RESONANCE EXACTNESS' CHECK.  IS IT A CHECK?
+----------------------------------------------------------------------------------------------------
+     C_04 prints:  RELATION_RESIDUE = 11*(-20*A0) + 20*(11*A0)   'must be 0'
+     value at the run's A0 = 10937044409: 0
+       same expression at A0 =                      0: 0
+       same expression at A0 =                      1: 0
+       same expression at A0 =                  12345: 0
+       same expression at A0 =                     -7: 0
+       same expression at A0 =    2305843009213693952: 0
+     IT IS THE IDENTITY -220 t + 220 t = 0.  IT IS ZERO FOR EVERY A0 AND FOR EVERY
+     CHOICE OF S, D_C, AND FOR ANY PAIR OF RELATION EXPONENTS ONE CARES TO WRITE.
+     IT NEVER TOUCHES A_numC OR B_numC -- the integers the orbit is built from --
+     because both are taken mod D_C AFTER the expression is formed.
+     THE CHECK COULD NOT HAVE FAILED.  It is C_04's only certificate that the
+     RESONANT arm is resonant, and it certifies nothing.
+     THE NON-VACUOUS CHECK, RUN HERE: (11*A_numC + 20*B_numC) mod D_C = 0.  It PASSES, so no published number moves; the defect is in the
+     certificate, not the arm.  (This is the lane's own named fatal defect class --
+     'a control that could not have failed' -- committed in the block whose whole
+     purpose is to certify the connection's arithmetic type.)
+
+----------------------------------------------------------------------------------------------------
+3.  INT64 HEADROOM IN C_04's PHASE REDUCTION  (k * A_num formed directly).
+----------------------------------------------------------------------------------------------------
+     DIOPHANTINE   max(A,B) =   813725411112   k*A at K=1e7 = 8.1373e+18   /int64max =  88.2%   K_overflow = 1.133e+07
+     RESONANT      max(A,B) =   468453879180   k*A at K=1e7 = 4.6845e+18   /int64max =  50.8%   K_overflow = 1.969e+07
+     FINITE ORDER  max(A,B) =              3   k*A at K=1e7 = 3.0000e+07   /int64max =   0.0%   K_overflow = 3.074e+18
+     NO OVERFLOW OCCURS AT K = 1e7.  The DIOPHANTINE arm runs at 88% of the ceiling;
+     K = 1.13e7 would wrap SILENTLY (numpy int64 does not raise).  A latent defect,
+     not an actual one.  This refuter's own evaluator (R2_03) uses chunked modular
+     accumulation and has no K ceiling at all.
+
+----------------------------------------------------------------------------------------------------
+4.  THE DIOPHANTINE ARM: IMPLEMENTED VALUE vs THE IRRATIONAL IT NAMES.  mpmath 60dps
+----------------------------------------------------------------------------------------------------
+     alpha true  = 0.7400789501051268352327894
+     alpha impl  = 0.7400789501051268093334556   diff = -2.58993e-17
+     beta  true  = 0.5874010519681994747517056
+     beta  impl  = 0.5874010519681993613971827   diff = -1.13355e-16
+     PHASE DRIFT AT k = 1e7:  |k*d_alpha| = 2.58993e-10   |k*d_beta| = 1.13355e-9
+     Orbit-point spacing at K = 1e7 is ~1/K = 1.0e-07, so the implemented orbit's
+     last points sit 0.26% / 1.13% of one
+     spacing away from the ideal ones.  Small, but it is NOT the named irrational,
+     and it is the reason the reported 5.4e-08 gap cannot be attributed purely to
+     the Diophantine discrepancy without the check run in section 5 and in R2_03.
+
+----------------------------------------------------------------------------------------------------
+5.  'BADLY APPROXIMABLE' -- MEASURED, AND THE DOMINANT DUAL RESONANCE.
+----------------------------------------------------------------------------------------------------
+     (a) SIMULTANEOUS form.  For a badly approximable PAIR there is c > 0 with
+         k^(1/2) max(||k a||, ||k b||) >= c for all k >= 1.  Measured minimum over
+         k <= 2e6, on the TRUE irrationals at 60 dps and on the IMPLEMENTED floats:
+         true (2-2^(1/3), 4^(1/3)-1)      min = 0.295925 at k = 46
+         implemented float64 pair         min = 0.295925 at k = 46
+         A Liouville-type or resonant pair drives this to 0; a badly approximable
+         pair keeps it bounded below.  Both rows stay near 0.2-0.5, consistent with
+         the claim.  THIS IS A CONSISTENCY CHECK, NOT A PROOF -- the theorem behind
+         (2^(1/3), 4^(1/3)) in Bad is the CUBIC NORM FORM argument (Perron 1921 /
+         Cassels), not 'W. M. Schmidt's theorem' as C_00 and C_04 attribute it.
+         Schmidt's badly-approximable results are the full-Hausdorff-dimension
+         theorem and the Subspace Theorem; neither yields this pair.  ATTRIBUTION
+         DEFECT, inherited from LANE_W08 M1_03; the FACT is standard and true.
+
+     (b) DUAL form -- the one that actually sets the Birkhoff error.  The error of
+         (1/K) sum g(k a, k b) is  sum_{(m,n)!=0} ghat(m,n) * S_K(m,n)/K  with
+         |S_K/K| ~ min(1, 1/(2 K ||m a + n b||)).  Dominant low-order resonances:
+         DIOPHANTINE: (m,n)=-18,38 ||.||=1.811e-04 1/(2K||.||)=2.76e-04  (m,n)=18,-38 ||.||=1.811e-04 1/(2K||.||)=2.76e-04
+                    strongest: (m,n)=(-18,38), amplification 1/(2K||.||) = 2.760e-04 at K=1e7
+         RESONANT   : (m,n)=-22,-40 ||.||=0.000e+00 1/(2K||.||)=inf  (m,n)=-11,-20 ||.||=0.000e+00 1/(2K||.||)=inf
+                    strongest: (m,n)=(-22,-40), amplification 1/(2K||.||) = inf at K=1e7
+         F1,SQRT2   : (m,n)=-8,21 ||.||=9.980e-05 1/(2K||.||)=5.01e-04  (m,n)=8,-21 ||.||=9.980e-05 1/(2K||.||)=5.01e-04
+                    strongest: (m,n)=(-8,21), amplification 1/(2K||.||) = 5.010e-04 at K=1e7
+         For the DIOPHANTINE arm this predicts a Birkhoff error of order
+         |ghat| * 1e-7..1e-8, which is the observed 5.4e-08 -- i.e. C_04's reported
+         gaps ARE finite-N discrepancy, not bias.  Confirmed directly in R2_03 by
+         driving K to 1e9 and watching the gap fall.
+
+DONE.

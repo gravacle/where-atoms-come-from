@@ -1,0 +1,119 @@
+LANE W-10 B REFUTE 1 — R3.  THE TWO DISTINGUISHED CONNECTIONS, EXACTLY; AND THE
+CUSTODY CLAIMS AT THE BYTES.
+
+C.1  S1's order-4 connection.  The lane computes it in float64 and reports the surviving
+     group.  Here the whole thing is closed-form and EXACT in Fractions, so the group is a
+     statement about rational numbers rather than about a tolerance.
+C.2  S3/S4's exactly-resonant connection, by an independent root-based Mahler measure.
+C.3  The lane's two custody findings, re-checked at the bytes -- including the file its
+     custody leg did not open.
+C.4  LEG E.2's 'every functional is blind' claim, tested where the lane did not test it.
+
+
+================================================================================================
+C.1  S1's ORDER-4 CONNECTION, IN CLOSED FORM AND IN EXACT RATIONALS
+================================================================================================
+  u = conj(W_F) = -1, v = W_C = -i (S1 sec6).  The orbit has four points, so
+      lambda_4 = (1/4)[ log|Z_1| + log|Z_2| + log|Z_3| + log|Z_4| ]
+  and, for a REAL array, Z_3 = conj(Z_1), Z_2 = p0+p1-p2-p3, Z_4 = p0+p1+p2+p3, so
+
+      lambda_4 = (1/4) log[ ((p0-p1)^2 + (p2-p3)^2) * |p0+p1-p2-p3| * (p0+p1+p2+p3) ]
+
+  EXACT.  This is derived here, not taken from the lane.  The bracket is a rational
+  number, so the orbit structure over the 24 permutations is decided in Fraction
+  arithmetic with no tolerance at all.
+  B0b (4,2,1,2)/9  EXACT #distinct rates = 2  spread = 0.127706   [lane: 2, 0.127706]
+     rates ['-1.098612', '-0.970906']
+     closed form vs direct 4-point average, worst |dev| = 2.22e-16
+     stabiliser (EXACT, in Fractions): order 16, is a subgroup: False
+  B4  (1,1,1,3)/6  EXACT #distinct rates = 1  spread = 0.000000   [lane: 1, 0.000000]
+     rates ['-0.823959']
+     closed form vs direct 4-point average, worst |dev| = 1.11e-16
+     stabiliser (EXACT, in Fractions): order 24, is a subgroup: True
+  GEN (.37,.29,.23,.11)  EXACT #distinct rates = 3  spread = 0.323797   [lane: 3, 0.323797]
+     rates ['-1.465285', '-1.253059', '-1.141487']
+     closed form vs direct 4-point average, worst |dev| = 2.22e-16
+     stabiliser (EXACT, in Fractions): order 8, is a subgroup: True
+  The lane reports the GEN stabiliser as 'order 8, subgroup True' and names it the
+  group of the JENSEN pairing {00,10}|{01,11}.  The closed form above says WHY, with no
+  computation: the bracket depends on the array only through (p0-p1)^2, (p2-p3)^2 and
+  p0+p1 vs p2+p3, so it is invariant under (00 10), under (01 11), and under swapping the
+  two pairs -- exactly that group of order 8 -- and this is a THEOREM about the four
+  rational numbers, not a measured coincidence.
+
+================================================================================================
+C.2  S3/S4's RESONANT CONNECTION, BY AN INDEPENDENT ROOT-BASED MAHLER MEASURE
+================================================================================================
+  VALIDATION against the ERRATUM AGAINST W-02 (three-class weights 0.4/0.3/0.3):
+     subtorus m(Q) from roots (numpy.roots, my code) = -0.767014993   register: -0.767014993
+     full-torus m for the same weights, my grid       = -0.767507926   register: -0.767507880
+  B0b (4,2,1,2)/9  #distinct = 3  spread = 0.000006   [lane: 3, 0.000006]   stabiliser order 4 subgroup False
+       identity permutation: roots -0.810930205   direct N=5e5 -0.810930341   dev 1.37e-07
+  B4  (1,1,1,3)/6  #distinct = 1  spread = 0.000000   [lane: 2, 0.000000]   stabiliser order 24 subgroup True
+       identity permutation: roots -0.693147181   direct N=5e5 -0.693147370   dev 1.89e-07
+  GEN (.37,.29,.23,.11)  #distinct = 12  spread = 0.003428   [lane: 12, 0.003428]   stabiliser order 2 subgroup True
+       identity permutation: roots -0.969617451   direct N=5e5 -0.969618139   dev 6.88e-07
+
+================================================================================================
+C.3  CUSTODY, RE-CHECKED AT THE BYTES
+================================================================================================
+  LANE_G_GROUP_REFUTER       g0_validate.py         in SEALS: True   hash verifies: True
+  LANE_S5_CHARGE_CODE        s5_B_sweep.py          in SEALS: True   hash verifies: True
+  LANE_S5_CHARGE_CODE        s5_B_sweep.OUT.txt     in SEALS: True   hash verifies: True
+
+  C.3(a)  THE FILE THE LANE'S CUSTODY LEG DID NOT OPEN.
+  LANE_S5_CHARGE_CODE/s5_B_sweep.py is SEALED and verifying, and it contains a PROOF of
+  W-03's multiset theorem by exactly the mechanism the lane offers as its own
+  contribution -- the pointwise symmetry of |A + B e^{it}| in (A,B), plus x<->y -- and a
+  four-class check.  Quoted verbatim from the sealed bytes:
+     s5_B_sweep.py:161  Now |A + B e^{i t}|^2 = A^2 + B^2 + 2 A B cos t is SYMMETRIC IN (A,B) POINTWISE IN t.
+     s5_B_sweep.py:165  (p10 p01), (p01 p11) generate the full symmetric group S_4.  QED  -- this proves W-03's
+     s5_B_sweep.py:166  24/24 permutation invariance rather than sampling it.""")
+     s5_B_sweep.OUT.txt:134  CHECKED: p = (0.4,0.3,0.2,0.1) on the four corners, all 24 permutations, Nx=16384
+     s5_B_sweep.OUT.txt:135  spread = 3.775e-15   value = -0.916290731874
+
+  C.3(b)  AND THE CORPUS'S FOUR-CLASS WEIGHT VECTOR IS ITSELF A CONTROL THAT COULD NOT
+  HAVE FAILED -- the same defect the lane raises against B0b, B4 and SENSE C, on the run
+  the register actually quotes.  base = (0.4,0.3,0.2,0.1); domination certificate in
+  exact rationals, my own, over ALL THREE pairings of the multiset:
+     pairing {2/5,3/10}|{1/5,1/10}:  (S1^2-S2^2) = 2/5   (D1^2-D2^2) = 0   -> A DOMINATES (lambda = log max = log 2/5)
+     pairing {2/5,1/5}|{3/10,1/10}:  (S1^2-S2^2) = 1/5   (D1^2-D2^2) = 0   -> A DOMINATES (lambda = log max = log 2/5)
+     pairing {2/5,1/10}|{3/10,1/5}:  (S1^2-S2^2) = 0   (D1^2-D2^2) = 2/25   -> A DOMINATES (lambda = log max = log 2/5)
+     over all 24 arrangements the dominated branch max takes the values ['2/5']
+     so lambda = log(2/5) = -0.916290731874 for every one of the 24, EXACTLY, and the other
+     three weights never enter.  The corpus never permuted anything that mattered.
+
+  C.3(c)  WHERE THE REGISTER'S 2.4e-15 IS NOT.
+     REGISTER_V001.md:197:four class weights — 24 of 24 permutations invariant, worst spread `2.4e-15`. **The incidence
+     LANE_G_GROUP_REFUTER/g0_validate.py:110:print("(iii) 4-class multiset invariance: %d permutations, spread = %.3e  [W-03: 2.4e-15]"
+     LANE_G_GROUP_REFUTER/g0_validate.OUT.txt:49:(iii) 4-class multiset invariance: 24 permutations, spread = 9.285e-06  [W-03: 2.4e-15]
+     LANE_W10_B_MULTISET/b5_custody.OUT.txt:15:     '24 of 24 permutations invariant, worst spread 2.4e-15' -- is a FOUR-CLASS figure.
+     LANE_W10_B_MULTISET/b5_custody.OUT.txt:16:     OUT: (iii) 4-class multiset invariance: 24 permutations, spread = 9.285e-06  [W-03: 2.4e-15]
+     LANE_W10_B_MULTISET/b5_custody.py:45:print("     '24 of 24 permutations invariant, worst spread 2.4e-15' -- is a FOUR-CLASS figure.")
+     The only occurrences are: the register itself, the lane-under-attack's own
+     custody page, and a PRINT LITERAL inside g0_validate.py that quotes W-03 as an
+     external reference.  g0_validate's own measured spread is 9.285e-06, not 2.4e-15.
+     A figure a script quotes is not a figure that script produced.
+  g0_validate's evaluator, from its sealed bytes: mahler_torus(..., ngrid=1200),
+  a plain midpoint grid (glib.py:237-254).  Reproduced here, my own code, same grid:
+     midpoint grid 1200^2, 24 permutations: spread = 9.285e-06   [g0_validate.OUT.txt: 9.285e-06]
+     exact spread = 0 (domination certificate above).  The corpus's 9.285e-06 is
+     the quadrature, not the mathematics.
+
+================================================================================================
+C.4  LEG E.2 ('EVERY FULL-TORUS FUNCTIONAL IS BLIND') WHERE THE LANE DID NOT TEST IT
+================================================================================================
+  The lane checks E.2 on B0b and B4 only -- both in the domination regime -- and two
+  of its eight printed rows are the functional 1{|P|<0.1}, which is IDENTICALLY ZERO on
+  both carriers, so those two rows compare 0.0 with 0.0.  Here the same claim is tested on
+  a NON-dominated real array where the branch max genuinely switches, and the threshold is
+  set from the array's own minimum so the indicator is not vacuous.
+  THE ONE VARIABLE: the permutation.  Grid, functional and array multiset held fixed.
+  GEN (.37,.29,.23,.11) non-dominated  mean |P|         value +0.467104575  spread over 24 perms = 5.10e-11
+  GEN (.37,.29,.23,.11) non-dominated  mean |P|^(1/2)   value +0.652722346  spread over 24 perms = 2.42e-09
+  GEN (.37,.29,.23,.11) non-dominated  mean 1{|P|<thr}  value +0.000000848  spread over 24 perms = 0.00e+00   (threshold 0.0003, min|P| = 0.0001, non-vacuous: True)
+  GEN (.37,.29,.23,.11) non-dominated  mean log|P|      value -0.970461805  spread over 24 perms = 4.07e-07
+  B0b (4,2,1,2)/9       dominated      mean |P|         value +0.502722983  spread over 24 perms = 4.44e-16
+  B0b (4,2,1,2)/9       dominated      mean |P|^(1/2)   value +0.688478876  spread over 24 perms = 6.66e-16
+  B0b (4,2,1,2)/9       dominated      mean 1{|P|<thr}  value +0.104415894  spread over 24 perms = 2.03e-05   (threshold 0.2222, min|P| = 0.1111, non-vacuous: True)
+  B0b (4,2,1,2)/9       dominated      mean log|P|      value -0.810930216  spread over 24 perms = 7.77e-16

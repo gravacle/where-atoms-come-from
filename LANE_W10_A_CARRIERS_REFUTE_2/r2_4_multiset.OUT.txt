@@ -1,0 +1,66 @@
+========================================================================================================
+R2 SCRIPT 4 — IS 'REAL COEFFICIENTS' THE OPERATIVE HYPOTHESIS FOR THE MULTISET THEOREM?
+========================================================================================================
+Jensen quadrature n = 2^20, midpoint rule.  float64.
+
+THE LANE'S ARGUMENT, RESTATED AND THEN SHARPENED.
+  m(P) = (1/2pi) INT log max(|A(t)|,|B(t)|) dt, A = p00+p01 e^{it}, B = p10+p11 e^{it}.
+  Swapping p00<->p01 sends |A(t)| -> |A(-t)| and leaves B alone; the integral is unchanged
+  ONLY IF |B(t)| is also EVEN in t.  |a+b e^{it}|^2 = |a|^2+|b|^2+2Re(a conj(b) e^{-it}) is
+  even in t  <=>  a conj(b) is REAL.  So the swap needs a PHASE condition, not reality.
+
+AND THE PHASE CONDITION HAS A SINGLE DEGREE OF FREEDOM.  m(P) is invariant under the torus
+gauge x -> lam x, y -> mu y (|lam|=|mu|=1) and under an overall unimodular factor -- three of
+the four coefficient phases -- so
+      m(P) = F( |p00|,|p10|,|p01|,|p11| ; Delta ),   Delta = arg( p00 p11 / (p10 p01) ),
+and F sees Delta only through cos Delta (conjugation symmetry m(conj P) = m(P)).
+A permutation replaces the sign pattern (+,-,-,+) on the phases by its image, and only THREE
+two-plus-two patterns exist up to sign, so Delta is carried into {+-D1,+-D2,+-D3} with
+      D1 = a00+a11-a10-a01,  D2 = a00+a10-a01-a11,  D3 = a00+a01-a10-a11.
+REAL coefficients have a_c in {0,pi}, so D1 = D2 = D3 mod 2pi.  THAT is why reality works.
+Collinear complex vectors (p = e^{i th} w, w real) work for the same reason: a common phase
+cancels out of every D.  So reality is SUFFICIENT and STRICTLY NOT NECESSARY.
+
+--------------------------------------------------------------------------------------------------------
+EXHIBIT A — FOUR KINDS OF COEFFICIENT VECTOR
+--------------------------------------------------------------------------------------------------------
+coefficient kind                        24-perm spread    cos D1     cos D2     cos D3     equal
+real non-negative (registrar's)         1.110e-16         +1.000000  +1.000000  +1.000000  True
+real MIXED SIGN (the lane's)            5.551e-16         +1.000000  +1.000000  +1.000000  True
+COMPLEX, collinear e^{i pi/7} x w1      6.939e-17         +1.000000  +1.000000  +1.000000  True
+COMPLEX, collinear e^{i 1.2346} x w2    5.551e-16         +1.000000  +1.000000  +1.000000  True
+COMPLEX, NOT collinear: p00 x i         7.306e-13         +0.000000  +0.000000  +0.000000  True
+COMPLEX, generic                        8.787e-02         +0.151920  -0.878136  -0.126656  False
+COMPLEX, generic 2nd draw               1.132e-01         +0.002140  +0.678519  +0.435066  False
+
+**'REAL COEFFICIENTS' IS NOT THE OPERATIVE HYPOTHESIS.  A COLLINEAR COMPLEX VECTOR -- every
+  coefficient off the real line -- IS FULLY S4-INVARIANT.  AND SO IS A NON-COLLINEAR ONE.**
+
+--------------------------------------------------------------------------------------------------------
+MY OWN FIRST NAME WAS ALSO TOO STRONG, AND IT IS RECORDED HERE RATHER THAN PATCHED AWAY
+--------------------------------------------------------------------------------------------------------
+My draft of this block read: 'the operative hypothesis is COLLINEARITY, p in e^{i th} R^4'.
+ROW 5 REFUTES IT: p00 rotated by i with the other three real and positive is NOT collinear
+and IS invariant, because its three cos D all equal 0.  I name it correctly now, and record
+that this is the SIXTH consecutive name for this variable in this program and the THIRD in
+this round -- registrar (real non-negative), lane (real), me (collinear), me (cos D).
+
+--------------------------------------------------------------------------------------------------------
+EXHIBIT B — THE cos-D CONDITION IS SUFFICIENT, AND IT IS NOT NECESSARY.  BOTH MEASURED.
+--------------------------------------------------------------------------------------------------------
+SUFFICIENCY: 90 vectors built with cos D1 = cos D2 = cos D3 (real / collinear / one-phase).
+   24-permutation spreads exceeding 1e-8: 0 of 90.   worst spread 8.810e-12
+NECESSITY: 120 generic complex draws -> {'inv_eq': 0, 'inv_neq': 18, 'var_eq': 0, 'var_neq': 102}
+   The 0 'varying but cos D equal' cases are what would REFUTE SUFFICIENCY: none.
+   The 18 'invariant but cos D unequal' cases REFUTE NECESSITY -- and all of
+   them are DEGENERATE: m = log(max |p_c|) in 18 of 18, i.e. one coefficient
+   dominates and every arrangement returns the same number for a reason that has nothing to
+   do with the symmetry.  So: cos D1 = cos D2 = cos D3 is SUFFICIENT, and is the right name
+   for the multiset theorem's hypothesis; it is not necessary, and the exceptions are the
+   locus where m degenerates.
+
+WHAT IS UNCHANGED FOR THE CORPUS.  pi is a probability vector: real, non-negative, so all
+three D are 0 and the condition holds trivially.  W-03's multiset theorem, W10A-10's numbers
+and every registered figure resting on them are UNTOUCHED.  What changes is only the NAME of
+the hypothesis -- which is what this round is about, and which four consecutive layers of
+this program have got wrong.

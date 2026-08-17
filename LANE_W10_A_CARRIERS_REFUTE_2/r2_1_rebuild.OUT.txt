@@ -1,0 +1,56 @@
+========================================================================================================
+R2 SCRIPT 1 — INDEPENDENT REBUILD (opposite d1 sign convention, transposed B0b indexing)
+========================================================================================================
+EXACT integer/Fraction arithmetic in every check below.  No float in any verdict.
+
+carrierV   E   F   chi  b0  b1  b2  gauge  inv  curv  flat  d1d2  gFcyc  gFbnd  gCcyc  gCbnd  indep  multiset                      vs S4
+B1    5   6   1   0    1   1   0   4      2    1     1     0     True   True   True   False  True   {'00': 0, '10': 2, '01': 2, '11': 1}OK
+B1q   7   8   1   0    1   1   0   6      2    1     1     0     True   True   True   False  True   {'00': 1, '10': 3, '01': 3, '11': 0}OK
+B0b   9   18  9   0    1   2   1   8      10   8     2     0     True   True   True   False  True   {'00': 4, '10': 2, '01': 1, '11': 2}OK
+B4    6   8   4   2    1   1   2   5      3    2     1     0     True   True   True   False  True   {'00': 1, '10': 1, '01': 1, '11': 3}OK
+
+MISMATCHES against S4's published rows: 0
+The lane's four rows reproduce under an OPPOSITE d1 sign convention and a TRANSPOSED B0b
+vertex indexing, so no number in W10A-01 depends on either.  W10A-01 SURVIVES.
+
+--------------------------------------------------------------------------------------------------------
+WAS B4's gamma_C FITTED TO S4's PUBLISHED MULTISET, OR FORCED BY S4's PUBLISHED CONSTRAINTS?
+--------------------------------------------------------------------------------------------------------
+The lane's self-flag says 'a DIFFERENT spindle with a different gamma_C designation matching
+the same row is not excluded'.  On the lane's own complex that is decidable, so I decide it:
+enumerate EVERY simple cycle of the 1-skeleton and keep those that pass S4's three stated
+loop tests (is a cycle / does not bound / independent of gamma_F).
+
+gC candidatecycle   bounds   indep   admissible  class multiset
+a1b1        True    False    True    True        {'00': 1, '10': 1, '01': 1, '11': 3}
+a1b2        True    False    True    True        {'00': 1, '10': 1, '01': 1, '11': 3}
+a2b1        False   False    True    False       {'00': 1, '10': 1, '01': 1, '11': 3}
+a2b2        False   False    True    False       {'00': 1, '10': 1, '01': 1, '11': 3}
+sqB         True    True     True    False       {'00': 0, '10': 2, '01': 2, '11': 2}
+
+ADMISSIBLE gamma_C designations: ['a1b1', 'a1b2']   distinct class multisets among them: 1
+**THE MULTISET IS FORCED.** Every gamma_C that passes S4's own three loop tests gives
+{00:1, 01:1, 10:1, 11:3}.  The one candidate with a different multiset (gC = sphere B's own
+square, {01:2,10:2,11:2}) is excluded because it BOUNDS, which is S4's published gC test.
+So the lane's B4 reconstruction was NOT fitted on the axis its own self-flag worries about.
+
+--------------------------------------------------------------------------------------------------------
+AND THE SELF-FLAG OVERSTATES ITS EXPOSURE ON THE ONLY AXIS THAT MATTERS DOWNSTREAM
+--------------------------------------------------------------------------------------------------------
+Under SENSE U, pi = (class multiset)/V.  S4 PUBLISHES both the multiset (S4:578) and V
+(S4:515).  So pi is pinned by S4's own page, and EVERY Z-derived number in the lane -- Z_k,
+Omega_N, lambda, the density, the floor -- depends on the carrier only through pi.
+Therefore the B4 reconstruction is load-bearing for EXACTLY ONE claim: that S4's published
+multiset is REALIZABLE by a complex with S4's published Betti numbers.  It is load-bearing
+for no number.  The self-flag is more pessimistic than the lane's own structural premise.
+BUT THE SAME FACT CUTS THE OTHER WAY, AND THE LANE DOES NOT SAY SO: because pi is read off
+S4's published multiset, BUILDING B4 CANNOT AUDIT S4's lambda COLUMN.  Given the multiset,
+lambda follows by arithmetic that needs no complex at all.  W10A-01's 'S4 was never audited;
+these rows are audited now' is TRUE of the TOPOLOGY columns (V,E,F,chi,b,gauge,inv,curv,flat
+and the loop tests) and VACUOUS of the lambda column.
+
+   B1    pi(SENSE U) = (0, 2/5, 2/5, 1/5)
+   B1q   pi(SENSE U) = (1/7, 3/7, 3/7, 0)
+   B0b   pi(SENSE U) = (4/9, 2/9, 1/9, 2/9)
+   B4    pi(SENSE U) = (1/6, 1/6, 1/6, 1/2)
+
