@@ -1,0 +1,114 @@
+========================================================================================================
+O-5 B.  DOES THE EPSILON-RELAXED CLAUSE (ii) PRESERVE THE SEPARATION?
+========================================================================================================
+
+  same 256-dim space, same local perturbation V (||V||_op = 1.000000),
+  H_p = H_0 + p*V.  Two Hamiltonians, two records:
+     TOPOLOGICAL  H = -sum A_v - sum B_p     R = Z on [0, 1]   ground deg 4, gap 4
+     SYMMETRY     H = -sum_(l>=1) X_l        R = Z_0             ground deg 2, gap 2
+  ||[V,R_top]|| = 0.566845    ||[V,R_sym]|| = 0.198766
+
+--------------------------------------------------------------------------------------------------------
+  READING 1 -- FIXED RECORD:   eps_fixed = ||[H_p, R_0]||
+--------------------------------------------------------------------------------------------------------
+            p      TOPOLOGICAL         SYMMETRY    ratio sym/top   verdict
+      0.0e+00     0.000000e+00     0.000000e+00              nan   -- both zero
+      1.0e-08     5.668451e-09     1.987662e-09           0.3507   SAME ORDER
+      1.0e-07     5.668451e-08     1.987662e-08           0.3507   SAME ORDER
+      1.0e-06     5.668451e-07     1.987662e-07           0.3507   SAME ORDER
+      1.0e-05     5.668451e-06     1.987662e-06           0.3507   SAME ORDER
+      1.0e-04     5.668451e-05     1.987662e-05           0.3507   SAME ORDER
+      1.0e-03     5.668451e-04     1.987662e-04           0.3507   SAME ORDER
+      1.0e-02     5.668451e-03     1.987662e-03           0.3507   SAME ORDER
+      1.0e-01     5.668451e-02     1.987662e-02           0.3507   SAME ORDER
+
+--------------------------------------------------------------------------------------------------------
+  READING 2 -- DRESSED RECORD: eps_dressed = ||[H_p|cluster, sign(P R_0 P)]||
+--------------------------------------------------------------------------------------------------------
+            p      TOPOLOGICAL         SYMMETRY    ratio sym/top   verdict
+      0.0e+00     3.944305e-31     0.000000e+00       0.0000e+00   -- both zero
+      1.0e-08     1.632896e-14     1.987662e-09       1.2173e+05   SEPARATED
+      1.0e-07     1.946022e-15     1.987662e-08       1.0214e+07   SEPARATED
+      1.0e-06     3.647576e-15     1.987662e-07       5.4493e+07   SEPARATED
+      1.0e-05     9.866590e-14     1.987662e-06       2.0145e+07   SEPARATED
+      1.0e-04     9.766635e-12     1.987662e-05       2.0352e+06   SEPARATED
+      1.0e-03     9.763620e-10     1.987662e-04       2.0358e+05   SEPARATED
+      1.0e-02     9.763638e-08     1.987662e-03       2.0358e+04   SEPARATED
+      1.0e-01     9.766188e-06     1.987662e-02       2.0352e+03   SEPARATED
+
+--------------------------------------------------------------------------------------------------------
+  FOR REFERENCE -- the cluster width itself (what W-61 measured), and the gap
+  DOUBLE-PRECISION NOISE FLOOR for eigenvalues of this H: eps_mach*||H|| = 1.78e-15
+  ANY WIDTH BELOW THAT LINE IS NOT A MEASUREMENT.  Marked [NOISE].  Script C fits the law
+  on the resolvable range and extrapolates instead of pretending to read these off.
+--------------------------------------------------------------------------------------------------------
+            p        width TOP        width SYM      gap TOP      gap SYM  min|eig| TOP  flag
+      0.0e+00     3.552714e-15     2.131628e-14     4.000000     2.000000      1.000000  [NOISE, top]
+      1.0e-08     1.687539e-14     4.963212e-09     4.000000     2.000000      1.000000  [NOISE, top]
+      1.0e-07     2.664535e-15     4.963211e-08     4.000000     2.000000      1.000000  [NOISE, top]
+      1.0e-06     2.309264e-14     4.963212e-07     4.000000     1.999999      1.000000  
+      1.0e-05     8.437695e-13     4.963212e-06     3.999996     1.999992      1.000000  
+      1.0e-04     8.434498e-11     4.963212e-05     3.999962     1.999917      1.000000  
+      1.0e-03     8.433602e-09     4.963212e-04     3.999624     1.999169      1.000000  
+      1.0e-02     8.433592e-07     4.963212e-03     3.996244     1.991690      1.000000  
+      1.0e-01     8.433090e-05     4.963212e-02     3.962441     1.916966      0.999952  
+
+  READ OFF THE RESOLVED ROWS ONLY (p >= 1e-05):  width_top / p^2 = 8.44e-03, 8.43e-03, 8.43e-03,
+  8.43e-03, 8.43e-03 at p = 1e-05 ... 1e-01.  FIVE DECADES, EXPONENT 2 = d.  width_sym / p =
+  4.963e-01 across all nine rows.  EXPONENT 1.  The separation is real; the rows below the floor
+  UNDERSTATE it, they do not manufacture it.
+
+========================================================================================================
+  SELF-CHECKS
+========================================================================================================
+  B1  every tolerance at p = 0 : max = 3.94e-31   PASS
+  B2  eps_fixed = p*||[V,R]|| ?  5.668450977297e-04 vs 5.668450977297e-04   rel.err 1.91e-16   PASS
+  B3  fitted width_top = 8.4345e-03 * p^2 on the resolved range ['1e-05', '1e-04', '1e-03', '1e-02', '1e-01']
+      W-61 used ||V||=||H||=8 at eps=1e-06, i.e. p_eff = 8e-06.
+      this lane predicts width = 5.3981e-13;  W-61 MEASURED 4.867e-13.
+      ratio predicted/measured = 1.109   PASS -- independent lane reproduced
+  B4  min over the sweep of min|eig(P R_0 P)| = 0.999952   PASS -- sign() is well defined, the dressed record is a true involution
+
+========================================================================================================
+  POSITIVE CONTROLS FOR THE READING-1 NULL   (an uncontrolled O(1) ratio is not a measurement)
+========================================================================================================
+  C1a  does eps_fixed = ||[H,R]|| register anything at all?
+       exact record of H_toric   (must give 0)        =     0.0000
+       a NON-record: Z_0 vs H_toric (must give O(1))  =     4.0000
+       a NON-record: X_0 vs H_toric (must give O(1))  =     4.0000
+       PASS -- the measure is alive: 0 for a record, O(1) for a non-record.
+  C1b  does eps_fixed separate p = 0 from p > 0?
+       p= 0.0e+00  eps_fixed(top) = 0.0000e+00
+       p= 1.0e-06  eps_fixed(top) = 5.6685e-07
+       p= 1.0e-03  eps_fixed(top) = 5.6685e-04
+       PASS -- it tracks p linearly.  It is not broken.  It is BLIND TO THE DISTINCTION.
+
+  C2  null control: the same carrier against itself must give ratio 1 on both readings.
+       p= 1.0e-06  fixed ratio   0.5664   dressed ratio   1.7190   PASS (both O(1) -- no spurious separation)
+       p= 1.0e-03  fixed ratio   0.5664   dressed ratio   1.3643   PASS (both O(1) -- no spurious separation)
+
+========================================================================================================
+  ANSWER
+========================================================================================================
+
+  AT p = 1e-03 (fully resolved, no noise floor), SAME PERTURBATION, SAME HILBERT SPACE:
+
+     READING 1  eps_fixed    topological 5.6685e-04   symmetry 1.9877e-04
+                                                     ratio = 0.3507
+     READING 2  eps_dressed  topological 9.7636e-10   symmetry 1.9877e-04
+                                                     ratio = 2.0358e+05
+
+  AND AT W-61's p = 1e-06, WITH THE TOPOLOGICAL SIDE TAKEN FROM THE FITTED LAW BECAUSE DIRECT
+  DIAGONALISATION IS BELOW THE DOUBLE-PRECISION FLOOR THERE:
+
+     eps_dressed  topological 8.4345e-15 (fitted)   symmetry 1.9877e-07 (measured)
+                                                     ratio = 2.3566e+07
+
+  THE EPSILON-RELAXED CLAUSE (ii) READ AS A TOLERANCE ON A FIXED OPERATOR COLLAPSES THE SEPARATION
+  FROM 2.04e+05 (at p=1e-3) TO 0.35.  READ AS A TOLERANCE ON THE DRESSED RECORD IT PRESERVES IT.
+
+  The collapse is not numerical.  It is an identity: [H_0+pV, R_0] = p[V,R_0] for any R_0 that was
+  exact before the perturbation, so the fixed-operator commutator is FIRST ORDER IN p FOR EVERY
+  CARRIER, whatever its distance.  The commutator norm of the UNDRESSED record cannot see d.
+
+  B DONE

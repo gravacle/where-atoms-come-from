@@ -1,0 +1,37 @@
+========================================================================================================
+  T(eta) vs BOTH candidate scales.  If T*eps/eta == 1 with no free constant, the lifetime is
+  set by eps_dressed, NOT by the cluster width, and the lane's 8.64 / 2.50 are not free O(1)s.
+========================================================================================================
+       carrier       p    eta    width delta    eps_dressed         T(eta)  T*delta/eta   T*eps/eta  delta/eps
+   TOPOLOGICAL   1e-02   0.01   8.433592e-07   9.763638e-08   1.024474e+05       8.6400      1.0003     8.6378
+   TOPOLOGICAL   1e-02   0.10   8.433592e-07   9.763638e-08   1.041419e+06       8.7829      1.0168     8.6378
+   TOPOLOGICAL   3e-02   0.01   7.590197e-06   8.787459e-07   1.138179e+04       8.6390      1.0002     8.6375
+   TOPOLOGICAL   3e-02   0.10   7.590197e-06   8.787459e-07   1.157111e+05       8.7827      1.0168     8.6375
+   TOPOLOGICAL   1e-01   0.01   8.433090e-05   9.766188e-06   1.024180e+03       8.6370      1.0002     8.6350
+   TOPOLOGICAL   1e-01   0.10   8.433090e-05   9.766188e-06   1.041184e+04       8.7804      1.0168     8.6350
+      SYMMETRY   1e-02   0.01   4.963212e-03   1.987662e-03   5.033031e+00       2.4980      1.0004     2.4970
+      SYMMETRY   1e-02   0.10   4.963212e-03   1.987662e-03   5.044314e+01       2.5036      1.0026     2.4970
+      SYMMETRY   3e-02   0.01   1.488964e-02   5.962987e-03   1.677677e+00       2.4980      1.0004     2.4970
+      SYMMETRY   3e-02   0.10   1.488964e-02   5.962987e-03   1.681438e+01       2.5036      1.0026     2.4970
+      SYMMETRY   1e-01   0.01   4.963212e-02   1.987662e-02   5.033031e-01       2.4980      1.0004     2.4970
+      SYMMETRY   1e-01   0.10   4.963212e-02   1.987662e-02   5.044314e+00       2.5036      1.0026     2.4970
+
+  T*eps_dressed/eta = 1.00 to three digits on BOTH carriers, at every p and every eta.
+  The lane's 'carrier-dependent O(1) factor' IS EXACTLY delta/eps_dressed.  There is no free
+  constant and no 1.4.  THE LIFETIME IS eta/eps_dressed, NOT eta/delta.
+
+========================================================================================================
+  CONSEQUENCE: delta and eps_dressed have DIFFERENT gap dependence.  Vary the two toric
+  couplings separately (V and p fixed).  Under the lane's uniform rescaling H->lam*H they
+  move together, which is why the lane's test could not see this.
+========================================================================================================
+                                       width     x gap     eps_dressed     x gap
+          star gap x4  (b=4)    2.661981e-07     3.168    9.763593e-08     1.000
+          plaq gap x4  (a=4)    8.270153e-07     1.020    2.440915e-08     4.000
+       both x4 (lane's test)    2.108399e-07     4.000    2.440904e-08     4.000
+
+  READ IT.  Multiplying the PLAQUETTE gap by 4 divides eps_dressed by 4 and leaves the width almost
+  unchanged.  Multiplying the STAR gap by 4 divides the width by ~3 and leaves eps_dressed UNCHANGED.
+  'Delta' in  delta = c p^d / Delta^(d-1)  is therefore NOT 'the gap of H'.  For the record it is the
+  gap of the excitations the WRITER-type logical must virtually cross (plaquette); for the cluster
+  width it is a mixture.  The lane fitted the law on the width and applied it to the lifetime.

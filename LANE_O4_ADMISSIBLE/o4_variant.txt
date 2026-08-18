@@ -1,0 +1,79 @@
+
+==============================================================================
+SECTION 0 -- SETUP CHECKS
+==============================================================================
+   [PASS] ground space dimension 4   4
+   [PASS] R flipped by U   
+   [PASS] U preserves the ground space (so U is DEF-A'-admissible)   ||[U,P_gs]|| = 3.33e-15
+   [PASS] Q1: clause (iv) is NON-VACUOUS under DEF-A'   the same writer qualifies; DEF-A' is weaker than DEF-A, so (iv) can only get easier
+
+==============================================================================
+SECTION 1 -- Q2: CAN A CONTRACTIBLE OPERATOR THAT PRESERVES THE GROUND SPACE FLIP R?
+==============================================================================
+
+At L = 2 only SINGLE EDGES are certifiably contractible (o4_diagnose_L2.py).  For each
+of the 8 edges, enumerate all 3 non-identity Paulis and measure
+
+   (a)  ||P_gs O P_gs - c P_gs||   with c = Tr(P_gs O P_gs)/4    -- Theorem C's claim
+   (b)  whether O preserves the ground space at all
+   (c)  whether O flips R
+
+   max over all 24 single-edge Paulis of ||P O P - cP||  : 6.344e-16     (Theorem C)
+   single-edge Paulis that FLIP R                        : 4
+   of those, that also PRESERVE the ground space         : 0
+   [PASS] Theorem C holds on every single-edge operator: P O P is a multiple of P   max deviation 6.34e-16
+   [PASS] Q2: NO contractible operator both preserves the ground space and flips R   count = 0
+   [PASS] POSITIVE CONTROL: contractible operators that flip R do exist (they simply fail to preserve the ground space)   count = 4  <-- the zero above is not a zero of the enumerator
+
+   ARGUMENT, not just the count.  Theorem C says P O P = c P for O on a contractible
+   region.  If such an O also preserves the ground space then O restricted to it is the
+   scalar c, and a scalar cannot conjugate R|_gs (non-scalar, by clause (iii)) to
+   -R|_gs.  So clause (v) survives DEF-A' for exactly the reason Theorem C gives.
+
+
+==============================================================================
+SECTION 2 -- Q3: P-3 UNDER DEF-A'
+==============================================================================
+
+   1. (iv) supplies an admissible U: unitary, [U,P_E] = 0, U^dag R U = -R.  [verified]
+   2. Suppose U is supported inside a contractible region S.
+   3. By Theorem C, P_E U P_E = c P_E; with 2 this gives U|_E = c.I, a phase.
+   4. Then U^dag R U restricted to E equals R|_E, not -R|_E, contradicting 1 because
+      R|_E is non-scalar by clause (iii).
+   5. Hence no admissible writer is supported inside a contractible region.        QED
+
+   NOTE THE DIFFERENCE FROM DEF-A.  Under DEF-A, step 3 is not needed -- clause (v) is
+   invoked directly and P-3 is a pure syllogism.  Under DEF-A' the proof needs THEOREM
+   C, i.e. real content about the carrier.  DEF-A' therefore makes P-3 a theorem with a
+   hypothesis rather than an unpacking of the definition, at the cost of no longer
+   being carrier-independent.
+
+   [PASS] P-3 goes through under DEF-A' on this instance   
+
+==============================================================================
+SECTION 3 -- Q4: HOW MUCH WEAKER IS CLAUSE (iv) UNDER DEF-A'?
+==============================================================================
+   mults        |B|   (iii)   (iv)|DEF-A   (iv)|DEF-A'   (iv)|DEF-C
+   (2,)             3       1            1             1            1
+   (4, 2)          15      11            1             5            3
+   (6, 4, 2)      105      97            1            19           13
+   (3, 3)          16      12            0             0            2
+   (4, 4, 4)      125     117            1            19           19
+   (8, 4)          45      41            1             5            5
+   (5, 4)          30      26            0             2            0
+   [PASS] DEF-A' is strictly weaker than DEF-A but still far from DEF-C   see the table: DEF-A' admits more than DEF-A, fewer than DEF-C
+
+==============================================================================
+RECOMMENDATION
+==============================================================================
+
+   ADOPT DEF-A AS THE DEFINITION AND DEF-A' AS THE REGISTERED FALLBACK.
+
+   DEF-A is carrier-independent and makes P-3 immediate, but it imposes balance on
+   every eigenspace of H -- a condition the program has NOT tested against any record
+   other than the toric code, and one that forbids R from being constant on any energy
+   shell.  If a physical record is found that is constant on some high-energy sector,
+   DEF-A is falsified and DEF-A' is the retreat; P-3 survives either way, but under
+   DEF-A' it needs Theorem C as a hypothesis and is no longer carrier-free.
+
+ALL SELF-CHECKS PASSED.

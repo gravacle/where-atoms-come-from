@@ -1,0 +1,42 @@
+R = Z on ['(0,0,H)', '(1,0,H)']
+
+PLAQUETTE 0: edges ['(0,0,H)', '(0,0,V)', '(1,0,V)', '(0,1,H)']
+    ADMISSIBLE FLIPPER: X_(0,0,H) X_(0,1,H) 
+    ADMISSIBLE FLIPPER: Y_(0,0,H) Z_(0,0,V) Z_(1,0,V) Y_(0,1,H) 
+    ADMISSIBLE FLIPPER: X_(0,0,H) X_(0,0,V) X_(1,0,V) X_(0,1,H) 
+    ADMISSIBLE FLIPPER: Y_(0,0,H) Y_(0,0,V) Y_(1,0,V) Y_(0,1,H) 
+
+PLAQUETTE 1: edges ['(0,0,V)', '(1,0,H)', '(1,0,V)', '(1,1,H)']
+    ADMISSIBLE FLIPPER: X_(1,0,H) X_(1,1,H) 
+    ADMISSIBLE FLIPPER: Z_(0,0,V) Y_(1,0,H) Z_(1,0,V) Y_(1,1,H) 
+    ADMISSIBLE FLIPPER: X_(0,0,V) X_(1,0,H) X_(1,0,V) X_(1,1,H) 
+    ADMISSIBLE FLIPPER: Y_(0,0,V) Y_(1,0,H) Y_(1,0,V) Y_(1,1,H) 
+
+PLAQUETTE 2: edges ['(0,0,H)', '(0,1,H)', '(0,1,V)', '(1,1,V)']
+    ADMISSIBLE FLIPPER: X_(0,0,H) X_(0,1,H) 
+    ADMISSIBLE FLIPPER: Y_(0,0,H) Y_(0,1,H) Z_(0,1,V) Z_(1,1,V) 
+    ADMISSIBLE FLIPPER: X_(0,0,H) X_(0,1,H) X_(0,1,V) X_(1,1,V) 
+    ADMISSIBLE FLIPPER: Y_(0,0,H) Y_(0,1,H) Y_(0,1,V) Y_(1,1,V) 
+
+PLAQUETTE 3: edges ['(1,0,H)', '(0,1,V)', '(1,1,H)', '(1,1,V)']
+    ADMISSIBLE FLIPPER: X_(1,0,H) X_(1,1,H) 
+    ADMISSIBLE FLIPPER: Y_(1,0,H) Z_(0,1,V) Y_(1,1,H) Z_(1,1,V) 
+    ADMISSIBLE FLIPPER: X_(1,0,H) X_(0,1,V) X_(1,1,H) X_(1,1,V) 
+    ADMISSIBLE FLIPPER: Y_(1,0,H) Y_(0,1,V) Y_(1,1,H) Y_(1,1,V) 
+
+
+IS THE OFFENDING SUPPORT A CONTRACTIBLE SET?  On a 2x2 torus a plaquette's four edges
+are  bottom (x,y,H), top (x,y+1,H), left (x,y,V), right (x+1,y,V).  With L = 2 the
+left and right edges of ANY plaquette are the two DISTINCT vertical edges of that row,
+and X on both of them is a closed dual loop that WINDS AROUND THE TORUS.  So a single
+plaquette's edge set at L = 2 already carries a non-contractible cycle:
+
+   plaquette 0 edges: ['(0,0,H)', '(0,0,V)', '(1,0,V)', '(0,1,H)']
+   its two V edges     : ['(0,0,V)', '(1,0,V)']   <- an X-string on these two is a horizontal dual loop, weight 2 = d
+
+CONCLUSION: at L = 2 the code distance is d = 2 and a plaquette holds 4 edges, so a
+"contractible region" as an edge set is NOT contractible -- it contains a winding
+cycle.  This is a SMALL-LATTICE ARTEFACT, not a failure of clause (v).  The clause-(v)
+test must be run at L >= 3, where d = 3 > the 4-edge plaquette cannot hold a logical.
+o4_L3.py does that with exact F_2 linear algebra rather than enumeration.
+

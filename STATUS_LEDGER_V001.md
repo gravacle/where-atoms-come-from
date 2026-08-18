@@ -10,11 +10,11 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 ## THE COUNT
 
-| PROVED | MEASURED | PARTIAL | CANDIDATE | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
-|---|---|---|---|---|---|---|---|---|---|
-| 34 | 2 | 6 | 1 | 17 | 3 | 2 | 5 | 3 | 3 |
+| PROVED | MEASURED | PARTIAL | CANDIDATE | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 43 | 2 | 5 | 1 | 1 | 10 | 3 | 5 | 5 | 3 | 3 |
 
-**76 rows.**
+**81 rows.**
 
 ---
 
@@ -47,7 +47,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
-| **C-1** | records require exact degeneracy | **PARTIAL** | P-1 (forward) | O-1 (converse) | a non-degenerate H carrying a record |
+| **C-1** | records require exact degeneracy | **PROVED** | forward P-1; the NAIVE converse is FALSE (O-1) and the REPAIRED converse is a theorem (C-12) | O-1 (converse) | a non-degenerate H carrying a record |
 | **C-2** | ORDINARY (0-form) symmetry cannot supply it — splits linearly, dead at 1e-06 | **MEASURED** | W-61: 2.0e-06, linear | O-2 | a 0-form degeneracy not split at first order |
 | **C-3** | a 1-FORM symmetry can — its generators are extended, so no local operator reaches them; splits only at order d | **PROVED** | Thm D; slope 2.000 over two decades | — | splitting below order d |
 | **C-4** | records require NON-TRIVIAL HOMOLOGY of an F_2 chain complex — NOT a surface (G-6 refuted the manifold reading). Whether CSS is required is untested | **PARTIAL** | surface reading refuted by G-6; homological reading survives but non-CSS and non-abelian are unswept | O-3 (exhaustiveness) | a noise-surviving record with only 0-form symmetry |
@@ -55,6 +55,10 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-6** | a writer always exists and is never local | **PROVED** | Thm B; P-3 | — | a local operator flipping the record |
 | **C-7** | nothing local writes or destroys it | **PROVED** | Thm C | — | any contractible operation acting |
 | **C-8** | alpha is local, so it splits at order d | **PROVED** | Thm D | — | alpha leaving the degeneracy intact |
+| **C-9** | LEMMA 0: for R Hermitian, [L,R]=0 iff [L-dagger,R]=0, so clause (ii) forces R into the commutant of the *-ALGEBRA alg{I,H,L_k,L_k-dagger}, not of the set {H,L_k} | **PROVED** | LANE_O1_CONVERSE | — | a Hermitian R commuting with L but not L-dagger |
+| **C-10** | THEOREM O1-A: a record non-trivial on E_lambda exists IFF the compression P_lambda A P_lambda is a PROPER subalgebra of B(E_lambda) | **PROVED** | 6/6 against brute force; the P L P trap shows inspecting the eigenspace alone cannot decide it | — | a proper compression carrying no record |
+| **C-11** | THEOREM O1-B: an admissible U with U-dagger R U = -R exists IFF p = q IFF Tr R = 0. COROLLARY: in an ODD-dimensional Hilbert space Tr R is odd, so NO record is ever writable | **PROVED** | 10/10; positive control best-of-4000 random unitaries never below 2.000116 | — | an unbalanced R with a flipper |
+| **C-12** | THE REPAIRED CONVERSE: a record satisfying (i)-(iv) exists IFF the commutant of alg{I,H,L_k,L_k-dagger} contains a projection that is (H1) non-trivial on some eigenspace of H and (H2) trace-balanced | **PROVED** | 210/210 by exhaustive enumeration | — | a system meeting both hypotheses with no record |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 
@@ -80,17 +84,18 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
-| **O-1** | the converse of P-2: degeneracy gives (i)-(iii), not (ii) compatibility with {L_k} nor (iv) flippability | **OPEN** | — | — | — (decides theorem vs strong conjecture) |
-| **O-2** | symmetry degeneracy splits at first order — measured, not proved | **OPEN** | W-61 measured only | — | — |
-| **O-3** | exhaustiveness. Side-step: prove any first-order-split degeneracy cannot carry a noise-surviving record | **OPEN** | — | — | — |
-| **O-4** | admissible in clause (iv) is undefined | **OPEN** | — | — | — |
-| **O-5** | clause (ii) is exact; real records are approximate | **OPEN** | — | — | — |
+| **O-1** | the converse of P-2: degeneracy gives (i)-(iii), not (ii) compatibility with {L_k} nor (iv) flippability | **FAILED** | the naive converse is FALSE — counterexamples for both gaps with controls; the REPAIRED converse is a theorem, 210/210 | — | — (decides theorem vs strong conjecture) |
+| **O-2** | symmetry degeneracy splits at first order — measured, not proved | **PROVED** | first-order splitting = non-vanishing of Phi(V) = PVP - (tr PVP/n)P, under stated hypotheses; slope = d on five codes | — | — |
+| **O-3** | exhaustiveness. Side-step: prove any first-order-split degeneracy cannot carry a noise-surviving record | **FAILED** | the registered side-step is REFUTED by two explicit counterexamples | — | — |
+| **O-4** | admissible in clause (iv) is undefined | **DEFINED** | admissible U := a unitary with [U,H] = 0 | — | — |
+| **O-5** | clause (ii) is exact; real records are approximate | **PROVED** | clause (ii) relaxes as a spectral WIDTH bound on the dressed record; tolerance = inverse lifetime T(eta) >= eta/delta | — | — |
 | **O-6** | is our 1-form symmetry emergent or exact? | **FAILED** | tested: EXACT, 0.000e+00 broken at every epsilon | — | — (Harlow-Ooguri tension is LIVE; see X-5) |
-| **O-7** | COVERAGE GAP: the fracton / no-string-logical-operator region was never swept (agent died on an API error). Haah's cubic code, X-cube, checkerboard, Chamon untested against R1-R3 | **OPEN** | recorded as unswept, NOT as a null result | — | — |
-| **O-8** | NON-CSS and NON-ABELIAN (Levin-Wen, Fibonacci) are untested against R1-R3. The general condition may be wider than a length-2 F_2 complex | **OPEN** | flagged by the G-6 adjudicator | — | — |
+| **O-7** | COVERAGE GAP: the fracton / no-string-logical-operator region was never swept (agent died on an API error). Haah's cubic code, X-cube, checkerboard, Chamon untested against R1-R3 | **FAILED** | swept: fractons widen NOTHING — X-cube, checkerboard and Haah's cubic code are all length-2 F_2 chain complexes | — | — |
+| **O-8** | NON-CSS and NON-ABELIAN (Levin-Wen, Fibonacci) are untested against R1-R3. The general condition may be wider than a length-2 F_2 complex | **PROVED** | swept: non-CSS stabiliser codes provably ESCAPE the F_2 length-2 class; non-abelian order FAILS clause (iv) on a parity obstruction | — | — |
 | **O-9** | WHAT SUPPLIES A NON-LOCAL, NON-EQUILIBRIUM COUPLING? A bath coupling of weight >= d is itself a non-local process. The formation problem has MOVED here, not closed | **OPEN** | created by F-13 | — | — |
-| **O-10** | THE THRESHOLD=d SCALING IS UNTESTED. F-11 measured it at d=2 only; 3x3 needs dim 262144 | **OPEN** | limitation stated in advance of the run | — | — |
+| **O-10** | THE THRESHOLD=d SCALING IS UNTESTED. F-11 measured it at d=2 only; 3x3 needs dim 262144 | **PROVED** | threshold = d on six codes at d = 1,2,3 incl. non-CSS and degenerate; now PROVED for every stabiliser code and every coupling | — | — |
 | **O-11** | F-13 MAY CONTRADICT ITSELF. A strong-coupling bath relaxes to the MEAN-FORCE Gibbs state Tr_B[e^{-beta H_tot}]/Z, which depends on the COUPLING operators; at weight >= d — what clause (2) requires — that state is not degeneracy-blind, so it meets clause (1)'s falsifier while satisfying clause (2) | **OPEN** | import audit finding 4 | — | — |
+| **O-12** | UNDER THE TRIVIAL READING OF 'ADMISSIBLE' (any unitary) THE TORIC CODE FAILS THE PROGRAM'S OWN CLAUSE (v). The undefined word was load-bearing in clause (v), not clause (iv). P-3 survives but weakens to 'no admissible writer fits inside ONE contractible region' | **OPEN** | O-4 finding; the anchor needs amending | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 

@@ -1,0 +1,13 @@
+*** SUPERSEDED / WITHDRAWN: buggy null-space test, see verify_dR_0form2.OUT.txt ***
+  L=3: multiplet dim n=4, R = sign(Jz) on E0, eigenvalues [-1. -1.  1.  1.]
+        D1 (max ||Phi(single-site V)||)                      = 1.4907   -> T5 holds, first-order splitting
+        max ||[Phi(V), R]|| over single-site V               = 1.8856
+        exists single-site combination ANTICOMMUTING with R  = True   -> d_R = 1 by the lane's own definition
+        400 random single-site UNITARIES: max ||P U+ R U P + R|| = 4.0000   (a flip would give 0)
+  L=4: multiplet dim n=5 is ODD -> any involution on E0 has unequal +-1 counts,
+        so clause (iv) (U+RU=-R preserves trace) is IMPOSSIBLE.  No record on E0 at all.
+  L=5: multiplet dim n=6, R = sign(Jz) on E0, eigenvalues [-1. -1. -1.  1.  1.  1.]
+        D1 (max ||Phi(single-site V)||)                      = 1.6733   -> T5 holds, first-order splitting
+        max ||[Phi(V), R]|| over single-site V               = 1.6971
+        exists single-site combination ANTICOMMUTING with R  = True   -> d_R = 1 by the lane's own definition
+        400 random single-site UNITARIES: max ||P U+ R U P + R|| = 4.8990   (a flip would give 0)

@@ -1,0 +1,20 @@
+Chamon on the fcc sublattice, cubic torus L x L x L, L = 2p:
+  L   p      n   gens   rank     k  4*gcd(p,p,p)=4p   match  commute
+  2   1      4      4      0     4                4     YES        0
+  4   2     32     32     24     8                8     YES        0
+  6   3    108    108     96    12               12     YES        0
+  8   4    256    256    240    16               16     YES        0
+ 10   5    500    500    480    20               20     YES        0
+
+Anisotropic tori, where the gcd formula has real content (k = 4 gcd(px,py,pz)):
+    Lx,Ly,Lz   px,py,pz      n     k   4*gcd   match  commute
+   (4, 4, 6)  (2, 2, 3)     48     4       4     YES        0
+   (4, 6, 8)  (2, 3, 4)     96     4       4     YES        0
+  (4, 6, 10)  (2, 3, 5)    120     4       4     YES        0
+  (6, 8, 10)  (3, 4, 5)    240     4       4     YES        0
+  (4, 8, 12)  (2, 4, 6)    192     8       8     YES        0
+  (6, 6, 10)  (3, 3, 5)    180     4       4     YES        0
+
+CSS test on the fcc Chamon code:
+  L=6: rank(pure-X part)=24  rank(pure-Z part)=24  rank(S)=96  CSS = False
+  (a CSS code would need rank_X + rank_Z = rank_S)

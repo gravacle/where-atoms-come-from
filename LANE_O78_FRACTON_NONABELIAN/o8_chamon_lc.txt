@@ -1,0 +1,39 @@
+Chamon on the fcc sublattice, cubic torus L x L x L, L = 2p:
+  L   p      n   gens   rank     k  4*gcd(p,p,p)=4p   match  commute
+  2   1      4      4      0     4                4     YES        0
+  4   2     32     32     24     8                8     YES        0
+  6   3    108    108     96    12               12     YES        0
+  8   4    256    256    240    16               16     YES        0
+ 10   5    500    500    480    20               20     YES        0
+
+Anisotropic tori, where the gcd formula has real content (k = 4 gcd(px,py,pz)):
+    Lx,Ly,Lz   px,py,pz      n     k   4*gcd   match  commute
+   (4, 4, 6)  (2, 2, 3)     48     4       4     YES        0
+   (4, 6, 8)  (2, 3, 4)     96     4       4     YES        0
+  (4, 6, 10)  (2, 3, 5)    120     4       4     YES        0
+  (6, 8, 10)  (3, 4, 5)    240     4       4     YES        0
+  (4, 8, 12)  (2, 4, 6)    192     8       8     YES        0
+  (6, 6, 10)  (3, 3, 5)    180     4       4     YES        0
+
+CSS test on the fcc Chamon code:
+  L=6: rank(pure-X part)=24  rank(pure-Z part)=24  rank(S)=96  CSS = False
+  (a CSS code would need rank_X + rank_Z = rank_S)
+POSITIVE CONTROL -- XZZX toric code, known Hadamard-equivalent to CSS.
+  XZZX L=4: 2-class sublattice-uniform search over 36 bases -> CSS FOUND (0, 2)   SELF-CHECK: PASS
+
+CHAMON (fcc convention, matches Bravyi-Leemhuis-Terhal k = 4 gcd):
+  L=4 n= 32  classes=2 (x mod 2             ) EXHAUSTIVE      36/     36 -> NO CSS FORM in this family
+  L=4 n= 32  classes=4 ((x,y) mod 2         ) EXHAUSTIVE    1296/   1296 -> NO CSS FORM in this family
+  L=4 n= 32  classes=3 ((x+y+z) mod 4       ) EXHAUSTIVE     216/    216 -> NO CSS FORM in this family
+  L=4 n= 32  classes=7 ((x,y,z) mod 2 octant) EXHAUSTIVE  279936/ 279936 -> NO CSS FORM in this family
+  L=6 n=108  classes=2 (x mod 2             ) EXHAUSTIVE      36/     36 -> NO CSS FORM in this family
+  L=6 n=108  classes=4 ((x,y) mod 2         ) EXHAUSTIVE    1296/   1296 -> NO CSS FORM in this family
+  L=6 n=108  classes=3 ((x+y+z) mod 4       ) EXHAUSTIVE     216/    216 -> NO CSS FORM in this family
+  L=6 n=108  classes=7 ((x,y,z) mod 2 octant) -- NOT RUN: exceeded the 10-minute budget.
+     Recorded as NOT RUN, not as a null.  The L=4 octant family WAS exhausted (279936
+     bases) and returned no CSS form.
+
+  SCOPE.  Exhaustive over sublattice-uniform local Cliffords only, not over all 6^n
+  assignments (6^32 at L=4) and not over finite-depth Clifford CIRCUITS.  Evidence, not
+  proof, that Chamon is outside the CSS class.  What IS proved unconditionally is the
+  [[5,1,3]] case (o8_no_css_5.py): no CSS code with those parameters exists at all.

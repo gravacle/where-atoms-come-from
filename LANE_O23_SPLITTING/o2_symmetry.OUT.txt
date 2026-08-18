@@ -1,0 +1,147 @@
+====================================================================================================
+LANE O-2 PART 1.  FIRST-ORDER SPLITTING OF AN ORDINARY (0-FORM) SYMMETRY DEGENERACY
+====================================================================================================
+
+SELF-CHECK 0 -- a case whose answer is known by hand.
+    H0 = 0 on C^2, V = sigma_z.  exact answer: splitting = 2*eps, slope 1.
+    measured slope = 1.000000   max log-log residual = 3.55e-15
+    splitting == 2*eps to machine precision at every eps: True
+    SELF-CHECK 0: PASS
+
+SELF-CHECK 1 -- the adjoint-Casimir tensor decomposition against known multiplicities.
+    single spin-1, End(C^3):        measured {0: 1, 1: 3, 2: 5}   expected {0: 1, 1: 3, 2: 5}
+    spin-1 (x) spin-1/2, End(C^6):  measured {0: 2, 1: 12, 2: 15, 3: 7}   expected {0: 2, 1: 12, 2: 15, 3: 7}
+    SELF-CHECK 1: PASS
+
+----------------------------------------------------------------------------------------------------
+TEST A (T2, T3).  E0 = the j=1/2 DOUBLET of spin-1 (x) spin-1/2.   n = 2, rho = spin-1/2.
+   rho (x) rho* = rank 0 + rank 1.  SELECTION RULE: only a RANK-1 component can split it.
+----------------------------------------------------------------------------------------------------
+    H0 = (S_tot)^2.  distinct levels = 2.  lowest level E = 0.7500, degeneracy n = 2
+    rank-1 operator space is closed under dagger: leak = 1.24e-15  PASS
+    rank-2 operator space is closed under dagger: leak = 1.41e-15  PASS
+    rank-1 (magnetic, T-odd)                 ||Phi(V)|| =  5.269e+00   splitting(eps=1e-3) =  7.452e-03   slope = 1.0000
+    rank-2 (crystal field)                   ||Phi(V)|| =  1.925e-15   splitting(eps=1e-3) =  2.386e-06   slope = 1.9987
+    rank-3                                   ||Phi(V)|| =  8.231e-16   splitting(eps=1e-3) =  2.220e-16   slope = nan
+    rank-0 = G-INVARIANT S_A.S_B             ||Phi(V)|| =  0.000e+00   splitting(eps=1e-3) =  0.000e+00   slope = nan
+    generic Hermitian (breaks everything)    ||Phi(V)|| =  1.164e+00   splitting(eps=1e-3) =  1.647e-03   slope = 1.0003
+    EXPECTED: rank-1 and generic -> Phi != 0, slope 1.  rank-2, rank-3, invariant -> Phi = 0 EXACTLY.
+    TEST A: PASS
+
+    NOTE, AND IT MATTERS FOR THE CONTRAST O-2 IS TRYING TO DRAW:
+    the rank-2 perturbation has Phi = 0 to machine precision yet the doublet splits with
+    SLOPE 1.9987, i.e. at SECOND order.  A 0-form symmetry degeneracy can therefore
+    have splitting exponent 2.  The exponent alone does NOT distinguish 0-form from 1-form.
+
+    KRAMERS SUB-TEST.  the system has ONE half-integer spin, so T^2 = -1 on the whole space
+    and the j=1/2 level is a KRAMERS doublet.  Kramers' theorem predicts EXACT degeneracy at
+    every strength for any T-INVARIANT V.  Note SU(2)-rank does NOT fix T-parity here (the
+    rank-2 space mixes the j-blocks), so T-parity must be imposed explicitly.
+      check T^2 = -1 on the whole space: ||Uy conj(Uy) + I|| = 4.25e-15
+      check H0 is T-invariant:           ||T H T^-1 - H||    = 8.73e-15
+      ||Phi(V_T-even)|| = 3.197e-15    ||Phi(V_T-odd)|| = 3.242e+00  <- POSITIVE CONTROL
+      eps = 0.001:  T-EVEN splitting = 2.220e-16     T-ODD splitting = 4.585e-03   <- POSITIVE CONTROL
+      eps = 0.010:  T-EVEN splitting = 5.551e-16     T-ODD splitting = 4.585e-02   <- POSITIVE CONTROL
+      eps = 0.100:  T-EVEN splitting = 8.882e-16     T-ODD splitting = 4.558e-01   <- POSITIVE CONTROL
+      eps = 0.500:  T-EVEN splitting = 1.277e-15     T-ODD splitting = 2.047e+00   <- POSITIVE CONTROL
+      eps = 1.000:  T-EVEN splitting = 2.442e-15     T-ODD splitting = 3.557e+00   <- POSITIVE CONTROL
+    KRAMERS SUB-TEST: PASS  -- a T-invariant perturbation, however
+    large and however badly it breaks SU(2), does not split the doublet at ANY order.
+
+----------------------------------------------------------------------------------------------------
+TEST B (T3).  E0 = the j=1 TRIPLET of spin-1 (x) spin-1.  n = 3, rho = spin-1, INTEGER spin,
+   so NO Kramers theorem.  rho (x) rho* = 0+1+2.  A RANK-3 perturbation must give Phi = 0.
+----------------------------------------------------------------------------------------------------
+    End(C^9) tensor multiplicities: {0: 3, 1: 18, 2: 30, 3: 21, 4: 9}   expected {0: 3, 1: 18, 2: 30, 3: 21, 4: 9}   PASS   (sum = 81, must be 81)
+    j=1 triplet found: dimension 3 at S^2 = 2.0000
+    rank-1 perturbation:  ||Phi(V)|| =  6.805e+00   slope = 0.9994   splitting(1e-3) = 9.619e-03
+    rank-2 perturbation:  ||Phi(V)|| =  9.105e+00   slope = 0.9999   splitting(1e-3) = 1.277e-02
+    rank-3 perturbation:  ||Phi(V)|| =  5.454e-15   slope = 2.0008   splitting(1e-3) = 6.211e-06
+    rank-4 perturbation:  ||Phi(V)|| =  3.633e-15   slope = nan   splitting(1e-3) = 1.554e-15
+    200 random RANK-3 perturbations: max ||Phi(V)|| over all draws = 1.186e-15
+    200 random RANK-2 perturbations: max ||Phi(V)|| over all draws = 8.189e-01  <- POSITIVE CONTROL
+    TEST B: PASS   (rank-3 vanishes identically; rank-2 does not)
+
+----------------------------------------------------------------------------------------------------
+TEST C (T4).  rank of Phi on V = ALL Hermitian operators.  Theory: exactly n^2 - 1.
+----------------------------------------------------------------------------------------------------
+    doublet n=2 (dim-6 space)     dim V =   36   rank Phi =   3   n^2-1 = 3   PASS
+    triplet n=3 (dim-9 space)     dim V =   81   rank Phi =   8   n^2-1 = 8   PASS
+    => the non-splitting set is a SUBSPACE of codimension n^2-1 >= 3: closed, measure zero,
+       nowhere dense.  THAT is the precise content of the word 'generic' in row O-2.
+
+----------------------------------------------------------------------------------------------------
+TEST D (T5).  MANY-BODY 0-FORM SYMMETRY: is there a CONTRACTIBLE (single-site) perturbation
+   with Phi != 0?  Theory says yes for connected G whose generators are sums of local terms.
+----------------------------------------------------------------------------------------------------
+    Heisenberg ring L=4, J=-1  FERROMAGNETIC (ground multiplet = spin L/2 irrep)
+      ground level E=-1.000000, degeneracy n=5   (expected multiplet dim 5)
+      rank Phi on SINGLE-SITE operators = 3   n^2-1 = 24
+      (when E0 is a MULTIPLICITY-FREE irrep, single-site ops are rank-1 tensors and by
+       Wigner-Eckart reach only the rank-1 part of End(E0), so rank Phi = 3 exactly;
+       with multiplicity > 1 they also reach the multiplicity indices and rank Phi is larger.)
+      FIRST-ORDER LOCAL DEFECT  D1 = max over single-site V of ||Phi(V)|| = 1.5811
+      splitting slope for that single-site V = 1.0000   (log-log residual 6.4e-11)
+      A SINGLE-SITE OPERATOR SPLITS THE MULTIPLET AT FIRST ORDER: CONFIRMED
+      T5 CONSTRUCTION: ||Phi(Q^z_total)|| = 3.1623 (nonzero, traceless: |tr| = 3.3e-16);  its L local terms have ||Phi|| = [0.7906, 0.7906, 0.7906, 0.7906]
+    Heisenberg ring L=6, J=-1  FERROMAGNETIC (ground multiplet = spin L/2 irrep)
+      ground level E=-1.500000, degeneracy n=7   (expected multiplet dim 7)
+      rank Phi on SINGLE-SITE operators = 3   n^2-1 = 48
+      (when E0 is a MULTIPLICITY-FREE irrep, single-site ops are rank-1 tensors and by
+       Wigner-Eckart reach only the rank-1 part of End(E0), so rank Phi = 3 exactly;
+       with multiplicity > 1 they also reach the multiplicity indices and rank Phi is larger.)
+      FIRST-ORDER LOCAL DEFECT  D1 = max over single-site V of ||Phi(V)|| = 1.7638
+      splitting slope for that single-site V = 1.0000   (log-log residual 3.8e-11)
+      A SINGLE-SITE OPERATOR SPLITS THE MULTIPLET AT FIRST ORDER: CONFIRMED
+      T5 CONSTRUCTION: ||Phi(Q^z_total)|| = 5.2915 (nonzero, traceless: |tr| = 2.2e-16);  its L local terms have ||Phi|| = [0.8819, 0.8819, 0.8819, 0.8819, 0.8819, 0.8819]
+    Heisenberg ring L=5, J=+1  ANTIFERROMAGNETIC odd ring (ground multiplet has half-integer spin)
+      ground level E=-1.868034, degeneracy n=4   (expected multiplet dim 2 or 4)
+      rank Phi on SINGLE-SITE operators = 9   n^2-1 = 15
+      (when E0 is a MULTIPLICITY-FREE irrep, single-site ops are rank-1 tensors and by
+       Wigner-Eckart reach only the rank-1 part of End(E0), so rank Phi = 3 exactly;
+       with multiplicity > 1 they also reach the multiplicity indices and rank Phi is larger.)
+      FIRST-ORDER LOCAL DEFECT  D1 = max over single-site V of ||Phi(V)|| = 1.1392
+      splitting slope for that single-site V = 1.0000   (log-log residual 1.8e-07)
+      A SINGLE-SITE OPERATOR SPLITS THE MULTIPLET AT FIRST ORDER: CONFIRMED
+      T5 CONSTRUCTION: ||Phi(Q^z_total)|| = 1.0000 (nonzero, traceless: |tr| = 0.0e+00);  its L local terms have ||Phi|| = [0.5696, 0.5696, 0.5696, 0.5696, 0.5696]
+
+    SSB CONTROL -- Ising ring (finite group Z2, spontaneously broken).
+    Ising ring L=4: n=2, rank Phi on single-site ops = 1, best ||Phi|| = 1.4142, slope = 1.0000
+    Ising ring L=6: n=2, rank Phi on single-site ops = 1, best ||Phi|| = 1.4142, slope = 1.0000
+
+----------------------------------------------------------------------------------------------------
+TEST E.  WHERE T5's PROOF BREAKS: FINITE GROUPS.  T5 used the LIE GENERATORS Q^a = sum_x q^a_x.
+   A FINITE group has no generators, so the proof does not apply and the conclusion is not
+   established for finite G.  This is a PROBE, not a proof: sweep random G-invariant
+   Hamiltonians for G = S_3 acting ON-SITE in its 2-dim standard irrep, and ask whether any
+   of them has a degenerate ground multiplet that NO single-site operator splits at first
+   order (i.e. first-order local defect D1 = 0 with n >= 2).
+----------------------------------------------------------------------------------------------------
+    S_3 standard rep: closed under multiplication = True, non-abelian = True   PASS
+    L = 3 sites (dim 8): ground-multiplet dimensions seen = {1: 67, 2: 233}
+      degenerate draws examined = 233;  draws with D1 = 0 (no single-site splitter) = 0
+      SMALLEST first-order local defect D1 over all degenerate draws = 0.6436
+    L = 4 sites (dim 16): ground-multiplet dimensions seen = {1: 177, 2: 123}
+      degenerate draws examined = 123;  draws with D1 = 0 (no single-site splitter) = 0
+      SMALLEST first-order local defect D1 over all degenerate draws = 0.4640
+    READ THIS CORRECTLY: a sweep finding no counterexample is NOT a proof.  T5 is PROVED for
+    connected compact G and is a CONJECTURE for finite G.  What would settle it: show that a
+    finite on-site 0-form symmetry cannot produce a ground multiplet with no local order
+    parameter -- equivalently that d_R = 1 always.  That is the missing step, and it is the
+    ONLY thing standing between this lane and a complete proof of C-2.
+
+====================================================================================================
+WHAT PART 1 ESTABLISHES
+====================================================================================================
+  (1) O-2's claim is TRUE ONLY IN THE FORM 'rank Phi >= 1 on the admissible space V'.  Stated as
+      'a symmetry-breaking perturbation splits the multiplet at first order' it is FALSE: TEST A and
+      TEST B exhibit perturbations that break the symmetry maximally and give Phi = 0 IDENTICALLY,
+      by the selection rule lam subset rho (x) rho*.  These are not measure-zero accidents -- they
+      are whole subspaces of perturbations (200/200 random draws gave zero).
+  (2) The genericity statement that IS true: the non-splitting perturbations form a linear subspace
+      ker Phi of codimension rank Phi.  Generic = outside that subspace.  The claim is empty unless
+      V is named.
+  (3) The half that makes C-2 true is T5, LOCALITY: for a 0-form symmetry the generators are SUMS OF
+      LOCAL TERMS, so some single local term is already non-scalar on the multiplet.  TEST D measures
+      rank Phi >= 1 on single-site operators for a genuine many-body 0-form symmetry.  This -- not
+      genericity -- is what kills 0-form symmetry as a record carrier.

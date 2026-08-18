@@ -1,0 +1,60 @@
+
+==============================================================================
+PART A0 -- POSITIVE CONTROLS for the local-Clifford search
+==============================================================================
+A search that can only ever answer NO is worthless.  Control 1 hides a CSS code
+behind a random local Clifford: the search MUST find it again.
+  [[4,2,2]] scrambled by (3, 4, 3, 3): CSS in that basis? False
+  CONTROL scrambled [[4,2,2]]: exhaustive search over all 1296 single-qubit-Clifford bases (6^4)
+    searched 109/1296.  RESULT: CSS FORM EXISTS
+    witness basis = (0, 3, 0, 0)
+    SELF-CHECK (expected a CSS form): PASS
+  Steane scrambled by local Clifford (4, 4, 1, 1, 4, 3, 5): CSS in that basis? False
+  k preserved under local Clifford? 1 == 1 : PASS
+  CONTROL scrambled Steane: exhaustive search over all 279936 single-qubit-Clifford bases (6^7)
+    searched 3054/279936.  RESULT: CSS FORM EXISTS
+    witness basis = (0, 0, 2, 2, 0, 4, 5)
+    SELF-CHECK (expected a CSS form): PASS
+
+  Control 2: the XZZX code (Bonilla Ataides et al. 2021) -- non-CSS as written,
+  known to be Hadamard-equivalent to a CSS surface code on alternate qubits.
+  XZZX L=4: n=16 k=2 commute_violations=0 CSS as written = False
+  (GL2 index: identity=2, Hadamard=0)
+  after Hadamard on the odd sublattice: CSS = True
+  -> the search target is reachable; a NO answer elsewhere is therefore informative.
+
+==============================================================================
+PART A1 -- THE PERFECT [[5,1,3]] CODE
+==============================================================================
+  n=5 k=1 d=3 (exact, PART 0 of o7) commute_violations=0
+  [[5,1,3]]: exhaustive search over all 7776 single-qubit-Clifford bases (6^5)
+    searched 7776/7776.  RESULT: NO CSS FORM IN ANY LOCAL-CLIFFORD BASIS
+    SELF-CHECK (expected none): PASS
+
+==============================================================================
+PART A2 -- DOES THE TWO-NUMBER STRUCTURE OF G-12 EVEN EXIST HERE?
+==============================================================================
+G-12 requires TWO numbers: k-systole (min weight of a Z-logical) and k-cosystole
+(min weight of an X-logical).  Those are only defined if the logical group SPLITS into
+pure-X and pure-Z sectors.  Count pure-X and pure-Z logical representatives:
+  2D toric L=3 (CSS)         dim(S-perp)= 20  pure-X subspace dim= 10  pure-Z dim= 10  min wt pure-X logical=3  pure-Z=3
+  Steane (CSS)               dim(S-perp)=  8  pure-X subspace dim=  4  pure-Z dim=  4  min wt pure-X logical=3  pure-Z=3
+  [[5,1,3]] (non-CSS)        dim(S-perp)=  6  pure-X subspace dim=  1  pure-Z dim=  1  min wt pure-X logical=5  pure-Z=5
+
+  READ THIS ROW CAREFULLY.  For [[5,1,3]] the pure-X and pure-Z logical sectors are
+  1-dimensional (X^5 and Z^5), giving 'systole' = 'cosystole' = 5.  But the EXACT
+  distance is 3, achieved only by a MIXED-type logical (e.g. Y-containing).  So on a
+  non-CSS code the systole/cosystole pair does not compute the protection at all:
+  min(systole, cosystole) = 5 while d = 3.
+
+==============================================================================
+PART A3 -- CHAMON MODEL under sublattice-uniform local Cliffords
+==============================================================================
+Chamon is translation invariant, so a CSS-ifying Clifford would plausibly be
+sublattice-uniform.  We search all assignments constant on the 2-, 4- and 8-site
+sublattices of the cubic lattice (6^2 = 36, 6^4 = 1296, 6^8 = 1679616 bases).
+  L=4 classes= 2 (parity (x+y+z) mod 2  ) EXHAUSTIVE searched      36/      36  -> NO CSS FORM in this family
+  L=4 classes= 4 ((x+2y+4z) mod 4       ) EXHAUSTIVE searched    1296/    1296  -> NO CSS FORM in this family
+  L=4 classes= 8 ((x%2,y%2,z%2) octant  ) SAMPLED searched    4000/ 1679616  -> NO CSS FORM in this family
+
+DONE.

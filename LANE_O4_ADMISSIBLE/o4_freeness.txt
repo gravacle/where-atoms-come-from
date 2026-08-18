@@ -1,0 +1,66 @@
+
+==============================================================================
+SECTION 1 -- EXACT COUNT OVER THE MODULI BOX, VERIFIED BY BRUTE FORCE
+==============================================================================
+   mults          |B|    (iii)    (iv)DEF-A  (iv)DEF-C   iii&A    iii&C    P[A | iii]
+   (2,)             3        1          1          1       1        1    1.0000
+   (4,)             5        3          1          1       1        1    0.3333
+   (2, 2)           9        5          1          3       1        1    0.2000
+   (4, 2)          15       11          1          3       1        3    0.0909
+   (6, 4, 2)      105       97          1         15       1       13    0.0103
+   (3, 3)          16       12          0          4       0        2    0.0000
+   (4, 4, 4)      125      117          1         19       1       19    0.0085
+   (8, 4)          45       41          1          5       1        5    0.0244
+   [PASS] the counting formula matches brute force in every cell   0 disagreements
+   [PASS] clause (iv) under DEF-A selects AT MOST ONE point of the moduli box   count = 1 when every m_E is even, 0 otherwise
+   [PASS] clause (iv) under DEF-C selects a whole hyperplane, not a point   max DEF-C count = 19 vs DEF-A max 1
+
+==============================================================================
+SECTION 2 -- SO IS FLIPPABILITY FREE?
+==============================================================================
+
+   ANSWER, in the form the brief asked for.
+
+   Under DEF-C ("admissible = any unitary") flippability is NEARLY free: the fraction
+   of candidate records that pass clause (iv) grows with the size of the moduli box.
+   Under DEF-A it is the opposite: exactly ONE point of prod(m_E + 1) passes.
+
+   mults           P[(iv) | (iii)]  DEF-A      P[(iv) | (iii)]  DEF-C
+   (2,)                       1.0000                     1.0000
+   (4,)                       0.3333                     0.3333
+   (2, 2)                     0.2000                     0.2000
+   (4, 2)                     0.0909                     0.2727
+   (6, 4, 2)                  0.0103                     0.1340
+   (3, 3)                     0.0000                     0.1667
+   (4, 4, 4)                  0.0085                     0.1624
+   (8, 4)                     0.0244                     0.1220
+   [PASS] DEF-A: flippability is NOT free -- it is the single balanced point   P[(iv)|(iii)] = 1/#{(iii)-passing points} whenever a balanced point exists
+   [PASS] DEF-C: flippability is comparatively free   DEF-C's conditional probability dominates DEF-A's in every row
+
+   LARGEST P[(iv) | (iii)] UNDER DEF-A ACROSS THESE SPECTRA : 1.0000
+   and it falls as 1/prod(m_E+1) as the degeneracies grow.
+
+   => O-4's premise is REFUTED under DEF-A.  Clause (iv) is not a free rider on
+      degeneracy; it is the strongest of the five clauses in the discrete moduli, and
+      P-3 is therefore not "a theorem about a word nobody has defined" once the word
+      is DEF-A.  Under DEF-C the premise would have been correct, which is the second
+      reason to reject DEF-C.
+
+
+==============================================================================
+SECTION 3 -- WHAT CLAUSE (iv) SAYS PHYSICALLY UNDER DEF-A
+==============================================================================
+
+   Tr(P_E R) = 0 for every eigenvalue E of H.
+
+   In words: AT EVERY ENERGY, THE RECORD'S TWO VALUES OCCUPY EQUAL DIMENSION.  A bit
+   whose two values are not equally available at fixed energy cannot be set without
+   moving energy, and a process that moves energy is not writing a durable bit -- it is
+   changing which dynamics the system has.  This is a statement purely about (H, R):
+   no region, no field value at a point, no classical measure, no topology.
+
+
+==============================================================================
+SUMMARY
+==============================================================================
+ALL SELF-CHECKS PASSED.

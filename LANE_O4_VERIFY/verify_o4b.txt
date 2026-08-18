@@ -1,0 +1,32 @@
+
+==============================================================================
+A -- IS THE HEADLINE 1158 A COUNT OF DISTINCT OPERATORS?
+==============================================================================
+   sum over regions (with multiplicity) : 1158
+   DISTINCT Pauli operators             : 1062
+   [PASS] the reported 1158 is the multiplicity-counted sum, not distinct operators   1158 vs 1062 distinct
+
+==============================================================================
+B -- DOES DEF-A' RESCUE 'R CONSTANT ON A HIGH-ENERGY SECTOR'?
+==============================================================================
+   The lane registers DEF-A' as the fallback for exactly this case (o4_variant.py
+   docstring: 'It is an over-reach for any system whose high-energy sectors are
+   irrelevant to the record').  Test: H has a 4-dim record shell and a 2-dim
+   high-energy shell on which R = -I.  DEF-A' = U unitary, [U, P_E] = 0 for the
+   eigenspace E witnessing clause (iii).  Clause (iv) is the global identity.
+   [PASS] (i) R is a bit   
+   [PASS] (ii) [H,R]=0   
+   [PASS] (iii) R non-constant on the 4-dim shell   
+   Tr(P_E R) on the witnessing shell = +0.0   (balanced)
+   Tr R on the complement            = -2.0   (NOT balanced)
+   [PASS] DEF-A' admits NO flipper here either (20000-sample search)   best ||U^dag R U + R|| = 2.9702   analytic bound: on the complement R=-I so U^dag R U=-I never equals +I
+   [PASS] but o4_variant.py Section 3 COUNTS this point as DEF-A'-flippable   ps=(2,0), wit={0}, 2*ps[0]==mults[0] -> counted; the complement is never checked
+
+   CONSEQUENCE.  The registered fallback DEF-A' does NOT rescue a record that is
+   constant on a high-energy sector -- the motivating case in its own docstring.
+   Commuting with P_E forces U to preserve the complement, where R is +-I and cannot
+   be negated.  DEF-A' differs from DEF-A only when two or more non-witnessing shells
+   have CANCELLING traces.
+
+==============================================================================
+ALL CHECKS PASSED.

@@ -1,0 +1,84 @@
+CODE [[3,1,1]] repetition         n=3 k=1 d=1   #weight-d bits = 3
+   writer weight for a weight-1 bit: MIN over bits = 3, MAX over bits = 3
+      bit IIZ        -> min-weight writer XXX        weight 3
+      bit IZI        -> min-weight writer XXX        weight 3
+      bit ZII        -> min-weight writer XXX        weight 3
+   SC-B symplectic vs matrix anticommutation disagreements: 0 -> PASS
+   SC-C bits with NO writer found at any weight: 0 -> PASS (every bit is writable by some logical)
+   NEG CONTROL on bit IIZ : logicals of weight<3 that anticommute = 0 (expect 0);
+        ALL Paulis (incl. non-logical) of weight<3 that anticommute = 14
+
+CODE [[4,2,2]]                    n=4 k=2 d=2   #weight-d bits = 18
+   writer weight for a weight-2 bit: MIN over bits = 2, MAX over bits = 2
+      bit IIZZ       -> min-weight writer IXIX       weight 2
+      bit IZIZ       -> min-weight writer IIXX       weight 2
+      bit IZZI       -> min-weight writer IIXX       weight 2
+   SC-B symplectic vs matrix anticommutation disagreements: 0 -> PASS
+   SC-C bits with NO writer found at any weight: 0 -> PASS (every bit is writable by some logical)
+   NEG CONTROL on bit IIZZ : logicals of weight<2 that anticommute = 0 (expect 0);
+        ALL Paulis (incl. non-logical) of weight<2 that anticommute = 4
+
+CODE [[8,2,2]] toric 2x2          n=8 k=2 d=2   #weight-d bits = 8
+   writer weight for a weight-2 bit: MIN over bits = 2, MAX over bits = 2
+      bit IIIIIZIZ   -> min-weight writer IIIIIIXX   weight 2
+      bit IIIIZIZI   -> min-weight writer IIIIIIXX   weight 2
+      bit IIZZIIII   -> min-weight writer IXIXIIII   weight 2
+   SC-B symplectic vs matrix anticommutation disagreements: 0 -> PASS
+   SC-C bits with NO writer found at any weight: 0 -> PASS (every bit is writable by some logical)
+   NEG CONTROL on bit IIIIIZIZ : logicals of weight<2 that anticommute = 0 (expect 0);
+        ALL Paulis (incl. non-logical) of weight<2 that anticommute = 4
+
+CODE [[5,1,3]] perfect NON-CSS    n=5 k=1 d=3   #weight-d bits = 30
+   writer weight for a weight-3 bit: MIN over bits = 3, MAX over bits = 3
+      bit IZZIY      -> min-weight writer ZIIZX      weight 3
+      bit ZIIZX      -> min-weight writer IZZIY      weight 3
+      bit IIZXZ      -> min-weight writer IZZIY      weight 3
+   SC-B symplectic vs matrix anticommutation disagreements: 0 -> PASS
+   SC-C bits with NO writer found at any weight: 0 -> PASS (every bit is writable by some logical)
+   NEG CONTROL on bit IZZIY : logicals of weight<3 that anticommute = 0 (expect 0);
+        ALL Paulis (incl. non-logical) of weight<3 that anticommute = 54
+
+CODE [[7,1,3]] Steane             n=7 k=1 d=3   #weight-d bits = 21
+   writer weight for a weight-3 bit: MIN over bits = 3, MAX over bits = 3
+      bit IIZIZZI    -> min-weight writer IIXIXXI    weight 3
+      bit IIZZIIZ    -> min-weight writer IIXIXXI    weight 3
+      bit IZIIZIZ    -> min-weight writer IIXIXXI    weight 3
+   SC-B symplectic vs matrix anticommutation disagreements: 0 -> PASS
+   SC-C bits with NO writer found at any weight: 0 -> PASS (every bit is writable by some logical)
+   NEG CONTROL on bit IIZIZZI : logicals of weight<3 that anticommute = 0 (expect 0);
+        ALL Paulis (incl. non-logical) of weight<3 that anticommute = 90
+
+CODE [[9,1,3]] Shor               n=9 k=1 d=3   #weight-d bits = 39
+   writer weight for a weight-3 bit: MIN over bits = 3, MAX over bits = 3
+      bit IIZIIZIIZ  -> min-weight writer IIIIIIXXX  weight 3
+      bit IIZIIZIZI  -> min-weight writer IIIIIIXXX  weight 3
+      bit IIZIIZZII  -> min-weight writer IIIIIIXXX  weight 3
+   SC-B symplectic vs matrix anticommutation disagreements: 0 -> PASS
+   SC-C bits with NO writer found at any weight: 0 -> PASS (every bit is writable by some logical)
+   NEG CONTROL on bit IIZIIZIIZ : logicals of weight<3 that anticommute = 0 (expect 0);
+        ALL Paulis (incl. non-logical) of weight<3 that anticommute = 126
+
+CODE [[6,1,*]] ASYMMETRIC dX=2 dZ=3 n=6 k=1 d=2   #weight-d bits = 6
+   writer weight for a weight-2 bit: MIN over bits = 3, MAX over bits = 3
+      bit IIIIXX     -> min-weight writer IZIZIZ     weight 3
+      bit IIIIYY     -> min-weight writer IZIZIZ     weight 3
+      bit IIXXII     -> min-weight writer IZIZIZ     weight 3
+   SC-B symplectic vs matrix anticommutation disagreements: 0 -> PASS
+   SC-C bits with NO writer found at any weight: 0 -> PASS (every bit is writable by some logical)
+   NEG CONTROL on bit IIIIXX : logicals of weight<3 that anticommute = 0 (expect 0);
+        ALL Paulis (incl. non-logical) of weight<3 that anticommute = 56
+
+==============================================================================
+code                                d   min writer   max writer
+--------------------------------------------------------------
+[[3,1,1]] repetition                1            3            3
+[[4,2,2]]                           2            2            2
+[[8,2,2]] toric 2x2                 2            2            2
+[[5,1,3]] perfect NON-CSS           3            3            3
+[[7,1,3]] Steane                    3            3            3
+[[9,1,3]] Shor                      3            3            3
+[[6,1,*]] ASYMMETRIC dX=2 dZ=3      2            3            3
+
+THE DISCRIMINATING CASE is the asymmetric [[6,1,*]] (d_X=2, d_Z=3).
+If its writer weight is 3 while O-10 reports threshold 2, then O-10b is WRONG:
+the LARGER of the two numbers is exactly what says when the bit can be WRITTEN.

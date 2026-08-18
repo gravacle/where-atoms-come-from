@@ -1,0 +1,142 @@
+========================================================================================================
+O-5 D.  THEOREM SURVIVAL UNDER THE APPROXIMATE DEFINITION
+========================================================================================================
+
+========================================================================================================
+  D0.  IS THE EXPONENT THE CODE DISTANCE?  A THIRD CARRIER.
+========================================================================================================
+    Steane [[7,1,3]]: dim 128, ground energy -6.0000 (expected -6), degeneracy 2 (expected 2), gap 2.0000 (expected 2)   PASS
+    ||[H,Zbar]||,||[H,Xbar]|| = 0.00e+00  ||{Zbar,Xbar}|| = 0.00e+00   PASS
+    max over ALL weight-1 Paulis of ||P O P - scalar|| = 0.0000
+    max over ALL weight-2 Paulis of ||P O P - scalar|| = 0.0000
+    max over ALL weight-3 Paulis of ||P O P - scalar|| = 1.0000
+    => distance = 3   PASS (expected 3)
+
+           p    d=1 SYMMETRY    exp       d=2 TORIC    exp      d=3 STEANE    exp
+    3.00e-02    1.488964e-02   1.20    7.590197e-06   3.36    2.975860e-08   4.94
+    1.00e-01    4.963212e-02   1.30    8.433090e-05   4.07    1.101775e-06   5.96
+    2.00e-01    9.926424e-02   1.44    3.372627e-04   4.97    8.803780e-06   7.23
+    3.00e-01    1.488964e-01   1.58    7.586131e-04   5.97    2.965439e-05   8.66
+
+           carrier   fitted exponent   code distance  verdict
+          SYMMETRY            1.0000               1  PASS
+         TORIC 2x2            1.9998               2  PASS
+          STEANE 7            2.9986               3  PASS
+
+    THE EXPONENT IN THE RECORD-LIFETIME LAW IS THE CODE DISTANCE, ON THREE CARRIERS SPANNING d=1,2,3.
+    The code distance of a length-2 F_2 complex is min(systole, cosystole) -- G-12's TWO NUMBERS.
+    G-12 said R3 needs two numbers but did not say what they buy.  They buy the EXPONENT of the
+    record lifetime:   T(eta) ~ eta * Delta^(d-1) / (c * p^d),  d = min(systole, cosystole).
+
+========================================================================================================
+  D1.  THE EXACT DEFINITION'S SCOPE ON A GENERIC HAMILTONIAN
+========================================================================================================
+    400 random Hermitian matrices (32x32): number with ANY degenerate eigenvalue = 0
+    smallest relative level spacing seen: min 2.498e-03, median 1.655e-02
+    => on a generic H, clause (ii) forces R = f(H), and clause (iii) then fails IDENTICALLY.
+       THE EXACT DEFINITION IS SATISFIED BY NO RECORD AT ALL ON A GENERIC H.   PASS
+
+    the same statement on OUR carrier, perturbed:
+       TORIC 2x2  p= 0e+00  distinct eigenvalues    5 / 256   exact records EXIST
+       TORIC 2x2  p= 1e-03  distinct eigenvalues  256 / 256   NO exact record exists
+        SYMMETRY  p= 0e+00  distinct eigenvalues    8 / 256   exact records EXIST
+        SYMMETRY  p= 1e-03  distinct eigenvalues  256 / 256   NO exact record exists
+
+    POSITIVE CONTROL: at p = 0 the same counter finds 5 distinct eigenvalues out of 256 and reports
+    that records exist.  The counter is alive; the emptiness at p > 0 is real.
+
+    THIS IS WHY O-5 IS NOT A REFINEMENT.  The exact definition is not slightly too strict.  It has
+    NO instances whenever the Hamiltonian is perturbed by anything at all, which is always.
+
+========================================================================================================
+  D2 / D3 / D4.  THE THREE PROPOSITIONS
+========================================================================================================
+
+  D2  P-1: (iii) => H is degenerate.   APPROXIMATE FORM: (iii-w) => H has a CLUSTER of
+      width <= w and dimension > 1, i.e. QUASI-degeneracy.  The cluster is meaningful only
+      if it is well separated: report Delta/delta.
+           carrier        p  cluster dim    width delta  gap Delta   Delta/delta
+         TORIC 2x2    1e-03            4   8.433597e-09     3.9996    4.7425e+08
+          SYMMETRY    1e-03            2   4.963212e-04     1.9992    4.0280e+03
+      P-1 SURVIVES, weakened by exactly the amount w: 'degenerate' becomes 'quasi-degenerate
+      to within w'.  On the toric carrier the cluster is separated from the rest of the
+      spectrum by 4.74e+08; on the symmetry carrier by 4.03e+03.  Both are clusters.
+
+  D3  P-2: (ii)+(iv) => the writer is built from neither H nor {L_k}.
+      ON THE CLUSTER, at p = 1e-03:
+        ||[H_c, R_c]|| = 9.7636e-10      ||[H_c, W_c]|| = 5.9823e-09      cluster width = 8.4336e-09
+        ||{R_c, W_c}|| = 2.1677e-15   (the writer still anticommutes)
+
+      P-2 DOES NOT SURVIVE AS STATED, AND THE REASON IS TRIVIAL ONCE SEEN.  On a cluster of width
+      delta EVERY operator commutes with H to within delta.  ||[H_c,W_c]|| = 5.98e-09 is the same
+      order as ||[H_c,R_c]|| = 9.76e-10.  So at tolerance delta the writer IS indistinguishable from
+      something built out of H.  P-2's content evaporates at the tolerance that makes the record
+      approximate in the first place.  IT IS NOT LOST -- it is SUBSUMED: what P-2 was used for is
+      P-3, and P-3 survives with a number.  RECORD THIS AS A WITHDRAWAL OF P-2's APPROXIMATE FORM.
+
+  D4  P-3: (iv)+(v) => THE WRITER IS NON-LOCAL.   APPROXIMATE FORM OF (v): no contractible
+      operation flips R even PARTIALLY.  Decompose the cluster action of O into the part that
+      commutes with R_c and the part that anticommutes (the part that flips the record):
+          O_-  =  (O_c - R_c O_c R_c)/2 ,   FLIP AMPLITUDE = ||O_-||  (||O||=1 for a Pauli).
+
+              p   TORIC best wt-1 |O_-|        /p   TORIC logical X_A   SYMMETRY X_0  [bad measure]
+          0e+00            2.927923e-16       nan            1.000000       1.000000         0.0000
+          1e-04            8.368442e-06    0.0837            1.000000       1.000000         0.8607
+          1e-03            8.368442e-05    0.0837            1.000000       1.000000         0.8607
+          1e-02            8.368444e-04    0.0837            0.999999       1.000000         0.8607
+          1e-01            8.368582e-03    0.0837            0.999933       1.000000         0.8607
+
+      READ THE COLUMNS.  On the TORIC carrier the best LOCAL (weight-1) absolute flip amplitude is
+      0 exactly at p=0 and is PROPORTIONAL TO p thereafter -- the |O_-|/p column is constant.  The
+      weight-2 LOGICAL writer flips the record with amplitude 1 at every p (POSITIVE CONTROL: the
+      measure does register a full flip when one exists).  On the SYMMETRY carrier a single X_0 --
+      weight one, entirely contractible -- flips the record with amplitude 1 at every p.
+
+      THE LAST COLUMN IS THE MEASURE THIS LANE FIRST WROTE AND THEN CAUGHT: ||O_-|| / ||P O P||.
+      It reads 0.86 at every p and would have been reported as "local operations flip the toric
+      record almost perfectly".  Both numerator and denominator are O(p); their ratio is O(1) and
+      says nothing.  It is kept in the table so the corrected measure can be checked against it.
+
+      P-3 SURVIVES AND ACQUIRES A NUMBER:  local flip amplitude = O(p) = O(p^(d-1)) on d=2.
+      The writer is non-local up to an error that vanishes as the perturbation does, at the rate
+      set by the SAME d that sets the lifetime.
+
+========================================================================================================
+  D5.  THE OPEN-SYSTEM HALF, WITH DETAILED BALANCE
+========================================================================================================
+
+  The record R = Z on [0,1] is threatened only by X-type noise (Z-type jumps commute with it on
+  BOTH carriers, so the comparison would be empty).  Take the same jump operators -- single-qubit
+  X_l -- on both carriers, with rates obeying detailed balance at inverse temperature beta:
+        w(e -> e') = gamma / (1 + exp(beta * (E(e') - E(e))))          (Glauber)
+  On the toric carrier X-errors are labelled by e in F_2^8 with E(e) = -8 + 2*n_defect(e); this is
+  an exact reduction, not a model -- the X sector of a CSS code closes on itself.
+  On the symmetry carrier every X_l commutes with H_sym, so every ΔE = 0 and every rate is gamma/2.
+  gamma = 1 throughout.  THE COMMUTATOR NORM ||[X_l, R]|| = 2 ON BOTH, AT EVERY beta.
+
+       beta  ||[X_l,R]||   TORIC record rate  SYMMETRY record rate   T_top/T_sym  detbal resid
+       0.00       2.0000        2.000000e+00          1.000000e+00    5.0000e-01      0.00e+00
+       0.50       2.0000        6.893644e-01          1.000000e+00    1.4506e+00      5.42e-20
+       1.00       2.0000        1.074186e-01          1.000000e+00    9.3094e+00      1.08e-19
+       1.50       2.0000        1.482653e-02          1.000000e+00    6.7447e+01      1.36e-20
+       2.00       2.0000        2.011932e-03          1.000000e+00    4.9703e+02      1.69e-21
+       3.00       2.0000        3.686499e-05          1.000000e+00    2.7126e+04      2.65e-23
+       4.00       2.0000        6.752109e-07          1.000000e+00    1.4810e+06      4.93e-32
+
+    SELF-CHECK  detailed balance residual max |W_ij pi_j - W_ji pi_i| < 1e-15 in every row   PASS
+    POSITIVE CONTROL at beta = 0: toric record rate 2.0000 vs symmetry 1.0000, ratio 0.500.
+      PASS -- at infinite temperature the two carriers agree to a factor of 0.50.
+      The machine does NOT manufacture a separation where none exists.  What follows is thermal.
+
+    ARRHENIUS FIT over beta in [1,4]:  log(rate_toric) = -3.9944*beta + 1.7737
+      barrier = 3.9944   (expected 4 = the energy of one plaquette-defect pair)   PASS
+
+    THE VERDICT ON THE L-HALF OF CLAUSE (ii).
+      ||[L_k, R]|| = 2 in EVERY ROW ABOVE, on BOTH carriers, at EVERY temperature.  It is the
+      largest value the quantity can take, and it does not move.  The actual record lifetime moves
+      by a factor of 1.481e+06 across the same rows.  A norm bound on [L_k,R] therefore has
+      LITERALLY ZERO discriminating power over the thing it is supposed to be measuring.
+      ||[L_k,R]|| <= epsilon IS THE WRONG RELAXATION OF THE L-HALF, AND NOT BY A LITTLE.
+      The right one is the same one as for H: the record's decay RATE, i.e. an inverse lifetime.
+
+  D DONE

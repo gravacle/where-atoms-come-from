@@ -1,0 +1,13 @@
+SELF-CHECKS (commutant dimensions; all expected values known independently)
+  [PASS] commutant of {I} on d=5 is all of M_5                          got     25  want     25
+  [PASS] commutant of a generic Hermitian on d=6 is the diagonal, dim 6 got      6  want      6
+  [PASS] commutant of alg{XX,ZZ} on 2 qubits = span{II,XX,YY,ZZ}        got      4  want      4
+  [PASS] commutant of SU(2) on 2 spins = 1^2+1^2 = 2                    got      2  want      2
+  [PASS] commutant of SU(2) on 3 spins = 1^2+2^2 = 5                    got      5  want      5
+  [PASS] commutant of I_3 (x) M_2 is M_3 (x) I_2, dim 9                 got      9  want      9
+  [PASS] dim_R(Hermitian part of A') = dim_C(A') for SU(2) on 3 spins   got      5  want      5
+  [PASS] dim alg{XX,ZZ} = 4                                             got      4  want      4
+  [PASS] dim alg{generic G, G^dag} on d=4 = 16                          got     16  want     16
+  [PASS] LEMMA 0: [L,R]=0 and [L^dag,R]=0 together                      
+
+SELF-CHECKS: ALL PASS

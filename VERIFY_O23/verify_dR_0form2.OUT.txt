@@ -1,0 +1,19 @@
+L=3: multiplet n=4 (spin 1.5), R=sign(Jz), dim span{Phi(single-site V)} = 3
+       D1 = 1.4907  (T5: first-order splitting by a local term)
+       singular values of the anticommutator map on that space: [2.       1.549193 1.549193]
+       -> NO nonzero locally-reachable operator ANTICOMMUTES with R.  d_R > 1.
+       max ||[Phi(V),R]|| over single-site V = 1.8856   -> criterion (3) FAILS at w=1
+       3000 random single-site unitaries: MIN ||P U+ R U P + R|| = 2.3971  (a flip gives 0)
+       POSITIVE CONTROL: the GLOBAL pi-rotation about x, ||P U+ R U P + R|| = 1.570e-15   -> it DOES flip R (non-local writer)
+
+L=5: multiplet n=6 (spin 2.5), R=sign(Jz), dim span{Phi(single-site V)} = 3
+       D1 = 1.6733  (T5: first-order splitting by a local term)
+       singular values of the anticommutator map on that space: [2.       1.723783 1.723783]
+       -> NO nonzero locally-reachable operator ANTICOMMUTES with R.  d_R > 1.
+       max ||[Phi(V),R]|| over single-site V = 1.6971   -> criterion (3) FAILS at w=1
+       3000 random single-site unitaries: MIN ||P U+ R U P + R|| = 3.1746  (a flip gives 0)
+       POSITIVE CONTROL: the GLOBAL pi-rotation about x, ||P U+ R U P + R|| = 1.812e-15   -> it DOES flip R (non-local writer)
+
+READING:  criterion (2) 'anticommutes' and criterion (3) 'does not commute' COINCIDE for
+Pauli logicals on a stabiliser code, which is the only setting the lane measured.  Off that
+setting they can come apart, so the equivalence row is a STABILISER-CODE theorem, not general.

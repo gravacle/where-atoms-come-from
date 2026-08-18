@@ -1,0 +1,141 @@
+O-1 GAP (a) -- COMPATIBILITY WITH THE JUMP OPERATORS
+machinery self-checks first:
+
+SELF-CHECKS (commutant dimensions; all expected values known independently)
+  [PASS] commutant of {I} on d=5 is all of M_5                          got     25  want     25
+  [PASS] commutant of a generic Hermitian on d=6 is the diagonal, dim 6 got      6  want      6
+  [PASS] commutant of alg{XX,ZZ} on 2 qubits = span{II,XX,YY,ZZ}        got      4  want      4
+  [PASS] commutant of SU(2) on 2 spins = 1^2+1^2 = 2                    got      2  want      2
+  [PASS] commutant of SU(2) on 3 spins = 1^2+2^2 = 5                    got      5  want      5
+  [PASS] commutant of I_3 (x) M_2 is M_3 (x) I_2, dim 9                 got      9  want      9
+  [PASS] dim_R(Hermitian part of A') = dim_C(A') for SU(2) on 3 spins   got      5  want      5
+  [PASS] dim alg{XX,ZZ} = 4                                             got      4  want      4
+  [PASS] dim alg{generic G, G^dag} on d=4 = 16                          got     16  want     16
+  [PASS] LEMMA 0: [L,R]=0 and [L^dag,R]=0 together                      
+
+SELF-CHECKS: ALL PASS
+
+================================================================================================
+EXPERIMENT 1 -- THE NULL.  Degenerate H, one generic jump operator, no record.
+================================================================================================
+  H = diag(0,0,1,1).  With NO jump operators, R = diag(1,-1,1,-1) is a record:
+  R, {L_k} empty                         (i) 0.00e+00/0.00e+00  (ii) 0.00e+00  (iii) 1.4142  Tr R = +0.0000
+
+  400 independent generic jump operators L, same H:
+    Hermitian commutant is the scalars ONLY : 400/400
+    a record of any kind exists             : 0/400
+
+  POSITIVE CONTROL -- same H, 400 DIAGONAL jump operators (dephasing in the
+  energy eigenbasis).  A record satisfying (i),(ii),(iii) is found: 400/400
+  explicit R on the ground eigenspace, eigenvalues = [-1. -1. -1.  1.]
+  positive-control record                (i) 0.00e+00/1.02e-16  (ii) 0.00e+00  (iii) 1.4142  Tr R = -2.0000
+
+================================================================================================
+EXPERIMENT 2 -- HOW BIG IS THE SET OF COMPATIBLE {L_k}?  Sweep dimension.
+================================================================================================
+  H = 0 (MAXIMAL degeneracy: the whole space is one eigenspace).  If degeneracy
+  alone gave a record this is the most favourable case that exists.
+
+    d  #L    dim A     d^2  dim A_herm  record?
+    2   1        4       4           1  no
+    2   2        4       4           1  no
+    3   1        9       9           1  no
+    3   2        9       9           1  no
+    4   1       16      16           1  no
+    4   2       16      16           1  no
+    6   1       36      36           1  no
+    6   2       36      36           1  no
+    8   1       64      64           1  no
+    8   2       64      64           1  no
+
+  A single generic jump operator generates the FULL matrix algebra, so the
+  commutant is the scalars and NO record exists at ANY degeneracy.
+
+================================================================================================
+EXPERIMENT 3 -- THEOREM O1-A, the exact criterion, checked against brute force.
+================================================================================================
+  Claim: a record non-constant on E_lam exists  <=>  dim(P A P) < m^2 on E_lam.
+
+  case                                       m  dimPAP   m^2  predict   brute  ok
+  block-diagonal jump (2+2 on E)             4       8    16   record  record  PASS
+  generic jump                               4      16    16     none    none  PASS
+  Z_2-symmetric jump                         4       8    16   record  record  PASS
+  diagonal jump                              4       4    16   record  record  PASS
+  EXCURSION pair (the trap)                  2       4     4     none    none  PASS
+  one-leg pair (the control)                 2       2     4   record  record  PASS
+
+  THEOREM O1-A agrees with brute-force search on every case: PASS
+
+================================================================================================
+EXPERIMENT 4 -- THE TRAP.  Jump operators that VANISH on every eigenspace of H
+                and still leave no record anywhere in the system.
+================================================================================================
+  H  = diag(0,0,1,1)
+  L1 = |e2><e0| + |e1><e2|     L2 = |e3><e1| + |e0><e3|
+
+  TRAP     max_k max_lam ||P_lam L_k P_lam|| = 0.000e+00   (the noise is INVISIBLE inside every eigenspace)
+           dim(P A P) on E_0 = 4 of m^2 = 4   -> IRREDUCIBLE
+           dim of the Hermitian commutant of the whole *-algebra = 1
+           record on E_0: NO    record on E_1: NO
+
+  CONTROL  max_k max_lam ||P_lam L_k P_lam|| = 0.000e+00   (the noise is INVISIBLE inside every eigenspace)
+           dim(P A P) on E_0 = 2 of m^2 = 4   -> reducible
+           dim of the Hermitian commutant of the whole *-algebra = 2
+           record on E_0: YES    record on E_1: YES
+  control record                         (i) 0.00e+00/0.00e+00  (ii) 0.00e+00  (iii) 1.4142  Tr R = +0.0000
+
+  CONTROL differs from TRAP only by deleting the RETURN leg of each jump.
+  READING: 'the jump operators act trivially inside the degenerate subspace' is
+  NOT sufficient for clause (ii).  Second-order excursions out of the eigenspace
+  and back enter A and make the compression irreducible.  Any attempt to prove
+  the converse by inspecting P L_k P alone is answered by this counterexample.
+
+================================================================================================
+EXPERIMENT 5 -- HOW LARGE IS THE COMPATIBLE SET?  An exact codimension.
+================================================================================================
+  For a FIXED record R with eigenvalue multiplicities (p,q), p+q = d, the set of
+  jump operators satisfying [L,R] = 0 is a LINEAR SUBSPACE of C^{dxd} of complex
+  dimension p^2 + q^2, i.e. of complex codimension 2pq.  Measured against theory:
+
+    d   p   q    dim{L:[L,R]=0}   p^2+q^2   codim  ok
+    4   2   2                 8         8       8  PASS
+    4   1   3                10        10       6  PASS
+    6   3   3                18        18      18  PASS
+    6   2   4                20        20      16  PASS
+    8   4   4                32        32      32  PASS
+    8   3   5                34        34      30  PASS
+
+  codimension law verified: PASS
+  The compatible set has measure ZERO in the space of jump operators, for every
+  d >= 2 and every splitting.  Degeneracy of H places no constraint on L at all.
+
+================================================================================================
+EXPERIMENT 6 -- THE FAILURE OF CLAUSE (ii) IS FIRST ORDER IN THE PERTURBATION.
+================================================================================================
+  L(eps) = diag(0.3,0.3,-1.2,2.0) + eps * (generic complex matrix);
+  R = diag(1,-1,1,-1) is an exact record at eps = 0.
+
+         eps    ||[L(eps),R]||    defect/eps
+       1e-08      4.945604e-08        4.9456
+       1e-06      4.945604e-06        4.9456
+       1e-04      4.945604e-04        4.9456
+       1e-02      4.945604e-02        4.9456
+       1e-01      4.945604e-01        4.9456
+
+  Slope 1 across six decades: clause (ii) is violated at FIRST order.
+  Now the exact question -- does ANY record survive a finite perturbation?
+
+       eps  trials   records found
+     1e-04     200               0
+     1e-03     200               0
+     1e-02     200               0
+     1e-01     200               0
+
+  STATED LIMITATION: below eps ~ 1e-5 the surviving commutant directions are
+  distinguished from float noise only by second-order singular values (eps^2 vs
+  1e-16), so this sweep is reported only where it is unambiguous.  The exact
+  statement is the codimension law of Experiment 5, which needs no tolerance.
+
+  READING: the converse cannot be rescued by a 'small enough noise' hypothesis.
+  Clause (ii) as written is exact and its violation is linear.  That is O-5
+  (exactness) seen from inside O-1.

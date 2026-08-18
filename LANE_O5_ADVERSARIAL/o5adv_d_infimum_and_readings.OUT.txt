@@ -1,0 +1,58 @@
+====================================================================================================
+(a) EXPONENT OF eps_dressed -- the quantity that actually sets T -- not of the cluster width
+====================================================================================================
+     SYMMETRY d=1  fitted exponent of eps_dressed = 1.0000   code distance 1   PASS -- exponent claim survives on the right quantity
+        TORIC d=2  fitted exponent of eps_dressed = 2.0000   code distance 2   PASS -- exponent claim survives on the right quantity
+
+====================================================================================================
+(b) IS THE STATED APPROXIMATE DEFINITION SELF-SELECTING?
+    Ledger: (ii-w) = width bound on the cluster carrying the record; P-1 amended to
+    '(iii-w) => H has a cluster of width <= w and dimension > 1'.  Take those at face value
+    and ask for the INFIMUM of eps over operators satisfying (i) + (iii-w) on that cluster.
+====================================================================================================
+    TORIC 2x2  p = 1e-03   cluster dim 4, width 8.4336e-09
+                 lane's R = sign(P R_0 P)          : eps = 9.763620e-10
+                 ALTERNATIVE R = diag(+1,..,-1,..) in the PERTURBED energy basis:
+                    (i)   R=Rdag, R^2=I  residual  = 0.00e+00
+                    (iii-w) non-constant on cluster = 1.0000
+                    eps = ||[H_c,R]||               = 0.000000e+00   <-- ZERO
+     SYMMETRY  p = 1e-03   cluster dim 2, width 4.9632e-04
+                 lane's R = sign(P R_0 P)          : eps = 1.987662e-04
+                 ALTERNATIVE R = diag(+1,..,-1,..) in the PERTURBED energy basis:
+                    (i)   R=Rdag, R^2=I  residual  = 0.00e+00
+                    (iii-w) non-constant on cluster = 1.0000
+                    eps = ||[H_c,R]||               = 0.000000e+00   <-- ZERO
+
+   The infimum of eps over the STATED relaxed clauses (i)+(ii-w)+(iii-w) is 0 and is ATTAINED, on
+   BOTH carriers, inside the SAME cluster.  This is not the lane's where_it_breaks (2) ('a chance
+   near-degeneracy elsewhere in the 256 levels') -- it is the generic case in the very cluster the
+   lane measures.  The 2.04e+05 separation exists only because R was FIXED to sign(P R_0 P), which
+   imports the EXACT record of the UNPERTURBED carrier.  The approximate definition as stated does
+   not select that operator; something else must, and only (iv)+(v) are left to do it.
+
+====================================================================================================
+(c) DOES THE LIFETIME DERIVATION ADJUDICATE BETWEEN THE TWO READINGS?
+    For ANY R:  ||[H,R(t)]|| = ||[H,R]|| for all t (unitary conjugation), so
+        ||R(t) - R||  <=  t * ||[H,R]||   EXACTLY, with no cluster and no projector.
+    So 'epsilon is an inverse time' is equally true of READING 1.  The Ehrenfest argument
+    does not choose between them.  What must be shown is that Reading 1's motion is BOUNDED
+    (never accumulates) while Reading 2's is SECULAR.  The lane never tests this.  Do it:
+====================================================================================================
+    TOPOLOGICAL p=1e-03  eps_fixed = 5.6685e-04   Reading-1 bound says eta=0.01 by T = 1.764e+01
+                  ACTUAL max_t ||R_0(t)-R_0|| over t in [0,200] (= 1.1e+01 x that bound) = 1.1329e-01
+                  -> BOUNDED: saturates, never accumulates
+    TOPOLOGICAL p=1e-02  eps_fixed = 5.6685e-03   Reading-1 bound says eta=0.01 by T = 1.764e+00
+                  ACTUAL max_t ||R_0(t)-R_0|| over t in [0,200] (= 1.1e+02 x that bound) = 1.0600e+00
+                  -> SECULAR
+       SYMMETRY p=1e-03  eps_fixed = 1.9877e-04   Reading-1 bound says eta=0.01 by T = 5.031e+01
+                  ACTUAL max_t ||R_0(t)-R_0|| over t in [0,200] (= 4.0e+00 x that bound) = 3.9737e-02
+                  -> BOUNDED: saturates, never accumulates
+       SYMMETRY p=1e-02  eps_fixed = 1.9877e-03   Reading-1 bound says eta=0.01 by T = 5.031e+00
+                  ACTUAL max_t ||R_0(t)-R_0|| over t in [0,200] (= 4.0e+01 x that bound) = 3.8141e-01
+                  -> BOUNDED: saturates, never accumulates
+
+   Reading 1's epsilon is a VALID but hopelessly loose lifetime bound: the fixed record's full-space
+   deviation saturates at O(p/Delta) and oscillates for ever.  THIS is the reason Reading 2 is the
+   right one -- and it is an argument the lane does not make.  The lane's stated reason for choosing
+   Reading 2 is that Reading 2 preserves W-61's separation, i.e. the reading is selected by the
+   answer it returns.  The correct reason is available and is measured above.

@@ -1,0 +1,27 @@
+==============================================================================
+L = 4
+==============================================================================
+  3D toric  (CONTROL: strings MUST exist)    tube cross-section 1x1: logical supported in the tube ? YES  min weight 4   (dim S-perp inside tube = [1, 1, 1])
+  3D toric  (CONTROL: strings MUST exist)    tube cross-section 2x2: logical supported in the tube ? YES  min weight 4   (dim S-perp inside tube = [21, 21, 21])
+  X-cube    (type-I: strings expected)       tube cross-section 1x1: logical supported in the tube ? YES  min weight 4   (dim S-perp inside tube = [3, 3, 3])
+  X-cube    (type-I: strings expected)       tube cross-section 2x2: logical supported in the tube ? YES  min weight 4   (dim S-perp inside tube = [27, 27, 27])
+  Haah CC1  (type-II: NO strings claimed)    tube cross-section 1x1: logical supported in the tube ? NO   (dim S-perp inside tube = [0, 0, 0])
+  Haah CC1  (type-II: NO strings claimed)    tube cross-section 2x2: logical supported in the tube ? NO   (dim S-perp inside tube = [8, 8, 8])
+  checkerboard (type-I)                      tube cross-section 1x1: logical supported in the tube ? YES  min weight 4   (dim S-perp inside tube = [2, 2, 2])
+  checkerboard (type-I)                      tube cross-section 2x2: logical supported in the tube ? YES  min weight 4   (dim S-perp inside tube = [10, 10, 10])
+
+==============================================================================
+L = 6
+==============================================================================
+  3D toric  (CONTROL: strings MUST exist)    tube cross-section 1x1: logical supported in the tube ? YES  min weight 6   (dim S-perp inside tube = [1, 1, 1])
+  3D toric  (CONTROL: strings MUST exist)    tube cross-section 2x2: logical supported in the tube ? YES  min weight 6   (dim S-perp inside tube = [31, 31, 31])
+  X-cube    (type-I: strings expected)       tube cross-section 1x1: logical supported in the tube ? YES  min weight 6   (dim S-perp inside tube = [3, 3, 3])
+  X-cube    (type-I: strings expected)       tube cross-section 2x2: logical supported in the tube ? YES  min weight 6   (dim S-perp inside tube = [37, 37, 37])
+  Haah CC1  (type-II: NO strings claimed)    tube cross-section 1x1: logical supported in the tube ? NO   (dim S-perp inside tube = [0, 0, 0])
+  Haah CC1  (type-II: NO strings claimed)    tube cross-section 2x2: logical supported in the tube ? NO   (dim S-perp inside tube = [12, 12, 12])
+  checkerboard (type-I)                      tube cross-section 1x1: logical supported in the tube ? YES  min weight 6   (dim S-perp inside tube = [2, 2, 2])
+  checkerboard (type-I)                      tube cross-section 2x2: logical supported in the tube ? YES  min weight 6   (dim S-perp inside tube = [12, 12, 12])
+
+READ THE CONTROL FIRST.  The 3D toric code must answer YES with min weight = L for a
+1x1 tube: its logical operators are the three straight non-contractible loops of H_1(T^3).
+If it answers YES and Haah answers NO, the no-string property is measured, not assumed.

@@ -1,0 +1,36 @@
+--- M1: tell it Steane has d=2 (it is 3). Expect match: NO ---
+  MEASURED THRESHOLD = 3   (d known = 2, d symplectic = 3)   match: NO
+  -> instrument CAN report a mismatch: True
+
+--- M2: tell it Steane has k=2 (it is 1). Expect SC2 and SC5 FAIL ---
+  SC2 code-space dim: rank(P)=2  tr(P)=2.0000000000   2^k=4  -> FAIL
+  SC5 symplectic: rank(S)=6 (expect n-k=5) -> FAIL ; d_sympl=3 via IIZIZZI
+  MEASURED THRESHOLD = 3   (d known = 3, d symplectic = 3)   match: YES
+  -> self-checks CAN fail: True
+
+--- M3: non-commuting generator set (XIIIIII, ZIIIIII). Expect breakage ---
+  SC1 projector  ||P-P^dag||_max=5.000e-01  ||P^2-P||_max=2.500e-01  -> FAIL
+  SC2 code-space dim: rank(P)=64  tr(P)=32.0000000000   2^k=32  -> FAIL
+  SC3 g@P == P for all generators: max dev 5.000e-01 -> FAIL
+  -> detected: True
+
+--- M4: break phase_vector (drop the Z sign). Expect SC1/SC3 FAIL ---
+  SC1 projector  ||P-P^dag||_max=0.000e+00  ||P^2-P||_max=0.000e+00  -> PASS
+  SC2 code-space dim: rank(P)=16  tr(P)=16.0000000000   2^k=2  -> FAIL
+  SC3 g@P == P for all generators: max dev 0.000e+00 -> PASS
+  -> detected: True
+
+--- M5: CAN Part 2's "balanced (tr R = 0)" check ever FAIL? ---
+  R = V^dag E V with E a HERMITIAN Pauli commuting with S, E not in <+-S>.
+  tr R = tr(E Pc) = (1/|S|) sum_{s in S} tr(E s).  tr of a Pauli string is 0 unless
+  the string is +-I; E s = +-I iff E = +-s iff E in <+-1, S>, which is EXCLUDED.
+  Therefore tr R = 0 identically, for EVERY weight-d witness of EVERY stabiliser code.
+  Likewise R^dag = V^dag E^dag V = R (E Hermitian by construction in pauli_matrix),
+  and R^2 = V^dag E Pc E V = V^dag E^2 Pc V = I  (E commutes with Pc, E^2 = I).
+  => "BIT clause (i) PASS on all 119 witnesses" and "balanced PASS" are THEOREMS with
+     NO FAILURE MODE.  They verify the numerics, they are NOT evidence.
+
+  numeric confirmation that these are forced: scan ALL logicals of the [[5,1,3]] code
+  ALL 48 logicals of [[5,1,3]] (every weight, not just weight-d): max deviation from
+  (tr R = 0, R = R^dag, R^2 = I) = 2.220e-15  -- forced at EVERY weight, so the check does
+  not single out weight d at all.

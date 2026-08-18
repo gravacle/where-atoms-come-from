@@ -1,0 +1,141 @@
+##############################################################################
+# SC6  KNOWN-ANSWER CONTROL: [[3,1,1]] bit-flip repetition code, d=1.
+#      If the instrument were incapable of firing at low weight, this
+#      would not return 1.  Z on any single qubit is a logical operator.
+##############################################################################
+==============================================================================
+CODE [[3,1,1]] repetition (CONTROL)   n=3  k(expected)=1  d(known)=1
+==============================================================================
+   generator  ZZI   weight 2
+   generator  IZZ   weight 2
+  SC1 projector  ||P-P^dag||_max=0.000e+00  ||P^2-P||_max=0.000e+00  -> PASS
+  SC2 code-space dim: rank(P)=2  tr(P)=2.0000000000   2^k=2  -> PASS
+  SC3 g@P == P for all generators: max dev 0.000e+00 -> PASS
+  SC5 symplectic: rank(S)=2 (expect n-k=2) -> PASS ; d_sympl=1 via IIZ
+  --- weight sweep (residual X(E) = ||PcEPc - c Pc||_F^2) ---
+    w=1 : tested      9  |  distinguishing     3  |  PcEPc=0     6  |  PcEPc=cPc(c!=0)     0  |  max X = 2.000000e+00   [FIRES]
+  SC4 residual real & nonneg: max|Im tr| = 0.000e+00 ; min X = 0.000e+00 -> PASS
+  POSITIVE CONTROL: weight-1 Pauli that DOES distinguish: ZII   X = 2.0000000000
+  MEASURED THRESHOLD = 1   (d known = 1, d symplectic = 1)   match: YES
+
+  SC6 -> PASS
+
+==============================================================================
+CODE [[4,2,2]]   n=4  k(expected)=2  d(known)=2
+==============================================================================
+   generator  XXXX   weight 4
+   generator  ZZZZ   weight 4
+  SC1 projector  ||P-P^dag||_max=0.000e+00  ||P^2-P||_max=0.000e+00  -> PASS
+  SC2 code-space dim: rank(P)=4  tr(P)=4.0000000000   2^k=4  -> PASS
+  SC3 g@P == P for all generators: max dev 0.000e+00 -> PASS
+  SC5 symplectic: rank(S)=2 (expect n-k=2) -> PASS ; d_sympl=2 via IIZZ
+  --- weight sweep (residual X(E) = ||PcEPc - c Pc||_F^2) ---
+    w=1 : tested     12  |  distinguishing     0  |  PcEPc=0    12  |  PcEPc=cPc(c!=0)     0  |  max X = 0.000000e+00   [all proportional (zero)]
+    w=2 : tested     54  |  distinguishing    18  |  PcEPc=0    36  |  PcEPc=cPc(c!=0)     0  |  max X = 4.000000e+00   [FIRES]
+  SC4 residual real & nonneg: max|Im tr| = 0.000e+00 ; min X = 0.000e+00 -> PASS
+  POSITIVE CONTROL: weight-2 Pauli that DOES distinguish: XXII   X = 4.0000000000
+  MEASURED THRESHOLD = 2   (d known = 2, d symplectic = 2)   match: YES
+
+==============================================================================
+CODE [[8,2,2]] toric 2x2 (previously measured control)   n=8  k(expected)=2  d(known)=2
+==============================================================================
+   generator  XXIIXIXI   weight 4
+   generator  XXIIIXIX   weight 4
+   generator  IIXXXIXI   weight 4
+   generator  ZIZIZZII   weight 4
+   generator  IZIZZZII   weight 4
+   generator  ZIZIIIZZ   weight 4
+  SC1 projector  ||P-P^dag||_max=0.000e+00  ||P^2-P||_max=0.000e+00  -> PASS
+  SC2 code-space dim: rank(P)=4  tr(P)=4.0000000000   2^k=4  -> PASS
+  SC3 g@P == P for all generators: max dev 0.000e+00 -> PASS
+  SC5 symplectic: rank(S)=6 (expect n-k=6) -> PASS ; d_sympl=2 via IIIIIZIZ
+  --- weight sweep (residual X(E) = ||PcEPc - c Pc||_F^2) ---
+    w=1 : tested     24  |  distinguishing     0  |  PcEPc=0    24  |  PcEPc=cPc(c!=0)     0  |  max X = 0.000000e+00   [all proportional (zero)]
+    w=2 : tested    252  |  distinguishing     8  |  PcEPc=0   244  |  PcEPc=cPc(c!=0)     0  |  max X = 4.000000e+00   [FIRES]
+  SC4 residual real & nonneg: max|Im tr| = 0.000e+00 ; min X = 0.000e+00 -> PASS
+  POSITIVE CONTROL: weight-2 Pauli that DOES distinguish: ZZIIIIII   X = 4.0000000000
+  MEASURED THRESHOLD = 2   (d known = 2, d symplectic = 2)   match: YES
+
+==============================================================================
+CODE [[5,1,3]] perfect (NON-CSS)   n=5  k(expected)=1  d(known)=3
+==============================================================================
+   generator  XZZXI   weight 4
+   generator  IXZZX   weight 4
+   generator  XIXZZ   weight 4
+   generator  ZXIXZ   weight 4
+  SC1 projector  ||P-P^dag||_max=0.000e+00  ||P^2-P||_max=0.000e+00  -> PASS
+  SC2 code-space dim: rank(P)=2  tr(P)=2.0000000000   2^k=2  -> PASS
+  SC3 g@P == P for all generators: max dev 0.000e+00 -> PASS
+  SC5 symplectic: rank(S)=4 (expect n-k=4) -> PASS ; d_sympl=3 via IZZIY
+  --- weight sweep (residual X(E) = ||PcEPc - c Pc||_F^2) ---
+    w=1 : tested     15  |  distinguishing     0  |  PcEPc=0    15  |  PcEPc=cPc(c!=0)     0  |  max X = 0.000000e+00   [all proportional (zero)]
+    w=2 : tested     90  |  distinguishing     0  |  PcEPc=0    90  |  PcEPc=cPc(c!=0)     0  |  max X = 0.000000e+00   [all proportional (zero)]
+    w=3 : tested    270  |  distinguishing    30  |  PcEPc=0   240  |  PcEPc=cPc(c!=0)     0  |  max X = 2.000000e+00   [FIRES]
+  SC4 residual real & nonneg: max|Im tr| = 0.000e+00 ; min X = 0.000e+00 -> PASS
+  POSITIVE CONTROL: weight-3 Pauli that DOES distinguish: XYXII   X = 2.0000000000
+  MEASURED THRESHOLD = 3   (d known = 3, d symplectic = 3)   match: YES
+
+==============================================================================
+CODE [[7,1,3]] Steane (CSS)   n=7  k(expected)=1  d(known)=3
+==============================================================================
+   generator  IIIXXXX   weight 4
+   generator  IXXIIXX   weight 4
+   generator  XIXIXIX   weight 4
+   generator  IIIZZZZ   weight 4
+   generator  IZZIIZZ   weight 4
+   generator  ZIZIZIZ   weight 4
+  SC1 projector  ||P-P^dag||_max=0.000e+00  ||P^2-P||_max=0.000e+00  -> PASS
+  SC2 code-space dim: rank(P)=2  tr(P)=2.0000000000   2^k=2  -> PASS
+  SC3 g@P == P for all generators: max dev 0.000e+00 -> PASS
+  SC5 symplectic: rank(S)=6 (expect n-k=6) -> PASS ; d_sympl=3 via IIZIZZI
+  --- weight sweep (residual X(E) = ||PcEPc - c Pc||_F^2) ---
+    w=1 : tested     21  |  distinguishing     0  |  PcEPc=0    21  |  PcEPc=cPc(c!=0)     0  |  max X = 0.000000e+00   [all proportional (zero)]
+    w=2 : tested    189  |  distinguishing     0  |  PcEPc=0   189  |  PcEPc=cPc(c!=0)     0  |  max X = 0.000000e+00   [all proportional (zero)]
+    w=3 : tested    945  |  distinguishing    21  |  PcEPc=0   924  |  PcEPc=cPc(c!=0)     0  |  max X = 2.000000e+00   [FIRES]
+  SC4 residual real & nonneg: max|Im tr| = 0.000e+00 ; min X = 0.000e+00 -> PASS
+  POSITIVE CONTROL: weight-3 Pauli that DOES distinguish: XXXIIII   X = 2.0000000000
+  MEASURED THRESHOLD = 3   (d known = 3, d symplectic = 3)   match: YES
+
+==============================================================================
+CODE [[9,1,3]] Shor   n=9  k(expected)=1  d(known)=3
+==============================================================================
+   generator  ZZIIIIIII   weight 2
+   generator  IZZIIIIII   weight 2
+   generator  IIIZZIIII   weight 2
+   generator  IIIIZZIII   weight 2
+   generator  IIIIIIZZI   weight 2
+   generator  IIIIIIIZZ   weight 2
+   generator  XXXXXXIII   weight 6
+   generator  IIIXXXXXX   weight 6
+  SC1 projector  ||P-P^dag||_max=0.000e+00  ||P^2-P||_max=0.000e+00  -> PASS
+  SC2 code-space dim: rank(P)=2  tr(P)=2.0000000000   2^k=2  -> PASS
+  SC3 g@P == P for all generators: max dev 0.000e+00 -> PASS
+  SC5 symplectic: rank(S)=8 (expect n-k=8) -> PASS ; d_sympl=3 via IIZIIZIIZ
+  --- weight sweep (residual X(E) = ||PcEPc - c Pc||_F^2) ---
+    w=1 : tested     27  |  distinguishing     0  |  PcEPc=0    27  |  PcEPc=cPc(c!=0)     0  |  max X = 0.000000e+00   [all proportional (zero)]
+    w=2 : tested    324  |  distinguishing     0  |  PcEPc=0   315  |  PcEPc=cPc(c!=0)     9  |  max X = 0.000000e+00   [all proportional (zero)]
+    w=3 : tested   2268  |  distinguishing    39  |  PcEPc=0  2229  |  PcEPc=cPc(c!=0)     0  |  max X = 2.000000e+00   [FIRES]
+  SC4 residual real & nonneg: max|Im tr| = 0.000e+00 ; min X = 0.000e+00 -> PASS
+  POSITIVE CONTROL: weight-3 Pauli that DOES distinguish: XXXIIIIII   X = 2.0000000000
+  MEASURED THRESHOLD = 3   (d known = 3, d symplectic = 3)   match: YES
+
+==============================================================================
+O-10 RESULT TABLE
+==============================================================================
+code                                             n   k d(known)  threshold d(sympl)  match
+------------------------------------------------------------------------------------------
+[[4,2,2]]                                        4   2        2          2        2    YES
+[[8,2,2]] toric 2x2 (previously measured control)   8   2        2          2        2    YES
+[[5,1,3]] perfect (NON-CSS)                      5   1        3          3        3    YES
+[[7,1,3]] Steane (CSS)                           7   1        3          3        3    YES
+[[9,1,3]] Shor                                   9   1        3          3        3    YES
+
+  witness at threshold, [[4,2,2]] : XXII
+  witness at threshold, [[8,2,2]] toric 2x2 (previously measured control) : ZZIIIIII
+  witness at threshold, [[5,1,3]] perfect (NON-CSS) : XYXII
+  witness at threshold, [[7,1,3]] Steane (CSS) : XXXIIII
+  witness at threshold, [[9,1,3]] Shor : XXXIIIIII
+
+  SC6 control ([[3,1,1]], d=1) threshold = 1 -> PASS
+
+VERDICT: THRESHOLD == d ON EVERY CODE, ALL SELF-CHECKS PASS -- O-10 CLOSES

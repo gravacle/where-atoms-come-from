@@ -1,0 +1,101 @@
+========================================================================================================
+LANE O-2 PART 2.  THE TOPOLOGICAL SIDE: WHY THE MATRIX ELEMENT VANISHES TO ORDER d-1
+========================================================================================================
+
+SELF-CHECK -- brute-force the distance of every code from the definition and compare to its
+known value.  (min weight of a Pauli commuting with all stabilisers but outside the group.)
+    [[3,1,1]] POSITIVE CONTROL (weight-1 logical)  n=3 k=1  |S|=   4  measured d = 1  known d = 1  witness = IIZ   PASS
+    [[4,2,2]]                                      n=4 k=2  |S|=   4  measured d = 2  known d = 2  witness = IIXX   PASS
+    toric code 2x2 torus = [[8,2,2]]               n=8 k=2  |S|=  64  measured d = 2  known d = 2  witness = IIIIIIXX   PASS
+    [[5,1,3]] perfect code                         n=5 k=1  |S|=  16  measured d = 3  known d = 3  witness = IIXYX   PASS
+    [[7,1,3]] Steane code                          n=7 k=1  |S|=  64  measured d = 3  known d = 3  witness = IIXIXXI   PASS
+
+--------------------------------------------------------------------------------------------------------
+MEASURED 1.  rank of Phi on V_w = span{Pauli of weight exactly w}.  Theory: 0 for every w < d.
+--------------------------------------------------------------------------------------------------------
+    [[3,1,1]] POSITIVE CONTROL (weight-1 logical)   (ground degeneracy 2 = 2^1, gap 2.000)
+        w = 1:  #Paulis =     9   rank Phi =   1   max ||Phi(single Pauli)|| = 1.414e+00  <-- FIRST WEIGHT THAT SPLITS
+        w = 2:  #Paulis =    27   rank Phi =   0   max ||Phi(single Pauli)|| = 0.000e+00
+
+    [[4,2,2]]   (ground degeneracy 4 = 2^2, gap 2.000)
+        w = 1:  #Paulis =    12   rank Phi =   0   max ||Phi(single Pauli)|| = 4.474e-17
+        w = 2:  #Paulis =    54   rank Phi =   9   max ||Phi(single Pauli)|| = 2.000e+00  <-- FIRST WEIGHT THAT SPLITS
+        w = 3:  #Paulis =   108   rank Phi =   6   max ||Phi(single Pauli)|| = 2.000e+00
+
+    toric code 2x2 torus = [[8,2,2]]   (ground degeneracy 4 = 2^2, gap 2.000)
+        w = 1:  #Paulis =    24   rank Phi =   0   max ||Phi(single Pauli)|| = 2.133e-15
+        w = 2:  #Paulis =   252   rank Phi =   4   max ||Phi(single Pauli)|| = 2.000e+00  <-- FIRST WEIGHT THAT SPLITS
+        w = 3:  #Paulis =  1512   rank Phi =   2   max ||Phi(single Pauli)|| = 2.000e+00
+
+    [[5,1,3]] perfect code   (ground degeneracy 2 = 2^1, gap 2.000)
+        w = 1:  #Paulis =    15   rank Phi =   0   max ||Phi(single Pauli)|| = 4.907e-16
+        w = 2:  #Paulis =    90   rank Phi =   0   max ||Phi(single Pauli)|| = 4.762e-16
+        w = 3:  #Paulis =   270   rank Phi =   3   max ||Phi(single Pauli)|| = 1.414e+00  <-- FIRST WEIGHT THAT SPLITS
+        w = 4:  #Paulis =   405   rank Phi =   0   max ||Phi(single Pauli)|| = 1.112e-15
+
+    [[7,1,3]] Steane code   (ground degeneracy 2 = 2^1, gap 2.000)
+        w = 1:  #Paulis =    21   rank Phi =   0   max ||Phi(single Pauli)|| = 6.208e-16
+        w = 2:  #Paulis =   189   rank Phi =   0   max ||Phi(single Pauli)|| = 4.627e-16
+        w = 3:  #Paulis =   945   rank Phi =   3   max ||Phi(single Pauli)|| = 1.414e+00  <-- FIRST WEIGHT THAT SPLITS
+        w = 4:  #Paulis =  2835   rank Phi =   0   max ||Phi(single Pauli)|| = 5.551e-16
+
+--------------------------------------------------------------------------------------------------------
+MEASURED 2.  splitting exponent under a random SINGLE-SITE (weight-1) perturbation.
+             Theory: Delta ~ eps^d.  slope must equal d.
+--------------------------------------------------------------------------------------------------------
+    [[3,1,1]] POSITIVE CONTROL (weight-1 logical)  d = 1   measured slope = 1.0000   max log-log residual = 1.8e-08
+          eps = 1.0e-06   splitting = 1.553631e-06
+          eps = 1.0e-05   splitting = 1.553631e-05
+          eps = 1.0e-04   splitting = 1.553631e-04
+          eps = 1.0e-03   splitting = 1.553632e-03
+    [[4,2,2]]                                      d = 2   measured slope = 2.0000   max log-log residual = 2.2e-06
+          eps = 1.0e-04   splitting = 1.489252e-08
+          eps = 3.0e-04   splitting = 1.340327e-07
+          eps = 1.0e-03   splitting = 1.489251e-06
+          eps = 3.0e-03   splitting = 1.340318e-05
+    toric code 2x2 torus = [[8,2,2]]               d = 2   measured slope = 2.0000   max log-log residual = 6.0e-07
+          eps = 1.0e-04   splitting = 1.374733e-08
+          eps = 3.0e-04   splitting = 1.237260e-07
+          eps = 1.0e-03   splitting = 1.374733e-06
+          eps = 3.0e-03   splitting = 1.237257e-05
+    [[5,1,3]] perfect code                         d = 3   measured slope = 3.0000   max log-log residual = 1.1e-05
+          eps = 3.0e-03   splitting = 1.170758e-08
+          eps = 5.0e-03   splitting = 5.420169e-08
+          eps = 1.0e-02   splitting = 4.336099e-07
+          eps = 2.0e-02   splitting = 3.468763e-06
+    [[7,1,3]] Steane code                          d = 3   measured slope = 3.0000   max log-log residual = 6.8e-06
+          eps = 3.0e-03   splitting = 1.806280e-08
+          eps = 5.0e-03   splitting = 8.362416e-08
+          eps = 1.0e-02   splitting = 6.689969e-07
+          eps = 2.0e-02   splitting = 5.352090e-06
+
+    SLOPE LAW  'splitting exponent = code distance':  CONFIRMED on all 5 codes
+    the d=1 row is the POSITIVE CONTROL: identical pipeline, and it registers slope 1.
+
+--------------------------------------------------------------------------------------------------------
+MEASURED 3.  the mechanism, term by term, on the [[5,1,3]] code: classify every weight-1 and
+             weight-2 Pauli into the three cases of the proof, and show the count is exhaustive.
+--------------------------------------------------------------------------------------------------------
+    weight 1: anticommutes with a stabiliser =   15   in the stabiliser group =   0   non-trivial logical =   0   total   15  (exhaustive)
+              max ||Phi|| over all weight-1 Paulis = 4.907e-16   -> every one is SCALAR on the code space
+    weight 2: anticommutes with a stabiliser =   90   in the stabiliser group =   0   non-trivial logical =   0   total   90  (exhaustive)
+              max ||Phi|| over all weight-2 Paulis = 4.762e-16   -> every one is SCALAR on the code space
+    weight 3: anticommutes with a stabiliser =  240   in the stabiliser group =   0   non-trivial logical =  30   total  270  (exhaustive)
+              max ||Phi|| over all weight-3 Paulis = 1.414e+00   -> some are NON-SCALAR
+
+========================================================================================================
+WHAT PART 2 ESTABLISHES
+========================================================================================================
+  The vanishing of the first-order matrix element in the topological case is NOT a genericity
+  statement and NOT an accident of the perturbation chosen.  It is the Knill-Laflamme condition:
+  every Pauli of weight below the distance either anticommutes with a stabiliser (then PVP = 0) or
+  lies in the stabiliser group (then PVP = +-P).  Both are SCALAR, so Phi vanishes IDENTICALLY on the
+  whole space of sub-distance perturbations -- rank Phi = 0, not 'rank Phi generically small'.
+
+  THE ONE-SENTENCE CONTRAST WITH THE 0-FORM CASE:
+     a 0-form charge is a SUM OF LOCAL DENSITIES, so some density is already non-scalar on the
+     multiplet and rank Phi >= 1 at weight 1;
+     a 1-form charge is carried by NON-CONTRACTIBLE LOOPS, which are not sums of local densities, so
+     rank Phi = 0 until the weight reaches the length of the shortest such loop, which is d.
+  The exponent d in Delta ~ eps^d is the LENGTH OF THE SHORTEST NON-SCALAR OPERATOR.  For a 0-form
+  symmetry that length is 1.

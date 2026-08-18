@@ -1,0 +1,27 @@
+====================================================================================================
+(d) IS THE DRESSED RECORD ITSELF A FUNCTION OF H AT THE TOLERANCE THAT MAKES IT APPROXIMATE?
+    The lane withdrew P-2 with: 'on a cluster of width delta EVERY operator commutes with H
+    to within delta'.  The same sentence applies to R_c.  Measure how far R_c is from the
+    nearest exact function of H on the cluster (a +-1 diagonal in the energy eigenbasis).
+====================================================================================================
+    TORIC 2x2 p=1e-03  dist(R_c, nearest fn of H) = 0.1616   ||offdiag(R_c)|| = 0.1611   cluster width 8.434e-09
+    TORIC 2x2 p=1e-02  dist(R_c, nearest fn of H) = 0.1616   ||offdiag(R_c)|| = 0.1611   cluster width 8.434e-07
+     SYMMETRY p=1e-03  dist(R_c, nearest fn of H) = 0.4091   ||offdiag(R_c)|| = 0.4005   cluster width 4.963e-04
+     SYMMETRY p=1e-02  dist(R_c, nearest fn of H) = 0.4091   ||offdiag(R_c)|| = 0.4005   cluster width 4.963e-03
+   R_c is O(1) away from every function of H -- so in NORM it is genuinely not f(H).  Good for
+   the lane.  BUT the definitional test on offer is ||[H,R]|| <= eps, and by THAT test the exact
+   function of H scores 0 and beats R_c.  The test cannot express what R_c has and f(H) lacks.
+
+====================================================================================================
+(e) 'LOCAL FLIP AMPLITUDE <= O(p^(d-1))' -- registered as a P-3 amendment on the strength of
+    ONE distance (d=2, giving O(p)).  Prediction at d=3 (Steane) is O(p^2).  Test it.
+====================================================================================================
+           p   STEANE best wt-1 |O_-|           /p         /p^2   logical Xbar
+    3.00e-02             4.760185e-06      0.00016      0.00529       0.999964
+    1.00e-01             5.287948e-05      0.00053      0.00529       0.999598
+    2.00e-01             2.113669e-04      0.00106      0.00528       0.998394
+    3.00e-01             4.750110e-04      0.00158      0.00528       0.996394
+
+   fitted exponent of the local flip amplitude on d=3 = 1.9992
+   ledger predicts d-1 = 2   -> PASS
+   naive alternative 'always O(p)' -> REFUTED

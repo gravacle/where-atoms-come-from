@@ -1,0 +1,31 @@
+== checkerboard k(L) ==
+  L=2: n=   8 k=  6   6L-6=6  12L-6=18  6L-3=9
+  L=4: n=  64 k= 18   6L-6=18  12L-6=42  6L-3=21
+  L=6: n= 216 k= 30   6L-6=30  12L-6=66  6L-3=33
+  fitted: k = [6, 18, 30]  differences: 12 12
+
+== X-cube k(L) ==
+  L=2: n=  24 k=  9   6L-3=9  MATCH
+  L=3: n=  81 k= 15   6L-3=15  MATCH
+  L=4: n= 192 k= 21   6L-3=21  MATCH
+  L=5: n= 375 k= 27   6L-3=27  MATCH
+
+== Chamon k(L), all sites, 1 qubit/site ==
+  L=2: n=   8 gens=   8 rank=   0 k=   8  commute_violations=0
+  L=3: n=  27 gens=  27 rank=  18 k=   9  commute_violations=0
+  L=4: n=  64 gens=  64 rank=  48 k=  16  commute_violations=0
+  L=5: n= 125 gens= 125 rank= 108 k=  17  commute_violations=0
+  L=6: n= 216 gens= 216 rank= 192 k=  24  commute_violations=0
+  L=8: n= 512 gens= 512 rank= 480 k=  32  commute_violations=0
+
+== LOCALITY, stated as a number: max stabiliser weight and max range ==
+  3D toric L=4           max stabiliser weight =   6   max Chebyshev range = 1  (both O(1), independent of L)
+  X-cube L=4             max stabiliser weight =  12   max Chebyshev range = 1  (both O(1), independent of L)
+  Haah CC1 L=4           max stabiliser weight =   8   max Chebyshev range = 1  (both O(1), independent of L)
+  Chamon L=4             max stabiliser weight =   6   max Chebyshev range = 2  (both O(1), independent of L)
+  checkerboard L=4       max stabiliser weight =   8   max Chebyshev range = 1  (both O(1), independent of L)
+
+  Every candidate here is geometrically local in the SAME sense the program's toric-code
+  carrier is: O(1) stabiliser weight, O(1) range on a cubic lattice.  NO candidate in this
+  sweep buys R3 by redefining locality.  (Contrast: expander/qLDPC codes from G-6, which
+  are local only in a GRAPH sense with no bounded-dimension embedding.)

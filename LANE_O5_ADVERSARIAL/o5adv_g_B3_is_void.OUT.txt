@@ -1,0 +1,37 @@
+====================================================================================================
+  WHAT W-61's CARRIER ACTUALLY IS
+====================================================================================================
+    physical dim D = 32   (NOT 256 -- W-61 works in the GAUSS-LAW sector)
+    spectrum of H : [-4.  0.  4.]
+    ||H||_operator = 4.000000   <-- the lane's B3 assumes 8
+    ||H||_Frobenius = 11.313708   <-- what np.linalg.norm(H) returns
+    ground degeneracy 4, gap 4.0000
+
+====================================================================================================
+  WHAT W-61's NORMALISATION ACTUALLY IS
+====================================================================================================
+    w61_topological.py line 78:   V = V/np.linalg.norm(V) * np.linalg.norm(H)
+    np.linalg.norm on a MATRIX with no ord= is the FROBENIUS norm, not the operator norm.
+    ||V||_operator after that normalisation: mean 4.0244, min 2.8453, max 5.3042
+    => W-61's effective p at eps=1e-06 is p_eff = 4.0244e-06, NOT 8e-06.
+
+====================================================================================================
+  REDO B3 WITH THE CORRECT p_eff
+====================================================================================================
+    lane's assumed p_eff = 8e-06          predicts 5.3981e-13  vs W-61's 4.867e-13  ratio    1.109   PASS (<2)
+    actual  mean p_eff = 4.024e-06        predicts 1.3661e-13  vs W-61's 4.867e-13  ratio    0.281   FAIL
+
+  ALSO: W-61 REDRAWS V INSIDE THE eps LOOP (line 77 is inside 'for eps in eps_list'), so each
+  W-61 row uses a DIFFERENT random perturbation; and W-61's V is Z-type only in the loop
+  basis while O-5's V is a generic X+Y+Z single-qubit sum.  Direct comparison of COEFFICIENTS
+  across the two lanes is not defined; only the EXPONENT is comparable.
+
+  DIRECT TEST OF THE EXPONENT INSIDE W-61's OWN CARRIER (one fixed V, proper sweep):
+            p           width      width/p^2
+      1.0e-03    5.487767e-08   5.487767e-02
+      3.0e-03    4.938991e-07   5.487768e-02
+      1.0e-02    5.487775e-06   5.487775e-02
+      3.0e-02    4.939052e-05   5.487836e-02
+      1.0e-01    5.488534e-04   5.488534e-02
+    fitted exponent = 2.0000   (d = 2)   PASS
+    c_W61 = 5.487936e-02  vs O-5's c_top = 8.4343e-03 -- SAME EXPONENT, coefficient differs by 6.51x (different carrier and V).

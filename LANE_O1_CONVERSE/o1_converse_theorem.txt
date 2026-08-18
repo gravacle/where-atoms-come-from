@@ -1,0 +1,81 @@
+O-1 -- THE CONVERSE, REPAIRED (THEOREM O1-C)
+machinery self-checks first:
+
+SELF-CHECKS (commutant dimensions; all expected values known independently)
+  [PASS] commutant of {I} on d=5 is all of M_5                          got     25  want     25
+  [PASS] commutant of a generic Hermitian on d=6 is the diagonal, dim 6 got      6  want      6
+  [PASS] commutant of alg{XX,ZZ} on 2 qubits = span{II,XX,YY,ZZ}        got      4  want      4
+  [PASS] commutant of SU(2) on 2 spins = 1^2+1^2 = 2                    got      2  want      2
+  [PASS] commutant of SU(2) on 3 spins = 1^2+2^2 = 5                    got      5  want      5
+  [PASS] commutant of I_3 (x) M_2 is M_3 (x) I_2, dim 9                 got      9  want      9
+  [PASS] dim_R(Hermitian part of A') = dim_C(A') for SU(2) on 3 spins   got      5  want      5
+  [PASS] dim alg{XX,ZZ} = 4                                             got      4  want      4
+  [PASS] dim alg{generic G, G^dag} on d=4 = 16                          got     16  want     16
+  [PASS] LEMMA 0: [L,R]=0 and [L^dag,R]=0 together                      
+
+SELF-CHECKS: ALL PASS
+
+==================================================================================================
+PART 1 -- EXHAUSTIVE VERIFICATION OF THEOREM O1-C.
+==================================================================================================
+  Family: D in {4,6,8}; every unordered block structure of the noise; every
+  assignment of block energies drawn from {0,1,2} (so eigenspaces of H are unions
+  of noise blocks).  For each system: the combinatorial criterion (H1)+(H2) is
+  compared against direct testing of clauses (i)-(iv) on explicit matrices.
+
+  systems tested                         : 210
+  criterion agrees with direct testing   : 210/210
+  systems where a full record EXISTS     : 105
+  systems where NO full record exists    : 105   <- the converse's failures
+  disagreements                          : 0
+
+  THEOREM O1-C: PASS
+  Both outcomes occur in quantity, so this is not a one-sided test.
+
+==================================================================================================
+PART 2 -- THE FOUR CORNERS.  (H1) and (H2) fail independently.
+==================================================================================================
+  D = 6 throughout.  Only the block sizes and their energies change.
+
+  corner               sizes      energies    predict   brute   clause values
+  (H1) yes, (H2) yes   [3, 3]     [0, 0]         True    True   (ii) 0.0e+00  (iv) 0.0e+00  Tr R = +0.0
+  (H1) yes, (H2) NO    [2, 4]     [0, 0]        False   False   -- no R passes all four clauses
+  (H1) NO , (H2) yes   [3, 3]     [0, 1]        False   False   -- no R passes all four clauses
+  (H1) NO , (H2) NO    [2, 4]     [0, 1]        False   False   -- no R passes all four clauses
+
+  '(H1) NO, (H2) yes' is the instructive corner: the noise DOES leave a record
+  and it IS trace-balanced, but H separates the two blocks into different
+  eigenvalues, so R is a function of H and clause (iii) dies.  The three ways of
+  failing are genuinely different failures.
+
+==================================================================================================
+PART 3 -- THE CONSTRUCTIVE DIRECTION, END TO END.
+==================================================================================================
+  A system satisfying (H1) and (H2); R and the writer U are built and every
+  clause the abstract setting can express is evaluated.
+
+  H = 0 on C^6 (6-fold degenerate);  L = L_3 (+) L_3, one jump operator
+  dim A = 18   dim A' = 2
+  constructed record R                   (i) 0.00e+00/0.00e+00  (ii) 0.00e+00  (iii) 2.4495  Tr R = +0.0000
+  (iv) ||U^dag R U + R||               = 0.000e+00
+       U is unitary: ||U^dag U - I||   = 0.000e+00
+       the writer does NOT commute with H: ||[U,H]|| = 0.000e+00  (H = 0 here, so this is 0 by triviality)
+       the writer does NOT commute with L: ||[U,L]|| = 2.224e+01  <- P-2, measured
+
+  (v) PROTECTION IS NOT EVALUATED.  (H,{L_k}) carries no notion of a contractible
+  region, so clause (v) has no referent in this setting.  Stated, not closed.
+
+==================================================================================================
+PART 4 -- A CASE WITH MULTIPLICITY, where A' is NON-commutative.
+==================================================================================================
+  L = B (+) B with the SAME block twice: A is M_3 with multiplicity 2, so
+  A' = M_2 (x) I_3, dimension 4 -- the commutant is non-commutative and the
+  records form a 2-sphere rather than a finite set.
+
+  dim A = 9 (expected 9),  dim A' = 4 (expected 4),  A' commutative: False
+  a record at angle theta = 0.7          (i) 0.00e+00/5.11e-17  (ii) 0.00e+00  (iii) 2.4495  Tr R = +0.0000
+  (iv) ||U^dag R U + R|| = 6.081e-16
+  Here (H2) holds automatically because the multiplicity space is even-
+  dimensional.  Multiplicity is one structural way to guarantee the trace
+  balance that Theorem O1-B demands -- a candidate hypothesis for a future
+  sufficient condition, NOT a proof that the converse holds.

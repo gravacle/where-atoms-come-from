@@ -1,0 +1,18 @@
+FM Heisenberg ring L=3  (0-FORM SU(2) symmetry), R = sign(Jz_total), E0 = spin-3/2 multiplet dim 4
+   (i)   ||R-R+||=0.0e+00  ||R^2-I||=0.0e+00   PASS
+   (ii)  ||[H,R]|| = 0.0e+00   PASS
+   (iii) deviation from scalar on E0 = 2.0000   PASS
+   (iv)  global transversal pi-rotation: ||U+RU+R|| = 0.0e+00   PASS (writer is NON-CONTRACTIBLE)
+   (v)   BARE form, min over single-site L of ||L+RL+R|| = 4.0000   PASS  <- the toric record FAILS this form; this one passes
+         POSITIVE CONTROL for that minimum: R'=Z_0 gives 0.0e+00 (flippable)
+   WHAT KILLS IT: Phi(Z on one site) spectrum on E0 = [-1.     -0.3333  0.3333  1.    ], min gap 0.6667 -> E0 FULLY RESOLVED at FIRST order, clause (iii) dies for every R.
+
+FM Heisenberg ring L=5  (0-FORM SU(2) symmetry), R = sign(Jz_total), E0 = spin-5/2 multiplet dim 6
+   (i)   ||R-R+||=0.0e+00  ||R^2-I||=0.0e+00   PASS
+   (ii)  ||[H,R]|| = 0.0e+00   PASS
+   (iii) deviation from scalar on E0 = 2.4495   PASS
+   (iv)  global transversal pi-rotation: ||U+RU+R|| = 0.0e+00   PASS (writer is NON-CONTRACTIBLE)
+   (v)   BARE form, min over single-site L of ||L+RL+R|| = 8.9443   PASS  <- the toric record FAILS this form; this one passes
+         POSITIVE CONTROL for that minimum: R'=Z_0 gives 0.0e+00 (flippable)
+   WHAT KILLS IT: Phi(Z on one site) spectrum on E0 = [-1.  -0.6 -0.2  0.2  0.6  1. ], min gap 0.4000 -> E0 FULLY RESOLVED at FIRST order, clause (iii) dies for every R.
+

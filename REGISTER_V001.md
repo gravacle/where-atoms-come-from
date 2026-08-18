@@ -5599,3 +5599,87 @@ The evidence base is **one Davies generator built from weight-1 site operators.*
 on `H_S` alone. **For a coupling of weight ≥ `d` — exactly what F-13 clause (2) REQUIRES — that state
 is not degeneracy-blind.** So a bath in detailed balance with respect to `H_tot` **meets F-13's own
 registered falsifier while satisfying clause (2).**
+
+---
+
+# THE REMAINING WORK — **SIX ROWS ATTACKED, ALL SIX ADVERSARIALLY VERIFIED. O-1 IS SETTLED.**
+
+## O-1 — **THE CONVERSE IS FALSE.** AND THE REPAIRED CONVERSE IS A THEOREM
+
+**REGISTRY HYGIENE, FLAGGED:** P-2 reads *"(ii)+(iv) ⟹ the writer is built from neither `H` nor
+`{L_k}`."* **The O-1 row describes P-1's converse, not P-2's.** Recorded, not silently fixed.
+
+### LEMMA 0 — CLAUSE (ii) IS FAR STRONGER THAN IT READS
+
+For `R` Hermitian, `[L,R] = 0 ⟺ [L†,R] = 0`. **So clause (ii) forces `R` into the commutant of the
+`*`-ALGEBRA `A = alg{I, H, L_k, L_k†}` — not of the set `{H, L_k}`.**
+
+### THE CONVERSE FAILS ON BOTH GAPS, WITH CONTROLS
+
+| | |
+|---|---|
+| `H = diag(0,0,1,1)`, **one generic jump** | Hermitian commutant = scalars only **400/400**; **record exists 0/400** |
+| **positive control**, same `H`, **diagonal** jumps | **record found 400/400** |
+| `H = 0` (maximal degeneracy, the most favourable case there is), `d = 2,3,4,6,8` | `dim A = d²` in **all 10** rows; commutant dim **1**; record **no** in all 10 |
+| **codimension** of `{L : [L,R]=0}` | `dim = p²+q²`, **6/6 exact**. Codim `2pq` — **measure zero for every `d ≥ 2`** |
+| instability | `‖[L(ε),R]‖/ε = 4.9456` at every `ε` from `1e-8` to `1e-1` — **first order. 0/200 records.** Clause (ii) cannot be rescued by "small enough noise" |
+
+**THE TRAP THAT KILLS THE OBVIOUS REPAIR.** A case with `max‖P_λ L_k P_λ‖ = 0.000e+00` — the noise
+identically zero **inside every eigenspace** — and **still no record**, because `P A P` is irreducible.
+Control with the return legs deleted: record **YES**, `(ii) = 0.00e+00`. **Second-order excursions out
+of the eigenspace and back destroy records, so inspecting `P L P` alone can NEVER prove the converse.**
+
+### THEOREM O1-A
+> **A record non-constant on `E_λ` exists ⟺ the compression `P_λ A P_λ` is a PROPER subalgebra of `B(E_λ)`.** 6/6 against brute force.
+
+### THEOREM O1-B — **AND IT REFUTES THE CONJECTURE IN MY OWN BRIEF**
+
+I wrote that flippability was probably free on any degenerate subspace. **False.**
+> **`U` with `U†RU = −R` exists ⟺ `p = q` ⟺ `Tr R = 0`.**
+
+Balanced `(2,1,1),(4,2,2),(6,3,3),(8,4,4)`: `‖U†RU+R‖ = 9.6e-16 … 2.5e-15`. Unbalanced: **no flipper**,
+and the positive control — **best of 4000 random unitaries each** — never drops below `2.000116`.
+
+> ### **COROLLARY O1-B1: IN AN ODD-DIMENSIONAL HILBERT SPACE, `Tr R` IS ODD, SO NO RECORD IS EVER WRITABLE.**
+
+### THE REPAIRED CONVERSE — **A THEOREM, 210/210 BY EXHAUSTIVE ENUMERATION**
+> **A record satisfying (i)–(iv) exists ⟺ the commutant of `alg{I,H,L_k,L_k†}` contains a projection
+> that is (H1) non-trivial on some eigenspace of `H` and (H2) trace-balanced.**
+
+---
+
+## O-4 — **"ADMISSIBLE" DEFINED, AND THE UNDEFINED WORD WAS LOAD-BEARING IN CLAUSE (v), NOT (iv)**
+
+> **ADMISSIBLE `U` ≝ a unitary with `[U,H] = 0`.**
+
+Consequences: **clause (iv) becomes exactly `Tr(P_E R) = 0` on every eigenspace of `H`** — agreeing
+with O1-B independently. **P-3 survives but its conclusion weakens** to *"no admissible writer fits
+inside ONE contractible region."*
+
+> ### **AND THE STING: under the trivial reading "any unitary", THE TORIC CODE FAILS THE PROGRAM'S OWN CLAUSE (v).** The word was never optional.
+
+## O-2 / O-3
+
+**O-2 PROVED under stated hypotheses.** First-order splitting **is exactly** the non-vanishing of
+`Φ(V) = PVP − (tr PVP/n)P`; guaranteed at weight 1 for a **connected** 0-form symmetry because its
+charge is a sum of local densities. **And the topological vanishing to order `d−1` IS the
+Knill–Laflamme condition** — slope `= d` confirmed on **five codes**.
+**O-3's registered side-step is REFUTED by two explicit counterexamples.**
+
+## O-5 — the relaxation must be a **spectral width**, never a norm bound
+
+> **Clause (ii) relaxes as a width bound on the cluster carrying the DRESSED record.** The tolerance is
+> then **exactly an inverse lifetime**, `T(η) ≥ η/δ` with `δ = c·p^d/Δ^{d−1}`.
+> **W-61's four-million-fold separation SURVIVES. Read the naive way — a norm bound on a fixed `R` — it collapses to 0.35.**
+
+## O-7 / O-8 — both gaps swept
+
+- **FRACTONS WIDEN NOTHING.** X-cube, checkerboard **and Haah's cubic code are all length-2 `F₂` chain complexes.**
+- **NON-CSS stabiliser codes provably ESCAPE that class.**
+- **NON-ABELIAN order FAILS CLAUSE (iv) OUTRIGHT**, on a parity obstruction an `F₂` complex can never trigger.
+
+## O-10 — **CLOSED, AND UPGRADED FROM A MEASUREMENT TO A PROOF**
+
+**Threshold `= d` on all six codes at `d = 1, 2, 3`, including a non-CSS and a degenerate code — and the
+equality is now PROVED for every stabiliser code and every coupling, not only Paulis.**
+**F-11/F-13 no longer rest on the single `d=2` carrier.**

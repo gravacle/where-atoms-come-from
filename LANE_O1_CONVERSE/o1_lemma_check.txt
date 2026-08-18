@@ -1,0 +1,40 @@
+CHECK: dim pi(A')  ==  dim (P A P)'   for P an eigenprojector of H (P is in A)
+
+    D   m   dim A  dim A_prime  dim pi(A_prime)  dim (PAP)_prime   dim PAP   m^2  ok
+    4   2       8            2                1                1         4     4  PASS
+    4   2       8            2                1                1         4     4  PASS
+    4   4       8            2                2                2         8    16  PASS
+    4   4       8            2                2                2         8    16  PASS
+    6   6      18            2                2                2        18    36  PASS
+    6   6      18            2                2                2        18    36  PASS
+    6   3      18            2                1                1         9     9  PASS
+    6   3      18            2                1                1         9     9  PASS
+    6   6      20            2                2                2        20    36  PASS
+    6   6      20            2                2                2        20    36  PASS
+    6   6      20            2                2                2        20    36  PASS
+    6   6      20            2                2                2        20    36  PASS
+    6   6      12            3                3                3        12    36  PASS
+    6   6      12            3                3                3        12    36  PASS
+    6   4      12            3                2                2         8    16  PASS
+    6   6      12            3                3                3        12    36  PASS
+    8   4      32            2                1                1        16    16  PASS
+    8   8      32            2                2                2        32    64  PASS
+    8   4      32            2                1                1        16    16  PASS
+    8   8      32            2                2                2        32    64  PASS
+    8   3      22            3                1                1         9     9  PASS
+    8   3      22            3                1                1         9     9  PASS
+    8   3      22            3                1                1         9     9  PASS
+    8   6      22            3                2                2        18    36  PASS
+    6   6      36            1                1                1        36    36  PASS
+    6   6      36            1                1                1        36    36  PASS
+    6   6      36            1                1                1        36    36  PASS
+    6   6      36            1                1                1        36    36  PASS
+    8   8      64            1                1                1        64    64  PASS
+    8   8      64            1                1                1        64    64  PASS
+    8   8      64            1                1                1        64    64  PASS
+    8   8      64            1                1                1        64    64  PASS
+
+  32 systems, of which 15 have a reducible compression and 17 an irreducible one
+  (so the check is exercised on BOTH outcomes, not only on the easy side)
+
+  QUOTED STEP: VERIFIED on every system tested

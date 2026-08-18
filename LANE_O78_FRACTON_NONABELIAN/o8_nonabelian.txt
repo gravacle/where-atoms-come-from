@@ -1,0 +1,152 @@
+
+==============================================================================
+PART B0 -- SELF-CHECKS ON THE MODULAR DATA (must all PASS)
+==============================================================================
+Z2 gauge theory = toric code = D(Z_2)          n=4  ||SS*-I||=0.00e+00  ||S-S^T||=0.00e+00
+    sum d^2 == D^2 residual 0.00e+00 | Verlinde N integrality 0.00e+00 | N>=0 True | GSD(g=1)=4.000000 == n : PASS
+Fibonacci (chiral)                             n=2  ||SS*-I||=3.66e-17  ||S-S^T||=0.00e+00
+    sum d^2 == D^2 residual 4.44e-16 | Verlinde N integrality 2.22e-16 | N>=0 True | GSD(g=1)=2.000000 == n : PASS
+Ising (chiral)                                 n=3  ||SS*-I||=2.36e-16  ||S-S^T||=0.00e+00
+    sum d^2 == D^2 residual 0.00e+00 | Verlinde N integrality 2.22e-16 | N>=0 True | GSD(g=1)=3.000000 == n : PASS
+DOUBLE of Fibonacci (chiral)                   n=4  ||SS*-I||=4.62e-16  ||S-S^T||=0.00e+00
+    sum d^2 == D^2 residual 1.78e-15 | Verlinde N integrality 6.66e-16 | N>=0 True | GSD(g=1)=4.000000 == n : PASS
+DOUBLE of Ising (chiral)                       n=9  ||SS*-I||=1.11e-15  ||S-S^T||=0.00e+00
+    sum d^2 == D^2 residual 3.55e-15 | Verlinde N integrality 4.44e-16 | N>=0 True | GSD(g=1)=9.000000 == n : PASS
+DOUBLE of Z2 gauge theory = toric code = D(Z   n=16  ||SS*-I||=0.00e+00  ||S-S^T||=0.00e+00
+    sum d^2 == D^2 residual 0.00e+00 | Verlinde N integrality 0.00e+00 | N>=0 True | GSD(g=1)=16.000000 == n : PASS
+
+  KNOWN FUSION RULES (independent answers):
+    Fib  N_tt^1 = 1      got  1.000000  PASS
+    Fib  N_tt^t = 1      got  1.000000  PASS
+    Ising N_ss^1 = 1     got  1.000000  PASS
+    Ising N_ss^p = 1     got  1.000000  PASS
+    Ising N_ss^s = 0     got  0.000000  PASS
+    Ising N_pp^1 = 1     got  1.000000  PASS
+    Z2   N_ee^1 = 1      got  1.000000  PASS
+    Z2   N_em^f = 1      got  1.000000  PASS
+
+  POSITIVE CONTROL -- toric code GSD must be 4^g:
+    g=1: got 4.000000  want 4  PASS
+    g=2: got 16.000000  want 16  PASS
+    g=3: got 64.000000  want 64  PASS
+
+  ALL SELF-CHECKS: PASS
+
+==============================================================================
+PART B1 -- R1: IS THE RECORD SPACE 2^k ?  (the F_2 chain-complex signature)
+==============================================================================
+dim H_k of ANY F_2 chain complex is 2^(dim H_k) as a Hilbert-space dimension:
+it is ALWAYS a power of 2.  A ground space whose dimension is not a power of 2
+cannot be the homology of an F_2 complex, by dimension count alone.
+
+theory                                   g=1        g=2        g=3        g=4        
+Z2 gauge theory = toric code = D(Z_2)    4    2^k   16   2^k   64   2^k   256  2^k   
+DOUBLE of Z2 gauge theory = toric code   16   2^k   256  2^k   4096 2^k   655362^k   
+Fibonacci (chiral)                       2    2^k   5    NOT2^k15   NOT2^k50   NOT2^k
+DOUBLE of Fibonacci (chiral)             4    2^k   25   NOT2^k225  NOT2^k2500 NOT2^k
+Ising (chiral)                           3    NOT2^k10   NOT2^k36   NOT2^k136  NOT2^k
+DOUBLE of Ising (chiral)                 9    NOT2^k100  NOT2^k1296 NOT2^k18496NOT2^k
+
+==============================================================================
+PART B2 -- R2: THE PARITY OBSTRUCTION  (new, and it is one line)
+==============================================================================
+CLAUSE (i)+(iv): R = R-dagger, R^2 = I, and some admissible U has U-dagger R U = -R.
+If the record is carried by the degenerate space E and the writer is a LOGICAL operation
+-- i.e. U maps E to itself, which is forced if writing must not create excitations --
+then R|E and -R|E are unitarily equivalent, hence
+
+        tr(R|E) = tr(-R|E) = -tr(R|E)  =>  tr(R|E) = 0  =>  dim E IS EVEN.
+
+An F_2 chain complex can never violate this: dim = 2^k, even for every k >= 1.  That is
+why this program never met the obstruction.  Non-abelian theories violate it routinely.
+
+theory                                   g=1       g=2       g=3       g=4       
+Z2 gauge theory = toric code = D(Z_2)    4   OK   16  OK   64  OK   256 OK   
+DOUBLE of Z2 gauge theory = toric code   16  OK   256 OK   4096OK   65536OK   
+Fibonacci (chiral)                       2   OK   5   ODD  15  ODD  50  OK   
+DOUBLE of Fibonacci (chiral)             4   OK   25  ODD  225 ODD  2500OK   
+Ising (chiral)                           3   ODD  10  OK   36  OK   136 OK   
+DOUBLE of Ising (chiral)                 9   ODD  100 OK   1296OK   18496OK   
+
+  ODD = clause (iv) is UNSATISFIABLE by any code-space-preserving unitary whatsoever.
+  Not 'we could not find a writer' -- no writer can exist.  A trace argument, not a search.
+
+  POSITIVE CONTROL for the trace argument -- explicit witnesses in even dimension:
+    dim=  2  tr R=+0  explicit U built, ||U*RU + R|| = 0.00e+00  PASS
+    dim=  4  tr R=+0  explicit U built, ||U*RU + R|| = 0.00e+00  PASS
+    dim=  5  possible |tr R| over ALL involutions = [1, 3, 5]  -> 0 attainable? False  PASS (no writer)
+    dim=  9  possible |tr R| over ALL involutions = [1, 3, 5, 7, 9]  -> 0 attainable? False  PASS (no writer)
+    dim= 16  tr R=+0  explicit U built, ||U*RU + R|| = 0.00e+00  PASS
+    dim= 25  possible |tr R| over ALL involutions = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]  -> 0 attainable? False  PASS (no writer)
+
+==============================================================================
+PART B3 -- R2: ARE THE WILSON LOOPS EVEN UNITARY?
+==============================================================================
+The writer O-8 nominated is a Wilson loop.  Two loop operators act on the torus
+ground space in the flux basis |b>:
+   MEASURING loop (parallel to the flux):  M_a|b> = (S_ab/S_1b) |b>      -- diagonal
+   CREATING  loop (transverse):            W_a|b> = sum_c N_ab^c |c>     -- fusion matrix
+Clause (i) wants an INVOLUTION; clause (iv) wants a UNITARY.
+
+  Z2 gauge theory = toric code = D(Z_2)   (anyons ['1', 'e', 'm', 'f'])
+    a=1        d_a=1.0000  M_a eigenvalues=[1.+0.j 1.+0.j 1.+0.j 1.+0.j]
+        M_a^2 = I ? residual 0.000e+00 INVOLUTION   |  W_a unitary ? residual 0.000e+00 UNITARY
+    a=e        d_a=1.0000  M_a eigenvalues=[-1.+0.j -1.+0.j  1.+0.j  1.+0.j]
+        M_a^2 = I ? residual 0.000e+00 INVOLUTION   |  W_a unitary ? residual 0.000e+00 UNITARY
+    a=m        d_a=1.0000  M_a eigenvalues=[-1.+0.j -1.+0.j  1.+0.j  1.+0.j]
+        M_a^2 = I ? residual 0.000e+00 INVOLUTION   |  W_a unitary ? residual 0.000e+00 UNITARY
+    a=f        d_a=1.0000  M_a eigenvalues=[-1.+0.j -1.+0.j  1.+0.j  1.+0.j]
+        M_a^2 = I ? residual 0.000e+00 INVOLUTION   |  W_a unitary ? residual 0.000e+00 UNITARY
+
+  Fibonacci (chiral)   (anyons ['1', 't'])
+    a=1        d_a=1.0000  M_a eigenvalues=[1.+0.j 1.+0.j]
+        M_a^2 = I ? residual 0.000e+00 INVOLUTION   |  W_a unitary ? residual 0.000e+00 UNITARY
+    a=t        d_a=1.6180  M_a eigenvalues=[-0.618+0.j  1.618+0.j]
+        M_a^2 = I ? residual 1.732e+00 NOT AN INVOLUTION   |  W_a unitary ? residual 1.732e+00 NOT UNITARY
+
+  Ising (chiral)   (anyons ['1', 's', 'p'])
+    a=1        d_a=1.0000  M_a eigenvalues=[1.+0.j 1.+0.j 1.+0.j]
+        M_a^2 = I ? residual 0.000e+00 INVOLUTION   |  W_a unitary ? residual 0.000e+00 UNITARY
+    a=s        d_a=1.4142  M_a eigenvalues=[-1.4142+0.j  0.    +0.j  1.4142+0.j]
+        M_a^2 = I ? residual 1.732e+00 NOT AN INVOLUTION   |  W_a unitary ? residual 1.732e+00 NOT UNITARY
+    a=p        d_a=1.0000  M_a eigenvalues=[-1.+0.j  1.+0.j  1.+0.j]
+        M_a^2 = I ? residual 0.000e+00 INVOLUTION   |  W_a unitary ? residual 0.000e+00 UNITARY
+
+  DOUBLE of Fibonacci (chiral)   (anyons ['(1,1)', '(1,t)', '(t,1)', '(t,t)'])
+    a=(1,1)    d_a=1.0000  M_a eigenvalues=[1.+0.j 1.+0.j 1.+0.j 1.+0.j]
+        M_a^2 = I ? residual 0.000e+00 INVOLUTION   |  W_a unitary ? residual 0.000e+00 UNITARY
+    a=(1,t)    d_a=1.6180  M_a eigenvalues=[-0.618+0.j -0.618+0.j  1.618+0.j  1.618+0.j]
+        M_a^2 = I ? residual 2.449e+00 NOT AN INVOLUTION   |  W_a unitary ? residual 2.449e+00 NOT UNITARY
+    a=(t,1)    d_a=1.6180  M_a eigenvalues=[-0.618+0.j -0.618+0.j  1.618+0.j  1.618+0.j]
+        M_a^2 = I ? residual 2.449e+00 NOT AN INVOLUTION   |  W_a unitary ? residual 2.449e+00 NOT UNITARY
+    a=(t,t)    d_a=2.6180  M_a eigenvalues=[-1.   +0.j -1.   +0.j  0.382+0.j  2.618+0.j]
+        M_a^2 = I ? residual 5.916e+00 NOT AN INVOLUTION   |  W_a unitary ? residual 5.916e+00 NOT UNITARY
+
+  The pattern is exact and provable: W_a W_a^dag = I iff N_a is a permutation matrix
+  iff d_a = 1 iff a is ABELIAN.  Every non-abelian charge has a NON-UNITARY Wilson loop,
+  and its measuring loop has eigenvalues S_ab/S_1b which are quantum-dimension ratios,
+  not signs.  So the nominated writer is not an admissible U and the nominated bit is
+  not an involution.
+
+==============================================================================
+PART B4 -- IS THERE ANY WRITER AT ALL WHERE THE PARITY TEST PASSES?
+==============================================================================
+Doubled Fibonacci on the TORUS has dim 4 (even) so the parity test is silent.
+Search: over all 2^4 sign patterns R diagonal in the anyon basis, and over the unitary
+group generated by the modular S and T matrices (the mapping class group of the torus,
+which IS implementable by adiabatic surface deformation), does any U give U*RU = -R?
+  POSITIVE CONTROL: the toric code MUST return a nonzero count -- its writer is the
+  Wilson loop W_e.  A zero there would mean the search is broken, not that no writer exists.
+
+  Z2 gauge theory = toric code = D(Z_2): |group generated by S,T (mod phase, capped)| = 192
+    traceless diagonal involutions with a mapping-class-group writer: 6
+    example R = diag(1, 1, -1, -1);  ||U*RU + R|| = 0.00e+00
+
+  DOUBLE of Fibonacci (chiral): |group generated by S,T (mod phase, capped)| = 21377
+    traceless diagonal involutions with a mapping-class-group writer: 4
+    example R = diag(1, 1, -1, -1);  ||U*RU + R|| = 1.46e-15
+
+  DOUBLE of Ising (chiral): |group generated by S,T (mod phase, capped)| = 20440
+    traceless diagonal involutions with a mapping-class-group writer: 0
+
+DONE.

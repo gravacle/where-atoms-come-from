@@ -1,0 +1,39 @@
+====================================================================================================
+(A) IS THE lam-RESCALING AN IDENTITY?
+====================================================================================================
+     lam    delta(lam*H, p)    lam*delta(H, p/lam)     rel.diff
+    0.50   1.6867154464e-06       1.6867154464e-06     0.00e+00
+    1.00   8.4335921890e-07       8.4335921890e-07     0.00e+00
+    2.00   4.2167990344e-07       4.2167990344e-07     0.00e+00
+    4.00   2.1083994994e-07       2.1083994994e-07     0.00e+00
+   10.00   8.4336008399e-08       8.4336022610e-08     1.69e-07
+  => EXACT IDENTITY.  The lam-test is the p-test in disguise; it re-measures the SAME exponent.
+
+====================================================================================================
+(B) THE TEST PASSES FOR A CARRIER WITH A DELIBERATELY WRONG 'd'
+====================================================================================================
+  Symmetry carrier has d=1.  Pretend we believe d=3 and run the lane's own PASS criterion
+  |delta(lam=4)*lam^(d-1)/delta(lam=1) - 1| < 0.05 for each candidate d:
+    d=1:  ratio =     1.0000   PASS
+    d=2:  ratio =     4.0000   fail
+    d=3:  ratio =    16.0000   fail
+  Only the TRUE exponent passes -- so the test is not vacuous about d.  But d was ALREADY
+  fitted in part 1 of the same script from the p-sweep.  The lam-test supplies no NEW
+  information: it is the same exponent read off a reparametrisation of the same data.
+
+====================================================================================================
+(C) AN ACTUALLY INDEPENDENT GAP TEST: change Delta without rescaling H
+====================================================================================================
+  H(a) = -sum A_v - a*sum B_p.  V fixed, p fixed.  For the Z-type record, the relevant
+  virtual excitations are PLAQUETTE defects, so the record-splitting denominator ~ 2a.
+  Prediction delta ~ c*p^d/Delta^(d-1) with d=2 => delta ~ 1/a.
+        a  plaq gap 2a            delta          delta*a   delta*Delta_min
+     0.50        1.000   8.93049775e-07   4.46524887e-07    1.78609955e-06
+     1.00        2.000   8.43359219e-07   8.43359219e-07    3.37343688e-06
+     2.00        4.000   8.30319147e-07   1.66063829e-06    3.32127659e-06
+     4.00        8.000   8.27015317e-07   3.30806127e-06    3.30806127e-06
+     8.00       16.000   8.26186529e-07   6.60949223e-06    3.30474612e-06
+
+  READ IT: if delta*a is constant the splitting is governed by the PLAQUETTE gap alone, which is
+  the 1/Delta^(d-1) law with d=2 and Delta the gap the record's virtual excitations must cross.
+  If it is NOT constant, the lane's Delta^(d-1) claim is not established by its own test.

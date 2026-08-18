@@ -1,0 +1,21 @@
+[[7,1,3]] Steane             d=3 : supports of size d = 35 | FIRE 7 | SILENT 28
+    COUNTEREXAMPLE: a random dense HERMITIAN coupling of weight 3 on qubits [0, 1, 3]
+    gives residual 0.000e+00 -- weight >= d but NO record formed.
+    POSITIVE CONTROL: same routine on qubits [0, 1, 2] gives residual 0.022938
+[[9,1,3]] Shor               d=3 : supports of size d = 84 | FIRE 30 | SILENT 54
+    COUNTEREXAMPLE: a random dense HERMITIAN coupling of weight 3 on qubits [0, 1, 3]
+    gives residual 0.000e+00 -- weight >= d but NO record formed.
+    POSITIVE CONTROL: same routine on qubits [0, 1, 2] gives residual 0.320987
+[[8,2,2]] toric              d=2 : supports of size d = 28 | FIRE 8 | SILENT 20
+    COUNTEREXAMPLE: a random dense HERMITIAN coupling of weight 2 on qubits [0, 3]
+    gives residual 0.000e+00 -- weight >= d but NO record formed.
+    POSITIVE CONTROL: same routine on qubits [0, 1] gives residual 0.055811
+[[5,1,3]] perfect            d=3 : supports of size d = 10 | FIRE 10 | SILENT 0
+    POSITIVE CONTROL: same routine on qubits [0, 1, 2] gives residual 0.009929
+
+MAXIMAL-WEIGHT SILENT COUPLINGS (weight n >> d):
+  Steane   stabiliser product YYIYIIY  weight 4  residual 0.000e+00 -> SILENT
+  Shor     stabiliser product YXYZIZYXY  weight 8  residual 0.000e+00 -> SILENT
+
+CONCLUSION: weight >= d is NECESSARY (proved) but NOT SUFFICIENT.
+Part 3's printed verdict "F-13's coupling of weight >= d is EXACT" is an OVERSTATEMENT.

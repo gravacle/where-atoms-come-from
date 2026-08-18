@@ -1,0 +1,53 @@
+
+==============================================================================
+CHECK 1 -- CLAUSE (v) AT L=3 BY BRUTE FORCE (no linear algebra at all)
+==============================================================================
+   regions brute-forced: 36 (18 edges + 9 stars + 9 plaquettes)
+   [PASS] L=3 brute force reproduces 'any flippers' = 1158   measured 1158
+   [PASS] L=3 brute force reproduces 'admissible flippers' = 0   measured 0
+
+==============================================================================
+CHECK 2 -- COULD CHECK 1's ZERO HAVE BEEN NONZERO? (control on MY routine)
+==============================================================================
+   [PASS] MY routine registers a nonzero on a winding region   count = 1  <-- so the zero in CHECK 1 is not a zero of my enumerator
+   [PASS] dropping only the plaquette half of admissibility DOES register flippers   count = 123  <-- the admissibility predicate is doing real work, both halves
+
+==============================================================================
+CHECK 3 -- MINIMUM WEIGHT OF AN ADMISSIBLE FLIPPER AT L=3, EXHAUSTIVE BY WEIGHT
+==============================================================================
+   weight 1: admissible flippers = 0
+   weight 2: admissible flippers = 0
+   weight 3: admissible flippers = 3   example ['(0,0,H)', '(0,1,H)', '(0,2,H)'] kinds=(1, 1, 1)
+   [PASS] no admissible flipper of weight 1 or 2   
+   [PASS] admissible flippers of weight 3 exist -> min weight = d = 3   count = 3
+   [PASS] the lane's named witness X on (0,0,H),(0,1,H),(0,2,H) is one of them   support ['(0,0,H)', '(0,1,H)', '(0,2,H)']
+
+==============================================================================
+CHECK 4 -- IS EVERY WEIGHT-3 ADMISSIBLE FLIPPER'S SUPPORT NON-CONTRACTIBLE?
+==============================================================================
+   [PASS] NO minimum-weight admissible flipper has certified-contractible support   violations = 0
+   [PASS] CONTROL: the certifier does certify things (single edges are contractible)   a single edge and a single plaquette both certify contractible at L=3
+   [PASS] CONTROL: the certifier rejects the writer's own support   
+
+==============================================================================
+CHECK 5 -- THE DEF-A' MODULI TABLE IN o4_variant.py SECTION 3
+==============================================================================
+   DEF-A' (o4_variant docstring): U unitary and [U, P_E] = 0 for the eigenspace E
+   witnessing clause (iii).  Clause (iv) is still the GLOBAL identity U^dag R U = -R.
+   Commuting with P_E forces U to preserve E AND its orthogonal complement, so the
+   complement must ALSO be trace-balanced.  The lane's Section-3 count omits that.
+   mults          |B|   (iii)   DEF-A   A(lane)  A(fixed)   DEF-C
+   (2,)             3       1       1         1         1       1
+   (4, 2)          15      11       1         5         1       3
+   (6, 4, 2)      105      97       1        19         1      13
+   (3, 3)          16      12       0         0         0       2
+   (4, 4, 4)      125     117       1        19         7      19
+   (8, 4)          45      41       1         5         1       5
+   (5, 4)          30      26       0         2         0       0
+   [PASS] the lane's DEF-A' column exceeds DEF-C -- LOGICALLY IMPOSSIBLE, DEF-A' unitaries are a subset of all unitaries   rows where lane DEF-A' > DEF-C: [((4, 2), 5, 3), ((6, 4, 2), 19, 13), ((5, 4), 2, 0)]
+   [PASS] the corrected DEF-A' column never exceeds DEF-C   see table above
+
+==============================================================================
+SUMMARY
+==============================================================================
+ALL VERIFICATION CHECKS PASSED.

@@ -1,0 +1,40 @@
+====================================================================================================
+(f)+(g) SEED ROBUSTNESS OF THE TWO HEADLINE COEFFICIENTS
+====================================================================================================
+     seed  ||[V,Rt]||  ||[V,Rs]||  READING-1 ratio         c_top         c_sym  c_sym/c_top
+     2026    0.566845    0.198766           0.3507  8.433428e-03  4.963212e-01        58.85
+      777    0.321048    0.106819           0.3327  2.595215e-02  1.900182e-01         7.32
+        1    0.608866    0.218999           0.3597  1.569897e-02  2.335632e-01        14.88
+       42    0.618590    0.206291           0.3335  1.728632e-02  2.509251e-01        14.52
+       99    0.473284    0.094685           0.2001  2.111497e-02  9.522593e-02         4.51
+    12345    0.304341    0.266551           0.8758  1.996405e-02  2.931038e-01        14.68
+    31337    0.525868    0.339194           0.6450  1.501428e-02  3.736183e-01        24.88
+
+   READING-1 ratio: min 0.2001 max 0.8758  -> the '0.3507' is ONE draw of an
+   O(1) quantity, not a constant.  The QUALITATIVE claim (both O(p), ratio O(1)) is robust.
+   c_top varies 8.433e-03 .. 2.595e-02 (factor 3.1); c_sym/c_top varies 3.7 .. 58.9.
+   => the '58.85/p' lifetime ratio and hence '5.885e+07 at W-61's p' is PERTURBATION-SPECIFIC
+      to a factor of ~13.0.  The EXPONENT is what is robust, not the four million.
+
+====================================================================================================
+(h) STEANE d=3 EXPONENT: does it survive a different fit range and a different perturbation?
+====================================================================================================
+   seed  4242  range lane's [3e-2,3e-1]  fitted exponent  2.9986  min width 2.98e-08 vs 100x floor 1.33e-13  PASS
+   seed  4242  range lower  [1e-2,1e-1]  fitted exponent  2.9998  min width 1.10e-09 vs 100x floor 1.33e-13  PASS
+   seed     7  range lane's [3e-2,3e-1]  fitted exponent  3.0001  min width 3.16e-08 vs 100x floor 1.33e-13  PASS
+   seed     7  range lower  [1e-2,1e-1]  fitted exponent  3.0000  min width 1.17e-09 vs 100x floor 1.33e-13  PASS
+   seed  2026  range lane's [3e-2,3e-1]  fitted exponent  2.9988  min width 6.15e-08 vs 100x floor 1.33e-13  PASS
+   seed  2026  range lower  [1e-2,1e-1]  fitted exponent  2.9999  min width 2.28e-09 vs 100x floor 1.33e-13  PASS
+
+====================================================================================================
+(i) THE W-61 REPRODUCTION.  The lane sets p_eff = 8e-06 from 'W-61 used ||V||=||H||=8'.
+    Check that ||H_toric|| really is 8 and that the identification is not a free parameter
+    tuned to make the ratio 1.109.
+====================================================================================================
+    ||H_toric||_op = 8.000000   (so ||V||=||H|| => p_eff = 8*eps)  
+    p_eff = eps        (||V||=1)       predicts 8.4345e-15   vs W-61's 4.867e-13   ratio    0.017
+    p_eff = 8*eps      (lane's choice) predicts 5.3981e-13   vs W-61's 4.867e-13   ratio    1.109
+    p_eff = 4*eps      (alt)           predicts 1.3495e-13   vs W-61's 4.867e-13   ratio    0.277
+    Only the 8x identification lands within a factor 2.  It is a ONE-PARAMETER choice justified
+    by an external convention in another lane, and it is the ONLY choice that makes B3 pass.  B3 is
+    therefore a consistency check with one adjustable input, not an independent reproduction.

@@ -1,0 +1,99 @@
+
+==============================================================================
+PART 0 -- SELF-CHECKS AND POSITIVE CONTROLS (must all PASS)
+==============================================================================
+CONTROL 2D toric code L=3          n=   18  gens=   18  rank=   16  k=   2  CSS=True   commute_violations=0
+    SELF-CHECK k == 2 : PASS   (got 2)
+    min logical weight = 3   [EXACT (exhaustive)]   dim S-perp = 20
+CONTROL 2D toric code L=4          n=   32  gens=   32  rank=   30  k=   2  CSS=True   commute_violations=0
+    SELF-CHECK k == 2 : PASS   (got 2)
+    min logical weight = 4   [UPPER BOUND (randomised, 1500 restarts)]   dim S-perp = 34
+CONTROL 2D toric code L=5          n=   50  gens=   50  rank=   48  k=   2  CSS=True   commute_violations=0
+    SELF-CHECK k == 2 : PASS   (got 2)
+    min logical weight = 12   [UPPER BOUND (randomised, 800 restarts)]   dim S-perp = 52
+CONTROL Steane [[7,1,3]]           n=    7  gens=    6  rank=    6  k=   1  CSS=True   commute_violations=0
+    SELF-CHECK k == 1 : PASS   (got 1)
+    min logical weight = 3   [EXACT (exhaustive)]   dim S-perp = 8
+CONTROL perfect [[5,1,3]]          n=    5  gens=    4  rank=    4  k=   1  CSS=False  commute_violations=0
+    SELF-CHECK k == 1 : PASS   (got 1)
+    min logical weight = 3   [EXACT (exhaustive)]   dim S-perp = 6
+CONTROL 3D toric code L=2          n=   24  gens=   32  rank=   21  k=   3  CSS=True   commute_violations=0
+    SELF-CHECK k == 3 : PASS   (got 3)
+    min logical weight = 2   [UPPER BOUND (randomised, 1500 restarts)]   dim S-perp = 27
+CONTROL 3D toric code L=3          n=   81  gens=  108  rank=   78  k=   3  CSS=True   commute_violations=0
+    SELF-CHECK k == 3 : PASS   (got 3)
+    min logical weight = 27   [UPPER BOUND (randomised, 600 restarts)]   dim S-perp = 84
+
+  ALL STABILISER GROUPS COMMUTE: PASS
+  d(toric2d,L) should equal L; d(Steane)=3; d([[5,1,3]])=3 -- these are the
+  independently-known answers that validate the distance routine.
+
+==============================================================================
+PART 1 -- X-CUBE  (type-I fracton, Vijay-Haah-Fu)
+==============================================================================
+X-cube L=2                         n=   24  gens=   24  rank=   15  k=   9  CSS=True   commute_violations=0
+    min logical weight = 4   [UPPER BOUND (randomised, 400 restarts)]   dim S-perp = 33
+    predicted log2 GSD = 6L-3 = 9   measured k = 9   MATCH
+X-cube L=3                         n=   81  gens=   81  rank=   66  k=  15  CSS=True   commute_violations=0
+    min logical weight = 20   [UPPER BOUND (randomised, 400 restarts)]   dim S-perp = 96
+    predicted log2 GSD = 6L-3 = 15   measured k = 15   MATCH
+X-cube L=4                         n=  192  gens=  192  rank=  171  k=  21  CSS=True   commute_violations=0
+    min logical weight = 82   [UPPER BOUND (randomised, 400 restarts)]   dim S-perp = 213
+    predicted log2 GSD = 6L-3 = 21   measured k = 21   MATCH
+
+==============================================================================
+PART 2 -- CHECKERBOARD MODEL
+==============================================================================
+checkerboard L=2                   n=    8  gens=    8  rank=    2  k=   6  CSS=True   commute_violations=0
+    min logical weight = 2   [EXACT (exhaustive)]   dim S-perp = 14
+    12L-6 = 18 ; 6L-3 = 9 ; measured k = 6
+checkerboard L=4                   n=   64  gens=   64  rank=   46  k=  18  CSS=True   commute_violations=0
+    min logical weight = 24   [UPPER BOUND (randomised, 400 restarts)]   dim S-perp = 82
+    12L-6 = 42 ; 6L-3 = 21 ; measured k = 18
+
+==============================================================================
+PART 3 -- HAAH CUBIC CODE 1  (type-II, NO string logical operators)
+==============================================================================
+Haah CC1 L= 2   n=   16  rank=   10  k=   6  CSS=True  commute_violations=0
+Haah CC1 L= 3   n=   54  rank=   52  k=   2  CSS=True  commute_violations=0
+Haah CC1 L= 4   n=  128  rank=  114  k=  14  CSS=True  commute_violations=0
+Haah CC1 L= 5   n=  250  rank=  248  k=   2  CSS=True  commute_violations=0
+Haah CC1 L= 6   n=  432  rank=  426  k=   6  CSS=True  commute_violations=0
+Haah CC1 L= 7   n=  686  rank=  684  k=   2  CSS=True  commute_violations=0
+Haah CC1 L= 8   n= 1024  rank=  994  k=  30  CSS=True  commute_violations=0
+
+  Haah's published closed form for L = 2^m is  k = 4L - 2 :
+    L=2: 4L-2 = 6   measured k = 6   MATCH
+    L=4: 4L-2 = 14   measured k = 14   MATCH
+    L=8: 4L-2 = 30   measured k = 30   MATCH
+
+  distance probe on the smallest instances (upper bounds):
+    L=2: min logical weight <= 2   (dim S-perp = 22)
+    L=3: min logical weight <= 21   (dim S-perp = 56)
+    L=4: min logical weight <= 61   (dim S-perp = 142)
+
+==============================================================================
+PART 4 -- CHAMON MODEL  (NON-CSS fracton)
+==============================================================================
+Chamon L=4 (all sites     )  n=   64  gens=   64  rank=   48  k=  16  CSS=False  commute_violations=0
+Chamon L=4 (fcc sublattice)  n=   64  gens=   32  rank=   24  k=  40  CSS=False  commute_violations=0
+Chamon L=6 (all sites     )  n=  216  gens=  216  rank=  192  k=  24  CSS=False  commute_violations=0
+Chamon L=6 (fcc sublattice)  n=  216  gens=  108  rank=   96  k= 120  CSS=False  commute_violations=0
+
+==============================================================================
+PART 5 -- THE CHAIN-COMPLEX QUESTION (G-12 coverage)
+==============================================================================
+A CSS code IS, by construction, a length-2 F_2 chain complex:
+    C_2 --d2=H_Z^T--> C_1 --d1=H_X--> C_0 ,   d1 d2 = H_X H_Z^T = 0,
+    logical space = H_1 = ker H_X / im H_Z^T,   dim = k.
+So the test 'is this candidate inside G-12's class?' is EXACTLY the test 'is it CSS?'
+(up to local Clifford).  Below: the CSS column decided per candidate, and the
+chain-complex identity d1 d2 = 0 verified numerically for each CSS candidate.
+  2D toric L=3                 : d1 d2 = 0 ? PASS   dim H_1 = 2   k = 2   MATCH
+  3D toric L=2                 : d1 d2 = 0 ? PASS   dim H_1 = 3   k = 3   MATCH
+  X-cube L=3                   : d1 d2 = 0 ? PASS   dim H_1 = 15   k = 15   MATCH
+  checkerboard L=4             : d1 d2 = 0 ? PASS   dim H_1 = 18   k = 18   MATCH
+  Haah CC1 L=4                 : d1 d2 = 0 ? PASS   dim H_1 = 14   k = 14   MATCH
+  Chamon L=4                   : NOT CSS in this basis -- no d1,d2 to form
+
+DONE.

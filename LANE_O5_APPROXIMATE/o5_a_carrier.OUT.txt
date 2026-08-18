@@ -1,0 +1,71 @@
+====================================================================================================
+O-5 A.  CARRIER + WHAT EXACT CLAUSE (ii) COVERS
+====================================================================================================
+
+  lattice 2x2 torus, 8 edges, dim = 256
+  stars      [[0, 1, 4, 6], [1, 0, 5, 7], [2, 3, 6, 4], [3, 2, 7, 5]]
+  plaquettes [[0, 5, 2, 4], [1, 4, 3, 5], [2, 7, 0, 6], [3, 6, 1, 7]]
+  RECORD  R = Z on [0, 1]        WRITER W = X on [0, 2]
+
+  S1  max ||[S_i,S_j]|| over the 8 stabilizers = 0.00e+00   PASS
+      POSITIVE CONTROL ||[X_0,Z_0]||               = 2.00e+00   PASS (the measure registers when there IS non-commutation)
+
+  S2  distinct eigenvalues of H = [-8. -4.  0.  4.  8.]
+      contained in {-8,-6,...,8}                   PASS
+  S3  ground energy -8.000000, degeneracy 4   (expected -8, 4 = 2^(2g), g=1)   PASS
+      gap to first excited level = 4.000000   (expected 4)
+
+  S4  logical algebra
+      ||[H,Z_A]|| = 0.00e+00   PASS
+      ||[H,X_A]|| = 0.00e+00   PASS
+      ||[H,Z_B]|| = 0.00e+00   PASS
+      ||[H,X_B]|| = 0.00e+00   PASS
+      Z_A,X_A anti: ||{,}|| = 0.00e+00   PASS
+      Z_B,X_B anti: ||{,}|| = 0.00e+00   PASS
+      Z_A,X_B comm: ||[,]|| = 0.00e+00   PASS
+      Z_B,X_A comm: ||[,]|| = 0.00e+00   PASS
+      Z_A,Z_B comm: ||[,]|| = 0.00e+00   PASS
+
+  S5  DISTANCE.  max over ALL 24 weight-1 Paulis of ||P O P - scalar|| = 4.36e-16 (X_2)
+      PASS -- no weight-1 operator acts non-trivially in the code space
+      POSITIVE CONTROL, weight-2 logical Z_A: ||P Z_A P - scalar|| = 1.0000   PASS (a weight-2 operator DOES)
+      => code distance d = 2.
+
+====================================================================================================
+  WHAT EXACT CLAUSE (ii) COVERS:  [L_k, R] = 0 DEPENDS ENTIRELY ON THE NOISE MODEL
+====================================================================================================
+
+  P1 verified the five clauses with L_k = Z_l.  R is a Z-type logical, so those commutators vanish
+  identically.  Here are BOTH halves of a generic local bath, on the same record.
+
+    jump operator family                      max_k ||[L_k,R]||   clause (ii)
+    L_k = Z_l   (dephasing, P1's choice)                 0.0000   HOLDS EXACTLY
+    L_k = X_l   (bit flip)                               2.0000   FAILS -- and by O(1), not by epsilon
+    L_k = Y_l                                            2.0000   FAILS -- and by O(1), not by epsilon
+    L_k = {X_l, Y_l, Z_l}  (generic local)               2.0000   FAILS -- and by O(1), not by epsilon
+
+  READ THIS PLAINLY.  Under a generic local bath the exact clause (ii) does not fail by a small
+  amount for the program's own record.  It fails MAXIMALLY: ||[X_l,R]|| = 2 = 2||R||, the largest
+  value a commutator of two involutions can take.  Exact clause (ii) as stated is satisfied by the
+  toric-code record only for a bath chosen to commute with it.
+
+  THIS IS THE REAL CONTENT OF O-5, AND IT IS NOT AN EPSILON PROBLEM.  Any relaxation of the form
+  ||[L_k,R]|| <= epsilon must take epsilon >= 2 to admit the carrier's own record -- and epsilon = 2
+  is no constraint at all, since ||[L,R]|| <= 2 always for involutions.  Quantified below.
+
+    sup over 200 random unit-norm Hermitian L of ||[L,R]||   = 1.4542   (bound is 2)
+    => the tolerance epsilon = 2 admits EVERY operator.  The relaxed L-clause is vacuous at
+       the tolerance needed to admit the program's own record.
+
+----------------------------------------------------------------------------------------------------
+  SYMMETRY CARRIER (same 256-dim space, H_sym = -sum_{l>=1} X_l)
+    ground energy -7.0000, degeneracy 2  (expected -7, 2)   PASS
+    gap = 2.0000  (expected 2)
+    record R_sym = Z_0 :  ||[H_sym,R_sym]|| = 0.00e+00   PASS (exact record of H_sym)
+    non-trivial on the ground space: ||PR_symP - scalar|| = 1.0000   PASS (clause iii holds)
+    ||[X_0, R_sym]|| = 2.0000  -- IDENTICAL to
+       the topological carrier's ||[X_l,R]|| = 2.  Remember this number.  A local X flips
+       R_sym at zero energy cost here, and at cost 4 on the toric code, and the commutator
+       norm CANNOT TELL THE TWO APART.  Measured in o5_d_theorems.py.
+
+  A DONE

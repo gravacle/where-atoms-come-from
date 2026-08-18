@@ -1,0 +1,84 @@
+
+==============================================================================
+O-4 -- CLAUSE (v) UNDER DEF-A AND DEF-C, AT TWO LATTICE SIZES
+==============================================================================
+
+==============================================================================
+L = 3   (n = 18 qubits)
+==============================================================================
+   [PASS] L=3: centraliser dimension = n + k = 18 + 2   measured 20
+   [PASS] L=3: stabiliser rank = n - k = 16   measured 16
+   [PASS] L=3: the writer is admissible under DEF-A   U = X on ['(0,0,H)', '(0,1,H)', '(0,2,H)']
+   [PASS] L=3: the writer flips R   |supp(U) cap supp(R)| = 1 (odd)
+   [PASS] L=3: => clause (iv) HOLDS, NOT vacuous (criterion 1)   
+
+   CANDIDATE REGIONS, each certified by dim H_1 (primal and dual) = 0:
+      admitted : {'plaquette': 9, 'single edge': 18, 'star': 9}
+      REJECTED as not contractible (they carry a winding cycle): {'1x2 plaquette block': 9, '2x1 plaquette block': 9, '2x2 plaquette block': 9}
+   [PASS] L=3: the contractibility certifier rejects the blocks that wind   27 of 63 candidates rejected
+   [PASS] L=3: single plaquettes and stars ARE certified contractible   plaquettes 9/9, stars 9/9
+
+   regions tested (all certified contractible)   : 36   (largest |T| = 4)
+   ADMISSIBLE operators flipping R, all regions  : 0
+   ANY Pauli operators flipping R, all regions   : 1158
+   [PASS] L=3: CLAUSE (v) HOLDS under DEF-A   count = 0
+   [PASS] L=3: POSITIVE CONTROL (same routine, same regions, admissibility dropped)   count = 1158  <-- the zero above is not a zero of the routine
+   [PASS] L=3: CLAUSE (v) FAILS under DEF-C (admissible = any unitary)   e.g. X on the single edge (0,0,H) flips R
+
+   POSITIVE CONTROLS -- regions that WIND the torus:
+      the writer's own support                       contractible=False dim=  1  #admissible flippers = 1
+      a full COLUMN of plaquettes (winds ACROSS R)   contractible=False dim=  5  #admissible flippers = 16
+      a full ROW of plaquettes (winds ALONG R)       contractible=False dim=  5  #admissible flippers = 0
+      the whole lattice                              contractible=False dim= 20  #admissible flippers = 524288
+   [PASS] L=3: every winding control behaves as predicted in advance   the ROW control is predicted ZERO: it winds ALONG R, not across it, so it carries no operator anticommuting with R -- winding is necessary, not sufficient
+
+   centraliser enumerated: 1048575 elements, 524288 flip R
+   [PASS] L=3: exactly half the centraliser flips R   524288
+   [PASS] L=3: minimum weight of an admissible writer = d = 3   measured 3
+      witness support: ['(0,0,H)', '(0,1,H)', '(0,2,H)']
+   [PASS] L=3: that minimum-weight writer fits inside NO certified contractible region   
+   [PASS] L=3: criterion (2) -- DEF-A is not the trivial class   admissible / all Paulis = 2^20/4^18 = 1.526e-05
+
+==============================================================================
+L = 5   (n = 50 qubits)
+==============================================================================
+   [PASS] L=5: centraliser dimension = n + k = 50 + 2   measured 52
+   [PASS] L=5: stabiliser rank = n - k = 48   measured 48
+   [PASS] L=5: the writer is admissible under DEF-A   U = X on ['(0,0,H)', '(0,1,H)', '(0,2,H)', '(0,3,H)', '(0,4,H)']
+   [PASS] L=5: the writer flips R   |supp(U) cap supp(R)| = 1 (odd)
+   [PASS] L=5: => clause (iv) HOLDS, NOT vacuous (criterion 1)   
+
+   CANDIDATE REGIONS, each certified by dim H_1 (primal and dual) = 0:
+      admitted : {'1x2 plaquette block': 25, '1x3 plaquette block': 25, '2x1 plaquette block': 25, '2x2 plaquette block': 25, '2x3 plaquette block': 25, '3x1 plaquette block': 25, '3x2 plaquette block': 25, '3x3 plaquette block': 25, 'plaquette': 25, 'single edge': 50, 'star': 25}
+      REJECTED as not contractible (they carry a winding cycle): {'1x4 plaquette block': 25, '2x4 plaquette block': 25, '3x4 plaquette block': 25, '4x1 plaquette block': 25, '4x2 plaquette block': 25, '4x3 plaquette block': 25, '4x4 plaquette block': 25}
+   [PASS] L=5: the contractibility certifier rejects the blocks that wind   175 of 475 candidates rejected
+   [PASS] L=5: single plaquettes and stars ARE certified contractible   plaquettes 25/25, stars 25/25
+
+   regions tested (all certified contractible)   : 300   (largest |T| = 24)
+   ADMISSIBLE operators flipping R, all regions  : 0
+   ANY Pauli operators flipping R, all regions   : 2815050556581770
+   [PASS] L=5: CLAUSE (v) HOLDS under DEF-A   count = 0
+   [PASS] L=5: POSITIVE CONTROL (same routine, same regions, admissibility dropped)   count = 2815050556581770  <-- the zero above is not a zero of the routine
+   [PASS] L=5: CLAUSE (v) FAILS under DEF-C (admissible = any unitary)   e.g. X on the single edge (0,0,H) flips R
+
+   POSITIVE CONTROLS -- regions that WIND the torus:
+      the writer's own support                       contractible=False dim=  1  #admissible flippers = 1
+      a full COLUMN of plaquettes (winds ACROSS R)   contractible=False dim=  7  #admissible flippers = 64
+      a full ROW of plaquettes (winds ALONG R)       contractible=False dim=  7  #admissible flippers = 0
+      the whole lattice                              contractible=False dim= 52  #admissible flippers = 2251799813685248
+   [PASS] L=5: every winding control behaves as predicted in advance   the ROW control is predicted ZERO: it winds ALONG R, not across it, so it carries no operator anticommuting with R -- winding is necessary, not sufficient
+   [PASS] L=5: criterion (2) -- DEF-A is not the trivial class   admissible / all Paulis = 2^52/4^50 = 3.553e-15
+
+==============================================================================
+SUMMARY
+==============================================================================
+ALL SELF-CHECKS PASSED.
+
+                        regions   largest |T|   admissible flippers   any flippers
+   L = 3                   36           4                     0           1158
+   L = 5                  300          24                     0   2815050556581770
+
+   DEF-A : clause (iv) holds, clause (v) holds, P-3 goes through.
+   DEF-C : clause (iv) holds, clause (v) FAILS -- under DEF-C the program's own
+           witness is not a record.
+

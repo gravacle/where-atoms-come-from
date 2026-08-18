@@ -1,0 +1,163 @@
+========================================================================================================
+LANE O-3.  WHICH CLAUSE DIES WHEN A FIRST-ORDER-SPLIT DEGENERACY IS PERTURBED?
+========================================================================================================
+
+CARRIER: toric code on the 2x2 torus.  n=8 qubits, 6 independent stabilisers,
+         code space dimension 4 = 2^2, distance d = 2 (verified in Part 2).
+         logical operators found: Zbar1 = ZZIIIIII   Xbar1 = XIXIIIII   Zbar2 = IIIIXXII   Xbar2 = IIIIZIZI
+         commutation check: [Zbar1,Zbar2] = 0,  {Zbar2,Xbar2} = anticommute
+
+SELF-CHECK -- all five clauses at eps = 0, on the unperturbed carrier.
+    R = Zbar2, W = Xbar2, eps = 0
+      (i)   bit         max(||R-R+||,||R^2-I||)  = 0.00e+00   PASS
+      (ii)  durable     ||[H,R]||                = 0.000e+00   PASS
+      (iii) nontrivial  max deviation from scalar= 8.9443    PASS
+      (iv)  writable    ||W+RW + R||             = 0.00e+00   PASS
+      (v)   protected   BARE operator form, min over contractible L of ||L+RL+R|| = 0.000  FAIL
+      (v')  protected   CODE-SPACE form: is there a contractible operator acting on E0
+                        as a logical anticommuting with R?  NO -- none exists at weight 1
+      NOTE the (v) row: the BARE operator form already FAILS, because X on a link of the
+      record's cycle flips it exactly.  The P1 lane scored (v) as PASS only because its local
+      set was Z-type, which commutes with a Z-type record by construction.  This is an
+      ERRATUM-GRADE observation about how (v) has been measured, and it is obstruction O-4.
+
+--------------------------------------------------------------------------------------------------------
+CASE A.  CONTRACTIBLE (weight-1) PERTURBATION.  Splitting is second order (d=2).  What dies?
+--------------------------------------------------------------------------------------------------------
+    ||Phi(VA)|| on E0 = 1.305e-15   (zero: no first-order splitting, d=2)
+    ||[VA,R]|| = 36.1113
+
+         eps      splitting   ||[H(eps),R]||   eps*||[VA,R]||     ratio   min gap in E0 cluster   min gap, WHOLE spectrum
+     1.0e-04     1.3768e-08     3.611133e-03     3.611133e-03  1.000000              4.3490e-09                4.3490e-09
+     1.0e-03     1.3768e-06     3.611133e-02     3.611133e-02  1.000000              4.3490e-07                4.3490e-07
+     1.0e-02     1.3768e-04     3.611133e-01     3.611133e-01  1.000000              4.3484e-05                5.9285e-06
+     1.0e-01     1.3707e-02     3.611133e+00     3.611133e+00  1.000000              4.2866e-03                6.7335e-04
+    => CLAUSE (ii) FAILS LINEARLY IN eps (ratio 1.000000), while the LEVEL splitting is
+       quadratic.  The record's durability and the level's splitting run on different clocks.
+
+    R = Zbar2 (unchanged), H = H0 + 1e-3 VA
+      (i)   bit         max(||R-R+||,||R^2-I||)  = 0.00e+00   PASS
+      (ii)  durable     ||[H,R]||                = 3.611e-02   FAIL
+      (iii) nontrivial  max deviation from scalar= 0.0000    FAIL
+      (iv)  writable    ||W+RW + R||             = 0.00e+00   PASS
+      (v)   protected   BARE operator form, min over contractible L of ||L+RL+R|| = 0.000  FAIL
+      the WHOLE spectrum of H(eps) is non-degenerate (min gap over all 256 levels = 4.349e-07),
+      so EVERY eigenspace is one-dimensional and NO R obeying (i)+(ii) can satisfy (iii).
+      => under a GENERIC contractible perturbation both failures occur at once: (ii) for the
+         original R, (iii) for every deformed one.  Nothing rescues the record.
+
+--------------------------------------------------------------------------------------------------------
+CASE B.  A PERTURBATION THAT FULLY RESOLVES THE MULTIPLET AT FIRST ORDER.  What dies?
+--------------------------------------------------------------------------------------------------------
+    Phi(VB) eigenvalues on E0 = [-1.718175 -0.414335  0.414335  1.718175]
+    non-degenerate? YES  (min gap 8.287e-01)
+    eps = 1.0e-04:  E0-cluster eigenvalues = [-6.00017182 -6.00004143 -5.99995857 -5.99982818]   min gap within the cluster = 8.2867e-05
+    eps = 1.0e-03:  E0-cluster eigenvalues = [-6.00171818 -6.00041433 -5.99958567 -5.99828182]   min gap within the cluster = 8.2867e-04
+    eps = 1.0e-02:  E0-cluster eigenvalues = [-6.01718175 -6.00414335 -5.99585665 -5.98281825]   min gap within the cluster = 8.2867e-03
+    => every eigenspace descended from E0 is ONE-DIMENSIONAL.  Any R with [H(eps),R]=0 is
+       diagonal in that basis, hence CONSTANT on each of them: on the former E0, R is a
+       function of H(eps).  CLAUSE (iii) DIES THERE FOR EVERY R -- no deformation rescues it.
+       THIS is the only case in which the registered O-3 side-step is correct.
+    HONEST CAVEAT: clause (iii) quantifies over SOME eigenspace of H, not over E0, and this
+       V_B is built from logical operators only, so the EXCITED syndrome sectors are
+       untouched and remain degenerate (largest remaining eigenspace has dimension 20).
+       A record could in principle live up there.  CASE A's generic contractible perturbation
+       is the one that removes every degeneracy in the whole spectrum at once.
+
+--------------------------------------------------------------------------------------------------------
+CASE C.  COUNTEREXAMPLE 1 TO THE REGISTERED SIDE-STEP.  A perturbation that splits the
+         degeneracy AT FIRST ORDER while a record survives ALL FIVE CLAUSES.
+--------------------------------------------------------------------------------------------------------
+    V = Zbar1 = ZZIIIIII  (weight 2 = d).  Record R = Zbar2 = IIIIXXII, writer W = Xbar2.
+    ||Phi(V)|| on E0 = 2.0000   -> FIRST-ORDER splitting
+      eps = 1.0e-04:  splitting = 2.000000e-04   ratio to 2*eps = 1.000000  <- LINEAR, first order
+      eps = 1.0e-03:  splitting = 2.000000e-03   ratio to 2*eps = 1.000000  <- LINEAR, first order
+      eps = 1.0e-02:  splitting = 2.000000e-02   ratio to 2*eps = 1.000000  <- LINEAR, first order
+
+    R = Zbar2 under H = H0 + 1e-3 Zbar1
+      (i)   bit         max(||R-R+||,||R^2-I||)  = 0.00e+00   PASS
+      (ii)  durable     ||[H,R]||                = 0.000e+00   PASS
+      (iii) nontrivial  max deviation from scalar= 6.3246    PASS
+      (iv)  writable    ||W+RW + R||             = 0.00e+00   PASS
+      (v)   protected   BARE operator form, min over contractible L of ||L+RL+R|| = 0.000  FAIL
+      (v')  protected   CODE-SPACE form: is there a contractible operator acting on E0
+                        as a logical anticommuting with R?  NO -- none exists at weight 1
+    => (i),(ii),(iii),(iv) ALL PASS at a FIRST-ORDER-SPLIT degeneracy.  The splitting operator
+       COMMUTES with the record, so it resolves a DIFFERENT logical direction and leaves R's
+       own two-fold degeneracy intact.  THE REGISTERED SIDE-STEP IS FALSE AS WRITTEN.
+
+--------------------------------------------------------------------------------------------------------
+CASE D.  COUNTEREXAMPLE 2, AND THE STRONGER ONE: the splitting perturbation is CONTRACTIBLE
+         (weight 1) and still a record survives.  Carrier = [[3,1,1]] (x) [[5,1,3]].
+--------------------------------------------------------------------------------------------------------
+    n = 8, code space dim 4 = 2^2.  Block A = [[3,1,1]] on qubits 1-3 (d=1),
+    Block B = [[5,1,3]] on qubits 4-8 (d=3).  OVERALL code distance = 1.
+      Zbar_A = ZIIIIIII  weight 1   is a non-trivial logical: True
+      Zbar_B = IIIZZZZZ  weight 5   is a non-trivial logical: True
+      Xbar_B = IIIXXXXX  weight 5   is a non-trivial logical: True
+      [Zbar_A, Zbar_B] = 0   {Zbar_B, Xbar_B} = anticommute
+
+    ||Phi(V)|| for V = Zbar_A (WEIGHT 1, CONTRACTIBLE) = 2.0000   -> FIRST-ORDER splitting by a contractible perturbation
+      eps = 1.0e-04:  splitting = 2.000000e-04   ratio to 2*eps = 1.000000  <- LINEAR
+      eps = 1.0e-03:  splitting = 2.000000e-03   ratio to 2*eps = 1.000000  <- LINEAR
+      eps = 1.0e-02:  splitting = 2.000000e-02   ratio to 2*eps = 1.000000  <- LINEAR
+
+    R = Zbar_B under H = H0 + 1e-3 Zbar_A  (contractible splitter)
+      (i)   bit         max(||R-R+||,||R^2-I||)  = 0.00e+00   PASS
+      (ii)  durable     ||[H,R]||                = 0.000e+00   PASS
+      (iii) nontrivial  max deviation from scalar= 6.3246    PASS
+      (iv)  writable    ||W+RW + R||             = 0.00e+00   PASS
+      (v)   protected   BARE operator form, min over contractible L of ||L+RL+R|| = 0.000  FAIL
+      (v')  protected   CODE-SPACE form: is there a contractible operator acting on E0
+                        as a logical anticommuting with R?  NO -- no operator of weight <= 2 acts as a logical anticommuting with R
+    => a CONTRACTIBLE, weight-1 perturbation splits the degeneracy at FIRST order, and the
+       record in the protected sector survives (i),(ii),(iii),(iv) and the code-space form of
+       (v).  So even the REPAIRED side-step -- 'first-order split by a contractible
+       perturbation' -- does not by itself kill the record.  What matters is whether the
+       splitting resolves THE RECORD'S OWN logical direction.
+
+--------------------------------------------------------------------------------------------------------
+THE STATEMENT THAT IS TRUE, AND IS WHAT EXHAUSTIVENESS ACTUALLY NEEDS.
+--------------------------------------------------------------------------------------------------------
+    Define, for a record R on a code space E0,
+        d_R  :=  the minimum weight of an operator that acts on E0 as a logical operation
+                 ANTICOMMUTING with R.
+    THEOREM.  the following are equivalent:
+        (1) clause (v) holds for R against operations of contractible weight <= w;
+        (2) d_R > w;
+        (3) no perturbation of weight <= w resolves R's own +-1 eigenspaces at first order,
+            i.e. Phi(V) commutes with R|E0 for every V of weight <= w.
+    (1)<=>(2) is the definition.  (2)<=>(3) is Knill-Laflamme applied to the R-graded code:
+    a weight-<=w operator with Phi(V) not commuting with R|E0 IS an undetectable logical
+    anticommuting with R, and conversely.
+
+    MEASURED CHECK of (2)<=>(3) on all four carriers used above:
+      toric 2x2, R = Zbar2                 w=1:  max ||[Phi(V), R|E0]|| = 3.977e-15   d_R <= w witness: none   AGREE
+      toric 2x2, R = Zbar2                 w=2:  max ||[Phi(V), R|E0]|| = 4.000e+00   d_R <= w witness: IIIIZIZI   AGREE
+      [[3,1,1]](x)[[5,1,3]], R = Zbar_B    w=1:  max ||[Phi(V), R|E0]|| = 2.880e-15   d_R <= w witness: none   AGREE
+      [[3,1,1]](x)[[5,1,3]], R = Zbar_B    w=2:  max ||[Phi(V), R|E0]|| = 3.587e-15   d_R <= w witness: none   AGREE
+      [[3,1,1]](x)[[5,1,3]], R = Zbar_B    w=3:  max ||[Phi(V), R|E0]|| = 4.000e+00   d_R <= w witness: IIIXYXII   AGREE
+      [[3,1,1]](x)[[5,1,3]], R = Zbar_A    w=1:  max ||[Phi(V), R|E0]|| = 1.416e-30   d_R <= w witness: none   AGREE
+      [[3,1,1]](x)[[5,1,3]], R = Zbar_A    w=2:  max ||[Phi(V), R|E0]|| = 2.082e-30   d_R <= w witness: none   AGREE
+      [[3,1,1]](x)[[5,1,3]], R = Zbar_A    w=3:  max ||[Phi(V), R|E0]|| = 4.000e+00   d_R <= w witness: XXXIIIII   AGREE
+
+========================================================================================================
+VERDICT ON ROW O-3
+========================================================================================================
+  THE REGISTERED SIDE-STEP IS REFUTED AS WRITTEN.  "Any first-order-split degeneracy cannot carry
+  a noise-surviving record" is false: CASE C splits at first order with all five clauses intact, and
+  CASE D does it with a CONTRACTIBLE splitter.
+
+  WHICH CLAUSE DIES, precisely:
+     - keep R fixed and [V,R] != 0  ->  CLAUSE (ii), and it dies LINEARLY in eps even when the level
+       splitting is of order eps^d.  (ii) and the splitting exponent are different clocks.
+     - deform R to restore (ii), with the multiplet FULLY resolved  ->  CLAUSE (iii), for every R.
+     - CLAUSE (v) dies from NEITHER.  It does not depend on eps or on V; it is a property of the pair
+       (E0, R).  "The splitting destroys the protection" is a category error.
+
+  THE REPAIR, still low cost but a DIFFERENT argument: replace the splitting-order criterion by the
+  R-graded distance d_R, and use the equivalence (1)<=>(2)<=>(3) above.  Exhaustiveness then reads:
+     a record survives contractible noise of weight <= w  IFF  d_R > w
+  which is Knill-Laflamme, is an EQUIVALENCE rather than an implication, and does not mention the
+  perturbation order at all.  COST ASSESSMENT: the registered "LOW" is right about the effort and
+  wrong about the route.
