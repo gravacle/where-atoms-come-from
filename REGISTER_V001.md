@@ -5726,3 +5726,36 @@ an operation that is admissible only AS A WHOLE.** This is the same `d` as F-13'
 > ### computed left-hand side, or a control that returns the same value under every input, is
 > ### decoration. Here five of them let an arithmetically impossible table through.
 > ### **TELL: a self-check whose expected value is a literal.**
+
+---
+
+## O-11 — PREDICTION REGISTERED BEFORE THE RUN
+
+**THE CHARGE.** F-13 clause (1) says the RFP needs dynamics **outside** the detailed-balance class. But
+a **strong-coupling** thermal environment does not relax to `e^{−βH_S}`; it relaxes to the **mean-force
+Gibbs state** `ρ_MF = Tr_B[e^{−βH_tot}]/Z`, which depends on the **coupling operators**. If `ρ_MF` is
+non-flat on the code space for a coupling of weight ≥ `d` — exactly what clause (2) **requires** — then
+a **genuinely thermal environment forms a record**, and F-13 contradicts itself.
+
+**THE SYMMETRY THAT DECIDES IT.** `H_tot = H_S + H_B + λ A⊗B` commutes with `X̄` iff `[A,X̄] = 0`, and
+`{Z̄,X̄} = 0` forces `⟨Z̄⟩ = 0` whenever it does. **So the coupling must break the writer's symmetry —
+which is F-8, reappearing at the level of the total Hamiltonian.**
+
+**THE CLOSED FORM, DERIVED IN ADVANCE.** Take `A = Z̄` (weight `2 = d`), with `H_B` and `B` diagonal.
+`Z̄` commutes with `H_S`, so the total blocks by `Z̄ = s = ±1`, and the bath contributes
+`Z_B(s) = Σ_j e^{−β(E_j + sλb_j)}`. On the degenerate code space `ρ_MF ∝ Z_B(s)`, hence
+
+> ### `⟨Z̄⟩ = [Z_B(+1) − Z_B(−1)] / [Z_B(+1) + Z_B(−1)]`
+
+**PREDICTIONS:**
+1. **`λ → 0` gives `⟨Z̄⟩ → 0`** for every coupling — the weak-coupling limit recovers ordinary Gibbs and
+   F-9's exclusion. **This is the control that makes any nonzero a strong-coupling effect.**
+2. **A weight-`d` coupling gives `⟨Z̄⟩ ≠ 0` at finite `λ`, rising at order `λ¹`**, matching the closed
+   form above. **If so, F-13 clause (1) IS CONTRADICTED: a detailed-balance environment forms a record.**
+3. **A weight-1 coupling gives a bias SUPPRESSED as `λ^d`** — nonzero, but at high order, because the
+   system must virtually leave the code space. **If so, clause (2) SURVIVES in a scaling form** —
+   weight-`d` couplings act at first order, weight-1 only at order `d`.
+
+**WHAT EACH OUTCOME MEANS.** If 2 and 3 both hold, **F-13's clause (1) is wrong as stated and must be
+replaced by a statement about coupling weight and order, not about detailed balance at all.** If 2
+fails, the charge is dismissed and clause (1) stands.
