@@ -5524,3 +5524,78 @@ carrier are the same thing, that thing is extended, and **it has no local parts 
 
 **Found by the principal's prompt, not by the running import audit** — recorded so the audit's eventual
 coverage is not overstated.
+
+---
+
+# IMPORT AUDIT — **FOUR LOAD-BEARING IMPORTS BESIDES CLASSICAL GRAVITY. THREE ARE HIGH AND ALL FOUR HIT ROWS REGISTERED TODAY.**
+
+Six lenses, adversarially adjudicated, each testing not *is this imported* but **would a registered
+PROVED row change if it were dropped.** The principal asked the question; the audit answered it against us.
+
+## 1. **THE ENSEMBLE AVERAGE `⟨R⟩ = Tr(Rρ)` USED AS THE TEST FOR FORMATION** — HIGH, and the program had ALREADY CAUGHT IT
+
+**`SURFACE_ASSUMPTION_AUDIT_V001.md:16`** — *"**A4** | "durable" = expectation value constant | imported;
+**W-35 showed ensembles are blind to record formation**"* — **and A4 is NOT CLEARED.**
+**`REGISTER:2611`** — *"Every lane from W-28 onward measured `⟨R⟩ = Tr(Rρ)` — an ENSEMBLE AVERAGE.
+**A fair coin has mean zero and every single flip is definite.**"* W-35 unravelled the same Lindbladian
+and found a **definite record on 78.5% of runs.** `REGISTER:2646` closes the escape: *"Both
+unravellings give the same `ρ(t)`"* — so purity `1/4` and `S/ln4 = 1` do not rescue the reading either.
+
+**AND THE ENTIRE F-SERIES WAS RUN THROUGH THAT SAME DOOR TODAY.** `grep` of `LANE_F7_OCCUPANCY/` for
+`unravel|trajector|single-run|ensemble` returns **ZERO hits.** The audit naming A4 is timestamped
+**11:28**; `f7_davies.py` is **14:37**; `f10c` is **14:56**. **Six PROVED rows registered on top of a
+named, uncleared assumption within three hours of it being named.**
+
+**WHY IT WAS INVISIBLE, and this is the structural lesson:**
+1. **A4 lives in prose, not in the ledger.** It has no row and no D-entry. **The ledger is what gets checked.**
+2. **A blind instrument returns exact zeros.** `⟨Z̄⟩ = 0.000000` and `S/ln4 = 1.000000` read as strong
+   confirmation. **They are the signature of the blindness.**
+
+## 2. **"MINIMUM WEIGHT MUST GROW WITH THE CARRIER"** — HIGH. **CLAUSE (v) IS BINARY AND SAYS NO SUCH THING**
+
+Clause (v) reads *"NO contractible operation does."* **Binary.** Nothing in the corpus argues that a
+record's protection must **grow**. That requirement is imported from **asymptotic good-code-family
+theory**, where `d = Θ(n)` is the quality criterion.
+
+**AND IT INVERTS G-11's CONCLUSION.** The bouquet's cycles ARE the generators of `H₁` — they are
+**non-contractible**. So a weight-3 operator traversing one is **not a contractible operation**, and
+**the bouquet SATISFIES clause (v) as written.** G-11's *numbers* stand (capacity 2,3,4 against `d`
+3,3,3). Its *conclusion* — that protection fails there, so Γ needs a growing-weight condition — is the
+import.
+
+**G-12's refuter cannot fire:** `"the local scale"` occurs three times in the corpus and **none of them
+is a definition.** That is precisely the defect withdrawn at `GRAVITY_DEFINED_V001`: *"it can never
+fire… an unfalsifiable test is worthless."*
+
+## 3. **GIBBS STANDING IN FOR "ENERGY-BASED DYNAMICS" AS A CLASS** — HIGH. **THE VERDICT SURVIVES; THE STATED CONTENT DOES NOT**
+
+Re-run on our own carrier. The registered row reproduces exactly (ratio `1.2500`, slopes `2.0262/2.0210`)
+— **and the parity is canonical-only.** The constant is `−f'(0)/f(0)/4`:
+
+| occupation `f(ΔE)` | constant | selection slope | splitting slope |
+|---|---|---|---|
+| Gibbs `β=5` | 1.2500 | 2.0210 | 2.0262 |
+| Gibbs `β=1` | 0.2408 | 2.0187 | 2.0262 |
+| power law `1/(1+ΔE)³` | 0.6552 | 1.9795 | 2.0262 |
+| **Gaussian `exp(−2ΔE²)`** | 0.0050 | **4.0465** | 2.0262 |
+
+**The exponent equality FAILS for the Gaussian, which is equally a function of `H` alone.**
+**And `β = 0` is canonical and gives `⟨Z̄⟩ = −0.000000` (spread `1.97e-13`) at splitting `1.691e-01`
+— SPLITTING WITHOUT SELECTION, which the register asserts does not exist.**
+
+**WHAT SURVIVES, with its correct warrant:** for **any** occupation that is a function of `H` alone,
+exact degeneracy forces flatness on the code space — verified `⟨Z̄⟩ ≤ 1.1e-14` across Gibbs `β=5` and
+`β=0.5`, power-law `1/(1+ΔE)⁷`, a non-monotone `0.1+|sin 3ΔE|`, and a **random** function of the
+eigenvalue. **The exclusion holds. "The same quantity, same exponent, no `ε` where one appears without
+the other" is WITHDRAWN.**
+
+## 4. **DETAILED BALANCE AS A CLASS IN A NECESSITY CLAIM** — MEDIUM, **AND F-13 MAY CONTRADICT ITSELF**
+
+The evidence base is **one Davies generator built from weight-1 site operators.** `grep` for
+`weak coupling|Born-Markov|secular|mean force` across the whole corpus returns **nothing relevant.**
+
+**THE SELF-CONTRADICTION, and it is internal:** a strong-coupling thermal environment relaxes to the
+**mean-force Gibbs state** `Tr_B[e^{−βH_tot}]/Z`, which depends on the **coupling operators** and not
+on `H_S` alone. **For a coupling of weight ≥ `d` — exactly what F-13 clause (2) REQUIRES — that state
+is not degeneracy-blind.** So a bath in detailed balance with respect to `H_tot` **meets F-13's own
+registered falsifier while satisfying clause (2).**
