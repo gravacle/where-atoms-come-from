@@ -3174,3 +3174,51 @@ total dissipation held fixed) is dynamics, not counting, and stands. So does W-4
 **WHAT IT BUYS.** The dynamics is now well-posed: **to hold `k` records a carrier needs area `≥ k+1`.**
 Below that it evicts (W-41). **"Demand exceeds capacity → the carrier must grow" is a statement with
 a number in it**, and the number is one plaquette per record.
+
+---
+
+## CORRESPONDENCE AUDIT — **THE EMPTY GRAVITY LINE IS A PROPERTY OF OUR GRAPH, NOT OF RECORDS**
+
+`GRAVACLE_CORRESPONDENCE_V001.md`, sealed. The principal directed that the program not re-cover
+ground already in `10.5281/zenodo.21238968` (Gravacle v337), the guard against fitting being to test
+for it afterwards rather than to avoid the source.
+
+**FITTING LINE, VERIFIED BY SEARCH:** before today the project contained **zero** substantive
+references to the paper — the only hits are the GitHub org name. **W-27 to W-42 are uncontaminated.
+W-43 onward is not, and must be flagged.**
+
+**THE ONE THING THAT CHANGES A CONCLUSION.** The paper's Field-Registration Principle: *EM enters
+records through gauge/action phase; gravity enters through metric/proper-time action.* **Our carrier
+has gauge phase and a Gauss law, and its links have no length, no metric, no proper time, no clock.**
+
+> **"GRAVITY IS ABSENT FROM THE PROCESS" IS NOT A RESULT ABOUT RECORDS. IT IS A RESULT ABOUT OUR
+> GRAPH. We never installed the thing gravity enters through.** V003 and the W-31 refutation both
+> reported the empty line as though it were a finding about record formation. **Withdrawn.**
+
+**AND IT DIAGNOSES ROUTE B.** W-31 made the carrier's **topology** dynamical. Gravity is said to
+enter through **metric**. **Route B varied the wrong degree of freedom** — which is why three
+adversaries found the topology contributed exactly nothing.
+
+**INDEPENDENT CORRESPONDENCES, all produced before reading:** the paper's **Action-Holonomy Sign
+Theorem** (the interference sign IS the holonomy of a closed oriented action loop) against W-37's
+cut-ring control at exactly `0.000000`; and its **Single-Run Boundary Closure Theorem** (exact
+selection is single-run closure, Born capacity is the public ensemble law) against W-35's
+`E[<R>] = -0.015 ± 0.040` beside `E[<R>²] = 0.999`. **The second match is precise and it overturned
+four of this program's own lanes before the paper was consulted.**
+
+**WHERE THIS PROGRAM SITS IN THE PAPER'S OPEN PROBLEM.** Appendix C names the **accumulation proof**
+as unsolved: (1) a local record-to-geometry map, (2) compatibility across overlapping record
+patches, (3) the large-record limit. **W-39/41/42 are step 2 with numbers in it.** But our records
+carry no geometry, so **capacity constrains how many records fit and says nothing about a metric.
+Step 2 has the right shape and no content because step 1 is missing.**
+
+**THE MISSING TERM, CONCRETELY.** Links need a **length / proper-time weight**. Then a transported
+probe accumulates a gauge **product round a closed loop** (homotopy-invariant — we have it) and a
+**sum of lengths along its path** (not homotopy-invariant — we do not). **Structurally different,
+and the difference is measurable: one is blind to path length, the other is not.**
+
+**FITTING RISK FLAGGED IN ADVANCE.** W-37d's complex hopping phase is formally what a proper-time
+weight contributes, and it is tempting to claim we already saw gravity. **We did not.** That phase
+was **uniform and installed by hand** to break a time-reversal symmetry; a metric weight must **vary
+across links and be sourced**. The separating test is uniform versus varying phase, and whether
+anything sources the variation.
