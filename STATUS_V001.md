@@ -1,6 +1,7 @@
 # STATUS — WHERE ATOMS COME FROM
 
 **Rendered whenever the principal says "status". Format frozen; only marks change and rows append.**
+**Target: `THE_TARGET_V001.md`** (what a complete theory owes — currently ✔12 ◑6 ○1 ✕8 ⊘4).
 Anchor `CORE_FRAMEWORK_V001.md` · claim `THE_CLAIM_V001.md` · proofs `PROOF_V001.md` ·
 withdrawn claims: `THE_ROAD_V001.md` (10 so far, kept so they are not re-made).
 
@@ -69,6 +70,22 @@ withdrawn claims: `THE_ROAD_V001.md` (10 so far, kept so they are not re-made).
 | **X2** | it does not respond to matter content | needed to make the gravity role a *derivation* rather than a functional match |
 | **X3** | the outcome problem | the field's open problem; W-35 relocated it |
 | **X4** | **empirical contact: zero**, and **no distinguishing prediction identified** | W-48 killed the decoherence candidate; C1 killed the legibility candidate |
+
+---
+
+## F. NEVER ADDRESSED — the eight items of `THE_TARGET_V001.md` marked ✕
+
+| | | |
+|---|---|---|
+| **III.6** | **irreversibility — why a record is of the PAST** | a record theory without an arrow is not a record theory |
+| **V.3** | **is a measurement the creation of a record?** | the natural bridge to the measurement problem |
+| **II.5** | why the world's Hamiltonian has this topology | the deepest question reached |
+| **I.4** | do records compose? | a theory of one record is not a theory of records |
+| **V.4** | the classical limit | |
+| **VI.3** | a distinguishing prediction | none identified |
+| **VI.4** | empirical contact | zero |
+
+**III.6 and V.3 change what the theory IS, and both are askable on the carrier we already have.**
 
 ---
 
