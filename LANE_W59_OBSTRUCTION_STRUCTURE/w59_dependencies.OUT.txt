@@ -1,0 +1,31 @@
+W-59  DEPENDENCY (a): DOES W-57 FOLLOW FROM T2?
+   record support (T2 says it is a closed loop): [0, 1, 4, 5, 6, 8, 9, 11]
+    |S|  #subsets tested  contains supp(R)  resolves  partial values
+      0                1                 0         0               0
+      1               12                 0         0               0
+      2               66                 0         0               0
+      3              220                 0         0               0
+      4              400                 0         0               0
+      5              400                 0         0               0
+      6              400                 0         0               0
+      7              400                 0         0               0
+      8              400                 1         1               0
+      9              220                 4         4               0
+     10               66                 6         6               0
+     11               12                 4         4               0
+     12                1                 1         1               0
+   -> resolution is an exact indicator of 'contains the loop'; no intermediate value exists.
+      W-57 IS T2 PLUS THE STATE CHOICE, not an independent obstruction.
+
+W-59  DEPENDENCY (b): ARE W-55 AND W-58 THE SAME FACT?
+   both need eigenvalues to MATCH; a generic perturbation should destroy both together.
+     lambda  kernel dim of constraint  spectral matches  sumset resid of H_tot
+       0.00                         4                 4              3.022e-16
+       0.05                         1                 4              5.204e-02
+       0.15                         1                 4              4.568e-02
+       0.40                         1                 4              4.297e-02
+       0.80                         1                 4              4.680e-02
+
+   READING: if the kernel dies exactly when the spectra stop matching, and the sumset residual
+   rises with it, then W-55 and W-58 are one fact -- SPECTRAL COINCIDENCE IS NON-GENERIC --
+   and not two obstructions.

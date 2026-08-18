@@ -4349,3 +4349,56 @@ by Fourier duality.** The correct gate is whether the conditional **state** vari
 **A2 THEREFORE REMAINS THE ONE UNEXAMINED SURFACE ASSUMPTION.** It has now been *approached* rather
 than tested: the timeless framework is buildable, and the state-dependent-rate case — the only one
 where gravity could enter — needs a carrier large enough to keep a history alive under interaction.
+
+---
+
+## W-59 — **THE OBSTRUCTIONS COHERE. SIX REDUCE TO FOUR, AND THREE OF THE FOUR ARE NOT DYNAMICAL.**
+
+`LANE_W59_OBSTRUCTION_STRUCTURE/`, sealed. The principal: *"maybe these failures are a feature."*
+Every obstruction has the form **"X and Y cannot both be had"** — the shape physics takes when the
+content is real. If they are content rather than six accidents they should **cohere**. Decidable, so
+decided.
+
+**REDUCTION (a) — W-57 FOLLOWS FROM T2.** Across every subset size `|S| = 0…12`, resolution is an
+**exact indicator** of "contains the loop's support", with **zero partial values anywhere**. A
+gauge-invariant record is a closed loop (T2); the sectors are distinguished only by it; so a region
+resolves them iff it holds the whole loop. **W-57 is T2 plus the state choice, not an independent
+obstruction.**
+
+**REDUCTION (b) — W-55 AND W-58 ARE ONE FACT.**
+
+```
+   lambda   constraint kernel dim   sumset residual of H_tot
+     0.00                       4                  3.022e-16
+     0.05                       1                  5.204e-02
+     0.15                       1                  4.568e-02
+     0.40                       1                  4.297e-02
+```
+
+**The kernel collapse and the sumset failure occur together and discontinuously, at the same
+coupling.** W-55's "no factorisation" and W-58's "no global history" are both
+**SPECTRAL COINCIDENCE IS NON-GENERIC.** One fact, met twice.
+
+### THE STRUCTURE THAT REMAINS
+
+```
+   1  T1   a conserved quantity is conserved              DYNAMICAL -- and near-tautological
+   2  T2   gauge invariance forces closed loops           KINEMATIC      => implies W-57
+   3  T3   capacity = m - 1                               COMBINATORIAL  => implies eviction
+   4       spectral coincidence is non-generic            MEASURE-THEORETIC => W-55 and W-58
+```
+
+> **SIX OBSTRUCTIONS REDUCE TO FOUR, AND THREE OF THE FOUR ARE NOT DYNAMICAL AT ALL.** Only T1 is,
+> and it is close to a tautology about superselection.
+
+**THE HONEST READING, WHICH IS NEITHER THE DEFLATION NOR THE ELEVATION.** The obstructions **do**
+cohere — the principal's suspicion is confirmed — but **what they cohere into is structure, not
+dynamics.** Record formation in this account is fixed almost entirely by gauge kinematics, counting,
+and genericity. **And that is why gravity never entered: gravity would have to be dynamical, and
+there is almost no dynamical content in the picture at all.**
+
+**THE ONE SUBSTANTIVE MEMBER IS THE FOURTH.** *The structures records need — a factorisation, a global
+history — are NON-GENERIC.* They exist only for special Hamiltonians: sums of commuting local terms,
+spectra that match across many levels. **So "a world that has records" is a statement that its
+Hamiltonian is special, and the content of the whole account is in WHICH way it is special.** That is
+a sharper question than any this program has yet asked, and nothing here answers it.
