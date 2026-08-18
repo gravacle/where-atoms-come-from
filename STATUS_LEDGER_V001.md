@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | CANDIDATE | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 43 | 2 | 5 | 1 | 1 | 10 | 3 | 5 | 5 | 3 | 3 |
+| 46 | 2 | 5 | 1 | 1 | 9 | 3 | 5 | 5 | 3 | 3 |
 
-**81 rows.**
+**83 rows.**
 
 ---
 
@@ -30,6 +30,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **D-5** | AT THE RECORD LEVEL EM HAS NO LOCAL CONTENT. Field strength at a point, energy density, local flux, E(x) — none has a record-level referent. TELL: any sentence assigning EM a value or density AT A PLACE | **PROVED** | LANE_EM_EXTENT; Thm C 1.59e-16; d = L grows unbounded while record fraction 2/(L^2+1) -> 0 | — | a local operator that reads the record |
 | **D-6** | THE ENSEMBLE INSTRUMENT IS BLIND TO RECORD FORMATION. <R> = Tr(R rho) is a fair-coin average — W-35 unravelled the same Lindbladian and found a definite record on 78.5% of runs, and both unravellings give the same rho(t). NEGATIVE verdicts from <R> are VOID without a single-run warrant. TELL: any exclusion warranted by an expectation value or a code-space entropy | **PROVED** | SURFACE_ASSUMPTION_AUDIT A4, uncleared since 11:28; six PROVED rows were built on it by 14:56 the same day | — | an ensemble average that distinguishes formed from unformed records |
 | **D-7** | A CAUGHT ASSUMPTION THAT LIVES ONLY IN PROSE WILL BE RE-MADE. A4 was named in SURFACE_ASSUMPTION_AUDIT and had no ledger row, so nothing checked it. EVERY uncleared assumption gets a row | **PROVED** | the mechanism by which finding 1 happened | — | — |
+| **D-8** | A CHECK THAT CANNOT FAIL IS NOT A CHECK. check(..., True), an assertion with no computed left-hand side, or a control returning the same value under every input, is decoration. Five such let an arithmetically impossible table through. TELL: a self-check whose expected value is a literal | **PROVED** | O-4 lane: 103 real checks + 5 tautologies out of a reported 108 | — | — |
 
 ## A. THE THREE ROLES — the charter's question
 
@@ -59,6 +60,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-10** | THEOREM O1-A: a record non-trivial on E_lambda exists IFF the compression P_lambda A P_lambda is a PROPER subalgebra of B(E_lambda) | **PROVED** | 6/6 against brute force; the P L P trap shows inspecting the eigenspace alone cannot decide it | — | a proper compression carrying no record |
 | **C-11** | THEOREM O1-B: an admissible U with U-dagger R U = -R exists IFF p = q IFF Tr R = 0. COROLLARY: in an ODD-dimensional Hilbert space Tr R is odd, so NO record is ever writable | **PROVED** | 10/10; positive control best-of-4000 random unitaries never below 2.000116 | — | an unbalanced R with a flipper |
 | **C-12** | THE REPAIRED CONVERSE: a record satisfying (i)-(iv) exists IFF the commutant of alg{I,H,L_k,L_k-dagger} contains a projection that is (H1) non-trivial on some eigenspace of H and (H2) trace-balanced | **PROVED** | 210/210 by exhaustive enumeration | — | a system meeting both hypotheses with no record |
+| **C-13** | P-3 CORRECTED: (iv)+(v) give NO ADMISSIBLE WRITER FITS INSIDE ONE CONTRACTIBLE REGION. The strong reading 'nothing local can write it' is FALSE, not merely unproven — clause (v') forbidding PRODUCTS of contractible operations is refuted by the program's own Theorem D | **PROVED** | LANE_O4_ADMISSIBLE + independent verification; min admissible writer weight 3 = d, a product of three individually inadmissible single-edge operators | — | an admissible writer inside one contractible region |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 
@@ -87,7 +89,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-1** | the converse of P-2: degeneracy gives (i)-(iii), not (ii) compatibility with {L_k} nor (iv) flippability | **FAILED** | the naive converse is FALSE — counterexamples for both gaps with controls; the REPAIRED converse is a theorem, 210/210 | — | — (decides theorem vs strong conjecture) |
 | **O-2** | symmetry degeneracy splits at first order — measured, not proved | **PROVED** | first-order splitting = non-vanishing of Phi(V) = PVP - (tr PVP/n)P, under stated hypotheses; slope = d on five codes | — | — |
 | **O-3** | exhaustiveness. Side-step: prove any first-order-split degeneracy cannot carry a noise-surviving record | **FAILED** | the registered side-step is REFUTED by two explicit counterexamples | — | — |
-| **O-4** | admissible in clause (iv) is undefined | **DEFINED** | admissible U := a unitary with [U,H] = 0 | — | — |
+| **O-4** | admissible in clause (iv) is undefined | **DEFINED** | PROVISIONAL — one carrier family, and DEF-A has NO working fallback (the registered DEF-A' escape was a miscount) | — | — |
 | **O-5** | clause (ii) is exact; real records are approximate | **PROVED** | clause (ii) relaxes as a spectral WIDTH bound on the dressed record; tolerance = inverse lifetime T(eta) >= eta/delta | — | — |
 | **O-6** | is our 1-form symmetry emergent or exact? | **FAILED** | tested: EXACT, 0.000e+00 broken at every epsilon | — | — (Harlow-Ooguri tension is LIVE; see X-5) |
 | **O-7** | COVERAGE GAP: the fracton / no-string-logical-operator region was never swept (agent died on an API error). Haah's cubic code, X-cube, checkerboard, Chamon untested against R1-R3 | **FAILED** | swept: fractons widen NOTHING — X-cube, checkerboard and Haah's cubic code are all length-2 F_2 chain complexes | — | — |
@@ -95,7 +97,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-9** | WHAT SUPPLIES A NON-LOCAL, NON-EQUILIBRIUM COUPLING? A bath coupling of weight >= d is itself a non-local process. The formation problem has MOVED here, not closed | **OPEN** | created by F-13 | — | — |
 | **O-10** | THE THRESHOLD=d SCALING IS UNTESTED. F-11 measured it at d=2 only; 3x3 needs dim 262144 | **PROVED** | threshold = d on six codes at d = 1,2,3 incl. non-CSS and degenerate; now PROVED for every stabiliser code and every coupling | — | — |
 | **O-11** | F-13 MAY CONTRADICT ITSELF. A strong-coupling bath relaxes to the MEAN-FORCE Gibbs state Tr_B[e^{-beta H_tot}]/Z, which depends on the COUPLING operators; at weight >= d — what clause (2) requires — that state is not degeneracy-blind, so it meets clause (1)'s falsifier while satisfying clause (2) | **OPEN** | import audit finding 4 | — | — |
-| **O-12** | UNDER THE TRIVIAL READING OF 'ADMISSIBLE' (any unitary) THE TORIC CODE FAILS THE PROGRAM'S OWN CLAUSE (v). The undefined word was load-bearing in clause (v), not clause (iv). P-3 survives but weakens to 'no admissible writer fits inside ONE contractible region' | **OPEN** | O-4 finding; the anchor needs amending | — | — |
+| **O-12** | UNDER THE TRIVIAL READING OF 'ADMISSIBLE' (any unitary) THE TORIC CODE FAILS THE PROGRAM'S OWN CLAUSE (v). The undefined word was load-bearing in clause (v), not clause (iv). P-3 survives but weakens to 'no admissible writer fits inside ONE contractible region' | **PROVED** | closed: 'admissible' inserted into clause (v); 0 admissible flippers against 1158 (L=3) and 2.815e15 (L=5) as positive control, independently reproduced | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 

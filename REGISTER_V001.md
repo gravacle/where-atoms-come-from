@@ -5683,3 +5683,46 @@ Knill–Laflamme condition** — slope `= d` confirmed on **five codes**.
 **Threshold `= d` on all six codes at `d = 1, 2, 3`, including a non-CSS and a degenerate code — and the
 equality is now PROVED for every stabiliser code and every coupling, not only Paulis.**
 **F-11/F-13 no longer rest on the single `d=2` carrier.**
+
+---
+
+## O-12 CLOSED — **CLAUSE (v) WAS FALSE OF OUR OWN CARRIER. THE WORD FIXES IT.**
+
+**AS PREVIOUSLY WRITTEN, clause (v) carried no admissibility restriction and was FALSE OF THE TORIC
+CODE.** A single-edge `X` on `(0,0,H)` satisfies `X†RX = −R` **exactly**.
+
+| | `L=3` | `L=5` |
+|---|---|---|
+| single-region Paulis that flip `R` (**positive control**) | **1158** | **2.815e15** |
+| **ADMISSIBLE** flippers, `[U,H]=0`, over certified-contractible regions | **0** (36 regions) | **0** (300 regions, to 24 edges) |
+
+Exact by `F₂` linear algebra, not sampling — both sets are subspaces, so the count is `0` or exactly
+half. **Independently reproduced by a second implementation** (brute-force symplectic enumeration over
+all `4^{|T|}` Paulis, no shared code): `1158` and `0`, min admissible weight **3 = d**.
+
+### P-3's STRONG READING IS NOT UNPROVEN. **IT IS FALSE.**
+
+Clause (v) quantifies over **single** regions, never **products**. A (v′) forbidding products would
+give *"nothing local can write it"* — **and (v′) is false by the program's own Theorem D**, which says
+`d` local terms **do** reach the record. **The gap cannot be closed by strengthening (v).**
+
+**The minimum-weight admissible writer at `L=3` is weight `3 = d`, and it is a PRODUCT of three
+single-edge operators each individually INADMISSIBLE (`‖[X_e,H]‖ = 45.255`). The record is written by
+an operation that is admissible only AS A WHOLE.** This is the same `d` as F-13's forming coupling.
+
+### DEFECTS IN THE LANE THAT PRODUCED THIS, CAUGHT BY THE VERIFIER
+
+1. **THE REGISTERED FALLBACK WAS A MISCOUNT.** DEF-A′'s published table is arithmetically impossible
+   in 3 of 7 rows — it reports **more** admissible unitaries than *all* unitaries. Corrected, DEF-A′
+   equals DEF-A except on one row, and it fails the very case its own docstring says it rescues.
+   **DEF-A has NO working escape hatch.** The row I registered was wrong.
+2. **5 OF THE 108 SELF-CHECKS WERE `check(..., True)` — LITERAL TAUTOLOGIES**, and one of them passed
+   the demonstrably wrong table above. **103 real checks, 5 that cannot fail.**
+3. My previous entry said the anchor was amended with the definition. **The patch matched nothing and
+   silently wrote the file unchanged.** The clauses are in a table; I matched against a plain-text
+   form that does not exist in the file. **Amended now, and verified by re-reading.**
+
+> ### **D-8. A CHECK THAT CANNOT FAIL IS NOT A CHECK.** `check(..., True)`, an assertion with no
+> ### computed left-hand side, or a control that returns the same value under every input, is
+> ### decoration. Here five of them let an arithmetically impossible table through.
+> ### **TELL: a self-check whose expected value is a literal.**
