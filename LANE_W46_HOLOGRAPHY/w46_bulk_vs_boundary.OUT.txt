@@ -1,0 +1,28 @@
+W-46  STORAGE vs LEGIBILITY.  region A = a rectangular block of plaquettes inside a lattice.
+    lattice  A (px,py)  |A| plaq  perim(A)  STORAGE cap  LEGIBLE from outside
+  --------------------------------------------------------------------------------
+        4x4        1x1         1         4            0                     1
+        5x5        1x1         1         4            0                     1
+        5x5        2x2         4         8            3                     3
+        6x6        2x2         4         8            3                     3
+        6x6        3x3         9        12            8                     5
+        7x7        3x3         9        12            8                     5
+        7x7        4x4        16        16           15                     7
+        8x8        4x4        16        16           15                     7
+
+  READING THE TWO SCALINGS
+    |A|  perim  storage  legible  storage/|A|  legible/perim
+      1      4        0        1        0.000          0.250
+      1      4        0        1        0.000          0.250
+      4      8        3        3        0.750          0.375
+      4      8        3        3        0.750          0.375
+      9     12        8        5        0.889          0.417
+      9     12        8        5        0.889          0.417
+     16     16       15        7        0.938          0.438
+     16     16       15        7        0.938          0.438
+
+  If STORAGE tracks |A| (bulk) and LEGIBLE tracks perimeter, then holography is a statement
+  about what escapes the region, not about what fits in it -- and BOTH the principal's point 4
+  and W-42's volume law are correct about different quantities.
+  If LEGIBLE is a constant independent of size, neither scaling holds and the region is
+  externally almost mute, which is a different and stronger claim.

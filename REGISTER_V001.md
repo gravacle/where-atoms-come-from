@@ -3332,3 +3332,51 @@ resolved by **eviction**. So the dichotomy is sharp and it is ours, not borrowed
 
 > **EITHER THE CARRIER GROWS, OR RECORDS ARE EVICTED. Both are measurable, and only one of them
 > looks like an expanding arena.**
+
+---
+
+## W-46 — **STORAGE IS A VOLUME LAW. LEGIBILITY IS A BOUNDARY LAW. BOTH READINGS WERE RIGHT.**
+
+`LANE_W46_HOLOGRAPHY/`, sealed. The principal proposed that gravity and capacity converge exactly at
+the Bekenstein/holographic bound. W-42 had measured `capacity = area - 1`, a **volume** law, and the
+registrar recorded that as a disagreement. **It was not a disagreement. Two different quantities had
+been run together.**
+
+- **STORAGE** — how many independent records a region can HOLD.
+- **LEGIBILITY** — how many an observer confined OUTSIDE the region can DISTINGUISH.
+
+**Holography is a claim about what escapes, not about what fits.** Measured, for an `n x n` block of
+plaquettes:
+
+```
+   |A|  perimeter  STORAGE  LEGIBLE   storage/|A|   legible/perimeter
+     1        4        0        1         0.000            0.250
+     4        8        3        3         0.750            0.375
+     9       12        8        5         0.889            0.417
+    16       16       15        7         0.938            0.438
+```
+
+> **STORAGE = |A| - 1 = n² - 1 — the BULK.**
+> **LEGIBILITY = 2n - 1 = perimeter/2 - 1 — the BOUNDARY.**
+
+`storage/|A| -> 1` while `legible/perimeter -> 1/2`. **Storage scales with area, legibility with
+perimeter, on the same regions in the same measurement.**
+
+### WHAT THIS SETTLES
+
+> **A REGION CAN HOLD MORE THAN IT CAN EVER TELL YOU, AND THE GAP GROWS WITH ITS SIZE.** At `n=4`,
+> `15` records are storable and `7` are externally distinguishable. The ratio diverges as `n`.
+
+**AND IT IS THE SAME FACT THIS PROGRAM KEPT MEASURING FROM OTHER DIRECTIONS.** W-36: a gauge record
+has no redundancy in a local environment (`0.047`). W-43b: `0.047` against `0.999` for a local
+observable, identical conditions. W-37: reading requires transport around a CLOSED path, and cutting
+the ring gives exactly `0.000000`. **All four are the boundary law seen from different sides.**
+
+**THE CORRECTION IS THE REGISTRAR'S.** W-42 stated "capacity tracks area, not perimeter — this is
+NOT a holographic count" and warned against conflating two area laws. **That warning was right about
+STORAGE and wrong to close the question**, because the holographic claim was never about storage.
+
+**FORCED-OR-NOT, STATED PLAINLY.** This is a rank computation, so it IS a counting fact: only the
+boundary layer of `A` pairs with anything outside, so the rank is the perimeter's. **That is not a
+defect — it is the mechanism.** Holography here is the statement that *the outside touches only the
+edge*, and the arithmetic says so exactly.
