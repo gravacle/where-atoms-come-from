@@ -1,0 +1,25 @@
+PHASE B / B2.  T3 OVER GF(p): does the field's characteristic matter?
+                     complex   p   m  predicted m-1  measured
+  --------------------------------------------------------------
+    3x3 patch (4 plaquettes)   2   4              3         3
+    3x3 patch (4 plaquettes)   3   4              3         3
+    3x3 patch (4 plaquettes)   5   4              3         3
+        3 triangles, 6 links   2   3              2         2
+        3 triangles, 6 links   3   3              2         2
+        3 triangles, 6 links   5   3              2         2
+
+PHASE B / B3.  T3 IN THREE DIMENSIONS: regions are CUBES, boundaries are FACES.
+                     complex   p   m  faces  predicted m-1  measured
+  ------------------------------------------------------------------------
+                 2x1x1 cubes   2   2     11              1         1
+                 2x1x1 cubes   3   2     11              1         1
+                 2x2x1 cubes   2   4     20              3         3
+                 2x2x1 cubes   3   4     20              3         3
+                 2x2x2 cubes   2   8     36              7         7
+                 2x2x2 cubes   3   8     36              7         7
+
+  WHERE THE PROOF STOPS, ASSESSED NOT TESTED:
+    T3 needs the boundary map to be LINEAR over a field, which needs an ABELIAN group.
+    For a non-abelian group the holonomy of a region depends on ORDERING and BASE POINT,
+    so 'the product of the plaquettes' is not a linear function of the region and the
+    kernel argument does not apply. WHETHER AN ANALOGUE HOLDS IS UNTESTED AND OPEN.

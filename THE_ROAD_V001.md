@@ -27,9 +27,9 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | 14 | **gravity's role** | **PARTIAL** | W-45/44/49 | capacity passes all 4 functional markers; EM's charge fails all 4. W-49 gives it dynamics: the carrier's equilibrium size is set by its content. W-44: installing a classical metric three ways changed nothing — the functional route is the live one |
 | 15 | **THE COMBINATION — how all three fit together** | **PARTIAL** | W-47/48 | form confirmed (130× monotone collapse); constant off ~4×. **W-48: the decoherence half is textbook `exp(-ΓT)`; the power law was an artifact of maximising over time** |
 | 16 | make capacity dynamical — does the carrier grow, or only evict? | **DONE** | W-49 | **it grows.** `<N>` = 0.012 vs 0.853 on one bit of content; control exactly `1.9e-16`. Needed a THERMAL bath — every prior bath in the program was infinite-temperature |
-| 17 | does any of it survive off the toy | **OPEN** | — | one gauge group, one lattice, ≤16 physical dimensions |
+| 17 | does any of it survive off the toy | **PARTLY DONE** | Phase A/B | T1 general (any GKSL, arbitrary jumps, and no Markov assumption needed at all); T2 group-independent; T3 field- and dimension-independent but **abelian-specific**. The carrier itself is still imported |
 | 18 | **empirical contact — any published data at all** | **OPEN** | — | **ZERO. Not one number in this program came from a measurement.** The paper's package carries 28 source registries (COW, GAB 2022, Panda 2024, Rosi/Jaffe, C70, AION); this program has never touched them |
-| 19 | is the novel half testable — storage vs legibility | **OPEN** | — | W-48: the decoherence half is standard, so novelty (if any) is on the capacity side, whose corpus is topological codes, not interferometry |
+| 19 | is the novel half testable — storage vs legibility | **CLOSED, NEGATIVE** | Phase C | **legibility = the locality bound in 13 of 13 shapes.** The split is microcausality in gauge language. No distinguishing prediction; Phase D unreachable |
 
 ## WITHDRAWN CLAIMS (kept so they are not re-made)
 

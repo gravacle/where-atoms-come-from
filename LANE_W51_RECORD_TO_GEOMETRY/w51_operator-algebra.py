@@ -172,7 +172,7 @@ def measure_rates(C, g2, regions, gam=GAM, t1=0.02, t2=0.12, nstep=None):
     W0 = Ob.copy()
     nrm = np.einsum('bij,bij->b', W0.conj(), W0).real
     dt = t2 / nstep
-    n1 = int(round(t1 / dt))
+    n1 = int(round(t1 / dt)); t1 = n1 * dt      # the ACTUAL grid time, not the nominal one
     f1 = None
     for n in range(nstep):
         if n == n1:
@@ -350,7 +350,7 @@ def measure_full(Hf, Cfull, regs):
         k1 = dv(Ob); k2 = dv(Ob + 0.5 * dt * k1); k3 = dv(Ob + 0.5 * dt * k2); k4 = dv(Ob + dt * k3)
         Ob = Ob + (dt / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
     f2 = np.einsum('bij,bij->b', W0.conj(), Ob).real / nrm
-    return -(np.log(np.abs(f2)) - np.log(np.abs(f1))) / (t2 - 0.02)
+    return -(np.log(np.abs(f2)) - np.log(np.abs(f1))) / (t2 - n1 * dt)
 rf = measure_full(Hf, Cfull, regions_f)
 nl4, PL4 = CARRIERS['BLOCK4']
 C4 = build_reduced(4, nl4, PL4)
@@ -567,7 +567,10 @@ print("\n[7]  THE COUPLING SCAN.  g2 turns on the electric term, which does NOT 
 print("     records, so the decay stops being a pure exponential and the extracted rate is")
 print("     contaminated.  Numbers as they come; nothing is fitted.")
 print(f"\n  {'g2':>8s} {'BLOCK5 fid':>11s} {'RING5 fid':>10s} {'CHAIN5 fid':>11s} "
-      f"{'min Ghat adj':>13s} {'max Ghat non-adj':>17s} {'sign flags':>11s}")
+      f"{'min Ghat adj':>13s} {'max Ghat non-adj':>17s} {'B5 edges out':>11s} {'sign flags':>11s}")
+print(f"  (BLOCK5 has 5 true dual edges out of 10 pairs; 'B5 edges out' is how many the")
+print(f"   reconstruction returns at that coupling)")
+ncall = 0
 g2list = [0.0, 0.001, 0.01, 0.05, 0.1, 0.3, 1.0, 3.0]
 scan_rows = []
 for g2 in g2list:
@@ -577,10 +580,22 @@ for g2 in g2list:
         nl, pl = CARRIERS[nm]; At = true_adj(nl, pl)
         Ah, Gh, fl = run_route2(nm, 5, nl, pl, g2)
         fids[nm] = fidelity(Ah, At); fl_tot += fl
-        if nm == 'BLOCK5': lo, hi = gapstat(Gh, At)
-    scan_rows.append((g2, fids['BLOCK5'], fids['RING5'], fids['CHAIN5'], lo, hi))
+        if nm == 'BLOCK5':
+            lo, hi = gapstat(Gh, At); ncall = len(edge_list(Ah))
+    scan_rows.append((g2, fids['BLOCK5'], fids['RING5'], fids['CHAIN5'], lo, hi, ncall))
     print(f"  {g2:8.3f} {fids['BLOCK5']:11.3f} {fids['RING5']:10.3f} {fids['CHAIN5']:11.3f} "
-          f"{lo:13.4f} {hi:17.4f} {fl_tot:11d}")
+          f"{lo:13.4f} {hi:17.4f} {ncall:11d} {fl_tot:11d}")
+
+sep = [g for g, b, r, c, l, h, n in scan_rows if h < 0.5 <= l]
+print(f"\n  the 0/1 separation survives (max Ghat on non-adjacent pairs below the 0.5 threshold AND")
+print(f"  min Ghat on adjacent pairs above it) for g2 in {sep}")
+ctrl_all = fidelity(allone, At5)
+for g, b, r, c, l, h, n in scan_rows:
+    if h < 0.5 <= l: continue
+    print(f"  at g2={g}: non-adjacent pairs reach Ghat {h:.4f}, above the 0.5 threshold. The")
+    print(f"     reconstruction returns {n} of 10 pairs as edges against 5 true edges; BLOCK5")
+    print(f"     fidelity {b:.3f}, all-pairs-adjacent control {ctrl_all:.3f}, random-graph control")
+    print(f"     {np.mean(rand_f):.3f}. The separation is gone; what remains is not scored as signal.")
 
 # ----------------------------------------------------------------------------------------------
 print("\n[8]  ROUTE 3 -- THE LINK-RESOLVED BATH.  REPORTED AS CIRCULAR, NOT AS A RESULT.")
@@ -635,7 +650,7 @@ print(f"           random-graph control                             {np.mean(ran
 print(f"           second geometry RING5 vs BLOCK5                  separated; degree sequences "
       f"{degseq(recon_duals['RING5'])} vs {degseq(recon_duals['BLOCK5'])}")
 print(f"  ROUTE 3  link-resolved bath                               CIRCULAR (input is the incidence matrix)")
-print(f"\n  g2 scan (BLOCK5): " + "  ".join(f"{g:.3g}:{f:.2f}" for g, f, _, _, _, _ in scan_rows))
+print(f"\n  g2 scan (BLOCK5): " + "  ".join(f"{g:.3g}:{f:.2f}" for g, f, _, _, _, _, _ in scan_rows))
 print("""
   THE HONEST READING.  Adjacency is NOT in the record algebra -- Route 1 is a forced null and that
   is the lens's real answer.  It IS recoverable once one uniform environment is present, from

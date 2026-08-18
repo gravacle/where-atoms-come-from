@@ -25,14 +25,14 @@ W-51  RECORD -> GEOMETRY.  LENS: THE OPERATOR ALGEBRA ITSELF.
 [1]  VALIDATION OF THE MACHINERY (three independent checks, before any claim).
   (a) reduced region-space model  vs  full Gauss-law model (2x2 patch, g2=0.05, gamma=0.5)
           region   full Gauss law      reduced     |diff|
-            (0,)     4.0123370960 4.0123370960   5.24e-14
-            (1,)     4.0123370960 4.0123370960   5.51e-14
-          (0, 1)     6.0213253859 6.0213253859   9.33e-14
-          (0, 3)     8.0246366112 8.0246366112   1.46e-13
+            (0,)     4.0163534494 4.0163534494   5.33e-14
+            (1,)     4.0163534494 4.0163534494   5.51e-14
+          (0, 1)     6.0273527387 6.0273527387   9.33e-14
+          (0, 3)     8.0326692805 8.0326692805   1.46e-13
       max discrepancy 1.46e-13  -> the reduced carrier IS the W-33/W-41 carrier
   (b) Liouville dim 1024.  ||Mheis - Msch^dag|| = 0.00e+00   (row-major convention, W-33 erratum)
       ||RK4(t) - expm_ss(t*M)|| = 2.48e-13   at t=0.12
-  (c) measured rate vs 2*gamma*|bdy| at g2=0, all 15 records: max |diff| = 8.00e-03
+  (c) measured rate vs 2*gamma*|bdy| at g2=0, all 15 records: max |diff| = 2.37e-12
 
 [2]  OPERATORS MUST EARN MEASUREMENT.  Record operators on BLOCK5, before any commutator.
             record S      ||O||  ||O^dag O - I||  distinct eigs
@@ -73,22 +73,22 @@ W-51  RECORD -> GEOMETRY.  LENS: THE OPERATOR ALGEBRA ITSELF.
   relabels the output and nothing else.  There is ONE bath and it is uniform: no link is selected,
   named, or resolved at any point.  n_p + C(n_p,2) real numbers go in; the dual graph comes out.
 
-  BLOCK5:  fidelity 1.000   max |Ghat-Gtrue| over pairs 1.00e-03
+  BLOCK5:  fidelity 1.000   max |Ghat-Gtrue| over pairs 1.06e-12
         reconstructed edges [(0, 1), (0, 2), (1, 3), (2, 3), (2, 4)]
         true          edges [(0, 1), (0, 2), (1, 3), (2, 3), (2, 4)]
         reconstructed degree sequence [1, 2, 2, 2, 3]   true [1, 2, 2, 2, 3]
 
-  CHAIN5:  fidelity 1.000   max |Ghat-Gtrue| over pairs 1.00e-03
+  CHAIN5:  fidelity 1.000   max |Ghat-Gtrue| over pairs 1.06e-12
         reconstructed edges [(0, 1), (1, 2), (2, 3), (3, 4)]
         true          edges [(0, 1), (1, 2), (2, 3), (3, 4)]
         reconstructed degree sequence [1, 1, 2, 2, 2]   true [1, 1, 2, 2, 2]
 
-  RING5:  fidelity 1.000   max |Ghat-Gtrue| over pairs 1.00e-03
+  RING5:  fidelity 1.000   max |Ghat-Gtrue| over pairs 1.06e-12
         reconstructed edges [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
         true          edges [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
         reconstructed degree sequence [2, 2, 2, 2, 2]   true [2, 2, 2, 2, 2]
 
-  SEPARATION on BLOCK5 at g2=0: min Ghat over adjacent pairs 0.999000, max Ghat over non-adjacent pairs 1.05e-12, threshold 0.5
+  SEPARATION on BLOCK5 at g2=0: min Ghat over adjacent pairs 1.000000, max Ghat over non-adjacent pairs 1.06e-12, threshold 0.5
 
 [5]  THE SHUFFLE CONTROL.  Degree-preserving permutation of which links belong to which
      plaquettes.  Scored TWO ways, because the two ways answer different questions.
@@ -130,3 +130,71 @@ W-51  RECORD -> GEOMETRY.  LENS: THE OPERATOR ALGEBRA ITSELF.
   Larger carriers, n_p=8 (Hilbert 256; no Liouville matrix is ever formed at this size).
    carrier  n_p  n_links  true edges  recon edges    fid
     BLOCK8    8       22          10           10  1.000
+    CHAIN8    8       25           7            7  1.000
+     RING8    8       24           8            8  1.000
+
+  Shuffle control at n_p=8 (4 shuffles of BLOCK8):
+    vs ORIGINAL 0.509 +- 0.069    vs OWN truth 1.000 +- 0.000   (28 pairs)
+
+[7]  THE COUPLING SCAN.  g2 turns on the electric term, which does NOT commute with the
+     records, so the decay stops being a pure exponential and the extracted rate is
+     contaminated.  Numbers as they come; nothing is fitted.
+
+        g2  BLOCK5 fid  RING5 fid  CHAIN5 fid  min Ghat adj  max Ghat non-adj B5 edges out  sign flags
+  (BLOCK5 has 5 true dual edges out of 10 pairs; 'B5 edges out' is how many the
+   reconstruction returns at that coupling)
+     0.000       1.000      1.000       1.000        1.0000            0.0000           5           0
+     0.001       1.000      1.000       1.000        1.0000            0.0000           5           0
+     0.010       1.000      1.000       1.000        1.0001            0.0000           5           0
+     0.050       1.000      1.000       1.000        1.0027            0.0000           5           0
+     0.100       1.000      1.000       1.000        1.0107            0.0002           5           0
+     0.300       1.000      1.000       1.000        1.0964            0.0195           5           0
+     1.000       0.600      0.500       0.700        1.9831            5.9530           9           0
+     3.000       0.500      0.500       0.700       13.3728           46.3121          10          11
+
+  the 0/1 separation survives (max Ghat on non-adjacent pairs below the 0.5 threshold AND
+  min Ghat on adjacent pairs above it) for g2 in [0.0, 0.001, 0.01, 0.05, 0.1, 0.3]
+  at g2=1.0: non-adjacent pairs reach Ghat 5.9530, above the 0.5 threshold. The
+     reconstruction returns 9 of 10 pairs as edges against 5 true edges; BLOCK5
+     fidelity 0.600, all-pairs-adjacent control 0.500, random-graph control
+     0.500. The separation is gone; what remains is not scored as signal.
+  at g2=3.0: non-adjacent pairs reach Ghat 46.3121, above the 0.5 threshold. The
+     reconstruction returns 10 of 10 pairs as edges against 5 true edges; BLOCK5
+     fidelity 0.500, all-pairs-adjacent control 0.500, random-graph control
+     0.500. The separation is gone; what remains is not scored as signal.
+
+[8]  ROUTE 3 -- THE LINK-RESOLVED BATH.  REPORTED AS CIRCULAR, NOT AS A RESULT.
+
+  Put the bath on one link at a time.  W-41's law says rate(W_S) = 2*gamma*|bath INTERSECT bdy(S)|,
+  so with a single-link bath the measured rate is 2*gamma times the INCIDENCE MATRIX ENTRY [k in
+  bdy(p)].  The channels are never named -- and it does not help.  Thresholding those rates
+  RECONSTRUCTS THE INCIDENCE MATRIX ITSELF, from which adjacency follows by M^T M.  That is not a
+  reconstruction of geometry from records; it is the incidence structure read out through a
+  dynamical proxy.  It is exactly the failure mode the lens named, and it is scored as a null.
+  BLOCK5: fidelity vs own truth 1.000   on a shuffle, fidelity vs the shuffle's own truth 1.000
+  RING5: fidelity vs own truth 1.000   on a shuffle, fidelity vs the shuffle's own truth 1.000
+  Both are 1.000 by construction.  CIRCULAR -- the input already is the incidence structure.
+
+====================================================================================================
+SUMMARY
+====================================================================================================
+  ROUTE 1  record algebra alone (commutators/products)      NULL   (all commutators 0; identical Z_2^5 table on block, chain and ring)
+  ROUTE 2  records + ONE uniform unlabelled bath            fidelity 1.000 on the true carrier
+           shuffles, scored vs ORIGINAL adjacency           0.463 +- 0.141   (collapses, as required)
+           shuffles, scored vs the SHUFFLE'S own adjacency  1.000 +- 0.000   (tracks the carrier it is run on)
+           random-graph control                             0.500
+           second geometry RING5 vs BLOCK5                  separated; degree sequences [2, 2, 2, 2, 2] vs [1, 2, 2, 2, 3]
+  ROUTE 3  link-resolved bath                               CIRCULAR (input is the incidence matrix)
+
+  g2 scan (BLOCK5): 0:1.00  0.001:1.00  0.01:1.00  0.05:1.00  0.1:1.00  0.3:1.00  1:0.60  3:0.50
+
+  THE HONEST READING.  Adjacency is NOT in the record algebra -- Route 1 is a forced null and that
+  is the lens's real answer.  It IS recoverable once one uniform environment is present, from
+  n_p + C(n_p,2) label-free scalars, exactly and without fitting.  But the recovery is an identity,
+  not an inference: the pair-region decay rates ARE the Gram matrix of the record boundaries up to
+  an affine map, and 'plaquettes share a link' is by definition Gram > 0.  So the correct claim is
+  the weaker and more useful one -- the dual graph is a FUNCTION of quantities that carry no link
+  labels -- and not the stronger one that geometry was inferred from something that did not already
+  determine it.  What the shuffle control establishes is that those scalars are not fixed by the
+  carrier's counts: the same counts give different rates and the method follows the carrier, not
+  the bookkeeping.

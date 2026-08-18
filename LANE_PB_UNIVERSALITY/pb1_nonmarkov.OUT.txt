@@ -1,0 +1,16 @@
+PHASE B / B1.  T1 UNDER AN EXPLICIT FINITE ENVIRONMENT -- no Markov approximation anywhere.
+  The environment is finite, so it RECURS and has MEMORY. Coupling is strong (3.0).
+
+                                case  ||[H_tot, R(x)I]||   <R> drift over t=0..40
+  ----------------------------------------------------------------------------------
+      DS=3 DE=4  all hypotheses hold           9.456e-15                9.914e-14
+      DS=4 DE=6  all hypotheses hold           3.980e-14                6.635e-13
+      DS=5 DE=8  all hypotheses hold           3.771e-14                4.023e-14
+
+  DROP EACH HYPOTHESIS -- each must break conservation.
+                    all hold   ||[H_tot,R]|| = 2.816e-14   drift = 1.041e-13
+              [H_sys,R] != 0   ||[H_tot,R]|| = 1.206e+01   drift = 2.229e-02
+         [H_int, R(x)I] != 0   ||[H_tot,R]|| = 1.833e+02   drift = 1.981e-02
+
+  READING: T1 needs no Markov approximation, no weak coupling and no memorylessness.
+  It is a CONSERVATION statement, and GKSL was never required to obtain it.

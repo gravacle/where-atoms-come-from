@@ -3826,3 +3826,74 @@ general; the formula is not.
 **PHASE A CLOSES AT THREE THEOREMS AND ONE CHARACTERISATION.** T1 (any GKSL generator, arbitrary
 jumps, `R` normal), T2 (gauge theory), T3 (arbitrary complexes) are proved. T4 has an exact
 mechanism and a shape-dependent coefficient.
+
+---
+
+## PHASE B — **UNIVERSALITY: T1 AND T2 ARE GENERAL. T3 IS ABELIAN-SPECIFIC BY PROOF.**
+
+`LANE_PB_UNIVERSALITY/`, sealed.
+
+**B1 — T1 needs no Markov approximation at all.** Modelling system **and** environment explicitly and
+unitarily: if `R` acts on the system, `[H_sys,R]=0` and `[H_int, R⊗I]=0`, then `R⊗I` commutes with the
+full `H_tot`, since `H_env` acts on the other factor. **`⟨R⟩` is then exactly conserved with no weak
+coupling, no memorylessness and no bath spectral assumption.** Verified with an explicit **finite**
+environment (so it recurs and has memory) at strong coupling `3.0`: drift `≤ 6.6e-13` over `t = 0…40`
+at `D_S×D_E` up to `5×8`; each hypothesis dropped breaks it. **GKSL was never required — T1 is a
+conservation statement.**
+
+**B2/B3 — T3 is field- and dimension-independent.** `capacity = m−1` verified over **GF(2), GF(3),
+GF(5)** on plaquette and triangle complexes, and in **three dimensions** with regions as cubes and
+boundaries as faces (`2×1×1`, `2×2×1`, `2×2×2`). The proof used only linearity of the boundary map
+over a field, and neither the characteristic nor the dimension appears.
+
+**WHERE T3 STOPS, ASSESSED NOT TESTED.** It needs an **abelian** group: a non-abelian holonomy depends
+on ordering and base point, so "the product of the plaquettes" is not a linear function of the region
+and the kernel argument fails. **Untested and open.** **T2 is group-independent** — its proof
+(`W → g_a W g_b⁻¹`) holds for any `G`.
+
+---
+
+## PHASE C — **NO DISTINGUISHING PREDICTION. THE SURVIVING CANDIDATE IS LOCALITY.**
+
+`LANE_PC_PREDICTION/`, sealed. W-48 had already killed the decoherence half of the composed law by
+showing the un-optimised signal is `exp(−ΓT)`. **The one surviving candidate was the
+storage/legibility split.** The plan's obligation was to establish it predicts something the existing
+account does not, **before** touching data.
+
+**The deflation to rule out: an operator supported strictly inside a region commutes with everything
+outside it. That is microcausality.** So: is legibility exactly the number of independent records
+whose support touches the region's boundary?
+
+```
+   shape              |A|   legibility   locality bound   differ?
+   square 3x3           9            8                8
+   square 4x4          16           12               12
+   rect 3x4            12           10               10
+   plus pentomino       5            4                4
+   3x3 minus centre     8            8                8
+   ... 13 shapes tested, differences observed: [0]
+```
+
+> **LEGIBILITY IS THE LOCALITY BOUND IN EVERY CASE. THE STORAGE/LEGIBILITY SPLIT IS MICROCAUSALITY
+> EXPRESSED IN GAUGE-THEORETIC LANGUAGE.** It predicts nothing the existing account lacks, and it is
+> **not** taken to data.
+
+### WHAT THIS MEANS FOR THE PROGRAM, STATED WITHOUT SOFTENING
+
+**Phase D is not reachable.** It was contingent on C producing a prediction that could fail, and C
+produced none.
+
+**Every component of the account now reduces to known physics.** The decoherence half is `exp(−ΓT)`
+(W-48). The capacity half is locality (C1). Single-run versus ensemble is unravelling-dependence,
+standard. W-49's carrier response is Boltzmann. W-52's spatial structure is the electric term coupling
+plaquettes that share a link.
+
+> **THE PROGRAM HAS PRODUCED A CORRECT, INTERNALLY VERIFIED, THEOREM-BACKED ACCOUNT OF RECORD
+> FORMATION IN LATTICE GAUGE THEORY THAT IS ENTIRELY COMPOSED OF KNOWN PHYSICS. There is no novel
+> prediction in it.** That is the ending `PLAN_TO_PROOF_V001.md` named in advance as possible, and it
+> is the one that occurred.
+
+**AND THE REASON IS STRUCTURAL, NOT ACCIDENTAL.** The only slot that was ever empty is **gravity**,
+and three independent routes to it failed — dynamical topology (refuted 3/3), a classical metric
+(three builds, bought nothing), and the functional identification (forced by counting). **An account
+built from EM and a coupling alone can only reproduce what EM and a coupling already explain.**

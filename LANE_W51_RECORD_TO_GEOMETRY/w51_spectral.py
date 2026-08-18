@@ -601,7 +601,8 @@ print("\n    CROSS-GRADING inside each count-matched pair (reconstruct one, grad
 for a, b in [("STRIP_1x4", "STAR_K1,3"), ("PATH_1x5", "PLUS_5"), ("PATH_1x5", "RING_C5"),
              ("PLUS_5", "RING_C5")]:
     Sa, Aa, Ta = geo[a]; Sb, Ab, Tb2 = geo[b]
-    ov = float((dual_of(Ta) == dual_of(Tb2)).mean())
+    Da, Db = dual_of(Ta), dual_of(Tb2)
+    ov = float(np.mean([Da[i, j] == Db[i, j] for i, j in pairs_of(Da.shape[0])]))
     print(f"      {a:<10s} vs {b:<10s}: F = {grade(Sa, Aa, Tb2)['F']:.3f} and "
           f"{grade(Sb, Ab, Ta)['F']:.3f}   (the two TRUE graphs already agree on {ov:.3f} of pairs)")
 print("      Read the cross-grades against that last column, not against zero: a path and a cycle")
@@ -657,16 +658,21 @@ print(f"      dissipative rates themselves.  Short-probe fidelity, minimum over 
 print(f"      this table: {min(allshort):.3f}.")
 print()
 print("      the same scan on the five-plaquette carriers (fewer points, they cost 4x):")
-print(f"      {'g^2':>6s}  " + "  ".join(f"{c.name:>22s}" for c in CARRIERS5))
+print(f"      {'g^2':>6s}  " + "  ".join(f"{c.name+'  F exact corr | F(t=.05)':>32s}" for c in CARRIERS5))
 scan5 = {c.name: [] for c in CARRIERS5}
+short5 = {c.name: [] for c in CARRIERS5}
 for g2 in [0.0, 0.02, 0.1, 0.5]:
     cells = []
     for c in CARRIERS5:
         _, _, S_g, A_g, _, m_g = run(c, g2, designed_baths(c.L))
         g = grade(S_g, A_g, truth(c, m_g))
         scan5[c.name].append((g2, g['F'], g['exact'], g['r']))
-        cells.append(f"{g['F']:5.3f} {g['exact']:6.3f} {g['r']:9.4f}")
-    print(f"      {g2:6.3f}  " + "  ".join(f"{x:>22s}" for x in cells))
+        _, _, S_s, A_s, _, m_s = run(c, g2, designed_baths(c.L), t=0.05)
+        Fs = grade(S_s, A_s, truth(c, m_s))['F']
+        short5[c.name].append((g2, Fs))
+        cells.append(f"{g['F']:5.3f} {g['exact']:5.3f} {g['r']:8.4f} | {Fs:6.3f}")
+    print(f"      {g2:6.3f}  " + "  ".join(f"{x:>32s}" for x in cells))
+allshort += [f for nm in short5 for _, f in short5[nm]]
 
 # ==================================================================================
 # 8.  CONTROLS ON THE INPUT ITSELF
@@ -732,8 +738,9 @@ for nm in [c.name for c in CARRIERS5]:
           + " ".join(f"{g:g}:{f:.2f}" for g, f, _, _ in scan5[nm]))
 worstg = min([(f, g, nm) for nm in scan for g, f, _, _ in scan[nm]]
              + [(f, g, nm) for nm in scan5 for g, f, _, _ in scan5[nm]])
-print(f"    worst point anywhere in the coupling scan              : F={worstg[0]:.3f} "
+print(f"    worst point anywhere in the coupling scan (t={TPROBE})     : F={worstg[0]:.3f} "
       f"at g^2={worstg[1]:g} on {worstg[2]}")
+print(f"    worst point in the same scan at a short probe (t=0.05) : F={min(allshort):.3f}")
 print(f"    within-row-shuffled input                              : {gr['F']:.3f}")
 print(f"    undesigned random baths, K=1024                        : {kcurve[-1][1]:.3f}")
 ok_true = gd['F'] > 0.999
@@ -747,11 +754,13 @@ if ok_true and ok_cross and ok_self and ok_geo:
     print("    returns THEIR graph and not the true one, so it is tracking the incidence rather than")
     print("    the marginals.  On this carrier class the adjacency is NOT an independent input: it is")
     print("    a measurable of the record dynamics, fixed by which records decay together.")
-    print(f"    WHERE IT STOPS: the verdict is scoped to the regime the scan says it holds in.  The")
-    print(f"    weakest point measured anywhere in the coupling scan is F={worstg[0]:.3f} at g^2={worstg[1]:g} on")
-    print(f"    {worstg[2]}; at strong electric coupling the record precesses and the decay rate is no")
-    print("    longer a channel count, so the estimator loses its footing in a band and is not")
-    print("    monotone in g^2.  That is reported, not smoothed.")
+    print(f"    WHERE IT STOPS.  At the probe time t={TPROBE} the fidelity is 1.000 out to g^2 = 0.3 and then")
+    print(f"    breaks up in a band, worst point F={worstg[0]:.3f} at g^2={worstg[1]:g} on {worstg[2]}, before returning")
+    print("    at larger g^2.  It is not monotone.  The diagnostic in section 7 locates every one of")
+    print("    those points where the coherent leakage has grown to the size of the dissipative rates,")
+    print(f"    and at t=0.05 the same scan never drops below F={min(allshort):.3f}.  So the band is a limit of the")
+    print("    two-point probe, not of the carrier -- but the counting law is exact at t -> 0 by")
+    print("    construction, so that is a statement about the REGIME, not a repair of the method.")
     print("    SCOPE, stated plainly: this is Z_2, the bath is dephasing, the records are the magnetic")
     print("    Wilson loops, and the reconstruction is of the CHANNEL-SHARING graph.  It shows the")
     print("    hand-installed graph was redundant with the dynamics -- not that geometry is derived")
