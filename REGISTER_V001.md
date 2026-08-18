@@ -5358,3 +5358,70 @@ At `d = 2`: **weight-1 couplings give exactly zero; weight-2 can be non-zero.**
 **LIMITATION, STATED IN ADVANCE.** The 2×2 torus is the only carrier of feasible dimension (256), and
 it has `d = 2`. **The threshold is therefore tested at ONE value of `d`. The scaling claim is NOT
 tested by this run** — 3×3 would need dim 262144.
+
+---
+
+## F-10 RESULT — **THE FORMATION THRESHOLD IS THE CODE DISTANCE. BOTH ARE `d`.**
+
+`LANE_F7_OCCUPANCY/f10b_threshold.py`.
+**v1 WAS MIS-DESIGNED AND THE MEASUREMENT CAUGHT IT:** it measured `d⟨Z̄⟩/dt` under a **Davies** bath,
+but **F-9 already excludes every detailed-balance bath at any weight** — so the answer was fixed by
+the bath class before weight could matter, and it returned `threshold = None`. **A test whose result
+is entailed by a prior result is not a test.** v2 separates the necessary condition (bath-independent)
+from sufficiency (which must use a non-equilibrium bath by construction).
+
+### A. NECESSARY — Knill–Laflamme, and it cannot inherit F-9's exclusion because no bath appears in it
+
+| weight | # couplings | `max ‖P_g C P_g − (trC/4)P_g‖` | |
+|---|---|---|---|
+| **1** | 24 | **6.344e-16** | **acts as a SCALAR — cannot form** |
+| **2** | 252 | **2.000e+00** | **distinguishes code states** |
+| 3 | 1512 | 2.000e+00 | distinguishes code states |
+
+> **MINIMUM WEIGHT WITH ANY CODE-SPACE ACTION = 2 = `d`. THE PRE-REGISTERED PREDICTION IS CONFIRMED.**
+
+### B. SUFFICIENT — a non-equilibrium bath, and it costs NO protection
+
+Single non-Hermitian jump operator `σ⁻ = P₊X̄P₋` (**support 3 qubits**; `‖σ⁻ − σ⁻†‖ = 16.0`, and **a
+Hermitian jump operator can only dephase, never select**). `H` is untouched — still `H₀`, still exactly
+degenerate.
+
+| `t` | `⟨Z̄⟩` | code-space weight | purity on code |
+|---|---|---|---|
+| 0.00 | 0.000000 | **1.000000** | 0.250000 |
+| 1.00 | 0.635830 | **1.000000** | 0.351070 |
+| 4.00 | 0.982412 | **1.000000** | 0.491283 |
+| 6.00 | **0.997667** | **1.000000** | 0.498835 |
+
+**THE RECORD FORMS WITHOUT EVER LEAVING THE CODE SPACE AND WITHOUT LIFTING THE DEGENERACY.** Purity
+tends to `1/2`, not 1, because selecting one logical qubit leaves the other mixed — as it must on a
+4-dimensional code space.
+
+### C. CONTROL — 576 operators `(A + iB)/2` with `A,B` of weight 1: `max |d⟨Z̄⟩/dt| = 5.551e-16`
+
+**No weight-1 jump operator forms a record, Hermitian or not.**
+
+---
+
+### WHAT THIS ESTABLISHES, AND IT REVERSES F-9's VERDICT UNDER ONE CONDITION
+
+**F-9:** under **energy-based** dynamics, selection is bought with protection at parity — same
+exponent `d`, no `ε` where one appears without the other.
+**F-10:** **drop detailed balance and selection costs NO protection at all** — `⟨Z̄⟩ → 0.9977` with
+code-space weight `1.000000` throughout and `H` untouched. **But the coupling must weigh at least `d`.**
+
+> ### **THE RFP HAS TWO REQUIREMENTS, BOTH NECESSARY:**
+> ### **(1) NON-EQUILIBRIUM DYNAMICS — no detailed balance. (2) A COUPLING OF WEIGHT ≥ `d`.**
+> ### **AND `d` IS THE SAME `d` THAT PROTECTS. A RECORD IS EXACTLY AS HARD TO FORM AS IT IS TO DESTROY.**
+
+Requirement (2) extends **P-3 / Theorem B** from the writer to the *bath*: **whatever forms a record
+must couple at least as non-locally as the record is protected.**
+
+### THE OBSTRUCTION THIS CREATES — the program's problem has MOVED, not closed
+
+**A bath coupling of weight ≥ `d` is itself a non-local process.** The question is no longer *how does
+a record form* but **WHAT SUPPLIES A NON-LOCAL, NON-EQUILIBRIUM COUPLING?** That is the next
+obstruction and it is sharper than what it replaced.
+
+**LIMITATION, AS STATED IN ADVANCE:** `d = 2` only. **The threshold is tested at ONE value of `d`;
+the scaling `threshold = d` is NOT tested by this run.**

@@ -1,0 +1,30 @@
+====================================================================================================
+F-10  MINIMUM COUPLING WEIGHT THAT FORMS A RECORD    (H = H0, exactly degenerate)
+      carrier: 2x2 torus, dim 256, ground degeneracy 4, code distance d = 2
+      logical weights: Zbar=2, Zbar2=2, Xbar=2
+====================================================================================================
+
+  SELF-CHECK: does the machinery register a nonzero rate for ANY coupling?
+  (a zero everywhere would be a dead instrument, not a result)
+
+  WEIGHT 1:  24 couplings swept   nonzero rate in 0 of them
+     max |d<logical>/dt| = 7.183e-19   at X on sites (0,)
+     (d<Zbar>/dt, d<Zbar2>/dt, d<Xbar>/dt) = (-7.183e-19, -1.084e-19, +1.186e-20)
+
+  WEIGHT 2:  252 couplings swept   nonzero rate in 0 of them
+     max |d<logical>/dt| = 1.665e-16   at XX on sites (0, 4)
+     (d<Zbar>/dt, d<Zbar2>/dt, d<Xbar>/dt) = (+1.665e-16, +6.471e-32, -2.314e-50)
+
+----------------------------------------------------------------------------------------------------
+  weight 1 : max rate 7.183e-19   -> ZERO -- cannot form a record
+  weight 2 : max rate 1.665e-16   -> ZERO
+
+  MEASURED FORMATION THRESHOLD = None      CODE DISTANCE d = 2
+  PREDICTION (threshold == d): FALSIFIED
+
+====================================================================================================
+  CROSS-CHECK -- Knill-Laflamme directly: is P_g C P_g proportional to P_g?
+====================================================================================================
+    weight    max ||P C P - (tr/4) P||     KL satisfied?
+         1                   7.356e-16YES -- acts as a scalar
+         2                   2.000e+00NO -- distinguishes code states

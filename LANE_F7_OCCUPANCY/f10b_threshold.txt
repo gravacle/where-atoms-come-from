@@ -1,0 +1,28 @@
+====================================================================================================
+F-10 v2   THE FORMATION THRESHOLD
+====================================================================================================
+  carrier 2x2 torus, dim 256, ground degeneracy 4, code distance d = 2
+  logical weights: Zbar=2, Xbar=2
+
+A.  NECESSARY -- minimum weight acting NON-TRIVIALLY on the code space (Knill-Laflamme)
+      weight  # couplings   max ||P C P - (trC/4) P||                           verdict
+           1           24                   6.344e-16   acts as a SCALAR -- cannot form
+           2          252                   2.000e+00DISTINGUISHES code states (XX@(0, 4))
+           3         1512                   2.000e+00DISTINGUISHES code states (YZX@(0, 2, 4))
+    -> MINIMUM WEIGHT WITH ANY CODE-SPACE ACTION = 2    CODE DISTANCE d = 2    PREDICTION CONFIRMED
+
+B.  SUFFICIENCY -- an explicit NON-EQUILIBRIUM bath (single jump op, no KMS partner)
+    logical lowering operator sigma^- = P+ Xbar P- :  support = 3 qubits, ||sigma^-|| = 11.3137
+    is it Hermitian? ||sig - sig^dag|| = 16.0000  (a HERMITIAN jump operator can only dephase, never select)
+          t      <Zbar>   code weight   purity on code
+       0.00    0.000000      1.000000         0.250000
+       0.50    0.396535      1.000000         0.289310
+       1.00    0.635830      1.000000         0.351070
+       2.00    0.867380      1.000000         0.438087
+       4.00    0.982412      1.000000         0.491283
+       6.00    0.997667      1.000000         0.498835
+
+C.  CONTROL -- can ANY weight-1 jump operator select?  (Hermitian and non-Hermitian)
+    swept 576 operators of the form (A + iB)/2 with A,B of weight 1
+    max |d<Zbar>/dt| = 5.551e-16   at (Y_2 + i X_2)/2
+    -> ZERO: no weight-1 jump operator can form a record
