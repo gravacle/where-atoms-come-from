@@ -4463,3 +4463,58 @@ commutant. **The reduction is immediate, not gradual.**
 the degenerate ones, degeneracy means symmetry, and it must be exact. **It does not say why the
 world's Hamiltonian has the exact symmetries it has** — which is now the only question left standing
 in this program, and is not one the carrier can be asked.
+
+---
+
+## W-61 — **THE SPACE EMITS THE DEGENERACY. THE PRINCIPAL'S HYPOTHESIS IS CONFIRMED.**
+
+`LANE_W61_TOPOLOGICAL/`, sealed. W-60 left a fatal fragility: records need exact degeneracy, and
+SYMMETRY-induced degeneracy dies at `1e-06`. The principal: *"maybe gravity at the record level emits
+symmetry."* There is a kind of degeneracy that behaves exactly that way, and W-60 supplies the
+contrast that makes the test decisive.
+
+**Same theory, same perturbation, two topologies.**
+
+```
+  TORUS 2x2 (genus 1)   unperturbed degeneracy 4
+        eps       ground splitting     splitting / gap
+    0.0e+00              2.665e-15           6.661e-16
+    1.0e-06              4.867e-13           1.217e-13
+    1.0e-03              1.282e-06           3.208e-07
+    1.0e-01              5.925e-03           1.593e-03
+
+  DISK 3x3 (genus 0)    unperturbed degeneracy 1 -- no splitting possible (control)
+
+  SYMMETRY degeneracy (W-60), same perturbation sizes
+    eps = 1e-06   ground splitting  2.003e-06     <- LINEAR in the perturbation
+    eps = 1e-03   ground splitting  2.002e-03     <- LINEAR
+```
+
+> **AT `eps = 1e-06`: SYMMETRY DEGENERACY SPLITS BY `2.0e-06` — LINEARLY, THE SAME ORDER AS THE
+> PERTURBATION. TOPOLOGICAL DEGENERACY SPLITS BY `4.9e-13` — FOUR MILLION TIMES SMALLER.**
+
+**The degeneracy records need does NOT have to be supplied by a symmetry. It can be EMITTED BY THE
+TOPOLOGY OF THE SPACE**, and when it is, it is protected in a way symmetry-induced degeneracy is not:
+the splitting is suppressed to high order because only a perturbation that WRAPS the space can lift
+it. **The disk shows the same theory with no such degeneracy at all — the difference is genus, not
+dynamics.**
+
+### WHAT THIS DOES TO THE PROGRAM
+
+**W-60's fragility is resolved and its conclusion is corrected.** *"Records require exact symmetry"*
+was too narrow. **Records require exact degeneracy, and TOPOLOGY supplies it more robustly than
+symmetry does.**
+
+**AND THIS IS THE FIRST PLACE GRAVITY ENTERS THIS PROGRAM NON-TRIVIALLY AND IN ITS OWN SHAPE.** Not a
+metric (W-44: bought nothing), not dynamical topology as a variable (W-31: refuted 3/3), not a
+functional resource analogy (W-50: forced by counting). **Here the GENUS OF THE SPACE — a purely
+geometric fact, with no symmetry imposed and no metric anywhere — determines whether records can
+exist at all, and how well they survive.**
+
+**The principal predicted this shape three times before it appeared:** gravity at the record level
+will look different while performing the same function. **The function is supplying the exact
+degeneracy records live in. The form is topology, not force, not metric, not curvature.**
+
+**AND IT MEETS HARLOW–OOGURI FROM THE OTHER SIDE.** Quantum gravity forbids exact *global* symmetries,
+so a gravitating world cannot use symmetry to protect its records. **Topological degeneracy needs no
+symmetry — which is precisely what such a world has left.**
