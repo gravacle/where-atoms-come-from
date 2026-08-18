@@ -5336,3 +5336,25 @@ detailed-balance. Three candidates, in order of cost:
 3. **a NON-LOCAL bath coupling** — and note this is exactly what **P-3** says the writer must be
 
 **Test 3 first: it is the only one the program already has a theorem about.**
+
+---
+
+## F-10 — PREDICTION REGISTERED BEFORE THE RUN
+
+**THE QUESTION, POSED SO IT CANNOT BE ANSWERED BY CONSTRUCTION.** Handing a bath a logical operator
+and observing that a record forms proves nothing — it assumes the answer. The non-circular question is
+a **necessary condition**:
+
+> **With `H = H₀` exactly degenerate and fully protected, what is the MINIMUM WEIGHT of a bath
+> coupling that produces `d⟨Z̄⟩/dt ≠ 0` from the maximally mixed code state?**
+
+**PREDICTION.** By **Knill–Laflamme**, any operator `C` with `wt(C) < d` satisfies `P_g C P_g ∝ P_g`,
+so it cannot distinguish record states. Therefore:
+
+> ### **NO COUPLING OF WEIGHT `< d` CAN FORM A RECORD, AND THE FORMATION THRESHOLD EQUALS THE DESTRUCTION THRESHOLD. BOTH ARE `d`.**
+
+At `d = 2`: **weight-1 couplings give exactly zero; weight-2 can be non-zero.**
+
+**LIMITATION, STATED IN ADVANCE.** The 2×2 torus is the only carrier of feasible dimension (256), and
+it has `d = 2`. **The threshold is therefore tested at ONE value of `d`. The scaling claim is NOT
+tested by this run** — 3×3 would need dim 262144.
