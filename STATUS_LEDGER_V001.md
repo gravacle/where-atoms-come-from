@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | CANDIDATE | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 21 | 1 | 4 | 1 | 16 | 5 | 2 | 2 | 1 | 3 |
+| 22 | 1 | 4 | 1 | 15 | 3 | 2 | 4 | 3 | 3 |
 
-**56 rows.**
+**58 rows.**
 
 ---
 
@@ -26,6 +26,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **D-2** | THE NAME IS THE IMPORT VECTOR — but the fix is the discipline, not the word. 'Gravity' is permitted as a LABEL for Γ; what is forbidden is INFERENCE from the label. No attribute transfers through a name | **PROVED** | each refusal has cost a lane: X-2, X2 erratum, X-6 | — | a property of our object that can only be justified by the name |
 | **D-3** | A RESCUE IS ALWAYS DOWNSTREAM OF AN IMPORT. Guards against rescue treat the symptom; removing the import removes the need for the guard | **PROVED** | the rescue-detector built into X-6 was scaffolding for an import | — | a rescue that occurs with no import upstream of it |
 | **F-0** | THE PROGRAM HAS NO FORMATION STEP. 20 PROVED rows, none about a record coming into being. Every clause of the definition is a condition on a standing object; not one mentions time. W-62 is a WRITE into an existing record space, not a build | **PROVED** | RECORD_FORMATION_V001; T-II.5 BLOCKED, T-III.6 and T-V.3 OPEN | — | a registered result that describes a record coming into being |
+| **D-4** | ALLOW/REQUIRE IS A TYPE DISCIPLINE, NOT A FACT ABOUT GRAVITY. Dynamics produces OCCUPANCIES, never PERMISSIONS. Asking what produces a permission (systole, index, constraint) is a category error; asking what occupies it is legitimate | **PROVED** | four instances: X-2 backreaction, X2 allow-to-require, X-6 falsifier, F-2/F-3 | — | a permission produced by a dynamical law |
 
 ## A. THE THREE ROLES — the charter's question
 
@@ -99,15 +100,16 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **T-V.3** | is a measurement the creation of a record? | **OPEN** | askable on the existing carrier | — | — |
 | **T-I.4** | do records compose? | **OPEN** | — | — | — |
 | **T-V.4** | the classical limit | **OPEN** | — | — | — |
-| **T-II.5** | why the world's Hamiltonian has this topology | **BLOCKED** | — | — | — |
+| **T-II.5** | why the world's Hamiltonian has this topology | **RECLASSIFIED** | asks what produces a permission (D-4), same class as X-2 | — | — |
 | **T-VI.3** | a distinguishing prediction | **BLOCKED** | none identified | — | — |
 | **T-VI.4** | empirical contact | **BLOCKED** | zero | — | — |
 | **F-1** | RFP requires AN ARROW: a before with no record and an after with one, not freely reversible | **OPEN** | = T-III.6 | — | — |
-| **F-2** | RFP requires THE PROTECTION TO TURN ON: min weight goes from O(1) to growing with the carrier. G-6 and G-11 both land here — R3 is the discriminator, so R3 is what must come into being | **OPEN** | the sharpest available form of the formation question | — | — |
-| **F-3** | RFP requires THE CARRIER TO ARISE: the complex is not assumed | **BLOCKED** | = T-II.5 | — | — |
+| **F-2** | RFP requires THE PROTECTION TO TURN ON: min weight goes from O(1) to growing with the carrier. G-6 and G-11 both land here — R3 is the discriminator, so R3 is what must come into being | **WITHDRAWN** | asks what PRODUCES the systole — a permission (D-4); corrected form is the occupancy question, = F-7 | — | — |
+| **F-3** | RFP requires THE CARRIER TO ARISE: the complex is not assumed | **RECLASSIFIED** | asks what produces the allow — same class as X-2 (D-4); T-II.5 inherits | — | — |
 | **F-4** | RFP must be DYNAMICS, NOT AN ACT: the process follows from the same (H, {L_k}) the definition uses | **OPEN** | — | — | a formation that requires an external agent |
-| **F-5** | RFP must MEET MEASUREMENT: is a measurement the creation of a record? | **OPEN** | = T-V.3 | — | — |
+| **F-5** | RFP must MEET MEASUREMENT: is a measurement the creation of a record? | **WITHDRAWN** | collapses into F-7 — formation and measurement are the same question | — | — |
 | **F-6** | PREDICTION REGISTERED IN ADVANCE: thermal relaxation CANNOT form a record. Clause (iii) says a record distinguishes states of the SAME energy; detailed balance fixes populations by energy alone, so a Davies bath must reach an equal mixture of all 2^2g record states — maximal entropy on the code space, no record | **OPEN** | stated before the run; RECORD_FORMATION_V001 | — | a Davies bath reaching a pure record label |
+| **F-7** | THE RFP, CORRECTLY TYPED: given a carrier whose systole PERMITS a record, what dynamics makes the system OCCUPY a DEFINITE record instead of a mixture? This IS the measurement question (T-V.3), not a bridge to it | **OPEN** | corrected from F-2/F-5 by D-4; first test is the registered F-6 prediction | — | — |
 
 ---
 

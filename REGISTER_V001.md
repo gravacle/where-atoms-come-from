@@ -5214,3 +5214,51 @@ its stated *source* was too strong.
 homology class is also not unique.** What discriminates is **R3**, and R3 is the systole/cosystole
 condition. **The program's centre of gravity moves from "which topology" to "what makes minimum
 weight grow."**
+
+---
+
+## D-4 — **ALLOW/REQUIRE IS THE PROGRAM'S TYPE DISCIPLINE, NOT A FACT ABOUT GRAVITY.** F-2 AND F-3 WERE THE SAME ERROR ONE LEVEL DOWN
+
+The principal, on the registrar's *"nothing in the program says how a system comes to have growing
+minimum weight"*: **"Isn't this the whole allow/require framework?"**
+
+**It is, and the registrar had walked straight back into it — an hour after registering D-1.**
+
+> **MINIMUM WEIGHT (systole / cosystole) IS A PROPERTY OF THE CARRIER, SO IT IS AN ALLOW.** It says a
+> record **may** exist. **Asking what PRODUCES growing minimum weight is asking what produces a
+> PERMISSION — the identical category error as demanding backreaction at X-2.**
+
+### THE DISCIPLINE, GENERALISED FROM GRAVITY TO THE WHOLE PROGRAM
+
+| type | what it is | the legitimate question | the category error |
+|---|---|---|---|
+| **ALLOW** | a permission — what the world's structure **admits**. `records = index`; `systole > local scale`; the Gauss law; Einstein's constraints | **what does it permit, and what is the permitted set?** | *"what produces it?"* |
+| **OCCUPANCY** | which of the permitted possibilities **is actually the case** | **what dynamics puts the system HERE rather than elsewhere in the allowed set?** — legitimate, and it is where the arrow lives | — |
+
+**This is not a claim that nothing in physics is a production rule.** Maxwell has evolution equations;
+Lindblad dynamics is a production rule. **The discipline is about TYPE-MATCHING: dynamics produces
+OCCUPANCIES, never PERMISSIONS.**
+
+### WHAT THIS DOES TO THE RFP, REGISTERED THE SAME DAY IT WAS WRITTEN
+
+| | as written | ruling |
+|---|---|---|
+| **F-1** arrow | a before with no record, an after with one | **STANDS** — about states, not permissions |
+| **F-2** *"the protection TURNS ON"* | min weight goes from `O(1)` to growing | **WITHDRAWN AS WRITTEN.** It asks what produces the systole. **CORRECTED: given a carrier whose systole permits a record, what makes the system occupy a DEFINITE record instead of a mixture?** |
+| **F-3** *"the carrier ARISES"* | the complex is not assumed | **RECLASSIFIED, same class as X-2.** It asks what produces the allow. `T-II.5` inherits the reclassification |
+| **F-4** dynamics not an act | follows from `(H, {L_k})` | **STANDS** |
+| **F-5** measurement | is a measurement the creation of a record? | **COLLAPSES INTO CORRECTED F-2** |
+
+### AND THE COLLAPSE IS A RESULT, NOT A TIDY-UP
+
+> **ONCE FORMATION IS AN OCCUPANCY QUESTION, THE FORMATION QUESTION AND THE MEASUREMENT QUESTION ARE
+> THE SAME QUESTION:** *what selects one element of an allowed, exactly degenerate set?*
+> **F-5 was never a separate item.** `T-V.3` — "the natural bridge to the measurement problem" — is
+> not a bridge to a neighbouring problem. **It is the problem, under the program's own name for it.**
+
+### THE PREDICTION SURVIVES, AND IT WAS ALREADY THE RIGHT SHAPE
+
+The registered advance prediction — *a Davies bath reaches an equal mixture of all `2^{2g}` record
+states, which is no record* — **is an OCCUPANCY statement.** It asks what the dynamics puts in the
+allowed space, not what makes the space. **It was correctly typed before the requirements around it
+were.** It stands unchanged as the RFP's first test.

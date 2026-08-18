@@ -19,10 +19,10 @@ object** — `R = R†`, `R² = I`, `[H,R] = 0`, `[L_k,R] = 0`. **Not one mentio
 | | requirement | why | ledger |
 |---|---|---|---|
 | **F1** | **AN ARROW.** A before with no record and an after with one, not freely reversible | without it "formation" is relabelling, and a durable bit with no arrow is a bit, not a record **of the past** | T-III.6 |
-| **F2** | **THE PROTECTION TURNS ON.** Minimum weight to destroy the bit goes from `O(1)` to **growing with the carrier** | **G-6 and G-11 both land here.** Capacity is cheap and the homology class is not unique; **R3 is the discriminator** — so R3 is the thing that must come into being | G-11, G-12 |
-| **F3** | **THE CARRIER ARISES.** The complex is not assumed | currently given by hand | T-II.5 |
+| **F2** | ~~the protection turns on~~ **WITHDRAWN — it asks what PRODUCES a permission (D-4).** **CORRECTED: given a carrier whose systole PERMITS a record, what makes the system OCCUPY a definite record instead of a mixture?** | min weight is a property of the carrier, so it is an **ALLOW**; only occupancy is a dynamical question | D-4, T-V.3 |
+| **F3** | ~~the carrier arises~~ **RECLASSIFIED (D-4), same class as X-2** — asks what produces the allow | | T-II.5 |
 | **F4** | **IT IS DYNAMICS, NOT AN ACT.** The process follows from the same `(H, {L_k})` the definition uses | otherwise we have described a fabrication, not a natural process | — |
-| **F5** | **IT MEETS MEASUREMENT.** Whether a measurement *is* the creation of a record | the natural bridge, and untouched | T-V.3 |
+| **F5** | **COLLAPSES INTO CORRECTED F2.** Formation and measurement are **the same question**: what selects one element of an allowed, exactly degenerate set? | T-V.3 is not a bridge to a neighbouring problem — **it is the problem** | T-V.3 |
 
 ---
 
