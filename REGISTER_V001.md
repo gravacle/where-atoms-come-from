@@ -5425,3 +5425,60 @@ obstruction and it is sharper than what it replaced.
 
 **LIMITATION, AS STATED IN ADVANCE:** `d = 2` only. **The threshold is tested at ONE value of `d`;
 the scaling `threshold = d` is NOT tested by this run.**
+
+---
+
+## A-EM CONSOLIDATED — **EM'S ROLE IS LARGER THAN "SUPPLIES THE CARRIER", AND TODAY'S RESULTS SHOW HOW MUCH**
+
+The principal: *"I think we saw in the past how EM has a powerful role in this process."*
+**The register under-credited it.** `A-EM` read *"supplies the gauge field and the holonomy that IS
+the record"*; `THE_CLAIM` reads *"EM provides the carrier"*. Four measured results say more.
+
+### 1. EM SUPPLIES BOTH BOUNDARY MAPS — THE WHOLE CHAIN COMPLEX, NOT JUST THE FIELD
+
+| the complex | `C₂ →^{∂₂} C₁ →^{∂₁} C₀` | what it is physically |
+|---|---|---|
+| `∂₁` | **IS the Gauss law** | EM's constraint |
+| `∂₂` | **IS the plaquette / field-strength term** | EM's magnetic action |
+| `C₁` | the links | where the gauge field lives |
+
+**The carrier supplies the SETS (which cells exist and how they meet). EM supplies the MAPS.**
+`H₁ = Z₁/B₁` needs both — measured at match rate **1.0** (G-9).
+
+### 2. THE RECORD SPACE IS THE HOMOLOGY OF EM'S OWN COMPLEX — G-9, MEASURED
+
+`dim Z₁ = 5,7,10` and `dim B₁ = 3,5,8` both move with area; `dim H₁ = 2,2,2` does not.
+**Both the Gauss-law sector and the plaquette space are EM structures. The record is what survives
+their quotient.**
+
+### 3. **NEW — THE MINIMAL COUPLING THAT CAN FORM A RECORD IS AN EM HOLONOMY.** `f10c_whatformsit.py`
+
+Of 252 weight-2 Paulis, **8 distinguish code states. All 8 commute with every stabiliser — all 8 are
+LOGICAL.** And every one is an EM holonomy on a non-contractible cycle:
+
+| | count |
+|---|---|
+| all-`Z` supported on a **CYCLE** — magnetic Wilson loop | **4** |
+| all-`X` supported on a **COCYCLE** — electric Wilson loop | **4** |
+| **neither** | **0** |
+
+### 4. SO THREE DIFFERENT THINGS TURN OUT TO BE THE SAME KIND OF OBJECT
+
+> ### **THE RECORD IS AN EM HOLONOMY ON A NON-CONTRACTIBLE CYCLE (Thm B ii).**
+> ### **ITS WRITER IS AN EM HOLONOMY ON A NON-CONTRACTIBLE CYCLE (W-62).**
+> ### **AND THE MINIMAL THING THAT CAN FORM IT IS AN EM HOLONOMY ON A NON-CONTRACTIBLE CYCLE — 8 of 8, ZERO EXCEPTIONS.**
+
+**The program did not put these three in the same class. They arrived there separately, by three
+different measurements, and the third is new today.**
+
+### WHAT THIS DOES TO Γ
+
+**Γ is not an independent field alongside EM.** It is **the statement that EM's own complex has
+non-trivial homology.** The carrier decides which cells exist; EM decides the maps; **Γ is a property
+of the pair, and of neither alone.**
+
+**CAUTION, STATED:** this does NOT dissolve Γ into EM. The cell structure is not EM's — G-6 already
+showed the homology can be that of complexes with no manifold behind them at all, and G-11 showed
+protection needs something metric that homology alone does not supply. **Γ remains a distinct
+requirement (R1–R3). What changes is that it is a requirement ON EM'S COMPLEX, not a separate
+ingredient beside it.**

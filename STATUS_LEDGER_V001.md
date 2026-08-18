@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | CANDIDATE | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 29 | 1 | 4 | 1 | 16 | 3 | 2 | 4 | 3 | 3 |
+| 32 | 1 | 4 | 1 | 16 | 3 | 2 | 4 | 3 | 3 |
 
-**66 rows.**
+**69 rows.**
 
 ---
 
@@ -32,10 +32,12 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
-| **A-EM** | EM supplies the gauge field and the holonomy that IS the record | **PROVED** | Thm B(ii); setup | — | a record that is not a holonomy of the field |
+| **A-EM** | EM supplies BOTH boundary maps of the chain complex — d_1 IS the Gauss law, d_2 IS the plaquette/field-strength term — so the record space is the homology of EM's OWN complex. The record IS a holonomy of that field | **PROVED** | Thm B(ii); G-9 (record space = Z_1/B_1, match rate 1.0); G-4 (constraint algebra) | — | a record that is not a holonomy of the field |
 | **A-GR** | Γ — the third term, labelled 'gravity' but defined only by function — supplies the record space 2^2g (R1), the writer, non-local (R2), and the protection (R3) | **PROVED** | Thms A, B(iii), C, D; G1 | — | a record on a genus-0 carrier; a local writer |
 | **A-AL** | ALPHA is a sum of local terms, so it splits the record space at order d | **PROVED** | Thm D; W-60, W-62 | — | records surviving g^2>0 undiminished |
 | **A-PR** | THE PROCESS: a record is a topologically protected degeneracy of a gauge field, written by non-local transport | **CANDIDATE** | assembly of C-1..C-8 | O-1, O-3 | C-1 or C-4 failing |
+| **A-EM2** | THE MINIMAL COUPLING THAT CAN FORM A RECORD IS AN EM HOLONOMY. Of 252 weight-2 Paulis, 8 distinguish code states; all 8 are logical; 4 are magnetic Wilson loops on cycles and 4 electric on cocycles. Zero exceptions | **PROVED** | LANE_F7_OCCUPANCY f10c | — | a minimum-weight forming coupling that is not a holonomy |
+| **A-EM3** | THE RECORD, ITS WRITER, AND THE MINIMAL THING THAT FORMS IT ARE THE SAME KIND OF OBJECT: an EM holonomy on a non-contractible cycle. Established by three separate measurements (Thm B ii; W-62; f10c) | **PROVED** | not designed in — the three arrived in the same class independently | — | any one of the three being expressible without a holonomy |
 
 ## B. THE CLAIM, STATEMENT BY STATEMENT
 
@@ -67,6 +69,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **G-11** | PROTECTION DOES NOT TRACK THE INDEX. Bouquet of k triangles: dim H_1 = 2,3,4 grows while distance d = 3,3,3 is CONSTANT — unbounded capacity, fixed protection. So Gamma is an index PLUS a growing-minimum-weight condition; R1 is geometry-free, R3 is not | **PROVED** | LANE_G10_NONMANIFOLD (D); torus mirror: dim H_1 = 2,2,2 with d = 2,3,4 | — | a carrier family where d grows without a metric-like condition |
 | **G-12** | THE CONDITION AS FAR AS ESTABLISHED: a length-2 F_2 chain complex whose k-SYSTOLE AND k-COSYSTOLE both exceed the local scale. R3 needs TWO numbers; they coincide only in self-dual cases like the square-lattice torus | **PROVED** | G-6 adjudication; explains why this program measured a single d and derived d=2 | — | a record carrier where one of systole/cosystole is below the local scale |
 | **G-13** | ERRATUM: THE WRITER IS NOT POINCARE DUALITY. The pairing H_k x H^k -> F_2 is perfect for ANY complex over a field (universal coefficients). R2 needs no manifold, no orientability, no duality | **PROVED** | G-6 adjudication; Thm B result stands, its stated source was too strong | — | a complex over a field with a non-perfect evaluation pairing |
+| **G-14** | GAMMA IS A REQUIREMENT ON EM'S COMPLEX, NOT AN INGREDIENT BESIDE IT. The carrier supplies the cells, EM supplies the maps, and Gamma is the non-triviality of the homology of the pair. This does NOT dissolve Gamma into EM: G-6 (non-manifold complexes) and G-11 (protection needs something metric) keep R1-R3 distinct | **PROVED** | G-9, G-4, A-EM consolidation | — | a record whose homology is not that of the gauge complex |
 
 ## D. OBSTRUCTIONS — solvable here
 
