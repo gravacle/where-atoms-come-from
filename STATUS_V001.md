@@ -69,7 +69,7 @@ withdrawn claims: `THE_ROAD_V001.md` (10 so far, kept so they are not re-made).
 | | | |
 |---|---|---|
 | **X1** | the topology is a **lattice's**, not spacetime's | nothing here makes it spacetime topology |
-| **X2** | **content does not change `χ`** — records bend nothing | we have the half of gravity that says what geometry *permits*, not the half that says how content *shapes* it. **Until this closes it is a correspondence, not an emergence** |
+| **X2** | **χ is a PARAMETER, not an observable** — no eigenvalues, no equation of motion | **RECLASSIFIED: not a defect.** Demanding "matter curves space" at the record level imports the classical form. **ALLOW is gravity's record-level face; REQUIRE is its macroscopic face.** Falsifier kept: if accumulated allow never yields require at any scale, the identification weakens |
 | **X3** | the outcome problem | the field's open problem; W-35 relocated it |
 | **X5** | **is a gauge theory's 1-form symmetry "global" for Harlow–Ooguri?** | a question about *their* result; the likeliest resolution of the tension, and not ours to settle |
 | **X4** | **empirical contact: zero**, and **no distinguishing prediction identified** | W-48 killed the decoherence candidate; C1 killed the legibility candidate |

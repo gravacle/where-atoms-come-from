@@ -1,0 +1,32 @@
+X2  IS chi AN OBSERVABLE OF THE THEORY, OR A PARAMETER OF THE CONSTRUCTION?
+
+                 complex   V   E   F  chi  Hilbert dim  degeneracy
+  ------------------------------------------------------------------
+               torus 2x2   4   8   4    0           32           4
+               torus 2x3   6  12   6    0          128           4
+   cube surface (sphere)   8  12   6    2           32           1
+
+  CHECK 1 -- do different chi give different Hilbert spaces?
+                 torus 2x2 (chi=0, dim=32)  vs  torus 2x3              (chi=0, dim=128)   same dimension? False
+                 torus 2x2 (chi=0, dim=32)  vs  cube surface (sphere)  (chi=2, dim=32)   same dimension? True
+                 torus 2x3 (chi=0, dim=128)  vs  cube surface (sphere)  (chi=2, dim=32)   same dimension? False
+
+  CHECK 2 -- is the record count a function of chi alone?
+                 torus 2x2: chi= 0  size (E= 8)  degeneracy=4  ->  2^(2-chi) = 4
+                 torus 2x3: chi= 0  size (E=12)  degeneracy=4  ->  2^(2-chi) = 4
+     cube surface (sphere): chi= 2  size (E=12)  degeneracy=1  ->  2^(2-chi) = 1
+    torus 2x2 and torus 2x3 differ in SIZE but share chi -- and share the degeneracy.
+
+  CHECK 3 -- could chi be measured from inside, at fixed Hilbert dimension?
+    chi is not built from the edge variables: it is V - E + F, a count of the CELLS the space
+    was assembled from. No operator on the edge Hilbert space has it as an eigenvalue.
+    The DEGENERACY reveals it -- but the degeneracy is a property of H, which is itself
+    written down from the same cell data. Nothing INSIDE the theory varies chi.
+
+  CONCLUSION
+    chi has no eigenvalues, no expectation value, and no equation of motion. It is a
+    PARAMETER OF THE CONSTRUCTION. No operation -- unitary, dissipative or otherwise --
+    can change it, because every operation is a map on a space BUILT FROM a fixed chi.
+    X2 IS THEREFORE NOT A MISSING MEASUREMENT. It is a structural feature of any framework
+    in which the complex is fixed, and closing it requires chi to become an OBSERVABLE --
+    i.e. a state that is a superposition over topologies.

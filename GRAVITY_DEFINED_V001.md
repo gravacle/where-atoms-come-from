@@ -65,6 +65,14 @@ cannot remember anything.* Not "remembers poorly" — **cannot hold a single rec
 | **X1** | the topology is a **lattice's**, not spacetime's | |
 | **X5** | is a gauge theory's 1-form symmetry "global" for Harlow–Ooguri? | O6 showed ours is exact, so the tension is live |
 
-> **THE HONEST POSITION: we have an exact relation between the record count and integrated curvature,
-> and no mechanism by which records bend anything. That is one half of gravity — the half that says
-> what geometry permits. The half that says how content shapes geometry is absent.**
+> **THE POSITION, CORRECTED (X2 + the principal's allow/require):** `χ` is a **parameter**, not an
+> observable — it has no eigenvalues and no equation of motion, so "content shapes geometry" is not
+> expressible at this level rather than merely unmeasured.
+>
+> **Demanding "matter curves space" AT THE RECORD LEVEL imports the classical form.** At the record
+> level gravity **ALLOWS**: it says what may exist, and a sphere permits nothing. **That is the whole
+> job at this level.** REQUIRE is gravity's macroscopic face and belongs to a level this construction
+> does not reach.
+>
+> **Falsifier retained:** if accumulated allow-statements never yield anything require-like at any
+> scale, allow is all there is and the identification with gravity weakens.

@@ -4823,3 +4823,52 @@ symmetry; and **a simply-connected world has no records at all** — the sphere 
 here nothing records do alters the topology. **We have the half of gravity that says what geometry
 permits, and not the half that says how content shapes geometry. Until X2 closes, this is a
 correspondence and not an emergence.**
+
+---
+
+## X2 — **χ IS A PARAMETER, NOT AN OBSERVABLE. AND UNDER ALLOW/REQUIRE THAT IS NOT A DEFECT.**
+
+`LANE_X2_BACKREACTION/`, sealed.
+
+**THE STRUCTURAL FACT.** `χ = V − E + F` is a property of the **cell complex**. The Hilbert space is
+**built from** that complex. Every operator — unitary, dissipative, any — is a map on that space.
+**So `χ` has no eigenvalues, no expectation value and no equation of motion.** Verified: the torus
+`2×2` and the cube surface have the **same Hilbert dimension (32)** and different `χ` (`0` vs `2`);
+the torus `2×2` and `2×3` differ in **size** but share `χ` — **and share the degeneracy (4)**. The
+record count follows `χ` and nothing else, and **nothing inside the theory varies `χ`.**
+
+> **X2 IS NOT A MISSING MEASUREMENT. In any framework with a fixed complex, content CANNOT shape
+> geometry, because geometry is not the sort of thing the theory contains.**
+
+### THE PRINCIPAL'S CORRECTION — ALLOW / REQUIRE
+
+The registrar wrote: *"we have the half of gravity that says what geometry permits, and not the half
+that says how content shapes geometry — so this is a correspondence, not an emergence."*
+
+**The principal: isn't this the allow/require distinction?** — and it is, and the registrar had it
+backwards.
+
+> **"MATTER CURVES SPACE" IS THE CLASSICAL FORM OF GRAVITY. Demanding it AT THE RECORD LEVEL is the
+> same import flagged four times before.** At the record level there is no metric to curve. **What
+> gravity does there is ALLOW: it says what can exist.** And that is not half a job — **it is the
+> whole job at that level.**
+
+**AND X2's RESULT IS EVIDENCE FOR THIS, NOT AGAINST IT.** `χ` is not an observable *at this level*.
+Requiring it to respond to content is requiring a level-inappropriate quantity to have dynamics.
+**ALLOW is the record-level face of gravity; REQUIRE is its macroscopic face.** Asking for both at
+once is a category error — the embryo again.
+
+**THE STATEMENT, CORRECTED:**
+
+> **At the record level gravity ALLOWS. `records = 2 − (1/2π)∫K dA` says exactly what may exist, and
+> a sphere permits nothing. That is complete as a record-level statement.** Whether allow becomes
+> require at larger scales is a **separate question at a separate level**, and it is the paper's own
+> Appendix C step 3.
+
+**AND IT KEEPS A FALSIFIER, so this is not a way of never owing backreaction.** If accumulated
+allow-statements never yield anything require-like at any scale, then allow is all there is and the
+identification with gravity weakens accordingly. **That is decidable, later, and not here.**
+
+**STATUS CHANGE: X2 moves from "out of reach — the gravity claim is only a correspondence" to
+"category error — allow is the record-level face; require belongs to a level this construction does
+not reach."**
