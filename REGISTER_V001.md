@@ -4576,3 +4576,37 @@ degeneracy is gone, the label collapses to a single value, and the writer no lon
 > **EM CARRIES THE RECORD. THE GENUS MAKES IT WRITABLE AND PROTECTS IT. ALPHA DESTROYS IT.**
 > That is the three-way combination the charter asked for, in one operation, with each role measured
 > and each control firing.
+
+---
+
+## W-63 / PROOF_V001 — **THE RESULTS ARE DERIVED, AND THE DERIVATION PREDICTS NUMBERS IT WAS NOT FITTED TO**
+
+`LANE_W63_DERIVATION/` + `PROOF_V001.md`, sealed. Four theorems with proofs, then checked against
+what the lanes already measured.
+
+**A — record space dimension `= |H_1| = 2^{2g}`.** Ground states are constant on `B_1`-cosets in
+`Z_1`. Derived `4` for the `2×2` and `2×3` tori; **measured `4`.** Disk: `H_1 = 0` ⟹ dimension `1`,
+no record; measured **zero** non-contractible cycles.
+
+**B — logicals are `H_1` and `H^1`, and a writer always exists.** `Z(c)M(z) = (−1)^{⟨c,z⟩}M(z)Z(c)`,
+and by **Poincaré duality the intersection pairing is non-degenerate**, so every record has an
+anticommuting partner. Measured `‖{M,Z}‖ = 1.26e-15`, `‖[M,Z]‖ = 4.00`.
+
+**C — nothing supported on a contractible region acts.** Measured `1.59e-16` and `3.01e-17`.
+
+**D — splitting is `O(ε^d)`, `d` the minimal non-contractible cycle. THE PREDICTION THAT COULD HAVE
+FAILED.** Derived `d = 2`; **measured slope `2.000, 2.000, 2.000, 2.000` across two decades**, and
+`ε² = 1e-12` against W-61's `4.9e-13`. Symmetry degeneracy has `d = 1` and measured linear.
+
+> **THE THREE ROLES, PROVED: EM supplies the field and the holonomy that IS the record. GENUS supplies
+> the record space (A), the writer (B iii), and the protection (C, D). ALPHA is a sum of local terms
+> and therefore splits the record space at order `d` and destroys it (D).**
+
+**AND IT RESOLVES W-29/W-30 WITH A PROOF RATHER THAN A WORKAROUND.** Writable and durable are
+conjugate **for local operations** — Theorems C and D. B(iii) supplies a **non-local** writer, and C
+shows noise cannot mimic it.
+
+**ATTRIBUTION, STATED IN THE PROOF ITSELF.** Theorems A–D **are Kitaev's toric code** and are not
+this program's discovery. **What is this program's is the chain making them necessary:** W-60 (a
+record exists iff `H` is degenerate) and W-61 (symmetry-sourced degeneracy dies at `1e-06`,
+topology-sourced survives by `4×10⁶`), which together force the degeneracy to be topological.
