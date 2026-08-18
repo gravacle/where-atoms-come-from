@@ -33,6 +33,20 @@ was to abandon partial traces for classical mutual information.
 **And Gap 2 is this same assumption.** W-55 asked where factorisations come from and found: from the
 modeller. **A1 and Gap 2 are one thing seen twice.**
 
+### A1 IS DEEPER THAN "WE USED IT ANYWAY"
+
+**The tensor product is a postulate about COMPOSITE systems — it presupposes the parts.** Using it
+where parts are what must be derived assumes the answer. The framework that does not presuppose
+parts is algebraic: a subsystem is a **subalgebra**, its environment the **commutant**, no
+factorisation anywhere, and relative entropy defined without one.
+
+> **In that framework a region's algebra is DETERMINED BY THE CONSTRAINT, not chosen by the
+> modeller.** The Gauss law fixes which operators are gauge-invariant and supported where.
+
+**So Gap 2 may be an artifact of the framework.** W-55 asked which *tensor factorisation* makes `H`
+local (answer: none, generically). **It never asked which SUBALGEBRAS the constraint singles out** —
+a different question, and the one a gauge theory actually poses.
+
 ## A2 — THE ONE NEVER EXAMINED, AND THE ROOT-CAUSE CANDIDATE
 
 **125 of 125 lanes evolve in a background time parameter. Zero derive it.** Searching the entire

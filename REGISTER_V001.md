@@ -4179,3 +4179,49 @@ reads the background parameter cannot register a proper-time difference, because
 process is a **hypothesis, not a result** — and it is falsifiable in the useful direction: build a
 carrier with no background time, where evolution is relational, and see whether anything
 gravity-shaped has somewhere to act. **If it still does not, A2 was not the obstruction.**
+
+---
+
+## SURFACE AUDIT / A1 — **THE TENSOR PRODUCT WAS THE WRONG FRAMEWORK, AND GAP 2 MAY BE AN ARTIFACT OF IT**
+
+The principal: *"Why would you assume this at the record level?"* — of the step *"to say anything about
+a system being monitored by its environment, you first have to cut that space into parts."*
+
+**The tensor product is a POSTULATE ABOUT COMPOSITE SYSTEMS.** It says: given two things, each with a
+state space, the pair gets `H_A ⊗ H_B`. **It presupposes that the parts already exist.** Importing it
+where parts are the thing to be derived assumes the answer.
+
+### THE FRAMEWORK THAT DOES NOT PRESUPPOSE PARTS
+
+**Algebraic quantum theory.** A subsystem is a **SUBALGEBRA** of observables; its environment is the
+**COMMUTANT**. No factorisation is required, and relative entropy is defined for these objects
+without one.
+
+> **AND IN THAT FRAMEWORK A REGION'S ALGEBRA IS NOT A FREE CHOICE. It is determined by the field
+> content and the constraint: the gauge-invariant operators supported there. THE GAUSS LAW FIXES
+> THEM.**
+
+**THIS PROGRAM ALREADY BUILT THAT AND THEN WALKED AWAY FROM IT.** The physical sector was constructed
+**from the constraint** — that is algebraic. Then the registrar laid tensor products on top to compute
+partial traces, Holevo quantities and redundancy, **while the register carried IMP-2 stating the
+algebra does not factorise.**
+
+### WHAT THIS DOES TO GAP 2
+
+> **"Gap 2: supplied, not derived" MAY BE AN ARTIFACT OF THE CHOSEN FRAMEWORK RATHER THAN A FACT
+> ABOUT RECORDS.**
+
+**W-55 asked which TENSOR FACTORISATION makes `H` local and answered: none, generically.** It never
+asked **which SUBALGEBRAS the constraint singles out.** Those are different questions, and only the
+second is the one a gauge theory actually poses.
+
+### WHAT IT COSTS
+
+**Every redundancy result obtained through a partial trace — W-36, W-40, W-43b — was computed in a
+framework the system does not have.** The numbers stand as computed; **their interpretation assumed a
+split that is not there.** W-37d/W-37e already hit this from the other side and the fix was to abandon
+partial traces for classical mutual information — **that fix was applied locally and never propagated.**
+
+**RE-POSED GAP 2:** *given the constraint algebra, is the decomposition into region subalgebras
+determined?* **Untested. It is a different question from W-55's and it is the one this carrier can
+actually be asked.**
