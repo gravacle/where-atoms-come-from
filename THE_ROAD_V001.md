@@ -51,3 +51,56 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 split as an exact pair of formulas on the same object (W-46). **What is rediscovery, cleanly done:**
 einselection, the predictability sieve, quantum Darwinism, unravelling-dependence, Aharonov–Bohm
 readout. **What is missing for the goal:** item 15's constant, item 14's dynamics, and item 17.
+
+---
+
+## THE PROOF OBLIGATIONS
+
+**Added 2026-08-18 on the principal's standard:** *"there is no proof for record formation process
+involving EM, alpha, and gravity. We are looking to find and prove that process."* Novelty is not
+the axis. **Proof is.** A proven process owes five things.
+
+### A — EACH INGREDIENT'S ROLE ESTABLISHED, NOT ASSUMED
+
+| | status | established | owed |
+|---|---|---|---|
+| **EM** | **MET** | supplies the carrier, the boundary that is both cycle and separator, and the record-bearing holonomy — **and the observable is SELECTED by the dynamics, not chosen** (W-34, 28×, nothing nominated) | abelian `Z_2`/`Z_3` only; `U(1)` untested |
+| **ALPHA** | **MET AS TWO NUMBERS** | `1/(8g²)` uses before decay (W-32); `9.6g⁴P/τ < 1` legible size (W-37b) | they are **lattice couplings**, with no derivation and no connection to `α ≈ 1/137`; and W-48 showed the first is standard decoherence |
+| **GRAVITY** | **PARTIAL** | capacity passes all 4 functional markers where EM's charge fails all 4 (W-45); and it now has an equation of motion (W-49) | **a functional match is not an identification.** No attraction, no metric, no field equation, no relation to mass or energy |
+
+### B — THE COMPOSITION ESTABLISHED
+
+**PARTIAL.** W-47 is the only composed relation: `X = 9.6·g⁴·P/τ`. Form confirmed (130× monotone
+collapse), constant off ~4×. **And only two of the three terms are really in it** — EM's boundary and
+alpha's two rates. Capacity enters only through `legibility = P/2 − 1`. **A composition of all three
+that predicts and survives does not yet exist.**
+
+### C — NECESSITY, NOT ONLY SUFFICIENCY
+
+**PARTIALLY MET, and this is the obligation the registrar had never named.** Showing records *can*
+form this way is not showing this is *how* they form. What we have that IS necessity:
+
+- durability **requires** `[H,R]=0` — W-30a, 4 carriers × 2 groups, `d<R>/dt=0` to machine precision
+- reading **requires** a closed path — W-37, cut the ring and it is **exactly** `0.000000`
+- capacity `= area − 1` is **exact**, so more records than that are **impossible** — W-42
+- past capacity, eviction is **forced** — W-41, zero of 793 baths protect all four
+
+**What is NOT established as necessary:** that the record must be a gauge holonomy rather than some
+other observable, and that anything gravity-like is **required** for records rather than merely
+co-present.
+
+### D — THE TOY SHOWN REPRESENTATIVE
+
+**NOT MET.** One gauge group, one lattice family, ≤16 physical dimensions, and a Lindblad
+description assuming Markovianity and a separability this program itself measured to fail.
+
+### E — EMPIRICAL CONTACT
+
+**NOT MET. Zero.** Not one number came from a measurement.
+
+---
+
+> **THE HONEST SUMMARY OF THE MAP: the PROCESS is assembled and internally proven in the toy —
+> twelve of nineteen items measured and sealed, four of them as necessity results. The two terms
+> that are fully carried are EM and alpha. GRAVITY is carried functionally but not identified. The
+> COMBINATION exists for two terms out of three. And nothing has touched data.**
