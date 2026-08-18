@@ -5120,3 +5120,50 @@ discriminate anything.
 
 **The last row is the same functor at a different group, and it is logged as an observation with zero
 evidential weight for identity. It is not a claim, and nothing in the program rests on it.**
+
+---
+
+## G-10 / G-11 — **THE INDEX SURVIVES OFF MANIFOLDS. THE PROTECTION DOES NOT.** `LANE_G10_NONMANIFOLD`
+
+Eleven carriers: manifolds, a non-orientable surface, a surface with boundary, a pure graph, three
+pinch-point complexes, two tori wedged at a point, and **an abstract chain complex with no geometric
+realisation at all.** All six self-checks PASS.
+
+| | result |
+|---|---|
+| **(A) index identity** `dim H₁ = dim H₀ + dim H₂ − χ` | **HOLDS on all 11**, including the abstract complex |
+| **(B) surface law** `dim H₁ = 2 − χ` | **FAILS on 6 of 11** — disk, theta graph, all three bouquets, two wedged tori, abstract complex |
+| **(C) capacity** — Z₂ gauge degeneracy vs `2^{dim H₁}` | **MATCH on all four tested, INCLUDING the non-manifolds.** Bouquet: 8 = 8. Theta: 4 = 4. Two tori wedged: 16 = 16 |
+| **(D) protection** — does `d` grow? | **NO. It does not track the index.** |
+
+### (D) IS THE RESULT, AND IT SEPARATES R1 FROM R3
+
+| family | size | `dim H₁` | **distance `d`** |
+|---|---|---|---|
+| torus L×L (manifold) | 2, 3, 4 | 2, 2, 2 | **2, 3, 4 — grows** |
+| **bouquet of k triangles (pinch)** | 2, 3, 4 | **2, 3, 4 — grows** | **3, 3, 3 — CONSTANT** |
+
+> **The bouquet has UNBOUNDED CAPACITY WITH FIXED PROTECTION.** As many records as you like, every one
+> of them destroyable by a **weight-3** operator. The torus is the mirror image: capacity fixed at 2,
+> protection growing without limit.
+
+### WHAT THIS DOES TO G-7 — **IT SCOPES IT, AND THE SCOPE IS THE POINT**
+
+**"The capacity law needs no geometry" is TRUE.** Verified on a complex with no geometric realisation.
+
+**"The record needs no geometry" is FALSE.** A record requires **R1 AND R3**. The index delivers R1 on
+any chain complex whatsoever. **It says NOTHING about R3.**
+
+> **Γ IS NOT AN INDEX. Γ is an index PLUS a condition that the nontrivial classes have MINIMUM WEIGHT
+> GROWING WITH THE CARRIER.** The first half is pure algebra and geometry-free. **The second half is
+> where something metric re-enters — and it is the half that does the protecting.**
+
+**The registrar's own next-step framing was therefore half right and half wrong.** "If the law survives
+on a non-manifold, needs-no-geometry is a claim" — it survives, and the claim is real **for capacity
+only**. The test as posed would have returned a clean PASS and concealed the separation. **It was the
+distance column, which the framing did not ask for, that carried the finding.**
+
+### AND IT BEARS ON G-6
+
+**R1 is cheap** — satisfied by graphs, pinch points, and abstract complexes alike. **If uniqueness is
+to hold, R3 must be what forces the structure.** G-6 should be read against R3, not R1.

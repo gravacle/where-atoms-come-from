@@ -1,0 +1,39 @@
+carrier                           V   E   F  chi  H0  H1  H2  H0+H2-chi  2-chi   2^H1  dist d   INDEX   SURFACE
+---------------------------------------------------------------------------------------------------------------
+torus 2x2 (manifold)              4   8   4    0   1   2   1          2      2      4       2   HOLDS   HOLDS
+torus 3x3 (manifold)              9  18   9    0   1   2   1          2      2      4       3   HOLDS   HOLDS
+tetrahedron = sphere              4   6   4    2   1   0   1          0      0      1       -   HOLDS   HOLDS
+RP^2 (non-orientable)             6  15  10    1   1   1   1          1      1      2       3   HOLDS   HOLDS
+disk 3x3 (boundary)               9  12   4    1   1   0   0          0      1      1       -   HOLDS   FAILS
+theta graph (1-complex)           2   3   0   -1   1   2   0          2      3      4       2   HOLDS   FAILS
+bouquet of 2 triangles (PINCH)    5   6   0   -1   1   2   0          2      3      4       3   HOLDS   FAILS
+bouquet of 3 triangles (PINCH)    7   9   0   -2   1   3   0          3      4      8       3   HOLDS   FAILS
+bouquet of 4 triangles (PINCH)    9  12   0   -3   1   4   0          4      5     16       3   HOLDS   FAILS
+TWO TORI wedged (PINCH)           7  16   8   -1   1   4   2          4      3     16       2   HOLDS   FAILS
+ABSTRACT complex (no geometry)    6  14   5   -3   0   3   0          3      5      8       2   HOLDS   FAILS
+---------------------------------------------------------------------------------------------------------------
+(A) INDEX IDENTITY  dim H1 = dim H0 + dim H2 - chi : HOLDS on all 11
+(B) SURFACE LAW     dim H1 = 2 - chi               : FAILS on at least one
+
+(C) CAPACITY -- Z2 gauge ground-state degeneracy vs 2^dim H1 (physical sector by Gauss law):
+    torus 2x2                  |Gauss sector| =     32 = 2^5   |B1| = 2^3   cosets =    4  vs 2^dim H1 =    4   MATCH
+    bouquet of 3 triangles     |Gauss sector| =      8 = 2^3   |B1| = 2^0   cosets =    8  vs 2^dim H1 =    8   MATCH
+    theta graph                |Gauss sector| =      4 = 2^2   |B1| = 2^0   cosets =    4  vs 2^dim H1 =    4   MATCH
+    TWO TORI wedged            |Gauss sector| =   1024 = 2^10  |B1| = 2^6   cosets =   16  vs 2^dim H1 =   16   MATCH
+
+(D) PROTECTION -- does the minimum weight of a nontrivial class GROW with the carrier?
+    family                              size  dim H1  distance d
+    torus LxL (manifold)                   2       2           2
+    torus LxL (manifold)                   3       2           3
+    torus LxL (manifold)                   4       2           4
+    bouquet of k triangles (PINCH)         2       2           3
+    bouquet of k triangles (PINCH)         3       3           3
+    bouquet of k triangles (PINCH)         4       4           3
+
+SELF-CHECKS
+  d1.d2 = 0 asserted on every carrier                       : PASS
+  torus 3x3 dim H1 == 2                                     : PASS
+  theta graph dim H1 == 2 (known: E-V+1 = 3-2+1 = 2)        : PASS
+  RP^2 over GF(2): H0=H1=H2=1, chi=1 (known)                : PASS
+  two tori wedged: dim H1 == 4, dim H2 == 2 (known)         : PASS
+  bouquet of 3 triangles: dim H1 == 3 (known)               : PASS

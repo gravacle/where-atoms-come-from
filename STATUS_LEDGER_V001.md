@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | DERIVED | MEASURED | PARTIAL | CANDIDATE | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 17 | 1 | 1 | 2 | 1 | 10 | 4 | 1 | 2 | 1 | 3 |
+| 18 | 1 | 1 | 3 | 1 | 10 | 4 | 1 | 2 | 1 | 3 |
 
-**43 rows.**
+**45 rows.**
 
 ---
 
@@ -58,9 +58,11 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **G-4** | what IS the record-level constraint's own algebraic structure, stated in its own terms with no external referent? (the legitimate remainder of X-6) | **PROVED** | LANE_X6: Z2^(NV-1), abelian, exponent 2, structure CONSTANTS (state variation exactly 0) | — | — (a measurement, not a claim) |
 | **G-5** | (H_1(Sigma), intersection pairing) SATISFIES R1, R2 and R3, and is therefore a CANDIDATE for the third term | **PROVED** | Thms A, B, C; G1, G2, W-62 | — | a structure satisfying R1-R3 that H_1 fails to describe |
 | **G-6** | IS THE THIRD TERM UNIQUE? Is H_1 the ONLY structure satisfying R1-R3, or merely one that does? | **OPEN** | unaskable while the third term was defined as the thing we had | — | exhibiting a second, inequivalent structure satisfying R1-R3 |
-| **G-7** | THE CAPACITY LAW IS AN INDEX: N = dim H_0 + dim H_2 - chi (Euler-Poincare). Holds on all five carriers; 2 - chi FAILS on the disk. Needs no geometry, and makes area-independence structural | **PROVED** | LANE_G7_INDEX: ranks over GF(2), five carriers, three torus areas | — | a carrier where dim H_1 differs from dim H_0 + dim H_2 - chi |
+| **G-7** | THE CAPACITY LAW IS AN INDEX: N = dim H_0 + dim H_2 - chi (Euler-Poincare), verified on 11 carriers including an abstract complex with no geometric realisation. Capacity needs no geometry | **PARTIAL** | index law verified off-manifold, but it is the CAPACITY law only — see G-11 | — | a carrier where dim H_1 differs from dim H_0 + dim H_2 - chi |
 | **G-8** | THE CONSTRAINT PUTS THE TOTAL AT THE BOUNDARY AND HIDES THE CONTENT: \|\|P_R - boundary product\|\| = 0 exactly; support = 4*sqrt(\|R\|) exactly (perimeter); interior information (k-1)^2 bits (area) invisible from outside | **PROVED** | LANE_X6 x6b: residuals all 0, exponent 0.500000, placement-independent in all 14 rows | — | a region whose constraint product is not a pure surface operator |
 | **G-9** | THE RECORD SPACE IS Z_1/B_1 EXACTLY — Gauss sector modulo plaquettes. Numerator and denominator BOTH grow with area; only the quotient is constant | **PROVED** | LANE_X6 x6c: match rate 1.0; dim Z_1 = 5,7,10 and dim B_1 = 3,5,8 while dim H_1 = 2,2,2 | — | a coset count differing from 2^dim H_1 |
+| **G-10** | CAPACITY SURVIVES OFF MANIFOLDS: Z2 gauge degeneracy = 2^dim H_1 on pinch-point complexes, a pure graph, and two tori wedged at a point (8=8, 4=4, 16=16). The surface law 2-chi FAILS on 6 of 11 carriers | **PROVED** | LANE_G10_NONMANIFOLD, six self-checks PASS | — | a carrier whose Gauss-sector coset count differs from 2^dim H_1 |
+| **G-11** | PROTECTION DOES NOT TRACK THE INDEX. Bouquet of k triangles: dim H_1 = 2,3,4 grows while distance d = 3,3,3 is CONSTANT — unbounded capacity, fixed protection. So Gamma is an index PLUS a growing-minimum-weight condition; R1 is geometry-free, R3 is not | **PROVED** | LANE_G10_NONMANIFOLD (D); torus mirror: dim H_1 = 2,2,2 with d = 2,3,4 | — | a carrier family where d grows without a metric-like condition |
 
 ## D. OBSTRUCTIONS — solvable here
 
