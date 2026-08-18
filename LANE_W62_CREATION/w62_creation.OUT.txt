@@ -1,0 +1,23 @@
+W-62  TORUS 2x2: 4 vertices, 8 links, 4 plaquettes, physical dim 32
+
+  STEP 1 -- ground space
+    degeneracy = 4   gap to next level = 4.0000
+    ||[W_x, H]|| = 2.26e+01   ||[W_y, H]|| = 2.26e+01
+    on the ground space: eigenvalues of W_x = [-0. -0.  0.  0.]
+                         eigenvalues of W_y = [-0. -0.  0.  0.]
+    ||[W_x,W_y]|| on ground space = 0.00e+00  -> they label sectors jointly
+
+  STEP 2 -- transport around a NON-CONTRACTIBLE cycle (the write)
+    transport wrapping x: ||[T,H]|| = 0.00e+00   anticommutes with W_x? 0.00e+00   with W_y? 0.00e+00
+    transport wrapping y: ||[T,H]|| = 0.00e+00   anticommutes with W_x? 0.00e+00   with W_y? 0.00e+00
+
+  STEP 3 -- CONTROL: transport around a CONTRACTIBLE loop must change nothing
+    plaquette 0 (contractible): commutes with W_x? 8.72e-32   with W_y? 8.72e-32
+    plaquette 1 (contractible): commutes with W_x? 8.72e-32   with W_y? 8.72e-32
+    plaquette 2 (contractible): commutes with W_x? 8.72e-32   with W_y? 8.72e-32
+    plaquette 3 (contractible): commutes with W_x? 8.72e-32   with W_y? 8.72e-32
+
+  STEP 4 -- CONTROL: no LOCAL operator changes the sector
+    single-link Z, worst commutator with the sector labels: 2.15e-32
+    single-link shift, worst commutator with the sector labels: 0.00e+00
+    (a single-link shift leaves the physical sector, so its block is not a valid operation)

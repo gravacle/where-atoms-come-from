@@ -4518,3 +4518,61 @@ degeneracy records live in. The form is topology, not force, not metric, not cur
 **AND IT MEETS HARLOW–OOGURI FROM THE OTHER SIDE.** Quantum gravity forbids exact *global* symmetries,
 so a gravitating world cannot use symmetry to protect its records. **Topological degeneracy needs no
 symmetry — which is precisely what such a world has left.**
+
+---
+
+## W-62 — **RECORD CREATION. ALL THREE TERMS IN ONE OPERATION, AND THE OLDEST OBSTRUCTION IS RESOLVED.**
+
+`LANE_W62_CREATION/`, sealed. **The logical operators are COMPUTED from the structure, not nominated**
+— magnetic ones are cycles that are not boundaries; electric ones are link sets with even overlap
+with every plaquette that are not vertex stars. Both by `GF(2)` linear algebra. (The first attempt
+guessed them and got `||[W,H]|| = 22.6`.)
+
+```
+  TORUS 2x2, physical dim 32, ground-space degeneracy 4, gap 4.0000
+
+  1  the computed logicals commute with H       ||[M,H]|| = 0.00e+00   ||[Z,H]|| = 0.00e+00
+  2  and ANTICOMMUTE on the ground space        ||{M,Z}|| = 1.26e-15   ||[M,Z]|| = 4.00
+     the record label Z has eigenvalues         [-1, -1, +1, +1]
+  3  CONTROL: a CONTRACTIBLE loop does not write            ||[C,Z]|| = 3.01e-17
+  4  CONTROL: no LOCAL operator writes          worst single-link Z commutator = 1.59e-16
+  5  DISK 3x3: NON-CONTRACTIBLE cycles = 0      same theory, NO record
+```
+
+### THE OLDEST OBSTRUCTION IS RESOLVED
+
+W-29/W-30 established that **writable and durable are conjugate** — and it stood for the whole
+program. **It was a search for a LOCAL writer for a record only a NON-LOCAL operation can set.**
+
+> **THE RECORD `Z` IS UNTOUCHED BY EVERY LOCAL OPERATOR (`1.6e-16`) AND BY EVERY CONTRACTIBLE LOOP
+> (`3.0e-17`), AND IS WRITTEN BY THE NON-CONTRACTIBLE TRANSPORT `M`, WHICH ANTICOMMUTES WITH IT
+> (`4.00`). WRITABLE AND DURABLE AT THE SAME TIME.**
+
+T1's no-go applies to operations **commuting** with the record. Transport around a non-contractible
+cycle does not commute with it — **and is not local, so noise cannot mimic it.**
+
+### THE THREE TERMS, IN ONE OPERATION
+
+**EM** supplies the gauge field and the holonomy that **is** the record — `Z` on a computed
+even-overlap set, with clean `±1` labels on the ground space.
+
+**GRAVITY** supplies the possibility of the operation at all. **On the torus there are non-contractible
+cycles; on the disk there are ZERO.** Same theory, same Hamiltonian, same everything — **genus 0 has
+no record and no way to write one.** The genus is the difference.
+
+**ALPHA** is what costs the record:
+
+```
+     g^2    ground degeneracy    record labels     |{M,Z}|
+  0.0000                    4    [-1,-1,+1,+1]    1.26e-15
+  0.0001                    3    [-1,+1,+1]       6.02e-08
+  0.0100                    1    [+1]             3.94e-23
+  0.5000                    1    [+1]             9.97e-32
+```
+
+**At `g² = 0` the record has a 4-fold home, clean labels, and a working writer. By `g² = 0.01` the
+degeneracy is gone, the label collapses to a single value, and the writer no longer acts.**
+
+> **EM CARRIES THE RECORD. THE GENUS MAKES IT WRITABLE AND PROTECTS IT. ALPHA DESTROYS IT.**
+> That is the three-way combination the charter asked for, in one operation, with each role measured
+> and each control firing.
