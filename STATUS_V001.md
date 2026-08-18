@@ -27,7 +27,7 @@ withdrawn claims: `THE_ROAD_V001.md` (10 so far, kept so they are not re-made).
 | 1 | records require exact degeneracy | **forward PROVED** (P-1); converse open (**O1**) | a non-degenerate `H` carrying a record |
 | 2 | **ORDINARY (0-form)** symmetry cannot supply it — splits linearly, dead at `1e-06` | measured (W-61); proof = **O2** | a 0-form degeneracy not split at first order |
 | 3 | **a 1-FORM symmetry** can — its generators are **extended**, so no local operator reaches them; splits only at order `d` | **PROVED** (Thm D); slope `2.000` | splitting below order `d` |
-| 4 | therefore records require an **EMERGENT HIGHER-FORM SYMMETRY** — on a manifold, non-trivial topology | follows from 1–3; weak step = **O3**; emergence asserted, not verified (**O6**) | a noise-surviving record with only 0-form symmetry |
+| 4 | therefore records require a **HIGHER-FORM (1-form) SYMMETRY** — on a manifold, non-trivial topology | follows from 1–3; weak step = **O3**. **O6 TESTED AND FAILED: ours is EXACT, not emergent** | a noise-surviving record with only 0-form symmetry |
 | 5 | record space `= 2^{2g}`; at `g=0`, none | **PROVED** (Thm A) | a record at genus 0 |
 | 6 | a writer always exists and is never local | **PROVED** (Thm B) + P-3 | a local operator flipping the record |
 | 7 | nothing local writes or destroys it | **PROVED** (Thm C) | any contractible operation acting |
@@ -57,7 +57,7 @@ withdrawn claims: `THE_ROAD_V001.md` (10 so far, kept so they are not re-made).
 | **O3** | exhaustiveness. **Side-step:** prove any first-order-split degeneracy cannot carry a noise-surviving record | statement 4 | low |
 | **O4** | "admissible" in clause (iv) undefined | clause (iv), P-3 | low |
 | **O5** | clause (ii) is exact; real records are approximate | scope of all theorems | medium |
-| **O6** | is the 1-form symmetry here **emergent** or exact-microscopic? Harlow–Ooguri forbids exact global symmetries **of every form**, so the claim needs emergence | statement 4, and the whole gravity connection | medium |
+| **O6** | **TESTED, FAILED.** Ours is **exact** (`0.000e+00` broken at every `ε`), because gauge invariance forbids every operator that could break it. **The Harlow–Ooguri tension is LIVE.** Three possibilities, none decidable here | statement 4 and the gravity connection | **now an open question, not a gap** |
 
 **Order: O4 → O3 → O2 → O1 → O5.**
 
@@ -70,6 +70,7 @@ withdrawn claims: `THE_ROAD_V001.md` (10 so far, kept so they are not re-made).
 | **X1** | the topology is a **lattice's**, not spacetime's | nothing here makes it spacetime topology |
 | **X2** | it does not respond to matter content | needed to make the gravity role a *derivation* rather than a functional match |
 | **X3** | the outcome problem | the field's open problem; W-35 relocated it |
+| **X5** | **is a gauge theory's 1-form symmetry "global" for Harlow–Ooguri?** | a question about *their* result; the likeliest resolution of the tension, and not ours to settle |
 | **X4** | **empirical contact: zero**, and **no distinguishing prediction identified** | W-48 killed the decoherence candidate; C1 killed the legibility candidate |
 
 ---

@@ -4693,3 +4693,53 @@ are not what Harlow–Ooguri forbids.** So:
 — `slope 2.000`, `4.9e-13` against `2.0e-06`, `2^{2g}`. **What changes is what they are called and why
 they hold.** The emergence claim (that the 1-form symmetry here is emergent rather than exact
 microscopic) is **asserted from the literature and not yet verified on this carrier.**
+
+---
+
+## O6 — **THE 1-FORM SYMMETRY IS EXACT IN OUR CARRIER, NOT EMERGENT. THE HARLOW–OOGURI TENSION IS LIVE.**
+
+`LANE_O6_EMERGENCE/`, sealed. The emergence claim was asserted from the literature and carries the
+whole gravity connection, so it was tested. **It failed.**
+
+```
+  1-FORM (toric code, generic local gauge-invariant perturbation)
+      eps        ||[W, H+epsV]||   slope      ground splitting   slope
+    1.0e-04            0.000e+00                    1.613e-08
+    1.0e-03            0.000e+00     --             1.613e-06   2.000
+    1.0e-02            0.000e+00     --             1.613e-04   2.000
+
+  0-FORM CONTROL
+    1.0e-04            8.517e-04                    1.598e-04
+    1.0e-03            8.517e-03   1.000            1.598e-03   1.000
+    1.0e-02            8.517e-02   1.000            1.593e-02   0.998
+```
+
+**THE CONTROL FIRES CORRECTLY:** a 0-form symmetry is broken at slope `1.000` and its degeneracy
+splits at slope `1.000` — **no gap**, exactly as an exact-but-fragile symmetry should behave.
+
+> **BUT THE 1-FORM SYMMETRY IS NOT BROKEN AT ALL: `0.000e+00` AT EVERY PERTURBATION STRENGTH.** It is
+> **EXACT**, not emergent — while its degeneracy still splits at order `2`.
+
+**WHY, AND IT IS NOT AN ACCIDENT.** In the gauge-invariant sector the only available local operators
+are the electric `Z_k` and the plaquettes. **Both commute with the Wilson-loop generator.** A
+single-link shift would not, but it is not gauge-invariant and does not act on the physical space.
+**Gauge invariance itself forbids every operator that could break the 1-form symmetry.**
+
+### WHAT THIS DOES TO THE CLAIM
+
+**The proposed resolution of the Harlow–Ooguri tension is withdrawn.** It rested on the 1-form
+symmetry being emergent. **In this carrier it is exact — and it is exact precisely because we imposed
+gauge invariance.** That is the same "we installed it" defect as A1 and A2.
+
+> **THE TENSION IS LIVE, NOT RESOLVED.** Records require a 1-form symmetry (statements 1–4). Quantum
+> gravity forbids exact global symmetries **of every form**. Our carrier supplies an **exact** one.
+> **Something must give, and this construction cannot say what.**
+
+**THE THREE LIVE POSSIBILITIES, none decidable here.** (a) The 1-form symmetry of a *gauge* theory is
+not "global" in the Harlow–Ooguri sense — the likeliest resolution, and a question about their result
+rather than ours. (b) It must be **emergent** in any real realization, which needs the gauge structure
+itself to emerge from a non-gauge microscopic model — **not our carrier, where gauge invariance is an
+input.** (c) The requirement is weaker than statements 1–4 assert.
+
+**O6 IS NOT CLOSED. It is upgraded from "asserted" to "tested and failed", and the gravity connection
+now rests on an open question rather than a citation.**
