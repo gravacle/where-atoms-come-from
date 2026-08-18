@@ -3270,3 +3270,65 @@ loop or at a point.**
 transported probe accumulates, so the metric enters the dynamics rather than being a label the
 environment reads off. **Then ask whether THAT is redundantly readable, and whether the sieve still
 prefers the loop.** Until then the gravity line has a candidate term and no measurement.
+
+---
+
+## W-45 — **CAPACITY PASSES ALL FOUR OF GRAVITY'S FUNCTIONAL MARKERS, WITH NO METRIC ANYWHERE**
+
+`LANE_W45_FUNCTIONAL/`, sealed. Opened on the principal's standing correction, given twice and
+ignored twice by the registrar: **do not expect the full footprint of CLASSICAL gravity at the
+record level; it will look different while performing the same function.** *"An early embryo doesn't
+look like a human."* The W-44 workflow specifies gravity by metric, proper time and clocks — its
+classical form — and therefore imports precisely the assumption we were told to stop importing.
+
+**So test by FUNCTION.** Gravity's signature, stripped of its classical shape, against **capacity**
+— a quantity that arose from this program's own measurements (W-39, W-41, W-42) and not from gravity.
+
+```
+  F1  UNIVERSAL SOURCING   every record consumes; there is no neutral record
+        15 of 15 records consume exactly 1; consumption values observed: [1]         PASS
+  F2  NO SCREENING         a record cannot hide behind others and avoid paying
+        0 screened cases of 1152 with capacity genuinely available                   PASS
+  F3  ONE SIGN             nothing ever frees capacity; there is no negative record
+        no record of any size increases what is available to others                  PASS
+  F4  ARENA, NOT FORCE     it never appears in H and exerts nothing; it sets what
+        is POSSIBLE -- k=1,2,3 possible, k=4 IMPOSSIBLE, no arrangement exists       PASS
+```
+
+**F2 FAILED AS FIRST WRITTEN AND THE FAILURE WAS THE TEST.** `108 of 1260` additions appeared to pay
+nothing — but in every one of them **capacity was already exhausted**, so there was nothing left to
+charge. That is **saturation, not screening.** Gating on capacity `> 0` beforehand gives **zero**
+screened cases. Both versions are retained in the lane.
+
+**AND THE CONTRAST IS SHARP.** The `Z_2` charge on the same carrier fails **all four**: it has two
+signs, charges annihilate in pairs (`1+1 = 0 mod 2`), and a neutral sector exists (`8` of `16`
+configurations are globally neutral). **EM screens. Capacity cannot.**
+
+### WHAT IT IS
+
+> **CAPACITY IS ANOTHER WORD FOR ROOM. And `capacity = area - 1` exactly (W-42), so it is not a
+> metaphor for space — IT IS THE AREA, MINUS ONE.**
+
+Everything takes some, nothing makes more, nothing can avoid paying, and it never pushes anything
+around — it only decides what can coexist. **That is what space does with respect to matter, derived
+here from record dynamics on a pure gauge theory with no metric, no proper time and no clock
+installed anywhere.**
+
+**STATED AT ITS PROPER STRENGTH.** This is a functional match, not a metric. Capacity is presently a
+**static bookkeeping quantity of a fixed graph** — it has no dynamics of its own, nothing sources a
+change in it, and nothing expands. **It is the embryonic form the principal named, and it should be
+reported as that and not as gravity.**
+
+**NOT HOLOGRAPHIC, AND THE REGISTRAR WILL NOT CLAIM OTHERWISE.** Capacity tracks the extensive
+measure (plaquettes), not the boundary (W-42: `cap/area -> 1` while `cap/perimeter` grows without
+bound).
+
+### THE NEXT STEP, AND IT IS NOW MOTIVATED FROM INSIDE
+
+**MAKE CAPACITY DYNAMICAL.** Not "let the graph's topology respond" (Route B, refuted 3/3) and not
+"install a metric" (W-44, an imported classical shape). **Let the carrier's ROOM change in response
+to demand.** W-41 already measured the alternative: on a fixed carrier, demand beyond capacity is
+resolved by **eviction**. So the dichotomy is sharp and it is ours, not borrowed:
+
+> **EITHER THE CARRIER GROWS, OR RECORDS ARE EVICTED. Both are measurable, and only one of them
+> looks like an expanding arena.**

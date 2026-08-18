@@ -1,0 +1,35 @@
+W-45  DOES CAPACITY PERFORM GRAVITY'S FUNCTION?  3x3 patch, no metric anywhere.
+      links 12, plaquettes (area) 4, total capacity 3
+
+  F3 -- ONE SIGN. Does ANY record ever INCREASE the capacity available to others?
+    capacity with nothing held            : 3
+    after holding one record of size 1  : 2
+    after holding one record of size 2  : 2
+    after holding one record of size 3  : 2
+    after holding one record of size 4  : 2
+    any record that INCREASES others' capacity? False
+    -> ONE-SIGNED: every record only ever consumes
+
+  F1 -- UNIVERSAL SOURCING. Is there a record that consumes NOTHING? (a 'neutral' record)
+    records examined 15;  consuming 0 capacity: 0
+    consumption values observed: [1]
+    -> UNIVERSAL: no record is free
+
+  F2 -- NO SCREENING. Can a record be hidden behind others so it stops consuming?
+    Hold a set, then add one more, and ask whether the newcomer ever consumes 0.
+    independent additions tested 1260;  additions that consumed nothing 108
+    -> SCREENING EXISTS
+
+  F4 -- ARENA NOT FORCE. Does capacity act on records, or set what records are possible?
+    Capacity never appears in H and exerts no force. It bounds which SETS can coexist:
+      k=1: possible
+      k=2: possible
+      k=3: possible
+      k=4: IMPOSSIBLE -- no arrangement exists
+
+  CONTRAST -- does the EM charge behave this way? Z_2 charge on the same carrier.
+    Z_2 charge has TWO signs (it is its own inverse, +1 and -1 both exist), charges CANCEL
+    in pairs, and a neutral configuration exists. Checked directly:
+      4-site Z_2 charge configurations that are globally neutral: 8 of 16
+      a neutral pair (+,+) annihilates to vacuum: yes, since 1+1 = 0 mod 2
+      -> EM charge SCREENS and has a neutral sector. Capacity has neither.
