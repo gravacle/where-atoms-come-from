@@ -1,8 +1,13 @@
 # PLAN TO PROOFS — V001 — 2026-08-18
 
-`PROOF_V001.md` proves Theorems A–D. **Those are Kitaev's toric code and are not this program's
-result.** This program's result is the **chain that makes them necessary** — and that chain is
-currently *measured*, not proved. This plan closes it.
+`PROOF_V001.md` proves Theorems A–D, which are Kitaev's toric code and are attributed as such.
+
+**FRAMING CORRECTED (see `THE_CLAIM_V001.md`).** Naming the components does not make the assembly a
+restatement. **The claim is that a quantum record IS a topologically protected degeneracy of a gauge
+field, that records REQUIRE topology, and that the three terms have the roles measured here — and no
+such description exists in physics.** Theorems A–D say what topology *gives*. They do not say records
+*require* it. **That requirement is this program's claim, and this plan is what turns it from measured
+into proved.**
 
 ## THE CHAIN, AND WHERE IT IS UNPROVED
 
