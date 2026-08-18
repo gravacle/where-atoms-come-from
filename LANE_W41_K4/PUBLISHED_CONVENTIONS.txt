@@ -1,0 +1,10 @@
+LANE W41 -- k=4, THE PACKING CONSTRAINT WITH NO SOLUTION. 3x3 patch, Z_2, dim 16, g2=0.01, gamma=0.5.
+The 4-set is the four single plaquettes, a basis of the region space; their boundaries union to all
+12 links, so every nonempty bath hits at least one.
+DERIVED AND THEN CHECKED: for the adjoint Lindbladian the coherent term contributes nothing to the
+first-order decay rate (Tr(O* i[H,O]) is purely imaginary for Hermitian H), and at Z_2 a Wilson loop
+and a link operator either commute or anticommute, so
+        rate(O) = 2*gamma*|bath INTERSECT boundary(O)| + O(g^4).
+The formula is VALIDATED against the full 256x256 Lindbladian spectrum before the scan is trusted:
+|overlap|=1 gives full-spectrum rates 0.92-0.99, |overlap|=0 gives 0.003-0.06 (the g^4 residue).
+The scan of 793 baths uses the counting form; every headline claim is re-confirmed on the spectrum.

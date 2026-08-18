@@ -3074,3 +3074,51 @@ W-40 is what rules it out rather than leaving it assumed.
 
 **`PROCESS_DESCRIPTION_V003` §1 condition 5 is upgraded from ARGUED to MEASURED**, and keeps W-37d's
 qualifier: **objective to probes that can couple to it.**
+
+---
+
+## W-41 — **k=4: THE CARRIER EVICTS. IT DOES NOT SHARE THE DAMAGE.**
+
+`LANE_W41_K4/`, sealed. W-39 established the packing constraint has no solution at `k=4`. Demand it
+and watch the failure mode, because the failure mode is the physics.
+
+**A DERIVATION THAT ALSO MAKES THE SCAN CHEAP.** For the adjoint Lindbladian the coherent term
+contributes **nothing** to the first-order rate — `Tr(O† i[H,O])` is purely imaginary for Hermitian
+`H` — and at `Z_2` a Wilson loop and a link operator either commute or anticommute. So
+
+> **`rate(O) = 2·gamma·|bath ∩ boundary(O)| + O(g⁴)`. The decay rate is literally a COUNT of how many
+> bath links sit on the boundary.** W-32, W-38 and W-39 in one line.
+
+**VALIDATED AGAINST THE FULL SPECTRUM before being used:** `|overlap| = 1` → `0.92–0.99`;
+`|overlap| = 0` → `0.003–0.06`, the `g⁴` residue.
+
+**THE RESULT.** Of 793 baths, **zero** protect all four — the constraint genuinely has no solution.
+And the failure is not shared:
+
+```
+  bath [0], confirmed on the full 256x256 spectrum
+     region (0,)   rate 9.2242e-01   EVICTED
+     region (1,)   rate 3.8571e-02   protected
+     region (2,)   rate 3.8571e-02   protected
+     region (3,)   rate 2.7401e-03   protected
+```
+
+> **THREE RECORDS SURVIVE AT THE `g⁴` RESIDUE AND ONE IS THROWN OUT, A FACTOR OF 24–340x WORSE.
+> THE CARRIER HAS A HARD CAPACITY OF 3 AND ENFORCES IT BY EVICTION, NOT BY DEGRADING EVERYONE.**
+
+**AND WHICH ONE DIES IS SET BY GEOMETRY.** Each link lies on 1 or 2 of the four boundaries. A bath
+on a **multiplicity-1** link evicts exactly **one** record; on a **multiplicity-2** link it evicts
+**two**. **Where the environment sits decides how many records die**, and the count is exact.
+
+### WHAT THIS OPENS
+
+**On a static carrier the fourth record simply fails.** There is no negotiation and no deformation —
+the capacity is enforced instantly and cleanly. **This is the first question in the program where a
+responsive carrier could give a DIFFERENT answer that would mean something:** instead of evicting,
+a carrier that could grow — one more plaquette, one more link — could accommodate the fourth.
+
+**That makes the gravity-shaped mechanism concrete and testable for the first time: CONTENT
+EXCEEDING CAPACITY FORCES THE CARRIER TO EXPAND.** The prerequisite measurement is whether capacity
+actually grows with carrier size — `4` plaquettes give capacity `3`; what do `6` or `9` give? If
+capacity tracks size, "demand exceeds capacity → the carrier grows" is a well-posed dynamics rather
+than a wish. **Untested.**
