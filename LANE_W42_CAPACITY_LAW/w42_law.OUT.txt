@@ -1,0 +1,30 @@
+W-42  CAPACITY vs CARRIER SIZE
+      patch  verts  links  plaq m  cycle rank  capacity   m-1?
+  --------------------------------------------------------------
+        2x2      4      4       1           1         0   True
+        3x2      6      7       2           2         1   True
+        3x3      9     12       4           4         3   True
+        4x3     12     17       6           6         5   True
+        4x4     16     24       9           9         8   True
+        5x4     20     31      12          12        11   True
+        5x5     25     40      16          16        15   True
+
+  CROSS-CHECK against W-39's brute force at the 3x3 patch (m=4). Brute force said 3.
+    brute force over all independent sets: capacity = 3   (linear-algebra answer 3)  -> AGREE
+
+  THE LAW
+    capacity = m - 1 in every case above, where m = number of plaquettes.
+    For a planar patch the number of plaquettes IS the AREA in lattice cells,
+    and the cycle rank equals it. So:  CAPACITY = AREA - 1.
+
+  AND THE HONEST READING OF THAT
+    2x2: area   1  perimeter   4  capacity   0   cap/area 0.000   cap/perimeter 0.000
+    3x2: area   2  perimeter   6  capacity   1   cap/area 0.500   cap/perimeter 0.167
+    3x3: area   4  perimeter   8  capacity   3   cap/area 0.750   cap/perimeter 0.375
+    4x3: area   6  perimeter  10  capacity   5   cap/area 0.833   cap/perimeter 0.500
+    4x4: area   9  perimeter  12  capacity   8   cap/area 0.889   cap/perimeter 0.667
+    5x4: area  12  perimeter  14  capacity  11   cap/area 0.917   cap/perimeter 0.786
+    5x5: area  16  perimeter  16  capacity  15   cap/area 0.938   cap/perimeter 0.938
+
+    capacity tracks AREA, not perimeter. It is NOT a holographic/boundary-law count,
+    and must not be reported as one.

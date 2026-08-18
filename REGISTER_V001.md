@@ -3122,3 +3122,55 @@ EXCEEDING CAPACITY FORCES THE CARRIER TO EXPAND.** The prerequisite measurement 
 actually grows with carrier size — `4` plaquettes give capacity `3`; what do `6` or `9` give? If
 capacity tracks size, "demand exceeds capacity → the carrier grows" is a well-posed dynamics rather
 than a wish. **Untested.**
+
+---
+
+## W-42 — **CAPACITY = AREA − 1, EXACTLY. AND IT CORRECTS W-39.**
+
+`LANE_W42_CAPACITY_LAW/`, sealed. Prerequisite for "content exceeding capacity forces the carrier to
+expand": capacity must actually depend on size.
+
+W-41's counting formula removes the Hilbert space entirely. The boundary map is **linear over GF(2)**;
+a set of records is simultaneously protectable iff **some link lies on none of their boundaries**;
+and that is **one linear condition**. So capacity `= max_L dim ker(f_L)`.
+
+```
+     patch  verts  links  plaq m  cycle rank  capacity   = m-1
+       3x3      9     12       4           4         3    yes
+       4x3     12     17       6           6         5    yes
+       4x4     16     24       9           9         8    yes
+       5x4     20     31      12          12        11    yes
+       5x5     25     40      16          16        15    yes
+```
+
+**Cross-checked against W-39's explicit brute force at `3x3`: both give `3`.**
+
+> **CAPACITY = m − 1 = AREA − 1**, where `m` is the number of plaquettes, which for a planar patch is
+> the area in lattice cells and equals the cycle rank.
+
+### ERRATUM TO W-39
+
+**W-39 reported capacity `3` as a GEOMETRIC bound, contrasted with the FORCED algebraic bound `4`,
+and concluded "the limit is packing, not dimension." THAT CONCLUSION IS WITHDRAWN.** `m − 1` is the
+kernel dimension of a single linear functional — **it is forced too**, just one less than the space's
+dimension rather than equal to it. The registrar drew the forced/not-forced line in the wrong place.
+
+**W-39's other results are unaffected**: the *measured* crowding (margin `43.8x → 2.0x → 1.1x`, with
+total dissipation held fixed) is dynamics, not counting, and stands. So does W-41's eviction.
+
+### AND THE HONEST READING, WHICH CUTS AGAINST AN EASY STORY
+
+```
+    3x3: area  4  perimeter  8  capacity  3     cap/area 0.750   cap/perimeter 0.375
+    4x4: area  9  perimeter 12  capacity  8     cap/area 0.889   cap/perimeter 0.667
+    5x5: area 16  perimeter 16  capacity 15     cap/area 0.938   cap/perimeter 0.938
+```
+
+> **CAPACITY TRACKS AREA, NOT PERIMETER.** `cap/area → 1` while `cap/perimeter` grows without bound.
+> **This is NOT a holographic or boundary-law count and must not be reported as one** — the registrar
+> has already conflated two different area laws once in this program (confinement vs Bekenstein) and
+> will not do it again.
+
+**WHAT IT BUYS.** The dynamics is now well-posed: **to hold `k` records a carrier needs area `≥ k+1`.**
+Below that it evicts (W-41). **"Demand exceeds capacity → the carrier must grow" is a statement with
+a number in it**, and the number is one plaquette per record.
