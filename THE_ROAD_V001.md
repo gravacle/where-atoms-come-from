@@ -24,7 +24,7 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | 11 | what escapes the region | **DONE** | W-46 | `legibility = perimeter/2 − 1`; storage is bulk, legibility is boundary |
 | 12 | **EM's role** | **DONE** | W-27/34 | supplies the carrier, the boundary, and the record-bearing holonomy |
 | 13 | **alpha's role** | **DONE** | W-32/37b | `1/(8g²)` uses; `9.6 g⁴P/τ < 1` legible size |
-| 14 | **gravity's role** | **PARTIAL** | W-45 | capacity passes all 4 functional markers; EM's charge fails all 4. **No dynamics: capacity is static bookkeeping** |
+| 14 | **gravity's role** | **PARTIAL** | W-45/44 | capacity passes all 4 functional markers; EM's charge fails all 4. **No dynamics: capacity is static bookkeeping.** W-44: installing a classical metric three ways changed nothing — the functional route is the live one |
 | 15 | **THE COMBINATION — how all three fit together** | **PARTIAL** | W-47/48 | form confirmed (130× monotone collapse); constant off ~4×. **W-48: the decoherence half is textbook `exp(-ΓT)`; the power law was an artifact of maximising over time** |
 | 16 | make capacity dynamical — does the carrier grow, or only evict? | **OPEN** | — | W-41 measured eviction on a fixed carrier; growth untested |
 | 17 | does any of it survive off the toy | **OPEN** | — | one gauge group, one lattice, ≤16 physical dimensions |
@@ -42,6 +42,8 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | "the empty gravity line is a result about records" | V003 | it is a result about our graph, which has no metric |
 | "capacity is not a holographic count" | W-42 | right about STORAGE, wrong to close the question — W-46 |
 | the composed law shows a power-law departure from standard decoherence | W-47 | the power law came from maximising over time; the un-optimised signal is exponential — W-48 |
+| "a metric record is objective for free" (0.999 redundancy) | W-43b | the environment was coupled straight to the mass with H_sys=0; with the metric doing real work it scores 0.0013–0.0758 — W-44 |
+| "the sieve selects the gauge boundary even with a metric present" | W-44 builds | true only for eps ≳ 0.05; the metric wins below that. A report on eps/g², not a fact |
 
 ## THE HONEST LEDGER
 

@@ -3477,3 +3477,88 @@ is *consistent with exponential, marginally better than power law, neither fitti
 the half we now know is standard. **The storage-versus-legibility claim belongs to topological
 codes**, where the count of logical operators, their nonlocality, and the readout of nonlocal
 observables are the actual physics. That is a different corpus from the one in the paper's registry.
+
+---
+
+## W-44 — **A METRIC THAT GENUINELY DOES WORK BUYS NOTHING. AND IT KILLS W-43b.**
+
+`LANE_W44_METRIC_DYNAMICS/`. **CONTAMINATED LANE, and specified wrongly on purpose-in-hindsight:**
+it defines gravity by its CLASSICAL form — metric, proper time, clocks — which is the import the
+principal had already flagged twice. **Read under that rule: a classical-shaped null reads two ways.**
+
+Three independent builds (link length, site potential, clock), registrar's expectation withheld,
+then three adversaries. **The adversaries verified independently that the metric really does work
+this time:** it enters `H` only multiplied by the coupling knob, no jump operator touches it
+(`max ||[N_M⊗I, L_k]|| = 0.000e+00`), and coupling-zero reproduces separately built no-metric
+carriers to `~1e-14`. **That is precisely where W-43b failed, and it is not repeated.**
+
+### REDUNDANCY — UNANIMOUS NULL, AND IT OVERTURNS W-43b
+
+```
+  single-fragment / whole-environment Holevo ratio, same state, same fragments
+  build                                 metric    gauge
+  link-length, length on a rim link     0.0758   0.0478
+  link-length, length on a cut link     0.0385   0.0509
+  site-potential, env on cut links      0.0090   0.0046
+  site-potential, env at the mass       0.0013   0.0835
+  clock                                 0.0135   0.0105
+```
+
+> **EVERY VALUE IS FAR BELOW `0.5`, AND THE ORDERING FLIPS WITH PLACEMENT. A metric degree of freedom
+> that actually participates in the dynamics acquires NO redundancy, and NO advantage over the gauge
+> loop.** Three independent constructions agree.
+
+**W-43b's HEADLINE IS WITHDRAWN.** Its metric record scored `0.999` — a full bit from a single
+fragment — **because the environment was coupled directly to the mass operator while `H_sys = 0`.**
+The registrar flagged that limitation in the lane conventions and in the register at the time. **The
+flag was right and the number was an artifact.** With the metric doing real work it scores `0.0013`
+to `0.0758`.
+
+**WHAT SURVIVES OF W-43b:** nothing of the metric side. **W-46 is unaffected** — storage-vs-legibility
+is a GF(2) rank computation, not a redundancy measurement.
+
+### SELECTION — THE RIM STILL WINS, BUT THE CONTEST IS TWO OPERATORS
+
+At every reported operating point the slowest operator is still the full-boundary Wilson loop
+tensored trivially on the metric (`3.16e-03` clock, `2.94e-03` site, `1.66e-02` link). **But an
+adversary counted the bath commutant directly: only `8` of `64` dictionary operators commute with
+all four jump operators — `56` are excluded by COUNTING before any dynamics runs.**
+
+**And the winner is not robust.** Sweeping the metric's tunnelling rate `eps`, which the builds
+declared unmotivated and never swept:
+
+```
+  lam=0.6, g2=0.01:  eps=0.01  RIM 3.164e-03  I(x)sz 4.954e-04   METRIC WINS
+                     eps=0.02  RIM 3.164e-03  I(x)sz 1.978e-03   METRIC WINS
+                     eps=0.05  RIM 3.164e-03  I(x)sz 1.217e-02   rim wins  3.85x
+                     eps=0.15  RIM 3.163e-03  I(x)sz 9.192e-02   rim wins 29.06x  <- reported
+```
+
+At `eps=0.02` the slowest non-trivial left-eigenmode of the full `1024x1024` Lindbladian matches
+`I⊗sz_M` at overlap `0.975`, so **this is not a dictionary artifact.** And the margin itself is
+estimator-dependent: `2.56` at `T=1`, `30.9` at `T=10`, `3.95` at `T=1000`.
+
+> **"THE SIEVE SELECTS THE GAUGE BOUNDARY EVEN WITH A METRIC PRESENT" IS A REPORT ON THE RATIO
+> `eps/g²`, NOT A ROBUST FACT.** The winner is stable in `T` but not in `eps`.
+
+### DEFECTS THE ADVERSARIES FOUND
+
+**Site-potential transport stage: REFUTED** — a controlled-phase between the readout register and
+the projector onto the very quantity whose Holevo is reported. **Clock section 5: REFUTED twice** —
+`np.diag(np.arange(DC)) - (DC-1)/2.0` subtracts from **every matrix element**, not the diagonal
+(shipped `<C> = -4.500` where the design requires `0.000`), and the fringe-contrast statistic is
+blind: with the bug fixed, contrast is `1.000000` at every `omega` while `S(clock)` rises to `1.61`
+bits. **Link-length transport: weakened** — the length register is frozen there, so the reading is a
+probe seeing a static classical defect. **All three failures are in the third, UNREQUESTED stage.**
+
+### THE READING, AT ITS PROPER STRENGTH
+
+**Installing a metric — three ways, with the metric verified to participate — changed nothing about
+redundancy and does not robustly change what the carrier protects.** Under the principal's standing
+rule this reads two ways: either a metric is not what performs gravity's function at the record
+level, **or** our carrier is not one where a classical-shaped metric can do anything. **It is not
+evidence that gravity is absent, and it is not a baseline.**
+
+**AND IT LEAVES W-45 STANDING AS THE BETTER ROUTE.** Capacity — which required no metric at all —
+passes all four functional markers. **The classical-shaped install bought nothing; the
+functional identification bought four for four.**
