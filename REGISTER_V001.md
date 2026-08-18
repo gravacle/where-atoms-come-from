@@ -2915,3 +2915,60 @@ probe positions that satisfy DIFFERENT Gauss laws. **Unresolved. Nothing is infe
 **ALSO CORRECTED.** `w37c`'s docstring asserts the odd-`n` spectra "coincide as SETS"; its own TEST 3
 prints `different` at every `n`, and the true relation is that they are exact NEGATIVES. The register
 entry for W-37c stated the negative relation correctly; the code comment is wrong and is superseded here.
+
+---
+
+## W-38 — **THE REGION IS NOT GIVEN. THE ENVIRONMENT DECIDES WHAT COUNTS AS A REGION.**
+
+`LANE_W38_REGION/`, sealed. Opened on the principal's reading: **a region is another way of thinking
+about a boundary.** On a graph that is an identity — a region IS a cycle that separates — so "which
+region carries the record" and "which boundary is selected" are one question, and W-34 already
+answered a special case of it while the registrar noted the general one in passing and moved on.
+
+**15 regions** (subsets of the 4 plaquettes), each with its boundary loop. Sieve run seven times,
+with the environment in a different place each time.
+
+```
+              bath       winner        rate    runner-up   margin   winner's boundary
+                                                                    touching the bath
+      CUT (centre) (0, 1, 2, 3)  7.1572e-02         (1,)    27.7x        0 of 8
+ one corner plaq 0         (3,)  6.0883e-02         (2,)    16.4x        0 of 4
+ one corner plaq 3         (0,)  6.0883e-02         (2,)    16.4x        0 of 4
+     single link 0         (3,)  2.7401e-03         (1,)    14.1x        0 of 4
+       left column         (3,)  4.5939e-02         (1,)     1.0x        0 of 4   (tie: two regions avoid it)
+   RIM (perimeter)         (3,)  1.9812e+00         (0,)     1.0x        2 of 4   (no selection)
+         all links         (0,)  3.9455e+00         (3,)     1.0x        4 of 4   (CONTROL: spread only 2.03x)
+```
+
+> **THE SURVIVING REGION IS ALWAYS THE ONE WHOSE BOUNDARY IS DISJOINT FROM THE ENVIRONMENT, AND IT
+> MOVES WHEN THE ENVIRONMENT MOVES.** Bath at the centre → the WHOLE patch survives. Bath on corner
+> plaquette `0` → the OPPOSITE corner `(3)` survives. Bath on corner `3` → corner `(0)` survives.
+> Bath on a single link → a region avoiding it. **Same carrier, same Hamiltonian, same field. Only
+> the environment's location changed.**
+
+**THE CONTROLS FIRE CORRECTLY AND THEY ARE WHAT MAKE THIS READABLE.** With the bath on **all** links
+no region is spared and the spread collapses to `2.03x` — no winner. With the bath on the **rim**,
+which touches nearly every boundary, the margin is `1.0x` — no selection. And **"left column"
+produces an honest TIE**, because regions `(1)` and `(3)` both have boundaries disjoint from
+`[0,4,6,9]`. **When several regions avoid the environment, several regions tie.** The effect is
+not "some region always wins"; it is specifically avoidance of the environment.
+
+### WHAT THIS ESTABLISHES
+
+**This is the first result in the program where a GEOMETRIC notion is an OUTPUT rather than an
+input.** Every region in this program until now was chosen by the registrar — the 3×3 patch, its
+perimeter, the rim loop. Here the carrier offers 15 regions and says nothing about which is real;
+**the environment's placement picks one, with a margin of 14–28×.**
+
+**Stated carefully, because the temptation to call this gravity is strong and premature:**
+
+- **WHAT IS MEASURED:** what counts as a record-bearing region is determined by the matter/environment
+  content, not fixed in advance. **Content decides geometry** — which is general relativity's central
+  move, appearing here for the first time.
+- **WHAT IS NOT MEASURED:** the graph is still static. Nothing deforms. What is selected is which
+  SUBSET of a fixed complex is a region, not the complex itself. **This is not dynamical geometry
+  and must not be reported as such.**
+
+**And it is consistent with the whole night: it happened on a STATIC carrier.** W-31 (refuted 3/3),
+V003, and now W-38 all point the same way — **the responsive carrier has not been needed for
+anything yet, including for geometry to become an output.**

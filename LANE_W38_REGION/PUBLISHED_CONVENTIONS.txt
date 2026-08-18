@@ -1,0 +1,7 @@
+LANE W38 -- IS THE REGION GIVEN OR SELECTED? 3x3 patch, Z_2, physical dim 16, g2=0.01, gamma=0.5.
+A REGION is a subset S of the 4 plaquettes; its BOUNDARY is the product of them (discrete Stokes),
+and the boundary's link support is printed for every one of the 15 non-empty regions. Decay rates
+come from the LINDBLADIAN SPECTRUM (row-major convention, per the erratum), as an overlap-weighted
+mean of the left-eigenmode rates against each boundary operator. The sieve is then run with the
+environment in SEVEN different places. Margin = runner-up rate / winner rate; a margin near 1.0
+means NO selection, and is reported as such rather than as a winner.
