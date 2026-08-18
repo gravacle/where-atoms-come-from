@@ -1,0 +1,33 @@
+W-37  probe hops the 8 rim vertices; static anti-charge at the centre.
+      rim vertices [0, 1, 2, 5, 8, 7, 6, 3]
+      rim links    [0, 1, 8, 11, 5, 4, 9, 6]  (== PERIM, so the ring IS the record's support)
+      physical dim with matter = 128   (16 gauge states per probe position)
+      CONSTRAINT CHECK -- probe with NO compensating anti-charge: 0 physical states  (correct: odd total charge is forbidden)
+      R unitary defect 0.0e+00, eigenvalues 2, ||[R,H_hop]|| = 0.0e+00
+
+      initial state: probe at site 0, <R> = +4.2e-17 (unbiased by construction)
+
+  I(R : probe position) in bits as the probe goes around.  tau = 1.0
+        T   I(R:probe)    P(probe back at 0)
+  ----------------------------------------------
+     0.00     0.000000                1.0000
+     0.50     0.000013                0.5855
+     1.00     0.002606                0.0501
+     2.00     0.270865                0.1578
+     3.00     0.669357                0.0355
+     4.00     0.476052                0.2292
+     6.00     0.648345                0.0139
+     8.00     0.027490                0.0326
+    12.00     0.829907                0.4985
+    20.00     0.301853                0.0911
+
+  CONTROL A -- tau = 0 (no transport at all). Must be 0 at every time.
+    T=  4.0   I = 2.403e-16
+    T= 12.0   I = 2.403e-16
+
+  CONTROL B -- THE DECISIVE ONE. Cut the ring (remove ONE hop), keeping every local
+  interaction and removing only the closed path. If the information is topological it dies.
+    T=  4.0   I(cut ring) = 0.000000
+    T=  8.0   I(cut ring) = 0.000000
+    T= 12.0   I(cut ring) = 0.000000
+    T= 20.0   I(cut ring) = 0.000000

@@ -2727,3 +2727,51 @@ redundantly copied.** If it is, the process closes: the record is written by mon
 by `[L,R]=0`, selected by the sieve, persists `1/(8g^2)` write-times, and is made objective by
 transport. **If the transport time itself destroys the record, that is a new obstruction and the
 timescale competition becomes the next quantity to measure.**
+
+---
+
+## W-37 — **A LOCAL PROBE READS THE NONLOCAL RECORD, AND THE READING IS PURELY TOPOLOGICAL**
+
+`LANE_W37_TRANSPORT/`, sealed. W-36's obstruction was that `R` is nonlocal and a local environment
+cannot copy it. Gauge theory's own answer is transport.
+
+**EXPLICIT MATTER.** A probe charge hopping the 8 rim vertices, a static anti-charge at the centre.
+**The constraint bites and was checked rather than assumed: with the probe alone the total `Z_2`
+charge is odd and the physical sector contains `0` states.** Gauss becomes matter-dependent —
+`div(s)_v = [probe site] + [centre]` — so **the physical sector MOVES with the probe.** Physical
+dim `128 = 8 × 16`. The only interaction is the hop; it touches **one link at a time** and never
+mentions `R`.
+
+```
+      T   I(R:probe) bits    P(probe back at 0)
+   0.00        0.000000                1.0000
+   1.00        0.002606                0.0501
+   2.00        0.270865                0.1578
+   3.00        0.669357                0.0355
+  12.00        0.829907                0.4985
+
+  CONTROL A  tau = 0 (no transport)          I = 2.403e-16
+  CONTROL B  RING CUT (one hop removed)      I = 0.000000 at T = 4, 8, 12, 20
+```
+
+> **`I(R:probe)` reaches `0.83` bits through hops that each touch a single link. CUT THE RING —
+> keeping every local interaction and deleting only the closed path — AND IT IS EXACTLY `0.000000`
+> AT EVERY TIME. The information is topological. It exists only because a closed path exists.**
+
+**`||[R, H_hop]|| = 0.0e+00`.** The transport **cannot disturb the record.** So the reading is QND,
+and **many probes may each read it independently** — which is redundancy, and therefore objectivity.
+**W-36's condition 5 is met, by transport.**
+
+`I` oscillates rather than saturating because the dynamics here is coherent and nothing decoheres the
+probe; the information sloshes between probe and field. **Locking it in requires decohering the
+probe's position, which is untested.**
+
+### THE CLOSING RELATION, AND WHAT IS STILL UNMEASURED IN IT
+
+Readout takes a traversal: `T_read ~ perimeter / tau`. The record decays at `Gamma = 32 g^4` (W-32).
+**A region can be read before it forgets only if `32 g^4 · perimeter / tau << 1`** — a relation
+between the coupling, the size of the region, and the transport rate.
+
+**THE PERIMETER SCALING IS NOT MEASURED.** One patch, one ring size, so `T_read ∝ perimeter` is an
+expectation and not a result. **Rings of several sizes are the next build, and if the scaling holds
+the relation above is the program's next pure number.**

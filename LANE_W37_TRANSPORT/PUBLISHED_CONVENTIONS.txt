@@ -1,0 +1,11 @@
+LANE W37 -- AHARONOV-BOHM TRANSPORT. EXPLICIT MATTER, no shortcuts. A probe charge hops the 8 rim
+vertices of the 3x3 patch; a STATIC ANTI-CHARGE sits at the centre. Without the anti-charge the
+total Z_2 charge is odd and the physical sector is EMPTY -- checked in code (0 states), not assumed.
+GAUSS IS MATTER-DEPENDENT: div(s)_v = [v is the probe's site] + [v is the centre] (mod 2), so the
+physical sector MOVES with the probe. Physical dim 128 = 8 positions x 16 gauge states.
+The ONLY interaction is the hop H = -tau sum_k (|k+1><k| (x) U_link(k) + h.c.). It touches ONE link
+at a time and never mentions R. Verified: ||[R, H_hop]|| = 0.0e+00 -- the transport cannot disturb
+the record, so many probes may read it independently.
+MEASURE: Holevo information the PROBE POSITION holds about R, in bits, ceiling 1.
+CONTROL B IS THE DECISIVE ONE: remove ONE hop, keeping every local interaction and deleting only the
+closed path. Any information that is topological must vanish there.
