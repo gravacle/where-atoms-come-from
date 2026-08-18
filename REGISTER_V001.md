@@ -4786,3 +4786,40 @@ the **full Hilbert space**, where a short string maps out of the ground space an
 anything — making clause (v) vacuously true for every candidate. The second counted rank in the
 **link space** rather than in the quotient `Z¹/B¹`, giving `5` and `7` instead of `2`. **Both are
 "counted in the wrong space"; the record lives on the ground space, modulo stars, and nowhere else.**
+
+---
+
+## G2 — **GRAVITY DEFINED, AND AN EXACT BRIDGE TO CURVATURE**
+
+`LANE_G2_GRAVITY_DEF/` + `GRAVITY_DEFINED_V001.md`, sealed.
+
+**DEFINITION: gravity at the record level is `( H₁(Σ), ⟨·,·⟩ )`** — the first homology of the carrier
+and its intersection form. The count, the space, the writer and the protection all come from that
+pair and nothing else. **No metric, no curvature tensor, no force, no local content.**
+
+**AND THE BRIDGE, WHICH HAD NOT BEEN STATED.** For a closed orientable surface `dim H₁ = 2 − χ`, and
+Gauss–Bonnet gives `∫K dA = 2πχ`, so
+
+> **number of independent records `= 2 − (1/2π) ∫ K dA`**
+
+```
+   torus (chi=0)         2 − chi = 2      measured degeneracy 4 = 2^2
+   sphere (chi=2)        2 − chi = 0      measured degeneracy 1 = 2^0
+   disk (boundary)       formula N/A      measured degeneracy 1  (H_1 = 0)
+```
+
+> **THE RECORD COUNT IS TOPOLOGICAL, NON-LOCAL AND NON-METRIC — AND IT EQUALS AN INTEGRAL OF THE
+> GAUSSIAN CURVATURE.** That is how a count no local measurement can see and the classical
+> gravitational quantity turn out to be the same fact.
+
+**FIVE FEATURES OF THE EMERGENCE PICTURE:** the count is an integrated curvature (exact); the
+protection order `d` is a **length**; it is global and non-metric; it is a spontaneously broken 1-form
+symmetry; and **a simply-connected world has no records at all** — the sphere gives degeneracy `1`.
+
+> **THE SHARPEST STATEMENT THE PROGRAM HAS PRODUCED: a world whose space is a sphere cannot remember
+> anything. Not remembers poorly — cannot hold one record.**
+
+**AND THE HONEST LIMIT.** **Content does not change `χ`.** In classical gravity matter curves space;
+here nothing records do alters the topology. **We have the half of gravity that says what geometry
+permits, and not the half that says how content shapes geometry. Until X2 closes, this is a
+correspondence and not an emergence.**

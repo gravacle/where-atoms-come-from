@@ -1,0 +1,18 @@
+G2  RECORD COUNT vs EULER CHARACTERISTIC vs INTEGRATED CURVATURE
+    chi = V - E + F ;  Gauss-Bonnet: integral K dA = 2*pi*chi ;  claim: records = 2 - chi
+
+                   carrier   V   E   F  chi  2-chi  measured degeneracy  2^(2-chi)
+  ----------------------------------------------------------------------------------
+                     torus   4   8   4    0      2                    4          4
+                     torus   6  12   6    0      2                    4          4
+      tetrahedron (sphere)   4   6   4    2      0                    1          1
+                      disk   9  12   4    1      1                    1          2
+
+  READING. For the TORUS chi = 0, so records = 2 - 0 = 2 and the record space is 2^2 = 4.
+  For the SPHERE chi = 2, so records = 0 and the space is 1 -- NO RECORD.
+  For the DISK chi = 1, and with a boundary the closed-surface formula does not apply;
+  the measured degeneracy is 1, i.e. no record, consistent with H_1 = 0.
+
+  THE BRIDGE:  records = 2 - chi = 2 - (1/2pi) * integral of K dA.
+  The record count is non-local and non-metric, and it EQUALS an integral of the metric
+  quantity. That is how a topological record count and classical curvature are the same fact.
