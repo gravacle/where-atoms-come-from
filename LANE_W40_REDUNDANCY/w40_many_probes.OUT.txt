@@ -1,0 +1,23 @@
+W-40  REDUNDANCY, MEASURED.  probes may PASS each other; complex hopping phase 0.6
+      (W-37d: a real-hopping probe cannot read an odd ring at all -- objectivity is probe-relative)
+
+    n  k   dim  anti                 I per probe (bits)   I joint  reading
+  --------------------------------------------------------------------------------------------
+    4  1     8  True               [np.float64(0.9333)]    0.9333  REDUNDANT: each probe alone holds the bit
+    4  2    32 False [np.float64(0.9333), np.float64(0.9333)]    0.9924  REDUNDANT: each probe alone holds the bit
+    4  3   128  True [np.float64(0.9333), np.float64(0.9333), np.float64(0.9333)]    0.9989  REDUNDANT: each probe alone holds the bit
+    5  1    10  True               [np.float64(0.7342)]    0.7342  REDUNDANT: each probe alone holds the bit
+    5  2    50 False [np.float64(0.7342), np.float64(0.7342)]    0.9124  REDUNDANT: each probe alone holds the bit
+    5  3   250  True [np.float64(0.7342), np.float64(0.7342), np.float64(0.7342)]    0.9737  REDUNDANT: each probe alone holds the bit
+    6  1    12  True               [np.float64(0.8079)]    0.8079  REDUNDANT: each probe alone holds the bit
+    6  2    72 False [np.float64(0.8079), np.float64(0.8079)]    0.9519  REDUNDANT: each probe alone holds the bit
+    6  3   432  True [np.float64(0.8079), np.float64(0.8079), np.float64(0.8079)]    0.9869  REDUNDANT: each probe alone holds the bit
+
+  CONTROL -- real hopping (phase 0). Even rings should still read; odd rings must give 0.
+    n  k                  I per probe
+    4  2 [np.float64(0.9998), np.float64(0.9998)]
+    5  2 [np.float64(0.0), np.float64(0.0)]
+    6  2 [np.float64(0.9827), np.float64(0.9827)]
+
+  CONTROL -- tau -> 0 (no transport). Must be 0 for every probe.
+    ||H|| at tau=0 = 0.000e+00  (nothing can move, so no probe can learn anything)

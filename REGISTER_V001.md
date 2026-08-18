@@ -3028,3 +3028,49 @@ where a responsive carrier could first do work.** Whether it does is untested.
 constraint has no solution** — `k=4` is already such a case here. On a static carrier the answer is
 that the fourth record simply fails. **A responsive carrier is exactly the thing that could answer
 differently, and that is the first question in this program where it could matter.**
+
+---
+
+## W-40 — **REDUNDANCY MEASURED. READING IS FREE; STORING IS NOT.**
+
+`LANE_W40_REDUNDANCY/`, sealed. W-37 claimed condition 5 and **argued** it from `||[R,H_hop]|| = 0`.
+W-37e's two-probe attempt returned zero, which was exclusion — hard-core probes never complete a
+circuit, and a return trip flips every link twice giving `R² = I`. **Let them pass and measure it.**
+
+```
+    n   k   dim        I per probe (bits)          I joint
+    4   1     8      0.9333                        0.9333
+    4   2    32      0.9333  0.9333                0.9924
+    4   3   128      0.9333  0.9333  0.9333        0.9989
+    5   3   250      0.7342  0.7342  0.7342        0.9737
+    6   3   432      0.8079  0.8079  0.8079        0.9869
+```
+
+> **EACH PROBE ALONE HOLDS THE BIT, AND ADDING PROBES DOES NOT COST THE OTHERS ANYTHING — the
+> per-probe value is IDENTICAL at `k = 1, 2, 3`, to four decimals.** The joint value climbs toward
+> `1` (`0.9333 → 0.9924 → 0.9989`), so the copies are independent samples rather than one shared
+> copy. **Condition 5 is measured.**
+
+**WHY THE PER-PROBE VALUE IS EXACTLY UNCHANGED, since an exact identity always deserves suspicion:**
+the probes couple to each other only through the gauge field, and what they read — the global flux —
+**is conserved (`[R,H] = 0`)**. So each reads the same undisturbed quantity independently. That is
+the QND property doing its work, and it is what we set out to verify, not an artifact.
+
+**CONTROLS.** `tau = 0`: `||H|| = 0.000e+00`, nothing moves, nothing is learned. **Real hopping:
+`n=4` gives `0.9998`, `n=6` gives `0.9827`, and `n=5` gives EXACTLY `0.0` for every probe** — W-37d's
+probe-relativity reproduced here, and it applies per-probe.
+
+### THE ASYMMETRY, AND IT IS THE POINT
+
+> **MANY OBSERVERS CAN READ ONE RECORD WITHOUT INTERFERING (W-40: no per-probe cost at all).
+> MANY RECORDS CANNOT SHARE ONE CARRIER WITHOUT DEGRADING EACH OTHER (W-39: margin `43.8x → 2.0x →
+> 1.1x`, controlled for bath strength).**
+>
+> **READING IS FREE. STORING IS NOT.**
+
+The two measurements use the same machinery and differ only in what is multiplied. **Storage is what
+has a capacity, and capacity is what could force a carrier to respond.** Observation cannot, and
+W-40 is what rules it out rather than leaving it assumed.
+
+**`PROCESS_DESCRIPTION_V003` §1 condition 5 is upgraded from ARGUED to MEASURED**, and keeps W-37d's
+qualifier: **objective to probes that can couple to it.**
