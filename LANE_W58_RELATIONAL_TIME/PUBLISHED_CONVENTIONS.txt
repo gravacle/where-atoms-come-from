@@ -1,0 +1,12 @@
+LANE W58 -- RELATIONAL TIME (Page-Wootters). The first lane in this program with NO external time
+parameter: a constraint H_tot|Psi> = 0, with time a correlation between a clock and the rest.
+THREE GATES WERE NEEDED AND THE FIRST TWO WERE WRONG.
+ (1) sign: H_C generates +t translation, so a history built from e^{-iH_S t} satisfies
+     (H_C - H_S)|Psi> = 0. Fixed by taking |Psi> from the actual KERNEL rather than assuming its form.
+ (2) spectrum: with H_S eigenvalues NEGATIVE and H_C non-negative, n*omega = E_s has only the n=0
+     solution, so the kernel is a STATIC EIGENSTATE, not a history. Fixed by matching the ladders.
+ (3) THE GATE THAT STILL FAILS TO DISCRIMINATE: participation over clock readings is 12 of 12 for a
+     SINGLE ENERGY EIGENSTATE too, because |<t_k|n>|^2 = 1/d uniformly by Fourier duality. It does not
+     detect a static conditional. THE CORRECT GATE IS WHETHER THE CONDITIONAL STATE VARIES WITH k.
+By that gate, every lambda > 0 case in w58b is VOID: the kernel collapses to dimension 1 and the
+conditional is static ("largest variation 0.000").
