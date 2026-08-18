@@ -3426,3 +3426,54 @@ And the RELATIVE spread does not shrink (`sd/mean` runs `0.44, 0.66, 0.85, 0.89`
 `R` — W-30a proves such a channel cannot move the record, and indeed `I` was identical to six
 decimals across every `g^2`. v2 compared raw `I` across `n` when bare readability differs by `n`
 independently of decay. **Both are in the lane conventions; the reported numbers are v3.**
+
+---
+
+## W-48 — **THE DECOHERENCE HALF OF OUR LAW IS TEXTBOOK. THE POWER LAW WAS OURS, NOT NATURE'S.**
+
+`LANE_W48_VS_STANDARD/`, sealed. Run **before** touching any experimental data, on the principal's
+own guard: if the composed law is `exp(-Gamma T)` in lattice clothing, fitting it to C70 or Panda
+data would be curve-matching a textbook result and calling it confirmation.
+
+```
+  I_max   (max over t -- what W-47 reported)      n=48
+     EXPONENTIAL  rms log-resid 1.2783
+     POWER LAW    rms log-resid 0.6425      <- power law wins by 0.64
+
+  I_fixed (at T_read, NO optimisation)            n=44
+     EXPONENTIAL  rms log-resid 1.0229      <- exponential wins by 0.08
+     POWER LAW    rms log-resid 1.0991
+```
+
+> **THE POWER LAW EXISTS ONLY IN THE OPTIMISED SIGNAL. Taking a max over time of a decaying-but-
+> still-rising quantity manufactures it. The un-optimised signal is exponential in `X`, which is
+> exactly what standard decoherence predicts.**
+
+**SO ON THIS AXIS OUR COMPOSED LAW ADDS NOTHING.** `X = Gamma·T_read` gating legibility is
+`exp(-Gamma T)` with `T` fixed by the loop's perimeter — and that a holonomy is unreadable once the
+ring exceeds the coherence length is textbook mesoscopic physics. **Taking W-47 to C70 or Panda data
+would have fitted a known result and called it confirmation. It is not done.**
+
+**HONEST ABOUT THE STRENGTH.** Exponential beats power law by only `0.08` in rms log-residual, and
+**both fits are poor** (`~1.0` in log-residual is a factor of `e` of scatter). The correct statement
+is *consistent with exponential, marginally better than power law, neither fitting well* — **not
+"confirmed exponential."**
+
+### WHAT THIS LEAVES, AND IT IS A SHARPENING RATHER THAN A LOSS
+
+**The composed law has two halves and they are not equally novel.**
+
+- **THE ALPHA / DECOHERENCE HALF IS STANDARD.** Decay rate times readout time gating survival. W-48
+  says so plainly. **Do not take it to data as though it were new.**
+- **THE CAPACITY HALF IS NOT A DECOHERENCE STATEMENT AT ALL.** `storage = area - 1`,
+  `legibility = perimeter/2 - 1`, capacity enforced by **eviction**, and capacity satisfying all
+  four of gravity's functional markers while EM's charge fails all four. **Standard decoherence says
+  nothing whatever about how much a region can hold versus export.**
+
+> **THE NOVEL CONTENT, IF THERE IS ANY, IS ON THE GRAVITY/CAPACITY SIDE — AND IT HAS NEVER BEEN
+> TESTED AGAINST ANYTHING.**
+
+**AND THAT CHANGES WHICH LITERATURE IS RELEVANT.** C70 and Panda measure coherence against transit —
+the half we now know is standard. **The storage-versus-legibility claim belongs to topological
+codes**, where the count of logical operators, their nonlocality, and the readout of nonlocal
+observables are the actual physics. That is a different corpus from the one in the paper's registry.
