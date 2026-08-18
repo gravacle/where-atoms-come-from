@@ -1,0 +1,24 @@
+W-60  DOES A RECORD EXIST IFF H IS DEGENERATE?
+      predicted dim of commutant = sum of (multiplicity)^2
+
+              GENERIC random Hermitian D=  8  multiplicities [1, 1, 1, 1, 1, 1, 1, 1]  dim comm    8 (pred    8)  records beyond f(H):    0
+   planted multiplicities [2, 2, 2, 2] D=  8  multiplicities           [2, 2, 2, 2]  dim comm   16 (pred   16)  records beyond f(H):   12
+         planted multiplicities [4, 4] D=  8  multiplicities                 [4, 4]  dim comm   32 (pred   32)  records beyond f(H):   30
+      planted multiplicities [4, 2, 2] D=  8  multiplicities              [4, 2, 2]  dim comm   24 (pred   24)  records beyond f(H):   21
+            planted multiplicities [8] D=  8  multiplicities                    [8]  dim comm   64 (pred   64)  records beyond f(H):   63
+
+  AND THIS PROGRAM'S OWN CARRIER:
+             our 3x3 patch, H_magnetic D= 16  multiplicities        [1, 4, 6, 4, 1]  dim comm   70 (pred   70)  records beyond f(H):   65
+        our patch, H_mag + 0.05*H_elec D= 16  multiplicities [1, 1, 2, 1, 1, 3, 1, 1, 1, 2, 1, 1]  dim comm   26 (pred   26)  records beyond f(H):   14
+         our patch, H_mag + 0.5*H_elec D= 16  multiplicities [1, 1, 2, 1, 1, 3, 1, 1, 1, 2, 1, 1]  dim comm   26 (pred   26)  records beyond f(H):   14
+
+  THE GENERICITY STATEMENT, MEASURED: how often is a random Hermitian degenerate?
+    0 of 400 random Hermitian matrices had ANY degenerate eigenvalue
+    -> degeneracy is non-generic, so RECORDS ARE NON-GENERIC, and the reason is spectral.
+
+  THE SYMMETRY LINK: a perturbation that BREAKS the symmetry must destroy the records.
+        eps         multiplicities  dim commutant  records beyond f(H)
+      0e+00           [2, 2, 2, 2]             16                   12
+      1e-06 [1, 1, 1, 1, 1, 1, 1, 1]              8                    0
+      1e-03 [1, 1, 1, 1, 1, 1, 1, 1]              8                    0
+      1e-01 [1, 1, 1, 1, 1, 1, 1, 1]              8                    0

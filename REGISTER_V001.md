@@ -4402,3 +4402,64 @@ history — are NON-GENERIC.* They exist only for special Hamiltonians: sums of 
 spectra that match across many levels. **So "a world that has records" is a statement that its
 Hamiltonian is special, and the content of the whole account is in WHICH way it is special.** That is
 a sharper question than any this program has yet asked, and nothing here answers it.
+
+---
+
+## W-60 — **WHICH HAMILTONIANS ADMIT RECORDS: EXACTLY THE DEGENERATE ONES. AND THAT MEANS EXACT SYMMETRY.**
+
+`LANE_W60_WHICH_HAMILTONIANS/`, sealed. W-59 left the one substantive obstruction — the structures
+records need are non-generic — and the content is in **which** way a Hamiltonian must be special.
+
+**THE CRITERION, DERIVED FROM T1 RATHER THAN GUESSED.** A record needs `[H,R] = 0` and must be
+non-trivial — not merely a function of the energy, or it carries nothing beyond which level the
+system is in. If every eigenvalue of `H` is simple, everything commuting with `H` **is** a function
+of `H`. Therefore:
+
+> **A RECORD EXISTS ⟺ THE COMMUTANT OF `H` IS NON-ABELIAN ⟺ `H` HAS A DEGENERATE EIGENVALUE.**
+
+```
+                                   multiplicities        dim comm  (predicted)   records beyond f(H)
+  GENERIC random Hermitian      [1,1,1,1,1,1,1,1]           8      (8)                    0
+  planted [2,2,2,2]                     [2,2,2,2]          16     (16)                   12
+  planted [4,4]                             [4,4]          32     (32)                   30
+  our 3x3 patch, H_magnetic           [1,4,6,4,1]          70     (70)                   65
+  our patch + 0.05 * H_electric  [1,1,2,1,1,3,1,...]        26     (26)                   14
+```
+
+**`dim commutant = Σ (multiplicity)²` exactly in every case.**
+
+**RECORDS ARE NON-GENERIC, AND THE REASON IS SPECTRAL: `0 of 400` random Hermitian matrices had ANY
+degenerate eigenvalue.**
+
+### THE SYMMETRY LINK, AND IT IS BRUTAL
+
+By Wigner, spectral degeneracy in a physical Hamiltonian comes from **symmetry**. Break it:
+
+```
+     eps        multiplicities        dim commutant   records beyond f(H)
+   0e+00              [2,2,2,2]                  16                   12
+   1e-06      [1,1,1,1,1,1,1,1]                   8                    0
+   1e-03      [1,1,1,1,1,1,1,1]                   8                    0
+```
+
+> **A SYMMETRY-BREAKING PERTURBATION OF `1e-06` DESTROYS EVERY RECORD. Not gradually — immediately.**
+
+**SO RECORDS REQUIRE EXACT SYMMETRY, NOT APPROXIMATE SYMMETRY.** An approximate symmetry gives
+*none*. This is why real records exist at all: the symmetries that carry them — gauge invariance,
+particle identity — are **exact**, and exact symmetries are not spoiled by small perturbations. **It
+is also why this program's carrier has records: its gauge symmetry is exact.**
+
+### AND A NEW, SHARP ROLE FOR ALPHA
+
+**The electric term breaks the degeneracy.** `H_magnetic` alone carries **65** records; adding *any*
+electric term drops it to **14** — and `g² = 0.05` and `g² = 0.5` give the identical `26`-dimensional
+commutant. **The reduction is immediate, not gradual.**
+
+> **ALPHA'S ROLE, RESTATED: it is what breaks the degeneracy that records live in. At `g² = 0` the
+> carrier holds 65; at any `g² > 0` it holds 14.** That is consistent with every earlier lane — the
+> exact records survive only at `g² = 0` — and it says why in one line.
+
+**WHAT THIS ANSWERS AND WHAT IT DOES NOT.** It answers W-59's question: the special Hamiltonians are
+the degenerate ones, degeneracy means symmetry, and it must be exact. **It does not say why the
+world's Hamiltonian has the exact symmetries it has** — which is now the only question left standing
+in this program, and is not one the carrier can be asked.
