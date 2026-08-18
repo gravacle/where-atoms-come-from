@@ -42,6 +42,7 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | "the empty gravity line is a result about records" | V003 | it is a result about our graph, which has no metric |
 | "capacity is not a holographic count" | W-42 | right about STORAGE, wrong to close the question — W-46 |
 | the composed law shows a power-law departure from standard decoherence | W-47 | the power law came from maximising over time; the un-optimised signal is exponential — W-48 |
+| "capacity passes all four of gravity's functional markers" as a structural finding | W-45 | all four follow from finite-dimensional counting; any finite resource passes them — W-50 |
 | "a metric record is objective for free" (0.999 redundancy) | W-43b | the environment was coupled straight to the mass with H_sys=0; with the metric doing real work it scores 0.0013–0.0758 — W-44 |
 | "the sieve selects the gauge boundary even with a metric present" | W-44 builds | true only for eps ≳ 0.05; the metric wins below that. A report on eps/g², not a fact |
 
@@ -66,7 +67,7 @@ the axis. **Proof is.** A proven process owes five things.
 |---|---|---|---|
 | **EM** | **MET** | supplies the carrier, the boundary that is both cycle and separator, and the record-bearing holonomy — **and the observable is SELECTED by the dynamics, not chosen** (W-34, 28×, nothing nominated) | abelian `Z_2`/`Z_3` only; `U(1)` untested |
 | **ALPHA** | **MET AS TWO NUMBERS** | `1/(8g²)` uses before decay (W-32); `9.6g⁴P/τ < 1` legible size (W-37b) | they are **lattice couplings**, with no derivation and no connection to `α ≈ 1/137`; and W-48 showed the first is standard decoherence |
-| **GRAVITY** | **PARTIAL** | capacity passes all 4 functional markers where EM's charge fails all 4 (W-45); and it now has an equation of motion (W-49) | **a functional match is not an identification.** No attraction, no metric, no field equation, no relation to mass or energy |
+| **GRAVITY** | **PARTIAL, AND WEAKER THAN REPORTED** | capacity has an equation of motion (W-49); the contrast with EM's two-signed charge is real | **W-50: the four markers are FORCED BY COUNTING — any finite resource passes all four, so they are nearly vacuous.** No attraction, no metric, no field equation, no relation to mass or energy |
 
 ### B — THE COMPOSITION ESTABLISHED
 
@@ -87,7 +88,9 @@ form this way is not showing this is *how* they form. What we have that IS neces
 
 **What is NOT established as necessary:** that the record must be a gauge holonomy rather than some
 other observable, and that anything gravity-like is **required** for records rather than merely
-co-present.
+co-present. **W-50 tested the second and answered it in the deflating direction: the gravity-like
+structure is unavoidable, but only because it follows from counting — which carries no physical
+content.**
 
 ### D — THE TOY SHOWN REPRESENTATIVE
 

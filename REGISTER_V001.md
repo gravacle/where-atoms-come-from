@@ -3622,3 +3622,63 @@ carrier's structure responds to its content at all.
 **AND IT ANSWERS W-41's DICHOTOMY.** *Either the carrier grows, or records are evicted.* **On a
 carrier that can pay for growth, it grows** — by `0.84` of a plaquette for one bit of content.
 Eviction was the fixed-carrier answer, not the only one.
+
+---
+
+## W-50 — **THE FOUR MARKERS ARE FORCED BY COUNTING. W-45 IS WEAKER THAN IT WAS REPORTED.**
+
+`LANE_W50_NECESSITY/`, sealed. Proof obligation **C**: showing records *can* form this way is not
+showing this is *how* they form. The gravity identification rests on capacity satisfying four
+functional markers, so strip the structure that produced them.
+
+**Two carriers, same records, same cycle rank, same physical dimension `16`, differing only in
+whether record boundaries share links:**
+
+```
+                        CONNECTED (3x3 patch)      DISCONNECTED (4 separate squares)
+  link multiplicity     [1, 2]  SHARED             [1]  DISJOINT
+  capacity              3                          3
+  F1 universal          PASS  consumption [1]      PASS  consumption [1, 3]
+  F2 no screening       PASS  0 of 1152            PASS  0 of 792
+  F3 one sign           PASS                       PASS
+  F4 arena              PASS  k=4 impossible       PASS  k=4 impossible
+  W-41 eviction         [0,0,0,1] -> 3 kept, 1 out [0,0,0,1] -> 3 kept, 1 out
+```
+
+> **ALL FOUR MARKERS SURVIVE INTACT WHEN THE SHARING IS REMOVED, AND SO DOES THE EVICTION PROFILE,
+> EXACTLY. The gravity-like character does not depend on the carrier's structure at all.**
+
+### THE CORRECTION, AND IT IS TO THE REGISTRAR'S OWN HEADLINE
+
+**W-45 reported "capacity passes all four of gravity's functional markers" as though it were a
+substantive structural finding. It is not.** All four follow from one fact: *independent records
+live in a finite-dimensional space and each uses one dimension.*
+
+- **F1** every record consumes — because every independent record uses a dimension
+- **F2** no screening — forced by linearity
+- **F3** one sign — adding constraints can only shrink a kernel
+- **F4** arena — capacity is finite
+
+> **THAT IS LINEAR ALGEBRA, NOT PHYSICS. ANY FINITE RESOURCE PASSES ALL FOUR.** Disk space passes
+> all four. **The markers are necessary and nearly vacuous.**
+
+**WHAT REAL CONTENT SURVIVES.** The contrast with EM's charge, which fails all four, is genuine — a
+**resource** and a **two-signed conserved charge** are different kinds of object, and gravity is
+resource-like where charge is not. **But that is far more modest than "capacity has gravity's
+functional signature," and the registrar presented the stronger claim.**
+
+**AND IT NAMES WHAT THE MARKERS CANNOT SEE.** Attraction. The equivalence principle. A field
+equation. Any relation between content and a metric. **We have none of these, and the four markers
+were never capable of detecting their absence.**
+
+**ONE STRUCTURAL DIFFERENCE DID SHOW.** Consumption values are `[1]` connected and `[1, 3]`
+disconnected — a record spanning several components blocks more links. So the carrier's structure is
+visible in *how much* is consumed, though not in *whether* the markers pass.
+
+### WHAT THIS DOES TO PROOF OBLIGATION C
+
+**Partially answered, in the deflating direction.** The gravity-like structure is **necessary in the
+sense of unavoidable** — no carrier with `m` independent records can lack it. **But its necessity is
+trivial: it follows from counting rather than from anything about the carrier, the field, or the
+process.** So it does not establish that anything gravity-like is *required for records* in a way
+that carries physical content. **Item 14 must be read at this reduced strength.**

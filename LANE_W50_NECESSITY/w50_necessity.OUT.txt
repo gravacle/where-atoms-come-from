@@ -1,0 +1,28 @@
+W-50  NECESSITY: does the gravity-like character survive removing the sharing?
+
+  === CONNECTED  (3x3 patch, boundaries share links) ===
+    links 12, vertices 9, components 1, plaquettes 4, cycle rank 4, physical dim 16
+    link multiplicity (how many plaquettes each link lies on): [1, 2]  -> SHARED boundaries
+    capacity = 3   (m-1 = 3)
+    F1 universal sourcing : consumption values [1]   PASS (no free record)
+    F2 no screening       : 0 screened of 1152 tested   PASS
+    F3 one sign           : any record frees capacity? False   PASS
+    F4 arena              : k possible = [1, 2, 3], impossible = [4]   PASS (a k is impossible)
+    W-41 eviction (best single-link bath, overlap counts per record): [0, 0, 0, 1]   -> 3 protected, 1 evicted
+
+  === DISCONNECTED (4 separate squares, boundaries disjoint) ===
+    links 16, vertices 16, components 4, plaquettes 4, cycle rank 4, physical dim 16
+    link multiplicity (how many plaquettes each link lies on): [1]  -> DISJOINT boundaries
+    capacity = 3   (m-1 = 3)
+    F1 universal sourcing : consumption values [1, 3]   PASS (no free record)
+    F2 no screening       : 0 screened of 792 tested   PASS
+    F3 one sign           : any record frees capacity? False   PASS
+    F4 arena              : k possible = [1, 2, 3], impossible = [4]   PASS (a k is impossible)
+    W-41 eviction (best single-link bath, overlap counts per record): [0, 0, 0, 1]   -> 3 protected, 1 evicted
+
+  COMPARISON
+    capacity           connected 3   disconnected 3
+    F1 consumption     connected [1]  disconnected [1, 3]
+    F2 screened        connected 0   disconnected 0
+    F3 frees capacity  connected False  disconnected False
+    F4 k possible      connected [1, 2, 3]  disconnected [1, 2, 3]
