@@ -1,0 +1,87 @@
+========================================================================================================
+0.  CARRIER AND SELF-CHECKS
+========================================================================================================
+  dim Z_1=5  dim B_1=3  dim H_1=2   logical weights: Zbar=2, Zbar2=2, Xbar=2
+  L=8  dim=256  E_min=-8.0000   GROUND DEGENERACY = 4   PASS (expect 4 = 2^2g)
+  ||[Zbar,H0]||  = 0.000e+00   PASS
+  ||[Zbar2,H0]||  = 0.000e+00   PASS
+  ||[Xbar,H0]||  = 0.000e+00   PASS
+  ||{Zbar,Xbar}|| = 0.000e+00   PASS -- Xbar WRITES the record
+  Zbar on the ground space: eigenvalues [0. 0. 1. 1.]  -> a genuine +-1 label
+
+========================================================================================================
+1.  POSITIVE CONTROL -- can this bath thermalise at all?  (the W-49 trap)
+========================================================================================================
+  beta=0.5:  steady populations [0.622459 0.377541]   Boltzmann [0.622459 0.377541]   PASS
+  beta=2.0:  steady populations [0.880797 0.119203]   Boltzmann [0.880797 0.119203]   PASS
+
+========================================================================================================
+2.  THE TEST -- the Davies steady state on the code space
+========================================================================================================
+    beta   ||L(rho_Gibbs)||     <Zbar>    <Zbar2>     <Xbar>   purity on code   S_code/ln4
+     0.5          7.557e-16   0.000000   0.000000   0.000000         0.250000     1.000000
+     1.0          5.913e-16   0.000000   0.000000   0.000000         0.250000     1.000000
+     2.0          2.642e-17   0.000000   0.000000   0.000000         0.250000     1.000000
+     5.0          4.086e-22   0.000000   0.000000   0.000000         0.250000     1.000000
+
+========================================================================================================
+3.  DOES A DEFINITE RECORD DECAY?  d<Zbar>/dt from a pure Zbar=+1 state
+========================================================================================================
+  initial <Zbar> = +1.000000   (a DEFINITE record)
+  d<Zbar>/dt     = -0.001341   -> DECAYS toward the mixture
+  steady <Zbar>  = +0.000000
+
+========================================================================================================
+4.  THE CONTROL THAT MATTERS -- can a LOCAL perturbation let the bath select?
+========================================================================================================
+      eps   ground splitting dE   <Zbar>_Gibbs (beta=5)          still protected?
+    0.000             9.770e-15                0.000000 YES -- exactly degenerate
+    0.020             1.601e-03               -0.000000   NO -- degeneracy lifted
+    0.050             1.004e-02                0.000000   NO -- degeneracy lifted
+    0.100             4.059e-02                0.000000   NO -- degeneracy lifted
+    0.200             1.691e-01               -0.000000   NO -- degeneracy lifted
+    0.000             9.770e-15                0.000000 YES -- exactly degenerate
+    0.020             1.601e-03               -0.000000   NO -- degeneracy lifted
+    0.050             1.004e-02                0.000000   NO -- degeneracy lifted
+    0.100             4.059e-02                0.000000   NO -- degeneracy lifted
+    0.200             1.691e-01               -0.000000   NO -- degeneracy lifted
+
+========================================================================================================
+5.  WHY IS PART 4 ZERO?  a symmetry claim, and the positive control that tests it
+========================================================================================================
+  ||[sum X_l, Xbar]|| = 0.000e+00   <- if 0, H+eps*sumX commutes with the WRITER Xbar
+  ||[sum Z_l, Xbar]|| = 4.525e+01   <- if nonzero, that symmetry is broken
+  ||[sum Z_l, Zbar]|| = 0.000e+00   <- if 0, Zbar is still a good record label
+
+  CLAIM: Xbar anticommutes with Zbar, so any rho commuting with Xbar has <Zbar> = 0 EXACTLY.
+  So a perturbation that PRESERVES the writer's symmetry can never bias the record,
+  however much it lifts the degeneracy. Test: use a perturbation that BREAKS it.
+
+      eps    perturbation   [pert,Xbar]   splitting dE   <Zbar>_Gibbs b=5    selects?
+    0.050         sum X_l      0.00e+00      1.004e-02           0.000000          no
+    0.200         sum X_l      0.00e+00      1.691e-01          -0.000000          no
+    0.050         sum Z_l      4.53e+01      1.004e-02           0.012547         YES
+    0.200         sum Z_l      4.53e+01      1.691e-01           0.211000         YES
+
+  INTERPRETATION TEST -- is the zero a symmetry, or a broken measurement?
+  If 'sum Z_l' also gives 0, the measurement cannot see selection and every zero above is void.
+  If 'sum Z_l' also gives 0, the measurement cannot see selection and every zero above is void.
+
+========================================================================================================
+6.  THE EXCHANGE RATE -- selection bought with protection
+========================================================================================================
+       eps   splitting dE   <Zbar>_Gibbs   tanh(b dE/2)   <Zbar>/dE   (beta=5)
+     0.010     4.0006e-04       0.000500       0.001000      1.2500
+     0.020     1.6010e-03       0.002001       0.004002      1.2500
+     0.050     1.0037e-02       0.012547       0.025088      1.2500
+     0.100     4.0594e-02       0.050742       0.101137      1.2500
+     0.150     9.2962e-02       0.116176       0.228308      1.2497
+     0.200     1.6914e-01       0.211000       0.399335      1.2475
+     0.300     4.0257e-01       0.487220       0.764278      1.2103
+
+  log-log slope  d(dE)/d(eps)    = 2.0262    (Thm D: splitting ~ eps^d, derived d=2)
+  log-log slope  d(<Zbar>)/d(eps) = 2.0210
+  -> SELECTION AND SPLITTING SHARE THE SAME EXPONENT: YES
+
+  READ: the bias in the record and the loss of protection are the SAME quantity.
+  There is no eps at which one appears without the other.
