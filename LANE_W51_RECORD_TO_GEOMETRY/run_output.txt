@@ -1,0 +1,203 @@
+====================================================================================================
+W-51  RECONSTRUCTING THE DUAL GRAPH FROM RECORDS ALONE
+====================================================================================================
+
+SECTION 0  FORCED-OR-NOT (declared before a single number is computed)
+
+  AT RISK #1 -- THE SINGLE-RECORD DECAY RATE Gamma(p).
+    Every plaquette carries exactly FOUR links by definition of a plaquette. Under a global bath
+    the counting law gives Gamma(p) = 2*gamma*|boundary(p)| = 8*gamma for EVERY p, on the true
+    carrier, on every shuffle, on the ring and on the block alike. Var_p Gamma(p) = 0 is FORCED by
+    the construction rule, not measured. THE ONE ARGUMENT: a quantity whose variance across
+    plaquettes is fixed at zero by a definition cannot separate plaquettes, so no reconstruction
+    may rest on single-record rates. This lane therefore rests on the PAIR EXCESS, which is a
+    comparison of a joint rate against the sum of two individual rates and is not fixed by any
+    counting rule. The prediction Var_p Gamma(p) = 0 is printed in SECTION 4 as a check on this
+    declaration, NOT as a result.
+
+  AT RISK #2 -- THE NUMBER OF EDGES IN THE RECONSTRUCTED GRAPH.
+    The mandated shuffle keeps every count fixed, so it preserves the number of links lying on two
+    plaquettes -- i.e. the TOTAL EDGE COUNT of the dual graph is invariant under shuffling and is
+    therefore FORCED. Any fidelity measure that scores edge counts would score 100% on a shuffle
+    and be a false positive. THE ONE ARGUMENT: fidelity here is scored PER PAIR (which of the
+    C(F,2) pairs are adjacent, and with what multiplicity), never by totals. The chance baseline
+    for per-pair scoring at fixed edge count is computed explicitly in SECTION 7.
+
+  AT RISK #3 -- THE RECORD SET ITSELF.
+    In the record sector the elementary record operators are X_0..X_{F-1}: single-qubit operators
+    identical to one another up to which label they carry. PROOF THAT THEY CONTAIN NO ADJACENCY:
+    the set {X_p} is invariant under ALL F! relabelings of the plaquettes, so it is invariant under
+    every graph automorphism AND every non-automorphism, and an S_F-invariant object cannot single
+    out one graph among the many on F labelled vertices. Geometry enters the simulation ONLY
+    through the bath jump operators and the electric term of H -- i.e. only through the DYNAMICS,
+    which is exactly the channel this lane is allowed to read.
+
+====================================================================================================
+SECTION 1  expm VALIDATION (scaling-and-squaring, two independent implementations)
+  vectorised Liouvillian dim 256  (row-major convention, as mandated)
+  ||action - dense||_max = 1.000e-15     trace(rho_t) = 1.000000000000
+  hermiticity defect     = 0.000e+00     min eig = 1.283e-02
+  -> the two exponentials agree and the propagated state is a state: True
+
+====================================================================================================
+SECTION 2  CROSS-VALIDATION: record-sector model vs the original gauge-space machinery
+           (build/Move/Zop/compose exactly as in w34_sieve.py and w41_k4.py)
+  original gauge space: 12 links, 9 vertices, physical dim 16 (record sector dim 16)
+      record S   gauge-space rate   record-sector rate         diff
+          (0,)       4.0216306468         4.0216306468     8.88e-16
+          (1,)       4.0216306468         4.0216306468     8.88e-16
+          (2,)       4.0216306468         4.0216306468     0.00e+00
+          (3,)       4.0216306468         4.0216306468     8.88e-16
+        (0, 1)       6.0373966676         6.0373966676     0.00e+00
+        (0, 3)       8.0428722409         8.0428722409     0.00e+00
+  max |gauge-space - record-sector| over ALL 15 records = 1.776e-15
+  -> the record-sector model IS the original carrier, not a new toy: True
+
+====================================================================================================
+SECTION 3  OPERATOR AUDIT (before any commutator or rate is read)
+  carrier BLOCK 3x2: F=6 records, L=17 links, dim 64
+      record    ||O||_F  ||O^dag O - I||  #distinct eigvals  max comm w/ W_0
+        (0,)     8.0000         0.00e+00                  2         0.00e+00
+        (1,)     8.0000         0.00e+00                  2         0.00e+00
+        (5,)     8.0000         0.00e+00                  2         0.00e+00
+      (0, 1)     8.0000         0.00e+00                  2         0.00e+00
+      (0, 5)     8.0000         0.00e+00                  2         0.00e+00
+  (0, 1, 2, 3, 4, 5)     8.0000         0.00e+00                  2         0.00e+00
+  NOTE: all elementary records COMMUTE with one another (max commutator 0 above), so no
+  reconstruction from record-record commutators is possible. The geometry is not in the
+  record algebra; it can only be in the dynamics.
+
+====================================================================================================
+SECTION 4  FORCED CHECK (testing the SECTION 0 declaration, not producing a result)
+  single-record rates on the true carrier : [4.00085603 4.00053238 4.00085603 4.00085603 4.00053238 4.00085603]
+  variance across plaquettes              : 2.328e-08   (declared FORCED = 0)
+  single-record rates on a SHUFFLED carrier: [4.00147899 4.00053284 4.00050891 4.00085548 4.00085599 4.00085599]
+  variance across plaquettes              : 1.021e-07
+  edge count true 7  vs shuffled 7  (declared FORCED to be equal by the count-preserving shuffle)
+  for scale: the PAIR EXCESS E(p,q) that the method actually reads ranges over 0.0000 .. 2.0002
+  -> single-record rates carry no information (spread ~1e-4, forced); the edge TOTAL carries
+     none either. Everything below is scored PER PAIR.
+
+====================================================================================================
+SECTION 5  WHICH STATE DO WE EVALUATE IN?
+  state=written   |<W_0>(t)| = 4.493e-01   per-pair fidelity vs truth = 1.000   integer defect 1.19e-04   [records have values]
+  state=mixed     |<W_0>(t)| = 0.000e+00   per-pair fidelity vs truth = 0.000   integer defect inf   [ALL RECORDS HAVE <W>=0 -- NOTHING TO CORRELATE]
+  state=random    |<W_0>(t)| = 2.006e-02   per-pair fidelity vs truth = 0.000   integer defect inf   [records have values]
+
+====================================================================================================
+SECTION 6  THE TRUE CARRIER
+  BLOCK 3x2  g2=0.01  t*=0.2  gamma=0.5  bath = ALL 17 links, uniform
+  oracle queries the RECONSTRUCTOR consumed = 21 real numbers (F + C(F,2) = 21); the graph it must determine is 15 bits.
+
+  TRUE adjacency (never shown to the reconstructor):
+[[0 1 0 1 0 0]
+ [1 0 1 0 1 0]
+ [0 1 0 0 0 1]
+ [1 0 0 0 1 0]
+ [0 1 0 1 0 1]
+ [0 0 1 0 1 0]]
+  RECONSTRUCTED adjacency:
+[[0 1 0 1 0 0]
+ [1 0 1 0 1 0]
+ [0 1 0 0 0 1]
+ [1 0 0 0 1 0]
+ [0 1 0 1 0 1]
+ [0 0 1 0 1 0]]
+
+  per-pair fidelity 1.0000   edge-set Jaccard 1.0000   exact graph match True   worst integer defect 1.19e-04
+  connected correlation K: |K| on ADJACENT pairs   min 9.928e-02 max 9.929e-02
+                           |K| on DISJOINT pairs   min 7.919e-12 max 6.428e-07
+  separation ratio (min adjacent / max disjoint) = 1.544e+05
+
+====================================================================================================
+SECTION 7  THE SHUFFLE CONTROL  (decides the lane)
+  Randomly permute which links belong to which plaquettes, every count fixed, rebuild, re-run.
+  COLUMN 'vs TRUE' is the control: it asks whether the method still returns the ORIGINAL
+  block's graph. If it does, the method reads something other than this carrier and the
+  result is void. COLUMN 'vs OWN' asks whether it correctly returns the shuffled carrier's
+  own graph -- that is a diagnostic, not the control.
+
+    shuffle    L     mult profile  edges  fid vs TRUE  jac vs TRUE  fid vs OWN  exact vs OWN
+          0   17    {1: 10, 2: 7}      7       0.4667       0.3000      1.0000          True
+          1   17    {1: 10, 2: 7}      7       0.5333       0.3333      1.0000          True
+          2   17    {1: 10, 2: 7}      7       0.3333       0.1667      1.0000          True
+          3   17    {1: 10, 2: 7}      7       0.6000       0.4000      1.0000          True
+          4   17    {1: 10, 2: 7}      7       0.6000       0.4000      1.0000          True
+          5   17    {1: 10, 2: 7}      7       0.5333       0.3000      1.0000          True
+
+  chance baseline (random graph, SAME edge count, per-pair) = 0.5035
+  shuffled-carrier fidelity vs TRUE: mean 0.5111  max 0.6000
+  shuffled-carrier fidelity vs OWN : mean 1.0000  min 1.0000
+
+====================================================================================================
+SECTION 8  A SECOND GEOMETRY (and a third, with IDENTICAL counts to the block)
+  NOTE, recorded because it nearly produced a false null: the first third carrier tried here
+  was a 6-cycle-plus-one-chord, which is ISOMORPHIC to the 3x2 block's dual (the 3-rung
+  ladder IS the theta graph). It was replaced by the BOWTIE below, which shares F, L, edge
+  count, multiplicity profile AND degree sequence with the block but is a different graph.
+
+                             carrier   F    L  edg     true degrees    recon degrees  tri     fid  exact
+                           BLOCK 3x2   6   17    7 [2, 2, 2, 2, 3, 3] [2, 2, 2, 2, 3, 3]    0  1.0000   True
+                              RING 6   6   18    6 [2, 2, 2, 2, 2, 2] [2, 2, 2, 2, 2, 2]    0  1.0000   True
+                           STRIP 1x6   6   19    5 [1, 1, 2, 2, 2, 2] [1, 1, 2, 2, 2, 2]    0  1.0000   True
+   BOWTIE-6 (two triangles + bridge)   6   17    7 [2, 2, 2, 2, 3, 3] [2, 2, 2, 2, 3, 3]    2  1.0000   True
+
+  do the reconstructions DISTINGUISH the geometries?  (statistics computed from the
+  RECONSTRUCTED matrices only -- the adjacency spectrum is an isomorphism invariant)
+    BLOCK  spectrum [-2.414214 -1.       -0.414214  0.414214  1.        2.414214]  triangles 0
+    RING   spectrum [-2. -1. -1.  1.  1.  2.]  triangles 0
+    BOWTIE spectrum [-1.732051 -1.       -1.       -0.414214  1.732051  2.414214]  triangles 2
+    block vs ring   distinguished: True   (different L and edge count too)
+    block vs bowtie distinguished: True   <- SAME F, SAME L=17, SAME 7 edges, SAME
+        multiplicity profile, SAME degree sequence [2,2,2,2,3,3]. Nothing countable
+        separates these two carriers; only the geometry does.
+
+====================================================================================================
+SECTION 9  COUPLING SCAN  (numbers as they come; nothing fitted)
+  'dead' = how many of the 21 records had <W>(t*) <= 0, i.e. no decay rate exists at all.
+        g2     t*  fid BLOCK     defect  dead  fid RING  fid BOWTIE  fid SHUF vs TRUE   sep ratio
+     0.000   0.05     1.0000   1.33e-14     0    1.0000      1.0000            0.3333    7.94e+13
+     0.001   0.05     1.0000   3.94e-07     0    1.0000      1.0000            0.6000    3.24e+09
+     0.010   0.05     1.0000   3.94e-05     0    1.0000      1.0000            0.6000    3.27e+07
+     0.100   0.05     1.0000   3.94e-03     0    1.0000      1.0000            0.6000    1.05e+05
+     0.500   0.05     1.0000   9.86e-02     0    1.0000      1.0000            0.5333    2.29e+02
+     1.000   0.05     1.0000   3.96e-01     0    1.0000      1.0000            0.5333    1.65e+01
+     0.000   0.20     1.0000   3.55e-15     0    1.0000      1.0000            0.3333    3.25e+14
+     0.001   0.20     1.0000   1.20e-06     0    1.0000      1.0000            0.6000    1.51e+07
+     0.010   0.20     1.0000   1.19e-04     0    1.0000      1.0000            0.6000    1.54e+05
+     0.100   0.20     1.0000   1.17e-02     0    1.0000      1.0000            0.6000    1.26e+03
+     0.500   0.20     1.0000   3.46e-01     0    1.0000      1.0000            0.4000    2.99e+00
+     1.000   0.20     0.0000        inf    10    0.0000      0.0000            0.0000    4.43e-02
+     0.000   1.00     1.0000   1.42e-14     0    1.0000      1.0000            0.3333    2.23e+14
+     0.001   1.00     1.0000   2.78e-05     0    1.0000      1.0000            0.6000    3.06e+05
+     0.010   1.00     1.0000   2.72e-03     0    1.0000      1.0000            0.6000    3.02e+03
+     0.100   1.00     1.0000   1.61e-01     0    1.0000      1.0000            0.6000    2.18e+01
+     0.500   1.00     1.0000   4.56e-01     0    1.0000      1.0000            0.5333    4.38e+00
+     1.000   1.00     0.2667   3.09e-01     0    0.2000      0.6000            0.4000    7.87e-01
+
+====================================================================================================
+SECTION 10  SUMMARY (every verdict computed from the number printed beside it)
+  true carrier per-pair fidelity          1.0000   exact graph match True
+  shuffled carriers vs TRUE  mean/max     0.5111 / 0.6000   chance baseline 0.5035
+  shuffled carriers vs OWN graph  mean    1.0000
+  ring / strip / bowtie recovered exactly True
+  block vs bowtie (all counts identical)  distinguished: True
+  fidelity across g2 at t*=0.2            ['0.0:1.00', '0.001:1.00', '0.01:1.00', '0.1:1.00', '0.5:1.00', '1.0:0.00']
+  fidelity across g2 at t*=0.05           ['0.0:1.00', '0.001:1.00', '0.01:1.00', '0.1:1.00', '0.5:1.00', '1.0:1.00']
+
+  gap (true - worst shuffle) = 0.4000
+  VERDICT: RECONSTRUCTED -- the dual graph is recovered exactly from 21 scalars, the count-preserving shuffle collapses it to the chance baseline, and two carriers with identical counts are separated.
+
+  SCOPE, stated with the failures: the reconstruction is exact at every (g2,t*) in the
+  scan EXCEPT (g2,t*) in [(1.0, 0.2), (1.0, 1.0)], both at g2=1.0.
+  The failure is NOT monotone in g2*t*: (g2=1.0,t*=0.2) fails with 10 records driven to
+  <W> <= 0, while (g2=0.5,t*=1.0) -- a LARGER product -- is exact. The coherent term makes
+  <W_S>(t) oscillate, and the method fails wherever the chosen t* lands near a zero
+  crossing, not above some coupling threshold. At t*=0.05 the method is exact across the
+  whole scan including g2=1.0. Nothing was fitted; the t* values were fixed in advance and
+  integer rounding is the only decision rule.
+
+  WHAT THIS DOES NOT SHOW: the record LABELS p=0..F-1 are given. This lane recovers WHICH
+  PAIRS of records are adjacent, not the identification of records themselves; and the
+  reconstruction is of the DUAL graph (plaquette adjacency), which is what was asked, not
+  of the link/vertex incidence beneath it.

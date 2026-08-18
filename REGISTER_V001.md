@@ -3758,3 +3758,38 @@ outcomes is the right discipline and it did not save the reading; **only the swe
 `11.6 sigma`. **What couples them is alpha, through shared links, and nothing else.** Whether the
 coupling concentrates or disperses content is **not answered**, and cannot be until the measurement
 is made at something other than a fixed time.
+
+---
+
+## PHASE A — **THREE OF THE FOUR NECESSITY RESULTS ARE NOW THEOREMS, NOT MEASUREMENTS**
+
+`THEOREMS_V001.md` + `LANE_PA_THEOREMS/`, sealed. The program had **measured** four results that are
+provable. Measuring a theorem on one lattice is strictly weaker than proving it.
+
+**T1 — durability ⟹ unwritable. PROVED, AND STRONGER THAN WHAT WAS MEASURED.** For any GKSL
+generator with **arbitrary** jump operators and `R` **normal**: `[H,R]=0` and `[L_k,R]=0` give
+`d⟨R⟩/dt = 0` for every state. **No lattice, no gauge group, no dimension, and no unitarity of the
+jumps enters** — the program had only ever measured the unitary-jump case. Verified at the edges
+with random operators and exact simultaneous diagonalisation: `≤ 1.2e-15` across `D = 4…12`, with
+each hypothesis breaking it when dropped. **And normality is nearly free: if `H` is Hermitian with
+non-degenerate spectrum and `[H,R]=0`, then `R` is automatically normal.**
+
+**T2 — reading requires a closed path. PROVED.** An open path's holonomy transforms as
+`W → g_a W g_b⁻¹` and admits no gauge-invariant function of the link variables alone; a closed one
+transforms by conjugation. **W-37's cut-ring `0.000000` is an instance of the theorem, not evidence
+for it.**
+
+**T3 — `capacity = m − 1`. PROVED FOR ARBITRARY COMPLEXES.** `bd` is linear over `GF(2)`, so
+protectability via a link `ℓ` is the kernel of ONE linear functional. Verified on the `3×3` patch,
+disconnected squares, a **tetrahedron**, a **cube surface**, and six random complexes — **10 of 10**,
+with the orphan-link hypothesis confirmed as the one doing the work. **Planarity, dimension, lattice
+structure and gauge group play no role.**
+
+**T4 — `legibility = perimeter/2 − 1`. NOT PROVED, and it is the one Phase C depends on.** The
+mechanism is clear (only a region's boundary layer pairs with anything outside) but the coefficient
+is underived and the class of regions unestablished.
+
+> **WHAT PHASE A BUYS: three of the program's four necessity results are no longer statements about
+> a `Z_2` lattice.** T1 in particular is a general fact about open quantum systems. **What it does
+> not buy: the carrier is still imported, and T4 — the one with any prospect of a distinguishing
+> prediction — is still a measurement on rectangular planar blocks.**

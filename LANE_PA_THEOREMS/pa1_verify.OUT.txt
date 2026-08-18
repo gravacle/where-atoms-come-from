@@ -1,0 +1,21 @@
+PHASE A / T1.  random operators only -- no lattice, no gauge group, no physical structure.
+
+                                          case  ||[H,R]||  ||[L,R]||  ||[Ld,R]||  max|d<R>/dt|
+  --------------------------------------------------------------------------------------------
+            D=4   R unitary, jumps NON-unitary    6.9e-16    1.1e-15     8.1e-16     5.979e-16
+             D=4   R normal, jumps NON-unitary    1.1e-15    2.0e-15     1.9e-15     1.222e-15
+            D=6   R unitary, jumps NON-unitary    1.7e-15    2.0e-15     1.7e-15     7.463e-16
+             D=6   R normal, jumps NON-unitary    1.3e-15    1.8e-15     1.8e-15     8.951e-16
+            D=9   R unitary, jumps NON-unitary    2.0e-15    3.1e-15     3.2e-15     7.468e-16
+             D=9   R normal, jumps NON-unitary    1.6e-15    4.6e-15     3.8e-15     9.746e-16
+            D=12  R unitary, jumps NON-unitary    2.1e-15    3.1e-15     3.5e-15     4.443e-16
+             D=12  R normal, jumps NON-unitary    1.6e-15    3.8e-15     4.2e-15     7.109e-16
+
+  NON-NORMAL R IS WHERE IT MUST FAIL: there [L,R]=0 does NOT give [L^dag,R]=0.
+    D=5  ||[H,R]||=1.1e+01  ||[L,R]||=7.0e-15  ||[Ld,R]||=5.3e+01   max|d<R>/dt| = 5.131e+01
+    D=8  ||[H,R]||=1.6e+02  ||[L,R]||=7.9e-14  ||[Ld,R]||=5.5e+02   max|d<R>/dt| = 1.118e+03
+
+  EACH HYPOTHESIS DROPPED IN TURN -- each must break the conclusion.
+       all hypotheses hold  max|d<R>/dt| = 5.855e-16   HOLDS
+              drop [H,R]=0  max|d<R>/dt| = 9.096e-01   BREAKS
+              drop [L,R]=0  max|d<R>/dt| = 1.738e+01   BREAKS

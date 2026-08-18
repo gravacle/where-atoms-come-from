@@ -1,0 +1,20 @@
+PHASE A / T3.  capacity = m - 1 on arbitrary complexes (planarity plays no role in the proof)
+
+                             complex   m   L  orphan link  predicted  measured        
+  --------------------------------------------------------------------------------------
+                    3x3 planar patch   4  12        False          3         3  ok
+              4 disconnected squares   4  16        False          3         3  ok
+      tetrahedron (4 faces, 6 links)   4   6        False          3         3  ok
+    cube surface (6 faces, 12 links)   6  12        False          5         5  ok
+        random complex #0 (m=3, L=7)   3   7        False          2         2  ok
+       random complex #1 (m=4, L=11)   4  11         True          4         4  ok
+       random complex #2 (m=5, L=12)   5  12         True          5         5  ok
+        random complex #3 (m=5, L=6)   5   6        False          4         4  ok
+       random complex #4 (m=4, L=11)   4  11         True          4         4  ok
+        random complex #5 (m=4, L=8)   4   8         True          4         4  ok
+
+  all cases agree with the theorem: True
+
+  THE HYPOTHESIS DOING THE WORK -- a link on no plaquette raises capacity to m.
+    m=2, L=6: orphan link present = False  predicted 1  measured 1
+    m=2, L=7: orphan link present = True   predicted 2  measured 2
