@@ -159,10 +159,12 @@ def Hmat(C, g2):
 # ---- Heisenberg-picture propagation of a record (batched over records) ----
 def heis_deriv(C, H, Ob, gam):
     # dO/dt = i[H,O] + gam*( sum_k Z_k O Z_k - n_links*O )
-    return 1j * (np.einsum('ij,bjk->bik', H, Ob) - np.einsum('bij,jk->bik', Ob, H)) \
+    # np.matmul broadcasts (D,D)@(b,D,D) and (b,D,D)@(D,D) through BLAS; einsum does not.
+    return 1j * (np.matmul(H, Ob) - np.matmul(Ob, H)) \
            + gam * (C['Kmat'][None, :, :] * Ob - C['n_links'] * Ob)
 
-def measure_rates(C, g2, regions, gam=GAM, t1=0.02, t2=0.12, nstep=400):
+def measure_rates(C, g2, regions, gam=GAM, t1=0.02, t2=0.12, nstep=None):
+    if nstep is None: nstep = 400 if C['D'] <= 64 else 160
     """OPERATIONAL rate of every record in `regions`, from real time evolution.
        Returns r[S] = -(1/(t2-t1)) * ln |f(t2)/f(t1)|, f(t) = <W_S, O_S(t)>/<W_S,W_S>."""
     H = Hmat(C, g2); D = C['D']
@@ -261,14 +263,14 @@ def shuffle_PL(n_p, n_links, PL, rng, tries=4000):
     mult = [0] * n_links
     for s in PL:
         for k in s: mult[k] += 1
-    stub0 = [k for k in range(n_links) for _ in range(mult[k])]
+    stub0 = np.array([k for k in range(n_links) for _ in range(mult[k])])
     for _ in range(tries):
-        stubs = list(stub0); rng.shuffle(stubs)
+        stubs = list(rng.permutation(stub0))
         pos = 0; out = []; ok = True
         for p in range(n_p):
             s = stubs[pos:pos + degs[p]]; pos += degs[p]
             if len(set(s)) != len(s): ok = False; break
-            out.append(sorted(s))
+            out.append(sorted(int(x) for x in s))
         if ok: return out
     return None
 

@@ -521,9 +521,10 @@ print(f"    -> the record ALGEBRA is the same object on every carrier, so it car
 
 G2MAIN = 0.02
 
-def run(car, g2, baths, masks=None):
+def run(car, g2, baths, masks=None, t=TPROBE):
     masks = masks or RECS[car.name]
-    G, full = response(car, g2, baths, masks)
+    G = rates_many(car, g2, baths, masks, t=t)
+    full = rates_many(car, g2, [list(range(car.L))], masks, t=t)[:, 0]
     Shat, Ahat, unit = reconstruct(G, full)
     return G, full, Shat, Ahat, unit, masks
 
@@ -628,7 +629,32 @@ for g2 in G2S:
         cells.append(f"{g['F']:5.3f} {g['exact']:6.3f} {g['r']:9.4f}")
     print(f"      {g2:6.3f}  " + "  ".join(f"{x:>22s}" for x in cells))
 print("      g^2 = 0 switches the electric term off, where the counting law is exact.  As g^2 grows")
-print("      the records precess and the measured rate stops being a pure channel count.")
+print("      the records precess and the measured rate stops being a pure channel count.  Fidelity")
+print("      is NOT monotone in g^2: it is 1.000 out to g^2 = 0.3, breaks up in a band, and returns.")
+print()
+print("      WHY THE BAND.  Diagnostic: the coherent-only leakage rate -ln|<W>(t)|/t with the bath")
+print("      switched off entirely.  If that is comparable to the dissipative rates the two-point")
+print("      probe is no longer reading a channel count, and the failure is the PROBE, not the")
+print("      geometry.  Second column: the same fidelity measured at a ten-times shorter probe.")
+print("      CAVEAT, so this is not read as a rescue: the coherent term contributes nothing to the")
+print("      rate at t -> 0 exactly (Re Tr(O^d i[H,O]) = 0), so short probes restore the counting")
+print("      law BY CONSTRUCTION.  The honest statement is the regime, not the repair.")
+print(f"      {'g^2':>6s}  " + "  ".join(f"{c.name+' leak/F(t=.5)/F(t=.05)':>34s}" for c in CARRIERS4))
+shortF = {c.name: [] for c in CARRIERS4}
+for g2 in G2S:
+    cells = []
+    for c in CARRIERS4:
+        leak = float(np.mean(rates_many(c, g2, [[]], RECS[c.name], t=TPROBE)[:, 0]))
+        Ff = dict((g, f) for g, f, _, _ in scan[c.name])[g2]
+        _, _, S_s, A_s, _, m_s = run(c, g2, designed_baths(c.L), t=0.05)
+        Fs = grade(S_s, A_s, truth(c, m_s))['F']
+        shortF[c.name].append((g2, Fs))
+        cells.append(f"{leak:10.4f}   {Ff:6.3f}   {Fs:6.3f}")
+    print(f"      {g2:6.3f}  " + "  ".join(f"{x:>34s}" for x in cells))
+allshort = [f for nm in shortF for _, f in shortF[nm]]
+print(f"      Every breakdown point sits where the coherent leakage has grown to the size of the")
+print(f"      dissipative rates themselves.  Short-probe fidelity, minimum over all {len(allshort)} points in")
+print(f"      this table: {min(allshort):.3f}.")
 print()
 print("      the same scan on the five-plaquette carriers (fewer points, they cost 4x):")
 print(f"      {'g^2':>6s}  " + "  ".join(f"{c.name:>22s}" for c in CARRIERS5))
@@ -698,9 +724,16 @@ print(f"    fidelity, {NSHUF} shuffles graded against their OWN dual  : {np.mean
       f"(min {min(f_self):.3f})")
 print(f"    fidelity across all six distinct geometries            : {np.mean(allF):.3f}  "
       f"(min {min(allF):.3f})")
-b4 = scan[BLOCK.name]
-print(f"    coupling scan on BLOCK_2x2, F by g^2                   : "
-      + ", ".join(f"g2={g:g}:{f:.3f}" for g, f, _, _ in b4))
+for nm in [c.name for c in CARRIERS4]:
+    print(f"    coupling scan, F by g^2 on {nm:<12s}          : "
+          + " ".join(f"{g:g}:{f:.2f}" for g, f, _, _ in scan[nm]))
+for nm in [c.name for c in CARRIERS5]:
+    print(f"    coupling scan, F by g^2 on {nm:<12s}          : "
+          + " ".join(f"{g:g}:{f:.2f}" for g, f, _, _ in scan5[nm]))
+worstg = min([(f, g, nm) for nm in scan for g, f, _, _ in scan[nm]]
+             + [(f, g, nm) for nm in scan5 for g, f, _, _ in scan5[nm]])
+print(f"    worst point anywhere in the coupling scan              : F={worstg[0]:.3f} "
+      f"at g^2={worstg[1]:g} on {worstg[2]}")
 print(f"    within-row-shuffled input                              : {gr['F']:.3f}")
 print(f"    undesigned random baths, K=1024                        : {kcurve[-1][1]:.3f}")
 ok_true = gd['F'] > 0.999
@@ -714,6 +747,11 @@ if ok_true and ok_cross and ok_self and ok_geo:
     print("    returns THEIR graph and not the true one, so it is tracking the incidence rather than")
     print("    the marginals.  On this carrier class the adjacency is NOT an independent input: it is")
     print("    a measurable of the record dynamics, fixed by which records decay together.")
+    print(f"    WHERE IT STOPS: the verdict is scoped to the regime the scan says it holds in.  The")
+    print(f"    weakest point measured anywhere in the coupling scan is F={worstg[0]:.3f} at g^2={worstg[1]:g} on")
+    print(f"    {worstg[2]}; at strong electric coupling the record precesses and the decay rate is no")
+    print("    longer a channel count, so the estimator loses its footing in a band and is not")
+    print("    monotone in g^2.  That is reported, not smoothed.")
     print("    SCOPE, stated plainly: this is Z_2, the bath is dephasing, the records are the magnetic")
     print("    Wilson loops, and the reconstruction is of the CHANNEL-SHARING graph.  It shows the")
     print("    hand-installed graph was redundant with the dynamics -- not that geometry is derived")

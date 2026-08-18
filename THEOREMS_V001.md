@@ -88,12 +88,41 @@ an orphan, `2` with one).
 
 ---
 
-## T4 — LEGIBILITY = perimeter/2 − 1 — **NOT PROVED**
+## T4 — LEGIBILITY IS THE BOUNDARY-TOUCHING COUNT — **W-46's COEFFICIENT WAS WRONG**
 
-**Measured** (W-46) on `n×n` blocks: storage `= n²−1`, external legibility `= 2n−1 = perimeter/2 −1`,
-`storage/area → 1` while `legible/perimeter → 1/2`. The mechanism is clear — only the boundary layer
-of a region pairs with anything outside — but **the exact coefficient has not been derived, and the
-class of regions for which it holds is not established.** Non-rectangular regions, non-planar
-complexes and higher dimensions are all untested.
+**Reduction.** A region `A`'s records are subsets of its plaquettes; an outside observer holds
+operators built from outside plaquettes; the pairing `⟨T,S⟩ = |bd(T) ∩ bd(S)| mod 2` is, for lattice
+plaquettes, exactly the **bipartite adjacency between outside and inside plaquettes**. So
 
-**This is the one Phase-A result that remains a measurement.** It is also the one Phase C depends on.
+```
+   legibility = rank_GF(2) (outside × inside adjacency)
+              = |A| − dim{ S ⊆ A : bd(S) touches no link shared with the outside }
+```
+
+**The kernel is the plaquettes invisible from outside**, and for an `n×n` block it is exactly the
+interior:
+
+```
+    n   |A|=n²   legibility   invisible   (n−2)²   4(n−1)
+    2       4            4           0        0        4
+    3       9            8           1        1        8
+    4      16           12           4        4       12
+    5      25           16           9        9       16
+```
+
+> **`invisible = (n−2)²` — precisely the plaquettes touching no outside plaquette.
+> `legibility = 4(n−1)` — the boundary-touching count, LINEAR in `n`.**
+
+**W-46 REPORTED `2n−1` AND THAT NUMBER IS WITHDRAWN. Its region was placed at the lattice CORNER**,
+so part of `A`'s boundary faced the lattice edge rather than any outside plaquette. Re-running that
+geometry reproduces `3, 5, 7` exactly; placing the same region in the interior gives `4, 8, 12`.
+
+> **THE CONCLUSION SURVIVES AND IS STRONGER: storage scales with AREA (`n²−1`), legibility with
+> PERIMETER (`4n−4`), and the mechanism is now exact rather than fitted — what is invisible is
+> precisely the interior.** Only the coefficient changes.
+
+**STILL NOT A CLOSED THEOREM.** The rank has shape-dependent dependencies: the `plus` pentomino has
+all five cells touching the outside yet legibility `4`, while `3×3`-minus-centre has all eight
+touching and legibility `8`. **`legibility = boundary-touching count` is exact for rectangles and
+fails for some shapes.** The general statement is the kernel characterisation above; the closed form
+is established only for rectangular blocks.

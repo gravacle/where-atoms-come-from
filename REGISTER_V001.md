@@ -3793,3 +3793,36 @@ is underived and the class of regions unestablished.
 > a `Z_2` lattice.** T1 in particular is a general fact about open quantum systems. **What it does
 > not buy: the carrier is still imported, and T4 — the one with any prospect of a distinguishing
 > prediction — is still a measurement on rectangular planar blocks.**
+
+---
+
+## PHASE A / T4 — **W-46's `2n−1` IS WITHDRAWN. THE BULK/BOUNDARY SPLIT SURVIVES AND IS STRONGER.**
+
+Reducing the pairing shows legibility is the **GF(2) rank of the outside–inside plaquette
+adjacency**, whose kernel is exactly the region-combinations whose boundary is interior to `A`.
+
+```
+    n   |A|=n²   legibility   invisible   (n−2)²
+    2       4            4           0        0
+    3       9            8           1        1
+    4      16           12           4        4
+    5      25           16           9        9
+```
+
+**`invisible = (n−2)²` exactly — the plaquettes touching no outside plaquette. `legibility = 4(n−1)`.**
+
+**W-46 REPORTED `2n−1 = perimeter/2 − 1`. WITHDRAWN. Its region sat at the lattice CORNER**, so part
+of `A`'s boundary faced the lattice edge instead of outside plaquettes. Re-running that geometry
+reproduces `3, 5, 7`; the same regions placed in the interior give `4, 8, 12`.
+
+> **THE CONCLUSION IS UNCHANGED AND BETTER FOUNDED: storage scales with AREA, legibility with
+> PERIMETER — and the mechanism is now exact. What a region cannot export is precisely its interior.**
+
+**T4 REMAINS OPEN AS A CLOSED FORM.** `legibility = boundary-touching count` is exact for rectangles
+and **false in general**: the `plus` pentomino has all five cells touching the outside and legibility
+`4`; `3×3`-minus-centre has all eight touching and legibility `8`. The kernel characterisation is
+general; the formula is not.
+
+**PHASE A CLOSES AT THREE THEOREMS AND ONE CHARACTERISATION.** T1 (any GKSL generator, arbitrary
+jumps, `R` normal), T2 (gauge theory), T3 (arbitrary complexes) are proved. T4 has an exact
+mechanism and a shape-dependent coefficient.

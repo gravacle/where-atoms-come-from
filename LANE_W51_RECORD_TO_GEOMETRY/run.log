@@ -1,0 +1,132 @@
+====================================================================================================
+W-51  RECORD -> GEOMETRY.  LENS: THE OPERATOR ALGEBRA ITSELF.
+====================================================================================================
+
+[0]  PRE-REGISTRATION -- FORCED OR NOT, BEFORE ANY DYNAMICS RUNS.
+
+  QUANTITY AT RISK:  Ghat(p,q) = ( r(p) + r(q) - r({p,q}) ) / (4*gamma),  claimed to equal the
+  number of links plaquettes p and q share.  The program has seven false positives from measuring
+  something a constraint already fixed.  The danger here is that r({p,q}) is determined by the
+  COUNTS the carrier is built with -- every plaquette carries 4 links, the link total is fixed --
+  in which case Ghat is a constant dressed up as a measurement and carries no adjacency at all.
+
+  THE ONE ARGUMENT THAT SETTLES IT:  |bdy(S)| for |S|=2 is NOT a function of the preserved counts.
+  A degree-preserving shuffle of the plaquette-link incidence keeps |bdy(p)|=4 for every p, keeps
+  the link total, and keeps every link's multiplicity -- and yet moves |bdy({p,q})|.  Demonstrated
+  combinatorially below, with no Lindbladian anywhere near it.  If the spread were zero the lane
+  would stop here and report a forced null.
+  BLOCK5:  n_p=5  n_links=15  |bdy(p)| per plaquette = [4]
+           link multiplicity profile = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2]   (a shuffle preserves ALL of these)
+  |bdy(S)| for |S|=2, TRUE carrier    : [6, 8]
+  |bdy(S)| for |S|=2, over 40 shuffles: [2, 4, 6, 8]
+  spread at fixed |S|=2 and fixed counts: TRUE 2 distinct, SHUFFLED 4 distinct
+  => the at-risk quantity is NOT FORCED by the preserved counts
+
+[1]  VALIDATION OF THE MACHINERY (three independent checks, before any claim).
+  (a) reduced region-space model  vs  full Gauss-law model (2x2 patch, g2=0.05, gamma=0.5)
+          region   full Gauss law      reduced     |diff|
+            (0,)     4.0123370960 4.0123370960   5.24e-14
+            (1,)     4.0123370960 4.0123370960   5.51e-14
+          (0, 1)     6.0213253859 6.0213253859   9.33e-14
+          (0, 3)     8.0246366112 8.0246366112   1.46e-13
+      max discrepancy 1.46e-13  -> the reduced carrier IS the W-33/W-41 carrier
+  (b) Liouville dim 1024.  ||Mheis - Msch^dag|| = 0.00e+00   (row-major convention, W-33 erratum)
+      ||RK4(t) - expm_ss(t*M)|| = 2.48e-13   at t=0.12
+  (c) measured rate vs 2*gamma*|bdy| at g2=0, all 15 records: max |diff| = 8.00e-03
+
+[2]  OPERATORS MUST EARN MEASUREMENT.  Record operators on BLOCK5, before any commutator.
+            record S      ||O||  ||O^dag O - I||  distinct eigs
+                   1   5.656854         0.00e+00              2
+                   2   5.656854         0.00e+00              2
+                   3   5.656854         0.00e+00              2
+                   5   5.656854         0.00e+00              2
+                  31   5.656854         0.00e+00              2
+      (norm sqrt(D)=5.656854 for a permutation, unitary to machine epsilon, spectrum {+1,-1})
+
+[3]  ROUTE 1 -- THE RECORD ALGEBRA ALONE.   THE LENS'S OWN HYPOTHESIS, TESTED FIRST.
+
+  Every record is a product of link X operators, so W_S W_T = W_{S xor T} = W_T W_S for ALL S,T
+  whatever links they share.  If adjacency lived in the record algebra it would have to show up in
+  a commutator, an anticommutator, or a product -- and all three are geometry-blind by that line.
+  Measured, not asserted:
+         carrier   max ||[W_S,W_T]||   max ||{W_S,W_T}-2W_SW_T||  product table = Z_2^n_p
+          BLOCK5            0.00e+00                    0.00e+00                     True
+          CHAIN5            0.00e+00                    0.00e+00                     True
+           RING5            0.00e+00                    0.00e+00                     True
+
+  READING.  The three carriers -- a 2D block, an open chain, a ring -- have three different dual
+  graphs and ONE identical record algebra.  Every commutator vanishes, every product is fixed by the
+  xor of the labels, the multiplication table is Z_2^5 in all three cases.  The record algebra by
+  itself therefore contains ZERO bits of adjacency.  ROUTE 1 IS A NULL, and it is a clean one: the
+  null is forced by the abelian structure, not by insufficient resolution.
+  Note the same holds for the magnetic Hamiltonian, MAG = sum_p (W_p + W_p^dag), which is itself a
+  sum of records and commutes with all of them.  Geometry first enters through Z_k -- the ELECTRIC
+  operator and the bath coupling.  That is why Route 2 needs an environment.
+
+[4]  ROUTE 2 -- RECORDS PLUS ONE UNIFORM, UNLABELLED ENVIRONMENT.
+
+  WHAT THE RECONSTRUCTION CONSUMES (this is the whole input, and it is asserted in code):
+      n_p                          an integer
+      { region-label -> rate }     one real number per record, from real time evolution
+      gamma                        the single environment strength
+  A region label is a subset of the opaque plaquette index set.  Relabelling the plaquettes
+  relabels the output and nothing else.  There is ONE bath and it is uniform: no link is selected,
+  named, or resolved at any point.  n_p + C(n_p,2) real numbers go in; the dual graph comes out.
+
+  BLOCK5:  fidelity 1.000   max |Ghat-Gtrue| over pairs 1.00e-03
+        reconstructed edges [(0, 1), (0, 2), (1, 3), (2, 3), (2, 4)]
+        true          edges [(0, 1), (0, 2), (1, 3), (2, 3), (2, 4)]
+        reconstructed degree sequence [1, 2, 2, 2, 3]   true [1, 2, 2, 2, 3]
+
+  CHAIN5:  fidelity 1.000   max |Ghat-Gtrue| over pairs 1.00e-03
+        reconstructed edges [(0, 1), (1, 2), (2, 3), (3, 4)]
+        true          edges [(0, 1), (1, 2), (2, 3), (3, 4)]
+        reconstructed degree sequence [1, 1, 2, 2, 2]   true [1, 1, 2, 2, 2]
+
+  RING5:  fidelity 1.000   max |Ghat-Gtrue| over pairs 1.00e-03
+        reconstructed edges [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
+        true          edges [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
+        reconstructed degree sequence [2, 2, 2, 2, 2]   true [2, 2, 2, 2, 2]
+
+  SEPARATION on BLOCK5 at g2=0: min Ghat over adjacent pairs 0.999000, max Ghat over non-adjacent pairs 1.05e-12, threshold 0.5
+
+[5]  THE SHUFFLE CONTROL.  Degree-preserving permutation of which links belong to which
+     plaquettes.  Scored TWO ways, because the two ways answer different questions.
+       (i)  against the ORIGINAL carrier's adjacency -- does the method just replay a fixed
+            answer that the counts or the labels already fix?   Must COLLAPSE.
+       (ii) against the SHUFFLED carrier's OWN adjacency -- does the method track the
+            carrier it is actually run on?   Must HOLD.
+
+   carrier  shuffle   fid vs ORIGINAL   fid vs OWN truth       Ghat values seen
+    BLOCK5        0             0.300              1.000              [0, 1, 2]
+    BLOCK5        1             0.600              1.000                 [0, 1]
+    BLOCK5        2             0.400              1.000                 [0, 1]
+    BLOCK5        3             0.700              1.000              [0, 1, 2]
+    BLOCK5        4             0.400              1.000              [0, 1, 2]
+    BLOCK5        5             0.400              1.000                 [0, 1]
+    BLOCK5        6             0.600              1.000              [0, 1, 2]
+    BLOCK5        7             0.300              1.000              [0, 1, 2]
+
+  mean over 8 shuffles:  vs ORIGINAL 0.463 +- 0.141    vs OWN truth 1.000 +- 0.000
+  CONTROLS on BLOCK5 (10 pairs, 5 true edges):
+    random graph, same edge count : 0.500 +- 0.162
+    predict ALL pairs adjacent    : 0.500
+    predict NO pairs adjacent     : 0.500
+    Route 2 on the true carrier   : 1.000
+
+[6]  A SECOND GEOMETRY.  Same plaquette count, same |bdy(p)|, same link multiplicity
+     profile -- different dual graph.  A working method must tell them apart.
+
+   carrier  n_links               mult profile        true dual   reconstructed dual    fid
+    BLOCK5       15 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2]  [1, 2, 2, 2, 3]      [1, 2, 2, 2, 3]  1.000
+     RING5       15 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2]  [2, 2, 2, 2, 2]      [2, 2, 2, 2, 2]  1.000
+    CHAIN5       16 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2]  [1, 1, 2, 2, 2]      [1, 1, 2, 2, 2]  1.000
+
+  reconstructed BLOCK5 dual identical to reconstructed RING5 dual? False
+  BLOCK5 recon edges [(0, 1), (0, 2), (1, 3), (2, 3), (2, 4)]
+  RING5  recon edges [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
+  degree sequences differ ([1, 2, 2, 2, 3] vs [2, 2, 2, 2, 2]) -> the two carriers are NOT isomorphic and the method separates them
+
+  Larger carriers, n_p=8 (Hilbert 256; no Liouville matrix is ever formed at this size).
+   carrier  n_p  n_links  true edges  recon edges    fid
+    BLOCK8    8       22          10           10  1.000

@@ -1,0 +1,259 @@
+====================================================================================================
+W-51  RECORD -> GEOMETRY.  Can the dual graph be read out of the Lindbladian response?
+====================================================================================================
+
+WHAT THE RECONSTRUCTION CONSUMES (and nothing else)
+  Gamma[r,k]  decay rate of record r under bath placement k        R x K real numbers
+  full[r]     decay rate of record r with every channel on           R real numbers
+  gamma       the bath strength                                      1 real number
+No link list, no vertex list, no coordinates, no plaquette positions, no incidence matrix
+crosses into reconstruct().  Bath placements are opaque labels: the algorithm computes a
+covariance over them, so it is INVARIANT under permuting them and never inspects their content.
+Record labels are opaque: the algorithm is EQUIVARIANT under permuting them.  Both are tested
+numerically in section 8, as is invariance under relabelling the channels themselves.
+Random baths of size 1 are refused, so no single measurement exposes one incidence bit.
+
+FORCED-OR-NOT, DECLARED IN ADVANCE.
+  THE QUANTITY AT RISK is any AGGREGATE of the co-response matrix.  The shuffle preserves both
+  marginals of the incidence -- every plaquette keeps 4 channels, every channel keeps its
+  multiplicity -- and
+       sum over pairs of |bdy(a) & bdy(b)|  =  sum over channels of C(multiplicity, 2),
+  which is a function of the column sums ALONE.  So the total co-response, the mean off-diagonal,
+  the edge count weighted by multiplicity, and the whole diagonal (|bdy(a)| = 4) are IDENTICAL on
+  the true carrier and on every shuffle.  Reporting any of them would manufacture a positive.
+  THE ONE ARGUMENT THAT SETTLES IT: a quantity fixed by the two marginals cannot separate two
+  incidences that share those marginals; therefore only the PAIR-RESOLVED PATTERN -- which pairs
+  co-respond, not how much co-response there is -- can carry geometry.  Every fidelity below is
+  pair-resolved (per-pair classification, per-pair integer match, per-pair correlation), and the
+  forced totals are printed beside them to show they do not move.
+
+----------------------------------------------------------------------------------------------------
+1.  THE CARRIERS.  Only counts are printed here; the incidence stays inside the carrier.
+    carrier        P  chan     D  Liouv     multiplicities  origin
+    BLOCK_2x2      4    12    16    256       {1: 8, 2: 4}  planar lattice 3x3 vertices (the program's carrier)
+    STRIP_1x4      4    13    16    256      {1: 10, 2: 3}  planar lattice 5x2 vertices
+    STAR_K1,3      4    13    16    256      {1: 10, 2: 3}  abstract incidence, counts matched to STRIP_1x4
+    PATH_1x5       5    16    32   1024      {1: 12, 2: 4}  planar lattice 6x2 vertices
+    PLUS_5         5    16    32   1024      {1: 12, 2: 4}  planar cross cut from a 4x4-vertex lattice
+    RING_C5        5    15    32   1024      {1: 10, 2: 5}  abstract incidence, plaquettes in a cycle
+
+    STRIP_1x4 and STAR_K1,3 have IDENTICAL counts (P=4, 13 channels, every plaquette on 4
+    channels, three channels of multiplicity 2 and ten of multiplicity 1), and so do PATH_1x5
+    and PLUS_5.  Each of those pairs is reachable from the other by a legal count-preserving
+    shuffle, so NOTHING at the level of counts separates them.  Anything that does is geometry.
+----------------------------------------------------------------------------------------------------
+2.  DO THE RECORD OPERATORS EARN MEASUREMENT?  (norm, unitarity defect, distinct eigenvalues)
+    carrier      record   ||O||_F  sqrt(D)  ||O^dO-I||  ||O-O^d||  #eigs    eigenvalues
+    BLOCK_2x2         0    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      1    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      2    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      3    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+    STRIP_1x4         0    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      1    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      2    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      3    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+    STAR_K1,3         0    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      1    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      2    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      3    4.0000   4.0000    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+    PATH_1x5          0    5.6569   5.6569    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      1    5.6569   5.6569    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+    PLUS_5            0    5.6569   5.6569    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      1    5.6569   5.6569    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+    RING_C5           0    5.6569   5.6569    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+                      1    5.6569   5.6569    0.00e+00   0.00e+00      2    [-1.0, 1.0]
+    Every record is Hermitian, unitary and two-valued: a genuine +-1 pointer observable.
+----------------------------------------------------------------------------------------------------
+3.  ENGINE VALIDATION on the program's carrier.  Propagated <W>(t) vs the full 256x256
+    Liouvillian spectrum vs the W-41 counting law 2*gamma*|bath & boundary|.
+    'spectrum' is W-41's diagnostic -- the overlap-weighted mean rate of every Liouvillian mode
+    the record touches.  'propagated' is the actual observable decay -ln|<W>(t)|/t, which is
+    what this lane measures.  They coincide at g^2=0, where the record IS a single mode, and
+    separate at O(g^2), where it spreads over several.  That separation is not a disagreement.
+        g2           bath  rec  2g|B&bdy|   spectrum  propagated
+     0.000         [0, 1]    0      1.000     1.0000      1.0000
+     0.000         [0, 1]    1      1.000     1.0000      1.0000
+     0.000      [2, 3, 6]    0      2.000     2.0000      2.0000
+     0.000      [2, 3, 6]    1      1.000     1.0000      1.0000
+     0.000  [0, 4, 8, 11]    0      1.000     1.0000      1.0000
+     0.000  [0, 4, 8, 11]    1      1.000     1.0000      1.0000
+     0.020         [0, 1]    0      1.000     0.9218      1.0063
+     0.020         [0, 1]    1      1.000     0.9218      1.0063
+     0.020      [2, 3, 6]    0      2.000     1.8355      2.0060
+     0.020      [2, 3, 6]    1      1.000     1.0370      1.0062
+     0.020  [0, 4, 8, 11]    0      1.000     0.9914      1.0063
+     0.020  [0, 4, 8, 11]    1      1.000     0.9899      1.0063
+    scaling-and-squaring expm vs the block-Taylor engine: 1.006255380405 vs 1.006255380405  (|diff| 2.22e-15)
+----------------------------------------------------------------------------------------------------
+4.  RECORD SELECTION BY THE DYNAMICS.  All 2^P-1 records are formed from the record group,
+    which is (Z2)^P for EVERY carrier here and therefore carries no geometry.  Rank them by
+    their all-channels-on decay rate and greedily take the P slowest that are algebraically
+    independent.  Nothing positional is used to choose them.
+    BLOCK_2x2    slowest independent set [1, 2, 4, 8]           elementary set [1, 2, 4, 8]           MATCH   rates [4.0, 4.0, 4.0, 4.0]
+    STRIP_1x4    slowest independent set [1, 2, 4, 8]           elementary set [1, 2, 4, 8]           MATCH   rates [4.0, 4.0, 4.0, 4.0]
+    STAR_K1,3    slowest independent set [1, 2, 4, 8]           elementary set [1, 2, 4, 8]           MATCH   rates [4.0, 4.0, 4.0, 4.0]
+    PATH_1x5     slowest independent set [1, 2, 4, 8, 16]       elementary set [1, 2, 4, 8, 16]       MATCH   rates [4.0, 4.0, 4.0, 4.0, 4.0]
+    PLUS_5       slowest independent set [1, 2, 4, 8, 16]       elementary set [1, 2, 4, 8, 16]       MATCH   rates [4.0, 4.0, 4.0, 4.0, 4.0]
+    RING_C5      slowest independent set [1, 2, 4, 8, 16]       elementary set [1, 2, 4, 8, 16]       MATCH   rates [4.0, 4.0, 4.0, 4.0, 4.0]
+    record multiplication tables, computed from the OPERATORS: identical across the three
+    P=4 carriers True, across the three P=5 carriers True; and equal to (Z2)^P (True, True).
+    -> the record ALGEBRA is the same object on every carrier, so it carries no geometry.
+----------------------------------------------------------------------------------------------------
+5.  RECONSTRUCTION.  Designed blind bath protocol, K=16 placements, g^2=0.02, gamma=0.5, t=0.5.
+
+    TRUE CARRIER  BLOCK_2x2   (unit fixed by the diagonal: 0.249517)
+      reconstructed shared-channel counts      |   true shared-channel counts
+         4.005   1.001   1.001  -0.000   |      4     1     1     0
+         1.001   4.005  -0.000   1.001   |      1     4     0     1
+         1.001  -0.000   4.005   1.001   |      1     0     4     1
+        -0.000   1.001   1.001   4.005   |      0     1     1     4
+      dual graph RECOVERED {01,02,13,23}    TRUE {01,02,13,23}
+      pair-classification fidelity 1.000   integer-exact 1.000   corr 1.0000   chance baseline 0.556
+
+    SHUFFLE CONTROL.  12 random count-preserving reassignments of channels to plaquettes.
+    Two gradings, because a shuffle is not noise -- it is a DIFFERENT VALID GEOMETRY:
+      F vs TRUE : reconstruction from the shuffled carrier graded against the TRUE dual graph.
+                  Must COLLAPSE, or the method is emitting a fixed answer.
+      F vs OWN  : the same reconstruction graded against the SHUFFLE'S OWN dual graph.
+                  Must stay HIGH, or the method is not tracking the carrier in front of it.
+    forced total co-response on the true carrier = 4
+    The shuffled carriers get the SAME treatment as the true one, including dynamical record
+    selection -- nothing about them is hand-set.
+      carrier  forced recs=elem         own dual        recovered  F vs TRUE  F vs OWN  exact OWN  chance
+      SHUF_0        4      True          {01,23}          {01,23}      0.667     1.000      1.000   0.444
+      SHUF_1        4      True    {01,02,03,23}    {01,02,03,23}      0.667     1.000      1.000   0.556
+      SHUF_2        4      True    {02,12,13,23}    {02,12,13,23}      0.667     1.000      1.000   0.556
+      SHUF_3        4      True    {01,02,03,13}    {01,02,03,13}      0.667     1.000      1.000   0.556
+      SHUF_4        4      True       {02,03,12}       {02,03,12}      0.167     1.000      1.000   0.500
+      SHUF_5        4      True    {01,03,12,23}    {01,03,12,23}      0.333     1.000      1.000   0.556
+      SHUF_6        4      True    {01,03,12,13}    {01,03,12,13}      0.333     1.000      1.000   0.556
+      SHUF_7        4      True       {03,12,23}       {03,12,23}      0.167     1.000      1.000   0.500
+      SHUF_8        4      True    {03,12,13,23}    {03,12,13,23}      0.333     1.000      1.000   0.556
+      SHUF_9        4      True    {01,03,12,13}    {01,03,12,13}      0.333     1.000      1.000   0.556
+      SHUF_10       4      True       {02,03,23}       {02,03,23}      0.500     1.000      1.000   0.500
+      SHUF_11       4      True    {02,03,13,23}    {02,03,13,23}      0.667     1.000      1.000   0.556
+      MEAN over 12 shuffles:   F vs TRUE 0.458   F vs OWN 1.000
+      forced total: 4 on the true carrier, [4] on the shuffles  -- unmoved, exactly as pre-registered, so it cannot be what is being read.
+      shuffles whose dynamically selected record set came out as the elementary loops: 12/12
+----------------------------------------------------------------------------------------------------
+6.  DIFFERENT GEOMETRIES.  A working method must return each carrier's own dual graph.
+      carrier               true dual          recovered      F  exact    corr  chance
+      BLOCK_2x2         {01,02,13,23}      {01,02,13,23}  1.000  1.000  1.0000   0.556
+      STRIP_1x4            {01,12,23}         {01,12,23}  1.000  1.000  1.0000   0.500
+      STAR_K1,3            {01,02,03}         {01,02,03}  1.000  1.000  1.0000   0.500
+      PATH_1x5          {01,12,23,34}      {01,12,23,34}  1.000  1.000  1.0000   0.520
+      PLUS_5            {02,12,23,24}      {02,12,23,24}  1.000  1.000  1.0000   0.520
+      RING_C5        {01,04,12,23,34}   {01,04,12,23,34}  1.000  1.000  1.0000   0.500
+
+    CROSS-GRADING inside each count-matched pair (reconstruct one, grade against the other):
+      STRIP_1x4  vs STAR_K1,3 : F = 0.333 and 0.333   (the two TRUE graphs already agree on 0.500 of pairs)
+      PATH_1x5   vs PLUS_5    : F = 0.600 and 0.600   (the two TRUE graphs already agree on 0.680 of pairs)
+      PATH_1x5   vs RING_C5   : F = 0.900 and 0.900   (the two TRUE graphs already agree on 0.920 of pairs)
+      PLUS_5     vs RING_C5   : F = 0.500 and 0.500   (the two TRUE graphs already agree on 0.600 of pairs)
+      Read the cross-grades against that last column, not against zero: a path and a cycle
+      genuinely share most of their edges, so a high cross-grade there is graph similarity,
+      not method failure.  The decisive pairs are the count-matched ones, STRIP/STAR and
+      PATH/PLUS, where nothing but the incidence differs.
+----------------------------------------------------------------------------------------------------
+7.  COUPLING SCAN.  Fidelity vs g^2.  Numbers as they come; nothing fitted.
+         g^2               BLOCK_2x2               STRIP_1x4               STAR_K1,3
+                   F   exact    corr       F   exact    corr       F   exact    corr
+       0.000  1.000  1.000    1.0000  1.000  1.000    1.0000  1.000  1.000    1.0000
+       0.005  1.000  1.000    1.0000  1.000  1.000    1.0000  1.000  1.000    1.0000
+       0.020  1.000  1.000    1.0000  1.000  1.000    1.0000  1.000  1.000    1.0000
+       0.050  1.000  1.000    1.0000  1.000  1.000    1.0000  1.000  1.000    1.0000
+       0.100  1.000  1.000    1.0000  1.000  1.000    1.0000  1.000  1.000    1.0000
+       0.300  1.000  1.000    0.9999  1.000  0.833    0.9450  1.000  1.000    0.9999
+       0.500  1.000  1.000    1.0000  0.500  0.167    0.5391  0.333  0.000    0.4145
+       0.700  1.000  1.000    0.9997  1.000  1.000    0.9958  1.000  1.000    0.9997
+       1.000  1.000  1.000    0.9995  0.500  0.333    0.1260  0.500  0.000    0.9856
+       1.500  1.000  1.000    0.9991  1.000  1.000    0.9990  1.000  1.000    0.9964
+       2.000  0.667  0.167    0.6862  1.000  0.833    0.8952  0.667  0.667    0.9703
+       3.000  1.000  1.000    0.9995  1.000  1.000    0.9959  1.000  1.000    0.9985
+      g^2 = 0 switches the electric term off, where the counting law is exact.  As g^2 grows
+      the records precess and the measured rate stops being a pure channel count.  Fidelity
+      is NOT monotone in g^2: it is 1.000 out to g^2 = 0.3, breaks up in a band, and returns.
+
+      WHY THE BAND.  Diagnostic: the coherent-only leakage rate -ln|<W>(t)|/t with the bath
+      switched off entirely.  If that is comparable to the dissipative rates the two-point
+      probe is no longer reading a channel count, and the failure is the PROBE, not the
+      geometry.  Second column: the same fidelity measured at a ten-times shorter probe.
+      CAVEAT, so this is not read as a rescue: the coherent term contributes nothing to the
+      rate at t -> 0 exactly (Re Tr(O^d i[H,O]) = 0), so short probes restore the counting
+      law BY CONSTRUCTION.  The honest statement is the regime, not the repair.
+         g^2     BLOCK_2x2 leak/F(t=.5)/F(t=.05)     STRIP_1x4 leak/F(t=.5)/F(t=.05)     STAR_K1,3 leak/F(t=.5)/F(t=.05)
+       0.000            0.0000    1.000    1.000            0.0000    1.000    1.000            0.0000    1.000    1.000
+       0.005            0.0004    1.000    1.000            0.0006    1.000    1.000            0.0006    1.000    1.000
+       0.020            0.0065    1.000    1.000            0.0088    1.000    1.000            0.0094    1.000    1.000
+       0.050            0.0404    1.000    1.000            0.0553    1.000    1.000            0.0590    1.000    1.000
+       0.100            0.1624    1.000    1.000            0.2245    1.000    1.000            0.2401    1.000    1.000
+       0.300            1.5051    1.000    1.000            2.5620    1.000    1.000            2.9437    1.000    1.000
+       0.500            3.5841    1.000    1.000            4.2211    0.500    1.000            4.1167    0.333    1.000
+       0.700            2.9644    1.000    1.000            2.6933    1.000    1.000            2.6327    1.000    1.000
+       1.000            3.0777    1.000    1.000            4.4584    0.500    1.000            3.9179    0.500    1.000
+       1.500            0.8078    1.000    1.000            0.5473    1.000    1.000            0.6698    1.000    1.000
+       2.000            4.8265    0.667    1.000            2.8838    1.000    1.000            2.0989    0.667    1.000
+       3.000            1.2003    1.000    1.000            1.0562    1.000    1.000            1.2388    1.000    1.000
+
+      the same scan on the five-plaquette carriers (fewer points, they cost 4x):
+         g^2                PATH_1x5                  PLUS_5                 RING_C5
+       0.000  1.000  1.000    1.0000  1.000  1.000    1.0000  1.000  1.000    1.0000
+       0.020  1.000  1.000    1.0000  1.000  1.000    1.0000  1.000  1.000    1.0000
+       0.100  1.000  1.000    1.0000  1.000  1.000    1.0000  1.000  1.000    1.0000
+       0.500  0.500  0.400   -0.2794  0.400  0.300   -0.0956  1.000  1.000    0.9992
+----------------------------------------------------------------------------------------------------
+8.  CONTROLS ON THE INPUT ITSELF.
+    record-label EQUIVARIANCE   (relabel records -> relabelled graph)      : True
+    bath-label INVARIANCE       (reorder bath placements -> same graph)    : True
+    channel-label INVARIANCE    (apply the design to channels in a random
+                                 order -> same graph)                      : True
+
+    WITHIN-ROW SHUFFLE of Gamma.  Each record keeps its own set of rates exactly; only the
+    pairing across records is destroyed.  F = 0.500 (chance 0.389), recovered {23} vs true {01,02,13,23}.
+    -> what carries the geometry is WHICH RECORDS DECAY TOGETHER, not any record's own rates.
+
+    RANDOM (undesigned) BATHS: the environment, not the experimenter, chooses the placement.
+    Fidelity vs the number of placements K on the true carrier, g^2 = 0.02
+          K       F   exact     corr  max |Shat-S|
+          4   0.667   0.000   0.4658         5.232
+          8   0.667   0.500   0.1388         2.903
+         16   0.500   0.167   0.2518         1.713
+         32   0.500   0.333   0.3014         1.000
+         64   0.833   0.833   0.7433         0.598
+        128   1.000   0.833   0.7603         0.508
+        256   1.000   1.000   0.7879         0.451
+        512   1.000   1.000   0.9671         0.238
+       1024   1.000   1.000   0.9739         0.164
+      The carrier has 12 channels.  The designed protocol needs 16 placements
+      and is exact; the undesigned one converges to the same graph statistically.
+====================================================================================================
+9.  SUMMARY -- numbers first, reading second.
+    fidelity, true carrier BLOCK_2x2 at g^2=0.02          : 1.000  (integer-exact 1.000, chance 0.556)
+    fidelity, 12 shuffles graded against the TRUE dual   : 0.458  (min 0.167, max 0.667)
+    fidelity, 12 shuffles graded against their OWN dual  : 1.000  (min 1.000)
+    fidelity across all six distinct geometries            : 1.000  (min 1.000)
+    coupling scan, F by g^2 on BLOCK_2x2             : 0:1.00 0.005:1.00 0.02:1.00 0.05:1.00 0.1:1.00 0.3:1.00 0.5:1.00 0.7:1.00 1:1.00 1.5:1.00 2:0.67 3:1.00
+    coupling scan, F by g^2 on STRIP_1x4             : 0:1.00 0.005:1.00 0.02:1.00 0.05:1.00 0.1:1.00 0.3:1.00 0.5:0.50 0.7:1.00 1:0.50 1.5:1.00 2:1.00 3:1.00
+    coupling scan, F by g^2 on STAR_K1,3             : 0:1.00 0.005:1.00 0.02:1.00 0.05:1.00 0.1:1.00 0.3:1.00 0.5:0.33 0.7:1.00 1:0.50 1.5:1.00 2:0.67 3:1.00
+    coupling scan, F by g^2 on PATH_1x5              : 0:1.00 0.02:1.00 0.1:1.00 0.5:0.50
+    coupling scan, F by g^2 on PLUS_5                : 0:1.00 0.02:1.00 0.1:1.00 0.5:0.40
+    coupling scan, F by g^2 on RING_C5               : 0:1.00 0.02:1.00 0.1:1.00 0.5:1.00
+    worst point anywhere in the coupling scan              : F=0.333 at g^2=0.5 on STAR_K1,3
+    within-row-shuffled input                              : 0.500
+    undesigned random baths, K=1024                        : 1.000
+
+    READING.  The dual graph is recovered exactly from R x K decay rates and nothing else.
+    The same procedure, run on carriers with the same counts and different incidence,
+    returns THEIR graph and not the true one, so it is tracking the incidence rather than
+    the marginals.  On this carrier class the adjacency is NOT an independent input: it is
+    a measurable of the record dynamics, fixed by which records decay together.
+    WHERE IT STOPS: the verdict is scoped to the regime the scan says it holds in.  The
+    weakest point measured anywhere in the coupling scan is F=0.333 at g^2=0.5 on
+    STAR_K1,3; at strong electric coupling the record precesses and the decay rate is no
+    longer a channel count, so the estimator loses its footing in a band and is not
+    monotone in g^2.  That is reported, not smoothed.
+    SCOPE, stated plainly: this is Z_2, the bath is dephasing, the records are the magnetic
+    Wilson loops, and the reconstruction is of the CHANNEL-SHARING graph.  It shows the
+    hand-installed graph was redundant with the dynamics -- not that geometry is derived
+    from nothing.  The channel set itself is still an input; only its incidence is output.
+====================================================================================================

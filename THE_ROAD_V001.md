@@ -21,7 +21,7 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | 8 | is it objective | **DONE** | W-40 | each probe alone holds the bit; no per-probe cost at k=1,2,3 |
 | 9 | how many records coexist | **DONE** | W-42 | `capacity = area − 1`, exact, 3×3 through 5×5 |
 | 10 | what happens past capacity | **DONE** | W-41 | EVICTION, not shared damage; 24–340× gap |
-| 11 | what escapes the region | **DONE** | W-46 | `legibility = perimeter/2 − 1`; storage is bulk, legibility is boundary |
+| 11 | what escapes the region | **DONE** | W-46 / Phase A | storage is bulk (`n²−1`), legibility is boundary (`4n−4`). **What is invisible is exactly the interior, `(n−2)²`.** W-46's `2n−1` withdrawn — its region sat at the lattice corner |
 | 12 | **EM's role** | **DONE** | W-27/34 | supplies the carrier, the boundary, and the record-bearing holonomy |
 | 13 | **alpha's role** | **DONE** | W-32/37b | `1/(8g²)` uses; `9.6 g⁴P/τ < 1` legible size |
 | 14 | **gravity's role** | **PARTIAL** | W-45/44/49 | capacity passes all 4 functional markers; EM's charge fails all 4. W-49 gives it dynamics: the carrier's equilibrium size is set by its content. W-44: installing a classical metric three ways changed nothing — the functional route is the live one |
@@ -41,6 +41,7 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | "the limit is packing, not dimension" | W-39 | `m−1` is forced too — W-42 |
 | "the empty gravity line is a result about records" | V003 | it is a result about our graph, which has no metric |
 | "capacity is not a holographic count" | W-42 | right about STORAGE, wrong to close the question — W-46 |
+| `legibility = perimeter/2 − 1` | W-46 | the region was placed at the lattice CORNER, so part of its boundary faced the lattice edge; interior placement gives `4(n−1)` — Phase A/T4 |
 | the composed law shows a power-law departure from standard decoherence | W-47 | the power law came from maximising over time; the un-optimised signal is exponential — W-48 |
 | "capacity passes all four of gravity's functional markers" as a structural finding | W-45 | all four follow from finite-dimensional counting; any finite resource passes them — W-50 |
 | "a metric record is objective for free" (0.999 redundancy) | W-43b | the environment was coupled straight to the mass with H_sys=0; with the metric doing real work it scores 0.0013–0.0758 — W-44 |
