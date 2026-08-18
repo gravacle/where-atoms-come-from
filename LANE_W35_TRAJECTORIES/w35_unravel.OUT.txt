@@ -1,0 +1,46 @@
+W-35  DOES A RECORD FORM ON INDIVIDUAL TRAJECTORIES?
+
+  GATE 0 -- the integrator must not manufacture the effect. gamma=0 is pure unitary evolution
+  and [H,R]=0 at g2=0, so E[<R>^2] MUST be 0. If it is not, nothing below means anything.
+    g2=0.0  gamma=0  dt=0.0080   E[<R>^2] = 2.713e-29   PASS
+    g2=0.0  gamma=0  dt=0.0040   E[<R>^2] = 5.377e-30   PASS
+    g2=0.0  gamma=0  dt=0.0020   E[<R>^2] = 1.080e-29   PASS
+
+  GATE 1 -- step-size convergence of the real effect (g2=0, gamma=0.3).
+    dt=0.0080   E[<R>] = +0.04199   E[<R>^2] = 0.957208
+    dt=0.0040   E[<R>] = -0.06009   E[<R>^2] = 0.949238
+    dt=0.0020   E[<R>] = -0.09843   E[<R>^2] = 0.960332
+    dt=0.0010   E[<R>] = +0.04796   E[<R>^2] = 0.947904
+      dim=16, bath on the CUT, max||[L,R]|| = 0.0e+00
+      every initial state has <R> = 0 EXACTLY, so any second moment is acquired, not present.
+
+  HOMODYNE unravelling  (600 trajectories, T=15.0)
+      g^2  gamma      E[<R>]     +-SE    E[<R>^2]   |<R>|>0.9  |<R>|>0.99
+  ------------------------------------------------------------------------
+    0.000   0.00    0.000000   0.0000    0.000000       0.000       0.000
+    0.000   0.10    0.003189   0.0324    0.631305       0.432       0.113
+    0.000   0.30   -0.014558   0.0397    0.945506       0.922       0.785
+    0.000   1.00   -0.019572   0.0408    0.999078       0.998       0.995
+    0.010   0.30   -0.015770   0.0391    0.918525       0.893       0.598
+    0.100   0.30   -0.001021   0.0258    0.398010       0.082       0.002
+    1.000   0.30    0.006214   0.0122    0.090022       0.003       0.000
+
+  JUMP unravelling of the SAME Lindbladian  (600 trajectories)
+      g^2  gamma      E[<R>]    E[<R>^2]   |<R>|>0.9
+  ------------------------------------------------------
+    0.000   0.30   -0.000000    0.000000       0.000
+    0.000   1.00    0.000000    0.000000       0.000
+    0.100   0.30    0.004315    0.060211       0.000
+
+  CONTROL -- do the trajectories reproduce the EXACT master equation? (same initial ensemble)
+    g2= 0.00 gamma=0.3:  ||rho_traj-rho_exact|| = 0.0346   <R>_exact = -0.00000000   <R>_traj = -0.014558
+    g2= 0.10 gamma=0.3:  ||rho_traj-rho_exact|| = 0.0419   <R>_exact = -0.00034347   <R>_traj = -0.001021
+
+  CONTROL -- growth of E[<R>^2] with time, g2=0, gamma=0.3 (0 at t=0 by construction).
+    T=  0.0   E[<R>] = +0.000000   E[<R>^2] = 0.000000
+    T=  1.0   E[<R>] = -0.002494   E[<R>^2] = 0.195695
+    T=  3.0   E[<R>] = +0.003387   E[<R>^2] = 0.444651
+    T=  6.0   E[<R>] = +0.003037   E[<R>^2] = 0.700344
+    T= 10.0   E[<R>] = -0.009458   E[<R>^2] = 0.867200
+    T= 15.0   E[<R>] = -0.014558   E[<R>^2] = 0.945506
+    T= 25.0   E[<R>] = -0.019297   E[<R>^2] = 0.991102

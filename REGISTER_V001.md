@@ -2603,3 +2603,71 @@ means the boundary is not privileged a priori: it is privileged *given where the
 
 **THIS RETIRES THE CIRCULARITY.** The rim loop was chosen by the registrar at W-27 and used as the
 record ever since. It is now independently re-derived as what this construction actually protects.
+
+---
+
+## W-35 — **THE RECORD FORMS ON EVERY RUN. THE INSTRUMENT WAS BLIND TO IT FROM W-28 TO W-34.**
+
+`LANE_W35_TRAJECTORIES/`, sealed. Raised by a design agent in the W-31 panel and tested here.
+
+**Every lane from W-28 onward measured `<R> = Tr(R rho)` — an ENSEMBLE AVERAGE. A fair coin has mean
+zero and every single flip is definite.** So `d<R>/dt = 0` is consistent with every individual run
+acquiring a perfectly definite record. Unravel the same Lindbladian and measure the second moment.
+
+```
+  HOMODYNE, 600 trajectories, T=15, every start has <R> = 0 EXACTLY
+     g^2  gamma      E[<R>]     +-SE    E[<R>^2]   |<R>|>0.9  |<R>|>0.99
+   0.000   0.00    0.000000   0.0000    0.000000       0.000       0.000   <- GATE 0
+   0.000   0.10    0.003189   0.0324    0.631305       0.432       0.113
+   0.000   0.30   -0.014558   0.0397    0.945506       0.922       0.785
+   0.000   1.00   -0.019572   0.0408    0.999078       0.998       0.995
+   0.100   0.30   -0.001021   0.0258    0.398010       0.082       0.002
+   1.000   0.30    0.006214   0.0122    0.090022       0.003       0.000
+
+  GROWTH IN TIME (g2=0, gamma=0.3):  t=0: 0.000  t=1: 0.196  t=3: 0.445
+                                     t=6: 0.700  t=10: 0.867  t=15: 0.946  t=25: 0.991
+```
+
+> **`E[<R>] = -0.0146 +- 0.0397` (zero, as every previous lane found) WHILE `E[<R>^2] = 0.9455` AND
+> 78.5% OF RUNS SIT AT `|<R>| > 0.99`. At `gamma=1.0`, `E[<R>^2] = 0.999078` and 99.5% of runs are
+> definite. THE TIE IS BROKEN ON EVERY SINGLE TRAJECTORY. THE VALUE IS A FAIR COIN.**
+
+**GATES.** `gamma=0` gives `E[<R>^2] = 2.7e-29` (machine zero — the integrator invents nothing);
+stable across `dt` from `0.008` to `0.001`; and the trajectory ensemble reproduces the exact master
+equation (`<R>_exact = -0.00000000`, `<R>_traj = -0.0146`, within one standard error).
+
+### THE SAME LINDBLADIAN, UNRAVELLED THE OTHER WAY, HAS NO RECORD AT ALL
+
+```
+  JUMP unravelling, identical generator:  g2=0, gamma=0.3 -> E[<R>^2] = 0.000000
+                                          g2=0, gamma=1.0 -> E[<R>^2] = 0.000000
+```
+
+**Both unravellings give the same `rho(t)`.** With unitary `L`, jump rates are state-independent
+(`gamma||L psi||^2 = gamma` always), so a jump carries **no information** and every trajectory keeps
+`<R>` fixed. Homodyne extracts information continuously. **Record formation is therefore not a
+property of the master equation. It is a fact about what the environment does with what it learns.**
+
+### ERRATUM — W-29c AND W-33
+
+**W-29c reported that no physically motivated bath selects a sector (`<W> = 0.000000` exactly) and
+W-33 reported that the dynamics "preserves but never amplifies" (slope exactly `1` or `0`, never
+above `1`). Both numbers are correct and both readings are WITHDRAWN.** They measured the *fairness*
+of the coin. The selection they were looking for was happening on every run.
+
+**W-32 and W-34 are NOT affected** — decay rates and pointer selection are properties of the
+generator and stand as measured.
+
+### AND IT RESOLVES THE MECHANISM
+
+`[L,R] = 0` was read at W-32 as *shielding* — the environment cannot reach the record. **It is more
+than that. `[L,R] = 0` means the environment cannot DISTURB `R`, while `L` and `R` remain CORRELATED
+in the state, so the environment LEARNS `R` anyway. That is a quantum non-demolition measurement,
+and QND is exactly the condition for a record.** The coupling `g^2` spoils it by making `R`
+non-conserved: `E[<R>^2]` falls `0.9455 -> 0.398 -> 0.090` as `g^2` goes `0 -> 0.1 -> 1.0`.
+
+**THE PROCESS, ASSEMBLED FROM WHAT IS MEASURED.** `[H,R] = 0` makes the record durable (W-30a).
+`[L,R] = 0` makes it undisturbable while still legible (W-35). Correlation between `L` and `R` makes
+the environment learn it. Continuous monitoring collapses each run to a definite value (W-35).
+`1/(8g^2)` sets how long it lasts (W-32). And the dynamics selects which observable this happens to
+— the full boundary, by a factor of 28 (W-34).

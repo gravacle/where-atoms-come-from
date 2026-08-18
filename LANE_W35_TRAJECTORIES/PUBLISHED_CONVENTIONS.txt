@@ -1,0 +1,8 @@
+LANE W35 -- TRAJECTORY UNRAVELLING. 3x3 patch, Z_2, physical dim 16, bath = electric on the 4 CUT
+links (Hermitian AND unitary at N=2; asserted in code). Initial ensemble: every trajectory starts in
+an equal-weight superposition of the two R sectors, so <R> = 0 EXACTLY on every one and any second
+moment is ACQUIRED, never present. SPLIT-STEP: the Hamiltonian part is propagated exactly by
+expm(-iH dt) and only the measurement part is stochastic -- a plain Euler step on -i H psi is not
+norm preserving, and after renormalisation it systematically amplifies the extremal eigenvectors of
+H, which carry definite R, MANUFACTURING a second moment from nothing. GATE 0 (gamma=0 must give
+E[<R>^2]=0) exists to catch precisely that and did catch it. GATE 1 checks step-size convergence.
