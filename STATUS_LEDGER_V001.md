@@ -10,13 +10,27 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 ## THE COUNT
 
-| PROVED | MEASURED | PARTIAL | CANDIDATE | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 53 | 2 | 6 | 1 | 1 | 7 | 3 | 5 | 5 | 3 | 3 |
+| PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
+|---|---|---|---|---|---|---|---|---|---|
+| 57 | 2 | 8 | 1 | 13 | 3 | 5 | 5 | 3 | 3 |
 
-**89 rows.**
+**100 rows.**
 
 ---
+
+## P. THE ROAD TO A FULL PROOF — the controlled plan
+
+| ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
+|---|---|:---:|---|---|---|
+| **PF-1** | RESTATE A-PR to match what was proved. Old wording — 'a topologically protected degeneracy written by non-local transport' — was refuted in all three parts by G-6, G-15 and C-13, and its blockers O-1/O-3 were both already FAILED | **PROVED** | done 2026-08-18; A-PR now stated in two tiers, general and gauge-realization | — | — |
+| **PF-2** | CLOSE THE ARROW. F-1 is PARTIAL: one-wayness measured on an EQUILIBRIUM state. Needs (a) a DYNAMICAL before/after — a history with no record becoming one — and (b) REDUNDANCY, many environment fragments each holding a copy (O-13) | **OPEN** | F-17/F-18/F-19 proved; the two named gaps remain | F-1, O-13 | — |
+| **PF-3** | TAKE O-4 OFF PROVISIONAL. 'admissible := [U,H]=0' now appears in BOTH clause (iv) and clause (v) and is tested on ONE carrier family with no working fallback. Re-test on a structurally different carrier; if it fails, both clauses and C-13 move | **OPEN** | — | O-4 | — |
+| **PF-4** | ESTABLISH THE NECESSARY CONDITION. C-4 is PARTIAL: we have a sufficient family (F_2 length-2 complexes) and a proven ESCAPE (non-CSS, O-8). Either find the condition that covers both or prove none narrower than the clauses exists | **OPEN** | — | C-4, O-8 | — |
+| **PF-5** | SUPPLY THE INPUT. O-9: formation needs an environment coupling over a region of weight >= d. Exhibit such an environment, or state precisely why none is available. The process is currently proved CONDITIONAL ON AN INPUT NOTHING SUPPLIES | **OPEN** | — | O-9 | — |
+| **PF-6** | PRODUCE A DISTINGUISHING PREDICTION. X-4, T-VI.3, T-VI.4 all BLOCKED at zero. New material exists that did not before: threshold = d, the two-condition coupling requirement, chi = 0.1145 bits at weight d and exactly 0 below | **OPEN** | — | X-4, T-VI.3, T-VI.4 | — |
+| **PF-7** | COMPOSITION. T-I.4: do records compose? Zbar and Zbar2 are built and commute; never asked whether one can be written without disturbing the other, whether formation thresholds interact, or whether 2g is the whole story | **PARTIAL** | multi-record structure computed: independent families of size log2(dim), every member independently writable (2 of 2, 3 of 3, 4 of 4). Interaction of formation thresholds across records still open | T-I.4 | — |
+| **PF-8** | REPEATABLE UNDER ANY CONDITIONS. Every PROVED row re-run on at least TWO structurally different carriers, every free parameter (beta, lambda, lattice size) shown not to carry a conclusion, and the whole corpus reproducible from ONE command. This is what makes it a proof rather than a computation | **OPEN** | the principal's requirement, 2026-08-18 | PF-2..PF-7 | any conclusion that moves with a carrier or a parameter |
+| **PF-9** | THE MODEL: records constructed from (H,{L_k}) and nothing else. 12 PASS 0 FAIL re-deriving registered results from first principles, including O-1's counterexamples, its trap, and both positive controls | **PROVED** | model/record_model.py, model/validate_model.py | — | a registered result the model cannot reproduce from the pair alone |
 
 ## O. STANDING DOCTRINE — checked before any lane is commissioned
 
@@ -39,7 +53,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **A-EM** | EM supplies BOTH boundary maps of the chain complex — d_1 IS the Gauss law, d_2 IS the plaquette/field-strength term — so the record space is the homology of EM's OWN complex. The record IS a holonomy of that field | **PROVED** | Thm B(ii); G-9 (record space = Z_1/B_1, match rate 1.0); G-4 (constraint algebra) | — | a record that is not a holonomy of the field |
 | **A-GR** | Γ — the third term, labelled 'gravity' but defined only by function — supplies the record space 2^2g (R1), the writer, non-local (R2), and the protection (R3) | **PROVED** | Thms A, B(iii), C, D; G1 | — | a record on a genus-0 carrier; a local writer |
 | **A-AL** | ALPHA is a sum of local terms, so it splits the record space at order d | **PROVED** | Thm D; W-60, W-62 | — | records surviving g^2>0 undiminished |
-| **A-PR** | THE PROCESS: a record is a topologically protected degeneracy of a gauge field, written by non-local transport | **CANDIDATE** | assembly of C-1..C-8 | O-1, O-3 | C-1 or C-4 failing |
+| **A-PR** | THE PROCESS, in two tiers. GENERAL (any H,{L_k}): a record is a TRACE-BALANCED PROJECTION IN THE COMMUTANT of alg{I,H,L_k,L_k-dagger} that is non-trivial on some eigenspace (C-12); no admissible operation on a SINGLE contractible region reaches it (C-13). GAUGE REALIZATION: it is a holonomy on a non-contractible cycle, its count is an INDEX, it is FORMED by an environment coupling of weight >= d not commuting with the writer, and it is OF THE PAST because the environment then holds Holevo information no system-only operation removes | **PARTIAL** | GENERAL tier PROVED (C-9..C-13); GAUGE tier proved on ONE carrier family — carrier-independence is PF-8 | O-1, O-3 | C-1 or C-4 failing |
 | **A-EM2** | THE MINIMAL COUPLING THAT CAN FORM A RECORD IS AN EM HOLONOMY. Of 252 weight-2 Paulis, 8 distinguish code states; all 8 are logical; 4 are magnetic Wilson loops on cycles and 4 electric on cocycles. Zero exceptions | **PROVED** | LANE_F7_OCCUPANCY f10c | — | a minimum-weight forming coupling that is not a holonomy |
 | **A-EM3** | THE RECORD, ITS WRITER, AND THE MINIMAL THING THAT FORMS IT ARE THE SAME KIND OF OBJECT: an EM holonomy on a non-contractible cycle. Established by three separate measurements (Thm B ii; W-62; f10c) | **PROVED** | not designed in — the three arrived in the same class independently | — | any one of the three being expressible without a holonomy |
 | **A-EM4** | THE RECORD-CARRYING EM OBJECT IS NEITHER LOCAL NOR THE WHOLE SYSTEM: absolute extent d = L grows without bound, record fraction 2/(L^2+1) vanishes, local content is exactly zero. No familiar object satisfies all three | **PROVED** | LANE_EM_EXTENT, closed forms verified against GF(2) ranks at L=2..5 | — | a record carried on bounded support |
@@ -61,6 +75,8 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-11** | THEOREM O1-B: an admissible U with U-dagger R U = -R exists IFF p = q IFF Tr R = 0. COROLLARY: in an ODD-dimensional Hilbert space Tr R is odd, so NO record is ever writable | **PROVED** | 10/10; positive control best-of-4000 random unitaries never below 2.000116 | — | an unbalanced R with a flipper |
 | **C-12** | THE REPAIRED CONVERSE: a record satisfying (i)-(iv) exists IFF the commutant of alg{I,H,L_k,L_k-dagger} contains a projection that is (H1) non-trivial on some eigenspace of H and (H2) trace-balanced | **PROVED** | 210/210 by exhaustive enumeration | — | a system meeting both hypotheses with no record |
 | **C-13** | P-3 CORRECTED: (iv)+(v) give NO ADMISSIBLE WRITER FITS INSIDE ONE CONTRACTIBLE REGION. The strong reading 'nothing local can write it' is FALSE, not merely unproven — clause (v') forbidding PRODUCTS of contractible operations is refuted by the program's own Theorem D | **PROVED** | LANE_O4_ADMISSIBLE + independent verification; min admissible writer weight 3 = d, a product of three individually inadmissible single-edge operators | — | an admissible writer inside one contractible region |
+| **C-14** | THE RECORD-COUNT LAW FROM THE CLAUSES ALONE: k = min over eigenspaces of v2(m_E), the 2-adic valuation of the multiplicities. Derives the gauge result without topology — toric ground multiplicity 4 gives k = v2(4) = 2 = 2g, so the index law G-7 is a CONSEQUENCE on that carrier | **PROVED** | model/count_law.py: 22 spectra, 22 PASS; control shows floor(log2) fails on [3,3],[6,6],[5,5] | — | a spectrum whose record count differs from min_E v2(m_E) |
+| **C-15** | FOUR OF THE FIVE CLAUSES ARE CARRIER-FREE. Clauses (i)-(iv) are computable from (H,{L_k}) alone; clause (v) REQUIRES a locality structure that is carrier data. Any claim resting on (v) inherits a carrier — now enforced in code, not remembered | **PROVED** | model/record_model.py raises rather than supplying a default locality | — | a derivation of clause (v) from (H,{L_k}) alone |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 

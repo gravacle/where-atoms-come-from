@@ -1,0 +1,39 @@
+================================================================================================
+MODEL VALIDATION -- first principles only, input is (H,{L_k}) and nothing else
+================================================================================================
+
+V1  maximal degeneracy, no noise:  H = 0 on C^4
+  [PASS] records exist                                                  got True, expected True
+
+V2  C-11 corollary: ODD dimension => Tr R is odd => NO record is ever writable
+  [PASS] H = 0 on C^3: n_records                                        got 0, expected 0
+  [PASS] H = 0 on C^5: n_records                                        got 0, expected 0
+  [PASS] H = 0 on C^7: n_records                                        got 0, expected 0
+
+V3  O-1 gap (a): a degenerate H plus ONE GENERIC jump kills every record
+  [PASS] H=diag(0,0,1,1) + generic L: total records over 6 draws        got 0, expected 0
+
+V4  POSITIVE CONTROL for V3: the same H with DIAGONAL jumps keeps records
+  [PASS] H=diag(0,0,1,1) + diagonal L: records found in all 6 draws     got True, expected True
+
+V5  O-1's TRAP: noise identically ZERO inside every eigenspace, yet NO record
+       max ||P_E L P_E|| = 0.000e+00   (the noise vanishes inside every eigenspace)
+  [PASS] with BOTH legs (excursion out and back): n_records             got 0, expected 0
+  [PASS] CONTROL, return legs deleted: records exist                    got True, expected True
+
+V6  GAUGE CARRIER FROM FIRST PRINCIPLES -- Z2 on the theta graph, built and handed in as H
+       dim 8  algebra 2  commutant 32  minimal projections 8  RECORDS 18
+  [PASS] theta graph carries records (dim H_1 = 2 => it must)           got True, expected True
+
+V7  MULTI-RECORD STRUCTURE -- do records commute, and are they independently writable?
+       C^4: 3 records -> independent family 2; all commute True; independently writable 2
+  [PASS] C^4: family size = log2(dim), every member independently writable got True, expected True
+       C^8: 35 records -> independent family 3; all commute True; independently writable 3
+  [PASS] C^8: family size = log2(dim), every member independently writable got True, expected True
+       C^16: 6435 records -> independent family 4; all commute True; independently writable 4
+  [PASS] C^16: family size = log2(dim), every member independently writable got True, expected True
+
+================================================================================================
+  12 PASS, 0 FAIL
+  Every case above was decided by the model from (H,{L_k}) alone -- no lattice, no gauge
+  group, no temperature, no coupling, no code, no geometry was supplied.

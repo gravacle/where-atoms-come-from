@@ -18,7 +18,8 @@ LEDGER = os.path.join(HERE, 'status_ledger.tsv')
 VOCAB  = os.path.join(HERE, 'STATUS_VOCAB.tsv')
 OUT    = os.path.join(ROOT, 'STATUS_LEDGER_V001.md')
 
-AREAS = [('DOCTRINE',    'O. STANDING DOCTRINE — checked before any lane is commissioned'),
+AREAS = [('PROOF',       'P. THE ROAD TO A FULL PROOF — the controlled plan'),
+         ('DOCTRINE',    'O. STANDING DOCTRINE — checked before any lane is commissioned'),
          ('ROLE',        'A. THE THREE ROLES — the charter\'s question'),
          ('CLAIM',       'B. THE CLAIM, STATEMENT BY STATEMENT'),
          ('GRAVITY',     'C. GRAVITY AT THE RECORD LEVEL'),

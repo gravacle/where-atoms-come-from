@@ -5938,3 +5938,70 @@ separated by a measured threshold, and that threshold is the record's own.**
 v1 reported *"prediction 3 falsified — local unitaries change `χ`."* **It conjugated the observable
 the wrong way (`Q†Z̄Q` where covariance needs `QZ̄Q†`), so it measured a rotated observable.** The
 corrected covariance check returns `9.992e-16`. **The reported falsification was mine, not nature's.**
+
+---
+
+# THE MODEL — **RECORDS CONSTRUCTED FROM `(H, {L_k})` AND NOTHING ELSE**
+
+`model/record_model.py`. The principal: *"We need a model that can be used to construct records from
+first principles without importing values."*
+
+**INPUT: a Hamiltonian and a set of Lindblad operators. NO lattice, NO gauge group, NO temperature, NO
+coupling constant, NO code, NO geometry.** Every step is a registered theorem: **C-9** (clause (ii)
+puts `R` in the commutant of the `*`-algebra), **C-10** (proper-subalgebra criterion), **C-11 / O-4**
+(admissible flipper ⟺ `Tr(P_E R) = 0`), **C-12** (the repaired converse).
+
+### VALIDATION — **12 PASS, 0 FAIL**, each case a registered result re-derived from first principles
+
+| | |
+|---|---|
+| odd dimension ⟹ no record is ever writable (C-11 corollary) | `C³, C⁵, C⁷` → 0 records |
+| O-1 gap (a): degenerate `H` + **one generic jump** kills every record | 0 over 6 draws |
+| **positive control**: same `H`, **diagonal** jumps | records in all 6 |
+| O-1's **trap**: `max‖P_E L P_E‖ = 0` yet **no record** | 0 records |
+| **control**: return legs deleted | records exist |
+| gauge carrier handed in as a bare matrix | records found |
+
+## **C-14 — THE RECORD-COUNT LAW, FROM THE CLAUSES ALONE**
+
+> ### `k = min over eigenspaces E of v₂(m_E)` — the **2-adic valuation** of the multiplicities
+
+**22 spectra, 22 PASS, 0 FAIL**, including odd, non-power-of-2 and mixed multiplicities.
+
+**THE DERIVATION IS THE CLAUSES.** A record must be non-trivial (iii) and **trace-balanced on every
+eigenspace** (iv = C-11); an independent **family** must split every joint block **evenly**. Each
+independent record therefore **halves every eigenspace**, so the family size is bounded by how many
+times every multiplicity can be halved.
+
+**AND THE CONTROL SHOWS IT HAS CONTENT.** The naive `floor(log₂ min m_E)` predicts `[3,3] → 1`,
+`[6,6] → 2`, `[5,5] → 2`. **Measured: 0, 1, 0.** The count is set by the **valuation**, not the size.
+
+> ### **IT DERIVES THE GAUGE RESULT WITHOUT TOPOLOGY.** The toric code's ground multiplicity is `4`,
+> ### so `k = v₂(4) = 2 = 2g`. **The index law G-7 is a CONSEQUENCE on that carrier, not the source
+> ### of the count.**
+
+## **C-15 — FOUR OF THE FIVE CLAUSES ARE CARRIER-FREE. THE FIFTH IS NOT.**
+
+Clauses **(i)–(iv) are computable from `(H,{L_k})` alone.** **Clause (v) is not** — it requires a
+**locality structure**, which is carrier data and is not derivable from the pair. The model **refuses
+to guess it** and raises rather than supplying a default.
+
+**Any claim resting on (v) therefore inherits a carrier.** That is the precise scope boundary of the
+whole program, and it is now enforced in code rather than remembered.
+
+## MULTI-RECORD — **PF-7 SUBSTANTIALLY ADVANCED**
+
+| carrier | records | **independent family** | `log₂ dim` | **independently writable** |
+|---|---|---|---|---|
+| `C⁴` | 3 | **2** | 2 | **2 of 2** |
+| `C⁸` | 35 | **3** | 3 | **3 of 3** |
+| `C¹⁶` | 6435 | **4** | 4 | **4 of 4** |
+
+**F₂-independence of sign vectors is the WRONG notion** — `k` independent bits need `2^k` joint
+eigenspaces. The right criterion is that a new record **splits every existing joint block evenly**,
+and under it **every member of the family is independently writable: one record can be flipped without
+disturbing any other.**
+
+**DEFECTS CAUGHT DURING THE BUILD, all by the validation:** the writer test was over-strict (asked one
+unitary to fix 35 records at once); the XOR basis stored **unreduced** vectors so nothing ever reduced
+to zero; and F₂-independence gave `n−2` where the answer is `log₂ n`.

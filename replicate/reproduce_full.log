@@ -1,0 +1,94 @@
+
+[1m0. ENVIRONMENT[0m
+==============================================================================
+  python  Python 3.9.6
+  numpy   2.0.2
+
+[1m1. SEALS  (SHA-256 over every registered document and lane)[0m
+==============================================================================
+  all 56 manifests verify
+
+[1m2. RE-RUN EVERY LANE SCRIPT AND DIFF AGAINST ITS SEALED OUTPUT[0m
+==============================================================================
+  lane                           script                     result
+  ------------------------------ -------------------------- ------
+  LANE_AA_GAUSS_AT_SURFACE       aa1_gauss_at_surface.py    no sealed output — SKIP
+  LANE_AA_GAUSS_AT_SURFACE       aa2_why_null.py            no sealed output — SKIP
+  LANE_AA_GAUSS_AT_SURFACE       aa3_open_graph.py          no sealed output — SKIP
+  LANE_AA_MEASURES               aa_area_law_forced.py      no sealed output — SKIP
+  LANE_AA_MEASURES               aa_thermal.py              no sealed output — SKIP
+  LANE_AA_MEASURES               aa_trit_forced.py          no sealed output — SKIP
+  LANE_AA_MEASURES               aa_what_is_a_surface.py    no sealed output — SKIP
+  LANE_AA_MEASURES               aa_which_entropy.py        no sealed output — SKIP
+  LANE_EM_EXTENT                 em_extent.py               [32mIDENTICAL[0m
+  LANE_EM_EXTENT                 holonomy.py                [31mDIFFERS (8 lines)[0m
+  LANE_F1_ARROW                  f1_arrow.py                [32mIDENTICAL[0m
+  LANE_F1_ARROW                  f1b_invariance.py          [32mIDENTICAL[0m
+  LANE_F7_OCCUPANCY              f10_threshold.py           [32mIDENTICAL[0m
+  LANE_F7_OCCUPANCY              f10b_threshold.py          [32mIDENTICAL[0m
+  LANE_F7_OCCUPANCY              f10c_whatformsit.py        [32mIDENTICAL[0m
+  LANE_F7_OCCUPANCY              f7_davies.py               [31mDIFFERS (6 lines)[0m
+  LANE_FC_BINARIES               fc1_variant_invariant.py   no sealed output — SKIP
+  LANE_FC_BINARIES               fc2_is_it_dynamical.py     no sealed output — SKIP
+  LANE_FC_BINARIES               fc3_discriminator.py       no sealed output — SKIP
+  LANE_FC_BINARIES               fc4_erratum.py             no sealed output — SKIP
+  LANE_FC_FRAMEWORK              fw1_gauge_or_constraint.py no sealed output — SKIP
+  LANE_FC_FRAMEWORK              fw2_locality.py            no sealed output — SKIP
+  LANE_FT_SHAM                   ft1_sham.py                no sealed output — SKIP
+  LANE_G10_NONMANIFOLD           g10_nonmanifold.py         [32mIDENTICAL[0m
+  LANE_G1_RECORD_COUNT           g1_count.py                no sealed output — SKIP
+  LANE_G1_RECORD_COUNT           g1b_groundspace.py         no sealed output — SKIP
+  LANE_G2_GRAVITY_DEF            g2_gaussbonnet.py          no sealed output — SKIP
+  LANE_G7_INDEX                  g7_index.py                [32mIDENTICAL[0m
+  LANE_G_GROUP_REFUTER           g0_validate.py             no sealed output — SKIP
+  LANE_G_GROUP_REFUTER           g1_rank2_abelian.py        no sealed output — SKIP
+  LANE_G_GROUP_REFUTER           g2_nonabelian.py           no sealed output — SKIP
+  LANE_G_GROUP_REFUTER           g2b_fixed_controls.py      no sealed output — SKIP
+  LANE_G_GROUP_REFUTER           g3_schedule.py             no sealed output — SKIP
+  LANE_G_GROUP_REFUTER           glib.py                    no sealed output — SKIP
+  LANE_O10_SCALING               o10_arbitrary_coupling.py  [32mIDENTICAL[0m
+  LANE_O10_SCALING               o10_proof_check.py         [32mIDENTICAL[0m
+  LANE_O10_SCALING               o10_threshold.py           [32mIDENTICAL[0m
+  LANE_O10_SCALING               o10_two_numbers.py         [32mIDENTICAL[0m
+  LANE_O10_VERIFY                v1_writer_weight.py        [32mIDENTICAL[0m
+  LANE_O10_VERIFY                v2_mutation.py             [32mIDENTICAL[0m
+  LANE_O10_VERIFY                v3_sufficiency.py          [32mIDENTICAL[0m
+  LANE_O11_MEANFORCE             o11_meanforce.py           [32mIDENTICAL[0m
+  LANE_O11_MEANFORCE             o11b_weight1.py            [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_converse_theorem.py     [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_core.py                 [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_gap_a_compatibility.py  [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_gap_b_flippability.py   [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_lemma_check.py          [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_toric_pauli.py          [32mIDENTICAL[0m
+  LANE_O23_SPLITTING             o2_symmetry.py             no sealed output — SKIP
+  LANE_O23_SPLITTING             o2_topological.py          no sealed output — SKIP
+  LANE_O23_SPLITTING             o3_clauses.py              no sealed output — SKIP
+  LANE_O4_ADMISSIBLE             o4_L3.py                   [32mIDENTICAL[0m
+  LANE_O4_ADMISSIBLE             o4_abstract.py             [32mIDENTICAL[0m
+  LANE_O4_ADMISSIBLE             o4_diagnose_L2.py          [32mIDENTICAL[0m
+  LANE_O4_ADMISSIBLE             o4_freeness.py             [32mIDENTICAL[0m
+  LANE_O4_ADMISSIBLE             o4_toric.py                [32mIDENTICAL[0m
+  LANE_O4_ADMISSIBLE             o4_variant.py              [32mIDENTICAL[0m
+  LANE_O4_VERIFY                 verify_o4.py               [32mIDENTICAL[0m
+  LANE_O4_VERIFY                 verify_o4b.py              [32mIDENTICAL[0m
+  LANE_O5_ADVERSARIAL            o5adv_a_gaptest_is_identity.py no sealed output — SKIP
+  LANE_O5_ADVERSARIAL            o5adv_b_which_gap.py       no sealed output — SKIP
+  LANE_O5_ADVERSARIAL            o5adv_c_lifetime_tracks_eps.py no sealed output — SKIP
+  LANE_O5_ADVERSARIAL            o5adv_d_infimum_and_readings.py no sealed output — SKIP
+  LANE_O5_ADVERSARIAL            o5adv_e_fnofH_and_steane_flip.py no sealed output — SKIP
+  LANE_O5_ADVERSARIAL            o5adv_f_seed_robustness.py no sealed output — SKIP
+  LANE_O5_ADVERSARIAL            o5adv_g_B3_is_void.py      no sealed output — SKIP
+  LANE_O5_APPROXIMATE            o5_a_carrier.py            no sealed output — SKIP
+  LANE_O5_APPROXIMATE            o5_b_collapse.py           no sealed output — SKIP
+  LANE_O5_APPROXIMATE            o5_c_lifetime.py           no sealed output — SKIP
+  LANE_O5_APPROXIMATE            o5_common.py               no sealed output — SKIP
+  LANE_O5_APPROXIMATE            o5_d_theorems.py           no sealed output — SKIP
+  LANE_O6_EMERGENCE              o6_emergence.py            no sealed output — SKIP
+  LANE_O78_FRACTON_NONABELIAN    gf2.py                     no sealed output — SKIP
+  LANE_O78_FRACTON_NONABELIAN    models.py                  no sealed output — SKIP
+  LANE_O78_FRACTON_NONABELIAN    o7_chamon_fcc.py           [32mIDENTICAL[0m
+  LANE_O78_FRACTON_NONABELIAN    o7_extra.py                [32mIDENTICAL[0m
+  LANE_O78_FRACTON_NONABELIAN    o7_fractons.py             [32mIDENTICAL[0m
+  LANE_O78_FRACTON_NONABELIAN    o7_strings.py              [32mIDENTICAL[0m
+  LANE_O78_FRACTON_NONABELIAN    o7_writer_shape.py         [31mDIFFERS (8 lines)[0m
