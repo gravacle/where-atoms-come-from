@@ -5167,3 +5167,50 @@ distance column, which the framing did not ask for, that carried the finding.**
 
 **R1 is cheap** — satisfied by graphs, pinch points, and abstract complexes alike. **If uniqueness is
 to hold, R3 must be what forces the structure.** G-6 should be read against R3, not R1.
+
+---
+
+## G-6 — **UNIQUENESS IS BROKEN. `H₁(Σ)` IS ONE STRUCTURE SATISFYING R1–R3, NOT THE ONLY ONE.**
+
+Five lenses, each adversarially adjudicated against the five clauses. **One lens (fracton) died on an
+API error and did not return — that region of the space is UNSWEPT and is recorded as a coverage gap,
+not as a null.**
+
+| survivor | strength | why it is not a surface |
+|---|---|---|
+| **`H_k` of an ARBITRARY `F₂` chain complex** | **DECISIVE** | the general CSS template; contains members no surface realises |
+| **asymptotically good qLDPC** — Panteleev–Kalachev, Leverrier–Zémor, Dinur–Hsieh–Lin–Vidick | **STRONG** | `[[n, Θ(n), Θ(n)]]`. **Not a manifold ANYWHERE**: every vertex link is a `Δ×Δ` grid of `Δ²` squares, and a 2-manifold vertex link is a single cycle. Independently, **Delfosse's bound** `kd² ≤ C(log k)²n` holds for *any* tiling of *any* compact 2-manifold; here `kd² = Θ(n³)` — **exceeded by `Θ(n²/log²n)`** |
+| **3D toric code**, `H₁(T³)` | **STRONG** | `[[3L³, 3, L]]`, two distances `L` and `L²`; geometric locality unchanged |
+| hypergraph product (Tillich–Zémor) | weak | the toric code *is* the hypergraph product of two repetition codes — closest to the anchor in disguise |
+
+### WHAT DIES AND WHAT SURVIVES
+
+- **DEAD: "records require a SURFACE."** Statement 4's manifold reading is refuted.
+- **SURVIVES: "records require non-trivial homology."** Every survivor is `H_k` of an `F₂` complex.
+- **BUT NOT ESTABLISHED EITHER:** R1–R3 nowhere require a **CSS** structure. Non-CSS stabiliser codes
+  and **non-abelian topological order (Levin–Wen, Fibonacci — writers are Wilson loops, not `F₂`
+  chain-complex objects)** are untested. **The general condition is AT MOST this narrow and possibly
+  wider.**
+
+### THE CONDITION, AS FAR AS IT IS ESTABLISHED
+
+> **Γ = a length-2 `F₂` chain complex whose `k`-SYSTOLE *and* `k`-COSYSTOLE both exceed the local scale.**
+
+**R3 NEEDS TWO NUMBERS, NOT ONE.** `d_Z` and `d_X` coincide **only in self-dual cases such as the
+square-lattice torus** — which is exactly why this program measured a single `d` and derived `d = 2`.
+**The single distance was an artefact of the carrier we chose.**
+
+### ERRATUM TO THEOREM B'S ATTRIBUTION — **THE WRITER IS NOT POINCARÉ DUALITY**
+
+`GRAVITY_DEFINED_V001` credited the writer to *"non-degeneracy of the intersection form (Poincaré
+duality)"*. **Over-credited.** The pairing `H_k(C) × H^k(C) → F₂` is **perfect for ANY chain complex
+over a field** (universal coefficients; `Ext` vanishes over a field). **R2 needs no manifold, no
+orientability and no Poincaré duality — it is free linear algebra.** Theorem B's *result* stands;
+its stated *source* was too strong.
+
+### AND IT COMPOSES WITH G-11
+
+**G-11 showed R1 is cheap — graphs and pinch points supply capacity freely. G-6 now shows the
+homology class is also not unique.** What discriminates is **R3**, and R3 is the systole/cosystole
+condition. **The program's centre of gravity moves from "which topology" to "what makes minimum
+weight grow."**

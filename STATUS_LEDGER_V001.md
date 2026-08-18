@@ -10,11 +10,11 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 ## THE COUNT
 
-| PROVED | DERIVED | MEASURED | PARTIAL | CANDIDATE | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 18 | 1 | 1 | 3 | 1 | 10 | 4 | 1 | 2 | 1 | 3 |
+| PROVED | MEASURED | PARTIAL | CANDIDATE | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
+|---|---|---|---|---|---|---|---|---|---|
+| 20 | 1 | 4 | 1 | 11 | 4 | 2 | 2 | 1 | 3 |
 
-**45 rows.**
+**49 rows.**
 
 ---
 
@@ -42,7 +42,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-1** | records require exact degeneracy | **PARTIAL** | P-1 (forward) | O-1 (converse) | a non-degenerate H carrying a record |
 | **C-2** | ORDINARY (0-form) symmetry cannot supply it — splits linearly, dead at 1e-06 | **MEASURED** | W-61: 2.0e-06, linear | O-2 | a 0-form degeneracy not split at first order |
 | **C-3** | a 1-FORM symmetry can — its generators are extended, so no local operator reaches them; splits only at order d | **PROVED** | Thm D; slope 2.000 over two decades | — | splitting below order d |
-| **C-4** | therefore records require a HIGHER-FORM (1-form) symmetry — on a manifold, non-trivial topology | **DERIVED** | from C-1..C-3 | O-3 (exhaustiveness) | a noise-surviving record with only 0-form symmetry |
+| **C-4** | records require NON-TRIVIAL HOMOLOGY of an F_2 chain complex — NOT a surface (G-6 refuted the manifold reading). Whether CSS is required is untested | **PARTIAL** | surface reading refuted by G-6; homological reading survives but non-CSS and non-abelian are unswept | O-3 (exhaustiveness) | a noise-surviving record with only 0-form symmetry |
 | **C-5** | record space = 2^2g; the count is 2g, INDEPENDENT OF AREA | **PROVED** | Thm A; G1 (2 at area 4 and area 6) | — | a record at genus 0; a count that moves with area |
 | **C-6** | a writer always exists and is never local | **PROVED** | Thm B; P-3 | — | a local operator flipping the record |
 | **C-7** | nothing local writes or destroys it | **PROVED** | Thm C | — | any contractible operation acting |
@@ -57,12 +57,14 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **G-3** | Γ's role is ALLOW — a capacity statement — at EVERY level; there is no allow-to-require transition, since even Einstein's equations are constraints on admissible data | **PROVED** | ADM/Dirac constraint formulation; X2 erratum | — | an equation of gravity that is not a constraint on admissible data |
 | **G-4** | what IS the record-level constraint's own algebraic structure, stated in its own terms with no external referent? (the legitimate remainder of X-6) | **PROVED** | LANE_X6: Z2^(NV-1), abelian, exponent 2, structure CONSTANTS (state variation exactly 0) | — | — (a measurement, not a claim) |
 | **G-5** | (H_1(Sigma), intersection pairing) SATISFIES R1, R2 and R3, and is therefore a CANDIDATE for the third term | **PROVED** | Thms A, B, C; G1, G2, W-62 | — | a structure satisfying R1-R3 that H_1 fails to describe |
-| **G-6** | IS THE THIRD TERM UNIQUE? Is H_1 the ONLY structure satisfying R1-R3, or merely one that does? | **OPEN** | unaskable while the third term was defined as the thing we had | — | exhibiting a second, inequivalent structure satisfying R1-R3 |
+| **G-6** | IS THE THIRD TERM UNIQUE? Is H_1 the ONLY structure satisfying R1-R3, or merely one that does? | **FAILED** | uniqueness tested and broken: qLDPC (kd^2 exceeds Delfosse by Theta(n^2/log^2 n)), 3D toric, arbitrary F_2 complexes | — | exhibiting a second, inequivalent structure satisfying R1-R3 |
 | **G-7** | THE CAPACITY LAW IS AN INDEX: N = dim H_0 + dim H_2 - chi (Euler-Poincare), verified on 11 carriers including an abstract complex with no geometric realisation. Capacity needs no geometry | **PARTIAL** | index law verified off-manifold, but it is the CAPACITY law only — see G-11 | — | a carrier where dim H_1 differs from dim H_0 + dim H_2 - chi |
 | **G-8** | THE CONSTRAINT PUTS THE TOTAL AT THE BOUNDARY AND HIDES THE CONTENT: \|\|P_R - boundary product\|\| = 0 exactly; support = 4*sqrt(\|R\|) exactly (perimeter); interior information (k-1)^2 bits (area) invisible from outside | **PROVED** | LANE_X6 x6b: residuals all 0, exponent 0.500000, placement-independent in all 14 rows | — | a region whose constraint product is not a pure surface operator |
 | **G-9** | THE RECORD SPACE IS Z_1/B_1 EXACTLY — Gauss sector modulo plaquettes. Numerator and denominator BOTH grow with area; only the quotient is constant | **PROVED** | LANE_X6 x6c: match rate 1.0; dim Z_1 = 5,7,10 and dim B_1 = 3,5,8 while dim H_1 = 2,2,2 | — | a coset count differing from 2^dim H_1 |
 | **G-10** | CAPACITY SURVIVES OFF MANIFOLDS: Z2 gauge degeneracy = 2^dim H_1 on pinch-point complexes, a pure graph, and two tori wedged at a point (8=8, 4=4, 16=16). The surface law 2-chi FAILS on 6 of 11 carriers | **PROVED** | LANE_G10_NONMANIFOLD, six self-checks PASS | — | a carrier whose Gauss-sector coset count differs from 2^dim H_1 |
 | **G-11** | PROTECTION DOES NOT TRACK THE INDEX. Bouquet of k triangles: dim H_1 = 2,3,4 grows while distance d = 3,3,3 is CONSTANT — unbounded capacity, fixed protection. So Gamma is an index PLUS a growing-minimum-weight condition; R1 is geometry-free, R3 is not | **PROVED** | LANE_G10_NONMANIFOLD (D); torus mirror: dim H_1 = 2,2,2 with d = 2,3,4 | — | a carrier family where d grows without a metric-like condition |
+| **G-12** | THE CONDITION AS FAR AS ESTABLISHED: a length-2 F_2 chain complex whose k-SYSTOLE AND k-COSYSTOLE both exceed the local scale. R3 needs TWO numbers; they coincide only in self-dual cases like the square-lattice torus | **PROVED** | G-6 adjudication; explains why this program measured a single d and derived d=2 | — | a record carrier where one of systole/cosystole is below the local scale |
+| **G-13** | ERRATUM: THE WRITER IS NOT POINCARE DUALITY. The pairing H_k x H^k -> F_2 is perfect for ANY complex over a field (universal coefficients). R2 needs no manifold, no orientability, no duality | **PROVED** | G-6 adjudication; Thm B result stands, its stated source was too strong | — | a complex over a field with a non-perfect evaluation pairing |
 
 ## D. OBSTRUCTIONS — solvable here
 
@@ -74,6 +76,8 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-4** | admissible in clause (iv) is undefined | **OPEN** | — | — | — |
 | **O-5** | clause (ii) is exact; real records are approximate | **OPEN** | — | — | — |
 | **O-6** | is our 1-form symmetry emergent or exact? | **FAILED** | tested: EXACT, 0.000e+00 broken at every epsilon | — | — (Harlow-Ooguri tension is LIVE; see X-5) |
+| **O-7** | COVERAGE GAP: the fracton / no-string-logical-operator region was never swept (agent died on an API error). Haah's cubic code, X-cube, checkerboard, Chamon untested against R1-R3 | **OPEN** | recorded as unswept, NOT as a null result | — | — |
+| **O-8** | NON-CSS and NON-ABELIAN (Levin-Wen, Fibonacci) are untested against R1-R3. The general condition may be wider than a length-2 F_2 complex | **OPEN** | flagged by the G-6 adjudicator | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 
