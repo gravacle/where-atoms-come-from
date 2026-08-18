@@ -1,0 +1,40 @@
+W-33  QUESTION 1 -- HOW MANY STEADY STATES? A unique steady state forbids selection outright.
+       g^2       bath  #zero modes     next rate   reading
+  ----------------------------------------------------------------------
+    0.0000        cut            2     5.803e-01   DEGENERATE x2 -> a record manifold exists
+    0.0010        cut            1     3.200e-05   UNIQUE -> selection impossible
+    0.0100        cut            1     3.197e-03   UNIQUE -> selection impossible
+    0.1000        cut            1     2.857e-01   UNIQUE -> selection impossible
+    1.0000        cut            1     2.147e-01   UNIQUE -> selection impossible
+    0.0000        rim            1     1.000e+00   UNIQUE -> selection impossible
+    0.0010        rim            1     1.000e+00   UNIQUE -> selection impossible
+    0.0100        rim            1     1.001e+00   UNIQUE -> selection impossible
+    0.1000        rim            1     1.083e+00   UNIQUE -> selection impossible
+    1.0000        rim            1     2.196e-01   UNIQUE -> selection impossible
+    0.0000  all links            1     2.000e+00   UNIQUE -> selection impossible
+    0.0010  all links            1     2.000e+00   UNIQUE -> selection impossible
+    0.0100  all links            1     2.001e+00   UNIQUE -> selection impossible
+    0.1000  all links            1     2.120e+00   UNIQUE -> selection impossible
+    1.0000  all links            1     4.090e-01   UNIQUE -> selection impossible
+
+W-33  QUESTION 2 -- WHAT DOES THE FINAL STATE REMEMBER?
+  Initial state: rho(b) = (I + b*R)/dim, a physical state biased toward the R=+1 sector.
+  Evolved to the steady state by projecting onto the Liouvillian's zero modes (t -> inf, exact).
+
+  bath=cut g2= 0.0000   slope d<R>(inf)/d<R>(0) = +1.000000000   PRESERVES exactly: perfect memory
+      (point by point:  -0.90->-0.900  -0.50->-0.500  -0.20->-0.200  +0.00->+0.000  +0.20->+0.200  +0.50->+0.500  +0.90->+0.900)
+  bath=cut g2= 0.0010   slope d<R>(inf)/d<R>(0) = -0.000000000   ERASES: nothing is remembered
+  bath=cut g2= 0.0100   slope d<R>(inf)/d<R>(0) = +0.000000000   ERASES: nothing is remembered
+  bath=cut g2= 0.1000   slope d<R>(inf)/d<R>(0) = +0.000000000   ERASES: nothing is remembered
+  bath=rim g2= 0.0000   slope d<R>(inf)/d<R>(0) = +0.000000000   ERASES: nothing is remembered
+  bath=rim g2= 0.0010   slope d<R>(inf)/d<R>(0) = +0.000000000   ERASES: nothing is remembered
+  bath=rim g2= 0.0100   slope d<R>(inf)/d<R>(0) = -0.000000000   ERASES: nothing is remembered
+  bath=rim g2= 0.1000   slope d<R>(inf)/d<R>(0) = -0.000000000   ERASES: nothing is remembered
+
+W-33  CONTROL -- W-29c reproduced: an UNBIASED start must give exactly 0 at every setting.
+    bath=cut g2= 0.000  <R>(inf) from maximally mixed = +0.000000000000
+    bath=cut g2= 0.010  <R>(inf) from maximally mixed = +0.000000000000
+    bath=cut g2= 1.000  <R>(inf) from maximally mixed = +0.000000000000
+    bath=rim g2= 0.000  <R>(inf) from maximally mixed = -0.000000000000
+    bath=rim g2= 0.010  <R>(inf) from maximally mixed = -0.000000000000
+    bath=rim g2= 1.000  <R>(inf) from maximally mixed = -0.000000000000

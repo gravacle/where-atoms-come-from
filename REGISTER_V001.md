@@ -2522,3 +2522,84 @@ motivated bath left `<W>` at exactly `0.000000` with entropy pinned at maximum, 
 that already knew the answer broke the tie. **So the live question is no longer "can a record last."
 It is "what decides WHICH value it takes."** That is the tie-breaking / symmetry-breaking problem,
 and it is where the responsive carrier must now be aimed.
+
+---
+
+## W-33 — **THE CARRIER IS A MEMORY, NOT A RECORDER. IT PRESERVES EXACTLY; IT NEVER AMPLIFIES.**
+
+`LANE_W33_SELECTION/`, sealed.
+
+**STEADY-STATE COUNT — decisive before any dynamics is run, because a Lindbladian with a UNIQUE
+steady state cannot select anything from any initial condition.**
+
+```
+   g^2      bath   #zero modes
+  0.0000     cut         2      DEGENERATE -> a record manifold exists
+  0.0010     cut         1      unique                 (next rate 3.200e-05)
+  0.0100     cut         1      unique                 (next rate 3.197e-03)
+  any        rim         1      unique                 (next rate ~1.0)
+  any    all links       1      unique
+```
+
+**The record manifold is EXACT only at `g^2 = 0` with a shielded bath.** For `g^2 > 0` it is lifted
+— but at rate `32g^4`, so for small coupling the manifold is approximate and long-lived, which is
+W-32's window seen from the spectral side.
+
+**WHAT THE STEADY STATE REMEMBERS.** Start from `rho(b) = (I + b R)/dim` and take `t -> infinity`
+exactly by projecting onto the zero modes:
+
+```
+  bath=cut g2=0.0000   slope d<R>(inf)/d<R>(0) = +1.000000000   PRESERVES EXACTLY
+      -0.90->-0.900  -0.50->-0.500  -0.20->-0.200  0.00->0.000  +0.20->+0.200  +0.50->+0.500  +0.90->+0.900
+  bath=cut g2=0.0010   slope = -0.000000000                     erases (at t=inf; 1/(8g^2) cycles first)
+  bath=rim any g2      slope = +0.000000000                     erases
+```
+
+> **THE SLOPE IS EXACTLY `1` OR EXACTLY `0`. IT IS NEVER GREATER THAN `1`, AT ANY SETTING TESTED.
+> THE DYNAMICS NEVER BREAKS A TIE. IT KEEPS WHAT IT IS GIVEN AND MANUFACTURES NOTHING.**
+
+**AND THIS REFRAMES W-29c'S NULL.** W-29c started from a maximally mixed state — which carries no
+information — and found `<R> = 0.000000`. **That is the correct answer, not a failure: a record of
+nothing is nothing.** Reproduced here exactly (`+0.000000000000` at every setting). The construction
+was never failing to hold a record; it was being asked to invent one.
+
+## W-34 — **THE PREDICTABILITY SIEVE SELECTS THE BOUNDARY, AND WE NOMINATED NOTHING**
+
+Every prior lane NOMINATED the rim loop and then asked how it fared — which installs the answer.
+Here nothing is nominated. The left-eigenmodes of the Liouvillian **are** the observables with
+definite decay rates, so the slowest ones **are** the pointer observables. Read them off and ask
+what they are.
+
+```
+  g2=0.001, bath on CUT          rate        best operator match
+        (identity)          2.674e-15        identity
+        SLOWEST OBSERVABLE  3.200e-05        RIM LOOP (all 4)      overlap 1.000
+        next                5.803e-01        no clean match
+        next                9.841e-01        no clean match
+```
+
+**CROSS-CHECK — all 16 magnetic operators ranked by their own decay rate, `g^2=0.01`:**
+
+```
+    7.157165e-02   RIM LOOP (all 4)          <-- 28x slower than anything else
+    1.983944e+00   plaquette (0,)
+    1.985041e+00   plaquette (1,)
+    2.010041e+00   3-plaquette loop (0,1,3)
+    2.029031e+00   2-plaquette loop (0,2)
+    3.860385e+00   2-plaquette loop (0,3)
+```
+
+> **THE DYNAMICS PICKS THE FULL BOUNDARY, AND ONLY THE FULL BOUNDARY.** Not "bigger is slower" —
+> single, double and triple loops are all clustered at `~2.0`. The rim wins by a factor of 28.
+
+**AND THE MECHANISM IS GEOMETRIC, NOT ENERGETIC. The rim loop is the unique gauge-invariant loop
+whose support (`PERIM`) is DISJOINT from where the environment couples (`CUT`).** Every other loop
+runs through a cut link. **The pointer observable is the one the environment cannot touch.**
+
+**CONFIRMED BY MOVING THE BATH.** With the bath on the RIM instead, no magnetic operator survives at
+all — the slow modes become **electric-type (diagonal)**, all at rate `~1.0`. **The pointer basis
+follows the environment's coupling.** That is einselection behaving exactly as advertised, and it
+means the boundary is not privileged a priori: it is privileged *given where the environment is*.
+
+**THIS RETIRES THE CIRCULARITY.** The rim loop was chosen by the registrar at W-27 and used as the
+record ever since. It is now independently re-derived as what this construction actually protects.

@@ -1,0 +1,12 @@
+LANE W33/W34 -- SELECTION. 3x3 patch, Z_2, physical dim 16, gamma=0.5. CUT = the 4 links at the
+centre vertex; RIM/PERIM = the other 8. All results come from the LINDBLADIAN SPECTRUM, exactly:
+the generator is vectorised to 256x256 and diagonalised. t -> infinity is taken by projecting the
+initial state onto the zero modes (no integrator, no final-time choice).
+w33 : (1) counts steady states -- a UNIQUE steady state forbids selection outright, so this is
+      decisive before any dynamics is run. (2) reframes W-29c: a maximally mixed start carries NO
+      information, so <R>=0 is the correct answer there, not a failure. Scans initial bias and reads
+      the slope d<R>(inf)/d<R>(0): 0 = erases, 1 = preserves, >1 = amplifies (genuine selection).
+w34 : the PREDICTABILITY SIEVE. Nominates NOTHING. The left-eigenmodes of the Liouvillian are the
+      observables with definite decay rates, so the slowest ones ARE the pointer observables. Each
+      is identified against the 16 magnetic operators (products of subsets of the 4 plaquettes; the
+      full subset is the rim loop by discrete Stokes) and against electric (diagonal) character.
