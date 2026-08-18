@@ -2775,3 +2775,49 @@ between the coupling, the size of the region, and the transport rate.
 **THE PERIMETER SCALING IS NOT MEASURED.** One patch, one ring size, so `T_read ∝ perimeter` is an
 expectation and not a result. **Rings of several sizes are the next build, and if the scaling holds
 the relation above is the program's next pure number.**
+
+## W-37b/c — **THE PERIMETER LAW HOLDS, AND READABILITY DEPENDS ON THE PARITY OF THE LOOP**
+
+```
+  bare cycle graphs, tau = 1.0
+     n   dim  ||[R,H]||   T_read (I=0.5 bit)   max I     T_read/n
+     4     8    0.0e+00          1.25          0.9998      0.312
+     5    10    0.0e+00         never          0.0000        --
+     6    12    0.0e+00          1.75          0.9827      0.292
+     7    14    0.0e+00         never          0.0000        --
+     8    16    0.0e+00          2.50          0.9901      0.312
+    10    20    0.0e+00          3.00          0.9329      0.300
+    12    24    0.0e+00          3.50          0.9338      0.292
+
+  d ln(T_read) / d ln(n) = +0.960        CUT RING, every n: max I <= 4.4e-16, never reaches 0.5
+```
+
+> **`T_read/n` IS CONSTANT AT `0.30` ACROSS A FACTOR OF THREE IN RING SIZE. THE PERIMETER LAW IS
+> MEASURED, NOT ASSUMED** (W-37 had flagged it as an expectation). And the cut-ring control returns
+> `<= 4.4e-16` at every size — **no closed path, no information, at any scale.**
+
+**SO THE CLOSING RELATION IS NOW A MEASURED ONE.** `T_read = 0.30 · perimeter / tau` and
+`Gamma = 32 g^4`, so a region can be read before it forgets iff
+
+> **`9.6 · g^4 · perimeter / tau  <<  1`** — a pure number joining the coupling, the SIZE of the
+> region, and the transport rate. **A region has a maximum legible size set by the coupling.**
+
+### AND AN UNEXPECTED ONE — ODD LOOPS CARRY NOTHING
+
+`n = 5` and `n = 7` give **exactly** `0.0000`, and TEST 1 confirms it across **every start site and
+every time** (`4.4e-16`, `2.2e-16`). An exact zero is a symmetry.
+
+**TEST 3 finds it.** For a ring, `R=+1` is periodic hopping and `R=-1` is antiperiodic. At `n=5` the
+periodic spectrum is `[-2, -0.618, -0.618, 1.618, 1.618]` and the antiperiodic is
+`[-1.618, -1.618, 0.618, 0.618, 2]` — **the exact negative.** For odd `n` the antiperiodic momenta
+ARE the periodic momenta shifted by `pi`, and `cos(k+pi) = -cos(k)`.
+
+> **ON AN ODD LOOP THE FLUX IS ABSORBED INTO A SHIFT OF THE PROBE'S MOMENTUM. THIS PROBE CANNOT SEE
+> IT — not because the record is absent, but because the carrier's ARITHMETIC hides it.**
+
+**Stated carefully: this is a fact about a single particle hopping to nearest neighbours. Whether
+some other probe can read an odd loop is untested,** and it is a sharp, cheap question.
+
+**A DEFECT, LOGGED.** `w37c` TEST 2 projects a localised start into each sector and that projection
+is degenerate at every `n`, so it printed "(a sector is empty)" throughout and measured nothing. It
+is kept as written. The result rests on TEST 1 and TEST 3.

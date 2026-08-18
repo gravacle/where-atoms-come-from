@@ -1,0 +1,31 @@
+W-37c  ODD-RING NULL: symmetry or artifact?
+
+  TEST 1 -- does ANY start site give information on an odd ring?
+    n=5: best I(R:probe) over ALL start sites and times = 4.441e-16
+    n=7: best I(R:probe) over ALL start sites and times = 2.220e-16
+
+  TEST 2 -- are the two sectors' probe dynamics identical? (an exact match = a symmetry)
+       n   max |P_+(t) - P_-(t)| over sites and times
+    --------------------------------------------------
+       4   (a sector is empty for a localised start)
+       5   (a sector is empty for a localised start)
+       6   (a sector is empty for a localised start)
+       7   (a sector is empty for a localised start)
+       8   (a sector is empty for a localised start)
+       9   (a sector is empty for a localised start)
+      10   (a sector is empty for a localised start)
+
+  TEST 3 -- the spectra. For a ring, R=+1 is periodic and R=-1 antiperiodic hopping.
+  Odd n makes the two spectra coincide as SETS, so no probe observable can separate them.
+    n=4: periodic [-2. -0.  0.  2.]  antiperiodic [-1.41421356 -1.41421356  1.41421356  1.41421356]  -> different
+    n=5: periodic [-2.         -0.61803399 -0.61803399  1.61803399  1.61803399]  antiperiodic [-1.61803399 -1.61803399  0.61803399  0.61803399  2.        ]  -> different
+    n=6: periodic [-2. -1. -1.  1.  1.  2.]  antiperiodic [-1.73205081 -1.73205081 -0.          0.          1.73205081  1.73205081]  -> different
+    n=7: periodic [-2.         -1.2469796  -1.2469796   0.44504187  0.44504187  1.80193774
+  1.80193774]  antiperiodic [-1.80193774 -1.80193774 -0.44504187 -0.44504187  1.2469796   1.2469796
+  2.        ]  -> different
+    n=8: periodic [-2.         -1.41421356 -1.41421356 -0.          0.          1.41421356
+  1.41421356  2.        ]  antiperiodic [-1.84775906 -1.84775906 -0.76536686 -0.76536686  0.76536686  0.76536686
+  1.84775906  1.84775906]  -> different
+    n=9: periodic [-2.         -1.53208889 -1.53208889 -0.34729636 -0.34729636  1.
+  1.          1.87938524  1.87938524]  antiperiodic [-1.87938524 -1.87938524 -1.         -1.          0.34729636  0.34729636
+  1.53208889  1.53208889  2.        ]  -> different

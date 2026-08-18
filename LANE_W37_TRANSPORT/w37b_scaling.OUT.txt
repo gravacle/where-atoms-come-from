@@ -1,0 +1,19 @@
+W-37b  DOES READOUT TIME SCALE WITH PERIMETER?  bare cycle graphs, tau=1.0
+     n   dim  ||[R,H]||  T_read (I=0.5 bit)  max I over run
+  ------------------------------------------------------------
+     4     8    0.0e+00                1.25          0.9998
+     5    10    0.0e+00               never          0.0000
+     6    12    0.0e+00                1.75          0.9827
+     7    14    0.0e+00               never          0.0000
+     8    16    0.0e+00                2.50          0.9901
+    10    20    0.0e+00                3.00          0.9329
+    12    24    0.0e+00                3.50          0.9338
+
+  d ln(T_read) / d ln(n) = +0.960   (PERIMETER LAW: readout time is linear in the loop length)
+  ratios T_read/n : n=4:0.312  n=6:0.292  n=8:0.312  n=10:0.300  n=12:0.292
+
+  CONTROL -- cut ring at every n. No closed path, so I must never reach 0.5 bit.
+    n=  4  T_read =   never   max I over the whole run = 0.00e+00
+    n=  6  T_read =   never   max I over the whole run = 8.88e-15
+    n=  8  T_read =   never   max I over the whole run = 1.33e-15
+    n= 10  T_read =   never   max I over the whole run = 4.44e-16

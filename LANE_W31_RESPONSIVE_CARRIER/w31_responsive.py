@@ -7,58 +7,57 @@ parity of the electric flux around the hole, R_E = (-1)^(s_{a0}+s_{c0}).  While 
 the cap triangles fail to commute with R_E, so R_E is WRITABLE.  When the cap goes, the only
 operator that failed to commute with R_E is physically removed, so R_E is EXACTLY conserved.
 
-FRAMING CORRECTION (adopted from the losing proposals, and it matters).
-  * The W-30 "no-go" is not a theorem that anything breaks.  R unitary and [L,R]=0 gives
-    [L^dag,R]=0 and hence Tr(R D[rho]) = 0 for ANY L, unitary or not -- it is a tautology about
-    superselection: a conserved charge is conserved.  This script verifies the non-unitary case
-    explicitly (STEP 4b) so the lane stops treating unitarity as the load-bearing hypothesis.
+FRAMING CORRECTION (adopted from the losing proposals; it changes what is being claimed).
+  * The W-30 "no-go" is not a theorem that anything here breaks.  R unitary and [L,R]=0 gives
+    [L^dag,R]=0 and hence Tr(R D[rho]) = 0 for ANY L, unitary or not -- a tautology about
+    superselection: a conserved charge is conserved.  STEP 4b verifies the NON-unitary case
+    explicitly, so the lane stops treating unitarity as the load-bearing hypothesis.
   * W-30's R = prod_p W_p is, by discrete Stokes on a DISK, a function of the local plaquettes:
-    it is the dual-Ising spin-flip GENERATOR, not an order parameter.  Generators are conserved,
+    the dual-Ising spin-flip GENERATOR, not an order parameter.  Generators are conserved,
     hence unwritable.  That is exactly and only what W-30 measured.
-  * This construction does NOT break that.  It makes R_E non-conserved for a finite window and
-    then deletes the term that made it so.  R_E is a HOLONOMY of a nontrivial cycle, which only
-    exists once the hole is open; that is what opening the hole buys.
+  * This construction does not "break" that.  It makes R_E non-conserved for a finite window
+    and then deletes the term that made it so.  R_E is a HOLONOMY of a nontrivial cycle, which
+    exists only once the hole is open.  That is what opening the hole buys.
 
-WHAT IS AT RISK OF BEING CONSTRAINT-FORCED (declared before any dynamics, STEP 2).
+WHAT IS AT RISK OF BEING CONSTRAINT-FORCED (declared before any dynamics; settled in STEP 2).
   p_+(infinity), the frozen weight of the R_E=+1 sector.  Three ways it could be forced:
-   (i)  unequal sector dimensions -- counting alone would fix p_+;
-   (ii) the evaporation GATE preferring a sector -- this is the disqualified (1+R)/2 projector
-        smuggled into the geometry;
-   (iii) at large g^2 the state is pinned near the flux vacuum where the winding is trivially 0.
-  (i) and (ii) are settled by two traces before any time step: tr(R_E * P_punctured) and
-  tr(R_E * sum_k L_k^dag L_k) for EVERY junction family.  (iii) is not settled by any commutator
-  and is left to the g^2 scan, where it is expected to appear as a collapse of the spread.
+   (i)   unequal sector dimensions -- counting alone would fix p_+;
+   (ii)  an evaporation GATE preferring a sector -- the disqualified (1+R)/2 projector smuggled
+         into the geometry;
+   (iii) at large g^2 the state is pinned near the flux vacuum, where the winding is trivially 0.
+  (i) and (ii) are settled by traces taken before any time step: tr(R_E P_punctured) and
+  tr(R_E * sum_k L_k^dag L_k) for EVERY junction family.  (iii) is settled by no commutator and
+  is left to the g^2 scan in STEP 9, where it is expected to show up as a collapse of the spread.
 
-THE LOAD-BEARING CHOICE, AND IT IS RUN HERE AS A CONTROL, NOT ADMIRED (STEP 7).
+THE LOAD-BEARING CHOICE, RUN AS A CONTROL RATHER THAN ADMIRED (STEP 7).
   Topology change needs a junction condition.  The two natural clearings of the vanishing spokes
   differ by the kernel {0, sum_i tau_i}, and sum_i tau_i IS the inner cycle, whose winding is 1 --
-  so the ambiguity in the junction condition is EXACTLY the record.  Three junction families are
-  therefore implemented and all three are run:
-    A  NO-HAIR   : one jump, sqrt(Gd) iota^dag.  The cap may only vanish where the field put no
-                   flux on it.  Field-gated.
-    B  DRAG/BLIND: a full Kraus family {sqrt(Gd) V_p}, sum_p V_p^dag V_p = I.  The cap carries its
-                   flux away, at the SAME rate from every state -- evaporation blind to the field.
-                   Branch convention T_0 = 0.
-    B' FLIPPED   : the other branch, T_0 = 1.  Every V_p carries an extra M_inner.
-    C  SYMMETRISED: half rate on each branch.  If the correct treatment symmetrises, the design
-                   predicts R_E is randomised at every topology change and the record dies.
-  Nothing derives the choice.  The numbers below say what each choice gives.
+  so the ambiguity in the junction condition is EXACTLY the record.  Four junction families are
+  therefore implemented and all four are run:
+    A  NO-HAIR    : one jump, sqrt(Gd) iota^dag.  The cap may vanish only where the field left no
+                    flux on it.  Field-GATED.  sum L^dag L = Gd * Pi_nohair.
+    B  DRAG/BLIND : the full Kraus family {sqrt(Gd) V_p}, sum_p V_p^dag V_p = I_capped.  The cap
+                    carries its flux away, at the SAME rate from every state -- evaporation BLIND
+                    to the field.  Branch convention T_0 = 0.
+    Bp FLIPPED    : the other branch, T_0 = 1.  Every V_p carries an extra M_inner.
+    C  SYMMETRISED: half rate on each branch.  If the correct treatment symmetrises, the design's
+                    own prediction is that R_E is randomised at every topology change.
+  Nothing in the construction derives the choice.  The numbers say what each choice gives.
 
-ROUTE.  m=2 (dim 24, superoperator 576x576): EXACT Lindblad superoperator exponentiation, expm
-implemented here by scaling-and-squaring Taylor (scipy absent).  m=3 (dim 80) and m=4 (dim 288):
-RK4 on rho, validated against the m=2 exact result.  numpy only.
+ROUTE.  m=2 (dim 24, superoperator 576x576): EXACT Lindblad superoperator exponentiation, expm by
+scaling-and-squaring Taylor (scipy is absent).  m=3 (dim 80) and m=4 (dim 288): RK4 on rho, with a
+convergence check against the m=2 exact result.  numpy only.
 
 GAUGE STRUCTURE, HONESTLY.  Within each fiber the full Z_2 Gauss law holds exactly (the fiber IS
 the divergence-free flux sector of that graph).  ACROSS fibers there is no single gauge group --
 the hub's Gauss law exists only when the hub exists -- so this is a bundle of constraint surfaces,
-one per carrier configuration.  A SECOND CONSTRAINT is added for junction A and must be written
-down: the NO-HAIR JUNCTION CONDITION, E_sigma_i |psi> = 0 on the vanishing links, implemented as
-iota with iota iota^dag = Pi_nohair.  Junctions B/B'/C drop it and are run for that reason.
+one per carrier configuration, with no canonical isomorphism between them.  A SECOND CONSTRAINT is
+added for junction A and is written down here: the NO-HAIR JUNCTION CONDITION, E_sigma_i|psi> = 0
+on the vanishing links, implemented by iota with iota iota^dag = Pi_nohair.  Junctions B/Bp/C drop
+it, which is exactly why they are run.
 """
 
 import itertools, numpy as np
-
-np.set_printoptions(linewidth=200)
 
 # ----------------------------------------------------------------------------------
 # numerics: expm by scaling and squaring Taylor (no scipy anywhere in this file)
@@ -95,7 +94,7 @@ def graph(m, capped):
 
 
 def cycle_space(E, NV):
-    """Divergence-free Z_2 flux configs: the Gauss-law physical sector, exactly as w27_patch.py."""
+    """Divergence-free Z_2 flux configs: the Gauss-law physical sector, as in w27_patch.py."""
     out = []
     for s in itertools.product((0, 1), repeat=len(E)):
         d = [0] * NV
@@ -109,7 +108,7 @@ def cycle_space(E, NV):
 
 
 def move(S, idx, cyc):
-    """M_p |s> = |s + p>.  W-27/W-30 'Move' convention, flux basis."""
+    """M_p |s> = |s + p>.  W-27 / W-30 'Move' convention, flux basis."""
     n = len(S)
     M = np.zeros((n, n), complex)
     for j, s in enumerate(S):
@@ -149,10 +148,10 @@ class Model:
         self.Mq0 = [move(self.S0, self.i0, self.quad(i)) for i in range(m)]
         self.Minner1 = move(self.S1, self.i1, [a(i) for i in range(m)])
 
-        # record operator: winding parity across a radial cut gamma_j = {a_j, c_j}
+        # record: winding parity across a radial cut gamma_j = {a_j, c_j}
         self.RE1_all = [np.array([(-1.0) ** (s[a(j)] + s[c(j)]) for s in self.S1]) for j in range(m)]
         self.RE0_all = [np.array([(-1.0) ** (s[a(j)] + s[c(j)]) for s in self.S0]) for j in range(m)]
-        self.rd = np.concatenate([self.RE1_all[0], self.RE0_all[0]]).astype(complex)  # diagonal of R_E
+        self.rd = np.concatenate([self.RE1_all[0], self.RE0_all[0]]).astype(complex)
         self.RE = np.diag(self.rd)
         I = np.eye(D, dtype=complex)
         self.Pp = (I + self.RE) / 2.0
@@ -172,16 +171,18 @@ class Model:
         for j, s in enumerate(self.S0):
             iota[self.i1[tuple(list(s) + [0] * m)], j] = 1.0
         self.iota = iota
-        self.Pnh = iota @ iota.conj().T                      # Pi_nohair on the capped fiber
+        self.Pnh = iota @ iota.conj().T
         self.IOTA = np.zeros((D, D), complex)
-        self.IOTA[:D1, D1:] = iota                           # punctured -> capped
+        self.IOTA[:D1, D1:] = iota
 
-        # ---- junction families ------------------------------------------------
+        # ---- junction families -------------------------------------------------
+        # For spoke pattern p (necessarily even weight by the hub Gauss law) the clearing set T
+        # solves T_i + T_{i+1} = p_i.  Two solutions, differing by the all-ones set, i.e. by
+        # prod_i M_tau_i = M_inner, whose winding is 1.  T_0 = 0 fixes the branch.
         spoke_pat = [tuple(s[sg(i)] for i in range(m)) for s in self.S1]
-        pats = sorted(set(spoke_pat))
-        self.pats = pats
+        self.pats = sorted(set(spoke_pat))
         Vs = []
-        for p in pats:
+        for p in self.pats:
             T = [0] * m
             for j in range(1, m):
                 T[j] = T[j - 1] ^ p[j - 1]
@@ -190,9 +191,10 @@ class Model:
                 if T[i]:
                     U = U @ self.Mt1[i]
             Pi = np.diag([1.0 if spoke_pat[j] == p else 0.0 for j in range(D1)]).astype(complex)
-            Vs.append(iota.conj().T @ U @ Pi)                # D0 x D1
+            Vs.append(iota.conj().T @ U @ Pi)                # D0 x D1, isometric on the p sector
         self.Vs = Vs
         self.Vs_flip = [V @ self.Minner1 for V in Vs]
+        self.kraus_defect = np.linalg.norm(sum(V.conj().T @ V for V in Vs) - np.eye(D1))
 
     def emb_down(self, V):
         M = np.zeros((self.D, self.D), complex)
@@ -217,7 +219,7 @@ class Model:
         return [np.sqrt(gE) * np.diag(d) for d in self.zt]
 
     def H(self, g2, lam=0.0, kap=1.0, mu=0.0):
-        m, D1, D0 = self.m, self.D1, self.D0
+        m, D1 = self.m, self.D1
         H1 = -sum(M + M.conj().T for M in self.Mq1) - kap * sum(M + M.conj().T for M in self.Mt1)
         H1 = H1 - g2 * sum(2 * np.diag(zdiag(self.S1, k)) for k in range(4 * m)) + mu * np.eye(D1)
         H0 = -sum(M + M.conj().T for M in self.Mq0)
@@ -230,6 +232,50 @@ class Model:
     def Hfib(self, g2, kap=1.0, mu=0.0):
         H = self.H(g2, 0.0, kap, mu)
         return H[:self.D1, :self.D1], H[self.D1:, self.D1:]
+
+    def starts(self):
+        """Initial states.  UNBIASED family: (|s> + e^{i th}|s + inner>)/sqrt2.  Adding the inner
+        cycle flips a_0, hence flips R_E, so every member has p_+(0) = 1/2 EXACTLY regardless of
+        s and th.  Different s and th differ only in quantum numbers R_E cannot see -- which is
+        the whole point of the spread test.  BIASED members C,E are labelled as such."""
+        m, D = self.m, self.D
+
+        def kk(s):
+            v = np.zeros(D, complex)
+            v[self.i1[s]] = 1.0
+            return v
+
+        def pair(base, th):
+            u = list(base)
+            for k in range(m):
+                u[k] ^= 1
+            return (kk(tuple(base)) + np.exp(1j * th) * kk(tuple(u))) / np.sqrt(2)
+
+        z = [0] * (4 * m)
+        q0 = list(z)
+        for k in self.quad(0):
+            q0[k] ^= 1
+        t0 = list(z)
+        for k in self.tri(0):
+            t0[k] ^= 1
+        q1 = list(z)
+        for k in self.quad(1 % m):
+            q1[k] ^= 1
+        out = {"A": pair(z, 0.0), "B": pair(q0, 0.0), "D": pair(z, np.pi / 2),
+               "F": pair(t0, 0.0), "G": pair(q1, np.pi / 2)}
+        rg = np.random.default_rng(4242 + m)
+        vC = np.zeros(D, complex)
+        vC[:self.D1] = rg.normal(size=self.D1) + 1j * rg.normal(size=self.D1)
+        out["C"] = vC / np.linalg.norm(vC)
+        vE = np.zeros(D, complex)
+        vE[:self.D1] = rg.normal(size=self.D1) + 1j * rg.normal(size=self.D1)
+        vE = self.Pp @ vE + 0.4 * (self.Pm @ vE)
+        out["E"] = vE / np.linalg.norm(vE)
+        return out
+
+
+UNB = ("A", "B", "D", "F", "G")     # p_+(0) = 1/2 exactly
+BIA = ("C", "E")                    # deliberately biased starts
 
 
 # ----------------------------------------------------------------------------------
@@ -244,18 +290,24 @@ def superop(H, Ls, D):
     return M
 
 
-def evolve_exact(H, Ls, rho0, ts, D):
-    """uniform grid ts; one expm, then repeated application."""
-    dt = ts[1] - ts[0]
-    U = expm(superop(H, Ls, D) * dt)
+_UC = {}
+
+
+def propagator(H, Ls, dt, D, key):
+    if key not in _UC:
+        _UC[key] = expm(superop(H, Ls, D) * dt)
+    return _UC[key]
+
+
+def evolve_exact(H, Ls, rho0, ts, D, key):
+    U = propagator(H, Ls, ts[1] - ts[0], D, key)
     v = rho0.reshape(-1).astype(complex)
     out = []
     for n in range(len(ts)):
         if n > 0:
             v = U @ v
         r = v.reshape(D, D)
-        r = r / np.trace(r).real
-        out.append(r)
+        out.append(r / np.trace(r).real)
     return out
 
 
@@ -271,10 +323,14 @@ def rho_of(v):
     return np.outer(v, v.conj())
 
 
-# ----------------------------------------------------------------------------------
-print("=" * 100)
+def late(o, lo=30, hi=41, i=0):
+    return float(np.mean([o[k][i] for k in range(lo, hi)]))
+
+
+# ==================================================================================
+print("=" * 104)
 print("W-31  THE EVAPORATING CAP -- responsive carrier.  numpy only, no scipy.")
-print("=" * 100)
+print("=" * 104)
 
 # ==================================================================================
 # STEP 1  --  THE SPACE, AND THE STATIC COMPARISON CASE
@@ -283,13 +339,18 @@ print("\n[STEP 1] THE SPACE\n")
 MD = {}
 for m in (2, 3, 4):
     MD[m] = Model(m)
-    md = MD[m]
-    print(f"  m={m}   capped fiber (DISK, b1=0) dim {md.D1:4d} (pred 2^{2*m}={2**(2*m):4d})"
-          f"   punctured fiber (ANNULUS, b1=1) dim {md.D0:4d} (pred 2^{m+1}={2**(m+1):4d})"
-          f"   TOTAL {md.D:4d}   superoperator {md.D**2}x{md.D**2}")
+    x = MD[m]
+    print(f"  m={m}   capped fiber (DISK, b1=0) dim {x.D1:4d} (pred 2^{2*m} = {2**(2*m):4d})"
+          f"   punctured fiber (ANNULUS, b1=1) dim {x.D0:4d} (pred 2^{m+1} = {2**(m+1):4d})"
+          f"   TOTAL {x.D:4d}   superoperator {x.D**2}x{x.D**2}")
+    print(f"         junction Kraus completeness ||sum_p V_p^dag V_p - I|| = {x.kraus_defect:.3e}"
+          f"   #spoke patterns = {len(x.pats)}"
+          f"   ||iota iota^dag - Pi_nohair|| = "
+          f"{np.linalg.norm(x.iota @ x.iota.conj().T - x.Pnh):.3e}")
 md = MD[2]
+D = md.D
 
-# static comparison case: W-30's own carrier, built here from scratch
+# static comparison case: W-30's own carrier, rebuilt from scratch here
 V2 = [(i, j) for j in range(3) for i in range(3)]
 vid = {v: k for k, v in enumerate(V2)}
 Ep = []
@@ -306,47 +367,46 @@ hid = lambda i, j: j * 2 + i
 vx = lambda i, j: 6 + j * 3 + i
 PLQ = [[hid(i, j), vx(i + 1, j), hid(i, j + 1), vx(i, j)] for j in range(2) for i in range(2)]
 print(f"\n  STATIC COMPARISON CASE (W-30's carrier, rebuilt here): 3x3 planar patch Z_2,"
-      f" physical dim {Dp}   superoperator {Dp**2}x{Dp**2}")
-print(f"  ROUTE: m=2 exact superoperator exponential (576x576); m=3,4 RK4 on rho, cross-checked"
-      f" against m=2 exact.")
+      f" physical dim {Dp}, superoperator {Dp**2}x{Dp**2}")
+print(f"  ROUTE: m=2 EXACT superoperator exponential; m=3,4 RK4 on rho, convergence-checked"
+      f" against the m=2 exact result.")
 
 # ==================================================================================
 # STEP 2  --  FORCED-OR-NOT, RUN FIRST
 # ==================================================================================
 print("\n[STEP 2] FORCED-OR-NOT CHECK  (run before any dynamics)\n")
-print("  QUANTITY AT RISK: p_+(inf), the frozen weight of the R_E=+1 winding sector.")
-print("  Forced if (i) the sectors have unequal dimension, or (ii) any evaporation gate")
-print("  sum_k L_k^dag L_k has nonzero overlap with R_E.  Counting argument declared in advance:")
-print("  w(s)=s_{a0}+s_{c0} is a LINEAR functional on the Z_2 cycle space and is surjective")
-print("  (w(inner cycle)=1), so its kernel has index exactly 2 and the sectors are equal.\n")
+print("  QUANTITY AT RISK: p_+(inf), the frozen weight of the R_E = +1 winding sector.")
+print("  Forced if (i) the two winding sectors have unequal dimension, or (ii) any evaporation")
+print("  gate sum_k L_k^dag L_k has nonzero overlap with R_E.")
+print("  COUNTING ARGUMENT, declared in advance: w(s) = s_{a0}+s_{c0} is a LINEAR functional on")
+print("  the Z_2 cycle space and is surjective (w(inner cycle) = 1), so its kernel has index")
+print("  exactly 2 and the sectors must be equal.\n")
 forced = False
 for m in (2, 3, 4):
     x = MD[m]
-    n1p = int(np.sum(np.real(x.RE1_all[0]) > 0))
-    n1m = x.D1 - n1p
     n0p = int(np.sum(np.real(x.RE0_all[0]) > 0))
-    n0m = x.D0 - n0p
+    n1p = int(np.sum(np.real(x.RE1_all[0]) > 0))
     tr0 = float(np.sum(x.RE0_all[0]))
     tr1 = float(np.sum(x.RE1_all[0]))
     tnh = float(np.real(np.trace(np.diag(x.RE1_all[0]).astype(complex) @ x.Pnh)))
-    print(f"  m={m}  punctured sectors {n0p}/{n0m}   tr(R_E*P_punc) = {tr0:+.1f}"
-          f"    capped sectors {n1p}/{n1m}   tr(R_E*P_cap) = {tr1:+.1f}"
-          f"    tr(R_E*Pi_nohair) = {tnh:+.1f}")
+    print(f"  m={m}  punctured sectors {n0p}/{x.D0-n0p}  tr(R_E P_punc) = {tr0:+.1f}   "
+          f"capped sectors {n1p}/{x.D1-n1p}  tr(R_E P_cap) = {tr1:+.1f}   "
+          f"tr(R_E Pi_nohair) = {tnh:+.1f}")
+    RT = np.diag(np.concatenate([x.RE1_all[0], x.RE0_all[0]])).astype(complex)
     for nm in ("A", "B", "Bp", "C"):
-        Ls = x.junction(nm, 1.0)
-        G = sum(L.conj().T @ L for L in Ls)
-        ov = float(np.real(np.trace(np.diag(np.concatenate([x.RE1_all[0], x.RE0_all[0]])).astype(complex) @ G)))
-        print(f"        junction {nm:2s}: sum_k L^dag L  ->  tr(R_E * gate) = {ov:+.3e}"
-              f"   ||sum L^dag L - Gd*Pi|| info: trace(gate) = {float(np.real(np.trace(G))):.1f}")
+        G = sum(L.conj().T @ L for L in x.junction(nm, 1.0))
+        ov = float(np.real(np.trace(RT @ G)))
+        print(f"        junction {nm:2s}: tr(R_E * sum_k L^dag L) = {ov:+.3e}"
+              f"   tr(sum_k L^dag L) = {float(np.real(np.trace(G))):.1f}")
         if abs(ov) > 1e-9:
             forced = True
     if abs(tr0) > 1e-9 or abs(tnh) > 1e-9:
         forced = True
-print(f"\n  ANY nonzero overlap found (record constraint-forced / gate biased)?  {forced}")
+print(f"\n  Any nonzero overlap found (record constraint-forced / gate sector-biased)?  {forced}")
 if forced:
-    print("  THE RECORD OBSERVABLE IS CONSTRAINT-FORCED OR THE GATE IS BIASED.  STOPPING.")
+    print("  THE RECORD OBSERVABLE IS CONSTRAINT-FORCED OR THE GATE IS BIASED.  STOPPING HERE.")
     raise SystemExit(0)
-print("  (residual risk (iii), large-g^2 pinning, is NOT settled by any commutator -- see STEP 9)")
+print("  Residual risk (iii), large-g^2 pinning, is settled by NO commutator.  See STEP 9.")
 
 # ==================================================================================
 # STEP 3  --  DOES R EARN THE RIGHT TO BE MEASURED?
@@ -355,21 +415,18 @@ print("\n[STEP 3] THE RECORD OPERATOR MUST EARN ITS MEASUREMENT\n")
 for m in (2, 3, 4):
     x = MD[m]
     R = x.RE
-    nR = np.linalg.norm(R)
-    uni = np.linalg.norm(R @ R.conj().T - np.eye(x.D))
     ev = np.linalg.eigvals(R)
-    nd = len(np.unique(np.round(ev, 9)))
-    gi0 = max(np.linalg.norm(x.RE0_all[j] - x.RE0_all[0]) for j in range(m))
-    gi1 = max(np.linalg.norm(x.RE1_all[j] - x.RE1_all[0]) for j in range(m))
-    print(f"  m={m}  ||R_E|| = {nR:8.4f}   ||R R^dag - I|| = {uni:.3e}   distinct eigenvalues = {nd}"
-          f"   cut-dependence: punctured {gi0:.3e}   capped {gi1:.3e}")
+    print(f"  m={m}  ||R_E|| = {np.linalg.norm(R):8.4f}   ||R R^dag - I|| = "
+          f"{np.linalg.norm(R @ R.conj().T - np.eye(x.D)):.3e}   distinct eigenvalues = "
+          f"{len(np.unique(np.round(ev, 9)))}   cut-dependence max_j||R(gamma_j)-R(gamma_0)||:"
+          f"  punctured {max(np.linalg.norm(x.RE0_all[j]-x.RE0_all[0]) for j in range(m)):.3e}"
+          f"   capped {max(np.linalg.norm(x.RE1_all[j]-x.RE1_all[0]) for j in range(m)):.3e}")
 
 # ==================================================================================
 # STEP 4  --  REPRODUCE THE STATIC NO-GO INSIDE THIS SCRIPT
 # ==================================================================================
-print("\n[STEP 4] STATIC NO-GO CONTROLS  (if these do not reproduce, nothing below means anything)\n")
+print("\n[STEP 4] STATIC NO-GO CONTROLS  (if these do not reproduce, nothing below means anything)")
 
-# --- 4a: literal W-30 replica on the 3x3 patch -------------------------------------
 def mv_p(cyc):
     M = np.zeros((Dp, Dp), complex)
     for j, s in enumerate(Sp):
@@ -386,308 +443,266 @@ for q in PLQ:
         acc[k] = acc.get(k, 0) + 1
 Rrim = mv_p([k for k, v in acc.items() if v % 2])
 rng = np.random.default_rng(20260817)
-Hp = -sum(L + L.conj().T for L in Pl) - 1.0 * sum(2 * np.diag(zdiag(Sp, k)) for k in range(len(Ep)))
-worst_u = 0.0
-for _ in range(20):
-    A = rng.normal(size=(Dp, Dp)) + 1j * rng.normal(size=(Dp, Dp))
-    rr = A @ A.conj().T
-    rr = rr / np.trace(rr).real
-    d = -1j * (Hp @ rr - rr @ Hp) + sum(L @ rr @ L.conj().T - rr for L in Pl)
-    worst_u = max(worst_u, abs(np.trace(Rrim @ d)))
-print(f"  4a  W-30 REPLICA, 3x3 patch dim {Dp}, R = product of the 4 plaquettes (discrete Stokes):")
+
+def rand_rho(n):
+    A = rng.normal(size=(n, n)) + 1j * rng.normal(size=(n, n))
+    r = A @ A.conj().T
+    return r / np.trace(r).real
+
+def parts(R, H, Ls, n, ntr=20):
+    """returns (max |Tr(R * dissipator)| , max |Tr(R * full drho/dt)|) over random rho"""
+    wd = wf = 0.0
+    for _ in range(ntr):
+        r = rand_rho(n)
+        dd = sum(L @ r @ L.conj().T - 0.5 * (L.conj().T @ L @ r + r @ L.conj().T @ L) for L in Ls)
+        df = -1j * (H @ r - r @ H) + dd
+        wd = max(wd, abs(np.trace(R @ dd)))
+        wf = max(wf, abs(np.trace(R @ df)))
+    return wd, wf
+
+print("\n  4a  W-30 REPLICA on the 3x3 patch, R = product of the 4 plaquettes (discrete Stokes),")
+print("      jumps = the 4 plaquettes (unitary).  W-30 measured: at g^2 = 0 the record is frozen.")
 print(f"      ||R|| = {np.linalg.norm(Rrim):.4f}   unitarity defect = "
-      f"{np.linalg.norm(Rrim@Rrim.conj().T-np.eye(Dp)):.3e}   distinct eigenvalues = "
-      f"{len(np.unique(np.round(np.linalg.eigvals(Rrim),9)))}")
-print(f"      ||[H,R]|| = {np.linalg.norm(Hp@Rrim-Rrim@Hp):.3e}   "
-      f"max||[L,R]|| = {max(np.linalg.norm(L@Rrim-Rrim@L) for L in Pl):.3e}   "
-      f"max |d<R>/dt| over 20 random rho = {worst_u:.3e}")
+      f"{np.linalg.norm(Rrim @ Rrim.conj().T - np.eye(Dp)):.3e}   distinct eigenvalues = "
+      f"{len(np.unique(np.round(np.linalg.eigvals(Rrim), 9)))}")
+for g2 in (0.0, 1.0):
+    Hq = -sum(L + L.conj().T for L in Pl) - g2 * sum(2 * np.diag(zdiag(Sp, k)) for k in range(len(Ep)))
+    wd, wf = parts(Rrim, Hq, Pl, Dp)
+    print(f"      g^2={g2:4.1f}  ||[H,R]|| = {np.linalg.norm(Hq @ Rrim - Rrim @ Hq):9.3e}   "
+          f"max||[L,R]|| = {max(np.linalg.norm(L @ Rrim - Rrim @ L) for L in Pl):.3e}   "
+          f"max|Tr(R D[rho])| = {wd:.3e}   max|d<R>/dt| = {wf:.3e}")
 
-# --- 4b: the tautology graft -- non-unitary L too -----------------------------------
+print("\n  4b  TAUTOLOGY GRAFT: the no-go never needed unitary jumps.  [L,R]=0 with R unitary")
+print("      gives [L^dag,R]=0 and Tr(R D[rho]) = 0 term by term, for ANY L.  Measured:")
 Bc = rng.normal(size=(Dp, Dp)) + 1j * rng.normal(size=(Dp, Dp))
-Pplus_p = (np.eye(Dp) + Rrim) / 2.0
-Pminus_p = (np.eye(Dp) - Rrim) / 2.0
-Lcom = Pplus_p @ Bc @ Pplus_p + Pminus_p @ Bc @ Pminus_p       # commutes with Rrim, NOT unitary
-Lnon = Pplus_p @ Bc @ Pminus_p                                  # does not commute
-def dR(L, R, H):
-    w = 0.0
-    for _ in range(10):
-        A = rng.normal(size=(Dp, Dp)) + 1j * rng.normal(size=(Dp, Dp))
-        rr = A @ A.conj().T
-        rr = rr / np.trace(rr).real
-        d = -1j * (H @ rr - rr @ H) + (L @ rr @ L.conj().T
-                                       - 0.5 * (L.conj().T @ L @ rr + rr @ L.conj().T @ L))
-        w = max(w, abs(np.trace(R @ d)))
-    return w
-print(f"  4b  TAUTOLOGY GRAFT (the no-go does not need unitary jumps):")
-print(f"      L non-unitary, [L,R]=0 : ||L L^dag - I|| = "
-      f"{np.linalg.norm(Lcom@Lcom.conj().T-np.eye(Dp)):.3e}   ||[L,R]|| = "
-      f"{np.linalg.norm(Lcom@Rrim-Rrim@Lcom):.3e}   max|d<R>/dt| = {dR(Lcom,Rrim,Hp):.3e}")
-print(f"      L non-unitary, [L,R]!=0: ||[L,R]|| = "
-      f"{np.linalg.norm(Lnon@Rrim-Rrim@Lnon):.3e}   max|d<R>/dt| = {dR(Lnon,Rrim,Hp):.3e}")
+Ppp = (np.eye(Dp) + Rrim) / 2.0
+Pmm = (np.eye(Dp) - Rrim) / 2.0
+Hq0 = -sum(L + L.conj().T for L in Pl)
+for lab, L in (("unitary plaquette", Pl[0]),
+               ("NON-unitary, [L,R]=0", Ppp @ Bc @ Ppp + Pmm @ Bc @ Pmm),
+               ("NON-unitary, [L,R]!=0", Ppp @ Bc @ Pmm)):
+    wd, _ = parts(Rrim, Hq0, [L], Dp)
+    print(f"      {lab:24s}  ||L L^dag - I|| = "
+          f"{np.linalg.norm(L @ L.conj().T - np.eye(Dp)):9.3e}   ||[L,R]|| = "
+          f"{np.linalg.norm(L @ Rrim - Rrim @ L):9.3e}   max|Tr(R D[rho])| = {wd:.3e}")
 
-# --- 4c/4d/4e: the same disease inside this construction ----------------------------
-print(f"  4c  ELITZUR / STOKES CONTRAST inside this construction "
-      f"(is the record a GENERATOR or a HOLONOMY?):")
+print("\n  4c  ELITZUR / STOKES CONTRAST inside this construction: is the record a GENERATOR of")
+print("      the local plaquette algebra (then conserved, hence unwritable) or a HOLONOMY?")
 for m in (2, 3, 4):
     x = MD[m]
     pr = np.eye(x.D1, dtype=complex)
     for M in x.Mq1 + x.Mt1:
         pr = pr @ M
-    out1 = move(x.S1, x.i1, [x.c(i) for i in range(m)])
     pr0 = np.eye(x.D0, dtype=complex)
     for M in x.Mq0:
         pr0 = pr0 @ M
+    out1 = move(x.S1, x.i1, [x.c(i) for i in range(m)])
     out0 = move(x.S0, x.i0, [x.c(i) for i in range(m)])
-    print(f"      m={m}  ||prod(all plaquettes) - M_outer||   capped(DISK) = "
-          f"{np.linalg.norm(pr-out1):.3e}    punctured(ANNULUS) = {np.linalg.norm(pr0-out0):.3e}")
+    print(f"      m={m}  ||prod(all plaquettes) - M_outer||    capped (DISK) = "
+          f"{np.linalg.norm(pr - out1):.3e}    punctured (ANNULUS) = {np.linalg.norm(pr0 - out0):.3e}")
 
-print(f"  4d  COMMUTATORS OF R_E WITH THE FULL GENERATOR (g^2=0.7, kappa=1):")
+print("\n  4d  COMMUTATORS OF R_E WITH THE FULL GENERATOR (g^2 = 0.7, kappa = 1):")
 for m in (2, 3, 4):
     x = MD[m]
     H1, H0 = x.Hfib(0.7)
     R1 = np.diag(x.RE1_all[0]).astype(complex)
     R0 = np.diag(x.RE0_all[0]).astype(complex)
-    cL = 0.0
-    for L in x.elec(0.5) + x.junction("A", 0.8):
-        cL = max(cL, np.linalg.norm(x.RE @ L - L @ x.RE))
-    print(f"      m={m}  ||[R_E,H_capped]|| = {np.linalg.norm(R1@H1-H1@R1):9.4f}   "
-          f"||[R_E,H_punctured]|| = {np.linalg.norm(R0@H0-H0@R0):.3e}   "
-          f"max||[R_E,L_k]|| over ALL jumps (junction A) = {cL:.3e}")
+    cA = max(np.linalg.norm(x.RE @ L - L @ x.RE)
+             for L in x.elec(0.5) + x.junction("A", 0.8) + x.junction("B", 0.8))
+    cC = max(np.linalg.norm(x.RE @ L - L @ x.RE) for L in x.junction("C", 0.8))
+    print(f"      m={m}  ||[R_E,H_capped]|| = {np.linalg.norm(R1 @ H1 - H1 @ R1):9.4f}   "
+          f"||[R_E,H_punctured]|| = {np.linalg.norm(R0 @ H0 - H0 @ R0):.3e}   "
+          f"max||[R_E,L]|| junctions A,B + electric = {cA:.3e}   junction C = {cC:.3e}")
 
-print(f"  4e  CARRIER RESPONSE OFF (Gamma_d=0, lambda=0).  START PUNCTURED: the carrier is now")
-print(f"      static and R_E is a conserved charge -- d<R_E>/dt must be 0 to machine precision.")
-D = md.D
+print("\n  4e  CARRIER RESPONSE OFF (Gamma_d = 0, lambda = 0).")
+print("      START PUNCTURED -- the carrier is static and R_E is then a conserved charge, so")
+print("      d<R_E>/dt must be 0 to machine precision:")
 ts = np.linspace(0, 40, 41)
 vpun = np.zeros(D, complex)
 vpun[md.D1:] = rng.normal(size=md.D0) + 1j * rng.normal(size=md.D0)
 r_pun = rho_of(vpun)
 for g2 in (0.0, 0.7, 3.0):
-    H = md.H(g2)
-    tr = evolve_exact(H, md.elec(0.5), r_pun, ts, D)
-    o0, o1 = obs(md, tr[0]), obs(md, tr[-1])
-    print(f"        g^2={g2:4.1f}  p+(0) = {o0[0]:.12f}   p+(40) = {o1[0]:.12f}   "
-          f"|delta| = {abs(o1[0]-o0[0]):.3e}   <R_E>(40) = {o1[3]:+.12f}")
-print(f"      START CAPPED (carrier still frozen): the writer never stops, so nothing freezes.")
-zero = tuple([0] * (4 * md.m))
-inner = tuple([1 if k < md.m else 0 for k in range(4 * md.m)])
-q0 = [0] * (4 * md.m)
-for k in md.quad(0):
-    q0[k] ^= 1
-q0 = tuple(q0)
-q0a = list(q0)
-for k in range(md.m):
-    q0a[k] ^= 1
-q0a = tuple(q0a)
-q1 = [0] * (4 * md.m)
-for k in md.quad(1 % md.m):
-    q1[k] ^= 1
-q1 = tuple(q1)
-q1a = list(q1)
-for k in range(md.m):
-    q1a[k] ^= 1
-q1a = tuple(q1a)
-
-def ketc(s):
-    v = np.zeros(D, complex)
-    v[md.i1[s]] = 1.0
-    return v
-
-psi = {
-    "A": (ketc(zero) + ketc(inner)) / np.sqrt(2),
-    "B": (ketc(q0) + ketc(q0a)) / np.sqrt(2),
-    "D": (ketc(q1) + ketc(q1a)) / np.sqrt(2),
-}
-vC = np.zeros(D, complex)
-vC[:md.D1] = rng.normal(size=md.D1) + 1j * rng.normal(size=md.D1)
-psi["C"] = vC / np.linalg.norm(vC)
-# an initial state deliberately biased, to see whether bias survives with the carrier frozen
-vE = np.zeros(D, complex)
-vE[:md.D1] = rng.normal(size=md.D1) + 1j * rng.normal(size=md.D1)
-vE = md.Pp @ vE + 0.4 * (md.Pm @ vE)
-psi["E"] = vE / np.linalg.norm(vE)
-
+    o = [obs(md, r) for r in evolve_exact(md.H(g2), md.elec(0.5), r_pun, ts, D, ("off", g2))]
+    print(f"        g^2={g2:4.1f}  p+(0) = {o[0][0]:.12f}   p+(40) = {o[-1][0]:.12f}   |delta| = "
+          f"{abs(o[-1][0]-o[0][0]):.3e}   <R_E>(40) = {o[-1][3]:+.12f}")
+ST = md.starts()
 H07 = md.H(0.7)
-for nm in ("A", "B", "C", "E"):
-    tr = evolve_exact(H07, md.elec(0.5), rho_of(psi[nm]), ts, D)
-    o = [obs(md, r) for r in tr]
-    late = np.mean([o[k][0] for k in range(30, 41)])
+print("      START CAPPED, carrier still frozen -- the writer never stops, so nothing freezes:")
+for nm in UNB + BIA:
+    o = [obs(md, r) for r in evolve_exact(H07, md.elec(0.5), rho_of(ST[nm]), ts, D, ("offc",))]
     print(f"        init {nm}: p+(0) = {o[0][0]:.6f}   p+(40) = {o[-1][0]:.6f}   "
-          f"late-avg p+[30,40] = {late:.6f}   drift[30,40] = {abs(o[-1][0]-o[-11][0]):.3e}   "
+          f"late-avg p+[30,40] = {late(o):.6f}   drift[30,40] = {abs(o[-1][0]-o[-11][0]):.3e}   "
           f"p_cap(40) = {o[-1][2]:.3e}")
 
 # ==================================================================================
 # STEP 5  --  CARRIER RESPONSE ON
 # ==================================================================================
-print("\n[STEP 5] CARRIER RESPONSE ON  (junction A, no-hair gate, Gamma_d=0.8, gamma_E=0.5,"
+print("\n[STEP 5] CARRIER RESPONSE ON  (junction A, no-hair gate; Gamma_d=0.8, gamma_E=0.5,"
       " g^2=0.7)\n")
 print("  DECOY WARNING, adopted in advance from Proposal 3: for a pure state")
-print("  ||P+ psi psi^dag P-||_1 = (1/2) sqrt(1 - <R>^2), so the coherence column CANNOT by itself")
-print("  witness selection -- phase randomisation drives it to zero with no weight transfer.")
-print("  The coherence column below is a consistency check only.  The evidence is p_+ and its")
-print("  dependence on the initial state.\n")
+print("  ||P+ psi psi^dag P-||_1 = (1/2) sqrt(1 - <R>^2), so the coherence column CANNOT by")
+print("  itself witness selection -- phase randomisation drives it to zero with no weight")
+print("  transfer at all.  It is printed as a CONSISTENCY CHECK only.  The evidence is p_+ and")
+print("  its dependence on the initial state.\n")
 Ls_on = md.elec(0.5) + md.junction("A", 0.8)
-print(f"  {'init':>5s} {'p+(0)':>10s} {'<R_E>(0)':>10s} {'p+(2)':>10s} {'p+(5)':>10s} "
-      f"{'p+(10)':>10s} {'p+(20)':>10s} {'p+(40)':>10s} {'late-avg':>10s} {'drift':>10s} "
+print(f"  {'init':>5s} {'p+(0)':>9s} {'<R>(0)':>9s} {'p+(1)':>9s} {'p+(2)':>9s} {'p+(5)':>9s} "
+      f"{'p+(10)':>9s} {'p+(40)':>9s} {'lateavg':>9s} {'<R>late':>9s} {'drift':>9s} "
       f"{'coh(40)':>9s} {'pcap(40)':>9s}")
-print("  " + "-" * 128)
+print("  " + "-" * 133)
 p_on = {}
-for nm in ("A", "B", "D", "C", "E"):
-    tr = evolve_exact(H07, Ls_on, rho_of(psi[nm]), ts, D)
-    o = [obs(md, r) for r in tr]
-    late = np.mean([o[k][0] for k in range(30, 41)])
-    p_on[nm] = late
-    print(f"  {nm:>5s} {o[0][0]:10.6f} {o[0][3]:+10.6f} {o[2][0]:10.6f} {o[5][0]:10.6f} "
-          f"{o[10][0]:10.6f} {o[20][0]:10.6f} {o[40][0]:10.6f} {late:10.6f} "
-          f"{abs(o[-1][0]-o[-11][0]):10.3e} {o[-1][1]:9.2e} {o[-1][2]:9.2e}")
-print(f"\n  <R_E>(t) for init A: " +
-      "  ".join(f"t={ts[k]:.0f}:{obs(md, evolve_exact(H07, Ls_on, rho_of(psi['A']), ts, D)[k])[3]:+.6f}"
-               for k in (0, 1, 2, 5, 10, 20, 40)))
-print(f"  SPREAD over the three UNBIASED starts (p+(0)=1/2 exactly): "
-      f"max-min over A,B,D = {max(p_on[k] for k in 'ABD')-min(p_on[k] for k in 'ABD'):.6f}")
-print(f"  SPREAD including the two BIASED starts C,E (p+(0) = "
-      f"{obs(md, rho_of(psi['C']))[0]:.4f}, {obs(md, rho_of(psi['E']))[0]:.4f}): "
-      f"max-min over A,B,D,C,E = "
-      f"{max(p_on[k] for k in 'ABDCE')-min(p_on[k] for k in 'ABDCE'):.6f}")
+for nm in UNB + BIA:
+    o = [obs(md, r) for r in evolve_exact(H07, Ls_on, rho_of(ST[nm]), ts, D, ("on", 0.7, "A", 0.8))]
+    p_on[nm] = late(o)
+    print(f"  {nm:>5s} {o[0][0]:9.6f} {o[0][3]:+9.6f} {o[1][0]:9.6f} {o[2][0]:9.6f} "
+          f"{o[5][0]:9.6f} {o[10][0]:9.6f} {o[40][0]:9.6f} {late(o):9.6f} "
+          f"{late(o,i=3):+9.6f} {abs(o[-1][0]-o[-11][0]):9.3e} {o[-1][1]:9.2e} {o[-1][2]:9.2e}")
+o = [obs(md, r) for r in evolve_exact(H07, Ls_on, rho_of(ST["A"]), ts, D, ("on", 0.7, "A", 0.8))]
+print("\n  <R_E>(t), init A:  " + "   ".join(f"t={ts[k]:.0f}: {o[k][3]:+.6f}"
+                                             for k in (0, 1, 2, 3, 5, 10, 20, 40)))
+sp_unb = max(p_on[k] for k in UNB) - min(p_on[k] for k in UNB)
+sp_all = max(p_on.values()) - min(p_on.values())
+print(f"  SPREAD over the five UNBIASED starts (p+(0) = 1/2 exactly): max-min = {sp_unb:.6f}")
+print(f"  max-min including the two BIASED starts C,E (p+(0) = "
+      f"{obs(md, rho_of(ST['C']))[0]:.4f}, {obs(md, rho_of(ST['E']))[0]:.4f}): {sp_all:.6f}")
 
 # ==================================================================================
-# STEP 6  --  LINDBLADIAN SPECTRUM: LIFETIME, NOT A PLATEAU
+# STEP 6  --  LINDBLADIAN SPECTRUM
 # ==================================================================================
-print("\n[STEP 6] LINDBLADIAN SPECTRUM  (adopted from Proposal 2: report a lifetime, not a drift)\n")
-for nm in ("A", "B", "C"):
-    Ls = md.elec(0.5) + md.junction(nm, 0.8)
-    Lsup = superop(H07, Ls, D)
-    w, Vv = np.linalg.eig(Lsup)
-    nk = int(np.sum(np.abs(w) < 1e-8))
+print("\n[STEP 6] LINDBLADIAN SPECTRUM  (adopted from Proposal 2: report structure, not a drift)")
+print("  dim ker(L) > 1 means a multi-dimensional steady-state manifold.  What decides whether")
+print("  the extra steady direction CARRIES the record is its overlap with R_E.\n")
+for jn in ("A", "B", "C"):
+    Ls = md.elec(0.5) + md.junction(jn, 0.8)
+    w, Vv = np.linalg.eig(superop(H07, Ls, D))
+    ker = [k for k in range(len(w)) if abs(w[k]) < 1e-8]
+    print(f"  junction {jn:2s}:  dim ker(Lindbladian) = {len(ker)}")
+    for k in ker:
+        Vk = Vv[:, k].reshape(D, D)
+        nv = np.linalg.norm(Vk)
+        print(f"      kernel direction: |tr(V)|/||V|| = {abs(np.trace(Vk))/nv:.6f}   "
+              f"|tr(R_E V)|/||V|| = {abs(np.trace(md.RE @ Vk))/nv:.6f}")
     ov = []
     for k in range(len(w)):
         Vk = Vv[:, k].reshape(D, D)
         nv = np.linalg.norm(Vk)
-        if nv < 1e-12:
-            continue
-        o = abs(np.trace(md.RE @ Vk)) / nv
-        if o > 1e-6 and w[k].real < -1e-9:
-            ov.append((w[k].real, o))
+        if nv > 1e-12 and w[k].real < -1e-9:
+            o2 = abs(np.trace(md.RE @ Vk)) / nv
+            if o2 > 1e-6:
+                ov.append((w[k].real, o2))
     ov.sort(key=lambda t: -t[0])
-    slow = ov[0][0] if ov else None
-    print(f"  junction {nm:2s}: dim ker(Lindbladian) = {nk:3d}  (>1 means a multi-dimensional"
-          f" steady-state manifold: information is retained)")
-    if slow is None:
-        print(f"              NO decaying mode has nonzero overlap with R_E  -> tau_erase = infinite"
-              f" within numerical resolution")
+    if ov:
+        print(f"      slowest DECAYING mode with nonzero R_E overlap: Re(lambda) = {ov[0][0]:.4e}"
+              f"  -> time constant {-1.0/ov[0][0]:.4e}   (this is the WRITE/settling transient;"
+              f" erasure would instead show as zero R_E overlap in the kernel)")
+        print(f"      next three: " + ", ".join(f"{r:.3e}" for r, _ in ov[1:4]))
     else:
-        print(f"              slowest decaying mode with nonzero R_E overlap: Re(lambda) = {slow:.3e}"
-              f"  -> tau_erase = {-1.0/slow:.3e}")
-        print(f"              next three: " + ", ".join(f"{r:.3e}" for r, _ in ov[1:4]))
+        print(f"      no decaying mode carries R_E overlap")
 
 # ==================================================================================
-# STEP 7  --  THE JUNCTION CONTROLS (the load-bearing choice, run not admired)
-#             and the NULL CONTROLS
+# STEP 7  --  JUNCTION CONTROLS AND NULLS
 # ==================================================================================
-print("\n[STEP 7] JUNCTION CONTROLS AND NULLS  (g^2=0.7, gamma_E=0.5, Gamma_d=0.8)\n")
-print(f"  {'junction':>9s} {'#jumps':>7s} {'init':>5s} {'p+(0)':>9s} {'late-avg p+':>12s} "
-      f"{'drift':>10s} {'<R_E>late':>11s} {'pcap(40)':>9s}")
-print("  " + "-" * 90)
-junc_res = {}
+print("\n[STEP 7] JUNCTION CONTROLS AND NULL CONTROLS  (g^2=0.7, gamma_E=0.5, Gamma_d=0.8)\n")
+print("  DECLARED PREDICTIONS, made before this table was run:")
+print("    A  no-hair, field-GATED     -> record forms (spread > 0)")
+print("    B  blind/drag, branch T0=0  -> if the spread SURVIVES, the field-gating is DECORATION")
+print("    Bp blind/drag, branch T0=1  -> mirrored record (same magnitude, opposite sign)")
+print("    C  symmetrised over the two branches -> R_E randomised, spread -> 0\n")
+print(f"  {'junction':>9s} {'#jumps':>7s} {'init':>5s} {'p+(0)':>9s} {'late p+':>10s} "
+      f"{'<R_E>late':>11s} {'drift':>10s} {'pcap(40)':>9s}")
+print("  " + "-" * 78)
+jres = {}
 for jn in ("A", "B", "Bp", "C"):
     Ls = md.elec(0.5) + md.junction(jn, 0.8)
-    for nm in ("A", "B", "D"):
-        tr = evolve_exact(H07, Ls, rho_of(psi[nm]), ts, D)
-        o = [obs(md, r) for r in tr]
-        late = np.mean([o[k][0] for k in range(30, 41)])
-        lateR = np.mean([o[k][3] for k in range(30, 41)])
-        junc_res[(jn, nm)] = late
-        print(f"  {jn:>9s} {len(Ls):7d} {nm:>5s} {o[0][0]:9.6f} {late:12.6f} "
-              f"{abs(o[-1][0]-o[-11][0]):10.3e} {lateR:+11.6f} {o[-1][2]:9.2e}")
-    sp = max(junc_res[(jn, k)] for k in "ABD") - min(junc_res[(jn, k)] for k in "ABD")
-    print(f"  {'':>9s} {'':>7s} SPREAD over unbiased starts A,B,D = {sp:.6f}")
-print("\n  DECLARED PREDICTIONS FOR THIS TABLE, made before it was run:")
-print("    A  no-hair gate           -> record forms (spread > 0)")
-print("    B  blind/drag, branch T0=0 -> if the spread survives, the field-gating is DECORATION")
-print("    Bp blind/drag, branch T0=1 -> mirrored record")
-print("    C  symmetrised             -> R_E randomised at every topology change, spread -> 0")
+    for nm in UNB:
+        o = [obs(md, r) for r in evolve_exact(H07, Ls, rho_of(ST[nm]), ts, D, ("j", jn))]
+        jres[(jn, nm)] = late(o)
+        print(f"  {jn:>9s} {len(Ls):7d} {nm:>5s} {o[0][0]:9.6f} {late(o):10.6f} "
+              f"{late(o,i=3):+11.6f} {abs(o[-1][0]-o[-11][0]):10.3e} {o[-1][2]:9.2e}")
+    sp = max(jres[(jn, k)] for k in UNB) - min(jres[(jn, k)] for k in UNB)
+    print(f"  {'':>9s} {'':>7s} SPREAD over the five unbiased starts = {sp:.6f}")
 
 print("\n  NULL CONTROL N1 -- start ALREADY punctured, full bath, long time.  Must be exactly flat.")
 for T in (40.0, 200.0):
     tsl = np.linspace(0, T, 5)
-    tr = evolve_exact(md.H(3.0), md.elec(0.5) + md.junction("A", 0.8), r_pun, tsl, D)
-    o0, o1 = obs(md, tr[0]), obs(md, tr[-1])
-    print(f"      t=0 p+ = {o0[0]:.12f}   t={T:.0f} p+ = {o1[0]:.12f}   |delta| = "
-          f"{abs(o1[0]-o0[0]):.3e}")
+    o = [obs(md, r) for r in evolve_exact(md.H(3.0), md.elec(0.5) + md.junction("A", 0.8),
+                                          r_pun, tsl, D, ("N1", T))]
+    print(f"      t=0  p+ = {o[0][0]:.12f}    t={T:.0f}  p+ = {o[-1][0]:.12f}    |delta| = "
+          f"{abs(o[-1][0]-o[0][0]):.3e}")
 
-print("\n  NULL CONTROL N2 -- kill the record operator's writer (kappa=0): nothing should ever")
-print("      be written, so every initial state must freeze at its own starting value.")
+print("\n  NULL CONTROL N2 -- remove the WRITER (kappa = 0, no cap triangles in H).  Then nothing")
+print("      can ever be written and every start must stay at its own initial value.")
 Hk0 = md.H(0.7, kap=0.0)
-for nm in ("A", "B", "D"):
-    tr = evolve_exact(Hk0, Ls_on, rho_of(psi[nm]), ts, D)
-    o = [obs(md, r) for r in tr]
+print(f"      ||[R_E,H_capped]|| at kappa=0 = "
+      f"{np.linalg.norm(np.diag(md.RE1_all[0]).astype(complex) @ Hk0[:md.D1,:md.D1] - Hk0[:md.D1,:md.D1] @ np.diag(md.RE1_all[0]).astype(complex)):.3e}")
+for nm in UNB + BIA:
+    o = [obs(md, r) for r in evolve_exact(Hk0, Ls_on, rho_of(ST[nm]), ts, D, ("N2",))]
     print(f"      init {nm}: p+(0) = {o[0][0]:.9f}   p+(40) = {o[-1][0]:.9f}   |delta| = "
           f"{abs(o[-1][0]-o[0][0]):.3e}")
 
-print("\n  NULL CONTROL N3 -- p_cap(t) is NOT evidence.  Reported here so it is never quoted:")
+print("\n  NULL CONTROL N3 -- p_cap(t) must never be quoted as evidence.  Printed so it cannot be:")
 for g2 in (0.0, 0.7, 3.0):
-    tr = evolve_exact(md.H(g2), md.elec(0.5) + md.junction("A", 0.8), rho_of(psi["A"]), ts, D)
-    trB = evolve_exact(md.H(g2), md.elec(0.5) + md.junction("B", 0.8), rho_of(psi["A"]), ts, D)
-    print(f"      g^2={g2:4.1f}  p_cap(10) gate A = {obs(md,tr[10])[2]:.6e}   gate B (blind) = "
-          f"{obs(md,trB[10])[2]:.6e}")
+    a10 = obs(md, evolve_exact(md.H(g2), md.elec(0.5) + md.junction("A", 0.8),
+                               rho_of(ST["A"]), ts, D, ("N3a", g2))[10])[2]
+    b10 = obs(md, evolve_exact(md.H(g2), md.elec(0.5) + md.junction("B", 0.8),
+                               rho_of(ST["A"]), ts, D, ("N3b", g2))[10])[2]
+    print(f"      g^2={g2:4.1f}  p_cap(10) with the field-gated junction A = {a10:.6e}   "
+          f"with the blind junction B = {b10:.6e}")
 
 # ==================================================================================
 # STEP 8  --  SCAN THE RESPONSE STRENGTH, INCLUDING EXACTLY ZERO
 # ==================================================================================
-print("\n[STEP 8] SCAN OF THE CARRIER RESPONSE STRENGTH Gamma_d  (g^2=0.7, gamma_E=0.5)\n")
-print(f"  {'Gamma_d':>8s} {'junc':>5s} {'late p+ (A)':>12s} {'late p+ (B)':>12s} "
-      f"{'late p+ (D)':>12s} {'SPREAD':>9s} {'drift(A)':>10s} {'pcap(40)':>9s}")
-print("  " + "-" * 86)
+print("\n[STEP 8] SCAN OF THE CARRIER RESPONSE STRENGTH Gamma_d  (g^2=0.7, gamma_E=0.5).")
+print("  Gamma_d = 0 is the static carrier: the W-30 situation reproduced inside this design.\n")
+print(f"  {'Gamma_d':>8s} {'junc':>5s} " + " ".join(f"{'p+('+k+')':>10s}" for k in UNB) +
+      f" {'SPREAD':>9s} {'drift(A)':>10s} {'pcap(40)':>10s}")
+print("  " + "-" * 104)
 for jn in ("A", "B", "C"):
     for Gd in (0.0, 0.05, 0.2, 0.8, 3.2):
         Ls = md.elec(0.5) + md.junction(jn, Gd)
-        vals = {}
-        dr = 0.0
-        pc = 0.0
-        for nm in ("A", "B", "D"):
-            tr = evolve_exact(H07, Ls, rho_of(psi[nm]), ts, D)
-            o = [obs(md, r) for r in tr]
-            vals[nm] = np.mean([o[k][0] for k in range(30, 41)])
+        vals, dr, pc = {}, 0.0, 0.0
+        for nm in UNB:
+            o = [obs(md, r) for r in evolve_exact(H07, Ls, rho_of(ST[nm]), ts, D, ("S8", jn, Gd))]
+            vals[nm] = late(o)
             if nm == "A":
-                dr = abs(o[-1][0] - o[-11][0])
-                pc = o[-1][2]
-        sp = max(vals.values()) - min(vals.values())
-        print(f"  {Gd:8.2f} {jn:>5s} {vals['A']:12.6f} {vals['B']:12.6f} {vals['D']:12.6f} "
-              f"{sp:9.6f} {dr:10.3e} {pc:9.2e}")
+                dr, pc = abs(o[-1][0] - o[-11][0]), o[-1][2]
+        print(f"  {Gd:8.2f} {jn:>5s} " + " ".join(f"{vals[k]:10.6f}" for k in UNB) +
+              f" {max(vals.values())-min(vals.values()):9.6f} {dr:10.3e} {pc:10.2e}")
 
 # ==================================================================================
-# STEP 9  --  THE ALPHA AXIS: g^2 SCAN, BOTH SPREAD METRICS
+# STEP 9  --  THE ALPHA AXIS
 # ==================================================================================
-print("\n[STEP 9] g^2 SCAN  (junction A, Gamma_d=0.8, gamma_E=0.5).  BOTH metrics are printed:")
-print("  the spread over UNBIASED starts (the honest one) and the max-min including the two")
-print("  BIASED starts C,E -- because a biased start that is never written simply retains its")
-print("  bias, which inflates max-min at large g^2 exactly where nothing is being written.\n")
-print(f"  {'g^2':>7s} {'||[R,Hcap]||':>13s} {'p+(A)':>10s} {'p+(B)':>10s} {'p+(D)':>10s} "
-      f"{'p+(C)':>10s} {'p+(E)':>10s} {'SPREAD(ABD)':>12s} {'maxmin(ABDCE)':>14s}")
-print("  " + "-" * 106)
-H1r = np.diag(md.RE1_all[0]).astype(complex)
+print("\n[STEP 9] g^2 SCAN  (junction A, Gamma_d=0.8, gamma_E=0.5).  BOTH metrics are printed.")
+print("  The honest metric is the spread over UNBIASED starts.  The max-min INCLUDING the two")
+print("  biased starts C,E is also printed because it is the metric a hostile reader would")
+print("  reach for, and a biased start that is never written simply retains its bias -- which")
+print("  inflates that column at large g^2 exactly where nothing is being written.\n")
+print(f"  {'g^2':>7s} {'||[R,Hcap]||':>12s} " + " ".join(f"{'p+('+k+')':>9s}" for k in UNB) +
+      f" {'p+(C)':>9s} {'p+(E)':>9s} {'SPREAD(unb)':>12s} {'maxmin(all)':>12s}")
+print("  " + "-" * 124)
+R1d = np.diag(md.RE1_all[0]).astype(complex)
 for g2 in (0.0, 0.1, 0.3, 0.7, 1.0, 1.5, 3.0, 8.0, 20.0):
     Hg = md.H(g2)
     Hc = Hg[:md.D1, :md.D1]
-    cw = np.linalg.norm(H1r @ Hc - Hc @ H1r)
     Ls = md.elec(0.5) + md.junction("A", 0.8)
     vals = {}
-    for nm in ("A", "B", "D", "C", "E"):
-        tr = evolve_exact(Hg, Ls, rho_of(psi[nm]), ts, D)
-        o = [obs(md, r) for r in tr]
-        vals[nm] = np.mean([o[k][0] for k in range(30, 41)])
-    s3 = max(vals[k] for k in "ABD") - min(vals[k] for k in "ABD")
-    s5 = max(vals.values()) - min(vals.values())
-    print(f"  {g2:7.2f} {cw:13.4f} {vals['A']:10.6f} {vals['B']:10.6f} {vals['D']:10.6f} "
-          f"{vals['C']:10.6f} {vals['E']:10.6f} {s3:12.6f} {s5:14.6f}")
+    for nm in UNB + BIA:
+        o = [obs(md, r) for r in evolve_exact(Hg, Ls, rho_of(ST[nm]), ts, D, ("S9", g2))]
+        vals[nm] = late(o)
+    su = max(vals[k] for k in UNB) - min(vals[k] for k in UNB)
+    sa = max(vals.values()) - min(vals.values())
+    print(f"  {g2:7.2f} {np.linalg.norm(R1d @ Hc - Hc @ R1d):12.4f} " +
+          " ".join(f"{vals[k]:9.6f}" for k in UNB) +
+          f" {vals['C']:9.6f} {vals['E']:9.6f} {su:12.6f} {sa:12.6f}")
 
 # ==================================================================================
-# STEP 10 --  UNRAVELLING: IS THE FROZEN VALUE PER-BRANCH DEFINITE?
+# STEP 10 --  UNRAVELLING
 # ==================================================================================
-print("\n[STEP 10] TRAJECTORY UNRAVELLING  (adopted from Proposal 3).  The ensemble coherence")
-print("  going to zero is compatible with nothing having been selected.  The per-branch witness")
-print("  is E[<R_E>^2] over trajectories and the fraction of trajectories with |<R_E>| > 0.99.\n")
+print("\n[STEP 10] TRAJECTORY UNRAVELLING  (adopted from Proposal 3).  Ensemble coherence going")
+print("  to zero is compatible with nothing having been selected.  The per-branch witness is")
+print("  E[<R_E>^2] over trajectories and the fraction of trajectories with |<R_E>| > 0.99.")
+print("  For the initial states used here <R_E>(0) = 0, so E[<R_E>^2](0) = 0 exactly.\n")
 
-def unravel(H, Ls, psi0, T, dt, ntraj, seed):
+def unravel(H, Ls, psi0, T, dt, ntraj, seed, RE):
     r = np.random.default_rng(seed)
     Heff = H - 0.5j * sum(L.conj().T @ L for L in Ls)
     U = expm(-1j * Heff * dt)
@@ -710,25 +725,30 @@ def unravel(H, Ls, psi0, T, dt, ntraj, seed):
                 v = cand[k] / np.linalg.norm(cand[k])
             else:
                 v = w / np.sqrt(nn)
-        vals.append(float(np.real(np.vdot(v, md.RE @ v))))
+        vals.append(float(np.real(np.vdot(v, RE @ v))))
     return np.array(vals)
 
-for jn in ("A", "C"):
+NTR = 160
+for jn in ("A", "B", "C"):
     Ls = md.elec(0.5) + md.junction(jn, 0.8)
-    vv = unravel(H07, Ls, psi["A"], 25.0, 0.0125, 120, 11)
-    print(f"  junction {jn:2s}, unitary(infinite-T) electric bath, 120 trajectories to t=25:")
-    print(f"      E[<R_E>] = {vv.mean():+.6f}   E[<R_E>^2] = {np.mean(vv**2):.6f}   "
-          f"frac |<R_E>|>0.99 = {np.mean(np.abs(vv)>0.99):.3f}   "
-          f"frac |<R_E>|>0.5 = {np.mean(np.abs(vv)>0.5):.3f}")
+    vv = unravel(H07, Ls, ST["A"], 25.0, 0.0125, NTR, 11, md.RE)
+    ex = obs(md, evolve_exact(H07, Ls, rho_of(ST["A"]), ts, D, ("S10", jn))[25])[3]
+    print(f"  junction {jn:2s}, unitary (infinite-T) electric bath, {NTR} trajectories to t=25,"
+          f" jump unravelling:")
+    print(f"      E[<R_E>] = {vv.mean():+.6f} +- {vv.std(ddof=1)/np.sqrt(NTR):.6f}   "
+          f"(master-equation <R_E>(25) = {ex:+.6f})")
+    print(f"      E[<R_E>^2] = {np.mean(vv**2):.6f}   frac |<R_E>| > 0.99 = "
+          f"{np.mean(np.abs(vv) > 0.99):.3f}   frac > 0.5 = {np.mean(np.abs(vv) > 0.5):.3f}")
 
 # ==================================================================================
-# STEP 11 --  FINITE-TEMPERATURE DAVIES BATH (the infinite-T defect of the whole lane)
+# STEP 11 --  FINITE-TEMPERATURE DAVIES BATH
 # ==================================================================================
 print("\n[STEP 11] FINITE-TEMPERATURE DAVIES BATH  (adopted from Proposal 2).  Every unitary jump")
-print("  operator in this lane, including our own L = sqrt(gamma_E) Z_l, makes the identity")
-print("  stationary: an INFINITE-temperature bath.  Replace it with a Davies bath and re-run.\n")
+print("  operator in this lane, our own L = sqrt(gamma_E) Z_l included, makes the identity")
+print("  stationary: an INFINITE-temperature bath, where nothing anywhere keeps a record.")
+print("  A(omega) = sum_{E_b - E_a = omega} |a><a| A |b><b|,  gamma(omega) = g0 w/(1-exp(-w/T)).\n")
 
-def davies(Hm, As, gamma0, Tmp, dim, tol=1e-7):
+def davies(Hm, As, gamma0, Tmp, dim, tol=1e-6):
     w, U = np.linalg.eigh(Hm)
     Ls = []
     for A in As:
@@ -736,81 +756,71 @@ def davies(Hm, As, gamma0, Tmp, dim, tol=1e-7):
         freqs = {}
         for aa in range(dim):
             for bb in range(dim):
-                om = w[aa] - w[bb]
-                key = round(om / tol) * tol
-                freqs.setdefault(key, []).append((aa, bb))
+                om = w[bb] - w[aa]                       # A(omega) lowers energy by omega
+                freqs.setdefault(round(om / tol) * tol, []).append((aa, bb))
         for om, pairs in freqs.items():
             M = np.zeros((dim, dim), complex)
             for aa, bb in pairs:
                 M[aa, bb] = Ab[aa, bb]
             if np.linalg.norm(M) < 1e-12:
                 continue
-            if abs(om) < 1e-12:
-                g = gamma0 * Tmp
-            else:
-                g = gamma0 * om / (1.0 - np.exp(-om / Tmp))
-            Ls.append(np.sqrt(abs(g)) * (U @ M @ U.conj().T))
+            g = gamma0 * Tmp if abs(om) < 1e-12 else gamma0 * om / (1.0 - np.exp(-om / Tmp))
+            Ls.append(np.sqrt(g) * (U @ M @ U.conj().T))
     return Ls
 
-# validate on the closed punctured fiber: the Gibbs state must be stationary
 H1c, H0c = md.Hfib(0.7)
 As0 = [np.diag(zdiag(md.S0, k)).astype(complex) for k in range(3 * md.m)]
+R0d = np.diag(md.RE0_all[0]).astype(complex)
+print("  VALIDATION on the closed punctured fiber: the Gibbs state must be exactly stationary.")
 for Tmp in (0.5, 2.0, 10.0):
     Ld = davies(H0c, As0, 0.5, Tmp, md.D0)
     w0, U0 = np.linalg.eigh(H0c)
     gb = U0 @ np.diag(np.exp(-w0 / Tmp)) @ U0.conj().T
     gb = gb / np.trace(gb).real
-    dd = -1j * (H0c @ gb - gb @ H0c) + sum(L @ gb @ L.conj().T
-                                           - 0.5 * (L.conj().T @ L @ gb + gb @ L.conj().T @ L)
-                                           for L in Ld)
-    R0d = np.diag(md.RE0_all[0]).astype(complex)
-    cR = max(np.linalg.norm(R0d @ L - L @ R0d) for L in Ld)
-    print(f"  T={Tmp:5.2f}  #Davies jumps on the punctured fiber = {len(Ld):4d}   "
-          f"||D[rho_Gibbs]|| = {np.linalg.norm(dd):.3e}   max||[R_E, A(omega)]|| = {cR:.3e}")
+    dd = -1j * (H0c @ gb - gb @ H0c) + sum(
+        L @ gb @ L.conj().T - 0.5 * (L.conj().T @ L @ gb + gb @ L.conj().T @ L) for L in Ld)
+    print(f"      T = {Tmp:6.2f}   #jumps = {len(Ld):4d}   ||d rho_Gibbs / dt|| = "
+          f"{np.linalg.norm(dd):.3e}   max||[R_E, A(omega)]|| = "
+          f"{max(np.linalg.norm(R0d @ L - L @ R0d) for L in Ld):.3e}")
 
-# full-space Davies + evaporation
 Ast = [np.diag(d) for d in md.zt]
-print(f"\n  FULL RUN with a Davies electric bath (junction A, Gamma_d=0.8, g^2=0.7):")
-print(f"  {'T':>7s} {'#jumps':>7s} {'p+(0)':>10s} {'late p+ (A)':>12s} {'late p+ (B)':>12s} "
-      f"{'late p+ (D)':>12s} {'SPREAD':>9s} {'drift':>10s}")
-print("  " + "-" * 84)
-for Tmp in (0.5, 2.0, 10.0, 1e6):
+print("\n  FULL RUN with a Davies electric bath (junction A, Gamma_d=0.8, g^2=0.7).  The claimed")
+print("  protection is HOMOLOGICAL, not energetic, so the frozen p_+ should not care about T.")
+print(f"  {'T':>9s} {'#jumps':>7s} " + " ".join(f"{'p+('+k+')':>10s}" for k in UNB) +
+      f" {'SPREAD':>9s} {'drift':>10s}")
+print("  " + "-" * 100)
+for Tmp in (0.5, 2.0, 10.0, 1.0e6):
     Ld = davies(H07, Ast, 0.5, Tmp, D)
     Ls = Ld + md.junction("A", 0.8)
-    vals = {}
-    dr = 0.0
-    for nm in ("A", "B", "D"):
-        tr = evolve_exact(H07, Ls, rho_of(psi[nm]), ts, D)
-        o = [obs(md, r) for r in tr]
-        vals[nm] = np.mean([o[k][0] for k in range(30, 41)])
+    vals, dr = {}, 0.0
+    for nm in UNB:
+        o = [obs(md, r) for r in evolve_exact(H07, Ls, rho_of(ST[nm]), ts, D, ("S11", Tmp))]
+        vals[nm] = late(o)
         if nm == "A":
             dr = abs(o[-1][0] - o[-11][0])
-            p0 = o[0][0]
-    sp = max(vals.values()) - min(vals.values())
-    print(f"  {Tmp:7.1f} {len(Ls):7d} {p0:10.6f} {vals['A']:12.6f} {vals['B']:12.6f} "
-          f"{vals['D']:12.6f} {sp:9.6f} {dr:10.3e}")
+    print(f"  {Tmp:9.1f} {len(Ls):7d} " + " ".join(f"{vals[k]:10.6f}" for k in UNB) +
+          f" {max(vals.values())-min(vals.values()):9.6f} {dr:10.3e}")
 
 # ==================================================================================
-# STEP 12 --  SIZE SCALING.  The protection is CLAIMED homological, so it must be m-independent.
+# STEP 12 --  SIZE SCALING
 # ==================================================================================
-print("\n[STEP 12] SIZE SCALING  m = 2,3,4.  m=2 exact; m=3,4 RK4 on rho with a convergence check.")
-print("  If the frozen p_+ or the spread drifts systematically with m, the topological story is")
-print("  decoration on a finite-size accident.\n")
+print("\n[STEP 12] SIZE SCALING m = 2,3,4.  The protection is CLAIMED homological, so it must be")
+print("  m-independent.  If the frozen p_+ or the spread drifts systematically with m, the")
+print("  topological story is decoration on a finite-size accident.\n")
 
 def rk4(H, jumps, rho0, T, nst):
-    """jumps: list of ('d', diag_vector) or ('m', matrix).  RK4 on rho."""
     dt = T / nst
-    Sgg = np.zeros(H.shape[0], complex)
-    Smat = np.zeros_like(H)
+    Sg = np.zeros(H.shape[0], complex)
+    Sm = np.zeros_like(H)
     dj, mj = [], []
     for kind, X in jumps:
         if kind == 'd':
             dj.append(X)
-            Sgg += np.abs(X) ** 2
+            Sg += np.abs(X) ** 2
         else:
             mj.append(X)
-            Smat += X.conj().T @ X
-    Sd = np.diag(Sgg) + Smat
+            Sm += X.conj().T @ X
+    Sd = np.diag(Sg) + Sm
 
     def rhs(r):
         out = -1j * (H @ r - r @ H)
@@ -818,8 +828,7 @@ def rk4(H, jumps, rho0, T, nst):
             out += np.outer(d, d.conj()) * r
         for L in mj:
             out += L @ r @ L.conj().T
-        out -= 0.5 * (Sd @ r + r @ Sd)
-        return out
+        return out - 0.5 * (Sd @ r + r @ Sd)
 
     r = rho0.copy()
     for _ in range(nst):
@@ -830,62 +839,64 @@ def rk4(H, jumps, rho0, T, nst):
         r = r + dt * (k1 + 2 * k2 + 2 * k3 + k4) / 6.0
     return r / np.trace(r).real
 
-
-def unbiased_starts(x):
-    m = x.m
-    z = tuple([0] * (4 * m))
-    inn = tuple([1 if k < m else 0 for k in range(4 * m)])
-    out = {}
-    def kk(s):
-        v = np.zeros(x.D, complex)
-        v[x.i1[s]] = 1.0
-        return v
-    out["A"] = (kk(z) + kk(inn)) / np.sqrt(2)
-    for lab, qi in (("B", 0), ("D", 1 % m)):
-        t = [0] * (4 * m)
-        for k in x.quad(qi):
-            t[k] ^= 1
-        t = tuple(t)
-        u = list(t)
-        for k in range(m):
-            u[k] ^= 1
-        out[lab] = (kk(t) + kk(tuple(u))) / np.sqrt(2)
-    return out
-
+def jumps_of(x, gE=0.5, Gd=0.8):
+    return ([('d', np.sqrt(gE) * d) for d in x.zt] +
+            [('m', np.sqrt(Gd) * x.emb_down(x.iota.conj().T))])
 
 print("  CONVERGENCE CHECK of the RK4 route against the m=2 exact superoperator exponential:")
-for nst in (400, 800, 1600):
-    jm = [('d', np.sqrt(0.5) * d) for d in md.zt] + [('m', np.sqrt(0.8) * md.emb_down(md.iota.conj().T))]
-    r = rk4(H07, jm, rho_of(psi["A"]), 40.0, nst)
-    ex = evolve_exact(H07, Ls_on, rho_of(psi["A"]), ts, D)[-1]
-    print(f"      steps={nst:5d}  RK4 p+(40) = {obs(md,r)[0]:.9f}   exact = {obs(md,ex)[0]:.9f}"
-          f"   diff = {abs(obs(md,r)[0]-obs(md,ex)[0]):.3e}")
+exA = obs(md, evolve_exact(H07, Ls_on, rho_of(ST["A"]), ts, D, ("on", 0.7, "A", 0.8))[-1])[0]
+for nst in (400, 800, 1600, 3200):
+    r = rk4(H07, jumps_of(md), rho_of(ST["A"]), 40.0, nst)
+    print(f"      steps = {nst:5d}   RK4 p+(40) = {obs(md, r)[0]:.10f}   exact = {exA:.10f}"
+          f"   diff = {abs(obs(md, r)[0]-exA):.3e}")
 
 print("\n  m-scaling (junction A, g^2=0.7, gamma_E=0.5, Gamma_d=0.8, T=40, RK4 1600 steps):")
-print(f"  {'m':>3s} {'dim':>5s} {'init':>5s} {'p+(0)':>10s} {'p+(40)':>10s} {'<R_E>(40)':>11s} "
-      f"{'pcap(40)':>10s} {'SPREAD(ABD)':>12s}")
-print("  " + "-" * 76)
+print(f"  {'m':>3s} {'dim':>5s} " + " ".join(f"{'p+('+k+')':>10s}" for k in UNB) +
+      f" {'SPREAD':>9s} {'<R_E>(A)':>10s} {'pcap':>9s}")
+print("  " + "-" * 96)
 for m in (2, 3, 4):
     x = MD[m]
-    st = unbiased_starts(x)
+    st = x.starts()
     Hx = x.H(0.7)
-    jm = [('d', np.sqrt(0.5) * d) for d in x.zt] + [('m', np.sqrt(0.8) * x.emb_down(x.iota.conj().T))]
-    Px = (np.eye(x.D) + np.diag(np.concatenate([x.RE1_all[0], x.RE0_all[0]]))) / 2.0
-    Rx = np.diag(np.concatenate([x.RE1_all[0], x.RE0_all[0]])).astype(complex)
+    jm = jumps_of(x)
+    RT = np.diag(np.concatenate([x.RE1_all[0], x.RE0_all[0]])).astype(complex)
+    Px = (np.eye(x.D) + RT) / 2.0
     Cx = np.zeros((x.D, x.D), complex)
     Cx[:x.D1, :x.D1] = np.eye(x.D1)
-    vals = {}
-    for nm in ("A", "B", "D"):
+    vals, rA, pcA = {}, 0.0, 0.0
+    for nm in UNB:
         r0 = rho_of(st[nm])
+        p0 = np.trace(Px @ r0).real
+        if abs(p0 - 0.5) > 1e-12:
+            print(f"      WARNING m={m} start {nm} is not unbiased: p+(0) = {p0:.12f}")
         r = rk4(Hx, jm, r0, 40.0, 1600)
         vals[nm] = np.trace(Px @ r).real
-        print(f"  {m:3d} {x.D:5d} {nm:>5s} {np.trace(Px@r0).real:10.6f} {vals[nm]:10.6f} "
-              f"{np.trace(Rx@r).real:+11.6f} {np.trace(Cx@r).real:10.3e} "
-              f"{'':>12s}")
-    print(f"  {'':>3s} {'':>5s} {'':>5s} {'':>10s} {'':>10s} {'':>11s} {'':>10s} "
-          f"{max(vals.values())-min(vals.values()):12.6f}")
+        if nm == "A":
+            rA = np.trace(RT @ r).real
+            pcA = np.trace(Cx @ r).real
+    print(f"  {m:3d} {x.D:5d} " + " ".join(f"{vals[k]:10.6f}" for k in UNB) +
+          f" {max(vals.values())-min(vals.values()):9.6f} {rA:+10.6f} {pcA:9.2e}")
 
-print("\n" + "=" * 100)
-print("END OF RUN.  No verdicts printed above are hard-coded; every declared prediction is labelled")
-print("as a prediction and every number is measured.")
-print("=" * 100)
+print("\n  m-scaling with the SYMMETRISED junction C (the null), same parameters:")
+print(f"  {'m':>3s} {'dim':>5s} " + " ".join(f"{'p+('+k+')':>10s}" for k in UNB) + f" {'SPREAD':>9s}")
+print("  " + "-" * 74)
+for m in (2, 3, 4):
+    x = MD[m]
+    st = x.starts()
+    Hx = x.H(0.7)
+    jm = ([('d', np.sqrt(0.5) * d) for d in x.zt] +
+          [('m', np.sqrt(0.4) * x.emb_down(V)) for V in x.Vs] +
+          [('m', np.sqrt(0.4) * x.emb_down(V)) for V in x.Vs_flip])
+    RT = np.diag(np.concatenate([x.RE1_all[0], x.RE0_all[0]])).astype(complex)
+    Px = (np.eye(x.D) + RT) / 2.0
+    vals = {}
+    for nm in UNB:
+        r = rk4(Hx, jm, rho_of(st[nm]), 40.0, 1600)
+        vals[nm] = np.trace(Px @ r).real
+    print(f"  {m:3d} {x.D:5d} " + " ".join(f"{vals[k]:10.6f}" for k in UNB) +
+          f" {max(vals.values())-min(vals.values()):9.6f}")
+
+print("\n" + "=" * 104)
+print("END OF RUN.  Every prediction above is labelled as a prediction and was fixed before the")
+print("number beside it was computed.  No verdict is hard-coded.")
+print("=" * 104)
