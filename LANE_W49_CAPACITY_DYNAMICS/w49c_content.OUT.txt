@@ -1,0 +1,26 @@
+W-49  carrier 4x2: 8 vertices, 10 links, 3 plaquettes, cycle rank 3, gauge dim 8
+W-49c  DOES THE CARRIER'S SIZE DEPEND ON WHAT IT HOLDS?
+  bath couples to structure only; ||[A, plaquette ops]|| = 0.0e+00  -> records exactly conserved
+  record sectors of R2: [-1.  1.]
+
+  GATE: the record must be CONSERVED or the sectors mix and the test is void.
+    ||[R2, H]|| at g2=0.05 : 1.265e+00   <- g2*ELEC does not commute with the plaquettes; sectors LEAK
+    ||[R2, H]|| at g2=0.00 : 0.000e+00   <- record exactly conserved
+
+     mu     T    g2  gate <N|R2=-1> <N|R2=+1>   difference
+  ------------------------------------------------------------------
+   1.00   0.5  0.05  1.00      0.760505      0.760886   3.811e-04
+   1.00   0.5  0.00  1.00      0.011863      0.852879   8.410e-01
+   2.00   0.5  0.05  1.00      0.342708      0.343367   6.588e-04
+   2.00   0.5  0.00  1.00      0.005835      0.500000   4.942e-01
+   1.00   0.5  0.05  0.50      0.346184      0.346569   3.848e-04
+   1.00   0.5  0.00  0.50      0.035575      0.500000   4.644e-01
+   2.00   0.5  0.05  0.50      0.084691      0.084721   2.952e-05
+   2.00   0.5  0.00  0.50      0.011863      0.147121   1.353e-01
+   1.00   0.5  0.05  0.00      0.147121      0.147121   0.000e+00
+   1.00   0.5  0.00  0.00      0.147121      0.147121   1.943e-16
+   2.00   0.5  0.05  0.00      0.035575      0.035575   0.000e+00
+   2.00   0.5  0.00  0.00      0.035575      0.035575   1.249e-16
+
+  READING: a nonzero difference means the carrier settles to a DIFFERENT SIZE depending on
+  what is recorded in it. gate=0 removes the structure-content coupling and must give 0.

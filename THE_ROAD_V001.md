@@ -24,9 +24,9 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | 11 | what escapes the region | **DONE** | W-46 | `legibility = perimeter/2 − 1`; storage is bulk, legibility is boundary |
 | 12 | **EM's role** | **DONE** | W-27/34 | supplies the carrier, the boundary, and the record-bearing holonomy |
 | 13 | **alpha's role** | **DONE** | W-32/37b | `1/(8g²)` uses; `9.6 g⁴P/τ < 1` legible size |
-| 14 | **gravity's role** | **PARTIAL** | W-45/44 | capacity passes all 4 functional markers; EM's charge fails all 4. **No dynamics: capacity is static bookkeeping.** W-44: installing a classical metric three ways changed nothing — the functional route is the live one |
+| 14 | **gravity's role** | **PARTIAL** | W-45/44/49 | capacity passes all 4 functional markers; EM's charge fails all 4. W-49 gives it dynamics: the carrier's equilibrium size is set by its content. W-44: installing a classical metric three ways changed nothing — the functional route is the live one |
 | 15 | **THE COMBINATION — how all three fit together** | **PARTIAL** | W-47/48 | form confirmed (130× monotone collapse); constant off ~4×. **W-48: the decoherence half is textbook `exp(-ΓT)`; the power law was an artifact of maximising over time** |
-| 16 | make capacity dynamical — does the carrier grow, or only evict? | **OPEN** | — | W-41 measured eviction on a fixed carrier; growth untested |
+| 16 | make capacity dynamical — does the carrier grow, or only evict? | **DONE** | W-49 | **it grows.** `<N>` = 0.012 vs 0.853 on one bit of content; control exactly `1.9e-16`. Needed a THERMAL bath — every prior bath in the program was infinite-temperature |
 | 17 | does any of it survive off the toy | **OPEN** | — | one gauge group, one lattice, ≤16 physical dimensions |
 | 18 | **empirical contact — any published data at all** | **OPEN** | — | **ZERO. Not one number in this program came from a measurement.** The paper's package carries 28 source registries (COW, GAB 2022, Panda 2024, Rosi/Jaffe, C70, AION); this program has never touched them |
 | 19 | is the novel half testable — storage vs legibility | **OPEN** | — | W-48: the decoherence half is standard, so novelty (if any) is on the capacity side, whose corpus is topological codes, not interferometry |

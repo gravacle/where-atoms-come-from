@@ -3562,3 +3562,63 @@ evidence that gravity is absent, and it is not a baseline.**
 **AND IT LEAVES W-45 STANDING AS THE BETTER ROUTE.** Capacity — which required no metric at all —
 passes all four functional markers. **The classical-shaped install bought nothing; the
 functional identification bought four for four.**
+
+---
+
+## W-49 — **CAPACITY ACQUIRES DYNAMICS. THE CARRIER'S SIZE IS SET BY WHAT IS RECORDED IN IT.**
+
+`LANE_W49_CAPACITY_DYNAMICS/`, sealed. W-45 left capacity passing all four of gravity's functional
+markers as **static bookkeeping with no equation of motion**. This gives it one.
+
+### A METHODOLOGICAL FINDING THAT REACHES BACK THROUGH THE PROGRAM
+
+**w49 failed and its controls diagnosed why: `<Nhat> = 0.50000` at every `mu` from `0` to `8`.** The
+energy cost did nothing.
+
+> **EVERY BATH IN THIS PROGRAM, FROM W-28 ONWARD, USED UNITARY JUMP OPERATORS. A unitary jump
+> operator is unital: it drives the state toward maximally mixed. THAT IS AN INFINITE-TEMPERATURE
+> BATH.** It is adequate for the dephasing and pointer questions the program has been asking, **but
+> an energy cost cannot register in it, so no energetic question could ever have been asked.**
+
+(A second failure: extracting a steady state as a null eigenvector returns an arbitrary element of a
+degenerate manifold, which need not be a state — the `Delta=0` control returned `<Nhat> = -0.208`,
+impossible for a projector. Steady states are now obtained by **evolving a physical state**.)
+
+### WITH A THERMAL BATH, AND THE RECORD ACTUALLY CONSERVED
+
+A Davies bath with detailed balance at temperature `T`, coupled to the **structure alone**
+(`A = I_gauge ⊗ sigma_x`), so every plaquette flux is exactly conserved and records persist.
+`<Nhat>` then tracks Gibbs to `1e-9`, and `T -> infinity` recovers the old `0.5`.
+
+**The record must be conserved or the sectors mix and the test is void.** `g²·ELEC` does **not**
+commute with the plaquettes (`||[R2,H]|| = 1.265` at `g2=0.05`), so the first pass leaked and showed
+a spurious `4e-4`. At `g2 = 0` the commutator is `0.000e+00`:
+
+```
+     mu     T    g2  gate   <N | R2=-1>   <N | R2=+1>    difference
+   1.00   0.5  0.05  1.00      0.760505      0.760886     3.811e-04   <- leaking, void
+   1.00   0.5  0.00  1.00      0.011863      0.852879     8.410e-01
+   2.00   0.5  0.00  1.00      0.005835      0.500000     4.942e-01
+   1.00   0.5  0.00  0.50      0.035575      0.500000     4.644e-01
+   1.00   0.5  0.00  0.00      0.147121      0.147121     1.943e-16   <- CONTROL
+```
+
+> **THE CARRIER IS ESSENTIALLY ABSENT (`0.012`) OR ESSENTIALLY PRESENT (`0.853`) DEPENDING ON A
+> SINGLE BIT OF RECORD CONTENT. Remove the structure-content coupling and the difference is exactly
+> zero.** Content determines geometry, dynamically, measured.
+
+### AT ITS PROPER STRENGTH
+
+**Nothing in `H` references a record, a boundary or a capacity.** The only structure-content coupling
+is the gating `-Nhat ⊗ (W2 + h.c.)` — **which is what it MEANS for the carrier to have that
+plaquette**, not an extra assumption. No rule says "grow when full". The correlation is a consequence.
+
+**But this is thermodynamics, not new physics.** A degree of freedom whose energy depends on a
+conserved quantity will have a conserved-quantity-dependent equilibrium; that is Boltzmann.
+**What it changes is the program's ledger, not the physics literature:** item 14 moves from *static
+bookkeeping* to *has an equation of motion*, and this is the first construction here in which the
+carrier's structure responds to its content at all.
+
+**AND IT ANSWERS W-41's DICHOTOMY.** *Either the carrier grows, or records are evicted.* **On a
+carrier that can pay for growth, it grows** — by `0.84` of a plaquette for one bit of content.
+Eviction was the fixed-carrier answer, not the only one.

@@ -1,0 +1,17 @@
+LANE W49 -- CAPACITY DYNAMICS. Carrier: 4x2 vertex ladder, 8 vertices, 10 links, 3 plaquettes,
+cycle rank 3, gauge dim 8, times a structural qubit (total dim 16). The structural occupation Nhat
+gates whether the THIRD plaquette participates in H. NOTHING in H references a record, a boundary,
+or a capacity -- the only structure-content coupling is the gating -Nhat (x) (W2 + h.c.), which is
+what it MEANS for the carrier to have that plaquette.
+w49  : FAILED. Three controls fired. <Nhat> = 0.50000 at every mu from 0 to 8 (the cost did nothing),
+       and the Delta=0 control returned <Nhat> = -0.208, impossible for a projector.
+       CAUSE: every bath in this program from W-28 onward used UNITARY jump operators, which are
+       unital and drive everything to maximally mixed -- an INFINITE-TEMPERATURE bath, in which an
+       energy cost cannot register. Also, extracting the steady state as a null eigenvector returns
+       an arbitrary element of a degenerate manifold, which need not be a state.
+w49b : Davies bath with detailed balance at temperature T; steady state obtained by EVOLVING a
+       physical state, never by picking a null eigenvector. <Nhat> matches Gibbs to 1e-9 and
+       T -> infinity recovers the old 0.5.
+w49c : the record must be CONSERVED or the sectors mix and the test is void. g2*ELEC does NOT commute
+       with the plaquettes (||[R2,H]|| = 1.265 at g2=0.05), so the first pass leaked and showed a
+       spurious 4e-4. At g2=0 the commutator is exactly 0 and the effect is 0.84.

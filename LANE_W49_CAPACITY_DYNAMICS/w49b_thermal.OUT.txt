@@ -1,0 +1,30 @@
+W-49  carrier 4x2: 8 vertices, 10 links, 3 plaquettes, cycle rank 3, gauge dim 8
+W-49b  THERMAL BATH.  <Nhat> = the carrier's size.  Gibbs comparison shown.
+      mu      T     <Nhat>  Gibbs <Nhat>    |diff|
+  --------------------------------------------------
+    0.00    0.5    0.94636       0.94636  4.28e-09
+    0.50    0.5    0.88590       0.88590  2.99e-08
+    1.00    0.5    0.76311       0.76312  5.75e-06
+    2.00    0.5    0.34105       0.34145  3.95e-04
+    4.00    0.5    0.01929       0.01922  6.97e-05
+
+    0.00    2.0    0.60589       0.60589  8.53e-08
+    0.50    2.0    0.54533       0.54533  3.66e-07
+    1.00    2.0    0.48338       0.48339  9.98e-06
+    2.00    2.0    0.36289       0.36286  2.68e-05
+    4.00    2.0    0.17439       0.17440  6.32e-06
+
+    0.00   50.0    0.50020       0.50020  2.85e-11
+    0.50   50.0    0.49770       0.49770  1.50e-10
+    1.00   50.0    0.49520       0.49520  3.74e-09
+    2.00   50.0    0.49020       0.49020  6.44e-08
+    4.00   50.0    0.48021       0.48021  8.83e-15
+
+  CONTROL -- Delta = 0 freezes the structure (no tunnelling): <Nhat> must not move with mu.
+    mu= 0.0 Delta=0  <Nhat> = 0.963467
+    mu= 4.0 Delta=0  <Nhat> = 0.009049
+
+  CONTROL -- T -> infinity must reproduce the OLD infinite-temperature behaviour, <Nhat>=0.5
+    T=     50  mu=2.0  <Nhat> = 0.490201
+    T=    500  mu=2.0  <Nhat> = 0.499002
+    T=   5000  mu=2.0  <Nhat> = 0.499900
