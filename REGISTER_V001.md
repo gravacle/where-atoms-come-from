@@ -3682,3 +3682,32 @@ sense of unavoidable** — no carrier with `m` independent records can lack it. 
 trivial: it follows from counting rather than from anything about the carrier, the field, or the
 process.** So it does not establish that anything gravity-like is *required for records* in a way
 that carries physical content. **Item 14 must be read at this reduced strength.**
+
+---
+
+## MAP ERRATUM — **STEP 3 IMPORTED THE CLASSICAL FOOTPRINT AGAIN**
+
+`MAP_TO_THE_RELATION_V001.md` step 3, as first written, read *"our capacity story is repulsive,
+gravity is attractive"* and proposed that finding no attraction would be a **standing objection** to
+the gravity identification.
+
+> **THAT MAKES CLASSICAL ATTRACTION THE STANDARD THE RECORD SURFACE MUST MEET.** It is the same
+> import the principal has now flagged **three times** — classical-shaped nulls read two ways
+> (before W-44), *"an early embryo doesn't look like a human"* (before W-45), and again now.
+> **The registrar has made this error at W-44, at W-45's framing, and here.**
+
+**CORRECTED.** The functional content of attraction is **positive feedback**: content makes more
+content more likely in the same place. The step now asks that, with all three outcomes read in
+advance and **none of them treated as a test gravity must pass**:
+
+- **positive feedback** — content concentrates
+- **negative feedback** — already measured (W-39 crowding, W-41 eviction); **NOT a refutation**,
+  since crowding may be the record-level form of something that only becomes attraction after
+  accumulation
+- **neither** — the strongest of the three, since it would mean the resource has no dynamics at all
+
+**Steps 1, 2 and 4 were checked for the same defect.** Step 1 (reconstruct adjacency from records)
+and Step 2 (alpha as resolution limit) carry no classical gravitational shape. **Step 4 does head
+toward classical geometry, and that is correct** — convergence to classical geometry at large scale
+is the expected emergent endpoint, which is a different thing from demanding classical form at the
+record level, and it is last in the order for that reason.

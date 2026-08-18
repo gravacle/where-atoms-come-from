@@ -50,13 +50,36 @@ alpha does not set the resolution and the relation is two-way, not three-way.
 **Why this is the whole point.** If it holds, **alpha is the resolution limit of geometry** — the
 first statement binding all three that is not an assembly.
 
-### STEP 3 — THE SIGN PROBLEM, WHICH IS AN HONEST OBJECTION AND MUST NOT BE SKIPPED
-> **OUR CAPACITY STORY IS REPULSIVE. GRAVITY IS ATTRACTIVE.** Records **crowd each other out**
-> (W-39: margin `43.8x → 2.0x → 1.1x`), and past capacity one is **evicted** (W-41). Nothing in this
-> program has ever shown records DRAWING each other.
-**Build.** Ask whether any regime makes record formation *more* likely near existing records.
-**Falsifier.** If none exists, the resource identification has the wrong sign, and that must be
-recorded as a standing objection to calling capacity gravity-like — not buried.
+### STEP 3 — POSITIVE FEEDBACK (corrected: the first version imported the classical footprint)
+
+**THE FIRST VERSION OF THIS STEP WAS WRONG AND IS RECORDED AS WRONG.** It read: *"our capacity story
+is repulsive, gravity is attractive"*, and proposed that finding no attraction would be a standing
+objection to the gravity identification. **That makes CLASSICAL ATTRACTION the standard the record
+surface has to meet**, which is the import the principal has now flagged three times
+(classical-shaped nulls, the embryo, and this). **Attraction is what the function looks like after
+accumulation. It is not what it must look like at the record level.**
+
+**THE FUNCTIONAL QUESTION INSTEAD.** What attraction *does* in the classical theory is supply
+**positive feedback**: content makes more content more likely in the same place, so structure
+concentrates instead of dispersing. So ask that, without assuming the sign or the mechanism:
+
+> **Does the presence of a record make further record formation more likely nearby?**
+
+**Build.** Compare the rate and fidelity of record formation in a region that already holds records
+against one that does not, at matched coupling and matched bath strength.
+**How to read it, decided in advance.**
+- **Positive feedback found** — content concentrates. That is the function attraction performs, in
+  whatever form this level supplies it.
+- **Negative feedback** — this is what W-39 and W-41 already measured (crowding, then eviction).
+  **This is NOT a refutation.** Crowding may be the record-level form of something that only becomes
+  attraction after accumulation, or the two may be unrelated. **A classical-shaped null reads two
+  ways and is never a baseline.**
+- **Neither** — records are indifferent to each other, which would be the strongest result of the
+  three, since it would say the resource has no dynamics of its own at all.
+
+**Why it stays in the map.** Not as a test gravity must pass, but because *whether content
+concentrates or disperses* is a fact about the record surface worth knowing regardless of what it is
+eventually called.
 
 ### STEP 4 — ACCUMULATION
 **Build.** Reconstruct from progressively larger record sets and ask whether the geometry converges.
@@ -66,8 +89,8 @@ recorded as a standing objection to calling capacity gravity-like — not buried
 ## 3. WHAT WOULD COUNT AS THE RELATION
 
 **Steps 1 + 2 succeeding gives:** *the geometry of a region is what its records jointly determine,
-and the coupling sets how finely it can be determined.* **Step 3 failing does not kill that** — it
-would mean the resource is not gravity, while leaving the geometry claim intact. **Step 4 is what
+and the coupling sets how finely it can be determined.* **Step 3 cannot kill that** — it measures whether content concentrates, which is
+independent of the geometry claim and is not a test the record surface must pass. **Step 4 is what
 would connect it to anything macroscopic, and is furthest out.**
 
 ## 4. WHAT THIS MAP DOES NOT PROMISE
