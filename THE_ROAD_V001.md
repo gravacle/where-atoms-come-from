@@ -34,7 +34,7 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | 22 | does the coupling set the resolution of geometry? | **CLOSED, NEGATIVE** | W-51 | not monotone in `g²` nor in `g²·t*`; breakdown tracks coherent leakage, not the legibility bound |
 | 23 | can geometry be reconstructed from the environment couplings? | **VOID** | W-53 | the protected-set family IS the incidence matrix, recovered by set algebra with no dynamics. But the asymmetry is real: the record algebra cannot tell block/chain/ring apart, the coupling structure separates all 4 carriers, 6 of 6 pairs |
 | 24 | **boundary FORMATION (not selection) — is the set of possible boundaries an output?** | **UNTESTABLE HERE** | W-53 | the carrier's incidence is an input to every computable quantity, so every reconstruction question on it is circular. Needs a carrier where adjacency is not given — the emergent-geometry problem proper |
-| 20 | **accumulation — do MANY capacity/boundary constraints determine anything one does not?** | **OPEN, NEVER ATTEMPTED** | — | every deflation so far (`exp(−ΓT)`, locality, Boltzmann, counting) is a statement about ONE constraint at ONE scale. No test run could have detected an emergent effect |
+| 20 | **accumulation — do MANY capacity/boundary constraints determine anything one does not?** | **CLOSED, NEGATIVE** | W-54 | **deficit 0 for every partition including singletons.** The full capacity `m−1` is reachable with single-plaquette records alone. No part of capacity is collective. The advance prediction (`k−1`) was wrong |
 
 ## WITHDRAWN CLAIMS (kept so they are not re-made)
 

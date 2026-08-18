@@ -4042,3 +4042,54 @@ an input to every quantity we can compute.**
 **So the framing is not refuted and is not testable here.** Testing it needs a carrier in which
 adjacency is not given — which is the emergent-geometry problem proper, and is beyond this
 construction. **That is the honest boundary of what this program can reach.**
+
+---
+
+## W-54 — **ACCUMULATION ADDS NOTHING. CAPACITY IS ENTIRELY LOCAL.**
+
+`LANE_W54_ACCUMULATION/`, sealed. Road item 20 — the last route this program could decide on its own.
+Every prior deflation was obtained at a single scale, so none could have detected a collective effect.
+
+**MADE WELL-POSED FIRST.** On a fixed finite carrier every quantity is an exact function of the
+incidence matrix, so emergence in the strong sense cannot arise — that needs a limit. The sharpest
+version that **can** fail: **global capacity is `m−1`; how much of it is reachable using only records
+supported inside a single part of a partition, and how much requires records that span parts and
+belong to none?**
+
+**PREDICTION, STATED IN ADVANCE: deficit `= k−1`, independent of partition shape.**
+
+```
+   partition                m    k   global   local-only   deficit   predicted
+   9 singletons             9    9        8            8         0          8
+   3 rows                   9    3        8            8         0          2
+   3 columns                9    3        8            8         0          2
+   uneven 5+3+1             9    3        8            8         0          2
+   6 singletons             6    6        5            5         0          5
+   3 vertical pairs         6    3        5            5         0          2
+```
+
+> **THE PREDICTION IS WRONG AND THE RESULT IS A CLEAN NEGATIVE. DEFICIT IS ZERO FOR EVERY PARTITION,
+> INCLUDING SINGLETONS.** The full capacity is achievable with **single-plaquette records** — the most
+> local objects the carrier has. **No part of a carrier's capacity is collective.**
+
+**Why the prediction was wrong:** the parts are not independent carriers but subsets of one, and
+single-plaquette records are already local to singletons. Their independent rank is `m`, and those
+avoiding a link on exactly one plaquette give `m−1` directly.
+
+### WHAT THIS CLOSES
+
+**Item 20 is closed, negatively. Accumulation adds nothing on this carrier, and it was the last
+question the program could decide by itself.**
+
+Combined with what is already sealed: the decoherence half is `exp(−ΓT)` (W-48); legibility is
+locality (C1); the capacity markers are counting (W-50); the carrier's response is Boltzmann (W-49);
+geometry is not in the records and every reconstruction question here is circular (W-51, W-53); and
+now **capacity has no collective content either.**
+
+> **THE PROGRAM'S HONEST END STATE: a complete, internally verified, three-theorem account of record
+> formation in lattice gauge theory, every component of which reduces to known physics, containing no
+> distinguishing prediction and no collective content.**
+
+**WHAT REMAINS IS NOT DECIDABLE HERE.** Item 24 — boundary *formation*, the set of possible
+boundaries being an output rather than an input — requires a carrier whose adjacency is not installed.
+**That is the emergent-geometry problem proper, and no experiment on this construction can reach it.**

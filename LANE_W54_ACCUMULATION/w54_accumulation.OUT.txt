@@ -1,0 +1,28 @@
+W-54  ACCUMULATION: is the whole's capacity reachable from inside its parts?
+
+                    6 singletons m= 6 k= 6  global   5  local-only   5  deficit   0   predicted k-1 =  5   DIFFERS
+                3 vertical pairs m= 6 k= 3  global   5  local-only   5  deficit   0   predicted k-1 =  2   DIFFERS
+               2 horizontal rows m= 6 k= 2  global   5  local-only   5  deficit   0   predicted k-1 =  1   DIFFERS
+            one part (the whole) m= 6 k= 1  global   5  local-only   5  deficit   0   predicted k-1 =  0   ok
+               uneven: 4 + 1 + 1 m= 6 k= 3  global   5  local-only   5  deficit   0   predicted k-1 =  2   DIFFERS
+
+                    9 singletons m= 9 k= 9  global   8  local-only   8  deficit   0   predicted k-1 =  8   DIFFERS
+                          3 rows m= 9 k= 3  global   8  local-only   8  deficit   0   predicted k-1 =  2   DIFFERS
+                       3 columns m= 9 k= 3  global   8  local-only   8  deficit   0   predicted k-1 =  2   DIFFERS
+            one part (the whole) m= 9 k= 1  global   8  local-only   8  deficit   0   predicted k-1 =  0   ok
+               uneven: 5 + 3 + 1 m= 9 k= 3  global   8  local-only   8  deficit   0   predicted k-1 =  2   DIFFERS
+
+  READING
+    deficit = k - 1 everywhere means: EVERY partition into k parts leaves exactly k-1 of the
+    carrier's records unreachable from inside any part. Those records SPAN parts and belong to
+    none. The finer the partition, the larger the share of capacity that is collective:
+                    9 singletons m= 9 k= 9  global   8  local-only   8  deficit   0   predicted k-1 =  8   DIFFERS
+                    9 singletons:  0/8 of the capacity is collective (0%)
+                          3 rows m= 9 k= 3  global   8  local-only   8  deficit   0   predicted k-1 =  2   DIFFERS
+                          3 rows:  0/8 of the capacity is collective (0%)
+                       3 columns m= 9 k= 3  global   8  local-only   8  deficit   0   predicted k-1 =  2   DIFFERS
+                       3 columns:  0/8 of the capacity is collective (0%)
+            one part (the whole) m= 9 k= 1  global   8  local-only   8  deficit   0   predicted k-1 =  0   ok
+            one part (the whole):  0/8 of the capacity is collective (0%)
+               uneven: 5 + 3 + 1 m= 9 k= 3  global   8  local-only   8  deficit   0   predicted k-1 =  2   DIFFERS
+               uneven: 5 + 3 + 1:  0/8 of the capacity is collective (0%)
