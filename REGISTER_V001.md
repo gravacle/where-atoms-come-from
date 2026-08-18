@@ -4984,3 +4984,58 @@ purging it; the purge was never the point. **What survives, and is the whole of 
 defined by R1–R3 and by nothing else, no attribute transfers through the name (D-1, D-2), the
 identification with `H₁` is a CANDIDATE and not a definition (G-1 withdrawn → G-5), and uniqueness
 is now askable (G-6).** Say "gravity"; never let it do work.
+
+---
+
+## G-7 — **THE CAPACITY LAW IS AN INDEX.** `2 − χ` WAS THE WRONG FORMULA, AND THE DISK SHOWED IT
+
+`LANE_G7_INDEX/g7_index.py` · ranks computed over GF(2) by explicit Gaussian elimination; `∂₁∂₂ = 0`
+asserted on every carrier.
+
+> ### `N = dim H₀ + dim H₂ − χ`   —   **holds on all five carriers**
+> ### `N = 2 − χ`   —   **FAILS on the disk**
+
+| carrier | V | E | F | χ | H₀ | **H₁** | H₂ | `H₀+H₂−χ` | `2−χ` |
+|---|---|---|---|---|---|---|---|---|---|
+| torus 2×2 | 4 | 8 | 4 | 0 | 1 | **2** | 1 | **2** ✔ | 2 ✔ |
+| torus 2×3 | 6 | 12 | 6 | 0 | 1 | **2** | 1 | **2** ✔ | 2 ✔ |
+| torus 3×3 | 9 | 18 | 9 | 0 | 1 | **2** | 1 | **2** ✔ | 2 ✔ |
+| tetrahedron (sphere) | 4 | 6 | 4 | 2 | 1 | **0** | 1 | **0** ✔ | 0 ✔ |
+| **disk 3×3** | 9 | 12 | 4 | 1 | 1 | **0** | **0** | **0** ✔ | **1 ✘** |
+
+### WHAT THIS CORRECTS
+
+**The disk was registered as a SCOPE CAVEAT — "the relation holds for closed orientable surfaces."
+It was never a scope limit.** `2 − χ` is the wrong formula; the index form gets the disk right by the
+same mechanism it gets the torus right. **`GRAVITY_DEFINED_V001.md` stated the caveat as if the
+carrier were the problem. The formula was the problem.**
+
+### WHERE THE `2` CAME FROM
+
+**`2 = dim H₀ + dim H₂`** — one for **connected**, one for **closed and orientable**. It was never a
+constant. On the disk `H₂ = 0`, so the `2` was never there, and the surface law fails by exactly
+that `1`.
+
+### WHY THIS MATTERS BEYOND THE ARITHMETIC
+
+**`N` is an INDEX** — an alternating sum of dimensions. `N = 2 − (1/2π)∫K dA` is **Gauss–Bonnet**,
+and Gauss–Bonnet is the two-dimensional case of **Euler–Poincaré**. Consequences, in order of weight:
+
+1. **The capacity law needs no geometry.** It is stated for an arbitrary chain complex. Genus,
+   curvature and area are special-case vocabulary.
+2. **Area-independence stops being an observation and becomes structural.** `χ` is unchanged by local
+   refinement of the complex, so `N` cannot move under it. **This is what G1 measured** (2 records at
+   area 4 and at area 6) — now with a reason, and confirmed here at a third area.
+3. **Curvature enters only through its integral**, which is the same statement seen through the
+   surface case.
+
+### THIS DOES NOT DEPEND ON G-6
+
+G-7 is established on **our own carriers**, independently of whether `H₁` is unique. **G-6 decides
+whether homology is FORCED by R1–R3; G-7 says that where homology is what carries the record, the
+count is an index and not a surface formula.** Both branches of G-6 leave G-7 standing.
+
+**AND THE REGISTRAR'S FRAMING OF G-6 WAS WRONG AND IS CORRECTED.** It was written as if
+NOT-UNIQUE were "the bigger result". **UNIQUE is at least as large: it makes R1–R3 force homology,
+turns statement 4 from "records ADMIT" into "records REQUIRE", and closes O-3.** The two branches
+are large in different directions. Ranking them was the two-valued-object tic, not a finding.

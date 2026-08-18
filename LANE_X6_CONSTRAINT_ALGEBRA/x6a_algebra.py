@@ -412,10 +412,16 @@ def run(nx, ny, do_dense_spectral, n_states):
         print(f"   {'(%d,%d)'%(v,w):>12}  {''.join(str(int(x)) for x in c0):<28} {var:>19d} "
               f"{('%d..%d'%(nmn,nmx)):>17}")
     print(f"   MAXIMUM STATE-TO-STATE VARIATION IN THE STRUCTURE COEFFICIENTS = {varA}")
-    print(f"   (the read-off coefficient string is indexed by vertex u = 0..{NV-1}; it always reads")
-    print(f"    e_v + e_w, i.e. G_v G_w = G_v G_w and nothing else -- and the number of matching")
-    print(f"    words is exactly {rowsA[0][4]}, which is |kernel| = {len(kernel)}: the SAME two words on")
-    print(f"    every single state, never a state-dependent set.)")
+    print(f"   Reading the table: the coefficient string is indexed by vertex u = 0..{NV-1}. The")
+    print(f"   matching set on every state has exactly {rowsA[0][4]} elements = |relation subgroup| = "
+          f"{len(kernel)},")
+    print(f"   namely e_v + e_w AND its complement e_v + e_w + (1,1,...,1) -- the two are the same")
+    print(f"   operator because prod_v G_v = I. The canonical read-off prints whichever of the two")
+    print(f"   has the smaller integer code, which is why e.g. (0,{NV-1}) prints as the complement.")
+    print(f"   EXPLICIT COSET CHECK: on EVERY sampled state the matching word set equals exactly")
+    print(f"   {{ e_v + e_w + K : K in the relation subgroup }} for EVERY ordered pair:  {cosetA}")
+    print(f"   -> the composition law is not merely constant-looking, it is the predicted coset on")
+    print(f"      each individual state, with no state-dependent members.")
 
     # ---- (b) random states inside the physical sector
     sub(f"(b) {n_states} RANDOM PHYSICAL STATES")
@@ -439,7 +445,7 @@ def run(nx, ny, do_dense_spectral, n_states):
     for v in range(NV):
         worst = max(worst, float(np.abs(PHYS[:, idx ^ masks[v]] - PHYS).max()))
     print(f"    verification that the sampled states are physical: max_v max|G_v psi - psi| = {worst:.3e}")
-    rowsB, varB = coeff_readoff(PHYS, "physical")
+    rowsB, varB, _ = coeff_readoff(PHYS, "physical")
     nmn = min(r[4] for r in rowsB); nmx = max(r[5] for r in rowsB)
     print(f"    MAXIMUM STATE-TO-STATE VARIATION IN THE STRUCTURE COEFFICIENTS = {varB}")
     print(f"    #matching words on physical states ranges {nmn}..{nmx} -- on a gauge-INVARIANT state")
@@ -508,7 +514,8 @@ def run(nx, ny, do_dense_spectral, n_states):
     return dict(nx=nx, ny=ny, NV=NV, L=L, D=D, Dexp=Dexp, selfcheck=selfcheck,
                 maxent=maxent, maxfro=maxfro, maxspec=maxspec, allinv=allinv,
                 prod_is_I=prod_isI, rank=rank, gorder=gorder, k=k, nrel=len(kernel),
-                varA=varA, varB=varB, varC=varC, worstop=worstop, maxvar=maxvar_all)
+                varA=varA, varB=varB, varC=varC, worstop=worstop, maxvar=maxvar_all,
+                coset=cosetA)
 
 
 # ---------------------------------------------------------------------------------------------
@@ -528,12 +535,12 @@ r23 = run(2, 3, do_dense_spectral=False, n_states=48)
 rule("SUMMARY — BOTH LATTICES")
 print(f"   {'lattice':>10} {'NV':>4} {'L':>4} {'D':>6} {'2^(L-NV+1)':>12} {'selfchk':>9} "
       f"{'max||[G,G]||':>14} {'G^2=I':>7} {'prod=I':>8} {'rank':>6} {'|grp|':>7} {'k':>4} "
-      f"{'maxvar':>8}")
+      f"{'maxvar':>8} {'coset':>7}")
 for r in (r22, r23):
     print(f"   {'%dx%d'%(r['nx'],r['ny']):>10} {r['NV']:>4} {r['L']:>4} {r['D']:>6} {r['Dexp']:>12} "
           f"{'PASS' if r['selfcheck'] else 'FAIL':>9} {r['maxfro']:>14.6f} "
           f"{str(r['allinv']):>7} {str(r['prod_is_I']):>8} {r['rank']:>6} {r['gorder']:>7} "
-          f"{r['k']:>4} {r['maxvar']:>8}")
+          f"{r['k']:>4} {r['maxvar']:>8} {str(r['coset']):>7}")
 print()
 print("   VERDICT (algebraic structure only; scale-free, no coupling anywhere in this lane):")
 print("   The Gauss constraints close into an ELEMENTARY ABELIAN 2-GROUP  Z2^(NV-1):")

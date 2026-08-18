@@ -1,0 +1,13 @@
+carrier                 V   E   F  chi  H0  H1  H2  H0+H2-chi  2-chi  2^H1  index law   surface law
+----------------------------------------------------------------------------------------------------------
+torus 2x2               4   8   4    0   1   2   1          2      2     4  HOLDS      HOLDS
+torus 2x3               6  12   6    0   1   2   1          2      2     4  HOLDS      HOLDS
+torus 3x3               9  18   9    0   1   2   1          2      2     4  HOLDS      HOLDS
+tetrahedron (sphere)    4   6   4    2   1   0   1          0      0     1  HOLDS      HOLDS
+disk 3x3                9  12   4    1   1   0   0          0      1     1  HOLDS      FAILS
+----------------------------------------------------------------------------------------------------------
+SELF-CHECK  d1.d2 = 0 on every carrier: PASS (asserted in homology())
+SELF-CHECK  torus H1 = 2 at three different areas: PASS
+
+INDEX LAW   dim H1 = dim H0 + dim H2 - chi : HOLDS ON ALL 5 CARRIERS
+SURFACE LAW dim H1 = 2 - chi              : FAILS on at least one
