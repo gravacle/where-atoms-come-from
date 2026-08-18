@@ -1,0 +1,22 @@
+====================================================================================================
+F-1  THE ARROW: DOES THE BATH HOLD A COPY, AND AT WHAT THRESHOLD?
+====================================================================================================
+  SELF-CHECK ||[Zbar,H_S]|| = 0.0e+00   ground degeneracy 4   d = 2
+
+1-2.  HOLEVO INFORMATION THE BATH HOLDS ABOUT THE RECORD
+  coupling A              weight  ||[A,Xbar]||   chi(Zbar:B) bits   closed form
+  Zbar  (logical)              2        32.000         0.11448276    0.11448276
+  Zbar2 (logical)              2         0.000         0.00000000              
+  Z_e   (single site)          1        32.000         0.00000000              
+  identity (no coupling)       0         0.000         0.00000000              
+
+3.  DO LOCAL (SYSTEM-ONLY) UNITARIES CHANGE chi?   [if not, the system cannot unmake the copy]
+     chi before = 0.11448276   max |change| over 12 random system-only unitaries = 1.145e-01
+     -> CHANGES -- prediction 3 falsified
+
+4.  THE DECIDING TEST -- does chi carry the RECORD'S threshold, or is it ambient decoherence?
+     sweeping ALL observables by weight, in the SAME state (coupling A = Zbar, lambda = 0.8)
+    observable weight   # swept    max chi(O:B) bits        argmax
+                    1        24           0.00000000          Z[4]
+                    2       252           0.11448276      ZZ[0, 2]
+   logical (weight 2)         2           0.11448276    Zbar/Zbar2

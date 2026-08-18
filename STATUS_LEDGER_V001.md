@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | CANDIDATE | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 50 | 2 | 4 | 1 | 1 | 8 | 3 | 5 | 5 | 3 | 3 |
+| 53 | 2 | 6 | 1 | 1 | 7 | 3 | 5 | 5 | 3 | 3 |
 
-**85 rows.**
+**89 rows.**
 
 ---
 
@@ -98,6 +98,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-10** | THE THRESHOLD=d SCALING IS UNTESTED. F-11 measured it at d=2 only; 3x3 needs dim 262144 | **PROVED** | threshold = d on six codes at d = 1,2,3 incl. non-CSS and degenerate; now PROVED for every stabiliser code and every coupling | — | — |
 | **O-11** | F-13 MAY CONTRADICT ITSELF. A strong-coupling bath relaxes to the MEAN-FORCE Gibbs state Tr_B[e^{-beta H_tot}]/Z, which depends on the COUPLING operators; at weight >= d — what clause (2) requires — that state is not degeneracy-blind, so it meets clause (1)'s falsifier while satisfying clause (2) | **PROVED** | F-13 clause (1) CONTRADICTED: mean-force state gives <Zbar> = -0.824573 at lambda=0.8, closed form agreeing to 7.2e-15 | — | — |
 | **O-12** | UNDER THE TRIVIAL READING OF 'ADMISSIBLE' (any unitary) THE TORIC CODE FAILS THE PROGRAM'S OWN CLAUSE (v). The undefined word was load-bearing in clause (v), not clause (iv). P-3 survives but weakens to 'no admissible writer fits inside ONE contractible region' | **PROVED** | closed: 'admissible' inserted into clause (v); 0 admissible flippers against 1158 (L=3) and 2.815e15 (L=5) as positive control, independently reproduced | — | — |
+| **O-13** | REDUNDANCY UNTESTED. The bath is 4 levels. Whether many environment fragments EACH hold a copy — what makes a record objective rather than merely correlated — is not tested | **OPEN** | F-1 limitation, stated in the result | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 
@@ -114,14 +115,14 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
-| **T-III.6** | irreversibility — why a record is of the PAST | **OPEN** | askable on the existing carrier | — | — |
+| **T-III.6** | irreversibility — why a record is of the PAST | **PARTIAL** | the arrow is real and record-level; see F-17, F-18 | — | — |
 | **T-V.3** | is a measurement the creation of a record? | **OPEN** | askable on the existing carrier | — | — |
 | **T-I.4** | do records compose? | **OPEN** | — | — | — |
 | **T-V.4** | the classical limit | **OPEN** | — | — | — |
 | **T-II.5** | why the world's Hamiltonian has this topology | **RECLASSIFIED** | asks what produces a permission (D-4), same class as X-2 | — | — |
 | **T-VI.3** | a distinguishing prediction | **BLOCKED** | none identified | — | — |
 | **T-VI.4** | empirical contact | **BLOCKED** | zero | — | — |
-| **F-1** | RFP requires AN ARROW: a before with no record and an after with one, not freely reversible | **OPEN** | = T-III.6 | — | — |
+| **F-1** | RFP requires AN ARROW: a before with no record and an after with one, not freely reversible | **PARTIAL** | one-wayness MEASURED: I(S:B) exactly invariant under system-only unitaries (3.686e-14). The temporal before/after was NOT simulated; bath is 4 levels with no redundancy test | — | — |
 | **F-2** | RFP requires THE PROTECTION TO TURN ON: min weight goes from O(1) to growing with the carrier. G-6 and G-11 both land here — R3 is the discriminator, so R3 is what must come into being | **WITHDRAWN** | asks what PRODUCES the systole — a permission (D-4); corrected form is the occupancy question, = F-7 | — | — |
 | **F-3** | RFP requires THE CARRIER TO ARISE: the complex is not assumed | **RECLASSIFIED** | asks what produces the allow — same class as X-2 (D-4); T-II.5 inherits | — | — |
 | **F-4** | RFP must be DYNAMICS, NOT AN ACT: the process follows from the same (H, {L_k}) the definition uses | **OPEN** | — | — | a formation that requires an external agent |
@@ -137,6 +138,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **F-14** | WHAT SURVIVES OF F-9: for ANY occupation that is a function of H ALONE, exact degeneracy forces flatness on the code space. Verified <Zbar> <= 1.1e-14 across Gibbs b=5, b=0.5, power-law 1/(1+dE)^7, non-monotone 0.1+\|sin 3dE\|, and a RANDOM function of the eigenvalue | **PROVED** | import audit re-run; this is the exclusion's correct warrant | — | an occupation depending only on H that is non-flat on an exactly degenerate space |
 | **F-15** | WEIGHT >= d IS NECESSARY BUT NOT SUFFICIENT. A weight-d coupling that COMMUTES with the writer gives <Zbar> = 0.000000 exactly (Zbar2), while one that does not gives 0.824573 (Zbar). F-8 reappearing at the level of H_tot | **PROVED** | LANE_O11_MEANFORCE o11b | — | a writer-commuting coupling that biases the record |
 | **F-16** | THE WEIGHT-1 SUPPRESSION IS KNILL-LAFLAMME, NOT SYMMETRY. All 24 weight-1 couplings give \|<Zbar>\| <= 7.2e-15 at lambda=0.8 against a 1.55e-15 noise floor, INCLUDING the 4 that break the writer symmetry with \|\|[A,Xbar]\|\| = 32 | **PROVED** | LANE_O11_MEANFORCE o11b; strongest is Y_4 at 5.317e-15 | — | a weight-1 coupling that biases the record at any coupling strength |
+| **F-17** | THE ARROW CARRIES THE RECORD'S OWN THRESHOLD. chi(O:B) = 0.00000000 over all 24 weight-1 observables and 0.11448276 at weight 2 = d. Acquiring record information requires the environment to couple over a region at least as large as d — the same d that protects and forms it | **PROVED** | LANE_F1_ARROW part 4; closed form exact | — | a weight-1 observable the bath holds information about |
+| **F-18** | THE RECORD'S ARROW IS NOT AMBIENT DECOHERENCE. A weight-1 coupling DOES entangle environment with system, I(S:B) = 0.04549256, and transfers ZERO bits about the record, chi = 0.00000000. Decoherence and the record's arrow are separated by a measured threshold | **PROVED** | LANE_F1_ARROW part (c); this is the import guard firing in our favour | — | record information in the bath from a sub-d coupling |
+| **F-19** | IRREVERSIBILITY: a system-only operation can MOVE which observable the bath knows about but cannot change I(S:B) at all (3.686e-14 over 12 random unitaries). The correlation is not erasable from inside | **PROVED** | LANE_F1_ARROW part 3, corrected; covariance check 9.992e-16 | — | a system-only operation that reduces I(S:B) |
 
 ---
 

@@ -1,0 +1,21 @@
+==================================================================================================
+F-1 part 3, CORRECTED
+==================================================================================================
+  chi(Zbar:B) = 0.11448276 bits     I(S:B) = 0.11448276 bits
+
+(a) COVARIANCE -- instrument check, chi(O in r) vs chi(Q O Q-dag in Q r Q-dag)
+    max |chi(Q O Q-dag in Q r Q-dag) - chi(O in r)| = 9.992e-16   PASS -- covariant, so v1 measured a rotated observable
+
+(b) THE ARROW -- what a system-only unitary can and cannot do
+    max |I(S:B) change| over 12 random system-only unitaries = 3.686e-14   EXACTLY INVARIANT
+    max |chi about the FIXED label Zbar| change              = 1.145e-01   (may move -- and does)
+
+    READ: a system-only operation can MOVE which observable the bath knows about.
+          It cannot change I(S:B) at all. The correlation is not erasable from inside.
+
+(c) HOW MUCH IS UNREACHABLE, by coupling weight
+    coupling                  weight    I(S:B) bits   chi(Zbar:B) bits
+    Zbar  (logical)                2     0.11448276         0.11448276
+    Zbar2 (logical)                2     0.11448276         0.00000000
+    Z_e   (single site)            1     0.04549256         0.00000000
+    identity                       0     0.00000000         0.00000000

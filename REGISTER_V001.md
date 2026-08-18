@@ -5867,3 +5867,74 @@ ours.**
 4. **THE DECIDING ONE:** sweeping observables by weight, `χ` turns on at **weight `= d`** and is **zero
    below it**. If instead low-weight observables also carry `χ`, **the arrow is imported and this lane
    returns a negative result.**
+
+---
+
+## F-1 / T-III.6 RESULT — **THE ARROW IS REAL AND IT CARRIES THE RECORD'S OWN THRESHOLD. IT IS NOT AMBIENT DECOHERENCE.**
+
+`LANE_F1_ARROW`. Toric code 2×2 + 4-level bath, mean-force state, `β=2`, `λ=0.8`.
+
+### 1–2. THE BATH HOLDS INFORMATION ABOUT THE RECORD
+
+| coupling | weight | `‖[A,X̄]‖` | **`χ(Z̄:B)` bits** | closed form |
+|---|---|---|---|---|
+| `Z̄` (logical) | 2 = `d` | 32.000 | **0.11448276** | **0.11448276** |
+| `Z̄₂` (logical) | 2 = `d` | **0.000** | **0.00000000** | |
+| `Z_e` (single site) | 1 | 32.000 | **0.00000000** | |
+| identity | 0 | 0.000 | 0.00000000 | |
+
+Closed form **exact**. And the same two conditions as F-13/F-15 reappear: **weight ≥ `d` AND
+non-commuting with the writer.**
+
+### 3. THE IRREVERSIBILITY, MEASURED
+
+| | |
+|---|---|
+| covariance instrument check | `9.992e-16` **PASS** |
+| **`I(S:B)` under 12 random system-only unitaries** | **`3.686e-14` — EXACTLY INVARIANT** |
+| `χ` about the *fixed* label `Z̄` | `1.145e-01` — **moves, and does** |
+
+> **A system-only operation can MOVE which observable the bath knows about. It cannot change `I(S:B)`
+> at all. THE CORRELATION IS NOT ERASABLE FROM INSIDE.**
+
+### 4. **THE DECIDING TEST — AND THIS IS THE RESULT**
+
+Sweeping **all** observables by weight in the same state:
+
+| observable weight | # swept | `max χ(O:B)` |
+|---|---|---|
+| **1** | 24 | **0.00000000** |
+| **2 = `d`** | 252 | **0.11448276** |
+
+**AND THE DISCRIMINATION THE IMPORT GUARD WAS BUILT FOR** — from part (c):
+
+| coupling | weight | `I(S:B)` | `χ(Z̄:B)` |
+|---|---|---|---|
+| `Z_e` | **1** | **0.04549256** | **0.00000000** |
+| `Z̄` | 2 = `d` | 0.11448276 | 0.11448276 |
+
+> ### **A WEIGHT-1 COUPLING DOES ENTANGLE THE ENVIRONMENT WITH THE SYSTEM — `I(S:B) = 0.045` — AND TRANSFERS **ZERO BITS ABOUT THE RECORD**.**
+> ### **AMBIENT DECOHERENCE IS PRESENT AT WEIGHT 1. THE RECORD'S ARROW IS NOT. IT TURNS ON AT `d`.**
+
+**So the arrow is not einselection wearing our vocabulary. Decoherence and the record's arrow are
+separated by a measured threshold, and that threshold is the record's own.**
+
+### THE STATEMENT, IN THE RECORD LEVEL'S OWN TERMS
+
+> **A record is of the past because the environment holds Holevo information about it, and no
+> operation the system can perform removes that. Acquiring it requires the environment to couple over
+> a region at least as large as `d` — the same `d` that protects it and the same `d` that forms it.**
+
+### WHAT IS **NOT** ESTABLISHED — stated plainly, and it keeps this PARTIAL
+
+1. **This is an equilibrium state, not a dynamical history.** F-1 asked for *"a before with no record
+   and an after with one."* **One-wayness is measured; the temporal formation was not simulated.**
+2. **The bath is 4 levels.** Redundancy — many environment fragments each holding a copy, which is
+   what makes a record *objective* — is **untested**.
+3. **One-wayness is necessary for "of the past". Whether it is sufficient is not settled here.**
+
+### DEFECT IN v1, CAUGHT BY ITS OWN CONTROL
+
+v1 reported *"prediction 3 falsified — local unitaries change `χ`."* **It conjugated the observable
+the wrong way (`Q†Z̄Q` where covariance needs `QZ̄Q†`), so it measured a rotated observable.** The
+corrected covariance check returns `9.992e-16`. **The reported falsification was mine, not nature's.**
