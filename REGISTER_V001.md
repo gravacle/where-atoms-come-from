@@ -5822,3 +5822,48 @@ The v1 script fitted a log-log slope to the weight-1 column and its **auto-verdi
 does NOT survive."** That column was **noise** — magnitude `~1e-15` with the sign oscillating — so the
 slope `0.2741` was a fit to zero. **No noise floor had been established.** This is **D-8 in a second
 costume: a computed verdict is not a check unless the noise floor is measured alongside it.**
+
+---
+
+## F-1 / T-III.6 — **THE ARROW.** PREDICTION AND IMPORT-GUARD REGISTERED BEFORE THE RUN
+
+**WHY THIS DECIDES THE PROGRAM.** Every clause of the anchor is **time-symmetric** — `R=R†`, `R²=I`,
+`[H,R]=0`, `[L_k,R]=0`, writable, protected. **Not one mentions time.** Without an arrow we have a
+theory of **protected bits**, not of **records**, and the charter's own word is unearned.
+
+### THE DESIGN PROBLEM, AND WHY THE OBVIOUS TEST IS VOID
+
+"Run the formation backwards" does not work as stated. With coupling `A = Z̄`, **`[Z̄, H_tot] = 0`**, so
+`⟨Z̄⟩` is a **constant of motion** and unitary evolution never forms anything. The mean-force state is
+reached by **relaxation**, and `ρ_MF` is itself **stationary** — an equilibrium state has no arrow.
+**Testing reversibility of a stationary state would have measured nothing.**
+
+### THE TEST THAT REPLACES IT
+
+`ρ_MF` blocks by `Z̄ = s`, with bath state `e^{−β(H_B + sλB)}/Z_B(s)` in each block. **Those are
+DIFFERENT bath states.** So the bath's state depends on the record's value, and the quantity is the
+**Holevo information the bath holds about the record**:
+
+> `χ(Z̄ : B) = S(ρ_B) − Σ_s p_s S(ρ_B^s)`
+
+**AND THE ARROW STATEMENT:** local unitaries **cannot change** `χ`. If the bath holds a copy, **no
+system-only operation can unmake it.** Forming needed a coupling; **unforming needs that coupling AND
+control of the bath, which the system does not have.** That asymmetry is the candidate arrow.
+
+### **THE IMPORT GUARD — AND IT IS THE POINT OF THE LANE (D-1)**
+
+**If `χ(O:B) > 0` for EVERY observable, this is DECOHERENCE and we have imported einselection.** The
+program's concept list already contains einselection and quantum Darwinism. **A general arrow is not
+ours.**
+
+> ### **DISCRIMINATOR: does the arrow carry the RECORD'S OWN THRESHOLD?**
+> ### **`χ(O:B) > 0` only for observables of weight ≥ `d` ⟹ the arrow is RECORD-LEVEL.**
+> ### **`χ(O:B) > 0` for weight-1 observables too ⟹ it is ambient decoherence, and F-1 is NOT ours.**
+
+**PREDICTIONS:**
+1. `χ(Z̄:B) > 0` for a weight-`d` coupling, matching a closed form from `Z_B(±1)`.
+2. `χ(Z̄:B) = 0` for a weight-1 coupling — **the bath learns nothing about the record.**
+3. **Local unitaries leave `χ` exactly invariant** — measured, not asserted.
+4. **THE DECIDING ONE:** sweeping observables by weight, `χ` turns on at **weight `= d`** and is **zero
+   below it**. If instead low-weight observables also carry `χ`, **the arrow is imported and this lane
+   returns a negative result.**
