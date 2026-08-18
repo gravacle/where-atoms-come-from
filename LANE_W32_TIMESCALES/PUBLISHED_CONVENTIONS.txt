@@ -1,0 +1,12 @@
+LANE W32 -- THE APPROXIMATE-CONSERVATION ESCAPE. 3x3 patch, Z_2, physical dim 16, gamma=0.5.
+RECORD R = rim Wilson loop (product of the 4 plaquettes). CUT = the 4 links at the centre vertex;
+RIM/PERIM = the other 8. Rates are taken from the LINDBLADIAN SPECTRUM, not by fitting time series:
+the generator is vectorised to 256x256 and diagonalised. Gamma_R = the slowest decay rate among
+LEFT eigenmodes whose overlap with the observable R exceeds 1e-6 -- so the number reported is the
+RECORD's lifetime and not some unrelated mode's. omega = ||[H,R]||/dim, the coherent drive rate.
+RATIO = omega/Gamma_R = coherent write-rotations per record lifetime. Dimensionless; no choice of
+observation window enters it.
+w32 : first pass. Took the globally slowest mode (wrong at g2=0, where nothing carries R) and fitted
+      the summary slope across the scan endpoints, straddling the non-monotonic region.
+w32b: identifies the R-carrying mode, pushes two decades lower in g2, and tests whether the exponent
+      depends on WHERE the bath couples.

@@ -1,0 +1,43 @@
+W-32   3x3 patch. RATIO = coherent write-rotations per record lifetime (dimensionless).
+
+=== BATH ON THE CUT LINKS (disjoint from the rim -- commutes with R) ===
+
+  N=2  dim=16  bath = electric on the CUT (4 ops)   max||[L,R]|| = 0.000e+00
+       g^2  omega=||[H,R]||/D  Gamma(slowest)  RATIO omega/Gamma  d ln(Gam)/d ln(g2)
+  ------------------------------------------------------------------------------------
+    0.0000           0.000000    5.802732e-01             0.0000                    
+    0.0050           0.020000    7.998119e-04            25.0059                    
+    0.0100           0.040000    3.196988e-03            12.5118               1.999
+    0.0200           0.080000    1.275163e-02             6.2737               1.996
+    0.0500           0.200000    7.805893e-02             2.5622               1.977
+    0.1000           0.400000    2.856795e-01             1.4002               1.872
+    0.2000           0.800000    5.947799e-01             1.3450               1.058
+    0.5000           2.000000    5.741078e-01             3.4837              -0.039
+    1.0000           4.000000    2.147433e-01            18.6269              -1.419
+
+=== CONTROL: BATH ON THE RIM ITSELF (the bath now looks directly at the record) ===
+
+  N=2  dim=16  bath = electric on the RIM (8 ops)   max||[L,R]|| = 8.000e+00
+       g^2  omega=||[H,R]||/D  Gamma(slowest)  RATIO omega/Gamma  d ln(Gam)/d ln(g2)
+  ------------------------------------------------------------------------------------
+    0.0000           0.000000    1.000000e+00             0.0000                    
+    0.0050           0.020000    1.000225e+00             0.0200                    
+    0.0100           0.040000    1.000899e+00             0.0400               0.001
+    0.0200           0.080000    1.003589e+00             0.0797               0.004
+    0.0500           0.200000    1.022078e+00             0.1957               0.020
+    0.1000           0.400000    1.083207e+00             0.3693               0.084
+    0.2000           0.800000    1.255577e+00             0.6372               0.213
+    0.5000           2.000000    7.111546e-01             2.8123              -0.620
+    1.0000           4.000000    2.196203e-01            18.2133              -1.695
+
+=== CONTROL: bath OFF entirely. Gamma must be 0 at every g^2. ===
+    g2= 0.000  gamma=0   #decaying modes = 0   max|Re(eigenvalue)| = 4.427e-15
+    g2= 0.050  gamma=0   #decaying modes = 0   max|Re(eigenvalue)| = 1.801e-14
+    g2= 1.000  gamma=0   #decaying modes = 0   max|Re(eigenvalue)| = 3.496e-14
+
+=== READING THE SCALING ===
+  If Gamma ~ g^4 and omega ~ g^2 then RATIO ~ 1/g^2 and DIVERGES as the coupling -> 0:
+  a window exists, and its width is set by the coupling.
+  If RATIO is flat or falls as g^2 -> 0, no window: the W-30 obstruction stands.
+    cut bath: RATIO at g2=0.005 is 25.01; at g2=1.0 is 18.63;  d ln(RATIO)/d ln(g2) = -0.056
+    rim bath: RATIO at g2=0.005 is 0.02; at g2=1.0 is 18.21;  d ln(RATIO)/d ln(g2) = 1.286

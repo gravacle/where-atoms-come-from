@@ -1,0 +1,43 @@
+W-32b  CHECK 1 -- does the slowest mode actually carry the record?
+       g^2  Gam(slowest ANY)  ov with R  Gam(slowest CARRYING R)       ov
+  --------------------------------------------------------------------------
+    0.0000      5.802732e-01   1.32e-16        NO MODE CARRIES R       --
+    0.0020      1.279952e-04   1.00e+00             1.279952e-04    1.000
+    0.0050      7.998119e-04   1.00e+00             7.998119e-04    1.000
+    0.0100      3.196988e-03   9.99e-01             3.196988e-03    0.999
+    0.0200      1.275163e-02   9.96e-01             1.275163e-02    0.996
+    0.0500      7.805893e-02   9.75e-01             7.805893e-02    0.975
+    0.1000      2.856795e-01   9.05e-01             2.856795e-01    0.905
+
+CHECK 2 -- the weak-coupling regime, pushed down two more decades.
+
+  bath on the CUT (disjoint from the rim; [L,R]=0)
+        g^2        omega        Gamma_R        RATIO  local slope d lnRATIO/d ln g2
+  ------------------------------------------------------------------------------------
+    0.00050     0.002000   7.999981e-06     250.0006                               
+    0.00100     0.004000   3.199970e-05     125.0012                         -1.000
+    0.00200     0.008000   1.279952e-04      62.5024                         -1.000
+    0.00500     0.020000   7.998119e-04      25.0059                         -1.000
+    0.01000     0.040000   3.196988e-03      12.5118                         -0.999
+    0.02000     0.080000   1.275163e-02       6.2737                         -0.996
+    0.05000     0.200000   7.805893e-02       2.5622                         -0.977
+
+  bath on the RIM (the environment sees the record directly; [L,R]!=0)
+        g^2        omega        Gamma_R        RATIO  local slope d lnRATIO/d ln g2
+  ------------------------------------------------------------------------------------
+    0.00050     0.002000   5.999266e+00       0.0003                               
+    0.00100     0.004000   4.998608e+00       0.0008                          1.263
+    0.00200     0.008000   4.997203e+00       0.0016                          1.000
+    0.00500     0.020000   4.992902e+00       0.0040                          1.001
+    0.01000     0.040000   3.976030e+00       0.0101                          1.329
+    0.02000     0.080000   2.974926e+00       0.0269                          1.418
+    0.05000     0.200000   1.022078e+00       0.1957                          2.166
+
+CHECK 3 -- does the bath LOCATION change the exponent, or is it generic golden-rule counting?
+  bath on CUT :  d ln(RATIO)/d ln(g2) = -0.996    d ln(Gamma)/d ln(g2) = +1.996
+  bath on RIM :  d ln(RATIO)/d ln(g2) = +1.310    d ln(Gamma)/d ln(g2) = -0.310
+
+  RATIO ~ 1/g^2 (slope -1) with Gamma ~ g^4 (slope +2) is second-order golden-rule protection:
+  the bath can only reach the record THROUGH the H-mixing, so decay is one order higher than drive.
+  If the two baths give DIFFERENT exponents, the exponent is a fact about where the environment
+  couples. If they give the same, it is generic weak-coupling counting and must be said so.

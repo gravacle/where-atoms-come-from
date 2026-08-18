@@ -2439,3 +2439,86 @@ requirement is derived from a null, not assumed.
 pointer states stable on observation timescales, not forever. That is a hierarchy of timescales, and
 a timescale ratio is a pure number. **Whether alpha sets that ratio is untested and is the obvious
 next question if the dynamical carrier fails.**
+
+---
+
+## W-32 — **THE WINDOW EXISTS. W-30's "NO COUPLING ESCAPES" IS WRONG, AND THE COUPLING SETS THE WIDTH.**
+
+`LANE_W32_TIMESCALES/`, sealed. Opened at the principal's direction: real records are never exactly
+conserved — domains flip, crystals anneal, DNA mutates — so the question is not whether `<R>`
+survives to a fixed time but **how many times the record can be written before it decays.** That
+ratio is dimensionless.
+
+### ERRATUM TO W-30
+
+**W-30b measured survival at a FIXED ABSOLUTE TIME (`T=10`) while the WRITE timescale was itself
+changing with `g^2`.** Two moving quantities, one held still. Corrected here by taking both rates
+from the Lindbladian spectrum, where no observation window enters.
+
+> **W-30's sentence "no value of the coupling solves it; the obstruction is total on a static
+> carrier" IS WITHDRAWN.** The no-go on *exact* conservation (W-30a) stands untouched and is
+> unaffected. What fails is the extension of it to approximate records.
+
+### THE MEASUREMENT
+
+`Gamma_R` = slowest decay rate among left-eigenmodes of the Lindbladian **whose overlap with `R`
+exceeds `1e-6`** — so it is the record's lifetime, not an unrelated mode's. Overlap is `1.000` at
+weak coupling; **at `g^2=0` NO mode carries `R` at all** (`1.3e-16`), confirming exact conservation
+there and exposing that W-32's first pass had reported an unrelated mode's rate.
+
+```
+  BATH ON THE CUT -- disjoint from the rim, [L,R] = 0
+       g^2        omega        Gamma_R        RATIO   d ln(RATIO)/d ln(g2)
+   0.00050     0.002000   7.999981e-06     250.0006
+   0.00100     0.004000   3.199970e-05     125.0012                 -1.000
+   0.00200     0.008000   1.279952e-04      62.5024                 -1.000
+   0.00500     0.020000   7.998119e-04      25.0059                 -1.000
+   0.01000     0.040000   3.196988e-03      12.5118                 -0.999
+
+  BATH ON THE RIM -- the environment sees the record directly, [L,R] = 8
+   0.00050     0.002000   5.999266e+00       0.0003
+   0.00500     0.020000   4.992902e+00       0.0040                 +1.001
+   0.05000     0.200000   1.022078e+00       0.1957                 +2.166
+```
+
+**`omega = 4g^2` (first order). `Gamma_R = 32g^4` (second order). `RATIO = 1/(8g^2)`, slope `-1.000`
+across two decades.** The record can be written `250` times over at `g^2 = 0.0005`, and the count
+**doubles every time the coupling halves.**
+
+### THE EXPONENT IS PHYSICS, NOT GENERIC COUNTING
+
+The obvious deflation is that `omega ~ g^2` and `Gamma ~ g^4` is just golden-rule order counting.
+**It is not, and the control settles it:**
+
+```
+  bath on CUT :  d ln(Gamma)/d ln(g2) = +1.996     RATIO ~ 1/g^2   protection DIVERGES as g2 -> 0
+  bath on RIM :  d ln(Gamma)/d ln(g2) = -0.310     RATIO ~ g^2     protection VANISHES as g2 -> 0
+```
+
+**Same Hamiltonian, same record, same coupling strength — opposite exponents.** The difference is
+only **where the environment touches.** When the bath commutes with the record it can reach it only
+*through* the `H`-mixing, so decay is one order higher than drive and the record is shielded. When
+the bath sees the record directly, `Gamma_R` is flat at `~5` regardless of coupling and there is no
+protection at any `g^2`.
+
+> **THE CONDITION FOR A RECORD IS GEOMETRIC. The record lives on the rim; the environment couples to
+> the cut. `[L,R] = 0` is the shielding condition, and the W-27 patch — whose perimeter is
+> simultaneously a CYCLE and a SEPARATOR — is exactly the structure that supplies it.** That
+> construction was built at W-27 and only now does work.
+
+### WHAT THIS DOES TO THE THREE TERMS
+
+**ALPHA GAINS A SECOND, SHARPER ROLE.** Beyond being the dial along the obstruction axis (W-30b),
+`1/g^2` **is the number of times a record can be written and re-read before it decays.** A pure
+number, measured, not fitted.
+
+**AND THE W-30 CLAIM ABOUT GRAVITY IS WEAKENED AND MUST BE RESTATED.** W-30 concluded "without a
+responsive carrier there are no records at all." **That is now false as stated** — approximate
+records form and persist on a static carrier, and approximate is what real records are.
+
+**WHAT REMAINS OPEN IS SELECTION, NOT DURABILITY.** W-32 shows a record, once written, persists
+`1/(8g^2)` write-times. **W-29c showed nothing writes it spontaneously** — every physically
+motivated bath left `<W>` at exactly `0.000000` with entropy pinned at maximum, and only a projector
+that already knew the answer broke the tie. **So the live question is no longer "can a record last."
+It is "what decides WHICH value it takes."** That is the tie-breaking / symmetry-breaking problem,
+and it is where the responsive carrier must now be aimed.
