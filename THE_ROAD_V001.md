@@ -29,7 +29,8 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | 16 | make capacity dynamical — does the carrier grow, or only evict? | **DONE** | W-49 | **it grows.** `<N>` = 0.012 vs 0.853 on one bit of content; control exactly `1.9e-16`. Needed a THERMAL bath — every prior bath in the program was infinite-temperature |
 | 17 | does any of it survive off the toy | **PARTLY DONE** | Phase A/B | T1 general (any GKSL, arbitrary jumps, and no Markov assumption needed at all); T2 group-independent; T3 field- and dimension-independent but **abelian-specific**. The carrier itself is still imported |
 | 18 | **empirical contact — any published data at all** | **OPEN** | — | **ZERO. Not one number in this program came from a measurement.** The paper's package carries 28 source registries (COW, GAB 2022, Panda 2024, Rosi/Jaffe, C70, AION); this program has never touched them |
-| 19 | is the novel half testable — storage vs legibility | **CLOSED, NEGATIVE** | Phase C | **legibility = the locality bound in 13 of 13 shapes.** The split is microcausality in gauge language. No distinguishing prediction; Phase D unreachable |
+| 19 | is the novel half testable — storage vs legibility | **CLOSED, NEGATIVE** | Phase C | **legibility = the locality bound in 13 of 13 shapes.** Microcausality in gauge language. NOTE: this closed LEGIBILITY, not capacity |
+| 20 | **accumulation — do MANY capacity/boundary constraints determine anything one does not?** | **OPEN, NEVER ATTEMPTED** | — | every deflation so far (`exp(−ΓT)`, locality, Boltzmann, counting) is a statement about ONE constraint at ONE scale. No test run could have detected an emergent effect |
 
 ## WITHDRAWN CLAIMS (kept so they are not re-made)
 

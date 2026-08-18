@@ -3897,3 +3897,45 @@ plaquettes that share a link.
 and three independent routes to it failed — dynamical topology (refuted 3/3), a classical metric
 (three builds, bought nothing), and the functional identification (forced by counting). **An account
 built from EM and a coupling alone can only reproduce what EM and a coupling already explain.**
+
+---
+
+## PHASE C ERRATUM — **C1 TESTED LEGIBILITY, NOT CAPACITY. THE VERDICT WAS OVERSTATED.**
+
+The Phase C entry wrote *"the capacity half is locality (C1)"*. **C1 tested no such thing.** It tested
+**LEGIBILITY** — how many of a region's records are distinguishable from outside — and found it equals
+the locality bound in 13 of 13 shapes. **That is a result about what ESCAPES a region, not about how
+many records it can HOLD.** The two are separate claims and the registrar collapsed them.
+
+**WHAT IS ACTUALLY ESTABLISHED, ITEM BY ITEM:**
+
+| claim | status | by |
+|---|---|---|
+| legibility (what escapes) reduces to locality | **established** | C1, 13 shapes |
+| capacity's four gravity-like markers are forced by counting | **established** | W-50 |
+| the carrier's response to content is Boltzmann | **established** | W-49 |
+| **capacity + boundary formation are not gravity's record-level form** | **NOT ESTABLISHED** | — |
+
+**The last line was never tested and the Phase C verdict implied it.**
+
+### THE PRINCIPAL'S FRAMING, AND WHAT WOULD ACTUALLY TEST IT
+
+> *"we don't expect gravity to appear at the record level looking the same as classical gravity. It
+> will likely have other features such as capacity and boundary formation."*
+
+Everything this program has ruled out was ruled out **at a single scale**: one region, one carrier,
+one bath placement. **The four markers being forced by counting says they carry no information ABOUT
+THE CARRIER. It does not say a large collection of capacity constraints carries no information.**
+
+**THE UNTESTED ROUTE IS ACCUMULATION** — and it is the paper's own Appendix C step 3, the large-record
+limit, which this program has never attempted. W-39/41/42 are step 2 (compatibility across
+overlapping regions) with numbers in them. **Step 3 asks whether a sufficiently rich collection of
+capacity and boundary constraints determines something that is not present in any one of them.**
+
+**Why this is not special pleading.** Every deflation so far — `exp(−ΓT)`, locality, Boltzmann,
+counting — is a statement about ONE constraint. **Emergence claims are claims about MANY, and none of
+the tests run so far could have detected one.** That is a real gap in the coverage, not a rescue.
+
+**IT IS ALSO FALSIFIABLE.** If a large collection of capacity/boundary constraints determines nothing
+beyond what each determines separately, accumulation adds nothing and the negative verdict stands at
+every scale. **That is a decidable question and it has not been asked.**
