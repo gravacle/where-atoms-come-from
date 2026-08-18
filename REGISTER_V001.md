@@ -3222,3 +3222,51 @@ weight contributes, and it is tempting to claim we already saw gravity. **We did
 was **uniform and installed by hand** to break a time-reversal symmetry; a metric weight must **vary
 across links and be sourced**. The separating test is uniform versus varying phase, and whether
 anything sources the variation.
+
+---
+
+## W-43 — **LOCAL RECORDS ARE OBJECTIVE FOR FREE; THE ONE THE DYNAMICS SELECTS IS NOT**
+
+`LANE_W43_METRIC/`, sealed. **CONTAMINATED LANE — designed after reading Gravacle v337.**
+
+**W-43's chirality test failed twice and both failures are logged rather than hidden.** The measure
+was broken (the antipodal site weighted `-n/2` when it is equally `+n/2`, so a symmetric
+distribution scored `-0.419` — exactly the "nothing added" baseline). And the concept was wrong: **a
+`Z_2` flux cannot break time reversal, because `0` and `pi` are both TR-invariant**, so chirality
+could never separate a `Z_2` gauge record from a metric one. **Nothing is inferred from it.**
+
+**W-43b, the measurement that works.** Same environment, same coupling, same machinery as W-36:
+
+```
+  GAUGE record  (rim Wilson loop, a product over 8 links)
+    |F| : 0      1      2      3      4      5      6
+    I   : 0.000  0.044  0.100  0.187  0.351  0.658  0.929      ratio 0.047
+
+  LOCAL record  (a two-level variable at one site)
+    I   : 0.000  0.999  1.000  1.000  1.000  1.000  1.000      ratio 0.999
+
+  CONTROL kappa = 0, both:  <= 9.5e-15 at every fragment size
+```
+
+### THE HONEST LIMITATION, BEFORE THE RESULT
+
+> **THIS IS NOT A GRAVITY MEASUREMENT.** The "metric record" is a two-level mass at one site with
+> `H_sys = 0` and the environment coupled to it **directly**. **The potential it would source never
+> enters the dynamics.** So W-43b compares a LOCAL observable against a NONLOCAL one — and that a
+> local thing is locally copyable is close to a tautology.
+
+### WHAT IS NOT TAUTOLOGICAL
+
+> **THE RECORD THE DYNAMICS SELECTS IS THE NONLOCAL ONE.** W-34's sieve, nominating nothing, picked
+> the full boundary by a factor of **28**. So the carrier protects precisely the record that **cannot
+> be made objective**, while the record that is objective for free is **not** the one it protects.
+
+**PROTECTION AND OBJECTIVITY PULL APART, AND THE TWO SIT ON OPPOSITE SIDES.** W-36 named this as
+legible-vs-protected; W-43b puts both numbers on one page under identical conditions: `0.047`
+against `0.999`. **And the only structural difference is whether the observable lives on a closed
+loop or at a point.**
+
+**NEXT, AND IT IS THE REAL TEST.** Make the potential do work: let it source a phase that a
+transported probe accumulates, so the metric enters the dynamics rather than being a label the
+environment reads off. **Then ask whether THAT is redundantly readable, and whether the sieve still
+prefers the loop.** Until then the gravity line has a candidate term and no measurement.

@@ -1,0 +1,27 @@
+W-43b  IS A METRIC RECORD THE SAME KIND OF THING AS A GAUGE RECORD?
+       Holevo information a fragment of a LOCAL environment holds about the record. Ceiling 1 bit.
+
+  GAUGE record: the rim Wilson loop (nonlocal: a product over 8 links)  (system dim 16, 6 local environment qubits)
+    |F| : 0  1  2  3  4  5  6
+    I   : 0.000  0.044  0.100  0.187  0.351  0.658  0.929
+
+  METRIC record: a mass at one site (local: gauge-invariant pointwise)  (system dim 2, 6 local environment qubits)
+    |F| : 0  1  2  3  4  5  6
+    I   : 0.000  0.999  1.000  1.000  1.000  1.000  1.000
+
+    record   I(|F|=1)    I(all)   ratio  verdict
+  --------------------------------------------------------------------------
+     gauge     0.0441    0.9290   0.047  NOT redundant: only the whole environment knows
+    metric     0.9989    1.0000   0.999  REDUNDANT -> objective for free
+
+  CONTROL -- kappa = 0 for both. Must be exactly 0 everywhere.
+
+  CONTROL kappa=0, gauge  (system dim 16, 6 local environment qubits)
+    |F| : 0  1  2  3  4  5  6
+    I   : -0.000  -0.000  -0.000  -0.000  -0.000  -0.000  -0.000
+    gauge: max over all fragment sizes = 9.53e-15
+
+  CONTROL kappa=0, metric  (system dim 2, 6 local environment qubits)
+    |F| : 0  1  2  3  4  5  6
+    I   : 0.000  0.000  0.000  0.000  0.000  0.000  0.000
+    metric: max over all fragment sizes = 4.16e-15

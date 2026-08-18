@@ -1,0 +1,26 @@
+W-43  METRIC vs GAUGE ON THE SAME CARRIER.  ring n=6, Z_2 gauge + probe + anti-charge
+      EM  = link phase A_k  (hop phase; ODD under path reversal)
+      GRAV= site potential V_j (diagonal; phase accrues with TIME SPENT; EVEN under reversal)
+
+                             setting  I(R;probe) bits  chirality (signed drift)
+  --------------------------------------------------------------------------------
+                       nothing added         0.982660                 -0.418879
+                   EM uniform A=0.30         0.765939                 -0.534981
+                   EM uniform A=0.60         0.807866                 -0.521907
+             EM single link A_0=1.80         0.765939                 -0.534981
+               METRIC uniform V=0.30         0.982660                 -0.418879
+               METRIC uniform V=0.60         0.982660                 -0.418879
+            METRIC gradient V=0..1.0         0.640213                 -0.314420
+           METRIC well V at one site         0.725507                 -0.246734
+             BOTH  A=0.30 and V grad         0.824905                 -0.367140
+
+  THE DISCRIMINATOR -- chirality. An EM flux breaks time reversal; a potential cannot.
+    |chirality| with EM terms      : ['0.5350', '0.5219', '0.5350']
+    |chirality| with METRIC terms  : ['0.4189', '0.4189', '0.3144', '0.2467']
+    baseline (nothing added)       : 0.418879
+    -> NOT separated by this measure
+
+  DEGENERACY CHECK -- can a METRIC setting reproduce an EM setting's full signature?
+                                              pair         dI   d chirality
+    EM uniform A=0.30  vs  METRIC well V at one site     0.0404        0.2882   separated by chirality alone
+    EM single link A_0=1.80  vs  METRIC well V at one site     0.0404        0.2882   separated by chirality alone
