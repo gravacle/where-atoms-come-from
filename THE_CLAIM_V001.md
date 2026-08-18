@@ -83,7 +83,8 @@ lattice's; the outcome problem; and empirical contact, still exactly zero.
 
 ## 5. THE SENTENCE
 
-> **A record is a bit the world cannot lose locally. EM provides the carrier, alpha sets what it
+> **A record is a bit the world cannot lose locally. EM IS the record — an extended holonomy with no
+> local parts (D-5), not a carrier written on. Alpha sets what it
 > costs, and the topology of space is what makes the bit exist, writable, and safe.**
 
 **If that survives P1–P4, it is a description of quantum record formation, in three named terms,

@@ -5482,3 +5482,45 @@ showed the homology can be that of complexes with no manifold behind them at all
 protection needs something metric that homology alone does not supply. **Γ remains a distinct
 requirement (R1–R3). What changes is that it is a requirement ON EM'S COMPLEX, not a separate
 ingredient beside it.**
+
+---
+
+## D-5 / A-EM4 — **AT THE RECORD LEVEL EM HAS NO LOCAL CONTENT. THE FIELD-VALUE PICTURE DOES NOT TRANSFER.**
+
+The principal: *"at the record level EM is a massive object and not just some field measured in other
+contexts."* **`LANE_EM_EXTENT/em_extent.py`** — closed forms verified against explicit GF(2) ranks at
+`L = 2,3,4,5` (all PASS).
+
+### HOW BIG IS THE EM OBJECT THAT CARRIES ONE RECORD
+
+| `L` | links | `dim Z₁` | `dim H₁` | **record fraction** | `d` (support) | `d`/links |
+|---|---|---|---|---|---|---|
+| 2 | 8 | 5 | 2 | 4.000000e-01 | 2 | 0.250000 |
+| 4 | 32 | 17 | 2 | 1.176471e-01 | 4 | 0.125000 |
+| 16 | 512 | 257 | 2 | 7.782101e-03 | 16 | 0.031250 |
+| 256 | 131072 | 65537 | 2 | **3.051711e-05** | **256** | 0.001953 |
+
+**THREE THINGS ARE TRUE AT ONCE, AND NO FAMILIAR OBJECT SATISFIES ALL THREE:**
+
+| | |
+|---|---|
+| **absolute extent `d = L → ∞`** | the object carrying one bit grows **without bound**. It is not a local excitation |
+| **record fraction `2/(L²+1) → 0`** | it is a **vanishing fraction** of EM's own gauge-invariant content. It is not "all of EM" either |
+| **local content ZERO** | **no local operator reads it** — Thm C, `1.59e-16` |
+
+### THE IMPORT GUARD
+
+> **D-5. MEASURES THAT APPLY TO EM AS A LOCAL FIELD HAVE NO REFERENT AT THE RECORD LEVEL.**
+> Field strength at a point, energy density, local flux, a value `E(x)` or `B(x)` — **none of these
+> has a record-level meaning.** Using one is an import of the same class as classical gravity's, and
+> **D-1 applies to it unchanged.**
+> **TELL:** any sentence that assigns EM a value, density or strength **at a place**.
+
+### AND IT CORRECTS A WEAK FRAMING THE PROGRAM HAS BEEN CARRYING
+
+**`THE_CLAIM_V001` says "EM provides the carrier."** A *carrier* suggests a medium that something is
+written **on**. **There is no such separation here: the record IS the holonomy.** The object and its
+carrier are the same thing, that thing is extended, and **it has no local parts to be written on.**
+
+**Found by the principal's prompt, not by the running import audit** — recorded so the audit's eventual
+coverage is not overstated.

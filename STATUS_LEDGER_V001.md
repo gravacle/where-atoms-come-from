@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | CANDIDATE | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 32 | 1 | 4 | 1 | 16 | 3 | 2 | 4 | 3 | 3 |
+| 34 | 1 | 4 | 1 | 16 | 3 | 2 | 4 | 3 | 3 |
 
-**69 rows.**
+**71 rows.**
 
 ---
 
@@ -27,6 +27,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **D-3** | A RESCUE IS ALWAYS DOWNSTREAM OF AN IMPORT. Guards against rescue treat the symptom; removing the import removes the need for the guard | **PROVED** | the rescue-detector built into X-6 was scaffolding for an import | — | a rescue that occurs with no import upstream of it |
 | **F-0** | THE PROGRAM HAS NO FORMATION STEP. 20 PROVED rows, none about a record coming into being. Every clause of the definition is a condition on a standing object; not one mentions time. W-62 is a WRITE into an existing record space, not a build | **PROVED** | RECORD_FORMATION_V001; T-II.5 BLOCKED, T-III.6 and T-V.3 OPEN | — | a registered result that describes a record coming into being |
 | **D-4** | ALLOW/REQUIRE IS A TYPE DISCIPLINE, NOT A FACT ABOUT GRAVITY. Dynamics produces OCCUPANCIES, never PERMISSIONS. Asking what produces a permission (systole, index, constraint) is a category error; asking what occupies it is legitimate | **PROVED** | four instances: X-2 backreaction, X2 allow-to-require, X-6 falsifier, F-2/F-3 | — | a permission produced by a dynamical law |
+| **D-5** | AT THE RECORD LEVEL EM HAS NO LOCAL CONTENT. Field strength at a point, energy density, local flux, E(x) — none has a record-level referent. TELL: any sentence assigning EM a value or density AT A PLACE | **PROVED** | LANE_EM_EXTENT; Thm C 1.59e-16; d = L grows unbounded while record fraction 2/(L^2+1) -> 0 | — | a local operator that reads the record |
 
 ## A. THE THREE ROLES — the charter's question
 
@@ -38,6 +39,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **A-PR** | THE PROCESS: a record is a topologically protected degeneracy of a gauge field, written by non-local transport | **CANDIDATE** | assembly of C-1..C-8 | O-1, O-3 | C-1 or C-4 failing |
 | **A-EM2** | THE MINIMAL COUPLING THAT CAN FORM A RECORD IS AN EM HOLONOMY. Of 252 weight-2 Paulis, 8 distinguish code states; all 8 are logical; 4 are magnetic Wilson loops on cycles and 4 electric on cocycles. Zero exceptions | **PROVED** | LANE_F7_OCCUPANCY f10c | — | a minimum-weight forming coupling that is not a holonomy |
 | **A-EM3** | THE RECORD, ITS WRITER, AND THE MINIMAL THING THAT FORMS IT ARE THE SAME KIND OF OBJECT: an EM holonomy on a non-contractible cycle. Established by three separate measurements (Thm B ii; W-62; f10c) | **PROVED** | not designed in — the three arrived in the same class independently | — | any one of the three being expressible without a holonomy |
+| **A-EM4** | THE RECORD-CARRYING EM OBJECT IS NEITHER LOCAL NOR THE WHOLE SYSTEM: absolute extent d = L grows without bound, record fraction 2/(L^2+1) vanishes, local content is exactly zero. No familiar object satisfies all three | **PROVED** | LANE_EM_EXTENT, closed forms verified against GF(2) ranks at L=2..5 | — | a record carried on bounded support |
 
 ## B. THE CLAIM, STATEMENT BY STATEMENT
 

@@ -1,0 +1,24 @@
+VERIFICATION -- closed forms against explicit GF(2) ranks
+    L  links   dim Z_1  formula   dim B_1  formula   dim H_1
+    2      8         5        5         3        3         2   PASS
+    3     18        10       10         8        8         2   PASS
+    4     32        17       17        15       15         2   PASS
+    5     50        26       26        24       24         2   PASS
+
+HOW MUCH OF EM IS RECORD, AND HOW BIG IS THE OBJECT THAT CARRIES IT
+     L   links   dim Z_1  dim H_1   record fraction  d (support)  d / links
+     2       8         5        2      4.000000e-01            2   0.250000
+     3      18        10        2      2.000000e-01            3   0.166667
+     4      32        17        2      1.176471e-01            4   0.125000
+     8     128        65        2      3.076923e-02            8   0.062500
+    16     512       257        2      7.782101e-03           16   0.031250
+    64    8192      4097        2      4.881621e-04           64   0.007812
+   256  131072     65537        2      3.051711e-05          256   0.001953
+
+  RECORD FRACTION      2/(L^2+1)  -> 0     the record is a VANISHING fraction of EM's content
+  ABSOLUTE EXTENT      d = L      -> inf   and the object carrying it grows WITHOUT BOUND
+  RELATIVE EXTENT      d/links = 1/(2L) -> 0
+
+  So the record-carrying EM object is neither local nor the whole system:
+  unboundedly large in absolute size, vanishing as a fraction, and with
+  ZERO local content -- no local operator reads it (Thm C, 1.59e-16).
