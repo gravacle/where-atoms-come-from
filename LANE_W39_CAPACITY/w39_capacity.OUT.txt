@@ -1,0 +1,36 @@
+W-39  HOW MANY RECORDS CAN THIS CARRIER HOLD AT ONCE?
+      links 12, plaquettes 4, cycle rank 4, physical dim 16
+
+  (a) ALGEBRAIC BOUND -- FORCED, reported so it cannot be mistaken for a result.
+      region boundaries span the Z_2 space of plaquette subsets, dim 4.
+      => at most 4 INDEPENDENT records. This is dim of the physical space, nothing more.
+
+  (b) GEOMETRIC BOUND -- NOT forced. Can a set be SIMULTANEOUSLY PROTECTED?
+      A set is simultaneously protectable iff some NONEMPTY bath avoids every boundary in it.
+
+      k=1:   15 independent sets are simultaneously protectable.  example ['0'] with bath [1, 3, 4, 5, 8, 9, 10, 11]
+      k=2:   96 independent sets are simultaneously protectable.  example ['0', '1'] with bath [4, 5, 9, 10, 11]
+      k=3:  224 independent sets are simultaneously protectable.  example ['0', '1', '2'] with bath [5, 11]
+      k=4:    0 -- NO independent set of 4 records can be protected at once.
+
+  => GEOMETRIC CAPACITY OF THIS CARRIER = 3   (algebraic bound was 4)
+     The two DISAGREE, so the limit is packing, not dimension.
+
+  DYNAMICAL CHECK -- the combinatorics above is a claim about the dynamics. Test it.
+    k=1  bath [1, 3, 4, 5, 8, 9, 10, 11]
+         member (0,)         rate 6.7285e-02   boundary [0, 2, 6, 7]
+         slowest NON-member rate 2.9460e+00   => members ALL slower (margin 43.8x)
+    k=2  bath [4, 5, 9, 10, 11]
+         member (0,)         rate 4.8443e-02   boundary [0, 2, 6, 7]
+         member (1,)         rate 4.8443e-02   boundary [1, 3, 7, 8]
+         slowest NON-member rate 9.7550e-02   => members ALL slower (margin 2.0x)
+    k=3  bath [5, 11]
+         member (0,)         rate 1.5356e-03   boundary [0, 2, 6, 7]
+         member (1,)         rate 4.4980e-02   boundary [1, 3, 7, 8]
+         member (2,)         rate 4.4980e-02   boundary [2, 4, 9, 10]
+         slowest NON-member rate 4.8037e-02   => members ALL slower (margin 1.1x)
+
+  CONTROL -- a set that the combinatorics says CANNOT be protected. Its members must not
+  all be slow under any bath disjoint from... (there is none, so use the largest partial bath).
+    pair ((0, 3), (1, 2)) covers all 12 links -- no bath avoids both.
+    with an arbitrary bath [0,1]: rates ['9.901e-01', '9.901e-01']

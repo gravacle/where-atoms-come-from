@@ -1,0 +1,10 @@
+LANE W39 -- MULTI-RECORD CAPACITY. 3x3 patch, Z_2, dim 16, g2=0.01. A REGION is a plaquette subset;
+its BOUNDARY is the product of those plaquettes. A set of records is SIMULTANEOUSLY PROTECTABLE iff
+some nonempty bath is disjoint from every boundary in the set. Sets are required INDEPENDENT over
+GF(2) (rank test on plaquette-subset bitmasks) so the count is of distinct records, not aliases.
+TWO BOUNDS ARE REPORTED SEPARATELY AND MUST NOT BE CONFLATED: (a) the ALGEBRAIC bound, = cycle rank
+= 4, which is FORCED (it is the dimension of the physical space); (b) the GEOMETRIC bound, which is
+a packing question and is not forced. Only (b) is a result.
+w39b CONTROLS the bath-size confound: RUN 2 holds gamma*|bath| fixed at 4.00. RUN 3 holds |bath|
+literally at 2 and IS CONFOUNDED -- with so small a bath many regions are protected simultaneously,
+so "margin over best non-member" no longer measures crowding. RUN 3 is retained but not read.

@@ -2972,3 +2972,59 @@ perimeter, the rim loop. Here the carrier offers 15 regions and says nothing abo
 **And it is consistent with the whole night: it happened on a STATIC carrier.** W-31 (refuted 3/3),
 V003, and now W-38 all point the same way — **the responsive carrier has not been needed for
 anything yet, including for geometry to become an output.**
+
+---
+
+## W-39 — **RECORDS CROWD EACH OTHER OUT. THE CARRIER HOLDS 3, NOT 4, AND PROTECTION DEGRADES WITH EACH ONE.**
+
+`LANE_W39_CAPACITY/`, sealed. Opened on the principal's objection: **dynamical geometry is unlikely
+to appear at the level of a SINGLE record — a single record is a test particle, and test particles
+never source geometry.** It would emerge where MANY records must share a carrier.
+
+**CAPACITY.** The algebraic bound is `4` and is **FORCED** — it is the cycle rank, i.e. the dimension
+of the physical space, and is reported only so it cannot be mistaken for a finding. The geometric
+bound — can a set be simultaneously protected, i.e. does a nonempty bath avoid every boundary at
+once — is **3**.
+
+> **THE TWO DISAGREE. THE LIMIT IS PACKING, NOT DIMENSION.** `k=4`: **zero** independent sets are
+> simultaneously protectable. Example of a pair that provably cannot coexist: regions `(0,3)` and
+> `(1,2)`, whose boundaries together cover all 12 links, so **no bath avoids both.**
+
+**AND THE CAPACITY NUMBER UNDERSTATES IT — PROTECTION DEGRADES AS RECORDS ARE ADDED:**
+
+```
+   k  |bath|   gamma  gamma*|bath|  worst member  best non-member   margin
+   1       8   0.500          4.00    6.7285e-02       2.9460e+00    43.8x
+   2       5   0.800          4.00    5.3364e-02       1.0612e-01     2.0x
+   3       2   2.000          4.00    5.8497e-02       6.2405e-02     1.1x
+```
+
+**THE CONFOUND WAS REAL AND IS CONTROLLED.** The protecting bath necessarily SHRINKS as records are
+added (8 → 5 → 2 links), so a weaker environment could explain the collapse by itself. **RUN 2 holds
+the total dissipation fixed at `gamma·|bath| = 4.00` and the margin collapses identically: `43.8x →
+2.0x → 1.1x`.** The crowding is not the bath weakening. (RUN 3, holding `|bath|` literally constant
+at 2, is confounded in the other direction — with so small a bath many regions are protected at once
+— and is retained but not read.)
+
+> **AT `k=3` THE MARGIN IS `1.1x`: TWO OF THE THREE RECORDS ARE BARELY DISTINGUISHED FROM
+> UNPROTECTED OPERATORS. THE USABLE CAPACITY IS NEARER 2 THAN 3.**
+
+### WHAT THIS DOES TO THE GRAVITY CONCLUSION
+
+**V003 and W-31 concluded that nothing measured REQUIRES a responsive carrier, and the registrar
+offered the principal two readings: either records genuinely do not need gravity, or we had not
+found the forcing measurement. The principal supplied a third, and it is better than both:
+WE HAD NOT BUILT THE STAGE.**
+
+**Every result up to W-38 used exactly ONE record on a passive background.** Nothing there could
+have detected backreaction, in the same way a test particle cannot detect that it curves spacetime.
+
+**W-39 is the first measurement in which records constrain EACH OTHER** — they compete for
+environment placement, the competition is measured and controlled, and it has a hard limit at 3 and
+a practical limit near 2. **That mutual constraint is the precondition for backreaction, and it is
+where a responsive carrier could first do work.** Whether it does is untested.
+
+**NEXT.** The carrier's capacity is a property of a FIXED graph. **Ask what happens when the packing
+constraint has no solution** — `k=4` is already such a case here. On a static carrier the answer is
+that the fourth record simply fails. **A responsive carrier is exactly the thing that could answer
+differently, and that is the first question in this program where it could matter.**
