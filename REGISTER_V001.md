@@ -4976,3 +4976,11 @@ writer).
 - What gravity's algebra is remains worth **knowing** and will be recorded as a **relationship**,
   carrying no verdict on our object.
 - **The rescue-detector is retired as a permanent fixture.** It was scaffolding for an import.
+
+**CLARIFICATION, same day.** The principal: *"I don't have a problem with using the term 'gravity' as
+long as we don't use it as an excuse to import a variety of classical metrics that aren't
+applicable."* **The word is restored as a permitted label.** The registrar had over-corrected by
+purging it; the purge was never the point. **What survives, and is the whole of the gain: Γ is
+defined by R1–R3 and by nothing else, no attribute transfers through the name (D-1, D-2), the
+identification with `H₁` is a CANDIDATE and not a definition (G-1 withdrawn → G-5), and uniqueness
+is now askable (G-6).** Say "gravity"; never let it do work.

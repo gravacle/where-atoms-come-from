@@ -23,7 +23,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
 | **D-1** | NO CLASSICAL MEASURE MAY BE APPLIED TO THE RECORD LEVEL AS A CRITERION. A classical quantity may be computed and reported as a relationship; it may never be the test our object must pass | **PROVED** | three instances: X-2 backreaction, X2 allow-to-require, X-6 falsifier | — | a falsifier of the form 'our object fails to exhibit <classical feature>' — void on sight |
-| **D-2** | THE NAME IS THE IMPORT VECTOR. Calling H_1 'gravity' admits the classical field's attributes, which must then be refused one at a time. The charter asks for gravity's ROLE, not for classical gravity to be present | **PROVED** | each refusal has cost a lane: X-2, X2 erratum, X-6 | — | a property of our object that can only be justified by the name |
+| **D-2** | THE NAME IS THE IMPORT VECTOR — but the fix is the discipline, not the word. 'Gravity' is permitted as a LABEL for Γ; what is forbidden is INFERENCE from the label. No attribute transfers through a name | **PROVED** | each refusal has cost a lane: X-2, X2 erratum, X-6 | — | a property of our object that can only be justified by the name |
 | **D-3** | A RESCUE IS ALWAYS DOWNSTREAM OF AN IMPORT. Guards against rescue treat the symptom; removing the import removes the need for the guard | **PROVED** | the rescue-detector built into X-6 was scaffolding for an import | — | a rescue that occurs with no import upstream of it |
 
 ## A. THE THREE ROLES — the charter's question
@@ -31,7 +31,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
 | **A-EM** | EM supplies the gauge field and the holonomy that IS the record | **PROVED** | Thm B(ii); setup | — | a record that is not a holonomy of the field |
-| **A-GR** | Γ (THE THIRD TERM, unnamed) supplies the record space 2^2g, the writer (non-local), and the protection — the three requirements R1, R2, R3 | **PROVED** | Thms A, B(iii), C, D; G1 | — | a record on a genus-0 carrier; a local writer |
+| **A-GR** | Γ — the third term, labelled 'gravity' but defined only by function — supplies the record space 2^2g (R1), the writer, non-local (R2), and the protection (R3) | **PROVED** | Thms A, B(iii), C, D; G1 | — | a record on a genus-0 carrier; a local writer |
 | **A-AL** | ALPHA is a sum of local terms, so it splits the record space at order d | **PROVED** | Thm D; W-60, W-62 | — | records surviving g^2>0 undiminished |
 | **A-PR** | THE PROCESS: a record is a topologically protected degeneracy of a gauge field, written by non-local transport | **CANDIDATE** | assembly of C-1..C-8 | O-1, O-3 | C-1 or C-4 failing |
 

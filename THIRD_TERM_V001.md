@@ -1,12 +1,20 @@
 # THE THIRD TERM — Γ
 
-**The charter names three terms: EM, gravity, alpha. The third is HEREBY UNNAMED.**
-The principal, 2026-08-18: *"Let's just forget the term 'gravity' for the time being and solve for
-what performs that function and if we later name it gravity so be it."*
+**The charter names three terms: EM, gravity, alpha. Γ is the third.**
 
-**Γ is a placeholder with no content.** It carries no attribute of any classical field. Nothing may
-be inferred about Γ from anything called gravity; nothing may be demanded of Γ because gravity has
-it. **Γ is defined ONLY by the function it performs.**
+**THE WORD "GRAVITY" IS PERMITTED AS A LABEL FOR Γ.** The principal, 2026-08-18: *"I don't have a
+problem with using the term 'gravity' as long as we don't use it as an excuse to import a variety of
+classical metrics that aren't applicable."*
+
+**What is forbidden is INFERENCE FROM THE LABEL, not the label.**
+
+> **Γ IS DEFINED ONLY BY THE FUNCTION IT PERFORMS (R1–R3 below).** No attribute of the classical
+> field attaches to Γ by way of the name. Nothing may be *demanded* of Γ because gravity has it, and
+> no classical quantity may serve as a *test Γ must pass* (**D-1**). Naming Γ "gravity" is a
+> convenience of speech and carries **zero** evidential weight.
+
+Γ is the primary symbol because R1–R3 are what the theorems are actually about. Say "gravity" freely;
+just never let the word do any work.
 
 ---
 
