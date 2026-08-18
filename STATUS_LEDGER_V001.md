@@ -10,20 +10,28 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 ## THE COUNT
 
-| PROVED | DERIVED | MEASURED | PARTIAL | CANDIDATE | DEFINED | OPEN | BLOCKED | FAILED | RECLASSIFIED | NOT OURS |
+| PROVED | DERIVED | MEASURED | PARTIAL | CANDIDATE | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 10 | 1 | 1 | 1 | 1 | 1 | 10 | 4 | 1 | 1 | 3 |
+| 14 | 1 | 1 | 1 | 1 | 11 | 4 | 1 | 2 | 1 | 3 |
 
-**34 rows.**
+**40 rows.**
 
 ---
+
+## O. STANDING DOCTRINE — checked before any lane is commissioned
+
+| ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
+|---|---|:---:|---|---|---|
+| **D-1** | NO CLASSICAL MEASURE MAY BE APPLIED TO THE RECORD LEVEL AS A CRITERION. A classical quantity may be computed and reported as a relationship; it may never be the test our object must pass | **PROVED** | three instances: X-2 backreaction, X2 allow-to-require, X-6 falsifier | — | a falsifier of the form 'our object fails to exhibit <classical feature>' — void on sight |
+| **D-2** | THE NAME IS THE IMPORT VECTOR. Calling H_1 'gravity' admits the classical field's attributes, which must then be refused one at a time. The charter asks for gravity's ROLE, not for classical gravity to be present | **PROVED** | each refusal has cost a lane: X-2, X2 erratum, X-6 | — | a property of our object that can only be justified by the name |
+| **D-3** | A RESCUE IS ALWAYS DOWNSTREAM OF AN IMPORT. Guards against rescue treat the symptom; removing the import removes the need for the guard | **PROVED** | the rescue-detector built into X-6 was scaffolding for an import | — | a rescue that occurs with no import upstream of it |
 
 ## A. THE THREE ROLES — the charter's question
 
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
 | **A-EM** | EM supplies the gauge field and the holonomy that IS the record | **PROVED** | Thm B(ii); setup | — | a record that is not a holonomy of the field |
-| **A-GR** | GRAVITY (topology, i.e. a 1-form symmetry) supplies the record space 2^2g, the writer (Poincare duality), and the protection | **PROVED** | Thms A, B(iii), C, D; G1 | — | a record on a genus-0 carrier; a local writer |
+| **A-GR** | Γ (THE THIRD TERM, unnamed) supplies the record space 2^2g, the writer (non-local), and the protection — the three requirements R1, R2, R3 | **PROVED** | Thms A, B(iii), C, D; G1 | — | a record on a genus-0 carrier; a local writer |
 | **A-AL** | ALPHA is a sum of local terms, so it splits the record space at order d | **PROVED** | Thm D; W-60, W-62 | — | records surviving g^2>0 undiminished |
 | **A-PR** | THE PROCESS: a record is a topologically protected degeneracy of a gauge field, written by non-local transport | **CANDIDATE** | assembly of C-1..C-8 | O-1, O-3 | C-1 or C-4 failing |
 
@@ -44,9 +52,12 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
-| **G-1** | gravity at the record level is defined as (H_1(Sigma), intersection pairing) | **DEFINED** | GRAVITY_DEFINED_V001 | — | — (a definition, not a claim) |
+| **G-1** | the third term is DEFINED as (H_1(Sigma), intersection pairing) | **WITHDRAWN** | a definition cannot fail; demoted to a candidate — see G-5 | — | — (a definition, not a claim) |
 | **G-2** | records = 2 - (1/2pi) integral K dA on closed orientable surfaces; sphere carries none | **PROVED** | Thm A + Gauss-Bonnet; G2 | — | a closed orientable surface violating the count |
 | **G-3** | gravity's role is ALLOW — a capacity statement — at EVERY level; there is no allow-to-require transition, because Einstein's equations are themselves constraints | **PROVED** | ADM/Dirac constraint formulation; X2 erratum | — | an equation of gravity that is not a constraint on admissible data |
+| **G-4** | what IS the record-level constraint's own algebraic structure, stated without reference to gravity's? (the legitimate remainder of X-6) | **OPEN** | lane X6 compute phase running | — | — (a measurement, not a claim) |
+| **G-5** | (H_1(Sigma), intersection pairing) SATISFIES R1, R2 and R3, and is therefore a CANDIDATE for the third term | **PROVED** | Thms A, B, C; G1, G2, W-62 | — | a structure satisfying R1-R3 that H_1 fails to describe |
+| **G-6** | IS THE THIRD TERM UNIQUE? Is H_1 the ONLY structure satisfying R1-R3, or merely one that does? | **OPEN** | unaskable while the third term was defined as the thing we had | — | exhibiting a second, inequivalent structure satisfying R1-R3 |
 
 ## D. OBSTRUCTIONS — solvable here
 
@@ -68,7 +79,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **X-3** | the outcome problem | **NOT OURS** | W-35 relocated it | — | — |
 | **X-4** | empirical contact is zero and no distinguishing prediction is identified | **BLOCKED** | W-48 and C1 killed both candidates | — | — |
 | **X-5** | is a gauge theory's 1-form symmetry "global" for Harlow-Ooguri? | **NOT OURS** | — | — | — (a question about their result) |
-| **X-6** | is the record-level constraint the SAME constraint as gravity's? Both are Gauss laws with content as a boundary term | **OPEN** | structural parallel identified, not tested | — | different generators, or content that is not a boundary term on one side |
+| **X-6** | is the record-level constraint the SAME constraint as gravity's? Both are Gauss laws with content as a boundary term | **WITHDRAWN** | the identification question applies a classical measure as criterion — an import | — | different generators, or content that is not a boundary term on one side |
 
 ## F. THE TARGET'S UNADDRESSED ITEMS
 

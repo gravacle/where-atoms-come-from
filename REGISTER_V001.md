@@ -4920,3 +4920,59 @@ identification is a coincidence of form. **That is checkable.**
 **STATUS: X2's reclassification stands (χ is a parameter, not an observable, and demanding backreaction
 imports the classical form). What is withdrawn is the allow→require story layered on top of it, and
 the unfalsifiable test that came with it.**
+
+---
+
+## THE IMPORT RULE — **A RESCUE IS ALWAYS DOWNSTREAM OF AN IMPORT**
+
+The principal: *"We won't have to rescue measures if we avoid importing classical gravity measures
+into the record level."*
+
+The registrar had responded to the level-migration failure by building a **rescue-detector** into
+lane X-6. That treats the symptom. **The rescue was only ever needed because an import was there to
+be rescued.** Remove the import and the guard is unnecessary.
+
+### THE IMPORT WAS IN X-6'S OWN FALSIFIER, AND THE REGISTRAR WROTE IT
+
+> *"Different generators, or physical content that is not a boundary term on one side, kills the
+> identification."*
+
+This makes **classical gravity's constraint algebra the criterion for whether our object is real.**
+A mismatch would read as OUR defect. That is a classical measure applied to the record level as a
+test. **It is the same error as demanding backreaction (X-2) and as expecting require (X2 erratum),
+in its third costume.**
+
+### THE VECTOR IS THE NAME
+
+**Calling `H₁(Σ)` "gravity" is what lets classical properties in.** Every time the name is used, the
+classical field's attributes arrive with it and have to be individually refused — backreaction, an
+equation of motion, a require-half, a matching constraint algebra. Each refusal has cost a lane.
+
+**The charter asks for the ROLE of gravity in record formation. It does not ask that classical
+gravity be present.** A role-assignment is not a claim of identity, and no property of the classical
+field transfers through the name.
+
+### THE RULE, STANDING
+
+> **NO CLASSICAL MEASURE MAY BE APPLIED TO THE RECORD LEVEL AS A CRITERION.**
+> A classical quantity may be **computed** and **reported as a relationship**. It may never be the
+> **test our object must pass.**
+> **TELL:** any falsifier of the form *"our object fails to exhibit ⟨classical feature⟩"* is an
+> import and is **void**. A falsifier must be stated in the record level's own terms.
+
+**AND THE OBJECTION THIS RAISES, ANSWERED.** If nothing can falsify "our constraint is gravity's",
+that identification is unfalsifiable — the sin corrected hours ago. **The resolution is that the
+identification is not claimed.** A claim not made needs no falsifier. What is claimed is the role,
+and the role has its own falsifiers already registered (a record on a genus-0 carrier; a local
+writer).
+
+### EFFECT ON LANE X-6
+
+- **The COMPUTE half stands.** Measuring our own constraint algebra — commutators, closure,
+  structure constants vs functions, the boundary operator, `Z₁/B₁` — imports nothing. It is our
+  object described in its own terms, and it is the actual work.
+- **The IDENTIFICATION half is WITHDRAWN as an import.** "Is it the same constraint as gravity's"
+  is not a charter question.
+- What gravity's algebra is remains worth **knowing** and will be recorded as a **relationship**,
+  carrying no verdict on our object.
+- **The rescue-detector is retired as a permanent fixture.** It was scaffolding for an import.

@@ -4,7 +4,7 @@
   ./ledger/status.py                      render the grid (and rewrite STATUS_LEDGER_V001.md)
   ./ledger/status.py set C-1 PROVED        change one status cell
   ./ledger/status.py set C-1 PROVED "Thm E"   change status and evidence
-  ./ledger/status.py add ROLE X-7 "item text" OPEN   append a new row
+  ./ledger/status.py text A-GR "new wording"     reword an item (claim unchanged)\n  ./ledger/status.py add ROLE X-7 "item text" OPEN   append a new row
 
 Row ORDER IS FILE ORDER and is never sorted, so IDs never renumber and the rendered
 grid is byte-stable unless a cell actually changed. Rows are appended, never deleted:
@@ -18,7 +18,8 @@ LEDGER = os.path.join(HERE, 'status_ledger.tsv')
 VOCAB  = os.path.join(HERE, 'STATUS_VOCAB.tsv')
 OUT    = os.path.join(ROOT, 'STATUS_LEDGER_V001.md')
 
-AREAS = [('ROLE',        'A. THE THREE ROLES — the charter\'s question'),
+AREAS = [('DOCTRINE',    'O. STANDING DOCTRINE — checked before any lane is commissioned'),
+         ('ROLE',        'A. THE THREE ROLES — the charter\'s question'),
          ('CLAIM',       'B. THE CLAIM, STATEMENT BY STATEMENT'),
          ('GRAVITY',     'C. GRAVITY AT THE RECORD LEVEL'),
          ('OBSTRUCTION', 'D. OBSTRUCTIONS — solvable here'),
@@ -114,6 +115,14 @@ def main():
         if len(a) > 3: hit[0][4] = a[3]
         save(hdr, rows); render()
         print('%s: %s -> %s' % (rid, old, st))
+    elif a[0] == 'text':
+        rid = a[1]
+        hit = [r for r in rows if r[0] == rid]
+        if not hit:
+            sys.exit('no such row: %s' % rid)
+        old = hit[0][2]; hit[0][2] = a[2]
+        save(hdr, rows); render()
+        print('%s text updated\n  was: %s\n  now: %s' % (rid, old, a[2]))
     elif a[0] == 'add':
         area, rid, item, st = a[1], a[2], a[3], a[4]
         if any(r[0] == rid for r in rows):

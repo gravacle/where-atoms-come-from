@@ -1,3 +1,6 @@
+> **SUPERSEDED by `THIRD_TERM_V001.md`.** This file made the identification a DEFINITION, so nothing
+> could fail it. Γ is now defined only by the function it performs, and `H₁(Σ)` is a CANDIDATE.
+
 # GRAVITY AT THE RECORD LEVEL — DEFINITION AND EMERGENCE PICTURE — V001 — 2026-08-18
 
 ## THE DEFINITION

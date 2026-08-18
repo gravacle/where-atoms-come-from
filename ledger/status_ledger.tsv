@@ -1,6 +1,6 @@
 ID	AREA	ITEM	STATUS	EVIDENCE	BLOCKED_BY	REFUTED_BY
 A-EM	ROLE	EM supplies the gauge field and the holonomy that IS the record	PROVED	Thm B(ii); setup		a record that is not a holonomy of the field
-A-GR	ROLE	GRAVITY (topology, i.e. a 1-form symmetry) supplies the record space 2^2g, the writer (Poincare duality), and the protection	PROVED	Thms A, B(iii), C, D; G1		a record on a genus-0 carrier; a local writer
+A-GR	ROLE	Γ (THE THIRD TERM, unnamed) supplies the record space 2^2g, the writer (non-local), and the protection — the three requirements R1, R2, R3	PROVED	Thms A, B(iii), C, D; G1		a record on a genus-0 carrier; a local writer
 A-AL	ROLE	ALPHA is a sum of local terms, so it splits the record space at order d	PROVED	Thm D; W-60, W-62		records surviving g^2>0 undiminished
 A-PR	ROLE	THE PROCESS: a record is a topologically protected degeneracy of a gauge field, written by non-local transport	CANDIDATE	assembly of C-1..C-8	O-1, O-3	C-1 or C-4 failing
 C-1	CLAIM	records require exact degeneracy	PARTIAL	P-1 (forward)	O-1 (converse)	a non-degenerate H carrying a record
@@ -11,21 +11,21 @@ C-5	CLAIM	record space = 2^2g; the count is 2g, INDEPENDENT OF AREA	PROVED	Thm A
 C-6	CLAIM	a writer always exists and is never local	PROVED	Thm B; P-3		a local operator flipping the record
 C-7	CLAIM	nothing local writes or destroys it	PROVED	Thm C		any contractible operation acting
 C-8	CLAIM	alpha is local, so it splits at order d	PROVED	Thm D		alpha leaving the degeneracy intact
-G-1	GRAVITY	gravity at the record level is defined as (H_1(Sigma), intersection pairing)	DEFINED	GRAVITY_DEFINED_V001		— (a definition, not a claim)
+G-1	GRAVITY	the third term is DEFINED as (H_1(Sigma), intersection pairing)	WITHDRAWN	a definition cannot fail; demoted to a candidate — see G-5		— (a definition, not a claim)
 G-2	GRAVITY	records = 2 - (1/2pi) integral K dA on closed orientable surfaces; sphere carries none	PROVED	Thm A + Gauss-Bonnet; G2		a closed orientable surface violating the count
 G-3	GRAVITY	gravity's role is ALLOW — a capacity statement — at EVERY level; there is no allow-to-require transition, because Einstein's equations are themselves constraints	PROVED	ADM/Dirac constraint formulation; X2 erratum		an equation of gravity that is not a constraint on admissible data
 O-1	OBSTRUCTION	the converse of P-2: degeneracy gives (i)-(iii), not (ii) compatibility with {L_k} nor (iv) flippability	OPEN	—		— (decides theorem vs strong conjecture)
 O-2	OBSTRUCTION	symmetry degeneracy splits at first order — measured, not proved	OPEN	W-61 measured only		—
 O-3	OBSTRUCTION	exhaustiveness. Side-step: prove any first-order-split degeneracy cannot carry a noise-surviving record	OPEN	—		—
-O-4	OBSTRUCTION	"admissible" in clause (iv) is undefined	OPEN	—		—
+O-4	OBSTRUCTION	admissible in clause (iv) is undefined	OPEN	—		—
 O-5	OBSTRUCTION	clause (ii) is exact; real records are approximate	OPEN	—		—
 O-6	OBSTRUCTION	is our 1-form symmetry emergent or exact?	FAILED	tested: EXACT, 0.000e+00 broken at every epsilon		— (Harlow-Ooguri tension is LIVE; see X-5)
 X-1	OUT OF REACH	the topology is a LATTICE's, not spacetime's	NOT OURS	—		—
 X-2	OUT OF REACH	chi is a PARAMETER of the construction, not an observable	RECLASSIFIED	X2: dim 32 at chi=0 and chi=2; equal chi at different size		— (demanding backreaction imports the classical form)
 X-3	OUT OF REACH	the outcome problem	NOT OURS	W-35 relocated it		—
 X-4	OUT OF REACH	empirical contact is zero and no distinguishing prediction is identified	BLOCKED	W-48 and C1 killed both candidates		—
-X-5	OUT OF REACH	is a gauge theory's 1-form symmetry "global" for Harlow-Ooguri?	NOT OURS	—		— (a question about their result)
-X-6	OUT OF REACH	is the record-level constraint the SAME constraint as gravity's? Both are Gauss laws with content as a boundary term	OPEN	structural parallel identified, not tested		different generators, or content that is not a boundary term on one side
+X-5	OUT OF REACH	"is a gauge theory's 1-form symmetry ""global"" for Harlow-Ooguri?"	NOT OURS	—		— (a question about their result)
+X-6	OUT OF REACH	is the record-level constraint the SAME constraint as gravity's? Both are Gauss laws with content as a boundary term	WITHDRAWN	the identification question applies a classical measure as criterion — an import		different generators, or content that is not a boundary term on one side
 T-III.6	TARGET	irreversibility — why a record is of the PAST	OPEN	askable on the existing carrier		—
 T-V.3	TARGET	is a measurement the creation of a record?	OPEN	askable on the existing carrier		—
 T-I.4	TARGET	do records compose?	OPEN	—		—
@@ -33,3 +33,9 @@ T-V.4	TARGET	the classical limit	OPEN	—		—
 T-II.5	TARGET	why the world's Hamiltonian has this topology	BLOCKED	—		—
 T-VI.3	TARGET	a distinguishing prediction	BLOCKED	none identified		—
 T-VI.4	TARGET	empirical contact	BLOCKED	zero		—
+D-1	DOCTRINE	NO CLASSICAL MEASURE MAY BE APPLIED TO THE RECORD LEVEL AS A CRITERION. A classical quantity may be computed and reported as a relationship; it may never be the test our object must pass	PROVED	three instances: X-2 backreaction, X2 allow-to-require, X-6 falsifier		a falsifier of the form 'our object fails to exhibit <classical feature>' — void on sight
+D-2	DOCTRINE	THE NAME IS THE IMPORT VECTOR. Calling H_1 'gravity' admits the classical field's attributes, which must then be refused one at a time. The charter asks for gravity's ROLE, not for classical gravity to be present	PROVED	each refusal has cost a lane: X-2, X2 erratum, X-6		a property of our object that can only be justified by the name
+D-3	DOCTRINE	A RESCUE IS ALWAYS DOWNSTREAM OF AN IMPORT. Guards against rescue treat the symptom; removing the import removes the need for the guard	PROVED	the rescue-detector built into X-6 was scaffolding for an import		a rescue that occurs with no import upstream of it
+G-4	GRAVITY	what IS the record-level constraint's own algebraic structure, stated without reference to gravity's? (the legitimate remainder of X-6)	OPEN	lane X6 compute phase running		— (a measurement, not a claim)
+G-5	GRAVITY	(H_1(Sigma), intersection pairing) SATISFIES R1, R2 and R3, and is therefore a CANDIDATE for the third term	PROVED	Thms A, B, C; G1, G2, W-62		a structure satisfying R1-R3 that H_1 fails to describe
+G-6	GRAVITY	IS THE THIRD TERM UNIQUE? Is H_1 the ONLY structure satisfying R1-R3, or merely one that does?	OPEN	unaskable while the third term was defined as the thing we had		exhibiting a second, inequivalent structure satisfying R1-R3

@@ -1,5 +1,8 @@
 # STATUS — WHERE ATOMS COME FROM
 
+> **THE THIRD TERM IS UNNAMED — see `THIRD_TERM_V001.md`. Every occurrence of "gravity" below means
+> Γ, the thing that satisfies R1–R3. No attribute of the classical field attaches to it.**
+
 **Rendered whenever the principal says "status". Format frozen; only marks change and rows append.**
 **Gravity defined: `GRAVITY_DEFINED_V001.md`** — `(H₁, ⟨·,·⟩ )`; records `= 2 − (1/2π)∫K dA`.
 **Target: `THE_TARGET_V001.md`** (what a complete theory owes — currently ✔12 ◑6 ○1 ✕8 ⊘4).
