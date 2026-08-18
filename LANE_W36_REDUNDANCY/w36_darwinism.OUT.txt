@@ -1,0 +1,65 @@
+W-36  IS THE RECORD OBJECTIVE?  Holevo information about R held by environment fragments.
+      system dim 16; coupling touches the CUT only; H(R) = 1 bit is the ceiling.
+
+  SATURATION FIRST. A partial-information plot means nothing until the WHOLE environment
+  holds the full bit. Scan the coupling until I(R:all) saturates, then read the shape.
+      kappa      T   I(R:all 6) bits
+    --------------------------------
+       0.60    6.0          0.746252
+       1.20    6.0          0.788114
+       2.00    8.0          0.753372
+       3.00   12.0          0.869684
+       5.00   12.0          0.791976
+       8.00   16.0          0.928955
+    -> using kappa=8.0, T=16.0 (total 0.9290 bits)
+
+  SPREAD: one qubit per cut link -- [L,R]=0, the QND case   (n=6 env qubits, kappa=8.0, T=16.0)
+     |F|   I(R:F) bits  #fragments avgd
+    --------------------------------------
+       0      0.000000                1
+       1      0.044124                6
+       2      0.100345               15
+       3      0.187359               20
+       4      0.350520               15
+       5      0.657507                6
+       6      0.928955                1
+
+  CONTROL kappa=0 -- must be exactly 0 at every |F|   (n=6 env qubits, kappa=0.0, T=16.0)
+     |F|   I(R:F) bits  #fragments avgd
+    --------------------------------------
+       0     -0.000000                1
+       1     -0.000000                6
+       2     -0.000000               15
+       3     -0.000000               20
+       4     -0.000000               15
+       5     -0.000000                6
+       6     -0.000000                1
+
+  SAME LINK: all 6 qubits read ONE cut link (Zurek's setup)   (n=6 env qubits, kappa=8.0, T=16.0)
+     |F|   I(R:F) bits  #fragments avgd
+    --------------------------------------
+       0     -0.000000                1
+       1      0.001468                6
+       2      0.011200               15
+       3      0.018448               20
+       4      0.026517               15
+       5      0.036052                6
+       6      0.062586                1
+
+  CONTROL on the RIM -- environment can disturb R   (n=6 env qubits, kappa=8.0, T=16.0)
+     |F|   I(R:F) bits  #fragments avgd
+    --------------------------------------
+       0     -0.000000                1
+       1      0.014451                6
+       2      0.034914               15
+       3      0.063467               20
+       4      0.104105               15
+       5      0.162765                6
+       6      0.247317                1
+
+  READING THE SHAPE. Redundancy = a SMALL fragment already holds nearly the whole bit.
+        case   I(|F|=1)   I(|F|=3)    I(all)  I(1)/I(all)  verdict
+  ----------------------------------------------------------------------------
+      spread     0.0441     0.1874    0.9290        0.047  NO redundancy: information is delocalised, only the whole environment knows
+   same-link     0.0015     0.0184    0.0626        0.023  NO redundancy: information is delocalised, only the whole environment knows
+         rim     0.0145     0.0635    0.2473        0.058  NO redundancy: information is delocalised, only the whole environment knows

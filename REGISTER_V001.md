@@ -2671,3 +2671,59 @@ non-conserved: `E[<R>^2]` falls `0.9455 -> 0.398 -> 0.090` as `g^2` goes `0 -> 0
 the environment learn it. Continuous monitoring collapses each run to a definite value (W-35).
 `1/(8g^2)` sets how long it lasts (W-32). And the dynamics selects which observable this happens to
 — the full boundary, by a factor of 28 (W-34).
+
+---
+
+## W-36 — **THE RECORD IS NOT OBJECTIVE, AND THE OBSTRUCTION IS LOCALITY**
+
+`LANE_W36_REDUNDANCY/`, sealed. W-35 left record formation depending on how the environment is
+read, which is not good enough. Zurek's criterion settles it without choosing an unravelling: a
+record is **objective** when many disjoint fragments EACH carry a full copy. That is a property of
+the joint state, so the environment is built explicitly and never traced out.
+
+```
+  I(R:F) in bits, 6 explicit environment qubits, kappa=8.0, T=16.0, ceiling 1 bit
+  |F|                                    0      1      2      3      4      5      6
+  A  env on Z at the CUT   (LOCAL)    0.000  0.044  0.100  0.187  0.351  0.658  0.929
+  B  env on R itself    (NONLOCAL)    0.000  0.999  1.000  1.000  1.000  1.000  1.000
+  C  env on one plaquette  (LOCAL)    0.000  0.037  0.037  0.037  0.037  0.037  0.037
+  CONTROL kappa = 0                  -0.000 -0.000 -0.000 -0.000 -0.000 -0.000 -0.000
+```
+
+**A — the configuration every earlier lane used — has NO redundancy.** `I(|F|=1)/I(all) = 0.047`:
+information rises only as the fragment approaches the whole environment. **One delocalised copy. An
+observer holding any part of the environment knows essentially nothing.**
+
+**B is the textbook quantum-Darwinism plateau — `0.999` bits from a SINGLE qubit, flat thereafter.
+Every fragment independently holds the whole record. That is objectivity.**
+
+**C reads `ratio 0.999` and is NOT redundancy — the total is `0.037` bits, so every fragment knows
+equally nothing.** The ratio test is meaningless without a floor on the total, and it is gated in
+`PUBLISHED_CONVENTIONS`.
+
+### THE OBSTRUCTION, STATED
+
+> **`R` IS A PRODUCT OVER 8 RIM LINKS. IT IS NONLOCAL. Redundancy requires the environment to couple
+> to the record observable itself, and a LOCAL environment cannot couple to a nonlocal one.**
+
+**And this is the same shape as W-30's obstruction, one level up.** W-30: writable vs durable.
+**W-36: legible vs protected.** `[L,R] = 0` is what protects the record (W-32) and it is also what
+stops any local fragment from carrying a copy. **The observable that survives is the one nobody can
+read.**
+
+**Note that B is not smuggling.** `L = R` is symmetric between the `+1` and `-1` sectors, so it
+cannot decide which wins — W-35's coin stays fair — and `R` was selected independently by the W-34
+sieve, not nominated here.
+
+### THE NEXT STEP, AND IT IS PHYSICAL
+
+**In gauge theory a nonlocal observable is measured by transporting a probe charge around the loop —
+Aharonov–Bohm.** The interaction is local at every instant; the nonlocality is in the PATH, paid for
+in TIME proportional to the loop's length. **So the environment CAN read the rim loop, by a local
+process extended in time, and case B is the effective description of exactly that.**
+
+**BUILD: a probe charge transported around the rim, and measure whether the record it acquires is
+redundantly copied.** If it is, the process closes: the record is written by monitoring, protected
+by `[L,R]=0`, selected by the sieve, persists `1/(8g^2)` write-times, and is made objective by
+transport. **If the transport time itself destroys the record, that is a new obstruction and the
+timescale competition becomes the next quantity to measure.**

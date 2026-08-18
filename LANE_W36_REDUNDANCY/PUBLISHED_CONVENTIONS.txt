@@ -1,0 +1,11 @@
+LANE W36 -- OBJECTIVITY / REDUNDANCY. System = 3x3 patch, physical dim 16. Environment = 6 explicit
+qubits, NOT traced out; the joint state is evolved exactly by expm(-iHt). Initial system state has
+<R> = 0 EXACTLY (equal weight in both R sectors); env qubits start in |+>.
+MEASURE: the Holevo information a fragment F holds about the record,
+   I(R:F) = S(sum_r p_r rho_F^r) - sum_r p_r S(rho_F^r)  in bits, ceiling H(R) = 1 bit,
+averaged over all fragments of each size (capped at 20 subsets).
+SHAPE, fixed before running: I rising to ~1 bit at SMALL |F| and then FLAT = redundancy = objective.
+I rising only near |F|=n = one delocalised copy = not objective.
+CAUTION ON THE RATIO TEST: I(|F|=1)/I(all) is meaningless when I(all) is itself near zero -- case C
+scores ratio 0.999 on a total of 0.037 bits, i.e. every fragment knows equally NOTHING. Any reading
+of the ratio must be gated on the total first.

@@ -1,0 +1,26 @@
+W-36b  WHAT MUST THE ENVIRONMENT TOUCH FOR THE RECORD TO BE COPIED?
+       R is a product over 8 rim links: NONLOCAL. Z_cut and W_p are LOCAL.
+       support check -- ||[R, Z_cut]|| = 0.0e+00   ||[R, W_p]|| = 0.0e+00
+
+  A  env couples to Z on cut links  (LOCAL, [L,R]=0)
+    |F| : 0  1  2  3  4  5  6
+    I   : 0.000  0.044  0.100  0.187  0.351  0.658  0.929
+
+  B  env couples to R itself        (NONLOCAL, QND on the record)
+    |F| : 0  1  2  3  4  5  6
+    I   : 0.000  0.999  1.000  1.000  1.000  1.000  1.000
+
+  C  env couples to one plaquette   (LOCAL magnetic)
+    |F| : 0  1  2  3  4  5  6
+    I   : 0.000  0.037  0.037  0.037  0.037  0.037  0.037
+
+  CONTROL kappa=0                   (must be 0 everywhere)
+    |F| : 0  1  2  3  4  5  6
+    I   : -0.000  -0.000  -0.000  -0.000  -0.000  -0.000  -0.000
+
+                                  case  I(|F|=1)   I(all)   ratio  verdict
+  ----------------------------------------------------------------------------------------
+                    A local, cut links    0.0441   0.9290   0.047  NOT redundant: only the whole environment knows
+         B nonlocal, the record itself    0.9989   1.0000   0.999  REDUNDANT -> objective: one fragment already knows
+                C local, one plaquette    0.0369   0.0370   0.999  REDUNDANT -> objective: one fragment already knows
+                       control kappa=0        --  -0.0000      --  no information anywhere
