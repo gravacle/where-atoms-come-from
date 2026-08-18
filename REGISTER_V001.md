@@ -4610,3 +4610,31 @@ shows noise cannot mimic it.
 this program's discovery. **What is this program's is the chain making them necessary:** W-60 (a
 record exists iff `H` is degenerate) and W-61 (symmetry-sourced degeneracy dies at `1e-06`,
 topology-sourced survives by `4×10⁶`), which together force the degeneracy to be topological.
+
+---
+
+## P1 — **THE DEFINITION, AND IT IS NOW THE PROGRAM'S ANCHOR**
+
+`LANE_P1_DEFINITION/` + `CORE_FRAMEWORK_V001.md`, sealed. The program had used "record" in at least
+three senses. **One definition, five clauses, and the content is carried by the definition so the
+theorems come out clean.**
+
+`R` is a **record** for `(H,{L_k})` if it is **(i)** a bit, **(ii)** durable (`[H,R]=0`, `[L_k,R]=0`),
+**(iii)** non-trivial — *not constant on some eigenspace of `H`*, i.e. it distinguishes states of the
+**same energy** — **(iv)** writable by some admissible operation, and **(v)** protected: **no**
+contractible operation writes it.
+
+**IT DISCRIMINATES.** Toric-code record: **all five pass** (`4.899` non-triviality, `11.314`
+protection). Break the degeneracy with a local perturbation: **(iii) collapses to `0.000`.** Take `R`
+a function of `H`: **(iii) and (iv) both fail.**
+
+**THREE PROPOSITIONS FALL OUT IMMEDIATELY.** (iii) ⟹ `H` is degenerate — **P2's forward direction is
+now one line.** (ii)+(iv) ⟹ the writer is built from neither `H` nor the jumps. **(iv)+(v) ⟹ THE
+WRITER IS NON-LOCAL — so W-29/W-30's obstruction is a consequence of the definition rather than an
+accident of our carrier.**
+
+**AND THE FRAMEWORK NOW CARRIES THE OBSTRUCTION LIST.** Five solvable (O1 the converse — the one that
+decides theorem vs conjecture; O2 the symmetry half; O3 exhaustiveness, to be side-stepped rather
+than solved; O4 defining "admissible"; O5 an approximate version of (ii)) and four out of reach and
+named as such (lattice-not-spacetime topology; no response to matter; the outcome problem; zero
+empirical contact). **Order of attack: O4 → O3 → O2 → O1 → O5.**

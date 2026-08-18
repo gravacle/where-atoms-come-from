@@ -1,0 +1,32 @@
+P1  CHECKING THE FIVE CLAUSES ON THE TORIC-CODE RECORD
+    record R = Z on the computed dual cycle [0, 2]
+    writer W = shift on the computed non-contractible cycle [0, 1]
+
+  toric-code record
+    (i)   bit:        ||R-R+|| , ||R^2-I||        = 0.00e+00   PASS
+    (ii)  durable:    max||[H,R]||,||[L,R]||      = 0.00e+00   PASS
+    (iii) nontrivial: max deviation from scalar   = 4.899  PASS
+    (iv)  writable:   ||W+RW + R||                = 0.00e+00   PASS
+    (v)   protected:  best local flip ||L+RL + R|| = 11.314  PASS (no local operator flips it)
+
+  CONTROLS THAT MUST FAIL
+  same R, degeneracy broken by a local perturbation
+    (i)   bit:        ||R-R+|| , ||R^2-I||        = 0.00e+00   PASS
+    (ii)  durable:    max||[H,R]||,||[L,R]||      = 0.00e+00   PASS
+    (iii) nontrivial: max deviation from scalar   = 0.000  FAIL
+    (iv)  writable:   ||W+RW + R||                = 0.00e+00   PASS
+    (v)   protected:  best local flip ||L+RL + R|| = 11.314  PASS (no local operator flips it)
+  R = identity (a function of H)
+    (i)   bit:        ||R-R+|| , ||R^2-I||        = 0.00e+00   PASS
+    (ii)  durable:    max||[H,R]||,||[L,R]||      = 0.00e+00   PASS
+    (iii) nontrivial: max deviation from scalar   = 0.000  FAIL
+    (iv)  writable:   ||W+RW + R||                = 1.13e+01   FAIL
+    (v)   protected:  best local flip ||L+RL + R|| = 11.314  PASS (no local operator flips it)
+
+  PROPOSITIONS, immediate from the definition:
+   1. (iii) => H is DEGENERATE.  R is non-scalar on some eigenspace, so that eigenspace has
+      dimension > 1.  [P2's forward direction, now a one-line consequence of the definition.]
+   2. (ii) + (iv) => the writer W commutes with neither R nor anything built from H and {L_k}:
+      W anticommutes with R, while H and every L_k commute with it.
+   3. (iv) + (v) => THE WRITER IS NON-LOCAL.  Something flips R; nothing contractible does.
+      W-29/W-30's obstruction is thus a CONSEQUENCE of the definition, not an accident.
