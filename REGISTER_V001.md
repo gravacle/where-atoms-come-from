@@ -4743,3 +4743,46 @@ input.** (c) The requirement is weaker than statements 1–4 assert.
 
 **O6 IS NOT CLOSED. It is upgraded from "asserted" to "tested and failed", and the gravity connection
 now rests on an open question rather than a citation.**
+
+---
+
+## G1 — **THE RECORD COUNT IS SET BY GENUS, NOT AREA. `capacity = area − 1` NEVER COUNTED RECORDS.**
+
+`LANE_G1_RECORD_COUNT/`, sealed. Two capacity numbers were in the register with different scalings —
+`T3: area − 1` (linear in area) and `Thm A: 2^{2g}` (exponential in genus). **Only one can be counting
+records under the five-clause definition.** Counted properly: on the **ground space**, and **modulo
+vertex stars**, since two link sets differing by a star act identically there.
+
+```
+   carrier              area   ground degeneracy   INDEPENDENT records (dim H¹)   T3's area−1
+   torus 2x2 (g=1)         4                   4                            2              3
+   torus 2x3 (g=1)         6                   4                            2              5
+```
+
+> **THE RECORD COUNT IS `2` ON BOTH — IT DOES NOT MOVE WHEN THE AREA GOES FROM 4 TO 6. It equals
+> `2g`, exactly as Theorem A predicts, giving a record space of `2^{2g} = 4`.**
+
+**AND T3's OBJECTS DO NOT SURVIVE AS RECORDS.** Of `7` and `31` plaquette-boundary loops, exactly
+**1** is independent modulo stars in each case — against T3's counts of `3` and `5`.
+
+> **`capacity = area − 1` IS STILL TRUE AS A STATEMENT ABOUT WHICH PLAQUETTE SUBSETS ARE
+> SIMULTANEOUSLY PROTECTABLE FROM A BATH. IT IS NOT A RECORD COUNT.** Those objects fail the
+> definition: they act trivially on the ground space, so they are not records under clause (iii).
+
+### WHAT THIS SETTLES ABOUT GRAVITY'S ROLE
+
+**The number of records a world can hold is a TOPOLOGICAL invariant.** It is `2g`. **It does not
+depend on the area, the volume, the lattice spacing, the number of degrees of freedom, or any local
+geometric quantity.** Double the area and nothing changes; change the genus and everything does.
+
+> **AND THIS IS EXACTLY THE PRINCIPAL'S POINT THAT GRAVITY AT THE RECORD LEVEL LOOKS NOTHING LIKE
+> CLASSICAL GRAVITY.** Classical gravity is local, metric, and curvature-driven. **What sets the
+> record count here is a GLOBAL, NON-METRIC, TOPOLOGICAL property, and no local measurement can see
+> it.** Same function — determining what geometry permits — in a form with no classical resemblance
+> whatever.
+
+**TWO MEASUREMENT DEFECTS, BOTH THE SAME CLASS AND BOTH LOGGED.** The first pass checked protection on
+the **full Hilbert space**, where a short string maps out of the ground space and so cannot flip
+anything — making clause (v) vacuously true for every candidate. The second counted rank in the
+**link space** rather than in the quotient `Z¹/B¹`, giving `5` and `7` instead of `2`. **Both are
+"counted in the wrong space"; the record lives on the ground space, modulo stars, and nowhere else.**

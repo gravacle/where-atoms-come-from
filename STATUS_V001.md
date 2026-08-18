@@ -14,7 +14,7 @@ withdrawn claims: `THE_ROAD_V001.md` (10 so far, kept so they are not re-made).
 | term | role | status | would be refuted by |
 |---|---|---|---|
 | **EM** | supplies the gauge field and the holonomy that **is** the record | **PROVED** (Thm B ii, setup) | a record that is not a holonomy of the field |
-| **GRAVITY** (topology, i.e. a **1-form symmetry**) | supplies the **record space** (`2^{2g}`), the **writer** (Poincaré duality), and the **protection** — because 1-form generators are **extended** and no local operator reaches them | **PROVED** (Thms A, B iii, C, D) | a record on a genus-0 carrier; a local writer |
+| **GRAVITY** (topology, i.e. a **1-form symmetry**) | supplies the **record space** (`2^{2g}`, **set by genus and independent of area** — G1), the **writer** (Poincaré duality), and the **protection** — because 1-form generators are **extended** and no local operator reaches them | **PROVED** (Thms A, B iii, C, D) | a record on a genus-0 carrier; a local writer |
 | **ALPHA** | is a sum of local terms, so it **splits the record space at order `d`** and destroys the record | **PROVED** (Thm D) + measured (W-60, W-62) | records surviving `g²>0` undiminished |
 | **THE PROCESS** | a record is a topologically protected degeneracy of a gauge field, written by non-local transport | **CANDIDATE — not yet proved** | statement 1 or 4 below failing |
 
@@ -28,7 +28,7 @@ withdrawn claims: `THE_ROAD_V001.md` (10 so far, kept so they are not re-made).
 | 2 | **ORDINARY (0-form)** symmetry cannot supply it — splits linearly, dead at `1e-06` | measured (W-61); proof = **O2** | a 0-form degeneracy not split at first order |
 | 3 | **a 1-FORM symmetry** can — its generators are **extended**, so no local operator reaches them; splits only at order `d` | **PROVED** (Thm D); slope `2.000` | splitting below order `d` |
 | 4 | therefore records require a **HIGHER-FORM (1-form) SYMMETRY** — on a manifold, non-trivial topology | follows from 1–3; weak step = **O3**. **O6 TESTED AND FAILED: ours is EXACT, not emergent** | a noise-surviving record with only 0-form symmetry |
-| 5 | record space `= 2^{2g}`; at `g=0`, none | **PROVED** (Thm A) | a record at genus 0 |
+| 5 | record space `= 2^{2g}`; at `g=0`, none. **The count is `2g` — INDEPENDENT OF AREA** (G1: `2` at area 4 and at area 6) | **PROVED** (Thm A) + verified (G1) | a record at genus 0; a count that moves with area |
 | 6 | a writer always exists and is never local | **PROVED** (Thm B) + P-3 | a local operator flipping the record |
 | 7 | nothing local writes or destroys it | **PROVED** (Thm C) | any contractible operation acting |
 | 8 | alpha is local, so it splits at order `d` | **PROVED** (Thm D) | alpha leaving the degeneracy intact |
