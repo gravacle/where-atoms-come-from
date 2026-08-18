@@ -1,0 +1,19 @@
+W-55  D=16 as 4x4.  local subspace dimension 31 of 256 Hermitian dimensions
+
+  FLOOR FIRST -- what does a RANDOM rotation already give? Any claim is read against this.
+    random factorisations of a random H:  mean 0.1153  max of 300 0.2192   (dimension-count floor ~ 0.1216)
+
+  CASE 1 -- GENERIC H, no structure installed. Can any factorisation make it local?
+    trial 0:  best locality found = 0.9365   (random baseline 0.1199)
+    trial 1:  best locality found = 0.9425   (random baseline 0.1166)
+    trial 2:  best locality found = 0.9423   (random baseline 0.1157)
+
+  CASE 2 -- H BUILT LOCAL, then hidden by a random rotation. The search must recover it.
+    interaction eps=0.00:  true locality 1.0000   recovered by search 0.9461   hidden-basis value 0.1129
+    interaction eps=0.15:  true locality 0.9795   recovered by search 0.9330   hidden-basis value 0.1036
+    interaction eps=0.40:  true locality 0.8749   recovered by search 0.9356   hidden-basis value 0.1445
+
+  READING
+    If CASE 1 stays near the random floor, a generic Hamiltonian admits NO factorisation that
+    makes it local: boundaries are not derivable from the dynamics and must be an input.
+    If CASE 2 recovers its planted structure, the search works and CASE 1's null is real.

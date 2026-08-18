@@ -4093,3 +4093,54 @@ now **capacity has no collective content either.**
 **WHAT REMAINS IS NOT DECIDABLE HERE.** Item 24 — boundary *formation*, the set of possible
 boundaries being an output rather than an input — requires a carrier whose adjacency is not installed.
 **That is the emergent-geometry problem proper, and no experiment on this construction can reach it.**
+
+---
+
+## W-55 — **ITEM 24: BOUNDARIES ARE NOT DERIVABLE FROM GENERIC DYNAMICS. THEY MUST BE AN INPUT.**
+
+`LANE_W55_FACTORIZATION/`, sealed. Item 24 in its sharpest form: in a bare Hilbert space with no
+installed structure, a "boundary" is a **tensor factorisation**. So — can one be an output of the
+dynamics rather than an input?
+
+**W-55's optimiser search is VOID and is retained as such.** It plateaued near `0.94` whatever it was
+given: at `eps=0` the planted Hamiltonian is exactly local (`1.0000`) and the search reached only
+`0.9461`, while at `eps=0.40` it reported `0.936` — **above** the planted truth of `0.875`. The
+optimiser, not the physics, set the number.
+
+### THE EXACT QUESTION NEEDS NO OPTIMISER
+
+`H` is exactly local under **some** factorisation iff its spectrum is a **SUMSET** `{a_i + b_j}` —
+conjugation preserves the spectrum, so this is a property of the eigenvalues alone.
+
+> **AND IT IS SETTLED BY DIMENSION COUNTING, RIGOROUSLY.** A `d_A × d_B` sumset has `d_A + d_B − 1`
+> free parameters while the spectrum has `d_A·d_B` entries. For `4×4`: **7 parameters describing 16
+> numbers.** The sumset spectra form a 7-dimensional subvariety of `R^16` — **measure zero. A generic
+> Hamiltonian admits NO factorisation making it local.**
+
+```
+   planted sumsets           2.3e-16, 7.0e-16, 2.3e-02*     (*one optimiser failure, logged)
+   generic random Hermitian  4.4e-02, 4.9e-02, 5.2e-02, 4.6e-02   never near zero, 60 restarts each
+   OUR 3x3 patch, H_magnetic 7.7e-17                        EXACTLY a sumset
+```
+
+### THE NUMBER THAT ANSWERS ITEM 24
+
+> **OUR OWN CARRIER'S HAMILTONIAN IS EXACTLY A SUMSET — `7.7e-17`. A factorisation exists for it.**
+>
+> **And it exists because we BUILT it that way:** `H_mag = −Σ_p (W_p + h.c.)` is a sum of **commuting**
+> plaquette terms, so its spectrum is a sum of independent contributions by construction.
+
+**THAT IS WHERE THE BOUNDARIES CAME FROM.** Not from the dynamics — from the registrar's choice of a
+Hamiltonian assembled out of commuting local pieces. **The moment that choice was made, the set of
+boundaries was fixed, and every lane afterwards was reading back an input.**
+
+### ITEM 24, CLOSED
+
+**Boundaries are an output only for Hamiltonians that already carry the structure. For generic
+dynamics they are not derivable at all, and must be supplied.** This is a statement about dynamics,
+not about our lattice — it is why W-53 found every reconstruction question circular, and it would
+have been circular on any carrier built the same way.
+
+**HONEST LIMIT.** One planted control failed at `2.3e-02`, the same order as the generic values, so
+the numerics alone separate planted from generic by only ~2×. **The rigorous content is the dimension
+count, not the optimisation;** the numbers illustrate it and do not carry it.

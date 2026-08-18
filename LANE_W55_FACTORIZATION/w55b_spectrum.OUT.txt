@@ -1,0 +1,18 @@
+W-55b  IS A GENERIC SPECTRUM A SUMSET?  (exact locality, no optimiser over factorisations)
+  4x4: a sumset has 7 free parameters describing 16 eigenvalues.
+
+                                      case  sumset residual  reading
+  ----------------------------------------------------------------------------
+                  PLANTED sumset (trial 0)        2.321e-16  exactly local
+                  PLANTED sumset (trial 1)        6.997e-16  exactly local
+                  PLANTED sumset (trial 2)        2.281e-02  CONTROL FAILED
+        GENERIC random Hermitian (trial 0)        4.388e-02  NOT a sumset -> no local factorisation
+        GENERIC random Hermitian (trial 1)        4.859e-02  NOT a sumset -> no local factorisation
+        GENERIC random Hermitian (trial 2)        5.200e-02  NOT a sumset -> no local factorisation
+        GENERIC random Hermitian (trial 3)        4.568e-02  NOT a sumset -> no local factorisation
+
+  AND THE PROGRAM'S OWN CARRIER, for contrast:
+            our 3x3 patch, pure magnetic H        7.738e-17  EXACTLY LOCAL: a factorisation exists
+
+  generic spectra: min residual over 4 trials = 4.388e-02
+  READING: a sumset residual bounded away from 0 means NO factorisation makes that H local.
