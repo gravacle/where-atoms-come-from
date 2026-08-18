@@ -3711,3 +3711,50 @@ and Step 2 (alpha as resolution limit) carry no classical gravitational shape. *
 toward classical geometry, and that is correct** — convergence to classical geometry at large scale
 is the expected emergent endpoint, which is a different thing from demanding classical form at the
 record level, and it is last in the order for that reason.
+
+---
+
+## W-52 — **SPATIAL STRUCTURE IN RECORD FORMATION IS REAL, CREATED BY ALPHA, AND ITS SIGN OSCILLATES**
+
+`LANE_W52_FEEDBACK/`, sealed. Map step 3 in its corrected form: not *do records attract* (the
+classical import) but **does a record make another more likely nearby**.
+
+Records `p0` and `p1` share one link; `p0` and `p3` share none. Bath `[4,9]` is the set of links
+avoided by all three, so every comparison runs under the same bath.
+
+```
+   g^2    d(neighbour)         d(far)            difference        sigma
+  0.00  0.03629 +-0.00305  0.03584 +-0.00313   +0.00045 +-0.00437    0.1
+  0.02  0.03072 +-0.00382  0.04565 +-0.00330   -0.01493 +-0.00504    3.0
+  0.05  0.09756 +-0.00429  0.05370 +-0.00492   +0.04386 +-0.00653    6.7
+  0.10  0.07516 +-0.00522  0.16637 +-0.00591   -0.09121 +-0.00788   11.6
+  0.20  0.01712 +-0.00309  0.06358 +-0.00365   -0.04645 +-0.00478    9.7
+```
+
+**TWO THINGS ARE ESTABLISHED AND ONE IS REFUSED.**
+
+**ESTABLISHED — the spatial structure is real and it is ALPHA that creates it.** At `g² = 0` the
+difference is `0.1 sigma`: **exactly indifferent, as the mechanism requires.** The mechanism was
+stated before the run and holds: plaquette operators commute, `||[H(g²=0), W_p1]|| = 0.000e+00`, so
+at zero coupling the records are independent degrees of freedom and **no spatial structure is
+possible**. Switch the electric term on and `||[H(0.05), W_p1]|| = 0.980` — **it is the only channel
+that couples plaquettes, and neighbouring plaquettes couple through the link they share.**
+
+**ESTABLISHED — the effect is large.** Up to `11.6 sigma`, six independent seeds.
+
+**REFUSED — that it is FEEDBACK in either direction. THE SIGN OSCILLATES WITH THE COUPLING:**
+negative at `0.02`, positive at `0.05`, negative again at `0.10` and `0.20`.
+
+> **THE REGISTRAR RAN `g² = 0.05` ALONE FIRST AND WOULD HAVE REGISTERED "POSITIVE, SPATIALLY
+> STRUCTURED FEEDBACK". It is one point of a sign-oscillating quantity.** The likely cause is the
+> same class as two earlier defects in this program: a **fixed sampling time** (`T = 15`) reading a
+> coherently precessing quantity — cf. W-32's fixed-`T` survival and W-47's max-over-time.
+
+**AND THE PRE-REGISTERED OUTCOME LIST WAS INCOMPLETE.** The map named three readings in advance —
+positive, negative, indifferent. **The measurement returned a fourth: oscillating.** Pre-registering
+outcomes is the right discipline and it did not save the reading; **only the sweep did.**
+
+**WHAT IT LEAVES.** Records are **not** indifferent to one another — that possibility is dead at
+`11.6 sigma`. **What couples them is alpha, through shared links, and nothing else.** Whether the
+coupling concentrates or disperses content is **not answered**, and cannot be until the measurement
+is made at something other than a fixed time.
