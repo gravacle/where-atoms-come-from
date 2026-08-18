@@ -3939,3 +3939,66 @@ the tests run so far could have detected one.** That is a real gap in the covera
 **IT IS ALSO FALSIFIABLE.** If a large collection of capacity/boundary constraints determines nothing
 beyond what each determines separately, accumulation adds nothing and the negative verdict stands at
 every scale. **That is a decidable question and it has not been asked.**
+
+---
+
+## W-51 — **GEOMETRY IS NOT IN THE RECORDS. IT IS IN THE ENVIRONMENT COUPLING.**
+
+`LANE_W51_RECORD_TO_GEOMETRY/`. Map step 1: can the carrier's geometry be reconstructed from records
+alone. Three independent methods, expectation withheld, three adversaries. **All three reported
+fidelity `1.000` on the true carrier against `~0.5` shuffled. The headline is nonetheless withdrawn.**
+
+### THE RECONSTRUCTION IS AN EXACT IDENTITY, SO NOTHING COULD HAVE FAILED
+
+At `g² = 0` the Hamiltonian is a sum of records and commutes with all of them, so
+`Γ(S) = 2γ·|bdy(S)|` exactly. Boundaries are GF(2)-additive, hence
+`|bdy(p⊕q)| = |bdy(p)| + |bdy(q)| − 2|bdy(p)∩bdy(q)|`, so **the pair excess IS the shared-link count
+by polarisation** — and "shares a link" is by definition that intersection being non-empty. **Two
+lines of set algebra, no dynamics.**
+
+**VERIFIED BY EXECUTION, NOT ARGUMENT.** A reconstructor with **no Hamiltonian, no Lindbladian and no
+time evolution — just set XOR** — reproduces the lane exactly: block and ring exact, and across 200
+count-preserving shuffles it matched **each shuffle's own truth 200/200**, scoring mean `0.5057`
+against the original. **Those are the lane's published numbers.**
+
+> **THE MANDATED SHUFFLE CONTROL HAS NO DISCRIMINATING POWER.** A physics-free reconstructor passes it
+> with an identical signature. One adversary scored 60 shuffles with and without dynamics:
+> `max|difference| = 0.0e+00`.
+
+**Build 1 (spectral) is circular outright** — its input contains the full incidence matrix
+(`rank(B) = L`, so `A` follows from one least-squares solve; recovered at `2e-15` by two adversaries
+working independently, recovering *which* links, not just how many).
+
+### THE RESULT THAT SURVIVES IS A NULL, AND IT IS THE STRONGEST CLAIM IN THE LANE
+
+> **ADJACENCY IS NOT IN THE RECORD ALGEBRA.** Every record is a product of link operators, all
+> commutators are `0.00e+00`, and the multiplication table is `(Z_2)^m` — **identical on block, chain
+> and ring, which have three different dual graphs.**
+>
+> **Geometry enters only through `Z_k` — the electric term and the bath coupling.**
+
+**TWO NON-VACUOUS SURVIVORS.** The **isolation test**: swap the stored incidence for BLOCK while the
+operators are RING and fidelity is `1.000` vs RING, `0.667` vs BLOCK, and the mirror image on
+reversal — **the answer follows the dynamics and ignores the stored structure entirely.** And the
+**`γ` sweep**: fidelity `1.0000` at `γ = 0.5, 0.1, 0.01, 1e-4`, collapsing to `0.5333` at `γ = 0`.
+
+> **REMOVE THE ENVIRONMENT AND NOTHING COMES BACK. THE RECORD SECTOR ON ITS OWN IS GEOMETRY-BLIND.**
+
+### MAP STEP 2 — ALPHA DOES NOT SET THE RESOLUTION
+
+`g²` sets the **validity window of the rate estimator**, not a resolution. It is **not monotone in
+`g²` and not monotone in `g²·t*`**: `(g²=1.0, t*=0.2)` fails completely while `(g²=0.5, t*=1.0)` — a
+larger product — is exact. Breakdown coincides with the measured coherent leakage rate rising to the
+size of the dissipative rates. **The predicted coincidence with the legibility bound does not occur.**
+
+### WHAT THIS DOES TO THE MAP
+
+**Steps 1 and 2 are answered, both negatively.** Geometry is not recoverable from records in any
+inferential sense, and the coupling is not a resolution limit. **The three-way relation the map was
+built to obtain does not exist by this route.**
+
+**AND IT SHARPENS THE PRINCIPAL'S FRAMING RATHER THAN CONTRADICTING IT.** If boundary formation is
+part of gravity's record-level character, **W-51 locates it on the ENVIRONMENT side, not the record
+side.** The records carry no geometry at all; what carries it is where the environment couples —
+which is also what W-38 measured when the environment's placement selected which region was a region.
+**Two independent lanes now say the same thing: geometry lives in the coupling, not in the content.**
