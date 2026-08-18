@@ -20,6 +20,16 @@ MEASURED EXACTLY, NO TIME-SERIES FITTING.
 CONTROLS.  (a) at g2=0 omega must be exactly 0.  (b) Gamma must vanish when the bath is off.
 (c) the power laws are read off successive log-log slopes, NOT assumed.
 """
+
+# VECTORISATION FIX (found by a W-31 adversary; verified against RK4 to 5e-15).
+# numpy reshape(-1) is ROW-major, so vec(AXB) = (A kron B^T) vec X, and the Lindblad generator is
+#     -i(H kron I - I kron H^T) + gamma sum_k (L_k kron L_k* - I kron I).
+# This lane originally used the COLUMN-major form -i(I kron H - H^T kron I) with kron(L*, L).
+# The two differ by the swap permutation, i.e. they are similar: EVERY EIGENVALUE IS UNCHANGED,
+# so spectral quantities (decay rates, the sieve ranking, steady-state COUNTS) are unaffected.
+# States propagated through the generator ARE affected, so anything that evolves or projects an
+# initial condition had to be re-run. See the register erratum.
+
 import itertools, numpy as np
 
 def build(V,E,N):
@@ -72,8 +82,8 @@ def analyse(N, bathname, bathlinks, g2list):
     prev=None; rows=[]
     for g2 in g2list:
         H=-MAG-g2*ELEC
-        M=-1j*(np.kron(Id,H)-np.kron(H.T,Id))
-        for L in Ls: M+=0.5*(np.kron(L.conj(),L)-np.kron(Id,Id))
+        M=-1j*(np.kron(H,Id)-np.kron(Id,H.T))
+        for L in Ls: M+=0.5*(np.kron(L,L.conj())-np.kron(Id,Id))
         ev=np.linalg.eigvals(M)
         re=-ev.real
         dec=re[re>1e-10]
@@ -105,7 +115,7 @@ ELEC=sum(Zop(st,[k],2)+Zop(st,[k],2).conj().T for k in range(len(E)))
 Id=np.eye(D,dtype=complex)
 for g2 in [0.0,0.05,1.0]:
     H=-MAG-g2*ELEC
-    M=-1j*(np.kron(Id,H)-np.kron(H.T,Id))
+    M=-1j*(np.kron(H,Id)-np.kron(Id,H.T))
     ev=np.linalg.eigvals(M); re=-ev.real; dec=re[re>1e-10]
     print(f"    g2={g2:6.3f}  gamma=0   #decaying modes = {dec.size}   "
           f"max|Re(eigenvalue)| = {np.abs(ev.real).max():.3e}")

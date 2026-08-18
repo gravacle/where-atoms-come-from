@@ -176,25 +176,28 @@ class Model:
         self.IOTA[:D1, D1:] = iota
 
         # ---- junction families -------------------------------------------------
-        # For spoke pattern p (necessarily even weight by the hub Gauss law) the clearing set T
-        # solves T_i + T_{i+1} = p_i.  Two solutions, differing by the all-ones set, i.e. by
-        # prod_i M_tau_i = M_inner, whose winding is 1.  T_0 = 0 fixes the branch.
+        # tau_i = a_i + sigma_i + sigma_{i+1}, so applying the set T flips sigma_j exactly
+        # T_j + T_{j-1} times.  Clearing spoke pattern p therefore needs T_j + T_{j-1} = p_j.
+        # Consistency around the loop needs sum_j p_j = 0, which the hub Gauss law guarantees.
+        # Two solutions, differing by the all-ones set, i.e. by prod_i M_tau_i = M_inner, whose
+        # winding is 1 -- the junction ambiguity IS the record.  T_0 = 0 fixes the branch.
         spoke_pat = [tuple(s[sg(i)] for i in range(m)) for s in self.S1]
         self.pats = sorted(set(spoke_pat))
         Vs = []
         for p in self.pats:
             T = [0] * m
             for j in range(1, m):
-                T[j] = T[j - 1] ^ p[j - 1]
+                T[j] = T[j - 1] ^ p[j]
             U = np.eye(D1, dtype=complex)
             for i in range(m):
                 if T[i]:
                     U = U @ self.Mt1[i]
             Pi = np.diag([1.0 if spoke_pat[j] == p else 0.0 for j in range(D1)]).astype(complex)
-            Vs.append(iota.conj().T @ U @ Pi)                # D0 x D1, isometric on the p sector
-        self.Vs = Vs
-        self.Vs_flip = [V @ self.Minner1 for V in Vs]
-        self.kraus_defect = np.linalg.norm(sum(V.conj().T @ V for V in Vs) - np.eye(D1))
+            Vs.append((iota.conj().T @ U @ Pi, Pi))          # D0 x D1, isometric on the p sector
+        self.piso = max(np.linalg.norm(V.conj().T @ V - Pi) for V, Pi in Vs)
+        self.Vs = [V for V, _ in Vs]
+        self.Vs_flip = [V @ self.Minner1 for V in self.Vs]
+        self.kraus_defect = np.linalg.norm(sum(V.conj().T @ V for V in self.Vs) - np.eye(D1))
 
     def emb_down(self, V):
         M = np.zeros((self.D, self.D), complex)
@@ -282,11 +285,17 @@ BIA = ("C", "E")                    # deliberately biased starts
 # Lindblad machinery
 # ----------------------------------------------------------------------------------
 def superop(H, Ls, D):
+    """Vectorisation is ROW-major (numpy C order), to match rho.reshape(-1) below:
+       vec(A X B) = (A kron B^T) vec(X).  NOTE: w30b used the column-major kron with a
+       row-major reshape.  That mismatch is invisible whenever rho_0 is real symmetric --
+       which every state W-30b evolved happened to be -- and wrong otherwise.  The complex
+       initial states used here (relative phase pi/2 between winding sectors) expose it, so
+       the convention is fixed here and cross-checked against a naive matrix RK4 in STEP 12."""
     Id = np.eye(D, dtype=complex)
-    M = -1j * (np.kron(Id, H) - np.kron(H.T, Id))
+    M = -1j * (np.kron(H, Id) - np.kron(Id, H.T))
     for L in Ls:
         LdL = L.conj().T @ L
-        M += np.kron(L.conj(), L) - 0.5 * (np.kron(Id, LdL) + np.kron(LdL.T, Id))
+        M += np.kron(L, L.conj()) - 0.5 * (np.kron(LdL, Id) + np.kron(Id, LdL.T))
     return M
 
 
@@ -344,9 +353,10 @@ for m in (2, 3, 4):
           f"   punctured fiber (ANNULUS, b1=1) dim {x.D0:4d} (pred 2^{m+1} = {2**(m+1):4d})"
           f"   TOTAL {x.D:4d}   superoperator {x.D**2}x{x.D**2}")
     print(f"         junction Kraus completeness ||sum_p V_p^dag V_p - I|| = {x.kraus_defect:.3e}"
-          f"   #spoke patterns = {len(x.pats)}"
-          f"   ||iota iota^dag - Pi_nohair|| = "
-          f"{np.linalg.norm(x.iota @ x.iota.conj().T - x.Pnh):.3e}")
+          f"   max_p ||V_p^dag V_p - Pi_p|| = {x.piso:.3e}"
+          f"   #spoke patterns = {len(x.pats)} (pred 2^{m-1} = {2**(m-1)})"
+          f"   ||iota^dag iota - I|| = "
+          f"{np.linalg.norm(x.iota.conj().T @ x.iota - np.eye(x.D0)):.3e}")
 md = MD[2]
 D = md.D
 
@@ -510,9 +520,14 @@ for m in (2, 3, 4):
     cA = max(np.linalg.norm(x.RE @ L - L @ x.RE)
              for L in x.elec(0.5) + x.junction("A", 0.8) + x.junction("B", 0.8))
     cC = max(np.linalg.norm(x.RE @ L - L @ x.RE) for L in x.junction("C", 0.8))
+    nw = sum(1 for M in x.Mt1 if np.linalg.norm(R1 @ M - M @ R1) > 1e-9)
+    nq = sum(1 for M in x.Mq1 if np.linalg.norm(R1 @ M - M @ R1) > 1e-9)
     print(f"      m={m}  ||[R_E,H_capped]|| = {np.linalg.norm(R1 @ H1 - H1 @ R1):9.4f}   "
           f"||[R_E,H_punctured]|| = {np.linalg.norm(R0 @ H0 - H0 @ R0):.3e}   "
           f"max||[R_E,L]|| junctions A,B + electric = {cA:.3e}   junction C = {cC:.3e}")
+    print(f"            HOW MANY TERMS ACTUALLY WRITE: cap triangles with [R_E,M_tau] != 0 : "
+          f"{nw} of {m}    quads with [R_E,M_q] != 0 : {nq} of {m}    "
+          f"total plaquette terms in H_capped: {2*m}")
 
 print("\n  4e  CARRIER RESPONSE OFF (Gamma_d = 0, lambda = 0).")
 print("      START PUNCTURED -- the carrier is static and R_E is then a conserved charge, so")
@@ -568,35 +583,31 @@ print(f"  max-min including the two BIASED starts C,E (p+(0) = "
 # ==================================================================================
 # STEP 6  --  LINDBLADIAN SPECTRUM
 # ==================================================================================
-print("\n[STEP 6] LINDBLADIAN SPECTRUM  (adopted from Proposal 2: report structure, not a drift)")
-print("  dim ker(L) > 1 means a multi-dimensional steady-state manifold.  What decides whether")
-print("  the extra steady direction CARRIES the record is its overlap with R_E.\n")
-for jn in ("A", "B", "C"):
+print("\n[STEP 6] LINDBLADIAN STRUCTURE  (adopted from Proposal 2: report structure, not a drift)")
+print("  This replaces 'a plateau value and a drift' with an object that needs no protocol, no")
+print("  initial state and no time evolution.  In the Heisenberg picture <R_E>(t) = Tr(Y(t)^dag")
+print("  rho_0) with Y(t) = exp(M^dag t)[R_E].  Y_inf = lim Y(t) is the ASYMPTOTICALLY CONSERVED")
+print("  PART of the record.  Its PUNCTURED block is the already-written record and is trivially")
+print("  conserved for every junction (nothing acts on the punctured fiber).  Its CAPPED block is")
+print("  the whole question: it is nonzero exactly when a state that starts on the DISK -- no")
+print("  hole, no record yet -- ends with a winding that depends on which state it was.\n")
+vR = md.RE.reshape(-1)
+nR = np.linalg.norm(vR)
+for jn in ("A", "B", "Bp", "C"):
     Ls = md.elec(0.5) + md.junction(jn, 0.8)
-    w, Vv = np.linalg.eig(superop(H07, Ls, D))
-    ker = [k for k in range(len(w)) if abs(w[k]) < 1e-8]
-    print(f"  junction {jn:2s}:  dim ker(Lindbladian) = {len(ker)}")
-    for k in ker:
-        Vk = Vv[:, k].reshape(D, D)
-        nv = np.linalg.norm(Vk)
-        print(f"      kernel direction: |tr(V)|/||V|| = {abs(np.trace(Vk))/nv:.6f}   "
-              f"|tr(R_E V)|/||V|| = {abs(np.trace(md.RE @ Vk))/nv:.6f}")
-    ov = []
-    for k in range(len(w)):
-        Vk = Vv[:, k].reshape(D, D)
-        nv = np.linalg.norm(Vk)
-        if nv > 1e-12 and w[k].real < -1e-9:
-            o2 = abs(np.trace(md.RE @ Vk)) / nv
-            if o2 > 1e-6:
-                ov.append((w[k].real, o2))
-    ov.sort(key=lambda t: -t[0])
-    if ov:
-        print(f"      slowest DECAYING mode with nonzero R_E overlap: Re(lambda) = {ov[0][0]:.4e}"
-              f"  -> time constant {-1.0/ov[0][0]:.4e}   (this is the WRITE/settling transient;"
-              f" erasure would instead show as zero R_E overlap in the kernel)")
-        print(f"      next three: " + ", ".join(f"{r:.3e}" for r, _ in ov[1:4]))
-    else:
-        print(f"      no decaying mode carries R_E overlap")
+    M = superop(H07, Ls, D)
+    Y = (expm(M.conj().T * 400.0) @ vR).reshape(D, D)
+    w = np.linalg.eigvals(M)
+    nk = int(np.sum(np.abs(w) < 1e-8))
+    print(f"  junction {jn:2s}:  dim ker(M) = {nk:3d}   Hermiticity defect of Y_inf = "
+          f"{np.linalg.norm(Y - Y.conj().T):.2e}   tr(Y_inf) = {np.trace(Y).real:+.3e}")
+    print(f"      ||Y_inf||/||R_E|| = {np.linalg.norm(Y)/nR:.6f}"
+          f"    PUNCTURED block {np.linalg.norm(Y[md.D1:, md.D1:])/nR:.6f}"
+          f"    CAPPED block {np.linalg.norm(Y[:md.D1, :md.D1])/nR:.6f}")
+    print(f"      predicted <R_E>(inf) from Y_inf, unbiased starts:  " +
+          "  ".join(f"{k}:{float(np.real(np.trace(Y.conj().T @ rho_of(ST[k])))):+.6f}" for k in UNB))
+    dec = sorted([z.real for z in w if z.real < -1e-9], reverse=True)[:3]
+    print(f"      three slowest decay rates Re(lambda): " + ", ".join(f"{r:.4e}" for r in dec))
 
 # ==================================================================================
 # STEP 7  --  JUNCTION CONTROLS AND NULLS
@@ -746,7 +757,10 @@ for jn in ("A", "B", "C"):
 print("\n[STEP 11] FINITE-TEMPERATURE DAVIES BATH  (adopted from Proposal 2).  Every unitary jump")
 print("  operator in this lane, our own L = sqrt(gamma_E) Z_l included, makes the identity")
 print("  stationary: an INFINITE-temperature bath, where nothing anywhere keeps a record.")
-print("  A(omega) = sum_{E_b - E_a = omega} |a><a| A |b><b|,  gamma(omega) = g0 w/(1-exp(-w/T)).\n")
+print("  A(omega) = sum_{E_b - E_a = omega} |a><a| A |b><b|.  Rate gamma(omega) = g0/(1+exp(-w/T)),")
+print("  which satisfies KMS, gamma(-w)/gamma(w) = exp(-w/T), and stays BOUNDED as T grows, so")
+print("  the temperatures below are comparable at fixed overall coupling.  T = 1e6 is then the")
+print("  infinite-temperature Davies bath, the honest analogue of this lane's unitary jumps.\n")
 
 def davies(Hm, As, gamma0, Tmp, dim, tol=1e-6):
     w, U = np.linalg.eigh(Hm)
@@ -764,7 +778,7 @@ def davies(Hm, As, gamma0, Tmp, dim, tol=1e-6):
                 M[aa, bb] = Ab[aa, bb]
             if np.linalg.norm(M) < 1e-12:
                 continue
-            g = gamma0 * Tmp if abs(om) < 1e-12 else gamma0 * om / (1.0 - np.exp(-om / Tmp))
+            g = gamma0 / (1.0 + np.exp(-om / Tmp))
             Ls.append(np.sqrt(g) * (U @ M @ U.conj().T))
     return Ls
 
@@ -808,27 +822,43 @@ print("\n[STEP 12] SIZE SCALING m = 2,3,4.  The protection is CLAIMED homologica
 print("  m-independent.  If the frozen p_+ or the spread drifts systematically with m, the")
 print("  topological story is decoration on a finite-size accident.\n")
 
-def rk4(H, jumps, rho0, T, nst):
+def rk4(x, H, jumps, rho0, T, nst, report=False):
+    """RK4 on rho.  Three exploited structures, all exact, none approximations:
+       (a) rho and drho/dt are Hermitian and H is Hermitian, so [H,rho] costs ONE matmul;
+       (b) the electric jumps are diagonal in the flux basis -> elementwise;
+       (c) every junction jump is block-lower (capped -> punctured) with V of shape D0 x D1,
+           and in every junction family sum_k L^dag L is DIAGONAL (Gd*Pi_nohair for A, Gd*I for
+           B/Bp/C).  That diagonality is verified numerically here, not assumed."""
+    D1 = x.D1
     dt = T / nst
-    Sg = np.zeros(H.shape[0], complex)
-    Sm = np.zeros_like(H)
-    dj, mj = [], []
+    sd = np.zeros(H.shape[0], complex)
+    dj, vj = [], []
+    Sfull = np.zeros_like(H)
     for kind, X in jumps:
         if kind == 'd':
             dj.append(X)
-            Sg += np.abs(X) ** 2
-        else:
-            mj.append(X)
-            Sm += X.conj().T @ X
-    Sd = np.diag(Sg) + Sm
+            sd += np.abs(X) ** 2
+            Sfull += np.diag(np.abs(X) ** 2)
+        else:                                   # X is V, shape D0 x D1
+            vj.append(X)
+            blk = X.conj().T @ X
+            Sfull[:D1, :D1] += blk
+            sd[:D1] += np.diag(blk)
+    offdiag = np.linalg.norm(Sfull - np.diag(np.diag(Sfull)))
+    if report:
+        print(f"      structural check: ||sum_k L^dag L - diag(sum_k L^dag L)|| = {offdiag:.3e}")
+    if offdiag > 1e-10:
+        raise RuntimeError("sum_k L^dag L is not diagonal; the fast RK4 path is invalid")
+    anti = -0.5 * (sd[:, None] + sd[None, :])
 
     def rhs(r):
-        out = -1j * (H @ r - r @ H)
+        X1 = H @ r
+        out = -1j * (X1 - X1.conj().T)
         for d in dj:
             out += np.outer(d, d.conj()) * r
-        for L in mj:
-            out += L @ r @ L.conj().T
-        return out - 0.5 * (Sd @ r + r @ Sd)
+        for V in vj:
+            out[D1:, D1:] += V @ r[:D1, :D1] @ V.conj().T
+        return out + anti * r
 
     r = rho0.copy()
     for _ in range(nst):
@@ -841,19 +871,48 @@ def rk4(H, jumps, rho0, T, nst):
 
 def jumps_of(x, gE=0.5, Gd=0.8):
     return ([('d', np.sqrt(gE) * d) for d in x.zt] +
-            [('m', np.sqrt(Gd) * x.emb_down(x.iota.conj().T))])
+            [('v', np.sqrt(Gd) * x.iota.conj().T)])
 
-print("  CONVERGENCE CHECK of the RK4 route against the m=2 exact superoperator exponential:")
-exA = obs(md, evolve_exact(H07, Ls_on, rho_of(ST["A"]), ts, D, ("on", 0.7, "A", 0.8))[-1])[0]
-for nst in (400, 800, 1600, 3200):
-    r = rk4(H07, jumps_of(md), rho_of(ST["A"]), 40.0, nst)
-    print(f"      steps = {nst:5d}   RK4 p+(40) = {obs(md, r)[0]:.10f}   exact = {exA:.10f}"
-          f"   diff = {abs(obs(md, r)[0]-exA):.3e}")
+print("  CONVERGENCE CHECK of the RK4 route against the m=2 exact superoperator exponential,")
+print("  and a third, assumption-free NAIVE matrix RK4 that uses none of the fast-path structure.")
+print("  This third route exists because the first version of this script had the two disagree:")
+print("  the superoperator was built with the column-major kron and fed a row-major reshape, an")
+print("  error that is invisible for real symmetric rho_0 and wrong for complex ones.")
 
-print("\n  m-scaling (junction A, g^2=0.7, gamma_E=0.5, Gamma_d=0.8, T=40, RK4 1600 steps):")
-print(f"  {'m':>3s} {'dim':>5s} " + " ".join(f"{'p+('+k+')':>10s}" for k in UNB) +
+def naive_rhs(H, Ls, r):
+    o = -1j * (H @ r - r @ H)
+    for L in Ls:
+        o += L @ r @ L.conj().T - 0.5 * (L.conj().T @ L @ r + r @ L.conj().T @ L)
+    return o
+
+def naive_rk4(H, Ls, r, T, n):
+    dt = T / n
+    for _ in range(n):
+        k1 = naive_rhs(H, Ls, r)
+        k2 = naive_rhs(H, Ls, r + 0.5 * dt * k1)
+        k3 = naive_rhs(H, Ls, r + 0.5 * dt * k2)
+        k4 = naive_rhs(H, Ls, r + dt * k3)
+        r = r + dt * (k1 + 2 * k2 + 2 * k3 + k4) / 6.0
+    return r / np.trace(r).real
+
+for nm in ("A", "D"):
+    exA = obs(md, evolve_exact(H07, Ls_on, rho_of(ST[nm]), ts, D, ("on", 0.7, "A", 0.8)
+                               if nm == "A" else ("cv", nm))[-1])[0]
+    nv = obs(md, naive_rk4(H07, Ls_on, rho_of(ST[nm]).copy(), 40.0, 8000))[0]
+    print(f"      init {nm} (rho_0 symmetry defect ||rho-rho^T|| = "
+          f"{np.linalg.norm(rho_of(ST[nm]) - rho_of(ST[nm]).T):.3e}):"
+          f"  exact expm = {exA:.10f}   naive RK4 = {nv:.10f}   diff = {abs(exA-nv):.3e}")
+    for j, nst in enumerate((400, 1600, 3200)):
+        r = rk4(md, H07, jumps_of(md), rho_of(ST[nm]), 40.0, nst, report=(j == 0 and nm == "A"))
+        print(f"          fast RK4 steps = {nst:5d}   p+(40) = {obs(md, r)[0]:.10f}"
+              f"   diff from exact = {abs(obs(md, r)[0]-exA):.3e}")
+
+print("\n  m-scaling (junction A, g^2=0.7, gamma_E=0.5, Gamma_d=0.8).  Each m is run to T=40 AND to")
+print("  T=160, because at larger m the cap has not finished evaporating by T=40 and a spread")
+print("  that shrinks with m would otherwise be confounded with an unfinished run.")
+print(f"  {'m':>3s} {'dim':>5s} {'T':>4s} " + " ".join(f"{'p+('+k+')':>10s}" for k in UNB) +
       f" {'SPREAD':>9s} {'<R_E>(A)':>10s} {'pcap':>9s}")
-print("  " + "-" * 96)
+print("  " + "-" * 103)
 for m in (2, 3, 4):
     x = MD[m]
     st = x.starts()
@@ -863,19 +922,20 @@ for m in (2, 3, 4):
     Px = (np.eye(x.D) + RT) / 2.0
     Cx = np.zeros((x.D, x.D), complex)
     Cx[:x.D1, :x.D1] = np.eye(x.D1)
-    vals, rA, pcA = {}, 0.0, 0.0
-    for nm in UNB:
-        r0 = rho_of(st[nm])
-        p0 = np.trace(Px @ r0).real
-        if abs(p0 - 0.5) > 1e-12:
-            print(f"      WARNING m={m} start {nm} is not unbiased: p+(0) = {p0:.12f}")
-        r = rk4(Hx, jm, r0, 40.0, 1600)
-        vals[nm] = np.trace(Px @ r).real
-        if nm == "A":
-            rA = np.trace(RT @ r).real
-            pcA = np.trace(Cx @ r).real
-    print(f"  {m:3d} {x.D:5d} " + " ".join(f"{vals[k]:10.6f}" for k in UNB) +
-          f" {max(vals.values())-min(vals.values()):9.6f} {rA:+10.6f} {pcA:9.2e}")
+    for T, nst in ((40.0, 1600), (160.0, 6400)):
+        vals, rA, pcA = {}, 0.0, 0.0
+        for nm in UNB:
+            r0 = rho_of(st[nm])
+            p0 = np.trace(Px @ r0).real
+            if abs(p0 - 0.5) > 1e-12:
+                print(f"      WARNING m={m} start {nm} is not unbiased: p+(0) = {p0:.12f}")
+            r = rk4(x, Hx, jm, r0, T, nst)
+            vals[nm] = np.trace(Px @ r).real
+            if nm == "A":
+                rA = np.trace(RT @ r).real
+                pcA = np.trace(Cx @ r).real
+        print(f"  {m:3d} {x.D:5d} {T:4.0f} " + " ".join(f"{vals[k]:10.6f}" for k in UNB) +
+              f" {max(vals.values())-min(vals.values()):9.6f} {rA:+10.6f} {pcA:9.2e}")
 
 print("\n  m-scaling with the SYMMETRISED junction C (the null), same parameters:")
 print(f"  {'m':>3s} {'dim':>5s} " + " ".join(f"{'p+('+k+')':>10s}" for k in UNB) + f" {'SPREAD':>9s}")
@@ -885,13 +945,13 @@ for m in (2, 3, 4):
     st = x.starts()
     Hx = x.H(0.7)
     jm = ([('d', np.sqrt(0.5) * d) for d in x.zt] +
-          [('m', np.sqrt(0.4) * x.emb_down(V)) for V in x.Vs] +
-          [('m', np.sqrt(0.4) * x.emb_down(V)) for V in x.Vs_flip])
+          [('v', np.sqrt(0.4) * V) for V in x.Vs] +
+          [('v', np.sqrt(0.4) * V) for V in x.Vs_flip])
     RT = np.diag(np.concatenate([x.RE1_all[0], x.RE0_all[0]])).astype(complex)
     Px = (np.eye(x.D) + RT) / 2.0
     vals = {}
     for nm in UNB:
-        r = rk4(Hx, jm, rho_of(st[nm]), 40.0, 1600)
+        r = rk4(x, Hx, jm, rho_of(st[nm]), 40.0, 1600)
         vals[nm] = np.trace(Px @ r).real
     print(f"  {m:3d} {x.D:5d} " + " ".join(f"{vals[k]:10.6f}" for k in UNB) +
           f" {max(vals.values())-min(vals.values()):9.6f}")

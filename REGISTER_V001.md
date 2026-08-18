@@ -2821,3 +2821,58 @@ some other probe can read an odd loop is untested,** and it is a sharp, cheap qu
 **A DEFECT, LOGGED.** `w37c` TEST 2 projects a localised start into each sector and that projection
 is degenerate at every `n`, so it printed "(a sector is empty)" throughout and measured nothing. It
 is kept as written. The result rests on TEST 1 and TEST 3.
+
+---
+
+## ERRATUM (VECTORISATION) — **A REAL BUG IN W-32/33/34, AND IT MOVES NOTHING**
+
+Found by a W-31 adversary. `numpy`'s `reshape(-1)` is **row-major**, so `vec(AXB) = (A ⊗ Bᵀ) vec X`
+and the Lindblad generator is `-i(H⊗I - I⊗Hᵀ) + γ Σ (L⊗L* - I⊗I)`. Those lanes used the
+**column-major** form `-i(I⊗H - Hᵀ⊗I)` with `kron(L*,L)`.
+
+**Verified against RK4 with a deliberately non-symmetric complex state:** column-major is wrong by
+`2.8e-02`; row-major matches to `5.1e-15`.
+
+**All four scripts were patched and re-run. Every registered number is unchanged.** The diffs are
+machine-precision only (`1.32e-16 → 2.41e-16`), signs of exact zeros, and reordering among
+degenerate eigenvalues. **The reason is structural: the two conventions differ by the swap
+permutation, so they are SIMILAR and every eigenvalue is identical** — and W-32's rates, W-34's
+sieve ranking and W-33's steady-state counts are all spectral. **W-32's `1/(8g²)`, W-34's 28× margin
+and W-33's slope `1.000000000` stand as registered.** W-35's main result used trajectory evolution
+and never touched the generator; W-36 and W-37 evolve state vectors.
+
+## W-31 — **ROUTE B: THE RESPONSIVE CARRIER, REFUTED 3/3. THE TOPOLOGY DID NO WORK.**
+
+`LANE_W31_RESPONSIVE_CARRIER/`, sealed. Commissioned as 4 independent designs under distinct lenses,
+3 judges, 1 build, 3 adversaries. **The registrar's own hypothesis was withheld from the designers.
+The gr-faithful lens found it independently and sharpened it** — from "H depends on the state" to a
+topology change: `||[R_E, H_capped]|| = 16/32/64 > 0` (writable while the cap exists) and
+`||[R_E, H_punctured]|| = 0.000e+00` (exactly conserved once the hole opens). All three judges
+picked it unanimously (`breaks_nogo = 9,9,9`).
+
+**ALL THREE ADVERSARIES REFUTED IT, INDEPENDENTLY, AFTER REPRODUCING THE ARITHMETIC EXACTLY.**
+
+> **ADVERSARY 2 BUILT A TOPOLOGY-FREE TWIN** — no hole, no cap, `b₁ = 0` everywhere, no carrier
+> response: two copies of the same capped disk, the second with the writer set to `κ=0` by hand,
+> joined by a leak. **It reproduces EVERY headline number to `1e-16`**, spread `0.107789` included.
+> Because `ιᵀ H_disk(κ=0) ι = H_annulus + c·I` to `8.9e-16`: **the "punctured annulus" IS the
+> zero-spoke-flux sector of the capped disk with the writer switched off.**
+
+**ADVERSARY 3** independently built a 32-dimensional control — no hole, no second Gauss law, no Betti
+number — and got the same numbers. **ADVERSARY 1** showed the headline metric is decoupled from what
+it claims to measure: the `g²=0` null is forced by a weak symmetry `S` that anticommutes with `R_E`
+and leaves all five "unbiased" starts exactly invariant; a record **does** form at `g²=0`
+(`±0.145299`), contradicting the build's own reading; and the frozen value decomposes as
+`+0.034219` population `+ 0.081116` **coherence** — a continuous readout of the initial relative
+phase, so **nothing discrete was recorded at all.**
+
+### WHAT THIS SETTLES
+
+> **THE RESPONSIVE CARRIER CONTRIBUTED EXACTLY NOTHING. The load-bearing content was "the
+> destination has no writer, and the transfer commutes with the record" — both hand-set.**
+
+**And it converges with V003 from the opposite direction.** V003 concluded that nothing measured yet
+REQUIRES the carrier to respond. Route B was the attempt to build a case that does, and the strongest
+design three judges could pick reduces to a hand-set constant. **Two independent routes, same
+answer: the gravity line is still empty, and the emptiness is now a result rather than a gap in
+effort.**

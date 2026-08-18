@@ -19,6 +19,16 @@ CONTROLS THAT MUST FIRE.
       leaves <R>_psi untouched, so it must give E[<R>^2] = const. If jump and homodyne disagree,
       record formation is a fact about HOW THE ENVIRONMENT IS READ, not about the generator.
 """
+
+# VECTORISATION FIX (found by a W-31 adversary; verified against RK4 to 5e-15).
+# numpy reshape(-1) is ROW-major, so vec(AXB) = (A kron B^T) vec X, and the Lindblad generator is
+#     -i(H kron I - I kron H^T) + gamma sum_k (L_k kron L_k* - I kron I).
+# This lane originally used the COLUMN-major form -i(I kron H - H^T kron I) with kron(L*, L).
+# The two differ by the swap permutation, i.e. they are similar: EVERY EIGENVALUE IS UNCHANGED,
+# so spectral quantities (decay rates, the sieve ranking, steady-state COUNTS) are unaffected.
+# States propagated through the generator ARE affected, so anything that evolves or projects an
+# initial condition had to be re-run. See the register erratum.
+
 import itertools, numpy as np
 
 def build(V,E,N):
@@ -121,8 +131,8 @@ def jump(g2,gam,T,NT,dt=0.004,seed=23):
 
 def exact_rho(g2,gam,T,rho0):
     H=-MAG-g2*ELEC
-    M=-1j*(np.kron(Id,H)-np.kron(H.T,Id))
-    for L in Ls: M+=gam*(np.kron(L.conj(),L)-np.kron(Id,Id))
+    M=-1j*(np.kron(H,Id)-np.kron(Id,H.T))
+    for L in Ls: M+=gam*(np.kron(L,L.conj())-np.kron(Id,Id))
     return (expm(M*T)@rho0.reshape(-1)).reshape(D,D)
 
 print("W-35  DOES A RECORD FORM ON INDIVIDUAL TRAJECTORIES?")

@@ -5,11 +5,11 @@ W-31  THE EVAPORATING CAP -- responsive carrier.  numpy only, no scipy.
 [STEP 1] THE SPACE
 
   m=2   capped fiber (DISK, b1=0) dim   16 (pred 2^4 =   16)   punctured fiber (ANNULUS, b1=1) dim    8 (pred 2^3 =    8)   TOTAL   24   superoperator 576x576
-         junction Kraus completeness ||sum_p V_p^dag V_p - I|| = 0.000e+00   #spoke patterns = 2   ||iota iota^dag - Pi_nohair|| = 0.000e+00
+         junction Kraus completeness ||sum_p V_p^dag V_p - I|| = 0.000e+00   max_p ||V_p^dag V_p - Pi_p|| = 0.000e+00   #spoke patterns = 2 (pred 2^1 = 2)   ||iota^dag iota - I|| = 0.000e+00
   m=3   capped fiber (DISK, b1=0) dim   64 (pred 2^6 =   64)   punctured fiber (ANNULUS, b1=1) dim   16 (pred 2^4 =   16)   TOTAL   80   superoperator 6400x6400
-         junction Kraus completeness ||sum_p V_p^dag V_p - I|| = 6.928e+00   #spoke patterns = 4   ||iota iota^dag - Pi_nohair|| = 0.000e+00
+         junction Kraus completeness ||sum_p V_p^dag V_p - I|| = 0.000e+00   max_p ||V_p^dag V_p - Pi_p|| = 0.000e+00   #spoke patterns = 4 (pred 2^2 = 4)   ||iota^dag iota - I|| = 0.000e+00
   m=4   capped fiber (DISK, b1=0) dim  256 (pred 2^8 =  256)   punctured fiber (ANNULUS, b1=1) dim   32 (pred 2^5 =   32)   TOTAL  288   superoperator 82944x82944
-         junction Kraus completeness ||sum_p V_p^dag V_p - I|| = 1.386e+01   #spoke patterns = 8   ||iota iota^dag - Pi_nohair|| = 0.000e+00
+         junction Kraus completeness ||sum_p V_p^dag V_p - I|| = 0.000e+00   max_p ||V_p^dag V_p - Pi_p|| = 0.000e+00   #spoke patterns = 8 (pred 2^3 = 8)   ||iota^dag iota - I|| = 0.000e+00
 
   STATIC COMPARISON CASE (W-30's carrier, rebuilt here): 3x3 planar patch Z_2, physical dim 16, superoperator 256x256
   ROUTE: m=2 EXACT superoperator exponential; m=3,4 RK4 on rho, convergence-checked against the m=2 exact result.
@@ -30,14 +30,14 @@ W-31  THE EVAPORATING CAP -- responsive carrier.  numpy only, no scipy.
         junction C : tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 16.0
   m=3  punctured sectors 8/8  tr(R_E P_punc) = +0.0   capped sectors 32/32  tr(R_E P_cap) = +0.0   tr(R_E Pi_nohair) = +0.0
         junction A : tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 16.0
-        junction B : tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 16.0
-        junction Bp: tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 16.0
-        junction C : tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 16.0
-  m=4  punctured sectors 16/16  tr(R_E P_punc) = +0.0   capped sectors 128/128  tr(R_E P_cap) = +0.0   tr(R_E Pi_nohair) = +0.0
-        junction A : tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 32.0
         junction B : tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 64.0
         junction Bp: tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 64.0
-        junction C : tr(R_E * sum_k L^dag L) = +4.441e-16   tr(sum_k L^dag L) = 64.0
+        junction C : tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 64.0
+  m=4  punctured sectors 16/16  tr(R_E P_punc) = +0.0   capped sectors 128/128  tr(R_E P_cap) = +0.0   tr(R_E Pi_nohair) = +0.0
+        junction A : tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 32.0
+        junction B : tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 256.0
+        junction Bp: tr(R_E * sum_k L^dag L) = +0.000e+00   tr(sum_k L^dag L) = 256.0
+        junction C : tr(R_E * sum_k L^dag L) = -1.776e-15   tr(sum_k L^dag L) = 256.0
 
   Any nonzero overlap found (record constraint-forced / gate sector-biased)?  False
   Residual risk (iii), large-g^2 pinning, is settled by NO commutator.  See STEP 9.
@@ -70,23 +70,26 @@ W-31  THE EVAPORATING CAP -- responsive carrier.  numpy only, no scipy.
 
   4d  COMMUTATORS OF R_E WITH THE FULL GENERATOR (g^2 = 0.7, kappa = 1):
       m=2  ||[R_E,H_capped]|| =   16.0000   ||[R_E,H_punctured]|| = 0.000e+00   max||[R_E,L]|| junctions A,B + electric = 0.000e+00   junction C = 3.578e+00
+            HOW MANY TERMS ACTUALLY WRITE: cap triangles with [R_E,M_tau] != 0 : 1 of 2    quads with [R_E,M_q] != 0 : 0 of 2    total plaquette terms in H_capped: 4
       m=3  ||[R_E,H_capped]|| =   32.0000   ||[R_E,H_punctured]|| = 0.000e+00   max||[R_E,L]|| junctions A,B + electric = 0.000e+00   junction C = 5.060e+00
+            HOW MANY TERMS ACTUALLY WRITE: cap triangles with [R_E,M_tau] != 0 : 1 of 3    quads with [R_E,M_q] != 0 : 0 of 3    total plaquette terms in H_capped: 6
       m=4  ||[R_E,H_capped]|| =   64.0000   ||[R_E,H_punctured]|| = 0.000e+00   max||[R_E,L]|| junctions A,B + electric = 0.000e+00   junction C = 7.155e+00
+            HOW MANY TERMS ACTUALLY WRITE: cap triangles with [R_E,M_tau] != 0 : 1 of 4    quads with [R_E,M_q] != 0 : 0 of 4    total plaquette terms in H_capped: 8
 
   4e  CARRIER RESPONSE OFF (Gamma_d = 0, lambda = 0).
       START PUNCTURED -- the carrier is static and R_E is then a conserved charge, so
       d<R_E>/dt must be 0 to machine precision:
         g^2= 0.0  p+(0) = 0.467033686268   p+(40) = 0.467033686268   |delta| = 5.551e-17   <R_E>(40) = -0.065932627464
-        g^2= 0.7  p+(0) = 0.467033686268   p+(40) = 0.467033686268   |delta| = 1.654e-13   <R_E>(40) = -0.065932627463
-        g^2= 3.0  p+(0) = 0.467033686268   p+(40) = 0.467033686268   |delta| = 3.821e-13   <R_E>(40) = -0.065932627464
+        g^2= 0.7  p+(0) = 0.467033686268   p+(40) = 0.467033686268   |delta| = 1.667e-13   <R_E>(40) = -0.065932627463
+        g^2= 3.0  p+(0) = 0.467033686268   p+(40) = 0.467033686268   |delta| = 3.799e-13   <R_E>(40) = -0.065932627464
       START CAPPED, carrier still frozen -- the writer never stops, so nothing freezes:
         init A: p+(0) = 0.500000   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 6.062e-14   p_cap(40) = 1.000e+00
         init B: p+(0) = 0.500000   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 7.272e-15   p_cap(40) = 1.000e+00
-        init D: p+(0) = 0.500000   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 5.973e-14   p_cap(40) = 1.000e+00
+        init D: p+(0) = 0.500000   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 5.018e-14   p_cap(40) = 1.000e+00
         init F: p+(0) = 0.500000   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 2.798e-14   p_cap(40) = 1.000e+00
-        init G: p+(0) = 0.500000   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 1.332e-15   p_cap(40) = 1.000e+00
-        init C: p+(0) = 0.612535   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 3.664e-15   p_cap(40) = 1.000e+00
-        init E: p+(0) = 0.912234   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 5.107e-15   p_cap(40) = 1.000e+00
+        init G: p+(0) = 0.500000   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 1.610e-15   p_cap(40) = 1.000e+00
+        init C: p+(0) = 0.612535   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 1.166e-15   p_cap(40) = 1.000e+00
+        init E: p+(0) = 0.912234   p+(40) = 0.500000   late-avg p+[30,40] = 0.500000   drift[30,40] = 2.387e-15   p_cap(40) = 1.000e+00
 
 [STEP 5] CARRIER RESPONSE ON  (junction A, no-hair gate; Gamma_d=0.8, gamma_E=0.5, g^2=0.7)
 
@@ -100,35 +103,41 @@ W-31  THE EVAPORATING CAP -- responsive carrier.  numpy only, no scipy.
   -------------------------------------------------------------------------------------------------------------------------------------
       A  0.500000 +0.000000  0.575284  0.560364  0.557787  0.557692  0.557668  0.557668 +0.115335 4.919e-08  9.43e-08  3.38e-06
       B  0.500000 +0.000000  0.492574  0.500477  0.498673  0.498563  0.498535  0.498535 -0.002929 5.724e-08  1.10e-07  3.93e-06
-      D  0.500000 +0.000000  0.546865  0.543435  0.541670  0.541586  0.541565  0.541565 +0.083130 4.305e-08  8.25e-08  2.95e-06
+      D  0.500000 +0.000000  0.490945  0.493633  0.492770  0.492678  0.492654  0.492654 -0.014692 4.965e-08  9.52e-08  3.41e-06
       F  0.500000 +0.000000  0.466353  0.470113  0.470546  0.470431  0.470399  0.470399 -0.059202 6.543e-08  1.25e-07  4.49e-06
-      G  0.500000 +0.000000  0.581013  0.550709  0.550771  0.550687  0.550663  0.550663 +0.101325 4.934e-08  9.46e-08  3.39e-06
-      C  0.612535 +0.225069  0.547802  0.514091  0.510813  0.510698  0.510668  0.510668 +0.021337 6.098e-08  1.17e-07  4.19e-06
-      E  0.912234 +0.824469  0.586259  0.577450  0.577214  0.577107  0.577079  0.577079 +0.154158 5.816e-08  1.12e-07  3.99e-06
+      G  0.500000 +0.000000  0.433492  0.449043  0.449982  0.449902  0.449878  0.449878 -0.100244 4.919e-08  9.43e-08  3.38e-06
+      C  0.612535 +0.225069  0.541416  0.524033  0.522162  0.522058  0.522031  0.522031 +0.044061 5.660e-08  1.09e-07  3.88e-06
+      E  0.912234 +0.824469  0.579994  0.558666  0.556164  0.556047  0.556017  0.556017 +0.112035 6.032e-08  1.16e-07  4.14e-06
 
   <R_E>(t), init A:  t=0: +0.000000   t=1: +0.150568   t=2: +0.120727   t=3: +0.116489   t=5: +0.115574   t=10: +0.115383   t=20: +0.115337   t=40: +0.115335
-  SPREAD over the five UNBIASED starts (p+(0) = 1/2 exactly): max-min = 0.087268
-  max-min including the two BIASED starts C,E (p+(0) = 0.6125, 0.9122): 0.106680
+  SPREAD over the five UNBIASED starts (p+(0) = 1/2 exactly): max-min = 0.107789
+  max-min including the two BIASED starts C,E (p+(0) = 0.6125, 0.9122): 0.107789
 
-[STEP 6] LINDBLADIAN SPECTRUM  (adopted from Proposal 2: report structure, not a drift)
-  dim ker(L) > 1 means a multi-dimensional steady-state manifold.  What decides whether
-  the extra steady direction CARRIES the record is its overlap with R_E.
+[STEP 6] LINDBLADIAN STRUCTURE  (adopted from Proposal 2: report structure, not a drift)
+  This replaces 'a plateau value and a drift' with an object that needs no protocol, no
+  initial state and no time evolution.  In the Heisenberg picture <R_E>(t) = Tr(Y(t)^dag
+  rho_0) with Y(t) = exp(M^dag t)[R_E].  Y_inf = lim Y(t) is the ASYMPTOTICALLY CONSERVED
+  PART of the record.  Its PUNCTURED block is the already-written record and is trivially
+  conserved for every junction (nothing acts on the punctured fiber).  Its CAPPED block is
+  the whole question: it is nonzero exactly when a state that starts on the DISK -- no
+  hole, no record yet -- ends with a winding that depends on which state it was.
 
-  junction A :  dim ker(Lindbladian) = 2
-      kernel direction: |tr(V)|/||V|| = 2.616260   |tr(R_E V)|/||V|| = 1.074795
-      kernel direction: |tr(V)|/||V|| = 0.571746   |tr(R_E V)|/||V|| = 2.770037
-      slowest DECAYING mode with nonzero R_E overlap: Re(lambda) = -3.0706e-01  -> time constant 3.2567e+00   (this is the WRITE/settling transient; erasure would instead show as zero R_E overlap in the kernel)
-      next three: -1.335e+00, -1.553e+00, -1.799e+00
-  junction B :  dim ker(Lindbladian) = 2
-      kernel direction: |tr(V)|/||V|| = 0.270523   |tr(R_E V)|/||V|| = 2.815460
-      kernel direction: |tr(V)|/||V|| = 2.670626   |tr(R_E V)|/||V|| = 0.931534
-      slowest DECAYING mode with nonzero R_E overlap: Re(lambda) = -1.7352e+00  -> time constant 5.7632e-01   (this is the WRITE/settling transient; erasure would instead show as zero R_E overlap in the kernel)
-      next three: -1.948e+00, -2.209e+00, -2.472e+00
-  junction C :  dim ker(Lindbladian) = 2
-      kernel direction: |tr(V)|/||V|| = 0.238229   |tr(R_E V)|/||V|| = 2.818377
-      kernel direction: |tr(V)|/||V|| = 2.827775   |tr(R_E V)|/||V|| = 0.060720
-      slowest DECAYING mode with nonzero R_E overlap: Re(lambda) = -1.7352e+00  -> time constant 5.7632e-01   (this is the WRITE/settling transient; erasure would instead show as zero R_E overlap in the kernel)
-      next three: -1.948e+00, -2.209e+00, -2.472e+00
+  junction A :  dim ker(M) =   2   Hermiticity defect of Y_inf = 4.05e-14   tr(Y_inf) = -1.991e-02
+      ||Y_inf||/||R_E|| = 0.616479    PUNCTURED block 0.577350    CAPPED block 0.216133
+      predicted <R_E>(inf) from Y_inf, unbiased starts:  A:+0.115335  B:-0.002929  D:-0.014692  F:-0.059202  G:-0.100244
+      three slowest decay rates Re(lambda): -3.0706e-01, -5.7318e-01, -9.8460e-01
+  junction B :  dim ker(M) =   2   Hermiticity defect of Y_inf = 4.31e-14   tr(Y_inf) = +3.820e-11
+      ||Y_inf||/||R_E|| = 0.651810    PUNCTURED block 0.577350    CAPPED block 0.302528
+      predicted <R_E>(inf) from Y_inf, unbiased starts:  A:+0.113211  B:-0.042072  D:-0.008073  F:-0.043050  G:-0.070222
+      three slowest decay rates Re(lambda): -5.7318e-01, -8.0000e-01, -1.0136e+00
+  junction Bp:  dim ker(M) =   2   Hermiticity defect of Y_inf = 4.32e-14   tr(Y_inf) = +3.823e-11
+      ||Y_inf||/||R_E|| = 0.651810    PUNCTURED block 0.577350    CAPPED block 0.302528
+      predicted <R_E>(inf) from Y_inf, unbiased starts:  A:-0.113211  B:+0.042072  D:+0.008073  F:+0.043050  G:+0.070222
+      three slowest decay rates Re(lambda): -5.7318e-01, -8.0000e-01, -1.0136e+00
+  junction C :  dim ker(M) =   2   Hermiticity defect of Y_inf = 3.80e-14   tr(Y_inf) = +3.822e-11
+      ||Y_inf||/||R_E|| = 0.577350    PUNCTURED block 0.577350    CAPPED block 0.000000
+      predicted <R_E>(inf) from Y_inf, unbiased starts:  A:+0.000000  B:+0.000000  D:+0.000000  F:+0.000000  G:+0.000000
+      three slowest decay rates Re(lambda): -5.7318e-01, -8.0000e-01, -1.0136e+00
 
 [STEP 7] JUNCTION CONTROLS AND NULL CONTROLS  (g^2=0.7, gamma_E=0.5, Gamma_d=0.8)
 
@@ -142,22 +151,22 @@ W-31  THE EVAPORATING CAP -- responsive carrier.  numpy only, no scipy.
   ------------------------------------------------------------------------------
           A       9     A  0.500000   0.557668   +0.115335  4.919e-08  3.38e-06
           A       9     B  0.500000   0.498535   -0.002929  5.724e-08  3.93e-06
-          A       9     D  0.500000   0.541565   +0.083130  4.305e-08  2.95e-06
+          A       9     D  0.500000   0.492654   -0.014692  4.965e-08  3.41e-06
           A       9     F  0.500000   0.470399   -0.059202  6.543e-08  4.49e-06
-          A       9     G  0.500000   0.550663   +0.101325  4.934e-08  3.39e-06
-                    SPREAD over the five unbiased starts = 0.087268
+          A       9     G  0.500000   0.449878   -0.100244  4.919e-08  3.38e-06
+                    SPREAD over the five unbiased starts = 0.107789
           B      10     A  0.500000   0.556606   +0.113211  4.197e-14  1.27e-14
           B      10     B  0.500000   0.478964   -0.042072  4.252e-14  1.27e-14
-          B      10     D  0.500000   0.540679   +0.081359  4.241e-14  1.27e-14
+          B      10     D  0.500000   0.495963   -0.008073  4.263e-14  1.27e-14
           B      10     F  0.500000   0.478475   -0.043050  4.258e-14  1.27e-14
-          B      10     G  0.500000   0.560350   +0.120701  4.197e-14  1.27e-14
-                    SPREAD over the five unbiased starts = 0.081875
+          B      10     G  0.500000   0.464889   -0.070222  4.247e-14  1.27e-14
+                    SPREAD over the five unbiased starts = 0.091717
          Bp      10     A  0.500000   0.443394   -0.113211  4.213e-14  1.27e-14
          Bp      10     B  0.500000   0.521036   +0.042072  4.241e-14  1.27e-14
-         Bp      10     D  0.500000   0.459321   -0.081359  4.224e-14  1.27e-14
+         Bp      10     D  0.500000   0.504037   +0.008073  4.263e-14  1.27e-14
          Bp      10     F  0.500000   0.521525   +0.043050  4.252e-14  1.27e-14
-         Bp      10     G  0.500000   0.439650   -0.120701  4.191e-14  1.27e-14
-                    SPREAD over the five unbiased starts = 0.081875
+         Bp      10     G  0.500000   0.535111   +0.070222  4.230e-14  1.27e-14
+                    SPREAD over the five unbiased starts = 0.091717
           C      12     A  0.500000   0.500000   +0.000000  4.263e-14  1.27e-14
           C      12     B  0.500000   0.500000   +0.000000  4.252e-14  1.27e-14
           C      12     D  0.500000   0.500000   +0.000000  4.252e-14  1.27e-14
@@ -166,8 +175,8 @@ W-31  THE EVAPORATING CAP -- responsive carrier.  numpy only, no scipy.
                     SPREAD over the five unbiased starts = 0.000000
 
   NULL CONTROL N1 -- start ALREADY punctured, full bath, long time.  Must be exactly flat.
-      t=0  p+ = 0.467033686268    t=40  p+ = 0.467033686268    |delta| = 1.101e-13
-      t=0  p+ = 0.467033686268    t=200  p+ = 0.467033686269    |delta| = 8.388e-13
+      t=0  p+ = 0.467033686268    t=40  p+ = 0.467033686268    |delta| = 1.071e-13
+      t=0  p+ = 0.467033686268    t=200  p+ = 0.467033686269    |delta| = 8.328e-13
 
   NULL CONTROL N2 -- remove the WRITER (kappa = 0, no cap triangles in H).  Then nothing
       can ever be written and every start must stay at its own initial value.
@@ -177,8 +186,8 @@ W-31  THE EVAPORATING CAP -- responsive carrier.  numpy only, no scipy.
       init D: p+(0) = 0.500000000   p+(40) = 0.500000000   |delta| = 1.407e-13
       init F: p+(0) = 0.500000000   p+(40) = 0.500000000   |delta| = 6.994e-15
       init G: p+(0) = 0.500000000   p+(40) = 0.500000000   |delta| = 1.408e-13
-      init C: p+(0) = 0.612534599   p+(40) = 0.612534599   |delta| = 8.593e-14
-      init E: p+(0) = 0.912234383   p+(40) = 0.912234383   |delta| = 3.353e-14
+      init C: p+(0) = 0.612534599   p+(40) = 0.612534599   |delta| = 8.615e-14
+      init E: p+(0) = 0.912234383   p+(40) = 0.912234383   |delta| = 3.375e-14
 
   NULL CONTROL N3 -- p_cap(t) must never be quoted as evidence.  Printed so it cannot be:
       g^2= 0.0  p_cap(10) with the field-gated junction A = 3.860458e-02   with the blind junction B = 3.354626e-04
@@ -191,7 +200,116 @@ W-31  THE EVAPORATING CAP -- responsive carrier.  numpy only, no scipy.
    Gamma_d  junc      p+(A)      p+(B)      p+(D)      p+(F)      p+(G)    SPREAD   drift(A)   pcap(40)
   --------------------------------------------------------------------------------------------------------
       0.00     A   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000  6.062e-14   1.00e+00
-      0.05     A   0.506890   0.499715   0.504730   0.497845   0.505003  0.009045  7.687e-06   3.68e-01
-      0.20     A   0.523648   0.499045   0.516300   0.491478   0.518106  0.032170  9.591e-06   2.20e-02
-      0.80     A   0.557668   0.498535   0.541565   0.470399   0.550663  0.087268  4.919e-08   3.38e-06
-      3.20     A   0.561437   0.500250   0.556323   0.433506   0.565292  0.131786  4.294e-13   1.25e-12
+      0.05     A   0.506890   0.499715   0.500267   0.497845   0.494916  0.011974  7.687e-06   3.68e-01
+      0.20     A   0.523648   0.499045   0.499915   0.491478   0.481649  0.041999  9.591e-06   2.20e-02
+      0.80     A   0.557668   0.498535   0.492654   0.470399   0.449878  0.107789  4.919e-08   3.38e-06
+      3.20     A   0.561437   0.500250   0.474257   0.433506   0.436240  0.127930  4.294e-13   1.25e-12
+      0.00     B   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000  6.062e-14   1.00e+00
+      0.05     B   0.506979   0.498028   0.500387   0.497997   0.496181  0.010798  2.287e-14   1.35e-01
+      0.20     B   0.523839   0.492749   0.500537   0.492552   0.486454  0.037385  4.219e-14   3.35e-04
+      0.80     B   0.556606   0.478964   0.495963   0.478475   0.464889  0.091717  4.197e-14   1.27e-14
+      3.20     B   0.553805   0.473187   0.486350   0.473361   0.463777  0.090028  4.197e-14   2.57e-56
+      0.00     C   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000  6.062e-14   1.00e+00
+      0.05     C   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000  2.176e-14   1.35e-01
+      0.20     C   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000  4.241e-14   3.35e-04
+      0.80     C   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000  4.263e-14   1.27e-14
+      3.20     C   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000  4.274e-14   2.57e-56
+
+[STEP 9] g^2 SCAN  (junction A, Gamma_d=0.8, gamma_E=0.5).  BOTH metrics are printed.
+  The honest metric is the spread over UNBIASED starts.  The max-min INCLUDING the two
+  biased starts C,E is also printed because it is the metric a hostile reader would
+  reach for, and a biased start that is never written simply retains its bias -- which
+  inflates that column at large g^2 exactly where nothing is being written.
+
+      g^2 ||[R,Hcap]||     p+(A)     p+(B)     p+(D)     p+(F)     p+(G)     p+(C)     p+(E)  SPREAD(unb)  maxmin(all)
+  ----------------------------------------------------------------------------------------------------------------------------
+     0.00      16.0000  0.500000  0.500000  0.500000  0.500000  0.500000  0.521887  0.535952     0.000000     0.035952
+     0.10      16.0000  0.501617  0.499998  0.489616  0.499739  0.489390  0.519942  0.532718     0.012227     0.043327
+     0.30      16.0000  0.514392  0.499884  0.474813  0.496890  0.470726  0.518634  0.533679     0.043665     0.062952
+     0.70      16.0000  0.557668  0.498535  0.492654  0.470399  0.449878  0.522031  0.556017     0.107789     0.107789
+     1.00      16.0000  0.573493  0.500289  0.518536  0.436406  0.441581  0.520275  0.577589     0.137088     0.141183
+     1.50      16.0000  0.571247  0.507045  0.535651  0.382800  0.434134  0.517604  0.612138     0.188447     0.229339
+     3.00      16.0000  0.535599  0.514198  0.523475  0.288757  0.433909  0.524783  0.684156     0.246842     0.395399
+     8.00      16.0000  0.508661  0.503126  0.506638  0.298792  0.460293  0.559806  0.768493     0.209869     0.469700
+    20.00      16.0000  0.502376  0.498839  0.501989  0.441108  0.482405  0.599730  0.860985     0.061269     0.419877
+
+[STEP 10] TRAJECTORY UNRAVELLING  (adopted from Proposal 3).  Ensemble coherence going
+  to zero is compatible with nothing having been selected.  The per-branch witness is
+  E[<R_E>^2] over trajectories and the fraction of trajectories with |<R_E>| > 0.99.
+  For the initial states used here <R_E>(0) = 0, so E[<R_E>^2](0) = 0 exactly.
+
+  junction A , unitary (infinite-T) electric bath, 160 trajectories to t=25, jump unravelling:
+      E[<R_E>] = +0.162891 +- 0.033280   (master-equation <R_E>(25) = +0.115336)
+      E[<R_E>^2] = 0.202639   frac |<R_E>| > 0.99 = 0.000   frac > 0.5 = 0.281
+  junction B , unitary (infinite-T) electric bath, 160 trajectories to t=25, jump unravelling:
+      E[<R_E>] = +0.139855 +- 0.029749   (master-equation <R_E>(25) = +0.113211)
+      E[<R_E>^2] = 0.160278   frac |<R_E>| > 0.99 = 0.000   frac > 0.5 = 0.237
+  junction C , unitary (infinite-T) electric bath, 160 trajectories to t=25, jump unravelling:
+      E[<R_E>] = +0.002486 +- 0.032936   (master-equation <R_E>(25) = +0.000000)
+      E[<R_E>^2] = 0.172488   frac |<R_E>| > 0.99 = 0.000   frac > 0.5 = 0.269
+
+[STEP 11] FINITE-TEMPERATURE DAVIES BATH  (adopted from Proposal 2).  Every unitary jump
+  operator in this lane, our own L = sqrt(gamma_E) Z_l included, makes the identity
+  stationary: an INFINITE-temperature bath, where nothing anywhere keeps a record.
+  A(omega) = sum_{E_b - E_a = omega} |a><a| A |b><b|.  Rate gamma(omega) = g0/(1+exp(-w/T)),
+  which satisfies KMS, gamma(-w)/gamma(w) = exp(-w/T), and stays BOUNDED as T grows, so
+  the temperatures below are comparable at fixed overall coupling.  T = 1e6 is then the
+  infinite-temperature Davies bath, the honest analogue of this lane's unitary jumps.
+
+  VALIDATION on the closed punctured fiber: the Gibbs state must be exactly stationary.
+      T =   0.50   #jumps =   86   ||d rho_Gibbs / dt|| = 3.554e-12   max||[R_E, A(omega)]|| = 1.218e-15
+      T =   2.00   #jumps =   86   ||d rho_Gibbs / dt|| = 7.485e-09   max||[R_E, A(omega)]|| = 1.218e-15
+      T =  10.00   #jumps =   86   ||d rho_Gibbs / dt|| = 8.556e-09   max||[R_E, A(omega)]|| = 1.218e-15
+
+  FULL RUN with a Davies electric bath (junction A, Gamma_d=0.8, g^2=0.7).  The claimed
+  protection is HOMOLOGICAL, not energetic, so the frozen p_+ should not care about T.
+          T  #jumps      p+(A)      p+(B)      p+(D)      p+(F)      p+(G)    SPREAD      drift
+  ----------------------------------------------------------------------------------------------------
+        0.5    1449   0.710349   0.527815   0.571114   0.513274   0.485110  0.225239  2.960e-06
+        2.0    1449   0.690631   0.502583   0.555985   0.495059   0.464263  0.226367  4.876e-08
+       10.0    1449   0.619470   0.493010   0.521208   0.480241   0.455844  0.163626  5.972e-09
+  1000000.0    1449   0.588134   0.497885   0.508637   0.476753   0.461154  0.126980  2.468e-08
+
+[STEP 12] SIZE SCALING m = 2,3,4.  The protection is CLAIMED homological, so it must be
+  m-independent.  If the frozen p_+ or the spread drifts systematically with m, the
+  topological story is decoration on a finite-size accident.
+
+  CONVERGENCE CHECK of the RK4 route against the m=2 exact superoperator exponential,
+  and a third, assumption-free NAIVE matrix RK4 that uses none of the fast-path structure.
+  This third route exists because the first version of this script had the two disagree:
+  the superoperator was built with the column-major kron and fed a row-major reshape, an
+  error that is invisible for real symmetric rho_0 and wrong for complex ones.
+      init A (rho_0 symmetry defect ||rho-rho^T|| = 0.000e+00):  exact expm = 0.5576675502   naive RK4 = 0.5576675502   diff = 1.578e-13
+      structural check: ||sum_k L^dag L - diag(sum_k L^dag L)|| = 0.000e+00
+          fast RK4 steps =   400   p+(40) = 0.5576675502   diff from exact = 1.581e-13
+          fast RK4 steps =  1600   p+(40) = 0.5576675502   diff from exact = 1.584e-13
+          fast RK4 steps =  3200   p+(40) = 0.5576675502   diff from exact = 1.588e-13
+      init D (rho_0 symmetry defect ||rho-rho^T|| = 1.414e+00):  exact expm = 0.4926538129   naive RK4 = 0.4926538129   diff = 1.587e-13
+          fast RK4 steps =   400   p+(40) = 0.4926538129   diff from exact = 1.574e-13
+          fast RK4 steps =  1600   p+(40) = 0.4926538129   diff from exact = 1.575e-13
+          fast RK4 steps =  3200   p+(40) = 0.4926538129   diff from exact = 1.573e-13
+
+  m-scaling (junction A, g^2=0.7, gamma_E=0.5, Gamma_d=0.8).  Each m is run to T=40 AND to
+  T=160, because at larger m the cap has not finished evaporating by T=40 and a spread
+  that shrinks with m would otherwise be confounded with an unfinished run.
+    m   dim    T      p+(A)      p+(B)      p+(D)      p+(F)      p+(G)    SPREAD   <R_E>(A)      pcap
+  -------------------------------------------------------------------------------------------------------
+    2    24   40   0.557668   0.498535   0.492654   0.470399   0.449878  0.107789  +0.115335  3.38e-06
+    2    24  160   0.557668   0.498535   0.492654   0.470399   0.449878  0.107789  +0.115335  3.36e-22
+    3    80   40   0.530387   0.506398   0.528179   0.488689   0.500761  0.041698  +0.060774  1.32e-03
+    3    80  160   0.530387   0.506398   0.528179   0.488689   0.500761  0.041698  +0.060774  7.37e-12
+    4   288   40   0.520388   0.505006   0.523935   0.499239   0.510143  0.024696  +0.040776  3.09e-02
+    4   288  160   0.520383   0.505001   0.523930   0.499233   0.510138  0.024697  +0.040767  2.10e-06
+
+  m-scaling with the SYMMETRISED junction C (the null), same parameters:
+    m   dim      p+(A)      p+(B)      p+(D)      p+(F)      p+(G)    SPREAD
+  --------------------------------------------------------------------------
+    2    24   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000
+    3    80   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000
+    4   288   0.500000   0.500000   0.500000   0.500000   0.500000  0.000000
+
+========================================================================================================
+END OF RUN.  Every prediction above is labelled as a prediction and was fixed before the
+number beside it was computed.  No verdict is hard-coded.
+========================================================================================================
+EXIT 0

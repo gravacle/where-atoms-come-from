@@ -10,6 +10,16 @@
      exponent -- if it does, the exponent is physics; if every bath gives the same law, it is
      generic weak-coupling counting and must be reported as such.
 """
+
+# VECTORISATION FIX (found by a W-31 adversary; verified against RK4 to 5e-15).
+# numpy reshape(-1) is ROW-major, so vec(AXB) = (A kron B^T) vec X, and the Lindblad generator is
+#     -i(H kron I - I kron H^T) + gamma sum_k (L_k kron L_k* - I kron I).
+# This lane originally used the COLUMN-major form -i(I kron H - H^T kron I) with kron(L*, L).
+# The two differ by the swap permutation, i.e. they are similar: EVERY EIGENVALUE IS UNCHANGED,
+# so spectral quantities (decay rates, the sieve ranking, steady-state COUNTS) are unaffected.
+# States propagated through the generator ARE affected, so anything that evolves or projects an
+# initial condition had to be re-run. See the register erratum.
+
 import itertools, numpy as np
 
 def build(V,E,N):
@@ -54,8 +64,8 @@ Rv=R.reshape(-1); Rv=Rv/np.linalg.norm(Rv)
 def spectrum(g2, links, gam=0.5):
     H=-MAG-g2*ELEC
     Ls=[Zop(st,[k],N) for k in links]
-    M=-1j*(np.kron(Id,H)-np.kron(H.T,Id))
-    for L in Ls: M+=gam*(np.kron(L.conj(),L)-np.kron(Id,Id))
+    M=-1j*(np.kron(H,Id)-np.kron(Id,H.T))
+    for L in Ls: M+=gam*(np.kron(L,L.conj())-np.kron(Id,Id))
     w,V=np.linalg.eig(M)
     # LEFT eigenvectors carry observables: (M^dag) u = conj(lam) u  <=>  d<u|rho>/dt = lam <u|rho>
     wl,U=np.linalg.eig(M.conj().T)
