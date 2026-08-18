@@ -18,7 +18,7 @@ items append.** Status: `DONE` measured and sealed · `PARTIAL` measured with a 
 | 5 | which observable becomes the record | **DONE** | W-34 | the sieve SELECTS the full boundary, 28× margin, nothing nominated |
 | 6 | how long it lasts | **DONE** | W-32 | `1/(8g²)` uses; slope `-1.000` over two decades |
 | 7 | can it be read | **DONE** | W-37 | transport; cut the ring → exactly `0.000000` |
-| 8 | is it objective | **DONE** | W-40 | each probe alone holds the bit; no per-probe cost at k=1,2,3 |
+| 8 | is it objective | **DONE, RECOMPUTED** | W-40 / W-57 | W-40's partial-trace numbers presupposed a factorisation the system lacks. **Algebraically: an exact step function** — every proper sub-region resolves the record at `0.000000`, including 7 of 8 perimeter links; the whole loop at `1.000000`. No partial legibility |
 | 9 | how many records coexist | **DONE** | W-42 | `capacity = area − 1`, exact, 3×3 through 5×5 |
 | 10 | what happens past capacity | **DONE** | W-41 | EVICTION, not shared damage; 24–340× gap |
 | 11 | what escapes the region | **DONE** | W-46 / Phase A | storage is bulk (`n²−1`), legibility is boundary (`4n−4`). **What is invisible is exactly the interior, `(n−2)²`.** W-46's `2n−1` withdrawn — its region sat at the lattice corner |
