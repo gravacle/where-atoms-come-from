@@ -2876,3 +2876,42 @@ REQUIRES the carrier to respond. Route B was the attempt to build a case that do
 design three judges could pick reduces to a hand-set constant. **Two independent routes, same
 answer: the gravity line is still empty, and the emptiness is now a result rather than a gap in
 effort.**
+
+## W-37d — **THE ODD-LOOP NULL IS ABOUT THE PROBE, NOT THE RECORD. OBJECTIVITY IS PROBE-RELATIVE.**
+
+W-37c registered odd loops as carrying "exactly nothing" and the registrar billed it as a fact about
+the carrier. **Tested; it is a fact about the probe.**
+
+**MECHANISM (P1, confirmed).** A `Z_2` flux of `pi` and a sign flip of every hopping are the SAME
+operation when `n` is odd, because negating all `n` amplitudes shifts the total flux by `n·pi`.
+`spectrum(-H(flux 0)) == spectrum(H(flux pi))` at `n = 5,7,9,11` and NOT at `n = 4,6,8,10`. With
+real hopping the position distribution is time-symmetric, so the two sectors become identical **by
+position** — which is all the probe reported.
+
+**DECISIVE (P3).** Same odd ring, same record, probe given a complex hopping phase:
+
+```
+   n      phase    max I(R:probe) bits
+   5     0.0000               0.000000
+   5     0.3000               0.922109
+   5     1.5708               0.973503
+   7     0.0000               0.000000
+   7     1.5708               0.874649
+```
+
+> **NOTHING ABOUT THE RECORD CHANGED. THE NULL WAS THE PROBE'S.**
+
+**CONSEQUENCE FOR THE PROCESS DESCRIPTION.** W-37 claimed condition 5 (redundant copying →
+objectivity) was met. **It is met RELATIVE TO A PROBE.** A record can be present, protected, and
+invisible to one probe while fully legible to another. **`V003` §1 condition 5 must be read with
+that qualifier**, and "objective" in this program means "objective to probes that can couple to it."
+
+**A FAILED PREDICTION, LOGGED AND NOT BUILT ON.** P2 predicted `Z_3` odd rings would read fine.
+`Z_3` returned **exactly `0.000000` at every ring size including EVEN ones**, where `Z_2` gives
+`0.999792`. That contradicts the `Z_2` result rather than extending it, so it indicates a defect in
+the `Z_3` construction — most likely the partial trace, which matches gauge configurations across
+probe positions that satisfy DIFFERENT Gauss laws. **Unresolved. Nothing is inferred from it.**
+
+**ALSO CORRECTED.** `w37c`'s docstring asserts the odd-`n` spectra "coincide as SETS"; its own TEST 3
+prints `different` at every `n`, and the true relation is that they are exact NEGATIVES. The register
+entry for W-37c stated the negative relation correctly; the code comment is wrong and is superseded here.

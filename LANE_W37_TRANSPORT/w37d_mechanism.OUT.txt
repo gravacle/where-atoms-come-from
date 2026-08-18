@@ -1,0 +1,32 @@
+P1 -- is a pi flux the same as flipping every hopping sign?  (single-particle ring)
+      n    spec(-H(0)) == spec(H(pi))?
+      4                             no
+      5 YES  -> sectors indistinguishable by position
+      6                             no
+      7 YES  -> sectors indistinguishable by position
+      8                             no
+      9 YES  -> sectors indistinguishable by position
+     10                             no
+     11 YES  -> sectors indistinguishable by position
+
+P2 -- Z_3 rings. If the null is a Z_2 coincidence, ODD rings must read fine at Z_3.
+      n   N   dim  sectors  max I(R:probe) bits
+      4   2     8        2             0.999792
+      4   3    12        3             0.000000
+      5   2    10        2             0.000000
+      5   3    15        3             0.000000
+      6   2    12        2             0.982660
+      6   3    18        3             0.000000
+      7   2    14        2             0.000000
+      7   3    21        3             0.000000
+
+P3 -- Z_2 ODD ring, probe given a COMPLEX hopping phase (breaks position time-symmetry).
+      n    phase  max I(R:probe) bits
+      5   0.0000             0.000000
+      5   0.3000             0.922109
+      5   0.7854             0.801499
+      5   1.5708             0.973503
+      7   0.0000             0.000000
+      7   0.3000             0.687780
+      7   0.7854             0.687070
+      7   1.5708             0.874649
