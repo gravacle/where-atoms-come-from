@@ -5039,3 +5039,84 @@ count is an index and not a surface formula.** Both branches of G-6 leave G-7 st
 NOT-UNIQUE were "the bigger result". **UNIQUE is at least as large: it makes R1–R3 force homology,
 turns statement 4 from "records ADMIT" into "records REQUIRE", and closes O-3.** The two branches
 are large in different directions. Ranking them was the two-valued-object tic, not a finding.
+
+---
+
+## G-4 — **THE RECORD-LEVEL CONSTRAINT, IN ITS OWN TERMS.** `LANE_X6_CONSTRAINT_ALGEBRA`
+
+Stated with no external referent, as **D-1** requires.
+
+> ### The Gauss constraints close into **`Z₂^(NV−1)`** — elementary abelian, exponent 2, with **STRUCTURE CONSTANTS.**
+
+| measured | 2×2 torus | 2×3 torus | meaning |
+|---|---|---|---|
+| `max ‖[G_v,G_w]‖` over **all** pairs | **0** exact (6 pairs) | **0** exact (15 pairs) | **abelian.** Integer zero in both representations, not a tolerance |
+| positive control `‖[σˣ,σᶻ]‖_F` | 32.0000000000 vs closed form 32.0000000000 | — | **a reported zero is a measurement, not a broken norm** |
+| `max‖G_v² − I‖` | 0 | 0 | every generator an **involution**; group exponent 2 |
+| `∏_all v G_v` | **I** | **I** | one global relation — the generators are **not independent** |
+| relation subgroup, **exhaustive** over all `2^NV` words | **2 elements** | **2 elements** | that relation is the **only** one; corank exactly 1 |
+| GF(2) incidence rank | 3 (`NV`=4) | 5 (`NV`=6) | `NV−1` — the statement that **the graph is connected**. Scale-free |
+| group order, explicit enumeration | 8 = 2³ | 32 = 2⁵ | `Z₂^(NV−1)`, by two independent methods |
+| **state-to-state variation in the structure coefficients** | **0** | **0** | **STRUCTURE CONSTANTS.** 48 generic + 48 physical + 48 superposition states, plus the operator identity on every ordered pair |
+
+**The composition law was read off FROM each state, not asserted: on every sampled state the matching
+word set was exactly `{e_v + e_w + K}`, the predicted coset, with no state-dependent member.**
+
+### THE CONSTRAINT MAKES A REGION'S TOTAL A SURFACE OPERATOR — AND HIDES THE INTERIOR
+
+| | result |
+|---|---|
+| `‖P_R − ∏_{l∈∂R} σ_l‖` | **0.000000e+00**, every region, both bases — the bulk constraints cancel **exactly** |
+| `support(P_R)`, `\|R\| = 1,4,9,16,25` | 4, 8, 12, 16, 20 — **= 4√\|R\| exactly**, residuals `[0,0,0,0,0]`, fitted exponent **0.500000**: a **PERIMETER law** |
+| uncancelled product | `2k² + 2k` — area **plus** perimeter. **The cancellation removes an area's worth of operator content** |
+| placement dependence | **min = max in all 14 rows** — the W-46 corner defect is guarded, not merely avoided |
+| **hidden interior information** | **`(k−1)²` bits — an AREA — and NONE of it is visible in the boundary operator** |
+
+**So the constraint puts the TOTAL at the boundary while the CONTENT stays an area inside it, invisible
+from outside. Boundary support `4k` against hidden interior `(k−1)²`: perimeter against area, diverging
+as `k/4`.**
+
+### THE RECORD SPACE AS A QUOTIENT — EXACTLY
+
+| lattice | `dim Z₁` | `dim B₁` | `dim H₁` | |
+|---|---|---|---|---|
+| torus 2×2 | 5 | 3 | **2** | |
+| torus 2×3 | 7 | 5 | **2** | |
+| torus 3×3 | 10 | 8 | **2** | |
+| | **moves with area** (`F+1`) | **moves with area** (`F−1`) | **CONSTANT** | |
+
+Gauss law ⟺ `ker ∂₁`, exhaustive **match rate 1.0**. Cosets `= 2^{dim H₁}`; every coset has exactly
+`2^{dim B₁}` elements. **The record space IS `Z₁/B₁` — the Gauss-law sector modulo plaquettes.**
+**Both the numerator and the denominator grow with area; only the quotient does not.**
+
+---
+
+## AND THE WITHDRAWN X-6 QUESTION — **IT WOULD HAVE FAILED. RECORDED SO THE WITHDRAWAL IS NOT AN ESCAPE.**
+
+X-6 was withdrawn as an import (**D-1**) *before* these results returned. Both adversarial roles then
+returned the same verdict, and the register states it rather than burying it:
+
+- **prosecution: FIRES.** Ours is a finite abelian *group* with structure constants; gravity's is a Lie
+  **algebroid** with structure **functions** (`h^{ab}` in `{H⊥,H⊥}`), and by **Hojman–Kuchař–Teitelboim**
+  the hypersurface-deformation algebra plus locality plus `h_ij` **uniquely determines** the ADM
+  constraints. Our side has **no analogue of `H⊥` at all**.
+- **rescue-detector: FIRES**, and it pre-named the three escapes — the Chern–Simons presentation swap,
+  level migration, and the continuum deferral.
+
+**AND THE SPECIFICITY AUDIT KILLED HALF MY ORIGINAL PARALLEL INDEPENDENTLY.** "Physical content appears
+as a boundary term" is **generic**: by **Noether's second theorem** *any* local gauge symmetry gives
+`Q = ∮k`, off-shell and identically. **Likelihood ratio ≈ 1.** So even had X-6 run as stated, one of its
+two legs carried **no evidential weight whatsoever** — I had built a test half of which could not
+discriminate anything.
+
+### RECORDED AS A RELATIONSHIP, CARRYING NO VERDICT (permitted by D-1)
+
+| | 3+1 gravity | 2+1 gravity | ours |
+|---|---|---|---|
+| structure | **functions** (`h^{ab}`) | **constants** in Chern–Simons form | **constants** (measured 0 variation) |
+| Lie algebra? | **no** — algebroid | yes, in CS form | yes — abelian group |
+| local propagating dof | 2 | **0** | 0 |
+| physical space | `C̄/gauge` | `Hom(π₁(Σ),G)/G` | `Hom(π₁(Σ),Z₂) = Z₁/B₁` |
+
+**The last row is the same functor at a different group, and it is logged as an observation with zero
+evidential weight for identity. It is not a claim, and nothing in the program rests on it.**
