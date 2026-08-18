@@ -65,8 +65,8 @@ the axis. **Proof is.** A proven process owes five things.
 
 | | status | established | owed |
 |---|---|---|---|
-| **EM** | **MET** | supplies the carrier, the boundary that is both cycle and separator, and the record-bearing holonomy — **and the observable is SELECTED by the dynamics, not chosen** (W-34, 28×, nothing nominated) | abelian `Z_2`/`Z_3` only; `U(1)` untested |
-| **ALPHA** | **MET AS TWO NUMBERS** | `1/(8g²)` uses before decay (W-32); `9.6g⁴P/τ < 1` legible size (W-37b) | they are **lattice couplings**, with no derivation and no connection to `α ≈ 1/137`; and W-48 showed the first is standard decoherence |
+| **EM** | **MET WITHIN THE MODEL** | inside a `Z_2` lattice gauge theory **the registrar installed**, the dynamics SELECTS a gauge-invariant observable as the record (W-34, 28×, nothing nominated). The selection is real | **the carrier, the group and the geometry were all INPUTS.** This is EM's role in the model, not in record formation. `U(1)` untested |
+| **ALPHA** | **MET WITHIN THE MODEL, AS TWO NUMBERS** | a dimensionless **lattice** coupling sets two timescale ratios in the model: `1/(8g²)` uses before decay (W-32), `9.6g⁴P/τ < 1` legible size (W-37b) | **`g²` is not `α ≈ 1/137` and there is no bridge, not even in principle.** W-48: the first reduces to standard decoherence |
 | **GRAVITY** | **PARTIAL, AND WEAKER THAN REPORTED** | capacity has an equation of motion (W-49); the contrast with EM's two-signed charge is real | **W-50: the four markers are FORCED BY COUNTING — any finite resource passes all four, so they are nearly vacuous.** No attraction, no metric, no field equation, no relation to mass or energy |
 
 ### B — THE COMPOSITION ESTABLISHED
@@ -103,7 +103,15 @@ description assuming Markovianity and a separability this program itself measure
 
 ---
 
-> **THE HONEST SUMMARY OF THE MAP: the PROCESS is assembled and internally proven in the toy —
-> twelve of nineteen items measured and sealed, four of them as necessity results. The two terms
-> that are fully carried are EM and alpha. GRAVITY is carried functionally but not identified. The
-> COMBINATION exists for two terms out of three. And nothing has touched data.**
+> **THE HONEST SUMMARY, RESTATED 2026-08-18 AFTER THE PRINCIPAL PRESSED ON THE WORD "CARRIED":**
+>
+> **We have a complete, internally measured account of record formation INSIDE AN IMPORTED TOY, in
+> which two of three terms have defined roles WITHIN THAT TOY.** That is a far smaller claim than
+> "EM and alpha are carried", which is how the registrar had been putting it. **The distance between
+> the two is exactly obligations D and E — representativeness and empirical contact — both at zero.**
+>
+> **What survives the reframe intact:** four NECESSITY results that are theorems about the model —
+> durability requires `[H,R]=0`; reading requires a closed path (cut it and get exactly `0.000000`);
+> capacity is exactly `area − 1` so more is impossible; past capacity eviction is forced across all
+> 793 bath placements. **Clean, and statements about a `Z_2` lattice — and nobody has shown a `Z_2`
+> lattice is where records live.**
