@@ -4002,3 +4002,43 @@ part of gravity's record-level character, **W-51 locates it on the ENVIRONMENT s
 side.** The records carry no geometry at all; what carries it is where the environment couples —
 which is also what W-38 measured when the environment's placement selected which region was a region.
 **Two independent lanes now say the same thing: geometry lives in the coupling, not in the content.**
+
+---
+
+## W-53 — **THE MIRROR TEST IS VOID, AND THE ASYMMETRY IT EXPOSES IS THE REAL POINT**
+
+`LANE_W53_MIRROR/`, sealed. **Forced-or-not check run BEFORE any dynamics**, on W-51's lesson that a
+reconstruction can succeed perfectly and mean nothing.
+
+**VOID.** For a single-link bath `{ℓ}` the protected set is `{S : ℓ ∉ bd(S)} = ker f_ℓ`, and the
+family `{ker f_ℓ}` determines every row of the boundary map. Confirmed in code on four carriers:
+**the incidence matrix is recovered exactly, by pure set algebra, with no dynamics and no link
+labels.** The mirror test is W-51's identity in different clothing. **No dynamics was built.**
+
+### THE ASYMMETRY, WHICH IS NOT VOID
+
+```
+  RECORD ALGEBRA (W-51)      identical on block, chain and ring -> GEOMETRY-BLIND
+  PROTECTED-SET FAMILY       distinct on all 4 carriers, 6 of 6 pairs -> GEOMETRY-FULL
+```
+
+**The same carriers that the record algebra cannot tell apart, the environment-coupling structure
+separates completely.** That is W-51's finding stated at its sharpest: **the records carry no
+geometry; the coupling carries all of it.**
+
+### WHAT THIS SETTLES ABOUT THE PRINCIPAL'S FRAMING
+
+> *"capacity + boundary formation may well be the signature of gravity at the record level"*
+
+**The first half is where geometry actually lives, and that is now established twice.** But in this
+carrier the coupling's geometry is **installed by the registrar**, so what W-38 measured was
+**selection among given regions, not formation of them.** Boundary *formation* — the set of possible
+boundaries being an output rather than an input — **cannot be tested on a carrier whose incidence is
+an input to every quantity we can compute.**
+
+> **EVERY RECONSTRUCTION QUESTION IS CIRCULAR ON THIS CARRIER. That is a structural fact about the
+> construction, not a result about records or gravity.**
+
+**So the framing is not refuted and is not testable here.** Testing it needs a carrier in which
+adjacency is not given — which is the emergent-geometry problem proper, and is beyond this
+construction. **That is the honest boundary of what this program can reach.**
