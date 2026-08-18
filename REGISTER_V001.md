@@ -4144,3 +4144,38 @@ have been circular on any carrier built the same way.
 **HONEST LIMIT.** One planted control failed at `2.3e-02`, the same order as the generic values, so
 the numerics alone separate planted from generic by only ~2×. **The rigorous content is the dimension
 count, not the optimisation;** the numbers illustrate it and do not carry it.
+
+---
+
+## SURFACE ASSUMPTION AUDIT — **TWO IMPORTED ASSUMPTIONS. ONE MEASURED TO FAIL, ONE NEVER EXAMINED.**
+
+`SURFACE_ASSUMPTION_AUDIT_V001.md`, sealed. The principal asked whether an imported assumption is the
+root cause of not finding a process. **The audit had never been done.** Eight assumptions in the
+five-step process, classified.
+
+**A1 — THE HILBERT SPACE FACTORISES. IMPORTED AFTER BEING MEASURED TO FAIL.** The register already
+carries it as **IMP-2**: a gauge theory's gauge-invariant algebra does not factorise across a region
+boundary. **W-37d broke on this directly.** Yet every Holevo quantity, every partial trace and every
+"reduced environment state" in this program presupposes it. **And Gap 2 is the same assumption seen
+from the other side** — W-55 asked where factorisations come from and answered: from the modeller.
+
+**A2 — A BACKGROUND TIME PARAMETER. IMPORTED, LOAD-BEARING EVERYWHERE, NEVER EXAMINED ONCE.**
+**125 of 125 lanes evolve in `t`. Zero derive it.** A project-wide search for relational or emergent
+time returns nothing.
+
+> **GRAVITY IS THE DYNAMICS OF SPACE-TIME STRUCTURE. WITH `t` A FIXED EXTERNAL PARAMETER THERE IS
+> NOWHERE FOR GRAVITY TO ACT — AND NONE OF THE THREE FAILED ROUTES TOUCHED IT.** W-31 varied the
+> graph; W-44 added lengths, potentials and a clock **read against `t`**; W-45/W-50 varied nothing
+> dynamical. **All three left `t` alone.**
+
+**And it matches the paper's own statement of where gravity enters — metric/PROPER-TIME action. We
+have no proper time.** One global parameter shared by every part of the carrier, which is precisely
+the structure general relativity does not have. **W-44's clock is the sharpest evidence: a clock that
+reads the background parameter cannot register a proper-time difference, because there is only one.**
+
+**A8 (Markovian bath) is CLEARED** — Phase B/B1 showed T1 needs no Markov assumption.
+
+**STATUS.** That A2 is imported and unexamined is **established**. That removing it would produce a
+process is a **hypothesis, not a result** — and it is falsifiable in the useful direction: build a
+carrier with no background time, where evolution is relational, and see whether anything
+gravity-shaped has somewhere to act. **If it still does not, A2 was not the obstruction.**
