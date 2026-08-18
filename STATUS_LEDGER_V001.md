@@ -54,8 +54,8 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 |---|---|:---:|---|---|---|
 | **G-1** | the third term is DEFINED as (H_1(Sigma), intersection pairing) | **WITHDRAWN** | a definition cannot fail; demoted to a candidate — see G-5 | — | — (a definition, not a claim) |
 | **G-2** | records = 2 - (1/2pi) integral K dA on closed orientable surfaces; sphere carries none | **PROVED** | Thm A + Gauss-Bonnet; G2 | — | a closed orientable surface violating the count |
-| **G-3** | gravity's role is ALLOW — a capacity statement — at EVERY level; there is no allow-to-require transition, because Einstein's equations are themselves constraints | **PROVED** | ADM/Dirac constraint formulation; X2 erratum | — | an equation of gravity that is not a constraint on admissible data |
-| **G-4** | what IS the record-level constraint's own algebraic structure, stated without reference to gravity's? (the legitimate remainder of X-6) | **OPEN** | lane X6 compute phase running | — | — (a measurement, not a claim) |
+| **G-3** | Γ's role is ALLOW — a capacity statement — at EVERY level; there is no allow-to-require transition, since even Einstein's equations are constraints on admissible data | **PROVED** | ADM/Dirac constraint formulation; X2 erratum | — | an equation of gravity that is not a constraint on admissible data |
+| **G-4** | what IS the record-level constraint's own algebraic structure, stated in its own terms with no external referent? (the legitimate remainder of X-6) | **OPEN** | lane X6 compute phase running | — | — (a measurement, not a claim) |
 | **G-5** | (H_1(Sigma), intersection pairing) SATISFIES R1, R2 and R3, and is therefore a CANDIDATE for the third term | **PROVED** | Thms A, B, C; G1, G2, W-62 | — | a structure satisfying R1-R3 that H_1 fails to describe |
 | **G-6** | IS THE THIRD TERM UNIQUE? Is H_1 the ONLY structure satisfying R1-R3, or merely one that does? | **OPEN** | unaskable while the third term was defined as the thing we had | — | exhibiting a second, inequivalent structure satisfying R1-R3 |
 
