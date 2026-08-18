@@ -78,7 +78,7 @@ dichotomy. **Full statement and status: `THE_CLAIM_V001.md`.**
 | | obstruction | why it is out of reach |
 |---|---|---|
 | **X1** | the topology is a **lattice's**, not spacetime's | nothing in this construction makes it spacetime topology |
-| **X2** | it does **not respond to matter content** | needed for the gravity identification to be a derivation rather than a functional match |
+| **X2** | it does **not respond to matter content** | **ROW WITHDRAWN by registered erratum `5c01e47`.** Requiring matter-response imports a classical measure as a criterion (**D-1**); `χ` is a parameter, not an observable. The live question is **G-6 (uniqueness)**, not backreaction |
 | **X3** | **the outcome problem** — which unravelling is physical | the field's open problem; W-35 relocated it, did not solve it |
 | **X4** | **empirical contact: zero** | not one number in this program came from a measurement |
 

@@ -60,22 +60,21 @@ cannot remember anything.* Not "remembers poorly" — **cannot hold a single rec
 
 ---
 
-## WHAT IS MISSING FOR THIS TO BE EMERGENCE RATHER THAN CORRESPONDENCE
+## THE SECTION THAT WAS HERE IS WITHDRAWN
 
-| | | |
-|---|---|---|
-| **X2** | **content does not change `χ`** | in classical gravity matter curves space. Here nothing records do alters the topology. **Until this holds, the relation is a correspondence, not an emergence.** |
-| **X1** | the topology is a **lattice's**, not spacetime's | |
-| **X5** | is a gauge theory's 1-form symmetry "global" for Harlow–Ooguri? | O6 showed ours is exact, so the tension is live |
+It was headed *"what is missing for this to be emergence rather than correspondence"* and it
+demanded that content change `χ`. **Both the demand and the falsifier attached to it are withdrawn**
+(REGISTER, X2 erratum, `5c01e47`).
 
-> **THE POSITION, CORRECTED (X2 + the principal's allow/require):** `χ` is a **parameter**, not an
-> observable — it has no eigenvalues and no equation of motion, so "content shapes geometry" is not
-> expressible at this level rather than merely unmeasured.
->
-> **Demanding "matter curves space" AT THE RECORD LEVEL imports the classical form.** At the record
-> level gravity **ALLOWS**: it says what may exist, and a sphere permits nothing. **That is the whole
-> job at this level.** REQUIRE is gravity's macroscopic face and belongs to a level this construction
-> does not reach.
->
-> **Falsifier retained:** if accumulated allow-statements never yield anything require-like at any
-> scale, allow is all there is and the identification with gravity weakens.
+| withdrawn | why |
+|---|---|
+| *"content does not change `χ`… until this holds, the relation is a correspondence, not an emergence"* | **demanding "matter curves space" at the record level imports the classical form (D-1).** `χ` is a **parameter** of the construction, not an observable — no eigenvalues, no equation of motion |
+| *"REQUIRE is gravity's macroscopic face and belongs to a level this construction does not reach"* | **level migration (D-2/D-3).** There is no level at which allow becomes require: **Einstein's equations are themselves constraints** — conditions on admissible data — so "matter curves space" was never a require either |
+| *"Falsifier retained: if accumulated allow-statements never yield anything require-like at any scale…"* | **it can never fire**, since require exists at no scale. An unfalsifiable test is worthless |
+
+**WHAT STANDS.** Γ's role is **ALLOW** — a capacity statement — **at every level.** It says what may
+exist, and a sphere permits nothing. **That is the whole job, and it is not a deficient half of
+something larger.**
+
+**THE OPEN QUESTION IS NOW G-6, AND IT IS INTERNAL:** is `(H₁, ⟨·,·⟩)` the **only** structure
+satisfying R1–R3, or merely one that does? See `THIRD_TERM_V001.md`.

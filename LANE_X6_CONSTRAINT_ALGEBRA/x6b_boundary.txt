@@ -1,0 +1,136 @@
+====================================================================================================
+LANE X6-b  --  IS THE TOTAL CONSTRAINT OF A REGION A PURE BOUNDARY OPERATOR?
+====================================================================================================
+
+[0] CARRIER
+    torus 3 x 3;  NV = 9 vertices;  L = 18 links;  full space dim 2^L = 262144
+    CANONICAL physical sector (Gauss law at every vertex):  D = 1024   [1.0s]
+    independent prediction 2^(L-NV+1) = 1024     -> SC-0 PASS
+
+    SC-0b vectorised sector identical to canonical itertools sector : PASS
+
+[1] SELF-CHECK (required):  R = ALL vertices of the torus -> dR is empty -> P_R must be I
+    |R| = 9 (whole torus);  number of crossing links = 0 (must be 0)
+    ARM D (diagonal Gauss)  || P_all - I ||_F  over ALL 2^L basis vectors = 0.000000e+00
+    ARM D  dense on the physical sector (1024x1024)  || P_all - I ||_F   = 0.000000e+00
+    ARM F (flip Gauss)      || P_all - I ||_F  over ALL 2^L basis vectors = 0.000000e+00   (support mask = 0)
+    SELF-CHECK  ||P_all - I|| = 0  :  PASS
+
+[2] IS P_R EQUAL TO THE PRODUCT OVER THE CROSSING LINKS?   (3x3 torus, R in the interior of
+    the index range, never touching the wrap seam)
+
+    region                        |R|   |dR|    ||P_R-B_R|| full    ||P_R-B_R|| phys       ARM F
+    |R|=1  single vertex (1,1)      1      4        0.000000e+00        0.000000e+00   0.000e+00
+    |R|=2  domino (1,1)-(2,1)       2      6        0.000000e+00        0.000000e+00   0.000e+00
+    |R|=4  2x2 block at (1,1)       4      8        0.000000e+00        0.000000e+00   0.000e+00
+    |R|=9  whole torus              9      0        0.000000e+00        0.000000e+00   0.000e+00
+
+    ALL DIFFERENCES EXACTLY ZERO: True
+    -> the bulk constraints cancel identically; the total constraint of a region IS a pure
+       surface operator supported on the cut.  This is Gauss-law-as-boundary-term, exact.
+
+[3] HOW DOES THE SUPPORT OF P_R SCALE WITH THE SIZE OF R?
+    support(P_R)   = number of links P_R acts on nontrivially (= |dR| after cancellation)
+    naive support  = number of links touched by R at all (what the product would act on if
+                     the bulk did NOT cancel) = interior links + crossing links
+    3x3 alone cannot separate the two laws (|R|=9 is the whole torus), so larger tori are
+    used for the scaling; those numbers are exact Pauli-string supports, no Hilbert space.
+
+       torus   k  |R|=k^2   support(P_R)  naive support  4k (perimeter)   placement min/max
+         3x3   1        1              4              4               4               4 / 4
+         3x3   2        4              8             12               8               8 / 8
+         4x4   1        1              4              4               4               4 / 4
+         4x4   2        4              8             12               8               8 / 8
+         4x4   3        9             12             24              12             12 / 12
+         5x5   1        1              4              4               4               4 / 4
+         5x5   2        4              8             12               8               8 / 8
+         5x5   3        9             12             24              12             12 / 12
+         5x5   4       16             16             40              16             16 / 16
+         6x6   1        1              4              4               4               4 / 4
+         6x6   2        4              8             12               8               8 / 8
+         6x6   3        9             12             24              12             12 / 12
+         6x6   4       16             16             40              16             16 / 16
+         6x6   5       25             20             60              20             20 / 20
+
+    W-46 GUARD: min = max in every row -> the support does NOT depend on where R is placed;
+    the earlier corner artefact cannot be reproduced on the torus.
+
+    LEAST-SQUARES EXPONENT p in support ~ |R|^p   (6x6 series, |R| = 1,4,9,16,25):
+        support(P_R)  : p = 0.500000      (PERIMETER law = 0.5 exactly, AREA law = 1.0)
+        naive support : p = 0.840379      (see the caveat below -- NOT a pure power)
+    CAVEAT ON THAT SECOND NUMBER, stated because the fit does not land on 1.0: the naive
+    support is EXACTLY 2k^2 + 2k, an area term plus a perimeter term, so it is not a pure
+    power law and a log-log fit over k=1..5 must undershoot.  The exact formulae, verified:
+        support(P_R) - 4k        for k=1..5 : [0, 0, 0, 0, 0]   (pure perimeter, exponent 0.5 EXACTLY at every point)
+        naive - (2k^2+2k)        for k=1..5 : [0, 0, 0, 0, 0]   (area + perimeter; local log-log slope between k=4 and k=5 = 0.908530, -> 1)
+    So: the cancelled operator obeys a perimeter law EXACTLY and at every single point; the
+    uncancelled product is area-dominated and tends to exponent 1 from below.
+    support(P_R) - 4*sqrt(|R|) for every point : [0, 0, 0, 0, 0]   (all zero -> support = 4k EXACTLY)
+    ratio naive/support : [1.0, 1.5, 2.0, 2.5, 3.0]  -> diverges like k/2,
+      i.e. the cancellation removes an AREA's worth of operator content and leaves a PERIMETER.
+
+[4] IS ANY NONTRIVIAL GAUGE-INVARIANT INFORMATION ABOUT THE INTERIOR OF R VISIBLE IN THE
+    BOUNDARY OPERATOR ALONE?
+
+    R = 2x2 block at (1,1):  interior links = [8, 9, 11, 14]   crossing links = [3, 5, 6, 10, 12, 15, 16, 17]
+    (a) B_R restricted to the physical sector: distinct eigenvalues = [np.float64(1.0)], || B_R|_phys - I || = 0.000e+00
+        -> B_R is CONSTANT (+1) on every physical state.  Its expectation value is the same
+        number for every state in the theory, so it carries EXACTLY 0 bits about anything.
+    (b) plaquette lying STRICTLY inside R: links [8, 11, 14, 9]
+        preserves the physical sector: True;  fixed points = 0;  eigenvalue multiplicities  (+1, -1) = (512, 512)
+        -> the interior Wilson loop is a genuine 2-valued gauge-invariant observable of the
+           interior:  H = 1.000000 bit,
+           explicit dense check on the physical sector: || [W_p , B_R] || = 0.000e+00  ->
+           the interior Wilson loop commutes with the boundary operator, so no measurement of
+           B_R constrains it at all.
+
+    (c) EXACT information accounting, uniform distribution over the 1024 physical states:
+        H(interior links)                              = 4.000000 bits
+        H(crossing links)                              = 7.000000 bits
+        H(interior | ALL crossing-link data)           = 1.000000 bits
+        I(interior ; B_R)  [B_R is constant]           = 0.000000 bits
+        -> even the FULL boundary flux data leaves 1 bit of the interior undetermined; the
+           single boundary OPERATOR leaves all of it undetermined.
+
+    (d) INDEPENDENT ALGEBRAIC COUNT (GF(2) rank, no Hilbert space):
+        interior links = 4, rank of the Gauss constraints on them = 3,
+        free interior bits = 1  -> matches (c) H(interior|crossing) = 1.000000   PASS   [SC-1]
+
+    (e) HOW THAT HIDDEN INFORMATION SCALES (same GF(2) count on larger tori):
+           torus   k   |R|  boundary support   hidden interior bits   (k-1)^2
+             4x4   1     1                 4                      0         0
+             4x4   2     4                 8                      1         1
+             4x4   3     9                12                      4         4
+             5x5   1     1                 4                      0         0
+             5x5   2     4                 8                      1         1
+             5x5   3     9                12                      4         4
+             5x5   4    16                16                      9         9
+             6x6   1     1                 4                      0         0
+             6x6   2     4                 8                      1         1
+             6x6   3     9                12                      4         4
+             6x6   4    16                16                      9         9
+             6x6   5    25                20                     16        16
+        hidden bits - (k-1)^2  for k=1..5 : [0, 0, 0, 0, 0]   -> hidden = (k-1)^2 = (sqrt(|R|)-1)^2 EXACTLY
+        log-log fit over k=2..5 : q = 1.516402.  CAVEAT: (sqrt(A)-1)^2 is
+        not a pure power either, so this finite-range fit OVERSHOOTS; the local slope between
+        k=4 and k=5 is 1.289224 and the law is area, exponent -> 1.
+        The load-bearing comparison is exact and needs no fit: boundary support 4k against
+        hidden interior information (k-1)^2 -- perimeter against area, diverging as k/4.
+
+====================================================================================================
+[5] WHAT WAS MEASURED
+====================================================================================================
+  1. || P_R - prod_{l in dR} sigma_l || = 0.000000e+00 EXACTLY, in both bases, on the full
+     2^18 space and as dense 1024x1024 matrices on the physical sector, for every region
+     tested.  The bulk constraints cancel identically: every link with both endpoints in R
+     is hit exactly twice and sigma^2 = I.  The total constraint of a region IS a surface
+     operator.  This is an OPERATOR IDENTITY, true for every coupling and every lattice
+     size, so it is a scale-free algebraic fact, not a finite-lattice accident.
+  2. support(P_R) = 4k = 4*sqrt(|R|) EXACTLY at every point (residuals all 0); fitted
+     exponent 0.500000 = a perimeter law.  The uncancelled product is 2k^2+2k exactly
+     (fitted 0.840379 over k=1..5, local slope 0.908530 at the top, area law in the limit).
+  3. The boundary operator alone carries ZERO gauge-invariant information about the interior:
+     it equals +1 on every physical state.  The interior's own gauge-invariant content
+     (Wilson loops) grows like the AREA, (k-1)^2 bits, none of it visible in B_R.
+  NOT MEASURED HERE: whether gravity's constraint algebra has the same structure functions;
+  that is x6a's business.  This lane establishes only the boundary-term property on our side.

@@ -98,8 +98,10 @@ jumps `3.0e-16 → 5.2e-02`.
   computed in a structure the system lacks.
 - **Why the world's Hamiltonian has the topology it has.** W-61 moves the question from *"why these
   symmetries"* to *"why this topology"* — better posed, still unanswered.
-- **The topology here does not respond to content.** For the identification with gravity to be more
-  than functional, it would have to.
+- **The topology here does not respond to content.** ~~For the identification with gravity to be more
+  than functional, it would have to.~~ **SECOND SENTENCE WITHDRAWN (`5c01e47`)** — it makes a classical
+  measure the criterion (**D-1**). The live question is **G-6**: is `H₁` the *only* structure
+  satisfying R1–R3?
 
 ---
 
