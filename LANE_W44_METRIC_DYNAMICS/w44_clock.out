@@ -1,0 +1,294 @@
+============================================================================================================
+W-44  A METRIC THAT DOES WORK.  Lapse N(x)=1-lam*phi(x)*N_M multiplies the local Hamiltonian
+      density; the transported probe carries a clock that ticks at the local lapse.
+============================================================================================================
+
+  patch: 16 physical gauge states, 12 links, cut links [2, 3, 7, 10], rim links [0, 1, 4, 5, 6, 8, 9, 11]
+  mass at vertex (0,0).  lapse profile (lam=0.6):
+      plaquette phi : 0.879  0.581  0.581  0.481
+      link      phi : 1.000  0.600  0.708  0.535  0.490  0.429  1.000  0.708  0.490  0.600  0.535  0.429
+      so N(x) ranges over [0.400, 0.743] -- a genuine spatial gradient, not a global rescaling
+
+============================================================================================================
+1.  FORCED-OR-NOT.  Named in advance, settled before a single propagator is built.
+============================================================================================================
+
+  AT RISK: I(N_M : F), the Holevo information an environment fragment holds about the METRIC.
+  This is exactly the quantity W-43b got for free.  There it was FORCED twice over: the mass had
+  H = 0 so [N_M, H] = 0 exactly (a conserved charge cannot be damaged, so its "durability" measured
+  nothing), and the environment was coupled DIRECTLY to sz_M (so each fragment held a full copy by
+  construction).  Either alone determines the number without any dynamics.
+
+  THE ONE ARGUMENT THAT SETTLES IT HERE -- a commutator, printed below before anything propagates:
+      (a) ||[N_M, H]||  must be NONZERO, or the metric record is conserved and its survival is a
+          constraint, not a measurement.  H_M = -eps*sx_M gives [N_M, sx_M] = -sx_M*sz_M ... != 0.
+      (b) ||[N_M, L_k]|| must be ZERO for every bath / environment operator, or the environment is
+          reading the answer off directly.  L_k = Z_cut(k) (x) I is diagonal in the gauge basis and
+          acts as the identity on the metric, so this vanishes identically.
+  (a) and (b) together mean: the environment can only learn about the metric through the gauge field
+  the metric curves.  Any nonzero I(N_M:F) is then earned by the dynamics.
+
+  SECOND, SMALLER RISK, also settled by a commutator: the SIEVE WINNER.  [RG, B_p] = 0 for every
+  plaquette (abelian Z_2 moves commute) and [RG, N_M] = 0, so weighting the plaquettes by the lapse
+  does NOT weaken the rim loop's protection: [R_GAUGE, H_magnetic(lam)] = 0 for every lam.  The rim
+  loop therefore cannot be dislodged by the metric spoiling its commutator.  It can only be
+  dislodged if some metric-carrying operator turns out to be even slower.  That is the open question.
+
+    ||[N_M(x)I , H(lam=0)]||           = 0.848528
+    ||[N_M(x)I , H(lam=0.6)]||         = 0.848528
+    max_k ||[N_M(x)I , L_k]||          = 0.000e+00
+    ||[R_GAUGE , H_magnetic(lam=0)]||  = 0.000e+00
+    ||[R_GAUGE , H_magnetic(lam=0.6)]|| = 0.000e+00
+    ||[R_GAUGE , H_full(lam=0.6)]||     = 0.758457   (the electric term is what damages it, exactly as at lam=0)
+
+============================================================================================================
+2.  OPERATORS EARN MEASUREMENT.  Every operator that will be given a commutator or a
+    Holevo read, with its norm, unitarity defect and eigenvalue count.
+============================================================================================================
+    R_GAUGE  = rim loop (x) I          dim    32  ||O||_F    5.6569  unitarity defect  0.00e+00  distinct eigenvalues   2
+    R_METRIC = I (x) sz_M              dim    32  ||O||_F    5.6569  unitarity defect  0.00e+00  distinct eigenvalues   2
+    N_M      = I (x) (1-sz)/2          dim    32  ||O||_F    4.0000  unitarity defect  4.00e+00  distinct eigenvalues   2
+
+============================================================================================================
+3.  MEASUREMENT (a).  REDUNDANCY.  One joint pure state; ONE environment; two records read
+    off the SAME state with the SAME fragments, so the two numbers are comparable.
+    Environment: 6 qubits, each coupled to Z on a CUT link.  It never mentions either record.
+============================================================================================================
+
+  SATURATION FIRST.  A fragment plot means nothing until the WHOLE environment holds the
+  bit.  Scan the coupling; read the shape only where I(gauge : all 6) has saturated.
+      kappa      T   I(gauge:all)   I(metric:all)
+    ----------------------------------------------
+       0.60    6.0       0.605747        0.421873
+       1.20    6.0       0.674206        0.488522
+       2.00    8.0       0.625996        0.522012
+       3.00   12.0       0.690489        0.513807
+       5.00   12.0       0.641233        0.516351
+       8.00   16.0       0.651532        0.505255
+      12.00   20.0       0.589878        0.475796
+      20.00   30.0       0.632207        0.282540
+    -> reading the shape at kappa=3.0, T=12.0
+
+  metric ON  (lam=0.6)
+      |F|            :        0         1         2         3         4         5         6
+      I(gauge  : F)  :  0.00000   0.00726   0.02615   0.06305   0.14742   0.34504   0.69049
+      I(metric : F)  :  0.00000   0.00695   0.01758   0.03620   0.08233   0.21468   0.51381
+
+  metric OFF (lam=0)
+      |F|            :        0         1         2         3         4         5         6
+      I(gauge  : F)  : -0.00000   0.00515   0.03003   0.08211   0.20413   0.51801   0.84123
+      I(metric : F)  : -0.00000  -0.00000  -0.00000  -0.00000  -0.00000  -0.00000  -0.00000
+
+  NO-METRIC REFERENCE (dim 16 carrier, no metric factor present at all)
+      I(gauge  : F)  :  0.00000   0.00515   0.03003   0.08211   0.20413   0.51801   0.84123
+      max |lam=0 (dim 32)  -  no-metric (dim 16)| over all |F|  = 3.508e-14
+
+                      case   I(|F|=1)   I(|F|=3)     I(all)  I(1)/I(all)
+  ----------------------------------------------------------------------
+  gauge | metric ON  (lam=0.6)    0.00726    0.06305    0.69049       0.0105
+  metric | metric ON  (lam=0.6)    0.00695    0.03620    0.51381       0.0135
+  gauge | metric OFF (lam=0)    0.00515    0.08211    0.84123       0.0061
+  metric | metric OFF (lam=0)   -0.00000   -0.00000   -0.00000          n/a
+
+  CONTROL that must return zero if the mechanism is absent: at lam=0 the metric is coupled
+  to nothing the environment touches, so I(metric : F) must vanish identically.
+    max_F |I(metric:F)| at lam=0 = 3.064e-14
+    max_F |I(metric:F)| at lam=0.6 = 5.138e-01
+
+============================================================================================================
+4.  MEASUREMENT (b).  THE PREDICTABILITY SIEVE, metric term switched ON.  Nothing nominated:
+    the slowest left-eigenmodes of the full Lindbladian are read off and only then matched
+    against a dictionary of 64 named operators (16 magnetic subsets x {I, sz, sx, sy} on the
+    metric).  Bath = W-34's bath verbatim: Z on the 4 cut links, gamma=0.5, (x) I on metric.
+============================================================================================================
+
+  no-metric reference first: the SAME machinery on the bare 16-dim carrier (W-34's setting).
+        3.203706e-03   RIM LOOP(all 4)
+        3.748295e-01   3-plaq loop(1, 2, 3)
+        3.748295e-01   3-plaq loop(0, 2, 3)
+        3.748295e-01   3-plaq loop(0, 1, 2)
+        3.748295e-01   3-plaq loop(0, 1, 3)
+        5.422431e-01   2-plaq loop(0, 1)
+        5.422431e-01   2-plaq loop(2, 3)
+        5.422431e-01   2-plaq loop(1, 3)
+        5.422431e-01   2-plaq loop(0, 2)
+        5.609775e-01   2-plaq loop(1, 2)
+        5.609775e-01   2-plaq loop(0, 3)
+        8.650465e-01   plaq(2,)
+        8.650465e-01   plaq(3,)
+        8.650465e-01   plaq(1,)
+        8.650465e-01   plaq(0,)
+
+  --- lam = 0.0   (metric present but DECOUPLED -- the control)
+    slowest left-eigenmodes of the Lindbladian (dim 32, generator 1024x1024)
+          decay rate  |diag wt|  best dictionary match
+      --------------------------------------------------------------------------
+       -4.463963e-15      0.030  I_gauge(x)sx_M   (overlap 1.000)
+        4.579626e-15      0.707  I_gauge(x)sz_M   (overlap 0.707)
+        5.315193e-15      0.707  I_gauge(x)sy_M   (overlap 0.707)
+        1.115722e-14      0.998  I_gauge(x)I_M   (overlap 0.998)
+        3.196988e-03      0.000  RIM LOOP(all 4)(x)I_M   (overlap 0.999)
+        3.196988e-03      0.000  RIM LOOP(all 4)(x)sy_M   (overlap 0.706)
+        3.196988e-03      0.000  RIM LOOP(all 4)(x)sx_M   (overlap 0.999)
+        3.196988e-03      0.000  RIM LOOP(all 4)(x)sy_M   (overlap 0.706)
+    operator decay rates  -(1/T)ln||exp(L^dag T)O||/||O||,  T=30.0   (10 slowest of 63)
+        1.131465e-13   I_gauge(x)sx_M
+        1.131798e-13   I_gauge(x)sz_M
+        1.131835e-13   I_gauge(x)sy_M
+        3.203706e-03   RIM LOOP(all 4)(x)sy_M
+        3.203706e-03   RIM LOOP(all 4)(x)sz_M
+        3.203706e-03   RIM LOOP(all 4)(x)I_M
+        3.203706e-03   RIM LOOP(all 4)(x)sx_M
+        3.748295e-01   3-plaq loop(1, 2, 3)(x)I_M
+        3.748295e-01   3-plaq loop(1, 2, 3)(x)sz_M
+        3.748295e-01   3-plaq loop(1, 2, 3)(x)sx_M
+
+  --- lam = 0.6   (metric ON: the lapse weights every plaquette and every link)
+    slowest left-eigenmodes of the Lindbladian (dim 32, generator 1024x1024)
+          decay rate  |diag wt|  best dictionary match
+      --------------------------------------------------------------------------
+        7.487874e-15      1.000  I_gauge(x)I_M   (overlap 1.000)
+        3.172520e-03      0.000  RIM LOOP(all 4)(x)I_M   (overlap 0.999)
+        8.384973e-02      0.676  I_gauge(x)sz_M   (overlap 0.676)
+        2.858047e-01      0.461  I_gauge(x)sy_M   (overlap 0.466)
+        2.858047e-01      0.461  I_gauge(x)sy_M   (overlap 0.466)
+        5.456770e-01      0.006  I_gauge(x)sx_M   (overlap 0.607)
+        6.864414e-01      0.007  no clean match   (overlap 0.001)
+        6.924025e-01      0.414  no clean match   (overlap 0.001)
+    operator decay rates  -(1/T)ln||exp(L^dag T)O||/||O||,  T=30.0   (10 slowest of 63)
+        3.163077e-03   RIM LOOP(all 4)(x)I_M
+        9.192355e-02   I_gauge(x)sz_M
+        9.278479e-02   RIM LOOP(all 4)(x)sz_M
+        1.344070e-01   I_gauge(x)sy_M
+        1.365727e-01   RIM LOOP(all 4)(x)sy_M
+        1.610370e-01   plaq(0,)(x)sx_M
+        1.626786e-01   3-plaq loop(1, 2, 3)(x)sx_M
+        1.689635e-01   plaq(3,)(x)sx_M
+        1.693633e-01   3-plaq loop(0, 1, 2)(x)sx_M
+        1.701483e-01   plaq(1,)(x)sx_M
+
+  CONTROL: lam=0 gauge-operator rates vs the no-metric carrier -- max |difference| = 7.435e-08
+
+  metric ON: slowest = RIM LOOP(all 4)(x)I_M  at rate 3.163077e-03
+             next    = I_gauge(x)sz_M  at rate 9.192355e-02
+             ratio next/slowest = 29.061
+
+  DOES THE METRIC CHANGE THE SIEVE'S NUMBERS?  (lam=0 -> lam=0.6)
+      RIM LOOP(all 4)(x)I_M        3.203706e-03  ->    3.163077e-03
+      RIM LOOP(all 4)(x)sz_M       3.203706e-03  ->    9.278479e-02
+      I_gauge(x)sz_M               1.131798e-13  ->    9.192355e-02
+      I_gauge(x)sx_M               1.131465e-13  ->    4.604503e-01
+      plaq(0,)(x)I_M               8.650465e-01  ->    6.384144e-01
+
+============================================================================================================
+5.  THE CLOCK.  The probe of W-37 now carries a dc-level clock ticking at the LOCAL LAPSE.
+    Different arms of the ring pass through different potential, accumulate different proper
+    time, and the clock state becomes correlated with the path.
+============================================================================================================
+
+  transport carrier: 128 physical states (16 gauge states per probe position), static anti-charge at the centre
+      ring potential phi(v) : 0.333  0.500  1.000  0.500  0.333  0.250  0.200  0.250
+      arm A (sites 1,2,3) mean phi = 0.667 ;  arm B (sites 7,6,5) mean phi = 0.233
+    R_TRANSPORT = perimeter loop       dim   128  ||O||_F   11.3137  unitarity defect  0.00e+00  distinct eigenvalues   2
+    R_TRANSPORT (x) I_M (x) I_C        dim  1024  ||O||_F   32.0000  unitarity defect  0.00e+00  distinct eigenvalues   2
+    clock generator C (traceless)      dim     4  ||O||_F    5.6569  Hermitian, trace +0.0e+00, not a record; distinct eigenvalues   4
+
+    propagator check: ||eigh-route psi(T=1.3) - expm-route psi(T=1.3)|| = 7.050e-15
+
+  (5a) AHARONOV-BOHM FRINGE CONTRAST at the recombination site 4, antipodal to the source.
+       V = |P_+(4) - P_-(4)| / (P_+(4) + P_-(4)), where +/- are the two flux sectors of the
+       SAME dynamics.  The bare ring is exactly symmetric, so site 4 is a DARK PORT: at
+       lam=0 one flux sector arrives there and the other cancels exactly, V = 1 identically.
+       Anything that distinguishes the two arms degrades it.  Metric prepared in |+>.
+    lam=0            (no metric at all)  1.0000   1.0000   1.0000   1.0000   1.0000   1.0000   | mean  1.0000
+    lam=0.6 hop only                    0.9294   0.9102   0.9491   0.5408   0.4526   0.3890   | mean  0.6952
+    lam=0.6 clock only                  0.5505   0.4598   0.4338   0.9452   0.3132   0.1615   | mean  0.4773
+    lam=0.6 pot only                    0.9707   0.9099   0.9198   0.9991   0.1639   0.0741   | mean  0.6729
+    lam=0.6 FULL                        0.8525   0.5516   0.3177   0.2925   0.4564   0.7101   | mean  0.5301
+                                       T=2.0    T=3.0    T=4.0    T=6.0    T=8.0    T=12.0 
+
+       the two arrival probabilities themselves, so the dark port is visible, not asserted:
+    lam=0            (no metric at all) P+  0.3161   0.5132   0.0367   0.5716   0.0213   0.2578
+                                       P-  0.0000   0.0000   0.0000   0.0000   0.0000   0.0000
+    lam=0.6 clock only                 P+  0.2278   0.3404   0.0936   0.4163   0.0799   0.2316
+                                       P-  0.0660   0.1260   0.0370   0.0117   0.0418   0.1672
+    lam=0.6 FULL                       P+  0.1991   0.3782   0.0402   0.4703   0.0504   0.1844
+                                       P-  0.0158   0.1093   0.0775   0.2574   0.0188   0.0313
+
+  (5b) CLOCK ENTROPY  S(clock) in bits -- how much the clock has recorded.  Starts at 0.
+    lam=0            (no metric at all) -0.0000  -0.0000  -0.0000  -0.0000  -0.0000  -0.0000
+    lam=0.6 hop only                   -0.0000  -0.0000  -0.0000  -0.0000  -0.0000  -0.0000
+    lam=0.6 clock only                  0.1939   0.1935   0.1788   0.2162   0.2202   0.2059
+    lam=0.6 pot only                   -0.0000  -0.0000  -0.0000  -0.0000   0.0000  -0.0000
+    lam=0.6 FULL                        0.2029   0.2017   0.1855   0.2242   0.2200   0.2373
+
+  (5c) I(R : probe position) in bits -- W-37's measurement, re-run with the clock present.
+       W-37 (no metric, no clock) reached 0.83 bits.  Ceiling 1.
+    lam=0            (no metric at all)  0.2709   0.6694   0.4761   0.6483   0.0275   0.8299
+    lam=0.6 hop only                    0.1312   0.3977   0.2881   0.2925   0.0946   0.1647
+    lam=0.6 clock only                  0.0694   0.1705   0.2008   0.3334   0.0553   0.3685
+    lam=0.6 pot only                    0.2458   0.5453   0.3730   0.5129   0.0420   0.3998
+    lam=0.6 FULL                        0.1153   0.2246   0.2475   0.2762   0.0368   0.5191
+
+  (5f) I(R : clock) in bits -- does the CLOCK itself become a reader of the loop?
+    lam=0            (no metric at all) -0.0000  -0.0000   0.0000  -0.0000  -0.0000  -0.0000
+    lam=0.6 hop only                   -0.0000  -0.0000  -0.0000  -0.0000  -0.0000  -0.0000
+    lam=0.6 clock only                  0.0000   0.0001   0.0029   0.0027   0.0009   0.0038
+    lam=0.6 pot only                    0.0000   0.0000   0.0000  -0.0000   0.0000   0.0000
+    lam=0.6 FULL                        0.0000   0.0001   0.0011   0.0028   0.0035   0.0079
+
+  (5d) METRIC STATE DEPENDENCE of the fringe contrast, FULL coupling.
+    metric |0> no mass                  0.9924   0.9487   0.7774   0.9108   0.2388   0.6156
+    metric |1> mass                     0.1056   0.4080   0.4792   0.2419   0.1263   0.2411
+    metric |+> superpos                 0.8525   0.5516   0.3177   0.2925   0.4564   0.7101
+
+  (5e) CLOCK-RATE SWEEP in the CLOCK-ONLY configuration -- hop amplitudes untouched, no
+       potential on the probe, traceless clock generator, so the ONLY thing in the problem
+       is that the clock ticks at a different rate on the two arms.  omega=0 freezes the
+       clock and must return the dark port exactly.
+         omega   T=2.0    T=3.0    T=4.0    T=6.0    T=8.0    T=12.0    mean    S(clock)@8  I(R:probe)@12
+          0.00    1.0000   1.0000   1.0000   1.0000   1.0000   1.0000   1.0000     0.0000       0.8299
+          0.15    0.9867   0.9617   0.9700   0.9998   0.8546   0.8704   0.9405     0.1038       0.7345
+          0.30    0.9494   0.8646   0.9022   0.9994   0.5582   0.6629   0.8228     0.1642       0.6490
+          0.60    0.8248   0.6218   0.7160   0.9925   0.3250   0.1311   0.6019     0.1678       0.3484
+          1.20    0.5505   0.4598   0.4338   0.9452   0.3132   0.1615   0.4773     0.2202       0.3685
+          2.40    0.4831   0.7404   0.1484   0.9414   0.2298   0.0800   0.4372     0.2232       0.2900
+          4.80    0.7689   0.3409   0.1989   0.7297   0.3177   0.1505   0.4178     0.2216       0.2671
+
+  CONTROLS.
+    CUT RING (one hop removed: every local interaction kept, only the closed path gone).
+    If the probe's reading of R is topological it must be exactly zero, clock or no clock.
+      T=  4.0   I(R:probe) cut,lam=0 = -8.882e-16   cut,lam=0.6 = 0.000e+00   fringe contrast cut,lam=0 = 5.017e-15
+      T=  8.0   I(R:probe) cut,lam=0 = -8.882e-16   cut,lam=0.6 = 4.441e-16   fringe contrast cut,lam=0 = 9.082e-15
+      T= 12.0   I(R:probe) cut,lam=0 = -1.776e-15   cut,lam=0.6 = -4.441e-16   fringe contrast cut,lam=0 = 8.034e-15
+    lam=0 must leave the clock EXACTLY unentangled (H_clock = omega*I(x)I(x)C commutes with all):
+      T=  4.0   S(clock) at lam=0 = -6.407e-16
+      T= 12.0   S(clock) at lam=0 = -9.610e-16
+    W-37 REPLICA: the bare 128-dim transport carrier, no metric factor and no clock factor
+    present at all.  lam=0 with the clock attached must reproduce it to machine precision.
+           T  I(R:probe) W-37 replica  I(R:probe) lam=0 w/ clock
+         2.0                 0.270865                   0.270865
+         3.0                 0.669357                   0.669357
+         4.0                 0.476052                   0.476052
+         6.0                 0.648345                   0.648345
+         8.0                 0.027490                   0.027490
+        12.0                 0.829907                   0.829907
+      max |difference| = 2.442e-15
+
+============================================================================================================
+6.  DOES THE METRIC DO WORK?  Every number below is the same quantity with the metric
+    coupling off and on.  If a row does not move, the metric did nothing to it.
+============================================================================================================
+    quantity                                                lam=0          lam=0.6
+    ------------------------------------------------------------------------------
+    I(gauge:|F|=1) bits                                  0.005148         0.007262
+    I(gauge:all 6) bits                                  0.841233         0.690489
+    I(metric:all 6) bits                                -0.000000         0.513807
+    sieve rate  RIM LOOP (x) I_M                     3.203706e-03     3.163077e-03
+    sieve rate  I_gauge (x) sz_M                     1.131798e-13     9.192355e-02
+    AB fringe contrast, mean over the T grid             1.000000         0.530134
+      same, clock-only configuration                     1.000000         0.477328   (omega=0 vs omega=1.2)
+    I(R : probe position) at T=12                        0.829907         0.519127
+    S(clock) at T=8                                     -0.000000         0.220016
+
+done.

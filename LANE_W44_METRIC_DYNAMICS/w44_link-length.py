@@ -301,19 +301,36 @@ print(f"    initial state: probe at site 0,  <R> = {np.vdot(psi0, Rfull@psi0).re
 
 TAU, BETA_R, VDW = 1.0, 0.6, 0.5
 TIMES = [0.0, 1.0, 2.0, 3.0, 4.0, 6.0, 8.0, 12.0, 20.0]
+DENSE = np.arange(0.0, 24.01, 0.25)
+
+def propagator_set(H):
+    """H is Hermitian; diagonalise once and propagate psi0 on a dense grid.
+       Verified against the hand-written expm below."""
+    Ev, W = np.linalg.eigh((H + H.conj().T) / 2)
+    c = W.conj().T @ psi0
+    return lambda T: W @ (np.exp(-1j * Ev * T) * c)
 
 def transport_table(tag, beta, V, skip=None):
     H = H_ring(TAU, beta, V, skip)
+    prop = propagator_set(H)
+    chk = np.linalg.norm(prop(3.0) - expm(-1j * H * 3.0) @ psi0)
     print(f"\n  {tag}")
+    print(f"    eigh-route vs hand-written expm at T=3: ||difference|| = {chk:.2e}")
     print(f"    {'T':>6s} {'I(R:probe)':>12s} {'I(Lam_live:probe)':>18s} {'I(Lam_dead:probe)':>18s} {'P(back at 0)':>13s}")
     print("    " + "-" * 72)
     out = {}
     for T in TIMES:
-        psi = expm(-1j * H * T) @ psi0
+        psi = prop(T)
         d = probe_dist(psi)
         iR, iL, iD = info_ring(psi, Rfull), info_ring(psi, Llive), info_ring(psi, Ldead)
         out[T] = (iR, iL, iD)
         print(f"    {T:6.2f} {iR:12.6f} {iL:18.6f} {iD:18.6f} {d[0]:13.4f}")
+    dense = np.array([[info_ring(prop(T), O) for O in (Rfull, Llive, Ldead)] for T in DENSE])
+    print(f"    dense grid, {len(DENSE)} times in [0,24]:   "
+          f"max  I(R)={dense[:,0].max():.6f}  I(Lam_live)={dense[:,1].max():.6f}  I(Lam_dead)={dense[:,2].max():.6f}")
+    print(f"    {'':>34s}   mean I(R)={dense[:,0].mean():.6f}  I(Lam_live)={dense[:,1].mean():.6f}  "
+          f"I(Lam_dead)={dense[:,2].mean():.6f}")
+    out['dense'] = dense
     return out
 
 full_on  = transport_table(f"METRIC ON   beta={BETA_R} (traversal), V={VDW} (dwell phase), tau={TAU}, full ring",
@@ -358,13 +375,16 @@ cut_on = transport_table("CUT RING, metric ON (beta=%.2f, V=0)" % BETA_R, BETA_R
 print("\n    -> I(Lam_dead : probe) on the cut ring is the mechanism control: RIML[4] is never")
 print("       traversed, so if the length acts only through traversal this must be exactly 0.")
 
-print("\n  SUMMARY OF PART 2 (max over the time grid):")
-def mx(tab, i): return max(v[i] for v in tab.values())
-print(f"    {'run':>34s} {'max I(R)':>10s} {'max I(Lam_live)':>16s} {'max I(Lam_dead)':>16s}")
-print("    " + "-" * 80)
+print("\n  SUMMARY OF PART 2 (dense grid, 97 times in [0,24]):")
+def mx(tab, i): return float(tab['dense'][:, i].max())
+def mn(tab, i): return float(tab['dense'][:, i].mean())
+print(f"    {'run':>34s} {'max I(R)':>10s} {'max I(Lam_live)':>16s} {'max I(Lam_dead)':>16s}"
+      f" {'mean I(R)':>11s} {'mean I(Lam_live)':>17s}")
+print("    " + "-" * 112)
 for nm, tab in [("full ring, metric ON", full_on), ("full ring, metric OFF", full_off),
                 ("CUT ring, metric ON", cut_on)]:
-    print(f"    {nm:>34s} {mx(tab,0):10.6f} {mx(tab,1):16.6f} {mx(tab,2):16.6f}")
+    print(f"    {nm:>34s} {mx(tab,0):10.6f} {mx(tab,1):16.6f} {mx(tab,2):16.6f}"
+          f" {mn(tab,0):11.6f} {mn(tab,1):17.6f}")
 
 # ================================ PART 3: REDUNDANCY ===========================================
 print()
@@ -436,20 +456,26 @@ Rsys = np.kron(RG, I2); Lsys = np.kron(IdS, sz)
 G2, EPS = 0.01, 0.35
 
 print("\n  SATURATION FIRST.  A fragment plot means nothing until the WHOLE environment holds")
-print("  something.  Scan the coupling; read I(.:all 5) for both records.")
-print(f"    {'kappa':>7s} {'T':>6s} {'I(R:all)':>11s} {'I(Lambda:all)':>15s}")
-print("    " + "-" * 44)
-best = None
-for kap, T in [(1.0, 6.0), (3.0, 12.0), (5.0, 12.0), (8.0, 16.0), (12.0, 16.0)]:
+print("  something.  Scan the coupling; read I(.:all 5) for BOTH records.  Operating-point rule,")
+print("  fixed before the scan: take the grid point maximising min(I(R:all), I(Lambda:all)), so")
+print("  neither record is read at a setting that starves it.  The max-I(R:all) point is also shown.")
+print(f"    {'kappa':>7s} {'T':>6s} {'I(R:all)':>11s} {'I(Lambda:all)':>15s} {'min of the two':>16s}")
+print("    " + "-" * 62)
+bestmin = None; bestR = None
+for kap, T in [(0.5, 6.0), (1.0, 6.0), (1.0, 12.0), (2.0, 8.0), (3.0, 12.0),
+               (5.0, 12.0), (8.0, 16.0), (12.0, 16.0)]:
     pT, DSY = run_patch(0.8, EPS, G2, LENP, kap, T)
     iR = holevo(pT, DSY, Rsys, tuple(range(NQ))); iL = holevo(pT, DSY, Lsys, tuple(range(NQ)))
-    print(f"    {kap:7.2f} {T:6.1f} {iR:11.6f} {iL:15.6f}")
-    if best is None or iR > best[2]: best = (kap, T, iR)
-KAP, TT = best[0], best[1]
-print(f"    -> using kappa={KAP}, T={TT}")
+    print(f"    {kap:7.2f} {T:6.1f} {iR:11.6f} {iL:15.6f} {min(iR,iL):16.6f}")
+    if bestmin is None or min(iR, iL) > bestmin[2]: bestmin = (kap, T, min(iR, iL))
+    if bestR is None or iR > bestR[2]: bestR = (kap, T, iR)
+KAP, TT = bestmin[0], bestmin[1]
+KAPR, TTR = bestR[0], bestR[1]
+print(f"    -> operating point kappa={KAP}, T={TT}   (max-I(R:all) point was kappa={KAPR}, T={TTR})")
 
-def redundancy_block(beta, lenlink, tag, eps=EPS):
-    pT, DSY = run_patch(beta, eps, G2, lenlink, KAP, TT)
+def redundancy_block(beta, lenlink, tag, eps=EPS, kap=None, T=None):
+    kap = KAP if kap is None else kap; T = TT if T is None else T
+    pT, DSY = run_patch(beta, eps, G2, lenlink, kap, T)
     vR = profile(pT, DSY, Rsys); vL = profile(pT, DSY, Lsys)
     print(f"\n  {tag}")
     print("    |F|          : " + "  ".join(f"{i:8d}" for i in range(NQ + 1)))
@@ -457,7 +483,9 @@ def redundancy_block(beta, lenlink, tag, eps=EPS):
     print("    I(Lambda:F)  : " + "  ".join(f"{v:8.4f}" for v in vL))
     rR = vR[1] / vR[-1] if vR[-1] > 1e-9 else float('nan')
     rL = vL[1] / vL[-1] if vL[-1] > 1e-9 else float('nan')
-    print(f"    ratio I(|F|=1)/I(all):   gauge {rR:.4f}     metric {rL:.4f}")
+    sR = f"{rR:.4f}" if vR[-1] > 1e-9 else "n/a (I(all)=0)"
+    sL = f"{rL:.4f}" if vL[-1] > 1e-9 else "n/a (I(all)=0)"
+    print(f"    ratio I(|F|=1)/I(all):   gauge {sR}     metric {sL}")
     return vR, vL, rR, rL
 
 vR_on, vL_on, rR_on, rL_on = redundancy_block(
@@ -466,19 +494,57 @@ vR_c, vL_c, rR_c, rL_c = redundancy_block(
     0.8, LENC, f"METRIC ON  beta=0.8, eps={EPS}, length on CUT link {LENC} (right next to the bath)")
 vR_off, vL_off, rR_off, rL_off = redundancy_block(
     0.0, LENP, "CONTROL beta=0 -- the metric sources nothing.  I(Lambda:F) must be exactly 0 at every |F|;")
-print(f"    control check: max_f |I(Lambda:F)| at beta=0 = {max(abs(x) for x in vL_off):.3e}")
-print(f"    exactness   : max_f |I(R:F)[beta=0.8, len on CUT] - I(R:F)[beta=0]| = "
-      f"{max(abs(a-b) for a, b in zip(vR_c, vR_off)):.3e}")
-print(f"    exactness   : max_f |I(R:F)[beta=0.8, len on RIM] - I(R:F)[beta=0]| = "
-      f"{max(abs(a-b) for a, b in zip(vR_on, vR_off)):.3e}")
+print(f"    CONTROL FIRES: max_f |I(Lambda:F)| at beta=0 = {max(abs(x) for x in vL_off):.3e}")
+print("\n  EXACTNESS (requirement 6): at beta=0 the length register decouples, so the GAUGE profile")
+print("  must equal the metric-free dim-16 carrier's profile under the identical environment.")
 
-vR_k0, vL_k0, _, _ = redundancy_block(
-    0.8, LENP, "CONTROL kappa=0 is enforced by setting the environment coupling to zero:")
-print("    (the line above still uses kappa>0; the kappa=0 control is next)")
+def run_bare(kappa, T, seed=3):
+    H = np.kron(-MAGH - G2 * sum(ZL[k] + ZL[k].conj().T for k in range(NL)), np.eye(DE, dtype=complex))
+    for k in range(NQ):
+        ops = [I2] * NQ; ops[k] = sz
+        H = H + kappa * np.kron(Zop([CUT[k % len(CUT)]]), kron_list(ops))
+    U = expm(-1j * H * T)
+    g = np.random.default_rng(seed)
+    w = g.normal(size=DS) + 1j * g.normal(size=DS)
+    a = (IdS + RG) / 2 @ w; b = (IdS - RG) / 2 @ w
+    a /= np.linalg.norm(a); b /= np.linalg.norm(b)
+    psiG = (a + b) / np.sqrt(2.0); psiG /= np.linalg.norm(psiG)
+    plus = np.ones(2, complex) / np.sqrt(2.0)
+    psi = U @ np.kron(psiG, kron_list([plus.reshape(2, 1)] * NQ).reshape(-1))
+    return psi.reshape((DS,) + (2,) * NQ)
+
+pB = run_bare(KAP, TT)
+_hold = NQ
+vB = [float(np.mean([holevo(pB, DS, RG, c) for c in list(itertools.combinations(range(NQ), f))[:20]]))
+      for f in range(NQ + 1)]
+print("    I(R:F) metric-free dim-16 : " + "  ".join(f"{v:8.4f}" for v in vB))
+print("    I(R:F) beta=0    dim-32   : " + "  ".join(f"{v:8.4f}" for v in vR_off))
+print(f"    max |difference| = {max(abs(a-b) for a, b in zip(vB, vR_off)):.3e}")
+print("\n  THE METRIC DOES WORK, in this measurement:  switching beta on CHANGES the gauge numbers.")
+print(f"    max_f |I(R:F)[beta=0.8, len on RIM] - I(R:F)[beta=0]| = "
+      f"{max(abs(a-b) for a, b in zip(vR_on, vR_off)):.3e}")
+print(f"    max_f |I(R:F)[beta=0.8, len on CUT] - I(R:F)[beta=0]| = "
+      f"{max(abs(a-b) for a, b in zip(vR_c, vR_off)):.3e}")
+
+print("\n  CONTROL kappa = 0 -- no environment coupling at all.  Both records must be 0 everywhere.")
 pT0, DSY0 = run_patch(0.8, EPS, G2, LENP, 0.0, TT)
 v0R = profile(pT0, DSY0, Rsys); v0L = profile(pT0, DSY0, Lsys)
-print(f"    kappa=0:  max_f I(R:F) = {max(abs(x) for x in v0R):.3e}   "
-      f"max_f I(Lambda:F) = {max(abs(x) for x in v0L):.3e}")
+print(f"    kappa=0:  max_f |I(R:F)| = {max(abs(x) for x in v0R):.3e}   "
+      f"max_f |I(Lambda:F)| = {max(abs(x) for x in v0L):.3e}")
+
+vR_hi, vL_hi, rR_hi, rL_hi = redundancy_block(
+    0.8, LENP, f"SAME MEASUREMENT at the max-I(R:all) point kappa={KAPR}, T={TTR} (length on RIM link {LENP})",
+    kap=KAPR, T=TTR)
+
+print("\n  DOES beta CHANGE THE GAUGE NUMBERS TOO?  Sweep beta at the operating point.")
+print(f"    {'beta':>6s} {'I(R:all)':>11s} {'I(R:|F|=1)':>12s} {'I(Lambda:all)':>15s} {'I(Lambda:|F|=1)':>17s}")
+print("    " + "-" * 66)
+BSWEEP = []
+for beta in [0.0, 0.2, 0.4, 0.8, 1.2]:
+    pT, DSY = run_patch(beta, EPS, G2, LENP, KAP, TT)
+    a = profile(pT, DSY, Rsys); b = profile(pT, DSY, Lsys)
+    BSWEEP.append((beta, a[-1], a[1], b[-1], b[1]))
+    print(f"    {beta:6.2f} {a[-1]:11.6f} {a[1]:12.6f} {b[-1]:15.6f} {b[1]:17.6f}")
 
 # ================================ PART 4: THE SIEVE ============================================
 print()
@@ -540,6 +606,41 @@ def named_rate(rows, key):
         if key in nm: return r
     return None
 
+# ---- robust route: each named operator's OWN SURVIVAL, from the adjoint propagator ------------
+# The eigenmode listing above labels eigenVECTORS, and where the Liouvillian is degenerate the
+# eigenvectors are arbitrary mixtures, so the label is not trustworthy there.  The unambiguous
+# quantity is the Heisenberg-picture survival of a FIXED operator:
+#     vec(O(t)) = exp(M^dagger t) vec(O),    S(t) = |<O, O(t)>| / ||O||^2,
+#     rate_eff(O) = -ln S(TS) / TS.
+# This is exactly Zurek's sieve criterion -- HOW MUCH OF ITSELF the observable retains -- applied to
+# observables instead of states.  Two notes, because both matter:
+#   * the LONG-TIME log-slope is NOT usable here: past the fast timescales every operator with any
+#     overlap on the globally slowest eigenmode reports that one eigenvalue, so it cannot separate
+#     operators.  Checked: at beta=0.8 twelve different operators return 2.1352e-2 to six figures.
+#   * the t->0 slope is not usable either: Re<O, L^dag O> has no Hamiltonian contribution, so it
+#     returns exactly 0 for every observable that commutes with the four bath operators -- which is
+#     the forced answer named in Part 0, not a measurement.
+# TS is chosen between the two: long compared with the fast rates (~0.5-1), short compared with
+# 1/rate of the slow sector.
+TS = 10.0
+def own_rates(beta, eps, g2=G2, gam=0.5, lenlink=None):
+    lenlink = LENP if lenlink is None else lenlink
+    H = H_patch(beta, eps, g2, lenlink)
+    M = -1j * (np.kron(H, IdY) - np.kron(IdY, H.T))
+    for k in CUT:
+        Lk = np.kron(ZL[k], I2)
+        M = M + gam * (np.kron(Lk, Lk.conj()) - np.kron(IdY, IdY))
+    mu, U = np.linalg.eig(M.conj().T)
+    Uinv = np.linalg.inv(U)
+    ev = np.exp(mu * TS)
+    out = {}
+    for key, (nm, F) in DICT.items():
+        if nm.startswith("1 (x) I_len"): continue        # the identity: exactly conserved, always
+        v = F.reshape(-1); c = Uinv @ v
+        s = abs(np.vdot(v, U @ (ev * c)))
+        out[nm] = float(-np.log(max(s, 1e-15)) / TS)
+    return out
+
 print("\n  BASELINE (i): metric register present but DECOUPLED, beta=0, eps=0.")
 print("  Forced, as declared in Part 0: Lambda is exactly conserved and must show rate 0.")
 r00 = sieve(0.0, 0.0)
@@ -565,41 +666,44 @@ print(f"    slowest 6 rates, beta=0 dim-32 carrier      : {np.array2string(rz[:6
 print(f"    max |difference| over the 256 metric-free rates matched into the 1024 : "
       f"{np.max(np.abs(rb - np.array([rz[np.argmin(np.abs(rz-x))] for x in rb]))):.3e}")
 
-print("\n  THE COMPETITION, swept.  rate(RIM LOOP) versus the slowest LENGTH-sector mode.")
-print(f"    {'beta':>6s} {'eps':>6s} {'rate(RIM LOOP)':>16s} {'rate(slowest Lambda mode)':>27s} {'winner':>18s} {'margin':>12s}")
-print("    " + "-" * 92)
+print("\n  RANKING ALL 63 NON-IDENTITY DICTIONARY OPERATORS BY THEIR OWN SURVIVAL rate_eff = -lnS(%.0f)/%.0f," % (TS, TS))
+print("  at the measurement point beta=0.8, eps=%.2f.  Slowest first.  Nothing nominated: every" % EPS)
+print("  operator in the dictionary is ranked and the ordering is read off afterwards.")
+ratesON = own_rates(0.8, EPS)
+ordON = sorted(ratesON.items(), key=lambda kv: kv[1])
+print(f"    {'rank':>4s} {'decay rate':>16s}  operator")
+print("    " + "-" * 56)
+for i, (nm, r) in enumerate(ordON[:12]):
+    print(f"    {i+1:4d} {r:16.6e}  {nm}")
+gap = ordON[1][1] / max(ordON[0][1], 1e-18)
+print(f"    slowest / second-slowest  =  {gap:.4g}x")
+
+print("\n  THE COMPETITION, swept.  rate(RIM LOOP (x) I_len)  versus  the slowest operator that")
+print("  carries the LENGTH register (any Lambda_x / Lambda_y / Lambda_z factor).")
+print(f"    {'beta':>6s} {'eps':>6s} {'rate(RIM LOOP)':>16s} {'slowest length-carrying op':>27s} {'slower':>10s} {'ratio':>11s}  which length op")
+print("    " + "-" * 116)
 SWEEP = []
 for beta in [0.0, 0.4, 0.8, 1.2]:
     for eps in [0.0, 0.35, 1.0]:
-        rows = sieve(beta, eps, quiet=True, topk=64)
-        rR = named_rate(rows, "RIM LOOP")
-        rL = None
-        for r, nm, ov in rows:
-            if "Lambda" in nm: rL = r; break
-        if rR is None or rL is None:
-            print(f"    {beta:6.2f} {eps:6.2f} {'n/a' if rR is None else f'{rR:16.6e}':>16s} "
-                  f"{'n/a' if rL is None else f'{rL:27.6e}':>27s}")
-            continue
+        rr = own_rates(beta, eps)
+        rR = rr["RIM LOOP (x) I_len"]
+        lam = sorted(((v, k) for k, v in rr.items() if "Lambda" in k))
+        rL, nL_ = lam[0]
         win = "RIM LOOP" if rR < rL else ("LENGTH" if rL < rR else "tie")
-        marg = (max(rR, rL) / max(min(rR, rL), 1e-18))
-        SWEEP.append((beta, eps, rR, rL, win, marg))
-        print(f"    {beta:6.2f} {eps:6.2f} {rR:16.6e} {rL:27.6e} {win:>18s} {marg:12.4g}x")
+        marg = max(rR, rL) / max(min(rR, rL), 1e-18)
+        SWEEP.append((beta, eps, rR, rL, win, marg, nL_))
+        print(f"    {beta:6.2f} {eps:6.2f} {rR:16.6e} {rL:27.6e} {win:>10s} {marg:11.4g}x  {nL_}")
 
-print("\n  AND THE FULL RANKING at the measurement point (beta=0.8, eps=%.2f), slowest first," % EPS)
-print("  identity excluded.  This is the sieve's own answer; nothing was nominated.")
-rows = sieve(0.8, EPS, quiet=True, topk=12)
-print(f"    {'decay rate':>14s}  {'best operator match':<34s} {'overlap':>8s}")
-print("    " + "-" * 62)
-for r, nm, ov in rows: print(f"    {r:14.6e}  {nm:<34s} {ov:8.3f}")
-
-print("\n  DOES THE METRIC CHANGE WHAT THE GAUGE RECORD COSTS?  rate(RIM LOOP) versus beta,")
+print("\n  DOES THE METRIC CHANGE WHAT THE GAUGE RECORD COSTS?  rate(RIM LOOP (x) I_len) versus beta,")
 print("  with the length on a RIM link (inside R's support) and on a CUT link (outside it).")
 print(f"    {'beta':>6s} {'rate(R), length on RIM':>24s} {'rate(R), length on CUT':>24s}")
 print("    " + "-" * 58)
+RSWEEP = []
 for beta in [0.0, 0.4, 0.8, 1.2]:
-    a = named_rate(sieve(beta, EPS, lenlink=LENP, quiet=True, topk=64), "RIM LOOP")
-    b = named_rate(sieve(beta, EPS, lenlink=LENC, quiet=True, topk=64), "RIM LOOP")
-    print(f"    {beta:6.2f} {a if a is None else f'{a:24.6e}'} {b if b is None else f'{b:24.6e}'}")
+    a = own_rates(beta, EPS, lenlink=LENP)["RIM LOOP (x) I_len"]
+    b = own_rates(beta, EPS, lenlink=LENC)["RIM LOOP (x) I_len"]
+    RSWEEP.append((beta, a, b))
+    print(f"    {beta:6.2f} {a:24.6e} {b:24.6e}")
 
 print()
 print("=" * 100)
@@ -615,7 +719,15 @@ print(f"  redundancy (len on RIM)  gauge: I(1)={vR_on[1]:.4f} I(all)={vR_on[-1]:
 print(f"  redundancy (len on RIM)  metric: I(1)={vL_on[1]:.4f} I(all)={vL_on[-1]:.4f} ratio={rL_on:.4f}")
 print(f"  redundancy (len on CUT)  gauge: I(1)={vR_c[1]:.4f} I(all)={vR_c[-1]:.4f} ratio={rR_c:.4f}")
 print(f"  redundancy (len on CUT)  metric: I(1)={vL_c[1]:.4f} I(all)={vL_c[-1]:.4f} ratio={rL_c:.4f}")
-for beta, eps, rR, rL, win, marg in SWEEP:
-    print(f"  sieve beta={beta:.2f} eps={eps:.2f}   rate(RIM)={rR:.6e}   rate(Lambda)={rL:.6e}   "
-          f"slower={win}  ratio={marg:.4g}")
+print(f"  redundancy control beta=0        metric: max_f |I| = {max(abs(x) for x in vL_off):.3e}")
+for beta, a1, a2, b1, b2 in BSWEEP:
+    print(f"  redundancy beta={beta:.2f}  I(R:all)={a1:.6f} I(R:1)={a2:.6f} "
+          f"I(Lam:all)={b1:.6f} I(Lam:1)={b2:.6f}")
+for beta, eps, rR, rL, win, marg, nmL in SWEEP:
+    print(f"  sieve beta={beta:.2f} eps={eps:.2f}   rate(RIM LOOP)={rR:.6e}   "
+          f"rate(slowest length op)={rL:.6e}   slower={win}  ratio={marg:.4g}   [{nmL}]")
+for beta, a, b in RSWEEP:
+    print(f"  rate(RIM LOOP) beta={beta:.2f}   length on RIM={a:.6e}   length on CUT={b:.6e}")
+print(f"  sieve slowest overall at beta=0.8, eps={EPS}:  {ordON[0][0]}  rate={ordON[0][1]:.6e}; "
+      f"second {ordON[1][0]} rate={ordON[1][1]:.6e}; ratio {gap:.4g}x")
 print("=" * 100)

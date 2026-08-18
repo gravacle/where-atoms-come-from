@@ -3380,3 +3380,49 @@ STORAGE and wrong to close the question**, because the holographic claim was nev
 boundary layer of `A` pairs with anything outside, so the rank is the perimeter's. **That is not a
 defect — it is the mechanism.** Holography here is the statement that *the outside touches only the
 edge*, and the arithmetic says so exactly.
+
+---
+
+## W-47 — **THE COMPOSED LAW: FORM SURVIVES, CONSTANT IS OFF BY ~4x**
+
+`LANE_W47_COMBINED/`, sealed. **The first lane in this program that composes measured relations into
+a single prediction and tries to break it.** Every prior lane measured one relation.
+
+**THE COMPOSITION.** EM gives a holonomy on a closed boundary of perimeter `P` (W-27, W-34). Alpha
+gives its decay rate `Gamma = 32 g^4` (W-32) and its readout time `T_read = 0.30 P/tau` (W-37b).
+Capacity gives the boundary law `P/2 - 1` for what escapes (W-46). A record is exportable only if it
+is read before it decays:
+
+> **`X = Gamma · T_read = 9.6 · g⁴ · P / tau  <  1`**
+>
+> **The falsifiable content is that the surviving fraction depends on `X` ALONE** — three parameters
+> must collapse onto one curve.
+
+```
+   X band                        n    mean I/I0     sd
+   X < 0.5   predicted LEGIBLE   16     0.4826    0.2130
+   0.5 - 1.5 transition          15     0.1599    0.1051
+   1.5 - 4.0                     16     0.0305    0.0259
+   X > 4     predicted ILLEGIBLE 17     0.0036    0.0032
+
+   spread at fixed X:  X=0.37 -> 0.394   X=1.0 -> 0.169   X=2.7 -> 0.022   X=20 -> 0.001
+```
+
+**WHAT PASSES.** The surviving fraction falls **130x monotonically** across the `X` bands, and points
+at the same `X` from different `(P, tau)` agree ever more closely as `X` grows — absolute spread
+`0.394 -> 0.001`. **The composition has the right form: readability is gated by the single product
+`Gamma·T_read`, not by `P`, `g` and `tau` separately.**
+
+**WHAT FAILS, AND IT WAS DECLARED IN ADVANCE AS THE WEAKER FAILURE MODE.** Half the readability is
+lost at **`X ~ 0.25`**, not at the predicted `X = 1` — **the constant is off by about a factor of 4.**
+And the RELATIVE spread does not shrink (`sd/mean` runs `0.44, 0.66, 0.85, 0.89`), so the collapse is
+**suggestive, not clean.**
+
+> **VERDICT: the composed law is CONFIRMED IN FORM AND NOT IN CONSTANT.** It is one relation binding
+> EM, alpha and the capacity/boundary law, it makes a prediction, and the prediction is about a
+> quarter right in magnitude. **That is a partial pass and is registered as one.**
+
+**TWO DEFECTS, BOTH CAUGHT BEFORE READING ANYTHING.** v1's decay channel was `P+ - P-`, which **is**
+`R` — W-30a proves such a channel cannot move the record, and indeed `I` was identical to six
+decimals across every `g^2`. v2 compared raw `I` across `n` when bare readability differs by `n`
+independently of decay. **Both are in the lane conventions; the reported numbers are v3.**

@@ -1,15 +1,13 @@
-/Users/bgm/MB Work/where-atoms-come-from/LANE_W44_METRIC_DYNAMICS/w44_site-potential.py:134: RuntimeWarning: divide by zero encountered in scalar divide
-  return 1.0 / d
-/Users/bgm/MB Work/where-atoms-come-from/LANE_W44_METRIC_DYNAMICS/w44_site-potential.py:514: RuntimeWarning: invalid value encountered in divide
-  WV = np.array([newton(V2[RIMV[p]]) for p in range(8)]); WV = WV / WV.max()
 ====================================================================================================
 W-44   METRIC / PROPER TIME AS A DEGREE OF FREEDOM THAT ENTERS THE DYNAMICS
 ====================================================================================================
   carrier: 3x3 patch, Z_2 links, Gauss at every vertex -> gauge dim 16
-  metric : one two-level mass at vertex (0.0, 0.0), sourcing Phi(x)=1/|x-x_mass| as a LAPSE
-  lapse profile over the 4 plaquettes  f_p = [1.     0.4472 0.4472 0.3333]
-  lapse profile over the 12 links      f_k = [1.     0.3333 0.4472 0.2774 0.2425 0.2    1.     0.4472 0.2425 0.3333
- 0.2774 0.2   ]
+  metric : one two-level mass, occupation n in [0,1], at vertex (0.0, 0.0);
+           it sources Phi(x) = 1/(|x-x_mass| + 0.5) and that Phi is the LAPSE multiplying
+           the local Hamiltonian density
+  lapse profile over the 4 plaquettes  f_p = [1.     0.58   0.58   0.4605]
+  lapse profile over the 12 links      f_k = [1.     0.5    0.618  0.4343 0.3904 0.3333 1.     0.618  0.3904 0.5
+ 0.4343 0.3333]
   bath / environment / probe couple ONLY to gauge links. Nothing couples to the mass.
 
 ----------------------------------------------------------------------------------------------------
@@ -25,6 +23,12 @@ W-44   METRIC / PROPER TIME AS A DEGREE OF FREEDOM THAT ENTERS THE DYNAMICS
      SETTLED BY: giving the mass a tunnelling term -eps sigma_x. Then [M,H] != 0 and M must earn its
      rate. EVERY reported sieve number below uses eps > 0. The eps = 0 doubling is printed too, as a
      check that the argument is right rather than a claim.
+     A SECOND forced case, same family: at lambda = 0 the mass factor evolves UNITARILY and
+     independently of both gauge field and bath, so EVERY mass operator has strictly zero decay rate
+     there. So the lambda = 0 sieve necessarily crowns a metric operator, and that crowning means
+     nothing. Only lambda > 0 AND eps > 0 is an informative sieve. Both degenerate cases are run and
+     printed anyway, because a declared forced case that does not come out forced is a broken
+     argument, not a discovery.
 
   AT RISK #2 -- the REDUNDANCY of the metric variable.
      W-43b forced it to ~1 bit by coupling the environment straight to sigma_z^mass. Here the
@@ -48,9 +52,9 @@ W-44   METRIC / PROPER TIME AS A DEGREE OF FREEDOM THAT ENTERS THE DYNAMICS
 ----------------------------------------------------------------------------------------------------
   DOES THE METRIC DO WORK?  (requirement 1, checked directly on the evolution)
 ----------------------------------------------------------------------------------------------------
-    || H(lambda=0.8) - H(lambda=0) ||  = 11.126105
-    T= 1.0   |<psi_gauge(m=+1) | psi_gauge(m=-1)>| = 0.112598   (1.000000 would mean the mass changes nothing)
-    T= 3.0   |<psi_gauge(m=+1) | psi_gauge(m=-1)>| = 0.112997   (1.000000 would mean the mass changes nothing)
+    || H(lambda=1.6) - H(lambda=0) ||  = 17.573369
+    T= 1.0   |<psi_gauge(n=0) | psi_gauge(n=1)>| = 0.154650   (1.000000 would mean the mass changes nothing)
+    T= 3.0   |<psi_gauge(n=0) | psi_gauge(n=1)>| = 0.349409   (1.000000 would mean the mass changes nothing)
 
 ====================================================================================================
   (a) REDUNDANCY.  Holevo information a fragment of a LOCAL environment holds about
@@ -60,37 +64,49 @@ W-44   METRIC / PROPER TIME AS A DEGREE OF FREEDOM THAT ENTERS THE DYNAMICS
 
   SATURATION FIRST (as in W-36): scan the environment coupling until the WHOLE environment
   holds the gauge bit; a fragment profile means nothing before that. Then use the SAME
-  (kappa,T) for the metric readout. lambda = 0.8.
+  (kappa,T) for the metric readout. lambda = 1.6.
       kappa      T   I(gauge:all 5)   I(metric:all 5)
     --------------------------------------------------
-       1.20    6.0         0.486828          0.501947
-       2.00    8.0         0.460750          0.522045
-       3.00   12.0         0.542674          0.509963
-       5.00   12.0         0.497769          0.490482
-       8.00   16.0         0.474277          0.491474
-    -> using kappa=3.0, T=12.0
+       0.60    6.0         0.495063          0.524579
+       1.20    6.0         0.459881          0.582585
+       2.00    8.0         0.507365          0.558528
+       3.00    8.0         0.497159          0.462017
+       3.00   12.0         0.532136          0.465123
+       4.00   10.0         0.560823          0.537160
+       5.00   12.0         0.562954          0.557314
+       6.00   14.0         0.509042          0.591544
+       8.00   16.0         0.538867          0.551947
+      12.00   20.0         0.559418          0.435051
+    -> using kappa=5.0, T=12.0
 
-  METRIC ON  lambda=0.80    (n=5 env qubits on the CUT links, kappa=3.0, T=12.0)
+  METRIC ON  lambda=1.60    (n=5 env qubits on CUT, kappa=5.0, T=12.0)
       |F|            :        0         1         2         3         4         5
-      I(gauge  : F)  : -0.00000   0.00485   0.02420   0.07245   0.20790   0.54267
-      I(metric : F)  : -0.00000   0.00631   0.02359   0.07047   0.19859   0.50996
+      I(gauge  : F)  : -0.00000   0.00259   0.01214   0.04463   0.17164   0.56295
+      I(metric : F)  : -0.00000   0.00502   0.02114   0.07022   0.20349   0.55731
 
-  CONTROL    lambda=0    (n=5 env qubits on the CUT links, kappa=3.0, T=12.0)
+  CONTROL    lambda=0    (n=5 env qubits on CUT, kappa=5.0, T=12.0)
       |F|            :        0         1         2         3         4         5
-      I(gauge  : F)  : -0.00000   0.02045   0.04987   0.11703   0.33109   0.74004
+      I(gauge  : F)  : -0.00000   0.00237   0.01122   0.05818   0.31470   0.78424
       I(metric : F)  : -0.00000  -0.00000  -0.00000  -0.00000  -0.00000  -0.00000
+
+  METRIC ON, env AT the mass    (n=5 env qubits on the 2 links at the mass, kappa=5.0, T=12.0)
+      |F|            :        0         1         2         3         4         5
+      I(gauge  : F)  : -0.00000   0.01052   0.02119   0.03292   0.06223   0.12602
+      I(metric : F)  : -0.00000   0.00053   0.01534   0.08453   0.20228   0.39676
 
   READING. Redundancy = a SINGLE fragment already holds most of the bit.
                       case   record   I(|F|=1)   I(|F|=3)    I(all)  I(1)/I(all)
   --------------------------------------------------------------------------------
-    METRIC ON  lambda=0.80    gauge    0.00485    0.07245   0.54267       0.0089
-    METRIC ON  lambda=0.80   metric    0.00631    0.07047   0.50996       0.0124
-       CONTROL    lambda=0    gauge    0.02045    0.11703   0.74004       0.0276
+    METRIC ON  lambda=1.60    gauge    0.00259    0.04463   0.56295       0.0046
+    METRIC ON  lambda=1.60   metric    0.00502    0.07022   0.55731       0.0090
+       CONTROL    lambda=0    gauge    0.00237    0.05818   0.78424       0.0030
        CONTROL    lambda=0   metric   -0.00000   -0.00000  -0.00000          nan
+  METRIC ON, env AT the mass    gauge    0.01052    0.03292   0.12602       0.0835
+  METRIC ON, env AT the mass   metric    0.00053    0.08453   0.39676       0.0013
 
   CONTROL CHECK -- lambda = 0 must give EXACTLY the no-metric answer:
-      max |I(metric:F)| over all fragment sizes at lambda=0 : 6.564e-14
-      I(gauge:F) at lambda=0 vs the carrier with NO mass factor at all, max difference : 1.692e-14
+      max |I(metric:F)| over all fragment sizes at lambda=0 : 1.021e-13
+      I(gauge:F) at lambda=0 vs the carrier with NO mass factor at all, max difference : 1.066e-14
 
 ====================================================================================================
   (b) SELECTION.  Predictability sieve: eigendecomposition of the Lindblad generator,
@@ -100,33 +116,46 @@ W-44   METRIC / PROPER TIME AS A DEGREE OF FREEDOM THAT ENTERS THE DYNAMICS
 
   REFERENCE. The no-metric sieve on the bare 16-dim carrier, so the lambda=0 run has
   something exact to reproduce.
-      mean decay rate  7.157165e-02   RIM LOOP (all 4)
-      mean decay rate  1.983457e+00   plaquette (1,)
-      mean decay rate  1.983457e+00   plaquette (2,)
-      mean decay rate  1.983836e+00   plaquette (0,)
-      mean decay rate  1.983836e+00   plaquette (3,)
-      margin (2nd / 1st) = 27.71x
+           1/e rate   W-34 mean rate   operator
+       3.185427e-03     7.157165e-02   RIM LOOP (all 4)
+       1.992660e+00     1.983457e+00   plaquette (1,)
+       1.992660e+00     1.983457e+00   plaquette (2,)
+       1.992660e+00     1.983836e+00   plaquette (0,)
+       1.992660e+00     1.983836e+00   plaquette (3,)
+      margin (2nd / 1st), 1/e rate = 625.55x ; W-34 mean rate = 27.71x
+
+  EXACT CONTROL (requirement 6). Two things must hold at lambda = 0 and must FAIL at
+  lambda > 0, or the metric does no work:
+      lambda=0.00   max |spectrum(32-dim) - spectrum(16-dim) repeated x4| = 0.000e+00
+      lambda=1.60   max |spectrum(32-dim) - spectrum(16-dim) repeated x4| = 3.675e+01
+      (the lambda=0 line is the control and must be ~0; the lambda>0 line must not be)
+  and the DECLARED DOUBLING at eps=0: vec(M.X) = (M (x) 1) vec(X) row-major, so the metric
+  degeneracy is exactly the statement that left-multiplication by M commutes with Gdag.
+      lambda=1.60 eps=0.00   || [ Gdag , left-mult by M ] || = 0.000e+00
+      lambda=1.60 eps=0.15   || [ Gdag , left-mult by M ] || = 9.600e+00
 
   FORCED-CASE DEMONSTRATION (eps = 0). The argument above says the whole spectrum must be
   exactly doubled and M must sit at rate 0. If that is what comes out, the argument holds and
   the eps = 0 sieve carries no information about the metric.
 
-  FORCED CASE eps=0   lambda=0.8  eps=0.0  g2=0.01  gamma=0.5  bath on CUT
+  FORCED CASE eps=0   lambda=1.6  eps=0.0  g2=0.01  gamma=0.5  bath on CUT
              rate        |Im|  best operator match
     ------------------------------------------------------------------
-     1.358657e-15  1.0002e-15  identity (x) 1   (overlap 0.735)
-     1.076061e-14  1.0712e-15  identity (x) 1   (overlap 0.744)
-     2.782682e-03  6.0071e-15  RIM LOOP (all 4) (x) 1   (overlap 0.707)
-     4.145525e-03  1.6094e-15  RIM LOOP (all 4) (x) 1   (overlap 0.705)
-     3.998698e-01  2.6551e-15  mixed / no clean match   (overlap 0.003)
-     4.035232e-01  2.9610e-15  mixed / no clean match   (overlap 0.025)
-    lowest mean rates:
-       3.782871e-13   identity (x) sz
-       1.015899e-01   RIM LOOP (all 4) (x) 1
-       1.015899e-01   RIM LOOP (all 4) (x) sz
-       1.835807e+00   RIM LOOP (all 4) (x) sx
-       1.835807e+00   RIM LOOP (all 4) (x) sy
-       1.840313e+00   identity (x) sx
+    -1.414676e-14  9.1362e-17  identity (x) sz   (overlap 0.722)
+     6.070373e-15  9.4010e-15  identity (x) sz   (overlap 0.745)
+     2.683790e-03  3.7559e-15  RIM LOOP (all 4) (x) sz   (overlap 0.707)
+     3.196988e-03  2.1068e-15  RIM LOOP (all 4) (x) sz   (overlap 0.706)
+     5.815036e-01  4.0119e-15  mixed / no clean match   (overlap 0.000)
+     9.848194e-01  9.6216e-15  mixed / no clean match   (overlap 0.002)
+    (eigenbasis reconstruction residual max|sum a_i - 1| = 5.55e-16)
+    ranking of the 63 named operators (lowest = best protected):
+           1/e rate   W-34 mean rate   operator
+       0.000000e+00     3.599248e-13   identity (x) sz
+       2.922954e-03     8.383967e-02   RIM LOOP (all 4) (x) sz
+       2.922954e-03     8.383967e-02   RIM LOOP (all 4) (x) 1
+       1.633319e+00     1.834851e+00   identity (x) sx
+       1.633319e+00     1.834851e+00   identity (x) sy
+       1.633319e+00     1.835132e+00   RIM LOOP (all 4) (x) sx
 
   CONTROL lambda=0 (metric decoupled)   lambda=0.0  eps=0.15  g2=0.01  gamma=0.5  bath on CUT
              rate        |Im|  best operator match
@@ -139,82 +168,153 @@ W-44   METRIC / PROPER TIME AS A DEGREE OF FREEDOM THAT ENTERS THE DYNAMICS
      3.196988e-03  3.0000e-01  RIM LOOP (all 4) (x) sy   (overlap 0.706)
      3.196988e-03  8.3969e-15  RIM LOOP (all 4) (x) sx   (overlap 0.999)
      3.196988e-03  3.0000e-01  RIM LOOP (all 4) (x) sy   (overlap 0.706)
-    ranking of the 63 named operators by mean decay rate (lowest = best protected):
-       2.790962e-13   identity (x) sy
-       2.907983e-13   identity (x) sz
-       3.812343e-13   identity (x) sx
-       7.157165e-02   RIM LOOP (all 4) (x) sz
-       7.157165e-02   RIM LOOP (all 4) (x) sy
-       7.549433e-02   RIM LOOP (all 4) (x) sx
-      margin (2nd / 1st) = 1.042x
+    (eigenbasis reconstruction residual max|sum a_i - 1| = 6.66e-16)
+    ranking of the 63 named operators (lowest = best protected):
+           1/e rate   W-34 mean rate   operator
+       0.000000e+00     2.790962e-13   identity (x) sy
+       0.000000e+00     2.907983e-13   identity (x) sz
+       0.000000e+00     3.812343e-13   identity (x) sx
+       3.185427e-03     7.157165e-02   RIM LOOP (all 4) (x) sz
+       3.185427e-03     7.157165e-02   RIM LOOP (all 4) (x) sy
+       3.185427e-03     7.549433e-02   RIM LOOP (all 4) (x) sx
+       3.185427e-03     7.683053e-02   RIM LOOP (all 4) (x) 1
+       1.992660e+00     1.983895e+00   plaquette (0,) (x) sy
+      margin (2nd / 1st), 1/e rate = infx
 
-  METRIC ON   lambda=0.8  eps=0.15  g2=0.01  gamma=0.5  bath on CUT
+  METRIC ON lambda=1.6   lambda=1.6  eps=0.15  g2=0.01  gamma=0.5  bath on CUT
              rate        |Im|  best operator match
     ------------------------------------------------------------------
-    -5.446078e-15  3.0267e-15  identity (x) 1   (overlap 1.000)
-     3.436157e-03  1.9979e-15  RIM LOOP (all 4) (x) 1   (overlap 0.998)
-     2.302955e-02  1.4985e-15  identity (x) sz   (overlap 0.803)
-     3.420662e-02  1.6489e-14  RIM LOOP (all 4) (x) sz   (overlap 0.797)
-     3.959812e-01  1.8045e-14  mixed / no clean match   (overlap 0.003)
-     3.995411e-01  8.5651e-15  mixed / no clean match   (overlap 0.027)
-     5.818917e-01  1.8474e-15  mixed / no clean match   (overlap 0.000)
-     6.234404e-01  4.4088e-15  mixed / no clean match   (overlap 0.000)
-    ranking of the 63 named operators by mean decay rate (lowest = best protected):
-       1.752825e-01   RIM LOOP (all 4) (x) 1
-       4.407913e-01   identity (x) sz
-       4.917545e-01   RIM LOOP (all 4) (x) sz
-       1.826155e+00   RIM LOOP (all 4) (x) sy
-       1.828517e+00   identity (x) sy
-       1.853597e+00   RIM LOOP (all 4) (x) sx
-      margin (2nd / 1st) = 2.515x
+     1.313807e-14  7.0849e-15  identity (x) 1   (overlap 1.000)
+     2.936955e-03  6.5259e-16  RIM LOOP (all 4) (x) 1   (overlap 0.999)
+     1.462232e-02  1.3934e-14  identity (x) sz   (overlap 0.736)
+     4.676604e-02  6.2431e-15  RIM LOOP (all 4) (x) sz   (overlap 0.721)
+     6.188542e-01  1.8903e-15  mixed / no clean match   (overlap 0.000)
+     9.872852e-01  1.1883e-15  mixed / no clean match   (overlap 0.002)
+     9.873122e-01  5.6081e-15  mixed / no clean match   (overlap 0.001)
+     9.918285e-01  5.6749e-15  mixed / no clean match   (overlap 0.003)
+    (eigenbasis reconstruction residual max|sum a_i - 1| = 4.44e-16)
+    ranking of the 63 named operators (lowest = best protected):
+           1/e rate   W-34 mean rate   operator
+       2.938705e-03     1.858979e-01   RIM LOOP (all 4) (x) 1
+       2.508803e-02     4.243002e-01   identity (x) sz
+       2.823690e-02     4.918233e-01   RIM LOOP (all 4) (x) sz
+       1.598581e+00     1.804778e+00   identity (x) sy
+       1.598581e+00     1.807694e+00   RIM LOOP (all 4) (x) sy
+       1.659867e+00     1.864362e+00   RIM LOOP (all 4) (x) sx
+       1.659867e+00     1.866116e+00   identity (x) sx
+       1.659867e+00     1.877451e+00   plaquette (0,) (x) sx
+      margin (2nd / 1st), 1/e rate = 8.537x
 
-  METRIC ON, stronger   lambda=1.6  eps=0.15  g2=0.01  gamma=0.5  bath on CUT
+  METRIC ON lambda=3.2   lambda=3.2  eps=0.15  g2=0.01  gamma=0.5  bath on CUT
              rate        |Im|  best operator match
     ------------------------------------------------------------------
-     1.564547e-15  5.9658e-15  identity (x) 1   (overlap 1.000)
-     4.617058e-03  4.4938e-15  RIM LOOP (all 4) (x) 1   (overlap 0.964)
-     9.818763e-03  4.8590e-15  identity (x) sz   (overlap 0.997)
-     1.599576e-02  2.9289e-15  RIM LOOP (all 4) (x) sz   (overlap 0.957)
-     5.829131e-01  3.8947e-15  mixed / no clean match   (overlap 0.000)
-     5.938634e-01  6.8517e-15  mixed / no clean match   (overlap 0.000)
-     1.001199e+00  2.1849e+00  mixed / no clean match   (overlap 0.010)
-     1.001199e+00  2.1849e+00  mixed / no clean match   (overlap 0.010)
-    ranking of the 63 named operators by mean decay rate (lowest = best protected):
-       1.731100e-01   RIM LOOP (all 4) (x) 1
-       4.276299e-01   identity (x) sz
-       4.569237e-01   RIM LOOP (all 4) (x) sz
-       1.951954e+00   plaquette (2,) (x) 1
-       1.951954e+00   plaquette (1,) (x) 1
-       1.953673e+00   plaquette (3,) (x) 1
-      margin (2nd / 1st) = 2.470x
+     1.425510e-14  9.6701e-15  identity (x) 1   (overlap 1.000)
+     2.828779e-03  1.6718e-14  RIM LOOP (all 4) (x) 1   (overlap 0.995)
+     5.143209e-03  8.6507e-15  identity (x) sz   (overlap 0.783)
+     1.720541e-02  9.4345e-16  RIM LOOP (all 4) (x) sz   (overlap 0.781)
+     5.917150e-01  4.2968e-15  mixed / no clean match   (overlap 0.000)
+     9.856835e-01  7.9141e-15  mixed / no clean match   (overlap 0.002)
+     9.857180e-01  2.6570e-15  mixed / no clean match   (overlap 0.001)
+     9.877458e-01  6.2231e-15  mixed / no clean match   (overlap 0.002)
+    (eigenbasis reconstruction residual max|sum a_i - 1| = 6.69e-16)
+    ranking of the 63 named operators (lowest = best protected):
+           1/e rate   W-34 mean rate   operator
+       2.845453e-03     1.545623e-01   RIM LOOP (all 4) (x) 1
+       8.028509e-03     4.085721e-01   identity (x) sz
+       1.108362e-02     4.626889e-01   RIM LOOP (all 4) (x) sz
+       1.981979e+00     1.982128e+00   identity (x) sy
+       1.981979e+00     1.984422e+00   RIM LOOP (all 4) (x) sy
+       1.981979e+00     1.986859e+00   plaquette (0,) (x) sx
+       1.981979e+00     1.989779e+00   3-plaquette loop (1, 2, 3) (x) sx
+       1.981979e+00     1.993899e+00   RIM LOOP (all 4) (x) sx
+      margin (2nd / 1st), 1/e rate = 2.822x
 
-  SIDE BY SIDE -- where the two records sit in the ranking, run by run.
-                                   run                     winner  rate(RIM(x)1)   rate(1(x)sz)    margin
+  COUPLING SCAN. The winner is allowed to change with lambda; print the scan rather than
+  one chosen point.  eps = 0.15, g2 = 0.01, bath on the cut, 1/e rates.
+    lambda                     winner  rate(RIM(x)1)   rate(1(x)sz)    margin
+  ------------------------------------------------------------------------------
+      0.00            identity (x) sy   3.185427e-03   0.000000e+00       inf
+      0.40     RIM LOOP (all 4) (x) 1   3.100967e-03   2.684167e-01    86.559
+      0.80     RIM LOOP (all 4) (x) 1   3.018746e-03   8.317127e-02    27.552
+      1.20     RIM LOOP (all 4) (x) 1   2.970464e-03   3.961557e-02    13.336
+      1.60     RIM LOOP (all 4) (x) 1   2.938705e-03   2.508803e-02     8.537
+      2.40     RIM LOOP (all 4) (x) 1   2.876203e-03   1.309300e-02     4.552
+      3.20     RIM LOOP (all 4) (x) 1   2.845453e-03   8.028509e-03     2.822
+      4.80     RIM LOOP (all 4) (x) 1   2.784934e-03   3.928240e-03     1.411
+      6.40            identity (x) sz   2.755159e-03   2.357531e-03     1.169
+      9.60            identity (x) sz   2.725703e-03   1.141176e-03     2.389
+     14.40            identity (x) sz   2.696561e-03   5.435570e-04     4.961
+
+  The two rates cross inside the scan. Bisect on rate(1(x)sz) - rate(RIM(x)1), 12 steps,
+  at two values of the mass tunnelling eps, so the crossing is not read off one parameter.
+  (the 1/e rate is read off a log time grid of 3000 points, so lambda* carries that resolution)
+       eps    lambda*   gap at lambda*
+    ------------------------------------
+      0.15     5.8444        0.000e+00
+      0.30   no sign change in [2.4, 9.6]:  gap(2.4) = +5.036e-02, gap(9.6) = +1.442e-03
+
+  SIDE BY SIDE -- where the two records sit, run by run.  (1/e rates)
+                                   run                     winner       RIM(x)1        1(x)sz    margin
   --------------------------------------------------------------------------------------------------------
-   CONTROL lambda=0 (metric decoupled)            identity (x) sy   7.683053e-02   2.907983e-13     1.042
-                             METRIC ON     RIM LOOP (all 4) (x) 1   1.752825e-01   4.407913e-01     2.515
-                   METRIC ON, stronger     RIM LOOP (all 4) (x) 1   1.731100e-01   4.276299e-01     2.470
+   CONTROL lambda=0 (metric decoupled)            identity (x) sy  3.185427e-03  0.000000e+00       inf
+                  METRIC ON lambda=1.6     RIM LOOP (all 4) (x) 1  2.938705e-03  2.508803e-02     8.537
+                  METRIC ON lambda=3.2     RIM LOOP (all 4) (x) 1  2.845453e-03  8.028509e-03     2.822
 
 ====================================================================================================
   (c) TRANSPORT.  A probe charge hops the 8 rim vertices (W-37's construction) while the
-      SAME mass sources a diagonal site potential V*w_v*sigma_z on the probe's position.
+      SAME mass sources a diagonal site potential V*w_v*n on the probe's position, n being
+      the mass OCCUPATION. The signed-mass coupling V*w_v*sigma_z is run beside it.
       Route: exact unitary evolution, dim 128 x 2 = 256.
 ====================================================================================================
       probe ring dim 128; with the mass qubit, 256
-      site-potential profile over the 8 rim vertices w_v = [nan  0.  0.  0.  0.  0.  0.  0.]
+      site-potential profile over the 8 rim vertices w_v = [1.     0.3333 0.2    0.1827 0.1502 0.1827 0.2    0.3333]
     operators:
     R_gauge (ring) (x) 1               ||O||_F=  16.0000  ||O||_2= 1.0000  unitarity defect= 0.00e+00  distinct eigenvalues=2
     M_metric (ring) = 1 (x) sigma_z    ||O||_F=  16.0000  ||O||_2= 1.0000  unitarity defect= 0.00e+00  distinct eigenvalues=2
-    ||[R_gauge, H(tau=1,V=1)]|| = nan   ||[M_metric, H(tau=1,V=1)]|| = nan
+    coup= n   ||[R_gauge, H(tau=1,V=1)]|| = 0.00e+00   ||[M_metric, H]|| = 0.00e+00
+    coup=sz   ||[R_gauge, H(tau=1,V=1)]|| = 0.00e+00   ||[M_metric, H]|| = 0.00e+00
+    probe position rdm is exactly diagonal:  max |offdiag| at T=8 = 0.00e+00
 
-  I(record : probe position) in bits.  tau = 1.0, V = 1.5
-       T   I(gauge:probe)   I(metric:probe)         ring
-  --------------------------------------------------------
-Traceback (most recent call last):
-  File "/Users/bgm/MB Work/where-atoms-come-from/LANE_W44_METRIC_DYNAMICS/w44_site-potential.py", line 560, in <module>
-    print(f"  {T:6.2f} {info_probe(psi, RT2):16.6f} {info_probe(psi, MT2):17.6f}   {'closed':>10s}")
-  File "/Users/bgm/MB Work/where-atoms-come-from/LANE_W44_METRIC_DYNAMICS/w44_site-potential.py", line 552, in info_probe
-    return vn(avg) - sum(p * vn(m) for p, m in br if m is not None)
-  File "/Users/bgm/MB Work/where-atoms-come-from/LANE_W44_METRIC_DYNAMICS/w44_site-potential.py", line 57, in vn
-    ev = np.linalg.eigvalsh((rho + rho.conj().T) / 2)
-AttributeError: 'int' object has no attribute 'conj'
+  I(record : probe position) in bits.  tau = 1.0, V = 1.5, closed ring.
+       T   I(gauge:probe)   I(metric:probe)   I(metric:probe)
+                          mass OCCUPATION n    signed mass sz
+  ------------------------------------------------------------
+    0.00         0.000000          0.000000         3.203e-16
+    1.00         0.002555          0.012557         4.441e-16
+    2.00         0.245241          0.046402         1.776e-15
+    4.00         0.139510          0.041691         3.109e-15
+    6.00         0.348547          0.203396         8.438e-15
+    8.00         0.085188          0.129435         5.329e-15
+   12.00         0.228034          0.148304         1.599e-14
+   20.00         0.223927          0.116467        -1.554e-14
+
+  WHY THE SIGNED-MASS COLUMN IS EXACTLY ZERO. Sigma = (-1)^(probe position) is unitary and
+  gives Sigma H_hop Sigma = -H_hop while leaving the potential alone, and H_hop and the
+  potential are both REAL in this basis. So H(+V) and H(-V) are related by an antiunitary
+  that fixes every probe position, and a probe launched from ONE site cannot see the sign of
+  a potential -- only its magnitude. A potential is even under path reversal; the reversal
+  flips the sign of the mass. Checks:
+    || Sigma H_hop Sigma + H_hop ||     = 0.00e+00
+    max |Im H_hop| , max |Im POT|       = 0.00e+00 , 0.00e+00
+    the occupation coupling has no such symmetry: n = (1-sz)/2 is not traceless, so the two
+    branches are 'potential present' and 'potential absent', not '+V' and '-V'.
+
+  CONTROL A -- V = 0. The metric reading must be exactly 0; the gauge reading must survive.
+    T=  4.0   I(gauge:probe) = 0.476052   I(metric:probe) = -3.553e-15
+    T= 12.0   I(gauge:probe) = 0.829907   I(metric:probe) = -6.217e-15
+
+  CONTROL B -- tau = 0, no transport at all. Both must be 0.
+    T=  4.0   I(gauge:probe) = 2.322e-15   I(metric:probe) = 2.242e-15
+    T= 12.0   I(gauge:probe) = -2.483e-15   I(metric:probe) = -2.563e-15
+
+  CONTROL C -- THE DECISIVE ONE. Cut the ring: remove ONE hop, keeping every local
+  interaction and the potential, removing only the closed path.
+  A gauge record needs the topology. A potential does not. This separates them or it does not.
+    T=  4.0   I(gauge:probe) = 0.000e+00   I(metric:probe) = 0.274076
+    T=  8.0   I(gauge:probe) = -8.882e-16   I(metric:probe) = 0.225093
+    T= 12.0   I(gauge:probe) = -7.105e-15   I(metric:probe) = 0.280984
+    T= 20.0   I(gauge:probe) = -1.865e-14   I(metric:probe) = 0.156417
+
+====================================================================================================
+  END OF NUMBERS.
+====================================================================================================
