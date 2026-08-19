@@ -6871,3 +6871,51 @@ own eigenbasis. **Treating `H` as a generic generator is what sent the whole com
 critical path.
 
 **`validate_model.py` still passes 12/12 after every step.**
+
+---
+
+## T-4 DONE — **THE MODEL NOW COMPUTES FORMATION**
+
+`model/record_model.py`: `Environment` (a qubit bath at inverse temperature β, with per-qubit probes)
+and `RecordModel.formation(record, coupling, env, λ, t)`, returning `χ(record : bath)` after unitary
+evolution from a product state. Fragments are supported for redundancy (F-21).
+
+| check | model | target | |
+|---|---|---|---|
+| F-20, `χ` at `t=1`, coupling `Z̄` | **0.97527192** | 0.97527192 | **MATCH** |
+| O-18, plaquettes — gauge-invariant, local | **0.00000000** | 0.00000000 | **MATCH** |
+| O-18, `Σ Z_l` — not gauge-invariant, local | **0.21703158** | 0.21703158 | **MATCH** |
+| O-18, `Z̄` — gauge-invariant, non-local | **0.90811968** | 0.90811968 | **MATCH** |
+
+**A REAL API DEFECT, CAUGHT BY THE THIRD ROW.** My first `formation` assumed a **product** coupling
+`A ⊗ probe`. **The lanes distribute each system term to a SPECIFIC bath qubit** — `Σ_l Z_l ⊗ X_{l mod 3}`
+— and the product ansatz silently returned `0.10846460` against `0.21703158`. **Not a tolerance
+question: a different physical setup.** `formation` now accepts a product coupling, a **distributed**
+list of `(A_i, j)` pairs, or a full interaction operator.
+
+---
+
+## **G-16 IS WRONG AS REGISTERED — NECESSARY, NOT SUFFICIENT**
+
+**G-16 said: `χ > 0` iff the coupling fails to commute with the record's CONJUGATE.** It was validated
+on **four weight-2 couplings**, where the distinction cannot arise. **The model, asked the same
+question on every cycle of the carrier, found eight counterexamples.**
+
+| coupling | `‖[A, X̄]‖` | component along `Z̄` on the code space | `χ` |
+|---|---|---|---|
+| `[0,2]`, `[4,6]` | 32.0 | **1.000** | **0.90811968** |
+| `[3,7]`, `[1,5]` | 0.0 | 0.000 | 0.00000000 |
+| **`[3,4,6,7]`, `[2,3,4,5]`, `[0,3,5,6]` …** | **32.0** | **0.000** | **0.00000000** |
+
+**The last row anticommutes with the writer and gives ZERO.** The reason is exact: `Z̄₂` **commutes**
+with `X̄` (measured `0.0`), so **`Z̄·Z̄₂` anticommutes with `X̄`** (measured `32.0`) while being a
+**different logical**. The bath learns *that* logical, which in a maximally mixed code space says
+nothing about `Z̄`.
+
+> ### **THE CORRECT CRITERION: a coupling opens a channel to a record iff ITS COMPRESSION ONTO THE
+> ### CODE SPACE HAS A NON-ZERO COMPONENT ALONG THAT RECORD.** Anticommuting with the writer is
+> ### implied by this and does not imply it.
+
+**THIS IS THE SECOND TIME TODAY A ROW REGISTERED AS PROVED WAS VALIDATED ONLY ON THE CASES IT WAS
+DERIVED FROM** — the first was F-25's `λ^{2d}`, which PF-6 corrected to `λ^{2n*}`. **Both were caught
+by testing outside the fitted set, which is what the model exists for.**

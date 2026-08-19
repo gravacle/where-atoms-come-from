@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 78 | 2 | 9 | 1 | 20 | 3 | 6 | 7 | 3 | 3 |
+| 78 | 2 | 10 | 1 | 20 | 3 | 6 | 7 | 3 | 3 |
 
-**132 rows.**
+**133 rows.**
 
 ---
 
@@ -62,6 +62,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **D-8** | A CHECK THAT CANNOT FAIL IS NOT A CHECK — and A COMPUTED VERDICT IS NOT A CHECK UNLESS THE NOISE FLOOR IS MEASURED ALONGSIDE IT. check(..., True) let an impossible table through; a log-log slope fitted to a 1e-15 column announced a false verdict. TELL: an expected value that is a literal, or a fit with no noise floor beside it | **PROVED** | O-4 lane: 103 real checks + 5 tautologies out of a reported 108 | — | — |
 | **D-9** | A RESULT IS DESCRIBED BY ITS MECHANISM, NEVER RANKED AGAINST AN EXTERNAL STANDARD. TELL: weaker, stronger, only, merely, falls short of, or any comparison to a claim the program never made. This is D-1 applied to framing rather than to physics | **PROVED** | the registrar graded the arrow against 'time has a direction', a question the charter never posed | — | — |
 | **D-10** | A VERIFICATION WITH NO FAILING BRANCH IS AN INSTRUMENT CHECK, NOT A RESULT. 'threshold = d' was verified on six codes, and threshold = d IS the definition of d — the test had no branch on which it could come out otherwise. TELL: a verification whose negation would be a contradiction in terms | **PROVED** | PF-6 adjudication; F-24 withdrawn under it | — | — |
+| **D-11** | A CRITERION VALIDATED ONLY ON THE CASES IT WAS DERIVED FROM IS NOT VALIDATED. G-16 was fitted on four weight-2 couplings and failed on eight weight-4 ones; F-25's lambda^2d was fitted on one coupling class and is really lambda^2n*. TELL: a criterion whose test set is the set that suggested it | **PROVED** | two instances in one day, both caught by testing outside the fitted set | — | — |
 
 ## A. THE THREE ROLES — the charter's question
 
@@ -118,7 +119,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **G-13** | ERRATUM: THE WRITER IS NOT POINCARE DUALITY. The pairing H_k x H^k -> F_2 is perfect for ANY complex over a field (universal coefficients). R2 needs no manifold, no orientability, no duality | **PROVED** | G-6 adjudication; Thm B result stands, its stated source was too strong | — | a complex over a field with a non-perfect evaluation pairing |
 | **G-14** | GAMMA IS A REQUIREMENT ON EM'S COMPLEX, NOT AN INGREDIENT BESIDE IT. The carrier supplies the cells, EM supplies the maps, and Gamma is the non-triviality of the homology of the pair. This does NOT dissolve Gamma into EM: G-6 (non-manifold complexes) and G-11 (protection needs something metric) keep R1-R3 distinct | **PROVED** | G-9, G-4, A-EM consolidation | — | a record whose homology is not that of the gauge complex |
 | **G-15** | THE CONDITION RESTATED IN CLAUSE (v)'s OWN BINARY TERMS: a length-2 F_2 complex in which no CONTRACTIBLE operation reaches a non-trivial class. No growth requirement — 'd must scale with n' is imported from asymptotic good-code-family theory, not from the anchor | **PROVED** | import audit finding 2; replaces G-12 | — | a contractible operation that moves a record |
-| **G-16** | THE INTERSECTION FORM SELECTS THE CHANNEL. chi > 0 IFF the coupling's cycle pairs ODDLY with the record's conjugate. H_1 alone does not decide it — all four tested couplings are non-boundaries and chi still splits 0.908/0.000. This is the first result in which the SECOND half of Gamma = (H_1, <,>) does the work | **PROVED** | LANE_O20_HOMOLOGY o20b, four for four; boundaries all give exactly 0 | — | a coupling pairing evenly with the conjugate that forms a record |
+| **G-16** | A COUPLING OPENS A CHANNEL TO A RECORD IFF ITS COMPRESSION ONTO THE CODE SPACE HAS A NON-ZERO COMPONENT ALONG THAT RECORD. The earlier form — 'iff it fails to commute with the record's conjugate' — is NECESSARY BUT NOT SUFFICIENT: Zbar*Zbar2 anticommutes with Xbar (32.0) yet gives chi = 0, being a different logical | **PARTIAL** | corrected: the anticommutation form was validated on four weight-2 couplings only; eight weight-4 counterexamples found by the model. Full-cycle verification of the corrected criterion in progress | — | a coupling pairing evenly with the conjugate that forms a record |
 
 ## D. OBSTRUCTIONS — solvable here
 

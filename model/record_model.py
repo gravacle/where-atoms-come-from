@@ -225,6 +225,54 @@ def build_writer(R, es, tol=TOL):
     return U
 
 # ---------------------------------------------------------------- the model
+def _vN(r):
+    e = np.linalg.eigvalsh(r); e = e[e > 1e-13]
+    return float(-(e * np.log2(e)).sum())
+
+class Environment:
+    """A bath of qubits at inverse temperature beta. `probe` is the bath operator the system
+       couples through."""
+    def __init__(self, nq=3, energies=(1.0, 1.4, 0.7), beta=2.0):
+        I2 = np.eye(2)
+        Xb = np.array([[0, 1], [1, 0]], dtype=complex)
+        Zb = np.array([[1, 0], [0, -1]], dtype=complex)
+        def bop(j, P):
+            M = np.array([[1]], dtype=complex)
+            for k in range(nq): M = np.kron(M, P if k == j else I2)
+            return M
+        self.nq, self.beta, self.dim = nq, beta, 2 ** nq
+        self.HB = sum(energies[j] * bop(j, Zb) for j in range(nq))
+        self.probe = sum(bop(j, Xb) for j in range(nq))
+        self.site = [bop(j, Xb) for j in range(nq)]     # per-qubit probes, for DISTRIBUTED couplings
+
+    def thermal(self):
+        w, V = np.linalg.eigh(self.HB)
+        p = np.exp(-self.beta * w); p /= p.sum()
+        return (V * p) @ V.conj().T
+
+    def _trace_system(self, r, nS):
+        return r.reshape(nS, self.dim, nS, self.dim).trace(axis1=0, axis2=2)
+
+    def _fragment(self, rB, keep):
+        t = rB.reshape([2] * self.nq + [2] * self.nq)
+        for j in reversed([j for j in range(self.nq) if j not in keep]):
+            t = np.trace(t, axis1=j, axis2=j + t.ndim // 2)
+        d = 2 ** len(keep)
+        return t.reshape(d, d)
+
+    def holevo(self, r, R, nS, fragment=None):
+        """chi(R : bath) -- how much the bath holds about the +-1 observable R."""
+        out = []
+        for s in (+1, -1):
+            P = np.kron((np.eye(nS) + s * R) / 2, np.eye(self.dim))
+            blk = P @ r @ P; p = np.real(np.trace(blk))
+            if p < 1e-12: continue
+            rB = self._trace_system(blk / p, nS)
+            out.append((p, self._fragment(rB, fragment) if fragment is not None else rB))
+        if len(out) < 2: return 0.0
+        av = sum(p * rb for p, rb in out)
+        return max(_vN(av) - sum(p * _vN(rb) for p, rb in out), 0.0)
+
 class RecordModel:
     def __init__(self, H, Ls=(), seed=0):
         self.H = np.asarray(H, dtype=complex); self.Ls = [np.asarray(L, dtype=complex) for L in Ls]
@@ -359,6 +407,63 @@ class RecordModel:
             for j in range(m):
                 comm[i, j] = np.linalg.norm(fam[i] @ fam[j] - fam[j] @ fam[i]) < TOL
         return fam, comm, self.independently_writable(fam)
+
+    # ------------------------------------------------------------ FORMATION (T-4)
+    def ground_space(self, tol=1e-9):
+        """projector onto H's lowest eigenspace, and its dimension"""
+        w, V = np.linalg.eigh(self.H)
+        k = int(np.sum(np.abs(w - w[0]) < tol))
+        Q = V[:, :k]
+        return Q @ Q.conj().T, k
+
+    def formation(self, record, coupling, env, lam=0.8, t=4.0, state0=None, fragment=None):
+        """chi(record : environment) after evolving a PRODUCT state under
+               H_tot = H (x) I  +  I (x) H_B  +  lam * coupling (x) env.probe
+           Formation is the environment coming to hold information about the record; the
+           record's VALUE need not change, and under a commuting coupling it does not.
+           `fragment` restricts the readout to a subset of bath qubits (redundancy, F-21)."""
+        nS, nB = self.n, env.dim
+        if state0 is None:
+            Pg, k = self.ground_space(); state0 = Pg / k
+        # A coupling may be given three ways, and the third matters: the lanes distribute each
+        # system term to a SPECIFIC bath qubit rather than to the sum of them, and a product
+        # ansatz A (x) probe silently gives a different number.
+        if isinstance(coupling, np.ndarray) and coupling.shape[0] == nS * nB:
+            HINT = coupling                                          # full interaction operator
+        elif isinstance(coupling, (list, tuple)):
+            HINT = sum(np.kron(A, env.site[j % env.nq]) for A, j in coupling)   # distributed
+        else:
+            HINT = np.kron(coupling, env.probe)                      # product, A (x) probe
+        Ht = np.kron(self.H, np.eye(nB)) + np.kron(np.eye(nS), env.HB) + lam * HINT
+        w, U = np.linalg.eigh(Ht)
+        r0 = np.kron(state0, env.thermal())
+        Uc = U.conj().T @ r0 @ U
+        ph = np.exp(-1j * w * t)
+        r = U @ (ph[:, None] * Uc * ph.conj()[None, :]) @ U.conj().T
+        return env.holevo(r, record, nS, fragment=fragment)
+
+    def channel(self, record, coupling, tol=1e-9):
+        """DOES THIS COUPLING OPEN A CHANNEL TO THIS RECORD?
+
+           G-16 as first registered said: iff the coupling fails to commute with the record's
+           CONJUGATE. THAT IS NECESSARY AND NOT SUFFICIENT, and it was validated only on
+           weight-2 couplings where the distinction cannot arise. A coupling can anticommute
+           with the writer and still be a DIFFERENT logical -- Zbar*Zbar2 anticommutes with
+           Xbar but is not Zbar -- and the bath then learns that other logical, which in a
+           maximally mixed code space says nothing about this record.
+
+           THE CRITERION IS WHAT THE COUPLING DOES ON THE CODE SPACE: it opens a channel iff
+           its compression has a non-zero component along the record itself."""
+        Pg, k = self.ground_space()
+        M = Pg @ coupling @ Pg
+        Rc = Pg @ record @ Pg
+        nrm = np.real(np.trace(Rc.conj().T @ Rc))
+        if nrm < tol: return dict(component=0.0, opens_channel=False, identity_part=0.0, residual=0.0)
+        a = np.trace(Rc.conj().T @ M) / nrm
+        b = np.trace(M) / k
+        resid = float(np.linalg.norm(M - a * Rc - b * Pg))
+        return dict(component=float(abs(a)), opens_channel=bool(abs(a) > tol),
+                    identity_part=float(abs(b)), residual=resid)
 
     def protection(self, regions):
         """CLAUSE (v). regions = list of projector-lists defining what 'contractible' means.
