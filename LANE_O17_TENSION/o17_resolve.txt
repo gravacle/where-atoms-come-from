@@ -1,0 +1,21 @@
+==============================================================================================
+O-17  DID THE TWO ARMS USE DIFFERENT COUPLING CLASSES?
+==============================================================================================
+  carrier [[5,1,3]], dim 32, code space 2, d = 3
+  SELF-CHECK ||[Zbar,H0]|| = 0.0e+00  ||{Zbar,Xbar}|| = 0.0e+00
+
+1.  DOES CLAUSE (ii) HOLD?   [L_k, R] = 0 for every Lindblad operator
+  environment                          max ||[L_k, Zbar]||   clause (ii)
+  PF-5's set: single-site {Z}                       0.0000         HOLDS
+  O-16's set: single-site {X,Y,Z}                  11.3137      VIOLATED
+
+2.  DOES A RECORD EXIST AT ALL?   dim of the HERMITIAN commutant; 1 = scalars only = no record
+  environment                          dim A-prime   dim Herm(A-prime)   record possible?
+  no environment (bare code)                   280                 280                yes
+  single-site {Z}                                2                   2                yes
+  single-site {X,Y,Z}                            1                   1 NO -- scalars only
+
+3.  READ
+    If {X,Y,Z} violates clause (ii) AND leaves only scalars in the commutant, then O-16
+    measured the decay of an object that is NOT A RECORD for that environment. O-17 is then
+    two arms run on two different (H,{L_k}) pairs, only one of which has a record at all.

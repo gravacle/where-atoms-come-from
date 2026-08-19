@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 71 | 2 | 9 | 1 | 10 | 3 | 6 | 7 | 3 | 3 |
+| 73 | 2 | 9 | 1 | 11 | 3 | 6 | 7 | 3 | 3 |
 
-**115 rows.**
+**118 rows.**
 
 ---
 
@@ -80,6 +80,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-14** | THE RECORD-COUNT LAW FROM THE CLAUSES ALONE: k = min over eigenspaces of v2(m_E), the 2-adic valuation of the multiplicities. Derives the gauge result without topology — toric ground multiplicity 4 gives k = v2(4) = 2 = 2g, so the index law G-7 is a CONSEQUENCE on that carrier | **PARTIAL** | FALSE with noise present: H = J^2 with L = {Jx,Jy,Jz} at n=3 has multiplicities [4,4], min v2 = 2, and the model returns k = 0. Holds only for EMPTY L; the general statement is in terms of A-prime's minimal projections | — | a spectrum whose record count differs from min_E v2(m_E) |
 | **C-15** | FOUR OF THE FIVE CLAUSES ARE CARRIER-FREE. Clauses (i)-(iv) are computable from (H,{L_k}) alone; clause (v) REQUIRES a locality structure that is carrier data. Any claim resting on (v) inherits a carrier — now enforced in code, not remembered | **PROVED** | model/record_model.py raises rather than supplying a default locality | — | a derivation of clause (v) from (H,{L_k}) alone |
 | **C-16** | THE BALANCE LEMMA IS CARRIER-FREE: clause (iv) under DEF-A <=> Tr(P_E R) = 0 on every eigenspace, verified through the model on nine spectra with an admissible writer built and checked for every record | **PROVED** | LANE_PF3_ADMISSIBLE2 part A; control: an unbalanced involution has best \|\|U-dag R U + R\|\| = 2.0000 over 4000 unitaries, the proved bound | — | a balanced record with no admissible writer, or an unbalanced one with a writer |
+| **C-17** | CLAUSE (ii) IS A CONDITION ON THE ENVIRONMENT, NOT ON THE RECORD. A record exists only where the couplings commute with it; generic single-site noise leaves the Hermitian commutant at dimension 1 and admits none | **PROVED** | LANE_O17_TENSION on [[5,1,3]]; confirms O-1's 400/400 on a second carrier by an independent route | — | a record under a coupling set that does not commute with it |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 
@@ -121,7 +122,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-14** | A SECOND VALID CARRIER FOR CLAUSE (v). PF-3B needs a non-manifold with BOTH systole and cosystole >= 2. The bouquet family has cosystole 1 and is disqualified | **OPEN** | created by PF-3 part B | — | — |
 | **O-15** | THE BATH IS SMALL AND chi(t) RECURS (0.975 at t=1, 0.787 at t=2, 0.908 at t=4). A macroscopic environment would not recur on any relevant scale, but that is ASSERTED here, not measured. Redundancy is also UNEVEN across fragments | **OPEN** | PF-2 limits, stated in the result | — | — |
 | **O-16** | THE DISSIPATIVE ARM IS UNTESTED. Every arm run so far is closed unitary evolution with a small bath. The one place amplitudes and rates need not stand in the squared relation is a genuinely dissipative (Markovian/Lindblad) bath | **PROVED** | decay exponent 2.0000 on both d=3 codes, independent of d; static splitting exponent = d (2.9979, 2.9835). They differ | — | — |
-| **O-17** | THE RECORD IS DESTROYED AT ORDER 2 AND RECORDED AT ORDER 2n*. For n* > 1 an ordinary dissipative environment erases it faster than it writes it. The two numbers come from different arms (unitary-with-small-bath vs Lindblad), so this is a TENSION to resolve, not yet a contradiction — and it is aimed straight at the formation account | **OPEN** | PF-5 measured 9.9966; O-16 measured 2.0000 | — | — |
+| **O-17** | THE RECORD IS DESTROYED AT ORDER 2 AND RECORDED AT ORDER 2n*. For n* > 1 an ordinary dissipative environment erases it faster than it writes it. The two numbers come from different arms (unitary-with-small-bath vs Lindblad), so this is a TENSION to resolve, not yet a contradiction — and it is aimed straight at the formation account | **PROVED** | resolved: the arms ran on two different (H,{L_k}) pairs. O-16's {X,Y,Z} violates clause (ii) at 11.3137 and its Hermitian commutant is dimension 1 — scalars only, no record exists | — | — |
+| **O-18** | THE FORMATION STORY REQUIRES STRUCTURED NOISE. The environment that forms a record must be one for which the record exists, so its couplings must commute with it — and the generic environment does not. Nothing in the program says why the world's noise should be structured that way | **OPEN** | created by O-17's resolution | — | — |
+| **O-19** | MODEL EFFICIENCY DEFECT: record_model.py builds the *-algebra when the commutant needs only the generators (commutant of a set = commutant of the algebra it generates). This is why it hits the enumeration cap on dim-32 carriers | **OPEN** | found in LANE_O17_TENSION | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 

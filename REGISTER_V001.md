@@ -6475,3 +6475,39 @@ The two numbers come from different arms — one unitary-with-small-bath, one Li
 **commute** (`‖{Z̄,X̄}‖ = 8.00`), so they are not a conjugate pair and nothing downstream was computed.
 **Third time a nominated logical has been caught this session** — W-62's original defect, F-7's first
 build, and now this. **In every case the check fired before a number was read.**
+
+---
+
+## O-17 RESOLVED — **THE TWO ARMS RAN ON TWO DIFFERENT `(H,{L_k})` PAIRS, AND ONLY ONE HAS A RECORD**
+
+`LANE_O17_TENSION`, carrier `[[5,1,3]]`.
+
+| environment | `max‖[L_k, Z̄]‖` | clause (ii) | `dim A′` | `dim Herm(A′)` | record possible? |
+|---|---|---|---|---|---|
+| PF-5's single-site `{Z}` | **0.0000** | **HOLDS** | 2 | 2 | **yes** |
+| O-16's single-site `{X,Y,Z}` | **11.3137** | **VIOLATED** | **1** | **1** | **NO — scalars only** |
+| bare code, no environment | — | — | 280 | 280 | yes |
+
+> ### **O-16 MEASURED THE DECAY OF AN OBJECT THAT IS NOT A RECORD FOR THAT ENVIRONMENT.**
+> ### **The tension was a comparison across coupling classes, not a contradiction in the account.**
+
+**AND THE RESOLUTION WAS ALREADY IN THE ANCHOR.** Clause (ii) is `[L_k, R] = 0`. It says exactly this
+— and it says it as a **condition on the environment**, not on the record. **O-1's `400/400` result
+(a generic jump set kills every record) is confirmed here on a second carrier by an independent route:
+the Hermitian commutant collapses to dimension 1.**
+
+### WHAT THIS COSTS THE ACCOUNT, STATED PLAINLY
+
+**The environment that forms a record must be one for which the record exists** — its couplings must
+commute with it. **That is a restriction on the environment, not a free condition, and O-16 showed the
+generic environment does not satisfy it.** The formation story therefore requires **structured noise**,
+and nothing in the program yet says why the world's noise should be structured that way.
+**Registered as O-18.**
+
+### TWO METHOD DEFECTS IN OUR OWN TOOLING
+
+1. **`record_model.py` builds the `*`-algebra when the commutant needs only the generators.**
+   **The commutant of a SET equals the commutant of the algebra it generates.** The build is wasted
+   work and it is why the first attempt hit the enumeration cap at 32 minimal projections.
+2. **Forming the stacked commutator map directly (16384×1024) timed the second attempt out.**
+   `M†M` is `1024×1024` and has the same rank. **Fixed; both recorded so the model can be corrected.**
