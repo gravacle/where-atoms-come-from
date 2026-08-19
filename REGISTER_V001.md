@@ -6711,3 +6711,24 @@ confusion that let borrowed results be registered as findings.**
   finding turned into a document, so a renaming can never again be mistaken for a discovery.
 - **PF-8 RISES TO THE TOP.** Repeatability was written as the final step. **It is the binding
   constraint on the word "proven", and 6 rows of 78 currently meet it.**
+
+---
+
+## O-20, FULL POPULATION — **every boundary at exactly zero; non-boundaries split**
+
+The complete sweep over all 31 cycles of the 2×2 torus finished after the four-sample result was
+registered, and corroborates it:
+
+| class | n | `χ` range | spread |
+|---|---|---|---|
+| **`B₁` (boundary)** | **7** | `[0.00000000, 0.00000000]` | **2.78e-15** |
+| **NOT a boundary** | **24** | `[0.00000000, 0.90811968]` | **9.08e-01** |
+
+**Every boundary gives exactly zero. Non-boundaries span the full range.** The script's own verdict
+line reads **NOT CONFIRMED** for the prediction as I registered it — correctly — and `o20b` established
+what does decide it: **the intersection pairing with the record's conjugate.**
+
+**PROCESS DEFECT, RECORDED:** I sealed `LANE_O20_HOMOLOGY` while its background run was still writing
+to the output file, and the gate caught the stale manifest on the next check. **Never seal a file a
+background job is still writing.** The gate has now caught: unverifiable lane manifests, three
+nominated logicals, two D-8 defects in the harness itself, and this.

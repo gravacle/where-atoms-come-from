@@ -33,8 +33,11 @@ def render():
          '**Call it with `./ledger/plan.py`. `ledger/plan.tsv` is the source of truth; this file is',
          'generated. Tasks append, IDs never renumber, and every task carries a DONE_WHEN so "done" is',
          'checkable rather than a judgement call.**', '',
-         '**THE GOAL:** a proven process explaining how EM, Γ and alpha form quantum records, and a model',
-         'in which anyone can check it.', '',
+         '## THE DEFINITION OF DONE', '',
+         '> **A full demonstration of a PROVEN process that explains how EM, gravity, and alpha form',
+         '> quantum records. And the model so that our proof can be checked by anyone.**',
+         '>', '> — the principal, 2026-08-19', '',
+         '**Nothing below counts as finished until both halves of that sentence are true.**', '',
          f'**{done} of {len(rows)} tasks done.**', '']
     tally = {}
     for r in rows: tally[r[3]] = tally.get(r[3], 0) + 1
