@@ -1,0 +1,11 @@
+====================================================================================================
+T-20b   RECORD-LEVEL HOLONOMY ON THREE RECORDS
+====================================================================================================
+  carrier [[8,3,2]]  dim 256  ground-space dim 8  (expect 8 = 2^3)
+
+  VERIFICATION -- every operator checked before use, both writers obtained the same way
+    record 0: [Z_i,H]=0.0e+00  [X_i,H]=0.0e+00  {Z_i,X_i}=3.2e+01  max|[Z_i,X_j!=i]|=3.2e+01   FAIL
+    record 1: [Z_i,H]=0.0e+00  [X_i,H]=0.0e+00  {Z_i,X_i}=0.0e+00  max|[Z_i,X_j!=i]|=3.2e+01   FAIL
+    record 2: [Z_i,H]=0.0e+00  [X_i,H]=0.0e+00  {Z_i,X_i}=0.0e+00  max|[Z_i,X_j!=i]|=3.2e+01   FAIL
+
+  VERIFICATION FAILED -- not reporting a holonomy on operators that are not what they claim

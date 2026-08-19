@@ -229,6 +229,72 @@ def _vN(r):
     e = np.linalg.eigvalsh(r); e = e[e > 1e-13]
     return float(-(e * np.log2(e)).sum())
 
+# ---------------------------------------------------------------- stabiliser logicals (T-20)
+def symplectic_logicals(stab_xz, n):
+    """COMPUTE a conjugate basis of logical operators for a stabiliser code. Never nominate them.
+
+       Paulis are (x|z) in F_2^{2n}; P and Q anticommute iff x.z' + z.x' = 1. The logicals are
+       N(S)/S, and a symplectic Gram-Schmidt gives pairs (X_i, Z_i) with {X_i,Z_i} = 0 and every
+       other pair commuting.
+
+       Nominating logicals has failed FOUR times in this program -- W-62's first build, F-7's,
+       [[4,2,2]] in O-16, and [[8,3,2]] in T-20 -- and every time a self-check caught it."""
+    def sp(a, b):                                   # symplectic form
+        return (sum(a[i] * b[n + i] + a[n + i] * b[i] for i in range(n))) % 2
+    def rref(rows):
+        rows = [r[:] for r in rows]; piv = []; r = 0
+        for c in range(2 * n):
+            p = next((i for i in range(r, len(rows)) if rows[i][c]), None)
+            if p is None: continue
+            rows[r], rows[p] = rows[p], rows[r]
+            for i in range(len(rows)):
+                if i != r and rows[i][c]:
+                    rows[i] = [(x + y) % 2 for x, y in zip(rows[i], rows[r])]
+            piv.append(c); r += 1
+        return rows[:r], piv
+    S, _ = rref(list(stab_xz))
+    # N(S): the symplectic complement, as the nullspace of the form against every stabiliser
+    M = [[sp(e, s) for e in [[1 if k == j else 0 for k in range(2 * n)] for j in range(2 * n)]] for s in S]
+    M = [list(row) for row in zip(*[[sp([1 if k == j else 0 for k in range(2 * n)], s)
+                                     for j in range(2 * n)] for s in S])]
+    A = [[sp([1 if k == j else 0 for k in range(2 * n)], s) for j in range(2 * n)] for s in S]
+    Ar, piv = rref(A)
+    free = [c for c in range(2 * n) if c not in piv]
+    N = []
+    for f in free:
+        v = [0] * (2 * n); v[f] = 1
+        for i, c in enumerate(piv): v[c] = Ar[i][f]
+        N.append(v)
+    # strip anything already in S, then symplectic Gram-Schmidt
+    def in_span(v, basis):
+        v = v[:]
+        for b in basis:
+            h = next((i for i in range(2 * n) if b[i]), None)
+            if h is not None and v[h]: v = [(x + y) % 2 for x, y in zip(v, b)]
+        return not any(v)
+    cand = [v for v in N if not in_span(v, S)]
+    pairs = []
+    pool = cand[:]
+    while pool:
+        a = pool.pop(0)
+        partner = next((b for b in pool if sp(a, b) == 1), None)
+        if partner is None: continue
+        pool.remove(partner)
+        pairs.append((a, partner))
+        pool = [[(c[i] + sp(c, partner) * a[i] + sp(c, a) * partner[i]) % 2 for i in range(2 * n)]
+                for c in pool]
+        pool = [c for c in pool if any(c)]
+    return pairs
+
+def xz_to_matrix(v, n):
+    I2 = np.eye(2); Xm = np.array([[0, 1], [1, 0]], dtype=complex); Zm = np.array([[1, 0], [0, -1]], dtype=complex)
+    M = np.array([[1]], dtype=complex)
+    for i in range(n):
+        x, z = v[i], v[n + i]
+        P = I2 if (x, z) == (0, 0) else (Xm if (x, z) == (1, 0) else (Zm if (x, z) == (0, 1) else 1j * Xm @ Zm))
+        M = np.kron(M, P)
+    return M
+
 class Environment:
     """A bath of qubits at inverse temperature beta. `probe` is the bath operator the system
        couples through."""

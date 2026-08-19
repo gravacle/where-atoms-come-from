@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 96 | 2 | 6 | 1 | 16 | 3 | 6 | 7 | 3 | 3 |
+| 97 | 2 | 6 | 1 | 17 | 3 | 6 | 7 | 3 | 3 |
 
-**143 rows.**
+**145 rows.**
 
 ---
 
@@ -31,6 +31,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **H-7** | THE CARRIER IS ASSUMED — AND THIS MAY BE H-1 IN ANOTHER FORM. If classical gravity emerges from records then the carrier's geometry IS a description of record content, and where the complex comes from is answered by the same result | **OPEN** | T-II.5, F-3 both RECLASSIFIED — worth revisiting now that formation is better understood | — | — |
 | **H-8** | X-2's RECLASSIFICATION FORECLOSED THE EMERGENCE QUESTION. Reclassifying 'content shapes geometry' as a category error was correct AT THE RECORD LEVEL, where chi is a parameter with no equation of motion. It also closed off 'does record content look like a geometry when ACCUMULATED', which is a different question at a different level and has never been asked | **OPEN** | found by the principal's reframing of H-1 | — | — |
 | **H-9** | THE T-20 CRITERION (the principal, 2026-08-19): gravity emerging from Gamma would be RECORD-LEVEL HOLONOMY — a stable, universal, path-dependent mismatch among records. Diagnostic H_ABCD = (G_AB G_BD)(G_AC G_CD)^-1; H = I is flat, H != I structured is curvature. Admissible under D-1 because the Einstein form says what a result MEANS and is never the test | **PROVED** | supplied before any measurement, on no fitted set (D-11) | — | — |
+| **H-10** | T-20 ANSWERED, NEGATIVELY AND INFORMATIVELY: transport around every record loop closes at 0.000e+00 on [[8,3,2]] with three records. The writers commute, so the holonomy group is ABELIAN and the record geometry is exactly FLAT. Curvature needs a NON-ABELIAN connection — the Levin-Wen / Fibonacci class O-8 flagged as untested and G-6 placed outside the F_2 complex class | **PROVED** | LANE_T20_HOLONOMY, measured against criterion H-9 registered before the run | — | a carrier whose record writers fail to commute |
 
 ## P. THE ROAD TO A FULL PROOF — the controlled plan
 
@@ -154,6 +155,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-20** | THE FORMATION STORY NEEDS AN ENVIRONMENT THAT COUPLES EITHER NON-GAUGE-INVARIANTLY OR NON-LOCALLY. A-EM established EM supplies the Gauss law, so a non-gauge-invariant coupling is coupling to something that is not the gauge field. The program has no argument for either option | **PROVED** | answered: the criterion is the INTERSECTION PAIRING with the record's conjugate, not gauge invariance vs locality. chi > 0 iff pairing is odd, four for four; all four couplings are gauge-invariant non-boundaries | — | — |
 | **O-21** | OBJECTIVITY REQUIRES EQUIVALENT FRAGMENTS, AND NOTHING SUPPLIES THAT. With inequivalent fragments different observers get genuinely different amounts of the record — 0.657 against 0.159 on the same bath. Quantum Darwinism's redundancy plateau assumes equivalence; the account does not derive it | **OPEN** | created by T-13's control | — | — |
 | **O-22** | 'CONTRACTIBLE REGION' IS UNDEFINED IN CLAUSE (v), AND THE TWO READINGS DISAGREE. Edge-subgraphs give 8 admissible flippers on BOTH carriers; O-4's zero at L=3 used plaquette blocks. The same defect O-4 fixed for 'admissible', unfixed for the words that carry the protection claim — and O-4's zero may have been about regions being SMALL RELATIVE TO d rather than about contractibility | **PROVED** | closed: 'contractible region' needs no stipulation. The two readings disagreed about which CARRIERS were being asked, not about the clause. Held to a small fraction, both agree: 3x3 with one plaquette (0.22 of the system) gives 0 admissible flippers against a control of 768 | — | — |
+| **O-23** | DOES ANY RECORD STRUCTURE ADMIT NON-ABELIAN TRANSPORT? T-20's null converts the emergence claim into this. Every carrier this program has built is abelian and therefore flat by construction. The candidate class -- non-abelian topological order, Levin-Wen, Fibonacci -- is named in O-8 and has never been examined | **OPEN** | created by T-20 | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 

@@ -13,11 +13,11 @@ checkable rather than a judgement call.**
 
 **Nothing below counts as finished until both halves of that sentence are true.**
 
-**15 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**16 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO |
 |---|---|---|
-| 15 | 1 | 6 |
+| 16 | 1 | 5 |
 
 ---
 
@@ -56,11 +56,11 @@ checkable rather than a judgement call.**
 | **T-14** | ALPHA'S ROLE, RESTATED AFTER PF-6. Theorem D's eps^d was rescoped to GENERIC single-site perturbations; the Z-only case gives eps^n*. Restate alpha's role in mapped terms | **DONE** | the alpha row states which perturbation class it holds for, with both exponents measured | T-1 |
 | **T-22** | GIVE ALPHA REAL CONTENT (H-2). Nothing in the corpus is dimensionful and the fine structure constant is connected to no number. Either connect it or state plainly that 'alpha' names a generic coupling here | **DONE** | either a registered result in which alpha's VALUE matters, or an explicit statement in the anchor that alpha stands for a generic coupling strength | — |
 
-## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  0/2 done
+## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  1/2 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
-| ▶ **T-20** | **DOES CLASSICAL GRAVITY EMERGE FROM RECORDS? Build a COLLECTIVE quantity from MANY records and ask whether it obeys anything Einstein-constraint-like — without importing the constraint (D-1 binds: the classical form may be recovered, never assumed or used as the test)** | TODO | a many-record collective quantity is defined, computed, and either shown to satisfy a constraint of the right type or shown not to — with the classical form never used as a criterion | T-6, T-9, T-13 |
+| ▶ **T-20** | **DOES CLASSICAL GRAVITY EMERGE FROM RECORDS? Build a COLLECTIVE quantity from MANY records and ask whether it obeys anything Einstein-constraint-like — without importing the constraint (D-1 binds: the classical form may be recovered, never assumed or used as the test)** | **DONE** | a many-record collective quantity is defined, computed, and either shown to satisfy a constraint of the right type or shown not to — with the classical form never used as a criterion | T-6, T-9, T-13 |
 | **T-21** | REVISIT X-2 AT THE COLLECTIVE LEVEL. The record-level reclassification stands; the emergence question it foreclosed does not | TODO | X-2 carries an explicit note distinguishing the record-level question (category error, closed) from the collective one (open, = T-20) | T-20 |
 
 ## PHASE F  WRITE AND CHECK THE PROOF  —  0/4 done
