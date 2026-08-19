@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 84 | 2 | 8 | 1 | 18 | 3 | 6 | 7 | 3 | 3 |
+| 86 | 2 | 8 | 1 | 18 | 3 | 6 | 7 | 3 | 3 |
 
-**135 rows.**
+**137 rows.**
 
 ---
 
@@ -141,12 +141,13 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-12** | UNDER THE TRIVIAL READING OF 'ADMISSIBLE' (any unitary) THE TORIC CODE FAILS THE PROGRAM'S OWN CLAUSE (v). The undefined word was load-bearing in clause (v), not clause (iv). P-3 survives but weakens to 'no admissible writer fits inside ONE contractible region' | **PROVED** | closed: 'admissible' inserted into clause (v); 0 admissible flippers against 1158 (L=3) and 2.815e15 (L=5) as positive control, independently reproduced | — | — |
 | **O-13** | REDUNDANCY UNTESTED. The bath is 4 levels. Whether many environment fragments EACH hold a copy — what makes a record objective rather than merely correlated — is not tested | **PROVED** | redundancy measured: bath fragments independently hold the record, and a weight-1 coupling gives every fragment exactly zero | — | — |
 | **O-14** | A SECOND VALID CARRIER FOR CLAUSE (v). PF-3B needs a non-manifold with BOTH systole and cosystole >= 2. The bouquet family has cosystole 1 and is disqualified | **PROVED** | closed: torus 2x2 + a disk capping a non-contractible wrap is non-manifold with H_1 = 1 and BOTH distances 2, at the same dimension 256. It is [[8,1,2]] against the toric [[8,2,2]] | — | — |
-| **O-15** | THE BATH IS SMALL AND chi(t) RECURS (0.975 at t=1, 0.787 at t=2, 0.908 at t=4). A macroscopic environment would not recur on any relevant scale, but that is ASSERTED here, not measured. Redundancy is also UNEVEN across fragments | **OPEN** | PF-2 limits, stated in the result | — | — |
+| **O-15** | THE BATH IS SMALL AND chi(t) RECURS (0.975 at t=1, 0.787 at t=2, 0.908 at t=4). A macroscopic environment would not recur on any relevant scale, but that is ASSERTED here, not measured. Redundancy is also UNEVEN across fragments | **PROVED** | recurrence shrinks with bath size (dips 0.120 -> 0.082 -> 0.060, decreases 6 -> 5 -> 3) though not eliminated at nq=7; redundancy evens out EXACTLY for equivalent fragments (spread 0.0000) and not otherwise | — | — |
 | **O-16** | THE DISSIPATIVE ARM IS UNTESTED. Every arm run so far is closed unitary evolution with a small bath. The one place amplitudes and rates need not stand in the squared relation is a genuinely dissipative (Markovian/Lindblad) bath | **PROVED** | decay exponent 2.0000 on both d=3 codes, independent of d; static splitting exponent = d (2.9979, 2.9835). They differ | — | — |
 | **O-17** | THE RECORD IS DESTROYED AT ORDER 2 AND RECORDED AT ORDER 2n*. For n* > 1 an ordinary dissipative environment erases it faster than it writes it. The two numbers come from different arms (unitary-with-small-bath vs Lindblad), so this is a TENSION to resolve, not yet a contradiction — and it is aimed straight at the formation account | **PROVED** | resolved: the arms ran on two different (H,{L_k}) pairs. O-16's {X,Y,Z} violates clause (ii) at 11.3137 and its Hermitian commutant is dimension 1 — scalars only, no record exists | — | — |
 | **O-18** | THE FORMATION STORY REQUIRES STRUCTURED NOISE. The environment that forms a record must be one for which the record exists, so its couplings must commute with it — and the generic environment does not. Nothing in the program says why the world's noise should be structured that way | **PROVED** | answered: gauge invariance plus a locality bound below d forbids formation exactly (chi = 0.00000000). PF-5's coupling is NOT gauge-invariant (32.0000) | — | — |
 | **O-19** | MODEL EFFICIENCY DEFECT: record_model.py builds the *-algebra when the commutant needs only the generators (commutant of a set = commutant of the algebra it generates). This is why it hits the enumeration cap on dim-32 carriers | **OPEN** | found in LANE_O17_TENSION | — | — |
 | **O-20** | THE FORMATION STORY NEEDS AN ENVIRONMENT THAT COUPLES EITHER NON-GAUGE-INVARIANTLY OR NON-LOCALLY. A-EM established EM supplies the Gauss law, so a non-gauge-invariant coupling is coupling to something that is not the gauge field. The program has no argument for either option | **PROVED** | answered: the criterion is the INTERSECTION PAIRING with the record's conjugate, not gauge invariance vs locality. chi > 0 iff pairing is odd, four for four; all four couplings are gauge-invariant non-boundaries | — | — |
+| **O-21** | OBJECTIVITY REQUIRES EQUIVALENT FRAGMENTS, AND NOTHING SUPPLIES THAT. With inequivalent fragments different observers get genuinely different amounts of the record — 0.657 against 0.159 on the same bath. Quantum Darwinism's redundancy plateau assumes equivalence; the account does not derive it | **OPEN** | created by T-13's control | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 
@@ -197,6 +198,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **F-25** | FIRST CANDIDATE FOR A DISTINGUISHING PREDICTION: chi ~ lambda^2d, so a record of distance d is exponentially slow in d to form under an ordinary local environment. Quantitative, and involves only codes and baths. Whether it DISTINGUISHES this account from any other is NOT established | **WITHDRAWN** | FALSE: the exponent is 2n*, not 2d — n* tracks the COUPLING ALGEBRA. [[5,1,3]] Z-only measures 9.9966 -> 10 against 2d = 6; widening to {X,Y,Z} moves it to 6 | — | — |
 | **F-26** | DISTANCE PROTECTS AGAINST STATIC PERTURBATION AND NOT AGAINST DISSIPATION. Lindblad decay exponent is 2.0000 on both d=3 codes with no d in it; static splitting is 2.9979/2.9835 = d. NOT OURS: it is standard QEC that an uncorrected code decays at the physical rate, and d bounds only what active correction can fix | **PROVED** | LANE_O16_DISSIPATIVE | — | a dissipative decay exponent depending on d without an agent correcting |
 | **F-27** | THIS ACCOUNT HAS NO AGENT. Nothing in it extracts a syndrome or corrects. So Theorem D's eps^d is protection against STATIC perturbation only; against a real dissipative environment the record decays at gamma | **PROVED** | O-16; the agent is what converts distance into protection | — | protection from d without any correcting operation |
+| **F-28** | REDUNDANCY EVENS OUT ONLY FOR EQUIVALENT FRAGMENTS. Identical bath energies give per-fragment spread 0.0000 exactly at nq = 3, 5 and 7; random energies give relative spread 1.247, 1.329, 1.391, growing with bath size. The unevenness is the energies, not the physics | **PROVED** | LANE_T13_BATHSIZE control | — | equal redundancy across inequivalent fragments |
 
 ---
 

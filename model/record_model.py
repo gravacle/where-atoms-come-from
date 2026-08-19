@@ -442,6 +442,30 @@ class RecordModel:
         r = U @ (ph[:, None] * Uc * ph.conj()[None, :]) @ U.conj().T
         return env.holevo(r, record, nS, fragment=fragment)
 
+    def evolve(self, coupling, env, lam=0.8, t=4.0, state0=None):
+        """The joint state after unitary evolution from a product state. Returned so that many
+           readouts -- whole bath, every fragment, several records -- share ONE eigendecomposition.
+           formation() redoing eigh per fragment is what made a 7-qubit bath unreachable."""
+        nS, nB = self.n, env.dim
+        if state0 is None:
+            Pg, k = self.ground_space(); state0 = Pg / k
+        if isinstance(coupling, np.ndarray) and coupling.shape[0] == nS * nB: HINT = coupling
+        elif isinstance(coupling, (list, tuple)):
+            HINT = sum(np.kron(A, env.site[j % env.nq]) for A, j in coupling)
+        else: HINT = np.kron(coupling, env.probe)
+        Ht = np.kron(self.H, np.eye(nB)) + np.kron(np.eye(nS), env.HB) + lam * HINT
+        w, U = np.linalg.eigh(Ht)
+        Uc = U.conj().T @ np.kron(state0, env.thermal()) @ U
+        ph = np.exp(-1j * w * t)
+        return U @ (ph[:, None] * Uc * ph.conj()[None, :]) @ U.conj().T
+
+    def redundancy(self, record, coupling, env, lam=0.8, t=4.0):
+        """chi held by the whole bath and by EACH single-qubit fragment, from one evolution."""
+        r = self.evolve(coupling, env, lam=lam, t=t)
+        whole = env.holevo(r, record, self.n)
+        parts = [env.holevo(r, record, self.n, fragment=[j]) for j in range(env.nq)]
+        return whole, np.array(parts)
+
     def channel(self, record, coupling, tol=1e-9):
         """DOES THIS COUPLING OPEN A CHANNEL TO THIS RECORD?
 

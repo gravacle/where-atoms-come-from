@@ -7032,3 +7032,53 @@ same carrier.
 edges lie in **three** faces. **`H₁ = 1` where the torus has 2**, so it is **`[[8,1,2]]` against the
 toric `[[8,2,2]]`** — a genuinely different code — with **both distances 2** and **the same Hilbert
 dimension 256**, so everything already computed can be re-run on it at the same cost.
+
+---
+
+## T-13 DONE / O-15 — **RECURRENCE SHRINKS. REDUNDANCY EVENS OUT ONLY FOR EQUIVALENT FRAGMENTS.**
+
+`LANE_T13_BATHSIZE`. The dimension constraint is real — a 7-qubit bath under the toric 2×2 would
+need `eigh` on 32768² — so the **system** was shrunk to `[[5,1,3]]` (dim 32, verified logicals) and
+the bath grown to 7 qubits.
+
+### RECURRENCE — PREDICTED, AND CONFIRMED
+
+| bath | max `χ` | # decreases in `χ(t)` | **largest dip** |
+|---|---|---|---|
+| `nq = 3` | 0.968958 | 6 | **0.119752** |
+| `nq = 5` | 0.995633 | 5 | **0.081734** |
+| `nq = 7` | **0.999502** | **3** | **0.059981** |
+
+**Recurrence shrinks monotonically with bath size and `χ` approaches a full bit.** **It is not
+eliminated at `nq = 7` — three decreases remain.** The trend is measured; full monotonicity would need
+a bath beyond reach.
+
+### REDUNDANCY — **PREDICTED TO EVEN OUT. IT DID NOT.**
+
+| bath | whole | mean fragment | spread | **relative spread** |
+|---|---|---|---|---|
+| `nq = 3` | 0.7919 | 0.3994 | 0.4982 | **1.247** |
+| `nq = 5` | 0.8934 | 0.3747 | 0.4982 | **1.329** |
+| `nq = 7` | 0.9906 | 0.4876 | 0.6782 | **1.391** |
+
+**It gets MORE uneven as the bath grows.** My prediction was wrong.
+
+### THE CONTROL THAT EXPLAINS IT — **`0.0000` EXACTLY**
+
+| bath energies | `nq` | whole | mean fragment | spread | relative spread |
+|---|---|---|---|---|---|
+| **random** | 3 / 5 / 7 | 0.79 / 0.89 / 0.99 | 0.40 / 0.37 / 0.49 | 0.50 / 0.50 / 0.68 | 1.247 / 1.329 / 1.391 |
+| **IDENTICAL** | 3 / 5 / 7 | 0.93 / 0.98 / **1.00** | **0.6287** | **0.0000** | **0.000** |
+
+> ### **REDUNDANCY EVENS OUT EXACTLY WHEN THE FRAGMENTS ARE EQUIVALENT, AND NOT OTHERWISE. The
+> ### unevenness was the ENERGIES, not the physics.**
+
+**AND THAT IS A CONDITION ON OBJECTIVITY, NOT A FREE PROPERTY.** Quantum Darwinism's redundancy
+plateau assumes many **equivalent** fragments. With inequivalent ones, **different observers get
+genuinely different amounts of the record** — `0.657` against `0.159` on the same bath. **Calling a
+record OBJECTIVE requires the environment's fragments to be equivalent, and nothing in the account
+supplies that.** Registered as **O-21**.
+
+**MODEL DEFECT FIXED ON THE WAY:** `formation()` redid the eigendecomposition for **every** fragment,
+which is what made a 7-qubit bath unreachable. Added `evolve()` and `redundancy()` so many readouts —
+whole bath, every fragment, several records — share **one** eigendecomposition.
