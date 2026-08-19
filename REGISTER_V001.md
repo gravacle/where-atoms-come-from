@@ -6005,3 +6005,49 @@ disturbing any other.**
 **DEFECTS CAUGHT DURING THE BUILD, all by the validation:** the writer test was over-strict (asked one
 unitary to fix 35 records at once); the XOR basis stored **unreduced** vectors so nothing ever reduced
 to zero; and F₂-independence gave `n−2` where the answer is `log₂ n`.
+
+---
+
+## PF-3 — **DEF-A SURVIVES PART A UNIVERSALLY. PART B FOUND AN ERROR IN G-11 INSTEAD.**
+
+### PART A — THE BALANCE LEMMA IS CARRIER-FREE
+
+Tested **through the model**, so no carrier is involved at all: for every spectrum tried
+(`[4] [8] [4,4] [2,2] [6,2] [4,2] [2,2,2,2] [8,4] [4,4,4]`), **every record the model builds is
+balanced on every eigenspace, and an admissible writer is constructed and verified for every one.**
+
+**POSITIVE CONTROL, and it fires:** an **unbalanced** involution (`Tr R = +2`) has **no** flipper —
+best `‖U†RU + R‖` over **4000** random unitaries is **2.0000**, exactly the proved bound.
+
+> **Clause (iv) under DEF-A ⟺ `Tr(P_E R) = 0` is UNIVERSAL, not a fact about the toric code.**
+
+### PART B — **VOID AS A TEST OF DEF-A, AND IT INDICTS G-11 INSTEAD**
+
+On a **bouquet of two triangles** (pinch-point non-manifold, dim 64), contractible regions = forests:
+
+| | |
+|---|---|
+| any-unitary flippers inside a contractible region (**control**) | **1830** |
+| **admissible** flippers inside a contractible region | **171** |
+
+**That reads as DEF-A failing. It is not.** The carrier itself fails clause (v):
+
+| carrier | links | **Z-systole** | **X-cosystole** | **d = min** |
+|---|---|---|---|---|
+| torus 2×2 | 8 | 2 | 2 | **2** |
+| torus 3×3 | 18 | 3 | 3 | **3** |
+| **bouquet of 2 triangles** | 6 | 3 | **1** | **1** |
+| **bouquet of 3 triangles** | 9 | 3 | **1** | **1** |
+
+## **ERRATUM TO G-11 — ITS DISTANCE COLUMN REPORTED THE SYSTOLE, NOT THE CODE DISTANCE**
+
+**G-11 registered `d = 3,3,3` for the bouquet family. The true distance is `1`.** The bouquet has no
+2-cells, so every single-edge `X` is a non-trivial `X`-logical — **cosystole 1**. G-12 had already
+stated that **R3 needs two numbers**; G-11's own table was never corrected to use them.
+
+**AND THE CORRECTION STRENGTHENS G-11's POINT.** The bouquet does not have *"unbounded capacity with
+fixed protection."* It has **unbounded capacity with NO protection at all.** Capacity and protection
+are independent — which is what G-11 was for, now stated correctly.
+
+**PF-3 STATUS: part A closed, part B still owed.** The test needs a **non-manifold carrier with BOTH
+distances ≥ 2**; the one chosen was invalid, and the run said so rather than reporting a verdict.

@@ -1,0 +1,12 @@
+==================================================================================================
+PF-3B  CLAUSE (v) ON A NON-MANIFOLD CARRIER (bouquet of two triangles)
+==================================================================================================
+  V=5  links=6  dim=64  ground degeneracy=4  (dim H_1 = 2 => expect 4)
+  record R = Z on the cycle [0, 1, 2]   ||[R,H]|| = 0.000e+00   PASS
+  contractible regions (forests) of every size: 48   largest 4 edges
+
+  ANY-unitary flippers inside a contractible region             1830   <- POSITIVE CONTROL
+  ADMISSIBLE flippers ([U,H]=0) inside a contractible region       171
+
+  CLAUSE (v) FAILS UNDER DEF-A TOO (171 admissible flippers) -- O-4's definition does NOT
+  transfer to this carrier. That is a finding against the anchor.

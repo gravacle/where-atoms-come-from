@@ -1,0 +1,27 @@
+====================================================================================================
+PF-3   IS O-4's DEFINITION CARRIER-INDEPENDENT?
+====================================================================================================
+
+A. THE BALANCE LEMMA, TESTED THROUGH THE MODEL ON ARBITRARY (H,{L_k}) -- no carrier at all
+  spectrum                    records   balanced on every E  writer built & verified
+  [4]                               3                  True                      3/3
+  [8]                              35                  True                      8/8
+  [4, 4]                           18                  True                      8/8
+  [2, 2]                            2                  True                      2/2
+  [6, 2]                           20                  True                      8/8
+  [4, 2]                            6                  True                      6/6
+  [2, 2, 2, 2]                      8                  True                      8/8
+  [8, 4]                          210                  True                      8/8
+  [4, 4, 4]                       108                  True                      8/8
+  [PASS] every record the model builds is balanced on every eigenspace    True / True
+  [PASS] an admissible writer is constructed and verified for every one   True / True
+
+  CONTROL -- the lemma must have content: an UNBALANCED involution must have NO admissible writer
+      unbalanced R (Tr = 2): best ||U-dag R U + R|| over 4000 unitaries = 2.0000
+  [PASS] no unitary flips an unbalanced involution (bound is 2.0)         True / True
+
+B. CLAUSE (v) ON STRUCTURALLY DIFFERENT CARRIERS -- NON-MANIFOLDS (G-10's class)
+  carrier                             dim  ground deg  ANY-unitary flippers  ADMISSIBLE flippers
+  theta graph (non-manifold)            8           4                     0                    0
+  [PASS] theta graph (non-manifold): admissible flippers in a contractible region = 0 0 / 0
+  [FAIL] theta graph (non-manifold): POSITIVE CONTROL, any-unitary flippers > 0 False / True
