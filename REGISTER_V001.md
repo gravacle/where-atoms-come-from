@@ -7607,3 +7607,55 @@ that discriminates is a norm whose behaviour on involutions may be the whole eff
 
 **A dim-24 carrier — three 8-fold shells, not a power of two — hit the model's enumeration cap at 24
 minimal projections and was not measured.** Recorded rather than skipped silently.
+
+---
+
+## O-27 — **LEAST ACTION SELECTS THE FLAT CONNECTION. O-26's RESULT IS OVERTURNED, AND THE ERROR WAS MINE.**
+
+`LANE_O27_ACTION`. `‖log U‖` is not an arbitrary norm — for `U = exp(−iHt)` it **is** `‖Ht‖`, the
+energy–time product in units of `ℏ`. What O-26 got wrong was not the measure but the **comparison**.
+
+| writer | `‖Ht‖_F` | `‖Ht‖_∞` | `Σ\|θ\|` | holonomy |
+|---|---|---|---|---|
+| canonical flat | 6.2832 | 3.1416 | 12.5664 | 3.00e-15 |
+| **MINIMUM-ACTION (`φ = π`)** | **4.4429** | **1.5708** | 12.5664 | **2.882e-15 — FLAT** |
+| 300 curved samples | [4.7028, 5.6668] | [2.3325, 3.1054] | 12.5664 | all curved |
+
+**Analytic confirmation:** per 2-cycle the minimum of `Σθ²` is at `φ = π`, giving `π/√2 = 2.2214`
+against `π = 3.1416` for the canonical. Over 4 cycles: **`4.4429` against `6.2832`** — matching the
+measurement exactly.
+
+> ### **THE CHEAPEST ADMISSIBLE WRITER IS FLAT. Every curved sample costs MORE than it (≥ 4.7028
+> ### against 4.4429), under `‖Ht‖_F` and `‖Ht‖_∞` alike. `Σ|θ| = 4π` for every writer and
+> ### discriminates nothing.**
+
+### **O-26's ERROR, NAMED**
+
+**I compared curved writers against the CANONICAL flat writer, not against the CHEAPEST one.** The
+canonical writer — a strict involution with eigenphases `{0, π}` — is the **most expensive** flat
+choice, not the minimum. **"400 of 400 cost less than flat" was true of one flat writer and false of
+the flat family.** Sampling could not have found this; **it needed the minimisation to be done.**
+
+### WHERE THAT LEAVES THE SELECTOR QUESTION
+
+| selector | picks |
+|---|---|
+| **weight** (O-24) | **FLAT** |
+| **action** `‖Ht‖_F`, `‖Ht‖_∞` (O-27) | **FLAT** |
+| `‖U − I‖` | nothing — identical for all |
+| `Σ|θ|` | nothing — `4π` for all |
+
+> ### **EVERY SELECTOR THAT DISCRIMINATES PICKS THE FLAT CONNECTION. Record-level curvature is
+> ### AVAILABLE on non-code carriers and is NEVER SELECTED.**
+
+### WHAT SURVIVES, AND WHAT DOES NOT
+
+**Survives:** C-24's flatness is a fact about codes, and outside the stabiliser class curvature is
+*available* (O-26). **Does not survive:** the suggestion that anything selects it.
+
+**The claim now needs one of two things, and neither is in hand.** Either a carrier where **flat is
+not available at all** — non-abelian transport, where writers genuinely fail to commute (`O-8`,
+untested) — or **a selector that is not a minimisation**, and `H-11` has no candidate for one.
+
+**This is a negative reached by overturning my own positive result, by doing the minimisation the
+sampling had skipped.**

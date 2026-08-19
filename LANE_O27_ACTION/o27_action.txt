@@ -1,0 +1,24 @@
+========================================================================================================
+O-27   THE ACTION, PROPERLY, AND THE ACTUAL MINIMISER
+========================================================================================================
+  U = exp(-iHt)  =>  ||log U|| = ||Ht||, the energy-time product in units of hbar
+
+1.  ROBUSTNESS ACROSS COST MEASURES
+  writer                         ||Ht||_F  ||Ht||_inf   sum|th|    holonomy         
+  canonical (FLAT)                 6.2832      3.1416   12.5664    3.00e-15     FLAT
+  300 sampled alternatives                                                 
+     ||Ht||_F                range [4.7028, 5.6668]   below the flat one: 300 of 300
+     ||Ht||_inf              range [2.3325, 3.1054]   below the flat one: 300 of 300
+     sum|th|                 range [12.5664, 12.5664]   below the flat one: 0 of 300
+     holonomy               range [3.023, 5.571]   all curved: True
+
+2.  THE ANALYTIC MINIMISER -- per 2-cycle, sum th^2 is least at phi = pi, not phi = 0
+  writer                         ||Ht||_F  ||Ht||_inf   sum|th|    holonomy         
+  minimum-action (phi=pi)          4.4429      1.5708   12.5664   2.882e-15     FLAT
+
+  analytic minimum of ||Ht||_F per 2-cycle: pi/sqrt(2) = 2.2214 vs pi = 3.1416
+  over 4 cycles that is 4.4429 vs 6.2832 = the canonical
+
+3.  READ
+     The minimum-action writer is FLAT. Least action selects the flat connection after
+     all, and O-26's sampling found cheaper CURVED writers but not the cheapest writer.
