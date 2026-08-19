@@ -7198,3 +7198,31 @@ looking at a clause rather than at a carrier.**
 > ### **D-4 EXTENDED: THE FIVE CLAUSES ARE PERMISSIONS. A carrier failing one is a fact about the
 > ### CARRIER. TELL: any sentence of the form "clause (n) is false", which is a category error —
 > ### clauses are not true or false, carriers satisfy them or do not.**
+
+---
+
+## T-10 DONE — **28 PARAMETER SETTINGS, 0 CONCLUSIONS MOVED. STAGE C COMPLETE.**
+
+`LANE_T10_PARAMS`, carrier `[[4,2,2]]`. **The numbers move; the conclusion does not.**
+
+| parameter swept | range | `χ[record]` range | conclusion |
+|---|---|---|---|
+| **temperature `β`** | 0.2 → 20.0 | 0.057 → **0.99996** | invariant, 6/6 |
+| **coupling `λ`** | 0.05 → 3.0 | **0.0042** → 0.979 | invariant, 6/6 |
+| **bath size `nq`** | 2 → 6 | 0.906 → 0.989 | invariant, 5/5 |
+| **time `t`** | 0.5 → 16.0 | 0.720 → 0.965 | invariant, 6/6 |
+| **bath energies** | 5 seeds | 0.730 → 0.965 | invariant, 5/5 |
+
+**`χ[record]` spans more than two orders of magnitude — 0.0042 to 0.99996.** Across all 28 settings:
+`χ` for the **gauge-invariant local** coupling stays at the floor (max `4.4e-15`), `χ` for the
+**weight-1** coupling stays at the floor (max `4.4e-15`), and **the noise floor at `λ=0` is `0.00e+00`
+in 21 of 28 and never above `2.4e-15`.**
+
+> ### **NO CONCLUSION IS CARRIED BY A PARAMETER. The record coupling forms, the gauge-invariant
+> ### local one does not, the weight-1 one does not — at every temperature, coupling strength, bath
+> ### size, time and set of bath energies tried.**
+
+**STAGE C IS COMPLETE.** Carrier independence (T-9, three carriers, 32 checks), a valid second carrier
+(T-8), clause (v) as a capacity statement (T-11), a bath large enough to show the recurrence trend
+(T-13), and parameter independence (T-10). **`H-4` — "one carrier, and the carrier may be the result"
+— is closed for the formation results, and no free parameter is doing hidden work.**

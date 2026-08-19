@@ -52,6 +52,8 @@ if ( cd model && python3 validate_formation.py >/dev/null 2>&1 ); then ok "model
 else warn "model/validate_formation.py FAILS -- a finding has broken the formation half"; fi
 if ( cd LANE_T9_CARRIERINDEP && python3 t9_sweep.py 2>&1 | grep -q "0 FAIL" ); then ok "carrier independence holds (3 carriers, 32 checks)"
 else warn "LANE_T9_CARRIERINDEP FAILS -- a finding no longer survives a second carrier"; fi
+if ( cd LANE_T10_PARAMS && python3 t10_params.py >/dev/null 2>&1 ); then ok "no conclusion moves with a free parameter (28 settings)"
+else warn "LANE_T10_PARAMS FAILS -- a conclusion now depends on a free parameter"; fi
 if ( cd model && python3 count_law.py >/dev/null 2>&1 ); then ok "model/count_law.py passes"
 else warn "model/count_law.py FAILS — the record-count law no longer holds"; fi
 

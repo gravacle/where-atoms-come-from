@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 90 | 2 | 7 | 1 | 17 | 3 | 6 | 7 | 3 | 3 |
+| 91 | 2 | 7 | 1 | 17 | 3 | 6 | 7 | 3 | 3 |
 
-**139 rows.**
+**140 rows.**
 
 ---
 
@@ -102,6 +102,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-18** | GAUGE INVARIANCE AND LOCALITY TOGETHER FORBID FORMATION. Plaquette (gauge-invariant, local) coupling gives chi = 0.00000000 exactly; giving up gauge invariance gives 0.217; giving up locality gives 0.908. Gauge-invariant operators of weight < d are trivial on the code space (8 of 8 at weight 1); at weight >= d they can be logicals | **PROVED** | THREE CARRIERS (T-9) | — | a gauge-invariant coupling of weight < d that forms a record |
 | **C-19** | RECORDS COMPOSE AND DO NOT INTERFERE. Forming Zbar gives chi(Zbar) = 0.90811968 with chi(Zbar2) = 0.00000000 and both values moving by ~1e-16; symmetrically for Zbar2. And Zbar*Zbar2 serves NEITHER — a coupling through it forms a third logical, not a family member | **PROVED** | TWO CARRIERS (T-9): toric [[8,2,2]] and [[4,2,2]]; the non-manifold [[8,1,2]] has one logical and cannot test composition | — | a coupling that forms one family member while disturbing another |
 | **C-20** | A CARRIER ALLOWS A PROTECTED RECORD WHEN A LOCAL REGION IS A SMALL FRACTION OF IT. Admissible flippers: 16 and 1152 at region/system 0.50 and 0.75 on the 2x2 torus, 3120 at 0.50 on the 3x3, and ZERO at 0.22 on the 3x3 against a control of 768. The 2x2 torus has no room for a region to be local | **PROVED** | LANE_T11_CLAUSEV t11c | — | a carrier admitting an admissible flipper in a region that is a small fraction of it |
+| **C-21** | NO CONCLUSION IS CARRIED BY A FREE PARAMETER. Over 28 settings spanning beta 0.2-20, lambda 0.05-3.0, bath size 2-6, time 0.5-16 and five energy seeds, chi[record] ranges 0.0042 to 0.99996 while chi for gauge-invariant local and weight-1 couplings stays at the floor (max 4.4e-15). 28 invariant, 0 moved | **PROVED** | LANE_T10_PARAMS; noise floor 0.00e+00 in 21 of 28 settings | — | a conclusion that changes with beta, lambda, bath size, time or bath energies |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 

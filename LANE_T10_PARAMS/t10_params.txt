@@ -1,0 +1,52 @@
+========================================================================================================
+T-10   DOES ANY CONCLUSION MOVE WITH A FREE PARAMETER?
+========================================================================================================
+  carrier [[4,2,2]] dim 16   record ZZII   channel(R,R) = True   channel(R,stabs) = False   channel(R,Z_0) = False
+
+  1. TEMPERATURE beta
+    setting                     floor(lam=0)  chi[record]  chi[stabs]  chi[wt-1]                conclusion
+    beta = 0.2                      0.00e+00     0.057422    0.00e+00   0.00e+00                 INVARIANT
+    beta = 0.5                      0.00e+00     0.287014    4.44e-16   0.00e+00                 INVARIANT
+    beta = 1.0                      0.00e+00     0.665256    4.44e-16   0.00e+00                 INVARIANT
+    beta = 2.0                      0.00e+00     0.943421    0.00e+00   1.22e-15                 INVARIANT
+    beta = 5.0                      6.35e-16     0.999552    2.32e-15   1.11e-15                 INVARIANT
+    beta = 20.0                     0.00e+00     0.999962    0.00e+00   0.00e+00                 INVARIANT
+
+  2. COUPLING lambda
+    setting                     floor(lam=0)  chi[record]  chi[stabs]  chi[wt-1]                conclusion
+    lambda = 0.05                   0.00e+00     0.004158    0.00e+00   0.00e+00                 INVARIANT
+    lambda = 0.2                    0.00e+00     0.060007    1.22e-15   1.89e-15                 INVARIANT
+    lambda = 0.5                    0.00e+00     0.539603    0.00e+00   3.00e-15                 INVARIANT
+    lambda = 0.8                    0.00e+00     0.943421    0.00e+00   1.22e-15                 INVARIANT
+    lambda = 1.5                    0.00e+00     0.931555    4.44e-15   1.78e-15                 INVARIANT
+    lambda = 3.0                    0.00e+00     0.979185    0.00e+00   4.44e-15                 INVARIANT
+
+  3. BATH SIZE nq
+    setting                     floor(lam=0)  chi[record]  chi[stabs]  chi[wt-1]                conclusion
+    nq = 2                          1.44e-15     0.905652    0.00e+00   2.11e-15                 INVARIANT
+    nq = 3                          0.00e+00     0.943421    0.00e+00   1.22e-15                 INVARIANT
+    nq = 4                          6.66e-16     0.945532    2.22e-15   0.00e+00                 INVARIANT
+    nq = 5                          2.44e-15     0.978353    0.00e+00   0.00e+00                 INVARIANT
+    nq = 6                          0.00e+00     0.988572    4.44e-16   3.11e-15                 INVARIANT
+
+  4. TIME t
+    setting                     floor(lam=0)  chi[record]  chi[stabs]  chi[wt-1]                conclusion
+    t = 0.5                         0.00e+00     0.805799    5.55e-16   0.00e+00                 INVARIANT
+    t = 1.0                         0.00e+00     0.965455    0.00e+00   0.00e+00                 INVARIANT
+    t = 2.0                         0.00e+00     0.855067    6.66e-16   0.00e+00                 INVARIANT
+    t = 4.0                         0.00e+00     0.943421    0.00e+00   1.22e-15                 INVARIANT
+    t = 8.0                         0.00e+00     0.884900    4.44e-16   0.00e+00                 INVARIANT
+    t = 16.0                        0.00e+00     0.720261    2.33e-15   0.00e+00                 INVARIANT
+
+  5. BATH ENERGIES (seed)
+    setting                     floor(lam=0)  chi[record]  chi[stabs]  chi[wt-1]                conclusion
+    seed 1                          1.28e-15     0.919405    0.00e+00   0.00e+00                 INVARIANT
+    seed 2                          0.00e+00     0.965344    0.00e+00   0.00e+00                 INVARIANT
+    seed 3                          0.00e+00     0.943421    0.00e+00   1.22e-15                 INVARIANT
+    seed 4                          6.52e-16     0.880983    6.38e-16   0.00e+00                 INVARIANT
+    seed 5                          6.52e-16     0.730152    2.98e-15   0.00e+00                 INVARIANT
+
+========================================================================================================
+  28 INVARIANT, 0 MOVED   over 28 parameter settings
+  The chi values move by orders of magnitude across these settings. The CONCLUSION -- record
+  coupling forms, gauge-invariant local does not, weight-1 does not -- does not move at all.
