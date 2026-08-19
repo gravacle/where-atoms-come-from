@@ -6364,3 +6364,66 @@ All three stay **BLOCKED**. **PF-6 is answered NO, and what it gains is an adjud
 of silence.** Every arm run so far is closed unitary evolution with a small bath; **the one untested
 place where amplitudes and rates need not stand in the squared relation is a genuinely dissipative
 bath.**
+
+---
+
+## PF-6 ERRATUM — **THE REGISTRAR APPLIED A TEST THE REGISTER ITSELF REJECTS**
+
+The principal: *"it's expected that we will use conventional physics… What physics has not accomplished
+is to describe how those discoveries and observations combine to create records."*
+
+**`STATUS_V001.md` section C already says this, and I ignored it:**
+
+> **"THE TEST APPLIED: *does the assembly answer an open question?* — NOT *can the parts be named?*
+> Naming parts does not make an assembly a restatement."**
+
+**PF-6's finding stands: no measurement distinguishes this account from a rival, so X-4, T-VI.3 and
+T-VI.4 remain BLOCKED.** That is a real limit on **empirical contact** and nothing here softens it.
+
+**What does NOT follow is the conclusion I drew from it.** I wrote that the result *"materially reduces
+what the program can claim as its own."* **It does not.** The charter never asked for a new physical
+law. It asks **how EM, gravity and alpha COMBINE to form records** — and every component of a correct
+assembly *should* have a named owner. **Finding that each part is known is what a right answer looks
+like, not evidence against one.**
+
+> ### **THE CLAIM WAS NEVER "A NEW LAW". IT IS "A PROCESS NOBODY HAS DESCRIBED".**
+> ### **PF-6 tested the first and found nothing. It never tested the second.**
+
+**WHAT SURVIVES PF-6 UNTOUCHED:** the assembly itself — that a record is a trace-balanced projection in
+the commutant (C-12), written by an operation admissible only as a whole (C-13), carried by an EM
+holonomy that is also its writer and its minimal forming coupling (A-EM3), formed when a coupling makes
+the environment's evolution conditional on it (F-20), with the environment's copy unremovable from
+inside (F-19). **No cited rival assembles these into a formation process; each owns one part.**
+
+**AND THE THREE FALSE CLAIMS STAY FALSE.** F-25, C-14 and the protection scope were genuine errors,
+caught by genuine counterexamples, and this erratum does not touch them.
+
+**D-9 fired here and I missed it on myself:** *"materially reduces what the program can claim"* is a
+**grade**, not a mechanism.
+
+---
+
+## O-16 — PREDICTION REGISTERED BEFORE THE RUN
+
+**THE ONE UNTESTED ARM.** Every arm so far is **closed unitary evolution with a small bath**, where
+information measures are the square of an amplitude by construction. **A genuinely dissipative
+(Lindblad) bath is the one place amplitudes and rates need not stand in that relation.**
+
+**THE MECHANISM THAT MAKES ME EXPECT A DIFFERENCE.** For a Pauli jump operator `L = P_i` with
+`{P_i, Z̄} = 0`, the Lindblad term gives `Tr(Z̄ · (P_i ρ P_i − ρ)) = −2 Tr(Z̄ρ)` — **first order in the
+rate `γ`, with no `d` in it at all.** A single-site jump decays the record immediately, where in the
+unitary arm a single local term gave **exactly zero at every order**.
+
+**PREDICTIONS:**
+1. **The record's decay exponent under single-site Lindblad jumps is 2 in `λ` (first order in
+   `γ = λ²`), INDEPENDENT of `d`.**
+2. **The static splitting exponent under the same operator set is `n*`** — as PF-6 established.
+3. **Therefore the two exponents DIFFER, and the rival's squared rule does not carry over.**
+
+**IF 1–3 HOLD, THE FINDING IS PHYSICAL AND SHARP:** **distance protects against STATIC perturbation and
+does NOT protect against DISSIPATION.** Uncorrected, a distance-`d` code loses its record at the
+physical rate — which is why quantum error correction needs an **agent actively correcting**, and this
+account has none.
+
+**IF THE EXPONENTS MATCH,** the rival's rule survives the dissipative arm too, O-16 closes negative,
+and the account has no arm left in which it differs from perturbation theory.
