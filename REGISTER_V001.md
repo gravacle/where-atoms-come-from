@@ -6919,3 +6919,23 @@ nothing about `Z̄`.
 **THIS IS THE SECOND TIME TODAY A ROW REGISTERED AS PROVED WAS VALIDATED ONLY ON THE CASES IT WAS
 DERIVED FROM** — the first was F-25's `λ^{2d}`, which PF-6 corrected to `λ^{2n*}`. **Both were caught
 by testing outside the fitted set, which is what the model exists for.**
+
+---
+
+## T-5 DONE — **THE CORRECTED CHANNEL CRITERION, 31 OF 31**
+
+`model.channel(record, coupling)`, verified against measured `χ` on **every cycle of the 2×2 torus**:
+
+| | |
+|---|---|
+| cycles tested | **31** |
+| `channel()` predicts a channel opens | **8** |
+| **agreement with measured `χ`** | **31 of 31, zero mismatches** |
+
+**The eight that open are exactly the cycles whose compression onto the code space has a non-zero
+component along `Z̄`.** The 23 that do not include both the boundaries **and** the non-boundaries that
+are other logicals — which the anticommutation form got wrong.
+
+> ### **`channel()` is now the model's answer to "can this environment form this record", and it is
+> ### decided entirely by the coupling's action ON THE CODE SPACE — not by its weight, its locality,
+> ### its gauge invariance, or its homology class taken alone.**

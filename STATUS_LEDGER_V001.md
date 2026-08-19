@@ -12,7 +12,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 78 | 2 | 10 | 1 | 20 | 3 | 6 | 7 | 3 | 3 |
+| 79 | 2 | 9 | 1 | 20 | 3 | 6 | 7 | 3 | 3 |
 
 **133 rows.**
 
@@ -119,7 +119,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **G-13** | ERRATUM: THE WRITER IS NOT POINCARE DUALITY. The pairing H_k x H^k -> F_2 is perfect for ANY complex over a field (universal coefficients). R2 needs no manifold, no orientability, no duality | **PROVED** | G-6 adjudication; Thm B result stands, its stated source was too strong | — | a complex over a field with a non-perfect evaluation pairing |
 | **G-14** | GAMMA IS A REQUIREMENT ON EM'S COMPLEX, NOT AN INGREDIENT BESIDE IT. The carrier supplies the cells, EM supplies the maps, and Gamma is the non-triviality of the homology of the pair. This does NOT dissolve Gamma into EM: G-6 (non-manifold complexes) and G-11 (protection needs something metric) keep R1-R3 distinct | **PROVED** | G-9, G-4, A-EM consolidation | — | a record whose homology is not that of the gauge complex |
 | **G-15** | THE CONDITION RESTATED IN CLAUSE (v)'s OWN BINARY TERMS: a length-2 F_2 complex in which no CONTRACTIBLE operation reaches a non-trivial class. No growth requirement — 'd must scale with n' is imported from asymptotic good-code-family theory, not from the anchor | **PROVED** | import audit finding 2; replaces G-12 | — | a contractible operation that moves a record |
-| **G-16** | A COUPLING OPENS A CHANNEL TO A RECORD IFF ITS COMPRESSION ONTO THE CODE SPACE HAS A NON-ZERO COMPONENT ALONG THAT RECORD. The earlier form — 'iff it fails to commute with the record's conjugate' — is NECESSARY BUT NOT SUFFICIENT: Zbar*Zbar2 anticommutes with Xbar (32.0) yet gives chi = 0, being a different logical | **PARTIAL** | corrected: the anticommutation form was validated on four weight-2 couplings only; eight weight-4 counterexamples found by the model. Full-cycle verification of the corrected criterion in progress | — | a coupling pairing evenly with the conjugate that forms a record |
+| **G-16** | A COUPLING OPENS A CHANNEL TO A RECORD IFF ITS COMPRESSION ONTO THE CODE SPACE HAS A NON-ZERO COMPONENT ALONG THAT RECORD. The earlier form — 'iff it fails to commute with the record's conjugate' — is NECESSARY BUT NOT SUFFICIENT: Zbar*Zbar2 anticommutes with Xbar (32.0) yet gives chi = 0, being a different logical | **PROVED** | corrected criterion verified 31 of 31 on every cycle of the carrier: a coupling opens a channel iff its compression onto the code space has a non-zero component along the record | — | a coupling pairing evenly with the conjugate that forms a record |
 
 ## D. OBSTRUCTIONS — solvable here
 

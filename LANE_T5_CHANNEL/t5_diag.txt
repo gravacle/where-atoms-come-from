@@ -1,0 +1,17 @@
+  WHY THE WEIGHT-4 CYCLES FAIL: what does each coupling do ON THE CODE SPACE?
+
+  links               ||[A,Xbar]||    ~ Zbar     ~ I   residual          chi
+  [0, 2]                      32.0     1.000   0.000      0.000   0.90811968
+  [4, 6]                      32.0     1.000   0.000      0.000   0.90811968
+  [3, 7]                       0.0     0.000   0.000      2.000   0.00000000
+  [1, 5]                       0.0     0.000   0.000      2.000   0.00000000
+  [3, 4, 6, 7]                32.0     0.000   0.000      2.000   0.00000000
+  [2, 3, 4, 5]                32.0     0.000   0.000      2.000   0.00000000
+  [0, 3, 5, 6]                32.0     0.000   0.000      2.000   0.00000000
+
+  Zbar2 vs Xbar commutator : 0.0
+  Zbar*Zbar2 vs Xbar       : 32.0
+
+  READ: a coupling can anticommute with the writer and still be a DIFFERENT logical
+        (Zbar*Zbar2 anticommutes with Xbar but is not Zbar). The bath then learns THAT
+        logical, which in a maximally mixed code state says nothing about Zbar.
