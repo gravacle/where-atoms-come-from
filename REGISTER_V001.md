@@ -7113,3 +7113,41 @@ only a change to the **stabiliser group** changes the carrier:
 
 **H-4 — "one carrier, and the carrier may be the result" — is answered for the formation results.**
 What remains single-carrier is now explicit rather than assumed.
+
+---
+
+## T-11 — **"CONTRACTIBLE REGION" IS UNDEFINED, AND THE TWO READINGS DISAGREE**
+
+`LANE_T11_CLAUSEV`. PF-3B could not run because its carrier had `d=1`; T-8 built one that qualifies.
+Running clause (v) under DEF-A on both carriers turned up something other than the expected zero.
+
+### THE EDGE-SUBGRAPH READING — clause (v) FAILS on BOTH carriers
+
+| carrier | record | single-region: any-unitary | **single-region: ADMISSIBLE** | scattered: any | scattered: adm |
+|---|---|---|---|---|---|
+| A toric `[[8,2,2]]` | `Z̄` | 836 | **8** | 32 | 2 |
+| **B torus+cap `[[8,1,2]]` NON-MANIFOLD** | `Z̄₂` | 836 | **8** | 32 | 2 |
+
+**Both carriers behave identically — which is itself a carrier-independence result — and both give
+EIGHT admissible flippers inside a single connected contractible region.**
+
+**Requiring the region to be CONNECTED does not rescue it.** "Single" excludes 8 scattered forests
+carrying 2 of the 10, and 8 admissible flippers remain in genuinely single regions.
+
+### WHY THIS DISAGREES WITH O-4's ZERO
+
+**O-4 measured `0` admissible flippers at `L=3` using CERTIFIED-CONTRACTIBLE PLAQUETTE BLOCKS — disks
+of the surface.** This lane used **edge subgraphs with no cycle**. **The anchor says "no admissible
+operation on a single contractible region" and does not say which.**
+
+> ### **THIS IS EXACTLY THE DEFECT O-4 FIXED FOR THE WORD "ADMISSIBLE", UNFIXED FOR THE WORDS
+> ### "CONTRACTIBLE REGION". An undefined term in the anchor is doing load-bearing work in clause (v)
+> ### — the clause that carries the program's whole protection claim.**
+
+**And the likely content of O-4's zero is not contractibility at all.** At `L=3` the code distance is
+`3` and the blocks measured were small; here `d = 2` and a connected 3-edge region already exceeds it.
+**What O-4 may have measured is that its regions were SMALL RELATIVE TO `d`** — which is
+Knill–Laflamme, not topology. **Registered as O-22.**
+
+**The geometric reading is running and will settle whether clause (v) survives under EITHER reading at
+this size.** Until it lands, T-11 is **PARTIAL** and no verdict is registered.

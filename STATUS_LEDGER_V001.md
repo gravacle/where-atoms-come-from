@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 87 | 2 | 8 | 1 | 17 | 3 | 6 | 7 | 3 | 3 |
+| 87 | 2 | 8 | 1 | 18 | 3 | 6 | 7 | 3 | 3 |
 
-**137 rows.**
+**138 rows.**
 
 ---
 
@@ -37,7 +37,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 |---|---|:---:|---|---|---|
 | **PF-1** | RESTATE A-PR to match what was proved. Old wording — 'a topologically protected degeneracy written by non-local transport' — was refuted in all three parts by G-6, G-15 and C-13, and its blockers O-1/O-3 were both already FAILED | **PROVED** | done 2026-08-18; A-PR now stated in two tiers, general and gauge-realization | — | — |
 | **PF-2** | CLOSE THE ARROW. F-1 is PARTIAL: one-wayness measured on an EQUILIBRIUM state. Needs (a) a DYNAMICAL before/after — a history with no record becoming one — and (b) REDUNDANCY, many environment fragments each holding a copy (O-13) | **PROVED** | both named gaps closed: the dynamical before/after (chi from exactly 0 to 0.908 bits with <Zbar> constant) and redundancy (fragments hold 0.789/0.048/0.679 bits independently) | F-1, O-13 | — |
-| **PF-3** | TAKE O-4 OFF PROVISIONAL. 'admissible := [U,H]=0' now appears in BOTH clause (iv) and clause (v) and is tested on ONE carrier family with no working fallback. Re-test on a structurally different carrier; if it fails, both clauses and C-13 move | **PARTIAL** | part A closed — the Balance Lemma is universal. Part B still owed: needs a non-manifold carrier with BOTH distances >= 2; the bouquet has d = 1 and cannot test the definition | O-4 | — |
+| **PF-3** | TAKE O-4 OFF PROVISIONAL. 'admissible := [U,H]=0' now appears in BOTH clause (iv) and clause (v) and is tested on ONE carrier family with no working fallback. Re-test on a structurally different carrier; if it fails, both clauses and C-13 move | **PARTIAL** | part A closed (Balance Lemma universal); part B ran on the new carrier and found clause (v)'s 'contractible region' UNDEFINED — the two readings disagree (O-22) | O-4 | — |
 | **PF-4** | ESTABLISH THE NECESSARY CONDITION. C-4 is PARTIAL: we have a sufficient family (F_2 length-2 complexes) and a proven ESCAPE (non-CSS, O-8). Either find the condition that covers both or prove none narrower than the clauses exists | **OPEN** | — | C-4, O-8 | — |
 | **PF-5** | SUPPLY THE INPUT. O-9: formation needs an environment coupling over a region of weight >= d. Exhibit such an environment, or state precisely why none is available. The process is currently proved CONDITIONAL ON AN INPUT NOTHING SUPPLIES | **PROVED** | an ordinary LOCAL environment forms records at order lambda^2d (slope 3.8988 vs predicted 4); O-9's premise dissolves | O-9 | — |
 | **PF-6** | PRODUCE A DISTINGUISHING PREDICTION. X-4, T-VI.3, T-VI.4 all BLOCKED at zero. New material exists that did not before: threshold = d, the two-condition coupling requirement, chi = 0.1145 bits at weight d and exactly 0 below | **FAILED** | answered NO: every measured result is already predicted by a rival, with attribution registered. X-4, T-VI.3, T-VI.4 do not move | X-4, T-VI.3, T-VI.4 | — |
@@ -148,6 +148,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-19** | MODEL EFFICIENCY DEFECT: record_model.py builds the *-algebra when the commutant needs only the generators (commutant of a set = commutant of the algebra it generates). This is why it hits the enumeration cap on dim-32 carriers | **OPEN** | found in LANE_O17_TENSION | — | — |
 | **O-20** | THE FORMATION STORY NEEDS AN ENVIRONMENT THAT COUPLES EITHER NON-GAUGE-INVARIANTLY OR NON-LOCALLY. A-EM established EM supplies the Gauss law, so a non-gauge-invariant coupling is coupling to something that is not the gauge field. The program has no argument for either option | **PROVED** | answered: the criterion is the INTERSECTION PAIRING with the record's conjugate, not gauge invariance vs locality. chi > 0 iff pairing is odd, four for four; all four couplings are gauge-invariant non-boundaries | — | — |
 | **O-21** | OBJECTIVITY REQUIRES EQUIVALENT FRAGMENTS, AND NOTHING SUPPLIES THAT. With inequivalent fragments different observers get genuinely different amounts of the record — 0.657 against 0.159 on the same bath. Quantum Darwinism's redundancy plateau assumes equivalence; the account does not derive it | **OPEN** | created by T-13's control | — | — |
+| **O-22** | 'CONTRACTIBLE REGION' IS UNDEFINED IN CLAUSE (v), AND THE TWO READINGS DISAGREE. Edge-subgraphs give 8 admissible flippers on BOTH carriers; O-4's zero at L=3 used plaquette blocks. The same defect O-4 fixed for 'admissible', unfixed for the words that carry the protection claim — and O-4's zero may have been about regions being SMALL RELATIVE TO d rather than about contractibility | **OPEN** | LANE_T11_CLAUSEV; geometric reading pending | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 
