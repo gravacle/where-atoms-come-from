@@ -6427,3 +6427,51 @@ account has none.
 
 **IF THE EXPONENTS MATCH,** the rival's rule survives the dissipative arm too, O-16 closes negative,
 and the account has no arm left in which it differs from perturbation theory.
+
+---
+
+## O-16 RESULT — **THE PREDICTION HOLDS. DISTANCE PROTECTS AGAINST STATIC PERTURBATION AND NOT AGAINST DISSIPATION.**
+
+`LANE_O16_DISSIPATIVE`. Two codes whose self-checks passed; a third was **voided by its own gate**.
+
+| code | coupling set | **decay exponent** (Lindblad) | **splitting exponent** (static) | |
+|---|---|---|---|---|
+| **[[5,1,3]]** `d=3`, non-CSS | `{Z}` | **0 exactly** | **4.9942** `= n*` | |
+| | `{X,Y,Z}` | **2.0000** | **2.9979** `= d` | **DIFFER** |
+| **[[7,1,3]]** Steane `d=3`, CSS | `{Z}` | **0 exactly** | 3.0064 | |
+| | `{X,Y,Z}` | **2.0000** | **2.9835** `= d` | **DIFFER** |
+
+**`2.0000` on BOTH `d=3` codes — the decay exponent contains no `d` at all**, exactly as the mechanism
+predicted: for a jump `L = P_i` with `{P_i, Z̄} = 0`, `Tr(Z̄(P_iρP_i − ρ)) = −2Tr(Z̄ρ)`, first order in `γ`.
+
+> ### **DISTANCE PROTECTS AGAINST STATIC PERTURBATION (`λ^d`) AND DOES NOT PROTECT AGAINST DISSIPATION (`λ²`, independent of `d`).**
+
+### **AND THIS IS NOT OURS EITHER — attribution stated up front (D-10, PF-6)**
+
+**It is standard QEC that an UNCORRECTED code decays at the physical error rate.** `d` bounds what
+active correction *can* fix; it protects nothing on its own. A syndrome-extracting, correcting **agent**
+is what converts distance into protection.
+
+> ### **THIS ACCOUNT HAS NO AGENT. Nothing in it extracts a syndrome or corrects anything.**
+> ### **So the protection the program has been reporting — Theorem D's `ε^d` — is protection against
+> ### STATIC PERTURBATION ONLY. Against a real dissipative environment the record decays at `γ`.**
+
+### **O-17 — THE TENSION THIS CREATES, AND IT IS THE SHARPEST OPEN ITEM ON THE BOARD**
+
+| | order in `λ` |
+|---|---|
+| the environment **learns** the record | `2n*` (PF-5, measured 9.9966 → 10 on `[[5,1,3]]`) |
+| the environment **destroys** the record | **2** (here, measured 2.0000) |
+
+> ### **THE RECORD IS DESTROYED AT ORDER 2 AND RECORDED AT ORDER `2n*`. FOR `n* > 1` IT IS ERASED FASTER THAN IT IS WRITTEN.**
+
+The two numbers come from different arms — one unitary-with-small-bath, one Lindblad — so this is a
+**tension to resolve, not yet a contradiction**. But it is aimed straight at the formation account:
+**an ordinary dissipative environment may destroy a record before it can hold one.**
+
+### THE GATE DID ITS JOB — THIRD NOMINATION ERROR CAUGHT
+
+`[[4,2,2]]`'s arm was **voided by its own self-check**: the nominated `Z̄ = ZZII` and `X̄ = XXII`
+**commute** (`‖{Z̄,X̄}‖ = 8.00`), so they are not a conjugate pair and nothing downstream was computed.
+**Third time a nominated logical has been caught this session** — W-62's original defect, F-7's first
+build, and now this. **In every case the check fired before a number was read.**

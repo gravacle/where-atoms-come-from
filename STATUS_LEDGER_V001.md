@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 68 | 2 | 9 | 1 | 10 | 3 | 6 | 7 | 3 | 3 |
+| 71 | 2 | 9 | 1 | 10 | 3 | 6 | 7 | 3 | 3 |
 
-**112 rows.**
+**115 rows.**
 
 ---
 
@@ -120,7 +120,8 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-13** | REDUNDANCY UNTESTED. The bath is 4 levels. Whether many environment fragments EACH hold a copy — what makes a record objective rather than merely correlated — is not tested | **PROVED** | redundancy measured: bath fragments independently hold the record, and a weight-1 coupling gives every fragment exactly zero | — | — |
 | **O-14** | A SECOND VALID CARRIER FOR CLAUSE (v). PF-3B needs a non-manifold with BOTH systole and cosystole >= 2. The bouquet family has cosystole 1 and is disqualified | **OPEN** | created by PF-3 part B | — | — |
 | **O-15** | THE BATH IS SMALL AND chi(t) RECURS (0.975 at t=1, 0.787 at t=2, 0.908 at t=4). A macroscopic environment would not recur on any relevant scale, but that is ASSERTED here, not measured. Redundancy is also UNEVEN across fragments | **OPEN** | PF-2 limits, stated in the result | — | — |
-| **O-16** | THE DISSIPATIVE ARM IS UNTESTED. Every arm run so far is closed unitary evolution with a small bath. The one place amplitudes and rates need not stand in the squared relation is a genuinely dissipative (Markovian/Lindblad) bath | **OPEN** | PF-6's named next step | — | — |
+| **O-16** | THE DISSIPATIVE ARM IS UNTESTED. Every arm run so far is closed unitary evolution with a small bath. The one place amplitudes and rates need not stand in the squared relation is a genuinely dissipative (Markovian/Lindblad) bath | **PROVED** | decay exponent 2.0000 on both d=3 codes, independent of d; static splitting exponent = d (2.9979, 2.9835). They differ | — | — |
+| **O-17** | THE RECORD IS DESTROYED AT ORDER 2 AND RECORDED AT ORDER 2n*. For n* > 1 an ordinary dissipative environment erases it faster than it writes it. The two numbers come from different arms (unitary-with-small-bath vs Lindblad), so this is a TENSION to resolve, not yet a contradiction — and it is aimed straight at the formation account | **OPEN** | PF-5 measured 9.9966; O-16 measured 2.0000 | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 
@@ -169,6 +170,8 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **F-23** | A LOCAL ENVIRONMENT FORMS RECORDS AT ORDER lambda^2d. One local term gives EXACTLY ZERO at every coupling strength (powers of a weight-1 operator are I or itself); a SUM of local terms gives slope 3.8988 against predicted 2d = 4. This is C-13 measured dynamically | **PARTIAL** | the exponent is 2n*, not 2d; and the factor of two is set by bath preparation — the record-intrinsic exponent is the amplitude exponent (1.9987-1.9992) | — | a single local term forming a record at any order |
 | **F-24** | ONE QUANTITY, FOUR ROLES, NONE PUT IN BY HAND: d protects the record (splitting ~ eps^d), gates formation (threshold = d), gates what the environment can learn (chi turns on at weight d), and sets how slowly a local environment forms it (chi ~ lambda^2d) | **WITHDRAWN** | 'one quantity, four roles' is ONE THEOREM READ FOUR TIMES — a check that cannot fail (D-10) | — | a carrier where these four exponents differ |
 | **F-25** | FIRST CANDIDATE FOR A DISTINGUISHING PREDICTION: chi ~ lambda^2d, so a record of distance d is exponentially slow in d to form under an ordinary local environment. Quantitative, and involves only codes and baths. Whether it DISTINGUISHES this account from any other is NOT established | **WITHDRAWN** | FALSE: the exponent is 2n*, not 2d — n* tracks the COUPLING ALGEBRA. [[5,1,3]] Z-only measures 9.9966 -> 10 against 2d = 6; widening to {X,Y,Z} moves it to 6 | — | — |
+| **F-26** | DISTANCE PROTECTS AGAINST STATIC PERTURBATION AND NOT AGAINST DISSIPATION. Lindblad decay exponent is 2.0000 on both d=3 codes with no d in it; static splitting is 2.9979/2.9835 = d. NOT OURS: it is standard QEC that an uncorrected code decays at the physical rate, and d bounds only what active correction can fix | **PROVED** | LANE_O16_DISSIPATIVE | — | a dissipative decay exponent depending on d without an agent correcting |
+| **F-27** | THIS ACCOUNT HAS NO AGENT. Nothing in it extracts a syndrome or corrects. So Theorem D's eps^d is protection against STATIC perturbation only; against a real dissipative environment the record decays at gamma | **PROVED** | O-16; the agent is what converts distance into protection | — | protection from d without any correcting operation |
 
 ---
 
