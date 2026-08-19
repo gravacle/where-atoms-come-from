@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 95 | 2 | 6 | 1 | 16 | 3 | 6 | 7 | 3 | 3 |
+| 96 | 2 | 6 | 1 | 16 | 3 | 6 | 7 | 3 | 3 |
 
-**142 rows.**
+**143 rows.**
 
 ---
 
@@ -30,6 +30,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **H-6** | NOTHING CONNECTS TO SCALE. Every carrier is 4-8 qubits and every bath 3 qubits. Real records are macroscopic. No argument carries any result from these sizes to any physical one | **OPEN** | — | — | — |
 | **H-7** | THE CARRIER IS ASSUMED — AND THIS MAY BE H-1 IN ANOTHER FORM. If classical gravity emerges from records then the carrier's geometry IS a description of record content, and where the complex comes from is answered by the same result | **OPEN** | T-II.5, F-3 both RECLASSIFIED — worth revisiting now that formation is better understood | — | — |
 | **H-8** | X-2's RECLASSIFICATION FORECLOSED THE EMERGENCE QUESTION. Reclassifying 'content shapes geometry' as a category error was correct AT THE RECORD LEVEL, where chi is a parameter with no equation of motion. It also closed off 'does record content look like a geometry when ACCUMULATED', which is a different question at a different level and has never been asked | **OPEN** | found by the principal's reframing of H-1 | — | — |
+| **H-9** | THE T-20 CRITERION (the principal, 2026-08-19): gravity emerging from Gamma would be RECORD-LEVEL HOLONOMY — a stable, universal, path-dependent mismatch among records. Diagnostic H_ABCD = (G_AB G_BD)(G_AC G_CD)^-1; H = I is flat, H != I structured is curvature. Admissible under D-1 because the Einstein form says what a result MEANS and is never the test | **PROVED** | supplied before any measurement, on no fitted set (D-11) | — | — |
 
 ## P. THE ROAD TO A FULL PROOF — the controlled plan
 

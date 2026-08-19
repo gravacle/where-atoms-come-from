@@ -7325,3 +7325,43 @@ homology is **withdrawn** — the twelfth withdrawn claim — and replaced by th
 is one family among others, all of which satisfy C-12.
 
 **STAGE D COMPLETE.**
+
+---
+
+# **T-20's CRITERION, SUPPLIED BY THE PRINCIPAL — RECORD-LEVEL HOLONOMY**
+
+The registrar asked for the **criterion**, not the method: *what would we accept as "gravity emerged"?*
+**The principal supplied one, and it is computable.**
+
+> ### **A STABLE, UNIVERSAL, PATH-DEPENDENT MISMATCH AMONG RECORDS THAT CAN BE INTERPRETED AS CURVATURE.**
+> ### **Gravity emerging from Γ would look like RECORD-LEVEL HOLONOMY.**
+
+**One record cannot show gravity. Two give relation. Several make PATH COMPARISON possible**, and that
+is where geometry can appear: compare `A→B→D` against `A→C→D`. The diagnostic is
+
+> `H_ABCD = (Γ_AB Γ_BD)(Γ_AC Γ_CD)^{-1}`
+>
+> `H ≈ I` → the record geometry is **flat**. `H ≠ I` **in a structured way** → the record network has
+> **curvature**.
+
+**WHY THIS IS ADMISSIBLE UNDER OUR OWN DOCTRINE, CHECKED BEFORE ACCEPTING IT:**
+
+| | |
+|---|---|
+| **D-1** | the test is whether **our** transport closes. **The Einstein form `R ~ dΓ + ΓΓ` is used to say what a positive result would MEAN, never as the criterion.** This is exactly the line X-6 crossed and this does not |
+| **D-4** | it asks whether a structure **exists**, not what **produces** a permission |
+| **D-9** | it is stated as a mechanism — transport failing to close — not as a grade |
+| **D-11** | it is specified **before** any measurement, on no fitted set |
+
+**THE FURTHER SIGNATURES THE PRINCIPAL NAMES, recorded so they are not lost:** the mismatch must be
+**local**, **smooth across neighbouring records**, **universal across record types** (gravity couples to
+energy/history, not to a charge), **phase/action-based** rather than a force, **stronger with enclosed
+record density**, **consistent with causal ordering**, and **subject to a Bianchi-like closure** — record
+curvature cannot appear or disappear arbitrarily. **Geodesic-deviation analogue: neighbouring record
+chains focus or defocus together. Visibility analogue: interference fades exactly when the record
+network can distinguish the histories.**
+
+> ### **"Gravity emerges when multiple records make path-comparison possible, and the mismatch between
+> ### alternative record histories becomes stable, universal, and geometry-like."**
+
+**This is now the standard T-20 is measured against.**
