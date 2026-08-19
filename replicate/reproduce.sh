@@ -59,3 +59,6 @@ else echo "  FAIL — the committed grid does not match what the ledger generate
 hdr "RESULT"
 [ "$FAIL" -eq 0 ] && echo "  EVERYTHING REPRODUCES" || echo "  REPRODUCTION FAILED — see above"
 exit "$FAIL"
+# NOTE: bash reads a script incrementally as it executes. NEVER edit this file while a run
+# is in flight -- the running shell will mis-parse the shifted bytes. Run long jobs from a
+# snapshot copy:  cp replicate/reproduce.sh /tmp/r.sh && /tmp/r.sh
