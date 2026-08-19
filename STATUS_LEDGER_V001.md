@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 96 | 2 | 7 | 1 | 18 | 3 | 7 | 7 | 3 | 3 |
+| 98 | 2 | 7 | 1 | 18 | 3 | 7 | 7 | 3 | 3 |
 
-**147 rows.**
+**149 rows.**
 
 ---
 
@@ -108,6 +108,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-20** | A CARRIER ALLOWS A PROTECTED RECORD WHEN A LOCAL REGION IS A SMALL FRACTION OF IT. Admissible flippers: 16 and 1152 at region/system 0.50 and 0.75 on the 2x2 torus, 3120 at 0.50 on the 3x3, and ZERO at 0.22 on the 3x3 against a control of 768. The 2x2 torus has no room for a region to be local | **PROVED** | LANE_T11_CLAUSEV t11c | — | a carrier admitting an admissible flipper in a region that is a small fraction of it |
 | **C-21** | NO CONCLUSION IS CARRIED BY A FREE PARAMETER. Over 28 settings spanning beta 0.2-20, lambda 0.05-3.0, bath size 2-6, time 0.5-16 and five energy seeds, chi[record] ranges 0.0042 to 0.99996 while chi for gauge-invariant local and weight-1 couplings stays at the floor (max 4.4e-15). 28 invariant, 0 moved | **PROVED** | LANE_T10_PARAMS; noise floor 0.00e+00 in 21 of 28 settings | — | a conclusion that changes with beta, lambda, bath size, time or bath energies |
 | **C-22** | NO STRUCTURAL CONDITION NARROWER THAN THE CLAUSES IS NECESSARY. Records with verified admissible writers exist in systems with no tensor factorisation (dim 6), no stabiliser group, no cells, no homology and no geometry. C-12 is the necessary condition and it is the clauses restated | **PROVED** | LANE_T12_NECESSARY, 5 of 5 | — | a record violating C-12, or a structural condition met by every record |
+| **C-23** | CURVATURE REQUIRES A WRITER THAT REACHES ANOTHER RECORD'S SITE. Minimum weight for a flat writer is 1 and for a curved one is 2, and of the two weight-2 writers only the one touching the compared record's site curves (4.000 against 0.000). Minimality therefore SELECTS the flat connection | **PROVED** | LANE_O24_MINIMALITY, every candidate verified admissible before use | — | a curved writer that touches no other record's site |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 
@@ -157,7 +158,8 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-21** | OBJECTIVITY REQUIRES EQUIVALENT FRAGMENTS, AND NOTHING SUPPLIES THAT. With inequivalent fragments different observers get genuinely different amounts of the record — 0.657 against 0.159 on the same bath. Quantum Darwinism's redundancy plateau assumes equivalence; the account does not derive it | **OPEN** | created by T-13's control | — | — |
 | **O-22** | 'CONTRACTIBLE REGION' IS UNDEFINED IN CLAUSE (v), AND THE TWO READINGS DISAGREE. Edge-subgraphs give 8 admissible flippers on BOTH carriers; O-4's zero at L=3 used plaquette blocks. The same defect O-4 fixed for 'admissible', unfixed for the words that carry the protection claim — and O-4's zero may have been about regions being SMALL RELATIVE TO d rather than about contractibility | **PROVED** | closed: 'contractible region' needs no stipulation. The two readings disagreed about which CARRIERS were being asked, not about the clause. Held to a small fraction, both agree: 3x3 with one plaquette (0.22 of the system) gives 0 admissible flippers against a control of 768 | — | — |
 | **O-23** | DOES ANY RECORD STRUCTURE ADMIT NON-ABELIAN TRANSPORT? T-20's null converts the emergence claim into this. Every carrier this program has built is abelian and therefore flat by construction. The candidate class -- non-abelian topological order, Levin-Wen, Fibonacci -- is named in O-8 and has never been examined | **FAILED** | wrong question: EVERY record structure admits non-abelian transport with an admissible choice of writer. 200 of 200 phase-modified writers are admissible and give holonomy up to 5.169 | — | — |
-| **O-24** | DOES MINIMALITY PICK THE CONNECTION? T-20's flat connection was the minimal-weight writer; the curved ones were built by multiplying in extra phases. If the physics uses the cheapest operation that flips the record, the flat connection is selected and CURVATURE COSTS WEIGHT — testable on a carrier where weight is defined | **OPEN** | created by O-23 | — | — |
+| **O-24** | DOES MINIMALITY PICK THE CONNECTION? T-20's flat connection was the minimal-weight writer; the curved ones were built by multiplying in extra phases. If the physics uses the cheapest operation that flips the record, the flat connection is selected and CURVATURE COSTS WEIGHT — testable on a carrier where weight is defined | **PROVED** | minimality selects the FLAT connection: minimal-weight writer gives 0.000e+00, and curvature costs exactly one extra site. The mechanism is overlap — X_0*S_1 curves at 4.000 while X_0*S_2 does not, at the same weight, because S_1 reaches record 1's site | — | — |
+| **O-25** | DOES RECORD DENSITY FORCE CURVATURE? If records are packed densely enough that minimal writers cannot avoid each other, overlap is forced and curvature is not a choice. This meets H-9's 'stronger with enclosed record-density' signature and is a PREDICTION of the account rather than an assumption. Testable: sweep record density on a fixed carrier and measure whether minimal-writer holonomy turns on | **OPEN** | created by O-24; the first place the structure predicts curvature rather than permitting it | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 

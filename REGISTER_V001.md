@@ -7477,3 +7477,44 @@ degenerate, so `eigh` did not return a simultaneous eigenbasis and **no construc
 The script then found **zero** admissible alternatives and **still printed a conclusion from the empty
 loop.** Both fixed: powers of two separate the sign patterns, and the script now **refuses to conclude
 when no valid case executed**.
+
+---
+
+## O-24 ANSWERED — **MINIMALITY SELECTS THE FLAT CONNECTION. CURVATURE COSTS ONE SITE, AND REQUIRES RECORDS TO OVERLAP.**
+
+`LANE_O24_MINIMALITY`. Three qubits, `H = 0`, records `Z₁ Z₂ Z₃` — weight is defined and every
+admissible writer is enumerable.
+
+| writer for `R₀` | weight | `‖[U₀,W₁]‖` | loop `‖H−I‖` | |
+|---|---|---|---|---|
+| `X₀` — the minimal writer | **1** | 0.000e+00 | **0.000e+00** | FLAT |
+| `X₀·S₀` — phase on its **own** site | 1 | 0.000e+00 | 0.000e+00 | FLAT |
+| **`X₀·S₁`** — phase on **record 1's** site | **2** | **4.000e+00** | **4.000e+00** | **CURVED** |
+| `X₀·S₂` | 2 | 0.000e+00 | 0.000e+00 | FLAT |
+| `X₀·S₁·S₂` | 3 | 4.000e+00 | 4.000e+00 | CURVED |
+
+> ### **MINIMUM WEIGHT FLAT: 1. MINIMUM WEIGHT CURVED: 2. CURVATURE COSTS EXACTLY ONE EXTRA SITE.**
+
+### THE MECHANISM IS VISIBLE IN WHICH ONE CURVES
+
+**`X₀·S₁` curves and `X₀·S₂` does not**, at the same weight. The difference is that `S₁` reaches
+**record 1's site** — the record the loop is taken against.
+
+> ### **CURVATURE REQUIRES A WRITER THAT REACHES ANOTHER RECORD'S SITE. RECORDS MUST OVERLAP.**
+
+**And minimality selects the flat connection**, because the cheapest writer touches only its own site.
+**So T-20's flat result was not an accident of choice after all — it is what minimality picks.** O-23's
+finding stands: the connection is not *determined* by the records. **But it is SELECTED, if the physics
+uses the cheapest operation that does the job.**
+
+### **AND THIS MEETS A SIGNATURE THE PRINCIPAL NAMED INDEPENDENTLY**
+
+H-9 lists, among the signatures of record-level curvature: **"stronger with enclosed record-density."**
+
+> ### **IF RECORDS ARE PACKED DENSELY ENOUGH THAT MINIMAL WRITERS CANNOT AVOID EACH OTHER, OVERLAP IS
+> ### FORCED AND CURVATURE IS NOT A CHOICE.**
+
+**That is a prediction of the account, not an assumption of it, and it is testable: sweep record
+density on a fixed carrier and measure whether the minimal-writer holonomy turns on.** Registered as
+**O-25**, and it is the sharpest thing on the board — **the first place where the program's own
+structure predicts curvature rather than merely permitting it.**
