@@ -6836,3 +6836,38 @@ it.
 **Half of the claim is built and the harder half of THAT half — keeping gravity out — is done.**
 **The other half is untouched.** `G-2` relates record count to integrated curvature **on a given
 carrier**, with geometry as input on both sides. **That is a relation. It is not an origin.**
+
+---
+
+## T-3 DONE — **O-19 FIXED, AND THE MODEL NOW REACHES dim 256**
+
+`model/record_model.py`, `LANE_T3_MODELREACH`.
+
+| carrier | time | minimal projections | record possible? |
+|---|---|---|---|
+| toric 2×2, **no noise** | **0.1s** | 256 | yes |
+| toric 2×2, **single-site `Z`** | **2.1s** | 32 | yes |
+| toric 2×2, **single-site `X,Y,Z`** | **0.2s** | **1** | **NO — scalars only** |
+
+**The last row independently reproduces C-17/O-17 on a SECOND carrier.** That result was measured on
+`[[5,1,3]]` by an entirely different route — a Gram matrix of the commutator system. **The model gets
+it at dim 256 in a fifth of a second, from `(H,{L_k})` alone.**
+
+### THREE ATTEMPTS, AND THE FIRST TWO FAILED FOR REASONS WORTH KEEPING
+
+1. **Commutant from generators, direct solve.** Correct (O-19 as registered) but `n²×n²`. **OOM at 256.**
+2. **Block-diagonal reduction in `H`'s eigenbasis.** Cuts unknowns to `D = Σ m_E²` — **and `D` is large
+   PRECISELY WHEN `H` IS DEGENERATE, which is what a record requires (P-1).** Measured: multiplicities
+   `[4,48,152,48,4]`, `D = 27744`, a **12.3 GB** Gram matrix. **The reduction helps the case we do not
+   care about.**
+3. **What works: THE MODEL NEVER NEEDED A BASIS OF `A′`.** `minimal_projections` needs **one generic
+   Hermitian element**, and that is a single projection. With no noise the commutant has dimension
+   27744 and no sampling scheme could span it — **and nothing in the model ever asked it to.**
+
+**The projection itself:** unitary generators by **twisted averaging** `X → (X + gXg†)/2`; Hermitian
+generators — `H` is Hermitian and almost never unitary — by their **exact block projection** in their
+own eigenbasis. **Treating `H` as a generic generator is what sent the whole computation into the
+`n²×n²` fallback.** The commutant basis remains available as a lazy property and is never on the
+critical path.
+
+**`validate_model.py` still passes 12/12 after every step.**

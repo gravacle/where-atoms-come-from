@@ -43,8 +43,11 @@ resting on (v) visibly inherits a carrier.
 
 ## WHAT THE MODEL CANNOT DO
 
-- **Dimension.** The commutant is found by an `n²`-dimensional nullspace, so exact use is small-`n`.
-  Large carriers are handled in their own lanes and cross-checked against the model where they overlap.
+- **Dimension — FIXED (T-3).** The model reaches **dim 256 in seconds**. It never builds the `*`-algebra
+  (O-19) and never builds a basis of the commutant: `minimal_projections` needs **one generic Hermitian
+  element of `A′`**, obtained by projection — twisted averaging over unitary generators, exact block
+  projection for Hermitian ones. A commutant *basis* is still `O(n²)` and stays a lazy property, unused
+  on the critical path.
 - **Clause (v).** By design, above.
 - **Formation.** The model constructs records; forming one needs an environment (see `F-13`).
 

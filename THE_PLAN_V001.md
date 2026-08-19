@@ -13,20 +13,20 @@ checkable rather than a judgement call.**
 
 **Nothing below counts as finished until both halves of that sentence are true.**
 
-**1 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**2 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO |
 |---|---|---|
-| 1 | 1 | 20 |
+| 2 | 1 | 19 |
 
 ---
 
-## PHASE A  MAKE IT LEGIBLE  —  1/3 done
+## PHASE A  MAKE IT LEGIBLE  —  2/3 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
 | ▶ **T-1** | **THE GLOSSARY. Map every program term to its standard name and owner — record = logical operator, writer = conjugate logical, channel = OURS coined 2026-08-19, Gamma = placeholder for (H_1,<,>). Mark each term BORROWED or OURS** | **DONE** | GLOSSARY.md exists, every term in the anchor and the live claim documents appears in it, and each is marked BORROWED (with owner) or OURS | — |
-| ▶ **T-3** | **FIX O-19. record_model.py builds the *-algebra when the commutant needs only the generators. This is why it caps out at dim 32** | TODO | the model computes the commutant from generators, validate_model.py still passes 12/12, and a dim-256 carrier completes | — |
+| ▶ **T-3** | **FIX O-19. record_model.py builds the *-algebra when the commutant needs only the generators. This is why it caps out at dim 32** | **DONE** | the model computes the commutant from generators, validate_model.py still passes 12/12, and a dim-256 carrier completes | — |
 | **T-2** | ONE CURRENT STATEMENT OF THE PROCESS. The register is 6000+ lines and append-only; THE_CLAIM predates most of the work. Write the process as it now stands, in mapped terms | TODO | PROCESS_V002.md states the process end to end, every sentence cites a ledger row, and no withdrawn claim appears | T-1 |
 
 ## PHASE B  MAKE THE MODEL THE PROCESS MODEL  —  0/4 done

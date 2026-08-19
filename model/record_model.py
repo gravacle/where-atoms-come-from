@@ -57,14 +57,111 @@ def star_algebra(H, Ls, tol=TOL):
     return basis
 
 # ---------------------------------------------------------------- the commutant
-def commutant(basis, tol=TOL):
-    """Basis of A' = {X : [X,a] = 0 for all a in A}, by nullspace of the commutator system."""
-    n = basis[0].shape[0]; I = np.eye(n)
-    rows = [np.kron(I, a.T) - np.kron(a, I) for a in basis]   # vec([X,a]) with row-major vec
-    Mx = np.vstack(rows)
-    _, s, Vh = np.linalg.svd(Mx)
-    null = Vh[np.sum(s > tol * max(Mx.shape) * (s[0] if s.size else 1)):]
-    return [v.reshape(n, n) for v in null]
+def _herm_blocks(H, tol=1e-8):
+    """H's eigenbasis and the index ranges of its degenerate blocks."""
+    w, V = np.linalg.eigh(H)
+    b, i = [], 0
+    while i < len(w):
+        j = i
+        while j + 1 < len(w) and abs(w[j + 1] - w[i]) < tol: j += 1
+        b.append((i, j + 1)); i = j + 1
+    return V, b
+
+def _project_H(X, V, blocks):
+    """Projection onto the commutant of a HERMITIAN generator: in its own eigenbasis, keep
+       only the diagonal blocks. O(n^2) and exact -- no solve. H is Hermitian but almost never
+       unitary, so it must be handled this way; treating it as a generic generator is what sent
+       the whole computation into the n^2 x n^2 fallback."""
+    Y = V.conj().T @ X @ V
+    Z = np.zeros_like(Y)
+    for a, z in blocks: Z[a:z, a:z] = Y[a:z, a:z]
+    return V @ Z @ V.conj().T
+
+def _commutant_project(X, unitaries, hprojs, sweeps=200, tol=1e-12):
+    """Project X onto the joint commutant. Unitary generators by TWISTED AVERAGING,
+       X -> (X + g X g-dagger)/2; Hermitian ones by their exact block projection. The fixed
+       points are exactly the operators commuting with every generator."""
+    for _ in range(sweeps):
+        prev = X
+        for V, blocks in hprojs: X = _project_H(X, V, blocks)
+        for g in unitaries: X = (X + g @ X @ g.conj().T) / 2
+        if np.linalg.norm(X - prev) < tol * max(1.0, np.linalg.norm(X)): break
+    return X
+
+def commutant_element(gens, seed=0):
+    """ONE generic Hermitian element of the commutant. This is all minimal_projections needs,
+       and it costs a single projection.
+
+       The basis is not required and must not be computed on the critical path: with no noise
+       the commutant of the toric 2x2 has dimension 27744, so no sampling scheme can span it --
+       and nothing in the model ever asks it to."""
+    n = gens[0].shape[0]; I = np.eye(n)
+    uni, hpr = [], []
+    for g in gens:
+        if np.linalg.norm(g - I) < 1e-12: continue
+        if np.linalg.norm(g.conj().T @ g - I) < 1e-9: uni.append(g)
+        elif np.linalg.norm(g - g.conj().T) < 1e-9:
+            V, b = _herm_blocks(g); hpr.append((V, b))
+        else: uni.append(None)
+    if any(u is None for u in uni):
+        cb = commutant(gens)
+        rng = np.random.default_rng(seed)
+        X = sum(rng.normal() * ((A + A.conj().T) / 2) for A in cb) if cb else np.eye(n, dtype=complex)
+        return X
+    rng = np.random.default_rng(seed)
+    A = rng.normal(size=(n, n)) + 1j * rng.normal(size=(n, n))
+    return _commutant_project((A + A.conj().T) / 2, uni, hpr)
+
+def commutant(gens, tol=TOL, samples=None, seed=0):
+    """Basis of the commutant of a SET of generators.
+
+    O-19: the commutant of a SET equals the commutant of the algebra it generates, so the
+    *-algebra is never built.
+
+    THE COST PROBLEM AND WHY THE OBVIOUS FIXES FAIL. Solving [X,g]=0 directly is n^2 x n^2.
+    Restricting to H's eigenbasis first makes X block-diagonal and cuts the unknowns to
+    D = sum_E m_E^2 -- but D is large PRECISELY WHEN H IS DEGENERATE, which is exactly what
+    a record requires (P-1). Measured on the toric 2x2: multiplicities [4,48,152,48,4],
+    D = 27744, a 12.3 GB Gram matrix. The reduction helps the case we do not care about.
+
+    WHAT WORKS: when the generators are UNITARY -- Paulis, stabilisers, and every carrier in
+    this program -- the projection onto the commutant is a twisted group average, reachable by
+    iterating over generators. Sample random Hermitian matrices, project, keep what is
+    independent. Falls back to the direct solve for non-unitary generators."""
+    n = gens[0].shape[0]; I = np.eye(n)
+    uni, hpr, rest = [], [], []
+    for g in gens:
+        if np.linalg.norm(g - I) < 1e-12: continue                       # identity: no constraint
+        if np.linalg.norm(g.conj().T @ g - I) < 1e-9: uni.append(g)      # unitary: average
+        elif np.linalg.norm(g - g.conj().T) < 1e-9:                      # Hermitian: block projection
+            V, b = _herm_blocks(g); hpr.append((V, b))
+        else: rest.append(g)
+    if rest:                                        # neither unitary nor Hermitian: direct solve
+        M = np.vstack([np.kron(I, g.T) - np.kron(g, I) for g in gens])
+        G = M.conj().T @ M
+        ev, U = np.linalg.eigh(G)
+        return [U[:, k].reshape(n, n) for k in range(int((ev < tol * max(1.0, abs(ev).max())).sum()))]
+    rng = np.random.default_rng(seed)
+    if samples is None: samples = min(8 * n, 2000)
+    # INCREMENTAL ORTHOGONALISATION. A full matrix_rank per sample over n^2-length vectors is
+    # what made this unusable at dim 256; Gram-Schmidt against an orthonormal basis is O(dim A')
+    # per sample. Stop once STALL consecutive samples add nothing -- the commutant is spanned.
+    STALL = 25
+    basis, onb, miss = [], [], 0
+    for _ in range(samples):
+        A = rng.normal(size=(n, n)) + 1j * rng.normal(size=(n, n))
+        X = _commutant_project((A + A.conj().T) / 2, uni, hpr)
+        nx = np.linalg.norm(X)
+        if nx < 1e-9: miss += 1
+        else:
+            v = (X / nx).reshape(-1)
+            for u in onb: v = v - np.vdot(u, v) * u
+            r = np.linalg.norm(v)
+            if r > 1e-6:
+                onb.append(v / r); basis.append(X / nx); miss = 0
+            else: miss += 1
+        if miss >= STALL: break
+    return basis
 
 def hermitian_span(cb, tol=TOL):
     """Real basis of the Hermitian part of the span of cb."""
@@ -79,12 +176,11 @@ def hermitian_span(cb, tol=TOL):
             M = np.vstack([M, v[None, :]]) if M.shape[0] else v[None, :]; out.append(X)
     return out
 
-def minimal_projections(herm, n, tol=TOL, seed=0):
-    """Eigenprojections of a GENERIC Hermitian element of A' -- a maximal abelian
-       subalgebra of A'. Generic so the split is as fine as A' allows."""
-    if not herm: return [np.eye(n, dtype=complex)]
-    rng = np.random.default_rng(seed)
-    X = sum(rng.normal() * A for A in herm)
+def minimal_projections_from(X, n, tol=TOL):
+    """Eigenprojections of a GENERIC Hermitian element of A' -- a maximal abelian subalgebra
+       of A'. Generic so the split is as fine as A' allows. Takes the element directly, so no
+       basis of A' is ever needed."""
+    if X is None or np.linalg.norm(X) < 1e-12: return [np.eye(n, dtype=complex)]
     w, V = np.linalg.eigh(X)
     projs, i = [], 0
     while i < len(w):
@@ -133,10 +229,12 @@ class RecordModel:
     def __init__(self, H, Ls=(), seed=0):
         self.H = np.asarray(H, dtype=complex); self.Ls = [np.asarray(L, dtype=complex) for L in Ls]
         self.n = self.H.shape[0]; self.es = eigenspaces(self.H)
-        self.A = star_algebra(self.H, self.Ls)
-        self.Ac = commutant(self.A)
-        self.herm = hermitian_span(self.Ac)
-        self.projs = minimal_projections(self.herm, self.n, seed=seed)
+        # O-19: generators only -- the *-algebra is never built.
+        I = np.eye(self.n, dtype=complex)
+        self.gens = [I, self.H] + self.Ls + [L.conj().T for L in self.Ls]
+        self.Aelt = commutant_element(self.gens, seed=seed)
+        self._A = None; self._Ac = None
+        self.projs = minimal_projections_from(self.Aelt, self.n)
 
     def records(self):
         """Every R satisfying (i)-(iv), constructed -- not searched for."""
@@ -152,9 +250,28 @@ class RecordModel:
             out.append(R)
         return out
 
-    def report(self):
+    @property
+    def Ac(self):
+        """a BASIS of the commutant -- expensive, and only built if something asks (O-19)"""
+        if self._Ac is None: self._Ac = commutant(self.gens)
+        return self._Ac
+
+    @property
+    def herm(self):
+        if self._Ac is None and self.n > 64:
+            raise RuntimeError("herm needs a commutant BASIS; too large at dim %d -- use .Aelt" % self.n)
+        return hermitian_span(self.Ac)
+
+    @property
+    def A(self):
+        """the *-algebra, built ONLY if something asks for it (O-19)"""
+        if self._A is None: self._A = star_algebra(self.H, self.Ls)
+        return self._A
+
+    def report(self, with_algebra=False):
         recs = self.records()
-        return dict(dim=self.n, dim_algebra=len(self.A), dim_commutant=len(self.Ac),
+        return dict(dim=self.n, dim_algebra=(len(self.A) if with_algebra else None),
+                    dim_commutant=len(self.Ac),
                     n_minimal_projections=len(self.projs),
                     eigenvalue_multiplicities=[m for _, _, m in self.es],
                     n_records=len(recs), records=recs)
