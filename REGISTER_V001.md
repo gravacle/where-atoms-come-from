@@ -6975,3 +6975,27 @@ THEY COMPOSE, AND THEY DO NOT INTERFERE.**
 
 **Scope, stated: one carrier, one family of two.** Whether independence survives larger families and
 other carriers is T-9's business.
+
+---
+
+## T-7 DONE — **THE FORMATION HALF VALIDATES THROUGH THE MODEL. 17 PASS, 0 FAIL. STAGE B COMPLETE.**
+
+`model/validate_formation.py`. Every number below was first produced by a **one-off lane script** and
+is re-derived **through the model**:
+
+| result | checks | |
+|---|---|---|
+| **F-20** the history | `χ(t=1) = 0.97527192`; `χ(t=0) = 0` exactly | PASS |
+| **F-21** redundancy | fragments `0.78936622 / 0.04837713 / 0.67860249`; weight-1 gives 0 | PASS |
+| **C-18** gauge invariance + locality | `0.00000000 / 0.21703158 / 0.90811968` | PASS |
+| **G-16** the channel criterion | opens for `Z̄`, not for `Z̄₂`, **not for `Z̄·Z̄₂`** — and `χ` really is 0 there | PASS |
+| **C-17** clause (ii) on the environment | `Z`-noise admits records; `X,Y,Z`-noise leaves scalars only | PASS |
+| **C-19** composition | both form independently; the bath learns `0.00000000` about the other | PASS |
+
+> ### **THE MODEL IS NOW THE PROCESS MODEL, NOT A PARALLEL IMPLEMENTATION. A lane and the model
+> ### disagreeing is now a detectable event, and the gate runs the check on every finding.**
+
+**STAGE B IS COMPLETE.** The model computes record **existence** from `(H,{L_k})` alone and record
+**formation** from `(H,{L_k},coupling,environment)`, with the dependency structure and composition of
+a multi-record family. **Half of the definition of done — "the model so that our proof can be checked
+by anyone" — now has a working object behind it.**

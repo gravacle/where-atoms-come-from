@@ -51,9 +51,29 @@ resting on (v) visibly inherits a carrier.
 - **Clause (v).** By design, above.
 - **Formation.** The model constructs records; forming one needs an environment (see `F-13`).
 
+## FORMATION — the model computes the process, not only the object
+
+```python
+env = Environment(nq=3)                      # a qubit bath at inverse temperature beta
+m.formation(record, coupling, env, lam, t)   # chi(record : bath) after unitary evolution
+m.formation(..., fragment=[0])               # what ONE fragment holds (redundancy)
+m.channel(record, coupling)                  # does this coupling open a channel at all?
+m.channel_map(family, couplings)             # the dependency structure
+m.formation_independence(family, couplings, env)   # can one form without disturbing another?
+```
+
+A coupling may be a **product** `A ⊗ probe`, a **distributed** list of `(A_i, j)` pairs, or a full
+interaction operator. **The distinction is not cosmetic** — the lanes distribute each system term to
+a specific bath qubit, and a product ansatz silently returns a different number.
+
+**`channel()` is the criterion (G-16, corrected):** a coupling opens a channel iff **its compression
+onto the code space has a non-zero component along the record**. Anticommuting with the writer is
+implied by this and does not imply it.
+
 ## VALIDATION
 
 ```bash
-cd model && python3 validate_model.py    # expect 12 PASS, 0 FAIL
-cd model && python3 count_law.py         # expect 22 PASS, 0 FAIL
+cd model && python3 validate_model.py       # existence half — expect 12 PASS, 0 FAIL
+cd model && python3 validate_formation.py   # formation half — expect 17 PASS, 0 FAIL
+cd model && python3 count_law.py            # the count law — expect 22 PASS, 0 FAIL
 ```

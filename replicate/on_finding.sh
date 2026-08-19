@@ -48,6 +48,8 @@ else warn "the committed plan does not match what ledger/plan.py generates"; fi
 # 4. the model still validates
 if ( cd model && python3 validate_model.py >/dev/null 2>&1 ); then ok "model/validate_model.py passes"
 else warn "model/validate_model.py FAILS — a finding has broken the first-principles model"; fi
+if ( cd model && python3 validate_formation.py >/dev/null 2>&1 ); then ok "model/validate_formation.py passes (17 formation checks)"
+else warn "model/validate_formation.py FAILS -- a finding has broken the formation half"; fi
 if ( cd model && python3 count_law.py >/dev/null 2>&1 ); then ok "model/count_law.py passes"
 else warn "model/count_law.py FAILS — the record-count law no longer holds"; fi
 

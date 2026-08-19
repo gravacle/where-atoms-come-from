@@ -1,0 +1,37 @@
+================================================================================================
+VALIDATE THE FORMATION HALF -- every lane result, through the model
+================================================================================================
+
+F-20  the history: chi grows from a product state while the record's value is fixed
+  [PASS] chi at t = 1.0, coupling Zbar                           0.97527192  target 0.97527192
+  [PASS] chi at t = 0   (product state, must be exactly 0)       0.00000000  target 0.00000000
+
+F-21  redundancy: each bath fragment independently holds the record
+  [PASS] fragment {0} at t = 4.0                                 0.78936622  target 0.78936600
+  [PASS] fragment {1} at t = 4.0                                 0.04837713  target 0.04837700
+  [PASS] fragment {2} at t = 4.0                                 0.67860249  target 0.67860200
+  [PASS] weight-1 coupling, whole bath (must be 0)               0.00000000  target 0.00000000
+
+C-18  gauge invariance AND locality forbid formation
+  [PASS] gauge-invariant local (plaquettes)                      0.00000000  target 0.00000000
+  [PASS] NOT gauge-invariant, local (sum Z_l)                    0.21703158  target 0.21703158
+  [PASS] gauge-invariant, NON-local (Zbar)                       0.90811968  target 0.90811968
+
+G-16  the channel criterion decides formation, and its OLD form does not
+  [PASS] channel(Zbar, Zbar) opens                                     True  target True
+  [PASS] channel(Zbar, Zbar2) does NOT                                False  target False
+  [PASS] channel(Zbar, Zbar*Zbar2) does NOT -- the old form said it did         False  target False
+  [PASS]   and chi for that coupling really is 0                 0.00000000  target 0.00000000
+
+C-17  clause (ii) is a condition on the ENVIRONMENT: generic noise admits no record
+  [PASS] single-site Z noise: records possible                         True  target True
+  [PASS] single-site X,Y,Z noise: scalars only                        False  target False
+
+C-19  records compose: forming one leaves the other untouched
+  [PASS] both couplings form independently                             True  target True
+  [PASS]   bath learns nothing about the other record            0.00000000  target 0.00000000
+
+================================================================================================
+  17 PASS, 0 FAIL
+  Every number above was first produced by a one-off lane script and is re-derived here
+  through the model. The model is now the process model, not a parallel implementation.
