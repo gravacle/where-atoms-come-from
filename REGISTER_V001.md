@@ -6585,3 +6585,31 @@ LOGICALS** — a minimal non-contractible cycle is gauge-invariant, being a cycl
 NON-GAUGE-INVARIANTLY or NON-LOCALLY.** A-EM established that EM supplies the Gauss law itself, so a
 non-gauge-invariant coupling is **coupling to something that is not the gauge field**.
 **Neither option is free, and the program has no argument for either.**
+
+---
+
+## O-20 REFRAMED BY THE PRINCIPAL — **"GRAVITY?"**
+
+The principal, on *"a non-gauge-invariant coupling is coupling to something that is not the gauge
+field"*: **"Gravity?"**
+
+**THE TABLE ALREADY SAYS SO AND I READ IT WRONG.** In O-18's run the coupling that formed a record
+best — `Z̄`, `χ = 0.90811968` — **IS gauge-invariant** (`‖[Z̄, A_v]‖ = 0.0000`). What it gives up is
+**locality**. And `Z̄` is a **non-contractible cycle**: an `H₁` object. **That is Γ.**
+
+**So the dilemma I registered was mis-stated.** It is not "give up gauge invariance or locality." The
+plaquette coupling that failed is a **boundary** — an element of `B₁`. The coupling that succeeded is
+**not a boundary** — an element of `Z₁ \ B₁`. **Both are gauge-invariant. They differ in HOMOLOGY
+CLASS, which is exactly the quotient `Z₁/B₁` the program calls Γ.**
+
+> ### **PREDICTION, REGISTERED BEFORE THE RUN: `χ` IS A FUNCTION OF THE COUPLING'S HOMOLOGY CLASS AND
+> ### OF NOTHING ELSE — not of its weight, not of its locality.**
+> ### **`χ = 0` for every coupling in `B₁`. `χ > 0` for every coupling in `Z₁ \ B₁`.**
+
+**IF IT HOLDS, O-20 IS ANSWERED IN THE CHARTER'S OWN TERMS:** EM supplies the carrier and the record;
+**Γ supplies the channel through which the environment forms it.** The environment is not required to
+couple to something that is not the gauge field — **it is required to couple through a non-trivial
+homology class, which is the third term's whole content.**
+
+**IF `χ` VARIES WITHIN A CLASS**, or if some boundary forms a record, the reading is wrong and the
+dilemma stands as registered.
