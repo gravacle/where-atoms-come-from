@@ -6783,3 +6783,56 @@ come from" is answered by the same result.** Two of the seven hard problems coll
 **WE HAVE ESSENTIALLY NOTHING ON THIS.** The nearest thing is G-2 — `records = 2 − (1/2π)∫K dA` —
 which relates a record count to an integrated curvature **on a given carrier**. That is a relation, not
 an emergence: the geometry is input on both sides.
+
+---
+
+# **THE CLAIM, STATED — "Γ IS WHERE GRAVITY COMES FROM"**
+
+The principal, 2026-08-19. **This is the program's central claim and it is now stated sharply enough
+to be worked against.**
+
+| | | verdict |
+|---|---|---|
+| Γ **is** gravity at the record level | identity | **withdrawn as an import** (X-6, D-1) |
+| Γ **resembles** gravity | correspondence | never claimed; the resemblances are generic |
+| **Γ is where gravity COMES FROM** | **origin** | **THE CLAIM** |
+
+Records are the substrate. **Classical gravity is what Γ becomes at scale.** The direction is
+Γ → gravity and never gravity → Γ.
+
+## **WHY THE IMPORT DISCIPLINE WAS NEVER HYGIENE**
+
+Every time a classical measure was caught being used as a criterion — backreaction (X-2), allow→require
+(X2 erratum), the constraint-algebra falsifier (X-6), EM's local field values (D-5), grading the arrow
+against "time has a direction" (D-9) — **the principal caught it, and every catch was protecting this
+claim.**
+
+> ### **IF Γ HAD BEEN DEFINED USING ANY FEATURE OF CLASSICAL GRAVITY, "Γ IS WHERE GRAVITY COMES FROM"
+> ### WOULD BE CIRCULAR. D-1, D-2, D-4, D-5 AND D-9 ARE NOT TIDINESS. THEY ARE WHAT MAKES THE CLAIM
+> ### NON-CIRCULAR, AND THEY HAD TO COME FIRST.**
+
+**And it makes the program's order the only order that works.** Γ was built **from function alone** —
+R1 space, R2 writer, R3 protection, and now the channel — with **no gravitational input at any point**.
+Only a Γ constructed that way can be shown to *give rise to* gravity rather than to have been shaped by
+it.
+
+## WHAT THE CLAIM COMMITS US TO
+
+| | | state |
+|---|---|---|
+| **1** | Γ exists at the record level with its own content | **DONE.** R1–R3 measured; the channel measured (G-16); count laws; the arrow |
+| **2** | **nothing of classical gravity is assumed in defining Γ** | **DONE, and it is the harder half of the two.** Five doctrine rows and eleven withdrawn claims enforce it |
+| **3** | classical gravity is **recoverable from accumulated Γ** | **NOTHING. This is T-20 and it is the whole remaining task** |
+| **4** | the direction is Γ → gravity, never the reverse | **enforced by D-1** |
+
+## WHAT THE CLAIM FORBIDS, PERMANENTLY
+
+- **any classical gravitational feature used as a criterion for Γ** — it would make the claim circular
+- **expecting Γ to look like gravity** — the error caught five times; emergence does not preserve form
+- **requiring gravity's equations at the record level** — X-2 and X-6, both closed
+
+## THE HONEST POSITION
+
+**Half of the claim is built and the harder half of THAT half — keeping gravity out — is done.**
+**The other half is untouched.** `G-2` relates record count to integrated curvature **on a given
+carrier**, with geometry as input on both sides. **That is a relation. It is not an origin.**

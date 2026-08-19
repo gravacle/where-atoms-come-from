@@ -59,6 +59,19 @@ open question in the program, and it cuts both ways:
 
 **Either answer is worth more than the name was.**
 
+## **THE CLAIM: Γ IS WHERE GRAVITY COMES FROM**
+
+**Not** that Γ *is* gravity at the record level (identity — withdrawn as an import, X-6).
+**Not** that Γ *resembles* gravity (the resemblances are generic).
+**That gravity COMES FROM Γ.** Records are the substrate; classical gravity is what Γ becomes at scale.
+
+**This is why Γ must be defined by function alone.** A Γ shaped by any feature of classical gravity
+could not be shown to give rise to it — the claim would be circular. **The import discipline (D-1, D-2,
+D-4, D-5, D-9) is what makes this claim available, and it had to come first.**
+
+**STATE: Γ's record-level content is built and gravity was kept out of it. The recovery of classical
+gravity from accumulated Γ is untouched — plan task T-20.**
+
 ## WHEN Γ MAY BE RENAMED
 
 **Only after R1–R3 are solved, and only if the solution earns it.** Not before, and not because the
