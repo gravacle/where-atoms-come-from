@@ -28,7 +28,8 @@ Read in this order. Each is short and each links to the numbers behind it.
 | 3 | `MODEL.md` | **the model** — records constructed from `(H,{L_k})` and nothing else |
 | 4 | `STATUS_LEDGER_V001.md` | **every claim, with its status and its evidence** — generated, never typed |
 | 4b | `THE_PLAN_V001.md` | **the road to a proven process** — every task with a checkable DONE WHEN. `./ledger/plan.py` |
-| 5 | `RECORD_FORMATION_V001.md` | what a formation process must deliver |
+| 5 | `PROCESS_V002.md` | **the process as it now stands** — every sentence cites a ledger row |
+| 5b | `RECORD_FORMATION_V001.md` | what a formation process must deliver |
 | 6 | `REGISTER_V001.md` | the append-only record, including **everything withdrawn** |
 
 **Start with the ledger.** It is the whole program in one grid: 90+ rows, each with a status from a

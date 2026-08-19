@@ -1,3 +1,6 @@
+> **SUPERSEDED for the process description by `PROCESS_V002.md`.** This document predates the O-, F-
+> and G-series. Its literature position and framing stand; its process paragraphs do not.
+
 # THE CLAIM — WHERE ATOMS COME FROM — V001 — 2026-08-18
 
 **Written after the principal's correction.** The registrar had been scoring this program's result as
