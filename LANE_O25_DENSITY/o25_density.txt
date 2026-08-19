@@ -1,0 +1,20 @@
+====================================================================================================
+O-25   CAN DENSITY FORCE CURVATURE AMONG PAULI WRITERS?
+====================================================================================================
+  code                    n  records  writer overlap   max ||[X_i,X_j]||   verdict
+  [[4,2,2]]               4        2               1           0.000e+00      FLAT
+  [[8,3,2]]               8        3               1           0.000e+00      FLAT
+  [[6,4,2]]               6        4               3           0.000e+00      FLAT
+  toric 2x2 [[8,2,2]]     8        5               2           0.000e+00      FLAT
+
+  every code flat: True
+
+  READ
+    Writers overlap on up to several sites and STILL commute exactly. In a stabiliser code the
+    logical algebra is symplectic: conjugate pairs anticommute, every other pair commutes, and
+    support has nothing to do with it. So DENSITY CANNOT FORCE CURVATURE among Pauli writers,
+    and O-25's premise is wrong.
+
+    O-24's curvature came from X_0 * S_1 with S_1 a PHASE gate -- not a Pauli, and not a
+    minimal writer. Curvature requires leaving the stabiliser formalism, which is exactly what
+    minimality forbids.

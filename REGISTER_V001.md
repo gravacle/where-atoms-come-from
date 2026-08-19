@@ -7518,3 +7518,44 @@ H-9 lists, among the signatures of record-level curvature: **"stronger with encl
 density on a fixed carrier and measure whether the minimal-writer holonomy turns on.** Registered as
 **O-25**, and it is the sharpest thing on the board — **the first place where the program's own
 structure predicts curvature rather than merely permitting it.**
+
+---
+
+## O-25 — **DENSITY CANNOT FORCE CURVATURE. THE PREMISE IS WRONG, AND THE REASON IS STRUCTURAL.**
+
+`LANE_O25_DENSITY`. Every logical **computed** by symplectic Gram-Schmidt and verified before use.
+
+| code | `n` | records | **writer overlap** | `max‖[X_i,X_j]‖` | |
+|---|---|---|---|---|---|
+| `[[4,2,2]]` | 4 | 2 | 1 | **0.000e+00** | FLAT |
+| `[[8,3,2]]` | 8 | 3 | 1 | **0.000e+00** | FLAT |
+| **`[[6,4,2]]`** | 6 | **4** | **3** | **0.000e+00** | **FLAT** |
+| toric 2×2 | 8 | 5 | 2 | **0.000e+00** | FLAT |
+
+**Writers overlap on up to three sites and still commute exactly.**
+
+> ### **IN A STABILISER CODE THE LOGICAL ALGEBRA IS SYMPLECTIC: conjugate pairs anticommute, EVERY
+> ### OTHER PAIR COMMUTES, and SUPPORT HAS NOTHING TO DO WITH IT. Overlap is irrelevant. Density
+> ### cannot force curvature, and O-25's premise — mine, not the principal's — is wrong.**
+
+### AND THIS SHARPENS O-24 INTO SOMETHING HARDER
+
+O-24 found curvature from `X₀·S₁`, where `S₁` is a **phase gate — not a Pauli, and not a minimal
+writer.** Put together with the table above:
+
+> ### **CURVATURE REQUIRES LEAVING THE STABILISER FORMALISM. MINIMALITY FORBIDS EXACTLY THAT.**
+> ### **So the flat connection is not merely selected — for stabiliser records it is FORCED, and no
+> ### arrangement, density or overlap of such records can produce record-level curvature.**
+
+**H-9's density signature is therefore unavailable to any stabiliser carrier**, and every carrier this
+program has built is one.
+
+### WHAT THIS COSTS THE CLAIM, STATED PLAINLY
+
+**"Γ is where gravity comes from" needs record-level curvature, and stabiliser records cannot have
+it.** Either the carriers must leave the stabiliser class — non-abelian topological order (`O-8`), or
+records that are not code logicals at all (`C-22` shows those exist) — **or the connection is fixed by
+something other than minimality, and `H-11` remains open with no candidate.**
+
+**This is a negative result about the program's whole carrier family, and it was reached by testing a
+prediction of the account rather than by an outside objection.**
