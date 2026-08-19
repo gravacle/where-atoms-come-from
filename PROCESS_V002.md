@@ -90,9 +90,12 @@ equivalent** — spread `0.0000` for identical energies, `1.247→1.391` relativ
 
 ## 6. WHAT IT COSTS
 
-**Alpha is a sum of local terms and splits the record space at order `d`** (`A-AL`, `C-8`) — **for a
-GENERIC single-site perturbation**, which is what the lane measured. Under a record-commuting
-perturbation the exponent is `n*`, not `d` (PF-6 rescoping).
+**Alpha is a sum of local terms and splits the record space at order `n*`** — the fewest **available**
+local terms whose product reaches the code space (`A-AL`, `C-8`, three carriers). **`n* = d` only when
+the perturbation class is unrestricted.** Measured: generic perturbations give `2.0211 / 3.0036 /
+3.0046`, tracking `d`; record-commuting ones give `2.0389 / 4.9836 / 3.0118`, tracking `n*` — and the
+two **separate on `[[5,1,3]]`, where `n* = 5` against `d = 3`**. **`d` is the special case, not the
+law.**
 
 ---
 

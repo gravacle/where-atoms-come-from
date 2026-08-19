@@ -7226,3 +7226,27 @@ in 21 of 28 and never above `2.4e-15`.**
 (T-8), clause (v) as a capacity statement (T-11), a bath large enough to show the recurrence trend
 (T-13), and parameter independence (T-10). **`H-4` — "one carrier, and the carrier may be the result"
 — is closed for the formation results, and no free parameter is doing hidden work.**
+
+---
+
+## T-14 DONE — **ALPHA'S EXPONENT IS `n*`, NOT `d`. `d` IS THE SPECIAL CASE.**
+
+`LANE_T14_ALPHA`. PF-6 rescoped Theorem D; this measures both exponents in-house on three carriers,
+with `n*` **computed** rather than assumed.
+
+| carrier | `d` | **`n*` (Z-only)** | **GENERIC slope** | **Z-ONLY slope** |
+|---|---|---|---|---|
+| toric 2×2 `[[8,2,2]]` | 2 | 2 | **2.0211** | **2.0389** |
+| **`[[5,1,3]]` non-CSS** | 3 | **5** | **3.0036** | **4.9836** |
+| `[[7,1,3]]` Steane | 3 | 3 | **3.0046** | **3.0118** |
+
+**The generic exponent tracks `d`. The Z-only exponent tracks `n*`.** They agree on the two carriers
+where `n* = d` and **separate on `[[5,1,3]]`, where `n* = 5` and the measured Z-only slope is 4.9836
+against a code distance of 3.**
+
+> ### **ALPHA SPLITS THE RECORD SPACE AT ORDER `n*` — the fewest AVAILABLE local terms whose product
+> ### reaches the code space. When the perturbation class is unrestricted every Pauli is available and
+> ### `n* = d`; when it is restricted, `n*` can be larger. `d` IS THE SPECIAL CASE, NOT THE LAW.**
+
+**Theorem D's unqualified form — "a local perturbation splits the degeneracy as `ε^d`" — is false on
+`[[5,1,3]]` for a record-commuting perturbation, and `n*` subsumes both readings.**
