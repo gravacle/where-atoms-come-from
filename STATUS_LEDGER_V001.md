@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 78 | 2 | 9 | 1 | 19 | 3 | 6 | 7 | 3 | 3 |
+| 78 | 2 | 9 | 1 | 20 | 3 | 6 | 7 | 3 | 3 |
 
-**131 rows.**
+**132 rows.**
 
 ---
 
@@ -22,13 +22,14 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
-| **H-1** | GAMMA HAS NEVER BEEN SHOWN TO BE GRAVITY. The charter says EM, GRAVITY, alpha. Gamma is defined purely by function (R1-R3 plus the channel) and identified with nothing. X-6 was withdrawn as an import, and the one structural comparison attempted — constraint algebras — went AGAINST us: ours is a finite abelian group with structure constants, gravity's a Lie algebroid with structure functions | **OPEN** | the charter's second term is a placeholder we named and never identified | — | — |
+| **H-1** | DOES CLASSICAL GRAVITY EMERGE FROM RECORDS? NOT 'is Gamma gravity at the record level' — that is an identity claim, an import, and X-6 withdrew it correctly. Emergence runs the other way and is untouched by that withdrawal. Nothing in the corpus addresses it; G-2 relates record count to integrated curvature on a GIVEN carrier, which is a relation, not an emergence | **OPEN** | the charter's second term is a placeholder we named and never identified | — | — |
 | **H-2** | ALPHA IS NEARLY ABSENT. EM has four registered rows and Gamma has sixteen; alpha has essentially Theorem D, which PF-6 rescoped and attributed to Bravyi-Hastings-Michalakis. The fine structure constant has never been connected to any number here — 'alpha' is standing in for a generic coupling strength | **OPEN** | the charter names three terms; we have one well, one as a placeholder, one barely | — | — |
 | **H-3** | THE DEFINITION IS WRITTEN, NOT DERIVED. The five clauses are ours. C-12 says when an object meeting them exists; nothing says the world's records meet them. Why is THIS the definition of a record? | **OPEN** | the deepest form of 'have we used real terms' | — | — |
 | **H-4** | ONE CARRIER, AND THE CARRIER MAY BE THE RESULT. Every gauge-tier result is on the 2x2 toric code, dim 256, d=2 — where the 'non-local' logical has weight 2 and looks local. Several results may be small-lattice artefacts. And the second carrier may be computationally out of reach: the model caps near dim 32 (O-19) and toric 3x3 is dim 262144 | **OPEN** | PF-8/T-8 is the plan's answer; whether it is reachable is unknown | — | — |
 | **H-5** | NO ROUTE TO EMPIRICAL CONTACT IS KNOWN. Not merely 'none found yet': PF-6 examined six rival accounts and every measured result is already theirs. A demonstration checkable 'by anyone' in the physics sense usually means checkable against nature, not only re-runnable | **OPEN** | X-4, T-VI.3, T-VI.4 all BLOCKED | — | — |
 | **H-6** | NOTHING CONNECTS TO SCALE. Every carrier is 4-8 qubits and every bath 3 qubits. Real records are macroscopic. No argument carries any result from these sizes to any physical one | **OPEN** | — | — | — |
-| **H-7** | THE CARRIER IS ASSUMED. Where the complex comes from was RECLASSIFIED as a category error under D-4 (asking what produces a permission). If that reclassification is right the charter's question is answered without it; if it is wrong, formation is only explained GIVEN a carrier | **OPEN** | T-II.5, F-3 both RECLASSIFIED — worth revisiting now that formation is better understood | — | — |
+| **H-7** | THE CARRIER IS ASSUMED — AND THIS MAY BE H-1 IN ANOTHER FORM. If classical gravity emerges from records then the carrier's geometry IS a description of record content, and where the complex comes from is answered by the same result | **OPEN** | T-II.5, F-3 both RECLASSIFIED — worth revisiting now that formation is better understood | — | — |
+| **H-8** | X-2's RECLASSIFICATION FORECLOSED THE EMERGENCE QUESTION. Reclassifying 'content shapes geometry' as a category error was correct AT THE RECORD LEVEL, where chi is a parameter with no equation of motion. It also closed off 'does record content look like a geometry when ACCUMULATED', which is a different question at a different level and has never been asked | **OPEN** | found by the principal's reframing of H-1 | — | — |
 
 ## P. THE ROAD TO A FULL PROOF — the controlled plan
 

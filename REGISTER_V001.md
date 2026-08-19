@@ -6732,3 +6732,54 @@ what does decide it: **the intersection pairing with the record's conjugate.**
 to the output file, and the gate caught the stale manifest on the next check. **Never seal a file a
 background job is still writing.** The gate has now caught: unverifiable lane manifests, three
 nominated logicals, two D-8 defects in the harness itself, and this.
+
+---
+
+## H-1 REFRAMED BY THE PRINCIPAL — **EMERGENCE FROM RECORDS, NOT IDENTITY AT THE RECORD LEVEL**
+
+The principal: *"We want to connect Γ with classical gravity via **emergence from records**. We are not
+trying to equate Γ and gravity at the record level."*
+
+**THESE ARE DIFFERENT QUESTIONS AND I CONFLATED THEM.**
+
+| | question | verdict |
+|---|---|---|
+| **X-6, withdrawn** | *is the record-level constraint THE SAME constraint as gravity's?* | an **identity claim at the record level** — an import (D-1), correctly withdrawn |
+| **H-1, the real one** | *does classical gravity EMERGE from records?* | **untouched by that withdrawal. It runs the other way.** |
+
+**X-6's failure says nothing about H-1.** Ours being a finite abelian group where gravity's is a Lie
+algebroid is a fact about *identity at one level*. **Emergence never claims the two look alike at the
+microscopic level — that is what emergence means.** Thermodynamics does not resemble statistical
+mechanics; it is what statistical mechanics looks like coarse-grained.
+
+### AND IT IS NOT A D-4 CATEGORY ERROR — CHECKED
+
+D-4 forbids asking what **produces** a permission. **Emergence does not ask that.** It asks whether the
+accumulated record-level structure, coarse-grained, **IS** what the classical constraint describes.
+That is an **identification between levels of description**, not a production rule. **D-4 permits it.**
+
+### **THIS FORCES A REVISIT OF X-2's RECLASSIFICATION**
+
+X-2 asked whether **content shapes geometry**. I reclassified it as a category error — correct **at the
+record level**, where χ is a parameter with no equation of motion. **But that reclassification also
+foreclosed the emergence question at the collective level, and it should not have.**
+
+> **"Does record content look like a geometry when accumulated?" is not the record-level question that
+> was refused. It is the emergence question, and it has never been asked.**
+
+### **AND H-1 AND H-7 MAY BE THE SAME PROBLEM**
+
+H-7 says the carrier is **assumed** — the complex is handed to us. **If classical gravity emerges from
+records, then the carrier's geometry IS a description of record content, and "where does the carrier
+come from" is answered by the same result.** Two of the seven hard problems collapse into one.
+
+### WHAT WOULD COUNT AS PROGRESS, STATED SO IT CANNOT BE FUDGED
+
+1. a **collective** quantity built from **many** records — not a property of one
+2. shown to obey something **Einstein-constraint-like**
+3. **without importing the constraint** — D-1 still binds; the classical form may be *recovered*, never
+   *assumed* or used as the test
+
+**WE HAVE ESSENTIALLY NOTHING ON THIS.** The nearest thing is G-2 — `records = 2 − (1/2π)∫K dA` —
+which relates a record count to an integrated curvature **on a given carrier**. That is a relation, not
+an emergence: the geometry is input on both sides.

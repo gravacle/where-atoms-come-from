@@ -13,11 +13,11 @@ checkable rather than a judgement call.**
 
 **Nothing below counts as finished until both halves of that sentence are true.**
 
-**0 of 19 tasks done.**
+**0 of 22 tasks done.**
 
 | DOING | TODO |
 |---|---|
-| 1 | 18 |
+| 1 | 21 |
 
 ---
 
@@ -64,6 +64,14 @@ checkable rather than a judgement call.**
 | **T-17** | STATE THE LIMITS IN THE PROOF ITSELF. PF-6 failed; X-4, T-VI.3, T-VI.4 are BLOCKED; empirical contact is zero | TODO | the limits section names every BLOCKED row and says plainly that this is a mathematical result with no empirical contact | T-16 | — |
 | **T-18** | EXTERNAL CHECK. Someone outside the program reproduces the result from REPLICATE.md alone | TODO | reproduce.sh passes end to end on a clean clone, and every headline number in PROOF_V002 is traceable to a sealed lane output | T-16 | PF-8 |
 | **T-19** | THE GATE STAYS GREEN. on_finding.sh passes after every finding, for the life of the plan | **DOING** | the gate has passed on every commit since it was built | — | — |
+
+## PHASE 6 EMERGENCE  —  0/3 done
+
+| | task | status | DONE WHEN | depends | row |
+|---|---|:---:|---|---|---|
+| **T-20** | DOES CLASSICAL GRAVITY EMERGE FROM RECORDS? Build a COLLECTIVE quantity from MANY records and ask whether it obeys anything Einstein-constraint-like — without importing the constraint (D-1 binds: the classical form may be recovered, never assumed or used as the test) | TODO | a many-record collective quantity is defined, computed, and either shown to satisfy a constraint of the right type or shown not to — with the classical form never used as a criterion | T-6, T-9 | — |
+| **T-21** | REVISIT X-2 AT THE COLLECTIVE LEVEL. The record-level reclassification stands; the emergence question it foreclosed does not | TODO | X-2 carries an explicit note distinguishing the record-level question (category error, closed) from the collective one (open, = T-20) | T-20 | — |
+| **T-22** | GIVE ALPHA REAL CONTENT (H-2). Nothing in the corpus is dimensionful and the fine structure constant is connected to no number. Either connect it or state plainly that 'alpha' names a generic coupling here | TODO | either a registered result in which alpha's VALUE matters, or an explicit statement in the anchor that alpha stands for a generic coupling strength | — | — |
 
 ---
 
