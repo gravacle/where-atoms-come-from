@@ -1,0 +1,25 @@
+==================================================================================================
+O-18  DOES GAUGE INVARIANCE SUPPLY THE STRUCTURE THE NOISE NEEDS?
+==================================================================================================
+  toric 2x2, dim 256, ground degeneracy 4
+  SELF-CHECK ||[Zbar,H0]|| = 0.0e+00  ||{Zbar,Xbar}|| = 0.0e+00
+
+1.  WHICH LOCAL OPERATORS ARE GAUGE-INVARIANT, AND DO THEY ACT ON THE CODE SPACE?
+   weight  # Paulis   gauge-invariant   of those, TRIVIAL on code
+        1        24                 8                      8 of 8
+        2       252                44                    36 of 44
+        3      1512               152                  144 of 152
+        4      5670               662                  570 of 662
+
+2.  IS PF-5's COUPLING GAUGE-INVARIANT?   (its terms are single-site Z_l)
+    single Z_l:  max ||[Z_l, A_v]|| = 32.0000   NOT gauge-invariant
+    a plaquette: max ||[B_p, A_v]|| = 0.0000   gauge-invariant
+    Zbar:        max ||[Zbar,A_v]|| = 0.0000   gauge-invariant
+
+3.  CAN GAUGE-INVARIANT LOCAL NOISE FORM A RECORD?   chi(Zbar : bath), 3-qubit bath, t = 4
+  coupling                                  gauge-inv?   local?   chi bits at lam=0.8
+  gauge-invariant local (plaquettes)               yes      yes            0.00000000
+  NOT gauge-invariant (PF-5's sum Z_l)              no      yes            0.21703158
+  gauge-invariant NON-local (Zbar)                 yes       no            0.90811968
+
+  NOISE FLOOR (lam = 0): 8.882e-16

@@ -6542,3 +6542,46 @@ Non-contractible cycles are **logicals**. There is nothing else.
 
 **IF 3 FAILS** — if gauge-invariant local noise does form a record — then EM's own constraint supplies
 exactly the structured noise the account needs, and O-18 closes affirmatively.
+
+---
+
+## O-18 RESULT — **GAUGE INVARIANCE AND LOCALITY TOGETHER FORBID FORMATION. ONE MUST BE GIVEN UP.**
+
+`LANE_O18_GAUGENOISE`, toric 2×2. Noise floor `8.882e-16`.
+
+| coupling | gauge-invariant? | local? | **`χ(Z̄:B)` at `λ=0.8`** |
+|---|---|---|---|
+| **plaquettes** | **yes** | **yes** | **0.00000000** |
+| PF-5's `Σ_l Z_l` | **no** (`32.0000`) | yes | 0.21703158 |
+| `Z̄` | yes | **no** | 0.90811968 |
+
+> ### **GAUGE-INVARIANT *AND* LOCAL ⟹ NO FORMATION, EXACTLY. To form a record the environment must
+> ### give up ONE OF THEM.**
+
+**PF-5's mechanism gives up gauge invariance.** A single `Z_l` fails `‖[Z_l, A_v]‖ = 32.0000`. **The
+coupling that formed a record in PF-5 is not one a gauge-invariantly-coupled environment can have.**
+
+### PREDICTION 1 WAS TOO STRONG, AND THE DATA SAYS SO
+
+I predicted gauge-invariant local operators all lie in the stabiliser group. **They do not.**
+
+| weight | Paulis | gauge-invariant | **of those, trivial on the code space** |
+|---|---|---|---|
+| **1** | 24 | 8 | **8 of 8** |
+| **2 = `d`** | 252 | 44 | **36 of 44** — **8 are NOT** |
+| 3 | 1512 | 152 | 144 of 152 |
+| 4 | 5670 | 662 | 570 of 662 |
+
+**Gauge-invariant operators of weight `< d` are trivial (8 of 8). At weight `≥ d` they can be
+LOGICALS** — a minimal non-contractible cycle is gauge-invariant, being a cycle. **On this 2×2 lattice
+`d = 2`, so the "non-local" operator has weight 2 and looks local; that is a small-lattice artefact.**
+
+> ### **THE CORRECTED STATEMENT: gauge invariance plus a locality bound BELOW `d` forbids formation.
+> ### As the carrier grows, `d` grows, so any FIXED locality bound eventually forbids it.**
+
+### **O-20 — WHAT THIS COSTS, AND IT IS THE SHARPEST THING ON THE BOARD**
+
+**The account's formation story needs an environment that couples to the EM field either
+NON-GAUGE-INVARIANTLY or NON-LOCALLY.** A-EM established that EM supplies the Gauss law itself, so a
+non-gauge-invariant coupling is **coupling to something that is not the gauge field**.
+**Neither option is free, and the program has no argument for either.**
