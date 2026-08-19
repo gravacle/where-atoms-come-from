@@ -1,0 +1,45 @@
+========================================================================================================
+T-9   CARRIER INDEPENDENCE -- every carrier-dependent PROVED row on a SECOND carrier
+========================================================================================================
+
+  A toric 2x2 [[8,2,2]]   dim 256   ground-space dim 4   logicals 2
+    [PASS] ground-space dim = 2^(#logicals)                               4  want 4
+    [PASS] record commutes with H                                       0.0  want 0.0
+    [PASS] C-17  Z-only noise: record possible                         True  want True
+    [PASS] C-17  generic noise: scalars only                           True  want True
+    [PASS] G-16  channel(R, R) opens                                   True  want True
+    [PASS] G-16  channel(R, gauge-inv local) shut                     False  want False
+    [PASS] C-18  chi for that coupling                                  0.0  want 0.0
+    [PASS] F-20  chi at t=0 is exactly 0                                0.0  want 0.0
+    [PASS] F-20  chi at t=4 is > 0                                     True  want True
+    [PASS] F-21  weight-1 coupling gives 0                              0.0  want 0.0
+    [PASS] C-19  records compose independently                         True  want True
+
+  B torus+cap [[8,1,2]]   dim 256   ground-space dim 2   logicals 1
+    [PASS] ground-space dim = 2^(#logicals)                               2  want 2
+    [PASS] record commutes with H                                       0.0  want 0.0
+    [PASS] C-17  Z-only noise: record possible                         True  want True
+    [PASS] C-17  generic noise: scalars only                           True  want True
+    [PASS] G-16  channel(R, R) opens                                   True  want True
+    [PASS] G-16  channel(R, gauge-inv local) shut                     False  want False
+    [PASS] C-18  chi for that coupling                                  0.0  want 0.0
+    [PASS] F-20  chi at t=0 is exactly 0                                0.0  want 0.0
+    [PASS] F-20  chi at t=4 is > 0                                     True  want True
+    [PASS] F-21  weight-1 coupling gives 0                              0.0  want 0.0
+    [ -- ] C-19  composition                                            n/a  only one logical
+
+  C [[4,2,2]] dim 16   dim 16   ground-space dim 4   logicals 2
+    [PASS] ground-space dim = 2^(#logicals)                               4  want 4
+    [PASS] record commutes with H                                       0.0  want 0.0
+    [PASS] C-17  Z-only noise: record possible                         True  want True
+    [PASS] C-17  generic noise: scalars only                           True  want True
+    [PASS] G-16  channel(R, R) opens                                   True  want True
+    [PASS] G-16  channel(R, gauge-inv local) shut                     False  want False
+    [PASS] C-18  chi for that coupling                                  0.0  want 0.0
+    [PASS] F-20  chi at t=0 is exactly 0                                0.0  want 0.0
+    [PASS] F-20  chi at t=4 is > 0                                     True  want True
+    [PASS] F-21  weight-1 coupling gives 0                              0.0  want 0.0
+    [PASS] C-19  records compose independently                         True  want True
+
+========================================================================================================
+  32 PASS, 0 FAIL across three carriers

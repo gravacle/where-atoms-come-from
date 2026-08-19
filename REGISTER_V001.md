@@ -7082,3 +7082,34 @@ supplies that.** Registered as **O-21**.
 **MODEL DEFECT FIXED ON THE WAY:** `formation()` redid the eigendecomposition for **every** fragment,
 which is what made a 7-qubit bath unreachable. Added `evolve()` and `redundancy()` so many readouts —
 whole bath, every fragment, several records — share **one** eigendecomposition.
+
+---
+
+## T-9 DONE — **CARRIER INDEPENDENCE. 32 PASS, 0 FAIL ACROSS THREE CARRIERS.**
+
+`LANE_T9_CARRIERINDEP`. Three carriers, chosen so the differences are **structural**, per **D-12** —
+only a change to the **stabiliser group** changes the carrier:
+
+| | carrier | code | why it is different |
+|---|---|---|---|
+| **A** | toric 2×2 | `[[8,2,2]]` | manifold, lattice gauge theory — **the incumbent** |
+| **B** | torus + capped wrap | `[[8,1,2]]` | **NON-MANIFOLD**, one logical, same dim 256 |
+| **C** | `[[4,2,2]]` | `[[4,2,2]]` | **not a lattice at all**, dim 16 — carries composition, which B cannot test with one logical |
+
+| row | A | B | C |
+|---|---|---|---|
+| ground-space dim `= 2^{#logicals}` | ✔ | ✔ | ✔ |
+| **C-17** `Z`-only noise admits a record | ✔ | ✔ | ✔ |
+| **C-17** generic noise leaves scalars only | ✔ | ✔ | ✔ |
+| **G-16** `channel(R,R)` opens | ✔ | ✔ | ✔ |
+| **G-16** `channel(R, gauge-invariant local)` shut | ✔ | ✔ | ✔ |
+| **C-18** `χ` for that coupling `= 0` | ✔ | ✔ | ✔ |
+| **F-20** `χ(t=0) = 0` exactly; `χ(t=4) > 0` | ✔ | ✔ | ✔ |
+| **F-21** weight-1 coupling gives `0` | ✔ | ✔ | ✔ |
+| **C-19** records compose independently | ✔ | *n/a — one logical* | ✔ |
+
+> ### **EVERY CARRIER-DEPENDENT ROW SURVIVES A CARRIER THAT IS NON-MANIFOLD, AND ONE THAT IS NOT A
+> ### LATTICE AT ALL. The results were not artefacts of the toric code.**
+
+**H-4 — "one carrier, and the carrier may be the result" — is answered for the formation results.**
+What remains single-carrier is now explicit rather than assumed.

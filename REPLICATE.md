@@ -47,6 +47,15 @@ cd model && python3 count_law.py
 You should see **22 PASS, 0 FAIL**, and a control showing the naive reading fails on `[3,3]`,
 `[6,6]`, `[5,5]`. If you get anything else, the claim is wrong and we want to know.
 
+**Is any of it an artefact of one carrier?** That is the question `T-9` exists for:
+
+```bash
+cd LANE_T9_CARRIERINDEP && python3 t9_sweep.py
+```
+
+**32 PASS, 0 FAIL** across `[[8,2,2]]` toric, `[[8,1,2]]` **non-manifold**, and `[[4,2,2]]` which is
+not a lattice at all. A row that survives only one carrier is marked so in the ledger.
+
 ---
 
 ## HOW TO READ A NUMBER HONESTLY

@@ -60,7 +60,12 @@ m.formation(..., fragment=[0])               # what ONE fragment holds (redundan
 m.channel(record, coupling)                  # does this coupling open a channel at all?
 m.channel_map(family, couplings)             # the dependency structure
 m.formation_independence(family, couplings, env)   # can one form without disturbing another?
+m.evolve(coupling, env, lam, t)              # the joint state, so many readouts share ONE eigh
+m.redundancy(record, coupling, env, lam, t)  # what the whole bath and each fragment hold
 ```
+
+**`evolve()` exists because `formation()` redid the eigendecomposition per fragment**, which put a
+7-qubit bath out of reach. Anything needing several readouts of the same evolution should use it.
 
 A coupling may be a **product** `A ⊗ probe`, a **distributed** list of `(A_i, j)` pairs, or a full
 interaction operator. **The distinction is not cosmetic** — the lanes distribute each system term to
@@ -70,10 +75,18 @@ a specific bath qubit, and a product ansatz silently returns a different number.
 onto the code space has a non-zero component along the record**. Anticommuting with the writer is
 implied by this and does not imply it.
 
+## CARRIER INDEPENDENCE
+
+Every carrier-dependent result is verified on **three** carriers — `[[8,2,2]]` toric, `[[8,1,2]]`
+**non-manifold**, and `[[4,2,2]]` which is **not a lattice at all**: `LANE_T9_CARRIERINDEP`,
+**32 PASS, 0 FAIL**. Note **D-12**: a complex can be redrawn as non-manifold without becoming a
+different quantum system — only a change to the **stabiliser group** changes the carrier.
+
 ## VALIDATION
 
 ```bash
 cd model && python3 validate_model.py       # existence half — expect 12 PASS, 0 FAIL
 cd model && python3 validate_formation.py   # formation half — expect 17 PASS, 0 FAIL
 cd model && python3 count_law.py            # the count law — expect 22 PASS, 0 FAIL
+cd LANE_T9_CARRIERINDEP && python3 t9_sweep.py   # carrier independence — expect 32 PASS, 0 FAIL
 ```
