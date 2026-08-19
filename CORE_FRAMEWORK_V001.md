@@ -17,6 +17,12 @@ Let `H` be a Hamiltonian and `{L_k}` the jump operators of an open system. **`R`
 | **(iv)** | some **admissible** `U` has `U†RU = −R` | it is **writable** |
 | **(v)** | **no admissible** operation on a **single** contractible region does | it is **protected** |
 
+> **"ALPHA" NAMES A GENERIC COUPLING STRENGTH** — the magnitude of the local terms that do not
+> respect the record's structure. **It is NOT the fine structure constant.** No result in this program
+> depends on its value (T-10: 28 settings over `λ = 0.05`–`3.0`, no conclusion moved), and **nothing
+> here is dimensionful.** What its value would set is the RATE of formation, `χ ~ λ^{2n*}`, which is
+> connected to no physical number. (T-22, `H-2`.)
+
 > **ADMISSIBLE `U` ≝ a unitary with `[U,H] = 0`.** (O-4, 2026-08-18. **PROVISIONAL** — one carrier
 > family, and DEF-A has **no working fallback**: the registered DEF-A' escape was a miscount.)
 > Equivalently, given (i)+(ii): **clause (iv) ⟺ `Tr(P_E R) = 0` on every eigenspace of `H`** — at every

@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 91 | 2 | 7 | 1 | 17 | 3 | 6 | 7 | 3 | 3 |
+| 93 | 2 | 7 | 1 | 16 | 3 | 6 | 7 | 3 | 3 |
 
-**140 rows.**
+**141 rows.**
 
 ---
 
@@ -23,7 +23,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
 | **H-1** | IS GAMMA WHERE GRAVITY COMES FROM? The claim is ORIGIN, not identity. X-6 tested identity at the record level and withdrew it correctly; that says nothing here. Half is built — Gamma's record-level content, with gravity kept out of it by five doctrine rows, which is what stops the claim being circular. The recovery of classical gravity from accumulated Gamma is untouched (T-20) | **OPEN** | the charter's second term is a placeholder we named and never identified | — | — |
-| **H-2** | ALPHA IS NEARLY ABSENT. EM has four registered rows and Gamma has sixteen; alpha has essentially Theorem D, which PF-6 rescoped and attributed to Bravyi-Hastings-Michalakis. The fine structure constant has never been connected to any number here — 'alpha' is standing in for a generic coupling strength | **OPEN** | the charter names three terms; we have one well, one as a placeholder, one barely | — | — |
+| **H-2** | ALPHA IS NEARLY ABSENT. EM has four registered rows and Gamma has sixteen; alpha has essentially Theorem D, which PF-6 rescoped and attributed to Bravyi-Hastings-Michalakis. The fine structure constant has never been connected to any number here — 'alpha' is standing in for a generic coupling strength | **PROVED** | ANSWERED as a stated limitation: 'alpha' names a generic coupling strength here, NOT the fine structure constant, and T-10 shows no conclusion can depend on its value (28 settings, lambda 0.05-3.0, 0 moved). What its value would set is the RATE, chi ~ lambda^2n*, connected to no physical number. The anchor now says so | — | — |
 | **H-3** | THE DEFINITION IS WRITTEN, NOT DERIVED. The five clauses are ours. C-12 says when an object meeting them exists; nothing says the world's records meet them. Why is THIS the definition of a record? | **OPEN** | the deepest form of 'have we used real terms' | — | — |
 | **H-4** | ONE CARRIER, AND THE CARRIER MAY BE THE RESULT. Every gauge-tier result is on the 2x2 toric code, dim 256, d=2 — where the 'non-local' logical has weight 2 and looks local. Several results may be small-lattice artefacts. And the second carrier may be computationally out of reach: the model caps near dim 32 (O-19) and toric 3x3 is dim 262144 | **PROVED** | answered for the formation results: 32 PASS 0 FAIL across a manifold lattice, a NON-MANIFOLD lattice, and a non-lattice code. What remains single-carrier is now explicit | — | — |
 | **H-5** | NO ROUTE TO EMPIRICAL CONTACT IS KNOWN. Not merely 'none found yet': PF-6 examined six rival accounts and every measured result is already theirs. A demonstration checkable 'by anyone' in the physics sense usually means checkable against nature, not only re-runnable | **OPEN** | X-4, T-VI.3, T-VI.4 all BLOCKED | — | — |
@@ -64,6 +64,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **D-10** | A VERIFICATION WITH NO FAILING BRANCH IS AN INSTRUMENT CHECK, NOT A RESULT. 'threshold = d' was verified on six codes, and threshold = d IS the definition of d — the test had no branch on which it could come out otherwise. TELL: a verification whose negation would be a contradiction in terms | **PROVED** | PF-6 adjudication; F-24 withdrawn under it | — | — |
 | **D-11** | A CRITERION VALIDATED ONLY ON THE CASES IT WAS DERIVED FROM IS NOT VALIDATED. G-16 was fitted on four weight-2 couplings and failed on eight weight-4 ones; F-25's lambda^2d was fitted on one coupling class and is really lambda^2n*. TELL: a criterion whose test set is the set that suggested it | **PROVED** | two instances in one day, both caught by testing outside the fitted set | — | — |
 | **D-12** | A COMPLEX CAN BE REDRAWN AS NON-MANIFOLD WITHOUT BECOMING A DIFFERENT QUANTUM SYSTEM. Adding a face that is already present leaves rank(d2), B_1, H_1 and the whole stabiliser group unchanged — same code, different drawing. Only a face that changes the STABILISER GROUP changes the carrier. TELL: a 'second carrier' whose stabiliser group is not checked against the first | **PROVED** | T-8: the duplicated-plaquette candidate would have passed every carrier-independence test by being the same carrier | — | — |
+| **D-13** | ALPHA NAMES A MAGNITUDE, NOT A CONSTANT. No result here depends on its value, because T-10 showed no conclusion depends on the coupling at all. Connecting it to the fine structure constant would need a continuum limit from Z2 lattice gauge theory to an electromagnetic coupling, which nothing here supplies — claiming it would be an import (D-1) | **PROVED** | T-22; the anchor and glossary now state it | — | a registered result whose truth depends on the coupling's value |
 
 ## A. THE THREE ROLES — the charter's question
 

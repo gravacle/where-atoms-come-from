@@ -7250,3 +7250,35 @@ against a code distance of 3.**
 
 **Theorem D's unqualified form — "a local perturbation splits the degeneracy as `ε^d`" — is false on
 `[[5,1,3]]` for a record-commuting perturbation, and `n*` subsumes both readings.**
+
+---
+
+## T-22 — **ALPHA STANDS FOR A GENERIC COUPLING STRENGTH HERE, AND T-10 SHOWS ITS VALUE CANNOT MATTER**
+
+`H-2` asked whether alpha has content beyond a name. **It does not, and the honest answer is sharper
+than "we have not connected it."**
+
+**T-10 settles it.** Alpha enters this program as the coupling strength `λ`. Over **28 settings
+spanning `λ = 0.05` to `3.0`** — a factor of 60 — **no conclusion moved** (`C-21`). Every registered
+result is either **exact** (a zero or a non-zero, decided by the channel criterion) or an **exponent**
+(`n*`, `d`), and **exponents do not depend on the value of the coupling.**
+
+> ### **NO STRUCTURAL CONCLUSION IN THIS PROGRAM CAN DEPEND ON ALPHA'S VALUE, BECAUSE T-10 PROVED NO
+> ### CONCLUSION DEPENDS ON `λ` AT ALL. That is not a gap waiting to be filled — it is a fact about
+> ### what kind of results these are.**
+
+### WHAT ALPHA'S VALUE WOULD SET, AND WHY THE PROGRAM CANNOT REACH IT
+
+**Rates and timescales.** `χ ~ λ^{2n*}` (`F-23`) — the value of the coupling sets **how fast** a record
+forms, not **whether** it can. **The program has connected that to no physical number**, and doing so
+would need a continuum limit from a `Z₂` lattice gauge theory to an actual electromagnetic coupling,
+which nothing here supplies. **Claiming otherwise would be an import (D-1).**
+
+### THE ANCHOR IS AMENDED TO SAY SO
+
+> **In this program "alpha" names a GENERIC COUPLING STRENGTH — the magnitude of the local terms that
+> do not respect the record's structure. It is NOT the fine structure constant, no result depends on
+> its value, and nothing here is dimensionful.**
+
+**`H-2` stands as a stated limitation rather than an open task.** The charter names three terms; **two
+have record-level content and the third is a magnitude**, which is what the measurements show it to be.
