@@ -34,6 +34,7 @@ printf "  %-30s %-26s %s\n" "lane" "script" "result"
 printf "  %-30s %-26s %s\n" "------------------------------" "--------------------------" "------"
 for py in LANE_*/*.py; do
   lane="${py%%/*}"; base="$(basename "$py")"; txt="${py%.py}.txt"
+  [ -f "$txt" ] || txt="${py%.py}.OUT.txt"
   if [ ! -f "$txt" ]; then printf "  %-30s %-26s %s\n" "$lane" "$base" "no sealed output — SKIP"; continue; fi
   if [ "${1:-}" = "--quick" ] && [[ " $SLOW " == *" $base "* ]]; then
     printf "  %-30s %-26s %s\n" "$lane" "$base" "skipped (--quick)"; continue; fi
