@@ -6511,3 +6511,34 @@ and nothing in the program yet says why the world's noise should be structured t
    work and it is why the first attempt hit the enumeration cap at 32 minimal projections.
 2. **Forming the stacked commutator map directly (16384×1024) timed the second attempt out.**
    `M†M` is `1024×1024` and has the same rank. **Fixed; both recorded so the model can be corrected.**
+
+---
+
+## O-18 — PREDICTION REGISTERED BEFORE THE RUN
+
+**THE QUESTION.** A record exists only where the environment's couplings commute with it (C-17), and
+the **generic** environment's do not. **Why should the world's noise be the right shape?**
+
+**THE CANDIDATE ANSWER, AND IT IS EM'S OWN.** The structure is not an extra assumption. **A-EM
+established that EM supplies both boundary maps of the complex — `∂₁` IS the Gauss law.** An
+environment coupling to a gauge field must couple **gauge-invariantly**, i.e. commute with every `A_v`.
+**Gauge invariance is not a restriction we impose on the noise. It is what "the environment couples to
+the EM field" means.**
+
+**WHAT GAUGE-INVARIANT OPERATORS ARE, ON THIS CARRIER.** A `Z`-type operator commutes with every `A_v`
+**iff its support is a CYCLE**. Contractible cycles are products of plaquettes — **stabilisers**.
+Non-contractible cycles are **logicals**. There is nothing else.
+
+**PREDICTIONS:**
+1. **Gauge-invariant LOCAL noise lies in the stabiliser group and acts TRIVIALLY on the code space.**
+2. **A record therefore exists under it and is untouched** — the Hermitian commutant stays > 1.
+3. **AND THE SAME FACT PREVENTS FORMATION: `χ = 0` under gauge-invariant local noise.** An operator
+   that acts trivially cannot make the environment's evolution conditional on the record (F-22).
+4. **PF-5's coupling `Σ_l Z_l` is NOT gauge-invariant term by term** — a single `Z_l` anticommutes with
+   the two `A_v` at its endpoints. So the mechanism that formed a record in PF-5 **is unavailable to a
+   gauge-invariantly-coupled environment.**
+
+> ### **IF 1–4 HOLD, GAUGE INVARIANCE PROTECTS THE RECORD PERFECTLY AND PREVENTS ITS FORMATION EQUALLY PERFECTLY, AND THAT IS THE REAL SHAPE OF O-18.**
+
+**IF 3 FAILS** — if gauge-invariant local noise does form a record — then EM's own constraint supplies
+exactly the structured noise the account needs, and O-18 closes affirmatively.
