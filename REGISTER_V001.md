@@ -6286,3 +6286,81 @@ The first full-corpus run from a snapshot copy failed, and **both failures are D
 **The verification harness had the exact defect it was built to catch.** Recorded because D-8 has now
 fired three times — `check(..., True)` in the O-4 lane, a log-log slope fitted to a `1e-15` column in
 O-11, and here.
+
+---
+
+# PF-6 — **ANSWERED NO. NOTHING IN THIS ACCOUNT IS UNPREDICTED BY A RIVAL, AND TWO REGISTERED CLAIMS ARE FALSE.**
+
+Six rival accounts, every claimed difference adversarially adjudicated. **The deflationary lens won.**
+
+## WHAT IS NOT OURS — the attribution, in full
+
+| our result | whose it already is |
+|---|---|
+| formation threshold `= d` | **Knill–Laflamme** (PRA 55, 900, 1997) + Bravyi–Terhal cleaning lemma. **It is the DEFINITION of `d`** |
+| protection `ε^d` | **Bravyi–Hastings–Michalakis**, J. Math. Phys. 51, 093512 (2010) |
+| `χ` exactly 0 below `d`, non-zero at `d` | **Cleve–Gottesman–Lo** (1999); and now inside quantum Darwinism itself — **Girard–Cheng–Cao, arXiv:2606.06588, Thm 4** |
+| weight-1 entangles but transfers 0 record bits | **information–disturbance**, Schumacher–Nielsen (1996) |
+| redundancy across fragments | **quantum Darwinism** (Zurek, Zwolak–Zurek) + GCC Thm 4 |
+| `χ ~ λ^{2d}` | `d`-th order degenerate perturbation theory, squared |
+| a single local term gives exactly 0 at all orders | **group theory** — powers of one weight-1 Pauli are `I` or itself. **Algebra, not measurement** |
+| `I(S:B)` invariant under system-only unitaries | mutual information is invariant under local unitaries. **Arithmetic** |
+| clause (v)'s topological restriction | **TQO-1**, Bravyi–Hastings–Michalakis; stated in Kitaev 2003 |
+
+> ### **"ONE QUANTITY, FOUR ROLES" IS ONE THEOREM READ FOUR TIMES. It is not four coincidences, and reporting the convergence is a check that cannot fail. F-24 IS WITHDRAWN.**
+
+## **D-10 — A VERIFICATION WITH NO FAILING BRANCH IS AN INSTRUMENT CHECK, NOT A RESULT**
+
+**`threshold = d` was verified on six codes at three distances — and `threshold = d` IS the definition
+of `d`.** The verification had no branch on which it could have come out otherwise. **It confirmed the
+instrument, not the account.**
+**TELL:** a "verification" whose negation would be a contradiction in terms.
+
+## THREE REGISTERED CLAIMS ARE FALSE OR MISSCOPED
+
+### **F-25 WITHDRAWN — the eleventh withdrawn claim.** The exponent is `2n*`, not `2d`
+
+`n*` = the minimum number of the environment's **available** local terms whose product acts
+non-scalar on the code space. On `[[5,1,3]]` with `Z`-only couplings the measured slope is
+**9.4619 → 9.8435 → 9.9612 → 9.9966 → 10 = 2n*`**, against `2d = 6`. `[[4,2,2]]` control: 3.9854 → 4.
+
+**THE CAN-FAIL CHECK THAT DECIDES IT:** on the *same* code and estimator, widening the single-site set
+from `{Z}` to `{X,Y,Z}` moves the slope to **5.9078 → 5.6933 → 6**, while `{Z}` stays at 10.
+**The exponent tracks the COUPLING ALGEBRA, not the code.**
+
+**And our own file closes the escape:** `LANE_PF5_LOCALBATH/pf5_localbath.py:38` uses a `Z`-type,
+record-commuting sum and its own docstring calls it *"an ORDINARY LOCAL environment."*
+
+### **C-14 IS FALSE AS STATED.** Verified counterexample
+
+`model/count_law.py` only ever tested the law with an **empty noise set**, so *"from the spectrum
+alone"* was never exercised against a non-trivial commutant.
+
+| collective decoherence, `H = J²`, `L = {Jx,Jy,Jz}` | multiplicities | `min v₂(m_E)` | **model `k`** |
+|---|---|---|---|
+| **n = 3** | `[4,4]` | **2** | **0** |
+
+**C-14 predicts 2. The truth is 0.** And these are **noiseless subsystems built and operated
+experimentally** — Kwiat et al. (2000), Kielpinski et al. (2001), Viola et al. (2001).
+**C-14 must be restricted to empty `L`, or restated in terms of the minimal projections of `A′`** —
+which is what the model actually computes.
+
+### THE PROTECTION LAW IS RESCOPED
+
+`ε^d` holds for a **generic** single-site perturbation — which is what `LANE_O23_SPLITTING` actually
+measured (3.0000 on `[[5,1,3]]` and Steane). Under a **`Z`-only** perturbation the slope is
+**5.0001 = n\***. **The lane is right; the unqualified verbal form "a local perturbation splits as
+`ε^d`" is not.**
+
+### PF-5's EXPONENT NEEDS ITS BATH PREMISE NAMED
+
+`slope(χ)` is **2.0064** at bath purity `q=0` and **3.9665** at `q=0.02`, while the amplitude-level
+`slope(D)` holds at **1.9987–1.9992** throughout. **The factor of two is set by how the environment is
+prepared. The record-intrinsic exponent is the amplitude exponent.**
+
+## X-4, T-VI.3, T-VI.4 — **THEY DO NOT MOVE**
+
+All three stay **BLOCKED**. **PF-6 is answered NO, and what it gains is an adjudicated reason in place
+of silence.** Every arm run so far is closed unitary evolution with a small bath; **the one untested
+place where amplitudes and rates need not stand in the squared relation is a genuinely dissipative
+bath.**
