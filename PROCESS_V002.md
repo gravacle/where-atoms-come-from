@@ -45,7 +45,9 @@ The object is **neither local nor the whole system**: extent `d = L → ∞`, sh
 
 **Γ is `(H₁, ⟨·,·⟩)`** — defined **only** by the function it performs, R1–R3 (`THIRD_TERM_V001`,
 `G-5`). It is **a requirement on EM's complex, not an ingredient beside it** (`G-14`). **`H₁` is not
-unique**: good qLDPC codes exceed Delfosse's compact-2-manifold ceiling by `Θ(n²/log²n)` (`G-6`).
+unique**: good qLDPC codes exceed Delfosse's compact-2-manifold ceiling by `Θ(n²/log²n)` (`G-6`), and
+**homology is not even necessary** — records exist in dimension 6 with no qubits, no stabiliser group
+and no cells (`C-22`). **The necessary condition is C-12 and nothing narrower.**
 
 The **count** is an index, `dim H₀ + dim H₂ − χ`, holding on 11 carriers including one with no
 geometric realisation (`G-7`); from the clauses alone it is `min_E v₂(m_E)` **when the noise is empty**

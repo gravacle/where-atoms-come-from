@@ -1,0 +1,28 @@
+====================================================================================================
+T-12   IS ANY STRUCTURAL CONDITION NECESSARY?
+====================================================================================================
+
+1.  RECORDS IN SYSTEMS WITH NO CODE, NO LATTICE, NO COMPLEX
+  system                                        dim  records  writer verified
+  random H, 4 distinct pairs, no noise            4        2              2/2
+  random H, 6 distinct pairs, no noise            6        4              4/4
+  random H, 8 distinct pairs, no noise            8        8              4/4
+  random H + a diagonal jump, dim 4               4        2              2/2
+  random H + a diagonal jump, dim 6               6        4              4/4
+
+  systems with a record and a verified writer: 5 of 5
+
+2.  WHAT STRUCTURE DO THEY HAVE?   (the point: none of the proposed conditions)
+     tensor factorisation into qubits : NO -- dim 6 is not a power of 2 in two of the cases
+     a stabiliser group               : NO -- there are no Pauli operators to generate one
+     an F_2 chain complex             : NO -- there are no cells
+     non-trivial homology             : NOT DEFINED -- there is no complex to take it of
+     a lattice or any geometry        : NO
+
+3.  SO WHAT IS NECESSARY?
+     C-12, and it is the clauses restated rather than anything narrower:
+       a record satisfying (i)-(iv) exists IFF the commutant of alg{I,H,L_k,L_k-dagger}
+       contains a projection that is non-trivial on some eigenspace and trace-balanced.
+     C-15 already showed (i)-(iv) are CARRIER-FREE and (v) needs a locality structure.
+     Given a locality structure, (v) is a DISTANCE condition -- no admissible local operation
+     reaches the record -- which is Knill-Laflamme and is not homological either.

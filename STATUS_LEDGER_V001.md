@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 93 | 2 | 7 | 1 | 16 | 3 | 6 | 7 | 3 | 3 |
+| 95 | 2 | 6 | 1 | 16 | 3 | 6 | 7 | 3 | 3 |
 
-**141 rows.**
+**142 rows.**
 
 ---
 
@@ -86,7 +86,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-1** | records require exact degeneracy | **PROVED** | forward P-1; the NAIVE converse is FALSE (O-1) and the REPAIRED converse is a theorem (C-12) | O-1 (converse) | a non-degenerate H carrying a record |
 | **C-2** | ORDINARY (0-form) symmetry cannot supply it — splits linearly, dead at 1e-06 | **MEASURED** | W-61: 2.0e-06, linear | O-2 | a 0-form degeneracy not split at first order |
 | **C-3** | a 1-FORM symmetry can — its generators are extended, so no local operator reaches them; splits only at order d | **PROVED** | Thm D; slope 2.000 over two decades | — | splitting below order d |
-| **C-4** | records require NON-TRIVIAL HOMOLOGY of an F_2 chain complex — NOT a surface (G-6 refuted the manifold reading). Whether CSS is required is untested | **PARTIAL** | surface reading refuted by G-6; homological reading survives but non-CSS and non-abelian are unswept | O-3 (exhaustiveness) | a noise-surviving record with only 0-form symmetry |
+| **C-4** | records require the C-12 condition and NOTHING NARROWER. Homology of an F_2 complex is a SUFFICIENT family, not a necessary one: records exist in dimension 6 with no qubits, no stabiliser group, no cells and no homology to take | **PROVED** | T-12: 5 of 5 structureless systems carry a record with a verified writer, two of them in dimension 6. The requirement that records need non-trivial homology is WITHDRAWN | O-3 (exhaustiveness) | a noise-surviving record with only 0-form symmetry |
 | **C-5** | record space = 2^2g; the count is 2g, INDEPENDENT OF AREA | **PROVED** | Thm A; G1 (2 at area 4 and area 6) | — | a record at genus 0; a count that moves with area |
 | **C-6** | a writer always exists and is never local | **PROVED** | Thm B; P-3 | — | a local operator flipping the record |
 | **C-7** | nothing local writes or destroys it | **PROVED** | Thm C | — | any contractible operation acting |
@@ -104,6 +104,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-19** | RECORDS COMPOSE AND DO NOT INTERFERE. Forming Zbar gives chi(Zbar) = 0.90811968 with chi(Zbar2) = 0.00000000 and both values moving by ~1e-16; symmetrically for Zbar2. And Zbar*Zbar2 serves NEITHER — a coupling through it forms a third logical, not a family member | **PROVED** | TWO CARRIERS (T-9): toric [[8,2,2]] and [[4,2,2]]; the non-manifold [[8,1,2]] has one logical and cannot test composition | — | a coupling that forms one family member while disturbing another |
 | **C-20** | A CARRIER ALLOWS A PROTECTED RECORD WHEN A LOCAL REGION IS A SMALL FRACTION OF IT. Admissible flippers: 16 and 1152 at region/system 0.50 and 0.75 on the 2x2 torus, 3120 at 0.50 on the 3x3, and ZERO at 0.22 on the 3x3 against a control of 768. The 2x2 torus has no room for a region to be local | **PROVED** | LANE_T11_CLAUSEV t11c | — | a carrier admitting an admissible flipper in a region that is a small fraction of it |
 | **C-21** | NO CONCLUSION IS CARRIED BY A FREE PARAMETER. Over 28 settings spanning beta 0.2-20, lambda 0.05-3.0, bath size 2-6, time 0.5-16 and five energy seeds, chi[record] ranges 0.0042 to 0.99996 while chi for gauge-invariant local and weight-1 couplings stays at the floor (max 4.4e-15). 28 invariant, 0 moved | **PROVED** | LANE_T10_PARAMS; noise floor 0.00e+00 in 21 of 28 settings | — | a conclusion that changes with beta, lambda, bath size, time or bath energies |
+| **C-22** | NO STRUCTURAL CONDITION NARROWER THAN THE CLAUSES IS NECESSARY. Records with verified admissible writers exist in systems with no tensor factorisation (dim 6), no stabiliser group, no cells, no homology and no geometry. C-12 is the necessary condition and it is the clauses restated | **PROVED** | LANE_T12_NECESSARY, 5 of 5 | — | a record violating C-12, or a structural condition met by every record |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 
@@ -137,7 +138,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-5** | clause (ii) is exact; real records are approximate | **PROVED** | clause (ii) relaxes as a spectral WIDTH bound on the dressed record; tolerance = inverse lifetime T(eta) >= eta/delta | — | — |
 | **O-6** | is our 1-form symmetry emergent or exact? | **FAILED** | tested: EXACT, 0.000e+00 broken at every epsilon | — | — (Harlow-Ooguri tension is LIVE; see X-5) |
 | **O-7** | COVERAGE GAP: the fracton / no-string-logical-operator region was never swept (agent died on an API error). Haah's cubic code, X-cube, checkerboard, Chamon untested against R1-R3 | **FAILED** | swept: fractons widen NOTHING — X-cube, checkerboard and Haah's cubic code are all length-2 F_2 chain complexes | — | — |
-| **O-8** | NON-CSS and NON-ABELIAN (Levin-Wen, Fibonacci) are untested against R1-R3. The general condition may be wider than a length-2 F_2 complex | **PROVED** | swept: non-CSS stabiliser codes provably ESCAPE the F_2 length-2 class; non-abelian order FAILS clause (iv) on a parity obstruction | — | — |
+| **O-8** | NON-CSS and NON-ABELIAN (Levin-Wen, Fibonacci) are untested against R1-R3. The general condition may be wider than a length-2 F_2 complex | **PROVED** | resolved by T-12: non-CSS escaping the F_2 class is one instance of a general fact — NO structural condition is necessary | — | — |
 | **O-9** | WHAT SUPPLIES A COUPLING EXTENDED OVER A REGION AT LEAST AS LARGE AS d? The non-equilibrium half of this question is DISSOLVED by O-11 — an ordinary thermal environment suffices | **PROVED** | nothing has to supply an extended coupling: a sum of single-site couplings forms records at lambda^2d. A SINGLE local term gives exactly zero at every lambda | — | — |
 | **O-10** | THE THRESHOLD=d SCALING IS UNTESTED. F-11 measured it at d=2 only; 3x3 needs dim 262144 | **PROVED** | threshold = d on six codes at d = 1,2,3 incl. non-CSS and degenerate; now PROVED for every stabiliser code and every coupling | — | — |
 | **O-11** | F-13 MAY CONTRADICT ITSELF. A strong-coupling bath relaxes to the MEAN-FORCE Gibbs state Tr_B[e^{-beta H_tot}]/Z, which depends on the COUPLING operators; at weight >= d — what clause (2) requires — that state is not degeneracy-blind, so it meets clause (1)'s falsifier while satisfying clause (2) | **PROVED** | F-13 clause (1) CONTRADICTED: mean-force state gives <Zbar> = -0.824573 at lambda=0.8, closed form agreeing to 7.2e-15 | — | — |

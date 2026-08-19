@@ -13,11 +13,11 @@ checkable rather than a judgement call.**
 
 **Nothing below counts as finished until both halves of that sentence are true.**
 
-**14 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**15 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO |
 |---|---|---|
-| 14 | 1 | 7 |
+| 15 | 1 | 6 |
 
 ---
 
@@ -48,11 +48,11 @@ checkable rather than a judgement call.**
 | **T-11** | PF-3B. Clause (v) under DEF-A on the second carrier — does admissible still give zero flippers? | **DONE** | the second carrier reproduces 0 admissible flippers against a nonzero any-unitary control | T-8 |
 | **T-10** | PARAMETER INDEPENDENCE. Show no conclusion moves with beta, lambda, bath size or lattice size | **DONE** | a sweep table per PROVED row showing the conclusion invariant, with the noise floor printed beside every fit | T-9 |
 
-## PHASE D  CLOSE THE OPEN PHYSICS  —  2/3 done
+## PHASE D  CLOSE THE OPEN PHYSICS  —  3/3 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
-| **T-12** | PF-4. The necessary condition. C-4 is PARTIAL: a sufficient family and a proven non-CSS escape, no established necessary condition | TODO | either a condition covering both is stated and tested, or it is proved none narrower than the clauses exists | — |
+| **T-12** | PF-4. The necessary condition. C-4 is PARTIAL: a sufficient family and a proven non-CSS escape, no established necessary condition | **DONE** | either a condition covering both is stated and tested, or it is proved none narrower than the clauses exists | — |
 | **T-14** | ALPHA'S ROLE, RESTATED AFTER PF-6. Theorem D's eps^d was rescoped to GENERIC single-site perturbations; the Z-only case gives eps^n*. Restate alpha's role in mapped terms | **DONE** | the alpha row states which perturbation class it holds for, with both exponents measured | T-1 |
 | **T-22** | GIVE ALPHA REAL CONTENT (H-2). Nothing in the corpus is dimensionful and the fine structure constant is connected to no number. Either connect it or state plainly that 'alpha' names a generic coupling here | **DONE** | either a registered result in which alpha's VALUE matters, or an explicit statement in the anchor that alpha stands for a generic coupling strength | — |
 

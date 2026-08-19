@@ -7282,3 +7282,46 @@ which nothing here supplies. **Claiming otherwise would be an import (D-1).**
 
 **`H-2` stands as a stated limitation rather than an open task.** The charter names three terms; **two
 have record-level content and the third is a magnitude**, which is what the measurements show it to be.
+
+---
+
+## T-12 / PF-4 DONE — **NO STRUCTURAL CONDITION NARROWER THAN THE CLAUSES IS NECESSARY**
+
+`LANE_T12_NECESSARY`. C-4 read *"records require non-trivial homology of an `F₂` chain complex"*.
+**O-8 showed non-CSS stabiliser codes escape that class.** The question was whether **anything**
+narrower than the clauses survives.
+
+| system | dim | records | writer verified |
+|---|---|---|---|
+| random `H`, degenerate pairs, no noise | 4 | 2 | **2/2** |
+| random `H`, degenerate pairs, no noise | **6** | 4 | **4/4** |
+| random `H`, degenerate pairs, no noise | 8 | 8 | 4/4 |
+| random `H` + a diagonal jump | 4 | 2 | **2/2** |
+| random `H` + a diagonal jump | **6** | 4 | **4/4** |
+
+**5 of 5 carry a record with a verified admissible writer.** And **two of them are dimension 6**:
+
+| proposed necessary condition | present? |
+|---|---|
+| tensor factorisation into qubits | **NO — 6 is not a power of 2** |
+| a stabiliser group | **NO — there are no Paulis to generate one** |
+| an `F₂` chain complex | **NO — there are no cells** |
+| non-trivial homology | **NOT DEFINED — there is no complex** |
+| a lattice, or any geometry | **NO** |
+
+> ### **THE NECESSARY CONDITION IS C-12, AND IT IS THE CLAUSES RESTATED RATHER THAN ANYTHING NARROWER:
+> ### a record satisfying (i)–(iv) exists IFF the commutant of `alg{I,H,L_k,L_k†}` contains a
+> ### projection that is non-trivial on some eigenspace and trace-balanced.**
+
+**C-15 already established that (i)–(iv) are carrier-free and that (v) requires a locality structure.
+Given one, (v) is a DISTANCE condition — no admissible local operation reaches the record — which is
+Knill–Laflamme and is not homological either.**
+
+### WHAT C-4 BECOMES
+
+**Homology is a SUFFICIENT route and one this program has measured extensively. It is not necessary,
+and neither is any code-theoretic condition.** `C-4`'s claim that records *require* non-trivial
+homology is **withdrawn** — the twelfth withdrawn claim — and replaced by the statement that homology
+is one family among others, all of which satisfy C-12.
+
+**STAGE D COMPLETE.**
