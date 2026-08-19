@@ -6191,3 +6191,32 @@ running the bath's evolution backwards, which is not an operation the system has
 > ### makes the environment's evolution depend on which value it has, so the environment falls into a
 > ### different state for each — in every degree of freedom the coupling reaches, and irreversibly
 > ### from the system's side, because the system has no operators there.
+
+---
+
+## PF-5 / O-9 — PREDICTION REGISTERED BEFORE THE RUN
+
+**THE CHARGE.** Formation needs a coupling of weight ≥ `d` (F-13). **Physical environments couple
+LOCALLY** — the standard model of an environment is `H_int = Σ_i λ_i A_i ⊗ B_i` with every `A_i` acting
+on one site. **If only extended couplings form records, records do not form in nature**, and the whole
+process is proved conditional on something the world does not supply.
+
+**THE RESOLUTION I EXPECT, AND IT IS ALREADY IMPLIED BY C-13.** Clause (v) forbids a **single**
+contractible operation. It says nothing about **products**, and C-13 recorded that *products of
+contractible operations DO reach the record* — that is Theorem D. **A sum of local couplings is not one
+weight-1 operator; at order `d` in `λ` its terms act together and reach the record.**
+
+**PREDICTIONS — three couplings, one carrier:**
+1. **A SINGLE local term**, `λ Z_e ⊗ X_0`: `χ = 0` at **every** `λ`. Powers of one weight-1 operator
+   are `I` or `Z_e`; they never reach the logical. **This is the control.**
+2. **A SUM of local terms**, `λ Σ_l Z_l ⊗ X_{l mod 3}`: **`χ > 0`**, suppressed — log-log slope in `λ`
+   of order **`2d`** (the amplitude to reach the record is `~λ^d`, and `χ` is second order in it).
+3. **A weight-`d` coupling**, `λ Z̄ ⊗ ΣX_j`: `χ > 0` at **first** order, slope ~2.
+
+**IF 1–3 HOLD, PF-5 IS ANSWERED AND O-9's PREMISE DISSOLVES.** The world does not need to supply an
+exotic extended coupling. **An ordinary local environment forms records, at order `λ^d`** — so the same
+`d` that protects the record, gates its formation, and sets the environment's threshold also **sets how
+slowly it forms.** That is one quantity doing four jobs, and it is measurable.
+
+**IF 2 RETURNS ZERO,** local environments genuinely cannot form records, O-9 stands as a real
+obstruction, and the process is conditional on an input nothing supplies.
