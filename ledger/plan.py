@@ -38,21 +38,24 @@ def render():
          '> quantum records. And the model so that our proof can be checked by anyone.**',
          '>', '> — the principal, 2026-08-19', '',
          '**Nothing below counts as finished until both halves of that sentence are true.**', '',
-         f'**{done} of {len(rows)} tasks done.**', '']
+         f'**{done} of {len(rows)} tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.', '']
     tally = {}
     for r in rows: tally[r[3]] = tally.get(r[3], 0) + 1
     order = [s for s in ('DONE', 'DOING', 'TODO', 'BLOCKED', 'DROPPED') if s in tally]
     L += ['| ' + ' | '.join(order) + ' |', '|' + '---|' * len(order),
           '| ' + ' | '.join(str(tally[s]) for s in order) + ' |', '', '---', '']
-    for ph in sorted({r[1] for r in rows}):
+    rows = sorted(rows, key=lambda r: int(r[7]) if len(r) > 7 and r[7] else 999)
+    for ph in sorted({r[1] for r in rows}, key=lambda p: min(int(r[7]) for r in rows if r[1] == p)):
         sel = [r for r in rows if r[1] == ph]
         d = sum(1 for r in sel if r[3] == 'DONE')
         L += [f'## PHASE {ph}  —  {d}/{len(sel)} done', '',
-              '| | task | status | DONE WHEN | depends | row |', '|---|---|:---:|---|---|---|']
+              '| # | task | status | DONE WHEN | depends |', '|---|---|:---:|---|---|']
         for r in sel:
             i, _, task, st, dw, dep, row = (r + [''] * 7)[:7]
-            L.append('| **%s** | %s | %s | %s | %s | %s |' %
-                     (i, esc(task), MARK.get(st, st), esc(dw or '—'), esc(dep or '—'), esc(row or '—')))
+            crit = (len(r) > 8 and r[8] == 'yes')
+            L.append('| %s**%s** | %s%s | %s | %s | %s |' %
+                     ('▶ ' if crit else '', i, '**' if crit else '', esc(task) + ('**' if crit else ''),
+                      MARK.get(st, st), esc(dw or '—'), esc(dep or '—')))
         L += ['']
     L += ['---', '', '## STATUS VOCABULARY', '', '| | |', '|---|---|']
     for v in vocab: L.append('| `%s` | %s |' % (v[0], v[1]))
