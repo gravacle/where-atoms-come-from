@@ -465,6 +465,46 @@ class RecordModel:
         return dict(component=float(abs(a)), opens_channel=bool(abs(a) > tol),
                     identity_part=float(abs(b)), residual=resid)
 
+    # ------------------------------------------------------------ MULTI-RECORD (T-6)
+    def channel_map(self, family, couplings, tol=1e-9):
+        """WHICH COUPLING OPENS A CHANNEL TO WHICH RECORD. Rows are couplings, columns are
+           records. This is the dependency structure of a multi-record environment: a coupling
+           serves exactly the records its compression has a component along."""
+        return np.array([[self.channel(R, A, tol=tol)['opens_channel'] for R in family]
+                         for A in couplings], dtype=bool)
+
+    def formation_independence(self, family, couplings, env, lam=0.8, t=4.0, tol=1e-8):
+        """CAN EACH RECORD BE FORMED WITHOUT DISTURBING THE OTHERS? Measured, not asserted.
+
+           For each (coupling, target) pair that opens a channel, evolve and report for EVERY
+           record in the family: how much the bath learned about it, and how far its value
+           moved. A record is formed INDEPENDENTLY when the bath learns about it and about no
+           other member, and no other member's value moves."""
+        Pg, k = self.ground_space(); rho0 = Pg / k
+        out = []
+        for ci, A in enumerate(couplings):
+            targets = [j for j, R in enumerate(family) if self.channel(R, A)['opens_channel']]
+            if not targets: continue
+            nS, nB = self.n, env.dim
+            if isinstance(A, (list, tuple)):
+                HINT = sum(np.kron(a, env.site[j % env.nq]) for a, j in A)
+            else:
+                HINT = np.kron(A, env.probe)
+            Ht = np.kron(self.H, np.eye(nB)) + np.kron(np.eye(nS), env.HB) + lam * HINT
+            w, U = np.linalg.eigh(Ht)
+            r0 = np.kron(rho0, env.thermal())
+            ph = np.exp(-1j * w * t)
+            Uc = U.conj().T @ r0 @ U
+            r = U @ (ph[:, None] * Uc * ph.conj()[None, :]) @ U.conj().T
+            rS = r.reshape(nS, nB, nS, nB).trace(axis1=1, axis2=3)
+            learned = [env.holevo(r, R, nS) for R in family]
+            moved = [abs(float(np.real(np.trace(rS @ R)) - np.real(np.trace(rho0 @ R)))) for R in family]
+            out.append(dict(coupling=ci, targets=targets, learned=learned, moved=moved,
+                            independent=bool(len(targets) == 1
+                                             and all(learned[j] < tol for j in range(len(family)) if j not in targets)
+                                             and all(m < tol for j, m in enumerate(moved) if j not in targets))))
+        return out
+
     def protection(self, regions):
         """CLAUSE (v). regions = list of projector-lists defining what 'contractible' means.
            NOT first-principles: this is CARRIER DATA and the model requires it to be supplied."""

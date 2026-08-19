@@ -1,0 +1,13 @@
+T-6  MULTI-RECORD DEPENDENCIES
+
+1. CHANNEL MAP -- which coupling serves which record
+   coupling                Zbar     Zbar2
+   Zbar                    True     False
+   Zbar2                  False      True
+   Zbar*Zbar2             False     False
+   sum plaquettes         False     False
+
+2. CAN ONE BE FORMED WITHOUT DISTURBING THE OTHER? -- measured
+   coupling             targets   chi(Zbar)  chi(Zbar2)   |d<Zbar>|  |d<Zbar2>|   indep
+   Zbar                ['Zbar']  0.90811968  0.00000000    6.94e-16    3.96e-16    True
+   Zbar2              ['Zbar2']  0.00000000  0.90811968    8.92e-16    1.70e-16    True

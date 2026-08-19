@@ -6939,3 +6939,39 @@ are other logicals — which the anticommutation form got wrong.
 > ### **`channel()` is now the model's answer to "can this environment form this record", and it is
 > ### decided entirely by the coupling's action ON THE CODE SPACE — not by its weight, its locality,
 > ### its gauge invariance, or its homology class taken alone.**
+
+---
+
+## T-6 DONE — **RECORDS COMPOSE. MEASURED, NOT ASSERTED.** `T-I.4` ANSWERED
+
+`model.channel_map` and `model.formation_independence`, on the toric 2×2 with the family `{Z̄, Z̄₂}`.
+
+### THE DEPENDENCY STRUCTURE
+
+| coupling | serves `Z̄` | serves `Z̄₂` |
+|---|---|---|
+| `Z̄` | **True** | False |
+| `Z̄₂` | False | **True** |
+| **`Z̄·Z̄₂`** | **False** | **False** |
+| sum of plaquettes | False | False |
+
+**`Z̄·Z̄₂` serves NEITHER** — it is a third logical, and an environment coupling through it forms a
+record that is not in the family being tracked. **This is T-5's correction showing up as structure
+rather than as an error.**
+
+### CAN ONE BE FORMED WITHOUT DISTURBING THE OTHER?
+
+| coupling | targets | `χ(Z̄)` | `χ(Z̄₂)` | `\|Δ⟨Z̄⟩\|` | `\|Δ⟨Z̄₂⟩\|` | independent |
+|---|---|---|---|---|---|---|
+| `Z̄` | `Z̄` | **0.90811968** | **0.00000000** | 6.94e-16 | 3.96e-16 | **True** |
+| `Z̄₂` | `Z̄₂` | **0.00000000** | **0.90811968** | 8.92e-16 | 1.70e-16 | **True** |
+
+> ### **EACH RECORD IS FORMED WITHOUT THE ENVIRONMENT LEARNING ANYTHING ABOUT THE OTHER, AND WITHOUT
+> ### THE OTHER'S VALUE MOVING — both at the `1e-16` floor.**
+
+**`T-I.4` — "do records compose? a theory of one record is not a theory of records" — has been OPEN
+since the target document was written. It is now answered for this family, by measurement:
+THEY COMPOSE, AND THEY DO NOT INTERFERE.**
+
+**Scope, stated: one carrier, one family of two.** Whether independence survives larger families and
+other carriers is T-9's business.

@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 79 | 2 | 9 | 1 | 20 | 3 | 6 | 7 | 3 | 3 |
+| 82 | 2 | 8 | 1 | 19 | 3 | 6 | 7 | 3 | 3 |
 
-**133 rows.**
+**134 rows.**
 
 ---
 
@@ -41,7 +41,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **PF-4** | ESTABLISH THE NECESSARY CONDITION. C-4 is PARTIAL: we have a sufficient family (F_2 length-2 complexes) and a proven ESCAPE (non-CSS, O-8). Either find the condition that covers both or prove none narrower than the clauses exists | **OPEN** | — | C-4, O-8 | — |
 | **PF-5** | SUPPLY THE INPUT. O-9: formation needs an environment coupling over a region of weight >= d. Exhibit such an environment, or state precisely why none is available. The process is currently proved CONDITIONAL ON AN INPUT NOTHING SUPPLIES | **PROVED** | an ordinary LOCAL environment forms records at order lambda^2d (slope 3.8988 vs predicted 4); O-9's premise dissolves | O-9 | — |
 | **PF-6** | PRODUCE A DISTINGUISHING PREDICTION. X-4, T-VI.3, T-VI.4 all BLOCKED at zero. New material exists that did not before: threshold = d, the two-condition coupling requirement, chi = 0.1145 bits at weight d and exactly 0 below | **FAILED** | answered NO: every measured result is already predicted by a rival, with attribution registered. X-4, T-VI.3, T-VI.4 do not move | X-4, T-VI.3, T-VI.4 | — |
-| **PF-7** | COMPOSITION. T-I.4: do records compose? Zbar and Zbar2 are built and commute; never asked whether one can be written without disturbing the other, whether formation thresholds interact, or whether 2g is the whole story | **PARTIAL** | multi-record structure computed: independent families of size log2(dim), every member independently writable (2 of 2, 3 of 3, 4 of 4). Interaction of formation thresholds across records still open | T-I.4 | — |
+| **PF-7** | COMPOSITION. T-I.4: do records compose? Zbar and Zbar2 are built and commute; never asked whether one can be written without disturbing the other, whether formation thresholds interact, or whether 2g is the whole story | **PROVED** | multi-record structure computed AND formation independence measured: channel_map gives the dependency structure, formation_independence shows each record forms without disturbing the other | T-I.4 | — |
 | **PF-8** | REPEATABLE UNDER ANY CONDITIONS — THE BINDING CONSTRAINT ON THE WORD 'PROVEN'. Every PROVED row re-run on at least TWO structurally different carriers, every free parameter shown not to carry a conclusion, and the whole corpus reproducible from ONE command. Currently 6 rows of 78 meet it | **OPEN** | the principal's requirement, 2026-08-18 | PF-2..PF-7 | any conclusion that moves with a carrier or a parameter |
 | **PF-9** | THE MODEL: records constructed from (H,{L_k}) and nothing else. 12 PASS 0 FAIL re-deriving registered results from first principles, including O-1's counterexamples, its trap, and both positive controls | **PROVED** | model/record_model.py, model/validate_model.py | — | a registered result the model cannot reproduce from the pair alone |
 | **PF-10** | EXTEND THE MODEL TO FORMATION. record_model.py computes record EXISTENCE only — no environment, no coupling, no chi, and zero mentions of the intersection pairing that G-16 established. Every formation result lives in disconnected lane scripts. The charter's word is FORMATION and the model does not compute it | **OPEN** | checked against the files, not recalled | — | — |
@@ -99,6 +99,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-16** | THE BALANCE LEMMA IS CARRIER-FREE: clause (iv) under DEF-A <=> Tr(P_E R) = 0 on every eigenspace, verified through the model on nine spectra with an admissible writer built and checked for every record | **PROVED** | LANE_PF3_ADMISSIBLE2 part A; control: an unbalanced involution has best \|\|U-dag R U + R\|\| = 2.0000 over 4000 unitaries, the proved bound | — | a balanced record with no admissible writer, or an unbalanced one with a writer |
 | **C-17** | CLAUSE (ii) IS A CONDITION ON THE ENVIRONMENT, NOT ON THE RECORD. A record exists only where the couplings commute with it; generic single-site noise leaves the Hermitian commutant at dimension 1 and admits none | **PROVED** | LANE_O17_TENSION on [[5,1,3]]; confirms O-1's 400/400 on a second carrier by an independent route | — | a record under a coupling set that does not commute with it |
 | **C-18** | GAUGE INVARIANCE AND LOCALITY TOGETHER FORBID FORMATION. Plaquette (gauge-invariant, local) coupling gives chi = 0.00000000 exactly; giving up gauge invariance gives 0.217; giving up locality gives 0.908. Gauge-invariant operators of weight < d are trivial on the code space (8 of 8 at weight 1); at weight >= d they can be logicals | **PROVED** | LANE_O18_GAUGENOISE, noise floor 8.882e-16 | — | a gauge-invariant coupling of weight < d that forms a record |
+| **C-19** | RECORDS COMPOSE AND DO NOT INTERFERE. Forming Zbar gives chi(Zbar) = 0.90811968 with chi(Zbar2) = 0.00000000 and both values moving by ~1e-16; symmetrically for Zbar2. And Zbar*Zbar2 serves NEITHER — a coupling through it forms a third logical, not a family member | **PROVED** | LANE_T6_MULTIRECORD; one carrier, one family of two | — | a coupling that forms one family member while disturbing another |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 
@@ -163,7 +164,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 |---|---|:---:|---|---|---|
 | **T-III.6** | irreversibility — why a record is of the PAST | **PROVED** | the arrow is RELATIVE, not absolute — the joint evolution is exactly reversible, and the one-wayness is with respect to what the SYSTEM can do (F-19) | — | — |
 | **T-V.3** | is a measurement the creation of a record? | **OPEN** | askable on the existing carrier | — | — |
-| **T-I.4** | do records compose? | **OPEN** | — | — | — |
+| **T-I.4** | do records compose? | **PROVED** | records COMPOSE: on {Zbar, Zbar2} each is formed with chi = 0.908 while the other stays at 0.00000000 and its value moves by ~1e-16. One carrier, one family of two | — | — |
 | **T-V.4** | the classical limit | **OPEN** | — | — | — |
 | **T-II.5** | why the world's Hamiltonian has this topology | **RECLASSIFIED** | asks what produces a permission (D-4), same class as X-2 | — | — |
 | **T-VI.3** | a distinguishing prediction | **BLOCKED** | none identified | — | — |

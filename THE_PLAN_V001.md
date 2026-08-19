@@ -13,11 +13,11 @@ checkable rather than a judgement call.**
 
 **Nothing below counts as finished until both halves of that sentence are true.**
 
-**4 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**5 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO |
 |---|---|---|
-| 4 | 1 | 17 |
+| 5 | 1 | 16 |
 
 ---
 
@@ -29,13 +29,13 @@ checkable rather than a judgement call.**
 | ▶ **T-3** | **FIX O-19. record_model.py builds the *-algebra when the commutant needs only the generators. This is why it caps out at dim 32** | **DONE** | the model computes the commutant from generators, validate_model.py still passes 12/12, and a dim-256 carrier completes | — |
 | **T-2** | ONE CURRENT STATEMENT OF THE PROCESS. The register is 6000+ lines and append-only; THE_CLAIM predates most of the work. Write the process as it now stands, in mapped terms | TODO | PROCESS_V002.md states the process end to end, every sentence cites a ledger row, and no withdrawn claim appears | T-1 |
 
-## PHASE B  MAKE THE MODEL THE PROCESS MODEL  —  2/4 done
+## PHASE B  MAKE THE MODEL THE PROCESS MODEL  —  3/4 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
 | ▶ **T-4** | **ADD THE ENVIRONMENT. The model has no bath, no coupling, no chi. Add them so formation is computable from (H, {L_k}, coupling)** | **DONE** | model.formation(coupling) returns chi and reproduces F-20's 0.97527192 and O-18's three-row table | T-3 |
 | ▶ **T-5** | **ADD THE CHANNEL CRITERION. G-16 — chi > 0 iff the coupling pairs oddly with the record's conjugate — is nowhere in the model or MODEL.md** | **DONE** | model.channel(coupling, record) returns the pairing and predicts chi>0 correctly on all cycles of the 2x2 torus | T-4 |
-| ▶ **T-6** | **MULTI-RECORD AND DEPENDENCIES. Extend independence() to report which records share a channel and which formation events interact** | TODO | the model returns, for a family, which members can be formed without disturbing the others — measured, not asserted | T-5 |
+| ▶ **T-6** | **MULTI-RECORD AND DEPENDENCIES. Extend independence() to report which records share a channel and which formation events interact** | **DONE** | the model returns, for a family, which members can be formed without disturbing the others — measured, not asserted | T-5 |
 | **T-7** | VALIDATE THE FORMATION HALF. Every formation result in the register re-derived through the model rather than a one-off lane script | TODO | validate_model.py covers F-20, F-21, F-23, G-16, C-17, C-18 and passes | T-6 |
 
 ## PHASE C  BREAK THE SINGLE CARRIER  —  0/5 done
