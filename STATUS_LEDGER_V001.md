@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 58 | 2 | 9 | 1 | 13 | 3 | 5 | 5 | 3 | 3 |
+| 64 | 2 | 7 | 1 | 12 | 3 | 5 | 5 | 3 | 3 |
 
-**102 rows.**
+**105 rows.**
 
 ---
 
@@ -23,7 +23,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
 | **PF-1** | RESTATE A-PR to match what was proved. Old wording — 'a topologically protected degeneracy written by non-local transport' — was refuted in all three parts by G-6, G-15 and C-13, and its blockers O-1/O-3 were both already FAILED | **PROVED** | done 2026-08-18; A-PR now stated in two tiers, general and gauge-realization | — | — |
-| **PF-2** | CLOSE THE ARROW. F-1 is PARTIAL: one-wayness measured on an EQUILIBRIUM state. Needs (a) a DYNAMICAL before/after — a history with no record becoming one — and (b) REDUNDANCY, many environment fragments each holding a copy (O-13) | **OPEN** | F-17/F-18/F-19 proved; the two named gaps remain | F-1, O-13 | — |
+| **PF-2** | CLOSE THE ARROW. F-1 is PARTIAL: one-wayness measured on an EQUILIBRIUM state. Needs (a) a DYNAMICAL before/after — a history with no record becoming one — and (b) REDUNDANCY, many environment fragments each holding a copy (O-13) | **PROVED** | both named gaps closed: the dynamical before/after (chi from exactly 0 to 0.908 bits with <Zbar> constant) and redundancy (fragments hold 0.789/0.048/0.679 bits independently) | F-1, O-13 | — |
 | **PF-3** | TAKE O-4 OFF PROVISIONAL. 'admissible := [U,H]=0' now appears in BOTH clause (iv) and clause (v) and is tested on ONE carrier family with no working fallback. Re-test on a structurally different carrier; if it fails, both clauses and C-13 move | **PARTIAL** | part A closed — the Balance Lemma is universal. Part B still owed: needs a non-manifold carrier with BOTH distances >= 2; the bouquet has d = 1 and cannot test the definition | O-4 | — |
 | **PF-4** | ESTABLISH THE NECESSARY CONDITION. C-4 is PARTIAL: we have a sufficient family (F_2 length-2 complexes) and a proven ESCAPE (non-CSS, O-8). Either find the condition that covers both or prove none narrower than the clauses exists | **OPEN** | — | C-4, O-8 | — |
 | **PF-5** | SUPPLY THE INPUT. O-9: formation needs an environment coupling over a region of weight >= d. Exhibit such an environment, or state precisely why none is available. The process is currently proved CONDITIONAL ON AN INPUT NOTHING SUPPLIES | **OPEN** | — | O-9 | — |
@@ -115,8 +115,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-10** | THE THRESHOLD=d SCALING IS UNTESTED. F-11 measured it at d=2 only; 3x3 needs dim 262144 | **PROVED** | threshold = d on six codes at d = 1,2,3 incl. non-CSS and degenerate; now PROVED for every stabiliser code and every coupling | — | — |
 | **O-11** | F-13 MAY CONTRADICT ITSELF. A strong-coupling bath relaxes to the MEAN-FORCE Gibbs state Tr_B[e^{-beta H_tot}]/Z, which depends on the COUPLING operators; at weight >= d — what clause (2) requires — that state is not degeneracy-blind, so it meets clause (1)'s falsifier while satisfying clause (2) | **PROVED** | F-13 clause (1) CONTRADICTED: mean-force state gives <Zbar> = -0.824573 at lambda=0.8, closed form agreeing to 7.2e-15 | — | — |
 | **O-12** | UNDER THE TRIVIAL READING OF 'ADMISSIBLE' (any unitary) THE TORIC CODE FAILS THE PROGRAM'S OWN CLAUSE (v). The undefined word was load-bearing in clause (v), not clause (iv). P-3 survives but weakens to 'no admissible writer fits inside ONE contractible region' | **PROVED** | closed: 'admissible' inserted into clause (v); 0 admissible flippers against 1158 (L=3) and 2.815e15 (L=5) as positive control, independently reproduced | — | — |
-| **O-13** | REDUNDANCY UNTESTED. The bath is 4 levels. Whether many environment fragments EACH hold a copy — what makes a record objective rather than merely correlated — is not tested | **OPEN** | F-1 limitation, stated in the result | — | — |
+| **O-13** | REDUNDANCY UNTESTED. The bath is 4 levels. Whether many environment fragments EACH hold a copy — what makes a record objective rather than merely correlated — is not tested | **PROVED** | redundancy measured: bath fragments independently hold the record, and a weight-1 coupling gives every fragment exactly zero | — | — |
 | **O-14** | A SECOND VALID CARRIER FOR CLAUSE (v). PF-3B needs a non-manifold with BOTH systole and cosystole >= 2. The bouquet family has cosystole 1 and is disqualified | **OPEN** | created by PF-3 part B | — | — |
+| **O-15** | THE BATH IS SMALL AND chi(t) RECURS (0.975 at t=1, 0.787 at t=2, 0.908 at t=4). A macroscopic environment would not recur on any relevant scale, but that is ASSERTED here, not measured. Redundancy is also UNEVEN across fragments | **OPEN** | PF-2 limits, stated in the result | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 
@@ -133,14 +134,14 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
-| **T-III.6** | irreversibility — why a record is of the PAST | **PARTIAL** | the arrow is real and record-level; see F-17, F-18 | — | — |
+| **T-III.6** | irreversibility — why a record is of the PAST | **PROVED** | the arrow is RELATIVE, not absolute — the joint evolution is exactly reversible, and the one-wayness is with respect to what the SYSTEM can do (F-19) | — | — |
 | **T-V.3** | is a measurement the creation of a record? | **OPEN** | askable on the existing carrier | — | — |
 | **T-I.4** | do records compose? | **OPEN** | — | — | — |
 | **T-V.4** | the classical limit | **OPEN** | — | — | — |
 | **T-II.5** | why the world's Hamiltonian has this topology | **RECLASSIFIED** | asks what produces a permission (D-4), same class as X-2 | — | — |
 | **T-VI.3** | a distinguishing prediction | **BLOCKED** | none identified | — | — |
 | **T-VI.4** | empirical contact | **BLOCKED** | zero | — | — |
-| **F-1** | RFP requires AN ARROW: a before with no record and an after with one, not freely reversible | **PARTIAL** | one-wayness MEASURED: I(S:B) exactly invariant under system-only unitaries (3.686e-14). The temporal before/after was NOT simulated; bath is 4 levels with no redundancy test | — | — |
+| **F-1** | RFP requires AN ARROW: a before with no record and an after with one, not freely reversible | **PROVED** | the history is measured: chi(Zbar:B) grows from exactly 0 while <Zbar> is constant; full time reversal returns it to 0 | — | — |
 | **F-2** | RFP requires THE PROTECTION TO TURN ON: min weight goes from O(1) to growing with the carrier. G-6 and G-11 both land here — R3 is the discriminator, so R3 is what must come into being | **WITHDRAWN** | asks what PRODUCES the systole — a permission (D-4); corrected form is the occupancy question, = F-7 | — | — |
 | **F-3** | RFP requires THE CARRIER TO ARISE: the complex is not assumed | **RECLASSIFIED** | asks what produces the allow — same class as X-2 (D-4); T-II.5 inherits | — | — |
 | **F-4** | RFP must be DYNAMICS, NOT AN ACT: the process follows from the same (H, {L_k}) the definition uses | **OPEN** | — | — | a formation that requires an external agent |
@@ -159,6 +160,8 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **F-17** | THE ARROW CARRIES THE RECORD'S OWN THRESHOLD. chi(O:B) = 0.00000000 over all 24 weight-1 observables and 0.11448276 at weight 2 = d. Acquiring record information requires the environment to couple over a region at least as large as d — the same d that protects and forms it | **PROVED** | LANE_F1_ARROW part 4; closed form exact | — | a weight-1 observable the bath holds information about |
 | **F-18** | THE RECORD'S ARROW IS NOT AMBIENT DECOHERENCE. A weight-1 coupling DOES entangle environment with system, I(S:B) = 0.04549256, and transfers ZERO bits about the record, chi = 0.00000000. Decoherence and the record's arrow are separated by a measured threshold | **PROVED** | LANE_F1_ARROW part (c); this is the import guard firing in our favour | — | record information in the bath from a sub-d coupling |
 | **F-19** | IRREVERSIBILITY: a system-only operation can MOVE which observable the bath knows about but cannot change I(S:B) at all (3.686e-14 over 12 random unitaries). The correlation is not erasable from inside | **PROVED** | LANE_F1_ARROW part 3, corrected; covariance check 9.992e-16 | — | a system-only operation that reduces I(S:B) |
+| **F-20** | THE ARROW IS RELATIVE, NOT ABSOLUTE. The joint evolution is exactly time-reversal symmetric (chi(-4) = chi(+4) = 0.908, chi(0) = 0). The one-wayness is with respect to what the SYSTEM can do: I(S:B) is invariant under every system-only operation, and there are several environment copies to remove | **PROVED** | LANE_PF2_DYNAMICAL; weaker than 'time has a direction' and it is what was measured | — | an absolute irreversibility in the closed dynamics |
+| **F-21** | REDUNDANCY CARRIES THE RECORD'S THRESHOLD: bath fragments independently hold 0.789/0.048/0.679 bits about the record under a weight-d coupling, and EXACTLY ZERO under a weight-1 coupling. F-18 extends from the bath to its parts | **PROVED** | LANE_PF2_DYNAMICAL part 3 | — | a fragment holding record information from a sub-d coupling |
 
 ---
 

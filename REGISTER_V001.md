@@ -6084,3 +6084,62 @@ is reversible, the arrow is **RELATIVE, not absolute** — one-way with respect 
 do (F-19: `I(S:B)` is invariant under every system-only operation), while the joint evolution remains
 reversible. **That is a weaker and more honest claim than "time has a direction", and it is the one
 the measurements can support.**
+
+---
+
+## PF-2 RESULT — **THE HISTORY IS REAL, THE CLOSED DYNAMICS IS REVERSIBLE, AND THE RECORD IS REDUNDANT**
+
+`LANE_PF2_DYNAMICAL`. Toric code 2×2 + a **3-qubit** bath, so the bath **has fragments**. Initial
+state is a **product**, so `χ = 0` exactly at `t=0`.
+
+### 1. THE BEFORE/AFTER F-1 ASKED FOR
+
+| `t` | `⟨Z̄⟩` | **`χ(Z̄:B)` bits** | `I(S:B)` |
+|---|---|---|---|
+| 0.00 | −0.000000 | **0.00000000** | −0.00000000 |
+| 0.50 | −0.000000 | 0.81447230 | 0.81447230 |
+| 1.00 | −0.000000 | **0.97527192** | 0.97527192 |
+| 4.00 | −0.000000 | 0.90811968 | 0.90811968 |
+
+> **`⟨Z̄⟩` is EXACTLY CONSTANT throughout — the record's value never changes. What changes is that the
+> environment comes to hold it.** Before: no record information anywhere. After: ~1 bit in the bath.
+> **That is the history, and forming a record was never the record changing value.**
+
+### 2. THE CONTROL — **AND IT MUST PASS, OR THE RESULT IS MANUFACTURED**
+
+| | |
+|---|---|
+| `χ` at `t = +4.0` | 0.90811968 |
+| `χ` at `t = 0` | **0.00000000** |
+| `χ` at `t = −4.0` | **0.90811968** — equal to `t=+4` |
+
+**The closed dynamics is exactly reversible and time-symmetric.** Had the instrument reported
+irreversibility here it would have been inventing it.
+
+### 3. REDUNDANCY — **O-13 CLOSED**
+
+| coupling | weight | whole bath | frag {0} | frag {1} | frag {2} |
+|---|---|---|---|---|---|
+| `Z̄` (logical) | 2 = `d` | **0.90811968** | **0.789366** | 0.048377 | **0.678602** |
+| `Z_e` (single site) | 1 | **0.00000000** | 0.000000 | 0.000000 | 0.000000 |
+
+**Fragments independently hold the record — two of three carry most of a bit each.** Separate observers
+can each learn it without communicating, which is what makes a record **objective** and not merely
+correlated. **And redundancy carries the record's threshold: a weight-1 coupling gives EXACTLY ZERO to
+the whole bath AND to every fragment.** F-18 extends from the bath to its parts.
+
+### **THE ARROW, STATED AT THE STRENGTH THE MEASUREMENTS SUPPORT**
+
+> **It is RELATIVE, not absolute.** The joint evolution is exactly reversible (control above). The
+> one-wayness is **with respect to what the SYSTEM can do**: `I(S:B)` is invariant under every
+> system-only operation (F-19), so nothing the system does removes the environment's copy — and by the
+> redundancy above, there are several copies to remove.
+> **This is weaker than "time has a direction" and it is what was actually measured.**
+
+### TWO LIMITS, STATED
+
+1. **`χ(t)` is NON-MONOTONIC** — 0.975 at `t=1`, 0.787 at `t=2`, 0.908 at `t=4`. **Partial recurrence,
+   because a 3-qubit bath is small.** A macroscopic environment would not recur on any relevant scale,
+   but that is asserted here, not measured.
+2. **Redundancy is UNEVEN** — 0.789, 0.048, 0.679. The fragments have different energies and acquire
+   information at different rates. **Redundancy is present; uniform redundancy is not claimed.**

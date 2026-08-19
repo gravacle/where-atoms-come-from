@@ -1,0 +1,25 @@
+====================================================================================================
+PF-2  THE ARROW AS A HISTORY, AND REDUNDANCY
+====================================================================================================
+  system dim 256, ground degeneracy 4;  bath = 3 qubits (dim 8);  beta = 2.0
+  SELF-CHECK ||[Zbar,H_S]|| = 0.0e+00   [Zbar, coupling] = 0.0e+00 (A = Zbar commutes with itself)
+
+1-2.  THE HISTORY:  chi(Zbar:B)(t) from a PRODUCT state, with <Zbar> conserved
+        t      <Zbar>    chi(Zbar:B) bits    I(S:B) bits
+     0.00   -0.000000          0.00000000    -0.00000000
+     0.25   -0.000000          0.40660635     0.40660635
+     0.50   -0.000000          0.81447230     0.81447230
+     1.00   -0.000000          0.97527192     0.97527192
+     2.00   -0.000000          0.78665760     0.78665760
+     4.00   -0.000000          0.90811968     0.90811968
+
+  CONTROL -- reverse the FULL evolution. Unitary dynamics is exactly reversible, so if the
+  instrument reported irreversibility in the CLOSED system it would be manufacturing it.
+    chi at t=+4.0 : 0.90811968
+    chi at t= 0.0 : 0.00000000   <- must be 0
+    chi at t=-4.0 : 0.90811968   <- must equal t=+4 by time-reversal symmetry
+
+3-4.  REDUNDANCY (O-13) -- does EACH bath fragment hold a copy?  t = 4.0
+  coupling                    weight   chi whole bath   frag {0}   frag {1}   frag {2}
+  Zbar (logical)                   2       0.90811968   0.789366   0.048377   0.678602
+  Z_e  (single site)               1       0.00000000   0.000000   0.000000   0.000000
