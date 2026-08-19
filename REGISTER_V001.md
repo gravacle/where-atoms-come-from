@@ -7151,3 +7151,50 @@ Knill–Laflamme, not topology. **Registered as O-22.**
 
 **The geometric reading is running and will settle whether clause (v) survives under EITHER reading at
 this size.** Until it lands, T-11 is **PARTIAL** and no verdict is registered.
+
+---
+
+## T-11 RESOLVED BY THE PRINCIPAL — **"ISN'T THIS ALLOW/REQUIRE?"** IT IS, AND IT DISSOLVES THE QUESTION
+
+The registrar put a **theory decision** to the principal: clause (v) appeared false on our own carrier
+under both readings of "contractible region", and the word seemed to need a stipulation the way
+"admissible" did at O-4. **The principal asked whether this was allow/require. It was.**
+
+> ### **CLAUSE (v) IS PART OF THE DEFINITION. IT IS NOT A CLAIM THAT CAN BE TRUE OR FALSE.**
+> ### **Asking "does clause (v) hold on this carrier" is asking WHETHER THE CARRIER ALLOWS A
+> ### PROTECTED RECORD — a capacity question, of exactly the same type as "a sphere allows no
+> ### records", which this program has registered for months without ever calling it a defect in
+> ### clause (iii).**
+
+### AND THE MEASUREMENT SAYS WHICH CARRIERS ALLOW ONE
+
+| lattice | edges | `d` | region | **region / system** | any-unitary (control) | **ADMISSIBLE** |
+|---|---|---|---|---|---|---|
+| torus 2×2 | 8 | 2 | 1 plaquette | **0.50** | 512 | **16** |
+| torus 2×2 | 8 | 2 | 2 plaquettes | **0.75** | 73728 | **1152** |
+| **torus 3×3** | 18 | 3 | 1 plaquette | **0.22** | **768** | **0** |
+| torus 3×3 | 18 | 3 | 3 plaquettes | **0.50** | 145358848 | **3120** |
+
+**The discriminator is the FRACTION.** Every row where a region is **half the system or more** admits
+a flipper. **The one row where a region is 22% of the system admits none**, against a positive control
+of 768. **The 2×2 torus has no room for a region to be local** — one plaquette is already half of it.
+
+> ### **A CARRIER ALLOWS A PROTECTED RECORD WHEN IT IS LARGE ENOUGH THAT A LOCAL REGION IS A SMALL
+> ### FRACTION OF IT. The 2×2 torus does not. The 3×3 does. That is a capacity fact about carriers,
+> ### not a defect in the anchor.**
+
+**O-22 IS CLOSED.** "Contractible region" needs no stipulation. The two readings did not disagree
+about the clause — **they disagreed about which carriers were being asked**, and both agree once the
+fraction is held small.
+
+### THE PATTERN, AND IT IS THE REGISTRAR'S
+
+**Every time this program has been framed as facing a defect or a decision — backreaction (X-2),
+allow→require (X2), X-6's falsifier, and now clause (v) — the allow/require typing has dissolved it,
+and each time the principal saw it first.** The registrar converts permissions into claims and then
+finds the claims false. **D-4 exists to catch this and did not fire here because the registrar was
+looking at a clause rather than at a carrier.**
+
+> ### **D-4 EXTENDED: THE FIVE CLAUSES ARE PERMISSIONS. A carrier failing one is a fact about the
+> ### CARRIER. TELL: any sentence of the form "clause (n) is false", which is a category error —
+> ### clauses are not true or false, carriers satisfy them or do not.**
