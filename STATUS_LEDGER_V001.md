@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 64 | 2 | 7 | 1 | 12 | 3 | 5 | 5 | 3 | 3 |
+| 66 | 2 | 7 | 1 | 12 | 3 | 5 | 5 | 3 | 3 |
 
-**105 rows.**
+**107 rows.**
 
 ---
 
@@ -45,6 +45,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **D-6** | THE ENSEMBLE INSTRUMENT IS BLIND TO RECORD FORMATION. <R> = Tr(R rho) is a fair-coin average — W-35 unravelled the same Lindbladian and found a definite record on 78.5% of runs, and both unravellings give the same rho(t). NEGATIVE verdicts from <R> are VOID without a single-run warrant. TELL: any exclusion warranted by an expectation value or a code-space entropy | **PROVED** | SURFACE_ASSUMPTION_AUDIT A4, uncleared since 11:28; six PROVED rows were built on it by 14:56 the same day | — | an ensemble average that distinguishes formed from unformed records |
 | **D-7** | A CAUGHT ASSUMPTION THAT LIVES ONLY IN PROSE WILL BE RE-MADE. A4 was named in SURFACE_ASSUMPTION_AUDIT and had no ledger row, so nothing checked it. EVERY uncleared assumption gets a row | **PROVED** | the mechanism by which finding 1 happened | — | — |
 | **D-8** | A CHECK THAT CANNOT FAIL IS NOT A CHECK — and A COMPUTED VERDICT IS NOT A CHECK UNLESS THE NOISE FLOOR IS MEASURED ALONGSIDE IT. check(..., True) let an impossible table through; a log-log slope fitted to a 1e-15 column announced a false verdict. TELL: an expected value that is a literal, or a fit with no noise floor beside it | **PROVED** | O-4 lane: 103 real checks + 5 tautologies out of a reported 108 | — | — |
+| **D-9** | A RESULT IS DESCRIBED BY ITS MECHANISM, NEVER RANKED AGAINST AN EXTERNAL STANDARD. TELL: weaker, stronger, only, merely, falls short of, or any comparison to a claim the program never made. This is D-1 applied to framing rather than to physics | **PROVED** | the registrar graded the arrow against 'time has a direction', a question the charter never posed | — | — |
 
 ## A. THE THREE ROLES — the charter's question
 
@@ -160,8 +161,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **F-17** | THE ARROW CARRIES THE RECORD'S OWN THRESHOLD. chi(O:B) = 0.00000000 over all 24 weight-1 observables and 0.11448276 at weight 2 = d. Acquiring record information requires the environment to couple over a region at least as large as d — the same d that protects and forms it | **PROVED** | LANE_F1_ARROW part 4; closed form exact | — | a weight-1 observable the bath holds information about |
 | **F-18** | THE RECORD'S ARROW IS NOT AMBIENT DECOHERENCE. A weight-1 coupling DOES entangle environment with system, I(S:B) = 0.04549256, and transfers ZERO bits about the record, chi = 0.00000000. Decoherence and the record's arrow are separated by a measured threshold | **PROVED** | LANE_F1_ARROW part (c); this is the import guard firing in our favour | — | record information in the bath from a sub-d coupling |
 | **F-19** | IRREVERSIBILITY: a system-only operation can MOVE which observable the bath knows about but cannot change I(S:B) at all (3.686e-14 over 12 random unitaries). The correlation is not erasable from inside | **PROVED** | LANE_F1_ARROW part 3, corrected; covariance check 9.992e-16 | — | a system-only operation that reduces I(S:B) |
-| **F-20** | THE ARROW IS RELATIVE, NOT ABSOLUTE. The joint evolution is exactly time-reversal symmetric (chi(-4) = chi(+4) = 0.908, chi(0) = 0). The one-wayness is with respect to what the SYSTEM can do: I(S:B) is invariant under every system-only operation, and there are several environment copies to remove | **PROVED** | LANE_PF2_DYNAMICAL; weaker than 'time has a direction' and it is what was measured | — | an absolute irreversibility in the closed dynamics |
+| **F-20** | HOW IT WORKS: the coupling makes the environment's evolution CONDITIONAL on the record, so the two record values drive the bath to different states — and that divergence IS the copy. The record is READ, not written ([Zbar,H_tot]=0, value exactly constant). The system cannot undo it because its operators do not act on the environment | **PROVED** | LANE_PF2_DYNAMICAL; weaker than 'time has a direction' and it is what was measured | — | an absolute irreversibility in the closed dynamics |
 | **F-21** | REDUNDANCY CARRIES THE RECORD'S THRESHOLD: bath fragments independently hold 0.789/0.048/0.679 bits about the record under a weight-d coupling, and EXACTLY ZERO under a weight-1 coupling. F-18 extends from the bath to its parts | **PROVED** | LANE_PF2_DYNAMICAL part 3 | — | a fragment holding record information from a sub-d coupling |
+| **F-22** | WHY THE THRESHOLD IS d: by Knill-Laflamme a weight-<d operator acts as a SCALAR on the code space, so it takes the same value on both record branches, so the bath's Hamiltonian is identical either way and nothing diverges. d is the point at which an operator can tell the record's two values apart | **PROVED** | LANE_PF2_DYNAMICAL: 0.00000000 for weight-1, whole bath and every fragment | — | a sub-d operator making the environment's evolution conditional |
 
 ---
 

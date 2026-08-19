@@ -6143,3 +6143,51 @@ the whole bath AND to every fragment.** F-18 extends from the bath to its parts.
    but that is asserted here, not measured.
 2. **Redundancy is UNEVEN** — 0.789, 0.048, 0.679. The fragments have different energies and acquire
    information at different rates. **Redundancy is present; uniform redundancy is not claimed.**
+
+---
+
+## D-9 / F-20 ERRATUM — **DO NOT GRADE A FINDING AGAINST AN EXTERNAL STANDARD. STATE THE MECHANISM.**
+
+The principal, on the registrar's *"that's weaker than 'time has a direction'"*: **"What does this mean
+'weaker'???? We just need to know how it works."**
+
+**"Weaker" compares our result to a yardstick nobody asked for.** The charter asks how records form.
+*"Time has a direction"* is a cosmological question the program never posed, and ranking against it is
+**D-1 applied to framing instead of to physics** — an imported measure used as a grade.
+
+> **D-9. A RESULT IS DESCRIBED BY ITS MECHANISM, NEVER RANKED AGAINST AN EXTERNAL STANDARD.**
+> **TELL:** the words *weaker*, *stronger*, *only*, *merely*, *falls short of*, or any comparison to a
+> claim the program did not make.
+
+### F-20 RESTATED — **THE MECHANISM, WITH NOTHING GRADED**
+
+**1. The coupling makes the environment's evolution CONDITIONAL on the record.**
+`H_tot = H_S + H_B + λ Z̄ ⊗ ΣX_j`. The bath evolves under `H_B + λΣX_j` when `Z̄ = +1` and under
+`H_B − λΣX_j` when `Z̄ = −1`. **Two different bath Hamiltonians, selected by the record.**
+
+**2. The two branches drive the bath to different states. That divergence IS the copy.**
+`χ` measures exactly how far apart they are: `0.00000000` at `t=0`, `0.97527192` at `t=1`.
+
+**3. The record's value never changes — it is being READ, not written.**
+`[Z̄, H_tot] = 0`, so `⟨Z̄⟩` is exactly constant. **Every bath degree of freedom reads the same bit
+and none of them can alter it.**
+
+**4. Several copies form because the coupling touches several bath degrees of freedom.**
+Each qubit's evolution is separately conditioned, so each separately diverges: `0.789 / 0.048 / 0.679`
+bits. **Redundancy is not an extra property. It is what happens when more than one thing is coupled.**
+
+**5. Only a weight-≥`d` operator can make the environment's evolution conditional at all.**
+By Knill–Laflamme a weight-`<d` operator acts as a **scalar** on the code space, so it takes the same
+value on both branches, so the bath's Hamiltonian is the **same** either way, so **nothing diverges and
+no copy forms** — measured as exactly `0.00000000`, whole bath and every fragment.
+**The threshold is `d` because `d` is the point at which an operator can tell the record's two values
+apart.**
+
+**6. The system cannot undo it because the system's operators do not act on the environment.**
+`I(S:B)` is invariant under every system-only unitary (`3.686e-14`). Undoing the divergence means
+running the bath's evolution backwards, which is not an operation the system has.
+
+> ### **THAT IS HOW IT WORKS.** A record forms when an operator large enough to distinguish its values
+> ### makes the environment's evolution depend on which value it has, so the environment falls into a
+> ### different state for each — in every degree of freedom the coupling reaches, and irreversibly
+> ### from the system's side, because the system has no operators there.
