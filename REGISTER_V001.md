@@ -7424,3 +7424,56 @@ several make path comparison possible* — **two is exactly the number that cann
 is only one route and no loop.** T-6 measured **independence** (forming one does not disturb the
 other). **Independence is not flatness**, and the registrar's suggestion that T-6 had already measured
 this was wrong.
+
+---
+
+## O-23 — **THE CONNECTION IS NOT DETERMINED BY THE RECORDS. T-20's READING IS OVERTURNED.**
+
+`LANE_O23_CONNECTION`. Before hunting a non-abelian carrier, the prior question: **is the connection
+even determined by the record structure?**
+
+**Carrier `H = 0` on `C⁸`, three independent records, all independently writable — the most permissive
+case there is.** A writer is fixed only up to a unitary preserving **every** record label.
+
+| writer choice | closed-loop holonomy `‖H − I‖` |
+|---|---|
+| the canonical permutation of the joint record basis | **2.998e-15 / 2.618e-15 / 2.689e-15 — FLAT** |
+| **200 of 200 admissible phase-modified writers** | **up to 5.1694** (`5.0493 / 4.2661 / 5.1694`) |
+
+**Every one of those 200 flips its own record and fixes the others — verified individually. All are
+writers by clause (iv). They are not alternatives to the definition; they are what the definition
+allows.**
+
+> ### **THE SAME RECORD FAMILY GIVES HOLONOMY `0` FOR ONE ADMISSIBLE WRITER AND `5.169` FOR ANOTHER.
+> ### "IS THE RECORD GEOMETRY CURVED" IS NOT WELL-POSED ON THE RECORDS ALONE.**
+
+### WHAT THIS DOES TO T-20
+
+**T-20 measured the minimal-weight Pauli writer and found exactly flat. That was a property of THE
+CHOICE, not of the record structure.** T-20's result stands as a measurement and its **interpretation
+is withdrawn**: it did not show that record geometry is flat, it showed that **one particular
+connection** is.
+
+**And O-23 as registered is the wrong question.** *"Does any record structure admit non-abelian
+transport?"* — **every one does, with an admissible choice of writer.** The class O-8 named is not
+needed to produce curvature.
+
+> ### **THE QUESTION IS: WHAT DETERMINES THE CONNECTION?**
+> **A connection is extra data, exactly as it is in gauge theory — the records fix the fibres, not the
+> transport between them. Something physical must pick it, and the program has never asked what.**
+> Registered as **O-24**.
+
+### AND A CANDIDATE, BECAUSE THE NULL POINTS AT ONE
+
+**T-20's flat connection was the MINIMAL-WEIGHT writer** — the cheapest operation that flips the
+record. **The curved ones were built by multiplying by extra phases, which is more.** If minimality
+picks the connection, **the flat one is selected and curvature costs weight** — which is testable on a
+carrier where weight is defined.
+
+### A D-8 FAILURE IN THIS LANE, CAUGHT AND FIXED
+
+**v1 combined the records with coefficients `1,2,3`, and `1+2−3 = −1−2+3 = 0`** — the combination is
+degenerate, so `eigh` did not return a simultaneous eigenbasis and **no constructed writer verified**.
+The script then found **zero** admissible alternatives and **still printed a conclusion from the empty
+loop.** Both fixed: powers of two separate the sign patterns, and the script now **refuses to conclude
+when no valid case executed**.
