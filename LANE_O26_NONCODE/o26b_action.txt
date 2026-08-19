@@ -1,0 +1,21 @@
+====================================================================================================
+O-26b   IS LEAST ACTION SELECTING CURVATURE?
+====================================================================================================
+
+  C^8, H = 0 (qubits)   dim 8   records 3
+    canonical (flat):  action 6.2832   holonomy 3.00e-15
+    400 admissible alternatives sampled
+      action   range [4.6548, 5.5185]   canonical 6.2832
+      holonomy range [3.353e+00, 5.367e+00]
+      mean holonomy of the LOWEST-action quartile : 4.4128
+      mean holonomy of the HIGHEST-action quartile: 4.3910
+      correlation(action, holonomy) = +0.0113
+      admissible writers with action BELOW the flat one: 400 of 400   (flat is NOT least-action)
+Traceback (most recent call last):
+  File "/Users/bgm/MB Work/where-atoms-come-from/LANE_O26_NONCODE/o26b_action.py", line 66, in <module>
+    run(np.diag(d).astype(complex), "C^24, three 8-fold shells -- NOT a power of two")
+  File "/Users/bgm/MB Work/where-atoms-come-from/LANE_O26_NONCODE/o26b_action.py", line 19, in run
+    m=RecordModel(H,[]); fam,comm,wr=m.independence(m.records())
+  File "/Users/bgm/MB Work/where-atoms-come-from/model/record_model.py", line 357, in records
+    if k > 20: raise RuntimeError(f"{k} minimal projections: enumeration too large")
+RuntimeError: 24 minimal projections: enumeration too large

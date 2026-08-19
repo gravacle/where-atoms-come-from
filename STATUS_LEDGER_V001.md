@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 99 | 2 | 7 | 1 | 18 | 3 | 8 | 7 | 3 | 3 |
+| 99 | 2 | 7 | 1 | 21 | 3 | 8 | 7 | 3 | 3 |
 
-**151 rows.**
+**154 rows.**
 
 ---
 
@@ -33,6 +33,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **H-9** | THE T-20 CRITERION (the principal, 2026-08-19): gravity emerging from Gamma would be RECORD-LEVEL HOLONOMY — a stable, universal, path-dependent mismatch among records. Diagnostic H_ABCD = (G_AB G_BD)(G_AC G_CD)^-1; H = I is flat, H != I structured is curvature. Admissible under D-1 because the Einstein form says what a result MEANS and is never the test | **PROVED** | supplied before any measurement, on no fitted set (D-11) | — | — |
 | **H-10** | T-20's flat result is not a choice and not an artefact: for STABILISER records the flat connection is FORCED (C-24). Curvature needs a non-Pauli writer, which minimality forbids, so no arrangement or density of stabiliser records can produce record-level curvature | **PARTIAL** | T-20's flat result stands as a MEASUREMENT of one connection; its interpretation is WITHDRAWN. The connection is not determined by the records (O-23): the same family gives holonomy 0 to 5.169 across admissible writers | — | a carrier whose record writers fail to commute |
 | **H-11** | WHAT DETERMINES THE CONNECTION? A writer is fixed only up to a unitary preserving every record label, and different admissible choices give holonomy from 0 to 5.169 on the same records. The records fix the fibres, not the transport between them. A connection is extra data, as in gauge theory, and the program has never asked what picks it | **OPEN** | LANE_O23_CONNECTION; candidate: minimality — T-20's flat connection was the minimal-weight writer | — | — |
+| **H-12** | LEAST ACTION MAY SELECT CURVATURE. On a non-code carrier the flat connection has the HIGHEST action of 400 admissible writers, all of which are curved, while \|\|U-I\|\| gives 4.0000 for every one and selects nothing. But \|\|log U\|\| is maximised by involutions and the flat writer is a strict swap, so the effect may be the norm rather than the physics | **OPEN** | LANE_O26_NONCODE; weight-minimality picks flat and action-minimality picks curved, and they disagree | — | — |
 
 ## P. THE ROAD TO A FULL PROOF — the controlled plan
 
@@ -162,6 +163,8 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-24** | DOES MINIMALITY PICK THE CONNECTION? T-20's flat connection was the minimal-weight writer; the curved ones were built by multiplying in extra phases. If the physics uses the cheapest operation that flips the record, the flat connection is selected and CURVATURE COSTS WEIGHT — testable on a carrier where weight is defined | **PROVED** | minimality selects the FLAT connection: minimal-weight writer gives 0.000e+00, and curvature costs exactly one extra site. The mechanism is overlap — X_0*S_1 curves at 4.000 while X_0*S_2 does not, at the same weight, because S_1 reaches record 1's site | — | — |
 | **O-25** | DOES RECORD DENSITY FORCE CURVATURE? If records are packed densely enough that minimal writers cannot avoid each other, overlap is forced and curvature is not a choice. This meets H-9's 'stronger with enclosed record-density' signature and is a PREDICTION of the account rather than an assumption. Testable: sweep record density on a fixed carrier and measure whether minimal-writer holonomy turns on | **FAILED** | premise wrong: writers overlap on up to 3 sites and still commute at exactly 0.000e+00. The stabiliser logical algebra is symplectic and support is irrelevant, so density cannot force curvature | — | — |
 | **O-26** | THE CLAIM NEEDS A CARRIER OUTSIDE THE STABILISER CLASS. 'Gamma is where gravity comes from' requires record-level curvature, and C-24 shows stabiliser records cannot have it. Either the carrier leaves the class -- non-abelian topological order (O-8), or records that are not code logicals at all (C-22 shows those exist) -- or the connection is fixed by something other than minimality and H-11 stays open with no candidate | **OPEN** | created by O-25; a negative about the program's whole carrier family | — | — |
+| **O-27** | ACTION IS NOT DEFINED IN THIS PROGRAM. A physical action needs a generating Hamiltonian and a duration -- U = exp(-iHt) with a cost in H and t -- not an operator norm chosen for convenience. Until it is defined, 'least action selects curvature' is suggestive and cannot be registered as a selector | **OPEN** | created by O-26 route 2 | — | — |
+| **O-28** | THE MODEL CAPS AT 20 MINIMAL PROJECTIONS. A dim-24 carrier with three 8-fold shells -- not a power of two, three records -- could not be measured for O-26. records() enumerates 2^k sign vectors; commuting_family should build greedily instead | **OPEN** | hit in LANE_O26_NONCODE | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 

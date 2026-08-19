@@ -7559,3 +7559,51 @@ something other than minimality, and `H-11` remains open with no candidate.**
 
 **This is a negative result about the program's whole carrier family, and it was reached by testing a
 prediction of the account rather than by an outside objection.**
+
+---
+
+## O-26 ROUTE 2 — **LEAST ACTION SELECTS CURVATURE, 400 OF 400. AND THE NORM IS DOING WORK.**
+
+`LANE_O26_NONCODE`. The principal: *"most record formations in the universe come with gravitational
+forces, so these records would have to be pretty common"* — which makes stabiliser codes the special
+case, not the norm. **Route 2: records that are not code logicals at all (C-22).**
+
+**THE OBSTACLE, AND WHY IT MATTERS.** O-24's minimality selected the flat connection **by WEIGHT**, and
+weight needs a tensor factorisation. **A non-code carrier has none.** So: without weight, does anything
+select the connection?
+
+| selector | flat | curved | discriminates? |
+|---|---|---|---|
+| `‖U − I‖` | **4.0000** | **4.0000** | **NO — identical, selects nothing** |
+| **`‖log U‖`** (the action) | **6.2832 = 2π** | **[4.6548, 5.5185]** | **YES — and curvature costs LESS** |
+
+| | |
+|---|---|
+| admissible alternatives sampled | **400** |
+| **with action BELOW the flat connection** | **400 of 400** |
+| their holonomy range | **[3.353, 5.367]** — every one **CURVED** |
+| correlation(action, holonomy) within the curved family | **+0.0113** — none |
+
+> ### **THE FLAT CONNECTION HAS THE HIGHEST ACTION OF EVERY ADMISSIBLE WRITER TESTED. WEIGHT-MINIMALITY
+> ### PICKS FLAT; ACTION-MINIMALITY PICKS CURVED. THEY ARE DIFFERENT SELECTORS AND THEY DISAGREE.**
+
+### **THE CAVEAT, AND IT IS SUBSTANTIAL — STATED BEFORE ANY CLAIM IS DRAWN**
+
+**`‖log U‖ = √(Σθ²)` is MAXIMISED by involutions.** The flat writer is a strict swap with eigenphases
+`{0, π}`, and **any** phase perturbation moves eigenvalues off `±1` and reduces `Σθ²`. **So "curvature
+costs less action" may be a property of THIS NORM rather than of the physics.**
+
+**And "action" is not yet defined in this program.** A physical action needs a **generating Hamiltonian
+and a duration** — `U = exp(−iHt)` with a cost in `H` and `t` — not an operator norm chosen for
+convenience. **Until that is defined, this result is suggestive and is not registered as a selector.**
+**Registered as O-27.**
+
+### WHAT ROUTE 2 HAS ESTABLISHED
+
+**On a non-code carrier, `‖U−I‖` selects nothing and every admissible alternative is curved.** So
+**flatness is not forced outside the stabiliser class** — C-24's necessity was a fact about codes, as
+suspected. **What is not yet established is that anything SELECTS curvature**, because the one selector
+that discriminates is a norm whose behaviour on involutions may be the whole effect.
+
+**A dim-24 carrier — three 8-fold shells, not a power of two — hit the model's enumeration cap at 24
+minimal projections and was not measured.** Recorded rather than skipped silently.
