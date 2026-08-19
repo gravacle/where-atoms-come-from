@@ -6051,3 +6051,36 @@ are independent — which is what G-11 was for, now stated correctly.
 
 **PF-3 STATUS: part A closed, part B still owed.** The test needs a **non-manifold carrier with BOTH
 distances ≥ 2**; the one chosen was invalid, and the run said so rather than reporting a verdict.
+
+---
+
+## PF-2 — PREDICTION REGISTERED BEFORE THE RUN
+
+F-1 is PARTIAL for two stated reasons: it measured one-wayness on an **equilibrium** state, and
+**redundancy** was untested (O-13). Both are addressed dynamically here.
+
+### THE DESIGN POINT THAT MAKES A DYNAMICAL TEST POSSIBLE
+
+With coupling `A = Z̄`, `[Z̄, H_tot] = 0`, so **`⟨Z̄⟩` is a constant of motion** — the record's *value*
+never changes under unitary evolution. **That is not an obstacle, because forming a record is not the
+record changing value. It is the ENVIRONMENT COMING TO HOLD INFORMATION ABOUT IT.** So the observable
+is `χ(Z̄:B)(t)`, which starts at **exactly 0** for a product state and can grow while `⟨Z̄⟩` is fixed.
+
+> **BEFORE = no record information anywhere. AFTER = the environment holds it. That is the history
+> F-1 asked for, and it is measurable.**
+
+**PREDICTIONS:**
+1. `χ(Z̄:B)(t)` grows from **exactly 0** at `t=0` while `⟨Z̄⟩` stays constant — **the before/after.**
+2. **CONTROL: full time reversal returns `χ → 0`.** Unitary evolution is exactly reversible, so if the
+   instrument reported irreversibility here it would be manufacturing it. **The arrow must NOT show up
+   in the closed dynamics.**
+3. **REDUNDANCY (O-13): each bath fragment independently holds `χ > 0`** — many fragments each with a
+   copy, which is what makes a record objective instead of merely correlated.
+4. **Redundancy carries the record's threshold: a weight-1 coupling gives every fragment ZERO** —
+   F-18 extended from the whole bath to its parts.
+
+**WHAT THE ARROW THEN IS, STATED HONESTLY IN ADVANCE:** if 1–3 hold and 2 confirms the closed dynamics
+is reversible, the arrow is **RELATIVE, not absolute** — one-way with respect to what the *system* can
+do (F-19: `I(S:B)` is invariant under every system-only operation), while the joint evolution remains
+reversible. **That is a weaker and more honest claim than "time has a direction", and it is the one
+the measurements can support.**

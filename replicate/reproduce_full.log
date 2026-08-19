@@ -1,0 +1,26 @@
+
+[1m0. ENVIRONMENT[0m
+==============================================================================
+  python  Python 3.9.6
+  numpy   2.0.2
+
+[1m1. SEALS  (SHA-256 over every registered document and lane)[0m
+==============================================================================
+  FAIL  *.sha256
+
+[1m2. RE-RUN EVERY LANE SCRIPT AND DIFF AGAINST ITS SEALED OUTPUT[0m
+==============================================================================
+  lane                           script                     result
+  ------------------------------ -------------------------- ------
+  LANE_*                         *.py                       no sealed output — SKIP
+
+[1m3. THE STATUS LEDGER IS GENERATED, NOT TYPED[0m
+==============================================================================
+shasum: STATUS_LEDGER_V001.md: No such file or directory
+/tmp/reproduce_snapshot.sh: line 54: ./ledger/status.py: No such file or directory
+shasum: STATUS_LEDGER_V001.md: No such file or directory
+  regenerating the grid from ledger/status_ledger.tsv reproduces it byte-for-byte
+
+[1mRESULT[0m
+==============================================================================
+  REPRODUCTION FAILED — see above
