@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 82 | 2 | 8 | 1 | 19 | 3 | 6 | 7 | 3 | 3 |
+| 84 | 2 | 8 | 1 | 18 | 3 | 6 | 7 | 3 | 3 |
 
-**134 rows.**
+**135 rows.**
 
 ---
 
@@ -63,6 +63,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **D-9** | A RESULT IS DESCRIBED BY ITS MECHANISM, NEVER RANKED AGAINST AN EXTERNAL STANDARD. TELL: weaker, stronger, only, merely, falls short of, or any comparison to a claim the program never made. This is D-1 applied to framing rather than to physics | **PROVED** | the registrar graded the arrow against 'time has a direction', a question the charter never posed | — | — |
 | **D-10** | A VERIFICATION WITH NO FAILING BRANCH IS AN INSTRUMENT CHECK, NOT A RESULT. 'threshold = d' was verified on six codes, and threshold = d IS the definition of d — the test had no branch on which it could come out otherwise. TELL: a verification whose negation would be a contradiction in terms | **PROVED** | PF-6 adjudication; F-24 withdrawn under it | — | — |
 | **D-11** | A CRITERION VALIDATED ONLY ON THE CASES IT WAS DERIVED FROM IS NOT VALIDATED. G-16 was fitted on four weight-2 couplings and failed on eight weight-4 ones; F-25's lambda^2d was fitted on one coupling class and is really lambda^2n*. TELL: a criterion whose test set is the set that suggested it | **PROVED** | two instances in one day, both caught by testing outside the fitted set | — | — |
+| **D-12** | A COMPLEX CAN BE REDRAWN AS NON-MANIFOLD WITHOUT BECOMING A DIFFERENT QUANTUM SYSTEM. Adding a face that is already present leaves rank(d2), B_1, H_1 and the whole stabiliser group unchanged — same code, different drawing. Only a face that changes the STABILISER GROUP changes the carrier. TELL: a 'second carrier' whose stabiliser group is not checked against the first | **PROVED** | T-8: the duplicated-plaquette candidate would have passed every carrier-independence test by being the same carrier | — | — |
 
 ## A. THE THREE ROLES — the charter's question
 
@@ -139,7 +140,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-11** | F-13 MAY CONTRADICT ITSELF. A strong-coupling bath relaxes to the MEAN-FORCE Gibbs state Tr_B[e^{-beta H_tot}]/Z, which depends on the COUPLING operators; at weight >= d — what clause (2) requires — that state is not degeneracy-blind, so it meets clause (1)'s falsifier while satisfying clause (2) | **PROVED** | F-13 clause (1) CONTRADICTED: mean-force state gives <Zbar> = -0.824573 at lambda=0.8, closed form agreeing to 7.2e-15 | — | — |
 | **O-12** | UNDER THE TRIVIAL READING OF 'ADMISSIBLE' (any unitary) THE TORIC CODE FAILS THE PROGRAM'S OWN CLAUSE (v). The undefined word was load-bearing in clause (v), not clause (iv). P-3 survives but weakens to 'no admissible writer fits inside ONE contractible region' | **PROVED** | closed: 'admissible' inserted into clause (v); 0 admissible flippers against 1158 (L=3) and 2.815e15 (L=5) as positive control, independently reproduced | — | — |
 | **O-13** | REDUNDANCY UNTESTED. The bath is 4 levels. Whether many environment fragments EACH hold a copy — what makes a record objective rather than merely correlated — is not tested | **PROVED** | redundancy measured: bath fragments independently hold the record, and a weight-1 coupling gives every fragment exactly zero | — | — |
-| **O-14** | A SECOND VALID CARRIER FOR CLAUSE (v). PF-3B needs a non-manifold with BOTH systole and cosystole >= 2. The bouquet family has cosystole 1 and is disqualified | **OPEN** | created by PF-3 part B | — | — |
+| **O-14** | A SECOND VALID CARRIER FOR CLAUSE (v). PF-3B needs a non-manifold with BOTH systole and cosystole >= 2. The bouquet family has cosystole 1 and is disqualified | **PROVED** | closed: torus 2x2 + a disk capping a non-contractible wrap is non-manifold with H_1 = 1 and BOTH distances 2, at the same dimension 256. It is [[8,1,2]] against the toric [[8,2,2]] | — | — |
 | **O-15** | THE BATH IS SMALL AND chi(t) RECURS (0.975 at t=1, 0.787 at t=2, 0.908 at t=4). A macroscopic environment would not recur on any relevant scale, but that is ASSERTED here, not measured. Redundancy is also UNEVEN across fragments | **OPEN** | PF-2 limits, stated in the result | — | — |
 | **O-16** | THE DISSIPATIVE ARM IS UNTESTED. Every arm run so far is closed unitary evolution with a small bath. The one place amplitudes and rates need not stand in the squared relation is a genuinely dissipative (Markovian/Lindblad) bath | **PROVED** | decay exponent 2.0000 on both d=3 codes, independent of d; static splitting exponent = d (2.9979, 2.9835). They differ | — | — |
 | **O-17** | THE RECORD IS DESTROYED AT ORDER 2 AND RECORDED AT ORDER 2n*. For n* > 1 an ordinary dissipative environment erases it faster than it writes it. The two numbers come from different arms (unitary-with-small-bath vs Lindblad), so this is a TENSION to resolve, not yet a contradiction — and it is aimed straight at the formation account | **PROVED** | resolved: the arms ran on two different (H,{L_k}) pairs. O-16's {X,Y,Z} violates clause (ii) at 11.3137 and its Hermitian commutant is dimension 1 — scalars only, no record exists | — | — |

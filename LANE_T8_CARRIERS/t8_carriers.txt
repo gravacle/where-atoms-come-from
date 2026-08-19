@@ -1,0 +1,22 @@
+========================================================================================================
+T-8 / O-14   A NON-MANIFOLD CARRIER WITH BOTH DISTANCES >= 2
+========================================================================================================
+  candidate                                V    E   F   H_1  systole    cosyst    d
+  torus 2x2 (MANIFOLD, incumbent)          4    8   4     2        2         2    2   QUALIFIES  
+  bouquet of 2 triangles (PF-3B's)         5    6   0     2        3         1    1     cosystole 1 -- disqualified
+  torus 2x2 + duplicated plaquette         4    8   5     2        2         2    2   QUALIFIES  edge in 3 faces -- NON-MANIFOLD
+  torus 2x2 + two duplicated plaquettes    4    8   6     2        2         2    2   QUALIFIES  NON-MANIFOLD
+  torus 3x3 + duplicated plaquette         9   18  10     2        3         3    3   QUALIFIES  NON-MANIFOLD
+  torus 2x2 + disk capping a wrap          4    8   5     1        2         2    2   QUALIFIES  non-manifold along the capped cycle
+  book, 2 square pages on one spine        6    7   2     0     None      None None     non-manifold along the spine
+  book, 3 square pages on one spine        8   10   3     0     None      None None     non-manifold along the spine
+
+  A TRAP, RECORDED. 'torus + duplicated plaquette' is non-manifold as a COMPLEX and is NOT a
+  second carrier: adding a face that is already there leaves rank(d2), B_1, H_1 and the whole
+  STABILISER GROUP unchanged. Same code, different drawing. Only a face that changes the
+  stabiliser group changes the carrier.
+
+  THE SECOND CARRIER: torus 2x2 + a disk capping a non-contractible wrap.
+    non-manifold along the capped cycle (those edges lie in THREE faces),
+    H_1 = 1 where the torus has 2 -- so it is [[8,1,2]] against the toric [[8,2,2]],
+    both distances 2, and the same Hilbert dimension 256.

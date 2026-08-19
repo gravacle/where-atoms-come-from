@@ -6999,3 +6999,36 @@ is re-derived **through the model**:
 **formation** from `(H,{L_k},coupling,environment)`, with the dependency structure and composition of
 a multi-record family. **Half of the definition of done — "the model so that our proof can be checked
 by anyone" — now has a working object behind it.**
+
+---
+
+## T-8 DONE / O-14 CLOSED — **THE SECOND CARRIER, AND A TRAP AVOIDED ON THE WAY**
+
+`LANE_T8_CARRIERS`. PF-3B failed because the bouquet has Z-systole 3 but **X-cosystole 1**, so its
+true distance is 1 and it cannot test clause (v) at all. O-14 asked for a **non-manifold with BOTH
+distances ≥ 2**.
+
+| candidate | V | E | F | `H₁` | systole | cosystole | `d` | |
+|---|---|---|---|---|---|---|---|---|
+| torus 2×2 — **incumbent, a manifold** | 4 | 8 | 4 | 2 | 2 | 2 | 2 | |
+| bouquet of 2 triangles — PF-3B's | 5 | 6 | 0 | 2 | 3 | **1** | **1** | **disqualified** |
+| torus + duplicated plaquette | 4 | 8 | 5 | 2 | 2 | 2 | 2 | **a trap — see below** |
+| **torus 2×2 + disk capping a wrap** | 4 | 8 | **5** | **1** | **2** | **2** | **2** | **THE SECOND CARRIER** |
+| book, 2 or 3 pages on a spine | | | | **0** | — | — | — | no records at all |
+
+### **THE TRAP, RECORDED BECAUSE I NEARLY TOOK IT**
+
+**"Torus + duplicated plaquette" is non-manifold as a COMPLEX and is NOT a second carrier.** Adding a
+face that is already there leaves `rank(∂₂)`, `B₁`, `H₁` **and the entire stabiliser group** unchanged.
+**Same code, different drawing.** It would have passed every carrier-independence test by being the
+same carrier.
+
+> ### **Only a face that changes the STABILISER GROUP changes the carrier. A complex can be redrawn
+> ### as non-manifold without becoming a different quantum system.**
+
+### THE SECOND CARRIER
+
+**Torus 2×2 with a disk capping a non-contractible wrap.** Non-manifold along the capped cycle — those
+edges lie in **three** faces. **`H₁ = 1` where the torus has 2**, so it is **`[[8,1,2]]` against the
+toric `[[8,2,2]]`** — a genuinely different code — with **both distances 2** and **the same Hilbert
+dimension 256**, so everything already computed can be re-run on it at the same cost.

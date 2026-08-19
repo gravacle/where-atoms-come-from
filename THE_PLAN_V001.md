@@ -13,11 +13,11 @@ checkable rather than a judgement call.**
 
 **Nothing below counts as finished until both halves of that sentence are true.**
 
-**6 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**7 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO |
 |---|---|---|
-| 6 | 1 | 15 |
+| 7 | 1 | 14 |
 
 ---
 
@@ -38,11 +38,11 @@ checkable rather than a judgement call.**
 | ▶ **T-6** | **MULTI-RECORD AND DEPENDENCIES. Extend independence() to report which records share a channel and which formation events interact** | **DONE** | the model returns, for a family, which members can be formed without disturbing the others — measured, not asserted | T-5 |
 | **T-7** | VALIDATE THE FORMATION HALF. Every formation result in the register re-derived through the model rather than a one-off lane script | **DONE** | validate_model.py covers F-20, F-21, F-23, G-16, C-17, C-18 and passes | T-6 |
 
-## PHASE C  BREAK THE SINGLE CARRIER  —  0/5 done
+## PHASE C  BREAK THE SINGLE CARRIER  —  1/5 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
-| ▶ **T-8** | **CHOOSE THE SECOND CARRIER FAMILY. PF-3B failed because the bouquet has cosystole 1. Find a non-manifold with BOTH distances >= 2, or state why none is reachable** | TODO | a named second carrier with both distances >= 2 is built and sealed, or O-14 is closed with a proof that none exists at reachable dimension | T-3 |
+| ▶ **T-8** | **CHOOSE THE SECOND CARRIER FAMILY. PF-3B failed because the bouquet has cosystole 1. Find a non-manifold with BOTH distances >= 2, or state why none is reachable** | **DONE** | a named second carrier with both distances >= 2 is built and sealed, or O-14 is closed with a proof that none exists at reachable dimension | T-3 |
 | ▶ **T-13** | **O-15. The bath is 3 qubits and chi(t) recurs. Show the arrow survives a bath large enough not to recur, and that redundancy evens out** | TODO | chi(t) monotone to a plateau on a larger bath, with fragment redundancy measured | T-3 |
 | ▶ **T-9** | **RE-RUN EVERY PROVED ROW ON TWO CARRIERS. Currently 6 of 78 meet this** | TODO | every PROVED row either cites two structurally different carriers or is explicitly marked SINGLE-CARRIER in the ledger | T-8 |
 | **T-11** | PF-3B. Clause (v) under DEF-A on the second carrier — does admissible still give zero flippers? | TODO | the second carrier reproduces 0 admissible flippers against a nonzero any-unitary control | T-8 |
