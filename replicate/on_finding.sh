@@ -37,6 +37,14 @@ before=$(shasum -a 256 STATUS_LEDGER_V001.md 2>/dev/null | cut -d' ' -f1)
   && ok "the status grid regenerates byte-for-byte from ledger/status_ledger.tsv" \
   || warn "the committed grid does not match what the ledger generates — never hand-edit it"
 
+# 3b. THE PLAN is generated too
+pb=$(shasum -a 256 THE_PLAN_V001.md 2>/dev/null | cut -d' ' -f1)
+./ledger/plan.py >/dev/null 2>&1
+pa=$(shasum -a 256 THE_PLAN_V001.md 2>/dev/null | cut -d' ' -f1)
+if [ -z "$pb" ] || [ -z "$pa" ]; then warn "THE_PLAN could not be hashed"
+elif [ "$pb" = "$pa" ]; then ok "the plan regenerates byte-for-byte from ledger/plan.tsv"
+else warn "the committed plan does not match what ledger/plan.py generates"; fi
+
 # 4. the model still validates
 if ( cd model && python3 validate_model.py >/dev/null 2>&1 ); then ok "model/validate_model.py passes"
 else warn "model/validate_model.py FAILS — a finding has broken the first-principles model"; fi
