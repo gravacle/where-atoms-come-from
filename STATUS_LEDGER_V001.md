@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 78 | 2 | 9 | 1 | 10 | 3 | 6 | 7 | 3 | 3 |
+| 78 | 2 | 9 | 1 | 12 | 3 | 6 | 7 | 3 | 3 |
 
-**122 rows.**
+**124 rows.**
 
 ---
 
@@ -29,8 +29,10 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **PF-5** | SUPPLY THE INPUT. O-9: formation needs an environment coupling over a region of weight >= d. Exhibit such an environment, or state precisely why none is available. The process is currently proved CONDITIONAL ON AN INPUT NOTHING SUPPLIES | **PROVED** | an ordinary LOCAL environment forms records at order lambda^2d (slope 3.8988 vs predicted 4); O-9's premise dissolves | O-9 | — |
 | **PF-6** | PRODUCE A DISTINGUISHING PREDICTION. X-4, T-VI.3, T-VI.4 all BLOCKED at zero. New material exists that did not before: threshold = d, the two-condition coupling requirement, chi = 0.1145 bits at weight d and exactly 0 below | **FAILED** | answered NO: every measured result is already predicted by a rival, with attribution registered. X-4, T-VI.3, T-VI.4 do not move | X-4, T-VI.3, T-VI.4 | — |
 | **PF-7** | COMPOSITION. T-I.4: do records compose? Zbar and Zbar2 are built and commute; never asked whether one can be written without disturbing the other, whether formation thresholds interact, or whether 2g is the whole story | **PARTIAL** | multi-record structure computed: independent families of size log2(dim), every member independently writable (2 of 2, 3 of 3, 4 of 4). Interaction of formation thresholds across records still open | T-I.4 | — |
-| **PF-8** | REPEATABLE UNDER ANY CONDITIONS. Every PROVED row re-run on at least TWO structurally different carriers, every free parameter (beta, lambda, lattice size) shown not to carry a conclusion, and the whole corpus reproducible from ONE command. This is what makes it a proof rather than a computation | **OPEN** | the principal's requirement, 2026-08-18 | PF-2..PF-7 | any conclusion that moves with a carrier or a parameter |
+| **PF-8** | REPEATABLE UNDER ANY CONDITIONS — THE BINDING CONSTRAINT ON THE WORD 'PROVEN'. Every PROVED row re-run on at least TWO structurally different carriers, every free parameter shown not to carry a conclusion, and the whole corpus reproducible from ONE command. Currently 6 rows of 78 meet it | **OPEN** | the principal's requirement, 2026-08-18 | PF-2..PF-7 | any conclusion that moves with a carrier or a parameter |
 | **PF-9** | THE MODEL: records constructed from (H,{L_k}) and nothing else. 12 PASS 0 FAIL re-deriving registered results from first principles, including O-1's counterexamples, its trap, and both positive controls | **PROVED** | model/record_model.py, model/validate_model.py | — | a registered result the model cannot reproduce from the pair alone |
+| **PF-10** | EXTEND THE MODEL TO FORMATION. record_model.py computes record EXISTENCE only — no environment, no coupling, no chi, and zero mentions of the intersection pairing that G-16 established. Every formation result lives in disconnected lane scripts. The charter's word is FORMATION and the model does not compute it | **OPEN** | checked against the files, not recalled | — | — |
+| **PF-11** | THE GLOSSARY. Map every program term to its standard name and owner: record = logical operator, writer = its conjugate, channel = coined 2026-08-19, Gamma = placeholder for (H_1, <,>). PF-6's attribution finding as a document, so a renaming is never again mistaken for a discovery | **OPEN** | — | — | — |
 
 ## O. STANDING DOCTRINE — checked before any lane is commissioned
 

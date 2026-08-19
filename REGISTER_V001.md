@@ -6662,3 +6662,52 @@ entire content, both halves of it.
 **NAMING DISCIPLINE HOLDS (D-2, and the principal: *"not classical gravity of course"*).** This is Γ,
 defined by R1–R3 and by the function it performs. **No attribute of the classical field transfers
 through the name.**
+
+---
+
+## PLAN REVISION — **THE PRINCIPAL'S THREE QUESTIONS, ANSWERED AGAINST THE FILES**
+
+*"Have we proven how records are created? Do we have the process model up to date? Have we used real
+terms?"* Checked, not recalled.
+
+### 1. **NO — EXISTENCE IS PROVED, FORMATION IS NOT**
+
+| | status |
+|---|---|
+| record **EXISTENCE** | **PROVED and carrier-free.** C-12, exact criterion, 210/210 exhaustive; re-derived from `(H,{L_k})` alone by the model on nine spectra |
+| record **FORMATION** | **described and demonstrated, not proved.** G-16 rests on **one carrier and four couplings** |
+
+`A-PR` says it on its face: *"GENERAL tier PROVED; GAUGE tier proved on ONE carrier family."*
+**Only 6 of 78 PROVED rows cite two or more structurally different carriers.** And PF-6 FAILED, with
+X-4, T-VI.3 and T-VI.4 all BLOCKED at zero empirical contact.
+
+### 2. **NO — THE MODEL COVERS THE STATIC HALF ONLY**
+
+`model/record_model.py` exposes `records`, `commuting_family`, `independence`, `protection`.
+
+| | in the model? |
+|---|---|
+| environment · coupling · `χ` | **none of them** |
+| the intersection pairing (G-16, today) | **zero mentions**, in the model *or* `MODEL.md` |
+
+**It is a record-EXISTENCE calculator.** Every formation result lives in one-off lane scripts that do
+not talk to each other or to the model. **The charter's word is FORMATION, and the model does not
+compute it.**
+
+### 3. **MOSTLY — BUT THE MAP WAS NEVER WRITTEN**
+
+The physics vocabulary is standard and used correctly — code distance, Knill–Laflamme,
+systole/cosystole, Holevo `χ`, Lindblad, Davies, mean-force Gibbs, Euler–Poincaré. **PF-6 confirmed
+every result has a named owner.**
+**A layer of program vocabulary sits on top, unmapped:** *record* = a logical operator, *writer* = its
+conjugate, *the channel* = coined today, *Γ* = a placeholder for `(H₁, ⟨·,·⟩)`.
+**A physicist could not tell which terms are ours and which are theirs — and that is exactly the
+confusion that let borrowed results be registered as findings.**
+
+### THE REVISION
+
+- **PF-10 — extend the model to FORMATION.** Until it computes formation, it is not the process model.
+- **PF-11 — the glossary.** Every program term to its standard name and owner. PF-6's attribution
+  finding turned into a document, so a renaming can never again be mistaken for a discovery.
+- **PF-8 RISES TO THE TOP.** Repeatability was written as the final step. **It is the binding
+  constraint on the word "proven", and 6 rows of 78 currently meet it.**
