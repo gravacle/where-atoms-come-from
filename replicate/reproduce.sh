@@ -5,7 +5,15 @@
 #   ./replicate/reproduce.sh --quick  skip the scripts known to take minutes
 # Exits non-zero if any seal fails or any script's output differs from its sealed .txt.
 set -uo pipefail
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# ROOT must NOT be derived from $BASH_SOURCE: a snapshot copy in /tmp resolved it to "/" and the
+# whole run silently found nothing. Set WAC_ROOT to override; otherwise use the script's location
+# only when it actually looks like the repo.
+ROOT="${WAC_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+if [ ! -f "$ROOT/CORE_FRAMEWORK_V001.md" ]; then
+  echo "not a where-atoms-come-from checkout: $ROOT"
+  echo "run from the repo, or set WAC_ROOT=/path/to/where-atoms-come-from"
+  exit 2
+fi
 cd "$ROOT"
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 FAIL=0
@@ -50,10 +58,15 @@ for py in LANE_*/*.py; do
 done
 
 hdr "3. THE STATUS LEDGER IS GENERATED, NOT TYPED"
-before=$(shasum -a 256 STATUS_LEDGER_V001.md | cut -d' ' -f1)
-./ledger/status.py >/dev/null
-after=$(shasum -a 256 STATUS_LEDGER_V001.md | cut -d' ' -f1)
-if [ "$before" = "$after" ]; then echo "  regenerating the grid from ledger/status_ledger.tsv reproduces it byte-for-byte"
+before=$(shasum -a 256 STATUS_LEDGER_V001.md 2>/dev/null | cut -d' ' -f1)
+./ledger/status.py >/dev/null 2>&1
+after=$(shasum -a 256 STATUS_LEDGER_V001.md 2>/dev/null | cut -d' ' -f1)
+# D-8: an empty hash must NOT compare equal to an empty hash and report PASS. The first snapshot
+# run did exactly that -- the file was missing, both sides were "", and the check announced success.
+if [ -z "$before" ] || [ -z "$after" ]; then
+  echo "  FAIL — the grid could not be hashed (missing file or status.py did not run)"; FAIL=1
+elif [ "$before" = "$after" ]; then
+  echo "  regenerating the grid from ledger/status_ledger.tsv reproduces it byte-for-byte"
 else echo "  FAIL — the committed grid does not match what the ledger generates"; FAIL=1; fi
 
 hdr "RESULT"

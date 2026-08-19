@@ -6267,3 +6267,22 @@ already.** What it costs is **suppression by `λ^{2d}`.**
 — objects that exist on hardware.** A record of distance `d` is **exponentially slow in `d`** to form.
 Registered as the first candidate; **whether it distinguishes this account from any other is not yet
 established and PF-6 stays open.**
+
+---
+
+## D-8, THIRD INSTANCE — **IN THE REPRODUCTION HARNESS ITSELF**
+
+The first full-corpus run from a snapshot copy failed, and **both failures are D-8**:
+
+1. **`ROOT` was derived from `$BASH_SOURCE`.** A copy in `/tmp` resolved `ROOT` to `/`, so the run
+   `cd`'d to the filesystem root, found no lanes, and reported *"no sealed output — SKIP"* for
+   everything. **It looked like a clean run over an empty corpus.** Fixed: `WAC_ROOT` override, and the
+   script now **refuses to start** unless it can see `CORE_FRAMEWORK_V001.md`.
+2. **THE GRID CHECK ANNOUNCED SUCCESS WITH ITS INPUTS MISSING.** `shasum` failed on both sides, both
+   variables were the empty string, `"" = ""` compared true, and the harness printed *"regenerating the
+   grid reproduces it byte-for-byte."* **A check that passes when the thing it checks is absent.**
+   Fixed: an empty hash is now a failure.
+
+**The verification harness had the exact defect it was built to catch.** Recorded because D-8 has now
+fired three times — `check(..., True)` in the O-4 lane, a log-log slope fitted to a `1e-15` column in
+O-11, and here.
