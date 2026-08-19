@@ -6220,3 +6220,50 @@ slowly it forms.** That is one quantity doing four jobs, and it is measurable.
 
 **IF 2 RETURNS ZERO,** local environments genuinely cannot form records, O-9 stands as a real
 obstruction, and the process is conditional on an input nothing supplies.
+
+---
+
+## PF-5 / O-9 RESULT — **AN ORDINARY LOCAL ENVIRONMENT DOES FORM RECORDS. THE INPUT IS SUPPLIED.**
+
+`LANE_PF5_LOCALBATH`. Toric code 2×2 + 3-qubit bath, unitary from a product state, `t = 4.0`.
+Noise floor `8.882e-16`.
+
+| `λ` | **1. SINGLE local term** | **2. SUM of local terms** | **3. weight-`d` coupling** |
+|---|---|---|---|
+| 0.020 | 1.221e-15 | 0.00000031 | 0.00224457 |
+| 0.100 | 0.000e+00 | 0.00016142 | 0.05127919 |
+| 0.400 | 0.000e+00 | 0.01906127 | 0.47151593 |
+| **log-log slope in `λ`** | **exactly zero** | **3.8988** *(predicted `2d = 4`)* | **1.9457** *(predicted 2)* |
+
+### THE DISCRIMINATOR IS THE WHOLE POINT
+
+**One local term gives EXACTLY ZERO at every coupling strength.** Powers of a single weight-1 operator
+are `I` or that operator — **they never reach the logical, at any order.**
+**A SUM of local terms gives `λ^{2d}`.** You need **`d` different local terms acting together**.
+
+> ### **THAT IS C-13 MEASURED DYNAMICALLY.** Clause (v) forbids a *single* contractible operation;
+> ### **products of them DO reach the record**, and here is the rate.
+
+### O-9's PREMISE IS DISSOLVED
+
+O-9 asked *"what supplies a coupling extended over a region of size ≥ `d`?"* **Nothing has to.** The
+standard model of an environment — `Σ_i λ_i A_i ⊗ B_i`, every term on one site — **forms records
+already.** What it costs is **suppression by `λ^{2d}`.**
+
+> ### **AND THE SAME `d` NOW DOES FOUR JOBS, ALL MEASURED:**
+> | | |
+> |---|---|
+> | **protects** the record | splitting `~ ε^d` (Thm D, slope 2.000) |
+> | **gates formation** | threshold `= d` (F-11, six codes, `d = 1,2,3`) |
+> | **gates what the environment can learn** | `χ` turns on at weight `d` (F-17, F-22) |
+> | **sets how slowly a local environment forms it** | `χ ~ λ^{2d}` (here, slope 3.8988) |
+>
+> **One quantity, four roles. None of them was put in by hand.**
+
+### **AND IT IS A CANDIDATE FOR PF-6 — THE FIRST ONE THE PROGRAM HAS HAD**
+
+`X-4`, `T-VI.3` and `T-VI.4` have stood at **BLOCKED, "none identified"** since they were written.
+**`χ ~ λ^{2d}` is quantitative, is about ordinary local environments, and involves only codes and baths
+— objects that exist on hardware.** A record of distance `d` is **exponentially slow in `d`** to form.
+Registered as the first candidate; **whether it distinguishes this account from any other is not yet
+established and PF-6 stays open.**

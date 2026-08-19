@@ -1,0 +1,17 @@
+====================================================================================================
+PF-5  CAN AN ORDINARY LOCAL ENVIRONMENT FORM A RECORD?
+====================================================================================================
+  carrier dim 256, ground degeneracy 4, d = 2; bath 3 qubits; t = 4.0
+
+    lambda    1. SINGLE local term    2. SUM of local terms    3. weight-d coupling
+     0.020               1.221e-15               0.00000031              0.00224457
+     0.050               5.551e-17               0.00001136              0.01372520
+     0.100               0.000e+00               0.00016142              0.05127919
+     0.200               0.000e+00               0.00227870              0.16884705
+     0.400               0.000e+00               0.01906127              0.47151593
+
+  1. SINGLE local term     max = 1.221e-15  -> EXACTLY ZERO at every lambda   (predicted exactly 0)
+  2. SUM of local terms    log-log slope in lambda = 3.8988   (predicted ~2d = 4)
+  3. weight-d coupling     log-log slope in lambda = 1.9457   (predicted ~2)
+
+  NOISE FLOOR (lam = 0): 8.882e-16
