@@ -24,6 +24,7 @@ Read in this order. Each is short and each links to the numbers behind it.
 |---|---|---|
 | 1 | `CORE_FRAMEWORK_V001.md` | **the anchor** — the five clauses defining a record |
 | 2 | `THIRD_TERM_V001.md` | Γ, defined **only by the function it performs** (R1–R3) |
+| 2b | `GLOSSARY.md` | **every term, and whose it is** — BORROWED, RENAMING, or OURS. Read it before believing any claim is a discovery |
 | 3 | `MODEL.md` | **the model** — records constructed from `(H,{L_k})` and nothing else |
 | 4 | `STATUS_LEDGER_V001.md` | **every claim, with its status and its evidence** — generated, never typed |
 | 4b | `THE_PLAN_V001.md` | **the road to a proven process** — every task with a checkable DONE WHEN. `./ledger/plan.py` |
