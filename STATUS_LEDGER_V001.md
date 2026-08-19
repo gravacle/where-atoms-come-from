@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 75 | 2 | 9 | 1 | 11 | 3 | 6 | 7 | 3 | 3 |
+| 78 | 2 | 9 | 1 | 10 | 3 | 6 | 7 | 3 | 3 |
 
-**120 rows.**
+**122 rows.**
 
 ---
 
@@ -59,6 +59,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **A-EM2** | THE MINIMAL COUPLING THAT CAN FORM A RECORD IS AN EM HOLONOMY. Of 252 weight-2 Paulis, 8 distinguish code states; all 8 are logical; 4 are magnetic Wilson loops on cycles and 4 electric on cocycles. Zero exceptions | **PROVED** | LANE_F7_OCCUPANCY f10c | — | a minimum-weight forming coupling that is not a holonomy |
 | **A-EM3** | THE RECORD, ITS WRITER, AND THE MINIMAL THING THAT FORMS IT ARE THE SAME KIND OF OBJECT: an EM holonomy on a non-contractible cycle. Established by three separate measurements (Thm B ii; W-62; f10c) | **PROVED** | not designed in — the three arrived in the same class independently | — | any one of the three being expressible without a holonomy |
 | **A-EM4** | THE RECORD-CARRYING EM OBJECT IS NEITHER LOCAL NOR THE WHOLE SYSTEM: absolute extent d = L grows without bound, record fraction 2/(L^2+1) vanishes, local content is exactly zero. No familiar object satisfies all three | **PROVED** | LANE_EM_EXTENT, closed forms verified against GF(2) ranks at L=2..5 | — | a record carried on bounded support |
+| **A-GR2** | GAMMA SUPPLIES THE CHANNEL. EM supplies the complex, the carrier and the record; Gamma decides which couplings can form one, via the intersection pairing; alpha sets the cost. The environment is NOT required to couple to something other than the gauge field — it must couple through a class that pairs with the record | **PROVED** | O-20; every coupling tested is gauge-invariant, so the discriminator is homological | — | formation through a class pairing trivially with the record |
 
 ## B. THE CLAIM, STATEMENT BY STATEMENT
 
@@ -102,6 +103,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **G-13** | ERRATUM: THE WRITER IS NOT POINCARE DUALITY. The pairing H_k x H^k -> F_2 is perfect for ANY complex over a field (universal coefficients). R2 needs no manifold, no orientability, no duality | **PROVED** | G-6 adjudication; Thm B result stands, its stated source was too strong | — | a complex over a field with a non-perfect evaluation pairing |
 | **G-14** | GAMMA IS A REQUIREMENT ON EM'S COMPLEX, NOT AN INGREDIENT BESIDE IT. The carrier supplies the cells, EM supplies the maps, and Gamma is the non-triviality of the homology of the pair. This does NOT dissolve Gamma into EM: G-6 (non-manifold complexes) and G-11 (protection needs something metric) keep R1-R3 distinct | **PROVED** | G-9, G-4, A-EM consolidation | — | a record whose homology is not that of the gauge complex |
 | **G-15** | THE CONDITION RESTATED IN CLAUSE (v)'s OWN BINARY TERMS: a length-2 F_2 complex in which no CONTRACTIBLE operation reaches a non-trivial class. No growth requirement — 'd must scale with n' is imported from asymptotic good-code-family theory, not from the anchor | **PROVED** | import audit finding 2; replaces G-12 | — | a contractible operation that moves a record |
+| **G-16** | THE INTERSECTION FORM SELECTS THE CHANNEL. chi > 0 IFF the coupling's cycle pairs ODDLY with the record's conjugate. H_1 alone does not decide it — all four tested couplings are non-boundaries and chi still splits 0.908/0.000. This is the first result in which the SECOND half of Gamma = (H_1, <,>) does the work | **PROVED** | LANE_O20_HOMOLOGY o20b, four for four; boundaries all give exactly 0 | — | a coupling pairing evenly with the conjugate that forms a record |
 
 ## D. OBSTRUCTIONS — solvable here
 
@@ -126,7 +128,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-17** | THE RECORD IS DESTROYED AT ORDER 2 AND RECORDED AT ORDER 2n*. For n* > 1 an ordinary dissipative environment erases it faster than it writes it. The two numbers come from different arms (unitary-with-small-bath vs Lindblad), so this is a TENSION to resolve, not yet a contradiction — and it is aimed straight at the formation account | **PROVED** | resolved: the arms ran on two different (H,{L_k}) pairs. O-16's {X,Y,Z} violates clause (ii) at 11.3137 and its Hermitian commutant is dimension 1 — scalars only, no record exists | — | — |
 | **O-18** | THE FORMATION STORY REQUIRES STRUCTURED NOISE. The environment that forms a record must be one for which the record exists, so its couplings must commute with it — and the generic environment does not. Nothing in the program says why the world's noise should be structured that way | **PROVED** | answered: gauge invariance plus a locality bound below d forbids formation exactly (chi = 0.00000000). PF-5's coupling is NOT gauge-invariant (32.0000) | — | — |
 | **O-19** | MODEL EFFICIENCY DEFECT: record_model.py builds the *-algebra when the commutant needs only the generators (commutant of a set = commutant of the algebra it generates). This is why it hits the enumeration cap on dim-32 carriers | **OPEN** | found in LANE_O17_TENSION | — | — |
-| **O-20** | THE FORMATION STORY NEEDS AN ENVIRONMENT THAT COUPLES EITHER NON-GAUGE-INVARIANTLY OR NON-LOCALLY. A-EM established EM supplies the Gauss law, so a non-gauge-invariant coupling is coupling to something that is not the gauge field. The program has no argument for either option | **OPEN** | created by O-18 | — | — |
+| **O-20** | THE FORMATION STORY NEEDS AN ENVIRONMENT THAT COUPLES EITHER NON-GAUGE-INVARIANTLY OR NON-LOCALLY. A-EM established EM supplies the Gauss law, so a non-gauge-invariant coupling is coupling to something that is not the gauge field. The program has no argument for either option | **PROVED** | answered: the criterion is the INTERSECTION PAIRING with the record's conjugate, not gauge invariance vs locality. chi > 0 iff pairing is odd, four for four; all four couplings are gauge-invariant non-boundaries | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 

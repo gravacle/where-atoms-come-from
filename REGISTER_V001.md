@@ -6613,3 +6613,52 @@ homology class, which is the third term's whole content.**
 
 **IF `χ` VARIES WITHIN A CLASS**, or if some boundary forms a record, the reading is wrong and the
 dilemma stands as registered.
+
+---
+
+## O-20 ANSWERED — **THE INTERSECTION FORM SELECTS THE CHANNEL. BOTH HALVES OF Γ ARE DOING WORK.**
+
+`LANE_O20_HOMOLOGY`. **My registered prediction — "`χ` depends on the homology class and nothing
+else" — is FALSIFIED**, and what replaces it is sharper.
+
+| coupling | in `B₁`? | `\|c ∩ supp X̄\|` | pairing mod 2 | `‖[Z_c, X̄]‖` | **`χ`** |
+|---|---|---|---|---|---|
+| `[4,6]` | no | 1 | **1** | 32.0000 | **0.90811968** |
+| `[0,2]` | no | 1 | **1** | 32.0000 | **0.90811968** |
+| `[3,7]` | no | 0 | **0** | 0.0000 | **0.00000000** |
+| `[1,5]` | no | 0 | **0** | 0.0000 | **0.00000000** |
+| all boundaries | **yes** | — | — | — | **0.00000000** |
+
+**ALL FOUR OF THOSE COUPLINGS ARE NON-BOUNDARIES.** `H₁` alone does not decide it — the class is
+non-trivial in every one of them and `χ` still splits. Every coupling is gauge-invariant by
+construction (`0.0e+00`).
+
+> ### **`χ > 0` IFF THE COUPLING'S CYCLE PAIRS ODDLY WITH THE RECORD'S CONJUGATE. Four for four.**
+
+### THIS IS Γ'S FULL DEFINITION, AND ONLY NOW IS THE SECOND HALF EARNING ITS PLACE
+
+`GRAVITY_DEFINED_V001` registered Γ as the **pair** `(H₁(Σ), ⟨·,·⟩)`. **Until now every result used
+`H₁` — the group — and the intersection form sat there unused.** Here the group is not enough: all
+four couplings live in `H₁`, and **the FORM is what selects which of them opens a channel.**
+
+**And the pairing is not Poincaré duality** — G-13 already corrected that. It is the evaluation
+pairing, perfect over any field, needing no manifold.
+
+### **O-20 ANSWERED IN THE CHARTER'S TERMS**
+
+The dilemma I registered — *"give up gauge invariance or locality"* — **was mis-stated.** Every
+coupling in the table above is gauge-invariant. What distinguishes them is **homological**:
+
+| | |
+|---|---|
+| **EM** | supplies the complex, the carrier, and the record — which **is** a holonomy |
+| **Γ** | supplies **the channel**: a coupling forms a record **iff it pairs non-trivially with the record's conjugate under the intersection form** |
+| **alpha** | sets what it costs |
+
+**The environment is NOT required to couple to something that is not the gauge field.** It is required
+to couple **through a class that pairs with the record** — and that pairing is the third term's
+entire content, both halves of it.
+
+**NAMING DISCIPLINE HOLDS (D-2, and the principal: *"not classical gravity of course"*).** This is Γ,
+defined by R1–R3 and by the function it performs. **No attribute of the classical field transfers
+through the name.**
