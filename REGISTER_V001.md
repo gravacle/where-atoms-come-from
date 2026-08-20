@@ -8228,3 +8228,64 @@ site leaves χ at `1.000000`, which is not a capacity statement at all.
   is the Holevo bound, so calling it *"the first quantity in this program that knows how much is
   enclosed"* claimed novelty for a standard result. **What is left of the intent is C-39**, where the
   pairing modulates a cost that capacity alone would leave flat.
+
+---
+
+## AUDIT 2 — **THE `S₃` "RECORDS" ARE NOT RECORDS. I CONFLATED THE RECORD WITH THE EXCITATION.**
+
+`LANE_AUDIT_TOOLS`. O-29 and O-30 called conjugacy classes and gauge classes *"records"* and measured
+transport between them. **That identification was imported from lattice gauge theory and never
+checked against the five clauses.**
+
+### THE `D(S₃)` CARRIER HAS NO RECORDS AT ALL
+
+Built as an actual Hamiltonian: `H = −(A + B)`, gauge projector rank 11, flatness projector rank 18,
+`dim = 36`. **Ground space dimension 8 — matching the 8 gauge classes counted group-theoretically in
+O-29, so that identification cross-checks.** But:
+
+| carrier | eigenspace multiplicities | any odd? | per-eigenspace best `\|Tr(P_E R)\|` | worst | **(iv) possible?** |
+|---|---|---|---|---|---|
+| **`D(S₃)` minimal torus** | **[8, 13, 15]** | **True** | **[0, 1, 1]** | **1** | **NO** |
+| `[[4,2,2]]` *(control)* | [4, 8, 4] | False | [0, 0, 0] | 0 | **yes** — 1260 records |
+
+Clause (i) forces `R² = I`, so every eigenvalue of `R` is `±1` and `Tr(P_E R) ≡ dim(E) (mod 2)`.
+**An eigenspace of odd dimension can never give zero, so clause (iv) — writability — is
+unsatisfiable.**
+
+> ### **NO RECORD EXISTS ON THE MINIMAL-TORUS `D(S₃)` CARRIER. O-29 AND O-30 MEASURED TRANSPORT
+> ### BETWEEN OBJECTS THAT ARE NOT RECORDS BY THIS PROGRAM'S DEFINITION.**
+
+### THE CONFLATION, NAMED
+
+**A record is a logical operator. A flux is an excitation.** They are different objects and I used
+one word for both. Conjugation `g → hgh⁻¹` transports **fluxes**. The program's records are **Wilson
+loops**, and their pairwise structure is the **symplectic pairing** — which C-34 measured and found
+**non-zero on abelian carriers.**
+
+**So O-29's headline was too strong.** *"Every null this program recorded on the emergence question
+was measured where the effect is zero by construction"* is true of **flux conjugation** and false as
+stated of **records**: the pairing between records was never zero on any `Z₂` carrier.
+
+### ROWS RESCOPED
+
+- **C-29** → about **flux conjugation**, not records. The mechanism (conjugation is trivial in an
+  abelian group) stands; the word did not.
+- **C-30** → about **flux transport** on a non-abelian **group**, not about records on a carrier.
+- **C-32, C-33** → statements about **group elements of one conjugacy class**, not about records.
+  The mixing-limit arithmetic is unaffected and still matches 8 of 8.
+- **O-29's headline claim** → **rescoped**: the venue error is real for flux transport and does not
+  extend to records, whose pairing was non-zero throughout.
+
+### WHAT SURVIVES UNTOUCHED — EVERY ROW MEASURED ON GENUINE RECORDS
+
+**C-34** (pairing non-zero on an abelian carrier, symplectic matrix non-degenerate at every `L`),
+**C-35** (neither count nor crossing number can supply a density law), **C-38** (a commuting partner
+on another site leaves χ at `1.000000`), **C-39** (the pairing modulates the crowding cost by 0.33,
+stable across a 3× coupling range). **All four used `[[4,2,2]]` or the toric code, where
+`model.records()` returns 1260 and the clauses are met.**
+
+### IT IS A CARRIER DEFECT, NOT A VERDICT ON NON-ABELIAN CARRIERS
+
+The minimal torus has **one vertex and one face**, so the gauge and flatness projectors have almost
+nowhere to act — **H-4 again**. Whether a larger `S₃` complex has even multiplicities is a question
+about **that carrier**, not about `S₃`. Registered as **O-35**.

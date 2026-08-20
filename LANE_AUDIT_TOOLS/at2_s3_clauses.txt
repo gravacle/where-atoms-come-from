@@ -1,0 +1,51 @@
+========================================================================================================
+AUDIT 2   ARE THE S_3 'RECORDS' RECORDS BY THE FIVE CLAUSES?
+========================================================================================================
+  D(S_3) on the minimal torus: 1 vertex, 2 edges, 1 face.  Hilbert space |G|^2 = 36
+    A (gauge)    projector? ||P^2-P|| = 3.09e-16   rank 11
+    B (flat)     projector? ||P^2-P|| = 0.00e+00   rank 18
+  H = -(A+B).  ground space dimension 8
+  distinct eigenvalues of H: [-2.0, -1.0, -0.0]   multiplicities [8, 13, 15]
+  minimal projections in the commutant: 36
+  model.records() REFUSED: 36 minimal projections: enumeration too large
+
+  CONTROL -- the same pipeline on a carrier where records are known to exist
+    [[4,2,2]] dim 16, ground space 4, minimal projections 16
+    model.records() -> 1260 operators satisfying (i)-(iv)
+
+  ENUMERATION IS BLOCKED BY O-28, BUT CLAUSE (iv) CAN BE DECIDED WITHOUT IT.
+  The framework states: given (i)+(ii), clause (iv) <=> Tr(P_E R) = 0 on EVERY eigenspace of H.
+  And (i) forces R^2 = I, so every eigenvalue of R is +-1 and Tr(P_E R) is a sum of dim(E)
+  terms each +-1 -- hence Tr(P_E R) = dim(E) (mod 2). AN EIGENSPACE OF ODD DIMENSION CAN NEVER
+  GIVE ZERO.
+
+  carrier                      eigenspace multiplicities   any ODD?  clause (iv) satisfiable?
+  D(S_3) minimal torus                       [8, 13, 15]       True  NO -- (iv) is UNSATISFIABLE
+  [[4,2,2]] (control)                          [4, 8, 4]      False  yes
+
+  DIRECT CHECK, not argument. Clause (iv) needs Tr(P_E R) = 0 on EVERY eigenspace, so the
+  binding case is the WORST one, not the easiest. For each eigenspace report the smallest
+  |Tr(P_E R)| any sign pattern can achieve, then take the MAXIMUM over eigenspaces.
+  carrier                   per-eigenspace best |Tr|   WORST (binding)   (iv) possible?
+  D(S_3) minimal torus                     [0, 1, 1]                 1            False
+  [[4,2,2]] (control)                      [0, 0, 0]                 0             True
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================
+  THE GROUND SPACE IS DIMENSION 8, matching the 8 gauge classes counted group-theoretically in
+  O-29. That identification cross-checks.
+
+  BUT NO RECORD EXISTS ON THIS CARRIER. H = -(A+B) on the minimal torus has eigenspaces of
+  dimension 8, 13 and 15. Clauses (i)+(ii) force Tr(P_E R) = dim(E) mod 2, so on a 13- or
+  15-dimensional eigenspace it can never vanish, and CLAUSE (iv) -- WRITABILITY -- IS
+  UNSATISFIABLE. The control has multiplicities that are all even and yields 1260 records.
+
+  SO O-29 AND O-30 MEASURED TRANSPORT BETWEEN OBJECTS THAT ARE NOT RECORDS BY THIS PROGRAM'S
+  DEFINITION ON THAT CARRIER. The transport itself is real group theory and the numbers stand,
+  but the word 'record' was imported, not earned. Those rows must be rescoped.
+
+  IT IS A CARRIER DEFECT, NOT A VERDICT ON NON-ABELIAN CARRIERS. The minimal torus has ONE
+  vertex and ONE face, so the gauge and flatness projectors have nowhere to act -- H-4's
+  small-carrier warning again. A larger S_3 complex is the next thing to build, and whether its
+  multiplicities are even is a question about that carrier, not about S_3.
