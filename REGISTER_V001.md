@@ -7810,3 +7810,59 @@ instruction, **using established physics is expected.**
 **The immediate question this raises, and it inverts the expectation:** the code space is defined by
 `B_p = +1` for every `p`, which is **exactly zero holonomy around every face.** If records live only
 there, then **a record does not source curvature — it requires FLATNESS.** Measured next.
+
+---
+
+## H-15 — **CARRIER CURVATURE AND RECORD CONTENT ARE INDEPENDENT. MEASURED ON THE RIGHT OBJECT.**
+
+`LANE_H15_CARRIER`. The connection is **Candidate 3** as the principal fixed it: transport along the
+carrier, which in a lattice gauge theory is the **plaquette holonomy** — link variables are connection
+variables and a face's holonomy is `B_p`.
+
+### 1. THE CARRIER IS EXACTLY FLAT WHERE RECORDS LIVE
+
+`⟨B_p⟩ = 1.00000000` on all four faces of the code space.
+
+### 2. RECORDS SURVIVE ON A CURVED CARRIER, UNCHANGED
+
+| sector | dim | curved faces | `Z̄` a record? | `Z̄₂`? |
+|---|---|---|---|---|
+| flat — the code space | 4 | 0 | **YES** | **YES** |
+| two fluxes | 4 | **2** | **YES** | **YES** |
+| two fluxes, apart | 4 | **2** | **YES** | **YES** |
+| **all four faces curved** | 4 | **4** | **YES** | **YES** |
+
+**Record count is 4 in every sector.** A maximally curved carrier carries the same records as a flat one.
+
+### 3. RECORD CONTENT SOURCES NO CURVATURE
+
+Writing `Z̄`, `Z̄₂`, or both leaves **every** holonomy at `1.00000`.
+
+> ### **CURVATURE AND RECORD CONTENT ARE INDEPENDENT IN BOTH DIRECTIONS ON THIS CARRIER. Records do
+> ### not source curvature; curvature does not touch records. THE TRIAD'S PROPORTIONALITY HAS
+> ### COEFFICIENT ZERO HERE.**
+
+### A BIANCHI-LIKE CLOSURE IS PRESENT — AND UNCOUPLED
+
+`‖∏_p B_p − I‖ = 0.000e+00`. **Every link lies in exactly two faces, so the number of curved faces
+must be EVEN: a single flux is forbidden by the carrier itself.** That is precisely H-9's *"record
+curvature cannot appear or disappear arbitrarily; it must be constrained by the surrounding incidence
+structure."*
+
+> ### **THE CLOSURE SIGNATURE THE PRINCIPAL NAMED IS THERE. It is a property of the CARRIER's
+> ### incidence structure and it is not coupled to record content.**
+
+### A CONSTRUCTION ERROR, RECORDED
+
+v1 tried to flip **one** plaquette and got a sector of **dimension 0**. That was not a null — it was
+the constraint above, and the script reported an empty sector rather than the fact producing it.
+**Fixed: fluxes are flipped in pairs.**
+
+### WHAT THIS DOES AND DOES NOT SETTLE
+
+**It is the first measurement of the object H-9 actually names**, and on the toric carrier the answer
+is independence. **It does NOT close the emergence question**, because the toric code's abelian `Z₂`
+gauge field has holonomies in `{±1}` — **a sign, and a sign carries no frame rotation.** A carrier
+whose link variables take values in a group with genuine internal structure would give the transport
+something to rotate. **That is where H-9's "phase/frame mismatch" could live, and it has not been
+tested.** Registered as **O-29**.

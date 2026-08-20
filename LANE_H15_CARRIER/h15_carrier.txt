@@ -1,0 +1,28 @@
+====================================================================================================
+H-15   CARRIER CURVATURE: TRANSPORT AROUND THE FACES OF THE CARRIER
+====================================================================================================
+  carrier: toric 2x2, 8 links, 4 faces, dim 256
+  a link variable IS a connection variable; transport around face p IS B_p
+
+1.  IS THE CARRIER FLAT WHERE RECORDS LIVE?
+  face       <B_p> on the code space    holonomy
+  p=0                     1.00000000        FLAT
+  p=1                     1.00000000        FLAT
+  p=2                     1.00000000        FLAT
+  p=3                     1.00000000        FLAT
+
+2.  DO RECORDS SURVIVE WHERE THE CARRIER IS CURVED?
+    A flux sector is reached by flipping one plaquette's holonomy to -1. The sector is an
+    eigenspace of H0 with the same dimension, so ask the MODEL whether a record exists there.
+    flux sector dimension: 0   (code space: 4)
+
+3.  DOES RECORD CONTENT SOURCE CURVATURE?
+    Write a record and see whether any face's holonomy changes.
+  state                            <B_0>     <B_1>     <B_2>     <B_3>
+  code space, no record set      1.00000   1.00000   1.00000   1.00000
+  Zbar = +1                      1.00000   1.00000   1.00000   1.00000
+  Zbar2 = +1                     1.00000   1.00000   1.00000   1.00000
+  both = +1                      1.00000   1.00000   1.00000   1.00000
+
+  READ: if every holonomy stays +1 whatever record is written, then record content does NOT
+  source carrier curvature, and records live strictly in the FLAT sector.
