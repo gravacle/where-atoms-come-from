@@ -10020,3 +10020,26 @@ screening gates; O-15's bath-size result lives on [[5,1,3]] alone).
 **Consequence: T-15 UNBLOCKS** — the three-roles statement can now cite carrier-marked rows, and
 T-16's "no step resting on a single carrier unless marked" is enforceable by grep. The marks feed
 PROCESS_V002's standing debt directly.
+
+---
+
+## T-15 — **THE THREE ROLES ARE ONE STATEMENT, AND EVERY LOAD-BEARING CLAUSE STANDS ON TWO CARRIERS.** A-PR restated; the proof chain's head is cut.
+
+The restated A-PR (`LANE_T15_ROLES/A_PR_RESTATED.md`, applied to the ledger row): **EM supplies the
+complex and the record** — corner: capacity `2^dim H₁` exact on and off manifolds (G-10); world: the
+PROVED encoding laws (C-71, C-72). **Γ supplies space, writer, protection and channel** — space:
+capacity independent of protection (G-11), records on `D(G)` iff `|G|` a power of two (C-41, O-35);
+writer: `d_W` the earned boundary-crossing metric (C-78), no pure-Γ falloff, division of labor
+(C-80); protection: the census's metastable barriers with the corner as the `E_b → ∞` limit (C-66,
+C-75); channel: conditional-evolution copying (F-20), clause (ii) on the environment (C-17), the
+three reachable coupling classes (C-87); emergence in one sentence at C-77's exact current scope.
+**Alpha sets the cost** — first-order splitting (O-2), threshold `= d` (F-11, O-10), the world cost
+as the barrier in `k(t_m)`'s drop times (C-86), alpha's value through `E_b` explicitly open (T-38).
+
+**Discipline enforced, not asserted:** an adversarial row-fidelity verifier read every citation
+against its clause (clean); a mechanical gate confirmed every load-bearing citation carries the T-9
+TWO-CARRIER mark and none is WITHDRAWN, FAILED, or PARTIAL (clean, round 1). The corner role rows
+A-EM/A-GR/A-AL — all SINGLE-CARRIER by the audit — appear as context only. The old A-PR's PARTIAL
+("gauge tier proved on ONE carrier family") is superseded by citation discipline: the statement now
+rests only on rows that survived the carrier audit. **T-16 UNBLOCKS** — the proof is next, and its
+architecture is fixed: PROOF_V002 is the URM's narration.
