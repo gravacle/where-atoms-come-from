@@ -9477,3 +9477,26 @@ and it is not durable. The numerical floor also had to be a stated tolerance rat
 closer than it are indistinguishable to a record that need only last `t_m`. Clustering within a
 **stated** tolerance recovers `[4,8,4]` and `k = 2` **exactly** whenever the splitting is inside it —
 and correctly leaves the count at 0 when it is not (`1e-1` against a `1e-2` width).
+
+---
+
+## T-40 — **THE FULL-PROJECT MODEL.** And the plan LOCKED, reviewed, with the theory areas surfaced.
+
+The principal, 2026-08-20: *"We need a model to work on that represents the full project."* Built:
+`model/project_model.py` — one entry point carrying the five layers: the amended DEFINITION with its
+tolerances (O-51), the two PROVED LAWS from the record's own Liouvillian mode (C-69, C-70), the
+FORMATION machinery (C-71/C-72, scoped pending the solidity review), the DEF-A CORNER reduction
+checked against the exact commutant (C-75), and the ROLES honestly scoped with their open TDs.
+
+**`model/validate_project.py`: 11 PASS, 0 FAIL** — the grain τ (5.6279e16 s), the T-29 clause margins,
+both laws on six mechanisms at machine precision, the declines on zircon and the CMB photon, the
+corner dims 96/1536/24, and the written/unwritten formation ratios, all reproduced through the one
+entry point.
+
+**THE PLAN IS LOCKED** (recorded in its header): appends within the existing phase framework, no
+renumbering, no restructuring. Rows T-34–T-40 appended. **`PLAN_REVIEW_V001.md`** carries the
+comprehensive review and the seven THEORETICAL DISCUSSION AREAS (TD-1 the world-level Γ claim, TD-2
+the three roles restated, TD-3 alpha through the barrier, TD-4 admissible/protection ratification,
+TD-5 a prediction of our own, TD-6 what plays the field, TD-7 the CMB/B−L brackets). An adversarial
+SOLIDITY REVIEW of the post-amendment corpus is running; C-71/C-72 promotion and the T-34 NAND lane
+are gated on its verdict.

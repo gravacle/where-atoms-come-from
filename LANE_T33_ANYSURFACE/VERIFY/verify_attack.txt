@@ -1,0 +1,63 @@
+====================================================================================================
+A. INDEPENDENT tau BY DIRECT TIME EVOLUTION (T-29 grain)
+   t = 1.126e+16 s   <sz>(t) = -0.654655   tau_fit = 5.627907e+16 s
+   t = 2.814e+16 s   <sz>(t) = -0.250383   tau_fit = 5.627907e+16 s
+   t = 5.628e+16 s   <sz>(t) = +0.204283   tau_fit = 5.627907e+16 s
+   t = 1.126e+17 s   <sz>(t) = +0.647314   tau_fit = 5.627907e+16 s
+   lifetime() (Rayleigh quotient)  = 5.627907e+16 s
+   1/(gu+gd)                       = 5.627907e+16 s
+   worst rel deviation of time-evolution fits from 1/(gu+gd): 8.39e-15
+   -> CONFIRMED: single-exponential at rate gu+gd
+
+====================================================================================================
+B. IS THE LAW-2 LABEL  tau = exp(E_b/kT)/f0  WHAT WAS COMPUTED?
+   surface              label formula (s)  computed 1/(gu+gd) (s)   ratio = 2cosh(dE/2kT)
+   CoCrPt HDD grain            2.5416e+17              5.4021e+16              4.7048e+00
+   NAND floating gate          7.5651e+13              2.2852e+11              3.3105e+02
+   DNA base tautomer           1.3632e+08              1.9477e+05              6.9990e+02
+   Fe(II) crossover            1.9027e+02              5.9319e+01              3.2076e+00
+   Azobenzene                  4.3574e+04              3.9760e-01              1.0959e+05
+   Alanine                     3.3034e+10              1.6517e+10              2.0000e+00
+
+====================================================================================================
+C. ARE THE TWO LAWS IDENTITIES OF THE CONSTRUCTION?
+   steady state of the 2-level GKSL:  p_up/p_dn = gu/gd  (rate balance), and the rates are
+   BUILT as gu/gd = exp(dE/kT), so <sz>_ss = (gu-gd)/(gu+gd) = tanh(dE/2kT) EXACTLY.
+   record mode: L_adj(sz) = (gu-gd)I - (gu+gd)sz, and <sz, I> = 0, so the Rayleigh
+   quotient is gu+gd EXACTLY. Symbolic check on one surface:
+   Rayleigh quotient = -5.134324e-06+0.000000e+00j;  -(gu+gd) = -5.134324e-06;  match: 1.6e-16
+   -> Both 'agreements' are algebraic identities; the six mechanisms enter ONLY as the
+      scalars (dE, E_b, T, f0) fed to the IDENTICAL 2x2 model. No measured value is compared.
+
+====================================================================================================
+D. clause_ii ON A ROTATING OBSERVABLE (the C-75 correction, applied to the shipped instrument)
+   R = sigma_x, H = -(dE/2) sigma_z, no dissipation: rotation frequency 7.60e+14 rad/s
+   clause_ii returns rate = 0.000e+00 /s, durable = True
+   -> HOLE: the instrument certifies a rotating (non-durable per C-75) observable as durable
+
+====================================================================================================
+E. DOES THE MODEL DECLINE NON-THERMAL PHYSICS, OR ONLY FLOAT OVERFLOW?
+   E_b/kT =  500.0:  tau = 7.018e+203 s   (returned a number)
+   E_b/kT =  700.0:  tau = 5.071e+290 s   (returned a number)
+   E_b/kT =  708.0:  tau = 1.512e+294 s   (returned a number)
+   E_b/kT =  710.0:  tau = 1.117e+295 s   (returned a number)
+   -> the 'decline' boundary is the float64 exponent range (~709), not any thermal-vs-
+      tunneling physics; a barrier of 708 kT (tau >> age of universe x 10^280) still returns
+      a number. Nothing in the model asks whether the system is thermally activated.
+
+====================================================================================================
+F. THE CMB CONTROL: WHAT DOES THE LAW-1 EXTRACTION RETURN IF ACTUALLY CALLED?
+   eigenvalues all zero: True;  chosen 'steady state' trace = 1.000+0.000j
+   normalised, <sz> = +1.000  <- an ARBITRARY number
+   G.lifetime(H=0, Ls=[], R=sz) = inf
+   -> the T-33 script never calls the extraction here; the 'model declines' framing is the
+      SCRIPT declining. lifetime() returns inf (defensible); the steady-state code, if run,
+      returns an arbitrary eigenvector, not a refusal.
+
+====================================================================================================
+G. AZOBENZENE REALITY CHECK
+   model tau (barrier measured from the state MIDPOINT): 3.976e-01 s
+   tau if E_b is the cis-side activation energy (as measured): 4.357e+04 s
+   measured thermal cis->trans lifetime in the dark: ~1e4-1e6 s (hours to days)
+   -> the model's 0.4 s is off from the real record's lifetime by ~5-6 ORDERS; the midpoint
+      convention silently halves the escape barrier by dE/2 = 0.30 eV.

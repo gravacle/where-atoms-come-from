@@ -1,0 +1,19 @@
+closed [[4,2,2]] carrier + splitting eps*R (R the record itself, still exact, [R,H]=0,
+infinite lifetime, no bath). Gibbs expectation <R> at beta:
+       eps    beta       <R>_Gibbs  in Z[i]?
+     0e+00       1     0.000000000      True
+     0e+00      10     0.000000000      True
+     0e+00     100     0.000000000      True
+     1e-03       1    -0.001000000     False
+     1e-03      10    -0.009999667     False
+     1e-03     100    -0.099667995     False
+     1e-01       1    -0.099667995     False
+     1e-01      10    -0.761594156     False
+     1e-01     100    -0.999999996     False
+
+commutator check ||[R,Hs]|| = 0.0
+
+-> non-integer values here come from an EXACT record on an EXACT carrier with NO dissipation:
+   the continuum is produced by (splitting + thermal state), not by metastability or by the
+   record failing to be an exact Pauli. T-30's control (uniform code-space trace, degenerate
+   shells) differs from its measurement in the STATE, and the state does all the work.

@@ -1,0 +1,50 @@
+====================================================================================================
+T-29   A CoCrPt HDD GRAIN AS A RECORD OF THIS PROGRAM
+====================================================================================================
+  K_u = 2.00e+05 J/m^3   V = 1.26e-24 m^3 (a 10.8 nm cube)   T = 300 K
+  E_b = K_u V = 2.520e-19 J = 60.8 kT      f0 = 1e+09 Hz
+  splitting dE = 3.0 kT = 1.243e-20 J      write head W = 5.0e-19 J
+
+  jump rates from detailed balance:  up->down 8.427e-19 /s     down->up 1.693e-17 /s
+  ratio g_up/g_dn = 20.0855   exp(dE/kT) = 20.0855   detailed balance HOLDS
+
+1. DOES THE MODEL RETURN THE GRAIN'S LIFETIME BY AN INDEPENDENT ROUTE?
+   Liouvillian non-zero rates (1/s): ['8.8843e-18', '8.8843e-18', '1.7769e-17']
+   the SLOWEST mode is the COHERENCE at (g_up+g_dn)/2 — NOT the record. The record is the
+   POPULATION DIFFERENCE and relaxes twice as fast; taking the slowest mode gave exactly 2x.
+   from THE RECORD'S OWN MODE       tau = 5.6279e+16 s = 1.783e+09 years
+   from the Neel-Arrhenius rates    tau = 5.6279e+16 s
+   agreement: 2.84e-16 relative
+   -> the model reproduces the grain lifetime from (H,{L_k}) alone
+
+2. THE AMENDED CLAUSES, at t_m = the 10-YEAR RETENTION SPEC (3.16e+08 s) — an INDEPENDENT
+   requirement, not the grain's own lifetime, which would make (ii') a tautology
+   (i')   spectral family {P_up, P_down} from R = sigma_z    commuting: 0.0e+00      PASS
+   (ii')  decay rate 1.777e-17 /s  vs 1/t_m = 3.169e-09 /s   margin 1.78e+08x   PASS
+   (iii') shell 3.525e-11 J vs dE_config 1.243e-20 J   margin 2.84e+09x                PASS
+   (iv')  W = 5.00e-19 J vs floor 1.530e-20 J   = 174x Landauer            PASS
+   (v')   E_b/kT = 60.8   Arrhenius suppression 3.78e-27                    PASS
+   -> THE GRAIN IS A RECORD UNDER THE AMENDED CLAUSES
+
+3. CONTROL — THE SAME GRAIN UNDER DEF-A, THE EXACT CLAUSES (D-15)
+   (ii) exact:  ||[H,R]|| = 0.0e+00    max||[L_k,R]||/||L|| = 2.0000   FAIL — the jump operators do not commute with the record
+   (iii) exact: H is non-degenerate (splitting 3.0 kT != 0), so any R with [H,R]=0
+                is a function of H                                        FAIL
+   (iv) exact:  max|Tr(P_E R)| = 1.0000  (needs 0)             FAIL
+   (v) exact:   a local field flips it — the write head, 5e-19 J     FAIL
+   -> THE SAME GRAIN IS NOT A RECORD UNDER DEF-A. The amendment is not cosmetic.
+
+====================================================================================================
+  READ — generated from the results above, not written in advance
+====================================================================================================
+  A REAL RECORD, TAKEN FROM PUBLISHED MATERIAL CONSTANTS, IS A RECORD OF THIS PROGRAM UNDER
+  THE AMENDED CLAUSES. That is the first time in this program's life that an object in the
+  world has satisfied its definition.
+
+  AND THE MODEL EARNS IT: handed only (H, {L_k}) built from K_u, V, T and f0, the RECORD'S OWN
+  LIOUVILLIAN MODE returns tau = 5.6279e+16 s, agreeing with Neel-Arrhenius to
+  2.8e-16 relative by a route that never uses it.
+
+  WHAT THIS IS NOT. The retention law is standard physics; reproducing it is GROUNDING, not a
+  distinguishing prediction. PF-6 remains FAILED and H-5 remains OPEN. What has changed is that
+  the program now has one object whose numbers a physicist can check against their own media.

@@ -1,0 +1,34 @@
+====================================================================================================
+T-31   DOES THE RECORD COUNT SURVIVE ASYMMETRIC WELLS?
+====================================================================================================
+
+  carrier [[4,2,2]], dim 16.  t_m = 10 years -> delta = hbar/t_m = 3.341e-43 J
+
+  run              splitting (J)   splitting/delta            multiplicities    k
+  EXACT                  0.0e+00          0.00e+00                 [4, 8, 4]    2
+  ONE-SITE Z             1.0e-03          2.99e+39              [4, 4, 4, 4]    2
+  GENERIC                1.0e-06          2.99e+36[1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]    0
+  GENERIC                1.0e-03          2.99e+39[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]    0
+  GENERIC                1.0e-01          2.99e+41[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]    0
+
+  the same asymmetric carriers, with multiplicities CLUSTERED within the durability width:
+  run              splitting (J)   within delta?            multiplicities    k
+  CLUSTERED              1.0e-06            True                 [4, 8, 4]    2
+  CLUSTERED              1.0e-03            True                 [4, 8, 4]    2
+  CLUSTERED              1.0e-01           False[1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]    0
+
+  the symmetric carrier's own count, for reference: k = 2, multiplicities [4, 8, 4]
+
+====================================================================================================
+  READ — from the numbers above
+====================================================================================================
+  THE CENSUS WAS RIGHT, AND THE PERTURBATION MUST BE GENERIC. A single-site Z only PARTIALLY
+  lifts the degeneracy -- [4,8,4] becomes [4,4,4,4] and v_2(4) is still 2, so the count
+  survives. A GENERIC splitting collapses every multiplicity to 1 and the count falls from
+  2 to 0. The degeneracy-dependent chain -- C-14's count law and W-42/43/44/51 --
+  rests on a symmetry the world does not have.
+
+  AND THE AMENDED DEFINITION ALREADY CARRIES THE FIX. Clause (ii') gives a durability width;
+  eigenvalues closer than it are indistinguishable to a record that need only last t_m.
+  Clustering within a stated width recovers the symmetric count exactly whenever the
+  splitting is inside that width — no new machinery, and the tolerance is declared, not fitted.

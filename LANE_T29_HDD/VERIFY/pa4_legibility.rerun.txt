@@ -1,0 +1,52 @@
+PHASE A / T4.  legibility = rank over GF(2) of the outside-inside plaquette adjacency
+
+                   shape  |A|  perimeter  legibility  perim/2-1  |A|-1
+  ------------------------------------------------------------------------
+              square 1x1    1          4           1          1      0
+              square 2x2    4          8           4          3      3
+              square 3x3    9         12           8          5      8
+              square 4x4   16         16          12          7     15
+              square 5x5   25         20          16          9     24
+                rect 1x4    4         10           4          4      3
+                rect 2x4    8         12           8          5      7
+                rect 2x6   12         16          12          7     11
+                rect 3x5   15         16          12          7     14
+                rect 1x6    6         14           6          6      5
+       L-shape (5 cells)    5         12           5          5      4
+          plus (5 cells)    5         12           4          5      4
+        3x3 minus centre    8         16           8          7      7
+
+  WHICH FORMULA SURVIVES?
+    legibility = perimeter/2 - 1 holds for every shape tested : False
+    legibility = |A| - 1        holds for every shape tested : False
+
+  THE KERNEL -- what is invisible from outside?  dim ker = |A| - legibility
+                square 1x1  |A|=  1  legible=  1  invisible=  0
+                square 2x2  |A|=  4  legible=  4  invisible=  0
+                square 3x3  |A|=  9  legible=  8  invisible=  1
+                square 4x4  |A|= 16  legible= 12  invisible=  4
+                square 5x5  |A|= 25  legible= 16  invisible=  9
+                  rect 1x4  |A|=  4  legible=  4  invisible=  0
+                  rect 2x4  |A|=  8  legible=  8  invisible=  0
+                  rect 2x6  |A|= 12  legible= 12  invisible=  0
+                  rect 3x5  |A|= 15  legible= 12  invisible=  3
+                  rect 1x6  |A|=  6  legible=  6  invisible=  0
+         L-shape (5 cells)  |A|=  5  legible=  5  invisible=  0
+            plus (5 cells)  |A|=  5  legible=  4  invisible=  1
+          3x3 minus centre  |A|=  8  legible=  8  invisible=  0
+
+  THE PATTERN, AND THE DIAGNOSIS OF W-46'S NUMBER
+      n  |A|=n^2  legibility  invisible  (n-2)^2  4(n-1)
+      1        1           1          0        0       0
+      2        4           4          0        0       4
+      3        9           8          1        1       8
+      4       16          12          4        4      12
+      5       25          16          9        9      16
+
+    invisible = (n-2)^2 = the plaquettes of A that touch NO outside plaquette.
+    legibility = 4(n-1), i.e. the boundary-touching plaquettes: LINEAR in n, not quadratic.
+
+  W-46 PLACED THE REGION AT THE LATTICE CORNER. Re-run its geometry to confirm.
+    n=2: corner-placed legibility =   3  (W-46 reported 3);   interior-placed =   4
+    n=3: corner-placed legibility =   5  (W-46 reported 5);   interior-placed =   8
+    n=4: corner-placed legibility =   7  (W-46 reported 7);   interior-placed =  12

@@ -1,0 +1,24 @@
+delta = hbar/t_m = 3.341e-43 J   (the lane's own printed durability width)
+
+TEST 1 — cluster with delta itself, taking the lane's '(J)' column label at face value:
+       eps    width used                          multiplicities   k
+     1e-06     3.341e-43[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]   0
+     1e-03     3.341e-43[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]   0
+     1e-01     3.341e-43[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]   0
+the lane's own result at eps=1e-6 with its ACTUAL width 1e-2: k=2, [4, 8, 4]
+
+TEST 2 — physical energy scales for the carrier unit, census range; delta in carrier units:
+    carrier unit   delta (carrier units)  covers eps=1e-6?  k at eps=1e-6
+   0.2 eV (census min)          1.04e-23             False              0
+            1 kT @300K          8.07e-23             False              0
+0.007 kT (T-29 min dE)          1.15e-20             False              0
+                   1 J          3.34e-43             False              0
+
+TEST 3 — for delta to cover a splitting of eps (carrier units), the carrier unit must be
+         <= delta/eps in J; the barrier (2 units on this carrier) is then:
+  eps=1e-06: unit <= 3.34e-37 J -> E_b <= 6.68e-37 J = 1.61e-16 kT at 300 K
+  eps=1e-03: unit <= 3.34e-40 J -> E_b <= 6.68e-40 J = 1.61e-19 kT at 300 K
+  clause (v') requires E_b/kT >> 1: impossible by ~40 orders of magnitude.
+
+CROSS-CHECK against the lane's own table: it prints splitting/delta = 2.99e+36..2.99e+41 and,
+two lines later, 'within delta? True' for the same splittings. Both cannot be true.

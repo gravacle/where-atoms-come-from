@@ -1,0 +1,13 @@
+1. exact commutant dimension sum m_E^2 over Q (no floating point, no tolerance):
+   [[4,2,2]]        multiplicities [4, 8, 4]  sum m^2 = 96
+   [[6,4,2]]        multiplicities [16, 32, 16]  sum m^2 = 1536
+   3-qubit Ising    multiplicities [2, 4, 2]  sum m^2 = 24
+
+2. would a |Re lambda| filter have been caught by part 1? (no dissipation, t_m -> inf)
+   [[4,2,2]]        dim 256: |Re| filter keeps 256 (would MISMATCH), |.| filter keeps 96
+   3-qubit Ising    dim 64: |Re| filter keeps 64 (would MISMATCH), |.| filter keeps 24
+
+3. clause_ii vs slow_modes on a ROTATING record (H = sz, R = sx, no dissipation, t_m = 10):
+   clause_ii: rate = 0.000e+00, durable = True   (sx rotates at omega = 2)
+   slow_modes at t_m=10 keeps 2 modes (the commutant of sz is 2-dim: sx excluded)
+   -> clause_ii calls the rotating record DURABLE; slow_modes and C-75 say it is not.

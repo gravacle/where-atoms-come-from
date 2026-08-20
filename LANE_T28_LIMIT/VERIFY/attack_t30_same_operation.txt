@@ -1,0 +1,42 @@
+====================================================================================================
+CASE A — metastable grain, the CONTROL'S operation: uniform trace ratio over the
+         projector onto the long-lived manifold (slow modes at t_m = 10 yr).
+====================================================================================================
+  dE/kT=3.0    slow state-modes at t_m: 4  non-zero ratios: 1608  min modulus: 1.0000000000  strictly inside (0,1): 0
+  dE/kT=1.0    slow state-modes at t_m: 4  non-zero ratios: 1623  min modulus: 1.0000000000  strictly inside (0,1): 0
+  dE/kT=0.01   slow state-modes at t_m: 4  non-zero ratios: 1589  min modulus: 1.0000000000  strictly inside (0,1): 0
+  -> if 'strictly inside (0,1): 0' on every row, the metastable record is QUANTISED under the
+     control's own operation; metastability did not break the quantisation.
+
+====================================================================================================
+CASE B — the EXACT [[4,2,2]] stabiliser carrier (tolerance zero, no dissipation, exact signed
+         Paulis), the METASTABLE side's operation: thermal-state expectation at finite T.
+====================================================================================================
+    beta (carrier units)               <M>  in Z[i]?
+                    0.25       2.000000000      True
+                     0.5       2.000000000      True
+                     1.0       2.000000000      True
+                     2.0       2.000000000      True
+                     4.0       2.000000000      True
+                    16.0       2.000000000      True
+                    beta            <ZZII>  in Z[i]?
+                    0.25      -0.000000000      True
+                     0.5      -0.000000000      True
+                     1.0       0.000000000      True
+                     2.0       0.000000000      True
+                     4.0       0.000000000      True
+                    16.0       0.000000000      True
+  -> if these move continuously with beta and sit strictly inside integers, the EXACT carrier
+     with tolerance ZERO already yields a continuum once the state is thermal: exactness was
+     never the protection, the T->0 corner STATE was.
+
+====================================================================================================
+CASE C — the T->0 limit of the metastable value itself: tanh(dE/2kT) -> sign(dE) = +-1 in Z[i].
+====================================================================================================
+  T=  300.00 K   tanh(dE/2kT) = 0.905148253645
+  T=   30.00 K   tanh(dE/2kT) = 1.000000000000
+  T=    3.00 K   tanh(dE/2kT) = 1.000000000000
+  T=    0.30 K   tanh(dE/2kT) = 1.000000000000
+  T=    0.03 K   tanh(dE/2kT) = 1.000000000000
+  -> the continuum closes onto Z[i] as T -> 0 with the record's metastability intact:
+     the driver is the temperature axis of the corner, not the exactness of the record.
