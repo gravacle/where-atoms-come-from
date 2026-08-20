@@ -9294,3 +9294,41 @@ squares and the identity.
 **v2 varied only the barrier and reported the interval "populated continuously by the barrier
 height" while its own table printed the same value six times.** The value depends on the splitting.
 **Both parameters are now swept and the table shows which one moves it.**
+
+---
+
+## T-32 — **ALL FIVE SOURCE STANDARDS ARE MET ON A REAL RECORD. AND THE SIGN-DEFINITENESS COMES FROM THE ACT OF WRITING.**
+
+`LANE_T32_REALSOURCE`. C-70 removed the exclusion that appeared to close this at any `N`. Real records
+carry a configuration energy `dE`, and it is measurable. O-48 tested the five standards on a toy chain
+where `dE` was two-signed and screened as `m^(−1/2)`. **The toy is not the world.**
+
+CoCrPt grain: `V = 1.26e-24 m³`, `M_s = 4.0e5 A/m`, moment `m = 5.04e-19 A m²`, `E_b = 60.8 kT`.
+
+| standard | result | control in the same table |
+|---|---|---|
+| **(a) EXTENSIVE** | ratios **exactly 10.0000** per decade, `N` = 10 → 10⁵ | — |
+| **(b) ADDITIVE** | defect **exactly 0** over disjoint tracks (`0.0e+00`, `9.9e-32`, `0.0e+00`) | coupled tracks would show a defect |
+| **(c) NOT A COUNT** | moves **2.40×** at **fixed `N` = 1000** as `M_s`, `B`, `V` vary | `N` frozen |
+| **(d) SIGN-DEFINITE** | **`\|Σ\|/Σ\|·\| = 1.000000` at every `N`** in *written* media | **demagnetised medium screens**, falling as `1/√N`: 0.400, 0.080, 0.0020, 0.0037 |
+| **(e) POWER LAW** | dipole falloff, ratio **exactly 8.0000** per doubling → **exponent −3, INDUCED** by magnetostatics | not inserted |
+
+> ### **THE FIRST QUANTITY IN THE PROGRAM TO MEET ALL FIVE, AND IT IS ON AN OBJECT THAT SATISFIES THE
+> ### RECORD DEFINITION (C-69).**
+
+### WHY THE TOY FAILED AND THE WORLD DOES NOT
+
+**The demagnetised control reproduces the toy chain's failure exactly** — two-signed terms screening
+as `1/√N`, C-46's signature. **What makes the difference is that the medium was WRITTEN.** The write
+head aligns every grain, so the terms **add** instead of cancelling.
+
+> ### **ORDERING IS IMPOSED BY THE WRITING PROCESS. The sign-definiteness that every toy candidate
+> ### failed is supplied by the act of record formation itself — which is what this program set out
+> ### to find.**
+
+### THE LIMIT, SHARPLY
+
+**This is magnetostatics. None of it is new physics.** The exponent is **−3, not gravity's −2**, and a
+dipole interaction is not gravitation. **What is established is narrower and still worth having: an
+object meeting the record definition carries a quantity with a source's form in all five respects,
+and the property every toy candidate lacked comes from writing.**
