@@ -7713,3 +7713,64 @@ identified as a theorem about the definition rather than a limit of the search.*
 trace balance and clause (iii)'s degeneracy. **A record notion that dropped or altered either could
 still force curvature — and this program has no reason to alter them beyond wanting a different
 answer, which is not a reason.** Registered as **H-13**.
+
+---
+
+# **THE PRINCIPAL CATCHES AN IMPORT IN THE NEGATIVE RESULT ITSELF**
+
+*"Are you sure that we aren't again importing metrics to the surface that can't survive there?"*
+**Audited, and the answer is no — there is an import, and it is in the object measured.**
+
+## THE IMPORT: **THE WRITER WAS TREATED AS THE CONNECTION**
+
+**H-9 asks for transport BETWEEN records** — *"the local rule telling one record how to relate to
+NEARBY records: how phase, orientation, causal order, or local frame is transported FROM ONE RECORD
+TO THE NEXT."*
+
+**T-20, O-23, O-24, O-25, O-27 and route 1 all measured `U_i U_j U_i⁻¹ U_j⁻¹`, where `U_i` is the
+WRITER — the operation that flips record `i`'s VALUE.**
+
+> ### **FLIPPING ONE RECORD'S VALUE IS NOT TRANSPORTING A FRAME FROM ONE RECORD TO ANOTHER. The
+> ### registrar needed something to play the role of "connection", took the writer because it was to
+> ### hand, and then proved theorems about writers.**
+
+## WHAT THE THEOREMS ACTUALLY SAY
+
+**C-26's argument runs entirely through clause (iv)'s trace balance and clause (iii)'s degeneracy —
+properties of HOW A RECORD IS FLIPPED.** It contains nothing about relations between distinct records.
+
+| | |
+|---|---|
+| **C-24 / C-25 / C-26 prove** | **a flat set of WRITERS always exists and is always selected** |
+| **they do not touch** | **whether transport BETWEEN records is flat** |
+| **H-9 asked** | **the second one** |
+
+**THE NEGATIVE STANDS AS A FACT ABOUT WRITERS AND DOES NOT ANSWER THE CRITERION.** Its scope is
+narrowed accordingly, and **"under the five clauses Γ does not produce gravity" is WITHDRAWN as
+stated** — it was proved of the wrong object.
+
+## THE SAME FAILURE AS T-6, TWICE IN ONE SESSION
+
+**T-6:** a zero appeared (records compose without disturbance) and the registrar read it as flatness.
+**Here:** a zero appeared (writers commute) and the registrar read it as no record-level curvature.
+**Both times the tell was identical — a zero of the WRONG THING, taken for a zero of the right one.**
+
+> ### **D-14. A ZERO IS ONLY A RESULT IF IT IS A ZERO OF THE OBJECT THE QUESTION NAMES. Before
+> ### reporting one, state which object the question asked about and check that it is the one
+> ### measured. TELL: a null answering a question whose nouns do not appear in the measurement.**
+
+## WHAT THE RIGHT OBJECT MIGHT BE — A THEORY DECISION, NOT A COMPUTATION
+
+The one inter-record structure this program has that is **ours** rather than borrowed is the
+**intersection pairing**, and **G-16 showed it is OPERATIVE** — it decides which couplings open a
+channel to which record. **A pairing between record classes has the shape of a connection between
+records, where the writer never did.**
+
+| candidate | provenance |
+|---|---|
+| **the intersection pairing `⟨c_i,c_j⟩` on record classes** | **OURS**, operative (G-16), already measured |
+| **the channel structure** — which couplings serve which records | **OURS** (T-6's `channel_map`) |
+| **transport along the carrier** — records are cycles; carry a frame between them through the complex | closest to H-9's *"nearby"*; where geometry could genuinely live |
+
+**Whichever is chosen DEFINES what "record geometry" means, so it is put to the principal rather than
+picked. Picking wrongly again would only produce another theorem about the wrong object.**
