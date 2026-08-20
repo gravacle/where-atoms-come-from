@@ -62,7 +62,9 @@ esac
 # rediscovered this at least four times; every previous statement of it was a doctrine row that
 # became a checkbox. A machine check instead. The LEDGER carries live claims and must be clean; the
 # REGISTER is append-only, so historical hits there are part of the record and are informational.
-PAT="gravity (needs|requires|must)|inverse.square|r\\^-2|r\\^\\{-2\\}|1/r\\^2|newtonian at the record"
+# The import is a classical-gravity form stated as a REQUIREMENT ON THE RECORD LEVEL. A bare
+# exponent is not: r^-2 is also the Ising energy-operator correlation and appears legitimately.
+PAT="gravity (needs|requires|demands|must have)|must be inverse.square|should be inverse.square|needs an inverse.square|record level (must|should) (be|look) like gravity|gravity.shaped at the record"
 lg=$(grep -oniE "$PAT" ledger/status_ledger.tsv 2>/dev/null | grep -vi "emerg\|NOT expected\|banned\|never the test\|not the test\|import" | head -5)
 if [ -z "$lg" ]; then ok "no classical-gravity metric in any live ledger claim"
 else warn "IMPORT SCAN — classical-gravity metric in a LIVE ledger claim (CORE_FRAMEWORK's standing block):"
