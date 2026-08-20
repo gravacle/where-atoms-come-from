@@ -7987,3 +7987,68 @@ C-30 is untouched: **transport between records exists and is path-dependent on a
 carrier**, and it belongs to the set of records. What fails is **`count` as the source term.** The
 principal's own triad names a different one — `R ∝ ⟨c_i,c_j⟩ × channel_map[α]`, whose source is the
 **intersection pairing**, not a count. **That is the next measurement**, registered as **O-31**.
+
+---
+
+## O-31 — **BOTH CANDIDATE SOURCE TERMS ARE TOPOLOGICAL, AND A TOPOLOGICAL QUANTITY CANNOT BE A DENSITY.**
+
+`LANE_O31_PAIRING`. C-32 removed the count. The principal's triad names the **intersection pairing**
+instead — `R ~ ⟨c_i,c_j⟩ × channel_map[α]`.
+
+### 0. SELF-CHECK, WHICH FIRED
+
+Every `Z` string meets every star evenly, every `X` string meets every plaquette evenly, and the
+pairing matrix over the four records has **determinant 1 mod 2 at every `L`** — genuine logical
+operators, non-degenerate symplectic pairing.
+
+### 1. A SCOPE CORRECTION TO C-29
+
+| `L` | links | `⟨Z₁,X₁⟩` | `⟨Z₂,X₂⟩` | `⟨Z₁,X₂⟩` | `⟨Z₂,X₁⟩` | |
+|---|---|---|---|---|---|---|
+| 2 | 8 | **1** | **1** | 0 | 0 | **ANTICOMMUTE** |
+| 3 | 18 | **1** | **1** | 0 | 0 | **ANTICOMMUTE** |
+| 4 | 32 | **1** | **1** | 0 | 0 | **ANTICOMMUTE** |
+| 5 | 50 | **1** | **1** | 0 | 0 | **ANTICOMMUTE** |
+| 6 | 72 | **1** | **1** | 0 | 0 | **ANTICOMMUTE** |
+
+> **THE PAIRING BETWEEN RECORD OPERATORS IS NON-ZERO ON AN ABELIAN CARRIER.** C-29 is narrower than
+> it may read — it concerns **conjugation of fluxes only**, and stands. **The intersection pairing
+> was present on every `Z₂` carrier the whole time.**
+
+### 2. IT DOES NOT GROW WITH EXTENT
+
+| `L` | 2 | 3 | 4 | 5 | 6 | 8 | 10 | **16** |
+|---|---|---|---|---|---|---|---|---|
+| carrier length | 2 | 3 | 4 | 5 | 6 | 8 | 10 | **16** |
+| **shared links** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** |
+
+**The record carriers get 8× longer and the crossing number does not move.**
+
+### 3. IT DOES NOT GROW WITH RECORD COUNT
+
+| genus `g` | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|---|
+| records `2g` | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 |
+| non-zero pairings | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| pairs available | 1 | 6 | 15 | 28 | 45 | 66 | 91 | 120 |
+| **fraction interacting** | 1.000 | .3333 | .2000 | .1429 | .1111 | .0909 | .0769 | **.0667** |
+
+Non-zero pairings grow **linearly** while pairs grow **quadratically** — the interacting fraction
+**falls toward zero.**
+
+> ### **BOTH CANDIDATE SOURCE TERMS FAIL THE SAME TEST FOR THE SAME REASON: THEY ARE TOPOLOGICAL, AND
+> ### A TOPOLOGICAL QUANTITY DOES NOT KNOW HOW MUCH IS ENCLOSED. WHATEVER SUPPLIES GRAVITY'S DENSITY
+> ### LAW AT THE RECORD LEVEL IS NEITHER A COUNT NOR AN INTERSECTION NUMBER.**
+
+The principal named this shape already: the pairing is **topologically rigid and metric-blind** — a
+source `T_μν`, and a source is not by itself a density law. **The one factor in the triad still
+untested is `channel_map[α]` — the metric, and the only factor in the whole construction that carries
+a MAGNITUDE rather than an invariant.** Registered as **O-32**.
+
+### ERRATUM, LOGGED
+
+**v1 paired the horizontal `Z` loop with a string on VERTICAL links** — disjoint from it — so every
+crossing number printed `0`, and the READ then concluded *"the pairing was never zero here"*,
+**contradicting the table directly above it.** The non-degeneracy self-check now in section 0 fires
+on exactly this: a set of logicals whose pairing matrix is singular is not a basis, and v1's was
+identically zero.
