@@ -21,7 +21,9 @@ done
 empty=0; thin=0
 for d in LANE_*/ model/; do
   d="${d%/}"; [ -d "$d" ] || continue
-  nt=$(find "$d" -name '*.txt' | wc -l | tr -d ' ')
+  # output = sealed .txt from a script, or a lane document (.md) / table (.tsv) — doc and
+  # classification lanes carry their findings there; only a lane with NONE of these is empty
+  nt=$(find "$d" \( -name '*.txt' -o -name '*.md' -o -name '*.tsv' \) | wc -l | tr -d ' ')
   np=$(find "$d" -name '*.py' | wc -l | tr -d ' ')
   if [ "$nt" -eq 0 ]; then echo "        NO OUTPUT AT ALL: $d"; empty=$((empty+1))
   elif [ "$nt" -lt "$np" ]; then thin=$((thin+1)); fi

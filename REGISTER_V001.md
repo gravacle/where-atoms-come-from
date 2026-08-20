@@ -9925,3 +9925,10 @@ block dim ≤ 8; O-35's range) — each needs its scope sentence tightened when 
 
 Ledger tally now: **142 FORMAL · 49 DEFINED · 2 PROVED · 2 MEASURED**, with the failure/withdrawal
 history intact.
+
+**Housekeeping (post-T-36 commit).** The O-48-B manifest was stale — sealed before the lane's final
+re-run; the current `p2d_largest_exact.txt` reproduces byte-for-byte from its script, so the manifest
+was regenerated (the file was right, the seal was old). The documentation gate's "no output at all"
+check counted only `.txt`; documentation, advocate, and classification lanes carry their sealed
+findings as `.md`/`.tsv`, so those now count as output — the refusal on truly-empty lanes is
+unchanged.
