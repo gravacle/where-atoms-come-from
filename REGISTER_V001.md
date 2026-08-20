@@ -9736,3 +9736,26 @@ the **simultaneous** reading both tiers are boundary and the rule's first branch
 conditional C-77 sentence and the emergent-tier target (the collapse analogue — a dynamics under
 which HIDDEN = STORED − CERT is unstable) are staged, and issue only on the principal's reading.**
 The judge's editorial note, carried at zero weight: a horizon entropy is itself a one-time count.
+
+---
+
+## T-45 — **THE PRINCIPAL'S QUESTION ANSWERED: THE CHOICE WAS NEVER THEIRS TO MAKE, AND NEVER OURS. THE SURFACE OWNS THE CLOCK.**
+
+*"If it only surfaces one choice is that mine or just what the surface surfaced?"* — **computed
+answer: neither a decree nor a loose end.** The split looked like a convention only because the world
+model treated records as immortal. **Clause (ii′)'s own durability tolerance `t_m` supplies the
+certification window** — a record must be certified within its own lifetime — and the exact law
+`CERT_W(n) = min(n³, W·(6n²−12n+8))` then has **DEF-A's corner as its `W = ∞` limit: the anytime
+reading IS the immortal-record idealisation**, the same corner the program already names. For every
+finite-lifetime surface, **certifiable content is boundary-bounded at scale**, and the pre-registered
+T-43 rule's first branch **fires surface-determinedly**:
+
+> ### **MATURE C-77's AREA-FORM LAW SPEAKS OVER EXTERNALLY CERTIFIABLE CONTENT — what the outside
+> ### world can learn of a region within its records' own durability.** (C-83; identity CERT =
+> cut-rank from C-81.)
+
+**Honesty clause from the same table:** every terrestrial census device sits far below its crossover
+`n* ~ 6W` and certifies its **full volume** within lifetime — the boundary bound binds only at
+enormous aggregate scale. *(Editorial, zero weight: invisible at laboratory scale and binding at
+scale is the profile an emergent bound should have.)* **O-57 registered** — the collapse analogue,
+the staged emergent-tier target.

@@ -25,11 +25,11 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 > existing phase framework; IDs never renumber; phases are not restructured. Modification
 > happens within this framework — status moves and appends only.
 
-**27 of 44 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**29 of 45 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 27 | 3 | 10 | 4 |
+| 29 | 2 | 10 | 4 |
 
 ---
 
@@ -71,7 +71,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | **T-22** | GIVE ALPHA REAL CONTENT (H-2). Nothing in the corpus is dimensionful and the fine structure constant is connected to no number. Either connect it or state plainly that 'alpha' names a generic coupling here | **DONE** | either a registered result in which alpha's VALUE matters, or an explicit statement in the anchor that alpha stands for a generic coupling strength | — |
 | **T-38** | ALPHA THROUGH THE BARRIER. Every terrestrial census barrier is an EM energy scale (anisotropy, bond, trap depth) whose magnitude is set by alpha; the PROVED lifetime law then carries alpha through E_b. Does alpha's VALUE now enter record durability -- giving T-22's placeholder real content and a route PF-6 lacked? NEEDS A THEORY DISCUSSION | TODO | either a registered statement of how alpha's value enters the record laws with its falsifier, or a plain statement that it does not | T-33 |
 
-## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  12/18 done
+## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  14/19 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
@@ -91,8 +91,9 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | ▶ **T-34** | **THE NAND SECOND MECHANISM -- solidity verdict: PROMOTE_AFTER_RESCOPE. Required before promotion: rescope C-71 to the encoding-level claim (NAND: net trapped charge, one sign for EVERY data pattern; magnetic: remanent moment under DC-saturation scope, real data tracks SCREEN -- the review measured ratio 0.00096 on random data); add the written-random-data row T-32 never ran; state the field-free quantity; fix the T-34 factor-2 and over-erase tolerance; replace the 1e-3 assertion with computed cross-terms** | **DONE** | the solidity review returns a promotion verdict and C-71/C-72 are re-grounded with RECORDS VERIFIED naming both mechanisms, or the rescoped form is registered instead | T-32 |
 | ▶ **T-37** | **STATE THE WORLD-LEVEL GAMMA CLAIM, FALSIFIABLY -- shape now fixed by the principal: SHARED ORIGIN (A-GR3) via BOUNDARY-SHAPING TERMS (A-GR4), under D-24 (each classical concept must earn its place) and the binding caveat that record-level measures may behave unlike their analogues elsewhere. Remaining: the statement itself, with its Gamma-side boundary measure defined in the record surface's own terms and the classical relation as recovery target at scale only** | **DONE** | a falsifiable statement of the emergence claim is registered, agreed by the principal, with its test named | T-30, T-32 |
 | ▶ **T-42** | **THE DERIVATION INCREMENT (C-77's named test). Derive, from record-surface boundary structure alone, a scale-level relation matching a known gravitational one -- no classical form assumed. The concept with the most to earn first is DISTANCE: nothing at the record level has yet earned a notion of how far apart two records are except boundary-crossing structure. Theory work before lanes** | **DONE** | either a derivation is registered that recovers a known gravitational relation from record-surface boundary structure without assuming it, or the failure mode is registered plainly per C-77's failure clause | T-37 |
-| ▶ **T-43** | **LET THE SURFACE ANSWER INTERFACE-VS-CONTENT (the principal's method, decision rule PRE-REGISTERED in the register). Compute the externally certifiable content of a region in both tiers and apply the rule as registered -- no post-hoc reading** | **DOING** | the certifiability computation is run in both tiers with controls, the pre-registered rule is applied verbatim, and C-77's text carries the answer or the question returns to the principal | T-42 |
+| ▶ **T-43** | **LET THE SURFACE ANSWER INTERFACE-VS-CONTENT (the principal's method, decision rule PRE-REGISTERED in the register). Compute the externally certifiable content of a region in both tiers and apply the rule as registered -- no post-hoc reading** | **DONE** | the certifiability computation is run in both tiers with controls, the pre-registered rule is applied verbatim, and C-77's text carries the answer or the question returns to the principal | T-42 |
 | ▶ **T-44** | **WHICH FALLOFF EXPONENTS CAN A GAMMA-CONSTRAINED COUPLING REACH? The weighted-instrument lane: couple the exact w_min = d writer-cost landscape to a declared mediator and derive the reachable exponent class -- Gamma's corner codomain is integer-valued, so any smooth graded law must live in weighted coupling/alpha quantities. Until this runs, every decaying law in the record is INSERTED and no falloff exponent is earned. Plus: three-region composition (superposition vs screening) and the genus-proper w_min = d test** | TODO | either a derived exponent class for Gamma-constrained couplings with its falsifier, or the obstruction to deriving one registered plainly | T-42 |
+| **T-45** | THE SURFACE'S OWN CLOCK (done with T-43): certifiable-within-lifetime law, the corner as W=infinity, census crossovers honest | **DONE** | registered as C-83 with the rule's first branch fired surface-determinedly | T-43 |
 
 ## PHASE F  WRITE AND CHECK THE PROOF  —  0/6 done
 
