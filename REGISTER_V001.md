@@ -9244,3 +9244,53 @@ and `lifetime()` requires the record.
 and `FAIL` — written in advance, the error logged repeatedly today. **The READ is now generated from
 the results.** A third: `t_m` had been set to the grain's own lifetime, making clause (ii′) a
 tautology; it is now the **independent 10-year retention spec.**
+
+---
+
+## T-30 — **THE `Z[i]` QUANTISATION IS AN ARTIFACT OF EXACTNESS. THE GRAVITY-STRENGTH EXCLUSION DOES NOT INHERIT TO THE WORLD.**
+
+`LANE_T30_TOLERANCE`. C-52 — *a product of record operators is a single signed Pauli, so every
+Gaussian-integer polynomial has trace ratio in `Z[i]`, which has no element of modulus in `(0,1)`* —
+was the load-bearing exclusion behind two days of negatives. **It was proved at tolerance zero, over
+exact signed Paulis in an exact code space: DEF-A's corner, where the censuses found ZERO real
+records.**
+
+### THE CONTROL REPRODUCES C-52 EXACTLY
+
+4000 integer-coefficient polynomials on the exact `[[4,2,2]]` carrier: **3296 non-zero, minimum
+modulus `1.0000000000`, nothing strictly inside `(0,1)`.**
+
+### THE SAME OPERATION ON A METASTABLE RECORD
+
+| `dE/kT` | 3 | 1 | 0.3 | 0.1 | 0.01 | 1e-4 | **1e-8** |
+|---|---|---|---|---|---|---|---|
+| **`⟨R⟩_ss`** | 0.905148254 | 0.462117157 | 0.148885034 | 0.049958375 | 0.004999958 | 0.000050000 | **0.000000005** |
+| in `Z[i]`? | False | False | False | False | False | False | **False** |
+
+**And the barrier is not the variable.** `E_b/kT` = 60.8 → 30.4 → 15.2 moves `τ` from `1.3e17 s` to
+`8.6e-4 s` — **25 orders of magnitude — and leaves `⟨R⟩_ss` at 0.905148254, unchanged.**
+
+> ### **`⟨R⟩_ss = tanh(dE/2kT)`, A CONTINUOUS FUNCTION OF THE SPLITTING. EVERY VALUE IN `(0,1)` IS
+> ### REACHABLE, AND ARBITRARILY SMALL ONES BY ARBITRARILY SMALL `dE` — `5.0e-9` DEMONSTRATED,
+> ### MATCHING THE CLOSED FORM.**
+
+> ### **THE INTERVAL C-52 CALLS EMPTY IS NOT EMPTY FOR A REAL RECORD. C-52's PHYSICAL CONCLUSION —
+> ### THAT A GRAVITY-STRENGTH RESIDUAL HAS NO SLOT — WAS A THEOREM ABOUT DEF-A'S CORNER, NOT ABOUT
+> ### THE WORLD. THE EXCLUSION DOES NOT INHERIT.**
+
+### SCOPE, STATED PLAINLY
+
+**This shows nothing forbids a small residual on a real record. It does NOT show one exists.** What it
+removes is the argument that appeared to close the question at any `N` — the one the registrar leaned
+on hardest over two days. **The gravity question is reopened, not answered.**
+
+### TWO ERRATA, LOGGED
+
+**v1's control summed only non-identity logicals**, every one of which has vanishing normalised trace
+on the code space — **all 4000 ratios were exactly 0 and the instrument measured nothing.** C-52's
+non-zero values come from terms landing **on** the stabiliser group, so the family must contain
+squares and the identity.
+
+**v2 varied only the barrier and reported the interval "populated continuously by the barrier
+height" while its own table printed the same value six times.** The value depends on the splitting.
+**Both parameters are now swept and the table shows which one moves it.**

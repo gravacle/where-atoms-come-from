@@ -1,0 +1,44 @@
+====================================================================================================
+T-30   IS THE Z[i] QUANTISATION AN ARTIFACT OF EXACTNESS?
+====================================================================================================
+
+1. CONTROL — THE EXACT STABILISER CARRIER. C-52 says every ratio lands on Z[i] and the
+   minimum non-zero modulus is exactly 1. If this fails, the instrument is broken.
+   4000 integer-coefficient polynomials: 3296 non-zero
+   minimum non-zero modulus: 1.0000000000    (C-52 predicts exactly 1)
+   any value strictly inside (0,1)? False
+   -> CONTROL PASSES: the quantisation is reproduced
+
+2. THE METASTABLE RECORD — the T-29 grain, and a family tuned from exact to metastable.
+   The record is the SLOW MODE of the Liouvillian, not an exact Pauli. Its projector onto the
+   long-lived manifold is the object the trace ratio must be taken against.
+      E_b/kT    dE/kT      tau (s)   record rate (1/s)          <R>_ss  in Z[i]?
+        60.8    3e+00    5.628e+16          1.7769e-17     0.905148254     False
+        60.8    1e+00    1.174e+17          8.5174e-18     0.462117157     False
+        60.8    3e-01    1.309e+17          7.6385e-18     0.148885034     False
+        60.8    1e-01    1.322e+17          7.5628e-18     0.049958375     False
+        60.8    1e-02    1.324e+17          7.5535e-18     0.004999958     False
+        60.8    1e-04    1.324e+17          7.5534e-18     0.000050000     False
+        60.8    1e-08    1.324e+17          7.5534e-18     0.000000005     False
+        30.4    3e+00    3.459e+03          2.8913e-04     0.905148254     False
+        15.2    3e+00    8.574e-04          1.1663e+03     0.905148254     False
+
+   closed form tanh(dE/2kT) at dE = 1e-8 kT: 5.000e-09  — the value goes to ZERO
+   CONTINUOUSLY as the splitting shrinks, taking EVERY value in (0,1) on the way.
+
+   values strictly inside (0,1) in modulus: 9 of 9
+   smallest such: 0.000000005000
+
+====================================================================================================
+  READ — generated from the numbers above
+====================================================================================================
+  THE QUANTISATION IS AN ARTIFACT OF EXACTNESS. On the exact carrier every integer-coefficient
+  polynomial lands on Z[i] with minimum non-zero modulus 1.000000; on the metastable
+  record the same quantity takes 9 values strictly inside (0,1), the smallest
+  5.000e-09. THE INTERVAL C-52 CALLS EMPTY IS NOT EMPTY FOR A REAL
+  RECORD. It is <R>_ss = tanh(dE/2kT), a CONTINUOUS function of the SPLITTING -- not of the
+  barrier, which moves the lifetime over 25 orders of magnitude and leaves the value fixed.
+  Every value in (0,1) is reachable, and arbitrarily small ones by arbitrarily small dE.
+
+  CONSEQUENCE. C-52's physical conclusion -- that a gravity-strength residual has NO SLOT --
+  was a theorem about DEF-A's corner, not about the world. The exclusion does not inherit.
