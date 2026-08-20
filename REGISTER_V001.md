@@ -9759,3 +9759,19 @@ T-43 rule's first branch **fires surface-determinedly**:
 enormous aggregate scale. *(Editorial, zero weight: invisible at laboratory scale and binding at
 scale is the profile an emergent bound should have.)* **O-57 registered** — the collapse analogue,
 the staged emergent-tier target.
+
+---
+
+## T-41 DONE — **THE EXTERNAL ANCHORS ARE SOURCE-PINNED.** And two directives registered: D-25 (real-data grounding, tool-enforced) and the proof's architecture.
+
+`LANE_T41_EXTERNAL/CITATIONS.md`: azobenzene **t½ = 1.4 days at 35 °C, ΔH‡ = 0.915 eV** (ACS Cent.
+Sci., PMC9951306); **Weller & Moser, IEEE Trans. Magn. 35, 4423 (1999)** — onset `35 ± 2`, `~60` for
+10-year; **NAND detrapping `E_a ≈ 1.0 eV`** + JEDEC 1-yr EOL. All three sit inside the model
+envelopes; the census's NAND 1.60 eV annotated to the pinned 1.0–1.6 range. Knowledge-cited →
+**source-pinned**.
+
+**D-25 (the principal):** the model is grounded in real record data, never the toy category —
+world-tier surfaces carry provenance with pinned sources, corner carriers self-declare DEF-A, and
+the constructor **refuses** undeclared surfaces once T-46 lands. **And the architecture: THE MODEL
+IS THE OVERALL REPRESENTATION OF THE PROOF** — PROOF_V002 becomes the narration of `project_model`,
+every proof step a model function with its validator gate and grounding. T-16's text carries it.

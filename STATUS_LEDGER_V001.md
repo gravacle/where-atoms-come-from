@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | CANDIDATE | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS | FORMAL |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 2 | 2 | 11 | 2 | 4 | 28 | 3 | 12 | 9 | 3 | 3 | 178 |
+| 2 | 2 | 11 | 2 | 5 | 28 | 3 | 12 | 9 | 3 | 3 | 178 |
 
-**257 rows.**
+**258 rows.**
 
 ---
 
@@ -83,6 +83,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **D-22** | A PERMUTATION-SYMMETRIC CARRIER CONTAINS NO GEOMETRY TO DETECT. Both carriers used throughout this program's separation tests have full qubit-permutation invariance, so no observable -- record-built or not -- can depend on separation or orientation there; non-record operators show the same flatness to 6.4e-16. The correct statement of every separation null is THESE CARRIERS HAVE NO GEOMETRY, not RECORDS HAVE NO METRIC FORM. Before reading a separation null, verify the carrier admits a separation at all | **FORMAL** | exact/residual workflow adversarial verification | — | — |
 | **D-23** | A RESULT THAT DEPENDS ON A LOW-DIMENSIONAL CONVENTION IS SCOPED TO THE PROXY AND MUST SAY SO. Clause (v)'s truth on a 1D carrier turns on whether the whole chain counts as a contractible region -- a stipulation, not a measurement. The program adopts the standard QEC reading for 1D rings and treats them as a boundary-constrained proxy; the toric code, where protection is manifold homology, is the canonical benchmark. Label every claim by which it rests on | **FORMAL** | O-49, decided by the principal | — | — |
 | **D-24** | EACH CLASSICAL CONCEPT MUST EARN ITS PLACE (the principal, 2026-08-20). The no-import discipline generalised from gravity to EVERY classical concept -- energy, entropy, distance, field, exponent. A concept has earned its place at the record level only when the record surface's own behavior exhibits it without it being assumed: additivity was earned by an exact-zero defect (C-71 machinery), sign-definiteness was earned by the act of writing (C-72), and no falloff exponent has been earned by anything. A concept that has not earned its place appears in no claim, no test, and no READ | **DEFINED** | the principal, TD-1 discussion | — | — |
+| **D-25** | THE MODEL IS GROUNDED IN REAL RECORD DATA -- NEVER THE TOY CATEGORY (the principal, 2026-08-20). Enforcement, staged: (1) every world-tier RecordSurface carries PROVENANCE -- the real record it models, its constants' pinned sources -- and corner carriers must self-declare DEF-A tier so nothing silently pretends; the constructor will REFUSE undeclared surfaces once T-46's build lands (tool-refusal, not checklist). (2) The validators carry the SOURCE-PINNED external anchors as gated checks: azobenzene t1/2 = 1.4 d at 35 C with dH = 0.915 eV (ACS Cent. Sci., PMC9951306); Weller-Moser IEEE Trans. Magn. 35:4423 (1999), onset 35 +/- 2 and ~60 for 10-year; NAND detrapping E_a ~ 1.0 eV with the JEDEC 1-yr EOL spec. (3) THE MODEL IS THE OVERALL REPRESENTATION OF THE PROOF: PROOF_V002 is structured as the model's narration -- every proof step a model function with its validator gate and its grounding | **DEFINED** | the principal; LANE_T41_EXTERNAL/CITATIONS.md | — | — |
 
 ## A. THE THREE ROLES — the charter's question
 
