@@ -8725,3 +8725,56 @@ Schur, needing no large `N`, immune to both the weakness and threshold objection
 was tried and closed exactly.** It is **not** a proof that every escape fails: a carrier whose durable
 records generate a **proper subalgebra** *and* still satisfies clause (iv) has not been ruled out by
 construction — only not found here. **That is the open edge**, registered as **O-43**.
+
+---
+
+## O-44 — **WHAT FAILS IS NOT WRITABILITY. IT IS *FREE* WRITABILITY. O-42's EXCLUSION IS AN ARTIFACT OF DEF-A.**
+
+`LANE_O44_ADMISSIBLE`. The principal: *"why did we forbid records from carrying configuration energy?
+We shouldn't be assuming anything if we're looking for the truth."*
+
+**We did not forbid it deliberately. It follows from one definition:**
+
+| source | text |
+|---|---|
+| `CORE_FRAMEWORK_V001.md` line 26 | **`ADMISSIBLE U ≝ a unitary with [U,H] = 0`** — (O-4, **PROVISIONAL**) |
+| ledger O-4, evidence | *"PROVISIONAL — one carrier family, and DEF-A has NO working fallback"* |
+| ledger O-4, item | *"The second disjunct **'or a physical channel' is UNTESTED**"* |
+
+**The derivation uses it essentially.** Clause (iv) gives an *admissible* `U` with `U†RU = −R`. If
+`[U,H] = 0` then `U P_E U† = P_E`, so `Tr(P_E R) = Tr(P_E URU†) = −Tr(P_E R)`, hence `Tr(P_E R) = 0`.
+**Remove `[U,H] = 0` and nothing forces it. The O-42 exclusion collapses.**
+
+### MEASURED, WITH WRITERS SEARCHED OVER THE FULL PAULI GROUP — NEVER NOMINATED
+
+| carrier | clause (iv) under DEF-A | **admissible writer** | **physical writer** |
+|---|---|---|---|
+| `H = −(Xⁿ + Zⁿ)` *(control)* | **HOLDS** | **FOUND**, weight 2, `‖[W,H]‖ = 0.000e+00`, cost **+0.000000** | found, weight 1, cost +2.000000 |
+| `H = H_stab − Σcᵢ Rᵢ` | **FAILS** (`\|Tr(P_E R)\| = 3.000`) | **NONE EXISTS** in the Pauli group | **FOUND**, weight 1, cost **+2.600000** |
+
+> ### **WHERE THE CARRIER ASSIGNS A CONFIGURATION ENERGY, NO FREE WRITER EXISTS — BUT A PHYSICAL ONE
+> ### DOES, AT WEIGHT 1, COSTING `+2.600000` OF WORK. THE RECORD REMAINS A BIT, REMAINS DURABLE,
+> ### REMAINS NON-TRIVIAL, AND REMAINS FLIPPABLE BY AN OPERATOR THE SEARCH ACTUALLY FOUND.**
+
+> ### **WHAT FAILS IS NOT WRITABILITY. WHAT FAILS IS *FREE* WRITABILITY.**
+
+**A unitary commuting with `H` does no work on the state's energy.** So DEF-A amounts to requiring
+that **writing be free** — and a free write cannot distinguish energies. **Landauer puts the floor on
+a real write at `kT ln 2`, not at zero.**
+
+### WHAT THIS DOES AND DOES NOT DO
+
+**It removes a blocker.** Records can carry a configuration energy provided writing is allowed to cost
+work — which is what writing costs in the world. **It does not show that gravity emerges.**
+
+**It reopens O-42**, which appeared to close the question permanently. **And it reopens C-47**, whose
+extensive quantity was registered as *"bought at the cost of independent writability"* — a cost that,
+under the physical reading, is simply **work done.**
+
+### ERRATUM, LOGGED — THE SIXTH TIME ON THIS EXACT FAILURE
+
+**v1 NOMINATED the writer** as an X-string on sites `0..i`, and its READ then asserted the unmodified
+write was free with `‖[W,H]‖ = 0` **while the table directly above it printed `1.600e+01` and a cost
+of `+2.000000`.** `X₀` flips `Z₀Z₁` but does not commute with `Zⁿ`. **Writers are now searched over
+the full Pauli group.** This is the sixth time this program has gone wrong by nominating a
+logical or writer operator instead of computing one.
