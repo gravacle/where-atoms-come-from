@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 107 | 2 | 8 | 1 | 20 | 3 | 9 | 7 | 3 | 3 |
+| 110 | 2 | 8 | 1 | 21 | 3 | 9 | 7 | 3 | 3 |
 
-**163 rows.**
+**167 rows.**
 
 ---
 
@@ -119,6 +119,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-26** | A FLAT SET OF WRITERS IS ALWAYS AVAILABLE, AND CLAUSE (iv) IS WHY. Clause (iii) puts the record in a degenerate eigenspace where admissibility constrains nothing; clause (iv)'s trace balance makes the joint blocks equal; equal blocks identify position-by-position. SCOPE: about WRITERS. It does NOT establish that record geometry is flat | **PROVED** | LANE_O8_NONABELIAN | — | a carrier meeting the five clauses with no commuting writer set |
 | **C-27** | CARRIER CURVATURE AND RECORD CONTENT ARE INDEPENDENT. On the toric carrier, records exist with the same count and the same operators in the flat sector, in two-flux sectors, and with all four faces curved; and writing any record leaves every plaquette holonomy at 1.00000. The triad's proportionality has coefficient zero here | **PROVED** | LANE_H15_CARRIER, the first measurement of the object H-9 names | — | a sector whose curvature changes the record count, or a record that shifts a holonomy |
 | **C-28** | A BIANCHI-LIKE CLOSURE IS PRESENT IN THE CARRIER. \|\|prod_p B_p - I\|\| = 0.000e+00, so every link lying in exactly two faces forces the number of curved faces to be EVEN and a single flux is forbidden. This is H-9's 'curvature cannot appear or disappear arbitrarily' -- present, and a property of the carrier's incidence structure, not coupled to record content | **PROVED** | LANE_H15_CARRIER | — | a carrier state with an odd number of curved faces |
+| **C-29** | TRANSPORT BETWEEN RECORDS IS THE IDENTITY ON EVERY ABELIAN CARRIER. A record taken around another returns h g h^-1 = g. Since every carrier in this program has gauge group Z_2, the program's entire negative record on emergence was measured where the effect is identically zero by construction -- uninformative, not negative | **PROVED** | LANE_O29_NONABELIAN, Z_2 control column: 0 of 4 changed, 0 of 8 order, 0 of 8 density | — | an abelian group in which conjugation is non-trivial |
+| **C-30** | PATH-DEPENDENT TRANSPORT BETWEEN RECORDS IS PRESENT ON A NON-ABELIAN CARRIER, AND IT BELONGS TO THE SET OF RECORDS RATHER THAN TO ANY ONE. On S_3: the record comes back changed in 18 of 36 configurations, the order of encirclement matters in 54 of 216, and each additional enclosed record changes the outcome in half of all sequences. Two records are required for the quantity to exist at all | **PROVED** | LANE_O29_NONABELIAN | — | a non-abelian carrier where conjugation leaves every record fixed |
+| **C-31** | CLOSURE AND DETERMINATION ARE NOT EMERGENCE SIGNATURES. The ordered product of record holonomies closes at fraction 1/\|G\| and the last record is determined by the others -- on the abelian control as well as the non-abelian carrier. Both are properties of being a group at all | **PROVED** | LANE_O29_NONABELIAN, Z_2 control returns the same answer | — | — |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 
@@ -174,6 +177,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-27** | ACTION IS NOT DEFINED IN THIS PROGRAM. A physical action needs a generating Hamiltonian and a duration -- U = exp(-iHt) with a cost in H and t -- not an operator norm chosen for convenience. Until it is defined, 'least action selects curvature' is suggestive and cannot be registered as a selector | **PROVED** | answered: the minimum-action writer is FLAT (4.4429 = 4*pi/sqrt(2), holonomy 2.9e-15), and every curved sample costs more. O-26 compared against the CANONICAL flat writer, not the cheapest one | — | — |
 | **O-28** | THE MODEL CAPS AT 20 MINIMAL PROJECTIONS. A dim-24 carrier with three 8-fold shells -- not a power of two, three records -- could not be measured for O-26. records() enumerates 2^k sign vectors; commuting_family should build greedily instead | **OPEN** | hit in LANE_O26_NONCODE | — | — |
 | **O-29** | THE ABELIAN CARRIER HAS NOTHING TO ROTATE. Z2 holonomies take values in {+1,-1} -- a SIGN, and a sign carries no frame rotation, so H-9's phase/frame mismatch has no room to appear. A carrier whose link variables take values in a group with genuine internal structure would give the transport something to rotate. Untested | **OPEN** | created by H-15; this is where the emergence question now lives | — | — |
+| **O-30** | NO MONOTONE DENSITY LAW IS VISIBLE ON S_3. Transport outcomes are bounded by the conjugacy class, \|class\| = 3, so 'more enclosed records -> more transport' cannot appear on a group this small. H-9's density signature needs a larger non-abelian carrier before it can be tested | **OPEN** | created by O-29; H-4's small-carrier warning applies | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 

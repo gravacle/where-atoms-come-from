@@ -1,0 +1,90 @@
+====================================================================================================
+O-29b   TRANSPORT BETWEEN RECORDS ON A NON-ABELIAN SURFACE
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+  Z_2  (every carrier built so far)   order 2,  record classes 2
+----------------------------------------------------------------------------------------------------
+  1. ONE RECORD AROUND ANOTHER   g -> h g h^-1
+     configurations where the record COMES BACK CHANGED: 0 of 4
+     -> IDENTITY -- the record is untouched, always
+  2. DENSITY: does each ADDITIONAL enclosed record contribute?
+     fix a record and a sequence of enclosed records; compare enclosing k against k+1
+         k -> k+1     sequences where the outcome CHANGES      of
+           1 -> 2                                       0       8
+           2 -> 3                                       0      16
+           3 -> 4                                       0      32
+  3. ORDER: enclose two records, h1 then h2, against h2 then h1
+     configurations where the ORDER MATTERS: 0 of 8
+     -> order is irrelevant -- no path memory
+  4. CLOSURE: on a closed surface the ORDERED product of all record holonomies must be e.
+     This is a constraint linking the records to EACH OTHER -- H-9's 'curvature cannot
+     appear arbitrarily'. How many placements of k records are admissible?
+        k records   admissible (prod = e)        of    fraction
+                2                       2         4    0.500000
+                3                       4         8    0.500000
+                4                       8        16    0.500000
+  5. CONTROL -- given the first k-1 records, how many choices remain for the last?
+     This is the group inverse z = p^-1 and must return 1 in ANY group. It is here as a
+     CONTROL: if a signature returns the same answer for Z_2 it discriminates nothing.
+     number of admissible completions, over all prefixes: [1]
+     -> determined -- as it must be in any group; NOT a discriminator
+
+----------------------------------------------------------------------------------------------------
+  S_3  (the first non-abelian carrier)   order 6,  record classes 3
+----------------------------------------------------------------------------------------------------
+  1. ONE RECORD AROUND ANOTHER   g -> h g h^-1
+     configurations where the record COMES BACK CHANGED: 18 of 36
+     -> TRANSPORT IS NON-TRIVIAL
+  2. DENSITY: does each ADDITIONAL enclosed record contribute?
+     fix a record and a sequence of enclosed records; compare enclosing k against k+1
+         k -> k+1     sequences where the outcome CHANGES      of
+           1 -> 2                                     108     216
+           2 -> 3                                     648    1296
+           3 -> 4                                    3888    7776
+  3. ORDER: enclose two records, h1 then h2, against h2 then h1
+     configurations where the ORDER MATTERS: 54 of 216
+     -> PATH-DEPENDENT MEMORY
+  4. CLOSURE: on a closed surface the ORDERED product of all record holonomies must be e.
+     This is a constraint linking the records to EACH OTHER -- H-9's 'curvature cannot
+     appear arbitrarily'. How many placements of k records are admissible?
+        k records   admissible (prod = e)        of    fraction
+                2                       6        36    0.166667
+                3                      36       216    0.166667
+                4                     216      1296    0.166667
+  5. CONTROL -- given the first k-1 records, how many choices remain for the last?
+     This is the group inverse z = p^-1 and must return 1 in ANY group. It is here as a
+     CONTROL: if a signature returns the same answer for Z_2 it discriminates nothing.
+     number of admissible completions, over all prefixes: [1]
+     -> determined -- as it must be in any group; NOT a discriminator
+
+====================================================================================================
+  READ
+====================================================================================================
+  Transport between records requires TWO records; no single record has it. It is the IDENTITY
+  for every abelian group, so on a Z_2 carrier a record taken around another comes back
+  UNCHANGED (0 of 4), the order never matters (0 of 8), and no additional enclosed record
+  changes anything (0 at every k).
+
+  THAT SINGLE FACT EXPLAINS THE PROGRAM'S ENTIRE NEGATIVE RECORD ON THIS QUESTION. Every
+  carrier built here has gauge group Z_2. The nulls were not evidence against emergence; they
+  were measured where the effect is identically zero by construction.
+
+  On S_3: the record COMES BACK CHANGED (18 of 36); the ORDER of encirclement MATTERS (54 of 216);
+  and EACH ADDITIONAL enclosed record changes the outcome in half of all sequences
+  (108/216, 648/1296, 3888/7776). Path-dependent transport between records is PRESENT.
+
+  WHICH SIGNATURES ACTUALLY DISCRIMINATE
+  signature                                  Z_2           S_3    discriminates?
+  record comes back changed                  0/4         18/36               YES
+  order of encirclement matters              0/8        54/216               YES
+  each added record contributes              0/8       108/216               YES
+  closure fraction                           2/4          6/36                no
+  last record determined                     [1]           [1]                no
+
+  Closure holds at fraction 1/|G| on BOTH carriers and the last record is determined on BOTH,
+  so neither is an emergence signature -- both are properties of being a group at all.
+
+  WHAT IS NOT HERE: a MONOTONE density law. The reachable outcomes are bounded by the
+  conjugacy class, |class| = 3 on S_3, so 'more records -> more transport' cannot be seen on a
+  group this small. That is H-4's small-carrier warning, and it is the next thing to measure.

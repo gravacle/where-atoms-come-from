@@ -7866,3 +7866,71 @@ gauge field has holonomies in `{±1}` — **a sign, and a sign carries no frame 
 whose link variables take values in a group with genuine internal structure would give the transport
 something to rotate. **That is where H-9's "phase/frame mismatch" could live, and it has not been
 tested.** Registered as **O-29**.
+
+---
+
+## O-29 — **THE PROGRAM'S ENTIRE NEGATIVE RECORD ON EMERGENCE WAS MEASURED WHERE THE EFFECT IS ZERO BY CONSTRUCTION.**
+
+`LANE_O29_NONABELIAN`. The principal, mid-run: *"Again we realize that we're trying to find where
+gravity emerges from the record surface."* **Emergence means the property belongs to the COLLECTION
+and to no single member. Every measurement in this program had been taken on ONE record's
+neighbourhood.** The object the question names is **transport BETWEEN records**, which requires at
+least two records to exist at all.
+
+### 1. A CARRIER WHERE CURVATURE CAN APPEAR
+
+Every carrier built here has gauge group `Z₂`, whose holonomies are `±1` — **a sign, which cannot
+rotate a frame.** And `Z_N` would not have helped: on the minimal torus the plaquette holonomy is the
+**group commutator** `g₁g₂g₁⁻¹g₂⁻¹`, trivial for **any** abelian group, `U(1)` included. **Only a
+non-abelian group gives non-trivial carrier curvature on a torus.** Smallest is `S₃`, Hilbert space
+`|G|^edges = 36`.
+
+| sector | configurations | **record classes** |
+|---|---|---|
+| **flat** (holonomy `= e`) | 18 | **8** |
+| **curved** | 18 | **3** |
+
+Curvature is a **group element**, and **transport disagrees with itself in 18 of 36 configurations.**
+Curvature also changes what the carrier can hold, 8 classes against 3 — **the first non-trivial
+curvature/record coupling in the program.**
+
+### 2. TRANSPORT BETWEEN RECORDS — WHICH SIGNATURES DISCRIMINATE
+
+A record transported around a record `h` returns conjugated, `g → h g h⁻¹`.
+
+| signature | `Z₂` | `S₃` | discriminates? |
+|---|---|---|---|
+| record comes back changed | **0 / 4** | **18 / 36** | **YES** |
+| order of encirclement matters | **0 / 8** | **54 / 216** | **YES** |
+| each added record contributes | **0 / 8** | **108 / 216** | **YES** |
+| closure fraction | 2 / 4 | 6 / 36 | no |
+| last record determined | `[1]` | `[1]` | no |
+
+> ### **ON AN ABELIAN CARRIER, TRANSPORT BETWEEN RECORDS IS THE IDENTITY. A record taken around
+> ### another COMES BACK UNCHANGED, ALWAYS. THAT SINGLE FACT EXPLAINS EVERY NULL THIS PROGRAM HAS
+> ### RECORDED ON THE EMERGENCE QUESTION — THEY WERE NOT EVIDENCE AGAINST EMERGENCE, THEY WERE
+> ### MEASURED WHERE THE EFFECT IS IDENTICALLY ZERO BY CONSTRUCTION.**
+
+> ### **ON A NON-ABELIAN CARRIER THE RECORD COMES BACK CHANGED, THE ORDER OF ENCIRCLEMENT MATTERS,
+> ### AND EACH ADDITIONAL ENCLOSED RECORD CHANGES THE OUTCOME. PATH-DEPENDENT TRANSPORT BETWEEN
+> ### RECORDS IS PRESENT — AND IT BELONGS TO THE SET OF RECORDS, NOT TO ANY ONE OF THEM.**
+
+### 3. WHAT DOES **NOT** DISCRIMINATE, AND WHAT IS ABSENT
+
+Closure holds at fraction `1/|G|` on **both** carriers, and "given all but one, the last is
+determined" returns `[1]` on **both** — that is the group inverse `z = p⁻¹`, true in any group.
+**Neither is an emergence signature; both are properties of being a group at all.**
+
+**A MONOTONE DENSITY LAW IS ABSENT.** Reachable outcomes are bounded by the conjugacy class,
+`|class| = 3` on `S₃`, so *"more records → more transport"* **cannot** be seen on a group this small.
+**H-4's small-carrier warning, not a null.** Registered as **O-30**.
+
+### ERRATA, LOGGED
+
+- **v1 READ claimed the change GROWS with enclosed records** while its own table showed `3, 3, 3` —
+  saturated. The claim contradicted the data printed directly above it.
+- **v1 item 4 formed the unordered product of every group element** — not well-defined for a
+  non-abelian group, and not a measurement.
+- **v2 READ called closure "THE STRONGEST RESULT"** when item 5 returns `[1]` for `Z₂` as well.
+  **A signature that gives the same answer on the control discriminates nothing.** `Z₂` is now
+  carried as an explicit control column in every row.

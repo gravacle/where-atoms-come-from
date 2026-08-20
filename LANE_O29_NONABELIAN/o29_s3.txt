@@ -1,0 +1,31 @@
+====================================================================================================
+O-29   NON-ABELIAN CARRIER: S_3 ON THE MINIMAL TORUS
+====================================================================================================
+  group S_3, order 6; minimal torus cell structure: 1 vertex, 2 edges, 1 face
+  Hilbert space |G|^edges = 36
+  non-commuting pairs: 18 of 36  -> the group commutator is NOT always trivial
+
+1.  CARRIER CURVATURE IS A GROUP ELEMENT, NOT A SIGN
+  holonomy g1g2g1^-1g2^-1       # configurations   flat?
+  (0, 1, 2)                                   18    FLAT
+  (1, 2, 0)                                    9  CURVED
+  (2, 0, 1)                                    9  CURVED
+
+2.  THE FLAT SECTOR IS THE RECORD SPACE
+  flat configurations (commuting pairs): 18 of 36
+  modulo gauge (simultaneous conjugation): 8 classes
+  -> the record space has 8 elements = Hom(pi_1(T^2), S_3)/conj
+
+3.  DOES CURVATURE CHANGE WHAT THE CARRIER CAN HOLD?
+  sector                  configurations  gauge classes
+  FLAT (curvature = e)                18              8
+  CURVED                              18              3
+
+4.  IS THE HOLONOMY PATH-DEPENDENT?  (H-9's actual question)
+    transport around the face one way vs the other: g1g2g1^-1g2^-1 against g2g1g2^-1g1^-1
+    configurations where the two orders DISAGREE: 18 of 36
+    -> PATH-DEPENDENT: the two chains give different frame elements
+
+  READ: on a Z_2 carrier every holonomy is +-1 and both orders always agree, so H-9's mismatch
+  cannot occur. Here it can. This is the first carrier in the program where a non-zero answer
+  to the criterion has room to exist.
