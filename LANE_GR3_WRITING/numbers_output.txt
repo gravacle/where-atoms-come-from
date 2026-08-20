@@ -1,0 +1,43 @@
+kT(300K) = 4.142e-21 J = 25.9 meV ; kT ln2 = 2.871e-21 J
+
+--- 1. HDD grain (CoCrPt-oxide perpendicular media) ---
+V = 5.03e-25 m^3, moment m = 3.02e-19 J/T, barrier KuV = 1.51e-19 J = 36 kT
+  Zeeman splitting 2mB @ Earth field 50 uT: 3.02e-23 J = 0.00728 kT
+  Zeeman splitting 2mB @ neighbour-grain stray 20 mT [E]: 1.21e-20 J = 2.91 kT
+  Zeeman splitting 2mB @ write field 1 T [E head field 1-2.4 T]: 6.03e-19 J = 146 kT
+  hysteresis write loss ~ 2KuV per grain = 73 kT; ~10 grains/bit -> ~728 kT/bit  [E]
+
+--- 2. Flash floating gate ---
+stored electrostatic energy ~ (1/2)N e dV = 2.40e-17 J = 5802 kT  (splitting between record values)
+single electron across 3.1 eV SiO2 barrier: 120 kT barrier per carrier [S]
+program energy, intrinsic charge transport ~ N e Vpp = 2.88e-16 J = 69627 kT; device-level ~0.1-100 pJ/bit = 2.4e+07-2.4e+10 kT [E]
+
+--- 3. Zircon U-Pb ---
+238U->206Pb chain Q = 51.7 MeV = 8.28e-12 J = 2.00e+09 kT per decayed atom
+alpha-decay Coulomb barrier ~25-30 MeV [S]; t_half = 4.47 Gyr [S]
+
+--- 4. Photographic grain (AgBr latent image) ---
+minimum latent image ~4 Ag atoms, ~4-10 absorbed photons at 2.5 eV: write energy >= 387 kT [S: Gurney-Mott]
+stored chemical energy of Ag_n cluster vs lattice: order 1 eV scale = ~40 kT/atom [B: 0.1-1 eV/atom]
+
+--- 5. DNA base identity ---
+sequence isomers differ by ~1-3 kcal/mol duplex stability = 1.7-5.0 kT [S: SantaLucia NN params]
+depurination/hydrolysis activation ~1.1-1.3 eV = 46 kT [S]; replication write cost ~ 2 ATP+2 PPi ~ 84 kT/base [S: ~30-50 kT]
+
+--- 6. Molecular chirality ---
+parity-violating energy difference ~1e-11 J/mol = 4.0e-15 kT per molecule [B: <=1e-13 kT]
+racemization barrier (typical stereocentre) 100-200 kJ/mol = 40-80 kT [S]
+
+--- Balance-defect tanh(Delta/2kT) on the JOINT (system+bath) eigenspace ---
+  isolated grain, Earth field      Delta = 0.007 kT -> |Tr(P_E R)|/dim ~ 0.0035
+  grain among neighbours           Delta = 3 kT -> |Tr(P_E R)|/dim ~ 0.905
+  flash                            Delta = 7.5e+03 kT -> |Tr(P_E R)|/dim ~ 1
+  zircon (per atom)                Delta = 2e+09 kT -> |Tr(P_E R)|/dim ~ 1
+  chirality                        Delta = 1e-13 kT -> |Tr(P_E R)|/dim ~ 5e-14
+
+--- Arrhenius lifetime check: does splitting threaten retention? ---
+  HDD grain: barrier 45 kT, splitting 3.0 kT -> higher-well lifetime 7.79e+09 s (2.5e+02 yr)
+  tape particle: barrier 1000 kT, splitting 5.0 kT -> higher-well lifetime > 1e290 s (astronomical)
+
+--- tape particle Earth-field splitting ---
+gamma-Fe2O3 particle 300x50x50 nm: m=2.62e-16 J/T, 2mB(Earth) = 6.34 kT

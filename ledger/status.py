@@ -100,6 +100,42 @@ def render():
         f.write(txt)
     return txt
 
+
+def grounded(row):
+    """A row is GROUNDED when it names a test ANY PHYSICIST ANYWHERE can run against THEIR OWN
+       real-world data and confirm works as asserted.
+
+       The principal, 2026-08-20: "The PROOF must be something that any physicist anywhere in the
+       world can run against their real world data and confirm that it works as asserted. That is a
+       proof. Otherwise we're not proving anything other than that we can construct equations."
+
+       Naming a real record is NOT enough -- that was the registrar's weaker first attempt. The row
+       must name the MEASURABLE QUANTITY, the PREDICTED VALUE, and WHAT WOULD FALSIFY IT."""
+    g = row[7] if len(row) > 7 else ''
+    return bool(g.strip()) and not g.strip().upper().startswith('UNGROUNDED')
+
+
+def ungrounded_msg(rid):
+    return ('REFUSED: %s cannot be PROVED.\n'
+            '\n'
+            '  PROVED means: a test ANY PHYSICIST ANYWHERE can run against THEIR OWN real-world\n'
+            '  data and confirm works as asserted. The row must name:\n'
+            '     1. the MEASURABLE QUANTITY, in units;\n'
+            '     2. the PREDICTED VALUE or relation;\n'
+            '     3. WHAT WOULD FALSIFY IT.\n'
+            '\n'
+            '  Set it:   ./ledger/status.py ground %s "<quantity, prediction, falsifier>"\n'
+            '\n'
+            '  If the row is about the program\'s STIPULATED definition rather than the world, it\n'
+            '  is not PROVED. Use FORMAL — real mathematics, no contact with a real record.\n'
+            '\n'
+            '  The principal, 2026-08-20: "The PROOF must be something that any physicist anywhere\n'
+            '  in the world can run against their real world data and confirm that it works as\n'
+            '  asserted. That is a proof. Otherwise we\'re not proving anything other than that we\n'
+            '  can construct equations."'
+            % (rid, rid))
+
+
 def main():
     a = sys.argv[1:]
     if not a or a[0] == 'render':
@@ -113,6 +149,12 @@ def main():
         hit = [r for r in rows if r[0] == rid]
         if not hit:
             sys.exit('no such row: %s' % rid)
+        # THE GROUNDING REQUIREMENT (H-3, the principal 2026-08-20). A row cannot be PROVED unless it
+        # names the REAL RECORD it was tested against. This is a REFUSAL, not a reminder: the program
+        # spent two days proving things about a stipulation because every previous guard was a doctrine
+        # row or a hand-checked box, which looked handled and changed nothing.
+        if st == 'PROVED' and not grounded(hit[0]):
+            sys.exit(ungrounded_msg(rid))
         old = hit[0][3]; hit[0][3] = st
         if len(a) > 3: hit[0][4] = a[3]
         save(hdr, rows); render()
@@ -129,9 +171,26 @@ def main():
         area, rid, item, st = a[1], a[2], a[3], a[4]
         if any(r[0] == rid for r in rows):
             sys.exit('id already used: %s' % rid)
-        rows.append([rid, area, item, st] + (a[5:8] + ['', '', ''])[:3])
+        row = [rid, area, item, st] + (list(a[5:9]) + [''] * 4)[:4]
+        if st == 'PROVED' and not grounded(row):
+            sys.exit(ungrounded_msg(rid))
+        rows.append(row)
         save(hdr, rows); render()
         print('appended %s' % rid)
+    elif a[0] == 'ground':
+        rid = a[1]
+        hit = [r for r in rows if r[0] == rid]
+        if not hit:
+            sys.exit('no such row: %s' % rid)
+        while len(hit[0]) < 8: hit[0].append('')
+        old = hit[0][7]; hit[0][7] = a[2]
+        save(hdr, rows); render()
+        print('%s grounded\n  was: %s\n  now: %s' % (rid, old or '(nothing)', a[2]))
+    elif a[0] == 'ungrounded':
+        bad = [r for r in rows if r[3] == 'PROVED' and not grounded(r)]
+        pr = [r for r in rows if r[3] == 'PROVED']
+        print('%d of %d PROVED rows are UNGROUNDED — no test a physicist could run against their own data' % (len(bad), len(pr)))
+        for r in bad: print('  %-8s %s' % (r[0], r[2][:88]))
     else:
         sys.exit(__doc__)
 

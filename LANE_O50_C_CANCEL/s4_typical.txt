@@ -1,0 +1,166 @@
+========================================================================================================
+O-50-C  STEP 4.   MEAN-ZERO IS NOT CANCELLATION.  EXACT RATIONALS TO m = 4096 AND OUT-OF-SAMPLE.
+========================================================================================================
+
+D-23 SCOPE: TORUS.  m = 2k records on k disjoint L x L tori (step 1); G_W simply transitive
+            (step 2); uniform measure is the unique writer-invariant one (step 3).
+
+--------------------------------------------------------------------------------------------------------
+  A.  THE TWO STATEMENTS, SIDE BY SIDE, EXACTLY.  F(s) = s_1 + ... + s_m .
+--------------------------------------------------------------------------------------------------------
+  MEAN(F)   is the average over all 2^m configurations.
+  E|F|      is the average MAGNITUDE -- what the functional is worth at a typical configuration.
+  MAX|F|    is what it is worth at an ORDERED configuration.
+  COHERENCE is E|F| / MAX|F| -- C-62's object, the fraction of the maximum that survives.
+
+      m  MEAN(F) exact              E|F| exact (rational)     E|F| decimal  MAX|F|   COHERENCE = E|F|/m  brute-force check
+      2              0                                  1     1.0000000000       2       0.500000000000             AGREES
+      4              0                                3/2     1.5000000000       4       0.375000000000             AGREES
+      6              0                               15/8     1.8750000000       6       0.312500000000             AGREES
+      8              0                              35/16     2.1875000000       8       0.273437500000             AGREES
+     10              0                            315/128     2.4609375000      10       0.246093750000             AGREES
+     12              0                            693/256     2.7070312500      12       0.225585937500             AGREES
+     14              0                          3003/1024     2.9326171875      14       0.209472656250             AGREES
+     16              0                          6435/2048     3.1420898438      16       0.196380615234             AGREES
+     18              0                       109395/32768     3.3384704590      18       0.185470581055             AGREES
+     20              0                       230945/65536     3.5239410400      20       0.176197052002             AGREES
+
+  READ: MEAN(F) is EXACTLY 0 as a rational at every m -- the cancellation law holds, exactly, as
+  a statement about the AVERAGE.  E|F| is NOT zero at any m, and it GROWS.  The closed form
+  E|F| = m*C(m-1,floor((m-1)/2))/2^(m-1) agrees with brute-force enumeration of all 2^m
+  configurations at every m up to 20, exactly, as rationals.
+
+  THE ABSOLUTE RESIDUAL, WHICH THE RATIO HIDES:
+        m     COHERENCE E|F|/m      E|F| itself     E|F|/sqrt(m)   E[F^2] exact   sqrt(E[F^2])
+        2       0.500000000000         1.000000   0.707106781187              2       1.414214
+        8       0.273437500000         2.187500   0.773398041923              8       2.828427
+       32       0.139949934091         4.478398   0.791676379381             32       5.656854
+      128       0.070386092170         9.009420   0.796327729194            128      11.313708
+      512       0.035244635486        18.045253   0.797495064080            512      22.627417
+     2048       0.017628772405        36.103726   0.797787168734           2048      45.254834
+     8192       0.008815193220        72.214063   0.797860211670           8192      90.509668
+    32768       0.004407697493       144.431431   0.797878473450          32768     181.019336
+
+  READ: the RATIO falls as m^(-1/2) and the MAGNITUDE rises as m^(+1/2).  E[F^2] = m exactly at
+  every m (each c_i^2 = 1, cross terms have mean 0), so the root-mean-square residual is exactly
+  sqrt(m).  E|F|/sqrt(m) is flat at 0.7978... = sqrt(2/pi).
+
+  ==> THE CANCELLATION IS A FACTOR OF m^(-1/2), NOT A ZERO.  At a typical configuration the
+      functional is worth sqrt(2m/pi), not 0.  Calling this 'cancellation' is correct only for
+      the RATIO to the maximum; the residual itself DIVERGES.  It is SUB-EXTENSIVE, which is a
+      different and weaker failure than vanishing -- and it is the failure that matters, because
+      a source must be EXTENSIVE, i.e. Theta(m), not merely non-zero.
+
+--------------------------------------------------------------------------------------------------------
+  B.  THE LAW, DIGIT FOR DIGIT, AND OUT-OF-SAMPLE (D-20: prediction, not fitting)
+--------------------------------------------------------------------------------------------------------
+  CLAIM UNDER TEST (C-62, measured on the chain): coherence = sqrt(2/pi) * m^(-1/2).
+  Here it is an EXACT CLOSED FORM on the torus, so no fit is involved and D-20's short-range
+  objection cannot apply: coherence(m) = C(m-1, floor((m-1)/2)) / 2^(m-1), a rational number.
+
+  sqrt(2/pi) to 30 digits = 0.797884560802865355879892119869
+
+         m      coherence * sqrt(m)  (exact -> 30 digits)  matching digits vs sqrt(2/pi)
+         4               0.750000000000000000000000000000                              2
+        16               0.785522460937500000000000000000                              2
+        64               0.794774029983735172226466669798                              3
+       256               0.797105758978242419812475473880                              4
+      1024               0.797689788575345398791508230408                              4
+      4096               0.797835863280656612956105266520                              5
+     16384               0.797872386143548913953299324591                              5
+     65536               0.797881517120618461759060137628                              6
+
+  READ: the exact rational, times sqrt(m), converges to sqrt(2/pi) digit by digit; the number of
+  agreeing digits grows with m exactly as an m^(-1) correction predicts (the exact expansion is
+  sqrt(2/pi)*(1 - 1/(4m) + O(m^-2))).
+
+  OUT-OF-SAMPLE.  The law is FIXED from m <= 256 only, then used to PREDICT m far outside that
+  range; the prediction is compared to the exact rational, which was not used to build it.
+
+   m (out of sample)   PREDICTED sqrt(2/pi)/sqrt(m)                EXACT coherence   relative error
+                4096         0.01246694626254477119         0.01246618536376025958         6.104e-5   exact-Fraction cross-check: True
+               65536         0.00311673656563619280         0.00311672467625241587         3.815e-6   exact-Fraction cross-check: True
+              262144         0.00155836828281809640         0.00155836679664299824         9.537e-7   
+             1048576         0.00077918414140904820         0.00077918395563709449         2.384e-7   
+             4194304         0.00038959207070452410         0.00038959204748302781         5.960e-8   
+
+  READ: the m <= 256 law predicts the exact value out to m = 4194304 with a relative error that
+  falls exactly as 1/(4m) -- the predicted correction, not a fitted one.  THE LAW IS NOT A
+  SHORT-RANGE FIT.  The two smallest rows carry an exact-big-integer Fraction cross-check of the
+  Decimal product evaluation, so the large-m rows rest on a verified evaluator.
+
+--------------------------------------------------------------------------------------------------------
+  C.  THE GENERAL STATEMENT, NOT JUST THE LINEAR ONE.  PARSEVAL, EXACTLY.
+--------------------------------------------------------------------------------------------------------
+  For ANY functional f on the 2^m record configurations, expanded exactly as f = sum_S fhat(S)
+  chi_S, two identities hold with no approximation:
+
+      MEAN(f)      = fhat(EMPTY)                                  [the RECORD-BLIND part]
+      VAR(f)       = sum over NON-EMPTY S of fhat(S)^2            [the RECORD-DEPENDENT part]
+
+  so the typical value of f is  fhat(EMPTY) +- sqrt(VAR), EXACTLY, for every functional.
+
+  ==> THE EXTENSIVE / RESPONSIVE DICHOTOMY, and it is an EXACT ARGUMENT, not a trend:
+      * the only part of f that is the SAME at every configuration is fhat(EMPTY).  That part can
+        be extensive, and it is RECORD-BLIND: no write changes it.  (This is C-61 at the record
+        level, now as an identity.)
+      * everything that RESPONDS to a write lives in the non-trivial characters, has mean
+        EXACTLY 0, and therefore takes BOTH SIGNS.  A quantity with mean exactly 0 that is not
+        identically 0 is positive somewhere and negative somewhere.
+      * therefore NO functional of the record configuration is both RESPONSIVE TO WRITING and
+        SIGN-DEFINITE IN ITS RESPONSE.  That is exactly the pair of properties a source needs.
+
+  Verified exactly on random rational functionals (and note VAR is computed both ways):
+      m   fhat(EMPTY) = MEAN         VAR direct  sum_{{S != 0}} fhat^2  agree?  takes both signs?
+      2                 -9/4             315/16                 315/16    True               True
+      3                  1/4             711/16                 711/16    True               True
+      4                 -1/2              367/8                  367/8    True               True
+      5                39/32         39087/1024             39087/1024    True               True
+      6                35/64        116855/4096            116855/4096    True               True
+
+  CONTROL (D-15).  A functional whose typical value IS extensive, so the instrument registers
+  accumulation when accumulation is there.  N_+(s) = number of records reading +1.
+
+       m  MEAN(N_+) exact    sqrt(VAR) exact                typical N_+  extensive?  record-DEPENDENT part
+       4                2                  1                  2 +- 1.00         YES       1.00 = sqrt(m)/2
+      16                8                  2                  8 +- 2.00         YES       2.00 = sqrt(m)/2
+      64               32                  4                 32 +- 4.00         YES       4.00 = sqrt(m)/2
+     256              128                  8                128 +- 8.00         YES       8.00 = sqrt(m)/2
+    1024              512                 16               512 +- 16.00         YES      16.00 = sqrt(m)/2
+
+  READ: N_+ IS extensive and IS sign-definite -- and its extensive part is the CONSTANT m/2,
+  which is identical at every configuration and therefore carries no record information at all.
+  Its configuration-DEPENDENT part is sqrt(m)/2.  The instrument does register the extensive
+  column as YES, so a genuinely extensive record functional would not be missed; the finding is
+  that its extensive part is the record-blind constant.
+
+  N_+ /m = 1/2 + O(m^(-1/2)) at EVERY typical configuration.  A quantity that takes the same
+  value to relative accuracy m^(-1/2) at every typical configuration cannot distinguish one
+  configuration from another, which is what 'carrying record information' means.
+
+--------------------------------------------------------------------------------------------------------
+  D.  CAN A DIFFERENT WEIGHTING ESCAPE?  THE EXACT TRADEOFF.  (drops the D-22 uniform weights)
+--------------------------------------------------------------------------------------------------------
+  Section A used equal weights because step 1 MEASURED Aut(carrier) transitive on records.  Drop
+  that and allow ANY weights c_i.  Then, exactly:
+        MAX|F| = ||c||_1 (attained at an ordered configuration)   TYPICAL |F| ~ ||c||_2 .
+  and the coherence ratio is ||c||_2 / ||c||_1, which lies in [1/sqrt(m), 1] for every c.
+  The lower end is UNIFORM weights; the upper end is ALL WEIGHT ON ONE RECORD.
+
+  weight profile c (m = 64)               ||c||_1      ||c||_2      ratio  participation  extensive?
+  uniform  c_i = 1                        64.0000       8.0000     0.1250             32         YES
+  power law c_i = 1/i                      4.7439       1.2765     0.2691              6          no
+  power law c_i = 1/i^2                    1.6294       1.0403     0.6385              1          no
+  geometric c_i = 2^-i                     2.0000       1.1547     0.5774              1          no
+  top 8 records only                       8.0000       2.8284     0.3536              4          no
+  top 1 record only                        1.0000       1.0000     1.0000              1          no
+  1/sqrt(m) for reference                                          0.1250
+
+  READ: the ratio reaches 1 only when the weight collapses onto ONE record -- participation 1 --
+  at which point the functional is not extensive at all: it is a single bit.  Every profile that
+  SPREADS weight over Theta(m) records sits at ratio O(m^(-1/2)).  This is an exact inequality,
+  not a search: ||c||_2 <= ||c||_1 with equality iff c has one non-zero entry, and ||c||_1 <=
+  sqrt(m)||c||_2 by Cauchy-Schwarz with equality iff all |c_i| are equal.
+
+  ==> REWEIGHTING CANNOT PRODUCE A QUANTITY THAT IS BOTH EXTENSIVE AND COHERENT AT A TYPICAL
+      CONFIGURATION.  The escape is closed by Cauchy-Schwarz, on any carrier, at any m.

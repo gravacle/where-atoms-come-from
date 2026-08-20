@@ -1,0 +1,258 @@
+====================================================================================================
+PART 1.  INDEPENDENT RECONSTRUCTION OF THE TORUS NUMBERS (my own code, my own edge labelling)
+  L   n   rank S   k   gram_det_F2   phi surjective   |G_W|  |C|  orbits  Burnside  inv_dim(basis)  inv_dim(elim)  simply transitive
+  2    8       6   2      1            True             4    4      1        1             1             1        True
+  3   18      16   2      1            True             4    4      1        1             1             1        True
+  4   32      30   2      1            True             4    4      1        1             1             1        True
+  5   50      48   2      1            True             4    4      1        1             1             1        True
+  writer supports (weight of each generator, my search): [(2, [2, 2]), (3, [3, 3]), (4, [4, 4]), (5, [5, 5])]
+  VERDICT PART 1: the lane's structural numbers (|G_W|=4, 4 configs, 1 orbit, inv dim 1, simply transitive)
+                  REPRODUCE independently.  Burnside and explicit-orbit-basis agree with exact elimination.
+
+====================================================================================================
+PART 2.  THE HEADLINE CLAIM, TESTED LITERALLY.
+  CLAIM UNDER TEST (lane headline / brief theorem candidate):
+    "no functional of the record configuration can be BOTH responsive to writing
+     AND non-cancelling"   and   "every non-constant functional is G_W-ODD, hence has
+     mean exactly zero over configurations".
+
+  DEFINITIONS USED (the brief's own):
+    responsive(f)     :  exists g in G_W and c with f(g.c) != f(c)
+    non-cancelling(f) :  sum of f over the writer orbit is NOT zero
+
+  carrier                             |C|  |G_W|  draws  responsive  non-cancelling   BOTH  G_W-odd
+  -------------------------------------------------------------------------------------------------
+  torus L=any (k=2), G_W=(Z2)^2         4      4   2000        1999            1923   1922       77
+  higher genus (k=4), G_W=(Z2)^4       16     16   2000        2000            1967   1967       33
+  higher genus (k=6), G_W=(Z2)^6       64     64   2000        2000            1986   1986       14
+  1D chain greedy family (k=1)          2      2   2000        1888            1887   1781      113
+  1D chain naive {Z_i} n=4             16      2   2000        2000            2000   2000        0
+
+  EXPLICIT WITNESS on the torus (k=2), configurations c = (s1,s2) in {+-1}^2:
+    f(s1,s2) = 1 + s1   ->  values [2, 2, 0, 0]
+    responsive?      U_1 sends (1,1)->(-1,1):  f changes 2 -> 0   =>  RESPONSIVE = True
+    orbit sum:        4  != 0            =>  NON-CANCELLING = True
+    G_W-odd?         False  (mean over configurations = 1 )
+    ==> a functional of the record configuration that is BOTH responsive AND non-cancelling.
+        The theorem candidate's step 'every non-constant functional is G_W-ODD' is FALSE.
+
+====================================================================================================
+PART 3.  IS s8's 'violations' TEST CAPABLE OF FIRING AT ALL?
+  s8_dichotomy.py line:   if responsive and all(x == 0 for x in fodd): bad += 1
+  f_odd == 0 identically  <=>  f == f_inv  <=>  f is G-invariant  <=>  NOT responsive.
+  So the predicate is a contradiction in terms and can never be true, for ANY f, ANY G.
+  Brute-force confirmation over EVERY f in a small function space (exhaustive, not sampled):
+    torus k=2          exhaustive over     81 functionals:  s8 predicate fired 0 times;  responsive AND non-cancelling: 60 (74.1%)
+    chain naive n=3    exhaustive over    256 functionals:  s8 predicate fired 0 times;  responsive AND non-cancelling: 240 (93.8%)
+  VERDICT PART 3: s8's zero-violation result is a TAUTOLOGY, not a measurement, and it is
+                  NOT the claim printed above it.  The printed claim is refuted by the same scan.
+
+====================================================================================================
+PART 4.  'CANCELS' = MEAN ZERO OVER ALL CONFIGURATIONS, NOT 'a configuration cancels'.
+  Torus k=2.  Take the responsive part of a functional and evaluate it AT EACH CONFIGURATION.
+    f = 3 + 2 s1 + s2 + 5 s1 s2
+      c=(1, 1)    f=  11   f_odd(c)=f(c)-mean =    8   ZERO AT THIS CONFIGURATION? False
+      c=(1, -1)   f=  -1   f_odd(c)=f(c)-mean =   -4   ZERO AT THIS CONFIGURATION? False
+      c=(-1, 1)   f=  -3   f_odd(c)=f(c)-mean =   -6   ZERO AT THIS CONFIGURATION? False
+      c=(-1, -1)  f=   5   f_odd(c)=f(c)-mean =    2   ZERO AT THIS CONFIGURATION? False
+    sum over ALL 4 configurations of f_odd = 0
+  READ: f_odd is non-zero at EVERY single configuration.  It sums to zero only under a UNIFORM
+        average over the whole orbit.  A carrier sits in ONE configuration, not in a uniform
+        mixture, so 'the record-dependent part cancels' is an ENSEMBLE statement that the lane
+        converts into a per-carrier statement.  Uniformity is INSERTED: C-60 gives degeneracy,
+        and degeneracy does not give a uniform weight -- a record is by construction in a
+        DEFINITE configuration.
+
+====================================================================================================
+PART 5.  s4c's 'wraps is decided by the TOPOLOGY of the closed edge set, not by size'.
+  The function actually used is:
+      def block_wraps(T, a, b):  return (a + 1 >= T.L) or (b + 1 >= T.L)
+  That is a PURE SIZE TEST.  Independent topological test below: compute the cycle space of the
+  region's own subgraph and ask whether any cycle has a non-trivial homology class in T^2.
+   L   a   b   size-rule 'wraps'   topological 'wraps'   agree
+   3   1   1        False                False            True
+   3   1   2        True                 False            False
+   3   2   1        True                 False            False
+   3   2   2        True                 False            False
+   4   1   1        False                False            True
+   4   1   2        False                False            True
+   4   1   3        True                 False            False
+   4   2   1        False                False            True
+   4   2   2        False                False            True
+   4   2   3        True                 False            False
+   4   3   1        True                 False            False
+   4   3   2        True                 False            False
+   4   3   3        True                 False            False
+   5   1   1        False                False            True
+   5   1   2        False                False            True
+   5   1   3        False                False            True
+   5   1   4        True                 False            False
+   5   2   1        False                False            True
+   5   2   2        False                False            True
+   5   2   3        False                False            True
+   5   2   4        True                 False            False
+   5   3   1        False                False            True
+   5   3   2        False                False            True
+   5   3   3        False                False            True
+   5   3   4        True                 False            False
+   5   4   1        True                 False            False
+   5   4   2        True                 False            False
+   5   4   3        True                 False            False
+   5   4   4        True                 False            False
+  shapes tested 29, disagreements 15
+  VERDICT PART 5: the classification happens to agree on RECTANGULAR blocks, so the clause-(v)
+                  numbers survive -- but the printed sentence describes code that was not run,
+                  and the region family is rectangles only, not all contractible regions.
+
+====================================================================================================
+PART 6.  IS THE 'THEOREM' MORE THAN A TEXTBOOK IDENTITY?
+  Claim chain: independently writable -> block-swap writers exist -> G_W = (Z2)^k acts by
+  translation on {+-1}^k -> transitive -> invariants are constants.
+  The last two steps are the standard fact 'a transitive action has only constant invariants',
+  equivalently Burnside with |Fix(g)|=0 for g != e.  Check that a bare textbook computation
+  reproduces every torus row with no toric-code input at all:
+    (Z2)^1 acting on {+-1}^1: |G|=  2 |C|=  2 orbits=1 Burnside=1 inv_dim=1
+    (Z2)^2 acting on {+-1}^2: |G|=  4 |C|=  4 orbits=1 Burnside=1 inv_dim=1
+    (Z2)^3 acting on {+-1}^3: |G|=  8 |C|=  8 orbits=1 Burnside=1 inv_dim=1
+    (Z2)^4 acting on {+-1}^4: |G|= 16 |C|= 16 orbits=1 Burnside=1 inv_dim=1
+    (Z2)^6 acting on {+-1}^6: |G|= 64 |C|= 64 orbits=1 Burnside=1 inv_dim=1
+  Identical to every TORUS row of the lane's master table.  The toric code contributes the
+  values of k (=2 at genus 1) and nothing else to the headline.
+
+====================================================================================================
+PART 7.  RECORD_MODEL DEFECT TOUCHING commuting_family (read-only observation).
+  record_model.py lines 412-413 read:
+      if not all(np.linalg.norm(C@C.T.conj()@R@C@C.T.conj() - C@C.T.conj()@R@C@C.T.conj()) < 1 ...)
+  The two sides of the subtraction are THE SAME EXPRESSION, so the norm is identically 0 and the
+  guard is a no-op.  commuting_family therefore tests ONLY even splitting; it never verifies that
+  a candidate commutes with the family already chosen.  The lane's torus result is not damaged
+  (mutual commutation was checked separately in s2/s6), but the lane's stated INDUCTION rests on
+  this function's criterion, so the criterion is weaker than its docstring claims.
+
+====================================================================================================
+PART 8.  THE CLAUSE-(v) ARGUMENT, TESTED AGAINST ITS OWN STATED IMPLICATION.
+  s4c/the finding assert: "a region contained in a topological disk has H_1 = 0 and therefore
+  carries no [non-trivial logical] class -- clause (v) then holds for free, with no convention".
+  TEST: for each rectangular plaquette block, compute (a) H_1 of the region's OWN subgraph
+  (the lane's stated criterion) and (b) whether the region carries a non-trivial logical.
+
+  L = 3
+     a  b  #qubits  H_1(region)  carries logical  lane size-rule wraps  CONTRADICTS LANE'S STATED IMPLICATION
+     1  1        4            0            False                 False  
+     1  2        7            0             True                  True  *** YES ***
+         WITNESS: X-support [1, 3, 5]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [0]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     2  1        7            0             True                  True  *** YES ***
+         WITNESS: X-support [0, 6, 12]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [1]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     2  2       12            0             True                  True  *** YES ***
+         WITNESS: X-support [1, 3, 5]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [0]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+  L = 4
+     a  b  #qubits  H_1(region)  carries logical  lane size-rule wraps  CONTRADICTS LANE'S STATED IMPLICATION
+     1  1        4            0            False                 False  
+     1  2        7            0            False                 False  
+     1  3       10            0             True                  True  *** YES ***
+         WITNESS: X-support [1, 3, 5, 7]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [0]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     2  1        7            0            False                 False  
+     2  2       12            0            False                 False  
+     2  3       17            0             True                  True  *** YES ***
+         WITNESS: X-support [1, 3, 5, 7]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [0]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     3  1       10            0             True                  True  *** YES ***
+         WITNESS: X-support [0, 8, 16, 24]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [1]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     3  2       17            0             True                  True  *** YES ***
+         WITNESS: X-support [0, 8, 16, 24]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [1]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     3  3       24            0             True                  True  *** YES ***
+         WITNESS: X-support [1, 3, 5, 7]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [0]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+  L = 5
+     a  b  #qubits  H_1(region)  carries logical  lane size-rule wraps  CONTRADICTS LANE'S STATED IMPLICATION
+     1  1        4            0            False                 False  
+     1  2        7            0            False                 False  
+     1  3       10            0            False                 False  
+     1  4       13            0             True                  True  *** YES ***
+         WITNESS: X-support [1, 3, 5, 7, 9]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [0]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     2  1        7            0            False                 False  
+     2  2       12            0            False                 False  
+     2  3       17            0            False                 False  
+     2  4       22            0             True                  True  *** YES ***
+         WITNESS: X-support [1, 3, 5, 7, 9]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [0]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     3  1       10            0            False                 False  
+     3  2       17            0            False                 False  
+     3  3       24            0            False                 False  
+     3  4       31            0             True                  True  *** YES ***
+         WITNESS: X-support [1, 3, 5, 7, 9]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [0]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     4  1       13            0             True                  True  *** YES ***
+         WITNESS: X-support [0, 10, 20, 30, 40]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [1]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     4  2       22            0             True                  True  *** YES ***
+         WITNESS: X-support [0, 10, 20, 30, 40]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [1]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     4  3       31            0             True                  True  *** YES ***
+         WITNESS: X-support [0, 10, 20, 30, 40]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [1]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+     4  4       40            0             True                  True  *** YES ***
+         WITNESS: X-support [1, 3, 5, 7, 9]  Z-support []
+         commutes with every stabiliser: True;  in S: False;  support inside the region: True
+         anticommutes with logical-basis members [0]  -> it FLIPS a record
+         region H_1 = 0 (the region IS a disk by the lane's own criterion), yet it carries a logical.
+  VERDICT PART 8: the lane's stated homological implication is FALSE as written.  A region can
+  have H_1 = 0 and still carry a non-trivial logical, because an X-type logical is a cycle of
+  the DUAL lattice, whose contractibility is a statement about the region's COMPLEMENT.  The
+  lane's actual classifier (block_wraps, a size rule 'spans every vertex row or column') encodes
+  that missing dual condition by hand.  So clause (v) on the torus was decided by an INSERTED
+  size convention after all -- the very thing D-23 says must be labelled.
+
+====================================================================================================
+PART 9.  s4c's CLAUSE-(v) TABLE, RECOUNTED WITH THE LANE'S OWN STATED CRITERION.
+  Lane's criterion as PRINTED : contractible  <=>  region has H_1 = 0.
+  Lane's criterion as CODED   : contractible  <=>  (a+1 < L) and (b+1 < L)   [a size rule].
+
+   L  regions  H_1=0 (printed rule)  of those, carry a logical  contractible (coded rule)  of those, carry a logical
+   3       36                    36                         27                          9                          0
+   4      144                   144                         80                         64                          0
+   5      400                   400                        175                        225                          0
+  READ: under the criterion the lane PRINTED, every rectangular block on the torus is
+  contractible and a large fraction of them DO carry a logical -- clause (v) FAILS.  The
+  reported '0 of 874 contractible regions carries a logical' is produced only by the size
+  rule that was coded but not stated.  The lane's own numbers, re-bucketed, say the opposite.
+
+  MINIMAL EXPLICIT FAILURE, every L: the strip of L-1 plaquettes p(0,0..L-2) is a closed
+  topological DISK of T^2 (H_1 = 0, no wrapping cycle) and its closed edge set contains an
+  entire minimum-weight X-logical of weight L.  Verified above at L=3 (shape 1x2, witness
+  weight 3), L=4 (shape 1x3, weight 4), L=5 (shape 1x4, weight 5).

@@ -1,0 +1,81 @@
+========================================================================================================
+O-50 D  PART 7   ESCAPE (6)  IRREVERSIBLE WRITING AND THE MEASURE ON CONFIGURATIONS
+========================================================================================================
+
+1. AN ADMISSIBLE *IRREVERSIBLE* WRITER EXISTS AND IT IS BUILT FROM THE CLAUSES THEMSELVES.
+   RESET-RECORD-1-TO-+1:  K+ = (I+R1)/2,  K- = Xbar1 (I-R1)/2.
+   completeness  ||K+dagK+ + K-dagK- - I|| = 0.00e+00
+   [K+,H] = 0.00e+00   [K-,H] = 0.00e+00   -- BOTH KRAUS OPERATORS COMMUTE WITH H,
+   so the channel commutes with the free evolution: it is admissible in every sense the
+   framework uses EXCEPT that it is not a unitary.
+   config  (-1, -1) -> <R1> = +1.0000, <R2> = -1.0000
+   config   (1, -1) -> <R1> = +1.0000, <R2> = -1.0000
+   config   (-1, 1) -> <R1> = +1.0000, <R2> = +1.0000
+   config    (1, 1) -> <R1> = +1.0000, <R2> = +1.0000
+   IRREVERSIBLE: configurations (-1, -1) and (1, -1) differ only in s_1, and the channel
+   maps them to states differing by 2.90e-16: IT MERGES THEM.
+   A channel that merges states has no inverse.  THE ADMISSIBLE SET IS THEN A
+   SEMIGROUP, NOT A GROUP, AND THE ORBIT-AVERAGING LEMMA OF PART 2 HAS NO ORBITS TO AVERAGE
+   OVER.
+
+2. THE HIDDEN HYPOTHESIS IN EVERY CANCELLATION RESULT IN THIS PROGRAM: THE UNIFORM MEASURE.
+   C-46's screening ratio, C-62's sqrt(2/pi) m^(-1/2), part 2's lemma -- each averages over
+   configurations with EQUAL WEIGHT.  Under a biased ensemble with magnetisation
+   m = <s_i>, the pair functional has EXACT mean
+        E[ sum_{i<j} w_ij s_i s_j ] = m^2 sum_{i<j} w_ij        (independent records)
+   which is SIGN-DEFINITE for every m != 0 and equals the FULL uncancelled sum at m = +-1.
+
+   k = 12 records, w_ij = 1/r_ij (INSERTED power law), sum w = 14.744781
+     bias m        E[F]  predicted m^2 * sum w        E|F|  coherence E[F]/sum w  frac F > 0
+       0.00    0.007681               0.000000    2.185586              0.000521      0.4539
+       0.20    0.582192               0.589791    2.454109              0.039485      0.5198
+       0.40    2.362877               2.359165    3.480363              0.160252      0.6958
+       0.60    5.301072               5.308121    5.694330              0.359522      0.8836
+       0.80    9.426198               9.436660    9.468156              0.639290      0.9864
+       1.00   14.744781              14.744781   14.744781              1.000000      1.0000
+   THE PREDICTION m^2 * sum(w) IS MET AT EVERY BIAS.  D-20: this is a closed form checked
+   OUT OF SAMPLE, not a fit.  At m = 0 the mean is zero -- C-46's screening.  At m = 1 the
+   coherence is 1.000000: NO SCREENING AT ALL.  The pairing accumulates in full.
+
+3. AND IT KEEPS ACCUMULATING AS RECORDS ARE ADDED -- the opposite of C-46's signature.
+      k   m=0 coherence   m=0.5 coherence   m=1 coherence    m=0.5 E[F]   E[F](2k)/E[F](k)
+      4        0.001797          0.248815        1.000000        0.7484                   
+      8       -0.000862          0.249752        1.000000        2.0878             2.7896
+     16       -0.000012          0.249238        1.000000        5.4350             2.6033
+     32        0.000209          0.249827        1.000000       13.5484             2.4928
+     64        0.000142          0.249821        1.000000       32.5176             2.4001
+   At m = 0 the coherence falls with k (screening).  At m != 0 it is CONSTANT in k and the
+   total GROWS -- super-linearly here because the pair count grows, which is the same reason
+   a two-body quantity was attractive in the first place.
+
+4. THE C-61 CONTROL, AND THE HONEST VERDICT.
+   control carrier: 255/256 distinct energies -> NON-DEGENERATE -> ZERO records by P-1.
+   control, bias m=0.0: E[F] =  -0.004507  coherence = -0.000539   (record carrier at the same k: same formula, same
+                          numbers -- the bias mechanism is RECORD-BLIND)
+   control, bias m=0.5: E[F] =   2.101499  coherence =  0.251394   (record carrier at the same k: same formula, same
+                          numbers -- the bias mechanism is RECORD-BLIND)
+   control, bias m=1.0: E[F] =   8.359393  coherence =  1.000000   (record carrier at the same k: same formula, same
+                          numbers -- the bias mechanism is RECORD-BLIND)
+
+   SO WHAT IS AND IS NOT ESTABLISHED HERE:
+     ESTABLISHED: the cancellation half of the theorem is a statement about REVERSIBLE
+     writing with a UNIFORM configuration measure.  An admissible irreversible writer
+     exists -- built from the record itself, both Kraus operators commuting with H -- and
+     under the biased ensemble it produces, a two-body record functional is SIGN-DEFINITE,
+     ACCUMULATING, and carries whatever falloff the coefficients carry.  Standard (d),
+     which killed C-46's pairing and O-48's correlation energy, is NOT violated by any
+     clause -- it was violated by an assumption about the measure.
+     NOT ESTABLISHED: that the bias is INDUCED.  Here it is INSERTED -- I chose m.  Nothing
+     in this lane derives a preferred record value from (H, {L_k}).  And the bias mechanism
+     is RECORD-BLIND on the C-61 control: a biased non-record register does the same thing.
+
+   THIS IS THE ONE OPEN DOOR THIS LANE FOUND, AND IT IS A LANE OF ITS OWN:
+     Q1. Does a dissipative dynamics (H, {L_k}) INDUCE a preferred record value -- i.e. is
+         there a carrier whose Lindbladian has a biased stationary record ensemble while
+         all five clauses still hold?  Clause (iv) constrains the HAMILTONIAN (Tr(P_E R)=0)
+         and says nothing about the DISSIPATOR.
+     Q2. If so, is the resulting sign-definite accumulation distinguishable from a
+         record-blind biased register -- i.e. can it clear the C-61 control?
+   Until Q1 is answered the escape is OPEN, not won: an inserted bias proves only that the
+   obstruction is in the measure, not in the clauses.
+========================================================================================================

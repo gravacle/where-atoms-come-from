@@ -1,0 +1,118 @@
+========================================================================================================
+O-50-C  STEP 7.   VERDICT ON THE THEOREM CANDIDATE, CLAUSE BY CLAUSE.
+========================================================================================================
+
+D-23 SCOPE: TORUS throughout.  Nothing below uses the 1D proper-arc proxy convention.
+
+--------------------------------------------------------------------------------------------------------
+  THE VERDICT TABLE.  Every number recomputed in this file.
+--------------------------------------------------------------------------------------------------------
+  clause statement                                      VERDICT                    deciding number               
+  [H1]   independently writable => simply transitive    CONFIRMED (torus)          rank of writer map = m at every (L,k)
+  [C1]   every invariant functional is CONSTANT         PROVED                     dim(invariant) = 1 at m=4 (union-find)
+  [C2]   every non-constant functional is G_W-ODD       REFUTED                    62744 of 65534 non-invariant are NOT odd
+  [C3]   ... hence mean exactly zero                    REFUTED                    52664 non-invariant with mean != 0
+  [C4]   ... hence CANCELS                              TRUE ONLY AS A RATIO       typical |F| = 51.06 at m=4096, not 0
+  [C5]   no functional both responsive and non-cancelling HOLDS, WITH A HYPOTHESIS   needs a WRITER-INVARIANT measure
+
+  The corrected chain, with each link's status:
+
+    [H1] TRUE on the torus.  Measured: the map w -> (sp(w,R_1),...,sp(w,R_m)) has rank m at
+         every (L,k) tested, so the image of G_W is all of (Z_2)^m acting by translation.
+
+    [C1] TRUE, and PROVED, not merely measured: one orbit means an invariant function is
+         constant.  Measured dimension of the invariant space = 1 on the torus, against 2^(m-1)
+         on the chain-shaped control -- the instrument distinguishes the two cases.
+
+    [C2] FALSE.  Refuted by COMPLETE ENUMERATION of all 2^(2^m) sign-valued functionals:
+         at m = 4, 65534 functionals are non-invariant and only 2790 are writer-odd.
+         The smallest counterexample is one line: f = (1 + s_1)/2, the functional 'record 1
+         reads +1'.  It is non-invariant, it is not writer-odd, and its mean is exactly 1/2.
+
+    [C3] FALSE as an implication from non-invariance.  The EXACT condition is different and is
+         stated in terms of the Fourier-Walsh expansion f = sum_S fhat(S) chi_S:
+
+               mean(f) = fhat(EMPTY),   so   mean(f) = 0  <=>  fhat(EMPTY) = 0.
+
+         Non-invariance says only that SOME fhat(S) with S non-empty is non-zero, which says
+         nothing at all about fhat(EMPTY).  WRITER-ODD is sufficient but not necessary:
+         at m = 4, 2790 functionals are writer-odd and 12870 have mean zero.
+
+    [C4] TRUE FOR THE MEAN, FALSE FOR THE VALUE.  The mean over configurations is exactly 0.
+         The value AT a configuration is not:
+           m   MEAN (exact)    typical |F| (exact)    MAX |F|   ratio (coherence)
+          16              0                 3.1421         16        0.1963806152
+         256              0                12.7537        256        0.0498191099
+        4096              0                51.0615       4096        0.0124661854
+       65536              0               204.2577      65536        0.0031167247
+         The cancellation is a factor of m^(-1/2).  The residual DIVERGES as sqrt(2m/pi).
+         It is SUB-EXTENSIVE, and sub-extensive is the correct and weaker word for it.
+
+    [C5] HOLDS, under a hypothesis the candidate did not state.  The precise version:
+
+           Let G_W act simply transitively on configurations, and let the state's measure over
+           configurations be WRITER-INVARIANT.  Then for every functional f:
+             (a) the part of f that no write changes is the constant fhat(EMPTY);
+             (b) the part that responds has mean EXACTLY 0 under that measure and therefore
+                 takes both signs;
+             (c) if the weights are spread over Theta(m) records, the responsive part is
+                 O(sqrt(m)) at a typical configuration -- SUB-EXTENSIVE -- by Cauchy-Schwarz
+                 (||c||_2 <= ||c||_1 <= sqrt(m) ||c||_2, equality on the right iff uniform).
+           So no functional is simultaneously RESPONSIVE, SIGN-DEFINITE IN ITS RESPONSE, and
+           EXTENSIVE.  A source needs all three.
+
+           THE HYPOTHESIS IS LOAD-BEARING.  On a torsor exactly one writer-invariant measure
+           exists (the uniform one), and step 6 shows every state built from H alone -- Gibbs at
+           any temperature, microcanonical, maximally mixed -- realises exactly that measure.
+           But the universe is in ONE configuration, which is a delta measure and is never
+           writer-invariant.  Under a delta measure at an ordered configuration the SAME
+           functional on the SAME carrier has coherence exactly 1 and is fully extensive.
+
+--------------------------------------------------------------------------------------------------------
+  THE ONE CONTROL THE EARLIER STEPS COULD NOT CARRY: WHAT A SIGN-DEFINITE RESPONSE REQUIRES
+--------------------------------------------------------------------------------------------------------
+  Clause [C5](b) says the response to a write takes both signs.  That is EXACT AND ADMITS NO
+  CONTROL as long as the write is a BIJECTION of configuration space, because sum over s of
+  [f(g.s) - f(s)] is identically 0 for any bijection g.  Stating that honestly: the both-signs
+  result is a property of REVERSIBILITY, not of the toric code, and it holds on every carrier.
+
+  What DOES admit a control is the reversibility itself.  Below, the same functional N_+ (number
+  of records reading +1) is subjected to (a) an admissible WRITE -- a unitary, hence a bijection
+  of configurations -- and (b) a RESET, which is a non-unitary channel that is not an admissible
+  operation at all.  m = 12, all 4096 configurations, exact integers.
+
+  operation on the configuration                bijection?   min dN_+   max dN_+   sum of dN_+  sign-definite response?
+  WRITE record 1 (admissible unitary)                 True         -1          1             0                    False
+  WRITE all m records (admissible unitary)            True        -12         12             0                    False
+  WRITE records 1..m/2 (admissible unitary)           True         -6          6             0                    False
+  RESET record 1 to +1 (NON-unitary channel)         False          0          1          2048                     True
+  RESET all records to +1 (NON-unitary)              False          0         12         24576                     True
+
+  READ: every admissible write has sum(dN_+) EXACTLY 0 and a response that takes both signs; the
+  two RESETS have strictly non-negative response and a strictly positive sum.  The instrument
+  registers sign-definiteness when it is there.
+
+  ==> A SIGN-DEFINITE RESPONSE REQUIRES AN IRREVERSIBLE OPERATION -- one that CHANGES THE MEASURE
+      over configurations rather than permuting them.  No admissible writer can do that, because
+      admissible writers are unitary by definition (O-4) and unitaries permute.  An operation
+      that orders the records is therefore not a WRITE at all; it is a FORMATION process.
+
+  This is the same conclusion step 6 reaches from the other direction -- there, that no
+  H-diagonal state and no clause-(ii) environment can produce a magnetisation.  Two independent
+  routes to the same place: ORDERING MUST BE PUT IN AS AN INITIAL CONDITION, BY SOMETHING THE
+  FIVE CLAUSES DO NOT DESCRIBE.
+
+--------------------------------------------------------------------------------------------------------
+  WHAT WOULD FALSIFY THE READING ABOVE
+--------------------------------------------------------------------------------------------------------
+  1. A carrier on which the writers act simply transitively AND a non-constant writer-invariant
+     functional exists.  Step 2 measured that space to be 1-dimensional on the torus; a carrier
+     where it is larger WITH the writers still simply transitive would break [C1].  (It cannot:
+     [C1] is proved.  So this falsifier is closed.)
+  2. A carrier whose records are NOT independently writable but which still satisfies all five
+     clauses -- there the invariant space is large (2^(m-1) on the chain-shaped control) and a
+     non-constant invariant DOES exist.  C-65 showed the chain has one bit, so its invariants are
+     functions of bond variables, which are not records.  A carrier with MANY records and a
+     NON-transitive writer group would be the real test, and this lane did not find one.
+  3. An admissible operation that is not a bijection of configuration space.  Impossible while
+     'admissible' means unitary (O-4).  Relaxing O-4 is the live direction.

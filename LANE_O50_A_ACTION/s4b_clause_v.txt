@@ -1,0 +1,41 @@
+==============================================================================
+L = 2   n = 8   code distance d = 2 (exact, s1)
+  CONTRACTIBLE (disk) regions -- a x b plaquette blocks, a,b <= L-1
+    1x1 plaquettes:  4 qubits, dim V =  3, dim V/S = 2, non-trivial logicals inside = 3, clause (v) holds = False
+  ALL 4 disk regions tested; failures = 4; CLAUSE (v) HOLDS ON THE TORUS BY HOMOLOGY = False
+  POSITIVE CONTROL -- NON-contractible (wrapping) blocks, a = L or b = L:
+    1x2 (wraps):  6 qubits, dim V/S = 3, non-trivial logicals inside = 7, clause (v) holds = False, witness class (x,z) = ((0, 1), None)
+    2x1 (wraps):  6 qubits, dim V/S = 3, non-trivial logicals inside = 7, clause (v) holds = False, witness class (x,z) = ((0, 1), None)
+    1x2 (wraps):  6 qubits, dim V/S = 3, non-trivial logicals inside = 7, clause (v) holds = False, witness class (x,z) = ((0, 1), None)
+    2x2 (wraps):  8 qubits, dim V/S = 4, non-trivial logicals inside = 15, clause (v) holds = False, witness class (x,z) = ((0, 1), None)
+==============================================================================
+L = 3   n = 18   code distance d = 3 (exact, s1)
+  CONTRACTIBLE (disk) regions -- a x b plaquette blocks, a,b <= L-1
+    1x1 plaquettes:  4 qubits, dim V =  1, dim V/S = 0, non-trivial logicals inside = 0, clause (v) holds = True
+    1x2 plaquettes:  7 qubits, dim V =  3, dim V/S = 1, non-trivial logicals inside = 1, clause (v) holds = False
+    2x1 plaquettes:  7 qubits, dim V =  3, dim V/S = 1, non-trivial logicals inside = 1, clause (v) holds = False
+    2x2 plaquettes: 12 qubits, dim V =  9, dim V/S = 2, non-trivial logicals inside = 3, clause (v) holds = False
+  ALL 36 disk regions tested; failures = 27; CLAUSE (v) HOLDS ON THE TORUS BY HOMOLOGY = False
+  POSITIVE CONTROL -- NON-contractible (wrapping) blocks, a = L or b = L:
+    1x3 (wraps):  9 qubits, dim V/S = 2, non-trivial logicals inside = 3, clause (v) holds = False, witness class (x,z) = ((1, 0), None)
+    3x1 (wraps):  9 qubits, dim V/S = 2, non-trivial logicals inside = 3, clause (v) holds = False, witness class (x,z) = ((0, 1), None)
+    2x3 (wraps): 15 qubits, dim V/S = 3, non-trivial logicals inside = 7, clause (v) holds = False, witness class (x,z) = ((0, 1), None)
+    3x3 (wraps): 18 qubits, dim V/S = 4, non-trivial logicals inside = 15, clause (v) holds = False, witness class (x,z) = ((0, 1), None)
+==============================================================================
+L = 4   n = 32   code distance d = 4 (exact, s1)
+  CONTRACTIBLE (disk) regions -- a x b plaquette blocks, a,b <= L-1
+    1x1 plaquettes:  4 qubits, dim V =  1, dim V/S = 0, non-trivial logicals inside = 0, clause (v) holds = True
+    1x2 plaquettes:  7 qubits, dim V =  2, dim V/S = 0, non-trivial logicals inside = 0, clause (v) holds = True
+    1x3 plaquettes: 10 qubits, dim V =  4, dim V/S = 1, non-trivial logicals inside = 1, clause (v) holds = False
+    2x1 plaquettes:  7 qubits, dim V =  2, dim V/S = 0, non-trivial logicals inside = 0, clause (v) holds = True
+    2x2 plaquettes: 12 qubits, dim V =  5, dim V/S = 0, non-trivial logicals inside = 0, clause (v) holds = True
+    2x3 plaquettes: 17 qubits, dim V = 10, dim V/S = 1, non-trivial logicals inside = 1, clause (v) holds = False
+    3x1 plaquettes: 10 qubits, dim V =  4, dim V/S = 1, non-trivial logicals inside = 1, clause (v) holds = False
+    3x2 plaquettes: 17 qubits, dim V = 10, dim V/S = 1, non-trivial logicals inside = 1, clause (v) holds = False
+    3x3 plaquettes: 24 qubits, dim V = 19, dim V/S = 2, non-trivial logicals inside = 3, clause (v) holds = False
+  ALL 144 disk regions tested; failures = 80; CLAUSE (v) HOLDS ON THE TORUS BY HOMOLOGY = False
+  POSITIVE CONTROL -- NON-contractible (wrapping) blocks, a = L or b = L:
+    1x4 (wraps): 12 qubits, dim V/S = 2, non-trivial logicals inside = 3, clause (v) holds = False, witness class (x,z) = ((1, 0), None)
+    4x1 (wraps): 12 qubits, dim V/S = 2, non-trivial logicals inside = 3, clause (v) holds = False, witness class (x,z) = ((0, 1), None)
+    3x4 (wraps): 28 qubits, dim V/S = 3, non-trivial logicals inside = 7, clause (v) holds = False, witness class (x,z) = ((0, 1), None)
+    4x4 (wraps): 32 qubits, dim V/S = 4, non-trivial logicals inside = 15, clause (v) holds = False, witness class (x,z) = ((0, 1), None)

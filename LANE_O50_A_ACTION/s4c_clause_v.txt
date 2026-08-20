@@ -1,0 +1,79 @@
+REGION TABLE.  'wraps' is decided by the TOPOLOGY of the closed edge set, not by size.
+==============================================================================
+L = 3   n = 18   d = 3
+  chi on the computed logical basis = [[0, 0, 0, 1], [1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0]]   det_F2 = 1  -> chi : N(S)/S -> H_1 (+) H^1 is an ISOMORPHISM: True
+    1x1 plaquettes:   4 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x2 plaquettes:   7 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    2x1 plaquettes:   7 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    2x2 plaquettes:  12 qubits   dim V/S = 2   rank chi(V) = 2   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+  dim(V/S) == rank chi(V) for every one of 36 regions: True
+  CONTRACTIBLE regions tested: 9, of which carry a logical: 0  -> CLAUSE (v) HOLDS BY HOMOLOGY, NO CONVENTION: True
+  CONTROL, NON-contractible regions tested: 27, of which carry a logical: 27  -> the instrument registers a (v)-failure when one exists: True
+==============================================================================
+L = 4   n = 32   d = 4
+  chi on the computed logical basis = [[0, 0, 0, 1], [1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0]]   det_F2 = 1  -> chi : N(S)/S -> H_1 (+) H^1 is an ISOMORPHISM: True
+    1x1 plaquettes:   4 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x2 plaquettes:   7 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x3 plaquettes:  10 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    2x1 plaquettes:   7 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    2x2 plaquettes:  12 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    2x3 plaquettes:  17 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    3x1 plaquettes:  10 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    3x2 plaquettes:  17 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    3x3 plaquettes:  24 qubits   dim V/S = 2   rank chi(V) = 2   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+  dim(V/S) == rank chi(V) for every one of 144 regions: True
+  CONTRACTIBLE regions tested: 64, of which carry a logical: 0  -> CLAUSE (v) HOLDS BY HOMOLOGY, NO CONVENTION: True
+  CONTROL, NON-contractible regions tested: 80, of which carry a logical: 80  -> the instrument registers a (v)-failure when one exists: True
+==============================================================================
+L = 5   n = 50   d = 5
+  chi on the computed logical basis = [[0, 0, 0, 1], [1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0]]   det_F2 = 1  -> chi : N(S)/S -> H_1 (+) H^1 is an ISOMORPHISM: True
+    1x1 plaquettes:   4 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x2 plaquettes:   7 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x3 plaquettes:  10 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x4 plaquettes:  13 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    2x1 plaquettes:   7 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    2x2 plaquettes:  12 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    2x3 plaquettes:  17 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    2x4 plaquettes:  22 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    3x1 plaquettes:  10 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    3x2 plaquettes:  17 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    3x3 plaquettes:  24 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    3x4 plaquettes:  31 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    4x1 plaquettes:  13 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    4x2 plaquettes:  22 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    4x3 plaquettes:  31 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    4x4 plaquettes:  40 qubits   dim V/S = 2   rank chi(V) = 2   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+  dim(V/S) == rank chi(V) for every one of 400 regions: True
+  CONTRACTIBLE regions tested: 225, of which carry a logical: 0  -> CLAUSE (v) HOLDS BY HOMOLOGY, NO CONVENTION: True
+  CONTROL, NON-contractible regions tested: 175, of which carry a logical: 175  -> the instrument registers a (v)-failure when one exists: True
+==============================================================================
+L = 6   n = 72   d = 6
+  chi on the computed logical basis = [[0, 0, 0, 1], [1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0]]   det_F2 = 1  -> chi : N(S)/S -> H_1 (+) H^1 is an ISOMORPHISM: True
+    1x1 plaquettes:   4 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x2 plaquettes:   7 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x3 plaquettes:  10 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x4 plaquettes:  13 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    1x5 plaquettes:  16 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    2x1 plaquettes:   7 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    2x2 plaquettes:  12 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    2x3 plaquettes:  17 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    2x4 plaquettes:  22 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    2x5 plaquettes:  27 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    3x1 plaquettes:  10 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    3x2 plaquettes:  17 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    3x3 plaquettes:  24 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    3x4 plaquettes:  31 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    3x5 plaquettes:  38 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    4x1 plaquettes:  13 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    4x2 plaquettes:  22 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    4x3 plaquettes:  31 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    4x4 plaquettes:  40 qubits   dim V/S = 0   rank chi(V) = 0   closed set wraps = False   CONTRACTIBLE -> clause (v) holds
+    4x5 plaquettes:  49 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    5x1 plaquettes:  16 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    5x2 plaquettes:  27 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    5x3 plaquettes:  38 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    5x4 plaquettes:  49 qubits   dim V/S = 1   rank chi(V) = 1   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+    5x5 plaquettes:  60 qubits   dim V/S = 2   rank chi(V) = 2   closed set wraps = True   NON-CONTRACTIBLE -> carries a logical
+  dim(V/S) == rank chi(V) for every one of 900 regions: True
+  CONTRACTIBLE regions tested: 576, of which carry a logical: 0  -> CLAUSE (v) HOLDS BY HOMOLOGY, NO CONVENTION: True
+  CONTROL, NON-contractible regions tested: 324, of which carry a logical: 324  -> the instrument registers a (v)-failure when one exists: True

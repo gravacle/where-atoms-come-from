@@ -1,0 +1,60 @@
+=== FLOORS ===
+kT(300K)            = 4.142e-21 J = 25.9 meV
+Landauer kT ln2     = 2.871e-21 J
+
+=== THE RETENTION INEQUALITY  Delta_F >= kT ln(nu t_m / delta) ===
+  10 yr, nu=1e9/s (Neel attempt), delta=1       ->  40.3 kT
+  10 yr, delta=1e-2                             ->  44.9 kT
+  10 yr, nu=1e12/s, delta=1e-4                  ->  56.4 kT
+  1 Gyr geological                              ->  58.7 kT
+  (industry KuV/kT >= 60 'thermal stability rule' sits inside this band)
+
+=== RECORD 1: HAMR HDD grain, L1_0 FePt ===
+  KuV = 8.25e-19 J = 199 kT  (barrier)
+  Neel-Arrhenius tau = tau0 exp(KuV/kT) ~ 1e-9 * e^199 s  (astronomically > age of universe)
+  clause-(iii) check: up/down splitting in Earth's field = 2 m B = 1.43e-23 J = 3.4e-03 kT
+    -> NOT exactly degenerate; harmless because 1.7e-05 of the barrier
+  write: Zeeman work scale 2 m B_head = 5.70e-19 J = 138 kT; plus laser heat pulse to ~700 K
+  device-level write energy ~ 3.0e-09 J/bit = 1.0e+12 x Landauer
+  timescale ratio tau/t_write ~ 1e17s / 1e-9s = 1e26
+
+=== RECORD 2: DNA base (covalent record) ===
+  depurination k = 3e-11 /s -> tau = 1056 yr per site (unrepaired)
+  Ea = 130 kJ/mol = 50 kT_310  (Arrhenius barrier)
+  fossil-DNA half-life 521 yr at 13C (Allentoft et al., Proc R Soc B 279 (2012) 4724)
+  write: polymerase, ~2 phosphodiester-bond equivalents ~ 1.0e-19 J = 24 kT/base
+    (35 x Landauer -- biology is within ~2 orders of the floor)
+
+=== RECORD 3: NAND flash floating gate ===
+  barrier = 3.1 eV = 120 kT; thermal escape alone would give tau ~ 1e-13*e^120 s ~ 1e39 s
+  actual retention spec 10 yr (JEDEC, 55C): limited by oxide-defect tunneling (SILC), NOT thermal --
+  a reminder that real durability is set by the worst channel, not the named one
+  write: ~1e+04 electrons through ~20 V ~ 3.2e-14 J = 1.1e+07 x Landauer
+
+=== RECORD 4: K-Ar geochronometer (feldspar/mica) ===
+  bit(s): trapped 40Ar amount; written by 40K decay, t_half = 1.25 Gyr (weak interaction)
+  durability: Ar diffusion Ea ~ 180 kJ/mol = 72 kT_300; closure T ~ 150-350 C
+  read: mass spectrometry -- DESTRUCTIVE readout; QND reading is not universal among real records
+
+=== RECORD 5: baryon number / B-L (the record that atoms exist) ===
+  B: violated only by sphalerons, barrier 9 TeV = 3.5e+14 kT_300 -> rate ~ e^-3e14
+  B-L: anomaly-free in the SM -> [H_SM, B-L] = 0 EXACTLY -- the one known real record
+       satisfying clause (ii) exactly; and it is NOT WRITABLE by any SM process.
+       Exact durability and writability do not coexist under one fixed dynamics.
+
+=== RECORD 6: photograph (AgBr latent image) ===
+  bit: a >=4-atom Ag cluster on a grain; development amplifies x ~1e9 (standard photographic chemistry)
+  write: ~1 absorbed photon (2-3 eV = ~100 kT) per cluster atom; redundancy manufactured chemically
+
+=== THE TWO-SIDED WORK INEQUALITY (the real (iv)+(v)) ===
+  bath writes spontaneously at rate ~ nu exp(-DeltaF/kT); an agent writes by paying W >= DeltaF
+  PROTECTED: nu t_m exp(-DeltaF/kT) <= delta  <=>  DeltaF >= kT ln(nu t_m/delta)
+  WRITABLE:  a driven protocol supplies DeltaF transiently and dissipates >= kT ln 2 (Landauer)
+  -> durability and writability are reconciled by WORK and NONSTATIONARITY, not by symmetry.
+  Crooks: P(bath does a work-W write)/P(driven reverse) = exp(-W/kT) -- the protection IS the
+  fluctuation theorem, an improbability, never an impossibility.
+
+=== REDUNDANCY (the missing clause) ===
+  illuminated 1-um dust grain: pointer info redundancy ~1e8 independent photon fragments
+  after ~1 us of sunlight (Riedel & Zurek, PRL 105 (2010) 020404; order-of-magnitude)
+  1 mm^2 ink mark in sunlight scatters ~1e+15 photons/s -- copies/s of the bit

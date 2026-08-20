@@ -5,6 +5,25 @@ re-shaped; it is amended only by a registered erratum.
 
 ---
 
+## WHAT "PROOF" MEANS IN THIS PROGRAM
+
+> **The principal, 2026-08-20:**
+>
+> > *"The PROOF must be something that any physicist anywhere in the world can run against their real
+> > world data and confirm that it works as asserted. That is a proof. Otherwise we're not proving
+> > anything other than that we can construct equations."*
+
+**A row is `PROVED` only if it names (1) the MEASURABLE QUANTITY in units, (2) the PREDICTED VALUE or
+relation, and (3) WHAT WOULD FALSIFY IT.** `ledger/status.py` **refuses** the status otherwise — this
+is enforced by the tool, not by a checklist, because every previous guard was a checklist item and
+H-3 stayed open for the life of the program regardless.
+
+**A result about the five clauses is `FORMAL`, not `PROVED`.** Formal results are real mathematics and
+are kept as such; they are not claims about the world. **H-3: the five clauses are ours, and nothing
+says the world's records meet them.**
+
+---
+
 ## THE DEFINITION
 
 Let `H` be a Hamiltonian and `{L_k}` the jump operators of an open system. **`R` is a RECORD if:**

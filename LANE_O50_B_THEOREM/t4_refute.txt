@@ -1,0 +1,110 @@
+==================================================================================================================================
+PART 4 -- THE REFUTATION HUNT.  EXHAUSTIVE over structural profiles, using the RELAXED
+         family definition (mutually commuting records, each satisfying (i)-(iv) on its own,
+         NO even-splitting demand).  A rigged search would use the program's own
+         commuting_family(), whose even-splitting rule already forces the conclusion.
+==================================================================================================================================
+
+--- 4.0  THE RIGGING CHECK, stated first and explicitly ---
+
+record_model.commuting_family() accepts a new record only if it splits EVERY existing joint
+block into two halves of EQUAL dimension (`len(pl) != len(mi) -> reject`).  After k accepted
+records every joint block inside a shell therefore has dimension dim(E)/2^k -- the table is
+UNIFORM BY CONSTRUCTION, all k flips exist by LEMMA W, and the theorem holds trivially.
+
+  => WITHIN THE PROGRAM'S OWN MACHINERY THE THEOREM IS UNFALSIFIABLE.  That is a finding
+     about the machinery, not evidence for the theorem.  Everything below therefore drops
+     the even-splitting demand and admits any mutually commuting set of genuine records.
+
+==================================================================================================================================
+--- 4.1  EXHAUSTIVE HUNT over all one-shell profiles with m minimal projections and
+         dimensions drawn from {1..D}.  For each profile: ALL clause-(iv) records, ALL
+         commuting pairs and triples, and the contingency table
+            (# independently writable records)  x  (# orbits of the writer group). ---
+
+THE FORBIDDEN CELL, if the theorem is true, is  indep = k  AND  orbits > 1.
+
+profiles searched: 60    records enumerated: 812
+COMMUTING PAIRS analysed:   8059
+COMMUTING TRIPLES analysed: 64397
+
+CONTINGENCY TABLE, k = 2 (pairs):
+  # indep writable   # orbits  dim invariants      count   FORBIDDEN CELL?
+----------------------------------------------------------------------------
+                 0          2               2       5665             False
+                 2          1               1       2394             False
+
+CONTINGENCY TABLE, k = 3 (triples):
+  # indep writable   # orbits  dim invariants      count   FORBIDDEN CELL?
+----------------------------------------------------------------------------
+                 0          2               2        894             False
+                 0          4               4      42724             False
+                 0          8               8      15451             False
+                 1          2               2        288             False
+                 3          1               1       5040             False
+
+FORBIDDEN CELL POPULATION: 0
+  The forbidden cell is EMPTY across every family analysed.  The populated cells are
+  numerous and cover indep = 0,1,..,k and orbits = 1,2,4,..  -- so the search WOULD have
+  registered a counterexample had one existed (D-15: the control is the populated part of
+  the same table).
+
+==================================================================================================================================
+--- 4.2  MULTI-SHELL PROFILES.  Degenerate spectra with several shells give the writer
+         group MORE constraints to satisfy, so this is the harder case for the theorem. ---
+
+multi-shell profiles searched: 55   commuting pairs analysed: 272256
+
+  # indep writable   # orbits  dim invariants        count   FORBIDDEN CELL?
+------------------------------------------------------------------------------
+                 0          2               2       255696             False
+                 2          1               1        16560             False
+
+FORBIDDEN CELL POPULATION (multi-shell): 0
+
+==================================================================================================================================
+--- 4.3  WHY THE CELL IS EMPTY -- and it is a PROOF, not an induction from the tables ---
+
+Suppose all k records are independently writable.  By LEMMA W(a)=>(b) each flip_i preserves
+the dimension table.  The flips generate (Z_2)^k.  For any two configurations sigma, tau the
+element eps with eps_i = [sigma_i != tau_i] lies in that group and carries sigma to tau, so
+the action is TRANSITIVE; the stabiliser of any sigma is trivial because eps.sigma = sigma
+forces eps = 0, so it is SIMPLY transitive.  A transitive action has ONE orbit, and the
+space of invariant functions has dimension = number of orbits = 1.  Hence
+      indep = k  =>  orbits = 1,
+with no hypothesis about the carrier at all: not stabiliser, not abelian, not finite-
+dimensional beyond what the family needs.  THE FORBIDDEN CELL CANNOT BE POPULATED.
+
+The one loophole worth naming, because it is real: the argument presumes every one of the
+2^k configurations is REALISED (non-zero block).  It is: the realised set is non-empty and
+closed under the flips (LEMMA W preserves dimensions, so a zero block pairs with a zero
+block), and a non-empty set closed under a transitive group is everything.  So the loophole
+closes itself.
+
+==================================================================================================================================
+--- 4.4  WHERE THE NON-CONSTANT INVARIANTS ACTUALLY LIVE (the exhibits) ---
+
+Smallest profiles found by the exhaustive search that DO carry a non-constant invariant:
+
+dims (one shell)           R_1                  R_2                  d(++,+-,-+,--)          indep  |G_W|  #orb  dim inv    the invariant
+----------------------------------------------------------------------------------------------------------------------------------------
+(1, 1, 2, 2)               +-+-                 +--+                 [1, 2, 2, 1]                0      2     2        2           chi_12
+(1, 1, 2, 2)               +-+-                 +--+                 [1, 2, 2, 1]                0      2     2        2           chi_12
+(1, 1, 3, 3)               +-+-                 +--+                 [1, 3, 3, 1]                0      2     2        2           chi_12
+(2, 2, 3, 3)               +-+-                 +--+                 [2, 3, 3, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 1)         +++---               ++-+--               [2, 1, 1, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 1)         +++---               ++-+--               [2, 1, 1, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 2, 2)         ++--+-               +-+-+-               [3, 1, 1, 3]                0      2     2        2           chi_12
+(1, 1, 2, 2, 2, 2)         +-++--               +-+-+-               [3, 2, 2, 3]                0      2     2        2           chi_12
+(2, 2, 2, 2, 2, 2)         +++---               ++-+--               [4, 2, 2, 4]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 1)         +++---               ++-+--               [2, 1, 1, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 3)         ++++--               +++-+-               [3, 1, 1, 3]                0      2     2        2           chi_12
+(1, 1, 1, 1, 2, 2)         ++--+-               +-+-+-               [3, 1, 1, 3]                0      2     2        2           chi_12
+
+READ: every profile carrying a non-constant invariant has indep < k in the same row.  The
+      invariant is always a PRODUCT character chi_S -- i.e. the operator R_S = prod_{i in S} R_i.
+
+==================================================================================================================================
+PART 4 VERDICT: NO COUNTEREXAMPLE EXISTS, and that is now a PROOF (4.3) with an exhaustive
+finite search behind it (4.1, 4.2) whose control cells are richly populated.  Direction 2
+FAILED to refute, for a reason.

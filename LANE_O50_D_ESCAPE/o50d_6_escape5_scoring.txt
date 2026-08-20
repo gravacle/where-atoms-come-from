@@ -1,0 +1,109 @@
+========================================================================================================
+O-50 D  PART 6   ESCAPE (5)  MANY RECORDS / HIGHER GENUS   +   MASTER SCORING
+========================================================================================================
+
+1. m DISJOINT TORI: k = 2m RECORDS.  The writer group is characterised by LINEAR ALGEBRA
+   on F_2^{2k}, never by enumerating 4^k classes.
+     m  n qubits  k records  #configs  rank of v -> sp(v,R_i)  orbit size  kernel dim  simply transitive  dim invariant fns
+     1         8          2         4                       2           4           2               True                  1
+     2        16          4        16                       4          16           4               True                  1
+     3        24          6        64                       6          64           6               True                  1
+     4        32          8       256                       8         256           8               True                  1
+     6        48         12      4096                      12        4096          12               True                  1
+   At every genus the map v -> (sp(v,R_1),...,sp(v,R_k)) has FULL RANK k, so G_W acts
+   SIMPLY TRANSITIVELY on the 2^k configurations and the invariant functional space stays
+   ONE-DIMENSIONAL.  The kernel stays exactly span{R_1..R_k}.  NOTHING CHANGES CHARACTER.
+   Largest reached here: m=6, k=12 records, n=48 qubits, 4096 configurations.  EXACT.
+
+2. THE ONE CARRIER CLASS THIS LANE CANNOT REACH -- AND WHY IT DOES NOT MATTER.
+   A NON-ABELIAN anyon model (D(S_3), D(D_4)) would not give a Z_2^k torsor, and D-21
+   warns that record_model.commutant() silently returns a SHORT basis there (512 against
+   an exact 736 on D(D_4)), so no verdict could rest on a computation of that kind here.
+   BUT THE ORBIT-AVERAGING LEMMA OF PART 2 USES NO STRUCTURE AT ALL -- not abelianness,
+   not transitivity, not even a group action on a product set.  Whatever the writer group
+   is, its orbit average is invariant and the remainder has orbit mean zero.  A non-abelian
+   carrier can only make the INVARIANT space BIGGER, i.e. add more NON-responsive
+   quantities.  It cannot create a responsive non-cancelling one.  ESCAPE (5) CLOSED BY
+   ARGUMENT, not reached by computation.
+
+3. WHAT ACTUALLY SCALES.  m disjoint tori at L: exact counts, and the coherence of the
+   responsive part measured in the same table.
+     m  k=2m  n=2mL^2 record count k  k(2m)/k(m)  capacity/volume  coherence of a responsive fn
+     1     2       18              2                     0.111111                      0.500260
+     2     4       36              4      2.0000         0.111111                      0.374358
+     4     8       72              8      2.0000         0.111111                      0.272951
+     8    16      144             16      2.0000         0.111111                      0.196443
+    16    32      288             32      2.0000         0.111111                      0.139346
+    32    64      576             64      2.0000         0.111111                      0.099405
+   THE RECORD COUNT IS STRICTLY EXTENSIVE (ratio exactly 2) and the capacity DENSITY is
+   constant.  In the same table, the coherence of a responsive functional FALLS like
+   k^(-1/2).  Adding records makes the count grow and makes every responsive quantity
+   cancel harder.  These are the two halves of the trichotomy, measured together.
+
+4. MASTER SCORING TABLE.  Standards: (a) strictly extensive, (b) additive over disjoint
+   regions, (c) not a count and not topological, (d) sign-definite, (e) power-law falloff
+   with separation, INDUCED not inserted.  Plus the two questions this lane exists to ask:
+   RESPONSIVE to a write?  and SURVIVES the C-61 record-blind control?
+
+   quantity                        (a)  (b)  (c)  (d)  (e)  RESPONSIVE  SURVIVES C-61        where measured
+   --------------------------------------------------------------------------------------------------------
+   E(s)=sum J_ij s_i s_j           yes  yes  yes   NO  ins         yes             NO         O-48 / part 2
+   sum_i w_i s_i  (any weights)    yes  yes  yes   NO  n/a         yes             NO          part 2 sec 3
+   geometry-weighted s_i s_j       yes  yes  yes   NO  ins         yes             NO          part 3 sec 3
+   Re<Xbar_1> (coherence)           no   no  yes   NO  n/a        yes*             NO          part 4 sec 2
+   |rho_L,ab| (coherence mag.)      no   no  yes  yes  n/a     relabel             NO          part 4 sec 2
+   purity / S(rho_L)                no   no  yes  yes  n/a          NO             NO          part 4 sec 2
+   S_A, contractible region        yes  yes   no  yes  n/a          NO             NO        part 4 sec 5,6
+   S_A, wrapping region             no   no   no  yes  n/a          NO             NO        part 4 sec 5,6
+   bath observable <B(t)>          yes  yes  yes   NO  ind         yes             NO          part 5 sec 2
+   chi(R : bath)                   yes  yes  yes  yes  ind          NO             NO        part 5 sec 2,3
+   sum_i |<R_i>| (integrity)       yes  yes   no  yes  n/a          NO             NO              part 4,5
+   holonomy of a write-loop         no   no  yes   NO  n/a         yes             NO          part 5 sec 1
+   record count k                  yes  yes   NO  yes  n/a          NO            YES        part 6 sec 1,3
+   protection distance d            no   no   NO  yes  n/a          NO            YES          part 1 sec 4
+   sum w_ij s_i s_j, BIASED m!=0   yes  yes  yes  YES  ins         yes             NO        part 7 -- OPEN
+   ins = the falloff was INSERTED by hand; ind = INDUCED by dynamics; n/a = the quantity
+   has no separation argument at all.  'yes*' = responsive but AMBIGUOUS: two equally
+   admissible writers of the same record give opposite signs (part 4 sec 3b).
+
+   UNDER THE UNIFORM CONFIGURATION MEASURE, NOT ONE ROW IS BOTH RESPONSIVE AND SIGN-
+   DEFINITE, AND NOT ONE ROW IS BOTH RESPONSIVE AND SURVIVES THE C-61 CONTROL.  The two
+   rows that survive the control are a COUNT and a TOPOLOGICAL LENGTH, failing standard (c)
+   by inspection, and neither responds to a write.
+   THE LAST ROW IS THE EXCEPTION AND IT IS WHY PART 7 EXISTS: drop the uniform measure and
+   the SAME two-body functional becomes responsive AND sign-definite AND accumulating.  It
+   still fails the C-61 control, and its bias is INSERTED, so it is OPEN, not won.
+
+5. THE TRICHOTOMY, WHICH IS THIS LANE'S ACTUAL RESULT.
+   Every quantity definable on a record carrier falls into exactly one of three classes:
+   (Stated under the hypothesis that admissible writes form a GROUP and the configuration
+    measure is the uniform orbit measure.  Part 7 shows that both fail together once the
+    writer is irreversible, and that this is the only place they can fail.)
+     I.   RESPONSIVE to writing.  Then it is a non-trivial part of the group algebra, its
+          orbit mean is EXACTLY zero, it takes both signs equally often, and it cancels
+          like k^(-1/2).  Fails standard (d).  [parts 2,3,4,5 -- exact]
+     II.  INVARIANT and expressible as a formula in +-1 observables, states and baths.
+          Then it has an exact twin on a carrier with ZERO records, because that carrier
+          has +-1 observables too.  Record-blind.  [part 5 sec 3 -- measured to 6 digits]
+     III. INVARIANT and defined only via the clauses: the record count k and the
+          protection distance d.  These survive the control -- and they are a COUNT and a
+          TOPOLOGICAL LENGTH, which standard (c) excludes, and they do not respond.
+
+   A SOURCE MUST BE IN CLASS I (it responds to its own matter) AND HAVE CLASS III's
+   IMMUNITY TO THE CONTROL.  THE CLASSES ARE DISJOINT.
+
+6. WHAT WOULD FALSIFY THIS -- stated so the next lane can aim at it.
+   (F1) A carrier on which some admissible write is NOT invertible by another admissible
+        operation.  The orbit-averaging lemma needs the writers to form a GROUP.  If the
+        admissible set were a SEMIGROUP -- irreversible writes -- orbits would not exist and
+        the mean-zero conclusion would fail.  Clause (iv) as written gives a unitary, hence
+        a group; a DISSIPATIVE writer would not.  TESTED IN PART 7: such a writer EXISTS on
+        the torus, both its Kraus operators commute with H, and under the biased ensemble it
+        produces the cancellation law fails completely (coherence 1.000000 at m=1).
+   (F2) A quantity defined via the clauses that is NOT a count and NOT topological.  Class
+        III has exactly two members here; a third with continuous, non-topological content
+        would break the trichotomy.
+   (F3) A record configuration space that is NOT a group torsor -- non-abelian anyons -- IF
+        it also made the admissible set fail to be a group.  Genus and record number alone
+        do not do it (section 1).
+========================================================================================================

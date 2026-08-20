@@ -1,0 +1,135 @@
+====================================================================================================
+PART 1 -- THE ABSTRACT CORE.  Exact integer / Fraction arithmetic, exhaustive over C.
+====================================================================================================
+
+--- F1/F2/F3: orbit count, invariant dimension, and the CONTROL COLUMN (D-15) ---
+
+ k group G_W                            |G|  #orbits  dim inv  2^(k-rank)  transitive?    non-const invariant exhibited
+--------------------------------------------------------------------------------------------------------------------------------
+ 1 FULL  <flip_1..flip_k>                 2        1        1           1         True            NONE (only constants)
+
+ 2 FULL  <flip_1..flip_k>                 4        1        1           1         True            NONE (only constants)
+ 2 DROP ONE  <flip_1..flip_{k-1}>         2        2        2           2        False                            chi_2
+ 2 PAIRED  <flip_i flip_{i+1}>            2        2        2           2        False                           chi_12
+ 2 TRIVIAL  <>                            1        4        4           4        False                            chi_1
+
+ 3 FULL  <flip_1..flip_k>                 8        1        1           1         True            NONE (only constants)
+ 3 DROP ONE  <flip_1..flip_{k-1}>         4        2        2           2        False                            chi_3
+ 3 PAIRED  <flip_i flip_{i+1}>            4        2        2           2        False                          chi_123
+ 3 TRIVIAL  <>                            1        8        8           8        False                            chi_1
+
+ 4 FULL  <flip_1..flip_k>                16        1        1           1         True            NONE (only constants)
+ 4 DROP ONE  <flip_1..flip_{k-1}>         8        2        2           2        False                            chi_4
+ 4 PAIRED  <flip_i flip_{i+1}>            8        2        2           2        False                         chi_1234
+ 4 TRIVIAL  <>                            1       16       16          16        False                            chi_1
+
+ 5 FULL  <flip_1..flip_k>                32        1        1           1         True            NONE (only constants)
+ 5 DROP ONE  <flip_1..flip_{k-1}>        16        2        2           2        False                            chi_5
+ 5 PAIRED  <flip_i flip_{i+1}>           16        2        2           2        False                        chi_12345
+ 5 TRIVIAL  <>                            1       32       32          32        False                            chi_1
+
+ 6 FULL  <flip_1..flip_k>                64        1        1           1         True            NONE (only constants)
+ 6 DROP ONE  <flip_1..flip_{k-1}>        32        2        2           2        False                            chi_6
+ 6 PAIRED  <flip_i flip_{i+1}>           32        2        2           2        False                       chi_123456
+ 6 TRIVIAL  <>                            1       64       64          64        False                            chi_1
+
+ 7 FULL  <flip_1..flip_k>               128        1        1           1         True            NONE (only constants)
+ 7 DROP ONE  <flip_1..flip_{k-1}>        64        2        2           2        False                            chi_7
+ 7 PAIRED  <flip_i flip_{i+1}>           64        2        2           2        False                      chi_1234567
+ 7 TRIVIAL  <>                            1      128      128         128        False                            chi_1
+
+READ: with the FULL flip group the orbit count is 1 and the invariant space is exactly
+      1-dimensional (the constants) at every k tested -- the theorem's core.  The three
+      CONTROL rows in each block are groups that are NOT the full flip group; each has
+      orbit count > 1 and exhibits a NAMED non-constant invariant.  The instrument would
+      have registered a non-transitive writer group had one been present.
+
+====================================================================================================
+--- F4: THE LITERAL CLAUSE OF THE CANDIDATE IS FALSE ---
+
+CANDIDATE, verbatim: "every invariant functional is CONSTANT, AND every non-constant
+functional is G_W-ODD, hence has mean exactly zero over configurations, hence CANCELS."
+
+The second conjunct does not follow.  G_W-invariance is a property of the WHOLE function;
+non-constant is its negation; but a non-constant function is NOT thereby odd.  Counterexample
+below, exact, at every k.
+
+ k f(sigma)                      mean over C  non-const?  responsive?   G_W-odd?  mean of responsive part
+------------------------------------------------------------------------------------------------------------
+ 1 #{i : sigma_i = +1}                   1/2        True         True      False                        0
+ 2 #{i : sigma_i = +1}                     1        True         True      False                        0
+ 3 #{i : sigma_i = +1}                   3/2        True         True      False                        0
+ 4 #{i : sigma_i = +1}                     2        True         True      False                        0
+ 5 #{i : sigma_i = +1}                   5/2        True         True      False                        0
+ 6 #{i : sigma_i = +1}                     3        True         True      False                        0
+
+READ: f = #{i : sigma_i = +1} is NON-CONSTANT and RESPONSIVE at every k, and its mean is
+      k/2, which is NOT zero for k >= 1.  The literal clause is REFUTED.  What IS zero is
+      the mean of its RESPONSIVE part f - <f> (last column, exactly 0 at every k).  The
+      non-zero mean sits entirely in the CONSTANT, i.e. writer-INVARIANT, i.e. RECORD-BLIND
+      component -- k/2 is the same number whatever is written.  That is C-61 restated.
+
+====================================================================================================
+--- F5: THE REPAIRED CLAUSE.  Every WRITE RESPONSE cancels, exactly, for EVERY functional ---
+
+Delta_i f (sigma) := f(flip_i sigma) - f(sigma).   Claim: Delta_i f (flip_i sigma) = -Delta_i f(sigma),
+hence sum_sigma d(sigma) Delta_i f(sigma) = 0 for any flip_i-invariant weight d.
+Checked EXHAUSTIVELY over an orthogonal BASIS of all functions on C (the 2^k characters),
+which settles it for every real functional by linearity, plus random integer functions.
+
+ k  #functions checked   max |sum_sigma Delta_i f|  (d=1)  max |sum_sigma d Delta_i f| (d random G-inv)   CONTROL: d NOT G-invariant
+------------------------------------------------------------------------------------------------------------------------------------
+ 1                 202                                  0                                             0                            0
+ 2                 408                                  0                                             0                          364
+ 3                 624                                  0                                             0                          958
+ 4                 864                                  0                                             0                          941
+ 5                1160                                  0                                             0                         1772
+ 6                1584                                  0                                             0                         2493
+ 7                2296                                  0                                             0                         4156
+
+READ: the write response sums to EXACTLY 0 (integer zero, not a tolerance) for every one of
+      the functions checked, at every k, whenever the weight is invariant under the flip.
+      The CONTROL column uses a weight that is NOT flip-invariant and is non-zero -- so the
+      instrument can register a non-cancelling response when one exists.  The control is
+      exactly the physically meaningful failure mode: an UNBALANCED carrier (D-15).
+
+====================================================================================================
+--- F6: MASTER IDENTITY.  <f>_d = <Pi_G f>_d  whenever d is G-invariant ---
+
+Pi_G f (sigma) := (1/|G|) sum_{eps in G} f(eps.sigma), the projection onto invariants.
+If d is G-invariant then reindexing gives <f>_d = <Pi_G f>_d identically.  Under the FULL
+flip group Pi_G f = <f> is a CONSTANT, so the d-weighted mean of ANY functional equals a
+number that does not depend on the record configuration at all.
+
+ k group                        max |<f>_d - <Pi_G f>_d|     #f  dim inv  CONTROL d not G-inv: max diff
+--------------------------------------------------------------------------------------------------------
+ 1 FULL                                                0    300        1                           15/2
+ 1 PAIRED (control group)                              0    300        2                              0
+ 2 FULL                                                0    300        1                         441/26
+ 2 PAIRED (control group)                              0    300        2                           99/7
+ 3 FULL                                                0    300        1                         193/16
+ 3 PAIRED (control group)                              0    300        2                       1245/148
+ 4 FULL                                                0    300        1                         761/84
+ 4 PAIRED (control group)                              0    300        2                       4305/536
+ 5 FULL                                                0    300        1                     31055/6048
+ 5 PAIRED (control group)                              0    300        2                     13245/3088
+ 6 FULL                                                0    300        1                     29293/6848
+ 6 PAIRED (control group)                              0    300        2                     26587/4656
+
+READ: the identity holds as an EXACT rational zero in every case with a G-invariant weight.
+      The CONTROL column (weight not G-invariant) is non-zero, so the test discriminates.
+
+====================================================================================================
+PART 1 VERDICT
+====================================================================================================
+  * The GROUP-THEORETIC core of the candidate is TRUE and now proved exactly:
+      independent writability => all coordinate flips in G_W => G_W acts SIMPLY
+      TRANSITIVELY => #orbits = 1 => the invariant space is 1-dimensional (constants).
+  * The candidate's SECOND clause as literally written is FALSE: non-constant does not
+      imply mean zero.  Counterexample f = #{i : sigma_i = +1}, mean k/2, at every k.
+  * The REPAIRED clause is true and STRONGER than what was asked: the write RESPONSE of
+      every functional cancels exactly, and the d-weighted mean of every functional equals
+      that of its invariant part, which under independent writability is a constant.
+  * Therefore: RESPONSIVE and NON-CANCELLING are mutually exclusive COMPONENTS of any
+      functional, not mutually exclusive functionals.  Every functional splits into a
+      record-blind accumulating part and a record-sensitive cancelling part.

@@ -1,0 +1,50 @@
+==============================================================================
+PART B.  THE TORUS READ WITH *ALL* MUTUALLY COMMUTING RECORDS (L=2, dense)
+  largest set of MUTUALLY COMMUTING non-identity records found: 3
+  its classes: [(0, 0, 0, 1), (0, 1, 0, 0), (0, 1, 0, 1)]
+  joint sign labels REALISED on the ground space: [(-1, -1, 1), (-1, 1, -1), (1, -1, -1), (1, 1, 1)]  -> 4 of 2^3=8
+  the third record is the PRODUCT of the other two, so it carries no independent bit:
+     (-1, -1, 1)   s3 == s1*s2 ? True
+     (-1, 1, -1)   s3 == s1*s2 ? True
+     (1, -1, -1)   s3 == s1*s2 ? True
+     (1, 1, 1)   s3 == s1*s2 ? True
+  commuting_family on that set -> 2 independent bits; independently_writable = [0, 1]
+  READ: on the torus BOTH readings of 'maximal commuting family' give the SAME configuration space (4 configurations, 2 independent bits).
+
+==============================================================================
+PART C.  FALSIFICATION SCAN over random stabiliser carriers
+  random stabiliser carriers scanned: 108
+  cases where commuting_family was NOT fully independently writable: 0
+     nq   m  trials  all writable   |family|  |writable|
+      3   1      12            12        [2]         [2]
+      3   2      12            12        [1]         [1]
+      4   1      12            12        [3]         [3]
+      4   2      12            12        [2]         [2]
+      4   3      12            12        [1]         [1]
+      5   1      12            12        [4]         [4]
+      5   2      12            12        [3]         [3]
+      5   3      12            12        [2]         [2]
+      5   4      12            12        [1]         [1]
+  READ: no counterexample found among stabiliser carriers. The greedy family's even-splitting criterion FORCES independent writability -- see PART A.
+
+==============================================================================
+PART D.  HIGHER GENUS -- several tori, F_2 only
+  tori [3]: n = 18, k = 2 records, gram det_F2 = 1, configurations = 4, |G_W| = 4
+      action: {'group_order': 4, 'n_configs': 4, 'n_orbits': 1, 'orbit_sizes': [4], 'stabiliser_orders': [1], 'burnside_orbit_count': '1', 'transitive': True, 'simply_transitive': True, 'invariant_dim_exact': 1}
+  tori [3, 3]: n = 36, k = 4 records, gram det_F2 = 1, configurations = 16, |G_W| = 16
+      action: {'group_order': 16, 'n_configs': 16, 'n_orbits': 1, 'orbit_sizes': [16], 'stabiliser_orders': [1], 'burnside_orbit_count': '1', 'transitive': True, 'simply_transitive': True, 'invariant_dim_exact': 1}
+  tori [3, 3, 3]: n = 54, k = 6 records, gram det_F2 = 1, configurations = 64, |G_W| = 64
+      action: {'group_order': 64, 'n_configs': 64, 'n_orbits': 1, 'orbit_sizes': [64], 'stabiliser_orders': [1], 'burnside_orbit_count': '1', 'transitive': True, 'simply_transitive': True, 'invariant_dim_exact': 1}
+  tori [3, 4]: n = 50, k = 4 records, gram det_F2 = 1, configurations = 16, |G_W| = 16
+      action: {'group_order': 16, 'n_configs': 16, 'n_orbits': 1, 'orbit_sizes': [16], 'stabiliser_orders': [1], 'burnside_orbit_count': '1', 'transitive': True, 'simply_transitive': True, 'invariant_dim_exact': 1}
+
+==============================================================================
+PART E.  THE CANCELLATION LAW, exact character decomposition
+  k=1: characters chi_S, S nonempty: 1;  max |sum over configurations| = 0  (exact integer, must be 0)
+        every non-constant character is ODD under some writer: True
+  k=2: characters chi_S, S nonempty: 3;  max |sum over configurations| = 0  (exact integer, must be 0)
+        every non-constant character is ODD under some writer: True
+  k=3: characters chi_S, S nonempty: 7;  max |sum over configurations| = 0  (exact integer, must be 0)
+        every non-constant character is ODD under some writer: True
+  k=4: characters chi_S, S nonempty: 15;  max |sum over configurations| = 0  (exact integer, must be 0)
+        every non-constant character is ODD under some writer: True

@@ -1,0 +1,90 @@
+========================================================================================================
+O-50 D  PART 2   THE THEOREM, EXACTLY
+========================================================================================================
+
+1. THE LITERAL STATEMENT IS FALSE.  ONE LINE KILLS IT.
+   f(s) = (1 + s_1)/2 on k=3 records.  values [Fraction(0, 1), Fraction(1, 1)]
+   non-constant: True     responsive to writing record 1: max|df| = 1
+   mean over configurations = 1/2  -- NOT ZERO.  It does not cancel.
+   So 'non-constant => G_W-odd => mean zero' is REFUTED.  A non-constant functional is a
+   sum of a CONSTANT and an odd part; only the odd part is forced to vanish.
+
+2. WHAT IS ACTUALLY TRUE -- AND IT NEEDS NO HYPOTHESIS AT ALL.
+   LEMMA (orbit averaging).  Let ANY group G act on ANY finite configuration set X, and let
+   f : X -> R.  Define (Pf)(x) = (1/|Gx|) sum_{y in Gx} f(y), the orbit average.  Then
+       (1) Pf is G-INVARIANT, hence UNCHANGED by every admissible write;
+       (2) f - Pf has mean EXACTLY ZERO on every orbit;
+       (3) f is responsive to writing  <=>  f != Pf  <=>  f - Pf != 0.
+   Therefore: THE PART OF ANY FUNCTIONAL THAT RESPONDS TO WRITING AVERAGES TO EXACTLY ZERO
+   OVER THE WRITE ORBIT.  Proof: (1) and (2) are the definition of an average over a group
+   orbit; (3) is immediate.  NO simple transitivity, NO independent writability, NO
+   abelianness, NO structure on X is used.  EXACT.
+
+   SIMPLE TRANSITIVITY ADDS EXACTLY ONE THING: the orbit is all of X, so Pf is a GLOBAL
+   constant and the invariant space is 1-dimensional (Part 1 section 6 measured dim = 1).
+   Without it the invariant space is larger -- one dimension per orbit -- and that is the
+   only door the hypothesis opens.  Section 5 walks through it.
+
+3. THE Z_2^k FORM, WHICH IS WHAT THE TORUS GIVES, AND ITS EXACT CANCELLATION LAW
+   f(s) = sum_{T subset [k]} fhat(T) chi_T(s), chi_T(s) = prod_{i in T} s_i.
+   A write by generator g multiplies chi_T by (-1)^{|T and supp(g)|}.  chi_empty is the only
+   invariant character, so Pf = fhat(empty) = the mean, and every responsive piece is a sum
+   of NON-TRIVIAL characters, each of which takes +1 and -1 EQUALLY OFTEN.
+
+     k  #configs   mean of chi_T (T nonempty), exact   #sign-definite characters
+     1         2                       max |sum| = 0                           0
+     2         4                       max |sum| = 0                           0
+     3         8                       max |sum| = 0                           0
+     4        16                       max |sum| = 0                           0
+     5        32                       max |sum| = 0                           0
+     6        64                       max |sum| = 0                           0
+     7       128                       max |sum| = 0                           0
+     8       256                       max |sum| = 0                           0
+     9       512                       max |sum| = 0                           0
+    10      1024                       max |sum| = 0                           0
+    11      2048                       max |sum| = 0                           0
+    12      4096                       max |sum| = 0                           0
+   EVERY non-trivial character sums to EXACTLY 0 and NONE is sign-definite.  Exact integers,
+   not a numerical trend.  A responsive functional therefore FAILS standard (d) identically.
+
+4. HOW BADLY IT CANCELS AS RECORDS ARE ADDED -- and the control that shows this is not
+   about records at all.
+     m terms  coherence |sum|/sum| |    sqrt(2/pi)/sqrt(m)    ratio
+           4                0.375235              0.398942   0.9406
+          16                0.196593              0.199471   0.9856
+          64                0.099284              0.099736   0.9955
+         256                0.049893              0.049868   1.0005
+        1024                0.024932              0.024934   0.9999
+        4096                0.012432              0.012467   0.9972
+   Reproduces C-62's closed form sqrt(2/pi) m^(-1/2) out of sample.  D-20: this is a
+   PREDICTION checked, not a fit.
+
+   CONTROL (C-61 discipline).  The same law holds for a sum over the +-1 labels of ANY
+   register, record or not:
+   zero-record control carrier (C-61): H' = sum J Z Z + sum h Z, n=10, 1024 distinct energies of 1024 -> NON-DEGENERATE -> ZERO records by P-1
+   its bond energy sum J_i s_i s_i+1 over ALL 1024 label states: mean = +0.000e+00, coherence = 0.327799
+   the same quantity on a genuine 10-record register: identical by construction -- the
+   cancellation law is a fact about +-1 LABELS, not about records.  IT IS RECORD-BLIND.
+   That cuts both ways: it is why no responsive functional survives, and it is why
+   cancellation alone can never be evidence that records are involved.
+
+5. ESCAPE (5a): WHAT HAPPENS WHEN THE HYPOTHESIS FAILS -- NON-INDEPENDENT WRITABILITY.
+   C-65's carrier: H = sum J_i Z_i Z_i+1, open chain.  Records SEARCHED, writers SEARCHED
+   over the whole Pauli group -- nothing nominated (D-18).
+   n=3: eigenvalue multiplicities [2, 2, 2, 2]; admissible Paulis 16; distinct config-flips realised [(1, 1, 1)]
+        orbits: 4 of size [2]  ->  dim(invariant functionals) = 4 of 8   SIMPLY TRANSITIVE: False
+        NON-CONSTANT INVARIANT EXHIBITED: chi_{1,2}(s) = s_1 s_2 ; constant on every orbit: True; distinct values [-1, 1]
+        and BY CONSTRUCTION it is INVARIANT, i.e. NO admissible write changes it.
+   n=4: eigenvalue multiplicities [2, 2, 2, 2, 2, 2, 2, 2]; admissible Paulis 32; distinct config-flips realised [(1, 1, 1, 1)]
+        orbits: 8 of size [2]  ->  dim(invariant functionals) = 8 of 16   SIMPLY TRANSITIVE: False
+        NON-CONSTANT INVARIANT EXHIBITED: chi_{1,2}(s) = s_1 s_2 ; constant on every orbit: True; distinct values [-1, 1]
+        and BY CONSTRUCTION it is INVARIANT, i.e. NO admissible write changes it.
+   n=5: eigenvalue multiplicities [2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2]; admissible Paulis 64; distinct config-flips realised [(1, 1, 1, 1, 1)]
+        orbits: 16 of size [2]  ->  dim(invariant functionals) = 16 of 32   SIMPLY TRANSITIVE: False
+        NON-CONSTANT INVARIANT EXHIBITED: chi_{1,2}(s) = s_1 s_2 ; constant on every orbit: True; distinct values [-1, 1]
+        and BY CONSTRUCTION it is INVARIANT, i.e. NO admissible write changes it.
+   THE ESCAPE IS REAL AND IT IS EMPTY.  Dropping independent writability does create
+   non-constant invariants -- but 'invariant' MEANS 'does not respond to writing'.  The
+   door opens onto the same wall: C-60's dE=0 and C-65's scalar-on-every-eigenspace are two
+   instances of exactly this.
+========================================================================================================

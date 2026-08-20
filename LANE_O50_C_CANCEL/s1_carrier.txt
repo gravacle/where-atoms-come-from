@@ -1,0 +1,142 @@
+========================================================================================================
+O-50-C  STEP 1.   THE CARRIER: TORIC CODE ON AN L x L TORUS.  ALL FIVE CLAUSES, EXACT F_2.
+========================================================================================================
+
+D-23 SCOPE: every clause-(v) statement below is on the TORUS, realised by manifold homology.
+           Nothing here rests on the 1D proper-arc proxy convention.
+
+--------------------------------------------------------------------------------------------------------
+  A.  THE CODE, AND THE LOGICAL GROUP COMPUTED (NEVER NOMINATED)
+--------------------------------------------------------------------------------------------------------
+    L  n=2L^2  |S| rows  rank S  k=n-rank  conj pairs  min logical wt  nominated == computed?
+    2       8         8       6         2           2               2                    True
+    3      18        18      16         2           2               3                    True
+    4      32        32      30         2           2               4                    True
+    5      50        50      48         2           2               5                    True
+
+  READ: rank(S) = n-2 at every L, so k = 2 logical qubits at genus 1 -- the expected count.
+  symplectic_logicals returns k CONJUGATE PAIRS (D-18), not two lists; the nominated loops span
+  the same space modulo S, which validates the code path without being its source.
+
+--------------------------------------------------------------------------------------------------------
+  B.  THE DENSE INSTRUMENT.  L = 2, dim 2^8 = 256.  THE PROGRAM'S OWN ROUTINES.
+--------------------------------------------------------------------------------------------------------
+  H = -sum A_v - sum B_p ;  dim = 256 ;  eigenvalue multiplicities = [4, 48, 152, 48, 4]
+  ground energy = -8.000000 ,  ground-space dimension = 4  (4 = 2^{2g} at genus 1: the two logical qubits)
+
+  P-1 check: H is DEGENERATE (largest multiplicity 152), so a record is not excluded at the outset.
+
+                      operator  weight  [.,H]=0 (ii)  R^2=I (i)  (iii) nonconst  (iv) Tr(P_E R)=0  max|Tr(P_E R)|
+      Zbar_a (computed pair 0)       2      0.00e+00   0.00e+00            True              True        6.74e-16
+      Xbar_a (computed pair 0)       2      0.00e+00   0.00e+00            True              True        8.88e-15
+      Zbar_b (computed pair 1)       2      0.00e+00   0.00e+00            True              True        2.58e-15
+      Xbar_b (computed pair 1)       2      0.00e+00   0.00e+00            True              True        8.92e-15
+
+  CONTROL (D-15): the same four tests on operators that MUST fail, so the instrument is not
+  simply printing True.
+              single-qubit Z_0       1      4.53e+01                       True              True        2.84e-14
+                    identity I       0      0.00e+00                      False             False        1.52e+02
+                stabiliser B_p       4      0.00e+00                       True             False        2.40e+01
+
+  READ: the four computed logicals pass (i),(ii),(iii),(iv).  The single-qubit Z FAILS (ii)
+  (non-zero commutator); the identity and the stabiliser FAIL (iii).  The tests discriminate.
+
+  The program's own multi-record routines on the same dense carrier:
+    minimal projections in the commutant element: 256
+    commuting_family({Zbar_a, Zbar_b})     -> 2 members
+    independently_writable(family)          -> indices [0, 1]   (2 of 2 independently writable)
+    joint (H, R_1, R_2) blocks in the GROUND eigenspace: {(-1, -1): 1, (-1, 1): 1, (1, -1): 1, (1, 1): 1}
+
+  READ: two independent records, each independently writable, and the ground space splits into
+  FOUR blocks of dimension 1 -- one per record configuration.  2^m = 4 configurations, m = 2.
+  Contrast C-65: the fully coupled chain has 2-dimensional eigenspaces and m = 1 at every n.
+
+--------------------------------------------------------------------------------------------------------
+  C.  CLAUSE (iv): THE WRITERS, FOUND BY EXHAUSTIVE SEARCH OVER THE LOGICAL GROUP (D-18)
+--------------------------------------------------------------------------------------------------------
+  An ADMISSIBLE U is any unitary with [U,H] = 0.  Every element of N(S) commutes with every
+  stabiliser, hence with H, so the whole logical group is admissible.  The search below is over
+  ALL 2^{2k} logical classes for each L; nothing is nominated.
+
+    L  |N(S)/S|  record classes (i)-(iv)  flippers found for R_1  min flipper weight  Lagrangian families
+    2        16                       15                       8                   2                   15
+    3        16                       15                       8                   3                   15
+    4        16                       15                       8                   4                   15
+    5        16                       15                       8                   5                   15
+
+  READ: every one of the 2^{2k}-1 non-identity logical classes has an ADMISSIBLE flipper inside
+  N(S) itself -- the 'flippers found' column is never 0 -- so clause (iv) holds for all of them.
+  Clauses (i) and (ii) hold by construction (a Pauli with the Hermitian phase squares to I, and
+  N(S) commutes with every stabiliser hence with H); section B verified both densely at L = 2.
+  Clause (iii) then FOLLOWS and does not need a separate search: if an admissible w anticommutes
+  with R, then w maps the R = +1 part of any eigenspace onto the R = -1 part of the SAME
+  eigenspace (because [w,H] = 0), so both parts are non-empty and of equal dimension -- R is
+  non-constant there and Tr(P_E R) = 0.  Section B measured exactly that at L = 2.
+  A maximal COMMUTING family is a
+  Lagrangian subspace; there are 15 of them at genus 1, and the choice among them is a choice
+  of basis, not of physics.  m = k = 2 records per torus.
+
+--------------------------------------------------------------------------------------------------------
+  D.  CLAUSE (v), EXACTLY, ON THE TORUS.  NO CONVENTION, NO SAMPLING.
+--------------------------------------------------------------------------------------------------------
+  Definition used: a region is the edge set of a d x d block of sites with d < L, so the block
+  lifts to the plane and is CONTRACTIBLE.  The question asked of each region is EXACT F_2 linear
+  algebra: is there any Pauli supported inside the region that commutes with every stabiliser
+  and is NOT a product of stabilisers?  Equivalently  dim( Pauli(region) cap N(S) ) >
+  dim( Pauli(region) cap S ).  If not, no operation on that region touches any record.
+
+    L   d  #regions  #edges  dim N cap region  dim S cap region  NON-TRIVIAL LOGICALS  clause (v) holds
+    2   2         4       4                 3                 1                     2             FAILS  (d = L: WRAPS, not contractible -- positive control)
+    3   2         9       4                 1                 1                     0             holds
+    3   3         9      12                 9                 7                     2             FAILS  (d = L: WRAPS, not contractible -- positive control)
+    4   2        16       4                 1                 1                     0             holds
+    4   3        16      12                 5                 5                     0             holds
+    4   4        16      24                19                17                     2             FAILS  (d = L: WRAPS, not contractible -- positive control)
+
+  READ: for every d < L the region contains NO non-trivial logical -- every Pauli in the region
+  that commutes with H is a product of stabilisers, so no admissible operation on a single
+  contractible region can flip any record.  CLAUSE (v) HOLDS ON THE TORUS.  The d = L rows are
+  the positive control: a block that wraps is NOT contractible and DOES contain logicals, so
+  the instrument registers a non-zero when one is there.
+
+  This is homology, not convention (D-23): the flipping operators have genuinely non-contractible
+  support, and the code distance is L in both directions, so both scale with L.
+
+--------------------------------------------------------------------------------------------------------
+  E.  D-22.  THE CARRIER'S SYMMETRY, REPORTED BEFORE ANY SEPARATION RESULT IS READ.
+--------------------------------------------------------------------------------------------------------
+  Three concrete symmetry generators are applied to the record set and the induced permutation
+  of the records is COMPUTED (not asserted):
+    Tr : translation by one site  -- maps each homology cycle to a parallel one
+    Rt : the 90-degree rotation   -- exchanges the two homology cycles
+    Dl : electromagnetic duality  -- exchanges X-type and Z-type logicals
+
+  L = 2:  translation fixes every record CLASS: True    rotation exchanges the two records: True
+  L = 3:  translation fixes every record CLASS: True    rotation exchanges the two records: True
+  L = 4:  translation fixes every record CLASS: True    rotation exchanges the two records: True
+
+  READ: translations act TRIVIALLY on record classes (they move the representative loop, not its
+  homology class), and the rotation EXCHANGES the two records.  So the automorphism group acts
+  TRANSITIVELY on the record set of one torus.  On k disjoint tori the permutation group S_k
+  acts as well, so the automorphism group is transitive on all m = 2k records.
+
+  D-22 CONSEQUENCE, STATED HERE AND USED IN STEP 6: because Aut(carrier) is TRANSITIVE on the
+  records, EVERY scalar attached to a record by the carrier alone -- minimum weight, writer
+  weight, protection distance, number of minimum-weight representatives -- takes THE SAME VALUE
+  on every record.  No carrier-derived weighting can distinguish one record from another.
+  This is a geometry-free direction of the carrier: a functional built from carrier data alone
+  is forced to be SYMMETRIC in the records.  It does NOT make the carrier record-blind -- the
+  records are distinguished from each other by nothing, but from the identity by clause (iii).
+
+  Per-record carrier invariants, measured:
+    L     record  min class weight  min flipper weight  code distance
+    2        R_1                 2                   2              2
+    2        R_2                 2                   2              2
+    3        R_1                 3                   3              3
+    3        R_2                 3                   3              3
+    4        R_1                 4                   4              4
+    4        R_2                 4                   4              4
+    5        R_1                 5                   5              5
+    5        R_2                 5                   5              5
+
+  READ: identical across records at every L, as the transitivity of Aut requires.

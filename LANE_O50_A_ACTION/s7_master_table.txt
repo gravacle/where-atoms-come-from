@@ -1,0 +1,33 @@
+carrier                            scope       n  k  cfgs  |G_W|  orb      osz  stab  trans  simp  inv dim  non-constant invariant
+----------------------------------------------------------------------------------------------------------------------------------
+toric L=2                          TORUS       8  2     4      4    1      [4]   [1]   True  True        1  none
+toric L=3                          TORUS      18  2     4      4    1      [4]   [1]   True  True        1  none
+toric L=4                          TORUS      32  2     4      4    1      [4]   [1]   True  True        1  none
+toric L=5                          TORUS      50  2     4      4    1      [4]   [1]   True  True        1  none
+1D chain n=3 (greedy family)       1D PROXY    3  1     2      2    1      [2]   [1]   True  True        1  none
+1D chain n=3 (naive family {Z_i})  1D PROXY    3  3     8      2    4      [2]   [1]  False False        4  s_i s_j (bond; NOT a record)
+1D chain n=4 (greedy family)       1D PROXY    4  1     2      2    1      [2]   [1]   True  True        1  none
+1D chain n=4 (naive family {Z_i})  1D PROXY    4  4    16      2    8      [2]   [1]  False False        8  s_i s_j (bond; NOT a record)
+1D chain n=5 (greedy family)       1D PROXY    5  1     2      2    1      [2]   [1]   True  True        1  none
+1D chain n=5 (naive family {Z_i})  1D PROXY    5  5    32      2   16      [2]   [1]  False False       16  s_i s_j (bond; NOT a record)
+1D chain n=6 (greedy family)       1D PROXY    6  1     2      2    1      [2]   [1]   True  True        1  none
+1D chain n=6 (naive family {Z_i})  1D PROXY    6  6    64      2   32      [2]   [1]  False False       32  s_i s_j (bond; NOT a record)
+
+CLAUSE (v) COLUMN (D-23)
+  toric L=2                          d = 2   vacuous (no disk at L=2)
+  toric L=3                          d = 3   holds by homology
+  toric L=4                          d = 4   holds by homology
+  toric L=5                          d = 5   holds by homology
+  1D chain rows: clause (v) is the O-48 proxy question (C-64) and is NOT used anywhere above.
+
+MACHINE CHECK OF THE INDUCTION (equal joint-block dimensions inside every eigenspace)
+  toric L=2  E_0 mult   4: blocks [1, 1, 1, 1]  predicted m/2^k = 1  OK=True
+  toric L=2  E_1 mult  48: blocks [12, 12, 12, 12]  predicted m/2^k = 12  OK=True
+  toric L=2  E_2 mult 152: blocks [38, 38, 38, 38]  predicted m/2^k = 38  OK=True
+  toric L=2  E_3 mult  48: blocks [12, 12, 12, 12]  predicted m/2^k = 12  OK=True
+  toric L=2  E_4 mult   4: blocks [1, 1, 1, 1]  predicted m/2^k = 1  OK=True
+  induction verified on every eigenspace: True
+
+CONTROL FOR THE INDUCTION: the naive chain family, where the criterion is NOT met
+  chain n=4  E_0 mult 2: realised joint labels = 2 of 2^4 = 16  -> the family does NOT split the eigenspace evenly; independently_writable = []
+  READ: the hypothesis fails exactly here, and exactly here a non-constant invariant exists.

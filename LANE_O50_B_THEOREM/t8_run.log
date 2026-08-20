@@ -1,0 +1,191 @@
+==================================================================================================================================
+PART 4 -- THE REFUTATION HUNT.  EXHAUSTIVE over structural profiles, using the RELAXED
+         family definition (mutually commuting records, each satisfying (i)-(iv) on its own,
+         NO even-splitting demand).  A rigged search would use the program's own
+         commuting_family(), whose even-splitting rule already forces the conclusion.
+==================================================================================================================================
+
+--- 4.0  THE RIGGING CHECK, stated first and explicitly ---
+
+record_model.commuting_family() accepts a new record only if it splits EVERY existing joint
+block into two halves of EQUAL dimension (`len(pl) != len(mi) -> reject`).  After k accepted
+records every joint block inside a shell therefore has dimension dim(E)/2^k -- the table is
+UNIFORM BY CONSTRUCTION, all k flips exist by LEMMA W, and the theorem holds trivially.
+
+  => WITHIN THE PROGRAM'S OWN MACHINERY THE THEOREM IS UNFALSIFIABLE.  That is a finding
+     about the machinery, not evidence for the theorem.  Everything below therefore drops
+     the even-splitting demand and admits any mutually commuting set of genuine records.
+
+==================================================================================================================================
+--- 4.1  EXHAUSTIVE HUNT over all one-shell profiles with m minimal projections and
+         dimensions drawn from {1..D}.  For each profile: ALL clause-(iv) records, ALL
+         commuting pairs and triples, and the contingency table
+            (# independently writable records)  x  (# orbits of the writer group). ---
+
+THE FORBIDDEN CELL, if the theorem is true, is  indep = k  AND  orbits > 1.
+
+profiles searched: 60    records enumerated: 812
+COMMUTING PAIRS analysed:   8059
+COMMUTING TRIPLES analysed: 64397
+
+CONTINGENCY TABLE, k = 2 (pairs):
+  # indep writable   # orbits  dim invariants      count   FORBIDDEN CELL?
+----------------------------------------------------------------------------
+                 0          2               2       5665             False
+                 2          1               1       2394             False
+
+CONTINGENCY TABLE, k = 3 (triples):
+  # indep writable   # orbits  dim invariants      count   FORBIDDEN CELL?
+----------------------------------------------------------------------------
+                 0          2               2        894             False
+                 0          4               4      42724             False
+                 0          8               8      15451             False
+                 1          2               2        288             False
+                 3          1               1       5040             False
+
+FORBIDDEN CELL POPULATION: 0
+  The forbidden cell is EMPTY across every family analysed.  The populated cells are
+  numerous and cover indep = 0,1,..,k and orbits = 1,2,4,..  -- so the search WOULD have
+  registered a counterexample had one existed (D-15: the control is the populated part of
+  the same table).
+
+==================================================================================================================================
+--- 4.2  MULTI-SHELL PROFILES.  Degenerate spectra with several shells give the writer
+         group MORE constraints to satisfy, so this is the harder case for the theorem. ---
+
+multi-shell profiles searched: 55   commuting pairs analysed: 272256
+
+  # indep writable   # orbits  dim invariants        count   FORBIDDEN CELL?
+------------------------------------------------------------------------------
+                 0          2               2       255696             False
+                 2          1               1        16560             False
+
+FORBIDDEN CELL POPULATION (multi-shell): 0
+
+==================================================================================================================================
+--- 4.3  WHY THE CELL IS EMPTY -- and it is a PROOF, not an induction from the tables ---
+
+Suppose all k records are independently writable.  By LEMMA W(a)=>(b) each flip_i preserves
+the dimension table.  The flips generate (Z_2)^k.  For any two configurations sigma, tau the
+element eps with eps_i = [sigma_i != tau_i] lies in that group and carries sigma to tau, so
+the action is TRANSITIVE; the stabiliser of any sigma is trivial because eps.sigma = sigma
+forces eps = 0, so it is SIMPLY transitive.  A transitive action has ONE orbit, and the
+space of invariant functions has dimension = number of orbits = 1.  Hence
+      indep = k  =>  orbits = 1,
+with no hypothesis about the carrier at all: not stabiliser, not abelian, not finite-
+dimensional beyond what the family needs.  THE FORBIDDEN CELL CANNOT BE POPULATED.
+
+The one loophole worth naming, because it is real: the argument presumes every one of the
+2^k configurations is REALISED (non-zero block).  It is: the realised set is non-empty and
+closed under the flips (LEMMA W preserves dimensions, so a zero block pairs with a zero
+block), and a non-empty set closed under a transitive group is everything.  So the loophole
+closes itself.
+
+==================================================================================================================================
+--- 4.4  WHERE THE NON-CONSTANT INVARIANTS ACTUALLY LIVE (the exhibits) ---
+
+Smallest profiles found by the exhaustive search that DO carry a non-constant invariant:
+
+dims (one shell)           R_1                  R_2                  d(++,+-,-+,--)          indep  |G_W|  #orb  dim inv    the invariant
+----------------------------------------------------------------------------------------------------------------------------------------
+(1, 1, 2, 2)               +-+-                 +--+                 [1, 2, 2, 1]                0      2     2        2           chi_12
+(1, 1, 2, 2)               +-+-                 +--+                 [1, 2, 2, 1]                0      2     2        2           chi_12
+(1, 1, 3, 3)               +-+-                 +--+                 [1, 3, 3, 1]                0      2     2        2           chi_12
+(2, 2, 3, 3)               +-+-                 +--+                 [2, 3, 3, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 1)         +++---               ++-+--               [2, 1, 1, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 1)         +++---               ++-+--               [2, 1, 1, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 2, 2)         ++--+-               +-+-+-               [3, 1, 1, 3]                0      2     2        2           chi_12
+(1, 1, 2, 2, 2, 2)         +-++--               +-+-+-               [3, 2, 2, 3]                0      2     2        2           chi_12
+(2, 2, 2, 2, 2, 2)         +++---               ++-+--               [4, 2, 2, 4]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 1)         +++---               ++-+--               [2, 1, 1, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 3)         ++++--               +++-+-               [3, 1, 1, 3]                0      2     2        2           chi_12
+(1, 1, 1, 1, 2, 2)         ++--+-               +-+-+-               [3, 1, 1, 3]                0      2     2        2           chi_12
+
+READ: every profile carrying a non-constant invariant has indep < k in the same row.  The
+      invariant is always a PRODUCT character chi_S -- i.e. the operator R_S = prod_{i in S} R_i.
+
+==================================================================================================================================
+PART 4 VERDICT: NO COUNTEREXAMPLE EXISTS, and that is now a PROOF (4.3) with an exhaustive
+finite search behind it (4.1, 4.2) whose control cells are richly populated.  Direction 2
+FAILED to refute, for a reason.
+============================================================================================================================================
+PART 8 -- VALIDATION OF THE REDUCTION ON RANDOM DENSE CARRIERS (non-stabiliser, non-double)
+============================================================================================================================================
+
+carrier                                        dim shell dims            #MASA projs  #records  #families  combinatorial |G_W|  operator-verified |G_W|  agree  forbidden cell
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+trial 0  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 1  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 2  degs=[2, 2, 4]                          8 [2, 2, 4]                       8        12         66                  [2]                      [2]   True               0
+trial 3  degs=[2, 2, 4]                          8 [2, 2, 4]                       8        12         66                  [2]                      [2]   True               0
+trial 4  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 5  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 6  degs=[8]                                8 [8]                             8        35        300               [2, 4]                   [2, 4]   True               0
+trial 7  degs=[6, 6]                            12 [6, 6]                         12       200        300                  [2]                      [2]   True               0
+trial 8  degs=[4, 4]                             8 [4, 4]                          8        18        153               [2, 4]                   [2, 4]   True               0
+trial 9  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 10  degs=[8]                               8 [8]                             8        35        300               [2, 4]                   [2, 4]   True               0
+trial 11  degs=[6, 2]                            8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 12  degs=[8]                               8 [8]                             8        35        300               [2, 4]                   [2, 4]   True               0
+trial 13  degs=[2, 2, 4]                         8 [2, 2, 4]                       8        12         66                  [2]                      [2]   True               0
+
+TOTAL families operator-verified on random dense carriers: 2691
+combinatorial writer group == operator-verified writer group on every family: True
+FORBIDDEN CELL population on random dense carriers: 0
+
+READ: on random carriers that are neither stabiliser codes nor quantum doubles, the writer
+      group computed from the dimension table alone agrees EXACTLY with the group verified
+      by explicitly constructing each unitary and testing three operator norms.  The
+      reduction Part 4 rests on is therefore sound on carriers built with no structure at
+      all, and the forbidden cell is empty here too.
+
+D-22: these carriers are generated from a HAAR-random basis, so their automorphism group is
+      trivial -- there is no permutation symmetry to hide behind, and equally no geometry to
+      detect.  Nothing geometric is read from them; only the writer group, which needs none.
+
+============================================================================================================================================
+THE THEOREM, AS IT SURVIVES O-50-B
+============================================================================================================================================
+
+SETTING.  A carrier (H, {L_k}).  ADMISSIBLE U := unitary with [U,H] = 0 (O-4).  R_1..R_k a
+family of mutually commuting RECORDS -- each satisfying clauses (i)-(iv) ON ITS OWN, with NO
+even-splitting demand.  V(E,sigma) their joint eigenspaces inside energy shell E, and
+d(E,sigma) = dim V(E,sigma).  G_W := the group of flip patterns eps realisable by an
+admissible U with U* R_i U = (-1)^{eps_i} R_i for every i.
+
+LEMMA W  (proved, Part 2).  eps in G_W  <=>  d(E,sigma) = d(E,eps.sigma) for all E, sigma.
+          Both directions.  A negative verdict is a NON-EXISTENCE proof over all unitaries.
+
+LEMMA B  (proved, Part 2).  If chi_S is not G_W-invariant then Tr(P_E R_S) = 0 on every
+          shell: every non-invariant character has EXACTLY zero shell average.
+
+THEOREM 1  (proved, Parts 1-2).  If the records are INDEPENDENTLY WRITABLE then G_W contains
+          every coordinate flip, acts SIMPLY TRANSITIVELY on the 2^k configurations, and the
+          space of G_W-invariant functionals is EXACTLY ONE-DIMENSIONAL -- the constants.
+
+THEOREM 2 -- THE CANCELLATION LAW  (proved, Parts 1, 2, 6; NO hypothesis of independent
+          writability).  Every functional f of the record configuration splits uniquely as
+               f  =  Pi_{G_W} f   +   (f - Pi_{G_W} f)
+          where Pi_{G_W} f is UNRESPONSIVE (no admissible family-preserving write changes it)
+          and f - Pi_{G_W} f has EXACTLY ZERO shell average (it cancels).  Hence NO functional
+          of the record configuration is both RESPONSIVE TO WRITING and NON-CANCELLING.
+
+THEOREM D  (proved, Part 6).  k independently writable records force 2^k | dim E on every
+          eigenspace; so k_indep <= min_E v_2(dim E), a bound read off the SPECTRUM alone.
+
+TRADE LAW  (exact identity, Part 6).  dim(invariants) = 2^(k - rank G_W).
+
+WHAT IS FALSE.  The candidate's literal second clause -- 'every non-constant functional is
+G_W-odd, hence has mean exactly zero' -- is REFUTED by f(sigma) = #{i : sigma_i = +1}, which
+is non-constant, responsive, and has mean k/2.  Non-constant does not imply odd.  The split
+in Theorem 2 is the correct repair.
+
+WHAT IS NOT PROVED, and is the honest open edge.  G_W is built from admissible unitaries that
+PRESERVE the family.  Clause (iv) gives each record a writer, but that writer need not
+normalise the family: at k >= 3 there are families in which NO admissible unitary flips any
+one record while fixing the others (Part 7), so the flip that clause (iv) guarantees must
+SCRAMBLE the rest.  After such a write there is no record configuration left for a functional
+to be a functional of -- which is why Theorem 2 is stated for family-preserving writes.  A
+source built on family-scrambling writes is not excluded by anything proved here.  That is
+the one route this lane did not close.
+EXIT 0

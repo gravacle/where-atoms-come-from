@@ -1,0 +1,80 @@
+============================================================================================================================================
+PART 8 -- VALIDATION OF THE REDUCTION ON RANDOM DENSE CARRIERS (non-stabiliser, non-double)
+============================================================================================================================================
+
+carrier                                        dim shell dims            #MASA projs  #records  #families  combinatorial |G_W|  operator-verified |G_W|  agree  forbidden cell
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+trial 0  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 1  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 2  degs=[2, 2, 4]                          8 [2, 2, 4]                       8        12         66                  [2]                      [2]   True               0
+trial 3  degs=[2, 2, 4]                          8 [2, 2, 4]                       8        12         66                  [2]                      [2]   True               0
+trial 4  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 5  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 6  degs=[8]                                8 [8]                             8        35        300               [2, 4]                   [2, 4]   True               0
+trial 7  degs=[6, 6]                            12 [6, 6]                         12       200        300                  [2]                      [2]   True               0
+trial 8  degs=[4, 4]                             8 [4, 4]                          8        18        153               [2, 4]                   [2, 4]   True               0
+trial 9  degs=[6, 2]                             8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 10  degs=[8]                               8 [8]                             8        35        300               [2, 4]                   [2, 4]   True               0
+trial 11  degs=[6, 2]                            8 [6, 2]                          8        20        190                  [2]                      [2]   True               0
+trial 12  degs=[8]                               8 [8]                             8        35        300               [2, 4]                   [2, 4]   True               0
+trial 13  degs=[2, 2, 4]                         8 [2, 2, 4]                       8        12         66                  [2]                      [2]   True               0
+
+TOTAL families operator-verified on random dense carriers: 2691
+combinatorial writer group == operator-verified writer group on every family: True
+FORBIDDEN CELL population on random dense carriers: 0
+
+READ: on random carriers that are neither stabiliser codes nor quantum doubles, the writer
+      group computed from the dimension table alone agrees EXACTLY with the group verified
+      by explicitly constructing each unitary and testing three operator norms.  The
+      reduction Part 4 rests on is therefore sound on carriers built with no structure at
+      all, and the forbidden cell is empty here too.
+
+D-22: these carriers are generated from a HAAR-random basis, so their automorphism group is
+      trivial -- there is no permutation symmetry to hide behind, and equally no geometry to
+      detect.  Nothing geometric is read from them; only the writer group, which needs none.
+
+============================================================================================================================================
+THE THEOREM, AS IT SURVIVES O-50-B
+============================================================================================================================================
+
+SETTING.  A carrier (H, {L_k}).  ADMISSIBLE U := unitary with [U,H] = 0 (O-4).  R_1..R_k a
+family of mutually commuting RECORDS -- each satisfying clauses (i)-(iv) ON ITS OWN, with NO
+even-splitting demand.  V(E,sigma) their joint eigenspaces inside energy shell E, and
+d(E,sigma) = dim V(E,sigma).  G_W := the group of flip patterns eps realisable by an
+admissible U with U* R_i U = (-1)^{eps_i} R_i for every i.
+
+LEMMA W  (proved, Part 2).  eps in G_W  <=>  d(E,sigma) = d(E,eps.sigma) for all E, sigma.
+          Both directions.  A negative verdict is a NON-EXISTENCE proof over all unitaries.
+
+LEMMA B  (proved, Part 2).  If chi_S is not G_W-invariant then Tr(P_E R_S) = 0 on every
+          shell: every non-invariant character has EXACTLY zero shell average.
+
+THEOREM 1  (proved, Parts 1-2).  If the records are INDEPENDENTLY WRITABLE then G_W contains
+          every coordinate flip, acts SIMPLY TRANSITIVELY on the 2^k configurations, and the
+          space of G_W-invariant functionals is EXACTLY ONE-DIMENSIONAL -- the constants.
+
+THEOREM 2 -- THE CANCELLATION LAW  (proved, Parts 1, 2, 6; NO hypothesis of independent
+          writability).  Every functional f of the record configuration splits uniquely as
+               f  =  Pi_{G_W} f   +   (f - Pi_{G_W} f)
+          where Pi_{G_W} f is UNRESPONSIVE (no admissible family-preserving write changes it)
+          and f - Pi_{G_W} f has EXACTLY ZERO shell average (it cancels).  Hence NO functional
+          of the record configuration is both RESPONSIVE TO WRITING and NON-CANCELLING.
+
+THEOREM D  (proved, Part 6).  k independently writable records force 2^k | dim E on every
+          eigenspace; so k_indep <= min_E v_2(dim E), a bound read off the SPECTRUM alone.
+
+TRADE LAW  (exact identity, Part 6).  dim(invariants) = 2^(k - rank G_W).
+
+WHAT IS FALSE.  The candidate's literal second clause -- 'every non-constant functional is
+G_W-odd, hence has mean exactly zero' -- is REFUTED by f(sigma) = #{i : sigma_i = +1}, which
+is non-constant, responsive, and has mean k/2.  Non-constant does not imply odd.  The split
+in Theorem 2 is the correct repair.
+
+WHAT IS NOT PROVED, and is the honest open edge.  G_W is built from admissible unitaries that
+PRESERVE the family.  Clause (iv) gives each record a writer, but that writer need not
+normalise the family: at k >= 3 there are families in which NO admissible unitary flips any
+one record while fixing the others (Part 7), so the flip that clause (iv) guarantees must
+SCRAMBLE the rest.  After such a write there is no record configuration left for a functional
+to be a functional of -- which is why Theorem 2 is stated for family-preserving writes.  A
+source built on family-scrambling writes is not excluded by anything proved here.  That is
+the one route this lane did not close.

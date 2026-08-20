@@ -1,0 +1,149 @@
+==============================================================================================================================
+PART 3 -- THE STABILISER CLASS.  Logicals COMPUTED (symplectic_logicals), writers SEARCHED
+         over the full Pauli group where finite.  D-23: the toric rows rest on the TORUS,
+         not on the 1D proxy convention.
+==============================================================================================================================
+
+carrier                          n    dim  #gen   k  #eigsp  clause i-iv on every R_i  dim table uniform  |G_W| Pauli search  |G_W| dim criterion  #orbits  dim inv
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+repetition [[3,1,1]] (Z-type)    3      8     2   1       3                      True               True                   2                    2        1        1
+[[4,2,2]]                        4     16     2   2       3                      True               True                   4                    4        1        1
+[[5,1,3]]                        5     32     4   1       5                      True               True                   2                    2        1        1
+Steane [[7,1,3]]                 7    128     6   1       7                      True               True                   2                    2        1        1
+[[8,3,2]]                        8    256     5   3       6                      True               True                   8                    8        1        1
+TORIC L=2 (n=8, genus 1)         8    256     6   2       7                      True               True                   4                    4        1        1
+
+READ: on every stabiliser carrier the dimension table is UNIFORM, the Pauli search and the
+      exact dimension criterion return the SAME writer group of order 2^k, there is exactly
+      ONE orbit, and the invariant space is exactly 1-DIMENSIONAL.  No stabiliser carrier
+      tested refutes the theorem -- as Theorem S says none can.
+
+==============================================================================================================================
+--- THE DIMENSION TABLE ITSELF, on the canonical carrier (TORIC L=2, on the TORUS) ---
+
+k = 2 records; 7 eigenspaces of H; configurations = 4
+
+ shell    energy    (1, 1)   (1, -1)   (-1, 1)  (-1, -1)   uniform?
+-------------------------------------------------------------------
+     0    -6.000         1         1         1         1       True
+     1    -4.000         6         6         6         6       True
+     2    -2.000        15        15        15        15       True
+     3    -0.000        20        20        20        20       True
+     4     2.000        15        15        15        15       True
+     5     4.000         6         6         6         6       True
+     6     6.000         1         1         1         1       True
+
+READ: every shell has the SAME block dimension for all four configurations.  By LEMMA W
+      all four flip patterns are realisable by admissible unitaries, so G_W = (Z_2)^2 acts
+      simply transitively on the four record configurations and dim(invariants) = 1.
+
+==============================================================================================================================
+--- CLAUSE (v) ON THE TORUS.  D-23: this rests on the TORUS, not on the 1D proxy convention.
+    The right statement is a DISTANCE statement: no region with fewer than d edges can carry
+    a logical action, and d must SCALE with L. ---
+
+EXHAUSTIVE over all 4^8 = 65536 Paulis at L=2:
+   smallest weight of an ADMISSIBLE Pauli acting non-trivially on the records: d = 2
+   weight histogram of logical-acting admissible Paulis: w=2:8, w=3:8, w=4:92, w=5:176, w=6:368, w=7:200, w=8:108
+   => NO region of fewer than 2 edges can carry any logical action.  This is exhaustive,
+      not sampled, and it is a NON-EXISTENCE statement over the whole Pauli group.
+
+The region test, restricted to regions of diameter < d as the QEC reading requires:
+
+region                                        |region|   < d ?   #admissible Paulis on it   #acting on records  clause (v) on this region
+------------------------------------------------------------------------------------------------------------------------------------------
+single edge 0                                        1    True                          1                    0                      HOLDS
+single edge 1                                        1    True                          1                    0                      HOLDS
+single edge 2                                        1    True                          1                    0                      HOLDS
+single edge 3                                        1    True                          1                    0                      HOLDS
+single edge 4                                        1    True                          1                    0                      HOLDS
+single edge 5                                        1    True                          1                    0                      HOLDS
+single edge 6                                        1    True                          1                    0                      HOLDS
+single edge 7                                        1    True                          1                    0                      HOLDS
+star of vertex (0,0)  [4 edges = 2d at L=2]          4   False                          8                    6 fails -- region is NOT small vs L
+star of vertex (0,1)  [4 edges = 2d at L=2]          4   False                          8                    6 fails -- region is NOT small vs L
+star of vertex (1,0)  [4 edges = 2d at L=2]          4   False                          8                    6 fails -- region is NOT small vs L
+star of vertex (1,1)  [4 edges = 2d at L=2]          4   False                          8                    6 fails -- region is NOT small vs L
+
+READ, from the numbers above and not around them: at L=2 the distance is d = 2, so the only
+     regions that are genuinely small compared to L are SINGLE EDGES, and on every one of them
+     clause (v) HOLDS exhaustively.  The 4-edge stars have size 2d = 4 at L=2 and DO carry a
+     logical action -- which is not a failure of clause (v) but a statement that L=2 is too
+     small for a region to be both non-trivial and small.  The scaling below settles it.
+
+DISTANCE SCALING, exact, by shortest non-contractible cycle (BFS on the integer lattice):
+
+  L   n=2L^2   d_Z (Z-loop)  d_X (dual loop)  both scale with L?   exhaustive check
+------------------------------------------------------------------------------------
+  2        8              2                2                True           yes: d=2
+  3       18              3                3                True     F_2 / BFS only
+  4       32              4                4                True     F_2 / BFS only
+  5       50              5                5                True     F_2 / BFS only
+  6       72              6                6                True     F_2 / BFS only
+  7       98              7                7                True     F_2 / BFS only
+  8      128              8                8                True     F_2 / BFS only
+
+READ: d_Z = d_X = L at every L, verified against the exhaustive Pauli search at L=2 (d=2=L).
+      Both distances scale with L, so on the TORUS clause (v) is realised by genuine HOMOLOGY:
+      a logical operator's support winds the torus and cannot be contained in any region whose
+      diameter is below L.  No 1D convention is invoked anywhere in this part (D-23).
+
+CONTROL for the clause (v) instrument (D-15): the SAME test on the OPEN 1D chain must REGISTER
+a failure.
+   open chain n=6, Z-type stabilisers.  Smallest region carrying an action on the record:
+      any action at all         : size 1  region (0,)
+      an action that FLIPS it   : size 6  region (0, 1, 2, 3, 4, 5)   <- this is the writer, and it
+                                  needs the WHOLE chain (size n = 6), reproducing C-64
+      an action that only READS : size 1  region (0,)
+   READ, from those numbers: on the open chain a SINGLE SITE already acts on the record (it
+   reads it), so clause (v) FAILS there; and the writer needs the entire chain.  The
+   instrument therefore does register a clause (v) failure when one is present -- the torus
+   result above is not a blind pass.
+
+==============================================================================================================================
+--- MORE RECORDS: SEVERAL TORI (the brief's higher-genus route), exactly in F_2 ---
+
+carrier                                n   k  #configs   |G_W| from logical-X search  #orbits  dim inv  simply transitive
+--------------------------------------------------------------------------------------------------------------------------
+1 x TORUS L=2  (genus 1)               8   2         4                             4        1        1               True
+1 x TORUS L=3  (genus 1)              18   2         4                             4        1        1               True
+2 x TORUS L=2  (genus 2)              16   4        16                            16        1        1               True
+2 x TORUS L=3  (genus 2)              36   4        16                            16        1        1               True
+3 x TORUS L=2  (genus 3)              24   6        64                            64        1        1               True
+3 x TORUS L=3  (genus 3)              54   6        64                            64        1        1               True
+4 x TORUS L=2  (genus 4)              32   8       256                           256        1        1               True
+4 x TORUS L=3  (genus 4)              72   8       256                           256        1        1               True
+
+READ: adding tori multiplies the records (k = 2 x genus) but the writer group grows exactly
+      in step, staying simply transitive.  The invariant dimension stays 1 at every genus
+      tested.  MORE RECORDS DOES NOT BUY AN INVARIANT.
+
+==============================================================================================================================
+--- LARGER L, EXACTLY, WITHOUT DENSE MATRICES.  The sector count and the block dimension
+    are decided by F_2 linear algebra alone; Theorem S then fixes the invariant dimension. ---
+
+  L   n=2L^2        dim = 2^n  #indep stabilisers  k = n - rank  sector dim = 2^k  block dim per config    |G_W|  #orbits  dim inv
+------------------------------------------------------------------------------------------------------------------------------------------
+  2        8              2^8                   6             2               2^2                     1        4        1        1
+  3       18             2^18                  16             2               2^2                     1        4        1        1
+  4       32             2^32                  30             2               2^2                     1        4        1        1
+  5       50             2^50                  48             2               2^2                     1        4        1        1
+  6       72             2^72                  70             2               2^2                     1        4        1        1
+  7       98             2^98                  96             2               2^2                     1        4        1        1
+  8      128            2^128                 126             2               2^2                     1        4        1        1
+
+LARGEST L REACHED: L = 8  (n = 128 qubits, Hilbert dimension 2^128).
+What stopped it: nothing numerical -- the F_2 computation is exact and cheap; the loop was
+cut at L=8 because Theorem S already fixes every larger L.  DENSE matrices were used only at
+L=2 (dim 256); L>=3 was decided entirely by exact F_2 linear algebra, as the brief requires.
+
+READ: at every L from 2 to 8 the toric code has k=2 logical qubits, every syndrome sector has
+      dimension 2^k = 4 with block dimension exactly 1 per configuration, all 2^k = 4 flips are
+      realised by ADMISSIBLE Pauli operators found by SEARCH over the group generated by the
+      computed logical X's, the orbit count is 1 and the invariant dimension is 1.
+
+==============================================================================================================================
+PART 3 VERDICT: the entire STABILISER class -- including the canonical carrier, the toric
+code, at every L and every genus -- CONFIRMS the theorem.  Any counterexample must be
+NON-STABILISER.  Part 4 goes there.
+EXIT 0

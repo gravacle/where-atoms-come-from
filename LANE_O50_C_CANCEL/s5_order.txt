@@ -1,0 +1,198 @@
+========================================================================================================
+O-50-C  STEP 5.   PART 2: WHAT WOULD MAKE IT ACCUMULATE?   THREE EXACT INSTRUMENTS.
+========================================================================================================
+
+D-23 SCOPE: TORUS.  Carrier, records and writer group as established in steps 1-2.
+
+--------------------------------------------------------------------------------------------------------
+  I-1.  THE DEFECT SWEEP.  DETERMINISTIC, EXACT, NO ENSEMBLE.
+--------------------------------------------------------------------------------------------------------
+  F(s) = s_1 + ... + s_m evaluated AT a configuration with q records flipped away from ordered.
+  coherence(config) = |F| / m = |1 - 2q/m|, exactly.  The order parameter is the defect fraction.
+
+       m     q/m=0.00     q/m=0.05     q/m=0.10     q/m=0.25     q/m=0.40     q/m=0.45     q/m=0.49     q/m=0.50
+      16     1.000000     0.875000     0.750000     0.500000     0.250000     0.125000     0.000000     0.000000
+      64     1.000000     0.906250     0.812500     0.500000     0.187500     0.093750     0.031250     0.000000
+     256     1.000000     0.898438     0.796875     0.500000     0.203125     0.101562     0.023438     0.000000
+    1024     1.000000     0.900391     0.800781     0.500000     0.199219     0.099609     0.019531     0.000000
+    4096     1.000000     0.899902     0.799805     0.500000     0.200195     0.100098     0.020020     0.000000
+   65536     1.000000     0.899994     0.799988     0.500000     0.200012     0.100006     0.019989     0.000000
+
+  and the TYPICAL configuration for comparison, exactly:
+        m    typical defect fraction    EXACT typical coherence    sqrt(2/(pi m))
+       16            1/2 +- 0.125000         0.1963806152343750    0.199471140201
+       64            1/2 +- 0.062500         0.0993467537479669    0.099735570100
+      256            1/2 +- 0.031250         0.0498191099361402    0.049867785050
+     1024            1/2 +- 0.015625         0.0249278058929795    0.024933892525
+     4096            1/2 +- 0.007812         0.0124661853637603    0.012466946263
+    65536            1/2 +- 0.001953         0.0031167246762524    0.003116736566
+
+  READ: coherence IS the order parameter -- at any configuration it equals |1 - 2q/m| exactly,
+  with NO m-dependence and no asymptotics involved.  A configuration held at a FIXED defect
+  fraction below 1/2 has coherence bounded away from zero at every m, so F is EXTENSIVE there:
+  at q/m = 0.45 the coherence is 0.125000 at m = 16 and 0.100006 at m = 65536 -- the difference is
+  entirely the rounding of q = 0.45m to an integer (7 of 16), not an m-dependence of the law; the
+  q/m = 0.25 column is 0.500000 at every m because 0.25m is an integer there.  The typical config
+  sits at defect fraction 1/2 to within m^(-1/2), which is exactly why its coherence is m^(-1/2).
+
+  ==> THE m^(-1/2) LAW IS A STATEMENT ABOUT WHERE THE TYPICAL CONFIGURATION SITS, NOT ABOUT WHAT
+      THE FUNCTIONAL CAN DO.  The same functional on the same carrier is fully extensive at an
+      ordered configuration.  Nothing about the carrier changed between those two columns.
+
+--------------------------------------------------------------------------------------------------------
+  I-2.  THE BIASED MEASURE.  ORDER PARAMETER lambda = 2p-1 = E[s_i].  EXACT RATIONALS.
+--------------------------------------------------------------------------------------------------------
+  A symmetry-breaking bias is INSERTED: each record independently reads +1 with probability p.
+  lambda = 0 is the unique writer-invariant measure of step 3; lambda = 1 is fully ordered.
+
+       m     lam=0/1    lam=1/64    lam=1/32    lam=1/16     lam=1/8     lam=1/4     lam=1/2     lam=3/4     lam=1/1
+      16   0.1963806   0.1967641   0.1979131   0.2024897   0.2204890   0.2879194   0.5023604   0.7500103   1.0000000
+      64   0.0993468   0.1001219   0.1024358   0.1115202   0.1453575   0.2518657   0.5000004   0.7500000   1.0000000
+     256   0.0498191   0.0513680   0.0559209   0.0728554   0.1260286   0.2500006   0.5000000   0.7500000   1.0000000
+    1024   0.0249278   0.0279806   0.0364498   0.0630266   0.1250004   0.2500000   0.5000000   0.7500000   1.0000000
+    4096   0.0124662   0.0182277   0.0315148   0.0625002   0.1250000   0.2500000   0.5000000   0.7500000   1.0000000
+
+  THE CROSSOVER, EXACTLY.  The bias wins over the fluctuation when lambda exceeds the disordered
+  coherence sqrt(2/(pi m)).
+
+        m   floor=sqrt(2/(pi m))   coh at lam=floor/4   coh at lam=floor   coh at lam=4*floor    (4*floor)
+       16         0.199471140201           0.20027606         0.25612245           0.79788575   0.79788456
+       64         0.099735570100           0.10131673         0.12943646           0.39896763   0.39894228
+      256         0.049867785050           0.05080683         0.06489140           0.19949170   0.19947114
+     1024         0.024933892525           0.02542202         0.03246714           0.09974653   0.09973557
+     4096         0.012466946263           0.01271326         0.01623600           0.04987292   0.04986779
+
+  READ: at lambda a quarter of the floor the coherence is still essentially the floor; at four
+  times the floor the coherence has become lambda itself.  THE CROSSOVER IS AT lambda ~ m^(-1/2).
+  An arbitrarily SMALL but m-INDEPENDENT bias converts the sqrt(m) residual into an extensive
+  one.  Accumulation does not require strong ordering -- it requires ANY ordering that does not
+  shrink with m.
+
+  OUT-OF-SAMPLE (D-20).  Law read off m <= 256 only: coherence(m,lambda) = sqrt(lambda^2 +
+  2/(pi m)).  PREDICTED, then compared to the exact value at m far outside that range.
+
+         m     lambda  lam/floor                PREDICTED                 MEASURED   rel. error              route
+      4096        0/1      0.000         0.01246694626254         0.01246618536376     6.10e-05     exact rational
+      4096      1/128      0.627         0.01471257643525         0.01399280305516     5.14e-02     exact rational
+      4096       1/16      5.013         0.06373126979053         0.06250021898117     1.97e-02     exact rational
+      4096        1/2     40.106         0.50015540059977         0.50000000000000     3.11e-04     exact rational
+     16384        0/1      0.000         0.00623347313127         0.00623337801674     1.53e-05   60-digit decimal
+     16384      1/128      1.253         0.00999456569983         0.00911418884846     9.66e-02   60-digit decimal
+     16384       1/16     10.027         0.06281008029989         0.06249999999987     4.96e-03   60-digit decimal
+     16384        1/2     80.212         0.50003885467759         0.49999999999912     7.77e-05   60-digit decimal
+    262144        0/1      0.000         0.00155836828282         0.00155836679626     9.54e-07   60-digit decimal
+    262144      1/128      5.013         0.00796640872382         0.00781252790068     1.97e-02   60-digit decimal
+    262144       1/16     40.106         0.06251942507497         0.06249999998440     3.11e-04   60-digit decimal
+    262144        1/2    320.848         0.50000242850581         0.49999999986920     4.86e-06   60-digit decimal
+
+  ROUTE CROSS-CHECK at m = 4096, lambda = 0/1:  exact rational 0.0124661853637603   60-digit decimal 0.0124661853637427   agree to 1.75e-14
+  ROUTE CROSS-CHECK at m = 4096, lambda = 1/16:  exact rational 0.0625002189811716   60-digit decimal 0.0625002189810939   agree to 7.77e-14
+
+  READ, FROM THE TABLE AND NOT AROUND IT.  The relative error tracks lambda/floor and nothing
+  else, falling monotonically as lambda/floor moves away from 1 in either direction -- read off
+  the table: ratio 1.25 -> 9.7e-2 ;  5.0 -> 2.0e-2 ;  10.0 -> 5.0e-3 ;  40.1 -> 3.1e-4 ;
+  80.2 -> 7.8e-5 ;  320.8 -> 4.9e-6 ;  and ratio 0 (lambda = 0) -> 1e-6 to 6e-5.
+  So sqrt(lambda^2 + 2/(pi m)) is EXACT in the two limits and no better than a ~10% interpolation
+  AT the crossing itself.  D-20: reported, not hidden.  Nothing in the Part-2 conclusion depends
+  on the interpolation -- only on the two limits, which are exact.
+  The two independent evaluation routes agree to better than 1e-13 where they overlap.
+
+--------------------------------------------------------------------------------------------------------
+  I-3.  CORRELATION WITHOUT SYMMETRY BREAKING.  THE INSTRUMENT THAT DECIDES THE QUESTION.
+--------------------------------------------------------------------------------------------------------
+  Nearest-neighbour Ising measure on the records: weight proportional to u^(aligned bonds),
+  u = e^(2 beta) RATIONAL, zero field.  The measure is invariant under the GLOBAL flip, so
+  E[s_i] = 0 at every u: the signs are strongly CORRELATED and the symmetry is NOT broken.
+
+     m   u=e^2b     t=corr  xi=-1/ln t  E[sum s] EXACT     Var EXACT     Var/m  E|sum s| EXACT   coherence  coh*sqrt(m)  closed==brute
+    16        1   0.000000           0               0      16.00000    1.0000        3.142090    0.196381     0.785522           True
+    16        2   0.333333       0.910               0      30.50000    1.9063        4.424934    0.276558     1.106233           True
+    16        4   0.600000       1.958               0      56.50212    3.5314        6.161825    0.385114     1.540456           True
+    16       10   0.818182       4.983               0     112.49619    7.0310        9.153626    0.572102     2.288407           True
+    16      100   0.980198      49.998               0     230.84338   14.4277       14.815921    0.925995     3.703980           True
+    16     1000   0.998002     500.000               0     253.30162   15.8314       15.873017    0.992064     3.968254           True
+    18        1   0.000000           0               0      18.00000    1.0000        3.338470    0.185471     0.786885           True
+    18        2   0.333333       0.910               0      34.50000    1.9167        4.703841    0.261325     1.108706           True
+    18        4   0.600000       1.958               0      64.50076    3.5834        6.562912    0.364606     1.546893           True
+    18       10   0.818182       4.983               0     131.83629    7.3242        9.834839    0.546380     2.318094           True
+    18      100   0.980198      49.998               0     288.49093   16.0273       16.515497    0.917528     3.892740           True
+    18     1000   0.998002     500.000               0     320.15863   17.7866       17.839447    0.991080     4.204798           True
+
+  The transfer-matrix variance and the brute enumeration of all 2^m configurations agree EXACTLY
+  as rationals in every row, so the large-m table below rests on a verified formula.
+
+  THE CLOSED FORM FOR Var, VERIFIED AGAINST THE EXACT RATIONAL DOUBLE SUM BEFORE IT IS USED:
+      m          t    Var exact rational (double sum)    Var closed form (60 digits)   agree?
+     16   0.000000                  16.00000000000000              16.00000000000000     True
+     16   0.500000                  44.00006103515625              44.00006103515625     True
+     16   0.818182                 112.49619235239254             112.49619235239255     True
+     16   0.980198                 230.84338465701063             230.84338465701064     True
+     32   0.000000                  32.00000000000000              32.00000000000000     True
+     32   0.500000                  92.00000000093132              92.00000000093132     True
+     32   0.818182                 270.58050068500506             270.58050068500506     True
+     32   0.980198                 836.64223232781683             836.64223232781677     True
+     64   0.000000                  64.00000000000000              64.00000000000000     True
+     64   0.500000                 188.00000000000000             188.00000000000000     True
+     64   0.818182                 590.50013091636947             590.50013091636942     True
+     64   0.980198                2790.48817262971988            2790.48817262971999     True
+
+  LARGE m, from the VERIFIED closed form.  Entry is coherence * sqrt(m); a FLAT row means the
+  m^(-1/2) law still holds and only the constant changed.
+
+    t = corr         xi          m=64         m=256        m=1024        m=4096       m=16384      m=262144   sqrt(2/pi)*sqrt((1+t)/(1-t))
+    0.000000          0      0.797885      0.797885      0.797885      0.797885      0.797885      0.797885                       0.797885
+    0.500000       1.44      1.367505      1.378373      1.381077      1.381752      1.381920      1.381973                       1.381977
+    0.818182       4.98      2.423595      2.498620      2.517027      2.521607      2.522751      2.523109                       2.523133
+    0.980198      50.00      5.268539      7.162648      7.781632      7.930002      7.966663      7.978085                       7.978846
+    0.998002     500.00      6.249793     11.763729     19.127671     23.641679     24.843343     25.207251                      25.231325
+
+  THE GAUSSIAN STEP USED IN THAT TABLE (E|X| = sqrt(2/pi)*sqrt(Var) for mean-zero X), CHECKED
+  AGAINST THE EXACT ENUMERATION -- INCLUDING WHERE IT FAILS:
+     m          t   E|sum s| EXACT   sqrt(2/pi)*sqrt(Var)      ratio
+    16   0.000000         3.142090               3.191538    0.98451
+    16   0.600000         6.161825               5.997530    1.02739
+    16   0.980198        14.815921              12.122684    1.22217
+    18   0.000000         3.338470               3.385138    0.98621
+    18   0.600000         6.562912               6.408000    1.02417
+    18   0.980198        16.515497              13.552086    1.21867
+
+  READ THE GAUSSIAN CHECK HONESTLY: the step is good to 1.5-3% when m is well above the
+  correlation length xi, and is off by 22% at t = 0.980 where xi = 50 EXCEEDS m = 16.  That is
+  the strongly-correlated small-m regime, and it is exactly where the large-m table's entries
+  are still rising rather than flat.  THE PART-2 CONCLUSION DOES NOT REST ON THIS STEP: it rests
+  on Var, which is exact at every m and every t (closed form verified against the double sum
+  above), and Var/m converges to the CONSTANT (1+t)/(1-t) -- printed in the Var/m column, which
+  is exact.  The Gaussian step only converts a variance into a mean absolute value for display.
+
+  READ, AND IT IS THE FINDING OF PART 2:
+  E[sum s] is the EXACT RATIONAL 0 in every row, at every correlation strength.  The variance
+  grows to (1+t)/(1-t) times m, so coherence stays proportional to m^(-1/2) and only the
+  CONSTANT in front changes -- each row of the large-m table is FLAT in m once m exceeds the
+  correlation length xi, and converges to the predicted sqrt(2/pi)*sqrt((1+t)/(1-t)) in the last
+  column.  The rows that are NOT yet flat are exactly the rows where xi is still comparable to m.
+
+  ==> CORRELATED SIGNS ARE NOT ENOUGH.  A measure can correlate the records arbitrarily strongly
+      and the signed sum still fails to accumulate, because correlation renormalises the
+      COEFFICIENT of sqrt(m), not the POWER.  What converts sqrt(m) into m is SYMMETRY BREAKING
+      -- a non-zero E[s_i] -- which is what I-2 inserts and I-3 refuses to.  'Mass has one sign'
+      is a statement about a BROKEN SYMMETRY, not about a correlation.
+
+--------------------------------------------------------------------------------------------------------
+  THE TWO NUMBERS THE PROBE ASKS FOR, EXACTLY, AT SEVERAL m, WITH AN OUT-OF-SAMPLE CHECK
+--------------------------------------------------------------------------------------------------------
+         m    ORDERED coherence   TYPICAL coherence (exact rational)  ratio ordered/typical   sqrt(pi m/2) predicted
+        16            1 exactly               0.19638061523437500000                 5.0922                   5.0133
+        64            1 exactly               0.09934675374796689653                10.0658                  10.0265
+       256            1 exactly               0.04981910993614015124                20.0726                  20.0530
+      1024            1 exactly               0.02492780589297954371                40.1158                  40.1061
+      4096            1 exactly               0.01246618536376025958                80.2170                  80.2121
+     16384            1 exactly               0.00623337801674647589               160.4267                 160.4242
+     65536            1 exactly               0.00311672467625241587               320.8496                 320.8484
+
+  ORDERED coherence is EXACTLY 1 at every m -- not asymptotically, exactly, because |sum s_i| = m
+  at an ordered configuration.  TYPICAL coherence is the exact rational C(m,m/2)/2^m.  Their
+  RATIO is the exact factor by which ordering amplifies the functional, and it GROWS as
+  sqrt(pi m/2): the larger the carrier, the more ordering is worth.
+
+  OUT-OF-SAMPLE: the ratio law sqrt(pi m/2) was read off m <= 256 and reproduces the exact ratio
+  at m = 65536 (last two columns), which was not used to fix it.

@@ -1,0 +1,302 @@
+==================================================================================================================================
+PART 4 -- THE REFUTATION HUNT.  EXHAUSTIVE over structural profiles, using the RELAXED
+         family definition (mutually commuting records, each satisfying (i)-(iv) on its own,
+         NO even-splitting demand).  A rigged search would use the program's own
+         commuting_family(), whose even-splitting rule already forces the conclusion.
+==================================================================================================================================
+
+--- 4.0  THE RIGGING CHECK, stated first and explicitly ---
+
+record_model.commuting_family() accepts a new record only if it splits EVERY existing joint
+block into two halves of EQUAL dimension (`len(pl) != len(mi) -> reject`).  After k accepted
+records every joint block inside a shell therefore has dimension dim(E)/2^k -- the table is
+UNIFORM BY CONSTRUCTION, all k flips exist by LEMMA W, and the theorem holds trivially.
+
+  => WITHIN THE PROGRAM'S OWN MACHINERY THE THEOREM IS UNFALSIFIABLE.  That is a finding
+     about the machinery, not evidence for the theorem.  Everything below therefore drops
+     the even-splitting demand and admits any mutually commuting set of genuine records.
+
+==================================================================================================================================
+--- 4.1  EXHAUSTIVE HUNT over all one-shell profiles with m minimal projections and
+         dimensions drawn from {1..D}.  For each profile: ALL clause-(iv) records, ALL
+         commuting pairs and triples, and the contingency table
+            (# independently writable records)  x  (# orbits of the writer group). ---
+
+THE FORBIDDEN CELL, if the theorem is true, is  indep = k  AND  orbits > 1.
+
+profiles searched: 60    records enumerated: 812
+COMMUTING PAIRS analysed:   8059
+COMMUTING TRIPLES analysed: 64397
+
+CONTINGENCY TABLE, k = 2 (pairs):
+  # indep writable   # orbits  dim invariants      count   FORBIDDEN CELL?
+----------------------------------------------------------------------------
+                 0          2               2       5665             False
+                 2          1               1       2394             False
+
+CONTINGENCY TABLE, k = 3 (triples):
+  # indep writable   # orbits  dim invariants      count   FORBIDDEN CELL?
+----------------------------------------------------------------------------
+                 0          2               2        894             False
+                 0          4               4      42724             False
+                 0          8               8      15451             False
+                 1          2               2        288             False
+                 3          1               1       5040             False
+
+FORBIDDEN CELL POPULATION: 0
+  The forbidden cell is EMPTY across every family analysed.  The populated cells are
+  numerous and cover indep = 0,1,..,k and orbits = 1,2,4,..  -- so the search WOULD have
+  registered a counterexample had one existed (D-15: the control is the populated part of
+  the same table).
+
+==================================================================================================================================
+--- 4.2  MULTI-SHELL PROFILES.  Degenerate spectra with several shells give the writer
+         group MORE constraints to satisfy, so this is the harder case for the theorem. ---
+
+multi-shell profiles searched: 55   commuting pairs analysed: 272256
+
+  # indep writable   # orbits  dim invariants        count   FORBIDDEN CELL?
+------------------------------------------------------------------------------
+                 0          2               2       255696             False
+                 2          1               1        16560             False
+
+FORBIDDEN CELL POPULATION (multi-shell): 0
+
+==================================================================================================================================
+--- 4.3  WHY THE CELL IS EMPTY -- and it is a PROOF, not an induction from the tables ---
+
+Suppose all k records are independently writable.  By LEMMA W(a)=>(b) each flip_i preserves
+the dimension table.  The flips generate (Z_2)^k.  For any two configurations sigma, tau the
+element eps with eps_i = [sigma_i != tau_i] lies in that group and carries sigma to tau, so
+the action is TRANSITIVE; the stabiliser of any sigma is trivial because eps.sigma = sigma
+forces eps = 0, so it is SIMPLY transitive.  A transitive action has ONE orbit, and the
+space of invariant functions has dimension = number of orbits = 1.  Hence
+      indep = k  =>  orbits = 1,
+with no hypothesis about the carrier at all: not stabiliser, not abelian, not finite-
+dimensional beyond what the family needs.  THE FORBIDDEN CELL CANNOT BE POPULATED.
+
+The one loophole worth naming, because it is real: the argument presumes every one of the
+2^k configurations is REALISED (non-zero block).  It is: the realised set is non-empty and
+closed under the flips (LEMMA W preserves dimensions, so a zero block pairs with a zero
+block), and a non-empty set closed under a transitive group is everything.  So the loophole
+closes itself.
+
+==================================================================================================================================
+--- 4.4  WHERE THE NON-CONSTANT INVARIANTS ACTUALLY LIVE (the exhibits) ---
+
+Smallest profiles found by the exhaustive search that DO carry a non-constant invariant:
+
+dims (one shell)           R_1                  R_2                  d(++,+-,-+,--)          indep  |G_W|  #orb  dim inv    the invariant
+----------------------------------------------------------------------------------------------------------------------------------------
+(1, 1, 2, 2)               +-+-                 +--+                 [1, 2, 2, 1]                0      2     2        2           chi_12
+(1, 1, 2, 2)               +-+-                 +--+                 [1, 2, 2, 1]                0      2     2        2           chi_12
+(1, 1, 3, 3)               +-+-                 +--+                 [1, 3, 3, 1]                0      2     2        2           chi_12
+(2, 2, 3, 3)               +-+-                 +--+                 [2, 3, 3, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 1)         +++---               ++-+--               [2, 1, 1, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 1)         +++---               ++-+--               [2, 1, 1, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 2, 2)         ++--+-               +-+-+-               [3, 1, 1, 3]                0      2     2        2           chi_12
+(1, 1, 2, 2, 2, 2)         +-++--               +-+-+-               [3, 2, 2, 3]                0      2     2        2           chi_12
+(2, 2, 2, 2, 2, 2)         +++---               ++-+--               [4, 2, 2, 4]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 1)         +++---               ++-+--               [2, 1, 1, 2]                0      2     2        2           chi_12
+(1, 1, 1, 1, 1, 3)         ++++--               +++-+-               [3, 1, 1, 3]                0      2     2        2           chi_12
+(1, 1, 1, 1, 2, 2)         ++--+-               +-+-+-               [3, 1, 1, 3]                0      2     2        2           chi_12
+
+READ: every profile carrying a non-constant invariant has indep < k in the same row.  The
+      invariant is always a PRODUCT character chi_S -- i.e. the operator R_S = prod_{i in S} R_i.
+
+==================================================================================================================================
+PART 4 VERDICT: NO COUNTEREXAMPLE EXISTS, and that is now a PROOF (4.3) with an exhaustive
+finite search behind it (4.1, 4.2) whose control cells are richly populated.  Direction 2
+FAILED to refute, for a reason.
+========================================================================================================================================
+PART 6 -- DIRECTION 3: THE PRICE OF THE HYPOTHESIS.
+========================================================================================================================================
+
+--- 6.1  THE EXACT TRADE LAW.  dim(invariants) = 2^(k - rank G_W), and k_indep <= rank G_W. ---
+
+Exhaustive over the same profiles as Part 4.  Every family is a genuine one: each R_i
+satisfies clauses (i)-(iv) on its own.
+
+ k_indep  rank G_W  #orbits  dim inv  2^(k-rank)  law holds      count
+--------------------------------------------------------------------------
+       0         1        2        2           2       True       5665
+       2         2        1        1           1       True       2394
+
+families analysed: 8059
+TRADE LAW  dim inv = 2^(k - rank G_W)   holds on every family: True
+BOUND      k_indep <= rank G_W          holds on every family: True
+
+READ: the invariant dimension is EXACTLY 2^(k - rank G_W).  Every bit of writer-group rank
+      lost DOUBLES the invariant space.  The trade is not approximate; it is an identity.
+
+--- CONJECTURE F, tested exhaustively on the same families ---
+
+families where a NON-CONSTANT G_W-INVARIANT exists AND the corresponding product R_S is
+nevertheless BALANCED (i.e. would satisfy clause (iv)): 0
+  CONJECTURE F HOLDS on every family tested HERE -- and note the scope: these are k = 2
+  families on a single shell.  At k = 2 it is a THEOREM, proved exactly in Part 7.
+  AT k >= 3 IT IS FALSE: Part 7 exhibits 81361 violations at k = 3 and 1055818 at k = 4.
+  There the freezing is RELATIVE to the family, not absolute -- an admissible unitary can
+  flip the invariant, but only by scrambling the rest of the family.  Do not read the
+  zero above as a general fact; read Part 7.
+
+========================================================================================================================================
+--- 6.2  THEOREM D (divisibility): k_indep <= min_E v_2(dim E), computable from the
+         SPECTRUM ALONE.  Verified on every carrier this lane has touched. ---
+
+carrier                                                dim eigenspace dims                     min v_2  bound on k_indep  k_indep observed  bound respected
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+[[4,2,2]]                                               16 [4, 8, 4]                                 2                 2                 2             True
+[[8,3,2]]                                              256 [8, 40, 80, 80, 40, 8]                    3                 3                 3             True
+TORIC L=2 (TORUS, D-23)                                256 [4, 24, 60, 80, 60, 24, 4]                2                 2                 2             True
+============================================================================================================================================
+PART 5 -- NON-STABILISER CARRIERS: THE QUANTUM DOUBLES D(G).  Minimal torus, dim |G|^2.
+         Commutant computed EXACTLY by orbit counting, never by record_model.commutant (D-21).
+============================================================================================================================================
+
+group G                                           |G|   dim  ground dim  #irreps D(G)  match?  #eigsp H  commutant dim (exact)  brute-force check  |Aut(G)| (D-22)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Z_2  (|G|=2)                                        2     4           4             4    True         1                     16          16  AGREE                1
+Z_3  (|G|=3, CONTROL: not a 2-power)                3     9           9             9    True         1                     81          81  AGREE                2
+Z_4  (|G|=4)                                        4    16          16            16    True         1                    256         256  AGREE                2
+Z_2 x Z_2  (|G|=4)                                  4    16          16            16    True         1                    256         256  AGREE                6
+S_3 = D_3 (|G|=6, CONTROL: non-abelian, not a 2-power)    6    36           8             8    True         3                    116 skipped (dim too large)                6
+Z_8  (|G|=8)                                        8    64          64            64    True         1                   4096 skipped (dim too large)                4
+Z_4 x Z_2  (|G|=8)                                  8    64          64            64    True         1                   4096 skipped (dim too large)                8
+Z_2^3  (|G|=8)                                      8    64          64            64    True         1                   4096 skipped (dim too large)              168
+D_4  (|G|=8, NON-ABELIAN)                           8    64          22            22    True         3                    736 skipped (dim too large)                8
+Q_8  (|G|=8, NON-ABELIAN)                           8    64          22            22    True         3                    736 skipped (dim too large)               24
+
+READ: the ground-space dimension equals the number of D(G) irreps on every group tested,
+      including 22 for both non-abelian groups of order 8 -- so the carrier really is the
+      quantum double and not something else.  The exact orbit count agrees with the brute-
+      force numerical commutant wherever the latter fits, which validates the exact method
+      that D-21 requires in place of record_model.commutant().
+
+============================================================================================================================================
+--- 5.1  RECORDS ON D(G), and the contingency table again.  Records are SEARCHED as sign
+         vectors over the minimal projections of a MASA of the EXACT commutant. ---
+
+group G                                           #MASA min projs  #shells  #records (i)-(iv)  sampled?   #pairs  max k indep  skew tables seen  FORBIDDEN CELL  max dim inv
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Z_2  (|G|=2)                                                    4        1                  3     False        3            2                 0               0            1
+Z_3  (|G|=3, CONTROL: not a 2-power)                            9        1                  0     False        0            0                 0               0            1
+Z_4  (|G|=4)                                                   16        1               6435     False    19900            2             12260               0            2
+Z_2 x Z_2  (|G|=4)                                             16        1               6435     False    19900            2             12398               0            2
+S_3 = D_3 (|G|=6, CONTROL: non-abelian, not a 2-power)               24        3                  0      True        0            0                 0               0            1
+Z_8  (|G|=8)                                                   64        1                600      True    19900            2             15949               0            2
+Z_4 x Z_2  (|G|=8)                                             64        1                600      True    19900            2             15927               0            2
+Z_2^3  (|G|=8)                                                 64        1                600      True    19900            2             15992               0            2
+D_4  (|G|=8, NON-ABELIAN)                                      64        3                600      True    19900            0             19900               0            2
+Q_8  (|G|=8, NON-ABELIAN)                                      64        3                600      True    19900            0             19900               0            2
+
+TOTAL commuting record pairs analysed on D(G) carriers: 139303
+   of which SKEW dimension table (so a non-constant invariant exists): 112326
+   of which in the FORBIDDEN CELL (fully independently writable AND non-constant invariant): 0
+
+READ: on genuinely NON-STABILISER carriers -- including both non-abelian groups of order
+      eight, D_4 and Q_8, which is exactly C-41's territory -- skew tables are COMMON
+      (the control column is heavily populated, so the instrument is live), and the
+      forbidden cell is still EMPTY.  D(G) does not refute the theorem either.
+
+D-22 NOTE: these carriers are NOT permutation symmetric in the sense D-22 warns about -- the
+           gauge group acts by conjugation and Aut(G) is finite and small (column above), so
+           there is real structure to detect.  No separation result is read here in any case;
+           the object measured is the writer group, which is defined without geometry.
+
+============================================================================================================================================
+PART 5 VERDICT: the non-stabiliser class, tested on ten quantum doubles including the two
+non-abelian groups of order 8, produces MANY carriers with non-constant invariants and NOT
+ONE that is both independently writable and non-constant-invariant.  Direction 2 fails here too.
+D(Z_2)  Z_2  (|G|=2)                                     4 [4]                                       2                 2           see 5.1              n/a
+D(Z_3)  Z_3  (|G|=3, CONTROL: not a 2-power)             9 [9]                                       0                 0           see 5.1              n/a
+D(Z_4)  Z_4  (|G|=4)                                    16 [16]                                      4                 4           see 5.1              n/a
+D(Z_2)  Z_2 x Z_2  (|G|=4)                              16 [16]                                      4                 4           see 5.1              n/a
+D(S_3)  S_3 = D_3 (|G|=6, CONTROL: non-abelian, not a 2-power)      36 [8, 13, 15]                               0                 0           see 5.1              n/a
+D(Z_8)  Z_8  (|G|=8)                                    64 [64]                                      6                 6           see 5.1              n/a
+D(Z_4)  Z_4 x Z_2  (|G|=8)                              64 [64]                                      6                 6           see 5.1              n/a
+D(Z_2^3)  Z_2^3  (|G|=8)                                64 [64]                                      6                 6           see 5.1              n/a
+D(D_4)  D_4  (|G|=8, NON-ABELIAN)                       64 [22, 24, 18]                              1                 1           see 5.1              n/a
+D(Q_8)  Q_8  (|G|=8, NON-ABELIAN)                       64 [22, 24, 18]                              1                 1           see 5.1              n/a
+
+READ, from the numbers: on D(D_4) and D(Q_8) the eigenspace dimensions include 22, whose
+      2-adic valuation is 1.  THEOREM D therefore forbids more than ONE independently
+      writable record on those carriers, no matter how many records they hold -- which is
+      exactly why Part 5.1 found k_indep = 0 on both and never a full pair.  That null is an
+      EXACT OBSTRUCTION read off the spectrum, not a sampling artifact.
+
+      The non-abelian doubles are therefore FORCED into the non-independently-writable
+      regime.  They necessarily carry non-constant invariants -- and by 6.1 those invariants
+      are frozen.  C-41's territory is settled: it holds invariants, and none of them move.
+
+========================================================================================================================================
+--- 6.3  THE WORKED EXHIBIT.  The smallest carrier on which a NON-CONSTANT INVARIANT exists
+         and every R_i is a genuine record.  Full clause audit, operator by operator. ---
+
+carrier dimension 8; H has 1 eigenspace(s) of dimension [8]
+joint block dimensions d(++,+-,-+,--) = (3,1,1,3)   [INSERTED: the table is the independent
+variable of this exhibit.  Everything below is INDUCED from it.]
+
+operator           (i) R=R+, R^2=I   (ii) [R,H]=0  (iii) non-trivial   max |Tr(P_E R)|   (iv) writable   IS IT A RECORD?
+----------------------------------------------------------------------------------------------------------------------------
+R_1                           True           True               True          0.000000            True              True
+R_2                           True           True               True          0.000000            True              True
+R_1 R_2                       True           True               True          4.000000           False             False
+
+writer group G_W = [(0, 0), (1, 1)]   order 2   rank 1
+orbits on the 4 configurations: [[(-1, -1), (1, 1)], [(-1, 1), (1, -1)]]
+invariant characters: ['constant', 'chi_12']
+dim(invariants) = 2
+
+independently writable records (exact criterion): []  -- NONE
+cross-check, record_model.independently_writable: []
+
+THE PRICE, read off this single carrier:
+  * R_1 and R_2 ARE records: bit, durable, non-trivial, and each individually WRITABLE
+    (max |Tr(P_E R_i)| = 0.000000 above).
+  * NEITHER is INDEPENDENTLY writable: the only admissible flip is the SIMULTANEOUS one.
+    Writing R_1 necessarily writes R_2.  That is exactly what was given up.
+  * A non-constant invariant appears: chi_12, the CORRELATION R_1 R_2.
+  * And R_1 R_2 has |Tr(P_E R_1R_2)| = 4.000000 -- it FAILS clause (iv).  It is a durable
+    non-trivial bit that CANNOT BE WRITTEN BY ANY ADMISSIBLE OPERATION WHATEVER (C-11).
+  * So the configuration-dependent, non-cancelling quantity this carrier buys is FROZEN
+    (absolutely so at k=2, by the Part 7 theorem).
+    It accumulates, it is not blind -- and nothing can create it.  It is a superselection
+    charge, not a source.  This is O-42 ('writability requires energetic neutrality') and
+    O-40 ('C-47's extensive quantity was bought at the cost of independent writability')
+    appearing as the SAME fact, one level up, about PRODUCTS of records.
+
+========================================================================================================================================
+--- 6.4  RESULT 1 VERIFIED: the dichotomy holds WITHOUT the independent-writability
+         hypothesis.  For every family, invariant part unresponsive AND non-invariant part
+         exactly cancelling. ---
+
+profile class                       #families  max |response of INVARIANT part|  max |shell avg of NON-INV part|  CONTROL: shell avg of full f
+------------------------------------------------------------------------------------------------------------------------------------------------
+m=4, dims in 1..1                           3                                 0                                0                            51
+m=4, dims in 1..2                           7                                 0                                0                           110
+m=6, dims in 1..1                          45                                 0                                0                            97
+m=6, dims in 1..2                         126                                 0                                0                           220
+m=8, dims in 1..1                         595                                 0                                0                           138
+
+READ: the invariant part of every functional has EXACTLY zero response to every admissible
+      write (column 3, integer zero), and the non-invariant part has EXACTLY zero shell
+      average (column 4, integer zero) -- on families that are NOT independently writable.
+      The CONTROL column is the shell average of the FULL functional, which is large and
+      non-zero, so the two zeros are zeros of the objects named and not of everything.
+
+========================================================================================================================================
+PART 6 VERDICT
+========================================================================================================================================
+  * The trade is an IDENTITY: dim(invariants) = 2^(k - rank G_W).  Each unit of writer-group
+    rank surrendered doubles the invariant space.
+  * THEOREM D bounds k_indep by min_E v_2(dim E) -- readable off the SPECTRUM.  It forces
+    D(D_4) and D(Q_8) into the non-independently-writable regime (22 = 2 x 11).
+  * What is bought is NOT a source.  It is a configuration-dependent quantity that no
+    admissible operation PRESERVING THE FAMILY can move.  At k=2 that freezing is ABSOLUTE
+    (Part 7 proves R_S then fails clause (iv) outright).  At k>=3 it is RELATIVE: the
+    invariant can be flipped, but only by a write that destroys the other records' values,
+    after which there is no record configuration left for it to be a functional of.
+  * The dichotomy 'responsive XOR non-cancelling' needs NO hypothesis at all.  Independent
+    writability only decides whether the unresponsive part is BLIND (constant) or FROZEN.
+EXIT 0

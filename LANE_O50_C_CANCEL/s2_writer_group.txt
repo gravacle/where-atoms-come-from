@@ -1,0 +1,116 @@
+========================================================================================================
+O-50-C  STEP 2.   THE WRITER GROUP ON RECORD CONFIGURATIONS.  EXACT, WITH TWO LIVE CONTROLS.
+========================================================================================================
+
+D-23 SCOPE: TORUS.  m = 2k records on k disjoint L x L tori; clause (v) by homology (step 1).
+
+--------------------------------------------------------------------------------------------------------
+  A.  THE ACTION OF G_W, COMPUTED FROM THE SYMPLECTIC FORM ON THE ACTUAL CARRIER
+--------------------------------------------------------------------------------------------------------
+    L  k tori  n qubits  m records  |configs|=2^m  rank of w->flip map  |G_W image|  orbits  free?  simply transitive?
+    2       1         8          2              4                    2            4       1   True                True
+    3       1        18          2              4                    2            4       1   True                True
+    2       2        16          4             16                    4           16       1   True                True
+    2       3        24          6             64                    6           64       1   True                True
+    3       2        36          4             16                    4           16       1   True                True
+    2       4        32          8            256                    8          256       1   True                True
+    3       3        54          6             64                    6           64       1   True                True
+    2       5        40         10           1024                   10         1024       1   True                True
+    2       6        48         12           4096                   12         4096       1   True                True
+
+  CONTROLS (same table, same instrument, different writer group):
+  CTRL-1 chain shape: one global flip      m = 4   rank 1   |G_W image| 2      orbits 8      simply transitive? False
+  CTRL-2 writers reach only m-1 records    m = 4   rank 3   |G_W image| 8      orbits 2      simply transitive? False
+  CTRL-1 chain shape: one global flip      m = 6   rank 1   |G_W image| 2      orbits 32     simply transitive? False
+  CTRL-2 writers reach only m-1 records    m = 6   rank 5   |G_W image| 32     orbits 2      simply transitive? False
+  CTRL-1 chain shape: one global flip      m = 8   rank 1   |G_W image| 2      orbits 128    simply transitive? False
+  CTRL-2 writers reach only m-1 records    m = 8   rank 7   |G_W image| 128    orbits 2      simply transitive? False
+
+  READ: on the torus the flip map has FULL RANK m at every (L,k) tested, so the image of G_W in
+  Sym(configurations) is all of (Z_2)^m acting by translation: order 2^m = |configurations|,
+  ONE orbit, and free.  G_W ACTS SIMPLY TRANSITIVELY.  The controls do not: the chain-shaped
+  writer group has rank 1 and 2^{m-1} orbits; the (m-1)-reach writer group has rank m-1 and 2
+  orbits.  The rank column is not stuck at m.
+
+--------------------------------------------------------------------------------------------------------
+  B.  THE SPACE OF G_W-INVARIANT FUNCTIONALS.  EXACT DIMENSION, BY EXACT LINEAR ALGEBRA.
+--------------------------------------------------------------------------------------------------------
+  A functional is a vector in Q^{2^m}.  f is G_W-invariant iff f(g.s) = f(s) for every generator
+  g and every s.  The invariant subspace is the joint kernel of (I - permutation matrix), whose
+  dimension is exactly the NUMBER OF ORBITS.  Computed by union-find over the actual action --
+  no formula is trusted.
+
+  carrier                                        m  dim(all functionals)  dim(invariant)  non-constant invariant exists?
+  TORUS  L=2, k=1 tori                           2                     4               1                           False
+  TORUS  L=3, k=1 tori                           2                     4               1                           False
+  TORUS  L=2, k=2 tori                           4                    16               1                           False
+  TORUS  L=2, k=3 tori                           6                    64               1                           False
+  TORUS  L=3, k=2 tori                           4                    16               1                           False
+  TORUS  L=2, k=4 tori                           8                   256               1                           False
+  TORUS  L=3, k=3 tori                           6                    64               1                           False
+  TORUS  L=2, k=5 tori                          10                  1024               1                           False
+  TORUS  L=2, k=6 tori                          12                  4096               1                           False
+  CTRL-1 chain shape (one global flip)           4                    16               8                            True
+  CTRL-2 writers reach only m-1 records          4                    16               2                            True
+  CTRL-1 chain shape (one global flip)           6                    64              32                            True
+  CTRL-2 writers reach only m-1 records          6                    64               2                            True
+  CTRL-1 chain shape (one global flip)           8                   256             128                            True
+  CTRL-2 writers reach only m-1 records          8                   256               2                            True
+
+  READ: on the torus the invariant space has dimension EXACTLY 1 at every m tested -- the
+  constants, and nothing else.  NO NON-CONSTANT WRITER-INVARIANT FUNCTIONAL EXISTS ON THE TORUS.
+  On CTRL-1 the invariant space has dimension 2^{m-1} (8, 32, 128) and non-constant invariants
+  DO exist -- e.g. s_1 s_2, which the global flip preserves.  THAT IS EXACTLY THE 'ESCAPE' THE
+  CHAIN APPEARED TO OFFER, and the control shows the instrument would have found it here if it
+  were here.  On CTRL-2 the dimension is 2: the functionals of the unreachable record s_m.
+
+  This settles the first half of the theorem candidate ON THE TORUS, EXACTLY:
+  ==> IF G_W acts simply transitively, every G_W-INVARIANT functional IS CONSTANT.   PROVED.
+      (One orbit; an invariant function is constant on orbits.)
+
+--------------------------------------------------------------------------------------------------------
+  C.  THE FULL DECOMPOSITION BY WRITER-PARITY.  EVERY FUNCTIONAL, EXACTLY, ON THE TORUS.
+--------------------------------------------------------------------------------------------------------
+  G_W = (Z_2)^m is abelian, so the 2^m-dimensional space of functionals splits into 2^m
+  ONE-DIMENSIONAL isotypic components, one per character chi_S(s) = prod_{i in S} s_i.
+  The component containing f is read off by the Walsh-Hadamard transform, computed here
+  in EXACT INTEGER arithmetic (D-19: no floating point anywhere in this step).
+
+  For each character the table gives: its writer-parity vector (which generators negate it),
+  whether it is invariant, and its EXACT mean over the uniform measure on configurations.
+
+  m = 2   (torus carrier: k = 1 tori)
+    character chi_S          S              negated by generators    invariant?  EXACT mean  
+    1                        ()             []                       True        1           
+    s1                       (0,)           [0]                      False       0           
+    s2                       (1,)           [1]                      False       0           
+    s1s2                     (0, 1)         [0, 1]                   False       0           
+
+  m = 4   (torus carrier: k = 2 tori)
+    character chi_S          S              negated by generators    invariant?  EXACT mean  
+    1                        ()             []                       True        1           
+    s1                       (0,)           [0]                      False       0           
+    s2                       (1,)           [1]                      False       0           
+    s3                       (2,)           [2]                      False       0           
+    s4                       (3,)           [3]                      False       0           
+    s1s2                     (0, 1)         [0, 1]                   False       0           
+    s1s3                     (0, 2)         [0, 2]                   False       0           
+    s1s4                     (0, 3)         [0, 3]                   False       0           
+    s2s3                     (1, 2)         [1, 2]                   False       0           
+    s2s4                     (1, 3)         [1, 3]                   False       0           
+    s3s4                     (2, 3)         [2, 3]                   False       0           
+    s1s2s3                   (0, 1, 2)      [0, 1, 2]                False       0           
+    s1s2s4                   (0, 1, 3)      [0, 1, 3]                False       0           
+    s1s3s4                   (0, 2, 3)      [0, 2, 3]                False       0           
+    s2s3s4                   (1, 2, 3)      [1, 2, 3]                False       0           
+    s1s2s3s4                 (0, 1, 2, 3)   [0, 1, 2, 3]             False       0           
+
+  READ: exactly ONE character -- the trivial one, S = {} -- is invariant, and it is the ONLY one
+  with non-zero mean (mean 1).  Every non-trivial character has EXACT mean 0, and is negated by
+  exactly the generators j in S.  chi_S is odd under generator j iff j is in S; a character with
+  |S| >= 1 is therefore odd under at least one writer.
+
+  THE PRECISE STATEMENT THIS ESTABLISHES, and it is NOT the theorem candidate:
+    for a CHARACTER, non-invariant  <=>  mean exactly 0.
+  A general functional is a SUM of characters, and step 3 shows that the implication breaks the
+  moment the sum contains the trivial character with a non-zero coefficient.

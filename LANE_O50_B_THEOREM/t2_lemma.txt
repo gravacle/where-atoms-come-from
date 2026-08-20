@@ -1,0 +1,135 @@
+================================================================================================================
+PART 2 -- LEMMA W (exact writer criterion) and LEMMA B (balance), verified on carriers
+         whose dimension table is under exact control.  The table is INSERTED; the writer
+         group, the orbit structure and the invariant dimension are INDUCED from it.
+================================================================================================================
+
+carrier                                                      dim  k  |G_W|  rank  #orbits  dim inv  indep writable  simply transitive
+------------------------------------------------------------------------------------------------------------------------------------------
+UNIFORM k=1   d=(1,1)                                          2  1      2     1        1        1             1/1               True
+UNIFORM k=2   all d=1                                          4  2      4     2        1        1             2/2               True
+UNIFORM k=2   all d=2                                          8  2      4     2        1        1             2/2               True
+UNIFORM k=3   all d=1                                          8  3      8     3        1        1             3/3               True
+UNIFORM k=2, TWO shells                                       16  2      4     2        1        1             2/2               True
+SKEW k=2  d(++)=3 (+-)=1 (-+)=1 (--)=3                         8  2      2     1        2        2             0/2              False
+SKEW k=2  d(++)=2 (+-)=1 (-+)=1 (--)=0   [R_1,R_2 both UNBALANCED]     4  2      1     0        4        4             0/2              False
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2, flip_1flip_3 survive)    16  3      4     2        2        2             0/3              False
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3 survives)    12  3      4     2        2        2             1/3              False
+
+READ: every UNIFORM row (equal block dimensions) has |G_W| = 2^k, all k records independently
+      writable, ONE orbit and invariant dimension exactly 1.  Every SKEW row has a strictly
+      smaller writer group, fewer than k independent writers, more than one orbit, and
+      invariant dimension = 2^(k-rank) > 1.  The instrument separates the two cases.
+
+================================================================================================================
+--- LEMMA W verified as an OPERATOR identity: build the block-swap U for every eps the
+    criterion admits, and check it is unitary, admissible, and conjugates EXACTLY. ---
+
+carrier                                                     #eps tested   max |U*U-I|   max |[U,H]|   max |U*R_iU - eps_i R_i|   CONTROL: eps NOT in G_W
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+UNIFORM k=1   d=(1,1)                                                 2     0.000e+00     0.000e+00                  0.000e+00   n/a (G_W is everything)
+UNIFORM k=2   all d=1                                                 4     0.000e+00     0.000e+00                  0.000e+00   n/a (G_W is everything)
+UNIFORM k=2   all d=2                                                 4     0.000e+00     0.000e+00                  0.000e+00   n/a (G_W is everything)
+UNIFORM k=3   all d=1                                                 8     0.000e+00     0.000e+00                  0.000e+00   n/a (G_W is everything)
+UNIFORM k=2, TWO shells                                               4     0.000e+00     0.000e+00                  0.000e+00   n/a (G_W is everything)
+SKEW k=2  d(++)=3 (+-)=1 (-+)=1 (--)=3                                2     0.000e+00     0.000e+00                  0.000e+00 eps=(1, 0) dim mismatch 2
+SKEW k=2  d(++)=2 (+-)=1 (-+)=1 (--)=0   [R_1,R_2 both UNBALANCED]            1     0.000e+00     0.000e+00                  0.000e+00 eps=(1, 0) dim mismatch 1
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2, flip_1flip_3 survive)            4     0.000e+00     0.000e+00                  0.000e+00 eps=(1, 0, 0) dim mismatch 2
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3 survives)            4     0.000e+00     0.000e+00                  0.000e+00 eps=(1, 0, 0) dim mismatch 1
+
+READ: every eps the criterion admits yields an explicit U that is unitary to 1e-15, commutes
+      with H to 1e-15, and conjugates every record EXACTLY by its prescribed sign.  Lemma W(b)
+      => (a) is therefore CONSTRUCTIVE, not merely existential.  The CONTROL column names the
+      dimension mismatch that blocks every eps outside G_W -- by Lemma W(a)=>(b) NO admissible
+      unitary whatever can realise those, so the negative verdicts are NON-EXISTENCE PROOFS.
+
+================================================================================================================
+--- CROSS-CHECK: the model's own independently_writable() against the exact criterion ---
+
+carrier                                                      exact criterion: flips  record_model.independently_writable   agree?
+----------------------------------------------------------------------------------------------------------------------------------
+UNIFORM k=1   d=(1,1)                                                           [0]                                  [0]     True
+UNIFORM k=2   all d=1                                                        [0, 1]                               [0, 1]     True
+UNIFORM k=2   all d=2                                                        [0, 1]                               [0, 1]     True
+UNIFORM k=3   all d=1                                                     [0, 1, 2]                            [0, 1, 2]     True
+UNIFORM k=2, TWO shells                                                      [0, 1]                               [0, 1]     True
+SKEW k=2  d(++)=3 (+-)=1 (-+)=1 (--)=3                                           []                                   []     True
+SKEW k=2  d(++)=2 (+-)=1 (-+)=1 (--)=0   [R_1,R_2 both UNBALANCED]                       []                                   []     True
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2, flip_1flip_3 survive)                       []                                   []     True
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3 survives)                      [2]                                  [2]     True
+
+ALL AGREE: True
+READ: the model's predicate and the exact criterion return the SAME set of independently
+      writable records on every carrier tested.  The model's implementation is therefore
+      sound AND complete for this question -- the weak link the brief asked about is closed.
+
+================================================================================================================
+--- LEMMA B: NON-INVARIANT CHARACTER => BALANCED => CANCELS.  And the converse, tested. ---
+
+For every subset S the table reports: is chi_S G_W-invariant, and is R_S = prod_{i in S} R_i
+BALANCED on every shell (Tr(P_E R_S) = 0, which by C-11 is exactly clause (iv) for R_S)?
+
+carrier                                              S           chi_S invariant  max |Tr(P_E R_S)|  balanced (clause iv)  LEMMA B ok
+----------------------------------------------------------------------------------------------------------------------------------------
+UNIFORM k=1   d=(1,1)                                (0,)                  False           0.000000                  True        True
+
+UNIFORM k=2   all d=1                                (0,)                  False           0.000000                  True        True
+UNIFORM k=2   all d=1                                (1,)                  False           0.000000                  True        True
+UNIFORM k=2   all d=1                                (0, 1)                False           0.000000                  True        True
+
+UNIFORM k=2   all d=2                                (0,)                  False           0.000000                  True        True
+UNIFORM k=2   all d=2                                (1,)                  False           0.000000                  True        True
+UNIFORM k=2   all d=2                                (0, 1)                False           0.000000                  True        True
+
+UNIFORM k=3   all d=1                                (0,)                  False           0.000000                  True        True
+UNIFORM k=3   all d=1                                (1,)                  False           0.000000                  True        True
+UNIFORM k=3   all d=1                                (0, 1)                False           0.000000                  True        True
+UNIFORM k=3   all d=1                                (2,)                  False           0.000000                  True        True
+UNIFORM k=3   all d=1                                (0, 2)                False           0.000000                  True        True
+UNIFORM k=3   all d=1                                (1, 2)                False           0.000000                  True        True
+UNIFORM k=3   all d=1                                (0, 1, 2)             False           0.000000                  True        True
+
+UNIFORM k=2, TWO shells                              (0,)                  False           0.000000                  True        True
+UNIFORM k=2, TWO shells                              (1,)                  False           0.000000                  True        True
+UNIFORM k=2, TWO shells                              (0, 1)                False           0.000000                  True        True
+
+SKEW k=2  d(++)=3 (+-)=1 (-+)=1 (--)=3               (0,)                  False           0.000000                  True        True
+SKEW k=2  d(++)=3 (+-)=1 (-+)=1 (--)=3               (1,)                  False           0.000000                  True        True
+SKEW k=2  d(++)=3 (+-)=1 (-+)=1 (--)=3               (0, 1)                 True           4.000000                 False        True
+
+SKEW k=2  d(++)=2 (+-)=1 (-+)=1 (--)=0   [R_1,R_2    (0,)                   True           2.000000                 False        True
+SKEW k=2  d(++)=2 (+-)=1 (-+)=1 (--)=0   [R_1,R_2    (1,)                   True           2.000000                 False        True
+SKEW k=2  d(++)=2 (+-)=1 (-+)=1 (--)=0   [R_1,R_2    (0, 1)                 True           0.000000                  True        True
+
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2,   (0,)                  False           0.000000                  True        True
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2,   (1,)                  False           0.000000                  True        True
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2,   (0, 1)                False           0.000000                  True        True
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2,   (2,)                  False           0.000000                  True        True
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2,   (0, 2)                False           0.000000                  True        True
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2,   (1, 2)                False           0.000000                  True        True
+SKEW k=3  d = 3,1,1,3,1,3,3,1  (only flip_1flip_2,   (0, 1, 2)              True           8.000000                 False        True
+
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3    (0,)                  False           0.000000                  True        True
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3    (1,)                  False           0.000000                  True        True
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3    (0, 1)                 True           4.000000                 False        True
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3    (2,)                  False           0.000000                  True        True
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3    (0, 2)                False           0.000000                  True        True
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3    (1, 2)                False           0.000000                  True        True
+SKEW k=3  d = 2,2,1,1,1,1,2,2  (only flip_2flip_3    (0, 1, 2)             False           0.000000                  True        True
+
+LEMMA B HOLDS ON EVERY ROW: True
+
+CONVERSE (chi_S invariant => R_S unbalanced) -- rows where it FAILS:
+   SKEW k=2  d(++)=2 (+-)=1 (-+)=1 (--)=0   [R_1,R_2 both UNBALANCED]   S=(0, 1)   chi_S invariant AND R_S balanced
+   => the converse is FALSE.  Invariance is STRICTLY WEAKER than imbalance: a product
+      of records can be unflippable-within-the-family and still have zero shell average.
+
+================================================================================================================
+PART 2 VERDICT
+================================================================================================================
+  LEMMA W is proved (both directions) and verified constructively: independent writability
+  delivers the coordinate flips EXACTLY, and a negative verdict is a non-existence proof.
+  LEMMA B is proved and verified: every character NOT invariant under the writer group has
+  EXACTLY zero shell average.  Together with Part 1 F6 this gives the master statement --
+  the shell average of ANY functional of the record configuration is carried entirely by
+  its writer-INVARIANT component.

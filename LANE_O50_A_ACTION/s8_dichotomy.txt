@@ -1,0 +1,19 @@
+EXACT CHECK OF THE DECOMPOSITION (max |orbit sum of f_odd| must be EXACTLY 0)
+  torus-type, k=2 independent records      |G|=   4 |C|=  4 orbits=  1 inv_dim=  1  responsive draws=200/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=0
+  torus-type, k=4 independent records      |G|=  16 |C|= 16 orbits=  1 inv_dim=  1  responsive draws=200/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=0
+  torus-type, k=6 independent records      |G|=  64 |C|= 64 orbits=  1 inv_dim=  1  responsive draws=200/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=0
+  1D chain, greedy family (k=1)            |G|=   2 |C|=  2 orbits=  1 inv_dim=  1  responsive draws=189/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=0
+  1D chain, naive family {Z_i} n=3         |G|=   2 |C|=  8 orbits=  4 inv_dim=  4  responsive draws=200/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=0
+  1D chain, naive family {Z_i} n=4         |G|=   2 |C|= 16 orbits=  8 inv_dim=  8  responsive draws=200/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=0
+  1D chain, naive family {Z_i} n=5         |G|=   2 |C|= 32 orbits= 16 inv_dim= 16  responsive draws=200/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=0
+  1D chain, naive family {Z_i} n=6         |G|=   2 |C|= 64 orbits= 32 inv_dim= 32  responsive draws=200/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=0
+
+POSITIVE CONTROL (D-15): a TRIVIAL group, where NOTHING may cancel and every functional
+is unresponsive -- the machinery must report inv_dim = |C| and non-constant invariants.
+  trivial group on 4 configurations        |G|=   1 |C|=  4 orbits=  4 inv_dim=  4  responsive draws=0/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=200
+  trivial group on 8 configurations        |G|=   1 |C|=  8 orbits=  8 inv_dim=  8  responsive draws=0/200  max |orbit sum of f_odd| = 0  violations=0  unresponsive-but-non-constant draws=200
+
+READ, from the numbers above: max |orbit sum of f_odd| is EXACTLY 0 on every carrier,
+including the ones where the hypothesis fails; and it is also 0 on the trivial-group
+control ONLY because every orbit is a singleton there -- where the whole of f is f_inv,
+nothing is responsive, and inv_dim = |C|.  The control therefore separates the cases.

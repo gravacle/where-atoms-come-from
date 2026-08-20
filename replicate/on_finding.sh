@@ -48,6 +48,16 @@ badv=$(awk -F'\t' 'NR==FNR{if(FNR>1)v[$1]=1;next} FNR>1 && !($4 in v){print $1"=
 [ -z "$badv" ] && ok "every status is in the closed vocabulary" \
                 || warn "STATUS OUTSIDE THE CLOSED VOCABULARY: $badv"
 
+# 3a. THE GROUNDING DEBT — printed on EVERY run, because a guard that is only a checklist item is
+# a guard that changes nothing. H-3 sat OPEN for the life of the program while 162 rows were marked
+# PROVED about a stipulated definition. This line makes the true state impossible not to see.
+ug=$(./ledger/status.py ungrounded 2>/dev/null | head -1)
+case "$ug" in
+  "0 of "*) ok "$ug" ;;
+  "") warn "could not compute the grounding debt" ;;
+  *) warn "GROUNDING DEBT — $ug (H-3). A row about the stipulated definition is not a row about the world." ;;
+esac
+
 # 3b. THE PLAN is generated too
 pb=$(shasum -a 256 THE_PLAN_V001.md 2>/dev/null | cut -d' ' -f1)
 ./ledger/plan.py >/dev/null 2>&1
@@ -75,7 +85,12 @@ done
 [ "$FAIL" -eq 0 ] && ok "anchor, register, ledger, MODEL.md and REPLICATE.md all sealed"
 
 echo
-echo "NOT MACHINE-CHECKABLE — confirm by hand before committing:"
+echo "NOT MACHINE-CHECKABLE — and note what that has been worth. Every guard on this list was once"
+echo "an instruction from the principal. Converting an instruction into a checkbox made it LOOK"
+echo "handled and changed nothing; H-3 stayed open for the program's whole life. When a guard matters,"
+echo "MAKE THE TOOL REFUSE, as ./ledger/status.py now does for PROVED without a grounding."
+echo ""
+echo "confirm by hand before committing:"
 echo "  [ ] the REGISTER has an entry for this finding, including anything WITHDRAWN by it"
 echo "  [ ] the ledger row was set with ./ledger/status.py, never by editing the grid"
 echo "  [ ] if a clause moved, CORE_FRAMEWORK_V001.md was amended AND re-read to confirm the patch landed"

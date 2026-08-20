@@ -8985,3 +8985,63 @@ instruments agreeing (**C-63**).
 **Second erratum:** the "dead-configuration control" returned `0.0087, 0.0017, 0.0004, 0.0001` where
 its own description said it must vanish. **The cross term does not require crowding** — the control
 behaved correctly and the prediction about it was wrong.
+
+---
+
+## **H-3 ANSWERED. ZERO OF THIRTEEN REAL RECORDS SATISFY THE FIVE CLAUSES AS WRITTEN.**
+
+`LANE_GR1_CENSUS` … `LANE_GR4_DERIVE`. The principal: *"We are not setting out to create a toy. Why
+haven't we been grounding every PROOF in the world's records?"* **This is the first time the clauses
+have ever been tested against a real record.** Thirteen records, lifetimes `3e7`–`4e17 s`, write
+energies eV to MJ.
+
+### THE TALLY
+
+| clause | | result |
+|---|---|---|
+| **(ii) DURABLE** | **NEVER FAILS** | 12 approximate + 1 exact of 13. **O-5's spectral-width relaxation is vindicated against nature** — width tolerances `ħ/τ` of `1e-41`–`1e-52 J`, **20+ orders below every relevant energy scale** |
+| (i) BIT | fails 5/13 | analog records — zircon U-Pb ratio, synapse weight, tree ring, ice core, footprint — have no involution to test |
+| **(iii) NON-TRIVIAL** | **fails 9/13** | real records store their value in states of **grossly different energy**: 0.2–1 eV (DNA), 10–26 eV (AgBr), **150 eV (flash)**, **0.5 MeV (mica track)**, **MJ (tree ring)** |
+| **(iv) WRITABLE** | **fails 12/13** | under DEF-A every real write dissipates **60× to 3e27× `kT ln2`**. **The world wrote all thirteen — so real records are not writable in the program's sense** |
+| **(v) PROTECTED** | **fails 13/13** | every record has an explicit local eraser at finite price: write head `5e-19 J`; **254 nm UV on a flash gate — the commercial EPROM eraser**; a mutagen molecule on DNA; a local anneal on a track |
+
+> ### **ZERO OF THIRTEEN SATISFY ALL FIVE.**
+
+### THE STRUCTURAL THEOREM — WHY, NOT JUST THAT
+
+**Exact (ii) + (iii) are jointly unsatisfiable in generic matter.** A non-degenerate spectrum plus
+`[R,H] = 0` forces `R = f(H)`, which clause (iii) forbids. So exact (ii)+(iii) require **symmetry or
+engineered degeneracy.**
+
+> ### **THE CORPUS'S CARRIERS PASS BECAUSE THEY WERE BUILT DEGENERATE. THE WORLD'S RECORDS ARE BUILT
+> ### METASTABLE. DEGENERACY-PROTECTION AND BARRIER-PROTECTION ARE DIFFERENT MECHANISMS, AND THE
+> ### CLAUSES FORMALISE THE WRONG ONE FOR NATURE.**
+
+**And the sharpest single observation in the census:** the one record passing (i)–(iv) exactly — the
+**CMB photon's degenerate polarisation doublet**, whose waveplate write genuinely has `dE = 0` and is
+admissible — **fails (v) at zero cost. The only object that satisfies the program's writability is the
+least protected thing in the census.**
+
+### THE CONSTRUCTIVE HALF — ONE MOVE CURES (iii) AND (iv) TOGETHER
+
+**Draw the boundary around carrier ⊗ local bath.** The clauses were written for the carrier alone.
+
+- **(iii′)** non-constant on the **closed system's energy shell**, width `√(C_v k_B T²)`. A 1 cm³ bath
+  gives `~1.6e-9 J (~10 GeV)`, beating the census's worst configuration offset (`0.5 MeV`) by `2e4`.
+  **All 13 pass.**
+- **(iv′)** admissible = an **energy-conserving dilation unitary** on carrier ⊗ writer ⊗ bath — **O-4's
+  untested "or a physical channel" reading.** C-60 survives at the total level, and the cost reappears
+  correctly as **free energy, floor `kT ln2 + dE_config`.** **All 13 pass.**
+- **(v′)** every single-region flip costs `≥ E_b` with `E_b/kT ≫ 1` — census values 61 (HDD), ~120
+  (flash), ~50 (DNA), 220 (zircon), **780 (single-domain magnetite)**. **The corpus's kinematic
+  protection is the `E_b → ∞` limit.**
+- **(i′)** involution → commuting spectral family, which C-12 already supports.
+
+> ### **AND THIS ANSWERS H-6 AS A BY-PRODUCT: RECORDS ARE MACROSCOPIC BECAUSE THE AMENDED CLAUSES
+> ### DEMAND A MACROSCOPIC BATH TO EXPORT THE WRITE ENERGY — NOT BECAUSE THE CARRIER MUST BE BIG.**
+
+### THE FIRST GROUNDED PROOF IS NAMED
+
+**Put the HDD CoCrPt grain through the model as an `(H,{L_k})` two-state macrospin with Arrhenius
+jumps** — `K_uV = 61 kT`, `τ = 2e17 s`, splitting 0.007–7 kT, write head `5e-19 J`. **That is a test a
+physicist can run against their own data.**

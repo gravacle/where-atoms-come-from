@@ -1,0 +1,148 @@
+========================================================================================================
+O-50-C  STEP 6.   DOES ANYTHING SELECT AN ORDERED CONFIGURATION?   EXACT ARGUMENTS, MEASURED.
+========================================================================================================
+
+D-23 SCOPE: TORUS.  Dense L = 2 toric carrier, dim 256; records R_1, R_2 COMPUTED by
+            symplectic_logicals in step 1 and verified there against all five clauses.
+
+--------------------------------------------------------------------------------------------------------
+  T-1.  NO H-DIAGONAL STATE CARRIES ANY RECORD MAGNETISATION.  EXACT, THEN MEASURED.
+--------------------------------------------------------------------------------------------------------
+  Tr(rho R) = sum_E f(E) Tr(P_E R) = 0 whenever rho = f(H), because clause (iv) is exactly
+  Tr(P_E R) = 0 on every eigenspace.  Every Gibbs state is of this form at every temperature.
+
+                           state rho          <R_1>          <R_2>      <R_1 R_2>  coherence |<R1>+<R2>|/2
+              maximally mixed  I/256       0.00e+00       0.00e+00       0.00e+00                 0.00e+00
+                   Gibbs, beta = 0.0      -2.57e-18      -6.73e-18       6.06e-18                 4.65e-18
+                  Gibbs, beta = 0.25       9.28e-20      -4.46e-17       5.53e-18                 2.22e-17
+                   Gibbs, beta = 1.0       4.85e-18      -2.83e-16       2.01e-18                 1.39e-16
+                   Gibbs, beta = 4.0       1.26e-22      -1.19e-15       6.01e-23                 5.93e-16
+                  Gibbs, beta = 40.0       5.97e-33      -1.15e-14       1.35e-33                 5.75e-15
+      microcanonical on ground space       5.20e-33      -3.27e-17       1.35e-33                 1.63e-17
+
+  CONTROL (D-15).  Break clause (iv) by adding a field that PREFERS a record value: H' = H - g R_1.
+  The instrument must now register a non-zero -- and the operator must stop being a record.
+
+         g   <R_1> in Gibbs(beta=4)  clause (iii) for R_1  clause (iv) for R_1   max|Tr(P_E R_1)|  still a record?
+      0.00                 0.000000                  True                 True               0.00             True
+      0.05                 0.197375                 False                False              76.00            False
+      0.25                 0.761594                 False                False              76.00            False
+      1.00                 0.999329                 False                False              76.00            False
+
+  READ: at g = 0 the magnetisation is 0 to machine precision and R_1 IS a record.  The moment
+  the Hamiltonian prefers a value -- ANY g > 0 -- the magnetisation becomes non-zero AND R_1
+  fails clause (iv) (and clause (iii)): IT IS NO LONGER A RECORD.
+
+  ==> THE CARRIER CAN PREFER A VALUE, OR THE OPERATOR CAN BE A RECORD.  NOT BOTH.  Clause (iv)
+      IS the statement that the carrier is indifferent between the record's two values, so no
+      carrier-derived, energy-derived, or thermal selection of a configuration is possible --
+      not at low temperature, not at zero temperature, not at any temperature.
+
+--------------------------------------------------------------------------------------------------------
+  T-2.  NO ADMISSIBLE ENVIRONMENT CAN SELECT A VALUE EITHER.  EXACT, THEN MEASURED.
+--------------------------------------------------------------------------------------------------------
+  Clause (ii) requires [L_k, R] = 0.  Then d<R>/dt = 0 identically under the Lindblad generator,
+  for any coupling strength, any number of channels, any initial state.  Measured by direct
+  integration of the master equation on the dense carrier.
+
+                          Lindblad channel set  [L,R_1]=0?  <R_1> at t=0  <R_1> at t=2  drift |d<R_1>|
+          clause (ii) HOLDS: L_k = stabilisers        True      1.000000      1.000000        0.00e+00
+                  clause (ii) HOLDS: L_k = R_2        True      1.000000      1.000000        3.33e-16
+              clause (ii) HOLDS: L_k = R_1 R_2        True      1.000000      1.000000        0.00e+00
+           clause (ii) HOLDS: L_k = R_1 itself        True      1.000000      1.000000        4.44e-16
+  CONTROL (violates ii): L_k = the writers W_1,W_2       False      1.000000      0.140181        8.60e-01
+  CONTROL (violates clause ii): single-qubit sigma^-       False      1.000000      0.612442        3.88e-01
+  CONTROL (violates clause ii): L = W_1 (anticommutes)       False      1.000000     -0.250280        1.25e+00
+
+  READ: every channel that OBEYS clause (ii) leaves <R_1> unchanged to 1e-15 or better over the
+  whole integration; the controls that VIOLATE it move <R_1> by an amount the same instrument
+  registers.  The zero is a zero of the object the question names.
+
+  ==> DURABILITY AGAINST THE ENVIRONMENT (clause ii) IS EXACTLY THE STATEMENT THAT THE
+      ENVIRONMENT CANNOT WRITE THE RECORD.  A bath cannot order the configuration without
+      violating the clause that makes the record a record.
+
+  AND NOTE WHICH OPERATOR THE CONTROL ROW USES.  The writer W_1 is exactly the operator clause
+  (iv) REQUIRES to exist -- and it is exactly the operator clause (ii) FORBIDS in the bath.  The
+  two clauses divide the operator algebra between them: what can write the record cannot be part
+  of the environment, and what is part of the environment cannot write the record.  A bath that
+  could order the configuration is, by definition, a bath the record is not durable against.
+
+--------------------------------------------------------------------------------------------------------
+  T-3.  EVERY CONFIGURATION LOOKS IDENTICAL TO EVERY CARRIER PROPERTY MEASURABLE HERE.
+--------------------------------------------------------------------------------------------------------
+  Four independent carrier-derived scalars, evaluated at each of the 2^m = 4 configurations of
+  the L = 2 torus.  If any of them varied, the carrier would be selecting.
+
+   configuration (s1,s2)  energy of the block  block dimension  min weight to flip s1  min weight to flip s2  protection distance
+                 (+1,+1)        -8.0000000000                1                      2                      2                    2
+                 (+1,-1)        -8.0000000000                1                      2                      2                    2
+                 (-1,+1)        -8.0000000000                1                      2                      2                    2
+                 (-1,-1)        -8.0000000000                1                      2                      2                    2
+
+  READ: identical in every column at every configuration -- the same energy to ten decimals, the
+  same block dimension, the same minimum flip weight (SEARCHED over all 4^8 = 65536 Paulis, not
+  nominated), the same protection distance.  No carrier scalar distinguishes an ordered
+  configuration from a disordered one.
+
+  AND THE EXACT REASON, WHICH IS NOT A COINCIDENCE OF THIS CARRIER:
+  G_W acts on configurations by ADMISSIBLE unitaries -- unitaries commuting with H -- and step 2
+  measured that action to be TRANSITIVE.  Any scalar computed from H, from the clause structure,
+  or from any G_W-covariant carrier datum is therefore G_W-invariant, and step 2 measured the
+  G_W-invariant space to be EXACTLY ONE-DIMENSIONAL: the constants.  A constant cannot select.
+  The control there (CTRL-1) had a 2^{m-1}-dimensional invariant space, so the measurement can
+  distinguish 'nothing to select with' from 'something to select with'.
+
+--------------------------------------------------------------------------------------------------------
+  T-4.  WHAT THE CLAUSES DO GUARANTEE: PERMANENCE.  MEASURED.
+--------------------------------------------------------------------------------------------------------
+  [R,H] = 0 makes the record value a constant of the motion.  An ordered configuration, once
+  present, persists exactly; a disordered one persists exactly too.  The clauses fix the
+  PERSISTENCE of whatever ordering exists and are silent on its ORIGIN.
+
+                             initial state   coherence |<R1>+<R2>|/2 at t=0      at t=20        drift
+                ORDERED code state (+1,+1)                     1.0000000000 1.0000000000     0.00e+00
+                ORDERED code state (-1,-1)                     1.0000000000 1.0000000000     2.22e-16
+        MIXED  (+1,+1) and (-1,-1) equally                     0.0000000000 0.0000000000     1.01e-16
+              maximally mixed ground space                     0.0000000000 0.0000000000     5.04e-17
+
+  READ: the ordered code state has coherence EXACTLY 1 and keeps it; the maximally mixed ground
+  state has coherence EXACTLY 0 and keeps it.  The dynamics moves neither.  The 50/50 mixture of
+  the two ordered states has coherence 0 -- ordering in MAGNITUDE without a definite SIGN is not
+  ordering of the source, which is the same distinction step 5's I-3 drew.
+
+--------------------------------------------------------------------------------------------------------
+  WHAT THIS ADDS UP TO.  MEASURED RESULT FIRST, INTERPRETATION SECOND AND LABELLED AS SUCH.
+--------------------------------------------------------------------------------------------------------
+
+  MEASURED, on the torus, exactly:
+    1. Every H-diagonal state -- every temperature, every energy shell -- gives record
+       magnetisation EXACTLY 0.  (T-1, and the control fires when clause (iv) is broken.)
+    2. Every environment satisfying clause (ii) leaves the record magnetisation EXACTLY
+       unchanged.  (T-2, and the controls that violate clause (ii) move it.)
+    3. Every carrier scalar measured takes the SAME value at every configuration, and the
+       space of writer-invariant functionals is exactly one-dimensional.  (T-3, step 2.)
+    4. The clauses make whatever ordering is present PERMANENT.  (T-4.)
+
+  ==> NOTHING IN THE FIVE CLAUSES, AND NOTHING IN ANY CARRIER PROPERTY MEASURED HERE, SELECTS AN
+      ORDERED CONFIGURATION.  Stronger: clauses (iii) and (iv) are, between them, PRECISELY the
+      statement that no such selection exists -- clause (iii) says the record is not fixed by the
+      energy, clause (iv) says its two values are equally represented in every energy shell.  A
+      carrier that selected a configuration would, by that very fact, hold no record at all.
+
+  INTERPRETATION (labelled as interpretation, not as a measurement):
+    If accumulation requires ordering, and ordering cannot come from the clauses, the carrier,
+    the Hamiltonian, or any admissible environment, then it can only come from the STATE and its
+    HISTORY -- from the process that formed the records, which fixes the initial condition the
+    clauses then preserve forever.  On this reading the five clauses are the wrong place to look
+    for a source: they describe what a record IS and guarantee that a record's value SURVIVES,
+    and they are deliberately silent about which value it has.  The question 'where do atoms
+    come from' would then be a question about FORMATION, not about the clause structure -- which
+    is what this program set out to find.
+
+    This is an interpretation of four exact results, not a fifth result.  It could be wrong in
+    one specific way: if some functional of the record configuration that this lane did not
+    consider were both writer-invariant AND non-constant, T-3 would fail.  Step 2 measured that
+    space to be one-dimensional on the torus, so on THIS carrier that escape is closed exactly;
+    on a carrier where the writers do NOT act simply transitively -- CTRL-1, the chain -- it is
+    NOT closed, and step 2 shows the invariant space there is 2^{m-1}-dimensional.

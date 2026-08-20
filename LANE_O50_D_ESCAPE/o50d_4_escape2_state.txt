@@ -1,0 +1,134 @@
+========================================================================================================
+O-50 D  PART 4   ESCAPE (2)  STATE FUNCTIONALS
+========================================================================================================
+
+1. SETUP.  L=2 toric code, dim 256; code space dim 4; configuration labels (s1,s2) = [(-1, -1), (1, -1), (-1, 1), (1, 1)]
+   writers of R1 SEARCHED: 4 classes [(0, 0, 1, 0), (0, 0, 1, 1), (0, 1, 1, 0), (0, 1, 1, 1)]
+   every one verified: [W,H] = 0 and {W,R1} = 0.  ALL FOUR ARE EQUALLY ADMISSIBLE WRITERS.
+   region A = supp(R1) = [4, 6] (wraps the torus, carries a logical); region B = [2, 3].
+   NOTE, honestly: at L=2 the code distance is 2 and NO region of size >= 2 is contractible.
+   The contractible case is done exactly in section 5 at L=3..6.
+
+2. THE BATTERY, AND WHETHER A WRITE MOVES IT.  For each functional: its value on a generic
+   code state, and the SPREAD of its value over the four equally admissible writers of R1.
+
+   functional                   value  after Xbar1  after Ybar1  max|delta| over   orbit mean  a fn of s?
+                                                                   the 4 writers     over G_W            
+   <R1>                     -0.155556     0.155556     0.155556         0.311111     0.000000         YES
+   <R2>                     -0.088889    -0.088889    -0.088889         0.000000     0.000000         YES
+   Re<Xbar1>                -0.400000    -0.400000     0.400000         0.800000     0.000000          no
+   |rho_L 01|                0.240370     0.240370     0.240370         0.000000     0.231296          no
+   purity(rho_L)             1.000000     1.000000     1.000000         0.000000     1.000000          no
+   S(rho_L)                  0.000000    -0.000000    -0.000000         0.000000     0.000000          no
+   S_A noncontr              1.982474     1.982474     1.982474         0.000000     1.982474          no
+   S_B contr                 1.994293     1.994293     1.994293         0.000000     1.994293          no
+   Bloch radius r_1          0.215802     0.215802     0.215802         0.000000     0.215802          no
+   integrity S|<R_i>|        0.244444     0.244444     0.244444         0.000000     0.244444          no
+   (Ybar1 here is the writer class (0, 0, 1, 1); it is as admissible as Xbar1 -- see part 1.)
+
+   THE SAME BATTERY ACROSS A STATE ENSEMBLE -- max |change| over ALL 16 admissible writers:
+   state                                    <R1>            Re<Xbar1>           |rho_L 01|         S_A noncontr   integrity S|<R_i>|
+   basis |s1=+1,s2=+1>           1.0000/  2.0000      0.0000/  0.0000      0.0000/  0.0000      1.0000/  0.0000      2.0000/  0.0000
+   cat (|++> + |-->)/r2          0.0000/  0.0000     -0.0000/  0.0000      0.0000/  0.0000      2.0000/  0.0000      0.0000/  0.0000
+   generic pure code st         -0.1556/  0.3111     -0.4000/  0.8000      0.2404/  0.0181      1.9825/  0.0000      0.2444/  0.0000
+   dephased p=0.5 (INS)         -0.1556/  0.3111     -0.2000/  0.4000      0.1202/  0.0091      1.9825/  0.0000      0.2444/  0.0000
+   format: value / max change under a write.  <R1> moves (it is the record).  The coherence
+   Re<Xbar1> moves by twice its value and averages to zero.  |rho_L 01| moves only because a
+   write PERMUTES the configuration labels, so a NAMED matrix element is carried to another
+   one -- the multiset of |rho_ab| is invariant (section 4).  S_A and the integrity do not
+   move at all, for any state in the ensemble.
+
+3. THE TWO THINGS THAT TABLE SHOWS
+   (a) EVERY functional that MOVES under a write has orbit mean 0 (or, for the ones built
+       from squares and absolute values, moves not at all).  Part 1 proved why: the only
+       logical observable fixed by all of G_W is the IDENTITY, so every linear state
+       functional -- diagonal or OFF-diagonal -- averages to exactly zero over the writers.
+   (b) THE WRITER AMBIGUITY.  Xbar1 and Ybar1 are BOTH admissible writers of record 1 and
+       both leave record 2 alone.  They send the same coherence to OPPOSITE values.  So a
+       coherence is not even a well-defined function of 'record 1 was flipped'.
+
+4. THE COMPLETE INVARIANT: which state functionals survive every write?
+   over 20 random mixed code states x all 16 writers: max change in |<P>| for EVERY logical
+   Pauli P = 0.00e+00; max change in purity = 2.22e-16
+   and the signature |<P>| is constant on every writer orbit in 600/600 checks.
+   EXACT CHARACTERISATION: conjugation by G_W = the full logical Pauli group multiplies each
+   logical Pauli coefficient by +-1 and fixes the identity coefficient.  Hence THE COMPLETE
+   ALGEBRA OF WRITE-INVARIANT STATE FUNCTIONALS IS THE ALGEBRA OF FUNCTIONS OF THE ABSOLUTE
+   VALUES |<Pbar>|.  Every one of them is blind to WHICH configuration the state is in and
+   sensitive only to HOW SHARP the record is.  Escape (2) yields exactly one kind of
+   survivor: an INTEGRITY functional, never a VALUE functional.
+
+5. ENTANGLEMENT ACROSS A CUT -- EXACT, AT EVERY L, FOR EVERY CONFIGURATION.
+   For a stabiliser codeword, S_A = |A| - dim{ g in Stab : supp(g) subset A }, and that
+   dimension is computed from the (x|z) LABELS ONLY.  The configuration enters the
+   stabiliser group only through SIGNS.  Therefore S_A IS IDENTICAL FOR ALL 2^k
+   CONFIGURATIONS, at every L, for every region.  EXACT -- no computation can disagree.
+
+     L                    region  |A|  S_A (bits)   same for all 4 configs
+     2    contractible 2x2 patch    8           0 YES (signs do not enter)
+     2non-contractible: supp(R1)    2           1 YES (signs do not enter)
+     3    contractible 2x2 patch    8           6 YES (signs do not enter)
+     3non-contractible: supp(R1)    3           2 YES (signs do not enter)
+     4    contractible 2x2 patch    8           6 YES (signs do not enter)
+     4non-contractible: supp(R1)    4           3 YES (signs do not enter)
+     5    contractible 2x2 patch    8           6 YES (signs do not enter)
+     5non-contractible: supp(R1)    5           4 YES (signs do not enter)
+     6    contractible 2x2 patch    8           6 YES (signs do not enter)
+     6non-contractible: supp(R1)    6           5 YES (signs do not enter)
+
+   DENSE CONFIRMATION AT L=2, all four configuration states, both regions:
+     config (-1, -1):  S_A(noncontr) = 1.000000   S_B(contr) = 1.000000
+     config (1, -1):  S_A(noncontr) = 1.000000   S_B(contr) = 1.000000
+     config (-1, 1):  S_A(noncontr) = 1.000000   S_B(contr) = 1.000000
+     config (1, 1):  S_A(noncontr) = 1.000000   S_B(contr) = 1.000000
+   Identical across configurations, as the exact argument requires.
+
+6. CLAUSE (v) IS ITSELF A RECORD-BLINDNESS THEOREM FOR LOCAL STATE FUNCTIONALS.
+   rho_A is fixed by the expectations of the Paulis supported in A.  For a stabiliser
+   codeword those vanish except on the stabiliser group of the state, Stab = <S, R1, R2>.
+   CLAUSE (v) SAYS EXACTLY: for a contractible A, every element of Stab supported in A
+   already lies in S -- so its expectation is +1 in EVERY codeword and the signs, which are
+   the record values, never appear.  THEREFORE rho_A IS IDENTICAL FOR EVERY CONFIGURATION,
+   AND FOR EVERY SUPERPOSITION OF THEM.  Every functional of a contractible region is
+   RECORD-BLIND, by protection itself.  Measured, exactly:
+     L                region  contractible  dim Stab_A in S  dim Stab_A in <S,R>  rho_A sees s?
+     3      contractible 2x2          True                2                    2             NO
+     3  contractible (L-1)^2          True                2                    2             NO
+     3    wrapping: supp(R1)         False                0                    1            YES
+     4      contractible 2x2          True                2                    2             NO
+     4  contractible (L-1)^2          True                8                    8             NO
+     4    wrapping: supp(R1)         False                0                    1            YES
+     5      contractible 2x2          True                2                    2             NO
+     5  contractible (L-1)^2          True               18                   18             NO
+     5    wrapping: supp(R1)         False                0                    1            YES
+     6      contractible 2x2          True                2                    2             NO
+     6  contractible (L-1)^2          True               32                   32             NO
+     6    wrapping: supp(R1)         False                0                    1            YES
+   For every CONTRACTIBLE region the two dimensions agree: no element of Stab_A carries a
+   record sign, so rho_A is configuration-independent.  For the WRAPPING region they differ
+   by exactly 1 -- the record itself is inside -- and rho_A then DOES see s.  THE INSTRUMENT
+   REGISTERS CONFIGURATION-DEPENDENCE WHERE THERE IS SOME (D-15).
+
+   DENSE POSITIVE CONTROL AT L=2 on the wrapping region A = supp(R1):
+     config  (-1, -1):  Tr(rho_A . R1|_A) = -1.000000   S_A = 1.000000
+     config   (1, -1):  Tr(rho_A . R1|_A) = +1.000000   S_A = 1.000000
+     config   (-1, 1):  Tr(rho_A . R1|_A) = -1.000000   S_A = 1.000000
+     config    (1, 1):  Tr(rho_A . R1|_A) = +1.000000   S_A = 1.000000
+     the reduced state MOVES with the configuration while its ENTROPY does not.  The
+     record-dependence of a non-contractible region is carried entirely by <R_i> -- i.e. by
+     the configuration -- so it is back inside the cancellation law of part 2.
+
+   AND THE C-61 CONTROL, for completeness: the zero-record carrier of C-61 has a PRODUCT
+   ground state, S_A = 0 for every region.  It differs from the toric code in far more than
+   record content, so it cannot by itself certify record-sensitivity.  The sharp control is
+   the contractible/wrapping comparison above, which differs ONLY in whether the record is
+   inside the region.
+
+   VERDICT ON ESCAPE (2): state functionals split exactly as the configuration functionals
+   did.  Responsive ones (coherences, off-diagonals, <Pbar>) have orbit mean EXACTLY zero
+   AND are not even well defined given only 'record i was flipped' -- two equally admissible
+   writers give opposite signs.  Invariant ones are exactly the functions of |<Pbar>|:
+   record INTEGRITY, not record VALUE, and they do not respond to writing at all.
+   NOT AN ESCAPE from responsiveness.  It IS the cleanest source of a non-record-blind,
+   sign-definite, non-cancelling quantity -- which part 7 scores against all five standards.
+========================================================================================================

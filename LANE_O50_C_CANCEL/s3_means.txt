@@ -1,0 +1,135 @@
+========================================================================================================
+O-50-C  STEP 3.   PART 1: IS MEAN-ZERO FORCED, AND BY WHAT?   COMPLETE ENUMERATION, EXACT.
+========================================================================================================
+
+D-23 SCOPE: TORUS (the action is step 2's, established on k disjoint L x L tori).
+
+--------------------------------------------------------------------------------------------------------
+  A.  EVERY +-1-VALUED FUNCTIONAL, COUNTED.  NOT A SAMPLE -- THE WHOLE CLASS.
+--------------------------------------------------------------------------------------------------------
+  A functional f : {+-1}^m -> {+1,-1} is a vector of 2^m signs, so there are 2^(2^m) of them:
+  16 at m=2, 256 at m=3, 65536 at m=4.  Every one is enumerated and classified on three axes:
+     INVARIANT      f(g.s) = f(s) for all g in G_W
+     MEAN ZERO      sum over all configurations of f(s) is exactly 0
+     WRITER-ODD     f(g.s) = -f(s) for SOME g in G_W  (the theorem candidate's hypothesis)
+
+    m  #functionals  invariant  non-invariant  writer-ODD  mean = 0  NON-INVARIANT AND MEAN != 0  fraction
+    2            16          2             14           6         6                            8       1/2
+    3           256          2            254          70        70                          184     23/32
+    4         65536          2          65534        2790     12870                        52664 6583/8192
+
+  READ, and it is the decisive number of Part 1:
+  at m = 4 there are 65534 NON-INVARIANT functionals; only 12870 of them have mean zero.
+  52664 of them -- 80.4% -- are NON-INVARIANT AND HAVE NON-ZERO MEAN.
+
+  ==> THE THEOREM CANDIDATE'S THIRD LINE IS FALSE.  NON-INVARIANCE DOES NOT IMPLY WRITER-ODD,
+      AND IT DOES NOT IMPLY MEAN ZERO.  This is a REFUTATION BY COMPLETE ENUMERATION, not by a
+      failed search: the class was exhausted.
+
+  And WRITER-ODD is a strictly stronger condition than mean-zero: at m = 4, 2790 functionals
+  are writer-odd, 12870 have mean zero.  Every writer-odd one has mean zero (the implication
+  that IS true), but the converse fails on 10080 functionals.
+
+  THE SMALLEST EXPLICIT COUNTEREXAMPLES, exhibited rather than counted:
+    m=2  f = (1 + s1)/2             values [Fraction(1, 1), Fraction(0, 1), Fraction(1, 1), Fraction(0, 1)] invariant False  writer-odd False  EXACT mean 1/2     
+    m=2  f = s1                     values [1, -1, 1, -1]                               invariant False  writer-odd True   EXACT mean 0       
+    m=2  f = 1                      values [1, 1, 1, 1]                                 invariant True   writer-odd False  EXACT mean 1       
+    m=2  f = s1 + s2 + s1s2         values [3, -1, -1, -1]                              invariant False  writer-odd False  EXACT mean 0       
+    m=3  f = s1 + s2 + s1s2         values [3, -1, -1, -1, 3, -1, -1, -1]               invariant False  writer-odd False  EXACT mean 0       
+
+  f = (1+s1)/2 -- 'record 1 reads +1' -- is NON-INVARIANT (the writer of record 1 changes it),
+  is NOT writer-odd, and has EXACT mean 1/2.  It does NOT cancel.  One line kills the candidate.
+  f = s1 + s2 + s1s2 has EXACT mean 0 and is odd under NO writer: mean-zero does not require
+  writer-oddness either.  The two conditions are genuinely distinct, in both directions.
+
+--------------------------------------------------------------------------------------------------------
+  B.  THE EXACT CONDITION THAT REPLACES IT, AND ITS PROOF
+--------------------------------------------------------------------------------------------------------
+  Because G_W = (Z_2)^m acts simply transitively, the space of functionals is the REGULAR
+  representation.  It decomposes into the 2^m one-dimensional characters chi_S, and every
+  functional has a unique exact expansion  f = sum_S fhat(S) chi_S.  Then, identically,
+
+        mean of f over the uniform measure  =  fhat(EMPTY SET) .
+
+  EXACT CONDITION.   mean(f) = 0  <=>  fhat(EMPTY) = 0  <=>  f is ORTHOGONAL TO THE CONSTANTS
+                                    <=>  f lies in the sum of the NON-TRIVIAL isotypic components.
+
+  Proof: chi_EMPTY = 1, and the characters are orthogonal, so fhat(EMPTY) = <f,1> = mean(f).
+  The group action enters ONLY through the fact that chi_S for S non-empty has mean 0, which
+  holds because such a chi_S is negated by any writer that flips an odd number of the records
+  in S -- and simple transitivity guarantees such a writer EXISTS.
+
+  RELATIONS AMONG THE THREE CONDITIONS, verified by the complete enumeration above:
+        writer-odd  ==>  mean zero  ==>  non-invariant (for non-constant f)
+        mean zero   =/=>  writer-odd            (10080 counterexamples at m=4)
+        non-invariant =/=> mean zero            (52664 counterexamples at m=4)
+
+  VERIFICATION that fhat(EMPTY) is the mean, on exact random rational functionals:
+      m  trial   sum_s f(s) / 2^m (exact)    fhat(EMPTY) (exact)  equal?
+      2      0                      -5/16                  -5/16    True
+      2      1                      65/48                  65/48    True
+      3      0                      -1/16                  -1/16    True
+      3      1                     -13/24                 -13/24    True
+      4      0                   -215/192               -215/192    True
+      4      1                      -1/64                  -1/64    True
+      5      0                    -57/128                -57/128    True
+      5      1                       5/16                   5/16    True
+
+  Exact rational agreement in every case.  The transform is the mean; no floating point involved.
+
+--------------------------------------------------------------------------------------------------------
+  C.  IS MEAN-ZERO A CONSEQUENCE OF THE GROUP, OR AN ARTIFACT OF THE UNIFORM MEASURE?
+--------------------------------------------------------------------------------------------------------
+  BOTH ARE NEEDED, and the exact statement separating them is this:
+
+    (1) On a G-TORSOR -- a set on which G acts simply transitively -- the UNIFORM measure is the
+        UNIQUE G-invariant probability measure.  (If mu(g.s) = mu(s) for all g and the action is
+        transitive, mu is constant; normalisation fixes the constant.)
+    (2) Under ANY G-invariant measure, the average of f equals the average of its INVARIANT part.
+        On a torsor the invariant part is the constant fhat(EMPTY), so the mean is fhat(EMPTY).
+
+  So mean-zero for the non-trivial isotypic components is an EXACT CONSEQUENCE OF THE GROUP
+  ACTION, PROVIDED THE MEASURE IS REQUIRED TO BE WRITER-INVARIANT -- and on the torus that
+  requirement pins the measure down to exactly one, the uniform one.  Drop writer-invariance of
+  the measure and NOTHING survives: the mean of chi_S becomes whatever the measure says.
+
+  Verified exactly.  Uniqueness of the invariant measure, by exact linear algebra on the actual
+  action (D-15: the same solver on the two non-transitive controls, which have MANY invariant
+  measures):
+
+  carrier / writer group                         m  #orbits  #invariant probability measures  unique?
+  TORUS  G_W = (Z_2)^m, simply transitive        2        1            EXACTLY ONE (uniform)     True
+  CTRL-1 chain shape: one global flip            2        2             a 1-parameter family    False
+  CTRL-2 writers reach only m-1 records          2        2             a 1-parameter family    False
+  TORUS  G_W = (Z_2)^m, simply transitive        4        1            EXACTLY ONE (uniform)     True
+  CTRL-1 chain shape: one global flip            4        8             a 7-parameter family    False
+  CTRL-2 writers reach only m-1 records          4        2             a 1-parameter family    False
+  TORUS  G_W = (Z_2)^m, simply transitive        6        1            EXACTLY ONE (uniform)     True
+  CTRL-1 chain shape: one global flip            6       32            a 31-parameter family    False
+  CTRL-2 writers reach only m-1 records          6        2             a 1-parameter family    False
+
+  READ: on the torus there is EXACTLY ONE writer-invariant measure at every m, so 'uniform' is
+  not a modelling choice -- it is the unique measure compatible with the writer symmetry.  On
+  CTRL-1 there are 2^{m-1}-1 free parameters and on CTRL-2 there is 1: the solver returns a
+  family when a family is there, so the uniqueness on the torus is a measured result.
+
+  AND THE OTHER SIDE, WHICH IS THE ONE THAT MATTERS FOR PART 2.  Exact means of the SAME
+  functional under measures that are NOT writer-invariant:
+
+  measure on record configurations                writer-invariant?   EXACT mean of s1  EXACT mean of (s1+..+s4)
+  uniform (the unique invariant one)                           True                  0                         0
+  product, P(record = +1) = 1/2                                True                  0                         0
+  product, P(record = +1) = 3/5                               False                1/5                       4/5
+  product, P(record = +1) = 3/4                               False                1/2                         2
+  product, P(record = +1) = 1                                 False                  1                         4
+  delta at the single configuration (+,+,+,+)                 False                  1                         4
+  delta at the single configuration (+,-,+,-)                 False                  1                         0
+
+  READ: the moment the measure stops being writer-invariant, the mean of s1 and of the sum are
+  NON-ZERO and grow to their maximum.  The cancellation law is a statement ABOUT THE MEASURE as
+  much as about the group.  Nothing in the five clauses names a measure.
+
+  THE LAST LINE OF THIS TABLE IS THE PIVOT OF THE WHOLE PROBE.  The universe is in ONE
+  configuration -- a delta measure -- which is never writer-invariant unless m = 0.  The next
+  step asks what the functional is WORTH at one configuration, which is a different question
+  from what its mean is.

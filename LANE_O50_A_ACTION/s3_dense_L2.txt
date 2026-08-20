@@ -1,0 +1,61 @@
+L=2  n=8  dim=256
+  H Hermitian                        True
+  every stabiliser commutes with H   True
+  eigenvalues / multiplicities       [(-8.0, 4), (-4.0, 48), (-0.0, 152), (4.0, 48), (8.0, 4)]
+  symplectic_logicals returned 2 CONJUGATE PAIRS (D-18)
+  candidate record operators (non-identity logical classes): 15
+
+  CLAUSE TABLE over all 15 logical classes  (i) bit  (ii) durable  (iii) non-trivial  (iv) writable
+    class (0, 0, 0, 1)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (0, 0, 1, 0)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (0, 0, 1, 1)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (0, 1, 0, 0)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (0, 1, 0, 1)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (0, 1, 1, 0)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (0, 1, 1, 1)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (1, 0, 0, 0)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (1, 0, 0, 1)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (1, 0, 1, 0)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (1, 0, 1, 1)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (1, 1, 0, 0)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (1, 1, 0, 1)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (1, 1, 1, 0)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+    class (1, 1, 1, 1)   (i)=True  (ii)=True  (iii)=True  (iv)=True
+  ALL 15 satisfy (i)-(iv): True
+
+  CONTROLS
+    single X on edge 0 (not in N(S))               (i)=True  (ii)=False  (iii)=True  (iv)=True
+    a stabiliser A_v (in S: trivial on code space) (i)=True  (ii)=True  (iii)=True  (iv)=False
+    identity                                       (i)=True  (ii)=True  (iii)=False  (iv)=False
+
+  RecordModel: dim=256  minimal projections in A' = 256
+  .records() RAISED as expected (O-28): 256 minimal projections: enumeration too large
+
+  commuting_family -> MAXIMAL COMMUTING FAMILY SIZE = 2
+  family classes: [(0, 0, 0, 1), (0, 1, 0, 0)]
+  family members mutually commute: True
+  independently_writable -> [0, 1]   (all of range(2)? True)
+
+  JOINT BLOCK DIMENSIONS per eigenspace (theorem part (a): all equal within an eigenspace)
+    E_0 (mult   4): {(-1, -1): 1, (-1, 1): 1, (1, -1): 1, (1, 1): 1}   all 2^k blocks present & equal = True
+    E_1 (mult  48): {(-1, -1): 12, (-1, 1): 12, (1, -1): 12, (1, 1): 12}   all 2^k blocks present & equal = True
+    E_2 (mult 152): {(-1, -1): 38, (-1, 1): 38, (1, -1): 38, (1, 1): 38}   all 2^k blocks present & equal = True
+    E_3 (mult  48): {(-1, -1): 12, (-1, 1): 12, (1, -1): 12, (1, 1): 12}   all 2^k blocks present & equal = True
+    E_4 (mult   4): {(-1, -1): 1, (-1, 1): 1, (1, -1): 1, (1, 1): 1}   all 2^k blocks present & equal = True
+  every eigenspace has 2^k equal joint blocks: True
+
+  DENSE VERIFICATION OF THE SEARCHED WRITERS (from s2, recomputed here by search)
+    U_1: support=[4, 5]  unitary=True  [U,H]=0 -> True  flips=[0]  fixes=[1]
+    U_2: support=[0, 2]  unitary=True  [U,H]=0 -> True  flips=[1]  fixes=[0]
+    CONTROL single-X: [U,H]=0 -> False  ||[U,H]|| = 45.254834
+
+  ACTION ON RECORD CONFIGURATIONS, read off dense states
+    ground eigenspace joint labels: [(-1, -1), (-1, 1), (1, -1), (1, 1)]
+    config (-1, -1)  --U_1-->  (1, -1)
+    config (-1, -1)  --U_2-->  (-1, 1)
+    config (-1, 1)  --U_1-->  (1, 1)
+    config (-1, 1)  --U_2-->  (-1, -1)
+    config (1, -1)  --U_1-->  (-1, -1)
+    config (1, -1)  --U_2-->  (1, 1)
+    config (1, 1)  --U_1-->  (-1, 1)
+    config (1, 1)  --U_2-->  (1, -1)

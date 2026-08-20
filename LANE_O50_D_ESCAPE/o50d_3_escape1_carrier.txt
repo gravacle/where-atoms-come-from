@@ -1,0 +1,70 @@
+========================================================================================================
+O-50 D  PART 3   ESCAPE (1)  CONFIGURATION x CARRIER
+========================================================================================================
+
+1. THE REPRESENTATIVE IS A GAUGE ORBIT, AND THE GAUGE GROUP IS INSIDE THE ADMISSIBLE GROUP.
+   L=2, record R1: 64 representatives of the SAME class; weights present [2, 4, 6, 8]; min 2 = d = L
+   code space dimension 4
+   sanity: (1/|S|) sum_s s  vs  P_code : 0.00e+00
+   max over ALL 64 representatives of || P_code R' P_code - P_code R P_code || = 0.000e+00    (operator products R.s)
+   the same quantity computed from the F_2 XOR labels instead: 4.000e+00 -- the
+   XOR drops the Pauli phase and manufactures a spurious sign.  D-19 in miniature.
+   EVERY representative acts IDENTICALLY on the code space.  EXACT: R' = R s with s in S,
+   and s P_code = P_code.  No code-space quantity can see the representative.
+
+   OFF the code space they DIFFER -- so ask what the difference is worth:
+   random state in the FULL 256-dim space: <R'> over representatives ranges [-0.1237, +0.1217]
+   average over the gauge orbit = +0.00582295   <R P_code> = +0.00582295   difference 1.73e-18
+   EXACT IDENTITY: (1/|S|) sum_{s in S} s = P_code, so the gauge average of ANY
+   representative-dependent quantity IS its code-space value.  Representative-dependence
+   carries NO information beyond the class.  ESCAPE (1a) CLOSED, exactly.
+   And the orbit-averaging lemma of Part 2 applies a SECOND time here, with G = S: a
+   representative-dependent quantity is either gauge-invariant (blind) or averages away.
+
+2. WHAT THE CARRIER *DOES* CONTRIBUTE: class invariants.  Are any of them record-DEPENDENT?
+     L  min weight of R1 class  min weight of R2 class   depends on the VALUE s?
+     2                       2                       2    NO -- s does not enter
+     3                       3                       3    NO -- s does not enter
+     4                       4                       4    NO -- s does not enter
+   The code distance, the minimum weight, the homology class, the writer's minimum weight:
+   all are properties of the CLASS and of the CARRIER.  None of them contains s.  They are
+   invariant under every write -- they are in the Pf branch of the lemma, non-responsive.
+
+3. CAN CARRIER GEOMETRY RESCUE A RESPONSIVE FUNCTIONAL?  m disjoint tori, records at
+   separations r_ij, functional weighted by a POWER LAW -- criterion (e)'s own form.
+   (D-22: the torus has a metric and no permutation symmetry, so separation is readable.)
+    m tori k records         mean of F     min F     max F  sign-definite  coherence mean|F|/sum|w|      method
+         1         2      0.0000000000   -1.0000    1.0000          False                  1.000000       EXACT
+         2         4     -0.0000000000   -2.0079    3.0079          False                  0.343008       EXACT
+         3         6     -0.0000000000   -3.0169    5.5169          False                  0.273157       EXACT
+         4         8      0.0000000000   -4.0261    8.3594          False                  0.212032       EXACT
+         5        10      0.0000000000   -5.0354   11.4521          False                  0.167573       EXACT
+         6        12     -0.0000000000   -6.0448   14.7448          False                  0.148192       EXACT
+         8        16      0.0000000000   -8.0637   21.8065          False                  0.115271       EXACT
+        12        24      0.0008238585  -12.0576   27.3723          False                  0.083899 sampled 2e5
+        20        40     -0.0035626349  -18.1840   34.4576          False                  0.056712 sampled 2e5
+   MEAN EXACTLY ZERO at every m, both signs always present, and the coherence FALLS as
+   records are added.  Putting a power law in by hand (INSERTED, not induced) does not help:
+   the geometry sits in the COEFFICIENTS w_ij, and the cancellation is a fact about the
+   CHARACTERS chi_ij(s) = s_i s_j, which no choice of coefficients can make sign-definite.
+
+4. THE ONLY WAY TO MAKE IT SIGN-DEFINITE IS TO ADD A CONSTANT -- AND THE CONSTANT IS
+   EXACTLY THE RECORD-BLIND PART.  This is the whole trichotomy in one table.
+   G(s) = sum_{i<j} (1 + s_i s_j) / (2 r_ij)   on k=8 records
+     G >= 0 everywhere: True   min 2.166667  max 8.359393  mean 4.179697
+     invariant part (orbit average) = 4.179697 = tot/2 = 4.179697  -- contains NO s
+     responsive part G - Pf: mean +1.388e-17  min -2.0130  max +4.1797  sign-definite: False
+
+   CONTROL (C-61).  The same G evaluated on the +-1 LABELS of the zero-record control carrier
+   -- non-degenerate spectrum, ZERO records by P-1 -- with the same geometric weights:
+     control carrier n=8: 255/256 distinct energies -> NON-DEGENERATE -> zero records (P-1)
+     G on the CONTROL's labels: min 2.166667  max 8.359393  mean 4.179697
+     G on the RECORD carrier   : min 2.166667  max 8.359393  mean 4.179697
+     IDENTICAL IN FORM.  The sign-definite, non-cancelling part of G is present on a carrier
+     that holds ZERO records.  IT IS RECORD-BLIND.  ESCAPE (1b) CLOSED.
+
+   VERDICT ON ESCAPE (1): a functional of the configuration AND the carrier splits into a
+   carrier-only part (record-blind: it survives the C-61 control) and a configuration-
+   responsive part (mean exactly zero, never sign-definite).  Carrier data changes the
+   COEFFICIENTS and never the CHARACTERS.  NOT AN ESCAPE.
+========================================================================================================

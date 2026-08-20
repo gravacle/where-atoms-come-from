@@ -1,0 +1,124 @@
+========================================================================================================
+O-50 D  PART 1   CARRIER / CLAUSES / WRITER GROUP        canonical carrier: TORIC CODE (O-49)
+========================================================================================================
+
+1. THE CARRIER FAMILY  (exact F_2; no dense matrix is built above L=2)
+     L   n=2L^2   rank S  k=n-rank   #logical classes  dim code
+     2        8        6         2                 16         4
+     3       18       16         2                 16         4
+     4       32       30         2                 16         4
+     5       50       48         2                 16         4
+     6       72       70         2                 16         4
+     7       98       96         2                 16         4
+     8      128      126         2                 16         4
+   k = 2 at every L: genus 1 gives exactly 2 logical qubits.  EXACT.
+
+2. LOGICAL OPERATORS -- COMPUTED by symplectic_logicals, never nominated (D-18)
+   L=2: 2 conjugate pair(s); within-pair anticommute=True; cross-pair commute=True; all commute with S=True; weights=[(2, 2), (2, 2)]
+   L=3: 2 conjugate pair(s); within-pair anticommute=True; cross-pair commute=True; all commute with S=True; weights=[(3, 3), (3, 3)]
+   L=4: 2 conjugate pair(s); within-pair anticommute=True; cross-pair commute=True; all commute with S=True; weights=[(4, 4), (4, 4)]
+   L=5: 2 conjugate pair(s); within-pair anticommute=True; cross-pair commute=True; all commute with S=True; weights=[(5, 5), (5, 5)]
+   L=6: 2 conjugate pair(s); within-pair anticommute=True; cross-pair commute=True; all commute with S=True; weights=[(6, 6), (6, 6)]
+
+3. THE RECORD FAMILY -- selected by SEARCH over the 16 logical classes, not nominated
+   L=2: maximal commuting family of size 2; coefficient labels (0, 0, 0, 1),(0, 1, 0, 0); weights 2,2
+   L=3: maximal commuting family of size 2; coefficient labels (0, 0, 0, 1),(0, 1, 0, 0); weights 3,3
+   L=4: maximal commuting family of size 2; coefficient labels (0, 0, 0, 1),(0, 1, 0, 0); weights 4,4
+   L=5: maximal commuting family of size 2; coefficient labels (0, 0, 0, 1),(0, 1, 0, 0); weights 5,5
+   L=6: maximal commuting family of size 2; coefficient labels (0, 0, 0, 1),(0, 1, 0, 0); weights 6,6
+
+4. THE FIVE CLAUSES ON THE TORUS  (D-23: TORUS-SCOPED, no 1D proxy convention anywhere)
+   (i)  BIT           -- xz_to_matrix returns a tensor product of I,X,Y,Z: Hermitian, R^2=I.
+                        EXACT for every (x|z) vector; verified densely at L=2 in section 8.
+   (ii) DURABLE       -- [H,R]=0 iff sp(R,s)=0 for every stabiliser s:
+                        L=2: True
+                        L=3: True
+                        L=4: True
+                        L=5: True
+                        L=6: True
+   (iii) NON-TRIVIAL  -- R in N(S)\S acts as a non-scalar on the 2^k-dim code space, which is
+                        an eigenspace of H.  R in S? (must be False):
+                        L=2: R1 False   R2 False
+                        L=3: R1 False   R2 False
+                        L=4: R1 False   R2 False
+                        L=5: R1 False   R2 False
+                        L=6: R1 False   R2 False
+   (iv) WRITABLE      -- searched for in section 5; a global Pauli that anticommutes with R and
+                        commutes with H flips R on EVERY eigenspace at once, so Tr(P_E R)=0
+                        everywhere.  EXACT; densely confirmed at L=2 in section 8.
+
+   (v)  PROTECTED -- exact F_2 test: for a patch P of the lattice, is N(S) restricted to P
+        contained in S?  A patch with a,b <= L-1 is CONTRACTIBLE; a = L or b = L WRAPS.
+          L     patch  contractible  #edges  dim N(S)|_P  logical dirs     verdict
+          3       2x2          True       8            2             0   PROTECTED
+          3       3x2         False      12            8             2carries logical
+          3       3x3         False      18           20             4carries logical
+        L=3: patches carrying a logical: 5 of 9; of those, CONTRACTIBLE (a,b <= L-1): 0   -> clause (v) HOLDS
+          4       3x3          True      18            8             0   PROTECTED
+          4       4x3         False      24           18             2carries logical
+          4       4x4         False      32           34             4carries logical
+        L=4: patches carrying a logical: 7 of 16; of those, CONTRACTIBLE (a,b <= L-1): 0   -> clause (v) HOLDS
+          5       4x4          True      32           18             0   PROTECTED
+          5       5x4         False      40           32             2carries logical
+          5       5x5         False      50           52             4carries logical
+        L=5: patches carrying a logical: 9 of 25; of those, CONTRACTIBLE (a,b <= L-1): 0   -> clause (v) HOLDS
+
+   MINIMUM LOGICAL WEIGHT (the code distance), exhaustive over the relevant coset
+          L  min |Zbar|  min |Xbar|   full exhaustive   L
+          2           2           2                 2   2
+          3           3           3                 3   3
+          4           4           4                     4
+        d = L exactly.  BOTH distances scale with L: clause (v) is realised by HOMOLOGY.
+
+5. THE WRITER GROUP  G_W -- SEARCHED over every admissible logical class (D-18)
+     L  #adm classes  #writers R1  #writers R2  |G_W| mod S  kernel dim  orbit size  simply trans
+     2            16            4            4           16           2           4          True
+     3            16            4            4           16           2           4          True
+     4            16            4            4           16           2           4          True
+     5            16            4            4           16           2           4          True
+     6            16            4            4           16           2           4          True
+
+   EXACT STRUCTURE (the symplectic form proves what the table shows):
+     * the writers of record i form the COSET  Xbar_i + span{R_1..R_k}: 2^k of them, all
+       equally admissible.  THE WRITER OF A RECORD IS NOT UNIQUE.
+     * together they generate ALL of N(S)/S -- the full logical Pauli group, order 2^(2k).
+     * the action on the 2^k configurations is the quotient by span{R_i}: Z_2^k, SIMPLY
+       TRANSITIVE.  The theorem candidate's hypothesis HOLDS on the torus.
+     * THE KERNEL of the configuration action is span{R_1..R_k} -- THE RECORDS THEMSELVES.
+       It is non-trivial and it acts non-trivially on STATES.  That is escape (3)'s content.
+
+6. THE WRITER-INVARIANT FUNCTIONAL SPACE ON RECORD CONFIGURATIONS
+   L=2: dim(G_W-invariant functionals) = 1 of 4  -- CONSTANTS ONLY; non-constant invariant exhibited: NONE
+   L=3: dim(G_W-invariant functionals) = 1 of 4  -- CONSTANTS ONLY; non-constant invariant exhibited: NONE
+   L=4: dim(G_W-invariant functionals) = 1 of 4  -- CONSTANTS ONLY; non-constant invariant exhibited: NONE
+   L=5: dim(G_W-invariant functionals) = 1 of 4  -- CONSTANTS ONLY; non-constant invariant exhibited: NONE
+   L=6: dim(G_W-invariant functionals) = 1 of 4  -- CONSTANTS ONLY; non-constant invariant exhibited: NONE
+
+   AND ON THE OBSERVABLE SIDE -- the 4^k logical Paulis, conjugated by every writer:
+   L=2: logical observables fixed by conjugation by EVERY element of G_W: 1 of 16 -> [(0, 0, 0, 0)]
+   L=3: logical observables fixed by conjugation by EVERY element of G_W: 1 of 16 -> [(0, 0, 0, 0)]
+   L=4: logical observables fixed by conjugation by EVERY element of G_W: 1 of 16 -> [(0, 0, 0, 0)]
+   L=5: logical observables fixed by conjugation by EVERY element of G_W: 1 of 16 -> [(0, 0, 0, 0)]
+   L=6: logical observables fixed by conjugation by EVERY element of G_W: 1 of 16 -> [(0, 0, 0, 0)]
+   ONLY THE IDENTITY.  Every non-identity logical observable is sign-flipped by some
+   admissible writer, so its average over G_W is EXACTLY ZERO.  Strictly stronger than the
+   configuration statement: it covers OFF-DIAGONAL observables -- coherences -- which are
+   not functions of the +-1 values at all.  ESCAPE (2) IS CLOSED FOR LINEAR FUNCTIONALS.
+
+7. D-22 -- DOES THE CARRIER CONTAIN GEOMETRY TO DETECT?
+   L=3: 3 distinct pairwise edge distances (a permutation-symmetric carrier has 1); random qubit permutations preserving S: 0/2000
+   L=4: 4 distinct pairwise edge distances (a permutation-symmetric carrier has 1); random qubit permutations preserving S: 0/2000
+   L=5: 5 distinct pairwise edge distances (a permutation-symmetric carrier has 1); random qubit permutations preserving S: 0/2000
+   The torus is NOT permutation-symmetric: it carries a metric, translations Z_L x Z_L, and a
+   point group.  D-22 satisfied -- separation results on this carrier are readable.
+
+8. DENSE CONFIRMATION AT L=2 (dim 256) USING THE PROGRAM'S OWN CLAUSE ROUTINES
+   H = -sum_v A_v - sum_p B_p ; dim 256; eigenvalue multiplicities [4, 48, 152, 48, 4]
+   R1: ||R-R-dag||=0.00e+00  ||R^2-I||=0.00e+00  clause(iii)=True  clause(iv)=True  max|Tr(P_E R)|=8.92e-15
+   R2: ||R-R-dag||=0.00e+00  ||R^2-I||=0.00e+00  clause(iii)=True  clause(iv)=True  max|Tr(P_E R)|=8.88e-15
+   build_writer(R1): ||[U,H]||=1.04e-13  ||U-dag R1 U + R1||=4.63e-14
+
+   ALL FIVE CLAUSES HOLD ON THE TORUS.  (i),(ii),(iv) exact at every L; (iii) exact and
+   confirmed densely at L=2; (v) by homology with d = L, verified exhaustively to L=4 and by
+   the contractible-patch test to L=5.  NOTHING HERE RESTS ON THE 1D PROXY CONVENTION.
+========================================================================================================
