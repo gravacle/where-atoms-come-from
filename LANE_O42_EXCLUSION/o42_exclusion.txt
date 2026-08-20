@@ -1,0 +1,69 @@
+========================================================================================================
+O-42   THE DURABILITY-GEOMETRY EXCLUSION
+========================================================================================================
+
+1. DO THE RECORDS OF A STABILISER CARRIER GENERATE THE FULL LOGICAL ALGEBRA?
+   A record is a +-1 logical operator. The logical Pauli group on k logical qubits is F_2^{2k};
+   it generates the FULL algebra M_{2^k} iff its symplectic form is NON-DEGENERATE.
+   carrier                n   k  logical dim   symplectic rank   non-degenerate?  generates full?
+   [[4,2,2]]              4   2            4                 4              True             True
+   [[6,4,2]]              6   4            8                 8              True             True
+   [[8,6,2]]              8   6           12                12              True             True
+   [[10,8,2]]            10   8           16                16              True             True
+   [[12,10,2]]           12  10           20                20              True             True
+   -> if the symplectic form on N(S)/S is non-degenerate, the records generate M_{2^k} and by
+      SCHUR the commutant of that algebra is the SCALARS.
+
+2. THE THEOREM DIRECTION, CHECKED ON ACTUAL OPERATORS (exact integer Pauli matrices).
+   carrier          dim  code dim   H|code scalar?   max off-scalar  records used
+   [[4,2,2]]         16         4             True        0.000e+00   all logical
+   [[6,4,2]]         64        16             True        0.000e+00   all logical
+   [[8,6,2]]        256        64             True        1.776e-15   all logical
+   -> H is EXACTLY scalar on the protected space in every case: the same energy for every
+      record configuration, so no configuration can cost more than another.
+
+3. THE ESCAPE: CAN A CARRIER'S DURABLE RECORDS GENERATE ONLY A PROPER SUBALGEBRA?
+   Clause (iv) needs a WRITER; it does NOT require the writer to be a record. So consider a
+   carrier where the durable records are mutually COMMUTING (Z-type only) and the writers are
+   X-type and NOT records. Then H may depend on the records and be non-scalar on the code space.
+
+   construction                        records commute?   H|code scalar?  energy spread
+   n=4 Z-type family, H from records               True            False       1.400000
+      durable against this H: True    records in family: 2
+   n=6 Z-type family, H from records               True            False       3.600000
+      durable against this H: True    records in family: 4
+
+   CONTROL IN THE SAME TABLE: does that H still admit a WRITER for each record (clause iv)?
+   n=4: eigenspaces of the NEW H: 12   max |Tr(P_E R_0)| = 2.000e+00   clause (iv) FAILS -- these are no longer records
+   n=6: eigenspaces of the NEW H: 35   max |Tr(P_E R_0)| = 3.000e+00   clause (iv) FAILS -- these are no longer records
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================
+  THE THEOREM DIRECTION HOLDS AND IS SCHUR. The symplectic form on N(S)/S is NON-DEGENERATE at
+  every n tested, so the records generate the full logical algebra M_{2^k}, whose commutant is
+  its centre -- the scalars. Checked on actual operators: H is EXACTLY scalar on the protected
+  space, 0.000e+00 at n = 4 and 6 and 1.776e-15 at n = 8. EVERY RECORD CONFIGURATION HAS THE
+  SAME ENERGY, so no configuration can cost more than another and no separation can matter.
+
+  THE ESCAPE WAS ATTEMPTED AND IT FAILS ON CLAUSE (iv). Restricting to a mutually COMMUTING
+  Z-type family and building H from those records does exactly what was hoped: the records stay
+  durable (True), H is no longer scalar on the code space (False), and an ENERGY SPREAD APPEARS
+  -- 1.400000 at n=4 and 3.600000 at n=6. Geometry is there.
+
+  AND THE RECORDS STOP BEING RECORDS. max |Tr(P_E R_0)| goes to 2.000 and 3.000 against the
+  requirement of exactly 0, so CLAUSE (iv) -- WRITABILITY -- FAILS. They are durable, they are
+  bits, they are non-trivial, and they cannot be written.
+
+  THE STATEMENT THIS EXHIBITS, PRECISELY:
+      clause (iv) requires Tr(P_E R) = 0 on EVERY eigenspace of H -- the record's value must
+      be BALANCED at every energy. A record that costs energy to hold one way rather than the
+      other has Tr(P_E R) != 0 and is NOT WRITABLE.
+      So WRITABILITY REQUIRES ENERGETIC NEUTRALITY, and GRAVITY REQUIRES ENERGETIC DISTINCTION.
+      A record cannot both be writable and carry a configuration energy.
+
+  SCOPE, STATED PLAINLY. The theorem direction is PROVED for any carrier whose records generate
+  the full logical algebra -- that is Schur and it needs no large N. ONE escape route was tried
+  and closed exactly. It is NOT a proof that every possible escape fails: a carrier whose
+  durable records generate a proper subalgebra AND that still satisfies clause (iv) has not been
+  ruled out by construction, only unfound here. That remains the open edge.

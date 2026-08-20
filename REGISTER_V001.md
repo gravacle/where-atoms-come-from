@@ -8663,3 +8663,65 @@ it destroys clause (ii).*
 
 Registered as **O-42**. **It is the only claim anywhere in the workflow that is about RECORDS rather
 than about a chosen venue, and every null is downstream of it.**
+
+---
+
+## O-42 — **WRITABILITY REQUIRES ENERGETIC NEUTRALITY. GRAVITY REQUIRES ENERGETIC DISTINCTION. A RECORD CANNOT BE BOTH.**
+
+`LANE_O42_EXCLUSION`. Decided exactly — `F₂` linear algebra and integer Pauli arithmetic. **Every
+separation null in three workflows was downstream of this question.**
+
+### 1. THE THEOREM DIRECTION IS SCHUR
+
+The symplectic form on `N(S)/S` is **non-degenerate at every `n`** (rank `2k` = 12, 16, 20 at
+`n` = 8, 10, 12), so the records generate the **full logical algebra `M_{2^k}`** — whose commutant is
+its **centre, the scalars.**
+
+| carrier | dim | code dim | `H\|code` scalar? | max off-scalar |
+|---|---|---|---|---|
+| `[[4,2,2]]` | 16 | 4 | **True** | **0.000e+00** |
+| `[[6,4,2]]` | 64 | 16 | **True** | **0.000e+00** |
+| `[[8,6,2]]` | 256 | 64 | **True** | 1.776e-15 |
+
+> **EVERY RECORD CONFIGURATION HAS THE SAME ENERGY. No configuration can cost more than another, so
+> no separation can matter — at any `N`.**
+
+### 2. THE ESCAPE WAS ATTEMPTED, AND IT WORKS — UNTIL CLAUSE (iv)
+
+Restrict to a mutually **commuting** Z-type family and build `H` from those records. Clause (iv) does
+not require a writer to be a record, so this is legitimate:
+
+| construction | records commute? | `H\|code` scalar? | **energy spread** | durable? |
+|---|---|---|---|---|
+| `n=4` Z-family | True | **False** | **1.400000** | True |
+| `n=6` Z-family | True | **False** | **3.600000** | True |
+
+**Geometry appears.** And then:
+
+| | max `\|Tr(P_E R₀)\|` | required | **clause (iv)** |
+|---|---|---|---|
+| `n=4` | **2.000** | 0 | **FAILS** |
+| `n=6` | **3.000** | 0 | **FAILS** |
+
+> ### **THE RECORDS STOP BEING RECORDS. They are bits, they are durable, they are non-trivial — and
+> ### THEY CANNOT BE WRITTEN.**
+
+### THE STATEMENT THIS EXHIBITS
+
+Clause (iv) requires `Tr(P_E R) = 0` on **every** eigenspace of `H` — the record's value must be
+**balanced at every energy**. A record that costs energy to hold one way rather than the other has
+`Tr(P_E R) ≠ 0` and **is not writable.**
+
+> ### **WRITABILITY REQUIRES ENERGETIC NEUTRALITY. GRAVITY REQUIRES ENERGETIC DISTINCTION.
+> ### A RECORD CANNOT BOTH BE WRITABLE AND CARRY A CONFIGURATION ENERGY.**
+
+**This is why C-47's extensive quantity was bought at the cost of independent writability**, and why
+every separation and density null in this program came out zero. **They are all the same fact.**
+
+### SCOPE, STATED PLAINLY
+
+The **theorem direction is proved** for any carrier whose records generate the full logical algebra —
+Schur, needing no large `N`, immune to both the weakness and threshold objections. **One escape route
+was tried and closed exactly.** It is **not** a proof that every escape fails: a carrier whose durable
+records generate a **proper subalgebra** *and* still satisfies clause (iv) has not been ruled out by
+construction — only not found here. **That is the open edge**, registered as **O-43**.
