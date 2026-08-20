@@ -81,7 +81,10 @@ def clause_ii(H, Ls, R, t_m):
     Lad = liouvillian(H, Ls).conj().T
     v = np.asarray(R, dtype=complex).reshape(-1, 1, order='F')
     v = v / np.linalg.norm(v)
-    rate = abs(float(np.real((v.conj().T @ Lad @ v)[0, 0])))
+    # |quotient|, NOT |Re quotient|: a purely rotating observable (quotient = i*omega) does not
+    # decay but its value oscillates -- it is not durable. The same error C-75 records as corrected
+    # in slow_modes was still live here; found by the solidity review.
+    rate = abs(complex((v.conj().T @ Lad @ v)[0, 0]))
     return dict(rate=rate, tau=(1.0 / rate if rate > 0 else np.inf),
                 durable=rate <= 1.0 / t_m + 1e-300, delta=HBAR / t_m)
 

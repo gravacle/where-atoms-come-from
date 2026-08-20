@@ -25,11 +25,11 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 > existing phase framework; IDs never renumber; phases are not restructured. Modification
 > happens within this framework — status moves and appends only.
 
-**23 of 40 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**23 of 41 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 23 | 2 | 11 | 4 |
+| 23 | 2 | 12 | 4 |
 
 ---
 
@@ -88,15 +88,16 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | **T-31** | RE-RUN THE DEGENERACY-DEPENDENT GRAVITY CHAIN WITH ASYMMETRIC WELLS. C-14's count law k = min_E v_2(m_E) and the W-42/W-43/W-44/W-51 record-to-geometry chain depend on engineered degeneracy; under any well asymmetry the multiplicities collapse. The chain survives only if the record COUNT is insensitive to well-depth asymmetry -- an explicit re-check, not a presumption | **DONE** | the count law and the geometry chain are re-run with asymmetric wells and either survive with a stated tolerance or are withdrawn | T-28 |
 | ▶ **T-32** | **IS THE CONFIGURATION ENERGY OF REAL RECORDS A SOURCE? Test the five standards on written magnetic media rather than on the toy chain, with a demagnetised control** | **DONE** | the five standards are scored on a real record with a control that would have failed them, and the verdict stated either way | T-30 |
 | ▶ **T-33** | **DOES THE CALCULATION AGREE WITH ANY RECORD SURFACE? Verify the record laws across structurally different mechanisms, with surfaces where they must NOT apply as controls** | **DONE** | two laws verified on at least four mechanisms at machine precision, with at least one control where the model declines | T-29 |
-| ▶ **T-34** | **THE NAND SECOND MECHANISM for C-71/C-72. Lane run; promotion to PROVED gated on the adversarial solidity review** | **DOING** | the solidity review returns a promotion verdict and C-71/C-72 are re-grounded with RECORDS VERIFIED naming both mechanisms, or the rescoped form is registered instead | T-32 |
+| ▶ **T-34** | **THE NAND SECOND MECHANISM -- solidity verdict: PROMOTE_AFTER_RESCOPE. Required before promotion: rescope C-71 to the encoding-level claim (NAND: net trapped charge, one sign for EVERY data pattern; magnetic: remanent moment under DC-saturation scope, real data tracks SCREEN -- the review measured ratio 0.00096 on random data); add the written-random-data row T-32 never ran; state the field-free quantity; fix the T-34 factor-2 and over-erase tolerance; replace the 1e-3 assertion with computed cross-terms** | **DOING** | the solidity review returns a promotion verdict and C-71/C-72 are re-grounded with RECORDS VERIFIED naming both mechanisms, or the rescoped form is registered instead | T-32 |
 | ▶ **T-37** | **STATE THE WORLD-LEVEL GAMMA CLAIM, FALSIFIABLY. What does 'Gamma is where gravity comes from' assert about the WORLD'S records under the amended definition -- now that the corner exclusions do not inherit (C-70) and written records carry an extensive sign-definite configuration energy created by formation (C-71/72). NEEDS A THEORY DISCUSSION WITH THE PRINCIPAL** | TODO | a falsifiable statement of the emergence claim is registered, agreed by the principal, with its test named | T-30, T-32 |
 
-## PHASE F  WRITE AND CHECK THE PROOF  —  0/5 done
+## PHASE F  WRITE AND CHECK THE PROOF  —  0/6 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
 | ▶ **T-15** | **THE THREE ROLES AS ONE STATEMENT. EM supplies the complex and the record; Gamma supplies space, writer, protection and channel; alpha sets the cost** | **BLOCKED** | A-PR restated with every clause citing a two-carrier row, and no clause resting on a WITHDRAWN or PARTIAL row | T-9, T-14, T-20, T-23 |
 | ▶ **T-39** | **A PREDICTION OF OUR OWN. Both PROVED laws are standard physics validated through the model. Identify one statement the amended-definition machinery makes that no rival account makes -- candidates: the clustered count law k(t_m), the written/unwritten ratio law -- or state plainly that none exists. PF-6's successor. NEEDS A THEORY DISCUSSION FIRST** | TODO | a registered distinguishing prediction with its falsifier, or a registered plain statement that the program has none | T-33 |
+| ▶ **T-41** | **EXTERNAL-DATA CONTACT (solidity debt 2). At least one lane whose table places a MEASURED number from outside the repo beside the model's number -- published CoCrPt/NAND retention, VSM remanence, programmed-page charge. Today every verification is the model against its own closed form and the principal's PROVED bar is met by NOTHING. Azobenzene is the cautionary case: the one row where a measured value existed disagreed by 5-6 orders** | TODO | a sealed lane with an external measured datum beside the model's number, agreeing within stated tolerance, or the disagreement registered | — |
 | ▶ **T-16** | **WRITE THE PROOF. End to end: what is claimed, the theorems, the evidence, and what each rests on** | **BLOCKED** | PROOF_V002.md, every step citing a ledger row, no step resting on a single carrier unless marked | T-15, T-23 |
 | **T-17** | STATE THE LIMITS IN THE PROOF ITSELF. PF-6 failed; X-4, T-VI.3, T-VI.4 are BLOCKED; empirical contact is zero | **BLOCKED** | the limits section names every BLOCKED row and says plainly that this is a mathematical result with no empirical contact | T-16 |
 | ▶ **T-18** | **EXTERNAL CHECK. Someone outside the program reproduces the result from REPLICATE.md alone** | **BLOCKED** | reproduce.sh passes end to end on a clean clone, and every headline number in PROOF_V002 is traceable to a sealed lane output | T-16 |

@@ -127,7 +127,8 @@ def grounded(row):
     m = re.search(r'RECORDS VERIFIED:(.*)', g, re.I)
     if not m:
         return False
-    names = [x.strip() for x in m.group(1).split(';') if x.strip()]
+    # DEDUPED: 'RECORDS VERIFIED: a; a' fooled the parser (solidity review, guard probe).
+    names = {x.strip().lower() for x in m.group(1).split(';') if x.strip()}
     return len(names) >= 2
 
 

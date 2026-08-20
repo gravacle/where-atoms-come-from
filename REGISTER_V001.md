@@ -9500,3 +9500,36 @@ the three roles restated, TD-3 alpha through the barrier, TD-4 admissible/protec
 TD-5 a prediction of our own, TD-6 what plays the field, TD-7 the CMB/B−L brackets). An adversarial
 SOLIDITY REVIEW of the post-amendment corpus is running; C-71/C-72 promotion and the T-34 NAND lane
 are gated on its verdict.
+
+---
+
+## SOLIDITY REVIEW — VERDICTS EXECUTED. AND TD-1 DECIDED: **SHARED ORIGIN.**
+
+Four adversarial probes, told to default to refuted. **T-28 fully SOLID.** Both PROVED rows fell;
+the machinery beneath them survived.
+
+| item | verdict | action taken |
+|---|---|---|
+| C-69 | **NOT_SOLID as grounded** | demoted to FORMAL. The stated law contradicted its own number by `2cosh(dE/2kT)` — the computed object is `τ = 1/(g↑+g↓)`; the "not by inserting the Arrhenius rate" clause was false; **no measured datum enters**. The claim *title* survives at full strength |
+| C-70 | **NOT_SOLID as grounded** | demoted to FORMAL. An identity of the detailed-balance construction; six "mechanisms" are six parameter sets of one 2×2 model. **Azobenzene withdrawn** (computed 0.398 s vs measured ~1e4–1e6 s — the midpoint-barrier convention) and **alanine withdrawn** (dE ~5 orders above literature PVED, probable J/mol-for-eV misread) |
+| T-30 → C-52 | **consequence refuted** | corrected: thermal expectations are a **different functional** from C-52's trace ratio, under which the metastable record stays exactly quantised. "The exclusion does not inherit" is withdrawn; **undecided which functional carries the physical exclusion**. C-52's independent withdrawal ground (real `λ·W`) carries alone |
+| T-31 / C-76 | **width-fix refuted** | the "within δ?" column used an ad-hoc `1e-2` tolerance while the same script printed `splitting/δ = 3e36..3e41`; with the actual `δ` the count is 0 everywhere. **Collapse stands; the fix claim is withdrawn — a recovering width must be derived, not chosen** |
+| C-71/C-72 | **PROMOTE_AFTER_RESCOPE** | T-34 updated with the required rescope: the encoding-level claim — NAND net charge one-signed for *every* pattern; magnetic remanent moment under **DC-saturation scope, real data tracks screen** (measured: ratio 0.00096 on random data) |
+| guards | fixed | `clause_ii` had the `|Re λ|` error live (the same one C-75 corrected in `slow_modes`); `RECORDS VERIFIED: a; a` fooled the dedupe — both fixed; `validate_project` 11 PASS after |
+
+**PROVED rows: 0.** The bar is met by nothing until an external measured number sits beside a model
+number — **T-41**, now on the critical path of Phase F.
+
+### TD-1 — DECIDED BY THE PRINCIPAL: **SHARED ORIGIN** (A-GR3)
+
+> *"Shared Origin — but we should keep in mind that measures at the record level might behave
+> differently from what we've seen in other contexts. We've been avoiding importing assumptions as
+> given so that we can avoid errors that are about our measurements versus being about the record
+> surface."*
+
+Registered as **A-GR3**: Γ is the common structure that ALLOWS records and appears at scale as
+geometry. **The caveat is binding on T-37**: the Γ-side variable must be defined in the record
+surface's own terms — no behavioral assumption imported — with the classical relation as the
+recovery target at scale only (D-1). **The fingerprint-variable choice is deliberately left open**:
+per the caveat, pre-committing to a variable that behaves like its analogues elsewhere would be the
+import the program exists to avoid.
