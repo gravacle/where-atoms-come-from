@@ -9899,3 +9899,29 @@ splittings.
 **O-41 updated:** protection is **transport-blind** at this proxy size — it does not distinguish
 transport-fixed from transport-moved records; whether a larger non-abelian lattice separates them is
 the live remainder.
+
+---
+
+## T-36 — **THE DIFFERENTIATED RECLASSIFICATION IS APPLIED.** Every FORMAL row now carries its class and owner.
+
+Three range-partitioned classifiers plus a crosschecker (coverage **exact**: 184 FORMAL rows — the
+review's "162" was the stamped subset; 22 newer rows included — none missed, none doubled, 12
+overlap rows all agreeing; 31-row sample re-verified with 29 verbatim agreements and 2 adjudications).
+
+**Final counts:** THEOREM **41** · EXACT **60** · MEASURED **41** · DEFINED **42**.
+**Ownership:** ORIGINAL **104** · BORROWED **23** · ASSEMBLED **57**.
+
+**Applied by the registrar:** every FORMAL row's GROUNDED field now opens with
+`[T-36 CLASS: … | OWNER: …]`, existing substantive grounding text preserved; the systemic boilerplate
+stamp (which self-refutingly category-mismatched every doctrine row — FLAG-1) replaced on 122 rows;
+the **42 DEFINED-class rows moved to DEFINED status** (definitions cannot be true or false; the
+world-contact question does not arise for them). THEOREM/EXACT/MEASURED classes stay at FORMAL with
+their tags — the status carries the corner-scoped/world-contact axis, the tag carries the epistemic
+class. **FLAG-2 fixed:** C-69's GROUNDED no longer carries the "not by inserting the Arrhenius rate"
+clause its own evidence declares false; C-70's no longer lists the withdrawn azobenzene/alanine rows
+as verified. **Carried for follow-up, not mass-edited:** the quantifier-outruns-computation EXACT
+rows the crosschecker flagged (C-49's "every even n" from exhaustion to n=8; O-8's "ALWAYS" from
+block dim ≤ 8; O-35's range) — each needs its scope sentence tightened when next touched.
+
+Ledger tally now: **142 FORMAL · 49 DEFINED · 2 PROVED · 2 MEASURED**, with the failure/withdrawal
+history intact.

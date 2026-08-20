@@ -1,0 +1,39 @@
+# T-36 LANE C — CLASSIFICATION TABLE — 2026-08-20
+# RANGE: all FORMAL rows not in the other two ranges. Coverage check: 184 FORMAL rows total in
+# ledger/status_ledger.tsv. By prefix: C=81; D+F+G+O=83; A=7, H=5, T=2 (T-I.4, T-III.6), PF=6.
+# The named prefixes W-, X-, P-, E- contain ZERO FORMAL rows. This lane therefore covers the
+# 20-row remainder A- + H- + T- + PF-, a clean three-way partition (81 + 83 + 20 = 184).
+# ASSUMPTION TO VERIFY AT MERGE: lanes A and B cover exactly {C-*} and {D-*,F-*,G-*,O-*}.
+# CLASS: THEOREM | EXACT | MEASURED | DEFINED. OWNER: ORIGINAL | BORROWED(owner) | ASSEMBLED(standard part; original part)
+#
+# ID	CLASS	OWNER	JUSTIFICATION	FLAG
+A-EM	THEOREM	ASSEMBLED (standard: homological/CSS description of the Z_2 gauge code, record space = Z_1/B_1, Kitaev; original: the reading that EM supplies both boundary maps and the role-assignment)	written general proof (PROOF_V001 Thm B(ii)) valid for any closed orientable surface, with G-9's exact check as instance	—
+A-GR	THEOREM	ASSEMBLED (standard: Thm A degeneracy 2^2g and Thm C local-triviality are Kitaev; Thm D splitting order is Bravyi-Hastings-Michalakis per PF-6's own attribution; original: B(iii) writer-via-intersection-pairing assembly and the Γ role-assignment)	rests on written general proofs Thms A, B(iii), C, D valid for all genus	—
+A-AL	MEASURED	ASSEMBLED (standard: unrestricted-class n* = d is degenerate perturbation theory / Thm D; original: the restricted-class n* vs d separation measured on [[5,1,3]])	float exponents 2.0211/3.0036/3.0046 and 2.0389/4.9836/3.0118 on three small carriers, general n*-tracking claim inferred	—
+T-I.4	MEASURED	ORIGINAL	chi = 0.908 with the other record at 0.00000000 (shift ~1e-16) on one carrier, one family of two; "records compose" is inferred from that instance	FLAG: ITEM is a TARGET question, not a claim — the STATUS should attach to the answer; single-carrier basis
+T-III.6	MEASURED	ORIGINAL	the relative-arrow answer rests on F-19's measured one-wayness on a small carrier; the general "record is of the PAST because the arrow is relative" is inferred	FLAG: ITEM is a TARGET question at FORMAL; its resolution is an interpretive statement grounded in one measurement
+A-EM2	EXACT	ASSEMBLED (standard: toric-code logicals are Wilson/'t Hooft loops on homology classes, Kitaev; original: the exhaustive weight-2 census establishing minimality of forming couplings)	complete enumeration of all 252 weight-2 Paulis on the one carrier, zero exceptions — exact of that object	—
+A-EM3	MEASURED	ORIGINAL	the convergence claim (record, writer, minimal former in one class) is an inference from three independent results (a theorem, a measurement W-62, an exact census f10c); the row itself calls them measurements and the weakest input governs	—
+A-EM4	EXACT	ASSEMBLED (standard: toric-code parameters d = L and 2 logical qubits, Kitaev; original: the extent/record-fraction/zero-local-content framing)	exact GF(2) ranks computed at L = 2..5, closed forms true of those objects	FLAG: the all-L claims ("grows without bound", "vanishes") are verified only at L = 2..5 — inference unless a proof of the closed forms is written
+A-GR2	DEFINED	ORIGINAL	states what the program's claim IS (Γ supplies the channel; classical gravity is what Γ becomes at scale) — a role-assignment doctrine with an explicit withdrawal note, not itself a provable statement	FLAG: DEFINED-type claim-statement sitting at FORMAL; the homological-discriminator sub-claim (via O-20) is separately EXACT/MEASURED and could carry the FORMAL mark instead
+PF-1	DEFINED	ORIGINAL	a completed editorial/restatement decision (A-PR re-worded in two tiers) — cannot be true or false	FLAG: process row at FORMAL; the GROUNDED boilerplate ("established about the five clauses") contradicts the row's content, which is an editorial act
+PF-2	MEASURED	ASSEMBLED (standard: redundancy-of-fragments criterion is quantum Darwinism, Zurek; original: the dynamical before/after chi 0 -> 0.908 and fragment measurements 0.789/0.048/0.679 bits)	float measurements on a small carrier from which arrow-closure is inferred	—
+PF-3	EXACT	ORIGINAL	the deciding computation is an exact count — 0 admissible flippers at 3x3 (fraction 0.22, control 768); Part A's Balance Lemma is a proved universal statement	FLAG: mixed-class row — contains a THEOREM-grade universal lemma plus an exact count; registrar may want to split
+PF-5	MEASURED	ASSEMBLED (standard: the lambda^(2d) splitting order is degenerate perturbation theory; original: exhibiting an ordinary local environment that forms records, slope 3.8988 vs predicted 4)	fitted slope on a small carrier dissolving O-9's premise — numerical inference	—
+PF-7	MEASURED	ORIGINAL	channel_map dependency structure and formation-independence numerics on one carrier; multi-record generality inferred	—
+PF-9	EXACT	ASSEMBLED (standard: the (H,{L_k}) GKSL pair and its fixed-point/information-preserving-structure theory, Frigerio and Blume-Kohout-Ng-Poulin-Viola; original: the record model and the 12-test validation suite)	12 PASS 0 FAIL exact reproduction of registered results on specific finite objects	—
+H-2	DEFINED	ORIGINAL	resolved as a stated limitation/convention: "alpha" names a generic coupling strength, not the fine structure constant — a scope declaration, not a claim	FLAG: DEFINED-vocabulary resolution sitting at FORMAL; the embedded T-10 robustness sweep (28 settings, 0 moved) is MEASURED and could carry the FORMAL mark separately
+H-4	EXACT	ORIGINAL	32 PASS 0 FAIL across a manifold lattice, a non-manifold lattice, and a non-lattice code — exact of those three objects, with the remaining single-carrier scope made explicit	—
+H-9	DEFINED	ORIGINAL	a criterion/diagnostic (H_ABCD comparator) supplied by the principal before any measurement — methodological doctrine, cannot be true or false	FLAG: DEFINED row at FORMAL; GROUNDED boilerplate claims something "established" where nothing is — a criterion was stipulated
+H-14	DEFINED	ORIGINAL (GR vocabulary T_uv/g_uv borrowed as labels only)	the principal's decision among three connection candidates (curvature = carrier transport; pairing = source; channel = metric) — a decision, not a claim	FLAG: DEFINED (decision) at FORMAL; GROUNDED "established about the five clauses" boilerplate misfits a decision row
+H-15	EXACT	ASSEMBLED (standard: link variable = connection, plaquette holonomy = lattice curvature, Wegner/Wilson; original: the two-way independence computation of curvature vs record content)	exact counts (4 records in every sector) and holonomies exactly 1 on the one carrier; the independence claim is inferred from that carrier	—
+#
+# CLASS COUNTS (this lane): THEOREM 2, EXACT 6, MEASURED 7, DEFINED 5 — total 20.
+# STATUS FLAGS SUMMARY: A-GR2, PF-1, H-2, H-9, H-14 carry DEFINED-type content (doctrine, editorial
+# act, scope convention, criterion, decision) while sitting at FORMAL — the ledger's own STATUS_VOCAB
+# has a DEFINED status these rows fit better. T-I.4 and T-III.6 are TARGET questions whose ITEM
+# cannot hold a status; the status belongs to their answers. All 20 rows carry the identical GROUNDED
+# boilerplate ("FORMAL — established about the program's stipulated five clauses...") which is
+# contradicted on the decision/criterion/editorial rows (PF-1, H-9, H-14), where nothing is
+# established — something was stipulated or decided. A-EM4's GROUNDED "established" overstates the
+# all-L closed forms, verified only at L=2..5.

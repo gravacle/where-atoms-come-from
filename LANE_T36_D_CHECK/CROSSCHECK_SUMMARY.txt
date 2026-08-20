@@ -1,0 +1,23 @@
+T-36 CROSSCHECK SUMMARY (LANE_T36_D_CHECK, 2026-08-20)
+COVERAGE: 184 FORMAL rows enumerated independently from ledger/status_ledger.tsv. Union of the three
+lane tables covers all 184 exactly; no row missed; 12 rows double-covered (A-EM, A-GR, A-AL, A-EM2,
+A-EM3, A-EM4, A-GR2 by lanes 1+3; H-2, H-4, H-9, H-14, H-15 by lanes 2+3). Lane 3's partition
+arithmetic (101+75+20=196-12 overlaps=184) confirmed. W-, X-, P-, E- prefixes: zero FORMAL rows, confirmed.
+The review's "162+" = the 162 rows carrying the identical GROUNDED reclassification stamp; the 22
+unstamped FORMAL rows are the newer block (C-66..C-70, C-73..C-76, C-78, C-80..C-89, O-51, O-54).
+SAMPLE: 31 rows read against ledger text (C-5, C-8, C-24, C-36, C-48, C-49, C-59, C-60, C-63, C-69,
+C-70, C-76, C-84, C-86, C-87, D-23, F-10, F-11, F-12, G-3, G-16, H-4, O-8, O-10, O-12, O-35, O-54,
+A-GR2, T-I.4, T-III.6, PF-3). 29 verbatim agreements. C-70's GROUNDED grep-confirmed to still name
+azobenzene and alanine as VERIFIED against the EVIDENCE withdrawal.
+DISAGREEMENTS ADJUDICATED:
+1. H-4 (lane 2 MEASURED vs lane 3 EXACT) -> MEASURED: the registered content is the not-a-small-
+   lattice-artefact inference from a few carriers; the 32 PASS gates are its instrument.
+2. T-III.6 (lane 3 MEASURED/ORIGINAL) -> THEOREM/ASSEMBLED, moderate confidence: its sole warrant
+   F-19 is itself classed THEOREM/BORROWED and joint reversibility is exact; registrar's call.
+CONSISTENCY: no THEOREM row rests on a MEASURED row as its proof. O-10 (THEOREM) vs F-11 (MEASURED)
+is division of labor, not conflict, but O-10's ITEM still says UNTESTED while its EVIDENCE says
+PROVED — retitle. C-80/O-54 and C-76/C-86 are duplicate/superseded pairs — classify jointly.
+FINAL COUNTS (184): THEOREM 41, EXACT 60, MEASURED 41, DEFINED 42.
+OWNER: ORIGINAL 104, BORROWED 23, ASSEMBLED 57. Borrowed rows total 22-23 ~ the review's ~20
+standard restatements; anchor reconciles once the 22 unstamped newer rows are added back.
+Full table: T36_consolidated_classification.tsv.txt in this lane.
