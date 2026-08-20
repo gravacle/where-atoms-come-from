@@ -31,3 +31,44 @@ C.  THE COHERENCE LAW, EXACT RATIONALS  (lane steps 4A/4B, 5)
       16       0.19638061523437500000       0.19638061523437500000    True 0.19638061523437500000
      256       0.04981910993614015182       0.04981910993614015182    True 0.04981910993614015124
     4096       0.01246618536376025918       0.01246618536376025918    True 0.01246618536376025958
+  READ: E|F|/m is EXACTLY the central binomial C(m,m/2)/2^m at every m, whose Stirling
+  asymptotic is sqrt(2/(pi m)).  The 'law' sqrt(2/pi)*m^(-1/2) is the textbook asymptotic of
+  the central binomial coefficient; the 1/(4m) correction the lane calls 'predicted' is the
+  standard next Stirling term.  Reproduced here without any carrier.
+  m=65536 via closed form C(m,m/2)/2^m = 0.00311672467625241601  (lane 0.00311672467625241587)
+  E|F| at m=65536 = 204.2577   (lane: 204.2577)   sqrt(2*65536/pi) = 204.2584
+
+D.  I-3 ISING: Var of sum s on a 1D RING with nn correlation t, exact, and the limit.
+      m          t         Var exact (ring)         lane Var      Var/m  (1+t)/(1-t)
+     16   0.333333                 32.00000         30.50000     2.0000       2.0000
+     16   0.600000                 63.96390         56.50212     3.9977       4.0000
+     16   0.818182                147.59556        112.49619     9.2247      10.0000
+     16   0.980198                253.84593        230.84338    15.8654     100.0000
+  (large-m rows use the closed form below)
+         m          t   coh*sqrt(m) = sqrt(2/pi)*sqrt(Var/m)         lane
+        64   0.500000                               1.381977     1.367505
+       256   0.500000                               1.381977     1.378373
+      4096   0.500000                               1.381977     1.381752
+      4096   0.998002                              25.224341    23.641679
+    262144   0.500000                               1.381977     1.381973
+    262144   0.998002                              25.231325    25.207251
+  READ: Var/m -> (1+t)/(1-t) is the textbook 1D-Ising susceptibility sum sum_d t^|d| = (1+t)/(1-t).
+
+E.  I-2 BIASED MEASURE.  coherence = E|sum s|/m with iid P(+1)=(1+lam)/2, exact.
+      m      lam      coherence exact         lane   sqrt(lam^2+2/(pi m))
+     16  0.00000            0.1963806    0.1963806              0.1994711
+     16  0.01562            0.1967641    0.1967641              0.2000822
+     16  0.06250            0.2024897    0.2024897              0.2090335
+     16  0.25000            0.2879194    0.2879194              0.3198261
+     16  0.50000            0.5023604    0.5023604              0.5383203
+    256  0.00000            0.0498191    0.0498191              0.0498678
+    256  0.06250            0.0728554    0.0728554              0.0799565
+    256  0.25000            0.2500006    0.2500006              0.2549251
+  READ: reproduced.  The crossover at lam ~ m^(-1/2) is the ordinary law-of-large-numbers
+  crossover between a bias lam*m and a fluctuation sqrt(m).
+
+F.  THE [C5](b) 'RESPONSE TAKES BOTH SIGNS' CLAIM: how much of it is about records?
+  Claim: for any bijection g of a finite set and any f, sum_s [f(g.s)-f(s)] = 0.
+  200 random permutations of arbitrary finite sets (sizes 5,6,7,11): sum of deltas always 0? True
+  READ: the lane's own caveat 6 says this; it is true of ANY permutation of ANY finite set and
+  has no content about records, the five clauses, or the toric code.

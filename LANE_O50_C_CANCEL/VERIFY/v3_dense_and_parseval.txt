@@ -1,0 +1,57 @@
+====================================================================================================
+V3-A.  DENSE L=2 TORIC CARRIER, REBUILT.  THE LANE'S CLAUSE TABLE, INDEPENDENTLY.
+====================================================================================================
+  dim 256, eigenvalue multiplicities = [np.int64(4), np.int64(48), np.int64(152), np.int64(48), np.int64(4)]   (lane: [4, 48, 152, 48, 4])
+  ground energy = -8.000000  ground-space dim = 4   (lane: -8.0, 4)
+  conjugate pairs returned = 2   (lane: 2)
+
+  operator                      ||[R,H]||    ||R^2-I||   (iii)    (iv)   max|Tr(P_E R)|
+  Zbar_0 (computed)              0.00e+00     0.00e+00    True    True         6.74e-16
+  Xbar_0 (computed)              0.00e+00     0.00e+00    True    True         8.88e-15
+  Zbar_1 (computed)              0.00e+00     0.00e+00    True    True         2.58e-15
+  Xbar_1 (computed)              0.00e+00     0.00e+00    True    True         8.92e-15
+  CONTROL single-qubit Z_0       4.53e+01     0.00e+00    True    True         2.84e-14
+  CONTROL identity I             0.00e+00     0.00e+00   False   False         1.52e+02
+  CONTROL stabiliser B_p         0.00e+00     0.00e+00    True   False         2.40e+01
+  (lane: computed logicals 0.00e+00 / 0.00e+00 / True / True / 6.74e-16..8.92e-15;
+   Z_0 fails (ii) at 4.53e+01; identity 1.52e+02; B_p 2.40e+01)
+
+  commuting_family -> 2 members ; independently_writable -> [0, 1]   (lane: 2 members, [0,1])
+
+  STEP-6 T-1 REPRODUCED: <R_1> in Gibbs states (must be 0 by clause (iv)).
+    beta =    0.0:  <R_1> =  -2.57e-18   <R_2> =  -6.73e-18
+    beta =   0.25:  <R_1> =   9.28e-20   <R_2> =  -4.46e-17
+    beta =    1.0:  <R_1> =   4.85e-18   <R_2> =  -2.83e-16
+    beta =    4.0:  <R_1> =   1.26e-22   <R_2> =  -1.19e-15
+    beta =   40.0:  <R_1> =   5.97e-33   <R_2> =  -1.15e-14
+  ADVERSARIAL STATE the lane did NOT test: rho ~ e^{-bH}(1+R_1)/2 -- STATIONARY ([rho,H]=0),
+  perfectly admissible as a state, and NOT of the form f(H):
+    <R_1> = 1.000000 ,  ||[rho,H]|| = 4.03e-15
+    -> a stationary state with record magnetisation 1.  T-1's zero is a zero of f(H) states
+       ONLY; it is clause (iv) restated, not an exclusion of ordered stationary states.
+
+====================================================================================================
+V3-B.  IS ESCAPE #2 ('non-linear functionals, CLOSED EXACTLY by Parseval') ACTUALLY CLOSED?
+====================================================================================================
+  Lane's [C5](c): 'the responsive part is O(sqrt(m)) at a typical configuration -- SUB-EXTENSIVE'.
+  Counter-functional, entirely inside the record configuration space:  f(s) = (sum_i s_i)^2 .
+        m  MEAN=fhat(0)    sqrt(VAR) exact  sqrt(VAR)/m  linear sqrt(VAR)/m
+       16            16            21.9089     1.369306            0.250000
+       64            64            89.7998     1.403122            0.125000
+      256           256           361.3309     1.411449            0.062500
+     1024          1024          1447.4474     1.413523            0.031250
+     4096          4096          5791.9116     1.414041            0.015625
+  BRUTE-FORCE CHECK of the two moments by full enumeration of all 2^m configurations:
+    m=  8  mean = 8  (predicted 8)   Var = 112  (predicted 112)  match=True
+    m= 12  mean = 12  (predicted 12)   Var = 264  (predicted 264)  match=True
+    m= 14  mean = 14  (predicted 14)   Var = 364  (predicted 364)  match=True
+
+  READ: for f = (sum s)^2 the RECORD-DEPENDENT part has sqrt(VAR) = sqrt(2m(m-1)) ~ 1.41*m --
+  EXTENSIVE, not O(sqrt(m)).  Parseval gives MEAN = fhat(empty) and VAR = sum_{S!=0} fhat(S)^2
+  but places NO bound on VAR relative to m.  So the lane's Cauchy-Schwarz sub-extensivity
+  argument is a statement about LINEAR functionals with equal weights ONLY, and escape #2 is
+  NOT closed by Parseval.  What still kills f is sign-definiteness of the RESPONSE -- and that
+  is the bijection identity, which holds for any permutation of any finite set (see v1-F).
+  CONTROL: the response of (sum s)^2 to a write of record 1, summed over all configurations:
+    m=8: sum over configurations of delta f = 0  (0 => response takes both signs)
+    m=12: sum over configurations of delta f = 0  (0 => response takes both signs)

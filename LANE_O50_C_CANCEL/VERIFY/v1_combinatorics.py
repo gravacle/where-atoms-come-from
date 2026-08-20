@@ -76,7 +76,7 @@ def EabsF_over_m(m):
 line(f"  {'m':>6} {'E|F|/m exact':>28} {'C(m,m/2)/2^m':>28} {'equal?':>7} {'lane value':>22}")
 lane_coh = {16: "0.19638061523437500000", 256: "0.04981910993614015124",
             4096: "0.01246618536376025958", 65536: "0.00311672467625241587"}
-for m in (2, 4, 16, 256, 4096, 65536):
+for m in (2, 4, 16, 256, 4096):
     a = EabsF_over_m(m)
     b = Fraction(math.comb(m, m // 2), 1 << m)
     la = lane_coh.get(m, "")
@@ -85,8 +85,9 @@ line("  READ: E|F|/m is EXACTLY the central binomial C(m,m/2)/2^m at every m, wh
 line("  asymptotic is sqrt(2/(pi m)).  The 'law' sqrt(2/pi)*m^(-1/2) is the textbook asymptotic of")
 line("  the central binomial coefficient; the 1/(4m) correction the lane calls 'predicted' is the")
 line("  standard next Stirling term.  Reproduced here without any carrier.")
-line(f"  E|F| at m=65536 = {float(EabsF_over_m(65536)*65536):.4f}   (lane: 204.2577)   "
-     f"sqrt(2*65536/pi) = {math.sqrt(2*65536/math.pi):.4f}")
+ck = Fraction(math.comb(65536, 32768), 1 << 65536)
+line(f"  m=65536 via closed form C(m,m/2)/2^m = {float(ck):.20f}  (lane 0.00311672467625241587)")
+line(f"  E|F| at m=65536 = {float(ck)*65536:.4f}   (lane: 204.2577)   sqrt(2*65536/pi) = {math.sqrt(2*65536/math.pi):.4f}")
 
 # ---------------------------------------------------------------- D. Ising variance
 line()

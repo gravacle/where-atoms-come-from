@@ -9185,3 +9185,62 @@ being the one corpus theorem genuinely in doubt; and **C-14's count law with asy
 writing and durability exclude each other — observed in nature via B−L), **O-16** (found the
 protection mismatch from inside). **O-44 is rehabilitated: it is `ADMISSIBLE(β,W)` in embryo, and its
 "not needed" disposition reverses.**
+
+---
+
+## T-29 — **THE FIRST RECORD OF THIS PROGRAM THAT EXISTS IN THE WORLD.**
+
+`LANE_T29_HDD`, `model/grounded.py`. A CoCrPt grain in hard-disk media, from published material
+constants, taken as an open quantum system `(H,{L_k})` and put through the amended clauses.
+
+`K_u = 2.0e5 J/m³`, `V = 1.26e-24 m³` (a 10.8 nm cube), `T = 300 K`, `f₀ = 1e9 Hz` →
+`E_b = 60.8 kT`. Splitting 3 kT; write head `5e-19 J`; local bath `C_v = 1e-3 J/K`.
+
+### THE MODEL RETURNS THE GRAIN'S LIFETIME BY A ROUTE THAT NEVER USES IT
+
+| | |
+|---|---|
+| from the **record's own Liouvillian mode** | **`τ = 5.6279e16 s = 1.783e9 years`** |
+| from the Néel–Arrhenius rates | `τ = 5.6279e16 s` |
+| **agreement** | **`2.8e-16` relative** |
+
+### THE AMENDED CLAUSES, ALL PASSING, WITH MARGINS
+
+| clause | measured | requirement | margin |
+|---|---|---|---|
+| **(i′)** spectral family | commuting to `0.0e+00` | — | exact |
+| **(ii′)** durable to `t_m` | `1.777e-17 /s` | `1/t_m = 3.169e-09 /s` **(10-year retention spec, chosen independently)** | **`1.78e8`×** |
+| **(iii′)** energy shell | `3.525e-11 J` | `dE_config = 1.243e-20 J` | `2.84e9`× |
+| **(iv′)** writable | `W = 5.00e-19 J` | floor `1.530e-20 J` | **`174`× Landauer** |
+| **(v′)** protected | `E_b/kT = 60.8` | `≫ 1` | suppression `3.78e-27` |
+
+### THE CONTROL — THE SAME GRAIN UNDER DEF-A
+
+| exact clause | |
+|---|---|
+| (ii) `[L_k,R] = 0` | **FAIL** — `‖[L_k,R]‖/‖L‖ = 2.0000` |
+| (iii) same energy | **FAIL** — `H` non-degenerate, so `[H,R]=0` forces `R = f(H)` |
+| (iv) `Tr(P_E R) = 0` | **FAIL** — `max = 1.0000` |
+| (v) protected | **FAIL** — the write head, `5e-19 J` |
+
+> ### **THE SAME GRAIN IS A RECORD UNDER THE AMENDED CLAUSES AND IS NOT ONE UNDER THE EXACT CLAUSES.
+> ### THE AMENDMENT IS NOT COSMETIC, AND THIS IS THE FIRST TIME IN THE PROGRAM'S LIFE THAT AN OBJECT
+> ### IN THE WORLD HAS SATISFIED ITS DEFINITION.**
+
+### WHAT THIS IS NOT
+
+**The retention law is standard physics.** Reproducing it is **grounding, not a distinguishing
+prediction.** PF-6 remains FAILED and H-5 remains OPEN. What has changed is that the program now has
+**one object whose numbers a physicist can check against their own media.**
+
+### TWO BUGS, LOGGED
+
+**`lifetime()` returned the slowest non-zero Liouvillian mode**, which for a two-level system is the
+**coherence** at `(Γ↑+Γ↓)/2` — **not the record**, which is the population difference and relaxes
+twice as fast. It gave a lifetime **exactly 2× Néel–Arrhenius.** `spectrum()` now carries the warning
+and `lifetime()` requires the record.
+
+**And the READ contradicted its own table**, declaring success beside rows reading `ROUTES DISAGREE`
+and `FAIL` — written in advance, the error logged repeatedly today. **The READ is now generated from
+the results.** A third: `t_m` had been set to the grain's own lifetime, making clause (ii′) a
+tautology; it is now the **independent 10-year retention spec.**

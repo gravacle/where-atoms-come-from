@@ -10,11 +10,11 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 ## THE COUNT
 
-| MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS | FORMAL |
-|---|---|---|---|---|---|---|---|---|---|
-| 2 | 11 | 1 | 25 | 3 | 11 | 9 | 3 | 3 | 166 |
+| PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS | FORMAL |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 2 | 11 | 1 | 25 | 3 | 11 | 9 | 3 | 3 | 166 |
 
-**234 rows.**
+**235 rows.**
 
 ---
 
@@ -168,6 +168,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-66** | DEGENERACY-PROTECTION AND BARRIER-PROTECTION ARE DIFFERENT MECHANISMS, AND THE FIVE CLAUSES FORMALISE THE WRONG ONE FOR NATURE. Exact clauses (ii) and (iii) are jointly unsatisfiable in generic matter: a non-degenerate spectrum with [R,H] = 0 forces R = f(H), which (iii) forbids, so exact (ii)+(iii) require symmetry or engineered degeneracy. Every carrier in this corpus was built degenerate; all thirteen real records surveyed are protected by metastable barriers instead, E_b/kT from 50 to 780. Clause (v) fails 13 of 13 against explicit local erasers with finite prices | **FORMAL** | LANE_GR1_CENSUS through LANE_GR4_DERIVE, thirteen real records with numbers | — | — |
 | **C-67** | THE ONE RECORD SATISFYING CLAUSES (i)-(iv) EXACTLY IS THE LEAST PROTECTED OBJECT IN THE CENSUS. The CMB photon's polarisation is an exact qubit, exactly durable, exactly degenerate, and its waveplate write genuinely has dE = 0 and is admissible under DEF-A -- and the same waveplate flips it at essentially zero cost, so clause (v) fails outright. Writability in the program's sense and protection in the program's sense are realised by different objects in nature | **FORMAL** | LANE_GR1_CENSUS | — | — |
 | **C-68** | THE WORLD USES ENERGETIC AND KINETIC PROTECTION; THE EXACT CLAUSES ASSUME TOPOLOGICAL PROTECTION. A support-compression argument shows any record whose two states differ only inside a contractible region -- any locally readable record, which is all of them -- has a flipper on that region, so clauses (iv) and (v) are co-satisfiable only on NON-CONTRACTIBLE supports. Nature's one non-contractible record, the superconducting flux quantum, is still flipped by a local phase slip over 0.27 eV; nature's genuinely protected quantities, Chern number and baryon number, are unwritable. At finite T the program's canonical carrier has an O(1) barrier with lifetime independent of L, so one CoCrPt grain outlives a toric code of any size | **FORMAL** | LANE_GR2_PROTECTION; the program's own O-16 measured the same mismatch from inside first | — | — |
+| **C-69** | A CoCrPt HDD GRAIN IS A RECORD OF THIS PROGRAM UNDER THE AMENDED CLAUSES, AND IS NOT ONE UNDER THE EXACT CLAUSES | **PROVED** | LANE_T29_HDD | — | — |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 
