@@ -82,6 +82,10 @@ def main():
         # [DONE_WHEN] [DEPENDS] [ROW] [ORDER] [CRIT]
         if any(r[0] == a[2] for r in rows): sys.exit('id already used')
         rows.append([a[2], a[1], a[3], a[4]] + (list(a[5:10]) + [''] * 5)[:5]); old = None
+    elif a[0] == 'text':
+        hit = [r for r in rows if r[0] == a[1]]
+        if not hit: sys.exit('no such task: %s' % a[1])
+        old = hit[0][2]; hit[0][2] = a[2]
     elif a[0] == 'dep':
         # DEPENDS is the plan's real logic -- a task blocked by another must be able to say so
         # without hand-editing the TSV, which the gate forbids.

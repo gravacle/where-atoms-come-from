@@ -55,7 +55,7 @@ cd LANE_T9_CARRIERINDEP && python3 t9_sweep.py
 ```
 
 **32 PASS, 0 FAIL** across `[[8,2,2]]` toric, `[[8,1,2]]` **non-manifold**, and `[[4,2,2]]` which is
-not a lattice at all. A row that survives only one carrier is marked so in the ledger.
+not a lattice at all. **A row that survives only one carrier is NOT marked so in the ledger — this sentence was false when written and is corrected here, 2026-08-20, by external review.** The string `SINGLE-CARRIER` appears nowhere in `ledger/status_ledger.tsv`; roughly 24 of 162 rows cite two structurally different carriers. Plan task T-9 was marked DONE while satisfying neither branch of its own DONE_WHEN and is REOPENED.
 
 ---
 

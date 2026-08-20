@@ -1,0 +1,33 @@
+====================================================================================================
+V1.  PARTS 1 AND 2 RECOMPUTED FROM THE BARE HYPERCUBE.  NO CARRIER, NO TORIC CODE, NO LANE CODE.
+====================================================================================================
+
+A.  COMPLETE ENUMERATION OF ALL +-1-VALUED FUNCTIONALS  (lane step 3A)
+    m       #f  invariant  non-inv  writer-ODD   mean=0  non-inv&mean!=0                    lane says
+    2       16          2       14           6        6                8         (16, 2, 14, 6, 6, 8)  MATCH=True
+    3      256          2      254          70       70              184   (256, 2, 254, 70, 70, 184)  MATCH=True
+    4    65536          2    65534        2790    12870            52664 (65536, 2, 65534, 2790, 12870, 52664)  MATCH=True
+  READ: reproduced exactly, with no carrier in the calculation.  Also note the identity
+  #(non-invariant AND mean != 0) = 2^(2^m) - 2 - C(2^m, 2^(m-1)) -- pure counting:
+    m=2:  2^4 - 2 - C(4,2) = 8
+    m=3:  2^8 - 2 - C(8,4) = 184
+    m=4:  2^16 - 2 - C(16,8) = 52664
+
+B.  IS 'writer-odd' A TORUS FACT?  Count it for the CHAIN-SHAPED group (one global flip) too.
+    m group                         writer-ODD   mean=0  invariant
+    2 (Z_2)^m  (torus)                       6        6          2
+    2 Z_2 global flip (chain)                4        6          4
+    3 (Z_2)^m  (torus)                      70       70          2
+    3 Z_2 global flip (chain)               16       70         16
+    4 (Z_2)^m  (torus)                    2790    12870          2
+    4 Z_2 global flip (chain)              256    12870        256
+  READ: 'mean=0' count is C(2^m,2^(m-1)) regardless of the group -- it is not a group fact at
+  all.  The lane's decisive 52664 is 2^16 - 2 - C(16,8) and would be identical on the chain.
+
+C.  THE COHERENCE LAW, EXACT RATIONALS  (lane steps 4A/4B, 5)
+       m                 E|F|/m exact                 C(m,m/2)/2^m  equal?             lane value
+       2       0.50000000000000000000       0.50000000000000000000    True                       
+       4       0.37500000000000000000       0.37500000000000000000    True                       
+      16       0.19638061523437500000       0.19638061523437500000    True 0.19638061523437500000
+     256       0.04981910993614015182       0.04981910993614015182    True 0.04981910993614015124
+    4096       0.01246618536376025918       0.01246618536376025918    True 0.01246618536376025958

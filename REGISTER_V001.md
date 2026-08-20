@@ -9045,3 +9045,71 @@ least protected thing in the census.**
 **Put the HDD CoCrPt grain through the model as an `(H,{L_k})` two-state macrospin with Arrhenius
 jumps** — `K_uV = 61 kT`, `τ = 2e17 s`, splitting 0.007–7 kT, write head `5e-19 J`. **That is a test a
 physicist can run against their own data.**
+
+---
+
+## **EXTERNAL REVIEW — "NOT A THEORY, AND NOT PROVEN IN THE SENSE YOU MEANT."**
+
+Four independent hostile reviews, each calibrated for overstatement **in both directions**, plus an
+editor verdict. The reviewers read the framework, the ledger, the register, the glossary and ~15 lanes
+end to end, and **ran** `reproduce.sh --seals`, `t9_sweep.py`, `validate_model.py` and others.
+
+### THE ANSWER TO THE PRINCIPAL'S QUESTION
+
+> ### **"Is it big?" — "NO — NOT IN THE SENSE YOU ASKED TO CONFIRM."**
+
+The goal sentence fails at every load-bearing word, on the corpus's own rows: **"EM" is a `Z₂` lattice
+gauge field** — no `U(1)`, no Maxwell limit, and the repo's `U(1)` strand feeds **zero** ledger rows;
+**"gravity" is a lattice's homology pairing** (X-1: *"the topology is a LATTICE's, not spacetime's"*);
+**"alpha" is a dimensionless generic coupling** (T-22). PF-6 found no prediction a rival lacks.
+
+### WHAT IS REAL, AND THE REVIEWERS WERE EMPHATIC THAT UNDER-CLAIMING WOULD ALSO FAIL
+
+| | |
+|---|---|
+| **C-12** | the existence characterization — a five-clause record satisfying (i)–(iv) exists **iff** the commutant of the noise `*`-algebra contains a trace-balanced projection non-trivial on some energy eigenspace; **no writable record in odd dimension**. Constructive proof, 210/210 exhaustive, **reproduced byte-identical by two reviewers**. *"The single result defensible before a hostile committee with no caveats beyond scope."* |
+| the exclusion package | C-25/C-26, C-52, C-53, C-48, C-60 as one theorem-grade obstruction. Adversarially verified, exact |
+| **C-41** | *"one short proof away from a genuine original theorem"* |
+| **C-64** | the clause-(v) decision procedure — *"a publishable-lemma-grade instrument buried inside a lane"* |
+| the methodology | *"close to publishable as methodology"* |
+
+**Verdict: note-grade original mathematics at the intersection of noiseless subsystems and the
+Zurek/Riedel redundant-records literature. Publishable in a foundations venue.**
+
+### THE WORD: **A FORMAL FRAMEWORK**, NOT A THEORY
+
+> *"A physical theory must make at least one statement that could be false about the world; by the
+> corpus's own rows it makes none."*
+
+**Allowed:** *we define*, *we prove (about the defined object)*, *we verify by exact computation*.
+**Forbidden until their blocking rows close:** *theory*, *proven process*, *explains*, and the three
+nouns **EM**, **gravity**, **alpha**.
+
+### THE COUNTS
+
+Of the 162 rows that carried PROVED: **~14 original theorems (9%)**, ~52 exact computations (32%),
+**~41 numerical measurements (25%)** for which `MEASURED` existed and held 2, ~20 standard results
+restated (12%), **~34 definitions and decisions (21%)** for which `DEFINED` existed and held 1.
+**Proof-grade in spirit: 66/162 = 41%.**
+
+### THREE REGISTRAR ERRORS FROM THIS SESSION, CORRECTED IN PLACE
+
+- **C-63 is the 1D RKKY / Lindhard interaction** — a standard free-fermion result. **The lane's own
+  VERIFY directory said so and the ledger row, register and glossary did not.** Registered as "the
+  first power-law falloff in the program's history" without a literature check. **Rescoped to
+  BORROWED.**
+- **C-52's physical conclusion overreached.** The `Z[i]` quantisation binds only for
+  **Gaussian-integer** coefficients; **a real `λ·W` escapes it trivially.** "A `10⁻³⁶` residual is
+  EXCLUDED" is corrected to: no *integer-combination* invariant can be small.
+- **C-60's gloss is circular under DEF-A** — which *defines* admissible as doing no work. Said three
+  times; corrected.
+
+### AND A REPRODUCTION FAILURE THAT HAD BEEN REPORTED AS GREEN
+
+**The one-command reproduction does not pass.** 13 scripts DIFFER on re-run; `reproduce_full.log`
+ends in `Terminated: 15`; **`LANE_EM_EXTENT/holonomy.txt` is garbled and carries a wrong number**;
+stale seals in `LANE_F7_OCCUPANCY` and `model/`; `LANE_O5_ADVERSARIAL` cannot run standalone.
+
+**And T-9 was falsely DONE.** `SINGLE-CARRIER` appears **zero** times in the ledger; ~24 of 162 rows
+cite two carriers. **REPLICATE.md's sentence asserting the marking was false of the shipped ledger and
+is corrected in place.** T-9 **REOPENED**; PF-8's stale `6 of 78` denominator corrected against 162.

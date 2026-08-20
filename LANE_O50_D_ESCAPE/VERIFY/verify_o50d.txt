@@ -1,0 +1,144 @@
+====================================================================================================
+CHECK 1.  THE HEADLINE'S CLASS I STATEMENT, TESTED ON THE LANE'S OWN OBJECT
+====================================================================================================
+Headline: '(I) RESPONSIVE to writing -- then its orbit mean is EXACTLY ZERO and it takes
+both signs equally often, failing standard (d)' and 'NOT ONE ROW IS BOTH RESPONSIVE AND
+SIGN-DEFINITE'.  The lane's own part 3 section 4 built G(s) = sum (1+s_i s_j)/(2 r_ij).
+Recompute G on genuine torus record configurations and test BOTH properties at once.
+
+carrier: 4 disjoint L=2 tori, n=32 qubits, k=8 records (SEARCHED via symplectic_logicals, mutually commuting asserted)
+distinct configuration flips realised by admissible logical classes: 256 of 256 -- single-record flips present: True
+
+                          quantity         min         max    orbit mean  sign-def (d)  RESPONSIVE  max|delta|
+  F = sum w_ij s_i s_j  (lane row)   -4.026060    8.359393      0.000000         False        True    4.532540
+      G = sum (1+s_i s_j)/(2 r_ij)    2.166667    8.359393      4.179697          True        True    2.266270
+
+>>> G IS RESPONSIVE **AND** SIGN-DEFINITE **AND** HAS NON-ZERO ORBIT MEAN.
+>>> The headline's Class I statement ('responsive => orbit mean exactly zero') is FALSE
+>>> by exactly the same error the lane diagnosed in the handed-over theorem.
+>>> G is ABSENT from the master scoring table, though the lane itself computed it.
+
+====================================================================================================
+CHECK 2.  INVARIANT DIMENSION -- BURNSIDE, INDEPENDENTLY (the lane's own claim)
+====================================================================================================
+   k  #configs   orbits (Burnside)  dim inv (explicit basis)   agree
+   2         4              1.0000                         1    True
+   4        16              1.0000                         1    True
+   6        64              1.0000                         1    True
+   8       256              1.0000                         1    True
+CONFIRMED: dim(invariant) = 1, by Burnside and by explicit basis, agreeing.  The lane is
+right here.  (This is the textbook Reynolds/orbit-counting fact, not a new result.)
+
+====================================================================================================
+CHECK 3.  DOES THE C-61 CONTROL, AS IMPLEMENTED, HAVE ANY DISCRIMINATING POWER?
+====================================================================================================
+3a. Part 3 sec 4 / part 7 sec 4: 'record carrier' vs 'C-61 control' -- are they the same
+    arithmetic?  Recompute both exactly as the lane's scripts do.
+    control labels: set of 2^8 sign vectors; record configs: set of 2^8 sign vectors; are the SETS equal? True
+    sorted G values identical?  max |diff| = 0.000e+00
+    control Hamiltonian Hc used anywhere in the functional?  NO -- 'labels' is just the
+    2^8 sign vectors; the eigenvalues 255/256 are printed and
+    then discarded.  THE TWO COLUMNS ARE THE SAME FUNCTION ON THE SAME SET.
+
+3b. Part 5 sec 3 bath rows: add a THIRD carrier the lane never tried -- a SINGLE QUBIT
+    with H_sys = 0, coupling Z.  If it reproduces the toric numbers, the instrument
+    cannot separate ANY two carriers and its 'YES' verdicts carry no information.
+    (toric sign of coupling in this state: <R1> = +1.0;  control <Z> = +1.0+0.0j)
+
+      observable   toric (2 records)    C-61 control (0)   ONE FREE QUBIT (0)  instrument can tell?
+        Z_bath,0           -0.331227           -0.331227            -0.331227                    no
+        X_bath,0           -0.791001           -0.791001            -0.791001                    no
+          H_bath           -1.758370           -1.758370            -1.758370                    no
+           X0 X1            0.018607            0.018607             0.018607                    no
+    A one-qubit carrier with H=0 -- no records, no code, no protection, no lattice --
+    reproduces the toric bath response to machine precision.  The 'record-blind control'
+    of part 5 sec 3 is forced by [coupling,H_sys]=0 with the system in an eigenstate:
+    the bath sees a c-number +-1 and nothing else.  IT CANNOT RETURN 'no' FOR ANY CARRIER.
+    D-15: that table has no positive control that would have registered a difference.
+
+3c. Are the remaining rows of that table measured?  Source lines from the lane's script:
+216:say(f"   {'sum_i |<bit_i>| (integrity)':>26}{2.0:>18.6f}{8.0:>21.6f}{'YES':>15}")
+217:say(f"   {'#independent bits k':>26}{2:>18}{0:>21}{'NO':>15}")
+218:say(f"   {'protection distance d':>26}{2:>18}{0:>21}{'NO':>15}")
+221:say("   observables and a bath -- bath response, chi, integrity, energy, correlation -- has an")
+    -> three of the eight rows of the 'MEASURED IN ONE TABLE' control are HARD-CODED
+    literals, verdict column included.  The integrity row prints 2.000000 vs 8.000000 and
+    a hard-coded verdict 'YES' -- a verdict contradicting the two numbers beside it.
+
+====================================================================================================
+CHECK 4.  PART 7, THE 'ONE OPEN DOOR'
+====================================================================================================
+4a. What ensemble does the reset channel ACTUALLY produce?  Run it.
+        input config    <R1> after    <R2> after
+            (-1, -1)        1.0000       -1.0000
+             (1, -1)        1.0000       -1.0000
+             (-1, 1)        1.0000        1.0000
+              (1, 1)        1.0000        1.0000
+    resulting magnetisation of record 1: m = +1.0000  (a POINT MASS at +1, not a tunable ensemble)
+    The channel resets a record to +1.  Applied to all records it gives m = +1 EXACTLY.
+    No mechanism in this lane produces 0 < |m| < 1.  m in the bias table is CHOSEN.
+
+4b. At the only bias the channel produces (m = 1) the ensemble is ONE configuration.
+    F(all +1) = 8.359393 = sum w = 8.359393  -> a CONSTANT on the ensemble.
+    responsiveness of F WITHIN the m=1 ensemble (support is a single point) = 0.000000
+    So the master table's last row scores the SAME object as both 'sign-definite YES'
+    (only at m=1, where it is constant) and 'RESPONSIVE yes' (only at m=0, where it is
+    not sign-definite).  NO SINGLE m MAKES BOTH TRUE FOR A FUNCTIONAL OF THE ENSEMBLE:
+    at m=1 the value is exactly the record-blind constant part the lane isolated in
+    part 3 sec 4.  The 'open door' opens onto part 3's own closed room.
+
+4c. Is E[F] = m^2 sum w an 'out-of-sample prediction'?  It is E[s_i]E[s_j] for
+    independent coins -- the definition of the expectation the sampler estimates.
+    MC at m=0.5: 2.094430   closed form 2.089848   (identity, not a test)
+
+====================================================================================================
+CHECK 5.  IS THE 'GEOMETRY' IN THE GEOMETRY-WEIGHTED FUNCTIONALS THE TORUS'S?
+====================================================================================================
+    occurrences of the torus metric in parts 3, 6, 7: 0
+    positions actually used: pos[i] = 4.0*(i//2) + 0.5*(i%2) -- records laid on a LINE,
+    hand-assigned, unrelated to the L x L torus.  D-22 is invoked in part 3 sec 3
+    ('the torus has a metric ... so separation is readable') for a computation in which
+    the torus metric never appears.  The separation is INSERTED twice over: the weights
+    AND the positions.
+====================================================================================================
+
+====================================================================================================
+CHECK 6.  IS THE MASTER SCORING TABLE MEASURED?
+====================================================================================================
+say(hdr); say("   " + "-" * (len(hdr) - 3))
+ROWS = [
+ ("E(s)=sum J_ij s_i s_j",        "yes", "yes", "yes", "NO",  "ins", "yes", "NO",  "O-48 / part 2"),
+ ("sum_i w_i s_i  (any weights)", "yes", "yes", "yes", "NO",  "n/a", "yes", "NO",  "part 2 sec 3"),
+ ("geometry-weighted s_i s_j",    "yes", "yes", "yes", "NO",  "ins", "yes", "NO",  "part 3 sec 3"),
+ ("Re<Xbar_1> (coherence)",       "no",  "no",  "yes", "NO",  "n/a", "yes*","NO",  "part 4 sec 2"),
+ ("|rho_L,ab| (coherence mag.)",  "no",  "no",  "yes", "yes", "n/a", "relabel", "NO", "part 4 sec 2"),
+ ("purity / S(rho_L)",            "no",  "no",  "yes", "yes", "n/a", "NO",  "NO",  "part 4 sec 2"),
+ ("S_A, contractible region",     "yes", "yes", "no",  "yes", "n/a", "NO",  "NO",  "part 4 sec 5,6"),
+ ("S_A, wrapping region",         "no",  "no",  "no",  "yes", "n/a", "NO",  "NO",  "part 4 sec 5,6"),
+ ("bath observable <B(t)>",       "yes", "yes", "yes", "NO",  "ind", "yes", "NO",  "part 5 sec 2"),
+ ("chi(R : bath)",                "yes", "yes", "yes", "yes", "ind", "NO",  "NO",  "part 5 sec 2,3"),
+ ("sum_i |<R_i>| (integrity)",    "yes", "yes", "no",  "yes", "n/a", "NO",  "NO",  "part 4,5"),
+ ("holonomy of a write-loop",     "no",  "no",  "yes", "NO",  "n/a", "yes", "NO",  "part 5 sec 1"),
+ ("record count k",               "yes", "yes", "NO",  "yes", "n/a", "NO",  "YES", "part 6 sec 1,3"),
+ ("protection distance d",        "no",  "no",  "NO",  "yes", "n/a", "NO",  "YES", "part 1 sec 4"),
+ ("sum w_ij s_i s_j, BIASED m!=0","yes", "yes", "yes", "YES", "ins", "yes", "NO",  "part 7 -- OPEN"),
+]
+
+    -> ALL 15 ROWS AND ALL 7 VERDICT COLUMNS ARE HAND-TYPED STRING LITERALS.  No code
+    computes (a),(b),(c),(d),(e), RESPONSIVE or SURVIVES C-61 for any row.  The table the
+    finding leads with is an editorial summary, not output.  Two typed entries are wrong:
+
+    6a. 'geometry-weighted s_i s_j  ...  (a) extensive = yes'.  Measured on the lane's own
+        weights and positions:
+        k=  4  scale of the functional =    1.5040   ratio at doubled k:           (strict extensivity requires exactly 2.0000)
+        k=  8  scale of the functional =    4.1797   ratio at doubled k:   2.7791  (strict extensivity requires exactly 2.0000)
+        k= 16  scale of the functional =   10.9033   ratio at doubled k:   2.6086  (strict extensivity requires exactly 2.0000)
+        k= 32  scale of the functional =   27.1156   ratio at doubled k:   2.4869  (strict extensivity requires exactly 2.0000)
+        k= 64  scale of the functional =   65.0818   ratio at doubled k:   2.4002  (strict extensivity requires exactly 2.0000)
+        SUPER-extensive by a logarithm.  '(a) yes' is not what the numbers say.
+
+    6b. 'chi(R : bath)  ...  (a) extensive = yes'.  chi for a binary +-1 observable is a
+        Holevo quantity over TWO branches, so chi <= H(p) <= 1 BIT for every carrier and
+        every bath size.  A quantity bounded by 1 cannot be extensive.  The lane's own
+        measured value is 0.908120 bits, already within 10% of the ceiling.
+====================================================================================================
