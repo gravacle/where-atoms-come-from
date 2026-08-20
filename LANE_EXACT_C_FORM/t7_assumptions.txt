@@ -40,3 +40,65 @@ T7(b)  FULL CARRIER, FULL DYNAMICS, THERMAL STATE OVER ALL SECTORS -- SEPARATION
     X2X3          1    0.521527300760    0.136408688972    0.385118611788
     X3X4          2    0.521527300760    0.136408688972    0.385118611788
     X4X5          3    0.521527300760    0.136408688972    0.385118611788
+    X5X6          4    0.521527300760    0.136408688972    0.385118611788
+    X6X7          5    0.521527300760    0.136408688972    0.385118611788
+    SPREAD over separation: 7.216e-16
+  [PASS] beta=0.5: full-carrier interaction is separation-independent   spread 7.216e-16
+
+  beta = 2.0  (beta=0 is the maximally mixed state on the WHOLE 2^n space)
+    partner     sep       chi_A alone     chi_A crowded       interaction
+    X2X3          1    0.521527300760    0.136408688972    0.385118611788
+    X3X4          2    0.521527300760    0.136408688972    0.385118611788
+    X4X5          3    0.521527300760    0.136408688972    0.385118611788
+    X5X6          4    0.521527300760    0.136408688972    0.385118611788
+    X6X7          5    0.521527300760    0.136408688972    0.385118611788
+    SPREAD over separation: 5.551e-16
+  [PASS] beta=2.0: full-carrier interaction is separation-independent   spread 5.551e-16
+
+================================================================================================================
+T7(c)  BREAK H1 -- a state that is NOT symmetric under the record-moving permutation
+================================================================================================================
+  POSITIVE CONTROL.  Same pipeline, same records, same couplings; only the initial state
+  is replaced by a state that singles out a location.  Separation dependence must appear.
+
+  random pure state
+    partner     sep       chi_A alone     chi_A crowded       interaction
+    X2X3          1    0.521524866119    0.128929123846    0.392595742273
+    X3X4          2    0.521524866119    0.140702214506    0.380822651612
+    X4X5          3    0.521524866119    0.135112927446    0.386411938673
+    X5X6          4    0.521524866119    0.150208538991    0.371316327128
+    X6X7          5    0.521524866119    0.135134847232    0.386390018887
+    SPREAD over separation: 2.128e-02
+  [PASS] POS CONTROL (random pure state): separation dependence DOES appear   spread 2.128e-02
+
+  qubit-0-polarised state
+    partner     sep       chi_A alone     chi_A crowded       interaction
+    X2X3          1    0.521527300760    0.136408688972    0.385118611788
+    X3X4          2    0.521527300760    0.136408688972    0.385118611788
+    X4X5          3    0.521527300760    0.136408688972    0.385118611788
+    X5X6          4    0.521527300760    0.136408688972    0.385118611788
+    X6X7          5    0.521527300760    0.136408688972    0.385118611788
+    SPREAD over separation: 6.106e-16
+  [FAIL] POS CONTROL (qubit-0-polarised state): separation dependence DOES appear   spread 6.106e-16
+
+================================================================================================================
+T7(d)  BREAK H2 -- couple through an operator that is NOT a record
+================================================================================================================
+  POSITIVE CONTROL.  A single-qubit Z_p coupling (clause (ii) fails for it) at various
+  distances from A's support.  The state is the code state, H1 intact.
+    coupling    dist to supp A               chi_A
+    Z0                       0      0.403586605095
+    Z1                       0      0.403586605095
+    Z2                       1      0.398577610793
+    Z3                       2      0.398577610793
+    Z4                       3      0.398577610793
+    Z5                       4      0.398577610793
+    Z6                       5      0.398577610793
+    Z7                       6      0.398577610793
+    spread among OFF-SUPPORT couplings (dist >= 1): 4.996e-16
+    on-support (Z0, Z1) vs off-support: 0.403586605095 vs 0.398577610793
+  [PASS] non-record coupling: effect is CONTACT (on-support differs, off-support all identical)   off-support spread 5.00e-16, on/off gap 5.009e-03
+
+================================================================================================================
+T7 SELF-CHECK SUMMARY: 1 FAILURES: ['POS CONTROL (qubit-0-polarised state): separation dependence DOES appear']
+================================================================================================================

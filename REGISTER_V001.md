@@ -8514,3 +8514,65 @@ Registrar's prediction, stated in-session before this workflow returned: the cro
 sign-definiteness is **forced** (a partner's unknown value averages the record's channel — concavity
 of Holevo under mixing) and is therefore **capacity-bounded and saturating, not extensive.** Result
 **1** above confirms it exactly. **The crowding candidate is dead: sign-definite but bounded.**
+
+---
+
+## O-36 — **DECIDED: A TRANSPORT-FIXED RECORD EXISTS ON `D(D₄)`. C-43's "40 OF 40" MEASURED THE SAMPLING PROCEDURE, NOT AN OBSTRUCTION.**
+
+`LANE_O36_EXACT`. Decided exactly by **character theory**, with the character table **computed** from
+the class algebra (Burnside/Dixon) rather than hard-coded, and verified on every carrier against
+integrality of `dᵢ` (≤ 4.4e-16), `Σdᵢ² = |G|` (exact), row orthonormality (≤ 2.3e-16), column
+orthogonality (≤ 1.8e-15), and the regular character's decomposition (≤ 4.4e-16).
+
+| carrier | dim | abelian | commutant blocks | `Σ dᵢmᵢ = dim E`? | **transport-fixed record?** |
+|---|---|---|---|---|---|
+| **`D(D₄)`** *(target)* | 64 | no | `1×22 ‖ 1×6⁴ ‖ 1×6³` | 22=22, 24=24, 18=18 ✓ | **EXISTS** |
+| `D(Z₂)` *(control)* | 4 | yes | `1×4` | ✓ | EXISTS, `‖[A_h,R]‖ = 0.000e+00` |
+| `D(Z₂×Z₂)` | 16 | yes | `1×16` | ✓ | EXISTS |
+| `D(Z₄)` | 16 | yes | `1×16` | ✓ | EXISTS |
+| `D(Q₈)` | 64 | no | identical to `D₄` | ✓ | EXISTS, `1.9e-14` vs blind control **8.998** |
+| **`D(D₈)`** `\|G\|=16` | 256 | no | **`2×12`, `2×36` blocks occur** | 46=46, 84=84, 126=126 ✓ | **EXISTS**, `4.7e-13` vs blind **20.43** |
+| **`D(Z₃)`** *(negative control)* | 9 | yes | `1×9` | ✓ | **NO** — dim 9 odd, `0` unreachable |
+
+### THE CORRECTION TO C-43
+
+> ### **AT MATCHED SAMPLE SIZE: 40 OF 40 TRANSPORT-*BLIND* RECORDS MOVE (max `‖[A_h,R]‖ = 9.466`,
+> ### REPRODUCING C-43's 9.423) WHILE 0 OF 40 TRANSPORT-*FIXED* RECORDS MOVE (max `1.2e-12`).**
+
+**C-43's measurement is reproduced exactly and its reading was wrong.** Randomly splitting eigenspaces
+produces records that are *blind* to transport; it does not show that transport must move a record.
+**Transport-fixed records exist, and are constructible.**
+
+**Structural reason:** the gauge action is by **conjugation**, so `Z(D₄)` acts as the identity and the
+representation factors through `D₄/Z = Z₂×Z₂` — **abelian**, so every commutant block has `dᵢ = 1` and
+every even-dimensional eigenspace reaches trace zero. **`D(D₈)` removes that reason** — `D₈/Z = D₄` is
+non-abelian and genuine 2-dimensional blocks appear — **and the verdict survives.**
+
+### WHY THE EARLIER ATTEMPT FAILED, MEASURED
+
+`record_model.commutant()` on `D(D₄)` returns **512** basis elements against the exact dimension
+`Σmᵢ² = 22² + 4·6² + 3·6² = 736` — **short by 224, because it is capped at `min(8n, 2000) = 512`
+samples.** On `D(Z₂)` it returns 16 = exact, **which is why the failure was invisible on the
+control.** A short basis does not merely lose dimensions: fitting a block decomposition to it returns
+multiplicities violating `Σdᵢmᵢ = dim E` — **exactly the 20-vs-18 and 26-vs-22 that the consistency
+check caught.** Character theory has no such failure mode.
+
+### SCOPE LIMITS, AS STATED BY THE LANE
+
+1. **Clause (v) is NOT tested.** A record here means (i)–(iv) plus transport-fixity.
+2. **Transport-fixity is VACUOUS on the ground space** — `A_h` acts as the identity on the `A=1`
+   eigenspace, so `[A_h,R]=0` is automatic there. **All the content sits in the excited eigenspaces
+   `E=−1` (dim 24) and `E=0` (dim 18)** — and zero is reachable there too, which is what makes the
+   verdict non-vacuous.
+3. **One geometry** — minimal torus, transport meaning the gauge transformations `A_h`. Ribbon
+   operators and larger lattices untested.
+4. A group with an eigenspace carrying a single odd-multiplicity block of even `d` would fail; **none
+   was found among the six tested.**
+
+### THE HYPOTHESIS THIS KILLS
+
+The registrar's in-session chain — *a record is a bit → a bit carries a 1-dim rep → a 1-dim rep is a
+class function → records are transport-invariant, so clause (i) explains every null* — **is refuted
+as stated.** Transport-fixed records exist, but so do records transport moves. **Bit-ness does not
+force transport-invariance; it merely permits it.** That is allow/require again, and the principal's
+framing was the correct one.

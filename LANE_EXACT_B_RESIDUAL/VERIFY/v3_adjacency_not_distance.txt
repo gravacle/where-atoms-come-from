@@ -1,0 +1,35 @@
+==============================================================================================================================
+V3   IS IT AN INFLUENCE RADIUS SET BY THE BATH'S COUPLING RANGE, OR JUST ADJACENCY IN H_B?
+==============================================================================================================================
+
+  VALIDATION OF THE BATH-ONLY REDUCTION against the lane's own full pipeline (n = 6, ring,
+  range 1, J = 0.6).  If these disagree, nothing below means anything.
+  configuration                full pipeline     bath-only reduction      |diff|
+  alone                     0.24793334032638        0.24793334032638    1.94e-16
+  X2 at s=1                 0.17038695450255        0.17038695450255    8.88e-16
+  X2 at s=2                 0.24793334032638        0.24793334032638    4.44e-16
+  X2 at s=3                 0.24793334032638        0.24793334032638    3.61e-16
+
+  chi(with a COMMUTING partner at ring site s) - chi(alone).  Read record on site 0.
+  bath H_B                             chi(alone)        s=1 d=1        s=2 d=2        s=3 d=3        s=4 d=2        s=5 d=1
+  (A) diagonal ZZ, range 1, J=0.6     0.247933340  -7.754639e-02  -5.551115e-17  +4.718448e-16  +5.551115e-16  -7.754639e-02   POSITIVE CONTROL: reproduces the lane
+  (B) diagonal, ONE bond 0--3, J=0.6  0.263423188  -2.498002e-15  -1.165734e-15  -6.688857e-02  -2.720046e-15  -4.440892e-16   bond spans the MAXIMUM distance
+  (B) diagonal, ONE bond 0--3, J=0.2  0.521495150  -3.330669e-16  +3.330669e-16  -8.851213e-02  -3.996803e-15  -3.108624e-15
+  (B) diagonal, ONE bond 0--2, J=0.6  0.263423188  -1.110223e-16  -6.688857e-02  -2.775558e-16  -2.609024e-15  +0.000000e+00
+  (C) NON-diagonal XX, range 1, J=0.6  0.599575481  -8.594774e-02  -4.728372e-02  -8.584791e-02  -4.728372e-02  -8.594774e-02   spectator Z no longer conserved
+  (C) NON-diagonal XX, range 1, J=0.2  0.594615903  -3.761176e-02  -3.212559e-02  -1.588401e-02  -3.212559e-02  -3.761176e-02
+  (C) NON-diagonal XX, range 1, J=0.05  0.527500194  -4.140299e-03  -4.756855e-04  -2.594985e-05  -4.756855e-04  -4.140299e-03
+
+  THE FLOOR IN EACH ROW, from the venue's own exact reflection symmetry s <-> L-s where it
+  exists (rows A, C: reflection about site 0 is a symmetry; row B 0--3 is also reflection
+  symmetric).  Reported beside the largest |effect| at the sites the lane calls OUT OF RANGE.
+  bath H_B                                 floor  |effect| d=1 (s=1,5)  |effect| d=2 (s=2,4)  |effect| d=3 (s=3)
+  (A) ZZ range1 J=0.6                   6.11e-16            7.7546e-02            5.5511e-16          4.7184e-16
+  (B) one bond 0--3 J=0.6               2.05e-15            2.4980e-15            2.7200e-15          6.6889e-02
+  (B) one bond 0--3 J=0.2               4.33e-15            3.1086e-15            3.9968e-15          8.8512e-02
+  (B) one bond 0--2 J=0.6               6.69e-02            1.1102e-16            6.6889e-02          2.7756e-16
+  (C) XX range1 J=0.6                   1.78e-15            8.5948e-02            4.7284e-02          8.5848e-02
+  (C) XX range1 J=0.2                   3.77e-15            3.7612e-02            3.2126e-02          1.5884e-02
+  (C) XX range1 J=0.05                  2.78e-15            4.1403e-03            4.7569e-04          2.5950e-05
+
+  elapsed 26.5s

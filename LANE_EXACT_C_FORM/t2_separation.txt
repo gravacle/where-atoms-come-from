@@ -139,7 +139,11 @@ T2(c)  THE SEPARATION SCAN.  NEG CONTROL / TEST / POS CONTROLS IN ONE TABLE
   [PASS] n=10 lam=1.2: POS CONTROLS DO register separation dependence   POS1 4.720e-01  POS2 2.506e-01
     POS2 log-linear fit: slope -0.173703 (imposed exp weight gives 2/xi = 1.000000 for chi ~ w^2), max |residual| 3.967e-01
 
-  n=12 (code dim 1024), bath nq=1, lam=0.8   chi_A ALONE = 0.521527300760
-    partner     sep  dsym  sp(NEG CTRL)   chi_A crowded  I=alone-crowded (TEST)   I geom bath (POS1)  I exp-weighted (POS2)
-    X2X3          1     4             0  0.136408688972          0.385118611788       0.385118611788         0.282641983189
-    X3X4          2     4             0  0.136408688972          0.385118611788       0.385118611788         0.222210791383
+========================================================================================================
+T2(d)  D-17: VARY THE VENUE'S OWN SCALE.  SAME QUANTITY AT n = 8, 10, 12
+========================================================================================================
+  A = X0X1, B = X2X3 (separation 1), both at bath site 0, bath nq=1, lam=0.8.
+  The code dimension goes 64 -> 256 -> 1024 and the number of records goes 6 -> 8 -> 10.
+     n  code dim  k=n-2         chi_A alone       chi_A crowded         interaction
+     8        64      6   0.521527300759534   0.136408688971757   0.385118611787778
+    10       256      8   0.521527300759535   0.136408688971758   0.385118611787778

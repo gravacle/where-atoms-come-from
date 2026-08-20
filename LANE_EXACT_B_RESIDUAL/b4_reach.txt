@@ -51,3 +51,19 @@ n = 12.  carrier dim 4096, code space 1024, joint dim 4096, bath 2 qubits.
   A 2-qubit bath has only two sites, so only same-site / other-site configurations run here.
   reduced battery: 7 configurations.
   logicals COMPUTED and reduced to the code space (22s)
+  battery done (2296s)
+
+  configuration                                   chi at n=8         chi at n=12    |difference|
+  alone                                     0.52152730075953    0.52152730075953        7.99e-15
+  Z1@0                                      0.25408925197375    0.25408925197374        6.05e-15
+  Z1@1                                      0.42257771038892    0.42257771038891        6.11e-15
+  X2@0                                      0.13640868897176    0.13640868897174        1.37e-14
+  X2@1                                      0.52152730075953    0.52152730075954        3.44e-15
+  X2@0,Z2@0                                 0.12444409222100    0.12444409222100        1.12e-15
+  Z1@0,Z1X2@0                               0.16834306500607    0.16834306500607        2.58e-15
+
+  WORST |chi(n=12) - chi(n=8)| over the reduced battery: 1.371e-14
+  -> at a carrier of dimension 4096 the numbers are still identical to the 256-dimensional
+     one, to the float64 floor.  N-INDEPENDENCE IS EXACT, not asymptotic.
+
+  elapsed 5518.6s

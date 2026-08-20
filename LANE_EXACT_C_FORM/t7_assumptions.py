@@ -90,10 +90,15 @@ print("  is replaced by a state that singles out a location.  Separation depende
 rng = np.random.default_rng(7)
 psi = rng.normal(size=N) + 1j*rng.normal(size=N); psi /= np.linalg.norm(psi)
 stR = np.outer(psi, psi.conj())
-loc = np.zeros((N, N), dtype=complex)                       # a state localised on qubit-0/1 pattern
-Zloc = xz_to_matrix(pauli_vec(n, (), (0,)), n)
-stL = (np.eye(N) + 0.9*Zloc)/N                              # polarises qubit 0 only
-for nm, st in (("random pure state", stR), ("qubit-0-polarised state", stL)):
+# A first version polarised along the single-qubit Z_0.  It produced a spread of 6e-16 -- the
+# control FAILED -- because Z_0 anticommutes with R_A, so P_A Z_0 P_A = 0 and the polarisation
+# drops out of the Holevo readout entirely.  Logged, and replaced by a polarisation along a
+# LOGICAL Z2Z3, which commutes with R_A (so it survives the readout) and whose commutation with
+# the partner X_pX_{p+1} DEPENDS ON p.
+Zloc = xz_to_matrix(pauli_vec(n, (), (2,3)), n)
+assert np.linalg.norm(Zloc@RA - RA@Zloc) < 1e-12
+stL = (np.eye(N) + 0.9*Zloc)/N                              # polarises the logical Z2Z3
+for nm, st in (("random pure state", stR), ("Z2Z3-polarised state", stL)):
     print(f"\n  {nm}")
     print(f"    {'partner':<10}{'sep':>5}{'chi_A alone':>18}{'chi_A crowded':>18}{'interaction':>18}")
     Is = []
@@ -104,7 +109,10 @@ for nm, st in (("random pure state", stR), ("qubit-0-polarised state", stL)):
         Is.append(a-c)
         print(f"    {'X%dX%d'%(p,p+1):<10}{p-1:>5}{a:>18.12f}{c:>18.12f}{a-c:>18.12f}")
     print(f"    SPREAD over separation: {max(Is)-min(Is):.3e}")
-    check(f"POS CONTROL ({nm}): separation dependence DOES appear",
+    print(f"    shape of the variation: {[f'{v:.6f}' for v in Is]}")
+    print(f"    monotonically decreasing with separation? "
+          f"{all(Is[i] >= Is[i+1] - 1e-12 for i in range(len(Is)-1))}")
+    check(f"POS CONTROL ({nm}): location dependence DOES appear",
           max(Is)-min(Is) > 1e-6, f"  spread {max(Is)-min(Is):.3e}")
 
 print()
