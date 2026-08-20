@@ -1,0 +1,64 @@
+========================================================================================================
+O-33a   THE ABELIAN JOIN: IS CROWDING PAIRING-SELECTIVE?
+========================================================================================================
+  carrier [[4,2,2]], 4 qubits, dim 16; logicals COMPUTED: 2 conjugate pairs
+  SELF-CHECK -- the computed logicals must be symplectic:
+    <A0,B0>=1  <A1,B1>=1  <A0,A1>=0  <A0,B1>=0  <B0,A1>=0
+    -> symplectic basis confirmed
+  ground space dimension 4 = 2^2 records
+  reading record A0.  partners: A1 (pairing 0) and B0 (pairing 1)
+    ||[A0,A1]|| = 0.000000   -> commute
+    ||[A0,B0]|| = 8.000000   -> ANTICOMMUTE
+
+  chi(Z1), time-averaged over 25 times in [1,13] to remove recurrences.
+  ALONE: only Z1 written.  CROWDED: the partner is written ON THE SAME SITE.
+  SPREAD: the partner is written on its own site (the control).
+
+      lam      alone   crowded by A1   crowded by B0   spread A1   spread B0
+     0.40   0.276635        0.125625        0.182754    0.276635    0.236331
+     0.80   0.521527        0.136409        0.254089    0.521527    0.422578
+     1.20   0.599567        0.127540        0.258590    0.599567    0.479860
+
+  TWO MECHANISMS ARE PRESENT AND THEY MUST BE SEPARATED.
+  (a) DISTURBANCE is site-independent: the partner is on ANOTHER site, so any change is not
+      crowding.  spread / alone.
+      lam   A1 spread/alone (pairing 0)   B0 spread/alone (pairing 1)
+     0.40                      1.000000                      0.854307
+     0.80                      1.000000                      0.810270
+     1.20                      1.000000                      0.800345
+      -> a COMMUTING partner on another site does NOTHING, to six decimals. A PAIRING partner
+         on another site suppresses the record. DISTURBANCE IS THE PAIRING, and it does not
+         care where the partner sits.
+
+  (b) CROWDING is what SHARING the site costs, on top of that: crowded / spread.
+      lam   A1 crowded/spread (pairing 0)   B0 crowded/spread (pairing 1)   difference
+     0.40                          0.4541                          0.7733     0.319174
+     0.80                          0.2616                          0.6013     0.339728
+     1.20                          0.2127                          0.5389     0.326168
+
+  largest difference in CROWDING between a pairing partner and a commuting one: 0.339728
+  -> SELECTIVE: the pairing changes what sharing a site costs
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================
+  THE PAIRING AND THE DENSITY ARE TWO SEPARATE MECHANISMS, AND THEY ARE NOT INDEPENDENT.
+
+  DISTURBANCE is the pairing, and it is SITE-BLIND. A commuting partner written on another site
+  leaves chi at 1.000000 of its alone value -- exactly, at every coupling. A pairing partner on
+  another site suppresses it regardless of where it sits. This is C-34's topological pairing
+  doing what a topological quantity does: it says WHO interacts, and knows nothing about where.
+
+  CROWDING is the density, and it is SITE-BOUND -- and it is SELECTIVE. Sharing a site with a
+  COMMUTING partner costs far more than sharing it with a PAIRING partner, by about 0.3 in
+  ratio, stable across a 3x range of coupling. Two records that already interact through the
+  pairing cost each other LESS when they share an environment site than two that do not.
+
+  SO THE TRIAD'S PRODUCT IS REAL IN THE SENSE THAT MATTERS: the pairing does not merely sit
+  beside the magnitude, IT MODULATES IT. <c_i,c_j> selects who interacts; the density says how
+  much a shared site costs; and the first CHANGES the second. That is the join, measured on an
+  abelian carrier where no frame rotation exists.
+
+  WHAT IT IS STILL NOT. Nothing here transports anything. The join is between a SOURCE and a
+  MAGNITUDE, not yet between either and the path-dependent transport of C-30 -- which needs the
+  non-abelian carrier. That remains the destination.

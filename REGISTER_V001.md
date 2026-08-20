@@ -8124,3 +8124,67 @@ recording it. **Every χ came back `0.000000`, including the control**, so nothi
 The program's own `channel()` criterion states the requirement: a coupling opens a channel iff its
 compression has a component **along** the record. `channel()` is now asserted as a **precondition**
 before any χ is read, so that failure cannot be reported as a result.
+
+---
+
+## O-33a — **THE ABELIAN JOIN: THE PAIRING DOES NOT SIT BESIDE THE MAGNITUDE, IT MODULATES IT.**
+
+`LANE_O33_JOIN`. The principal chose **both joins in parallel, with the non-abelian one as the
+necessary theoretical destination.** This is the abelian half. Carrier `[[4,2,2]]`, stabiliser
+Hamiltonian so the code space is the ground space, **logicals COMPUTED by `symplectic_logicals`** —
+never nominated. χ time-averaged over 25 times in `[1,13]`.
+
+Record `A0` is read. Partners: `A1` **(pairing 0, commutes)** and `B0` **(pairing 1, anticommutes)**.
+
+### (a) DISTURBANCE IS THE PAIRING, AND IT IS SITE-BLIND
+
+partner written on **another** site — so nothing here is crowding:
+
+| `λ` | `A1` spread/alone *(pairing 0)* | `B0` spread/alone *(pairing 1)* |
+|---|---|---|
+| 0.40 | **1.000000** | 0.854301 |
+| 0.80 | **1.000000** | 0.810276 |
+| 1.20 | **1.000000** | 0.800345 |
+
+**A commuting partner on another site does nothing, to six decimals, at every coupling. A pairing
+partner suppresses the record no matter where it sits.** This is C-34's topological pairing doing
+exactly what a topological quantity does: **it says WHO interacts and knows nothing about where.**
+
+### (b) CROWDING IS THE DENSITY, AND IT IS SELECTIVE
+
+what **sharing the site** costs on top of that — crowded/spread:
+
+| `λ` | `A1` crowded/spread *(pairing 0)* | `B0` crowded/spread *(pairing 1)* | difference |
+|---|---|---|---|
+| 0.40 | **0.4541** | 0.7733 | 0.319174 |
+| 0.80 | **0.2616** | 0.6013 | 0.339728 |
+| 1.20 | **0.2127** | 0.5389 | 0.326168 |
+
+> ### **SHARING A SITE WITH A COMMUTING PARTNER COSTS FAR MORE THAN SHARING IT WITH A PAIRING
+> ### PARTNER — BY ABOUT 0.33 IN RATIO, STABLE ACROSS A 3× RANGE OF COUPLING. TWO RECORDS THAT
+> ### ALREADY INTERACT THROUGH THE PAIRING COST EACH OTHER *LESS* WHEN THEY SHARE AN ENVIRONMENT
+> ### SITE THAN TWO THAT DO NOT.**
+
+> ### **SO THE TRIAD'S PRODUCT IS REAL IN THE SENSE THAT MATTERS: `⟨c_i,c_j⟩` SELECTS WHO INTERACTS,
+> ### THE DENSITY SAYS WHAT A SHARED SITE COSTS, AND THE FIRST CHANGES THE SECOND. THE PAIRING
+> ### MODULATES THE MAGNITUDE. MEASURED ON AN ABELIAN CARRIER, WHERE NO FRAME ROTATION EXISTS.**
+
+### WHAT IT IS STILL NOT
+
+**Nothing here transports anything.** The join is between a **source** and a **magnitude**, not yet
+between either and C-30's **path-dependent transport** — which exists only on a non-abelian carrier.
+That is O-33b and it remains the destination.
+
+### ERRATUM, LOGGED — THE SELF-CHECK FIRED FIRST
+
+`symplectic_logicals` returns a **list of conjugate pairs** `[(X_i,Z_i), …]`, not two lists.
+Unpacking it as `Xs, Zs = …` mixed the two pairs, and the symplectic self-check printed
+`⟨X1,Z1⟩ = 0` and `⟨Z1,Z2⟩ = 1` and halted before any χ was read. **That is the fifth time this
+program has gone wrong on logical operators and the fifth time a self-check caught it before a
+number was reported.**
+
+**And a second confound was caught in analysis:** the first ratio panel compared crowded against
+**alone**, which conflates two mechanisms — the pairing partner suppresses the record from a
+*different* site, so part of that ratio was never crowding. Separating disturbance
+(spread/alone) from crowding (crowded/spread) is what made the effect legible; the conflated panel
+understated the selectivity as 0.226 where it is 0.340.
