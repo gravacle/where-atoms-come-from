@@ -10,11 +10,11 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 ## THE COUNT
 
-| MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS | FORMAL |
-|---|---|---|---|---|---|---|---|---|---|
-| 2 | 11 | 4 | 25 | 3 | 12 | 9 | 3 | 3 | 174 |
+| MEASURED | PARTIAL | CANDIDATE | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS | FORMAL |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2 | 11 | 1 | 4 | 25 | 3 | 12 | 9 | 3 | 3 | 174 |
 
-**246 rows.**
+**247 rows.**
 
 ---
 
@@ -179,6 +179,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-74** | CLAUSE (v) HOLDS ON THE CANONICAL CARRIER BY MANIFOLD HOMOLOGY, WITH NO CONVENTION. Across 1480 regions at L = 3..6 on the toric code, contractible regions carrying a logical operator: ZERO; non-contractible: all of them; and dim(V(Rg) mod S) equals rank chi(V(Rg)) for every region. Aut(carrier) = 8L^2 exactly, so the carrier is not permutation-symmetric and contains geometry to detect. This is what O-49's decision called for -- protection realised through homology rather than through the 1D proxy convention | **FORMAL** | LANE_O50_A, exact F_2, with the 1D proxy as the control | — | — |
 | **C-75** | DEF-A IS THE LIMIT OF THE AMENDED DEFINITION, VERIFIED RATHER THAN ASSERTED. With no dissipation the slow modes at t_m -> infinity are exactly the commutant on every carrier tested -- 96/96, 1536/1536, 24/24 against the independently computed sum of squared multiplicities -- and clause (ii') reduces to clause (ii) with rate and \|\|[H,R]\|\| both 0.00e+00. A dissipative control is monotone in t_m and strictly smaller than the commutant at long t_m. Durability requires \|lambda\| <= 1/t_m and NOT \|Re lambda\|: an observable with lambda = i*omega does not decay but rotates, so its value oscillates and it is not durable | **FORMAL** | LANE_T28_LIMIT, three carriers with a dissipative control | — | — |
 | **C-76** | THE DEGENERACY-DEPENDENT RECORD COUNT COLLAPSES UNDER GENERIC ASYMMETRY -- multiplicities to all ones, k from 2 to 0, at every splitting tested. FINAL SENTENCE CORRECTED BY THE SOLIDITY REVIEW: the claimed recovery via clause (ii')'s durability width was NEVER RUN WITH THAT WIDTH -- the lane's 'within delta?' column used an ad-hoc 1e-2 carrier-unit tolerance while its own first table printed splitting/delta = 3e36 to 3e41, and with the actual delta = hbar/t_m the count is k = 0 everywhere. The collapse finding stands; the width-fix claim is WITHDRAWN. A width that recovers the count must be derived, not chosen | **FORMAL** | LANE_T31_ASYMMETRY with the exact symmetric carrier and a partial perturbation as controls | — | — |
+| **C-77** | THE EMERGENCE CLAIM, ADOPTED BY THE PRINCIPAL 2026-08-20 (T-37 closed by this row). THE STATEMENT: the structure Gamma that allows a record -- by shaping the boundaries that make a bit non-losable (non-contractible support in the corner; basin boundaries in the world) -- is the same structure whose aggregate at scale appears as geometry. Classical gravity emerges from the boundary-shaping terms and is not expected to resemble itself at the record level. FIRST FALSIFIABLE INCREMENT: derive, from record-surface boundary structure alone -- no classical form assumed, every concept earning its place per D-24 -- a scale-level relation that matches a known gravitational one. THE CLAIM FAILS if every such derivation requires assuming the classical form, or yields relations incompatible with the known ones | **CANDIDATE** | the principal, TD-1: 'yes let's adopt this'; A-GR3 shared origin, A-GR4 boundary-shaping, D-24 binding | — | — |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 

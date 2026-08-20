@@ -9533,3 +9533,25 @@ surface's own terms — no behavioral assumption imported — with the classical
 recovery target at scale only (D-1). **The fingerprint-variable choice is deliberately left open**:
 per the caveat, pre-committing to a variable that behaves like its analogues elsewhere would be the
 import the program exists to avoid.
+
+---
+
+## C-77 — **THE EMERGENCE CLAIM, ADOPTED.** T-37 closed.
+
+The principal: *"yes let's adopt this."* The claim, verbatim as adopted:
+
+> **The structure Γ that allows a record — by shaping the boundaries that make a bit non-losable
+> (non-contractible support in the corner; basin boundaries in the world) — is the same structure
+> whose aggregate at scale appears as geometry. Classical gravity emerges from the boundary-shaping
+> terms and is not expected to resemble itself at the record level.**
+>
+> **First falsifiable increment:** derive, from record-surface boundary structure alone — no
+> classical form assumed, every concept earning its place per D-24 — a scale-level relation that
+> matches a known gravitational one. **The claim fails** if every such derivation requires assuming
+> the classical form, or yields relations incompatible with the known ones.
+
+Registered **CANDIDATE** — assembled and coherent, not yet proved. It rests on A-GR3 (shared origin),
+A-GR4 (boundary-shaping mechanism), D-24 (earned concepts), and the principal's binding caveat that
+record-level measures may behave unlike their analogues elsewhere. **T-42** carries the derivation
+increment, with the first concept to be earned named: **distance** — nothing at the record level has
+yet earned a notion of how far apart two records are except boundary-crossing structure.
