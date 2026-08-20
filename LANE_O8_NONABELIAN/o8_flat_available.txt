@@ -1,0 +1,19 @@
+========================================================================================================
+ROUTE 1   IS A FLAT CONNECTION EVER UNAVAILABLE?
+========================================================================================================
+  carrier                           records   block sizes  flat exists   max ||[U_i,U_j]||
+  C^8, H=0, blocks of dim 1               3           [1]          YES           0.000e+00
+  C^16, H=0, blocks of dim 2              3           [2]          YES           0.000e+00
+  C^32, H=0, blocks of dim 4              3           [4]          YES           0.000e+00
+  C^64, H=0, blocks of dim 8              3           [8]          YES           0.000e+00
+  C^16, two 8-fold shells                 3           [2]          YES           0.000e+00
+
+  READ
+    Every carrier meeting the clauses has blocks of EQUAL dimension -- that is clause (iv)'s
+    trace balance (C-11) -- and equal blocks can be identified position-by-position, which makes
+    the writers commute BY CONSTRUCTION. Inside one degenerate eigenspace admissibility
+    constrains nothing further, so nothing can obstruct the identification.
+
+    If the right-hand column is zero everywhere, a FLAT connection is ALWAYS AVAILABLE and
+    curvature can never be FORCED by any carrier meeting the five clauses -- closing route 1
+    from inside the definition rather than by exhausting carriers.

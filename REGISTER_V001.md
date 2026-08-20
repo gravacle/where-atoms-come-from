@@ -7659,3 +7659,57 @@ untested) — or **a selector that is not a minimisation**, and `H-11` has no ca
 
 **This is a negative reached by overturning my own positive result, by doing the minimisation the
 sampling had skipped.**
+
+---
+
+# **ROUTE 1 CLOSED — A FLAT CONNECTION IS ALWAYS AVAILABLE, AND CLAUSE (iv) IS WHY**
+
+`LANE_O8_NONABELIAN`. Before building a non-abelian carrier, the prior question: **can the five
+clauses permit a carrier where flat is UNAVAILABLE?**
+
+| carrier | records | block sizes | flat exists | `max‖[U_i,U_j]‖` |
+|---|---|---|---|---|
+| `C⁸`, blocks of dim 1 | 3 | [1] | **YES** | **0.000e+00** |
+| `C¹⁶`, blocks of dim 2 | 3 | [2] | **YES** | **0.000e+00** |
+| `C³²`, blocks of dim 4 | 3 | [4] | **YES** | **0.000e+00** |
+| `C⁶⁴`, blocks of dim 8 | 3 | [8] | **YES** | **0.000e+00** |
+| `C¹⁶`, two 8-fold shells | 3 | [2] | **YES** | **0.000e+00** |
+
+**Blocks of dimension 8 give the writers a 64-dimensional internal freedom to be non-abelian in, and
+the flat choice still exists exactly.**
+
+### THE ARGUMENT, AND IT IS THE DEFINITION'S OWN
+
+1. **Clause (iii) puts the record inside a DEGENERATE eigenspace of `H`.**
+2. **Admissibility is `[U,H] = 0`, which inside a single eigenspace constrains NOTHING** beyond
+   preserving it. A writer may be **any** unitary permuting the joint record blocks.
+3. **The blocks have EQUAL dimension — and that is exactly clause (iv)'s trace balance (C-11).**
+4. **Equal blocks can be identified position-by-position**, and consistent identifications make the
+   writers commute **by construction**. Nothing can obstruct the identification, because step 2 left
+   no constraint to obstruct it with.
+
+> ### **THE CLAUSE THAT MAKES A RECORD WRITABLE IS THE CLAUSE THAT MAKES ITS CONNECTION FLATTENABLE.
+> ### CURVATURE CAN NEVER BE FORCED BY ANY CARRIER MEETING THE FIVE CLAUSES.**
+
+### WHAT THIS DOES TO THE CLAIM
+
+**Both routes out of O-26 are now closed.**
+
+| route | status |
+|---|---|
+| **1. a carrier where flat is unavailable** | **CLOSED — flat is always available (this lane)** |
+| **2. a selector that picks curvature** | **CLOSED — every selector that discriminates picks flat (C-25)** |
+
+> ### **RECORD-LEVEL CURVATURE IS AVAILABLE ON NON-CODE CARRIERS, IS NEVER FORCED, AND IS NEVER
+> ### SELECTED. Under the five clauses as written, Γ does not produce gravity.**
+
+**The principal's criterion (H-9) was decidable, was decided, and the answer is negative.** Not
+"undetermined", not "out of reach" — **measured, on carriers up to dimension 64, with the obstruction
+identified as a theorem about the definition rather than a limit of the search.**
+
+### THE ONE THING THIS DOES NOT CLOSE
+
+**It closes the question FOR THE FIVE CLAUSES AS WRITTEN.** The argument runs through clause (iv)'s
+trace balance and clause (iii)'s degeneracy. **A record notion that dropped or altered either could
+still force curvature — and this program has no reason to alter them beyond wanting a different
+answer, which is not a reason.** Registered as **H-13**.
