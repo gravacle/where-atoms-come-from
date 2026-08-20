@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 110 | 2 | 8 | 1 | 21 | 3 | 9 | 7 | 3 | 3 |
+| 112 | 2 | 8 | 1 | 20 | 3 | 9 | 7 | 3 | 3 |
 
-**167 rows.**
+**168 rows.**
 
 ---
 
@@ -73,6 +73,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **D-12** | A COMPLEX CAN BE REDRAWN AS NON-MANIFOLD WITHOUT BECOMING A DIFFERENT QUANTUM SYSTEM. Adding a face that is already present leaves rank(d2), B_1, H_1 and the whole stabiliser group unchanged — same code, different drawing. Only a face that changes the STABILISER GROUP changes the carrier. TELL: a 'second carrier' whose stabiliser group is not checked against the first | **PROVED** | T-8: the duplicated-plaquette candidate would have passed every carrier-independence test by being the same carrier | — | — |
 | **D-13** | ALPHA NAMES A MAGNITUDE, NOT A CONSTANT. No result here depends on its value, because T-10 showed no conclusion depends on the coupling at all. Connecting it to the fine structure constant would need a continuum limit from Z2 lattice gauge theory to an electromagnetic coupling, which nothing here supplies — claiming it would be an import (D-1) | **PROVED** | T-22; the anchor and glossary now state it | — | a registered result whose truth depends on the coupling's value |
 | **D-14** | A ZERO IS ONLY A RESULT IF IT IS A ZERO OF THE OBJECT THE QUESTION NAMES. Before reporting a null, state which object the question asked about and check it is the one measured. TELL: a null answering a question whose nouns do not appear in the measurement | **PROVED** | twice in one session: T-6's composition zero read as flatness, and the writer-commutator zero read as no record-level curvature | — | — |
+| **D-15** | CARRY THE CONTROL IN THE SAME TABLE. A signature that returns the same answer on a carrier where the effect cannot occur discriminates nothing. Two O-29 signatures were nearly registered as results before the abelian control column showed them identical on both sides | **PROVED** | O-29 errata | — | — |
 
 ## A. THE THREE ROLES — the charter's question
 
@@ -176,7 +177,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-26** | THE CLAIM NEEDS EITHER A CARRIER WHERE FLAT IS UNAVAILABLE -- non-abelian transport, where writers genuinely fail to commute (O-8, untested) -- OR A SELECTOR THAT IS NOT A MINIMISATION, for which H-11 has no candidate. C-24 (codes are flat necessarily) and C-25 (every selector picks flat) together close the minimisation route | **OPEN** | REOPENED: both 'routes' were closed against the WRITER connection, which is not the object H-9 names. The criterion asks for transport BETWEEN records and that has never been measured | — | — |
 | **O-27** | ACTION IS NOT DEFINED IN THIS PROGRAM. A physical action needs a generating Hamiltonian and a duration -- U = exp(-iHt) with a cost in H and t -- not an operator norm chosen for convenience. Until it is defined, 'least action selects curvature' is suggestive and cannot be registered as a selector | **PROVED** | answered: the minimum-action writer is FLAT (4.4429 = 4*pi/sqrt(2), holonomy 2.9e-15), and every curved sample costs more. O-26 compared against the CANONICAL flat writer, not the cheapest one | — | — |
 | **O-28** | THE MODEL CAPS AT 20 MINIMAL PROJECTIONS. A dim-24 carrier with three 8-fold shells -- not a power of two, three records -- could not be measured for O-26. records() enumerates 2^k sign vectors; commuting_family should build greedily instead | **OPEN** | hit in LANE_O26_NONCODE | — | — |
-| **O-29** | THE ABELIAN CARRIER HAS NOTHING TO ROTATE. Z2 holonomies take values in {+1,-1} -- a SIGN, and a sign carries no frame rotation, so H-9's phase/frame mismatch has no room to appear. A carrier whose link variables take values in a group with genuine internal structure would give the transport something to rotate. Untested | **OPEN** | created by H-15; this is where the emergence question now lives | — | — |
+| **O-29** | THE ABELIAN CARRIER HAS NOTHING TO ROTATE. Z2 holonomies take values in {+1,-1} -- a SIGN, and a sign carries no frame rotation, so H-9's phase/frame mismatch has no room to appear. A carrier whose link variables take values in a group with genuine internal structure would give the transport something to rotate. Untested | **PROVED** | CONFIRMED AND SUPERSEDED. The obstruction is true and now measured: on an abelian carrier transport between records is the identity, 0 of 4 configurations changed, order never matters, no added record contributes -- there is nothing to rotate. Superseded by building the S_3 carrier, where the record comes back changed 18 of 36, order matters 54 of 216, and each added record contributes. Every prior null on the emergence question was measured where the effect is zero by construction | — | — |
 | **O-30** | NO MONOTONE DENSITY LAW IS VISIBLE ON S_3. Transport outcomes are bounded by the conjugacy class, \|class\| = 3, so 'more enclosed records -> more transport' cannot appear on a group this small. H-9's density signature needs a larger non-abelian carrier before it can be tested | **OPEN** | created by O-29; H-4's small-carrier warning applies | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred

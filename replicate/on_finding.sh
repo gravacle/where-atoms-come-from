@@ -31,11 +31,22 @@ if [ "$empty" -eq 0 ]; then
 else warn "$empty lanes have no output at all"; fi
 
 # 3. the grid is GENERATED, never typed
+# The renderer's EXIT CODE must be checked. It was previously swallowed by >/dev/null 2>&1, so a row
+# written with a status outside the closed vocabulary left the grid stale and the gate still PASSED
+# -- the same class of bug as D-8 (two empty hashes comparing equal and reporting success).
 before=$(shasum -a 256 STATUS_LEDGER_V001.md 2>/dev/null | cut -d' ' -f1)
-./ledger/status.py >/dev/null 2>&1
-[ "$before" = "$(shasum -a 256 STATUS_LEDGER_V001.md | cut -d' ' -f1)" ] \
-  && ok "the status grid regenerates byte-for-byte from ledger/status_ledger.tsv" \
-  || warn "the committed grid does not match what the ledger generates — never hand-edit it"
+if ! rc=$(./ledger/status.py 2>&1 >/dev/null); then
+  warn "ledger/status.py REFUSED TO RENDER: $rc"
+else
+  [ -n "$before" ] && [ "$before" = "$(shasum -a 256 STATUS_LEDGER_V001.md | cut -d' ' -f1)" ] \
+    && ok "the status grid regenerates byte-for-byte from ledger/status_ledger.tsv" \
+    || warn "the committed grid does not match what the ledger generates — never hand-edit it"
+fi
+# every status in the ledger must be in the closed vocabulary, checked directly
+badv=$(awk -F'\t' 'NR==FNR{if(FNR>1)v[$1]=1;next} FNR>1 && !($4 in v){print $1"="$4}' \
+       ledger/STATUS_VOCAB.tsv ledger/status_ledger.tsv)
+[ -z "$badv" ] && ok "every status is in the closed vocabulary" \
+                || warn "STATUS OUTSIDE THE CLOSED VOCABULARY: $badv"
 
 # 3b. THE PLAN is generated too
 pb=$(shasum -a 256 THE_PLAN_V001.md 2>/dev/null | cut -d' ' -f1)
