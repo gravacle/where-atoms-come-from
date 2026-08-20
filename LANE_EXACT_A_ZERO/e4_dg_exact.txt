@@ -1,0 +1,61 @@
+================================================================================================================================
+E-4  D(G) GAUGE TRANSPORT AGAINST A RECORD -- EXACT RATIONAL ARITHMETIC (fractions.Fraction)
+================================================================================================================================
+
+STEP 1   D1/D2  -- is A_h the identity?  exact eigenspace dimensions and their parity
+--------------------------------------------------------------------------------------------------------------------------------
+  carrier      |G|    dim    abelian   exact eigenvalue:dim(E)            all dim E even? (clause iv)    A_h == I exactly? 
+  D(Z_2)       2      4      yes       -2:4 -1:0 0:0                      YES                            YES (exact)       
+  D(Z_3)       3      9      yes       -2:9 -1:0 0:0                      NO -- clause (iv) impossible on an odd E YES (exact)       
+  D(Z_4)       4      16     yes       -2:16 -1:0 0:0                     YES                            YES (exact)       
+  D(Z_2xZ_2)   4      16     yes       -2:16 -1:0 0:0                     YES                            YES (exact)       
+  D(D_4)       8      64     NO        -2:22 -1:24 0:18                   YES                            no                
+  D(Q_8)       8      64     NO        -2:22 -1:24 0:18                   YES                            no                
+  D(Z_8)       8      64     yes       -2:64 -1:0 0:0                     YES                            YES (exact)       
+  D(Z_5)       5      25     yes       -2:25 -1:0 0:0                     NO -- clause (iv) impossible on an odd E YES (exact)       
+  exact self-checks on every carrier: sum of projectors == I, [A,B] == 0, A^2 == A : ALL PASS
+
+================================================================================================================================
+STEP 2   D3  -- EXACT COMMUTANT DIMENSIONS.  chi_E(h) = Tr(P_E A_h) is an exact rational;
+         dim End_G(E) = (1/|G|) sum_h chi_E(h) chi_E(h^-1) must be a positive INTEGER.
+         GAP = dim(commutant of H) - dim(commutant of H and all A_h).  GAP = 0 means every
+         record commutes with transport automatically; GAP > 0 means a generic record is MOVED.
+--------------------------------------------------------------------------------------------------------------------------------
+  carrier      abelian   dim comm(H) = sum dimE^2   dim comm(H,A_h) = sum m_i^2 GAP (exact)    verdict                   
+  D(Z_2)       yes       16                         16                         0              transport acts trivially  
+  D(Z_3)       yes       81                         81                         0              transport acts trivially  
+  D(Z_4)       yes       256                        256                        0              transport acts trivially  
+  D(Z_2xZ_2)   yes       256                        256                        0              transport acts trivially  
+  D(D_4)       NO        1384                       736                        648            a generic record IS MOVED 
+  D(Q_8)       NO        1384                       736                        648            a generic record IS MOVED 
+  D(Z_8)       yes       4096                       4096                       0              transport acts trivially  
+  D(Z_5)       yes       625                        625                        0              transport acts trivially  
+
+================================================================================================================================
+STEP 3   D4  -- AN EXACT RATIONAL WITNESS RECORD, AND [A_h, R] IN EXACT RATIONALS.
+         R = sum_E (P_E - 2 Q_E), Q_E an exact rational orthogonal projector onto half of E.
+         Hermitian and R^2 = I by construction; every check below is an EXACT equality test.
+--------------------------------------------------------------------------------------------------------------------------------
+  carrier      built?  R=R^T     R^2=I     [H,R]=0     Tr(P_E R)=0   max ||[A_h,R]||_F^2 (EXACT)    classification  
+  D(Z_2)       YES     True      True      True        True          0                              (Z) EXACTLY ZERO
+  D(Z_3)       NO      -         -         -           impossible    no record exists: an eigenspace has ODD dimension (Z) vacuous     
+  D(Z_4)       YES     True      True      True        True          0                              (Z) EXACTLY ZERO
+  D(Z_2xZ_2)   YES     True      True      True        True          0                              (Z) EXACTLY ZERO
+  D(D_4)       YES     True      True      True        True          352/9                          (NZ) exactly non-zero
+  D(Q_8)       YES     True      True      True        True          352/9                          (NZ) exactly non-zero
+  D(Z_8)       YES     True      True      True        True          0                              (Z) EXACTLY ZERO
+  D(Z_5)       NO      -         -         -           impossible    no record exists: an eigenspace has ODD dimension (Z) vacuous     
+
+================================================================================================================================
+  E-4 SUMMARY -- classification with the control carried in the same table
+================================================================================================================================
+  carrier      abelian   A_h == I?        GAP            ||[A_h,R]||_F^2 verdict           
+  D(Z_2)       yes       YES              0              EXACTLY 0                         
+  D(Z_3)       yes       YES              0              no record: odd eigenspace         
+  D(Z_4)       yes       YES              0              EXACTLY 0                         
+  D(Z_2xZ_2)   yes       YES              0              EXACTLY 0                         
+  D(D_4)       NO        no               648            352/9                             
+  D(Q_8)       NO        no               648            352/9                             
+  D(Z_8)       yes       YES              0              EXACTLY 0                         
+  D(Z_5)       yes       YES              0              no record: odd eigenspace         
+================================================================================================================================

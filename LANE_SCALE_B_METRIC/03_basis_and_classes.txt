@@ -1,0 +1,79 @@
+======================================================================================================================
+LANE_SCALE_B_METRIC  STEP 3 -- BASIS ARTIFACT AND REPRESENTATIVE ARTIFACT CONTROLS
+======================================================================================================================
+
+3A.  RANDOM SYMPLECTIC BASIS OF RECORDS.  Same carrier, same 2k-dimensional record algebra,
+     a DIFFERENT choice of which 2k records form the basis.  SC-1 re-checked every draw.
+     8 random draws per n.  Reported: d90 for the support relation (d) and the letter
+     relation (e), as GS = the Gram-Schmidt basis of step 2, RS = random symplectic basis.
+
+  n    2k   | (d) SUPPORT  d90  GS / RS(min-max) | (e) LETTERS  d90  GS / RS(min-max) | FREE control d90
+  ------------------------------------------------------------------------------------------------
+  4    4    |          1  /   0-1           |          2  /   2-2           | 1               
+  6    8    |          3  /   1-3           |          4  /   3-4           | 3               
+  8    12   |          3  /   2-4           |          3  /   5-6           | 5               
+  10   16   |          4  /   4-5           |          3  /   6-8           | 7               
+  12   20   |          4  /   5-6           |          3  /   8-9           | 9               
+  14   24   |          4  /   6-8           |          3  /  10-11          | 10              
+  16   28   |          4  /   7-8           |          2  /  11-12          | 12              
+  18   32   |          4  /   9-10          |          2  /  13-14          | 14              
+  20   36   |          4  /  10-11          |          2  /  15-15          | 16              
+
+  SC-1 (non-degenerate pairing) held on EVERY random symplectic draw: True
+
+======================================================================================================================
+3B.  NO BASIS AT ALL -- every one of the 4^k - 1 non-trivial logical classes, each taken at
+     its canonical MINIMUM-WEIGHT representative.  This object contains no basis choice and
+     no representative choice.  CONTROL: the FREE carrier's 4^k - 1 non-trivial Pauli classes.
+
+  n    k    #classes | CODE   d90  dPR   neg   cdim   | FREE   d90  dPR   neg   cdim  
+  --------------------------------------------------------------------------------------------
+  4    2    15       |    2  2.00  0.091   0.00       |    1  1.00 -0.000  -0.00      
+  6    4    255      |    5  5.17  0.146   2.52       |    3  3.49  0.157   1.10      
+  8    6    4095     |    7  7.33  0.181   2.25       |    5  5.58  0.201   1.51      
+
+======================================================================================================================
+3C.  WHAT SHAPE IS THE GRAM-SCHMIDT SUPPORT GEOMETRY?  MDS coordinate 1 against record
+     weight, n = 20.  If the 'geometry' is just the weight staircase that Gram-Schmidt
+     produced, coordinate 1 is a monotone function of weight and nothing else is there.
+
+  rec   weight   MDS c1     MDS c2    
+  X18   18       -0.3102    0.1815    
+  Z17   18       -0.3102    0.1815    
+  X17   18       -0.3102    0.1815    
+  Z18   18       -0.3102    0.1815    
+  Z15   16       -0.2969    0.1240    
+  X16   16       -0.2969    0.1240    
+  X15   16       -0.2969    0.1240    
+  Z16   16       -0.2969    0.1240    
+  X13   14       -0.2630    0.0446    
+  X14   14       -0.2630    0.0446    
+  Z13   14       -0.2630    0.0446    
+  Z14   14       -0.2630    0.0446    
+  Z11   12       -0.2002    -0.0533   
+  X11   12       -0.2002    -0.0533   
+  X12   12       -0.2002    -0.0533   
+  Z12   12       -0.2002    -0.0533   
+  X9    10       -0.1003    -0.1537   
+  Z10   10       -0.1003    -0.1537   
+  Z9    10       -0.1003    -0.1537   
+  X10   10       -0.1003    -0.1537   
+  Z8    8        0.0426     -0.2205   
+  X8    8        0.0426     -0.2205   
+  X7    8        0.0426     -0.2205   
+  Z7    8        0.0426     -0.2205   
+  X5    6        0.2252     -0.1921   
+  Z5    6        0.2252     -0.1921   
+  X6    6        0.2252     -0.1921   
+  Z6    6        0.2252     -0.1921   
+  X3    4        0.4157     -0.0013   
+  Z4    4        0.4157     -0.0013   
+  Z3    4        0.4157     -0.0013   
+  X4    4        0.4157     -0.0013   
+  X2    2        0.4871     0.2709    
+  Z1    2        0.4871     0.2709    
+  X1    2        0.4871     0.2709    
+  Z2    2        0.4871     0.2709    
+
+  |corr(weight, MDS coordinate 1)| = 0.9654
+  variance carried by coordinate 1 = 0.6043 of the positive MDS variance

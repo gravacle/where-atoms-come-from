@@ -8374,3 +8374,58 @@ subset-sum on those dimensions. **It reported NO transport-fixed record on `D(Z�
 the direct measurement four lines above it.** For an abelian group `A_h` **is** the identity, so the
 commutant is everything, but a symmetrised sum of identities has one eigenvalue and the method
 returned a single coarse block. **The control caught a method that would have inverted the answer.**
+
+---
+
+## SIGN-DEFINITENESS — **THE TEST IS NOT "DOES IT GROW" BUT "DOES IT FAIL TO CANCEL". THE LEADING RECORD QUANTITY SCREENS.**
+
+`LANE_SIGN_DEFINITE`. The principal proposed searching from the other direction: **find the smallest
+appearance of gravity and count down.**
+
+### THE COUNT-DOWN, AS ARITHMETIC
+
+The smallest **source** whose gravitational field has been measured is ~90 mg of gold (Westphal et
+al., *Nature*, 2021) — `0.090 / 196.97 × 6.022e23 = 2.752e20` atoms. This program reaches `N ≈ 10`.
+
+> **The gap is 19.4 orders of magnitude and no simulation closes it.** `α_G/α_EM = 5.9e-39 / 7.297e-3
+> = 8.09e-37`, twenty orders below the `float64` noise floor. **The strength is unreachable; only the
+> FORM is testable.**
+
+Note the asymmetry: gravity's **probe** can be a single quantum system (neutron interferometry,
+single-ion redshift over 33 cm). Gravity's **source** needs `~10²⁰`.
+
+### BUT THE COUNT-DOWN EXPLAINS *WHY* THE NUMBER IS THAT LARGE, AND THAT IS TESTABLE AT `N = 10`
+
+**Gravity wins at scale not because it grows faster per pair, but because it does not CANCEL.**
+Charge comes in two signs and neutralises in bulk; mass has one sign and adds. **So the record-level
+signature of a gravity-role quantity is SIGN-DEFINITENESS** — a form property, scale-free.
+
+### THE LEADING TWO-BODY RECORD QUANTITY IS TWO-SIGNED AND CANCELS *MORE* WITH `N`
+
+| records `k` | 2 | 4 | 6 | 8 |
+|---|---|---|---|---|
+| integer intersection values | `[-2,0,1,2]` | `[-4…4]` | `[-6…6]` | `[-8…8]` |
+| Σ | 2 | 8 | 18 | — |
+| Σ\|·\| | 6 | 36 | 106 | — |
+| **`\|Σ\| / Σ\|·\|`** | **0.3333** | **0.2222** | **0.1698** | — |
+
+> ### **A QUANTITY THAT CANCELS CANNOT DOMINATE AT `10²⁰` CONSTITUENTS, WHATEVER ITS FORM AND HOWEVER
+> ### IT SCALES. THE PAIRING SCREENS.**
+
+### THE MEASUREMENT HAD NEVER BEEN POSSIBLE BEFORE
+
+**Every measurement of the pairing in this program was taken over `F₂`, where the values are `{0,1}`
+and the question of sign cannot even be posed.** The signed object is the **integer** intersection
+number, and it had not been computed. Registered as **D-19**.
+
+### THIS REFINES C-35 RATHER THAN OVERTURNING IT
+
+C-35 ruled the pairing out as a density because it is **topological** — true, and it is why the
+pairing does not grow with a record carrier's extent. But the integer values' **range does widen**
+with `k`, from `[-2,2]` to `[-8,8]`. **What kills it is not failure to grow. It is cancellation.**
+
+> ### **THE DISCRIMINATOR: A QUANTITY WITH `|Σ|/Σ|·| = 1` ACCUMULATES WITHOUT BOUND HOWEVER SMALL
+> ### EACH TERM IS — WHICH IS EXACTLY HOW A `10⁻³⁶` COUPLING WINS AT `10²⁰` CONSTITUENTS.**
+
+The crowding suppression is the live candidate and its sign is genuinely open — sharing an
+environment site could constructively help a record as easily as hurt it. Under measurement.

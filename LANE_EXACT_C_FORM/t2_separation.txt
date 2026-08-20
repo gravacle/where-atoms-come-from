@@ -1,0 +1,105 @@
+========================================================================================================
+T2(a)  EXACT F_2 FACTS ABOUT SEPARATION -- these hold at EVERY n, by proof, not by range
+========================================================================================================
+
+  FACT 1 (exact, all n).  Two Pauli operators with DISJOINT supports COMMUTE.  The symplectic
+     form sums i-wise over the qubits, so a qubit outside both supports contributes nothing and
+     a qubit in only one support contributes nothing.  Therefore sp(A,B) = 0 whenever
+     supp A  ^  supp B = empty.
+  FACT 2 (exact, all n).  sp is invariant under multiplication by stabilisers, so it is a
+     property of the LOGICAL CLASSES, not of the representatives.  Consequently two logical
+     classes that ANTICOMMUTE can NEVER be represented by disjointly-supported operators.
+  COROLLARY.  The symplectic pairing -- the only record-record relation this program has found
+     an interaction to depend on (C-38, C-39) -- is a STRICT CONTACT relation: it is identically
+     zero at every separation >= 1 and cannot be made non-zero by any choice of representative.
+     There is no 'pairing at a distance' to fall off.
+
+  n=  8  A = X0X1 derived-record=True   partners tested: 10   all partners derived-records: True   sp(A,B) non-zero at any separation>=1: 0
+  [PASS] n=8: exact pairing identically zero at every separation >= 1 
+  n= 10  A = X0X1 derived-record=True   partners tested: 14   all partners derived-records: True   sp(A,B) non-zero at any separation>=1: 0
+  [PASS] n=10: exact pairing identically zero at every separation >= 1 
+  n= 12  A = X0X1 derived-record=True   partners tested: 18   all partners derived-records: True   sp(A,B) non-zero at any separation>=1: 0
+  [PASS] n=12: exact pairing identically zero at every separation >= 1 
+  n= 14  A = X0X1 derived-record=True   partners tested: 22   all partners derived-records: True   sp(A,B) non-zero at any separation>=1: 0
+  [PASS] n=14: exact pairing identically zero at every separation >= 1 
+  n= 16  A = X0X1 derived-record=True   partners tested: 26   all partners derived-records: True   sp(A,B) non-zero at any separation>=1: 0
+  [PASS] n=16: exact pairing identically zero at every separation >= 1 
+  n= 20  A = X0X1 derived-record=True   partners tested: 34   all partners derived-records: True   sp(A,B) non-zero at any separation>=1: 0
+  [PASS] n=20: exact pairing identically zero at every separation >= 1 
+
+========================================================================================================
+T2(b)  EXACT CLIFFORD-INVARIANCE ARGUMENT  (this is the load-bearing exact result)
+========================================================================================================
+
+  On [[n,n-2,2]] the code space is the H ground space and H is CONSTANT on it, so H_red = E0*I.
+  A record compresses to a logical Pauli on the k = n-2 logical qubits.  The initial state is
+  the maximally mixed code state.  A coupling built from records is
+        H_int = lam * sum_a  (R_a|code) tensor B_{j(a)} .
+  Let C be any Clifford on the logical qubits.  C commutes with H_red (which is a multiple of I),
+  preserves the maximally mixed state, and conjugates the whole joint evolution by C tensor I.
+  Holevo chi is invariant under a unitary on the system that is applied to state, coupling and
+  readout alike.  The Clifford group acts TRANSITIVELY on tuples of independent logical Paulis
+  with a given symplectic Gram matrix.  THEREFORE:
+
+     every chi in this setting is a function of the F_2 SYMPLECTIC GRAM MATRIX of the operators
+     involved and of the bath-site assignment a -> j(a), AND OF NOTHING ELSE.
+
+  Supports, weights, separations and orientations are not arguments of that function.  This is
+  an EXACT statement, valid at every n, not a trend over a finite range.  It is verified below
+  against configurations chosen to be as geometrically different as the carrier allows.
+
+  n=10, code dim 256, bath 2 qubits, lam 0.8, 25 times in [1,13]
+  configuration                       sp  sep  dsym    chi(A) crowded    chi(B) crowded
+  X0X1 & X2X3   (adjacent)             0    1     4    0.136408688972    0.136408688972
+  X0X1 & X8X9   (far apart)            0    7     4    0.136408688972    0.136408688972
+  X0X1 & Z4Z5   (far, other type)      0    3     4    0.136408688972    0.136408688972
+  X3X7 & Z2Z8   (interleaved)          0    1     4    0.136408688972    0.136408688972
+  X0X9 & X4X5   (nested)               0    4     4    0.136408688972    0.136408688972
+  [PASS] all same-Gram configurations give IDENTICAL chi regardless of support/separation/shape (inspect the table: identical to the last printed digit)
+
+========================================================================================================
+T2(c)  THE SEPARATION SCAN.  NEG CONTROL / TEST / POS CONTROLS IN ONE TABLE
+========================================================================================================
+
+  n=8 (code dim 64), bath nq=2, lam=0.4   chi_A ALONE = 0.276635159834
+    partner     sep  dsym  sp(NEG CTRL)   chi_A crowded  I=alone-crowded (TEST)   I geom bath (POS1)  I exp-weighted (POS2)
+    X2X3          1     4             0  0.125625482447          0.151009677386       0.151009677386         0.128778714179
+    X3X4          2     4             0  0.125625482447          0.151009677386       0.151009677386         0.089041016917
+    X4X5          3     4             0  0.125625482447          0.151009677386      -0.000000000000         0.045383237102
+    X5X6          4     4             0  0.125625482447          0.151009677386      -0.000000000000         0.019381457996
+    X6X7          5     4             0  0.125625482447          0.151009677386      -0.000000000000         0.007594112193
+    SPREAD over separation:   TEST 7.216e-16   POS1 1.510e-01   POS2 1.212e-01
+  [PASS] n=8 lam=0.4: TEST interaction has NO separation dependence (spread at noise floor)   spread 7.216e-16
+  [PASS] n=8 lam=0.4: POS CONTROLS DO register separation dependence   POS1 1.510e-01  POS2 1.212e-01
+    POS2 log-linear fit: slope -0.718622 (imposed exp weight gives 2/xi = 1.000000 for chi ~ w^2), max |residual| 2.100e-01
+
+  n=8 (code dim 64), bath nq=2, lam=0.8   chi_A ALONE = 0.521527300760
+    partner     sep  dsym  sp(NEG CTRL)   chi_A crowded  I=alone-crowded (TEST)   I geom bath (POS1)  I exp-weighted (POS2)
+    X2X3          1     4             0  0.136408688972          0.385118611788       0.385118611788         0.282641983189
+    X3X4          2     4             0  0.136408688972          0.385118611788       0.385118611788         0.222210791383
+    X4X5          3     4             0  0.136408688972          0.385118611788       0.000000000000         0.197080233029
+    X5X6          4     4             0  0.136408688972          0.385118611788       0.000000000000         0.198897969916
+    X6X7          5     4             0  0.136408688972          0.385118611788      -0.000000000000         0.119296832125
+    SPREAD over separation:   TEST 6.661e-16   POS1 3.851e-01   POS2 1.633e-01
+  [PASS] n=8 lam=0.8: TEST interaction has NO separation dependence (spread at noise floor)   spread 6.661e-16
+  [PASS] n=8 lam=0.8: POS CONTROLS DO register separation dependence   POS1 3.851e-01  POS2 1.633e-01
+    POS2 log-linear fit: slope -0.183597 (imposed exp weight gives 2/xi = 1.000000 for chi ~ w^2), max |residual| 1.952e-01
+
+  n=8 (code dim 64), bath nq=2, lam=1.2   chi_A ALONE = 0.599566691971
+    partner     sep  dsym  sp(NEG CTRL)   chi_A crowded  I=alone-crowded (TEST)   I geom bath (POS1)  I exp-weighted (POS2)
+    X2X3          1     4             0  0.127539682306          0.472027009664       0.472027009664         0.340659656216
+    X3X4          2     4             0  0.127539682306          0.472027009664       0.472027009664         0.291621309681
+    X4X5          3     4             0  0.127539682306          0.472027009664      -0.000000000000         0.263186578783
+    X5X6          4     4             0  0.127539682306          0.472027009664      -0.000000000000         0.240957418514
+    X6X7          5     4             0  0.127539682306          0.472027009664      -0.000000000000         0.281062141645
+    SPREAD over separation:   TEST 8.327e-16   POS1 4.720e-01   POS2 9.970e-02
+  [PASS] n=8 lam=1.2: TEST interaction has NO separation dependence (spread at noise floor)   spread 8.327e-16
+  [PASS] n=8 lam=1.2: POS CONTROLS DO register separation dependence   POS1 4.720e-01  POS2 9.970e-02
+    POS2 log-linear fit: slope -0.057545 (imposed exp weight gives 2/xi = 1.000000 for chi ~ w^2), max |residual| 1.132e-01
+
+  n=10 (code dim 256), bath nq=2, lam=0.4   chi_A ALONE = 0.276635159834
+    partner     sep  dsym  sp(NEG CTRL)   chi_A crowded  I=alone-crowded (TEST)   I geom bath (POS1)  I exp-weighted (POS2)
+    X2X3          1     4             0  0.125625482447          0.151009677386       0.151009677386         0.128778714179
+    X3X4          2     4             0  0.125625482447          0.151009677386       0.151009677386         0.089041016917
+    X4X5          3     4             0  0.125625482447          0.151009677386       0.151009677386         0.045383237102
+    X5X6          4     4             0  0.125625482447          0.151009677386      -0.000000000000         0.019381457996

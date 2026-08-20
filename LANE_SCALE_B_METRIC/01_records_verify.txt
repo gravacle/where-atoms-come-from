@@ -1,0 +1,80 @@
+====================================================================================================
+LANE_SCALE_B_METRIC  STEP 1 -- CARRIER CONSTRUCTION AND CLAUSE VERIFICATION
+carrier family: [[n, n-2, 2]],  H = -(X^(x)n + Z^(x)n),  records = the 2k logical Paulis
+====================================================================================================
+
+n    k      2k     dim      mult(H)    SC-1     SC-2     SC-3     SC-4     SC-5     SC-6      
+----------------------------------------------------------------------------------------------------
+4    2      4      16       [4, 8, 4]  True     True     True     True     True     True      
+6    4      8      64       [16, 32, 16] True     True     True     True     True     True      
+8    6      12     256      [64, 128, 64] True     True     True     True     True     True      
+10   8      16     1024     [256, 512, 256] True     True     True     True     True     True      
+
+SC-1 non-degenerate symplectic pairing   SC-2 [R,H]=0 (F2 AND numeric)   SC-3 bit
+SC-4 non-trivial   SC-5 writable (Tr P_E R = 0 on EVERY eigenspace)   SC-6 multiplicities
+
+SC-7  exact-symbolic vs numeric code-space overlap  |Tr(P_g R_i R_j)|/Tr(P_g)
+n    max|sym-num|   offdiag nonzero verdict     
+------------------------------------------------------------
+4    2.22e-16       0              PASS        
+6    1.11e-16       0              PASS        
+8    1.11e-16       0              PASS        
+10   1.11e-16       0              PASS        
+
+THE RECORDS THEMSELVES (Pauli letters over the n physical qubits, I/X/Z/Y):
+  n=4:
+     X1   XXII   support=[0, 1]  weight=2
+     X2   XIXI   support=[0, 2]  weight=2
+     Z1   ZIZI   support=[0, 2]  weight=2
+     Z2   ZZII   support=[0, 1]  weight=2
+  n=6:
+     X1   XXIIII   support=[0, 1]  weight=2
+     X2   XIXIII   support=[0, 2]  weight=2
+     X3   XXXXII   support=[0, 1, 2, 3]  weight=4
+     X4   XXXIXI   support=[0, 1, 2, 4]  weight=4
+     Z1   ZIZIII   support=[0, 2]  weight=2
+     Z2   ZZIIII   support=[0, 1]  weight=2
+     Z3   ZZZIZI   support=[0, 1, 2, 4]  weight=4
+     Z4   ZZZZII   support=[0, 1, 2, 3]  weight=4
+  n=8:
+     X1   XXIIIIII   support=[0, 1]  weight=2
+     X2   XIXIIIII   support=[0, 2]  weight=2
+     X3   XXXXIIII   support=[0, 1, 2, 3]  weight=4
+     X4   XXXIXIII   support=[0, 1, 2, 4]  weight=4
+     X5   XXXXXXII   support=[0, 1, 2, 3, 4, 5]  weight=6
+     X6   XXXXXIXI   support=[0, 1, 2, 3, 4, 6]  weight=6
+     Z1   ZIZIIIII   support=[0, 2]  weight=2
+     Z2   ZZIIIIII   support=[0, 1]  weight=2
+     Z3   ZZZIZIII   support=[0, 1, 2, 4]  weight=4
+     Z4   ZZZZIIII   support=[0, 1, 2, 3]  weight=4
+     Z5   ZZZZZIZI   support=[0, 1, 2, 3, 4, 6]  weight=6
+     Z6   ZZZZZZII   support=[0, 1, 2, 3, 4, 5]  weight=6
+  n=10:
+     X1   XXIIIIIIII   support=[0, 1]  weight=2
+     X2   XIXIIIIIII   support=[0, 2]  weight=2
+     X3   XXXXIIIIII   support=[0, 1, 2, 3]  weight=4
+     X4   XXXIXIIIII   support=[0, 1, 2, 4]  weight=4
+     X5   XXXXXXIIII   support=[0, 1, 2, 3, 4, 5]  weight=6
+     X6   XXXXXIXIII   support=[0, 1, 2, 3, 4, 6]  weight=6
+     X7   XXXXXXXXII   support=[0, 1, 2, 3, 4, 5, 6, 7]  weight=8
+     X8   XXXXXXXIXI   support=[0, 1, 2, 3, 4, 5, 6, 8]  weight=8
+     Z1   ZIZIIIIIII   support=[0, 2]  weight=2
+     Z2   ZZIIIIIIII   support=[0, 1]  weight=2
+     Z3   ZZZIZIIIII   support=[0, 1, 2, 4]  weight=4
+     Z4   ZZZZIIIIII   support=[0, 1, 2, 3]  weight=4
+     Z5   ZZZZZIZIII   support=[0, 1, 2, 3, 4, 6]  weight=6
+     Z6   ZZZZZZIIII   support=[0, 1, 2, 3, 4, 5]  weight=6
+     Z7   ZZZZZZZIZI   support=[0, 1, 2, 3, 4, 5, 6, 8]  weight=8
+     Z8   ZZZZZZZZII   support=[0, 1, 2, 3, 4, 5, 6, 7]  weight=8
+
+SYMBOLIC REACH -- the exact (F2) relations need no matrices, so they run far past the numerics:
+n    k      2k       dim (unused)  
+4    2      4        16            
+6    4      8        64            
+8    6      12       256           
+10   8      16       1024          
+12   10     20       4096          
+14   12     24       16384         
+16   14     28       65536         
+18   16     32       262144        
+20   18     36       1048576       

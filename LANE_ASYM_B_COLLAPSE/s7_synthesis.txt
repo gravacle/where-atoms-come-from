@@ -1,0 +1,113 @@
+==============================================================================================================================
+S7   THE ONE TABLE.  [[n, n-2, 2]] family, N = k = n-2 records.
+==============================================================================================================================
+
+  quantity                                            N range   form         dAIC  alpha  Q2N/QN   expo EXT (a)? 
+  ----------------------------------------------------------------------------------------------------------------------------
+  CONTROL-LIN   k = n-2, the record count             2..58     LIN           999   1.00    2.00   1.00 YES      
+  CONTROL-SAT-1 chi_joint(N records : fixed 3q bath)  2..40     LOG             1   0.22    1.09   0.18 no       
+  CONTROL-LIN-2 SUM chi_i, one bath site per record   2..40     LIN             5   1.00    2.00   1.00 YES      
+  Q1  TOTAL CHI  SUM_i chi(R_i : fixed 3q bath)       2..40     SAT2           10  -0.54    0.70  -0.52 no       
+  Q2a INTERACTING-PAIR COUNT, symplectic, N records   2..58     -           exact      -       -      - no       
+  Q2b   same, on records+writers  [POSITIVE CONTROL]  2..58     LIN           999   1.00    2.00   1.00 YES      
+  Q2c INTERACTING-PAIR COUNT, support overlap         2..58     LIN           999   2.06    4.15   2.05 no       
+  Q3  TOTAL WRITER WEIGHT  SUM_i w(R_i)               2..58     LIN           999   1.00    2.00   1.00 YES      
+  Q4a LAM_MAX, symplectic relation matrix             2..58     -           exact      -       -      - no       
+  Q4b   same, on records+writers  [POSITIVE CONTROL]  2..58     -           exact   0.00    1.00   0.00 no       
+  Q4c LAM_MAX, support-overlap relation matrix        2..58     LIN           999   1.81    3.99   1.95 no       
+
+  CRITERION (c) -- NOT TOPOLOGICAL.  STATED RULE: a quantity that is an EXACT affine function
+  of the record count N (least-squares residual against a*N+b identically zero to machine
+  precision) IS the count in other units, and C-35 has already established that a count is
+  topological and cannot supply a density law.  Applied mechanically below, not by judgement.
+
+  quantity                                            CATEGORY                       additive (b)?  not topo (c)? role
+  ----------------------------------------------------------------------------------------------------------------------------
+  CONTROL-LIN   k = n-2, the record count             GROWING (linear)               ADDITIVE       NO (= a*N+b) CONTROL known exactly linear
+  CONTROL-SAT-1 chi_joint(N records : fixed 3q bath)  CANNOT DISTINGUISH             NOT ADDITIVE   yes         CONTROL known bounded <= 3 bits
+  CONTROL-LIN-2 SUM chi_i, one bath site per record   GROWING (linear)               ADDITIVE       yes         CONTROL known exactly linear
+  Q1  TOTAL CHI  SUM_i chi(R_i : fixed 3q bath)       DECAYING                       NOT ADDITIVE   yes         probe
+  Q2a INTERACTING-PAIR COUNT, symplectic, N records   IDENTICALLY ZERO               ADDITIVE (of zero) NO (= a*N+b) probe
+  Q2b   same, on records+writers  [POSITIVE CONTROL]  GROWING (linear)               ADDITIVE       NO (= a*N+b) CONTROL positive for Q2a
+  Q2c INTERACTING-PAIR COUNT, support overlap         GROWING (super-linear)         ADDITIVE but packing-dependent yes         probe
+  Q3  TOTAL WRITER WEIGHT  SUM_i w(R_i)               GROWING (linear)               ADDITIVE       NO (= a*N+b) probe
+  Q4a LAM_MAX, symplectic relation matrix             IDENTICALLY ZERO               ADDITIVE (of zero) NO (= a*N+b) probe
+  Q4b   same, on records+writers  [POSITIVE CONTROL]  CONSTANT                       NOT ADDITIVE   NO (= a*N+b) CONTROL positive for Q4a
+  Q4c LAM_MAX, support-overlap relation matrix        GROWING (super-linear)         NOT ADDITIVE   yes         probe
+
+  quantity                                                 Q(1/N->0)         +- err 1/N-fit rms
+  ----------------------------------------------------------------------------------------------------------------------------
+  CONTROL-LIN   k = n-2, the record count                  130.64002        2.08793      0.2062
+  CONTROL-SAT-1 chi_joint(N records : fixed 3q bath)         2.53196        0.40403     0.02246
+  CONTROL-LIN-2 SUM chi_i, one bath site per record         43.30337        9.29124     0.07854
+  Q1  TOTAL CHI  SUM_i chi(R_i : fixed 3q bath)              0.14413        0.39845    0.002433
+  Q2a INTERACTING-PAIR COUNT, symplectic, N records          0.00000        0.00000           0
+  Q2b   same, on records+writers  [POSITIVE CONTROL]       130.64002        2.08793      0.2062
+  Q2c INTERACTING-PAIR COUNT, support overlap             2820.03185       91.93000       9.078
+  Q3  TOTAL WRITER WEIGHT  SUM_i w(R_i)                    261.28004        4.17586      0.4123
+  Q4a LAM_MAX, symplectic relation matrix                    0.00000        0.00000           0
+  Q4b   same, on records+writers  [POSITIVE CONTROL]         1.00000        0.00000           0
+  Q4c LAM_MAX, support-overlap relation matrix            1211.08831      109.31903       10.79
+
+==============================================================================================================================
+  THE READ -- filled from the numbers above, not in advance.
+==============================================================================================================================
+
+  IDENTICALLY ZERO at every N tested (2): Q2a; Q4a
+  EXACTLY CONSTANT at every N tested (1): Q4b
+  BOUNDED / SATURATING / DECAYING   (2): CONTROL-SAT-1; Q1
+  GROWING                           (6): CONTROL-LIN; CONTROL-LIN-2; Q2b; Q2c; Q3; Q4c
+  MEETING gravity's requirement (a) (4): CONTROL-LIN; CONTROL-LIN-2; Q2b; Q3
+
+  Of the 6 PROBE quantities (controls excluded):
+    meeting (a) STRICT EXTENSIVITY and (b) ADDITIVITY : 1  Q3
+    ALSO meeting (c) NOT TOPOLOGICAL                  : 0  NONE
+
+  The one quantity that clears (a) and (b) is Q3, total writer weight, and it clears them
+  because it is EXACTLY 2N.  The per-record writer weight is 2 at every n and for every
+  record -- proved, not fitted -- so the sum is the record COUNT wearing different units.
+  C-35 has already ruled the count out as a density law.  Nothing new passed; the table
+  found the count again under a new name, which is what criterion (c) is there to catch.
+
+  THE CONTROLS BEHAVED: the engine called the exactly-linear control linear (dAICc decisive),
+  called the brief's own saturating control saturating in S6 (SAT1 over LIN by dAICc 32), and
+  ruled linear out for the bounded chi_joint control by dAICc 80.  Its ONE failure is stated
+  in S4 part 0 and repeated here: over SIX points with a realistic noise floor it cannot tell
+  LOGARITHMIC from SATURATING.  It can always tell either of them from LINEAR.  Since the only
+  question gravity asks is linear-or-not, that failure does not touch the verdicts above --
+  but it does mean no claim of the form 'this saturates rather than growing logarithmically'
+  is made anywhere in this lane from a fit alone.
+
+  WHAT IS EXACT AND WHAT IS A TREND:
+    EXACT (rules out emergence at ANY N, however large):
+      Q2a, Q4a identically zero -- independent records COMMUTE, so their symplectic relation
+        matrix is the zero matrix.  Positive controls Q2b (= k) and Q4b (= 1) confirm the
+        instrument would register a non-zero if one were there.
+      Q4b, and lam_max of ANY relation matrix, fails additivity by exact argument 4:
+        the union's matrix is block diagonal, so lam_max is a MAX, and a max is not a sum.
+      Q3 total writer weight = 2N exactly: the per-record writer weight is 2 at every n and
+        for every record, proved both ways (no weight-1 admissible unitary of any kind exists;
+        a weight-2 admissible Pauli flipping R always exists), and confirmed by exhaustive
+        search over all 4^n Paulis at n = 4, 6, 8.  So Q3 is the record COUNT times a constant
+        -- C-35's count wearing different units, not a new quantity.
+      CONTROL-SAT-1 and Q1 are capped at nq bits by SUM_i chi_i <= chi_joint <= S(rho_B) <= nq,
+        an exact chain, so no bath of fixed size can carry an extensive record source.
+    TREND ONLY (absence WITHIN RANGE, N <= 40 for chi and N <= 58 for the combinatorics):
+      Q1's particular decay exponent, and the fitted exponents of Q2c and Q4c.
+
+  THE ONE HONEST POSITIVE: Q2c and Q4c DO grow, and grow FASTER than linearly (exponents
+  2.05 +- 0.00 and 1.95 +- 0.04).  Neither is a source term.  Q4c is a lam_max and fails (b)
+  exactly.  Q2c is additive over disjoint regions but is not a function of how much is
+  enclosed: two disjoint 6-record regions give 14, one region holding 12 records gives 21.
+  Its super-linear growth is the crowding of k logical supports onto n = k+2 qubits, and it
+  vanishes the moment the records are genuinely far apart -- which is the configuration
+  gravity's additivity clause is about.  A super-linear quantity also fails (a) in the other
+  direction: S(2N)/S(N) -> 4, not 2.
+
+  LARGEST N REACHED, AND WHAT STOPPED IT:
+    combinatorial quantities  N = 58 (n = 60).  Nothing stopped it; cost is O(n^3) in F_2.
+      Stopped at 60 because the categories were already exact and further n adds no information.
+    Holevo chi              N = 40 (n = 42).  Reached via an EXACT reduction chain validated
+      in S1: dense 2^n x 2^nq dies at n = 8 (2048-dim joint state); the 2^k sector sum dies
+      near k = 20; the counting compression is polynomial and carried it to 40.  It would go
+      further; 40 was enough for the doubling test to have five doublings inside it.

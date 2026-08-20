@@ -1,0 +1,121 @@
+==============================================================================================================================
+E-2  THREE-RECORD QUANTITIES ON [[n,n-2,2]] -- EXACT INTEGER / GAUSSIAN-INTEGER ARITHMETIC
+==============================================================================================================================
+
+STEP 0   REPRESENTATIVE (GAUGE) AUDIT.   W(a xor s) = eps(a,s) * W(a) on the protected space.
+         A scalar of ODD degree in a given record is a RECORD observable only if eps == +1.
+------------------------------------------------------------------------------------------------------------------------------
+  n    |N(S)/S|   |S|    eps values over all (a,s)    verdict                                                 
+  4    16 EXHAUSTIVE 4      ['-1', '1']                  NOT CANONICAL: odd-degree scalars are NOT record observables
+  6    256 EXHAUSTIVE 4      ['-1', '1']                  NOT CANONICAL: odd-degree scalars are NOT record observables
+  8    2^12, 2048 sampled 4      ['-1', '1']                  NOT CANONICAL: odd-degree scalars are NOT record observables
+  10   2^16, 2048 sampled 4      ['-1', '1']                  NOT CANONICAL: odd-degree scalars are NOT record observables
+  12   2^20, 2048 sampled 4      ['-1', '1']                  NOT CANONICAL: odd-degree scalars are NOT record observables
+  14   2^24, 2048 sampled 4      ['-1', '1']                  NOT CANONICAL: odd-degree scalars are NOT record observables
+  16   2^28, 2048 sampled 4      ['-1', '1']                  NOT CANONICAL: odd-degree scalars are NOT record observables
+
+==============================================================================================================================
+STEP 1   T1 ASSOCIATOR [[R_a,R_b],R_c] AND T2 JACOBI SUM -- EXACT
+         symbolic law under test: [[Ra,Rb],Rc] != 0  <=>  sp(a,b)=1 AND sp(a xor b, c)=1
+------------------------------------------------------------------------------------------------------------------------------
+  n    pool   triples    exactly 0    exactly !=0   ||assoc||_F^2/2^n (non-0) Jacobi sum (control)   rule mismatch   
+  4    16     4096       3136         960           [16]                     EXACTLY 0 in all 4096  0               
+  6    16     4096       3224         872           [16]                     EXACTLY 0 in all 4096  0               
+  8    20     8000       6720         1280          [16]                     EXACTLY 0 in all 8000  0               
+  10   20     8000       7080         920           [16]                     EXACTLY 0 in all 8000  0               
+  12   20     8000       6660         1340          [16]                     EXACTLY 0 in all 8000  0               
+  14   20     8000       6920         1080          [16]                     EXACTLY 0 in all 8000  0               
+  16   20     8000       6968         1032          [16]                     EXACTLY 0 in all 8000  0               
+  20   20     8000       7192         808           [16]                     EXACTLY 0 in all 8000  0               
+  24   20     8000       7656         344           [16]                     EXACTLY 0 in all 8000  0               
+  32   20     8000       7880         120           [16]                     EXACTLY 0 in all 8000  0               
+  48   20     8000       7804         196           [16]                     EXACTLY 0 in all 8000  0               
+  64   20     8000       7776         224           [16]                     EXACTLY 0 in all 8000  0               
+
+==============================================================================================================================
+STEP 2   T3-T6  tau(a,b,c) = Tr(Pi Ra Rb Rc)/Tr(Pi), EXACT IN Z[i]
+         tau is EXACTLY ZERO unless a xor b xor c lies in S; those are the CLOSED triples.
+------------------------------------------------------------------------------------------------------------------------------
+
+  n = 4   record classes |N(S)/S| = 2^4   pool = 16 (EXHAUSTIVE over ALL classes)
+     OPEN triples (a xor b xor c NOT in S): 5631 tested; tau EXACTLY ZERO in 5631, non-zero in 0
+     CLOSED triples (c = a xor b): 256
+     (sp_ab,sp_bc,sp_ac)    tau values (EXACT, Z[i])       cyclic sum of tau            K = (Ra Rb Rc)^2      
+     (0, 0, 0)              {-1, +1}                       {-3, +3}                     {+1}                  
+     (1, 1, 1)              {-1i, +1i}                     {-3i, +3i}                   {-1}                  
+     T4  Im(tau) != 0  <=>  sp_ab+sp_bc+sp_ac odd :  HOLDS EXACTLY on every closed triple
+     T7  tau determined by the three pairwise sp values ALONE : NO -- a residual beyond the pairing
+     T7  K   determined by the three pairwise sp values ALONE : YES
+
+  n = 6   record classes |N(S)/S| = 2^8   pool = 256 (EXHAUSTIVE over ALL classes)
+     OPEN triples (a xor b xor c NOT in S): 5981 tested; tau EXACTLY ZERO in 5981, non-zero in 0
+     CLOSED triples (c = a xor b): 65536
+     (sp_ab,sp_bc,sp_ac)    tau values (EXACT, Z[i])       cyclic sum of tau            K = (Ra Rb Rc)^2      
+     (0, 0, 0)              {-1, +1}                       {-3, +3}                     {+1}                  
+     (1, 1, 1)              {-1i, +1i}                     {-3i, +3i}                   {-1}                  
+     T4  Im(tau) != 0  <=>  sp_ab+sp_bc+sp_ac odd :  HOLDS EXACTLY on every closed triple
+     T7  tau determined by the three pairwise sp values ALONE : NO -- a residual beyond the pairing
+     T7  K   determined by the three pairwise sp values ALONE : YES
+
+  n = 8   record classes |N(S)/S| = 2^12   pool = 140 (all 12 generators + fixed-seed sample)
+     OPEN triples (a xor b xor c NOT in S): 5998 tested; tau EXACTLY ZERO in 5998, non-zero in 0
+     CLOSED triples (c = a xor b): 19600
+     (sp_ab,sp_bc,sp_ac)    tau values (EXACT, Z[i])       cyclic sum of tau            K = (Ra Rb Rc)^2      
+     (0, 0, 0)              {-1, +1}                       {-3, +3}                     {+1}                  
+     (1, 1, 1)              {-1i, +1i}                     {-3i, +3i}                   {-1}                  
+     T4  Im(tau) != 0  <=>  sp_ab+sp_bc+sp_ac odd :  HOLDS EXACTLY on every closed triple
+     T7  tau determined by the three pairwise sp values ALONE : NO -- a residual beyond the pairing
+     T7  K   determined by the three pairwise sp values ALONE : YES
+
+  n = 10   record classes |N(S)/S| = 2^16   pool = 144 (all 16 generators + fixed-seed sample)
+     OPEN triples (a xor b xor c NOT in S): 5999 tested; tau EXACTLY ZERO in 5999, non-zero in 0
+     CLOSED triples (c = a xor b): 20736
+     (sp_ab,sp_bc,sp_ac)    tau values (EXACT, Z[i])       cyclic sum of tau            K = (Ra Rb Rc)^2      
+     (0, 0, 0)              {-1, +1}                       {-3, +3}                     {+1}                  
+     (1, 1, 1)              {-1i, +1i}                     {-3i, +3i}                   {-1}                  
+     T4  Im(tau) != 0  <=>  sp_ab+sp_bc+sp_ac odd :  HOLDS EXACTLY on every closed triple
+     T7  tau determined by the three pairwise sp values ALONE : NO -- a residual beyond the pairing
+     T7  K   determined by the three pairwise sp values ALONE : YES
+
+==============================================================================================================================
+STEP 3   THE NAMED CONTROLS, D-15 -- in the same table as the results above
+------------------------------------------------------------------------------------------------------------------------------
+  n    triple                               ||assoc||_F^2 / 2^n  tau            Im tau       verdict           
+  4    CTRL-NZ  (X0, Z0, X0 xor Z0)         0                    -1i            -1           **CONTROL FAILED**
+  4    CTRL-Z   (X0, X1, X0 xor X1)         0                    +1             0            OK                
+  4    CTRL-Z   (X0, X1, Z1)  [X0 commutes] 0                    0              0            OK                
+  6    CTRL-NZ  (X0, Z0, X0 xor Z0)         0                    -1i            -1           **CONTROL FAILED**
+  6    CTRL-Z   (X0, X1, X0 xor X1)         0                    +1             0            OK                
+  6    CTRL-Z   (X0, X1, Z1)  [X0 commutes] 0                    0              0            OK                
+  8    CTRL-NZ  (X0, Z0, X0 xor Z0)         0                    -1i            -1           **CONTROL FAILED**
+  8    CTRL-Z   (X0, X1, X0 xor X1)         0                    +1             0            OK                
+  8    CTRL-Z   (X0, X1, Z1)  [X0 commutes] 0                    0              0            OK                
+  10   CTRL-NZ  (X0, Z0, X0 xor Z0)         0                    -1i            -1           **CONTROL FAILED**
+  10   CTRL-Z   (X0, X1, X0 xor X1)         0                    +1             0            OK                
+  10   CTRL-Z   (X0, X1, Z1)  [X0 commutes] 0                    0              0            OK                
+  12   CTRL-NZ  (X0, Z0, X0 xor Z0)         0                    -1i            -1           **CONTROL FAILED**
+  12   CTRL-Z   (X0, X1, X0 xor X1)         0                    +1             0            OK                
+  12   CTRL-Z   (X0, X1, Z1)  [X0 commutes] 0                    0              0            OK                
+  16   CTRL-NZ  (X0, Z0, X0 xor Z0)         0                    -1i            -1           **CONTROL FAILED**
+  16   CTRL-Z   (X0, X1, X0 xor X1)         0                    +1             0            OK                
+  16   CTRL-Z   (X0, X1, Z1)  [X0 commutes] 0                    0              0            OK                
+
+==============================================================================================================================
+  E-2 SUMMARY
+==============================================================================================================================
+  STEP 0  representative (gauge) audit:
+     n=4    sign canonical (eps == +1 always): False
+     n=6    sign canonical (eps == +1 always): False
+     n=8    sign canonical (eps == +1 always): False
+     n=10   sign canonical (eps == +1 always): False
+     n=12   sign canonical (eps == +1 always): False
+     n=14   sign canonical (eps == +1 always): False
+     n=16   sign canonical (eps == +1 always): False
+  STEP 2  determinacy of the three-body trace by the pairwise pairing:
+     n=4    tau determined by pairwise sp: False   K determined: True    Im-rule holds: True
+     n=6    tau determined by pairwise sp: False   K determined: True    Im-rule holds: True
+     n=8    tau determined by pairwise sp: False   K determined: True    Im-rule holds: True
+     n=10   tau determined by pairwise sp: False   K determined: True    Im-rule holds: True
+  STEP 3  named controls all correct: False
+  largest n reached in STEP 1 (associator, exact): 64
+==============================================================================================================================

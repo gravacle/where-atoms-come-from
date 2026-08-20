@@ -1,0 +1,119 @@
+======================================================================================================================
+O-36 EXACT: does a TRANSPORT-FIXED record exist on D(D_4)?
+method: character theory (exact) for the block data (d_i,m_i); integer feasibility for Tr = 0;
+        cross-checked against a DIRECT construction by exact finite-group averaging.
+======================================================================================================================
+
+STEP 1 -- CHARACTER TABLES, VERIFIED (no sampling anywhere)
+  char-table self-check [D_4]: dims=[np.int64(1), np.int64(1), np.int64(1), np.int64(1), np.int64(2)]  int_err=2.2e-16  sum d^2 - |G| = 0  row_orth_err=1.4e-16  col_orth_err=8.9e-16  regular_err=2.2e-16  chi(e)-d err=0.0e+00  -> PASS
+  carrier D(D_4): dim 64   rep-homomorphism err 0.00e+00   max||[A_h,H]|| 0.00e+00
+  eigenvalues/multiplicities: [(-2.0, 22), (-1.0, 24), (-0.0, 18)]
+
+  char-table self-check [Z_2]: dims=[np.int64(1), np.int64(1)]  int_err=0.0e+00  sum d^2 - |G| = 0  row_orth_err=0.0e+00  col_orth_err=0.0e+00  regular_err=0.0e+00  chi(e)-d err=0.0e+00  -> PASS
+  carrier D(Z_2): dim 4   rep-homomorphism err 0.00e+00   max||[A_h,H]|| 0.00e+00
+  eigenvalues/multiplicities: [(-2.0, 4)]
+
+  char-table self-check [Z_2xZ_2]: dims=[np.int64(1), np.int64(1), np.int64(1), np.int64(1)]  int_err=1.1e-16  sum d^2 - |G| = 0  row_orth_err=1.1e-16  col_orth_err=4.4e-16  regular_err=1.1e-16  chi(e)-d err=0.0e+00  -> PASS
+  carrier D(Z_2xZ_2): dim 16   rep-homomorphism err 0.00e+00   max||[A_h,H]|| 0.00e+00
+  eigenvalues/multiplicities: [(-2.0, 16)]
+
+  char-table self-check [Z_4]: dims=[np.int64(1), np.int64(1), np.int64(1), np.int64(1)]  int_err=0.0e+00  sum d^2 - |G| = 0  row_orth_err=2.2e-16  col_orth_err=8.9e-16  regular_err=0.0e+00  chi(e)-d err=0.0e+00  -> PASS
+  carrier D(Z_4): dim 16   rep-homomorphism err 0.00e+00   max||[A_h,H]|| 0.00e+00
+  eigenvalues/multiplicities: [(-2.0, 16)]
+
+  char-table self-check [Q_8]: dims=[np.int64(1), np.int64(1), np.int64(1), np.int64(1), np.int64(2)]  int_err=2.2e-16  sum d^2 - |G| = 0  row_orth_err=1.4e-16  col_orth_err=8.9e-16  regular_err=2.2e-16  chi(e)-d err=0.0e+00  -> PASS
+  carrier D(Q_8): dim 64   rep-homomorphism err 0.00e+00   max||[A_h,H]|| 0.00e+00
+  eigenvalues/multiplicities: [(-2.0, 22), (-1.0, 24), (-0.0, 18)]
+
+  char-table self-check [D_8]: dims=[np.int64(1), np.int64(1), np.int64(1), np.int64(1), np.int64(2), np.int64(2), np.int64(2)]  int_err=4.4e-16  sum d^2 - |G| = 0  row_orth_err=2.3e-16  col_orth_err=1.8e-15  regular_err=4.4e-16  chi(e)-d err=0.0e+00  -> PASS
+  carrier D(D_8): dim 256   rep-homomorphism err 0.00e+00   max||[A_h,H]|| 0.00e+00
+  eigenvalues/multiplicities: [(-2.0, 46), (-1.0, 84), (-0.0, 126)]
+
+  char-table self-check [Z_3]: dims=[np.int64(1), np.int64(1), np.int64(1)]  int_err=2.2e-16  sum d^2 - |G| = 0  row_orth_err=3.3e-16  col_orth_err=8.9e-16  regular_err=3.3e-16  chi(e)-d err=0.0e+00  -> PASS
+  carrier D(Z_3): dim 9   rep-homomorphism err 0.00e+00   max||[A_h,H]|| 0.00e+00
+  eigenvalues/multiplicities: [(-2.0, 9)]
+
+======================================================================================================================
+STEP 2 -- PER-EIGENSPACE BLOCK DATA AND EXACT INTEGER FEASIBILITY OF Tr(P_E R) = 0
+  columns: carrier | ab? | eig | dimE | irrep multiplicities m_i | blocks (d_i x m_i) | sum d_i m_i == dimE | Tr range | 0 reachable
+----------------------------------------------------------------------------------------------------------------------
+  D(D_4)     NO    -2.00     22  [22, 0, 0, 0, 0]       1x22                        22==22 OK      [-22,22]       YES
+                   -1.00     24  [6, 6, 6, 6, 0]        1x6 1x6 1x6 1x6             24==24 OK      [-24,24]       YES
+                   -0.00     18  [0, 6, 6, 6, 0]        1x6 1x6 1x6                 18==18 OK      [-18,18]       YES
+----------------------------------------------------------------------------------------------------------------------
+  D(Z_2)     yes   -2.00      4  [4, 0]                 1x4                         4==4 OK        [-4,4]         YES
+----------------------------------------------------------------------------------------------------------------------
+  D(Z_2xZ_2) yes   -2.00     16  [0, 0, 0, 16]          1x16                        16==16 OK      [-16,16]       YES
+----------------------------------------------------------------------------------------------------------------------
+  D(Z_4)     yes   -2.00     16  [0, 0, 16, 0]          1x16                        16==16 OK      [-16,16]       YES
+----------------------------------------------------------------------------------------------------------------------
+  D(Q_8)     NO    -2.00     22  [22, 0, 0, 0, 0]       1x22                        22==22 OK      [-22,22]       YES
+                   -1.00     24  [6, 6, 6, 6, 0]        1x6 1x6 1x6 1x6             24==24 OK      [-24,24]       YES
+                   -0.00     18  [0, 6, 6, 6, 0]        1x6 1x6 1x6                 18==18 OK      [-18,18]       YES
+----------------------------------------------------------------------------------------------------------------------
+  D(D_8)     NO    -2.00     46  [46, 0, 0, 0, 0, 0, 0] 1x46                        46==46 OK      [-46,46]       YES
+                   -1.00     84  [18, 6, 30, 6, 0, 0, 12] 1x18 1x6 1x30 1x6 2x12      84==84 OK      [-84,84]       YES
+                   -0.00    126  [0, 18, 18, 18, 0, 0, 36] 1x18 1x18 1x18 2x36         126==126 OK    [-126,126]     YES
+----------------------------------------------------------------------------------------------------------------------
+  D(Z_3)     yes   -2.00      9  [9, 0, 0]              1x9                         9==9 OK        [-9,9]         NO
+----------------------------------------------------------------------------------------------------------------------
+
+======================================================================================================================
+STEP 3 -- VERDICT PER CARRIER (character-theoretic) vs DIRECT CONSTRUCTION (exact averaging)
+  a transport-fixed record exists  <=>  0 is reachable on EVERY eigenspace
+  columns: carrier | consistency | char verdict | constructed? | ||[A_h,R]|| for the CONSTRUCTED R | ||[A_h,R]|| for a TRANSPORT-BLIND record (positive control, D-15)
+----------------------------------------------------------------------------------------------------------------------
+  D(D_4)       OK          EXISTS         YES          1.918e-14      8.998e+00       agree=True
+       constructed-R checks : herm 7.4e-16 invol 2.3e-14 [H,R] 1.0e-14 maxTr 8.2e-15 nonconst 4.899
+       blind-R (control)    : herm 8.5e-16 invol 2.2e-14 [H,R] 1.1e-14 maxTr 3.4e-15
+       commutant-projection residuals: ||[X,H]||=1.23e-14  max||[X,A_h]||=2.59e-15
+       eig  -2.00 dimE   22  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=22 spans_E=True zero-trace=True
+       eig  -1.00 dimE   24  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=24 spans_E=True zero-trace=True
+       eig  -0.00 dimE   18  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=18 spans_E=True zero-trace=True
+----------------------------------------------------------------------------------------------------------------------
+  D(Z_2)       OK          EXISTS         YES          0.000e+00      0.000e+00       agree=True
+       constructed-R checks : herm 1.8e-16 invol 2.0e-15 [H,R] 0.0e+00 maxTr 3.3e-16 nonconst 2.000
+       blind-R (control)    : herm 7.9e-17 invol 2.0e-15 [H,R] 0.0e+00 maxTr 9.4e-16
+       commutant-projection residuals: ||[X,H]||=0.00e+00  max||[X,A_h]||=0.00e+00
+       eig  -2.00 dimE    4  minimal-projection ranks [1, 1, 1, 1]  sum=4 spans_E=True zero-trace=True
+----------------------------------------------------------------------------------------------------------------------
+  D(Z_2xZ_2)   OK          EXISTS         YES          0.000e+00      0.000e+00       agree=True
+       constructed-R checks : herm 3.8e-16 invol 8.3e-15 [H,R] 0.0e+00 maxTr 1.4e-15 nonconst 4.000
+       blind-R (control)    : herm 3.5e-16 invol 7.6e-15 [H,R] 0.0e+00 maxTr 8.9e-16
+       commutant-projection residuals: ||[X,H]||=0.00e+00  max||[X,A_h]||=0.00e+00
+       eig  -2.00 dimE   16  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=16 spans_E=True zero-trace=True
+----------------------------------------------------------------------------------------------------------------------
+  D(Z_4)       OK          EXISTS         YES          0.000e+00      0.000e+00       agree=True
+       constructed-R checks : herm 3.8e-16 invol 8.3e-15 [H,R] 0.0e+00 maxTr 1.4e-15 nonconst 4.000
+       blind-R (control)    : herm 3.5e-16 invol 7.6e-15 [H,R] 0.0e+00 maxTr 8.9e-16
+       commutant-projection residuals: ||[X,H]||=0.00e+00  max||[X,A_h]||=0.00e+00
+       eig  -2.00 dimE   16  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=16 spans_E=True zero-trace=True
+----------------------------------------------------------------------------------------------------------------------
+  D(Q_8)       OK          EXISTS         YES          1.918e-14      8.998e+00       agree=True
+       constructed-R checks : herm 7.4e-16 invol 2.3e-14 [H,R] 1.0e-14 maxTr 8.2e-15 nonconst 4.899
+       blind-R (control)    : herm 8.5e-16 invol 2.2e-14 [H,R] 1.1e-14 maxTr 3.4e-15
+       commutant-projection residuals: ||[X,H]||=1.23e-14  max||[X,A_h]||=2.59e-15
+       eig  -2.00 dimE   22  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=22 spans_E=True zero-trace=True
+       eig  -1.00 dimE   24  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=24 spans_E=True zero-trace=True
+       eig  -0.00 dimE   18  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=18 spans_E=True zero-trace=True
+----------------------------------------------------------------------------------------------------------------------
+  D(D_8)       OK          EXISTS         YES          4.749e-13      2.043e+01       agree=True
+       constructed-R checks : herm 1.8e-15 invol 5.5e-14 [H,R] 2.7e-14 maxTr 1.0e-14 nonconst 11.225
+       blind-R (control)    : herm 2.4e-15 invol 5.7e-14 [H,R] 2.7e-14 maxTr 1.6e-14
+       commutant-projection residuals: ||[X,H]||=5.59e-14  max||[X,A_h]||=1.03e-14
+       eig  -2.00 dimE   46  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=46 spans_E=True zero-trace=True
+       eig  -1.00 dimE   84  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]  sum=84 spans_E=True zero-trace=True
+       eig  -0.00 dimE  126  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]  sum=126 spans_E=True zero-trace=True
+----------------------------------------------------------------------------------------------------------------------
+  D(Z_3)       OK          NONE           NO           n/a            n/a             agree=True
+       constructed-R checks : -
+       blind-R (control)    : no zero-trace splitting exists even without transport
+       commutant-projection residuals: ||[X,H]||=0.00e+00  max||[X,A_h]||=0.00e+00
+       eig  -2.00 dimE    9  minimal-projection ranks [1, 1, 1, 1, 1, 1, 1, 1, 1]  sum=9 spans_E=True zero-trace=False
+----------------------------------------------------------------------------------------------------------------------
+
+======================================================================================================================
+READ (filled from the numbers above, not in advance)
+  D(D_4):  consistency PASSED   character verdict: transport-fixed record EXISTS   direct construction: SUCCEEDED
+  D(Z_2) control: verdict EXISTS, construction SUCCEEDED  (C-43 measured 0/40 moved, so anything but EXISTS here would mean the method is broken)
+======================================================================================================================

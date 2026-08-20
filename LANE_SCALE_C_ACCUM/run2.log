@@ -1,0 +1,10 @@
+======================================================================================================================
+LANE_SCALE_C_ACCUM  script 2  --  does the environment's information ACCUMULATE with k?
+======================================================================================================================
+
+VALIDATION 1  --  the reduced engine against the FULL 2^n matrices (RecordModel.evolve +
+                  Environment.holevo).  Nothing below is believed until this agrees.
+----------------------------------------------------------------------------------------------------------------------
+       carrier    dim   k  nq | chi_joint FULL  chi_joint RED     |diff| |  chi_sum FULL  chi_sum RED     |diff| |  chi(partner) FULL
+     [[4,2,2]]     16   2   3 |    1.007275060    1.007275060   1.11e-15 |   1.007275060  1.007275060   4.44e-16 |           7.65e-16   (0s)
+     [[6,4,2]]     64   4   3 |    1.434476753    1.434476753   8.88e-16 |   1.214658456  1.214658456   1.11e-15 |           4.19e-16   (14s)

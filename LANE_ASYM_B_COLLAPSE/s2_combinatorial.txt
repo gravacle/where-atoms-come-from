@@ -1,0 +1,69 @@
+================================================================================================================
+S2   EXACT COMBINATORIAL QUANTITIES ON THE [[n, n-2, 2]] FAMILY
+     representation: F_2 symplectic (x|z) in F_2^{2n}.  No dense matrix built anywhere in S2.
+================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------
+EXACT ARGUMENT 1 -- WHICH PAULIS ARE ADMISSIBLE.
+  H = -(X^(x)n + Z^(x)n).  A Pauli P commutes with H iff it commutes with BOTH stabilisers.
+  For P = (x|z):  [P, X^(x)n] = 0  iff  |z| is even;   [P, Z^(x)n] = 0  iff  |x| is even.
+  So N(S) = { (x|z) : |x| even and |z| even }.  This is exact and holds at every even n.
+
+EXACT ARGUMENT 2 -- THE MINIMUM WRITER WEIGHT IS EXACTLY 2, AT EVERY n, FOR EVERY RECORD.
+  LOWER BOUND (covers NON-Pauli writers too).  A weight-1 admissible unitary U (x) I must
+  satisfy [U, X^(x)n] = 0 and [U, Z^(x)n] = 0, which force [U,X] = [U,Z] = 0, so U is a
+  phase and flips nothing.  Hence NO writer of weight 1 exists, of any kind.  W >= 2.
+  UPPER BOUND.  The weight-2 members of N(S) are exactly X_iX_j, Z_iZ_j, Y_iY_j.  Against
+  a record R = (a|b):  <X_iX_j, R> = b_i + b_j,  <Z_iZ_j, R> = a_i + a_j.  One of these is 1
+  unless BOTH a and b are constant vectors -- and a,b constant means R is in {I, X^n, Z^n,
+  Y^n}, i.e. R is a stabiliser, not a record (it fails clause (iii)).  So every record has a
+  weight-2 writer.  W = 2 EXACTLY, INDEPENDENT OF n AND INDEPENDENT OF WHICH RECORD.
+
+EXACT ARGUMENT 3 -- THE RECORD-RECORD SYMPLECTIC RELATION MATRIX ON SET A IS IDENTICALLY 0.
+  Independent records must be simultaneously definite bits, so they COMMUTE -- that is the
+  content of RecordModel.commuting_family, and symplectic Gram-Schmidt returns the Xbar_i
+  mutually commuting.  Therefore on set A: P_int = 0 and lam_max(symplectic) = 0 at EVERY N.
+  The pairing lives between a record and its WRITER, never between two records.
+  On set B the same matrix is the direct sum of k copies of [[0,1],[1,0]], so P_int = k and
+  lam_max(symplectic) = 1 EXACTLY at every N -- bounded, not growing.
+----------------------------------------------------------------------------------------------------------------
+
+TABLE 1.  Computed values.  Every zero on set A has its set-B positive control in the SAME row.
+
+                          |------------------ SET A: the k commuting records ------------------|  |----------- SET B: records + writers (CONTROL) -----------|
+    n     k=N   |supp|avg |  P_int(s)  lam_s   P_int(o)   lam_o    W_tot    Wmin  Wmax |   P_int(s)  lam_s   P_int(o)     lam_o     W_tot
+     4      2      2.000 |         0   0.00          1    1.00        4       2     2 |          2   1.00          6      4.00         8
+     6      4      2.000 |         0   0.00          2    1.00        8       2     2 |          4   1.00         12      4.00        16
+     8      6      2.667 |         0   0.00          7    6.12       12       2     2 |          6   1.00         34     15.54        24
+    10      8      3.000 |         0   0.00         12    6.12       16       2     2 |          8   1.00         56     15.54        32
+    12     10      3.600 |         0   0.00         21   14.44       20       2     2 |         10   1.00         94     33.57        40
+    14     12      4.000 |         0   0.00         30   14.44       24       2     2 |         12   1.00        132     33.57        48
+    16     14      4.571 |         0   0.00         43   25.99       28       2     2 |         14   1.00        186     58.10        56
+    18     16      5.000 |         0   0.00         56   25.99       32       2     2 |         16   1.00        240     58.10        64
+    20     18      5.556 |         0   0.00         73   40.79       36       2     2 |         18   1.00        310     89.11        72
+    22     20      6.000 |         0   0.00         90   40.79       40       2     2 |         20   1.00        380     89.11        80
+    24     22      6.545 |         0   0.00        111   58.84       44       2     2 |         22   1.00        466    126.60        88
+    30     28      8.000 |         0   0.00        182   80.12       56       2     2 |         28   1.00        756    170.59       112
+    40     38     10.526 |         0   0.00        343  163.44       76       2     2 |         38   1.00       1410    341.45       152
+    50     48     13.000 |         0   0.00        552  235.20       96       2     2 |         48   1.00       2256    487.78       192
+    60     58     15.517 |         0   0.00        813  367.16      116       2     2 |         58   1.00       3310    755.91       232
+
+  READ OF TABLE 1 (filled from the numbers above, not in advance):
+    set A symplectic pairing identically zero at every n tested : True
+    set B positive control non-zero and equal to k at every n    : True
+    minimum writer weight equals 2 for EVERY record at every n   : True
+
+----------------------------------------------------------------------------------------------------------------
+SELF-CHECK ON THE WRITER WEIGHT -- exhaustive minimisation over ALL 4^n Paulis, small n only.
+  This does not assume argument 2; it searches every Pauli, keeps those in N(S) that
+  anticommute with the record, and reports the true minimum weight.
+
+      n   records   exhaustive min writer weight (min,max over records)   matches argument 2
+      4         4                                                 (2, 2)                 True
+      6         8                                                 (2, 2)                 True
+      8        12                                                 (2, 2)                 True
+
+   exhaustive check PASS -- argument 2 is confirmed by brute force
+----------------------------------------------------------------------------------------------------------------
+
+largest n reached in S2: 60  (k = 58).  Nothing stopped it: the cost is O(n^3) in F_2.

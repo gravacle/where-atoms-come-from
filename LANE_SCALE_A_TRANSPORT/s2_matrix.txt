@@ -1,0 +1,81 @@
+==========================================================================================================================
+S2   MATRIX VERIFICATION OF THE EXACT CENSUS, AND TWO RECORD FAMILIES IN THE SAME TABLE
+==========================================================================================================================
+
+  (A) DOES THE MATRIX AGREE WITH THE EXACT CENSUS?
+  carrier        dim              mult (numeric)                mult (exact)  match  chi_E(h) max err
+  Z_2              4                         [4]                         [4]   True         0.000e+00
+  Z_4             16                        [16]                        [16]   True         0.000e+00
+  Z_2^2           16                        [16]                        [16]   True         0.000e+00
+  Z_8             64                        [64]                        [64]   True         0.000e+00
+  Z_4xZ_2         64                        [64]                        [64]   True         0.000e+00
+  Z_2^3           64                        [64]                        [64]   True         0.000e+00
+  D_4             64                [24, 22, 18]                [24, 22, 18]   True         7.105e-15
+  Q_8             64                [24, 22, 18]                [24, 22, 18]   True         7.105e-15
+  Z_16           256                       [256]                       [256]   True         0.000e+00
+  Z_8xZ_2        256                       [256]                       [256]   True         0.000e+00
+  Z_4^2          256                       [256]                       [256]   True         0.000e+00
+  Z_4xZ_2^2      256                       [256]                       [256]   True         0.000e+00
+  Z_2^4          256                       [256]                       [256]   True         0.000e+00
+  D_8            256               [126, 84, 46]               [126, 84, 46]   True         7.105e-15
+  Q_16           256               [126, 84, 46]               [126, 84, 46]   True         7.105e-15
+  SD_16          256               [126, 84, 46]               [126, 84, 46]   True         7.105e-15
+  M_4(2)         256                [96, 88, 72]                [96, 88, 72]   True         1.421e-14
+  D_4xZ_2        256                [96, 88, 72]                [96, 88, 72]   True         3.553e-15
+  Q_8xZ_2        256                [96, 88, 72]                [96, 88, 72]   True         3.553e-15
+  Pauli16        256                [96, 88, 72]                [96, 88, 72]   True         3.997e-15
+  Z_32          1024                      [1024]                      [1024]   True         0.000e+00
+  Z_2^5         1024                      [1024]                      [1024]   True         0.000e+00
+  D_16          1024             [630, 252, 142]             [630, 252, 142]   True         7.105e-15
+  Q_32          1024             [630, 252, 142]             [630, 252, 142]   True         7.105e-15
+  SD_32         1024             [630, 252, 142]             [630, 252, 142]   True         7.105e-15
+  M_5(2)        1024             [384, 352, 288]             [384, 352, 288]   True         7.105e-15
+  D_8xZ_2       1024             [504, 336, 184]             [504, 336, 184]   True         3.553e-14
+  Pauli16xZ_2   1024             [384, 352, 288]             [384, 352, 288]   True         1.243e-14
+  D_4xZ_2^2     1024             [384, 352, 288]             [384, 352, 288]   True         1.421e-14
+  ES_2^(1+4)    1024             [480, 360, 184]             [480, 360, 184]   True         1.421e-14
+  ALL CARRIERS AGREE: True
+
+  (B) TWO RECORD FAMILIES, SAME TABLE.  'moved' = some A_h with [A_h,R] != 0.
+  carrier      |G|  abel  records  GENERIC moved  max||[A,R]||  GAUGE moved  max||[A,R]||  clauses(i)(iii)(iv)
+  Z_2            2  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  Z_4            4  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  Z_2^2          4  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  Z_8            8  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  Z_4xZ_2        8  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  Z_2^3          8  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  D_4            8 False       40          40/40        9.3631         0/40     1.038e-13                 True
+  Q_8            8 False       40          40/40        9.3631         0/40     1.038e-13                 True
+  Z_16          16  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  Z_8xZ_2       16  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  Z_4^2         16  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  Z_4xZ_2^2     16  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  Z_2^4         16  True       40           0/40        0.0000         0/40     0.000e+00                 True
+  D_8           16 False       40          40/40       20.5910         0/40     2.269e-11                 True
+  Q_16          16 False       40          40/40       20.5910         0/40     2.269e-11                 True
+  SD_16         16 False       40          40/40       20.5061         0/40     2.491e-12                 True
+  M_4(2)        16 False       40          40/40       18.1332         0/40     6.660e-12                 True
+  D_4xZ_2       16 False       40          40/40       18.2585         0/40     1.816e-12                 True
+  Q_8xZ_2       16 False       40          40/40       18.2585         0/40     1.816e-12                 True
+  Pauli16       16 False       40          40/40       18.2875         0/40     9.619e-12                 True
+  Z_32          32  True       12           0/12        0.0000         0/12     0.000e+00                 True
+  Z_2^5         32  True       12           0/12        0.0000         0/12     0.000e+00                 True
+  D_16          32 False       12          12/12       41.3465         0/12     1.660e-11                 True
+  Q_32          32 False       12          12/12       41.3465         0/12     1.660e-11                 True
+  SD_32         32 False       12          12/12       41.3924         0/12     1.320e-12                 True
+  M_5(2)        32 False       12          12/12       35.9442         0/12     1.550e-12                 True
+  D_8xZ_2       32 False       12          12/12       40.7160         0/12     2.322e-12                 True
+  Pauli16xZ_2   32 False       12          12/12       35.8610         0/12     6.043e-13                 True
+  D_4xZ_2^2     32 False       12          12/12       35.8668         0/12     1.942e-12                 True
+  ES_2^(1+4)    32 False       12          12/12       40.6153         0/12     6.738e-13                 True
+
+  GENERIC is C-43's protocol.  GAUGE is the same carrier, same clauses, records built inside
+  the transport commutant.  Both columns are on the SAME ROW so neither can be read alone.
+
+  (C) SCALE CONTROL (D-17) -- THE VENUE'S OWN NEXT SIZE UP: the 1x2 torus, V=2, E=4, F=2.
+  carrier         dim        multiplicities (1x2 torus)  all even  phi_fix(1x2)  phi_fix(min)   secs
+  Z_2              16                      [4, 4, 4, 4]      True        1.0000        1.0000    0.0
+  Z_4             256                 [16, 48, 48, 144]      True        1.0000        1.0000    0.0
+  Z_2^2           256                 [16, 48, 48, 144]      True        1.0000        1.0000    0.2
+  Z_8            4096              [64, 448, 448, 3136]      True        1.0000        1.0000   86.8
+  Z_4xZ_2        4096              [64, 448, 448, 3136]      True        1.0000        1.0000   84.6

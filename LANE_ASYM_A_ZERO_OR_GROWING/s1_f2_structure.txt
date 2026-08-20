@@ -1,0 +1,31 @@
+======================================================================================================================
+S1  EXACT F_2 SYMPLECTIC STRUCTURE -- [[n, n-2, 2]] FAMILY.  REPRESENTATION: F_2 symplectic (nothing dense built).
+======================================================================================================================
+self-check passed at every n: symplectic_logicals returned k conjugate pairs, all in N(S)\S,
+Gram matrix canonical (sp(R_i,R_j)=0, sp(W_i,W_j)=0, sp(R_i,W_j)=delta_ij).
+
+  n    k |  N_indep   N_nonid        2^k  log2 |  P_rec I_rec | P_all I_all |  d  | wminR wminW Wflip_tot Wflip_per | D1max D1sum(over 3n ops) | D2max D2sum | T_move/T_pairs T_ctrl
+----------------------------------------------------------------------------------------------------------------------
+  4    2 |        2        15          4     2 |      0     0 |     2     2 |  2  |     2     2         4         2 |     0     0 (  12) |     2    16 |      0/8          2
+  6    4 |        4       255         16     4 |      0     0 |     4     4 |  2  |     2     2         8         2 |     0     0 (  18) |     4    64 |      0/16         4
+  8    6 |        6      4095         64     6 |      0     0 |     6     6 |  2  |     2     2        16         2 |     0     0 (  24) |     6   160 |      0/24         6
+ 10    8 |        8     65535        256     8 |      0     0 |     8     8 |  2  |     2     2        24         2 |     0     0 (  30) |     8   320 |      0/32         8
+ 12   10 |       10   1048575       1024    10 |      0     0 |    10    10 |  2  |     2     2        36         2 |     0     0 (  36) |    10   560 |      0/40        10
+ 14   12 |       12  16777215       4096    12 |      0     0 |    12    12 |  2  |     2     2        48         2 |     0     0 (  42) |    12   896 |      0/48        12
+ 16   14 |       14 268435455      16384    14 |      0     0 |    14    14 |  2  |     2     2        64         2 |     0     0 (  48) |    14  1344 |      0/56        14
+ 20   18 |       18 6.872e+10     262144    18 |      0     0 |    18    18 |  2  |     2     2      None      None |     0     0 (  60) |    18  2640 |      0/72        18
+ 24   22 |       22 1.759e+13    4194304    22 |      0     0 |    22    22 |  2  |     2     2      None      None |     0     0 (  72) |    22  4576 |      0/88        22
+ 32   30 |       30 1.153e+18  1.074e+09    30 |      0     0 |    30    30 |  2  |     2     2      None      None |     0     0 (  96) |    30 10880 |      0/120       30
+ 40   38 |       38 7.556e+22  2.749e+11    38 |      0     0 |    38    38 |  2  |     2     2      None      None |     0     0 ( 120) |    38 21280 |      0/152       38
+ 48   46 |       46 4.952e+27  7.037e+13    46 |      0     0 |    46    46 |  2  |     2     2      None      None |     0     0 ( 144) |    46 36800 |      0/184       46
+ 64   62 |       62 2.127e+37  4.612e+18    62 |      0     0 |    62    62 |  2  |     2     2      None      None |     0     0 ( 192) |    62 87296 |      0/248       62
+----------------------------------------------------------------------------------------------------------------------
+
+READ (filled from the numbers above, not in advance):
+  P_rec / I_rec        : 0 at every n tested.  CONTROL P_all / I_all = k != 0 in the SAME table.
+  D1max / D1sum        : 0 over all 3n weight-1 ops.  CONTROL D2max/D2sum non-zero in the SAME table.
+  T_move               : 0 out of 4k.  CONTROL T_move_ctrl = k out of k in the SAME table.
+  d                    : constant 2 at every n.
+  wminR/wminW/Wflip_per: constant at every n.
+  k, log2 dim, Wflip_tot : grow linearly in n.   N_nonid, 2^k : grow exponentially in n.
+

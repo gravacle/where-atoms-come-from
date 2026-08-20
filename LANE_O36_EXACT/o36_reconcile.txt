@@ -1,0 +1,36 @@
+================================================================================================================
+O-36 ADDENDUM: reconciling the exact verdict with C-43's 40/40, at MATCHED SAMPLE SIZE
+================================================================================================================
+  carrier      | family            | built/40 | MOVED by some A_h | max ||[A_h,R]|| | worst (i)-(iv) residual
+----------------------------------------------------------------------------------------------------------------
+  D(D_4) dim 64 | BLIND (control)   |    40/40 |       40/40      | 9.466e+00       | 2.4e-14
+               | TRANSPORT-FIXED   |    40/40 |        0/40      | 1.211e-12       | 2.5e-14
+----------------------------------------------------------------------------------------------------------------
+  D(Q_8) dim 64 | BLIND (control)   |    40/40 |       40/40      | 9.466e+00       | 2.4e-14
+               | TRANSPORT-FIXED   |    40/40 |        0/40      | 1.211e-12       | 2.5e-14
+----------------------------------------------------------------------------------------------------------------
+  D(D_8) dim 256 | BLIND (control)   |    40/40 |       40/40      | 2.055e+01       | 6.2e-14
+               | TRANSPORT-FIXED   |    40/40 |        0/40      | 4.889e-12       | 5.8e-14
+----------------------------------------------------------------------------------------------------------------
+  D(Z_2) dim 4 | BLIND (control)   |    40/40 |        0/40      | 0.000e+00       | 3.2e-15
+               | TRANSPORT-FIXED   |    40/40 |        0/40      | 0.000e+00       | 4.4e-15
+----------------------------------------------------------------------------------------------------------------
+  D(Z_2xZ_2) dim 16 | BLIND (control)   |    40/40 |        0/40      | 0.000e+00       | 1.2e-14
+               | TRANSPORT-FIXED   |    40/40 |        0/40      | 0.000e+00       | 1.1e-14
+----------------------------------------------------------------------------------------------------------------
+
+================================================================================================================
+WHY: the gauge action is by CONJUGATION, so Z(G) acts trivially and the rep factors through G/Z(G)
+----------------------------------------------------------------------------------------------------------------
+  D(D_4): |Z(G)| = 2   max ||A_z - I|| over z in Z(G) = 0.00e+00   -> the gauge rep factors through G/Z(G) (order 4)
+  D(Q_8): |Z(G)| = 2   max ||A_z - I|| over z in Z(G) = 0.00e+00   -> the gauge rep factors through G/Z(G) (order 4)
+  D(D_8): |Z(G)| = 2   max ||A_z - I|| over z in Z(G) = 0.00e+00   -> the gauge rep factors through G/Z(G) (order 8)
+  D(Z_2): |Z(G)| = 2   max ||A_z - I|| over z in Z(G) = 0.00e+00   -> the gauge rep factors through G/Z(G) (order 1)
+  D(Z_2xZ_2): |Z(G)| = 4   max ||A_z - I|| over z in Z(G) = 0.00e+00   -> the gauge rep factors through G/Z(G) (order 1)
+
+  D_4/Z = Z_2xZ_2 and Q_8/Z = Z_2xZ_2 are ABELIAN  -> every commutant block has d_i = 1
+     -> the achievable traces on E are ALL integers of the parity of dim E, so 0 is reachable
+        exactly when dim E is even, which is C-41's condition and nothing more.
+  D_8/Z = D_4 is NON-ABELIAN -> 2-dimensional blocks DO appear (see step 2: 2x12 and 2x36),
+     so the D_4 result is NOT an artifact of every block being 1-dimensional (D-17).
+================================================================================================================

@@ -1,0 +1,103 @@
+==============================================================================================================
+B1   THE EXACT REDUCTION  --  [[n,n-2,2]] family, n = 4,6,8,10
+==============================================================================================================
+
+E1  LOGICALS COMPUTED BY symplectic_logicals, NEVER NOMINATED.  SELF-CHECK MUST PASS.
+     n     dim   k=n-2  pairs K     symplectic self-check
+     4      16       2        2                      PASS
+     6      64       4        4                      PASS
+     8     256       6        6                      PASS
+    10    1024       8        8                      PASS
+
+E2/E3/E4  CODE SPACE, EXACTLY.
+     n  dim code   ||Q^dQ-I||   ||QQ^d-Pg||  H|code +2I   max leak ||(1-Pg)R Pg||
+     4         4     4.44e-16      4.44e-16    8.88e-16                  0.00e+00
+     6        16     8.88e-16      8.88e-16    1.78e-15                  0.00e+00
+     8        64     1.78e-15      1.78e-15    3.55e-15                  0.00e+00
+    10       256     3.55e-15      3.55e-15    7.11e-15                  0.00e+00
+
+  reduced logicals Rbar = Q^dag R Q -- must be Hermitian, square to I, be traceless,
+  and reproduce the symplectic relations EXACTLY on the code space:
+     n   max||Rbar^2-I||  max|Tr Rbar|   max||Rbar-Rbar^d||  commutation matches F_2
+     4          8.88e-16      0.00e+00             0.00e+00                     PASS
+     6          1.78e-15      0.00e+00             0.00e+00                     PASS
+     8          3.55e-15      8.88e-16             0.00e+00                     PASS
+    10          7.11e-15      0.00e+00             0.00e+00                     PASS
+
+E4/E5  FULL 2^n COMPUTATION  vs  CODE-SPACE COMPUTATION  vs  record_model's OWN env.holevo.
+  Configuration notation:  read X1 on site 0; partners listed as label@site.
+     n  configuration                chi FULL 2^n  chi CODE SPACE   |difference|
+     4  X1@0                       0.521527300760  0.521527300760       8.88e-16
+     4  X1@0,Z1@0                  0.254089251974  0.254089251974       9.44e-16
+     4  X1@0,Z1@1                  0.422577710389  0.422577710389       2.78e-16
+     6  X1@0                       0.521527300760  0.521527300760       5.55e-16
+     6  X1@0,Z1@0                  0.254089251974  0.254089251974       6.11e-16
+     6  X1@0,X2@0                  0.136408688972  0.136408688972       8.60e-16
+     6  X1@0,X2@1                  0.521527300760  0.521527300760       3.33e-16
+     6  X1@0,Z1@0,X2@1             0.254089251974  0.254089251974       5.00e-16
+     8  X1@0,Z1@0                  0.254089251974  0.254089251974       5.00e-16
+     8  X1@0,X2@0,X3@1             0.136408688972  0.136408688972       3.05e-16
+
+  WORST full-vs-reduced discrepancy over 10 configurations: 9.437e-16
+  -> the reduction is EXACT; the discrepancy is the float64 floor of the two paths.
+
+E6  MATCHED-CONFIGURATION N-INDEPENDENCE.  Identical symplectic configuration, different n.
+      (the logicals at different n have DIFFERENT physical support and different weight)
+  configuration                                            n=4               n=6               n=8              n=10   max spread
+  alone                                         0.521527300760    0.521527300760    0.521527300760    0.521527300760     1.55e-15
+  Z1@0  (pair 1, same site)                     0.254089251974    0.254089251974    0.254089251974    0.254089251974     1.28e-15
+  Z1@1  (pair 1, other site)                    0.422577710389    0.422577710389    0.422577710389    0.422577710389     1.67e-15
+  X2@0  (pair 0, same site)                     0.136408688972    0.136408688972    0.136408688972    0.136408688972     1.83e-15
+  X2@1  (pair 0, other site)                    0.521527300760    0.521527300760    0.521527300760    0.521527300760     2.89e-15
+  Z1@0,X2@0                                     0.101403666734    0.101403666734    0.101403666734    0.101403666734     1.28e-15
+  X2@0,Z2@0  (partners pair each other)         0.124444092221    0.124444092221    0.124444092221    0.124444092221     3.11e-15
+
+  LARGEST spread of a matched configuration across n = 4..10: 3.109e-15
+  -> chi is EXACTLY independent of n at fixed configuration.  PROOF: on the code space
+     H_S is a c-number and the written logicals generate a Pauli algebra on k=n-2 logical
+     qubits; a logical Clifford maps any symplectic configuration to the standard one, and
+     the UNWRITTEN logical qubits are maximally mixed and uncoupled, so they factor out of
+     the state, the evolution and the readout.  Spectators are exactly invisible.
+
+E7  SEPARATION IN THE CODE.  Partners with the SAME pairing to X1 but different physical
+    support / weight.  If influence fell off with separation these would differ.
+  n=8, read X1 (weight 2).
+  partner     weight   overlap with X1  pairing    chi (same site)   chi (other site)
+  X2               2                 1        0     0.136408688972     0.521527300760
+  Z2               2                 2        0     0.136408688972     0.521527300760
+  X3               4                 2        0     0.136408688972     0.521527300760
+  Z3               4                 2        0     0.136408688972     0.521527300760
+  Z1               2                 1        1     0.254089251974     0.422577710389
+
+  pairing 0: spread over 4 partners of different support -- same site 8.049e-16, other site 7.772e-16
+  -> chi depends on the PAIRING and on nothing else about the partner. Separation in the
+     code is EXACTLY irrelevant, not merely weakly relevant.
+
+E8  C-38 AS AN EXACT THEOREM.  A COMMUTING partner on ANOTHER bath site changes chi by
+    EXACTLY ZERO -- for any coupling, any time, any number of such partners.
+    PROOF.  Let the read record R and every other-site partner P_j commute.  Then the
+    system splits into joint eigensectors of {R, P_j}.  H_B is a SUM over bath qubits and
+    rho_th is a PRODUCT, and each partner drives a DIFFERENT bath qubit, so in every sector
+    the bath state factorises:  rho_B(r, p) = sigma_0(r) (x) prod_j tau_j(p_j).
+    Conditioning on R = r and averaging over p gives sigma_0(r) (x) tau, with tau INDEPENDENT
+    of r.  Both S(average) and average S(.) then shift by the same S(tau), so chi is the
+    alone value identically.  The theorem does not depend on lam or t at all.
+
+     n    lam  configuration                                chi     chi/alone - 1
+     6   0.40  X2@1                              0.276635159834          2.22e-16
+     6   0.80  X2@1                              0.521527300760          6.66e-16
+     6   1.20  X2@1                              0.599566691971         -1.11e-15
+     6   2.50  X2@1                              0.588024324397         -1.67e-15
+     8   0.40  X2@1                              0.276635159834         -5.55e-16
+     8   0.40  X2@1,X3@2                         0.276635159834         -2.22e-16
+     8   0.80  X2@1                              0.521527300760         -2.22e-16
+     8   0.80  X2@1,X3@2                         0.521527300760         -1.11e-15
+     8   1.20  X2@1                              0.599566691971          2.00e-15
+     8   1.20  X2@1,X3@2                         0.599566691971          2.22e-16
+     8   2.50  X2@1                              0.588024324397         -3.33e-16
+     8   2.50  X2@1,X3@2                         0.588024324397          1.55e-15
+    10   0.40  X2@1                              0.276635159834          6.22e-15
+    10   0.40  X2@1,X3@2                         0.276635159834          2.20e-14
+    10   0.80  X2@1                              0.521527300760          2.66e-15
+    10   0.80  X2@1,X3@2                         0.521527300760         -5.77e-15
+    10   1.20  X2@1                              0.599566691971          2.51e-14

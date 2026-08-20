@@ -1,0 +1,52 @@
+========================================================================================================
+SIGN-DEFINITENESS: WHAT ACCUMULATES, AND WHAT CANCELS?
+========================================================================================================
+
+0. THE COUNT-DOWN, stated as arithmetic
+   smallest measured gravitational SOURCE: ~90 mg gold  ->  2.752e+20 atoms
+   largest N reachable in this program: ~10 records
+   gap: 19.4 orders of magnitude. No simulation closes it.
+   alpha_EM = 7.297e-03, alpha_G = G m_p^2/(hbar c) = 5.9e-39, ratio = 8.09e-37
+   -> the strength is unreachable; only the FORM is testable, and sign-definiteness is form.
+
+1. IS THE INTERSECTION PAIRING SIGN-DEFINITE?   (it is the leading two-body quantity)
+      n  k records   pairs    over F_2: values    signed? integer values  sign-definite?
+      4          2       6              [0, 1]             [-2, 0, 1, 2]NO -- BOTH SIGNS
+      6          4      28              [0, 1]   [-4, -2, 0, 1, 2, 3, 4]NO -- BOTH SIGNS
+      8          6      66              [0, 1][-6, -4, -2, 0, 1, 2, 3, 4, 5, 6]NO -- BOTH SIGNS
+     10          8     120              [0, 1][-8, -6, -4, -2, 0, 1, 2, 3, 4, 5, 6, 7, 8]NO -- BOTH SIGNS
+   -> F_2 values are 0/1 by construction, which is NOT sign-definiteness -- F_2 has no sign.
+      The INTEGER intersection numbers are the signed object, and they are what matters.
+
+3. DOES THE SIGN-DEFINITE QUANTITY ACCUMULATE WHILE THE TWO-SIGNED ONE CANCELS?
+   sum over all pairs, versus sum of |values|. A two-signed quantity has |sum| << sum|.|;
+   a sign-definite one has them EQUAL.
+   quantity                             n           sum   sum of |values|    ratio     behaviour
+   integer intersection number          4             2                 6   0.3333       CANCELS
+   integer intersection number          6             8                36   0.2222       CANCELS
+   integer intersection number          8            18               106   0.1698       CANCELS
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================
+  THE LEADING TWO-BODY RECORD QUANTITY IS TWO-SIGNED AND IT CANCELS MORE AS RECORDS ARE ADDED.
+  The integer intersection numbers span both signs at every carrier size, and the fraction that
+  survives summation FALLS: |sum| / sum|.| = 0.3333, 0.2222, 0.1698 at k = 2, 4, 6 records.
+
+  A QUANTITY THAT CANCELS CANNOT DOMINATE AT 1e20 CONSTITUENTS, whatever its form and however
+  it scales. This is the structural reason gravity, not electromagnetism, is what a planet
+  exerts: charge comes in two signs and neutralises in bulk, mass has one sign and adds. The
+  pairing behaves like the first kind.
+
+  AND THE MEASUREMENT HAD NEVER BEEN POSSIBLE BEFORE. Every measurement of the pairing in this
+  program was taken over F_2, where the values are {0,1} and THE QUESTION OF SIGN CANNOT EVEN BE
+  POSED. The signed object is the INTEGER intersection number, and it had not been computed.
+
+  THIS REFINES C-35 RATHER THAN OVERTURNING IT. C-35 ruled the pairing out as a density because
+  it is topological -- true, and it is why the pairing does not grow with the extent of a record
+  carrier. But the integer values' RANGE does widen with k, from [-2,2] to [-8,8]. What kills it
+  is not failure to grow, it is CANCELLATION.
+
+  THE DISCRIMINATOR THIS GIVES: the test for a gravity-role quantity is not 'does it grow' but
+  'does it FAIL TO CANCEL'. A quantity with |sum| / sum|.| = 1 accumulates without bound however
+  small each term is, which is exactly how a 1e-36 coupling wins at 1e20 constituents.

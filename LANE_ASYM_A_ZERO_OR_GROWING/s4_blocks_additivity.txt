@@ -1,0 +1,65 @@
+======================================================================================================================
+S4  ADDITIVITY OVER DISJOINT REGIONS -- m disjoint [[4,2,2]] blocks, n = 4m qubits, k = 2m records.
+======================================================================================================================
+self-check passed at every m: symplectic_logicals returned k = 2m conjugate pairs with the canonical Gram matrix.
+
+  m   n    k |  P_rec  P_all(CONTROL) |  d  | D1max  D2max(CONTROL) | 2k  log2 dim   dim
+----------------------------------------------------------------------------------------------------------------------
+  1   4    2 |      0              2 |  2  |     0              2 |  4         2           4
+  2   8    4 |      0              4 |  2  |     0              2 |  8         4          16
+  3  12    6 |      0              6 |  2  |     0              2 | 12         6          64
+  4  16    8 |      0              8 |  2  |     0              2 | 16         8         256
+  5  20   10 |      0             10 |  2  |     0              2 | 20        10        1024
+  6  24   12 |      0             12 |  2  |     0              2 | 24        12        4096
+----------------------------------------------------------------------------------------------------------------------
+
+ADDITIVITY OF THE STRUCTURAL QUANTITIES: value at m blocks vs m * (value at 1 block).
+  quantity                          1 block   m=2    m=3    m=4    m=5    m=6   |  additive over disjoint regions?
+----------------------------------------------------------------------------------------------------------------------
+  number of records k                    2      4      6      8     10     12  |  YES
+  pairing sum over records P_rec         0      0      0      0      0      0  |  YES
+  pairing sum records+writers P_all       2      4      6      8     10     12  |  YES
+  total min writer weight 2k             4      8     12     16     20     24  |  YES
+  log2 code-space dimension              2      4      6      8     10     12  |  YES
+  code distance d                        2      2      2      2      2      2  |  NO
+  records moved by a weight-1 op         0      0      0      0      0      0  |  YES
+  records moved by a weight-2 op         2      2      2      2      2      2  |  NO
+----------------------------------------------------------------------------------------------------------------------
+
+ADDITIVITY OF TOTAL chi.  N = k_A + k_B records split into two disjoint clusters of equal size.
+SHARED BATH: one nq=3 bath serves both clusters.  DISJOINT BATHS (CONTROL): each cluster
+has its own nq=3 bath, which is what 'far apart' means for an environment.
+
+   N   k_A  k_B |  chi(A)   chi(B)   chi(A)+chi(B) |  chi(A u B) shared bath   deficit  | chi(A u B) disjoint baths  exact sum?
+----------------------------------------------------------------------------------------------------------------------
+   4     2     2 |  0.9925   0.9417   1.9342         |  1.2145                0.7197    | 1.9342                    YES
+   8     4     4 |  1.2145   1.2903   2.5048         |  0.6447                1.8601    | 2.5048                    YES
+  12     6     6 |  0.7730   0.7730   1.5460         |  0.5121                1.0339    | 1.5460                    YES
+  16     8     8 |  0.6447   0.6699   1.3146         |  0.4513                0.8634    | 1.3146                    YES
+  20    10    10 |  0.5778   0.5909   1.1687         |  0.4004                0.7683    | 1.1687                    YES
+  24    12    12 |  0.5121   0.5121   1.0241         |  0.3589                0.6653    | 1.0241                    YES
+  32    16    16 |  0.4513   0.4599   0.9111         |  0.3149                0.5962    | 0.9111                    YES
+  48    24    24 |  0.3589   0.3589   0.7177         |  0.2566                0.4611    | 0.7177                    YES
+  64    32    32 |  0.3149   0.3147   0.6296         |  0.2269                0.4028    | 0.6296                    YES
+----------------------------------------------------------------------------------------------------------------------
+
+REDUNDANCY SCALAR: how many single-bath-qubit fragments hold at least 10%% of the whole-bath chi
+about one record.  Computed with the model's own RecordModel.redundancy on the dense carrier.
+
+   n   k  nq |  whole-bath chi   n_fragments >= 10%% of it   bound = nq
+----------------------------------------------------------------------------------------------------------------------
+   4   2   3 |  0.34184          3                        3
+   4   2   4 |  0.40041          4                        4
+   4   2   5 |  0.42876          5                        5
+   6   4   3 |  0.13271          3                        3
+   6   4   4 |  0.16481          4                        4
+----------------------------------------------------------------------------------------------------------------------
+
+READ (filled from the numbers above, not in advance):
+  every structural quantity marked YES above is additive over disjoint regions; d and D1max are
+  marked NO because they are INTENSIVE (constant), not because they fail to add up.
+  chi under a SHARED bath is strictly SUBadditive at every m: the deficit column is positive throughout.
+  the DISJOINT-BATH control is exactly additive, so the test can register additivity -- the deficit is real.
+  additivity of chi therefore requires the ENVIRONMENT to be doubled along with the matter, which is
+  not what extensivity of a source means.
+  the redundancy scalar is bounded by nq, the bath's own size, at every N.

@@ -1,0 +1,57 @@
+========================================================================================================
+THE FUNCTION: DOES TRANSPORT'S EFFECT ON A RECORD DEPEND ON THE CONFIGURATION?
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+  D(Z_2)  abelian  (CONTROL)   dim 4   non-commuting pairs 0/4   eigenspaces [(-2.0, 4)]
+--------------------------------------------------------------------------------------------------------
+    3 records constructed and verified against clauses (i)-(iv)
+    ||[R0,R1]|| = 2.917e+00   ||[R0,R2]|| = 2.030e+00
+
+  delta_0(psi,h) = <psi|A_h^dag R0 A_h|psi> - <psi|R0|psi>   -- how far transport moves record 0
+  psi is drawn from the GROUND SPACE, then projected into the +-1 eigenspace of R1 (and R2),
+  which is what 'writing' those records to a value means.
+    ground space dimension 4
+    configuration               states   mean |delta_0|   max |delta_0|
+    nothing else written             4         0.000000        0.000000
+    R1 = +1                          4         0.000000        0.000000
+    R1 = -1                          4         0.000000        0.000000
+    R1 = +1, R2 = +1                 4         0.000000        0.000000
+    R1 = +1, R2 = -1                 4         0.000000        0.000000
+    R1 = -1, R2 = -1                 4         0.000000        0.000000
+
+    spread in mean |delta_0| across configurations: 0.000000
+    SELF-CHECK  max ||A_h|psi> - |psi>|| over ground states and group elements: 0.000e+00
+    -> TEST INVALID. Transport acts as the IDENTITY on every state used, because the
+       ground space is gauge-invariant by construction. delta is zero for ANY operator
+       whatsoever and NO conclusion may be drawn -- least of all from D(D_4), where
+       C-43 measured ||[A_h,R]|| = 9.423 on the same carrier.
+
+--------------------------------------------------------------------------------------------------------
+  D(D_4)  NON-ABELIAN   dim 64   non-commuting pairs 24/64   eigenspaces [(-2.0, 22), (-1.0, 24), (-0.0, 18)]
+--------------------------------------------------------------------------------------------------------
+    3 records constructed and verified against clauses (i)-(iv)
+    ||[R0,R1]|| = 1.020e+01   ||[R0,R2]|| = 1.111e+01
+
+  delta_0(psi,h) = <psi|A_h^dag R0 A_h|psi> - <psi|R0|psi>   -- how far transport moves record 0
+  psi is drawn from the GROUND SPACE, then projected into the +-1 eigenspace of R1 (and R2),
+  which is what 'writing' those records to a value means.
+    ground space dimension 22
+    configuration               states   mean |delta_0|   max |delta_0|
+    nothing else written            22         0.000000        0.000000
+    R1 = +1                         22         0.000000        0.000000
+    R1 = -1                         22         0.000000        0.000000
+    R1 = +1, R2 = +1                22         0.000000        0.000000
+    R1 = +1, R2 = -1                22         0.000000        0.000000
+    R1 = -1, R2 = -1                22         0.000000        0.000000
+
+    spread in mean |delta_0| across configurations: 0.000000
+    SELF-CHECK  max ||A_h|psi> - |psi>|| over ground states and group elements: 1.802e-15
+    -> TEST INVALID. Transport acts as the IDENTITY on every state used, because the
+       ground space is gauge-invariant by construction. delta is zero for ANY operator
+       whatsoever and NO conclusion may be drawn -- least of all from D(D_4), where
+       C-43 measured ||[A_h,R]|| = 9.423 on the same carrier.
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================

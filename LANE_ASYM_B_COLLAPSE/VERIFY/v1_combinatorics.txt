@@ -1,0 +1,65 @@
+==============================================================================================================
+V1  ADVERSARIAL RE-DERIVATION OF THE COMBINATORIAL CLAIMS (independent code path)
+==============================================================================================================
+
+--------------------------------------------------------------------------------------------------------------
+A/B  MIN WRITER WEIGHT OVER **ALL** RECORDS IN N(S)\S -- not just the returned basis.
+     A record here = any (x|z) with |x| even, |z| even, not in the stabiliser group.
+     Also reported: does the answer change if a DIFFERENT coset representative is used?
+
+      n   #records in N(S)\S   min W   max W   coset-invariant?   any weight-1 writer?
+      4                   60       2       2               True                  False
+      6                 1020       2       2               True                  False
+      8                16380       2       2               True                  False
+
+   VERDICT A/B: min writer weight = 2 for EVERY record at n = 4,6,8 : True
+   (this is STRONGER than S2's check, which only tested the returned basis)
+
+      n   random records tested   all have a weight-2 writer?   any weight-1 writer found?
+     12                    4000                          True                        False
+     16                    4000                          True                        False
+     20                    4000                          True                        False
+     30                    4000                          True                        False
+
+--------------------------------------------------------------------------------------------------------------
+C  INDEPENDENT RECOMPUTATION OF S2's TABLE 1, and a look at the suspicious repeats.
+
+      n   k=N | P_s  lam_s |  P_o   lam_o    (S2 said)  | W_tot | avg support | support histogram
+      4     2 |   0   0.00 |    1    1.00    (   1   1.00) ok |     4 |    2.000 | [(2, 2)]
+      6     4 |   0   0.00 |    2    1.00    (   2   1.00) ok |     8 |    2.000 | [(2, 4)]
+      8     6 |   0   0.00 |    7    6.12    (   7   6.12) ok |    12 |    2.667 | [(2, 4), (4, 2)]
+     10     8 |   0   0.00 |   12    6.12    (  12   6.12) ok |    16 |    3.000 | [(2, 4), (4, 4)]
+     12    10 |   0   0.00 |   21   14.44    (  21  14.44) ok |    20 |    3.600 | [(2, 4), (4, 4), (6, 2)]
+     14    12 |   0   0.00 |   30   14.44    (  30  14.44) ok |    24 |    4.000 | [(2, 4), (4, 4), (6, 4)]
+     16    14 |   0   0.00 |   43   25.99    (  43  25.99) ok |    28 |    4.571 | [(2, 4), (4, 4), (6, 4), (8, 2)]
+     18    16 |   0   0.00 |   56   25.99    (  56  25.99) ok |    32 |    5.000 | [(2, 4), (4, 4), (6, 4), (8, 4)]
+     20    18 |   0   0.00 |   73   40.79    (  73  40.79) ok |    36 |    5.556 | [(2, 4), (4, 4), (6, 4), (8, 4), (10, 2)]
+     22    20 |   0   0.00 |   90   40.79    (  90  40.79) ok |    40 |    6.000 | [(2, 4), (4, 4), (6, 4), (8, 4), (10, 4)]
+
+   VERDICT C: my independent recomputation reproduces S2's table: True
+   NOTE ON THE REPEAT: lam_o is identical at (8,10), (12,14), (16,18), (20,22).
+   That is not a bug -- it is the SUPPORT STRUCTURE of the returned basis: adding one more
+   record to an odd-sized batch does not change the dominant overlap block.  Reported so
+   nobody reads it as a coincidence.
+
+--------------------------------------------------------------------------------------------------------------
+D  N-CONFOUND TEST.  M DISJOINT [[4,2,2]] BLOCKS: N = 2M records, block size FIXED at 4.
+   On the [[n,n-2,2]] family N = k = n-2 grows TOGETHER with n, so a quantity that tracks
+   the qubit count is not tracking the record count.  Here n = 4M but each record's support
+   stays inside its own block.  If Q2c/Q4c's super-linearity is real record physics it must
+   survive; if it is packing it must collapse.
+
+      M    n=4M   N=2M |  P_s  lam_s |  P_o   lam_o |  W_tot |  P_o/N   lam_o
+        1      4      2 |    0   0.00 |    1    1.00 |      4 |  0.500    1.00
+        2      8      4 |    0   0.00 |    2    1.00 |      8 |  0.500    1.00
+        4     16      8 |    0   0.00 |    4    1.00 |     16 |  0.500    1.00
+        8     32     16 |    0   0.00 |    8    1.00 |     32 |  0.500    1.00
+       16     64     32 |    0   0.00 |   16    1.00 |     64 |  0.500    1.00
+       32    128     64 |    0   0.00 |   32    1.00 |    128 |  0.500    1.00
+
+   READ OF D (filled from the numbers above):
+     P_o grows LINEARLY in N here (P_o/N constant), not quadratically.
+     lam_o is CONSTANT here, not growing.
+     => Q2c's exponent 2.05 and Q4c's exponent 1.95 are PACKING, exactly as the lane said.
+     The lane's own conclusion survives this test; the exponents are venue artifacts.
+--------------------------------------------------------------------------------------------------------------

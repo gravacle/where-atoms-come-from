@@ -1,0 +1,76 @@
+====================================================================================================
+S1  CLAUSE AUDIT OF THE [[4,2,2]] BLOCK  and  VALIDATION OF THE [CODE] REDUCTION
+====================================================================================================
+
+symplectic_logicals returned 2 CONJUGATE PAIRS (never nominated):
+   pair 0 :  A = (x|z) [1, 1, 0, 0, 0, 0, 0, 0]   B = (x|z) [0, 0, 0, 0, 1, 0, 1, 0]   sp(A,B) = 1  (must be 1)
+   pair 1 :  A = (x|z) [1, 0, 1, 0, 0, 0, 0, 0]   B = (x|z) [0, 0, 0, 0, 1, 1, 0, 0]   sp(A,B) = 1  (must be 1)
+   cross-pair symplectic products (must all be 0): [0]
+
+   RECORDS  R1,R2 = [1, 1, 0, 0, 0, 0, 0, 0] , [1, 0, 1, 0, 0, 0, 0, 0]   weights 2,2
+   WRITERS  W1,W2 = [0, 0, 0, 0, 1, 0, 1, 0] , [0, 0, 0, 0, 1, 1, 0, 0]   weights 2,2
+   sp(R1,R2) = 0  (records must COMMUTE)
+
+   H = -(XXXX + ZZZZ), dim 16, eigenvalues/multiplicities: [(-2.0, 4), (0.0, 8), (2.0, 4)]
+
+----------------------------------------------------------------------------------------------------
+CLAUSE TABLE  ([PHYS], dim 16).  CONTROL COLUMN: an operator that must FAIL each clause.
+----------------------------------------------------------------------------------------------------
+operator       (i) BIT    (ii) DUR   (iii) NONTRIV (iv) WRITABLE (v) PROTECTED 
+----------------------------------------------------------------------------------------------------
+   [clause (v) carrier data] admissible single-qubit operators = commutant of {X,Z} in 2x2:
+      dim = 1  -> only multiples of I
+      weight-1 Paulis that are ADMISSIBLE and FLIP a record: 0 (must be 0)
+      CONTROL: weight-2 Paulis that are ADMISSIBLE and FLIP a record: 12 (must be > 0;
+               the code has distance 2, so 2-qubit regions are NOT protected -- this is
+               the positive control that the clause-(v) test can register a failure)
+R1 (record)    True       True       True         True         yes(1-qubit)  
+R2 (record)    True       True       True         True         yes(1-qubit)  
+CTRL 0.7*R1    False      True       False        True         n/a           
+CTRL X_0       True       False      False        True         n/a           
+CTRL I         True       True       False        False        n/a           
+
+READ: R1 and R2 satisfy (i)-(iv) exactly; (v) holds against 1-qubit regions and FAILS
+      against 2-qubit regions (distance 2).  The carrier is honest: a [[4,2,2]] block holds
+      2 records with contractible := single qubit.  Every control failed the clause it was
+      built to fail.
+
+----------------------------------------------------------------------------------------------------
+INDEPENDENT WRITABILITY (model.independently_writable), m=1, [PHYS]
+----------------------------------------------------------------------------------------------------
+   family size 2 ; independently writable indices: [0, 1]
+   W1 flips R1 ?  True   leaves R2 fixed ?  True
+   W2 flips R2 ?  True   leaves R1 fixed ?  True
+
+====================================================================================================
+VALIDATION OF THE [CODE] REDUCTION  --  is codespace (x) bath an exact invariant subspace?
+====================================================================================================
+
+ m=1  dim=16  ground-space dim=4 (must be 4^m=4)
+   max ||[record, P_ground]|| = 0.000e+00  (must be 0 -> invariant subspace)
+   restricted records: all Hermitian involutions? True
+   restricted records: all traceless?             True
+   restricted records: mutually commuting?        True
+   joint sign-spectrum matches Z_1..Z_2m exactly? True  (max dev 1.554e-15)
+
+ m=2  dim=256  ground-space dim=16 (must be 4^m=16)
+   max ||[record, P_ground]|| = 7.409e-15  (must be 0 -> invariant subspace)
+   restricted records: all Hermitian involutions? True
+   restricted records: all traceless?             True
+   restricted records: mutually commuting?        True
+   joint sign-spectrum matches Z_1..Z_2m exactly? True  (max dev 2.309e-14)
+
+----------------------------------------------------------------------------------------------------
+NUMERICAL EQUIVALENCE [PHYS] vs [CODE] for the Holevo quantity itself
+----------------------------------------------------------------------------------------------------
+m      rec   chi [PHYS]       chi [CODE]       |difference|  
+1      0     0.5215273008     0.5215273008     1.887e-15     
+1      1     0.4709788878     0.4709788878     2.220e-15     
+2      0     0.1364086890     0.1364086890     1.665e-15     
+2      1     0.4709788878     0.4709788878     7.216e-16     
+2      2     0.4706794734     0.4706794734     7.216e-16     
+2      3     0.1364086890     0.1364086890     1.860e-15     
+
+   max |[PHYS] - [CODE]| over all records, m=1,2 : 2.220e-15
+   SELF-CHECK: PASS -- the [CODE] restriction is exact, so all larger m may use it
+   Propagator vs RecordModel.evolve at t=4: max dev 0.000e+00

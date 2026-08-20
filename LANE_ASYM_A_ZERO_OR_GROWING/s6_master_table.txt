@@ -1,0 +1,170 @@
+==============================================================================================================================================================================================
+S6  MASTER TRIAGE TABLE -- EVERY SCALAR THIS PROGRAM CAN BUILD FROM N RECORDS ON THE [[n, n-2, 2]] FAMILY
+    (Z) identically zero at every finite N by an exact argument -- rules out emergence at ANY N
+    (S) bounded / saturating / constant / decaying                -- ruled out as gravity's source at ANY N by extensivity (a)
+    (G) growing without bound                                     -- the only category that can carry a source; growth law given
+==============================================================================================================================================================================================
+
+QUANTITY                                       | N=2       N=4       N=6       N=8       N=10      N=12      | CAT
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+number of independent records N                | 2         4         6         8         10        12        | G  
+number of non-identity records                 | 15        255       4095      65535     1048575   1.68e+07  | G  
+code-space dimension                           | 4         16        64        256       1024      4096      | G  
+log2 code-space dimension                      | 2         4         6         8         10        12        | G  
+number of stabiliser generators                | 2         2         2         2         2         2         | S  
+number of syndrome bits n-k                    | 2         2         2         2         2         2         | S  
+code distance d                                | 2         2         2         2         2         2         | S  
+min weight of a record                         | 2         2         2         2         2         2         | S  
+min weight of a writer                         | 2         2         2         2         2         2         | S  
+total min FLIP-ONLY writer weight              | 4         8         12        16        20        24        | G  
+per-record min FLIP-ONLY writer weight         | 2         2         2         2         2         2         | S  
+number of weight-2 logical operators           | 18        45        84        135       198       273       | G  
+symplectic pairing summed over record pairs    | 0         0         0         0         0         0         | Z  
+count of interacting record pairs              | 0         0         0         0         0         0         | Z  
+  CONTROL pairing over records+writers         | 2         4         6         8         10        12        | G  
+records disturbed by a weight-1 operation      | 0         0         0         0         0         0         | Z  
+  CONTROL records disturbed, weight-2 op       | 2         4         6         8         10        12        | G  
+transport: records moved by gauge conjugation  | 0         0         0         0         0         0         | Z  
+  CONTROL records moved by their own writer    | 2         4         6         8         10        12        | G  
+max_i |Tr R_i|                                 | 0         0         0           --        --        --      | Z  
+max_i,E |Tr(P_E R_i)| (clause-iv balance)      | 0         0         0           --        --        --      | Z  
+record charge sum_i <R_i>, mixed code state    | 0         0         0           --        --        --      | Z  
+  CONTROL same sum, polarised code state       | 2.0000    4.0000    6.0000      --        --        --      | G  
+ENERGY spread over the 2^N record configs      | 0         0         0           --        --        --      | Z  
+Var_H on the code space                        | 0         0         1.78e-15    --        --        --      | Z  
+  CONTROL energy gap to a non-code state       | 2.0000    2.0000    2.0000      --        --        --      | S  
+distinct energies among 2^N configurations     | 1         1         1           --        --        --      | S  
+total chi, FIXED bath nq=3, distributed        | 0.9925    1.2145    0.7730    0.6447    0.5778    0.5121    | S  
+total chi, FIXED bath nq=3, shared probe       | 0.6837    0.5308    0.4536    0.4181    0.3962    0.3806    | S  
+per-record chi, FIXED bath nq=3                | 0.6519    0.6050    0.1884    0.1219    0.0876    0.0675    | S  
+  CONTROL total chi, bath SCALED nq=N          | 0.9925    1.9581    2.8894    3.9428    4.9353    5.9009    | G  
+  CONTROL per-record chi, bath SCALED nq=N     | 0.5215    0.5215    0.5215    0.5215    0.5215    0.5215    | S  
+redundancy (fragments holding >=10% of chi)    | 3         4         5         3         4           --      | S  
+chi(A u B) - chi(A) - chi(B), SHARED bath      | 0.7197    1.8601    1.0339    0.8634    0.7683    0.6653    | S  
+  CONTROL same, DISJOINT baths                 | 0         0         0         0         0         0         | Z  
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+EXACT ARGUMENT / FITTED LAW FOR EACH ROW
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(G) number of independent records N
+      EXACT N = n-2 (k of an [[n,n-2,2]] code). LINEAR in n; but it IS the count, see C-35.
+(G) number of non-identity records
+      EXACT 4^N - 1 (logical Paulis mod phase). EXPONENTIAL: S(2N)/S(N) -> infinity, not 2.
+(G) code-space dimension
+      EXACT 2^N. EXPONENTIAL, so it fails strict extensivity (a).
+(G) log2 code-space dimension
+      EXACT N. LINEAR and additive -- but it is N in bits, a count again.
+(S) number of stabiliser generators
+      EXACT 2 for every n (X^(x)n and Z^(x)n). Constant: a topological datum of the family.
+(S) number of syndrome bits n-k
+      EXACT n - (n-2) = 2 for every n.
+(S) code distance d
+      EXACT 2. No weight-1 Pauli is in N(S) (X_i anticommutes with Z^(x)n, Z_i with X^(x)n, Y_i with both); X_aX_b IS in N(S)\S. So d = 2 at every n. CONSTANT.
+(S) min weight of a record
+      EXACT 2 = d at every n.
+(S) min weight of a writer
+      EXACT 2 = d at every n.
+(G) total min FLIP-ONLY writer weight
+      EXACT 2N: >= 2N since every writer is a non-identity logical (weight >= d = 2), and 2N is ATTAINED by a verified weight-2 conjugate basis (S1b, n = 4..12). LINEAR. NOTE the Gra
+      m-Schmidt basis gives ~N^2/4; that is BASIS-DEPENDENT and dies under D-17.
+(S) per-record min FLIP-ONLY writer weight
+      EXACT 2 = d at every N.
+(G) number of weight-2 logical operators
+      EXACT 3*C(n,2) = 3*C(N+2,2). QUADRATIC: S(2N)/S(N) -> 4, not 2. Not extensive.
+(Z) symplectic pairing summed over record pairs
+      IDENTICALLY 0. Records are simultaneously durable commuting bits (clause ii + the family criterion), so sp(R_i,R_j) = 0 for every pair at every N. RULES OUT EMERGENCE AT ANY N.
+(Z) count of interacting record pairs
+      IDENTICALLY 0, same argument (the pairing entries are 0/1 so the count equals the sum).
+(G)   CONTROL pairing over records+writers
+      EXACT N. Non-zero in the SAME table (D-15): the pairing CAN register.
+(Z) records disturbed by a weight-1 operation
+      IDENTICALLY 0. Any weight-1 Pauli anticommutes with X^(x)n or Z^(x)n, so P_code P P_code = 0 exactly (verified dense to 1.8e-16 at n = 4,6,8). Clause (v) at d = 2. RULES OUT AN
+      Y N.
+(G)   CONTROL records disturbed, weight-2 op
+      EXACT N on this family; non-zero in the SAME table.
+(Z) transport: records moved by gauge conjugation
+      IDENTICALLY 0 out of 4N. Conjugation by a Pauli g sends R -> (-1)^sp(g,R) R, and every stabiliser commutes with every logical, so nothing moves. HONEST NOTE: this family is ABE
+      LIAN, so transport is trivial here by construction -- consistent with the D(Z_2) control in C-43 (0 of 40 moved) and NOT a test of the D(D_4) result (40 of 40 moved).
+(G)   CONTROL records moved by their own writer
+      EXACT N of N move; non-zero in the SAME table.
+(Z) max_i |Tr R_i|
+      IDENTICALLY 0: every record is a non-identity logical Pauli, hence traceless.
+(Z) max_i,E |Tr(P_E R_i)| (clause-iv balance)
+      IDENTICALLY 0: this IS clause (iv) (C-11), which every record satisfies by definition.
+(Z) record charge sum_i <R_i>, mixed code state
+      IDENTICALLY 0 at every N: the maximally mixed code state gives <R_i> = 0 for every record.
+(G)   CONTROL same sum, polarised code state
+      EXACT N; non-zero in the SAME table. But it equals the record COUNT, not a new density.
+(Z) ENERGY spread over the 2^N record configs
+      IDENTICALLY 0 at every finite N, EXACTLY: H restricted to the code space is -2*I, so all 2^N record configurations are exactly degenerate. GRAVITY'S ACTUAL SOURCE IS ENERGY, AN
+      D THE RECORD SECTOR CARRIES NONE. RULES OUT EMERGENCE AT ANY N.
+(Z) Var_H on the code space
+      IDENTICALLY 0, same argument.
+(S)   CONTROL energy gap to a non-code state
+      EXACT 2 at every n; non-zero in the SAME table, so the energy probe can register. CONSTANT in N -- the syndrome gap does not grow with the number of records.
+(S) distinct energies among 2^N configurations
+      EXACT 1 of 2^N at every n. Constant.
+(S) total chi, FIXED bath nq=3, distributed
+      EXACT BOUND sum_i chi_i = sum_i I(S_i:B) <= I(S_1..S_N:B) <= S(rho_B) <= log2 dim B = nq (independent uniform record bits + chain rule + conditioning reduces entropy). The boun
+      d does NOT move with N. Measured it does not merely saturate, it DECAYS: chi ~ N^a, a = -0.4638 +- 0.0212, max|resid| 0.3227, rms resid 0.1165 (log-log, N = 2..256).
+(S) total chi, FIXED bath nq=3, shared probe
+      Same exact bound. a = -0.2879 +- 0.0090, max|resid| 0.0922, rms 0.0491.
+(S) per-record chi, FIXED bath nq=3
+      Bounded by nq and decaying; this is C-36's capacity splitting made quantitative.
+(G)   CONTROL total chi, bath SCALED nq=N
+      LINEAR: a = 1.0010 +- 0.0012, max|resid| 0.0202, rms 0.0066. The control DOES grow, so the fixed-bath decay is not an artefact. BUT it grows only because the ENVIRONMENT was do
+      ubled along with the matter, which is not what extensivity of a SOURCE means.
+(S)   CONTROL per-record chi, bath SCALED nq=N
+      EXACTLY CONSTANT 0.52153 at every N -- one bath site per record, so nothing is split.
+(S) redundancy (fragments holding >=10% of chi)
+      Bounded by nq, the bath's own size, at every N. D-17: it tracks nq, not N.
+(S) chi(A u B) - chi(A) - chi(B), SHARED bath
+      STRICTLY SUBADDITIVE at every N tested: the deficit is positive throughout, so total chi FAILS gravity's requirement (b), additivity over disjoint regions.
+(Z)   CONTROL same, DISJOINT baths
+      EXACTLY 0 deficit -- the test CAN register additivity, so the shared-bath deficit is real. But disjoint baths means the environment scaled with the matter.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CATEGORY COUNTS:  (Z) identically zero = 10      (S) saturating/bounded = 14      (G) growing = 11      TOTAL = 35
+
+  (Z): symplectic pairing summed over record pairs; count of interacting record pairs; records disturbed by a weight-1 operation; transport: records moved by gauge conjugation; max_i |Tr R_i|; max_i,E |Tr(P_E R_i)| (clause-iv balance); record charge sum_i <R_i>, mixed code state; ENERGY spread over the 2^N record configs; Var_H on the code space;   CONTROL same, DISJOINT baths
+
+  (S): number of stabiliser generators; number of syndrome bits n-k; code distance d; min weight of a record; min weight of a writer; per-record min FLIP-ONLY writer weight;   CONTROL energy gap to a non-code state; distinct energies among 2^N configurations; total chi, FIXED bath nq=3, distributed; total chi, FIXED bath nq=3, shared probe; per-record chi, FIXED bath nq=3;   CONTROL per-record chi, bath SCALED nq=N; redundancy (fragments holding >=10% of chi); chi(A u B) - chi(A) - chi(B), SHARED bath
+
+  (G): number of independent records N; number of non-identity records; code-space dimension; log2 code-space dimension; total min FLIP-ONLY writer weight; number of weight-2 logical operators;   CONTROL pairing over records+writers;   CONTROL records disturbed, weight-2 op;   CONTROL records moved by their own writer;   CONTROL same sum, polarised code state;   CONTROL total chi, bath SCALED nq=N
+
+==============================================================================================================================================================================================
+READ (filled from the table above, not in advance)
+==============================================================================================================================================================================================
+Strict extensivity requires (a) asymptotically linear growth, (b) additivity over disjoint regions,
+(c) not saturating and not topological.  Applying all three to the (G) rows:
+
+  QUANTITY                                   (a) linear?  (b) additive?  (c) not topological?  -> extensive source?
+  number of independent records N               YES          YES            NO  (C-35: a count)     NO
+  log2 code-space dimension                     YES          YES            NO  (= N in bits)       NO
+  total min flip-only writer weight 2N          YES          YES            NO  (= 2N, a count)     NO
+  CONTROL pairing over records+writers = N      YES          YES            NO  (= N, a count)      NO
+  CONTROL records disturbed by weight-2 op      YES          YES            NO  (= N, a count)      NO
+  CONTROL polarised record charge = N           YES          YES            NO  (= N, a count)      NO
+  CONTROL total chi, bath scaled nq=N           YES          YES            NO  (environment grew)  NO
+  number of non-identity records 4^N-1          NO (exp)     NO             --                      NO
+  code-space dimension 2^N                      NO (exp)     NO             --                      NO
+  number of weight-2 logicals ~1.5(N+2)^2       NO (quad)    NO             --                      NO
+
+EVERY strictly-linear, strictly-additive quantity on this family is the record count N up to a
+constant factor.  C-35 already rules that class out: a count is topological and does not know how
+much is enclosed.  NO quantity satisfying (a) AND (b) AND (c) was found.
+
+The two strongest results are the (Z) rows, and they are exact rather than trends:
+  * the ENERGY spread over all 2^N record configurations is IDENTICALLY 0 at every finite N,
+    because H restricted to the code space is exactly -2*I.  Gravity's source is stress-energy;
+    the record sector of this family carries none, at any N.
+  * the symplectic pairing over record pairs and the number of records disturbed by a single
+    local operation are IDENTICALLY 0 at every finite N, by commutativity and by d = 2.
+Each of these rules out emergence at ANY N, with no appeal to reaching large N.
+
+The chi rows are ruled out by FORM, not by range: total chi is bounded by log2 dim(bath) = nq for
+every N by an exact chain-rule argument, and it is strictly SUBadditive over disjoint clusters.
+
+WHAT IS NOT RULED OUT BY THIS LANE: any quantity requiring a NON-ABELIAN carrier.  Transport is
+trivial on this family by construction, so the C-43 result (40 of 40 records moved on D(D_4)) is
+untouched here.  This lane says nothing about it.

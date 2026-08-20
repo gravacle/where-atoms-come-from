@@ -1,0 +1,27 @@
+================================================================================================================
+V4  DOES THE ENGINE'S EXTENSIVITY GATE EVER PASS A SERIES THAT IS EXACTLY CAPPED AT 1 BIT?
+================================================================================================================
+
+   The series: chi(ONE record : fragment of f bath qubits), f = 1..8.  It is ONE classical
+   bit, so chi <= 1 bit at EVERY f, by an exact argument.  It cannot be extensive at any f.
+
+     lam   beta |  chi(1)   chi(4)   chi(8)  | dbl(8/4) | engine category            best dAICc  expo       EXT?
+     0.40  0.50 |  0.0425  0.1490  0.2686 |    1.802 | GROWING (linear)           LIN     4.5   0.87      YES
+     0.40  2.00 |  0.2766  0.6619  0.8424 |    1.273 | CANNOT DISTINGUISH         LOG     3.8   0.47       no
+     0.80  0.50 |  0.0902  0.3008  0.5033 |    1.673 | CANNOT DISTINGUISH         SAT2    0.7   0.76       no
+     0.80  2.00 |  0.5215  0.8999  0.9747 |    1.083 | SATURATING                 SAT1    4.7   0.16       no
+     1.60  0.50 |  0.1076  0.3726  0.6085 |    1.633 | CANNOT DISTINGUISH         LOG     1.4   0.72       no
+     1.60  2.00 |  0.6118  0.9614  0.9924 |    1.032 | CANNOT DISTINGUISH         SAT1    3.9   0.07       no
+
+   Settings where the DOUBLING TEST ALONE put this exactly-capped series inside the engine's
+   own extensive band [1.6, 2.6]: 3 of 6.
+     lam=0.40 beta=0.50  dbl = 1.802  -- composite EXT? gate returned YES (FALSE POSITIVE)
+     lam=0.80 beta=0.50  dbl = 1.673  -- composite EXT? gate returned no (the other two gate conditions caught it)
+     lam=1.60 beta=0.50  dbl = 1.633  -- composite EXT? gate returned no (the other two gate conditions caught it)
+
+   READ: S6's prose sentence 'the saturating column does not [give 2.000], at any setting
+   tested' is not what the numbers say against the engine's own [1.6,2.6] band.  The
+   COMPOSITE gate (LIN best by dAICc>=4 AND doubling in band AND |expo-1|<0.25) is what
+   rejects these rows.  The doubling ratio on its own is not a sufficient instrument, and
+   the lane leans on it verbally in S6.  The EXACT 1-bit cap is what actually settles it.
+================================================================================================================

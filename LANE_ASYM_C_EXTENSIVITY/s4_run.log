@@ -1,0 +1,198 @@
+==============================================================================================================
+S4  THE BATH-INDUCED EFFECTIVE POTENTIAL ON THE RECORD REGISTER
+==============================================================================================================
+
+--------------------------------------------------------------------------------------------------------------
+VALIDATION  --  Phi(s) against the conditional bath free energy computed from the FULL
+            joint Hamiltonian (dense), and against the [PHYS] 4-qubit block at m=1.
+--------------------------------------------------------------------------------------------------------------
+configuration                  Phi(s) [FORMULA]     F(s) [DENSE]         |difference|  
+--------------------------------------------------------------------------------------------------------------
+shar m=1 nq=3 s=++             -3.626354304467      -3.626354304467      4.441e-16     
+shar m=1 nq=3 s=++             -3.626354304467      -3.626354304467      4.441e-16     
+shar m=2 nq=3 s=+++-           -3.692398154432      -3.692398154432      4.441e-16     
+shar m=2 nq=3 s=---+           -3.692398154432      -3.692398154432      4.441e-16     
+shar m=3 nq=2 s=+--+-+         -2.896837891323      -2.896837891323      0.000e+00     
+shar m=3 nq=2 s=--+---         -4.062092800788      -4.062092800788      8.882e-16     
+sepa m=2 nq=2 s=+-+-           -5.329230569923      -5.329230569923      2.665e-15     
+sepa m=2 nq=2 s=-+++           -5.329230569923      -5.329230569923      2.665e-15     
+--------------------------------------------------------------------------------------------------------------
+max |FORMULA - DENSE| = 2.665e-15   SELF-CHECK: PASS
+[PHYS] tie, real 4-qubit [[4,2,2]] block, s=(+,-): Phi+E_code = -5.626354304467  vs dense -5.626354304467  |d| 4.441e-15
+
+--------------------------------------------------------------------------------------------------------------
+TABLE 10  --  THE INDUCED PAIR COUPLING  J_2(i,j) = E_s[ Phi(s) s_i s_j ].
+            D-15: the SAME-SITE column is the positive control for the two ZERO columns.
+--------------------------------------------------------------------------------------------------------------
+N        J_2 SAME bath site     J_2 DIFFERENT site     J_2 SEPARATE baths    
+--------------------------------------------------------------------------------------------------------------
+2        -4.38992494759952e-01  0.00000000000000e+00   0.00000000000000e+00  
+4        -2.92942088573744e-01  0.00000000000000e+00   -1.11022302462516e-16 
+6        -2.40721054189761e-01  4.02455846426619e-16   0.00000000000000e+00  
+8        -2.10208804955110e-01  -4.19803081186387e-16  -3.05311331771918e-16 
+10       -1.89341736674001e-01  5.23886489744996e-16   6.59194920871187e-17  
+12       -1.73838166869723e-01  -1.17193581228303e-14  -8.58688120608520e-17 
+--------------------------------------------------------------------------------------------------------------
+   the exact formula J_2 = 1/2(E[f(c''+2)]-E[f(c'')]) reproduces every SAME-SITE brute-force
+   value to < 1e-12.   NOISE FLOOR of the two zero columns: 1.172e-14
+   READ: the bath mediates a REAL record-record interaction, but ONLY between records that
+         share a bath qubit.  Between records at different sites -- and therefore between
+         records in different regions with their own baths -- it is zero to machine
+         precision, and zero by the exact argument that Phi is a SUM OVER SITES.
+
+--------------------------------------------------------------------------------------------------------------
+TABLE 11  --  DOES THE INTERACTION GROW EXTENSIVELY?   N records on ONE shared bath qubit
+            -- the most crowded, most favourable case for a collective effect.
+--------------------------------------------------------------------------------------------------------------
+N         |J_2(N)|           C(N,2)|J_2|        std(Phi)         spread(Phi)      spread/N      
+--------------------------------------------------------------------------------------------------------------
+2         4.3899249476e-01   4.3899249476e-01   0.4389924948     0.87798499       0.43899249    
+4         2.9294208857e-01   1.7576525314e+00   0.7322712098     2.34353671       0.58588418    
+8         2.1020880496e-01   5.8858465387e+00   1.1492708813     5.46857893       0.68357237    
+16        1.5185513355e-01   1.8222616026e+01   1.7362657004     11.82992811      0.73937051    
+32        1.0926613307e-01   5.4196002001e+01   2.5596849274     24.61044884      0.76907653    
+64        7.8214336418e-02   1.5768010222e+02   3.7145341669     50.20068973      0.78438578    
+128       5.5748873429e-02   4.5312684323e+02   5.3363601953     101.39580773     0.79215475    
+256       3.9616356986e-02   1.2930778920e+03   7.6179965797     203.79336643     0.79606784    
+512       2.8096574924e-02   3.6754815452e+03   10.8330657606    408.59214574     0.79803153    
+1024      1.9901974049e-02   1.0424176360e+04   15.3691443389    818.19153539     0.79901517    
+2048      1.4086925849e-02   2.9527999707e+04   21.7746840583    1637.39123021    0.79950744    
+4096      9.9666016659e-03   8.3585502867e+04   30.8254299876    3275.79107762    0.79975368    
+8192      7.0496780157e-03   2.3651906612e+05   43.6184207129    6552.59100133    0.79987683    
+16384     4.9857444838e-03   6.6913445378e+05   61.7049859183    13106.19096318   0.79993841    
+32768     3.5257901937e-03   1.8928364303e+06   87.2788789430    26213.39094411   0.79996921    
+65536     2.4932394052e-03   5.3541091548e+06   123.4423666876   52427.79093457   0.79998460    
+
+--------------------------------------------------------------------------------------------------------------
+TABLE 12  --  THE EXTENSIVITY RATIO S(2N)/S(N).  Requirement (a) demands -> 2.
+--------------------------------------------------------------------------------------------------------------
+N         C(N,2)|J_2|      std(Phi)         spread(Phi)      chi_total (S3)  
+          ratio            ratio            ratio            ratio           
+--------------------------------------------------------------------------------------------------------------
+2         4.003833         1.668072         2.669222         see S3 TABLE 6  
+4         3.348697         1.569461         2.333473         see S3 TABLE 6  
+8         3.096006         1.510754         2.163255         see S3 TABLE 6  
+16        2.974107         1.474247         2.080355         see S3 TABLE 6  
+32        2.909442         1.451169         2.039812         see S3 TABLE 6  
+64        2.873710         1.436616         2.019809         see S3 TABLE 6  
+128       2.853678         1.427564         2.009880         see S3 TABLE 6  
+256       2.842429         1.422036         2.004933         see S3 TABLE 6  
+512       2.836139         1.418725         2.002465         see S3 TABLE 6  
+1024      2.832646         1.416779         2.001232         see S3 TABLE 6  
+2048      2.830720         1.415655         2.000616         see S3 TABLE 6  
+4096      2.829666         1.415014         2.000308         see S3 TABLE 6  
+8192      2.829093         1.414654         2.000154         see S3 TABLE 6  
+16384     2.828783         1.414454         2.000077         see S3 TABLE 6  
+32768     2.828617         1.414344         2.000038         see S3 TABLE 6  
+
+--------------------------------------------------------------------------------------------------------------
+TABLE 13  --  GROWTH EXPONENTS  Q(N) ~ N^p, fitted on log-log over the LARGE-N half of the
+            range, with residuals and an uncertainty.  NO FIT WITHOUT A NOISE FLOOR:
+            the noise floor of this whole computation is the exact-zero column of TABLE 10,
+            1.172e-14, and every fitted quantity below is many orders of magnitude above it.
+--------------------------------------------------------------------------------------------------------------
+quantity             exponent p     sigma(p)       max |residual|   verdict vs (a)
+--------------------------------------------------------------------------------------------------------------
+C(N,2)|J_2|          1.501635       3.81e-04       3.73e-03         SUPER-EXTENSIVE
+std(Phi)             0.501945       4.32e-04       4.17e-03         SUB-EXTENSIVE 
+spread(Phi)          1.000714       1.85e-04       1.86e-03         EXTENSIVE     
+|J_2(N)|             -0.498932      2.34e-04       2.25e-03         SUB-EXTENSIVE 
+
+--------------------------------------------------------------------------------------------------------------
+TABLE 14  --  ADDITIVITY OF THE INTERACTION ITSELF.  Two blocks of 2 records each.
+            Q = the total pair-interaction magnitude  sum_{i<j} |J_2(i,j)|.
+            CONTROL = separate baths, where the defect MUST be exactly 0.
+--------------------------------------------------------------------------------------------------------------
+configuration                        Q(A+B)           Q(A)+Q(B)        DEFECT         ratio       
+--------------------------------------------------------------------------------------------------------------
+SHARED one site, halves of 2         1.7576525314e+00 8.7798498952e-01 8.797e-01      2.001916    
+SHARED one site, halves of 4         5.8858465387e+00 3.5153050629e+00 2.371e+00      1.674349    
+SHARED one site, halves of 8         1.8222616026e+01 1.1771693077e+01 6.451e+00      1.548003    
+SHARED one site, halves of 16        5.4196002001e+01 3.6445232052e+01 1.775e+01      1.487053    
+SHARED one site, halves of 32        1.5768010222e+02 1.0839200400e+02 4.929e+01      1.454721    
+SHARED one site, halves of 64        4.5312684323e+02 3.1536020444e+02 1.378e+02      1.436855    
+SHARED one site, halves of 128       1.2930778920e+03 9.0625368646e+02 3.868e+02      1.426839    
+SHARED one site, halves of 256       3.6754815452e+03 2.5861557840e+03 1.089e+03      1.421214    
+SHARED one site, halves of 512       1.0424176360e+04 7.3509630904e+03 3.073e+03      1.418069    
+SHARED one site, halves of 1024      2.9527999707e+04 2.0848352719e+04 8.680e+03      1.416323    
+
+SEPARATE identical baths 2+2 [CTRL]  8.7798498952e-01 8.7798498952e-01 0.000e+00      1.000000    
+SEPARATE identical baths 4+4 [CTRL]  3.5153050629e+00 3.5153050629e+00 0.000e+00      1.000000    
+SEPARATE identical baths 8+8 [CTRL]  1.1771693077e+01 1.1771693077e+01 0.000e+00      1.000000    
+SEPARATE identical baths 16+16 [CTRL] 3.6445232052e+01 3.6445232052e+01 0.000e+00      1.000000    
+SEPARATE identical baths 32+32 [CTRL] 1.0839200400e+02 1.0839200400e+02 0.000e+00      1.000000    
+SEPARATE identical baths 64+64 [CTRL] 3.1536020444e+02 3.1536020444e+02 0.000e+00      1.000000    
+SEPARATE identical baths 128+128 [CTRL] 9.0625368646e+02 9.0625368646e+02 0.000e+00      1.000000    
+SEPARATE identical baths 256+256 [CTRL] 2.5861557840e+03 2.5861557840e+03 0.000e+00      1.000000    
+SEPARATE identical baths 512+512 [CTRL] 7.3509630904e+03 7.3509630904e+03 0.000e+00      1.000000    
+SEPARATE identical baths 1024+1024 [CTRL] 2.0848352719e+04 2.0848352719e+04 0.000e+00      1.000000    
+
+SEPARATE, e=1.0 and e=1.4 [CTRL2]    3.5611036492e+01 3.6445232052e+01 -8.342e-01     0.977111    
+   same, 256+256                     2.5780024540e+03 2.5861557840e+03 -8.153e+00     0.996847    
+   same, 1024+1024                   2.0826825961e+04 2.0848352719e+04 -2.153e+01     0.998967    
+
+--------------------------------------------------------------------------------------------------------------
+TABLE 15  --  ADDITIVITY OF THE ENERGY SCALES OF Phi (not of an L1 norm of couplings).
+            std(Phi) is the TYPICAL induced energy; spread(Phi) = max_s Phi - min_s Phi.
+--------------------------------------------------------------------------------------------------------------
+configuration                        std(A+B)        std(A)+std(B)   DEFECT         ratio       spread(A+B)     DEFECT        
+--------------------------------------------------------------------------------------------------------------
+SHARED one site, halves of 2         0.73227121      0.87798499      -1.457e-01     0.834036    2.34353671      5.876e-01     
+SHARED one site, halves of 4         1.14927088      1.46454242      -3.153e-01     0.784730    5.46857893      7.815e-01     
+SHARED one site, halves of 8         1.73626570      2.29854176      -5.623e-01     0.755377    11.82992811     8.928e-01     
+SHARED one site, halves of 16        2.55968493      3.47253140      -9.128e-01     0.737124    24.61044884     9.506e-01     
+SHARED one site, halves of 32        3.71453417      5.11936985      -1.405e+00     0.725584    50.20068973     9.798e-01     
+SHARED one site, halves of 64        5.33636020      7.42906833      -2.093e+00     0.718308    101.39580773    9.944e-01     
+SHARED one site, halves of 128       7.61799658      10.67272039     -3.055e+00     0.713782    203.79336643    1.002e+00     
+SHARED one site, halves of 256       10.83306576     15.23599316     -4.403e+00     0.711018    408.59214574    1.005e+00     
+SHARED one site, halves of 512       15.36914434     21.66613152     -6.297e+00     0.709363    818.19153539    1.007e+00     
+SHARED one site, halves of 1024      21.77468406     30.73828868     -8.964e+00     0.708390    1637.39123021   1.008e+00     
+
+SEPARATE identical baths 2+2 [CTRL]  0.62082914      0.87798499      -2.572e-01     0.707107    1.75596998      0.000e+00     
+SEPARATE identical baths 4+4 [CTRL]  1.03558788      1.46454242      -4.290e-01     0.707107    4.68707342      0.000e+00     
+SEPARATE identical baths 8+8 [CTRL]  1.62531447      2.29854176      -6.732e-01     0.707107    10.93715786     0.000e+00     
+SEPARATE identical baths 16+16 [CTRL] 2.45545050      3.47253140      -1.017e+00     0.707107    23.65985623     0.000e+00     
+SEPARATE identical baths 32+32 [CTRL] 3.61994114      5.11936985      -1.499e+00     0.707107    49.22089768     0.000e+00     
+SEPARATE identical baths 64+64 [CTRL] 5.25314460      7.42906833      -2.176e+00     0.707107    100.40137946    0.000e+00     
+SEPARATE identical baths 128+128 [CTRL] 7.54675296      10.67272039     -3.126e+00     0.707107    202.79161546    0.000e+00     
+SEPARATE identical baths 256+256 [CTRL] 10.77347408     15.23599316     -4.463e+00     0.707107    407.58673286    0.000e+00     
+SEPARATE identical baths 512+512 [CTRL] 15.32026852     21.66613152     -6.346e+00     0.707107    817.18429147    0.000e+00     
+SEPARATE identical baths 1024+1024 [CTRL] 21.73525237     30.73828868     -9.003e+00     0.707107    1636.38307077   0.000e+00     
+   note: std adds IN QUADRATURE for independent baths, so std(A+B) = sqrt(2)*std(A) there;
+   the additive quantity for disjoint regions is the VARIANCE, and Var(A+B)-Var(A)-Var(B)
+   is exactly 0 in the CTRL rows by independence.
+   Var defect, SEPARATE 16+16 : 8.882e-16   |   Var defect, SHARED halves of 16 : 5.227498e-01
+   Var defect, SEPARATE 256+256 : -1.421e-14   |   Var defect, SHARED halves of 256 : 1.287570e+00
+   Var defect, SEPARATE 1024+1024 : -5.684e-14   |   Var defect, SHARED halves of 1024 : 1.715670e+00
+
+==============================================================================================================
+READ OF S4  (filled in from the numbers above, never in advance)
+==============================================================================================================
+
+ * There IS one genuine record-record interaction in this model, and exactly one: the bath
+   mediates a coupling J_2 between two records THAT SHARE A BATH QUBIT.  TABLE 10 measures it
+   at ~1e-1 for N=2 and it is confirmed by brute-force enumeration over all 2^N sign strings.
+
+ * Between records that do NOT share a bath qubit it is ZERO -- 1.2e-14, the machine floor --
+   and zero by an exact argument, not merely numerically: Phi(s) = sum_j f_j(c_j(s)) is a SUM
+   OVER SITES, and c_j depends only on the records at site j.  Two records at different sites
+   therefore never appear in the same term.  This holds at every N.
+
+ * So the interaction has NO RANGE.  It is not weak at distance and strong nearby; it is
+   all-or-nothing contact.  There is no falloff to extrapolate, which is the one thing a field
+   would have to supply.
+
+ * Where the two halves DO share a site the defect is real and GROWS: TABLE 14's defect column
+   runs 0.88 -> 8.7e3 across N = 4 -> 2048, as ~N^1.5.  But that column is an L1 norm of
+   couplings, not an energy.  The energy scales are in TABLE 15: the typical induced energy
+   std(Phi) grows as N^0.50 -- SUB-extensive -- and only the extreme spread max_s Phi - min_s Phi
+   grows as N^1.00, and the spread is exactly (per-record constant) x N, which is the record
+   COUNT in energy units and is what C-35 already excludes.
+
+ * The CTRL rows -- two identical but disjoint baths -- have defect exactly 0 at every N, which
+   is what 'disjoint regions' means physically.  The CTRL2 rows show what a mere bath-parameter
+   mismatch looks like, so it is not mistaken for an interaction.
+
+
+[written]
+python3 -u s4_induced_interaction.py  0.69s user 0.08s system 29% cpu 2.649 total

@@ -1,0 +1,31 @@
+====================================================================================================================
+S2  DENSE CHECK OF THE FIVE CLAUSES -- [[n, n-2, 2]].  REPRESENTATION: full dense Hilbert space 2^n.
+====================================================================================================================
+
+  n    k  dim  codedim  H-multiplicities |  (i)  (ii) (iii) (iv) writer | maxnorm compress w1 | maxnorm compress w2 (CONTROL)
+--------------------------------------------------------------------------------------------------------------------
+  4    2   16        4  [4, 8, 4]         | True True True True   True |           4.474e-17 |           2.000e+00
+  6    4   64       16  [16, 32, 16]      | True True True True   True |           8.948e-17 |           4.000e+00
+  8    6  256       64  [64, 128, 64]     | True True True True   True |           1.790e-16 |           8.000e+00
+--------------------------------------------------------------------------------------------------------------------
+
+  n |  weight-1 ops moving a record / total | weight-2 ops moving a record / total (CONTROL) | compressed algebra = Pauli(k)? | joint spectrum complete?
+--------------------------------------------------------------------------------------------------------------------
+  4 |                    0 / 12     |                         18 / 54     |                           True | True
+  6 |                    0 / 18     |                         45 / 135    |                           True | True
+  8 |                    0 / 24     |                         84 / 252    |                           True | True
+--------------------------------------------------------------------------------------------------------------------
+
+MODEL CROSS-CHECK at n = 4 (dim 16) -- RecordModel on the same H, no Lindblads.
+  eigenvalue multiplicities : [4, 8, 4]
+  minimal projections of A' : 16
+  records satisfying (i)-(iv): 1260
+  maximal independent commuting family : 2   (F_2 prediction k = n-2 = 2)
+  independently writable members       : 2
+
+READ (filled from the numbers above):
+  all five clauses hold for every member of the computed conjugate-pair record family at n = 4, 6, 8.
+  weight-1 compressions are 0.000e+00 to machine precision and 0 of 3n of them move a record;
+  the weight-2 CONTROL in the same table is non-zero and moves many.  Clause (v) holds at d = 2.
+  the compressed records/writers reproduce the Pauli algebra on exactly k logical qubits with a
+  complete 2^k joint spectrum -- so the CODE-SPACE representation (dim 2^k) is exact, not a model.

@@ -1,0 +1,133 @@
+============================================================================================================================
+B5   THE RESIDUAL IS A THREE-RECORD QUANTITY
+============================================================================================================================
+
+(1) EXTENSIVITY -- IS THERE ANY TERM THAT GROWS WITH THE NUMBER OF RECORDS WRITTEN?
+    Left: extra records placed on OTHER bath sites, all commuting with the read record.
+    Right, IN THE SAME TABLE (D-15): the identical extra records placed ON the read
+    record's site.  If the probe were blind, the right column would not move either.
+
+    lam  records written    chi, extra on other sites    chi - alone   chi, extra on read site   chi - alone
+   0.40                1             0.27663515983358      +0.00e+00          0.27663515983358     +0.000000
+   0.40                2             0.27663515983358      -1.67e-16          0.12562548244711     -0.151010
+   0.40                3             0.27663515983358      -5.55e-17          0.06640904545901     -0.210226
+   0.80                1             0.52152730075953      +0.00e+00          0.52152730075953     +0.000000
+   0.80                2             0.52152730075953      -1.11e-16          0.13640868897176     -0.385119
+   0.80                3             0.52152730075953      -5.55e-16          0.07178321984410     -0.449744
+   1.20                1             0.59956669197087      +0.00e+00          0.59956669197087     +0.000000
+   1.20                2             0.59956669197088      +1.22e-15          0.12753968230643     -0.472027
+   1.20                3             0.59956669197087      +1.11e-16          0.06985674588745     -0.529710
+
+  largest |chi - alone| from adding commuting records on other sites : 1.221e-15
+  control column moves by up to                                      : 0.45
+  -> NO EXTENSIVE TERM.  chi does not know how many records the carrier holds.  EXACT:
+     it follows from the theorem in (2), which holds for any number of such partners.
+
+(2) THE GENERALISED C-38 THEOREM, AND ITS TEST.
+    CLAIM.  Let every partner commute with the read record R, let none of them be written
+    on R's bath site, and let there exist a record W anticommuting with R and commuting
+    with every partner (here W = Z1).  Then chi(R) is EXACTLY the alone value.
+    PROOF.  Every coupling operator commutes with R, so H_tot preserves each R-eigensector
+    and the maximally mixed code state splits as (1/2) sum_r Pi_r/(d/2) (x) rho_th.  In
+    sector r the bath qubit carrying R decouples and evolves under E_0 Z_0 + lam*r*X_0,
+    so rho_B(r) = sigma_0(r) (x) tau(r).  W (x) I_B maps sector + to sector -, commutes
+    with every partner coupling and acts trivially on the bath, so tau(+) = tau(-) = tau
+    EXACTLY.  Both S(average) and average-of-S then shift by the same S(tau) and chi is
+    unchanged.  NOTE what the claim does NOT require: the partners may pair with EACH
+    OTHER, and they may be piled onto one site or spread over many.
+
+    lam  configuration                       partners pair each other?  co-located?               chi    chi - alone
+   0.40  alone                                                      --           --  0.27663515983358      +0.00e+00
+   0.40  X2@1                                                       no           --  0.27663515983358      -1.67e-16
+   0.40  X2@1,X3@2                                                  no           no  0.27663515983358      -5.55e-17
+   0.40  X2@1,X3@1                                                  no          YES  0.27663515983359      +1.72e-15
+   0.40  X2@1,Z2@2                                                 YES           no  0.27663515983359      +1.61e-15
+   0.40  X2@1,Z2@1                                                 YES          YES  0.27663515983358      +7.22e-16
+   0.40  X2@1,Z2@1,X3@1                                            YES          YES  0.27663515983358      +1.17e-15
+   0.40  X2@0... (CONTROL: on the read site)                         no           --  0.12562548244711      -1.51e-01
+   0.80  alone                                                      --           --  0.52152730075953      +0.00e+00
+   0.80  X2@1                                                       no           --  0.52152730075953      -1.11e-16
+   0.80  X2@1,X3@2                                                  no           no  0.52152730075953      -5.55e-16
+   0.80  X2@1,X3@1                                                  no          YES  0.52152730075953      -1.55e-15
+   0.80  X2@1,Z2@2                                                 YES           no  0.52152730075953      +5.55e-16
+   0.80  X2@1,Z2@1                                                 YES          YES  0.52152730075954      +8.88e-16
+   0.80  X2@1,Z2@1,X3@1                                            YES          YES  0.52152730075953      +3.33e-16
+   0.80  X2@0... (CONTROL: on the read site)                         no           --  0.13640868897176      -3.85e-01
+   1.20  alone                                                      --           --  0.59956669197087      +0.00e+00
+   1.20  X2@1                                                       no           --  0.59956669197088      +1.22e-15
+   1.20  X2@1,X3@2                                                  no           no  0.59956669197087      +1.11e-16
+   1.20  X2@1,X3@1                                                  no          YES  0.59956669197088      +1.22e-15
+   1.20  X2@1,Z2@2                                                 YES           no  0.59956669197087      -6.66e-16
+   1.20  X2@1,Z2@1                                                 YES          YES  0.59956669197088      +9.99e-16
+   1.20  X2@1,Z2@1,X3@1                                            YES          YES  0.59956669197088      +1.22e-15
+   1.20  X2@0... (CONTROL: on the read site)                         no           --  0.12753968230643      -4.72e-01
+
+  worst |chi - alone| over every configuration the theorem covers: 1.721e-15
+  -> EXACTLY ZERO, and the control on the last line of each block moves by 0.14-0.47.
+
+(3) WHERE IT BREAKS.  Add ONE record that PAIRS with the read record, on a site the
+    commuting partner shares.  The commuting partner -- exactly invisible a moment ago --
+    becomes visible.  Nothing about the pair (record, commuting partner) has changed;
+    only a THIRD record has been introduced.
+
+    lam  configuration                            chi   vs Z1@1 alone                      what changed
+   0.40  Z1@1                        0.23633135815600       +0.000000                         reference
+   0.40  Z1@1,X2@2                   0.23633135815600       +0.000000                X2 on its OWN site
+   0.40  Z1@1,X2@1                   0.17452476827706       -0.061807               X2 SHARES Z1's site
+   0.40  Z1@1,X2@1,X3@1              0.16197798283056       -0.074353            two commuters share it
+   0.40  Z1@1,X2@1,X3@2              0.17452476827706       -0.061807          one shares, one does not
+   0.80  Z1@1                        0.42257771038892       +0.000000                         reference
+   0.80  Z1@1,X2@2                   0.42257771038892       -0.000000                X2 on its OWN site
+   0.80  Z1@1,X2@1                   0.34466283742902       -0.077915               X2 SHARES Z1's site
+   0.80  Z1@1,X2@1,X3@1              0.27523443515184       -0.147343            two commuters share it
+   0.80  Z1@1,X2@1,X3@2              0.34466283742903       -0.077915          one shares, one does not
+   1.20  Z1@1                        0.47986004241649       +0.000000                         reference
+   1.20  Z1@1,X2@2                   0.47986004241649       -0.000000                X2 on its OWN site
+   1.20  Z1@1,X2@1                   0.33090204342908       -0.148958               X2 SHARES Z1's site
+   1.20  Z1@1,X2@1,X3@1              0.22302212082480       -0.256838            two commuters share it
+   1.20  Z1@1,X2@1,X3@2              0.33090204342908       -0.148958          one shares, one does not
+
+  READ IT: X2 on its own site changes NOTHING (to 1e-16). The SAME X2, moved onto the site
+  Z1 occupies, changes chi(R) by a tenth. X2 never touches R and commutes with it. The
+  effect exists only as a property of the TRIPLE (R, Z1, X2).
+
+  THE SECOND THREE-BODY CHANNEL: two partners that BOTH pair with the read record, and
+  commute with each other. Whether THEY share a site changes what R loses.
+    lam  configuration                            chi         A - B     control (both commute with R)   control A - B
+   0.40  Z1@1,Z1X2@2 vs @1,@1        0.23988925613570     +0.024838                X2@1,X3@2 vs @1,@1       -1.78e-15
+   0.80  Z1@1,Z1X2@2 vs @1,@1        0.33486245410906     +0.061174                X2@1,X3@2 vs @1,@1       +9.99e-16
+   1.20  Z1@1,Z1X2@2 vs @1,@1        0.41529637870639     +0.128295                X2@1,X3@2 vs @1,@1       -1.11e-15
+
+  THE THIRD THREE-BODY CHANNEL: two partners on the READ RECORD'S OWN site, differing only
+  in whether they pair with EACH OTHER.  Same m0, same m1, same p0, same p1.
+    lam  A (partners commute)                     chi A  B (partners pair)                    chi B        A - B      B/A
+   0.40  X2@0,X3@0                       0.066409045459  X2@0,Z2@0                   0.118381489927    -0.051972    1.783
+   0.40  X2@0,X3@0,X4@0                  0.046084742393  X2@0,Z2@0,X3@0              0.047586210289    -0.001501    1.033
+   0.40  X2@0,X3@0,X4@0,X5@0             0.034376742325  X2@0,Z2@0,X3@0,Z3@0         0.105966543282    -0.071590    3.083
+   0.80  X2@0,X3@0                       0.071783219844  X2@0,Z2@0                   0.124444092221    -0.052661    1.734
+   0.80  X2@0,X3@0,X4@0                  0.045162574990  X2@0,Z2@0,X3@0              0.056593616786    -0.011431    1.253
+   0.80  X2@0,X3@0,X4@0,X5@0             0.033530458642  X2@0,Z2@0,X3@0,Z3@0         0.143523632584    -0.109993    4.280
+   1.20  X2@0,X3@0                       0.069856745887  X2@0,Z2@0                   0.156766297347    -0.086910    2.244
+   1.20  X2@0,X3@0,X4@0                  0.039419574510  X2@0,Z2@0,X3@0              0.059964732426    -0.020545    1.521
+   1.20  X2@0,X3@0,X4@0,X5@0             0.030418757545  X2@0,Z2@0,X3@0,Z3@0         0.105519151384    -0.075100    3.469
+
+  Four records on one bath site suppress chi to 0.0335 when they commute in pairs and to
+  0.1435 when they pair -- a factor of 4.3 at the same occupancy.  NO CAPACITY ARGUMENT
+  CAN PRODUCE THAT: the site holds the same three bits in both rows.
+
+(4) THE CAPACITY TERM IS NOT EVEN MONOTONE IN OCCUPANCY once the pairing is allowed to vary.
+    lam   records on the site   all mutually commuting    paired up in twos    ratio
+   0.40                     2           0.125625482447                   --       --
+   0.40                     3           0.066409045459       0.118381489927    1.783
+   0.40                     5           0.034376742325       0.105966543282    3.083
+   0.40                     6           0.026970454443       0.069417577677    2.574
+   0.80                     2           0.136408688972                   --       --
+   0.80                     3           0.071783219844       0.124444092221    1.734
+   0.80                     5           0.033530458642       0.143523632584    4.280
+   0.80                     6           0.024307043226       0.083650144622    3.441
+   1.20                     2           0.127539682306                   --       --
+   1.20                     3           0.069856745887       0.156766297347    2.244
+   1.20                     5           0.030418757545       0.105519151384    3.469
+   1.20                     6           0.020611399959       0.097650819138    4.738
+
+  elapsed 164.8s

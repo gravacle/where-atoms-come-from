@@ -1,0 +1,132 @@
+========================================================================================================
+S2  EXACT ADDITIVITY AUDIT  --  [F2] symplectic representation, m disjoint [[4,2,2]] blocks
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+TABLE 1  --  the exact record-level quantities vs m   (N=records, W=total writer weight,
+            P=interacting pairs, P_cross=pairs in DIFFERENT blocks,  G=relation matrix)
+--------------------------------------------------------------------------------------------------------
+m    dim      N(m)   W(m)     P(m)     P_cross    tr G       ||G||_F^2    lam_max(G)  
+--------------------------------------------------------------------------------------------------------
+1    16^1     2      4        1        0          6.0        36.0         6.000000    
+2    16^2     4      8        2        0          12.0       72.0         6.000000    
+3    16^3     6      12       3        0          18.0       108.0        6.000000    
+4    16^4     8      16       4        0          24.0       144.0        6.000000    
+5    16^5     10     20       5        0          30.0       180.0        6.000000    
+6    16^6     12     24       6        0          36.0       216.0        6.000000    
+7    16^7     14     28       7        0          42.0       252.0        6.000000    
+8    16^8     16     32       8        0          48.0       288.0        6.000000    
+9    16^9     18     36       9        0          54.0       324.0        6.000000    
+10   16^10    20     40       10       0          60.0       360.0        6.000000    
+11   16^11    22     44       11       0          66.0       396.0        6.000000    
+12   16^12    24     48       12       0          72.0       432.0        6.000000    
+--------------------------------------------------------------------------------------------------------
+W(m) for m<=3 is a BRUTE-FORCE minimum over the whole normaliser N(S) (|N(S)| = 2^(6m):
+   64, 4096, 262144 for m=1,2,3); for larger m it is the per-block witness, which the exact
+   argument below shows is the true minimum.
+
+--------------------------------------------------------------------------------------------------------
+TABLE 2  --  ADDITIVITY:  Q(A + B)  against  Q(A) + Q(B)   for two DISJOINT blocks
+            (and the m-block generalisation Q(m) vs m*Q(1)).  DEFECT = whole - sum of parts.
+--------------------------------------------------------------------------------------------------------
+quantity         m    Q(m blocks)    m*Q(1 block)   DEFECT         ratio        verdict   
+--------------------------------------------------------------------------------------------------------
+N  records       2    4.000000       4.000000       0.000e+00      1.000000     ADDITIVE  
+N  records       4    8.000000       8.000000       0.000e+00      1.000000     ADDITIVE  
+N  records       8    16.000000      16.000000      0.000e+00      1.000000     ADDITIVE  
+N  records       12   24.000000      24.000000      0.000e+00      1.000000     ADDITIVE  
+
+W  writerwt      2    8.000000       8.000000       0.000e+00      1.000000     ADDITIVE  
+W  writerwt      4    16.000000      16.000000      0.000e+00      1.000000     ADDITIVE  
+W  writerwt      8    32.000000      32.000000      0.000e+00      1.000000     ADDITIVE  
+W  writerwt      12   48.000000      48.000000      0.000e+00      1.000000     ADDITIVE  
+
+P  pairs         2    2.000000       2.000000       0.000e+00      1.000000     ADDITIVE  
+P  pairs         4    4.000000       4.000000       0.000e+00      1.000000     ADDITIVE  
+P  pairs         8    8.000000       8.000000       0.000e+00      1.000000     ADDITIVE  
+P  pairs         12   12.000000      12.000000      0.000e+00      1.000000     ADDITIVE  
+
+P_cross          2    0.000000       0.000000       0.000e+00      nan          ADDITIVE  
+P_cross          4    0.000000       0.000000       0.000e+00      nan          ADDITIVE  
+P_cross          8    0.000000       0.000000       0.000e+00      nan          ADDITIVE  
+P_cross          12   0.000000       0.000000       0.000e+00      nan          ADDITIVE  
+
+tr G             2    12.000000      12.000000      0.000e+00      1.000000     ADDITIVE  
+tr G             4    24.000000      24.000000      0.000e+00      1.000000     ADDITIVE  
+tr G             8    48.000000      48.000000      0.000e+00      1.000000     ADDITIVE  
+tr G             12   72.000000      72.000000      0.000e+00      1.000000     ADDITIVE  
+
+||G||_F^2        2    72.000000      72.000000      0.000e+00      1.000000     ADDITIVE  
+||G||_F^2        4    144.000000     144.000000     0.000e+00      1.000000     ADDITIVE  
+||G||_F^2        8    288.000000     288.000000     0.000e+00      1.000000     ADDITIVE  
+||G||_F^2        12   432.000000     432.000000     0.000e+00      1.000000     ADDITIVE  
+
+lam_max G        2    6.000000       12.000000      -6.000e+00     0.500000     SUB       
+lam_max G        4    6.000000       24.000000      -1.800e+01     0.250000     SUB       
+lam_max G        8    6.000000       48.000000      -4.200e+01     0.125000     SUB       
+lam_max G        12   6.000000       72.000000      -6.600e+01     0.083333     SUB       
+
+--------------------------------------------------------------------------------------------------------
+TABLE 3  --  TRANSPORT / CROSS-REGION INFLUENCE   (D-15: controls in the SAME table)
+--------------------------------------------------------------------------------------------------------
+m    |N(S)|       cross tested   cross MOVED      worst cross disp   CTRL own writer   
+--------------------------------------------------------------------------------------------------------
+2    4096         252            0                0.000000           2.000000          
+3    262144       756            0                0.000000           2.000000          
+   CTRL non-admissible single-qubit Pauli displacement: 2.000000 (non-zero -> the metric can register motion)
+
+========================================================================================================
+EXACT ARGUMENTS  (these are proofs, valid at EVERY m -- not extrapolations)
+========================================================================================================
+
+A-1  W(m) = 4m EXACTLY, and is exactly additive.
+     An admissible writer for record i lies in N(S) and must anticommute with R_i and commute
+     with every other record.  Write v in N(S) as v = sum_b v_b over blocks (the qubit sets are
+     disjoint, so this decomposition is unique and weight(v) = sum_b weight(v_b)).  The
+     symplectic form is likewise blockwise: sp(v,R_i) = sp(v_{b(i)}, R_i).  So the constraints
+     only ever see v_{b(i)}; every other v_b can be set to 0 without breaking any constraint and
+     can only reduce weight.  Hence the minimum is attained inside block b(i) and equals the
+     single-block minimum, which brute force finds to be 2.  W(m) = 2m records * 2 = 4m.
+     DEFECT IDENTICALLY 0.  Extensive -- but it is a COUNT of blocks in disguise (C-35).
+
+A-2  P_cross(m) = 0 EXACTLY.
+     Supports of records in different blocks are disjoint subsets of the qubit set by
+     construction, so their intersection is empty at every m.  No pair of records in different
+     regions is ever 'interacting' in the support sense.  DEFECT IDENTICALLY 0.
+
+A-3  G(m) = G(1) (+) ... (+) G(1)  (m-fold direct sum), EXACTLY.
+     G_ij = |supp_i ^ supp_j| vanishes whenever i and j are in different blocks (A-2), so G is
+     block diagonal.  Consequences, all exact:
+        spec G(m) = m copies of spec G(1)          (multiset union)
+        tr G(m)      = m tr G(1)                   ADDITIVE
+        ||G(m)||_F^2 = m ||G(1)||_F^2              ADDITIVE
+        lambda_max G(m) = lambda_max G(1)          CONSTANT IN m  -> SATURATING
+     The additive spectral functionals are again sums over blocks of a fixed per-block number:
+     they are m * const, carrying no information beyond the block COUNT.  The one spectral
+     quantity that is not a count -- the top eigenvalue, the natural 'strength' of the relation
+     -- does not grow at all.
+
+A-4  T(m) = 0 EXACTLY: no admissible operation supported inside one block moves any record in
+     another block.  For Paulis g,R the conjugation is g R g^dag = (-1)^{sp(g,R)} R, and sp is
+     blockwise, so g supported in block a has sp(g, R_i) = 0 for every record i outside a.
+     The displacement is exactly 0 -- not small, zero -- for every m, every g, every record.
+     The same holds for ANY admissible unitary supported in block a, Pauli or not, because
+     U (x) I acting on disjoint tensor factors commutes with R_i identically.
+     The controls in TABLE 3 show the metric does register motion when motion exists.
+
+========================================================================================================
+READ OF S2  (filled in from the numbers above, not in advance)
+========================================================================================================
+
+ * Every exact record-level quantity here is either (i) EXACTLY ADDITIVE with DEFECT
+   IDENTICALLY ZERO -- N, W, P, tr G, ||G||_F^2 -- or (ii) EXACTLY CONSTANT in m -- lambda_max G.
+ * Type (i) are additive because they are SUMS OVER BLOCKS OF A CONSTANT.  They equal
+   (per-block value) x (number of blocks).  That is extensivity of the trivial kind: it is the
+   block count wearing a different unit, exactly the object C-35 already rules out as a source.
+ * Type (ii) SATURATES and is ruled out by requirement (a) at any N.
+ * P_cross = 0 and T = 0 are the decisive ones: they say the records in different regions have
+   NO relation at all -- not a weak one.  A quantity that is identically zero at every finite m
+   by the blockwise-symplectic argument cannot become non-zero at large m.
+ * NOTHING here is SUPER-additive or SUB-additive.  The defect is not small; it is zero by a
+   proof, so there is no growth law to extrapolate.
+

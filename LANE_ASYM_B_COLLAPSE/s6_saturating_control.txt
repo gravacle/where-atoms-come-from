@@ -1,0 +1,48 @@
+================================================================================================================
+S6   THE SATURATING CONTROL IN THE BRIEF'S OWN FORM, AND ITS LINEAR TWIN, SAME TABLE.
+================================================================================================================
+
+     f (bath qubits read)   chi(R : fragment_f)  [KNOWN SATURATING]   SUM of f independent single-qubit records  [KNOWN LINEAR]
+            1                     0.521527 +- 0.0593                             0.521527 +- 0.0593
+            2                     0.730797 +- 0.0416                             0.992506 +- 0.0797
+            3                     0.851236 +- 0.0243                             1.463186 +- 0.0938
+            4                     0.899858 +- 0.0228                             1.984713 +- 0.1110
+            5                     0.930855 +- 0.0178                             2.455692 +- 0.1231
+            6                     0.954961 +- 0.0143                             2.926371 +- 0.1326
+            7                     0.966066 +- 0.0125                             3.447899 +- 0.1453
+            8                     0.974704 +- 0.0097                             3.918878 +- 0.1547
+
+     EXACT BOUND on the left column: chi(R : fragment_f) <= chi(R : whole bath) <= 8 bits.
+     Observed max: 0.974704 bits.  Bound respected: True
+
+  KNOWN SATURATING  chi(R : fragment_f)
+    engine verdict : SATURATING
+    best form      : SAT1   dAICc to runner-up 4.7
+    AICc ranking   : SAT1=7.7, SAT2=12.4, LOG=17.6, LIN=39.6
+    alpha*         : 0.287   collapse CV 0.0569
+    1/f -> 0       : 0.97937 +- 0.27211   (1/f-fit rms 0.000615)
+    doubling ratio : 1.083    exponent 0.163 +- 0.029
+    EXTENSIVE?     : no
+
+  KNOWN LINEAR      f independent records
+    engine verdict : GROWING (linear)
+    best form      : LIN   dAICc to runner-up 5.7
+    AICc ranking   : LIN=6.5, SAT2=12.2, LOG=84.4, SAT1=248.9
+    alpha*         : 0.975   collapse CV 0.0120
+    1/f -> 0       : 9.55315 +- 2.98333   (1/f-fit rms 0.00355)
+    doubling ratio : 1.975    exponent 0.984 +- 0.040
+    EXTENSIVE?     : YES
+
+----------------------------------------------------------------------------------------------------------------
+D-17  the same two series under varied coupling and temperature.
+      lam   beta |  saturating: chi at f=1,4,8   ratio f=8/f=4  |  linear: ratio f=8/f=4
+      0.40  0.50 |   0.0425   0.1490   0.2686          1.802  |                2.001
+      0.40  2.00 |   0.2766   0.6619   0.8424          1.273  |                1.925
+      0.80  0.50 |   0.0902   0.3008   0.5033          1.673  |                2.088
+      0.80  2.00 |   0.5215   0.8999   0.9747          1.083  |                1.975
+      1.60  0.50 |   0.1076   0.3726   0.6085          1.633  |                2.174
+      1.60  2.00 |   0.6118   0.9614   0.9924          1.032  |                2.022
+
+  A doubling of the resource must give 2.000 for an extensive quantity.  The linear column
+  does; the saturating column does not, at any setting tested.
+----------------------------------------------------------------------------------------------------------------

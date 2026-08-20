@@ -1,0 +1,17 @@
+==============================================================================================================
+E-0  EXACT PAULI ENGINE SELF-CHECK   (integers only; the single float appears in check 1)
+==============================================================================================================
+  check 1  n=1  vectors=   4   max |symbolic - model| = 0.0   non-integer model entries = 0   -> PASS
+  check 1  n=2  vectors=  16   max |symbolic - model| = 0.0   non-integer model entries = 0   -> PASS
+  check 1  n=3  vectors=  64   max |symbolic - model| = 0.0   non-integer model entries = 0   -> PASS
+  checks 2-4  n=1  pairs=    16   product mismatches=0   commutator/sp mismatches=0   phi(a,a)!=0 count=0   -> PASS
+  checks 2-4  n=2  pairs=   256   product mismatches=0   commutator/sp mismatches=0   phi(a,a)!=0 count=0   -> PASS
+  checks 2-4  n=3  pairs=  4096   product mismatches=0   commutator/sp mismatches=0   phi(a,a)!=0 count=0   -> PASS
+
+  check 5  EXACT commutator magnitude (no floats): [W(a),W(b)] = 2 i^phi(a,b) W(a xor b) when sp=1
+           n=1  ||[W(a),W(b)]||_F^2 over ALL anticommuting pairs = [8]   (predicted 4*2^n = 8)
+           n=2  ||[W(a),W(b)]||_F^2 over ALL anticommuting pairs = [16]   (predicted 4*2^n = 16)
+           n=3  ||[W(a),W(b)]||_F^2 over ALL anticommuting pairs = [32]   (predicted 4*2^n = 32)
+
+  ENGINE SELF-CHECK: ALL PASS
+==============================================================================================================

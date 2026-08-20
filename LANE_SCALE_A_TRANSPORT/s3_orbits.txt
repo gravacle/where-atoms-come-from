@@ -1,0 +1,112 @@
+==================================================================================================================================
+S3   TRANSPORT ORBITS -- EXACT STRATIFICATION OF THE RECORD SET, AND A FINITE CANONICAL PROXY
+==================================================================================================================================
+
+  (0) SELF-CHECK: is A_z the identity for every central z?  (If not, Gbar = G/Z is the wrong
+      transport group and every orbit-size statement below is void.)
+      A_z = I for every central z, on every carrier: True
+
+  (1) EXACT ORBIT-TYPE STRATIFICATION OF THE RECORD SET (a continuum).
+  carrier      |G|  abel ground dim  |Gbar|  dim(all records)  dim(fixed)  phi_fix  generic stab  largest orbit  smallest   #orbits
+  Z_2            2  True          4       1                16          16   1.0000       trivial              1         1  infinite
+  Z_4            4  True         16       1               256         256   1.0000       trivial              1         1  infinite
+  Z_2^2          4  True         16       1               256         256   1.0000       trivial              1         1  infinite
+  Z_8            8  True         64       1              4096        4096   1.0000       trivial              1         1  infinite
+  Z_4xZ_2        8  True         64       1              4096        4096   1.0000       trivial              1         1  infinite
+  Z_2^3          8  True         64       1              4096        4096   1.0000       trivial              1         1  infinite
+  D_4            8 False         22       4              1384         736   0.5318       trivial              4         1  infinite
+  Q_8            8 False         22       4              1384         736   0.5318       trivial              4         1  infinite
+  Z_16          16  True        256       1             65536       65536   1.0000       trivial              1         1  infinite
+  Z_8xZ_2       16  True        256       1             65536       65536   1.0000       trivial              1         1  infinite
+  Z_4^2         16  True        256       1             65536       65536   1.0000       trivial              1         1  infinite
+  Z_4xZ_2^2     16  True        256       1             65536       65536   1.0000       trivial              1         1  infinite
+  Z_2^4         16  True        256       1             65536       65536   1.0000       trivial              1         1  infinite
+  D_8           16 False         46       8             25048        5824   0.2325       trivial              8         1  infinite
+  Q_16          16 False         46       8             25048        5824   0.2325       trivial              8         1  infinite
+  SD_16         16 False         46       8             25048        5824   0.2325       trivial              8         1  infinite
+  M_4(2)        16 False         88       4             22144       11776   0.5318       trivial              4         1  infinite
+  D_4xZ_2       16 False         88       4             22144       11776   0.5318       trivial              4         1  infinite
+  Q_8xZ_2       16 False         88       4             22144       11776   0.5318       trivial              4         1  infinite
+  Pauli16       16 False         88       4             22144       11776   0.5318       trivial              4         1  infinite
+  Z_32          32  True       1024       1           1048576     1048576   1.0000           n/a              1         1  infinite
+  Z_2^5         32  True       1024       1           1048576     1048576   1.0000           n/a              1         1  infinite
+  D_16          32 False        142      16            480568       64768   0.1348           n/a              ?         1  infinite
+  Q_32          32 False        142      16            480568       64768   0.1348           n/a              ?         1  infinite
+  SD_32         32 False        142      16            480568       64768   0.1348           n/a              ?         1  infinite
+  M_5(2)        32 False        352       4            354304      188416   0.5318           n/a              ?         1  infinite
+  D_8xZ_2       32 False        184       8            400768       93184   0.2325           n/a              ?         1  infinite
+  Pauli16xZ_2   32 False        352       4            354304      188416   0.5318           n/a              ?         1  infinite
+  D_4xZ_2^2     32 False        352       4            354304      188416   0.5318           n/a              ?         1  infinite
+  ES_2^(1+4)    32 False        184      16            393856       65536   0.1664           n/a              ?         1  infinite
+  Z_64          64  True       4096       1          16777216    16777216   1.0000           n/a              1         1  infinite
+  Z_2^6         64  True       4096       1          16777216    16777216   1.0000           n/a              1         1  infinite
+  D_32          64 False        526      32           8669176      797056   0.0919           n/a              ?         1  infinite
+  Q_64          64 False        526      32           8669176      797056   0.0919           n/a              ?         1  infinite
+  D_16xZ_2      64 False        568      16           7689088     1036288   0.1348           n/a              ?         1  infinite
+
+  'smallest orbit = 1' is the transport-FIXED record, whose existence S1 proved by subset-sum
+  and S2 exhibited as an explicit matrix with ||[A_h,R]|| < 1e-10 on every carrier.
+
+  (2) THE FINITE CANONICAL PROXY: K-isotypic blocks over every subgroup K <= G.
+  carrier      |G|  abel ground dim  |Gbar|  #subgroups  #blocks  #orbits  largest orbit               orbit sizes  frac moved  closed
+  Z_2            2  True          4       1           2        1        1              1                  [(1, 1)]      0.0000    True
+  Z_4            4  True         16       1           3        1        1              1                  [(1, 1)]      0.0000    True
+  Z_2^2          4  True         16       1           5        1        1              1                  [(1, 1)]      0.0000    True
+  Z_8            8  True         64       1           4        1        1              1                  [(1, 1)]      0.0000    True
+  Z_4xZ_2        8  True         64       1           8        1        1              1                  [(1, 1)]      0.0000    True
+  Z_2^3          8  True         64       1          16        1        1              1                  [(1, 1)]      0.0000    True
+  D_4            8 False         22       4          10       19       19              1                 [(1, 19)]      0.0000    True
+  Q_8            8 False         22       4           6       19       19              1                 [(1, 19)]      0.0000    True
+  Z_16          16  True        256       1           5        1        1              1                  [(1, 1)]      0.0000    True
+  Z_8xZ_2       16  True        256       1          11        1        1              1                  [(1, 1)]      0.0000    True
+  Z_4^2         16  True        256       1          15        1        1              1                  [(1, 1)]      0.0000    True
+  Z_4xZ_2^2     16  True        256       1          27        1        1              1                  [(1, 1)]      0.0000    True
+  Z_2^4         16  True        256       1          67        1        1              1                  [(1, 1)]      0.0000    True
+  D_8           16 False         46       8          19       49       37              2        [(1, 25), (2, 12)]      0.4898    True
+  Q_16          16 False         46       8          11       49       37              2        [(1, 25), (2, 12)]      0.4898    True
+  SD_16         16 False         46       8          15       49       37              2        [(1, 25), (2, 12)]      0.4898    True
+  M_4(2)        16 False         88       4          11       19       19              1                 [(1, 19)]      0.0000    True
+  D_4xZ_2       16 False         88       4          35       19       19              1                 [(1, 19)]      0.0000    True
+  Q_8xZ_2       16 False         88       4          19       19       19              1                 [(1, 19)]      0.0000    True
+  Pauli16       16 False         88       4          23       19       19              1                 [(1, 19)]      0.0000    True
+
+==================================================================================================================================
+  READ -- from the numbers above
+==================================================================================================================================
+  Against RECORD COUNT and against ABELIANNESS, side by side:
+  carrier       record count  abelian  |Gbar|  largest orbit (records)  phi_fix  proxy largest orbit  proxy frac moved
+  Z_2                      4     True       1                        1   1.0000                    1            0.0000
+  Z_4                     16     True       1                        1   1.0000                    1            0.0000
+  Z_2^2                   16     True       1                        1   1.0000                    1            0.0000
+  D_4                     22    False       4                        4   0.5318                    1            0.0000
+  Q_8                     22    False       4                        4   0.5318                    1            0.0000
+  D_8                     46    False       8                        8   0.2325                    2            0.4898
+  Q_16                    46    False       8                        8   0.2325                    2            0.4898
+  SD_16                   46    False       8                        8   0.2325                    2            0.4898
+  Z_8                     64     True       1                        1   1.0000                    1            0.0000
+  Z_4xZ_2                 64     True       1                        1   1.0000                    1            0.0000
+  Z_2^3                   64     True       1                        1   1.0000                    1            0.0000
+  M_4(2)                  88    False       4                        4   0.5318                    1            0.0000
+  D_4xZ_2                 88    False       4                        4   0.5318                    1            0.0000
+  Q_8xZ_2                 88    False       4                        4   0.5318                    1            0.0000
+  Pauli16                 88    False       4                        4   0.5318                    1            0.0000
+  D_16                   142    False      16                       16   0.1348                    -                 -
+  Q_32                   142    False      16                       16   0.1348                    -                 -
+  SD_32                  142    False      16                       16   0.1348                    -                 -
+  D_8xZ_2                184    False       8                        8   0.2325                    -                 -
+  ES_2^(1+4)             184    False      16                       16   0.1664                    -                 -
+  Z_16                   256     True       1                        1   1.0000                    1            0.0000
+  Z_8xZ_2                256     True       1                        1   1.0000                    1            0.0000
+  Z_4^2                  256     True       1                        1   1.0000                    1            0.0000
+  Z_4xZ_2^2              256     True       1                        1   1.0000                    1            0.0000
+  Z_2^4                  256     True       1                        1   1.0000                    1            0.0000
+  M_5(2)                 352    False       4                        4   0.5318                    -                 -
+  Pauli16xZ_2            352    False       4                        4   0.5318                    -                 -
+  D_4xZ_2^2              352    False       4                        4   0.5318                    -                 -
+  D_32                   526    False      32                       32   0.0919                    -                 -
+  Q_64                   526    False      32                       32   0.0919                    -                 -
+  D_16xZ_2               568    False      16                       16   0.1348                    -                 -
+  Z_32                  1024     True       1                        1   1.0000                    -                 -
+  Z_2^5                 1024     True       1                        1   1.0000                    -                 -
+  Z_64                  4096     True       1                        1   1.0000                    -                 -
+  Z_2^6                 4096     True       1                        1   1.0000                    -                 -

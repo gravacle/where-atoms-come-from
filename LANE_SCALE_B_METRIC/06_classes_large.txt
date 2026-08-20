@@ -1,0 +1,28 @@
+==============================================================================================================
+LANE_SCALE_B_METRIC  STEP 6 -- BASIS-FREE LOGICAL-CLASS GEOMETRY, PUSHED AS FAR AS IT GOES
+==============================================================================================================
+
+SC-13  does a random subsample of classes reproduce the exact value?  n = 8, 4095 classes.
+  sample     d90 CODE   dPR CODE   cdim CODE 
+  --------------------------------------------
+  500        7          7.24       2.30      
+  1000       7          7.28       2.23      
+  2000       7          7.30       2.23      
+  4095       7          7.33       2.25      
+
+6B.  CLASS-LEVEL GEOMETRY vs n.  1500 random classes per carrier (exact set when smaller).
+     CODE = [[n,n-2,2]] logical classes at minimum weight.  FREE = k free qubits, all
+     non-trivial single-carrier Pauli classes.  Both use the SUPPORT (Jaccard) relation
+     and the LETTER (Hamming) relation, d = 1 - J and d = Hamming/n.
+
+  n    k    #classes  | CODE  d90J dPRJ cdimJ d90H | FREE  d90J dPRJ cdimJ d90H
+  ------------------------------------------------------------------------------
+  4    2    15        |     2  2.00  0.00     8    |     1  1.00 -0.00     5   
+  6    4    255       |     5  5.17  2.52    14    |     3  3.49  1.10    11   
+  8    6    1500      |     7  7.32  2.25    19    |     5  5.57  1.55    16   
+  10   8    1500      |     9  9.21  2.91    25    |     7  7.50  1.86    22   
+  12   10   1500      |    10 11.15  3.35    30    |     9  9.39  2.07    27   
+  14   12   1500      |    12 13.09  3.66    35    |    10 11.37  2.20    32   
+
+  READ: if a geometry emerged from the mutual relations of many records, d90 would approach
+  a CONSTANT as n grows.  Fill this from the numbers above, never in advance.

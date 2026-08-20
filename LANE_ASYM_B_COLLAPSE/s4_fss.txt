@@ -1,0 +1,449 @@
+====================================================================================================================
+S4   FINITE-SIZE SCALING.  Engine calibrated on known forms BEFORE it is used on anything.
+====================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------
+PART 0.  CALIBRATION OF THE ENGINE.  Synthetic series of KNOWN form on the same N grids.
+         SHORT grid = N in {2,4,6,8,10,12} -- exactly the six sizes the [[n,n-2,2]] brief names.
+         FULL  grid = N in {2,4,...,40}    -- the range this lane actually reached.
+         Noise: (a) exact, sigma = 1e-9; (b) sigma = 0.04 bits, the measured chi noise floor.
+
+   grid    noise      true form        engine says                          best  dAICc   alpha    CV
+   SHORT  exact      linear         GROWING (linear)                     LIN    999.9   1.000 0.0000  OK 
+   SHORT  exact      log            GROWING (logarithmic, SUB-extensive) LOG    999.9   0.604 0.0579  OK 
+   SHORT  exact      sat            SATURATING                           SAT2   999.9   0.492 0.0575  OK 
+   SHORT  exact      sqrt           SATURATING                           SAT2   999.9   0.500 0.0000  OK 
+   SHORT  0.04 bits  linear         GROWING (linear)                     LIN      9.8   0.993 0.0177  OK 
+   SHORT  0.04 bits  log            GROWING (logarithmic, SUB-extensive) LOG     19.4   0.612 0.0701  OK 
+   SHORT  0.04 bits  sat            GROWING (logarithmic, SUB-extensive) LOG      8.6   0.531 0.0615  MISS
+   SHORT  0.04 bits  sqrt           CANNOT DISTINGUISH                   LIN      0.2   0.504 0.0172  OK 
+
+   FULL   exact      linear         GROWING (linear)                     LIN    999.9   1.000 0.0000  OK 
+   FULL   exact      log            GROWING (logarithmic, SUB-extensive) LOG    999.9   0.419 0.0718  OK 
+   FULL   exact      sat            SATURATING                           SAT2   999.9   0.213 0.1011  OK 
+   FULL   exact      sqrt           SATURATING                           SAT2   999.9   0.500 0.0000  OK 
+   FULL   0.04 bits  linear         GROWING (linear)                     LIN    275.6   0.997 0.0059  OK 
+   FULL   0.04 bits  log            GROWING (logarithmic, SUB-extensive) LOG    137.3   0.416 0.0728  OK 
+   FULL   0.04 bits  sat            SATURATING                           SAT2    62.1   0.216 0.1015  OK 
+   FULL   0.04 bits  sqrt           SATURATING                           SAT2   460.2   0.498 0.0174  OK 
+
+   CALIBRATION VERDICT
+     on EXACT synthetic data the engine picks the true form: True
+     on data carrying the measured chi noise floor it picks the true form: False
+     THE MISS IS THE IMPORTANT ROW: on the SHORT grid with a 0.04-bit floor the engine calls a
+     TRUE SATURATING series LOGARITHMIC at dAICc 8.6.  Six points cannot separate log from
+     saturation.  Therefore NO chi-based classification is reported from the SHORT window; the
+     short-window chi rows below are read only as CANNOT DISTINGUISH, whatever the fit says.
+     Note also what is NOT confused anywhere: LINEAR is never mistaken for either, on either
+     grid, at either noise level.  The extensive/not-extensive call -- the only one gravity
+     needs -- survives the short window; the log-vs-saturation call does not.
+     -> the alpha* for the sqrt row is the honest check that the collapse test finds a known
+        exponent: true 0.5, engine 0.500 on the FULL grid.
+--------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------
+PART 1.  THE QUANTITIES.  Definitions, sources, and which representation produced them.
+
+   CONTROL-LIN  k = n-2 (number of independent records)            control-linear        S2 exact
+   CONTROL-SAT  chi_joint(all N records : FIXED 3-qubit bath)      control-saturating    S3 exact, time-averaged
+   CONTROL-LIN2 SUM_i chi_i, GROWN bath (one site per record)      control-linear        S3 exact, time-averaged
+   Q1  total chi  SUM_i chi(R_i : FIXED 3-qubit bath)              probe                 S3 exact, time-averaged
+   Q2a interacting-pair count, symplectic, SET A (the N records)   probe                 S2 exact
+   Q2b interacting-pair count, symplectic, SET B (records+writers) CONTROL  control-positive      S2 exact
+   Q2c interacting-pair count, SUPPORT OVERLAP, SET A              probe                 S2 exact
+   Q3  total writer weight  SUM_i w(R_i), SET A                    probe                 S2 exact + exact argument
+   Q4a lam_max, record-record SYMPLECTIC relation matrix, SET A    probe                 S2 exact
+   Q4b lam_max, SYMPLECTIC relation matrix, SET B (CONTROL)        control-positive      S2 exact
+   Q4c lam_max, SUPPORT-OVERLAP relation matrix, SET A             probe                 S2 exact
+--------------------------------------------------------------------------------------------------------------------
+
+====================================================================================================================
+MASTER TABLE -- SHORT WINDOW  N = 2..12 (the six sizes the brief names)
+====================================================================================================================
+  quantity                                                   engine verdict                   best   dAICc   alpha        CV   EXT?
+  ------------------------------------------------------------------------------------------------------------------
+  CONTROL-LIN  k = n-2 (number of independent records)       GROWING (linear)                  LIN   999.9   1.000    0.0000    YES
+  CONTROL-SAT  chi_joint(all N records : FIXED 3-qubit bath) CANNOT DISTINGUISH                LOG     0.4   0.311    0.0615     no
+  CONTROL-LIN2 SUM_i chi_i, GROWN bath (one site per record) GROWING (linear)                  LIN    10.0   0.990    0.0043    YES
+  Q1  total chi  SUM_i chi(R_i : FIXED 3-qubit bath)         DECAYING (form undetermined)      LIN     0.9  -0.504    0.1619     no
+  Q2a interacting-pair count, symplectic, SET A (the N recor IDENTICALLY ZERO                    -     inf       -         -     no
+  Q2b interacting-pair count, symplectic, SET B (records+wri GROWING (linear)                  LIN   999.9   1.000    0.0000    YES
+  Q2c interacting-pair count, SUPPORT OVERLAP, SET A         GROWING (super-linear)            LIN   999.9   1.931    0.1843     no
+  Q3  total writer weight  SUM_i w(R_i), SET A               GROWING (linear)                  LIN   999.9   1.000    0.0000    YES
+  Q4a lam_max, record-record SYMPLECTIC relation matrix, SET IDENTICALLY ZERO                    -     inf       -         -     no
+  Q4b lam_max, SYMPLECTIC relation matrix, SET B (CONTROL)   CONSTANT                            -     inf   0.000    0.0000     no
+  Q4c lam_max, SUPPORT-OVERLAP relation matrix, SET A        GROWING (linear)                  LIN   999.9   1.593    0.3228     no
+
+  quantity                                                        Q(1/N->0)         +- err Q(2N)/Q(N)     exponent 1/N-fit rms
+  ------------------------------------------------------------------------------------------------------------------
+  CONTROL-LIN  k = n-2 (number of independent records)             26.25145        1.27414      2.000 1.000+-0.000     0.0622
+  CONTROL-SAT  chi_joint(all N records : FIXED 3-qubit bath)        1.04851        0.66216      1.233 0.284+-0.057     0.0198
+  CONTROL-LIN2 SUM_i chi_i, GROWN bath (one site per record)       12.53038        3.00853      2.000 0.990+-0.049      0.022
+  Q1  total chi  SUM_i chi(R_i : FIXED 3-qubit bath)                0.22792        0.36674      0.662 -0.473+-0.144    0.00506
+  Q2a interacting-pair count, symplectic, SET A (the N recor        0.00000        0.00000          -            -          0
+  Q2b interacting-pair count, symplectic, SET B (records+wri       26.25145        1.27414      2.000 1.000+-0.000     0.0622
+  Q2c interacting-pair count, SUPPORT OVERLAP, SET A              105.37718        1.91121      4.286 2.159+-0.088     0.0933
+  Q3  total writer weight  SUM_i w(R_i), SET A                     52.50290        2.54827      2.000 1.000+-0.000      0.124
+  Q4a lam_max, record-record SYMPLECTIC relation matrix, SET        0.00000        0.00000          -            -          0
+  Q4b lam_max, SYMPLECTIC relation matrix, SET B (CONTROL)          1.00000        0.00000      1.000 0.000+-0.000          0
+  Q4c lam_max, SUPPORT-OVERLAP relation matrix, SET A              49.20663       34.42291      2.358 1.438+-0.405       1.68
+
+  EXT? = gravity's requirement (a): LIN preferred by dAICc >= 4 AND Q(2N)/Q(N) in [1.6,2.6]
+         AND the fitted power-law exponent within 0.25 of 1.  All three, or it is not extensive.
+  The Q(1/N->0) intercept is only meaningful for a BOUNDED quantity; for a divergent one the
+  large 1/N-fit rms is the signature that no finite intercept exists.
+  COLLAPSE CRITERION: CV(alpha*) < 0.02 means Q/N^alpha is constant to 2% across the window.
+  Quantities meeting it: CONTROL-LIN, CONTROL-LIN2, Q2b, Q3, Q4b
+
+====================================================================================================================
+MASTER TABLE -- FULL WINDOW   N = 2..N_max (everything this lane reached)
+====================================================================================================================
+  quantity                                                   engine verdict                   best   dAICc   alpha        CV   EXT?
+  ------------------------------------------------------------------------------------------------------------------
+  CONTROL-LIN  k = n-2 (number of independent records)       GROWING (linear)                  LIN   999.9   1.000    0.0000    YES
+  CONTROL-SAT  chi_joint(all N records : FIXED 3-qubit bath) CANNOT DISTINGUISH                LOG     1.5   0.219    0.0511     no
+  CONTROL-LIN2 SUM_i chi_i, GROWN bath (one site per record) GROWING (linear)                  LIN     4.8   0.995    0.0031    YES
+  Q1  total chi  SUM_i chi(R_i : FIXED 3-qubit bath)         DECAYING                         SAT2    10.5  -0.538    0.0891     no
+  Q2a interacting-pair count, symplectic, SET A (the N recor IDENTICALLY ZERO                    -     inf       -         -     no
+  Q2b interacting-pair count, symplectic, SET B (records+wri GROWING (linear)                  LIN   999.9   1.000    0.0000    YES
+  Q2c interacting-pair count, SUPPORT OVERLAP, SET A         GROWING (super-linear)            LIN   999.9   2.056    0.0935     no
+  Q3  total writer weight  SUM_i w(R_i), SET A               GROWING (linear)                  LIN   999.9   1.000    0.0000    YES
+  Q4a lam_max, record-record SYMPLECTIC relation matrix, SET IDENTICALLY ZERO                    -     inf       -         -     no
+  Q4b lam_max, SYMPLECTIC relation matrix, SET B (CONTROL)   CONSTANT                            -     inf   0.000    0.0000     no
+  Q4c lam_max, SUPPORT-OVERLAP relation matrix, SET A        GROWING (super-linear)            LIN   999.9   1.805    0.1719     no
+
+  quantity                                                        Q(1/N->0)         +- err Q(2N)/Q(N)     exponent 1/N-fit rms
+  ------------------------------------------------------------------------------------------------------------------
+  CONTROL-LIN  k = n-2 (number of independent records)            130.64002        2.08793      2.000 1.000+-0.000      0.206
+  CONTROL-SAT  chi_joint(all N records : FIXED 3-qubit bath)        2.53196        0.40403      1.089 0.178+-0.014     0.0225
+  CONTROL-LIN2 SUM_i chi_i, GROWN bath (one site per record)       43.30337        9.29124      2.000 0.996+-0.019     0.0785
+  Q1  total chi  SUM_i chi(R_i : FIXED 3-qubit bath)                0.14413        0.39845      0.701 -0.524+-0.032    0.00243
+  Q2a interacting-pair count, symplectic, SET A (the N recor        0.00000        0.00000          -            -          0
+  Q2b interacting-pair count, symplectic, SET B (records+wri      130.64002        2.08793      2.000 1.000+-0.000      0.206
+  Q2c interacting-pair count, SUPPORT OVERLAP, SET A             2820.03185       91.93000      4.154 2.052+-0.003       9.08
+  Q3  total writer weight  SUM_i w(R_i), SET A                    261.28004        4.17586      2.000 1.000+-0.000      0.412
+  Q4a lam_max, record-record SYMPLECTIC relation matrix, SET        0.00000        0.00000          -            -          0
+  Q4b lam_max, SYMPLECTIC relation matrix, SET B (CONTROL)          1.00000        0.00000      1.000 0.000+-0.000          0
+  Q4c lam_max, SUPPORT-OVERLAP relation matrix, SET A            1211.08831      109.31903      3.993 1.949+-0.040       10.8
+
+  EXT? = gravity's requirement (a): LIN preferred by dAICc >= 4 AND Q(2N)/Q(N) in [1.6,2.6]
+         AND the fitted power-law exponent within 0.25 of 1.  All three, or it is not extensive.
+  The Q(1/N->0) intercept is only meaningful for a BOUNDED quantity; for a divergent one the
+  large 1/N-fit rms is the signature that no finite intercept exists.
+  COLLAPSE CRITERION: CV(alpha*) < 0.02 means Q/N^alpha is constant to 2% across the window.
+  Quantities meeting it: CONTROL-LIN, CONTROL-LIN2, Q2b, Q3, Q4b
+
+====================================================================================================================
+RESIDUALS AND NOISE FLOOR -- no fit is reported without them.
+====================================================================================================================
+
+  CONTROL-SAT  chi_joint(all N records : FIXED 3-qubit bath)
+    noise floor (median SE of the 25-time average): 0.04677 bits
+    AICc ranking: LOG=22.0, SAT2=23.5, SAT1=63.9, LIN=102.0
+    best form LOG: params ['0.34676', '0.90510']
+    residuals (data - fit), in units of the noise floor:
+      -1.90  +0.63  -1.53  +0.78  +1.26  -0.62  +1.10  +1.22  -0.43  +0.97  +0.96  -0.54  +0.59  +0.55  -0.80  +0.04  +0.03  -1.17  -0.61  -0.55
+    reduced chi^2 = 0.961 on 18 dof
+
+  CONTROL-LIN2 SUM_i chi_i, GROWN bath (one site per record)
+    noise floor (median SE of the 25-time average): 0.63986 bits
+    AICc ranking: LIN=4.7, SAT2=9.5, LOG=501.4, SAT1=1243.2
+    best form LIN: params ['0.48762', '0.01926']
+    residuals (data - fit), in units of the noise floor:
+      -0.02  +0.11  -0.10  -0.01  +0.05  -0.05  -0.00  +0.03  -0.03  -0.00  +0.03  -0.02  +0.00  +0.02  -0.02  +0.00  +0.02  -0.01  +0.00  +0.02
+    reduced chi^2 = 0.002 on 18 dof
+
+  Q1  total chi  SUM_i chi(R_i : FIXED 3-qubit bath)
+    noise floor (median SE of the 25-time average): 0.03859 bits
+    AICc ranking: SAT2=26.9, LOG=37.4, SAT1=84.6, LIN=108.8
+    best form SAT2: params ['0.29437', '-1.03187', '8.12929']
+    residuals (data - fit), in units of the noise floor:
+      -1.35  +3.81  -0.41  -1.06  -0.33  -0.47  +0.02  +0.27  +0.25  +0.52  +0.45  +0.29  +0.37  +0.25  -0.00  +0.01  -0.13  -0.37  -0.37  -0.52
+    reduced chi^2 = 1.143 on 17 dof
+
+====================================================================================================================
+PLOTS -- each quantity against N and against 1/N (ASCII; the .npy files carry the numbers).
+====================================================================================================================
+
+    CONTROL-LIN  k = n-2 (number of independent records)   [ vs N ]
+      58.0000 |                                                             o o
+      52.9091 |                                                        o o     
+      47.8182 |                                                  o o o         
+      42.7273 |                                             o o                
+      37.6364 |                                      o o  o                    
+      32.5455 |                                o o o                           
+      27.4545 |                           o o                                  
+      22.3636 |                    o o  o                                      
+      17.2727 |                o o                                             
+      12.1818 |         o o  o                                                 
+       7.0909 |    o  o                                                        
+       2.0000 |o o                                                             
+              +----------------------------------------------------------------
+              N=2                                                     N=58
+    CONTROL-LIN  k = n-2 (number of independent records)   [ vs 1/N ]
+      58.0000 |o                                                               
+      52.9091 |o                                                               
+      47.8182 |oo                                                              
+      42.7273 | o                                                              
+      37.6364 | o                                                              
+      32.5455 |  o                                                             
+      27.4545 |  oo                                                            
+      22.3636 |   oo                                                           
+      17.2727 |     oo                                                         
+      12.1818 |       o o o                                                    
+       7.0909 |              o    o                                            
+       2.0000 |                              o                                o
+              +----------------------------------------------------------------
+              N=0.0172414                                             N=0.5
+
+    CONTROL-SAT  chi_joint(all N records : FIXED 3-qubit bath)   [ vs N ]
+       2.1641 |                                                     o      o  o
+       2.0576 |                                 o      o  o  o   o     o       
+       1.9511 |                       o      o     o                           
+       1.8446 |                    o      o                                    
+       1.7381 |             o   o                                              
+       1.6316 |          o                                                     
+       1.5250 |                                                                
+       1.4185 |   o   o                                                        
+       1.3120 |                                                                
+       1.2055 |                                                                
+       1.0990 |                                                                
+       0.9925 |o                                                               
+              +----------------------------------------------------------------
+              N=2                                                     N=40
+    CONTROL-SAT  chi_joint(all N records : FIXED 3-qubit bath)   [ vs 1/N ]
+       2.1641 |oo                                                              
+       2.0576 |oooo                                                            
+       1.9511 |  oo o                                                          
+       1.8446 |    o o                                                         
+       1.7381 |        o o                                                     
+       1.6316 |             o                                                  
+       1.5250 |                                                                
+       1.4185 |                   o          o                                 
+       1.3120 |                                                                
+       1.2055 |                                                                
+       1.0990 |                                                                
+       0.9925 |                                                               o
+              +----------------------------------------------------------------
+              N=0.025                                                 N=0.5
+
+    CONTROL-LIN2 SUM_i chi_i, GROWN bath (one site per record)   [ vs N ]
+      19.5429 |                                                               o
+      17.8565 |                                                        o   o   
+      16.1701 |                                                  o  o          
+      14.4837 |                                           o  o                 
+      12.7973 |                                        o                       
+      11.1109 |                                 o  o                           
+       9.4245 |                           o  o                                 
+       7.7381 |                       o                                        
+       6.0517 |                 o  o                                           
+       4.3653 |          o  o                                                  
+       2.6789 |   o   o                                                        
+       0.9925 |o                                                               
+              +----------------------------------------------------------------
+              N=2                                                     N=40
+    CONTROL-LIN2 SUM_i chi_i, GROWN bath (one site per record)   [ vs 1/N ]
+      19.5429 |o                                                               
+      17.8565 |o                                                               
+      16.1701 | o                                                              
+      14.4837 | o                                                              
+      12.7973 |  o                                                             
+      11.1109 |  oo                                                            
+       9.4245 |   oo                                                           
+       7.7381 |     o                                                          
+       6.0517 |      o o                                                       
+       4.3653 |          o  o                                                  
+       2.6789 |                   o          o                                 
+       0.9925 |                                                               o
+              +----------------------------------------------------------------
+              N=0.025                                                 N=0.5
+
+    Q1  total chi  SUM_i chi(R_i : FIXED 3-qubit bath)   [ vs N ]
+       1.2145 |   o                                                            
+       1.1296 |                                                                
+       1.0447 |                                                                
+       0.9598 |o                                                               
+       0.8750 |                                                                
+       0.7901 |       o                                                        
+       0.7052 |                                                                
+       0.6203 |          o                                                     
+       0.5355 |             o   o                                              
+       0.4506 |                    o  o   o                                    
+       0.3657 |                              o  o  o   o  o                    
+       0.2808 |                                              o   o  o  o   o  o
+              +----------------------------------------------------------------
+              N=2                                                     N=40
+    Q1  total chi  SUM_i chi(R_i : FIXED 3-qubit bath)   [ vs 1/N ]
+       1.2145 |                              o                                 
+       1.1296 |                                                                
+       1.0447 |                                                                
+       0.9598 |                                                               o
+       0.8750 |                                                                
+       0.7901 |                   o                                            
+       0.7052 |                                                                
+       0.6203 |             o                                                  
+       0.5355 |        o o                                                     
+       0.4506 |    ooo                                                         
+       0.3657 | ooo                                                            
+       0.2808 |oo                                                              
+              +----------------------------------------------------------------
+              N=0.025                                                 N=0.5
+
+    Q2a interacting-pair count, symplectic, SET A (the N records) : IDENTICALLY ZERO at every N -- nothing to plot.
+
+    Q2b interacting-pair count, symplectic, SET B (records+writers) CONTROL   [ vs N ]
+      58.0000 |                                                             o o
+      52.9091 |                                                        o o     
+      47.8182 |                                                  o o o         
+      42.7273 |                                             o o                
+      37.6364 |                                      o o  o                    
+      32.5455 |                                o o o                           
+      27.4545 |                           o o                                  
+      22.3636 |                    o o  o                                      
+      17.2727 |                o o                                             
+      12.1818 |         o o  o                                                 
+       7.0909 |    o  o                                                        
+       2.0000 |o o                                                             
+              +----------------------------------------------------------------
+              N=2                                                     N=58
+    Q2b interacting-pair count, symplectic, SET B (records+writers) CONTROL   [ vs 1/N ]
+      58.0000 |o                                                               
+      52.9091 |o                                                               
+      47.8182 |oo                                                              
+      42.7273 | o                                                              
+      37.6364 | o                                                              
+      32.5455 |  o                                                             
+      27.4545 |  oo                                                            
+      22.3636 |   oo                                                           
+      17.2727 |     oo                                                         
+      12.1818 |       o o o                                                    
+       7.0909 |              o    o                                            
+       2.0000 |                              o                                o
+              +----------------------------------------------------------------
+              N=0.0172414                                             N=0.5
+
+    Q2c interacting-pair count, SUPPORT OVERLAP, SET A   [ vs N ]
+     813.0000 |                                                               o
+     739.1818 |                                                          o  o  
+     665.3636 |                                                        o       
+     591.5455 |                                                      o         
+     517.7273 |                                                  o o           
+     443.9091 |                                             o o                
+     370.0909 |                                        o  o                    
+     296.2727 |                                    o o                         
+     222.4545 |                                o o                             
+     148.6364 |                         o o o                                  
+      74.8182 |              o o o o o                                         
+       1.0000 |o o o  o o o                                                    
+              +----------------------------------------------------------------
+              N=2                                                     N=58
+    Q2c interacting-pair count, SUPPORT OVERLAP, SET A   [ vs 1/N ]
+     813.0000 |o                                                               
+     739.1818 |o                                                               
+     665.3636 |o                                                               
+     591.5455 |o                                                               
+     517.7273 |oo                                                              
+     443.9091 | o                                                              
+     370.0909 | o                                                              
+     296.2727 | oo                                                             
+     222.4545 |  o                                                             
+     148.6364 |  oo                                                            
+      74.8182 |    oooo                                                        
+       1.0000 |         o o  o    o          o                                o
+              +----------------------------------------------------------------
+              N=0.0172414                                             N=0.5
+
+    Q3  total writer weight  SUM_i w(R_i), SET A   [ vs N ]
+     116.0000 |                                                             o o
+     105.8182 |                                                        o o     
+      95.6364 |                                                  o o o         
+      85.4545 |                                             o o                
+      75.2727 |                                      o o  o                    
+      65.0909 |                                o o o                           
+      54.9091 |                           o o                                  
+      44.7273 |                    o o  o                                      
+      34.5455 |                o o                                             
+      24.3636 |         o o  o                                                 
+      14.1818 |    o  o                                                        
+       4.0000 |o o                                                             
+              +----------------------------------------------------------------
+              N=2                                                     N=58
+    Q3  total writer weight  SUM_i w(R_i), SET A   [ vs 1/N ]
+     116.0000 |o                                                               
+     105.8182 |o                                                               
+      95.6364 |oo                                                              
+      85.4545 | o                                                              
+      75.2727 | o                                                              
+      65.0909 |  o                                                             
+      54.9091 |  oo                                                            
+      44.7273 |   oo                                                           
+      34.5455 |     oo                                                         
+      24.3636 |       o o o                                                    
+      14.1818 |              o    o                                            
+       4.0000 |                              o                                o
+              +----------------------------------------------------------------
+              N=0.0172414                                             N=0.5
+
+    Q4a lam_max, record-record SYMPLECTIC relation matrix, SET A : IDENTICALLY ZERO at every N -- nothing to plot.
+
+    Q4b lam_max, SYMPLECTIC relation matrix, SET B (CONTROL)   [ vs N ]
+       2.0000 |                                                                
+       1.9091 |                                                                
+       1.8182 |                                                                
+       1.7273 |                                                                
+       1.6364 |                                                                
+       1.5455 |                                                                
+       1.4545 |                                                                
+       1.3636 |                                                                
+       1.2727 |                                                                
+       1.1818 |                                                                
+       1.0909 |                                                                
+       1.0000 |o o o  o o o  o o o o o  o o o  o o o o o  o o o  o o o o o  o o
+              +----------------------------------------------------------------
+              N=2                                                     N=58
+    Q4b lam_max, SYMPLECTIC relation matrix, SET B (CONTROL)   [ vs 1/N ]
+       2.0000 |                                                                
+       1.9091 |                                                                
+       1.8182 |                                                                
+       1.7273 |                                                                
+       1.6364 |                                                                
+       1.5455 |                                                                
+       1.4545 |                                                                
+       1.3636 |                                                                
+       1.2727 |                                                                
+       1.1818 |                                                                
+       1.0909 |                                                                
+       1.0000 |oooooooo o o  o    o          o                                o
+              +----------------------------------------------------------------
+              N=0.0172414                                             N=0.5
+
+    Q4c lam_max, SUPPORT-OVERLAP relation matrix, SET A   [ vs N ]
+     367.1588 |                                                               o
+     333.8717 |                                                          o  o  
+     300.5845 |                                                                
+     267.2973 |                                                      o o       
+     234.0102 |                                                  o o           
+     200.7230 |                                             o o                
+     167.4358 |                                        o  o                    
+     134.1487 |                                    o o                         
+     100.8615 |                                o o                             
+      67.5743 |                      o  o o o                                  
+      34.2872 |              o o o o                                           
+       1.0000 |o o o  o o o                                                    
+              +----------------------------------------------------------------
+              N=2                                                     N=58
+    Q4c lam_max, SUPPORT-OVERLAP relation matrix, SET A   [ vs 1/N ]
+     367.1588 |o                                                               
+     333.8717 |o                                                               
+     300.5845 |                                                                
+     267.2973 |o                                                               
+     234.0102 |oo                                                              
+     200.7230 | o                                                              
+     167.4358 | o                                                              
+     134.1487 | oo                                                             
+     100.8615 |  o                                                             
+      67.5743 |  ooo                                                           
+      34.2872 |    oooo                                                        
+       1.0000 |         o o  o    o          o                                o
+              +----------------------------------------------------------------
+              N=0.0172414                                             N=0.5

@@ -1,0 +1,233 @@
+==============================================================================================================================
+S4   WHICH DOES THE TRANSPORT ACTION TRACK -- RECORD COUNT, OR NON-ABELIANNESS?
+==============================================================================================================================
+
+  MASTER TABLE -- every carrier, exact.  'moved(generic)' is the measure-theoretic fraction of
+  the record continuum that transport moves: 1 - [fixed subvariety has full dimension].
+  carrier       |G|  abel   dim  RECORDS  |G/Z| G/Z abel  phi_fix moved(generic) largest orbit
+  Z_2             2  True     4        4      1     True   1.0000            0.0             1
+  Z_4             4  True    16       16      1     True   1.0000            0.0             1
+  Z_2^2           4  True    16       16      1     True   1.0000            0.0             1
+  D_4             8 False    64       22      4     True   0.5318            1.0             4
+  Q_8             8 False    64       22      4     True   0.5318            1.0             4
+  Z_8             8  True    64       64      1     True   1.0000            0.0             1
+  Z_4xZ_2         8  True    64       64      1     True   1.0000            0.0             1
+  Z_2^3           8  True    64       64      1     True   1.0000            0.0             1
+  D_8            16 False   256       46      8    False   0.2325            1.0             8
+  Q_16           16 False   256       46      8    False   0.2325            1.0             8
+  SD_16          16 False   256       46      8    False   0.2325            1.0             8
+  M_4(2)         16 False   256       88      4     True   0.5318            1.0             4
+  D_4xZ_2        16 False   256       88      4     True   0.5318            1.0             4
+  Q_8xZ_2        16 False   256       88      4     True   0.5318            1.0             4
+  Pauli16        16 False   256       88      4     True   0.5318            1.0             4
+  Z_16           16  True   256      256      1     True   1.0000            0.0             1
+  Z_8xZ_2        16  True   256      256      1     True   1.0000            0.0             1
+  Z_4^2          16  True   256      256      1     True   1.0000            0.0             1
+  Z_4xZ_2^2      16  True   256      256      1     True   1.0000            0.0             1
+  Z_2^4          16  True   256      256      1     True   1.0000            0.0             1
+  D_16           32 False  1024      142     16    False   0.1348            1.0            16
+  Q_32           32 False  1024      142     16    False   0.1348            1.0            16
+  SD_32          32 False  1024      142     16    False   0.1348            1.0            16
+  D_8xZ_2        32 False  1024      184      8    False   0.2325            1.0             8
+  ES_2^(1+4)     32 False  1024      184     16     True   0.1664            1.0            16
+  M_5(2)         32 False  1024      352      4     True   0.5318            1.0             4
+  Pauli16xZ_2    32 False  1024      352      4     True   0.5318            1.0             4
+  D_4xZ_2^2      32 False  1024      352      4     True   0.5318            1.0             4
+  Z_32           32  True  1024     1024      1     True   1.0000            0.0             1
+  Z_2^5          32  True  1024     1024      1     True   1.0000            0.0             1
+  D_32           64 False  4096      526     32    False   0.0919            1.0            32
+  Q_64           64 False  4096      526     32    False   0.0919            1.0            32
+  D_16xZ_2       64 False  4096      568     16    False   0.1348            1.0            16
+  Z_64           64  True  4096     4096      1     True   1.0000            0.0             1
+  Z_2^6          64  True  4096     4096      1     True   1.0000            0.0             1
+
+==============================================================================================================================
+  ARM A -- SAME TRANSPORT GROUP, RECORD COUNT MULTIPLIED BY 4 AT EACH STEP
+==============================================================================================================================
+  carrier        |G|  RECORDS  mult(-2)  mult(-1)  mult(0)  |G/Z|  dim(all)  dim(fixed)   phi_fix  largest orbit
+  D_4              8       22        22        24       18      4      1384         736    0.5318              4
+  D_4xZ_2         16       88        88        96       72      4     22144       11776    0.5318              4
+  D_4xZ_2^2       32      352       352       384      288      4    354304      188416    0.5318              4
+  --------------------------------------------------------------------------------------------------------------
+  D_8             16       46        46        84      126      8     25048        5824    0.2325              8
+  D_8xZ_2         32      184       184       336      504      8    400768       93184    0.2325              8
+  --------------------------------------------------------------------------------------------------------------
+  D_16            32      142       142       252      630     16    480568       64768    0.1348             16
+  D_16xZ_2        64      568       568      1008     2520     16   7689088     1036288    0.1348             16
+  --------------------------------------------------------------------------------------------------------------
+  Z_2              2        4         4         0        0      1        16          16    1.0000              1
+  Z_2^2            4       16        16         0        0      1       256         256    1.0000              1
+  Z_2^3            8       64        64         0        0      1      4096        4096    1.0000              1
+  Z_2^4           16      256       256         0        0      1     65536       65536    1.0000              1
+  Z_2^5           32     1024      1024         0        0      1   1048576     1048576    1.0000              1
+  Z_2^6           64     4096      4096         0        0      1  16777216    16777216    1.0000              1
+  --------------------------------------------------------------------------------------------------------------
+  Every multiplicity is multiplied by exactly 4 at each step -- the record count grows -- and
+  phi_fix and the largest orbit are UNCHANGED to every printed digit.
+
+==============================================================================================================================
+  ARM B -- SAME RECORD COUNT, DIFFERENT TRANSPORT GROUP
+==============================================================================================================================
+  carrier        |G|  RECORDS  |G/Z|             G/Z   phi_fix  largest orbit
+  D_8xZ_2         32      184      8     non-abelian    0.2325              8
+  ES_2^(1+4)      32      184     16           Z_2^4    0.1664             16
+  --------------------------------------------------------------------------------
+
+==============================================================================================================================
+  ARM C -- SAME GROUP, SAME RECORD COUNT, CARRIER REFINED (D-17)
+==============================================================================================================================
+  carrier         lattice    dim  ground dim (RECORDS)   phi_fix
+  Z_2             minimal      4                     4    1.0000
+  Z_2                 1x2     16   (topological: same)    1.0000
+  ------------------------------------------------------------------
+  Z_4             minimal     16                    16    1.0000
+  Z_4                 1x2    256   (topological: same)    1.0000
+  ------------------------------------------------------------------
+  Z_2^2           minimal     16                    16    1.0000
+  Z_2^2               1x2    256   (topological: same)    1.0000
+  ------------------------------------------------------------------
+  Z_8             minimal     64                    64    1.0000
+  Z_8                 1x2   4096   (topological: same)    1.0000
+  ------------------------------------------------------------------
+  Z_4xZ_2         minimal     64                    64    1.0000
+  Z_4xZ_2             1x2   4096   (topological: same)    1.0000
+  ------------------------------------------------------------------
+  Z_2^3           minimal     64                    64    1.0000
+  Z_2^3               1x2   4096   (topological: same)    1.0000
+  ------------------------------------------------------------------
+  D_4             minimal     64                    22    0.5318
+  D_4                 1x2   4096   (topological: same)    0.2583
+  ------------------------------------------------------------------
+  Q_8             minimal     64                    22    0.5318
+  Q_8                 1x2   4096   (topological: same)    0.2583
+  ------------------------------------------------------------------
+
+==============================================================================================================================
+  THE TWO PLOTS THE BRIEF ASKS FOR, AS TEXT SCATTERS
+==============================================================================================================================
+  phi_fix (transport's grip; 1 = transport moves nothing) against RECORD COUNT:
+    phi_fix  record counts of the carriers at that phi_fix
+     1.0000  4(ab), 16(ab), 16(ab), 64(ab), 64(ab), 64(ab), 256(ab), 256(ab), 256(ab), 256(ab), 256(ab), 1024(ab), 1024(ab), 4096(ab), 4096(ab)
+     0.5318  22(NA), 22(NA), 88(NA), 88(NA), 88(NA), 88(NA), 352(NA), 352(NA), 352(NA)
+     0.2325  46(NA), 46(NA), 46(NA), 184(NA)
+     0.1664  184(NA)
+     0.1348  142(NA), 142(NA), 142(NA), 568(NA)
+     0.0919  526(NA), 526(NA)
+
+  -> the SAME phi_fix appears at record counts spanning more than a factor of 1000 (abelian row),
+     and different phi_fix appears at the SAME record count.
+
+  phi_fix against |G/Z| (the transport group's order):
+    |G/Z|  phi_fix values seen
+        1  [1.0]
+        4  [0.5318]
+        8  [0.2325]
+       16  [0.1348, 0.1664]
+       32  [0.0919]
+
+  RANK CORRELATIONS *WITHIN THE NON-ABELIAN CARRIERS ONLY* (abelianness held fixed, so it
+  cannot be doing the work):
+    spearman(phi_fix, record count)   = -0.4468   (n=20)
+    spearman(phi_fix, |G/Z|)          = -0.9958
+    spearman(phi_fix, |G|)            = -0.6849
+    spearman(record count, |G/Z|)     = +0.4495
+
+==============================================================================================================================
+  NORMALISED COMMUTATOR MAGNITUDE -- is C-43's 9.423 a transport number or a dimension number?
+==============================================================================================================================
+  carrier         dim  RECORDS  |G/Z|  max||[A_h,R]||  / sqrt(dim)  records
+  Z_2               4        4      1          0.0000       0.0000       20
+  Z_4              16       16      1          0.0000       0.0000       20
+  Z_2^2            16       16      1          0.0000       0.0000       20
+  D_4              64       22      4          9.4464       1.1808       20
+  Q_8              64       22      4          9.4464       1.1808       20
+  D_8             256       46      8         20.5792       1.2862       20
+  Q_16            256       46      8         20.5792       1.2862       20
+  SD_16           256       46      8         20.4501       1.2781       20
+  M_4(2)          256       88      4         18.0687       1.1293       20
+  D_4xZ_2         256       88      4         18.1078       1.1317       20
+  Q_8xZ_2         256       88      4         18.1078       1.1317       20
+  Pauli16         256       88      4         18.0756       1.1297       20
+
+  C-43 reported 9.423 on D(D_4).  The column above shows the raw number is set by the
+  dimension of the carrier, not by how much transport there is.
+
+==============================================================================================================================
+  THE SAME QUANTITY ON THE RECORD VARIETY ITSELF, NOT ON THE AMBIENT COMMUTANT
+==============================================================================================================================
+  phi_fix above is the fraction of the HERMITIAN COMMUTANT OF H that transport fixes.  The
+  records are the trace-balanced involutions inside it -- a disjoint union of Grassmannians of
+  real dimension sum_E dim(E)^2 / 2.  The transport-fixed ones sit in the L-commutant and have
+  dimension max over {k_rho : sum d_rho k_rho = dim(E)/2} of sum_rho 2 k_rho (m_rho - k_rho).
+  Both are computed exactly below so the reading does not rest on the ambient count.
+
+  carrier        RECORDS  |G/Z|  dim(record variety)  dim(fixed stratum)    ratio   phi_fix       codim
+  D_4                 22      4                  692                 368   0.5318    0.5318         324
+  Q_8                 22      4                  692                 368   0.5318    0.5318         324
+  M_4(2)              88      4                11072                5888   0.5318    0.5318        5184
+  D_4xZ_2             88      4                11072                5888   0.5318    0.5318        5184
+  Q_8xZ_2             88      4                11072                5888   0.5318    0.5318        5184
+  Pauli16             88      4                11072                5888   0.5318    0.5318        5184
+  M_5(2)             352      4               177152               94208   0.5318    0.5318       82944
+  Pauli16xZ_2        352      4               177152               94208   0.5318    0.5318       82944
+  D_4xZ_2^2          352      4               177152               94208   0.5318    0.5318       82944
+  D_8                 46      8                12524                2912   0.2325    0.2325        9612
+  Q_16                46      8                12524                2912   0.2325    0.2325        9612
+  SD_16               46      8                12524                2912   0.2325    0.2325        9612
+  D_8xZ_2            184      8               200384               46592   0.2325    0.2325      153792
+  D_16               142     16               240284               32384   0.1348    0.1348      207900
+  Q_32               142     16               240284               32384   0.1348    0.1348      207900
+  SD_32              142     16               240284               32384   0.1348    0.1348      207900
+  ES_2^(1+4)         184     16               196928               32768   0.1664    0.1664      164160
+  D_16xZ_2           568     16              3844544              518144   0.1348    0.1348     3326400
+  D_32               526     32              4334588              398528   0.0919    0.0919     3936060
+  Q_64               526     32              4334588              398528   0.0919    0.0919     3936060
+  Z_2                  4      1                    8                   8   1.0000    1.0000           0
+  Z_4                 16      1                  128                 128   1.0000    1.0000           0
+  Z_2^2               16      1                  128                 128   1.0000    1.0000           0
+  Z_8                 64      1                 2048                2048   1.0000    1.0000           0
+  Z_4xZ_2             64      1                 2048                2048   1.0000    1.0000           0
+  Z_2^3               64      1                 2048                2048   1.0000    1.0000           0
+  Z_16               256      1                32768               32768   1.0000    1.0000           0
+  Z_8xZ_2            256      1                32768               32768   1.0000    1.0000           0
+  Z_4^2              256      1                32768               32768   1.0000    1.0000           0
+  Z_4xZ_2^2          256      1                32768               32768   1.0000    1.0000           0
+  Z_2^4              256      1                32768               32768   1.0000    1.0000           0
+  Z_32              1024      1               524288              524288   1.0000    1.0000           0
+  Z_2^5             1024      1               524288              524288   1.0000    1.0000           0
+  Z_64              4096      1              8388608             8388608   1.0000    1.0000           0
+  Z_2^6             4096      1              8388608             8388608   1.0000    1.0000           0
+
+==============================================================================================================================
+  READ -- filled in from the tables above
+==============================================================================================================================
+  1. FRACTION MOVED, for a record drawn from the record set, is EXACTLY 0 on every abelian
+     carrier and EXACTLY 1 on every non-abelian carrier, at |G| = 2,4,8,16,32,64 and record
+     counts from 4 to 4096.  It is a 0/1 indicator of non-abelianness and carries NO scale.
+     S2 measured it directly: 0/440 abelian, 360/360 non-abelian, on matrices.
+  2. THE FRACTION IS 1 BECAUSE THE FIXED SET IS A PROPER SUBVARIETY, NOT BECAUSE NO FIXED
+     RECORD EXISTS.  A transport-fixed record exists on EVERY carrier in the ladder -- proved
+     by exact subset-sum on the isotypic block structure (S1) and exhibited as an explicit
+     matrix with ||[A_h,R]|| < 1e-10 on 40 of 40 draws per carrier (S2).  On D(D_4) this
+     settles the question LANE_O34 left OPEN, and it settles it the other way from the
+     natural reading of '40 of 40 moved'.
+  3. ORBITS.  The record set is a CONTINUUM, so the number of transport orbits is INFINITE on
+     every carrier, abelian and non-abelian.  What is finite and exact is the orbit SIZE: every
+     orbit has size dividing |G/Z(G)|, the generic stabiliser is trivial, so the LARGEST orbit
+     is exactly |G/Z(G)| and the smallest is 1.
+  4. WHAT THE VARIATION TRACKS.  Within the non-abelian carriers alone -- abelianness held
+     fixed, so it cannot be doing the work -- phi_fix ranks against |G/Z| at -0.9958 and
+     against the record count at only -0.4468, and the residual record-count correlation is
+     itself explained by record count correlating with |G/Z| at +0.4495.
+  5. THE DOUBLE DISSOCIATION IS EXACT, NOT STATISTICAL.
+     ARM A  record count 22 -> 88 -> 352 (x16) at fixed G/Z = Z_2^2:  phi_fix 0.5318 ->
+            0.5318 -> 0.5318 and largest orbit 4 -> 4 -> 4.  UNCHANGED.
+     ARM B  record count 184 = 184 (D_8xZ_2 vs the extraspecial 2^(1+4)):  phi_fix 0.2325 vs
+            0.1664 and largest orbit 8 vs 16.  CHANGED.
+     Growing the record count with transport fixed changes nothing; changing transport with the
+     record count fixed changes everything.
+  6. AND IT IS NOT PURELY GROUP-THEORETIC EITHER (D-17).  ARM C keeps the group AND the record
+     count fixed -- the anyon count is a topological invariant of the torus -- and refines the
+     lattice from 2 edges to 4:  phi_fix falls 0.5318 -> 0.2583 on D(D_4).  Transport's grip is
+     a property of the CARRIER'S SIZE and the TRANSPORT GROUP, and of neither the record count
+     nor non-abelianness alone.

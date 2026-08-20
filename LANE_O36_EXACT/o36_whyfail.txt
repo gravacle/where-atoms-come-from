@@ -1,0 +1,12 @@
+================================================================================================
+O-36 DIAGNOSTIC: sampled commutant dimension vs the EXACT dimension sum_i m_i^2 (d_i=1) / sum_i m_i^2
+================================================================================================
+  carrier      | eigenspace dims | EXACT dim of joint commutant | SAMPLED (record_model.commutant) | short by
+------------------------------------------------------------------------------------------------
+  D(D_4)       | [22, 24, 18]    |                          736 |                              512 | 224
+  D(Z_2)       | [4]             |                           16 |                               16 | 0
+------------------------------------------------------------------------------------------------
+  A sampled basis that is SHORT does not merely lose dimensions -- fitting a von Neumann block
+  decomposition to it returns multiplicities that do not satisfy sum_i d_i*m_i = dim E.
+  That is the 20-vs-18 and 26-vs-22 seen in the previous attempt. Character theory has no such mode.
+================================================================================================

@@ -1,0 +1,224 @@
+======================================================================================================================
+E-1  TWO-BODY SCALARS ON [[n,n-2,2]] -- EXACT INTEGER / F_2 ARITHMETIC, NO FLOATS
+======================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 4    dim = 2^4 = 16   k = 2 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 4 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 4x4   EXACT rank = 4   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :     8    of these, I_unsigned != 0 :     4    I_unsigned values seen [0, 2]
+        pairs with sp_F2 = 1 :     4                                        I_unsigned values seen [1]
+        I_signed values on sp_F2 = 0 pairs: [-2, 0, 2]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 EXACT matrix commutators [R_a,R_b] on the FULL 2^4-dim space, ALL 4 records (16 ordered pairs):
+        12 exactly ZERO, 4 exactly NON-ZERO;  ||.||_F^2 on the non-zero ones = [64]   (predicted 4*2^n = 64);  sp-vs-matrix mismatches = 0 
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 16 ordered pairs: {'0 (EXACT)': 12, '1': 4}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 12, '1': 4}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 6    dim = 2^6 = 64   k = 4 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 8 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 8x8   EXACT rank = 8   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :    48    of these, I_unsigned != 0 :    24    I_unsigned values seen [0, 2, 4]
+        pairs with sp_F2 = 1 :     8                                        I_unsigned values seen [1, 3]
+        I_signed values on sp_F2 = 0 pairs: [-4, -2, 0, 2, 4]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 EXACT matrix commutators [R_a,R_b] on the FULL 2^6-dim space, ALL 8 records (64 ordered pairs):
+        56 exactly ZERO, 8 exactly NON-ZERO;  ||.||_F^2 on the non-zero ones = [256]   (predicted 4*2^n = 256);  sp-vs-matrix mismatches = 0 
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 64 ordered pairs: {'0 (EXACT)': 56, '1': 8}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 56, '1': 8}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 8    dim = 2^8 = 256   k = 6 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 12 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 12x12   EXACT rank = 12   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :   120    of these, I_unsigned != 0 :    60    I_unsigned values seen [0, 2, 4, 6]
+        pairs with sp_F2 = 1 :    12                                        I_unsigned values seen [1, 3, 5]
+        I_signed values on sp_F2 = 0 pairs: [-6, -4, -2, 0, 2, 4, 6]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 EXACT matrix commutators [R_a,R_b] on the FULL 2^8-dim space, ALL 12 records (144 ordered pairs):
+        132 exactly ZERO, 12 exactly NON-ZERO;  ||.||_F^2 on the non-zero ones = [1024]   (predicted 4*2^n = 1024);  sp-vs-matrix mismatches = 0 
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 144 ordered pairs: {'0 (EXACT)': 132, '1': 12}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 132, '1': 12}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 10   dim = 2^10 = 1024   k = 8 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 16 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 16x16   EXACT rank = 16   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :   224    of these, I_unsigned != 0 :   112    I_unsigned values seen [0, 2, 4, 6, 8]
+        pairs with sp_F2 = 1 :    16                                        I_unsigned values seen [1, 3, 5, 7]
+        I_signed values on sp_F2 = 0 pairs: [-8, -6, -4, -2, 0, 2, 4, 6, 8]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 EXACT matrix commutators [R_a,R_b] on the FULL 2^10-dim space, ALL 16 records (256 ordered pairs):
+        240 exactly ZERO, 16 exactly NON-ZERO;  ||.||_F^2 on the non-zero ones = [4096]   (predicted 4*2^n = 4096);  sp-vs-matrix mismatches = 0 
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 256 ordered pairs: {'0 (EXACT)': 240, '1': 16}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 240, '1': 16}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 12   dim = 2^12 = 4096   k = 10 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 20 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 20x20   EXACT rank = 20   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :   360    of these, I_unsigned != 0 :   180    I_unsigned values seen [0, 2, 4, 6, 8, 10]
+        pairs with sp_F2 = 1 :    20                                        I_unsigned values seen [1, 3, 5, 7, 9]
+        I_signed values on sp_F2 = 0 pairs: [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 EXACT matrix commutators [R_a,R_b] on the FULL 2^12-dim space, ALL 20 records (400 ordered pairs):
+        380 exactly ZERO, 20 exactly NON-ZERO;  ||.||_F^2 on the non-zero ones = [16384]   (predicted 4*2^n = 16384);  sp-vs-matrix mismatches = 0 
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 400 ordered pairs: {'0 (EXACT)': 380, '1': 20}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 380, '1': 20}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 14   dim = 2^14 = 16384   k = 12 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 24 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 24x24   EXACT rank = 24   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :   528    of these, I_unsigned != 0 :   264    I_unsigned values seen [0, 2, 4, 6, 8, 10, 12]
+        pairs with sp_F2 = 1 :    24                                        I_unsigned values seen [1, 3, 5, 7, 9, 11]
+        I_signed values on sp_F2 = 0 pairs: [-12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 EXACT matrix commutators [R_a,R_b] on the FULL 2^14-dim space, ALL 24 records (576 ordered pairs):
+        552 exactly ZERO, 24 exactly NON-ZERO;  ||.||_F^2 on the non-zero ones = [65536]   (predicted 4*2^n = 65536);  sp-vs-matrix mismatches = 0 
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 576 ordered pairs: {'0 (EXACT)': 552, '1': 24}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 552, '1': 24}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 16   dim = 2^16 = 65536   k = 14 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 28 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 28x28   EXACT rank = 28   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :   728    of these, I_unsigned != 0 :   364    I_unsigned values seen [0, 2, 4, 6, 8, 10, 12, 14]
+        pairs with sp_F2 = 1 :    28                                        I_unsigned values seen [1, 3, 5, 7, 9, 11, 13]
+        I_signed values on sp_F2 = 0 pairs: [-14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 EXACT matrix commutators [R_a,R_b] on the FULL 2^16-dim space, ALL 28 records (784 ordered pairs):
+        756 exactly ZERO, 28 exactly NON-ZERO;  ||.||_F^2 on the non-zero ones = [262144]   (predicted 4*2^n = 262144);  sp-vs-matrix mismatches = 0 
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 784 ordered pairs: {'0 (EXACT)': 756, '1': 28}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 756, '1': 28}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 20   dim = 2^20 = 1048576   k = 18 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 36 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 36x36   EXACT rank = 36   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :  1224    of these, I_unsigned != 0 :   612    I_unsigned values seen [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+        pairs with sp_F2 = 1 :    36                                        I_unsigned values seen [1, 3, 5, 7, 9, 11, 13, 15, 17]
+        I_signed values on sp_F2 = 0 pairs: [-18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 EXACT matrix commutators [R_a,R_b] on the FULL 2^20-dim space, a 12-record subset (144 ordered pairs):
+        132 exactly ZERO, 12 exactly NON-ZERO;  ||.||_F^2 on the non-zero ones = [4194304]   (predicted 4*2^n = 4194304);  sp-vs-matrix mismatches = 0 
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 1296 ordered pairs: {'0 (EXACT)': 1260, '1': 36}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 1260, '1': 36}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 24   dim = 2^24 = 16777216   k = 22 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 44 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 44x44   EXACT rank = 44   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :  1848    of these, I_unsigned != 0 :   924    I_unsigned values seen [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
+        pairs with sp_F2 = 1 :    44                                        I_unsigned values seen [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]
+        I_signed values on sp_F2 = 0 pairs: [-22, -20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 matrix not materialised at n=24 (2^24 columns); the exact symbolic law [W(a),W(b)] = (i^phi(a,b) - i^phi(b,a)) W(a xor b) applies for ALL n.
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 1936 ordered pairs: {'0 (EXACT)': 1892, '1': 44}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 1892, '1': 44}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 32   dim = 2^32 = 2^32   k = 30 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 60 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 60x60   EXACT rank = 60   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :  3480    of these, I_unsigned != 0 :  1740    I_unsigned values seen [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+        pairs with sp_F2 = 1 :    60                                        I_unsigned values seen [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+        I_signed values on sp_F2 = 0 pairs: [-30, -28, -26, -24, -22, -20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 matrix not materialised at n=32 (2^32 columns); the exact symbolic law [W(a),W(b)] = (i^phi(a,b) - i^phi(b,a)) W(a xor b) applies for ALL n.
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 3600 ordered pairs: {'0 (EXACT)': 3540, '1': 60}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 3540, '1': 60}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 48   dim = 2^48 = 2^48   k = 46 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 92 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 92x92   EXACT rank = 92   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 :  8280    of these, I_unsigned != 0 :  4140    I_unsigned values seen [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46]
+        pairs with sp_F2 = 1 :    92                                        I_unsigned values seen [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45]
+        I_signed values on sp_F2 = 0 pairs: [-46, -44, -42, -40, -38, -36, -34, -32, -30, -28, -26, -24, -22, -20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 matrix not materialised at n=48 (2^48 columns); the exact symbolic law [W(a),W(b)] = (i^phi(a,b) - i^phi(b,a)) W(a xor b) applies for ALL n.
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 8464 ordered pairs: {'0 (EXACT)': 8372, '1': 92}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 8372, '1': 92}
+
+----------------------------------------------------------------------------------------------------------------------
+  n = 64   dim = 2^64 = 2^64   k = 62 records from symplectic_logicals   |S| = 4
+----------------------------------------------------------------------------------------------------------------------
+  clause audit (i)-(iv) on all 124 record operators : ALL PASS
+  Q1 F_2 pairing matrix: size 124x124   EXACT rank = 124   non-degenerate = True   (C-34)
+  CTRL-NZ  sp(X0,Z0) = 1   (C-34 demands 1)      CTRL-Z  sp(X0,X0) = 0   (must be 0)   -> CONTROLS CORRECT
+  Q2/Q3 INTEGER LIFTS vs F_2:
+        pairs with sp_F2 = 0 : 15128    of these, I_unsigned != 0 :  7564    I_unsigned values seen [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62]
+        pairs with sp_F2 = 1 :   124                                        I_unsigned values seen [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61]
+        I_signed values on sp_F2 = 0 pairs: [-62, -60, -58, -56, -54, -52, -50, -48, -46, -44, -42, -40, -38, -36, -34, -32, -30, -28, -26, -24, -22, -20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62]
+  Q5 (phi(a,b)-phi(b,a)) mod 4 paired with sp_F2, over all ordered pairs: [(0, 0), (2, 1)]
+  Q6 matrix not materialised at n=64 (2^64 columns); the exact symbolic law [W(a),W(b)] = (i^phi(a,b) - i^phi(b,a)) W(a xor b) applies for ALL n.
+  Q7 Tr(Pi R_a R_b)/Tr(Pi) over all 15376 ordered pairs: {'0 (EXACT)': 15252, '1': 124}
+  Q8 Tr(R_a R_b)/2^n over all ordered pairs: {'0 (EXACT)': 15252, '1': 124}
+
+======================================================================================================================
+  E-1 TABLE  (every entry EXACT; control column carried, D-15)
+======================================================================================================================
+  n     k     pairmtx   F_2 rank    non-degen     CTRL-NZ   CTRL-Z  (sp(a,a))        sp=0 pairs  of those I_Z!=0
+  ------------------------------------------------------------------------------------------------------------------
+  4     2     4x4       4           YES           1 (NZ ok) 0 exactly (Z ok)         8           4        
+  6     4     8x8       8           YES           1 (NZ ok) 0 exactly (Z ok)         48          24       
+  8     6     12x12     12          YES           1 (NZ ok) 0 exactly (Z ok)         120         60       
+  10    8     16x16     16          YES           1 (NZ ok) 0 exactly (Z ok)         224         112      
+  12    10    20x20     20          YES           1 (NZ ok) 0 exactly (Z ok)         360         180      
+  14    12    24x24     24          YES           1 (NZ ok) 0 exactly (Z ok)         528         264      
+  16    14    28x28     28          YES           1 (NZ ok) 0 exactly (Z ok)         728         364      
+  20    18    36x36     36          YES           1 (NZ ok) 0 exactly (Z ok)         1224        612      
+  24    22    44x44     44          YES           1 (NZ ok) 0 exactly (Z ok)         1848        924      
+  32    30    60x60     60          YES           1 (NZ ok) 0 exactly (Z ok)         3480        1740     
+  48    46    92x92     92          YES           1 (NZ ok) 0 exactly (Z ok)         8280        4140     
+  64    62    124x124   124         YES           1 (NZ ok) 0 exactly (Z ok)         15128       7564     
+
+  I_unsigned values on sp_F2 = 0 pairs, per n:
+     n=4    I_unsigned in [0, 2]                         I_signed in [-2, 0, 2]
+     n=6    I_unsigned in [0, 2, 4]                      I_signed in [-4, -2, 0, 2, 4]
+     n=8    I_unsigned in [0, 2, 4, 6]                   I_signed in [-6, -4, -2, 0, 2, 4, 6]
+     n=10   I_unsigned in [0, 2, 4, 6, 8]                I_signed in [-8, -6, -4, -2, 0, 2, 4, 6, 8]
+     n=12   I_unsigned in [0, 2, 4, 6, 8, 10]            I_signed in [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]
+     n=14   I_unsigned in [0, 2, 4, 6, 8, 10, 12]        I_signed in [-12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12]
+     n=16   I_unsigned in [0, 2, 4, 6, 8, 10, 12, 14]    I_signed in [-14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14]
+     n=20   I_unsigned in [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]   I_signed in [-18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+     n=24   I_unsigned in [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]   I_signed in [-22, -20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
+     n=32   I_unsigned in [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]   I_signed in [-30, -28, -26, -24, -22, -20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+     n=48   I_unsigned in [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46]   I_signed in [-46, -44, -42, -40, -38, -36, -34, -32, -30, -28, -26, -24, -22, -20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46]
+     n=64   I_unsigned in [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62]   I_signed in [-62, -60, -58, -56, -54, -52, -50, -48, -46, -44, -42, -40, -38, -36, -34, -32, -30, -28, -26, -24, -22, -20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62]
+======================================================================================================================

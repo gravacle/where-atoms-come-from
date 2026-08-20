@@ -1,0 +1,56 @@
+====================================================================================================================
+V3  D-17 ON THE COUPLING **PATTERN**, not just its scale.  Fixed 3-qubit bath, nq = 3.
+====================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------
+CONTROL FIRST (D-15).  My factorised engine vs the lane's chi_lib, EQUAL couplings.
+   if these disagree nothing below means anything.
+
+      k   lane SUM chi_i   mine SUM chi_i     |diff|   |  lane chi_joint   mine chi_joint    |diff|
+      2      0.992506189      0.992506189   7.77e-16   |      0.992506189      0.992506189   7.77e-16
+      4      1.214475739      1.214475739   2.22e-16   |      1.443734835      1.443734835   4.44e-16
+      6      0.772985055      0.772985055   2.22e-16   |      1.403561822      1.403561822   0.00e+00
+      9      0.612465791      0.612465791   2.22e-16   |      1.815373142      1.815373142   0.00e+00
+     12      0.512063583      0.512063583   5.55e-16   |      1.731021389      1.731021389   2.22e-16
+
+   CONTROL PASS -- same numbers, so the pattern sweep below is on the same footing
+
+--------------------------------------------------------------------------------------------------------------------
+TABLE.  SUM_i chi(R_i : fixed 3q bath), time-averaged over 25 t in [1,13], nq = 3.
+        EQUAL is the lane's venue.  SPREAD and GEOMETRIC break the record-record degeneracy
+        while keeping the bath, the temperature and the mean coupling the same.
+
+      N=k |  EQUAL (lane)   |   SPREAD        |  GEOMETRIC      ||  chi_joint EQUAL  SPREAD   GEOM   (cap = 3)
+        2 |  0.99251+-0.0805 |  0.84108+-0.0681 |  0.99251+-0.0805 ||  0.99251  0.84108  0.99251
+        4 |  1.21448+-0.0759 |  1.17777+-0.0926 |  1.26192+-0.0788 ||  1.44373  1.34847  1.47512
+        6 |  0.77299+-0.0359 |  1.12089+-0.0477 |  0.91644+-0.0356 ||  1.40356  1.57743  1.49771
+        8 |  0.64471+-0.0332 |  0.83130+-0.0387 |  0.85284+-0.0359 ||  1.67927  1.64423  1.75202
+       10 |  0.57777+-0.0558 |  0.73203+-0.0316 |  0.73969+-0.0288 ||  1.78776  1.84442  1.91389
+       12 |  0.51206+-0.0384 |  0.59376+-0.0247 |  0.58413+-0.0236 ||  1.73102  1.90181  2.00606
+       15 |  0.47309+-0.0342 |  0.41234+-0.0175 |  0.41039+-0.0206 ||  1.95923  2.02604  2.10242
+       18 |  0.41647+-0.0373 |  0.30092+-0.0106 |  0.28391+-0.0149 ||  1.88578  2.08983  2.16878
+       21 |  0.39917+-0.0342 |  0.24151+-0.0054 |  0.21478+-0.0097 ||  2.04515  2.14542  2.22811
+       24 |  0.35886+-0.0370 |  0.20352+-0.0058 |  0.16182+-0.0051 ||  1.98221  2.17547  2.27479
+       27 |  0.35019+-0.0351 |  0.17143+-0.0028 |  0.13090+-0.0030 ||  2.10337  2.20718  2.30547
+       30 |  0.32003+-0.0376 |  0.14768+-0.0024 |  0.11110+-0.0012 ||  2.04912  2.23609  2.33288
+
+   RATIOS (gravity's requirement (a) needs Q(2N)/Q(N) -> 2):
+     EQUAL       Q(4)/Q(2)=1.224  Q(8)/Q(4)=0.531  Q(12)/Q(6)=0.662  Q(24)/Q(12)=0.701  Q(30)/Q(15)=0.676
+     SPREAD      Q(4)/Q(2)=1.400  Q(8)/Q(4)=0.706  Q(12)/Q(6)=0.530  Q(24)/Q(12)=0.343  Q(30)/Q(15)=0.358
+     GEOMETRIC   Q(4)/Q(2)=1.271  Q(8)/Q(4)=0.676  Q(12)/Q(6)=0.637  Q(24)/Q(12)=0.277  Q(30)/Q(15)=0.271
+
+   MONOTONICITY: does SUM_i chi_i still DECAY once the degeneracy is broken?
+     EQUAL       first 0.99251  max 1.21448 (at N=4)  last 0.32003   decaying over N>=6? True
+     SPREAD      first 0.84108  max 1.17777 (at N=4)  last 0.14768   decaying over N>=6? True
+     GEOMETRIC   first 0.99251  max 1.26192 (at N=4)  last 0.11110   decaying over N>=6? True
+
+   CAP CHECK (exact chain SUM_i chi_i <= chi_joint <= S(rho_B) <= nq = 3 bits):
+     EQUAL       max SUM = 1.21448   max joint = 2.10337   SUM<=joint everywhere? True   joint<=3? True
+     SPREAD      max SUM = 1.17777   max joint = 2.23609   SUM<=joint everywhere? True   joint<=3? True
+     GEOMETRIC   max SUM = 1.26192   max joint = 2.33288   SUM<=joint everywhere? True   joint<=3? True
+
+   POWER-LAW EXPONENT of SUM_i chi_i over N >= 6, per pattern:
+     EQUAL       exponent -0.530 +- 0.012   (rms log-residual 0.0172)
+     SPREAD      exponent -1.310 +- 0.054   (rms log-residual 0.0790)
+     GEOMETRIC   exponent -1.437 +- 0.112   (rms log-residual 0.1630)
+--------------------------------------------------------------------------------------------------------------------

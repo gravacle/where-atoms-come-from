@@ -1,0 +1,227 @@
+====================================================================================================
+T0(a)  EXACT CLAUSE VERIFICATION IN F_2 / INTEGER ARITHMETIC  (no floats anywhere in this block)
+====================================================================================================
+
+  carrier [[4,2,2]]: n=4 qubits, dim=16, #stab=2, symplectic_logicals -> 2 conjugate pairs (k=2)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 12  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1                        True   True   True  True  True        True
+    X0X2                        True   True   True  True  True        True
+    Z0Z1                        True   True   True  True  True        True
+    Z0Z2                        True   True   True  True  True        True
+    Y0Y1                        True   True   True  True  True        True
+  [PASS] exact clauses on [[4,2,2]] 
+
+  carrier [[4,2,2]]^1: n=4 qubits, dim=16, #stab=2, symplectic_logicals -> 2 conjugate pairs (k=2)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 12  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1 (blk0)                 True   True   True  True  True        True
+    Z0Z1 (blk0)                 True   True   True  True  True        True
+  [PASS] exact clauses on [[4,2,2]]^1 (blocks pass, inter-block fails) 
+
+  carrier [[4,2,2]]^2: n=8 qubits, dim=256, #stab=4, symplectic_logicals -> 4 conjugate pairs (k=4)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 24  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1 (blk0)                 True   True   True  True  True        True
+    Z0Z1 (blk0)                 True   True   True  True  True        True
+    X4X5 (blk1)                 True   True   True  True  True        True
+    Z4Z5 (blk1)                 True   True   True  True  True        True
+    X0X4 (INTER-BLOCK, must fail)  True  False  False  True  True        False
+  [PASS] exact clauses on [[4,2,2]]^2 (blocks pass, inter-block fails) 
+
+  carrier [[4,2,2]]^3: n=12 qubits, dim=4096, #stab=6, symplectic_logicals -> 6 conjugate pairs (k=6)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 36  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1 (blk0)                 True   True   True  True  True        True
+    Z0Z1 (blk0)                 True   True   True  True  True        True
+    X4X5 (blk1)                 True   True   True  True  True        True
+    Z4Z5 (blk1)                 True   True   True  True  True        True
+    X8X9 (blk2)                 True   True   True  True  True        True
+    Z8Z9 (blk2)                 True   True   True  True  True        True
+    X0X4 (INTER-BLOCK, must fail)  True  False  False  True  True        False
+  [PASS] exact clauses on [[4,2,2]]^3 (blocks pass, inter-block fails) 
+
+  carrier [[4,2,2]]^4: n=16 qubits, dim=65536, #stab=8, symplectic_logicals -> 8 conjugate pairs (k=8)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 48  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1 (blk0)                 True   True   True  True  True        True
+    Z0Z1 (blk0)                 True   True   True  True  True        True
+    X4X5 (blk1)                 True   True   True  True  True        True
+    Z4Z5 (blk1)                 True   True   True  True  True        True
+    X8X9 (blk2)                 True   True   True  True  True        True
+    Z8Z9 (blk2)                 True   True   True  True  True        True
+    X12X13 (blk3)               True   True   True  True  True        True
+    Z12Z13 (blk3)               True   True   True  True  True        True
+    X0X4 (INTER-BLOCK, must fail)  True  False  False  True  True        False
+  [PASS] exact clauses on [[4,2,2]]^4 (blocks pass, inter-block fails) 
+
+  carrier [[4,2,2]]^6: n=24 qubits, dim=16777216, #stab=12, symplectic_logicals -> 12 conjugate pairs (k=12)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 72  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1 (blk0)                 True   True   True  True  True        True
+    Z0Z1 (blk0)                 True   True   True  True  True        True
+    X4X5 (blk1)                 True   True   True  True  True        True
+    Z4Z5 (blk1)                 True   True   True  True  True        True
+    X8X9 (blk2)                 True   True   True  True  True        True
+    Z8Z9 (blk2)                 True   True   True  True  True        True
+    X12X13 (blk3)               True   True   True  True  True        True
+    Z12Z13 (blk3)               True   True   True  True  True        True
+    X16X17 (blk4)               True   True   True  True  True        True
+    Z16Z17 (blk4)               True   True   True  True  True        True
+    X20X21 (blk5)               True   True   True  True  True        True
+    Z20Z21 (blk5)               True   True   True  True  True        True
+    X0X4 (INTER-BLOCK, must fail)  True  False  False  True  True        False
+  [PASS] exact clauses on [[4,2,2]]^6 (blocks pass, inter-block fails) 
+
+  carrier [[4,2,2]]^8: n=32 qubits, dim=4294967296, #stab=16, symplectic_logicals -> 16 conjugate pairs (k=16)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 96  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1 (blk0)                 True   True   True  True  True        True
+    Z0Z1 (blk0)                 True   True   True  True  True        True
+    X4X5 (blk1)                 True   True   True  True  True        True
+    Z4Z5 (blk1)                 True   True   True  True  True        True
+    X8X9 (blk2)                 True   True   True  True  True        True
+    Z8Z9 (blk2)                 True   True   True  True  True        True
+    X12X13 (blk3)               True   True   True  True  True        True
+    Z12Z13 (blk3)               True   True   True  True  True        True
+    X16X17 (blk4)               True   True   True  True  True        True
+    Z16Z17 (blk4)               True   True   True  True  True        True
+    X20X21 (blk5)               True   True   True  True  True        True
+    Z20Z21 (blk5)               True   True   True  True  True        True
+    X24X25 (blk6)               True   True   True  True  True        True
+    Z24Z25 (blk6)               True   True   True  True  True        True
+    X28X29 (blk7)               True   True   True  True  True        True
+    Z28Z29 (blk7)               True   True   True  True  True        True
+    X0X4 (INTER-BLOCK, must fail)  True  False  False  True  True        False
+  [PASS] exact clauses on [[4,2,2]]^8 (blocks pass, inter-block fails) 
+
+  carrier [[4,2,2]]: n=4 qubits, dim=16, #stab=2, symplectic_logicals -> 2 conjugate pairs (k=2)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 12  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1                        True   True   True  True  True        True
+    X0X3                        True   True   True  True  True        True
+    Z0Z1                        True   True   True  True  True        True
+    Z2Z3                        True   True   True  True  True        True
+  [PASS] exact clauses on [[4,2,2]] 
+
+  carrier [[6,4,2]]: n=6 qubits, dim=64, #stab=2, symplectic_logicals -> 4 conjugate pairs (k=4)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 18  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1                        True   True   True  True  True        True
+    X0X5                        True   True   True  True  True        True
+    Z0Z1                        True   True   True  True  True        True
+    Z3Z5                        True   True   True  True  True        True
+  [PASS] exact clauses on [[6,4,2]] 
+
+  carrier [[8,6,2]]: n=8 qubits, dim=256, #stab=2, symplectic_logicals -> 6 conjugate pairs (k=6)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 24  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1                        True   True   True  True  True        True
+    X0X7                        True   True   True  True  True        True
+    Z0Z1                        True   True   True  True  True        True
+    Z4Z7                        True   True   True  True  True        True
+  [PASS] exact clauses on [[8,6,2]] 
+
+  carrier [[10,8,2]]: n=10 qubits, dim=1024, #stab=2, symplectic_logicals -> 8 conjugate pairs (k=8)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 30  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1                        True   True   True  True  True        True
+    X0X9                        True   True   True  True  True        True
+    Z0Z1                        True   True   True  True  True        True
+    Z5Z9                        True   True   True  True  True        True
+  [PASS] exact clauses on [[10,8,2]] 
+
+  carrier [[12,10,2]]: n=12 qubits, dim=4096, #stab=2, symplectic_logicals -> 10 conjugate pairs (k=10)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 36  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1                        True   True   True  True  True        True
+    X0X11                       True   True   True  True  True        True
+    Z0Z1                        True   True   True  True  True        True
+    Z6Z11                       True   True   True  True  True        True
+  [PASS] exact clauses on [[12,10,2]] 
+
+  carrier [[14,12,2]]: n=14 qubits, dim=16384, #stab=2, symplectic_logicals -> 12 conjugate pairs (k=12)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 42  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1                        True   True   True  True  True        True
+    X0X13                       True   True   True  True  True        True
+    Z0Z1                        True   True   True  True  True        True
+    Z7Z13                       True   True   True  True  True        True
+  [PASS] exact clauses on [[14,12,2]] 
+
+  carrier [[16,14,2]]: n=16 qubits, dim=65536, #stab=2, symplectic_logicals -> 14 conjugate pairs (k=14)
+    clause (v) EXACT: single-qubit Paulis acting as a nontrivial logical: 0 of 48  -> PROTECTED
+    record                       (i)   (ii)  (iii)  (iv)   (v)   derived-in-N(S)\S
+    X0X1                        True   True   True  True  True        True
+    X0X15                       True   True   True  True  True        True
+    Z0Z1                        True   True   True  True  True        True
+    Z8Z15                       True   True   True  True  True        True
+  [PASS] exact clauses on [[16,14,2]] 
+
+====================================================================================================
+T0(b)  NUMERICAL CROSS-CHECK AGAINST RecordModel ON THE FULL CARRIER
+====================================================================================================
+
+  [[4,2,2]] dim 16: eigenvalue multiplicities [4, 8, 4]
+    X0X1: (i)=True (ii)=True (iii)=True (iv)=True  max|Tr(P_E R)|=0.000e+00
+  [PASS] numeric clauses X0X1 on [[4,2,2]] 
+    Z0Z1: (i)=True (ii)=True (iii)=True (iv)=True  max|Tr(P_E R)|=0.000e+00
+  [PASS] numeric clauses Z0Z1 on [[4,2,2]] 
+
+  [[6,4,2]] dim 64: eigenvalue multiplicities [16, 32, 16]
+    X0X1: (i)=True (ii)=True (iii)=True (iv)=True  max|Tr(P_E R)|=0.000e+00
+  [PASS] numeric clauses X0X1 on [[6,4,2]] 
+    Z0Z1: (i)=True (ii)=True (iii)=True (iv)=True  max|Tr(P_E R)|=4.441e-16
+  [PASS] numeric clauses Z0Z1 on [[6,4,2]] 
+
+====================================================================================================
+T0(c)  CODE-SPACE REDUCTION IS EXACT
+====================================================================================================
+  [PASS] n=6: code basis orthonormal, dim 16 == 2^(n-2) 
+  [PASS] n=6: code space is the H ground space (energy -2) 
+  [PASS] n=6: compress(X0X1) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=6: compress(X0X1) is an exact integer matrix 
+  [PASS] n=6: compress(X1X5) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=6: compress(X1X5) is an exact integer matrix 
+  [PASS] n=6: compress(Z0Z1) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=6: compress(Z0Z1) is an exact integer matrix 
+  [PASS] n=6: compress(Z2Z4) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=6: compress(Z2Z4) is an exact integer matrix 
+  [PASS] n=6: compress_pauli(Y0Y1) matches   max dev 2.22e-16
+  [PASS] n=6: compress_pauli(X0X1Z2Z3) matches   max dev 2.22e-16
+  [PASS] n=8: code basis orthonormal, dim 64 == 2^(n-2) 
+  [PASS] n=8: code space is the H ground space (energy -2) 
+  [PASS] n=8: compress(X0X1) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=8: compress(X0X1) is an exact integer matrix 
+  [PASS] n=8: compress(X1X7) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=8: compress(X1X7) is an exact integer matrix 
+  [PASS] n=8: compress(Z0Z1) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=8: compress(Z0Z1) is an exact integer matrix 
+  [PASS] n=8: compress(Z2Z6) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=8: compress(Z2Z6) is an exact integer matrix 
+  [PASS] n=8: compress_pauli(Y0Y1) matches   max dev 2.22e-16
+  [PASS] n=8: compress_pauli(X0X1Z2Z3) matches   max dev 2.22e-16
+  [PASS] n=10: code basis orthonormal, dim 256 == 2^(n-2) 
+  [PASS] n=10: code space is the H ground space (energy -2) 
+  [PASS] n=10: compress(X0X1) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=10: compress(X0X1) is an exact integer matrix 
+  [PASS] n=10: compress(X1X9) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=10: compress(X1X9) is an exact integer matrix 
+  [PASS] n=10: compress(Z0Z1) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=10: compress(Z0Z1) is an exact integer matrix 
+  [PASS] n=10: compress(Z2Z8) matches V-dag P V   max dev 2.22e-16
+  [PASS] n=10: compress(Z2Z8) is an exact integer matrix 
+  [PASS] n=10: compress_pauli(Y0Y1) matches   max dev 2.22e-16
+  [PASS] n=10: compress_pauli(X0X1Z2Z3) matches   max dev 2.22e-16
+
+====================================================================================================
+T0(d)  evolve_times MATCHES RecordModel.evolve, AND REDUCED chi == FULL chi
+====================================================================================================
+  [PASS] lam=0.4 t=2.0: reduced chi == full chi   full 0.108496556643  reduced 0.108496556643  diff 4.77e-15
+  [PASS] lam=0.4 t=5.0: reduced chi == full chi   full 0.007549233353  reduced 0.007549233353  diff 2.11e-15
+  [PASS] lam=0.8 t=2.0: reduced chi == full chi   full 0.169412950157  reduced 0.169412950157  diff 1.55e-15
+  [PASS] lam=0.8 t=5.0: reduced chi == full chi   full 0.000084678824  reduced 0.000084678824  diff 1.55e-15
+
+====================================================================================================
+SELF-CHECK SUMMARY: ALL PASS
+====================================================================================================

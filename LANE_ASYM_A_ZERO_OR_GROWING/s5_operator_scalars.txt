@@ -1,0 +1,31 @@
+======================================================================================================================
+S5  OPERATOR-LEVEL SCALARS -- [[n, n-2, 2]].  REPRESENTATION: full dense Hilbert space 2^n.
+======================================================================================================================
+
+  n   k |  max_i |Tr R_i|  max_i,E |Tr(P_E R_i)| | sum_i <R_i> mixed code state | CONTROL sum_i <R_i> polarised | E_spread over 2^k configs | CONTROL gap to non-code | Var_H on code space
+----------------------------------------------------------------------------------------------------------------------
+  4   2 |      0.000e+00             0.000e+00 |                    0.000e+00 |                        2.0000 |                 0.000e+00 |                  2.0000 |          0.000e+00
+  6   4 |      0.000e+00             0.000e+00 |                    0.000e+00 |                        4.0000 |                 0.000e+00 |                  2.0000 |          0.000e+00
+  8   6 |      0.000e+00             0.000e+00 |                    0.000e+00 |                        6.0000 |                 0.000e+00 |                  2.0000 |          1.776e-15
+----------------------------------------------------------------------------------------------------------------------
+
+  n   k | number of DISTINCT energies among the 2^k record configurations  (1 means exactly degenerate)
+----------------------------------------------------------------------------------------------------------------------
+  4   2 | 1   (of 4 configurations)
+  6   4 | 1   (of 16 configurations)
+  8   6 | 1   (of 64 configurations)
+----------------------------------------------------------------------------------------------------------------------
+
+EXACT ARGUMENT covering every n, not just the three computed above:
+  H = -(X^(x)n + Z^(x)n) and the code space is the simultaneous +1 eigenspace of both stabilisers,
+  so H restricted to the code space is exactly -2 * I.  Every record is a logical operator, so every
+  record configuration is a state of the code space, so all 2^k configurations have energy exactly -2.
+  Therefore E_spread = 0 and Var_H = 0 IDENTICALLY, at every finite n, for every record family.
+  Likewise every record is a non-identity logical Pauli, hence traceless on the code space, hence
+  sum_i <R_i> = 0 IDENTICALLY on the maximally mixed code state.
+
+READ (filled from the numbers above, not in advance):
+  Tr R_i, Tr(P_E R_i), the mixed-state record charge, E_spread and Var_H are all 0 to machine precision.
+  The CONTROLS in the same table are non-zero: the polarised-state sum is [2.0, 4.0, 6.0] and the gap to a
+  syndrome-violating state is [2.0, 2.0, 2.0].  So the measurement can register a non-zero value; the zeros are real.
+  The polarised-state control equals k exactly, i.e. it is the record COUNT again, not a new density.

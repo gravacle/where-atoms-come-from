@@ -1,0 +1,20 @@
+================================================================================================================
+S1b  TOTAL MINIMUM FLIP-ONLY WRITER WEIGHT vs CHOICE OF SYMPLECTIC BASIS  (D-17: vary the venue's own scale)
+================================================================================================================
+
+  n   k | pool of weight-2 logicals | Wflip_tot Gram-Schmidt | Wflip_tot best random basis | Wflip_tot verified weight-2 basis | exact lower bound 2k
+----------------------------------------------------------------------------------------------------------------
+  4   2 |                       18 |                      4 |                           4 |                                 4 |                   4
+  6   4 |                       45 |                      8 |                           8 |                                 8 |                   8
+  8   6 |                       84 |                     16 |                          12 |                                12 |                  12
+ 10   8 |                      135 |                     24 |                          17 |                                16 |                  16
+ 12  10 |                      198 |                     36 |                          20 |                                20 |                  20
+----------------------------------------------------------------------------------------------------------------
+
+READ (filled from the numbers above, not in advance):
+  the verified weight-2 conjugate basis attains the exact lower bound 2k at n = [4, 6, 8, 10, 12]   (of [4, 6, 8, 10, 12] tested)
+  the Gram-Schmidt column's ~k^2/4 rise is therefore an artefact of the BASIS, not a property of the code;
+  it does not survive D-17.  The basis-independent minimum is Wflip_tot = 2k = 2(n-2), exactly LINEAR,
+  and the per-record minimum is exactly 2 = d, CONSTANT at every N.
+  NOTE: the random-basis column is a search, not a minimisation -- it is an upper bound only,
+  and it is superseded by the verified weight-2 column, which is a CONSTRUCTION.

@@ -1,0 +1,136 @@
+"""T7 -- WHICH ASSUMPTION CARRIES THE NULL?  Break them one at a time on the FULL carrier.
+
+The exact arguments of T2(b) and T5 rest on three hypotheses:
+   (H1) the state is invariant under the symmetry that moves the records,
+   (H2) every coupling operator is a record (so clause (ii) applies to the whole H_tot),
+   (H3) the environment has no bath-bath coupling.
+This script works on the FULL 2^n carrier -- no code-space reduction, full H, full dynamics --
+and breaks H1 and H2 in turn.  If the null survives H1 and H2 intact and dies when they are
+broken, the null is a statement about the record structure and not an artefact of the reduction.
+
+EXACT FACT USED HERE: H = -(X^(x)n + Z^(x)n) is invariant under EVERY permutation of the n
+qubits, so any state that is a function of H is too.  A permutation carrying supp(A) -> supp(A')
+and supp(B) -> supp(B') therefore conjugates the entire joint evolution and leaves chi exactly
+invariant.  Exact, every n.
+"""
+import sys, numpy as np, itertools
+sys.path.insert(0, "/Users/bgm/MB Work/where-atoms-come-from/LANE_EXACT_C_FORM")
+from lane_utils import *
+FAIL = []
+def check(name, ok, extra=""):
+    print(f"  [{'PASS' if ok else 'FAIL'}] {name} {extra}", flush=True)
+    if not ok: FAIL.append(name)
+print(__doc__)
+
+n = 8
+Xall = xz_to_matrix([1]*n+[0]*n, n); Zall = xz_to_matrix([0]*n+[1]*n, n)
+H = -(Xall + Zall); N = 2**n
+stab = stab_nn2(n); S, L, _ = derived_logical_span(stab, n)
+
+def perm_matrix(p):
+    """unitary permuting the n qubits by p (qubit i -> position p[i]); qubit 0 is the MSB."""
+    P = np.zeros((N, N))
+    for v in range(N):
+        w = 0
+        for i in range(n):
+            if (v >> (n-1-i)) & 1: w |= 1 << (n-1-p[i])
+        P[w, v] = 1
+    return P
+
+print("="*112)
+print("T7(a)  EXACT: H IS PERMUTATION INVARIANT (verified over a sample of permutations)")
+print("="*112)
+worst = 0.0
+for p in [tuple(np.random.default_rng(s).permutation(n)) for s in range(12)]:
+    P = perm_matrix(p)
+    worst = max(worst, float(np.linalg.norm(P@H@P.T - H)))
+print(f"  max || P H P^T - H || over 12 random qubit permutations: {worst:.3e}")
+check("H is exactly permutation invariant", worst < 1e-12)
+
+def rec_full(kind, i, j):
+    v = pauli_vec(n,(i,j),()) if kind=="X" else pauli_vec(n,(),(i,j))
+    assert is_nontrivial_logical(v, S, L, n)
+    return xz_to_matrix(v, n)
+
+env = Environment(nq=2, energies=(1.0,)*2, beta=2.0)
+RA = rec_full("X", 0, 1)
+w, V = np.linalg.eigh(H)
+
+def thermal_state(beta):
+    p = np.exp(-beta*(w - w.min())); p /= p.sum()
+    return (V*p) @ V.conj().T
+
+print()
+print("="*112)
+print("T7(b)  FULL CARRIER, FULL DYNAMICS, THERMAL STATE OVER ALL SECTORS -- SEPARATION SCAN")
+print("="*112)
+print("  H1 and H2 INTACT.  If the code-space reduction had hidden a separation dependence,")
+print("  it would appear here.")
+for beta in (0.0, 0.5, 2.0):
+    st = thermal_state(beta)
+    print(f"\n  beta = {beta}  (beta=0 is the maximally mixed state on the WHOLE 2^n space)")
+    print(f"    {'partner':<10}{'sep':>5}{'chi_A alone':>18}{'chi_A crowded':>18}{'interaction':>18}")
+    Is = []
+    for p in range(2, n-1):
+        RB = rec_full("X", p, p+1)
+        a = chi_avg(H, env, [(RA,0)], 0.8, [RA], st)[0]
+        c = chi_avg(H, env, [(RA,0),(RB,0)], 0.8, [RA], st)[0]
+        Is.append(a-c)
+        print(f"    {'X%dX%d'%(p,p+1):<10}{p-1:>5}{a:>18.12f}{c:>18.12f}{a-c:>18.12f}")
+    print(f"    SPREAD over separation: {max(Is)-min(Is):.3e}")
+    check(f"beta={beta}: full-carrier interaction is separation-independent",
+          max(Is)-min(Is) < 1e-11, f"  spread {max(Is)-min(Is):.3e}")
+
+print()
+print("="*112)
+print("T7(c)  BREAK H1 -- a state that is NOT symmetric under the record-moving permutation")
+print("="*112)
+print("  POSITIVE CONTROL.  Same pipeline, same records, same couplings; only the initial state")
+print("  is replaced by a state that singles out a location.  Separation dependence must appear.")
+rng = np.random.default_rng(7)
+psi = rng.normal(size=N) + 1j*rng.normal(size=N); psi /= np.linalg.norm(psi)
+stR = np.outer(psi, psi.conj())
+loc = np.zeros((N, N), dtype=complex)                       # a state localised on qubit-0/1 pattern
+Zloc = xz_to_matrix(pauli_vec(n, (), (0,)), n)
+stL = (np.eye(N) + 0.9*Zloc)/N                              # polarises qubit 0 only
+for nm, st in (("random pure state", stR), ("qubit-0-polarised state", stL)):
+    print(f"\n  {nm}")
+    print(f"    {'partner':<10}{'sep':>5}{'chi_A alone':>18}{'chi_A crowded':>18}{'interaction':>18}")
+    Is = []
+    for p in range(2, n-1):
+        RB = rec_full("X", p, p+1)
+        a = chi_avg(H, env, [(RA,0)], 0.8, [RA], st)[0]
+        c = chi_avg(H, env, [(RA,0),(RB,0)], 0.8, [RA], st)[0]
+        Is.append(a-c)
+        print(f"    {'X%dX%d'%(p,p+1):<10}{p-1:>5}{a:>18.12f}{c:>18.12f}{a-c:>18.12f}")
+    print(f"    SPREAD over separation: {max(Is)-min(Is):.3e}")
+    check(f"POS CONTROL ({nm}): separation dependence DOES appear",
+          max(Is)-min(Is) > 1e-6, f"  spread {max(Is)-min(Is):.3e}")
+
+print()
+print("="*112)
+print("T7(d)  BREAK H2 -- couple through an operator that is NOT a record")
+print("="*112)
+print("  POSITIVE CONTROL.  A single-qubit Z_p coupling (clause (ii) fails for it) at various")
+print("  distances from A's support.  The state is the code state, H1 intact.")
+Pg = None
+M = RecordModel(H); Pg, kdim = M.ground_space(); st = Pg/kdim
+print(f"    {'coupling':<10}{'dist to supp A':>16}{'chi_A':>20}")
+vals = []
+for p in range(n):
+    E = xz_to_matrix(pauli_vec(n, (), (p,)), n)
+    c = chi_avg(H, env, [(RA,0),(E,0)], 0.8, [RA], st)[0]
+    dist = 0 if p in (0,1) else min(abs(p-0), abs(p-1))
+    vals.append((p, dist, c))
+    print(f"    {'Z%d'%p:<10}{dist:>16}{c:>20.12f}")
+far = [c for p, dd, c in vals if dd > 0]
+print(f"    spread among OFF-SUPPORT couplings (dist >= 1): {max(far)-min(far):.3e}")
+print(f"    on-support (Z0, Z1) vs off-support: {vals[0][2]:.12f} vs {np.mean(far):.12f}")
+check("non-record coupling: effect is CONTACT (on-support differs, off-support all identical)",
+      (max(far)-min(far) < 1e-11) and abs(vals[0][2]-np.mean(far)) > 1e-6,
+      f"  off-support spread {max(far)-min(far):.2e}, on/off gap {abs(vals[0][2]-np.mean(far)):.3e}")
+
+print()
+print("="*112)
+print("T7 SELF-CHECK SUMMARY:", "ALL PASS" if not FAIL else f"{len(FAIL)} FAILURES: {FAIL}")
+print("="*112)

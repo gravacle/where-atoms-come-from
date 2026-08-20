@@ -1,0 +1,64 @@
+========================================================================================================
+S1   SELF-CHECKS.  Nothing in this lane is allowed to mean anything until these pass.
+========================================================================================================
+
+SC-2  symplectic_logicals returns genuine logicals: in N(S), not in S, correctly paired.
+      (pure F_2 symplectic representation -- no dense matrices, so it runs to large n)
+
+        n      k    len(pairs)   all in N(S)   none in S   pairs anticommute   cross pairs commute
+        4      2            2          True        True                True                  True
+        6      4            4          True        True                True                  True
+        8      6            6          True        True                True                  True
+       10      8            8          True        True                True                  True
+       12     10           10          True        True                True                  True
+       14     12           12          True        True                True                  True
+       16     14           14          True        True                True                  True
+       18     16           16          True        True                True                  True
+       20     18           18          True        True                True                  True
+       30     28           28          True        True                True                  True
+       40     38           38          True        True                True                  True
+
+   SC-2 PASS -- logicals are computed and correctly paired at every n tested (4..40)
+
+SC-1  The five clauses on the carrier the records actually live on (D-18).
+      (i) R=R-dag, R^2=I   (ii) [H,R]=0   (iii) non-constant on some eigenspace of H
+      (iv) Tr(P_E R)=0 on EVERY eigenspace     (v) NOT claimed -- carrier data
+
+        n    dim   #records tested   (i) bit   (ii) durable   (iii) non-trivial   (iv) writable
+        4     16                 4      True           True                True            True
+        6     64                 8      True           True                True            True
+        8    256                12      True           True                True            True
+
+   SC-1 PASS -- every operator this lane calls a record satisfies (i)-(iv) as an operator
+
+SC-3  THE SECTOR REDUCTION IS EXACT.
+      Records R_i = Xbar_i all commute with each other and with H, and they preserve the
+      code space, so with rho_0 = maximally mixed code state the joint state is exactly
+          rho(t) = 2^-k SUM_s |s><s| (x) U_s rho_B U_s-dag,   U_s = exp(-i t (H_B + lam SUM_i s_i b_i))
+      with s in {+1,-1}^k and b_i the bath site record i couples to.  Below: chi computed
+      that way, against RecordModel.formation() building the full 2^n x 2^nq state.
+
+        n    dim_sys   dim_joint     chi (dense model)     chi (sector reduction)      |diff|
+        4         16         128     0.789366223261594          0.789366223261597    3.11e-15
+        6         64         512     0.164649764025581          0.164649764025581    6.66e-16
+        8        256        2048     0.164649764025581          0.164649764025581    0.00e+00
+
+   SC-3 PASS -- the reduction reproduces the model's own dense chi to <1e-9
+
+SC-4  THE COUNTING COMPRESSION IS EXACT.
+      With every record coupled at equal strength, the bath sees only the three integers
+      c_j = SUM_{i mod nq = j} s_i.  So the 2^k sector sum collapses to a sum over O(k^3)
+      counts with binomial weights -- which is what lets S3 reach k far beyond 2^k enumeration.
+
+        k    chi (2^k sectors)     chi (count compression)       |diff|
+        2    0.789366223261597           0.789366223261597      0.00e+00
+        4    0.164649764025581           0.164649764025582      8.88e-16
+        6    0.164649764025581           0.164649764025582      8.88e-16
+        8    0.081033022663120           0.081033022663119      8.88e-16
+       10    0.081488761296904           0.081488761296905      1.33e-15
+
+   SC-4 PASS -- the compression is exact, so S3's large-k chi is exact, not sampled
+
+========================================================================================================
+  ALL SELF-CHECKS: PASS
+========================================================================================================

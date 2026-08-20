@@ -1,0 +1,117 @@
+====================================================================================================
+S1  CLAUSE VERIFICATION -- every object called a record below is checked here (D-18)
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+CARRIER [[4,2,2]]      n=4   dim=16     k=2
+  symbolic self-checks: pairing_is_identity=True  family_commutes=True  in_normaliser=True  not_a_stabiliser=True  k_equals_n_minus_rank=True
+  H = -(sum of stabilisers); eigenvalue multiplicities [4, 8, 4] ; sum=16 (= dim OK)
+  clauses (i)-(iv) verified on the FULL Hilbert space for all 2 records: ALL PASS
+     (0, 2, np.True_, np.True_, True, True)
+     (1, 2, np.True_, np.True_, True, True)
+  predicted joint eigenspace dim 2^n/2^(rank S + k) = 1
+  RecordModel.independently_writable -> 2 of 2 records  (0.1s)
+  numeric block: 0.1s
+  CLAUSE (v) region scan   [r=1 is the claim, r>=2 is the POSITIVE CONTROL]
+     region_size  records_flippable_by_one_region   dim_of_local_logical_group
+     1            0                                  0
+     2            2                                  2
+     3            2                                  4
+----------------------------------------------------------------------------------------------------
+CARRIER [[6,4,2]]      n=6   dim=64     k=4
+  symbolic self-checks: pairing_is_identity=True  family_commutes=True  in_normaliser=True  not_a_stabiliser=True  k_equals_n_minus_rank=True
+  H = -(sum of stabilisers); eigenvalue multiplicities [16, 32, 16] ; sum=64 (= dim OK)
+  clauses (i)-(iv) verified on the FULL Hilbert space for all 4 records: ALL PASS
+     (0, 2, np.True_, np.True_, True, True)
+     (1, 2, np.True_, np.True_, True, True)
+     (2, 4, np.True_, np.True_, True, True)
+     (3, 4, np.True_, np.True_, True, True)
+  predicted joint eigenspace dim 2^n/2^(rank S + k) = 1
+  RecordModel.independently_writable -> 4 of 4 records  (0.0s)
+  numeric block: 0.0s
+  CLAUSE (v) region scan   [r=1 is the claim, r>=2 is the POSITIVE CONTROL]
+     region_size  records_flippable_by_one_region   dim_of_local_logical_group
+     1            0                                  0
+     2            2                                  2
+     3            3                                  4
+     4            4                                  6
+----------------------------------------------------------------------------------------------------
+CARRIER [[8,6,2]]      n=8   dim=256    k=6
+  symbolic self-checks: pairing_is_identity=True  family_commutes=True  in_normaliser=True  not_a_stabiliser=True  k_equals_n_minus_rank=True
+  H = -(sum of stabilisers); eigenvalue multiplicities [64, 128, 64] ; sum=256 (= dim OK)
+  clauses (i)-(iv) verified on the FULL Hilbert space for all 6 records: ALL PASS
+     (0, 2, np.True_, np.True_, True, True)
+     (1, 2, np.True_, np.True_, True, True)
+     (2, 4, np.True_, np.True_, True, True)
+     (3, 4, np.True_, np.True_, True, True)
+     ('...',)
+  predicted joint eigenspace dim 2^n/2^(rank S + k) = 1
+  RecordModel.independently_writable -> 6 of 6 records  (1.7s)
+  numeric block: 2.0s
+  CLAUSE (v) region scan   [r=1 is the claim, r>=2 is the POSITIVE CONTROL]
+     region_size  records_flippable_by_one_region   dim_of_local_logical_group
+     1            0                                  0
+     2            2                                  2
+     3            3                                  4
+     4            4                                  6
+----------------------------------------------------------------------------------------------------
+CARRIER [[10,8,2]]     n=10  dim=1024   k=8
+  symbolic self-checks: pairing_is_identity=True  family_commutes=True  in_normaliser=True  not_a_stabiliser=True  k_equals_n_minus_rank=True
+  H = -(sum of stabilisers); eigenvalue multiplicities [256, 512, 256] ; sum=1024 (= dim OK)
+  clauses (i)-(iv) verified on the FULL Hilbert space for all 8 records: ALL PASS
+     (0, 2, np.True_, np.True_, True, True)
+     (1, 2, np.True_, np.True_, True, True)
+     (2, 4, np.True_, np.True_, True, True)
+     (3, 4, np.True_, np.True_, True, True)
+     ('...',)
+  predicted joint eigenspace dim 2^n/2^(rank S + k) = 1
+  numeric block: 14.7s
+  CLAUSE (v) region scan   [r=1 is the claim, r>=2 is the POSITIVE CONTROL]
+     region_size  records_flippable_by_one_region   dim_of_local_logical_group
+     1            0                                  0
+     2            2                                  2
+     3            3                                  4
+     4            4                                  6
+----------------------------------------------------------------------------------------------------
+CARRIER [[4,2,2]]^1    n=4   dim=16     k=2
+  symbolic self-checks: pairing_is_identity=True  family_commutes=True  in_normaliser=True  not_a_stabiliser=True  k_equals_n_minus_rank=True
+  H = -(sum of stabilisers); eigenvalue multiplicities [4, 8, 4] ; sum=16 (= dim OK)
+  clauses (i)-(iv) verified on the FULL Hilbert space for all 2 records: ALL PASS
+     (0, 2, np.True_, np.True_, True, True)
+     (1, 2, np.True_, np.True_, True, True)
+  predicted joint eigenspace dim 2^n/2^(rank S + k) = 1
+  RecordModel.independently_writable -> 2 of 2 records  (0.0s)
+  numeric block: 0.0s
+  CLAUSE (v) region scan   [r=1 is the claim, r>=2 is the POSITIVE CONTROL]
+     region_size  records_flippable_by_one_region   dim_of_local_logical_group
+     1            0                                  0
+     2            2                                  2
+     3            2                                  4
+----------------------------------------------------------------------------------------------------
+CARRIER [[4,2,2]]^2    n=8   dim=256    k=4
+  symbolic self-checks: pairing_is_identity=True  family_commutes=True  in_normaliser=True  not_a_stabiliser=True  k_equals_n_minus_rank=True
+  H = -(sum of stabilisers); eigenvalue multiplicities [16, 64, 96, 64, 16] ; sum=256 (= dim OK)
+  clauses (i)-(iv) verified on the FULL Hilbert space for all 4 records: ALL PASS
+     (0, 2, np.True_, np.True_, True, True)
+     (1, 2, np.True_, np.True_, True, True)
+     (2, 2, np.True_, np.True_, True, True)
+     (3, 2, np.True_, np.True_, True, True)
+  predicted joint eigenspace dim 2^n/2^(rank S + k) = 1
+  RecordModel.independently_writable -> 4 of 4 records  (1.4s)
+  numeric block: 1.7s
+  CLAUSE (v) region scan   [r=1 is the claim, r>=2 is the POSITIVE CONTROL]
+     region_size  records_flippable_by_one_region   dim_of_local_logical_group
+     1            0                                  0
+     2            2                                  2
+     3            2                                  4
+     4            2                                  4
+----------------------------------------------------------------------------------------------------
+SYMBOLIC-ONLY reach (no Hilbert space built; F_2 only):
+  A n=16  k=14  dim=2^16  self-checks PASS
+  A n=24  k=22  dim=2^24  self-checks PASS
+  A n=32  k=30  dim=2^32  self-checks PASS
+  A n=48  k=46  dim=2^48  self-checks PASS
+  A n=64  k=62  dim=2^64  self-checks PASS
+  B m=8   k=16  dim=2^32  self-checks PASS
+  B m=16  k=32  dim=2^64  self-checks PASS
+  B m=24  k=48  dim=2^96  self-checks PASS
+  B m=32  k=64  dim=2^128 self-checks PASS

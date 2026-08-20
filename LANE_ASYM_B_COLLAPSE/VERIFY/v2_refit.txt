@@ -1,0 +1,59 @@
+======================================================================================================================
+V2  RE-FIT OF THE LANE'S chi DATA UNDER FOUR SIGMA CHOICES AND ONE EXTRA MODEL (POW = a N^b)
+    AICc is linear in 1/sigma^2, so the sigma choice IS the model-selection knob.  Here it is turned.
+======================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------------
+Q1  SUM_i chi_i (FIXED 3q bath)
+
+    sigma choice              best   dAICc(best-2nd)   full AICc ranking
+    lane's SE of time-avg     SAT2            10.47   SAT2=26.9  LOG=37.4  POW=38.3  SAT1=84.6  LIN=108.8
+    STD over the 25 times     LOG              0.04   LOG=6.0  POW=6.0  SAT1=7.9  SAT2=8.3  LIN=8.9
+    flat = median SE          SAT2            24.95   SAT2=72.1  LOG=97.0  POW=132.2  SAT1=223.1  LIN=243.5
+    flat = 0.005 bits         SAT2          1649.76   SAT2=3854.4  LOG=5504.1  POW=7598.7  SAT1=13016.9  LIN=14231.6
+
+    SHORT WINDOW N=2..12 (the six sizes the brief names), lane's own sigma:
+      best LIN   dAICc 0.86   ranking LIN=27.7  LOG=28.6  SAT2=34.8  POW=37.6  SAT1=47.2
+
+----------------------------------------------------------------------------------------------------------------------
+CONTROL-SAT chi_joint (FIXED)
+
+    sigma choice              best   dAICc(best-2nd)   full AICc ranking
+    lane's SE of time-avg     LOG              1.48   LOG=22.0  SAT2=23.5  POW=33.8  SAT1=63.9  LIN=102.0
+    STD over the 25 times     LOG              0.47   LOG=5.4  POW=5.9  SAT1=7.1  SAT2=8.1  LIN=8.6
+    flat = median SE          LOG              1.86   LOG=35.6  SAT2=37.5  POW=59.0  SAT1=100.7  LIN=195.4
+    flat = 0.005 bits         SAT2            79.16   SAT2=2630.5  LOG=2709.7  POW=4752.6  SAT1=8404.3  LIN=16690.5
+
+    SHORT WINDOW N=2..12 (the six sizes the brief names), lane's own sigma:
+      best LOG   dAICc 0.39   ranking LOG=14.3  SAT1=14.7  POW=16.0  LIN=22.8  SAT2=23.5
+
+----------------------------------------------------------------------------------------------------------------------
+CONTROL-LIN2 SUM chi_i (GROWN)
+
+    sigma choice              best   dAICc(best-2nd)   full AICc ranking
+    lane's SE of time-avg     LIN              0.01   LIN=4.7  POW=4.8  SAT2=9.5  LOG=501.4  SAT1=1243.2
+    STD over the 25 times     LIN              0.00   LIN=4.7  POW=4.7  SAT2=7.6  LOG=24.6  SAT1=54.2
+    flat = median SE          LIN              0.00   LIN=4.7  POW=4.7  SAT2=8.6  LOG=210.1  SAT1=776.8
+    flat = 0.005 bits         LIN             17.95   LIN=152.4  POW=170.3  SAT2=17259.7  LOG=3362930.4  SAT1=12643966.5
+
+    SHORT WINDOW N=2..12 (the six sizes the brief names), lane's own sigma:
+      best POW   dAICc 0.00   ranking POW=8.0  LIN=8.0  SAT2=18.0  LOG=34.4  SAT1=86.3
+
+----------------------------------------------------------------------------------------------------------------------
+RESIDUALS OF THE LANE'S PREFERRED FORM FOR Q1 (SAT2) AGAINST THE POWER LAW, lane's sigma
+   SAT2  chi2=    19.43  p=3  AICc=    26.93  max|r|/sigma=  3.81  rms r = 0.07064 bits
+   POW   chi2=    33.60  p=2  AICc=    38.30  max|r|/sigma=  4.45  rms r = 0.10121 bits
+   LOG   chi2=    32.69  p=2  AICc=    37.40  max|r|/sigma=  4.80  rms r = 0.08604 bits
+   SAT1  chi2=    79.93  p=2  AICc=    84.63  max|r|/sigma=  5.87  rms r = 0.13731 bits
+   LIN   chi2=   104.13  p=2  AICc=   108.84  max|r|/sigma=  6.90  rms r = 0.14363 bits
+
+   The N=4 point carries residual +3.81 sigma under SAT2 -- one point drives the chi^2.
+
+----------------------------------------------------------------------------------------------------------------------
+EXTRAPOLATION HONESTY CHECK.  Fit Q1 on N<=20 only, predict N=40, compare to truth.
+   SAT2  predicts chi(N=40) =   0.34132   truth =   0.28084   miss = +0.06048 bits (1.5 sigma)
+   POW   predicts chi(N=40) =   0.28678   truth =   0.28084   miss = +0.00594 bits (0.1 sigma)
+   LOG   predicts chi(N=40) =   0.14722   truth =   0.28084   miss = -0.13362 bits (-3.3 sigma)
+   SAT1  predicts chi(N=40) =   0.40984   truth =   0.28084   miss = +0.12900 bits (3.2 sigma)
+   LIN   predicts chi(N=40) =  -0.28749   truth =   0.28084   miss = -0.56834 bits (-14.1 sigma)
+----------------------------------------------------------------------------------------------------------------------

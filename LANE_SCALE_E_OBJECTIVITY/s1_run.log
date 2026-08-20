@@ -1,0 +1,52 @@
+============================================================================================================
+S1  CARRIER FAMILY [[n, n-2, 2]] AND CLAUSE VERIFICATION
+============================================================================================================
+
+  n   k    dim | pairs  symp=I Zi commute |  F2 (i)  F2 (ii)  F2(iii)  F2 (iv) |  M (i)  M (ii)  M(iii)  M (iv) |  gs dim  sectors   dims   OK
+----------------------------------------------------------------------------------------------------------------------------------------------------
+  4   2     16 |     2    True       True |    True     True     True     True |    yes     yes     yes     yes |       4        4    [1]  yes
+  6   4     64 |     4    True       True |    True     True     True     True |    yes     yes     yes     yes |      16       16    [1]  yes
+  8   6    256 |     6    True       True |    True     True     True     True |    yes     yes     yes     yes |      64       64    [1]  yes
+ 10   8   1024 |     8    True       True |    True     True     True     True |    yes     yes     yes     yes |     256      256    [1]  yes
+ 12  10   4096 |    10    True       True |    True     True     True     True |     --      --      --      -- |    None     None   None   --
+ 14  12  16384 |    12    True       True |    True     True     True     True |     --      --      --      -- |    None     None   None   --
+ 16  14  65536 |    14    True       True |    True     True     True     True |     --      --      --      -- |    None     None   None   --
+
+EIGENVALUE MULTIPLICITIES OF H = -(X^n + Z^n)  (matrix route only):
+   n= 4  [4, 8, 4]   expected [2^k, 2^(k+1), 2^k] = [4, 8, 4]
+   n= 6  [16, 32, 16]   expected [2^k, 2^(k+1), 2^k] = [16, 32, 16]
+   n= 8  [64, 128, 64]   expected [2^k, 2^(k+1), 2^k] = [64, 128, 64]
+   n=10  [256, 512, 256]   expected [2^k, 2^(k+1), 2^k] = [256, 512, 256]
+
+CLAUSE (v) PROTECTED -- carrier data, checked explicitly against SINGLE-QUBIT regions.
+A single-qubit operation is a combination of I,X,Y,Z on one site.  It can flip a record only
+if some single-qubit Pauli both (a) commutes with BOTH stabilisers, so it is admissible, and
+(b) anticommutes with that record.  Enumerated exhaustively:
+
+  n   k | single-qubit Paulis  admissible ones  that flip a record | READ
+------------------------------------------------------------------------------------------
+  4   2 |                  12                0                   0 | PROTECTED
+  6   4 |                  18                0                   0 | PROTECTED
+  8   6 |                  24                0                   0 | PROTECTED
+ 10   8 |                  30                0                   0 | PROTECTED
+ 12  10 |                  36                0                   0 | PROTECTED
+ 14  12 |                  42                0                   0 | PROTECTED
+ 16  14 |                  48                0                   0 | PROTECTED
+
+POSITIVE CONTROL for the clause (v) test (D-15) -- the identical enumeration over TWO-qubit
+regions, where a flip CAN occur because the code distance is exactly 2:
+
+  n   k |  two-qubit Paulis  admissible ones  that flip a record | READ
+------------------------------------------------------------------------------------------
+  4   2 |                54               18                  12 | flips found
+  6   4 |               135               45                  30 | flips found
+  8   6 |               252               84                  56 | flips found
+ 10   8 |               405              135                  90 | flips found
+ 12  10 |               594              198                 132 | flips found
+ 14  12 |               819              273                 182 | flips found
+ 16  14 |              1080              360                 240 | flips found
+
+READ: every self-check above PASSED
+      The k = n-2 operators Z_1..Z_k are records on [[n,n-2,2]] by clauses (i)-(iv), are
+      protected against every single-qubit region, and split the ground space into 2^k
+      one-dimensional joint sectors -- so the fast path's uniform prior p_r = 2^-k is exact.

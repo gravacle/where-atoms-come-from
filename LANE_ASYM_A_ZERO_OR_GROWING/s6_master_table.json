@@ -1,0 +1,457 @@
+[
+ {
+  "quantity": "number of independent records N",
+  "values": [
+   "2",
+   "4",
+   "6",
+   "8",
+   "10",
+   "12"
+  ],
+  "category": "G",
+  "argument": "EXACT N = n-2 (k of an [[n,n-2,2]] code). LINEAR in n; but it IS the count, see C-35."
+ },
+ {
+  "quantity": "number of non-identity records",
+  "values": [
+   "15",
+   "255",
+   "4095",
+   "65535",
+   "1048575",
+   "1.68e+07"
+  ],
+  "category": "G",
+  "argument": "EXACT 4^N - 1 (logical Paulis mod phase). EXPONENTIAL: S(2N)/S(N) -> infinity, not 2."
+ },
+ {
+  "quantity": "code-space dimension",
+  "values": [
+   "4",
+   "16",
+   "64",
+   "256",
+   "1024",
+   "4096"
+  ],
+  "category": "G",
+  "argument": "EXACT 2^N. EXPONENTIAL, so it fails strict extensivity (a)."
+ },
+ {
+  "quantity": "log2 code-space dimension",
+  "values": [
+   "2",
+   "4",
+   "6",
+   "8",
+   "10",
+   "12"
+  ],
+  "category": "G",
+  "argument": "EXACT N. LINEAR and additive -- but it is N in bits, a count again."
+ },
+ {
+  "quantity": "number of stabiliser generators",
+  "values": [
+   "2",
+   "2",
+   "2",
+   "2",
+   "2",
+   "2"
+  ],
+  "category": "S",
+  "argument": "EXACT 2 for every n (X^(x)n and Z^(x)n). Constant: a topological datum of the family."
+ },
+ {
+  "quantity": "number of syndrome bits n-k",
+  "values": [
+   "2",
+   "2",
+   "2",
+   "2",
+   "2",
+   "2"
+  ],
+  "category": "S",
+  "argument": "EXACT n - (n-2) = 2 for every n."
+ },
+ {
+  "quantity": "code distance d",
+  "values": [
+   "2",
+   "2",
+   "2",
+   "2",
+   "2",
+   "2"
+  ],
+  "category": "S",
+  "argument": "EXACT 2. No weight-1 Pauli is in N(S) (X_i anticommutes with Z^(x)n, Z_i with X^(x)n, Y_i with both); X_aX_b IS in N(S)\\S. So d = 2 at every n. CONSTANT."
+ },
+ {
+  "quantity": "min weight of a record",
+  "values": [
+   "2",
+   "2",
+   "2",
+   "2",
+   "2",
+   "2"
+  ],
+  "category": "S",
+  "argument": "EXACT 2 = d at every n."
+ },
+ {
+  "quantity": "min weight of a writer",
+  "values": [
+   "2",
+   "2",
+   "2",
+   "2",
+   "2",
+   "2"
+  ],
+  "category": "S",
+  "argument": "EXACT 2 = d at every n."
+ },
+ {
+  "quantity": "total min FLIP-ONLY writer weight",
+  "values": [
+   "4",
+   "8",
+   "12",
+   "16",
+   "20",
+   "24"
+  ],
+  "category": "G",
+  "argument": "EXACT 2N: >= 2N since every writer is a non-identity logical (weight >= d = 2), and 2N is ATTAINED by a verified weight-2 conjugate basis (S1b, n = 4..12). LINEAR. NOTE the Gram-Schmidt basis gives ~N^2/4; that is BASIS-DEPENDENT and dies under D-17."
+ },
+ {
+  "quantity": "per-record min FLIP-ONLY writer weight",
+  "values": [
+   "2",
+   "2",
+   "2",
+   "2",
+   "2",
+   "2"
+  ],
+  "category": "S",
+  "argument": "EXACT 2 = d at every N."
+ },
+ {
+  "quantity": "number of weight-2 logical operators",
+  "values": [
+   "18",
+   "45",
+   "84",
+   "135",
+   "198",
+   "273"
+  ],
+  "category": "G",
+  "argument": "EXACT 3*C(n,2) = 3*C(N+2,2). QUADRATIC: S(2N)/S(N) -> 4, not 2. Not extensive."
+ },
+ {
+  "quantity": "symplectic pairing summed over record pairs",
+  "values": [
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0"
+  ],
+  "category": "Z",
+  "argument": "IDENTICALLY 0. Records are simultaneously durable commuting bits (clause ii + the family criterion), so sp(R_i,R_j) = 0 for every pair at every N. RULES OUT EMERGENCE AT ANY N."
+ },
+ {
+  "quantity": "count of interacting record pairs",
+  "values": [
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0"
+  ],
+  "category": "Z",
+  "argument": "IDENTICALLY 0, same argument (the pairing entries are 0/1 so the count equals the sum)."
+ },
+ {
+  "quantity": "  CONTROL pairing over records+writers",
+  "values": [
+   "2",
+   "4",
+   "6",
+   "8",
+   "10",
+   "12"
+  ],
+  "category": "G",
+  "argument": "EXACT N. Non-zero in the SAME table (D-15): the pairing CAN register."
+ },
+ {
+  "quantity": "records disturbed by a weight-1 operation",
+  "values": [
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0"
+  ],
+  "category": "Z",
+  "argument": "IDENTICALLY 0. Any weight-1 Pauli anticommutes with X^(x)n or Z^(x)n, so P_code P P_code = 0 exactly (verified dense to 1.8e-16 at n = 4,6,8). Clause (v) at d = 2. RULES OUT ANY N."
+ },
+ {
+  "quantity": "  CONTROL records disturbed, weight-2 op",
+  "values": [
+   "2",
+   "4",
+   "6",
+   "8",
+   "10",
+   "12"
+  ],
+  "category": "G",
+  "argument": "EXACT N on this family; non-zero in the SAME table."
+ },
+ {
+  "quantity": "transport: records moved by gauge conjugation",
+  "values": [
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0"
+  ],
+  "category": "Z",
+  "argument": "IDENTICALLY 0 out of 4N. Conjugation by a Pauli g sends R -> (-1)^sp(g,R) R, and every stabiliser commutes with every logical, so nothing moves. HONEST NOTE: this family is ABELIAN, so transport is trivial here by construction -- consistent with the D(Z_2) control in C-43 (0 of 40 moved) and NOT a test of the D(D_4) result (40 of 40 moved)."
+ },
+ {
+  "quantity": "  CONTROL records moved by their own writer",
+  "values": [
+   "2",
+   "4",
+   "6",
+   "8",
+   "10",
+   "12"
+  ],
+  "category": "G",
+  "argument": "EXACT N of N move; non-zero in the SAME table."
+ },
+ {
+  "quantity": "max_i |Tr R_i|",
+  "values": [
+   "0",
+   "0",
+   "0",
+   "  --  ",
+   "  --  ",
+   "  --  "
+  ],
+  "category": "Z",
+  "argument": "IDENTICALLY 0: every record is a non-identity logical Pauli, hence traceless."
+ },
+ {
+  "quantity": "max_i,E |Tr(P_E R_i)| (clause-iv balance)",
+  "values": [
+   "0",
+   "0",
+   "0",
+   "  --  ",
+   "  --  ",
+   "  --  "
+  ],
+  "category": "Z",
+  "argument": "IDENTICALLY 0: this IS clause (iv) (C-11), which every record satisfies by definition."
+ },
+ {
+  "quantity": "record charge sum_i <R_i>, mixed code state",
+  "values": [
+   "0",
+   "0",
+   "0",
+   "  --  ",
+   "  --  ",
+   "  --  "
+  ],
+  "category": "Z",
+  "argument": "IDENTICALLY 0 at every N: the maximally mixed code state gives <R_i> = 0 for every record."
+ },
+ {
+  "quantity": "  CONTROL same sum, polarised code state",
+  "values": [
+   "2.0000",
+   "4.0000",
+   "6.0000",
+   "  --  ",
+   "  --  ",
+   "  --  "
+  ],
+  "category": "G",
+  "argument": "EXACT N; non-zero in the SAME table. But it equals the record COUNT, not a new density."
+ },
+ {
+  "quantity": "ENERGY spread over the 2^N record configs",
+  "values": [
+   "0",
+   "0",
+   "0",
+   "  --  ",
+   "  --  ",
+   "  --  "
+  ],
+  "category": "Z",
+  "argument": "IDENTICALLY 0 at every finite N, EXACTLY: H restricted to the code space is -2*I, so all 2^N record configurations are exactly degenerate. GRAVITY'S ACTUAL SOURCE IS ENERGY, AND THE RECORD SECTOR CARRIES NONE. RULES OUT EMERGENCE AT ANY N."
+ },
+ {
+  "quantity": "Var_H on the code space",
+  "values": [
+   "0",
+   "0",
+   "1.78e-15",
+   "  --  ",
+   "  --  ",
+   "  --  "
+  ],
+  "category": "Z",
+  "argument": "IDENTICALLY 0, same argument."
+ },
+ {
+  "quantity": "  CONTROL energy gap to a non-code state",
+  "values": [
+   "2.0000",
+   "2.0000",
+   "2.0000",
+   "  --  ",
+   "  --  ",
+   "  --  "
+  ],
+  "category": "S",
+  "argument": "EXACT 2 at every n; non-zero in the SAME table, so the energy probe can register. CONSTANT in N -- the syndrome gap does not grow with the number of records."
+ },
+ {
+  "quantity": "distinct energies among 2^N configurations",
+  "values": [
+   "1",
+   "1",
+   "1",
+   "  --  ",
+   "  --  ",
+   "  --  "
+  ],
+  "category": "S",
+  "argument": "EXACT 1 of 2^N at every n. Constant."
+ },
+ {
+  "quantity": "total chi, FIXED bath nq=3, distributed",
+  "values": [
+   "0.9925",
+   "1.2145",
+   "0.7730",
+   "0.6447",
+   "0.5778",
+   "0.5121"
+  ],
+  "category": "S",
+  "argument": "EXACT BOUND sum_i chi_i = sum_i I(S_i:B) <= I(S_1..S_N:B) <= S(rho_B) <= log2 dim B = nq (independent uniform record bits + chain rule + conditioning reduces entropy). The bound does NOT move with N. Measured it does not merely saturate, it DECAYS: chi ~ N^a, a = -0.4638 +- 0.0212, max|resid| 0.3227, rms resid 0.1165 (log-log, N = 2..256)."
+ },
+ {
+  "quantity": "total chi, FIXED bath nq=3, shared probe",
+  "values": [
+   "0.6837",
+   "0.5308",
+   "0.4536",
+   "0.4181",
+   "0.3962",
+   "0.3806"
+  ],
+  "category": "S",
+  "argument": "Same exact bound. a = -0.2879 +- 0.0090, max|resid| 0.0922, rms 0.0491."
+ },
+ {
+  "quantity": "per-record chi, FIXED bath nq=3",
+  "values": [
+   "0.6519",
+   "0.6050",
+   "0.1884",
+   "0.1219",
+   "0.0876",
+   "0.0675"
+  ],
+  "category": "S",
+  "argument": "Bounded by nq and decaying; this is C-36's capacity splitting made quantitative."
+ },
+ {
+  "quantity": "  CONTROL total chi, bath SCALED nq=N",
+  "values": [
+   "0.9925",
+   "1.9581",
+   "2.8894",
+   "3.9428",
+   "4.9353",
+   "5.9009"
+  ],
+  "category": "G",
+  "argument": "LINEAR: a = 1.0010 +- 0.0012, max|resid| 0.0202, rms 0.0066. The control DOES grow, so the fixed-bath decay is not an artefact. BUT it grows only because the ENVIRONMENT was doubled along with the matter, which is not what extensivity of a SOURCE means."
+ },
+ {
+  "quantity": "  CONTROL per-record chi, bath SCALED nq=N",
+  "values": [
+   "0.5215",
+   "0.5215",
+   "0.5215",
+   "0.5215",
+   "0.5215",
+   "0.5215"
+  ],
+  "category": "S",
+  "argument": "EXACTLY CONSTANT 0.52153 at every N -- one bath site per record, so nothing is split."
+ },
+ {
+  "quantity": "redundancy (fragments holding >=10% of chi)",
+  "values": [
+   "3",
+   "4",
+   "5",
+   "3",
+   "4",
+   "  --  "
+  ],
+  "category": "S",
+  "argument": "Bounded by nq, the bath's own size, at every N. D-17: it tracks nq, not N."
+ },
+ {
+  "quantity": "chi(A u B) - chi(A) - chi(B), SHARED bath",
+  "values": [
+   "0.7197",
+   "1.8601",
+   "1.0339",
+   "0.8634",
+   "0.7683",
+   "0.6653"
+  ],
+  "category": "S",
+  "argument": "STRICTLY SUBADDITIVE at every N tested: the deficit is positive throughout, so total chi FAILS gravity's requirement (b), additivity over disjoint regions."
+ },
+ {
+  "quantity": "  CONTROL same, DISJOINT baths",
+  "values": [
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0"
+  ],
+  "category": "Z",
+  "argument": "EXACTLY 0 deficit -- the test CAN register additivity, so the shared-bath deficit is real. But disjoint baths means the environment scaled with the matter."
+ }
+]

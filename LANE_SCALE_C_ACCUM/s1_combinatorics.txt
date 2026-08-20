@@ -1,0 +1,121 @@
+======================================================================================================================
+LANE_SCALE_C_ACCUM  script 1  --  EXACT combinatorics.  What accumulates with the number of records k?
+======================================================================================================================
+
+Building the EXACT weight map w(v) by exhaustive enumeration of the admissible Pauli group.
+   [[4,2,2]]      k= 2            64 admissible Paulis      0.0s   EXACT
+   [[6,4,2]]      k= 4         1,024 admissible Paulis      0.0s   EXACT
+   [[8,6,2]]      k= 6        16,384 admissible Paulis      0.0s   EXACT
+   [[10,8,2]]     k= 8       262,144 admissible Paulis      0.0s   EXACT
+   [[12,10,2]]    k=10     4,194,304 admissible Paulis      0.4s   EXACT
+   [[14,12,2]]    k=12    67,108,864 admissible Paulis      5.7s   EXACT
+   [[16,14,2]]    k=14  1,073,741,824 admissible Paulis   -- over budget, not enumerated
+   [[18,16,2]]    k=16  17,179,869,184 admissible Paulis   -- over budget, not enumerated
+   [[20,18,2]]    k=18  274,877,906,944 admissible Paulis   -- over budget, not enumerated
+   [[22,20,2]]    k=20  4,398,046,511,104 admissible Paulis   -- over budget, not enumerated
+   [[4,2,2]]^1    k= 2            64 admissible Paulis      0.0s   EXACT
+   [[4,2,2]]^2    k= 4         4,096 admissible Paulis      0.0s   EXACT
+   [[4,2,2]]^3    k= 6       262,144 admissible Paulis      0.0s   EXACT
+   [[4,2,2]]^4    k= 8    16,777,216 admissible Paulis      1.2s   EXACT
+   [[4,2,2]]^5    k=10  1,073,741,824 admissible Paulis   -- over budget, not enumerated
+   [[4,2,2]]^6    k=12  68,719,476,736 admissible Paulis   -- over budget, not enumerated
+   [[4,2,2]]^7    k=14  4,398,046,511,104 admissible Paulis   -- over budget, not enumerated
+   [[4,2,2]]^8    k=16  281,474,976,710,656 admissible Paulis   -- over budget, not enumerated
+   [[4,2,2]]^9    k=18  18,014,398,509,481,984 admissible Paulis   -- over budget, not enumerated
+   [[4,2,2]]^10   k=20  1,152,921,504,606,846,976 admissible Paulis   -- over budget, not enumerated
+
+SELF-CHECKS  (a FAILING check voids every conclusion below it)
+----------------------------------------------------------------------------------------------------------------------
+   111 / 111 checks pass   -- ALL PASS
+
+TABLE 1   BASIS-INVARIANT SCALING.   Control columns carry the SAME k on a product of
+          independent [[4,2,2]] blocks, where every growth is additive BY CONSTRUCTION.
+----------------------------------------------------------------------------------------------------------------------
+  k |   n codeS nstab wmax  wmean wall span d1rk d2rk ||  nC codeS nstab wmax  wmean wall span d1rk d2rk
+----------------------------------------------------------------------------------------------------------------------
+  2 |   4     2     2    2  2.000    2    2    2    2 ||   4     2     2    2  2.000    2    2    2    2
+  4 |   6     4     2    2  2.000    2    2    4    4 ||   8     4     4    4  3.200    4    2    4    4
+  6 |   8     6     2    4  3.111    2    2    6    6 ||  12     6     6    6  4.571    6    2    6    6
+  8 |  10     8     2    4  3.647    2    2    8    8 ||  16     8     8    8  6.024    8    2    8    8
+ 10 |  12    10     2    6  4.774    2    2   10   10 ||  20    10    10  10*  7.507  10*    2   10   10
+ 12 |  14    12     2    6  5.422    2    2   12   12 ||  24    12    12  12*  9.002  12*    2   12   12
+ 14 |  16    14     2   --     --   --   --   14   14 ||  28    14    14  14* 10.501  14*    2   14   14
+ 16 |  18    16     2   --     --   --   --   16   16 ||  32    16    16  16* 12.000  16*    2   16   16
+ 18 |  20    18     2   --     --   --   --   18   18 ||  36    18    18  18* 13.500  18*    2   18   18
+ 20 |  22    20     2   --     --   --   --   20   20 ||  40    20    20  20* 15.000  20*    2   20   20
+----------------------------------------------------------------------------------------------------------------------
+codeS = log2 dim code space (entropy of the maximally mixed code state, in bits)
+nstab = number of independent stabiliser constraints
+wmax  = max over all 2^k-1 non-zero disturbance patterns v of the MIN weight realising v  [INVARIANT]
+wmean = mean of that min weight over all non-zero v                                       [INVARIANT]
+wall  = min weight of one admissible operator that flips ALL k records at once
+span  = smallest weight at which the realised patterns SPAN F_2^k                         [INVARIANT]
+d1rk / d2rk = F_2 rank of the disturbance patterns of ALL weight-1 / weight-2 Paulis      [INVARIANT]
+*     = control value EXTRAPOLATED by block additivity, which was verified exactly at k = 4 and 6
+--    = the admissible Pauli group exceeded the 2e8-operator enumeration budget; no value claimed
+
+TABLE 2   BASIS-DEPENDENT quantities, printed so the basis dependence is VISIBLE and
+          cannot be mistaken for a law.  d1max = max records disturbed by one 1-qubit Pauli.
+----------------------------------------------------------------------------------------------------------------------
+  k | fam d1max  fam range over 25 bases fam d1mean || ctl d1max  ctl range over 12 bases ctl d1mean
+  2 |         2                   (2, 2)      0.667 ||         2                   (2, 2)      0.667
+  4 |         4                   (2, 4)      1.333 ||         2                   (2, 4)      0.667
+  6 |         6                   (4, 6)      2.000 ||         2                   (4, 6)      0.667
+  8 |         8                   (5, 8)      2.667 ||         2                   (5, 7)      0.667
+ 10 |        10                   (6, 8)      3.333 ||         2                   (7, 9)      0.667
+ 12 |        12                  (6, 10)      4.000 ||         2                  (8, 10)      0.667
+ 14 |        14                  (9, 12)      4.667 ||         2                  (9, 12)      0.667
+ 16 |        16                  (9, 14)      5.333 ||         2                 (11, 14)      0.667
+ 18 |        18                 (11, 16)      6.000 ||         2                 (12, 15)      0.667
+ 20 |        20                 (12, 16)      6.667 ||         2                 (14, 17)      0.667
+
+SCALING READ   (classifications computed FROM the tables above)
+----------------------------------------------------------------------------------------------------------------------
+  code-space entropy (bits)
+     family  [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x10.00]
+     control [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x10.00]
+  independent stabiliser constraints
+     family  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+             CONSTANT at 2  over k = 2..20
+     control [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x10.00]
+  wmax  worst-case write cost [INVARIANT]
+     family  [2, 2, 4, 4, 6, 6, None, None, None, None]
+             LINEAR      slope_lin=+0.4571 rms_lin=0.4781 rms_quad=0.4781 rms_log=0.6632  [k x6.0 -> value x3.00]
+     control [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x10.00]
+  wmean mean write cost [INVARIANT]
+     family  [2.0, 2.0, 3.111111111111111, 3.6470588235294117, 4.774193548387097, 5.4222222222222225, None, None, None, None]
+             QUADRATIC   slope_lin=+0.3710 rms_lin=0.2437 rms_quad=0.1943 rms_log=0.5230  [k x6.0 -> value x2.71]
+     control [2.0, 3.2, 4.571428571428571, 6.023529411764706, 7.507331378299121, 9.002197802197802, 10.50064090825856, 12.00018310826276, 13.500051498609537, 15.000014305128389]
+             QUADRATIC   slope_lin=+0.7308 rms_lin=0.1046 rms_quad=0.0557 rms_log=1.3876  [k x10.0 -> value x7.50]
+  wall  cost to flip every record at once
+     family  [2, 2, 2, 2, 2, 2, None, None, None, None]
+             CONSTANT at 2  over k = 2..12
+     control [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x10.00]
+  span  weight at which locals span F_2^k
+     family  [2, 2, 2, 2, 2, 2, None, None, None, None]
+             CONSTANT at 2  over k = 2..12
+     control [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+             CONSTANT at 2  over k = 2..20
+  rank of 1-qubit disturbance patterns
+     family  [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x10.00]
+     control [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x10.00]
+  rank of 2-qubit disturbance patterns
+     family  [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x10.00]
+     control [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x10.00]
+  distinct 1-qubit disturbance patterns
+     family  [3, 5, 7, 9, 11, 13, 15, 17, 19, 21]
+             LINEAR      slope_lin=+1.0000 rms_lin=0.0000 rms_quad=0.0000 rms_log=1.7644  [k x10.0 -> value x7.00]
+     control [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+             LINEAR      slope_lin=+1.5000 rms_lin=0.0000 rms_quad=0.0000 rms_log=2.6466  [k x10.0 -> value x10.00]
+
+Largest carrier reached in script 1: n = 22 qubits, k = 20 records, Hilbert dim 2^22 = 4,194,304 -- never built; only F_2 vectors of length 44.
+Exact weight maps stop where the admissible Pauli group exceeds the enumeration budget (2e8 operators); that limit, not memory or time on the F_2 side, is what stopped the invariant columns.
