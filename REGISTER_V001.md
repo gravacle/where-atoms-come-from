@@ -8778,3 +8778,51 @@ write was free with `‖[W,H]‖ = 0` **while the table directly above it printe
 of `+2.000000`.** `X₀` flips `Z₀Z₁` but does not commute with `Zⁿ`. **Writers are now searched over
 the full Pauli group.** This is the sixth time this program has gone wrong by nominating a
 logical or writer operator instead of computing one.
+
+---
+
+## O-47 — **CONFIGURATION ENERGY *AND* ENERGY-CONSERVING WRITERS, TOGETHER. O-42 APPLIED CLAUSE (iv) TO THE WRONG OBJECT.**
+
+`LANE_O47_BOTH`. The principal: *"Why can't we have configuration energy AND defining a writer as an
+energy-conserving symmetry?"* **We can.**
+
+**Clause (iv) constrains EACH RECORD — `Tr(P_E Rᵢ) = 0`. It says nothing whatever about the JOINT
+CONFIGURATION.** Two records can each be perfectly balanced at every energy while their **correlation**
+is definite at each energy — and the correlation is then exactly what carries the energy.
+
+### THE CONSTRUCTION: `H = Z₁Z₂`
+
+| | `H = Z₁Z₂` | `H = 0` *(control)* |
+|---|---|---|
+| spectrum | `(−1, 2), (+1, 2)` | `(0, 4)` |
+| `R₁ = Z₁`: `Tr(P_E R)` per block | **`[0, 0]`** — clause (iv) **HOLDS** | `[0]` — HOLDS |
+| `R₂ = Z₂`: `Tr(P_E R)` per block | **`[0, 0]`** — clause (iv) **HOLDS** | `[0]` — HOLDS |
+| clause (iii) | holds for both | holds for both |
+| **pair correlation `Z₁Z₂` per block** | **`[−1, +1]` — DEFINITE AND DIFFERENT** | `[0]` — carries nothing |
+| admissible writer for `R₁` | **FOUND**, weight 2, `‖[W,H]‖ = 0`, **cost +0.000000**, does **not** change the pair | found, weight 1, free, **does** change the pair |
+| admissible writer for `R₂` | **FOUND**, weight 2, `‖[W,H]‖ = 0`, **cost +0.000000** | found, weight 1, free |
+| **changing the pair correlation** | best flipper **NOT admissible**, cost **+2.000000** | **admissible**, cost **+0.000000** |
+
+Writers **searched** over the full Pauli group, never nominated.
+
+> ### **EACH RECORD IS INDIVIDUALLY WRITABLE FOR FREE BY AN ENERGY-CONSERVING SYMMETRY. THE PAIR
+> ### CORRELATION CARRIES THE ENERGY, AND CHANGING *THAT* COSTS WORK. THE FREE SINGLE-RECORD WRITERS
+> ### DO NOT TOUCH IT.**
+
+**The control shows the instrument works:** on `H = 0` the pair correlation is the same on every block,
+carries no energy, and the admissible writers — now weight 1 — **do** change it, for free, because
+there is no energy to protect.
+
+### WHAT THIS CORRECTS
+
+**O-42's exclusion came from applying clause (iv) to the wrong object.** The configuration energy lives
+in the **correlations between records**, which clause (iv) never constrains. **An interaction energy
+between records is exactly what a source needs.**
+
+> ### **AND NOTHING WAS IMPORTED TO REACH IT. No reservoir, no temperature, no Landauer bound, no
+> ### external agent, and no relaxation of any clause. Only `H`, the records, and the five clauses as
+> ### written. O-44's physical-channel rescue is NOT NEEDED — DEF-A can stand exactly as it is.**
+
+This answers the principal's standing question — *"are we importing an assumption and restriction
+that is not applicable at the record level?"* — in the strongest possible way: **the resolution
+requires no import, and the restriction was never there.**

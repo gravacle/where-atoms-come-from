@@ -1,0 +1,65 @@
+========================================================================================================
+O-47   CONFIGURATION ENERGY AND ENERGY-CONSERVING WRITERS, TOGETHER
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+  H = 1.0 * Z1 Z2      [interaction energy]
+--------------------------------------------------------------------------------------------------------
+    spectrum: [(-1.0, 2), (1.0, 2)]
+    R1 = Z1:  ||[H,R]|| = 0.0e+00   Tr(P_E R) per block = [0.0, 0.0]
+             clause (iii) non-constant on some block: True   clause (iv) HOLDS
+    R2 = Z2:  ||[H,R]|| = 0.0e+00   Tr(P_E R) per block = [0.0, 0.0]
+             clause (iii) non-constant on some block: True   clause (iv) HOLDS
+    PAIR CORRELATION R1*R2 = Z1Z2:  value per block = [-1.0, 1.0]
+             DEFINITE and DIFFERENT across blocks -- IT CARRIES THE ENERGY
+
+    ADMISSIBLE WRITERS, searched over the full Pauli group ([W,H]=0 AND W flips the record):
+       R1: FOUND weight 2, ||[W,H]|| = 0.0e+00, energy change +0.000000, changes the PAIR? False
+       R2: FOUND weight 2, ||[W,H]|| = 0.0e+00, energy change +0.000000, changes the PAIR? False
+
+    COST OF CHANGING THE PAIR CORRELATION (search for ANY Pauli that flips Z1Z2):
+       best flipper: weight 1, ||[W,H]|| = 4.0e+00 (NOT admissible -- costs work), energy change +2.000000
+
+--------------------------------------------------------------------------------------------------------
+  H = 0                [CONTROL: no energy]
+--------------------------------------------------------------------------------------------------------
+    spectrum: [(0.0, 4)]
+    R1 = Z1:  ||[H,R]|| = 0.0e+00   Tr(P_E R) per block = [0.0]
+             clause (iii) non-constant on some block: True   clause (iv) HOLDS
+    R2 = Z2:  ||[H,R]|| = 0.0e+00   Tr(P_E R) per block = [0.0]
+             clause (iii) non-constant on some block: True   clause (iv) HOLDS
+    PAIR CORRELATION R1*R2 = Z1Z2:  value per block = [0.0]
+             same on every block -- carries no energy
+
+    ADMISSIBLE WRITERS, searched over the full Pauli group ([W,H]=0 AND W flips the record):
+       R1: FOUND weight 1, ||[W,H]|| = 0.0e+00, energy change +0.000000, changes the PAIR? True
+       R2: FOUND weight 1, ||[W,H]|| = 0.0e+00, energy change +0.000000, changes the PAIR? True
+
+    COST OF CHANGING THE PAIR CORRELATION (search for ANY Pauli that flips Z1Z2):
+       best flipper: weight 1, ||[W,H]|| = 0.0e+00 (ADMISSIBLE), energy change +0.000000
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================
+  BOTH, AT ONCE, AND WITH NOTHING IMPORTED.
+
+  On H = Z1 Z2 each record is BALANCED AT EVERY ENERGY -- Tr(P_E R) = [0, 0] for both -- so
+  CLAUSE (iv) HOLDS FOR EACH, and the search finds a weight-2 ADMISSIBLE writer for each with
+  ||[W,H]|| = 0 and energy change exactly +0.000000. Single records flip for FREE.
+
+  AND THE PAIR CORRELATION Z1 Z2 IS DEFINITE AND DIFFERENT ACROSS BLOCKS, -1 and +1. It is what
+  carries the energy. The free single-record writers do NOT change it, and the best operator
+  that does change it is NOT admissible and costs +2.000000.
+
+  THE CONTROL SHOWS THE INSTRUMENT WORKS. On H = 0 the pair correlation is the same on every
+  block, it carries no energy, and the admissible writers -- now weight 1 -- DO change it, for
+  free, because there is no energy to protect.
+
+  SO THE EXCLUSION IN O-42 CAME FROM APPLYING CLAUSE (iv) TO THE WRONG OBJECT. Clause (iv)
+  constrains EACH RECORD: Tr(P_E R_i) = 0. It says NOTHING about the JOINT CONFIGURATION. The
+  configuration energy lives in the CORRELATIONS BETWEEN records, which clause (iv) never
+  touches -- and an interaction energy between records is exactly what a source needs.
+
+  AND NOTHING WAS IMPORTED TO GET HERE. No reservoir, no temperature, no Landauer bound, no
+  external agent, no relaxation of any clause. Only H, the records, and the five clauses as
+  written. O-44's physical-channel rescue is not needed: DEF-A can stand exactly as it is.
