@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 158 | 2 | 9 | 1 | 28 | 3 | 11 | 9 | 3 | 3 |
+| 159 | 2 | 9 | 1 | 28 | 3 | 11 | 9 | 3 | 3 |
 
-**227 rows.**
+**228 rows.**
 
 ---
 
@@ -238,6 +238,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **O-44** | WHAT FAILS IS FREE WRITABILITY, NOT WRITABILITY -- SOUND, AND NOT NEEDED. Where a carrier assigns a configuration energy in a way that unbalances a SINGLE record, a search over the full Pauli group finds NO admissible writer while a physical one exists at weight 1 costing +2.600000 of work, and the record stays a bit, durable, non-trivial and flippable. It correctly identified DEF-A as load-bearing and provisional. But O-47 overturned the exclusion WITHOUT touching DEF-A, by putting the energy in the CORRELATIONS between records rather than in a single record's balance, so the physical-channel rescue is available and unnecessary | **PROVED** | LANE_O44_ADMISSIBLE; superseded in purpose by LANE_O47_BOTH | — | — |
 | **O-49** | THE CONTRACTIBLE-REGION CONVENTION IS A DECISION, NOT A MEASUREMENT, AND IT IS THE PRINCIPAL'S. Clause (v) FAILS on the open chain, where the whole chain is one contiguous block, and HOLDS on a ring with distance n under the proper-arc reading. Which reading the program adopts decides whether this entire carrier family is admissible at all, and it cannot be settled by computation | **OPEN** | created by O-48; the first test of clause (v) anywhere in this program | — | — |
 | **O-50** | IS THE ODD/EVEN DICHOTOMY A THEOREM ABOUT CLAUSE (iv) OR A FACT ABOUT THE REPETITION CODE? O-48 uncovered it without naming it: clause (iv) forces every writer-ODD functional of the configuration to have mean exactly zero, hence to cancel -- the sqrt(2/pi) m^(-1/2) law and the vanishing odd Walsh orders are the same fact -- while every writer-EVEN functional is by definition unchanged by writing. On the chain, writer-even collapses to a functional of H alone. The toric code is the first carrier that can tell the two apart, being the first where writer weight and protection distance are both non-trivial and the logical support is non-contractible | **OPEN** | created by O-48; named as the single best next measurement | — | — |
+| **O-47** | CONFIGURATION ENERGY AND ENERGY-CONSERVING WRITERS COEXIST -- CORRECT, BUT THE FREE WRITER WAS A TAUTOLOGY. The construction stands as a fact about clause (iv): it constrains each record individually, Tr(P_E R_i) = 0, and places no condition on the joint configuration, so the energy can sit in the correlations. O-48 then showed [U,H] = 0 implies dE = 0 identically, so every admissible writer is free by definition and exhibiting one achieved nothing; that no admissible unitary flips a single record alone, only all at once; and that none can change any pair correlation at all, since each is a scalar on every 2-dimensional eigenspace. It does not stand as a route to a source | **PROVED** | LANE_O47_BOTH, corrected by the O-48 workflow | — | — |
 
 ## E. OUT OF REACH HERE — named, not deferred
 
