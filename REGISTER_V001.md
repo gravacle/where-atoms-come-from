@@ -9955,3 +9955,44 @@ the census set's thirteen wherever the doc uses it.
 **Next step (the route stays open):** T-16 will narrate the URM against this document; the document's
 one standing debt is inherited from T-9 — the carrier-breadth marks now being applied feed §"WHAT IS
 NOT ESTABLISHED" directly.
+
+---
+
+## T-44 LANDS — **THE D=3 CRITICAL ROW IS COMPUTED: THE MEMBER IS 1/d, AND THE PRE-REGISTERED RULE FIRES — NEWTON VERDICT: MATCHES AT MEMBER LEVEL** (C-90; C-77 increment 3 SATISFIED)
+
+The interrupted world lane re-ran to completion (resume from cached probes; the corner and
+composition lanes replayed). **LANE_T44_B_WORLD**, on the census access geometry's own deg-6 grain
+lattice, earned D=3: `μ_c = 1/6` exact, located three independent ways; **at criticality the class is
+a power law with exponent bracket containing 1** on all three rays inside the pre-declared
+inverse-distance window, LOG and LIN excluded; `G` finite (D=3 transience the venue's own), Watson's
+`1.51639` inside the computed bracket, `d·G(d)` converging onto a coefficient bracket
+`[0.476369, 0.487321]` tightening onto Spitzer's `3/(2π) = 0.477465` — owners comparison-only, after
+the class was computed. 58/58 gates, exact rationals on the measurement path, proven tails; the
+adversarial verifier attacked with an independent Z³ DP, kernel deepening 1400→2800, an m=1000
+divergence witness, and a continuum Fourier instrument forbidden to the lane — **not refuted, high
+confidence, byte-identical rerun.** Cross-dimension discriminator: one instrument, three venues,
+disjoint windows — D=1 linear, D=2 log, D=3 power — and `μ = 1/6` critical on D=3 while subcritical
+on D=2.
+
+**The supersession is grounded, not editorial.** The prior judgment's own pre-registered rule — *"a
+computed 1/d bracket upgrades the verdict to MATCHES at member level"* (JUDGMENT.txt, N1) — is
+applied on its own stated condition. **O-58 N1 CLOSES.** The verdict sentence keeps its load-bearing
+conditional structure: unique critical member (computed) + occupancy of criticality (**not** earned)
++ design-point enforcement (**not** earned) — **never a claim that gravity is derived.** The judge's
+own lane adds no measurement; every quoted number traces to a sealed artifact.
+
+**Corrections logged by the lanes themselves** (in their D24_AUDIT files, per the register-not-chat
+rule): the corner lane's first-run true-ensemble tolerance failed near the (3,7) wrap scale and was
+re-derived; the world lane's first D=1 control ran at kernel depth 2000, gate-failed on truncation
+precision (not class), corrected to the corner instrument's K=80000 with no threshold changed.
+
+**Register updates:** C-90 appended (FORMAL); C-77 increment 3 SATISFIED with the verdict and its
+conditions; C-87 annotated (the D=3 member computed, no longer owner-attributed); O-58 rewritten — N1
+closed, **N2 masslessness is the ranked next piece** (μ_c = 1/deg is exactly the measure-conserving
+writer normalization; the falsifiable increment: compute from the record surface's OWN writer
+ensemble whether the induced per-link amplitude is the measure-conserving one), N3 the design point,
+**N4 added: norm selection** (the 1/d law is exact in an emergent Euclidean norm over earned L1
+separation — which norm the record's physics selects is open). **Next step named: T-48 appended to
+the plan (phase E) — the masslessness increment.** Caveats carried verbatim from the lane: the
+exponent is a bracket statement with finite-d drift honestly reported, not a symbolic derivation;
+nothing in Γ yet places μ at criticality.

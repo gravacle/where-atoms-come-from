@@ -1,0 +1,326 @@
+{
+ "lane": "LANE_T44_B_WORLD",
+ "task": "T-44 world (earned D = 3): exponent classes reachable by a Gamma-constrained coupling",
+ "date": "2026-08-20",
+ "declared": {
+  "mu": "per-link amplitude, the coupling/alpha tier's one declared parameter",
+  "model": "G_mu(d) = sum over admissible strings of mu^weight; exact walk sum on the census access geometry (grain lattice, face adjacency); minimal stratum gated: w_min = d, N_min = d!/(a!b!c!) (C-80/O-54 standing)",
+  "thresholds": {
+   "MARGIN_LT1": "1/20",
+   "POWER_SCOPE": 8,
+   "CAUCHY_TOL": "1/40",
+   "INV_WINDOW": [
+    "2/5",
+    "3/5"
+   ],
+   "LOG_WINDOW": [
+    "4/5",
+    "5/4"
+   ],
+   "LIN_WINDOW": [
+    "9/5",
+    "11/5"
+   ],
+   "ISO_TOL": "1/20",
+   "COMP_TOL": "1/25",
+   "OOS_TOL": "1/12",
+   "M_CRIT": 1400,
+   "EDGE_C": "40",
+   "RHO": "199/200"
+  }
+ },
+ "mu_c": {
+  "D3_venue": "1/6 EXACT",
+  "D2_venue": "1/4 (corner lane, reused instrument)",
+  "D1_venue": "1/2 (chain)",
+  "method": "Perron row-sum route on the deg-6 venue (A 1 = 6 1 exactly; geometric tail below 1/6) + exact sector sandwich 2*36^m/((2m+1)(m+1)(m+2)) <= N_2m(0) <= 36^m; venue resolvent singular exactly at 1/6, solvable beside; judge's N1 landmark 1/6 located, not imported"
+ },
+ "leading_term": {
+  "statement": "G_mu(d) = N_min mu^d (1 + higher strata): leading power = earned separation = w_min (confinement cost), leading count = the minimal-path multinomial, gated exactly",
+  "rows": [
+   {
+    "v": [
+     1,
+     0,
+     0
+    ],
+    "d": 1,
+    "w_min": 1,
+    "N_min": 1
+   },
+   {
+    "v": [
+     2,
+     0,
+     0
+    ],
+    "d": 2,
+    "w_min": 2,
+    "N_min": 1
+   },
+   {
+    "v": [
+     3,
+     0,
+     0
+    ],
+    "d": 3,
+    "w_min": 3,
+    "N_min": 1
+   },
+   {
+    "v": [
+     1,
+     1,
+     0
+    ],
+    "d": 2,
+    "w_min": 2,
+    "N_min": 2
+   },
+   {
+    "v": [
+     2,
+     1,
+     0
+    ],
+    "d": 3,
+    "w_min": 3,
+    "N_min": 3
+   },
+   {
+    "v": [
+     1,
+     1,
+     1
+    ],
+    "d": 3,
+    "w_min": 3,
+    "N_min": 6
+   },
+   {
+    "v": [
+     2,
+     2,
+     2
+    ],
+    "d": 6,
+    "w_min": 6,
+    "N_min": 90
+   }
+  ]
+ },
+ "subcritical_rows": [
+  {
+   "mu": "1/12",
+   "K": 90,
+   "dmax": 12,
+   "cls": "EXPONENTIAL",
+   "r_at_dmax": [
+    "0.11478359",
+    "0.11478359"
+   ],
+   "r_owner": [
+    "0.12701665",
+    "0.12701665"
+   ],
+   "q_power_exclusion": "9.737",
+   "G_examples": {
+    "1": "0.0935147685",
+    "2": "0.0086284326",
+    "4": "0.0000807666",
+    "8": "0.0000000097",
+    "12": "0.0000000000"
+   }
+  },
+  {
+   "mu": "1/8",
+   "K": 160,
+   "dmax": 14,
+   "cls": "EXPONENTIAL",
+   "r_at_dmax": [
+    "0.24792841",
+    "0.24792841"
+   ],
+   "r_owner": [
+    "0.26794919",
+    "0.26794919"
+   ],
+   "q_power_exclusion": "9.776",
+   "G_examples": {
+    "1": "0.1699358732",
+    "2": "0.0280775518",
+    "4": "0.0009845743",
+    "8": "0.0000022863",
+    "14": "0.0000000004"
+   }
+  },
+  {
+   "mu": "3/20",
+   "K": 300,
+   "dmax": 16,
+   "cls": "EXPONENTIAL",
+   "r_at_dmax": [
+    "0.42269110",
+    "0.42269211"
+   ],
+   "r_owner": [
+    "0.45141622",
+    "0.45141622"
+   ],
+   "q_power_exclusion": "8.659",
+   "G_examples": {
+    "1": "0.2589929111",
+    "2": "0.0646813509",
+    "4": "0.0061063105",
+    "8": "0.0001186778",
+    "16": "0.0000001001"
+   }
+  },
+  {
+   "mu": "4/25",
+   "K": 600,
+   "dmax": 24,
+   "cls": "EXPONENTIAL",
+   "r_at_dmax": [
+    "0.58274211",
+    "0.58627789"
+   ],
+   "r_owner": [
+    "0.60961179",
+    "0.60961179"
+   ],
+   "q_power_exclusion": "9.515",
+   "G_examples": {
+    "1": "0.3330389994",
+    "2": "0.1067935556",
+    "4": "0.0183385406",
+    "8": "0.0012125513",
+    "24": "0.0000001446"
+   }
+  }
+ ],
+ "critical_row": {
+  "mu": "1/6",
+  "G_itself": "CONVERGES (D=3 transient: the critical member EXISTS as a finite coupling); bracket [1.503919, 1.554391] (Watson 1939 inside)",
+  "regularized_kernel_class": "POWER_LAW_EXPONENT_1",
+  "increment_ratio_axis": {
+   "2->4": [
+    "0.453369",
+    "0.458705"
+   ],
+   "4->8": [
+    "0.469869",
+    "0.507905"
+   ]
+  },
+  "increment_ratio_fdiag": [
+   "0.492270",
+   "0.513897"
+  ],
+  "increment_ratio_bdiag": [
+   "0.493254",
+   "0.536493"
+  ],
+  "exponent_brackets_display": {
+   "('axis', 2, 4)": [
+    1.1244,
+    1.1412
+   ],
+   "('axis', 4, 8)": [
+    0.9774,
+    1.0897
+   ],
+   "('fdiag', 2, 4)": [
+    0.9604,
+    1.0225
+   ],
+   "('bdiag', 2, 4)": [
+    0.8984,
+    1.0196
+   ]
+  },
+  "out_of_sample": "H(6) predicted from H(4) with exponent 1: overlap PASS",
+  "coefficient": {
+   "axis": [
+    "0.467230",
+    "0.500095"
+   ],
+   "fdiag_euclid": [
+    "0.469832",
+    "0.487625"
+   ],
+   "bdiag_euclid": [
+    "0.462707",
+    "0.497838"
+   ],
+   "owner": "3/(2 pi) = 0.477465 (Spitzer P26.1), within 1/25, comparison only"
+  },
+  "M": 1400,
+  "tails": "proven: 4(s^2+t1^2+t2^2) B5 (2/3)(M-2)^{-3/2} + edge; B5 = 0.466824"
+ },
+ "supercritical_rows": [
+  {
+   "mu": "13/72",
+   "cls": "DIVERGENT",
+   "witness_m": 150,
+   "term": "3398653.92",
+   "term_ratio": "1.1619"
+  },
+  {
+   "mu": "1/5",
+   "cls": "DIVERGENT",
+   "witness_m": 150,
+   "term": "71952995756302043835.71",
+   "term_ratio": "1.4257"
+  },
+  {
+   "mu": "1/4",
+   "cls": "DIVERGENT",
+   "witness_m": 150,
+   "term": "8512414893074179630698564026681656120355239071322.37",
+   "term_ratio": "2.2277"
+  }
+ ],
+ "cross_dimension": {
+  "finding": "one instrument, three venues, three disjoint windows: D=3 critical increments HALVE (power 1/d), D=2 constant (log), D=1 double (linear); mu = 1/6 subcritical on the D=2 venue while critical on D=3: mu_c is the venue's own number",
+  "ratios": {
+   "D2": [
+    "0.967771",
+    "0.986029"
+   ],
+   "D1": [
+    "1.940862",
+    "2.047476"
+   ]
+  }
+ },
+ "ray_finding": "the class (exponent 1) is ray-independent; the coefficient carries an emergent Euclidean norm over the earned L1 separation (factors sqrt2, sqrt3 computed within 1/20); owner: local-CLT isotropy of the walk (comparison)",
+ "taxonomy": [
+  "mu < mu_c = 1/6 (computed): EXPONENTIAL decay, leading term N_min mu^d (confinement cost w_min = d); OZ-rate agreement at the owner tier (comparison)",
+  "mu = mu_c exactly: G FINITE (D=3 transience, the venue's own) and the critical class is a POWER LAW: kernel doubling increments halve (INV window [2/5,3/5], all three rays); exponent bracket contains 1 -- the inverse-separation law 1/d, the D=3 lattice Green's-function class of the earned dimension",
+  "mu > mu_c: DIVERGENT term-by-term: no mediated coupling in the venue limit"
+ ],
+ "hypothesis": {
+  "a_exponential_generic": "CONFIRMED (computed booleans, 4 sub-critical rows + OZ owners)",
+  "b_critical_power_from_earned_dimension": "CONFIRMED in D=3: the critical member is the 1/d power law -- the earned dimension's own lattice Green's-function class; exponent bracket contains 1; Newton's FORM named only here, as the comparison",
+  "c_nothing_else": "no further class reached in the swept family; critical class is venue-dimension-owned (1D linear, 2D log, 3D power 1/d, computed)"
+ },
+ "owners": {
+  "green_functions": "Spitzer 1964; Lawler",
+  "transience_D3": "Polya 1921",
+  "watson_G0": "Watson 1939 (1.5163860591...)",
+  "asymptote_c_over_d": "Spitzer 1964 P26.1 (3/(2 pi))",
+  "axis_split_bijection": "standard combinatorics (Feller I)",
+  "wallis_bound": "classical Wallis product",
+  "perron_gershgorin": "standard linear algebra",
+  "oz_rate": "Ornstein-Zernike lattice asymptotics",
+  "confinement_cost": "Wegner/Wilson (standing result C-80/O-54)"
+ },
+ "next_step": "what earns criticality: mu_c is the venue's own computed number (1/6 world, 1/4 corner, 1/2 chain); the record still contains no Gamma-internal reason for mu to sit AT mu_c (masslessness). That is the named next piece; with it, the unique critical member in earned D=3 is the 1/d coupling.",
+ "gates": {
+  "npass": 58,
+  "nfail": 0,
+  "failed": []
+ }
+}

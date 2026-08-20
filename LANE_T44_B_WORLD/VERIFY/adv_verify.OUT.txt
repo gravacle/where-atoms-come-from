@@ -1,0 +1,28 @@
+-- A: independent walk counts vs fresh DP; fast == direct at scattered depths --
+OK      A1 my direct row == fresh DP, all even-split points k<=10
+OK      A2 my fast row == my direct row at scattered m (5..2800), all targets+origin
+OK      A3 leading stratum: N_k=0 below d, N_d = d!/(a!b!c!) (fresh DP, 7 targets)
+-- B: mu_c sandwich far beyond the lane's gate range (exact) --
+OK      B1 sector sandwich 2*36^m/poly <= N_2m(0) <= 36^m at m in {100,...,2800} (exact)
+REFUTE  B2 mu=13/72 divergence: t150 > t75, t1000 > 10^90 * t150, witness ratio matches  t150=3398653.92 ratio=1.1619
+OK      B3 published supercritical witness term t150 = 3398653.92 (13/72)
+-- C: independent recomputation of a subcritical row + resolvent identity --
+OK      C1 resolvent identity S_K(2,0,0) = mu[S(1)+S(3)+4S(2,1,0)] EXACT (my own series)
+OK      C2 mu=1/8 ratio at dmax matches published [0.247928, ...] and <= 1-1/20  r=[0.247928,0.247928]
+-- D: constants re-derived (c_u, Q3, B5) + bound checks far beyond gate range --
+OK      D1 windowed max-trinomial == full scan, m <= 80 (independent)
+OK      D2 my B5 matches published 0.466824  B5=0.466824
+OK      D3 my Q3 matches published 0.826995  Q3=0.826995
+OK      D4 p_2m(0)(m-2)^{3/2} <= B5 EXACT at m in {700,1000,1400,2000,2800}
+OK      D5 q_m(m-2) <= Q3 EXACT at m in {700,1001,1502,2003,2800} (mixed residues)
+-- E: EXACT kernel deepening M=1400 -> 2800 (the tail-honesty attack) --
+OK      E1 assembled per-m difference bound holds on the ACTUAL usage range m in (1400,2800] (float screen everywhere, exact at 6 spot m)
+OK      E2 EXACT deepening: a_2800(t) - a_1400(t) in [0, published-tail(1400)] for ALL targets
+OK      E3 G(0): S0(2800) - S0(1400) <= abs-tail(1400) EXACT; Watson inside both brackets  G0_1400=[1.503919,1.554391] G0_2800=[1.507569,1.543480]
+OK      E4 published ratio intervals recomputed EXACTLY at M=1400 (6dp match, all four)  {('axis', 2, 4): ('0.453369', '0.458705'), ('axis', 4, 8): ('0.469869', '0.507905'), ('fdiag', 2, 4): ('0.492270', '0.513897'), ('bdiag', 2, 4): ('0.493254', '0.536493')}
+OK      E5 all increment interval lower bounds positive (ratio arithmetic valid)
+REFUTE  E6 DEEPER instrument (M=2800): all ratios still in INV window, axis 4->8 still contains 1/2, every bracket strictly tighter  {('axis', 2, 4): ('0.455166', '0.456573'), ('axis', 4, 8): ('0.480953', '0.493374'), ('fdiag', 2, 4): ('0.498100', '0.504972'), ('bdiag', 2, 4): ('0.504107', '0.518453')}
+  exponent brackets at M=2800 [display]: {"('axis', 2, 4)": [1.1311, 1.1355], "('axis', 4, 8)": [1.0192, 1.056], "('fdiag', 2, 4)": [0.9857, 1.0055], "('bdiag', 2, 4)": [0.9477, 0.9882]}
+OK      E7 coefficient at M=2800 tighter and overlaps published [0.467230,0.500095]; owner 3/(2pi)=0.4774648 relation reported  c_ax(M=2800)=[0.476369,0.487321]
+
+ADV CHECKS: 18 OK, 2 REFUTE, total 20   [630.9 s]

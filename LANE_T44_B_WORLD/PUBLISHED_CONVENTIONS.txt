@@ -1,0 +1,62 @@
+LANE T44_B -- EXPONENT CLASSES OF A GAMMA-CONSTRAINED COUPLING, WORLD TIER (earned D = 3).
+
+QUESTION (T-44): a coupling between records at earned separation d must be implemented
+through operators the surface allows, and Gamma prices them (w_min = d, C-80/O-54).
+Which decay classes can the effective coupling G_mu(d) reach?
+
+MODEL (declared): G_mu(d) = sum over admissible connecting strings of mu^weight, with mu
+the coupling/alpha tier's ONE declared parameter (per-link amplitude), computed EXACTLY
+as the walk sum on the venue's own lattice -- the grain-adjacency graph of the census
+access geometry (GR1 grains, adjacency = shares a face; one walk step = one
+grain-boundary crossing = one unit of writer weight, the Gamma price).  The venue limit
+is the Z^3 sector, reached only through gated identities (block-interior DP, torus wrap
+identity, axis-split binomial identity).  The minimal stratum is gated exactly:
+N_k(x) = 0 below d, N_d(x) = d!/(a!b!c!) = N_min, so G_mu(d) = N_min mu^d (1 + higher).
+
+DECLARED SWEEP AND THRESHOLDS (all fixed in the driver header before measurement):
+  MU_SUB   = 1/12, 1/8, 3/20, 4/25      (K = 90, 160, 300, 600; dmax = 12, 14, 16, 24)
+  MU_SUPER = 13/72, 1/5, 1/4            (witness m = 150)
+  MU_C     = located: 1/6 EXACT         (Perron row-sum + sector sandwich + resolvent pole)
+  M_CRIT   = 1400 (critical sums to k = 2800); M0_WAL = 240; M0_TRI = 300
+  windows: INV [2/5, 3/5]  LOG [4/5, 5/4]  LIN [9/5, 11/5]   (pairwise disjoint)
+  MARGIN_LT1 = 1/20; POWER_SCOPE = 8; CAUCHY_TOL = 1/40; ISO_TOL = 1/20;
+  COMP_TOL = 1/25; OOS_TOL = 1/12; EDGE_C = 40; RHO = 199/200; K2D = 6000; K1D = 80000
+  critical targets (even-split): axis d = 2,4,6,8,12,16; face-diagonal (2,2,0),(4,4,0),
+  (8,8,0); body-diagonal (2,2,2),(4,4,4),(8,8,8).
+
+FINDINGS (all by computed booleans; 58/58 gates PASS):
+  1. mu < 1/6:  EXPONENTIAL class on every declared row; leading term N_min mu^d
+     (confinement cost w_min = d); OZ owner-rate agreement within 1/25 (comparison).
+  2. mu = 1/6:  G is FINITE (D=3 transience -- the critical member EXISTS as a coupling,
+     unlike the D=2 marginal divergence); the regularized kernel a(x) = G(0) - G(x) has
+     doubling increments that HALVE on all three rays: INV window [2/5,3/5], LOG and LIN
+     excluded.  THE KEY ROW: the critical class is a POWER LAW and the exponent bracket
+     contains 1 (display brackets: axis 2->4 [1.124,1.141], 4->8 [0.977,1.090], fdiag
+     [0.960,1.023], bdiag [0.898,1.020]); out-of-sample H(6) predicted from H(4) under
+     exponent 1: PASS.  Owner anchors AFTER the class: Watson G(0) = 1.51638605...
+     inside the computed bracket [1.503919, 1.554391]; coefficient bracket
+     [0.4672, 0.5001] vs 3/(2 pi) = 0.477465 within 1/25.
+  3. mu > 1/6:  DIVERGENT term-by-term (no mediated coupling in the venue limit).
+  4. Cross-dimension (D-15): same instrument, three venues, three disjoint windows --
+     D=3 halving (power 1/d), D=2 constant (log), D=1 doubling (linear); mu = 1/6 is
+     subcritical on the D=2 venue while critical on D=3: mu_c is the venue's own number.
+  5. Ray finding: the exponent class is ray-independent; the coefficient carries an
+     EMERGENT Euclidean norm over the earned L1 separation (computed factors sqrt2 and
+     sqrt3 within 1/20; owner: local-CLT isotropy, comparison only).
+
+OURS vs OWNED: the D-dependent decay of the critical walk sum is standard lattice
+Green's-function territory (Spitzer, Lawler, Polya, Watson -- attributed).  OURS is
+only: the coupling is Gamma-PRICED (leading term mu^d from w_min = d), the dimension is
+EARNED not assumed (the venue IS the census geometry), and the reachable-class statement
+under those constraints: {exponential (generic), the earned dimension's critical
+Green's class (at mu_c exactly), divergence (above)} and nothing else in the swept
+family.  In earned D = 3 the critical member is 1/d -- Newton's FORM, named there only.
+
+NEXT STEP (no route closes without one): WHAT EARNS CRITICALITY.  mu_c is the venue's
+own computed number (1/6 world, 1/4 corner, 1/2 chain); the record contains no
+Gamma-internal reason for mu to sit AT mu_c (masslessness).  That is the named next
+piece; with it, the unique critical member in earned D = 3 is the 1/d coupling.
+
+FILES: t44b_lib.py (machinery), t44b_world.py (driver), t44b_world.OUT.txt (58 gates),
+t44b_world.RESULT.json (data return), D24_AUDIT.txt, VERIFY/ (byte-identical rerun),
+SEALS.sha256.

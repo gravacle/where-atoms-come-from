@@ -1,0 +1,18 @@
+B2 dissection (13/72): t150>t75: True
+  log10(t1000/t150) = 57.9  (my check demanded >90; correct growth is ~(169/144)^850/poly)
+  divergence itself: t1000/t150 > 10^50: True  -> my 10^90 threshold was the error, terms DO grow without bound
+  theoretical log10 growth = 57.9
+
+E6 dissection: lane KEY gate = 'axis 4->8 ratio bracket contains 1/2' at M=1400
+  M=1400 bracket [0.469869,0.507905]  (contains 1/2: truncation-wide)
+  M=2800 bracket [0.480953,0.493374]  (EXCLUDES 1/2; exponent [1.0192,1.0560])
+  continuum quadrature ratio 0.486327 (exponent 1.0400) -- consistent with M=2800
+  => the finite-d exponent AT that pair is ~1.04, not 1; 'bracket contains 1' at
+     M=1400 was bracket WIDTH, not the pair's true value.
+  BUT the asymptotic exponent 1 statement survives via:
+   - d*G(d) quadrature: 0.5147, 0.4869, 0.4794, 0.4779 at d=2,4,8,16 -> 3/(2pi)=0.477465
+   - coefficient bracket tightens ONTO the owner: M=1400 [0.467230,0.500095] ->
+     M=2800 [0.476369,0.487321], owner 3/(2pi) INSIDE both
+   - ray drift brackets 1 from both sides at M=2800: axis [1.0192,1.0560] above,
+     bdiag [0.9477,0.9882] below, fdiag [0.9857,1.0055] contains 1
+   - INV window [2/5,3/5] holds on ALL rays at BOTH depths: the CLASS call is depth-stable

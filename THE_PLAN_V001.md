@@ -25,11 +25,11 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 > existing phase framework; IDs never renumber; phases are not restructured. Modification
 > happens within this framework — status moves and appends only.
 
-**36 of 47 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**37 of 48 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 36 | 3 | 4 | 4 |
+| 37 | 2 | 5 | 4 |
 
 ---
 
@@ -72,7 +72,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | **T-22** | GIVE ALPHA REAL CONTENT (H-2). Nothing in the corpus is dimensionful and the fine structure constant is connected to no number. Either connect it or state plainly that 'alpha' names a generic coupling here | **DONE** | either a registered result in which alpha's VALUE matters, or an explicit statement in the anchor that alpha stands for a generic coupling strength | — |
 | **T-38** | ALPHA THROUGH THE BARRIER (reframed: an executable derivation plus the ownership audit, not an upfront decision). Derive how alpha's value enters the record laws -- every terrestrial E_b is an atomic-scale energy, and the Arrhenius exponent E_b/kT ~ 40-80 amplifies any alpha-dependence exponentially -- with the honest scaling per mechanism (bonds ~ alpha^2 m_e c^2 Hartree scale; anisotropy via spin-orbit at higher alpha powers; PVED weak-scale). Then the T-39 audit decides whether the resulting statement is ours or the varying-constants literature's. The principal reviews the registered result | TODO | either a registered statement of how alpha's value enters the record laws with its falsifier, or a plain statement that it does not | T-33 |
 
-## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  16/19 done
+## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  17/20 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
@@ -93,8 +93,9 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | ▶ **T-37** | **STATE THE WORLD-LEVEL GAMMA CLAIM, FALSIFIABLY -- shape now fixed by the principal: SHARED ORIGIN (A-GR3) via BOUNDARY-SHAPING TERMS (A-GR4), under D-24 (each classical concept must earn its place) and the binding caveat that record-level measures may behave unlike their analogues elsewhere. Remaining: the statement itself, with its Gamma-side boundary measure defined in the record surface's own terms and the classical relation as recovery target at scale only** | **DONE** | a falsifiable statement of the emergence claim is registered, agreed by the principal, with its test named | T-30, T-32 |
 | ▶ **T-42** | **THE DERIVATION INCREMENT (C-77's named test). Derive, from record-surface boundary structure alone, a scale-level relation matching a known gravitational one -- no classical form assumed. The concept with the most to earn first is DISTANCE: nothing at the record level has yet earned a notion of how far apart two records are except boundary-crossing structure. Theory work before lanes** | **DONE** | either a derivation is registered that recovers a known gravitational relation from record-surface boundary structure without assuming it, or the failure mode is registered plainly per C-77's failure clause | T-37 |
 | ▶ **T-43** | **LET THE SURFACE ANSWER INTERFACE-VS-CONTENT (the principal's method, decision rule PRE-REGISTERED in the register). Compute the externally certifiable content of a region in both tiers and apply the rule as registered -- no post-hoc reading** | **DONE** | the certifiability computation is run in both tiers with controls, the pre-registered rule is applied verbatim, and C-77's text carries the answer or the question returns to the principal | T-42 |
-| ▶ **T-44** | **WHICH FALLOFF EXPONENTS CAN A GAMMA-CONSTRAINED COUPLING REACH? The weighted-instrument lane: couple the exact w_min = d writer-cost landscape to a declared mediator and derive the reachable exponent class -- Gamma's corner codomain is integer-valued, so any smooth graded law must live in weighted coupling/alpha quantities. Until this runs, every decaying law in the record is INSERTED and no falloff exponent is earned. Plus: three-region composition (superposition vs screening) and the genus-proper w_min = d test** | **DOING** | either a derived exponent class for Gamma-constrained couplings with its falsifier, or the obstruction to deriving one registered plainly | T-42 |
+| ▶ **T-44** | **WHICH FALLOFF EXPONENTS CAN A GAMMA-CONSTRAINED COUPLING REACH? The weighted-instrument lane: couple the exact w_min = d writer-cost landscape to a declared mediator and derive the reachable exponent class -- Gamma's corner codomain is integer-valued, so any smooth graded law must live in weighted coupling/alpha quantities. Until this runs, every decaying law in the record is INSERTED and no falloff exponent is earned. Plus: three-region composition (superposition vs screening) and the genus-proper w_min = d test** | **DONE** | either a derived exponent class for Gamma-constrained couplings with its falsifier, or the obstruction to deriving one registered plainly | T-42 |
 | **T-45** | THE SURFACE'S OWN CLOCK (done with T-43): certifiable-within-lifetime law, the corner as W=infinity, census crossovers honest | **DONE** | registered as C-83 with the rule's first branch fired surface-determinedly | T-43 |
+| ▶ **T-48** | **WHAT EARNS CRITICALITY -- MASSLESSNESS AS MEASURE CONSERVATION (O-58 N2, the T-44 judge's ranked next piece). mu_c = 1/deg on every computed venue, and mu = 1/deg is exactly the stochastic measure-conserving normalization of one writer step. Compute from the record surface's OWN writer ensemble -- not a declared mu -- whether the induced per-link amplitude is the measure-conserving one. If Gamma's writer kernel conserves measure, mu = mu_c identically and masslessness is measure conservation, not tuning** | TODO | either the surface's own writer ensemble is shown to induce the measure-conserving per-link amplitude (mu = mu_c structurally) with the computation sealed, or the obstruction is registered plainly -- with a control ensemble that does NOT conserve measure landing off criticality | T-44 |
 
 ## PHASE F  WRITE AND CHECK THE PROOF  —  3/7 done
 

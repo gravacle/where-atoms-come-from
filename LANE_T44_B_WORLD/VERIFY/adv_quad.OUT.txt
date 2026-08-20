@@ -1,0 +1,24 @@
+quadrature a(x), N=160 vs N=240 (drift = empirical error):
+  a(2, 0, 0) = 1.259050  (drift 1.70e-10)
+  a(4, 0, 0) = 1.394653  (drift 3.40e-09)
+  a(6, 0, 0) = 1.436198  (drift 1.78e-08)
+  a(8, 0, 0) = 1.456458  (drift 5.71e-08)
+  a(12, 0, 0) = 1.476527  (drift 2.92e-07)
+  a(16, 0, 0) = 1.486515  (drift 9.27e-07)
+  a(2, 2, 0) = 1.348055  (drift 3.40e-10)
+  a(4, 4, 0) = 1.432114  (drift 4.08e-09)
+  a(8, 8, 0) = 1.474203  (drift 6.03e-08)
+  a(2, 2, 2) = 1.380478  (drift 1.53e-09)
+  a(4, 4, 4) = 1.447711  (drift 2.24e-08)
+  a(8, 8, 8) = 1.481958  (drift 3.48e-07)
+increment ratios (independent continuum instrument):
+  axis 2->4 : 0.455780
+  axis 4->8 : 0.486327
+  fdiag 2->4: 0.500706
+  bdiag 2->4: 0.509378
+  exponent -log2 axis 4->8: 1.0400
+  coefficient 2*8*H(8->16): 0.480918   (3/(2pi) = 0.477465)
+  G(2) = Watson - a(2) = 0.257336 ; d*G: 2G(2)=0.5147 4G(4)=0.4869 8G(8)=0.4794 16G(16)=0.4779
+D=2 independent (M=12000): increments 0.454295 0.443717 0.439384 ratios 0.9767 0.9902  (LOG => ~1)
+D=1 independent (M=200000): increments 1.99243 3.96972 ratio 1.9924  (LIN => ~2; exact a(d)=d)
+D=2 at mu=1/6 (exact partial sums, K=260): r = 0.063870  (published 0.063870)

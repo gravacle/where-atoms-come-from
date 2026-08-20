@@ -1,0 +1,95 @@
+====================================================================================================
+T44-B  WORLD (earned D = 3): EXPONENT CLASSES REACHABLE BY A GAMMA-CONSTRAINED COUPLING
+  model: G_mu(d) = sum over admissible strings of mu^weight, exact walk sum on the world
+  venue's own lattice (census access geometry); mu is the one declared parameter.
+====================================================================================================
+
+-- SECTION 0: the venue's own walk lattice (census access geometry) --
+PASS  S0 venue: torus grain lattice row sums all exactly 6 (deg-6 venue, Perron landmark input)
+PASS  S0 venue: BFS distance == earned separation (L1 with wraps) on every grain
+PASS  S0 venue: torus walk counts == wrap-summed Z^3 counts, k <= 12 (universal cover identity)
+PASS  S0 venue: census-block interior counts == free-sector counts for k < depth (exact DP)
+PASS  S0 venue: signed-permutation symmetry of counts (octahedral), k <= 10
+PASS  S0 leading stratum: N_k(x)=0 below d, N_d(x)=d!/(a!b!c!); G/mu^d -> N_min within proven bound at mu=1/1000 (w_min = d, the Gamma price; C-80/O-54 standing)
+PASS  S0 venue resolvent: (I - A/6) annihilates the constant vector (pole exactly AT 1/6)
+PASS  S0 venue resolvent: singular at mu = 1/6, solvable at 19/120 and 7/40 (exact elimination)
+
+-- SECTION 1: tail lemmas, re-verified computationally before use --
+PASS  S1 axis-split identity == brute-force DP, k <= 12, all |x|_inf <= 4
+PASS  S1 fast even-row == reference, m <= 10, all even-split targets in use
+PASS  S1 total-count bound N_k(x) <= 6^k (row sum 6), k <= 12
+PASS  S1 L1-3D: N_2m(x) <= N_2m(0) on the DP range (per-factor central max; also asserted en route in the kernel loop)
+PASS  S1 identity N_2m(0) = C(2m,m) * T_m (T_m = sum of squared trinomials), m <= 40
+PASS  S1 L2-W increasing step: (m+1) W_{m+1}^2 = (m W_m^2)(4m^2+4m+1)/(4m^2+4m) > m W_m^2, m <= 300 (exact identity + strictness)
+PASS  S1 L2-W decreasing step: (2m+3)(2m+1)/(2m+2)^2 < 1 exactly; bracket order c_l < c_u
+PASS  S1 L2-W bracket at M0=240: c_l < c_u; W_m^2 <= c_u/(m+1/2) checked m in [240,600] step 40
+PASS  S1 L2-T trinomial Pascal: c_max(m+1) <= 3 c_max(m), m <= 200
+PASS  S1 L2-T balanced mode: windowed scan == full scan, m <= 60
+PASS  S1 L2-T telescoping identity ((m+3) q_{m+3}) = (m q_m)(1 + 2/(m(m+3))), balanced m
+PASS  S1 L2-T bound q_m <= Q3/(m-2): checked m in [302, 600] step 23; Q3 = 0.826995
+PASS  S1 L2-T Cauchy-Schwarz side: T_m <= c_max(m) 3^m and T_m (m+1)(m+2) >= 2*9^m, m <= 40
+PASS  S1 assembled p_2m(0) <= B5 (m-2)^{-3/2}: exact check m in [250,600] step 25; B5 = 0.466824
+PASS  S1 L3 1D ratio: C(2j,j+s) >= C(2j,j)(1 - s^2/j), j <= 60, |s| <= j
+PASS  S1 product inequality (1-e1)(1-e2)(1-e3) >= 1-e1-e2-e3 on a rational grid
+PASS  S1 origin weight-ratio formula w_{j+1}/w_j = r^4/((j+1)^2 2r(2r-1)), m <= 60
+PASS  S1 edge-region ratio bounds (>=3/2 | >=9/8 | <=3/4 | <=1/2), exhaustive m <= 400 (polynomial-in-(j,r) inequalities, all-m; header)
+PASS  S1 rho gates: rho^12 >= 2/3, rho^20 >= 8/9, rho^20 >= (3/4)^7 (exact integer powers)
+PASS  S1 L4 telescoping integer lemmas: 4m^5 > (m-1)^3(2m+3)^2 and 4m^3 > (m-1)(2m+1)^2, m <= 4000 (differences 15m^3-5m^2-15m+9 and 3m+1, positive all m >= 1)
+
+-- SECTION 2: mu_c located by computation (Perron row-sum + sector sandwich; N1 route) --
+PASS  S2 Perron: 6-regular venue => A 1 = 6 1 exactly; spectral radius 6; series converges for every mu < 1/6 with geometric tail (6mu)^{K+1}/(1-6mu)
+PASS  S2 sector sandwich: 2*36^m <= N_2m(0) (2m+1)(m+1)(m+2) and N_2m(0) <= 36^m, m <= 40 (lower: C(2m,m)(2m+1) >= 4^m and T_m (m+1)(m+2) >= 2*9^m; upper: row sums)
+PASS  S2 supercritical: term-by-term divergence witnesses at every declared mu > 1/6
+PASS  S2 mu_c = 1/6 EXACT: geometric convergence below (Perron), divergence above (sandwich), venue resolvent pole exactly at 1/6 (S0)
+
+-- SECTION 3: subcritical rows (exact partial sums, geometric tails) --
+PASS  S3 mu=1/12: EXPONENTIAL class booleans (all r <= 1-1/20; Cauchy; d(1-r) > 8)  d(1-r)=9.737
+PASS  S3 mu=1/12: OZ comparison |r(dmax) - (X - sqrt(X^2-1))| <= 1/25 (comparison only)  r=0.114783 owner=0.127016
+PASS  S3 mu=1/8: EXPONENTIAL class booleans (all r <= 1-1/20; Cauchy; d(1-r) > 8)  d(1-r)=9.776
+PASS  S3 mu=1/8: OZ comparison |r(dmax) - (X - sqrt(X^2-1))| <= 1/25 (comparison only)  r=0.247928 owner=0.267949
+PASS  S3 mu=3/20: EXPONENTIAL class booleans (all r <= 1-1/20; Cauchy; d(1-r) > 8)  d(1-r)=8.659
+PASS  S3 mu=3/20: OZ comparison |r(dmax) - (X - sqrt(X^2-1))| <= 1/25 (comparison only)  r=0.422691 owner=0.451416
+PASS  S3 mu=4/25: EXPONENTIAL class booleans (all r <= 1-1/20; Cauchy; d(1-r) > 8)  d(1-r)=9.515
+PASS  S3 mu=4/25: OZ comparison |r(dmax) - (X - sqrt(X^2-1))| <= 1/25 (comparison only)  r=0.582742 owner=0.609611
+PASS  S3 resolvent identity S_K(2,0,0) = mu [S_{K-1}(1,0,0)+S_{K-1}(3,0,0)+4 S_{K-1}(2,1,0)] EXACT (walk decomposition on the venue)
+
+-- SECTION 4: THE CRITICAL ROW mu = mu_c = 1/6 (earned D = 3) --
+  exact kernel a_M(x) = sum (N_2m(0)-N_2m(x))/36^m, M = 1400; proven tails
+PASS  S4 assembled L3-3D difference bound holds EXACTLY for every target, m in [30,240]
+PASS  S4 G(0) at mu_c CONVERGES: monotone partial sums, certified bound; doubling increments SHRINK (0.007287 -> 0.005159); bracket [1.503919, 1.554391]
+PASS  S4 cross-D contrast: the D=2 corner venue's critical return sum has NON-shrinking quadrupling increments (marginal) while D=3 shrinks -- transience is the venue's own
+PASS  S4 axis doubling pair d=2->4: increment ratio in INV window [2/5,3/5], outside LOG and LIN windows  [0.453369, 0.458705]
+PASS  S4 axis doubling pair d=4->8: increment ratio in INV window [2/5,3/5], outside LOG and LIN windows  [0.469869, 0.507905]
+PASS  S4 fdiag doubling pair d=2->4: increment ratio in INV window [2/5,3/5], outside LOG and LIN windows  [0.492270, 0.513897]
+PASS  S4 bdiag doubling pair d=2->4: increment ratio in INV window [2/5,3/5], outside LOG and LIN windows  [0.493254, 0.536493]
+  exponent brackets -log2(ratio) [display only]: {"('axis', 2, 4)": [1.1244, 1.1412], "('axis', 4, 8)": [0.9774, 1.0897], "('fdiag', 2, 4)": [0.9604, 1.0225], "('bdiag', 2, 4)": [0.8984, 1.0196]}
+PASS  S4 KEY: critical class is a POWER LAW with exponent 1 in earned D=3 -- deepest in-sample axis ratio bracket contains 1/2 within [2/5,3/5] (2^-p, p=1)
+PASS  S4 out-of-sample: predicted H(6) interval (from H(4), exponent 1, widened 1/12) overlaps measured  pred=[0.037607,0.044885] meas=[0.039814,0.041026]
+PASS  S4 secondary log-G slope: pair (2,4) ratio interval contains 1/2 (slope -1), hi < 1 (excludes slope 0), lo > 1/4 (excludes slope -2)  [0.369532,0.652699]; pair(4,8)=[0.295124,0.898600]
+PASS  S4 ray finding: Euclidean-normed coefficients agree across rays within 1/20 (the class is ray-independent; the coefficient carries an EMERGENT Euclidean norm over the earned L1 axis -- computed factors sqrt2, sqrt3)  axis=[0.467230,0.500095] fdiag=[0.469832,0.487625] bdiag=[0.462707,0.497838]
+PASS  S4 owner anchor (comparison only): Watson 1939 G(0) = 1.5163860591... lies INSIDE the computed bracket  bracket=[1.503919,1.554391]
+PASS  S4 owner anchor (comparison only): c = 3/(2 pi) within 1/25 of the computed coefficient bracket at the deepest axis pair  coeff=[0.467230,0.500095] owner=0.477465
+
+-- SECTION 5: D-15 cross-dimension discriminator (same instrument, three venues) --
+PASS  S5 D=2 corner venue at ITS computed mu_c=1/4: increment ratios in LOG window [4/5,5/4] (constant increments)  [0.967771,0.986029],[0.953910,1.028887]
+PASS  S5 D=1 chain venue at ITS computed mu_c=1/2: increment ratio in LIN window [9/5,11/5] (doubling increments)  [1.940862,2.047476]
+PASS  S5 the three windows are pairwise DISJOINT and each venue's critical class lands in its own: D=3 INV, D=2 LOG, D=1 LIN (classes differ across earned dimension, computed)
+PASS  S5 mu = 1/6 is SUBCRITICAL on the D=2 venue (exponential ratios ~ owner rate) while critical on the D=3 venue: mu_c is the venue's own computed number  r=[0.063870,0.063870]
+
+====================================================================================================
+  - mu < mu_c = 1/6 (computed): EXPONENTIAL decay, leading term N_min mu^d (confinement cost w_min = d); OZ-rate agreement at the owner tier (comparison)
+  - mu = mu_c exactly: G FINITE (D=3 transience, the venue's own) and the critical class is a POWER LAW: kernel doubling increments halve (INV window [2/5,3/5], all three rays); exponent bracket contains 1 -- the inverse-separation law 1/d, the D=3 lattice Green's-function class of the earned dimension
+  - mu > mu_c: DIVERGENT term-by-term: no mediated coupling in the venue limit
+
+HYPOTHESIS (stated to fail) against the computation:
+  (a) exponential below critical: CONFIRMED (computed booleans, 4 sub-critical rows)
+  (b) at criticality a power law fixed by the earned dimension: CONFIRMED IN D=3 -- the
+      critical member is 1/d (exponent bracket contains 1; ratio windows; out-of-sample);
+      Newton's FORM is the unique critical member of the reachable family (named here,
+      in the final comparison, only)
+  (c) nothing else: within the swept family no further class appeared; the D=2/D=1
+      discriminators land in their own disjoint windows (log, linear)
+
+GATES: 58 PASS, 0 FAIL, total 58
+
+RESULT JSON written: t44b_world.RESULT.json
