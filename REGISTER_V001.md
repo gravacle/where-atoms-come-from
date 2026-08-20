@@ -9874,3 +9874,28 @@ computation, the move D-24 forbids. **Three pieces stand (O-58):** the D=3 row; 
 with the labeled hypothesis that `μ_c = 1/deg` is the *measure-conserving* writer normalization, so
 if Γ's writer kernel conserves measure, **masslessness is measure conservation, not tuning**; and
 whether the surface enforces the design point.
+
+---
+
+## T-24 — **CLAUSE (v) HOLDS ON THE NON-ABELIAN CARRIER — BY AN EXACT INTEGER OBSTRUCTION WHOSE MECHANISM IS THE GROUP'S OWN NON-ABELIANNESS.** And two readings of "protected" part company.
+
+`LANE_T24_DV`, verifier not-refuted at high confidence with **every verdict-bearing number re-derived
+by fresh independent code.** On `D(D₄)` 1×2 (dim 4096): the admissible single-edge algebra on each
+contractible region is `span{I, T}` with `T` = right-multiplication by the central `r²`, and
+`t_E = Tr(P_E T) = {30, −48, 12, 0, 6}` — **not all zero, so nothing is flippable by any admissible
+unitary on any contractible region.** The mechanism: **`r² ∈ [D₄, D₄]` — characters kill it,
+conjugation fixes classes.** The abelian `D(Z₂)` control on the **same lattice FAILS** (an admissible
+weight-1 flipper exists — the known distance-1 proxy artifact), so the test discriminates; the
+non-admissible controls flip exactly. **Minimal-torus vacuity proved from the cell structure**, both
+conventions agreeing on every subset. Verifier's correction carried: the Wilson-character diagonals
+and the `χ·class` family contain no records here — record constructions go through eigenspace
+splittings.
+
+> ### **D-27: "PROTECTED" HAS TWO READINGS AND THEY DIVERGE HERE.** `T` is a weight-1 admissible
+> **non-trivial logical operation that flips nothing** — clause (v) as written HOLDS while its
+> Knill–Laflamme code-distance renaming FAILS at weight 1. **The KL renaming has not earned its place
+> at the record level** — D-24 applied to our own glossary. Protection claims now name their reading.
+
+**O-41 updated:** protection is **transport-blind** at this proxy size — it does not distinguish
+transport-fixed from transport-moved records; whether a larger non-abelian lattice separates them is
+the live remainder.

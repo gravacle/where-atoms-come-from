@@ -1,0 +1,70 @@
+====================================================================================================
+V1. MINIMAL TORUS -- vacuity from the cell structure (independent)
+====================================================================================================
+  d1 = [[0, 0]] (rank 0), d2 = [[0, 0]] (rank 0) => H_1 = Z^2
+  forest and homology readings agree on all 4 subsets: True
+  single contractible qubit-supported regions: NONE  => clause (v) VACUOUS (empty domain)
+  D(D_4) minimal torus sector dims: {(0, 0): 18, (0, 1): 18, (1, 0): 6, (1, 1): 22} ; eigen dims (eig -k): {0: 18, -1: 24, -2: 22}
+  matches O-36 (22 / 24 / 18): True
+
+====================================================================================================
+V2. 1x2 TORUS D(D_4) (dim 4096) -- structure, sectors, commutants, the obstruction
+====================================================================================================
+  perm reps: True True ; [A0,A1]=0: True ; B invariant under gauge: True
+  eigen dims: {-4: 22, -3: 48, -2: 476, -1: 864, 0: 2686}   (sum 4096)
+  match lane {0:2686,-1:864,-2:476,-3:48,-4:22}: True ; all even (C-41): True
+  contractible single-edge regions (forest reading): ['h0', 'h1']
+  homology reading, single-edge: non-cycle (contractible arc): ['h0', 'h1'] ; cycles u0,u1 have class [u0] = [u1] != 0 (im d2 = span(u1-u0))
+  sparse n*H entries: 54272
+  dim C_h0 = 2
+  dim C_h1 = 2
+  dim C_u0 = 5
+  dim C_u1 = 5
+  match lane (2, 2, 5, 5): True
+  I, T=R_(r^2) in C_h0 and C_h1 (exact commutator = 0): True
+  all 5 class diagonals in C_u0 and C_u1 (exact): True
+  => with the nullities above, C_h = span{I, T} (dim 2) and C_u = class diagonals (dim 5)
+  t_E(T on h0) = {-4: 6, -3: 0, -2: 12, -1: -48, 0: 30} ; sum = 0 (= Tr T)
+  t_E(T on h1) = {-4: 6, -3: 0, -2: 12, -1: -48, 0: 30} ; sum = 0 (= Tr T)
+  match lane {0:30,-1:-48,-2:12,-3:0,-4:6} on both edges: True
+  NOT all zero => no Hermitian involution commuting with H anticommutes with T;
+  only involutions of C_h are +-I, +-T => NO admissible single-edge flip on h0/h1.
+  t_gs = 6 with ground dim 22: T non-scalar on ground space (6 != +-22) -- weight-1
+  admissible nontrivial logical that flips nothing (flip-reading HOLDS, KL-reading fails).
+  commuting-pair classes: 22 (ground dim must be 22: True)
+  classes fixed by (a,b) -> (a r^2, b): 6 (t_gs cross-check, lane says 6): True
+  edge u0 class traces per E: [[5, 6, 76, 66, 359], [4, 12, 108, 244, 656], [4, 12, 108, 244, 656], [4, 12, 108, 244, 656], [5, 6, 76, 66, 359]]
+  edge u0 balanced +-1 class patterns: 0
+  edge u1 class traces per E: [[5, 6, 76, 66, 359], [4, 12, 108, 244, 656], [4, 12, 108, 244, 656], [4, 12, 108, 244, 656], [5, 6, 76, 66, 359]]
+  edge u1 balanced +-1 class patterns: 0
+  zero balanced patterns on both u-edges (lane claim): True
+  Wilson diag chi_a(h0 h1): Tr(P_E R) = {-4: 6, -3: 0, -2: 44, -1: -112, 0: 62} (lane: {0:62,-1:-112,-2:44,-3:0,-4:6})
+  clause (iv) FAILS for it (not balanced): True
+  L_s on h0: ||[L_s,H]||_F^2 = 1024 (lane: 1024) ; conj flips Wilson diag: True
+  R_s on u0: ||[R_s,H]||_F^2 = 3840 (lane: 3840) ; conj flips chi_a(u0): True
+  positive controls fire (D-15): True
+
+  transport-fixed existence (independent of O-36 feasibility): multiplicities of
+  G x G irreps on each eigenspace, by exact character counting:
+    E= 0: nonzero mults [((1, 1), 142), ((1, 2), 94), ((1, 3), 94), ((2, 1), 94), ((2, 2), 142), ((2, 3), 94), ((3, 1), 94), ((3, 2), 94), ((3, 3), 142), ((4, 4), 424)] ; sum d*d*m = 2686 (dim 2686)
+    E=-1: nonzero mults [((0, 1), 94), ((0, 2), 94), ((0, 3), 94), ((1, 0), 94), ((1, 1), 12), ((1, 2), 12), ((1, 3), 12), ((2, 0), 94), ((2, 1), 12), ((2, 2), 12), ((2, 3), 12), ((3, 0), 94), ((3, 1), 12), ((3, 2), 12), ((3, 3), 12), ((4, 4), 48)] ; sum d*d*m = 864 (dim 864)
+    E=-2: nonzero mults [((0, 0), 142), ((0, 1), 12), ((0, 2), 12), ((0, 3), 12), ((1, 0), 12), ((1, 1), 22), ((1, 2), 6), ((1, 3), 6), ((2, 0), 12), ((2, 1), 6), ((2, 2), 22), ((2, 3), 6), ((3, 0), 12), ((3, 1), 6), ((3, 2), 6), ((3, 3), 22), ((4, 4), 40)] ; sum d*d*m = 476 (dim 476)
+    E=-3: nonzero mults [((0, 0), 12), ((0, 1), 6), ((0, 2), 6), ((0, 3), 6), ((1, 0), 6), ((2, 0), 6), ((3, 0), 6)] ; sum d*d*m = 48 (dim 48)
+    E=-4: nonzero mults [((0, 0), 22)] ; sum d*d*m = 22 (dim 22)
+  ALL multiplicities even: True  => a gauge-commuting (transport-fixed) Hermitian involution
+     with zero trace on every eigenspace EXISTS exactly (split each multiplicity space evenly).
+
+V2 done, 8.2 s
+
+====================================================================================================
+V3. ABELIAN CONTROL D(Z_2), 1x2 -- same lattice, fresh code
+====================================================================================================
+  eigen dims: {-4: 4, -3: 0, -2: 8, -1: 0, 0: 4} (lane: {0:4,-1:0,-2:8,-3:0,-4:4})
+  commutant dims: {'h0': 2, 'h1': 2, 'u0': 2, 'u1': 2} (lane: all 2)
+  X_h0 admissible ([X,H]=0 exact): True ; t_E(X_h0) = {-4: 0, -3: 0, -2: 0, -1: 0, 0: 0} (all zero: True)
+  record Zbar_h: involution True ; [R,H]=0 True ; balanced True ; nontrivial (trace 0 on dim>0 E) True
+  X_h0 flips Zbar_h exactly: True  => CLAUSE (v) FAILS on abelian 1x2 (weight-1 admissible flipper)
+  Xbar_v record: involution True ; H-invariant True ; balanced True ; Z_u0 admissible True ; flips Xbar_v True
+  ABELIAN CONTROL VERDICT reproduced (FAILS, same test): True
+
+REPORT: {"minimal_vacuity_proved": true, "minimal_o36_match": true, "eigdims_match": true, "eigdims_all_even": true, "regions_match": true, "commutant_dims": {"h0": 2, "h1": 2, "u0": 5, "u1": 5}, "span_ok": true, "tE_match": true, "tE": {"h0": {"0": 30, "-1": -48, "-2": 12, "-3": 0, "-4": 6}, "h1": {"0": 30, "-1": -48, "-2": 12, "-3": 0, "-4": 6}}, "t_gs_crosscheck": true, "u_balanced_zero": true, "wilson_not_record": true, "positive_controls": true, "transport_fixed_exists_exact": true, "z2_control": true, "elapsed_s": 8.2}

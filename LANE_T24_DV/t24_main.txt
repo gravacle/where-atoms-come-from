@@ -1,0 +1,140 @@
+================================================================================================================
+T-24 / items 2-4 -- CLAUSE (v) ON D(D_4), 1x2 TORUS (dim 4096) -- EXACT
+================================================================================================================
+carrier: D(D_4), |G| = 8, dim = 4096
+
+0. STRUCTURE CHECKS (all exact, permutation level)
+   A_v0, A_v1 permutation reps of D_4: True True;  [A_v0(k), A_v1(k')] = 0: True;
+   plaquette diagonals invariant under every gauge move ([A,B]=0): True
+
+1. REGION CATALOGUE ON THE 1x2 GRAPH (T-11 forest convention + homology, all 16 subsets)
+   subsets that are SINGLE CONTRACTIBLE regions: [['h0'], ['h1']]
+   every other nonempty subset contains a cycle (self-loop u_i or the pair {h0,h1});
+   homology agrees: {h0},{h1} are arcs (contractible), u_i and {h0,h1} carry the two
+   generators of H_1(T^2) = Z^2.  No convention divergence on this carrier (D-23).
+
+2. SECTOR PROJECTORS (exact rational; commuting-projector eigenstructure)
+   sector dims: (0, 0, 0, 0):2686, (0, 0, 0, 1):150, (0, 0, 1, 0):150, (0, 0, 1, 1):262, (0, 1, 0, 0):282, (0, 1, 0, 1):18, (0, 1, 1, 0):18, (0, 1, 1, 1):18, (1, 0, 0, 0):282, (1, 0, 0, 1):18, (1, 0, 1, 0):18, (1, 0, 1, 1):18, (1, 1, 0, 0):142, (1, 1, 0, 1):6, (1, 1, 1, 0):6, (1, 1, 1, 1):22
+   H-eigenspace dims (eig -k): -0: 2686, -1: 864, -2: 476, -3: 48, -4: 22
+   all eigenspace dims EVEN (C-41's |G| = 2^3 record-existence condition): True
+   ground space (-4) dim 22 -- topological (matches 22 on the minimal torus): True
+
+3. RECORDS ON THIS CARRIER (D-18: constructed and clause-verified BEFORE the test)
+
+3a. THE NATURAL WILSON DIAGONALS ARE NOT RECORDS HERE (a finding, kept in the open):
+   chi = chi_a(s->-1)       diag chi(g_h0 g_h1):  Tr(P_E R) = {0: 62, -1: -112, -2: 44, -3: 0, -4: 6}  -> clause (iv) FAILS
+   chi = chi_b(r->-1)       diag chi(g_h0 g_h1):  Tr(P_E R) = {0: 62, -1: -112, -2: 44, -3: 0, -4: 6}  -> clause (iv) FAILS
+   chi = chi_c(both->-1)    diag chi(g_h0 g_h1):  Tr(P_E R) = {0: 62, -1: -112, -2: 44, -3: 0, -4: 6}  -> clause (iv) FAILS
+   chi_a(g_u0) (vertical):                Tr(P_E R) = {0: 62, -1: -112, -2: 44, -3: 0, -4: 6}  -> clause (iv) FAILS
+   (durability and bit-ness hold for all of them -- writability is what fails, so on
+    this carrier the Wilson-character diagonals are three-clause objects, not records.)
+
+3b. EXACT RECORD SEARCH in the gauge-fixed family R = diag(chi(hol_h) v0(cl(u0)) v1(cl(u1))) * Pi,
+    Pi in {I, T0, T1, T0T1} (central right-multiplications on h0/h1; all H-commuting,
+    Hermitian involutions by construction -- verified below).  Balance is checked with
+    EXACT integer traces; every reported record is exact, no floats anywhere.
+    candidates searched: 16383 ; EXACT RECORDS FOUND: 0
+    NO exact record in this family; records on this carrier are non-diagonal
+    (they exist by C-41 evenness; constructed numerically in 3c).
+
+4. C_e = EDGE-SUPPORTED OPERATORS COMMUTING WITH H (exact integer Gram; D-21-clean)
+   C_h0: dim 2;  equals span{ I, T } with T: g -> g*r^2 (central right-mult): True
+        every kernel element re-verified EXACTLY: [M (x) I, H] = 0
+   C_h1: dim 2;  equals span{ I, T } with T: g -> g*r^2 (central right-mult): True
+        every kernel element re-verified EXACTLY: [M (x) I, H] = 0
+   C_u0: dim 5;  equals span of the 5 conjugacy-class diagonals (Wilson-type): True
+        every kernel element re-verified EXACTLY: [M (x) I, H] = 0
+   C_u1: dim 5;  equals span of the 5 conjugacy-class diagonals (Wilson-type): True
+        every kernel element re-verified EXACTLY: [M (x) I, H] = 0
+
+5. THE TEST -- does ANY admissible unitary on a single CONTRACTIBLE edge flip ANY record?
+   C_h0 = span{I, T} is commutative with T^2 = I, so by the flip reduction the only
+   candidate flipper is (a phase times) T, and a flippable record exists iff
+   Tr(P_E T) = 0 on every H-eigenspace E.  The traces, exactly:
+   edge h0:  t_E = Tr(P_E T) = {0: 30, -1: -48, -2: 12, -3: 0, -4: 6}   (sum = 0 = Tr(T): True)
+   edge h1:  t_E = Tr(P_E T) = {0: 30, -1: -48, -2: 12, -3: 0, -4: 6}   (sum = 0 = Tr(T): True)
+   NONZERO integers on eigenspaces [0, -1, -2, -4] (both edges): the T-grading is UNBALANCED there,
+   so NO Hermitian involution commuting with H anticommutes with T.  NO record --
+   transport-fixed or transport-moved, constructed or not -- is flipped by ANY
+   admissible unitary on {h0} or {h1}.  CLAUSE (v) HOLDS ON THE CONTRACTIBLE REGIONS.
+   NOTE: t_gs = 6 with |t_gs| < 22, so T acts NON-TRIVIALLY on the ground space:
+   T is a weight-1 admissible logical OPERATION that flips nothing.  Clause (v) as
+   written (a flip statement) HOLDS while the Knill-Laflamme code-distance renaming of
+   clause (v) (GLOSSARY) FAILS at weight 1 here.  The two readings DIVERGE on this
+   proxy -- labeled per D-23.
+
+6. CONTROLS BESIDE THE ZERO (D-15)
+   (a) ABELIAN COMPARISON, same lattice, same code path (t24_z2.py): D(Z_2) 1x2 has
+       C_h0 = span{I, X_h0}, ALL per-eigenspace traces of X_h0 vanish, and X_h0 is an
+       admissible weight-1 flipper of the clause-verified record Zbar_h: clause (v)
+       FAILS on the abelian proxy.  Same test, opposite verdict: the test discriminates.
+   (b) L_s on h0 exactly flips the three-clause Wilson diagonal W_h (not a record on
+       this carrier), ||[L_s,H]||_F^2 = 1024 != 0: the flip machinery fires when
+       admissibility is dropped: True
+
+7. THE SAME TEST ON THE NON-CONTRACTIBLE SINGLE EDGES u0, u1 (context for O-41)
+   C_u = the 5 class diagonals (commutative); involutions are +-1 class patterns v;
+   a record flipped by diag(v) exists  <=>  Tr(P_E diag(v)) = 0 for every E.
+   edge u0: class traces per eigenspace (classes [[0], [1, 3], [2], [4, 6], [5, 7]]):
+      E = -4 : [5, 4, 5, 4, 4]   (sum 22)
+      E = -3 : [6, 12, 6, 12, 12]   (sum 48)
+      E = -2 : [76, 108, 76, 108, 108]   (sum 476)
+      E = -1 : [66, 244, 66, 244, 244]   (sum 864)
+      E =  0 : [359, 656, 359, 656, 656]   (sum 2686)
+   edge u1: class traces per eigenspace (classes [[0], [1, 3], [2], [4, 6], [5, 7]]):
+      E = -4 : [5, 4, 5, 4, 4]   (sum 22)
+      E = -3 : [6, 12, 6, 12, 12]   (sum 48)
+      E = -2 : [76, 108, 76, 108, 108]   (sum 476)
+      E = -1 : [66, 244, 66, 244, 244]   (sum 864)
+      E =  0 : [359, 656, 359, 656, 656]   (sum 2686)
+   edge u0: balanced +-1 class patterns: 0
+   edge u1: balanced +-1 class patterns: 0
+   ZERO balanced patterns on both u-edges: NO admissible single-edge unitary flips any
+   record on the NON-contractible edges either.  On D(D_4) 1x2 the flip-protection is
+   TOTAL across all four single-edge regions -- contrast D(Z_2) 1x2, where admissible
+   single-edge flippers exist on every edge (t24_z2.py).
+
+8. O-41 -- WHICH RECORDS DOES TRANSPORT MOVE, AND DOES PROTECTION DISTINGUISH THEM?
+   (a) The section-5/7 obstructions are integer statements about C_e and the
+       eigenprojectors; they never mention transport.  Protection therefore holds
+       UNIFORMLY: transport-fixed and transport-moved records are equally unflippable
+       on every single-edge region of this carrier.  At this proxy size, single-region
+       protection does NOT distinguish the two kinds (O-41's question, answered here).
+   (b) BOTH KINDS EXIST on this carrier:
+       exact gauge-FIXED records: 0 found in 3b
+       E =  0 (dim 2686): G x G blocks (d_i*d_j x m): [(1, 142), (1, 94), (1, 94), (1, 94), (1, 142), (1, 94), (1, 94), (1, 94), (1, 142), (4, 424)] ; zero-trace reachable: True
+       E = -1 (dim  864): G x G blocks (d_i*d_j x m): [(1, 94), (1, 94), (1, 94), (1, 94), (1, 12), (1, 12), (1, 12), (1, 94), (1, 12), (1, 12), (1, 12), (1, 94), (1, 12), (1, 12), (1, 12), (4, 48)] ; zero-trace reachable: True
+       E = -2 (dim  476): G x G blocks (d_i*d_j x m): [(1, 142), (1, 12), (1, 12), (1, 12), (1, 12), (1, 22), (1, 6), (1, 6), (1, 12), (1, 6), (1, 22), (1, 6), (1, 12), (1, 6), (1, 6), (1, 22), (4, 40)] ; zero-trace reachable: True
+       E = -3 (dim   48): G x G blocks (d_i*d_j x m): [(1, 12), (1, 6), (1, 6), (1, 6), (1, 6), (1, 6), (1, 6)] ; zero-trace reachable: True
+       E = -4 (dim   22): G x G blocks (d_i*d_j x m): [(1, 22)] ; zero-trace reachable: True
+       transport-FIXED records exist (all eigenspaces feasible, O-36's method): True
+       transport-MOVED records exist generically (random balanced eigenspace splits
+       are moved wherever the gauge action is non-scalar) -- witness in section 9.
+   (c) The failure mode that WOULD distinguish the kinds -- a region where only one
+       kind is flippable -- does not materialise here: nothing is flippable anywhere.
+       On the abelian control, where flips DO exist, the flipped record Zbar_h is
+       itself transport-fixed, so no distinction appears there either.
+
+9. NUMERIC WITNESSES (floats; demonstrations only -- every verdict above is integer-exact)
+   R_moved (random balanced eigenspace splits; four clauses numeric):
+      ||R^2-I|| = 2.70e-12  ||R-R^T|| = 0.00e+00  ||[R,H]|| = 2.65e-12
+      max_E |Tr(P_E R)| = 2.79e-14 (balanced);  max_k ||[A_v(k),R]|| = 8.900e+01  -> transport-MOVED
+      ||{T,R}||_F = 9.066e+01  (NONZERO: T fails to flip it, as the exact obstruction requires)
+   R_fixed (gauge-averaged minimal projections signed to zero; O-36 construction):
+      ||R^2-I|| = 2.72e-12  ||R-R^T|| = 2.10e-13  ||[R,H]|| = 2.65e-12
+      max_E |Tr(P_E R)| = 1.95e-13 (balanced);  max_k ||[A_v(k),R]|| = 3.550e-12  -> transport-FIXED
+      ||{T,R}||_F = 9.233e+01  (NONZERO: T fails to flip it, as the exact obstruction requires)
+   both kinds are records on this carrier and BOTH show the same (null) flip exposure.
+
+================================================================================================================
+VERDICT (T-24, scoped per D-23 to the 1x2 boundary-constrained proxy):
+  clause (v) HOLDS on D(D_4) 1x2 for EVERY record on BOTH contractible regions {h0},{h1}
+  (and, beyond the clause's demand, on the non-contractible single edges too).  The
+  obstruction is exact and integer: the only non-scalar admissible edge-unitaries are
+  the central translation T (h-edges) and class-diagonal unitaries (u-edges), and none
+  of their involutions has all per-eigenspace traces zero.  The mechanism is genuinely
+  non-abelian -- r^2 lies in [D_4,D_4] and conjugation has fixed classes -- and the
+  abelian D(Z_2) control on the same lattice FAILS the same test (weight-1 admissible
+  flipper).  O-41: protection does not distinguish transport-fixed from transport-moved
+  records at this size; both kinds exist and both are protected.
+time: 115.6 s

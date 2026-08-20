@@ -1,0 +1,45 @@
+============================================================================================================
+T-24 / item 3 -- ABELIAN CONTROL: D(Z_2), 1x2 TORUS (dim 16) -- EXACT
+============================================================================================================
+structure checks (exact): rep True, [A,B]=0 True
+NOTE the Ly=1 abelian degeneracy: both plaquette holonomies reduce to u1 - u0;
+the horizontal edges drop out of B entirely, and A_v0(1) = A_v1(1) = X_h0 X_h1 X-star.
+sector dims: {'(0, 0, 0, 0)': 4, '(0, 0, 0, 1)': 0, '(0, 0, 1, 0)': 0, '(0, 0, 1, 1)': 4, '(0, 1, 0, 0)': 0, '(0, 1, 0, 1)': 0, '(0, 1, 1, 0)': 0, '(0, 1, 1, 1)': 0, '(1, 0, 0, 0)': 0, '(1, 0, 0, 1)': 0, '(1, 0, 1, 0)': 0, '(1, 0, 1, 1)': 0, '(1, 1, 0, 0)': 4, '(1, 1, 0, 1)': 0, '(1, 1, 1, 0)': 0, '(1, 1, 1, 1)': 4}
+H-eigenspace dims: {'-0': 4, '-1': 0, '-2': 8, '-3': 0, '-4': 4}   (note collapsed sectors: A_v0 = A_v1 here)
+
+RECORDS, clause-verified exactly (D-18):
+  Zbar_h=sign(h0*h1)   (i) True (ii) True (iii) nontrivial True (iv) balanced True ; Tr(P_E R)={0: '0', -1: '0', -2: '0', -3: '0', -4: '0'}
+  Zbar_v0=sign(u0)     (i) True (ii) True (iii) nontrivial True (iv) balanced True ; Tr(P_E R)={0: '0', -1: '0', -2: '0', -3: '0', -4: '0'}
+
+C_e (exact integer Gram + Fraction kernel; D-21-clean):
+  C_h0: dim 2
+  C_h1: dim 2
+  C_u0: dim 2
+  C_u1: dim 2
+
+THE TEST on the contractible edges {h0}, {h1} (same reduction as the D_4 run):
+  edge h0: t_E = Tr(P_E X_h0) = {0: 0, -1: 0, -2: 0, -3: 0, -4: 0}  -> ALL ZERO: True
+  edge h1: t_E = Tr(P_E X_h1) = {0: 0, -1: 0, -2: 0, -3: 0, -4: 0}  -> ALL ZERO: True
+  U = X_h0 (weight-1, on the CONTRACTIBLE edge h0):
+     admissible ([X_h0, H] = 0, exact): True ;  U^dag Zbar_h U = -Zbar_h (exact): True
+  => CLAUSE (v) FAILS on the abelian 1x2: an admissible weight-1 operation on a single
+     contractible region flips the record Zbar_h.  This is the known distance-1 proxy
+     artifact (the dual vertical cycle has length Ly = 1), scoped per O-49/D-23.
+
+positive control bookkeeping (D-15): on this carrier the FLIP ITSELF is the firing
+control; the non-admissible analogue X_u0 flips Zbar_v0 while [X_u0,H] != 0:
+  X_u0 flips Zbar_v0: True ;  ||[X_u0,H]||_F^2 = 64 (nonzero -> not admissible)
+
+NON-CONTRACTIBLE single edges on the abelian carrier (contrast with the D_4 nulls):
+Zbar_v0 = sign(u0) is balanced (above), so by the flip reduction a record anticommuting
+with the ADMISSIBLE diag Z_u0 exists; explicitly, Xbar_v = X_u0 X_u1:
+  Xbar_v: involution True; [R,H]=0 (H conj-invariant under it): True; Tr(P_E R) = {0: '0', -1: '0', -2: '0', -3: '0', -4: '0'};
+  Z_u0 admissible (exact): True;  {Z_u0, Xbar_v} = 0 (exact, rho flips sign(u0)): True
+  => on the abelian 1x2, admissible single-edge flippers exist on the NON-contractible
+     edges too (Z_u0 flips Xbar_v), where D(D_4) has none.
+
+CONTROL VERDICT: same lattice, same test, ABELIAN answer = FAILS (weight-1 admissible
+flipper exists, all t_E = 0), NON-ABELIAN answer = HOLDS (t_E != 0 obstruction).
+The discriminating difference is exact: for Z_2 the central translation grades every
+eigenspace evenly; for D_4 the central r^2 lies in [G,G], conjugation fixes classes,
+and the grading is uneven.  Protection on this proxy is a NON-ABELIAN effect.

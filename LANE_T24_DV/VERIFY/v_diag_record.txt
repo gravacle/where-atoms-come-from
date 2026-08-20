@@ -1,0 +1,18 @@
+orbit types (vector, multiplicity):
+    ((0, 0, 448, 0, 64), 4)
+    ((0, 0, 832, 128, 64), 18)
+    ((0, 1600, 384, 64, 0), 12)
+    ((448, 0, 64, 0, 0), 4)
+    ((832, 128, 64, 0, 0), 66)
+    ((1600, 384, 64, 0, 0), 72)
+balanced a-vectors (a_u = #plus - #minus per type):
+    (np.int64(0), np.int64(0), np.int64(0), np.int64(-4), 6, -2)
+    (np.int64(0), np.int64(0), np.int64(0), np.int64(0), 0, 0)
+    (np.int64(0), np.int64(0), np.int64(0), np.int64(4), -6, 2)
+explicit D built from solution (np.int64(0), np.int64(0), np.int64(0), np.int64(-4), 6, -2)
+clause (i) involution (+-1 diagonal): True
+clause (ii) [D,H]=0 exact (H entries linking unequal D values): 0 -> ok: True
+transport-FIXED ([D, A_v(k)] = 0 for all 16 gauge perms, exact): True
+clause (iv) Tr(P_E D) per E: {-4: '0', -3: '0', -2: '0', -1: '0', 0: '0'} -> all zero: True
+clause (iii) nontrivial: True (trace-0 involution on every eigenspace, all dims > 0)
+does admissible T flip it? (needs D(Tc) = -D(c) for ALL c): False (anticommuting positions: 96 / 4096 -- exact obstruction upheld)

@@ -1,0 +1,43 @@
+{
+  "verifier": "adversarial rerun, fresh code (no t24_lib import), reversed index layout, fixed-point-counting traces, independent constraint assembly + float-SVD rank cross-check",
+  "lane": "LANE_T24_DV",
+  "date": "2026-08-20",
+  "attack_1_vacuity": {
+    "verdict": "PROVED, not asserted",
+    "detail": "d1 = 0 (self-loops), d2 = 0 (word x y x^-1 y^-1 abelianises to 0), H_1 = Z^2; forest and homology readings agree on all 4 subsets; no contractible qubit-supported region exists. Machinery cross-check: independent build reproduces O-36 minimal-torus dims 18/24/22 exactly."
+  },
+  "attack_2_records_D18": {
+    "verdict": "SATISFIED -- and one lane sub-claim REFUTED",
+    "reproduced": "Wilson diagonals fail clause (iv) with exactly {62,-112,44,0,6}; all eigenspace dims even (existence, C-41); numeric R_moved witness reproduced (residuals ~1e-13, moved 87.6, ||{T,R}||=91.6); transport-fixed existence independently proved EXACTLY via G x G character multiplicities on every eigenspace, ALL EVEN, matching the lane's block table",
+    "refuted_subclaim": "'records here are necessarily non-diagonal' is FALSE. The diagonal part of the H-commutant is exactly the gauge-orbit-constant functions (176 orbits; no cancellation in off-diagonal H entries). Exhaustive exact enumeration over the 6 orbit-trace types (30,201,925 combinations) finds 3 balanced sign families, e.g. a = (0,0,0,-4,6,-2); an explicit +-1 diagonal D was built and clause-verified in INTEGER arithmetic: involution, [D,H]=0 exact, balanced on all 5 eigenspaces, nontrivial, transport-FIXED ([D,A_v(k)]=0 all k), and NOT flipped by T (96/4096 anticommuting positions only) -- the exact obstruction is upheld by this record too. The lane's 16383-member family search did not exhaust diagonals; the 'so ... necessarily non-diagonal' inference was an overreach. Verdict-neutral; strengthens transport-fixed existence to an explicit exact witness."
+  },
+  "attack_3_admissible_coverage_D21": {
+    "verdict": "COVERED, no sampling",
+    "detail": "commutant dims reproduced by independent assembly: C_h0=C_h1=2, C_u0=C_u1=5 (exact Fraction elimination AND float SVD rank agree); I and T=R_(r^2) verified in C_h exactly, 5 class diagonals verified in C_u exactly; flip reduction re-derived (spectral +-lambda pairing puts an involution in C*(U) <= C_e); involutions of C_h are +-I,+-T only, involutions of C_u are the 32 class sign patterns, enumerated completely; t_E(T) = {30,-48,12,0,6} on BOTH h-edges (exact match); u-edge class trace tables match and have 0 balanced patterns"
+  },
+  "attack_4_positive_controls_D15": {
+    "verdict": "FIRE",
+    "detail": "||[L_s,H]||_F^2 = 1024 exact and L_s flips the Wilson diagonal exactly; ||[R_s,H]||_F^2 = 3840 exact and R_s flips chi_a(u0); abelian D(Z_2) 1x2 control fully reproduced: eigendims {4,0,8,0,4}, all commutants dim 2, X_h0 admissible exact with all t_E = 0, flips clause-verified record Zbar_h; Z_u0 admissible flips Xbar_v -- same test, opposite verdict"
+  },
+  "attack_5_convention_D23": {
+    "verdict": "LABELED AND TRUE",
+    "detail": "forest vs homology agreement independently confirmed on all subsets of both carriers; KL/flip divergence confirmed: t_gs = 6 != +-22 so T is a nontrivial weight-1 admissible logical that flips nothing; structural cross-check reproduced (22 commuting-pair classes, exactly 6 fixed by (a,b)->(a r^2,b))"
+  },
+  "numbers_reproduced_exactly": {
+    "eigdims_1x2_D4": {"0": 2686, "-1": 864, "-2": 476, "-3": 48, "-4": 22},
+    "tE_T": {"0": 30, "-1": -48, "-2": 12, "-3": 0, "-4": 6},
+    "wilson_traces": {"0": 62, "-1": -112, "-2": 44, "-3": 0, "-4": 6},
+    "commutant_dims": {"h0": 2, "h1": 2, "u0": 5, "u1": 5},
+    "u_balanced_patterns": 0,
+    "control_norms": {"L_s": 1024, "R_s": 3840},
+    "minimal_torus": {"eig": {"-2": 22, "-1": 24, "0": 18}},
+    "t_gs_crosscheck": 6
+  },
+  "overall": "MAIN VERDICT SURVIVES: clause (v) HOLDS_SCOPED on D(D_4) 1x2 (every number re-derived exactly by independent code); minimal torus VACUOUS (proved); abelian control FAILS; positive controls fire. ONE SUB-CLAIM CORRECTED: exact diagonal (gauge-orbit) records DO exist on this carrier -- 'records are necessarily non-diagonal' must be struck; the corrected statement is 'the Wilson-character diagonals and the lane's chi*class family contain no records, but the full 176-dimensional gauge-orbit diagonal algebra does -- explicit exact transport-fixed diagonal records exist and are equally unflippable.'",
+  "files": [
+    "VERIFY/v_core.py", "VERIFY/v_core.txt", "VERIFY/v_core.json",
+    "VERIFY/v_core_defs.py", "VERIFY/v_core_engine.py",
+    "VERIFY/v_probe.py", "VERIFY/v_probe.txt", "VERIFY/v_probe.json",
+    "VERIFY/v_diag_record.txt", "VERIFY/v_diag_record.json", "VERIFY/orb_vec.npy"
+  ]
+}

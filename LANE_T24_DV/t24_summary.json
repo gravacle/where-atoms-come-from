@@ -1,0 +1,64 @@
+{
+  "task": "T-24 clause (v) on the non-abelian carrier D(D_4)",
+  "lane": "LANE_T24_DV",
+  "owner": "Fable successor-registrar session, 2026-08-20",
+  "verdict": "HOLDS_SCOPED",
+  "scope": "1x2 torus boundary-constrained proxy (O-49/D-23); minimal torus VACUOUS",
+  "items": {
+    "1_minimal_torus": {
+      "cell_structure": "1 vertex, 2 self-loop edges, 1 face glued along x y x^-1 y^-1",
+      "regions": "edge subsets {}, {e_x}, {e_y}, {e_x,e_y}; every nonempty one contains a graph cycle and a nonzero H_1 class",
+      "H1": "Z^2, basis [e_x],[e_y]; d1 = 0, d2 = 0 (exact integer boundary maps)",
+      "clause_v": "VACUOUS -- empty quantifier domain, proved by homology AND the T-11 forest convention, which agree on all 4 subsets",
+      "machinery_check": "sector dims 22/24/18 reproduce O-36's independent build exactly"
+    },
+    "2_1x2_torus_D4": {
+      "dim": 4096,
+      "eig_dims": {"0": 2686, "-1": 864, "-2": 476, "-3": 48, "-4": 22},
+      "ground_dim_topological": 22,
+      "contractible_single_regions": [["h0"], ["h1"]],
+      "C_e": {
+        "h0": "span{I, T}, T = right-mult by central r^2 (dim 2, exact integer Gram kernel, re-verified)",
+        "h1": "same",
+        "u0": "the 5 conjugacy-class diagonals (Wilson-type, dim 5)",
+        "u1": "same"
+      },
+      "flip_reduction": "U flips R <=> {U,R}=0; WLOG U an involution S in C_e; flippable record exists <=> Tr(P_E S) = 0 for every H-eigenspace E (exact integers)",
+      "tE_of_T_on_h0_h1": {"0": 30, "-1": -48, "-2": 12, "-3": 0, "-4": 6},
+      "u_edge_balanced_class_patterns": 0,
+      "result": "NO admissible single-edge unitary flips ANY record, on contractible AND non-contractible edges; clause (v) HOLDS on the contractible regions",
+      "mechanism": "r^2 lies in [D_4,D_4]: 1-dim characters kill it and conjugation fixes classes, so the central translation's grading is unbalanced (t_gs = 6 = number of commuting-pair classes fixed by (a,b)->(a r^2,b), independently cross-checked)",
+      "records": {
+        "wilson_diagonals": "NOT records here: chi(hol) diagonals fail clause (iv), Tr(P_E R) = {62,-112,44,0,6}",
+        "exact_gauge_fixed_family": "16383 candidates diag(chi(hol_h) v0(cl u0) v1(cl u1))*Pi searched, 0 balanced",
+        "numeric_R_moved": "random balanced eigenspace splits; residuals <= 3e-12; max||[A_v(k),R]|| = 89.0 (moved)",
+        "numeric_R_fixed": "O-36 gauge-averaged construction; residuals <= 3e-12; max||[A_v(k),R]|| = 3.6e-12 (fixed)",
+        "transport_fixed_exist_exact": "YES by O-36 integer feasibility on exact G x G blocks, all eigenspaces zero-reachable"
+      },
+      "KL_divergence_note": "T is a weight-1 admissible NON-TRIVIAL logical operation (t_gs=6, |t|<22) that flips nothing: clause (v) as a flip statement HOLDS while the Knill-Laflamme code-distance renaming FAILS at weight 1; the two readings diverge on this proxy (D-23 label)"
+    },
+    "3_controls": {
+      "abelian_D_Z2_1x2": "FAILS: C_h0 = span{I, X_h0}, all Tr(P_E X_h0) = 0, X_h0 admissible weight-1 flipper of clause-verified record Zbar_h; on u-edges Z_u0 (admissible) flips the record Xbar_v = X_u0 X_u1; known distance-1 proxy artifact",
+      "non_admissible_positive": "on D_4: L_s on h0 flips the three-clause Wilson diagonal exactly, ||[L_s,H]||_F^2 = 1024; R_s on u0 flips chi_a(u0), ||.||^2 = 3840; clause (v) without 'admissible' is false here as it was of the toric code"
+    },
+    "4_O41": {
+      "which_records_move": "diagonal (class-function) objects and the whole exact family are gauge-fixed; generic eigenspace splittings are moved; both kinds exist (exact feasibility + numeric witnesses)",
+      "does_protection_distinguish": "NO at this size: the flip obstruction is transport-blind, both kinds equally unflippable on every single-edge region; on the abelian control where flips DO exist the flipped record is itself transport-fixed, so no distinction appears there either",
+      "ground_space": "transport-fixity vacuous on ground space (gauge acts trivially), consistent with O-41's note"
+    }
+  },
+  "discipline": {
+    "D-21": "no sampled commutants; C_e from exact integer Gram (PSD identity), kernels re-verified; multiplicities by character theory with sum d*m = dim asserted",
+    "D-15": "every zero carries a firing control in the same table",
+    "D-18": "records() refused at 4096; constructed on eigenspaces (O-36 route); flip verdicts never rest on a specific record -- the obstruction quantifies over all of them",
+    "D-23": "verdict scoped to the 1x2 proxy; convention-dependence checked: forest vs homology readings agree on all subsets of both carriers; flip-reading vs KL-reading divergence labeled",
+    "exactness": "every verdict is integer/Fraction arithmetic; floats appear only in labeled demonstration witnesses"
+  },
+  "next_step": "prove the C_e classification lattice-generally (central translations on tree edges, class diagonals on loop edges) and compute t_E combinatorially so the obstruction can be tested on 2x2 and larger D(D_4) lattices without building 8^8 dimensions -- does the non-abelian protection persist or is it a small-proxy accident, and does the KL/flip divergence close?",
+  "files": [
+    "LANE_T24_DV/t24_lib.py",
+    "LANE_T24_DV/t24_minimal.py", "LANE_T24_DV/t24_minimal.txt", "LANE_T24_DV/t24_minimal.json",
+    "LANE_T24_DV/t24_main.py", "LANE_T24_DV/t24_main.txt", "LANE_T24_DV/t24_main.json",
+    "LANE_T24_DV/t24_z2.py", "LANE_T24_DV/t24_z2.txt", "LANE_T24_DV/t24_z2.json"
+  ]
+}

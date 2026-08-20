@@ -1,0 +1,14 @@
+(A) gauge orbits on the 4096 configs: 176
+    per-orbit eigen-trace numerators computed; totals/64 = [2686, 864, 476, 48, 22]
+    distinct orbit vectors: 6 : [((0, 0, 448, 0, 64), 4), ((0, 0, 832, 128, 64), 18), ((0, 1600, 384, 64, 0), 12), ((448, 0, 64, 0, 0), 4), ((832, 128, 64, 0, 0), 66), ((1600, 384, 64, 0, 0), 72)]
+    exact enumeration over 30201925 combinations
+    balanced +-1 orbit assignments (diagonal records) found: 3
+    => DIAGONAL RECORD EXISTS -- lane's 'necessarily non-diagonal' claim is FALSE
+
+(B) NUMERIC (floats; demonstration only)
+    eigh multiplicities: {-4: 22, -3: 48, -2: 476, -1: 864, 0: 2686} (exact: {-4:22,-3:48,-2:476,-1:864,0:2686})
+    R_moved witness: ||R^2-I||=3.47e-13 ||R-R^T||=0.00e+00 ||[R,H]||=1.47e-13 max|Tr(P_E R)|=8.17e-14
+    max_k ||[A_v0(k),R]|| = 8.761e+01 (MOVED) ; ||{T,R}||_F = 9.159e+01 (NONZERO as the exact obstruction demands)
+    witness consistent with lane's section 9: True
+
+REPORT: {"n_gauge_orbits": 176, "diagonal_records_found": 3, "eigh_mult_match": true, "R_moved_witness": {"inv": 3.4692414378092337e-13, "sym": 0.0, "commH": 1.4720707170399077e-13, "bal": 8.171241461241152e-14, "moved": 87.61427191298542, "antiT": 91.5915785354271}, "witness_ok": true, "elapsed_s": 23.4}

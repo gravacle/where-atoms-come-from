@@ -1,0 +1,38 @@
+==============================================================================================================
+T-24 / item 1 -- MINIMAL TORUS: WHAT REGIONS EXIST, AND THE VACUITY OF CLAUSE (v)
+==============================================================================================================
+
+CELL STRUCTURE: vertices {v}; edges {e_x, e_y}, BOTH with d(e) = v - v (self-loops);
+one face f glued along the word  e_x e_y e_x^-1 e_y^-1.
+
+(A) HOMOLOGY OVER Z (exact integer boundary matrices)
+    d1 = [[0, 0]]   (both edges are loops: d(e) = v - v = 0)
+    d2 = [[0], [0]] (face word x y x^-1 y^-1 abelianises to 0)
+    rank d1 = 0, rank d2 = 0  =>  H_1 = Z^2 / 0 = Z^2, basis {[e_x], [e_y]}
+    every nonzero integer edge-chain a[e_x] + b[e_y] is a NONZERO class in H_1;
+    a region contained in a contractible subcomplex must carry only trivial classes,
+    so NO nonempty edge set is contained in a contractible subcomplex.
+
+(B) THE T-11 CONVENTION: contractible = forest (no graph cycle); single = connected
+    region {}               graph-cycle: False  forest-contractible: False  homology-contractible: False
+    region {e_x}            graph-cycle: True   forest-contractible: False  homology-contractible: False
+    region {e_y}            graph-cycle: True   forest-contractible: False  homology-contractible: False
+    region {e_x,e_y}        graph-cycle: True   forest-contractible: False  homology-contractible: False
+    the two readings agree on all 4 subsets: True  (D-23: no convention-dependence HERE)
+
+VACUITY: the set of single contractible qubit-supported regions is EMPTY.
+Clause (v) quantifies over that set; with an empty domain it is TRUE VACUOUSLY --
+it constrains nothing and protects nothing on this cell structure.  SCOPE (D-23):
+this is a statement about the 1-vertex cell structure of the proxy, not about D(D_4):
+the SAME group on the 1x2 refinement has two contractible edges (t24_main.py), so the
+vacuity is a resolution artifact that disappears under refinement.
+
+CROSS-CHECK: this lane's exact builders reproduce O-36's D(D_4) minimal-torus sectors
+    A(k) is a permutation representation of D_4: True
+    [A(k), B] = 0 at the permutation level (B-diagonal invariant): True
+    sector dims (a,b)->dim: {(0, 0): '18', (0, 1): '18', (1, 0): '6', (1, 1): '22'}   total 64
+    H-eigenspace dims: eig -2: 22  -1: 24  0: 18   (O-36: 22 / 24 / 18)
+    MATCH with O-36's independent construction: True
+
+VERDICT item 1: clause (v) on the minimal torus is VACUOUS -- proved from the cell
+structure by both the homology route and the program's own forest convention, which agree.
