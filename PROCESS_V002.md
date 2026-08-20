@@ -133,11 +133,14 @@ of labor** — no pure-Γ falloff exists; Γ is the boundary law, the coupling c
 `μ_c`, the earned dimension's own point-source potential at `μ_c` (the critical resolvent identity IS
 the venue's discrete Poisson equation), divergent above (`C-87`); **the Newton composition profile
 exists at exactly one computed design point**, transparent admissibility plus occupancy encoding,
-36/36 gates (`C-88`). **The Newton verdict stands at NEITHER** — the unique critical candidate, match
-not earned, three named pieces standing: the `D = 3` row, masslessness with the labeled
-measure-conservation hypothesis `μ = 1/deg = μ_c`, and the surface's enforcement of the design point
-(`O-58`); also open: the universal coefficient (`O-55`), the thermodynamic pair (`O-56`), the
-collapse analogue (`O-57`).
+36/36 gates (`C-88`); **the D=3 critical member is COMPUTED as `1/d`** — exponent bracket containing
+1 on all rays, `G` finite, coefficient tightening onto `3/(2π)`, adversarially confirmed (`C-90`).
+**The Newton verdict is MATCHES AT MEMBER LEVEL** — the pre-registered upgrade rule fired on its own
+stated condition, superseding NEITHER, with the conditional structure load-bearing and kept: unique
+critical member computed; occupancy of criticality **not** earned (masslessness, the
+measure-conservation hypothesis `μ = 1/deg = μ_c`); design-point enforcement **not** earned; norm
+selection open — never a claim that gravity is derived (`C-77`, `O-58`); also open: the universal
+coefficient (`O-55`), the thermodynamic pair (`O-56`), the collapse analogue (`O-57`).
 
 ## 9. WHAT IS OURS TO FALSIFY
 
@@ -152,8 +155,10 @@ conceded by name; its external-data run is the pending step to promotion (`C-86`
 
 ## WHAT IS **NOT** ESTABLISHED
 
-- **The Newton match is not earned.** The verdict is NEITHER with three named pieces standing
-  (`O-58`); nothing here asserts classical gravity has been recovered.
+- **The Newton verdict is MATCHES at member level only, on conditions not yet earned.** What earns
+  criticality (masslessness), whether the surface enforces the design point, and which norm the
+  record's physics selects are all open (`O-58`, `T-48`); nothing here asserts classical gravity has
+  been recovered.
 - **Alpha's value has not been connected to the record laws.** The route through `E_b` is stated as
   a task, not a result (`T-38`; `H-2`'s closure is scoped to "alpha names a generic coupling" at the
   corner).
