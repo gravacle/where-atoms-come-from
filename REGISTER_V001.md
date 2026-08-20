@@ -8052,3 +8052,75 @@ crossing number printed `0`, and the READ then concluded *"the pairing was never
 **contradicting the table directly above it.** The non-degeneracy self-check now in section 0 fires
 on exactly this: a set of logicals whose pairing matrix is singular is not a basis, and v1's was
 identically zero.
+
+---
+
+## O-32 — **THE DENSITY VARIABLE IS RECORDS PER ENVIRONMENT SITE. THE FIRST MAGNITUDE IN THIS PROGRAM THAT KNOWS HOW MUCH IS ENCLOSED.**
+
+`LANE_O32_MAGNITUDE`. C-32 and C-35 removed the count and the intersection pairing: both topological,
+and **a topological quantity does not know how much is enclosed.** Of the principal's triad only
+`channel_map[α]` remained, and `channel_map` is **boolean**. The magnitude is one level down — **χ,
+what the environment actually holds** — and the untested variable is that **records share an
+environment.**
+
+### 1. THE CURVE, WITH ITS CONTROL IN THE SAME TABLE
+
+`m` records placed on **one** bath site; χ read for record 0. Control: identical carrier, every
+record on its **own** site.
+
+| `m` on site 0 | records | **χ CROWDED** | χ SPREAD *(control)* | ratio |
+|---|---|---|---|---|
+| 1 | 1 | 0.789366 | 0.789366 | 1.0000 |
+| 2 | 2 | **0.164650** | 0.789366 | 0.2086 |
+| 3 | 3 | **0.081033** | 0.789366 | 0.1027 |
+| 4 | 4 | **0.081489** | 0.789366 | 0.1032 |
+
+**The control moves by 0.000000 across the whole range.**
+
+### 2. IT IS SHARING, NOT CARRIER SIZE
+
+Spectator records enlarge the carrier without crowding the site:
+
+| spectators | 0 | 1 | 2 |
+|---|---|---|---|
+| records | 2 | 3 | 4 |
+| **χ(record 0)** | **0.164650** | **0.164650** | **0.164650** |
+
+**Unmoved to six decimals.**
+
+### 3. IT IS A CAPACITY CEILING, NOT A WEAK COUPLING
+
+χ time-averaged over 25 times in `[1,13]` — a single snapshot is not interpretable, and at fixed
+`t = 4.0` the `λ = 0.6` point read `0.001000`, a **recurrence** of unitary evolution rather than a
+coupling effect.
+
+| `λ` | 0.20 | 0.40 | 0.60 | 0.80 | 1.00 | 1.40 |
+|---|---|---|---|---|---|---|
+| **crowded** | .0698 | .1256 | .1373 | .1364 | .1318 | **.1190** |
+| **spread** | .0927 | .2766 | .4354 | .5215 | .5856 | **.6012** |
+| **ratio** | .7530 | .4541 | .3153 | .2616 | .2250 | **.1980** |
+
+**Crowded χ saturates near 0.135 and stops while spread χ climbs to 0.60. The suppression
+STRENGTHENS with coupling across a 7× range.**
+
+> ### **THE DENSITY VARIABLE IS RECORDS PER ENVIRONMENT SITE. NOT THE NUMBER OF RECORDS — ADDING
+> ### RECORDS CHANGES NOTHING. NOT THE SIZE OF THE CARRIER — SPECTATORS CHANGE NOTHING. SHARING IS
+> ### THE WHOLE EFFECT.**
+
+> ### **AN ENVIRONMENT SITE HOLDS A BOUNDED AMOUNT ABOUT THE RECORDS WRITTEN ON IT, AND RECORDS
+> ### SHARING A SITE SPLIT IT. THIS IS THE FIRST QUANTITY IN THIS PROGRAM THAT KNOWS HOW MUCH IS
+> ### ENCLOSED RATHER THAN MERELY WHAT IS WHERE.**
+
+### WHAT IT IS NOT
+
+**A suppression law, not yet a transport law.** Nothing here has been shown to curve anything or to
+move a record. What it supplies is the ingredient the topological quantities could not: **a magnitude
+that responds to enclosed density.** Joining it to transport is **O-33**.
+
+### ERRATUM, LOGGED
+
+**v1 coupled each record through `X_j`** — the operator that **flips** the record rather than
+recording it. **Every χ came back `0.000000`, including the control**, so nothing was measurable.
+The program's own `channel()` criterion states the requirement: a coupling opens a channel iff its
+compression has a component **along** the record. `channel()` is now asserted as a **precondition**
+before any χ is read, so that failure cannot be reported as a result.
