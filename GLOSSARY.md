@@ -87,3 +87,13 @@ Stripping every BORROWED and RENAMING row leaves this, and it is short:
 
 > **THE CLAIM "Γ IS WHERE GRAVITY COMES FROM" IS NOT ON THIS LIST, BECAUSE ITS SECOND HALF —
 > RECOVERING CLASSICAL GRAVITY FROM ACCUMULATED Γ — IS UNTOUCHED (T-20).**
+
+**Universal Record Model (URM)** — OURS (named by the principal, 2026-08-20). The formal, macroscopic
+title of the program's model for the general physics audience: one entry point (`model/project_model.py`
+and its layers) that takes any record surface — a magnetic grain, a floating gate, a molecule, a
+stabiliser carrier — and returns its record structure: clause verdicts under the amended definition,
+the record laws, the formation and encoding laws, the geometry layer (earned distance, interface,
+certifiability), and the DEF-A corner. "Universal" is operational — one model, any record surface
+(T-33: six mechanisms at machine precision; D-25: every world-tier surface provenance-pinned) — and
+is a TITLE, not a claim: the abstract-language rules from the external review still govern what the
+URM is said to establish.
