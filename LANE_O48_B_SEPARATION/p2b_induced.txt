@@ -82,9 +82,12 @@ READ: the ratio of the two routes tends to 1 as g -> 0, so ROUTE 2 is the exact 
 
 READ (filled from the numbers above): with a GAPLESS mediator the induced coupling is non-zero at
       every separation measured, is STRICTLY ALTERNATING with period exactly 2 over r=1..511, and
-      its envelope times r sits near 0.30 across three decades of the table before bending down
-      near r ~ m/4.  With a GAPPED mediator the same quantity is many orders smaller by r=64.
-      The NEGATIVE CONTROL is exactly zero at every r; the POSITIVE CONTROL is non-zero at every r.
+      its envelope times r stays between 0.274 and 0.315 from r=1 to r=128 before bending down to
+      0.121 at r = m/4 = 512, which is the open boundary.  With a GAPPED mediator the same quantity
+      is smaller by six orders at r=64 (4.3e-09 against 4.6e-03) and by r=256 it has reached the
+      float64 noise floor: the entries near 1e-19/1e-20 with unstable signs are NOISE, not signal,
+      and are printed rather than suppressed so the floor is visible.  The NEGATIVE CONTROL is
+      exactly zero at every r; the POSITIVE CONTROL is non-zero at every r.  Both are in this table.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 [B3] THE ASYMPTOTIC LAW WITHOUT A FIT: FINITE-SIZE COLLAPSE (answers D-20 head on).
@@ -115,10 +118,12 @@ READ (filled from the numbers above): with a GAPLESS mediator the induced coupli
 READ (filled from the numbers above): S(r)*r is the SAME function of r/m at every m from 512 to
       8192 -- the spread across a sixteenfold change in the venue's own scale is a fraction of a
       percent.  That is an out-of-sample prediction across scales, not an in-sample fit, and it
-      establishes S(r) = f(r/m)/r: a POWER LAW OF EXPONENT EXACTLY 1 cut off only by the finite
-      chain.  The log-log exponent on the clean window is slightly above 1 and DECREASES toward 1
-      as m grows (1.083 -> 1.049 from m=512 to 8192-scale windows), which is the residual bend,
-      not a different law.  THIS FALLOFF IS INDUCED: no long-range term exists anywhere in H.
+      establishes S(r) = f(r/m)/r: a POWER LAW OF EXPONENT 1, cut off only by the finite chain.
+      The log-log exponent measured on the clean window sits slightly ABOVE 1 and DECREASES
+      monotonically toward it as the venue grows -- 1.083134, 1.065996, 1.055564, 1.048958,
+      1.044682 at m = 512, 1024, 2048, 4096, 8192 -- while the amplitude C stays at 0.368-0.375.
+      The residual excess is the finite-size bend still inside the window, not a different law.
+      THIS FALLOFF IS INDUCED: no long-range term exists anywhere in H (see [B0]).
 
 ----------------------------------------------------------------------------------------------------------------------------------
 [B4] POWER vs EXPONENTIAL WITH OUT-OF-SAMPLE PREDICTION (D-20).  Fit short range, PREDICT long
@@ -137,14 +142,17 @@ READ (filled from the numbers above): S(r)*r is the SAME function of r/m at ever
 READ (filled from the numbers above): the three INSERTED controls are classified correctly
       (A/r^3 -> POWER with p=3.000, A/r^1 -> POWER with p=1.000, e^{-r/6} -> EXPONENTIAL with
       xi=6.000), which is what licenses reading the induced rows.  The gapless mediator is
-      classified POWER out of sample; every gapped mediator is classified EXPONENTIAL out of
-      sample.  No row returned CANNOT DECIDE, so the data does separate the two forms here.
+      classified POWER out of sample (p=1.023, OUT pow 0.0209 against OUT exp 0.6220, a factor 30).
+      The gapped mediators at d=0.10 and d=0.20 are classified EXPONENTIAL out of sample.  The
+      weakest gap, d=0.05, returns CANNOT DECIDE: over r in [8,80] its xi=6.3 is comparable to the
+      window and neither form wins by the required factor of 3.  THAT IS THE REPORTED ANSWER FOR
+      THAT ROW (D-20) -- the data there does not separate the two forms and is not made to.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 [B5] GAP SWEEP.  The mediator's gap Delta is varied by DIMERISATION d, an internal property of
      the mediator alone; the records' coupling to it is unchanged and stays strictly on-site.
-     xi and p are fitted on the envelope over r in [8,60] at m=2048.  D-20: where xi exceeds the
-     fitting window the exponential fit is not constrained and that is stated, not hidden.
+     xi and p are fitted on the envelope over r in [8,60] at m=2048, fit on r<=36 and PREDICT the
+     rest.  The 'xi < window?' column records whether the fitted xi is even inside the measured range.
 ----------------------------------------------------------------------------------------------------------------------------------
      d   gap Delta  xi (exp fit)   xi*Delta  p (pow fit)   IN pow   IN exp   OUT pow   OUT exp   OUT winner  xi < window?
   0.00    0.001533     19.341815   0.029655     1.017691   0.0010   0.0387    0.0061    0.2293        POWER          True
@@ -157,11 +165,14 @@ READ (filled from the numbers above): the three INSERTED controls are classified
   0.30    0.600007      1.448254   0.868963    13.111755   0.4689   0.0517    2.4228    0.2502          EXP          True
 
 READ (filled from the numbers above): at d=0 (GAPLESS) POWER wins both in and out of sample and
-      the exponential 'xi' returned there is larger than the whole fitting window, i.e. meaningless.
-      For every d >= 0.02 (GAPPED) EXPONENTIAL wins out of sample and xi is inside the window.
-      xi*Delta is NOT constant across the whole sweep: it climbs from 0.13 at d=0 and settles near
-      0.92-0.93 once the gap is large enough for xi to fit inside the measured range.  In that
-      regime xi is proportional to 1/Delta -- THE MEDIATOR'S OWN GAP SETS THE RANGE.  This
+      by a factor of 38 out of sample (0.0061 against 0.2293), and the 'xi' the exponential fit
+      returns there, 19.3, is a fitting artefact with no gap to correspond to.  The crossover is
+      GRADUAL, and the table shows where it sits rather than hiding it: POWER still wins out of
+      sample at d=0.01 and d=0.02, and EXPONENTIAL wins from d=0.05 upward.  xi*Delta is NOT
+      constant across the sweep -- it climbs 0.030, 0.264, 0.404, 0.610, 0.746, 0.808, 0.841, 0.869
+      as d goes 0.00 -> 0.30, still rising at the end.  So xi is only ROUGHLY proportional to
+      1/Delta over the range measured, and the drift is stated, not smoothed away.  What is not in
+      doubt is the direction: every increase of the mediator's own gap shortens the range.  This
       reproduces C-47's exponential screening on a gapped bath and settles the case C-47 left
       open: on a GAPLESS mediator the falloff is a power law, not an exponential.
 
@@ -188,11 +199,16 @@ INSERTED CTRL A/r^3 (definite)      -    128               yes    0.360607987   
 INSERTED CTRL A/r^3 (definite)      -    512               yes    0.360616500    0.360616500    1.000000000
 
 READ (filled from the numbers above): inside the clean window the cancellation ratio FALLS
-      monotonically as more separations are included -- 0.2056 at R=8, 0.1528 at R=32, 0.1361 at
-      R=128, 0.1224 at R=512 -- while the sign-definite inserted control holds exactly 1.000000000
-      at every R.  The falling ratio is therefore a measurement, not a property of the statistic.
-      By C-46 THIS INDUCED INTERACTION SCREENS: sum|J| grows like log R without bound while sum J
-      converges, so the ratio decays like 1/log R.  Criterion (d) SIGN-DEFINITE IS FAILED.
+      as more separations are included: at m=8192 it runs 0.203847, 0.148084, 0.122186 at R = 8,
+      32, 128, then ticks back up to 0.130662 at R=512, which is the very edge of the clean window
+      where the open boundary starts to bend the envelope.  The cleaner reading is DOWN THE OTHER
+      AXIS: at FIXED R=32 the ratio falls 0.215860 -> 0.162076 -> 0.148084 as m goes 512 -> 2048 ->
+      8192, i.e. it keeps falling as the finite-size cutoff is removed.  Meanwhile sum|J| grows
+      without bound and logarithmically -- 0.808, 1.237, 1.686, 2.171 at R = 8, 32, 128, 512, an
+      increment of about 0.44 per factor of four in R, which is 0.315 * ln 4 to two figures --
+      while sum J grows far more slowly.  The sign-definite inserted control holds exactly
+      1.000000000 at every R, so the falling ratio is a measurement and not a property of the
+      statistic.  By C-46 THIS INDUCED INTERACTION SCREENS.  Criterion (d) IS FAILED.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 [B7] IS THE ALTERNATION FORCED BY CLAUSE (iv)?  A mediator field mu shifts the Fermi level to
@@ -209,9 +225,14 @@ READ (filled from the numbers above): inside the clean window the cancellation r
 READ (filled from the numbers above): clause (iv) holds ONLY at mu = 0, and mu = 0 is exactly
       half filling, and half filling is exactly where the induced oscillation has period 2, i.e.
       strict alternation +-+-.  Every mu that breaks clause (iv) also breaks the period-2 pattern
-      into an incommensurate one -- and the cancellation ratio does not improve.  The clause that
-      makes a record WRITABLE FOR FREE is the same condition that pins the mediator to the filling
-      whose induced interaction alternates.  Writability and cancellation are the SAME constraint.
+      into an incommensurate one.  Breaking the clause does NOT rescue the cancellation: the ratio
+      moves only from 0.155460 at mu=0 to 0.165389, 0.173109, 0.217129, 0.155744 at mu = 0.10, 0.20,
+      0.40, 0.60 -- it gets slightly WORSE at cancelling and never comes anywhere near the 1.000000000
+      of a sign-definite quantity.  So the clause does not have to be broken to escape screening,
+      because breaking it does not escape screening.  What the table does establish is that the
+      condition making a record WRITABLE FOR FREE is exactly the condition pinning the mediator to
+      half filling, and half filling is exactly where the induced interaction alternates with
+      period 2.  Writability and the period-2 alternation are the SAME constraint.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 [B8] DOES THE POWER LAW SURVIVE FINITE COUPLING?  ROUTE 1 (all orders in g) at m=18.

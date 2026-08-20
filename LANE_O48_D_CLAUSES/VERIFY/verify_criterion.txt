@@ -1,0 +1,42 @@
+====================================================================================================
+RANDOM-SAMPLE TEST OF THE 'ANTICOMMUTING SYMMETRY PAIR' CRITERION
+====================================================================================================
+
+                    family   n  #terms  #adm R  PREDICTED  MEASURED  agree?
+               random COMM   2       1       7          6         6    True
+            random NONCOMM   2       2       3          3         3    True
+            random NONCOMM   3       4       3          3         3    True
+            random NONCOMM   3       4       3          3         3    True
+            random NONCOMM   2       3       1          0         0    True
+               random COMM   4       1     127        126       126    True
+            random NONCOMM   2       2       3          3         3    True
+            random NONCOMM   2       4       0          0         0    True
+               random COMM   2       2       3          0         0    True
+            random NONCOMM   4       4      15         12        12    True
+               random COMM   2       1       7          6         6    True
+               random COMM   2       1       7          6         6    True
+            random NONCOMM   2       3       3          3         3    True
+               random COMM   3       1      31         30        30    True
+            random NONCOMM   2       3       1          0         1   False
+            random NONCOMM   3       4       3          0         2   False
+            random NONCOMM   2       3       1          0         1   False
+            random NONCOMM   2       3       1          0         1   False
+            random NONCOMM   3       3       7          6         7   False
+
+  RANDOM SAMPLE: 120 Pauli Hamiltonians, n = 2..4, 1..4 terms, commuting and not.
+  EXCEPTIONS (PREDICTED != MEASURED): 5
+
+  NAMED CARRIERS INCLUDING ONES THE LANE DID NOT TEST:
+        AF Ising triangle Z_iZ_j   3       3      15         12        12    True
+            frustrated square ZZ   4       4      31         24        24    True
+           Heisenberg XXX 2-site   2       3       3          0         0    True
+     Heisenberg XXX 3-site chain   3       6       3          3         3    True
+      transverse-field Ising n=3   3       5       1          0         0    True
+         4-qubit ZZ ring (GEN J)   4       4      31         24        24    True
+
+LARGER RANDOM SCAN (seed 2024): 600 random Pauli Hamiltonians (n=2..4, 1..4 terms)
+  exceptions PREDICTED != MEASURED : 30  (5.0%)
+  of which commuting-term H        : 0
+  of which non-commuting-term H    : 30
+  (the lane tested only THREE non-commuting carriers -- the XY chain at n=4,5,6 -- each with an
+   admissible Pauli group of size 4, too small for an exception to surface.)

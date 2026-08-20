@@ -1,0 +1,50 @@
+========================================================================================================
+VERIFY-4a   THE ADMISSIBLE WRITER SET IN CLOSED FORM, AND THE ENERGY CHANGE ACTUALLY MEASURED
+========================================================================================================
+
+  A Pauli (x,z) commutes with Z_i Z_{i+1} iff x_i + x_{i+1} = 0 mod 2.  On a connected chain
+  that forces x = 0 (Z-type) or x = 1...1.  Anticommuting with Z_0 needs x_0 = 1, so the
+  admissible flippers of Z_0 are EXACTLY {X-or-Y on every site} : 2^n of them, weight n.
+
+    n  closed form 2^n  exhaustive 4^n search  agree?  min weight  MEASURED max |E(psi)-E(W psi)|
+    3                8                      8    True           3                        0.000000
+    4               16                     16    True           4                        0.000000
+    5               32                     32    True           5                        0.000000
+    6               64                     64    True           6                        0.000000
+    7              128                    128    True           7                        0.000000
+
+  READ: the exhaustive 4^n search returns exactly the closed-form set.  The dE column the
+  lane printed as 0 was hard-coded (`dE = 0 if cnt else None`), not measured; measured here
+  it is 0 -- but it is 0 because [W,H]=0, i.e. by clause (ii), for ANY H and ANY admissible
+  W.  'Records flip for free' is the definition of admissible, not a result about records.
+
+========================================================================================================
+VERIFY-4b   IS I(k records ; E) = k-1 ANYTHING BUT THE k-1 BOND VARIABLES THEY DETERMINE?
+========================================================================================================
+
+  family       n      k=1      k=2      k=3      k=4      k=5     = H(t_0..t_{k-2})?
+  superinc    11  0.00000  1.00000  2.00000  3.00000  4.00000                   True
+  superinc    13  0.00000  1.00000  2.00000  3.00000  4.00000                   True
+  uniform     11  0.00000  0.07650  0.16223  0.25979  0.37307                   True
+  uniform     13  0.00000  0.06301  0.13210  0.20860  0.29433                   True
+
+  READ: the joint record reading buys EXACTLY what the k-1 bond variables buy, and nothing
+  else -- I(Z_0..Z_{k-1};E) = I(t_0..t_{k-2};E) identically.  k spins on an open chain are
+  (k-1 bond variables) + (1 global sign); H depends only on bonds; the global sign is the
+  Z_2 symmetry.  That is the whole 'I = k-1 EXACT' law.
+
+========================================================================================================
+VERIFY-4c   THE 'decaying' FAMILY THAT 'KEEPS COHERENCE 0.60'
+========================================================================================================
+
+     m     J_0  sum of the rest  J_0 > rest?  exact mean|E|     J_0  equal?       coh     J_0/M
+     8    5040             2656         True      5040.0000    5040    True  0.654886  0.654886
+    16    5040             2939         True      5040.0000    5040    True  0.631658  0.631658
+    32    5040             3080         True      5040.0000    5040    True  0.620690  0.620690
+    64    5040             3141         True      5040.0000    5040    True  0.616062  0.616062
+   128    5040             3205         True      5040.0000    5040    True  0.611280  0.611280
+
+  READ: for the decaying family J_0 alone exceeds the sum of all other couplings, so the
+  sign of E is set by ONE bond and mean|E| equals J_0 EXACTLY.  coh = J_0/M is the fraction
+  of the l1 norm sitting in a single term.  That is not accumulation across terms; it is a
+  one-term sum with a decaying tail, and it is the reason the same family is not extensive.

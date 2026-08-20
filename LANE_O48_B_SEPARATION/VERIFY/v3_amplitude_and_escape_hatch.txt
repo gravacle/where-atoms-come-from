@@ -1,0 +1,61 @@
+==========================================================================================================================
+V3  AMPLITUDE, THE EVEN-ONLY COLLAPSE, AND WHETHER THE ESCAPE HATCH ACCUMULATES
+==========================================================================================================================
+
+[V3a] THE AMPLITUDE ON A RING (no open boundary, so no finite-size bend to blame).
+      LOCAL log-log slope of the envelope, and the envelope times r, deep in the clean window.
+--------------------------------------------------------------------------------------------------------------------------
+      r     S(r)=(-1)^(r+1)J       S(r)*r   local slope         1/pi   S*r / (1/pi)
+      8      3.959737508e-02  0.316779001      0.997268  0.318309886    0.995190581
+     16      1.983621091e-02  0.317379375      1.001767  0.318309886    0.997076711
+     32      9.905966860e-03  0.316990940      1.005377  0.318309886    0.995856407
+     64      4.934559020e-03  0.315811777      1.011228  0.318309886    0.992151959
+    128      2.448151936e-03  0.313363448      1.022623  0.318309886    0.984460305
+    256      1.205031053e-03  0.308487950      1.045492  0.318309886    0.969143476
+    512      5.838130368e-04  0.298912275      1.091982  0.318309886    0.939060607
+   1024      2.738763773e-04  0.280449410      1.188930  0.318309886    0.881057807
+
+      the lane reports C = 0.3146 (from f(r/m -> 0)) and C = 0.368-0.375 (from its log-log fits).
+      1/pi = 0.318309886.
+
+[V3b] DOES THE COLLAPSE HOLD FOR ODD r?  The lane's [B3] loop forces r EVEN
+      (`r = int(round(frac*m)); r += (r % 2)`), so only same-sublattice pairs were sampled.
+      Here: S(r)*r at fixed r/N for ODD r and for EVEN r, on rings of four sizes.
+--------------------------------------------------------------------------------------------------------------------------
+     r/N  parity         N=2050         N=8194        N=32770   spread %
+   0.010    even       0.305885       0.305762       0.305771     0.0403
+   0.010     odd       0.318345       0.318509       0.318516     0.0536
+   0.020    even       0.293024       0.293630       0.293629     0.2068
+   0.020     odd       0.319068       0.319124       0.319114     0.0173
+   0.050    even       0.259674       0.259375       0.259432     0.1152
+   0.050     odd       0.323114       0.323106       0.323080     0.0106
+   0.100    even       0.208082       0.208477       0.208517     0.2090
+   0.100     odd       0.335868       0.335854       0.335870     0.0047
+
+[V3c] IS THE COEFFICIENT RECORD-BLIND?  (attack axis 5)
+--------------------------------------------------------------------------------------------------------------------------
+      T_ij is a functional of the BARE mediator's spectrum alone -- it is evaluated at g=0
+      background and contains no reference to the record configuration z.  The record content
+      of the energy is entirely the factor z_i z_j.  Stated plainly so [V3d] can be read.
+
+[V3d] THE ESCAPE HATCH, TESTED ON THE ENERGY RATHER THAN ON THE COUPLING CONSTANTS.
+      Records on every SECOND ring site (the lane's k=2 placement), K records, all separations
+      even, so every J_ij < 0 and the lane's ratio over J(r) is 1.000000000 by construction.
+      Here: ratio = |sum_{i<j} J_ij z_i z_j| / sum_{i<j} |J_ij|, for real record configurations.
+      D-15 CONTROLS in the same table: the ALIGNED configuration (the lane's implicit best case,
+      must give 1.000000) and the lane's own coupling-only ratio (must give 1.000000).
+--------------------------------------------------------------------------------------------------------------------------
+ K records      sum|J_ij|     ALIGNED z  ratio ALIGNED   median |E| over 64 random z  ratio RANDOM (median)  ratio, coupling-only
+        16       5.913412      5.913412       1.000000                      0.462073               0.078140           1.000000000
+        64      37.437829     37.437829       1.000000                      1.107353               0.029578           1.000000000
+       256     205.009037    205.009037       1.000000                      1.842467               0.008987           1.000000000
+      1024    1031.023019   1031.023019       1.000000                      4.196108               0.004070           1.000000000
+
+      DOUBLING TEST (criterion (a) shape, applied to the same two quantities):
+       K      sum|J_ij|   S(2K)/S(K) unsigned   |E| median random   S(2K)/S(K) random
+      64      37.437829                     -            1.025762                   -
+     128      88.744882              2.370460            1.278387            1.246280
+     256     205.009037              2.310094            2.151578            1.683041
+     512     463.923983              2.262944            2.303845            1.070770
+    1024    1031.023019              2.222396            4.510708            1.957904
+    2048    2250.816164              2.183090            5.486447            1.216316

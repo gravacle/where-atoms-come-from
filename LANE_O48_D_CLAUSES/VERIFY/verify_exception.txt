@@ -1,0 +1,53 @@
+====================================================================================================
+COUNTEREXAMPLES: PAULI RECORD, NO ADMISSIBLE PAULI WITNESS
+====================================================================================================
+  found 3 in the random scan
+
+  --- CASE 1 ---  n = 2
+      H = 4*XX  +  2*XY  +  3*XZ
+      R = XI
+      (i)   ||R - R-dag|| = 0.00e+00   ||R^2 - I|| = 0.00e+00
+      (ii)  ||[H,R]|| = 0.00e+00
+      eigenvalues: [-5.385165, -5.385165, 5.385165, 5.385165]
+      block sizes: [2, 2]
+      (iii) blocks on which R is NON-CONSTANT: 2
+      (iv)  max |Tr(P_E R)| over all eigenspaces = 4.441e-16
+      LANE CRITERION: admissible Pauli group size 2, # of them anticommuting with R = 0   -> PREDICTED: NOT a record
+      CONSTRUCTED U (non-Pauli, block-wise): unitary err 1.14e-15
+                                              ||[U,H]||     2.73e-15
+                                              ||U-dag R U + R|| 9.51e-16
+      -> clause (iv) HOLDS by explicit construction, with a witness that is NOT a Pauli.
+
+  --- CASE 2 ---  n = 3
+      H = 2*YIZ  +  1*YIX  +  1*XZY  +  5*YYY
+      R = ZXY
+      (i)   ||R - R-dag|| = 0.00e+00   ||R^2 - I|| = 0.00e+00
+      (ii)  ||[H,R]|| = 0.00e+00
+      eigenvalues: [-6.477226, -6.477226, -4.477226, -4.477226, 4.477226, 4.477226, 6.477226, 6.477226]
+      block sizes: [2, 2, 2, 2]
+      (iii) blocks on which R is NON-CONSTANT: 4
+      (iv)  max |Tr(P_E R)| over all eigenspaces = 1.226e-17
+      LANE CRITERION: admissible Pauli group size 4, # of them anticommuting with R = 0   -> PREDICTED: NOT a record
+      CONSTRUCTED U (non-Pauli, block-wise): unitary err 3.77e-15
+                                              ||[U,H]||     8.03e-15
+                                              ||U-dag R U + R|| 4.94e-15
+      -> clause (iv) HOLDS by explicit construction, with a witness that is NOT a Pauli.
+
+  --- CASE 3 ---  n = 2
+      H = 5*ZY  +  5*YY  +  2*IZ
+      R = XZ
+      (i)   ||R - R-dag|| = 0.00e+00   ||R^2 - I|| = 0.00e+00
+      (ii)  ||[H,R]|| = 0.00e+00
+      eigenvalues: [-7.348469, -7.348469, 7.348469, 7.348469]
+      block sizes: [2, 2]
+      (iii) blocks on which R is NON-CONSTANT: 2
+      (iv)  max |Tr(P_E R)| over all eigenspaces = 2.498e-16
+      LANE CRITERION: admissible Pauli group size 2, # of them anticommuting with R = 0   -> PREDICTED: NOT a record
+      CONSTRUCTED U (non-Pauli, block-wise): unitary err 1.57e-15
+                                              ||[U,H]||     4.07e-15
+                                              ||U-dag R U + R|| 1.42e-15
+      -> clause (iv) HOLDS by explicit construction, with a witness that is NOT a Pauli.
+
+VERDICT: the lane's PREDICTED column counts only PAULI witnesses.  On carriers where the
+witness must be non-Pauli, PREDICTED < MEASURED.  The '19 carriers, 19 agreements, 0
+exceptions' is a property of the 19 hand-picked carriers, not a general theorem.

@@ -26,6 +26,18 @@ PART 2 STEP A -- DO THE FIVE CLAUSES SURVIVE THE MEDIATOR?  Full ED on the NEW H
        g = 0     decoupled  3     64     3  True     0.000000000000   True        0.000000000000   True |        0.000000000000      True
        g = 0     decoupled  4    256     9  True     0.000000000000   True        0.000000000000   True |        0.000000000000      True
 
+READ (filled from the numbers above): clause (ii) is EXACTLY 0.000000000000 in every case, at
+      every parameter setting, because every record operator enters H only as Zr_i.  Clauses (i)
+      and (iii) hold everywhere.  Clause (iv) holds -- max|Tr P_E R_i| = 0.000000000000 -- for the
+      GAPLESS mediator, the GAPPED mediator, the DISORDERED mediator, the inserted-long-range
+      positive control, and the decoupled g=0 case.  IT FAILS, AND FAILS LOUDLY, FOR mu != 0:
+      max|Tr P_E R_i| = 2.000000000000 at m=3 and 3.000000000000 at m=4.  The D-15 control column
+      is non-zero for every case where a record passes, so the record column's zero is a
+      measurement.  NOTE the special point w = t = 1.0: there the YY coefficient vanishes, the
+      carrier degenerates, and the PAIR correlation Zr_0Zr_1 also passes the (iv) criterion -- the
+      O-47 structure collapses at that one point and it is excluded from the gapped analysis
+      everywhere below (p2c uses w <= 0.5 < t).
+
 --------------------------------------------------------------------------------------------------------------------------
 [A2] THE ADMISSIBLE WRITER, SEARCHED OVER THE FULL PAULI GROUP ON 2m QUBITS (4^(2m) elements).
      NEVER NOMINATED.  ADMISSIBLE := [U,H] = 0.  Energy cost of the write = ||U^dag H U - H||.
@@ -48,6 +60,18 @@ PART 2 STEP A -- DO THE FIVE CLAUSES SURVIVE THE MEDIATOR?  Full ED on the NEW H
       mu != 0   t=1 mu=0.3  4      65536                0                    -          nan         nan |                       0
        g = 0     decoupled  3       4096              128              XII|III  0.000000000  0.00000000 |                     128
        g = 0     decoupled  4      65536              512            XIII|IIII  0.000000000  0.00000000 |                     512
+
+READ (filled from the numbers above): an ADMISSIBLE writer for a single record is FOUND BY
+      EXHAUSTIVE SEARCH over the whole 4^(2m) Pauli group in every case except mu != 0.  The
+      example the search returns for the working cases is XXX|XXX -- the GLOBAL FLIP on records
+      and mediator together -- with ||[U,H]|| = 0.000000000 and write cost 0.00000000: THE WRITE
+      IS FREE.  For mu != 0 the search returns 0 admissible flippers out of 65536, matching the
+      trace criterion in [A1]: mu != 0 really does destroy clause (iv), it is not a numerical
+      artefact of one test.  D-15 CONTROL COLUMN: the same exhaustive search finds ZERO
+      admissible flippers of the PAIR Zr_0Zr_1 in every case where the mediator has real dynamics
+      and the coupling is on -- the O-47 structure survives the mediator.  It finds many when the
+      mediator is switched off (t=0), when g=0, and at the degenerate point w=t, and those three
+      are exactly the cases with no induced interaction to measure.
 
 [A3] EXACT STRUCTURAL STATEMENT (an argument, not a trend).  Every record operator Zr_i enters H
      only as Zr_i, so [H, Zr_i] = 0 for ANY parameters: clause (ii) is automatic and H is block

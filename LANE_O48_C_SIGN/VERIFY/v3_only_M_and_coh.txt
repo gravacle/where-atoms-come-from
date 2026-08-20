@@ -1,0 +1,65 @@
+========================================================================================================
+VERIFY-3A   IS M REALLY 'THE ONLY SIGN-DEFINITE EXTENSIVE QUANTITY'?
+            B(s) = E(s) + M is defined AND verified in the lane's own s3_structure.py.
+========================================================================================================
+
+  family       n       M  B>=0 on all 2^n  termwise coh(B)  #distinct B over 2^n    mean B  mean B(2n)/mean B(n)  record-blind?
+  uniform      7       6             True 1 (all terms >=0)                     7      6.00                     -    NO - varies
+  uniform      8       7             True 1 (all terms >=0)                     8      7.00                     -    NO - varies
+  uniform     13      12             True 1 (all terms >=0)                    13     12.00                     -    NO - varies
+  uniform     14      13             True 1 (all terms >=0)                    14     13.00                2.1667    NO - varies
+
+  randpos      7     216             True 1 (all terms >=0)                    52    216.00                     -    NO - varies
+  randpos      8     233             True 1 (all terms >=0)                    96    233.00                     -    NO - varies
+  randpos     13     434             True 1 (all terms >=0)                   373    434.00                     -    NO - varies
+  randpos     14     488             True 1 (all terms >=0)                   427    488.00                2.2593    NO - varies
+
+  randsign     7     180             True 1 (all terms >=0)                    59    180.00                     -    NO - varies
+  randsign     8     213             True 1 (all terms >=0)                    82    213.00                     -    NO - varies
+  randsign    13     400             True 1 (all terms >=0)                   345    400.00                     -    NO - varies
+  randsign    14     447             True 1 (all terms >=0)                   394    447.00                2.4833    NO - varies
+
+  decaying     7    7516             True 1 (all terms >=0)                    64   7516.00                     -    NO - varies
+  decaying     8    7618             True 1 (all terms >=0)                   128   7618.00                     -    NO - varies
+  decaying    13    7884             True 1 (all terms >=0)                  2772   7884.00                     -    NO - varies
+  decaying    14    7913             True 1 (all terms >=0)                  4092   7913.00                1.0528    NO - varies
+
+  READ: B is non-negative on every one of the 2^n configurations (C-46 termwise coherence
+  = 1 EXACTLY, at every configuration, not on average); its exact mean is M, so it is
+  extensive wherever M is; the lane's own additivity table shows its cut defect is exactly
+  one bond; and it takes THOUSANDS of distinct values over the configuration space, not one.
+  So the sentence 'the only sign-definite extensive quantity is M, which takes exactly ONE
+  value over all 2^n configurations' contradicts the lane's own s3 table.  What is true is
+  narrower: no energetic quantity depends on the single WRITABLE bit b -- and that follows
+  from [W,H]=0 alone, in one line, for any H whatsoever.
+
+========================================================================================================
+VERIFY-3B   THE sqrt(2/pi) m^(-1/2) CLOSED FORM IS THE UNIFORM-J CASE ONLY
+========================================================================================================
+
+  family        m    exact mean|E|  closed form m*C/2^(m-1)  equal?        coh  coh*sqrt(m)  [sqrt(2/pi)=0.797885]
+  uniform       8         2.187500                 2.187500    True   0.273438     0.773398
+  uniform      16         3.142090                 3.142090    True   0.196381     0.785522
+  uniform      32         4.478398                 4.478398    True   0.139950     0.791676
+  uniform      64         6.358192                 6.358192    True   0.099347     0.794774
+
+  randpos       8        86.656250                 2.187500   False   0.325775     0.921432
+  randpos      16       124.736572                 3.142090   False   0.221951     0.887805
+  randpos      32       175.507449                 4.478398   False   0.158687     0.897667
+  randpos      64       244.299404                 6.358192   False   0.112218     0.897747
+
+  randsign      8        72.531250                 2.187500   False   0.312635     0.884264
+  randsign     16       121.920288                 3.142090   False   0.218104     0.872417
+  randsign     32       156.579734                 4.478398   False   0.161256     0.912203
+  randsign     64       238.855573                 6.358192   False   0.112509     0.900068
+
+  decaying      8      5040.000000                 2.187500   False   0.654886     1.852296
+  decaying     16      5040.000000                 3.142090   False   0.631658     2.526632
+  decaying     32      5040.000000                 4.478398   False   0.620690     3.511151
+  decaying     64      5040.000000                 6.358192   False   0.616062     4.928493
+
+  READ: the closed form reproduces mean|E| ONLY for uniform J.  It is the mean absolute
+  displacement of an m-step simple random walk -- a textbook identity -- and the
+  sqrt(2/pi) constant is the CLT, not a property of records or of clause (iv).
+  The lane's own 'decaying' family flatly contradicts the headline scaling: coh*sqrt(m)
+  GROWS instead of settling at 0.7979, because sum|J_i| converges.

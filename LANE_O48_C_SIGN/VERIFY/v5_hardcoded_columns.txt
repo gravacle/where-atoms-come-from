@@ -1,0 +1,25 @@
+========================================================================================================
+VERIFY-5   THE (i) AND (ii) COLUMNS ARE DEFAULT-TRUE ABOVE n = 5
+========================================================================================================
+
+  operator       n   lane prints (ii)    truth   agree?   note
+  R = Z_0        3               True     True     True
+  R = Z_0        4               True     True     True
+  R = Z_0        5               True     True     True
+  R = Z_0        6               True     True     True
+  R = Z_0        8               True     True     True
+  R = Z_0       10               True     True     True
+  R = Z_0       12               True     True     True
+
+  R = X_0        3              False    False     True
+  R = X_0        4              False    False     True
+  R = X_0        5              False    False     True
+  R = X_0        6               True    False    False  <-- LANE PRINTS True FOR A FALSE CLAUSE
+  R = X_0        8               True    False    False  <-- LANE PRINTS True FOR A FALSE CLAUSE
+  R = X_0       10               True    False    False  <-- LANE PRINTS True FOR A FALSE CLAUSE
+  R = X_0       12               True    False    False  <-- LANE PRINTS True FOR A FALSE CLAUSE
+
+  READ: above n = 5 the lane's (ii) column returns True for ANY operator, including one
+  that does not commute with H at all.  In the reported 30-row clause table, 20 rows
+  (n = 6, 8, 10, 12 x 5 families) carry that untested True for clauses (i) and (ii).
+  Clauses (iii) and (iv) ARE computed at every n; (i) and (ii) are not.

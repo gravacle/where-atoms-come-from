@@ -8826,3 +8826,103 @@ between records is exactly what a source needs.**
 This answers the principal's standing question — *"are we importing an assumption and restriction
 that is not applicable at the record level?"* — in the strongest possible way: **the resolution
 requires no import, and the restriction was never there.**
+
+---
+
+## O-48 — **THE CORRELATION ENERGY IS NOT A SOURCE. AND "ADMISSIBLE ⟹ dE = 0" CLOSES THE ENTIRE ENERGY ROUTE AT ANY `N`.**
+
+Four probes, each adversarially verified. **Verdict: FAILS_SOURCE_FORM.**
+
+### 1. THE QUANTITY THAT ACCUMULATES IS RECORD-BLIND
+
+`S(n) = 2Σ|Jᵢ|` and `Var = Σ Jᵢ²`. **Neither ever touches a record operator.** And the decisive
+control: a carrier `H' = ΣJᵢZᵢZᵢ₊₁ + Σhᵢ Zᵢ` with distinct `hᵢ` has an entirely non-degenerate
+spectrum — **16/16, 64/64, 256/256, 1024/1024, 4096/4096 distinct energies** — so by P-1 it holds
+**ZERO records**, confirmed by the program's own routines (`clause_iii = False`, `max|Tr(P_E Zᵢ)| = 1`).
+
+> ### **ALL FOUR STANDARDS — EXTENSIVE, ADDITIVE, NOT-A-COUNT, SIGN-DEFINITE — PASS IDENTICALLY ON A
+> ### CARRIER THAT PROVABLY HOLDS NO RECORDS.** `S(2N)/S(N)` = 3.088, 2.337, 2.133, 1.983; additivity
+> defect exactly 0 with a live control at 1.83e12; 200 distinct `S` from 200 draws; C-46 ratio exactly
+> 1.000000.
+
+**And `S = 2‖H‖_op` and `Var = Tr(H²)/2ⁿ` exactly** — they are the spectral width and the normalised
+Hilbert–Schmidt norm of `H`. **Ordinary spectral norms, not record quantities.**
+
+**Its sign-definiteness is unfalsifiable as tested:** the C-46 ratio is `1.000000` for all-FM,
+all-AFM, alternating, random-sign, *and* a coupling set with `Σ Jᵢ` exactly 0 — **because
+`S = Σ2|Jᵢ|` takes the absolute value by hand.** No carrier in the family can fail it.
+
+### 2. THE RECORD-DEPENDENT QUANTITY CANCELS, BY CLOSED FORM
+
+`E(s) = Σ Jᵢ sᵢsᵢ₊₁`. Exact mean over configuration space is **exactly 0 as a rational at every `n`**,
+and coherence `= mean|E|/Σ|J| = √(2/π)·m^(−1/2)` — verified **digit for digit** against exact-rational
+DP to `m = 256` and out-of-sample at `m = 512, 1024, 4096` (`coh·√m = 0.797836` against
+`√(2/π) = 0.797885`). **The fraction of configurations cancelling more than half rises to 0.970 by
+`n = 20`.**
+
+> **It cancels MORE as records are added — C-46's screening signature, the same shape that
+> disqualified the integer intersection pairing. Ruled out BY FORM, immune to both objections.**
+
+### 3. **THE DEFINITIONAL OBSTRUCTION THAT CLOSES THE ENERGY ROUTE ENTIRELY**
+
+> ### **`[U,H] = 0` ⟹ `dE = 0` IDENTICALLY. ON ANY CARRIER, AT ANY `N`, NO ENERGY FUNCTIONAL CAN
+> ### RESPOND TO AN ADMISSIBLE WRITE.**
+
+Exhaustive Pauli scan, `n = 2..6`, three carriers: `max|dE|` over all admissible Paulis **exactly 0**;
+non-admissible control `1.29e12` to `1.06e13`.
+
+**This demotes O-47's headline from a finding to a tautology.** The writer was free **because every
+admissible writer is free, by definition** — not because the construction achieved something.
+
+**And O-47's phrasing is corrected:** the writer flips **all `n` records at once**, and **no admissible
+unitary of any kind flips one alone.**
+
+**With a non-existence proof, not a failed search:** no admissible unitary can change any pair
+correlation, because each `ZᵢZᵢ₊₁` is a **scalar on every 2-dimensional eigenspace**. **The energy
+"carried by the correlation" is carried by conserved charges that no writable operation can touch.**
+
+### 4. A D-18 SELF-CATCH: `n` RECORDS, ONE BIT
+
+Every eigenspace of the fully coupled chain has dimension **exactly 2** at every `n`, and the
+program's own `commuting_family` / `independently_writable` return **1 independent record regardless
+of `n`.** **The record count is extensive; the record information is not.**
+
+### 5. **CLAUSE (v) TESTED FOR THE FIRST TIME ANYWHERE IN THE PROGRAM — AND IT FAILS ON THE OPEN CHAIN**
+
+An **exact** criterion covering **every** unitary supported on the region (support condition +
+Frobenius–König + perfect matching), cross-checked against exhaustive Pauli search on **630** cases
+with **zero** disagreements.
+
+**The smallest contractible region whose admissible operations flip a record is exactly `w = n`, at
+every `n = 3..14`** — and in 1D the whole chain *is* a contiguous block. Controls fire: cutting one
+coupling drops it to the smaller component's size; `H = 0` drops it to 1.
+
+> **On the open chain these are NOT records in the full five-clause sense. Everything in O-42, O-44,
+> O-47 and all four O-48 lanes is scoped to clauses (i)–(iv).**
+
+**On a RING under the proper-arc reading, clause (v) HOLDS with distance `n`.** **Which reading is
+correct is a convention decision, not a measurement, and it is the principal's to make.** It decides
+whether this entire carrier family is admissible at all. Registered as **O-49**.
+
+### 6. THE ONE GENUINE POSITIVE — CRITERION (e)'s FORM, FIRST TIME IN THIS PROGRAM
+
+An **INDUCED** power law: `J_eff(r) → (−1)^(r+1)/(π·r)` on a **gapless** mediator. `t = 0` control
+**exactly 0 at every `r`, including `r = 1`**; three independent instruments; amplitude **`1/π =
+0.318310` exactly**.
+
+> ### **A POWER-LAW RECORD–RECORD FALLOFF, INDUCED RATHER THAN INSERTED, ON A GAPLESS MEDIATOR. THE
+> ### FIRST TIME THIS PROGRAM HAS EXHIBITED CRITERION (e)'s FORM AT ALL** — every previous falloff was
+> exponential (C-47's `ξ = 1.1250`). **But it is a pair coupling constant, not a source, and it screens
+> at `ln2/lnR`.**
+
+### REFUTED UNDER VERIFICATION
+
+- **Lane A's headline that (a)+(b)+(c)+(d) pass** — refuted as **record-blind** (§1).
+- **Lane A's claimed "exact structural obstruction"** that the spread cannot depend on separation in
+  *any* variant — **FALSE, tree-only.** On an all-pairs carrier, 300 permutations give **7, 41, 248**
+  distinct `S` values against the open-chain control's **1, 1, 1** in the same table. Withdrawn.
+- **A transcription error**: Lane A's S4 table as reported is **not its own data** — file and
+  recomputation give min 8.648892 / max 12.857377 where the finding reports 9.8688 / 12.0313, and
+  wide-family figures that appear nowhere in the output.
+- **Lane B's centrepiece** — that clause (iv) forces half filling and the period-2 alternation —
+  refuted by explicit counter-carrier.

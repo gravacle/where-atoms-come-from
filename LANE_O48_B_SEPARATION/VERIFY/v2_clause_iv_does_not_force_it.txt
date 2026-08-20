@@ -1,0 +1,68 @@
+==============================================================================================================================
+V2  DOES CLAUSE (iv) FORCE HALF FILLING / 2k_F = pi / PERIOD-2 ALTERNATION?
+    Counter-carrier: two mediator chains at OPPOSITE chemical potentials +-mu, records coupled
+    ON-SITE to both.  Nothing long-range inserted.  H = H_A(-mu) + H_B(+mu) - g sum Zr_i(ZA_i+ZB_i)
+==============================================================================================================================
+
+[V2a] CLAUSES (i)-(iv) ON THE COUNTER-CARRIER BY FULL DENSE ED, at mu = 0 AND mu != 0.
+      Clause (iv) is tested by the BASIS-INDEPENDENT criterion Tr(P_E R) = 0 on every eigenspace
+      -- the same criterion the lane uses in [A1], which given (i)+(ii) IS clause (iv).
+      D-15 CONTROL: the PAIR Zr_0 Zr_1 through the identical criterion; it must register NON-ZERO.
+      LAST COLUMN: the lane's own exhaustive 4^(3m) PAULI search for a flipper of Zr_0.
+------------------------------------------------------------------------------------------------------------------------------
+ m     mu    dim  #eig   (i)  (ii) max||[H,R]||  (iii)  (iv) max|Tr P_E R_i|  (iv)? |  CTRL pair |Tr P_E| ctrl(iv)? |  #adm PAULI flippers
+ 2   0.00     64    13  True     0.000000000000   True        0.000000000000   True |      8.000000000000     False |                   16
+ 2   0.30     64    19  True     0.000000000000   True        0.000000000000   True |      4.000000000000     False |                    0
+ 2   0.55     64    21  True     0.000000000000   True        0.000000000000   True |      4.000000000000     False |                    0
+ 3   0.00    512    59  True     0.000000000000   True        0.000000000000   True |     16.000000000000     False |                   32
+ 3   0.30    512   118  True     0.000000000000   True        0.000000000000   True |      8.000000000000     False |                    0
+ 3   0.55    512   118  True     0.000000000000   True        0.000000000000   True |      8.000000000000     False |                    0
+
+[V2b] AN EXPLICIT ADMISSIBLE WRITER ON THE COUNTER-CARRIER AT mu != 0.
+      U = (X on every record) (X on every mediator qubit) (SWAP chain A <-> chain B).
+      This is EXHIBITED, not nominated as evidence: clause (iv) above was established by the
+      basis-independent trace criterion.  U is shown only to make the mechanism visible, and
+      to prove that a Pauli-group search cannot see it (SWAP is not a Pauli).
+------------------------------------------------------------------------------------------------------------------------------
+ m     mu      ||[U,H]||   ||U^dag H U - H|| (write cost)   max_i ||U^dag Zr_i U + Zr_i||  U unitary?
+ 2   0.00   0.0000000000                     0.0000000000                    0.0000000000        True
+ 2   0.30   0.0000000000                     0.0000000000                    0.0000000000        True
+ 2   0.55   0.0000000000                     0.0000000000                    0.0000000000        True
+ 3   0.00   0.0000000000                     0.0000000000                    0.0000000000        True
+ 3   0.30   0.0000000000                     0.0000000000                    0.0000000000        True
+ 3   0.55   0.0000000000                     0.0000000000                    0.0000000000        True
+
+[V2c] THE INDUCED INTERACTION ON THE COUNTER-CARRIER.  The two chains are decoupled, so at
+      O(g^2)  J_eff(r) = -8 g^2 [ T^A(r) + T^B(r) ],  T^A at eps_F = +2mu, T^B at eps_F = -2mu.
+      PREDICTION from ordinary RKKY: oscillation at 2k_F with cos(k_F) = -eps_F/2, i.e. period
+      2*pi/(2k_F) sites -- which is 2 ONLY at eps_F = 0.  D-15 controls: mu=0 row must give
+      strict period-2 alternation (it is the lane's own case), and a t=0 mediator must give zero.
+------------------------------------------------------------------------------------------------------------------------------
+    mu   eps_F  filling A  filling B      2k_F  period 2pi/2k_F  clause (iv)   sign pattern of J_eff, r=1..28  strict +-+- ?
+  0.00    0.00   0.500000   0.500000   3.14159          2.00000        HOLDS     +-+-+-+-+-+-+-+-+-+-+-+-+-+-           True
+  0.15    0.30   0.547852   0.452148   3.44273          1.82506        HOLDS     +-+-++-+-+-+-+--+-+-+-+-++-+          False
+  0.30    0.60   0.597168   0.402832   3.75098          1.67508        HOLDS     +--+-+--+-+--+-+--+-+-++-+-+          False
+  0.55    1.10   0.685547   0.314453   4.30632          1.45906        HOLDS     ++--+--+--+--++-++-++--+--+-          False
+   t=0       -          -          -         -                -        HOLDS               (J = 0 at every r)            n/a
+
+[V2d] IS THE COUNTER-CARRIER'S FALLOFF STILL A POWER LAW OF EXPONENT 1?
+      envelope |J_eff(r)| * r on the clean window, mu = 0.30.
+------------------------------------------------------------------------------------------------------------------------------
+    r       J_eff(r)/g^2        |J|*r
+    1    4.277619891e-01     0.427762
+    2   -8.859691863e-02     0.177194
+    3   -6.542970886e-02     0.196289
+    4    1.280993040e-01     0.512397
+    6    9.322425664e-02     0.559346
+    8   -1.562408602e-02     0.124993
+   12   -2.740691269e-02     0.328883
+   16    3.791794626e-02     0.606687
+   24    1.277224214e-02     0.306534
+   32   -1.579822214e-02     0.505543
+   48    6.529565192e-03     0.313419
+   64   -2.423975583e-03     0.155134
+   96    2.287527386e-03     0.219603
+  128    3.565189813e-03     0.456344
+
+      C-46 ratio |sum J|/sum|J| on the counter-carrier (R=64, m=2048): 0.170123013
+      lane's one-chain mu=0 value for the same R: 0.155459834

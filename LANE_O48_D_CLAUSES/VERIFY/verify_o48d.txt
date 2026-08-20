@@ -1,0 +1,180 @@
+==============================================================================================================
+A.  CLAUSES (i)-(iv) FOR EVERY Z_i -- INDEPENDENT RE-IMPLEMENTATION, EXACT INTEGERS
+==============================================================================================================
+  set    n   #eigsp  #(iii)  #(iv)   max|Tr(P_E Z_i)|  flip-pairing exact?
+  UNI    2        2       2      2                  0                 True
+  UNI    4        4       4      4                  0                 True
+  UNI    6        6       6      6                  0                 True
+  UNI    8        8       8      8                  0                 True
+  UNI   10       10      10     10                  0                 True
+  UNI   12       12      12     12                  0                 True
+  UNI   14       14      14     14                  0                 True
+  UNI   16       16      16     16                  0                 True
+  GEN    2        2       2      2                  0                 True
+  GEN    4        8       4      4                  0                 True
+  GEN    6       32       6      6                  0                 True
+  GEN    8      128       8      8                  0                 True
+  GEN   10      512      10     10                  0                 True
+  GEN   12     2048      12     12                  0                 True
+  GEN   14     8192      14     14                  0                 True
+  GEN   16    32768      16     16                  0                 True
+  RND    2        2       2      2                  0                 True
+  RND    4        8       4      4                  0                 True
+  RND    6       32       6      6                  0                 True
+  RND    8      122       8      8                  0                 True
+  RND   10      352      10     10                  0                 True
+  RND   12      713      12     12                  0                 True
+  RND   14      983      14     14                  0                 True
+  RND   16     1085      16     16                  0                 True
+
+  CONTROL, same instrument, H + 1*Z_0 (breaks the global flip):
+   n=  4  #eigsp=     5  #(iv)=0  max|Tr|=6
+   n=  8  #eigsp=     9  #(iv)=0  max|Tr|=70
+   n= 12  #eigsp=    13  #(iv)=0  max|Tr|=924
+
+==============================================================================================================
+B.  ADMISSIBLE WRITER -- EXHAUSTIVE 4^n SEARCH, MY OWN CODE.  Was it searched or nominated?
+==============================================================================================================
+  set    n  #admissible  minwt flip Z_0  #recs it flips   minwt flipping ONLY Z_0
+  UNI    2            8               2               2                      NONE
+  UNI    3           16               3               3                      NONE
+  UNI    4           32               4               4                      NONE
+  UNI    5           64               5               5                      NONE
+  UNI    6          128               6               6                      NONE
+  UNI    7          256               7               7                      NONE
+  UNI    8          512               8               8                      NONE
+
+  GEN    2            8               2               2                      NONE
+  GEN    3           16               3               3                      NONE
+  GEN    4           32               4               4                      NONE
+  GEN    5           64               5               5                      NONE
+  GEN    6          128               6               6                      NONE
+  GEN    7          256               7               7                      NONE
+  GEN    8          512               8               8                      NONE
+
+==============================================================================================================
+C.  THE QUANTITY THE LANE CALLED EXTENSIVE.  Lane code (o48_part5_standard.py line 49):
+      def S(m):  if kind=='UNI': return float(m-1)
+    i.e. S(n) = number of bonds.  NO record configuration enters.  Two attacks:
+==============================================================================================================
+
+  C1  IS THE EXTENSIVITY RATIO A PURE FUNCTION OF n (a count in coupling units)?
+          n   lane S(2n)/S(n)   (2n-1)/(n-1)  identical?  ratio for J=7  ratio for J=2^i
+          4          2.333333       2.333333         YES       2.333333        18.142857
+          8          2.142857       2.142857         YES       2.142857       258.007874
+         16          2.066667       2.066667         YES       2.066667     65538.000031
+         32          2.032258       2.032258         YES       2.032258 4294967298.000000
+         64          2.015873       2.015873         YES       2.015873 18446744073709551616.000000
+        128          2.007874       2.007874         YES       2.007874 340282366920938463463374607431768211456.000000
+        256          2.003922       2.003922         YES       2.003922 115792089237316195423570985008687907853269984665640564039457584007913129639936.000000
+      -> for every uniform coupling the ratio is EXACTLY (2n-1)/(n-1), independent of the
+         coupling value.  The 'extensive quantity' is the BOND COUNT times an inserted scale.
+
+  C2  IS IT RECORD-BLIND?  S is evaluated on ONE configuration (the ground one).  The
+      source-relevant quantity is E(s) for an ARBITRARY record configuration s.
+      Exact enumeration over all 2^n configurations, integers (D-19).
+
+          J    n   |E| ground  mean|E| over configs  mean|E|(2n)/mean|E|(n)  median|E|
+        UNI    4          3.0                1.5000                     nan        1.0
+        UNI    8          7.0                2.1875                  1.4583        1.0
+        UNI   10          9.0                2.4609                     nan        3.0
+        UNI   12         11.0                2.7070                     nan        3.0
+        UNI   16         15.0                3.1421                  1.4364        3.0
+        UNI   20         19.0                3.5239                  1.4320        3.0
+
+        GEN    4          7.0                4.0000                     nan        4.0
+        GEN    8        127.0               64.0000                 16.0000       64.0
+        GEN   10        511.0              256.0000                     nan      256.0
+        GEN   12       2047.0             1024.0000                     nan     1024.0
+        GEN   16      32767.0            16384.0000                256.0000    16384.0
+        GEN   20     524287.0           262144.0000               1024.0000   262144.0
+
+        RND    4        212.0              159.0000                     nan      159.0
+        RND    8        787.0              267.2812                  1.6810      238.0
+        RND   10        809.0              258.8281                     nan      229.0
+        RND   12        932.0              271.2930                     nan      240.0
+        RND   16       1212.0              298.4893                  1.1168      256.0
+        RND   20       1824.0              404.5513                  1.5630      346.0
+
+      sqrt(2) = 1.414214.  A quantity that is EXTENSIVE has this ratio -> 2.
+
+  C3  DOES S KNOW WHAT IS WRITTEN?  Change the record configuration, hold H fixed.
+      n=12, UNI.  |E| takes 6 distinct values over 2^n configs;
+      sum_i|J_i| = 11 is ONE number and does not move at all.  The 'extensive'
+      quantity is a function of H alone -- it is the same whatever record is written.
+      fraction of record configurations with |E| >= (n-1)/2 : 0.065430
+
+==============================================================================================================
+D.  (e1) 'PERFECT LONG-RANGE ORDER, |<Z_iZ_j>| = 1 AT EVERY d'.  D-17: vary the venue scale.
+==============================================================================================================
+
+ J set    n  #pairs   #definite on EVERY eigsp   min |<Z_iZ_j>| over eigsp
+   GEN   12      66                         66                    1.000000
+   RND   12      66                          0                    0.000000
+   UNI   12      66                          1                    0.018182
+
+  AND: on GEN every eigenspace is 2-dimensional, so EVERY even-parity Z-word is definite,
+  record or not.  Test a NON-record 4-body word Z_0Z_1Z_2Z_3 and a 6-body one:
+   GEN  word Z(0, 1, 2, 3)  min|<.>| over eigenspaces = 1.000000  definite everywhere = True
+   GEN  word Z(0, 3, 7, 11)  min|<.>| over eigenspaces = 1.000000  definite everywhere = True
+   GEN  word Z(0, 1, 2, 3, 4, 5)  min|<.>| over eigenspaces = 1.000000  definite everywhere = True
+   UNI  word Z(0, 1, 2, 3)  min|<.>| over eigenspaces = 0.018182  definite everywhere = False
+   UNI  word Z(0, 3, 7, 11)  min|<.>| over eigenspaces = 0.018182  definite everywhere = False
+   UNI  word Z(0, 1, 2, 3, 4, 5)  min|<.>| over eigenspaces = 0.030303  definite everywhere = False
+
+==============================================================================================================
+E.  CLAUSE (v) REGION SWEEP -- INDEPENDENT PAULI SEARCH ON CONTIGUOUS WINDOWS
+==============================================================================================================
+
+      geom     J    n    smallest w whose admissible ops flip some Z_i inside it
+      OPEN   UNI    4                                                          4
+      OPEN   UNI    5                                                          5
+      OPEN   UNI    6                                                          6
+      OPEN   UNI    7                                                          7
+      OPEN   GEN    4                                                          4
+      OPEN   GEN    5                                                          5
+      OPEN   GEN    6                                                          6
+      OPEN   GEN    7                                                          7
+      RING   UNI    4                                              NONE (w<=n-1)
+      RING   UNI    5                                              NONE (w<=n-1)
+      RING   UNI    6                                              NONE (w<=n-1)
+      RING   UNI    7                                              NONE (w<=n-1)
+      RING   GEN    4                                              NONE (w<=n-1)
+      RING   GEN    5                                              NONE (w<=n-1)
+      RING   GEN    6                                              NONE (w<=n-1)
+      RING   GEN    7                                              NONE (w<=n-1)
+
+==============================================================================================================
+F.  D-22 AUTOMORPHISM RECOUNT (brute force over n!)
+==============================================================================================================
+   n    UNI    GEN    RND
+   4      2      1      1
+   5      2      1      1
+   6      2      1      1
+   7      2      1      1
+
+==============================================================================================================
+G.  IS EVERY NUMBER THE TEXTBOOK 1D ISING Z_2 SYMMETRY / REPETITION CODE?
+==============================================================================================================
+
+  G1  the closed form for the record count.  Admissible Paulis: X^a Z^b commutes with every
+      Z_iZ_{i+1} iff a_i = a_{i+1}, i.e. a = 0 or a = 1...1.  So the admissible group is
+      {Z^b} u {X^(1..1) Z^b}, dimension n+1.  R is a record iff SOME admissible W anticommutes:
+      Z^b works iff |b| is odd (2^(n-1) of them); X^(1..1)Z^b always works (2^n of them).
+      PREDICTED CLOSED FORM  #records = 3*2^(n-1).
+
+         n   3*2^(n-1)    brute-forced count (i)-(iv) on the dense spectrum
+         3          12                                                   12
+         4          24                                                   24
+         5          48                                                   48
+         6          96                                                   96
+
+  G2  clause (iv) for Z_i is the Ising Z_2 spin-flip symmetry, nothing else.  The map
+      s -> -s is a fixed-point-free involution preserving every ZZ term, so it pairs each
+      eigenspace with itself and sends Z_i -> -Z_i.  Verified above in column
+      'flip-pairing exact?' -- True on every row.  Tr(P_E Z_i) = 0 is forced.
+
+  G3  the writer X^(x)n of weight n, protection distance n, and 'the whole chain is
+      contractible in 1D' are the textbook statements that the 1D repetition code has
+      distance n and that 1D has no topological order.  The lane concedes this in its own
+      caveat 8 ('a repetition code, which is what H = sum J Z_iZ_{i+1} turns out to be').

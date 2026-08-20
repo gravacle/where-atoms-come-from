@@ -1,0 +1,37 @@
+========================================================================================================
+VERIFY-2   THE LANE'S 'ENERGY' BOX COUNTS OBSERVABLES DETERMINED BY E, NOT OBSERVABLES
+           THAT CARRY ENERGY.  Exact mutual information, same sweep, same observables.
+========================================================================================================
+
+  family       n    2^n  lane: energy-only   #obs with I(O;E)>0  #records w/ I>0  max I over records  max I over I>0 set
+  superinc     7    128                 63                   63                0            0.000000            1.000000
+  superinc     9    512                255                  255                0            0.000000            1.000000
+  superinc    11   2048               1023                 1023                0            0.000000            1.000000
+  superinc    13   8192               4095                 4095                0            0.000000            1.000000
+
+  randpos      7    128                  7                   63                0            0.000000            1.000000
+  randpos      9    512                  1                  255                0            0.000000            1.000000
+  randpos     11   2048                  1                 1023                0            0.000000            1.000000
+  randpos     13   8192                  1                 4095                0            0.000000            1.000000
+
+  uniform      7    128                  1                   63                0            0.000000            1.000000
+  uniform      9    512                  1                  255                0            0.000000            1.000000
+  uniform     11   2048                  1                 1023                0            0.000000            1.000000
+  uniform     13   8192                  1                 4095                0            0.000000            1.000000
+
+  randsign     7    128                 15                   63                0            0.000000            1.000000
+  randsign     9    512                  3                  255                0            0.000000            1.000000
+  randsign    11   2048                  1                 1023                0            0.000000            1.000000
+  randsign    13   8192                  1                 4095                0            0.000000            1.000000
+
+  READ: for the degenerate families the lane's 'energy-only' box holds 1 observable out of
+  8192 while thousands of observables have strictly positive I(O;E).  The box is a
+  determinism test, not an energy-content test, and 'the other three boxes are populated'
+  is a statement about that determinism test only.
+
+  THE ONE THING THAT IS TRUE, AND IT IS TWO LINES OF ALGEBRA, NOT A SWEEP:
+  clause (iv) says Tr(P_E O)=0 on every eigenspace.  For a +-1-valued O that is exactly
+  #(O=+1 | E) = #(O=-1 | E) in EVERY block, i.e. P(O=+1|E)=1/2 for every E, i.e. I(O;E)=0.
+  The column '#records with I>0' above is 0 for that reason and for no other; it is the
+  framework's own stated equivalence for clause (iv) restated, true at every n with no
+  computation, and it needs neither 67 million pairs nor an Ising chain.
