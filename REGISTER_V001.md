@@ -9996,3 +9996,27 @@ separation — which norm the record's physics selects is open). **Next step nam
 the plan (phase E) — the masslessness increment.** Caveats carried verbatim from the lane: the
 exponent is a bracket statement with finite-d drift honestly reported, not a symbolic derivation;
 nothing in Γ yet places μ at criticality.
+
+---
+
+## T-9 — **THE CARRIER AUDIT IS APPLIED: EVERY FORMAL, PROVED, AND MEASURED ROW NOW SAYS WHAT CARRIES IT.** The reopened task closes on its own DONE_WHEN, honestly.
+
+Six probes over all 146 rows in scope, defaulting to SINGLE-CARRIER (the external review reopened
+this task precisely because two-carrier support was overclaimed); every TWO-CARRIER claim attacked
+by an adversarial refuter checking that the cited evidence exists, concerns the row's actual result,
+and the carriers are structurally different — same model at another size or parameter set never
+counts. **Verdicts: SINGLE-CARRIER 111 · TWO-CARRIER 21 · NOT-CARRIER-SHAPED 14.** Coverage
+146/146, no duplicates. Full table with per-row evidence pointers and kept refutation reasons:
+`LANE_T9_AUDIT/T9_carrier_audit.tsv`.
+
+**The marks that matter most:** the two PROVED rows — C-71 and C-72 — are **TWO-CARRIER**
+(NAND-floating-gate; macrospin-CoCrPt), independently reconfirming the PROOF bar's own requirement.
+C-69 and C-70 are marked SINGLE-CARRIER (macrospin): the audit found C-70's six-mechanism table is
+six parameter sets of ONE two-state GKSL build — consistent with the solidity review's earlier
+demotion, now visible in the ledger. Refuters demoted several claimed second carriers to weakened
+spot-checks (e.g. C-88's 2-D lattice is a dimension discriminator, not a second venue for the
+screening gates; O-15's bath-size result lives on [[5,1,3]] alone).
+
+**Consequence: T-15 UNBLOCKS** — the three-roles statement can now cite carrier-marked rows, and
+T-16's "no step resting on a single carrier unless marked" is enforceable by grep. The marks feed
+PROCESS_V002's standing debt directly.
