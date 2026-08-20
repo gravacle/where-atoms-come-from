@@ -1,0 +1,107 @@
+LANE T44_A -- D-24 AUDIT TABLE.  Every concept used: EARNED (with the computation that
+earned it), DECLARED (the tier's parameter), or BORROWED/OWNED (attributed, and then
+either re-verified before use or confined to comparison blocks).
+
+CONCEPT                  STATUS    HOW
+-----------------------  --------  ----------------------------------------------------------
+mu (per-link amplitude)  DECLARED  the coupling/alpha tier's ONE parameter; swept over
+                                   declared rational values; never fitted, never tuned to
+                                   a target; every class label is a computed boolean.
+admissible string /      EARNED    O-54-C landscape (w_min = d, N_min) re-run in-lane by
+coupling writer                    the same exhaustive coset scan (C-78 instrument
+                                   lineage, imported at runtime from o54c_lib.py); the
+                                   walk model's minimal stratum gated EQUAL in weight AND
+                                   count on every pair of both venues BEFORE any sum.
+venue's own walk         EARNED    plaquette adjacency computed from plaquette supports
+lattice                            (shared carrier edges), no geometry imported; row sums
+                                   = 4 computed; BFS distance == d_gen (the C-78 earned
+                                   separation) gated on every pair.
+G_mu(d) (walk sum)       EARNED    exact integer transfer-matrix counts on the venue;
+                                   Z^2 sector reached ONLY through the universal-cover
+                                   wrap identity, gated exactly on all sites, k <= 22;
+                                   the measured G verified to solve the venue's own
+                                   resolvent identity within tail bounds.
+mu_c (criticality)       EARNED    LOCATED BY COMPUTATION, method declared: radius of
+                                   convergence of the positive series = 1/spectral
+                                   radius; Perron/Gershgorin row-sum sandwich on the
+                                   venue (exact); binomial sandwich 16^m/(2m+1)^2 <=
+                                   N_2m(0,0) <= 16^m on the sector (both sides gated);
+                                   venue resolvent verified singular exactly at 1/4 and
+                                   nonsingular beside it.  The 1D venue returns its own
+                                   1/2 by the same instrument: nothing imported.
+earned dimension         EARNED    enters ONLY as the venue itself (D=2 carrier, D=1
+                                   control venue); no dimension-dependent formula on the
+                                   measurement path (C-78: dimension = computed content
+                                   degree of the carrier, standing result).
+decay-class labels       EARNED    computed booleans over exact rationals with thresholds
+                                   declared in the driver header before measurement:
+                                   ratio tests, d(1-r) power exclusion (scope p <= 8
+                                   declared), doubling-increment windows [4/5,5/4] vs
+                                   [9/5,11/5] (disjoint), Cauchy stabilization.  NO FITS.
+truncation tails         EARNED    every partial sum carries a PROVEN bound: geometric
+                                   (4mu)^{K+1}/(1-4mu) from the gated total count 4^k;
+                                   critical tails (u^2+v^2)/(4K) and d^2/(2 sqrt(2M))
+                                   from lemmas L1 (central-binomial max), L2 (Wallis,
+                                   exact induction step), L3 (telescoping ratio), each
+                                   re-verified computationally in Section 1 before use;
+                                   assembled bound confirmed exactly on k <= 2000.
+rotation bijection       BORROWED  N_k = product of two binomials (owner: standard
+(walk counts)                      combinatorics, Feller I); GATED against brute-force
+                                   DP (k <= 16, all endpoints) and against the torus
+                                   counts through the wrap identity before use.
+Wallis bound             BORROWED  classical; induction step (2m+1)(2m+3) <= (2m+2)^2
+                                   verified exactly (it is 4m^2+8m+3 <= 4m^2+8m+4).
+Perron / Gershgorin      BORROWED  standard linear algebra; applied only through exact
+                                   row-sum computations on the venue.
+Green's function /       BORROWED  Spitzer 1964, Lawler; marginality of D<=2: Polya
+potential kernel                   1921; kernel asymptotics (2/pi)ln d + kappa: Stohr
+asymptotics                        1950 / Spitzer / McCrea-Whipple 1940; Ornstein-
+                                   Zernike subcritical rate cosh(kappa) = 1/(2mu)-1.
+                                   ALL confined to labeled COMPARISON gates that run
+                                   AFTER each class label was computed; sqrt enters
+                                   only as certified isqrt brackets.  The computed
+                                   kernel anchors contain the exact owner values
+                                   a(1,1) = 4/pi, a(2,0) = 4 - 8/pi.
+confinement cost mu^d    EARNED    leading term of G_mu gated as N_min mu^d on every
+(w_min = d)                        pair (walk stratum == coset stratum); attribution of
+                                   the confinement character: Wegner/Wilson (standing
+                                   result C-80/O-54, cited, not re-derived).
+weight enumerator        EARNED    full 2^22 exhaustive histogram per (3,7) pair (numpy
+(true ensemble)                    popcount, exact ints); minimum reproduces (d, N_min);
+                                   support of strata {d, d+1, d+2} gated equal to the
+                                   venue walk-count support (wrap classes included).
+gravitational form       NOT USED  (D-1) Newton appears NOWHERE in this D=2 lane, not
+                                   even in comparison: the D=2 critical class is log,
+                                   and the 1/d question is named as belonging to the
+                                   D=3 world venue only in the taxonomy text.
+entropy / information    NOT USED
+horizon, temperature     NOT USED
+
+RELEVANCE TEST (borrowed idea -> named variable, per the standing register discipline):
+the borrowed random-walk/Green's-function machinery is applied to the named variable
+G_mu(d) -- the Gamma-priced sum over admissible coupling writers -- and to no other
+quantity; mu is the declared price per link.  It informs COMPARISONS only.
+
+D-15 CONTROLS RUN (all computed booleans):
+  * sub- AND super-critical rows beside the critical row (4 + 2 rows, 2D);
+  * near-critical row (mu = 249/1000, d to 73): exponential class holds while the rate
+    weakens toward the computed mu_c; monotone degeneration gated;
+  * 1D chain venue: class differs at criticality (LINEAR kernel vs 2D LOG kernel,
+    disjoint windows); subcritical 1D is PURELY exponential (no prefactor) while 2D
+    carries the computed drifting-ratio prefactor -- same instrument distinguishes them;
+  * mu = 1/4 is critical on the D=2 venue and subcritical on the D=1 venue: mu_c is the
+    venue's own computed number;
+  * true-ensemble weight enumerator beside the walk model (leading strata agree;
+    excess attributed to computed wrap structure).
+
+CORRECTION LOG (errors belong in the record): the first sealed-candidate run declared a
+true-ensemble excess tolerance of 1/4; its S7 gate FAILED on (3,7) pairs whose earned d
+approaches the venue's wrap scale (excess to 0.73 at d=4).  Attribution computed: the
+small non-bipartite torus holds wrap-class strata at weight d+1, visible identically in
+the venue walk counts (support gate added).  Claims corrected to argmax/majority/support
+form; the correction is logged here and in the driver header; no sealed output preceded
+it.
+
+NO NARRATED VERDICTS: all 70 PASS/FAIL lines in t44a_corner.OUT.txt are computed
+booleans.  No floats on the measurement path.  Deterministic: rerun byte-identical
+(VERIFY/rerun diff empty).  Returns are DATA (t44a_corner.RESULT.json).

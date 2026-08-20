@@ -9846,3 +9846,31 @@ Charap–Lu–He and Weller–Moser own the symmetric corner; Preisach–Néel o
 margin-free integer census stated as a LAW, and the departure term `Σ_dead tanh(dEᵢ/2kT)` — remanence
 persists while records die.** Falsifiable today on JEDEC-class MLC bake data and exchange-biased
 media grain censuses. **Grade FORMAL; PROVED awaits the external-data run.**
+
+---
+
+## T-44 — **C-77's THIRD INCREMENT, SATISFIED AT FAMILY LEVEL. The critical identity IS the Poisson equation, and the Newton profile lives at exactly one computed design point.**
+
+**The reachable classes (C-87), each located by computation:** exponential below `μ_c` (the
+confinement cost `N_min·μ^d`, gated against the true `2²²` Γ-coset); **at `μ_c` exactly — computed
+three independent ways — the earned dimension's OWN point-source potential and nothing else**, because
+`μ_c = 1/deg` turns the gated resolvent identity into **the venue's discrete Poisson equation**;
+divergent above. Computed **linear** in D=1, **marginal/log** in D=2 (brackets containing the exact
+Spitzer anchors) — and the two critical kernels occupy **disjoint windows**, so the critical class is
+the venue's own, proved by the cross-dimension discriminator. **The D=3 member (`1/d`) is
+owner-attributed, not computed** — its probe overflowed and is in re-run (O-58 N1).
+
+**The composition facts (C-88):** superposition is a property of the **admissibility rule** — exact
+per-order integer identity under endpoint transparency, strictly subadditive under opacity; the
+mediator kernel is positive everywhere so **occupancy can only accumulate and orientation screens**;
+shadowing exists only under opacity and equals a **lengthening of earned separation**.
+
+> ### **THE NEWTON COMPOSITION PROFILE — exact superposition, one-signed accumulation, no screening,
+> ### no shadowing — IS REACHED AT EXACTLY ONE DESIGN POINT: R1 + OCCUPANCY.** Orientation gives the
+> EM-like two-signed screenable profile.
+
+**The judge's verdict on Newton: NEITHER** — writing MATCHES would substitute an owner for a
+computation, the move D-24 forbids. **Three pieces stand (O-58):** the D=3 row; **masslessness** —
+with the labeled hypothesis that `μ_c = 1/deg` is the *measure-conserving* writer normalization, so
+if Γ's writer kernel conserves measure, **masslessness is measure conservation, not tuning**; and
+whether the surface enforces the design point.

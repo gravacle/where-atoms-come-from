@@ -1,0 +1,85 @@
+LANE T44_A -- EXPONENT CLASSES OF A GAMMA-CONSTRAINED COUPLING, CORNER TIER (earned D = 2).
+
+QUESTION (T-44): a coupling between records at earned separation d must be implemented
+through operators the surface allows, and Gamma prices them (w_min = d, O-54-C / C-80).
+Which decay classes can the effective coupling G_mu(d) reach?
+
+MODEL (declared): G_mu(d) = sum over admissible connecting strings of mu^weight, with mu
+the coupling/alpha tier's ONE declared parameter (per-link amplitude), computed EXACTLY
+as the transfer-matrix walk sum on the venue's own lattice -- the plaquette-adjacency
+graph of the toric carrier, built from the plaquette supports alone (one walk step = one
+shared carrier edge = one unit of writer weight).  Before any sum, the walk model's
+minimal stratum is gated EQUAL, in weight AND count, to the exhaustive admissible-writer
+coset of O-54-C on both venues ((4,6) and (3,7), every pair): the leading term of G_mu
+is N_min mu^d -- the confinement cost -- as the venue's own fact.  A full coset weight
+enumerator (2^22 exhaustive per pair) checks the strata beyond the minimum.
+
+VENUES: toric carriers (4,6) and (3,7) (O-54-C's venues; instruments imported at runtime
+from LANE_O54_C_ATTEMPT/o54c_lib.py, C-78 lineage); their dual walk lattices; the Z^2
+sector reached exactly through the universal-cover wrap identity (gated on all sites);
+a 1D cycle/chain venue as the D-15 class-must-differ discriminator.  Exact arithmetic
+only (ints, Fractions, isqrt brackets); no floats on the measurement path; every
+truncation carries a PROVEN tail bound whose supporting lemmas (L1 central-binomial max,
+L2 Wallis, L3 telescoping ratio) are re-verified computationally before use.
+
+mu_c LOCATED BY COMPUTATION (declared method): radius of convergence of the positive
+walk series = 1/spectral radius of the transfer matrix.  On the venue: row sums exactly
+4, A.1 = 4.1 (Gershgorin + Perron) => mu_c = 1/4 EXACT; the venue resolvent (I - mu A)
+is verified singular at mu = 1/4 by exact Gaussian elimination and nonsingular beside it.
+On the sector: 16^m/(2m+1)^2 <= N_2m(0,0) <= 16^m (both gated) => radius exactly 1/4.
+The 1D venue returns ITS OWN mu_c = 1/2 by the same instrument: the critical point is a
+computed venue number, dimension-dependent, never imported.
+
+RESULTS (classes emitted by computed booleans; declared thresholds in the driver header):
+  mu < 1/4 (rows 1/8, 1/5, 23/100, 249/1000; exact partial sums + exact geometric
+  tails; d to 16, near-critical row to 73):  EXPONENTIAL.
+    EXP-1 every ratio G(d+1)/G(d) uniformly below 1 - 1/20;
+    EXP-2 d(1-r) exceeds 8 (excludes every power law d^-p, p <= 8: declared scope);
+    EXP-3 ratios stabilized (Cauchy within 1/40).
+    The measured G solves the venue's own resolvent identity within tail bounds.
+    Owner comparison (only after the class was computed): r approaches
+    c - sqrt(c^2-1), c = 1/(2mu)-1 (Ornstein-Zernike lattice asymptotics), within 1/25
+    on every row.  The rate weakens monotonically along the sweep: the exponential
+    family degenerates exactly at the computed mu_c.
+  mu = 1/4 EXACTLY: G ITSELF DIVERGES -- marginally: S_16384(0,0) = 3.93 >= certified
+    harmonic lower bound 2.40, quadrupling increments >= 1/4 non-shrinking, term bound
+    p_2m(0,0) >= 1/(4m) proven by exact ratio induction (owner of the phenomenon:
+    Polya 1921).  The finite object is the regularized kernel
+    a(d) = sum (N_k(0) - N_k(d))/4^k (K = 24000, proven tails (u^2+v^2)/4K):
+    doubling increments CONSTANT (ratios inside [4/5, 5/4], axis and diagonal agreeing
+    within 1/20) => LOGARITHMIC kernel; NOT linear, NOT a power (windows excluded).
+    Owner comparison: largest increment [0.4380, 0.4447] vs (2/pi)ln2 = 0.441271
+    (Stohr 1950 / Spitzer 1964).  Computed anchors contain the exact owner values
+    a(1,1) = 4/pi and a(2,0) = 4 - 8/pi.  THE D=2 CRITICAL CLASS IS MARGINAL/LOG --
+    the earned dimension's own lattice Green's-function class; no power law in D=2,
+    none forced.
+  mu > 1/4 (rows 26/100, 1/3): DIVERGENT term-by-term (single-term witnesses > 10^6,
+    growing term ratios, injection N_k(d) >= N_{k-2d'}(0,0)): no mediated coupling in
+    the venue limit.
+  1D DISCRIMINATOR: subcritical rows PURELY exponential (ratio constant in d to spread
+    < 10^-6, solving mu r^2 - r + mu = 0 exactly); mu = 1/4 -- the D=2 critical value --
+    is subcritical HERE; critical kernel LINEAR (doubling ratio in [9/5, 11/5], vs the
+    2D window [4/5, 5/4]: DISJOINT): the critical class differs across earned dimension.
+  TRUE-ENSEMBLE CONTROL (3,7): the coset weight enumerator's minimum reproduces
+    (w_min = d, N_min) on every pair; the low strata {d, d+1, d+2} are populated
+    exactly where the venue's walk counts are (including the odd-parity wrap classes of
+    this small non-bipartite torus); at mu = 1/8 the minimal stratum is the argmax
+    stratum and majority holder of G_true on every pair.  A finite venue's coset sum is
+    a polynomial (always finite): the supercritical divergence is the venue-limit
+    statement.  In-lane correction logged: the first run's excess tolerance (1/4)
+    ignored the wrap strata; corrected to the argmax/majority/support claims.
+
+HYPOTHESIS (stated to fail) AGAINST THE COMPUTATION:
+  (a) exponential decay below critical: CONFIRMED.
+  (b) at criticality a power law fixed by the earned dimension: the critical member IS
+      the earned dimension's Green's-function class, and in D=2 that class is
+      MARGINAL/LOG, not a power.  The 1/d question transfers to the D=3 world venue.
+  (c) nothing else: no further class appeared in the swept family.
+
+NEXT STEP (named): what earns criticality -- mu_c is a computed venue number (1/4 here,
+1/2 on the chain); the record holds no Gamma-internal reason yet for mu to sit AT mu_c
+(masslessness).  That, and the D=3 world venue's critical class, are the next pieces.
+
+FILES: t44a_lib.py (instruments), t44a_corner.py (driver), t44a_corner.OUT.txt (sealed
+output, 70 gates), t44a_corner.RESULT.json (DATA return), VERIFY/ (independent checks +
+byte-identity rerun), D24_AUDIT.txt, SEALS.sha256.  Deterministic: rerun byte-identical.

@@ -1,0 +1,20 @@
+PASS A  Z^2 rotation-bijection formula == my own DP, k<=12, every endpoint
+PASS B1 radius sandwich 16^m/(2m+1)^2 <= N_2m(0,0) <= 16^m: direct m<=400 AND both induction steps to m<=10^5 => radius of the return series is EXACTLY 1/4
+PASS B2 sharpness within +-1/500 of 1/4: at mu=257/1024 the return terms GROW (t_8192=5765197204.8 < t_8194=5808907674.1...) and at mu=255/1024 the geometric tail (4mu)^k contracts => a shifted mu_c is excluded; criticality sits AT the computed 1/4
+PASS C1 (4,6) my own venue: 4-regular AND independent BFS d + shortest-path count reproduce EVERY sealed Section-0 row (d, N_min) incl. (2,3)->(5,40)
+PASS C2 (4,6) exact resolvent: SINGULAR at mu=1/4, nonsingular at 1/8, constant vector annihilated by (I - A/4) — the pole sits AT the computed mu_c (my own elimination)
+PASS D  mu=1/8 independent series: G(1)=0.14636401, G(2)=0.02062932, r(8)=0.160658 MATCH the OUT table digit-for-digit; r < 1 - 1/20; within 1/25 of owner 3-2sqrt2 (READ==table verified on the exponential row)
+PASS E  critical tail-term bound c_k(d,0) <= (u^2+v^2)/(2k^2) holds to k<=3000 (beyond the lane's gated k<=2000): the proven tail is not an edge artifact
+  [F] running independent K=24000 kernel (exact ints)...
+PASS F1 critical G(0,0): independent S_16384 = 3.9345 (table match), >= harmonic bound 2.397, quadrupling increments non-shrinking => marginal divergence reproduced
+PASS F2 owner anchors: independent a(1,1) bracket [1.273213,1.273254] contains 4/pi and a(2,0) bracket [1.453467,1.453551] contains 4-8/pi (attribution anchors reproduced)
+PASS F3 all 8 sealed kernel intervals reproduced DIGIT-FOR-DIGIT at K=24000 by the independent stepper (READ==table on the critical row)
+PASS F4 class booleans recomputed: all doubling-increment ratios inside [4/5,5/4] (LOG), outside linear window; largest increment contains (2/pi)ln2 => MARGINAL_LOG is the computed class, not a label
+PASS F5 truncation honesty: at the SHORTER K=4000 the proven tail (u^2+v^2)/(4K) still brackets the owner value 4-8/pi ([1.453202,1.453702]): tails are real bounds, not decoration
+PASS G  class-at-shifted-mu: at subcritical mu=23/100 the doubling-increment ratio of the same kernel construction is 0.0742 — far BELOW the log window [4/5,5/4]: the log class exists only AT the computed mu_c; a mislocated mu_c could not fake it
+PASS H1 1D mu=1/4 (2D's critical value): ratio CONSTANT (spread <= 1/100) and equals 2-sqrt3 (root of mu r^2 - r + mu) — pure exponential, SUBCRITICAL here: mu_c is the venue's own number, independently confirmed
+PASS H2 1D critical kernel independent (K=20000): brackets contain 2, 4, 8 EXACTLY (owner a_Z(d)=|d|) and doubling ratio [1.882,2.096] sits in the LINEAR window, disjoint from the 2D log window => D-15 discriminator reproduced
+PASS I  supercritical mu=1/3: term at m=200 = 150235271935209718829783467252697535184787681280.5 > 10^6, term ratio 1.7689 > 1 (divergence witness reproduced independently)
+PASS R  (3,7) true-coset histograms REBUILT (my own span walk + byte-LUT popcount): v=(0,3) and v=(1,3) reproduce (w_min=d, N_min), total 2^22, the sealed G_true and excess values DIGIT-FOR-DIGIT (0.477035 / 0.731146), argmax w=d at mu=1/8, argmax 6/7 at mu=1/3, and the wrap stratum at w=d+1 — the corrected S7 claims hold on the true ensemble
+
+ADVERSARIAL RERUN: 17 checks, 17 pass, 0 fail

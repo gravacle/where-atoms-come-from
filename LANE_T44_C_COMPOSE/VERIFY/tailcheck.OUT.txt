@@ -1,0 +1,5 @@
+Tail-bound non-triviality check (independent, W=500 vs W=800, free run A->B, 3-D venue):
+mu=1/12: rem>0: True ; rem<=tb: True ; log10(rem)=-176.2 ; log10(tb)=-172.7 ; slack tb/rem ~ 2.7e3
+mu=1/6 : rem>0: True ; rem<=tb: True ; log10(rem)=-24.4  ; log10(tb)=-21.2  ; slack tb/rem ~ 1.8e3
+The sealed OUT's "tails <= 0.00000000000000000000" lines are 20-digit display truncations of
+genuinely tiny nonzero rationals; the interval gates compare exact rationals, not the display.

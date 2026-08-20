@@ -1,0 +1,50 @@
+LANE_T44_D_JUDGE — D-24 AUDIT (the judgment itself) — 2026-08-20
+
+1. NO NEW MEASUREMENT. This lane computed nothing on any measurement path. Its
+   only executions were: SHA-256 seal re-verification of both input lanes
+   (all OK), and re-reading sealed OUTs / VERIFY outputs (70/0, 36/0, 17/17,
+   29/29 tallies confirmed against the sealed files, not taken from prose).
+
+2. THE ONE SYNTHESIS STEP IS ALGEBRA OVER GATED FACTS. The "critical kernel =
+   discrete Poisson solution" reading composes three gates already sealed in
+   LANE_T44_A_CORNER/t44a_corner.OUT.txt: (a) venue deg-regularity (row sums
+   exactly 4; chain exactly 2 — S0/S2 gates), (b) mu_c = 1/deg (S2, three
+   routes), (c) the resolvent identity G - mu*(neighbor sum) = delta (S2/S3
+   gates). At mu = 1/deg, (b)+(c) give deg*G - sum_nbrs G = deg*delta, the
+   venue's own discrete Poisson equation. No limit, no continuum formula, no
+   new number. Owner for the reading: Spitzer 1964 (potential kernel).
+
+3. mu REMAINS DECLARED. The judgment nowhere treats mu as derived; the gap
+   (nothing pins mu to mu_c) is stated as gap (i) of the MATCHES denial and
+   as open piece N2.
+
+4. EARNED DIMENSION enters only as which venue was computed (C-78 content
+   degree). No dimension-dependent formula is used to assert any D=3 result;
+   the D=3 member 1/d is labeled OWNER-ATTRIBUTED, NOT COMPUTED, at every
+   mention, and the comparison verdict is NEITHER on exactly that ground.
+
+5. D-1 HELD PROGRAM-WIDE. Newton appears in neither input lane's construction
+   (corner lane: nowhere at all; compose lane: comparison section only). In
+   this judgment Newton is named only in Section 3 (the final-comparison
+   venue the discipline designates) and after it.
+
+6. INSERTED ITEMS LABELED. The masslessness candidate (mu = 1/deg as writer-
+   measure conservation) is marked INSERTED HYPOTHESIS, judge's own, with the
+   relevance test run (named variable: mu). It is commissioned as a question
+   (N2), not registered as a claim. R1/R2 and the encoding split remain
+   declared alternatives; no rule is asserted as the surface's own.
+
+7. NO LITERAL VERDICTS OVER DATA. The class taxonomy, kernels, anchors, and
+   composition identities are quoted from computed, gated, independently
+   re-verified lane results. The judge's verdicts (NEITHER; SATISFIED at
+   family level) are rulings about record coverage, each tied to named gates
+   or named absences — the three MATCHES denials cite the three specific
+   missing computations (N1, N2, N3).
+
+8. HYPOTHESES EXPLICIT. H1-H4 (declared string model; venue-limit reading;
+   mu declared; dimension-as-venue) are listed in the reachable-class
+   statement itself, with the true-ensemble control and the p <= 8 scope
+   carried forward, not laundered out.
+
+9. NO FILES OUTSIDE THIS LANE; NO GIT. Lane contents: JUDGMENT.txt,
+   D24_AUDIT.txt, SEALS.sha256.

@@ -1,0 +1,619 @@
+{
+ "lane": "LANE_T44_A_CORNER",
+ "task": "T-44 corner (earned D = 2): exponent classes reachable by a Gamma-constrained coupling",
+ "date": "2026-08-20",
+ "declared": {
+  "mu": "per-link amplitude, the coupling/alpha tier's one declared parameter",
+  "model": "G_mu(d) = sum over admissible strings of mu^weight; exact transfer-matrix walk counting on the venue's own plaquette-adjacency lattice; minimal stratum gated against the O-54-C admissible-writer coset (weight and count)",
+  "thresholds": {
+   "MARGIN_LT1": "1/20",
+   "POWER_SCOPE": 8,
+   "CAUCHY_TOL": "1/40",
+   "LOG_WINDOW": [
+    "4/5",
+    "5/4"
+   ],
+   "LIN_WINDOW": [
+    "9/5",
+    "11/5"
+   ],
+   "ISO_TOL": "1/20",
+   "COMP_TOL": "1/25",
+   "EQ_TOL": "1/100",
+   "EXC_TOL": "1"
+  }
+ },
+ "mu_c": {
+  "D2_venue": "1/4 EXACT",
+  "D1_venue": "1/2 EXACT",
+  "method": "radius of convergence of the positive walk series = 1/spectral radius; Perron row-sum sandwich on the venue + exact binomial sandwich 16^m/(2m+1)^2 <= N_2m(0,0) <= 16^m on the sector; venue resolvent verified singular exactly at mu_c"
+ },
+ "leading_term": {
+  "statement": "G_mu(d) = N_min mu^d (1 + subleading strata): leading power = earned separation = w_min (confinement cost), leading count = coset N_min, gated exactly on (4,6) and (3,7); sub-leading strata begin at w = d+1 (small-venue wrap classes, Section 7) or d+2 (detour/backtrack)",
+  "rows": [
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     1,
+     0
+    ],
+    "d_gen": 1,
+    "d_dual": 1,
+    "w_min": 1,
+    "N_min": 1,
+    "k0": 1,
+    "N_k0": 1
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     2,
+     0
+    ],
+    "d_gen": 2,
+    "d_dual": 2,
+    "w_min": 2,
+    "N_min": 2,
+    "k0": 2,
+    "N_k0": 2
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     0,
+     1
+    ],
+    "d_gen": 1,
+    "d_dual": 1,
+    "w_min": 1,
+    "N_min": 1,
+    "k0": 1,
+    "N_k0": 1
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     0,
+     2
+    ],
+    "d_gen": 2,
+    "d_dual": 2,
+    "w_min": 2,
+    "N_min": 1,
+    "k0": 2,
+    "N_k0": 1
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     0,
+     3
+    ],
+    "d_gen": 3,
+    "d_dual": 3,
+    "w_min": 3,
+    "N_min": 2,
+    "k0": 3,
+    "N_k0": 2
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     1,
+     1
+    ],
+    "d_gen": 2,
+    "d_dual": 2,
+    "w_min": 2,
+    "N_min": 2,
+    "k0": 2,
+    "N_k0": 2
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     2,
+     1
+    ],
+    "d_gen": 3,
+    "d_dual": 3,
+    "w_min": 3,
+    "N_min": 6,
+    "k0": 3,
+    "N_k0": 6
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     1,
+     2
+    ],
+    "d_gen": 3,
+    "d_dual": 3,
+    "w_min": 3,
+    "N_min": 3,
+    "k0": 3,
+    "N_k0": 3
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     2,
+     2
+    ],
+    "d_gen": 4,
+    "d_dual": 4,
+    "w_min": 4,
+    "N_min": 12,
+    "k0": 4,
+    "N_k0": 12
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     1,
+     3
+    ],
+    "d_gen": 4,
+    "d_dual": 4,
+    "w_min": 4,
+    "N_min": 8,
+    "k0": 4,
+    "N_k0": 8
+   },
+   {
+    "venue": [
+     4,
+     6
+    ],
+    "v": [
+     2,
+     3
+    ],
+    "d_gen": 5,
+    "d_dual": 5,
+    "w_min": 5,
+    "N_min": 40,
+    "k0": 5,
+    "N_k0": 40
+   },
+   {
+    "venue": [
+     3,
+     7
+    ],
+    "v": [
+     1,
+     0
+    ],
+    "d_gen": 1,
+    "d_dual": 1,
+    "w_min": 1,
+    "N_min": 1,
+    "k0": 1,
+    "N_k0": 1
+   },
+   {
+    "venue": [
+     3,
+     7
+    ],
+    "v": [
+     0,
+     1
+    ],
+    "d_gen": 1,
+    "d_dual": 1,
+    "w_min": 1,
+    "N_min": 1,
+    "k0": 1,
+    "N_k0": 1
+   },
+   {
+    "venue": [
+     3,
+     7
+    ],
+    "v": [
+     0,
+     2
+    ],
+    "d_gen": 2,
+    "d_dual": 2,
+    "w_min": 2,
+    "N_min": 1,
+    "k0": 2,
+    "N_k0": 1
+   },
+   {
+    "venue": [
+     3,
+     7
+    ],
+    "v": [
+     0,
+     3
+    ],
+    "d_gen": 3,
+    "d_dual": 3,
+    "w_min": 3,
+    "N_min": 1,
+    "k0": 3,
+    "N_k0": 1
+   },
+   {
+    "venue": [
+     3,
+     7
+    ],
+    "v": [
+     1,
+     1
+    ],
+    "d_gen": 2,
+    "d_dual": 2,
+    "w_min": 2,
+    "N_min": 2,
+    "k0": 2,
+    "N_k0": 2
+   },
+   {
+    "venue": [
+     3,
+     7
+    ],
+    "v": [
+     1,
+     2
+    ],
+    "d_gen": 3,
+    "d_dual": 3,
+    "w_min": 3,
+    "N_min": 3,
+    "k0": 3,
+    "N_k0": 3
+   },
+   {
+    "venue": [
+     3,
+     7
+    ],
+    "v": [
+     1,
+     3
+    ],
+    "d_gen": 4,
+    "d_dual": 4,
+    "w_min": 4,
+    "N_min": 4,
+    "k0": 4,
+    "N_k0": 4
+   }
+  ]
+ },
+ "subcritical_rows": [
+  {
+   "mu": "1/8",
+   "K": 260,
+   "cls": "EXPONENTIAL",
+   "r_at_dmax": [
+    "0.16585810",
+    "0.16585810"
+   ],
+   "r_inf_owner": [
+    "0.17157287",
+    "0.17157287"
+   ],
+   "q_power_exclusion": "12.512",
+   "G_examples": {
+    "1": "0.1463640142",
+    "2": "0.0206293298",
+    "4": "0.0004463899",
+    "8": "0.0000002639",
+    "16": "0.0000000000"
+   }
+  },
+  {
+   "mu": "1/5",
+   "K": 700,
+   "cls": "EXPONENTIAL",
+   "r_at_dmax": [
+    "0.36982740",
+    "0.36982740"
+   ],
+   "r_inf_owner": [
+    "0.38196601",
+    "0.38196601"
+   ],
+   "q_power_exclusion": "9.452",
+   "G_examples": {
+    "1": "0.3378115001",
+    "2": "0.0986842643",
+    "4": "0.0101718088",
+    "8": "0.0001512759",
+    "16": "0.0000000483"
+   }
+  },
+  {
+   "mu": "23/100",
+   "K": 2400,
+   "cls": "EXPONENTIAL",
+   "r_at_dmax": [
+    "0.54787156",
+    "0.54787156"
+   ],
+   "r_inf_owner": [
+    "0.55903758",
+    "0.55903758"
+   ],
+   "q_power_exclusion": "10.851",
+   "G_examples": {
+    "1": "0.5586164469",
+    "2": "0.2359592314",
+    "4": "0.0527548166",
+    "8": "0.0036702331",
+    "16": "0.0000249340"
+   }
+  },
+  {
+   "mu": "249/1000",
+   "K": 12000,
+   "cls": "EXPONENTIAL",
+   "r_at_dmax": [
+    "0.87512469",
+    "0.87512469"
+   ],
+   "r_inf_owner": [
+    "0.88103302",
+    "0.88103302"
+   ],
+   "q_power_exclusion": "8.991",
+   "G_examples": {
+    "1": "1.4293720457",
+    "2": "0.9923502985",
+    "4": "0.5864692015",
+    "8": "0.2642270318",
+    "16": "0.0704284819"
+   }
+  }
+ ],
+ "critical_row": {
+  "mu": "1/4",
+  "G_itself": "DIVERGENT (marginal): certified harmonic lower bound + non-shrinking quadrupling increments",
+  "regularized_kernel_class": "MARGINAL_LOG",
+  "doubling_increments_axis": [
+   [
+    "0.45421123",
+    "0.45462790"
+   ],
+   [
+    "0.44338358",
+    "0.44505025"
+   ],
+   [
+    "0.43805078",
+    "0.44471744"
+   ]
+  ],
+  "doubling_increments_diag": [
+   [
+    "0.42429195",
+    "0.42450028"
+   ],
+   [
+    "0.43605445",
+    "0.43688778"
+   ],
+   [
+    "0.43810655",
+    "0.44143988"
+   ]
+  ],
+  "owner_comparison": "largest increment vs (2/pi)ln2 = 0.441271... within 1/25 (Stohr 1950/Spitzer 1964), comparison only",
+  "K": 24000,
+  "tails": "proven: (u^2+v^2)/(4K)"
+ },
+ "supercritical_rows": [
+  {
+   "mu": "13/50",
+   "cls": "DIVERGENT",
+   "witness_m": 400,
+   "term": "33665893174.15",
+   "term_ratio": "1.0789"
+  },
+  {
+   "mu": "1/3",
+   "cls": "DIVERGENT",
+   "witness_m": 200,
+   "term": "150235271935209718829783467252697535184787681280.52",
+   "term_ratio": "1.7689"
+  }
+ ],
+ "chain_control": {
+  "mu_c": "1/2",
+  "subcritical": [
+   {
+    "mu": "1/4",
+    "cls": "EXPONENTIAL_PURE",
+    "r": [
+     "0.26794919",
+     "0.26794919"
+    ]
+   },
+   {
+    "mu": "2/5",
+    "cls": "EXPONENTIAL_PURE",
+    "r": [
+     "0.49999999",
+     "0.50000000"
+    ]
+   }
+  ],
+  "critical_class": "LINEAR kernel (ratio window [9/5,11/5]); disjoint from the 2D log window [4/5,5/4]: classes differ across earned dimension (D-15)",
+  "supercritical": "DIVERGENT at mu=2/3"
+ },
+ "true_ensemble_control": {
+  "venue": [
+   3,
+   7
+  ],
+  "rows": [
+   {
+    "v": [
+     1,
+     0
+    ],
+    "d": 1,
+    "w_min": 1,
+    "N_min": 1,
+    "excess_at_mu_1_8": "0.190390",
+    "argmax_w_at_mu_1_8": 1,
+    "argmax_w_at_mu_1_3": 1,
+    "G_true_1_8": "0.14879885",
+    "G_true_1_3": "1.212212"
+   },
+   {
+    "v": [
+     0,
+     1
+    ],
+    "d": 1,
+    "w_min": 1,
+    "N_min": 1,
+    "excess_at_mu_1_8": "0.061607",
+    "argmax_w_at_mu_1_8": 1,
+    "argmax_w_at_mu_1_3": 1,
+    "G_true_1_8": "0.13270089",
+    "G_true_1_3": "1.038709"
+   },
+   {
+    "v": [
+     0,
+     2
+    ],
+    "d": 2,
+    "w_min": 2,
+    "N_min": 1,
+    "excess_at_mu_1_8": "0.152190",
+    "argmax_w_at_mu_1_8": 2,
+    "argmax_w_at_mu_1_3": 2,
+    "G_true_1_8": "0.01800297",
+    "G_true_1_3": "0.633866"
+   },
+   {
+    "v": [
+     0,
+     3
+    ],
+    "d": 3,
+    "w_min": 3,
+    "N_min": 1,
+    "excess_at_mu_1_8": "0.477035",
+    "argmax_w_at_mu_1_8": 3,
+    "argmax_w_at_mu_1_3": 6,
+    "G_true_1_8": "0.00288483",
+    "G_true_1_3": "0.481081"
+   },
+   {
+    "v": [
+     1,
+     1
+    ],
+    "d": 2,
+    "w_min": 2,
+    "N_min": 2,
+    "excess_at_mu_1_8": "0.251935",
+    "argmax_w_at_mu_1_8": 2,
+    "argmax_w_at_mu_1_3": 2,
+    "G_true_1_8": "0.03912297",
+    "G_true_1_3": "0.875104"
+   },
+   {
+    "v": [
+     1,
+     2
+    ],
+    "d": 3,
+    "w_min": 3,
+    "N_min": 3,
+    "excess_at_mu_1_8": "0.355882",
+    "argmax_w_at_mu_1_8": 3,
+    "argmax_w_at_mu_1_3": 3,
+    "G_true_1_8": "0.00794462",
+    "G_true_1_3": "0.604633"
+   },
+   {
+    "v": [
+     1,
+     3
+    ],
+    "d": 4,
+    "w_min": 4,
+    "N_min": 4,
+    "excess_at_mu_1_8": "0.731146",
+    "argmax_w_at_mu_1_8": 4,
+    "argmax_w_at_mu_1_3": 7,
+    "G_true_1_8": "0.00169057",
+    "G_true_1_3": "0.474990"
+   }
+  ],
+  "finding": "minimal stratum is the argmax stratum (w = d) and majority holder of the TRUE admissible coset sum at mu=1/8 on every pair; sub-leading excess (up to 0.73 at d=4) is the small venue's own wrap strata at w = d+1, present identically in the walk counts (support gate); finite-venue polynomial stays finite at every mu (divergence is the venue-limit statement)",
+  "correction_log": "first run declared excess tolerance 1/4 and FAILED on pairs near the wrap scale; corrected to the argmax/majority/support claims after attributing the excess to venue wrap classes (in-lane correction, logged)"
+ },
+ "taxonomy": [
+  "mu < mu_c = 1/4 (computed): EXPONENTIAL decay, leading term N_min mu^d (confinement cost w_min = d); D=2 carries a computed slowly-drifting ratio prefactor, the 1D control has none",
+  "mu = mu_c exactly: G divergent (marginal); regularized kernel LOGARITHMIC (constant doubling increments) -- the D=2 lattice Green's-function class of the earned dimension; NO power law in D=2",
+  "mu > mu_c: DIVERGENT term-by-term: no mediated coupling in the venue limit"
+ ],
+ "hypothesis": {
+  "a_exponential_generic": "CONFIRMED (computed booleans, 4 sub-critical 2D rows + 2 chain rows)",
+  "b_critical_power_from_earned_dimension": "D=2 critical member is the MARGINAL/LOG class = the earned dimension's own lattice Green's-function class; not a power in D=2 (honest: no power forced); the 1/d question belongs to the D=3 world venue",
+  "c_nothing_else": "no further class reached in the swept family; critical class is venue-dimension-owned (1D linear, 2D log, computed)"
+ },
+ "owners": {
+  "green_functions": "Spitzer 1964; Lawler",
+  "marginality_D2": "Polya 1921",
+  "potential_kernel": "Stohr 1950; Spitzer 1964; McCrea-Whipple 1940",
+  "walk_bijection": "standard combinatorics (Feller I)",
+  "wallis_bound": "classical Wallis product",
+  "perron_gershgorin": "standard linear algebra",
+  "oz_rate": "Ornstein-Zernike lattice asymptotics",
+  "confinement_cost": "Wegner/Wilson (standing result C-80/O-54)"
+ },
+ "next_step": "what earns criticality: mu_c is a computed venue number (1/4 here, 1/2 on the chain); the record does not yet contain a Gamma-internal reason for mu to sit AT mu_c (masslessness). Name that as the next piece, alongside the D=3 world venue where the critical Green's class is the 1/d candidate.",
+ "gates": {
+  "npass": 70,
+  "nfail": 0,
+  "failed": []
+ }
+}

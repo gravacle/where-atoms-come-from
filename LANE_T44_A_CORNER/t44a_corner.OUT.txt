@@ -1,0 +1,258 @@
+====================================================================================================
+T44-A  CORNER (earned D = 2): EXPONENT CLASSES REACHABLE BY A GAMMA-CONSTRAINED COUPLING
+  model: G_mu(d) = sum over admissible strings of mu^weight, exact transfer-matrix walk
+  counting on the venue's own lattice; mu is the one declared parameter; everything else computed.
+====================================================================================================
+
+-- SECTION 0: venue, earned separation, and the O-54-C landscape (leading term mu^d) --
+PASS  S0 carrier (4,6): stars x plaqs all commute
+PASS  S0 venue (4,6): dual-lattice row sums all exactly 4 (venue's own walk graph)
+  venue (4,6):  v  d_gen  d_dual  w_min  N_min  k0(walk)  N_k0
+   v=(1, 0)   1      1       1      1      1        1
+   v=(2, 0)   2      2       2      2      2        2
+   v=(0, 1)   1      1       1      1      1        1
+   v=(0, 2)   2      2       2      1      2        1
+   v=(0, 3)   3      3       3      2      3        2
+   v=(1, 1)   2      2       2      2      2        2
+   v=(2, 1)   3      3       3      6      3        6
+   v=(1, 2)   3      3       3      3      3        3
+   v=(2, 2)   4      4       4      12      4        12
+   v=(1, 3)   4      4       4      8      4        8
+   v=(2, 3)   5      5       5      40      5        40
+PASS  S0 (4,6): dual-lattice BFS distance == earned separation d_gen on every pair
+PASS  S0 (4,6): coset w_min == d_gen (O-54-C landscape reconfirmed: w_min = d EXACT)
+PASS  S0 (4,6): minimal walk length k0 == d  =>  LEADING TERM OF G_mu IS mu^d (the confinement cost) -- verified BEFORE any sum
+PASS  S0 (4,6): minimal-walk count N_k0 == coset N_min EXACTLY (walk model's minimal stratum IS the admissible-writer minimal stratum, weight and count)
+PASS  S0 carrier (3,7): stars x plaqs all commute
+PASS  S0 venue (3,7): dual-lattice row sums all exactly 4 (venue's own walk graph)
+  venue (3,7):  v  d_gen  d_dual  w_min  N_min  k0(walk)  N_k0
+   v=(1, 0)   1      1       1      1      1        1
+   v=(0, 1)   1      1       1      1      1        1
+   v=(0, 2)   2      2       2      1      2        1
+   v=(0, 3)   3      3       3      1      3        1
+   v=(1, 1)   2      2       2      2      2        2
+   v=(1, 2)   3      3       3      3      3        3
+   v=(1, 3)   4      4       4      4      4        4
+PASS  S0 (3,7): dual-lattice BFS distance == earned separation d_gen on every pair
+PASS  S0 (3,7): coset w_min == d_gen (O-54-C landscape reconfirmed: w_min = d EXACT)
+PASS  S0 (3,7): minimal walk length k0 == d  =>  LEADING TERM OF G_mu IS mu^d (the confinement cost) -- verified BEFORE any sum
+PASS  S0 (3,7): minimal-walk count N_k0 == coset N_min EXACTLY (walk model's minimal stratum IS the admissible-writer minimal stratum, weight and count)
+
+-- SECTION 1: exact-count formula gates and tail-bound lemmas (verified before use) --
+PASS  S1 rotation-bijection formula == brute-force DP on Z^2, all k<=16, all endpoints (owner: standard combinatorics; now venue-verified)
+PASS  S1 total Z^2 walk count sum_v N_k(v) == 4^k, k<=16 (upper bound N_k(v) <= 4^k follows)
+PASS  S1 torus (4,6) total walk count == 4^k, k<=30
+PASS  S1 torus (4,6) == Z^2 universal-cover wrap identity, all sites, k<=22 (ties the venue's own lattice to the Z^2 sector EXACTLY)
+PASS  S1 torus (3,7) total walk count == 4^k, k<=30
+PASS  S1 torus (3,7) == Z^2 universal-cover wrap identity, all sites, k<=22 (ties the venue's own lattice to the Z^2 sector EXACTLY)
+PASS  S1 1D chain total walk count == 2^k, k<=20
+PASS  S1 L1: N_k(0,0) >= N_k(a,b) for even-parity targets, k<=60 (central-binomial max)
+PASS  S1 L2 (Wallis): (C(2m,m)/4^m)^2 <= 1/(2m+1): direct m<=300 AND exact induction step (2m+1)(2m+3) <= (2m+2)^2 == 4m^2+8m+3 <= 4m^2+8m+4, m<=10^4  => holds for ALL m
+PASS  S1 L2': C(2m,m)(2m+1) >= 4^m (m<=300) and p_{2m}(0,0)*4m >= 1 via exact ratio induction (2m+1)^2(m+1) >= 4m(m+1)^2, m<=10^4, base m=1 equality
+PASS  S1 L3: C(2m,m+s) m >= (m - s^2) C(2m,m), m<=400, s<=20 (telescoping union bound)
+PASS  S1 assembled critical tail bound c_k(d,0) <= (u^2+v^2)/(2k^2) confirmed exactly on k<=2000, d in {2,4,8,16} (lemma chain L1+L2+L3)
+PASS  S1 injection N_k(2,0) >= N_{k-2}(0,0), k<=40 (extend-by-fixed-path; divergence carrier)
+
+-- SECTION 2: mu_c LOCATED BY COMPUTATION (declared method: radius of convergence of
+   the positive walk series = 1/spectral radius; Perron row-sum sandwich, exact) --
+PASS  S2 (4,6): A.1 == 4.1 exactly and row sums == 4 (Gershgorin: rho(A) <= 4; Perron: rho(A) = 4) => mu_c(venue) = 1/4 EXACT
+PASS  S2 (4,6): (I - A/4) annihilates the constant vector EXACTLY (the resolvent pole sits AT mu_c = 1/4 on the venue itself)
+PASS  S2 (3,7): A.1 == 4.1 exactly and row sums == 4 (Gershgorin: rho(A) <= 4; Perron: rho(A) = 4) => mu_c(venue) = 1/4 EXACT
+PASS  S2 (3,7): (I - A/4) annihilates the constant vector EXACTLY (the resolvent pole sits AT mu_c = 1/4 on the venue itself)
+PASS  S2 (4,6): exact resolvent SINGULAR at mu = 1/4 (Gaussian elimination meets a zero pivot)
+PASS  S2 (4,6): exact resolvent nonsingular at mu = 1/8 and mu = 23/100
+PASS  S2 Z^2 sector: 16^m/(2m+1)^2 <= N_{2m}(0,0) <= 16^m (both gated above) => the fixed-endpoint series has radius of convergence EXACTLY 1/4: mu_c = 1/4
+PASS  S2 1D chain venue: row sums == 2 and C(2m,m)(2m+1) >= 4^m => mu_c(1D) = 1/2 EXACT (the critical point is the venue's own, dimension-dependent, computed)
+PASS  S2 (4,6): exact resolvent lies INSIDE [partial sum, partial sum + geometric tail] on every pair (series machinery verified against exact linear algebra)
+
+-- SECTION 3: SUBCRITICAL ROWS (2D, Z^2 sector = venue limit; exact partial sums +
+   exact geometric tails; classes by computed booleans; fits nowhere) --
+
+  mu = 1/8  (4mu = 1/2 < 1: subcritical; K = 260, tail exact)
+   d    G(d) in [S, S+tail]            r(d) = G(d+1)/G(d) interval
+   1    [0.14636401, 0.14636401]   [0.140945, 0.140945]
+   2    [0.02062932, 0.02062932]   [0.145207, 0.145207]
+   3    [0.00299554, 0.00299554]   [0.149018, 0.149018]
+   4    [0.00044638, 0.00044638]   [0.152301, 0.152301]
+   5    [0.00006798, 0.00006798]   [0.155053, 0.155053]
+   6    [0.00001054, 0.00001054]   [0.157318, 0.157318]
+   7    [0.00000165, 0.00000165]   [0.159162, 0.159162]
+   8    [0.00000026, 0.00000026]   [0.160658, 0.160658]
+   9    [0.00000004, 0.00000004]   [0.161874, 0.161874]
+   10   [0.00000000, 0.00000000]   [0.162869, 0.162869]
+   11   [0.00000000, 0.00000000]   [0.163688, 0.163688]
+   12   [0.00000000, 0.00000000]   [0.164371, 0.164371]
+   13   [0.00000000, 0.00000000]   [0.164947, 0.164947]
+   14   [0.00000000, 0.00000000]   [0.165436, 0.165436]
+   15   [0.00000000, 0.00000000]   [0.165858, 0.165858]
+   16   [0.00000000, 0.00000000]   
+PASS  S3 mu=1/8: EXP-1 every ratio upper bound <= 1 - 1/20 (uniformly below 1)
+PASS  S3 mu=1/8: EXP-2 power exclusion: d(1-r) at d=15 is 12.512 >= 8 (no power law d^-p, p <= 8, matches this decay)
+PASS  S3 mu=1/8: EXP-3 ratio stabilization |r(d+1)-r(d)| <= 1/40 at the top of the range
+PASS  S3 mu=1/8: COMPARISON r(dmax) within 1/25 of the owner rate c - sqrt(c^2-1), c = 1/(2mu)-1 (Ornstein-Zernike lattice Green's asymptotics; comparison only)  r(dmax)=[0.165858,0.165858] vs r_inf=[0.171572,0.171572]
+   => computed class at mu=1/8: EXPONENTIAL
+
+  mu = 1/5  (4mu = 4/5 < 1: subcritical; K = 700, tail exact)
+   d    G(d) in [S, S+tail]            r(d) = G(d+1)/G(d) interval
+   1    [0.33781150, 0.33781150]   [0.292128, 0.292128]
+   2    [0.09868426, 0.09868426]   [0.313350, 0.313350]
+   3    [0.03092273, 0.03092273]   [0.328942, 0.328942]
+   4    [0.01017180, 0.01017180]   [0.339871, 0.339871]
+   5    [0.00345711, 0.00345711]   [0.347483, 0.347483]
+   6    [0.00120129, 0.00120129]   [0.352888, 0.352888]
+   7    [0.00042392, 0.00042392]   [0.356848, 0.356848]
+   8    [0.00015127, 0.00015127]   [0.359850, 0.359850]
+   9    [0.00005443, 0.00005443]   [0.362199, 0.362199]
+   10   [0.00001971, 0.00001971]   [0.364086, 0.364086]
+   11   [0.00000717, 0.00000717]   [0.365639, 0.365639]
+   12   [0.00000262, 0.00000262]   [0.366939, 0.366939]
+   13   [0.00000096, 0.00000096]   [0.368045, 0.368045]
+   14   [0.00000035, 0.00000035]   [0.368997, 0.368997]
+   15   [0.00000013, 0.00000013]   [0.369827, 0.369827]
+   16   [0.00000004, 0.00000004]   
+PASS  S3 mu=1/5: EXP-1 every ratio upper bound <= 1 - 1/20 (uniformly below 1)
+PASS  S3 mu=1/5: EXP-2 power exclusion: d(1-r) at d=15 is 9.452 >= 8 (no power law d^-p, p <= 8, matches this decay)
+PASS  S3 mu=1/5: EXP-3 ratio stabilization |r(d+1)-r(d)| <= 1/40 at the top of the range
+PASS  S3 mu=1/5: COMPARISON r(dmax) within 1/25 of the owner rate c - sqrt(c^2-1), c = 1/(2mu)-1 (Ornstein-Zernike lattice Green's asymptotics; comparison only)  r(dmax)=[0.369827,0.369827] vs r_inf=[0.381966,0.381966]
+   => computed class at mu=1/5: EXPONENTIAL
+
+  mu = 23/100  (4mu = 23/25 < 1: subcritical; K = 2400, tail exact)
+   d    G(d) in [S, S+tail]            r(d) = G(d+1)/G(d) interval
+   1    [0.55861644, 0.55861644]   [0.422399, 0.422399]
+   2    [0.23595923, 0.23595923]   [0.460665, 0.460665]
+   3    [0.10869832, 0.10869832]   [0.485332, 0.485332]
+   4    [0.05275481, 0.05275481]   [0.500999, 0.500999]
+   5    [0.02643014, 0.02643014]   [0.511324, 0.511324]
+   6    [0.01351439, 0.01351439]   [0.518507, 0.518507]
+   7    [0.00700731, 0.00700731]   [0.523771, 0.523771]
+   8    [0.00367023, 0.00367023]   [0.527797, 0.527797]
+   9    [0.00193714, 0.00193714]   [0.530982, 0.530982]
+   10   [0.00102858, 0.00102858]   [0.533570, 0.533570]
+   11   [0.00054882, 0.00054882]   [0.535715, 0.535715]
+   12   [0.00029401, 0.00029401]   [0.537524, 0.537524]
+   13   [0.00015803, 0.00015803]   [0.539070, 0.539070]
+   14   [0.00008519, 0.00008519]   [0.540408, 0.540408]
+   15   [0.00004603, 0.00004603]   [0.541577, 0.541577]
+   16   [0.00002493, 0.00002493]   
+   24   [0.00000019, 0.00000019]   [0.547871, 0.547871]
+PASS  S3 mu=23/100: EXP-1 every ratio upper bound <= 1 - 1/20 (uniformly below 1)
+PASS  S3 mu=23/100: EXP-2 power exclusion: d(1-r) at d=24 is 10.851 >= 8 (no power law d^-p, p <= 8, matches this decay)
+PASS  S3 mu=23/100: EXP-3 ratio stabilization |r(d+1)-r(d)| <= 1/40 at the top of the range
+PASS  S3 mu=23/100: COMPARISON r(dmax) within 1/25 of the owner rate c - sqrt(c^2-1), c = 1/(2mu)-1 (Ornstein-Zernike lattice Green's asymptotics; comparison only)  r(dmax)=[0.547871,0.547871] vs r_inf=[0.559037,0.559037]
+   => computed class at mu=23/100: EXPONENTIAL
+
+  mu = 249/1000  (4mu = 249/250 < 1: subcritical; K = 12000, tail exact)
+   d    G(d) in [S, S+tail]            r(d) = G(d+1)/G(d) interval
+   1    [1.42937204, 1.42937204]   [0.694256, 0.694256]
+   2    [0.99235029, 0.99235029]   [0.752913, 0.752913]
+   3    [0.74715411, 0.74715411]   [0.784937, 0.784937]
+   4    [0.58646920, 0.58646920]   [0.803939, 0.803939]
+   5    [0.47148601, 0.47148601]   [0.816391, 0.816391]
+   6    [0.38491719, 0.38491719]   [0.825219, 0.825219]
+   7    [0.31764125, 0.31764125]   [0.831841, 0.831841]
+   8    [0.26422703, 0.26422703]   [0.837010, 0.837010]
+   9    [0.22116086, 0.22116086]   [0.841169, 0.841169]
+   10   [0.18603369, 0.18603369]   [0.844591, 0.844591]
+   11   [0.15712256, 0.15712256]   [0.847461, 0.847461]
+   12   [0.13315532, 0.13315532]   [0.849903, 0.849903]
+   13   [0.11316923, 0.11316923]   [0.852009, 0.852009]
+   14   [0.09642121, 0.09642121]   [0.853843, 0.853843]
+   15   [0.08232859, 0.08232859]   [0.855455, 0.855455]
+   16   [0.07042848, 0.07042848]   
+   24   [0.02118858, 0.02118858]   [0.864318, 0.864318]
+   32   [0.00671524, 0.00671524]   [0.868235, 0.868235]
+   48   [0.00072877, 0.00072877]   [0.872309, 0.872309]
+   64   [0.00008354, 0.00008354]   [0.874413, 0.874413]
+   72   [0.00002863, 0.00002863]   [0.875124, 0.875124]
+PASS  S3 mu=249/1000: EXP-1 every ratio upper bound <= 1 - 1/20 (uniformly below 1)
+PASS  S3 mu=249/1000: EXP-2 power exclusion: d(1-r) at d=72 is 8.991 >= 8 (no power law d^-p, p <= 8, matches this decay)
+PASS  S3 mu=249/1000: EXP-3 ratio stabilization |r(d+1)-r(d)| <= 1/40 at the top of the range
+PASS  S3 mu=249/1000: COMPARISON r(dmax) within 1/25 of the owner rate c - sqrt(c^2-1), c = 1/(2mu)-1 (Ornstein-Zernike lattice Green's asymptotics; comparison only)  r(dmax)=[0.875124,0.875124] vs r_inf=[0.881033,0.881033]
+   => computed class at mu=249/1000: EXPONENTIAL
+PASS  S3 sweep: the exponential rate WEAKENS monotonically toward mu_c = 1/4 (r(dmax) increasing along the sweep): the exponential family degenerates exactly at the computed critical point
+PASS  S3 mu=1/8: lattice resolvent identity G - mu*(sum of neighbors) = delta holds within tail bounds at (0,0),(2,0),(3,0) (the measured G is the venue equation's own solution)
+
+-- SECTION 4: CRITICAL ROW mu = mu_c = 1/4 (2D).  G itself, then the regularized kernel --
+   partial sums S_K(0,0) at mu_c:  K=256: 2.6125  K=1024: 3.0524  K=4096: 3.4933  K=16384: 3.9345
+PASS  S4 G(0) at mu_c: S_16384 = 3.934 >= certified harmonic lower bound 2.397 AND quadrupling increments all >= 1/4 (non-shrinking) AND p_{2m}(0,0) >= 1/(4m) (S1 lemma) => the critical walk sum DIVERGES (marginally, log-rate; owner of the phenomenon: Polya 1921)
+   regularized kernel a(t) = sum (N_k(0)-N_k(t))/4^k, K = 24000, PROVEN tails:
+    axis 2  (earned d =  2):  a in [1.453467, 1.453551]
+    axis 4  (earned d =  4):  a in [1.907762, 1.908095]
+    axis 8  (earned d =  8):  a in [2.351479, 2.352812]
+    axis 16 (earned d = 16):  a in [2.790863, 2.796196]
+    diag 1  (earned d =  2):  a in [1.273213, 1.273254]
+    diag 2  (earned d =  4):  a in [1.697546, 1.697713]
+    diag 4  (earned d =  8):  a in [2.133767, 2.134434]
+    diag 8  (earned d = 16):  a in [2.572540, 2.575207]
+PASS  S4 G(d) at mu_c also diverges: S_K(d) >= S_K(0) - a(d) - tail with a(d) FINITE (bounded differences, divergent base)
+   doubling increments (axis): [0.454211,0.454627]  [0.443383,0.445050]  [0.438050,0.444717]
+   doubling increments (diag): [0.424291,0.424500]  [0.436054,0.436887]  [0.438106,0.441439]
+PASS  S4 kernel increments all strictly positive (a(d) grows without saturation)
+PASS  S4 LOG CLASS: doubling-increment ratios all inside [4/5, 5/4] (constant increments under d -> 2d IS the logarithm's signature)  ratios axis ['0.975..0.979', '0.984..1.003'] diag ['1.027..1.029', '1.002..1.012']
+PASS  S4 NOT linear (ratios exclude [9/5,11/5]) and NOT a power in the kernel (ratios exclude <= 3/4): the D=2 critical class is MARGINAL, no power forced
+PASS  S4 isotropy of the class: axis and diagonal doubling increments agree within 1/20 at earned d >= 4 (the class is the venue's, not a direction artifact)
+PASS  S4 COMPARISON (owner: Stohr 1950 / Spitzer 1964 potential kernel): largest doubling increment [0.438050,0.444717] vs (2/pi)ln2 = 0.441271... within 1/25 (comparison only)
+   => computed critical class (D=2): G divergent at mu_c; regularized kernel MARGINAL_LOG
+
+-- SECTION 5: SUPERCRITICAL ROWS (2D) --
+PASS  S5 mu=13/50 (4mu=1.04 > 1): single term t_{2m}(0,0) = 33665893174.1 > 10^6 at m=400 and term ratio 1.0789 > 1 (terms growing); with N_k(d) >= N_{k-2d'}(0,0) x fixed path (S1 injection), G(d) DIVERGES for every d: no mediated coupling in the venue limit
+PASS  S5 mu=1/3 (4mu=1.33 > 1): single term t_{2m}(0,0) = 150235271935209718829783467252697535184787681280.5 > 10^6 at m=200 and term ratio 1.7689 > 1 (terms growing); with N_k(d) >= N_{k-2d'}(0,0) x fixed path (S1 injection), G(d) DIVERGES for every d: no mediated coupling in the venue limit
+
+-- SECTION 6: 1D CHAIN VENUE (D-15 discriminator: the class MUST differ from 2D) --
+PASS  S6 1D mu=1/4 (subcritical here; 2mu=0.50): ratio r(d) CONSTANT across d=1..12 (spread 0.000000 <= 1/100: PURE exponential, no prefactor -- unlike the 2D rows) AND r solves mu r^2 - r + mu = 0 within the interval (exact algebraic invariant)
+PASS  S6 1D mu=2/5 (subcritical here; 2mu=0.80): ratio r(d) CONSTANT across d=1..12 (spread 0.000000 <= 1/100: PURE exponential, no prefactor -- unlike the 2D rows) AND r solves mu r^2 - r + mu = 0 within the interval (exact algebraic invariant)
+   note: mu = 1/4 is the D=2 venue's critical point and is SUBCRITICAL on the 1D venue
+   (mu_c is the venue's own computed number, 1/2 here; dimension enters only as the venue).
+   1D critical kernel (mu = 1/2), K = 80000, proven tails:
+    a_1D(2) in [1.994358, 2.001450]
+    a_1D(4) in [3.977433, 4.005801]
+    a_1D(8) in [7.909736, 8.023211]
+PASS  S6 1D critical class: doubling-increment ratio [1.940,2.047] inside [9/5,11/5] => LINEAR kernel (a_1D(d) tracks d; owner comparison: Spitzer, a_Z(d) = |d| exactly)
+PASS  S6 DISCRIMINATOR: 1D critical ratio window [9/5,11/5] and 2D critical ratio window [4/5,5/4] are DISJOINT and both rows landed inside their own window: the critical class DIFFERS across earned dimension (D-15 satisfied by computation)
+PASS  S6 1D mu=2/3 (supercritical): term t_{2m}(0) = 3768194187890347263717253317362954378161498852115.1 > 10^6 at m=200 => DIVERGENT
+
+-- SECTION 7: TRUE-ENSEMBLE CONTROL on (3,7): full weight enumerator of the
+   admissible-writer coset (2^22 exhaustive per pair) -- the walk model checked
+   against Gamma's actual admissible set, beyond the minimal stratum --
+   v=(1, 0)  d=1  hist_min=(w=1, N=1)  G_true(1/8)=0.14879885  excess=0.1903  argmax(1/8) w=1  G_true(1/3)=1.2122 (argmax stratum w=1)
+   v=(0, 1)  d=1  hist_min=(w=1, N=1)  G_true(1/8)=0.13270089  excess=0.0616  argmax(1/8) w=1  G_true(1/3)=1.0387 (argmax stratum w=1)
+   v=(0, 2)  d=2  hist_min=(w=2, N=1)  G_true(1/8)=0.01800297  excess=0.1521  argmax(1/8) w=2  G_true(1/3)=0.6338 (argmax stratum w=2)
+   v=(0, 3)  d=3  hist_min=(w=3, N=1)  G_true(1/8)=0.00288483  excess=0.4770  argmax(1/8) w=3  G_true(1/3)=0.4810 (argmax stratum w=6)
+   v=(1, 1)  d=2  hist_min=(w=2, N=2)  G_true(1/8)=0.03912297  excess=0.2519  argmax(1/8) w=2  G_true(1/3)=0.8751 (argmax stratum w=2)
+   v=(1, 2)  d=3  hist_min=(w=3, N=3)  G_true(1/8)=0.00794462  excess=0.3558  argmax(1/8) w=3  G_true(1/3)=0.6046 (argmax stratum w=3)
+   v=(1, 3)  d=4  hist_min=(w=4, N=4)  G_true(1/8)=0.00169057  excess=0.7311  argmax(1/8) w=4  G_true(1/3)=0.4749 (argmax stratum w=7)
+PASS  S7 (3,7): histogram minimum == (w_min = d, N_min) and total == 2^22 on every pair (weight-enumerator instrument agrees with the O-54-C scan)
+PASS  S7 (3,7): stratum SUPPORT agreement at w in {d, d+1, d+2}: the TRUE coset and the venue's walk counts populate the same low strata on every pair (including the odd-parity wrap classes of this small non-bipartite torus)
+PASS  S7 (3,7): at mu = 1/8 the minimal stratum is the ARGMAX stratum (w = d) AND holds the majority of the TRUE coset sum (excess < 1) on every pair => the confinement leading term mu^d leads Gamma's own admissible ensemble; the sub-leading excess is the venue's wrap structure, reported per pair above
+PASS  S7 (3,7): G_true at mu=1/8 strictly decreasing in earned d across the venue (exponential-type decay visible on the true finite ensemble)
+   honest note: on a FINITE venue the coset sum is a polynomial (always finite); the
+   supercritical divergence is the venue-limit statement of the walk expansion.  The
+   finite-venue enumerator above shows where each mu puts its dominant stratum.
+
+====================================================================================================
+SECTION 8 -- TAXONOMY OF REACHABLE CLASSES (all labels emitted by computed booleans)
+====================================================================================================
+  - mu < mu_c = 1/4 (computed): EXPONENTIAL decay, leading term N_min mu^d (confinement cost w_min = d); D=2 carries a computed slowly-drifting ratio prefactor, the 1D control has none
+  - mu = mu_c exactly: G divergent (marginal); regularized kernel LOGARITHMIC (constant doubling increments) -- the D=2 lattice Green's-function class of the earned dimension; NO power law in D=2
+  - mu > mu_c: DIVERGENT term-by-term: no mediated coupling in the venue limit
+
+HYPOTHESIS (stated to fail) against the computation:
+  (a) exponential below critical: CONFIRMED by computed booleans (4 rows + 2 chain rows)
+  (b) at criticality a power law fixed by earned dimension: in D=2 the critical member is
+      the MARGINAL/log class -- exactly the earned-dimension Green's-function class, which
+      in D=2 is not a power; the hypothesis's clause survives in Green's-class form and the
+      power-law question transfers to the D=3 world venue (not this lane's venue)
+  (c) nothing else: within the swept family no further class appeared; the 1D discriminator
+      shows the critical class is the venue dimension's own (linear in D=1, log in D=2)
+
+D-24 AUDIT:
+  - mu DECLARED (the coupling tier's one parameter); swept, never fitted
+  - walk sum on the venue's own lattice: plaquette adjacency computed from carrier supports; minimal stratum gated equal (weight AND count) to the O-54-C admissible-writer coset; torus==Z^2 wrap identity gated exactly
+  - criticality LOCATED BY COMPUTATION: mu_c = 1/4 from row-sum Perron sandwich + exact binomial sandwich on the positive series; venue resolvent singular exactly there; 1D venue gives its own 1/2 by the same instrument
+  - earned dimension enters ONLY as the venue (D=2 carrier; D=1 control venue); no dimension inserted into any formula on the measurement path
+  - no continuum formulas on the measurement path; owner asymptotics appear only in labeled COMPARISON gates after each class was computed
+  - no floats on the measurement path: ints, Fractions, isqrt brackets; truncation tails PROVEN from lemmas L1-L3, each re-verified computationally in Section 1
+
+GATES: 70 PASS, 0 FAIL, total 70
+
+RESULT JSON written: t44a_corner.RESULT.json

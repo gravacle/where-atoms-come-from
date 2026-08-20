@@ -1,0 +1,58 @@
+==============================================================================
+T-44-C ADVERSARIAL VERIFY -- independent code path
+==============================================================================
+
+V1 spectral bounds (independent):
+  [OK ] V1.a -- 3-D B ~ 5.396145 (sealed printed 5.396145)
+  [OK ] V1.b -- 2-D B ~ 3.797765 (sealed printed 3.797765)
+  [OK ] V1.c -- all four sealed mu rows certified convergent, independently
+
+V2 w_min = d (free):
+  [OK ] V2.a -- 3-D A->C: d=9, N_w=0 below, N_d=1, parity holds (sealed: d=9, N_d=1)
+
+V3 R1 superposition (per-order integer identity, independent counts):
+  [OK ] V3.a -- defect = 0 at every order w<=30, seps 2,3,4,6
+  [OK ] V3.b -- 2x2x2 block regions additive per order
+  [OK ] V3.c -- overlap control: defect = -G(AnB->C) per order, nonzero
+
+V4 R2 defect table (resummed, W=500, independent):
+  [OK ] V4.a -- all 8 relative-defect entries reproduce to the printed 12 digits
+
+V5 screening:
+  [OK ] V5.a -- mirror pair: counts equal at every order and resummed, all 25 mid-plane sites
+  [OK ] V5.b -- dipole/monopole ratios reproduce printed digits at x=5,10 both mu rows
+
+V6 accumulation:
+  [OK ] V6.a -- k=1..4 occupancy values reproduce printed digits (mu=1/6)
+  [OK ] V6.b -- exact additivity of numerators, both mu rows
+
+V7 shadowing:
+  [OK ] V7.a -- slab: BFS cut (independent) and G(A->B)=0 resummed
+  [OK ] V7.b -- onset order 12 = punctured BFS 12 > free 8 (sealed: 12, 12, 8)
+  [OK ] V7.c -- G_free(A->B) mu=1/6 = 0.0012367408720414 (sealed 0.0012367408720414)
+  [OK ] V7.d -- far-plane ratios: axial 0.10624064 corner 0.15402869 (sealed 0.10624064 / 0.15402869)
+  [OK ] V7.e -- R < 1 everywhere on far plane, minimum axial (independent full table)
+  [OK ] V7.f -- lambda monotone per order: blocked <= half <= empty (scaled counts)
+
+V8 truncation honesty (W=500 vs W=800 remainder vs stated tail bound):
+      mu=1/12  actual remainder(500->800) = 0.00000000000000000000 <= stated tail 0.00000000000000000000 : True
+      mu=1/6   actual remainder(500->800) = 0.00000000000000000000 <= stated tail 0.00000000000000000000 : True
+  [OK ] V8.a -- actual remainder within the sealed tail-bound formula, both mu rows
+  [OK ] V8.b -- weighted (R2) run: remainder within tail bound too (weights<=1 shrink counts)
+
+V9 MU-SHIFT ATTACK: fresh rows mu=1/10 and mu=17/100 (never run by the lane):
+  [OK ] V9.cert-1/10 -- mu*B = 0.539614 < 1 certified
+  [OK ] V9.cert-17/100 -- mu*B = 0.917344 < 1 certified
+  [OK ] V9.a -- R2 defect < 0 at both fresh mu rows (subadditive class holds)
+  [OK ] V9.b -- |Phi_dipole| < Phi_mono at every probe, both fresh rows (screening class holds)
+      screening ratio at x=5: mu=1/10 0.877305, mu=17/100 0.546296 (mu-DEPENDENT depth confirmed)
+  [OK ] V9.c -- occupancy: one-signed and exactly additive at fresh rows (accumulation class holds)
+  [OK ] V9.d -- mirror-pair exact zero at fresh rows (exact screening holds)
+  [OK ] V9.e -- shadow: R<1 everywhere, axial minimum, both fresh rows (opacity class holds; axial R = 0.037683 at 1/10, 0.101318 at 17/100 -- magnitudes move with mu, structure does not)
+
+V10 2-D discriminator:
+  [OK ] V10.a -- cut zero; onset 14 = punctured BFS 14 > free 10 (sealed 14, 14, 10)
+  [OK ] V10.b -- 2-D axial ratio 0.099030 (sealed 0.099030)
+==============================================================================
+VERIFY CHECKS: 29/29 OK
+==============================================================================

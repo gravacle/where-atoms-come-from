@@ -1,0 +1,226 @@
+================================================================================
+LANE_T44_D_JUDGE — JUDGMENT ON T-44 (exponent classes of a Gamma-constrained
+coupling) — 2026-08-20
+Inputs: LANE_T44_A_CORNER (corner-strings, verified, adversarial rerun 17/17),
+        LANE_T44_C_COMPOSE (composition, verified, independent recheck 29/29).
+Verification performed by this judge before ruling: SEALS.sha256 re-checked OK
+in both lanes; sealed gate tallies re-read from the OUTs (70 PASS / 0 FAIL
+corner; 36 PASS / 0 FAIL compose); both lanes' independent VERIFY outputs
+re-read (17/17, 29/29). No lane file modified.
+================================================================================
+
+--------------------------------------------------------------------------------
+1. THE REACHABLE-CLASS STATEMENT (what the record now holds)
+--------------------------------------------------------------------------------
+Object: the mediated coupling G_mu(d) = sum over Gamma-admissible strings from
+A to B of mu^weight — mu the coupling tier's ONE declared parameter, strings
+priced by Gamma at w_min = d exactly (C-80/O-54 confinement cost), summed by
+transfer-matrix walk counting on the venue's own lattice. Leading stratum gated
+equal to the true admissible-writer coset in weight AND count (every pair, both
+O-54-C venues) before any sum; 2^22 true-coset enumerator control run.
+
+A Gamma-constrained coupling reaches EXACTLY THREE CLASSES, each located by
+computation, none inserted:
+
+  (1) EXPONENTIAL DECAY, for mu < mu_c. Leading term N_min * mu^d — the
+      w_min = d confinement cost with its exact degeneracy. Rate matches the
+      Ornstein-Zernike lattice value and degenerates monotonically toward mu_c.
+      mu_c is the VENUE'S OWN number, computed three independent ways (Perron
+      row-sum sandwich, exact resolvent pole by Fraction Gaussian elimination,
+      exact binomial sandwich on the sector): 1/4 on the D=2 corner venue,
+      1/2 on the D=1 chain. Power laws p <= 8 excluded below mu_c (declared
+      scope).
+
+  (2) AT mu_c EXACTLY: THE EARNED DIMENSION'S OWN LATTICE GREEN'S / POTENTIAL
+      CLASS — and nothing else. Computed members:
+        D=1: kernel LINEAR, a(d) = |d| (brackets contain 2, 4, 8 exactly).
+        D=2: G marginally divergent (Polya), regularized kernel LOGARITHMIC
+             (computed brackets contain the owner anchors 4/pi, 4 - 8/pi,
+             (2/pi)ln 2). NOT a power; none was forced.
+        D=3: NOT COMPUTED IN-LANE. By owner attribution only (Spitzer, Lawler)
+             the Z^3 member is asymptotically c/d.
+      THE JUDGE'S COMPOSITION OF GATED FACTS (algebra, no new measurement): the
+      venues are deg-regular (row sums gated exactly 4, chain exactly 2), the
+      computed mu_c equals 1/deg, and the measured G is gated to solve the
+      venue's resolvent identity G - mu*(sum over neighbors) = delta. At
+      mu = 1/deg this identity IS the venue's discrete Poisson equation:
+      (deg * G - sum_nbrs G) = deg * delta, i.e. -Lap G proportional to a point
+      source. THE UNIQUE NON-EXPONENTIAL, NON-DIVERGENT REACHABLE CLASS IS THE
+      EARNED DIMENSION'S POINT-SOURCE POTENTIAL — the solution of the venue's
+      own Poisson equation. That family is linear in D=1, log in D=2, 1/d in
+      D=3. The first two members are COMPUTED with proven tail bounds; the
+      third is the family's owner-attributed member, awaiting its lane.
+      (Owner for the potential-kernel reading: Spitzer 1964, potential theory
+      of the recurrent/transient lattice walk; Delta a = delta away from the
+      origin is Spitzer's defining property of the potential kernel.)
+
+  (3) DIVERGENT / NO COUPLING, for mu > mu_c (venue-limit statement of the
+      walk model; a finite venue's coset sum is a polynomial — disclosed).
+
+  D-15 held: the critical class is the venue dimension's OWN (D=1 linear vs
+  D=2 log, disjoint windows, same instrument; D=2's critical mu is subcritical
+  on D=1). The class taxonomy, not any single exponent, is dimension-selected.
+
+HYPOTHESES THIS STATEMENT NEEDS (all declared, none silent):
+  H1. The declared string model: admissible strings realized as lattice walks
+      (backtracking included). Support: minimal stratum EQUALS the true Gamma
+      coset (weight and count, gated everywhere); 2^22 true-ensemble control
+      agrees on leading strata and small-mu behavior. Beyond leading strata,
+      walk and F_2-chain ensembles differ — class statements are statements of
+      the declared model.
+  H2. Venue-limit reading for the critical and supercritical classes (finite
+      venues gated; asymptotic class from the sector route, exactly gated).
+  H3. mu is DECLARED, not derived. Nothing in the record pins mu to mu_c —
+      this is the masslessness gap (Section 4).
+  H4. Earned dimension = C-78 computed content degree, entering ONLY as the
+      venue graph (2 corner, 3 world). Power-law exclusion below mu_c scoped
+      to p <= 8.
+
+OWNERS (standard parts): Polya 1921 (marginality D<=2); Spitzer 1964 / Lawler
+(lattice Green's functions, potential kernel); Stohr 1950, McCrea-Whipple 1940
+(exact 2D kernel values); Ornstein-Zernike (subcritical rate); Feller (walk
+combinatorics); Perron-Frobenius / Gershgorin (mu_c = 1/spectral radius);
+Watson 1939, Montroll-Weiss 1965 (D=3 landmarks); Wegner / Wilson (confinement
+character of w_min = d, standing C-80/O-54); Collatz-Wielandt / Varga (tail
+certificates, compose lane); Menger 1927 (cut = zero coupling); Doob (kernel
+positivity). OURS: the taxonomy itself, mu_c located on Gamma's own venues, the
+minimal-stratum == coset identity, and the composition results below.
+
+--------------------------------------------------------------------------------
+2. COMPOSITION FACTS, AND THE SOURCE TERM UNDER C-72'S ENCODING SPLIT
+--------------------------------------------------------------------------------
+From LANE_T44_C_COMPOSE (exact, 36/36, independently reimplemented 29/29,
+mu-robust — every class fact reproduced at two fresh adversarial mu rows):
+
+  F1. SUPERPOSITION IS A PROPERTY OF THE ADMISSIBILITY RULE, NOT OF THE WALK
+      SUM. Under the transparent endpoint rule R1: G(AuB -> C) =
+      G(A -> C) + G(B -> C) as a per-order INTEGER IDENTITY (defect exactly
+      zero, every order, every separation, both dimensions, blocks included).
+      Under the opaque-source rule R2: strictly subadditive (self-shadowing),
+      defect < 0 from the first order that threads the other source.
+  F2. THE MEDIATOR KERNEL IS POSITIVE EVERYWHERE, so C-72's encoding-level
+      sign structure survives mediation UNCHANGED: OCCUPANCY encodings can
+      only ACCUMULATE (one-signed; exactly additive under R1); ORIENTATION
+      encodings SCREEN (exact mirror-pair zero at every order; partial dipole
+      screening, mu-dependent depth). The mediator never creates or flips a
+      sign.
+  F3. SHADOWING exists ONLY under R2/lambda opacity: total at a separating cut
+      (exact zero, Menger-confirmed), graded in lambda, coverage-monotone,
+      directional, and EQUAL TO A LENGTHENING OF EARNED SEPARATION (shadow
+      onset order = punctured-venue BFS distance — C-80's w_min = d survives
+      obstacles). Under R1 there is no shadowing at all.
+  F4. All facts venue-structural: reproduced in D=2 and D=3; magnitudes move
+      with mu and dimension, the class structure does not.
+
+MEANING FOR A SOURCE TERM: the Newton-profile composition — exact
+superposition + one-signed accumulation + no screening + no shadowing — is
+reached at EXACTLY ONE point of the declared design space: R1 admissibility +
+occupancy encoding. Occupancy is precisely C-72's mass-like (one-signed,
+DC-saturation) encoding; orientation gives the two-signed, screenable,
+EM-like profile; R2 gives absorptive/optical profiles. So IF the record
+surface's own admissibility is endpoint-transparent and the gravitating
+source is the occupancy encoding, the source term composes as a Poisson
+source: linear in the source, one-signed, unscreenable, unshadowable.
+WHETHER the surface enforces that point is NOT decided by any lane — it is
+handed upward as an open piece (Section 5).
+
+--------------------------------------------------------------------------------
+3. FINAL COMPARISON (D-1 gate opens only here): NEWTON
+--------------------------------------------------------------------------------
+Question: is Newton's form (1/d potential) the unique critical member in
+earned D = 3?
+
+VERDICT: NEITHER — with the two halves computed as far as the record reaches:
+
+  AGAINST "INCOMPATIBLE": excluded by computation. Every computed critical
+  member (D=1, D=2) is the earned dimension's own point-source potential —
+  the same family whose D=3 member is 1/d. The composition profile Newton
+  requires (exact superposition, one-signed accumulation, no screening, no
+  shadowing) EXISTS in the reachable design space and at exactly one point,
+  R1 + occupancy. Nothing the lanes computed conflicts with Newton's form.
+
+  AGAINST "MATCHES": not earned, on three counts, each named:
+   (i)  NO D=3 CRITICAL ROW EXISTS IN THE RECORD. The 1/d member is owner-
+        attributed, not computed. Writing MATCHES would substitute an owner
+        for a computation — the exact move D-24 forbids and the lanes never
+        made.
+   (ii) NOTHING PINS mu TO mu_c. mu is declared; criticality is a computed
+        venue number (1/4, 1/2). Newton's form lives only AT criticality; the
+        record holds no Gamma-internal reason the physical coupling sits
+        there (masslessness, Section 4).
+   (iii) THE DESIGN POINT IS NOT YET THE SURFACE'S OWN. R1 + occupancy gives
+        the Newton profile; whether Gamma's admissibility IS R1 and the
+        gravitating encoding IS occupancy is undecided.
+
+  So: Newton's form is the UNIQUE CRITICAL CANDIDATE — the family is computed
+  in two dimensions, the composition point is computed and unique — and the
+  match is not yet earned. This is the calibrated verb the record supports.
+
+--------------------------------------------------------------------------------
+4. WHAT WOULD EARN CRITICALITY (the masslessness condition) — NAMED NEXT PIECE
+--------------------------------------------------------------------------------
+Below mu_c the coupling has a mass gap m_eff = ln(mu_c/mu) > 0 (the OZ rate's
+origin); AT mu_c the gap closes — criticality IS masslessness of the mediator
+channel. What would earn it, in Gamma's own terms:
+
+  CANDIDATE (INSERTED HYPOTHESIS, judge's, labeled as such — relevance test
+  passed: the named variable is mu, the per-link amplitude): mu_c = 1/deg on
+  every venue computed (1/4 on the 4-regular corner venues, 1/2 on the
+  2-regular chain; the compose lane's landmarks 1/(2D) are the same number on
+  Z^D). mu = 1/deg is EXACTLY the uniform normalization of one writer step —
+  the statement that the surface's writer measure is STOCHASTIC (total
+  measure conserved per step, no preferred continuation). IF Gamma's own
+  writer dynamics conserves measure across the deg admissible continuations,
+  then mu = 1/deg = mu_c IDENTICALLY: masslessness would be measure
+  conservation of the admissible-writer kernel, not a tuning. Owner for the
+  general fact: stochastic matrices have spectral radius 1 (Perron), i.e. a
+  conserved current has a massless pole. TO COMMISSION: does the record
+  surface's own writer ensemble (O-54-C admissible cosets, GR3 writing rules)
+  normalize per-step — or does anything in Gamma break uniformity? A computed
+  YES earns criticality; a computed NO makes mu a genuinely free parameter
+  and the masslessness question external to Gamma.
+
+--------------------------------------------------------------------------------
+5. INCREMENT VERDICT (C-77, third increment) AND OPEN PIECES
+--------------------------------------------------------------------------------
+C-77's standard: derive, from record-surface structure alone, no classical
+form assumed, a scale-level relation matching a known gravitational one;
+FAILS if every derivation requires assuming the classical form or yields
+incompatible relations.
+
+VERDICT: SATISFIED — at family level, in the computed dimensions.
+  - No classical form was assumed anywhere on any measurement path (D-1 held;
+    Newton appears first in Section 3 of this judgment).
+  - A scale-level relation was DERIVED and computed: the unique
+    non-exponential coupling a Gamma-priced admissible-string sum can carry
+    is the earned dimension's own point-source potential (the discrete
+    Poisson solution) — linear in D=1, logarithmic in D=2, both computed with
+    proven tails; and the log kernel IS the known gravitational potential of
+    two dimensions. The Newtonian FAMILY is matched without being inserted.
+  - The source term composes as a Poisson source at a computed, unique design
+    point (R1 + occupancy) — superposition exact, accumulation one-signed.
+  - Nothing incompatible appeared; the failure clause is not triggered.
+  Scope of the verdict, stated plainly: family-level, D=1/D=2. The D=3 member
+  (Newton's own), the pinning of mu to mu_c, and the surface's enforcement of
+  R1 + occupancy are the open pieces — increments, not defects.
+
+OPEN PIECES, RANKED (per discipline no route closes without a next step):
+  N1. THE D=3 CRITICAL ROW: run the corner lane's instrument on a D=3 venue
+      (T43-B world grain family, or a Z^3 sector reached through an exactly
+      gated wrap identity): locate mu_c by the Perron/sector route (landmark
+      1/6 on Z^3), then test the regularized kernel against an
+      INVERSE-DISTANCE window beside the log and linear windows (D-15
+      discriminators already built). Owner anchors: Watson 1939 G(0), the
+      c/d asymptote (Spitzer/Lawler). A computed 1/d bracket earns MATCHES
+      at member level.
+  N2. MASSLESSNESS: the measure-conservation candidate of Section 4 — is
+      Gamma's writer kernel stochastic (mu = 1/deg forced), or is mu free?
+  N3. THE SURFACE'S DESIGN POINT: is Gamma's admissibility endpoint-
+      transparent (R1) and is the gravitating C-72 encoding occupancy?
+      Composition facts are already tabulated for every alternative.
+
+--------------------------------------------------------------------------------
+6. D-24 AUDIT OF THIS JUDGMENT
+--------------------------------------------------------------------------------
+See D24_AUDIT.txt in this lane.
+================================================================================

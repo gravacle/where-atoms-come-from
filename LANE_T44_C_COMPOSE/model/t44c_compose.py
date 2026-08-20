@@ -197,7 +197,8 @@ def gval(R, mi, sites):
     return Fraction(num, den)
 
 def gtail(R, mi):
-    """exact rational tail bound for ONE target site; for a target set multiply by |T|."""
+    """exact rational tail bound, valid for ANY target set T (1_T <= phi/phi_min
+       entrywise, so N_w(S->T) <= K_S B^w uniformly in T; weights <= 1 only shrink it)."""
     p, q = R['mus'][mi]
     V = R['V']
     x = Fraction(p, q) * V.B  # per-step bound (weighted matrix <= sigma*A entrywise,
@@ -235,6 +236,9 @@ V2 = Venue((13, 7), "2-D 13x7 block (corner-class string lattice; D-15 discrimin
 MU3 = [(1, 12), (1, 6)]   # declared; 1/6 = 1/(2*3) infinite-lattice landmark (BORROWED)
 MU2 = [(1, 8), (1, 4)]    # declared; 1/4 = 1/(2*2) infinite-lattice landmark (BORROWED)
 WRES3, WRES2 = 500, 1600
+if "--smoke" in sys.argv:        # structural smoke test only: short series, interval
+    WRES3, WRES2 = 60, 80        # gates MAY fail on tail width; not a sealed mode
+    print("[SMOKE MODE -- short series, not for sealing]")
 
 print("\nSECTION 0 -- venue and instrument self-checks")
 print("-" * 78)
@@ -408,8 +412,10 @@ for (s, ords, dvals) in rows:
              dec(dvals[0][2], 20), dec(dvals[1][2], 20)))
 mono = all(abs(mags[i][1][mi]) > abs(mags[i + 1][1][mi])
            for i in range(len(mags) - 1) for mi in range(2))
-gate("G1.3b", mono, "|relative defect| strictly decreasing in the A-B separation at "
-     "both mu rows (magnitudes tabulated; NO exponent fitted or claimed)")
+print("    |relative defect| strictly decreasing in the A-B separation: %s" % mono)
+print("    (REPORTED AS FOUND, not gated: on this venue the sweep moves B toward C as")
+print("     it leaves A, so separation-to-A and proximity-to-C are confounded; the")
+print("     defect table itself is the deliverable.  NO exponent fitted or claimed.)")
 # 2-D check row
 s = 3
 U2 = A1_2 | B1_2[s]
@@ -551,23 +557,26 @@ r_disk0 = RUN(V3, As, WRES3, MU3, lam0=disk)
 r_slab1 = RUN(V3, As, WRES3, MU3, lam0=slab1)
 r_ring0 = RUN(V3, As, WRES3, MU3, lam0=ring)
 chain = [("empty", r_free), ("center 1", r_cen0), ("3x3 disk", r_disk0),
-         ("slab-1", r_slab1), ("full slab", r_slab0)]
+         ("full slab", r_slab0)]
 po_mono = True
 for i in range(len(chain) - 1):
     for w in range(W_ORD + 1):
         if ordcount(chain[i + 1][1], w, Bs) > ordcount(chain[i][1], w, Bs):
             po_mono = False
-gate("G3.3a", po_mono, "NESTED COVERAGE empty c {center} c disk c slab-1 c slab: "
+gate("G3.3a", po_mono, "NESTED COVERAGE empty c {center} c 3x3 disk c full slab: "
      "per-order counts monotone non-increasing at every order")
-print("    G(A->B) at mu=1/6 by obstacle (exact partial sums; tails bounded):")
-for (lbl, r) in chain + [("ring (slab-disk)", r_ring0)]:
+print("    G(A->B) at mu=1/6 by obstacle (exact partial sums; tails bounded;")
+print("    slab-1 and ring are non-nested variants, reported beside the chain):")
+for (lbl, r) in chain + [("slab-1 (hole)", r_slab1), ("ring (slab-disk)", r_ring0)]:
     print("      %-16s %s" % (lbl, dec(gval(r, 1, Bs), 16)))
 strict = all(gval(chain[i][1], mi, Bs) >
              gval(chain[i + 1][1], mi, Bs) + gtail(chain[i][1], mi) +
              gtail(chain[i + 1][1], mi)
              for mi in range(2) for i in range(len(chain) - 2))
+strict &= all(gval(r_slab1, mi, Bs) > gtail(r_slab1, mi) for mi in range(2))
 gate("G3.3b", strict, "resummed G strictly decreasing along the nested chain "
-     "(down to slab-1; the last step lands on exact zero)")
+     "(empty > center > disk), the 24-site slab-1 (one-site hole) still transmits "
+     "G > 0, the full slab lands on exact zero")
 
 # first-order onset = earned separation in the punctured venue
 d_free = min(V3.bfs_dist(As)[b] for b in Bs)
@@ -607,8 +616,7 @@ for y in range(5):
 allless = all(v < 1 for v in Rmap.values())
 minc = all(Rmap[(2, 2)] <= v for v in Rmap.values())
 corners = [Rmap[(y, z)] for y in (0, 4) for z in (0, 4)]
-maxcorn = all(any(abs(cv - max(Rmap.values())) == 0 for cv in corners)
-              for _ in [0]) and max(Rmap.values()) in corners
+maxcorn = (max(Rmap.values()) in corners)
 gate("G3.6a", allless, "R < 1 at every far-plane probe (the obstacle dims everything)")
 gate("G3.6b", minc, "R minimal at the axial probe (2,2) -- the geometric shadow, computed")
 gate("G3.6c", maxcorn and len(set(corners)) == 1,
