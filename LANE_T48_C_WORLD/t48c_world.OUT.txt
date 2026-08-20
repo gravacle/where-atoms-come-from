@@ -1,0 +1,170 @@
+T48-C driver -- PROBE 3: THE WORLD VENUE COMPUTATION (O-58 N2, world tier).
+
+QUESTION (the judge's N2, verbatim hypothesis under test, never assumed):
+  mu_c = 1/deg on every computed venue, and mu = 1/deg is exactly the stochastic
+  measure-conserving normalization of one writer step; if Gamma's writer kernel
+  conserves measure, mu = mu_c IDENTICALLY -- masslessness is measure conservation,
+  not tuning.
+TASK: on the census access geometry's deg-6 grain lattice, compute the INDUCED
+per-link amplitude of one writer step from the world ensemble the model actually
+has -- the (iv') energy-conserving dilation writers on written media (C-71/C-72
+occupancy and orientation encodings), with the activation convention of
+model/project_model.py (corrected form):
+    gu = f0 exp(-E_b/kT)         escape FROM the metastable well
+    gd = f0 exp(-(E_b+dE)/kT)    reverse, INTO the metastable well
+Does detailed balance at temperature T induce the measure-conserving normalization
+1/deg?  Only at dE = 0?  Never?  dE is the physical bias dial; if measure
+conservation breaks, compute WHERE the induced amplitude lands relative to
+mu_c = 1/6 (mass gap ln(mu_c/mu)) as a function of dE/kT.
+
+AMBIGUITY GUARD (binding): more than one honest construction of "the writer
+ensemble" exists.  ALL are declared here, BEFORE measurement, and ALL are computed;
+none is silently preferred.  Per-attempt probabilities (the model's own attempt
+clock f0; one attempt per 1/f0):
+    u := exp(-E_b/kT)      per-attempt flip probability, metastable -> stable
+    v := u * b             per-attempt flip probability, stable -> metastable,
+    b := exp(-dE/kT)       the Boltzmann factor of the well asymmetry (detailed
+                           balance: v/u = b; gated in S2 from the model's own
+                           two-state kernel, not asserted)
+  E1  TRANSPORT (iv' read literally): one writer step = ONE energy-conserving
+      dilation event that transports the written unit across one grain boundary
+      (erase at x releases dE, write at y costs dE; net configuration-energy
+      change COMPUTED in S2).  Per-link amplitude = the single event's activation
+      factor a; a is swept over BOTH readings a = u and a = u*b, because the
+      composite saddle is not pinned by the model -- the result must be (and is
+      gated) independent of that choice.  Stay = 1 - 6a (nothing happens this
+      attempt).  This is the mediation that leaves no written trail (the
+      R1-transparent reading).
+  E2  TRAIL WITH RETREAT (the raw two rates, strings counted WITH backtracking,
+      exactly H1's ensemble): tip state (grain, last direction); per attempt the
+      tip writes a fresh neighbor (v each, 5 directions), or the tip grain erases
+      and the string retreats (u, 1 direction -- the backtracking link), or
+      nothing.  Measure kept or lost is COMPUTED, not declared.
+  E3a TRAIL WITH DECAY, H1-matched counting (extension-only strings, the walk
+      ensemble of the sealed T-44 coupling with the model's own erase channel as
+      absorption): per attempt, extend to any of the 6 neighbors (v each) or the
+      tip grain decays and the string leaves the ensemble (probability u = the
+      model's own erase probability), or nothing.
+  E3b TRAIL WITH DECAY, non-backtracking counting: extend fresh (v each, 5
+      directions) or decay out (u), or nothing; criticality reference for this
+      counting = the venue's own directed-edge (non-backtracking) operator,
+      earned by the same row-sum instrument.
+
+DECLARED CONSTANTS AND GATES (fixed before measurement; D-8: every verdict a
+computed boolean; exact-equality gates have tolerance ZERO on Fractions):
+  N = 8 venue side; K_WRAP = 12 (wrap identity, every cell, every k <= 12);
+  K_AXIS = 10 (axis-split vs DP, all endpoints); K_BOX = 6, BOX_B = 7
+  (block-interior vs free); K_MEAS = 12 (exact measure evolution);
+  K_SUM = 12 (propagator partial sums).
+  U_SAMPLES = [1/20, 1/100]; B_SAMPLES = [1, 9/10, 3/4, 1/2, 1/4, 1/10]
+  (declared rational sample points of the Boltzmann factors; dE/kT = -ln b exists
+  only in the labeled COMPARISON section).  b = 1 is the orientation encoding's
+  field-free degenerate wells (C-71 CoCrPt, dE = 0); b < 1 is the occupancy
+  encoding (C-71 NAND, dE > 0).
+  MU_C_REF := 1/deg_venue with deg_venue COMPUTED in G01 (comparison-to-sealed:
+  PUBLISHED_CONVENTIONS' deg-6, T44-B's mu_c = 1/6).
+  SEALED_MU_SUB_ROW := 1/8 (T44-B's declared subcritical sweep row; comparison).
+  COMPARISON float tolerance: 1e-12 (labeled; after results).
+VERDICT SEMANTICS (declared): "measure conserved" = every row sum exactly 1;
+"induced amplitude" = the m in I - W = c(I - sum_e m_e S_e), extracted entrywise
+and gated for uniformity across cells and directions (uniformity EARNED or shown
+to fail, never inserted); "AT criticality" = m uniform and equal to the venue's
+computed 1/deg (E1/E2/E3a) or 1/deg_NB (E3b); "mass gap" = ln(mu_c/mu), reported
+as the exact rational ratio mu_c/mu on the measurement path.
+
+==============================================================================
+SECTION 1 -- VENUE REBUILD GATES (identities gated against brute force BEFORE any kernel is built)
+==============================================================================
+[G01] PASS  venue row sums: every grain has the same face-degree, no multi-edges  :: deg_venue = 6 (sealed conventions say 6: True)
+[G02] PASS  BFS distance == earned L1 (wrap) separation on every grain
+[G03] PASS  block-interior DP == free-sector DP, k <= 6, box |x|inf <= 7
+[G04] PASS  axis-split identity == brute-force DP, k <= 10, all endpoints (+ out-of-range zeros)
+[G05] PASS  torus wrap identity: venue transfer counts == wrap-folded free DP, every cell, every k <= 12
+[G06] PASS  octahedral generators (swap, reflect, cycle) preserve the venue adjacency: all 6 directions are venue-equivalent
+
+==============================================================================
+SECTION 2 -- WRITER ENERGETICS: earning the per-link amplitudes from the
+model's own algebra (configuration-energy changes COMPUTED, in units of dE)
+==============================================================================
+[G07] PASS  TRANSPORT step: configuration-count change dN == 0 in EVERY direction (dE cancels exactly; earns E1's direction-uniform amplitude)  :: dN per direction = [0, 0, 0, 0, 0, 0]
+[G08] PASS  TRAIL step: write dN == +1 (every fresh direction), erase dN == -1 (the D-15 nonzero beside G07's zero)  :: write [1, 1, 1, 1, 1], erase [-1]
+[G09] PASS  detailed balance COMPUTED from the model's two-state kernel: stationary pi exact, pi_meta/pi_stable == v/u == b at every (u,b) sample
+
+==============================================================================
+SECTION 3 -- THE KERNELS ON THE VENUE: measure audit and induced per-link
+amplitude, every declared ensemble, every (u,b) sample point
+==============================================================================
+[G10] PASS  E1 kernel: nonnegative, EVERY row sum exactly 1 -- the transport writer CONSERVES MEASURE at every (u,b) and both amplitude readings
+[G11] PASS  E1 induced amplitude UNIFORM across all cells and all 6 directions (uniformity EARNED: G06 venue symmetry + G07 computed dE-cancellation)
+[G12] PASS  E1 induced per-link amplitude == MU_C_REF = 1/deg_venue for EVERY (u,b) and BOTH amplitude readings  :: induced mu set = {1/6} == {1/6}
+[G13] PASS  E1 operator identity entrywise: I - W == c(I - m A) on the venue
+[G14] PASS  E1 exact measure evolution from a point source: total == 1 at every step k <= 12
+[G15] PASS  E1 propagator partial sums == K+1 (LINEAR divergence: the string sum sits AT its critical point; massless witness)  :: sum = 13
+[G16] PASS  E1 criticality signature: (I - W) 1 == 0 exactly (resolvent singular AT the writer's own normalization -- the T44-B mu_c signature)
+[G17] PASS  E2 kernel: EVERY row sum exactly 1 -- the raw two-rate writer with backtracking kept CONSERVES MEASURE at every dE
+[G18] PASS  E2 kernel doubly stochastic (column sums exactly 1): uniform is the Perron vector both ways; propagator diverges -- no gap opens
+[G19] PASS  E2 induced amplitudes: 5 fresh links equal, per-state redistribution total == 1 EXACTLY at every (u,b) (conserving redistribution)
+[G20] PASS  E2 UNIFORMITY iff dE == 0: m_back == m_fresh == 1/deg exactly at b = 1, and uniformity FAILS at every b != 1 (computed both directions)  :: at b=1: m = 1/6; at b=1/2: (m_fresh, m_back) = (1/7, 2/7)
+[G21] PASS  E2 drift: per-state drift == (v-u)*DIRS[d] exactly (path-relative persistence bias, nonzero at dE != 0) and stationary-average drift == 0 exactly (NO spatial bias)
+[G22] PASS  E3a kernel: EVERY row sum exactly 1-u < 1 -- measure LOST at exactly the model's own erase probability u (the D-15 nonzero control beside G10/G17)
+[G23] PASS  E3a induced per-link amplitude == v/(deg*v+u) == b/(deg*b+1) EXACT: f0 and E_b cancel; the induced amplitude depends on dE/kT ALONE
+[G24] PASS  E3a mu_induced < MU_C_REF STRICTLY at every (u,b): the non-conserving ensemble lands computably OFF criticality (DONE_WHEN control)  :: mu(b) = {'1': '1/7', '9/10': '9/64', '3/4': '3/22', '1/2': '1/8', '1/4': '1/10', '1/10': '1/16'}
+[G25] PASS  E3a operator identity entrywise: I - W == c(I - m A), c = deg*v+u
+[G26] PASS  E3a barrier/attempt-clock independence: induced mu identical across u samples at fixed b (E_b and f0 set the clock, never the criticality)
+[G27] PASS  E3a exact measure evolution: total == (1-u)^k at every step k <= 12
+[G28] PASS  E3a propagator partial sums == (1-(1-u)^(K+1))/u exactly, < 1/u: CONVERGENT (massive) beside E1's linear divergence (massless)  :: sum = 39867016537742941/4096000000000000 < 1/u = 20
+[G29] PASS  E3a mass ratio mu_c/mu == (deg*b+1)/(deg*b) == 1 + e^{dE/kT}/deg EXACT as rationals at every sample (the O-58 N2 gap, computed)
+[G30] PASS  E3a induced mu strictly increasing in b: the gap closes only as the erase channel becomes negligible relative to writing
+[G31] PASS  E3b criticality reference EARNED: the venue's directed-edge (non-backtracking) operator has constant row sums (same Perron instrument)  :: deg_NB = 5, MU_C_NB = 1/5
+[G32] PASS  E3b induced per-link amplitude == b/(5b+1), redistribution total == 5b/(5b+1) < 1 strictly: off criticality in the NB counting too
+[G33] PASS  E3b mass ratio mu_c^NB/mu == 1 + e^{dE/kT}/5 exact: SAME LAW as E3a with l = 5 available links -- gap = ln(1 + e^{dE/kT}/l), counting-independent
+[G34] PASS  E2/E3 closure: E3's row-sum deficit == u == exactly E2's retreat amplitude -- the measure the extension-only counting loses IS the backtracking channel H1 keeps
+
+==============================================================================
+SECTION 4 -- COMPARISON (floats, LABELED, run AFTER all results above)
+==============================================================================
+  b        dE/kT        mu_E3a         gap ln(mu_c/mu)  ln(1+e^x/6)     
+  1        -0.000000    1/7            0.1541506798     0.1541506798    
+  9/10     0.105361     9/64           0.1698990368     0.1698990368    
+  3/4      0.287682     3/22           0.2006706955     0.2006706955    
+  1/2      0.693147     1/8            0.2876820725     0.2876820725    
+  1/4      1.386294     1/10           0.5108256238     0.5108256238    
+  1/10     2.302585     1/16           0.9808292530     0.9808292530    
+[G35] PASS  COMPARISON: gap ln(mu_c/mu) agrees with the closed law ln(1 + e^{dE/kT}/deg) at every sample (float check of the exact rationals)
+[G36] PASS  COMPARISON-TO-SEALED: at dE = kT ln 2 the trail ensemble's induced amplitude EQUALS the sealed T44-B subcritical sweep row mu = 1/8, whose class was already computed EXPONENTIAL with OZ-rate agreement  :: mu_E3a(b=1/2) = 1/8 == sealed row 1/8
+  NOTE (comparison): at large dE/kT the gap grows as dE/kT - ln(deg): the well
+  asymmetry prices the coupling's range linearly, offset by the venue's ln(deg).
+  At dE = 0 the minimal trail-ensemble gap is ln(7/6) (H1 counting) or ln(6/5)
+  (NB counting): the bare erase channel alone keeps written-trail mediation
+  massive.  Persistent-walk remark for E2 at b != 1 (owner: Goldstein 1951,
+  Kac 1974; comparison-only): path-persistence classically renormalizes the
+  diffusion constant, not the class; the E2 class computation is NOT run here
+  and is named open below.
+
+==============================================================================
+SECTION 5 -- VERDICTS (computed conjunctions of the gates above)
+==============================================================================
+V1 [PASS] TRANSPORT (iv' literal): the energy-conserving writer conserves measure
+      IDENTICALLY and induces mu = 1/deg = mu_c at EVERY dE, EVERY barrier,
+      both saddle readings: criticality is structural, not tuned.
+V2 [PASS] TRAIL WITH RETREAT (raw two rates, H1 backtracking kept): measure
+      conserved at every dE; the induced redistribution is the UNIFORM 1/deg
+      EXACTLY at dE = 0 and non-uniform (path-persistent, zero spatial drift)
+      at every dE != 0; no loss channel, propagator diverges.
+V3 [PASS] TRAIL WITH DECAY (extension-only): measure conservation FAILS by exactly
+      the model's erase probability; induced mu = 1/(deg + e^{dE/kT}) lands
+      strictly below mu_c at EVERY dE >= 0; mass gap = ln(1 + e^{dE/kT}/l),
+      counting-independent in form; f0 and E_b drop out exactly.
+V4 [PASS] DONE_WHEN CONTROL: an ensemble that does NOT conserve measure lands
+      computably OFF criticality -- and it is not an artificial control: it is
+      the model's own written-trail mediation with its own decay channel.
+V5 [PASS] O-58 N2 ON THE WORLD VENUE: in every computed construction, the induced
+      amplitude sits AT the measure-conserving normalization 1/deg exactly when
+      the writer step loses no measure AND the venue's link symmetry is unbroken
+      (both computed); the one measure leak the model owns (erasure) prices the
+      gap ln(1 + e^{dE/kT}/l).  Masslessness is measure conservation, not tuning:
+      no tuning closes the gap while a loss channel exists, none is needed once
+      it does not.
+
+GATES: 36 PASS, 0 FAIL, 36 total
+RESULT written: t48c_world.RESULT.json

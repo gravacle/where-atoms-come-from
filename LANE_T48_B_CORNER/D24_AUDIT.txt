@@ -1,0 +1,131 @@
+LANE T48_B -- D-24 AUDIT TABLE.  Every concept used: EARNED (with the computation that
+earned it), DECLARED (fixed in the driver header before measurement), or BORROWED/OWNED
+(attributed, then verified against its sealed source or re-verified computationally
+before any use).
+
+CONCEPT                  STATUS    HOW
+-----------------------  --------  ----------------------------------------------------------
+venue's own dual         EARNED    rebuilt IN-LANE from plaquette supports alone through
+lattice (corner)                   T-44-A's sealed instrument (plaquette_adjacency): row
+                                   sums computed (deg = 4 on (4,6), (3,7), (5,5)); no
+                                   self-links gated; every carrier edge in exactly 2
+                                   plaquette supports gated => single-edge X writers in
+                                   bijection with links, counted both ways (48/42/50).
+elementary writer        EARNED    gated in weight AND count against the O-54-C
+stratum                            admissible-writer coset exactly as T-44 did, BEFORE
+                                   any ensemble was built: w_min == d_gen == dual BFS
+                                   distance AND minimal-walk count == coset N_min on
+                                   every sample pair (exhaustive scans, 2^25/2^22/2^26
+                                   cosets); the single-edge writer's pair has
+                                   (w_min, N_min) == (1, 1) on adjacent pairs; its
+                                   syndrome == exactly its two cells, by symplectic
+                                   pairing on EVERY link of every venue.
+mu_c (criticality)       EARNED    RE-LOCATED IN-LANE, never imported as a number:
+                                   Perron row-sum sandwich (A.1 == deg.1 exact +
+                                   Gershgorin); exact sector sandwich 16^m/(2m+1)^2 <=
+                                   C(2m,m)^2 <= 16^m (direct m <= 300, exact induction
+                                   steps to 10000); exact-rational resolvent SINGULAR at
+                                   1/deg and NONSINGULAR beside it (1/8, 23/100).  The
+                                   chain venue returns ITS OWN 1/2 by the same
+                                   instrument: each venue its own computed number.
+link-uniformity of the   EARNED    THE GUARD AGAINST THE CIRCLE: never inserted.  The
+algebra-measurable                 writer algebra's own invariant tuple of an elementary
+class                              writer (Gamma price, |syndrome|, #stars and #plaqs of
+                                   its edge, multiplicity) computed on EVERY link ==
+                                   (1, 2, 2, 2, 1) identically; coset data
+                                   (w_min, N_min, |coset|) identical across symmetry-
+                                   orbit representatives (exhaustive scans).  The
+                                   algebra cannot distinguish any two links: every
+                                   algebra-measurable ensemble is link-uniform.
+venue symmetry orbits    EARNED    FULL automorphism groups computed by exhaustive
+(the honest failure)               backtracking (|Aut| = 96, 84, 200, 48); TWO link
+                                   orbits on the two-scale rectangles with ZERO
+                                   cross-orbit automorphisms (positive control: 92/80
+                                   automorphisms move the representative within its
+                                   orbit) => symmetry ALONE does not earn uniformity
+                                   there -- reported as a failure, not papered over;
+                                   ONE orbit on the square (5,5) control and the chain
+                                   => the freedom is a two-scale artifact, computed.
+induced per-link         EARNED    K1: deg*t == 1 has the unique solution t* = 1/deg
+amplitude of the                   (deg from S0 row sums), and t* == the in-lane located
+conserving member                  mu_c; conservation computed separately (row sums 1;
+                                   propagated measure exactly 1 at every k <= 40) and
+                                   criticality computed separately (resolvent of W
+                                   itself singular; even-step return terms >= 1/n_cells
+                                   at all 20 computed depths; zero mass gap) -- the
+                                   identity is carried by computed booleans, not by the
+                                   construction of the two Fractions.
+ensemble constructions   DECLARED  the honest-construction sweep structure (K0 bare
+K0 / K1 / K2                       counting, K1 algebra-measurable, K2 symmetry-
+                                   measurable price-blind) and the K2 recipe parameters
+                                   ALPHAS = {1/3, 3/5}: fixed in the driver header; every
+                                   verdict about each member is a computed boolean.
+bias controls            DECLARED  uniform beta in {9/10, 11/10} and one-orbit
+                                   anisotropic alpha in {1/3, -1/3}: the DONE_WHEN
+                                   controls' declared bias parameters; their landing OFF
+                                   conservation and OFF criticality is computed (open
+                                   gap + exact Neumann bracket + convergent return
+                                   bound below; growing mass above).
+Perron-Frobenius /       BORROWED  Perron 1907 / Frobenius 1912; Gershgorin 1931;
+Gershgorin                         applied ONLY through exact row-sum computations and
+                                   exact resolvents on the venue.
+stochastic-kernel        BORROWED  row-stochastic == measure-conserving; invariant-
+facts                              measure facts: standard Markov-chain theory
+                                   (Feller I).  Uniqueness of the invariant measure on
+                                   a finite group: standard.  Informs the READING of
+                                   computed row sums only.
+Cauchy-Schwarz return    BORROWED  W^{2m}(s,s) >= 1/n for a symmetric conserving
+floor                              kernel: Cauchy-Schwarz; VERIFIED COMPUTATIONALLY at
+                                   every reported depth (all 20 even k <= 40, every
+                                   conserving member, every venue) -- never trusted
+                                   symbolically on the measurement path.
+coset / carrier          BORROWED  LANE_T44_A_CORNER/t44a_lib.py and
+instrument                         LANE_O54_C_ATTEMPT/o54c_lib.py imported READ-ONLY at
+                                   runtime (C-78 instrument lineage); their sha256
+                                   RE-VERIFIED against their own lanes' SEALS.sha256
+                                   before this lane sealed: t44a_lib.py
+                                   34bdf9af938d61160ab47e26d0941e8e06ec08655b6e79508
+                                   0e6499f98213ae7 (match), o54c_lib.py
+                                   5e69a3065b3299daa59538f9f35068119cc19200338966fa4
+                                   71814be925bcbf4 (match).
+gravitational form       NOT USED  (D-1) Newton appears NOWHERE in this lane -- not
+                                   even in a comparison block.  No falloff form, no
+                                   coupling class, no owner anchor is on any path here.
+entropy / information    NOT USED
+horizon, temperature     NOT USED
+
+RELEVANCE TEST (borrowed idea -> named program variable, named FIRST): the borrowed
+Perron/Gershgorin/stochastic-kernel machinery is applied to the named variable
+W(c -> c') -- the measure the surface's writer ensemble assigns to one elementary
+admissible writer crossing the link c -> c' of the venue's own dual lattice -- and to
+no other quantity.
+
+D-15 CONTROLS RUN (all computed booleans; every zero beside a computed non-zero):
+  * resolvent SINGULAR at mu_c / at the conserving W  <->  NONSINGULAR beside it
+    (1/8, 23/100 on A; the beta = 9/10 biased W with its exact Neumann bracket);
+  * ZERO cross-orbit automorphisms  <->  92/80 non-trivial within-orbit movers;
+  * ZERO mass gap of the conserving kernel  <->  the open gap -ln(9/10) of the biased
+    control (mass (9/10)^k exact) and the growing mass (11/10)^k of the creation-side
+    control;
+  * two-scale anisotropy freedom on (4,6)/(3,7)  <->  its COLLAPSE on the in-lane
+    square (5,5) control (link-transitive, orbits fuse);
+  * the D=1 chain venue returns ITS OWN 1/2 through the identical construction sweep
+    end-to-end (control (b));
+  * the bare-counting ensemble K0 registers NOT-conserving beside K1's conserving row
+    sums -- the honest negative that keeps the identity falsifiable.
+
+CORRECTION LOG (errors belong in the record): no in-lane correction was needed: no
+gate failed at any point and no threshold, recipe, or claim was changed after first
+computation.  Provenance fact, logged for the record: the lane was staged and first
+run in an earlier session on 2026-08-20 (RESULT.json written before the OUT was
+captured); the sealing session re-read the entire driver and the imported instruments
+against their seals, then reran from scratch -- the staging run's RESULT.json, the
+sealed run's, and the VERIFY rerun's are byte-identical (three agreeing runs across
+two sessions), and the sealed OUT and the VERIFY OUT are byte-identical (empty
+rerun_diff.txt).  The driver was not modified between the staging run and the seal.
+
+NO NARRATED VERDICTS: all 112 PASS/FAIL lines in t48b_corner.OUT.txt are computed
+booleans.  NO floats anywhere in this lane -- not on measurement paths, not in
+comparison blocks (the one decimal display helper in the driver is integer-arithmetic
+and is never called).  Deterministic: rerun byte-identical (VERIFY/rerun_diff.txt
+empty).  Returns are DATA (t48b_corner.RESULT.json).

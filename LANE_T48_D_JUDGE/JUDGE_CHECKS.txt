@@ -1,0 +1,89 @@
+T48_D JUDGE -- VERIFICATION LOG (seal re-checks and gate re-counts ONLY; no new
+measurement anywhere in this lane).  Date: 2026-08-20.
+
+CONTEXT READ BEFORE ANY WORK (the under-read discipline):
+  - LANE_T44_D_JUDGE/T44_D_JUDGMENT.md  (the N2 hypothesis as the judge stated it,
+    including the masslessness section and the pre-registered-rule landscape)
+  - LANE_T44_D_JUDGE/JUDGMENT.txt       (pre-rerun judgment; open pieces N1-N3 verbatim;
+    confirmed the ONLY pre-registered rule is N1's upgrade rule)
+  - LANE_T44_B_WORLD/PUBLISHED_CONVENTIONS.txt  (venue construction, exact-arithmetic rules)
+  - LANE_T44_B_WORLD/D24_AUDIT.txt and LANE_T44_A_CORNER/D24_AUDIT.txt  (correction logs;
+    failure modes noted: precision-vs-window at declared depth; wrap-scale strata tolerance)
+  - ledger/status_ledger.tsv rows O-58 (N2 verbatim), C-77, C-90
+  - All three probe lanes' PUBLISHED_CONVENTIONS.txt (A, B; C inherits T44-B's world
+    conventions -- see NOTE 3), D24_AUDIT.txt, sealed OUT and RESULT files.
+
+CHECK 1 -- SEALS.  shasum -a 256 -c SEALS.sha256 run in each probe lane:
+  LANE_T48_A_DERIVATION: 8/8 OK (driver, OUT, RESULT, D24_AUDIT, PUBLISHED_CONVENTIONS,
+    VERIFY OUT rerun, VERIFY RESULT rerun, VERIFY/rerun_diff.txt)
+  LANE_T48_B_CORNER:     8/8 OK (same file set)
+  LANE_T48_C_WORLD:      9/9 OK (lib, driver, OUT, RESULT, D24_AUDIT, VERIFY rerun OUT,
+    VERIFY rerun RESULT, VERIFY/diff_OUT.txt, VERIFY/NOTE.txt)
+  All three rerun-diff files hash to e3b0c44298fc1c14... (the empty file): the sealed
+  OUT and the VERIFY rerun are byte-identical in every lane.  In A and B the VERIFY
+  rerun artifacts hash IDENTICAL to the sealed OUT/RESULT (same digest lines).
+
+CHECK 2 -- GATE RE-COUNTS from the sealed OUTs (line-format counts, not substring):
+  A: grep -c '^PASS ' = 126;  grep -c '^FAIL ' = 0;  final line "GATES: 126 PASS, 0
+     FAIL, 126 total" -- MATCHES the lane claim and the relayed findings.
+  B: grep -cE '^\s*PASS ' = 112;  FAIL-format lines = 0;  final line "GATES: 112 PASS,
+     0 FAIL, total 112" -- MATCHES.
+  C: grep -cE '^\[G[0-9]+\] PASS' = 36;  '\[G..\] FAIL' = 0;  final line "GATES: 36
+     PASS, 0 FAIL, 36 total" -- MATCHES.  The five V1-V5 synthesis lines were checked
+     in the sealed driver (t48c_world.py lines 504-508): each is a computed conjunction
+     of gate booleans (V4 = g22 and g24 and g32 is the DONE_WHEN conjunction), not
+     narration.  Substring "FAIL" appears in C's OUT only inside PASS-gate text
+     describing computed failures of uniformity/conservation (lines 107, 154).
+
+CHECK 3 -- IMPORTED-INSTRUMENT HASHES (B's runtime imports) re-verified by this lane
+  against the SOURCE lanes' own seals:
+  t44a_lib.py  34bdf9af938d61160ab47e26d0941e8e06ec08655b6e795080e6499f98213ae7
+    == LANE_T44_A_CORNER/SEALS.sha256 entry == fresh shasum of the file.  MATCH.
+  o54c_lib.py  5e69a3065b3299daa59538f9f35068119cc19200338966fa471814be925bcbf4
+    == LANE_O54_C_ATTEMPT/SEALS.sha256 entry == fresh shasum of the file.  MATCH.
+
+CHECK 4 -- TRACE OF LOAD-BEARING QUOTED NUMBERS to sealed OUT lines (spot checks,
+  no re-derivation):
+  A: E-GLOB step decomposition 4/18 + 4/18 + 10/18 == 1 (S3.16, OUT line 103);
+     leak positive control det(I - (9/10)K) != 0 with exact value 269059/4000000 on C8
+     (S3.4); synthesis S6.1-S6.5 present as computed booleans.
+  B: t* = 1/4 == in-lane mu_c on (4,6) (S4 K1, OUT line 137); K2 HONEST LIMIT gate --
+     conserving family does NOT pin the value on two-scale venues (line 145); |Aut| =
+     96/84 with 2 link orbits (lines 94, 98); Perron + sector sandwich mu_c lines 78-85.
+  C: E3a mu(b) row {1: 1/7, 9/10: 9/64, 3/4: 3/22, 1/2: 1/8, 1/4: 1/10, 1/10: 1/16}
+     (G24) -- includes the b=1/2 value 1/8 equal to the sealed T44-B subcritical row;
+     E2 split (m_fresh, m_back) = (1/7, 2/7) at b = 1/2 (G20); E3b b/(5b+1) (G32).
+
+CHECK 5 -- CORRECTION LOGS read (failure-mode discipline): A logs two pre-seal
+  corrections (S3.16 sector-filter conflation; S6.1 prefix-matching bug) -- both
+  visible in the driver, no threshold changed.  B logs none needed, plus the staging
+  provenance fact (three byte-identical runs across two sessions).  C logs one
+  pre-run correction (narrated literals replaced by computed dN on explicit pattern
+  sets).  None repeats the T44-A/B failure modes; nothing was corrected after sealing.
+
+CHECK 6 -- ADVERSARIAL VERDICTS (relayed findings JSON): derivation not-refuted
+  (high; independent rebuild 57/57), corner not-refuted (high; 77/77 + byte-identical
+  rerun of sealed driver), world not-refuted (high; 27/27 + fresh sample points off
+  the declared grid).  Two verifier caveats CARRIED into the judgment verdict:
+  (i) det(I-K)==0 follows from row-stochasticity alone, so the kernel-level identity
+  is earned for the symmetric kernels the involutive writer algebra actually produces;
+  (ii) the corner headline sentence is over-broad read literally -- the register must
+  keep the lane's own scoping (value 1/deg pinned by algebra price-uniformity or
+  link-transitivity; the price-blind conserving family on two-scale venues is a
+  1-parameter anisotropy family).
+
+NOTES:
+  1. D-1 checked program-wide for this increment: "Newton" appears in NO T48 lane
+     (grep over all three lanes' sealed artifacts: zero hits outside this check's
+     vocabulary); no comparison section exists in A or B at all; C's comparison
+     section compares only to the model's own dE/kT translation.
+  2. No floats: A and B declare and audit zero floats anywhere; C confines floats to
+     the labeled Section-4 comparison (audit + verifier confirmed).
+  3. LANE_T48_C_WORLD carries no in-lane PUBLISHED_CONVENTIONS.txt; its venue
+     construction follows T44-B's sealed conventions (rebuilt and re-gated in-lane,
+     G01-G06).  Noted as a provenance fact, not a defect: the construction gates are
+     in the sealed OUT.
+  4. This lane adds NO new measurement.  Every number in T48_D_JUDGMENT.md traces to
+     a sealed artifact of A, B, C, T44-A/B/D, or the ledger.
+
+CORRECTION LOG (this lane): none needed.

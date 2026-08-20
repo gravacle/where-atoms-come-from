@@ -10043,3 +10043,38 @@ A-EM/A-GR/A-AL — all SINGLE-CARRIER by the audit — appear as context only. T
 ("gauge tier proved on ONE carrier family") is superseded by citation discipline: the statement now
 rests only on rows that survived the carrier audit. **T-16 UNBLOCKS** — the proof is next, and its
 architecture is fixed: PROOF_V002 is the URM's narration.
+
+---
+
+## T-48 LANDS — **MASSLESSNESS IS MEASURE CONSERVATION: THE CONDITIONAL IS A COMPUTED IDENTITY, AND WHAT REMAINS IS ONE COMPUTABLE BIT** (C-91; O-58 N2 split, residue merged into N3; C-77's occupancy condition PARTIALLY EARNED by the judge's scoping)
+
+Three lanes, three adversarial verifiers with independent machinery (fresh sample points off every
+declared grid), a judge adding no measurement — **not refuted anywhere**. The kernel tier: the
+unitary writer algebra forces measure conservation for EVERY ensemble weighting — unitarity, not
+uniformity, conserves; every conserving kernel is exactly critical, `det(I−K) == 0` beside exact
+nonzero controls; conservation does NOT force link-uniformity, and the exact supplement is named —
+invariance under the venue's edge-transitive automorphisms, under which `1/deg` is forced
+identically. The corner tier earns uniformity from the algebra itself (the elementary writer's
+invariant tuple identical on every link) and re-locates `μ_c` in-lane. The world tier fires the
+ambiguity guard as commissioned: three honest ensemble constructions, none silently preferred —
+**E1 transport is critical at every dE and barrier** (erase-behind releases exactly what write-ahead
+costs; `E_b`, `f₀`, `dE` only set the clock); **E2** conserves at every dE, uniform exactly at
+`dE = 0`; **E3, the model's own erase channel, is never critical** — the mass gap in closed form,
+**`ln(μ_c/μ) = ln(1 + e^{dE/kT}/l)`**, with `f₀` and `E_b` dropping out exactly. The DONE_WHEN
+control landed in every lane, and in the world lane it is the physics: bath polarization is bias,
+and bias is mass.
+
+**The obstruction, plain (the DONE_WHEN's second branch):** `μ = μ_c` is NOT derived on the physical
+surface. Nothing forces the antecedent — K0 and E3 are honest non-conserving constructions, so
+whether Γ's GR3 writing conserves measure is a real physical bit, now THE SAME QUESTION as N3's
+design point with computed stakes on every branch; and ensemble-weight symmetry is unearned extra
+data (the anisotropy frontier, N5). **C-77's "occupancy of criticality" moves to PARTIALLY EARNED,
+scoped — issued as the T-48 judge's own call on the computed record; no pre-registered rule governs
+N2, so this scoping's ratification sits with the principal** (the verdict sentence is unchanged in
+kind: MATCHES at member level, never gravity-derived). D-1 was kept absolutely: Newton appears in no
+T-48 lane, comparison included. In-lane corrections are in the lanes' own D24_AUDIT files.
+
+**Next step named: T-49 appended — the conservation bit of GR3 writing** (formulate "one writing
+event redistributes writer measure vs creates/destroys it" as a computable property of the writing
+tier and decide which honest ensemble Γ enforces), with companions ranked: the anisotropy frontier,
+link-indistinguishability forcing the weight measure, E2's decay class at `dE ≠ 0`.

@@ -1,0 +1,142 @@
+LANE T48_A -- D-24 AUDIT TABLE.  Every concept used: EARNED (with the computation that
+earned it), DECLARED (fixed in the driver header before measurement), or BORROWED/OWNED
+(attributed, then re-verified on explicit operators before any use).
+
+CONCEPT                  STATUS    HOW
+-----------------------  --------  ----------------------------------------------------------
+writer-step kernel       EARNED    T[x][y] built from ACTUAL elementary admissible-writer
+T[x][y] on configs                 generators: D=1 Ising-ring X_i (induced syndrome action
+                                   verified against ALL 256 carrier states x 8 writers,
+                                   S1.3); D=2 toric X_e (edge-in-exactly-2-plaquettes
+                                   support fact S1.5 + Z-basis parity identity on 512
+                                   declared states, S1.9); trivial-action stabilizer
+                                   writers (stars) earned by the even-overlap computation
+                                   S1.8.  Never declared as a matrix.
+measure conservation     EARNED    doubly stochastic == every row AND column sum == 1,
+(double stochasticity)             exact Fractions; computed for EVERY ensemble: local,
+                                   lazy, global (full 128- and 256-config syndrome
+                                   spaces), stabilizer-augmented, and three declared
+                                   NON-uniform weight rows per writer set (S3.12) --
+                                   conservation comes from the writer algebra, never
+                                   from uniform weights (the no-circle gate).
+criticality (the gap)    EARNED    exact singularity witness det(I - K) == 0 (venue-sized
+                                   exact Gaussian elimination) for every conserving
+                                   kernel, INCLUDING the non-uniform biased one and every
+                                   lazy row; beside each zero the positive control
+                                   det(I - (9/10)K) != 0 computed exactly (D-15).
+per-link amplitude 1/deg EARNED    deg COMPUTED from each venue's row sums (S1.13), never
+                                   declared; E-LOC induces exactly 1/deg per link (S3.2);
+                                   the lazy families induce per-CROSSING t/(1-c) == 1/deg
+                                   identically via the exact resolvent identity
+                                   (1-xc)(I - m(x)A) == I - xK (S4.3); the global
+                                   ensemble conditioned at the moving string end induces
+                                   1/deg (S3.15).
+uniformity NOT forced    EARNED    the counterexample is computed, not argued: axis-biased
+by conservation alone              doubly-stochastic kernels on T3 (1/3 vs 1/6) and Z27
+                                   (1/4, 1/6, 1/12) pass conservation AND criticality
+                                   while failing link-uniformity, and fail invariance
+                                   exactly at the axis-transposing generator (S4.4-S4.7).
+                                   The needed supplement is NAMED: ensemble invariance
+                                   under the venue's edge-transitive automorphisms.
+venue symmetry           EARNED    every declared generator verified adjacency-preserving;
+                                   vertex- and directed-edge-orbit closures computed equal
+                                   to the full sets (S2.1-S2.3); on the D=2 carrier each
+                                   venue generator LIFTS to a carrier edge bijection
+                                   mapping plaquette supports to plaquette supports and
+                                   star supports onto star supports (S2.4): the symmetry
+                                   is the record surface's own, not only the derived
+                                   graph's.
+forced form c*I + t*A    EARNED    union-find over kernel entry positions under the
+                                   generator action: exactly ONE diagonal class and ONE
+                                   link class on every venue (S4.1); row-normalization
+                                   then forces t = (1-c)/deg.
+energy sectors (iv')     EARNED    dE == 0 exactly on the defect-moving sector and +/-4
+                                   on create/annihilate, computed for all states x
+                                   writers on both carriers (S1.4, S1.11); the dilation
+                                   control (S5.5-S5.8) verifies the exchange unitary
+                                   conserves total excitation and that the induced system
+                                   channel conserves measure IFF the bath is unbiased
+                                   (p == 1/2): a polarized bath is exactly a declared
+                                   bias -- the iv' route's unitality needs the bath
+                                   condition, and that condition is physics (bias ==
+                                   mass), not a route defect.
+unital channel <->       BORROWED  standard quantum information / linear algebra
+doubly stochastic;                 (Birkhoff's theorem on doubly stochastic matrices;
+Birkhoff                           unital-channel correspondence).  Re-verified on
+                                   explicit operators BEFORE use: permutation ensembles
+                                   (3 weight rows), a rational-orthogonal non-permutation
+                                   unitary (3/5, 4/5 rows), and the failing partner (the
+                                   reset Kraus channel) all in S0.  Applied ONLY to the
+                                   named variable T[x][y].
+Perron (criticality      BORROWED  the T-44 owner, unchanged: row sums == 1 gives the
+reading of row sums)               Perron normalization; used here only through exact
+                                   determinant and row-sum computations.
+Gershgorin               BORROWED  named for the leak kernel's nonsingularity reading;
+                                   the lane's actual witness is the exact determinant, so
+                                   Gershgorin never sits on a measurement path.
+toric carrier            BORROWED  Kitaev (quant-ph/9707021) via model/geometry.py
+(toric_stabilizers)                toric_stabilizers (C-78 instrument lineage); the
+                                   plaquette venue is rebuilt here from plaquette
+                                   supports alone (T-44-A convention), and the support
+                                   facts are re-gated in-lane (S1.5-S1.7).
+gravitational form       NOT USED  (D-1) Newton appears NOWHERE in this lane.  The lane's
+                                   subject is the induced per-link amplitude and its
+                                   relation to the computed mu_c; no comparison section
+                                   exists here at all.
+entropy / information    NOT USED
+horizon, temperature     NOT USED
+
+RELEVANCE TEST (borrowed idea -> named program variable, named BEFORE use): the borrowed
+unital-channel / doubly-stochastic machinery is applied to the named variable T[x][y] --
+the one-step writer kernel on record configurations, whose per-link entry is the INDUCED
+mu that O-58 N2 asks for -- and to no other quantity.  It touches nothing else.
+
+WHAT IS EARNED vs WHAT REMAINS EXTRA DATA (the honest boundary, stated exactly):
+  EARNED:  (1) unitary writer ensembles -> doubly stochastic induced kernels, for
+           arbitrary ensemble weights (the algebra, not the weights, conserves measure);
+           (2) measure conservation -> criticality (exact singular witness), with the
+           trivial-writer/lazy share renormalizing out exactly;
+           (3) measure conservation + ensemble invariance under the venue's
+           edge-transitive automorphisms -> per-crossing amplitude == 1/deg identically;
+           (4) the venue supplies edge-transitivity and the writer set is ONE orbit of
+           carrier-lifted symmetries (no admissible-writer FACT distinguishes any link);
+           (5) non-measure-conserving ensembles land computably off criticality.
+  NOT EARNED (extra data, named, not smuggled): the symmetry of the ensemble WEIGHTS.
+           The surface supplies a symmetric SET of writers; nothing computed here forces
+           the MEASURE over that set to respect the symmetry.  A biased measure stays
+           measure-conserving and critical but breaks the one-parameter mu model
+           (anisotropic critical kernel) -- its venue-limit coupling class is beyond
+           this lane's scope and is the named next step.
+
+D-15 CONTROLS RUN (all computed booleans):
+  * beside every det == 0 exactly: det(I - (9/10)K) != 0 computed exactly (values
+    printed in the OUT);
+  * beside every reported dE == 0 sector: the +/-4 sectors counted (1024/2048 and
+    2304/4608 moving cases printed);
+  * the reset Kraus channel and the polarized-bath dilation FAIL the same
+    double-stochasticity gate every conserving ensemble passes;
+  * CTRL-BIAS-LINK separates the two halves of the hypothesis: conservation holds,
+    uniformity fails, criticality holds -- so the uniformity counterexample cannot be
+    mistaken for a conservation failure;
+  * CTRL-LEAK (declared survival 9/10) is the DONE_WHEN control: fails conservation,
+    computes off criticality (det != 0), induces per-link 9/(10*deg) != 1/deg, and its
+    surviving measure is (9/10)^k exactly at k = 1..8 beside the conserving kernel's 1.
+
+CORRECTION LOG (errors belong in the record; both corrections preceded any sealed
+output and are visible in the driver):
+  1. The first full run's S3.16 declared the E-GLOB pair-sector leakage as 10/18 with an
+     in-sector filter that held the partner fixed; the computed leakage was 14/18 and
+     the gate FAILED, because the filter conflated "leaves the 2-defect sector" with
+     "moves the held partner".  Corrected to the full computed step decomposition
+     4/18 tracked-end + 4/18 origin-end + 10/18 pair-creation == 1, with the creation
+     share alone leaving the 2-defect sector.  No threshold changed.
+  2. The first full run's synthesis gate S6.1 used prefix matching in which "S3.1"
+     also matched S3.10-S3.16, so the S3.16 failure propagated into S6.1.  Corrected
+     to exact-prefix matching ("S3.1 ").  The conjunction's membership list is
+     unchanged.
+
+NO NARRATED VERDICTS: all 126 PASS/FAIL lines in t48a_derivation.OUT.txt are computed
+booleans.  NO floats anywhere in this lane (not even in comparison blocks -- none was
+needed).  deg computed, never declared; 1/deg formed from the computed deg.
+Deterministic: rerun byte-identical (VERIFY/rerun_diff.txt empty).  Returns are DATA
+(t48a_derivation.RESULT.json).

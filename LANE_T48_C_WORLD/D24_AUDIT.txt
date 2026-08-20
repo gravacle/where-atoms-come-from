@@ -1,0 +1,134 @@
+LANE T48_C -- D-24 AUDIT TABLE.  Every concept used: EARNED (with the computation that
+earned it), DECLARED (parameter or construction declared before measurement), or
+BORROWED/OWNED (attributed, then re-verified before use or confined to comparison).
+
+CONCEPT                  STATUS    HOW
+-----------------------  --------  ----------------------------------------------------------
+venue's own grain        EARNED    rebuilt fresh in-lane per PUBLISHED_CONVENTIONS (census
+lattice                            access geometry, adjacency = shares a face): row sums = 6
+                                   computed on every grain (G01); BFS == earned L1 wrap
+                                   separation on every grain (G02); block-interior DP ==
+                                   free-sector DP (G03); axis-split identity == brute-force
+                                   DP, all endpoints k <= 10 (G04); torus wrap identity ==
+                                   wrap-folded free DP, every cell, k <= 12 (G05);
+                                   octahedral generators preserve adjacency (G06).
+u, v (per-attempt        DECLARED  the model's OWN two rates (project_model.py corrected
+writer probabilities)              activation convention: gu = f0 e^{-E_b/kT} from the
+                                   metastable well, gd = f0 e^{-(E_b+dE)/kT} into it) at
+                                   declared rational sample points u in {1/20, 1/100},
+                                   b = v/u = e^{-dE/kT} in {1, 9/10, 3/4, 1/2, 1/4, 1/10};
+                                   never fitted; dE/kT = -ln b exists only in the labeled
+                                   COMPARISON section.  b = 1 is the orientation encoding's
+                                   field-free degenerate wells (C-71 CoCrPt); b < 1 the
+                                   occupancy encoding (C-71 NAND).
+detailed balance         EARNED    computed from the model's own two-state kernel: exact
+                                   stationary vector, pi K == pi and pi_meta/pi_stable ==
+                                   v/u == b at every sample (G09); never asserted.
+the writer ensembles     DECLARED  the AMBIGUITY GUARD: more than one honest construction
+E1 / E2 / E3a / E3b                of "the writer ensemble" exists, so ALL are declared in
+                                   the driver header before measurement and ALL computed:
+                                   E1 energy-conserving transport (iv' literal, no trail;
+                                   the R1-transparent reading); E2 trail with retreat (the
+                                   raw two rates, H1's backtracking kept); E3a/E3b trail
+                                   with decay (extension-only counting, H1-matched and
+                                   non-backtracking).  None silently preferred.
+per-link amplitude       EARNED    the ONLY definition used is forced by the resolvent
+(induced), m                       algebra: I - W = c(I - sum_e m_e S_e) with c = 1 - stay;
+                                   extracted entrywise from each constructed kernel and
+                                   gated as an exact operator identity on the venue
+                                   (G13, G25); interspersing lazy steps sums to exactly
+                                   this m per Gamma-priced link.
+uniformity over links    EARNED    never inserted: venue direction-equivalence computed
+                                   (G06) + per-direction configuration-energy change
+                                   computed (G07: transport dN = 0 all six directions;
+                                   G08: trail write dN = +1, erase dN = -1) + extraction
+                                   sets gated singleton across all cells and directions
+                                   (G11, G19).  Where the writer algebra breaks uniformity
+                                   it is SHOWN to fail: E2 at b != 1 (G20), with the exact
+                                   split (m_fresh, m_back) = (b, 1)/(5b+1).
+measure conservation     EARNED    exact row sums on every kernel: E1 and E2 exactly 1 on
+                                   every row (G10, G17, G18 doubly stochastic); E3 exactly
+                                   1-u (G22, G34) -- the deficit IS the model's own erase
+                                   probability, and equals E2's retreat amplitude (G34):
+                                   the lost measure is the backtracking channel the
+                                   extension-only counting drops.  Exact measure evolution
+                                   from a point source confirms: total == 1 every step
+                                   (E1, G14) vs total == (1-u)^k (E3a, G27).
+mu_c (criticality        EARNED    in-lane as 1/deg with deg computed (G01); criticality
+reference)                         signature (I - W)1 == 0 exactly for the conserving
+                                   kernels (G16) beside the convergent Neumann sum with
+                                   exact closed form for the lossy kernel (G28) -- the
+                                   T44-B "singular AT, solvable beside" instrument at the
+                                   kernel level.  The NB reference 1/5 earned by the same
+                                   row-sum instrument on the directed-edge operator (G31).
+                                   Sealed T44-B mu_c = 1/6: comparison only.
+mass gap ln(mu_c/mu)     EARNED    on the measurement path as the EXACT rational ratio
+                                   mu_c/mu == (deg*b+1)/(deg*b) == 1 + e^{dE/kT}/deg
+                                   (G29; NB counting: 1 + e^{dE/kT}/5, G33); logarithms
+                                   confined to the labeled COMPARISON section (G35).
+Perron-Frobenius /       BORROWED  Perron 1907 / Frobenius 1912; applied ONLY through
+row-sum spectral radius            exact row/column sums computed on the venue kernels
+                                   (named variables W, B).
+trace preservation of    BORROWED  Stinespring 1955 / standard open systems; attribution
+dilation unitaries                 for WHY row sums 1 is the structural property of an
+                                   (iv') writer; the row sums themselves are computed
+                                   (G10, G17), never cited.
+non-backtracking         BORROWED  Hashimoto 1989; used only as the criticality REFERENCE
+(directed-edge) operator           for the extension-only counting, and earned in-lane by
+                                   row sums (G31) before use.
+persistent random walks  BORROWED  Goldstein 1951 / Kac 1974; COMPARISON-ONLY remark that
+                                   path-persistence classically renormalizes diffusivity,
+                                   not class; the E2 class computation is NOT run here and
+                                   is named open (next step).
+axis-split identity /    BORROWED  standard combinatorics (Feller I); GATED against
+rotation bijection                 brute-force DP before use (G04).
+Boltzmann factor /       BORROWED  standard statistical mechanics, entering only through
+Arrhenius activation               the model's own corrected convention (C-69 lineage);
+                                   represented at declared rational sample points, exact.
+gravitational form       NOT USED  (D-1) Newton is named NOWHERE in this lane; the lane
+                                   computes kernel normalizations and induced amplitudes,
+                                   never a falloff comparison.
+entropy / information    NOT USED
+horizon, temperature-    NOT USED  (temperature enters only as the model's own kT in the
+as-gravity                         declared Boltzmann sample points)
+
+RELEVANCE TEST (borrowed idea -> named program variable FIRST, per the standing
+discipline): Perron/row-sum machinery -> W, the one-writer-step kernel on the venue
+(and B, the directed-edge reference operator); detailed balance -> v/u, the ratio of
+the model's own two rates; trace preservation -> the row sums of W; Hashimoto operator
+-> the criticality reference for the extension-only counting of the SAME W; persistent-
+walk remark -> E2's (m_fresh, m_back) split, comparison only.  Nothing else.
+
+D-15 CONTROLS RUN (all computed booleans; every reported zero has a nonzero beside it):
+  * E1/E2 conservation defect == 0 (G10, G17)  BESIDE  E3 defect == u != 0 (G22, G34);
+  * transport dN == 0 per direction (G07)  BESIDE  trail write dN == +1, erase == -1 (G08);
+  * E1 propagator diverges linearly, exact (G15)  BESIDE  E3a propagator converges to an
+    exact closed form < 1/u (G28);
+  * E2 uniformity at b = 1 (gap zero)  BESIDE  computed non-uniform split at every b != 1
+    (G20) and the strict mu < mu_c gap at every E3 sample (G24, G32);
+  * amplitude-reading sweep: E1's mu_ind identical under both composite-saddle readings
+    (G12) -- the unpinned saddle cannot matter; E3's mu_ind identical across u samples
+    (G26) -- f0 and E_b cannot matter.
+
+CORRECTION LOG (errors belong in the record): the first draft of the Section-2
+energetics gate carried the configuration-count changes as written-out literals
+((1)-(1), (5)-(4)) instead of computing them from explicit written-set patterns --
+a narrated number on what must be a measurement path.  Corrected before the first
+full run (no sealed output preceded it): dN is now computed by the config_count
+instrument on explicit pattern sets, per direction, with the fresh-direction count
+itself computed (5 fresh + 1 trail neighbor at the tip).  Logged here per the
+standing discipline.
+
+SCOPE KEPT (what this lane does NOT claim):
+  * The class of E2's conserving-but-non-uniform kernel at b != 1 (does total
+    conservation without link uniformity retain the earned dimension's critical
+    class?) is NOT computed here -- named open, with the owner remark comparison-only.
+  * Nothing here decides WHICH ensemble the surface's Gamma enforces (that is O-58 N3,
+    the design-point question); this lane computes what each honest ensemble induces.
+  * All statements are venue-level kernel identities at declared rational sample
+    points; the b -> dE/kT translation is comparison-labeled.
+
+NO NARRATED VERDICTS: all 36 PASS/FAIL lines in t48c_world.OUT.txt are computed
+booleans; exact-equality gates have tolerance zero on Fractions.  No floats on the
+measurement path (floats only in the labeled Section-4 COMPARISON).  Deterministic:
+VERIFY/ rerun byte-identical.  Returns are DATA (t48c_world.RESULT.json).

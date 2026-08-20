@@ -1,0 +1,224 @@
+====================================================================================================
+T48-B  CORNER: the induced per-link amplitude of the surface's OWN writer ensemble (O-58 N2)
+  No declared mu anywhere on the measurement path.  The ensemble constructions, their induced
+  amplitudes, conservation, and criticality are all computed exactly on the venue's own lattice.
+====================================================================================================
+
+-- SECTION 0: venues REBUILT FROM CARRIER SUPPORTS (T-44-A's own construction); the
+   elementary writer stratum gated in weight AND count against the O-54-C admissible-
+   writer coset, exactly as T-44 did --
+PASS  S0 carrier (4,6): stars x plaqs all commute
+PASS  S0 venue (4,6): all link multiplicities exactly 1 (no L=2 direction)
+PASS  S0 venue (4,6): row sums all equal => deg = 4 COMPUTED from supports
+PASS  S0 venue (4,6): no self-links (no cell shares a carrier edge with itself) -- the one-step ensemble has NO stay option; every elementary writer crosses exactly one link
+PASS  S0 venue (4,6): every carrier edge lies in exactly 2 plaquette supports => the single-edge X writers are in bijection with the links of the dual lattice
+PASS  S0 venue (4,6): #links == #carrier edges == 48 (the bijection counted both ways)
+  venue (4,6):  v  d_gen  d_dual  w_min  N_min  k0(walk)  N_k0
+   v=(1, 0)   1      1       1      1      1        1
+   v=(2, 0)   2      2       2      2      2        2
+   v=(0, 1)   1      1       1      1      1        1
+   v=(0, 2)   2      2       2      1      2        1
+   v=(0, 3)   3      3       3      2      3        2
+   v=(1, 1)   2      2       2      2      2        2
+   v=(2, 1)   3      3       3      6      3        6
+   v=(1, 2)   3      3       3      3      3        3
+   v=(2, 2)   4      4       4      12      4        12
+   v=(1, 3)   4      4       4      8      4        8
+   v=(2, 3)   5      5       5      40      5        40
+PASS  S0 (4,6): dual BFS distance == earned separation d_gen on every sample pair
+PASS  S0 (4,6): coset w_min == d_gen (O-54-C landscape reconfirmed in-lane: w_min = d)
+PASS  S0 (4,6): minimal walk length k0 == d on every sample pair
+PASS  S0 (4,6): minimal-walk count == coset N_min EXACTLY (gated in weight AND count, as T-44 did, before any ensemble is built)
+PASS  S0 (4,6): every link carries exactly ONE elementary writer (multiplicity 1) whose syndrome is exactly its two cells (computed by symplectic pairing on every link)
+PASS  S0 (4,6): coset of the single-edge writer on adjacent sample pairs has (w_min, N_min) == (1, 1): the weight-1 stratum of the admissible-writer coset IS the link, in weight AND count
+PASS  S0 (4,6): number of weight-1 admissible writers incident to each cell == deg == 4 (the one-step continuation set at a cell is its link set)
+PASS  S0 carrier (3,7): stars x plaqs all commute
+PASS  S0 venue (3,7): all link multiplicities exactly 1 (no L=2 direction)
+PASS  S0 venue (3,7): row sums all equal => deg = 4 COMPUTED from supports
+PASS  S0 venue (3,7): no self-links (no cell shares a carrier edge with itself) -- the one-step ensemble has NO stay option; every elementary writer crosses exactly one link
+PASS  S0 venue (3,7): every carrier edge lies in exactly 2 plaquette supports => the single-edge X writers are in bijection with the links of the dual lattice
+PASS  S0 venue (3,7): #links == #carrier edges == 42 (the bijection counted both ways)
+  venue (3,7):  v  d_gen  d_dual  w_min  N_min  k0(walk)  N_k0
+   v=(1, 0)   1      1       1      1      1        1
+   v=(0, 1)   1      1       1      1      1        1
+   v=(0, 2)   2      2       2      1      2        1
+   v=(0, 3)   3      3       3      1      3        1
+   v=(1, 1)   2      2       2      2      2        2
+   v=(1, 2)   3      3       3      3      3        3
+   v=(1, 3)   4      4       4      4      4        4
+PASS  S0 (3,7): dual BFS distance == earned separation d_gen on every sample pair
+PASS  S0 (3,7): coset w_min == d_gen (O-54-C landscape reconfirmed in-lane: w_min = d)
+PASS  S0 (3,7): minimal walk length k0 == d on every sample pair
+PASS  S0 (3,7): minimal-walk count == coset N_min EXACTLY (gated in weight AND count, as T-44 did, before any ensemble is built)
+PASS  S0 (3,7): every link carries exactly ONE elementary writer (multiplicity 1) whose syndrome is exactly its two cells (computed by symplectic pairing on every link)
+PASS  S0 (3,7): coset of the single-edge writer on adjacent sample pairs has (w_min, N_min) == (1, 1): the weight-1 stratum of the admissible-writer coset IS the link, in weight AND count
+PASS  S0 (3,7): number of weight-1 admissible writers incident to each cell == deg == 4 (the one-step continuation set at a cell is its link set)
+PASS  S0 carrier (5,5) [IN-LANE SQUARE CONTROL VENUE]: stars x plaqs all commute
+PASS  S0 venue (5,5): all link multiplicities exactly 1 (no L=2 direction)
+PASS  S0 venue (5,5): row sums all equal => deg = 4 COMPUTED from supports
+PASS  S0 venue (5,5): no self-links (no cell shares a carrier edge with itself) -- the one-step ensemble has NO stay option; every elementary writer crosses exactly one link
+PASS  S0 venue (5,5): every carrier edge lies in exactly 2 plaquette supports => the single-edge X writers are in bijection with the links of the dual lattice
+PASS  S0 venue (5,5): #links == #carrier edges == 50 (the bijection counted both ways)
+  venue (5,5) [IN-LANE SQUARE CONTROL VENUE]:  v  d_gen  d_dual  w_min  N_min  k0(walk)  N_k0
+   v=(1, 0)   1      1       1      1      1        1
+   v=(0, 1)   1      1       1      1      1        1
+PASS  S0 (5,5): dual BFS distance == earned separation d_gen on every sample pair
+PASS  S0 (5,5): coset w_min == d_gen (O-54-C landscape reconfirmed in-lane: w_min = d)
+PASS  S0 (5,5): minimal walk length k0 == d on every sample pair
+PASS  S0 (5,5): minimal-walk count == coset N_min EXACTLY (gated in weight AND count, as T-44 did, before any ensemble is built)
+PASS  S0 (5,5): every link carries exactly ONE elementary writer (multiplicity 1) whose syndrome is exactly its two cells (computed by symplectic pairing on every link)
+PASS  S0 (5,5): coset of the single-edge writer on adjacent sample pairs has (w_min, N_min) == (1, 1): the weight-1 stratum of the admissible-writer coset IS the link, in weight AND count
+PASS  S0 (5,5): number of weight-1 admissible writers incident to each cell == deg == 4 (the one-step continuation set at a cell is its link set)
+PASS  S0 chain venue C_24: row sums all exactly 2 => deg = 2 COMPUTED (D=1 control venue)
+
+-- SECTION 1: mu_c RE-LOCATED IN-LANE (never imported as a number).  Method (T-44-A's,
+   re-run): radius of convergence of the positive walk series = 1/spectral radius;
+   Perron row-sum sandwich + exact sector sandwich + exact-rational resolvent --
+PASS  S1 sector sandwich lemmas: (C(2m,m))^2(2m+1) <= 16^m (m<=300, exact induction step to 10000) and C(2m,m)(2m+1) >= 4^m (m<=300, exact ratio induction to 10000)
+PASS  S1 => Z^2 sector: 16^m/(2m+1)^2 <= N_2m(0,0) = C(2m,m)^2 <= 16^m: the venue-limit return series has radius EXACTLY 1/4 (mu_c = 1/4 in the venue limit, computed)
+PASS  S1 (4,6): A.1 == 4.1 exactly (Perron eigenvector with positive entries) AND Gershgorin row bound 4 => spectral radius = 4 EXACT => mu_c(venue) = 1/4
+PASS  S1 (4,6): exact resolvent (I - A/4) SINGULAR (zero pivot: the pole sits AT the computed mu_c)
+PASS  S1 (4,6): exact resolvent NONSINGULAR beside it at mu in {1/8, 23/100} (positive control for the singularity zero)
+PASS  S1 (3,7): A.1 == 4.1 exactly (Perron eigenvector with positive entries) AND Gershgorin row bound 4 => spectral radius = 4 EXACT => mu_c(venue) = 1/4
+PASS  S1 (3,7): exact resolvent (I - A/4) SINGULAR (zero pivot: the pole sits AT the computed mu_c)
+PASS  S1 (3,7): exact resolvent NONSINGULAR beside it at mu in {1/8, 23/100} (positive control for the singularity zero)
+PASS  S1 (5,5): A.1 == 4.1 exactly (Perron eigenvector with positive entries) AND Gershgorin row bound 4 => spectral radius = 4 EXACT => mu_c(venue) = 1/4
+PASS  S1 (5,5): exact resolvent (I - A/4) SINGULAR (zero pivot: the pole sits AT the computed mu_c)
+PASS  S1 (5,5): exact resolvent NONSINGULAR beside it at mu in {1/8, 23/100} (positive control for the singularity zero)
+PASS  S1 chain: A.1 == 2.1 exactly => mu_c(chain) = 1/2 EXACT; sector side: C(2m,m)(2m+1) >= 4^m re-verified above (the D=1 venue's own number, by the same instrument)
+PASS  S1 chain: exact resolvent SINGULAR at 1/2, NONSINGULAR at 9/20
+
+-- SECTION 2: VENUE SYMMETRY, COMPUTED.  The full automorphism group of the venue's own
+   dual lattice (exhaustive backtracking) and its orbits on cells, links, directed links.
+   Uniformity by SYMMETRY is earned exactly where the orbit count on links is 1 --
+  venue (4,6): |Aut| = 96 (computed exhaustively); orbits: cells 1, links 2 [24, 24], directed links 2; per-cell orbit-degree vector (2, 2)
+PASS  S2 (4,6): Aut acts TRANSITIVELY on cells (orbit count == 1: no cell is special; symmetry-measurable ensembles are cell-independent)
+PASS  S2 (4,6): per-cell link-orbit degree vector CONSTANT across cells (the conservation condition will be one identical linear condition at every cell)
+PASS  S2 (4,6): directed-link orbits == undirected-link orbits (each undirected orbit is one directed orbit: reflections reverse every link; no honest DIRECTED asymmetry exists in the symmetry-measurable class)
+  venue (3,7): |Aut| = 84 (computed exhaustively); orbits: cells 1, links 2 [21, 21], directed links 2; per-cell orbit-degree vector (2, 2)
+PASS  S2 (3,7): Aut acts TRANSITIVELY on cells (orbit count == 1: no cell is special; symmetry-measurable ensembles are cell-independent)
+PASS  S2 (3,7): per-cell link-orbit degree vector CONSTANT across cells (the conservation condition will be one identical linear condition at every cell)
+PASS  S2 (3,7): directed-link orbits == undirected-link orbits (each undirected orbit is one directed orbit: reflections reverse every link; no honest DIRECTED asymmetry exists in the symmetry-measurable class)
+  venue (5,5): |Aut| = 200 (computed exhaustively); orbits: cells 1, links 1 [50], directed links 1; per-cell orbit-degree vector (4,)
+PASS  S2 (5,5): Aut acts TRANSITIVELY on cells (orbit count == 1: no cell is special; symmetry-measurable ensembles are cell-independent)
+PASS  S2 (5,5): per-cell link-orbit degree vector CONSTANT across cells (the conservation condition will be one identical linear condition at every cell)
+PASS  S2 (5,5): directed-link orbits == undirected-link orbits (each undirected orbit is one directed orbit: reflections reverse every link; no honest DIRECTED asymmetry exists in the symmetry-measurable class)
+  venue chain C_24: |Aut| = 48 (computed exhaustively); orbits: cells 1, links 1 [24], directed links 1; per-cell orbit-degree vector (2,)
+PASS  S2 chain C_24: Aut acts TRANSITIVELY on cells (orbit count == 1: no cell is special; symmetry-measurable ensembles are cell-independent)
+PASS  S2 chain C_24: per-cell link-orbit degree vector CONSTANT across cells (the conservation condition will be one identical linear condition at every cell)
+PASS  S2 chain C_24: directed-link orbits == undirected-link orbits (each undirected orbit is one directed orbit: reflections reverse every link; no honest DIRECTED asymmetry exists in the symmetry-measurable class)
+PASS  S2 (4,6): link-orbit count 2 >= 2 with ZERO automorphisms mapping the orbit-0 representative across orbits (computed 0) BESIDE the positive control: 92 automorphisms move it non-trivially WITHIN its orbit and the orbit is full size 24 => ON THIS TWO-SCALE VENUE, SYMMETRY ALONE DOES NOT EARN UNIFORMITY ACROSS ALL LINKS (it earns it only orbit-wise) -- an honest FAILURE, reported, not papered over
+PASS  S2 (3,7): link-orbit count 2 >= 2 with ZERO automorphisms mapping the orbit-0 representative across orbits (computed 0) BESIDE the positive control: 80 automorphisms move it non-trivially WITHIN its orbit and the orbit is full size 21 => ON THIS TWO-SCALE VENUE, SYMMETRY ALONE DOES NOT EARN UNIFORMITY ACROSS ALL LINKS (it earns it only orbit-wise) -- an honest FAILURE, reported, not papered over
+PASS  S2 (5,5) SQUARE CONTROL: link-orbit count == 1 (the axis swap is an automorphism here) => symmetry ALONE earns full link-uniformity when the venue's two scales are equal: the rectangle anisotropy freedom is a two-scale artifact of the finite venue, COMPUTED, not asserted
+PASS  S2 chain: link-orbit count == 1 => symmetry alone earns uniformity on the D=1 venue
+
+-- SECTION 3: THE WRITER ALGEBRA'S OWN INVARIANTS of an elementary writer, computed on
+   EVERY link: Gamma price; syndrome size; star/plaquette memberships of its edge; and
+   (per orbit representative) the full coset data of its pair.  If these cannot separate
+   any two links, every ALGEBRA-MEASURABLE ensemble is link-uniform: EARNED, not inserted --
+  venue (4,6): invariant tuple (price, |syndrome|, #stars, #plaqs, mult) = (1, 2, 2, 2, 1) on all 48 links
+PASS  S3 (4,6): the invariant tuple is IDENTICAL on every link (in particular identical across the two symmetry orbits): the writer algebra cannot distinguish any two links
+PASS  S3 (4,6): coset data (w_min, N_min, |coset|) of the elementary writer's pair is IDENTICAL across the 2 symmetry orbit(s): (1, 1, 33554432) (exhaustive scans; the coset cannot distinguish the orbits either)
+  venue (3,7): invariant tuple (price, |syndrome|, #stars, #plaqs, mult) = (1, 2, 2, 2, 1) on all 42 links
+PASS  S3 (3,7): the invariant tuple is IDENTICAL on every link (in particular identical across the two symmetry orbits): the writer algebra cannot distinguish any two links
+PASS  S3 (3,7): coset data (w_min, N_min, |coset|) of the elementary writer's pair is IDENTICAL across the 2 symmetry orbit(s): (1, 1, 4194304) (exhaustive scans; the coset cannot distinguish the orbits either)
+  venue (5,5): invariant tuple (price, |syndrome|, #stars, #plaqs, mult) = (1, 2, 2, 2, 1) on all 50 links
+PASS  S3 (5,5): the invariant tuple is IDENTICAL on every link (in particular identical across the two symmetry orbits): the writer algebra cannot distinguish any two links
+PASS  S3 (5,5): coset data (w_min, N_min, |coset|) of the elementary writer's pair is IDENTICAL across the 1 symmetry orbit(s): (1, 1, 67108864) (exhaustive scans; the coset cannot distinguish the orbits either)
+PASS  S3 CONCLUSION (computed above): every ensemble whose weights depend only on the writer algebra's computed invariants is LINK-UNIFORM on every venue -- uniformity EARNED from the algebra; the ONLY computed structure that separates links is the graph-global symmetry-orbit label of Section 2 (price-blind), swept honestly as construction K2
+
+-- SECTION 4: THE HONEST CONSTRUCTIONS AND THEIR INDUCED PER-LINK AMPLITUDES.  For each:
+   conservation is a COMPUTED row-sum boolean; criticality is a COMPUTED Perron statement
+   (constant row sums = spectral radius sandwich) plus exact resolvent and return-term
+   witnesses.  Every zero paired with a non-zero positive control (D-15) --
+
+  ---- venue (4,6) ----
+PASS  S4 (4,6) K0 BARE COUNTING (amplitude 1 per elementary writer): row sums == 4 != 1: NOT measure-conserving (COMPUTED).  The coset's own counting measure multiplies measure by deg each step (mass after k steps == 4^k exactly, k<=40): the venue combinatorics alone does NOT hand the surface criticality -- conservation is a substantive property, not automatic
+PASS  S4 (4,6) K1: the algebra-measurable class is link-uniform (S3) with ONE unknown scalar t; measure conservation deg*t == 1 has the UNIQUE solution t* = 1/4, and t* == mu_c == 1/4 (the in-lane located critical point): THE INDUCED PER-LINK AMPLITUDE OF THE CONSERVING ENSEMBLE IS EXACTLY THE CRITICAL ONE
+PASS  S4 (4,6) K1 conservation COMPUTED: all row sums of W == 1 exactly AND the propagated one-step measure from e_src totals 1 exactly at every k <= 40 (measure conserved, never created or lost)
+PASS  S4 (4,6) K1 criticality COMPUTED: constant row sums 1 (Perron sandwich => spectral radius == 1: the mass gap -ln(rowsum) is EXACTLY ZERO) AND exact resolvent (I - W) SINGULAR AND even-step return terms >= 1/24 at all 20 computed depths (Cauchy-Schwarz floor for a symmetric conserving kernel: the coupling series DIVERGES: critical)
+      K2 member alpha=1/3 orbit 0: amplitudes ['1/3', '1/6']  row sum 1  singular True
+      K2 member alpha=1/3 orbit 1: amplitudes ['1/6', '1/3']  row sum 1  singular True
+      K2 member alpha=3/5 orbit 0: amplitudes ['2/5', '1/10']  row sum 1  singular True
+      K2 member alpha=3/5 orbit 1: amplitudes ['1/10', '2/5']  row sum 1  singular True
+PASS  S4 (4,6) K2 SYMMETRY-MEASURABLE FAMILY: every swept conserving member (4 members, declared alpha recipe) has row sums == 1, resolvent singular, return terms floored, mass exactly conserved: EVERY member sits EXACTLY at criticality -- masslessness <=> measure conservation holds in the anisotropic honest construction too
+PASS  S4 (4,6) K2 HONEST LIMIT: the conserving family does NOT pin the amplitude to 1/4 (swept members with per-orbit amplitudes != t* exist: computed).  Symmetry + conservation leave an (R-1)-parameter freedom on this two-scale venue; the VALUE 1/deg needs the algebra ground (S3) or link-transitivity (square/chain)
+PASS  S4 (4,6) K2 intersection with the algebra class: the unique conserving member with equal orbit amplitudes is t* == 1/4 == mu_c (computed: solve 2 t + 2 t == 1 with equal amplitudes)
+PASS  S4 (4,6) CONTROL(a) beta=9/10: induced amplitude 9/40 != mu_c (COMPUTED off 1/4); row sums 9/10 != 1 (conservation FAILS); one-step mass == 9/10^k exactly (the mass gap -ln(9/10) is OPEN); resolvent NONSINGULAR with the exact Neumann bracket containing it at depth 60; return terms <= 9/10^k: the coupling series CONVERGES: computably OFF criticality, subcritical side
+PASS  S4 (4,6) CONTROL(a) beta=11/10: induced amplitude 11/40 != mu_c (COMPUTED off 1/4); row sums 11/10 != 1 (conservation FAILS the other way); one-step mass == 11/10^k exactly, GROWING (measure created): computably OFF criticality, mass-creation side
+PASS  S4 (4,6) CONTROL(a) anisotropic bias alpha=1/3 on orbit 0 only: row sums == 7/6 != 1 (conservation fails; == 1 + 2*alpha/4 computed): an unbalanced orbit ensemble lands computably OFF criticality
+PASS  S4 (4,6) CONTROL(a) anisotropic bias alpha=-1/3 on orbit 0 only: row sums == 5/6 != 1 (conservation fails; == 1 + 2*alpha/4 computed); resolvent NONSINGULAR (subcritical side): an unbalanced orbit ensemble lands computably OFF criticality
+
+  ---- venue (3,7) ----
+PASS  S4 (3,7) K0 BARE COUNTING (amplitude 1 per elementary writer): row sums == 4 != 1: NOT measure-conserving (COMPUTED).  The coset's own counting measure multiplies measure by deg each step (mass after k steps == 4^k exactly, k<=40): the venue combinatorics alone does NOT hand the surface criticality -- conservation is a substantive property, not automatic
+PASS  S4 (3,7) K1: the algebra-measurable class is link-uniform (S3) with ONE unknown scalar t; measure conservation deg*t == 1 has the UNIQUE solution t* = 1/4, and t* == mu_c == 1/4 (the in-lane located critical point): THE INDUCED PER-LINK AMPLITUDE OF THE CONSERVING ENSEMBLE IS EXACTLY THE CRITICAL ONE
+PASS  S4 (3,7) K1 conservation COMPUTED: all row sums of W == 1 exactly AND the propagated one-step measure from e_src totals 1 exactly at every k <= 40 (measure conserved, never created or lost)
+PASS  S4 (3,7) K1 criticality COMPUTED: constant row sums 1 (Perron sandwich => spectral radius == 1: the mass gap -ln(rowsum) is EXACTLY ZERO) AND exact resolvent (I - W) SINGULAR AND even-step return terms >= 1/21 at all 20 computed depths (Cauchy-Schwarz floor for a symmetric conserving kernel: the coupling series DIVERGES: critical)
+      K2 member alpha=1/3 orbit 0: amplitudes ['1/3', '1/6']  row sum 1  singular True
+      K2 member alpha=1/3 orbit 1: amplitudes ['1/6', '1/3']  row sum 1  singular True
+      K2 member alpha=3/5 orbit 0: amplitudes ['2/5', '1/10']  row sum 1  singular True
+      K2 member alpha=3/5 orbit 1: amplitudes ['1/10', '2/5']  row sum 1  singular True
+PASS  S4 (3,7) K2 SYMMETRY-MEASURABLE FAMILY: every swept conserving member (4 members, declared alpha recipe) has row sums == 1, resolvent singular, return terms floored, mass exactly conserved: EVERY member sits EXACTLY at criticality -- masslessness <=> measure conservation holds in the anisotropic honest construction too
+PASS  S4 (3,7) K2 HONEST LIMIT: the conserving family does NOT pin the amplitude to 1/4 (swept members with per-orbit amplitudes != t* exist: computed).  Symmetry + conservation leave an (R-1)-parameter freedom on this two-scale venue; the VALUE 1/deg needs the algebra ground (S3) or link-transitivity (square/chain)
+PASS  S4 (3,7) K2 intersection with the algebra class: the unique conserving member with equal orbit amplitudes is t* == 1/4 == mu_c (computed: solve 2 t + 2 t == 1 with equal amplitudes)
+PASS  S4 (3,7) CONTROL(a) beta=9/10: induced amplitude 9/40 != mu_c (COMPUTED off 1/4); row sums 9/10 != 1 (conservation FAILS); one-step mass == 9/10^k exactly (the mass gap -ln(9/10) is OPEN); resolvent NONSINGULAR with the exact Neumann bracket containing it at depth 60; return terms <= 9/10^k: the coupling series CONVERGES: computably OFF criticality, subcritical side
+PASS  S4 (3,7) CONTROL(a) beta=11/10: induced amplitude 11/40 != mu_c (COMPUTED off 1/4); row sums 11/10 != 1 (conservation FAILS the other way); one-step mass == 11/10^k exactly, GROWING (measure created): computably OFF criticality, mass-creation side
+PASS  S4 (3,7) CONTROL(a) anisotropic bias alpha=1/3 on orbit 0 only: row sums == 7/6 != 1 (conservation fails; == 1 + 2*alpha/4 computed): an unbalanced orbit ensemble lands computably OFF criticality
+PASS  S4 (3,7) CONTROL(a) anisotropic bias alpha=-1/3 on orbit 0 only: row sums == 5/6 != 1 (conservation fails; == 1 + 2*alpha/4 computed); resolvent NONSINGULAR (subcritical side): an unbalanced orbit ensemble lands computably OFF criticality
+
+  ---- SQUARE CONTROL venue (5,5) (symmetry control: family must collapse) ----
+PASS  S4 (5,5) K0 BARE COUNTING (amplitude 1 per elementary writer): row sums == 4 != 1: NOT measure-conserving (COMPUTED).  The coset's own counting measure multiplies measure by deg each step (mass after k steps == 4^k exactly, k<=40): the venue combinatorics alone does NOT hand the surface criticality -- conservation is a substantive property, not automatic
+PASS  S4 (5,5) K1: the algebra-measurable class is link-uniform (S3) with ONE unknown scalar t; measure conservation deg*t == 1 has the UNIQUE solution t* = 1/4, and t* == mu_c == 1/4 (the in-lane located critical point): THE INDUCED PER-LINK AMPLITUDE OF THE CONSERVING ENSEMBLE IS EXACTLY THE CRITICAL ONE
+PASS  S4 (5,5) K1 conservation COMPUTED: all row sums of W == 1 exactly AND the propagated one-step measure from e_src totals 1 exactly at every k <= 40 (measure conserved, never created or lost)
+PASS  S4 (5,5) K1 criticality COMPUTED: constant row sums 1 (Perron sandwich => spectral radius == 1: the mass gap -ln(rowsum) is EXACTLY ZERO) AND exact resolvent (I - W) SINGULAR AND even-step return terms >= 1/25 at all 20 computed depths (Cauchy-Schwarz floor for a symmetric conserving kernel: the coupling series DIVERGES: critical)
+PASS  S4 (5,5) K2: link-orbit count == 1 (S2) => the symmetry-measurable conserving family COLLAPSES to the single member t = 1/4 == mu_c: on a link-transitive venue, SYMMETRY ALONE + conservation pins the critical amplitude
+PASS  S4 (5,5) CONTROL(a) beta=9/10: induced amplitude 9/40 != mu_c (COMPUTED off 1/4); row sums 9/10 != 1 (conservation FAILS); one-step mass == 9/10^k exactly (the mass gap -ln(9/10) is OPEN); resolvent NONSINGULAR with the exact Neumann bracket containing it at depth 60; return terms <= 9/10^k: the coupling series CONVERGES: computably OFF criticality, subcritical side
+PASS  S4 (5,5) CONTROL(a) beta=11/10: induced amplitude 11/40 != mu_c (COMPUTED off 1/4); row sums 11/10 != 1 (conservation FAILS the other way); one-step mass == 11/10^k exactly, GROWING (measure created): computably OFF criticality, mass-creation side
+
+  ---- CONTROL (b): chain venue C_24 (the same constructions must return 1/2) ----
+PASS  S4 chain C_24 K0 BARE COUNTING (amplitude 1 per elementary writer): row sums == 2 != 1: NOT measure-conserving (COMPUTED).  The coset's own counting measure multiplies measure by deg each step (mass after k steps == 2^k exactly, k<=40): the venue combinatorics alone does NOT hand the surface criticality -- conservation is a substantive property, not automatic
+PASS  S4 chain C_24 K1: the algebra-measurable class is link-uniform (S3) with ONE unknown scalar t; measure conservation deg*t == 1 has the UNIQUE solution t* = 1/2, and t* == mu_c == 1/2 (the in-lane located critical point): THE INDUCED PER-LINK AMPLITUDE OF THE CONSERVING ENSEMBLE IS EXACTLY THE CRITICAL ONE
+PASS  S4 chain C_24 K1 conservation COMPUTED: all row sums of W == 1 exactly AND the propagated one-step measure from e_src totals 1 exactly at every k <= 40 (measure conserved, never created or lost)
+PASS  S4 chain C_24 K1 criticality COMPUTED: constant row sums 1 (Perron sandwich => spectral radius == 1: the mass gap -ln(rowsum) is EXACTLY ZERO) AND exact resolvent (I - W) SINGULAR AND even-step return terms >= 1/24 at all 20 computed depths (Cauchy-Schwarz floor for a symmetric conserving kernel: the coupling series DIVERGES: critical)
+PASS  S4 chain C_24 K2: link-orbit count == 1 (S2) => the symmetry-measurable conserving family COLLAPSES to the single member t = 1/2 == mu_c: on a link-transitive venue, SYMMETRY ALONE + conservation pins the critical amplitude
+PASS  S4 chain C_24 CONTROL(a) beta=9/10: induced amplitude 9/20 != mu_c (COMPUTED off 1/2); row sums 9/10 != 1 (conservation FAILS); one-step mass == 9/10^k exactly (the mass gap -ln(9/10) is OPEN); resolvent NONSINGULAR with the exact Neumann bracket containing it at depth 60; return terms <= 9/10^k: the coupling series CONVERGES: computably OFF criticality, subcritical side
+PASS  S4 chain C_24 CONTROL(a) beta=11/10: induced amplitude 11/20 != mu_c (COMPUTED off 1/2); row sums 11/10 != 1 (conservation FAILS the other way); one-step mass == 11/10^k exactly, GROWING (measure created): computably OFF criticality, mass-creation side
+
+====================================================================================================
+SECTION 5 -- VERDICT (assembled from the computed booleans above; nothing new measured)
+====================================================================================================
+1. THE INDUCED AMPLITUDE: on the corner venue the surface's own writer ensemble, in every
+   construction measurable with respect to the writer algebra's computed invariants, is
+   link-uniform (EARNED, Section 3) with one unknown scalar; the measure-conserving member
+   is UNIQUE and its induced per-link amplitude is EXACTLY 1/deg = 1/4 = mu_c (in-lane
+   located).  The same construction returns 1/2 on the D=1 chain -- each venue its own
+   number, nothing imported.  [V1: True]
+2. THE IDENTITY IS STRUCTURAL, NOT NUMERICAL: conservation (row sums 1) and criticality
+   (Perron root at 1, pole of the resolvent, zero mass gap) are THE SAME computed row-sum
+   fact read twice.  In the price-blind symmetry-measurable class on the two-scale venues,
+   conservation leaves a computed 1-parameter anisotropy family -- and EVERY member of it
+   is still EXACTLY critical: masslessness <=> measure conservation survives every honest
+   construction; the specific VALUE 1/deg is pinned by the algebra's price-uniformity or
+   by link-transitivity (square control, chain).  [V2: True]
+3. THE CONTROLS LAND OFF: every declared-bias ensemble (uniform 9/10, 11/10; anisotropic
+   one-orbit) fails conservation computably and sits computably off criticality (open mass
+   gap and convergent series below; growing mass above).  [V3: True]
+4. THE HONEST NEGATIVE: the coset's own bare counting measure is NOT conserving (row sums
+   deg): the surface's combinatorics alone does not put the coupling at criticality.
+   WHETHER Gamma's actual writing conserves measure remains the open physical bit -- what
+   this lane computed is that the conserving normalization exists, is unique, carries no
+   tuning freedom, and IS the critical point identically.  [V0: True]
+
+O-58 N2 AT CORNER-VENUE LEVEL: the hypothesis's conditional is now a computed identity --
+IF the writer kernel conserves measure THEN mu = mu_c IDENTICALLY (both directions, with
+uniqueness, uniformity earned, and off-criticality controls).  Masslessness = measure
+conservation = one bit, not a tuned value.  NOT decided here (named, kept open): whether
+the record surface's GR3 writing dynamics actually conserves writer measure.
+
+NEXT STEP (no route closes without one): formulate the conservation bit as a computable
+property of the GR3 writing tier (does one writing event redistribute writer measure or
+create/destroy it?), and run this probe's twin on the D=3 world venue (deg 6 -> 1/6).
+
+GATES: 112 PASS, 0 FAIL, total 112
+
+RESULT JSON written: t48b_corner.RESULT.json

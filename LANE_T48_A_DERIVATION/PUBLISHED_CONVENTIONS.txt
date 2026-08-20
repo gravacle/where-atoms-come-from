@@ -1,0 +1,99 @@
+LANE T48_A -- THE STRUCTURAL DERIVATION OF THE MEASURE-CONSERVING AMPLITUDE (O-58 N2,
+probe 1: does the writer algebra force the induced one-step kernel to conserve measure,
+and does conservation force the per-link amplitude to the computed mu_c = 1/deg?).
+
+QUESTION (from the T-44-D judgment's named next piece, N2 verbatim in the register):
+mu_c = 1/deg on every computed venue, and mu = 1/deg is exactly the stochastic
+measure-conserving normalization of one writer step; if Gamma's writer kernel conserves
+measure, mu = mu_c IDENTICALLY -- masslessness is measure conservation, not tuning.
+THIS LANE computes, from the record surface's OWN writer ensemble -- never a declared
+mu -- the induced per-link amplitude, on explicit small venues, with the mandated
+control: a non-measure-conserving ensemble landing computably OFF criticality.
+
+VENUES (each built in-lane, deg COMPUTED from row sums, never declared):
+  C8   -- D=1: bond graph of the 8-site Ising ring (walls on bonds), deg 2;
+  T3   -- D=2: plaquette venue of the L=3 toric carrier, from plaquette supports alone
+          (toric_stabilizers reused from model/geometry.py, C-78 lineage), deg 4;
+  T4   -- D=2: same at L=4 (kernel-level checks), deg 4;
+  Z27  -- D=3: Z_3^3 grain face-adjacency (world-venue lineage, venue-level), deg 6.
+Elementary writers are the carrier's own: X_i (D=1) and X_e (D=2), induced syndrome
+action GROUNDED in the carrier (all 256 states x 8 writers exhaustively at D=1; the
+edge-in-exactly-2-plaquettes support fact plus the Z-basis parity identity at D=2);
+trivial-action writers (the stars; the D=1 global flip) earned by the even-overlap
+computation.  Energy sectors computed: dE == 0 exactly on the defect-MOVING sector,
++/-4 on create/annihilate -- the iv' dilation pays the rest, and its bath condition is
+tested as a control (below).  Exact ints/Fractions ONLY; this lane contains NO floats.
+
+FINDINGS (126/126 gates PASS; every verdict a computed boolean):
+
+  1. MEASURE CONSERVATION IS FORCED BY THE WRITER ALGEBRA, NOT BY UNIFORM WEIGHTS.
+     Every ensemble of unitary writers computed -- local, lazy, global (full 128- and
+     256-configuration syndrome spaces), stabilizer-augmented, and three declared
+     NON-uniform weight rows per writer set -- induces an exactly doubly stochastic
+     kernel.  The lemma (unital channel -> doubly stochastic; owner: standard, Birkhoff)
+     is re-verified on explicit operators first, including a rational-orthogonal
+     non-permutation unitary and the failing partner (a reset Kraus channel).
+
+  2. MEASURE CONSERVATION ALONE CLOSES THE GAP.  Every conserving kernel is CRITICAL:
+     det(I - K) == 0 exactly -- uniform or not, lazy or not -- beside the positive
+     control det(I - (9/10)K) != 0 for each venue.  Masslessness == measure
+     conservation at kernel level, with no tuning anywhere.
+
+  3. CONSERVATION DOES NOT FORCE UNIFORMITY (the half of N2 that needed splitting).
+     Computed counterexample: axis-biased doubly-stochastic kernels on T3 (1/3 vs 1/6)
+     and Z27 (1/4, 1/6, 1/12) conserve measure AND stay critical while failing
+     link-uniformity; they fail invariance exactly at the axis-transposing generator.
+     THE MORE THAT UNIFORMITY NEEDS, NAMED EXACTLY: ensemble invariance under the
+     venue's edge-transitive automorphism group.
+
+  4. UNDER THAT INVARIANCE THE AMPLITUDE IS FORCED TO 1/deg IDENTICALLY.  Union-find
+     over kernel entries under the computed automorphisms leaves ONE diagonal class and
+     ONE link class on every venue: every invariant kernel is c*I + t*A with
+     t = (1-c)/deg.  The exact resolvent identity (1-xc)(I - m(x)A) == I - xK then
+     gives per-CROSSING amplitude t/(1-c) == 1/deg for EVERY lazy/trivial-writer share
+     c: the honest ambiguity of whether trivial writers (stabilizers, identity) belong
+     to the ensemble does not move the induced mu.  All honest constructions computed
+     (E-LOC, E-LAZY-I, E-GLOB, E-GLOB-S) induce per-crossing mu == 1/deg -- E-GLOB via
+     the computed conditional at the moving string end (1/4 on T3), with its full step
+     decomposition 4/18 + 4/18 + 10/18 registered, the creation share priced by no
+     connecting string (H1 scope, kept).
+
+  5. WHAT THE SURFACE SUPPLIES AND WHAT IT DOES NOT (the honest boundary).  Supplied:
+     the venue's edge-transitivity (orbit closures computed); the writer set as ONE
+     orbit; and on D=2 the venue symmetry LIFTS to carrier edge bijections preserving
+     the plaquette- and star-support sets -- the symmetry is the record surface's own.
+     NOT supplied (extra data, named): the symmetry of the ensemble WEIGHTS.  No
+     admissible-writer fact distinguishes any link, but nothing computed forces the
+     measure over the symmetric writer set to be symmetric.
+
+  6. THE DONE_WHEN CONTROL: NON-CONSERVING ENSEMBLES LAND COMPUTABLY OFF CRITICALITY.
+     CTRL-LEAK (declared survival 9/10): fails double stochasticity (row sums 9/10),
+     det(I - K) != 0 exactly on every venue, induced per-link amplitude 9/(10*deg) !=
+     1/deg, surviving measure (9/10)^k exactly at k = 1..8 beside the conserving
+     kernel's 1 -- the mass gap IS the declared bias.  CTRL-BATH (the iv' dilation
+     route at its smallest honest size): the energy-conserving exchange unitary with an
+     UNBIASED bath (p = 1/2) conserves measure; a polarized bath (p = 3/4, 1) is
+     trace-preserving but NOT measure-conserving (column sums 2p, 2-2p computed) -- the
+     dilation route's unitality requires the bath condition, and that condition is the
+     physics: bath polarization is a bias, and bias is mass.
+
+WHAT THIS LANE DOES AND DOES NOT CLAIM.  It does NOT claim mu is derived to sit at
+mu_c on the physical surface: that would require the ensemble-weight symmetry named in
+finding 5, which remains unearned.  It DOES claim, all by computation: the writer
+algebra forces measure conservation for every ensemble weighting; measure conservation
+forces criticality (masslessness is measure conservation, not tuning -- the N2
+identity holds at kernel level); and the surface's symmetric writer orbit plus
+ensemble-weight symmetry force the induced per-crossing amplitude to the computed
+mu_c = 1/deg identically, robustly against the trivial-writer ambiguity.
+
+NEXT STEP (no route closes without one): TWO NAMED PIECES.  (a) The ensemble-weight
+symmetry: can indistinguishability of links on the record surface force the MEASURE
+symmetric (or be refuted by a surface fact that breaks it)?  (b) The anisotropy
+frontier: the biased-but-conserving kernel stays critical -- compute its venue-limit
+coupling class (does the D=3 critical 1/d class survive ensemble anisotropy?).  These
+are the remaining distance between "mu = mu_c if measure is conserved" (earned here)
+and "the surface conserves measure isotropically" (not yet earned).
+
+FILES: t48a_derivation.py (driver), t48a_derivation.OUT.txt (126 gates),
+t48a_derivation.RESULT.json (DATA return), D24_AUDIT.txt (audit + correction log),
+VERIFY/ (byte-identical rerun, empty diff), SEALS.sha256.

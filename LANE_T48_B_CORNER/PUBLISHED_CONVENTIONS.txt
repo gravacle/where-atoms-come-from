@@ -1,0 +1,84 @@
+LANE T48_B -- THE INDUCED PER-LINK AMPLITUDE OF THE SURFACE'S OWN WRITER ENSEMBLE,
+CORNER TIER (O-58 N2, probe 2).
+
+QUESTION (O-58 N2, the T-44 judge's labeled hypothesis, TESTED not assumed): mu_c = 1/deg
+on every computed venue, and mu = 1/deg is exactly the stochastic measure-conserving
+normalization of one writer step; if Gamma's writer kernel conserves measure, mu = mu_c
+IDENTICALLY -- masslessness is measure conservation, not tuning.  The task: compute, from
+the record surface's OWN writer ensemble -- NOT a declared mu -- the induced per-link
+amplitude on the corner venue, and determine whether it is the measure-conserving one.
+
+VENUE (rebuilt in-lane, T-44-A's own construction): the plaquette-adjacency graph of the
+toric carriers (4,6) and (3,7), computed from plaquette supports alone (one link = one
+shared carrier edge = one unit of writer weight, the Gamma price); row sums 4 computed
+(deg = 4); each carrier edge in exactly 2 plaquette supports, so the single-edge X writers
+are in bijection with the links; no self-links (the one-step ensemble has no stay option).
+The elementary stratum is gated in weight AND count against the O-54-C admissible-writer
+coset exactly as T-44 did (w_min = d and N_min = walk minimum on every sample pair;
+(w_min, N_min) = (1, 1) for the single-edge writer on every adjacent pair).  Controls: an
+in-lane SQUARE (5,5) venue (symmetry control only) and the chain C_24 (T-44-A's D=1
+discriminator).  mu_c re-located IN-LANE (Perron row-sum sandwich, exact sector sandwich
+16^m/(2m+1)^2 <= C(2m,m)^2 <= 16^m, exact-rational resolvent singular at 1/deg and
+nonsingular beside): 1/4 on all three D=2 venues, 1/2 on the chain.  Exact ints and
+Fractions everywhere; NO floats anywhere in this lane; every verdict a computed boolean.
+
+THE GUARD AGAINST THE CIRCLE (kept): uniformity over links was never inserted.  It was
+EARNED or FAILED by computation, construction by construction:
+  * WRITER-ALGEBRA ROUTE (earned): the invariant tuple of an elementary writer -- Gamma
+    price, syndrome size, star/plaquette memberships, multiplicity, and the coset data
+    (w_min, N_min, |coset|) of its pair -- is IDENTICAL on every link of every venue
+    (computed on all 48/42/50 links; exhaustive coset scans at orbit representatives).
+    The writer algebra cannot distinguish any two links: every algebra-measurable ensemble
+    is link-uniform.  EARNED.
+  * VENUE-SYMMETRY ROUTE (fails on two-scale venues, computed): the FULL automorphism
+    group of each venue (exhaustive backtracking; |Aut| = 96, 84, 200, 48) has TWO link
+    orbits on (4,6) and (3,7) (zero cross-orbit automorphisms, orbit-transitive within),
+    ONE on the square (5,5) and the chain.  Symmetry alone earns uniformity only orbit-wise
+    on the rectangles -- an honest failure, reported -- and fully on link-transitive venues.
+    The square control shows the freedom is a two-scale artifact: with equal scales the
+    axis swap is an automorphism and the orbits fuse.
+
+HONEST CONSTRUCTIONS OF "THE WRITER ENSEMBLE" (all computed; none picked silently):
+  K0 BARE COUNTING (the coset's own combinatorics, no normalization): induced amplitude 1
+     per elementary writer; row sums = deg != 1; mass after k steps = deg^k exactly.  NOT
+     conserving: the venue combinatorics alone does not hand the surface criticality.
+  K1 ALGEBRA-MEASURABLE (link-uniform by the earned S3 fact; ONE unknown scalar t):
+     measure conservation deg*t = 1 has the UNIQUE solution t* = 1/deg, and t* == mu_c
+     EXACTLY (1/4 corner venues, 1/2 chain -- each venue its own computed number).
+     Conservation computed (row sums 1; propagated measure exactly 1 at every k <= 40);
+     criticality computed (Perron sandwich: spectral radius 1, zero mass gap; exact
+     resolvent singular; even-step return terms >= 1/n_cells at every computed depth, so
+     the coupling series diverges).  THE INDUCED PER-LINK AMPLITUDE OF THE CONSERVING
+     ENSEMBLE IS THE CRITICAL ONE, IDENTICALLY.
+  K2 SYMMETRY-MEASURABLE (price-blind, per-orbit amplitudes): conservation cuts the
+     two-orbit family to the line 2 t_h + 2 t_v = 1.  EVERY swept conserving member
+     (declared alpha recipe, 4 members per venue, including strongly anisotropic ones) has
+     row sums exactly 1, singular resolvent, floored return terms: EXACTLY critical.
+     Masslessness <=> measure conservation survives the anisotropic construction too; what
+     the anisotropic family does NOT pin is the VALUE 1/deg -- that is pinned by the
+     algebra's price-uniformity (K1) or by link-transitivity (square, chain).
+
+D-15 CONTROLS (all computed booleans): (a) biased ensembles with declared parameters --
+uniform beta = 9/10 (induced 9/40, off 1/4; open gap; resolvent nonsingular with exact
+Neumann bracket; convergent series), uniform beta = 11/10 (growing mass), anisotropic
+one-orbit biases 7/6 and 5/6 -- ALL land computably off conservation and off criticality;
+(b) the chain venue returns ITS OWN 1/2 by the same constructions end-to-end; (+) every
+reported zero (cross-orbit automorphism count, resolvent zero pivot, zero mass gap) sits
+beside a computed non-zero positive control.
+
+FINDING (the N2 verdict at corner-venue level): the hypothesis's conditional is now a
+computed identity.  Conservation (row sums 1) and criticality (Perron root 1, resolvent
+pole, zero mass gap) are THE SAME row-sum fact read twice; the conserving normalization
+exists, is unique, is forced to 1/deg by the earned link-uniformity, and equals mu_c
+identically -- one bit (conserve or not), no tuning freedom.  THE HONEST NEGATIVE, kept in
+the verdict: nothing in the venue combinatorics forces conservation (the bare counting
+measure is not conserving); whether Gamma's actual writing conserves measure is the
+remaining physical question, now sharpened to a single computable bit.
+
+NEXT STEP (no route closes without one): formulate the conservation bit as a computable
+property of the GR3 writing tier (does one writing event redistribute writer measure, or
+create/destroy it?), and run this probe's twin on the D=3 world venue (deg 6 -> 1/6).
+
+FILES: t48b_corner.py (driver; imports T-44-A / O-54-C instruments read-only at runtime),
+t48b_corner.OUT.txt (112 gates), t48b_corner.RESULT.json (DATA return), D24_AUDIT.txt,
+VERIFY/ (byte-identical rerun), SEALS.sha256.  Deterministic: rerun byte-identical.

@@ -25,11 +25,11 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 > existing phase framework; IDs never renumber; phases are not restructured. Modification
 > happens within this framework — status moves and appends only.
 
-**39 of 48 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**40 of 49 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 39 | 2 | 5 | 2 |
+| 40 | 1 | 6 | 2 |
 
 ---
 
@@ -72,7 +72,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | **T-22** | GIVE ALPHA REAL CONTENT (H-2). Nothing in the corpus is dimensionful and the fine structure constant is connected to no number. Either connect it or state plainly that 'alpha' names a generic coupling here | **DONE** | either a registered result in which alpha's VALUE matters, or an explicit statement in the anchor that alpha stands for a generic coupling strength | — |
 | **T-38** | ALPHA THROUGH THE BARRIER (reframed: an executable derivation plus the ownership audit, not an upfront decision). Derive how alpha's value enters the record laws -- every terrestrial E_b is an atomic-scale energy, and the Arrhenius exponent E_b/kT ~ 40-80 amplifies any alpha-dependence exponentially -- with the honest scaling per mechanism (bonds ~ alpha^2 m_e c^2 Hartree scale; anisotropy via spin-orbit at higher alpha powers; PVED weak-scale). Then the T-39 audit decides whether the resulting statement is ours or the varying-constants literature's. The principal reviews the registered result | TODO | either a registered statement of how alpha's value enters the record laws with its falsifier, or a plain statement that it does not | T-33 |
 
-## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  17/20 done
+## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  18/21 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
@@ -95,7 +95,8 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | ▶ **T-43** | **LET THE SURFACE ANSWER INTERFACE-VS-CONTENT (the principal's method, decision rule PRE-REGISTERED in the register). Compute the externally certifiable content of a region in both tiers and apply the rule as registered -- no post-hoc reading** | **DONE** | the certifiability computation is run in both tiers with controls, the pre-registered rule is applied verbatim, and C-77's text carries the answer or the question returns to the principal | T-42 |
 | ▶ **T-44** | **WHICH FALLOFF EXPONENTS CAN A GAMMA-CONSTRAINED COUPLING REACH? The weighted-instrument lane: couple the exact w_min = d writer-cost landscape to a declared mediator and derive the reachable exponent class -- Gamma's corner codomain is integer-valued, so any smooth graded law must live in weighted coupling/alpha quantities. Until this runs, every decaying law in the record is INSERTED and no falloff exponent is earned. Plus: three-region composition (superposition vs screening) and the genus-proper w_min = d test** | **DONE** | either a derived exponent class for Gamma-constrained couplings with its falsifier, or the obstruction to deriving one registered plainly | T-42 |
 | **T-45** | THE SURFACE'S OWN CLOCK (done with T-43): certifiable-within-lifetime law, the corner as W=infinity, census crossovers honest | **DONE** | registered as C-83 with the rule's first branch fired surface-determinedly | T-43 |
-| ▶ **T-48** | **WHAT EARNS CRITICALITY -- MASSLESSNESS AS MEASURE CONSERVATION (O-58 N2, the T-44 judge's ranked next piece). mu_c = 1/deg on every computed venue, and mu = 1/deg is exactly the stochastic measure-conserving normalization of one writer step. Compute from the record surface's OWN writer ensemble -- not a declared mu -- whether the induced per-link amplitude is the measure-conserving one. If Gamma's writer kernel conserves measure, mu = mu_c identically and masslessness is measure conservation, not tuning** | **DOING** | either the surface's own writer ensemble is shown to induce the measure-conserving per-link amplitude (mu = mu_c structurally) with the computation sealed, or the obstruction is registered plainly -- with a control ensemble that does NOT conserve measure landing off criticality | T-44 |
+| ▶ **T-48** | **WHAT EARNS CRITICALITY -- MASSLESSNESS AS MEASURE CONSERVATION (O-58 N2, the T-44 judge's ranked next piece). mu_c = 1/deg on every computed venue, and mu = 1/deg is exactly the stochastic measure-conserving normalization of one writer step. Compute from the record surface's OWN writer ensemble -- not a declared mu -- whether the induced per-link amplitude is the measure-conserving one. If Gamma's writer kernel conserves measure, mu = mu_c identically and masslessness is measure conservation, not tuning** | **DONE** | either the surface's own writer ensemble is shown to induce the measure-conserving per-link amplitude (mu = mu_c structurally) with the computation sealed, or the obstruction is registered plainly -- with a control ensemble that does NOT conserve measure landing off criticality | T-44 |
+| ▶ **T-49** | **THE CONSERVATION BIT OF GR3 WRITING (the T-48 judge's ranked next piece; O-58 N2's residue merged into N3, stakes computed per branch). Formulate 'one GR3 writing event redistributes writer measure vs creates/destroys it' as a computable property of the writing tier, and decide which honest ensemble Gamma's actual writing dynamics enforces -- E1 transport (conserving, critical at every dE) / E2 trail-with-retreat / E3 trail-with-decay (massive by the closed-form gap). Deciding this decides masslessness. Companions ranked: the anisotropy frontier (does the D=3 1/d class survive biased-but-conserving ensembles); link indistinguishability forcing the weight measure symmetric; E2's spatial decay class at dE != 0** | TODO | either the conservation property of one GR3 writing event is computed on the surface's own writing tier and the enforced ensemble named (deciding masslessness by C-91's identity), or the obstruction to formulating the bit computably is registered plainly | T-48 |
 
 ## PHASE F  WRITE AND CHECK THE PROOF  —  4/7 done
 
