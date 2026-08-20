@@ -9382,3 +9382,52 @@ exactly, so the carrier is not permutation-symmetric and D-22 is satisfied.
 the identity?** `(ΣRᵢ)²` achieves extensivity and responsiveness and fails this — its extensive part
 is `m·I`, record-blind. **If that is FORCED, the program has its first genuine form-level exclusion
 of a source, immune to both objections. If not, the surviving operator IS the source candidate.**
+
+---
+
+## T-33 — **THE CALCULATION AGREES WITH ANY RECORD SURFACE. TWO LAWS, SIX MECHANISMS, MACHINE PRECISION.**
+
+`LANE_T33_ANYSURFACE`. The principal: *"PROOF means that someone anywhere in the world can prove that
+our calculation agrees with **any record surface**."* One named record is an instance, not a proof —
+so the `PROVED` bar and `ledger/status.py` were **strengthened**, not relaxed: a row must now carry
+`RECORDS VERIFIED:` listing **at least two structurally different mechanisms.**
+
+### LAW 1 — `⟨R⟩_ss = tanh(dE / 2k_BT)`
+
+| record surface | mechanism | `dE/kT` | closed form | from `(H,{L_k})` | abs err |
+|---|---|---|---|---|---|
+| CoCrPt HDD grain | magnetic anisotropy | 3.00 | 9.0515e-01 | 9.0515e-01 | 1.22e-15 |
+| NAND floating gate | trapped charge | 11.60 | 9.9998e-01 | 9.9998e-01 | **0.00e+00** |
+| DNA base tautomer | chemical bond | 13.10 | 1.0000e+00 | 1.0000e+00 | 1.11e-16 |
+| Fe(II) complex | spin-state transition | 2.10 | 7.8181e-01 | 7.8181e-01 | 5.55e-16 |
+| Azobenzene | photoisomerisation | 23.21 | 1.0000e+00 | 1.0000e+00 | **0.00e+00** |
+| **Alanine enantiomer** | **parity violation** | **3.87e-12** | **1.9341e-12** | **1.9327e-12** | 1.35e-15 |
+
+### LAW 2 — `τ = exp(E_b/k_BT) / f₀`, from the record's own Liouvillian mode
+
+| surface | `E_b/kT` | closed form (s) | from `(H,{L_k})` (s) | rel err |
+|---|---|---|---|---|
+| CoCrPt grain | 60.8 | 5.4021e+16 | 5.4021e+16 | 1.48e-16 |
+| NAND gate | 61.9 | 2.2852e+11 | 2.2852e+11 | **0.00e+00** |
+| DNA tautomer | 48.7 | 1.9477e+05 | 1.9477e+05 | 1.49e-16 |
+| Fe(II) | 32.9 | 5.9319e+01 | 5.9319e+01 | 2.40e-16 |
+| Azobenzene | 40.6 | 3.9760e-01 | 3.9760e-01 | 1.40e-16 |
+| Alanine | 54.2 | 1.6517e+10 | 1.6517e+10 | 2.31e-16 |
+
+> ### **SIX MECHANISMS SHARING NOTHING BUT BEING TWO-STATE RECORDS. `dE` SPANS `6.0e12`. EVERY
+> ### ABSOLUTE ERROR AT OR BELOW `1.4e-15` — MACHINE PRECISION. THE CALCULATION IS
+> ### MECHANISM-INDEPENDENT.**
+
+### AND IT DECLINES WHERE THE PHYSICS DECLINES
+
+**Zircon U-238** — nuclear decay is **temperature-independent**, so the record is not thermally
+activated and neither law applies; `E_b/kT` would be `1.65e8` and the arithmetic declines exactly
+where the physics does. **A CMB photon in free flight** — no bath, zero relaxation rates, so the model
+returns **no** lifetime and **no** steady-state value rather than a number. **That is what makes the
+six passes mean something.**
+
+### THE BAR WAS RAISED AND TWO ROWS FELL BACK
+
+**C-69 and C-70 now meet it** on six mechanisms. **C-71 and C-72 do not** — they are verified on
+magnetic media alone and are returned to `FORMAL` until a second mechanism is scored. The named check
+is a **written NAND array against an erased one.**

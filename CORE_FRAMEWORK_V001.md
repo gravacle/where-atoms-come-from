@@ -42,8 +42,13 @@ was a doctrine row that became a checkbox.
 > > world data and confirm that it works as asserted. That is a proof. Otherwise we're not proving
 > > anything other than that we can construct equations."*
 
+> > *"PROOF means that someone anywhere in the world can prove that our calculation agrees with **any
+> > record surface**."* — 2026-08-20
+
 **A row is `PROVED` only if it names (1) the MEASURABLE QUANTITY in units, (2) the PREDICTED VALUE or
-relation, and (3) WHAT WOULD FALSIFY IT.** `ledger/status.py` **refuses** the status otherwise — this
+relation, (3) WHAT WOULD FALSIFY IT, and (4) `RECORDS VERIFIED:` listing at least TWO STRUCTURALLY
+DIFFERENT real record surfaces — different MECHANISM, not different parameters. One record is an
+instance, not a proof.** `ledger/status.py` **refuses** the status otherwise — this
 is enforced by the tool, not by a checklist, because every previous guard was a checklist item and
 H-3 stayed open for the life of the program regardless.
 

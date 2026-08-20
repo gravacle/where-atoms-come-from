@@ -21,11 +21,11 @@ checkable rather than a judgement call.**
 **Nothing below counts as finished until every clause of that is true. The grounding clause
 converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 
-**19 of 32 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**20 of 33 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 19 | 2 | 7 | 4 |
+| 20 | 2 | 7 | 4 |
 
 ---
 
@@ -64,7 +64,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | **T-14** | ALPHA'S ROLE, RESTATED AFTER PF-6. Theorem D's eps^d was rescoped to GENERIC single-site perturbations; the Z-only case gives eps^n*. Restate alpha's role in mapped terms | **DONE** | the alpha row states which perturbation class it holds for, with both exponents measured | T-1 |
 | **T-22** | GIVE ALPHA REAL CONTENT (H-2). Nothing in the corpus is dimensionful and the fine structure constant is connected to no number. Either connect it or state plainly that 'alpha' names a generic coupling here | **DONE** | either a registered result in which alpha's VALUE matters, or an explicit statement in the anchor that alpha stands for a generic coupling strength | — |
 
-## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  5/12 done
+## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  6/13 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
@@ -80,6 +80,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | ▶ **T-30** | **DOES THE GRAVITY-STRENGTH EXCLUSION SURVIVE AT FINITE TOLERANCE? Re-run C-52's trace-ratio computation on a METASTABLE record at declared tolerance. The Z[i] quantisation was proved over exact signed Paulis at tolerance zero; exclusions proved at tolerance zero do not automatically survive at finite tolerance. This single computation decides whether the exclusion was a theorem about the WORLD or about the corner** | **DONE** | C-52 and C-53 restated at finite tolerance on a metastable carrier, with the verdict stated either way | T-28 |
 | **T-31** | RE-RUN THE DEGENERACY-DEPENDENT GRAVITY CHAIN WITH ASYMMETRIC WELLS. C-14's count law k = min_E v_2(m_E) and the W-42/W-43/W-44/W-51 record-to-geometry chain depend on engineered degeneracy; under any well asymmetry the multiplicities collapse. The chain survives only if the record COUNT is insensitive to well-depth asymmetry -- an explicit re-check, not a presumption | TODO | the count law and the geometry chain are re-run with asymmetric wells and either survive with a stated tolerance or are withdrawn | T-28 |
 | ▶ **T-32** | **IS THE CONFIGURATION ENERGY OF REAL RECORDS A SOURCE? Test the five standards on written magnetic media rather than on the toy chain, with a demagnetised control** | **DONE** | the five standards are scored on a real record with a control that would have failed them, and the verdict stated either way | T-30 |
+| ▶ **T-33** | **DOES THE CALCULATION AGREE WITH ANY RECORD SURFACE? Verify the record laws across structurally different mechanisms, with surfaces where they must NOT apply as controls** | **DONE** | two laws verified on at least four mechanisms at machine precision, with at least one control where the model declines | T-29 |
 
 ## PHASE F  WRITE AND CHECK THE PROOF  —  0/4 done
 

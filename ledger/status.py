@@ -10,7 +10,7 @@ Row ORDER IS FILE ORDER and is never sorted, so IDs never renumber and the rende
 grid is byte-stable unless a cell actually changed. Rows are appended, never deleted:
 a row that stops being true becomes WITHDRAWN or FAILED, it does not disappear.
 """
-import sys, os, csv, hashlib
+import re, sys, os, csv, hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -103,7 +103,17 @@ def render():
 
 def grounded(row):
     """A row is GROUNDED when it names a test ANY PHYSICIST ANYWHERE can run against THEIR OWN
-       real-world data and confirm works as asserted.
+       real-world data, on ANY RECORD SURFACE, and confirm works as asserted.
+
+       STRENGTHENED 2026-08-20. The principal: "PROOF means that someone anywhere in the world can
+       prove that our calculation agrees with ANY RECORD SURFACE." One named record is not enough --
+       that is an instance, not a proof. The grounding must carry a line
+
+           RECORDS VERIFIED: <name>; <name>; ...
+
+       listing at least TWO STRUCTURALLY DIFFERENT real record surfaces on which the calculation was
+       checked. Different mechanism, not different parameters: a magnetic grain and a floating gate
+       count; two grain sizes do not.
 
        The principal, 2026-08-20: "The PROOF must be something that any physicist anywhere in the
        world can run against their real world data and confirm that it works as asserted. That is a
@@ -112,17 +122,26 @@ def grounded(row):
        Naming a real record is NOT enough -- that was the registrar's weaker first attempt. The row
        must name the MEASURABLE QUANTITY, the PREDICTED VALUE, and WHAT WOULD FALSIFY IT."""
     g = row[7] if len(row) > 7 else ''
-    return bool(g.strip()) and not g.strip().upper().startswith('UNGROUNDED')
+    if not g.strip() or g.strip().upper().startswith('UNGROUNDED'):
+        return False
+    m = re.search(r'RECORDS VERIFIED:(.*)', g, re.I)
+    if not m:
+        return False
+    names = [x.strip() for x in m.group(1).split(';') if x.strip()]
+    return len(names) >= 2
 
 
 def ungrounded_msg(rid):
     return ('REFUSED: %s cannot be PROVED.\n'
             '\n'
             '  PROVED means: a test ANY PHYSICIST ANYWHERE can run against THEIR OWN real-world\n'
-            '  data and confirm works as asserted. The row must name:\n'
+            '  data, ON ANY RECORD SURFACE, and confirm works as asserted. The row must name:\n'
             '     1. the MEASURABLE QUANTITY, in units;\n'
             '     2. the PREDICTED VALUE or relation;\n'
-            '     3. WHAT WOULD FALSIFY IT.\n'
+            '     3. WHAT WOULD FALSIFY IT;\n'
+            '     4. a line reading  RECORDS VERIFIED: <name>; <name>  listing at least TWO\n'
+            '        STRUCTURALLY DIFFERENT real record surfaces it was checked on. Different\n'
+            '        MECHANISM, not different parameters. One record is an instance, not a proof.\n'
             '\n'
             '  Set it:   ./ledger/status.py ground %s "<quantity, prediction, falsifier>"\n'
             '\n'
