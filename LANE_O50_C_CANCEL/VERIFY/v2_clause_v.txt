@@ -1,0 +1,48 @@
+====================================================================================================
+V2-A.  A CONTRACTIBLE REGION ON THE TORUS THAT CONTAINS A LOGICAL  --  CLAUSE (v) ATTACK
+====================================================================================================
+  Region built: the vertical path v(0,0)..v(L-2,0) joining sites (0,0)->(L-1,0), PLUS the
+  horizontal stub h(i,0) at every row i.  This is a TREE, so it is simply connected and
+  lifts to the plane -- the LANE'S OWN definition of contractible.  It is NOT a d x d block,
+  which is the only shape the lane tested.
+
+    L  #edges  tree?                              shape  dimN  dimS  NON-TRIVIAL LOGICALS  clause (v)
+    3       5   True 6 vertices, 5 edges, 1 component(s)     1     0                     1       FAILS
+    4       7   True 8 vertices, 7 edges, 1 component(s)     1     0                     1       FAILS
+    5       9   True 10 vertices, 9 edges, 1 component(s)     1     0                     1       FAILS
+
+  NEGATIVE CONTROL (D-15): the same tree with ONE horizontal stub removed, so the X-loop is
+  incomplete.  If the instrument is sound this must return 0 logicals.
+    L  #edges  tree?  NON-TRIVIAL LOGICALS
+    3       4   True                     0
+    4       6   True                     0
+    5       8   True                     0
+
+  AND THE LANE'S OWN d<L BLOCK ROWS, REPRODUCED, so the two are read in the same table:
+    L   d  #edges  NON-TRIVIAL LOGICALS
+    3   2       4                     0
+    4   2       4                     0
+    4   3      12                     0
+
+  DIAMETER OF THE TREE REGION vs THE BLOCKS (the quantity that actually separates them):
+    L=3:  tree region spans all 3 rows -> diam = L ;  lane's blocks have diam <= d < L
+    L=4:  tree region spans all 4 rows -> diam = L ;  lane's blocks have diam <= d < L
+    L=5:  tree region spans all 5 rows -> diam = L ;  lane's blocks have diam <= d < L
+
+====================================================================================================
+V2-B.  IS 'rank of writer map = m' A MEASUREMENT ABOUT THE TORUS?
+====================================================================================================
+  The lane takes recs = [pair[0] for pair in symplectic_logicals(...)] and gens = both halves
+  of every pair.  symplectic_logicals RETURNS CONJUGATE PAIRS, i.e. a symplectic basis, so
+  sp(pair[j][1], pair[i][0]) = delta_ij BY CONSTRUCTION.  The rank is then m for any code.
+
+  code                                       k   m  rank of w->flip map  simply transitive?
+  toric code L=2 (TORUS)                     2   2                    2                True
+  toric code L=3 (TORUS)                     2   2                    2                True
+  4 BARE QUBITS, no stabilisers, no code     4   4                    4                True
+  four copies of the [[5,1,3]] perfect code   4   4                    4                True
+  one stabiliser Z0Z1 on 6 qubits (k=5)      5   5                    5                True
+
+  READ: the rank is m for every one of these, including a carrier with NO topology, NO
+  protection and NO geometry (4 bare qubits).  'rank = m' is the DEFINITION of an
+  independent commuting record family, not a measured property of the toric code.

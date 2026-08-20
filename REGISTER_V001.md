@@ -9113,3 +9113,75 @@ stale seals in `LANE_F7_OCCUPANCY` and `model/`; `LANE_O5_ADVERSARIAL` cannot ru
 **And T-9 was falsely DONE.** `SINGLE-CARRIER` appears **zero** times in the ledger; ~24 of 162 rows
 cite two carriers. **REPLICATE.md's sentence asserting the marking was false of the shipped ledger and
 is corrected in place.** T-9 **REOPENED**; PF-8's stale `6 of 78` denominator corrected against 162.
+
+---
+
+## O-51 — **ADOPTED. THE AMENDED DEFINITION, AND THE GOAL'S GROUNDING CLAUSE.**
+
+The principal: *"I just want to proceed with what we need to do to reach the founding goal."* The
+grounding clause was already decided three times over — *"not a toy"*, *"ground every PROOF in the
+world's records"*, *"any physicist anywhere can run it against their real world data"* — so it is
+adopted rather than asked again.
+
+### THE MECHANISM MISMATCH, WHICH IS THE ROOT
+
+> ### **THE WORLD USES ENERGETIC AND KINETIC PROTECTION. THE EXACT CLAUSES ASSUME TOPOLOGICAL
+> ### PROTECTION.**
+
+**A small theorem behind it (support-compression, Uhlmann):** any record whose two states differ only
+inside a contractible region — **i.e. any locally readable record, which is all of them** — has a
+flipper supported on that region. **So (iv) and (v) are co-satisfiable only on non-contractible
+supports.** Nature's one non-contractible record, the **superconducting flux quantum**, is still
+flipped by a local phase slip over a **0.27 eV** barrier; nature's genuinely (v)-protected quantities
+— **Chern number, baryon number at `10⁻¹⁶⁴` suppression** — are **unwritable**.
+
+**And the sting:** at finite `T` the program's canonical carrier has an `O(1)` barrier and a lifetime
+**independent of `L`** (Alicki et al. 2009; Bravyi–Terhal 2009 — no passive self-correction below 4D).
+**One CoCrPt grain with `K_uV = 60 kT` is a better record than a toric code of any size.**
+
+**The program's own O-16 measured this mismatch from inside before the census confirmed it from
+outside.**
+
+### H-3, ANSWERED WITH A NUMBER
+
+**Zero of ~20 real records satisfy the five clauses.** Four independent censuses, each adversarially
+checked, **headline upheld every time.** The two nearest residents die on opposite clauses: the **CMB
+photon** passes (i)–(iv) and fails (v) at zero cost; **B−L** passes (ii) exactly and fails (iv)
+because **nature contains no writer for it.** **That pincer is C-60 observed in nature.**
+
+### WHAT WAS ADOPTED
+
+- **The amended clauses (i′)–(v′)** on **carrier ⊗ local bath**, with declared tolerances. All ~20
+  real records pass. `CORE_FRAMEWORK_V001.md` amended and re-read.
+- **DEF-A named as the exact corner** — `T→0`, `t_m→∞`, `W=0`, `E_b→∞`. **All 162 FORMAL rows remain
+  true theorems about that corner.**
+- **The goal's grounding clause**, in `THE_PLAN`: *"…form THE WORLD'S RECORDS — with every PROOF
+  grounded in at least one named physical record with real numbers — and the model, so that the proof
+  can be checked by anyone AGAINST those records."* **This converts H-3, H-5 and H-6 from open hazards
+  into standing acceptance criteria.**
+
+### WHAT THIS OPENS — LARGER THAN WHAT IT COSTS
+
+> ### **THE ENERGY ROUTE TO A GRAVITY SOURCE, CLOSED BY O-48 FOR *FREE WRITES ONLY*, REOPENS UNDER THE
+> ### AMENDMENT WITH `dE` = WORK PAID. A MEASURABLE, NON-ZERO, RECORD-BY-RECORD CONFIGURATION ENERGY
+> ### IS EXACTLY WHAT A SOURCE TERM NEEDS.**
+
+O-42's headline — *a record cannot be both writable and carry configuration energy* — **is refuted by
+flash memory roughly `10¹⁸` times a day.**
+
+### WHAT MUST BE REDONE, PRECISELY BOUNDED — T-28 … T-31
+
+**C-52 and C-53 at finite tolerance** (exclusions proved at tolerance zero do not inherit); **the
+O-42-lineage exclusions under `ADMISSIBLE(β,W)`**, with the concrete prediction that the "unwritable"
+records become writable at `W` equal to their uphill energy changes — **spreads 1.400000 and
+3.600000**; **C-12's existence criterion re-proved for slow manifolds**, its trace-balance hypothesis
+being the one corpus theorem genuinely in doubt; and **C-14's count law with asymmetric wells**, which
+**collapses to zero records under any splitting** unless width-clustered multiplicities are adopted —
+**so the HDD run returns zero unless that is fixed first.**
+
+### THREE ROWS FOUND THE PHYSICS BEFORE THE CENSUS DID
+
+**O-5** (its width bound is the template for (ii′) and never failed against nature), **C-60** (free
+writing and durability exclude each other — observed in nature via B−L), **O-16** (found the
+protection mismatch from inside). **O-44 is rehabilitated: it is `ADMISSIBLE(β,W)` in embryo, and its
+"not needed" disposition reverses.**

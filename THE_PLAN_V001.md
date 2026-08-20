@@ -7,17 +7,25 @@ checkable rather than a judgement call.**
 ## THE DEFINITION OF DONE
 
 > **A full demonstration of a PROVEN process that explains how EM, gravity, and alpha form
-> quantum records. And the model so that our proof can be checked by anyone.**
+> THE WORLD'S RECORDS — with EVERY PROOF GROUNDED IN AT LEAST ONE NAMED PHYSICAL RECORD
+> WITH REAL NUMBERS — and the model, so that the proof can be checked by anyone AGAINST
+> THOSE RECORDS.**
 >
-> — the principal, 2026-08-19
+> — the principal, 2026-08-19; grounding clause added 2026-08-20 after ~20 real records
+> were tested against the five clauses and ZERO satisfied them (H-3).
 
-**Nothing below counts as finished until both halves of that sentence are true.**
+> **PROOF means: a test ANY PHYSICIST ANYWHERE can run against THEIR OWN real-world data
+> and confirm works as asserted. Otherwise we are not proving anything other than that we
+> can construct equations.** — the principal, 2026-08-20
 
-**16 of 27 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**Nothing below counts as finished until every clause of that is true. The grounding clause
+converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
+
+**16 of 31 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 16 | 1 | 6 | 4 |
+| 16 | 1 | 10 | 4 |
 
 ---
 
@@ -56,7 +64,7 @@ checkable rather than a judgement call.**
 | **T-14** | ALPHA'S ROLE, RESTATED AFTER PF-6. Theorem D's eps^d was rescoped to GENERIC single-site perturbations; the Z-only case gives eps^n*. Restate alpha's role in mapped terms | **DONE** | the alpha row states which perturbation class it holds for, with both exponents measured | T-1 |
 | **T-22** | GIVE ALPHA REAL CONTENT (H-2). Nothing in the corpus is dimensionful and the fine structure constant is connected to no number. Either connect it or state plainly that 'alpha' names a generic coupling here | **DONE** | either a registered result in which alpha's VALUE matters, or an explicit statement in the anchor that alpha stands for a generic coupling strength | — |
 
-## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  2/7 done
+## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  2/11 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
@@ -67,6 +75,10 @@ checkable rather than a judgement call.**
 | **T-25** | SETTLE WHAT ADMISSIBLE MEANS. DEF-A -- a unitary with [U,H] = 0 -- is marked PROVISIONAL on one carrier family, its physical-channel disjunct is UNTESTED, and clause (v) is stated with the same word so protection moves with it. O-44 showed it was briefly the sole support of the program's strongest negative result | TODO | either a definition is adopted and clauses (iv) and (v) are re-run under it on two carriers, or the framework states plainly that DEF-A is a CHOICE and names every row that turns on it | — |
 | **T-26** | RE-AUDIT EVERY REGISTERED NULL AGAINST THE VENUE RULE. Four measurements in one session were taken where the effect could not appear -- abelian carriers for a frame rotation, one-qubit bath sites for a capacity question, gauge-invariant states for transport, a non-degenerate H for a record. D-22 says a permutation-symmetric carrier has no geometry to detect at all | TODO | every registered null either cites the carrier's demonstrated capacity to show the effect -- a positive control in the same table -- or is rescoped to absence-within-range or absence-in-this-venue | — |
 | **T-27** | BRING PROCESS_V002 AND THE ANCHOR CURRENT. One session withdrew C-37 and C-55, rescoped C-29, C-30, C-32, C-33, C-36 and C-43, failed O-42, and reopened then reclosed O-4. The process document and the anchor sentence predate all of it | TODO | PROCESS_V002.md and the anchor cite no WITHDRAWN or FAILED row, every sentence traces to a live ledger row, and the anchor's claim about gravity matches what the ledger now says | T-23 |
+| ▶ **T-28** | **IMPLEMENT THE AMENDED DEFINITION IN THE MODEL. records(t_m) = slow Lindblad eigenmodes with \|Re lambda\| <= 1/t_m, and ADMISSIBLE(beta, W) as a smallest-bath-plus-one-ladder-site search in O-44's style. This is the one-move model change the census names** | TODO | the model returns records under (i')-(v') with declared tolerances, and REPRODUCES the exact records on the three registered carriers in the t_m -> infinity, W -> 0 limit | — |
+| ▶ **T-29** | **THE FIRST PROOF GROUNDED IN A WORLD RECORD: the HDD CoCrPt grain as an (H,{L_k}) two-state macrospin with Arrhenius jumps -- K_uV = 61 kT, tau = 2e17 s, splitting 0.007-7 kT, write head 5e-19 J. WARNING from the census: C-14's count law collapses to zero records under ANY well asymmetry, so the width-clustered quasi-degenerate multiplicity fix must be adopted FIRST or the run provably returns zero** | TODO | the model takes the grain, returns its record under the amended clauses, and yields a number a physicist can check against published retention data | T-28 |
+| ▶ **T-30** | **DOES THE GRAVITY-STRENGTH EXCLUSION SURVIVE AT FINITE TOLERANCE? Re-run C-52's trace-ratio computation on a METASTABLE record at declared tolerance. The Z[i] quantisation was proved over exact signed Paulis at tolerance zero; exclusions proved at tolerance zero do not automatically survive at finite tolerance. This single computation decides whether the exclusion was a theorem about the WORLD or about the corner** | TODO | C-52 and C-53 restated at finite tolerance on a metastable carrier, with the verdict stated either way | T-28 |
+| **T-31** | RE-RUN THE DEGENERACY-DEPENDENT GRAVITY CHAIN WITH ASYMMETRIC WELLS. C-14's count law k = min_E v_2(m_E) and the W-42/W-43/W-44/W-51 record-to-geometry chain depend on engineered degeneracy; under any well asymmetry the multiplicities collapse. The chain survives only if the record COUNT is insensitive to well-depth asymmetry -- an explicit re-check, not a presumption | TODO | the count law and the geometry chain are re-run with asymmetric wells and either survive with a stated tolerance or are withdrawn | T-28 |
 
 ## PHASE F  WRITE AND CHECK THE PROOF  —  0/4 done
 

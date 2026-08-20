@@ -35,9 +35,16 @@ def render():
          'checkable rather than a judgement call.**', '',
          '## THE DEFINITION OF DONE', '',
          '> **A full demonstration of a PROVEN process that explains how EM, gravity, and alpha form',
-         '> quantum records. And the model so that our proof can be checked by anyone.**',
-         '>', '> — the principal, 2026-08-19', '',
-         '**Nothing below counts as finished until both halves of that sentence are true.**', '',
+         '> THE WORLD\'S RECORDS — with EVERY PROOF GROUNDED IN AT LEAST ONE NAMED PHYSICAL RECORD',
+         '> WITH REAL NUMBERS — and the model, so that the proof can be checked by anyone AGAINST',
+         '> THOSE RECORDS.**',
+         '>', '> — the principal, 2026-08-19; grounding clause added 2026-08-20 after ~20 real records',
+         '> were tested against the five clauses and ZERO satisfied them (H-3).', '',
+         '> **PROOF means: a test ANY PHYSICIST ANYWHERE can run against THEIR OWN real-world data',
+         '> and confirm works as asserted. Otherwise we are not proving anything other than that we',
+         '> can construct equations.** — the principal, 2026-08-20', '',
+         '**Nothing below counts as finished until every clause of that is true. The grounding clause',
+         'converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**', '',
          f'**{done} of {len(rows)} tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.', '']
     tally = {}
     for r in rows: tally[r[3]] = tally.get(r[3], 0) + 1

@@ -24,7 +24,42 @@ says the world's records meet them.**
 
 ---
 
-## THE DEFINITION
+## THE AMENDED DEFINITION — GROUNDED IN THE WORLD'S RECORDS (O-51, adopted 2026-08-20)
+
+**Why it changed.** The five clauses below were stipulated. Tested against ~20 real records —
+HDD/FePt/CoCrPt grains, tape, flash, MRAM, AgBr latent image, DNA, synapse, zircon U-Pb, mica fission
+track, ice core, lava TRM, CMB photon polarisation, superconducting flux quantum, B−L — **ZERO
+satisfy them.** The clauses are, near-verbatim, *"R is a logical Pauli of a passive self-correcting
+quantum memory"* — **objects not known to exist below 4D at finite temperature.**
+
+> ### **THE WORLD USES ENERGETIC AND KINETIC PROTECTION. THE EXACT CLAUSES ASSUME TOPOLOGICAL
+> ### PROTECTION. THAT IS A MECHANISM MISMATCH, AND THE PROGRAM'S OWN O-16 MEASURED IT FROM INSIDE
+> ### BEFORE THE CENSUS CONFIRMED IT FROM OUTSIDE.**
+
+**THE ONE MOVE:** the clauses were written for the **CARRIER ALONE**. They are now stated on
+**CARRIER ⊗ LOCAL BATH**, with declared tolerances `(T, t_m, δ, t_w, Δ, W, N_r)`.
+
+| | amended clause |
+|---|---|
+| **(i′)** | a commuting **spectral family** `{P_a}`, not necessarily an involution |
+| **(ii′)** | **durable to `t_m`** — O-5's width bound, `δ = ħ/t_m`. *Never failed against nature: tolerances `1e-41`–`1e-52 J`, 20+ orders of slack* |
+| **(iii′)** | non-constant on the **closed system's energy shell**, width `√(C_v k_B T²) ≥ ΔE_config`. *A 1 cm³ bath gives ~10 GeV against the census's worst offset, 0.5 MeV* |
+| **(iv′)** | writable by an **energy-conserving dilation unitary** on carrier ⊗ writer ⊗ bath; cost is **free energy**, floor `kT ln2 + ΔE_config`. *This is O-4's untested "or a physical channel" reading* |
+| **(v′)** | every single-region flip costs `≥ E_b`, `E_b/kT ≫ 1`. Census: 61 (HDD), ~120 (flash), ~50 (DNA), 220 (zircon), **780 (single-domain magnetite)** |
+
+**ALL ~20 REAL RECORDS PASS THE AMENDED CLAUSES.**
+
+> ### **THE EXACT CLAUSES BELOW ARE RETAINED AND RENAMED: THEY ARE THE `T → 0`, `t_m → ∞`, `W = 0`,
+> ### `E_b → ∞` CORNER — "DEF-A". Every one of the 162 FORMAL rows remains a true theorem about that
+> ### corner. What they are not is a statement about the world, which has approximately zero
+> ### residents there.**
+
+**And this answers H-6 as a by-product: records are macroscopic because the amended clauses require a
+macroscopic bath to export the write energy — not because the carrier must be big.**
+
+---
+
+## THE DEFINITION — DEF-A, THE EXACT CORNER
 
 Let `H` be a Hamiltonian and `{L_k}` the jump operators of an open system. **`R` is a RECORD if:**
 
