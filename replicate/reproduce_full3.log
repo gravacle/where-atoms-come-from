@@ -1,0 +1,61 @@
+
+[1m0. ENVIRONMENT[0m
+==============================================================================
+  python  Python 3.9.6
+  numpy   2.0.2
+
+[1m1. SEALS  (SHA-256 over every registered document and lane)[0m
+==============================================================================
+  FAIL  LANE_SCALE_D_THRESHOLD.sha256
+  FAIL  replicate.sha256
+
+[1m2. RE-RUN EVERY LANE SCRIPT AND DIFF AGAINST ITS SEALED OUTPUT[0m
+==============================================================================
+  lane                           script                     result
+  ------------------------------ -------------------------- ------
+  LANE_AA_GAUSS_AT_SURFACE       aa1_gauss_at_surface.py    [32mIDENTICAL[0m
+  LANE_AA_GAUSS_AT_SURFACE       aa2_why_null.py            [32mIDENTICAL[0m
+  LANE_AA_GAUSS_AT_SURFACE       aa3_open_graph.py          [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_area_law_forced.py      [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_thermal.py              [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_trit_forced.py          [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_what_is_a_surface.py    [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_which_entropy.py        [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s1_f2_structure.py         [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s1b_writer_weight_basis.py [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s2_dense_clauses.py        [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s3_chi_scaling.py          [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s4_blocks_additivity.py    [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s5_operator_scalars.py     [31mDIFFERS (4 lines)[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s6_master_table.py         [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           chi_lib.py                 no sealed output — SKIP
+  LANE_ASYM_B_COLLAPSE           fss_lib.py                 no sealed output — SKIP
+  LANE_ASYM_B_COLLAPSE           s1_validate.py             [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s2_combinatorial.py        [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s3_chi.py                  [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s4_fss.py                  [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s5_additivity.py           [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s6_saturating_control.py   [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s7_synthesis.py            [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        lanelib.py                 no sealed output — SKIP
+  LANE_ASYM_C_EXTENSIVITY        qcore.py                   no sealed output — SKIP
+  LANE_ASYM_C_EXTENSIVITY        s1_block_verify.py         [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s2_exact_additivity.py     [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s3_chi_additivity.py       [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s4_induced_interaction.py  [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s5_master.py               [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s6_carrier_scale.py        [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s7_anchor_and_homogeneous.py [32mIDENTICAL[0m
+  LANE_AUDIT_TOOLS               at1_capacity.py            [32mIDENTICAL[0m
+  LANE_AUDIT_TOOLS               at2_s3_clauses.py          [32mIDENTICAL[0m
+  LANE_EM_EXTENT                 em_extent.py               [32mIDENTICAL[0m
+  LANE_EM_EXTENT                 holonomy.py                [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e0_engine_selfcheck.py     [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e10_gap_characterised.py   [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e11_ledger.py              [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e1_twobody.py              [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e2_threebody.py            [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e3_words_and_gauge.py      [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e4_dg_exact.py             [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e5_separation.py           [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e6_gauge_content_and_quantisation.py no sealed output — SKIP

@@ -48,10 +48,15 @@ for py in LANE_*/*.py; do
     printf "  %-30s %-26s %s\n" "$lane" "$base" "skipped (--quick)"; continue; fi
   out="$TMP/$lane.$base.out"
   ( cd "$lane" && python3 -u "$base" ) >"$out" 2>&1
-  if diff -q "$txt" "$out" >/dev/null 2>&1; then
+  # Normalize BOTH sides identically before diffing -- never the results, only presentation:
+  #   wall-clock timings ("(84s)", "elapsed 241.6s") vary run to run, and scripts that write
+  #   their own .txt then print "[written]" leave that marker in captured stdout but not the file.
+  norm(){ sed -E -e 's/\([0-9]+s\)[[:space:]]*$/(Ts)/' -e 's/elapsed [0-9.]+s/elapsed Ts/' "$1" | grep -vx '\[written\]' | sed -e :a -e '/^[[:space:]]*$/{$d;N;ba' -e '}'; }
+  norm "$txt" >"$out.a"; norm "$out" >"$out.b"
+  if diff -q "$out.a" "$out.b" >/dev/null 2>&1; then
     printf "  %-30s %-26s \033[32m%s\033[0m\n" "$lane" "$base" "IDENTICAL"
   else
-    n=$(diff "$txt" "$out" | grep -c '^[<>]' || true)
+    n=$(diff "$out.a" "$out.b" | grep -c '^[<>]' || true)
     printf "  %-30s %-26s \033[31m%s\033[0m\n" "$lane" "$base" "DIFFERS ($n lines)"
     FAIL=1
   fi

@@ -9932,3 +9932,26 @@ was regenerated (the file was right, the seal was old). The documentation gate's
 check counted only `.txt`; documentation, advocate, and classification lanes carry their sealed
 findings as `.md`/`.tsv`, so those now count as output — the refusal on truly-empty lanes is
 unchanged.
+
+---
+
+## T-27 — **THE PROCESS DOCUMENT IS CURRENT.** PROCESS_V002 restated as of 2026-08-20, adversarially verified twice.
+
+The 2026-08-19 statement predated the amendment, the world tier, the emergence increments, and the
+audit; it also carried a wrong exponent attribution (λ^{2n*} where `F-23` registers `λ^{2d}`) and an
+O-11 citation used as support where the row registers an obstruction. The restatement covers the
+amended definition (adopted — the ledger's O-51 statement was stale against the register's adoption
+entry and was brought current, as was H-3's evidence tail), the corner existence theory, carriers and
+clause (v) on both carrier families (C-89 kept at its proxy scope), formation through the two PROVED
+encoding laws, the lifetime/steady-state laws and the count law, certifiability and the surface's
+clock, cost, the emergence claim at verdict NEITHER, and the audit's three survivors. An adversarial
+verifier read every backtick citation against its row: first pass returned 7 SEVERE / 7 MINOR, all
+fixed; second pass returned 0 SEVERE, 3 MINOR, all fixed. **Gate: all 66 cited rows live; no
+WITHDRAWN or FAILED row cited; the failed O-1 and PF-6 appear only as labeled history; banned-
+comparison scan zero matches; the anchor's gravity claim matches the ledger's C-77 shape.** The
+anchor itself needed no edit — its ~20 figure is the register's four-census figure, now stated beside
+the census set's thirteen wherever the doc uses it.
+
+**Next step (the route stays open):** T-16 will narrate the URM against this document; the document's
+one standing debt is inherited from T-9 — the carrier-breadth marks now being applied feed §"WHAT IS
+NOT ESTABLISHED" directly.

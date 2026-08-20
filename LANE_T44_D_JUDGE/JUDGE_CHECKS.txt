@@ -1,0 +1,35 @@
+T44-D JUDGE VERIFICATION LOG — 2026-08-20
+
+== SEAL RE-CHECKS ==
+-- LANE_T44_A_CORNER
+t44a_lib.py: OK
+t44a_corner.py: OK
+t44a_corner.OUT.txt: OK
+t44a_corner.RESULT.json: OK
+PUBLISHED_CONVENTIONS.txt: OK
+D24_AUDIT.txt: OK
+VERIFY/verify_t44a.py: OK
+VERIFY/verify_t44a.OUT.txt: OK
+-- LANE_T44_B_WORLD
+t44b_lib.py: OK
+t44b_world.py: OK
+t44b_world.OUT.txt: OK
+t44b_world.RESULT.json: OK
+PUBLISHED_CONVENTIONS.txt: OK
+D24_AUDIT.txt: OK
+-- LANE_T44_C_COMPOSE
+model/t44c_compose.py: OK
+t44c_compose.OUT.txt: OK
+D24_AUDIT.txt: OK
+
+== GATE RE-COUNTS (from sealed OUTs) ==
+LANE_T44_C_COMPOSE/t44c_compose.OUT.txt:GATES: 36/36 PASS
+LANE_T44_A_CORNER/t44a_corner.OUT.txt:GATES: 70 PASS, 0 FAIL, total 70
+LANE_T44_B_WORLD/t44b_world.OUT.txt:GATES: 58 PASS, 0 FAIL, total 58
+
+== KEY D=3 NUMBERS (verifier artifacts, quoted in judgment) ==
+13:   - d*G(d) quadrature: 0.5147, 0.4869, 0.4794, 0.4779 at d=2,4,8,16 -> 3/(2pi)=0.477465
+15:     M=2800 [0.476369,0.487321], owner 3/(2pi) INSIDE both
+
+== REGISTER SUPERSESSION GROUND ==
+9861:owner-attributed, not computed** — its probe overflowed and is in re-run (O-58 N1).

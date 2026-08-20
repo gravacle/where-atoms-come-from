@@ -81,7 +81,7 @@ for n in (4, 6, 8):
         wq, Vq = np.linalg.eigh((pr + pr.conj().T) / 2)
         v = Q @ Vq[:, -1:]
         v = v / np.linalg.norm(v)
-        energies_cfg.append(float(np.real(v.conj().T @ H @ v)))
+        energies_cfg.append(float(np.real((v.conj().T @ H @ v)[0, 0])))
     E_spread = max(energies_cfg) - min(energies_cfg)
 
     # CONTROL: a state that violates one stabiliser -- take X_0 |code state>, which anticommutes
@@ -89,7 +89,7 @@ for n in (4, 6, 8):
     vc = Q[:, :1]
     vbad = pauli_string(n, {0: Xm}) @ vc
     vbad = vbad / np.linalg.norm(vbad)
-    gap = float(abs(np.real(vbad.conj().T @ H @ vbad) - np.real(vc.conj().T @ H @ vc)))
+    gap = float(abs(np.real((vbad.conj().T @ H @ vbad)[0, 0]) - np.real((vc.conj().T @ H @ vc)[0, 0])))
 
     Hc = Q.conj().T @ H @ Q
     varH = float(np.linalg.norm(Hc - (np.trace(Hc) / kd) * np.eye(kd)))
