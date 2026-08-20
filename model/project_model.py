@@ -29,14 +29,18 @@ class RecordSurface:
         self.dE, self.E_b, self.T, self.f0, self.thermal = dE, E_b, T, f0, thermal
 
     def open_system(self):
-        """(H, {L_k}) for the two-state record, rates by detailed balance over the barrier.
-           Returns None where the surface is NOT thermally activated -- the model DECLINES rather
-           than returning a number (T-33's zircon and CMB controls)."""
+        """(H, {L_k}) for the two-state record. CONVENTION (corrected per the solidity review):
+           E_b is the ACTIVATION ENERGY FROM THE METASTABLE (upper) WELL -- the standard Arrhenius
+           meaning. Escape from upper: f0 exp(-E_b/kT); from lower: f0 exp(-(E_b+dE)/kT); detailed
+           balance holds automatically. The earlier midpoint convention silently reduced the escape
+           barrier by dE/2, producing a 5-6 order contradiction with the measured azobenzene cis
+           lifetime. Returns None where the surface is NOT thermally activated -- the model DECLINES
+           rather than returning a number."""
         if not self.thermal:
             return None
         kT = G.KB * self.T
-        gd = self.f0 * np.exp(-(self.E_b + self.dE / 2) / kT)
-        gu = self.f0 * np.exp(-(self.E_b - self.dE / 2) / kT)
+        gu = self.f0 * np.exp(-self.E_b / kT)              # escape from the metastable well
+        gd = self.f0 * np.exp(-(self.E_b + self.dE) / kT)  # reverse, from the lower well
         if not (np.isfinite(gd) and np.isfinite(gu)) or (gd < 1e-300 and gu < 1e-300):
             return None
         H = -(self.dE / 2) * _SZ
@@ -74,6 +78,8 @@ class ProjectModel:
         if sys is None:
             return None
         H, Ls, R = sys
+        if not Ls:
+            return None    # no dissipator: a steady state is not defined; decline, never an arbitrary vector
         Lv = G.liouvillian(H, Ls)
         w, V = np.linalg.eig(Lv)
         j = int(np.argmin(np.abs(w)))

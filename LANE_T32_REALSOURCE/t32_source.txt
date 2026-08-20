@@ -4,19 +4,43 @@ T-32   IS THE CONFIGURATION ENERGY OF REAL RECORDS A SOURCE?
   CoCrPt grain: V = 1.26e-24 m^3, M_s = 4.0e+05 A/m, moment m = 5.040e-19 A m^2
   E_b = 60.8 kT     T = 300 K
 
-1. THE CONFIGURATION ENERGY OF N GRAINS IN AN APPLIED FIELD B
-   dE_i = 2 m B s_i   with s_i = +-1 the record. In WRITTEN media every s_i is set by the
-   write head; in a demagnetised medium they are random. Both are run.
+1. RESCOPED (solidity review). THE FIELD-FREE QUANTITY IS THE REMANENT MOMENT
+   M_r = M_s V sum(s_i)  [A m^2] -- what the written medium carries with NO applied field.
+   The Zeeman energy 2 m B s_i EXISTS ONLY IN AN APPLIED EVALUATION FIELD B (inserted) and is
+   kept below as medium-plus-field, labeled. SCOPE: one-signedness belongs to DC-SATURATED
+   writing; real data tracks use DC-free codes and SCREEN -- shown in the same table.
             N    B (T)   written: sum dE (J)    sum|dE| (J)  |sum|/sum|.|  demag: |sum|/sum|.|
-           10     0.50            5.0400e-18     5.0400e-18      1.000000             0.400000
-          100     0.50            5.0400e-17     5.0400e-17      1.000000             0.080000
-         1000     0.50            5.0400e-16     5.0400e-16      1.000000             0.002000
-        10000     0.50            5.0400e-15     5.0400e-15      1.000000             0.012000
-       100000     0.50            5.0400e-14     5.0400e-14      1.000000             0.003740
+   pattern                       N    M_r (A m^2)  sum|m| (A m^2)  |sum|/sum|.|
+   DC-SATURATED                 10     5.0400e-18      5.0400e-18      1.000000
+   random data                  10     2.0160e-18      5.0400e-18      0.400000
+   DC-free coded                10     0.0000e+00      5.0400e-18      0.000000
+   AC-erased ctrl               10    -1.0080e-18      5.0400e-18      0.200000
+   DC-SATURATED                100     5.0400e-17      5.0400e-17      1.000000
+   DC-SATURATED               1000     5.0400e-16      5.0400e-16      1.000000
+   DC-SATURATED              10000     5.0400e-15      5.0400e-15      1.000000
+   DC-SATURATED             100000     5.0400e-14      5.0400e-14      1.000000
+   random data              100000     1.3608e-16      5.0400e-14      0.002700
+   DC-free coded            100000     0.0000e+00      5.0400e-14      0.000000
+   AC-erased ctrl           100000     1.3205e-16      5.0400e-14      0.002620
+   -> ONE-SIGNED ONLY under DC saturation; random data and DC-free codes SCREEN, as the review
+      measured (0.00096 at N=1e5). The falsifier is scoped to DC-saturated writing.
 
-   (a) EXTENSIVE:  sum dE at N and 10N: ratios 10.0000, 10.0000, 10.0000, 10.0000   (linear gives 10.0000)
-   (d) SIGN-DEFINITE: written medium |sum|/sum|.| = 1.000000 at every N;
-       demagnetised control falls as 1/sqrt(N) — the screening the toy chain showed
+   (a) EXTENSIVE (M_r, DC-saturated):  ratios 10.0000, 10.0000, 10.0000, 10.0000   (linear gives 10.0000)
+   (d) SIGN-DEFINITE under DC-saturation scope only; other patterns screen toward zero
+       (non-monotone at finite N -- single random draws, not an ensemble)
+
+1b. (b) ADDITIVITY WITH THE CROSS-TERM COMPUTED (replaces the earlier 1e-3 assertion).
+    Two tracks of N/2 grains at separation r_track; dipole cross-energy per boundary pair
+    U_dd = mu0 m^2/(2 pi r^3), summed over the facing rows; compared with per-grain E_b.
+     r_track (nm)   U_dd/pair (J)    U_dd/E_b    additivity verdict
+               10      5.0803e-20  2.0160e-01 FAILS at this spacing
+               20      6.3504e-21  2.5200e-02 FAILS at this spacing
+               40      7.9380e-22  3.1500e-03 FAILS at this spacing
+               60      2.3520e-22  9.3333e-04 holds (<=1e-3 of E_b)
+              100      5.0803e-23  2.0160e-04 holds (<=1e-3 of E_b)
+    -> additivity of M_r is exact by superposition of moments (trivially, stated); additivity
+       of the ENERGY holds at track separations where U_dd/E_b <= 1e-3 -- computed above, NOT
+       asserted: it fails at grain spacing (10-20 nm) and holds from ~60 nm.
 
 2. (c) IS IT A COUNT? Vary the medium at FIXED N = 1000.
       M_s (A/m)    B (T)     V (m^3)      sum dE (J)
@@ -33,39 +57,31 @@ T-32   IS THE CONFIGURATION ENERGY OF REAL RECORDS A SOURCE?
     CONTROL: two tracks close enough to couple by dipole would show a non-zero defect;
     at track separations >> grain size the dipole term is 1e-3 of the field term.
 
-3. (e) SEPARATION DEPENDENCE — the dipole field of one grain at another
-   B_dip(r) = mu0 m / (2 pi r^3). This is the interaction that carries the configuration
-   energy between two real records, and its falloff is INDUCED by magnetostatics, not inserted.
+3. (e) SEPARATION DEPENDENCE — RELABELED (solidity review): the r^-3 here is INSERTED, not
+   induced -- B_dip(r) = mu0 m/(2 pi r^3) is quoted magnetostatics and the 8.0000-per-doubling
+   check measures the quoted formula. The INDUCED demonstration lives in LANE_T34_NAND, where
+   the exponent emerges from monopoles + a real ground plane against an r^-1 no-plane control.
       r (nm)     B_dip (T)      E_int/kT   ratio to r^-3
           10    1.0080e-01    2.4531e+01             nan
           20    1.2600e-02    3.0664e+00          8.0000
           40    1.5750e-03    3.8330e-01          8.0000
           80    1.9687e-04    4.7912e-02          8.0000
          160    2.4609e-05    5.9890e-03          8.0000
-   -> doubling r divides B_dip by 8.0000 exactly: a POWER LAW, exponent -3, INDUCED
+   -> doubling r divides B_dip by 8.0000 exactly: consistency of the QUOTED law (INSERTED here)
 
 ====================================================================================================
-  READ — from the numbers above
+  READ -- rescoped per the solidity review, generated from the tables above
 ====================================================================================================
-  ALL FIVE SOURCE STANDARDS ARE MET BY THE CONFIGURATION ENERGY OF A WRITTEN MAGNETIC MEDIUM,
-  on an object that satisfies this program's record definition (C-69).
+  FIELD-FREE, the written medium's accumulated quantity is the REMANENT MOMENT M_r = M_s V sum s_i:
+  extensive (ratios exactly 10 per decade), additive by superposition (trivially, stated) with the
+  ENERGY cross-term now COMPUTED (holds at >= ~60 nm track separation, fails at grain spacing),
+  not a count (moves at fixed N), and ONE-SIGNED UNDER DC-SATURATED WRITING ONLY -- random data
+  and DC-free codes screen, as the review measured. The Zeeman configuration energy exists only
+  in an applied evaluation field and is labeled medium-plus-inserted-field. The r^-3 falloff here
+  is QUOTED magnetostatics (inserted); the induced demonstration is LANE_T34_NAND's.
 
-   (a) EXTENSIVE       ratios exactly 10.0000 per decade, N = 10 to 1e5
-   (b) ADDITIVE        defect exactly 0 over disjoint tracks
-   (c) NOT A COUNT     moves 2.40x at FIXED N as M_s, B and V vary
-   (d) SIGN-DEFINITE   |sum|/sum|.| = 1.000000 at every N in WRITTEN media;
-                       the DEMAGNETISED control screens, falling toward zero as 1/sqrt(N)
-   (e) POWER LAW       dipole falloff, ratio exactly 8.0000 per doubling of r: exponent -3,
-                       INDUCED by magnetostatics, not inserted
-
-  THIS IS THE FIRST QUANTITY IN THE PROGRAM TO MEET ALL FIVE, ON A REAL RECORD. The toy chain of
-  O-48 failed (d) by exactly the mechanism the DEMAGNETISED control shows here: two-signed terms
-  screening as 1/sqrt(N). WHAT MAKES THE DIFFERENCE IS THAT THE MEDIUM WAS WRITTEN -- the write
-  head aligns every grain, so the terms add instead of cancelling. Ordering is imposed by the
-  WRITING PROCESS, which is what this program set out to find.
-
-  WHAT THIS IS NOT, AND THE LIMIT IS SHARP. This is magnetostatics -- standard physics, none of
-  it new. The exponent is -3, NOT gravity's -2, and a dipole interaction is not gravitation. What
-  is established is narrower and still worth having: an object meeting the record definition
-  carries a quantity with a SOURCE's form in all five respects, and the sign-definiteness that
-  every toy candidate failed comes from the ACT OF WRITING.
+  THE CROSS-MECHANISM KERNEL (with T-34): formation creates a nonzero accumulated quantity the
+  unwritten surface lacks, and the WRITE MECHANISM fixes its sign -- field direction here,
+  electron injection there. Occupancy-encoded surfaces accumulate for EVERY data pattern;
+  orientation-encoded surfaces accumulate only when written all-one-way. Standard physics
+  (saturation remanence), honestly owned; what is ours is the encoding-level statement.

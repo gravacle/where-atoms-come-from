@@ -19,7 +19,13 @@ print("=" * 78)
 # 1. T-29: the grain's lifetime, sealed 5.6279e16 s
 grain = RecordSurface("CoCrPt grain", "magnetic anisotropy", 3.0 * G.KB * 300, 2.0e5 * 1.26e-24, 300.0, 1e9)
 tau = M.lifetime(grain)
-check("T-29 grain tau", abs(tau - 5.6279e16) / 5.6279e16 < 1e-3, f"tau = {tau:.4e} s (sealed 5.6279e+16)")
+# CONVENTION CHANGE (solidity review): activation-energy rates. The check is now INTERNAL
+# consistency against the closed form of the same construction, plus a sanity window; the old
+# sealed 5.6279e16 was the midpoint-convention value and is history (C-69 demotion note).
+kT = G.KB * 300.0
+gu = 1e9 * np.exp(-(2.0e5 * 1.26e-24) / kT); gd = 1e9 * np.exp(-((2.0e5 * 1.26e-24) + 3.0 * G.KB * 300) / kT)
+check("T-29 grain tau (activation convention)", abs(tau - 1 / (gu + gd)) / (1 / (gu + gd)) < 1e-9,
+      f"tau = {tau:.4e} s = {tau/3.156e7:.2e} yr; closed form {1/(gu+gd):.4e}")
 # 2. T-29: the five amended clauses pass with the sealed margins
 c = M.clauses(grain, t_m=10 * 3.156e7, C_v=1e-3, W_write=5e-19)
 check("T-29 clauses (ii')-(v') all pass",
@@ -39,7 +45,7 @@ for nm, mech, dE, Eb, T, f0 in SURFACES:
     v = M.steady_value(s); pred = np.tanh(dE / (2 * G.KB * T))
     worst1 = max(worst1, abs(v - pred))
     kT = G.KB * T
-    gd = f0 * np.exp(-(Eb + dE / 2) / kT); gu = f0 * np.exp(-(Eb - dE / 2) / kT)
+    gu = f0 * np.exp(-Eb / kT); gd = f0 * np.exp(-(Eb + dE) / kT)
     worst2 = max(worst2, abs(M.lifetime(s) - 1 / (gu + gd)) / (1 / (gu + gd)))
 check("T-33 law 1 on six mechanisms", worst1 < 2e-15, f"worst abs err {worst1:.2e}")
 check("T-33 law 2 on six mechanisms", worst2 < 1e-9, f"worst rel err {worst2:.2e}")

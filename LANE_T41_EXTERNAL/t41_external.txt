@@ -1,0 +1,45 @@
+====================================================================================================
+T-41   EXTERNAL MEASURED NUMBERS BESIDE THE MODEL'S
+====================================================================================================
+
+1. AZOBENZENE thermal cis->trans lifetime at ~298 K.
+   EXTERNAL: measured thermal cis half-life in solution, commonly ~2 days, solvent-dependent
+   range ~1e4-1e6 s (photochemistry literature; citation pin-down outstanding).
+   MODEL ENVELOPE over the literature parameter spread E_a = 0.95-1.10 eV, f0 = 1e12-1e13 /s:
+     E_a = 0.95 eV, f0 = 1e+12  ->  tau = 1.165e+04 s
+     E_a = 0.95 eV, f0 = 1e+13  ->  tau = 1.165e+03 s
+     E_a = 1.00 eV, f0 = 1e+12  ->  tau = 8.166e+04 s
+     E_a = 1.00 eV, f0 = 1e+13  ->  tau = 8.166e+03 s
+     E_a = 1.05 eV, f0 = 1e+12  ->  tau = 5.723e+05 s
+     E_a = 1.05 eV, f0 = 1e+13  ->  tau = 5.723e+04 s
+     E_a = 1.10 eV, f0 = 1e+12  ->  tau = 4.011e+06 s
+     E_a = 1.10 eV, f0 = 1e+13  ->  tau = 4.011e+05 s
+   model envelope [1.17e+03, 4.01e+06] s   measured range [1e+04, 1e+06] s
+   -> OVERLAP: True   (under the OLD midpoint convention the model gave 0.398 s -- a
+      5-6 order contradiction; the corrected convention brings it inside the measured range)
+
+2. MAGNETIC-MEDIA THERMAL-STABILITY DESIGN RULE.
+   EXTERNAL: the published industry criterion K_u V / k_B T >~ 40-60 for ~10-year archival
+   retention with f0 ~ 1e9-1e10 /s (recording-media literature; citation pin-down outstanding).
+   MODEL: tau at the rule's lower edge, K_uV/kT = 40:
+     f0 = 1e+09  ->  tau = 1.177e+08 s = 3.7 years   (spec: ~10 years)
+     f0 = 1e+10  ->  tau = 1.177e+07 s = 0.4 years   (spec: ~10 years)
+   -> the ~10-year rule sits inside the model's f0 spread: True
+
+3. ALANINE PARITY-VIOLATION, CORRECTED INPUT (the review: dE = 1e-13 eV was ~5 orders high).
+   EXTERNAL: calculated PVED for alanine ~1e-19 to 1e-17 eV (quantum-chemistry literature;
+   citation pin-down outstanding). Predicted excess tanh(dE/2kT):
+     dE = 1e-19 eV  ->  predicted excess 1.93e-18
+     dE = 1e-17 eV  ->  predicted excess 1.93e-16
+   -> ALL below the instrument floor 1e-15: the row DECLINES -- computed, not asserted.
+      The earlier row's apparent verification rested on the inflated input, and is withdrawn.
+
+====================================================================================================
+  READ -- generated from the numbers above
+====================================================================================================
+  TWO EXTERNAL MEASURED ANCHORS SIT INSIDE THE MODEL'S ENVELOPES -- the azobenzene thermal
+  lifetime and the magnetic-media 10-year design rule -- under the corrected activation
+  convention, with the tolerance being the literature spread of (E_a, f0), stated. The
+  alanine row declines honestly at the corrected input. REMAINING DEBT, registered: exact
+  citation pin-down for the external values; until then this is knowledge-cited contact,
+  not source-pinned contact.

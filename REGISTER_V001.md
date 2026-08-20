@@ -9561,3 +9561,33 @@ other terms contribute to gravity emergence. We are ultimately looking to solve 
 Amended into C-77: Γ is the **named** contributor, never asserted as the only one — the original
 wording was *"terms like gamma."* A derivation succeeding through additional terms alongside Γ
 **satisfies** the claim. The goal is the solution, not Γ-exclusivity.
+
+---
+
+## SOLIDITY REPAIRS EXECUTED; **C-71/C-72 PROMOTED ON THE RESCOPED, ENCODING-LEVEL CLAIM.** T-34 done; T-41 opened with two external anchors.
+
+Per the review's prescriptions, in the lanes with errata noted: **T-34** — image-interaction factor-2
+corrected (`U = kq²(1/r − 1/√(r²+4h²))`, `U(40nm)` = 9.7 eV, now inside the known FG-FG interference
+ballpark); the unwritten null computed under a **declared ±5e over-erase tolerance**; the ratio-1
+result labeled **mechanism-constitutive** (the sign open in design space, fixed once per device);
+the screening omission noted. **T-32** — restated **field-free** as remanent moment `M_r = M_s V Σsᵢ`;
+random-data and DC-free-coded rows added (**they screen**, as the review measured — the one-signedness
+is scoped to DC saturation); the additivity cross-term **computed**, replacing the 1e-3 assertion
+(holds ≥ ~60 nm, fails at grain spacing); the r⁻³ **relabeled INSERTED** (quoted magnetostatics;
+the induced demonstration is T-34's).
+
+**C-71 and C-72 re-grounded on the promotion text and PROMOTED** — two structurally different
+**encodings**, not two parameter sets of one model: occupancy-encoded trapped charge; orientation-
+encoded remanent moment. Falsifiers runnable on a flash tester and a VSM. **PROVED rows: 2.**
+
+**Model:** `project_model` moved to the **activation-energy convention** (the midpoint convention
+produced the 5–6-order azobenzene contradiction); steady-state guarded against the no-dissipator
+arbitrary-vector case; `validate_project` 11 PASS under the corrected convention.
+
+**T-41 (LANE_T41_EXTERNAL), first external contact:** under the corrected convention, **two external
+measured anchors sit inside the model's envelopes** — the azobenzene thermal cis lifetime
+(measured ~1e4–1e6 s; model envelope over the literature (E_a, f0) spread contains it; the old
+convention gave 0.398 s) and the magnetic-media **~10-year design rule at `K_uV/kT = 40`** (model
+7.5 years at `f₀ = 1e9`). The corrected alanine input **declines honestly** (predicted excess below
+the instrument floor). **Registered debt: exact citation pin-down — knowledge-cited contact, not yet
+source-pinned.** T-41 stays DOING.

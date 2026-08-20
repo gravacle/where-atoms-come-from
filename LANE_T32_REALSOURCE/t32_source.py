@@ -31,28 +31,49 @@ say(f"  E_b = {K_u*V/(G.KB*T):.1f} kT     T = {T:.0f} K")
 say("")
 
 # ------------------------------------------------------------------ (a) (b) (c) (d) on real media
-say("1. THE CONFIGURATION ENERGY OF N GRAINS IN AN APPLIED FIELD B")
-say("   dE_i = 2 m B s_i   with s_i = +-1 the record. In WRITTEN media every s_i is set by the")
-say("   write head; in a demagnetised medium they are random. Both are run.")
+say("1. RESCOPED (solidity review). THE FIELD-FREE QUANTITY IS THE REMANENT MOMENT")
+say("   M_r = M_s V sum(s_i)  [A m^2] -- what the written medium carries with NO applied field.")
+say("   The Zeeman energy 2 m B s_i EXISTS ONLY IN AN APPLIED EVALUATION FIELD B (inserted) and is")
+say("   kept below as medium-plus-field, labeled. SCOPE: one-signedness belongs to DC-SATURATED")
+say("   writing; real data tracks use DC-free codes and SCREEN -- shown in the same table.")
 say(f"   {'N':>10}{'B (T)':>9}{'written: sum dE (J)':>22}{'sum|dE| (J)':>15}{'|sum|/sum|.|':>14}{'demag: |sum|/sum|.|':>21}")
 rng=np.random.default_rng(7); rows=[]
+say(f"   {'pattern':<22}{'N':>9}{'M_r (A m^2)':>15}{'sum|m| (A m^2)':>16}{'|sum|/sum|.|':>14}")
 for N in (10, 100, 1000, 10000, 100000):
-    B=0.5
-    dE = 2*m_grain*B
-    written = np.ones(N)                      # a written track: every grain aligned by the head
-    demag   = rng.integers(0,2,N)*2-1         # a demagnetised medium: random
-    sw, aw = dE*written.sum(), dE*np.abs(written).sum()
-    sd, ad = dE*demag.sum(),   dE*np.abs(demag).sum()
-    rows.append((N, sw, aw))
-    say(f"   {N:>10}{B:>9.2f}{sw:>22.4e}{aw:>15.4e}{abs(sw)/aw:>14.6f}{abs(sd)/ad:>21.6f}")
+    dcsat  = np.ones(N)                        # DC-saturated: every grain one way
+    randat = rng.integers(0,2,N)*2-1           # real random data
+    coded  = np.tile([1,-1], N//2 + 1)[:N]     # a DC-free coded pattern (alternating)
+    demag  = rng.integers(0,2,N)*2-1           # AC-erased control
+    for nm, pat in (("DC-SATURATED", dcsat), ("random data", randat), ("DC-free coded", coded), ("AC-erased ctrl", demag)):
+        Mr, Ma = m_grain*pat.sum(), m_grain*np.abs(pat).sum()
+        if nm == "DC-SATURATED": rows.append((N, Mr, Ma))
+        if N in (10, 100000) or nm == "DC-SATURATED":
+            say(f"   {nm:<22}{N:>9}{Mr:>15.4e}{Ma:>16.4e}{abs(Mr)/Ma:>14.6f}")
+say("   -> ONE-SIGNED ONLY under DC saturation; random data and DC-free codes SCREEN, as the review")
+say("      measured (0.00096 at N=1e5). The falsifier is scoped to DC-saturated writing.")
 say("")
 r2=[r for r in rows]
-say(f"   (a) EXTENSIVE:  sum dE at N and 10N: ratios "
+say(f"   (a) EXTENSIVE (M_r, DC-saturated):  ratios "
     f"{', '.join('%.4f'%(r2[i+1][1]/r2[i][1]) for i in range(len(r2)-1))}   (linear gives 10.0000)")
-say(f"   (d) SIGN-DEFINITE: written medium |sum|/sum|.| = 1.000000 at every N;")
-say(f"       demagnetised control falls as 1/sqrt(N) — the screening the toy chain showed")
+say(f"   (d) SIGN-DEFINITE under DC-saturation scope only; other patterns screen toward zero")
+say(f"       (non-monotone at finite N -- single random draws, not an ensemble)")
 say("")
 # (c) not a count
+say("1b. (b) ADDITIVITY WITH THE CROSS-TERM COMPUTED (replaces the earlier 1e-3 assertion).")
+say("    Two tracks of N/2 grains at separation r_track; dipole cross-energy per boundary pair")
+say("    U_dd = mu0 m^2/(2 pi r^3), summed over the facing rows; compared with per-grain E_b.")
+mu0=4*np.pi*1e-7
+say(f"    {'r_track (nm)':>13}{'U_dd/pair (J)':>16}{'U_dd/E_b':>12}{'additivity verdict':>22}")
+Eb = 2.0e5*V
+for rnm in (10, 20, 40, 60, 100):
+    r=rnm*1e-9
+    udd = mu0*m_grain**2/(2*np.pi*r**3)
+    ok = udd/Eb <= 1e-3
+    say(f"    {rnm:>13}{udd:>16.4e}{udd/Eb:>12.4e}{('holds (<=1e-3 of E_b)' if ok else 'FAILS at this spacing'):>22}")
+say("    -> additivity of M_r is exact by superposition of moments (trivially, stated); additivity")
+say("       of the ENERGY holds at track separations where U_dd/E_b <= 1e-3 -- computed above, NOT")
+say("       asserted: it fails at grain spacing (10-20 nm) and holds from ~60 nm.")
+say("")
 say("2. (c) IS IT A COUNT? Vary the medium at FIXED N = 1000.")
 say(f"   {'M_s (A/m)':>12}{'B (T)':>9}{'V (m^3)':>12}{'sum dE (J)':>16}")
 vals_c=[]
@@ -72,9 +93,10 @@ say("    CONTROL: two tracks close enough to couple by dipole would show a non-z
 say("    at track separations >> grain size the dipole term is 1e-3 of the field term.")
 say("")
 # (e) separation
-say("3. (e) SEPARATION DEPENDENCE — the dipole field of one grain at another")
-say("   B_dip(r) = mu0 m / (2 pi r^3). This is the interaction that carries the configuration")
-say("   energy between two real records, and its falloff is INDUCED by magnetostatics, not inserted.")
+say("3. (e) SEPARATION DEPENDENCE — RELABELED (solidity review): the r^-3 here is INSERTED, not")
+say("   induced -- B_dip(r) = mu0 m/(2 pi r^3) is quoted magnetostatics and the 8.0000-per-doubling")
+say("   check measures the quoted formula. The INDUCED demonstration lives in LANE_T34_NAND, where")
+say("   the exponent emerges from monopoles + a real ground plane against an r^-1 no-plane control.")
 say(f"   {'r (nm)':>9}{'B_dip (T)':>14}{'E_int/kT':>14}{'ratio to r^-3':>16}")
 prev=None
 for rnm in (10,20,40,80,160):
@@ -84,28 +106,19 @@ for rnm in (10,20,40,80,160):
     pred = None if prev is None else (prev[1]/Bd)
     say(f"   {rnm:>9}{Bd:>14.4e}{E/(G.KB*T):>14.4e}{(pred if pred else float('nan')):>16.4f}")
     prev=(rnm,Bd)
-say("   -> doubling r divides B_dip by 8.0000 exactly: a POWER LAW, exponent -3, INDUCED")
+say("   -> doubling r divides B_dip by 8.0000 exactly: consistency of the QUOTED law (INSERTED here)")
 say("")
-say("="*100); say("  READ — from the numbers above"); say("="*100)
-say("  ALL FIVE SOURCE STANDARDS ARE MET BY THE CONFIGURATION ENERGY OF A WRITTEN MAGNETIC MEDIUM,")
-say("  on an object that satisfies this program's record definition (C-69).")
+say("="*100); say("  READ -- rescoped per the solidity review, generated from the tables above"); say("="*100)
+say("  FIELD-FREE, the written medium's accumulated quantity is the REMANENT MOMENT M_r = M_s V sum s_i:")
+say("  extensive (ratios exactly 10 per decade), additive by superposition (trivially, stated) with the")
+say("  ENERGY cross-term now COMPUTED (holds at >= ~60 nm track separation, fails at grain spacing),")
+say("  not a count (moves at fixed N), and ONE-SIGNED UNDER DC-SATURATED WRITING ONLY -- random data")
+say("  and DC-free codes screen, as the review measured. The Zeeman configuration energy exists only")
+say("  in an applied evaluation field and is labeled medium-plus-inserted-field. The r^-3 falloff here")
+say("  is QUOTED magnetostatics (inserted); the induced demonstration is LANE_T34_NAND's.")
 say("")
-say(f"   (a) EXTENSIVE       ratios exactly 10.0000 per decade, N = 10 to 1e5")
-say(f"   (b) ADDITIVE        defect exactly 0 over disjoint tracks")
-say(f"   (c) NOT A COUNT     moves {spread_c:.2f}x at FIXED N as M_s, B and V vary")
-say(f"   (d) SIGN-DEFINITE   |sum|/sum|.| = 1.000000 at every N in WRITTEN media;")
-say(f"                       the DEMAGNETISED control screens, falling toward zero as 1/sqrt(N)")
-say(f"   (e) POWER LAW       dipole falloff, ratio exactly 8.0000 per doubling of r: exponent -3,")
-say(f"                       INDUCED by magnetostatics, not inserted")
-say("")
-say("  THIS IS THE FIRST QUANTITY IN THE PROGRAM TO MEET ALL FIVE, ON A REAL RECORD. The toy chain of")
-say("  O-48 failed (d) by exactly the mechanism the DEMAGNETISED control shows here: two-signed terms")
-say("  screening as 1/sqrt(N). WHAT MAKES THE DIFFERENCE IS THAT THE MEDIUM WAS WRITTEN -- the write")
-say("  head aligns every grain, so the terms add instead of cancelling. Ordering is imposed by the")
-say("  WRITING PROCESS, which is what this program set out to find.")
-say("")
-say("  WHAT THIS IS NOT, AND THE LIMIT IS SHARP. This is magnetostatics -- standard physics, none of")
-say("  it new. The exponent is -3, NOT gravity's -2, and a dipole interaction is not gravitation. What")
-say("  is established is narrower and still worth having: an object meeting the record definition")
-say("  carries a quantity with a SOURCE's form in all five respects, and the sign-definiteness that")
-say("  every toy candidate failed comes from the ACT OF WRITING.")
+say("  THE CROSS-MECHANISM KERNEL (with T-34): formation creates a nonzero accumulated quantity the")
+say("  unwritten surface lacks, and the WRITE MECHANISM fixes its sign -- field direction here,")
+say("  electron injection there. Occupancy-encoded surfaces accumulate for EVERY data pattern;")
+say("  orientation-encoded surfaces accumulate only when written all-one-way. Standard physics")
+say("  (saturation remanence), honestly owned; what is ours is the encoding-level statement.")
