@@ -9555,3 +9555,9 @@ A-GR4 (boundary-shaping mechanism), D-24 (earned concepts), and the principal's 
 record-level measures may behave unlike their analogues elsewhere. **T-42** carries the derivation
 increment, with the first concept to be earned named: **distance** — nothing at the record level has
 yet earned a notion of how far apart two records are except boundary-crossing structure.
+
+**C-77 OPENNESS CLAUSE (the principal, same day):** *"we don't want to rule out the possibility that
+other terms contribute to gravity emergence. We are ultimately looking to solve gravity emergence."*
+Amended into C-77: Γ is the **named** contributor, never asserted as the only one — the original
+wording was *"terms like gamma."* A derivation succeeding through additional terms alongside Γ
+**satisfies** the claim. The goal is the solution, not Γ-exclusivity.
