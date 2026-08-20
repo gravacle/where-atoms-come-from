@@ -8956,3 +8956,32 @@ follow, and both are now binding:**
    non-contractible, both distances scaling with `L`, no semantic caveat required. **Any result whose
    truth depends on the 1D convention is scoped to the proxy and must say so; results on the torus are
    not.**
+
+---
+
+## O-38 — **THE COUPLING OPERATOR WAS THE ERROR; THE INSTRUMENT WAS TOO SMALL TO SETTLE IT. LANE B SETTLED IT.**
+
+`LANE_O38_GAPLESS`. The first run coupled each record to `Z`, which in `H_B = Σe·Z + g·ΣXX` is the
+**transverse-field direction — the energy operator**, scaling dimension 1, correlations `~r⁻²`. The
+**order parameter is `X`**, dimension `1/8`, correlations `~r^(−1/4)`. **The record was coupled to the
+short-ranged operator and the falloff was then reported as short-ranged.**
+
+Rerun on `X`, 12 sites:
+
+| | `ξ` with `Z` coupling | **`ξ` with `X` coupling** | power-law exponent |
+|---|---|---|---|
+| gapped `e=1.0 g=0.1` | 0.1743 | **0.4279** | −9.18 |
+| **critical `e=1.0 g=1.0`** | 0.6503 | **5.7063** | **−0.6894** |
+| ordered `e=0.1 g=1.0` | 0.1804 | **35.1130** | −0.1116 |
+
+**The range grows 13× and then 80×.** But **`ξ = 5.7` and `ξ = 35` on a 12-site chain exceed or match
+the system**, so the fit never observes a decay and **cannot distinguish exponential from power law**
+(D-20). **No verdict is drawn from this lane.**
+
+**O-48's Lane B settled the question on a proper instrument** — an induced `J_eff(r) → (−1)^(r+1)/(πr)`,
+amplitude `1/π = 0.318310` exactly, `t=0` control exactly zero at every `r`, three independent
+instruments agreeing (**C-63**).
+
+**Second erratum:** the "dead-configuration control" returned `0.0087, 0.0017, 0.0004, 0.0001` where
+its own description said it must vanish. **The cross term does not require crowding** — the control
+behaved correctly and the prediction about it was wrong.
