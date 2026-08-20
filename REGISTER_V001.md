@@ -8325,3 +8325,52 @@ on it at all.**
 Run on `S₃` alone, this lane would have registered *"non-abelian carriers cannot have records"* —
 **which the `D₄` column shows is false.** That is D-15 doing exactly what it was written for, one
 lane after it was written.
+
+---
+
+## O-34 — **TRANSPORT MOVES RECORDS ON A NON-ABELIAN CARRIER. THE FIRST TIME A GENUINE RECORD AND NON-TRIVIAL TRANSPORT HAVE MET ON THE SAME OBJECT.**
+
+`LANE_O34_NONABELIAN_JOIN`. O-35 supplied the carrier `D₄` — **non-abelian** (24 of 64 pairs do not
+commute) **and** with all eigenspace multiplicities even, so clause (iv) is satisfiable. **`D(S₃)`
+had the first property and not the second; every `Z₂` carrier had the second and not the first.**
+
+`model.records()` cannot enumerate at 64 minimal projections (O-28), so records are **constructed on
+the eigenspaces and every clause checked**, never assumed.
+
+### THE MEASUREMENT
+
+| carrier | dim | non-commuting pairs | multiplicities | records verified against (i)–(iv) | **moved by transport** | largest `‖[A_h,R]‖` |
+|---|---|---|---|---|---|---|
+| `D(Z₂)` *(control)* | 4 | **0 / 4** | [4] | **40 of 40** | **0** | **0.000e+00** |
+| **`D(D₄)`** | 64 | **24 / 64** | [22,24,18] | **40 of 40** | **40** | **9.423** |
+
+> ### **EVERY RECORD CONSTRUCTED ON THE NON-ABELIAN CARRIER IS MOVED BY SOME GROUP ELEMENT'S
+> ### TRANSPORT. ON THE ABELIAN CONTROL, NONE IS — AND THE COMMUTATOR IS EXACTLY ZERO, BECAUSE
+> ### CONJUGATION IN AN ABELIAN GROUP IS THE IDENTITY MAP.**
+
+### A SECOND FINDING ALONG THE WAY
+
+The natural Wilson-loop record `R|g₁,g₂⟩ = χ(g₁)|g₁,g₂⟩` for a linear character **is a record on
+`D(Z₂)`** — all four clauses check — and on `D(D₄)` gives `Tr(P_E R) = [6, 0, −6]`, so **it is not a
+record there.** **Even multiplicities make clause (iv) possible, not automatic.**
+
+### WHAT IS **NOT** DECIDED, AND WHY IT IS SAID PLAINLY
+
+A random eigenspace splitting commutes with little, so *"40 of 40 moved"* could be sampling rather
+than structure. **The decisive question — does a transport-FIXED record exist on `D(D₄)`? — is
+OPEN.** `o34b_exists.py` attacks it exactly, through the block structure `(d_i, m_i)` of the gauge
+commutant, and **fails its own consistency check** on `D(D₄)`: `Σ d_i·m_i = 20` against a
+**18**-dimensional eigenspace, and `26` against a **22**-dimensional one. `commutant()` is
+sampling-based and an incomplete basis inflates multiplicities exactly this way.
+
+**On the control the same method is consistent and says a transport-fixed record exists — which
+agrees with the direct measurement's `0 of 40` and exact zero. That agreement is what makes it
+trustworthy where it is consistent, and its failure elsewhere is why no verdict is read from it.**
+
+### ERRATUM, LOGGED
+
+A first attempt decomposed each eigenspace by the eigenvalues of `Σ_h (A_h + A_hᵀ)` and did a
+subset-sum on those dimensions. **It reported NO transport-fixed record on `D(Z₂)` — contradicting
+the direct measurement four lines above it.** For an abelian group `A_h` **is** the identity, so the
+commutant is everything, but a symmetrised sum of identities has one eigenvalue and the method
+returned a single coarse block. **The control caught a method that would have inverted the answer.**

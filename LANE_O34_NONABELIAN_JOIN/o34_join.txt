@@ -1,0 +1,82 @@
+========================================================================================================
+O-34   THE NON-ABELIAN JOIN, ON A CARRIER WITH RECORDS
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+  D(Z_2)  abelian  (control)   |G|=2  dim 4  non-commuting pairs 0/4  multiplicities [4]
+--------------------------------------------------------------------------------------------------------
+  linear characters: 2 total, 1 non-trivial
+  CLAUSES, checked on R|g1,g2> = chi(g1)|g1,g2>:
+    (i)   R=R^dag, R^2=I         ||R-R^T||=0.00e+00  ||R^2-I||=0.00e+00
+    (ii)  [H,R]=0                ||[H,R]|| = 0.00e+00
+    (iii) non-constant on an eigenspace: True
+    (iv)  Tr(P_E R) per eigenspace: [0.0]   all zero: True
+    -> THIS IS A RECORD by clauses (i)-(iv)
+
+  DOES TRANSPORT MOVE IT?  gauge transport is conjugation by h; the record moves iff [A_h,R] != 0
+    group elements whose transport MOVES the record: 0 of 2
+    largest ||[A_h, R]|| over the whole group: 0.000e+00
+    -> TRANSPORT LEAVES THE RECORD FIXED, for every element of the group
+
+--------------------------------------------------------------------------------------------------------
+  D(D_4)  NON-ABELIAN   |G|=8  dim 64  non-commuting pairs 24/64  multiplicities [22, 24, 18]
+--------------------------------------------------------------------------------------------------------
+  linear characters: 4 total, 3 non-trivial
+  CLAUSES, checked on R|g1,g2> = chi(g1)|g1,g2>:
+    (i)   R=R^dag, R^2=I         ||R-R^T||=0.00e+00  ||R^2-I||=0.00e+00
+    (ii)  [H,R]=0                ||[H,R]|| = 0.00e+00
+    (iii) non-constant on an eigenspace: True
+    (iv)  Tr(P_E R) per eigenspace: [6.0, -0.0, -6.0]   all zero: False
+    -> NOT a record on this carrier
+
+========================================================================================================
+  THE WILSON-LOOP CHARACTER RECORD WORKS ON Z_2 AND FAILS ON D_4. Even multiplicities make
+  clause (iv) POSSIBLE, not automatic. So construct records DIRECTLY on the eigenspaces, where
+  (ii), (iii) and (iv) hold by construction, and ask the real question of THEM.
+========================================================================================================
+
+  D(Z_2)  abelian  (control)   dim 4   multiplicities [4]
+    eigenspaces from H: [(-2.0, 4)]
+    records constructed and verified against (i)-(iv): 40 of 40
+    of those, records that SOME group element's transport MOVES: 0
+    largest ||[A_h, R]|| seen: 0.000e+00
+    -> TRANSPORT LEAVES EVERY RECORD FIXED
+
+  D(D_4)  NON-ABELIAN   dim 64   multiplicities [22, 24, 18]
+    eigenspaces from H: [(-2.0, 22), (-1.0, 24), (-0.0, 18)]
+    records constructed and verified against (i)-(iv): 40 of 40
+    of those, records that SOME group element's transport MOVES: 40
+    largest ||[A_h, R]|| seen: 9.423e+00
+    -> TRANSPORT MOVES RECORDS ON THIS CARRIER
+
+========================================================================================================
+  IS '40 OF 40 MOVED' STRUCTURE, OR JUST THAT RANDOM OPERATORS COMMUTE WITH NOTHING?
+  The decisive question is whether a transport-FIXED record EXISTS AT ALL.
+
+  ERRATUM: a first attempt decomposed each eigenspace by the eigenvalues of sum_h (A_h + A_h^t)
+  and did a subset-sum on those block dimensions. It reported NO transport-fixed record on
+  D(Z_2) -- CONTRADICTING the direct measurement four lines above it, which found 0 of 40 moved
+  with ||[A_h,R]|| = 0.000e+00 exactly. The bug: for an abelian group A_h IS the identity, so
+  the commutant is EVERYTHING, but a symmetrised sum of identities has one eigenvalue and the
+  method reported a single coarse block. Replaced with the model's own commutant.
+
+  A record fixed by transport is exactly a record of the model built with the A_h as the
+  theory's operators: clause (ii) then demands [A_h,R] = 0 as well as [H,R] = 0.
+========================================================================================================
+
+  D(Z_2)  abelian  (control)   dim 4
+    minimal projections, records only durable against H      : 4
+    minimal projections, ALSO durable against every A_h      : 4
+    records satisfying (i)-(iv) against H alone              : 3
+    records ALSO commuting with every A_h -- TRANSPORT-FIXED : 3
+    -> TRANSPORT-FIXED RECORDS EXIST: transport does not have to move a record
+
+  D(D_4)  NON-ABELIAN   dim 64
+    minimal projections, records only durable against H      : 64
+    minimal projections, ALSO durable against every A_h      : 64
+    records satisfying (i)-(iv) against H alone              : REFUSED (64 minimal projections: enumeration too large)
+    records ALSO commuting with every A_h -- TRANSPORT-FIXED : REFUSED (64 minimal projections: enumeration too large)
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================

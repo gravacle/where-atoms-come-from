@@ -1,0 +1,36 @@
+========================================================================================================
+O-34b   DOES A TRANSPORT-FIXED RECORD EXIST?  EXACT, NOT SAMPLED
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+  D(Z_2)  abelian  (control)   dim 4   non-commuting pairs 0/4
+--------------------------------------------------------------------------------------------------------
+    eigenvalue  -2.00  dim   4   blocks (d_i,m_i) = [(1, 4)]   sum d_i*m_i = 4   consistent   zero trace reachable? True
+    -> A TRANSPORT-FIXED RECORD EXISTS
+
+--------------------------------------------------------------------------------------------------------
+  D(D_4)  NON-ABELIAN   dim 64   non-commuting pairs 24/64
+--------------------------------------------------------------------------------------------------------
+    eigenvalue  -2.00  dim  22   blocks (d_i,m_i) = [(2, 13)]   sum d_i*m_i = 26   INCONSISTENT -- block data is wrong   zero trace reachable? n/a
+    eigenvalue  -1.00  dim  24   blocks (d_i,m_i) = [(2, 12)]   sum d_i*m_i = 24   consistent   zero trace reachable? True
+    eigenvalue  -0.00  dim  18   blocks (d_i,m_i) = [(2, 10)]   sum d_i*m_i = 20   INCONSISTENT -- block data is wrong   zero trace reachable? n/a
+    -> NOT DECIDED. The block decomposition failed its own consistency check, so no
+       feasibility verdict may be read from it. The direct measurement in o34_join
+       stands on its own; this existence question does not.
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================
+  THE CONTROL DECIDES AND THE NON-ABELIAN CASE DOES NOT.
+  On D(Z_2) the blocks are consistent and a transport-fixed record EXISTS -- which agrees with
+  the direct measurement in o34_join, where 0 of 40 records moved and ||[A_h,R]|| was 0.000e+00
+  exactly. That agreement is what makes the method trustworthy where it is consistent.
+
+  On D(D_4) the block data does NOT satisfy sum_i d_i*m_i = dim E, so it is wrong and NO
+  existence verdict follows from it. commutant() is sampling-based and an incomplete basis
+  inflates the multiplicities exactly this way.
+
+  WHAT STANDS: the DIRECT measurement. 40 of 40 records constructed and verified against
+  clauses (i)-(iv) on D(D_4) are moved by some group element's transport, with the largest
+  ||[A_h,R]|| reaching 9.423; on the abelian control 0 of 40 move and the norm is exactly zero.
+  WHAT DOES NOT: whether some SPECIAL record on D(D_4) escapes transport. That is open.
