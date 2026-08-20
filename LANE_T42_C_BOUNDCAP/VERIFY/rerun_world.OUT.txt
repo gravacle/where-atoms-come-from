@@ -1,0 +1,87 @@
+WORLD TIER -- block of barrier records, exact counts, n = 2..12
+  n  CAP_total   IFACE  CAP_d1  CAP_prot  DEPTH_SUM  rank_infl
+  2          8      24       8         0          8          8
+  3         27      54      26         1         28         26
+  4         64      96      56         8         72         56
+  5        125     150      98        27        153         98
+  6        216     216     152        64        288        152
+  7        343     294     218       125        496        218
+  8        512     384     296       216        800        296
+  9        729     486     386       343       1225        386
+ 10       1000     600     488       512       1800        488
+ 11       1331     726     602       729       2556        602
+ 12       1728     864     728      1000       3528        728
+
+SCALING BY EXACT FINITE DIFFERENCES (order k means: k-th difference constant, i.e.
+the count is a degree-k polynomial in n over the computed range -- READ, not fitted):
+  [PASS] CAP_total is degree 3 (VOLUME) -- the census, replicated  order=3
+  [PASS] IFACE is degree 2 (BOUNDARY)  order=2
+  [PASS] CAP_depth(1) is degree 2 (BOUNDARY) -- capacity addressable without traversal  order=2
+  [PASS] influence rank == CAP_depth(1) exactly (channels collapse onto the first layer)
+  [PASS] CAP_prot is degree 3 (VOLUME) -- 'requires crossing the boundary' protects the BULK of the block, not a boundary's worth  order=3
+  [PASS] DEPTH_SUM is NOT any single polynomial over the range (no finite difference goes constant: parity of n matters -- the surface's own shape, reported as is)  order=None
+  [PASS] DEPTH_SUM exact recurrence, every n >= 4: DEPTH_SUM(n) == DEPTH_SUM(n-2) + n^3 (erasing a block = erasing its outer shell at full depth-weight n^3 worth, then the block two sizes down) -- super-volume growth, read exactly
+  [PASS] exact closed forms verified at every n: IFACE == 6n^2 and CAP_d1 == n^3 - (n-2)^3
+
+D-15 CONTROL -- SCATTERED grains (same count as the n=6 block, deterministic seed):
+    scattered 216 grains in a 24^3 volume: CAP_total=216 IFACE=1290 CAP_d1=216 CAP_prot=0
+  [PASS] scattered set: nearly every grain is first-layer (CAP_d1 == CAP_total would be full dispersal; block has CAP_d1 << CAP_total)  scatter 216/216, block 152/216
+  [PASS] scattered set: IFACE within a factor ~6 of its grain count (volume-like), block IFACE is 6n^2 (boundary)
+  [PASS] scattered set: protected capacity collapses toward zero  CAP_prot=0 of 216
+
+==================================================================================================
+SIDE BY SIDE -- what each tier's own counts exhibit (corner numbers from t42_corner)
+==================================================================================================
+
+                                  CORNER (toric, exact F_2)        WORLD (barrier block, exact)
+  stored / distinguishable        cap_pauli = 2AQ - r_in:          CAP_total = n^3: VOLUME
+  content of a region             BULK-dominant (2AV + PER/2 - 5   (the census, replicated)
+                                  on thick rectangles)
+  interface measure               cut-rank IR2: perimeter law      IFACE = 6n^2, CAP_depth(1)
+                                  2*PER - 10 on rectangles; the    = n^3 - (n-2)^3: BOUNDARY
+                                  exact general law is the         (degree 2, read by exact
+                                  Euler-count LAW-3                differences)
+  record (protected) content      cap_record: TOPOLOGICAL, 0 on    CAP_prot (needs traversal):
+                                  every contractible region, 1-2   VOLUME (degree 3)
+                                  per wrap class on bands
+  dispersed control (D-15)        scatter: IR2 -> ceiling 2AQ,     scatter: CAP_d1 -> CAP_total,
+                                  r_in -> small: all interface     CAP_prot -> 0: all interface
+
+  THE ANSWER TO THE LANE QUESTION (which aggregate of the world's records scales with
+  boundary rather than bulk): the aggregates that scale with the boundary are the INTERFACE
+  aggregates -- the independent access channels (IFACE) and the capacity addressable without
+  traversing the region's own records (CAP_depth(1) = influence rank).  The brief's candidate
+  'records whose erasure requires crossing the region's own boundary' does NOT scale with
+  boundary: it is the bulk minus a boundary's worth (n^3 - (n-2)^3 removed), degree 3.  In
+  BOTH tiers the boundary-scaling quantity is the interface rank, and in both tiers it is a
+  property a region only has when it HAS an interior: thin strips (corner) and scattered
+  grains (both tiers) are all interface, and their 'boundary' measure is their volume.
+
+==================================================================================================
+FINAL COMPARISON SECTION -- the only place the classical relation is named (D-1)
+==================================================================================================
+
+  RECOVERY TARGET (named here only): the known gravitational relation in which a region's
+  capacity scales with the AREA OF ITS BOUNDARY, not its volume (the Bekenstein-Hawking /
+  holographic bound).
+  WHAT THIS LANE'S SURFACE EXHIBITS, with no classical form used in any construction step:
+    * The record surface's own interface measure -- the stabiliser cut-rank -- obeys an
+      EXACT boundary law on the corner carrier (LAW-2 on rectangles; LAW-3, the Euler-count
+      law, everywhere).  It was not put in: the same instrument run on strips and scattered
+      sets returns their volume, and on rectangles of equal perimeter and different area it
+      returns the same number.
+    * The corresponding world aggregates -- access channels and traversal-free capacity --
+      are boundary-scaling by exact finite differences, while the stored capacity stays
+      volume (census).
+    * The STORED-CONTENT capacity is NOT boundary-law in either tier.  If C-77's increment
+      requires the region's full content to obey the boundary law (the strong holographic
+      reading), this surface does not deliver it and says so; what it delivers exactly is a
+      boundary law for the interface rank -- the number of independent constraints/channels
+      through which a region's records meet the rest of the world.
+  CAVEAT (the principal's, binding): the record-level measures here behave like their
+  familiar analogues only where the tables say so; the boundary law's constant (-10), its
+  breakdown on interiorless regions, and its Euler-count completion are the surface's own
+  shapes, not imported ones.  A classical-shaped match on the interface rank is NOT a
+  same-shape claim about record-level gravity (the two-way reading stands).
+
+ALL GATES PASS: True

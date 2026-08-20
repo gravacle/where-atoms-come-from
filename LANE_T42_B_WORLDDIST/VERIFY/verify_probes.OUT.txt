@@ -1,0 +1,51 @@
+PROBE B: coarse-table re-derivation (independent code):
+  p=0.1500 tv=0 dim@1%=57 neg=0.0000 l3/l1=0.2362
+  p=0.2000 tv=0 dim@1%=19 neg=0.0000 l3/l1=0.1673
+  p=0.2500 tv=0 dim@1%=12 neg=0.0000 l3/l1=0.1023
+  p=0.3000 tv=0 dim@1%=7 neg=0.0000 l3/l1=0.0402
+  p=0.3333 tv=0 dim@1%=2 neg=0.0000 l3/l1=0.0002
+  p=0.3500 tv=11984 dim@1%=2 neg=0.0194 l3/l1=0.0001
+  p=0.4000 tv=28352 dim@1%=2 neg=0.0767 l3/l1=0.0000
+  p=0.5000 tv=44192 dim@1%=2 neg=0.1849 l3/l1=-0.0000
+  p=1.0000 tv=71472 dim@1%=6 neg=0.6038 l3/l1=0.0352
+  -logU tv=15856 dim@1%=10
+  spectrum at 1/3 top6: [1.0, 1.0, 0.0002, 0.0002, 0.0002, 0.0002] min=+0.00000
+
+PROBE C: threshold-dependence of the DIMENSION pin (the imported 1% choice):
+  p_max (step 0.005) = 0.33
+  threshold 0.5%: dim_min=2 on p in [0.33, 0.33]  (count 1)
+  threshold 1.0%: dim_min=2 on p in [0.33, 0.33]  (count 1)
+  threshold 2.0%: dim_min=2 on p in [0.32, 0.33]  (count 3)
+  threshold 5.0%: dim_min=2 on p in [0.295, 0.33]  (count 8)
+
+PROBE C2: p_max at step 0.001 near 1/3 (near-field slack attack):
+  p=0.330 tv=0
+  p=0.331 tv=0
+  p=0.332 tv=0
+  p=0.333 tv=0
+  p=0.334 tv=0
+  p=0.335 tv=112
+  p=0.336 tv=1000
+  p=0.337 tv=1472
+  p=0.338 tv=3080
+  p=0.339 tv=3992
+  p=0.340 tv=4728
+  p=0.341 tv=5432
+  p=0.342 tv=6232
+  p=0.343 tv=7272
+  p=0.344 tv=7928
+  p=0.345 tv=8896
+
+PROBE D: does exactly p=1/3 earn, and nearby p? dim@1% just below/above:
+  p=0.3250 tv=0 dim@1%=3 l3/l1=0.01012
+  p=0.3300 tv=0 dim@1%=2 l3/l1=0.00417
+  p=0.3333 tv=0 dim@1%=2 l3/l1=0.00022
+  p=0.3340 tv=0 dim@1%=2 l3/l1=0.00017
+  p=0.3360 tv=1000 dim@1%=2 l3/l1=0.00016
+
+PROBE B2: controls, independent rerun:
+  shuffle: tv=25216 dim=35 neg=0.856
+  chain: tv=0 dim=1 l2/l1=0.00000
+  Procrustes rel RMS = 0.000014
+
+  U(2a)/U(4a) = 7.733

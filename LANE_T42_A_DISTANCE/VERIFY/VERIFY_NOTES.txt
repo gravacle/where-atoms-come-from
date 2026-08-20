@@ -1,0 +1,85 @@
+ADVERSARIAL VERIFICATION of LANE_T42_A_DISTANCE            2026-08-20
+Verifier default: refuted.  Outcome: NOT refuted; three corrections logged below.
+
+RERUNS (this dir; scripts copied with LANE redirected so lane outputs untouched):
+  t42_a_toric.py     rerun -> byte-identical modulo timestamps (rerun_a.log, t42_a_toric.OUT.txt)
+  t42_b_codes.py     rerun -> byte-identical modulo timestamps (43s)
+  t42_c_doubles.py   rerun -> byte-identical modulo timestamps
+  t42_d_records.py   rerun -> byte-identical modulo timestamps
+  All four end "ALL GATES: PASS" on rerun.
+
+INDEPENDENT CHECKS (fresh code, no lane solver / span machinery):
+  v1_toric_independent.py   toric L=2,3 class minima by DIRECT enumeration of all masks of
+                            weight <= 2L+1 filtered by plaquette parity + winding parity:
+                            {0,L,L,2L} confirmed.  PASS.
+  v2_records_independent.py toric L=2 record venue rebuilt by brute force (N(S) from all 2^16
+                            Paulis, S by closure, cosets without any logical basis):
+                            sp class-constant, J(a,a)=0, J symmetric, J mod 2 == sp,
+                            indiscernibles FAIL, triangle FAILS among nonzero classes
+                            (360 witnesses), channel graph connected, channel metric passes
+                            all axioms, spectrum {1,2}.  PASS.
+  v3_codes_independent.py   FIRST HALF WAS MY OWN ERROR (conflated record classes with config
+                            classes; the odd-weight spectrum {0,2,3,4} belongs to the 4^k
+                            RECORD venue, which the lane never claims).  Kept for the record.
+                            Its last check is valid: [[6,4,2]] ordered class pairs with sp=0
+                            and J>0 == 720, confirming the lane's count.  PASS.
+  v3b_codes_independent.py  corrected config venue (labels = pairings against Zlogs only,
+                            writers = brute-force N(S)): n=6 all 15 nonzero at 2; n=8
+                            spectrum {0:1, 2:28, 4:35}.  PASS.  Extra probe: swapping the
+                            Lagrangian (X-side labels instead of Z-side) leaves both
+                            multisets unchanged -- the lane's basis-dependence caveat holds
+                            at the table level, and the spectrum survived the one
+                            Lagrangian change I tried.
+  v4_odd_n_and_doubles.py   n=5: independent full exhaust, 260865 commuting pairs, every one
+                            has a weight-1 logical (0 exceptions) -- nonexistence confirmed.
+                            D(Z4) 2x2: independent brute force, 16 classes x 64, minima
+                            == L*|supp(t)| incl. d(2t)=d(t).  Toric 4-point |Aut|=8 by brute
+                            force over all 24 perms.  D(Z2xZ2) L=2 metric == product of two
+                            uniform 4-point factors (Hamming graph H(2,4)); Aut(H(2,4)) =
+                            S4 wr S2 = 1152, matching the lane's enumerated 1152.  PASS.
+
+ATTACK (1) unearned classical concepts in CONSTRUCTION: none found.  All construction steps
+  use F_2/Z_4 arithmetic, support counts, symplectic pairings, and cut-crossing parities.
+  No classical gravitational form appears anywhere (no final-comparison section exists and
+  none is smuggled in).  Distance/dimension/Hamming enter conclusions only where earned
+  (axioms verified; basis metric-selected; dimension = computed pair count).  The z=0
+  reduction is justified analytically (dropping z preserves admissibility and never raises
+  weight) AND verified exhaustively at toric L=2,3 and D(Z2xZ2) L=2.  The disjoint-loop
+  lower bound (odd crossing on each of L disjoint loops => >= L edges) is sound integer
+  arithmetic and was verified class-constant over entire cosets in the rerun.
+
+ATTACK (2) claims true as computed: yes -- every numeric claim in the finding JSON that I
+  checked matches the rerun and the independent recomputations (metric tables, spectra,
+  28/35 split, 720 pairs, Aut orders 8/1152/720, 260865 pairs, witnesses).
+
+ATTACK (3) ATTRIBUTION -- one real error:
+  E1  The "bonus theorem" ([[n,n-2,2]] exists iff n even) is a KNOWN result: Rains,
+      "Quantum codes of minimum distance two", quant-ph/9704043 (1997), whose bound
+      K <= 2^(n-2) (1 - 1/(n-1)) for odd-n distance-2 codes forbids [[n,n-2,2]] for ALL
+      codes (not just the two-generator stabilizer case the lane proves).  The finding
+      lists "the odd-n nonexistence theorem via symplectic parity" under OURS.  OURS is
+      correctly the symplectic-parity PROOF ROUTE and the exhaustive closures; the theorem
+      itself is Rains territory and must be marked BORROWED-known.  (Also unremarked but
+      harmless: channel-metric Aut 720 is Sp(4,2) ~ S_6; the cross-double "isometry finding"
+      is both metrics being the Hamming graph H(2,4) -- caveat 5 partly covers this.)
+
+ATTACK (4) discipline -- two lane-side defects, neither affects any computed result:
+  E2  t42_d_records.py lines 188-190: gate("... give %s metric" ...) passes literal True as
+      the gate boolean.  The SAME/DIFFERENT word is computed from `same` and `same=` is
+      printed, so the content is honest, but the PASS prefix is not gated by a computed
+      boolean -- exactly the banned literal-verdict class.  Should be gated on a real
+      condition (e.g. the J>0 metric's own axioms, which caveat 7 admits were never gated).
+  E3  D24_AUDIT_AND_CHOICE_LEDGER.txt line 73 says "[[8]] configs: ... translations+S_6
+      verified subgroup" -- CONTRADICTED by the lane's own run: t42_b_codes.OUT.txt line 47
+      reports "VERIFIED isometry subgroup order >= 64 (translations)" only; the code
+      computed perm_ok = False (coordinate swaps are NOT isometries there, consistent with
+      weight-1 labels at distances {2,4}).  The ledger line is false; the OUT file and the
+      finding JSON (caveat 3, "verified subgroups ... stated as bounds") are correct.
+
+ATTACK (5) D-24 audit honesty: otherwise complete and honest; imports are genuinely kept
+  out of conclusions; controls run and fire as claimed; caveats accurately scoped (genus 1
+  only, Pauli writers only, one D(Z4) size, F_2-level sp only).
+
+VERDICT: NOT REFUTED.  Survives with corrections E1 (attribution: mark the odd-n theorem
+  BORROWED -- Rains quant-ph/9704043; keep the proof route as OURS), E2 (regate or demote
+  the literal-True gate), E3 (fix the ledger's [[8]] subgroup line to translations-only).

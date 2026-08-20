@@ -1,0 +1,49 @@
+T42_B_WORLDDIST ADVERSARIAL VERIFY — 2026-08-20
+Verifier: independent rerun + independent re-implementations (this directory).
+
+RERUN: t42b_worlddist.py rerun byte-identical to shipped OUT (diff clean, exit 0).
+
+INDEPENDENT RE-IMPLEMENTATIONS (verify_parti.py, verify_probes.py):
+  Part (i): Floyd-Warshall pure-python ints (no Dijkstra, no numpy for D):
+    additive=True, nonneg=True, identity=True, symmetry=True, 0/262144 triangle viols.
+    Squared control: 72832 violations (matches). One-flip 500 vs 7800 (matches).
+  Part (ii): all coarse-table rows match (tv counts 11984/28352/44192/71472, dims 57/19/12/7/2,
+    -logU tv=15856 dim 10); spectrum at 1/3 = (1.0, 1.0, 0.0002...), min +0.00000;
+    shuffle control tv=25216 dim 35 neg 0.856; chain tv=0 dim 1; Procrustes 0.000014;
+    U(2a)/U(4a)=7.733. ALL MATCH.
+
+BORROWED-DATA CHECK: six E_a match LANE_GR1_CENSUS CENSUS_V001.md Finding 3 verbatim
+  (61, ~120/3.1eV, ~50/1.3eV, 220, 780, ~40-60 latch); 7.3 kT @ 50 mT split in numbers.txt;
+  T-34 parameters (100e, h=10nm, pitch=40nm, eps_r=3.9) match LANE_T34_NAND/t34_nand.py.
+  Only-magnetisation-degenerate scoping consistent with census Finding 1 area.
+
+ADVERSARIAL PROBES AND WHAT THEY FOUND:
+  P1 (threshold attack on the dimension pin): eigencount threshold is an imported instrument
+     parameter. At 0.5% and 1%: dim_min=2 only at p=0.33 (pin holds). At 2%: [0.32,0.33];
+     at 5%: [0.295,0.33]. Lower-side pin is threshold-sensitive; window always abuts 1/3
+     from below; upper side (triangle) threshold-independent. Pin SURVIVES at the stated
+     instrument; sensitivity is an uncaveated softness.
+  P2 (fine p_max, step 0.001): tv=0 through p=0.334; first violations at p=0.335 (112).
+     And p=0.334 also reads dim@1%=2. So the earning set is a small INTERVAL ~[0.33,0.334]
+     containing 1/3, not "exactly one map". Caveat (3) discloses asymptotic-only
+     identification; headline "exactly one map" / "[0.33,0.33]" is a 0.01-grid artifact.
+  P3 (additivity): for state-independent positive edge weights, shortest-path = flip-set sum
+     is FORCED (parity argument, two lines). "Additivity EARNED, not assumed" overstates:
+     it is a verified consequence of the assumed non-interacting, state-independent flip-cost
+     model. That assumption is not named in the D-24 table.
+  P4 (symmetry): symmetric by construction (single per-record barrier convention);
+     "EARNED (scoped)" is generous — it is a scoped CONVENTION, though honestly disclosed
+     and carried by the computed direction-split control (quasimetric in general).
+  P5 (attribution): that every p<1/3 gives a metric with zero negative part is standard —
+     concave/subadditive transforms of metrics are metrics (snowflaking), and fractional
+     powers of Euclidean distances are of negative type (Schoenberg). The "snowflake
+     discovery" should be BORROWED-adjacent; what is genuinely OURS is only the use of
+     minimal earned dimension as the map selector in this instrument.
+
+NO fatal D-1/D-24 violation found: no classical gravitational form in construction; exponent
+and dimension are outputs; positions used in comparison section only. No literal verdicts
+(all gated by computed booleans). D-15 controls present and failing as required. D-22 venue
+checks computed for both venues.
+
+VERDICT: NOT REFUTED, with wording downgrades (interval not point; additivity forced by
+model assumption; symmetry a convention; snowflake fact standard).

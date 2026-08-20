@@ -9606,3 +9606,40 @@ adversarial scripts reproduce their sealed outputs byte-for-byte** — the 6 DIF
 reproduction log were purely the missing import, not nondeterminism. **X-2 carries the T-21 note**:
 the record-level reclassification stands; the collective question it never touched now lives in
 C-77/T-42.
+
+---
+
+## T-42 — **C-77's FIRST INCREMENT: SATISFIED AT FORM LEVEL.** Distance earned; the boundary law derived; owners named; scope honest.
+
+**C-78 — DISTANCE IS EARNED, AND IT IS BOUNDARY-CROSSING COST.** `d_W` = minimal admissible-writer
+weight between configurations: a true metric (all axioms, all pairs, **all triples**, exhaustively —
+`2²⁴` writers per pair at `L=5`), equal on the torus to **the minimal number of crossings of the `L`
+transverse loops**, and to `d_code ×` Hamming **in the basis the metric itself selects**. The crossing
+form `J` is *not* a metric (fails triangle, witnesses printed) yet `J mod 2` = symplectic pairing =
+channel adjacency: **the geometry-grade distance and the Γ-form are distinct exact structures with a
+common crossing origin — the record level not resembling the classical shape, exactly as C-77
+expects.** Dimension **earned** as computed content degree (2 corner, 3 world). Attribution corrected
+per the verifier: the odd-`n` nonexistence is **BORROWED (Rains, quant-ph/9704043)**.
+
+**C-79 — THE DERIVATION.** From earned boundary structure alone: **interface rank is exactly one
+degree below content in both tiers** — `deg IR = deg C − 1`, sub-extensive `IR ~ C^((D−1)/D)` — with
+**parameter-free exact forms** `32·capP = (IR2+10)² + 8·(IR2+10) − 160` (every toric `(L,s)` to
+`L=12`, 288 qubits, exact `F₂`) and `IFACE³ = 216·CAP²` (every world `n` to 12). **The mechanism is
+exact bulk cancellation** — Euler density `1+1−2 = 0` per interior cell, so the source is
+boundary-supported; scatter controls with no interior **break the law in both tiers**. 26/26 computed
+gates; no classical form in any construction step; all three input probes adversarially not-refuted.
+
+**THE COMPARISON, owners named:** MATCHES IN FORM the **area/entropy-boundary law** (Bekenstein,
+Hawking, 't Hooft, Susskind; the stabiliser perimeter instance is **BORROWED** — Hamma–Ionicioiu–
+Zanardi, Kitaev–Preskill; **ours** is the Euler bulk-cancellation route, the two-tier degree split,
+the earned-dimension instrument, and the parameter-free forms). **Honest scope:** what matches is the
+**interface** aggregate — stored record content is **volume** in both tiers; the coefficient is
+venue-dependent (32 vs 216), no `1/4G` analogue; Newton falloff and horizon thermodynamics are
+**NEITHER-YET**, open targets. The corner tier is **pure Γ**; the world tier runs through a coupling
+term, declared under the openness clause — **the cross-tier agreement of the form is itself part of
+the finding.**
+
+New obstructions: **O-54** the falloff from Γ (the binding next step — two-region interface rank
+against the earned metric), **O-55** no universal coefficient, **O-56** no earned thermodynamic
+conjugate pair. **Flagged for the principal, not decided:** whether the mature C-77 requires more
+than the interface reading, given stored content is volume.

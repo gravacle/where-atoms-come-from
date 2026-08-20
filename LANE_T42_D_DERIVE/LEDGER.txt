@@ -1,0 +1,8 @@
+LANE_T42_D_DERIVE -- lane ledger (errors and corrections, per register discipline)
+
+E1  2026-08-20  First cut of t42d_derive.py cached vertex-set reductions keyed by
+    id(verts); id reuse after garbage collection could in principle return a stale
+    cache entry. No gate failed on the first run (all 26 passed, so no wrong number
+    was produced), but the construction was unsound as written. FIX: cache removed,
+    vset_mod recomputes directly. Rerun: byte-equivalent results, 26/26 gates,
+    OVERALL PASS. Sealed outputs are from the corrected script only.

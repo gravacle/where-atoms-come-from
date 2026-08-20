@@ -1,0 +1,67 @@
+LANE_T42_D_DERIVE -- D-24 AUDIT TABLE, CHOICE LEDGER, TOY_SEPARATION, ERROR POLICY
+==================================================================================
+
+D-24 AUDIT TABLE (every concept used in the derivation; EARNED with the computation
+that earned it, or IMPORTED -- imports may not appear in any conclusion):
+
+CONCEPT                        STATUS    EARNING COMPUTATION / SOURCE
+region (induced edge set)      EARNED    C-74 convention, ESTABLISHED register row
+                                         (1480-region census); reused, not rederived.
+interface rank IR2             EARNED    T42_C (adversarially verified); RECOMPUTED
+                                         here from scratch by F_2 rank identities
+                                         r_in = rank(M) - rank(M|out) etc., gated
+                                         against T42_C LAW-2 on every (L,s).
+content capacity capP=2AQ-r_in EARNED    T42_C (verified definition); r_in computed
+                                         by rank here, gated vs (s-2)^2+(s-1)^2.
+counts AQ, PER, AV, PD         EARNED    T42_C (earned as counts incl. PER's limit);
+                                         recomputed here by direct enumeration.
+Euler count AV+PD-AQ           EARNED    T42_C LAW-3 variable; here gated == 4s-3 on
+                                         every (L,s) and bulk density (1+1-2)=0
+                                         verified by the linear degree of its sequence.
+polynomial degree              EARNED    exact finite-difference instrument (T42_C
+                                         world tier); applied to exact int sequences.
+dimension D                    EARNED    defined as computed content degree (2 corner,
+                                         3 world); NEVER imported as "2D"/"3D"; enters
+                                         conclusions only through computed degrees.
+cap_record=0 (contractible)    EARNED    C-74 ESTABLISHED (borrowed, not rederived);
+                                         used only via capP definition scope.
+world access counts IFACE,     EARNED    GR1 census model + T42_C (verified); brute
+CAP_d1, CAP_total                        recount here n=2..12, gated == 6n^2 and
+                                         n^3-(n-2)^3. These are COUPLING-term
+                                         quantities under C-77's openness clause.
+metric distance                NOT USED  (T42_A/T42_B earned it; this derivation does
+                                         not need it; it enters only the named next
+                                         step.)
+area, entropy, gravitational   NOT USED  named ONLY in the final comparison section as
+forms (S=A/4 etc.)                       recovery targets (D-1 clean).
+length/energy units            NOT USED  all claims are exact integer/Fraction
+                                         relations between counts; no unit anywhere.
+
+IMPORTED concepts appearing in conclusions: NONE. (If any import had been
+unavoidable the derivation would FAIL per C-77; it was not.)
+
+CHOICE LEDGER (per feedback_actual_surface_guard):
+CH1  Nested-family parameterization s (vertex-block side) and n (block side):
+     CHOICES. Conclusions carried are parameterization-free (the exact IR-C
+     relations eliminate s and n entirely) or invariant (degree difference).
+CH2  Offset (0,0) for blocks: CHOICE; translation-invariance gate computed
+     (offset (3,4) identical); full Aut = 8L^2 BORROWED from C-74 (D-22 line).
+CH3  Scatter constructions (stride spread corner; even-site world): CHOICES,
+     control-only; nothing in R1 depends on them -- they exist to FAIL the law.
+CH4  Ranges L=6..12, s=2..L-2, n=2..12: reach limits, stated in OUT.
+CH5  Region convention = C-74 induced-edge-set: inherited convention, not a new
+     choice of this lane.
+
+TOY_SEPARATION:
+  ACTUAL SURFACE: toric stabilizer carrier (the program's record surface, C-74
+  venue) and the GR1 census barrier-record model (real-record parameters).
+  The scatter families are CONTROLS, not surfaces; no conclusion lives on them.
+
+OPENNESS CLAUSE ACCOUNTING:
+  Corner tier: pure Gamma (stabilizer boundary structure only).
+  World tier: runs through the census access/coupling model -- a coupling term
+  contributing alongside Gamma, exactly what C-77's openness clause allows; the
+  cross-tier agreement of the law's FORM (deg IR = deg C - 1) is the finding.
+
+VERDICT DISCIPLINE: every PASS/FAIL printed from a computed boolean; OVERALL is
+the computed conjunction of 26 gates; exit code tied to it. No literal verdicts.

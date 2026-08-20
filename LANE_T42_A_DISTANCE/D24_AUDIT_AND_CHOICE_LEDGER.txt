@@ -1,0 +1,87 @@
+LANE_T42_A_DISTANCE -- D-24 AUDIT TABLE + CHOICE LEDGER          2026-08-20
+Scripts: t42_lib.py, t42_a_toric.py, t42_b_codes.py, t42_c_doubles.py, t42_d_records.py
+Logs:    *.OUT.txt (every verdict gated by a computed boolean; final lines ALL GATES: PASS)
+
+=== D-24 AUDIT: EVERY CONCEPT USED ===
+EARNED (with the computation that earned it)
+  distance (configs)      all 4 metric axioms verified over ALL pairs AND ALL triples on 8
+                          venues: toric L=2,3,4,5; [[4,2,2]],[[6,4,2]],[[8,6,2]]; D(Z2xZ2)
+                          L=2,3; D(Z4) 2x2.  Control candidate FAILED on same instrument.
+  homogeneity             d(s,s') = f(s+s') EMERGED from independent per-pair writer search
+                          (never assumed) on every carrier.
+  code distance           computed as min nonzero class weight, every carrier.
+  scaling in L            exact table {L, L, 2L} at L=2,3,4,5 (toric).
+  boundary-crossing cost  crossing parity on each of the L disjoint transverse loops is
+                          class-constant for EVERY writer (up to 2^24 per class, exhaustive);
+                          => every writer costs >= L*a + L*b; min achieves it. d_W IS minimal
+                          boundary-crossing cost, L=2..5.
+  Hamming/cube coords     ONLY on the torus, in the METRIC-SELECTED basis (units = classes at
+                          distance d_code): d_W = d_code x Hamming, L=2..5.  The metric itself
+                          selects the coordinates; nothing imported.
+  dimension (=2)          the computed count of conjugate logical pairs (homology rank).
+  form-vs-metric split    J: symmetric, J(a,a)=0, FAILS indiscernibles + triangle (nonzero-
+                          class witnesses).  Channel distance: passes axioms, two-valued,
+                          diameter 2, |Aut|=720 (15 pts).  d_W alone has graded scaling geometry.
+  joint-support law       D(Z2xZ2): d_W = L x |supp(t1 OR t2)|, exhaustive union search.
+  torsion-freeness        D(Z4): d_W = L x |supp(t)|; d(2t) = d(t).
+  odd-n nonexistence      [[n,n-2,2]] exists iff n even. n=5: ALL 260865 commuting pairs
+                          exhausted, every one has a weight-1 logical.  n=7: computed 16-case
+                          local lemma + symplectic parity + exhausted weight-1-generator
+                          subfamily (171990 pairs).  Obstruction IS sp(g1,g2) = n mod 2.
+IMPORTED (never in a conclusion)
+  'hypercube'/'flat'/'curved'   avoided everywhere; conclusions use tables + Aut + earned relations.
+  Lee weight                    imported candidate, used ONLY as failing D-15 control (D(Z4)).
+  product metric d1+d2          imported candidate, used ONLY as failing D-15 control (D(Z2xZ2)).
+  Hamming-of-labels off-torus   shown BASIS-DEPENDENT ([[8,6,2]] transvection changes the
+                                table; explicit F_2-linear isometry relates the two tables);
+                                counting obstruction (28 classes at d_code vs 6 unit labels)
+                                rules out EVERY linear relabeling.
+  channel criterion (sp=1)      BORROWED G-16; its metric recomputed here.
+  J definition                  BORROWED E-7 (LANE_EXACT_A_ZERO); recomputed on new venues;
+                                CTRL-Z and J mod 2 == sp re-verified.
+  stabilizer/toric machinery    BORROWED Kitaev / Gottesman; carrier construction only.
+  lattice + transverse loops    lane choices; the EARNED fact is their class-invariant parity.
+
+=== CHOICE LEDGER ===
+  C1 writers = Pauli elements of N(S); weight = |supp x U supp z|.  Non-Pauli admissibles not
+     searched (caveat).
+  C2 z=0 reduction on CSS carriers: JUSTIFIED by |supp x U supp z| >= |supp x| AND verified by
+     exhaustive full-(x|z) searches at toric L=2,3 and D(Z2xZ2) L=2 (equal minima, all classes).
+  C3 labels = pairings against 2nd element of each computed conjugate pair; convention noted;
+     metric space invariant under relabeling (isometry computed at n=8).
+  C4 transverse loops = the L parallel row loops and L column loops.  FIRST construction
+     (columns of parallel edges, not closed) was REJECTED BY THE INSTRUMENT (parity max != min
+     gate fired at L=2..5); corrected to closed loops; error logged here per discipline.
+  C5 D(G) choices: D(Z2xZ2) (two factors, shared qudit support) AND D(Z4) (oriented, mod-4
+     arithmetic) -- both |G| = 4 = 2^2; cross-compared.
+  C6 odd n handled by search-then-nonexistence-proof, not by silently substituting a carrier.
+  C7 Aut enumeration exact to 16 points; larger venues get verified subgroups + a computed
+     non-uniformity witness (Aut != S_N) only; stated as bounds, not totals.
+
+=== D-15 CONTROLS RUN (beside every zero / claimed structure) ===
+  overlap measure fails identity+triangle (configs venue AND both record venues)  [fires]
+  Hamming-proportionality DEVIATES on [[4]],[[6]],[[8]]                            [fires]
+  product formula d1+d2 fails on D(Z2xZ2), witness ((0,1),(0,1)): 2 vs 4          [fires]
+  Lee form fails on D(Z4), witness (2,0): 2 vs 4                                   [fires]
+  CTRL-Z J(a,a)=0 all classes; J mod 2 == sp all pairs                             [passes]
+  full-space vs reduced-space minima equal (3 carriers, exhaustive)                [passes]
+  bad-cut construction rejected by parity gate (instrument catches non-invariants) [fired]
+
+=== D-22 VENUE GEOMETRY ===
+  toric configs (4 pts): |Aut| = 8 at every L -- geometry present.
+  [[4]],[[6]] configs: UNIFORM metric, |Aut| = S_N -- NO geometry; no separation claims there.
+  [[8]] configs: spectrum {2,4}, Aut != S_64 (witnessed), translations+S_6 verified subgroup.
+  D(Z2xZ2), D(Z4) (16 pts): |Aut| = 1152 both; explicit isometry between the two doubles.
+  channel metric (15 pts): |Aut| = 720 -- near-uniform, diameter 2.
+
+=== LARGEST SIZES REACHED (exact arithmetic throughout, F_2 bitmasks / Z_4 integers) ===
+  toric L=5: n=50 qubits; 2^24 = 16777216 writers per configuration pair; 268435456 writers
+  searched total.  [[8,6,2]]: 64 configs, 262144 triangle triples.  [[6,4,2]] records: 256
+  classes, 65536 exact J values, 16581375 triangle triples.  n=5 nonexistence: 260865
+  commuting pairs.  D(Z4): 65536 vectors of Z_4^8 filtered exactly.
+
+=== NEXT STEP (no route closes without one) ===
+  Run this same instrument on a GENUS-2 carrier: the 4^g = 16 configuration claim has only
+  been exercised at g=1, and higher genus decides whether d_W = d_code x Hamming survives a
+  richer boundary structure.  Secondary: toric L=6 via bounded-weight search (coset 2^35 is
+  past exhaustive reach).

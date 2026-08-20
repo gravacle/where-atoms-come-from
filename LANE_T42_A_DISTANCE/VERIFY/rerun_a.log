@@ -1,0 +1,105 @@
+T42-A part 1  --  toric configuration distance, exact, started 2026-08-20 10:46:16
+
+L=2  n=8 qubits  logical pairs COMPUTED: 2
+PASS  L=2 exactly 2 conjugate pairs
+PASS  L=2 computed logicals: conjugate within pair, commuting across
+L=2  writer search space per pair: 2^3 = 8 admissible x-type ops
+L=2  writers searched (exact, exhaustive): 128
+PASS  L=2 d_W(s,s') depends only on s+s' (searched per pair, invariance emerged)
+PASS  L=2 crossing parity constant over every class and every parallel cut
+PASS  L=2 d_W = minimal boundary-crossing cost  (min w = L*a+L*b exactly)  {(0, 0): (0, (0, 0)), (0, 1): (2, (0, 1)), (1, 0): (2, (1, 0)), (1, 1): (4, (1, 1))}
+PASS  L=2 METRIC AXIOMS identity/symmetry/indiscernible/triangle (16 pairs, 64 triples)
+PASS  L=2 code distance (computed as min nonzero class weight) == L  d_code=2
+PASS  L=2 in the METRIC-SELECTED basis: d_W = d_code x Hamming(labels)  units(at distance d_code)=[(0, 1), (1, 0)]
+L=2  D-22 venue Aut group of the 4-point metric space: |Aut| = 8 (enumerated)
+PASS  L=2 venue HAS geometry to detect (Aut != full symmetric group S_4=24)  |Aut|=8
+L=2  full metric on the 4 configurations (order 00,10,01,11 in computed labels):
+        0   2   2   4
+        2   0   4   2
+        2   4   0   2
+        4   2   2   0
+L=2 done in 0.0s
+
+L=3  n=18 qubits  logical pairs COMPUTED: 2
+PASS  L=3 exactly 2 conjugate pairs
+PASS  L=3 computed logicals: conjugate within pair, commuting across
+L=3  writer search space per pair: 2^8 = 256 admissible x-type ops
+L=3  writers searched (exact, exhaustive): 4096
+PASS  L=3 d_W(s,s') depends only on s+s' (searched per pair, invariance emerged)
+PASS  L=3 crossing parity constant over every class and every parallel cut
+PASS  L=3 d_W = minimal boundary-crossing cost  (min w = L*a+L*b exactly)  {(0, 0): (0, (0, 0)), (0, 1): (3, (0, 1)), (1, 0): (3, (1, 0)), (1, 1): (6, (1, 1))}
+PASS  L=3 METRIC AXIOMS identity/symmetry/indiscernible/triangle (16 pairs, 64 triples)
+PASS  L=3 code distance (computed as min nonzero class weight) == L  d_code=3
+PASS  L=3 in the METRIC-SELECTED basis: d_W = d_code x Hamming(labels)  units(at distance d_code)=[(0, 1), (1, 0)]
+L=3  D-22 venue Aut group of the 4-point metric space: |Aut| = 8 (enumerated)
+PASS  L=3 venue HAS geometry to detect (Aut != full symmetric group S_4=24)  |Aut|=8
+L=3  full metric on the 4 configurations (order 00,10,01,11 in computed labels):
+        0   3   3   6
+        3   0   6   3
+        3   6   0   3
+        6   3   3   0
+L=3 done in 0.0s
+
+L=4  n=32 qubits  logical pairs COMPUTED: 2
+PASS  L=4 exactly 2 conjugate pairs
+PASS  L=4 computed logicals: conjugate within pair, commuting across
+L=4  writer search space per pair: 2^15 = 32768 admissible x-type ops
+L=4  writers searched (exact, exhaustive): 524288
+PASS  L=4 d_W(s,s') depends only on s+s' (searched per pair, invariance emerged)
+PASS  L=4 crossing parity constant over every class and every parallel cut
+PASS  L=4 d_W = minimal boundary-crossing cost  (min w = L*a+L*b exactly)  {(0, 0): (0, (0, 0)), (0, 1): (4, (0, 1)), (1, 0): (4, (1, 0)), (1, 1): (8, (1, 1))}
+PASS  L=4 METRIC AXIOMS identity/symmetry/indiscernible/triangle (16 pairs, 64 triples)
+PASS  L=4 code distance (computed as min nonzero class weight) == L  d_code=4
+PASS  L=4 in the METRIC-SELECTED basis: d_W = d_code x Hamming(labels)  units(at distance d_code)=[(0, 1), (1, 0)]
+L=4  D-22 venue Aut group of the 4-point metric space: |Aut| = 8 (enumerated)
+PASS  L=4 venue HAS geometry to detect (Aut != full symmetric group S_4=24)  |Aut|=8
+L=4  full metric on the 4 configurations (order 00,10,01,11 in computed labels):
+        0   4   4   8
+        4   0   8   4
+        4   8   0   4
+        8   4   4   0
+L=4 done in 0.1s
+
+L=5  n=50 qubits  logical pairs COMPUTED: 2
+PASS  L=5 exactly 2 conjugate pairs
+PASS  L=5 computed logicals: conjugate within pair, commuting across
+L=5  writer search space per pair: 2^24 = 16777216 admissible x-type ops
+L=5  writers searched (exact, exhaustive): 268435456
+PASS  L=5 d_W(s,s') depends only on s+s' (searched per pair, invariance emerged)
+PASS  L=5 crossing parity constant over every class and every parallel cut
+PASS  L=5 d_W = minimal boundary-crossing cost  (min w = L*a+L*b exactly)  {(0, 0): (0, (0, 0)), (0, 1): (5, (0, 1)), (1, 0): (5, (1, 0)), (1, 1): (10, (1, 1))}
+PASS  L=5 METRIC AXIOMS identity/symmetry/indiscernible/triangle (16 pairs, 64 triples)
+PASS  L=5 code distance (computed as min nonzero class weight) == L  d_code=5
+PASS  L=5 in the METRIC-SELECTED basis: d_W = d_code x Hamming(labels)  units(at distance d_code)=[(0, 1), (1, 0)]
+L=5  D-22 venue Aut group of the 4-point metric space: |Aut| = 8 (enumerated)
+PASS  L=5 venue HAS geometry to detect (Aut != full symmetric group S_4=24)  |Aut|=8
+L=5  full metric on the 4 configurations (order 00,10,01,11 in computed labels):
+        0   5   5  10
+        5   0  10   5
+        5  10   0   5
+       10   5   5   0
+L=5 done in 1.5s
+
+REDUCTION CONTROL: full (x|z) writer search vs z=0 slice, L=2,3
+  L=2 class (0, 0): full-space min 0  (space 2^8)   z=0 min 0
+  L=2 class (1, 0): full-space min 2  (space 2^8)   z=0 min 2
+  L=2 class (0, 1): full-space min 2  (space 2^8)   z=0 min 2
+  L=2 class (1, 1): full-space min 4  (space 2^8)   z=0 min 4
+PASS  L=2 allowing z-parts NEVER lowers d_W (exhaustive both spaces)
+  L=3 class (0, 0): full-space min 0  (space 2^18)   z=0 min 0
+  L=3 class (1, 0): full-space min 3  (space 2^18)   z=0 min 3
+  L=3 class (0, 1): full-space min 3  (space 2^18)   z=0 min 3
+  L=3 class (1, 1): full-space min 6  (space 2^18)   z=0 min 6
+PASS  L=3 allowing z-parts NEVER lowers d_W (exhaustive both spaces)
+
+D-15 CONTROL CANDIDATE (must FAIL an axiom): d_ctrl(s,s') = |supp(minrep s) & supp(minrep s')|
+PASS  control candidate FAILS at least one axiom (instrument distinguishes)  identity_ok=False indiscernible_ok=False triangle_ok=False witness=[(0, 1), (1, 0), (1, 1)]
+
+SCALING TABLE  d_W(class)/L over L (exact integers):
+  L | d(unit class 1) | d(unit class 2) | d(sum class) | d_code
+  2 |       2         |       2         |      4       |   2
+  3 |       3         |       3         |      6       |   3
+  4 |       4         |       4         |      8       |   4
+  5 |       5         |       5         |     10       |   5
+
+ALL GATES: PASS

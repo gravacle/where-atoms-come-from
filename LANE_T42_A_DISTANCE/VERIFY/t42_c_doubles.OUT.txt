@@ -1,0 +1,39 @@
+T42-A part 3  --  quantum doubles |G|=4, exact, started 2026-08-20 10:47:18
+
+D(Z2xZ2) L=2  16 configurations, 8 qudits; writer pairs searched: 1024
+PASS  D(Z2xZ2) L=2 METRIC AXIOMS over ALL 256 pairs, ALL 4096 triples
+PASS  D(Z2xZ2) L=2 d_W = L x |support(t1 OR t2)| -- crossing cost of the JOINT homology support
+PASS  D(Z2xZ2) L=2 D-15 CONTROL: naive product formula d1+d2 FAILS (factors share qudit support)  witness class ((0, 1), (0, 1)): d=2, d1+d2=4
+D(Z2xZ2) L=2  D-22 venue Aut of the 16-point metric: |Aut| = 1152 (enumerated)
+PASS  D(Z2xZ2) L=2 venue has geometry (Aut != S_16)  |Aut|=1152
+D(Z2xZ2) L=2 done in 0.1s
+
+D(Z2xZ2) L=3  16 configurations, 18 qudits; writer pairs searched: 1048576
+PASS  D(Z2xZ2) L=3 METRIC AXIOMS over ALL 256 pairs, ALL 4096 triples
+PASS  D(Z2xZ2) L=3 d_W = L x |support(t1 OR t2)| -- crossing cost of the JOINT homology support
+PASS  D(Z2xZ2) L=3 D-15 CONTROL: naive product formula d1+d2 FAILS (factors share qudit support)  witness class ((0, 1), (0, 1)): d=3, d1+d2=6
+D(Z2xZ2) L=3  D-22 venue Aut of the 16-point metric: |Aut| = 1152 (enumerated)
+PASS  D(Z2xZ2) L=3 venue has geometry (Aut != S_16)  |Aut|=1152
+D(Z2xZ2) L=3 done in 0.3s
+
+REDUCTION CONTROL for D(Z2xZ2) at L=2: full (x|z) search in both factors
+PASS  D(Z2xZ2) L=2 allowing z-parts in both factors never lowers d_W (exhaustive, 2^8 x 2^8 per class pair)
+
+D(Z_4) on the 2x2 torus, arithmetic mod 4, oriented lattice
+PASS  D(Z4) |C| = 4^5 (kernel of oriented circulation, computed)   |C|=1024
+PASS  D(Z4) every oriented star lies in C (stabilizers commute)
+PASS  D(Z4) |span stars| = 4^3 (one relation: sum of stars = 0)  |B|=64
+PASS  D(Z4) both Wilson functionals vanish on the whole star span (gauge invariant)
+PASS  D(Z4) the two functionals classify C into 16 equal classes of 64
+D(Z4)  class minimal weights: {(0, 0): 0, (0, 1): 2, (0, 2): 2, (0, 3): 2, (1, 0): 2, (1, 1): 4, (1, 2): 4, (1, 3): 4, (2, 0): 2, (2, 1): 4, (2, 2): 4, (2, 3): 4, (3, 0): 2, (3, 1): 4, (3, 2): 4, (3, 3): 4}
+PASS  D(Z4) METRIC AXIOMS over ALL 256 pairs, ALL 4096 triples
+PASS  D(Z4) d_W = L x |support(t)|  (torsion is FREE: d(2t)=d(t) for t nonzero)
+PASS  D(Z4) D-15 CONTROL: the imported Lee-weight form L*(lee(a)+lee(b)) FAILS  witness t=(2,0): d=2, Lee form=4
+D(Z4)  D-22 venue Aut of the 16-point metric: |Aut| = 1152 (enumerated)
+PASS  D(Z4) venue has geometry (Aut != S_16)
+
+CROSS-DOUBLE COMPARISON: D(Z2xZ2) L=2 vs D(Z4) 2x2 -- same 16-point metric space?
+distance multisets equal: True
+FINDING: an explicit isometry EXISTS -- the two non-isomorphic order-4 doubles carry THE SAME 16-point configuration geometry at this size (the metric does not see the group's torsion here)
+
+ALL GATES: PASS

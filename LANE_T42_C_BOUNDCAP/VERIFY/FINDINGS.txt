@@ -1,0 +1,79 @@
+T42-C ADVERSARIAL VERIFICATION -- 2026-08-20
+
+WHAT WAS DONE
+  1. SEALS: all six SHA256 seals verified OK.
+  2. RERUN: t42_corner.py and t42_world.py rerun; outputs byte-identical to the sealed
+     OUT files (rerun_corner.OUT.txt, rerun_world.OUT.txt, diff empty).
+  3. INDEPENDENT REIMPLEMENTATION (independent_corner.py): own edge indexing
+     (interleaved, not blocked), own F_2 elimination, own region generation, own
+     BFS/union-find, cap_record assembled by a different route.  All 1539 regions.
+     CONFIRMED: census 1480; cap_record 0 on every contractible region, {1,2} on bands;
+     LAW-1; LAW-2 on all 874 thick rectangles; LAW-3 on every region; r_in = c1 + c1_D
+     - cap_record; bridge AV+PD-AQ = PER-3 on thick rectangles and its break on
+     irregulars; strip law IR2 = 2AQ; cap_pauli = 2AV + PER/2 - 5 on thick rectangles;
+     spot rows including the witness pair (3x3 IR2=14 vs L3x3-1x1 IR2=12 at PER=12).
+  4. INDEPENDENT WORLD CHECK (independent_world.py): depth by closed formula
+     (1 + min distance to a face) instead of BFS.  Every sealed row n=2..12 matches;
+     degrees 3/2/2/3; IFACE = 6n^2, CAP_d1 = n^3-(n-2)^3, CAP_prot = (n-2)^3;
+     DEPTH_SUM recurrence; scattered control (own seed) CAP_prot=0, IFACE volume-like.
+  5. ATTACK (law1_genericity.py): LAW-1 tested on 1000 random CSS codes with random
+     regions, far from the toric carrier.  It NEVER fails.
+
+ERRORS FOUND (in the finding JSON, not in the sealed lane files)
+  E1  HEADLINE SCOPE: "IR2 = 2*PER - 10 exactly on all 1480 rectangles" is FALSE as
+      stated.  The 1480-census includes 606 width-1 strips; 434 of them violate the law
+      (the rest coincide, e.g. 1x2).  The law's true scope, and what the code gates,
+      is the 874 THICK rectangles (a,b >= 2).  The lane's own OUT states the scope
+      correctly; the finding headline does not.  Same over-scoping in "cap_pauli =
+      2AV + PER/2 - 5 on rectangles" (thick only; 348 strip violations).
+  E2  TABLE-EXCERPT TRANSCRIPTION: three numbers in the finding's table field
+      contradict the sealed OUT and the independent recomputation:
+        rect 5x5 capP: finding 65, true 55
+        band 5xL capP: finding 64 (that is SYN), true 66
+        4x4 vs 3x5 capP: finding 39 != 38, true 35 != 33 (inequality direction survives)
+  E3  OWNERSHIP OVERCLAIM ON LAW-1: IR2 + 2 r_in + cap_record = 2|R| holds on every
+      random CSS code and random region tried (1000 trials).  It is generic stabiliser
+      rank-nullity bookkeeping (standard stabiliser-entanglement territory, Fattal et
+      al. / the same complementarity used in cleaning-lemma arguments), NOT a law of
+      this venue.  Claiming it as "OURS ... exact, every region of every class" as a
+      discovery overstates; it carries zero information about the record surface.
+      Knock-on: given generic LAW-1, LAW-3 is algebraically EQUIVALENT to the r_in
+      homology accounting r_in = c1 + c1_D - cap_record.  The venue-specific content
+      of the corner tier is: the homology accounting, the bridge AV+PD-AQ = PER-3 on
+      thick rectangles (hence LAW-2 and its exact constant -10), the scope boundaries
+      (thick/thin crossover), and the two-tier side-by-side.  That content is real and
+      verified.
+  E4  UNFALSIFIABLE GATES PRESENTED AS CROSS-CHECKS:
+      (a) IR2 == IR2b: both are functions of the SAME four ranks (rk_st_R, rk_st_Rc,
+          rk_pl_R, rk_pl_Rc); IR2 - IR2b = 2(m-1) - r_out - rk_st_R - rk_pl_R = 0
+          identically.  "Two independent routes" is false; the gate cannot fail.
+      (b) SYN == IR2 + r_in: same substitution, identically zero.
+      (c) LAW-1 gate: cannot fail for any stabiliser group (E3).
+      (d) world "influence rank == CAP_depth(1)": rank_infl = len(first) (line 71) and
+          cap_d1 counts depth==1 grains = first (lines 52, 65) -- definitionally equal;
+          and no F_2 rank is actually computed despite the docstring's claim.
+      The cap_record direct-vs-formula agreement IS a genuine cross-check (different
+      computation paths); the D-15 controls are genuine.  But four PASS lines are
+      tautologies -- a quieter form of the narrated-verdict sin.
+  E5  MINOR: PER is computed (straddle_edges of VS) and printed for SCATTER rows where
+      the region is not the induced edge set of VS, so the number is meaningless there
+      (e.g. PER=0 at L=6 scatter); it enters no scatter conclusion, but the column
+      should be blanked or footnoted for that class.
+
+WHAT SURVIVES (verified end to end, independently)
+  The substantive result stands: on the corner tier the interface rank obeys the exact
+  Euler-count law LAW-3 on all 1539 regions, collapsing to IR2 = 2*PER - 10 on the 874
+  thick rectangles via the bridge, failing off that class (witness pair confirmed);
+  stored content is bulk-dominant in both tiers; the world's boundary-scaling
+  aggregates are the interface ones (IFACE = 6n^2, CAP_d1 = n^3-(n-2)^3) while the
+  brief's protected-content candidate is volume ((n-2)^3); interiorless/dispersed
+  regions are all interface in both tiers.  D-1 clean (classical relation named only
+  in the final comparison), D-22 declared (borrowed), no unearned classical concept in
+  any construction step; the D-24 audit is honest apart from the "two independent
+  routes" phrasing (E4a) and LAW-1's OURS label (E3).
+
+FILES
+  rerun_corner.OUT.txt, rerun_world.OUT.txt   -- byte-identical reruns
+  independent_corner.py / .OUT.txt            -- independent corner recomputation
+  independent_world.py / .OUT.txt             -- independent world recomputation
+  law1_genericity.py / .OUT.txt               -- LAW-1 genericity + tautology attack

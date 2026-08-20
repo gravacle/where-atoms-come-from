@@ -19,7 +19,7 @@ QUESTIONS ANSWERED WITH GATES:
     related by an explicit F_2-linear isometry -- the metric space is the invariant.
 """
 import sys, time, random
-LANE = "/Users/bgm/MB Work/where-atoms-come-from/LANE_T42_A_DISTANCE"
+LANE = "/Users/bgm/MB Work/where-atoms-come-from/LANE_T42_A_DISTANCE/VERIFY"
 sys.path.insert(0, LANE)
 from t42_lib import (pc, solve_affine_f2, span_all, sp_pair, weight_xz, vec_to_mask,
                      metric_axioms, aut_count)

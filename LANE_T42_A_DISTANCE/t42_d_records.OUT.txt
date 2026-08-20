@@ -1,0 +1,41 @@
+T42-A part 4  --  distances between records, exact, started 2026-08-20 10:41:12
+
+toric L=2: 16 record classes, 64 representatives per class (full S-orbit enumerated)
+PASS  toric L=2 coset sizes all equal (group structure computed, not assumed)
+toric L=2  J computed for all 256 ordered class pairs (exact min over 4096 rep pairs each)
+PASS  toric L=2 CTRL-Z: J(a,a) = 0 for every class (a record cannot cross itself)
+PASS  toric L=2 J mod 2 == sp_F2 on every pair (E-7 consistency, recomputed here)
+toric L=2  J vs THE METRIC AXIOMS:  identity True  symmetry True  indiscernibles False  triangle False
+PASS  toric L=2 J FAILS indiscernibles (distinct non-crossing records at J=0)  witness [((0, 0, 0, 0), (0, 0, 0, 1))]
+PASS  toric L=2 J FAILS the triangle inequality  witness (a,b,c,J(ac),J(ab),J(bc)) = [((0, 0, 0, 1), (0, 0, 0, 0), (0, 0, 1, 0), 1, 0, 0)]
+PASS  toric L=2 J IS symmetric with J(a,a)=0 -- a FORM, not a distance
+PASS  toric L=2 J triangle fails already among NONZERO records  witness ((0, 0, 0, 1), (0, 1, 0, 0), (0, 0, 1, 0), 1, 0, 0)
+PASS  toric L=2 channel graph (sp=1) is CONNECTED on the 15 nonzero classes
+PASS  toric L=2 channel-adjacency distance SATISFIES ALL METRIC AXIOMS (225 pairs, 3375 triples)
+toric L=2  channel distance spectrum [1, 2], diameter 2  -- a metric with almost no geometry
+toric L=2  D-22 channel-metric venue Aut: |Aut| = 720 (enumerated) on 15 points
+toric L=2  pairs with sp=0 but J>0 (invisible to the pairing, E-7's class): 0
+PASS  toric L=2 the two adjacency notions (sp=1 vs J>0) give the SAME metric  same=True
+PASS  toric L=2 D-15 CONTROL: support-overlap measure FAILS the axioms (identity_ok=False, triangle_ok=False)  identity witness [(0, 0, 0, 1)]
+toric L=2 done in 0.2s
+
+[[6,4,2]]: 256 record classes, 4 representatives per class (full S-orbit enumerated)
+PASS  [[6,4,2]] coset sizes all equal (group structure computed, not assumed)
+[[6,4,2]]  J computed for all 65536 ordered class pairs (exact min over 16 rep pairs each)
+PASS  [[6,4,2]] CTRL-Z: J(a,a) = 0 for every class (a record cannot cross itself)
+PASS  [[6,4,2]] J mod 2 == sp_F2 on every pair (E-7 consistency, recomputed here)
+[[6,4,2]]  J vs THE METRIC AXIOMS:  identity True  symmetry True  indiscernibles False  triangle False
+PASS  [[6,4,2]] J FAILS indiscernibles (distinct non-crossing records at J=0)  witness [((0, 0, 0, 0, 0, 0, 0, 0), (0, 0, 0, 0, 0, 0, 0, 1))]
+PASS  [[6,4,2]] J FAILS the triangle inequality  witness (a,b,c,J(ac),J(ab),J(bc)) = [((0, 0, 0, 0, 0, 0, 0, 1), (0, 0, 0, 0, 0, 0, 0, 0), (0, 0, 0, 0, 0, 0, 1, 0), 1, 0, 0)]
+PASS  [[6,4,2]] J IS symmetric with J(a,a)=0 -- a FORM, not a distance
+PASS  [[6,4,2]] J triangle fails already among NONZERO records  witness ((0, 0, 0, 0, 0, 0, 0, 1), (0, 0, 0, 0, 0, 1, 0, 0), (0, 0, 0, 0, 0, 0, 1, 0), 1, 0, 0)
+PASS  [[6,4,2]] channel graph (sp=1) is CONNECTED on the 255 nonzero classes
+PASS  [[6,4,2]] channel-adjacency distance SATISFIES ALL METRIC AXIOMS (65025 pairs, 16581375 triples)
+[[6,4,2]]  channel distance spectrum [1, 2], diameter 2  -- a metric with almost no geometry
+[[6,4,2]]  D-22 channel-metric venue: Aut enumeration skipped at 255 points; spectrum [1, 2] is two-valued, the venue is near-uniform
+[[6,4,2]]  pairs with sp=0 but J>0 (invisible to the pairing, E-7's class): 720
+PASS  [[6,4,2]] the two adjacency notions (sp=1 vs J>0) give DIFFERENT metric  same=False
+PASS  [[6,4,2]] D-15 CONTROL: support-overlap measure FAILS the axioms (identity_ok=False, triangle_ok=False)  identity witness [(0, 0, 0, 0, 0, 0, 0, 1)]
+[[6,4,2]] done in 6.4s
+
+ALL GATES: PASS

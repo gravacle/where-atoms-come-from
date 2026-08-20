@@ -1,0 +1,19 @@
+  [PASS] census count 1480  1480
+  [PASS] cap_record == 0 on every contractible region (rect+L+holed)
+  [PASS] cap_record in {1,2} on bands, >0 all
+  [PASS] LAW-1 IR2 + 2 r_in + cap_record == 2 AQ, every region
+  [PASS] LAW-2 IR2 == 2 PER - 10 on THICK rectangles
+  [PASS] LAW-2 fails on strips (head-count > 0), so the finding headline 'IR2 = 2*PER - 10 exactly on all 1480 rectangles' is FALSE as stated (the census includes 606 strips; the law's true scope is the 874 thick rectangles)  434/606 strips violate (the rest coincide, e.g. 1x2)
+  [PASS] LAW-3 IR2 == 2(AV+PD-AQ) - 2(comp+comp_D) + cap_record, every region
+  [PASS] r_in == c1 + c1_D - cap_record, every region
+  [PASS] bridge AV+PD-AQ == PER-3 on thick rectangles
+  [PASS] bridge breaks somewhere on irregulars
+  [PASS] strip law IR2 == 2 AQ
+  [PASS] cap_pauli == 2AV + PER/2 - 5 on thick rectangles
+  [PASS] cap_pauli formula FAILS on strips too (so 'on rectangles' also over-scoped)  348 strip violations
+  [PASS] scatter qualitative (own seed, own indexing): scatter r_in < matched-block r_in and scatter IR2 > matched-block IR2, at L=5,6
+  [PASS] spot rows match the sealed OUT table (independent recomputation)
+  [PASS] finding-excerpt errors confirmed: 5x5 capP is 55 not 65; band5xL capP is 66 not 64; 4x4/3x5 capP are 35/33 not 39/38
+
+regions: 1539  (thick 874, strips 606)
+ALL INDEPENDENT GATES PASS: True
