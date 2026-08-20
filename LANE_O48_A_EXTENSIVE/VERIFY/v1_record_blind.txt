@@ -1,0 +1,59 @@
+==============================================================================================================
+V1  IS THE PASSING QUANTITY RECORD-BLIND?  Control carrier with a field: ZERO records exist.
+==============================================================================================================
+
+STEP 1  DOES THE CONTROL CARRIER HOLD ANY RECORD AT ALL?
+  n  #distinct energies      2^n  NON-DEGENERATE  max|Tr(P_E Z_i)| FIELD  clause_iii(Z_1) FIELD  [CONTROL] no-field max|Tr|  clause_iii(Z_1) no-field
+  4                  16       16            True                       1                  False                           0                      True
+  6                  64       64            True                       1                  False                           0                      True
+  8                 256      256            True                       1                  False                           0                      True
+ 10                1024     1024            True                       1      (dense too large)                           0         (dense too large)
+ 12                4096     4096            True                       1      (dense too large)                           0         (dense too large)
+READ: with the field the spectrum is non-degenerate, every eigenspace is 1-dimensional, so
+      clause (iii) is UNSATISFIABLE by ANY operator and clause (iv) fails for every Z_i
+      (max|Tr| non-zero). The control carrier holds NO RECORDS WHATSOEVER.
+      The no-field columns are the lane's carrier, shown alongside: trace 0, clause (iii) True.
+
+STEP 2  RUN THE LANE'S FOUR STANDARDS ON THE RECORD-FREE CARRIER.
+(a) EXTENSIVE, (b) ADDITIVE, (c) NOT A COUNT, (d) SIGN-DEFINITE.
+
+(a) EXTENSIVITY.  S and Var by full 2^n enumeration on the FIELD carrier (no records).
+  n      S_field/D  S_field(n)/S_field(n/2)    Var_field/D^2   Var(n)/Var(n/2)  [lane] S_norecord? 
+  2       1.988509                        -         0.576248                 -           NO RECORDS
+  4       6.140879                 3.088182         2.212996          3.840352           NO RECORDS
+  6      10.068545                        -         3.811549                 -           NO RECORDS
+  8      14.348185                 2.336504         5.618118          2.538693           NO RECORDS
+ 10      17.399881                        -         6.645716                 -           NO RECORDS
+ 12      21.476492                 2.133028         8.376664          2.197706           NO RECORDS
+ 14      24.687910                        -         9.412852                 -           NO RECORDS
+ 16      28.456212                 1.983262        10.903571          1.940787           NO RECORDS
+CLOSED FORM CHECK on the field carrier: S_field = 2*(sum|J| + sum|h|)?  [False, False, False, False, False, False, False, False]
+READ: S(2N)/S(N) -> 2 and Var(2N)/Var(N) -> 2 on a carrier with NO RECORDS.
+
+(b) ADDITIVITY on the record-free carrier, same protocol as S3 (cut the boundary bond).
+  n   m   DEC spread defect             DEC var defect   CTL spread defect             CTL var defect
+  4   2                   0                          0       1831811239194   838883104009364470442409
+  6   3                   0                          0       1643000269606   875729654520222545651556
+  8   4                   0                          0       1908740670070   910822736394818148451225
+ 10   5                   0                          0        899904357802   447428254454514531525625
+ 12   6                   0                          0       1391542474200   587241491109376549694329
+READ: exactly additive over disjoint regions, live control non-zero -- ON A CARRIER WITH NO RECORDS.
+
+(c) NOT A COUNT, on the record-free carrier: 200 coupling+field draws at fixed n.
+  n   distinct S / 200      min S/D      max S/D   max/min  CONTROL count n
+  6                200     9.665291    13.864787    1.4345                6
+  8                200    13.865791    18.696698    1.3484                8
+ 10                200    17.749931    23.332493    1.3145               10
+READ: 200 distinct values from 200 draws. NOT A COUNT -- with no records present.
+
+(d) SIGN-DEFINITENESS (C-46) on the record-free carrier: terms 2|J_i| and 2|h_i|.
+  n   |sum|/sum|.| FIELD carrier   [lane carrier]
+  4                     1.000000         1.000000
+  8                     1.000000         1.000000
+ 16                     1.000000         1.000000
+ 64                     1.000000         1.000000
+READ: ratio exactly 1 on the record-free carrier too.
+
+VERDICT V1: all four standards the lane reports as PASSED are passed IDENTICALLY by a
+carrier that holds zero records. The passing quantity is a functional of H alone -- the
+spectral width and the trace variance -- and knows nothing about what is written.

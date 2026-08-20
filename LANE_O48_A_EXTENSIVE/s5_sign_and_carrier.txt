@@ -1,0 +1,131 @@
+====================================================================================================================
+S5  WHO CARRIES THE ENERGY, AND DOES IT CANCEL
+====================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------
+(A) THE ENERGY IS BLIND TO THE RECORDS AND SEES ONLY THEIR CORRELATIONS.
+    Two configuration-diagonal states are built at each n:
+      rho_F  = uniform over { all-up , all-down }        (ferromagnetic pair)
+      rho_A  = uniform over { alternating , its flip }   (antiferromagnetic pair)
+    Both are invariant under the admissible writer found in S1, so both have <Z_i> = 0 for
+    every record. Their energies are compared.
+    LIVE CONTROL: a third state rho_P = the pure all-up configuration, whose <Z_i> = +1 for
+    every record -- so the <Z_i> column is not stuck at zero by the instrument.
+--------------------------------------------------------------------------------------------------------------------
+  n   max_i |<Z_i>| rho_F   max_i |<Z_i>| rho_A     E(rho_F)/D     E(rho_A)/D   DIFFER?  CONTROL max_i|<Z_i>| rho_P
+  2              0.000000              0.000000       0.587730      -0.587730      True                    1.000000
+  3              0.000000              0.000000       1.420741      -1.420741      True                    1.000000
+  4              0.000000              0.000000       2.271850      -2.271850      True                    1.000000
+  5              0.000000              0.000000       3.139845      -3.139845      True                    1.000000
+  6              0.000000              0.000000       3.748207      -3.748207      True                    1.000000
+  7              0.000000              0.000000       4.445168      -4.445168      True                    1.000000
+  8              0.000000              0.000000       5.426476      -5.426476      True                    1.000000
+  9              0.000000              0.000000       5.958534      -5.958534      True                    1.000000
+ 10              0.000000              0.000000       6.700546      -6.700546      True                    1.000000
+ 11              0.000000              0.000000       7.404771      -7.404771      True                    1.000000
+ 12              0.000000              0.000000       8.378973      -8.378973      True                    1.000000
+ 13              0.000000              0.000000       9.055409      -9.055409      True                    1.000000
+ 14              0.000000              0.000000       9.704890      -9.704890      True                    1.000000
+ 15              0.000000              0.000000      10.518868     -10.518868      True                    1.000000
+ 16              0.000000              0.000000      11.328167     -11.328167      True                    1.000000
+READ: every record is perfectly balanced in BOTH states -- clause (iv)'s condition holds and
+      the admissible writer flips them for free -- yet the two states differ in energy at
+      every n. The control shows the <Z_i> column can register a non-zero.
+      THE ENERGY IS CARRIED BY THE PAIR CORRELATIONS Z_i Z_{i+1}, NOT BY THE RECORDS.
+      INDUCED at general n by the writer SEARCH of S1; only the bond form of H was inserted.
+
+    The converse, also exact: states with the SAME energy but DIFFERENT record values.
+  n    E(all-up)/D    E(all-down)/D   equal?   <Z_1> up   <Z_1> down   differ?
+  2       0.587730         0.587730     True          1           -1      True
+  3       1.420741         1.420741     True          1           -1      True
+  4       2.271850         2.271850     True          1           -1      True
+  5       3.139845         3.139845     True          1           -1      True
+  6       3.748207         3.748207     True          1           -1      True
+  7       4.445168         4.445168     True          1           -1      True
+  8       5.426476         5.426476     True          1           -1      True
+  9       5.958534         5.958534     True          1           -1      True
+ 10       6.700546         6.700546     True          1           -1      True
+ 11       7.404771         7.404771     True          1           -1      True
+ 12       8.378973         8.378973     True          1           -1      True
+ 13       9.055409         9.055409     True          1           -1      True
+ 14       9.704890         9.704890     True          1           -1      True
+ 15      10.518868        10.518868     True          1           -1      True
+ 16      11.328167        11.328167     True          1           -1      True
+READ: record values move at fixed energy, and energy moves at fixed record values. The two
+      are independent coordinates. Clause (iv) constrains one of them and says nothing about
+      the other -- which is exactly the opening O-47 found, holding at every n up to 16.
+
+--------------------------------------------------------------------------------------------------------------------
+(B) C-46 ACCUMULATION TEST, |sum of terms| / sum of |terms|, over the EXACT distribution of
+    all 2^n configurations. Terms are the bond contributions J_i s_i s_{i+1}.
+    A quantity with ratio 1 accumulates without bound; one with ratio -> 0 screens.
+    CONFIG-INDEPENDENT part (the spread) has terms 2|J_i|, all positive: ratio = 1 by form.
+--------------------------------------------------------------------------------------------------------------------
+  n   ratio, GROUND cfg   ratio, ALIGNED cfg   MEAN ratio over all 2^n   frac of cfgs with ratio<0.5   SPREAD ratio
+  2            1.000000             1.000000                  1.000000                      0.000000       1.000000
+  3            1.000000             1.000000                  0.586322                      0.500000       1.000000
+  4            1.000000             1.000000                  0.500000                      0.750000       1.000000
+  5            1.000000             1.000000                  0.406408                      0.750000       1.000000
+  6            1.000000             1.000000                  0.375000                      0.625000       1.000000
+  7            1.000000             1.000000                  0.331033                      0.781250       1.000000
+  8            1.000000             1.000000                  0.312500                      0.828125       1.000000
+  9            1.000000             1.000000                  0.290193                      0.812500       1.000000
+ 10            1.000000             1.000000                  0.274591                      0.851562       1.000000
+ 11            1.000000             1.000000                  0.258243                      0.880859       1.000000
+ 12            1.000000             1.000000                  0.247540                      0.902344       1.000000
+ 13            1.000000             1.000000                  0.235871                      0.907715       1.000000
+ 14            1.000000             1.000000                  0.227019                      0.920898       1.000000
+ 15            1.000000             1.000000                  0.217883                      0.938354       1.000000
+ 16            1.000000             1.000000                  0.210614                      0.946655       1.000000
+ 17            1.000000             1.000000                  0.203600                      0.950684       1.000000
+ 18            1.000000             1.000000                  0.197550                      0.958084       1.000000
+ 19            1.000000             1.000000                  0.191701                      0.965843       1.000000
+ 20            1.000000             1.000000                  0.186868                      0.970116       1.000000
+READ: the EXTREMAL configurations (ground and aligned) have ratio EXACTLY 1 -- every bond
+      term carries the same sign and nothing cancels. The MEAN over all configurations falls
+      steadily toward 0 and the fraction of configurations that cancel more than half rises
+      toward 1. SIGN-DEFINITENESS OF THE CONFIGURATION-DEPENDENT PART IS A PROPERTY OF THE
+      CONFIGURATION, NOT OF THE QUANTITY. The configuration-INDEPENDENT part passes C-46
+      unconditionally, because its terms are 2|J_i| and cannot cancel.
+
+    Asymptotics of the mean ratio, exact enumeration only -- this is a NUMERICAL TREND over
+    2 <= n <= 20 and is NOT claimed as an asymptotic law (D-20). Two candidate forms are
+    printed with no selection made between them.
+  n    mean ratio    1/sqrt(n)   ratio*sqrt(n)    ratio*n
+  4      0.500000     0.500000        1.000000   2.000000
+  6      0.375000     0.408248        0.918559   2.250000
+  8      0.312500     0.353553        0.883883   2.500000
+ 10      0.274591     0.316228        0.868334   2.745912
+ 12      0.247540     0.288675        0.857505   2.970485
+ 14      0.227019     0.267261        0.849426   3.178260
+ 16      0.210614     0.250000        0.842454   3.369817
+ 18      0.197550     0.235702        0.838133   3.555899
+ 20      0.186868     0.223607        0.835699   3.737358
+READ: ratio*sqrt(n) is far flatter than ratio*n over this range, which is consistent with a
+      1/sqrt(n) decay, but 2 <= n <= 20 is a SHORT RANGE and D-20 forbids calling it an
+      asymptotic law from this table. What the table does establish without a fit is the
+      DIRECTION: the mean ratio is falling, so typical configurations SCREEN.
+
+--------------------------------------------------------------------------------------------------------------------
+SEPARATION (standard (e)) -- stated so it is not mistaken for a measurement.
+Every term of this H couples NEAREST NEIGHBOURS ONLY. That was INSERTED. Any two-point
+function of this carrier is therefore contact-or-nothing by construction and NO separation
+law can be read off it. Demonstrated, not argued:
+--------------------------------------------------------------------------------------------------------------------
+  n   d  <Z_1 Z_{1+d}> in the ground state   d(E)/d a_i at distance d
+ 12   1                                 -1        nonzero only at d=1
+ 12   2                                  1            0 (no coupling)
+ 12   3                                 -1            0 (no coupling)
+ 12   4                                  1            0 (no coupling)
+ 12   5                                 -1            0 (no coupling)
+ 12   6                                  1            0 (no coupling)
+ 12   7                                 -1            0 (no coupling)
+ 12   8                                  1            0 (no coupling)
+ 12   9                                 -1            0 (no coupling)
+ 12  10                                  1            0 (no coupling)
+ 12  11                                 -1            0 (no coupling)
+READ: the ground-state correlator is +-1 at EVERY separation -- it does not fall off at all,
+      because the ground state is a single product configuration. And the energy has no
+      dependence on any coupling at distance > 1 because none was put in. THIS CARRIER CANNOT
+      POSE THE SEPARATION QUESTION. No falloff, power-law or exponential, is measured here,
+      and none should be reported from it.

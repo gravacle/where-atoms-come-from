@@ -13,11 +13,11 @@ checkable rather than a judgement call.**
 
 **Nothing below counts as finished until both halves of that sentence are true.**
 
-**16 of 22 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**16 of 27 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
-| DONE | DOING | TODO |
-|---|---|---|
-| 16 | 1 | 5 |
+| DONE | DOING | TODO | BLOCKED |
+|---|---|---|---|
+| 16 | 2 | 5 | 4 |
 
 ---
 
@@ -56,21 +56,26 @@ checkable rather than a judgement call.**
 | **T-14** | ALPHA'S ROLE, RESTATED AFTER PF-6. Theorem D's eps^d was rescoped to GENERIC single-site perturbations; the Z-only case gives eps^n*. Restate alpha's role in mapped terms | **DONE** | the alpha row states which perturbation class it holds for, with both exponents measured | T-1 |
 | **T-22** | GIVE ALPHA REAL CONTENT (H-2). Nothing in the corpus is dimensionful and the fine structure constant is connected to no number. Either connect it or state plainly that 'alpha' names a generic coupling here | **DONE** | either a registered result in which alpha's VALUE matters, or an explicit statement in the anchor that alpha stands for a generic coupling strength | — |
 
-## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  1/2 done
+## PHASE E  THE CLAIM: DOES GRAVITY EMERGE?  —  1/7 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
 | ▶ **T-20** | **DOES CLASSICAL GRAVITY EMERGE FROM RECORDS? Build a COLLECTIVE quantity from MANY records and ask whether it obeys anything Einstein-constraint-like — without importing the constraint (D-1 binds: the classical form may be recovered, never assumed or used as the test)** | **DONE** | a many-record collective quantity is defined, computed, and either shown to satisfy a constraint of the right type or shown not to — with the classical form never used as a criterion | T-6, T-9, T-13 |
 | **T-21** | REVISIT X-2 AT THE COLLECTIVE LEVEL. The record-level reclassification stands; the emergence question it foreclosed does not | TODO | X-2 carries an explicit note distinguishing the record-level question (category error, closed) from the collective one (open, = T-20) | T-20 |
+| ▶ **T-23** | **IS THE CORRELATION ENERGY A SOURCE? O-47 exhibited an interaction energy between records that coexists with FREE single-record writes and costs no clause -- the first structure with a source's shape not paid for by breaking something. Test it against all five standards** | **DOING** | the correlation energy is measured against extensive, additive, not-a-count, sign-definite and power-law-falloff; every verdict marked EXACT or TREND; and every effect labelled INSERTED or INDUCED | T-20 |
+| ▶ **T-24** | **CLAUSE (v) ON THE CARRIERS WHERE THE ENERGY LIVES. Protection was never tested in O-42, O-44 or O-47, nor anywhere in O-36 on the non-abelian carrier. Without it these are records in four clauses, not five** | TODO | protection is checked on the correlation carriers and on D(D_4), with the contractible-region size swept, or it is stated plainly that these are four-clause records and every claim resting on them is scoped that way | T-23 |
+| **T-25** | SETTLE WHAT ADMISSIBLE MEANS. DEF-A -- a unitary with [U,H] = 0 -- is marked PROVISIONAL on one carrier family, its physical-channel disjunct is UNTESTED, and clause (v) is stated with the same word so protection moves with it. O-44 showed it was briefly the sole support of the program's strongest negative result | TODO | either a definition is adopted and clauses (iv) and (v) are re-run under it on two carriers, or the framework states plainly that DEF-A is a CHOICE and names every row that turns on it | — |
+| **T-26** | RE-AUDIT EVERY REGISTERED NULL AGAINST THE VENUE RULE. Four measurements in one session were taken where the effect could not appear -- abelian carriers for a frame rotation, one-qubit bath sites for a capacity question, gauge-invariant states for transport, a non-degenerate H for a record. D-22 says a permutation-symmetric carrier has no geometry to detect at all | TODO | every registered null either cites the carrier's demonstrated capacity to show the effect -- a positive control in the same table -- or is rescoped to absence-within-range or absence-in-this-venue | — |
+| **T-27** | BRING PROCESS_V002 AND THE ANCHOR CURRENT. One session withdrew C-37 and C-55, rescoped C-29, C-30, C-32, C-33, C-36 and C-43, failed O-42, and reopened then reclosed O-4. The process document and the anchor sentence predate all of it | TODO | PROCESS_V002.md and the anchor cite no WITHDRAWN or FAILED row, every sentence traces to a live ledger row, and the anchor's claim about gravity matches what the ledger now says | T-23 |
 
 ## PHASE F  WRITE AND CHECK THE PROOF  —  0/4 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
-| ▶ **T-15** | **THE THREE ROLES AS ONE STATEMENT. EM supplies the complex and the record; Gamma supplies space, writer, protection and channel; alpha sets the cost** | TODO | A-PR restated with every clause citing a two-carrier row, and no clause resting on a WITHDRAWN or PARTIAL row | T-9, T-14, T-20 |
-| ▶ **T-16** | **WRITE THE PROOF. End to end: what is claimed, the theorems, the evidence, and what each rests on** | TODO | PROOF_V002.md, every step citing a ledger row, no step resting on a single carrier unless marked | T-15 |
-| **T-17** | STATE THE LIMITS IN THE PROOF ITSELF. PF-6 failed; X-4, T-VI.3, T-VI.4 are BLOCKED; empirical contact is zero | TODO | the limits section names every BLOCKED row and says plainly that this is a mathematical result with no empirical contact | T-16 |
-| ▶ **T-18** | **EXTERNAL CHECK. Someone outside the program reproduces the result from REPLICATE.md alone** | TODO | reproduce.sh passes end to end on a clean clone, and every headline number in PROOF_V002 is traceable to a sealed lane output | T-16 |
+| ▶ **T-15** | **THE THREE ROLES AS ONE STATEMENT. EM supplies the complex and the record; Gamma supplies space, writer, protection and channel; alpha sets the cost** | **BLOCKED** | A-PR restated with every clause citing a two-carrier row, and no clause resting on a WITHDRAWN or PARTIAL row | T-9, T-14, T-20, T-23 |
+| ▶ **T-16** | **WRITE THE PROOF. End to end: what is claimed, the theorems, the evidence, and what each rests on** | **BLOCKED** | PROOF_V002.md, every step citing a ledger row, no step resting on a single carrier unless marked | T-15, T-23 |
+| **T-17** | STATE THE LIMITS IN THE PROOF ITSELF. PF-6 failed; X-4, T-VI.3, T-VI.4 are BLOCKED; empirical contact is zero | **BLOCKED** | the limits section names every BLOCKED row and says plainly that this is a mathematical result with no empirical contact | T-16 |
+| ▶ **T-18** | **EXTERNAL CHECK. Someone outside the program reproduces the result from REPLICATE.md alone** | **BLOCKED** | reproduce.sh passes end to end on a clean clone, and every headline number in PROOF_V002 is traceable to a sealed lane output | T-16 |
 
 ## PHASE G  CONTINUOUS  —  0/1 done
 

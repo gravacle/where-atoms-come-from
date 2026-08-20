@@ -1,0 +1,109 @@
+======================================================================================================================
+S7  THE STANDARD APPLIED
+======================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------------
+D-22 FOR VENUE 2. r decoupled blocks could easily be block-permutation symmetric. Counted by
+BRUTE FORCE over all n! site permutations. CONTROL: the same block geometry with EVERY block
+given the SAME coupling list, which must show the block-permutation symmetry.
+----------------------------------------------------------------------------------------------------------------------
+  r   w   n   |Aut| distinct-J blocks   |Aut| identical blocks [CONTROL]     r!   2^r . r!
+  2   2   4                         4                                  8      2          8
+  3   2   6                         8                                 48      6         48
+  2   3   6                         1                                  2      2          8
+  4   2   8                        16                                384     24        384
+  2   4   8                         1                                  2      2          8
+  3   3   9                         1                                  6      6         48
+READ, FROM THE NUMBERS AND NOT FROM THE EXPECTATION: venue 2 splits into two cases.
+  BLOCK SIZE w >= 3, distinct couplings:  |Aut| = 1. Fully rigid. Geometry present.
+  BLOCK SIZE w = 2, distinct couplings:   |Aut| = 2^r, NOT 1 -- a two-site block is a single
+      bond and swapping its two endpoints preserves it. Those 2^r symmetries act INSIDE
+      blocks and never exchange one block with another, so they do not make the r blocks
+      interchangeable; but the claim '|Aut| = 1' is FALSE at w = 2 and is not made.
+  CONTROL, identical blocks: |Aut| = 2^r . r!, matching the last column exactly -- the block-
+      permutation factor r! appears precisely when the blocks are made interchangeable, so
+      the counter is live and would have caught a permutation-symmetric venue.
+CONSEQUENCE FOR THIS LANE: every venue-2 measurement reported here uses w >= 2 with distinct
+couplings, and the quantities measured (spread, variance) were already shown in S4 to be
+symmetric functions of the coupling multiset, so no separation claim rests on w = 2 rigidity.
+
+----------------------------------------------------------------------------------------------------------------------
+IS THE ENERGY EXTENSIVE IN THE NUMBER OF INDEPENDENT RECORDS?  Block size w held FIXED,
+r doubled. r is the exact bit ceiling S6 measured, so this is extensivity per record, not
+per site. Exact closed form, verified against enumeration where it fits.
+----------------------------------------------------------------------------------------------------------------------
+  block size w = 2
+           r   n = r*w           S(r)/D       Var(r)/D^2    S(2r)/S(r)   Var(2r)/Var(r)   S per record  enum agrees
+           1         2         1.175460         0.345426      2.448130         3.097079       1.175460         True
+           2         4         2.877678         1.069813      2.104828         2.246078       1.438839         True
+           4         8         6.057018         2.402883      2.048369         2.072230       1.514255         True
+           8        16        12.407007         4.979326      2.012643         2.007858       1.550876         True
+          16        32        24.970871         9.997779      2.013828         2.019669       1.560679            -
+          32        64        50.287029        20.192203      1.962291         1.935482       1.571470            -
+        1024      2048      1541.309833       601.257301      1.996159         1.993105       1.505185            -
+       65536    131072     98293.533079     38220.541099      1.999038         1.998229       1.499840            -
+  block size w = 3
+           r   n = r*w           S(r)/D       Var(r)/D^2    S(2r)/S(r)   Var(2r)/Var(r)   S per record  enum agrees
+           1         3         2.841482         1.039334      2.039145         2.080999       2.841482         True
+           2         6         5.794195         2.162853      2.101721         2.244215       2.897098         True
+           4        12        12.177782         4.853907      2.041552         2.061810       3.044445         True
+           8        24        24.861575        10.007837      2.003894         1.999109       3.107697            -
+          16        48        49.819961        20.006759      1.996385         1.989622       3.113748            -
+          32        96        99.459837        39.805880      1.962194         1.932595       3.108120            -
+        1024      3072      3067.092434      1191.231928      2.000476         2.000496       2.995207            -
+       65536    196608    196463.382656     76346.868286      2.000170         2.000476       2.997793            -
+  block size w = 4
+           r   n = r*w           S(r)/D       Var(r)/D^2    S(2r)/S(r)   Var(2r)/Var(r)   S per record  enum agrees
+           1         4         4.543700         1.763721      2.006506         2.031243       4.543700         True
+           2         8         9.116963         3.582546      2.029553         2.042536       4.558481         True
+           4        16        18.503356         7.317480      2.057967         2.109053       4.625839         True
+           8        32        38.079301        15.432956      1.960159         1.927691       4.759913            -
+          16        64        74.641481        29.749968      1.981533         1.974267       4.665093            -
+          32       128       147.904562        58.734388      1.967195         1.936999       4.622018            -
+        1024      4096      4604.985360      1789.519832      1.998747         1.998552       4.497056            -
+       65536    262144    294670.972218    114505.274691      2.000413         2.000845       4.496322            -
+READ: at fixed block size, doubling the number of INDEPENDENT RECORDS doubles the energy
+spread and the variance, and the spread per record is constant. EXTENSIVE IN THE RECORD
+COUNT, not only in the site count.
+
+----------------------------------------------------------------------------------------------------------------------
+COUNT TEST IN VENUE 2: hold r AND the block size fixed, move the couplings. 400 draws.
+CONTROL column: r itself, which cannot move.
+----------------------------------------------------------------------------------------------------------------------
+   r   w      min S/D      max S/D   max/min   distinct values / 400  CONTROL r
+   2   3     4.322149     7.467279    1.7277                     400          2
+   4   3     9.572680    13.990719    1.4615                     400          4
+   8   2     9.394854    14.227840    1.5144                     400          8
+   4   4    15.252393    20.442503    1.3403                     400          4
+READ: venue 2's spread moves at fixed record count and takes 400 distinct values in 400
+draws. NOT A COUNT there either.
+
+======================================================================================================================
+VERDICT TABLE. Every cell is filled from a number printed above, none in advance.
+======================================================================================================================
+
+                                          SPREAD  max E - min E     VARIANCE  Var_s E(s)      E(s), typical s
+                                           (config-independent)     (config-independent)   (config-dependent)
+----------------------------------------------------------------------------------------------------------------------
+(a) EXTENSIVE, S(2N)/S(N) -> 2           YES  exact, ratio -> 2   YES  exact, ratio -> 2  NO  grows as sqrt n
+    at a FIXED environment                   YES  prefix stream       YES  prefix stream                  YES
+    extensive in the RECORD count             YES  venue 2 only        YES  venue 2 only                   NO
+(b) ADDITIVE over disjoint regions         YES  exact integer 0     YES  exact integer 0 YES  exact integer 0
+    live control fires                     YES  defect = 2|J_m|      YES  defect = J_m^2 YES  defect = J_m t_m
+(c) NOT merely a count                      YES  400/400 values      YES  400/400 values                  YES
+    moves under venue scale (D-17)           YES  degree 1 in J       YES  degree 2 in J                  YES
+    sees WHERE couplings sit                NO   symmetric in J      NO   symmetric in J      YES  400 values
+(d) SIGN-DEFINITE, C-46 ratio              YES  ratio = 1 exact     YES  terms J_i^2 > 0 NO   mean ratio -> 0
+(e) SEPARATION with power-law tail                    NOT POSED                NOT POSED            NOT POSED
+----------------------------------------------------------------------------------------------------------------------
+(e) reads NOT POSED, not NO: this H couples nearest neighbours only and that was INSERTED,
+so the carrier cannot answer the separation question either way. Reporting a null here would
+be reporting the input.
+
+D-22 STATUS: venue 1 has |Aut| = 1 for n = 3..8 by brute force over all n! permutations, and
+by the distinctness + non-palindrome obstruction for n = 9..16. Venue 2 has |Aut| = 1 at
+block size w >= 3 and |Aut| = 2^r at w = 2, from block-internal endpoint swaps that never
+exchange blocks; the identical-block control returns 2^r . r! and so is live. Neither venue
+is permutation-symmetric in the sense D-22 forbids. The config-INDEPENDENT observables are
+nevertheless blind to placement, which is a fact about the OBSERVABLE, not the carrier --
+and it is the reason no separation law can be extracted from them.

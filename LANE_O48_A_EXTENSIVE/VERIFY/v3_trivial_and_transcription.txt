@@ -1,0 +1,45 @@
+================================================================================================================
+V3-A  IS S JUST 2*||H||_op AND Var JUST Tr(H^2)/dim?  (both non-negative BY CONSTRUCTION)
+================================================================================================================
+  n    S (enum)/D    2*||H||_op   match       Var/D^2    Tr(H^2)/2^n   match  ||H||_op == sum|J| ?
+  2      1.175460      1.175460    True      0.345426       0.345426    True                  True
+  3      2.841482      2.841482    True      1.039334       1.039334    True                  True
+  4      4.543700      4.543700    True      1.763721       1.763721    True                  True
+  5      6.279690      6.279690    True      2.517136       2.517136    True                  True
+  6      7.496413      7.496413    True      2.887240       2.887240    True                  True
+  7      8.890336      8.890336    True      3.372995       3.372995    True                  True
+  8     10.852953     10.852953    True      4.335961       4.335961    True                  True
+READ: S is exactly twice the operator norm of H and Var is exactly Tr(H^2)/dim. Both are
+      standard spectral norms of the Hamiltonian, defined without reference to any record.
+
+================================================================================================================
+V3-B  CAN THE C-46 SIGN TEST ON S EVER FAIL IN THIS FAMILY?  A test that cannot fail is
+      not evidence. Try to break it: mixed-sign couplings, antiferromagnetic, alternating,
+      and a coupling set summing to zero.
+================================================================================================================
+                   coupling family   sum_i J_i / D (can cancel)          S/D  S == 2*sum|J| ?  C-46 ratio on S terms
+                lane's own (all +)                     5.426476    10.852953             True               1.000000
+     all antiferromagnetic (all -)                    -5.426476    10.852953             True               1.000000
+                 alternating signs                     0.630542    10.852953             True               1.000000
+                      random signs                     2.507535    10.852953             True               1.000000
+     signs chosen so sum_i J_i = 0                     0.000000    19.354986             True               1.000000
+READ: the C-46 ratio on S is 1 for EVERY member of the family, including one whose couplings
+      sum exactly to zero. The terms are |J_i| because an absolute value was taken when the
+      spread was decomposed. No carrier in this family can make the test fail.
+      CONTRAST, in the same table's units: the CONFIGURATION-dependent bond terms J_i t_i
+      (no absolute value) do cancel -- that is the lane's own falling ratio.
+                                   sum_i J_i t_i for a random s
+            random configuration 0                     0.436108   <- unsigned decomposition, ratio < 1
+            random configuration 1                     0.743126   <- unsigned decomposition, ratio < 1
+            random configuration 2                     0.114693   <- unsigned decomposition, ratio < 1
+
+================================================================================================================
+V3-C  TRANSCRIPTION CHECK: the finding's S4 table vs the lane's own s4_count.txt
+================================================================================================================
+  n=8: RECOMPUTED min 8.648892  max 12.857377  max/min 1.4866
+  n=16: RECOMPUTED min 19.584455  max 25.179459  max/min 1.2857
+  lane file s4_count.txt   n=8 : min 8.648892  max 12.857377  max/min 1.4866
+  lane file s4_count.txt   n=16: min 19.584455 max 25.179459  max/min 1.2857
+  FINDING's reported table n=8 : min 9.8688    max 12.0313    max/min 1.2191
+  FINDING's reported table n=16: min 22.0093   max 24.9861    max/min 1.1352
+READ: filled from the numbers above.

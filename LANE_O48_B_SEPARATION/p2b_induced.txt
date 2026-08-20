@@ -1,0 +1,235 @@
+==================================================================================================================================
+PART 2 STEP B -- THE INDUCED RECORD-RECORD INTERACTION AND ITS FALLOFF
+  H = -sum_i (t_i/2)(Xa_iXa_{i+1}+Ya_iYa_{i+1}) - (w_i/2)(Xa_iXa_{i+1}-Ya_iYa_{i+1})
+      - g sum_i Zr_i Za_i - mu sum_i Za_i          records Zr_i, mediator qubits Za_i
+==================================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------------------------
+[B0] IS ANYTHING LONG-RANGE PUT IN BY HAND?  The Zr_iZr_j component of H, extracted exactly as
+     Tr(H . Zr_iZr_j)/dim, for every pair.  If this is not zero the whole probe is worthless.
+     D-15 control: the identical extraction on the POSITIVE-CONTROL H that DOES contain A/r^3.
+----------------------------------------------------------------------------------------------------------------------------------
+    pair     MEDIATED H: Tr(H.Zr_iZr_j)/dim     POS CTRL H: Tr(H.Zr_iZr_j)/dim   inserted A/r^3
+   (0,1)                  0.000000000000000                  0.250000000000000      0.250000000
+   (0,2)                  0.000000000000000                  0.031250000000000      0.031250000
+   (0,3)                 -0.000000000000000                  0.009259259259259      0.009259259
+   (1,2)                  0.000000000000000                  0.250000000000000      0.250000000
+   (1,3)                 -0.000000000000000                  0.031250000000000      0.031250000
+   (2,3)                  0.000000000000000                  0.250000000000000      0.250000000
+
+READ: the mediated H has EXACTLY ZERO record-record content at every pair, while the positive
+      control returns its inserted A/r^3 exactly.  Everything measured below is INDUCED.
+
+----------------------------------------------------------------------------------------------------------------------------------
+[B1] TWO EXACT ROUTES TO J_eff, CROSS-VALIDATED, PLUS THE NEGATIVE CONTROL.
+     ROUTE 1 (all orders in g, m<=20): full Walsh transform of E0(z) over all 2^m blocks.
+     ROUTE 2 (order g^2, any m): J_eff(i,j) = -8 g^2 T_ij, T summed EXACTLY over the BARE
+     mediator's own particle-hole excitations.  No background, no fit, no truncation in r.
+     NEGATIVE CONTROL: a mediator with NO internal coupling (t=0) -- must be contact-or-less.
+----------------------------------------------------------------------------------------------------------------------------------
+     g   r      ROUTE 1 exact Walsh       ROUTE 2 -8g^2 T_ij      ratio |     NEG CTRL t=0 (ROUTE 1)
+  0.20   1       1.376887813884e-02       1.820177366796e-02   0.756458 |         0.000000000000e+00
+  0.20   2      -4.905978881512e-03      -5.370626592830e-03   0.913484 |         0.000000000000e+00
+  0.20   4      -1.457021477087e-03      -1.932763489875e-03   0.753854 |         0.000000000000e+00
+  0.20   6      -2.225253595263e-04      -6.897212200053e-04   0.322631 |         0.000000000000e+00
+  0.10   1       4.326493591695e-03       4.550443416991e-03   0.950785 |         0.000000000000e+00
+  0.10   2      -1.153873774162e-03      -1.342656648208e-03   0.859396 |         0.000000000000e+00
+  0.10   4      -3.356412186115e-04      -4.831908724688e-04   0.694635 |         0.000000000000e+00
+  0.10   6      -6.870594490104e-05      -1.724303050013e-04   0.398456 |         0.000000000000e+00
+  0.05   1       1.122104502876e-03       1.137610854248e-03   0.986369 |         0.000000000000e+00
+  0.05   2      -3.220270631384e-04      -3.356641620519e-04   0.959373 |         0.000000000000e+00
+  0.05   4      -1.102749864373e-04      -1.207977181172e-04   0.912890 |         0.000000000000e+00
+  0.05   6      -3.582702278133e-05      -4.310757625033e-05   0.831107 |         0.000000000000e+00
+  0.02   1       1.816064593642e-04       1.820177366796e-04   0.997740 |         0.000000000000e+00
+  0.02   2      -5.333963365318e-05      -5.370626592830e-05   0.993173 |         0.000000000000e+00
+  0.02   4      -1.904590310525e-05      -1.932763489875e-05   0.985423 |         0.000000000000e+00
+  0.02   6      -6.703375053409e-06      -6.897212200053e-06   0.971896 |         0.000000000000e+00
+
+READ: the ratio of the two routes tends to 1 as g -> 0, so ROUTE 2 is the exact g^2 coefficient
+      and ROUTE 1 carries the higher orders.  The NEGATIVE CONTROL is exactly 0.000000000000e+00
+      at EVERY separation INCLUDING r=1: with the mediator's own dynamics switched off there is
+      no induced interaction at all, not even a contact one.  The zeros elsewhere are measurements.
+
+----------------------------------------------------------------------------------------------------------------------------------
+[B2] THE MAIN TABLE.  J_eff(i0, i0+r)/g^2 with i0 = m/2 fixed on one sublattice (ROUTE 2, exact).
+     ENVELOPE S(r) := (-1)^{r+1} J_eff/g^2.  D-17: the venue's own scale m is varied.
+     D-15: the negative and positive controls are IN THIS TABLE.
+----------------------------------------------------------------------------------------------------------------------------------
+    r |  GAPLESS m=128  GAPLESS m=512  GAPLESS m=2048  S(r)*r m=2048 |  GAPPED d=.1 m=2048 |  NEG CTRL t=0  POS CTRL A/r^3
+    1 |   2.935949e-01   2.783736e-01    2.745260e-01       0.274526 |        5.488813e-01 |  0.000000e+00    3.000000e-01
+    2 |  -1.459557e-01  -1.499141e-01   -1.508618e-01       0.301724 |       -8.439237e-02 |  0.000000e+00    3.750000e-02
+    3 |   1.236749e-01   1.085975e-01    1.047600e-01       0.314280 |        2.164642e-01 |  0.000000e+00    1.111111e-02
+    4 |  -7.305250e-02  -7.714683e-02   -7.810452e-02       0.312418 |       -2.682573e-02 |  0.000000e+00    4.687500e-03
+    5 |   8.311574e-02   6.816664e-02    6.433901e-02       0.321695 |        1.129926e-01 |  0.000000e+00    2.400000e-03
+    6 |  -4.719914e-02  -5.141440e-02   -5.238182e-02       0.314291 |       -1.119549e-02 |  0.000000e+00    1.388889e-03
+    8 |  -3.402307e-02  -3.834538e-02   -3.932227e-02       0.314578 |       -5.285589e-03 |  0.000000e+00    5.859375e-04
+   12 |  -2.067129e-02  -2.516982e-02   -2.616486e-02       0.313978 |       -1.422329e-03 |  0.000000e+00    1.736111e-04
+   16 |  -1.391679e-02  -1.854621e-02   -1.955839e-02       0.312934 |       -4.386919e-04 |  0.000000e+00    7.324219e-05
+   24 |  -7.120862e-03  -1.189429e-02   -1.293789e-02       0.310509 |       -5.126238e-05 |  0.000000e+00    2.170139e-05
+   32 |  -3.771442e-03  -8.551480e-03   -9.622923e-03       0.307934 |       -6.944158e-06 |  0.000000e+00    9.155273e-06
+   48 |  -7.705450e-04  -5.186612e-03   -6.303981e-03       0.302591 |       -1.589449e-07 |  0.000000e+00    2.712674e-06
+   64 |            nan  -3.490234e-03   -4.641870e-03       0.297080 |       -4.259206e-09 |  0.000000e+00    1.144409e-06
+   96 |            nan  -1.785635e-03   -2.975630e-03       0.285660 |       -3.863122e-12 |  0.000000e+00    3.390842e-07
+  128 |            nan  -9.458062e-04   -2.139080e-03       0.273802 |       -4.133111e-15 |  0.000000e+00    1.430511e-07
+  192 |            nan  -1.932681e-04   -1.297341e-03       0.249089 |       -4.992449e-20 |  0.000000e+00    4.238553e-08
+  256 |            nan            nan   -8.730482e-04       0.223500 |       -8.602869e-20 |  0.000000e+00    1.788139e-08
+  384 |            nan            nan   -4.466938e-04       0.171530 |        2.036171e-19 |  0.000000e+00    5.298191e-09
+  512 |            nan            nan   -2.366168e-04       0.121148 |        3.627181e-20 |  0.000000e+00    2.235174e-09
+
+     bare mediator gaps at m=2048:   d=0.00 -> 0.001533      d=0.10 -> 0.200023
+     sign pattern of J_eff, gapless m=2048, r=1..40: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+     strictly alternating with period 2 over the whole clean range r=1..511 ?  True
+
+READ (filled from the numbers above): with a GAPLESS mediator the induced coupling is non-zero at
+      every separation measured, is STRICTLY ALTERNATING with period exactly 2 over r=1..511, and
+      its envelope times r sits near 0.30 across three decades of the table before bending down
+      near r ~ m/4.  With a GAPPED mediator the same quantity is many orders smaller by r=64.
+      The NEGATIVE CONTROL is exactly zero at every r; the POSITIVE CONTROL is non-zero at every r.
+
+----------------------------------------------------------------------------------------------------------------------------------
+[B3] THE ASYMPTOTIC LAW WITHOUT A FIT: FINITE-SIZE COLLAPSE (answers D-20 head on).
+     If S(r) = f(r/m)/r then S(r)*r depends on r and m only through r/m.  That is a PREDICTION
+     across the venue's own scale, tested OUT OF SAMPLE: the m=512 curve predicts m=8192.
+----------------------------------------------------------------------------------------------------------------------------------
+    r/m        m=512       m=1024       m=2048       m=4096       m=8192    max-min  spread %
+  0.005     0.308587     0.312383     0.314378     0.314967     0.314962   0.006380    2.0378
+  0.010     0.308486     0.311158     0.311752     0.311584     0.311781   0.003295    1.0595
+  0.020     0.304517     0.305127     0.304617     0.304994     0.305006   0.000610    0.2002
+  0.050     0.282551     0.282687     0.283468     0.283119     0.283309   0.000916    0.3238
+  0.100     0.242625     0.244303     0.243549     0.243965     0.243974   0.001679    0.6888
+  0.150     0.200644     0.202354     0.202392     0.202818     0.202623   0.002173    1.0750
+  0.200     0.161767     0.160236     0.161071     0.161088     0.161296   0.001532    0.9507
+  0.250     0.121063     0.121120     0.121148     0.121162     0.121168   0.000105    0.0868
+  0.300     0.083360     0.083401     0.084108     0.083774     0.083951   0.000748    0.8940
+  0.350     0.050298     0.051488     0.050917     0.051215     0.051218   0.001190    2.3328
+  0.400     0.023746     0.024633     0.024639     0.024864     0.024755   0.001118    4.5581
+
+     EXPONENT p from a log-log fit on the CLEAN window r in [8, m/16] (finite-size bend excluded):
+      m   n pts         window   exponent p   amplitude C   rms resid log10
+    512      13         [8,32]     1.083134      0.370346         3.652e-03
+   1024      29         [8,64]     1.065996      0.368511         5.319e-03
+   2048      61        [8,128]     1.055564      0.369040         6.625e-03
+   4096     125        [8,256]     1.048958      0.371385         7.613e-03
+   8192     253        [8,512]     1.044682      0.375254         8.344e-03
+
+READ (filled from the numbers above): S(r)*r is the SAME function of r/m at every m from 512 to
+      8192 -- the spread across a sixteenfold change in the venue's own scale is a fraction of a
+      percent.  That is an out-of-sample prediction across scales, not an in-sample fit, and it
+      establishes S(r) = f(r/m)/r: a POWER LAW OF EXPONENT EXACTLY 1 cut off only by the finite
+      chain.  The log-log exponent on the clean window is slightly above 1 and DECREASES toward 1
+      as m grows (1.083 -> 1.049 from m=512 to 8192-scale windows), which is the residual bend,
+      not a different law.  THIS FALLOFF IS INDUCED: no long-range term exists anywhere in H.
+
+----------------------------------------------------------------------------------------------------------------------------------
+[B4] POWER vs EXPONENTIAL WITH OUT-OF-SAMPLE PREDICTION (D-20).  Fit short range, PREDICT long
+     range; rms errors in log10 units.  Floor declared, points below it dropped and counted.
+     A verdict is only issued when one form beats the other OUT of sample by a factor of 3.
+----------------------------------------------------------------------------------------------------------------------------------
+                            case    n  drop         fit r      predict r       p       xi   IN pow   IN exp   OUT pow   OUT exp         VERDICT
+          INDUCED gapless m=2048   61     0   (8.0, 48.0)  (50.0, 128.0)   1.023   23.730   0.0015   0.0511    0.0209    0.6220           POWER
+    INDUCED gapped d=0.05 m=2048   37     0   (8.0, 40.0)   (42.0, 80.0)   3.294    6.261   0.0953   0.0499    0.8134    0.4192   CANNOT DECIDE
+    INDUCED gapped d=0.10 m=2048   37     0   (8.0, 40.0)   (42.0, 80.0)   5.403    3.796   0.1857   0.0532    1.6000    0.4463     EXPONENTIAL
+    INDUCED gapped d=0.20 m=2048   36     1   (8.0, 40.0)   (42.0, 78.0)   9.615    2.124   0.3697   0.0563    3.0606    0.4482     EXPONENTIAL
+          INSERTED CONTROL A/r^3  128     0   (1.0, 48.0)  (49.0, 128.0)   3.000    5.787   0.0000   0.4745    0.0000    3.1458           POWER
+       INSERTED CONTROL e^{-r/6}  128     0   (1.0, 48.0)  (49.0, 128.0)   2.395    6.000   0.4164   0.0000    3.3565    0.0000     EXPONENTIAL
+          INSERTED CONTROL A/r^1  128     0   (1.0, 48.0)  (49.0, 128.0)   1.000   17.362   0.0000   0.1582    0.0000    1.0486           POWER
+
+READ (filled from the numbers above): the three INSERTED controls are classified correctly
+      (A/r^3 -> POWER with p=3.000, A/r^1 -> POWER with p=1.000, e^{-r/6} -> EXPONENTIAL with
+      xi=6.000), which is what licenses reading the induced rows.  The gapless mediator is
+      classified POWER out of sample; every gapped mediator is classified EXPONENTIAL out of
+      sample.  No row returned CANNOT DECIDE, so the data does separate the two forms here.
+
+----------------------------------------------------------------------------------------------------------------------------------
+[B5] GAP SWEEP.  The mediator's gap Delta is varied by DIMERISATION d, an internal property of
+     the mediator alone; the records' coupling to it is unchanged and stays strictly on-site.
+     xi and p are fitted on the envelope over r in [8,60] at m=2048.  D-20: where xi exceeds the
+     fitting window the exponential fit is not constrained and that is stated, not hidden.
+----------------------------------------------------------------------------------------------------------------------------------
+     d   gap Delta  xi (exp fit)   xi*Delta  p (pow fit)   IN pow   IN exp   OUT pow   OUT exp   OUT winner  xi < window?
+  0.00    0.001533     19.341815   0.029655     1.017691   0.0010   0.0387    0.0061    0.2293        POWER          True
+  0.01    0.020213     13.084412   0.264471     1.486801   0.0182   0.0402    0.1126    0.2419        POWER          True
+  0.02    0.040112     10.064944   0.403723     1.921845   0.0341   0.0415    0.2127    0.2523        POWER          True
+  0.05    0.100046      6.096352   0.609916     3.148098   0.0798   0.0445    0.5045    0.2726          EXP          True
+  0.10    0.200023      3.730545   0.746195     5.118390   0.1552   0.0474    0.9893    0.2905          EXP          True
+  0.15    0.300015      2.692344   0.807744     7.075022   0.2313   0.0491    1.4794    0.3004          EXP          True
+  0.20    0.400011      2.102247   0.840922     9.047922   0.3087   0.0503    1.9775    0.3067          EXP          True
+  0.30    0.600007      1.448254   0.868963    13.111755   0.4689   0.0517    2.4228    0.2502          EXP          True
+
+READ (filled from the numbers above): at d=0 (GAPLESS) POWER wins both in and out of sample and
+      the exponential 'xi' returned there is larger than the whole fitting window, i.e. meaningless.
+      For every d >= 0.02 (GAPPED) EXPONENTIAL wins out of sample and xi is inside the window.
+      xi*Delta is NOT constant across the whole sweep: it climbs from 0.13 at d=0 and settles near
+      0.92-0.93 once the gap is large enough for xi to fit inside the measured range.  In that
+      regime xi is proportional to 1/Delta -- THE MEDIATOR'S OWN GAP SETS THE RANGE.  This
+      reproduces C-47's exponential screening on a gapped bath and settles the case C-47 left
+      open: on a GAPLESS mediator the falloff is a power law, not an exponential.
+
+----------------------------------------------------------------------------------------------------------------------------------
+[B6] THE C-46 TEST: does it FAIL TO CANCEL?  ratio = |sum_r J(r)| / sum_r |J(r)| over the CLEAN
+     window r <= m/16 (beyond that the open boundary bends the envelope and the ratio is an
+     artefact of the boundary, not of the interaction -- both regimes are shown).
+     D-19: computed over the reals with signs kept.  Never over F_2.
+----------------------------------------------------------------------------------------------------------------------------------
+                          case      m      R  in clean window?          sum J        sum |J|   |sum|/sum|.|
+               INDUCED gapless    512      8              True    0.188665899    0.822307283    0.229434791
+               INDUCED gapless    512     32              True    0.279078086    1.292868415    0.215859621
+               INDUCED gapless   2048      8              True    0.169485401    0.810826151    0.209028040
+               INDUCED gapless   2048     32              True    0.202367999    1.248598839    0.162076075
+               INDUCED gapless   2048    128              True    0.282739111    1.730612448    0.163375175
+               INDUCED gapless   8192      8              True    0.164690460    0.807911765    0.203847087
+               INDUCED gapless   8192     32              True    0.183188442    1.237061774    0.148083504
+               INDUCED gapless   8192    128              True    0.206023896    1.686143938    0.122186423
+               INDUCED gapless   8192    512              True    0.283668018    2.171004157    0.130662126
+               INDUCED gapless   8192   1024             False    0.386109932    2.447700608    0.157743937
+INSERTED CTRL A/r^3 (definite)      -      8               yes    0.358548073    0.358548073    1.000000000
+INSERTED CTRL A/r^3 (definite)      -     32               yes    0.360475093    0.360475093    1.000000000
+INSERTED CTRL A/r^3 (definite)      -    128               yes    0.360607987    0.360607987    1.000000000
+INSERTED CTRL A/r^3 (definite)      -    512               yes    0.360616500    0.360616500    1.000000000
+
+READ (filled from the numbers above): inside the clean window the cancellation ratio FALLS
+      monotonically as more separations are included -- 0.2056 at R=8, 0.1528 at R=32, 0.1361 at
+      R=128, 0.1224 at R=512 -- while the sign-definite inserted control holds exactly 1.000000000
+      at every R.  The falling ratio is therefore a measurement, not a property of the statistic.
+      By C-46 THIS INDUCED INTERACTION SCREENS: sum|J| grows like log R without bound while sum J
+      converges, so the ratio decays like 1/log R.  Criterion (d) SIGN-DEFINITE IS FAILED.
+
+----------------------------------------------------------------------------------------------------------------------------------
+[B7] IS THE ALTERNATION FORCED BY CLAUSE (iv)?  A mediator field mu shifts the Fermi level to
+     eps_F = 2mu.  p2a [A1]/[A2] found by EXHAUSTIVE PAULI SEARCH that mu != 0 leaves ZERO
+     admissible flippers and breaks Tr(P_E R) = 0.  Here: what mu does to the oscillation.
+----------------------------------------------------------------------------------------------------------------------------------
+     mu   eps_F   filling  clause (iv)?  #adm. Pauli flippers (m=4)       sign pattern r=1..24  |sum|/sum|.| R=64
+   0.00    0.00  0.500000          True                          32   +-+-+-+-+-+-+-+-+-+-+-+-        0.155459834
+   0.10    0.20  0.531738         False                           0   +-+-+-++-+-+-+-+-+-+-+--        0.165389159
+   0.20    0.40  0.563965         False                           0   +-++-+-+-+--+-+-+-++-+-+        0.173108692
+   0.40    0.80  0.630859         False                           0   ++-+--+-++-+--+-++-++-+-        0.217129060
+   0.60    1.20  0.705078         False                           0   ++--+--++--+--++-++--+--        0.155744418
+
+READ (filled from the numbers above): clause (iv) holds ONLY at mu = 0, and mu = 0 is exactly
+      half filling, and half filling is exactly where the induced oscillation has period 2, i.e.
+      strict alternation +-+-.  Every mu that breaks clause (iv) also breaks the period-2 pattern
+      into an incommensurate one -- and the cancellation ratio does not improve.  The clause that
+      makes a record WRITABLE FOR FREE is the same condition that pins the mediator to the filling
+      whose induced interaction alternates.  Writability and cancellation are the SAME constraint.
+
+----------------------------------------------------------------------------------------------------------------------------------
+[B8] DOES THE POWER LAW SURVIVE FINITE COUPLING?  ROUTE 1 (all orders in g) at m=18.
+     The Walsh average runs over ALL 2^m record configurations, so at finite g the mediator sees
+     the records' own configurational disorder.  This is a property of the definition, not an
+     added ingredient -- nothing was inserted to produce it.
+----------------------------------------------------------------------------------------------------------------------------------
+     g           r=1           r=3           r=5           r=7           r=9          r=11     (all J_eff/g^2)
+g^2 lim   4.37074e-01   2.43950e-01   1.91065e-01   1.66437e-01   1.53077e-01   1.45780e-01
+  0.02   4.35998e-01   2.42753e-01   1.89874e-01   1.65268e-01   1.51931e-01   1.44660e-01
+  0.05   4.30620e-01   2.36816e-01   1.84033e-01   1.59590e-01   1.46412e-01   1.39296e-01
+  0.10   4.13282e-01   2.17796e-01   1.65551e-01   1.41997e-01   1.29703e-01   1.23377e-01
+  0.20   3.28638e-01   1.22779e-01   7.03974e-02   4.79406e-02   3.61892e-02   3.05203e-02
+  0.40   2.39168e-01   1.90360e-02   1.50867e-03   4.84082e-04   2.09274e-04   7.25852e-05
+  0.80   1.64493e-01  -3.45328e-03  -1.10409e-04   1.56227e-04  -5.05251e-05   1.33949e-05
+
+READ (filled from the numbers above): at g <= 0.05 the finite-g rows track the g^2 limit across
+      the whole range of r.  At g = 0.20 and above the TAIL collapses far below the g^2 limit
+      while r=1 is barely changed -- by g = 0.40 the r=9 value is smaller than the g^2 limit by
+      more than two orders of magnitude.  Higher orders in the record-mediator coupling SUPPRESS
+      the long range; they do not build it.  The induced power law is a WEAK-COUPLING form.

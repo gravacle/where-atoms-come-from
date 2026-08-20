@@ -1,0 +1,235 @@
+====================================================================================================================
+O-48-D  PART 5   THE CONFIGURATION ENERGY AGAINST THE SOURCE STANDARD
+====================================================================================================================
+
+====================================================================================================================
+(a) EXTENSIVE.  S(n) := |ground energy| = sum_i |J_i|, exact.  There is NO BATH on this
+    carrier -- it is a closed system -- so 'at a fixed environment' is vacuous here and the
+    quantity is measured at fixed COUPLING SCALE instead.  That is a weaker test and is
+    labelled as such.
+====================================================================================================================
+
+     J set    n           S(n)   S(2n)/S(n)     S(n)/n
+       UNI    4         3.0000     2.333333   0.750000
+       UNI    8         7.0000     2.142857   0.875000
+       UNI   16        15.0000     2.066667   0.937500
+       UNI   32        31.0000     2.032258   0.968750
+       UNI   64        63.0000     2.015873   0.984375
+       UNI  128       127.0000     2.007874   0.992188
+       UNI  256       255.0000     2.003922   0.996094
+
+       RND    4         3.6283     1.863104   0.907067
+       RND    8         6.7598     2.225901   0.844980
+       RND   16        15.0467     2.097135   0.940421
+       RND   32        31.5551     1.995316   0.986095
+       RND   64        62.9623     2.049767   0.983786
+       RND  128       129.0581     1.947542   1.008266
+       RND  256       251.3460     2.004726   0.981820
+
+  CONTROL (D-15): a quantity on the SAME carrier that is NOT extensive -- the number of
+  independent record bits, which Part 1 measured as 1 at every n.
+
+     n  independent record bits   ratio k(2n)/k(n)
+     4                        1           1.000000
+     8                        1           1.000000
+    16                        1           1.000000
+    32                        1           1.000000
+
+====================================================================================================================
+(b) ADDITIVE OVER DISJOINT REGIONS.  Cut the chain into two contiguous halves A and B and
+    compare E(A u B) with E(A) + E(B).  The DEFECT is the bonds crossing the cut.
+====================================================================================================================
+
+     n   E(AuB) ground    E(A)+E(B)    defect   defect/|E|  #crossing bonds
+     4         -3.0000      -2.0000   -1.0000     0.333333                1
+     8         -7.0000      -6.0000   -1.0000     0.142857                1
+    16        -15.0000     -14.0000   -1.0000     0.066667                1
+    32        -31.0000     -30.0000   -1.0000     0.032258                1
+    64        -63.0000     -62.0000   -1.0000     0.015873                1
+   128       -127.0000    -126.0000   -1.0000     0.007874                1
+
+  Additive up to ONE boundary bond, whose share of the total falls like 1/n.  INDUCED (it is
+  a consequence of the couplings being nearest-neighbour, not something put in separately).
+
+====================================================================================================================
+(c) IS IT A COUNT?  A count cannot move when the J_i change at FIXED n and FIXED record set.
+====================================================================================================================
+
+     n                      J set  #records  #eigenspaces     ground E  spread of E
+     6                all J_i = 1         6             6           -5           10
+     6                all J_i = 7         6             6          -35           70
+     6                  J_i = i+1         6            16          -15           30
+     6                  J_i = 2^i         6            32          -31           62
+
+     8                all J_i = 1         8             8           -7           14
+     8                all J_i = 7         8             8          -49           98
+     8                  J_i = i+1         8            29          -28           56
+     8                  J_i = 2^i         8           128         -127          254
+
+    10                all J_i = 1        10            10           -9           18
+    10                all J_i = 7        10            10          -63          126
+    10                  J_i = i+1        10            46          -45           90
+    10                  J_i = 2^i        10           512         -511         1022
+
+  The record COUNT is n in every row and the eigenspace count and the energy are not.  So the
+  quantity is NOT a count -- it moves at fixed n when only the couplings move.  That much of
+  C-35 it clears.  It is also not topological: it is a sum of local terms.
+
+====================================================================================================================
+(d) SIGN-DEFINITE?  C-46: the test is |sum| / sum|.| over the terms J_i b_i.  A quantity that
+    accumulates keeps this at 1; one that screens sends it to 0 as records are added.
+    Measured EXACTLY over all 2^n configurations (D-19: integers, so cancellation is real).
+====================================================================================================================
+
+     J set    n  ground config  MEAN over all configs  MEAN over eigenspaces   top-1/8 lowest E
+       UNI    4       1.000000               0.500000               0.666667           1.000000
+       UNI    6       1.000000               0.375000               0.600000           0.700000
+       UNI    8       1.000000               0.312500               0.571429           0.589286
+       UNI   10       1.000000               0.273438               0.555556           0.531250
+       UNI   12       1.000000               0.246094               0.545455           0.494318
+       UNI   14       1.000000               0.225586               0.538462           0.457482
+       UNI   16       1.000000               0.209473               0.533333           0.419759
+       UNI   18       1.000000               0.196381               0.529412           0.391939
+       UNI   20       1.000000               0.185471               0.526316           0.370560
+
+       GEN    4       1.000000               0.571429               0.571429           1.000000
+       GEN    6       1.000000               0.516129               0.516129           0.903226
+       GEN    8       1.000000               0.503937               0.503937           0.881890
+       GEN   10       1.000000               0.500978               0.500978           0.876712
+       GEN   12       1.000000               0.500244               0.500244           0.875427
+       GEN   14       1.000000               0.500061               0.500061           0.875107
+       GEN   16       1.000000               0.500015               0.500015           0.875027
+       GEN   18       1.000000               0.500004               0.500004           0.875007
+       GEN   20       1.000000               0.500001               0.500001           0.875002
+
+  CONTROL (D-15): the same ratio for a quantity KNOWN to accumulate -- all b_i forced to the
+  sign that aligns with -J_i, which is the ground configuration -- prints 1.000000 in column
+  one at every n, so a 1 is reachable by this instrument and the falling columns are real.
+
+====================================================================================================================
+(e) SEPARATION DEPENDENCE.  Two different separation questions, kept apart because they have
+    different answers:
+      (e1) HOW STRONGLY ARE TWO RECORDS CORRELATED at separation d?
+           |<Z_i Z_j>| on an eigenspace, measured exactly.
+      (e2) WHAT DOES IT COST to change the correlation of two records at separation d?
+           the minimum dE over ALL Pauli operations that flip Z_i Z_j -- SEARCHED at small n,
+           and computed exactly from the domain-wall formula elsewhere, the two cross-checked.
+====================================================================================================================
+
+  (e1)  |<Z_i Z_j>| on every eigenspace, GEN couplings, n = 12.  Exact.
+
+   d = |i-j|  #pairs   min over eigenspaces of |<Z_iZ_j>|      max  definite on every eigenspace?
+           1      11                             1.000000 1.000000                           True
+           2      10                             1.000000 1.000000                           True
+           3       9                             1.000000 1.000000                           True
+           4       8                             1.000000 1.000000                           True
+           5       7                             1.000000 1.000000                           True
+           6       6                             1.000000 1.000000                           True
+           7       5                             1.000000 1.000000                           True
+           8       4                             1.000000 1.000000                           True
+           9       3                             1.000000 1.000000                           True
+          10       2                             1.000000 1.000000                           True
+          11       1                             1.000000 1.000000                           True
+
+  (e2)  minimum energy cost of flipping the correlator Z_i Z_j, vs separation d.
+        SEARCH over the full Pauli group at n = 6 against the exact formula at larger n.
+
+    couplings: UNI
+         n    d  search min dE  formula min dE  agree?   min dE over ADMISSIBLE ops
+         6    1       2.000000        2.000000    True                  NONE EXISTS
+         6    2       2.000000        2.000000    True                  NONE EXISTS
+         6    3       2.000000        2.000000    True                  NONE EXISTS
+         6    4       2.000000        2.000000    True                  NONE EXISTS
+         6    5       2.000000        2.000000    True                  NONE EXISTS
+
+    couplings: RND
+         n    d  search min dE  formula min dE  agree?   min dE over ADMISSIBLE ops
+         6    1      30.000000       30.000000    True                  NONE EXISTS
+         6    2      28.000000       28.000000    True                  NONE EXISTS
+         6    3      28.000000       28.000000    True                  NONE EXISTS
+         6    4      28.000000       28.000000    True                  NONE EXISTS
+         6    5      28.000000       28.000000    True                  NONE EXISTS
+
+    the exact formula at larger n, where the search is out of reach:
+
+         J set    n       d=1       d=2       d=3       d=4       d=5       d=6       d=7       d=8       d=9      d=10      d=11
+           UNI   12     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000
+           UNI   16     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000
+           UNI   20     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000     2.000
+
+           RND   12   334.000   221.600   185.333   164.500   145.429   120.000   100.800    72.000    24.000    24.000    24.000
+           RND   16   392.133   259.286   198.923   141.000   111.273    96.600    78.667    57.750    30.857    28.000    24.000
+           RND   20   395.474   283.444   198.118   140.750   115.600    90.286    78.462    67.333    54.182    38.400    37.333
+
+  IS THE RND FALLOFF INDUCED, OR IS IT THE COUPLINGS' OWN ORDER STATISTICS?
+  min_{i<=k<j} |J_k| is a MINIMUM OVER d DRAWS.  If the falloff were induced by the carrier it
+  would survive a change in the coupling DISTRIBUTION at fixed mean.  Three distributions, same
+  n, same everything else:
+
+               coupling distribution    n      d=1      d=2      d=3      d=4      d=5      d=6      d=7      d=8      d=9     d=10     d=11
+                 uniform on [1, 400]   20   359.57   258.79   179.50   145.38   119.06   101.45    82.13    75.39    67.42    64.89    61.80
+  uniform on [180, 220]  (same mean)   20   395.85   385.74   377.79   374.37   371.74   369.97   368.03   367.36   366.56   366.30   365.99
+  uniform on [199, 201]  (same mean)   20   399.79   399.29   398.89   398.72   398.59   398.50   398.40   398.37   398.33   398.32   398.30
+
+  CONTROL (D-15) FOR THE SEPARATION INSTRUMENT.  The same measurement on a chain with a
+  LONG-RANGE coupling PUT IN BY HAND, K * Z_0 Z_j with K large.  If the instrument cannot
+  register a separation-dependent cost even when one is inserted, its nulls mean nothing.
+
+      inserted K on bond (0,j)    n    j   search min dE for pair (0,j)  admissible?
+                         K = 0    6    2                       2.000000        False
+                        K = 20    6    2                      40.000000        False
+                         K = 0    6    3                       2.000000        False
+                        K = 20    6    3                      42.000000        False
+                         K = 0    6    4                       2.000000        False
+                        K = 20    6    4                      41.000000        False
+                         K = 0    6    5                       2.000000        False
+                        K = 20    6    5                      42.000000        False
+
+====================================================================================================================
+  READ -- PART 5, FILLED IN FROM THE NUMBERS ABOVE, NOT IN ADVANCE
+====================================================================================================================
+
+  (a) EXTENSIVE: YES, at a fixed coupling scale.  S(2n)/S(n) runs 2.333, 2.143, 2.067, 2.032,
+      2.016, 2.008, 2.004 for uniform couplings and straddles 2 for random ones.  CAVEAT: this
+      carrier has NO BATH, so the standard's 'at a FIXED ENVIRONMENT' clause is not tested here
+      at all.  That is a weaker result than C-47's, not a stronger one.
+
+  (b) ADDITIVE: YES, up to the bonds crossing the cut.  One crossing bond, defect/|E| falling
+      0.333, 0.143, 0.067, 0.032, 0.016, 0.008 as n doubles.  INDUCED, not inserted.
+
+  (c) NOT A COUNT: YES.  At fixed n and a fixed set of n records, changing only the couplings
+      moves the eigenspace count from 6 to 32 and the ground energy from -5 to -31 at n = 6.
+      It is also not topological -- it is a sum of local terms.  It clears C-35.
+
+  (d) SIGN-DEFINITE: NO, AND THIS IS WHERE IT BREAKS.  C-46's ratio |sum|/sum|.| is 1.000000
+      ONLY on the ground configuration.  Averaged over the record configurations at uniform
+      couplings it runs 0.500, 0.375, 0.313, 0.273, 0.246, 0.226, 0.209, 0.196, 0.185 for
+      n = 4..20 -- a clean n^(-1/2) decay (0.185 * sqrt(19) = 0.809, against sqrt(2/pi) =
+      0.798).  That is C-46's screening signature: the configuration energy CANCELS MORE as
+      records are added.  The GEN column plateaus at 0.500 instead, but that is one coupling
+      of size 2^(n-2) dominating a sum of smaller ones -- a coupling-scale artifact (D-17),
+      not accumulation.  A source must accumulate for an ARBITRARY configuration of matter,
+      not only for the ground state, and this quantity does not.
+
+  (e) SEPARATION-DEPENDENT POWER LAW: NO.  Two separate measurements, both negative.
+      (e1) the record-record correlation |<Z_i Z_j>| is EXACTLY 1 at every separation from
+           d = 1 to d = 11 and definite on every eigenspace -- perfect rigidity, no falloff of
+           any kind, power law or otherwise.  That is long-range ORDER, not a force law.
+      (e2) the cost of changing a pair correlation is FLAT at 2.000 for every d at uniform
+           couplings.  With random couplings it appears to fall -- and the distribution
+           control settles what that is: at the SAME mean coupling, narrowing the coupling
+           distribution flattens the curve (399.79 -> 398.30 across d = 1..11 for J in
+           [199,201], against 359.57 -> 61.80 for J in [1,400]).  The falloff is the ORDER
+           STATISTICS OF THE INSERTED COUPLINGS, not an induced interaction.  NOTHING
+           SEPARATION-DEPENDENT IS INDUCED BY THIS CARRIER.
+      And the instrument is not blind: inserting K = 20 on the long bond (0,j) moves the
+      measured cost from 2.000 to 40-42 at every j.  It registers a real long-range coupling
+      when one is put in.
+
+  VERDICT.  The configuration energy meets (a), (b) and (c), FAILS (d) for any configuration
+  other than the ground state, and FAILS (e) outright.  It is a genuine interaction energy
+  between records that costs no clause -- O-47's result stands and extends to every n -- but
+  it is a CONTACT interaction that CANCELS, and on the two requirements that separate a source
+  from a bookkeeping quantity it does not qualify.
+
+  runtime 7.6s

@@ -1,0 +1,396 @@
+==========================================================================================================================
+O-48-D  PART 2   HOW GENERAL IS THE CONSTRUCTION?
+==========================================================================================================================
+
+==========================================================================================================================
+A.  2D LATTICE OF ZZ COUPLINGS.  One ZZ term per edge, DISTINCT integer couplings so there is
+    no accidental degeneracy and no lattice symmetry left (D-22).
+==========================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------------
+  A  2D ZZ grid 2x2 (4 edges)      n = 4   dim = 16   terms pairwise commute: True
+    spectrum: 8 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 4    pass (i)+(ii): 4    pass (i)-(iii): 4    pass ALL of (i)-(iv): 4    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                  ZIII    0.0e+00         0.0e+00               XXXX       4             16    0.0e+00    0.0e+00   +0.000000               4
+                  IZII    0.0e+00         0.0e+00               XXXX       4             16    0.0e+00    0.0e+00   +0.000000               4
+                  IIZI    0.0e+00         0.0e+00               XXXX       4             16    0.0e+00    0.0e+00   +0.000000               4
+                  IIIZ    0.0e+00         0.0e+00               XXXX       4             16    0.0e+00    0.0e+00   +0.000000               4
+    JOINT CONFIGURATION (first 4 records): 6 pairs, 6 DEFINITE on every eigenspace, 6 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  A  2D ZZ grid 2x3 (7 edges)      n = 6   dim = 64   terms pairwise commute: True
+    spectrum: 32 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 6    pass (i)+(ii): 6    pass (i)-(iii): 6    pass ALL of (i)-(iv): 6    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                ZIIIII    0.0e+00         0.0e+00             XXXXXX       6             64    0.0e+00    0.0e+00   +0.000000               6
+                IZIIII    0.0e+00         0.0e+00             XXXXXX       6             64    0.0e+00    0.0e+00   +0.000000               6
+                IIZIII    0.0e+00         0.0e+00             XXXXXX       6             64    0.0e+00    0.0e+00   +0.000000               6
+                IIIZII    0.0e+00         0.0e+00             XXXXXX       6             64    0.0e+00    0.0e+00   +0.000000               6
+                IIIIZI    0.0e+00         0.0e+00             XXXXXX       6             64    0.0e+00    0.0e+00   +0.000000               6
+    ... 1 further records not printed.  Over ALL 6 records: writer weights 6..6, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 6 records): 15 pairs, 15 DEFINITE on every eigenspace, 15 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  A  2D ZZ grid 2x4 (10 edges)      n = 8   dim = 256   terms pairwise commute: True
+    spectrum: 128 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 8    pass (i)+(ii): 8    pass (i)-(iii): 8    pass ALL of (i)-(iv): 8    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+              ZIIIIIII    0.0e+00         0.0e+00           XXXXXXXX       8            256    0.0e+00    0.0e+00   +0.000000               8
+              IZIIIIII    0.0e+00         0.0e+00           XXXXXXXX       8            256    0.0e+00    0.0e+00   +0.000000               8
+              IIZIIIII    0.0e+00         0.0e+00           XXXXXXXX       8            256    0.0e+00    0.0e+00   +0.000000               8
+              IIIZIIII    0.0e+00         0.0e+00           XXXXXXXX       8            256    0.0e+00    0.0e+00   +0.000000               8
+              IIIIZIII    0.0e+00         0.0e+00           XXXXXXXX       8            256    0.0e+00    0.0e+00   +0.000000               8
+    ... 3 further records not printed.  Over ALL 8 records: writer weights 8..8, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 28 DEFINITE on every eigenspace, 28 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  A  2D ZZ grid 3x3 (12 edges)      n = 9   dim = 512   terms pairwise commute: True
+    spectrum: 256 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 9    pass (i)+(ii): 9    pass (i)-(iii): 9    pass ALL of (i)-(iv): 9    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+             ZIIIIIIII    0.0e+00         0.0e+00          XXXXXXXXX       9            512    0.0e+00    0.0e+00   +0.000000               9
+             IZIIIIIII    0.0e+00         0.0e+00          XXXXXXXXX       9            512    0.0e+00    0.0e+00   +0.000000               9
+             IIZIIIIII    0.0e+00         0.0e+00          XXXXXXXXX       9            512    0.0e+00    0.0e+00   +0.000000               9
+             IIIZIIIII    0.0e+00         0.0e+00          XXXXXXXXX       9            512    0.0e+00    0.0e+00   +0.000000               9
+             IIIIZIIII    0.0e+00         0.0e+00          XXXXXXXXX       9            512    0.0e+00    0.0e+00   +0.000000               9
+    ... 4 further records not printed.  Over ALL 9 records: writer weights 9..9, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 28 DEFINITE on every eigenspace, 28 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+==========================================================================================================================
+A'. CONTROL -- THE SAME COUPLING TYPE, LATTICE CUT IN TWO.  If the mechanism is about the
+    CONNECTED COMPONENT structure then the writer weight must drop to a component's size.
+==========================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------------
+  A' two disjoint 3-chains      n = 6   dim = 64   terms pairwise commute: True
+    spectrum: 16 eigenspaces, multiplicities [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    candidates tried: 6    pass (i)+(ii): 6    pass (i)-(iii): 6    pass ALL of (i)-(iv): 6    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                ZIIIII    0.0e+00         0.0e+00             XXXIII       3            128    0.0e+00    0.0e+00   +0.000000               3
+                IZIIII    0.0e+00         0.0e+00             XXXIII       3            128    0.0e+00    0.0e+00   +0.000000               3
+                IIZIII    0.0e+00         0.0e+00             XXXIII       3            128    0.0e+00    0.0e+00   +0.000000               3
+                IIIZII    0.0e+00         0.0e+00             IIIXXX       3            128    0.0e+00    0.0e+00   +0.000000               3
+                IIIIZI    0.0e+00         0.0e+00             IIIXXX       3            128    0.0e+00    0.0e+00   +0.000000               3
+    ... 1 further records not printed.  Over ALL 6 records: writer weights 3..3, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 6 records): 15 pairs, 6 DEFINITE on every eigenspace, 6 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+==========================================================================================================================
+B.  CHAIN WITH THREE-BODY ZZZ COUPLINGS.   H = sum_i J_i Z_i Z_{i+1} Z_{i+2}
+==========================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------------
+  B  ZZZ chain      n = 4   dim = 16   terms pairwise commute: True
+    spectrum: 4 eigenspaces, multiplicities [4, 4, 4, 4]
+    candidates tried: 4    pass (i)+(ii): 4    pass (i)-(iii): 4    pass ALL of (i)-(iv): 4    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                  ZIII    0.0e+00         0.0e+00               XIXX       3             32    0.0e+00    0.0e+00   +0.000000               3
+                  IZII    0.0e+00         0.0e+00               IXXI       2             32    0.0e+00    0.0e+00   +0.000000               2
+                  IIZI    0.0e+00         0.0e+00               IXXI       2             32    0.0e+00    0.0e+00   +0.000000               2
+                  IIIZ    0.0e+00         0.0e+00               XIXX       3             32    0.0e+00    0.0e+00   +0.000000               3
+    JOINT CONFIGURATION (first 4 records): 6 pairs, 1 DEFINITE on every eigenspace, 1 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  B  ZZZ chain      n = 5   dim = 32   terms pairwise commute: True
+    spectrum: 8 eigenspaces, multiplicities [4, 4, 4, 4, 4, 4, 4, 4]
+    candidates tried: 5    pass (i)+(ii): 5    pass (i)-(iii): 5    pass ALL of (i)-(iv): 5    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                 ZIIII    0.0e+00         0.0e+00              XIXXI       3             64    0.0e+00    0.0e+00   +0.000000               3
+                 IZIII    0.0e+00         0.0e+00              IXXIX       3             64    0.0e+00    0.0e+00   +0.000000               3
+                 IIZII    0.0e+00         0.0e+00              IXXIX       3             64    0.0e+00    0.0e+00   +0.000000               3
+                 IIIZI    0.0e+00         0.0e+00              XIXXI       3             64    0.0e+00    0.0e+00   +0.000000               3
+                 IIIIZ    0.0e+00         0.0e+00              IXXIX       3             64    0.0e+00    0.0e+00   +0.000000               3
+    JOINT CONFIGURATION (first 5 records): 10 pairs, 2 DEFINITE on every eigenspace, 2 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  B  ZZZ chain      n = 6   dim = 64   terms pairwise commute: True
+    spectrum: 16 eigenspaces, multiplicities [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    candidates tried: 6    pass (i)+(ii): 6    pass (i)-(iii): 6    pass ALL of (i)-(iv): 6    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                ZIIIII    0.0e+00         0.0e+00             XIXXIX       4            128    0.0e+00    0.0e+00   +0.000000               4
+                IZIIII    0.0e+00         0.0e+00             IXXIXX       4            128    0.0e+00    0.0e+00   +0.000000               4
+                IIZIII    0.0e+00         0.0e+00             IXXIXX       4            128    0.0e+00    0.0e+00   +0.000000               4
+                IIIZII    0.0e+00         0.0e+00             XIXXIX       4            128    0.0e+00    0.0e+00   +0.000000               4
+                IIIIZI    0.0e+00         0.0e+00             IXXIXX       4            128    0.0e+00    0.0e+00   +0.000000               4
+    ... 1 further records not printed.  Over ALL 6 records: writer weights 4..4, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 6 records): 15 pairs, 3 DEFINITE on every eigenspace, 3 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  B  ZZZ chain      n = 7   dim = 128   terms pairwise commute: True
+    spectrum: 32 eigenspaces, multiplicities [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    candidates tried: 7    pass (i)+(ii): 7    pass (i)-(iii): 7    pass ALL of (i)-(iv): 7    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+               ZIIIIII    0.0e+00         0.0e+00            XIXXIXX       5            256    0.0e+00    0.0e+00   +0.000000               5
+               IZIIIII    0.0e+00         0.0e+00            IXXIXXI       4            256    0.0e+00    0.0e+00   +0.000000               4
+               IIZIIII    0.0e+00         0.0e+00            IXXIXXI       4            256    0.0e+00    0.0e+00   +0.000000               4
+               IIIZIII    0.0e+00         0.0e+00            XIXXIXX       5            256    0.0e+00    0.0e+00   +0.000000               5
+               IIIIZII    0.0e+00         0.0e+00            IXXIXXI       4            256    0.0e+00    0.0e+00   +0.000000               4
+    ... 2 further records not printed.  Over ALL 7 records: writer weights 4..5, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 7 records): 21 pairs, 5 DEFINITE on every eigenspace, 5 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  B  ZZZ chain      n = 8   dim = 256   terms pairwise commute: True
+    spectrum: 64 eigenspaces, multiplicities [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    candidates tried: 8    pass (i)+(ii): 8    pass (i)-(iii): 8    pass ALL of (i)-(iv): 8    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+              ZIIIIIII    0.0e+00         0.0e+00           XIXXIXXI       5            512    0.0e+00    0.0e+00   +0.000000               5
+              IZIIIIII    0.0e+00         0.0e+00           IXXIXXIX       5            512    0.0e+00    0.0e+00   +0.000000               5
+              IIZIIIII    0.0e+00         0.0e+00           IXXIXXIX       5            512    0.0e+00    0.0e+00   +0.000000               5
+              IIIZIIII    0.0e+00         0.0e+00           XIXXIXXI       5            512    0.0e+00    0.0e+00   +0.000000               5
+              IIIIZIII    0.0e+00         0.0e+00           IXXIXXIX       5            512    0.0e+00    0.0e+00   +0.000000               5
+    ... 3 further records not printed.  Over ALL 8 records: writer weights 5..5, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 7 DEFINITE on every eigenspace, 7 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+==========================================================================================================================
+C1. MIXED XX AND ZZ ON EVERY BOND -- THE TERMS DO NOT COMMUTE.  Every Pauli word is tried as
+    a candidate record, so nothing is nominated and 'no record' is a measured result.
+==========================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------------
+  C1 XY chain (ZZ and XX on all bonds)      n = 4   dim = 16   terms pairwise commute: False
+    spectrum: 16 eigenspaces, multiplicities [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    candidates tried: 255    pass (i)+(ii): 3    pass (i)-(iii): 0    pass ALL of (i)-(iv): 0    [symbolic/dense clause-(ii) disagreements: 0]
+    ==> NO RECORD ON THIS CARRIER.  free writer: n/a.  joint energy: n/a.
+
+--------------------------------------------------------------------------------------------------------------------------
+  C1 XY chain (ZZ and XX on all bonds)      n = 5   dim = 32   terms pairwise commute: False
+    spectrum: 16 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 1023    pass (i)+(ii): 3    pass (i)-(iii): 3    pass ALL of (i)-(iv): 3    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                 ZZZZZ    0.0e+00         2.7e-15              XXXXX       5              2    0.0e+00    0.0e+00   +0.000000               2
+                 XXXXX    0.0e+00         3.7e-16              ZZZZZ       5              2    0.0e+00    0.0e+00   +0.000000               2
+                 YYYYY    0.0e+00         3.2e-17              ZZZZZ       5              2    0.0e+00    0.0e+00   +0.000000               2
+    JOINT CONFIGURATION (first 3 records): 3 pairs, 0 DEFINITE on every eigenspace, 0 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  C1 XY chain (ZZ and XX on all bonds)      n = 6   dim = 64   terms pairwise commute: False
+    spectrum: 64 eigenspaces, multiplicities [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    candidates tried: 4095    pass (i)+(ii): 3    pass (i)-(iii): 0    pass ALL of (i)-(iv): 0    [symbolic/dense clause-(ii) disagreements: 0]
+    ==> NO RECORD ON THIS CARRIER.  free writer: n/a.  joint energy: n/a.
+
+==========================================================================================================================
+C2. MIXED XX AND ZZ THAT DO COMMUTE -- dimerised: sum_{i even} (J_i Z_iZ_{i+1} + K_i X_iX_{i+1})
+==========================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------------
+  C2 dimerised XX+ZZ      n = 4   dim = 16   terms pairwise commute: True
+    spectrum: 16 eigenspaces, multiplicities [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    candidates tried: 255    pass (i)+(ii): 15    pass (i)-(iii): 0    pass ALL of (i)-(iv): 0    [symbolic/dense clause-(ii) disagreements: 0]
+    ==> NO RECORD ON THIS CARRIER.  free writer: n/a.  joint energy: n/a.
+
+--------------------------------------------------------------------------------------------------------------------------
+  C2 dimerised XX+ZZ      n = 6   dim = 64   terms pairwise commute: True
+    spectrum: 46 eigenspaces, multiplicities [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 3, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 3, 3, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    candidates tried: 4095    pass (i)+(ii): 63    pass (i)-(iii): 56    pass ALL of (i)-(iv): 0    [symbolic/dense clause-(ii) disagreements: 0]
+    ==> NO RECORD ON THIS CARRIER.  free writer: n/a.  joint energy: n/a.
+
+==========================================================================================================================
+C3. CONTROL -- THE FREE WRITER PROMOTED INTO H:  H = sum J_i Z_iZ_{i+1} + K X^(x)n.
+    Still a commuting-Pauli Hamiltonian, still mixed X and Z.
+==========================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------------
+  C3 ZZ chain + K X^(x)n      n = 4   dim = 16   terms pairwise commute: True
+    spectrum: 13 eigenspaces, multiplicities [1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1]
+    candidates tried: 255    pass (i)+(ii): 15    pass (i)-(iii): 12    pass ALL of (i)-(iv): 0    [symbolic/dense clause-(ii) disagreements: 0]
+    ==> NO RECORD ON THIS CARRIER.  free writer: n/a.  joint energy: n/a.
+
+--------------------------------------------------------------------------------------------------------------------------
+  C3 ZZ chain + K X^(x)n      n = 6   dim = 64   terms pairwise commute: True
+    spectrum: 37 eigenspaces, multiplicities [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1]
+    candidates tried: 4095    pass (i)+(ii): 63    pass (i)-(iii): 62    pass ALL of (i)-(iv): 0    [symbolic/dense clause-(ii) disagreements: 0]
+    ==> NO RECORD ON THIS CARRIER.  free writer: n/a.  joint energy: n/a.
+
+==========================================================================================================================
+D.  RANDOM COMMUTING-PAULI HAMILTONIANS.  m independent pairwise-commuting random Pauli words,
+    distinct integer couplings.  Every Pauli word is tried as a record.
+==========================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------------
+  D  random commuting m=3 seed=0 [YIYY,XYYZ,IXXZ]      n = 4   dim = 16   terms pairwise commute: True
+    spectrum: 8 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 255    pass (i)+(ii): 31    pass (i)-(iii): 24    pass ALL of (i)-(iv): 24    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                  IZZZ    0.0e+00         1.3e-15               IIZX       2             16    0.0e+00    0.0e+00   +0.000000              16
+                  IIZX    0.0e+00         4.2e-16               IZIY       2             16    0.0e+00    0.0e+00   +0.000000              16
+                  IZIY    0.0e+00         5.6e-16               IIZX       2             16    0.0e+00    0.0e+00   +0.000000              16
+    ... 21 further records not printed.  Over ALL 24 records: writer weights 2..2, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 7 DEFINITE on every eigenspace, 7 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  D  random commuting m=3 seed=1 [YIYX,XYYZ,ZZXX]      n = 4   dim = 16   terms pairwise commute: True
+    spectrum: 8 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 255    pass (i)+(ii): 31    pass (i)-(iii): 24    pass ALL of (i)-(iv): 24    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                  IZZZ    0.0e+00         1.7e-15               IIZY       2             16    0.0e+00    0.0e+00   +0.000000              16
+                  IIZY    0.0e+00         4.8e-18               IZIX       2             16    0.0e+00    0.0e+00   +0.000000              16
+                  IZIX    0.0e+00         3.9e-16               IIZY       2             16    0.0e+00    0.0e+00   +0.000000              16
+    ... 21 further records not printed.  Over ALL 24 records: writer weights 2..2, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 7 DEFINITE on every eigenspace, 7 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  D  random commuting m=3 seed=2 [ZXXX,ZXZZ,ZIYY]      n = 4   dim = 16   terms pairwise commute: True
+    spectrum: 8 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 255    pass (i)+(ii): 31    pass (i)-(iii): 24    pass ALL of (i)-(iv): 24    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                  IIZZ    0.0e+00         1.2e-15               IZIY       2             16    0.0e+00    0.0e+00   +0.000000              16
+                  ZIZZ    0.0e+00         1.2e-15               IZIY       2             16    0.0e+00    0.0e+00   +0.000000              16
+                  IZIY    0.0e+00         6.4e-18               IXII       1             16    0.0e+00    0.0e+00   +0.000000              16
+    ... 21 further records not printed.  Over ALL 24 records: writer weights 1..2, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 7 DEFINITE on every eigenspace, 7 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  D  random commuting m=4 seed=0 [ZIIZX,IYIYY,XXXXI,XZIZY]      n = 5   dim = 32   terms pairwise commute: True
+    spectrum: 16 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 1023    pass (i)+(ii): 63    pass (i)-(iii): 48    pass ALL of (i)-(iv): 48    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                 IZIZI    0.0e+00         2.2e-15              IIIXZ       2             32    0.0e+00    0.0e+00   +0.000000              32
+                 ZZIIX    0.0e+00         2.4e-15              IIIXZ       2             32    0.0e+00    0.0e+00   +0.000000              32
+                 IIIXZ    0.0e+00         1.2e-16              IZIZI       2             32    0.0e+00    0.0e+00   +0.000000              32
+    ... 45 further records not printed.  Over ALL 48 records: writer weights 2..2, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 8 DEFINITE on every eigenspace, 8 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  D  random commuting m=4 seed=1 [IZYYY,ZZYXZ,YZZZY,YZYYI]      n = 5   dim = 32   terms pairwise commute: True
+    spectrum: 16 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 1023    pass (i)+(ii): 63    pass (i)-(iii): 48    pass ALL of (i)-(iv): 48    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                 IIZZI    0.0e+00         2.4e-15              IXXII       2             32    0.0e+00    0.0e+00   +0.000000              32
+                 IZIII    0.0e+00         2.4e-15              IXXII       2             32    0.0e+00    0.0e+00   +0.000000              32
+                 ZIZIX    0.0e+00         2.4e-15              IXXII       2             32    0.0e+00    0.0e+00   +0.000000              32
+    ... 45 further records not printed.  Over ALL 48 records: writer weights 1..2, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 28 DEFINITE on every eigenspace, 28 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  D  random commuting m=4 seed=2 [XIXYI,IZXYZ,IYIIY,IYYXY]      n = 5   dim = 32   terms pairwise commute: True
+    spectrum: 16 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 1023    pass (i)+(ii): 63    pass (i)-(iii): 48    pass ALL of (i)-(iv): 48    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                 IIZZI    0.0e+00         2.0e-15              ZIIXY       3             32    0.0e+00    0.0e+00   +0.000000              32
+                 IZIIZ    0.0e+00         2.0e-15              ZIIXY       3             32    0.0e+00    0.0e+00   +0.000000              32
+                 ZIIXY    0.0e+00         5.6e-16              XIIII       1             32    0.0e+00    0.0e+00   +0.000000              32
+    ... 45 further records not printed.  Over ALL 48 records: writer weights 1..3, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 7 DEFINITE on every eigenspace, 7 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  D  random commuting m=5 seed=0 [XXIXZI,ZXIIYX,ZXZXYI,YIIIXX,XIZXZI]      n = 6   dim = 64   terms pairwise commute: True
+    spectrum: 32 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 4095    pass (i)+(ii): 127    pass (i)-(iii): 96    pass ALL of (i)-(iv): 96    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                IIZIII    0.0e+00         2.8e-15             ZZXIIZ       4             64    0.0e+00    0.0e+00   +0.000000              64
+                IIIIIX    0.0e+00         2.6e-15             ZZXIIZ       4             64    0.0e+00    0.0e+00   +0.000000              64
+                ZIZIYI    0.0e+00         2.8e-15             ZZXIIZ       4             64    0.0e+00    0.0e+00   +0.000000              64
+    ... 93 further records not printed.  Over ALL 96 records: writer weights 1..4, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 28 DEFINITE on every eigenspace, 28 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  D  random commuting m=5 seed=1 [YXZYII,YZXYIX,YZXIZI,ZZYXZZ,ZIIZXI]      n = 6   dim = 64   terms pairwise commute: True
+    spectrum: 32 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 4095    pass (i)+(ii): 127    pass (i)-(iii): 96    pass ALL of (i)-(iv): 96    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                ZIZZIZ    0.0e+00         2.8e-15             ZIYIII       2             64    0.0e+00    0.0e+00   +0.000000              64
+                IZIZIY    0.0e+00         2.0e-16             IXZIII       2             64    0.0e+00    0.0e+00   +0.000000              64
+                ZZZIIX    0.0e+00         2.1e-16             ZIYIII       2             64    0.0e+00    0.0e+00   +0.000000              64
+    ... 93 further records not printed.  Over ALL 96 records: writer weights 2..2, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 7 DEFINITE on every eigenspace, 7 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+--------------------------------------------------------------------------------------------------------------------------
+  D  random commuting m=5 seed=2 [XYZZYZ,YIIXZX,YZZYXI,IZXZIZ,XIXXZY]      n = 6   dim = 64   terms pairwise commute: True
+    spectrum: 32 eigenspaces, multiplicities [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    candidates tried: 4095    pass (i)+(ii): 127    pass (i)-(iii): 96    pass ALL of (i)-(iv): 96    [symbolic/dense clause-(ii) disagreements: 0]
+
+                record  ||[H,R]||  max|Tr(P_E R)|             writer  min wt  #adm flippers  ||[W,H]||  ||WRW+R||          dE  #recs it flips
+                IZIZZZ    0.0e+00         2.1e-15             IIIZYI       2             64    0.0e+00    0.0e+00   +0.000000              64
+                ZIIIZZ    0.0e+00         2.1e-15             IIIZYI       2             64    0.0e+00    0.0e+00   +0.000000              64
+                IIZZZY    0.0e+00         2.1e-15             IIIZYI       2             64    0.0e+00    0.0e+00   +0.000000              64
+    ... 93 further records not printed.  Over ALL 96 records: writer weights 2..2, max |dE| = 0.0e+00, records with NO admissible flipper: 0
+    JOINT CONFIGURATION (first 8 records): 28 pairs, 7 DEFINITE on every eigenspace, 7 taking DIFFERENT values across eigenspaces = CARRYING ENERGY
+
+==========================================================================================================================
+  PART 2 SUMMARY TABLE  (every cell taken from the runs above)
+==========================================================================================================================
+
+                                               carrier   n  #eigsp  #(i)-(iii)  #records  free writer?   writer wt  #pairs carry E
+                           A  2D ZZ grid 2x2 (4 edges)   4       8           4         4     YES  dE=0        4..4               6
+                           A  2D ZZ grid 2x3 (7 edges)   6      32           6         6     YES  dE=0        6..6              15
+                          A  2D ZZ grid 2x4 (10 edges)   8     128           8         8     YES  dE=0        8..8              28
+                          A  2D ZZ grid 3x3 (12 edges)   9     256           9         9     YES  dE=0        9..9              28
+                              A' two disjoint 3-chains   6      16           6         6     YES  dE=0        3..3               6
+                                          B  ZZZ chain   4       4           4         4     YES  dE=0        2..3               1
+                                          B  ZZZ chain   5       8           5         5     YES  dE=0        3..3               2
+                                          B  ZZZ chain   6      16           6         6     YES  dE=0        4..4               3
+                                          B  ZZZ chain   7      32           7         7     YES  dE=0        4..5               5
+                                          B  ZZZ chain   8      64           8         8     YES  dE=0        5..5               7
+                  C1 XY chain (ZZ and XX on all bonds)   4      16           0         0           n/a           -            None
+                  C1 XY chain (ZZ and XX on all bonds)   5      16           3         3     YES  dE=0        5..5               0
+                  C1 XY chain (ZZ and XX on all bonds)   6      64           0         0           n/a           -            None
+                                    C2 dimerised XX+ZZ   4      16           0         0           n/a           -            None
+                                    C2 dimerised XX+ZZ   6      46          56         0           n/a           -            None
+                                C3 ZZ chain + K X^(x)n   4      13          12         0           n/a           -            None
+                                C3 ZZ chain + K X^(x)n   6      37          62         0           n/a           -            None
+       D  random commuting m=3 seed=0 [YIYY,XYYZ,IXXZ]   4       8          24        24     YES  dE=0        2..2               7
+       D  random commuting m=3 seed=1 [YIYX,XYYZ,ZZXX]   4       8          24        24     YES  dE=0        2..2               7
+       D  random commuting m=3 seed=2 [ZXXX,ZXZZ,ZIYY]   4       8          24        24     YES  dE=0        1..2               7
+  D  random commuting m=4 seed=0 [ZIIZX,IYIYY,XXXXI,XZ   5      16          48        48     YES  dE=0        2..2               8
+  D  random commuting m=4 seed=1 [IZYYY,ZZYXZ,YZZZY,YZ   5      16          48        48     YES  dE=0        1..2              28
+  D  random commuting m=4 seed=2 [XIXYI,IZXYZ,IYIIY,IY   5      16          48        48     YES  dE=0        1..3               7
+  D  random commuting m=5 seed=0 [XXIXZI,ZXIIYX,ZXZXYI   6      32          96        96     YES  dE=0        1..4              28
+  D  random commuting m=5 seed=1 [YXZYII,YZXYIX,YZXIZI   6      32          96        96     YES  dE=0        2..2               7
+  D  random commuting m=5 seed=2 [XYZZYZ,YIIXZX,YZZYXI   6      32          96        96     YES  dE=0        2..2               7
+
+==========================================================================================================================
+  READ -- PART 2, FILLED IN FROM THE TABLE ABOVE, NOT IN ADVANCE
+==========================================================================================================================
+
+  1. IT IS NOT SPECIAL TO 1D AND NOT SPECIAL TO TWO-BODY ZZ.  The 2D ZZ lattice reproduces the
+     chain exactly: N records, all four clauses, a free admissible writer with dE = 0, and
+     every pair correlator carrying energy.  The three-body ZZZ chain also works: n records,
+     free writers, pair correlators carrying energy.  Random commuting-Pauli Hamiltonians work
+     at every seed tried -- 24, 48 and 96 records at n = 4, 5, 6, free writer in every case.
+
+  2. AND THE WRITER'S WEIGHT IS NOT A CONSTANT OF THE MECHANISM.  On the 2D ZZ lattice it is
+     exactly N, the whole lattice.  On the ZZZ chain it is about 2n/3, a period-3 pattern, and
+     it flips only the records the pattern touches -- not all of them.  On the DISCONNECTED
+     control it drops to 3, the size of one component.  On random commuting-Pauli carriers it
+     is as low as 1.  So the free writer is generic; its LOCALITY is not.  What fixes the
+     weight is the carrier's connectivity, not the mechanism.
+
+  3. THE MECHANISM DOES NOT REQUIRE COMMUTING TERMS.  The XY chain, whose ZZ and XX terms
+     ANTICOMMUTE across neighbouring bonds, has NO record at n = 4 and n = 6 -- and THREE
+     records at n = 5, namely Z^(x)5, X^(x)5 and Y^(x)5, each with a free admissible writer
+     of weight 5 and dE = 0.  At odd n those two parity operators ANTICOMMUTE WITH EACH OTHER
+     while both commuting with H, which is exactly the structure the mechanism needs, and it
+     forces every eigenspace to be 2-fold degenerate (multiplicities are all 2 at n = 5, all
+     1 at n = 4 and n = 6).  A non-commuting Hamiltonian can carry records.
+
+  4. AND COMMUTING TERMS ARE NOT ENOUGH.  C2, the dimerised XX+ZZ carrier, has commuting terms
+     and NO records: at n = 6 fifty-six operators pass clauses (i),(ii),(iii) and every one of
+     them FAILS clause (iv).  C3, which promotes the free writer X^(x)n into H as a term, also
+     has commuting terms and kills every record: 62 pass (i)-(iii) at n = 6, none passes (iv).
+     Promoting the symmetry into the Hamiltonian destroys the very records it was writing.
+
+  5. THE PATTERN ACROSS ALL SEVEN CARRIERS.  Records exist exactly where H has a PAIR OF
+     ANTICOMMUTING SYMMETRIES, one of which is the record.  Where that pair exists the writer
+     is automatically free.  Where it does not -- C2, C3, the XY chain at even n -- there is no
+     record at all, and clause (iv) is what fails.  Part 3 tests that statement directly.
+
+  runtime 6.3s

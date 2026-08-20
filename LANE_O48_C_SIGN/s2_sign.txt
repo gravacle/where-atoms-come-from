@@ -1,0 +1,206 @@
+========================================================================================================
+O-48-C  STEP 2.   ACCUMULATION OR CANCELLATION OF THE CORRELATION ENERGY
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+  INSTRUMENT CHECK: the exact DP against brute-force enumeration over all 2^n configurations
+--------------------------------------------------------------------------------------------------------
+  family       n   DP == brute force?  #distinct energies   total count == 2^(n-1)?
+  uniform      6                 True                   6                      True
+  uniform     10                 True                  10                      True
+  uniform     14                 True                  14                      True
+  linear       6                 True                  16                      True
+  linear      10                 True                  46                      True
+  linear      14                 True                  92                      True
+  randpos      6                 True                  30                      True
+  randpos     10                 True                 213                      True
+  randpos     14                 True                 427                      True
+  randsign     6                 True                  32                      True
+  randsign    10                 True                 180                      True
+  randsign    14                 True                 394                      True
+  decaying     6                 True                  32                      True
+  decaying    10                 True                 448                      True
+  decaying    14                 True                4092                      True
+  READ: all agree = True.  Every number below is therefore an EXACT count, not a sample.
+
+--------------------------------------------------------------------------------------------------------
+  coh = |sum_i J_i t_i| / sum_i |J_i|      (C-46's discriminator; 1 = accumulates, 0 = screens)
+  the 'random' column is the EXACT MEAN over all 2^n configurations, in rational arithmetic
+--------------------------------------------------------------------------------------------------------
+  family         n  coh RANDOM(exact)   sampled  coh ALIGNED  coh GROUND  coh WORST  coh*sqrt(n)     sum|J| = M  M(n)/M(n/2)
+  uniform        3           0.500000    0.4975     1.000000    1.000000   0.000000       0.8660              2          nan
+  uniform        5           0.375000    0.3760     1.000000    1.000000   0.000000       0.8385              4       2.0000
+  uniform        9           0.273438    0.2749     1.000000    1.000000   0.000000       0.8203              8       2.0000
+  uniform       17           0.196381    0.1967     1.000000    1.000000   0.000000       0.8097             16       2.0000
+  uniform       33           0.139950    0.1394     1.000000    1.000000   0.000000       0.8040             32       2.0000
+  uniform       65           0.099347    0.0996     1.000000    1.000000   0.000000       0.8010             64       2.0000
+  uniform      129           0.070386    0.0712     1.000000    1.000000   0.000000       0.7994            128       2.0000
+  uniform      257           0.049819    0.0498     1.000000    1.000000   0.000000       0.7987            256       2.0000
+
+  linear         3           0.666667    0.6650     1.000000    1.000000   0.333333       1.1547              3          nan
+  linear         5           0.450000    0.4490     1.000000    1.000000   0.000000       1.0062             10       3.3333
+  linear         9           0.322049    0.3246     1.000000    1.000000   0.000000       0.9661             36       3.6000
+  linear        17           0.229007    0.2297     1.000000    1.000000   0.000000       0.9442            136       3.7778
+  linear        33           0.162384    0.1626     1.000000    1.000000   0.000000       0.9328            528       3.8824
+  linear        65           0.114990    0.1163     1.000000    1.000000   0.000000       0.9271           2080       3.9394
+  linear       129           0.081371    0.0800     1.000000    1.000000   0.000000       0.9242           8256       3.9692
+  linear       257           0.057560    0.0573     1.000000    1.000000   0.000000       0.9228          32896       3.9845
+
+  randpos        3           0.687500    0.6859     1.000000    1.000000   0.375000       1.1908             80          nan
+  randpos        5           0.432796    0.4333     1.000000    1.000000   0.118280       0.9678            186       2.3250
+  randpos        9           0.325775    0.3268     1.000000    1.000000   0.000000       0.9773            266       1.4301
+  randpos       17           0.221951    0.2225     1.000000    1.000000   0.000000       0.9151            562       2.1128
+  randpos       33           0.158687    0.1589     1.000000    1.000000   0.000000       0.9116           1106       1.9680
+  randpos       65           0.112218    0.1127     1.000000    1.000000   0.000459       0.9047           2177       1.9684
+  randpos      129           0.079655    0.0797     1.000000    1.000000   0.000234       0.9047           4281       1.9665
+  randpos      257           0.057431    0.0573     1.000000    1.000000   0.000123       0.9207           8151       1.9040
+
+  randsign       3           0.942308    0.9420     1.000000    1.000000   0.884615       1.6321             52          nan
+  randsign       5           0.486486    0.4871     1.000000    1.000000   0.063063       1.0878            111       2.1346
+  randsign       9           0.312635    0.3128     0.551724    1.000000   0.000000       0.9379            232       2.0901
+  randsign      17           0.218104    0.2198     0.033989    1.000000   0.001789       0.8993            559       2.4095
+  randsign      33           0.161256    0.1614     0.025747    1.000000   0.001030       0.9263            971       1.7370
+  randsign      65           0.112509    0.1131     0.038154    1.000000   0.000471       0.9071           2123       2.1864
+  randsign     129           0.081154    0.0829     0.075818    1.000000   0.000000       0.9217           4036       1.9011
+  randsign     257           0.057739    0.0585     0.014106    1.000000   0.000125       0.9256           8011       1.9849
+
+  decaying       3           0.800000    0.7990     1.000000    1.000000   0.600000       1.3856           6300          nan
+  decaying       5           0.702439    0.7045     1.000000    1.000000   0.404878       1.5707           7175       1.1389
+  decaying       9           0.654886    0.6548     1.000000    1.000000   0.309771       1.9647           7696       1.0726
+  decaying      17           0.631658    0.6316     1.000000    1.000000   0.263316       2.6044           7979       1.0368
+  decaying      33           0.620690    0.6209     1.000000    1.000000   0.241379       3.5656           8120       1.0177
+  decaying      65           0.616062    0.6186     1.000000    1.000000   0.232123       4.9668           8181       1.0075
+  decaying     129           0.611280    0.6146     1.000000    1.000000   0.222559       6.9428           8245       1.0078
+  decaying     257           0.601935    0.5959     1.000000    1.000000   0.203870       9.6497           8373       1.0155
+
+  READ, from the columns above:
+    uniform    coh(random) 0.5000 (n=3)  ->  0.049819 (n=257),  coh(n)/coh(n/2) = 0.7078  [1/sqrt2 = 0.7071],  M(n)/M(n/2) = 2.0000  [extensive = 2]
+    linear     coh(random) 0.6667 (n=3)  ->  0.057560 (n=257),  coh(n)/coh(n/2) = 0.7074  [1/sqrt2 = 0.7071],  M(n)/M(n/2) = 3.9845  [extensive = 2]
+    randpos    coh(random) 0.6875 (n=3)  ->  0.057431 (n=257),  coh(n)/coh(n/2) = 0.7210  [1/sqrt2 = 0.7071],  M(n)/M(n/2) = 1.9040  [extensive = 2]
+    randsign   coh(random) 0.9423 (n=3)  ->  0.057739 (n=257),  coh(n)/coh(n/2) = 0.7115  [1/sqrt2 = 0.7071],  M(n)/M(n/2) = 1.9849  [extensive = 2]
+    decaying   coh(random) 0.8000 (n=3)  ->  0.601935 (n=257),  coh(n)/coh(n/2) = 0.9847  [1/sqrt2 = 0.7071],  M(n)/M(n/2) = 1.0155  [extensive = 2]
+
+  THE ONE FAMILY THAT KEEPS ITS SIGN COHERENCE IS THE ONE THAT IS NOT EXTENSIVE.
+  'decaying' has J_i ~ 1/i^2, a SUMMABLE coupling sequence.  Its coh(random) stays near 0.60
+  and does NOT fall -- but read the M column beside it: M(n)/M(n/2) is near 1, not 2, because
+  sum_i |J_i| CONVERGES.  A handful of leading bonds hold all of the energy and there is nothing
+  for the rest to cancel.  Coherence bought this way costs extensivity, clause (a) of the
+  standard.  The four EXTENSIVE families all show M(n)/M(n/2) -> 2 and coh -> 0 together.
+  NOTHING here was inserted to make that happen: the 1/i^2 profile was INSERTED, the trade-off
+  between its coherence and its extensivity was INDUCED.
+
+  The GROUND column sits at exactly 1.000000 in every row and is the POSITIVE CONTROL demanded
+  by D-15: the same estimator, on the same carrier, DOES return 1 when the terms are aligned.
+  The decay of coh(random) is therefore a property of the configuration, not of the instrument.
+
+--------------------------------------------------------------------------------------------------------
+  IS THE RANDOM-CONFIGURATION DECAY A LAW OR A FIT?   (D-20: out-of-sample, not in-sample)
+  For J_i = 1 the exact mean of |sum of m random signs| is  m * C(m-1, floor((m-1)/2)) / 2^(m-1),
+  a CLOSED FORM in rational arithmetic.  It is compared to the DP below -- an exact identity,
+  not a fit -- and then used to predict coh at sizes the DP was never run at.
+--------------------------------------------------------------------------------------------------------
+    m=n-1                  closed form (exact)     DP mean|E|  identical?  coh = mean|E|/m  coh*sqrt(m)
+        2                                    1       1.000000        True       0.50000000     0.707107
+        4                                  3/2       1.500000        True       0.37500000     0.750000
+        8                                35/16       2.187500        True       0.27343750     0.773398
+       16                            6435/2048       3.142090        True       0.19638062     0.785522
+       32                   300540195/67108864       4.478398        True       0.13994993     0.791676
+       64           6141254512576/965880596385       6.358192        True       0.09934675     0.794774
+      128           7825539666269/868595297137       9.009420        True       0.07038609     0.796328
+      256          10168327211083/797284981992      12.753692        True       0.04981911     0.797106
+      512           2622692325515/145339734052              -     not run       0.03524464     0.797495
+     1024          17135654394911/671300056125              -     not run       0.02492781     0.797690
+     4096          25730835279283/503918562379              -     not run       0.01246619     0.797836
+
+  READ: coh * sqrt(m) is flat at sqrt(2/pi) = 0.797885.  The decay is EXACTLY
+  m^(-1/2) with the central-limit constant, established by a closed form that agrees with the DP
+  digit for digit at every m the DP was run at, and then evaluated at m = 512, 1024, 4096 where
+  the DP was NOT run -- an OUT-OF-SAMPLE prediction, not an in-sample fit.  D-20 does not bite.
+
+--------------------------------------------------------------------------------------------------------
+  THE WORST CASE, EXACTLY:  min over configurations of |E|.  A perfect cancellation is a
+  perfect partition of the multiset {|J_i|}; parity forbids 0 when sum|J_i| is odd.
+--------------------------------------------------------------------------------------------------------
+  family         n     sum|J| = M     min|E|   coh WORST  #configs attaining it  CONTROL: max|E|  coh at max
+  uniform        9              8          0  0.00000000                     70                8    1.000000
+  uniform       17             16          0  0.00000000                  12870               16    1.000000
+  uniform       33             32          0  0.00000000              601080390               32    1.000000
+  uniform       65             64          0  0.00000000    1832624140942590534               64    1.000000
+
+  linear         9             36          0  0.00000000                     14               36    1.000000
+  linear        17            136          0  0.00000000                   1314              136    1.000000
+  linear        33            528          0  0.00000000               31592878              528    1.000000
+  linear        65           2080          0  0.00000000      48870013251334676             2080    1.000000
+
+  randpos        9            266          0  0.00000000                      2              266    1.000000
+  randpos       17            562          0  0.00000000                    288              562    1.000000
+  randpos       33           1106          0  0.00000000               15444124             1106    1.000000
+  randpos       65           2177          1  0.00045935      95723479878712570             2177    1.000000
+
+  randsign       9            232          0  0.00000000                      6              232    1.000000
+  randsign      17            559          1  0.00178891                    696              559    1.000000
+  randsign      33            971          1  0.00102987               34602784              971    1.000000
+  randsign      65           2123          1  0.00047103      97909045185800474             2123    1.000000
+
+  decaying       9           7696       2384  0.30977131                      2             7696    1.000000
+  decaying      17           7979       2101  0.26331621                      2             7979    1.000000
+  decaying      33           8120       1960  0.24137931                      2             8120    1.000000
+  decaying      65           8181       1899  0.23212321                      2             8181    1.000000
+
+  READ: the worst case drives coh to the parity floor -- 0 exactly when a perfect partition
+  exists, otherwise 1/M -- while the SAME table's max|E| column returns coh = 1.  The quantity
+  spans the entire interval [0,1] as the configuration is varied.  Its sign coherence is
+  therefore NOT a property of the construction at all; it is a property of the CONFIGURATION.
+
+--------------------------------------------------------------------------------------------------------
+  THE ENERGY SPREAD, which is configuration-INDEPENDENT:  spread = max E - min E.
+  Open chain: the bond variables t are free, so spread = 2 sum_i |J_i| EXACTLY.
+--------------------------------------------------------------------------------------------------------
+  family         n      spread (DP)       2*sum|J| ?   equal?  spread(2n)/spread(n)  sign ever in question?
+  uniform        9               16               16     True                   nan     NO -- max minus min
+  uniform       17               32               32     True              2.000000     NO -- max minus min
+  uniform       33               64               64     True              2.000000     NO -- max minus min
+  uniform       65              128              128     True              2.000000     NO -- max minus min
+  uniform      129              256              256     True              2.000000     NO -- max minus min
+  uniform      257              512              512     True              2.000000     NO -- max minus min
+
+  linear         9               72               72     True                   nan     NO -- max minus min
+  linear        17              272              272     True              3.777778     NO -- max minus min
+  linear        33             1056             1056     True              3.882353     NO -- max minus min
+  linear        65             4160             4160     True              3.939394     NO -- max minus min
+  linear       129            16512            16512     True              3.969231     NO -- max minus min
+  linear       257            65792            65792     True              3.984496     NO -- max minus min
+
+  randpos        9              532              532     True                   nan     NO -- max minus min
+  randpos       17             1124             1124     True              2.112782     NO -- max minus min
+  randpos       33             2212             2212     True              1.967972     NO -- max minus min
+  randpos       65             4354             4354     True              1.968354     NO -- max minus min
+  randpos      129             8562             8562     True              1.966468     NO -- max minus min
+  randpos      257            16302            16302     True              1.903994     NO -- max minus min
+
+  randsign       9              464              464     True                   nan     NO -- max minus min
+  randsign      17             1118             1118     True              2.409483     NO -- max minus min
+  randsign      33             1942             1942     True              1.737030     NO -- max minus min
+  randsign      65             4246             4246     True              2.186406     NO -- max minus min
+  randsign     129             8072             8072     True              1.901083     NO -- max minus min
+  randsign     257            16022            16022     True              1.984886     NO -- max minus min
+
+  decaying       9            15392            15392     True                   nan     NO -- max minus min
+  decaying      17            15958            15958     True              1.036772     NO -- max minus min
+  decaying      33            16240            16240     True              1.017671     NO -- max minus min
+  decaying      65            16362            16362     True              1.007512     NO -- max minus min
+  decaying     129            16490            16490     True              1.007823     NO -- max minus min
+  decaying     257            16746            16746     True              1.015525     NO -- max minus min
+
+  READ: the identity spread = 2*sum|J_i| held in every row (True).  The doubling
+  ratio at the top of each family, read off the column above:
+    uniform    spread(2n)/spread(n) = 2.000000   EXTENSIVE
+    linear     spread(2n)/spread(n) = 3.984496   SUPER-extensive -- but J_i = i was INSERTED as growing with position
+    randpos    spread(2n)/spread(n) = 1.903994   EXTENSIVE
+    randsign   spread(2n)/spread(n) = 1.984886   EXTENSIVE
+    decaying   spread(2n)/spread(n) = 1.015525   NOT extensive -- sum|J_i| converges
+  So the spread is extensive exactly for the families whose couplings neither decay nor grow.
+  IT IS SIGN-DEFINITE -- AND ITS SIGN WAS NEVER IN QUESTION.  It is a maximum minus a minimum,
+  non-negative by construction, and by C-46's own standard that disqualifies it as evidence of
+  accumulation.  It is recorded here so that no later row can smuggle it back in as a result.
+

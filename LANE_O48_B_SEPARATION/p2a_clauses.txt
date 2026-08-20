@@ -1,0 +1,60 @@
+==========================================================================================================================
+PART 2 STEP A -- DO THE FIVE CLAUSES SURVIVE THE MEDIATOR?  Full ED on the NEW H, every case.
+  CARRIER: m record qubits + m mediator qubits.  Records couple to the mediator ONLY ON-SITE.
+  H = -sum (t_i/2)(XaXa+YaYa) - (w_i/2)(XaXa-YaYa) - g sum Zr_i Za_i - mu sum Za_i [+ inserted LR]
+==========================================================================================================================
+
+--------------------------------------------------------------------------------------------------------------------------
+[A1] CLAUSES (i)-(iv) FOR EVERY RECORD Zr_i UNDER THE NEW H.   D-15 control column: the PAIR
+     Zr_0 Zr_1 run through the identical (iv) criterion, which must register a NON-ZERO.
+--------------------------------------------------------------------------------------------------------------------------
+                      case  m    dim  #eig   (i)  (ii) max||[H,R]||  (iii)  (iv) max|Tr P_E R_i|  (iv)? |  CTRL |Tr P_E Zr0Zr1| ctrl(iv)?
+         GAPLESS   t=1 w=0  3     64    18  True     0.000000000000   True        0.000000000000   True |        2.000000000000     False
+         GAPLESS   t=1 w=0  4    256    73  True     0.000000000000   True        0.000000000000   True |        4.000000000000     False
+       GAPPED    t=1 w=0.5  3     64    20  True     0.000000000000   True        0.000000000000   True |        2.000000000000     False
+       GAPPED    t=1 w=0.5  4    256    92  True     0.000000000000   True        0.000000000000   True |        2.000000000000     False
+       GAPPED    t=1 w=1.0  3     64     8  True     0.000000000000   True        0.000000000000   True |        0.000000000000      True
+       GAPPED    t=1 w=1.0  4    256    16  True     0.000000000000   True        0.000000000000   True |        0.000000000000      True
+         NEG CTRL  t=0 w=0  3     64     4  True     0.000000000000   True        0.000000000000   True |        0.000000000000      True
+         NEG CTRL  t=0 w=0  4    256     5  True     0.000000000000   True        0.000000000000   True |        0.000000000000      True
+    DISORDER  t_i distinct  3     64    24  True     0.000000000000   True        0.000000000000   True |        2.000000000000     False
+    DISORDER  t_i distinct  4    256   109  True     0.000000000000   True        0.000000000000   True |        4.000000000000     False
+  POS CTRL  inserted A/r^3  3     64    22  True     0.000000000000   True        0.000000000000   True |        4.000000000000     False
+  POS CTRL  inserted A/r^3  4    256    80  True     0.000000000000   True        0.000000000000   True |        8.000000000000     False
+      mu != 0   t=1 mu=0.3  3     64    40  True     0.000000000000   True        2.000000000000  False |        1.000000000000     False
+      mu != 0   t=1 mu=0.3  4    256   117  True     0.000000000000   True        3.000000000000  False |        4.000000000000     False
+       g = 0     decoupled  3     64     3  True     0.000000000000   True        0.000000000000   True |        0.000000000000      True
+       g = 0     decoupled  4    256     9  True     0.000000000000   True        0.000000000000   True |        0.000000000000      True
+
+--------------------------------------------------------------------------------------------------------------------------
+[A2] THE ADMISSIBLE WRITER, SEARCHED OVER THE FULL PAULI GROUP ON 2m QUBITS (4^(2m) elements).
+     NEVER NOMINATED.  ADMISSIBLE := [U,H] = 0.  Energy cost of the write = ||U^dag H U - H||.
+     D-15 control column: the same search for a flipper of the PAIR Zr_0 Zr_1.
+--------------------------------------------------------------------------------------------------------------------------
+                      case  m  #searched  #adm. flip Zr_0    example (rec|med)    ||[U,H]||  write cost |  CTRL #adm. flip Zr0Zr1
+         GAPLESS   t=1 w=0  3       4096               16              XXX|XXX  0.000000000  0.00000000 |                       0
+         GAPLESS   t=1 w=0  4      65536               32            XXXX|XXXX  0.000000000  0.00000000 |                       0
+       GAPPED    t=1 w=0.5  3       4096               16              XXX|XXX  0.000000000  0.00000000 |                       0
+       GAPPED    t=1 w=0.5  4      65536               32            XXXX|XXXX  0.000000000  0.00000000 |                       0
+       GAPPED    t=1 w=1.0  3       4096               64              XII|XII  0.000000000  0.00000000 |                      64
+       GAPPED    t=1 w=1.0  4      65536              256            XIII|XIII  0.000000000  0.00000000 |                     256
+         NEG CTRL  t=0 w=0  3       4096              256              XII|XII  0.000000000  0.00000000 |                     256
+         NEG CTRL  t=0 w=0  4      65536             2048            XIII|XIII  0.000000000  0.00000000 |                    2048
+    DISORDER  t_i distinct  3       4096               16              XXX|XXX  0.000000000  0.00000000 |                       0
+    DISORDER  t_i distinct  4      65536               32            XXXX|XXXX  0.000000000  0.00000000 |                       0
+  POS CTRL  inserted A/r^3  3       4096               16              XXX|XXX  0.000000000  0.00000000 |                       0
+  POS CTRL  inserted A/r^3  4      65536               32            XXXX|XXXX  0.000000000  0.00000000 |                       0
+      mu != 0   t=1 mu=0.3  3       4096                0                    -          nan         nan |                       0
+      mu != 0   t=1 mu=0.3  4      65536                0                    -          nan         nan |                       0
+       g = 0     decoupled  3       4096              128              XII|III  0.000000000  0.00000000 |                     128
+       g = 0     decoupled  4      65536              512            XIII|IIII  0.000000000  0.00000000 |                     512
+
+[A3] EXACT STRUCTURAL STATEMENT (an argument, not a trend).  Every record operator Zr_i enters H
+     only as Zr_i, so [H, Zr_i] = 0 for ANY parameters: clause (ii) is automatic and H is block
+     diagonal over the record configuration z.  Clause (iv) is the one at risk.  The global flip
+     U = X^(rec) tensor X^(med) sends Zr_i -> -Zr_i and Za_i -> -Za_i, so it preserves the XaXa
+     and YaYa terms and preserves Zr_i Za_i, but sends the field term -mu Za_i -> +mu Za_i.
+     Hence mu = 0 is exactly the condition under which that flip is admissible.  In fermion
+     language mu is the mediator's CHEMICAL POTENTIAL and the flip is PARTICLE-HOLE conjugation:
+     clause (iv) is the demand that the mediator sit at HALF FILLING.  The search in [A2] tests
+     this over the WHOLE Pauli group, not just that one candidate.

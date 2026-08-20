@@ -1,0 +1,83 @@
+======================================================================================================================
+S6  INDEPENDENT RECORD BITS  --  n records is not n bits
+======================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------------
+VENUE 1  THE FULLY COUPLED CHAIN, the venue everything above was measured in.
+An eigenspace of dimension m can hold at most log2(m) independent record bits, because k
+independent bits demand 2^k joint eigenspaces inside the level.
+Measured with the program's own machinery where the dense object fits, and by exact level
+combinatorics at every n.
+----------------------------------------------------------------------------------------------------------------------
+  n  #records passing (i)-(iv)  max level dim   log2 -> bit CEILING  MODEL commuting_family  MODEL independently_writable
+  2                          2              2                     1                       1                             1
+  3                          3              2                     1                       1                             1
+  4                          4              2                     1                       1                             1
+  5                          5              2                     1                       1                             1
+  6                          6              2                     1                       1                             1
+  7                          7              2                     1                       1                             1
+  8                          8              2                     1                       1                             1
+  9                          9              2                     1       (dense too large)             (dense too large)
+ 10                         10              2                     1       (dense too large)             (dense too large)
+ 11                         11              2                     1       (dense too large)             (dense too large)
+ 12                         12              2                     1       (dense too large)             (dense too large)
+ 13                         13              2                     1       (dense too large)             (dense too large)
+ 14                         14              2                     1       (dense too large)             (dense too large)
+ 15                         15              2                     1       (dense too large)             (dense too large)
+ 16                         16              2                     1       (dense too large)             (dense too large)
+
+READ, AND IT IS THE UNFLATTERING READ: every eigenspace of the fully coupled chain has
+dimension EXACTLY 2 at every n. All n of the Z_i satisfy clauses (i)-(iv), but inside any
+level they are the SAME BIT up to sign -- the chain holds ONE independent record bit however
+long it is. The program's own commuting_family returns a family of size 1, independently of n.
+The energy spread is extensive; the number of independent records is NOT.
+
+WHY: with distinct couplings, the map s -> (s_i s_{i+1})_i is exactly 2-to-1 onto the bond
+strings, so each energy level is precisely a pair {s, -s}. The bond correlations LABEL the
+levels; the records live in the two-fold degeneracy inside a level and nowhere else.
+  n   #levels    2^(n-1)   equal?   every level dim 2?   is Z_iZ_{i+1} non-trivial (clause iii)?
+  2         2          2     True                 True                                     False
+  3         4          4     True                 True                                     False
+  4         8          8     True                 True                                     False
+  5        16         16     True                 True                                     False
+  6        32         32     True                 True                                     False
+  7        64         64     True                 True                                     False
+  8       128        128     True                 True                                     False
+READ: the number of levels is exactly 2^(n-1) and every level has dimension 2. The pair
+correlations FAIL clause (iii) -- they are constant on every eigenspace. So they are
+conserved charges, not records; and no admissible unitary can change any of them, since an
+admissible U preserves each level and the correlation is a scalar there.
+THAT IS AN EXACT ARGUMENT, and it is stronger than a search: it is not that no cheap writer
+of the correlation was found, it is that NONE EXISTS.
+
+----------------------------------------------------------------------------------------------------------------------
+VENUE 2  THE SAME CHAIN CUT INTO r DISJOINT BLOCKS (the additivity geometry of S3), which is
+where the record count itself becomes extensive. Bonds inside blocks are the same distinct
+couplings; the r-1 bonds crossing the cuts are absent.
+Clauses (i)-(iv) are re-verified from scratch here (D-18): a new carrier is a new check.
+----------------------------------------------------------------------------------------------------------------------
+  n   r  block size  max level dim  bit CEILING  MODEL fam  MODEL indep-writable  (iii) all i  (iv) max|Tr|
+  4   2           2              4            2          2                     2         True             0
+  6   2           3              4            2          2                     2         True             0
+  6   3           2              8            3          3                     3         True             0
+  8   2           4              4            2          2                     2         True             0
+  8   4           2             16            4          4                     4         True             0
+ 10   5           2             32            5 (too large)           (too large)         True             0
+ 12   3           4              8            3 (too large)           (too large)         True             0
+ 12   4           3             16            4 (too large)           (too large)         True             0
+ 12   6           2             64            6 (too large)           (too large)         True             0
+ 14   7           2            128            7 (too large)           (too large)         True             0
+ 16   4           4             16            4 (too large)           (too large)         True             0
+ 16   8           2            256            8 (too large)           (too large)         True             0
+
+READ: cutting the chain into r blocks gives every level dimension 2^r and a bit ceiling of r.
+The program's own machinery confirms r independent, INDEPENDENTLY WRITABLE records wherever
+the dense object fits. Clauses (iii) and (iv) hold for every Z_i on this carrier too --
+clause (iv)'s trace is exact integer zero for all n and all i.
+So the number of independent records IS extensive in this venue, at r = n/w for fixed block
+size w, and S3 already showed the energy spread is EXACTLY additive over exactly these blocks.
+
+THE PRICE, STATED PLAINLY: in venue 2 the blocks are DECOUPLED, so the extensive spread is
+a sum of independent block contributions with no interaction between records in different
+blocks. Extensive and additive, yes; interacting, no. That is the same contact-or-nothing
+boundary C-47 recorded, met again from the other side.

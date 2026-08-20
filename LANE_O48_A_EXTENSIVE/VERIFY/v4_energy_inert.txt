@@ -1,0 +1,22 @@
+================================================================================================================
+V4  IS THE ENERGY INERT UNDER EVERY ADMISSIBLE OPERATION, BY DEFINITION?
+================================================================================================================
+Exhaustive over the full Pauli group at each n. For each Pauli P: is [P,H] = 0 (ADMISSIBLE)?
+and what is max over all 2^n basis states of |E(P s P) - E(s)|?
+  n   #Pauli  #ADMISSIBLE   max|dE| over ADMISSIBLE  #NON-adm [CONTROL]  max|dE| over NON-adm [CONTROL]
+  2       16            8                         0                   8                   1292431663550
+  3       64           16                         0                  48                   3124242902744
+  4      256           32                         0                 224                   4995851467076
+  5     1024           64                         0                 960                   6904592137146
+  6     4096          128                         0                3968                   8242393698596
+READ: filled from the numbers above. Note #Pauli counts exclude the 4 global phases;
+      nadm+nnon = 4^n/4 * ... the columns are x-support classes weighted by 2^n z-strings.
+
+SAME TEST ON THE RECORD-FREE FIELD CARRIER and on a LONG-RANGE carrier, to show the
+inertness is a property of the word ADMISSIBLE and not of this chain:
+                   carrier   n  #ADMISSIBLE x-supports   max|dE| ADMISSIBLE  max|dE| NON-adm [CTL]
+ field carrier (0 records)   5                       1                    0          9098605435434
+      all-pairs long-range   5                       2                    0         10640515832834
+READ: an X-support conjugation costs zero energy exactly when it is admissible, on every
+      carrier including the one with no records. ZERO WRITE COST IS THE DEFINITION OF
+      ADMISSIBLE, NOT A PROPERTY OF THIS CHAIN. The energy cannot vary with what is written.

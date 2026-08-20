@@ -1,0 +1,104 @@
+========================================================================================================
+O-48-C  STEP 4.   SEPARATION DEPENDENCE, AND WHETHER IT WAS INSERTED
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+  Q1.  DOES THE RECORD-PAIR CORRELATION FALL OFF WITH SEPARATION?
+  <Z_i Z_j> is evaluated exactly on three ensembles: the GROUND eigenspace, a single generic
+  eigenspace, and the uniform ensemble over all 2^n configurations.
+--------------------------------------------------------------------------------------------------------
+  family        n ensemble                     d=1       d=2       d=4       d=8      d=16
+  uniform      33 GROUND eigenspace             -1         1         1         1         1
+  uniform      33 a generic eigenspace          -1         1        -1         1         1
+  uniform      33 uniform over all 2^n           0         0         0         0         0
+
+  randpos      33 GROUND eigenspace             -1         1         1         1         1
+  randpos      33 a generic eigenspace          -1         1        -1         1         1
+  randpos      33 uniform over all 2^n           0         0         0         0         0
+
+  randsign     33 GROUND eigenspace              1         1         1         1         1
+  randsign     33 a generic eigenspace          -1         1        -1         1         1
+  randsign     33 uniform over all 2^n           0         0         0         0         0
+
+  READ: on ANY single eigenspace |<Z_iZ_j>| = 1 at EVERY separation -- perfectly FLAT, no decay
+  of any kind, neither power law nor exponential.  Averaged over the whole configuration space
+  it is exactly 0 at every separation -- also flat.  Neither is a falloff.  A 1D chain at fixed
+  energy is long-range ordered, so there is no length scale in the correlation to measure.
+  Clause (e) asks for separation DEPENDENCE; this quantity has none at all.
+
+--------------------------------------------------------------------------------------------------------
+  Q2.  DOES THE ENERGY COST OF CHANGING THE CORRELATION DEPEND ON THE SEPARATION?
+  cost(d) = min over odd subsets of the d-bond window of the exact integer energy change.
+  Evaluated from the GROUND configuration (every bond satisfied, so every single flip costs).
+--------------------------------------------------------------------------------------------------------
+  family        n    cost d=1    cost d=2    cost d=4    cost d=8   cost d=16   cost d=32    d-dependent?
+  uniform      33           2           2           2           2           2           2      NO -- FLAT
+  uniform      65           2           2           2           2           2           2      NO -- FLAT
+
+  randpos      33         110          50          50           6           6           6             YES
+  randpos      65         110          50          50           6           6           6             YES
+
+  randsign     33          98           6           6           6           6           6             YES
+  randsign     65          98           6           6           6           6           6             YES
+
+  READ THE 'uniform' ROWS FIRST.  With every J_k equal the cost is the SAME NUMBER at every
+  separation -- exactly flat, no d-dependence whatsoever.  That is the control that decides
+  the meaning of the disordered rows: any d-dependence seen there comes from the SPREAD OF THE
+  COUPLINGS, which was INSERTED into the venue, and not from separation as such.
+
+--------------------------------------------------------------------------------------------------------
+  WHAT SHAPE DOES THE DISORDERED CASE TAKE, AND IS IT A LAW?
+  From the ground configuration cost(d) = 2 * min_{k<d} |J_k|, a MINIMUM OVER d SAMPLES of the
+  inserted coupling distribution.  For J drawn uniformly on {1..K} the exact expectation of
+  that minimum is a closed form; it is computed below and compared to the measured mean.
+--------------------------------------------------------------------------------------------------------
+      d  measured mean cost (300 draws)   exact E[2*min of d draws]    ratio     cost*d    CONTROL uniform J
+      1                         62.1733                   61.000000   1.0192    61.0000                    2
+      2                         42.0600                   41.005556   1.0257    82.0111                    2
+      4                         25.7533                   25.011111   1.0297   100.0444                    2
+      8                         14.1067                   14.355551   0.9827   114.8444                    2
+     16                          8.5933                    8.103225   1.0605   129.6516                    2
+     32                          4.9333                    4.724872   1.0441   151.1959                    2
+     64                          3.1533                    3.020793   1.0439   193.3307                    2
+    128                          2.1667                    2.261892   0.9579   289.5222                    2
+
+  READ: E[cost(d)] -> 2 as d grows (the floor of the inserted distribution), and cost*d is NOT
+  constant, so this is not a 1/d law either.  It is the extreme-value statistic of a coupling
+  distribution that was PUT IN BY HAND, and it saturates at the smallest coupling present.
+  It carries no information about the records: min_{k<d} |J_k| is a function of H alone --
+  the same record-blindness found in step 3, now in the separation channel.
+
+--------------------------------------------------------------------------------------------------------
+  Q3.  THE HONESTY CONTROL.  Insert a long-range coupling J_ij = round(A / |i-j|^p) and measure
+  the two-body energy at separation d.  If the measured exponent comes back equal to p, the
+  measurement was of the INPUT.  This is run so that no later reading of clause (e) on this
+  construction can mistake an inserted exponent for an induced one.
+--------------------------------------------------------------------------------------------------------
+   inserted p   measured exponent (log-log, exact ints)   |recovered - inserted|
+          1.0                                  1.000000                 3.33e-16
+          1.5                                  1.500000                 3.80e-08
+          2.0                                  2.000000                 1.48e-07
+          3.0                                  3.000005                 5.47e-06
+
+  READ: the recovered exponent reproduces the inserted exponent to within 5.5e-06 in every
+  row -- the residual is integer rounding of A/d^p, nothing else.  This control is DELIBERATELY
+  trivial: that is the point.  A power law in this construction is exactly as strong as the
+  power law written into H, and no stronger.
+  NOTHING in the nearest-neighbour chain INDUCES a power law: its energy is contact-only, its
+  correlations are flat, and the only separation dependence anywhere in the lane came from the
+  extreme-value statistics of couplings that were inserted by hand and saturates.
+
+--------------------------------------------------------------------------------------------------------
+  THE CONTACT STATEMENT, EXACTLY.   Energy attributable to the pair (i, j) at separation d,
+  defined as the coefficient of Z_i Z_j in H.  No fitting, no ensemble, just read off H.
+--------------------------------------------------------------------------------------------------------
+  family        n        d=1        d=2        d=3        d=4        d=8       d=16    CONTROL: sum over all d
+  uniform      33          1          0          0          0          0          0                         32
+  randpos      33         55          0          0          0          0          0                       1106
+
+  READ: the two-body energy is exactly zero at every separation beyond 1, while the same table's
+  control column shows the total is large -- the instrument is reading a real H.  The energy of
+  this construction is CONTACT-OR-NOTHING, which is exactly the verdict C-47 reached for
+  spread(Phi).  Clause (e) is not merely failed by an exponential here; there is no falloff to
+  measure, because there is nothing at range at all.
+

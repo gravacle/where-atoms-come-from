@@ -1,0 +1,166 @@
+================================================================================================================
+PART 1 -- THE HONEST BASELINE: H = sum_i J_i Z_i Z_{i+1}, records R_i = Z_i
+================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------
+[0] D-22 CHECK -- IS THERE GEOMETRY IN THE CARRIER AT ALL?  A permutation-symmetric carrier
+    can carry no separation dependence, and a null on one would mean nothing.
+----------------------------------------------------------------------------------------------------------------
+         carrier   n   ||H after swapping sites 0<->2  minus  H||  geometry?
+   chain uniform   6                                 11.313708499       True
+    chain random   6                                 14.757445939       True
+CONTROL all-to-all   6                                  0.000000000      False
+
+READ: the chain carrier is geometric (non-zero), the permutation-symmetric control is exactly
+      zero.  D-22 is satisfied: separation is a meaningful variable on this carrier.
+
+----------------------------------------------------------------------------------------------------------------
+[1] CLAUSES (i)-(iv) FOR EVERY RECORD AT EVERY n.  H and R_i are DIAGONAL, so eigenspaces are
+    energy level sets and Tr(P_E R) is an exact integer sum -- no dense 2^n matrix needed.
+    Cross-checked against full dense ED (record_model's criterion) at n<=9, column 'ED agrees'.
+    D-15 CONTROL COLUMN: the same criterion on the PAIR Z_0Z_1, which must register NON-ZERO.
+----------------------------------------------------------------------------------------------------------------
+  n        J     dim   #eig   (i)  (ii)  (iii)   (iv) max|Tr P_E R_i|  (iv)? |   CTRL max|Tr P_E Z_0Z_1|  ctrl(iv)?  ED agrees
+  3  uniform       8      3  True  True   True         0.000000000000   True |            2.000000000000      False       True
+  4  uniform      16      4  True  True   True         0.000000000000   True |            2.000000000000      False       True
+  5  uniform      32      5  True  True   True         0.000000000000   True |            4.000000000000      False       True
+  6  uniform      64      6  True  True   True         0.000000000000   True |            6.000000000000      False       True
+  7  uniform     128      7  True  True   True         0.000000000000   True |           10.000000000000      False       True
+  8  uniform     256      8  True  True   True         0.000000000000   True |           18.000000000000      False       True
+  9  uniform     512      9  True  True   True         0.000000000000   True |           28.000000000000      False       True
+ 10  uniform    1024     10  True  True   True         0.000000000000   True |           56.000000000000      False          -
+ 11  uniform    2048     11  True  True   True         0.000000000000   True |           96.000000000000      False          -
+ 12  uniform    4096     12  True  True   True         0.000000000000   True |          180.000000000000      False          -
+ 13  uniform    8192     13  True  True   True         0.000000000000   True |          330.000000000000      False          -
+ 14  uniform   16384     14  True  True   True         0.000000000000   True |          594.000000000000      False          -
+ 15  uniform   32768     15  True  True   True         0.000000000000   True |         1144.000000000000      False          -
+ 16  uniform   65536     16  True  True   True         0.000000000000   True |         2002.000000000000      False          -
+  3   random       8      4  True  True   True         0.000000000000   True |            2.000000000000      False       True
+  4   random      16      8  True  True   True         0.000000000000   True |            2.000000000000      False       True
+  5   random      32     16  True  True   True         0.000000000000   True |            2.000000000000      False       True
+  6   random      64     32  True  True   True         0.000000000000   True |            2.000000000000      False       True
+  7   random     128     64  True  True   True         0.000000000000   True |            2.000000000000      False       True
+  8   random     256    128  True  True   True         0.000000000000   True |            2.000000000000      False       True
+  9   random     512    256  True  True   True         0.000000000000   True |            2.000000000000      False       True
+ 10   random    1024    512  True  True   True         0.000000000000   True |            2.000000000000      False          -
+ 11   random    2048   1024  True  True   True         0.000000000000   True |            2.000000000000      False          -
+ 12   random    4096   2048  True  True   True         0.000000000000   True |            2.000000000000      False          -
+ 13   random    8192   4096  True  True   True         0.000000000000   True |            2.000000000000      False          -
+ 14   random   16384   8192  True  True   True         0.000000000000   True |            2.000000000000      False          -
+ 15   random   32768  16384  True  True   True         0.000000000000   True |            2.000000000000      False          -
+ 16   random   65536  32768  True  True   True         0.000000000000   True |            2.000000000000      False          -
+
+READ: clauses (i)-(iv) hold for EVERY R_i = Z_i at every n up to 16, for uniform and for
+      all-distinct couplings.  The control column Z_0Z_1 is NON-ZERO everywhere, so the record
+      column's zero is a measurement.  Dense ED agrees wherever it was affordable.
+
+----------------------------------------------------------------------------------------------------------------
+[2] THE ADMISSIBLE WRITER IS SEARCHED OVER THE FULL PAULI GROUP (all 4^n elements), NEVER
+    NOMINATED (D-18).  ADMISSIBLE := [U,H]=0 (O-4).  H's terms are DISTINCT, linearly
+    independent Paulis, so U H U^dag = H iff U commutes with every term: the F2 test is exact.
+----------------------------------------------------------------------------------------------------------------
+  n        J    #searched  #admiss. flip Z_0      example    ||[U,H]||  ||U^dag H U - H|| |   CONTROL #admiss. flip Z_0Z_1
+  3  uniform           64                  8          XXX  0.000000000        0.000000000 |                              0
+  4  uniform          256                 16         XXXX  0.000000000        0.000000000 |                              0
+  5  uniform         1024                 32        XXXXX  0.000000000        0.000000000 |                              0
+  6  uniform         4096                 64       XXXXXX  0.000000000        0.000000000 |                              0
+  7  uniform        16384                128      XXXXXXX  0.000000000        0.000000000 |                              0
+  8  uniform        65536                256     XXXXXXXX  0.000000000        0.000000000 |                              0
+  9  uniform       262144                512    XXXXXXXXX  0.000000000        0.000000000 |                              0
+ 10  uniform      1048576               1024   XXXXXXXXXX          nan                nan |                              0
+  3   random           64                  8          XXX  0.000000000        0.000000000 |                              0
+  4   random          256                 16         XXXX  0.000000000        0.000000000 |                              0
+  5   random         1024                 32        XXXXX  0.000000000        0.000000000 |                              0
+  6   random         4096                 64       XXXXXX  0.000000000        0.000000000 |                              0
+  7   random        16384                128      XXXXXXX  0.000000000        0.000000000 |                              0
+  8   random        65536                256     XXXXXXXX  0.000000000        0.000000000 |                              0
+  9   random       262144                512    XXXXXXXXX  0.000000000        0.000000000 |                              0
+ 10   random      1048576               1024   XXXXXXXXXX          nan                nan |                              0
+
+READ: an admissible flipper of each single record is FOUND at every n; the search returns the
+      global spin flip among many others, [U,H] = 0 exactly, so the write costs 0 -- FREE.
+      CONTROL: the identical exhaustive search returns ZERO admissible flippers of the PAIR
+      correlation Z_0Z_1 at every n.  Single records free, the pair not writable -- O-47 again.
+
+----------------------------------------------------------------------------------------------------------------
+[3] MINIMUM ENERGY COST OF CHANGING THE CORRELATION Z_iZ_j vs r=|i-j|, exhaustive over ALL 2^n
+    flip-subsets.  Pairs are CENTRED so the open boundary does not do the work.
+----------------------------------------------------------------------------------------------------------------
+  n        J   i   j   r   min cost change Z_iZ_j  exact 2*min_{i<=b<j}|J_b|  match |  CONTROL min cost flip Z_i
+ 16  uniform   7   8   1              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   7   9   2              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   6   9   3              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   6  10   4              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   5  10   5              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   5  11   6              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   4  11   7              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   4  12   8              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   3  12   9              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   3  13  10              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   2  13  11              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   2  14  12              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   1  14  13              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   1  15  14              2.000000000                2.000000000   True |                0.000000000
+ 16  uniform   0  15  15              2.000000000                2.000000000   True |                0.000000000
+ 16   random   7   8   1              2.642456000                2.642456000   True |                0.000000000
+ 16   random   7   9   2              2.594138000                2.594138000   True |                0.000000000
+ 16   random   6   9   3              1.010530000                1.010530000   True |                0.000000000
+ 16   random   6  10   4              1.010530000                1.010530000   True |                0.000000000
+ 16   random   5  10   5              1.010530000                1.010530000   True |                0.000000000
+ 16   random   5  11   6              1.010530000                1.010530000   True |                0.000000000
+ 16   random   4  11   7              1.010530000                1.010530000   True |                0.000000000
+ 16   random   4  12   8              1.010530000                1.010530000   True |                0.000000000
+ 16   random   3  12   9              1.010530000                1.010530000   True |                0.000000000
+ 16   random   3  13  10              1.010530000                1.010530000   True |                0.000000000
+ 16   random   2  13  11              1.010530000                1.010530000   True |                0.000000000
+ 16   random   2  14  12              1.010530000                1.010530000   True |                0.000000000
+ 16   random   1  14  13              1.010530000                1.010530000   True |                0.000000000
+ 16   random   1  15  14              1.010530000                1.010530000   True |                0.000000000
+ 16   random   0  15  15              1.010530000                1.010530000   True |                0.000000000
+
+MEASURED SPREAD OVER r:   uniform max-min = 0.000000000000    all-distinct max-min = 1.631926000   (values run 2.642456 -> 1.010530)
+READ (filled from the numbers above): for UNIFORM J the cost is EXACTLY CONSTANT in r -- spread
+      zero to twelve decimals.  For all-distinct J it is the exact quantity 2*min over the
+      INTERVENING BONDS: weakly decreasing, SATURATING once the globally weakest bond falls
+      inside the interval.  That is 'the weakest link between them', not a falloff law.  The
+      control column is exactly 0: flipping a single record is free, as [2] found.
+
+(3b) EXACT THEOREM, not a numerical trend.  In a ground configuration J_b z_b z_{b+1} = -|J_b|,
+     so dE(S) = +2 sum_{b in boundary(S)}|J_b| >= 0, equality only for S={} or S=all, both EVEN
+     on {i,j}.  The cheapest odd-parity S is a single tail cut at a bond b with i<=b<j, giving
+     2|J_b|.  Hence min cost = 2 min_{i<=b<j}|J_b| exactly.  Confirmed above, match=True, over
+     all 65536 subsets at n=16 for every centred pair.
+
+----------------------------------------------------------------------------------------------------------------
+[4] THE WALSH INSTRUMENT.  K(i,j) = 2^{-n} sum_z z_i z_j E(z) is THE exact two-body coefficient
+    of the block energy -- no fitting, no truncation.  This is the same instrument Part 2 uses;
+    it is validated here against a case whose answer is known analytically.
+----------------------------------------------------------------------------------------------------------------
+  r |  NN chain K(centre pair)  NN chain max|K| over all pairs |  +INSERTED A/r^3: K(centre)        exact    rel err
+  1 |           0.505265000000                  1.397214000000 |              0.805265000000  0.805265000   1.38e-16
+  2 |           0.000000000000                  0.000000000000 |              0.037500000000  0.037500000   5.55e-16
+  3 |           0.000000000000                  0.000000000000 |              0.011111111111  0.011111111   2.50e-15
+  4 |           0.000000000000                  0.000000000000 |              0.004687500000  0.004687500   6.48e-15
+  5 |           0.000000000000                  0.000000000000 |              0.002400000000  0.002400000   1.63e-15
+  6 |           0.000000000000                  0.000000000000 |              0.001388888889  0.001388889   1.41e-14
+  7 |           0.000000000000                  0.000000000000 |              0.000874635569  0.000874636   2.36e-14
+  8 |           0.000000000000                  0.000000000000 |              0.000585937500  0.000585937   4.31e-14
+  9 |           0.000000000000                  0.000000000000 |              0.000411522634  0.000411523   3.81e-14
+ 10 |           0.000000000000                  0.000000000000 |              0.000300000000  0.000300000   1.99e-15
+ 11 |           0.000000000000                  0.000000000000 |              0.000225394440  0.000225394   2.73e-14
+ 12 |           0.000000000000                  0.000000000000 |              0.000173611111  0.000173611   3.12e-16
+ 13 |          -0.000000000000                  0.000000000000 |              0.000136549841  0.000136550   2.12e-13
+
+READ (filled from the numbers above): on the nearest-neighbour chain the exact two-body
+      coefficient is non-zero ONLY at r=1 and is zero to machine precision at every r>=2, both
+      for the centre pair and for the MAXIMUM over all pairs at that separation.  With the
+      long-range term INSERTED the same instrument returns A/r^3 to <= 2.2e-13 relative error at
+      every r.  The instrument detects a power law when one is there.
+
+================================================================================================================
+PART 1 VERDICT.  On H = sum_i J_i Z_iZ_{i+1} the record-record energy is CONTACT-ONLY BY
+CONSTRUCTION: the exact two-body coefficient vanishes identically beyond r=1 and the operational
+cost of changing a correlation is 2*min over the intervening bonds -- exactly flat for uniform J.
+THIS ANSWER WAS PUT IN BY HAND.  It is INSERTED, it is worth nothing as evidence, and it is
+recorded only to fix the baseline that Part 2's INDUCED case must be measured against.
+================================================================================================================

@@ -1,0 +1,149 @@
+======================================================================================================================
+O-48-D  PART 4   CLAUSE (v):  IS THE RECORD PROTECTED ON THE CHAIN?
+======================================================================================================================
+
+4.0  THE EXACT CRITERION AGAINST AN EXHAUSTIVE PAULI SEARCH, on every block of every size,
+     n = 4..8.  The Pauli search can only ever find a SUBSET (Paulis are special unitaries),
+     so the exact test must be TRUE wherever the Pauli search succeeds, and it may be true in
+     places the Pauli search misses.  Any case where the Pauli search wins and the exact test
+     says NO would be a bug.
+
+    n     J   cases  exact YES  Pauli YES   Pauli YES & exact NO
+    4   UNI      20          4          4                      0
+    4   GEN      20          4          4                      0
+    5   UNI      35          5          5                      0
+    5   GEN      35          5          5                      0
+    6   UNI      56          6          6                      0
+    6   GEN      56          6          6                      0
+    7   UNI      84          7          7                      0
+    7   GEN      84          7          7                      0
+    8   UNI     120          8          8                      0
+    8   GEN     120          8          8                      0
+
+======================================================================================================================
+4.1  SWEEP OVER REGION SIZE w.  For each w, over EVERY contiguous block of that size and
+     EVERY record inside it: does an admissible operation on that one region flip the record?
+======================================================================================================================
+
+        geometry     J   n   w=1   w=2   w=3   w=4   w=5   w=6   w=7   w=8   w=9  w=10  w=11  w=12  w=13  w=14   smallest w that flips
+      OPEN CHAIN   UNI   3     0     0     3   .     .     .     .     .     .     .     .     .     .     .                         3
+      OPEN CHAIN   UNI   4     0     0     0     4   .     .     .     .     .     .     .     .     .     .                         4
+      OPEN CHAIN   UNI   5     0     0     0     0     5   .     .     .     .     .     .     .     .     .                         5
+      OPEN CHAIN   UNI   6     0     0     0     0     0     6   .     .     .     .     .     .     .     .                         6
+      OPEN CHAIN   UNI   7     0     0     0     0     0     0     7   .     .     .     .     .     .     .                         7
+      OPEN CHAIN   UNI   8     0     0     0     0     0     0     0     8   .     .     .     .     .     .                         8
+      OPEN CHAIN   UNI   9     0     0     0     0     0     0     0     0     9   .     .     .     .     .                         9
+      OPEN CHAIN   UNI  10     0     0     0     0     0     0     0     0     0    10   .     .     .     .                        10
+      OPEN CHAIN   UNI  11     0     0     0     0     0     0     0     0     0     0    11   .     .     .                        11
+      OPEN CHAIN   UNI  12     0     0     0     0     0     0     0     0     0     0     0    12   .     .                        12
+      OPEN CHAIN   UNI  13     0     0     0     0     0     0     0     0     0     0     0     0    13   .                        13
+      OPEN CHAIN   UNI  14     0     0     0     0     0     0     0     0     0     0     0     0     0    14                      14
+
+      OPEN CHAIN   GEN   3     0     0     3   .     .     .     .     .     .     .     .     .     .     .                         3
+      OPEN CHAIN   GEN   4     0     0     0     4   .     .     .     .     .     .     .     .     .     .                         4
+      OPEN CHAIN   GEN   5     0     0     0     0     5   .     .     .     .     .     .     .     .     .                         5
+      OPEN CHAIN   GEN   6     0     0     0     0     0     6   .     .     .     .     .     .     .     .                         6
+      OPEN CHAIN   GEN   7     0     0     0     0     0     0     7   .     .     .     .     .     .     .                         7
+      OPEN CHAIN   GEN   8     0     0     0     0     0     0     0     8   .     .     .     .     .     .                         8
+      OPEN CHAIN   GEN   9     0     0     0     0     0     0     0     0     9   .     .     .     .     .                         9
+      OPEN CHAIN   GEN  10     0     0     0     0     0     0     0     0     0    10   .     .     .     .                        10
+      OPEN CHAIN   GEN  11     0     0     0     0     0     0     0     0     0     0    11   .     .     .                        11
+      OPEN CHAIN   GEN  12     0     0     0     0     0     0     0     0     0     0     0    12   .     .                        12
+      OPEN CHAIN   GEN  13     0     0     0     0     0     0     0     0     0     0     0     0    13   .                        13
+      OPEN CHAIN   GEN  14     0     0     0     0     0     0     0     0     0     0     0     0     0    14                      14
+
+            RING   UNI   3     0     0  WRAP   .     .     .     .     .     .     .     .     .     .     .            NONE up to w=n
+            RING   UNI   4     0     0     0  WRAP   .     .     .     .     .     .     .     .     .     .            NONE up to w=n
+            RING   UNI   5     0     0     0     0  WRAP   .     .     .     .     .     .     .     .     .            NONE up to w=n
+            RING   UNI   6     0     0     0     0     0  WRAP   .     .     .     .     .     .     .     .            NONE up to w=n
+            RING   UNI   7     0     0     0     0     0     0  WRAP   .     .     .     .     .     .     .            NONE up to w=n
+            RING   UNI   8     0     0     0     0     0     0     0  WRAP   .     .     .     .     .     .            NONE up to w=n
+            RING   UNI   9     0     0     0     0     0     0     0     0  WRAP   .     .     .     .     .            NONE up to w=n
+            RING   UNI  10     0     0     0     0     0     0     0     0     0  WRAP   .     .     .     .            NONE up to w=n
+            RING   UNI  11     0     0     0     0     0     0     0     0     0     0  WRAP   .     .     .            NONE up to w=n
+            RING   UNI  12     0     0     0     0     0     0     0     0     0     0     0  WRAP   .     .            NONE up to w=n
+            RING   UNI  13     0     0     0     0     0     0     0     0     0     0     0     0  WRAP   .            NONE up to w=n
+            RING   UNI  14     0     0     0     0     0     0     0     0     0     0     0     0     0  WRAP          NONE up to w=n
+
+            RING   GEN   3     0     0  WRAP   .     .     .     .     .     .     .     .     .     .     .            NONE up to w=n
+            RING   GEN   4     0     0     0  WRAP   .     .     .     .     .     .     .     .     .     .            NONE up to w=n
+            RING   GEN   5     0     0     0     0  WRAP   .     .     .     .     .     .     .     .     .            NONE up to w=n
+            RING   GEN   6     0     0     0     0     0  WRAP   .     .     .     .     .     .     .     .            NONE up to w=n
+            RING   GEN   7     0     0     0     0     0     0  WRAP   .     .     .     .     .     .     .            NONE up to w=n
+            RING   GEN   8     0     0     0     0     0     0     0  WRAP   .     .     .     .     .     .            NONE up to w=n
+            RING   GEN   9     0     0     0     0     0     0     0     0  WRAP   .     .     .     .     .            NONE up to w=n
+            RING   GEN  10     0     0     0     0     0     0     0     0     0  WRAP   .     .     .     .            NONE up to w=n
+            RING   GEN  11     0     0     0     0     0     0     0     0     0     0  WRAP   .     .     .            NONE up to w=n
+            RING   GEN  12     0     0     0     0     0     0     0     0     0     0     0  WRAP   .     .            NONE up to w=n
+            RING   GEN  13     0     0     0     0     0     0     0     0     0     0     0     0  WRAP   .            NONE up to w=n
+            RING   GEN  14     0     0     0     0     0     0     0     0     0     0     0     0     0  WRAP          NONE up to w=n
+
+  Cells count (block, record) pairs at that w for which an admissible operation on that
+  single region flips the record.  ' WRAP' marks w = n on a ring, where the region is the
+  whole ring and is NOT a proper arc -- it is not a contractible region at all.
+
+======================================================================================================================
+4.2  CONTROLS (D-15).  Carriers where a SMALL region MUST be able to flip a record.
+     If the same instrument reports protection here, it is broken.
+======================================================================================================================
+
+                                       control   n  smallest w that flips  #(block,record) at that w
+               chain with J_4 = 0 (cut in two)   8                      3                          3
+               chain with J_5 = 0 (cut in two)  10                      4                          4
+               chain with J_6 = 0 (cut in two)  12                      5                          5
+                  NO Hamiltonian at all, H = 0   8                      1                          8
+                  NO Hamiltonian at all, H = 0  10                      1                         10
+                    only the left half coupled   8                      1                          4
+                    only the left half coupled  10                      1                          5
+
+======================================================================================================================
+4.3  AT w = n ON THE OPEN CHAIN, WHAT IS THE OPERATOR?  Built explicitly and measured.
+======================================================================================================================
+
+    n      block           operator   ||[U,H]||  ||U-dag Z_0 U + Z_0||          dE   #records flipped
+    4 all n sites               XXXX     0.0e+00                0.0e+00   +0.000000                  4
+    6 all n sites             XXXXXX     0.0e+00                0.0e+00   +0.000000                  6
+    8 all n sites           XXXXXXXX     0.0e+00                0.0e+00   +0.000000                  8
+
+======================================================================================================================
+  READ -- PART 4, FILLED IN FROM THE NUMBERS ABOVE, NOT IN ADVANCE
+======================================================================================================================
+
+  1. THE INSTRUMENT AGREES WITH AN EXHAUSTIVE PAULI SEARCH.  Section 4.0: across 4..8 sites,
+     both coupling sets, every block of every size and every record inside it -- 315 cases per coupling set, 630 in all --
+     the exact criterion and the exhaustive Pauli search return the SAME count, and the
+     'Pauli says yes, exact says no' column is 0 everywhere.  Note the counts are also equal,
+     so on this carrier the extra freedom of non-Pauli unitaries buys nothing.
+
+  2. ON THE OPEN CHAIN THE RECORD IS PROTECTED AGAINST EVERY REGION SMALLER THAN THE WHOLE
+     CARRIER, AND AGAINST NOTHING ELSE.  Section 4.1: for n = 3..14 and both coupling sets,
+     every cell at w < n is 0 and the cell at w = n is n.  The smallest region size whose
+     admissible operations can flip a record is EXACTLY n, at every n.  This covers ALL
+     unitaries supported on the region, not only Paulis.
+
+  3. SO CLAUSE (v) FAILS ON THE OPEN CHAIN.  In one dimension a contiguous block of sites is
+     contractible, and the whole chain IS a contiguous block.  Section 4.3 exhibits the
+     operator: X^(x)n, ||[U,H]|| = 0, U-dag Z_0 U = -Z_0 exactly, dE = +0.000000, and it flips
+     all n records at once.  A single contractible region -- the entire carrier -- writes the
+     record for free.  THEREFORE THE Z_i ON THE OPEN CHAIN ARE NOT RECORDS IN THE PROGRAM'S
+     FULL FIVE-CLAUSE SENSE, and O-47, and Parts 1-3 above, are scoped to clauses (i)-(iv).
+
+  4. ON THE RING, UNDER THE ARC CONVENTION, CLAUSE (v) HOLDS.  If a contractible region is a
+     PROPER ARC -- the reading that matches T-11's 'a forest, i.e. no cycle' -- then no
+     contractible region flips a record at any w up to n-1, for n = 3..14 and both coupling
+     sets, and the flipping operator at w = n is the whole ring, which wraps and is not a
+     contractible region at all.  The carrier's answer to clause (v) therefore turns entirely
+     on a convention about what 'contractible' means on a 1D lattice.  That is CARRIER DATA,
+     exactly as the model warns, and it is a decision, not a measurement.
+
+  5. THE CONTROLS REGISTER.  Section 4.2: cutting the chain by setting one coupling to zero
+     drops the smallest flipping region from n to the size of the SMALLER COMPONENT -- 3 at
+     n = 8, 4 at n = 10, 5 at n = 12.  With H = 0 it drops to 1.  With only the left half
+     coupled it is 1, on the uncoupled sites.  So the zeros in 4.1 are measurements.
+
+  6. WHAT PROTECTION ACTUALLY COSTS HERE.  The protection distance equals the writer weight,
+     n, which Part 1 measured independently.  They are the same number for the same reason:
+     the only admissible operators that flip the record have full support.  Protection and
+     non-locality of the writer are not two properties -- they are one.
+
+  runtime 17.0s

@@ -1,0 +1,158 @@
+========================================================================================================
+O-48-C  STEP 5.   SWEEP OF THE WHOLE DIAGONAL ALGEBRA: 2^n OBSERVABLES, TWO AXES, ONE TABLE
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+  INSTRUMENT CHECK: the vectorised classifier against a direct, slow, index-by-index loop
+--------------------------------------------------------------------------------------------------------
+  family       n    vectorised (both,rec,en,none)                      direct loop  agree?
+  superinc     5                   (0, 16, 15, 1)                   (0, 16, 15, 1)    True
+  superinc     7                   (0, 64, 63, 1)                   (0, 64, 63, 1)    True
+  randpos      5                   (0, 16, 15, 1)                   (0, 16, 15, 1)    True
+  randpos      7                   (0, 64, 7, 57)                   (0, 64, 7, 57)    True
+  uniform      5                   (0, 16, 1, 15)                   (0, 16, 1, 15)    True
+  uniform      7                   (0, 64, 1, 63)                   (0, 64, 1, 63)    True
+
+--------------------------------------------------------------------------------------------------------
+  THE CONTINGENCY TABLE.  Every Z_S for every subset S of the n sites.
+--------------------------------------------------------------------------------------------------------
+  family       n     2^n  RECORD & ENERGY  record only  energy only  neither  |S| odd all rec?  |S| even all energy?
+  superinc     5      32                0           16           15        1              True                  True
+  superinc     7     128                0           64           63        1              True                  True
+  superinc     9     512                0          256          255        1              True                  True
+  superinc    11    2048                0         1024         1023        1              True                  True
+  superinc    13    8192                0         4096         4095        1              True                  True
+
+  randpos      5      32                0           16           15        1              True                  True
+  randpos      7     128                0           64            7       57              True                 False
+  randpos      9     512                0          256            1      255              True                 False
+  randpos     11    2048                0         1024            1     1023              True                 False
+  randpos     13    8192                0         4096            1     4095              True                 False
+
+  uniform      5      32                0           16            1       15              True                 False
+  uniform      7     128                0           64            1       63              True                 False
+  uniform      9     512                0          256            1      255              True                 False
+  uniform     11    2048                0         1024            1     1023              True                 False
+  uniform     13    8192                0         4096            1     4095              True                 False
+
+  randsign     5      32                0           16           15        1              True                  True
+  randsign     7     128                0           64           15       49              True                 False
+  randsign     9     512                0          256            3      253              True                 False
+  randsign    11    2048                0         1024            1     1023              True                 False
+  randsign    13    8192                0         4096            1     4095              True                 False
+
+  READ: the RECORD-AND-ENERGY column is 0 across all 20 rows of the sweep, while
+  the other three columns are populated -- the classifier is not refusing to classify.
+  NO OBSERVABLE IN THE ENTIRE DIAGONAL ALGEBRA IS BOTH A RECORD AND A CARRIER OF ENERGY,
+  at any n or any coupling family tested.  On the generic families the split is exactly by
+  parity: |S| odd is the record sector, |S| even the energy sector.
+
+--------------------------------------------------------------------------------------------------------
+  THE REASON, IN ONE LINE, AND THE TEST THAT WOULD BREAK IT
+  The admissible writer F found by the exhaustive Pauli search in step 1 is the global flip.
+  F commutes with H, so every eigenspace is F-invariant and the diagonal algebra splits into
+  F-EVEN and F-ODD parts -- a Z_2 grading with nothing in between.
+     F-ODD  observables are carried to minus themselves by the writer, so Tr(P_E O) = 0 on
+            every eigenspace: they satisfy clause (iv), they are records -- and they are
+            non-constant on eigenspaces, so they cannot label an energy.
+     F-EVEN observables are constant on each eigenspace, so they CAN label an energy -- and
+            being constant there they FAIL clause (iii) and are not records.
+  CLAUSE (iv) IS ITSELF THE SEPARATOR.  Being writable by an admissible operation is exactly
+  what forces an observable's energy content to zero.  Not a feature of the chain: a feature
+  of demanding a writer that commutes with H.
+--------------------------------------------------------------------------------------------------------
+  BREAKING TEST: destroy the flip symmetry with a longitudinal field so that no admissible
+  flip exists, and re-run the identical classifier.  A sound classifier should show the RECORD
+  column COLLAPSE, not migrate into the both-box.
+
+  family       n  field h  RECORD & ENERGY  record only  energy only  neither
+  superinc     7        0                0           64           63        1
+  superinc     7        3                0            0            1      127
+
+  superinc     9        0                0          256          255        1
+  superinc     9        3                0            0            1      511
+
+  superinc    11        0                0         1024         1023        1
+  superinc    11        3                0            0            1     2047
+
+  randpos      7        0                0           64            7       57
+  randpos      7        3                0            0            7      121
+
+  randpos      9        0                0          256            1      255
+  randpos      9        3                0            0            1      511
+
+  randpos     11        0                0         1024            1     1023
+  randpos     11        3                0            0            1     2047
+
+  READ THE h=0 AND h=3 ROWS AS PAIRS.  The field moves the record column, and the
+  RECORD-AND-ENERGY column stays where it is.  The empty intersection is not the artefact of a
+  classifier that never says yes.
+
+--------------------------------------------------------------------------------------------------------
+  THE QUANTITATIVE FORM: HOW MANY BITS ABOUT THE ENERGY DOES READING AN OBSERVABLE BUY?
+  Exact mutual information I(O ; E) in bits, over the uniform distribution on configurations,
+  MAXIMISED over each sector -- so a single informative record anywhere would show up here.
+  Every record and every carrier is swept; nothing is sampled.
+--------------------------------------------------------------------------------------------------------
+  family       n  #records   max I(O;E) bits, RECORDS  #carriers   max I(O;E) bits, CARRIERS
+  superinc     7        64                   0.000000         63                    1.000000
+  superinc     9       256                   0.000000        255                    1.000000
+  superinc    11      1024                   0.000000       1023                    1.000000
+
+  randpos      7        64                   0.000000          7                    1.000000
+  randpos      9       256                   0.000000          1                    1.000000
+  randpos     11      1024                   0.000000          1                    1.000000
+
+  randsign     7        64                   0.000000         15                    1.000000
+  randsign     9       256                   0.000000          3                    1.000000
+  randsign    11      1024                   0.000000          1                    1.000000
+
+  uniform      7        64                   0.000000          1                    1.000000
+  uniform      9       256                   0.000000          1                    1.000000
+  uniform     11      1024                   0.000000          1                    1.000000
+
+  READ: the maximum over the ENTIRE record sector is 0.000000 bits in every row -- reading ANY
+  ONE record buys exactly nothing about the energy.  The same estimator on the carrier sector
+  in the same table returns a positive number of bits.  A record, singly, is energetically
+  invisible; an energetically informative observable is not a record.
+
+  THAT IS A STATEMENT ABOUT ONE RECORD AT A TIME AND MUST NOT BE STRETCHED.  Two records read
+  TOGETHER determine their product, and the product is a carrier.  The next table measures
+  exactly how much the joint reading buys, so that the single-record zero above cannot be
+  mistaken for a claim about the collection.
+
+--------------------------------------------------------------------------------------------------------
+  READING SEVERAL RECORDS AT ONCE.   Exact I(Z_0,...,Z_{k-1} ; E) in bits.
+  If the k-record joint reading buys more than one record does, the information lives in the
+  CORRELATIONS between records -- which step 1 showed are not records and admit NO admissible
+  writer at all.
+--------------------------------------------------------------------------------------------------------
+  family       n       k=1       k=2       k=3       k=4       k=5              law    CONTROL k-1
+  superinc     9   0.00000   1.00000   2.00000   3.00000   4.00000    I = k-1 EXACT      0,1,2,3,4
+  superinc    11   0.00000   1.00000   2.00000   3.00000   4.00000    I = k-1 EXACT      0,1,2,3,4
+  superinc    13   0.00000   1.00000   2.00000   3.00000   4.00000    I = k-1 EXACT      0,1,2,3,4
+
+  randpos      9   0.00000   0.50957   1.16169   2.13044   3.00544          not k-1      0,1,2,3,4
+  randpos     11   0.00000   0.29377   0.54735   1.08994   1.93369          not k-1      0,1,2,3,4
+  randpos     13   0.00000   0.18232   0.26713   0.54535   0.98684          not k-1      0,1,2,3,4
+
+  randsign     9   0.00000   0.71575   1.65325   2.10607   2.85607          not k-1      0,1,2,3,4
+  randsign    11   0.00000   0.30372   0.87053   1.07758   1.63212          not k-1      0,1,2,3,4
+  randsign    13   0.00000   0.13639   0.25878   0.39227   0.81911          not k-1      0,1,2,3,4
+
+  uniform      9   0.00000   0.09756   0.21084   0.34601   0.51356          not k-1      0,1,2,3,4
+  uniform     11   0.00000   0.07650   0.16223   0.25979   0.37307          not k-1      0,1,2,3,4
+  uniform     13   0.00000   0.06301   0.13210   0.20860   0.29433          not k-1      0,1,2,3,4
+
+  READ: the k=1 column is 0.00000 in EVERY row -- one record never buys anything, on any family.
+  On the generic family (superinc, no accidental degeneracy) the joint reading buys EXACTLY k-1
+  bits, one per extra record after the first.  The degenerate families buy LESS than k-1, never
+  more, because there the energy does not determine the bond pattern -- so k-1 is an upper
+  bound, and the direction of the conclusion is the same in every row.
+  The first record buys nothing; every record after it buys at most one bit, and that bit is
+  the CORRELATION with what is already read.  So the
+  energy content of k records is carried entirely by the k-1 correlations among them and not at
+  all by the records.  Since no admissible operation changes any of those correlations (step 1,
+  exhaustive over 4^n Paulis, zero flippers found), the energetic content of this construction
+  is exactly the part that CANNOT be written.
+

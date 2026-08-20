@@ -1,0 +1,194 @@
+========================================================================================================
+O-48-C  STEP 3.   IS THERE A REST-MASS PART, AND DOES IT KNOW ANYTHING ABOUT THE RECORDS?
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+  THE DECOMPOSITION, VERIFIED EXACTLY OVER ALL 2^n CONFIGURATIONS
+    E(s) = -M + B(s),   M := sum_i |J_i|,   B(s) := 2 * sum over UNSATISFIED bonds of |J_i|
+  a bond is 'unsatisfied' when J_i t_i > 0.  This is the closest thing the chain has to
+  'rest mass plus binding': a constant floor plus a configuration-dependent excess.
+--------------------------------------------------------------------------------------------------------
+  family        n  identity holds for all 2^n?    min B    max B     exact mean B  mean B / M  B ever < 0?
+  uniform       6                         True        0       10           5.0000    1.000000        False
+  uniform      10                         True        0       18           9.0000    1.000000        False
+  uniform      14                         True        0       26          13.0000    1.000000        False
+
+  randpos       6                         True        0      426         213.0000    1.000000        False
+  randpos      10                         True        0      596         298.0000    1.000000        False
+  randpos      14                         True        0      976         488.0000    1.000000        False
+
+  randsign      6                         True        0      284         142.0000    1.000000        False
+  randsign     10                         True        0      562         281.0000    1.000000        False
+  randsign     14                         True        0      894         447.0000    1.000000        False
+
+  decaying      6                         True        0    14752        7376.0000    1.000000        False
+  decaying     10                         True        0    15516        7758.0000    1.000000        False
+  decaying     14                         True        0    15826        7913.0000    1.000000        False
+
+  READ: the identity holds on every one of the 2^n configurations at every row, B is never
+  negative, and its exact mean is M -- i.e. the average configuration sits exactly at the
+  MIDDLE of the band, not near the floor.  B is sign-definite, but its sign was NEVER IN
+  QUESTION: it is E minus the minimum of E, non-negative by the definition of a minimum.
+  By C-46's own standard that is not evidence of accumulation.
+
+--------------------------------------------------------------------------------------------------------
+  THE RECORD-BLINDNESS TEST.   Hold H FIXED.  The global flip s -> -s changes the RECORD VALUE
+  b and leaves the bond pattern t untouched -- it is exactly the admissible writer that step 1
+  found by exhaustive search.  Ask of every energetic quantity: does it move when b moves?
+--------------------------------------------------------------------------------------------------------
+  family        n   max_s |E(s) - E(-s)|   max_s |B(s) - B(-s)|  max_s |M - M|    CONTROL: field on  max_s |E-E| there
+  uniform       6                      0                      0              0           h*Z_0, h=7                 14
+  uniform      10                      0                      0              0           h*Z_0, h=7                 14
+  uniform      14                      0                      0              0           h*Z_0, h=7                 14
+
+  randpos       6                      0                      0              0           h*Z_0, h=7                 14
+  randpos      10                      0                      0              0           h*Z_0, h=7                 14
+  randpos      14                      0                      0              0           h*Z_0, h=7                 14
+
+  randsign      6                      0                      0              0           h*Z_0, h=7                 14
+  randsign     10                      0                      0              0           h*Z_0, h=7                 14
+  randsign     14                      0                      0              0           h*Z_0, h=7                 14
+
+  decaying      6                      0                      0              0           h*Z_0, h=7                 14
+  decaying     10                      0                      0              0           h*Z_0, h=7                 14
+  decaying     14                      0                      0              0           h*Z_0, h=7                 14
+
+  READ: EVERY energetic quantity in this construction is INVARIANT under the flip that changes
+  the record.  E, B and M all return exactly 0 change, while the SAME estimator on the
+  field-broken control returns a non-zero number in the same table.  The one bit this carrier
+  can actually WRITE has ZERO energetic footprint at every n and every coupling family.
+  This is the n-site generalisation of O-47's 'single records flip for FREE', and it is exact:
+  the writer commutes with H, so it cannot change any energy, and it is the ONLY thing clause
+  (iv) licenses. There is no approximation and no fit anywhere in this row.
+
+--------------------------------------------------------------------------------------------------------
+  WHAT DOES THE SIGN-DEFINITE, EXTENSIVE PART DEPEND ON?   M = sum_i |J_i|.
+  It is a function of the coefficients of H and of NOTHING else.  The test: vary the records
+  over their whole space at fixed H, and vary H at fixed records, and see which moves M.
+--------------------------------------------------------------------------------------------------------
+  family        n  #configs varied  #distinct M values  #distinct E values    CONTROL: vary H, #M values
+  uniform       8              256                   1                   8                            20
+  uniform      12             4096                   1                  12                            20
+
+  randpos       8              256                   1                  96                            19
+  randpos      12             4096                   1                 322                            18
+
+  randsign      8              256                   1                  82                            19
+  randsign     12             4096                   1                 289                            19
+
+  decaying      8              256                   1                 128                            20
+  decaying     12             4096                   1                1600                            20
+
+  READ: over the entire 2^n-element record-configuration space M takes exactly ONE value, while
+  E takes many.  Vary H instead and M moves.  M IS A PROPERTY OF THE HAMILTONIAN, FULL STOP.
+  It is the l1 norm of H's coupling vector.  It is sign-definite, it is extensive whenever the
+  J_i do not decay, it is additive up to one boundary bond -- and IT IS RECORD-BLIND.
+
+--------------------------------------------------------------------------------------------------------
+  THE SCORECARD.  Every candidate against the five clauses of the standard, plus the two
+  questions C-46 forces:  was the sign ever in question, and does the quantity know anything
+  about what is written?
+--------------------------------------------------------------------------------------------------------
+  quantity                            sign-def  sign in Q?  extensive  additive  knows t  KNOWS b
+  E(s)   = sum_i J_i t_i                    no         YES  band only   yes+cut      yes       NO
+  M      = sum_i |J_i|                     yes          no        yes   yes+cut       no       NO
+  -M     = ground energy                   yes          no        yes   yes+cut       no       NO
+  spread = max E - min E = 2M              yes          no        yes   yes+cut       no       NO
+  B(s)   = E(s) + M   >= 0                 yes          no  band only   yes+cut      yes       NO
+  sum_i J_i^2  (2nd moment)                yes          no        yes   yes+cut       no       NO
+  E(s)^2 - sum_i J_i^2                      no         YES  band only        no      yes       NO
+  mean of E over all configs               n/a         YES = 0 exactly       yes       no       NO
+
+  PROVENANCE OF EACH COLUMN, so that no cell is taken on trust:
+    'sign in Q?'  and 'sign-def'  -- the coherence and worst-case tables of step 2, plus the
+                                     two-signed check immediately below.
+    'extensive'                   -- the spread table of step 2 ('band only' means the quantity
+                                     is confined to a band of width 2M and so inherits M's
+                                     extensivity as a BOUND, not as a growth law).
+    'additive'                    -- the cut table at the end of this step, for M and for E.
+                                     The E^2 row is marked 'no' by inspection: squaring a sum
+                                     creates cross terms spanning the cut, so the defect is not
+                                     a single bond.  That is the only cell not measured.
+    'knows t' and 'KNOWS b'       -- the record-blindness table above, exhaustive over 2^n.
+
+--------------------------------------------------------------------------------------------------------
+  THE TWO ENTRIES WORTH CHECKING BY HAND
+--------------------------------------------------------------------------------------------------------
+  family        n  exact mean of E  exactly 0?  frac configs with E^2 > sum J^2  both signs seen?   CONTROL mean w/ field
+  uniform       9                0        True                         0.289062              True                  3.0108
+  uniform      17                0        True                         0.210114              True                  3.9099
+  uniform      33                0        True                         0.377086              True                  5.2071
+
+  randpos       9                0        True                         0.335938              True                 87.3386
+  randpos      17                0        True                         0.322479              True                125.2872
+  randpos      33                0        True                         0.321605              True                176.1408
+
+  randsign      9                0        True                         0.351562              True                 74.2720
+  randsign     17                0        True                         0.324310              True                121.9203
+  randsign     33                0        True                         0.320191              True                156.5797
+
+  decaying      9                0        True                         0.468750              True               5040.0000
+  decaying     17                0        True                         0.466553              True               5040.0000
+  decaying     33                0        True                         0.466618              True               5040.0000
+
+  READ: the exact mean of the correlation energy over the whole configuration space is ZERO,
+  as an exact rational, at every n and every family -- the strongest possible statement of
+  cancellation.  The CONTROL column, the same mean restricted to a deliberately one-sided
+  sub-ensemble, is far from zero, so the estimator is not blind.  And E^2 - sum J_i^2, the
+  only candidate whose sign was genuinely in question, is seen at BOTH signs in every row.
+
+--------------------------------------------------------------------------------------------------------
+  WHAT DOES SIGN COHERENCE COST?   Exact counts of the bond patterns achieving coh >= r.
+  cap(r) := log2 #{t : |E(t)| >= r*M}  is the number of bits the SUPERSELECTION LABEL can
+  still carry once you demand that much coherence.  (It is label capacity, NOT record
+  capacity -- t is not a record.  It is an upper bound on anything the correlations could say.)
+--------------------------------------------------------------------------------------------------------
+    family = uniform
+        n       r=0.00       r=0.25       r=0.50       r=0.75       r=0.90       r=1.00
+       33     1.000000     0.930769     0.776301     0.510595     0.188887     0.031250   bits per bond
+       65     1.000000     0.936558     0.786584     0.519633     0.256513     0.015625   bits per bond
+      129     1.000000     0.942196     0.795199     0.527787     0.261001     0.007812   bits per bond
+      257     1.000000     0.946552     0.801332     0.533747     0.265074     0.003906   bits per bond
+
+    family = randpos
+        n       r=0.00       r=0.25       r=0.50       r=0.75       r=0.90       r=1.00
+       33     1.000000     0.929379     0.793665     0.557647     0.321563     0.031250   bits per bond
+       65     1.000000     0.941571     0.814576     0.583491     0.346317     0.015625   bits per bond
+      129     1.000000     0.950043     0.829279     0.603154     0.369723     0.007812   bits per bond
+      257     1.000000     0.956885     0.843392     0.626551     0.399058     0.003906   bits per bond
+
+  READ: at r = 0 the label carries 1.000000 bits per bond -- everything.  Demand coherence and
+  the capacity falls monotonically along every row.  At r = 1 the entry is exactly 1/m bits per
+  bond (0.031250 = 1/32, 0.003906 = 1/256): ONE bit in total, no matter how long the chain, so
+  the RATE goes to zero.  Perfect coherence leaves a chain of any length holding a single bit.
+  For J_i = 1 the exact rate is H2((1-r)/2), printed for comparison:
+          r=0.00       r=0.25       r=0.50       r=0.75       r=0.90       r=1.00
+        1.000000     0.954434     0.811278     0.543564     0.286397     0.000000
+
+  THE ONLY PERFECTLY COHERENT CONFIGURATION IS THE GROUND CONFIGURATION AND ITS FLIP -- two
+  states out of 2^n.  Sign coherence and information content are in exact opposition here:
+  coherence 1 <=> capacity 0.  A source that accumulates because its terms are aligned is a
+  source that has been frozen into the single configuration where nothing is written.
+
+--------------------------------------------------------------------------------------------------------
+  ADDITIVITY OVER DISJOINT REGIONS.   Cut the chain between sites c-1 and c.
+  How big is the defect  X(whole) - X(left) - X(right)  for each candidate?
+--------------------------------------------------------------------------------------------------------
+  family        n  cut  defect in M   |J_cut|  equal?  defect in E  |J_cut t_cut|  equal?    CONTROL n-2 other bonds
+  uniform      10    5            1         1    True            1              1    True     defect involves 1 bond
+  uniform      14    7            1         1    True            1              1    True     defect involves 1 bond
+
+  randpos      10    5           27        27    True           27             27    True     defect involves 1 bond
+  randpos      14    7           17        17    True           17             17    True     defect involves 1 bond
+
+  randsign     10    5           31        31    True          -31            -31    True     defect involves 1 bond
+  randsign     14    7           33        33    True           33             33    True     defect involves 1 bond
+
+  decaying     10    5          201       201    True          201            201    True     defect involves 1 bond
+  decaying     14    7          102       102    True          102            102    True     defect involves 1 bond
+
+  READ: the defect is EXACTLY the single cut bond, for both M and E, in every row.  These
+  quantities are additive up to a CONTACT term and nothing else -- which is C-47's
+  'contact-or-nothing' appearing again, now for the correlation energy.  Additivity is clean;
+  it is clause (b) of the standard and it is the one clause this construction passes outright.
+

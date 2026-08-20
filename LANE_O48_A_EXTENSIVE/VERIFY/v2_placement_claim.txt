@@ -1,0 +1,29 @@
+================================================================================================================
+V2  DOES THE 'SYMMETRIC FUNCTION => BLIND TO PLACEMENT IN ANY VARIANT' CLAIM SURVIVE
+    THE LONG-RANGE VARIANT THE FINDING ITSELF NAMES?
+================================================================================================================
+
+               carrier   n  #bonds  perms  distinct S  distinct Var  S == 2*sum|J| ?    min S/D    max S/D
+  OPEN CHAIN [CONTROL]   4       3    300           1             1           [True]   4.543700   4.543700
+ALL PAIRS (long-range)   4       6    300           7             1          [False]   5.978886   6.498152
+  OPEN CHAIN [CONTROL]   5       4    300           1             1           [True]   6.279690   6.279690
+ALL PAIRS (long-range)   5      10    300          41             1          [False]   9.207065   9.959320
+  OPEN CHAIN [CONTROL]   6       5    300           1             1           [True]   7.496413   7.496413
+ALL PAIRS (long-range)   6      15    300         248             1          [False]  13.955575  15.139752
+READ FROM THE NUMBERS: on the open chain the spread takes exactly ONE value under coupling
+permutation, reproducing the lane. On the ALL-PAIRS carrier -- the very variant the finding
+says is covered -- the spread takes MANY values under the SAME permutation test, and the
+claimed closed form S = 2*sum|J_ij| is FALSE there.
+
+WHY, stated so it can be checked: on the open chain the map s -> (s_i s_{i+1}) is ONTO all
+2^(n-1) bond strings, so each bond term can be extremised independently and S = 2*sum|J_i|.
+Off the tree that map is CONSTRAINED (t_{ij} t_{jk} = t_{ik}), the extremum is a max-cut
+problem, and it depends on WHICH pair carries WHICH coupling.
+
+EXPLICIT SEPARATION DEPENDENCE ON A LONG-RANGE CHAIN. Same multiset of couplings, two
+placements that differ only in separation structure. If S differed only by the multiset,
+these would be equal.
+  n                          placement          S/D      Var/D^2   2*sum|J|/D
+  6 big couplings on SHORT separations    14.125124     8.811547    22.656334
+  6  big couplings on LONG separations    14.752404     8.811547    22.656334
+READ: filled from the numbers above.

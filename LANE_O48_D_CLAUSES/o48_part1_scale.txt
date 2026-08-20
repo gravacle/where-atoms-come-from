@@ -1,0 +1,265 @@
+====================================================================================================================
+O-48-D  PART 1   THE CLAUSES AND THE FREE WRITER AT SCALE     H = sum_i J_i Z_i Z_{i+1}
+====================================================================================================================
+
+1.1  THE CARRIER'S OWN SYMMETRY  (D-22: a permutation-symmetric carrier contains no geometry)
+     site permutations P with P H P-dag = H, counted by brute force over all n! of them
+
+       n     UNI J_i=1    GEN J_i=2^i   RND distinct     n! total
+       3             2              1              1            6
+       4             2              1              1           24
+       5             2              1              1          120
+       6             2              1              1          720
+       7             2              1              1         5040
+       8             2              1              1        40320
+
+     READ (from the numbers above): the uniform chain has exactly 2 site automorphisms
+     (identity and reflection) and the distinct-coupling chains have exactly 1.  Neither is
+     permutation-symmetric, so separation IS a meaningful variable on this carrier, and
+     distinct J_i additionally kill the reflection.  D-22 is satisfied.
+
+====================================================================================================================
+1.2  CLAUSES (i)-(iv) FOR EVERY RECORD Z_i, AT EVERY n.   Exact INTEGER arithmetic (D-19).
+====================================================================================================================
+
+   set   n   #eigsp             dims   (i)    (ii)  #R with (iii)  #R with (iv)  max|Tr(P_E R)|  #R all four
+   UNI   2        2              [2] 0e+00   0e+00              2             2               0            2
+   UNI   3        3           [2, 4] 0e+00   0e+00              3             3               0            3
+   UNI   4        4           [2, 6] 0e+00   0e+00              4             4               0            4
+   UNI   5        5       [2, 8, 12] 0e+00   0e+00              5             5               0            5
+   UNI   6        6      [2, 10, 20] 0e+00   0e+00              6             6               0            6
+   UNI   7        7  [2, 12, 30, 40] 0e+00   0e+00              7             7               0            7
+   UNI   8        8  [2, 14, 42, 70] 0e+00   0e+00              8             8               0            8
+   UNI   9        9       [2..140]x5 0e+00   0e+00              9             9               0            9
+   UNI  10       10       [2..252]x5 0e+00   0e+00             10            10               0           10
+   UNI  11       11       [2..504]x6 exact   exact             11            11               0           11
+   UNI  12       12       [2..924]x6 exact   exact             12            12               0           12
+   UNI  13       13      [2..1848]x7 exact   exact             13            13               0           13
+   UNI  14       14      [2..3432]x7 exact   exact             14            14               0           14
+   UNI  15       15      [2..6864]x8 exact   exact             15            15               0           15
+   UNI  16       16     [2..12870]x8 exact   exact             16            16               0           16
+   UNI  17       17     [2..25740]x9 exact   exact             17            17               0           17
+   UNI  18       18     [2..48620]x9 exact   exact             18            18               0           18
+   UNI  19       19    [2..97240]x10 exact   exact             19            19               0           19
+   UNI  20       20   [2..184756]x10 exact   exact             20            20               0           20
+
+   GEN   2        2              [2] 0e+00   0e+00              2             2               0            2
+   GEN   3        4              [2] 0e+00   0e+00              3             3               0            3
+   GEN   4        8              [2] 0e+00   0e+00              4             4               0            4
+   GEN   5       16              [2] 0e+00   0e+00              5             5               0            5
+   GEN   6       32              [2] 0e+00   0e+00              6             6               0            6
+   GEN   7       64              [2] 0e+00   0e+00              7             7               0            7
+   GEN   8      128              [2] 0e+00   0e+00              8             8               0            8
+   GEN   9      256              [2] 0e+00   0e+00              9             9               0            9
+   GEN  10      512              [2] 0e+00   0e+00             10            10               0           10
+   GEN  11     1024              [2] exact   exact             11            11               0           11
+   GEN  12     2048              [2] exact   exact             12            12               0           12
+   GEN  13     4096              [2] exact   exact             13            13               0           13
+   GEN  14     8192              [2] exact   exact             14            14               0           14
+   GEN  15    16384              [2] exact   exact             15            15               0           15
+   GEN  16    32768              [2] exact   exact             16            16               0           16
+   GEN  17    65536              [2] exact   exact             17            17               0           17
+   GEN  18   131072              [2] exact   exact             18            18               0           18
+   GEN  19   262144              [2] exact   exact             19            19               0           19
+   GEN  20   524288              [2] exact   exact             20            20               0           20
+
+   RND   2        2              [2] 0e+00   0e+00              2             2               0            2
+   RND   3        4              [2] 0e+00   0e+00              3             3               0            3
+   RND   4        8              [2] 0e+00   0e+00              4             4               0            4
+   RND   5       16              [2] 0e+00   0e+00              5             5               0            5
+   RND   6       32              [2] 0e+00   0e+00              6             6               0            6
+   RND   7       64              [2] 0e+00   0e+00              7             7               0            7
+   RND   8      128              [2] 0e+00   0e+00              8             8               0            8
+   RND   9      256              [2] 0e+00   0e+00              9             9               0            9
+   RND  10      480           [2, 4] 0e+00   0e+00             10            10               0           10
+   RND  11      992           [2, 4] exact   exact             11            11               0           11
+   RND  12     1936           [2, 4] exact   exact             12            12               0           12
+   RND  13     3772           [2, 4] exact   exact             13            13               0           13
+   RND  14     6697     [2, 4, 6, 8] exact   exact             14            14               0           14
+
+  CONTROLS, SAME INSTRUMENT, SAME TABLE (D-15):
+
+                     control   n   #eigsp   #R (iii)   #R (iv)  max|Tr(P_E R)|
+       CTRL-FIELD  H + 1*Z_0   4        9          3         0               2
+       CTRL-FIELD  H + 1*Z_0   6       33          5         0               2
+       CTRL-FIELD  H + 1*Z_0   8      129          7         0               2
+       CTRL-FIELD  H + 1*Z_0  10      513          9         0               2
+       CTRL-FIELD  H + 1*Z_0  12     2049         11         0               2
+    CTRL-NONDEG  sum 2^i Z_i   4       16          0         0               1
+    CTRL-NONDEG  sum 2^i Z_i   6       64          0         0               1
+    CTRL-NONDEG  sum 2^i Z_i   8      256          0         0               1
+    CTRL-NONDEG  sum 2^i Z_i  10     1024          0         0               1
+    CTRL-NONDEG  sum 2^i Z_i  12     4096          0         0               1
+
+====================================================================================================================
+1.3  THE ADMISSIBLE WRITER, SEARCHED -- NEVER NOMINATED (D-18).
+     brute = exhaustive over all 4^n Pauli words.   F2 = exact nullspace of the commutation
+     matrix.   The two columns must agree wherever both ran.
+====================================================================================================================
+
+   set   n   record  brute min wt   #brute  F2 min wt      #F2  dim adm   ||[W,H]||  ||W R W+R||          dE  #R flipped
+   UNI   2      Z_0             2        4          2        4        3     0.0e+00      0.0e+00   +0.000000           2
+   UNI   2      Z_1             2        4          2        4        3     0.0e+00      0.0e+00   +0.000000           2
+   UNI   3      Z_0             3        8          3        8        4     0.0e+00      0.0e+00   +0.000000           3
+   UNI   3      Z_1             3        8          3        8        4     0.0e+00      0.0e+00   +0.000000           3
+   UNI   4      Z_0             4       16          4       16        5     0.0e+00      0.0e+00   +0.000000           4
+   UNI   4      Z_2             4       16          4       16        5     0.0e+00      0.0e+00   +0.000000           4
+   UNI   5      Z_0             5       32          5       32        6     0.0e+00      0.0e+00   +0.000000           5
+   UNI   5      Z_2             5       32          5       32        6     0.0e+00      0.0e+00   +0.000000           5
+   UNI   6      Z_0             6       64          6       64        7     0.0e+00      0.0e+00   +0.000000           6
+   UNI   6      Z_3             6       64          6       64        7     0.0e+00      0.0e+00   +0.000000           6
+   UNI   7      Z_0             7      128          7      128        8     0.0e+00      0.0e+00   +0.000000           7
+   UNI   7      Z_3             7      128          7      128        8     0.0e+00      0.0e+00   +0.000000           7
+   UNI   8      Z_0             8      256          8      256        9     0.0e+00      0.0e+00   +0.000000           8
+   UNI   8      Z_4             8      256          8      256        9     0.0e+00      0.0e+00   +0.000000           8
+   UNI   9      Z_0             9      512          9      512       10     0.0e+00      0.0e+00   +0.000000           9
+   UNI   9      Z_4             9      512          9      512       10     0.0e+00      0.0e+00   +0.000000           9
+   UNI  10      Z_0             -        -         10     1024       11     0.0e+00      0.0e+00   +0.000000          10
+   UNI  10      Z_5             -        -         10     1024       11     0.0e+00      0.0e+00   +0.000000          10
+   UNI  11      Z_0             -        -         11     2048       12     0 exact      0 exact   +0.000000          11
+   UNI  11      Z_5             -        -         11     2048       12     0 exact      0 exact   +0.000000          11
+   UNI  12      Z_0             -        -         12     4096       13     0 exact      0 exact   +0.000000          12
+   UNI  12      Z_6             -        -         12     4096       13     0 exact      0 exact   +0.000000          12
+   UNI  13      Z_0             -        -         13     8192       14     0 exact      0 exact   +0.000000          13
+   UNI  13      Z_6             -        -         13     8192       14     0 exact      0 exact   +0.000000          13
+   UNI  14      Z_0             -        -         14    16384       15     0 exact      0 exact   +0.000000          14
+   UNI  14      Z_7             -        -         14    16384       15     0 exact      0 exact   +0.000000          14
+
+   GEN   2      Z_0             2        4          2        4        3     0.0e+00      0.0e+00   +0.000000           2
+   GEN   2      Z_1             2        4          2        4        3     0.0e+00      0.0e+00   +0.000000           2
+   GEN   3      Z_0             3        8          3        8        4     0.0e+00      0.0e+00   +0.000000           3
+   GEN   3      Z_1             3        8          3        8        4     0.0e+00      0.0e+00   +0.000000           3
+   GEN   4      Z_0             4       16          4       16        5     0.0e+00      0.0e+00   +0.000000           4
+   GEN   4      Z_2             4       16          4       16        5     0.0e+00      0.0e+00   +0.000000           4
+   GEN   5      Z_0             5       32          5       32        6     0.0e+00      0.0e+00   +0.000000           5
+   GEN   5      Z_2             5       32          5       32        6     0.0e+00      0.0e+00   +0.000000           5
+   GEN   6      Z_0             6       64          6       64        7     0.0e+00      0.0e+00   +0.000000           6
+   GEN   6      Z_3             6       64          6       64        7     0.0e+00      0.0e+00   +0.000000           6
+   GEN   7      Z_0             7      128          7      128        8     0.0e+00      0.0e+00   +0.000000           7
+   GEN   7      Z_3             7      128          7      128        8     0.0e+00      0.0e+00   +0.000000           7
+   GEN   8      Z_0             8      256          8      256        9     0.0e+00      0.0e+00   +0.000000           8
+   GEN   8      Z_4             8      256          8      256        9     0.0e+00      0.0e+00   +0.000000           8
+   GEN   9      Z_0             9      512          9      512       10     0.0e+00      0.0e+00   +0.000000           9
+   GEN   9      Z_4             9      512          9      512       10     0.0e+00      0.0e+00   +0.000000           9
+   GEN  10      Z_0             -        -         10     1024       11     0.0e+00      0.0e+00   +0.000000          10
+   GEN  10      Z_5             -        -         10     1024       11     0.0e+00      0.0e+00   +0.000000          10
+   GEN  11      Z_0             -        -         11     2048       12     0 exact      0 exact   +0.000000          11
+   GEN  11      Z_5             -        -         11     2048       12     0 exact      0 exact   +0.000000          11
+   GEN  12      Z_0             -        -         12     4096       13     0 exact      0 exact   +0.000000          12
+   GEN  12      Z_6             -        -         12     4096       13     0 exact      0 exact   +0.000000          12
+   GEN  13      Z_0             -        -         13     8192       14     0 exact      0 exact   +0.000000          13
+   GEN  13      Z_6             -        -         13     8192       14     0 exact      0 exact   +0.000000          13
+   GEN  14      Z_0             -        -         14    16384       15     0 exact      0 exact   +0.000000          14
+   GEN  14      Z_7             -        -         14    16384       15     0 exact      0 exact   +0.000000          14
+
+  CONTROL (D-15): the SAME search on CTRL-FIELD H + 1*Z_0, where a free writer must NOT exist.
+
+    n   record  brute min wt   #admissible flippers
+    2      Z_0          NONE                      0
+    2      Z_1          NONE                      0
+    3      Z_0          NONE                      0
+    3      Z_1          NONE                      0
+    4      Z_0          NONE                      0
+    4      Z_2          NONE                      0
+    5      Z_0          NONE                      0
+    5      Z_2          NONE                      0
+    6      Z_0          NONE                      0
+    6      Z_3          NONE                      0
+    7      Z_0          NONE                      0
+    7      Z_3          NONE                      0
+    8      Z_0          NONE                      0
+    8      Z_4          NONE                      0
+    9      Z_0          NONE                      0
+    9      Z_4          NONE                      0
+
+====================================================================================================================
+1.4  HOW MANY RECORDS, AND HOW MANY INDEPENDENT BITS?
+     n records pass the clauses -- but the group they generate modulo the terms of H is
+     what counts as INDEPENDENT information.  Rank computed over F_2.
+====================================================================================================================
+
+    n   #Z_i passing (i)-(iv), GEN  rank of terms   #independent record bits  eigenspace dim
+    2                            2              1                          1             [2]
+    3                            3              2                          1             [2]
+    4                            4              3                          1             [2]
+    5                            5              4                          1             [2]
+    6                            6              5                          1             [2]
+    7                            7              6                          1             [2]
+    8                            8              7                          1             [2]
+    9                            9              8                          1             [2]
+   10                           10              9                          1             [2]
+   11                           11             10                          1             [2]
+   12                           12             11                          1             [2]
+   13                           13             12                          1             [2]
+   14                           14             13                          1             [2]
+
+====================================================================================================================
+1.5  DOES THE JOINT CONFIGURATION STILL CARRY THE ENERGY AT SCALE?
+     For each pair (i,j): is Z_i Z_j DEFINITE on every eigenspace, and what does it cost to
+     change it?  The flipper is SEARCHED over the Pauli group.
+====================================================================================================================
+
+   set   n  #pairs (i,j)   #definite on every eigsp  #admissible pair-flippers  min dE to flip a pair
+   UNI   2             1                          1                          0                      2
+   UNI   3             3                          1                          0                      2
+   UNI   4             6                          1                          0                      2
+   UNI   5            10                          1                          0                      2
+   UNI   6            15                          1                          0                      2
+   UNI   7            21                          1                          0                      2
+   UNI   8            28                          1                          0                      2
+   UNI  10            45                          1                          0                      2
+   UNI  12            66                          1                          0                      2
+
+   GEN   2             1                          1                          0                      2
+   GEN   3             3                          3                          0                      2
+   GEN   4             6                          6                          0                      2
+   GEN   5            10                         10                          0                      2
+   GEN   6            15                         15                          0                      2
+   GEN   7            21                         21                          0                      2
+   GEN   8            28                         28                          0                      2
+   GEN  10            45                         45                          0                      2
+   GEN  12            66                         66                          0                      2
+
+====================================================================================================================
+  READ -- PART 1, FILLED IN FROM THE NUMBERS ABOVE, NOT IN ADVANCE
+====================================================================================================================
+
+  1. THE CLAUSES SURVIVE AT EVERY n TESTED, EXACTLY.  For UNI and GEN couplings at n = 2..20
+     and RND at n = 2..14, all n of the Z_i pass (i),(ii),(iii),(iv): the column
+     max|Tr(P_E Z_i)| is the INTEGER 0 at every n, on every one of up to 524288 eigenspaces,
+     and #R-all-four equals n in every row.  This is an exact integer statement, not a
+     tolerance.  The largest n reached for the clause verification is n = 20 (1048576
+     configurations); what stopped it was memory for the 2^n configuration table, not any
+     change in the answer -- the columns are constant in n.
+
+  2. AND THE CONTROLS IN THE SAME TABLE REGISTER.  Adding a field, H + 1*Z_0, breaks the
+     global flip and the same instrument returns max|Tr(P_E R)| = 2, not 0, at every n it was
+     run on, with 0 records passing clause (iv).  A non-degenerate H returns 0 records via
+     clause (iii), which is P-1.  So the zeros above are measurements.
+
+  3. THE FREE-WRITER PROPERTY SURVIVES AT EVERY n -- AND THE WRITER IS MAXIMALLY NON-LOCAL.
+     The exhaustive 4^n search (n <= 9) and the exact F_2 nullspace (all n) agree on every
+     row.  The admissible Pauli group has F_2 dimension n+1; exactly 2^n of its elements flip
+     a given record; the MINIMUM WEIGHT of any of them is EXACTLY n, at every n, for both
+     coupling sets.  ||[W,H]|| = 0 and the energy change is +0.000000.  The writer exists at
+     every n; it is never local.
+
+  4. AND IT FLIPS EVERY RECORD AT ONCE.  The last column of 1.3 is n in every row: there is no
+     admissible Pauli that flips one Z_i and leaves the others alone, at any n including
+     n = 2.  Clause (iv) is still satisfied -- it only asks that SOME admissible U flip R --
+     but O-47's phrase 'single records flip for free' should be read as 'each record is
+     individually WRITABLE, by an operator that necessarily writes all of them'.
+
+  5. n RECORDS, ONE BIT.  Section 1.4: the terms of H have F_2 rank n-1, so n - rank = 1
+     independent record bit at every n, and with generic couplings every eigenspace is
+     EXACTLY 2-DIMENSIONAL.  The n records are n names for the same single bit.  The record
+     COUNT grows; the record INFORMATION does not.
+
+  6. THE JOINT CONFIGURATION STILL CARRIES THE ENERGY, AND STILL CANNOT BE MOVED FOR FREE.
+     Section 1.5: at every n and both coupling sets the number of ADMISSIBLE operations that
+     change any pair correlator is 0, and the cheapest operation that does change one costs
+     +2*min|J| > 0.  With GENERIC couplings ALL n(n-1)/2 pair correlators are definite on
+     every eigenspace; with UNIFORM couplings only 1 of them is.  O-47's two-record result is
+     therefore the generic-coupling case, and it extends to every n unchanged.
+
+  runtime 25.2s

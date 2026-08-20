@@ -1,0 +1,212 @@
+========================================================================================================
+O-48-C  STEP 1.   THE CARRIER AND THE FIVE CLAUSES.   H = sum_i J_i Z_i Z_{i+1}, R_i = Z_i
+========================================================================================================
+
+  Clause (ii) is [H,R]=0 AND [L_k,R]=0.  This venue is CLOSED -- no Lindblad operators are
+  introduced, because introducing a bath would import an environment the standard forbids at
+  this step.  (ii) therefore reduces to [H,R]=0 here, and that is what is verified.
+
+--------------------------------------------------------------------------------------------------------
+  CLAUSES (i)-(iv), EXHAUSTIVE OVER ALL 2^n CONFIGURATIONS, EXACT INTEGER ARITHMETIC
+--------------------------------------------------------------------------------------------------------
+  family       n  #blocks dim(P_E) hist            (i)  (ii)  (iii)   max|Tr(P_E R_i)|   (iv)    CONTROL max|Tr|
+  uniform      3        3 2x2,4x1                 True  True   True                  0  HOLDS                  2
+  uniform      4        4 2x2,6x2                 True  True   True                  0  HOLDS                  3
+  uniform      6        6 2x2,10x2,20x2           True  True   True                  0  HOLDS                 10
+  uniform      8        8 2x2,14x2,42x2,70x2      True  True   True                  0  HOLDS                 35
+  uniform     10       10 2x2,18x2,72x2,168x2,252x2  True  True   True                  0  HOLDS                126
+  uniform     12       12 2x2,22x2,110x2,330x2,660x2,924x2  True  True   True                  0  HOLDS                462
+
+  linear       3        4 2x4                     True  True   True                  0  HOLDS                  1
+  linear       4        7 2x6,4x1                 True  True   True                  0  HOLDS                  2
+  linear       6       16 2x6,4x4,6x6             True  True   True                  0  HOLDS                  3
+  linear       8       29 2x6,4x4,6x2,8x2,10x4,12x2,14x4,16x5  True  True   True                  0  HOLDS                  8
+  linear      10       46 2x6,4x4,6x2,8x2,10x2,12x2,16x2,18x2,20x2,24x2,26x2,30x2,34x2,36x2,38x2,42x4,44x2,46x4  True  True   True                  0  HOLDS                 23
+  linear      12       67 2x6,4x4,6x2,8x2,10x2,12x2,16x2,20x2,24x2,28x2,32x2,38x2,44x2,50x2,56x2,64x2,70x2,78x2,86x2,92x2,98x2,106x2,112x2,118x2,124x2,128x2,132x2,136x2,138x4,140x1  True  True   True                  0  HOLDS                 70
+
+  superinc     3        4 2x4                     True  True   True                  0  HOLDS                  1
+  superinc     4        8 2x8                     True  True   True                  0  HOLDS                  1
+  superinc     6       32 2x32                    True  True   True                  0  HOLDS                  1
+  superinc     8      128 2x128                   True  True   True                  0  HOLDS                  1
+  superinc    10      512 2x512                   True  True   True                  0  HOLDS                  1
+  superinc    12     2048 2x2048                  True  True   True                  0  HOLDS                  1
+
+  randpos      3        4 2x4                     True  True   True                  0  HOLDS                  1
+  randpos      4        8 2x8                     True  True   True                  0  HOLDS                  1
+  randpos      6       32 2x32                    True  True   True                  0  HOLDS                  1
+  randpos      8      128 2x128                   True  True   True                  0  HOLDS                  1
+  randpos     10      488 2x464,4x24              True  True   True                  0  HOLDS                  2
+  randpos     12     1525 2x1096,4x338,6x88,8x3   True  True   True                  0  HOLDS                  4
+
+  randsign     3        4 2x4                     True  True   True                  0  HOLDS                  1
+  randsign     4        8 2x8                     True  True   True                  0  HOLDS                  1
+  randsign     6       32 2x32                    True  True   True                  0  HOLDS                  1
+  randsign     8      112 2x96,4x16               True  True   True                  0  HOLDS                  2
+  randsign    10      432 2x360,4x64,6x8          True  True   True                  0  HOLDS                  3
+  randsign    12     1498 2x1056,4x342,6x92,8x8   True  True   True                  0  HOLDS                  4
+
+  READ: over 30 (family, n) rows the estimator returned max|Tr(P_E R_i)| = 0 every time,
+        while the SAME estimator on the field-broken control returned up to 462.
+        The zero is a property of the carrier, not of a blind instrument.
+
+--------------------------------------------------------------------------------------------------------
+  WHY THE ZERO IS EXACT AT EVERY n  (an argument, then its test)
+--------------------------------------------------------------------------------------------------------
+  The global spin flip s -> -s leaves every bond product s_i s_{i+1} unchanged, hence leaves
+  E(s) unchanged, hence maps each eigenspace to itself; it has NO fixed point in {+-1}^n; and
+  it flips every s_i.  So the configurations in any eigenspace pair off (s, -s) with opposite
+  s_i, and Tr(P_E Z_i) = 0 EXACTLY, for every i, every eigenspace, every n, every J.
+  TEST of the involution, not of its consequence:
+    uniform    n=7    configurations whose energy is NOT flip-invariant: 0
+    uniform    n=11   configurations whose energy is NOT flip-invariant: 0
+    uniform    n=14   configurations whose energy is NOT flip-invariant: 0
+    linear     n=7    configurations whose energy is NOT flip-invariant: 0
+    linear     n=11   configurations whose energy is NOT flip-invariant: 0
+    linear     n=14   configurations whose energy is NOT flip-invariant: 0
+    superinc   n=7    configurations whose energy is NOT flip-invariant: 0
+    superinc   n=11   configurations whose energy is NOT flip-invariant: 0
+    superinc   n=14   configurations whose energy is NOT flip-invariant: 0
+    randpos    n=7    configurations whose energy is NOT flip-invariant: 0
+    randpos    n=11   configurations whose energy is NOT flip-invariant: 0
+    randpos    n=14   configurations whose energy is NOT flip-invariant: 0
+    randsign   n=7    configurations whose energy is NOT flip-invariant: 0
+    randsign   n=11   configurations whose energy is NOT flip-invariant: 0
+    randsign   n=14   configurations whose energy is NOT flip-invariant: 0
+
+--------------------------------------------------------------------------------------------------------
+  D-22   IS THE CARRIER PERMUTATION-SYMMETRIC?   (order of the site-permutation group that
+         preserves the energy function; n! would mean NO geometry is present to detect)
+--------------------------------------------------------------------------------------------------------
+  family       n       n!    |Aut|   verdict
+  uniform      4       24        2   geometry present
+  uniform      5      120        2   geometry present
+  uniform      6      720        2   geometry present
+
+  linear       4       24        1   geometry present
+  linear       5      120        1   geometry present
+  linear       6      720        1   geometry present
+
+  superinc     4       24        1   geometry present
+  superinc     5      120        1   geometry present
+  superinc     6      720        1   geometry present
+
+  randpos      4       24        1   geometry present
+  randpos      5      120        1   geometry present
+  randpos      6      720        1   geometry present
+
+  randsign     4       24        1   geometry present
+  randsign     5      120        1   geometry present
+  randsign     6      720        1   geometry present
+
+--------------------------------------------------------------------------------------------------------
+  CLAUSE (iv), CONSTRUCTIVELY:  EXHAUSTIVE SEARCH OVER THE FULL PAULI GROUP (4^n elements)
+  for an ADMISSIBLE W ([W,H]=0) that FLIPS the target.  NOTHING IS NOMINATED.
+--------------------------------------------------------------------------------------------------------
+  family       n target       #Paulis  #admissible flippers  min weight support                    dE
+  linear       3 R_0 = Z_0         64                     8           3 [0, 1, 2]                   0
+  linear       3 Z_0 Z_1           64                     0        None None                        -
+  linear       4 R_0 = Z_0        256                    16           4 [0, 1, 2, 3]                0
+  linear       4 Z_0 Z_1          256                     0        None None                        -
+  linear       5 R_0 = Z_0       1024                    32           5 [0, 1, 2, 3, 4]             0
+  linear       5 Z_0 Z_1         1024                     0        None None                        -
+  linear       6 R_0 = Z_0       4096                    64           6 [0, 1, 2, 3, 4, 5]          0
+  linear       6 Z_0 Z_1         4096                     0        None None                        -
+  linear       7 R_0 = Z_0      16384                   128           7 [0, 1, 2, 3, 4, 5, 6]        0
+  linear       7 Z_0 Z_1        16384                     0        None None                        -
+
+  superinc     3 R_0 = Z_0         64                     8           3 [0, 1, 2]                   0
+  superinc     3 Z_0 Z_1           64                     0        None None                        -
+  superinc     4 R_0 = Z_0        256                    16           4 [0, 1, 2, 3]                0
+  superinc     4 Z_0 Z_1          256                     0        None None                        -
+  superinc     5 R_0 = Z_0       1024                    32           5 [0, 1, 2, 3, 4]             0
+  superinc     5 Z_0 Z_1         1024                     0        None None                        -
+  superinc     6 R_0 = Z_0       4096                    64           6 [0, 1, 2, 3, 4, 5]          0
+  superinc     6 Z_0 Z_1         4096                     0        None None                        -
+  superinc     7 R_0 = Z_0      16384                   128           7 [0, 1, 2, 3, 4, 5, 6]        0
+  superinc     7 Z_0 Z_1        16384                     0        None None                        -
+
+  randsign     3 R_0 = Z_0         64                     8           3 [0, 1, 2]                   0
+  randsign     3 Z_0 Z_1           64                     0        None None                        -
+  randsign     4 R_0 = Z_0        256                    16           4 [0, 1, 2, 3]                0
+  randsign     4 Z_0 Z_1          256                     0        None None                        -
+  randsign     5 R_0 = Z_0       1024                    32           5 [0, 1, 2, 3, 4]             0
+  randsign     5 Z_0 Z_1         1024                     0        None None                        -
+  randsign     6 R_0 = Z_0       4096                    64           6 [0, 1, 2, 3, 4, 5]          0
+  randsign     6 Z_0 Z_1         4096                     0        None None                        -
+  randsign     7 R_0 = Z_0      16384                   128           7 [0, 1, 2, 3, 4, 5, 6]        0
+  randsign     7 Z_0 Z_1        16384                     0        None None                        -
+
+  READ: the search returns admissible flippers for the RECORD Z_0 at every n and every family,
+  and the minimum weight it finds is n -- FULL SUPPORT, never less.  The same search run on the
+  PAIR CORRELATION Z_0 Z_1 returns ZERO admissible flippers.  That pair of numbers, produced by
+  one instrument in one table, is the whole asymmetry: single records are freely writable,
+  the correlation between them is not writable at all by any admissible Pauli.
+
+--------------------------------------------------------------------------------------------------------
+  IS THE PAIR CORRELATION ITSELF A RECORD?   clauses (iii) AND (iv) on Z_i Z_j, same estimators
+  ('all dims 2' means the couplings admit NO accidental degeneracy: every eigenspace is exactly
+   the pair {s, -s} and the venue is generic.  Degenerate families are shown too, on purpose.)
+--------------------------------------------------------------------------------------------------------
+  family       n generic?  observable      const on every P_E   (iii)  max|Tr(P_E O)|    (iv)   RECORD?
+  superinc     8 True      Z_0 Z_1                       True   FAILS               2   FAILS        NO
+  superinc     8 True      Z_0 Z_3                       True   FAILS               2   FAILS        NO
+  superinc     8 True      Z_0 Z_7                       True   FAILS               2   FAILS        NO
+  superinc     8 True      Z_0 [CONTROL]                False   holds               0   HOLDS       YES
+
+  randpos      8 True      Z_0 Z_1                       True   FAILS               2   FAILS        NO
+  randpos      8 True      Z_0 Z_3                       True   FAILS               2   FAILS        NO
+  randpos      8 True      Z_0 Z_7                       True   FAILS               2   FAILS        NO
+  randpos      8 True      Z_0 [CONTROL]                False   holds               0   HOLDS       YES
+
+  linear       8 False     Z_0 Z_1                      False   holds               4   FAILS        NO
+  linear       8 False     Z_0 Z_3                      False   holds               4   FAILS        NO
+  linear       8 False     Z_0 Z_7                      False   holds               4   FAILS        NO
+  linear       8 False     Z_0 [CONTROL]                False   holds               0   HOLDS       YES
+
+  uniform      8 False     Z_0 Z_1                      False   holds              18   FAILS        NO
+  uniform      8 False     Z_0 Z_3                      False   holds               6   FAILS        NO
+  uniform      8 False     Z_0 Z_7                       True   FAILS              70   FAILS        NO
+  uniform      8 False     Z_0 [CONTROL]                False   holds               0   HOLDS       YES
+
+  randsign     8 False     Z_0 Z_1                       True   FAILS               4   FAILS        NO
+  randsign     8 False     Z_0 Z_3                       True   FAILS               4   FAILS        NO
+  randsign     8 False     Z_0 Z_7                      False   holds               2   FAILS        NO
+  randsign     8 False     Z_0 [CONTROL]                False   holds               0   HOLDS       YES
+
+  READ, from the column above: the pair correlation was a record in 0 of 15 tested cases.
+  On the GENERIC families -- the ones with no accidental degeneracy, every eigenspace exactly
+  {s,-s} -- Z_i Z_j is CONSTANT on every eigenspace and FAILS CLAUSE (iii).  On the families
+  with accidental degeneracies the constancy can break, but then the same table shows clause
+  (iv) failing instead: max|Tr(P_E Z_iZ_j)| is non-zero.  Either way NO row is a record, while
+  the CONTROL row Z_0 in the very same table passes both clauses.
+  So the object that carries the configuration energy is a SUPERSELECTION LABEL on eigenspaces,
+  NOT a written bit.  This is the fact the rest of the lane is about.
+
+--------------------------------------------------------------------------------------------------------
+  HOW MANY INDEPENDENT RECORDS DOES THE CHAIN ACTUALLY HOLD?
+  On a GENERIC chain every eigenspace is span{|s>, |-s>}, 2-dimensional.  In that basis
+  Z_i acts as s_i * diag(1,-1) -- the SAME 2x2 operator for every i, up to the fixed sign s_i.
+  So all n nominated records are ONE two-level system wearing n labels.  Test: the rank of the
+  set {Z_i restricted to P_E} as operators on the block, maximised over blocks.
+--------------------------------------------------------------------------------------------------------
+  family       n generic?   max rank of span{Z_i|_E}  indep. bits on a block
+  superinc     6 True                              1 1 -- all Z_i are ONE bit
+  superinc     8 True                              1 1 -- all Z_i are ONE bit
+  superinc    10 True                              1 1 -- all Z_i are ONE bit
+
+  randpos      6 True                              1 1 -- all Z_i are ONE bit
+  randpos      8 True                              1 1 -- all Z_i are ONE bit
+  randpos     10 False                             2                       2
+
+  linear       6 False                             3                       3
+  linear       8 False                             8                       8
+  linear      10 False                            10                      10
+
+  uniform      6 False                             5                       5
+  uniform      8 False                             7                       7
+  uniform     10 False                             9                       9
+
+  READ: on the generic families the rank is 1 at every n -- n nominated records, ONE bit.
+  Degenerate families raise the rank, but that rank comes from ACCIDENTAL arithmetic
+  coincidences among subset sums of the J_i, not from the chain's structure.
+

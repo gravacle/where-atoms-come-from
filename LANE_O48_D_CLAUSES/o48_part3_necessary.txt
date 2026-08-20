@@ -1,0 +1,187 @@
+========================================================================================================================
+O-48-D  PART 3   THE NECESSARY CONDITION
+========================================================================================================================
+
+========================================================================================================================
+T1.  IS THE 'FREE WRITER' AN EXTRA PROPERTY, OR A TAUTOLOGY OF ADMISSIBILITY?
+     dE measured on FOUR states, for the cheapest ADMISSIBLE flipper and -- CONTROL, same
+     table -- for the cheapest NON-ADMISSIBLE flipper found by the same search.
+========================================================================================================================
+
+                             carrier   n     record      adm W  ||[W,H]||   dE ground      dE mid      dE top   dE random |  non-adm V  ||[V,H]||   dE ground
+                     ZZ chain  GEN J   4       ZIII       XXXX    0.0e+00   +0.000000   +0.000000   +0.000000   +0.000000 |       XIII    8.0e+00   +2.000000
+                     ZZ chain  GEN J   6     IIZIII     XXXXXX    0.0e+00   +0.000000   +0.000000   +0.000000   -0.000000 |     IIXIII    7.2e+01  +12.000000
+                     ZZ chain  UNI J   6     IIZIII     XXXXXX    0.0e+00   +0.000000   +0.000000   +0.000000   +0.000000 |     IIXIII    2.3e+01   +4.000000
+                      2D ZZ grid 2x3   6     ZIIIII     XXXXXX    0.0e+00   +0.000000   +0.000000   +0.000000   -0.000000 |     XIIIII    3.6e+01   +6.000000
+                           ZZZ chain   6     IZIIII     IXXIXX    0.0e+00   +0.000000   +0.000000   +0.000000   -0.000000 |     IXIIII    3.6e+01   +6.000000
+            XY chain (non-commuting)   5      ZZZZZ      XXXXX    0.0e+00   +0.000000   -0.000000   +0.000000   -0.000000 |      IIIIX    9.1e+01  +11.049809
+
+  The ADMISSIBLE column is +0.000000 on every state including a RANDOM one -- not just on
+  eigenstates -- while the NON-ADMISSIBLE control on the very same carrier is not zero.
+
+========================================================================================================================
+T2/T3.  DOES 'AN ANTICOMMUTING PAIR OF SYMMETRIES' PREDICT THE RECORD COUNT ON EVERY CARRIER?
+     PREDICTED = #{Hermitian Pauli involutions R with [R,H]=0 that have SOME W with [W,H]=0
+                  and WR = -RW}, computed from the symplectic form alone.
+     MEASURED  = #{R passing clauses (i)-(iv) verified on the dense matrices}.
+     They must agree carrier by carrier, or the criterion is wrong.
+========================================================================================================================
+
+                                   carrier   n  #[R,H]=0  PREDICTED  MEASURED  agree?   #(iii) but not (iv)
+                            ZZ chain GEN J   4        31         24        24     YES                     0
+                            ZZ chain GEN J   5        63         48        48     YES                     0
+                            ZZ chain GEN J   6       127         96        96     YES                     0
+                            ZZ chain UNI J   4        31         24        24     YES                     6
+                            ZZ chain UNI J   5        63         48        48     YES                    14
+                            ZZ chain UNI J   6       127         96        96     YES                    30
+                            2D ZZ grid 2x3   6       127         96        96     YES                     0
+                                 ZZZ chain   5       127        120       120     YES                     0
+                                 ZZZ chain   6       255        240       240     YES                     0
+                                 ZZZ chain   7       511        480       480     YES                     0
+            XY chain (NON-commuting terms)   4         3          0         0     YES                     0
+            XY chain (NON-commuting terms)   5         3          3         3     YES                     0
+            XY chain (NON-commuting terms)   6         3          0         0     YES                     0
+                        C2 dimerised XX+ZZ   4        15          0         0     YES                     0
+                        C2 dimerised XX+ZZ   6        63          0         0     YES                    56
+                    C3 ZZ chain + K X^(x)n   4        15          0         0     YES                    12
+                    C3 ZZ chain + K X^(x)n   6        63          0         0     YES                    62
+               CTRL ZZ chain + field 1*Z_0   6        63          0         0     YES                    62
+           CTRL non-degenerate sum 2^i Z_i   6        63          0         0     YES                     0
+
+  The last column is the number of operators satisfying (i),(ii),(iii) but FAILING (iv).
+  Wherever it is non-zero, (iii) does NOT imply (iv) -- so the two clauses are independent
+  and clause (iv) is doing real work, not restating clause (iii).
+
+========================================================================================================================
+T4.  THE STRONG READING: IS THERE A SYMMETRY THAT FLIPS ONE RECORD AND FIXES THE OTHERS?
+     (a) EXHAUSTIVE Pauli search: admissible W with W R_i W = -R_i and W R_j W = +R_j for all
+         j != i.   (b) the model's own independently_writable(), which builds a permutation
+         on the joint eigenbasis and is not restricted to Paulis.
+========================================================================================================================
+
+                             carrier   n  #records  (a) #individually flippable (Pauli)   (b) model independently_writable
+                      ZZ chain GEN J   3         3                                    0 family size 1, independently writable 1
+                      ZZ chain GEN J   4         4                                    0 family size 1, independently writable 1
+                      ZZ chain GEN J   5         5                                    0                model: RuntimeError
+                      ZZ chain UNI J   4         4                                    0 family size 1, independently writable 1
+                      ZZ chain UNI J   5         5                                    0                model: RuntimeError
+                      2D ZZ grid 2x2   4         4                                    0 family size 1, independently writable 1
+                           ZZZ chain   5         5                                    0                model: RuntimeError
+                           ZZZ chain   6         6                                    0                model: RuntimeError
+
+  CONTROL for T4 (D-15): the same search on carriers where individual flipping MUST be
+  possible, so that the zeros above are a measurement and not a broken instrument.
+  H = 0 makes every Pauli admissible; a PARTIALLY COUPLED chain leaves the uncoupled sites
+  individually flippable and the coupled ones not, so the same table shows both answers.
+
+                             carrier   n  #records    #individually flippable (Pauli)            which
+            H = 0  (no terms at all)   4         4                                  4     [0, 1, 2, 3]
+   H = J Z_0Z_1 only, sites 2,3 free   4         4                                  2           [2, 3]
+  H = J Z_0Z_1 + J' Z_1Z_2, 3,4,5 free   6         6                                  3        [3, 4, 5]
+
+  AND THE PAULI SEARCH IS NOT THE WHOLE STORY -- the exact argument, checked numerically.
+  With GENERIC couplings every eigenspace of the chain is EXACTLY 2-DIMENSIONAL, spanned by
+  a configuration and its global flip.  Any admissible U preserves each block, and flipping
+  Z_i forces the 2x2 block to be ANTI-DIAGONAL -- which flips EVERY Z_j at once.  So no
+  admissible unitary of ANY kind, Pauli or not, flips one record alone.  Built and measured:
+
+    n  #eigenspaces  all dim 2? random admissible U with anti-diagonal blocks
+    4             8        True   unitary err 1.6e-16, ||[U,H]|| 0.0e+00, records flipped 4/4
+    5            16        True   unitary err 4.3e-16, ||[U,H]|| 0.0e+00, records flipped 5/5
+    6            32        True   unitary err 6.7e-16, ||[U,H]|| 0.0e+00, records flipped 6/6
+    7            64        True   unitary err 7.9e-16, ||[U,H]|| 0.0e+00, records flipped 7/7
+
+========================================================================================================================
+T5.  IS 'H IS A COMMUTING-PAULI HAMILTONIAN' NECESSARY?  IS IT SUFFICIENT?
+========================================================================================================================
+
+                                   carrier   n  terms commute?  #records                                      verdict
+            XY chain, terms do NOT commute   5           False         3                commuting-Pauli NOT necessary
+            XY chain, terms do NOT commute   4           False         0                        consistent either way
+      C2 dimerised XX+ZZ, terms DO commute   4            True         0               commuting-Pauli NOT sufficient
+  C3 ZZ chain + K X^(x)n, terms DO commute   6            True         0               commuting-Pauli NOT sufficient
+
+========================================================================================================================
+T6.  A COUNTEREXAMPLE INSIDE THE CHAIN FAMILY ITSELF: does (i)+(ii)+(iii) imply (iv)?
+     Candidate R = Z_0 Z_1 on the UNIFORM chain, where the eigenspaces are coarse enough that
+     a product of terms of H is no longer constant on them.  Exact integer arithmetic.
+========================================================================================================================
+
+   J set   n            R  (ii) [H,R]=0  (iii) non-const  max|Tr(P_E R)|    (iv)
+     UNI   4      Z_0 Z_1           YES             True               2   False
+     UNI   4      Z_0 Z_2           YES             True               2   False
+     UNI   6      Z_0 Z_1           YES             True               6   False
+     UNI   6      Z_0 Z_2           YES             True               4   False
+     UNI   8      Z_0 Z_1           YES             True              18   False
+     UNI   8      Z_0 Z_2           YES             True              10   False
+     UNI  10      Z_0 Z_1           YES             True              56   False
+     UNI  10      Z_0 Z_2           YES             True              28   False
+     UNI  12      Z_0 Z_1           YES             True             180   False
+     UNI  12      Z_0 Z_2           YES             True              84   False
+
+     GEN   4      Z_0 Z_1           YES            False               2   False
+     GEN   4      Z_0 Z_2           YES            False               2   False
+     GEN   6      Z_0 Z_1           YES            False               2   False
+     GEN   6      Z_0 Z_2           YES            False               2   False
+     GEN   8      Z_0 Z_1           YES            False               2   False
+     GEN   8      Z_0 Z_2           YES            False               2   False
+     GEN  10      Z_0 Z_1           YES            False               2   False
+     GEN  10      Z_0 Z_2           YES            False               2   False
+     GEN  12      Z_0 Z_1           YES            False               2   False
+     GEN  12      Z_0 Z_2           YES            False               2   False
+
+========================================================================================================================
+  READ -- PART 3, FILLED IN FROM THE NUMBERS ABOVE, NOT IN ADVANCE
+========================================================================================================================
+
+  1. THE 'FREE WRITER' IS A TAUTOLOGY, NOT A DISCOVERY THAT COULD FAIL AT SCALE.  T1 measured
+     dE = +0.000000 for the admissible writer on FOUR different states -- ground, middle, top,
+     and a RANDOM pure state -- on all six carriers.  The one-line reason is exact and needs
+     no computation: dE = Tr(rho W-dag H W) - Tr(rho H) and [W,H] = 0 gives W-dag H W = H.  The
+     control on the same carriers, the cheapest NON-admissible flipper, returns +2, +12, +4,
+     +6, +6 and +11.05.  So O-47's 'flips for free' is O-4's definition of ADMISSIBLE read back
+     to us.  The question that has content is EXISTENCE, which is clause (iv).
+
+  2. THE CRITERION IS A PAIR OF ANTICOMMUTING SYMMETRIES.  T2/T3: on all NINETEEN carriers,
+     including the ones with NO records and the two controls, the count predicted from the
+     symplectic form alone -- R commutes with H and SOME W commutes with H and anticommutes
+     with R -- equals the count measured on the dense matrices, with no exceptions.  And when
+     that pair exists, clauses (iii) and (iv) BOTH come free: (iv) because Tr(P_E R) = -Tr(P_E R),
+     (iii) because a constant +-1 on a block cannot survive conjugation by W.
+
+  3. CLAUSE (iv) IS NOT IMPLIED BY (i)-(iii).  The last column of T2 is non-zero on six
+     carriers -- 6, 14 and 30 on the UNIFORM chain at n = 4,5,6, 56 on C2, 62 on C3, 62 on the
+     field control.  T6 exhibits one inside the chain family itself: on the UNIFORM chain
+     R = Z_0 Z_1 commutes with H and IS non-constant on an eigenspace, and max|Tr(P_E R)| runs
+     2, 6, 18, 56, 180 at n = 4,6,8,10,12 -- it fails (iv), and fails it worse as n grows.  On
+     the GENERIC chain the same operator fails (iii) instead.  Clause (iv) does real work.
+
+  4. THE HYPOTHESIS AS HANDED TO THIS LANE, STRONG READING, IS FALSE.  T4: on the ZZ chain
+     (both coupling sets), the 2D grid and the ZZZ chain, the number of records that can be
+     flipped by an admissible operation FIXING THE OTHERS is 0 out of n, at every n tested.
+     The controls in the same table return 4/4 for H = 0 and 2/4 and 3/6 for partially coupled
+     chains, naming exactly the uncoupled sites -- so the zeros are measurements.  And the
+     restriction to Paulis is not what is doing it: with generic couplings every eigenspace is
+     EXACTLY 2-dimensional, the most general admissible flipping U was built explicitly with
+     random phases, and it flips n/n records at n = 4,5,6,7 with ||[U,H]|| = 0.  NO admissible
+     unitary of any kind flips one record alone on this carrier.
+
+  5. VERDICT ON THE HYPOTHESIS.
+     'H commutes with every record'            NECESSARY (it is clause (ii)), NOT sufficient:
+                                               C2, C3 and the field control all satisfy it and
+                                               have no records.
+     'a symmetry flips each record INDIVIDUALLY' NEITHER necessary NOR sufficient.  Not
+                                               necessary: false on every carrier where the
+                                               construction works.  Not sufficient: H = 0
+                                               satisfies it and carries no configuration
+                                               energy at all.
+     'a symmetry flips each record'            NECESSARY AND SUFFICIENT given (i)+(ii) -- but
+                                               it IS clause (iv) via C-11, so as a criterion it
+                                               is a restatement, not an explanation.
+     THE STATEMENT WITH CONTENT: H must admit A PAIR OF ANTICOMMUTING SYMMETRIES, one of which
+     is the record.  Then (iii) and (iv) follow and the writer is free.  For a commuting-Pauli
+     H with generic couplings this says exactly: the record is a nontrivial LOGICAL operator
+     of the group generated by H's terms.  T5 shows commuting-Pauli is NEITHER necessary (the
+     XY chain at n = 5 has 3 records) NOR sufficient (C2 and C3 have none).
+
+  runtime 6.5s

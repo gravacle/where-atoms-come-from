@@ -1,0 +1,95 @@
+======================================================================================================================
+S4  THE COUNT TEST  --  vary the J_i at FIXED n and see whether the quantity moves
+======================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------------
+T1  RANGE OF VARIATION AT FIXED n.  400 independent coupling draws per n from the venue's own
+    family J_i in [0.5,1.0), and 400 from a WIDER family J_i log-uniform over four decades.
+    CONTROL columns: the same n with all J_i EQUAL (a count in units of 2J), and the bare
+    record count n, which by construction cannot move at all.
+----------------------------------------------------------------------------------------------------------------------
+  n |   SPREAD S/D  min            max   max/min |  WIDE family S/D  min            max     max/min |  CONTROL uniform-J S/D  CONTROL count n
+  4 |          3.222664       5.732188    1.7787 |              0.149155     458.818779     3076.12 |               3.000000                4
+  6 |          5.817950       9.282811    1.5955 |              0.832304     537.069908      645.28 |               5.000000                6
+  8 |          8.648892      12.857377    1.4866 |              1.526433     588.175198      385.33 |               7.000000                8
+ 10 |         11.107571      15.959297    1.4368 |              5.144011     747.328777      145.28 |               9.000000               10
+ 12 |         13.997736      19.149564    1.3680 |              8.962008     626.478420       69.90 |              11.000000               12
+ 14 |         16.979507      22.499467    1.3251 |             28.678739     857.554781       29.90 |              13.000000               14
+ 16 |         19.584455      25.179459    1.2857 |             21.656438    1059.152820       48.91 |              15.000000               16
+READ: the spread MOVES at fixed n. Inside the venue's own coupling family it moves by tens of
+      per cent; opened to four decades of coupling it moves by four orders of magnitude, at
+      FIXED n. The record count n in the last column is frozen by construction, which is what
+      a count looks like in this table.
+
+  n |   VARIANCE Var/D^2  min              max   max/min |  CONTROL uniform-J Var/D^2  CONTROL count n
+  4 |                0.871438         2.740284    3.1446 |                   0.750000                4
+  6 |                1.707669         4.324191    2.5322 |                   1.250000                6
+  8 |                2.683531         5.945166    2.2154 |                   1.750000                8
+ 10 |                3.562383         7.145166    2.0057 |                   2.250000               10
+ 12 |                4.553434         8.404465    1.8457 |                   2.750000               12
+ 14 |                5.762833         9.828362    1.7055 |                   3.250000               14
+ 16 |                6.547961        10.806847    1.6504 |                   3.750000               16
+READ: the configuration variance moves at fixed n too.
+
+----------------------------------------------------------------------------------------------------------------------
+T2  D-17  VARY THE VENUE'S OWN SCALES. Three scales exist here: the overall coupling
+    magnitude lambda, the number of sites n, and the DISORDER WIDTH of the coupling family.
+    A count is blind to the first and the third.
+----------------------------------------------------------------------------------------------------------------------
+  n     lambda              S/D       S/(lambda)            Var/D^2       Var/lambda^2
+  8       0.01         0.108530        10.852953           0.000434           4.335961
+  8        0.1         1.085295        10.852953           0.043360           4.335961
+  8        1.0        10.852953        10.852953           4.335961           4.335961
+  8       10.0       108.529525        10.852953         433.596080           4.335961
+  8     1000.0     10852.952524        10.852953     4335960.798299           4.335961
+ 16       0.01         0.226563        22.656334           0.000881           8.811547
+ 16        0.1         2.265633        22.656334           0.088115           8.811547
+ 16        1.0        22.656334        22.656334           8.811547           8.811547
+ 16       10.0       226.563342        22.656334         881.154699           8.811547
+ 16     1000.0     22656.334229        22.656334     8811546.986458           8.811547
+READ: S is exactly homogeneous of degree 1 and Var of degree 2 in the coupling scale. Both
+      move under the venue's own scale. A count cannot do that.
+
+  n   disorder width              S/D            Var/D^2  (mean coupling held at 0.75 D)
+  8             0.00        10.500000           3.937500
+  8             0.10        10.700000           4.157500
+  8             0.30        11.100000           5.017500
+  8             0.50        11.500000           6.437500
+  8             0.74        11.980000           8.880700
+ 16             0.00        22.500000           8.437500
+ 16             0.10        22.700000           8.737500
+ 16             0.30        23.100000          10.237500
+ 16             0.50        23.500000          12.937500
+ 16             0.74        23.980000          17.761500
+READ: at fixed n AND fixed mean coupling, the SPREAD does not move with the disorder width
+      (it depends only on the sum), but the VARIANCE does. The two config-independent
+      quantities are not the same functional, and the variance resolves what the spread cannot.
+
+----------------------------------------------------------------------------------------------------------------------
+T3  HOW MANY DISTINCT VALUES AT FIXED n?  A count takes exactly one.
+----------------------------------------------------------------------------------------------------------------------
+  n   draws   distinct S values   distinct Var values  distinct values of the count n
+  4     400                 400                   400                               1
+  8     400                 400                   400                               1
+ 12     400                 400                   400                               1
+ 16     400                 400                   400                               1
+READ: 400 distinct values from 400 draws, at every n. NOT A COUNT.
+
+----------------------------------------------------------------------------------------------------------------------
+T4  THE PLACEMENT TEST -- the limitation, reported as one.  Hold n AND the coupling MULTISET
+    fixed and only PERMUTE which bond carries which coupling. The carrier genuinely changes
+    (S1 established |Aut| = 1, so these are different Hamiltonians).
+    LIVE CONTROL in the same table: E(s) at a FIXED configuration s, which must move if the
+    permutation is doing anything at all.
+----------------------------------------------------------------------------------------------------------------------
+  n  permutations  distinct S  distinct Var  distinct E(s*) [CONTROL]   CONTROL range of E(s*)/D
+  6           400           1             1                        10                   1.046024
+  8           400           1             1                        35                   1.614719
+ 10           400           1             1                       120                   2.216626
+ 12           400           1             1                       269                   2.499008
+READ: under permutation of the couplings among the bonds, the SPREAD and the VARIANCE take
+      exactly ONE value -- they are SYMMETRIC FUNCTIONS of the coupling multiset and are
+      blind to where anything sits. The control column moves freely, so the permutations are
+      real. The configuration-INDEPENDENT part therefore cannot carry a separation law of any
+      kind: it is strictly more than a count of records, and strictly less than geometry.
+      The configuration-DEPENDENT part is the only one of the two that sees placement.
