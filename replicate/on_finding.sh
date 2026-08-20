@@ -58,6 +58,18 @@ case "$ug" in
   *) warn "GROUNDING DEBT — $ug (H-3). A row about the stipulated definition is not a row about the world." ;;
 esac
 
+# 3a2. THE IMPORT SCAN — classical-gravity metrics applied at the record level. The program has
+# rediscovered this at least four times; every previous statement of it was a doctrine row that
+# became a checkbox. A machine check instead. The LEDGER carries live claims and must be clean; the
+# REGISTER is append-only, so historical hits there are part of the record and are informational.
+PAT="gravity (needs|requires|must)|inverse.square|r\\^-2|r\\^\\{-2\\}|1/r\\^2|newtonian at the record"
+lg=$(grep -oniE "$PAT" ledger/status_ledger.tsv 2>/dev/null | grep -vi "emerg\|NOT expected\|banned\|never the test\|not the test\|import" | head -5)
+if [ -z "$lg" ]; then ok "no classical-gravity metric in any live ledger claim"
+else warn "IMPORT SCAN — classical-gravity metric in a LIVE ledger claim (CORE_FRAMEWORK's standing block):"
+     echo "$lg" | sed "s/^/        /"; fi
+rg=$(grep -ocniE "$PAT" REGISTER_V001.md 2>/dev/null || echo 0)
+printf "  \033[2m note  %s historical hits in the append-only register (informational)\033[0m\n" "$rg"
+
 # 3b. THE PLAN is generated too
 pb=$(shasum -a 256 THE_PLAN_V001.md 2>/dev/null | cut -d' ' -f1)
 ./ledger/plan.py >/dev/null 2>&1

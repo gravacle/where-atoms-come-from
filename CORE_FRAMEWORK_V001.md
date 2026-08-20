@@ -5,6 +5,35 @@ re-shaped; it is amended only by a registered erratum.
 
 ---
 
+## WHAT THE RECORD LEVEL IS NOT MEASURED AGAINST
+
+> **The principal, standing:** *"We want to connect Γ with classical gravity via emergence from
+> records. We are NOT trying to equate Γ and gravity at the record level."* And: *"Γ is where gravity
+> comes from."*
+
+**CLASSICAL GRAVITY IS NOT EXPECTED AT THE RECORD LEVEL AND IS NEVER THE TEST.** A record-level
+quantity that fails to look like Newtonian or Einsteinian gravity has failed nothing. The claim is
+**emergence at scale**, so the record level should NOT resemble the emergent form.
+
+**THE BANNED COMPARISONS — importing any of these to the record level is the error, not a finding:**
+an inverse-square law, `r⁻²`, a `1/r` potential, `G`, a metric, a geodesic, the Einstein equations,
+"gravity needs …", or any statement of the form *"the record-level quantity should be shaped like
+gravity"*.
+
+**WHAT MAY BE REQUIRED OF A RECORD-LEVEL SOURCE, AND ALL OF IT IS ABOUT ACCUMULATION, NOT SHAPE:**
+extensive, additive over disjoint regions, not a mere count, and **sign-definite so it accumulates
+rather than screening**. **A falloff EXPONENT IS NOT AMONG THEM.** The exponent is a property of the
+emergent description and may not be assumed at the level it emerges from.
+
+**A CLASSICAL-SHAPED NULL READS TWO WAYS** — the different-shape hypothesis, or no gravity present —
+and same-function/different-shape is an **assumption with no falsifier yet**, never a baseline.
+
+**`replicate/on_finding.sh` scans for these comparisons and flags them.** This is a check, not a
+reminder: the program has rediscovered this at least four times, and every previous statement of it
+was a doctrine row that became a checkbox.
+
+---
+
 ## WHAT "PROOF" MEANS IN THIS PROGRAM
 
 > **The principal, 2026-08-20:**

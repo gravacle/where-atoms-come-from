@@ -9332,3 +9332,53 @@ head aligns every grain, so the terms **add** instead of cancelling.
 dipole interaction is not gravitation. **What is established is narrower and still worth having: an
 object meeting the record definition carries a quantity with a source's form in all five respects,
 and the property every toy candidate lacked comes from writing.**
+
+---
+
+## O-50 — **THE CANDIDATE IS REFUTED. WHAT SURVIVES IS BURNSIDE, AND "MEAN ZERO" IS NOT "CANCELS".**
+
+`LANE_O50_A` … `LANE_O50_D`. **Three of four lanes self-certified the candidate PROVED; all four
+adversaries independently returned `theorem_actually_proved = false`.**
+
+### WHAT IS PROVED, EXACTLY
+
+**On the toric code at `L = 2..8` and genus 1..6 (`k = 2..12`), the writer group acts SIMPLY
+TRANSITIVELY on record configurations, so the writer-invariant functional space has dimension
+EXACTLY 1** — constants only, Burnside-confirmed, re-derived twice from scratch by independent
+implementations. **Operator side:** of the `4^k` logical Paulis exactly **one** is fixed by every
+writer — the identity. **The complete algebra of write-invariant state functionals is the algebra of
+functions of `|⟨P̄⟩|` — record INTEGRITY, never record VALUE.**
+
+**But the hypothesis asserts the generators of the conclusion**, and the lane's own verification
+reproduces every torus row from a bare `(Z₂)^k` translation with **zero toric-code input.**
+
+### WHAT IS FALSE
+
+**"Mean zero" ≠ "cancels".** Mean is exactly 0 at every `m`, but `E|F| = √(2m/π)` **grows to 204.26 at
+`m = 65536`.** And for `f = (Σsᵢ)²` the record-dependent part is **EXTENSIVE** — typical `|f − m|` is
+`0.75m, 0.98m, 0.97m, 0.92m, 0.96m` at `m = 4..20`, not `√m`.
+
+**Two explicit counterexamples to the candidate**, one of them **computed by a lane and omitted from
+its own table**: `f = (1+s₁)/2` is non-constant, responsive, mean `1/2`; and
+`G = Σ(1+sᵢsⱼ)/(2r_ij)` is responsive **and** strictly positive **and** has mean 6.18 — the forbidden
+conjunction.
+
+### THE ONE EXACT OBSTRUCTION LEFT STANDING
+
+**The responsive part of any functional has zero orbit sum and takes both signs.** This follows from
+**writes being BIJECTIONS** — not from the five clauses — and **holds on every carrier including one
+with no records.**
+
+### CLAUSE (v), VERIFIED BY HOMOLOGY WITH NO CONVENTION
+
+**1480 regions across `L = 3..6`: contractible regions carrying a logical, ZERO; non-contractible,
+all of them.** `dim(V(Rg) mod S) = rank χ(V(Rg))` for every region. **This is what O-49's decision
+called for — protection through manifold homology, no semantic caveat.** And `Aut(carrier) = 8L²`
+exactly, so the carrier is not permutation-symmetric and D-22 is satisfied.
+
+### THE NEXT MEASUREMENT IT NAMES
+
+**Does there exist a durable operator `A` (`[A,H] = 0`) whose EXTENSIVE part is not proportional to
+the identity?** `(ΣRᵢ)²` achieves extensivity and responsiveness and fails this — its extensive part
+is `m·I`, record-blind. **If that is FORCED, the program has its first genuine form-level exclusion
+of a source, immune to both objections. If not, the surviving operator IS the source candidate.**
