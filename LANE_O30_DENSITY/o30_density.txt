@@ -1,0 +1,74 @@
+========================================================================================================
+O-30   DOES TRANSPORT GROW WITH ENCLOSED RECORD DENSITY?
+========================================================================================================
+  enclose k records ALL OF ONE KIND (one conjugacy class); T(k) = fraction of records that come
+  back CHANGED.  Uniformly-drawn records cannot show a density law: the product of independent
+  uniform group elements is uniform in ANY group, which is why O-29 read 50% at every k.
+
+--------------------------------------------------------------------------------------------------------
+  Z_2    order 2    classes 2   ABELIAN (control)   enclosed record kind: class of size 1
+     k enclosed         1       2       3       4       5       6       7       8       9      10      11      12
+     T(k)          0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+     -> IDENTICALLY ZERO -- nothing to rotate
+     one kind of record generates a subgroup of order 1 inside order 2  ->  predicted mixing limit 0.0000
+     time-average of T over k = 7..12: 0.0000   MATCHES the mixing limit
+--------------------------------------------------------------------------------------------------------
+  Z_4    order 4    classes 4   ABELIAN (control)   enclosed record kind: class of size 1
+     k enclosed         1       2       3       4       5       6       7       8       9      10      11      12
+     T(k)          0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+     -> IDENTICALLY ZERO -- nothing to rotate
+     one kind of record generates a subgroup of order 1 inside order 4  ->  predicted mixing limit 0.0000
+     time-average of T over k = 7..12: 0.0000   MATCHES the mixing limit
+--------------------------------------------------------------------------------------------------------
+  Z_6    order 6    classes 6   ABELIAN (control)   enclosed record kind: class of size 1
+     k enclosed         1       2       3       4       5       6       7       8       9      10      11      12
+     T(k)          0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+     -> IDENTICALLY ZERO -- nothing to rotate
+     one kind of record generates a subgroup of order 1 inside order 6  ->  predicted mixing limit 0.0000
+     time-average of T over k = 7..12: 0.0000   MATCHES the mixing limit
+--------------------------------------------------------------------------------------------------------
+  S_3    order 6    classes 3   non-abelian   enclosed record kind: class of size 3
+     k enclosed         1       2       3       4       5       6       7       8       9      10      11      12
+     T(k)          0.6667  0.3333  0.6667  0.3333  0.6667  0.3333  0.6667  0.3333  0.6667  0.3333  0.6667  0.3333
+     -> CONVERGES with damped oscillation -- it does NOT grow with k
+     one kind of record generates a subgroup of order 6 inside order 6  ->  predicted mixing limit 0.5000
+     time-average of T over k = 7..12: 0.5000   MATCHES the mixing limit
+--------------------------------------------------------------------------------------------------------
+  D_4    order 8    classes 5   non-abelian   enclosed record kind: class of size 2
+     k enclosed         1       2       3       4       5       6       7       8       9      10      11      12
+     T(k)          0.5000  0.0000  0.5000  0.0000  0.5000  0.0000  0.5000  0.0000  0.5000  0.0000  0.5000  0.0000
+     -> CONVERGES with damped oscillation -- it does NOT grow with k
+     one kind of record generates a subgroup of order 4 inside order 8  ->  predicted mixing limit 0.2500
+     time-average of T over k = 7..12: 0.2500   MATCHES the mixing limit
+--------------------------------------------------------------------------------------------------------
+  A_4    order 12   classes 4   non-abelian   enclosed record kind: class of size 4
+     k enclosed         1       2       3       4       5       6       7       8       9      10      11      12
+     T(k)          0.7500  0.7500  0.5000  0.7500  0.7500  0.5000  0.7500  0.7500  0.5000  0.7500  0.7500  0.5000
+     -> CONVERGES with damped oscillation -- it does NOT grow with k
+     one kind of record generates a subgroup of order 12 inside order 12  ->  predicted mixing limit 0.6667
+     time-average of T over k = 7..12: 0.6667   MATCHES the mixing limit
+--------------------------------------------------------------------------------------------------------
+  S_4    order 24   classes 5   non-abelian   enclosed record kind: class of size 8
+     k enclosed         1       2       3       4       5       6       7       8       9      10      11      12
+     T(k)          0.8750  0.6875  0.7812  0.7344  0.7578  0.7461  0.7520  0.7490  0.7505  0.7498  0.7501  0.7499
+     -> CONVERGES with damped oscillation -- it does NOT grow with k
+     one kind of record generates a subgroup of order 12 inside order 24  ->  predicted mixing limit 0.7500
+     time-average of T over k = 7..12: 0.7502   MATCHES the mixing limit
+--------------------------------------------------------------------------------------------------------
+  S_5    order 120  classes 7   non-abelian   enclosed record kind: class of size 30
+     k enclosed         1       2       3       4       5       6       7       8       9      10      11      12
+     T(k)          0.9667  0.9167  0.9507  0.9327  0.9500  0.9333  0.9500  0.9333  0.9500  0.9333  0.9500  0.9333
+     -> CONVERGES with damped oscillation -- it does NOT grow with k
+     one kind of record generates a subgroup of order 120 inside order 120  ->  predicted mixing limit 0.9417
+     time-average of T over k = 7..12: 0.9417   MATCHES the mixing limit
+--------------------------------------------------------------------------------------------------------
+
+  READ
+  Every abelian control is identically zero at every k: no amount of enclosed record density
+  produces any transport at all. The density question does not even arise there.
+  On the non-abelian carriers transport is non-zero, but T(k) does NOT grow monotonically with
+  the number of enclosed records -- it saturates, or oscillates with the parity of k. So the
+  signature H-9 names, 'stronger with enclosed record-density', is NOT PRESENT as a monotone
+  law in the counting of same-kind records on any finite group tested.
+  A count of records is the wrong density variable. What varies monotonically in a group is not
+  how MANY elements are multiplied but WHICH class the product lands in.

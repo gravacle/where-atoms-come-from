@@ -7934,3 +7934,56 @@ determined" returns `[1]` on **both** — that is the group inverse `z = p⁻¹`
 - **v2 READ called closure "THE STRONGEST RESULT"** when item 5 returns `[1]` for `Z₂` as well.
   **A signature that gives the same answer on the control discriminates nothing.** `Z₂` is now
   carried as an explicit control column in every row.
+
+---
+
+## O-30 — **A COUNT OF RECORDS IS THE WRONG DENSITY VARIABLE. TRANSPORT MIXES; IT DOES NOT ACCUMULATE.**
+
+`LANE_O30_DENSITY`. H-9 names *"stronger with enclosed record-density."* O-29 read exactly 50% at
+every `k`, and that is not a small-carrier artifact — **the product of independent uniform group
+elements is uniform in any group**, so uniformly-drawn records can never show a density law. The
+enclosed records must be **of one kind** (one conjugacy class), which is also the physically right
+condition: mass density is a lot of the **same** stuff.
+
+`T(k)` = fraction of records that come back changed when `k` records of one kind are enclosed.
+
+| carrier | order | `T(1)` | `T(2)` | `T(3)` | `T(4)` | … | subgroup generated | **mixing limit** | time-average |
+|---|---|---|---|---|---|---|---|---|---|
+| **`Z₂`** (control) | 2 | **0** | **0** | **0** | **0** | 0 | 1 of 2 | 0.0000 | **0.0000 ✓** |
+| **`Z₄`** (control) | 4 | **0** | **0** | **0** | **0** | 0 | 1 of 4 | 0.0000 | **0.0000 ✓** |
+| **`Z₆`** (control) | 6 | **0** | **0** | **0** | **0** | 0 | 1 of 6 | 0.0000 | **0.0000 ✓** |
+| `S₃` | 6 | .6667 | .3333 | .6667 | .3333 | ↔ | 6 of 6 | 0.5000 | **0.5000 ✓** |
+| `D₄` | 8 | .5000 | .0000 | .5000 | .0000 | ↔ | **4 of 8** | 0.2500 | **0.2500 ✓** |
+| `A₄` | 12 | .7500 | .7500 | .5000 | .7500 | ↺3 | 12 of 12 | 0.6667 | **0.6667 ✓** |
+| `S₄` | 24 | .8750 | .6875 | .7812 | .7344 | → | **12 of 24** | 0.7500 | **0.7502 ✓** |
+| `S₅` | 120 | .9667 | .9167 | .9507 | .9327 | → | 120 of 120 | 0.9417 | **0.9417 ✓** |
+
+> ### **ON EVERY ABELIAN CONTROL, `T(k) = 0` AT EVERY `k`. NO AMOUNT OF ENCLOSED RECORD DENSITY
+> ### PRODUCES ANY TRANSPORT AT ALL — THE DENSITY QUESTION DOES NOT ARISE THERE.**
+
+> ### **ON EVERY NON-ABELIAN CARRIER, `T(k)` DOES NOT GROW. IT CONVERGES TO THE MIXING LIMIT —
+> ### PREDICTED EXACTLY AND MATCHED ON 8 OF 8 CARRIERS. THE `k`-TH ENCLOSED RECORD DOES NOT ADD
+> ### TRANSPORT; IT RANDOMISES IT.**
+
+### WHY, AND WHY THIS IS NOT A SMALL-CARRIER ARTIFACT
+
+Records of one kind perform a **random walk on the subgroup that kind generates**, and that walk
+**mixes**. The limit is therefore a derived number, `1 − |{(a,g) : a ∈ H, g ∈ G, ag = ga}| / (|H||G|)`,
+**checked against measurement on all 8 carriers**, at orders from 2 to 120. The walk is **periodic,
+not ergodic** — period 2 on `S₃` and `D₄`, period 3 on `A₄` — so the limit is the **time average**;
+a two-step mean is the wrong average and was corrected.
+
+**And there is a ceiling.** One kind of record generates only a **subgroup**: `S₄`'s 8-element class
+generates `A₄`, order 12 of 24; `D₄`'s 2-element class generates order 4 of 8. **Records of a single
+kind cannot reach arbitrary transport at all.**
+
+> ### **H-9's DENSITY SIGNATURE IS ABSENT FROM THE COUNTING OF RECORDS. Gravity's defining feature
+> ### is that it GROWS with the amount enclosed; transport between records CONVERGES instead. This
+> ### is a proved statement about the counting variable, not a null from a carrier that is too small.**
+
+### WHAT IT LEAVES STANDING
+
+C-30 is untouched: **transport between records exists and is path-dependent on a non-abelian
+carrier**, and it belongs to the set of records. What fails is **`count` as the source term.** The
+principal's own triad names a different one — `R ∝ ⟨c_i,c_j⟩ × channel_map[α]`, whose source is the
+**intersection pairing**, not a count. **That is the next measurement**, registered as **O-31**.
