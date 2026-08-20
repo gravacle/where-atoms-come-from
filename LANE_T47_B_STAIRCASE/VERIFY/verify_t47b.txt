@@ -1,0 +1,116 @@
+====================================================================================================
+VERIFY T-47 LANE B — independent rerun
+====================================================================================================
+
+V1. THE WIDTH — algebra re-derived; tolerance scan
+  [OK] V1a: record-mode rate = g_u+g_l exactly (own instrument)  (worst rel 2.0e-16)
+  [OK] V1b: delta(1e+02) sits exactly on g_u+g_l = 1/t_m  (resid 3.3e-16)
+  [OK] V1b: delta(1e+06) sits exactly on g_u+g_l = 1/t_m  (resid 2.2e-16)
+  tolerance scan of the lane script: grep for chosen widths / floors
+70:       earlier draft excluded '|lambda| < 1e-14 * spectral scale', and the coherence frequency
+96:    assert abs(abs(lam) - q) <= 1e-9 * max(q, 1e-300), (lam, q)
+128:check("A: numeric crossing lands on delta_exact, all t_m, rel err <= 1e-9", worst_cross <= 1e-9,
+154:check("B: coherence width = hbar/t_m reappears (<=1e-6 rel, decay corr negligible here)",
+155:      abs(dE_coh - w_coh) / w_coh <= 1e-6, f"rel {abs(dE_coh-w_coh)/w_coh:.2e}")
+196:    check(f"C[{name}]: steps land on t* = f0^-1 e^((B-dE)/kT)/(1+e^(-dE/kT)), <=1e-10",
+197:          worst <= 1e-10, f"worst {worst:.2e}")
+231:check("D: dE=0 threshold = e^(B/kT)/(2f0) to 1e-12", abs(taus_s[0] - t_half) / t_half <= 1e-12)
+304:say("    frequency grouping floor is 1e-9 (instrument floor, declared).")
+327:                if abs(At[m, n]) < 1e-12: continue
+371:    assert np.max(np.abs(np.imag(w[idx]))) <= 1e-12 * max(1.0, np.max(np.abs(lam)))
+407:    mults = clustered_mults(np.linalg.eigvalsh(H), 1e-9)
+428:check("F: slow sector is a classical 4-state generator (<= 1e-6 of slow scale)",
+429:      worst_qval <= 1e-6, f"worst {worst_qval:.2e}")
+
+V2. NUMERIC CROSSING on a decay-fit instrument (no eigen-selection), incl. correction term
+    t_m=1e+02: delta_mine=0.436077474379 eV (lane 0.436077474379); decay-fit crossing rel err 3.4e-16; cand offset 0.000001 (lane 0.000001)
+  [OK] V2: table value reproduced at t_m=1e+02
+  [OK] V2: cand offset reproduced at t_m=1e+02
+    t_m=1e+04: delta_mine=0.297180902789 eV (lane 0.297180902789); decay-fit crossing rel err 5.1e-16; cand offset 0.000076 (lane 0.000076)
+  [OK] V2: table value reproduced at t_m=1e+04
+  [OK] V2: cand offset reproduced at t_m=1e+04
+    t_m=1e+06: delta_mine=0.158128505564 eV (lane 0.158128505564); decay-fit crossing rel err 7.1e-16; cand offset 0.007605 (lane 0.007605)
+  [OK] V2: table value reproduced at t_m=1e+06
+  [OK] V2: cand offset reproduced at t_m=1e+06
+    t_m=1e+07: delta_mine=0.087211155930 eV (lane 0.087211155930); decay-fit crossing rel err 6.5e-16; cand offset 0.077913 (lane 0.077913)
+  [OK] V2: table value reproduced at t_m=1e+07
+  [OK] V2: cand offset reproduced at t_m=1e+07
+  [OK] V2: independent decay-fit crossing lands on delta_exact (<=1e-6 rel)  (worst 7.1e-16)
+    exact-vs-candidate gap at 1e7 s = 0.001629 eV vs crossing precision ~1e-8 eV: the instrument RESOLVES the correction term
+  [OK] V2: correction term resolved by the instrument
+
+V3. COHERENCE-TYPE RECORD — hbar/t_m from the same clause (own bisection)
+    g_tot=1.3865e-11 (lane 1.386e-11); dE*=3.341482230e-42 (lane 3.341482230e-42); hbar/t_m=3.341482310e-42
+  [OK] V3: coherence crossing = hbar sqrt(1/t^2-(g/2)^2), rel<=1e-9  (rel 1.9e-16)
+  [OK] V3: lane's 2.39e-8 rel offset from hbar/t_m reproduced
+  [OK] V3: ratio of the two widths ~1.22e22 reproduced  (ratio 1.219e+22)
+
+V4. ENSEMBLES — k(t_m) two ways, own code, both declared grids
+    UNIFORM: max|k_direct-k_exact|=0 over 1201; candidate differs at 82 pts (lane: 0 and 82); step law worst |dln|=3.6e-15; taus vs lane rel 2.6e-07
+  [OK] V4[UNIFORM]: two routes agree everywhere
+  [OK] V4[UNIFORM]: candidate discrepancy count = 82  (got 82)
+  [OK] V4[UNIFORM]: steps land on t*_exact <=1e-10
+  [OK] V4[UNIFORM]: lane's tau table reproduced <=1e-6 rel
+  [OK] V4[UNIFORM]: staircase monotone decreasing
+    LOGNORMAL: max|k_direct-k_exact|=0 over 1201; candidate differs at 82 pts (lane: 0 and 82); step law worst |dln|=3.6e-15; taus vs lane rel 2.8e-07
+  [OK] V4[LOGNORMAL]: two routes agree everywhere
+  [OK] V4[LOGNORMAL]: candidate discrepancy count = 82  (got 82)
+  [OK] V4[LOGNORMAL]: steps land on t*_exact <=1e-10
+  [OK] V4[LOGNORMAL]: lane's tau table reproduced <=1e-6 rel
+  [OK] V4[LOGNORMAL]: staircase monotone decreasing
+
+V5. SYMMETRIC CONTROL
+    tau(dE=0) = 1.254112e+05 s; e^(B/kT)/(2 f0) = 1.254112e+05 s (lane 1.254112e5)
+  [OK] V5: threshold = e^(B/kT)/(2f0) to 1e-12
+  [OK] V5: lane's 1.254112e5 reproduced
+
+V6. CORNER LIMIT — clustered v2 proxy, own clustering code
+  [OK] V6: symmetric corner min v2 = 8  (mults [256])
+  [OK] V6: common-B row t_m=1e+01 -> (k=4, v2=6)  (got (4,6))
+  [OK] V6: common-B row t_m=1e+04 -> (k=2, v2=2)  (got (2,2))
+  [OK] V6: common-B row t_m=1e+07 -> (k=2, v2=2)  (got (2,2))
+  [OK] V6: common-B row t_m=1e+08 -> (k=0, v2=1)  (got (0,1))
+    chaining: taus = 2.678e+04, 6.110e+03 (lane 2.678e4, 6.110e3); k=1, proxy v2=2, mults [4]
+  [OK] V6: chaining counterexample (proxy 2 vs k 1)
+  [OK] V6: the 1.05-delta record is genuinely dead at t_m  (tau 6.110e+03 vs 1e+04)
+
+V7. T-31 GENERIC-ASYMMETRY CARRIER — independent rebuild
+    eps=0.00: dE=(0.0000,0.0000) lane (0.0,0.0); tau=(5.5066e+03,5.5066e+03) lane (5.5066e+03,5.5066e+03); qdev=2.0e-11; v2=2
+  [OK] V7: eps=0.0 dE reproduced <=1e-3
+  [OK] V7: eps=0.0 taus reproduced <=1e-3 rel
+  [OK] V7: eps=0.0 Q classical to 1e-6 of slow scale  (2.0e-11)
+  [OK] V7: eps=0.0 exact-mult v2 = 2
+    eps=0.05: dE=(0.0698,0.0641) lane (0.0698,0.0641); tau=(5.5008e+03,5.5147e+03) lane (5.5008e+03,5.5147e+03); qdev=4.7e-11; v2=0
+  [OK] V7: eps=0.05 dE reproduced <=1e-3
+  [OK] V7: eps=0.05 taus reproduced <=1e-3 rel
+  [OK] V7: eps=0.05 Q classical to 1e-6 of slow scale  (4.7e-11)
+  [OK] V7: eps=0.05 exact-mult v2 = 0
+    eps=0.16: dE=(0.5684,0.5124) lane (0.5684,0.5124); tau=(3.6284e+03,4.1648e+03) lane (3.6284e+03,4.1648e+03); qdev=6.1e-12; v2=0
+  [OK] V7: eps=0.16 dE reproduced <=1e-3
+  [OK] V7: eps=0.16 taus reproduced <=1e-3 rel
+  [OK] V7: eps=0.16 Q classical to 1e-6 of slow scale  (6.1e-12)
+  [OK] V7: eps=0.16 exact-mult v2 = 0
+  [OK] V7: staircase at eps=0.16 takes values [2,1,0]
+    ln f0_eff = 0.6931 (lane 0.6931 = ln 2); f0_eff = 2.0000
+  [OK] V7: f0_eff = 2.000 reproduced (measured at symmetric point only)
+
+V8. DEPARTURE TERM — closed-form m(t) (no Liouvillian at all)
+    closed-form m(t) vs lane table worst |dm| = 4.40e-07
+  [OK] V8: lane's exact-propagator m(t) = rate-equation closed form <=1e-5
+  [OK] V8: k=4, Sharrock survivors 10, departure 6 grains
+  [OK] V8: departure sum m_eq = 5.4339  (5.4339)
+  [OK] V8: departure at scale 0.5 = 4.8388  (4.8388)
+  [OK] V8: departure at scale 1.0 = 6.6955  (6.6955)
+  [OK] V8: departure at scale 2.0 = 8.0865  (8.0865)
+  [OK] V8: departure at scale 4.0 = 9.0453  (9.0453)
+
+V9. THE LANE'S REGISTER-WORTHY INSTRUMENT CLAIMS (importing the model's own instruments)
+  [OK] V9a: population-mode rate identical under both H units (harmless as claimed)  (rel 0.0e+00)
+    coherence-mode |lambda|: H-in-joules 2.066e-06 vs H-in-omega 1.519e+14 (ratio 1.360e-20) — load-bearing exactly as the caveat says
+  [OK] V9a: coherence mode differs wildly under the units confusion (claim confirmed)
+    grounded.clause_ii on 16-dim carrier: 1/rate = 0.497 (lane 0.497; true tau_1 = 3.628e+03)
+  [OK] V9b: clause_ii misread on multi-shell carrier reproduced
+
+====================================================================================================
+VERIFY: 0 REFUTE lines
+====================================================================================================

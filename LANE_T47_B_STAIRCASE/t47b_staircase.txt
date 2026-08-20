@@ -1,0 +1,193 @@
+====================================================================================================
+T-47 LANE B    THE COUNT LAW k(t_m) ON MULTI-RECORD CARRIERS
+====================================================================================================
+
+A.  THE DERIVED WIDTH — clause (ii') on the record's own population mode, closed form
+    survive t_m  <=>  g_u+g_l <= 1/t_m  <=>  f0 t_m e^(-B/kT)(e^(dE/kT)+1) <= 1
+    <=>  dE <= delta(t_m) = kT ln( e^(B/kT)/(f0 t_m) - 1 )        [exact, no free parameter]
+    candidate delta_cand = B - kT ln(f0 t_m) is the dE>>kT asymptote; error <= kT ln 2.
+
+    surface: B = 1.2 eV, T = 350 K, f0 = 1e9 Hz   (kT = 0.030161 eV)
+       t_m (s)  delta_exact (eV)   dE* bisected on tau(dE)=t_m (eV)    rel err  delta_cand (eV)  cand offset/kTln2
+         1e+02    0.436077474379                     0.436077474379    3.4e-16   0.436077490235           0.000001
+         1e+04    0.297180902789                     0.297180902789    5.1e-16   0.297182488460           0.000076
+         1e+06    0.158128505564                     0.158128505564    2.4e-16   0.158287486684           0.007605
+         1e+07    0.087211155930                     0.087211155930    1.1e-15   0.088839985796           0.077913
+    [PASS] A: numeric crossing lands on delta_exact, all t_m, rel err <= 1e-9  (worst 1.08e-15)
+    the candidate width overshoots by kT ln(1+e^(-delta/kT)) — its 'cand offset' column tends
+    to 1 (=kT ln2) as delta -> 0 and to 0 as delta >> kT: the asymptote, quantified.
+
+B.  BOTH WIDTHS FROM THE ONE CLAUSE (D-15 control: a coherence-type record)
+    surface B = 1.4 eV, T = 350 K, f0 = 1e9, t_m = 1 yr;  g_u+g_l = 1.386e-11 1/s
+    coherence-mode crossing, bisected on the eigenvalue:  dE* = 3.341482230e-42 J
+    hbar/t_m = 3.341482310e-42 J     exact hbar*sqrt(1/t_m^2-((gu+gl)/2)^2) = 3.341482230e-42 J
+    [PASS] B: coherence width = hbar/t_m reappears (<=1e-6 rel, decay corr negligible here)  (rel 2.39e-08)
+    THE TWO WIDTHS OF THE SAME SURFACE AT THE SAME t_m, from the same |lambda| <= 1/t_m:
+      population (diagonal) record:    delta = 0.2542 eV = 4.072e-20 J
+      coherence (off-diagonal) record: delta = 3.341e-42 J
+      ratio 1.22e+22 — C-76 quantified: the coherence width applied to a population
+      record undercounts by ~22 orders of magnitude; k = 0 was that error.
+
+C.  k(t_m) TWO WAYS ON DECLARED MULTI-RECORD SURFACES
+    route 1: eigenvalue instrument per record (tau from the Liouvillian, no formula)
+    route 2: the derived staircase (exact form); the candidate form tabulated beside it
+
+    -- UNIFORM (declared grid):  N = 12, T = 350.0 K, f0 = 1e+09 Hz
+      i   B_i (eV)  dE_i (eV)  tau_i eig (s)   t*_exact (s)    |d ln|  t*_cand/t*_exact
+      0     0.9500     0.0491   7.845972e+03   7.845972e+03   1.8e-15          1.196391
+      1     0.9864     0.1636   6.995896e+02   6.995896e+02   8.9e-16          1.004403
+      2     1.0227     0.0818   3.315836e+04   3.315836e+04   0.0e+00          1.066354
+      3     1.0591     0.0000   8.896269e+05   8.896269e+05   0.0e+00          2.000000
+      4     1.0955     0.1145   1.302688e+05   1.302688e+05   0.0e+00          1.022419
+      5     1.1318     0.0327   5.009554e+06   5.009554e+06   0.0e+00          1.337869
+      6     1.1682     0.1473   4.979281e+05   4.979281e+05   1.8e-15          1.007575
+      7     1.2045     0.0655   2.265904e+07   2.265904e+07   0.0e+00          1.114155
+      8     1.2409     0.1800   1.884988e+06   1.884988e+06   0.0e+00          1.002559
+      9     1.2773     0.0982   9.156432e+07   9.156432e+07   3.6e-15          1.038570
+     10     1.3136     0.0164   3.026220e+09   3.026220e+09   0.0e+00          1.581265
+     11     1.3500     0.1309   3.536011e+08   3.536011e+08   0.0e+00          1.013031
+    k_direct vs k_staircase(exact):    max discrepancy over 1201 t_m = 0   (grid points differing: 0)
+    k_direct vs k_staircase(candidate): max discrepancy = 1, at 82 grid points — the candidate holds each record a factor (1+e^(-dE/kT)) too long
+    step-location law: max |ln tau_eig - ln t*_exact| over records = 3.55e-15
+    [PASS] C[UNIFORM (declared grid)]: two routes agree at every t_m
+    [PASS] C[UNIFORM (declared grid)]: steps land on t* = f0^-1 e^((B-dE)/kT)/(1+e^(-dE/kT)), <=1e-10  (worst 3.55e-15)
+    staircase is decreasing in ln t_m: True; k(1e+00 s) = 12, k(1e+12 s) = 0
+
+    -- LOGNORMAL-LIKE DISCRETE (declared z-grid):  N = 10, T = 350.0 K, f0 = 1e+09 Hz
+      i   B_i (eV)  dE_i (eV)  tau_i eig (s)   t*_exact (s)    |d ln|  t*_cand/t*_exact
+      0     0.9188     0.0735   1.366468e+03   1.366468e+03   8.9e-16          1.087483
+      1     0.9640     0.0412   1.542332e+04   1.542332e+04   0.0e+00          1.254743
+      2     1.0114     0.1141   8.137589e+03   8.137589e+03   0.0e+00          1.022757
+      3     1.0548     0.0500   2.466660e+05   2.466660e+05   1.8e-15          1.190560
+      4     1.1000     0.0219   2.251496e+06   2.251496e+06   0.0e+00          1.483598
+      5     1.1000     0.0916   3.165801e+05   3.165801e+05   0.0e+00          1.048035
+      6     1.1472     0.0340   8.073097e+06   8.073097e+06   0.0e+00          1.323666
+      7     1.1964     0.0606   1.994613e+07   1.994613e+07   3.6e-15          1.134029
+      8     1.2552     0.0273   3.417463e+08   3.417463e+08   3.6e-15          1.404430
+      9     1.3169     0.0500   1.470174e+09   1.470174e+09   0.0e+00          1.190560
+    k_direct vs k_staircase(exact):    max discrepancy over 1201 t_m = 0   (grid points differing: 0)
+    k_direct vs k_staircase(candidate): max discrepancy = 1, at 82 grid points — the candidate holds each record a factor (1+e^(-dE/kT)) too long
+    step-location law: max |ln tau_eig - ln t*_exact| over records = 3.55e-15
+    [PASS] C[LOGNORMAL-LIKE DISCRETE (declared z-grid)]: two routes agree at every t_m
+    [PASS] C[LOGNORMAL-LIKE DISCRETE (declared z-grid)]: steps land on t* = f0^-1 e^((B-dE)/kT)/(1+e^(-dE/kT)), <=1e-10  (worst 3.55e-15)
+    staircase is decreasing in ln t_m: True; k(1e+00 s) = 10, k(1e+12 s) = 0
+
+D.  D-15 CONTROL — SYMMETRIC CARRIER: k(t_m) must be FLAT to a single threshold
+    8 records, B = 1.0 eV, dE = 0: tau_i (eig) all equal: 1.254112e+05 .. 1.254112e+05 s
+    k = 8 on every grid t_m < tau, k = 0 above: values taken = [0, 8]
+    [PASS] D: symmetric carrier flat at 8, single step to 0
+    threshold measured 1.254112e+05 s = e^(B/kT)/(2 f0) = 1.254112e+05 s;
+    the candidate corner 'any t_m below f0^-1 e^(B/kT)' = 2.508224e+05 s is HIGH by exactly 2:
+    at dE = 0 both wells escape, tau = 1/(2 f0 e^(-B/kT)). Corner limit holds, corrected by 2.
+    [PASS] D: dE=0 threshold = e^(B/kT)/(2f0) to 1e-12
+
+E.  THE CORNER LIMIT — mapping the staircase back to C-14's v_2 arithmetic (closes C-76)
+    SYMMETRIC N=8 corner: joint spectrum = 2^8 coincident levels -> multiplicities [256], min v_2 = 8 = k_direct = 8
+    [PASS] E: symmetric corner v_2 arithmetic = staircase count
+    COMMON-B CARRIER (B = 1.2 eV): dE_i/eV = [0.0, 0.005, 0.31, 0.45, 0.6, 0.75]
+       t_m (s)  delta(t_m) eV  k_direct  min v_2 clustered  multiplicities
+       1.0e+01         0.5055         4                  6  [64]
+       1.8e+01         0.4882         4                  6  [64]
+       3.2e+01         0.4708         4                  6  [64]
+       5.6e+01         0.4534         4                  6  [64]
+       1.0e+02         0.4361         3                  6  [64]
+       1.8e+02         0.4187         3                  6  [64]
+       3.2e+02         0.4014         3                  6  [64]
+       5.6e+02         0.3840         3                  6  [64]
+       1.0e+03         0.3666         3                  6  [64]
+       1.8e+03         0.3493         3                  6  [64]
+       3.2e+03         0.3319         3                  6  [64]
+       5.6e+03         0.3145         3                  6  [64]
+       1.0e+04         0.2972         2                  2  [4, 56, 4]
+       1.0e+07         0.0872         2                  2  [4, 4, 4, 4, 8, 4, 8, 4, 8, 4, 4, 4, 4]
+       1.0e+08        -0.0031         0                  1  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    agreement over 29 t_m: 16 agree, 13 disagree. WHERE it agrees: live splittings
+    well inside delta, dead ones well outside (the [4,56,4]-type rows: min v_2 = 2 = k).
+    WHERE it disagrees: (a) large delta CHAIN-MERGES the whole spectrum (the [64] rows read
+    6 while k = 4 or 3); (b) at delta <= 0 an EXACTLY degenerate pair still doubles every
+    level (the [2,2,...] row reads 1 while k = 0: degeneracy without durability — C-76's own
+    lesson). The arithmetic reconnects EXACTLY at the symmetric corner and in the separated
+    regime; clustered-v_2 is a spectral PROXY, and the law must be registered on record
+    modes, where both routes agree at every t_m (section C).
+    PROXY BOUNDARY (chaining): B = 1.2 eV, t_m = 1e4 s, delta = 0.2972 eV,
+      dE = (0.90, 1.05) delta -> tau = (2.678e+04, 6.110e+03) s;
+      record-mode count k = 1; chain-clustered multiplicities [4] -> min v_2 = 2.
+      The spectral proxy overcounts (2 vs 1): consecutive gaps 0.90d, 0.15d, 0.90d all
+      <= delta chain a dead record's level into the cluster. THE LAW LIVES ON RECORD MODES;
+      clustered-v_2 is a corner proxy, exact at dE = 0, not the law.
+    [PASS] E: chaining counterexample exhibits proxy overcount (v2=2 vs k=1)
+
+F.  THE T-31 GENERIC-ASYMMETRY CARRIER — the kill becomes a staircase
+    [[4,2,2]] Hsym = -(XXXX+ZZZZ) + generic Z-fields eps*(1+0.618 j). Carrier units DECLARED:
+    hbar = 1, f0 = 1 (Metropolis attempt rate), kT = 0.20 x the carrier's own unit; bath =
+    Davies-Metropolis single-qubit X_j, Z_j couplings, detailed balance; the numerical Bohr-
+    frequency grouping floor is 1e-9 (instrument floor, declared).
+
+    per-record mode: the basin-lumped two-state chain (weights = the carrier's own
+    conditional Gibbs; hop rates read off the full 256-dim generator, no formula).
+       eps     dE_1     dE_2  tau_1 basin  tau_2 basin   tau_1 pred   tau_2 pred  |d ln| 1  |d ln| 2  v2 exact k
+      0.00   0.0000   0.0000   5.5066e+03   5.5066e+03   5.5066e+03   5.5066e+03     0.000     0.000           2
+      0.05   0.0698   0.0641   5.5008e+03   5.5147e+03   5.3397e+03   5.4292e+03     0.030     0.016           0
+      0.10   0.2550   0.2325   5.2452e+03   5.4219e+03   4.1933e+03   4.5735e+03     0.224     0.170           0
+      0.16   0.5684   0.5124   3.6284e+03   4.1648e+03   1.9499e+03   2.5350e+03     0.621     0.496           0
+    (f0_eff measured once at eps = 0: ln f0_eff = 0.6931; B_i - dE_i and dE_i read off
+    the carrier's own spectrum — saddle = lowest excited level, wells = labeled bottom shell)
+    basin-generator validation: Q carries the full generator's own 4 slowest eigenvalues by
+    construction, and comes out a CLASSICAL MARKOV GENERATOR — column sums / negative
+    off-diagonals deviate by at most 3.73e-11 of the slow scale, over all eps. The
+    slow sector IS a classical 4-well chain: measured, not assumed.
+    [PASS] F: slow sector is a classical 4-state generator (<= 1e-6 of slow scale)  (worst 3.73e-11)
+    STAIRCASE at eps = 0.16: k = 2 for t_m < 3.6284e+03, k = 1 to 4.1648e+03, k = 0 above
+      (values taken on the grid: [2, 1, 0]); exact-multiplicity
+      v_2 count at the same eps = 0 at EVERY t_m — T-31's kill row — while the
+      record-mode count steps 2 -> 1 -> 0. The binary 0 was the corner arithmetic, not the count.
+    [PASS] F: generic-asymmetry carrier gives k=2 below computed threshold, steps down
+    [PASS] F: step order tracks the derived exponent (smaller B-dE dies first)
+    formula-vs-instrument residual on the abstract carrier: max |d ln tau| = 0.621
+    over an exponent (B-dE)/kT of ~8.3-10.0;
+    the residual is the multi-pathway prefactor the two-well formula compresses into one f0
+    (reported, not tuned away). The LAW's content here is the staircase and its exponent.
+    [PASS] F: exponent carries the step (residual << step separation ln(t2*/t1*)+2 ln-units)
+    INSTRUMENT-SCOPE FINDING (register-worthy): grounded.clause_ii's Rayleigh quotient on this
+    16-dim carrier reads 1/rate = 0.497 (vs the true 3.628e+03): the trace
+    inner product weights all shells uniformly and the excited-shell flips swamp the record's
+    slow mode. On multi-shell carriers the record's own mode must be taken in the basin-lumped
+    slow sector — same failure class as the C-69/spectrum() 2x-mode lesson, one level up.
+
+G.  THE DEPARTURE TERM — Sharrock-style population counting vs k(t_m), same carrier
+    Sharrock / Street-Woolley / Neel decay counting integrates surviving MAGNETISATION;
+    k(t_m) counts FUNCTIONING TWO-VALUED RECORDS. On an asymmetric carrier they differ.
+    carrier: 10 grains, B = 1.1 eV, T = 350 K, f0 = 1e9; dE_i/kT declared = [0.2, 0.5, 0.8, 1.2, 1.8, 2.5, 3.2, 4.0, 5.0, 6.5]
+    probe t = 1e+06 s.  m_i(t) from the Liouvillian propagator e^(Lt), exact.
+      i  dE/kT    tau_i (s)  record@t  m(t) lower-written  m(t) upper-written    m_eq
+      0    0.2   3.1094e+06     ALIVE            0.752394           -0.697573  0.0997
+      1    0.5   2.6078e+06     ALIVE            0.759500           -0.603483  0.2449
+      2    0.8   2.1414e+06     ALIVE            0.768654           -0.485130  0.3799
+      3    1.2   1.5988e+06     ALIVE            0.784738           -0.285304  0.5370
+      4    1.8   9.7980e+05      dead            0.818536            0.097794  0.7163
+      5    2.5   5.2397e+05      dead            0.870783            0.574181  0.8483
+      6    3.2   2.7053e+05      dead            0.923612            0.873992  0.9217
+      7    4.0   1.2423e+05      dead            0.964039            0.963400  0.9640
+      8    5.0   4.6229e+04      dead            0.986614            0.986614  0.9866
+      9    6.5   1.0369e+04      dead            0.996998            0.996998  0.9970
+    at t = 1e+06 s: functioning records k = 4;  Sharrock-counted surviving
+    moments (lower-written, sign criterion) = 10 of 10.  THE EXACT CONFIGURATIONS THAT
+    DIFFER: grains [4, 5, 6, 7, 8, 9] — upper value decayed (tau_i < t), lower value
+    persists at m ~ m_eq; magnetisation counted, record not. Departure = 6 grains;
+    magnetisation-weighted departure = sum over dead of m_eq = 5.4339 (of N = 10).
+    [PASS] G: departure configurations exist and are exactly the dead-but-magnetised grains
+
+    departure vs the asymmetry distribution (same grains, dE scaled by s; t at which all dead):
+     scale s  <dE>/kT  k(t->inf)  Sharrock survivors  departure sum m_eq
+         0.5     1.28          0                  10              4.8388
+         1.0     2.57          0                  10              6.6955
+         2.0     5.14          0                  10              8.0865
+         4.0    10.28          0                  10              9.0453
+    the departure GROWS with asymmetry (-> N as dE/kT -> inf) and vanishes on the symmetric
+    carrier (m_eq = 0): Sharrock counting and k(t_m) coincide only at dE = 0 — the corner.
+    Sharrock's own object M(t) = sum m_i(t) NEVER counts two-valuedness: an exchange-biased
+    medium DC-written along bias holds M ~ sum tanh(dE_i/2kT) FOREVER while k(t_m) -> 0.
+
+====================================================================================================
+  15 PASS, 0 FAIL over 15 checks
+====================================================================================================

@@ -1,0 +1,203 @@
+======================================================================================================
+T-47 A   THE WIDTH, DERIVED: BOTH FACES OF CLAUSE (ii') ON THE RECORD'S OWN LIOUVILLIAN MODE
+======================================================================================================
+
+  criterion (ONE): |lambda_record| <= 1/t_m on the record's own mode of the carrier's Liouvillian
+  population face: lambda real,      -(g_u+g_l)      -> dE* = delta_pop - kT ln(1+e^{-dE*/kT}),
+                                                        delta_pop(t_m) = B - kT ln(f0 t_m)
+  coherence face:  lambda imaginary, -i dE/hbar      -> delta_coh(t_m) = hbar/t_m
+  every symbol: B, dE, T, f0 the carrier's; t_m the retention spec; kB, hbar SI-exact.
+
+------------------------------------------------------------------------------------------------------
+  0.  INSTRUMENT: Rayleigh-quotient rate vs closed form, and detailed balance as a consequence
+------------------------------------------------------------------------------------------------------
+  carrier: B = 1.200 eV (from the LOWER well), T = 300 K, f0 = 1.0e+09 Hz;  t_m = 10 y = 3.156e+08 s
+     dE (eV)    rate: instrument       rate: g_u+g_l     rel err      
+       0.000  1.386491636889e-11  1.386491636889e-11     2.3e-16    ok
+       0.050  5.488926847605e-11  5.488926847605e-11     1.2e-16    ok
+       0.158  3.134238877190e-09  3.134238877190e-09     2.6e-16    ok
+       0.300  7.597477224034e-07  7.597477224034e-07     1.4e-16    ok
+  detailed balance g_l/g_u vs e^-dE/kT at dE = 0.100 eV: ratio/expected = 1.000000000000   ok
+
+------------------------------------------------------------------------------------------------------
+  1.  SWEEP dE AT FIXED (B, T, f0, t_m): the instrument's tau_record crosses t_m ON the formula
+------------------------------------------------------------------------------------------------------
+     dE (eV)  tau_record (s), instrument       tau/t_m  durable to t_m?
+      0.0000                7.212449e+10    2.2853e+02             True
+      0.1000                2.952602e+09    9.3555e+00             True
+      0.1500                4.344239e+08    1.3765e+00             True
+      0.1554                3.527316e+08    1.1177e+00             True
+      0.1560                3.446586e+08    1.0921e+00             True
+      0.1600                2.953527e+08    9.3584e-01            False
+      0.2000                6.296091e+07    1.9950e-01            False
+
+  crossing (bisection on the INSTRUMENT, to fp spacing):  dE*_num   = 2.535960987846709e-20 J = 0.158282235181 eV
+  commissioned width  delta_pop = B - kT ln(f0 t_m)     :  2.536868190511419e-20 J = 0.158338858318 eV
+    residual dE*_num - delta_pop                        : -9.072027e-24 J   (-0.002190 kT)
+    the DERIVED correction -kT ln(1+e^-dE*/kT)          : -9.072027e-24 J   (-0.002190 kT)
+    residual explained by the correction?  |diff| = 2.386e-35 J   ok
+  EXACT derived threshold kT ln(expm1(B/kT - ln f0 t_m)):  2.535960987846706e-20 J = 0.158282235181 eV
+    crossing vs exact formula, relative residual        :  1.187e-15   (source: bisection at fp spacing)   ok
+
+------------------------------------------------------------------------------------------------------
+  2.  DECADES: the crossing lands on the exact formula across t_m, f0, T (B = 1.2 eV throughout)
+------------------------------------------------------------------------------------------------------
+       t_m (s)   f0 (Hz)  T (K)    dE*_num (eV)  delta_pop (eV)  naive resid (kT)  exact rel resid      
+     1.000e+00   1.0e+09    200     0.842841424     0.842841424          0.000000         1.78e-16    ok
+     1.000e+00   1.0e+09    300     0.664262136     0.664262136         -0.000000         1.13e-16    ok
+     1.000e+00   1.0e+09    400     0.485682822     0.485682848         -0.000001         0.00e+00    ok
+     1.000e+00   1.0e+11    200     0.763472852     0.763472852          0.000000         0.00e+00    ok
+     1.000e+00   1.0e+11    300     0.545209277     0.545209277         -0.000000         0.00e+00    ok
+     1.000e+00   1.0e+11    400     0.326943084     0.326945703         -0.000076         5.74e-16    ok
+     1.000e+00   1.0e+13    200     0.684104279     0.684104279          0.000000         2.20e-16    ok
+     1.000e+00   1.0e+13    300     0.426156417     0.426156419         -0.000000         0.00e+00    ok
+     1.000e+00   1.0e+13    400     0.167945681     0.168208558         -0.007626         1.12e-15    ok
+     3.156e+03   1.0e+09    200     0.703980670     0.703980670          0.000000         2.13e-16    ok
+     3.156e+03   1.0e+09    300     0.455971004     0.455971005         -0.000000         1.65e-16    ok
+     3.156e+03   1.0e+09    400     0.207878592     0.207961340         -0.002401         9.04e-16    ok
+     3.156e+03   1.0e+11    200     0.624612098     0.624612098          0.000000         2.41e-16    ok
+     3.156e+03   1.0e+11    300     0.336918090     0.336918146         -0.000002         3.34e-16    ok
+     3.156e+03   1.0e+11    400     0.039774780     0.049224195         -0.274140         6.02e-15    ok
+     3.156e+03   1.0e+13    200     0.545243525     0.545243525         -0.000000         1.38e-16    ok
+     3.156e+03   1.0e+13    300     0.217859631     0.217865288         -0.000219         1.72e-16    ok
+     3.156e+03   1.0e+13    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+07   1.0e+09    200     0.545243525     0.545243525         -0.000000         1.38e-16    ok
+     3.156e+07   1.0e+09    300     0.217859631     0.217865288         -0.000219         1.72e-16    ok
+     3.156e+07   1.0e+09    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+07   1.0e+11    200     0.465874953     0.465874953         -0.000000         1.61e-16    ok
+     3.156e+07   1.0e+11    300     0.098240538     0.098812429         -0.022122         1.91e-16    ok
+     3.156e+07   1.0e+11    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+07   1.0e+13    200     0.386506380     0.386506380         -0.000000         3.89e-16    ok
+     3.156e+07   1.0e+13    300   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+07   1.0e+13    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+08   1.0e+09    200     0.505559239     0.505559239         -0.000000         0.00e+00    ok
+     3.156e+08   1.0e+09    300     0.158282235     0.158338858         -0.002190         1.19e-15    ok
+     3.156e+08   1.0e+09    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+08   1.0e+11    200     0.426190666     0.426190666         -0.000000         1.76e-16    ok
+     3.156e+08   1.0e+11    300     0.032902903     0.039286000         -0.246909         2.71e-15    ok
+     3.156e+08   1.0e+11    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+08   1.0e+13    200     0.346822094     0.346822094         -0.000000         4.33e-16    ok
+     3.156e+08   1.0e+13    300   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+08   1.0e+13    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+09   1.0e+09    200     0.465874953     0.465874953         -0.000000         1.61e-16    ok
+     3.156e+09   1.0e+09    300     0.098240538     0.098812429         -0.022122         1.91e-16    ok
+     3.156e+09   1.0e+09    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+09   1.0e+11    200     0.386506380     0.386506380         -0.000000         3.89e-16    ok
+     3.156e+09   1.0e+11    300   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+09   1.0e+11    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+09   1.0e+13    200     0.307137807     0.307137808         -0.000000         0.00e+00    ok
+     3.156e+09   1.0e+13    300   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+     3.156e+09   1.0e+13    400   -- no crossing: t_m beyond exp(B/kT)/(2 f0); k contribution 0 --    ok
+  worst exact-formula relative residual over the grid: 6.021e-15
+
+------------------------------------------------------------------------------------------------------
+  3.  CONTROL (D-15): the SYMMETRIC carrier -- flat staircase; the corner bound carries a factor 2
+------------------------------------------------------------------------------------------------------
+  tau(dE=0) from the instrument      : 7.212448841e+10 s
+  exp(B/kT)/(2 f0)  (derived bound)  : 7.212448841e+10 s   rel err 2.12e-16   ok
+  exp(B/kT)/f0  (commissioned corner): 1.442489768e+11 s   -- off by the two-sided factor 2
+  dE -> 0 consistency: at t_m = (1 - 1e-6) * exp(B/kT)/(2 f0), the crossing sits at dE* = 5.170e-08 eV
+    (must approach 0 from above as t_m -> the symmetric bound; ok)
+  six identical symmetric records, k at t_m = 1 s / 1 y / 100 y: [6, 6, 6]  -- FLAT (all below the bound)   ok
+  C-14's corner recovered: below the bound every symmetric pair counts; the count is C-14's,
+  and at t_m -> infinity the surviving set is empty at T > 0 -- DEF-A's E_b -> infinity demand.
+
+------------------------------------------------------------------------------------------------------
+  4.  CONTROL (D-15): the COHERENCE record, Hamiltonian-only -- hbar/t_m REAPPEARS, same criterion
+------------------------------------------------------------------------------------------------------
+  (C-75's instrument, clause (ii') with the FULL |lambda|; H enters the generator as H/hbar --
+   angular frequency -- declared: grounded.liouvillian takes its Hamiltonian in generator units.)
+  t_m = 1.0e-06 s  ->  delta_coh = hbar/t_m = 1.054572e-28 J
+    dE / (hbar/t_m)  |lambda| (1/s), instrument  |lambda| t_m  durable?
+           0.500000          5.000000000000e+05   0.500000000      True
+           0.999999          9.999990000000e+05   0.999999000      True
+           1.000001          1.000001000000e+06   1.000001000     False
+           2.000000          2.000000000000e+06   2.000000000     False
+  coherence crossing (bisection): dE* = 1.054571817000000e-28 J;  hbar/t_m = 1.054571817000000e-28 J
+    relative residual 2.126e-16   ok
+  slow_modes count (declared 1e-9 numerical floor): dE = 0.5 hbar/t_m -> 4 modes (both coherences durable); dE = 2 hbar/t_m -> 2 (coherences dropped)   ok
+  T-31 re-read: clustering a SPECTRUM within hbar/t_m is the coherence-face count -- correct for
+  superposition-type records, and now derived; the population-face count is the staircase below.
+
+------------------------------------------------------------------------------------------------------
+  5.  ONE EXPRESSION, BOTH WIDTHS: coherence eigenvalue -(g_u+g_l)/2 - i dE/hbar (instrument check)
+------------------------------------------------------------------------------------------------------
+  g_u = 5.0, g_l = 3.0 (1/s), dE/hbar = 6.0 (rad/s):
+    population mode  lambda = -8.000000000000+0.000000000000j      |lambda| = 8.000000000000  (= g_u+g_l = 8.0)   ok
+    coherence mode   lambda = -4.000000000000+6.000000000000j   |lambda| = 7.211102550928
+    sqrt(((g_u+g_l)/2)^2 + (dE/hbar)^2)    = 7.211102550928   rel err 0.0e+00   ok
+  the two widths are the two corners of THIS modulus under the ONE criterion |lambda| <= 1/t_m.
+
+------------------------------------------------------------------------------------------------------
+  6.  k(t_m): THE STAIRCASE -- T-31's generic-asymmetry kill becomes a dated census, not a 0
+------------------------------------------------------------------------------------------------------
+  ensemble: six two-well records, B = 1.2 eV, T = 300 K, f0 = 1e9 Hz, dE_i = 0 .. 0.25 eV
+    record  dE (eV)   t*_i instrument (s)   t*_i formula (s)   rel err  t*_i (years)
+        r0     0.00          7.212449e+10       7.212449e+10   2.1e-16    2.2853e+03   ok
+        r1     0.05          1.821850e+10       1.821850e+10   2.1e-16    5.7727e+02   ok
+        r2     0.10          2.952602e+09       2.952602e+09   0.0e+00    9.3555e+01   ok
+        r3     0.15          4.344239e+08       4.344239e+08   2.7e-16    1.3765e+01   ok
+        r4     0.20          6.296091e+07       6.296091e+07   0.0e+00    1.9950e+00   ok
+        r5     0.25          9.104795e+06       9.104795e+06   2.0e-16    2.8849e-01   ok
+
+             t_m  k by instrument count  k by #{dE_i <= dE*(t_m)}      
+            ~9 h                      6                         6    ok
+           0.1 y                      6                         6    ok
+             1 y                      5                         5    ok
+            10 y                      4                         4    ok
+           100 y                      2                         2    ok
+            1 ky                      1                         1    ok
+           10 ky                      0                         0    ok
+
+  DECREASING STAIRCASE in ln t_m; each drop at the record's own t*_i above.  Symmetric control
+  (section 3) is the flat line; the T-31 kill (k = 0 at any asymmetry, forever) is replaced by
+  k(t_m), which is nonzero for every t_m below the tallest surviving rung.
+
+======================================================================================================
+  D-24 AUDIT -- every quantity earned or declared
+======================================================================================================
+  B, dE, T, f0          the carrier's own constants (world-tier surfaces carry provenance, D-25)
+  t_m                   the retention spec; same declared status it has in clause (ii') itself
+  kB, hbar              SI exact
+  g_u, g_l              EARNED: Arrhenius form with SHARED f0 (declared assumption, equal Kramers
+                        prefactors); detailed balance then DERIVED (section 0), not imposed
+  delta_pop(t_m)        EARNED: B - kT ln(f0 t_m), from |lambda| <= 1/t_m on the population mode
+  the correction        EARNED: -kT ln(1+e^{-dE/kT}), two-sided escape; exact closed form
+                        dE* = kT ln(expm1(B/kT - ln f0 t_m)) verified to fp precision
+  delta_coh(t_m)        EARNED: hbar/t_m, the SAME criterion on the off-diagonal mode
+  factor 2 (symmetric)  EARNED and REPORTED: the corner bound is exp(B/kT)/(2 f0), correcting
+                        the commission's f0^-1 exp(B/kT)
+  bisection precision   NUMERICAL, run to floating-point spacing; residuals reported, not chosen
+  slow_modes tol=1e-9   the sealed instrument's own declared NUMERICAL floor (C-75), unchanged
+  NO physical tolerance was chosen anywhere in this lane.  The C-76 failure mode (a 1e-2
+  clustering width with no owner) has no successor here.
+
+======================================================================================================
+  READ -- from the numbers above
+======================================================================================================
+  THE WIDTH IS DERIVED, AND IT IS TWO-FACED BY NECESSITY.  One criterion -- clause (ii') on the
+  record's own Liouvillian mode -- yields delta_pop = B - kT ln(f0 t_m) (minus a derived, bounded
+  correction <= kT ln 2) on the diagonal face and delta_coh = hbar/t_m on the off-diagonal face.
+  C-76's objection is answered in its own terms: the width that recovers a count is not chosen,
+  it is the carrier's.  The bisected instrument crossing lands on the exact closed form at
+  ~1e-13 relative or better across five decades of t_m, four of f0, and 200-400 K.
+
+  THE COUNT LAW THE PROGRAM NOW OWNS:  k(t_m) = #{ i : dE_i <= kT ln(expm1(B_i/kT - ln f0 t_m)) },
+  a decreasing staircase in ln t_m with per-record drop times t*_i; symmetric carriers give the
+  flat line (C-14's count below exp(B/kT)/(2 f0)); generic asymmetry gives a dated census.
+
+  CORRECTIONS TO THE COMMISSION, both derived: (1) the symmetric corner carries a factor 2;
+  (2) t*_i carries the (1+e^{-dE_i/kT}) two-sided factor.  Neither alters the headline width.
+
+  OWNERSHIP.  Neel/Street-Woolley/Sharrock own the ACTIVATION WINDOW kT ln(f0 t) as a remanence-
+  DECAY device (fluctuation field, viscosity S, fitted Sharrock exponent); none states a COUNT of
+  surviving two-valued records, none carries the asymmetry term (threshold at B - dE, the
+  SHALLOWER value's escape), none derives its width from a record definition that must also
+  produce hbar/t_m on the coherence face.  MLC flash level-merging owns Vt-margin retention with
+  a CHOSEN sensing margin; k(t_m) is margin-free.  DEPARTURES FALSIFIABLE NOW: (a) exchange-
+  biased/asymmetric media -- drop times set by B - dE, not B: survivor counting (MFM grain
+  census vs ln t) distinguishes the staircase from symmetric Neel decay; (b) JEDEC-style MLC
+  Vt retention bakes -- level-loss times are k(t_m) rungs; the two-sided factor (up to 2x) is
+  measurable only where dE <~ few kT, stated honestly as a narrow-window departure.
+
+  every computed check above agreed with its formula; no check failed.

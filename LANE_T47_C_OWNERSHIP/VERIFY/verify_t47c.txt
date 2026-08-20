@@ -1,0 +1,29 @@
+[PASS] V1a exact eigenmode rate == gu+gd  |lam|=1.928837e-13 gu+gd=1.928837e-13 overlap=0.707139
+[PASS] V1b lane instrument (clause_ii on SZ) == gu+gd  rate=1.928837e-13
+[PASS] V1c H-units irrelevant for diagonal record  
+[PASS] V2a independent crossing lands on exact derived form  num=19.70682406 kT exact=19.70682406 kT
+[PASS] V2b leading (brief) form within kT ln2, high side  leading=19.706824 kT corr=2.76e-09 kT
+[PASS] V2c lane's quoted dE* = 19.71 kT  19.7068
+[PASS] V3a dE=0 corner criterion B* = kT ln(2 f0 t_m) exactly (ln2 present)  B*=40.986323 kT pred=40.986323 kT
+[PASS] V3b correction attains kT ln2 at symmetric corner  
+[PASS] V3c tau(dE=0) = exp(B/kT)/(2 f0)  tau=5.7100e+16 s
+[PASS] V4a coherence boundary numerically = hbar/t_m (decay corr negligible)  bound/(hbar/t_m)=1.0000000000000000
+[PASS] V4b sigma+ mode at 0.9 hbar/t_m: |lambda| exact & durable==True  |lam|=2.851928e-09 pred=2.851928e-09 overlap=1.0000
+[PASS] V4b sigma+ mode at 1.1 hbar/t_m: |lambda| exact & durable==False  |lam|=3.485690e-09 pred=3.485690e-09 overlap=1.0000
+[PASS] V4c sigma_x quotient drops rotation (lane's logged error is real)  sigma_x quotient=8.76e-18 true sigma+ |lambda|=6.34e-08 1/t_m=3.17e-09
+[PASS] V5a t* (leading) = 5.18e12 s  5.185e+12 s (exact incl. corr: 5.184e+12 s)
+[PASS] V5b time factor e^-10 = 4.5e-5  4.540e-05
+[PASS] V5c favored asymptote tanh(dE/2kT) = 0.999909  0.999909
+[PASS] V5d both polarities same rate, asymptote-split (closed forms)  favored 0.9999 unfavored 0.2642
+[PASS] V6a N=1 symmetric: C-14 v_2 count == staircase count == 1  v2=1 staircase=1
+[PASS] V6a N=2 symmetric: C-14 v_2 count == staircase count == 2  v2=2 staircase=2
+[PASS] V6a N=3 symmetric: C-14 v_2 count == staircase count == 3  v2=3 staircase=3
+[PASS] V6a N=4 symmetric: C-14 v_2 count == staircase count == 4  v2=4 staircase=4
+[PASS] V6b generic asymmetry: C-14 k=0 (C-76 kill) but staircase counts 2 (5,15 in; 25 out)  v2=0 staircase=2 formula-count=2 delta=19.71 kT
+[PASS] V6c dropout t*(dE=5kT) matches exact formula  t*=7.643e+14 s
+[PASS] V6c dropout t*(dE=15kT) matches exact formula  t*=3.493e+10 s
+[PASS] V6c dropout t*(dE=25kT) matches exact formula  t*=1.586e+06 s
+[PASS] V7a durability threshold is exactly 1/t_m (1e-300 addend inert)  rate*t_m at crossing = 1.00000000
+[PASS] V7b clause_ii source contains no 1e-9 floor (only the inert 1e-300)  
+
+VERIFY: ALL INDEPENDENT CHECKS PASS

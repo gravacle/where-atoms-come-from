@@ -1,0 +1,11 @@
+C1  rate(Liouvillian)=1.928837e-13  gu+gd=1.928837e-13  rel.err=1.31e-16
+C2  crossing (numeric)      dE*/kT = 19.706824
+    crossing (exact form)   dE*/kT = 19.706824   |diff| = 5.81e-15 kT
+    brief leading form      dE*/kT = 19.706824   correction = 0.0000 kT  (bound kT ln2 = 0.6931 kT)
+C3  m_eq=0.999909 (tanh=0.999909);  at t=tau_rec: favored 0.9999, unfavored 0.2642;  max err 3.33e-16
+    favored-branch retained signal as t->inf: 0.999909  while record count -> 0 past tau_rec = 5.184e+12 s
+    DEPARTURE TERM: ln t*_record = ln[1/(f0)] + (B-dE)/kT  vs lower-well/majority barrier B: shift = -dE/kT = -10.0  (time factor e^{-dE/kT} = 4.54e-05)
+C4  dE=0: tau = 5.710e+16 s = exp(B/kT)/(2 f0) check 5.710e+16; survives(10yr)=True; criterion B >= kT ln(2 f0 t_m) = 40.99 kT (B = 60 kT)  [OWNED corner: Neel/Charap-Lu-He/Weller-Moser]
+C5  coherence dE inside hbar/t_m: |lambda| = 1.584404e-09  pred sqrt((dE/hbar)^2+((gu+gd)/2)^2) = 1.584404e-09  durable=True
+C5  coherence dE outside hbar/t_m: |lambda| = 6.337618e-08  pred sqrt((dE/hbar)^2+((gu+gd)/2)^2) = 6.337618e-08  durable=False
+ALL CONTROLS PASS

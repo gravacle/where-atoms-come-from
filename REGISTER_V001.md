@@ -9818,3 +9818,31 @@ lanes' adversarial control batteries, which remain sealed evidence cited from th
 provenance (the pinned-source registry carries Weller–Moser, the JEDEC/detrapping class, the ACS
 azobenzene values) and **refuses** a corner carrier that does not self-declare `DEF-A` — the
 idealisation can never silently pose as the world. The refusals are themselves validator gates.
+
+---
+
+## T-47 — **THE COUNT LAW REGISTERS. The width is the carrier's own — derived, two-faced by necessity — and `k(t_m)` is the URM's falsifiable census of surviving records.**
+
+Three probes, three adversarial verifiers (not-refuted, high confidence), drafter verdict
+**REGISTER_PARTIAL**. **No smuggled tolerance anywhere** — three independent tokenizer/source
+censuses of every numeric literal on every conclusion path; the only `1e-2` strings left are prose
+describing C-76's corpse.
+
+> ### **ONE CRITERION — clause (ii′) on the record's own Liouvillian mode — YIELDS BOTH WIDTHS:**
+> ### `δ_pop(t_m) = kT·ln(e^{B/kT}/(f₀t_m) − 1)` on the population face, `δ_coh(t_m) = ħ/t_m` on the
+> ### coherence face — **two corners of one modulus, 22 orders apart on the same surface. C-76's
+> ### error, quantified.**
+
+**The staircase:** `k(t_m) = #{i : dEᵢ ≤ δ_pop,i(t_m)}`, drop times
+`t*ᵢ = f₀⁻¹e^{(Bᵢ−dEᵢ)/kT}/(1+e^{−dEᵢ/kT})` — each record dying at its **shallower value's** escape.
+Instrument-vs-formula `≤ 6×10⁻¹⁵` across the grid, confirmed by three independent instrument paths;
+count discrepancy **0 at all 1201 points**. T-31's binary kill becomes the dated staircase 2→1→0.
+**C-14 is recovered exactly as the symmetric corner** (with a derived factor-2 correction to the
+commissioning text), and DEF-A as the `t_m → ∞` limit on both faces.
+
+**Ownership, both ways:** Néel/Street–Woolley/Sharrock own the activation window as a *decay* device;
+Charap–Lu–He and Weller–Moser own the symmetric corner; Preisach–Néel owns rate-level asymmetry.
+**Wholly ours: the width derived from the record definition, the diagonal/coherence unification, the
+margin-free integer census stated as a LAW, and the departure term `Σ_dead tanh(dEᵢ/2kT)` — remanence
+persists while records die.** Falsifiable today on JEDEC-class MLC bake data and exchange-biased
+media grain censuses. **Grade FORMAL; PROVED awaits the external-data run.**

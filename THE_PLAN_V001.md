@@ -25,11 +25,11 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 > existing phase framework; IDs never renumber; phases are not restructured. Modification
 > happens within this framework — status moves and appends only.
 
-**32 of 47 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**33 of 47 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 32 | 1 | 10 | 4 |
+| 33 | 1 | 9 | 4 |
 
 ---
 
@@ -96,14 +96,14 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | ▶ **T-44** | **WHICH FALLOFF EXPONENTS CAN A GAMMA-CONSTRAINED COUPLING REACH? The weighted-instrument lane: couple the exact w_min = d writer-cost landscape to a declared mediator and derive the reachable exponent class -- Gamma's corner codomain is integer-valued, so any smooth graded law must live in weighted coupling/alpha quantities. Until this runs, every decaying law in the record is INSERTED and no falloff exponent is earned. Plus: three-region composition (superposition vs screening) and the genus-proper w_min = d test** | TODO | either a derived exponent class for Gamma-constrained couplings with its falsifier, or the obstruction to deriving one registered plainly | T-42 |
 | **T-45** | THE SURFACE'S OWN CLOCK (done with T-43): certifiable-within-lifetime law, the corner as W=infinity, census crossovers honest | **DONE** | registered as C-83 with the rule's first branch fired surface-determinedly | T-43 |
 
-## PHASE F  WRITE AND CHECK THE PROOF  —  2/7 done
+## PHASE F  WRITE AND CHECK THE PROOF  —  3/7 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
 | ▶ **T-15** | **THE THREE ROLES AS ONE STATEMENT. EM supplies the complex and the record; Gamma supplies space, writer, protection and channel; alpha sets the cost** | **BLOCKED** | A-PR restated with every clause citing a two-carrier row, and no clause resting on a WITHDRAWN or PARTIAL row | T-9, T-14, T-20, T-23 |
 | ▶ **T-39** | **THE DISTINGUISHING-STATEMENT AUDIT (reframed 2026-08-20 per the principal: there is no choice here -- the surface and the literature decide, we record). Enumerate every falsifiable quantitative statement the machinery now makes -- k(t_m) with its underived-width caveat, the encoding-level ratio law, the certifiability-window law CERT_W = min(volume, W x min-cut), the thickness-protection profile, alpha-through-E_b -- and have EACH attacked by rival's advocates (decoherence/Darwinism, QEC/stabiliser theory, standard thermo/device physics and the varying-constants literature). What no rival can claim is registered as the prediction; if nothing survives, the program records plainly that it has none and T-17 states it in the proof** | **DONE** | a registered distinguishing prediction with its falsifier, or a registered plain statement that the program has none | T-33 |
 | ▶ **T-41** | **EXTERNAL-DATA CONTACT (solidity debt 2). At least one lane whose table places a MEASURED number from outside the repo beside the model's number -- published CoCrPt/NAND retention, VSM remanence, programmed-page charge. Today every verification is the model against its own closed form and the principal's PROVED bar is met by NOTHING. Azobenzene is the cautionary case: the one row where a measured value existed disagreed by 5-6 orders** | **DONE** | a sealed lane with an external measured datum beside the model's number, agreeing within stated tolerance, or the disagreement registered | — |
-| ▶ **T-47** | **DERIVE THE CLUSTERING WIDTH FROM THE SURFACE'S OWN CLOCK (the audit's creator step). All three rivals share one structural gap: NO account owns a surviving-record COUNT law. C-76 killed k(t_m) because its width was chosen, not derived; the natural candidate is the same W = tau/t_epoch object that survived as S-1. A derived width would make k(t_m) the one wholly program-owned falsifiable count law, testable against record-census statistics exactly where it departs from Sharrock decay counting through the clustering term** | TODO | either the width is derived from the surface's own machinery and k(t_m) registers with its falsifier, or the obstruction to deriving it is registered plainly | T-39 |
+| ▶ **T-47** | **DERIVE THE CLUSTERING WIDTH FROM THE SURFACE'S OWN CLOCK (the audit's creator step). All three rivals share one structural gap: NO account owns a surviving-record COUNT law. C-76 killed k(t_m) because its width was chosen, not derived; the natural candidate is the same W = tau/t_epoch object that survived as S-1. A derived width would make k(t_m) the one wholly program-owned falsifiable count law, testable against record-census statistics exactly where it departs from Sharrock decay counting through the clustering term** | **DONE** | either the width is derived from the surface's own machinery and k(t_m) registers with its falsifier, or the obstruction to deriving it is registered plainly | T-39 |
 | ▶ **T-16** | **WRITE THE PROOF -- ARCHITECTURE FIXED BY THE PRINCIPAL 2026-08-20: THE MODEL IS THE OVERALL REPRESENTATION OF THE PROOF. PROOF_V002.md is the narration of project_model: every section a model layer, every claim a model function with its validator gate, its grounding (D-25 provenance and pinned sources), and its ledger row; no step outside the model** | **BLOCKED** | PROOF_V002.md, every step citing a ledger row, no step resting on a single carrier unless marked | T-15, T-23 |
 | **T-17** | STATE THE LIMITS IN THE PROOF ITSELF. PF-6 failed; X-4, T-VI.3, T-VI.4 are BLOCKED; empirical contact is zero | **BLOCKED** | the limits section names every BLOCKED row and says plainly that this is a mathematical result with no empirical contact | T-16 |
 | ▶ **T-18** | **EXTERNAL CHECK. Someone outside the program reproduces the result from REPLICATE.md alone** | **BLOCKED** | reproduce.sh passes end to end on a clean clone, and every headline number in PROOF_V002 is traceable to a sealed lane output | T-16 |

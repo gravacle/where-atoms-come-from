@@ -1,0 +1,41 @@
+== (1) full-eig population eigenvalue vs the lane's Rayleigh-quotient rate ==
+  [ok] fulleig-vs-lane dE=0.000 eV  rel 0.0e+00
+  [ok] fulleig-vs-lane dE=0.050 eV  rel 1.2e-16
+  [ok] fulleig-vs-lane dE=0.158 eV  rel 2.6e-16
+  [ok] fulleig-vs-lane dE=0.300 eV  rel 2.8e-16
+  [ok] -(gu+gl) is an exact eigenvalue  
+== (2) main crossing: full-eig bisection vs 60-digit mpmath root vs expm1 form ==
+  [ok] mpmath root == expm1 closed form  rel 8.3e-62
+  [ok] full-eig bisection lands on it  dE*=0.158282235181 eV vs 0.158282235181 eV, rel 0.00e+00
+  [ok] matches the lane's sealed 0.158282235181 eV  
+  [ok] correction identity exact at 60 digits  
+  [ok] correction in (0, kT ln2]  corr = 0.002190 kT
+== (3) bracket-sensitivity: perturb the lane's bisection bracket constants ==
+  [ok] crossing invariant under bracket choice  spread 0.0e+00 -- bracket constants are not load-bearing
+== (4) no-crossing condition == symmetric corner bound, same inequality ==
+  [ok] T=400 f0=1e+13 t_m=3.16e+03: (no dE*>=0) == (t_m >= exp(B/kT)/2f0)  bound 6.581e+01 s
+  [ok] T=300 f0=1e+09 t_m=3.16e+08: (no dE*>=0) == (t_m >= exp(B/kT)/2f0)  bound 7.212e+10 s
+  [ok] T=400 f0=1e+09 t_m=3.16e+07: (no dE*>=0) == (t_m >= exp(B/kT)/2f0)  bound 6.581e+05 s
+  [ok] symmetric tau = exp(B/kT)/(2 f0), factor 2 real  tau 7.212449e+10 s; one-sided form errs by 2.0x
+== (5) staircase recounted from scratch (closed form AND full eig) ==
+  [ok] t*_i match sealed table  
+  [ok] k(3.16e+04) closed-form == full-eig  k=6
+  [ok] k(3.16e+06) closed-form == full-eig  k=6
+  [ok] k(3.16e+07) closed-form == full-eig  k=5
+  [ok] k(3.16e+08) closed-form == full-eig  k=4
+  [ok] k(3.16e+09) closed-form == full-eig  k=2
+  [ok] k(3.16e+10) closed-form == full-eig  k=1
+  [ok] k(3.16e+11) closed-form == full-eig  k=0
+  [ok] sealed staircase 6,6,5,4,2,1,0  
+  [ok] monotone non-increasing in ln t_m  
+  [ok] C-14 corner: v2(2^6) == flat-staircase k == 6  
+== (6) coherence face: full eig of Hamiltonian-only generator, full modulus ==
+  [ok] coherence crossing == hbar/t_m (full eig)  1.054571817000000e-28 vs 1.054571817000000e-28
+  [ok] Re-part-only criterion would (wrongly) keep every coherence  -- the full-|lambda| rule is load-bearing, as claimed
+  [ok] unified modulus sqrt(((gu+gl)/2)^2+(dE/hbar)^2) present in spectrum  pred 7.211102550928
+== (7) smuggled-tolerance census over the lane script ==
+  [ok] no C-76-style clustering width among the lane's CODE constants  (1e-2/1e-3 appear only in prose describing C-76 and the sealed floor)
+  [ok] lane never overrides slow_modes' sealed tol in code  ('tol=1e-9' appears only in prose; the sealed default is used unmodified)
+   code numeric literals: ['0', '1', '2', '6', '10', '0.0', '0.1', '0.5', '1.0', '1.2', '100', '102', '1e9', '2.0', '200', '3.0', '5.0', '6.0', '0.05', '0.10', '0.15', '0.16', '0.20', '0.25', '0.30', '10.0', '1e-9', '1e11', '1e13', '40.0', '0.158', '0.999', '200.0', '300.0', '400.0', '0.1554', '0.1560', '1.0e-6', '3.156e3', '3.156e4', '3.156e6', '3.156e7', '3.156e8', '3.156e9', '0.999999', '1.000001', '3.156e10', '3.156e11', '1.602176634e-19']
+
+VERDICT-INPUT: FAILS = none
