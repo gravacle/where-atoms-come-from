@@ -25,11 +25,11 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 > existing phase framework; IDs never renumber; phases are not restructured. Modification
 > happens within this framework — status moves and appends only.
 
-**29 of 45 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**29 of 46 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 29 | 2 | 10 | 4 |
+| 29 | 3 | 10 | 4 |
 
 ---
 
@@ -42,7 +42,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | **T-2** | ONE CURRENT STATEMENT OF THE PROCESS. The register is 6000+ lines and append-only; THE_CLAIM predates most of the work. Write the process as it now stands, in mapped terms | **DONE** | PROCESS_V002.md states the process end to end, every sentence cites a ledger row, and no withdrawn claim appears | T-1 |
 | **T-36** | DIFFERENTIATED RECLASSIFICATION of the 162 FORMAL rows -- THEOREM / EXACT / MEASURED / DEFINED with an OWNER field separating original from standard (Kitaev, KL, KLV, Holevo, RKKY) -- per the editor's verdict | TODO | every FORMAL row carries a class and an owner, and the ~20 standard-results restatements are marked BORROWED | — |
 
-## PHASE B  MAKE THE MODEL THE PROCESS MODEL  —  5/5 done
+## PHASE B  MAKE THE MODEL THE PROCESS MODEL  —  5/6 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
@@ -51,6 +51,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | ▶ **T-6** | **MULTI-RECORD AND DEPENDENCIES. Extend independence() to report which records share a channel and which formation events interact** | **DONE** | the model returns, for a family, which members can be formed without disturbing the others — measured, not asserted | T-5 |
 | **T-7** | VALIDATE THE FORMATION HALF. Every formation result in the register re-derived through the model rather than a one-off lane script | **DONE** | validate_model.py covers F-20, F-21, F-23, G-16, C-17, C-18 and passes | T-6 |
 | ▶ **T-40** | **THE FULL-PROJECT MODEL (the principal, 2026-08-20: 'we need a model to work on that represents the full project'). One object: the amended definition with tolerances, the two PROVED laws, the formation step and source standards, the DEF-A corner reducing to record_model, and the roles -- with a validation that reproduces every sealed headline number** | **DONE** | model/project_model.py + validate_project.py pass, reproducing the grain tau, the six-mechanism table, and the DEF-A limit dims from one entry point | T-28, T-29, T-33 |
+| ▶ **T-46** | **THE COMPREHENSIVE MODEL (the principal, 2026-08-20): fold the C-77 increment machinery -- earned distance d_W, interface rank and the boundary law, certifiability and the window law, the two-region taxonomy, the encoding-level formation laws -- into project_model as a first-class GEOMETRY layer, so record formation and every registered proof reproduce from ONE entry point rather than scattered lanes** | **DOING** | validate_project reproduces every registered headline number of C-78, C-79, C-80, C-81, C-82, C-83 and the C-71/C-72 encoding laws from the ProjectModel API, each PASS gated against the sealed lane value | T-40 |
 
 ## PHASE C  BREAK THE SINGLE CARRIER  —  4/5 done
 
