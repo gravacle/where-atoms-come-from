@@ -35,6 +35,23 @@ Let `H` be a Hamiltonian and `{L_k}` the jump operators of an open system. **`R`
 > 36 certified-contractible regions at `L=3` and `0` in 300 regions up to 24 edges at `L=5`, against
 > those same counts as the positive control. Independently reproduced by a second implementation.
 
+> **"CONTRACTIBLE" IN CLAUSE (v) — THE CONVENTION, AND WHICH CARRIER IS CANONICAL.** (O-49, the
+> principal, 2026-08-20.) Clause (v) was first tested on a 1D chain by O-48, and there the reading
+> matters: on an OPEN chain the whole carrier is one contiguous block, so (v) **FAILS** — smallest
+> flipping contractible region exactly `w = n` at every `n = 3..14`, by an exact criterion over every
+> unitary on the region, 630 cross-checks, zero disagreements.
+>
+> **THE CONVENTION ADOPTED, FOR 1D RINGS ONLY:** clause (v) operates under the **standard QEC
+> constraint** — locality is bounded by **PROPER sub-regions**, `diam(R) < L`. Under that reading (v)
+> **HOLDS** on the ring with distance `n`, and it matches T-11's no-cycle convention.
+>
+> **1D RINGS ARE A BOUNDARY-CONSTRAINED PROXY, NOT THE CANONICAL CASE.** The convention above is an
+> explicit low-dimensional stipulation and is labelled as one wherever it is used. **THE CANONICAL
+> BENCHMARK IS THE TORIC CODE**, where clause (v) is realised purely through **manifold homology** —
+> the logical operators have genuinely non-contractible support, both distances scale with `L`, and
+> no semantic caveat about "contractible" is required. Any result whose truth depends on the 1D
+> convention is scoped to the proxy and must say so; results on the torus are not.
+
 **WHY (iii) IS STATED THIS WAY.** If `R = f(H)` its value is fixed by the energy: knowing the energy
 tells you the record, so it carries no bit beyond the energy. Phrasing it as *"distinguishes states
 of the same energy"* makes that precise **and makes the degeneracy requirement a one-line

@@ -8926,3 +8926,33 @@ An **INDUCED** power law: `J_eff(r) → (−1)^(r+1)/(π·r)` on a **gapless** m
   wide-family figures that appear nowhere in the output.
 - **Lane B's centrepiece** — that clause (iv) forces half filling and the period-2 alternation —
   refuted by explicit counter-carrier.
+
+---
+
+## O-49 — **DECIDED BY THE PRINCIPAL: THE 1D CONVENTION IS A PROXY; THE TORIC CODE IS CANONICAL.**
+
+O-48 tested clause (v) for the first time anywhere in this program and found the reading of
+*"contractible"* decisive: on an **open chain** the whole carrier is one contiguous block, so (v)
+**FAILS**; on a **ring** under the proper-arc reading it **HOLDS** with distance `n`. That is a
+convention, not a measurement.
+
+**The principal, 2026-08-20:**
+
+> *"Adopt Option 3 conceptually, using Option 1 as an explicit low-dimensional convention: For 1D
+> rings, state clearly that Clause (v) operates under the standard QEC constraint: locality is bounded
+> by proper sub-regions (diam(R)<L). Treat 1D rings as a boundary-constrained proxy and let the Toric
+> Code (O-50) serve as the canonical benchmark where Clause (v) is realized purely through manifold
+> homology without semantic caveats."*
+
+`CORE_FRAMEWORK_V001.md` amended accordingly and re-read to confirm the patch landed. **Two things
+follow, and both are now binding:**
+
+1. **For 1D rings only:** clause (v) operates under the **standard QEC constraint** — locality bounded
+   by **proper** sub-regions, `diam(R) < L`. Under that reading (v) holds on the ring with distance
+   `n`, matching T-11's no-cycle convention. **This is an explicit stipulation and is labelled as one
+   wherever used.**
+2. **1D rings are a boundary-constrained PROXY.** **The canonical benchmark is the toric code**, where
+   clause (v) is realised purely through **manifold homology** — logical support genuinely
+   non-contractible, both distances scaling with `L`, no semantic caveat required. **Any result whose
+   truth depends on the 1D convention is scoped to the proxy and must say so; results on the torus are
+   not.**
