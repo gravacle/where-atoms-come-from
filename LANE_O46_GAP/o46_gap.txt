@@ -1,0 +1,50 @@
+========================================================================================================
+O-46   THE GAP BETWEEN 'NOT A FUNCTION OF H' AND 'UNCORRELATED WITH H'
+========================================================================================================
+  Both are stated on the SAME objects: H and R. No energy, no reservoir, no agent, no cost.
+  Tr(P_E R) is read as the record's IMBALANCE within a spectral block of H.
+
+--------------------------------------------------------------------------------------------------------
+  carrier: 3 qubits, dim 8
+--------------------------------------------------------------------------------------------------------
+    eigenvalues: 4 distinct, multiplicities [2, 2, 2, 2]
+    (degenerate blocks present -- signs may vary inside a block)
+    operators tested (bit + commutes with H)          : 256
+    ALSO not a function of H   -- clause (iii)        : 240
+    ALSO uncorrelated with H   -- clause (iv) derived : 16
+    IN THE GAP (iii yes, iv no)                       : 224
+    their imbalance max_E |Tr(P_E R)| ranges over     : 2 .. 2
+    -> THE GAP IS NON-EMPTY
+
+--------------------------------------------------------------------------------------------------------
+  carrier: 4 qubits, dim 16
+--------------------------------------------------------------------------------------------------------
+    eigenvalues: 8 distinct, multiplicities [2, 2, 2, 2, 2, 2, 2, 2]
+    (degenerate blocks present -- signs may vary inside a block)
+    16 cells -- enumerating a random 200000 sample of sign patterns
+    operators tested (bit + commutes with H)          : 200000
+    ALSO not a function of H   -- clause (iii)        : 199204
+    ALSO uncorrelated with H   -- clause (iv) derived : 772
+    IN THE GAP (iii yes, iv no)                       : 198432
+    their imbalance max_E |Tr(P_E R)| ranges over     : 2 .. 2
+    -> THE GAP IS NON-EMPTY
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================
+  THE GAP IS LARGE. Of the operators that are a bit, commute with H, and are NOT a function of H
+  -- clauses (i), (ii) and (iii) -- clause (iv) as derived keeps only 16 of 240 at n=3 and 772 of
+  199204 at n=4. It DISCARDS 93% and 99.6% of them.
+
+  WHAT IT DISCARDS ARE OPERATORS CORRELATED WITH H WITHOUT BEING A FUNCTION OF H. Their block
+  imbalance |Tr(P_E R)| is 2 throughout: not a function of H, and not uncorrelated with it either.
+  The framework's stated reason for clause (iii) -- 'if R = f(H) its value is fixed by the energy'
+  -- rules out only the FUNCTION case. The derived form of clause (iv) rules out ALL correlation.
+
+  BUT THE GAP TURNS OUT NOT TO BE THE PLACE TO LOOK. O-47 shows configuration energy and free
+  energy-conserving writers coexist WITHOUT entering this gap at all: on H = Z1 Z2 both records
+  satisfy clause (iv) exactly, with Tr(P_E R) = [0,0], and the energy sits in their CORRELATION,
+  which clause (iv) never constrains. No clause has to be weakened and nothing imported.
+
+  So this lane's measurement stands as a fact about the two conditions -- they are genuinely
+  different and the difference is large -- and it is NOT the route to a configuration energy.
