@@ -9643,3 +9643,28 @@ New obstructions: **O-54** the falloff from Γ (the binding next step — two-re
 against the earned metric), **O-55** no universal coefficient, **O-56** no earned thermodynamic
 conjugate pair. **Flagged for the principal, not decided:** whether the mature C-77 requires more
 than the interface reading, given stored content is volume.
+
+---
+
+## THE INTERFACE-VS-CONTENT QUESTION — **THE PRINCIPAL: LET THE RECORD SURFACE ANSWER IT.** Decision rule pre-registered.
+
+The flagged question: T-42's area-form match belongs to the **interface aggregate** (boundary-scaling,
+the entanglement reading — Bombelli–Koul–Lee–Sorkin, Srednicki), while **stored content is volume**
+in both tiers (the strong-holographic content bound — 't Hooft, Susskind, Bousso — is *not*
+reproduced). In nature the content bound is enforced by gravitational dynamics (collapse), so the
+record surface currently has the profile of **matter before gravity has emerged** — and by
+D-24 the content bound may not be imported to the record level; if it is real, it must emerge.
+
+**The principal, 2026-08-20:** *"can't we let the record surface answer this question?"* Adopted as
+the method. **THE DECISION RULE, REGISTERED BEFORE THE COMPUTATION (T-43):**
+
+> Compute the **EXTERNALLY CERTIFIABLE CONTENT** of a region — of the volume-many records stored,
+> how many can the outside world independently certify or write **through the interface**. Exact in
+> the corner (what outside-supported operators can learn/flip), channel-counted in the world model.
+>
+> - **Boundary-bounded in both tiers** ⟹ the surface has answered: mature C-77 states its area-law
+>   claim over *externally certifiable* content — what the world can know about a region, which is
+>   what a horizon entropy counts — and the strong content bound is registered as an
+>   **emergent-tier target** (the collapse analogue), not a record-level requirement.
+> - **Volume-bounded** ⟹ the surface declines to answer; the question returns to the principal.
+> - **Mixed/other** ⟹ reported as found; no forcing.
