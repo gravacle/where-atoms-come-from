@@ -1,0 +1,49 @@
+============================================================================================================
+V1  POSITIVE CONTROL FOR THE d90 INSTRUMENT -- point sets that DO have a fixed dimension,
+    pushed through the lane's OWN double_centre + dim_stats at the lane's OWN point counts.
+============================================================================================================
+
+  m(=2k) | 1D line   2D disc   3D ball   2D+5%noise 2D+20%noise 6D ball  | LANE (a)S LANE (b2)
+  --------------------------------------------------------------------------------------------------------
+  4      | 1         1         2         2          2           3        | 1         2        
+  8      | 1         2         2         2          3           4        | 3         4        
+  12     | 1         2         3         2          3           4        | 5         6        
+  16     | 1         2         3         2          4           5        | 7         7        
+  20     | 1         2         3         2          5           5        | 9         9        
+  24     | 1         2         3         2          6           5        | 10        11       
+  28     | 1         2         3         2          7           5        | 12        13       
+  32     | 1         2         3         2          8           5        | 14        14       
+  36     | 1         2         3         2          9           5        | 16        16       
+
+  positive control 1D      d90 vs m slope = -0.0000   FLAT (instrument detects a fixed dimension)
+  positive control 2D      d90 vs m slope = +0.0167   FLAT (instrument detects a fixed dimension)
+  positive control 3D      d90 vs m slope = +0.0292   FLAT (instrument detects a fixed dimension)
+  positive control 2Dn5    d90 vs m slope = -0.0000   FLAT (instrument detects a fixed dimension)
+  positive control 2Dn20   d90 vs m slope = +0.2208   GROWS (instrument cannot hold a fixed dimension here)
+  positive control 6D      d90 vs m slope = +0.0542   GROWS (instrument cannot hold a fixed dimension here)
+  lane (a) symplectic          d90 vs m slope = +0.4583
+  lane (b2) crowding           d90 vs m slope = +0.4333
+
+============================================================================================================
+V3  ARE THE 'GROWS' VERDICTS FOR (a), (c), (b1) ARITHMETIC RATHER THAN MEASUREMENT?
+    A regular simplex on p equidistant points has p-1 equal MDS eigenvalues, so
+    d90 = ceil(0.9*(p-1)) with NO dependence on the carrier.  Closed form vs lane numbers.
+============================================================================================================
+
+  2k  | (a) p=k simplex  pred  lane | (c) p=2k simplex pred  lane | (b1) pred  lane
+  ------------------------------------------------------------------------------------------------
+  4   | p=2             1     1    | p=4             3     3    | 3     3   
+  8   | p=4             3     3    | p=8             7     7    | 7     7   
+  12  | p=6             5     5    | p=12            10    10   | 10    11  
+  16  | p=8             7     7    | p=16            14    14   | 14    15  
+  20  | p=10            9     9    | p=20            18    18   | 18    19  
+  24  | p=12            10    10   | p=24            21    21   | 21    23  
+  28  | p=14            12    12   | p=28            25    25   | 25    27  
+  32  | p=16            14    14   | p=32            28    28   | 28    31  
+  36  | p=18            16    16   | p=36            32    32   | 32    35  
+
+  closed-form simplex reproduces lane (a) at every n: True
+  closed-form simplex reproduces lane (c) at every n: True
+  -> where True, that column's 'GROWS WITH n' is a fact about the ARITHMETIC OF A SIMPLEX,
+     not a measurement on the carrier: it would read the same for ANY carrier whose
+     relation matrix is a permutation / the identity / diagonal.

@@ -2,3 +2,96 @@
 B6   THE MODEL HIERARCHY, AND HOW LARGE A HIDDEN TERM COULD BE
 ==============================================================================================================================
   lam=0.4: 52 configurations   (162s)
+  lam=0.8: 52 configurations   (294s)
+  lam=1.2: 52 configurations   (425s)
+
+THE HIERARCHY.  rms and max are in chi; 'rel rms' is the residual as a fraction of chi.
+  FLOOR-M (float64, B1/B3) = 1.0e-15 in chi.   FLOOR-V (venue floor, B3) = 0.01852 in chi.
+
+    lam model  #par   rms resid  max|resid|   rel rms  rms / FLOOR-V  rms / FLOOR-M
+   0.40    M0     2  3.6840e-02  8.4760e-02     0.322            2.0       3.68e+13
+   0.40    M1     5  2.5581e-02  6.1161e-02     0.240            1.4       2.56e+13
+   0.40    M2    11  2.0619e-02  4.3994e-02     0.195            1.1       2.06e+13
+   0.40    M3    13  1.7004e-02  3.6457e-02     0.131            0.9       1.70e+13
+
+   0.80    M0     2  7.2375e-02  1.6639e-01     0.409            3.9       7.24e+13
+   0.80    M1     5  3.9661e-02  1.0939e-01     0.299            2.1       3.97e+13
+   0.80    M2    11  3.1231e-02  7.1948e-02     0.264            1.7       3.12e+13
+   0.80    M3    13  2.7833e-02  6.8978e-02     0.176            1.5       2.78e+13
+
+   1.20    M0     2  9.3672e-02  2.1405e-01     0.519            5.1       9.37e+13
+   1.20    M1     5  6.2121e-02  1.8686e-01     0.404            3.4       6.21e+13
+   1.20    M2    11  4.7168e-02  1.7173e-01     0.337            2.5       4.72e+13
+   1.20    M3    13  4.5468e-02  1.6809e-01     0.244            2.5       4.55e+13
+
+COEFFICIENTS.
+
+  M1
+    lam        const    gamma cap    beta pair  delta crowd   c0 CONTROL
+   0.40      -1.2173       1.1388      -0.2186       0.3623      -0.0320
+   0.80      -0.7347       1.4435      -0.2249       0.4191       0.0021
+   1.20      -0.6260       1.5241      -0.2290       0.4206      -0.0184
+
+  M2
+    lam        const    gamma cap    beta pair  delta crowd   c0 CONTROL       A_read       A_colo      A_split    C_colo_11    C_colo_10    C_colo_00
+   0.40      -1.2357       1.2889      -0.1509       0.3498       0.0262       0.3009       0.0181       0.0458       0.0618      -0.2526      -0.0370
+   0.80      -0.7265       1.6510      -0.1595       0.4226       0.0396       0.3821       0.1216       0.0068      -0.0658      -0.1996      -0.0515
+   1.20      -0.6616       1.7259      -0.0625       0.3337       0.0648       0.4110       0.1091      -0.1037      -0.1989      -0.3720      -0.0535
+
+  THE CONTROL c0 IS EXACTLY ZERO BY THEOREM.  In M1 the fit returns it as large as
+  0.0320; in M2 as large as 0.0648.
+  THAT IS THE CALIBRATION: a coefficient of this size can be produced by misspecification
+  alone.  Nothing smaller than it, in any fitted column, means anything.
+
+HOW MUCH OF THE RESIDUAL DOES EACH THREE-RECORD CHANNEL CARRY?  Drop one column at a time
+from M2 and see how far the residual moves back toward M1.
+    lam  column dropped   rms resid   increase over M2   as % of the M1->M2 gain
+   0.40  A_read          1.9911e-02        -7.0775e-04                     -14.3
+   0.40  A_colo          2.0619e-02        -9.5790e-08                      -0.0
+   0.40  A_split         2.0635e-02         1.5669e-05                       0.3
+   0.40  C_colo_11       2.0621e-02         2.3360e-06                       0.0
+   0.40  C_colo_10       2.5132e-02         4.5129e-03                      90.9
+   0.40  C_colo_00       2.0656e-02         3.7598e-05                       0.8
+
+   0.80  A_read          3.3868e-02         2.6369e-03                      31.3
+   0.80  A_colo          3.1593e-02         3.6277e-04                       4.3
+   0.80  A_split         3.1220e-02        -1.0473e-05                      -0.1
+   0.80  C_colo_11       3.0911e-02        -3.1974e-04                      -3.8
+   0.80  C_colo_10       3.6115e-02         4.8846e-03                      57.9
+   0.80  C_colo_00       3.1894e-02         6.6305e-04                       7.9
+
+   1.20  A_read          5.0408e-02         3.2406e-03                      21.7
+   1.20  A_colo          4.7598e-02         4.3013e-04                       2.9
+   1.20  A_split         4.7583e-02         4.1538e-04                       2.8
+   1.20  C_colo_11       4.6861e-02        -3.0702e-04                      -2.1
+   1.20  C_colo_10       5.8475e-02         1.1307e-02                      75.6
+   1.20  C_colo_00       4.7910e-02         7.4277e-04                       5.0
+
+THE UPPER BOUND ON A FURTHER TERM.  For a candidate feature f, project out everything M2
+already fits; the remaining norm |f_perp| sets how small a coefficient the data could still
+resolve.  Error scale: the M2 residual, and separately the venue floor of B3.
+
+  candidate extra term f                  lam   |f_perp|   bound |coef|, fit scale  bound |coef|, venue floor
+  extensive: total records written       0.40     2.5304                   0.16275                    0.72813
+  extensive: total records written       0.80     2.5304                   0.22124                    0.47728
+  extensive: total records written       1.20     2.5304                   0.28361                    0.44250
+  records on OTHER sites                 0.40   5.16e-15                        COLLINEAR with M2 -- no bound
+  records on OTHER sites                 0.80   5.16e-15                        COLLINEAR with M2 -- no bound
+  records on OTHER sites                 1.20   5.16e-15                        COLLINEAR with M2 -- no bound
+  site occupancy squared                 0.40    25.9938                   0.01584                    0.07088
+  site occupancy squared                 0.80    25.9938                   0.02154                    0.04646
+  site occupancy squared                 1.20    25.9938                   0.02761                    0.04308
+  pairing partners squared               0.40     7.6771                   0.05364                    0.24000
+  pairing partners squared               0.80     7.6771                   0.07292                    0.15732
+  pairing partners squared               1.20     7.6771                   0.09348                    0.14585
+  four-record: (A_read choose 2)         0.40     1.9643                   0.20965                    0.93797
+  four-record: (A_read choose 2)         0.80     1.9643                   0.28500                    0.61483
+  four-record: (A_read choose 2)         1.20     1.9643                   0.36534                    0.57002
+  m * (pairing partners)                 0.40     7.1728                   0.05742                    0.25687
+  m * (pairing partners)                 0.80     7.1728                   0.07805                    0.16838
+  m * (pairing partners)                 1.20     7.1728                   0.10005                    0.15611
+
+  For comparison the FITTED leading coefficients are of order: gamma ~ 1.2-1.6,
+  delta ~ 0.3-0.5, beta ~ 0.1-0.2, and the three-record coefficients are listed above.
+
+  elapsed 425.4s

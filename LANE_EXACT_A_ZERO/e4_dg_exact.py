@@ -249,7 +249,7 @@ say("=" * 128)
 say("E-4  D(G) GAUGE TRANSPORT AGAINST A RECORD -- EXACT RATIONAL ARITHMETIC (fractions.Fraction)")
 say("=" * 128)
 
-CARRIERS = [group_Zn(2), group_Zn(3), group_Zn(4), group_ZmxZn(2, 2),
+CARRIERS = [group_Zn(2), group_Zn(3), group_Zn(4), group_ZmxZn(2, 2), group_Zn(6),
             group_dihedral(4), group_Q8(), group_Zn(8), group_Zn(5)]
 
 say("")

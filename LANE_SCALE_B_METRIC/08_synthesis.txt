@@ -1,0 +1,78 @@
+================================================================================================================
+LANE_SCALE_B_METRIC  STEP 8 -- DEGREES OF FREEDOM IN THE OPERATIONAL RELATION
+================================================================================================================
+
+  Ordered pairs in the crowding matrix vs the number of DISTINCT (anti, w_i, w_j) keys the
+  exact sector decomposition actually evaluates.  Every pair sharing a key has an identical
+  C value, so the key count is the true number of independent entries.
+
+  n    2k     ordered prs  distinct keys  distinct profs keys/pairs  
+  --------------------------------------------------------------------
+  4    4      12           6              2              0.500       
+  6    8      56           20             4              0.357       
+  8    12     132          42             6              0.318       
+  10   16     240          72             8              0.300       
+  12   20     380          110            10             0.289       
+  14   24     552          133            11             0.241       
+  16   28     756          183            13             0.242       
+  18   32     992          241            15             0.243       
+  20   36     1260         274            16             0.217       
+
+  READ: the operational relation between two records is fixed by the pair's ANTICOMMUTATION
+  BIT and the two records' SUPPORT PROFILES.  Those are exactly the ingredients of relation
+  (a) and relation (d).  The operational measurement adds no independent relational content;
+  it re-weighs the same two ingredients.
+
+================================================================================================================
+  HEADLINE TABLE -- intrinsic dimension d90 of the record-relation geometry, by definition,
+  with both controls in the same table.  Sources: 02, 03, 06, 07.
+
+  n    2k   | (a)S  (c)C  (d)GS  (d)RS  (e)GS  (e)RS  (b2)  | FREE-d FREE-b2 RAND-b2
+  --------------------------------------------------------------------------------------------
+  (a) symplectic   (c) code overlap   (d) support Jaccard   (e) Pauli letters   (b2) crowding
+  GS = the Gram-Schmidt basis symplectic_logicals returns;  RS = a random symplectic basis of
+  records on the SAME carrier (worst of 8 draws, step 3A).  FREE = k unentangled qubits, H = 0.
+
+  4    4    | 1     3     1      1      2      2      2     | 1      2      2     
+  6    8    | 3     7     3      3      4      4      4     | 3      5      4     
+  8    12   | 5     10    3      4      3      6      6     | 5      6      6     
+  10   16   | 7     14    4      5      3      8      7     | 7      7      8     
+  12   20   | 9     18    4      6      3      9      9     | 9      8      9     
+  14   24   | 10    21    4      8      3      11     11    | 10     9      10    
+  16   28   | 12    25    4      8      2      12     13    | 12     10     11    
+  18   32   | 14    28    4      10     2      14     14    | 14     11     13    
+  20   36   | 16    32    4      11     2      15     16    | 16     12     14    
+
+  (a) symplectic             d90 vs 2k slope = +0.4583   GROWS WITH n
+  (c) code overlap           d90 vs 2k slope = +0.9000   GROWS WITH n
+  (d) support  GS basis      d90 vs 2k slope = +0.0708   GROWS WITH n
+  (d) support  RS basis      d90 vs 2k slope = +0.3000   GROWS WITH n
+  (e) letters  GS basis      d90 vs 2k slope = -0.0333   SATURATES
+  (e) letters  RS basis      d90 vs 2k slope = +0.4042   GROWS WITH n
+  (b2) crowding              d90 vs 2k slope = +0.4333   GROWS WITH n
+  FREE control under (d)     d90 vs 2k slope = +0.4583   GROWS WITH n
+  FREE control under (b2)    d90 vs 2k slope = +0.2833   GROWS WITH n
+  RAND control under (b2)    d90 vs 2k slope = +0.3625   GROWS WITH n
+
+  RELATION (b1), THE DRIVE-READ MATRIX (step 5): EXACTLY DIAGONAL at every n from 4 to 20 and
+  at lam = 0.4 / 0.8 / 1.2 -- max |off-diagonal| between 3e-16 and 7e-15, i.e. machine zero.
+  Its distance transform d = sqrt(Mmax - M_sym) is therefore a regular simplex on 2k points,
+  d90 = 2k - 1, the largest dimension the point count allows.  The D-15 positive control in
+  5C shows the SAME instrument returning 0.026 / 0.108 / 0.257 as the record overlap is
+  dialled to 0.25 / 0.50 / 0.75, so the zero is a real zero and not a dead instrument.
+
+  BASIS-FREE CHECK (step 6): every logical class at minimum weight, support relation.
+  n      #classes CODE d90   FREE d90  
+  4      15       2          1         
+  6      255      5          3         
+  8      1500     7          5         
+  10     1500     9          7         
+  12     1500     10         9         
+  14     1500     12         10        
+  CODE class-level d90 vs n slope = +0.9571  -> GROWS WITH n
+
+  READ, filled from the numbers above and never in advance:
+  Under EVERY relation definition tried, and on the basis-free class object as well, the
+  intrinsic dimension GROWS LINEARLY with the number of records.  The only two columns that
+  saturate -- (d)GS and (e)GS -- lose their saturation the moment the arbitrary Gram-Schmidt
+  basis is replaced by another equally valid basis of records on the SAME carrier.

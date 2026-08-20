@@ -1,0 +1,61 @@
+==============================================================================================================
+V1  CARRIER BLINDNESS -- do the lane's numbers know whether the bits are RECORDS?
+==============================================================================================================
+
+STEP 0  clause audit of the two carriers (D-18: check the clauses on the carrier used)
+  A: [[4,2,2]] code            (i)=True (ii)=True (iii)=True (iv)=True | single-qubit Paulis  12 admissible   0 flips   0 -> (v)=PROTECTED
+  B: 2 free qubits (H=0)       (i)=True (ii)=True (iii)=True (iv)=True | single-qubit Paulis   6 admissible   6 flips   4 -> (v)=FAILS -- NOT A RECORD
+
+  SELF-CHECK: the two carriers must DIFFER on clause (v), or this control is dead.
+     A (v) = True   B (v) = False   differ = True
+
+STEP 1  geometry crowded    k=2, nq=4, lam=0.8, 9 times in [1,13]
+   fragment          |   site0     site1     whole  |  (RECORDS on [[4,2,2]])
+   chi(R_0) carrier A |  0.000117  0.113114  0.585945
+   chi(R_1) carrier A |  0.541902  0.292565  0.788433
+   chi(R0,R1) carr. A |  0.542164  0.492694  1.424693
+   fragment          |   site0     site1     whole  |  (NOT RECORDS: clause (v) fails)
+   chi(R_0) carrier B |  0.000117  0.113114  0.585945
+   chi(R_1) carrier B |  0.541902  0.292565  0.788433
+   chi(R0,R1) carr. B |  0.542164  0.492694  1.424693
+   MAX |A - B| single-record = 3.220e-15   pair = 1.332e-15
+
+STEP 1  geometry sym        k=2, nq=4, lam=0.8, 9 times in [1,13]
+   fragment          |   site0     site1     whole  |  (RECORDS on [[4,2,2]])
+   chi(R_0) carrier A |  0.146460  0.152192  0.375937
+   chi(R_1) carrier A |  0.146460  0.152192  0.375937
+   chi(R0,R1) carr. A |  0.466881  0.452188  1.104857
+   fragment          |   site0     site1     whole  |  (NOT RECORDS: clause (v) fails)
+   chi(R_0) carrier B |  0.146460  0.152192  0.375937
+   chi(R_1) carrier B |  0.146460  0.152192  0.375937
+   chi(R0,R1) carr. B |  0.466881  0.452188  1.104857
+   MAX |A - B| single-record = 3.886e-16   pair = 8.327e-16
+
+STEP 1  geometry separate   k=2, nq=4, lam=0.8, 9 times in [1,13]
+   fragment          |   site0     site1     whole  |  (RECORDS on [[4,2,2]])
+   chi(R_0) carrier A |  0.542137  0.000000  0.756181
+   chi(R_1) carrier A |  0.000000  0.465139  0.723541
+   chi(R0,R1) carr. A |  0.542137  0.465139  1.479722
+   fragment          |   site0     site1     whole  |  (NOT RECORDS: clause (v) fails)
+   chi(R_0) carrier B |  0.542137  0.000000  0.756181
+   chi(R_1) carrier B |  0.000000  0.465139  0.723541
+   chi(R0,R1) carr. B |  0.542137  0.465139  1.479722
+   MAX |A - B| single-record = 1.110e-15   pair = 1.110e-15
+
+STEP 2  POSITIVE CONTROL (D-15) -- a THIRD carrier that is also a genuine record carrier
+        (all five clauses PASS) but whose ground space has a different SECTOR structure:
+        H = -Z_0 Z_1 on 2 qubits, ground space span{|00>,|11>} (dim 2, not 4), so the two
+        records are perfectly correlated in the initial state -- 2 joint sectors, not 4.
+        Same coupling, same bath.  If the instrument is live this MUST differ from A.
+  C: H = -Z0 Z1                (i)=True (ii)=True (iii)=True (iv)=True | single-qubit Paulis   6 admissible   2 flips   0 -> (v)=PROTECTED
+   carrier A (4 sectors) chi(R_0) [site0 site1 whole] = [1.17000e-04 1.13114e-01 5.85945e-01]
+   carrier C (2 sectors) chi(R_0) [site0 site1 whole] = [0.540246 0.312107 0.792752]
+   MAX |A - C| = 0.540129   (pair: 0.631941)
+
+STEP 3  and the lane's own fast path reproduces BOTH, since it only ever sees (k,nq,W,lam):
+   fast path        chi(R_0) = [1.17376999e-04 1.13114252e-01 5.85944807e-01]
+   |fast - A| = 2.998e-15     |fast - B| = 4.996e-15
+
+READ (filled from the numbers above):
+   commuting coupling: carriers agree to 3.2e-15  -> IDENTICAL
+   sector-structure positive control: carriers differ by 0.540129 -> instrument is live

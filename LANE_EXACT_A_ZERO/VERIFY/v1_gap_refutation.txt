@@ -1,0 +1,86 @@
+========================================================================================================================
+VERIFY v1 -- ADVERSARIAL RECOMPUTATION OF J AND GAP.  Independent engine, exact integers only.
+========================================================================================================================
+
+A1  REPRODUCTION OF THE LANE'S TWO LOAD-BEARING NUMBERS (independent engine)
+------------------------------------------------------------------------------------------------------------------------
+  n=4  classes=15  triples=3375  EXHAUSTIVE   GAP distribution = {0: 3375}
+  lane claimed {0: 3375}                    ->  MATCHES
+  n=6  witness A=IIIZZI B=IIIXXI C=ZXYXXI   all in N(S)? True
+       J_AB=0 J_BC=0 J_AC=0   GAP=2      lane claimed 0,0,0 and GAP=2  ->  MATCHES
+
+A2  IS GAP THREE-BODY?  Feed a routine ONLY the three two-body tables -- record identity erased
+------------------------------------------------------------------------------------------------------------------------
+  n=6   4000 random triples   GAP>0 in 398     table-only routine disagrees in 0 cases
+  n=8   4000 random triples   GAP>0 in 823     table-only routine disagrees in 0 cases
+  n=10  4000 random triples   GAP>0 in 1179    table-only routine disagrees in 0 cases
+  n=12  4000 random triples   GAP>0 in 1309    table-only routine disagrees in 0 cases
+
+  TOTAL: 16000 triples, table-only reconstruction MISMATCHES = 0
+  VERDICT: GAP is EXACTLY a min-plus functional of the three TWO-BODY tables.
+  Hence it carries NO information beyond two-body data.  The lane's own H2 test used only the
+  six two-body MINIMA (a lossy summary); failing that test does not make a quantity three-body.
+
+A4  THE 'STEP SIZE 2' IS A ONE-LINE PARITY CONSEQUENCE, NOT A DISCOVERY
+------------------------------------------------------------------------------------------------------------------------
+  PROOF: for records a,b in N(S) and s1,s2 in S,
+     sp(a^s1, b^s2) = sp(a,b) + sp(a,s2) + sp(s1,b) + sp(s1,s2) = sp(a,b)   (all three vanish)
+  and Iu(A,B) = sp(A,B) mod 2 always.  So every entry of a table has the SAME parity, hence
+  Jsum and J_ab+J_bc+J_ac have the same parity and GAP is IDENTICALLY EVEN.
+  VERIFIED on 12000 record pairs across n=4,6,8,10: table-parity != sp in 0 cases
+
+A3  ORDINARY EXPLANATION: GENERIC TRIANGLE FRUSTRATION OF PAIRWISE COUPLINGS
+------------------------------------------------------------------------------------------------------------------------
+  n     real record triples          SCRAMBLE control       random-table control  
+  6     401/4000  {0: 3599, 2: 400, 4: 1} 1514/4000              1442/4000             
+  8     683/4000  {0: 3317, 2: 674, 4: 9} 1928/4000              2244/4000             
+  10    1147/4000  {0: 2853, 2: 1111, 4: 36} 2497/4000              2713/4000             
+  12    1401/4000  {0: 2599, 2: 1343, 4: 58} 2759/4000              2829/4000             
+  14    1670/4000  {0: 2330, 2: 1533, 4: 135, 6: 2} 2945/4000              3006/4000             
+
+  The SCRAMBLE control has no triple behind it at all -- three tables from unrelated pairs --
+  and the random-table control has no records in it whatsoever.  Both produce a strictly
+  positive GAP.  GAP>0 is therefore a property of MIN-PLUS COMPOSITION OF PAIRWISE COUPLINGS,
+  i.e. the antiferromagnetic-triangle phenomenon, not a property of records.
+
+A5  RECORDNESS CONTROL -- the same pipeline on Paulis that are NOT records (clause (ii) fails)
+------------------------------------------------------------------------------------------------------------------------
+  n     RECORDS (in N(S))                  NON-RECORDS (not in N(S))         
+  4     {0: 4000}                          {0: 2586, 1: 1375, 2: 39}         
+  6     {0: 3563, 2: 436, 4: 1}            {0: 1840, 1: 1729, 2: 416, 3: 15} 
+  8     {0: 3403, 2: 595, 4: 2}            {0: 1466, 1: 1804, 2: 663, 3: 65, 4: 2}
+  10    {0: 2839, 2: 1138, 4: 23}          {0: 1408, 1: 1688, 2: 762, 3: 130, 4: 12}
+  12    {0: 2552, 2: 1384, 4: 64}          {0: 1186, 1: 1676, 2: 897, 3: 223, 4: 18}
+
+  If the NON-RECORD column also shows GAP>0, the quantity does not test recordness at all.
+  (Note the odd values there: non-records have no constant table parity, so GAP can be odd --
+   confirming A4's parity proof from the other side.)
+
+A6  SAMPLING BIAS AT n=6.  The lane sampled 18 of {8 generators} U {28 pairwise sums}.
+------------------------------------------------------------------------------------------------------------------------
+  full record group at n=6 has 255 non-identity classes
+  lane's n=6 pool = 36 classes out of 255  (weight<=2 combinations of the generators only)
+  LANE-STYLE biased pool           GAP>0 fraction = 0.0081    dist {0: 59516, 2: 484}
+  UNIFORM over all 255 classes     GAP>0 fraction = 0.1026    dist {0: 53846, 2: 6145, 4: 9}
+
+A7  ALTERNATIVE DEFINITION OF 'SITE' (D-17).  Coarse-grain into supersites of w qubits.
+------------------------------------------------------------------------------------------------------------------------
+  n     w (site size) GAP dist, exhaustive/sampled   GAP>0 fraction                
+  4     1            exhaustive {0: 3375}           0.0000                        
+  4     2            exhaustive {0: 3375}           0.0000                        
+  6     1            sampled {0: 17933, 2: 2061, 4: 6} 0.1033                        
+  6     2            sampled {0: 19764, 2: 236}     0.0118                        
+  8     1            sampled {0: 16312, 2: 3660, 4: 28} 0.1844                        
+  8     2            sampled {0: 17075, 2: 2922, 4: 3} 0.1462                        
+
+  w=1 is the lane's definition.  w=2 is an equally defensible 'site'.  If the onset and the
+  distribution move, the statement 'GAP switches on at n=6' is about the chosen resolution.
+
+A8  LOCAL-CLIFFORD INVARIANCE -- the check the lane names as its first open item
+------------------------------------------------------------------------------------------------------------------------
+  4500 random local-Clifford conjugations across n=4,6,8: GAP changed in 0 cases
+  (a PASS here is reported as a PASS -- it does not rescue the three-body claim, which A2 kills)
+
+========================================================================================================================
+  END VERIFY v1
+========================================================================================================================

@@ -1,0 +1,42 @@
+T7 -- WHICH ASSUMPTION CARRIES THE NULL?  Break them one at a time on the FULL carrier.
+
+The exact arguments of T2(b) and T5 rest on three hypotheses:
+   (H1) the state is invariant under the symmetry that moves the records,
+   (H2) every coupling operator is a record (so clause (ii) applies to the whole H_tot),
+   (H3) the environment has no bath-bath coupling.
+This script works on the FULL 2^n carrier -- no code-space reduction, full H, full dynamics --
+and breaks H1 and H2 in turn.  If the null survives H1 and H2 intact and dies when they are
+broken, the null is a statement about the record structure and not an artefact of the reduction.
+
+EXACT FACT USED HERE: H = -(X^(x)n + Z^(x)n) is invariant under EVERY permutation of the n
+qubits, so any state that is a function of H is too.  A permutation carrying supp(A) -> supp(A')
+and supp(B) -> supp(B') therefore conjugates the entire joint evolution and leaves chi exactly
+invariant.  Exact, every n.
+
+================================================================================================================
+T7(a)  EXACT: H IS PERMUTATION INVARIANT (verified over a sample of permutations)
+================================================================================================================
+  max || P H P^T - H || over 12 random qubit permutations: 0.000e+00
+  [PASS] H is exactly permutation invariant 
+
+================================================================================================================
+T7(b)  FULL CARRIER, FULL DYNAMICS, THERMAL STATE OVER ALL SECTORS -- SEPARATION SCAN
+================================================================================================================
+  H1 and H2 INTACT.  If the code-space reduction had hidden a separation dependence,
+  it would appear here.
+
+  beta = 0.0  (beta=0 is the maximally mixed state on the WHOLE 2^n space)
+    partner     sep       chi_A alone     chi_A crowded       interaction
+    X2X3          1    0.521527300760    0.136408688972    0.385118611788
+    X3X4          2    0.521527300760    0.136408688972    0.385118611788
+    X4X5          3    0.521527300760    0.136408688972    0.385118611788
+    X5X6          4    0.521527300760    0.136408688972    0.385118611788
+    X6X7          5    0.521527300760    0.136408688972    0.385118611788
+    SPREAD over separation: 4.441e-16
+  [PASS] beta=0.0: full-carrier interaction is separation-independent   spread 4.441e-16
+
+  beta = 0.5  (beta=0 is the maximally mixed state on the WHOLE 2^n space)
+    partner     sep       chi_A alone     chi_A crowded       interaction
+    X2X3          1    0.521527300760    0.136408688972    0.385118611788
+    X3X4          2    0.521527300760    0.136408688972    0.385118611788
+    X4X5          3    0.521527300760    0.136408688972    0.385118611788

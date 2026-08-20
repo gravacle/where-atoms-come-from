@@ -1,0 +1,15 @@
+========================================================================================================
+V5  D-18 CLAUSE RE-CHECK, INDEPENDENT OF THE LANE'S SCRIPTS.
+    logicals come from symplectic_logicals (conjugate pairs); nothing is nominated.
+========================================================================================================
+
+  n    2k   mult(H)   | (i)     (ii)    (iii)   (iv)    SC-1 sp   | NON-RECORD control Z_0      
+  ----------------------------------------------------------------------------------------------------
+  4    4    [4, 8, 4] | True    True    True    True    True      | (ii)=False (iii)=False (iv)=True
+  6    8    [16, 32, 16] | True    True    True    True    True      | (ii)=False (iii)=False (iv)=True
+  8    12   [64, 128, 64] | True    True    True    True    True      | (ii)=False (iii)=False (iv)=True
+
+  CLAUSE (v) PROTECTED WAS NOT CHECKED BY THE LANE AND IS NOT CHECKED HERE.  record_model's
+  own header states (v) is CARRIER DATA, not derivable from (H,{L_k}).  The lane's probe
+  text says '(i)-(iv)' honestly; the headline then speaks of 'records' throughout.
+  The control column shows the clause checker is live: Z_0 is not a logical and fails.

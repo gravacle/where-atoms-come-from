@@ -1,0 +1,59 @@
+========================================================================================================================
+V3  DENOMINATOR AUDIT, k-FREEDOM OF THE CLAUSE-(v) ZERO, AND THE reach_r FORMULA
+========================================================================================================================
+
+A.  D-16 DENOMINATOR AUDIT OF S9 (the lane's only non-analytic dynamical arm)
+    S9 spread layout is assign=[i%3] on a 3-qubit bath.  q0 = records landing on site 0.
+    carrier      k    assign           q0    chi_avg(q0)    chi_avg(1)     S9 printed SPREAD
+    --------------------------------------------------------------------------------------
+    [[4,2,2]]    2    [0, 1]           1     0.52152730     0.52152730     0.52152730      
+    [[6,4,2]]    4    [0, 1, 2, 0]     2     0.13640869     0.52152730     0.13640869      
+    [[8,6,2]]    6    [0, 1, 2, 0, 1, 2] 2     0.13640869     0.52152730     0.13640869      
+    -> the S9 'SPREAD' column is the q0-record value, and q0 = 2 at k = 4 and k = 6.
+       It is NOT the one-record value at those k, so the printed commut/spread ratios
+       0.2616 / 0.3311 / 0.1782 have a DENOMINATOR THAT CHANGES VENUE between rows.
+
+    Same suppression re-normalised against a TRUE one-record spread (D-16 as stated):
+    carrier      k    chi_COMMUTING  lane commut/spread commut/chi_avg(1)
+    ------------------------------------------------------------------
+    [[4,2,2]]    2    0.13640869     0.261556         0.261556        
+    [[6,4,2]]    4    0.04516257     0.331083         0.086597        
+    [[8,6,2]]    6    0.02430704     0.178193         0.046607        
+    -> corrected, the suppression is MONOTONE in k (0.2616, 0.0866, 0.0466); the
+       'the ratio does not trend' reading came from the moving denominator.
+
+B.  IS THE CLAUSE-(v) ZERO A FUNCTION OF k?  SAME n, SAME k, DIFFERENT CARRIER.
+    carrier                n     k     reach1    reach2    reach3    prot_r   
+    ----------------------------------------------------------------------
+    [[6,4,2]]              6     4     0         2         4         2        
+    [[4,2,2]]^1+2bare      6     4     2         4         4         1        
+    ......................................................................
+    [[10,8,2]]             10    8     0         2         4         2        
+    [[4,2,2]]^1+6bare      10    8     2         4         6         1        
+    ......................................................................
+    [[4,2,2]]^2            8     4     0         2         4         2        
+    [[5,1,3]]+3bare        8     4     2         4         6         1        
+    ......................................................................
+    -> at IDENTICAL (n, k) the clause-(v) radius-1 quantity is 0 on one carrier and > 0 on
+       the other.  reach1/cf1_max is a function of the CARRIER'S DISTANCE, not of k.
+
+C.  reach_r ACROSS FAMILY A AND B: does it depend on k at all, or only on r?
+    carrier          n     k     reach1   reach2   reach3   reach4  
+    --------------------------------------------------------------
+    [[4,2,2]]        4     2     0        2        4        4       
+    [[6,4,2]]        6     4     0        2        4        6       
+    [[8,6,2]]        8     6     0        2        4        6       
+    [[10,8,2]]       10    8     0        2        4        6       
+    [[12,10,2]]      12    10    0        2        4        6       
+    [[14,12,2]]      14    12    0        2        4        6       
+    [[16,14,2]]      16    14    0        2        4        6       
+    [[20,18,2]]      20    18    0        2        4        6       
+    [[4,2,2]]^1      4     2     0        2        4        4       
+    [[4,2,2]]^2      8     4     0        2        4        4       
+    [[4,2,2]]^3      12    6     0        2        4        4       
+    [[4,2,2]]^4      16    8     0        2        4        4       
+    [[4,2,2]]^6      24    12    0        2        4        4       
+    family A: reach vector identical for every k >= 4 ?  True   ([(0, 2, 4, 4), (0, 2, 4, 6)])
+    family B: reach vector identical for every k >= 4 ?  True   ([(0, 2, 4, 4)])
+    -> for family A, reach_r = 2(r-1) with NO k and NO n in it: the quantity the lane swept
+       to k = 126 is a closed form in the region radius alone.

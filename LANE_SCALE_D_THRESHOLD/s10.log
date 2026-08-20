@@ -1,0 +1,25 @@
+======================================================================================================================================================
+S10  D(G) ON THE MINIMAL TORUS FOR GROWING 2-GROUPS -- does it give a scaling family?
+======================================================================================================================================================
+  G              |G|    dim     eigenvalue multiplicities      H prop I?   min_proj  records()        k_max <= log2(min m_E)
+  --------------------------------------------------------------------------------------------------------------------------------------------
+  Z_2            2      4       [4]                            True        4         3 records (family 2) 2
+  Z_4            4      16      [16]                           True        16        6435 records (family 4) 4
+  Z_2^2          4      16      [16]                           True        16        6435 records (family 4) 4
+  D_4            8      64      [22, 24, 18]                   False       64        RAISES: O-28     4
+  Z_8            8      64      [64]                           True        64        RAISES: O-28     6
+  Z_4xZ_2        8      64      [64]                           True        64        RAISES: O-28     6
+  Z_2^3          8      64      [64]                           True        64        RAISES: O-28     6
+  Z_2^4          16     256     [256]                          True        256       RAISES: O-28     8
+
+READ, from the rows above:
+  * for every ABELIAN 2-group the minimal torus gives ONE eigenspace -- conjugation is
+    trivial so A = I, and every commutator is e so B = I, leaving H proportional to the
+    identity.  Clause (iii) is then satisfied by any non-scalar involution and the carrier
+    carries no dynamics at all: it is degenerate, not a scaling family.
+  * the non-abelian case D_4 has the three-eigenvalue structure C-43 used, but its order is
+    fixed; the next non-abelian 2-group of order 16 puts dim at 256 with more than 20
+    minimal projections, so RecordModel.records() hits O-28.
+  * hence the two stabiliser families A and B, where k scales and every clause stays
+    checkable, and not D(G).  This is a measured reason, not a preference.
+total 12.4s

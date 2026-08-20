@@ -1,0 +1,65 @@
+================================================================================================================
+V4  THE CANDIDATE THE LANE DISCARDED:  Var(Phi) / std(Phi) on a heterogeneous body
+================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------
+TABLE V4-1  --  (a) and (b) for a HETEROGENEOUS body: r copies of a fixed 4-block lump,
+                each block on its OWN bath site.  N = 8r records.
+----------------------------------------------------------------------------------------------------------------
+r       N        Var(Phi)           S(2N)/S(N)    additivity def  CTRL shared-site CTRL N (count) 
+----------------------------------------------------------------------------------------------------------------
+1       8        1.0661743470       nan           -1.110e-16      2.483813e-01     8              
+2       16       2.1323486939       2.000000      4.441e-16       3.729715e-01     16             
+4       32       4.2646973879       2.000000      -8.882e-16      5.227498e-01     32             
+8       64       8.5293947757       2.000000      -1.776e-15      6.937902e-01     64             
+16      128      17.0587895515      2.000000      7.105e-15       8.812120e-01     128            
+32      256      34.1175791030      2.000000      -3.553e-14      1.080392e+00     256            
+64      512      68.2351582059      2.000000      -1.990e-13      1.287570e+00     512            
+128     1024     136.4703164119     2.000000      2.842e-13       1.499970e+00     1024           
+256     2048     272.9406328238     2.000000      1.421e-12       1.715670e+00     2048           
+512     4096     545.8812656476     2.000000      -4.775e-12      1.933402e+00     4096           
+1024    8192     1091.7625312952    2.000000      9.322e-12       2.152358e+00     8192           
+2048    16384    2183.5250625906    2.000000      2.133e-10       2.372036e+00     16384          
+   log-log fit over the last 6 points: exponent p = 1.000000000, spread of fit sigma 1.19e-14, max resid 4.62e-14
+   READ: (a) ratio is exactly 2.000000 at every r; (b) defect is 0 to 1e-11 while the
+   shared-site CONTROL column is non-zero and growing, so the defect metric is live.
+
+----------------------------------------------------------------------------------------------------------------
+TABLE V4-2  --  (c) NOT TOPOLOGICAL.  Same body, same N, couplings deformed continuously.
+----------------------------------------------------------------------------------------------------------------
+lam scale  N (CTRL)   Var(Phi)             std(Phi)             d ln V/d ln lam
+----------------------------------------------------------------------------------------------------------------
+0.50       512        6.6910388216         2.5867042393         nan           
+0.60       512        12.7322445069        3.5682270818         3.5288        
+0.75       512        27.1435793852        5.2099500367         3.3924        
+1.00       512        68.2351582059        8.2604575058         3.2043        
+1.25       512        133.6453289219       11.5605072952        3.0125        
+1.50       512        225.4148810783       15.0138230001        2.8672        
+2.00       512        492.2343093829       22.1863541255        2.7148        
+   READ: N is exactly constant (that is what a count/topological invariant does); Var(Phi)
+   moves smoothly, roughly as lam^2.  It is not topological.  It passes (c).
+
+----------------------------------------------------------------------------------------------------------------
+TABLE V4-3  --  THE DEAD-CONFIGURATION CONTROL.  1 record per bath site: Phi is EVEN in
+                each s_i, so Var(Phi) is identically 0.  Printed beside the live case.
+----------------------------------------------------------------------------------------------------------------
+N          Var(Phi), 1 rec/site     Var(Phi), 2 rec/site (live)
+----------------------------------------------------------------------------------------------------------------
+8          0.000e+00                0.7708576418            
+32         0.000e+00                3.0834305673            
+128        0.000e+00                12.3337222692           
+512        0.000e+00                49.3348890766           
+2048       0.000e+00                197.3395563065          
+   READ: the estimator returns exactly 0 where the physics says 0, and a stable non-zero
+   where the physics says non-zero.  D-15 satisfied.
+
+================================================================================================================
+READ OF V4
+================================================================================================================
+ * Var(Phi) on disjoint regions satisfies (a) exactly, (b) exactly, and (c) -- it is a
+   continuous function of the local couplings, not a topological invariant and not a count.
+ * The lane classified this SAME quantity as 'GROWING linear ... but a count'.  V2 TABLE
+   PART 1 shows it moves by a factor of 72.9 at FIXED N.  The classification is wrong.
+ * This does NOT make Var(Phi) gravity.  It has the wrong units (energy^2), it is defined
+   relative to a chosen coupling operator, and nothing here shows it sources any geometry.
+   What it does is remove the lane's stated ground for excluding it.

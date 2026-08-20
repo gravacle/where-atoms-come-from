@@ -101,3 +101,18 @@ E8  C-38 AS AN EXACT THEOREM.  A COMMUTING partner on ANOTHER bath site changes 
     10   0.80  X2@1                              0.521527300760          2.66e-15
     10   0.80  X2@1,X3@2                         0.521527300760         -5.77e-15
     10   1.20  X2@1                              0.599566691971          2.51e-14
+    10   1.20  X2@1,X3@2                         0.599566691971          3.31e-14
+    10   2.50  X2@1                              0.588024324397          7.11e-15
+    10   2.50  X2@1,X3@2                         0.588024324397          3.33e-15
+
+  WORST |chi/alone - 1| over all commuting-other-site tests: 3.308e-14
+  -> ZERO to the float64 floor, and EXACTLY zero by the proof above.  C-38 is not a
+     numerical trend; it survives the weakness objection outright.
+
+==============================================================================================================
+B1 FLOOR SUMMARY -- these are the numbers a residual must beat
+==============================================================================================================
+  float64 floor, two independent code paths for the same exact quantity : 9.437e-16
+  float64 floor, matched configuration across n = 4..10                 : 3.109e-15
+  float64 floor, C-38 exact-zero ratio                                  : 3.308e-14
+  elapsed 2371.9s

@@ -9,6 +9,7 @@ STEP 1   D1/D2  -- is A_h the identity?  exact eigenspace dimensions and their p
   D(Z_3)       3      9      yes       -2:9 -1:0 0:0                      NO -- clause (iv) impossible on an odd E YES (exact)       
   D(Z_4)       4      16     yes       -2:16 -1:0 0:0                     YES                            YES (exact)       
   D(Z_2xZ_2)   4      16     yes       -2:16 -1:0 0:0                     YES                            YES (exact)       
+  D(Z_6)       6      36     yes       -2:36 -1:0 0:0                     YES                            YES (exact)       
   D(D_4)       8      64     NO        -2:22 -1:24 0:18                   YES                            no                
   D(Q_8)       8      64     NO        -2:22 -1:24 0:18                   YES                            no                
   D(Z_8)       8      64     yes       -2:64 -1:0 0:0                     YES                            YES (exact)       
@@ -26,6 +27,7 @@ STEP 2   D3  -- EXACT COMMUTANT DIMENSIONS.  chi_E(h) = Tr(P_E A_h) is an exact 
   D(Z_3)       yes       81                         81                         0              transport acts trivially  
   D(Z_4)       yes       256                        256                        0              transport acts trivially  
   D(Z_2xZ_2)   yes       256                        256                        0              transport acts trivially  
+  D(Z_6)       yes       1296                       1296                       0              transport acts trivially  
   D(D_4)       NO        1384                       736                        648            a generic record IS MOVED 
   D(Q_8)       NO        1384                       736                        648            a generic record IS MOVED 
   D(Z_8)       yes       4096                       4096                       0              transport acts trivially  
@@ -41,6 +43,7 @@ STEP 3   D4  -- AN EXACT RATIONAL WITNESS RECORD, AND [A_h, R] IN EXACT RATIONAL
   D(Z_3)       NO      -         -         -           impossible    no record exists: an eigenspace has ODD dimension (Z) vacuous     
   D(Z_4)       YES     True      True      True        True          0                              (Z) EXACTLY ZERO
   D(Z_2xZ_2)   YES     True      True      True        True          0                              (Z) EXACTLY ZERO
+  D(Z_6)       YES     True      True      True        True          0                              (Z) EXACTLY ZERO
   D(D_4)       YES     True      True      True        True          352/9                          (NZ) exactly non-zero
   D(Q_8)       YES     True      True      True        True          352/9                          (NZ) exactly non-zero
   D(Z_8)       YES     True      True      True        True          0                              (Z) EXACTLY ZERO
@@ -54,6 +57,7 @@ STEP 3   D4  -- AN EXACT RATIONAL WITNESS RECORD, AND [A_h, R] IN EXACT RATIONAL
   D(Z_3)       yes       YES              0              no record: odd eigenspace         
   D(Z_4)       yes       YES              0              EXACTLY 0                         
   D(Z_2xZ_2)   yes       YES              0              EXACTLY 0                         
+  D(Z_6)       yes       YES              0              EXACTLY 0                         
   D(D_4)       NO        no               648            352/9                             
   D(Q_8)       NO        no               648            352/9                             
   D(Z_8)       yes       YES              0              EXACTLY 0                         

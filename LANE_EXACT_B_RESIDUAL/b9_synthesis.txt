@@ -1,0 +1,96 @@
+================================================================================================================================
+B9   SYNTHESIS
+================================================================================================================================
+
+PART 1 -- WHAT IS EXACTLY ZERO.  Each row carries, in the same table, a CONTROL quantity
+that is exactly NON-zero and that the identical probe registers (D-15).
+
+  quantity that is EXACTLY ZERO                           measured   control quantity, same probe                    control   status        
+  dependence of chi on n, matched configuration           3.11e-15   the same configurations differ by                  0.39   EXACT         
+  dependence on a partner's support/weight in the code    8.05e-16   changing the partner's PAIRING moves chi by        0.12   EXACT         
+  effect of ANY set of commuting partners off-site        1.72e-15   the same partners moved onto the read site         0.47   EXACT         
+  effect of piling those partners onto one other site     1.55e-15   one PAIRING partner in the same place              0.10   EXACT         
+  effect of partners that pair each other, off-site       1.61e-15   the same pair moved onto the read site             0.05   EXACT         
+  any purely EXTENSIVE term (total record count)          1.22e-15   the same records placed on the read site           0.45   EXACT         
+  density-channel influence beyond the bath's range          5e-16   the same partner one site closer                  0.078   EXACT (J<=0.6)
+  difference between two commuting partners spread        0.00e+00   the same two partners when they PAIR with R       0.061   EXACT         
+
+PART 2 -- WHAT IS EXACTLY NON-ZERO, AND HOW BIG.  All O(0.01)-O(0.5).  Nothing in this
+lane is small, let alone gravity-scale.
+
+  quantity                                                      lam=0.4    lam=0.8    lam=1.2      status
+  chi(alone)                                                   0.276635   0.521527   0.599567    MEASURED
+  crowding: one commuting partner on the site                 -0.151010  -0.385119  -0.472027    MEASURED
+  pairing disturbance: one pairing partner off-site           -0.040304  -0.098950  -0.119707    MEASURED
+  3-BODY (a): partners pair each other, read site             +0.051972  +0.052661  +0.086910    MEASURED
+  3-BODY (b): commuting partner joins a pairing one           -0.061807  -0.077915  -0.148958    MEASURED
+  3-BODY (c): two pairing partners co-located                 -0.024838  -0.061174  -0.128295    MEASURED
+  M1 (the EXPLAINED model) rms residual                        0.025581   0.039661   0.062121    MEASURED
+  M2 (explained + all 3-body counts) rms residual              0.020619   0.031231   0.047168    MEASURED
+  FLOOR-V, the venue floor (median cfg spread)                 0.018520   0.018520   0.018520    MEASURED
+  FLOOR-M, the float64 floor                                    3.0e-15    3.0e-15    3.0e-15    MEASURED
+
+PART 3 -- THE RESIDUAL'S TREND.  With n EXACTLY flat (Part 1, row 1), the only variable
+left is the configuration.  The cleanest one-parameter family is pure crowding: q records
+on one bath site, all mutually commuting, read one of them.  n = 10, lam = 0.8.
+
+   q records on the site             chi    M1 residual   residual / chi   chi ratio q/(q-1)
+                       1  0.521527300760      +0.015954          +0.0306                  --
+                       2  0.136408688972      -0.034984          -0.2565              0.2616
+                       3  0.071783219844      -0.019246          -0.2681              0.5262
+                       4  0.045162574990      -0.012941          -0.2865              0.6292
+                       5  0.033530458642      -0.007486          -0.2233              0.7424
+                       6  0.024307043226      -0.006553          -0.2696              0.7249
+                       7  0.020221343237      -0.004040          -0.1998              0.8319
+                       8  0.015623024871      -0.004074          -0.2608              0.7726
+
+  POWER LAW chi ~ q^p fitted over q = 2..8 (the crowding family; q = 1 is the alone point
+  and is excluded because no site is shared there):
+    exponent p                                     = -1.5438
+    1-sigma uncertainty (5 dof, from the fit residual) = +- 0.0206
+    rms of the power-law residual, in chi          = 8.164e-04
+    FLOOR-V for comparison                         = 1.852e-02
+    -> the power-law residual is 0.04x the venue floor, i.e. at or below it.
+       Within the pure-crowding family a single power in the occupancy is as good as the
+       data can distinguish; there is no room there for an extra term.
+
+  WHAT p = -1 WOULD HAVE MEANT.  Equipartition of a FIXED site capacity -- the natural
+  reading of C-36, that q records sharing a site split its bits -- gives chi ~ 1/q, i.e.
+  p = -1 exactly.  The measured exponent is -1.5438 +- 0.0206, which is 26 sigma steeper.
+  The q records here are mutually commuting and mutually exchangeable by a logical Clifford,
+  so each holds the same chi and the TOTAL the site holds about them is q*chi:
+     q    chi per record    q * chi (the site total)
+     2    0.136408688972              0.272817377944
+     3    0.071783219844              0.215349659532
+     4    0.045162574990              0.180650299960
+     5    0.033530458642              0.167652293210
+     6    0.024307043226              0.145842259356
+     7    0.020221343237              0.141549402659
+     8    0.015623024871              0.124984198968
+  -> the site total FALLS with q (as q^{p+1} = q^-0.544).  A site is not dividing a
+     fixed budget among its records; the budget itself shrinks as the site fills.  That is a
+     26-sigma departure from the equipartition reading, inside the ONE family where the
+     explained model is otherwise perfect.
+
+  the M1 residual in this family, as a FRACTION of chi (q = 2..8):
+    mean -0.2521   spread 0.0868   min -0.2865   max -0.1998
+  the same at q = 1 (the alone point):  +0.0306
+  -> across a 33x fall in chi (0.5215 -> 0.0156) the M1 residual stays a roughly CONSTANT
+     FRACTION of chi, about a quarter of it, with no trend toward zero.  The residual is
+     not an additive term of fixed size that could be swamped at large N; it is a fixed
+     RELATIVE misfit, and there is no regime in the reachable range where the explained
+     model becomes adequate.
+
+PART 4 -- THE UPPER BOUND ON A HIDDEN TERM (from B6, error scale = the venue floor).
+  In log chi, at lam = 0.8, after the explained model AND all six three-record counts:
+  candidate term                              bound on |coefficient|     compare with fitted
+  an extensive term (record count)                             0.477            gamma = 1.65
+  site occupancy squared                                       0.046            gamma = 1.65
+  pairing partners squared                                     0.157            delta = 0.42
+  a four-record term                                           0.615           A_read = 0.38
+
+  These bounds are LARGE -- comparable to the leading coefficients themselves.  That is the
+  honest report: at reachable N this venue does NOT constrain an extra term to be small.
+  The reason is not the venue's size, it is that the EXPLAINED MODEL ITSELF MISFITS BY 25%,
+  so there is a great deal of room underneath it.  The bound that IS tight is the one on the
+  terms proved exactly zero in Part 1, where the bound is 1e-15 and holds at every N.

@@ -1,0 +1,113 @@
+======================================================================================================================
+LANE_SCALE_C_ACCUM  script 2  --  does the environment's information ACCUMULATE with k?
+======================================================================================================================
+
+VALIDATION 1  --  the reduced engine against the FULL 2^n matrices (RecordModel.evolve +
+                  Environment.holevo).  Nothing below is believed until this agrees.
+----------------------------------------------------------------------------------------------------------------------
+       carrier    dim   k  nq | chi_joint FULL  chi_joint RED     |diff| |  chi_sum FULL  chi_sum RED     |diff| |  chi(partner) FULL
+     [[4,2,2]]     16   2   3 |    1.007275060    1.007275060   1.11e-15 |   1.007275060  1.007275060   4.44e-16 |           7.65e-16   (0s)
+     [[6,4,2]]     64   4   3 |    1.434476753    1.434476753   8.88e-16 |   1.214658456  1.214658456   1.11e-15 |           4.19e-16   (11s)
+     [[8,6,2]]    256   6   3 |    1.523752405    1.523752405   1.78e-15 |   0.857322391  0.857322391   9.99e-16 |           3.95e-16   (492s)
+   [[4,2,2]]^1     16   2   3 |    1.007275060    1.007275060   1.11e-15 |   1.007275060  1.007275060   4.44e-16 |           7.65e-16   (0s)
+   [[4,2,2]]^2    256   4   3 |    1.434476753    1.434476753   2.44e-15 |   1.214658456  1.214658456   1.78e-15 |           1.48e-16   (363s)
+
+VALIDATION 2  --  CARRIER-BLINDNESS.  At equal k the collective carrier [[6,4,2]] and the
+                  product control [[4,2,2]]^2 are DIFFERENT carriers (dim 64 vs 256, 2 vs 4
+                  stabilisers).  Full-matrix chi at k=4, same bath, same site map:
+----------------------------------------------------------------------------------------------------------------------
+   [[6,4,2]]    dim   64  chi_joint 1.434476753  chi_sum 1.214658456
+   [[4,2,2]]^2  dim  256  chi_joint 1.434476753  chi_sum 1.214658456
+   |difference| chi_joint 1.554e-15   chi_sum 2.887e-15
+   => at equal k the CONTROL COLUMN IS THE FAMILY COLUMN.  chi does not see the carrier;
+      it sees only k, the site map and the bath.  Every chi table below therefore reports
+      one column that IS both, and the discriminating control is the BATH-SCALING contrast.
+
+VALIDATION 3  --  the FACTORISED path (one record per bath qubit) against the general
+                  reduced engine.  The growing-bath control needs a bath of k qubits, which
+                  the general engine cannot build past k ~ 10; the factorised path can.
+----------------------------------------------------------------------------------------------------------------------
+  k |  general chi_joint  factorised chi_joint     |diff|
+  2 |       0.9925061885          0.9925061885   1.67e-15
+  4 |       1.9029236978          1.9029236978   2.00e-15
+  6 |       2.9461351312          2.9461351312   3.55e-15
+  8 |       3.9407401037          3.9407401037   8.54e-12
+
+SELF-CHECKS  (a FAILING check voids every conclusion below it)
+----------------------------------------------------------------------------------------------------------------------
+   107 / 107 checks pass   -- ALL PASS
+
+TABLE A   FIXED ENVIRONMENT (nq bath qubits, held constant while k grows) versus the
+          POSITIVE CONTROL of a GROWING environment (one bath qubit per record).
+          Same engine, same lam, same beta, same time average -- only the venue's scale differs.
+          lam = 0.8, beta = 2.0, chi averaged over 25 times in [1,13].
+----------------------------------------------------------------------------------------------------------------------
+  k |                nq=1 |                nq=2 |                nq=3 |                nq=4 ||          GROWING nq=k
+    |     joint       sum |     joint       sum |     joint       sum |     joint       sum ||      joint        sum
+----------------------------------------------------------------------------------------------------------------------
+  2 |   0.50208   0.27282 |   0.99251   0.99251 |   0.99251   0.99251 |   0.99251   0.99251 ||    0.99251    0.99251
+  4 |   0.61017   0.18065 |   0.99434   0.57095 |   1.44373   1.21448 |   1.90292   1.90292 ||    1.90292    1.90292
+  6 |   0.66180   0.14584 |   1.27005   0.44267 |   1.40356   0.77299 |   1.90476   1.48136 ||    2.94614    2.94614
+  8 |   0.69468   0.12498 |   1.24019   0.38641 |   1.67927   0.64471 |   1.88037   1.06852 ||    3.94074    3.94074
+ 10 |   0.71803   0.11093 |   1.38892   0.35356 |   1.78776   0.57777 |   2.15608   0.94024 ||    4.85118    4.85118
+ 12 |   0.73550   0.10114 |   1.35771   0.31853 |   1.73102   0.51206 |   2.42994   0.83927 ||    5.84183    5.84183
+ 14 |   0.74897   0.09416 |   1.45952   0.30245 |   1.87976   0.47922 |   2.40007   0.78300 ||    6.86223    6.86223
+ 16 |   0.75959   0.08904 |   1.43090   0.27622 |   1.93309   0.45128 |   2.34631   0.71372 ||    7.85575    7.85575
+ 18 |   0.76812   0.08515 |   1.50691   0.26713 |   1.88578   0.41647 |   2.49505   0.68087 ||    8.80001    8.80001
+ 20 |   0.77506   0.08209 |   1.48187   0.24649 |   1.98758   0.40039 |   2.64716   0.65996 ||    9.79837    9.79837
+----------------------------------------------------------------------------------------------------------------------
+joint = chi the bath holds about the FULL k-bit record string;  sum = sum of the k individual chi
+bath capacity ceiling log2(dim bath) = nq bits: 1, 2, 3, 4 respectively (and k for the growing bath)
+
+TABLE B   IS THE WHOLE MORE OR LESS THAN THE SUM?  gap = chi_joint - sum_i chi_i,
+          and the SPREAD/CROWDED contrast (D-16: divide by the SPREAD control, never by 'alone').
+----------------------------------------------------------------------------------------------------------------------
+  k |  nq=3 joint  nq=3 sum       gap  joint/cap  chi/record |  crowded(nq=3,all site0)  crowded/spread ||  grow joint  grow gap
+----------------------------------------------------------------------------------------------------------------------
+  2 |     0.99251   0.99251   0.00000    0.33084     0.49625 |                  0.27282         0.27488 ||     0.99251  0.00e+00
+  4 |     1.44373   1.21448   0.22926    0.48124     0.30362 |                  0.18065         0.14875 ||     1.90292  0.00e+00
+  6 |     1.40356   0.77299   0.63058    0.46785     0.12883 |                  0.14584         0.18867 ||     2.94614  0.00e+00
+  8 |     1.67927   0.64471   1.03456    0.55976     0.08059 |                  0.12498         0.19386 ||     3.94074  0.00e+00
+ 10 |     1.78776   0.57777   1.20999    0.59592     0.05778 |                  0.11093         0.19199 ||     4.85118  0.00e+00
+ 12 |     1.73102   0.51206   1.21896    0.57701     0.04267 |                  0.10114         0.19752 ||     5.84183  0.00e+00
+ 14 |     1.87976   0.47922   1.40054    0.62659     0.03423 |                  0.09416         0.19649 ||     6.86223  0.00e+00
+ 16 |     1.93309   0.45128   1.48182    0.64436     0.02820 |                  0.08904         0.19730 ||     7.85575  0.00e+00
+ 18 |     1.88578   0.41647   1.46930    0.62859     0.02314 |                  0.08515         0.20444 ||     8.80001  0.00e+00
+ 20 |     1.98758   0.40039   1.58720    0.66253     0.02002 |                  0.08209         0.20502 ||     9.79837  0.00e+00
+----------------------------------------------------------------------------------------------------------------------
+
+TABLE C   D-17: VARY THE VENUE'S OWN SCALE.  Same measurement at three couplings.
+----------------------------------------------------------------------------------------------------------------------
+  k |                    lam=0.4 |                    lam=0.8 |                    lam=1.2 |
+    |   joint(nq3)     sum(nq3) |   joint(nq3)     sum(nq3) |   joint(nq3)     sum(nq3) |
+  2 |      0.47401      0.47401 |      0.99251      0.99251 |      1.21766      1.21766 |
+  4 |      0.84758      0.75456 |      1.44373      1.21448 |      1.63689      1.35257 |
+  6 |      0.97990      0.70453 |      1.40356      0.77299 |      1.54086      0.73489 |
+  8 |      1.15108      0.60556 |      1.67927      0.64471 |      1.87110      0.62240 |
+ 10 |      1.26762      0.53958 |      1.78776      0.57777 |      1.94323      0.54362 |
+ 12 |      1.32001      0.52983 |      1.73102      0.51206 |      1.84856      0.46088 |
+ 14 |      1.41314      0.49847 |      1.87976      0.47922 |      2.03805      0.43800 |
+ 16 |      1.47532      0.47861 |      1.93309      0.45128 |      2.06286      0.40464 |
+ 18 |      1.50721      0.46702 |      1.88578      0.41647 |      1.98836      0.36447 |
+ 20 |      1.56832      0.44576 |      1.98758      0.40039 |      2.12529      0.35841 |
+
+SCALING READ   (computed from Table A, not written in advance)
+----------------------------------------------------------------------------------------------------------------------
+  chi_joint, FIXED bath nq=1: SATURATING  linear-slope=+0.01282 rms_lin=0.03493 rms_log=0.01076 first-step=+0.10809 last-step=+0.00695 [k x10 -> value x1.54]
+  chi_sum  , FIXED bath nq=1: SATURATING  linear-slope=-0.00840 rms_lin=0.02901 rms_log=0.01311 first-step=-0.09217 last-step=-0.00306 [k x10 -> value x0.30]
+  chi_joint, FIXED bath nq=2: SATURATING  linear-slope=+0.02856 rms_lin=0.07181 rms_log=0.05313 first-step=+0.00184 last-step=-0.02504 [k x10 -> value x1.49]
+  chi_sum  , FIXED bath nq=2: SATURATING  linear-slope=-0.03018 rms_lin=0.12412 rms_log=0.06867 first-step=-0.42156 last-step=-0.02064 [k x10 -> value x0.25]
+  chi_joint, FIXED bath nq=3: GROWING(sublinear)  linear-slope=+0.04619 rms_lin=0.12466 rms_log=0.06593 first-step=+0.45123 last-step=+0.10181 [k x10 -> value x2.00]
+  chi_sum  , FIXED bath nq=3: SATURATING  linear-slope=-0.03965 rms_lin=0.11908 rms_log=0.10857 first-step=+0.22197 last-step=-0.01609 [k x10 -> value x0.40]
+  chi_joint, FIXED bath nq=4: GROWING(sublinear)  linear-slope=+0.06993 rms_lin=0.21299 rms_log=0.13681 first-step=+0.91042 last-step=+0.15212 [k x10 -> value x2.67]
+  chi_sum  , FIXED bath nq=4: SATURATING  linear-slope=-0.04952 rms_lin=0.24857 rms_log=0.28426 first-step=+0.91042 last-step=-0.02091 [k x10 -> value x0.66]
+  chi_joint, GROWING bath nq=k: LINEAR  linear-slope=+0.49041 rms_lin=0.02674 rms_log=0.87175 first-step=+0.91042 last-step=+0.99836 [k x10 -> value x9.87]
+  chi_sum  , GROWING bath nq=k: LINEAR  linear-slope=+0.49041 rms_lin=0.02674 rms_log=0.87175 first-step=+0.91042 last-step=+0.99836 [k x10 -> value x9.87]
+  chi PER RECORD, fixed bath nq=3: SATURATING  linear-slope=-0.02093 rms_lin=0.08795 rms_log=0.04813 first-step=-0.19263 last-step=-0.00312 [k x10 -> value x0.04]
+
+NOISE FLOOR.  The chi values are von Neumann entropies of matrices assembled from exact
+eigendecompositions; the reduced engine reproduces the full 2^n route to better than 1e-9
+(validation table).  Anything below 1e-9 is not distinguishable from zero here.
+Largest k reached for chi: k = 20 records.  What stopped it: nothing in this engine --
+the reduction removed the 2^n cost.  What stopped the FULL-MATRIX route is stated in script 2's
+validation table: n = 8 (dim 256, joint dim 2048) was the largest full evolution run here.

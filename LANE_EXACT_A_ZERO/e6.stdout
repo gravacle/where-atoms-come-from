@@ -1,0 +1,57 @@
+==============================================================================================================================
+E-6  GAUGE-INVARIANT CONTENT OF THE INTEGER LIFTS, AND THE QUANTISATION BOUND -- EXACT
+==============================================================================================================================
+
+(A)  MINIMUM OF EACH INTEGER LIFT OVER THE FULL STABILISER ORBIT OF THE PAIR (|S|^2 = 16 reps)
+------------------------------------------------------------------------------------------------------------------------------
+  n     pairs      exhaustive  pairs with sp_F2 = 0     of those, min I_unsigned > 0 min |I_signed| > 0         CTRL 1 / 0    
+  4     105        YES         45                       0                        0                          1 / 0 OK      
+  6     32385      YES         16065                    360                      0                          1 / 0 OK      
+  8     19701      sampled     10546                    2255                     389                        1 / 0 OK      
+  10    19701      sampled     12574                    2895                     113                        1 / 0 OK      
+  12    21945      sampled     18135                    1664                     792                        1 / 0 OK      
+
+  READ: 'min I_unsigned > 0' counts pairs whose integer intersection number CANNOT be gauged
+        away.  A zero in that column means the integer lift's whole gauge-invariant content is
+        its F_2 reduction, i.e. the intersection number carries nothing the pairing does not.
+
+==============================================================================================================================
+(B)  QUANTISATION.  Exhaustive over words and over integer-coefficient polynomials.
+------------------------------------------------------------------------------------------------------------------------------
+  n     words tested   values of Tr(Pi W)/Tr(Pi)      min NON-ZERO modulus^2 seen    any value with 0<|v|<1? 
+  4     40000          {-6, -5, -4, -3, -2, -1, 0, +1, +2...} 1                              NO -- none exists       
+  6     40000          {-5, -4, -3, -2, -1, 0, +1, +2, +3...} 1                              NO -- none exists       
+  8     40000          {-6, -5, -4, -3, -2, -1, 0, +1, +2...} 1                              NO -- none exists       
+  10    40000          {-5, -4, -3, -2, -1, 0, +1, +2, +3...} 1                              NO -- none exists       
+  12    40000          {-6, -5, -4, -3, -2, -1, 0, +1, +2...} 1                              NO -- none exists       
+  16    40000          {-6, -5, -4, -3, -2, -1, 0, +1, +2...} 1                              NO -- none exists       
+  20    40000          {-5, -4, -3, -2, -1, 0, +1, +2, +3...} 1                              NO -- none exists       
+
+  EXACT ARGUMENT, valid at every n and every word length: a product of Paulis is a single
+  signed Pauli i^m W(c); Tr(Pi i^m W(c))/Tr(Pi) is 0 when c is not a stabiliser and a fourth
+  root of unity when it is.  Linearity then puts every Gaussian-integer-coefficient polynomial
+  scalar in Z[i].  Z[i] has NO element of modulus strictly between 0 and 1.
+  no counterexample found in the sweep above: True
+
+==============================================================================================================================
+(C)  THE LANE'S CLASSIFICATION LEDGER
+==============================================================================================================================
+  quantity                                       class        gauge-inv?    basis of the classification                   
+  --------------------------------------------------------------------------------------------------------------------------
+  sp_F2(R_a,R_a)  [CTRL-Z]                       Z            yes           EXACT PROOF: sp(a,a)=2(x.z) = 0 mod 2, every n
+  sp_F2(R_a,R_b), conjugate pair [CTRL-NZ]       NZ           yes           EXACT: = 1 at every n tested, 4..64           
+  sp_F2 pairing matrix rank                      NZ           yes           EXACT: full rank 2k at every n tested, 4..64 (C-34)
+  I_unsigned(R_a,R_b)                            NZ*          NO            EXACT: non-zero, but min over the gauge orbit is 0
+  I_signed(R_a,R_b)                              NZ*          NO            EXACT: non-zero, but min |.| over the gauge orbit is 0
+  I_overlap(R_a,R_b)                             NZ*          NO            EXACT: representative-dependent               
+  [R_a,R_b] as an exact matrix                   Z/NZ         yes           EXACT: 0 iff sp=0; else ||.||^2 = 4*2^n exactly
+  [[R_a,R_b],R_c] associator                     Z/NZ         yes           EXACT: !=0 iff sp(a,b)=1 and sp(a^b,c)=1      
+  Jacobi cyclic sum [CTRL-Z]                     Z            yes           EXACT PROOF: identity in any associative algebra
+  tau = Tr(Pi RaRbRc)/Tr(Pi)                     Z/NZ         NO (sign)     EXACT: 0 unless closed; else a 4th root of unity
+  Im tau                                         Z/NZ         NO (sign)     EXACT: !=0 iff sp_ab+sp_bc+sp_ac is ODD       
+  tau^2 and K=(RaRbRc)^2                         NZ           yes           EXACT: = (-1)^(sp_ab+sp_bc+sp_ac); pairwise-determined
+  cross-block sp / commutator / assoc / tau      Z            yes           EXACT: 0 at EVERY separation d>=1, disjoint support
+  [A_h,R] on D(G), G abelian                     Z            yes           EXACT PROOF: A_h = I for every abelian G, every |G|
+  [A_h,R] on D(D_4), D(Q_8)                      NZ           yes           EXACT: ||.||_F^2 = 352/9 for the witness record
+  commutant gap on D(G) non-abelian              NZ           yes           EXACT: 1384 - 736 = 648 on both order-8 groups
+==============================================================================================================================

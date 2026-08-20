@@ -1,0 +1,46 @@
+======================================================================================================================
+V3  N-CONFOUNDING CHECK.  Record count held FIXED while the carrier grows.
+======================================================================================================================
+
+  the two families the lane used:   [[n,n-2,2]]: N = n-2   |   m x [[4,2,2]]: N = 2m, n = 4m
+  in both, N is an affine function of n.  So on the lane's data alone, 'linear in N' and
+  'linear in n' are the SAME column.  Separating them:
+
+  n    k=n-2 | RECORDS USED N (held fixed) | wt-2 logicals 3*C(n,2) | Wflip_tot for the N used | log2 dim of the SECTOR the N records span | code dim 2^k
+----------------------------------------------------------------------------------------------------------------------
+  4        2 |                           2 |                     18 |                        4 |                                         2 | 4
+  6        4 |                           2 |                     45 |                        4 |                                         2 | 16
+  8        6 |                           2 |                     84 |                        4 |                                         2 | 64
+  10       8 |                           2 |                    135 |                        4 |                                         2 | 256
+  12      10 |                           2 |                    198 |                        4 |                                         2 | 1024
+  16      14 |                           2 |                    360 |                        4 |                                         2 | 16384
+  24      22 |                           2 |                    828 |                        4 |                                         2 | 4194304
+  32      30 |                           2 |                   1488 |                        4 |                                         2 | 1073741824
+  6        4 |                           4 |                     45 |                        8 |                                         4 | 16
+  8        6 |                           4 |                     84 |                        8 |                                         4 | 64
+  10       8 |                           4 |                    135 |                        8 |                                         4 | 256
+  12      10 |                           4 |                    198 |                        8 |                                         4 | 1024
+  16      14 |                           4 |                    360 |                        8 |                                         4 | 16384
+  24      22 |                           4 |                    828 |                        8 |                                         4 | 4194304
+  32      30 |                           4 |                   1488 |                        8 |                                         4 | 1073741824
+----------------------------------------------------------------------------------------------------------------------
+
+READ (filled from the table above, not in advance):
+  at FIXED record count N, these lane rows still grow with n:
+    - 'number of weight-2 logical operators', which the lane reports as 3*C(N+2,2) and calls
+      QUADRATIC IN N.  It is 3*C(n,2): with N held at 2 it runs [18, 45, 84, 135, 198, 360] while N never changes.
+    - 'code-space dimension 2^N' and 'number of non-identity records 4^N-1', which the lane
+      calls exponential in N.  Both are really 2^(n-2) and 4^(n-2)-1: the dimension of the
+      whole code, not of the record sector actually used.  At N = 2 they run [4, 16, 64, 256, 1024, 16384]
+  these rows do NOT move at fixed N, so they do track the record count:
+    - total minimum flip-only writer weight = 2N (constant [4] at N=2, [8] at N=4)
+    - the pairing/charge/disturbance controls, all equal to N by construction.
+  CONSEQUENCE: 3 of the lane's 11 (G) rows are functions of the QUBIT COUNT, not of the record
+  count, and two of those three carry the lane's only super-linear growth laws.  The triage's
+  category for them (not extensive) is unchanged, but the growth law attributed to N is not a
+  growth law in N.
+
+  Note also that the lane's disjoint-cluster additivity test inherits the same tie: 'two clusters
+  of N/2 records' is realised as two blocks of qubits, so 'doubling the matter' doubles the
+  carrier as well.  The only place N is genuinely free of n is the reduced chi engine, where k
+  is a parameter -- and that is the one place the lane's answer is DECAY, not growth.

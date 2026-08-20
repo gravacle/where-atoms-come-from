@@ -26,7 +26,7 @@ control must therefore give IDENTICAL chi at equal k.  That is verified on the f
 not merely asserted, and it means chi cannot discriminate a collective carrier from k
 independent ones.
 """
-import sys, itertools, time
+import sys, itertools, time, json, os
 from math import comb, log2
 sys.path.insert(0, "/Users/bgm/MB Work/where-atoms-come-from/model")
 sys.path.insert(0, "/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_C_ACCUM")
@@ -57,6 +57,35 @@ def vN(r):
     return float(-(e * np.log2(e)).sum())
 
 # ================================================================= REDUCED ENGINE
+def reduced_factorised(k, sites, nq, lam, beta=BETA, times=TIMES):
+    """The ONE-RECORD-PER-SITE case, done site by site.  H_B is a sum of single-qubit terms and
+       each record couples to its own qubit, so the bath state is a product across qubits for
+       EVERY sign vector; entropies add and the sign bits are independent, hence
+       chi_joint = sum_j chi_j exactly.  This is not an approximation -- it is checked against
+       the general engine below -- and it is what makes a bath of nq = k qubits reachable at all
+       (the general engine would need a 2^k x 2^k bath)."""
+    assert len(set(sites)) == len(sites) == k, "factorised path needs one record per site"
+    E = energies_for(nq)
+    chi = []
+    for j in sites:
+        env1 = Environment(nq=1, energies=(E[j],), beta=beta)   # THIS site's own energy
+        rth = env1.thermal()
+        vals = []
+        for t in times:
+            sig = {}
+            for s in (+1, -1):
+                K = env1.HB + lam * s * env1.site[0]
+                w_, V_ = np.linalg.eigh(K)
+                ph = np.exp(-1j * w_ * t)
+                M = V_.conj().T @ rth @ V_
+                sig[s] = V_ @ (ph[:, None] * M * ph.conj()[None, :]) @ V_.conj().T
+            av = 0.5 * sig[+1] + 0.5 * sig[-1]
+            vals.append(max(vN(av) - 0.5 * vN(sig[+1]) - 0.5 * vN(sig[-1]), 0.0))
+        chi.append(float(np.mean(vals)))
+    return dict(chi_joint=float(sum(chi)), chi_each=chi, chi_sum=float(sum(chi)),
+                chi_site={j: chi[i] for i, j in enumerate(sites)},
+                kj=[1] * nq, cap=float(nq), factorised=True)
+
 def reduced(k, sites, nq, lam, beta=BETA, times=TIMES):
     """EXACT chi for k records read by a bath of nq qubits, record i coupling to site sites[i].
        Returns time-averaged chi_joint, per-record chi, and their sum."""
@@ -189,6 +218,17 @@ def full_reference(kind, par, nq, lam, times, checks):
     checks.append((tag, "joint record basis is unitary", CHECKS_local < 1e-8,
                    f"||V+V - I|| = {CHECKS_local:.2e}"))
     bounds = np.cumsum([0] + [cur[l].shape[1] for l in labs])
+    # CACHE only the expensive full-space evolution; every CHECK above is recomputed every run.
+    ckey = f"{kind}|{par}|{nq}|{lam}|{len(times)}|{times[0]}|{times[-1]}"
+    cpath = "/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_C_ACCUM/s2_fullref_cache.json"
+    cache = {}
+    if os.path.exists(cpath):
+        try: cache = json.load(open(cpath))
+        except Exception: cache = {}
+    if ckey in cache:
+        c = cache[ckey]
+        return dict(k=k, n=n, dim=dim, chi_joint=c["cj"], chi_each=c["ce"],
+                    chi_partner=c["cw"], chi_sum=float(sum(c["ce"])), sites=sites, cached=True)
     Utj = np.kron(Vall, np.eye(nB)).conj().T @ Ut          # done once
     cj, ce, cw = [], [[] for _ in range(k)], [[] for _ in range(k)]
     for t in times:
@@ -210,10 +250,13 @@ def full_reference(kind, par, nq, lam, times, checks):
         assert abs(ptot - 1.0) < 1e-8, f"sector probabilities must sum to 1, got {ptot}"
         av = sum(p * rb for p, rb in blocks)
         cj.append(max(vN(av) - sum(p * vN(rb) for p, rb in blocks), 0.0))
-    return dict(k=k, n=n, dim=dim, chi_joint=float(np.mean(cj)),
-                chi_each=[float(np.mean(c)) for c in ce],
-                chi_partner=[float(np.mean(c)) for c in cw],
-                chi_sum=float(sum(np.mean(c) for c in ce)), sites=sites)
+    res = dict(k=k, n=n, dim=dim, chi_joint=float(np.mean(cj)),
+               chi_each=[float(np.mean(c)) for c in ce],
+               chi_partner=[float(np.mean(c)) for c in cw],
+               chi_sum=float(sum(np.mean(c) for c in ce)), sites=sites, cached=False)
+    cache[ckey] = dict(cj=res["chi_joint"], ce=res["chi_each"], cw=res["chi_partner"])
+    json.dump(cache, open(cpath, "w"), indent=1)
+    return res
 
 # ================================================================= RUN
 def run():
@@ -267,6 +310,20 @@ def run():
     P("      it sees only k, the site map and the bath.  Every chi table below therefore reports")
     P("      one column that IS both, and the discriminating control is the BATH-SCALING contrast.")
 
+    P("")
+    P("VALIDATION 3  --  the FACTORISED path (one record per bath qubit) against the general")
+    P("                  reduced engine.  The growing-bath control needs a bath of k qubits, which")
+    P("                  the general engine cannot build past k ~ 10; the factorised path can.")
+    P("-" * 118)
+    P(f"{'k':>3} | {'general chi_joint':>18} {'factorised chi_joint':>21} {'|diff|':>10}")
+    for k in (2, 4, 6, 8):
+        gg = reduced(k, list(range(k)), k, 0.8)
+        ff = reduced_factorised(k, list(range(k)), k, 0.8)
+        d = abs(gg["chi_joint"] - ff["chi_joint"])
+        CHECKS.append((f"k={k}", "factorised path reproduces the general reduced engine", d < 1e-9,
+                       f"|diff| = {d:.3e}"))
+        P(f"{k:>3} | {gg['chi_joint']:>18.10f} {ff['chi_joint']:>21.10f} {d:>10.2e}")
+
     # ---------------------------------------------------------------- SELF-CHECKS
     P("")
     P("SELF-CHECKS  (a FAILING check voids every conclusion below it)")
@@ -298,7 +355,7 @@ def run():
             r = reduced(k, [i % nq for i in range(k)], nq, 0.8)
             A[(k, nq)] = r
             row += f" {r['chi_joint']:>9.5f}{r['chi_sum']:>10.5f} |"
-        g = reduced(k, list(range(k)), k, 0.8)
+        g = reduced_factorised(k, list(range(k)), k, 0.8)
         A[(k, "grow")] = g
         row += f"| {g['chi_joint']:>10.5f}{g['chi_sum']:>11.5f}"
         P(row)

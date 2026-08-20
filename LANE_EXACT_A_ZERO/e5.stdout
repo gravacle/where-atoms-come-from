@@ -1,0 +1,157 @@
+==============================================================================================================================
+E-5  SEPARATION, ADDITIVITY, EXTENSIVITY -- EXACT
+==============================================================================================================================
+
+S0   REPRESENTATIVE AUDIT OF THE INTEGER INTERSECTION LIFTS  (governs how E-1 may be read).
+     For each record pair, sweep a -> a xor s over the whole stabiliser group and report the
+     EXACT set of values each lift takes.  A lift with more than one value on that orbit is a
+     property of the REPRESENTATIVE, not of the record.
+------------------------------------------------------------------------------------------------------------------------------
+  n     quantity                       orbit size       values over the orbit (exact)  record observable?            
+  4     sp_F2(a,b)                     16               [0]                            YES -- a record observable    
+  4     I_unsigned(a,b)                16               [0, 2]                         NO -- representative-dependent
+  4     I_signed(a,b)                  16               [-2, 0, 2]                     NO -- representative-dependent
+  4     I_overlap(a,b)                 16               [1, 2, 4]                      NO -- representative-dependent
+  6     sp_F2(a,b)                     16               [0]                            YES -- a record observable    
+  6     I_unsigned(a,b)                16               [0, 2, 4]                      NO -- representative-dependent
+  6     I_signed(a,b)                  16               [-4, -2, 0, 2, 4]              NO -- representative-dependent
+  6     I_overlap(a,b)                 16               [1, 2, 3, 4, 6]                NO -- representative-dependent
+  8     sp_F2(a,b)                     16               [0]                            YES -- a record observable    
+  8     I_unsigned(a,b)                16               [0, 2, 6]                      NO -- representative-dependent
+  8     I_signed(a,b)                  16               [-6, -4, -2, 0, 2, 4, 6]       NO -- representative-dependent
+  8     I_overlap(a,b)                 16               [1, 2, 5, 6, 8]                NO -- representative-dependent
+  10    sp_F2(a,b)                     16               [0]                            YES -- a record observable    
+  10    I_unsigned(a,b)                16               [0, 2, 8]                      NO -- representative-dependent
+  10    I_signed(a,b)                  16               [-8, -6, -2, 0, 2, 6, 8]       NO -- representative-dependent
+  10    I_overlap(a,b)                 16               [1, 2, 7, 8, 10]               NO -- representative-dependent
+
+  VERDICT PER QUANTITY (over n = 4,6,8,10):
+     sp_F2(a,b)             invariant at every n tested: True
+     I_unsigned(a,b)        invariant at every n tested: False
+     I_signed(a,b)          invariant at every n tested: False
+     I_overlap(a,b)         invariant at every n tested: False
+
+==============================================================================================================================
+S1/S2  EVERY RECORD SCALAR AS A FUNCTION OF SEPARATION BETWEEN BLOCKS -- EXACT
+------------------------------------------------------------------------------------------------------------------------------
+  n0    m    n      sep d  sp_F2         I_unsigned    I_signed      ||[Ra,Rb]||^2/2^n ||assoc||^2/2^n tau (3 blocks) 
+  4     2    8      0      [0, 1]        [0, 1, 2]     [-2, -1, 0, 1, 2] [0, 4]          [0]             {0}            
+  4     2    8      1      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     3    12     0      [0, 1]        [0, 1, 2]     [-2, -1, 0, 1, 2] [0, 4]          [0]             {0}            
+  4     3    12     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     3    12     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     4    16     0      [0, 1]        [0, 1, 2]     [-2, -1, 0, 1, 2] [0, 4]          [0]             {0}            
+  4     4    16     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     4    16     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     4    16     3      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     5    20     0      [0, 1]        [0, 1, 2]     [-2, -1, 0, 1, 2] [0, 4]          [0]             {0}            
+  4     5    20     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     5    20     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     5    20     3      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     5    20     4      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     6    24     0      [0, 1]        [0, 1, 2]     [-2, -1, 0, 1, 2] [0, 4]          [0]             {0}            
+  4     6    24     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     6    24     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     6    24     3      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     6    24     4      [0]           [0]           [0]           [0]             [0]             {0}            
+  4     6    24     5      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     2    12     0      [0, 1]        [0, 1, 2, 3, 4] [-4, -3, -2, -1, 0, 1, 2, 3, 4] [0, 4]          [0]             {0}            
+  6     2    12     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     3    18     0      [0, 1]        [0, 1, 2, 3, 4] [-4, -3, -2, -1, 0, 1, 2, 3, 4] [0, 4]          [0]             {0}            
+  6     3    18     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     3    18     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     4    24     0      [0, 1]        [0, 1, 2, 3, 4] [-4, -3, -2, -1, 0, 1, 2, 3, 4] [0, 4]          [0]             {0}            
+  6     4    24     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     4    24     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     4    24     3      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     5    30     0      [0, 1]        [0, 1, 2, 3, 4] [-4, -3, -2, -1, 0, 1, 2, 3, 4] [0, 4]          [0]             {0}            
+  6     5    30     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     5    30     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     5    30     3      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     5    30     4      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     6    36     0      [0, 1]        [0, 1, 2, 3, 4] [-4, -3, -2, -1, 0, 1, 2, 3, 4] [0, 4]          [0]             {0}            
+  6     6    36     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     6    36     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     6    36     3      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     6    36     4      [0]           [0]           [0]           [0]             [0]             {0}            
+  6     6    36     5      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     2    16     0      [0, 1]        [0, 1, 2, 3, 4, 5, 6] [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6] [0, 4]          [0]             {0}            
+  8     2    16     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     3    24     0      [0, 1]        [0, 1, 2, 3, 4, 5, 6] [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6] [0, 4]          [0]             {0}            
+  8     3    24     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     3    24     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     4    32     0      [0, 1]        [0, 1, 2, 3, 4, 5, 6] [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6] [0, 4]          [0]             {0}            
+  8     4    32     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     4    32     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     4    32     3      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     5    40     0      [0, 1]        [0, 1, 2, 3, 4, 5, 6] [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6] [0, 4]          [0]             {0}            
+  8     5    40     1      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     5    40     2      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     5    40     3      [0]           [0]           [0]           [0]             [0]             {0}            
+  8     5    40     4      [0]           [0]           [0]           [0]             [0]             {0}            
+
+==============================================================================================================================
+S3   ADDITIVITY OVER DISJOINT REGIONS -- is the pairing matrix EXACTLY block-diagonal, and is
+     every record total EXACTLY the sum of the per-block totals?
+------------------------------------------------------------------------------------------------------------------------------
+  n0    m    n      #records  F_2 rank       sum_{i<j} sp     sum per block      exactly additive?      off-block entries !=0
+  4     2    8      8         8              4                4                  YES (exact)            0                   
+  4     3    12     12        12             6                6                  YES (exact)            0                   
+  4     4    16     16        16             8                8                  YES (exact)            0                   
+  4     5    20     20        20             10               10                 YES (exact)            0                   
+  4     6    24     24        24             12               12                 YES (exact)            0                   
+  6     2    12     16        16             8                8                  YES (exact)            0                   
+  6     3    18     24        24             12               12                 YES (exact)            0                   
+  6     4    24     32        32             16               16                 YES (exact)            0                   
+  6     5    30     40        40             20               20                 YES (exact)            0                   
+  6     6    36     48        48             24               24                 YES (exact)            0                   
+  8     2    16     24        24             12               12                 YES (exact)            0                   
+  8     3    24     36        36             18               18                 YES (exact)            0                   
+  8     4    32     48        48             24               24                 YES (exact)            0                   
+  8     5    40     60        60             30               30                 YES (exact)            0                   
+
+==============================================================================================================================
+S4   EXTENSIVITY: which EXACTLY-NON-ZERO totals grow with the number of blocks, and how?
+------------------------------------------------------------------------------------------------------------------------------
+  n0    m    #recs    k (logical) sum_{i<j} sp   max single |sp|    law in m (exact fit-free)
+  4     1    4        2           2              1                  -                     
+  4     2    8        4           4              1                  exactly +2 per added block
+  4     3    12       6           6              1                  exactly +2 per added block
+  4     4    16       8           8              1                  exactly +2 per added block
+  4     5    20       10          10             1                  exactly +2 per added block
+  4     6    24       12          12             1                  exactly +2 per added block
+  6     1    8        4           4              1                  -                     
+  6     2    16       8           8              1                  exactly +4 per added block
+  6     3    24       12          12             1                  exactly +4 per added block
+  6     4    32       16          16             1                  exactly +4 per added block
+  6     5    40       20          20             1                  exactly +4 per added block
+  6     6    48       24          24             1                  exactly +4 per added block
+  8     1    12       6           6              1                  -                     
+  8     2    24       12          12             1                  exactly +6 per added block
+  8     3    36       18          18             1                  exactly +6 per added block
+  8     4    48       24          24             1                  exactly +6 per added block
+  8     5    60       30          30             1                  exactly +6 per added block
+
+==============================================================================================================================
+S5   D-17, VARY THE VENUE'S OWN SCALE.  Inside ONE block, does the pairing of a conjugate pair
+     fall off as the block grows?  C-38 says disturbance is site-blind; here it is exact.
+------------------------------------------------------------------------------------------------------------------------------
+  n0     k         CTRL-NZ sp(X0,Z0) CTRL-Z sp(X0,X0)       ||[R_X0,R_Z0]||^2 / 2^n  falls off with n0?  
+  4      2         1                0                      4                        NO -- exactly constant
+  6      4         1                0                      4                        NO -- exactly constant
+  8      6         1                0                      4                        NO -- exactly constant
+  10     8         1                0                      4                        NO -- exactly constant
+  12     10        1                0                      4                        NO -- exactly constant
+  14     12        1                0                      4                        NO -- exactly constant
+  16     14        1                0                      4                        NO -- exactly constant
+  20     18        1                0                      4                        NO -- exactly constant
+  24     22        1                0                      4                        NO -- exactly constant
+
+==============================================================================================================================
+  E-5 SUMMARY
+==============================================================================================================================
+  lift sp_F2(a,b)             representative-invariant at every n tested: True
+  lift I_unsigned(a,b)        representative-invariant at every n tested: False
+  lift I_signed(a,b)          representative-invariant at every n tested: False
+  lift I_overlap(a,b)         representative-invariant at every n tested: False
+==============================================================================================================================

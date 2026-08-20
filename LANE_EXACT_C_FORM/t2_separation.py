@@ -126,7 +126,7 @@ print("="*104)
 print("T2(c)  THE SEPARATION SCAN.  NEG CONTROL / TEST / POS CONTROLS IN ONE TABLE")
 print("="*104)
 XI = 2.0
-for n, nq, lams in ((8, 2, (0.4, 0.8, 1.2)), (10, 2, (0.4, 0.8, 1.2)), (12, 1, (0.8,))):
+for n, nq, lams in ((8, 2, (0.4, 0.8, 1.2)), (10, 2, (0.4, 0.8, 1.2))):
     reps, idx, d = carrier(n)
     stab = stab_nn2(n); S, L, _ = derived_logical_span(stab, n)
     env = Environment(nq=nq, energies=(1.0,)*nq, beta=2.0)
@@ -174,6 +174,32 @@ for n, nq, lams in ((8, 2, (0.4, 0.8, 1.2)), (10, 2, (0.4, 0.8, 1.2)), (12, 1, (
                 res = np.log(y[m2]) - np.polyval(cfit, sepv[m2])
                 print(f"    POS2 log-linear fit: slope {cfit[0]:.6f} (imposed exp weight gives"
                       f" 2/xi = {2/XI:.6f} for chi ~ w^2), max |residual| {np.abs(res).max():.3e}")
+
+print()
+print("="*104)
+print("T2(d)  D-17: VARY THE VENUE'S OWN SCALE.  SAME QUANTITY AT n = 8, 10, 12")
+print("="*104)
+print("  A = X0X1, B = X2X3 (separation 1), both at bath site 0, bath nq=1, lam=0.8.")
+print("  The code dimension goes 64 -> 256 -> 1024 and the number of records goes 6 -> 8 -> 10.")
+print(f"  {'n':>4}{'code dim':>10}{'k=n-2':>7}{'chi_A alone':>20}{'chi_A crowded':>20}{'interaction':>20}")
+inv = []
+for nv in (8, 10, 12):
+    rv, iv = code_reps(nv); dv = len(rv)
+    sv = stab_nn2(nv); Sv, Lv, _ = derived_logical_span(sv, nv)
+    ev = Environment(nq=1, energies=(1.0,), beta=2.0)
+    stv = np.eye(dv, dtype=complex)/dv; Hrv = -2.0*np.eye(dv, dtype=complex)
+    _, Ma, _ = rec("X", 0, 1, nv, rv, iv, sv, Sv, Lv)
+    _, Mb, _ = rec("X", 2, 3, nv, rv, iv, sv, Sv, Lv)
+    a = chi_avg(Hrv, ev, [(Ma,0)], 0.8, [Ma], stv)[0]
+    c = chi_avg(Hrv, ev, [(Ma,0),(Mb,0)], 0.8, [Ma], stv)[0]
+    inv.append((nv, dv, a, c, a-c))
+    print(f"  {nv:>4}{dv:>10}{nv-2:>7}{a:>20.15f}{c:>20.15f}{a-c:>20.15f}")
+print(f"  SPREAD across n: alone {max(r[2] for r in inv)-min(r[2] for r in inv):.3e}   "
+      f"crowded {max(r[3] for r in inv)-min(r[3] for r in inv):.3e}   "
+      f"interaction {max(r[4] for r in inv)-min(r[4] for r in inv):.3e}")
+check("the record-level interaction does not know the size of the carrier",
+      max(r[4] for r in inv)-min(r[4] for r in inv) < 1e-13,
+      f"  spread {max(r[4] for r in inv)-min(r[4] for r in inv):.3e}")
 
 print()
 print("="*104)

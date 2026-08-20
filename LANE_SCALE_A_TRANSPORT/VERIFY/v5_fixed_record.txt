@@ -1,0 +1,21 @@
+==============================================================================================================================
+V5   TRANSPORT-FIXED RECORD: INDEPENDENT CONSTRUCTION, ALL FOUR CLAUSES, AND IS IT SURPRISING?
+==============================================================================================================================
+
+  carrier        dim  ||R-Rd||  ||R^2-I||  ||[H,R]||  max|Tr P_E R|  non-scalar?  max||[A_h,R]||  CONTROL generic  A_h = I on E(-2)?
+  D_4             64   0.0e+00    1.6e-14    5.9e-15        5.6e-15         True        1.11e-14           8.9730       YES  3.6e-15
+  Q_8             64   0.0e+00    1.6e-14    5.9e-15        5.6e-15         True        1.11e-14           8.9730       YES  3.6e-15
+  D_8            256   0.0e+00    5.7e-14    2.2e-14        9.1e-14         True        1.34e+01          20.4601       YES  1.1e-14
+  M_4(2)         256   0.0e+00    4.6e-14    2.2e-14        3.6e-14         True        3.95e-14          17.9101       YES  1.3e-14
+  Pauli16        256   0.0e+00    5.7e-14    3.1e-14        5.2e-14         True        5.07e-14          18.0362       YES  1.7e-14
+  SD_16          256   0.0e+00    6.2e-14    2.3e-14        1.1e-13         True        1.42e+01          20.4702       YES  1.1e-14
+
+  'A_h = I on E(-2)?' prints max_h ||A_h P_(-2) A_h^dag - P_(-2)||; but the sharper fact is
+  the transport CHARACTER on the ground space, chi_{E(-2)}(h), which the census gives in
+  closed form as the CONSTANT m for every h -- i.e. E(-2) carries the trivial rep with
+  multiplicity m, so A_h restricted to E(-2) is literally the identity operator:
+    D_4          dim E(-2) =    22   chi_(-2)(h) over all h in G: [22.0]   -> A_h|E(-2) = I : True
+    D_8          dim E(-2) =    46   chi_(-2)(h) over all h in G: [46.0]   -> A_h|E(-2) = I : True
+    D_16         dim E(-2) =   142   chi_(-2)(h) over all h in G: [142.0]   -> A_h|E(-2) = I : True
+    ES_2^(1+4)   dim E(-2) =   184   chi_(-2)(h) over all h in G: [184.0]   -> A_h|E(-2) = I : True
+    D_32         dim E(-2) =   526   chi_(-2)(h) over all h in G: [526.0]   -> A_h|E(-2) = I : True

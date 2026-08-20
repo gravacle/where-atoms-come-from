@@ -141,19 +141,22 @@ say("-" * 126)
 
 MAXLEN = 8
 
-
-def all_words(maxlen):
-    ws = []
-    for L in range(1, maxlen + 1):
-        for w in iproduct((0, 1, 2), repeat=L):
-            ws.append(w)
-    return ws
-
-
-WORDS = all_words(MAXLEN)
-GAUGE_INV = [w for w in WORDS if all(w.count(t) % 2 == 0 for t in (0, 1, 2))]
+# Words are stored as (parent_index, last_letter) so no tuple slicing happens in the inner loop.
+# WORDS[i] = (parent, letter, length, counts).  Index 0 is the empty word.
+WORDS = [(-1, -1, 0, (0, 0, 0))]
+level = [0]
+for L in range(1, MAXLEN + 1):
+    nxt = []
+    for pi in level:
+        pc = WORDS[pi][3]
+        for t in (0, 1, 2):
+            cc = list(pc); cc[t] += 1
+            WORDS.append((pi, t, L, tuple(cc)))
+            nxt.append(len(WORDS) - 1)
+    level = nxt
+GAUGE_INV = [i for i in range(1, len(WORDS)) if all(c % 2 == 0 for c in WORDS[i][3])]
 say("  words of length 1..%d : %d      of these GAUGE-INVARIANT (even degree in each letter): %d"
-    % (MAXLEN, len(WORDS), len(GAUGE_INV)))
+    % (MAXLEN, len(WORDS) - 1, len(GAUGE_INV)))
 
 
 def dependency_pattern(a, b, c):
@@ -173,70 +176,72 @@ def signature(a, b, c):
     return ((sp_i(a, b), sp_i(b, c), sp_i(a, c)), dependency_pattern(a, b, c))
 
 
+def word_profile(a, b, c, S):
+    """EXACT Tr(Pi W)/Tr(Pi) for every gauge-invariant word W, as a tuple."""
+    Q = [qc_from(a), qc_from(b), qc_from(c)]
+    vals = [None] * len(WORDS)
+    vals[0] = qc_from((0, 0))
+    for i in range(1, len(WORDS)):
+        pi, t, _, _ = WORDS[i]
+        vals[i] = qc_mul(vals[pi], Q[t])
+    return tuple(qc_ground_trace_ratio(vals[i], S) for i in GAUGE_INV)
+
+
+sepsummary = {}
 for n in (4, 6, 8):
     gens, S = carrier(n)
     rng = random.Random(31337 + n)
-    # a pool of record classes
+    # the record group has EXACTLY 2^{2k} classes; never ask the sampler for more than exist
+    target = min(300, 2 ** len(gens))
     reps = {(0, 0)}
     for g in gens:
         reps.add(g)
-    while len(reps) < 400:
+    guard = 0
+    while len(reps) < target and guard < 200000:
         v = (0, 0)
         for g in gens:
             if rng.random() < 0.5:
                 v = xr_i(v, g)
         reps.add(v)
+        guard += 1
+    exhaustive_classes = (len(reps) == 2 ** len(gens))
     reps = sorted(reps - {(0, 0)})
-    # collect triples grouped by signature
     bysig = {}
-    for _ in range(3000):
+    for _ in range(2000):
         a = rng.choice(reps); b = rng.choice(reps); c = rng.choice(reps)
         bysig.setdefault(signature(a, b, c), []).append((a, b, c))
     say("")
-    say("  n = %d   record classes sampled %d   distinct (sp-matrix, dependency) signatures found %d"
-        % (n, len(reps), len(bysig)))
-    say("  %-46s %-9s %-38s %-22s"
-        % ("signature ((sp_ab,sp_bc,sp_ac), dependency)", "#triples", "gauge-invariant words that SEPARATE",
-           "all word values seen"))
+    say("  n = %d   record classes used %d of 2^%d %s   distinct (sp-matrix, dependency) signatures %d"
+        % (n, len(reps), len(gens), "(EXHAUSTIVE)" if exhaustive_classes else "(fixed-seed sample)",
+           len(bysig)))
+    say("  %-52s %-10s %-40s" % ("signature ((sp_ab,sp_bc,sp_ac), dependency bits)", "#triples",
+                                 "gauge-invariant words that SEPARATE them"))
     separating_total = 0
     seen_values = set()
     for sig in sorted(bysig):
-        trips = bysig[sig][:12]
+        trips = bysig[sig][:6]
         if len(trips) < 2:
             continue
-        # exact word scalars for every triple
-        profiles = []
-        for (a, b, c) in trips:
-            Q = [qc_from(a), qc_from(b), qc_from(c)]
-            prof = []
-            # build words incrementally by length using a prefix cache
-            cache = {(): qc_from((0, 0))}
-            for w in WORDS:
-                pre = cache.get(w[:-1])
-                cur = qc_mul(pre, Q[w[-1]])
-                cache[w] = cur
-            for w in GAUGE_INV:
-                v = qc_ground_trace_ratio(cache[w], S)
-                prof.append(v)
-                seen_values.add(v)
-            profiles.append(tuple(prof))
-        sep = [i for i in range(len(GAUGE_INV))
-               if len({p[i] for p in profiles}) > 1]
+        profiles = [word_profile(a, b, c, S) for (a, b, c) in trips]
+        for p in profiles:
+            seen_values.update(p)
+        sep = [i for i in range(len(GAUGE_INV)) if len({p[i] for p in profiles}) > 1]
         separating_total += len(sep)
-        say("  %-46s %-9d %-38s %-22s"
+        say("  %-52s %-10d %-40s"
             % (str(sig), len(bysig[sig]),
-               ("NONE" if not sep else "**%d words separate**" % len(sep)),
-               ""))
-    say("  n=%d : total gauge-invariant words that separate same-signature triples = %d"
+               "NONE" if not sep else "**%d of %d words separate**" % (len(sep), len(GAUGE_INV))))
+    say("  n=%d : TOTAL gauge-invariant words separating same-signature triples = %d"
         % (n, separating_total))
-    say("  n=%d : the complete set of values any word scalar took = %s"
+    say("  n=%d : the complete value set any word scalar took = %s"
         % (n, sorted(gz(v) for v in seen_values)))
+    sepsummary[n] = separating_total
 
 say("")
 say("=" * 126)
 say("  E-3 SUMMARY")
 say("=" * 126)
 say("  STEP A repaired controls all correct: %s" % allctrl)
+say("  STEP C separating gauge-invariant words per n (0 = three-body adds nothing): %s" % sepsummary)
 say("  STEP B gauge-orbit sizes (1 = a genuine record observable):")
 for r in gauge_rows:
     say("     n=%-3d %-28s  |orbit(tau)| = %d   |orbit(K)| = %d   |orbit(assoc norm)| = %d"

@@ -1,0 +1,53 @@
+======================================================================================================================
+LANE_SCALE_C_ACCUM  script 3  --  reach(A): how many record-bits can a bounded region disturb?
+======================================================================================================================
+
+SELF-CHECKS
+----------------------------------------------------------------------------------------------------------------------
+   62 / 62 pass   -- ALL PASS
+
+TABLE R1   reach over ALL regions of size r, as min-max.  'e' = exhaustive over every
+           region of that size, 's' = 4000 sampled regions plus the contiguous one.
+----------------------------------------------------------------------------------------------------------------------
+  k |   n       r=1       r=2       r=3       r=4       r=6       r=8 ||  nC       r=1       r=2       r=3       r=4       r=6       r=8
+----------------------------------------------------------------------------------------------------------------------
+  2 |   4       0-1e      1-2e      2-2e      2-2e      2-2c      2-2c ||   4       0-1e      1-2e      2-2e      2-2e      2-2c      2-2c
+  4 |   6       0-1e      1-2e      2-3e      3-4e      4-4e      4-4c ||   8       0-1e      0-2e      1-3e      2-4e      3-4e      4-4e
+  6 |   8       0-1e      1-2e      2-3e      3-4e      5-6e      6-6e ||  12       0-1e      0-2e      0-3e      1-4e      2-6e      4-6e
+  8 |  10       0-1e      1-2e      2-3e      3-4e      5-6e      7-8e ||  16       0-1e      0-2e      0-3e      0-4e      2-6e      3-8e
+ 10 |  12       0-1e      1-2e      2-3e      3-4e      5-6e      7-8e ||  20       0-1e      0-2e      0-3e      0-4e      1-6e      2-8e
+ 12 |  14       0-1e      1-2e      2-3e      3-4e      5-6e      7-8e ||  24       0-1e      0-2e      0-3e      0-4e      0-6e      2-8s
+ 14 |  16       0-1e      1-2e      2-3e      3-4e      5-6e      7-8e ||  28       0-1e      0-2e      0-3e      0-4e      1-6s      2-8s
+ 16 |  18       0-1e      1-2e      2-3e      3-4e      5-6e      7-8e ||  32       0-1e      0-2e      0-3e      0-4e      1-6s      2-8s
+ 18 |  20       0-1e      1-2e      2-3e      3-4e      5-6e      7-8e ||  36       0-1e      0-2e      0-3e      0-4e      1-6s      2-8s
+ 20 |  22       0-1e      1-2e      2-3e      3-4e      5-6e      7-8s ||  40       0-1e      0-2e      0-3e      0-4e      1-6s      2-8s
+----------------------------------------------------------------------------------------------------------------------
+
+TABLE R2   THE GAUSS-LAW QUESTION.  Hold the region SIZE fixed and let the number of
+           enclosed records grow.  Gravity-shaped behaviour would mean a fixed region
+           learns MORE as k grows.  Reported: the BEST region of that size (max reach).
+----------------------------------------------------------------------------------------------------------------------
+  k | fam best r=2 fam best r=4 fam best r=6  frac k (r=6) || ctl best r=2 ctl best r=4 ctl best r=6  frac k (r=6) ||   min region for ALL k
+  2 |            2            2            2        1.0000 ||            2            2            2        1.0000 || fam     2e  ctl     2e
+  4 |            2            4            4        1.0000 ||            2            4            4        1.0000 || fam     4e  ctl     4e
+  6 |            2            4            6        1.0000 ||            2            4            6        1.0000 || fam     6e  ctl     6e
+  8 |            2            4            6        0.7500 ||            2            4            6        0.7500 || fam     8e  ctl     8e
+ 10 |            2            4            6        0.6000 ||            2            4            6        0.6000 || fam    10e  ctl    10e
+ 12 |            2            4            6        0.5000 ||            2            4            6        0.5000 || fam    12e  ctl    13s
+ 14 |            2            4            6        0.4286 ||            2            4            6        0.4286 || fam    14e  ctl    15s
+ 16 |            2            4            6        0.3750 ||            2            4            6        0.3750 || fam    16e  ctl    17s
+ 18 |            2            4            6        0.3333 ||            2            4            6        0.3333 || fam    18e  ctl    21s
+ 20 |            2            4            6        0.3000 ||            2            4            6        0.3000 || fam    20e  ctl    23s
+----------------------------------------------------------------------------------------------------------------------
+frac k = the fraction of the record content a size-6 region can touch
+
+READ  (filled from the numbers above)
+----------------------------------------------------------------------------------------------------------------------
+  best reach at FIXED region size r=6:  family [2, 4, 6, 6, 6, 6, 6, 6, 6, 6]
+                                        control [2, 4, 6, 6, 6, 6, 6, 6, 6, 6]
+  smallest region that touches ALL k:   family [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]   (hard lower bound [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+                                        control [2, 4, 6, 8, 10, 12, 15, 18, 21, 24]
+
+Largest carrier: n = 22 (k = 20) family, n = 40 (k = 20) control.  Nothing stopped this
+computation at that size; it is the F_2 rank of a 2n x k matrix.  The range was chosen to
+match scripts 1 and 2 so the columns line up.

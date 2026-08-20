@@ -1,0 +1,54 @@
+================================================================================================================
+S7  [PHYS] ANCHOR AT m=3, AND THE HOMOGENEOUS-BATH RELATION MATRIX
+================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------
+VALIDATION -- the sparse Pauli representation against the model's xz_to_matrix
+----------------------------------------------------------------------------------------------------------------
+   max deviation over 20 random Paulis and products at n=4 and n=8: 0.000e+00
+   SELF-CHECK: PASS
+
+----------------------------------------------------------------------------------------------------------------
+PART 1 -- the FULL 12-qubit space, dim 4096, three disjoint [[4,2,2]] blocks
+----------------------------------------------------------------------------------------------------------------
+   H is 4096 x 4096.  eigenvalues / multiplicities: [(-6.0, 64), (-4.0, 384), (-2.0, 960), (-0.0, 1280), (2.0, 960), (4.0, 384), (6.0, 64)]
+   ground-space dimension = 64   (must be 4^m = 64)  -> True
+   6 records embedded, weights [2, 2, 2, 2, 2, 2]
+
+   check (exact, on the full dim-4096 space)  value            CONTROL, same test    
+   ------------------------------------------------------------------------------------
+   max ||R^2 - I||_inf                (i)     0.000e+00        0.7R gives 0.51       
+   max ||[S,R]||_inf over all 6 stabs (ii)    0.000e+00        2.000                 
+   max ||R P_g - P_g R||_F                    6.021e-14        -                     
+   max |Tr(P_E R)| over all 7 eigenspaces (iv) 1.443e-14        1280.0                
+   ||P_E R P_E||_F^2 = Tr(P_E) = m_E > 0 (iii) forced           identity: 0 after     
+                                                               subtracting its mean  
+
+   why (iii) is forced, exactly: (ii) gives [R,P_E]=0, so P_E R P_E = R P_E and
+   ||P_E R P_E||_F^2 = Tr(P_E R^dag R P_E) = Tr(P_E) = m_E.  (iv) gives Tr(P_E R) = 0, so if R
+   were constant on E it would be the zero operator there, contradicting ||.||^2 = m_E > 0.
+   Multiplicities m_E here are [64, 384, 960, 1280, 960, 384, 64] -- all non-zero.
+   SELF-CHECK: PASS -- all 6 records on 3 disjoint blocks satisfy (i)-(iv) as exact operator
+   identities on the full 12-qubit space, and the code space is an exact invariant subspace.
+   Every control registered a failure on the same instrument.
+
+----------------------------------------------------------------------------------------------------------------
+PART 2 -- the chi RELATION MATRIX with a HOMOGENEOUS bath (every site e = 1.0)
+          M_ij = chi about record j when ONLY record i is coupled.  [DIRECT] simulation,
+          25 times in [1,13].
+----------------------------------------------------------------------------------------------------------------
+   m     joint dim  tr M               m*tr M(1)          DEFECT        max off-diag    max cross-block
+   ----------------------------------------------------------------------------------------------------
+   1     32         1.043054601519     1.043054601519     0.000e+00     3.086e-16       0.000e+00      
+   2     128        2.086109203038     2.086109203038     0.000e+00     5.262e-16       5.262e-16      
+   3     512        3.129163804557     3.129163804557     -1.332e-15    3.753e-16       3.753e-16      
+   CONTROL on the same scale: every DIAGONAL entry of M is 0.52152730
+
+   READ: with a homogeneous bath the trace defect is exactly 0 at every m, confirming that
+   the -3.0e-04 in s3 TABLE 9 was the round-robin over bath qubits of DIFFERENT energies
+   (1.0, 1.4, 0.7), not an interaction.  The off-diagonal and cross-block entries -- the
+   only places record-record leakage could show -- are at 1e-16 in BOTH the homogeneous and
+   the heterogeneous run, against a diagonal of ~0.5.
+
+[written]
+python3 -u s7_anchor_and_homogeneous.py  440.59s user 2.89s system 83% cpu 8:49.46 total

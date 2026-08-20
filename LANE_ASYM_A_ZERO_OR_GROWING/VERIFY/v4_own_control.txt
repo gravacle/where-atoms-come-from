@@ -1,0 +1,62 @@
+======================================================================================================================
+V4  THE ROW THE LANE EXCLUDED ON AN UNSTATED CRITERION: total chi with the environment
+    scaled alongside the matter (one bath site per record).  Tested against (a), (b), (c).
+======================================================================================================================
+
+(a) EXTENSIVITY:  S(2N)/S(N) must -> 2.
+      N      chi_total (lane's energy pool)     S(2N)/S(N)
+       2                          0.9925     1.9729
+       4                          1.9581     2.0136
+       8                          3.9428     2.0000
+      16                          7.8857     2.0000
+      32                         15.7713     2.0000
+      64                         31.5427     2.0000
+     128                         63.0854     2.0000
+     256                        126.1708       --
+      -> ratio of doubling is 2.00 ; requirement (a) is MET.
+
+(b) ADDITIVITY OVER DISJOINT REGIONS, with the lane's own shared-bath case as the control:
+      N=NA+NB |  chi(A)    chi(B)    chi(A)+chi(B)  chi(A u B) own baths   deficit  | CONTROL shared nq=3 bath, deficit
+        2+2   |  0.9925    0.9656    1.9581         1.9581                4.44e-16  | 1.2145 (shared) vs 0.9925+0.9925 -> deficit 0.7705
+        4+4   |  1.9581    1.9519    3.9100         3.9100                8.88e-16  | 0.6447 (shared) vs 1.2145+1.2145 -> deficit 1.7842
+        8+8   |  3.9428    3.8883    7.8311         7.8311                2.22e-15  | 0.4513 (shared) vs 0.6447+0.6447 -> deficit 0.8381
+       16+16  |  7.8857    7.6605    15.5462        15.5462               1.78e-15  | 0.3149 (shared) vs 0.4513+0.4513 -> deficit 0.5876
+       32+32  |  15.7713   15.3211   31.0924        31.0924               3.55e-15  | 0.2269 (shared) vs 0.3149+0.3149 -> deficit 0.4029
+        5+11  |  2.4750    5.2572    7.7321         7.7321                8.88e-16  | 0.4513 (shared) vs 1.0416+0.5562 -> deficit 1.1465
+      -> own-bath deficit is 0 to machine precision at every split, including the unequal one;
+         the shared-bath control has a large positive deficit in the SAME table (D-15).
+         Requirement (b) is MET by the scaled-environment quantity.
+
+(c) IS IT TOPOLOGICAL OR SATURATING?  A topological quantity does not move when the dynamics
+    move, and a saturating one stops growing.  Vary the venue's own scales at fixed N = 16:
+      setting                          chi_total(N=16)
+      lam=0.8 beta=2.0 (lane)          7.8857
+      lam=0.4                          4.0874
+      lam=1.6                          9.4641
+      beta=0.5                         1.5059
+      beta=5.0                         9.4411
+      times in [20,40]                 7.7598
+      -> the value moves continuously with lam, beta and the time window: NOT a topological
+         invariant, and it has no ceiling (it is unbounded in N, being nq = N bits).
+
+(d) IS IT MERELY THE RECORD COUNT TIMES A CONSTANT (the C-35 class)?
+    Same N, different LOCAL CONTENT of the region.  A count cannot tell these apart.
+      N = 16, site energies                         chi_total     chi_total / N
+      all sites E=1.0 (uniform)                       8.3444       0.52153
+      lane's 8-periodic pool                          7.8857       0.49285
+      all sites E=2.0 (heavy)                         5.1966       0.32479
+      half heavy, half light                          5.2462       0.32789
+      random pool (seed 3)                            7.1699       0.44812
+      -> at the SAME N the quantity takes different values, so it is NOT N up to a constant
+         factor: it is a SUM OF LOCAL CONTRIBUTIONS, one per site, which is the shape an
+         extensive source has.  The lane's blanket dismissal ('every linear additive quantity
+         found is the record count up to a constant') does not cover this row.
+
+READ (filled from the numbers above, not in advance):
+  under the three requirements the lane was handed -- (a) asymptotic linearity, (b) additivity
+  over disjoint regions, (c) not saturating and not topological -- the scaled-environment total
+  chi PASSES ALL THREE.  The lane marked it NO on a fourth requirement that was never stated:
+  that the environment be held fixed while the matter grows.  That may be the right requirement
+  to impose -- matter that occupies more space plausibly couples to more environment, so it is
+  at least arguable -- but it is an addition to the standard, and the lane's headline sentence
+  ('NO quantity satisfies strict extensivity (a)+(b)+(c)') is contradicted by its own table.

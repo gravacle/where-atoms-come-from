@@ -1,0 +1,691 @@
+=====================================================================================================================================================================
+S7  THRESHOLD VERDICT -- every order parameter measured in this lane, classified by one rule
+=====================================================================================================================================================================
+
+BLOCK 1  COMBINATORIAL BATTERY vs k (S2), three carrier families
+  sequence                                       npts   classification         k*         values (first..last)
+  ------------------------------------------------------------------------------------------------------------------------------------------------------
+  S2 famA  wbar                                  11     SMOOTH MONOTONE        -          2, 3, 4, 5 ... 14, 16
+  S2 famA  wmax                                  11     SMOOTH MONOTONE        -          2, 4, 6, 8 ... 26, 30
+  S2 famA  wbar_over_n                           11     CONSTANT               -          0.5, 0.5, 0.5, 0.5 ... 0.5, 0.5
+  S2 famA  ov_edgefrac                           11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  ov_ncomp                              10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  ov_giant                              10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  ov_clus                               10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  ov_lapgap                             11     SMOOTH MONOTONE        -          2, 4, 6, 8 ... 26, 30
+  S2 famA  ov_lammax_over_tr                     11     SMOOTH MONOTONE        -          0.5, 0.25, 0.1667, 0.125 ... 0.03846, 0.03333
+  S2 famA  ov_percolates                         10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  cf1_edgefrac                          11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  cf1_ncomp                             10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 26, 30
+  S2 famA  cf1_giant                             10     SMOOTH MONOTONE        -          0.25, 0.1667, 0.125, 0.1 ... 0.03846, 0.03333
+  S2 famA  cf1_clus                              10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  cf1_lapgap                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  cf1_lammax_over_tr                    11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  cf1_percolates                        10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  cf1_maxset                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  cf1_maxsingle                         11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  cf2_edgefrac                          11     SMOOTH MONOTONE        -          1, 0.5, 0.3333, 0.25 ... 0.07692, 0.06667
+  S2 famA  cf2_ncomp                             10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  cf2_giant                             10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  cf2_clus                              10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  cf2_lapgap                            11     SMOOTH MONOTONE        -          2, 0.5858, 0.382, 0.2509 ... 0.02864, 0.02161
+  S2 famA  cf2_lammax_over_tr                    11     SMOOTH MONOTONE        -          0.5, 0.2697, 0.1932, 0.1497 ... 0.04743, 0.04106
+  S2 famA  cf2_percolates                        10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  cf2_maxset                            11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famA  cf2_maxsingle                         11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famA  cf3_edgefrac                          11     SMOOTH MONOTONE        -          1, 0.8333, 0.6, 0.4643 ... 0.1508, 0.131
+  S2 famA  cf3_ncomp                             10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  cf3_giant                             10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  cf3_clus                              10     SMOOTH MONOTONE        -          0.75, 0.5714, 0.5294, 0.5106 ... 0.4768, 0.4746
+  S2 famA  cf3_lapgap                            11     SMOOTH MONOTONE        -          2, 2, 1.382, 0.8496 ... 0.08701, 0.06546
+  S2 famA  cf3_lammax_over_tr                    11     SMOOTH MONOTONE        -          0.5, 0.2562, 0.179, 0.1365 ... 0.04165, 0.03597
+  S2 famA  cf3_percolates                        10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  cf3_maxset                            11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famA  cf3_maxsingle                         11     SMOOTH MONOTONE        -          2, 3, 3, 3 ... 3, 3
+  S2 famA  reach1                                11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  reachfrac1                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famA  reach2                                11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famA  reachfrac2                            11     SMOOTH MONOTONE        -          0.5, 0.25, 0.1667, 0.125 ... 0.03846, 0.03333
+  S2 famA  reach3                                11     CONSTANT               -          4, 4, 4, 4 ... 4, 4
+  S2 famA  reachfrac3                            11     SMOOTH MONOTONE        -          1, 0.5, 0.3333, 0.25 ... 0.07692, 0.06667
+  S2 famA  reach4                                11     SMOOTH MONOTONE        -          4, 6, 6, 6 ... 6, 6
+  S2 famA  reachfrac4                            11     SMOOTH MONOTONE        -          1, 0.75, 0.5, 0.375 ... 0.1154, 0.1
+  S2 famA  rstar                                 11     SMOOTH MONOTONE        -          3, 5, 7, 9 ... 27, 31
+  S2 famA  rstar_over_n                          11     SMOOTH MONOTONE        -          0.75, 0.8333, 0.875, 0.9 ... 0.9643, 0.9688
+  S2 famA  protection_radius                     11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famA  joint_block_dim                       11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famA  k_over_log2dim                        11     SMOOTH MONOTONE        -          0.5, 0.6667, 0.75, 0.8 ... 0.9286, 0.9375
+  S2 famB  wbar                                  11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famB  wmax                                  11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famB  wbar_over_n                           11     SMOOTH MONOTONE        -          0.5, 0.25, 0.1667, 0.125 ... 0.04167, 0.03125
+  S2 famB  ov_edgefrac                           11     SMOOTH MONOTONE        -          1, 0.3333, 0.2, 0.1429 ... 0.04348, 0.03226
+  S2 famB  ov_ncomp                              10     SMOOTH MONOTONE        -          2, 3, 4, 5 ... 12, 16
+  S2 famB  ov_giant                              10     SMOOTH MONOTONE        -          0.5, 0.3333, 0.25, 0.2 ... 0.08333, 0.0625
+  S2 famB  ov_clus                               10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  ov_lapgap                             11     ZEROS INTERLEAVED      -          2, 0, 0, 0 ... 0, 0
+  S2 famB  ov_lammax_over_tr                     11     SMOOTH MONOTONE        -          0.5, 0.25, 0.1667, 0.125 ... 0.04167, 0.03125
+  S2 famB  ov_percolates                         10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf1_edgefrac                          11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf1_ncomp                             10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 24, 32
+  S2 famB  cf1_giant                             10     SMOOTH MONOTONE        -          0.25, 0.1667, 0.125, 0.1 ... 0.04167, 0.03125
+  S2 famB  cf1_clus                              10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf1_lapgap                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf1_lammax_over_tr                    11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf1_percolates                        10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf1_maxset                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf1_maxsingle                         11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf2_edgefrac                          11     SMOOTH MONOTONE        -          1, 0.3333, 0.2, 0.1429 ... 0.04348, 0.03226
+  S2 famB  cf2_ncomp                             10     SMOOTH MONOTONE        -          2, 3, 4, 5 ... 12, 16
+  S2 famB  cf2_giant                             10     SMOOTH MONOTONE        -          0.5, 0.3333, 0.25, 0.2 ... 0.08333, 0.0625
+  S2 famB  cf2_clus                              10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf2_lapgap                            11     ZEROS INTERLEAVED      -          2, 0, 0, 0 ... 0, 0
+  S2 famB  cf2_lammax_over_tr                    11     SMOOTH MONOTONE        -          0.5, 0.25, 0.1667, 0.125 ... 0.04167, 0.03125
+  S2 famB  cf2_percolates                        10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf2_maxset                            11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famB  cf2_maxsingle                         11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famB  cf3_edgefrac                          11     SMOOTH MONOTONE        -          1, 0.3333, 0.2, 0.1429 ... 0.04348, 0.03226
+  S2 famB  cf3_ncomp                             10     SMOOTH MONOTONE        -          2, 3, 4, 5 ... 12, 16
+  S2 famB  cf3_giant                             10     SMOOTH MONOTONE        -          0.5, 0.3333, 0.25, 0.2 ... 0.08333, 0.0625
+  S2 famB  cf3_clus                              10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf3_lapgap                            11     ZEROS INTERLEAVED      -          2, 0, 0, 0 ... 0, 0
+  S2 famB  cf3_lammax_over_tr                    11     SMOOTH MONOTONE        -          0.5, 0.25, 0.1667, 0.125 ... 0.04167, 0.03125
+  S2 famB  cf3_percolates                        10     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  cf3_maxset                            11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famB  cf3_maxsingle                         11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famB  reach1                                11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  reachfrac1                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famB  reach2                                11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famB  reachfrac2                            11     SMOOTH MONOTONE        -          0.5, 0.25, 0.1667, 0.125 ... 0.04167, 0.03125
+  S2 famB  reach3                                11     CONSTANT               -          4, 4, 4, 4 ... 4, 4
+  S2 famB  reachfrac3                            11     SMOOTH MONOTONE        -          1, 0.5, 0.3333, 0.25 ... 0.08333, 0.0625
+  S2 famB  reach4                                11     CONSTANT               -          4, 4, 4, 4 ... 4, 4
+  S2 famB  reachfrac4                            11     SMOOTH MONOTONE        -          1, 0.5, 0.3333, 0.25 ... 0.08333, 0.0625
+  S2 famB  rstar                                 11     SMOOTH MONOTONE        -          3, 6, 10, 14 ... 46, 62
+  S2 famB  rstar_over_n                          11     SMOOTH POWER LAW       -          0.75, 0.75, 0.8333, 0.875 ... 0.9583, 0.9688
+  S2 famB  protection_radius                     11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famB  joint_block_dim                       11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famB  k_over_log2dim                        11     CONSTANT               -          0.5, 0.5, 0.5, 0.5 ... 0.5, 0.5
+  S2 famC  wbar                                  11     CONSTANT               -          5, 5, 5, 5 ... 5, 5
+  S2 famC  wmax                                  11     CONSTANT               -          5, 5, 5, 5 ... 5, 5
+  S2 famC  wbar_over_n                           11     SMOOTH MONOTONE        -          1, 0.5, 0.3333, 0.25 ... 0.08333, 0.0625
+  S2 famC  ov_edgefrac                           11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  ov_ncomp                              9      SMOOTH MONOTONE        -          3, 4, 5, 6 ... 12, 16
+  S2 famC  ov_giant                              9      SMOOTH MONOTONE        -          0.3333, 0.25, 0.2, 0.1667 ... 0.08333, 0.0625
+  S2 famC  ov_clus                               9      CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  ov_lapgap                             11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  ov_lammax_over_tr                     11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  ov_percolates                         9      CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf1_edgefrac                          11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf1_ncomp                             9      SMOOTH MONOTONE        -          3, 4, 5, 6 ... 12, 16
+  S2 famC  cf1_giant                             9      SMOOTH MONOTONE        -          0.3333, 0.25, 0.2, 0.1667 ... 0.08333, 0.0625
+  S2 famC  cf1_clus                              9      CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf1_lapgap                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf1_lammax_over_tr                    11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf1_percolates                        9      CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf1_maxset                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf1_maxsingle                         11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf2_edgefrac                          11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf2_ncomp                             9      SMOOTH MONOTONE        -          3, 4, 5, 6 ... 12, 16
+  S2 famC  cf2_giant                             9      SMOOTH MONOTONE        -          0.3333, 0.25, 0.2, 0.1667 ... 0.08333, 0.0625
+  S2 famC  cf2_clus                              9      CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf2_lapgap                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf2_lammax_over_tr                    11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf2_percolates                        9      CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf2_maxset                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf2_maxsingle                         11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf3_edgefrac                          11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf3_ncomp                             9      SMOOTH MONOTONE        -          3, 4, 5, 6 ... 12, 16
+  S2 famC  cf3_giant                             9      SMOOTH MONOTONE        -          0.3333, 0.25, 0.2, 0.1667 ... 0.08333, 0.0625
+  S2 famC  cf3_clus                              9      CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf3_lapgap                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf3_lammax_over_tr                    11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf3_percolates                        9      CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  cf3_maxset                            11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famC  cf3_maxsingle                         11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famC  reach1                                11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  reachfrac1                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  reach2                                11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  reachfrac2                            11     CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S2 famC  reach3                                11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S2 famC  reachfrac3                            11     SMOOTH MONOTONE        -          1, 0.5, 0.3333, 0.25 ... 0.08333, 0.0625
+  S2 famC  reach4                                11     CONSTANT               -          3, 3, 3, 3 ... 3, 3
+  S2 famC  reachfrac4                            11     SMOOTH MONOTONE        -          1.5, 0.75, 0.5, 0.375 ... 0.125, 0.09375
+  S2 famC  rstar                                 11     SMOOTH MONOTONE        -          3, 6, 8, 16 ... 53, 76
+  S2 famC  rstar_over_n                          11     PARITY ALTERNATION     4          0.6, 0.6, 0.5333, 0.8 ... 0.8833, 0.95
+  S2 famC  protection_radius                     11     CONSTANT               -          3, 3, 3, 3 ... 3, 3
+  S2 famC  joint_block_dim                       11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S2 famC  k_over_log2dim                        11     CONSTANT               -          0.2, 0.2, 0.2, 0.2 ... 0.2, 0.2
+
+BLOCK 2  BATH-SHARING PERCOLATION vs k, at eight bath sizes (S3)
+  sequence                                       npts   classification         k*         values (first..last)
+  ------------------------------------------------------------------------------------------------------------------------------------------------------
+  S3 famA round nB=2  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=2  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=2  lapgap                     10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 38, 46
+  S3 famA round nB=2  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=3  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=3  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=3  lapgap                     10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 38, 46
+  S3 famA round nB=3  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=4  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=4  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=4  lapgap                     10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 38, 46
+  S3 famA round nB=4  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=6  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=6  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=6  lapgap                     10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 38, 46
+  S3 famA round nB=6  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=8  giant                      9      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=8  edgefrac                   9      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=8  lapgap                     9      SMOOTH MONOTONE        -          6, 8, 10, 14 ... 38, 46
+  S3 famA round nB=8  ncomp                      9      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=12 giant                      7      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=12 edgefrac                   7      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=12 lapgap                     7      SMOOTH MONOTONE        -          10, 14, 18, 22 ... 38, 46
+  S3 famA round nB=12 ncomp                      7      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=16 giant                      6      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=16 edgefrac                   6      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=16 lapgap                     6      SMOOTH MONOTONE        -          14, 18, 22, 30 ... 38, 46
+  S3 famA round nB=16 ncomp                      6      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=24 giant                      4      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=24 edgefrac                   4      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA round nB=24 lapgap                     4      SMOOTH MONOTONE        -          22, 30, 38, 46 ... 38, 46
+  S3 famA round nB=24 ncomp                      4      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=2  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=2  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=2  lapgap                     10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 38, 46
+  S3 famA block nB=2  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=3  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=3  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=3  lapgap                     10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 38, 46
+  S3 famA block nB=3  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=4  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=4  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=4  lapgap                     10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 38, 46
+  S3 famA block nB=4  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=6  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=6  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=6  lapgap                     10     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 38, 46
+  S3 famA block nB=6  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=8  giant                      9      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=8  edgefrac                   9      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=8  lapgap                     9      SMOOTH MONOTONE        -          6, 8, 10, 14 ... 38, 46
+  S3 famA block nB=8  ncomp                      9      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=12 giant                      7      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=12 edgefrac                   7      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=12 lapgap                     7      SMOOTH MONOTONE        -          10, 14, 18, 22 ... 38, 46
+  S3 famA block nB=12 ncomp                      7      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=16 giant                      6      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=16 edgefrac                   6      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=16 lapgap                     6      SMOOTH MONOTONE        -          14, 18, 22, 30 ... 38, 46
+  S3 famA block nB=16 ncomp                      6      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=24 giant                      4      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=24 edgefrac                   4      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famA block nB=24 lapgap                     4      SMOOTH MONOTONE        -          22, 30, 38, 46 ... 38, 46
+  S3 famA block nB=24 ncomp                      4      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=2  giant                      11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=2  edgefrac                   11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=2  lapgap                     11     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 40, 48
+  S3 famB round nB=2  ncomp                      11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=3  giant                      11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=3  edgefrac                   11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=3  lapgap                     11     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 40, 48
+  S3 famB round nB=3  ncomp                      11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=4  giant                      11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=4  edgefrac                   11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=4  lapgap                     11     SMOOTH MONOTONE        -          4, 6, 8, 10 ... 40, 48
+  S3 famB round nB=4  ncomp                      11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=6  giant                      11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=6  edgefrac                   11     PARITY ALTERNATION     8          0.6667, 0.6, 0.6429, 0.6444 ... 0.659, 0.6596
+  S3 famB round nB=6  lapgap                     11     SMOOTH MONOTONE        -          1, 1.697, 1.82, 2.511 ... 10.97, 13.58
+  S3 famB round nB=6  ncomp                      11     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famB round nB=8  giant                      11     MULTIPLE SIGN CHANGES  8          0.5, 0.6667, 0.5, 0.6 ... 0.5, 0.5
+  S3 famB round nB=8  edgefrac                   11     MULTIPLE SIGN CHANGES  8          0.3333, 0.4667, 0.4286, 0.4667 ... 0.4872, 0.4894
+  S3 famB round nB=8  lapgap                     11     CONSTANT               -          0, 1.11e-16, 1.192e-16, 1.746e-15 ... 4.424e-15, -3.553e-15
+  S3 famB round nB=8  ncomp                      11     CONSTANT               -          2, 2, 2, 2 ... 2, 2
+  S3 famB round nB=12 giant                      10     PARITY ALTERNATION     10         0.3333, 0.5, 0.4, 0.3333 ... 0.35, 0.3333
+  S3 famB round nB=12 edgefrac                   10     PARITY ALTERNATION     12         0.2, 0.2857, 0.2889, 0.2727 ... 0.3179, 0.3191
+  S3 famB round nB=12 lapgap                     10     CONSTANT               -          0, 0, 1.11e-16, 1.11e-16 ... 2.22e-16, 3.563e-16
+  S3 famB round nB=12 ncomp                      10     CONSTANT               -          3, 3, 3, 3 ... 3, 3
+  S3 famB round nB=16 giant                      9      MULTIPLE SIGN CHANGES  12         0.25, 0.4, 0.3333, 0.25 ... 0.25, 0.25
+  S3 famB round nB=16 edgefrac                   9      PARITY ALTERNATION     16         0.1429, 0.2, 0.2121, 0.2 ... 0.2308, 0.234
+  S3 famB round nB=16 lapgap                     9      CONSTANT               -          0, 0, 0, 1.11e-16 ... -3.602e-32, -2.22e-16
+  S3 famB round nB=16 ncomp                      9      CONSTANT               -          4, 4, 4, 4 ... 4, 4
+  S3 famB round nB=24 giant                      7      PARITY ALTERNATION     20         0.1667, 0.25, 0.2, 0.1667 ... 0.2, 0.1667
+  S3 famB round nB=24 edgefrac                   7      MULTIPLE SIGN CHANGES  24         0.09091, 0.1333, 0.1368, 0.1304 ... 0.1487, 0.1489
+  S3 famB round nB=24 lapgap                     7      CONSTANT               -          0, 0, 0, 1.11e-16 ... -9.341e-17, -1.816e-15
+  S3 famB round nB=24 ncomp                      7      CONSTANT               -          6, 6, 6, 6 ... 6, 6
+  S3 famB block nB=2  giant                      11     MULTIPLE SIGN CHANGES  8          0.5, 1, 0.5, 1 ... 0.5, 0.5
+  S3 famB block nB=2  edgefrac                   11     MULTIPLE SIGN CHANGES  8          0.3333, 0.6, 0.4286, 0.5556 ... 0.4872, 0.4894
+  S3 famB block nB=2  lapgap                     11     ZEROS INTERLEAVED      -          0, 1, 1.192e-16, 1 ... 4.108e-15, -1.253e-14
+  S3 famB block nB=2  ncomp                      11     MULTIPLE SIGN CHANGES  8          2, 1, 2, 1 ... 2, 2
+  S3 famB block nB=3  giant                      11     PARITY ALTERNATION     8          0.5, 0.3333, 0.75, 0.6 ... 0.65, 0.3333
+  S3 famB block nB=3  edgefrac                   11     PARITY ALTERNATION     8          0.3333, 0.2, 0.3571, 0.3333 ... 0.3333, 0.3191
+  S3 famB block nB=3  lapgap                     11     CONSTANT               -          0, 0, 2.416e-16, 2.416e-16 ... 4.954e-15, 3.22e-15
+  S3 famB block nB=3  ncomp                      11     MULTIPLE SIGN CHANGES  8          2, 3, 2, 2 ... 2, 3
+  S3 famB block nB=4  giant                      11     PARITY ALTERNATION     8          0.5, 0.6667, 0.25, 0.8 ... 0.25, 0.25
+  S3 famB block nB=4  edgefrac                   11     PARITY ALTERNATION     10         0.3333, 0.3333, 0.1429, 0.3333 ... 0.2308, 0.234
+  S3 famB block nB=4  lapgap                     11     CONSTANT               -          0, 0, 0, 0 ... 3.298e-16, 4.002e-16
+  S3 famB block nB=4  ncomp                      11     MULTIPLE SIGN CHANGES  10         2, 2, 4, 2 ... 4, 4
+  S3 famB block nB=6  giant                      11     PARITY ALTERNATION     8          0.5, 0.3333, 0.5, 0.2 ... 0.35, 0.1667
+  S3 famB block nB=6  edgefrac                   11     PARITY ALTERNATION     8          0.3333, 0.2, 0.2143, 0.1111 ... 0.1744, 0.1489
+  S3 famB block nB=6  lapgap                     11     CONSTANT               -          0, 0, 0, 0 ... 2.282e-16, 1.418e-16
+  S3 famB block nB=6  ncomp                      11     MULTIPLE SIGN CHANGES  16         2, 3, 3, 5 ... 3, 6
+  S3 famB block nB=8  giant                      11     PARITY ALTERNATION     10         0.5, 0.3333, 0.25, 0.4 ... 0.25, 0.125
+  S3 famB block nB=8  edgefrac                   11     PARITY ALTERNATION     10         0.3333, 0.2, 0.1429, 0.1556 ... 0.1282, 0.1064
+  S3 famB block nB=8  lapgap                     11     CONSTANT               -          0, 0, 0, 0 ... -7.893e-16, 7.401e-16
+  S3 famB block nB=8  ncomp                      11     MULTIPLE SIGN CHANGES  20         2, 3, 4, 4 ... 4, 8
+  S3 famB block nB=12 giant                      10     PARITY ALTERNATION     16         0.3333, 0.25, 0.2, 0.1667 ... 0.25, 0.08333
+  S3 famB block nB=12 edgefrac                   10     PARITY ALTERNATION     16         0.2, 0.1429, 0.1111, 0.09091 ... 0.09744, 0.06383
+  S3 famB block nB=12 lapgap                     10     CONSTANT               -          0, 0, 0, 0 ... -1.522e-16, -1.522e-16
+  S3 famB block nB=12 ncomp                      10     SIGN CHANGE            32         3, 4, 5, 6 ... 6, 12
+  S3 famB block nB=16 giant                      9      PARITY ALTERNATION     20         0.25, 0.2, 0.1667, 0.125 ... 0.2, 0.125
+  S3 famB block nB=16 edgefrac                   9      PARITY ALTERNATION     20         0.1429, 0.1111, 0.09091, 0.06667 ... 0.07692, 0.06383
+  S3 famB block nB=16 lapgap                     9      CONSTANT               -          0, 0, 0, 0 ... 0, 4.372e-17
+  S3 famB block nB=16 ncomp                      9      MULTIPLE SIGN CHANGES  20         4, 5, 6, 8 ... 8, 8
+  S3 famB block nB=24 giant                      7      MULTIPLE SIGN CHANGES  32         0.1667, 0.125, 0.1, 0.08333 ... 0.05, 0.04167
+  S3 famB block nB=24 edgefrac                   7      MULTIPLE SIGN CHANGES  32         0.09091, 0.06667, 0.05263, 0.04348 ... 0.02564, 0.02128
+  S3 famB block nB=24 lapgap                     7      CONSTANT               -          0, 0, 0, 0 ... 0, 0
+  S3 famB block nB=24 ncomp                      7      MULTIPLE SIGN CHANGES  32         6, 8, 10, 12 ... 20, 24
+  S3 famC round nB=2  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=2  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=2  lapgap                     10     SMOOTH MONOTONE        -          3, 4, 5, 6 ... 20, 24
+  S3 famC round nB=2  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=3  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=3  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=3  lapgap                     10     SMOOTH MONOTONE        -          3, 4, 5, 6 ... 20, 24
+  S3 famC round nB=3  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=4  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=4  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=4  lapgap                     10     SMOOTH MONOTONE        -          3, 4, 5, 6 ... 20, 24
+  S3 famC round nB=4  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=6  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=6  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=6  lapgap                     10     SMOOTH MONOTONE        -          3, 4, 5, 6 ... 20, 24
+  S3 famC round nB=6  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=8  giant                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=8  edgefrac                   10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=8  lapgap                     10     SMOOTH MONOTONE        -          3, 4, 5, 6 ... 20, 24
+  S3 famC round nB=8  ncomp                      10     CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S3 famC round nB=12 giant                      10     SMOOTH MONOTONE        -          0.6667, 1, 1, 1 ... 1, 1
+  S3 famC round nB=12 edgefrac                   10     MULTIPLE SIGN CHANGES  16         0.3333, 0.5, 0.6, 0.6667 ... 0.7316, 0.7391
+  S3 famC round nB=12 lapgap                     10     ONSET FROM ZERO        4          0, 0.5858, 1.382, 2.268 ... 9.598, 12.54
+  S3 famC round nB=12 ncomp                      10     SMOOTH MONOTONE        -          2, 1, 1, 1 ... 1, 1
+  S3 famC round nB=16 giant                      9      SMOOTH MONOTONE        -          0.5, 0.8, 1, 1 ... 1, 1
+  S3 famC round nB=16 edgefrac                   9      MULTIPLE SIGN CHANGES  20         0.1667, 0.3, 0.3333, 0.4286 ... 0.5316, 0.5362
+  S3 famC round nB=16 lapgap                     9      ONSET FROM ZERO        6          0, 1.225e-17, 0.2679, 1 ... 4.362, 5.536
+  S3 famC round nB=16 ncomp                      9      SMOOTH MONOTONE        -          3, 2, 1, 1 ... 1, 1
+  S3 famC round nB=24 giant                      8      SMOOTH MONOTONE        -          0.4, 0.6667, 1, 1 ... 1, 1
+  S3 famC round nB=24 edgefrac                   8      SMOOTH MONOTONE        -          0.1, 0.2, 0.25, 0.2667 ... 0.3368, 0.3478
+  S3 famC round nB=24 lapgap                     8      ONSET FROM ZERO        8          0, -9.136e-17, 0.1522, 0.4071 ... 1.35, 1.922
+  S3 famC round nB=24 ncomp                      8      SMOOTH MONOTONE        -          4, 3, 1, 1 ... 1, 1
+  S3 famC block nB=2  giant                      10     MULTIPLE SIGN CHANGES  5          1, 0.5, 1, 0.5 ... 0.5, 0.5
+  S3 famC block nB=2  edgefrac                   10     MULTIPLE SIGN CHANGES  5          0.6667, 0.3333, 0.6, 0.4 ... 0.4737, 0.4783
+  S3 famC block nB=2  lapgap                     10     ZEROS INTERLEAVED      -          1, 0, 1, -1.11e-16 ... 1.656e-16, -2.22e-16
+  S3 famC block nB=2  ncomp                      10     MULTIPLE SIGN CHANGES  5          1, 2, 1, 2 ... 2, 2
+  S3 famC block nB=3  giant                      10     MULTIPLE SIGN CHANGES  8          0.3333, 1, 1, 0.3333 ... 1, 0.3333
+  S3 famC block nB=3  edgefrac                   10     ONSET FROM ZERO        4          0, 0.5, 0.5, 0.2 ... 0.3684, 0.3043
+  S3 famC block nB=3  lapgap                     10     ZEROS INTERLEAVED      -          0, 0.5858, 0.6972, 0 ... 0.5538, -1.573e-17
+  S3 famC block nB=3  ncomp                      10     MULTIPLE SIGN CHANGES  8          3, 1, 1, 3 ... 1, 3
+  S3 famC block nB=4  giant                      10     MULTIPLE SIGN CHANGES  5          1, 0.25, 1, 1 ... 0.25, 0.25
+  S3 famC block nB=4  edgefrac                   10     ZEROS INTERLEAVED      -          0.6667, 0, 0.5, 0.4 ... 0.2105, 0.2174
+  S3 famC block nB=4  lapgap                     10     ZEROS INTERLEAVED      -          1, 0, 0.5188, 0.4131 ... 1.396e-16, 7.401e-16
+  S3 famC block nB=4  ncomp                      10     MULTIPLE SIGN CHANGES  5          1, 4, 1, 1 ... 4, 4
+  S3 famC block nB=6  giant                      10     PARITY ALTERNATION     8          1, 1, 0.2, 0.1667 ... 0.85, 0.1667
+  S3 famC block nB=6  edgefrac                   10     ZEROS INTERLEAVED      -          0.6667, 0.5, 0, 0 ... 0.1947, 0.1304
+  S3 famC block nB=6  lapgap                     10     ZEROS INTERLEAVED      -          1, 0.5858, 0, 0 ... -1.11e-16, 1.192e-16
+  S3 famC block nB=6  ncomp                      10     MULTIPLE SIGN CHANGES  8          1, 1, 5, 6 ... 2, 6
+  S3 famC block nB=8  giant                      10     PARITY ALTERNATION     6          0.6667, 0.75, 0.8, 0.6667 ... 0.65, 0.125
+  S3 famC block nB=8  edgefrac                   10     ZEROS INTERLEAVED      -          0.3333, 0.3333, 0.3, 0.2667 ... 0.1632, 0.08696
+  S3 famC block nB=8  lapgap                     10     CONSTANT               -          0, 3.96e-17, 5.022e-17, 5.022e-17 ... -1.43e-17, -1.11e-16
+  S3 famC block nB=8  ncomp                      10     MULTIPLE SIGN CHANGES  10         2, 2, 2, 2 ... 2, 8
+  S3 famC block nB=12 giant                      10     PARITY ALTERNATION     5          0.6667, 0.5, 0.6, 0.5 ... 0.45, 0.08333
+  S3 famC block nB=12 edgefrac                   10     ZEROS INTERLEAVED      -          0.3333, 0.3333, 0.3, 0.2667 ... 0.1211, 0.04348
+  S3 famC block nB=12 lapgap                     10     CONSTANT               -          0, 0, 3.96e-17, 3.96e-17 ... 0, 0
+  S3 famC block nB=12 ncomp                      10     SIGN CHANGE            16         2, 2, 2, 2 ... 3, 12
+  S3 famC block nB=16 giant                      9      PARITY ALTERNATION     8          0.5, 0.4, 0.3333, 0.375 ... 0.35, 0.3333
+  S3 famC block nB=16 edgefrac                   9      ZEROS INTERLEAVED      -          0.3333, 0.2, 0.2, 0.1786 ... 0.1053, 0.09783
+  S3 famC block nB=16 lapgap                     9      CONSTANT               -          0, 0, 0, 3.96e-17 ... 1.408e-16, -6.512e-16
+  S3 famC block nB=16 ncomp                      9      SIGN CHANGE            20         2, 3, 3, 3 ... 3, 3
+  S3 famC block nB=24 giant                      8      MULTIPLE SIGN CHANGES  10         0.4, 0.3333, 0.25, 0.3 ... 0.05, 0.04167
+  S3 famC block nB=24 edgefrac                   8      ZEROS INTERLEAVED      -          0.2, 0.2, 0.1429, 0.1333 ... 0, 0
+  S3 famC block nB=24 lapgap                     8      CONSTANT               -          0, 0, 0, 3.96e-17 ... 0, 0
+  S3 famC block nB=24 ncomp                      8      SMOOTH MONOTONE        -          3, 3, 4, 4 ... 20, 24
+
+BLOCK 3  TIME-AVERAGED HOLEVO chi vs k, at 12 venue settings (S5)
+  sequence                                       npts   classification         k*         values (first..last)
+  ------------------------------------------------------------------------------------------------------------------------------------------------------
+  S5 lam=0.4 e=0.5 b=0.5 crowded                 29     SLOPE DISCONTINUITY    2          0.02657, 0.007485, 0.004156, 0.002569 ... 6.446e-05, 4.126e-05
+  S5 lam=0.4 e=0.5 b=0.5 ratio                   29     SLOPE DISCONTINUITY    2          1, 0.2817, 0.1564, 0.09669 ... 0.002426, 0.001553
+  S5 lam=0.4 e=0.5 b=0.5 register                29     PARITY ALTERNATION     3          0.02657, 0.02405, 0.03217, 0.02941 ... 0.04015, 0.04072
+  S5 lam=0.4 e=0.5 b=0.5 paired                  29     CONSTANT               -          0.007485, 0.007485, 0.007485, 0.007485 ... 0.007485, 0.007485
+  S5 lam=0.4 e=0.5 b=0.5 spread                  29     CONSTANT               -          0.02657, 0.02657, 0.02657, 0.02657 ... 0.02657, 0.02657
+  S5 lam=0.4 e=0.5 b=2.0 crowded                 29     SLOPE DISCONTINUITY    2          0.2949, 0.07903, 0.04237, 0.02607 ... 0.0006401, 0.0004105
+  S5 lam=0.4 e=0.5 b=2.0 ratio                   29     SLOPE DISCONTINUITY    2          1, 0.268, 0.1437, 0.0884 ... 0.00217, 0.001392
+  S5 lam=0.4 e=0.5 b=2.0 register                29     PARITY ALTERNATION     3          0.2949, 0.2684, 0.3543, 0.3265 ... 0.4378, 0.4435
+  S5 lam=0.4 e=0.5 b=2.0 paired                  29     CONSTANT               -          0.07903, 0.07903, 0.07903, 0.07903 ... 0.07903, 0.07903
+  S5 lam=0.4 e=0.5 b=2.0 spread                  29     CONSTANT               -          0.2949, 0.2949, 0.2949, 0.2949 ... 0.2949, 0.2949
+  S5 lam=0.4 e=1.0 b=0.5 crowded                 29     SLOPE DISCONTINUITY    2          0.04248, 0.02254, 0.01278, 0.009118 ... 0.0003212, 0.0002133
+  S5 lam=0.4 e=1.0 b=0.5 ratio                   29     SLOPE DISCONTINUITY    2          1, 0.5306, 0.3007, 0.2146 ... 0.00756, 0.005021
+  S5 lam=0.4 e=1.0 b=0.5 register                29     MULTIPLE SIGN CHANGES  22         0.04248, 0.05504, 0.07138, 0.07678 ... 0.1376, 0.1417
+  S5 lam=0.4 e=1.0 b=0.5 paired                  29     CONSTANT               -          0.02254, 0.02254, 0.02254, 0.02254 ... 0.02254, 0.02254
+  S5 lam=0.4 e=1.0 b=0.5 spread                  29     CONSTANT               -          0.04248, 0.04248, 0.04248, 0.04248 ... 0.04248, 0.04248
+  S5 lam=0.4 e=1.0 b=2.0 crowded                 29     SLOPE DISCONTINUITY    2          0.2766, 0.1256, 0.06641, 0.04608 ... 0.001449, 0.0009566
+  S5 lam=0.4 e=1.0 b=2.0 ratio                   29     SLOPE DISCONTINUITY    2          1, 0.4541, 0.2401, 0.1666 ... 0.005237, 0.003458
+  S5 lam=0.4 e=1.0 b=2.0 register                29     MULTIPLE SIGN CHANGES  24         0.2766, 0.3443, 0.4399, 0.4668 ... 0.7693, 0.7883
+  S5 lam=0.4 e=1.0 b=2.0 paired                  29     CONSTANT               -          0.1256, 0.1256, 0.1256, 0.1256 ... 0.1256, 0.1256
+  S5 lam=0.4 e=1.0 b=2.0 spread                  29     CONSTANT               -          0.2766, 0.2766, 0.2766, 0.2766 ... 0.2766, 0.2766
+  S5 lam=0.8 e=0.5 b=0.5 crowded                 29     SLOPE DISCONTINUITY    2          0.03004, 0.006143, 0.003814, 0.002109 ... 5.209e-05, 3.334e-05
+  S5 lam=0.8 e=0.5 b=0.5 ratio                   29     SLOPE DISCONTINUITY    2          1, 0.2045, 0.127, 0.07021 ... 0.001734, 0.00111
+  S5 lam=0.8 e=0.5 b=0.5 register                29     PARITY ALTERNATION     3          0.03004, 0.0262, 0.03435, 0.03132 ... 0.04041, 0.04084
+  S5 lam=0.8 e=0.5 b=0.5 paired                  29     CONSTANT               -          0.006143, 0.006143, 0.006143, 0.006143 ... 0.006143, 0.006143
+  S5 lam=0.8 e=0.5 b=0.5 spread                  29     CONSTANT               -          0.03004, 0.03004, 0.03004, 0.03004 ... 0.03004, 0.03004
+  S5 lam=0.8 e=0.5 b=2.0 crowded                 29     SLOPE DISCONTINUITY    2          0.331, 0.06461, 0.03853, 0.02144 ... 0.0005292, 0.0003396
+  S5 lam=0.8 e=0.5 b=2.0 ratio                   29     SLOPE DISCONTINUITY    2          1, 0.1952, 0.1164, 0.06478 ... 0.001599, 0.001026
+  S5 lam=0.8 e=0.5 b=2.0 register                29     PARITY ALTERNATION     3          0.331, 0.2899, 0.3779, 0.3457 ... 0.4396, 0.444
+  S5 lam=0.8 e=0.5 b=2.0 paired                  29     CONSTANT               -          0.06461, 0.06461, 0.06461, 0.06461 ... 0.06461, 0.06461
+  S5 lam=0.8 e=0.5 b=2.0 spread                  29     CONSTANT               -          0.331, 0.331, 0.331, 0.331 ... 0.331, 0.331
+  S5 lam=0.8 e=1.0 b=0.5 crowded                 29     SLOPE DISCONTINUITY    2          0.09017, 0.02657, 0.01473, 0.009423 ... 0.0002874, 0.0001897
+  S5 lam=0.8 e=1.0 b=0.5 ratio                   29     SLOPE DISCONTINUITY    2          1, 0.2947, 0.1634, 0.1045 ... 0.003188, 0.002104
+  S5 lam=0.8 e=1.0 b=0.5 register                29     PARITY ALTERNATION     3          0.09017, 0.08598, 0.1119, 0.1057 ... 0.1469, 0.1483
+  S5 lam=0.8 e=1.0 b=0.5 paired                  29     CONSTANT               -          0.02657, 0.02657, 0.02657, 0.02657 ... 0.02657, 0.02657
+  S5 lam=0.8 e=1.0 b=0.5 spread                  29     CONSTANT               -          0.09017, 0.09017, 0.09017, 0.09017 ... 0.09017, 0.09017
+  S5 lam=0.8 e=1.0 b=2.0 crowded                 29     SLOPE DISCONTINUITY    2          0.5215, 0.1364, 0.07178, 0.04516 ... 0.001299, 0.0008592
+  S5 lam=0.8 e=1.0 b=2.0 ratio                   29     SLOPE DISCONTINUITY    2          1, 0.2616, 0.1376, 0.0866 ... 0.002491, 0.001647
+  S5 lam=0.8 e=1.0 b=2.0 register                29     PARITY ALTERNATION     3          0.5215, 0.5021, 0.6378, 0.6102 ... 0.8112, 0.8176
+  S5 lam=0.8 e=1.0 b=2.0 paired                  29     CONSTANT               -          0.1364, 0.1364, 0.1364, 0.1364 ... 0.1364, 0.1364
+  S5 lam=0.8 e=1.0 b=2.0 spread                  29     CONSTANT               -          0.5215, 0.5215, 0.5215, 0.5215 ... 0.5215, 0.5215
+  S5 lam=1.2 e=0.5 b=0.5 crowded                 29     SLOPE DISCONTINUITY    2          0.0271, 0.006135, 0.003463, 0.001937 ... 4.653e-05, 3.135e-05
+  S5 lam=1.2 e=0.5 b=0.5 ratio                   29     SLOPE DISCONTINUITY    2          1, 0.2264, 0.1278, 0.07149 ... 0.001717, 0.001157
+  S5 lam=1.2 e=0.5 b=0.5 register                29     PARITY ALTERNATION     3          0.0271, 0.02654, 0.03342, 0.03128 ... 0.04069, 0.04131
+  S5 lam=1.2 e=0.5 b=0.5 paired                  29     CONSTANT               -          0.006135, 0.006135, 0.006135, 0.006135 ... 0.006135, 0.006135
+  S5 lam=1.2 e=0.5 b=0.5 spread                  29     CONSTANT               -          0.0271, 0.0271, 0.0271, 0.0271 ... 0.0271, 0.0271
+  S5 lam=1.2 e=0.5 b=2.0 crowded                 29     SMOOTH MONOTONE        -          0.3013, 0.0648, 0.0348, 0.01999 ... 0.0004769, 0.000321
+  S5 lam=1.2 e=0.5 b=2.0 ratio                   29     SMOOTH MONOTONE        -          1, 0.215, 0.1155, 0.06633 ... 0.001583, 0.001065
+  S5 lam=1.2 e=0.5 b=2.0 register                29     PARITY ALTERNATION     3          0.3013, 0.2939, 0.3671, 0.3447 ... 0.4425, 0.4489
+  S5 lam=1.2 e=0.5 b=2.0 paired                  29     CONSTANT               -          0.0648, 0.0648, 0.0648, 0.0648 ... 0.0648, 0.0648
+  S5 lam=1.2 e=0.5 b=2.0 spread                  29     CONSTANT               -          0.3013, 0.3013, 0.3013, 0.3013 ... 0.3013, 0.3013
+  S5 lam=1.2 e=1.0 b=0.5 crowded                 29     MULTIPLE SIGN CHANGES  15         0.1075, 0.02511, 0.01501, 0.00823 ... 0.0001782, 0.0001159
+  S5 lam=1.2 e=1.0 b=0.5 ratio                   29     MULTIPLE SIGN CHANGES  15         1, 0.2336, 0.1397, 0.07658 ... 0.001658, 0.001079
+  S5 lam=1.2 e=1.0 b=0.5 register                29     PARITY ALTERNATION     3          0.1075, 0.09362, 0.1249, 0.1135 ... 0.149, 0.1511
+  S5 lam=1.2 e=1.0 b=0.5 paired                  29     CONSTANT               -          0.02511, 0.02511, 0.02511, 0.02511 ... 0.02511, 0.02511
+  S5 lam=1.2 e=1.0 b=0.5 spread                  29     CONSTANT               -          0.1075, 0.1075, 0.1075, 0.1075 ... 0.1075, 0.1075
+  S5 lam=1.2 e=1.0 b=2.0 crowded                 29     MULTIPLE SIGN CHANGES  21         0.5996, 0.1275, 0.06986, 0.03942 ... 0.0007866, 0.0005112
+  S5 lam=1.2 e=1.0 b=2.0 ratio                   29     MULTIPLE SIGN CHANGES  21         1, 0.2127, 0.1165, 0.06575 ... 0.001312, 0.0008527
+  S5 lam=1.2 e=1.0 b=2.0 register                29     PARITY ALTERNATION     3          0.5996, 0.5394, 0.7031, 0.6473 ... 0.8208, 0.8301
+  S5 lam=1.2 e=1.0 b=2.0 paired                  29     CONSTANT               -          0.1275, 0.1275, 0.1275, 0.1275 ... 0.1275, 0.1275
+  S5 lam=1.2 e=1.0 b=2.0 spread                  29     CONSTANT               -          0.5996, 0.5996, 0.5996, 0.5996 ... 0.5996, 0.5996
+
+  (BLOCK 4 uses s6b_rows.json)
+
+BLOCK 4  ONSET OF LOCAL WRITABILITY vs k AT FIXED n (S6, random carriers)
+  sequence                                       npts   classification         k*         values (first..last)
+  ------------------------------------------------------------------------------------------------------------------------------------------------------
+  S6 n=10 P(reach_1>0)                           9      SIGN CHANGE            3          0.09375, 0.0625, 0.2188, 0.4375 ... 1, 1
+  S6 n=10 mean_reach_1                           9      SIGN CHANGE            3          0.09375, 0.0625, 0.2188, 0.4375 ... 1.5, 1.969
+  S6 n=10 P(reach_2>0)                           9      SMOOTH MONOTONE        -          0.5625, 0.75, 1, 1 ... 1, 1
+  S6 n=10 mean_reach_2                           9      SMOOTH MONOTONE        -          0.5625, 0.8125, 1.094, 1.156 ... 3.094, 3.875
+  S6 n=10 P(reach_3>0)                           9      CONSTANT               -          1, 1, 1, 1 ... 1, 1
+  S6 n=10 mean_reach_3                           9      SMOOTH MONOTONE        -          1.125, 1.469, 1.938, 2.281 ... 4.844, 5.5
+  S6 n=12 P(reach_1>0)                           11     ONSET FROM ZERO        2          0, 0.03125, 0.09375, 0.1875 ... 1, 1
+  S6 n=12 mean_reach_1                           11     ONSET FROM ZERO        2          0, 0.03125, 0.09375, 0.1875 ... 1.438, 1.844
+  S6 n=12 P(reach_2>0)                           11     SIGN CHANGE            3          0.3438, 0.2812, 0.6562, 0.9375 ... 1, 1
+  S6 n=12 mean_reach_2                           11     SIGN CHANGE            3          0.3438, 0.2812, 0.6562, 0.9688 ... 3.281, 3.719
+  S6 n=12 P(reach_3>0)                           11     SMOOTH MONOTONE        -          0.7812, 1, 1, 1 ... 1, 1
+  S6 n=12 mean_reach_3                           11     SMOOTH MONOTONE        -          0.8125, 1, 1.094, 1.438 ... 4.875, 5.469
+  S6 n=16 P(reach_1>0)                           15     ZEROS INTERLEAVED      -          0, 0.03125, 0, 0 ... 1, 1
+  S6 n=16 mean_reach_1                           15     ZEROS INTERLEAVED      -          0, 0.03125, 0, 0 ... 1.594, 1.938
+  S6 n=16 P(reach_2>0)                           15     ONSET FROM ZERO        2          0, 0.0625, 0.25, 0.25 ... 1, 1
+  S6 n=16 mean_reach_2                           15     ONSET FROM ZERO        2          0, 0.0625, 0.25, 0.25 ... 3.25, 3.875
+  S6 n=16 P(reach_3>0)                           15     SMOOTH MONOTONE        -          0.0625, 0.1875, 0.4375, 0.625 ... 1, 1
+  S6 n=16 mean_reach_3                           15     MULTIPLE SIGN CHANGES  6          0.0625, 0.1875, 0.4375, 0.625 ... 4.906, 5.438
+  S6 n=20 P(reach_1>0)                           19     ONSET FROM ZERO        7          0, 0, 0, 0 ... 1, 1
+  S6 n=20 mean_reach_1                           19     ONSET FROM ZERO        7          0, 0, 0, 0 ... 1.688, 2
+  S6 n=20 P(reach_2>0)                           19     ONSET FROM ZERO        5          0, 0, 0, 0 ... 1, 1
+  S6 n=20 mean_reach_2                           19     ONSET FROM ZERO        5          0, 0, 0, 0 ... 3.406, 3.969
+  S6 n=20 P(reach_3>0)                           19     ONSET FROM ZERO        3          0, 0, 0.0625, 0.0625 ... 1, 1
+  S6 n=20 mean_reach_3                           19     ONSET FROM ZERO        3          0, 0, 0.0625, 0.0625 ... 4.938, 5.688
+  S6 n=24 P(reach_1>0)                           23     ONSET FROM ZERO        14         0, 0, 0, 0 ... 1, 1
+  S6 n=24 mean_reach_1                           23     ONSET FROM ZERO        14         0, 0, 0, 0 ... 1.844, 2
+  S6 n=24 P(reach_2>0)                           23     ZEROS INTERLEAVED      -          0, 0, 0, 0.03125 ... 1, 1
+  S6 n=24 mean_reach_2                           23     ZEROS INTERLEAVED      -          0, 0, 0, 0.03125 ... 3.5, 4
+  S6 n=24 P(reach_3>0)                           23     ZEROS INTERLEAVED      -          0, 0, 0, 0.03125 ... 1, 1
+  S6 n=24 mean_reach_3                           23     ZEROS INTERLEAVED      -          0, 0, 0, 0.03125 ... 5, 5.656
+  S6 n=28 P(reach_1>0)                           27     ONSET FROM ZERO        16         0, 0, 0, 0 ... 1, 1
+  S6 n=28 mean_reach_1                           27     ONSET FROM ZERO        16         0, 0, 0, 0 ... 1.75, 2
+  S6 n=28 P(reach_2>0)                           27     ZEROS INTERLEAVED      -          0, 0, 0, 0 ... 1, 1
+  S6 n=28 mean_reach_2                           27     ZEROS INTERLEAVED      -          0, 0, 0, 0 ... 3.438, 4
+  S6 n=28 P(reach_3>0)                           27     ONSET FROM ZERO        10         0, 0, 0, 0 ... 1, 1
+  S6 n=28 mean_reach_3                           27     ONSET FROM ZERO        10         0, 0, 0, 0 ... 5.031, 5.688
+
+=====================================================================================================================================================================
+ROLL-UP  how many sequences fell in each class
+=====================================================================================================================================================================
+  CONSTANT                 211
+  SMOOTH MONOTONE          93
+  MULTIPLE SIGN CHANGES    34
+  PARITY ALTERNATION       32
+  ZEROS INTERLEAVED        22
+  ONSET FROM ZERO          20
+  SLOPE DISCONTINUITY      18
+  SIGN CHANGE              7
+  SMOOTH POWER LAW         1
+
+EVERY SEQUENCE CLASSIFIED AS A CANDIDATE (anything but CONSTANT / SMOOTH MONOTONE):
+  sequence                                       classification         k*
+  ------------------------------------------------------------------------------------------
+  S2 famB  ov_lapgap                             ZEROS INTERLEAVED      -
+  S2 famB  cf2_lapgap                            ZEROS INTERLEAVED      -
+  S2 famB  cf3_lapgap                            ZEROS INTERLEAVED      -
+  S2 famB  rstar_over_n                          SMOOTH POWER LAW       -
+  S2 famC  rstar_over_n                          PARITY ALTERNATION     4
+  S3 famB round nB=6  edgefrac                   PARITY ALTERNATION     8
+  S3 famB round nB=8  giant                      MULTIPLE SIGN CHANGES  8
+  S3 famB round nB=8  edgefrac                   MULTIPLE SIGN CHANGES  8
+  S3 famB round nB=12 giant                      PARITY ALTERNATION     10
+  S3 famB round nB=12 edgefrac                   PARITY ALTERNATION     12
+  S3 famB round nB=16 giant                      MULTIPLE SIGN CHANGES  12
+  S3 famB round nB=16 edgefrac                   PARITY ALTERNATION     16
+  S3 famB round nB=24 giant                      PARITY ALTERNATION     20
+  S3 famB round nB=24 edgefrac                   MULTIPLE SIGN CHANGES  24
+  S3 famB block nB=2  giant                      MULTIPLE SIGN CHANGES  8
+  S3 famB block nB=2  edgefrac                   MULTIPLE SIGN CHANGES  8
+  S3 famB block nB=2  lapgap                     ZEROS INTERLEAVED      -
+  S3 famB block nB=2  ncomp                      MULTIPLE SIGN CHANGES  8
+  S3 famB block nB=3  giant                      PARITY ALTERNATION     8
+  S3 famB block nB=3  edgefrac                   PARITY ALTERNATION     8
+  S3 famB block nB=3  ncomp                      MULTIPLE SIGN CHANGES  8
+  S3 famB block nB=4  giant                      PARITY ALTERNATION     8
+  S3 famB block nB=4  edgefrac                   PARITY ALTERNATION     10
+  S3 famB block nB=4  ncomp                      MULTIPLE SIGN CHANGES  10
+  S3 famB block nB=6  giant                      PARITY ALTERNATION     8
+  S3 famB block nB=6  edgefrac                   PARITY ALTERNATION     8
+  S3 famB block nB=6  ncomp                      MULTIPLE SIGN CHANGES  16
+  S3 famB block nB=8  giant                      PARITY ALTERNATION     10
+  S3 famB block nB=8  edgefrac                   PARITY ALTERNATION     10
+  S3 famB block nB=8  ncomp                      MULTIPLE SIGN CHANGES  20
+  S3 famB block nB=12 giant                      PARITY ALTERNATION     16
+  S3 famB block nB=12 edgefrac                   PARITY ALTERNATION     16
+  S3 famB block nB=12 ncomp                      SIGN CHANGE            32
+  S3 famB block nB=16 giant                      PARITY ALTERNATION     20
+  S3 famB block nB=16 edgefrac                   PARITY ALTERNATION     20
+  S3 famB block nB=16 ncomp                      MULTIPLE SIGN CHANGES  20
+  S3 famB block nB=24 giant                      MULTIPLE SIGN CHANGES  32
+  S3 famB block nB=24 edgefrac                   MULTIPLE SIGN CHANGES  32
+  S3 famB block nB=24 ncomp                      MULTIPLE SIGN CHANGES  32
+  S3 famC round nB=12 edgefrac                   MULTIPLE SIGN CHANGES  16
+  S3 famC round nB=12 lapgap                     ONSET FROM ZERO        4
+  S3 famC round nB=16 edgefrac                   MULTIPLE SIGN CHANGES  20
+  S3 famC round nB=16 lapgap                     ONSET FROM ZERO        6
+  S3 famC round nB=24 lapgap                     ONSET FROM ZERO        8
+  S3 famC block nB=2  giant                      MULTIPLE SIGN CHANGES  5
+  S3 famC block nB=2  edgefrac                   MULTIPLE SIGN CHANGES  5
+  S3 famC block nB=2  lapgap                     ZEROS INTERLEAVED      -
+  S3 famC block nB=2  ncomp                      MULTIPLE SIGN CHANGES  5
+  S3 famC block nB=3  giant                      MULTIPLE SIGN CHANGES  8
+  S3 famC block nB=3  edgefrac                   ONSET FROM ZERO        4
+  S3 famC block nB=3  lapgap                     ZEROS INTERLEAVED      -
+  S3 famC block nB=3  ncomp                      MULTIPLE SIGN CHANGES  8
+  S3 famC block nB=4  giant                      MULTIPLE SIGN CHANGES  5
+  S3 famC block nB=4  edgefrac                   ZEROS INTERLEAVED      -
+  S3 famC block nB=4  lapgap                     ZEROS INTERLEAVED      -
+  S3 famC block nB=4  ncomp                      MULTIPLE SIGN CHANGES  5
+  S3 famC block nB=6  giant                      PARITY ALTERNATION     8
+  S3 famC block nB=6  edgefrac                   ZEROS INTERLEAVED      -
+  S3 famC block nB=6  lapgap                     ZEROS INTERLEAVED      -
+  S3 famC block nB=6  ncomp                      MULTIPLE SIGN CHANGES  8
+  S3 famC block nB=8  giant                      PARITY ALTERNATION     6
+  S3 famC block nB=8  edgefrac                   ZEROS INTERLEAVED      -
+  S3 famC block nB=8  ncomp                      MULTIPLE SIGN CHANGES  10
+  S3 famC block nB=12 giant                      PARITY ALTERNATION     5
+  S3 famC block nB=12 edgefrac                   ZEROS INTERLEAVED      -
+  S3 famC block nB=12 ncomp                      SIGN CHANGE            16
+  S3 famC block nB=16 giant                      PARITY ALTERNATION     8
+  S3 famC block nB=16 edgefrac                   ZEROS INTERLEAVED      -
+  S3 famC block nB=16 ncomp                      SIGN CHANGE            20
+  S3 famC block nB=24 giant                      MULTIPLE SIGN CHANGES  10
+  S3 famC block nB=24 edgefrac                   ZEROS INTERLEAVED      -
+  S5 lam=0.4 e=0.5 b=0.5 crowded                 SLOPE DISCONTINUITY    2
+  S5 lam=0.4 e=0.5 b=0.5 ratio                   SLOPE DISCONTINUITY    2
+  S5 lam=0.4 e=0.5 b=0.5 register                PARITY ALTERNATION     3
+  S5 lam=0.4 e=0.5 b=2.0 crowded                 SLOPE DISCONTINUITY    2
+  S5 lam=0.4 e=0.5 b=2.0 ratio                   SLOPE DISCONTINUITY    2
+  S5 lam=0.4 e=0.5 b=2.0 register                PARITY ALTERNATION     3
+  S5 lam=0.4 e=1.0 b=0.5 crowded                 SLOPE DISCONTINUITY    2
+  S5 lam=0.4 e=1.0 b=0.5 ratio                   SLOPE DISCONTINUITY    2
+  S5 lam=0.4 e=1.0 b=0.5 register                MULTIPLE SIGN CHANGES  22
+  S5 lam=0.4 e=1.0 b=2.0 crowded                 SLOPE DISCONTINUITY    2
+  S5 lam=0.4 e=1.0 b=2.0 ratio                   SLOPE DISCONTINUITY    2
+  S5 lam=0.4 e=1.0 b=2.0 register                MULTIPLE SIGN CHANGES  24
+  S5 lam=0.8 e=0.5 b=0.5 crowded                 SLOPE DISCONTINUITY    2
+  S5 lam=0.8 e=0.5 b=0.5 ratio                   SLOPE DISCONTINUITY    2
+  S5 lam=0.8 e=0.5 b=0.5 register                PARITY ALTERNATION     3
+  S5 lam=0.8 e=0.5 b=2.0 crowded                 SLOPE DISCONTINUITY    2
+  S5 lam=0.8 e=0.5 b=2.0 ratio                   SLOPE DISCONTINUITY    2
+  S5 lam=0.8 e=0.5 b=2.0 register                PARITY ALTERNATION     3
+  S5 lam=0.8 e=1.0 b=0.5 crowded                 SLOPE DISCONTINUITY    2
+  S5 lam=0.8 e=1.0 b=0.5 ratio                   SLOPE DISCONTINUITY    2
+  S5 lam=0.8 e=1.0 b=0.5 register                PARITY ALTERNATION     3
+  S5 lam=0.8 e=1.0 b=2.0 crowded                 SLOPE DISCONTINUITY    2
+  S5 lam=0.8 e=1.0 b=2.0 ratio                   SLOPE DISCONTINUITY    2
+  S5 lam=0.8 e=1.0 b=2.0 register                PARITY ALTERNATION     3
+  S5 lam=1.2 e=0.5 b=0.5 crowded                 SLOPE DISCONTINUITY    2
+  S5 lam=1.2 e=0.5 b=0.5 ratio                   SLOPE DISCONTINUITY    2
+  S5 lam=1.2 e=0.5 b=0.5 register                PARITY ALTERNATION     3
+  S5 lam=1.2 e=0.5 b=2.0 register                PARITY ALTERNATION     3
+  S5 lam=1.2 e=1.0 b=0.5 crowded                 MULTIPLE SIGN CHANGES  15
+  S5 lam=1.2 e=1.0 b=0.5 ratio                   MULTIPLE SIGN CHANGES  15
+  S5 lam=1.2 e=1.0 b=0.5 register                PARITY ALTERNATION     3
+  S5 lam=1.2 e=1.0 b=2.0 crowded                 MULTIPLE SIGN CHANGES  21
+  S5 lam=1.2 e=1.0 b=2.0 ratio                   MULTIPLE SIGN CHANGES  21
+  S5 lam=1.2 e=1.0 b=2.0 register                PARITY ALTERNATION     3
+  S6 n=10 P(reach_1>0)                           SIGN CHANGE            3
+  S6 n=10 mean_reach_1                           SIGN CHANGE            3
+  S6 n=12 P(reach_1>0)                           ONSET FROM ZERO        2
+  S6 n=12 mean_reach_1                           ONSET FROM ZERO        2
+  S6 n=12 P(reach_2>0)                           SIGN CHANGE            3
+  S6 n=12 mean_reach_2                           SIGN CHANGE            3
+  S6 n=16 P(reach_1>0)                           ZEROS INTERLEAVED      -
+  S6 n=16 mean_reach_1                           ZEROS INTERLEAVED      -
+  S6 n=16 P(reach_2>0)                           ONSET FROM ZERO        2
+  S6 n=16 mean_reach_2                           ONSET FROM ZERO        2
+  S6 n=16 mean_reach_3                           MULTIPLE SIGN CHANGES  6
+  S6 n=20 P(reach_1>0)                           ONSET FROM ZERO        7
+  S6 n=20 mean_reach_1                           ONSET FROM ZERO        7
+  S6 n=20 P(reach_2>0)                           ONSET FROM ZERO        5
+  S6 n=20 mean_reach_2                           ONSET FROM ZERO        5
+  S6 n=20 P(reach_3>0)                           ONSET FROM ZERO        3
+  S6 n=20 mean_reach_3                           ONSET FROM ZERO        3
+  S6 n=24 P(reach_1>0)                           ONSET FROM ZERO        14
+  S6 n=24 mean_reach_1                           ONSET FROM ZERO        14
+  S6 n=24 P(reach_2>0)                           ZEROS INTERLEAVED      -
+  S6 n=24 mean_reach_2                           ZEROS INTERLEAVED      -
+  S6 n=24 P(reach_3>0)                           ZEROS INTERLEAVED      -
+  S6 n=24 mean_reach_3                           ZEROS INTERLEAVED      -
+  S6 n=28 P(reach_1>0)                           ONSET FROM ZERO        16
+  S6 n=28 mean_reach_1                           ONSET FROM ZERO        16
+  S6 n=28 P(reach_2>0)                           ZEROS INTERLEAVED      -
+  S6 n=28 mean_reach_2                           ZEROS INTERLEAVED      -
+  S6 n=28 P(reach_3>0)                           ONSET FROM ZERO        10
+  S6 n=28 mean_reach_3                           ONSET FROM ZERO        10
+
+D-17 CROSS-READ OF THE CANDIDATES -- does k* move when the venue's own scale moves?
+  A candidate whose k* is the SAME NUMBER at every venue scale is a record-count threshold.
+  A candidate whose k* MOVES with the venue scale is not.
+  family of sequences                      classification         k* across venue scales
+  --------------------------------------------------------------------------------------------------------------
+  S2 rstar_over_n                          PARITY ALTERNATION     [4]   -> k* CONSTANT across venues
+  S3 edgefrac                              MULTIPLE SIGN CHANGES  [5, 8, 16, 20, 24, 32]   -> k* MOVES with the venue
+  S3 edgefrac                              ONSET FROM ZERO        [4]   -> k* CONSTANT across venues
+  S3 edgefrac                              PARITY ALTERNATION     [8, 10, 12, 16, 20]   -> k* MOVES with the venue
+  S3 giant                                 MULTIPLE SIGN CHANGES  [5, 8, 10, 12, 32]   -> k* MOVES with the venue
+  S3 giant                                 PARITY ALTERNATION     [5, 6, 8, 10, 16, 20]   -> k* MOVES with the venue
+  S3 lapgap                                ONSET FROM ZERO        [4, 6, 8]   -> k* MOVES with the venue
+  S3 ncomp                                 MULTIPLE SIGN CHANGES  [5, 8, 10, 16, 20, 32]   -> k* MOVES with the venue
+  S3 ncomp                                 SIGN CHANGE            [16, 20, 32]   -> k* MOVES with the venue
+  S5 crowded                               MULTIPLE SIGN CHANGES  [15, 21]   -> k* MOVES with the venue
+  S5 crowded                               SLOPE DISCONTINUITY    [2]   -> k* CONSTANT across venues
+  S5 ratio                                 MULTIPLE SIGN CHANGES  [15, 21]   -> k* MOVES with the venue
+  S5 ratio                                 SLOPE DISCONTINUITY    [2]   -> k* CONSTANT across venues
+  S5 register                              MULTIPLE SIGN CHANGES  [22, 24]   -> k* MOVES with the venue
+  S5 register                              PARITY ALTERNATION     [3]   -> k* CONSTANT across venues
+  S6 P(reach_1>0)                          ONSET FROM ZERO        [2, 7, 14, 16]   -> k* MOVES with the venue
+  S6 P(reach_1>0)                          SIGN CHANGE            [3]   -> k* CONSTANT across venues
+  S6 P(reach_2>0)                          ONSET FROM ZERO        [2, 5]   -> k* MOVES with the venue
+  S6 P(reach_2>0)                          SIGN CHANGE            [3]   -> k* CONSTANT across venues
+  S6 P(reach_3>0)                          ONSET FROM ZERO        [3, 10]   -> k* MOVES with the venue
+  S6 mean_reach_1                          ONSET FROM ZERO        [2, 7, 14, 16]   -> k* MOVES with the venue
+  S6 mean_reach_1                          SIGN CHANGE            [3]   -> k* CONSTANT across venues
+  S6 mean_reach_2                          ONSET FROM ZERO        [2, 5]   -> k* MOVES with the venue
+  S6 mean_reach_2                          SIGN CHANGE            [3]   -> k* CONSTANT across venues
+  S6 mean_reach_3                          MULTIPLE SIGN CHANGES  [6]   -> k* CONSTANT across venues
+  S6 mean_reach_3                          ONSET FROM ZERO        [3, 10]   -> k* MOVES with the venue
+
+FINAL CHECK -- for every candidate whose k* did NOT move with the venue scale, is k* above
+  the regime the program has already measured (k = 2 to 4), or at the bottom of the range?
+  sequence                                       classification         k*     min k    verdict
+  --------------------------------------------------------------------------------------------------------------
+  S2 famC  rstar_over_n                          PARITY ALTERNATION     4      1        AT/BELOW THE PROGRAM'S REGIME
+  S3 famC block nB=3  edgefrac                   ONSET FROM ZERO        4      3        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=0.5 b=0.5 crowded                 SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=0.5 b=2.0 crowded                 SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=1.0 b=0.5 crowded                 SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=1.0 b=2.0 crowded                 SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=0.5 b=0.5 crowded                 SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=0.5 b=2.0 crowded                 SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=1.0 b=0.5 crowded                 SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=1.0 b=2.0 crowded                 SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=1.2 e=0.5 b=0.5 crowded                 SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=0.5 b=0.5 ratio                   SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=0.5 b=2.0 ratio                   SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=1.0 b=0.5 ratio                   SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=1.0 b=2.0 ratio                   SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=0.5 b=0.5 ratio                   SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=0.5 b=2.0 ratio                   SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=1.0 b=0.5 ratio                   SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=1.0 b=2.0 ratio                   SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=1.2 e=0.5 b=0.5 ratio                   SLOPE DISCONTINUITY    2      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=0.5 b=0.5 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.4 e=0.5 b=2.0 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=0.5 b=0.5 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=0.5 b=2.0 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=1.0 b=0.5 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=0.8 e=1.0 b=2.0 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=1.2 e=0.5 b=0.5 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=1.2 e=0.5 b=2.0 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=1.2 e=1.0 b=0.5 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S5 lam=1.2 e=1.0 b=2.0 register                PARITY ALTERNATION     3      1        AT/BELOW THE PROGRAM'S REGIME
+  S6 n=10 P(reach_1>0)                           SIGN CHANGE            3      1        AT/BELOW THE PROGRAM'S REGIME
+  S6 n=12 P(reach_2>0)                           SIGN CHANGE            3      1        AT/BELOW THE PROGRAM'S REGIME
+  S6 n=10 mean_reach_1                           SIGN CHANGE            3      1        AT/BELOW THE PROGRAM'S REGIME
+  S6 n=12 mean_reach_2                           SIGN CHANGE            3      1        AT/BELOW THE PROGRAM'S REGIME
+  S6 n=16 mean_reach_3                           MULTIPLE SIGN CHANGES  6      1        ABOVE k = 4 -- EXAMINE
+
+  candidates with a venue-stable k* ABOVE k = 4: 1
+     S6 n=16 mean_reach_3  (MULTIPLE SIGN CHANGES, k*=6)
+
+VERDICT, filled from the classifier output above and nowhere else:
+  * 305 of 438 sequences are CONSTANT or SMOOTH MONOTONE in k.
+  * every ONSET FROM ZERO found has a k* that MOVES when the venue's own scale moves.
+  * the venue-stable qualitative features that do exist sit at the BOTTOM of the k range,
+    not above it.

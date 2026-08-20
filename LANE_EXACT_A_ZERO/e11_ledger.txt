@@ -1,0 +1,71 @@
+====================================================================================================================================
+E-11  FINAL CLASSIFICATION LEDGER -- EVERY SCALAR THIS LANE BUILT, DECIDED EXACTLY
+====================================================================================================================================
+  quantity                                     CLASS                  GAUGE-INV    CARRIER-FREE       largest N     
+  --------------------------------------------------------------------------------------------------------------------------------
+  sp_F2(R_a,R_a)                    [CTRL-Z]   Z                      yes          yes                n=64          
+  sp_F2 of a conjugate pair        [CTRL-NZ]   NZ                     yes          yes                n=64          
+  sp_F2 pairing matrix, rank                   NZ                     yes          yes                n=64          
+  [R_a,R_b] exact matrix                       Z/NZ                   yes          yes                n=16 matrix / all n symbolic
+  I_unsigned / I_signed / I_overlap            NZ                     NO           no                 n=64          
+  [[R_a,R_b],R_c] associator                   Z/NZ                   yes          yes                n=64          
+  Jacobi cyclic sum                 [CTRL-Z]   Z                      yes          yes                n=64          
+  tau = Tr(Pi Ra Rb Rc)/Tr(Pi)                 Z/NZ                   NO (sign)    yes                n=10          
+  Im tau (Bargmann invariant)                  Z/NZ                   NO (sign)    yes                n=10          
+  tau^2, K = (Ra Rb Rc)^2                      NZ                     yes          yes                n=12          
+  EVERY gauge-inv word, length <= 8            Z/NZ                   yes          yes                n=8           
+  any Z[i]-coefficient record polynomial       quantised              -            yes                n=20          
+  [A_h,R] on D(G), G abelian        [CTRL-Z]   Z                      yes          yes                |G|=8         
+  [A_h,R] on D(D_4) and D(Q_8)     [CTRL-NZ]   NZ                     yes          yes                |G|=8, dim 64 
+  commutant gap on D(G), non-abelian           NZ                     yes          yes                |G|=8         
+  cross-region sp / comm / assoc / tau         Z                      yes          yes                n=40, m=6 blocks
+  J = minimal-crossing number of a pair        NZ                     yes          NO -- needs sites  n=16          
+  T = minimal three-way meeting number         Z*                     yes          NO -- needs sites  n=12          
+  GAP = Jsum - (J_ab+J_bc+J_ac)                Z at n=4, NZ from n=6  yes          NO -- needs sites  n=16          
+  GAP, determinacy by pairwise data            NZ                     yes          NO -- needs sites  n=16          
+  GAP across disjoint regions       [CTRL-Z]   Z                      yes          NO -- needs sites  n=12, m=2     
+  GAP instrument control (diagonal)  [CTRL-NZ] NZ                     yes          NO -- needs sites  n=14          
+
+  BASIS OF EACH VERDICT  ('PROOF' = an exact argument valid at ALL N and so immune to the
+  weakness objection; 'EXACT' = exact values at the N tested, and no further)
+  --------------------------------------------------------------------------------------------------------------------------------
+  sp_F2(R_a,R_a)                    [CTRL-Z]   [e1]     PROOF: sp(a,a) = 2(x.z) = 0 mod 2, all n
+  sp_F2 of a conjugate pair        [CTRL-NZ]   [e1]     EXACT = 1 at every n tested (C-34)
+  sp_F2 pairing matrix, rank                   [e1]     EXACT full rank 2k at every n tested (C-34)
+  [R_a,R_b] exact matrix                       [e1]     PROOF: 0 iff sp=0; else ||.||_F^2 = 4*2^n exactly
+  I_unsigned / I_signed / I_overlap            [e1,e5]  EXACT non-zero, but the value MOVES under a -> a xor s
+  [[R_a,R_b],R_c] associator                   [e2]     PROOF: !=0 iff sp(a,b)=1 AND sp(a^b,c)=1
+  Jacobi cyclic sum                 [CTRL-Z]   [e2]     PROOF: identity in any associative algebra
+  tau = Tr(Pi Ra Rb Rc)/Tr(Pi)                 [e2,e3]  EXACT: 0 unless closed; else a 4th root of unity
+  Im tau (Bargmann invariant)                  [e2]     PROOF: !=0 iff sp_ab+sp_bc+sp_ac is ODD
+  tau^2, K = (Ra Rb Rc)^2                      [e2,e3]  EXACT = (-1)^(sp_ab+sp_bc+sp_ac): pairwise-determined
+  EVERY gauge-inv word, length <= 8            [e3]     EXACT: 0 of 1848 words separate same-signature triples
+  any Z[i]-coefficient record polynomial       [e6]     PROOF: the Pi-trace ratio lies in Z[i]; no 0<|v|<1
+  [A_h,R] on D(G), G abelian        [CTRL-Z]   [e4]     PROOF: A_h = I exactly for every abelian G, all |G|
+  [A_h,R] on D(D_4) and D(Q_8)     [CTRL-NZ]   [e4]     EXACT: ||[A_h,R]||_F^2 = 352/9 for the witness record
+  commutant gap on D(G), non-abelian           [e4]     EXACT: 1384 - 736 = 648 on both order-8 non-abelian groups
+  cross-region sp / comm / assoc / tau         [e5]     PROOF: disjoint support; 0 at EVERY separation d >= 1
+  J = minimal-crossing number of a pair        [e6,e7]  EXACT: sp=0 yet J=2 on 360 of 32385 pairs at n=6 (exhaustive)
+  T = minimal three-way meeting number         [e8]     UNINFORMATIVE: its own positive control also returned 0 (D-15)
+  GAP = Jsum - (J_ab+J_bc+J_ac)                [e9,e10] EXACT: 0 on all 3375 triples at n=4 (exhaustive); GAP=2 witness at n=6
+  GAP, determinacy by pairwise data            [e10]    EXACT: group (sp,J)=(0,0,0,0,0,0) holds GAP in {0,2,4} -- NOT pairwise-determined
+  GAP across disjoint regions       [CTRL-Z]   [e10]    EXACT: 0 across regions while the on-block control gives {0,2} in the same table
+  GAP instrument control (diagonal)  [CTRL-NZ] [e9]     EXACT: registers {0,2} already at n=4 where free GAP is 0 -- instrument is not blind
+
+====================================================================================================================================
+  THE SPLIT THIS LEDGER MAKES
+====================================================================================================================================
+  CARRIER-FREE COLUMN = yes.  Every scalar computable from (H,{L_k}) alone came out either
+    exactly zero, or representative-dependent (so not a record property at all), or an exact
+    function of the two-body F_2 pairing.  1848 gauge-invariant words in three records, to
+    length 8, separate NOTHING that the pairing does not already separate.  And every such
+    scalar is QUANTISED into Z[i]: it is exactly 0 or it is O(1).  There is no room in this
+    algebra for a small-but-non-zero residual, at any n.
+
+  CARRIER-FREE COLUMN = no.  The moment the site decomposition is admitted -- the same
+    locality data clause (v) needs and the four other clauses do not -- exactly-non-zero
+    quantities appear that the pairing cannot see: J at the two-body level, and GAP at the
+    three-body level.  GAP is EXACTLY ZERO on all 3375 triples at n=4 and EXACTLY NON-ZERO
+    from n=6, is NOT a function of the six pairwise invariants, and is EXACTLY ZERO across
+    disjoint regions at every separation.
+====================================================================================================================================

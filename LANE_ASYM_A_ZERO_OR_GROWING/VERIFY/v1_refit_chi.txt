@@ -1,0 +1,91 @@
+======================================================================================================================
+V1  ADVERSARIAL RE-FIT OF THE chi SCALING CLAIMS  (engine copied verbatim from the lane's s3)
+======================================================================================================================
+
+REPRODUCTION CHECK vs the lane's s3_chi_scaling.json, max abs deviation: 1.421e-14  (must be < 1e-9)
+reproduction ok: what follows re-fits THEIR numbers.
+
+A1  COMPETING ASYMPTOTIC FORMS, fitted to the SAME numbers, residuals in y-space (chi bits).
+    A model is only 'supported by the data' if it beats the alternatives.  Lower rms / AIC is better.
+
+  distributed fixed bath nq=3   (lane calls this: decaying power law)
+     form                             rms(y)          AIC   max|resid|
+     power law  A*k^a                0.10491       -63.64      0.33500
+     exponential A*exp(-b k)         0.22303       -41.01      0.64754
+     inverse-log A/(b+ln k)          1.47867        15.73      5.72326
+     saturate c0 + A*k^a             0.10381       -61.96      0.33671
+     stretched A*exp(-b k^q)         0.10119       -62.72      0.35899
+     power-law exponent a = -0.4638 ;  best saturating fit has c0 = 0.0000 (a positive floor), a = -0.441 ;
+     best stretched exponent q = 0.074
+
+  shared      fixed bath nq=3   (lane calls this: decaying power law)
+     form                             rms(y)          AIC   max|resid|
+     power law  A*k^a                0.01490      -122.20      0.02934
+     exponential A*exp(-b k)         0.08183       -71.09      0.26414
+     inverse-log A/(b+ln k)          0.09980       -65.14      0.36716
+     saturate c0 + A*k^a             0.01415      -121.73      0.02255
+     stretched A*exp(-b k^q)         0.01780      -114.86      0.04942
+     power-law exponent a = -0.2879 ;  best saturating fit has c0 = 0.0500 (a positive floor), a = -0.336 ;
+     best stretched exponent q = 0.050
+
+  CONTROL bath scaled nq=k      (lane calls this: LINEAR)
+     form                             rms(y)          AIC   max|resid|
+     power law  A*k^a                0.03016      -101.04      0.07808
+     exponential A*exp(-b k)        49.38649       120.99    185.74124
+     inverse-log A/(b+ln k)         70.18903       131.54    195.20348
+     saturate c0 + A*k^a            36.63454       114.03     96.67062
+     stretched A*exp(-b k^q)         3.13035        40.23     10.90835
+     power-law exponent a = +1.0010 ;  best saturating fit has c0 = 0.0168 (a positive floor), a = +0.000 ;
+     best stretched exponent q = 0.050
+
+A2  IS THE EXPONENT A LAW, OR A LOCAL SLOPE THAT DRIFTS?
+    local slope a_i = ln(y_{i+1}/y_i) / ln(k_{i+1}/k_i).  A true power law has a CONSTANT column.
+
+    k range        distributed nq=3     shared nq=3      CONTROL nq=k
+       2 ->    4             0.2912          -0.3651           0.9803
+       4 ->    6            -1.1143          -0.3875           0.9596
+       6 ->    8            -0.6308          -0.2833           1.0806
+       8 ->   10            -0.4913          -0.2414           1.0062
+      10 ->   12            -0.6621          -0.2198           0.9801
+      12 ->   16            -0.4393          -0.2073           1.0078
+      16 ->   24            -0.5652          -0.2090           1.0000
+      24 ->   32            -0.4541          -0.2269           1.0000
+      32 ->   48            -0.5046          -0.2553           1.0000
+      48 ->   64            -0.4287          -0.2880           1.0000
+      64 ->   96            -0.3108          -0.3274           1.0000
+      96 ->  128            -0.3330          -0.3719           1.0000
+     128 ->  192            -0.3750          -0.4233           1.0000
+     192 ->  256            -0.5369          -0.4859           1.0000
+    distributed nq=3   local slopes span [-1.1143, +0.2912]  (spread 1.4055);  last five mean -0.3969, spread 0.2261
+    shared nq=3        local slopes span [-0.4859, -0.2073]  (spread 0.2786);  last five mean -0.3793, spread 0.1979
+    CONTROL nq=k       local slopes span [+0.9596, +1.0806]  (spread 0.1210);  last five mean +1.0000, spread 0.0000
+
+A2b FITTING WINDOW DEPENDENCE (the lane fitted the whole range, k = 2..256).
+    window            distributed a +- s     shared a +- s        CONTROL a +- s
+    k >= 2    (15 pts)  -0.4638 +- 0.0212    -0.2879 +- 0.0090    +1.0010 +- 0.0012
+    k >= 8    (12 pts)  -0.4470 +- 0.0118    -0.2870 +- 0.0132    +1.0001 +- 0.0002
+    k >= 16   ( 9 pts)  -0.4190 +- 0.0140    -0.3174 +- 0.0167    +1.0000 +- 0.0000
+    k >= 32   ( 7 pts)  -0.3900 +- 0.0139    -0.3540 +- 0.0175    +1.0000 +- 0.0000
+    k >= 64   ( 5 pts)  -0.3751 +- 0.0229    -0.3976 +- 0.0177    +1.0000 +- 0.0000
+
+A3  D-17 ON THE FIT ITSELF: does the exponent belong to the system or to the 25-point time grid?
+    Same engine, same k list; only the time grid / lam / beta change.  Fitted over the full range.
+
+    setting                                  distributed a +- s   shared a +- s   CONTROL a +- s
+    lane's own: 25 t in [1,13], lam .8 b 2   -0.4638 +- 0.0212  -0.2879 +- 0.0090  +1.0010 +- 0.0012
+    101 t in [1,13]                          -0.5467 +- 0.0218  -0.3148 +- 0.0062  +1.0015 +- 0.0010
+    25 t in [1.5,13.5]                       -0.4595 +- 0.0207  -0.2890 +- 0.0091  +1.0006 +- 0.0010
+    25 t in [0.5,30]                         -0.5358 +- 0.0188  -0.2321 +- 0.0152  +0.9914 +- 0.0031
+    25 t in [20,40]                          -0.5302 +- 0.0182  -0.2538 +- 0.0228  +0.9996 +- 0.0010
+    25 t in [1,13], lam = 0.4                -0.3236 +- 0.0352  -0.1783 +- 0.0033  +1.0096 +- 0.0031
+    25 t in [1,13], lam = 1.6                -0.5112 +- 0.0260  -0.4563 +- 0.0184  +0.9925 +- 0.0030
+    25 t in [1,13], beta = 0.5               -0.4104 +- 0.0142  -0.3793 +- 0.0100  +0.9886 +- 0.0049
+
+    distributed exponent across settings: min -0.5467  max -0.3236  SPREAD 0.2232   (lane's quoted sigma 0.0212)
+    shared      exponent across settings: min -0.4563  max -0.1783  SPREAD 0.2781   (lane's quoted sigma 0.0090)
+    CONTROL     exponent across settings: min +0.9886  max +1.0096  SPREAD 0.0210   (lane's quoted sigma 0.0012)
+
+EXACT-BOUND RE-CHECK (this is the part of the lane's (S) verdict that does NOT rest on a fit):
+    max over all (mode, nq, k) of chi_total / nq = 0.4963   (bound is 1.0);  attained at distributed nq=2 k=2 chi=0.9925
+    -> total chi never exceeds log2 dim(bath) = nq.  Standard Holevo bound; the lane's chain-rule
+       argument is correct and is an ORDINARY result, not a new one.

@@ -135,18 +135,14 @@ row("  CONTROL per-record chi, bath SCALED nq=N", [0.52153] * len(CHIK), "S",
     "EXACTLY CONSTANT 0.52153 at every N -- one bath site per record, so nothing is split.")
 rd = s4["redundancy"]
 row("redundancy (fragments holding >=10% of chi)",
-    [rd["n4_nq3"][2], rd["n4_nq4"][2], rd["n4_nq5"][2], rd["n6_nq3"][2], rd["n6_nq4"][2], None], "S",
-    "Bounded by nq, the bath's own size, at every N. D-17: it tracks nq, not N.")
-
-# ---------------------------------------------------------------- additivity
-ch = s4["chi"]
-mk = sorted(ch.keys(), key=lambda x: int(x))[:6]
-row("chi(A u B) - chi(A) - chi(B), SHARED bath", [-ch[m][3] + ch[m][2] for m in mk], "S",
-    "STRICTLY SUBADDITIVE at every N tested: the deficit is positive throughout, so total chi "
-    "FAILS gravity's requirement (b), additivity over disjoint regions.")
-row("  CONTROL same, DISJOINT baths", [ch[m][4] - ch[m][2] for m in mk], "Z",
-    "EXACTLY 0 deficit -- the test CAN register additivity, so the shared-bath deficit is real. "
-    "But disjoint baths means the environment scaled with the matter.")
+    [rd["n4_nq3"][2], rd["n6_nq3"][2], None, None, None, None], "S",
+    "At nq=3 the answer is 3 at both N tested. D-17, varying the venue's own scale: nq=4 gives 4 "
+    "and nq=5 gives 5 (N=2), nq=4 gives 4 (N=4). The scalar tracks nq, the bath's own size, and "
+    "is bounded by it at every N. It does not track N.")
+row("model-enumerated records satisfying (i)-(iv)", [1260, None, None, None, None, None], "U",
+    "1260 at n=4 (16 minimal projections of A'). NOT REACHABLE beyond n=4: at n=6 the commutant "
+    "has 64 minimal projections and RecordModel.records() raises -- obstruction O-28. Reported as "
+    "measured at one N only; no growth law is claimed from a single point.")
 
 # ---------------------------------------------------------------- print
 p("=" * 190)
@@ -154,6 +150,7 @@ p("S6  MASTER TRIAGE TABLE -- EVERY SCALAR THIS PROGRAM CAN BUILD FROM N RECORDS
 p("    (Z) identically zero at every finite N by an exact argument -- rules out emergence at ANY N")
 p("    (S) bounded / saturating / constant / decaying                -- ruled out as gravity's source at ANY N by extensivity (a)")
 p("    (G) growing without bound                                     -- the only category that can carry a source; growth law given")
+p("    (U) UNTRIAGED -- reachable at only one N, so no category is claimed for it")
 p("=" * 190)
 p("")
 hdr = "%-46s | %-9s %-9s %-9s %-9s %-9s %-9s | %-3s" % ("QUANTITY", "N=2", "N=4", "N=6", "N=8", "N=10", "N=12", "CAT")
@@ -172,17 +169,46 @@ for name, vals, cat, arg in rows:
         p("      " + arg[i:i + 176])
 p("-" * 190)
 p("")
+nu = [r[0] for r in rows if r[2] == "U"]
 nz = [r[0] for r in rows if r[2] == "Z"]
 ns = [r[0] for r in rows if r[2] == "S"]
 ng = [r[0] for r in rows if r[2] == "G"]
-p("CATEGORY COUNTS:  (Z) identically zero = %d      (S) saturating/bounded = %d      (G) growing = %d      TOTAL = %d"
-  % (len(nz), len(ns), len(ng), len(rows)))
+ch = s4["chi"]
+mk = sorted(ch.keys(), key=lambda x: int(x))
+p("SEPARATE TABLE -- ADDITIVITY OVER DISJOINT REGIONS (its own N axis: two clusters of N/2 records each)")
+p("-" * 190)
+p("  %-52s %s" % ("N (total records, split N/2 + N/2)", "  ".join("%9d" % (2 * int(m)) for m in mk)))
+p("  %-52s %s" % ("chi(A) + chi(B)", "  ".join("%9.4f" % ch[m][2] for m in mk)))
+p("  %-52s %s" % ("chi(A u B), SHARED nq=3 bath", "  ".join("%9.4f" % ch[m][3] for m in mk)))
+p("  %-52s %s" % ("DEFICIT = chi(A)+chi(B) - chi(A u B)  -> (S)", "  ".join("%9.4f" % (ch[m][2] - ch[m][3]) for m in mk)))
+p("  %-52s %s" % ("CONTROL chi(A u B), DISJOINT baths", "  ".join("%9.4f" % ch[m][4] for m in mk)))
+p("  %-52s %s" % ("CONTROL deficit  -> (Z), exactly 0", "  ".join("%9.4f" % (ch[m][2] - ch[m][4]) for m in mk)))
+p("-" * 190)
+p("  chi under a SHARED bath is STRICTLY SUBADDITIVE at every N tested (deficit positive throughout),")
+p("  so total chi FAILS gravity's requirement (b). The DISJOINT-BATH control has deficit exactly 0,")
+p("  so the test can register additivity -- the deficit is real, not an insensitivity of the probe.")
+p("  But 'disjoint baths' means the ENVIRONMENT was doubled along with the matter.")
+p("")
+p("CATEGORY COUNTS:  (Z) identically zero = %d      (S) saturating/bounded = %d      (G) growing = %d      (U) untriaged = %d      TOTAL = %d"
+  % (len(nz), len(ns), len(ng), len(nu), len(rows)))
 p("")
 p("  (Z): %s" % "; ".join(nz))
 p("")
 p("  (S): %s" % "; ".join(ns))
 p("")
 p("  (G): %s" % "; ".join(ng))
+p("")
+p("  (U): %s" % "; ".join(nu))
+p("")
+viol = []
+for mode in ("distributed", "shared"):
+    for nq in (1, 2, 3, 4):
+        for k in s3["KS"]:
+            v = s3["total"]["%s|%d|%d" % (mode, nq, k)]
+            if v > nq + 1e-12: viol.append((mode, nq, k, v))
+p("EXACT-BOUND CHECK: total chi <= nq at every (mode, nq, N) computed, N = 2..%d.  Violations found: %d"
+  % (max(s3["KS"]), len(viol)))
+if viol: p("  VIOLATIONS: %s -- the exact argument would be wrong; CONCLUDE NOTHING from the chi rows." % viol[:5])
 p("")
 p("=" * 190)
 p("READ (filled from the table above, not in advance)")

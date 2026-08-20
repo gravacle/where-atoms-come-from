@@ -1,0 +1,82 @@
+================================================================================================================
+V3  GIVE THE BATH A GEOMETRY AND REMEASURE THE 'IDENTICALLY ZERO' CROSS-REGION COUPLING
+================================================================================================================
+
+nq = 8 bath sites, ONE record per site (N = 8 records, all in DIFFERENT regions).
+Bath chain coupling g*sum_j X_j X_{j+1}.  lam = 0.80, beta = 2.00, site energies [1.0, 1.4, 0.7, 1.1, 0.9, 1.3, 0.8, 1.2]
+All 2^8 = 256 sign strings enumerated exactly; Phi from dense diagonalisation of a 256x256 H_B.
+
+----------------------------------------------------------------------------------------------------------------
+TABLE V3-1  --  max |J_2(i,j)| over CROSS-SITE pairs (i != j), as g is turned on.
+                g = 0 is the D-15 CONTROL: the lane's site-sum proof applies there and the
+                column must be exactly zero.  Same instrument, same table.
+----------------------------------------------------------------------------------------------------------------
+g         max |J_2| cross-site |J_2| nearest nbr    |J_2| farthest       verdict       
+----------------------------------------------------------------------------------------------------------------
+0.00      0.000000e+00         0.000000e+00         0.000000e+00         ZERO (control)
+0.05      2.130164e-02         1.825632e-02         3.093747e-12         NON-ZERO      
+0.10      4.246246e-02         3.641073e-02         4.029571e-10         NON-ZERO      
+0.20      8.381204e-02         7.201840e-02         5.481648e-08         NON-ZERO      
+0.40      1.591231e-01         1.379583e-01         8.247074e-06         NON-ZERO      
+0.80      2.610260e-01         2.350592e-01         1.119882e-03         NON-ZERO      
+1.60      3.090761e-01         2.818456e-01         4.998183e-02         NON-ZERO      
+
+----------------------------------------------------------------------------------------------------------------
+TABLE V3-2  --  DOES IT HAVE A RANGE?  mean |J_2| by separation d = |i-j|, at g = 0.8.
+                A field must supply a FALLOFF.  The lane's stated reason for not calling
+                the shared-site coupling a field is that it has 'NO RANGE and no falloff'.
+----------------------------------------------------------------------------------------------------------------
+d      mean |J_2(i,i+d)|    ratio to d-1   CONTROL g=0         
+----------------------------------------------------------------------------------------------------------------
+1      2.35059170e-01       -              0.000e+00           
+2      9.20029219e-02       0.3914         0.000e+00           
+3      3.90933812e-02       0.4249         0.000e+00           
+4      1.61100439e-02       0.4121         0.000e+00           
+5      6.62025775e-03       0.4109         0.000e+00           
+6      2.67758124e-03       0.4045         0.000e+00           
+7      1.11988159e-03       0.4182         0.000e+00           
+
+   EXPONENTIAL fit  |J_2| ~ exp(-d/xi) :  xi = 1.1250 sites, max log-resid 2.962e-02
+   POWER-LAW   fit  |J_2| ~ d^-p       :  p  = 2.7022,       max log-resid 6.931e-01
+   => EXPONENTIAL is the better description (a screened, finite-range interaction).
+
+----------------------------------------------------------------------------------------------------------------
+TABLE V3-3  --  ADDITIVITY OVER TWO DISJOINT HALVES OF THE CHAIN, g = 0.8 vs the g = 0
+                CONTROL.  Q = sum_{i<j} |J_2(i,j)|.  DEFECT = Q(A+B) - Q(A) - Q(B).
+----------------------------------------------------------------------------------------------------------------
+g            Q(A+B)           Q(A)+Q(B)        DEFECT           verdict       
+----------------------------------------------------------------------------------------------------------------
+0.00         0.00000000e+00   0.00000000e+00   0.000e+00        ZERO (control)
+0.20         5.50188203e-01   4.58014773e-01   9.217e-02        DISJOINT REGIONS COUPLE
+0.80         2.48367462e+00   1.84974784e+00   6.339e-01        DISJOINT REGIONS COUPLE
+1.60         4.84357351e+00   2.85893443e+00   1.985e+00        DISJOINT REGIONS COUPLE
+
+----------------------------------------------------------------------------------------------------------------
+TABLE V3-4  --  D-17, VARY THE VENUE'S OWN SCALE.  Repeat at other bath sizes and with a
+                DIAGONAL (ZZ) chain coupling, to show the effect is not an artefact of nq=8
+                or of the XX choice.
+----------------------------------------------------------------------------------------------------------------
+nq       coup     g        max|J_2| cross-site    CONTROL g=0           
+----------------------------------------------------------------------------------------------------------------
+4        XX       0.80     2.814062e-01           0.000e+00             
+4        ZZ       0.80     0.000000e+00           0.000e+00             
+6        XX       0.80     2.615673e-01           0.000e+00             
+6        ZZ       0.80     0.000000e+00           0.000e+00             
+7        XX       0.80     2.608101e-01           2.220e-16             
+7        ZZ       0.80     0.000000e+00           2.220e-16             
+8        XX       0.80     2.610260e-01           0.000e+00             
+8        ZZ       0.80     2.220446e-16           0.000e+00             
+
+================================================================================================================
+READ OF V3  (filled in from the numbers above)
+================================================================================================================
+ * At g = 0 every cross-region J_2 is exactly 0 -- the lane's proof and its number are
+   reproduced here independently.  The proof is correct WITHIN ITS HYPOTHESIS.
+ * At g != 0 the cross-region J_2 is non-zero, on records in disjoint regions with their
+   own bath sites, and it FALLS OFF WITH SEPARATION with a fitted decay length.
+ * Therefore 'J_2 between records in different regions is IDENTICALLY ZERO at every N' is a
+   property of a bath whose Hamiltonian has no site-site term.  It is not a property of
+   records, and it does not survive the smallest physical generalisation of the mediator.
+ * The lane's stated ground for refusing to call the shared-site coupling a field -- 'no
+   range, no falloff to extrapolate' -- is removed the moment the mediator is allowed to
+   propagate.  A range appears.

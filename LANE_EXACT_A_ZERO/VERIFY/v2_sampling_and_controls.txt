@@ -1,0 +1,53 @@
+========================================================================================================================
+VERIFY v2
+========================================================================================================================
+
+B1  THE LANE'S 'FRUSTRATED FRACTION RISES 0, 0.9%, 6.3%, 10.4%, 17.9%, 23.7%' -- RECOMPUTED
+    UNIFORMLY over the FULL record group instead of the lane's generators+pairwise-sums pool.
+------------------------------------------------------------------------------------------------------------------------
+  n     k         N sampled      UNIFORM GAP distribution (exact)         uniform frac>0   lane's frac>0   
+  4     2         40000          {0: 40000}                               0.0000           0.0000          
+  6     4         40000          {0: 35973, 2: 4019, 4: 8}                0.1007           0.0093          
+  8     6         40000          {0: 32760, 2: 7170, 4: 70}               0.1810           0.0628          
+  10    8         40000          {0: 27867, 2: 11821, 4: 312}             0.3033           0.1039          
+  12    10        40000          {0: 25445, 2: 13881, 4: 673, 6: 1}       0.3639           0.1790          
+  14    12        40000          {0: 22747, 2: 16030, 4: 1220, 6: 3}      0.4313           0.2366          
+  16    14        40000          {0: 20938, 2: 17129, 4: 1911, 6: 22}     0.4765           not reported    
+
+  At n=6 the lane reports 0.0093; the uniform value is ~0.10 -- an order of magnitude apart.
+  The lane's monotone 'growth' series is therefore a property of its sampling pool, not of n.
+
+B2  THE LANE'S H2: 'GAP is NOT a function of the pairwise data'.  Their key was the six
+    two-body MINIMA (sp x3, J x3) -- a lossy summary.  Re-run with the FULL two-body key:
+    the three two-body tables themselves (still purely two-body data, nothing three-body).
+------------------------------------------------------------------------------------------------------------------------
+  n     triples     key = six minima (lane's)          key = the three two-body TABLES   
+  6     24389       10/23 groups multi-valued          0/19747 groups multi-valued       
+  8     27000       23/27 groups multi-valued          0/26660 groups multi-valued       
+  10    27000       48/63 groups multi-valued          0/26892 groups multi-valued       
+  12    27000       60/64 groups multi-valued          0/26986 groups multi-valued       
+  14    27000       108/119 groups multi-valued        0/26984 groups multi-valued       
+  16    27000       133/173 groups multi-valued        0/26986 groups multi-valued       
+
+  Zero multi-valued groups under the full two-body key at every n: GAP IS pairwise-determined.
+
+B3  THE LANE'S OWN D-15 CONTROLS FOR GAP, RE-READ
+------------------------------------------------------------------------------------------------------------------------
+  E-9 table G2 prints an 'all three on the same block' reference row alongside its CTRL-Z rows.
+  In the lane's own e9_frustration_gap.txt that reference row reads EXACTLY ZERO in ALL FOUR
+  configurations (n0,m) = (4,2),(4,3),(6,2),(6,3).  A null whose positive reference also returns
+  zero classifies nothing -- this is precisely the defect that the lane itself diagnosed in E-8's
+  quantity T and used to discard it.  Re-derive that on-block reference here, uniformly:
+
+  n0    m    n      pattern                            GAP values found (uniform sample)
+  4     2    8      all three on block 0               {0: 20000}                    
+  4     2    8      two on block 0, one on block 1     {0: 20000}                    
+  6     2    12     all three on block 0               {0: 17960, 2: 2035, 4: 5}     
+  6     2    12     two on block 0, one on block 1     {0: 20000}                    
+
+  If the on-block reference at n0=4 is {0} while the cross-region row is also {0}, the n0=4
+  cross-region null is uninformative by the lane's own D-15 rule; only n0=6 carries a live
+  reference.  The lane's summary nevertheless asserts the separation pattern holds at
+  'n0 = 4,6,8 and m = 2..6' for GAP; e10_gap_characterised.txt shows m=3 SKIPPED and no n0=8 row.
+
+========================================================================================================================

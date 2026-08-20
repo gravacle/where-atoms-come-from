@@ -1,0 +1,53 @@
+================================================================================================================================
+E-10  THE FRUSTRATION GAP, CHARACTERISED -- EXACT
+================================================================================================================================
+
+H3   ONSET.  Exhaustive over the ENTIRE record group where the group is small enough.
+--------------------------------------------------------------------------------------------------------------------------------
+  n    k      |N(S)/S|     triples       exhaustive   exact GAP distribution         smallest non-zero   
+  4    2      16           3375          YES          {0: 3375}                      NONE -- exactly zero
+  6    4      256          1728000       120-class sample {0: 1550310, 2: 177282, 4: 408} 2                   
+
+H1   AN EXPLICIT WITNESS, every number in the definition shown
+--------------------------------------------------------------------------------------------------------------------------------
+  carrier [[6,4,2]],  stabilisers X^(x)6 and Z^(x)6
+  record A representative : IIIZZI
+  record B representative : IIIXXI
+  record C representative : ZXYXXI
+  pairwise minima, each achieved separately :  J_AB = 0   J_BC = 0   J_AC = 0   sum = 0
+  joint minimum over all 64 representative triples : Jsum = 2
+  GAP = Jsum - (J_AB + J_BC + J_AC) = 2   -- EXACTLY NON-ZERO
+  the three pairwise minima CANNOT be realised at the same time; that deficit is the object.
+
+  the full joint table (crossing sums over all 64 representative choices), exact:
+     crossing-sum -> count : {2: 9, 4: 12, 6: 14, 8: 14, 10: 7, 12: 6, 14: 2}
+     pairwise minima are 0+0+0 = 0, which NEVER occurs in that table
+
+================================================================================================================================
+H2   IS GAP A FUNCTION OF THE PAIRWISE DATA (sp_ab,sp_bc,sp_ac, J_ab,J_bc,J_ac)?
+--------------------------------------------------------------------------------------------------------------------------------
+  n    triples     groups    groups with |GAP|>1 an example group -> the GAP values in it       verdict                     
+  6    17576       23        10                  (0, 0, 0, 0, 0, 0) -> [0, 2, 4]                GAP is NOT pairwise-determined
+  8    17576       26        10                  (0, 0, 0, 0, 0, 0) -> [0, 2, 4]                GAP is NOT pairwise-determined
+  10   17576       27        10                  (0, 0, 0, 0, 0, 0) -> [0, 2, 4]                GAP is NOT pairwise-determined
+  12   17576       27        17                  (0, 0, 0, 0, 0, 0) -> [0, 2, 4]                GAP is NOT pairwise-determined
+  14   17576       27        22                  (0, 0, 0, 0, 0, 0) -> [0, 2, 4, 6]             GAP is NOT pairwise-determined
+  16   17576       48        20                  (0, 0, 0, 0, 0, 0) -> [0, 2, 4, 6]             GAP is NOT pairwise-determined
+
+================================================================================================================================
+H4   SEPARATION AND ADDITIVITY OF THE GAP OVER DISJOINT REGIONS -- EXACT
+--------------------------------------------------------------------------------------------------------------------------------
+  n0    m    n      block pattern                      #triples  GAP values (exact)   verdict                 
+  4     2    8      all three on block 0               216       [0]                  on-block reference      
+  4     2    8      two on block 0, one on block 1     216       [0]                  EXACTLY ZERO across regions
+  4     3    12     (all patterns)                      SKIPPED: |S|^3 = 262144 makes the exhaustive orbit  sweep infeasible; the m=2 rows above already carry the cross-region test.
+  6     2    12     all three on block 0               1728      [0, 2]               on-block reference      
+  6     2    12     two on block 0, one on block 1     1728      [0]                  EXACTLY ZERO across regions
+  6     3    18     (all patterns)                      SKIPPED: |S|^3 = 262144 makes the exhaustive orbit  sweep infeasible; the m=2 rows above already carry the cross-region test.
+
+================================================================================================================================
+  E-10 SUMMARY
+================================================================================================================================
+  GAP is a gauge-invariant integer, exact, three-body BY CONSTRUCTION, and the tables above
+  give its onset, its determinacy verdict, and its behaviour across disjoint regions.
+================================================================================================================================

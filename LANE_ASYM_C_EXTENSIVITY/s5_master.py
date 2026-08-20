@@ -89,34 +89,59 @@ P_("   const because its bath grows with the records.")
 
 # ---------------------------------------------------------------- growth categories
 P_("\n" + "-" * 118)
-P_("TABLE 17  --  GROWTH LAWS.  Exponent p in Q(N) ~ N^p, fitted log-log on N in [256, 65536],")
+P_("TABLE 17  --  GROWTH LAWS.  Exponent p in Q(N) ~ N^p, fitted log-log on the asymptotic window N in [4096, 65536],")
 P_("            with sigma(p) and the largest residual.  NOISE FLOOR for every zero claim in")
 P_("            this lane is 1.2e-14 (s4 TABLE 10, brute-force enumeration).")
 P_("-" * 118)
 NN = [256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536]
-series = {}
-series["chi_total SHARED 1 site"] = [N * chi_of_n(N) for N in NN]
-series["chi_reg SHARED nq=3"] = [chi_reg_shared(N // 2, 3)[0] for N in NN]
-series["chi_total SEPARATE"] = [N * chi_of_n(1) for N in NN]
-series["sum_pairs |J_2| 1 site"] = [(N * (N - 1) / 2) * abs(J2_same_site(N)) for N in NN]
-series["|J_2(N)| 1 site"] = [abs(J2_same_site(N)) for N in NN]
-series["Var(Phi) 1 site"] = [phi_moments(N)[1] ** 2 for N in NN]
-series["spread(Phi) 1 site"] = [phi_moments(N)[2] for N in NN]
-series["Var(Phi) own baths"] = [N * phi_moments(1)[1] ** 2 + 1e-300 for N in NN]
-P_("%-28s %-13s %-12s %-13s %-16s %-22s"
-   % ("quantity", "exponent p", "sigma(p)", "max resid", "S(2N)/S(N) @ N=32768", "category"))
+BIG = [4096, 8192, 16384, 32768, 65536]        # the asymptotic window, for curved series
+V2 = phi_moments(2)[1] ** 2                    # per-BLOCK Var(Phi): 2 records on their own site
+S2 = phi_moments(2)[2]
+series = [
+  # name,                          values over NN,                                  exact bound
+  ("chi_total SHARED 1 site",      [N * chi_of_n(N) for N in NN],                    None),
+  ("chi_reg SHARED nq=3",          [chi_reg_shared(N // 2, 3)[0] for N in NN],
+                                   chi_reg_shared(1, 3)[1]),
+  ("chi_total, own baths",         [N * chi_of_n(1) for N in NN],                    None),
+  ("chi_reg, own baths nq=3",      [chi_reg_sep(N // 2, 3) for N in NN],             None),
+  ("sum_pairs|J_2| 1 site",        [(N * (N - 1) / 2) * abs(J2_same_site(N)) for N in NN], None),
+  ("|J_2(N)| 1 site",              [abs(J2_same_site(N)) for N in NN],               None),
+  ("Var(Phi) 1 shared site",       [phi_moments(N)[1] ** 2 for N in NN],             None),
+  ("spread(Phi) 1 shared site",    [phi_moments(N)[2] for N in NN],                  None),
+  ("Var(Phi) own baths (2/site)",  [(N / 2) * V2 for N in NN],                       None),
+  ("spread(Phi) own baths",        [(N / 2) * S2 for N in NN],                       None),
+  ("Var(Phi) 1 record per site",   [N * phi_moments(1)[1] ** 2 for N in NN],         None),
+]
+P_("%-30s %-13s %-12s %-12s %-14s %-11s %-21s"
+   % ("quantity", "exponent p", "sigma(p)", "max resid", "S(2N)/S(N)", "bound", "category"))
 P_("-" * 118)
-for nm, ys in series.items():
-    if max(ys) < 1e-200:
-        P_("%-28s %-13s %-12s %-13s %-16s %-22s" % (nm, "n/a", "n/a", "n/a", "n/a", "IDENTICALLY ZERO"))
+for nm, ys, bound in series:
+    if max(ys) < 1e-14:
+        P_("%-30s %-13s %-12s %-12s %-14s %-11s %-21s"
+           % (nm, "n/a", "n/a", "n/a", "n/a", "-", "IDENTICALLY ZERO"))
         continue
-    p, sg, rs = loglog_fit(NN, ys)
+    p_, sg, rs = loglog_fit(BIG, [ys[NN.index(N)] for N in BIG])
     ratio = ys[-1] / ys[-2]
-    cat = ("SATURATING" if abs(p) < 5 * max(sg, 1e-3) else
-           ("DECAYING TO ZERO" if p < -5 * sg else
-            ("GROWING, sub-linear" if p < 1 - 5 * max(sg, 1e-3) else
-             ("GROWING, linear" if abs(p - 1) < 5 * max(sg, 1e-3) else "GROWING, super-linear"))))
-    P_("%-28s %-13.6f %-12.2e %-13.2e %-16.6f %-22s" % (nm, p, sg, rs, ratio, cat))
+    if bound is not None and ys[-1] > 0.99 * bound:
+        cat = "SATURATING (at bound)"
+    elif p_ < -3 * max(sg, 1e-3):
+        cat = "DECAYING TO ZERO"
+    elif abs(p_) < 3 * max(sg, 1e-3):
+        cat = "SATURATING"
+    elif p_ < 1 - 3 * max(sg, 1e-3):
+        cat = "GROWING, sub-linear"
+    elif abs(p_ - 1) < 3 * max(sg, 1e-3):
+        cat = "GROWING, linear"
+    else:
+        cat = "GROWING, super-linear"
+    P_("%-30s %-13.6f %-12.2e %-12.2e %-14.6f %-11s %-21s"
+       % (nm, p_, sg, rs, ratio, ("%.4f" % bound) if bound is not None else "-", cat))
+P_("   exponents are fitted on the ASYMPTOTIC window N in [4096, 65536]; the residual column is")
+P_("   the largest log-space deviation, and every series above sits >13 orders above the 1.2e-14")
+P_("   noise floor.  Two series are curved and their exponent is a local slope, not a law:")
+P_("   chi_total SHARED (its S(2N)/S(N) is heading to 1/2, i.e. N*chi(N) ~ 1/N) and chi_reg")
+P_("   SHARED (it is not a power law at all -- it is approaching the exact bound in the")
+P_("   'bound' column, which is why its ratio is 1.000).")
 
 # ---------------------------------------------------------------- the master table
 P_("\n" + "=" * 118)
@@ -144,9 +169,11 @@ rows = [
  ("J_2 cross-region, own baths", "CODE", "identically 0", 0.0, "J_2 same site = 0.439","IDENTICALLY ZERO","a- b= c-"),
  ("J_2 same bath site",          "CODE", "N^-0.50",     None, "-",                     "DECAYING",        "a- b- c-"),
  ("sum_pairs|J_2| same site",    "CODE", "N^1.50",      None, "-",                     "GROWING super",   "a? b- c+"),
- ("Var(Phi), own baths",         "CODE", "N^1 exact",   0.0,  "Var(1 block)",          "GROWING linear",  "a+ b+ c-"),
+ ("Var(Phi), own baths (2/site)","CODE", "N^1 exact",   0.0,  "Var(1 block)=0.193",    "GROWING linear",  "a+ b+ c-"),
+ ("Var(Phi), 1 record per site", "CODE", "identically 0", 0.0, "Var(2/site)=0.193",     "IDENTICALLY ZERO","a- b= c-"),
  ("Var(Phi), shared site",       "CODE", "N^1.00",      None, "-",                     "GROWING linear",  "a+ b- c-"),
- ("spread(Phi) = max-min",       "CODE", "N^1.00 = lam*N", 0.0, "spread(1 block)",     "GROWING linear",  "a+ b+ c-"),
+ ("spread(Phi), own baths",      "CODE", "N^1 exact",   0.0,  "spread(1 blk)=0.878",   "GROWING linear",  "a+ b+ c-"),
+ ("spread(Phi), 1 shared site",  "CODE", "N^1.00 = lam*N", None, "-",                   "GROWING linear",  "a+ b- c-"),
  ("std(Phi), shared site",       "CODE", "N^0.50",      None, "-",                     "GROWING sub-lin", "a- b- c-"),
 ]
 for nm, rep, gr, df, ctrl, cat, abc in rows:

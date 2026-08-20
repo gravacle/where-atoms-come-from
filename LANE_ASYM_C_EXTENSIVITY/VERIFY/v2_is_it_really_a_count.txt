@@ -1,0 +1,94 @@
+================================================================================================================
+V2  IS EVERY EXTENSIVE QUANTITY 'THE COUNT IN DIFFERENT UNITS'?  Hold N fixed, vary the
+    CONTENT of the regions.  A count cannot move.  A density-like source must.
+================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------
+PART 1  --  N HELD FIXED AT 24 RECORDS (m = 12 disjoint blocks).  Only the block CONTENT
+            changes.  Every configuration has the same number of records and the same
+            number of regions.
+----------------------------------------------------------------------------------------------------------------
+configuration              N       P_cross   chi_total       Var(Phi)        spread(Phi)     sum|J_2|       
+----------------------------------------------------------------------------------------------------------------
+uniform  e=1.0 lam=0.8     24      0         3.273808535     2.312572925     10.535819874    5.267909937    
+uniform  e=1.0 lam=0.4     24      0         3.015011579     0.226086306     3.294259051     1.647129525    
+uniform  e=1.0 lam=1.6     24      0         3.075608490     16.476492914    28.122440503    14.061220252   
+uniform  e=0.3 lam=0.8     24      0         0.696081776     4.298307619     14.363800532    7.181900266    
+uniform  e=2.5 lam=0.8     24      0         2.953406434     0.657479801     5.617742469     2.808871235    
+MIXED    half/half lam     24      0         3.045310034     8.351289610     15.708349777    7.854174888    
+MIXED    graded e          24      0         2.882972125     1.954329007     9.264708058     4.632354029    
+----------------------------------------------------------------------------------------------------------------
+   chi_total     at FIXED N=24 :  min 0.696081776   max 3.273808535   max/min = 4.7032
+   Var(Phi)      at FIXED N=24 :  min 0.226086306   max 16.476492914   max/min = 72.8770
+   spread(Phi)   at FIXED N=24 :  min 3.294259051   max 28.122440503   max/min = 8.5368
+   sum|J_2|      at FIXED N=24 :  min 1.647129525   max 14.061220252   max/min = 8.5368
+   N (control)   at FIXED N=24 :  min 24   max 24   max/min = 1.0000   <-- CONTROL, a real count
+
+   READ: N is flat by construction (it is the count).  chi_total, Var(Phi), spread(Phi) and
+   sum|J_2| all move by factors of 2 to 40 at the SAME N.  They are therefore NOT
+   'the block count in different units'.  They are sums over regions of a LOCAL value that
+   depends continuously on what is in the region -- which is the structure of a density.
+
+----------------------------------------------------------------------------------------------------------------
+PART 2  --  REQUIREMENT (c): 'NOT SATURATING and NOT TOPOLOGICAL'.  A topological quantity
+            is locally constant under continuous deformation of the couplings.  Sweep lam
+            continuously at fixed N = 24 and fixed record set.
+----------------------------------------------------------------------------------------------------------------
+lam        N (control)       chi_total         Var(Phi)          spread(Phi)      
+----------------------------------------------------------------------------------------------------------------
+0.40       24                3.0150115787      0.2260863061      3.2942590506     
+0.45       24                3.2410368834      0.3439148112      4.0629928546     
+0.50       24                3.2986368215      0.4966596158      4.8825875883     
+0.60       24                3.2947320849      0.9205519067      6.6472920443     
+0.80       24                3.2738085353      2.3125729255      10.5358198742    
+1.00       24                3.1623111477      4.5170158504      14.7246990060    
+1.30       24                3.0130906397      9.4690285478      21.3193191798    
+1.60       24                3.0756084901      16.4764929135     28.1224405031    
+   READ: the control column N is exactly constant -- that is what topological/counting looks
+   like.  chi_total, Var(Phi) and spread(Phi) vary smoothly and monotonically with a
+   continuous coupling, so they are NOT topological and NOT counts.  They pass (c).
+
+----------------------------------------------------------------------------------------------------------------
+PART 3  --  DO (a) AND (b) STILL HOLD FOR A HETEROGENEOUS BODY?  Replicate a fixed MIXED
+            composition r times; check S(2N)/S(N) -> 2 and additivity over disjoint halves.
+----------------------------------------------------------------------------------------------------------------
+r        N        chi_total         S(2N)/S(N)    additivity def  CONTROL: same  
+                                                  (own baths)     with a SHARED site
+----------------------------------------------------------------------------------------------------------------
+1        8        1.0131234778      nan           0.000e+00       1.249842e-01   
+2        16       2.0262469557      2.000000      0.000e+00       8.903654e-02   
+4        32       4.0524939113      2.000000      0.000e+00       7.129740e-02   
+8        64       8.1049878226      2.000000      1.776e-15       5.498745e-02   
+16       128      16.2099756452     2.000000      -7.105e-15      3.623552e-02   
+32       256      32.4199512905     2.000000      2.132e-14       2.174724e-02   
+64       512      64.8399025809     2.000000      1.421e-13       1.200964e-02   
+128      1024     129.6798051618    2.000000      -7.674e-13      4.119156e-03   
+256      2048     259.3596103237    2.000000      -6.253e-13      7.101680e-04   
+512      4096     518.7192206474    2.000000      6.025e-12       2.637290e-04   
+1024     8192     1037.4384412947   2.000000      -2.228e-11      1.293305e-04   
+   READ: for a heterogeneous body the extensive quantity is sum_b q_b with q_b DIFFERENT
+   per region, the ratio S(2N)/S(N) is exactly 2.000000, and the disjoint-region defect is
+   0 to machine precision.  The CONTROL column (all N records forced onto one bath site)
+   collapses, so the instrument can register a failure of extensivity.
+
+----------------------------------------------------------------------------------------------------------------
+PART 4  --  THE CONFOUND THE LANE DID NOT NAME, TESTED DIRECTLY.
+            Every 'own baths' quantity grows because THE BATH GROWS WITH THE RECORDS.
+            Hold the bath FIXED (nq sites) and grow N; see what survives.
+----------------------------------------------------------------------------------------------------------------
+N        nq (fixed)   chi_total          Var(Phi)           spread(Phi)       
+----------------------------------------------------------------------------------------------------------------
+8        8            4.172218e+00       0.000000e+00       0.000000e+00      
+16       8            2.182539e+00       1.541715e+00       7.023880e+00      
+32       8            1.445202e+00       4.289769e+00       1.874829e+01      
+64       8            9.998736e-01       1.056659e+01       4.374863e+01      
+128      8            7.122923e-01       2.411695e+01       9.463942e+01      
+256      8            5.703792e-01       5.241590e+01       1.968836e+02      
+1024     8            2.898842e-01       2.278139e+02       8.111665e+02      
+4096     8            9.607711e-02       9.388425e+02       3.268737e+03      
+16384    8            5.681344e-03       3.793095e+03       1.309913e+04      
+   READ: at FIXED bath size chi_total DECAYS and the Phi scales grow only as sqrt/linear in
+   the per-site occupancy.  So the extensivity found in PART 1-3 is extensivity in the
+   AMOUNT OF STUFF (records AND their bath sites together), not in record count alone.
+   That is the honest rescoping -- and it is also exactly how mass works: doubling the
+   matter doubles the atoms AND the volume they occupy.

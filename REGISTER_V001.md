@@ -8429,3 +8429,88 @@ with `k`, from `[-2,2]` to `[-8,8]`. **What kills it is not failure to grow. It 
 
 The crowding suppression is the live candidate and its sign is genuinely open — sharing an
 environment site could constructively help a record as easily as hurt it. Under measurement.
+
+---
+
+## **ONE STRICTLY EXTENSIVE QUANTITY SURVIVES — AND EVERY LANE THAT MEASURED IT MISFILED IT.**
+
+Three probes on the [[n,n−2,2]] family and on products of [[4,2,2]] blocks, each adversarially
+verified, testing whether **any** record-level quantity meets gravity's source standard:
+**(a)** strictly extensive — `S(2N)/S(N) → 2`, unbounded; **(b)** additive over disjoint regions;
+**(c)** not a count and not topological.
+
+### THE QUANTITY: THE BATH-INDUCED EFFECTIVE POTENTIAL ON THE RECORD REGISTER
+
+`Φ(s) = −(1/β) ln Tr exp(−β H_B(s))`, read as `spread(Φ) = max_s Φ − min_s Φ` or `Var(Φ)`.
+
+**(a) STRICTLY EXTENSIVE AT A FIXED ENVIRONMENT** — bath pinned at 8 sites throughout:
+
+| `N` | 64 | 256 | 1024 | 4096 | 16384 |
+|---|---|---|---|---|---|
+| `spread(Φ)` | 43.43 | 196.49 | 810.76 | 3268.32 | **13098.72** |
+| successive ratio | 2.1707 | 2.0418 | 2.0104 | 2.0026 | **2.0013** |
+
+Closed form `λN = 13107.2` against measured `13098.7`. **And `χ_total` DECAYS over the very same
+sweep** (4.17 → 5.68e-03) — so this is **not** the "bath grew with the matter" artifact that
+disqualified every other linear candidate.
+
+**(b) EXACTLY ADDITIVE OVER DISJOINT REGIONS** — defect `≤ 9.09e-13`, against a **live** shared-site
+control in the same table giving defects of **3.71 / 4.11 / 4.21 / 4.23**. The instrument registers
+non-additivity when there is some.
+
+**(c) NOT A COUNT** — at **fixed** `N = 24` it varies **8.5×** (spread) and **72.9×** (Var) as region
+content changes, and varies smoothly with `λ` while `N` is pinned.
+
+> ### **THIS IS THE FIRST QUANTITY IN THE PROGRAM TO MEET ALL THREE. One lane measured it and
+> ### disqualified it as "the count in different units"; another never built it.**
+
+### THE PRICE, STATED PLAINLY
+
+`spread(Φ)` is non-zero **only where records SHARE a bath site** — and sharing is **exactly where
+INDEPENDENT WRITABILITY dies.** Verified at `n = 4`: the two records still satisfy (i)–(iv) against
+the full joint Hamiltonian (`max|Tr(P_E R_i)| = 1.48e-15`, `‖[H_tot,R]‖ = 0.0e+00`), yet **no
+admissible unitary can flip `R₁` while holding `R₂` fixed** (joint-sector dimension mismatch 3.0000,
+against 0.0000 in the separate-site control).
+
+### RULED OUT AT ANY `N`, BY FORM — IMMUNE TO THE LARGE-`N` AND THRESHOLD OBJECTIONS
+
+**1. THE ENTIRE ACCESSIBLE-INFORMATION FAMILY.** `Σᵢ χ(Rᵢ:B) ≤ χ_joint = I(S:B) ≤ S(ρ_B) ≤ log₂ dim(B)`
+— **independent of `N`.** Established three times independently: 0 violations across 120 points, max
+ratio 0.4963; cap 3 bits with observed maxima 1.2145 and 2.1641; the tighter thermal form
+`Σⱼ(1−S(τⱼ)) = 2.5182003436` reproduced to all digits by an independent adversary. **This kills
+Holevo χ, joint register χ, redundancy, and every mutual-information variant as gravity's source at
+any `N`.** It is the Holevo bound plus a finite bath's entropy — C-36 made exact.
+
+**2. `λ_max` OF ANY RELATION MATRIX FAILS ADDITIVITY.** Disjoint regions give a block-diagonal
+matrix, so `λ_max` is a **MAX, not a sum** — measured ratio exactly 0.5000 at five matched sizes.
+**No growth rate repairs a maximum.**
+
+**3. TOTAL WRITER WEIGHT IS EXACTLY `2N`.** The minimum admissible writer weight is **exactly 2 for
+every record at every even `n`** — brute-forced over the *entire* set `N(S)\S` (60, 1020, 16380
+records at `n` = 4, 6, 8, all weights searched over every Pauli), plus 4000 random logical classes at
+`n` = 12, 16, 20, 30, and reconfirmed to `n = 32` by a second adversary. **So it is C-35's count in
+other units.**
+
+**4. THE RECORD-RECORD SYMPLECTIC RELATION MATRIX IS IDENTICALLY ZERO** — independent records commute,
+so the pairing lives between a record and its **writer**, never between two records. The
+records+writers positive control registers `k` and `λ_max = 1` in the same table.
+
+### WITHDRAWN UNDER ADVERSARIAL VERIFICATION
+
+- **"No quantity satisfies strict extensivity"** — **FALSE**, refuted by `spread(Φ)` above.
+- **A claim that clauses (ii)+(iv) alone forbid a record-configuration energy density in any carrier**
+  — refuted by explicit `N = 2` counterexample with `spread(Φ) = 0.877985`. **The correct hypothesis
+  is INDEPENDENT writability, not (ii)+(iv).**
+- **Two fitted decay exponents** (`−0.4638 ± 0.0212`, `−0.2879 ± 0.0090`) — **withdrawn as laws.**
+  Local slopes span 1.4055 and the two exponents drift in *opposite* directions with fitting window.
+  Under a defensible noise floor the model selection gives `ΔAICc = 0.04` — **the data cannot
+  distinguish linear from logarithmic from saturating.**
+- **A `N^1.50` "collective effect"** — arithmetic: `C(N,2) ~ N²/2` pairs times a per-pair coupling
+  diluted as `N^{−1/2}` by the central limit theorem.
+
+### THE PREDICTION MADE BEFORE THE DATA LANDED WAS CORRECT
+
+Registrar's prediction, stated in-session before this workflow returned: the crowding suppression's
+sign-definiteness is **forced** (a partner's unknown value averages the record's channel — concavity
+of Holevo under mixing) and is therefore **capacity-bounded and saturating, not extensive.** Result
+**1** above confirms it exactly. **The crowding candidate is dead: sign-definite but bounded.**

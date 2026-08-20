@@ -1,0 +1,45 @@
+================================================================================================================================
+E-9  FRUSTRATION GAP -- A THREE-RECORD INTEGER DEFINED AS THE FAILURE OF THE TWO-BODY DATA
+================================================================================================================================
+
+G1   EXACT DISTRIBUTION OF THE GAP, WITH THE INSTRUMENT CONTROL IN THE SAME TABLE
+--------------------------------------------------------------------------------------------------------------------------------
+  n    k     triples   exhaustive  exact distribution of GAP      GAP > 0       INSTRUMENT CTRL: diagonal-gap dist
+  4    2     3375      YES         {0: 3375}                      0             {0: 3087, 2: 288}               
+  6    4     5832      sampled     {0: 5778, 2: 54}               54            {0: 3414, 2: 1770, 4: 624, 6: 24}
+  8    6     5832      sampled     {0: 5466, 2: 366}              366           {0: 2118, 2: 2232, 4: 1236, 6: 240, 8: 6}
+  10   8     5832      sampled     {0: 5226, 2: 606}              606           {0: 1896, 2: 1278, 4: 1410, 6: 918, 8: 312, 10: 18}
+  12   10    5832      sampled     {0: 4788, 2: 990, 4: 54}       1044          {0: 1764, 2: 900, 4: 1314, 6: 924, 8: 672, 10: 228, 12: 30}
+  14   12    5832      sampled     {0: 4452, 2: 1302, 4: 78}      1380          {0: 1404, 2: 924, 4: 1674, 6: 978, 8: 594, 10: 216, 12: 42}
+
+  The INSTRUMENT CONTROL column is the same statistic with the minimisation restricted to
+  s1 = s2 = s3.  It registers strictly positive values, so the instrument is NOT blind: a zero
+  in the free-minimisation column is a real zero, not an inability to measure.
+
+================================================================================================================================
+G2   THE NAMED CONTROLS
+--------------------------------------------------------------------------------------------------------------------------------
+  n0    m    n      triple                                 GAP (exact)    diag gap       verdict             
+  4     2    8      CTRL-Z  repeated record (a,a,b)        0              0              OK                  
+  4     2    8      CTRL-Z  one record on a disjoint block 0              0              OK                  
+  4     2    8      all three on the same block            0              0              EXACTLY ZERO        
+  4     3    12     CTRL-Z  repeated record (a,a,b)        0              0              OK                  
+  4     3    12     CTRL-Z  one record on a disjoint block 0              0              OK                  
+  4     3    12     all three on the same block            0              0              EXACTLY ZERO        
+  6     2    12     CTRL-Z  repeated record (a,a,b)        0              0              OK                  
+  6     2    12     CTRL-Z  one record on a disjoint block 0              0              OK                  
+  6     2    12     all three on the same block            0              0              EXACTLY ZERO        
+  6     3    18     CTRL-Z  repeated record (a,a,b)        0              0              OK                  
+  6     3    18     CTRL-Z  one record on a disjoint block 0              0              OK                  
+  6     3    18     all three on the same block            0              0              EXACTLY ZERO        
+
+================================================================================================================================
+  E-9 SUMMARY
+================================================================================================================================
+  n=4    GAP distribution {0: 3375}                      GAP>0 in 0 of 3375   instrument control (diagonal) {0: 3087, 2: 288}
+  n=6    GAP distribution {0: 5778, 2: 54}               GAP>0 in 54 of 5832   instrument control (diagonal) {0: 3414, 2: 1770, 4: 624, 6: 24}
+  n=8    GAP distribution {0: 5466, 2: 366}              GAP>0 in 366 of 5832   instrument control (diagonal) {0: 2118, 2: 2232, 4: 1236, 6: 240, 8: 6}
+  n=10   GAP distribution {0: 5226, 2: 606}              GAP>0 in 606 of 5832   instrument control (diagonal) {0: 1896, 2: 1278, 4: 1410, 6: 918, 8: 312, 10: 18}
+  n=12   GAP distribution {0: 4788, 2: 990, 4: 54}       GAP>0 in 1044 of 5832   instrument control (diagonal) {0: 1764, 2: 900, 4: 1314, 6: 924, 8: 672, 10: 228, 12: 30}
+  n=14   GAP distribution {0: 4452, 2: 1302, 4: 78}      GAP>0 in 1380 of 5832   instrument control (diagonal) {0: 1404, 2: 924, 4: 1674, 6: 978, 8: 594, 10: 216, 12: 42}
+================================================================================================================================

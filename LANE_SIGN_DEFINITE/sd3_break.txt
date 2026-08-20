@@ -1,0 +1,29 @@
+========================================================================================================
+ADVERSARIAL: CAN CROWDING EVER *HELP* A RECORD?
+========================================================================================================
+  carrier [[4,2,2]], dim 16, 4 record operators from 2 conjugate pairs
+
+1. WIDE SWEEP -- every knob at once. A SINGLE d < 0 falsifies sign-definiteness.
+   configurations tested: 7776
+   configurations where crowding HELPED (d < 0): 708
+   most negative d found: -1.562308e-01
+   examples where it helped:
+     lam=0.05 beta=0.1 nb=2 E=(1.0, 1.4, 0.7, 1.2) t0=1.0 rec=0 partner=1 d=-5.991584e-08
+     lam=0.05 beta=0.1 nb=2 E=(1.0, 1.4, 0.7, 1.2) t0=1.0 rec=1 partner=0 d=-5.991584e-08
+     lam=0.05 beta=0.1 nb=2 E=(1.0, 1.4, 0.7, 1.2) t0=10.0 rec=0 partner=1 d=-2.564006e-06
+     lam=0.05 beta=0.1 nb=2 E=(1.0, 1.4, 0.7, 1.2) t0=10.0 rec=0 partner=2 d=-7.931711e-06
+     lam=0.05 beta=0.1 nb=2 E=(1.0, 1.4, 0.7, 1.2) t0=10.0 rec=0 partner=3 d=-7.931711e-06
+   -> SIGN-DEFINITENESS FALSIFIED -- crowding can help
+
+2. DOES THE ACCUMULATED SUPPRESSION SATURATE WITH BATH SIZE?
+   A capacity bound MUST saturate. A gravitational source must NOT.
+     bath qubits  site dim   total suppression over pairs   per pair
+               1         2                       0.000000   0.000000
+               2         4                       1.970529   0.328421
+               3         8                       1.970529   0.328421
+               4        16                       1.970529   0.328421
+               5        32                       1.970529   0.328421
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================

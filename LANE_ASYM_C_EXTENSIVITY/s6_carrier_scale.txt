@@ -1,0 +1,62 @@
+================================================================================================================
+S6  CARRIER-SCALE VARIATION  --  the [[n, n-2, 2]] family, n = 4, 6, 8, 10, 12
+================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------
+CLAUSE CHECK on ONE block of each size.  Dense where the dimension allows, [F2] beyond.
+----------------------------------------------------------------------------------------------------------------
+nb     dim      records   sp(R,W)=1  sp(R,R')=0 sp(R,S)=0 (iii) dense   (iv) dense    (v) 1-qubit  
+----------------------------------------------------------------------------------------------------------------
+4      2^4      2         True       True      True      True          True          yes          
+6      2^6      4         True       True      True      True          True          yes          
+8      2^8      6         True       True      True      True          True          yes          
+10     2^10     8         True       True      True      [F2] see note [F2] see note yes          
+12     2^12     10        True       True      True      [F2] see note [F2] see note yes          
+   note on (iii)/(iv) beyond dim 256: H = -(X^(x)n + Z^(x)n) has eigenvalues -2,0,+2 with
+   multiplicities 2^(n-2), 2^(n-1), 2^(n-2).  A record R is a logical Pauli, so P_E R P_E is
+   traceless and non-constant on each eigenspace exactly as at n=4 -- verified DENSELY for
+   n = 4, 6, 8, and the argument does not depend on n.
+
+----------------------------------------------------------------------------------------------------------------
+TABLE 19  --  THE SAME EXACT AUDIT, per carrier size.  DEFECT columns are Q(m) - m*Q(1).
+----------------------------------------------------------------------------------------------------------------
+nb    m    N        W(m)     W defect  P_cross     T cross-mv   T ctrl       tr G defect    lam_max(G)      
+   T cross-mv = (record-moved / cross-region pairs tested), exhaustive over every admissible
+   Pauli supported inside block 0.  'A-4' marks rows where the exact argument covers it and
+   the enumeration (2^(2nb) elements) was not run.  A W value marked * is a WITNESS weight
+   (an upper bound on the minimum), not a verified minimum: the exhaustive minimisation over
+   2^(2nb) Paulis was run only for nb <= 8.  The W DEFECT column is unaffected either way,
+   because A-1 makes W(m) = m*W(1) identically whichever per-block value is used.
+----------------------------------------------------------------------------------------------------------------
+4     1    2        4        0.0       0           n/a          2.0          0.0            6.000000        
+4     2    4        8        0.0       0           0/126        2.0          0.0            6.000000        
+4     3    6        12       0.0       0           A-4          2.0          0.0            6.000000        
+4     4    8        16       0.0       0           A-4          2.0          0.0            6.000000        
+
+6     1    4        8        0.0       0           n/a          2.0          0.0            14.324555       
+6     2    8        16       0.0       0           0/4092       2.0          0.0            14.324555       
+6     3    12       24       0.0       0           A-4          2.0          0.0            14.324555       
+6     4    16       32       0.0       0           A-4          2.0          0.0            14.324555       
+
+8     1    6        16       0.0       0           n/a          2.0          0.0            25.803721       
+8     2    12       32       0.0       0           0/98298      2.0          0.0            25.803721       
+8     3    18       48       0.0       0           A-4          2.0          0.0            25.803721       
+8     4    24       64       0.0       0           A-4          2.0          0.0            25.803721       
+
+10    1    8        40*      0.0       0           n/a          2.0          0.0            40.479566       
+10    2    16       80*      0.0       0           A-4          2.0          0.0            40.479566       
+10    3    24       120*     0.0       0           A-4          2.0          0.0            40.479566       
+10    4    32       160*     0.0       0           A-4          2.0          0.0            40.479566       
+
+12    1    10       60*      0.0       0           n/a          2.0          0.0            58.371845       
+12    2    20       120*     0.0       0           A-4          2.0          0.0            58.371845       
+12    3    30       180*     0.0       0           A-4          2.0          0.0            58.371845       
+12    4    40       240*     0.0       0           A-4          2.0          0.0            58.371845       
+
+----------------------------------------------------------------------------------------------------------------
+READ: the per-block numbers change with the carrier -- the verified minimal W(1) goes 4, 8, 16
+      for nb = 4, 6, 8, and lambda_max(G) goes 6.00, 14.32, 25.80, 40.48, 58.37 -- while EVERY
+      cross-region column stays exactly at zero:
+      P_cross = 0, T cross-moved = 0 out of every pair tested, W and tr G defects = 0.0.
+      The null is a fact about DISJOINT SUPPORTS, not about [[4,2,2]].  The control column
+      (own-writer displacement = 2.0) is non-zero in every row, so the metric is live.

@@ -1,0 +1,121 @@
+T5 -- WHERE COULD A SEPARATION DEPENDENCE POSSIBLY COME FROM?
+
+Two exact structural facts, each verified numerically beside a positive control that WOULD
+have registered the opposite.
+
+  FACT A (from clause (ii) alone).  Every record commutes with H.  If every coupling operator
+     is also a record, then the total Hamiltonian
+           H_tot = H (x) I + I (x) H_B + lam * sum_a R_a (x) B_{j(a)}
+     commutes with every R_a.  Each record's VALUE is an exact constant of motion.  There is
+     therefore NO dynamical channel in the carrier through which one record can influence
+     another: any record-record interaction must be mediated ENTIRELY by a shared environment
+     degree of freedom.  Durability forbids carrier-mediated interaction.  Exact, all N.
+
+  FACT B (from the environment's structure).  The model's Environment has H_B = sum_j e_j Z_j
+     -- a sum of SINGLE-qubit terms with NO bath-bath coupling.  Hence the joint evolution
+     factorises over bath qubits within each joint record sector, and a record coupled to bath
+     qubit j is invisible to a record coupled to bath qubit j' != j.  The record-record
+     interaction is therefore a STEP FUNCTION of the bath-site assignment: exactly its alone
+     value off-site, a fixed O(1) reduction on-site.  Range zero.  Exact.
+
+  CONSEQUENCE.  Gravity's form requires an influence that FALLS OFF over a distance.  Here
+  there is no distance for it to fall off over: the carrier channel is forbidden by clause (ii)
+  and the environment channel is a zero-range contact term.  Any separation dependence must be
+  IMPORTED as carrier/environment data, exactly as clause (v) must be.
+
+================================================================================================================
+T5(a)  RECORD VALUES ARE EXACT CONSTANTS OF MOTION -- with a POSITIVE CONTROL that moves them
+================================================================================================================
+  carrier [[8,6,2]] FULL space dim 256, bath 3 qubits, ground space dim 64
+  Z_0 is a record: False   (it must be False -- it is the POSITIVE CONTROL)
+  initial state: maximally mixed on the code sector R_A=+1, R_B=+1; <R_A>(0) = 1.000000000000, <R_B>(0) = 1.000000000000
+  coupling                      coupling is a record   lam    t   |<R_A>(t) - <R_A>(0)|   |<R_B>(t)-<R_B>(0)|
+  R_A = X0X1                                    True   0.4  3.0               1.110e-16             1.110e-16
+  R_A = X0X1                                    True   0.4  9.0               2.220e-16             2.220e-16
+  R_A = X0X1                                    True   1.2  3.0               4.441e-16             4.441e-16
+  R_A = X0X1                                    True   1.2  9.0               4.441e-16             4.441e-16
+  R_B = Z4Z5                                    True   0.4  3.0               2.220e-16             3.331e-16
+  R_B = Z4Z5                                    True   0.4  9.0               4.441e-16             4.441e-16
+  R_B = Z4Z5                                    True   1.2  3.0               1.110e-16             1.110e-16
+  R_B = Z4Z5                                    True   1.2  9.0               2.220e-16             2.220e-16
+  R_A + R_B                                     True   0.4  3.0               4.441e-16             4.441e-16
+  R_A + R_B                                     True   0.4  9.0               4.441e-16             4.441e-16
+  R_A + R_B                                     True   1.2  3.0               0.000e+00             1.110e-16
+  R_A + R_B                                     True   1.2  9.0               1.110e-16             0.000e+00
+  Z_0  (NOT a record)                          False   0.4  3.0               3.327e-02             3.331e-16
+  Z_0  (NOT a record)                          False   0.4  9.0               2.397e-02             3.331e-16
+  Z_0  (NOT a record)                          False   1.2  3.0               2.300e-01             4.441e-16
+  Z_0  (NOT a record)                          False   1.2  9.0               4.026e-01             4.441e-16
+  [PASS] record values EXACTLY conserved under every record coupling   max motion 4.44e-16
+  [PASS] POSITIVE CONTROL: a non-record coupling DOES move a record value   max motion 4.03e-01
+
+================================================================================================================
+T5(b)  RANGE OF THE RECORD-RECORD INTERACTION IN THE ENVIRONMENT
+================================================================================================================
+  carrier [[10,8,2]] code space dim 256; bath 2 qubits, uniform energies
+  A = X0X1 always at bath site 0.  Partner B scanned over CARRIER separation AND
+  over BATH SITE.  ratio = chi_A(with B) / chi_A(alone).
+
+  lam=0.4   chi_A alone = 0.276635159833584
+    B        carrier sep  B bath site               chi_A               ratio     |ratio-1|
+    X2X3               1            0   0.125625482447113   0.454119724053464      5.46e-01
+    X2X3               1            1   0.276635159833585   1.000000000000002      2.44e-15
+    X4X5               3            0   0.125625482447113   0.454119724053465      5.46e-01
+    X4X5               3            1   0.276635159833584   1.000000000000002      1.78e-15
+    X6X7               5            0   0.125625482447113   0.454119724053465      5.46e-01
+    X6X7               5            1   0.276635159833585   1.000000000000002      2.00e-15
+    X8X9               7            0   0.125625482447113   0.454119724053463      5.46e-01
+    X8X9               7            1   0.276635159833585   1.000000000000003      2.89e-15
+    OFF-SITE  ratios: max |ratio-1| = 2.887e-15   (n=4, every carrier separation)
+    ON-SITE   ratios: min 0.454119724053  max 0.454119724053  spread over carrier separation 2.498e-15
+  [PASS] lam=0.4: OFF-SITE interaction is EXACTLY zero (ratio 1) at every separation   max |ratio-1| 2.89e-15
+  [PASS] lam=0.4: ON-SITE interaction is O(1) and separation-independent   1-ratio = 0.545880, spread 2.50e-15
+
+  lam=0.8   chi_A alone = 0.521527300759536
+    B        carrier sep  B bath site               chi_A               ratio     |ratio-1|
+    X2X3               1            0   0.136408688971757   0.261556180804142      7.38e-01
+    X2X3               1            1   0.521527300759535   0.999999999999998      2.11e-15
+    X4X5               3            0   0.136408688971758   0.261556180804143      7.38e-01
+    X4X5               3            1   0.521527300759534   0.999999999999997      2.55e-15
+    X6X7               5            0   0.136408688971757   0.261556180804141      7.38e-01
+    X6X7               5            1   0.521527300759535   0.999999999999999      1.44e-15
+    X8X9               7            0   0.136408688971757   0.261556180804142      7.38e-01
+    X8X9               7            1   0.521527300759534   0.999999999999997      2.55e-15
+    OFF-SITE  ratios: max |ratio-1| = 2.554e-15   (n=4, every carrier separation)
+    ON-SITE   ratios: min 0.261556180804  max 0.261556180804  spread over carrier separation 1.388e-15
+  [PASS] lam=0.8: OFF-SITE interaction is EXACTLY zero (ratio 1) at every separation   max |ratio-1| 2.55e-15
+  [PASS] lam=0.8: ON-SITE interaction is O(1) and separation-independent   1-ratio = 0.738444, spread 1.39e-15
+
+  lam=1.2   chi_A alone = 0.599566691970875
+    B        carrier sep  B bath site               chi_A               ratio     |ratio-1|
+    X2X3               1            0   0.127539682306426   0.212719759143361      7.87e-01
+    X2X3               1            1   0.599566691970876   1.000000000000003      2.89e-15
+    X4X5               3            0   0.127539682306426   0.212719759143361      7.87e-01
+    X4X5               3            1   0.599566691970877   1.000000000000004      3.55e-15
+    X6X7               5            0   0.127539682306426   0.212719759143360      7.87e-01
+    X6X7               5            1   0.599566691970877   1.000000000000004      3.55e-15
+    X8X9               7            0   0.127539682306426   0.212719759143361      7.87e-01
+    X8X9               7            1   0.599566691970877   1.000000000000003      3.11e-15
+    OFF-SITE  ratios: max |ratio-1| = 3.553e-15   (n=4, every carrier separation)
+    ON-SITE   ratios: min 0.212719759143  max 0.212719759143  spread over carrier separation 1.193e-15
+  [PASS] lam=1.2: OFF-SITE interaction is EXACTLY zero (ratio 1) at every separation   max |ratio-1| 3.55e-15
+  [PASS] lam=1.2: ON-SITE interaction is O(1) and separation-independent   1-ratio = 0.787280, spread 1.19e-15
+
+================================================================================================================
+T5(c)  UPPER BOUND ON ANY HIDDEN SEPARATION-DEPENDENT TERM
+================================================================================================================
+  The OFF-SITE column above is exactly 1 for the exact reason given in FACT B, and the
+  ON-SITE column is exactly constant for the exact reason given in T2(b).  Both are EXACT
+  ARGUMENTS, so the bound on a hidden separation-dependent term in these quantities is
+  IDENTICALLY ZERO at every N -- not a numerical bound, and therefore not defeated by the
+  weakness objection.
+
+  Where only numbers are available (the m-dependence of the shared-bath defect in T1(c)), the
+  bound is the measured noise floor: chi values are O(0.1) and equivalent replicas agree to
+  ~1e-15 absolute, i.e. ~1e-14 relative.  That is FOURTEEN orders of magnitude, not thirty-six:
+  a gravity-strength residual would be invisible there and the numerical columns CANNOT exclude
+  one.  Only the exact columns can, and where they apply they exclude it completely.
+
+================================================================================================================
+T5 SELF-CHECK SUMMARY: ALL PASS
+================================================================================================================

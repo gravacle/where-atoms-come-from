@@ -1,0 +1,92 @@
+================================================================================================================
+T6  Qchi(m) ON A SINGLE SHARED BATH SITE, m = 1..8 disjoint [[4,2,2]] BLOCKS
+    (m stops at 8: a Holevo readout costs ~dim^3 and m=10 needs dim 4096 x 25 times)
+================================================================================================================
+  bath: 2 qubits, uniform energy 1.0, beta 2.0.  All m records couple to bath site 0.
+  CONTROL COLUMN: the same m records on their OWN sites (site b mod 2), where the
+  factorisation argument says the defect must vanish for the pair that is separated.
+
+  lam = 0.4
+      m     Qchi shared        defect   PAIRWISE PRED   actual/pred    defect/m   defect/C(m,2)
+      1  0.276635159834   0.000000000    -0.000000000           nan    0.000000        0.000000
+      2  0.251250964894  -0.302019355    -0.302019355      1.000000   -0.151010       -0.302019
+      3  0.199227136377  -0.630678343    -0.906058064      0.696068   -0.210226       -0.210226
+      4  0.184338969573  -0.922201670    -1.812116129      0.508909   -0.230550       -0.153700
+      5  0.171883711624  -1.211292088    -3.020193548      0.401064   -0.242258       -0.121129
+      6  0.161822726656  -1.497988232    -4.530290322      0.330661   -0.249665       -0.099866
+      7  0.153969167714  -1.782476951    -6.342406450      0.281041   -0.254640       -0.084880
+      8  0.147130605561  -2.065950673    -8.456541934      0.244302   -0.258244       -0.073784
+    power-law fit  |defect| ~ m^1.3572   max |log-residual| 1.048e-01   (m = 2..8)
+    -- the exponent DRIFTS with lam, so it is not a real power law; the honest model is
+       Q_shared(m) bounded => |defect| = m*Q(1) - Q_shared(m) -> LINEAR in m plus an offset.
+    linear   fit  |defect| = 0.291828 m + -0.257338   max |resid| 2.430e-02   rms 1.278e-02
+    quadratic fit |defect| = 0.028241 m^2 +0.382824  max |resid| 1.938e-01   rms 1.106e-01
+    LINEAR beats QUADRATIC by a factor 8.65 in rms residual
+    PAIRWISE/field prediction is m^2 with NO offset; SHARED-CHANNEL SATURATION predicts m^1
+    Qchi shared at m=8 vs m=1: 0.147130606 vs 0.276635160  -> total capacity SATURATES
+    largest UPWARD step in Q_shared(m): -0.006839 at m=8  (-2.47% of Q(1))  -- reported, not smoothed
+  [PASS] lam=0.4: PAIRWISE SUPERPOSITION OF THE DEFECT FAILS (actual/pairwise-prediction at m=8 = 0.2443) 
+  [PASS] lam=0.4: total shared-site capacity is BOUNDED by Q(1) and ends below it (saturation, not a field) 
+  [PASS] lam=0.4: linear-in-m beats quadratic-in-m on the same points 
+
+  lam = 0.8
+      m     Qchi shared        defect   PAIRWISE PRED   actual/pred    defect/m   defect/C(m,2)
+      1  0.521527300760   0.000000000    -0.000000000           nan    0.000000        0.000000
+      2  0.272817377944  -0.770237224    -0.770237224      1.000000   -0.385119       -0.770237
+      3  0.215349659532  -1.349232243    -2.310711671      0.583903   -0.449744       -0.449744
+      4  0.180650299961  -1.905458903    -4.621423341      0.412310   -0.476365       -0.317576
+      5  0.167652293211  -2.439984211    -7.702372236      0.316783   -0.487997       -0.243998
+      6  0.145842259357  -2.983321545   -11.553558354      0.258217   -0.497220       -0.198888
+      7  0.141549402657  -3.509141703   -16.174981695      0.216949   -0.501306       -0.167102
+      8  0.124984198966  -4.047234207   -21.566642260      0.187662   -0.505904       -0.144544
+    power-law fit  |defect| ~ m^1.1847   max |log-residual| 4.770e-02   (m = 2..8)
+    -- the exponent DRIFTS with lam, so it is not a real power law; the honest model is
+       Q_shared(m) bounded => |defect| = m*Q(1) - Q_shared(m) -> LINEAR in m plus an offset.
+    linear   fit  |defect| = 0.543881 m + -0.290176   max |resid| 2.735e-02   rms 1.549e-02
+    quadratic fit |defect| = 0.052686 m^2 +0.901322  max |resid| 3.418e-01   rms 1.995e-01
+    LINEAR beats QUADRATIC by a factor 12.88 in rms residual
+    PAIRWISE/field prediction is m^2 with NO offset; SHARED-CHANNEL SATURATION predicts m^1
+    Qchi shared at m=8 vs m=1: 0.124984199 vs 0.521527301  -> total capacity SATURATES
+    largest UPWARD step in Q_shared(m): -0.004293 at m=7  (-0.82% of Q(1))  -- reported, not smoothed
+  [PASS] lam=0.8: PAIRWISE SUPERPOSITION OF THE DEFECT FAILS (actual/pairwise-prediction at m=8 = 0.1877) 
+  [PASS] lam=0.8: total shared-site capacity is BOUNDED by Q(1) and ends below it (saturation, not a field) 
+  [PASS] lam=0.8: linear-in-m beats quadratic-in-m on the same points 
+
+  lam = 1.2
+      m     Qchi shared        defect   PAIRWISE PRED   actual/pred    defect/m   defect/C(m,2)
+      1  0.599566691971   0.000000000    -0.000000000           nan    0.000000        0.000000
+      2  0.255079364613  -0.944054019    -0.944054019      1.000000   -0.472027       -0.944054
+      3  0.209570237662  -1.589129838    -2.832162058      0.561101   -0.529710       -0.529710
+      4  0.157678298040  -2.240588470    -5.664324116      0.395561   -0.560147       -0.373431
+      5  0.152093787724  -2.845739672    -9.440540193      0.301438   -0.569148       -0.284574
+      6  0.123668399757  -3.473731752   -14.160810290      0.245306   -0.578955       -0.231582
+      7  0.124925450736  -4.072041393   -19.825134406      0.205398   -0.581720       -0.193907
+      8  0.104842008217  -4.691691528   -26.433512541      0.177490   -0.586461       -0.167560
+    power-law fit  |defect| ~ m^1.1490   max |log-residual| 3.526e-02   (m = 2..8)
+    -- the exponent DRIFTS with lam, so it is not a real power law; the honest model is
+       Q_shared(m) bounded => |defect| = m*Q(1) - Q_shared(m) -> LINEAR in m plus an offset.
+    linear   fit  |defect| = 0.622924 m + -0.277910   max |resid| 2.680e-02   rms 1.636e-02
+    quadratic fit |defect| = 0.060358 m^2 +1.086338  max |resid| 3.837e-01   rms 2.269e-01
+    LINEAR beats QUADRATIC by a factor 13.87 in rms residual
+    PAIRWISE/field prediction is m^2 with NO offset; SHARED-CHANNEL SATURATION predicts m^1
+    Qchi shared at m=8 vs m=1: 0.104842008 vs 0.599566692  -> total capacity SATURATES
+    largest UPWARD step in Q_shared(m): +0.001257 at m=7  (+0.21% of Q(1))  -- reported, not smoothed
+  [PASS] lam=1.2: PAIRWISE SUPERPOSITION OF THE DEFECT FAILS (actual/pairwise-prediction at m=8 = 0.1775) 
+  [PASS] lam=1.2: total shared-site capacity is BOUNDED by Q(1) and ends below it (saturation, not a field) 
+  [PASS] lam=1.2: linear-in-m beats quadratic-in-m on the same points 
+
+================================================================================================================
+T6(b)  CONTROL -- SAME PIPELINE, SOURCES ON SEPARATE SITES: DEFECT MUST VANISH
+================================================================================================================
+    m   lam      Qchi 2 sites         m*Qchi(1)        defect
+    2   0.4    0.553270319667    0.553270319667      2.44e-15
+    4   0.4    1.106540639334    1.106540639334      1.89e-14
+    2   0.8    1.043054601519    1.043054601519     -8.88e-16
+    4   0.8    2.086109203038    2.086109203038     -8.44e-15
+    2   1.2    1.199133383942    1.199133383942     -4.44e-16
+    4   1.2    2.398266767884    2.398266767884      8.88e-16
+  [PASS] separate-site control: exact additivity, defect at the float64 floor (inspect the defect column)
+
+================================================================================================================
+T6 SELF-CHECK SUMMARY: ALL PASS
+================================================================================================================

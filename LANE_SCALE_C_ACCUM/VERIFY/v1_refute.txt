@@ -1,0 +1,232 @@
+======================================================================================================================
+VERIFY  --  adversarial checks on LANE_SCALE_C_ACCUM
+======================================================================================================================
+
+ATTACK A.  The finding's ONE claimed strictly-collective fact is
+           'wall = 2 on the family at every k, where the control needs weight k'.
+           wall = w(all-ones pattern) is NOT basis invariant.  Under a record-basis change
+           M in GL(k,2) the pattern v transforms as v -> M v, so the all-ones pattern in the
+           new basis is the OLD pattern M^-1 (1,..,1), which ranges over EVERY non-zero v.
+           Therefore wall over all admissible record bases ranges over [wmin, wmax] on BOTH
+           carriers.  Below: the exact weight map's wmin/wmax, and wall measured directly
+           over 400 random GL(k,2) record bases.
+----------------------------------------------------------------------------------------------------------------------
+         carrier   k   n |  wmin  wmax  wall(as-shipped) |    wall over 400 random record bases
+----------------------------------------------------------------------------------------------------------------------
+       [[6,4,2]]   4   6 |     2     2                 2 | min 2  max 2   values seen [2]
+       [[8,6,2]]   6   8 |     2     4                 2 | min 2  max 4   values seen [2, 4]
+      [[10,8,2]]   8  10 |     2     4                 2 | min 2  max 4   values seen [2, 4]
+     [[12,10,2]]  10  12 |     2     6                 2 | min 2  max 6   values seen [2, 4, 6]
+     [[4,2,2]]^2   4   8 |     2     4                 4 | min 2  max 4   values seen [2, 4]
+     [[4,2,2]]^3   6  12 |     2     6                 6 | min 2  max 6   values seen [2, 4, 6]
+     [[4,2,2]]^4   8  16 |     2     8                 8 | min 2  max 8   values seen [2, 4, 6, 8]
+----------------------------------------------------------------------------------------------------------------------
+
+ATTACK B.  s3 reports 'smallest region touching ALL k records' as 13,15,17,21,23 for the
+           control at k = 12,14,16,18,20 -- all flagged 's' (SAMPLED, 4000 random regions).
+           The control is m disjoint [[4,2,2]] blocks; two qubits inside a block already
+           reach both of that block's records, so k qubits (2 per block) reach ALL k.
+           Constructed explicitly and measured -- no sampling.
+----------------------------------------------------------------------------------------------------------------------
+  k   nC |  s3 reported min region   explicit 2-per-block region  reach  = k?  lower bound ceil(k/2)
+----------------------------------------------------------------------------------------------------------------------
+  2    4 |                       2                       |A| = 2      2  True                      1
+  4    8 |                       4                       |A| = 4      4  True                      2
+  6   12 |                       6                       |A| = 6      6  True                      3
+  8   16 |                       8                       |A| = 8      8  True                      4
+ 10   20 |                      10                      |A| = 10     10  True                      5
+ 12   24 |                      13                      |A| = 12     12  True                      6
+ 14   28 |                      15                      |A| = 14     14  True                      7
+ 16   32 |                      17                      |A| = 16     16  True                      8
+ 18   36 |                      21                      |A| = 18     18  True                      9
+ 20   40 |                      23                      |A| = 20     20  True                     10
+----------------------------------------------------------------------------------------------------------------------
+
+ATTACK C.  The family/control comparison is NOT matched in carrier size: at the same k the
+           family has n = k+2 qubits and the control has n = 2k.  Every weight quantity is
+           therefore confounded with n.  Held at FIXED k = 8, four carriers with n = 10,
+           12, 14, 16 -- two collective, two products -- to see what wmax/wmean track.
+----------------------------------------------------------------------------------------------------------------------
+                     carrier   k   n nstab |  wmin  wmax   wmean  wall |  wmax/n  wmean/n    E0
+----------------------------------------------------------------------------------------------------------------------
+      [[10,8,2]]  COLLECTIVE   8  10     2 |     2     4   3.647     2 |   0.400    0.365    -2
+         [[6,4,2]]^2 PRODUCT   8  12     4 |     2     4   3.765     4 |   0.333    0.314    -4
+ [[14,8]]+4Zpairs COLLECTIVE   8  14     6 |     2     6   5.067     6 |   0.429    0.362    -6
+         [[4,2,2]]^4 PRODUCT   8  16     8 |     2     8   6.024     8 |   0.500    0.376    -8
+----------------------------------------------------------------------------------------------------------------------
+
+ATTACK D.  'enclosed ENERGY is exactly CONSTANT in k on the collective carrier' is an
+           identity E0 = -nstab, and nstab = 2 is the DEFINITION of the [[n,n-2,2]] family.
+           Held at FIXED k = 8, E0 is whatever the presentation makes it.
+----------------------------------------------------------------------------------------------------------------------
+                     carrier   k   n nstab  E0 = -nstab  width = 2*nstab
+----------------------------------------------------------------------------------------------------------------------
+      [[10,8,2]]  COLLECTIVE   8  10     2           -2                4
+         [[6,4,2]]^2 PRODUCT   8  12     4           -4                8
+ [[14,8]]+4Zpairs COLLECTIVE   8  14     6           -6               12
+         [[4,2,2]]^4 PRODUCT   8  16     8           -8               16
+            [[12,8]]+2Zpairs   8  12     4           -4                8
+            [[14,8]]+4Zpairs   8  14     6           -6               12
+            [[16,8]]+6Zpairs   8  16     8           -8               16
+----------------------------------------------------------------------------------------------------------------------
+
+ATTACK E.  s3's reach(A) is the rank of the patterns of ALL Paulis supported in A, including
+           ones that do NOT commute with the stabilisers.  Those are not admissible
+           operations: they leave the code space and create an excitation (D-18).  Recount
+           with ADMISSIBLE-ONLY operators supported in A.
+----------------------------------------------------------------------------------------------------------------------
+         carrier   k   n |  r  s3 reach (ALL Paulis)  reach (ADMISSIBLE only)
+----------------------------------------------------------------------------------------------------------------------
+       [[6,4,2]]   4   6 |  2                     2e                       1e
+       [[6,4,2]]   4   6 |  4                     4e                       3e
+       [[6,4,2]]   4   6 |  6                     4e                       4e
+       [[8,6,2]]   6   8 |  2                     2e                       1e
+       [[8,6,2]]   6   8 |  4                     4e                       3e
+       [[8,6,2]]   6   8 |  6                     6e                       5e
+      [[10,8,2]]   8  10 |  2                     2e                       1e
+      [[10,8,2]]   8  10 |  4                     4e                       3e
+      [[10,8,2]]   8  10 |  6                     6e                       5e
+     [[12,10,2]]  10  12 |  2                     2e                       1e
+     [[12,10,2]]  10  12 |  4                     4e                       3e
+     [[12,10,2]]  10  12 |  6                     6e                       5e
+     [[14,12,2]]  12  14 |  2                     2e                       1e
+     [[14,12,2]]  12  14 |  4                     4e                       3e
+     [[14,12,2]]  12  14 |  6                     6e                       5e
+----------------------------------------------------------------------------------------------------------------------
+
+SELF-CHECKS OF THIS VERIFICATION
+----------------------------------------------------------------------------------------------------------------------
+   PASS  [[6,4,2]]: records commute with stabilisers   
+   PASS  [[6,4,2]]: records not in stabiliser group   
+   PASS  [[6,4,2]]: records pairwise commute   
+   PASS  [[6,4,2]]: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[6,4,2]]: k = n - rank(S)   k=4 n=6 rank=2
+   PASS  [[8,6,2]]: records commute with stabilisers   
+   PASS  [[8,6,2]]: records not in stabiliser group   
+   PASS  [[8,6,2]]: records pairwise commute   
+   PASS  [[8,6,2]]: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[8,6,2]]: k = n - rank(S)   k=6 n=8 rank=2
+   PASS  [[10,8,2]]: records commute with stabilisers   
+   PASS  [[10,8,2]]: records not in stabiliser group   
+   PASS  [[10,8,2]]: records pairwise commute   
+   PASS  [[10,8,2]]: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[10,8,2]]: k = n - rank(S)   k=8 n=10 rank=2
+   PASS  [[12,10,2]]: records commute with stabilisers   
+   PASS  [[12,10,2]]: records not in stabiliser group   
+   PASS  [[12,10,2]]: records pairwise commute   
+   PASS  [[12,10,2]]: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[12,10,2]]: k = n - rank(S)   k=10 n=12 rank=2
+   PASS  [[4,2,2]]^2: records commute with stabilisers   
+   PASS  [[4,2,2]]^2: records not in stabiliser group   
+   PASS  [[4,2,2]]^2: records pairwise commute   
+   PASS  [[4,2,2]]^2: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^2: k = n - rank(S)   k=4 n=8 rank=4
+   PASS  [[4,2,2]]^3: records commute with stabilisers   
+   PASS  [[4,2,2]]^3: records not in stabiliser group   
+   PASS  [[4,2,2]]^3: records pairwise commute   
+   PASS  [[4,2,2]]^3: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^3: k = n - rank(S)   k=6 n=12 rank=6
+   PASS  [[4,2,2]]^4: records commute with stabilisers   
+   PASS  [[4,2,2]]^4: records not in stabiliser group   
+   PASS  [[4,2,2]]^4: records pairwise commute   
+   PASS  [[4,2,2]]^4: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^4: k = n - rank(S)   k=8 n=16 rank=8
+   PASS  A: family wall is NOT constant across record bases (2 is one basis's value)   family wall maxima [2, 4, 4, 6]
+   PASS  A: control wall CAN equal 2 in some record basis (so 'control needs weight k' is basis choice)   control wall minima [2, 2, 2]
+   PASS  [[4,2,2]]^1: records commute with stabilisers   
+   PASS  [[4,2,2]]^1: records not in stabiliser group   
+   PASS  [[4,2,2]]^1: records pairwise commute   
+   PASS  [[4,2,2]]^1: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^1: k = n - rank(S)   k=2 n=4 rank=2
+   PASS  [[4,2,2]]^2: records commute with stabilisers   
+   PASS  [[4,2,2]]^2: records not in stabiliser group   
+   PASS  [[4,2,2]]^2: records pairwise commute   
+   PASS  [[4,2,2]]^2: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^2: k = n - rank(S)   k=4 n=8 rank=4
+   PASS  [[4,2,2]]^3: records commute with stabilisers   
+   PASS  [[4,2,2]]^3: records not in stabiliser group   
+   PASS  [[4,2,2]]^3: records pairwise commute   
+   PASS  [[4,2,2]]^3: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^3: k = n - rank(S)   k=6 n=12 rank=6
+   PASS  [[4,2,2]]^4: records commute with stabilisers   
+   PASS  [[4,2,2]]^4: records not in stabiliser group   
+   PASS  [[4,2,2]]^4: records pairwise commute   
+   PASS  [[4,2,2]]^4: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^4: k = n - rank(S)   k=8 n=16 rank=8
+   PASS  [[4,2,2]]^5: records commute with stabilisers   
+   PASS  [[4,2,2]]^5: records not in stabiliser group   
+   PASS  [[4,2,2]]^5: records pairwise commute   
+   PASS  [[4,2,2]]^5: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^5: k = n - rank(S)   k=10 n=20 rank=10
+   PASS  [[4,2,2]]^6: records commute with stabilisers   
+   PASS  [[4,2,2]]^6: records not in stabiliser group   
+   PASS  [[4,2,2]]^6: records pairwise commute   
+   PASS  [[4,2,2]]^6: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^6: k = n - rank(S)   k=12 n=24 rank=12
+   PASS  [[4,2,2]]^7: records commute with stabilisers   
+   PASS  [[4,2,2]]^7: records not in stabiliser group   
+   PASS  [[4,2,2]]^7: records pairwise commute   
+   PASS  [[4,2,2]]^7: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^7: k = n - rank(S)   k=14 n=28 rank=14
+   PASS  [[4,2,2]]^8: records commute with stabilisers   
+   PASS  [[4,2,2]]^8: records not in stabiliser group   
+   PASS  [[4,2,2]]^8: records pairwise commute   
+   PASS  [[4,2,2]]^8: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^8: k = n - rank(S)   k=16 n=32 rank=16
+   PASS  [[4,2,2]]^9: records commute with stabilisers   
+   PASS  [[4,2,2]]^9: records not in stabiliser group   
+   PASS  [[4,2,2]]^9: records pairwise commute   
+   PASS  [[4,2,2]]^9: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^9: k = n - rank(S)   k=18 n=36 rank=18
+   PASS  [[4,2,2]]^10: records commute with stabilisers   
+   PASS  [[4,2,2]]^10: records not in stabiliser group   
+   PASS  [[4,2,2]]^10: records pairwise commute   
+   PASS  [[4,2,2]]^10: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^10: k = n - rank(S)   k=20 n=40 rank=20
+   PASS  B: an explicit size-k region reaches ALL k records on EVERY control carrier   s3's sampled values that are strictly too large: [(12, 13), (14, 15), (16, 17), (18, 21), (20, 23)]
+   PASS  B: s3's control column for 'min region for ALL k' is WRONG at k>=12 (sampling artifact)   [(12, 13), (14, 15), (16, 17), (18, 21), (20, 23)]
+   PASS  [[10,8,2]]  COLLECTIVE: records commute with stabilisers   
+   PASS  [[10,8,2]]  COLLECTIVE: records not in stabiliser group   
+   PASS  [[10,8,2]]  COLLECTIVE: records pairwise commute   
+   PASS  [[10,8,2]]  COLLECTIVE: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[10,8,2]]  COLLECTIVE: k = n - rank(S)   k=8 n=10 rank=2
+   PASS  [[10,8,2]]  COLLECTIVE: k = 8   k=8
+   PASS  [[6,4,2]]^2 PRODUCT: records commute with stabilisers   
+   PASS  [[6,4,2]]^2 PRODUCT: records not in stabiliser group   
+   PASS  [[6,4,2]]^2 PRODUCT: records pairwise commute   
+   PASS  [[6,4,2]]^2 PRODUCT: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[6,4,2]]^2 PRODUCT: k = n - rank(S)   k=8 n=12 rank=4
+   PASS  [[6,4,2]]^2 PRODUCT: k = 8   k=8
+   PASS  [[14,8]]+4Zpairs COLLECTIVE: records commute with stabilisers   
+   PASS  [[14,8]]+4Zpairs COLLECTIVE: records not in stabiliser group   
+   PASS  [[14,8]]+4Zpairs COLLECTIVE: records pairwise commute   
+   PASS  [[14,8]]+4Zpairs COLLECTIVE: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[14,8]]+4Zpairs COLLECTIVE: k = n - rank(S)   k=8 n=14 rank=6
+   PASS  [[14,8]]+4Zpairs COLLECTIVE: k = 8   k=8
+   PASS  [[4,2,2]]^4 PRODUCT: records commute with stabilisers   
+   PASS  [[4,2,2]]^4 PRODUCT: records not in stabiliser group   
+   PASS  [[4,2,2]]^4 PRODUCT: records pairwise commute   
+   PASS  [[4,2,2]]^4 PRODUCT: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[4,2,2]]^4 PRODUCT: k = n - rank(S)   k=8 n=16 rank=8
+   PASS  [[4,2,2]]^4 PRODUCT: k = 8   k=8
+   PASS  C: at FIXED k=8, wmean increases MONOTONICALLY with n across collective and product alike   n = [10, 12, 14, 16], wmean = [3.647, 3.765, 5.067, 6.024]
+   FAIL  C: wmean/n is nearly carrier-independent at fixed k (spread < 0.06)   wmean/n = [0.3647, 0.3137, 0.3619, 0.3765], spread 0.0627
+   PASS  [[12]]+2Zpairs: records commute with stabilisers   
+   PASS  [[12]]+2Zpairs: records not in stabiliser group   
+   PASS  [[12]]+2Zpairs: records pairwise commute   
+   PASS  [[12]]+2Zpairs: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[12]]+2Zpairs: k = n - rank(S)   k=8 n=12 rank=4
+   PASS  [[14]]+4Zpairs: records commute with stabilisers   
+   PASS  [[14]]+4Zpairs: records not in stabiliser group   
+   PASS  [[14]]+4Zpairs: records pairwise commute   
+   PASS  [[14]]+4Zpairs: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[14]]+4Zpairs: k = n - rank(S)   k=8 n=14 rank=6
+   PASS  [[16]]+6Zpairs: records commute with stabilisers   
+   PASS  [[16]]+6Zpairs: records not in stabiliser group   
+   PASS  [[16]]+6Zpairs: records pairwise commute   
+   PASS  [[16]]+6Zpairs: symplectic Gram against partners = identity (non-degenerate)   
+   PASS  [[16]]+6Zpairs: k = n - rank(S)   k=8 n=16 rank=8
+   PASS  D: at FIXED k=8 the ground energy takes many different values (E0 is NOT a function of k)   E0 values at k=8: [-8, -6, -4, -2]
+   PASS  E: the admissible-only reach differs from s3's all-Pauli reach somewhere   pairs (all, admissible) = [(2, 1), (4, 3), (4, 4), (2, 1), (4, 3), (6, 5), (2, 1), (4, 3), (6, 5), (2, 1), (4, 3), (6, 5), (2, 1), (4, 3), (6, 5)]
+   PASS  E: even admissible-only, a size-6 region's best reach SATURATES (does not grow with k)   r=6 admissible reach across k=4..12: [4, 5, 5, 5, 5]
+   132 / 133 pass

@@ -1,0 +1,39 @@
+================================================================================================================================
+V1   ARM A UNDER TEST: IS 'phi_fix UNCHANGED WHEN THE RECORD COUNT x4' A RESULT OR AN IDENTITY?
+================================================================================================================================
+
+  (A) MATRIX TEST of  H(G x Z_2) = H(G) (x) I_4  and  chi'((h,a)) = 4 chi(h).
+  base G        dim(G)  dim(GxZ_2)               mult(G)               mult(GxZ_2)  mult ratio  max|chi_prime-4chi|
+  D_4               64         256          [22, 24, 18]              [88, 96, 72]       [4.0]            0.000e+00
+  Q_8               64         256          [22, 24, 18]              [88, 96, 72]       [4.0]            0.000e+00
+  D_8              256        1024         [46, 84, 126]           [184, 336, 504]       [4.0]            0.000e+00
+  D_4xZ_2          256        1024          [88, 96, 72]           [352, 384, 288]       [4.0]            0.000e+00
+
+  numeric confirmation on actual matrices (D_4 only, dim 64 -> 256):
+    spectrum(H(D_4))       = [(-2.0, 22), (-1.0, 24), (-0.0, 18)]
+    spectrum(H(D_4xZ_2))   = [(-2.0, 88), (-1.0, 96), (-0.0, 72)]
+    every multiplicity exactly x4 : True
+
+  (B) ISOTYPIC MULTIPLICITIES AND phi.   'x|A|^2 exact' = every m_rho multiplied by 4.
+  base G        records G  records GxZ_2      phi(G)    phi(GxZ_2)   phi difference  m_rho all x4
+  D_4                  22             880.5317919075  0.5317919075         0.00e+00          True
+  Q_8                  22             880.5317919075  0.5317919075         0.00e+00          True
+  D_8                  46            1840.2325135739  0.2325135739         0.00e+00          True
+  D_16                142            5680.1347738509  0.1347738509         0.00e+00          True
+  D_4xZ_2              88            3520.5317919075  0.5317919075         0.00e+00          True
+  M_4(2)               88            3520.5317919075  0.5317919075         0.00e+00          True
+  Pauli16              88            3520.5317919075  0.5317919075         0.00e+00          True
+
+  (C) POSITIVE CONTROL IN THE SAME TABLE -- steps that are NOT 'x abelian'.  The same
+      quantity MUST move here, or the ARM-A zero discriminates nothing.
+  step                                 records   phi before   phi after   phi difference  |G/Z| before->after
+  D_4 -> D_8                          22 -> 46       0.5318      0.2325        -2.99e-01               4 -> 8
+  D_8 -> D_16                        46 -> 142       0.2325      0.1348        -9.77e-02              8 -> 16
+  D_4 -> ES_2^(1+4)                  22 -> 184       0.5318      0.1664        -3.65e-01              4 -> 16
+  D_8xZ_2 -> ES_2^(1+4)             184 -> 184       0.2325      0.1664        -6.61e-02              8 -> 16
+  D_4 -> M_4(2)                       22 -> 88       0.5318      0.5318         0.00e+00               4 -> 4
+  M_4(2) -> M_5(2)                   88 -> 352       0.5318      0.5318         0.00e+00               4 -> 4
+
+================================================================================================================================
+  READ -- filled from the numbers above
+================================================================================================================================

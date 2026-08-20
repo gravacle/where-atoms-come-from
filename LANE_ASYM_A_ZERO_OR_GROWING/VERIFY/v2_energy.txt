@@ -1,0 +1,49 @@
+============================================================================================================================
+V2  IS 'ENERGY SPREAD OVER RECORD CONFIGURATIONS = 0' A RESULT, A TAUTOLOGY, OR BOTH?
+    E_spread measured over the FULL Hilbert space (not restricted to the code space), so it is
+    free to be non-zero.  Every zero below is printed beside a control that is non-zero. (D-15)
+============================================================================================================================
+
+  carrier                                                  family            all 5 clauses?  clause that fails      E_spread   configs
+----------------------------------------------------------------------------------------------------------------------------
+  A  [[4,2,2]]  H = -(X^n+Z^n)                             Xbar_1..Xbar_k    YES             -                         0.0000   4/4
+  B  same code, H + 0.37*Zbar_1                            Zbar_1..Zbar_k    NO              R1 fails(iii,iv)          0.7400   4/4
+  B' same split H, only the operators that ARE records     1 survivors       YES             -                         0.0000   2/2
+  A  [[6,4,2]]  H = -(X^n+Z^n)                             Xbar_1..Xbar_k    YES             -                         0.0000   16/16
+  B  same code, H + 0.37*Zbar_1                            Zbar_1..Zbar_k    NO              R1 fails(iii,iv)          0.7400   16/16
+  B' same split H, only the operators that ARE records     3 survivors       YES             -                         0.0000   8/8
+  C  random 8-dim carrier, spectrum [0^4,1^4], NO code     2 balanced involu YES             -                         0.0000   4/4
+  C' CONTROL same carrier, one operator UNbalanced         2 involutions     NO              R1 fails(iv)              1.0000   4/4
+----------------------------------------------------------------------------------------------------------------------------
+
+B1  THE LANE'S MEASUREMENT, REPEATED THEIR WAY, ON A HAMILTONIAN WITH NO CODE AND NO RECORDS.
+    s5 restricts every configuration state to the ground eigenspace Q before measuring H.
+    Do the same on the random carrier C with the GROUND EIGENSPACE of Hc and any two
+    involutions at all -- including the UNBALANCED control that is not a record:
+      record family (balanced)                    eigenspace-restricted E_spread = 6.542e-17   (4 configurations found)
+      CONTROL family (unbalanced, not records)    eigenspace-restricted E_spread = 3.045e-17   (2 configurations found)
+    -> restricted to an eigenspace the statistic is 0 for ANY family, record or not.  The zero
+       reported by s5 is produced by the restriction, not by the records and not by the code.
+
+B3  THE GENERAL ARGUMENT (why no carrier can escape), checked with the model's own writer builder:
+      record 1: writer U from the model -- |[U,H]| = 6.38e-16 (admissible => energy preserving),
+                 |U*R_iU + R_i| = 1.22e-15 (flips it),  max_j!=i |U*R_jU - R_j| = 7.12e-01
+      record 2: writer U from the model -- |[U,H]| = 6.66e-16 (admissible => energy preserving),
+                 |U*R_iU + R_i| = 1.33e-15 (flips it),  max_j!=i |U*R_jU - R_j| = 7.52e-01
+      => every admissible writer commutes with H, so it moves a configuration to a flipped
+         configuration WITHOUT changing energy.  Independent writability (clause iv for each
+         record separately) makes all 2^N configurations a single equal-energy orbit.
+         E_spread = 0 follows from clauses (ii)+(iv) ALONE, in every carrier, at every N.
+      self-check on the writers: PASSED
+
+READ (filled from the table above, not in advance):
+  * carrier A reproduces the lane's zero.  Carriers B and C' show the statistic CAN be non-zero
+    -- the D-15 control the lane's energy row never printed.  In BOTH non-zero cases the family
+    fails a record clause, and the clause that fails is named in the table.
+  * carrier B' shows that once the non-records are removed, the spread returns to zero.
+  * therefore the lane's headline is TRUE but is not a property of this code, this H, or N.
+    It is clause (ii)+(iv) restated.  'H|codespace = -2I' is the statement that an EIGENSPACE
+    of H is an eigenspace of H.
+  * and the lane's caveat 2 -- 'a carrier where record configurations are energetically split
+    is the obvious place to look next' -- names a search that cannot succeed: splitting the
+    configurations is exactly what destroys clause (ii) or clause (iv) of the split operator.

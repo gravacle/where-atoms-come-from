@@ -1,0 +1,41 @@
+================================================================================================================================
+V4   MATCHED PAIRS, THE INVARIANT phi_fix IS REALLY CONSTANT ON, AND THE COUNTERFACTUAL
+================================================================================================================================
+
+  TEST 1a  PAIRS WITH |G|, dim AND |G/Z| ALL EQUAL BUT DIFFERENT RECORD COUNT
+  carrier A     carrier B       |G|   dim  |G/Z|  records A  records B    phi A    phi B  phi differs?
+  D_16          ES_2^(1+4)       32  1024     16        142        184   0.1348   0.1664          True
+  Q_32          ES_2^(1+4)       32  1024     16        142        184   0.1348   0.1664          True
+  SD_32         ES_2^(1+4)       32  1024     16        142        184   0.1348   0.1664          True
+
+  TEST 1b  MIRROR, SAME TABLE: PAIRS WITH dim AND RECORD COUNT EQUAL BUT DIFFERENT |G/Z|
+  carrier A     carrier B       |G|   dim  records  |G/Z| A  |G/Z| B    phi A    phi B  phi differs?
+  D_8xZ_2       ES_2^(1+4)       32  1024      184        8       16   0.2325   0.1664          True
+
+    pairs found: TEST 1a = 3   TEST 1b = 1
+
+  TEST 2  PROFILE CLASSES vs phi CLASSES
+     phi_fix   record counts in the class                     #profile classes inside
+    1.000000   4, 16, 16, 64, 64, 64, 256, 256, 256, 256, 2                         1
+    0.531792   22, 22, 88, 88, 88, 88, 352, 352, 352                                1
+    0.232514   46, 46, 46, 184                                                      1
+    0.166396   184                                                                  1
+    0.134774   142, 142, 142, 568                                                   1
+    0.091941   526, 526                                                             1
+
+  distinct phi values: 6    distinct normalised transport profiles: 6
+  profile class == phi class on every carrier: True
+    -> phi_fix is a function of the NORMALISED transport profile alone; the record count
+       inside a profile class is |Z| x (a family constant), which is why it can grow x16
+       with phi_fix bit-identical.  That is an isoclinism identity, not a measurement.
+
+  TEST 3  COUNTERFACTUAL dphi/dm: hold the excited sectors as measured, vary m alone.
+  carrier        m measured  phi at m  phi at m/2  phi at 2m  phi at 4m  phi as m->inf
+  D_4                    22    0.5318      0.3653     0.7715     0.9250         1.0000
+  D_8                    46    0.2325      0.1806     0.3877     0.6615         1.0000
+  D_16                  142    0.1348      0.1067     0.2315     0.4690         1.0000
+  ES_2^(1+4)            184    0.1664      0.1089     0.3373     0.6359         1.0000
+  D_32                  526    0.0919      0.0697     0.1713     0.3859         1.0000
+    -> phi_fix rises monotonically toward 1 with the record count when the record count is
+       varied INDEPENDENTLY.  It is flat in the lane's data only because m, dim(E(-1)),
+       dim(E(0)) all scale together by the same factor on this carrier family.

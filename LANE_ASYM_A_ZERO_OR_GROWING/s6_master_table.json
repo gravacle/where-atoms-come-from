@@ -419,39 +419,26 @@
   "quantity": "redundancy (fragments holding >=10% of chi)",
   "values": [
    "3",
-   "4",
-   "5",
    "3",
-   "4",
+   "  --  ",
+   "  --  ",
+   "  --  ",
    "  --  "
   ],
   "category": "S",
-  "argument": "Bounded by nq, the bath's own size, at every N. D-17: it tracks nq, not N."
+  "argument": "At nq=3 the answer is 3 at both N tested. D-17, varying the venue's own scale: nq=4 gives 4 and nq=5 gives 5 (N=2), nq=4 gives 4 (N=4). The scalar tracks nq, the bath's own size, and is bounded by it at every N. It does not track N."
  },
  {
-  "quantity": "chi(A u B) - chi(A) - chi(B), SHARED bath",
+  "quantity": "model-enumerated records satisfying (i)-(iv)",
   "values": [
-   "0.7197",
-   "1.8601",
-   "1.0339",
-   "0.8634",
-   "0.7683",
-   "0.6653"
+   "1260",
+   "  --  ",
+   "  --  ",
+   "  --  ",
+   "  --  ",
+   "  --  "
   ],
-  "category": "S",
-  "argument": "STRICTLY SUBADDITIVE at every N tested: the deficit is positive throughout, so total chi FAILS gravity's requirement (b), additivity over disjoint regions."
- },
- {
-  "quantity": "  CONTROL same, DISJOINT baths",
-  "values": [
-   "0",
-   "0",
-   "0",
-   "0",
-   "0",
-   "0"
-  ],
-  "category": "Z",
-  "argument": "EXACTLY 0 deficit -- the test CAN register additivity, so the shared-bath deficit is real. But disjoint baths means the environment scaled with the matter."
+  "category": "U",
+  "argument": "1260 at n=4 (16 minimal projections of A'). NOT REACHABLE beyond n=4: at n=6 the commutant has 64 minimal projections and RecordModel.records() raises -- obstruction O-28. Reported as measured at one N only; no growth law is claimed from a single point."
  }
 ]

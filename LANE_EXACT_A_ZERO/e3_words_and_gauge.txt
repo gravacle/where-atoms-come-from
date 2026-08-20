@@ -1,0 +1,154 @@
+==============================================================================================================================
+E-3  GAUGE ORBIT AND EXHAUSTIVE WORD SEARCH IN THREE RECORDS -- EXACT
+==============================================================================================================================
+
+STEP A   REPAIRED CONTROLS (D-15).  E-2's CTRL-NZ for the associator was mis-specified; see
+         the module docstring.  These four are correct by the rule they are testing.
+------------------------------------------------------------------------------------------------------------------------------
+  n    control                                  expect       ||assoc||_F^2/2^n      tau          verdict         
+  4    CTRL-NZ-assoc  (X0, Z0, X0 xor X1)       assoc != 0   16                     0            OK              
+  4    CTRL-NZ-tau    (X0, Z0, X0 xor Z0)       tau   != 0   0                      -1i          OK              
+  4    CTRL-Z-assoc   (X0, X1, Z1)              assoc == 0   0                      0            OK              
+  4    CTRL-Z-tau     (X0, X1, Z1)              tau   == 0   0                      0            OK              
+  6    CTRL-NZ-assoc  (X0, Z0, X0 xor X1)       assoc != 0   16                     0            OK              
+  6    CTRL-NZ-tau    (X0, Z0, X0 xor Z0)       tau   != 0   0                      -1i          OK              
+  6    CTRL-Z-assoc   (X0, X1, Z1)              assoc == 0   0                      0            OK              
+  6    CTRL-Z-tau     (X0, X1, Z1)              tau   == 0   0                      0            OK              
+  8    CTRL-NZ-assoc  (X0, Z0, X0 xor X1)       assoc != 0   16                     0            OK              
+  8    CTRL-NZ-tau    (X0, Z0, X0 xor Z0)       tau   != 0   0                      -1i          OK              
+  8    CTRL-Z-assoc   (X0, X1, Z1)              assoc == 0   0                      0            OK              
+  8    CTRL-Z-tau     (X0, X1, Z1)              tau   == 0   0                      0            OK              
+  10   CTRL-NZ-assoc  (X0, Z0, X0 xor X1)       assoc != 0   16                     0            OK              
+  10   CTRL-NZ-tau    (X0, Z0, X0 xor Z0)       tau   != 0   0                      -1i          OK              
+  10   CTRL-Z-assoc   (X0, X1, Z1)              assoc == 0   0                      0            OK              
+  10   CTRL-Z-tau     (X0, X1, Z1)              tau   == 0   0                      0            OK              
+  12   CTRL-NZ-assoc  (X0, Z0, X0 xor X1)       assoc != 0   16                     0            OK              
+  12   CTRL-NZ-tau    (X0, Z0, X0 xor Z0)       tau   != 0   0                      -1i          OK              
+  12   CTRL-Z-assoc   (X0, X1, Z1)              assoc == 0   0                      0            OK              
+  12   CTRL-Z-tau     (X0, X1, Z1)              tau   == 0   0                      0            OK              
+  16   CTRL-NZ-assoc  (X0, Z0, X0 xor X1)       assoc != 0   16                     0            OK              
+  16   CTRL-NZ-tau    (X0, Z0, X0 xor Z0)       tau   != 0   0                      -1i          OK              
+  16   CTRL-Z-assoc   (X0, X1, Z1)              assoc == 0   0                      0            OK              
+  16   CTRL-Z-tau     (X0, X1, Z1)              tau   == 0   0                      0            OK              
+  20   CTRL-NZ-assoc  (X0, Z0, X0 xor X1)       assoc != 0   16                     0            OK              
+  20   CTRL-NZ-tau    (X0, Z0, X0 xor Z0)       tau   != 0   0                      -1i          OK              
+  20   CTRL-Z-assoc   (X0, X1, Z1)              assoc == 0   0                      0            OK              
+  20   CTRL-Z-tau     (X0, X1, Z1)              tau   == 0   0                      0            OK              
+  ALL REPAIRED CONTROLS CORRECT: True
+
+==============================================================================================================================
+STEP B   GAUGE ORBIT.  Hold the three record CLASSES fixed; sweep all |S|^3 = 64 choices of
+         stabiliser representative.  A scalar with more than one value on the orbit is NOT a
+         record observable -- it is a property of the representative, not of the records.
+------------------------------------------------------------------------------------------------------------------------------
+  n    record classes             tau over the 64 reps           K over the 64 reps     ||assoc||^2 over 64 reps
+  4    (X0, Z0, X0 xor Z0) closed {-1i, +1i}                     {-1}                   [0]                     
+  4    (X0, X1, X0 xor X1) closed {-1, +1}                       {+1}                   [0]                     
+  4    (X0, Z0, X0 xor X1) open   {0}                            {+1}                   [16]                    
+  6    (X0, Z0, X0 xor Z0) closed {-1i, +1i}                     {-1}                   [0]                     
+  6    (X0, X1, X0 xor X1) closed {-1, +1}                       {+1}                   [0]                     
+  6    (X0, Z0, X0 xor X1) open   {0}                            {+1}                   [16]                    
+  8    (X0, Z0, X0 xor Z0) closed {-1i, +1i}                     {-1}                   [0]                     
+  8    (X0, X1, X0 xor X1) closed {-1, +1}                       {+1}                   [0]                     
+  8    (X0, Z0, X0 xor X1) open   {0}                            {+1}                   [16]                    
+  10   (X0, Z0, X0 xor Z0) closed {-1i, +1i}                     {-1}                   [0]                     
+  10   (X0, X1, X0 xor X1) closed {-1, +1}                       {+1}                   [0]                     
+  10   (X0, Z0, X0 xor X1) open   {0}                            {+1}                   [16]                    
+  12   (X0, Z0, X0 xor Z0) closed {-1i, +1i}                     {-1}                   [0]                     
+  12   (X0, X1, X0 xor X1) closed {-1, +1}                       {+1}                   [0]                     
+  12   (X0, Z0, X0 xor X1) open   {0}                            {+1}                   [16]                    
+
+  READ: a scalar is a RECORD observable exactly when its orbit above is a SINGLETON.
+
+==============================================================================================================================
+STEP C   EXHAUSTIVE WORD SEARCH.  Every word of length 1..8 in three records (3+9+...+6561 =
+         9840 words).  For each word W we compute Tr(Pi W)/Tr(Pi) EXACTLY.  A word is
+         GAUGE-INVARIANT when it has EVEN degree in every letter.  The question:
+         does ANY gauge-invariant word scalar separate two record triples that share the same
+         (3x3 pairwise sp matrix, F_2 dependency pattern)?  If none does, three-body carries no
+         information the two-body data does not already have.
+------------------------------------------------------------------------------------------------------------------------------
+  words of length 1..8 : 9840      of these GAUGE-INVARIANT (even degree in each letter): 1848
+
+  n = 4   record classes used 15 of 2^4 (EXHAUSTIVE)   distinct (sp-matrix, dependency) signatures 16
+  signature ((sp_ab,sp_bc,sp_ac), dependency bits)     #triples   gauge-invariant words that SEPARATE them
+  ((0, 0, 0), (0, 0, 0, 0, 0, 0, 1))                   51         NONE                                    
+  ((0, 0, 0), (0, 0, 0, 0, 0, 1, 0))                   49         NONE                                    
+  ((0, 0, 0), (0, 0, 0, 0, 1, 0, 0))                   43         NONE                                    
+  ((0, 0, 0), (0, 0, 1, 0, 0, 0, 0))                   52         NONE                                    
+  ((0, 0, 0), (0, 0, 1, 0, 1, 1, 0))                   5          NONE                                    
+  ((0, 0, 1), (0, 0, 0, 0, 0, 0, 0))                   203        NONE                                    
+  ((0, 1, 0), (0, 0, 0, 0, 0, 0, 0))                   204        NONE                                    
+  ((0, 1, 1), (0, 0, 0, 0, 0, 0, 0))                   211        NONE                                    
+  ((0, 1, 1), (0, 0, 1, 0, 0, 0, 0))                   74         NONE                                    
+  ((1, 0, 0), (0, 0, 0, 0, 0, 0, 0))                   248        NONE                                    
+  ((1, 0, 1), (0, 0, 0, 0, 0, 0, 0))                   209        NONE                                    
+  ((1, 0, 1), (0, 0, 0, 0, 0, 1, 0))                   62         NONE                                    
+  ((1, 1, 0), (0, 0, 0, 0, 0, 0, 0))                   212        NONE                                    
+  ((1, 1, 0), (0, 0, 0, 0, 1, 0, 0))                   74         NONE                                    
+  ((1, 1, 1), (0, 0, 0, 0, 0, 0, 0))                   226        NONE                                    
+  ((1, 1, 1), (0, 0, 0, 0, 0, 0, 1))                   77         NONE                                    
+  n=4 : TOTAL gauge-invariant words separating same-signature triples = 0
+  n=4 : the complete value set any word scalar took = ['+1', '-1']
+
+  n = 6   record classes used 255 of 2^8 (EXHAUSTIVE)   distinct (sp-matrix, dependency) signatures 16
+  signature ((sp_ab,sp_bc,sp_ac), dependency bits)     #triples   gauge-invariant words that SEPARATE them
+  ((0, 0, 0), (0, 0, 0, 0, 0, 0, 0))                   232        NONE                                    
+  ((0, 0, 0), (0, 0, 0, 0, 0, 0, 1))                   3          NONE                                    
+  ((0, 0, 0), (0, 0, 0, 0, 0, 1, 0))                   6          NONE                                    
+  ((0, 0, 0), (0, 0, 0, 0, 1, 0, 0))                   3          NONE                                    
+  ((0, 0, 0), (0, 0, 1, 0, 0, 0, 0))                   5          NONE                                    
+  ((0, 0, 1), (0, 0, 0, 0, 0, 0, 0))                   262        NONE                                    
+  ((0, 1, 0), (0, 0, 0, 0, 0, 0, 0))                   252        NONE                                    
+  ((0, 1, 1), (0, 0, 0, 0, 0, 0, 0))                   246        NONE                                    
+  ((0, 1, 1), (0, 0, 1, 0, 0, 0, 0))                   3          NONE                                    
+  ((1, 0, 0), (0, 0, 0, 0, 0, 0, 0))                   260        NONE                                    
+  ((1, 0, 1), (0, 0, 0, 0, 0, 0, 0))                   228        NONE                                    
+  ((1, 0, 1), (0, 0, 0, 0, 0, 1, 0))                   2          NONE                                    
+  ((1, 1, 0), (0, 0, 0, 0, 0, 0, 0))                   237        NONE                                    
+  ((1, 1, 0), (0, 0, 0, 0, 1, 0, 0))                   5          NONE                                    
+  ((1, 1, 1), (0, 0, 0, 0, 0, 0, 0))                   250        NONE                                    
+  ((1, 1, 1), (0, 0, 0, 0, 0, 0, 1))                   6          NONE                                    
+  n=6 : TOTAL gauge-invariant words separating same-signature triples = 0
+  n=6 : the complete value set any word scalar took = ['+1', '-1']
+
+  n = 8   record classes used 299 of 2^12 (fixed-seed sample)   distinct (sp-matrix, dependency) signatures 14
+  signature ((sp_ab,sp_bc,sp_ac), dependency bits)     #triples   gauge-invariant words that SEPARATE them
+  ((0, 0, 0), (0, 0, 0, 0, 0, 0, 0))                   267        NONE                                    
+  ((0, 0, 0), (0, 0, 0, 0, 0, 1, 0))                   4          NONE                                    
+  ((0, 0, 0), (0, 0, 0, 0, 1, 0, 0))                   5          NONE                                    
+  ((0, 0, 1), (0, 0, 0, 0, 0, 0, 0))                   219        NONE                                    
+  ((0, 1, 0), (0, 0, 0, 0, 0, 0, 0))                   246        NONE                                    
+  ((0, 1, 1), (0, 0, 0, 0, 0, 0, 0))                   254        NONE                                    
+  ((0, 1, 1), (0, 0, 1, 0, 0, 0, 0))                   6          NONE                                    
+  ((1, 0, 0), (0, 0, 0, 0, 0, 0, 0))                   243        NONE                                    
+  ((1, 0, 1), (0, 0, 0, 0, 0, 0, 0))                   248        NONE                                    
+  ((1, 0, 1), (0, 0, 0, 0, 0, 1, 0))                   2          NONE                                    
+  ((1, 1, 0), (0, 0, 0, 0, 0, 0, 0))                   239        NONE                                    
+  ((1, 1, 0), (0, 0, 0, 0, 1, 0, 0))                   3          NONE                                    
+  ((1, 1, 1), (0, 0, 0, 0, 0, 0, 0))                   263        NONE                                    
+  n=8 : TOTAL gauge-invariant words separating same-signature triples = 0
+  n=8 : the complete value set any word scalar took = ['+1', '-1']
+
+==============================================================================================================================
+  E-3 SUMMARY
+==============================================================================================================================
+  STEP A repaired controls all correct: True
+  STEP C separating gauge-invariant words per n (0 = three-body adds nothing): {4: 0, 6: 0, 8: 0}
+  STEP B gauge-orbit sizes (1 = a genuine record observable):
+     n=4   (X0, Z0, X0 xor Z0) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=4   (X0, X1, X0 xor X1) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=4   (X0, Z0, X0 xor X1) open      |orbit(tau)| = 1   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=6   (X0, Z0, X0 xor Z0) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=6   (X0, X1, X0 xor X1) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=6   (X0, Z0, X0 xor X1) open      |orbit(tau)| = 1   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=8   (X0, Z0, X0 xor Z0) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=8   (X0, X1, X0 xor X1) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=8   (X0, Z0, X0 xor X1) open      |orbit(tau)| = 1   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=10  (X0, Z0, X0 xor Z0) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=10  (X0, X1, X0 xor X1) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=10  (X0, Z0, X0 xor X1) open      |orbit(tau)| = 1   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=12  (X0, Z0, X0 xor Z0) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=12  (X0, X1, X0 xor X1) closed    |orbit(tau)| = 2   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+     n=12  (X0, Z0, X0 xor X1) open      |orbit(tau)| = 1   |orbit(K)| = 1   |orbit(assoc norm)| = 1
+==============================================================================================================================

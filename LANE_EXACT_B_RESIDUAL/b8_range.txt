@@ -1,0 +1,68 @@
+========================================================================================================================
+B8   IS IT A FALLOFF OR IS IT COMPACT SUPPORT?
+========================================================================================================================
+  ring bath L = 6, uniform on-site energy 1.0, beta 2.0; carrier n = 6; lam = 0.8
+  read record written on ring site 0.  Partner moved to ring site s.
+
+  COMMUTING PARTNER (X2).  Entry is chi(with partner) - chi(alone).
+  bath coupling                        chi(alone)        s=0 d=0        s=1 d=1        s=2 d=2        s=3 d=3        s=4 d=2        s=5 d=1
+  range 1, J = 0.0   (CONTROL: no geometry)  0.521527301  -3.851186e-01  -5.662137e-15  -4.218847e-15  -4.884981e-15  -2.109424e-15  -4.107825e-15
+  range 1, J = 0.2                    0.416705052  -3.261677e-01  -4.062315e-02  +6.106227e-16  -2.775558e-16  +1.609823e-15  -4.062315e-02
+  range 1, J = 0.6                    0.247933340  -1.731676e-01  -7.754639e-02  +1.942890e-16  -8.326673e-17  -4.718448e-16  -7.754639e-02
+  range 1, J = 1.2                    0.320121021  -1.975293e-01  +1.364901e-02  +1.794842e-12  +1.796951e-12  +1.793621e-12  +1.364901e-02
+  range 2, J = 0.2                    0.267821194  -2.082972e-01  -3.949283e-02  -3.949283e-02  -1.665335e-16  -3.949283e-02  -3.949283e-02
+  range 2, J = 0.6                    0.480118403  -3.456073e-01  -2.343855e-02  -2.343855e-02  -8.448797e-14  -2.343855e-02  -2.343855e-02
+  range 2, J = 1.2                    0.392480734  -2.728984e-01  -2.330194e-02  -2.330194e-02  -1.887601e-12  -2.330194e-02  -2.330194e-02
+
+  THE FLOOR AT EACH J, MEASURED IN THE SAME TABLE.  The ring is reflection-symmetric about
+  site 0, so chi(partner at s) and chi(partner at L-s) are the SAME quantity; their
+  difference is this row's float64 floor.  It is NOT constant across J: at strong bath
+  coupling the spectrum becomes near-degenerate and the floor rises.
+  bath coupling               floor (reflection s <-> L-s)   largest |effect| in the row
+  range 1, J = 0.0                                2.11e-15                     3.851e-01
+  range 1, J = 0.2                                2.11e-15                     3.262e-01
+  range 1, J = 0.6                                6.66e-16                     1.732e-01
+  range 1, J = 1.2                                1.22e-15                     1.975e-01
+  range 2, J = 0.2                                4.72e-16                     2.083e-01
+  range 2, J = 0.6                                2.05e-15                     3.456e-01
+  range 2, J = 1.2                                1.55e-15                     2.729e-01
+
+  THE ZERO SET, at a threshold of 100x that row's own measured floor:
+  bath coupling              threshold    sites with a NON-zero effect   largest OUT-OF-RANGE |effect|   ratio to the in-range effect
+  range 1, J = 0.0             2.1e-13                             [0]                        5.66e-15                            nan
+  range 1, J = 0.2             2.1e-13                       [0, 1, 5]                        1.61e-15                       3.96e-14
+  range 1, J = 0.6             6.7e-14                       [0, 1, 5]                        4.72e-16                       6.08e-15
+  range 1, J = 1.2             1.2e-13              [0, 1, 2, 3, 4, 5]                        1.80e-12                       1.32e-10
+  range 2, J = 0.2             4.7e-14                 [0, 1, 2, 4, 5]                        1.67e-16                       4.22e-15
+  range 2, J = 0.6             2.1e-13                 [0, 1, 2, 4, 5]                        8.45e-14                       3.60e-12
+  range 2, J = 1.2             1.6e-13              [0, 1, 2, 3, 4, 5]                        1.89e-12                       8.10e-11
+
+  READ IT OFF THE TABLE, NOT FROM AN EXPECTATION.  The decisive column is the last one:
+  the largest OUT-OF-RANGE effect as a fraction of the IN-RANGE effect in the same row.
+   * J = 0: every off-site entry sits at the floor.  No geometry, no influence anywhere.
+   * COUPLING RANGE 1: sites at distance <= 1 (that is 1 and 5) carry the whole effect;
+     everything further out is 10 to 14 decades smaller, and at J <= 0.6 it is exactly the
+     float64 floor.
+   * COUPLING RANGE 2: the boundary moves out by exactly one site.  Sites 1, 2, 4 and 5
+     carry the effect and site 3 -- the only site at distance 3 -- is the one that drops to
+     the floor.  One step in the bath's coupling range, one step in the boundary.
+   * STRENGTH does not move the boundary.  J = 0.2, 0.6, 1.2 is a 6x range and the
+     out-of-range/in-range ratio stays between 4e-15 and 1e-10 throughout.
+   * CAVEAT, stated because the table says so: at J = 1.2 the pipeline's own floor rises to
+     ~2e-12 (near-degenerate bath spectrum), so out of range the honest claim at J = 1.2 is
+     ZERO TO 2e-12, not exactly zero.  At J <= 0.6 it is zero to 5e-16.
+  -> the DENSITY channel has COMPACT SUPPORT.  Its radius is the bath's interaction range,
+     and it does not depend on the coupling strength.  No decaying function of distance can
+     produce a zero set that ignores a 6x change in J.
+
+  PAIRING PARTNER (Z1), the same sweep.  Entry is chi(with partner)/chi(alone).
+  bath coupling                        chi(alone)        s=1 d=1        s=2 d=2        s=3 d=3        s=4 d=2        s=5 d=1
+  range 1, J = 0.0                    0.521527301    0.723027794    0.723027794    0.723027794    0.723027794    0.723027794
+  range 1, J = 0.6                    0.247933340    0.779243503    0.795053035    0.804434553    0.795053035    0.779243503
+  range 2, J = 0.6                    0.480118403    0.813316681    0.813316681    0.746114757    0.813316681    0.813316681
+
+  -> the PAIRING partner suppresses chi at EVERY distance, including the maximum distance
+     the ring allows, and by nearly the same amount.  The pairing channel has NO radius at
+     all; the density channel has a radius equal to the bath's interaction range.
+
+  elapsed 561.4s

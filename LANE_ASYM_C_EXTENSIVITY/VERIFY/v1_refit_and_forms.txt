@@ -1,0 +1,77 @@
+==============================================================================================================
+V1  ADVERSARIAL RE-FIT OF THE LANE'S GROWTH LAWS
+==============================================================================================================
+
+--- (1a) COMPETING FORMS on the LANE'S OWN 5-POINT WINDOW N in [4096, 65536] ---
+series                      p(POW)    res POW     res POWLOG  res SAT     res LOG     separated?
+--------------------------------------------------------------------------------------------------------------
+chi_total SHARED 1 site     -1.0112   6.84e-03    1.22e-02    5.01e-03    inf         NO -- forms indistinguishable
+chi_reg SHARED nq=3         0.0007    3.65e-04    4.95e-03    5.97e-07    3.65e-04    NO -- forms indistinguishable
+sum_pairs|J_2| 1 site       1.5003    1.37e-04    5.17e-03    2.98e+00    inf         YES (POW wins x38)
+|J_2(N)| 1 site             -0.4998   9.69e-05    5.21e-03    8.45e-05    2.66e-01    NO -- forms indistinguishable
+Var(Phi) 1 shared site      1.0008    3.48e-04    4.96e-03    1.25e+00    inf         YES (POW wins x14)
+spread(Phi) 1 shared site   1.0001    5.00e-05    5.26e-03    1.25e+00    inf         YES (POW wins x105)
+std(Phi) 1 shared site      0.5004    1.74e-04    5.14e-03    2.70e-01    2.67e-01    YES (POW wins x30)
+
+--- (1b) SAME FORMS on the FULL range N in [256, 65536] (9 points, factor 256) ---
+series                      p(POW)    res POW     res POWLOG  res SAT     res LOG     verdict
+--------------------------------------------------------------------------------------------------------------
+chi_total SHARED 1 site     -1.3631   5.47e-01    5.72e-01    9.73e-01    inf         NOT separated
+chi_reg SHARED nq=3         0.0049    1.21e-02    2.62e-02    4.99e-04    1.22e-02    NOT separated
+sum_pairs|J_2| 1 site       1.5016    3.73e-03    3.46e-02    6.57e+00    inf         NOT separated
+|J_2(N)| 1 site             -0.4989   2.25e-03    3.60e-02    1.28e-03    inf         NOT separated
+Var(Phi) 1 shared site      1.0039    8.33e-03    3.00e-02    4.06e+00    inf         NOT separated
+spread(Phi) 1 shared site   1.0007    1.86e-03    3.64e-02    4.04e+00    inf         POW clearly best
+std(Phi) 1 shared site      0.5019    4.17e-03    3.41e-02    1.40e+00    inf         NOT separated
+
+--------------------------------------------------------------------------------------------------------------
+(1c) INDEPENDENT EXACT ASYMPTOTICS.  Derived here, not taken from the lane.
+--------------------------------------------------------------------------------------------------------------
+  f(c) = -(1/b) ln 2cosh(b E),  E = sqrt(e^2 + lam^2 c^2)  ->  f(c) ~ -lam|c| for large |c|.
+  c = sum of N iid +-1  ->  c/sqrt(N) -> Normal(0,1),  density at 0  p(0) = 1/sqrt(2 pi N).
+  J_2(N) = 1/2 E[f(c''+2) - f(c'')] with c'' a sum of N-2 signs
+         ~ -(lam/2) E[|c+2|-|c|] = -(lam/2)(4 p(0)) = -2 lam / sqrt(2 pi N)   -> EXACTLY N^-1/2
+  sum_pairs |J_2| ~ (N^2/2)(2 lam/sqrt(2 pi N)) = lam N^{3/2}/sqrt(2 pi)      -> EXACTLY N^+3/2
+  std(Phi)  ~ lam * std(|c|) = lam sqrt(N) sqrt(1 - 2/pi)                     -> EXACTLY N^+1/2
+  spread(Phi) ~ lam N + const                                                 -> EXACTLY N^+1
+
+quantity                 value at N=65536       exact asymptotic       rel err     exact p
+--------------------------------------------------------------------------------------------------------------
+|J_2(N)|                 0.002493239405         0.002493389253         6.01e-05    -0.5
+sum_pairs|J_2|           5354109.155            5354512.648            7.54e-05    +1.5
+std(Phi)                 123.4423667            123.4555443            1.07e-04    +0.5
+spread(Phi)              52427.79093            52428.8                1.92e-05    +1.0
+
+  => the lane's fitted exponents (-0.4998, 1.5003, 0.5019, 1.0001) reproduce these EXACT
+     values.  The 5-point window is NOT the evidence: the closed forms are.  Their
+     sigma(p) column is however NOT a statistical uncertainty -- the series are exact
+     deterministic evaluations, so sigma(p) measures CURVATURE, not noise.  Reported as
+     'uncertainty on the exponent' it is a category error, though a harmless one here.
+
+--------------------------------------------------------------------------------------------------------------
+(1d) chi_total SHARED: the lane's own two statements disagree.
+--------------------------------------------------------------------------------------------------------------
+   N    256 ->    512   local slope -0.8566   ratio 0.552237
+   N    512 ->   1024   local slope -1.5438   ratio 0.342987
+   N   1024 ->   2048   local slope -2.5361   ratio 0.172406
+   N   2048 ->   4096   local slope -1.4291   ratio 0.371361
+   N   4096 ->   8192   local slope -1.0280   ratio 0.490392
+   N   8192 ->  16384   local slope -1.0126   ratio 0.495658
+   N  16384 ->  32768   local slope -1.0050   ratio 0.498262
+   N  32768 ->  65536   local slope -1.0016   ratio 0.499444
+   s5 TABLE 17 prints exponent -1.011201 for this series.
+   s5 TABLE 18 prints 'grows as N^-0.50' for the SAME series, and READ OF S5 item 4 repeats
+   'chi_total on a shared bath DECAYS as N^-0.50'.  The local slopes above are ~ -1.0.
+   => a CONCLUSION CONTRADICTS THE TABLE ABOVE IT.  (The sign of the verdict is unaffected:
+      the series decays either way, but the printed exponent in TABLE 18/READ is wrong.)
+
+--------------------------------------------------------------------------------------------------------------
+(1e) IS THE 'SATURATION' AN ORDINARY BOUND?  chi(register:bath) <= S(bath) <= nq bits.
+--------------------------------------------------------------------------------------------------------------
+   lane's 'exact bound' nq(1-S(tau))  = 2.5182003436
+   textbook Holevo ceiling log2(dim bath) = 3.0000000000 bits (3 qubits)
+   per-site  1 - S(tau_j) for e = 1.0, 1.4, 0.7 : 0.870021, 0.964910, 0.683270
+   => the ceiling is S(rho_bar) - S(tau) summed over bath qubits: this is the ORDINARY
+      Holevo/entropy bound on a fixed-size quantum channel, tightened only by the bath's
+      thermal purity.  It is a statement about the BATH's capacity, not about records.
+      The lane says as much; but 'SATURATING' is therefore not a discovery about records.

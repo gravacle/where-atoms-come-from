@@ -1,0 +1,55 @@
+================================================================================================================
+V5a TRANSCRIPTION CHECK -- the numbers in the reported finding against the lane's .npy files
+================================================================================================================
+
+      N |   claimed SUM   npy SUM      d  |  claimed joint  npy joint    d  | claimed grown  npy grown   d
+      2 |     0.992506   0.992506   2e-07 |     0.992506   0.992506   2e-07 |     0.992506   0.992506   2e-07  ok
+      4 |     1.214476   1.214476   3e-07 |     1.443735   1.443735   2e-07 |     1.984713   1.984713   4e-08  ok
+      6 |     0.772985   0.772985   6e-08 |     1.403562   1.403562   2e-07 |     2.926371   2.926371   3e-07  ok
+      8 |     0.644711   0.644711   3e-07 |     1.679272   1.679272   1e-08 |     3.918878   3.918878   5e-07  ok
+     10 |     0.577766   0.577766   4e-07 |     1.787757   1.787757   2e-07 |     4.911084   4.911084   3e-07  ok
+     12 |     0.512064   0.512064   4e-07 |     1.731021   1.731021   4e-07 |     5.852743   5.852743   4e-07  ok
+     20 |     0.400387   0.400387   5e-07 |     1.987584   1.987584   4e-08 |     9.771620   9.771620   2e-07  ok
+     30 |     0.320029   0.320029   3e-07 |     2.049119   2.049119   3e-07 |    14.631857  14.631857   4e-07  ok
+     40 |     0.280845   0.280845   2e-07 |     2.164087   2.164087   5e-07 |    19.542941  19.542941   9e-08  ok
+
+   chi transcription faithful: True
+
+      n |  Ps  lam_s   Po    lam_o   W  |  Bps  Blam_s  Bpo   Blam_o   BW  | matches npy
+      4 |   0   0.00     1    1.00    4 |    2   1.00      6     4.00     8 | ok (maxdiff 0.000)
+      8 |   0   0.00     7    6.12   12 |    6   1.00     34    15.54    24 | ok (maxdiff 0.004)
+     14 |   0   0.00    30   14.44   24 |   12   1.00    132    33.57    48 | ok (maxdiff 0.004)
+     24 |   0   0.00   111   58.84   44 |   22   1.00    466   126.60    88 | ok (maxdiff 0.004)
+     40 |   0   0.00   343  163.44   76 |   38   1.00   1410   341.45   152 | ok (maxdiff 0.003)
+     60 |   0   0.00   813  367.16  116 |   58   1.00   3310   755.91   232 | ok (maxdiff 0.002)
+
+   combinatorial transcription faithful: True
+
+================================================================================================================
+V5b GATE FRAGILITY IN THE OTHER DIRECTION -- add POW = a N^b to the model set
+================================================================================================================
+
+   The engine's model set is {LIN, LOG, SAT1, SAT2}.  A power law is not in it.  For any
+   series that is nearly a power law -- which a LINEAR series trivially is, with exponent 1 --
+   POW and LIN are near-degenerate, so the engine's stopping rule 'dAICc < 4 => CANNOT
+   DISTINGUISH, stop' would fire on its own known-exactly-linear control.
+
+   CONTROL-LIN2  SUM chi_i, GROWN bath (KNOWN EXACTLY LINEAR)
+     model set {LIN,LOG,SAT1,SAT2}      best LIN   dAICc   4.76   -> engine says LIN
+     model set + POW = a N^b            best LIN   dAICc   0.01   -> engine says CANNOT DISTINGUISH
+     POW fitted exponent b = 0.996
+
+   CONTROL-SAT   chi_joint, FIXED bath (KNOWN BOUNDED <= 3 bits)
+     model set {LIN,LOG,SAT1,SAT2}      best LOG   dAICc   1.48   -> engine says CANNOT DISTINGUISH
+     model set + POW = a N^b            best LOG   dAICc   1.48   -> engine says CANNOT DISTINGUISH
+
+   Q1            SUM chi_i, FIXED bath (probe)
+     model set {LIN,LOG,SAT1,SAT2}      best SAT2  dAICc  10.47   -> engine says SAT2
+     model set + POW = a N^b            best SAT2  dAICc  10.47   -> engine says SAT2
+
+   READ: adding one obvious competitor form flips the KNOWN-EXACTLY-LINEAR control from
+   'GROWING (linear), EXT? YES' to 'CANNOT DISTINGUISH'.  The flip is benign in substance --
+   POW's exponent there is 0.996, i.e. POW IS the linear law -- but it shows the dAICc >= 4
+   gate is carrying almost no weight on the chi series.  The chi verdicts in this lane rest
+   on the RAW numbers and the EXACT cap, not on the model selection.
+================================================================================================================

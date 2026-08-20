@@ -1,0 +1,41 @@
+================================================================================================================================
+E-8  T = MINIMAL THREE-WAY MEETING NUMBER -- EXACT, GAUGE-INVARIANT BY CONSTRUCTION
+================================================================================================================================
+
+U1/U2   EXACT DISTRIBUTION OF T, WITH THE CONTROLS IN THE SAME TABLE
+--------------------------------------------------------------------------------------------------------------------------------
+  n    k     triples    exhaustive  exact distribution of T                  T>0 count      CTRL-Z T(a,a,b) / T(a,b,b)
+  4    2     3375       YES         {0: 3375}                                0              0 / 0 OK                  
+  6    4     64000      sampled classes {0: 64000}                               0              0 / 0 OK                  
+  8    6     64000      sampled classes {0: 64000}                               0              0 / 0 OK                  
+  10   8     64000      sampled classes {0: 64000}                               0              0 / 0 OK                  
+  12   10    64000      sampled classes {0: 64000}                               0              0 / 0 OK                  
+
+U3   DETERMINACY.  Group triples by the SIX pairwise invariants (sp_ab,sp_bc,sp_ac,J_ab,J_bc,J_ac).
+     If T takes more than one value inside a group, T is NOT a function of the pairwise data.
+--------------------------------------------------------------------------------------------------------------------------------
+  n    groups       groups with |T|>1 example group -> T values                      verdict                       
+  4    8            0                -                                              T IS pairwise-determined      
+  6    24           0                -                                              T IS pairwise-determined      
+  8    27           0                -                                              T IS pairwise-determined      
+  10   27           0                -                                              T IS pairwise-determined      
+  12   27           0                -                                              T IS pairwise-determined      
+
+U4/U5   SEPARATION AND ADDITIVITY.  m disjoint [[n0,n0-2,2]] blocks.
+--------------------------------------------------------------------------------------------------------------------------------
+  n0    m    n      block pattern of the triple        T values (exact)         verdict                       
+  4     2    8      all three on block 0               [0]                      CTRL: on-block reference      
+  4     2    8      two on block 0, one on block 1     [0]                      EXACTLY ZERO across regions   
+  4     2    8      one each on blocks 0,1 (+ repeat)  [0]                      EXACTLY ZERO across regions   
+  4     3    12     (all patterns)                      SKIPPED: |S|^3 = 262144 makes the exhaustive orbit  sweep infeasible; the m=2 rows above already carry the cross-region test.
+  6     2    12     all three on block 0               [0]                      CTRL: on-block reference      
+  6     2    12     two on block 0, one on block 1     [0]                      EXACTLY ZERO across regions   
+  6     2    12     one each on blocks 0,1 (+ repeat)  [0]                      EXACTLY ZERO across regions   
+  6     3    18     (all patterns)                      SKIPPED: |S|^3 = 262144 makes the exhaustive orbit  sweep infeasible; the m=2 rows above already carry the cross-region test.
+
+================================================================================================================================
+  E-8 SUMMARY
+================================================================================================================================
+  T is a three-record integer, exactly computed, gauge-invariant by construction.
+  See U3 for whether it is or is not determined by the pairwise data -- that is the whole point.
+================================================================================================================================

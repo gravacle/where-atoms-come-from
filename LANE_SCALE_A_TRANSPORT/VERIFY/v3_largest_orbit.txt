@@ -1,0 +1,43 @@
+========================================================================================================================================
+V3   GENERIC STABILISER AND LARGEST ORBIT, COMPUTED ON EVERY CARRIER INCLUDING |G| = 32 AND 64
+========================================================================================================================================
+
+  carrier        |G|  abel  |Z|  |G/Z|  #minimal L   dim_all  max dim_L  max dim_L/dim_all  generic stab  largest orbit  lane printed
+  Z_2              2  True    2      1           0        16          0           0.000000       trivial              1             1
+  Z_4              4  True    4      1           0       256          0           0.000000       trivial              1             1
+  Z_2^2            4  True    4      1           0       256          0           0.000000       trivial              1             1
+  Z_8              8  True    8      1           0      4096          0           0.000000       trivial              1             1
+  Z_4xZ_2          8  True    8      1           0      4096          0           0.000000       trivial              1             1
+  Z_2^3            8  True    8      1           0      4096          0           0.000000       trivial              1             1
+  D_4              8 False    2      4           3      1384        952           0.687861       trivial              4             4
+  Q_8              8 False    2      4           3      1384        952           0.687861       trivial              4             4
+  Z_16            16  True   16      1           0     65536          0           0.000000       trivial              1             1
+  Z_8xZ_2         16  True   16      1           0     65536          0           0.000000       trivial              1             1
+  Z_4^2           16  True   16      1           0     65536          0           0.000000       trivial              1             1
+  Z_4xZ_2^2       16  True   16      1           0     65536          0           0.000000       trivial              1             1
+  Z_2^4           16  True   16      1           0     65536          0           0.000000       trivial              1             1
+  D_8             16 False    2      8           5     25048      14392           0.574577       trivial              8             8
+  Q_16            16 False    2      8           5     25048      14392           0.574577       trivial              8             8
+  SD_16           16 False    2      8           5     25048      14392           0.574577       trivial              8             8
+  M_4(2)          16 False    4      4           3     22144      15232           0.687861       trivial              4             4
+  D_4xZ_2         16 False    4      4           3     22144      15232           0.687861       trivial              4             4
+  Q_8xZ_2         16 False    4      4           3     22144      15232           0.687861       trivial              4             4
+  Pauli16         16 False    4      4           3     22144      15232           0.687861       trivial              4             4
+  Z_32            32  True   32      1           0   1048576          0           0.000000       trivial              1             1
+  Z_2^5           32  True   32      1           0   1048576          0           0.000000       trivial              1             1
+  D_16            32 False    2     16           9    480568     263416           0.548135       trivial             16            16
+  Q_32            32 False    2     16           9    480568     263416           0.548135       trivial             16            16
+  SD_32           32 False    2     16           9    480568     263416           0.548135       trivial             16            16
+  M_5(2)          32 False    8      4           3    354304     243712           0.687861       trivial              4             4
+  D_8xZ_2         32 False    4      8           5    400768     230272           0.574577       trivial              8             8
+  Pauli16xZ_2     32 False    8      4           3    354304     243712           0.687861       trivial              4             4
+  D_4xZ_2^2       32 False    8      4           3    354304     243712           0.687861       trivial              4             4
+  ES_2^(1+4)      32 False    2     16          15    393856     218752           0.555411       trivial             16            16
+  Z_64            64  True   64      1           0  16777216          0           0.000000       trivial              1             1
+  Z_2^6           64  True   64      1           0  16777216          0           0.000000       trivial              1             1
+  D_32            64 False    2     32          17   8669176    4649848           0.536366       trivial             32            32
+  Q_64            64 False    2     32          17   8669176    4649848           0.536366       trivial             32            32
+  D_16xZ_2        64 False    4     16           9   7689088    4214656           0.548135       trivial             16            16
+
+  'lane printed' is the column the finding reports as 'largest orbit'.  It equals |G/Z| by
+  construction in s3_orbits.py's READ block, whether or not the stabiliser was checked.

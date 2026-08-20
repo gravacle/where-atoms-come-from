@@ -1,0 +1,25 @@
+======================================================================================================================================================
+S9  C-39 EXTENDED: chi(R_1) WITH A COMMUTING CROWD vs A PAIRING CROWD ON THE SAME BATH SITE
+======================================================================================================================================================
+  full Hilbert space, no analytic collapse.  lam = 0.8, bath nq = 3, beta = 2.0,
+  25 times averaged in [1,13].  Records verified in S1.
+
+  carrier      k    dim_tot  lam    chi_ALONE     chi_SPREAD    chi_COMMUTING chi_PAIRING   commut/spread pair/spread
+  ------------------------------------------------------------------------------------------------------------------------------
+  [[4,2,2]]    2    128      0.80   0.52152730    0.52152730    0.13640869    0.25408925    0.26155618    0.487202  
+     record value displacement |d<R_1>|: commuting crowd 3.784e-17   pairing crowd 8.182e-16
+     (t=1s)
+  [[6,4,2]]    4    512      0.80   0.52152730    0.13640869    0.04516257    0.07470905    0.33108283    0.547685  
+     record value displacement |d<R_1>|: commuting crowd 3.640e-16   pairing crowd 6.632e-16
+     (t=30s)
+  [[8,6,2]]    6    2048     0.80   0.52152730    0.13640869    0.02430704    0.04813282    0.17819278    0.352857  
+     record value displacement |d<R_1>|: commuting crowd 5.926e-17   pairing crowd 4.717e-16
+     (t=806s)
+
+  NEGATIVE CONTROL  coupling opens no channel (identity)  -> chi = 6.573e-16  [must be 0]
+  POSITIVE CONTROL  coupling = R_1                        -> chi = 0.521527  [must be > 0]
+
+REACH OF THIS ARM: the largest carrier here is dim 2048 joint (system 2^8 x bath 2^3).  The
+  next step up, n = 10, is a joint dimension of 8192; eigh at 4096 already costs minutes on
+  this machine and 8192 needs ~1 GB per dense copy.  So the NON-COMMUTING arm stops at k = 6.
+  That is the honest ceiling on any dynamical statement in this lane that is not analytic.

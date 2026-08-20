@@ -1,0 +1,47 @@
+========================================================================================================================
+V2  THE ONSET SWEEP DONE EXACTLY (no region sampling), AND THE COUNTING LAW
+========================================================================================================================
+
+SELF-CHECK: exact distance test on codes whose distance is KNOWN.  A wrong answer here
+            invalidates everything below, so it is printed before any sweep.
+  carrier          n      d<=1     d<=2     d<=3     verdict   
+  --------------------------------------------------------------
+  [[6,4,2]]        6      False    True     True     OK d=2    
+  [[4,2,2]]^2      8      False    True     True     OK d=2    
+  [[5,1,3]]^1      5      False    False    True     OK d=3    
+  [[5,1,3]]^2      10     False    False    True     OK d=3    
+  [[4,2,2]]+bare   5      True     True     True     OK d=1    
+  self-check PASSED
+
+EXACT ONSET k*(n,r) = smallest k at which > half of the ensemble has d <= r.
+  ensemble = 32 random stabiliser carriers per (n,k), the lane's own generator, seed 2026.
+  LANE  = the number s6b reported (nsamp=120 region sampling).
+  PRED  = n - log2( sum_{w<=r} 3^w C(n,w) ), the first-moment counting law, NO free params.
+
+  n     r    k*_EXACT  k*_LANE   k*_PRED   exact-pred
+  ----------------------------------------------------
+  10    1    5         5         5.09      -0.09    
+  10    2    2         1         1.24      +0.76    
+  10    3    1         1         -1.84     +2.84    
+    (t=2s)
+  12    1    7         6         6.83      +0.17    
+  12    2    3         3         2.70      +0.30    
+  12    3    1         1         -0.68     +1.68    
+    (t=6s)
+  16    1    10        10        10.42     -0.42    
+  16    2    6         5         5.86      +0.14    
+  16    3    2         4         2.01      -0.01    
+    (t=23s)
+  20    1    14        14        14.09     -0.09    
+  20    2    9         9         9.21      -0.21    
+  20    3    5         8         5.01      -0.01    
+    (t=75s)
+  24    1    17        17        17.83     -0.83    
+  24    2    13        13        12.68     +0.32    
+  24    3    9         12        8.20      +0.80    
+    (t=205s)
+
+READ, from the numbers above and nowhere else:
+  * |k*_exact - k*_pred| at r=1,2 : mean 0.33  max 0.83
+  * |k*_exact - k*_pred| at r=3   : mean 1.07  max 2.84
+  * lane k* reproduced exactly by the exact computation: 9 of 15 rows

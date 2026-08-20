@@ -36,7 +36,7 @@ def rec(kind, i, j):
 vC, MC, sC = rec("X", 0, 1)
 vA, MA, sA = rec("X", 2, 3)
 vB, MB, sB = rec("X", 4, 5)
-env = Environment(nq=3, energies=(1.0,)*3, beta=2.0)
+env = Environment(nq=3, energies=(1.0,)*3, beta=2.0)  # 3 sites needed: C at 0, A at 1, B at 2
 st = np.eye(d, dtype=complex)/d; Hr = -2.0*np.eye(d, dtype=complex)
 
 print("="*112)

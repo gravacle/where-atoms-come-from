@@ -1,0 +1,74 @@
+==========================================================================================================================
+B7   SEPARATION.  RING BATH OF 6 QUBITS, UNIFORM ON-SITE ENERGY, NEAREST-NEIGHBOUR ZZ.
+==========================================================================================================================
+  carrier n = 6 (code space 16), bath ring L = 6, joint dimension 1024
+  distances on the ring: d(0,1) = d(0,5) = 1, d(0,2) = d(0,4) = 2, d(0,3) = 3.
+  The read record is always written on ring site 0.
+
+--------------------------------------------------------------------------------------------------------------------------
+  CONTROL  J = 0 (no geometry: every site exactly equivalent)
+--------------------------------------------------------------------------------------------------------------------------
+  chi(alone) = 0.52152730075954
+
+  (a) TWO-BODY.  One PAIRING partner (Z1) at ring distance d from the read record.
+         d                 chi     chi/alone   spread vs d=1
+         1    0.37707873384280   0.723027794       +0.00e+00
+         2    0.37707873384280   0.723027794       +1.11e-16
+         3    0.37707873384280   0.723027794       +4.77e-15
+      -> range over d: 4.774e-15
+
+  (b) TWO-BODY CONTROL.  One COMMUTING partner (X2) at ring distance d.
+         d                 chi     chi - alone
+         1    0.52152730075953       -5.66e-15
+         2    0.52152730075953       -4.22e-15
+         3    0.52152730075953       -4.88e-15
+      -> worst |chi - alone|: 5.662e-15
+
+  (c) THREE-BODY.  Pairing partner Z1 fixed on ring site 1; commuting partner X2 moved
+      to ring site s.  s = 1 is COINCIDENT with Z1; the others are separated from it.
+         s  d(s, Z1)  d(s, R)                 chi   chi - (Z1 only)
+         0         1        0    0.16411544727956     -2.129633e-01
+         1         0        1    0.30068358156049     -7.639515e-02
+         2         1        2    0.37707873384280     +6.106227e-15
+         3         2        3    0.37707873384280     +3.386180e-15
+         4         3        2    0.37707873384280     +3.774758e-15
+         5         2        1    0.37707873384280     +3.552714e-15
+      coincident (d=0): |effect| = 7.639515e-02
+      separated  (d>0): largest |effect| = 2.130e-01, smallest = 3.386e-15
+      -> at J = 0 the effect is EXACTLY zero at every non-zero separation and O(0.1)
+         at coincidence.  Not a falloff: a step function of coincidence.
+
+--------------------------------------------------------------------------------------------------------------------------
+  J = 0.6 (the ring now has a geometry)
+--------------------------------------------------------------------------------------------------------------------------
+  chi(alone) = 0.24793334032638
+
+  (a) TWO-BODY.  One PAIRING partner (Z1) at ring distance d from the read record.
+         d                 chi     chi/alone   spread vs d=1
+         1    0.19320044460362   0.779243503       +0.00e+00
+         2    0.19712015473966   0.795053035       +3.92e-03
+         3    0.19944614576520   0.804434553       +6.25e-03
+      -> range over d: 6.246e-03
+
+  (b) TWO-BODY CONTROL.  One COMMUTING partner (X2) at ring distance d.
+         d                 chi     chi - alone
+         1    0.17038695450255       -7.75e-02
+         2    0.24793334032638       +1.94e-16
+         3    0.24793334032638       -8.33e-17
+      -> worst |chi - alone|: 7.755e-02
+
+  (c) THREE-BODY.  Pairing partner Z1 fixed on ring site 1; commuting partner X2 moved
+      to ring site s.  s = 1 is COINCIDENT with Z1; the others are separated from it.
+         s  d(s, Z1)  d(s, R)                 chi   chi - (Z1 only)
+         0         1        0    0.10747007386160     -8.573037e-02
+         1         0        1    0.11223369064660     -8.096675e-02
+         2         1        2    0.17203226306568     -2.116818e-02
+         3         2        3    0.19320044460362     -2.498002e-16
+         4         3        2    0.19320044460362     -4.440892e-16
+         5         2        1    0.12300301108627     -7.019743e-02
+      coincident (d=0): |effect| = 8.096675e-02
+      separated  (d>0): largest |effect| = 8.573e-02, smallest = 2.498e-16
+      -> with a geometry present, look at whether the separated entries have left zero,
+         and by how much relative to the coincident one.
+
+  elapsed 427.0s

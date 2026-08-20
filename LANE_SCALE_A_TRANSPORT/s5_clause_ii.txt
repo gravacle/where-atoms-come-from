@@ -1,0 +1,38 @@
+==========================================================================================================
+S5   CLAUSE (ii) MEASURED, WITH A POSITIVE CONTROL THAT MUST REGISTER NON-ZERO
+==========================================================================================================
+  carrier        dim  #eigenspaces  max||[H,R]|| GENERIC  max||[H,R]|| GAUGE   CONTROL: blocks mixed  (i)(iii)(iv)
+  Z_2              4             1             0.000e+00           0.000e+00                  0.0000          True
+  Z_4             16             1             0.000e+00           0.000e+00                  0.0000          True
+  Z_2^2           16             1             0.000e+00           0.000e+00                  0.0000          True
+  Z_8             64             1             0.000e+00           0.000e+00                  0.0000          True
+  Z_4xZ_2         64             1             0.000e+00           0.000e+00                  0.0000          True
+  Z_2^3           64             1             0.000e+00           0.000e+00                  0.0000          True
+  D_4             64             3             3.378e-15           3.378e-15                  8.8758          True
+  Q_8             64             3             3.378e-15           3.378e-15                  8.8758          True
+  Z_16           256             1             0.000e+00           0.000e+00                  0.0000          True
+  Z_8xZ_2        256             1             0.000e+00           0.000e+00                  0.0000          True
+  Z_4^2          256             1             0.000e+00           0.000e+00                  0.0000          True
+  Z_4xZ_2^2      256             1             0.000e+00           0.000e+00                  0.0000          True
+  Z_2^4          256             1             0.000e+00           0.000e+00                  0.0000          True
+  D_8            256             3             1.530e-14           1.530e-14                 17.2006          True
+  Q_16           256             3             1.530e-14           1.530e-14                 17.2006          True
+  SD_16          256             3             1.614e-14           1.614e-14                 17.1614          True
+  M_4(2)         256             3             1.658e-14           1.658e-14                 17.8937          True
+  D_4xZ_2        256             3             1.818e-14           1.818e-14                 17.9124          True
+  Q_8xZ_2        256             3             1.818e-14           1.818e-14                 17.9124          True
+  Pauli16        256             3             2.318e-14           2.318e-14                 17.9196          True
+
+  worst ||[H,R]|| over every record built in this lane: 2.318e-14
+  CONTROL on the carriers where H has MORE THAN ONE eigenspace: min 8.8758, max 17.9196  (9 carriers)
+  CONTROL on the abelian carriers: exactly 0.0000, and that is NOT a failed control -- on every
+  abelian carrier in this ladder H has a SINGLE eigenspace (H = -2I, multiplicity |G|^2), so
+  NOTHING can violate clause (ii) there and no control could register.  That single fact is why
+  the abelian carriers carry the LARGEST record counts in the whole ladder: every trace-balanced
+  involution on the entire space is a record.
+  clauses (i),(iii),(iv) hold on every record built: True
+
+
+  READ: clause (ii) holds to machine precision on every record built in this lane.  Where the
+  test can discriminate at all -- the non-abelian carriers, which are the only ones with more than
+  one eigenspace -- the control registers 8.9 to 17.9 against a record value below 3e-14.
