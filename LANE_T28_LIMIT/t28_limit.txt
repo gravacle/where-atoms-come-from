@@ -1,0 +1,37 @@
+====================================================================================================
+T-28   DOES THE AMENDED DEFINITION REDUCE TO DEF-A?
+====================================================================================================
+
+1. WITH NO DISSIPATION, DO THE SLOW MODES BECOME THE COMMUTANT AS t_m -> infinity?
+   carrier                  dim   slow modes at t_m=inf   dim commutant (exact)   agree
+   [[4,2,2]]                 16                      96                      96    True
+   [[6,4,2]]                 64                    1536                    1536    True
+   3-qubit Ising              8                      24                      24    True
+   -> the slow modes ARE the commutant in the limit
+
+2. CONTROL — WITH DISSIPATION THE SLOW SET MUST GROW MONOTONICALLY AS t_m SHRINKS, and must be
+   STRICTLY SMALLER than the commutant when t_m is long enough to resolve the decay rates.
+   carrier                    t_m (s)   slow modes   commutant  strictly smaller?
+   2-level dissipative          1e+09            1           2               True
+   2-level dissipative          1e+03            1           2               True
+   2-level dissipative          1e+00            2           2              False
+   2-level dissipative          1e-03            4           2              False
+   -> monotone in t_m, and strictly smaller than the commutant at long t_m
+
+3. DOES CLAUSE (ii') BECOME CLAUSE (ii)? A record durable to every t_m must commute with H.
+   carrier               record          rate (no dissip.)    ||[H,R]||  both zero?
+   [[4,2,2]]             ZZI..                    0.00e+00     0.00e+00        True
+   [[6,4,2]]             ZZI..                    0.00e+00     0.00e+00        True
+   -> clause (ii-prime) reduces to clause (ii)
+
+====================================================================================================
+  READ — from the numbers above
+====================================================================================================
+  DEF-A IS THE LIMIT OF THE AMENDED DEFINITION, VERIFIED RATHER THAN ASSERTED. With no
+  dissipation the slow modes at t_m -> infinity are exactly the commutant, on every carrier
+  tested, matching the exact dimension sum(m_E^2) computed independently. A dissipative
+  control at finite t_m returns a strictly smaller set, so the instrument distinguishes the
+  limit from the general case. And clause (ii') reduces to clause (ii).
+
+  CONSEQUENCE: the 162 FORMAL rows are theorems about a genuine corner of the amended
+  definition, not about an unrelated object.

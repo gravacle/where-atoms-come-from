@@ -36,15 +36,24 @@ def liouvillian(H, Ls):
     return L
 
 
-def slow_modes(H, Ls, t_m):
+def slow_modes(H, Ls, t_m, tol=1e-9):
     """CLAUSE (ii'): the modes that survive to t_m. Returns (rates, observables).
 
-       A record is DURABLE TO t_m when its decay rate satisfies |Re lambda| <= 1/t_m. In the exact
-       corner t_m -> infinity and this becomes Re lambda = 0, i.e. the commutant — which is DEF-A."""
+       A record is DURABLE TO t_m when |lambda| <= 1/t_m -- THE FULL EIGENVALUE, not its real part.
+       An observable with lambda = i*omega does not decay but ROTATES, so its value oscillates and it
+       is not durable; filtering on |Re lambda| keeps every such mode and, with no dissipation, keeps
+       everything, since -i[H,.] is anti-Hermitian and every eigenvalue is purely imaginary.
+
+       `tol` is a NUMERICAL floor, not a physical one: eigenvalues that should be exactly 0 come back
+       at ~1e-16, so a threshold of 1/t_m alone rejects the commutant at large t_m.
+
+       In the exact corner t_m -> infinity this becomes lambda = 0, i.e. the COMMUTANT -- DEF-A."""
     n = np.asarray(H).shape[0]
     w, V = np.linalg.eig(liouvillian(H, Ls).conj().T)     # adjoint: modes of OBSERVABLES
-    keep = [i for i in range(len(w)) if abs(w[i].real) <= 1.0 / t_m + 1e-300]
-    keep.sort(key=lambda i: abs(w[i].real))
+    scale = max(1.0, float(np.max(np.abs(w))) if len(w) else 1.0)
+    thr = (1.0 / t_m if np.isfinite(t_m) else 0.0) + tol * scale
+    keep = [i for i in range(len(w)) if abs(w[i]) <= thr]
+    keep.sort(key=lambda i: abs(w[i]))
     return [w[i] for i in keep], [V[:, i].reshape(n, n, order='F') for i in keep]
 
 

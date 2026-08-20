@@ -9431,3 +9431,49 @@ six passes mean something.**
 **C-69 and C-70 now meet it** on six mechanisms. **C-71 and C-72 do not** — they are verified on
 magnetic media alone and are returned to `FORMAL` until a second mechanism is scored. The named check
 is a **written NAND array against an erased one.**
+
+---
+
+## T-28 — **DEF-A IS THE LIMIT OF THE AMENDED DEFINITION. VERIFIED, NOT ASSERTED.**
+
+`LANE_T28_LIMIT`. O-51 named DEF-A as the `T→0, t_m→∞, W=0, E_b→∞` corner. **If that were false, the
+162 FORMAL rows would be theorems about something else.**
+
+| carrier | dim | slow modes at `t_m = ∞` | dim commutant, `Σm_E²` | agree |
+|---|---|---|---|---|
+| `[[4,2,2]]` | 16 | **96** | **96** | ✓ |
+| `[[6,4,2]]` | 64 | **1536** | **1536** | ✓ |
+| 3-qubit Ising | 8 | **24** | **24** | ✓ |
+
+**Control:** with dissipation the slow set is **monotone in `t_m`** and **strictly smaller** than the
+commutant at long `t_m` (1 of 2 at `t_m = 10⁹` and `10³`), so the instrument distinguishes the limit
+from the general case. **Clause (ii′) reduces to clause (ii)** — rate and `‖[H,R]‖` both `0.00e+00`.
+
+**Correction that made it work:** durability requires `|λ| ≤ 1/t_m`, **not `|Re λ|`.** With no
+dissipation `−i[H,·]` is anti-Hermitian, so every eigenvalue is purely imaginary and a `Re λ` filter
+excludes nothing; an observable with `λ = iω` does not decay but **rotates**, so its value oscillates
+and it is not durable. The numerical floor also had to be a stated tolerance rather than `1e-300`.
+
+---
+
+## T-31 — **THE DEGENERACY-DEPENDENT CHAIN COLLAPSES UNDER GENERIC ASYMMETRY, AND THE AMENDED DEFINITION ALREADY CARRIES THE FIX.**
+
+`LANE_T31_ASYMMETRY`. `[[4,2,2]]`, `t_m` = 10 years so `δ = ħ/t_m = 3.341e-43 J`.
+
+| run | splitting | multiplicities | **`k`** |
+|---|---|---|---|
+| EXACT | 0 | `[4, 8, 4]` | **2** |
+| **ONE-SITE `Z`** | 1e-3 | `[4, 4, 4, 4]` | **2** |
+| **GENERIC** | 1e-6 | `[1,1,2,1,…]` | **0** |
+| **GENERIC** | 1e-3 | `[1,1,1,…,1]` | **0** |
+| **GENERIC** | 1e-1 | `[1,1,1,…,1]` | **0** |
+
+> **The census was right, and the perturbation must be GENERIC.** A single-site `Z` only *partially*
+> lifts the degeneracy — `[4,8,4] → [4,4,4,4]` and `v₂(4)` is still 2, so the count survives. **A
+> generic splitting collapses every multiplicity to 1 and `k` falls from 2 to 0.** C-14's count law
+> and the W-42/43/44/51 record-to-geometry chain **rest on a symmetry the world does not have.**
+
+**And the fix needs no new machinery.** Clause (ii′) already carries a durability width; eigenvalues
+closer than it are indistinguishable to a record that need only last `t_m`. Clustering within a
+**stated** tolerance recovers `[4,8,4]` and `k = 2` **exactly** whenever the splitting is inside it —
+and correctly leaves the count at 0 when it is not (`1e-1` against a `1e-2` width).
