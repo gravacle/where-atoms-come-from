@@ -1,0 +1,26 @@
+PASS V1 (4,6): dual lattice FROM SUPPORTS == plain torus grid graph (computed, not assumed; 4-regular)
+PASS V2 (4,6): my own BFS distance + shortest-path count reproduce EVERY sealed S0 row (d, N_min)
+PASS V1 (3,7): dual lattice FROM SUPPORTS == plain torus grid graph (computed, not assumed; 4-regular)
+PASS V2 (3,7): my own BFS distance + shortest-path count reproduce EVERY sealed S0 row (d, N_min)
+PASS V3 (3,7) v=(0, 3): OWN 2^22 coset span (unpackbits popcount): w_min=3==d and N_min=1 (total 2^22)
+PASS V3 (3,7) v=(1, 3): OWN 2^22 coset span (unpackbits popcount): w_min=4==d and N_min=4 (total 2^22)
+PASS M1 (4,6): OWN exact elimination: (I-muA) SINGULAR at mu=1/4, nonsingular at 1/8 and 249/1000
+PASS M2 sandwich 16^m/(2m+1)^2 <= N_2m(0,0)=C(2m,m)^2 <= 16^m EXACT, m<=3000 (radius exactly 1/4)
+PASS M3 induction step (2m+1)^2(m+1) - 4m(m+1)^2 == m+1 > 0 EXACT for m<=2*10^5 (lower bound all m)
+PASS M4 sharpness: at mu=1/4 + 3/10000 the return term at m=20000 is > 10^6 (108505599395) and term ratio > 1 (1.002351)
+PASS M5 sharpness: at mu=1/4 - 3/10000 the geometric envelope (4mu)^k contracts (4mu=0.9988 < 1)
+PASS T1 truncation honesty: K=6000 bracket and K=24000 bracket INTERSECT for all 8 targets (proven tails are real bounds, not decoration)
+PASS T2 READ==table: all 8 sealed critical-kernel brackets reproduced DIGIT-FOR-DIGIT by my own stepper at K=24000
+PASS T3 anchors: a(1,1) bracket contains 4/pi and a(2,0) bracket contains 4-8/pi (constants from 18-digit rational brackets, my own)
+PASS T4 class recomputed: all doubling-increment ratios inside [4/5,5/4] and outside the linear window -> MARGINAL_LOG is what the numbers say
+PASS T5 largest axis doubling increment contains (2/pi)ln2 (owner value, my own rational bracket)
+PASS M6 shifted-mu fake test: kernel doubling ratio at mu=249/1000 (0.4% below mu_c) is 0.6014 -- far OUTSIDE the log window [4/5,5/4]: the log class exists only AT the computed mu_c
+PASS R1 READ==table (mu=1/8): my G(1)=0.14636401 matches sealed 0.14636401; r(8)=[0.160658] matches sealed 0.160658; ratio < 1 - 1/20
+PASS R2 (mu=1/8) r(8) within 1/25 of owner OZ rate 3-2sqrt2 = 0.171572 (comparison reproduced)
+PASS R3 (4,6) mu=1/8: OWN torus series + geometric tail brackets OWN exact resolvent on every sealed pair (series machinery vs exact linear algebra, both mine)
+PASS C1 critical S_K(0,0): my own values ['2.6125', '3.0524', '3.4933', '3.9345'] match sealed 2.6125/3.0524/3.4933/3.9345 and quadrupling increments >= 1/4
+PASS D1 1D mu=1/4 (2D's critical value): ratio constant (spread 0.00000000 < 1/100) and equals 2-sqrt3=0.267949 -> SUBCRITICAL pure exponential here: mu_c is the venue's own number
+PASS D2 1D critical kernel (own, K=20000): brackets contain 2,4,8 EXACTLY (Spitzer a_Z=|d|); doubling ratio [1.882,2.096] in LINEAR window [9/5,11/5], DISJOINT from 2D log window
+PASS S1 supercritical mu=26/100: my term at m=400 = 33665893174.1 (sealed 33665893174.1) > 10^6, ratio 1.0789 > 1
+
+ADVERSARIAL RECHECK #2: 24 checks, 24 pass, 0 fail

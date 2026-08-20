@@ -1,0 +1,31 @@
+==============================================================================
+T-44-C SECOND-LINE ADVERSARIAL PROBE -- linear-solve + exact counts, fresh mu
+==============================================================================
+  [OK ] P5.a -- numeric spectral radius matches the separable-grid formula 2*sum cos(pi/(n+1)) (rho3=5.395953 rho2=3.797615)
+  [OK ] P5.b -- independent CW bound (120 iters) is a genuine upper bound, tight to <1e-4 (B3=5.395960 B2=3.797620)
+  [OK ] P5.c -- sealed printed B (80 iters: 5.396145 / 3.797765) is a GENUINE upper bound on the true rho (5.395953 / 3.797615), looser than my 120-iter bound as CW iteration predicts -- conservative, i.e. sealed tail bounds only over-cover
+  [OK ] P2.a -- w_min = d = 9 with N_9 = 1 and bipartite parity (independent count)
+  [OK ] P2.b -- R1 per-order additivity identity, seps 2/3/4/6, independent counts
+  [OK ] P2.c -- mirror-pair count equality at every mid-plane site, every order (exact zero Phi)
+  [OK ] P2.d -- shadow onset 12 = punctured BFS 12 > free 8 (independent)
+  [OK ] P2.e -- full slab: vertex cut and zero count at every order (independent)
+  [OK ] P1.a -- shadow-chain values reproduce by LINEAR SOLVE (no series): free=1.2367408720e-03, cen=7.9771985037e-04, disk=1.3139214628e-04, slab1=5.5413549627e-05, ring=6.2923951195e-04
+  [OK ] P1.b -- far-plane ratios axial 0.10624064 / corner 0.15402870 reproduce (sealed 0.10624064/0.15402869)
+  [OK ] P1.c -- all 8 R2 relative defects reproduce by linear solve (e.g. sep3 mu=1/6: -0.038627719073 vs sealed -0.038627719073)
+  [OK ] P1.d -- dipole/monopole ratios reproduce: 0.90474561 0.89183282 0.58758339 0.51901414
+  [OK ] P1.e -- occupancy k=1..4 values reproduce by linear solve; Phi > 0 at every site
+  [OK ] P1.f -- 2-D: axial ratio 0.099031 (sealed 0.099030), onset 14 = punctured BFS 14 > free 10
+  [OK ] P3.12 -- mu=1/12: remainder(500->820) = 10^-176.2 > 0 and <= tail bound 10^-172.8 (slack ~10^3.4) -- bounds are real, not display zeros
+  [OK ] P3.6 -- mu=1/6: remainder(500->820) = 10^-24.4 > 0 and <= tail bound 10^-21.2 (slack ~10^3.2) -- bounds are real, not display zeros
+
+  P4 FRESH-MU ATTACK: 3-D mu = 1/9 and 9/50 (9/50 = 0.18 > landmark 1/6);
+     2-D mu = 13/50 (> landmark 1/4).  Certificates first.
+  [OK ] P4.cert-3D-1/9 -- mu*B = 0.599551 < 1 certified on the finite venue
+  [OK ] P4.cert-3D-9/50 -- mu*B = 0.971273 < 1 certified on the finite venue
+  [OK ] P4.cert-2D-13/50 -- mu*B = 0.987381 < 1 certified on the finite venue
+  [OK ] P4.1/9 -- mu=1/9: R2 defect<0, dipole screened, occupancy additive+positive, shadow R<1 axial-min (rel defect -0.002504, x=5 ratio 0.855138, axial R 0.053086)
+  [OK ] P4.9/50 -- mu=9/50: R2 defect<0, dipole screened, occupancy additive+positive, shadow R<1 axial-min (rel defect -0.145988, x=5 ratio 0.358638, axial R 0.063032)
+  [OK ] P4.2D -- 2-D mu=13/50 (ABOVE the 1/4 landmark, certified): R2 defect<0, shadow 0<R<1 axial-min (axial R 0.043078) -- classes hold above the borrowed landmark
+==============================================================================
+SECOND-LINE PROBE: 22/22 OK
+==============================================================================

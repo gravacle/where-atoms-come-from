@@ -1,0 +1,152 @@
+==============================================================================
+T-44-C  THREE-REGION COMPOSITION -- exact weighted string sums, both tiers
+==============================================================================
+
+SECTION 0 -- venue and instrument self-checks
+------------------------------------------------------------------------------
+venue: WORLD 3-D 11x5x5 grain block (face adjacency)   sites=275  max degree=6
+  [PASS] G0.1-3D -- adjacency symmetric (undirected venue)
+    Collatz-Wielandt bound on spectral radius: B = 3136296107957741140005904821332716832347 ~ 5.396145
+venue: 2-D 13x7 block (corner-class string lattice; D-15 discriminator)   sites=91  max degree=4
+  [PASS] G0.1-2D -- adjacency symmetric (undirected venue)
+    Collatz-Wielandt bound on spectral radius: B = 1835479866359717299612712838663577555654 ~ 3.797765
+  [PASS] G0.3-3D-mu1/12 -- mu*B = 0.449678 < 1: resummation certified convergent on this venue (W=500)
+  [PASS] G0.3-3D-mu1/6 -- mu*B = 0.899357 < 1: resummation certified convergent on this venue (W=500)
+  [PASS] G0.3-2D-mu1/8 -- mu*B = 0.474720 < 1: resummation certified convergent on this venue (W=1600)
+  [PASS] G0.3-2D-mu1/4 -- mu*B = 0.949441 < 1: resummation certified convergent on this venue (W=1600)
+
+  w_min = d check (the C-80 growing law as the mediator's support threshold):
+  [PASS] G0.2-3DA->C -- 3D A->C: N_w=0 for w<d=9, N_d=1>0, odd-parity orders vanish (bipartite)
+  [PASS] G0.2-2DA->C -- 2D A->C: N_w=0 for w<d=10, N_d=1>0, odd-parity orders vanish (bipartite)
+  [PASS] G0.4-3D -- kernel positivity: G(a->c) > tail bound > 0 at every site, both mu rows (mediation carries no sign of its own)
+  [PASS] G0.4-2D -- kernel positivity: G(a->c) > tail bound > 0 at every site, both mu rows (mediation carries no sign of its own)
+
+SECTION 1 -- SUPERPOSITION: G(AuB->C) vs G(A->C)+G(B->C), exact defect
+------------------------------------------------------------------------------
+  R1 ENDPOINT RULE (transparent sources):
+  [PASS] G1.1a -- disjointness certificate holds at every separation, both venues
+  [PASS] G1.1b -- per-order defect = 0 at EVERY order w<=30, every separation, both venues (integer identity)
+  [PASS] G1.1c -- resummed partial sums exactly additive at all mu rows (equal numerators over the common denominator)
+  [PASS] G1.1d -- 2x2x2 BLOCK regions: same exact additivity, every order
+  [PASS] G1.2 -- OVERLAP control: defect = -G(AnB->C) exactly at every order, and it is nonzero (|AnB|=4 sites) -- the R1 zero is a measurement
+
+  R2 OPAQUE-SOURCE RULE (records are matter to the mediator):
+  defect(sep) = G_R2(AuB->C) - G_R2(A->C alone) - G_R2(B->C alone), exact
+  [PASS] G1.3a -- R2 per-order defect <= 0 at every order and < 0 somewhere, every separation (self-shadowing: walks through the other source are lost)
+    sep | first nonzero defect order | defect/G_sum at mu=1/12 | at mu=1/6 (exact rationals; |tail| bounds printed)
+      2 |   9 | -0.008174820104 | -0.088532997166   (tails <= 0.00000000000000000000, 0.00000000000000000000)
+      3 |   9 | -0.000784482164 | -0.038627719073   (tails <= 0.00000000000000000000, 0.00000000000000000000)
+      4 |   9 | -0.000077104643 | -0.017807581541   (tails <= 0.00000000000000000000, 0.00000000000000000000)
+      6 |   9 | -0.000000808188 | -0.004065283309   (tails <= 0.00000000000000000000, 0.00000000000000000000)
+    |relative defect| strictly decreasing in the A-B separation: True
+    (REPORTED AS FOUND, not gated: on this venue the sweep moves B toward C as
+     it leaves A, so separation-to-A and proximity-to-C are confounded; the
+     defect table itself is the deliverable.  NO exponent fitted or claimed.)
+  [PASS] G1.3c -- 2-D discriminator: same R2 defect sign structure (composition split is not a dimension artifact)
+
+SECTION 2 -- SCREENING vs ACCUMULATION under the C-72 encoding split
+------------------------------------------------------------------------------
+  composed coupling at probe c:  Phi(c) = sum_i q_i * G(x_i -> c);
+  ORIENTATION encoding: q_i in {+1,-1}.  OCCUPANCY encoding: q_i = 1 if present.
+  G0.4 already gated: every kernel G(x_i->c) > 0 -- the mediator is sign-blind;
+  whatever sign structure the encoding has is EXACTLY what survives mediation.
+  [PASS] G2.2 -- EXACT SCREENING: mirror pair (+1 at x=1, -1 at x=9), all 25 probes on the mid-plane x=5: Phi = 0 at every order and in both resummed rows (count equality computed, not assumed from symmetry)
+
+    dipole (+ at x=2, - at x=3) vs monopole (+ at x=3 alone), probes (x,2,2):
+    probe x | mu    | Phi_dipole (exact) | Phi_mono | |Phi_dip|/Phi_mono
+          5 | 1/12  | -0.007805907445 | 0.008627737327 | 0.90474560
+          6 | 1/12  | -0.000741111750 | 0.000821830937 | 0.90178127
+          7 | 1/12  | -0.000072561569 | 0.000080719302 | 0.89893702
+          8 | 1/12  | -0.000007311707 | 0.000008157732 | 0.89629153
+          9 | 1/12  | -0.000000756159 | 0.000000845909 | 0.89390119
+         10 | 1/12  | -0.000000079101 | 0.000000088694 | 0.89183281
+          5 | 1/6   | -0.081005170922 | 0.137861574488 | 0.58758338
+          6 | 1/6   | -0.031637723625 | 0.057343207175 | 0.55172574
+          7 | 1/6   | -0.013815933503 | 0.025897244595 | 0.53349048
+          8 | 1/6   | -0.006340289227 | 0.012081311092 | 0.52480142
+          9 | 1/6   | -0.002889878128 | 0.005549260819 | 0.52076812
+         10 | 1/6   | -0.001127599253 | 0.002172579081 | 0.51901413
+  [PASS] G2.3a -- PARTIAL SCREENING: |Phi_dipole| < Phi_monopole at every probe, both mu rows (interval-gated with tail bounds)
+    mu=1/12: screening ratio strictly decreasing along probes: True (REPORTED AS FOUND -- depth of screening is a mu-dependent fact, no law claimed)
+    mu=1/6: screening ratio strictly decreasing along probes: True (REPORTED AS FOUND -- depth of screening is a mu-dependent fact, no law claimed)
+
+    OCCUPANCY encoding, k one-signed sources on the axis, probe (10,2,2):
+    k=1  Phi(C) at mu=1/6 = 0.001044979827
+    k=2  Phi(C) at mu=1/6 = 0.003217558908
+    k=3  Phi(C) at mu=1/6 = 0.007721839900
+    k=4  Phi(C) at mu=1/6 = 0.017143768301
+  [PASS] G2.4a -- R1 accumulation is EXACTLY additive: Phi_k = sum of the k single-source couplings (integer identity on numerators)
+  [PASS] G2.4b -- Phi strictly increasing in k, both mu rows
+  [PASS] G2.4c -- one-signed everywhere: Phi_k(c) > 0 at EVERY site c (occupancy cannot screen -- there is nothing to cancel with)
+  [PASS] G2.5a -- R2 occupancy: subadditive (opacity defect < 0) yet still one-signed
+  [PASS] G2.5b -- R2 occupancy: every per-order count >= 0 -- opacity reduces, NEVER flips a sign (screening-by-sign and shadowing-by-opacity are different mechanisms, computed apart)
+  [PASS] G2.5c -- R2 orientation mirror pair: still cancels exactly on the mid-plane
+
+  C-72 CONNECTION (computed, both venues' facts above): the encoding-level sign
+  structure SURVIVES mediation unchanged -- orientation encodings can screen
+  (G2.2 exact zero, G2.3 partial), occupancy encodings can only accumulate
+  (G2.4, G2.5); the mediator contributes magnitude only (G0.4 positivity).
+
+SECTION 3 -- SHADOWING: intervening region D between A and B
+------------------------------------------------------------------------------
+  [PASS] G3.1 -- EMPTY-D control: the weighted-obstacle machinery at lambda=1 everywhere (independent scaled code path, sigma=2) reproduces the free coupling EXACTLY
+  [PASS] G3.2a -- FULLY-BLOCKING control: 25-site slab at x=5, lambda=0: G(A->B) = 0 at every order and resummed; BFS confirms the slab is a vertex cut (total opacity is the geometry's, verified two ways)
+  [PASS] G3.2b -- beside the zero: the SAME slab at lambda=1/2 transmits (G > 0) -- the zero is the blocking, not the instrument
+  [PASS] G3.3a -- NESTED COVERAGE empty c {center} c 3x3 disk c full slab: per-order counts monotone non-increasing at every order
+    G(A->B) at mu=1/6 by obstacle (exact partial sums; tails bounded;
+    slab-1 and ring are non-nested variants, reported beside the chain):
+      empty            0.0012367408720414
+      center 1         0.0007977198503738
+      3x3 disk         0.0001313921462753
+      full slab        0.0000000000000000
+      slab-1 (hole)    0.0000554135496265
+      ring (slab-disk) 0.0006292395119519
+  [PASS] G3.3b -- resummed G strictly decreasing along the nested chain (empty > center > disk), the 24-site slab-1 (one-site hole) still transmits G > 0, the full slab lands on exact zero
+  [PASS] G3.4 -- SHADOW ONSET = earned separation in the punctured venue: first nonzero order 12 = BFS distance around the disk 12 (> free distance 8) -- opacity LENGTHENS the earned separation; w_min = d survives obstacles
+  [PASS] G3.5 -- REWEIGHTED D: per-order and resummed coupling monotone in lambda (0 < 1/2 < 1) -- opacity is graded, the venue's own dial
+
+    SHADOW PATTERN: source (1,2,2), 3x3 disk at x=5, probes = plane x=9;
+    R(y,z) = G_disk / G_free at mu=1/6 (exact ratio, 8 digits):
+      0.15402869  0.13818388  0.13244629  0.13818388  0.15402869
+      0.13818388  0.11949633  0.11298578  0.11949633  0.13818388
+      0.13244629  0.11298578  0.10624064  0.11298578  0.13244629
+      0.13818388  0.11949633  0.11298578  0.11949633  0.13818388
+      0.15402869  0.13818388  0.13244629  0.13818388  0.15402869
+  [PASS] G3.6a -- R < 1 at every far-plane probe (the obstacle dims everything)
+  [PASS] G3.6b -- R minimal at the axial probe (2,2) -- the geometric shadow, computed
+  [PASS] G3.6c -- R maximal and equal at the four far-plane corners (venue symmetry on the numbers)
+  [PASS] G3.7 -- 2-D DISCRIMINATOR: full-column cut gives exact zero; disk onset 14 = punctured BFS 14 > free 10; R < 1 with the minimum on-axis -- every composition/shadow fact reproduces in D=2 (facts are venue-structural, magnitudes differ)
+    2-D far-column ratios R(y), mu=1/4: 0.138258  0.122413  0.105428  0.099030  0.105428  0.122413  0.138258
+
+SECTION 4 -- COMPOSITION FACTS FOR THE JUDGE, and the one named comparison (D-1)
+------------------------------------------------------------------------------
+  What the mediated coupling DOES, computed exactly on the venue's own lattices:
+  F1  SUPERPOSITION is a property of the ADMISSIBILITY RULE, not of the walk sum:
+      exact (defect identically zero, per order, an integer identity) under the
+      transparent endpoint rule R1; strictly subadditive under the opaque-source rule
+      R2, with a negative defect that shrinks as the sources separate (tabulated).
+  F2  The mediator kernel is POSITIVE: sign lives in the source values only.  The C-72
+      encoding split survives mediation intact -- ORIENTATION encodings screen (exact
+      mirror zero; dipole partially screened, mu-dependent depth), OCCUPANCY encodings
+      accumulate (exact additivity under R1, one-signed at every probe, no possible
+      cancellation).  Opacity (R2) changes magnitudes, never signs.
+  F3  SHADOWING exists under R2/lambda and is the venue's own opacity: exact zero
+      through a separating slab, graded in lambda, monotone in coverage, directional
+      (axial minimum on the far plane), and equal to a LENGTHENING of the earned
+      separation (shadow onset order = BFS distance in the punctured venue -- C-80's
+      w_min = d, surviving obstacles).  Under R1 with transparent sources there is NO
+      shadowing at all.
+  THE COMPARISON (named here only): a Newtonian source term requires exact
+  superposition, one-signed accumulation, no screening, and no shadowing (owners:
+  Newton; the no-screening/no-shadowing character of gravity vs the two-signed,
+  screenable electromagnetic coupling -- standard classical field taxonomy, Maxwell/
+  Heaviside territory).  The instrument REACHES that composition profile in exactly one
+  place: the ENDPOINT RULE R1 with OCCUPANCY-encoded sources -- where all four facts
+  hold exactly (F1-R1, F2-occupancy).  Under the opaque rule, or with orientation
+  encoding, the composition profile is electromagnetic-like (screening) or absorptive
+  (shadowing) instead.  WHICH admissibility rule and encoding the record surface itself
+  enforces is NOT decided by this lane; that is the judge's question, and these are the
+  facts it needs.  No falloff exponent is used, fitted, or earned anywhere above.
+==============================================================================
+GATES: 36/36 PASS
+==============================================================================
