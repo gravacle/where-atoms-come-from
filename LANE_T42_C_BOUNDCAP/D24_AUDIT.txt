@@ -1,0 +1,52 @@
+LANE T42_C -- D-24 AUDIT TABLE.  Every concept used, EARNED (with the computation that
+earned it) or IMPORTED (and then absent from every conclusion).
+
+CONCEPT                  STATUS    HOW
+-----------------------  --------  ----------------------------------------------------------
+area |R| (AQ), grain     EARNED    popcount of the region mask / grain count; used only as a
+count n^3                          count, never as a power of a length
+perimeter (PER)          EARNED    count of edges with exactly one endpoint in the region's
+                                   vertex set; its LIMITS are part of the result: the
+                                   discriminator gates show PER does NOT determine the
+                                   interface rank beyond rectangles
+vertices AV, plaquettes  EARNED    lattice counts (BFS / union-find); the terms of LAW-3
+touched PD, components
+comp, comp_D
+cycle ranks c1, c1_D     EARNED    AQ - AV + comp on the region graph and its dual (exact
+                                   rank-nullity of incidence, verified against F_2 ranks)
+interface rank IR2       EARNED    exact F_2 rank, two independent routes agreeing on every
+(stabiliser cut-rank)              region (r_S - r_in - r_out == restriction-rank route);
+                                   the INSTRUMENT is BORROWED: Kitaev / Hamma-Ionicioiu-
+                                   Zanardi region-entropy territory.  OURS: LAW-1, LAW-2's
+                                   exact constant and scope, LAW-3, the thick/thin crossover
+capacity cap_pauli       EARNED    2|R| - r_in = log2 of the exact count of operation
+                                   classes with distinct effect (F_2 quotient counting)
+record content           EARNED    direct span-membership computation (the C-74 instrument)
+cap_record                         agreeing with an independent sector formula, every region
+contractibility /        BORROWED  C-74 (ESTABLISHED): region families and the 0/all split
+region convention                  reused as the baseline control, not re-derived
+Aut(carrier) = 8L^2      BORROWED  C-74 (ESTABLISHED), for the D-22 venue check only; enters
+                                   no law
+depth (world)            EARNED    BFS traversal count from the complement; no metric claim
+polynomial degree /      EARNED    constant k-th finite differences on exact integer
+'boundary vs volume                sequences (degree read, not fitted); where no difference
+scaling'                           goes constant (DEPTH_SUM) that is reported as is and an
+                                   exact recurrence is stated instead
+dimension (2D corner,    IMPORTED  fixed by the carrier and the census model; no conclusion
+3D world)                          uses a dimension-dependent form -- all laws are stated as
+                                   counts on the given lattice
+distance, field,         NOT USED
+metric, curvature
+classical gravitational  IMPORTED  named ONLY in the final comparison section of
+relation (boundary-area            t42_world.OUT.txt as the recovery target (D-1); no
+capacity law)                      construction step uses it
+
+D-15 CONTROLS RUN (each law ships a class where it FAILS, computed):
+  * cap_record zeros (contractible): bands as the failing control (values 1-2)  [C-74 rerun]
+  * LAW-1: deliberately wrong identity FAILS on the same data
+  * LAW-2: FAILS on L-shapes/holed (witness pair printed), strips, scatter
+  * cap_pauli: pure-perimeter and pure-area candidates both FAIL (no constant works)
+  * world boundary laws: scattered grains -- interface goes volume-like, protected
+    capacity collapses to 0
+D-22: venue geometry present (Aut = 8L^2, C-74).
+NO NARRATED VERDICTS: every PASS/FAIL in both OUT files is gated by a computed boolean.

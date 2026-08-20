@@ -247,16 +247,21 @@ def toric_edge_masks(L):
     n = 2 * L * L
     hmask = (1 << (L * L)) - 1
     vmask = ((1 << n) - 1) ^ hmask
-    vcuts = []   # vertical cut between columns j and j+1 crosses h-edges h(i,j) for all i
-    for j in range(L):
-        m = 0
-        for i in range(L):
-            m |= 1 << (i * L + j)
-        vcuts.append(m)
-    hcuts = []   # horizontal cut between rows i and i+1 crosses v-edges v(i,j) for all j
+    # The class-invariant transverse objects are CLOSED LOOPS (elements of ker d), because
+    # <x + coboundary, S> = <x, S> iff dS = 0.  The L parallel horizontal loops r_i (all
+    # h-edges of row i) are pairwise disjoint, jointly cover every h-edge, and each is a
+    # cycle; likewise the L vertical loops c_j.  A writer crossing every r_i oddly carries
+    # >= L horizontal edges -- integer arithmetic, no sampling.
+    vcuts = []   # r_i: h-edges h(i,j) for all j  (fixed row i)
     for i in range(L):
         m = 0
         for j in range(L):
+            m |= 1 << (i * L + j)
+        vcuts.append(m)
+    hcuts = []   # c_j: v-edges v(i,j) for all i  (fixed column j)
+    for j in range(L):
+        m = 0
+        for i in range(L):
             m |= 1 << (L * L + i * L + j)
         hcuts.append(m)
     return hmask, vmask, vcuts, hcuts

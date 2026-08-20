@@ -1,5 +1,9 @@
 """ADVERSARIAL 1b.  WHICH gap is 'Delta'?  Vary star and plaquette couplings SEPARATELY."""
 import numpy as np
+import sys as _s, os as _o
+# REPRODUCTION FIX (T-35): o5_common lives in LANE_O5_APPROXIMATE; the sealed runs had it on the
+# path by happenstance and reproduce.sh could not run this lane standalone.
+_s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', 'LANE_O5_APPROXIMATE'))
 from o5_common import Zop, Xop, toric_H, local_perturbation, Z_A_SUP, X_A_SUP, STARS, PLAQS
 V = local_perturbation(seed=2026); p0=1e-2; gt=4
 Av = sum(Xop(s) for s in STARS); Bp = sum(Zop(pl) for pl in PLAQS)

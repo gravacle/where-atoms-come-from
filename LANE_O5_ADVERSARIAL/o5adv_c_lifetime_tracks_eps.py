@@ -7,6 +7,10 @@ The lane fits  delta = cluster width  and registers  T(eta) ~ eta/delta  with a
 with NO free constant, where eps_dressed = ||[H_c, R_c]|| is the lane's own Reading-2 number.
 """
 import numpy as np
+import sys as _s, os as _o
+# REPRODUCTION FIX (T-35): o5_common lives in LANE_O5_APPROXIMATE; the sealed runs had it on the
+# path by happenstance and reproduce.sh could not run this lane standalone.
+_s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', 'LANE_O5_APPROXIMATE'))
 from o5_common import Zop, toric_H, sym_H, local_perturbation, Z_A_SUP
 V = local_perturbation(seed=2026)
 

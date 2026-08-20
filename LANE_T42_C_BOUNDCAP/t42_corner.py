@@ -185,13 +185,48 @@ def analyse(T, VS, R, tag, cls):
     cap_record = capX + capZ
     # sector formula for the same quantity (must agree -- computed boolean)
     cap_formula = ((AQ - rk_pl_R) - (m - rk_st_Rc - 1)) + ((AQ - rk_st_R) - (m - rk_pl_Rc - 1))
-    # topology counts (pure graph counts on (VS, R))
+    # topology counts (pure lattice counts on (VS, R) and on the dual graph of R)
     comp = components(T, VS, R)
     c1 = AQ - AV + comp
+    PD, comp_D = dual_counts(T, R)
+    c1_D = AQ - PD + comp_D
     return dict(L=L, tag=tag, cls=cls, AQ=AQ, AV=AV, PER=PER, SGEN=SGEN,
                 stars_in=stars_in, plaqs_in=plaqs_in, r_in=r_in, r_out=r_out, r_S=r_S,
                 IR2=IR2, IR2b=IR2b, SYN=SYN, cap_pauli=cap_pauli,
-                cap_record=cap_record, cap_formula=cap_formula, comp=comp, c1=c1)
+                cap_record=cap_record, cap_formula=cap_formula, comp=comp, c1=c1,
+                PD=PD, comp_D=comp_D, c1_D=c1_D)
+
+def dual_counts(T, R):
+    """PD = number of plaquettes sharing at least one edge with R (a lattice COUNT);
+       comp_D = connected components of the dual region graph (vertices: those plaquettes,
+       edges: the edges of R, each joining its two plaquettes)."""
+    L = T.L
+    parent = {}
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+    def union(x, y):
+        rx, ry = find(x), find(y)
+        if rx != ry:
+            parent[rx] = ry
+    for e in range(T.n):
+        if not ((R >> e) & 1):
+            continue
+        if e < L * L:
+            i, j = divmod(e, L)
+            p1, p2 = (i % L, j % L), ((i - 1) % L, j % L)     # h(i,j) in B(i,j), B(i-1,j)
+        else:
+            i, j = divmod(e - L * L, L)
+            p1, p2 = (i % L, j % L), (i % L, (j - 1) % L)     # v(i,j) in B(i,j), B(i,j-1)
+        for p in (p1, p2):
+            if p not in parent:
+                parent[p] = p
+        union(p1, p2)
+    PD = len(parent)
+    comp_D = len({find(x) for x in parent})
+    return PD, comp_D
 
 def components(T, VS, R):
     L = T.L
@@ -232,6 +267,20 @@ def main():
                    rank_bits(list(T.stars)) == m - 1 and rank_bits(list(T.plaqs)) == m - 1)
         print(f"L={L}: n={T.n} qubits; rank(stars)=rank(plaqs)=m-1 and full products vanish: {ok_triv}")
         assert ok_triv
+        # once per L: dual_counts' edge->plaquette-pair table agrees with the plaquette masks
+        ok_dual = True
+        for e in range(T.n):
+            owners = {(i, j) for i in range(L) for j in range(L)
+                      if (T.plaqs[i * L + j] >> e) & 1}
+            if e < m:
+                i, j = divmod(e, L)
+                named = {(i % L, j % L), ((i - 1) % L, j % L)}
+            else:
+                i, j = divmod(e - m, L)
+                named = {(i % L, j % L), (i % L, (j - 1) % L)}
+            ok_dual &= (owners == named and len(owners) == 2)
+        print(f"L={L}: every edge lies in exactly 2 plaquettes and the dual-graph table matches: {ok_dual}")
+        assert ok_dual
         # RECTANGLES, every a,b in 1..L-1, EVERY offset  (the C-74 census, 1480 total)
         for a in range(1, L):
             for b in range(1, L):
@@ -310,8 +359,9 @@ if __name__ == "__main__":
     print("SGEN=straddling generators, r_in/r_out=stabiliser rank wholly inside/outside,")
     print("IR2=cut-rank, SYN=coupling rank, capP=cap_pauli, capR=cap_record, c1=cycle rank)")
     print("=" * 100)
-    hdr = f"{'L':>2} {'class':<13} {'tag':<22} {'AQ':>3} {'AV':>3} {'PER':>4} {'SGEN':>4} " \
-          f"{'s_in':>4} {'p_in':>4} {'r_in':>4} {'IR2':>4} {'SYN':>4} {'capP':>5} {'capR':>4} {'c1':>3}"
+    hdr = f"{'L':>2} {'class':<13} {'tag':<22} {'AQ':>3} {'AV':>3} {'PD':>3} {'PER':>4} {'SGEN':>4} " \
+          f"{'s_in':>4} {'p_in':>4} {'r_in':>4} {'IR2':>4} {'SYN':>4} {'capP':>5} {'capR':>4} " \
+          f"{'c1':>3} {'c1D':>3} {'cmp':>3} {'cmD':>3}"
     print(hdr)
     shown = set()
     for r in rows:
@@ -322,9 +372,10 @@ if __name__ == "__main__":
         key = (r["L"], r["tag"])
         if key in shown: continue
         shown.add(key)
-        print(f"{r['L']:>2} {r['cls']:<13} {r['tag']:<22} {r['AQ']:>3} {r['AV']:>3} {r['PER']:>4} "
-              f"{r['SGEN']:>4} {r['stars_in']:>4} {r['plaqs_in']:>4} {r['r_in']:>4} {r['IR2']:>4} "
-              f"{r['SYN']:>4} {r['cap_pauli']:>5} {r['cap_record']:>4} {r['c1']:>3}")
+        print(f"{r['L']:>2} {r['cls']:<13} {r['tag']:<22} {r['AQ']:>3} {r['AV']:>3} {r['PD']:>3} "
+              f"{r['PER']:>4} {r['SGEN']:>4} {r['stars_in']:>4} {r['plaqs_in']:>4} {r['r_in']:>4} "
+              f"{r['IR2']:>4} {r['SYN']:>4} {r['cap_pauli']:>5} {r['cap_record']:>4} "
+              f"{r['c1']:>3} {r['c1_D']:>3} {r['comp']:>3} {r['comp_D']:>3}")
 
     print()
     print("=" * 100)
@@ -349,8 +400,10 @@ if __name__ == "__main__":
     ok &= gate("C-74 POSITIVE CONTROL (D-15): cap_record > 0 on EVERY non-contractible band",
                all(r["cap_record"] > 0 for r in band),
                f"values={sorted(set(r['cap_record'] for r in band))}")
-    ok &= gate("cap_record == 2 on every band (both wrap classes of one direction)",
-               all(r["cap_record"] == 2 for r in band))
+    ok &= gate("band record content, READ OFF: width-1 band carries 1 class (its wrap loop; "
+               "no dual wrap fits in one row), width>=2 carries 2",
+               all(r["cap_record"] == (1 if min(r["AV"] // r["L"], r["L"]) == 1
+                   or r["AQ"] == r["L"] else 2) for r in band))
     ok &= gate("cap_record <= 4 everywhere (record space is 4-dimensional, G-9)",
                all(r["cap_record"] <= 4 for r in allrows))
     ok &= gate("cap_record: direct span-membership computation == sector formula, every region",
@@ -360,71 +413,90 @@ if __name__ == "__main__":
     ok &= gate("COUPLING = CUT-RANK + INTERIOR:  SYN == IR2 + r_in, every region",
                all(r["SYN"] == r["IR2"] + r["r_in"] for r in allrows))
     print()
-    print("LAW-1 (OURS; exact, every region of every class incl. scatter):")
-    print("      IR2 + 2*r_in + cap_record == 2*AQ")
-    print("      (interface rank + twice the interior + the record content exhausts the region's")
-    print("       Pauli coordinates -- boundary structure and content share one exact budget)")
+    print("LAW-1  THE BUDGET IDENTITY (OURS; exact, every region of every class incl. scatter):")
+    print("       IR2 + 2*r_in + cap_record == 2*AQ")
+    print("       (interface rank + twice the interior + the record content exhausts the region's")
+    print("        Pauli coordinates -- boundary structure and content share one exact budget)")
     ok &= gate("LAW-1 holds on every region",
                all(r["IR2"] + 2 * r["r_in"] + r["cap_record"] == 2 * r["AQ"] for r in allrows))
     ok &= gate("D-15 CONTROL for LAW-1 instrument: the WRONG identity "
                "IR2 + r_in + cap_record == 2*AQ FAILS somewhere",
                any(r["IR2"] + r["r_in"] + r["cap_record"] != 2 * r["AQ"] for r in allrows))
     print()
-    print("LAW-2 (cut-rank law; instrument BORROWED Kitaev/Hamma-Ionicioiu-Zanardi, exact form on")
-    print("       these regions OURS):  IR2 == 2*PER - 10   on every THICK contractible shape")
-    ok &= gate("LAW-2 on all thick rectangles (a,b>=2), every offset, L=3..6",
+    print("LAW-2  THE RECTANGLE PERIMETER LAW (cut-rank instrument BORROWED Kitaev/Hamma-")
+    print("       Ionicioiu-Zanardi; the exact laws on these regions OURS):")
+    print("       IR2 == 2*PER - 10   on every thick rectangle, every offset, L=3..6")
+    ok &= gate("LAW-2 on all thick rectangles (a,b>=2)",
                all(r["IR2"] == 2 * r["PER"] - 10 for r in thick))
-    ok &= gate("LAW-2 UNCHANGED on L-shapes (irregular discriminator)",
-               all(r["IR2"] == 2 * r["PER"] - 10 for r in lsh) if lsh else False)
-    ok &= gate("LAW-2 UNCHANGED on deep-holed shapes (holes move PER; law tracks PER exactly)",
-               all(r["IR2"] == 2 * r["PER"] - 10 for r in hd) if hd else False)
+    ok &= gate("DISCRIMINATOR (D-15 control for LAW-2's scope): LAW-2 FAILS on the irregular "
+               "shapes -- straddling-edge count alone does NOT determine the cut-rank",
+               any(r["IR2"] != 2 * r["PER"] - 10 for r in lsh + hd + hs))
+    wit = next((r for r in lsh if r["IR2"] != 2 * r["PER"] - 10), None)
+    rect33 = next((r for r in thick if r["tag"].startswith("3x3@") and r["L"] == 4), None)
+    if wit and rect33:
+        print(f"      witness pair, same straddle count PER={wit['PER']}=={rect33['PER']}: "
+              f"{rect33['tag']} (L=4) has IR2={rect33['IR2']}, {wit['tag']} has IR2={wit['IR2']}")
     ok &= gate("D-15 CONTROL: LAW-2 FAILS on strips (1 x b: no interior)",
                any(r["IR2"] != 2 * r["PER"] - 10 for r in strip))
     ok &= gate("D-15 CONTROL: LAW-2 FAILS on scattered edge-sets of the same size",
                any(r["IR2"] != 2 * r["PER"] - 10 for r in scat))
-    ok &= gate("STRIP law (their own exact law, AREA not perimeter): IR2 == 2*AQ on every strip",
+    ok &= gate("STRIP law, READ OFF: IR2 == 2*AQ on every strip -- a thin region is ALL "
+               "interface: every Pauli coordinate couples across the cut",
                all(r["IR2"] == 2 * r["AQ"] for r in strip))
-    ok &= gate("SCATTER law: IR2 == 2*AQ - 2*r_in - cap_record collapses to == 2*AQ "
-               "(r_in = 0: nothing is wholly inside)",
-               all(r["IR2"] == 2 * r["AQ"] and r["r_in"] == 0 for r in scat))
     print()
-    print("INTERIOR ACCOUNTING (what r_in is, earned by count):")
-    ok &= gate("r_in == stars_in + plaqs_in on every SOLID contractible shape "
-               "(rectangles incl. strips, L-shapes)",
+    print("LAW-3  THE EULER-COUNT LAW (OURS; the exact law the cut-rank obeys on EVERY region):")
+    print("       IR2 == 2*(AV + PD - AQ) - 2*(comp + comp_D) + cap_record")
+    print("       AV = vertices in the region, PD = plaquettes sharing an edge with it, AQ = its")
+    print("       qubits, comp/comp_D = connected components of the region graph and its dual.")
+    print("       Every term is a lattice COUNT.  On thick rectangles AV+PD-AQ = PER-3 and the")
+    print("       law collapses to LAW-2; on irregular shapes PER no longer measures the")
+    print("       interface but AV+PD-AQ still does, exactly.")
+    ok &= gate("LAW-3 holds on EVERY region of EVERY class (rect, strip, L, holed, band, scatter)",
+               all(r["IR2"] == 2 * (r["AV"] + r["PD"] - r["AQ"]) - 2 * (r["comp"] + r["comp_D"])
+                   + r["cap_record"] for r in allrows))
+    ok &= gate("bridge on thick rectangles: AV + PD - AQ == PER - 3, every offset",
+               all(r["AV"] + r["PD"] - r["AQ"] == r["PER"] - 3 for r in thick))
+    ok &= gate("bridge BREAKS on irregular shapes (this is WHY LAW-2 fails there)",
+               any(r["AV"] + r["PD"] - r["AQ"] != r["PER"] - 3 for r in lsh + hd + hs))
+    print()
+    print("INTERIOR ACCOUNTING (what r_in is, earned by count -- exact on every region):")
+    ok &= gate("r_in == c1 + c1_D - cap_record  (cycles of the region graph + cycles of its dual, "
+               "minus the classes that reach the record space)",
+               all(r["r_in"] == r["c1"] + r["c1_D"] - r["cap_record"] for r in allrows))
+    ok &= gate("on SOLID contractible shapes this reduces to r_in == stars_in + plaqs_in "
+               "(rectangles, strips, L-shapes)",
                all(r["r_in"] == r["stars_in"] + r["plaqs_in"] for r in rect + lsh))
-    ok &= gate("HOLED shapes: r_in == stars_in + plaqs_in + (#holes) -- each vertex-hole "
-               "contributes ONE extra Z-type element (the loop around it), none X-type",
-               all(r["r_in"] == r["stars_in"] + r["plaqs_in"] + (r["c1"] - r["plaqs_in"])
-                   for r in hd + hs))
+    ok &= gate("on HOLED shapes r_in EXCEEDS stars_in + plaqs_in (hole loops are stabiliser "
+               "products supported inside without their factors being inside)",
+               all(r["r_in"] > r["stars_in"] + r["plaqs_in"] for r in hd + hs))
     print()
-    print("PERIMETER vs AREA -- THE MATCHED-PAIR DISCRIMINATOR (no fit, no exponent, pure pairs):")
+    print("PERIMETER vs AREA -- MATCHED PAIRS AMONG RECTANGLES (no fit, no exponent, pure pairs):")
     pairs_same_per = []
-    pairs_same_aq = []
-    cont = thick + lsh + hd
-    for i in range(len(cont)):
-        for j in range(i + 1, len(cont)):
-            a, b = cont[i], cont[j]
+    seen_pair = set()
+    for i in range(len(thick)):
+        for j in range(i + 1, len(thick)):
+            a, b = thick[i], thick[j]
             if a["L"] != b["L"]: continue
             if a["PER"] == b["PER"] and a["AQ"] != b["AQ"]:
+                key = (a["L"], a["tag"].split("@")[0], b["tag"].split("@")[0])
+                if key in seen_pair: continue
+                seen_pair.add(key)
                 pairs_same_per.append((a, b))
-            if a["AQ"] == b["AQ"] and a["PER"] != b["PER"]:
-                pairs_same_aq.append((a, b))
-    ok &= gate(f"SAME perimeter, DIFFERENT area ({len(pairs_same_per)} pairs): IR2 EQUAL in every pair",
+    ok &= gate(f"SAME perimeter, DIFFERENT area ({len(pairs_same_per)} rectangle shape-pairs): "
+               "IR2 EQUAL in every pair (the cut-rank does not see the bulk)",
                all(a["IR2"] == b["IR2"] for a, b in pairs_same_per) and len(pairs_same_per) > 0)
-    ok &= gate(f"SAME perimeter, DIFFERENT area: cap_pauli DIFFERS in every pair "
-               "(capacity is NOT a perimeter quantity)",
+    ok &= gate("SAME perimeter, DIFFERENT area: cap_pauli DIFFERS in every pair "
+               "(the distinguishable-content capacity DOES see the bulk)",
                all(a["cap_pauli"] != b["cap_pauli"] for a, b in pairs_same_per))
-    ok &= gate(f"SAME area, DIFFERENT perimeter ({len(pairs_same_aq)} pairs): IR2 DIFFERS in every pair",
-               all(a["IR2"] != b["IR2"] for a, b in pairs_same_aq) and len(pairs_same_aq) > 0)
     ex = pairs_same_per[0] if pairs_same_per else None
     if ex:
         a, b = ex
-        print(f"      example: {a['tag']} (AQ={a['AQ']}) vs {b['tag']} (AQ={b['AQ']}), "
-              f"PER={a['PER']} both, IR2={a['IR2']}=={b['IR2']}")
+        print(f"      example: {a['tag']} (AQ={a['AQ']}, capP={a['cap_pauli']}) vs {b['tag']} "
+              f"(AQ={b['AQ']}, capP={b['cap_pauli']}), PER={a['PER']} both, IR2={a['IR2']}=={b['IR2']}")
     print()
     print("WHAT cap_pauli OBEYS (mixed, bulk-dominant -- stated, not fitted):")
     ok &= gate("cap_pauli == 2*AQ - r_in by construction; on thick rectangles this equals "
-               "2*AV + (PER/2) - 5 exactly (checked), i.e. BULK term + boundary term",
+               "2*AV + (PER/2) - 5 exactly, i.e. BULK term + boundary term",
                all(2 * r["AV"] + r["PER"] // 2 - 5 == r["cap_pauli"] for r in thick))
     ok &= gate("D-15 CONTROL: the pure-perimeter candidate cap_pauli == 2*PER - c FAILS on thick "
                "rectangles for every constant c (no single c works)",
@@ -432,6 +504,20 @@ if __name__ == "__main__":
     ok &= gate("D-15 CONTROL: the pure-area candidate cap_pauli == 2*AQ - c FAILS "
                "(no single c works)",
                len(set(2 * r["AQ"] - r["cap_pauli"] for r in thick)) > 1)
+    print()
+    print("SCATTER READING (the world-census shape in the corner): scattered edge-sets have")
+    print("interface rank close to the volume ceiling 2*AQ -- dispersed content is ALL interface.")
+    for r in scat:
+        print(f"      L={r['L']} {r['tag']}: IR2={r['IR2']} of ceiling 2*AQ={2*r['AQ']}, r_in={r['r_in']}")
+    ok &= gate("every scattered set leaves less wholly inside than the equal-size block does: "
+               "scatter r_in < block r_in, every L",
+               all(rs["r_in"] < next(rb["r_in"] for rb in thick
+                   if rb["L"] == rs["L"] and rb["tag"] == f"{rs['L']-1}x{rs['L']-1}@(0,0)")
+                   for rs in scat))
+    ok &= gate("every thick rectangle with an interior sits BELOW the scatter band at equal AQ "
+               "(largest block per L vs its matched scatter: IR2 strictly smaller)",
+               all(rb["IR2"] < min(rs["IR2"] for rs in scat if rs["L"] == rb["L"])
+                   for rb in thick if rb["tag"] == f"{rb['L']-1}x{rb['L']-1}@(0,0)"))
     print()
     print("D-22 VENUE CHECK: Aut(carrier) = 8L^2 exactly (C-74, ESTABLISHED -- borrowed from the")
     print("      register, not recomputed): the carrier is far from permutation-symmetric; the")

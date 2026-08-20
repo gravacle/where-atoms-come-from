@@ -1,0 +1,43 @@
+LANE T42_C -- THE BOUNDARY-CAPACITY RELATION.
+
+CORNER (t42_corner.py, exact F_2 on bitmasks, no floats): toric code L=3..6, lattice, star,
+plaquette and region conventions IDENTICAL to LANE_O50_A_ACTION/f2lib.py + s4_clause_v.py
+(the C-74 lane): a region is the induced edge set of a vertex set; rectangles are a x b
+vertex blocks (a,b <= L-1) at every offset -- the same 1480-region census as C-74, which this
+lane replicates as its baseline control -- plus L-shapes (corner blocks removed), holed
+shapes (interior vertices removed), non-contractible bands (positive control), and seeded
+scattered edge sets (D-15 control).  Per region, all exact: cap_record (record classes
+supported, by direct span membership AND a sector formula, agreeing), the straddling-
+generator count, the stabiliser cut-rank IR2 computed two independent ways (group quotient
+r_S - r_in - r_out, and restriction rank -- they agree on every region), the coupling rank
+SYN, and cap_pauli = 2|R| - r_in (log2 of the number of operation classes with distinct
+effect).  The cut-rank instrument is BORROWED (Kitaev / Hamma-Ionicioiu-Zanardi region-
+entropy territory); the exact laws it obeys on this venue are ours:
+
+  LAW-1 (budget identity, every region):   IR2 + 2*r_in + cap_record = 2*AQ
+  LAW-2 (rectangles, every offset):        IR2 = 2*PER - 10          (PER = straddling-edge
+        count; FAILS on L-shapes, holed shapes, strips, scatter -- the perimeter count alone
+        does not carry the law)
+  LAW-3 (every region, every class):       IR2 = 2*(AV + PD - AQ) - 2*(comp + comp_D)
+                                                 + cap_record
+        with AV = region vertices, PD = plaquettes sharing an edge with the region, comp /
+        comp_D = components of the region graph and of its dual -- all lattice counts.
+  r_in = c1 + c1_D - cap_record (cycles of the region graph + cycles of its dual minus the
+        classes that reach the record space), every region.
+
+WORLD (t42_world.py, exact integers): n x n x n block of barrier records (census model, one
+record per grain), nearest-neighbour access, interface-mediated only; depths by BFS, scaling
+read by exact finite differences (constant k-th difference = degree k), no fit anywhere.
+CAP_total and CAP_prot (erasure requires traversal) are degree 3 (VOLUME); IFACE = 6n^2 and
+CAP_depth(1) = n^3 - (n-2)^3 (= the interface influence rank) are degree 2 (BOUNDARY);
+DEPTH_SUM is no single polynomial (parity-split) but obeys DEPTH_SUM(n) = DEPTH_SUM(n-2) + n^3
+exactly.  Scattered-grain control: all interface, protected capacity 0.
+
+READING FOR C-77: in both tiers the boundary-scaling aggregate is the INTERFACE RANK
+(independent constraints / channels through which a region's records meet the rest of the
+world), and only regions WITH AN INTERIOR have it; stored content stays bulk in both tiers,
+and the corner record content is topological (0 / wrap classes).  The classical relation is
+named only in the final comparison section of t42_world.OUT.txt (D-1 clean).
+
+Every PASS/FAIL line in both OUT files is a computed boolean; largest exact object: L=6,
+n=72 qubits, F_2 vectors of width 144, 1539 regions; world blocks to n=12 (1728 grains).

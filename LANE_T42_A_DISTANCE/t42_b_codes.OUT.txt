@@ -1,0 +1,48 @@
+T42-A part 2  --  [[n,n-2,2]] configuration distance, exact, started 2026-08-20 10:28:49
+
+PASS  n=4 carrier is a distance-2 code (computed)  canonical <X^4, Z^4>  d_code=2
+PASS  n=4 symplectic_logicals returns 2 conjugate pairs (computed)
+n=4  configurations: 4   writer space per pair: 2^4   writers searched: 256
+PASS  n=4 d_W(s,s') depends only on s+s' (invariance emerged from search)
+PASS  n=4 METRIC AXIOMS over ALL 16 pairs and ALL 64 triples
+n=4  d_W by Hamming weight of computed label: {0: [0], 1: [2], 2: [2]}
+FAIL  n=4 d_W = d_code x Hamming(labels) in the computed basis (expected FAIL for n>=5: control for the toric relation)
+n=4  #classes at distance d_code = 3   #Hamming-weight-1 labels = 2  ->  NO linear relabeling can make d_W Hamming-proportional
+n=4  D-22 venue Aut of the 4-point metric space: |Aut| = 24 (uniform)
+FAIL  n=4 venue has geometry to detect (Aut != S_4)  |Aut|=24  S_N=24
+n=4 done in 0.0s
+
+FAIL  n=5 odd carrier found
+PASS  n=6 carrier is a distance-2 code (computed)  canonical <X^6, Z^6>  d_code=2
+PASS  n=6 symplectic_logicals returns 4 conjugate pairs (computed)
+n=6  configurations: 16   writer space per pair: 2^6   writers searched: 16384
+PASS  n=6 d_W(s,s') depends only on s+s' (invariance emerged from search)
+PASS  n=6 METRIC AXIOMS over ALL 256 pairs and ALL 4096 triples
+n=6  d_W by Hamming weight of computed label: {0: [0], 1: [2], 2: [2], 3: [2], 4: [2]}
+FAIL  n=6 d_W = d_code x Hamming(labels) in the computed basis (expected FAIL for n>=5: control for the toric relation)
+n=6  #classes at distance d_code = 15   #Hamming-weight-1 labels = 4  ->  NO linear relabeling can make d_W Hamming-proportional
+n=6  D-22 venue Aut of the 16-point metric space: |Aut| = 20922789888000 (uniform)
+FAIL  n=6 venue has geometry to detect (Aut != S_16)  |Aut|=20922789888000  S_N=20922789888000
+n=6 done in 0.0s
+
+FAIL  n=7 odd carrier found
+PASS  n=8 carrier is a distance-2 code (computed)  canonical <X^8, Z^8>  d_code=2
+PASS  n=8 symplectic_logicals returns 6 conjugate pairs (computed)
+n=8  configurations: 64   writer space per pair: 2^8   writers searched: 1048576
+PASS  n=8 d_W(s,s') depends only on s+s' (invariance emerged from search)
+PASS  n=8 METRIC AXIOMS over ALL 4096 pairs and ALL 262144 triples
+n=8  d_W by Hamming weight of computed label: {0: [0], 1: [2, 4], 2: [2, 4], 3: [2, 4], 4: [2, 4], 5: [2, 4], 6: [2]}
+FAIL  n=8 d_W = d_code x Hamming(labels) in the computed basis (expected FAIL for n>=5: control for the toric relation)
+n=8  #classes at distance d_code = 28   #Hamming-weight-1 labels = 6  ->  NO linear relabeling can make d_W Hamming-proportional
+n=8  D-22 venue Aut: exact enumeration skipped at N=64; VERIFIED isometry subgroup order >= 64 (translations)
+PASS  n=8 venue has geometry to detect (nonuniform distance spectrum [0, 2, 4] -> Aut != S_64)
+n=8 done in 0.6s
+
+BASIS DEPENDENCE (n=6): two computed symplectic label bases, one metric space
+PASS  n=6 second basis is symplectic (computed check)
+FAIL  n=6 the per-label table CHANGES with the basis
+PASS  n=6 the distance multiset is basis-invariant
+PASS  n=6 explicit F_2-linear relabeling is an isometry between the two tables  M columns=[(1, 1, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)]
+
+SUMMARY: {4: {'dcode': 2, 'k': 2, 'classes_at_dcode': 3, 'spectrum': [0, 2], 'by_h': {0: [0], 1: [2], 2: [2]}}, 6: {'dcode': 2, 'k': 4, 'classes_at_dcode': 15, 'spectrum': [0, 2], 'by_h': {0: [0], 1: [2], 2: [2], 3: [2], 4: [2]}}, 8: {'dcode': 2, 'k': 6, 'classes_at_dcode': 28, 'spectrum': [0, 2, 4], 'by_h': {0: [0], 1: [2, 4], 2: [2, 4], 3: [2, 4], 4: [2, 4], 5: [2, 4], 6: [2]}}}
+ALL GATES: AT LEAST ONE FAIL

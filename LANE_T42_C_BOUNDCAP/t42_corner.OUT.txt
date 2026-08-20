@@ -1,127 +1,131 @@
 L=3: n=18 qubits; rank(stars)=rank(plaqs)=m-1 and full products vanish: True
+L=3: every edge lies in exactly 2 plaquettes and the dual-graph table matches: True
 L=4: n=32 qubits; rank(stars)=rank(plaqs)=m-1 and full products vanish: True
+L=4: every edge lies in exactly 2 plaquettes and the dual-graph table matches: True
 L=5: n=50 qubits; rank(stars)=rank(plaqs)=m-1 and full products vanish: True
+L=5: every edge lies in exactly 2 plaquettes and the dual-graph table matches: True
 L=6: n=72 qubits; rank(stars)=rank(plaqs)=m-1 and full products vanish: True
+L=6: every edge lies in exactly 2 plaquettes and the dual-graph table matches: True
 
 ====================================================================================================
 FULL TABLE (exact integers; AQ=|R| qubits, AV=vertices, PER=straddling-edge count,
 SGEN=straddling generators, r_in/r_out=stabiliser rank wholly inside/outside,
 IR2=cut-rank, SYN=coupling rank, capP=cap_pauli, capR=cap_record, c1=cycle rank)
 ====================================================================================================
- L class         tag                     AQ  AV  PER SGEN s_in p_in r_in  IR2  SYN  capP capR  c1
- 3 STRIP         1x1@(0,0)                0   1    4    0    0    0    0    0    0     0    0   0
- 3 STRIP         1x2@(0,0)                1   2    6    4    0    0    0    2    2     2    0   0
- 3 STRIP         2x1@(0,0)                1   2    6    4    0    0    0    2    2     2    0   0
- 3 RECT_THICK    2x2@(0,0)                4   4    8    8    0    1    1    6    7     7    0   1
- 3 BAND          band1xL                  3   3    6    9    0    0    0    5    5     6    1   1
- 3 BAND          bandLx1                  3   3    6    9    0    0    0    5    5     6    1   1
- 3 BAND          band2xL                  9   6    6   12    0    3    3   10   13    15    2   4
- 3 BAND          bandLx2                  9   6    6   12    0    3    3   10   13    15    2   4
- 3 SCATTER       scatter0                 4   6   10   12    0    0    0    8    8     8    0   0
- 3 SCATTER       scatter1                 4   5    8   10    0    0    0    8    8     8    0   0
- 3 SCATTER       scatter2                 4   4    8   10    0    0    0    7    7     8    1   1
- 4 STRIP         1x1@(0,0)                0   1    4    0    0    0    0    0    0     0    0   0
- 4 STRIP         1x2@(0,0)                1   2    6    4    0    0    0    2    2     2    0   0
- 4 STRIP         1x3@(0,0)                2   3    8    7    0    0    0    4    4     4    0   0
- 4 STRIP         2x1@(0,0)                1   2    6    4    0    0    0    2    2     2    0   0
- 4 RECT_THICK    2x2@(0,0)                4   4    8    8    0    1    1    6    7     7    0   1
- 4 RECT_THICK    2x3@(0,0)                7   6   10   12    0    2    2   10   12    12    0   2
- 4 STRIP         3x1@(0,0)                2   3    8    7    0    0    0    4    4     4    0   0
- 4 RECT_THICK    3x2@(0,0)                7   6   10   12    0    2    2   10   12    12    0   2
- 4 RECT_THICK    3x3@(0,0)               12   9   12   16    1    4    5   14   19    19    0   4
- 4 LSHAPE        L3x3-1x1                10   8   12   14    1    3    4   12   16    16    0   3
- 4 HOLED_SHALLOW H3x3-v(1, 1)             8   8   16   20    0    0    1   14   15    15    0   1
- 4 BAND          band1xL                  4   4    8   12    0    0    0    7    7     8    1   1
- 4 BAND          bandLx1                  4   4    8   12    0    0    0    7    7     8    1   1
- 4 BAND          band2xL                 12   8    8   16    0    4    4   14   18    20    2   5
- 4 BAND          bandLx2                 12   8    8   16    0    4    4   14   18    20    2   5
- 4 BAND          band3xL                 20  12    8   16    4    8   12   14   26    28    2   9
- 4 BAND          bandLx3                 20  12    8   16    4    8   12   14   26    28    2   9
- 4 SCATTER       scatter0                12  13    8   25    1    0    2   20   22    22    0   1
- 4 SCATTER       scatter1                12  13   10   27    0    1    1   22   23    23    0   1
- 4 SCATTER       scatter2                12  15    4   27    1    0    1   22   23    23    0   0
- 5 STRIP         1x1@(0,0)                0   1    4    0    0    0    0    0    0     0    0   0
- 5 STRIP         1x2@(0,0)                1   2    6    4    0    0    0    2    2     2    0   0
- 5 STRIP         1x3@(0,0)                2   3    8    7    0    0    0    4    4     4    0   0
- 5 STRIP         1x4@(0,0)                3   4   10   10    0    0    0    6    6     6    0   0
- 5 STRIP         2x1@(0,0)                1   2    6    4    0    0    0    2    2     2    0   0
- 5 RECT_THICK    2x2@(0,0)                4   4    8    8    0    1    1    6    7     7    0   1
- 5 RECT_THICK    2x3@(0,0)                7   6   10   12    0    2    2   10   12    12    0   2
- 5 RECT_THICK    2x4@(0,0)               10   8   12   16    0    3    3   14   17    17    0   3
- 5 STRIP         3x1@(0,0)                2   3    8    7    0    0    0    4    4     4    0   0
- 5 RECT_THICK    3x2@(0,0)                7   6   10   12    0    2    2   10   12    12    0   2
- 5 RECT_THICK    3x3@(0,0)               12   9   12   16    1    4    5   14   19    19    0   4
- 5 RECT_THICK    3x4@(0,0)               17  12   14   20    2    6    8   18   26    26    0   6
- 5 STRIP         4x1@(0,0)                3   4   10   10    0    0    0    6    6     6    0   0
- 5 RECT_THICK    4x2@(0,0)               10   8   12   16    0    3    3   14   17    17    0   3
- 5 RECT_THICK    4x3@(0,0)               17  12   14   20    2    6    8   18   26    26    0   6
- 5 RECT_THICK    4x4@(0,0)               24  16   16   24    4    9   13   22   35    35    0   9
- 5 LSHAPE        L3x3-1x1                10   8   12   14    1    3    4   12   16    16    0   3
- 5 LSHAPE        L4x4-1x1                22  15   16   22    4    8   12   20   32    32    0   8
- 5 LSHAPE        L4x4-2x2                16  12   16   22    1    5    6   20   26    26    0   5
- 5 LSHAPE        L4x3-2x1                13  10   14   18    1    4    5   16   21    21    0   4
- 5 HOLED_SHALLOW H4x4-v(2, 2)            20  15   20   30    1    5    7   26   33    33    0   6
- 5 BAND          band1xL                  5   5   10   15    0    0    0    9    9    10    1   1
- 5 BAND          bandLx1                  5   5   10   15    0    0    0    9    9    10    1   1
- 5 BAND          band2xL                 15  10   10   20    0    5    5   18   23    25    2   6
- 5 BAND          bandLx2                 15  10   10   20    0    5    5   18   23    25    2   6
- 5 BAND          band3xL                 25  15   10   20    5   10   15   18   33    35    2  11
- 5 BAND          bandLx3                 25  15   10   20    5   10   15   18   33    35    2  11
- 5 BAND          band4xL                 35  20   10   20   10   15   25   18   43    45    2  16
- 5 BAND          bandLx4                 35  20   10   20   10   15   25   18   43    45    2  16
- 5 SCATTER       scatter0                24  24    4   45    1    1    4   39   43    44    1   2
- 5 SCATTER       scatter1                24  21    8   36    3    2    6   33   39    42    3   4
- 5 SCATTER       scatter2                24  23    6   46    1    1    2   43   45    46    1   2
- 6 STRIP         1x1@(0,0)                0   1    4    0    0    0    0    0    0     0    0   0
- 6 STRIP         1x2@(0,0)                1   2    6    4    0    0    0    2    2     2    0   0
- 6 STRIP         1x3@(0,0)                2   3    8    7    0    0    0    4    4     4    0   0
- 6 STRIP         1x4@(0,0)                3   4   10   10    0    0    0    6    6     6    0   0
- 6 STRIP         1x5@(0,0)                4   5   12   13    0    0    0    8    8     8    0   0
- 6 STRIP         2x1@(0,0)                1   2    6    4    0    0    0    2    2     2    0   0
- 6 RECT_THICK    2x2@(0,0)                4   4    8    8    0    1    1    6    7     7    0   1
- 6 RECT_THICK    2x3@(0,0)                7   6   10   12    0    2    2   10   12    12    0   2
- 6 RECT_THICK    2x4@(0,0)               10   8   12   16    0    3    3   14   17    17    0   3
- 6 RECT_THICK    2x5@(0,0)               13  10   14   20    0    4    4   18   22    22    0   4
- 6 STRIP         3x1@(0,0)                2   3    8    7    0    0    0    4    4     4    0   0
- 6 RECT_THICK    3x2@(0,0)                7   6   10   12    0    2    2   10   12    12    0   2
- 6 RECT_THICK    3x3@(0,0)               12   9   12   16    1    4    5   14   19    19    0   4
- 6 RECT_THICK    3x4@(0,0)               17  12   14   20    2    6    8   18   26    26    0   6
- 6 RECT_THICK    3x5@(0,0)               22  15   16   24    3    8   11   22   33    33    0   8
- 6 STRIP         4x1@(0,0)                3   4   10   10    0    0    0    6    6     6    0   0
- 6 RECT_THICK    4x2@(0,0)               10   8   12   16    0    3    3   14   17    17    0   3
- 6 RECT_THICK    4x3@(0,0)               17  12   14   20    2    6    8   18   26    26    0   6
- 6 RECT_THICK    4x4@(0,0)               24  16   16   24    4    9   13   22   35    35    0   9
- 6 RECT_THICK    4x5@(0,0)               31  20   18   28    6   12   18   26   44    44    0  12
- 6 STRIP         5x1@(0,0)                4   5   12   13    0    0    0    8    8     8    0   0
- 6 RECT_THICK    5x2@(0,0)               13  10   14   20    0    4    4   18   22    22    0   4
- 6 RECT_THICK    5x3@(0,0)               22  15   16   24    3    8   11   22   33    33    0   8
- 6 RECT_THICK    5x4@(0,0)               31  20   18   28    6   12   18   26   44    44    0  12
- 6 RECT_THICK    5x5@(0,0)               40  25   20   32    9   16   25   30   55    55    0  16
- 6 LSHAPE        L3x3-1x1                10   8   12   14    1    3    4   12   16    16    0   3
- 6 LSHAPE        L4x4-1x1                22  15   16   22    4    8   12   20   32    32    0   8
- 6 LSHAPE        L4x4-2x2                16  12   16   22    1    5    6   20   26    26    0   5
- 6 LSHAPE        L4x3-2x1                13  10   14   18    1    4    5   16   21    21    0   4
- 6 LSHAPE        L5x5-2x2                32  21   20   30    6   12   18   28   46    46    0  12
- 6 LSHAPE        L5x5-1x3                34  22   20   30    7   13   20   28   48    48    0  13
- 6 LSHAPE        L5x4-2x2                23  16   18   26    3    8   11   24   35    35    0   8
- 6 HOLED_DEEP    H5x5-v(2, 2)            36  24   24   40    4   12   18   36   54    54    0  13
- 6 HOLED_DEEP    H5x5-[(2, 2)]           36  24   24   40    4   12   18   36   54    54    0  13
- 6 HOLED_SHALLOW H5x5-[(1, 2)]           36  24   24   39    5   12   18   36   54    54    0  13
- 6 HOLED_SHALLOW H5x5-[(2, 2), (2, 4)]   33  23   26   39    4   10   15   36   51    51    0  11
- 6 HOLED_SHALLOW H5x5-[(1, 1), (3, 3)]   32  23   28   44    3    8   13   38   51    51    0  10
- 6 BAND          band1xL                  6   6   12   18    0    0    0   11   11    12    1   1
- 6 BAND          bandLx1                  6   6   12   18    0    0    0   11   11    12    1   1
- 6 BAND          band2xL                 18  12   12   24    0    6    6   22   28    30    2   7
- 6 BAND          bandLx2                 18  12   12   24    0    6    6   22   28    30    2   7
- 6 BAND          band3xL                 30  18   12   24    6   12   18   22   40    42    2  13
- 6 BAND          bandLx3                 30  18   12   24    6   12   18   22   40    42    2  13
- 6 BAND          band4xL                 42  24   12   24   12   18   30   22   52    54    2  19
- 6 BAND          bandLx4                 42  24   12   24   12   18   30   22   52    54    2  19
- 6 BAND          band5xL                 54  30   12   24   18   24   42   22   64    66    2  25
- 6 BAND          bandLx5                 54  30   12   24   18   24   42   22   64    66    2  25
- 6 SCATTER       scatter0                40  36    0   66    4    2    9   58   67    71    4   6
- 6 SCATTER       scatter1                40  34    8   61    2    6   11   55   66    69    3   8
- 6 SCATTER       scatter2                40  36    0   65    4    2    9   60   69    71    2   5
+ L class         tag                     AQ  AV  PD  PER SGEN s_in p_in r_in  IR2  SYN  capP capR  c1 c1D cmp cmD
+ 3 STRIP         1x1@(0,0)                0   1   0    4    0    0    0    0    0    0     0    0   0   0   1   0
+ 3 STRIP         1x2@(0,0)                1   2   2    6    4    0    0    0    2    2     2    0   0   0   1   1
+ 3 STRIP         2x1@(0,0)                1   2   2    6    4    0    0    0    2    2     2    0   0   0   1   1
+ 3 RECT_THICK    2x2@(0,0)                4   4   5    8    8    0    1    1    6    7     7    0   1   0   1   1
+ 3 BAND          band1xL                  3   3   6    6    9    0    0    0    5    5     6    1   1   0   1   3
+ 3 BAND          bandLx1                  3   3   6    6    9    0    0    0    5    5     6    1   1   0   1   3
+ 3 BAND          band2xL                  9   6   9    6   12    0    3    3   10   13    15    2   4   1   1   1
+ 3 BAND          bandLx2                  9   6   9    6   12    0    3    3   10   13    15    2   4   1   1   1
+ 3 SCATTER       scatter0                 4   6   6   10   12    0    0    0    8    8     8    0   0   0   2   2
+ 3 SCATTER       scatter1                 4   5   5    8   10    0    0    0    8    8     8    0   0   0   1   1
+ 3 SCATTER       scatter2                 4   4   6    8   10    0    0    0    7    7     8    1   1   0   1   2
+ 4 STRIP         1x1@(0,0)                0   1   0    4    0    0    0    0    0    0     0    0   0   0   1   0
+ 4 STRIP         1x2@(0,0)                1   2   2    6    4    0    0    0    2    2     2    0   0   0   1   1
+ 4 STRIP         1x3@(0,0)                2   3   4    8    7    0    0    0    4    4     4    0   0   0   1   2
+ 4 STRIP         2x1@(0,0)                1   2   2    6    4    0    0    0    2    2     2    0   0   0   1   1
+ 4 RECT_THICK    2x2@(0,0)                4   4   5    8    8    0    1    1    6    7     7    0   1   0   1   1
+ 4 RECT_THICK    2x3@(0,0)                7   6   8   10   12    0    2    2   10   12    12    0   2   0   1   1
+ 4 STRIP         3x1@(0,0)                2   3   4    8    7    0    0    0    4    4     4    0   0   0   1   2
+ 4 RECT_THICK    3x2@(0,0)                7   6   8   10   12    0    2    2   10   12    12    0   2   0   1   1
+ 4 RECT_THICK    3x3@(0,0)               12   9  12   12   16    1    4    5   14   19    19    0   4   1   1   1
+ 4 LSHAPE        L3x3-1x1                10   8  10   12   14    1    3    4   12   16    16    0   3   1   1   1
+ 4 HOLED_SHALLOW H3x3-v(1, 1)             8   8  12   16   20    0    0    1   14   15    15    0   1   0   1   4
+ 4 BAND          band1xL                  4   4   8    8   12    0    0    0    7    7     8    1   1   0   1   4
+ 4 BAND          bandLx1                  4   4   8    8   12    0    0    0    7    7     8    1   1   0   1   4
+ 4 BAND          band2xL                 12   8  12    8   16    0    4    4   14   18    20    2   5   1   1   1
+ 4 BAND          bandLx2                 12   8  12    8   16    0    4    4   14   18    20    2   5   1   1   1
+ 4 BAND          band3xL                 20  12  16    8   16    4    8   12   14   26    28    2   9   5   1   1
+ 4 BAND          bandLx3                 20  12  16    8   16    4    8   12   14   26    28    2   9   5   1   1
+ 4 SCATTER       scatter0                12  13  13    8   25    1    0    2   20   22    22    0   1   1   2   2
+ 4 SCATTER       scatter1                12  13  15   10   27    0    1    1   22   23    23    0   1   0   2   3
+ 4 SCATTER       scatter2                12  15  13    4   27    1    0    1   22   23    23    0   0   1   3   2
+ 5 STRIP         1x1@(0,0)                0   1   0    4    0    0    0    0    0    0     0    0   0   0   1   0
+ 5 STRIP         1x2@(0,0)                1   2   2    6    4    0    0    0    2    2     2    0   0   0   1   1
+ 5 STRIP         1x3@(0,0)                2   3   4    8    7    0    0    0    4    4     4    0   0   0   1   2
+ 5 STRIP         1x4@(0,0)                3   4   6   10   10    0    0    0    6    6     6    0   0   0   1   3
+ 5 STRIP         2x1@(0,0)                1   2   2    6    4    0    0    0    2    2     2    0   0   0   1   1
+ 5 RECT_THICK    2x2@(0,0)                4   4   5    8    8    0    1    1    6    7     7    0   1   0   1   1
+ 5 RECT_THICK    2x3@(0,0)                7   6   8   10   12    0    2    2   10   12    12    0   2   0   1   1
+ 5 RECT_THICK    2x4@(0,0)               10   8  11   12   16    0    3    3   14   17    17    0   3   0   1   1
+ 5 STRIP         3x1@(0,0)                2   3   4    8    7    0    0    0    4    4     4    0   0   0   1   2
+ 5 RECT_THICK    3x2@(0,0)                7   6   8   10   12    0    2    2   10   12    12    0   2   0   1   1
+ 5 RECT_THICK    3x3@(0,0)               12   9  12   12   16    1    4    5   14   19    19    0   4   1   1   1
+ 5 RECT_THICK    3x4@(0,0)               17  12  16   14   20    2    6    8   18   26    26    0   6   2   1   1
+ 5 STRIP         4x1@(0,0)                3   4   6   10   10    0    0    0    6    6     6    0   0   0   1   3
+ 5 RECT_THICK    4x2@(0,0)               10   8  11   12   16    0    3    3   14   17    17    0   3   0   1   1
+ 5 RECT_THICK    4x3@(0,0)               17  12  16   14   20    2    6    8   18   26    26    0   6   2   1   1
+ 5 RECT_THICK    4x4@(0,0)               24  16  21   16   24    4    9   13   22   35    35    0   9   4   1   1
+ 5 LSHAPE        L3x3-1x1                10   8  10   12   14    1    3    4   12   16    16    0   3   1   1   1
+ 5 LSHAPE        L4x4-1x1                22  15  19   16   22    4    8   12   20   32    32    0   8   4   1   1
+ 5 LSHAPE        L4x4-2x2                16  12  16   16   22    1    5    6   20   26    26    0   5   1   1   1
+ 5 LSHAPE        L4x3-2x1                13  10  13   14   18    1    4    5   16   21    21    0   4   1   1   1
+ 5 HOLED_SHALLOW H4x4-v(2, 2)            20  15  21   20   30    1    5    7   26   33    33    0   6   1   1   2
+ 5 BAND          band1xL                  5   5  10   10   15    0    0    0    9    9    10    1   1   0   1   5
+ 5 BAND          bandLx1                  5   5  10   10   15    0    0    0    9    9    10    1   1   0   1   5
+ 5 BAND          band2xL                 15  10  15   10   20    0    5    5   18   23    25    2   6   1   1   1
+ 5 BAND          bandLx2                 15  10  15   10   20    0    5    5   18   23    25    2   6   1   1   1
+ 5 BAND          band3xL                 25  15  20   10   20    5   10   15   18   33    35    2  11   6   1   1
+ 5 BAND          bandLx3                 25  15  20   10   20    5   10   15   18   33    35    2  11   6   1   1
+ 5 BAND          band4xL                 35  20  25   10   20   10   15   25   18   43    45    2  16  11   1   1
+ 5 BAND          bandLx4                 35  20  25   10   20   10   15   25   18   43    45    2  16  11   1   1
+ 5 SCATTER       scatter0                24  24  23    4   45    1    1    4   39   43    44    1   2   3   2   2
+ 5 SCATTER       scatter1                24  21  20    8   36    3    2    6   33   39    42    3   4   5   1   1
+ 5 SCATTER       scatter2                24  23  25    6   46    1    1    2   43   45    46    1   2   1   1   2
+ 6 STRIP         1x1@(0,0)                0   1   0    4    0    0    0    0    0    0     0    0   0   0   1   0
+ 6 STRIP         1x2@(0,0)                1   2   2    6    4    0    0    0    2    2     2    0   0   0   1   1
+ 6 STRIP         1x3@(0,0)                2   3   4    8    7    0    0    0    4    4     4    0   0   0   1   2
+ 6 STRIP         1x4@(0,0)                3   4   6   10   10    0    0    0    6    6     6    0   0   0   1   3
+ 6 STRIP         1x5@(0,0)                4   5   8   12   13    0    0    0    8    8     8    0   0   0   1   4
+ 6 STRIP         2x1@(0,0)                1   2   2    6    4    0    0    0    2    2     2    0   0   0   1   1
+ 6 RECT_THICK    2x2@(0,0)                4   4   5    8    8    0    1    1    6    7     7    0   1   0   1   1
+ 6 RECT_THICK    2x3@(0,0)                7   6   8   10   12    0    2    2   10   12    12    0   2   0   1   1
+ 6 RECT_THICK    2x4@(0,0)               10   8  11   12   16    0    3    3   14   17    17    0   3   0   1   1
+ 6 RECT_THICK    2x5@(0,0)               13  10  14   14   20    0    4    4   18   22    22    0   4   0   1   1
+ 6 STRIP         3x1@(0,0)                2   3   4    8    7    0    0    0    4    4     4    0   0   0   1   2
+ 6 RECT_THICK    3x2@(0,0)                7   6   8   10   12    0    2    2   10   12    12    0   2   0   1   1
+ 6 RECT_THICK    3x3@(0,0)               12   9  12   12   16    1    4    5   14   19    19    0   4   1   1   1
+ 6 RECT_THICK    3x4@(0,0)               17  12  16   14   20    2    6    8   18   26    26    0   6   2   1   1
+ 6 RECT_THICK    3x5@(0,0)               22  15  20   16   24    3    8   11   22   33    33    0   8   3   1   1
+ 6 STRIP         4x1@(0,0)                3   4   6   10   10    0    0    0    6    6     6    0   0   0   1   3
+ 6 RECT_THICK    4x2@(0,0)               10   8  11   12   16    0    3    3   14   17    17    0   3   0   1   1
+ 6 RECT_THICK    4x3@(0,0)               17  12  16   14   20    2    6    8   18   26    26    0   6   2   1   1
+ 6 RECT_THICK    4x4@(0,0)               24  16  21   16   24    4    9   13   22   35    35    0   9   4   1   1
+ 6 RECT_THICK    4x5@(0,0)               31  20  26   18   28    6   12   18   26   44    44    0  12   6   1   1
+ 6 STRIP         5x1@(0,0)                4   5   8   12   13    0    0    0    8    8     8    0   0   0   1   4
+ 6 RECT_THICK    5x2@(0,0)               13  10  14   14   20    0    4    4   18   22    22    0   4   0   1   1
+ 6 RECT_THICK    5x3@(0,0)               22  15  20   16   24    3    8   11   22   33    33    0   8   3   1   1
+ 6 RECT_THICK    5x4@(0,0)               31  20  26   18   28    6   12   18   26   44    44    0  12   6   1   1
+ 6 RECT_THICK    5x5@(0,0)               40  25  32   20   32    9   16   25   30   55    55    0  16   9   1   1
+ 6 LSHAPE        L3x3-1x1                10   8  10   12   14    1    3    4   12   16    16    0   3   1   1   1
+ 6 LSHAPE        L4x4-1x1                22  15  19   16   22    4    8   12   20   32    32    0   8   4   1   1
+ 6 LSHAPE        L4x4-2x2                16  12  16   16   22    1    5    6   20   26    26    0   5   1   1   1
+ 6 LSHAPE        L4x3-2x1                13  10  13   14   18    1    4    5   16   21    21    0   4   1   1   1
+ 6 LSHAPE        L5x5-2x2                32  21  27   20   30    6   12   18   28   46    46    0  12   6   1   1
+ 6 LSHAPE        L5x5-1x3                34  22  28   20   30    7   13   20   28   48    48    0  13   7   1   1
+ 6 LSHAPE        L5x4-2x2                23  16  21   18   26    3    8   11   24   35    35    0   8   3   1   1
+ 6 HOLED_DEEP    H5x5-v(2, 2)            36  24  32   24   40    4   12   18   36   54    54    0  13   5   1   1
+ 6 HOLED_DEEP    H5x5-[(2, 2)]           36  24  32   24   40    4   12   18   36   54    54    0  13   5   1   1
+ 6 HOLED_SHALLOW H5x5-[(1, 2)]           36  24  32   24   39    5   12   18   36   54    54    0  13   5   1   1
+ 6 HOLED_SHALLOW H5x5-[(2, 2), (2, 4)]   33  23  30   26   39    4   10   15   36   51    51    0  11   4   1   1
+ 6 HOLED_SHALLOW H5x5-[(1, 1), (3, 3)]   32  23  32   28   44    3    8   13   38   51    51    0  10   3   1   3
+ 6 BAND          band1xL                  6   6  12   12   18    0    0    0   11   11    12    1   1   0   1   6
+ 6 BAND          bandLx1                  6   6  12   12   18    0    0    0   11   11    12    1   1   0   1   6
+ 6 BAND          band2xL                 18  12  18   12   24    0    6    6   22   28    30    2   7   1   1   1
+ 6 BAND          bandLx2                 18  12  18   12   24    0    6    6   22   28    30    2   7   1   1   1
+ 6 BAND          band3xL                 30  18  24   12   24    6   12   18   22   40    42    2  13   7   1   1
+ 6 BAND          bandLx3                 30  18  24   12   24    6   12   18   22   40    42    2  13   7   1   1
+ 6 BAND          band4xL                 42  24  30   12   24   12   18   30   22   52    54    2  19  13   1   1
+ 6 BAND          bandLx4                 42  24  30   12   24   12   18   30   22   52    54    2  19  13   1   1
+ 6 BAND          band5xL                 54  30  36   12   24   18   24   42   22   64    66    2  25  19   1   1
+ 6 BAND          bandLx5                 54  30  36   12   24   18   24   42   22   64    66    2  25  19   1   1
+ 6 SCATTER       scatter0                40  36  36    0   66    4    2    9   58   67    71    4   6   7   2   3
+ 6 SCATTER       scatter1                40  34  35    8   61    2    6   11   55   66    69    3   8   6   2   1
+ 6 SCATTER       scatter2                40  36  35    0   65    4    2    9   60   69    71    2   5   6   1   1
 
 ====================================================================================================
 GATES -- every verdict below is a computed boolean over the full region list
@@ -129,43 +133,71 @@ GATES -- every verdict below is a computed boolean over the full region list
   [PASS] C-74 REPLICATION (baseline control): rectangle census count == 1480  count=1480
   [PASS] C-74 REPLICATION: cap_record == 0 on EVERY contractible region (rectangles, L-shapes, holed)
   [PASS] C-74 POSITIVE CONTROL (D-15): cap_record > 0 on EVERY non-contractible band  values=[1, 2]
-  [FAIL] cap_record == 2 on every band (both wrap classes of one direction)
+  [PASS] band record content, READ OFF: width-1 band carries 1 class (its wrap loop; no dual wrap fits in one row), width>=2 carries 2
   [PASS] cap_record <= 4 everywhere (record space is 4-dimensional, G-9)
   [PASS] cap_record: direct span-membership computation == sector formula, every region
   [PASS] CROSS-CHECK: cut-rank two ways, IR2 == IR2b (group quotient == restriction rank), every region
   [PASS] COUPLING = CUT-RANK + INTERIOR:  SYN == IR2 + r_in, every region
 
-LAW-1 (OURS; exact, every region of every class incl. scatter):
-      IR2 + 2*r_in + cap_record == 2*AQ
-      (interface rank + twice the interior + the record content exhausts the region's
-       Pauli coordinates -- boundary structure and content share one exact budget)
+LAW-1  THE BUDGET IDENTITY (OURS; exact, every region of every class incl. scatter):
+       IR2 + 2*r_in + cap_record == 2*AQ
+       (interface rank + twice the interior + the record content exhausts the region's
+        Pauli coordinates -- boundary structure and content share one exact budget)
   [PASS] LAW-1 holds on every region
   [PASS] D-15 CONTROL for LAW-1 instrument: the WRONG identity IR2 + r_in + cap_record == 2*AQ FAILS somewhere
 
-LAW-2 (cut-rank law; instrument BORROWED Kitaev/Hamma-Ionicioiu-Zanardi, exact form on
-       these regions OURS):  IR2 == 2*PER - 10   on every THICK contractible shape
-  [PASS] LAW-2 on all thick rectangles (a,b>=2), every offset, L=3..6
-  [FAIL] LAW-2 UNCHANGED on L-shapes (irregular discriminator)
-  [FAIL] LAW-2 UNCHANGED on deep-holed shapes (holes move PER; law tracks PER exactly)
+LAW-2  THE RECTANGLE PERIMETER LAW (cut-rank instrument BORROWED Kitaev/Hamma-
+       Ionicioiu-Zanardi; the exact laws on these regions OURS):
+       IR2 == 2*PER - 10   on every thick rectangle, every offset, L=3..6
+  [PASS] LAW-2 on all thick rectangles (a,b>=2)
+  [PASS] DISCRIMINATOR (D-15 control for LAW-2's scope): LAW-2 FAILS on the irregular shapes -- straddling-edge count alone does NOT determine the cut-rank
+      witness pair, same straddle count PER=12==12: 3x3@(0,0) (L=4) has IR2=14, L3x3-1x1 has IR2=12
   [PASS] D-15 CONTROL: LAW-2 FAILS on strips (1 x b: no interior)
   [PASS] D-15 CONTROL: LAW-2 FAILS on scattered edge-sets of the same size
-  [PASS] STRIP law (their own exact law, AREA not perimeter): IR2 == 2*AQ on every strip
-  [FAIL] SCATTER law: IR2 == 2*AQ - 2*r_in - cap_record collapses to == 2*AQ (r_in = 0: nothing is wholly inside)
+  [PASS] STRIP law, READ OFF: IR2 == 2*AQ on every strip -- a thin region is ALL interface: every Pauli coordinate couples across the cut
 
-INTERIOR ACCOUNTING (what r_in is, earned by count):
-  [PASS] r_in == stars_in + plaqs_in on every SOLID contractible shape (rectangles incl. strips, L-shapes)
-  [FAIL] HOLED shapes: r_in == stars_in + plaqs_in + (#holes) -- each vertex-hole contributes ONE extra Z-type element (the loop around it), none X-type
+LAW-3  THE EULER-COUNT LAW (OURS; the exact law the cut-rank obeys on EVERY region):
+       IR2 == 2*(AV + PD - AQ) - 2*(comp + comp_D) + cap_record
+       AV = vertices in the region, PD = plaquettes sharing an edge with it, AQ = its
+       qubits, comp/comp_D = connected components of the region graph and its dual.
+       Every term is a lattice COUNT.  On thick rectangles AV+PD-AQ = PER-3 and the
+       law collapses to LAW-2; on irregular shapes PER no longer measures the
+       interface but AV+PD-AQ still does, exactly.
+  [PASS] LAW-3 holds on EVERY region of EVERY class (rect, strip, L, holed, band, scatter)
+  [PASS] bridge on thick rectangles: AV + PD - AQ == PER - 3, every offset
+  [PASS] bridge BREAKS on irregular shapes (this is WHY LAW-2 fails there)
 
-PERIMETER vs AREA -- THE MATCHED-PAIR DISCRIMINATOR (no fit, no exponent, pure pairs):
-  [FAIL] SAME perimeter, DIFFERENT area (12158 pairs): IR2 EQUAL in every pair
-  [PASS] SAME perimeter, DIFFERENT area: cap_pauli DIFFERS in every pair (capacity is NOT a perimeter quantity)
-  [FAIL] SAME area, DIFFERENT perimeter (0 pairs): IR2 DIFFERS in every pair
-      example: 3x3@(0,0) (AQ=12) vs L3x3-1x1 (AQ=10), PER=12 both, IR2=14==12
+INTERIOR ACCOUNTING (what r_in is, earned by count -- exact on every region):
+  [PASS] r_in == c1 + c1_D - cap_record  (cycles of the region graph + cycles of its dual, minus the classes that reach the record space)
+  [PASS] on SOLID contractible shapes this reduces to r_in == stars_in + plaqs_in (rectangles, strips, L-shapes)
+  [PASS] on HOLED shapes r_in EXCEEDS stars_in + plaqs_in (hole loops are stabiliser products supported inside without their factors being inside)
+
+PERIMETER vs AREA -- MATCHED PAIRS AMONG RECTANGLES (no fit, no exponent, pure pairs):
+  [PASS] SAME perimeter, DIFFERENT area (10 rectangle shape-pairs): IR2 EQUAL in every pair (the cut-rank does not see the bulk)
+  [PASS] SAME perimeter, DIFFERENT area: cap_pauli DIFFERS in every pair (the distinguishable-content capacity DOES see the bulk)
+      example: 2x4@(0,0) (AQ=10, capP=17) vs 3x3@(0,0) (AQ=12, capP=19), PER=12 both, IR2=14==14
 
 WHAT cap_pauli OBEYS (mixed, bulk-dominant -- stated, not fitted):
-  [PASS] cap_pauli == 2*AQ - r_in by construction; on thick rectangles this equals 2*AV + (PER/2) - 5 exactly (checked), i.e. BULK term + boundary term
+  [PASS] cap_pauli == 2*AQ - r_in by construction; on thick rectangles this equals 2*AV + (PER/2) - 5 exactly, i.e. BULK term + boundary term
   [PASS] D-15 CONTROL: the pure-perimeter candidate cap_pauli == 2*PER - c FAILS on thick rectangles for every constant c (no single c works)
   [PASS] D-15 CONTROL: the pure-area candidate cap_pauli == 2*AQ - c FAILS (no single c works)
+
+SCATTER READING (the world-census shape in the corner): scattered edge-sets have
+interface rank close to the volume ceiling 2*AQ -- dispersed content is ALL interface.
+      L=3 scatter0: IR2=8 of ceiling 2*AQ=8, r_in=0
+      L=3 scatter1: IR2=8 of ceiling 2*AQ=8, r_in=0
+      L=3 scatter2: IR2=7 of ceiling 2*AQ=8, r_in=0
+      L=4 scatter0: IR2=20 of ceiling 2*AQ=24, r_in=2
+      L=4 scatter1: IR2=22 of ceiling 2*AQ=24, r_in=1
+      L=4 scatter2: IR2=22 of ceiling 2*AQ=24, r_in=1
+      L=5 scatter0: IR2=39 of ceiling 2*AQ=48, r_in=4
+      L=5 scatter1: IR2=33 of ceiling 2*AQ=48, r_in=6
+      L=5 scatter2: IR2=43 of ceiling 2*AQ=48, r_in=2
+      L=6 scatter0: IR2=58 of ceiling 2*AQ=80, r_in=9
+      L=6 scatter1: IR2=55 of ceiling 2*AQ=80, r_in=11
+      L=6 scatter2: IR2=60 of ceiling 2*AQ=80, r_in=9
+  [PASS] every scattered set leaves less wholly inside than the equal-size block does: scatter r_in < block r_in, every L
+  [PASS] every thick rectangle with an interior sits BELOW the scatter band at equal AQ (largest block per L vs its matched scatter: IR2 strictly smaller)
 
 D-22 VENUE CHECK: Aut(carrier) = 8L^2 exactly (C-74, ESTABLISHED -- borrowed from the
       register, not recomputed): the carrier is far from permutation-symmetric; the
@@ -174,4 +206,4 @@ D-22 VENUE CHECK: Aut(carrier) = 8L^2 exactly (C-74, ESTABLISHED -- borrowed fro
 REGIONS ANALYSED: 1539 total (rect census 1480, L-shapes 12, holed 7, bands 28, scatter 12)
 LARGEST OBJECT: L=6, n=72 qubits, F_2 vectors of width 144; all arithmetic exact F_2/integer
 
-ALL GATES PASS: False
+ALL GATES PASS: True

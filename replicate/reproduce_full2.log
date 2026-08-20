@@ -1,0 +1,25 @@
+
+[1m0. ENVIRONMENT[0m
+==============================================================================
+  python  Python 3.9.6
+  numpy   2.0.2
+
+[1m1. SEALS  (SHA-256 over every registered document and lane)[0m
+==============================================================================
+  FAIL  STATUS_LEDGER_V001.md.sha256
+  FAIL  THE_PLAN_V001.md.sha256
+
+[1m2. RE-RUN EVERY LANE SCRIPT AND DIFF AGAINST ITS SEALED OUTPUT[0m
+==============================================================================
+  lane                           script                     result
+  ------------------------------ -------------------------- ------
+  LANE_AA_GAUSS_AT_SURFACE       aa1_gauss_at_surface.py    [32mIDENTICAL[0m
+  LANE_AA_GAUSS_AT_SURFACE       aa2_why_null.py            [32mIDENTICAL[0m
+  LANE_AA_GAUSS_AT_SURFACE       aa3_open_graph.py          [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_area_law_forced.py      [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_thermal.py              [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_trit_forced.py          [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_what_is_a_surface.py    [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_which_entropy.py        [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s1_f2_structure.py         [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s1b_writer_weight_basis.py [32mIDENTICAL[0m

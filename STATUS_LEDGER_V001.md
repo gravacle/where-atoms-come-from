@@ -264,7 +264,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | ID | ITEM | STATUS | EVIDENCE | BLOCKED BY | WOULD BE REFUTED BY |
 |---|---|:---:|---|---|---|
 | **X-1** | the topology is a LATTICE's, not spacetime's | **NOT OURS** | — | — | — |
-| **X-2** | chi is a PARAMETER of the construction, not an observable | **RECLASSIFIED** | X2: dim 32 at chi=0 and chi=2; equal chi at different size | — | — (demanding backreaction imports the classical form) |
+| **X-2** | chi is a PARAMETER of the construction, not an observable -- the RECORD-LEVEL reclassification, which STANDS. NOTE ADDED PER T-21 (2026-08-20): this reclassification closed only the record-level question ('does content shape geometry at the record level' -- a category error as posed). THE COLLECTIVE-LEVEL QUESTION IT WAS NEVER ABOUT REMAINS OPEN and now lives in C-77's derivation increment (T-42): whether aggregates of the world's records exhibit an emergent relation. H-8's worry -- that the reclassification foreclosed the emergence question -- is answered by this scoping: it did not, and the two questions are now separately tracked | **RECLASSIFIED** | X2: dim 32 at chi=0 and chi=2; equal chi at different size | — | — (demanding backreaction imports the classical form) |
 | **X-3** | the outcome problem | **NOT OURS** | W-35 relocated it | — | — |
 | **X-4** | empirical contact is zero and no distinguishing prediction is identified | **BLOCKED** | W-48 and C1 killed both candidates | — | — |
 | **X-5** | is a gauge theory's 1-form symmetry "global" for Harlow-Ooguri? | **NOT OURS** | — | — | — (a question about their result) |

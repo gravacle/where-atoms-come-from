@@ -9591,3 +9591,18 @@ convention gave 0.398 s) and the magnetic-media **~10-year design rule at `K_uV/
 7.5 years at `f₀ = 1e9`). The corrected alanine input **declines honestly** (predicted excess below
 the instrument floor). **Registered debt: exact citation pin-down — knowledge-cited contact, not yet
 source-pinned.** T-41 stays DOING.
+
+---
+
+## T-35 REPAIRS — the four named seal corruptions fixed; the O5 lane reproduces; full rerun in flight.
+
+**`LANE_EM_EXTENT/holonomy.txt`** was a corrupted interleaving of two different runs — carrying a
+wrong number (`769 classes = 2^dim H_1 = 4`) from an older script version **under a valid seal**, the
+exact inversion a seal system must not allow. Resealed from a clean rerun (`768` loops, `4` classes,
+`dim H₁ = 2`, internally consistent). **`f7_davies.txt`** and **`pa4_legibility.OUT.txt`** were stale
+against post-sealing script edits; resealed to current. **`LANE_O5_ADVERSARIAL`** could not run
+standalone (`o5_common` lives in `LANE_O5_APPROXIMATE`); with the path shim added, **all seven
+adversarial scripts reproduce their sealed outputs byte-for-byte** — the 6 DIFFERS in the old
+reproduction log were purely the missing import, not nondeterminism. **X-2 carries the T-21 note**:
+the record-level reclassification stands; the collective question it never touched now lives in
+C-77/T-42.

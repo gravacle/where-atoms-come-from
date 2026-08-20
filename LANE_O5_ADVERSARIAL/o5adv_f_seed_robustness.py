@@ -5,6 +5,10 @@
  (i) the lane's B3 W-61 reproduction: check the p_eff=8e-06 identification is not fitted post hoc.
 """
 import numpy as np
+import sys as _s, os as _o
+# REPRODUCTION FIX (T-35): o5_common lives in LANE_O5_APPROXIMATE; the sealed runs had it on the
+# path by happenstance and reproduce.sh could not run this lane standalone.
+_s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', 'LANE_O5_APPROXIMATE'))
 from o5_common import Zop, Xop, toric_H, sym_H, local_perturbation, Z_A_SUP, DIM
 
 Ht, Rt, gt = toric_H(), Zop(Z_A_SUP), 4
