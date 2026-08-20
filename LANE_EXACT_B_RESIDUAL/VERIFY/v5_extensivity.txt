@@ -1,0 +1,30 @@
+====================================================================================================================
+V5   DOES chi KNOW HOW MANY RECORDS THE CARRIER HOLDS?  SWEEP THE CHANNEL THE THEOREM EXCLUDES.
+====================================================================================================================
+  carrier n = 6, bath 5 qubits (one record per site, none on the read site 0), lam = 0.4/0.8/1.2
+
+  SELF-CHECK: the four 'pairing' partners all anticommute with the read record and the three
+  'commuting' partners all commute with it, checked in F_2 -- PASS.
+
+  k = off-site records added           lam=0.4 PAIRING     CONTROL commuting       lam=0.8 PAIRING     CONTROL commuting       lam=1.2 PAIRING     CONTROL commuting
+  0                                     0.276635159834        0.276635159834        0.521527300760        0.521527300760        0.599566691971        0.599566691971
+  1                                     0.236331358156        0.276635159834        0.422577710389        0.521527300760        0.479860042416        0.599566691971
+  2                                     0.239889256136        0.276635159834        0.334862454109        0.521527300760        0.415296378706        0.599566691971
+  3                                     0.188975212899        0.276635159834        0.326591113546        0.521527300760        0.408542630044        0.599566691971
+  4                                     0.193829573905                    --        0.323022799916                    --        0.357257330229                    --
+
+  lam               chi(k=0)    chi(k=4) PAIRING    total change    CONTROL chi(k=3) commuting    control change
+  0.4         0.276635159834      0.193829573905       -0.082806                0.276635159834         -4.44e-16
+  0.8         0.521527300760      0.323022799916       -0.198505                0.521527300760         -2.22e-16
+  1.2         0.599566691971      0.357257330229       -0.242309                0.599566691971         +1.44e-15
+
+  READ IT OFF THE TABLE.  In the COMMUTING column the record count is invisible, exactly as
+  the lane says (control change at the float64 floor).  In the PAIRING column chi falls by
+  0.083 / 0.199 / 0.242 as k goes 0 -> 4 -- four decades above any floor.  (It is not strictly
+  monotone: at lam = 0.4 the k = 1 -> 2 step rises by 0.004, and k = 3 -> 4 by 0.005; the
+  TOTAL, not the step, is what the table supports.)  The record count is therefore
+  NOT invisible to chi; it is invisible only inside the subclass the theorem's hypothesis
+  selects.  'chi does not know how many records the carrier holds' is true of that subclass
+  and false of the carrier.
+
+  elapsed 25.7s

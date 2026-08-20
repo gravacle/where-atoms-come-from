@@ -1,0 +1,58 @@
+======================================================================================================================
+V4   EXACT-ARITHMETIC RECHECK OF THE LANE'S 'EXACTLY ZERO' AND 'EXACTLY NON-ZERO' CLAIMS
+======================================================================================================================
+  integer arithmetic, n = 8, full space dim 256; int64 with |entry| bounds asserted.
+  symplectic self-check at n=8: PASS
+  integer-representation audit: every operator used below is EXACTLY Hermitian and squares
+  to I over Z.  operators failing that audit: NONE   (all logicals here are
+  pure X-type or pure Z-type, so no Y phase arises)
+
+  PART 1 -- THE STRUCTURAL IDENTITIES, EXACTLY (every entry below is an INTEGER count of
+  non-zero entries in a matrix that must be the zero matrix).
+  identity                                            non-zero entries (exact)     verdict
+  [X^n, R] == 0 (R is durable)                                               0        ZERO
+  [Z^n, R] == 0 (R is durable)                                               0        ZERO
+  R@R - I == 0 (R is a bit)                                                  0        ZERO
+  R - R^T == 0 (R Hermitian, real)                                           0        ZERO
+  W R W + R == 0 (R is writable)                                             0        ZERO
+  [R, A] == 0 for every commuting partner A                                  0        ZERO
+  [W, A] == 0 for every commuting partner A                                  0        ZERO
+  CONTROL: [R, W] == 0 ?  (must FAIL: nonzero)                             256 256 NONZERO
+  -> the hypotheses of the lane's generalised C-38 theorem hold EXACTLY (integer identities),
+     so its zeros are real zeros, not float64 zeros.  The control on the last line shows the
+     same test registers a non-zero when there is one.
+
+  PART 2 -- THE EXACT EIGENVALUE DISTRIBUTION OF THE SUMMED SITE OPERATOR S.
+  V1 showed chi is a zero-parameter functional of this distribution.  Here it is computed
+  EXACTLY: 4*P_code = (I + X^n)(I + Z^n) is an integer matrix, so tr(P_code S^k) is a
+  rational number with denominator 4, and the moments determine the distribution.
+  exact code-space dimension tr(P_code) = 64   (expected 2^(n-2) = 64)
+
+  partner set on the read site                   exact tr(S^2)/dim   exact tr(S^4)/dim    S^2 = c*I exactly?
+  X2,X3        (two COMMUTING partners)                          2                   8                    no
+  X2,Z2        (two ANTI-commuting partners)                     2                   4            YES, c = 2
+  X2,X3,X4,X5  (four commuting)                                  4                  40                    no
+  X2,Z2,X3,Z3  (two anti-commuting pairs)                        4                  32                    no
+
+  READ IT: the two configurations the lane calls 'the same occupancy, the same three bits'
+  have DIFFERENT exact second and fourth moments of the operator the bath actually couples
+  to.  X2,X3 gives tr(S^2)/dim = 2 and tr(S^4)/dim = 8; X2,Z2 gives 2 and 4.  The four-record
+  pair differs the same way.  This is elementary Pauli algebra and it is EXACT.
+    X2,X3        (two COMMUTING partners)       S^2 = 2I + 2*X2X3, (X2X3)^2 = I, tr X2X3 = 0  ->  spec {+2:1/4, 0:1/2, -2:1/4}
+    X2,Z2        (two ANTI-commuting partners)  S^2 = 2I EXACTLY                              ->  spec {+sqrt2:1/2, -sqrt2:1/2}
+    X2,X3,X4,X5  (four commuting)               binomial:  spec {+-4:1/16, +-2:1/4, 0:3/8}
+    X2,Z2,X3,Z3  (two anti-commuting pairs)     S^2 = 4I + 2(X2+Z2)(X3+Z3)                    ->  spec {+-2sqrt2:1/4, 0:1/2}
+
+  PART 3 -- THE F_2 FACT BEHIND 'chi IS EXACTLY INDEPENDENT OF n'.  For each n the computed
+  logicals satisfy the standard symplectic relations, so any configuration at one n is
+  carried to the identical configuration at another by a logical Clifford, and the unwritten
+  logical qubits are maximally mixed and uncoupled.  Exact F_2 linear algebra:
+     n   k = n-2    conjugate pairs returned    symplectic relations
+     4         2                           2              EXACT PASS
+     6         4                           4              EXACT PASS
+     8         6                           6              EXACT PASS
+    10         8                           8              EXACT PASS
+    12        10                          10              EXACT PASS
+  -> the n-independence is a restatement of 'the code space is a tensor factor of k qubits
+     and the state is maximally mixed on it'.  It is exact, and it is also a statement that
+     the CARRIER has been factored out of the problem entirely.

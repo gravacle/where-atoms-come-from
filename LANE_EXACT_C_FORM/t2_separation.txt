@@ -147,3 +147,74 @@ T2(d)  D-17: VARY THE VENUE'S OWN SCALE.  SAME QUANTITY AT n = 8, 10, 12
      n  code dim  k=n-2         chi_A alone       chi_A crowded         interaction
      8        64      6   0.521527300759534   0.136408688971757   0.385118611787778
     10       256      8   0.521527300759535   0.136408688971758   0.385118611787778
+    12      1024     10   0.521527300759538   0.136408688971757   0.385118611787781
+  SPREAD across n: alone 3.553e-15   crowded 5.551e-16   interaction 3.331e-15
+  [PASS] the record-level interaction does not know the size of the carrier   spread 3.331e-15
+
+========================================================================================================
+T3  DIRECTIONALITY / ANISOTROPY:  SAME GEOMETRY, DIFFERENT ALGEBRAIC ORIENTATION
+========================================================================================================
+  n=10, code dim 256, A = X0X1 fixed.  lam scanned.  chi_A read out.
+  Pairs chosen so that GEOMETRY is held fixed and only the F_2 pairing changes,
+  and separately so that the pairing is held fixed and only GEOMETRY changes.
+
+  lam=0.4  chi_A alone = 0.276635159834
+    partner B   supp A    supp B     sep overlap  sp     chi_A crowded   ratio to alone
+    X1X2        [0, 1]    [1, 2]       0       1   0    0.125625482447      0.454119724
+    Z1Z2        [0, 1]    [1, 2]       0       1   1    0.182753596876      0.660630402
+    X2X3        [0, 1]    [2, 3]       1       0   0    0.125625482447      0.454119724
+    Z2Z3        [0, 1]    [2, 3]       1       0   0    0.125625482447      0.454119724
+    X0X1'       [0, 1]    [0, 1]       0       2   0    0.521527300760      1.885253129
+    Z0Z1        [0, 1]    [0, 1]       0       2   0    0.125625482447      0.454119724
+    X5X6        [0, 1]    [5, 6]       4       0   0    0.125625482447      0.454119724
+    Z7Z8        [0, 1]    [7, 8]       6       0   0    0.125625482447      0.454119724
+    X0X5        [0, 1]    [0, 5]       0       1   0    0.125625482447      0.454119724
+    Z1Z6        [0, 1]    [1, 6]       0       1   1    0.182753596876      0.660630402
+    grouping by (symplectic pairing, is-B-the-same-LOGICAL-CLASS-as-A):
+      sp=0 same_class=False: n= 7  chi_A = 0.125625482447  spread within group 2.776e-16
+      sp=0 same_class=True: n= 1  chi_A = 0.521527300760  spread within group 0.000e+00
+      sp=1 same_class=False: n= 2  chi_A = 0.182753596876  spread within group 2.776e-17
+  [PASS] lam=0.4: chi_A constant WITHIN a symplectic class (geometry-blind)   max within-class spread 2.776e-16
+  [PASS] lam=0.4: chi_A DIFFERS between symplectic classes (algebraically anisotropic)   between-class span 3.959e-01
+
+  lam=0.8  chi_A alone = 0.521527300760
+    partner B   supp A    supp B     sep overlap  sp     chi_A crowded   ratio to alone
+    X1X2        [0, 1]    [1, 2]       0       1   0    0.136408688972      0.261556181
+    Z1Z2        [0, 1]    [1, 2]       0       1   1    0.254089251974      0.487202207
+    X2X3        [0, 1]    [2, 3]       1       0   0    0.136408688972      0.261556181
+    Z2Z3        [0, 1]    [2, 3]       1       0   0    0.136408688972      0.261556181
+    X0X1'       [0, 1]    [0, 1]       0       2   0    0.611782383362      1.173059172
+    Z0Z1        [0, 1]    [0, 1]       0       2   0    0.136408688972      0.261556181
+    X5X6        [0, 1]    [5, 6]       4       0   0    0.136408688972      0.261556181
+    Z7Z8        [0, 1]    [7, 8]       6       0   0    0.136408688972      0.261556181
+    X0X5        [0, 1]    [0, 5]       0       1   0    0.136408688972      0.261556181
+    Z1Z6        [0, 1]    [1, 6]       0       1   1    0.254089251974      0.487202207
+    grouping by (symplectic pairing, is-B-the-same-LOGICAL-CLASS-as-A):
+      sp=0 same_class=False: n= 7  chi_A = 0.136408688972  spread within group 6.106e-16
+      sp=0 same_class=True: n= 1  chi_A = 0.611782383362  spread within group 0.000e+00
+      sp=1 same_class=False: n= 2  chi_A = 0.254089251974  spread within group 1.110e-16
+  [PASS] lam=0.8: chi_A constant WITHIN a symplectic class (geometry-blind)   max within-class spread 6.106e-16
+  [PASS] lam=0.8: chi_A DIFFERS between symplectic classes (algebraically anisotropic)   between-class span 4.754e-01
+
+  lam=1.2  chi_A alone = 0.599566691971
+    partner B   supp A    supp B     sep overlap  sp     chi_A crowded   ratio to alone
+    X1X2        [0, 1]    [1, 2]       0       1   0    0.127539682306      0.212719759
+    Z1Z2        [0, 1]    [1, 2]       0       1   1    0.258590473593      0.431295596
+    X2X3        [0, 1]    [2, 3]       1       0   0    0.127539682306      0.212719759
+    Z2Z3        [0, 1]    [2, 3]       1       0   0    0.127539682306      0.212719759
+    X0X1'       [0, 1]    [0, 1]       0       2   0    0.586744169790      0.978613685
+    Z0Z1        [0, 1]    [0, 1]       0       2   0    0.127539682306      0.212719759
+    X5X6        [0, 1]    [5, 6]       4       0   0    0.127539682306      0.212719759
+    Z7Z8        [0, 1]    [7, 8]       6       0   0    0.127539682306      0.212719759
+    X0X5        [0, 1]    [0, 5]       0       1   0    0.127539682306      0.212719759
+    Z1Z6        [0, 1]    [1, 6]       0       1   1    0.258590473593      0.431295596
+    grouping by (symplectic pairing, is-B-the-same-LOGICAL-CLASS-as-A):
+      sp=0 same_class=False: n= 7  chi_A = 0.127539682306  spread within group 1.027e-15
+      sp=0 same_class=True: n= 1  chi_A = 0.586744169790  spread within group 0.000e+00
+      sp=1 same_class=False: n= 2  chi_A = 0.258590473593  spread within group 0.000e+00
+  [PASS] lam=1.2: chi_A constant WITHIN a symplectic class (geometry-blind)   max within-class spread 1.027e-15
+  [PASS] lam=1.2: chi_A DIFFERS between symplectic classes (algebraically anisotropic)   between-class span 4.592e-01
+
+========================================================================================================
+T2/T3 SELF-CHECK SUMMARY: ALL PASS
+========================================================================================================

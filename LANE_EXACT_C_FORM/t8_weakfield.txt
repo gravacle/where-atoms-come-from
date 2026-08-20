@@ -1,0 +1,62 @@
+T8 -- THE WEAK-COUPLING LIMIT OF SUPERPOSITION.  The one place a field-like FORM could
+        still hold, resolved properly.
+
+T4's global fit over lam in [0.025, 1.2] had log-residuals of 1.4 -- it is not a power law over
+that range, because chi saturates.  A fit with residuals that large is not a fit.  This script
+scans lam over a geometric grid down to 0.005 and fits ONLY inside the window where the
+log-residuals are small, reporting the window, the exponents, the residuals and the noise floor.
+
+VENUE: [[8,6,2]] code space (dim 64).  Licensed by T2(b): chi depends only on the symplectic
+data, so n = 8 gives bit-identical numbers to n = 10 -- CHECKED here against the n=10 value.
+
+================================================================================================================
+T8(a)  VENUE CHECK: n = 8 REPRODUCES n = 10 EXACTLY
+================================================================================================================
+  lam=0.1  n= 8 (code dim   64)  chi_C(A,B) = 0.020937804922866
+  lam=0.1  n=10 (code dim  256)  chi_C(A,B) = 0.020937804922866
+  lam=0.8  n= 8 (code dim   64)  chi_C(A,B) = 0.071783219844104
+  lam=0.8  n=10 (code dim  256)  chi_C(A,B) = 0.071783219844103
+
+================================================================================================================
+T8(b)  WEAK-COUPLING SCAN.  Delta_S = chi_C(alone) - chi_C(with S);  D = Delta_AB - Delta_A - Delta_B
+================================================================================================================
+       lam       chi_C alone         Delta_A        Delta_AB               D   |D|/(|dA|+|dB|)   D separate (CTRL)
+     0.005  0.00006958165690      2.4916e-08      4.9816e-08     -1.7259e-11       0.000346347           -9.77e-16
+   0.00707  0.00013909962325      9.9490e-08      1.9884e-07     -1.3724e-10       0.000689740            2.84e-16
+      0.01  0.00027819662584      3.9728e-07      7.9347e-07     -1.0877e-09       0.001368980            6.99e-16
+   0.01414  0.00055587975003      1.5808e-06      3.1532e-06     -8.5180e-09       0.002694143            6.24e-16
+      0.02  0.00111071783552      6.2695e-06      1.2474e-05     -6.5485e-08       0.005222485           -8.44e-16
+   0.02828  0.00221530886440      2.4615e-05      4.8748e-05     -4.8285e-07       0.009807845            5.62e-16
+      0.04  0.00441047514478      9.5136e-05      1.8698e-04     -3.2963e-06       0.017324206            1.26e-15
+   0.05657  0.00873827839750      3.5625e-04      6.9330e-04     -1.9199e-05       0.026946568            3.42e-16
+      0.08  0.01716318483118      1.2642e-03      2.4505e-03     -7.7906e-05       0.030811954           -4.27e-16
+    0.1131  0.03318756415296      4.1228e-03      8.2166e-03     -2.9051e-05       0.003523160           -5.41e-16
+      0.16  0.06270608216116      1.2084e-02      2.6177e-02      2.0090e-03       0.083126705            3.05e-16
+    0.2263  0.11435176849323      3.2401e-02      7.0204e-02      5.4024e-03       0.083368973            5.41e-16
+      0.32  0.19933326983049      8.8421e-02      1.3715e-01     -3.9694e-02       0.224461883            1.75e-15
+
+  POWER LAWS, FITTED ONLY WHERE THE RESIDUALS ARE SMALL:
+  -- window: the 6 smallest couplings --
+    chi_C alone    exponent   1.9974   max |log-resid| 1.097e-03   rms 7.055e-04   (lam <= 0.02828)
+    Delta_A        exponent   3.9811   max |log-resid| 8.018e-03   rms 5.165e-03   (lam <= 0.02828)
+    D (3-record)   exponent   5.9159   max |log-resid| 3.594e-02   rms 2.313e-02   (lam <= 0.02828)
+    EXPONENT GAP  D - Delta_A = +1.9347
+  -- window: the 9 smallest couplings --
+    chi_C alone    exponent   1.9891   max |log-resid| 1.368e-02   rms 6.540e-03   (lam <= 0.08)
+    Delta_A        exponent   3.9235   max |log-resid| 9.130e-02   rms 4.417e-02   (lam <= 0.08)
+    D (3-record)   exponent   5.6219   max |log-resid| 5.049e-01   rms 2.365e-01   (lam <= 0.08)
+    EXPONENT GAP  D - Delta_A = +1.6983
+  -- window: the 13 smallest couplings --
+    chi_C alone    exponent   1.9358   max |log-resid| 1.587e-01   rms 6.437e-02   (lam <= 0.32)
+    Delta_A        exponent   3.6802   max |log-resid| 5.436e-01   rms 2.631e-01   (lam <= 0.32)
+    D (3-record)   exponent   5.0215   max |log-resid| 2.140e+00   rms 8.125e-01   (lam <= 0.32)
+    EXPONENT GAP  D - Delta_A = +1.3414
+
+  NOISE FLOOR: the separate-site control column is the pipeline's zero; max |D_ctrl| = 1.75e-15
+  smallest |D| measured = 1.726e-11, which is 9.9e+03 times the floor -- the signal is real.
+  [PASS] weak-window fits are clean (max |log-residual| < 0.05 for both)   Delta_A 8.018e-03, D 3.594e-02
+  [PASS] D vanishes FASTER than Delta_A as lam -> 0 (leading-order response is ADDITIVE)   gap +1.9347  (Delta_A ~ lam^3.981, D ~ lam^5.916)
+
+================================================================================================================
+T8 SELF-CHECK SUMMARY: ALL PASS
+================================================================================================================

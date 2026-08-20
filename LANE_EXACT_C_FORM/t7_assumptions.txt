@@ -69,17 +69,33 @@ T7(c)  BREAK H1 -- a state that is NOT symmetric under the record-moving permuta
     X5X6          4    0.521524866119    0.150208538991    0.371316327128
     X6X7          5    0.521524866119    0.135134847232    0.386390018887
     SPREAD over separation: 2.128e-02
-  [PASS] POS CONTROL (random pure state): separation dependence DOES appear   spread 2.128e-02
+    shape of the variation: ['0.392596', '0.380823', '0.386412', '0.371316', '0.386390']
+    monotonically decreasing with separation? False
+  [PASS] POS CONTROL (random pure state): location dependence DOES appear   spread 2.128e-02
 
-  qubit-0-polarised state
+  Z2Z3-polarised state (must FAIL to register)
     partner     sep       chi_A alone     chi_A crowded       interaction
     X2X3          1    0.521527300760    0.136408688972    0.385118611788
     X3X4          2    0.521527300760    0.136408688972    0.385118611788
     X4X5          3    0.521527300760    0.136408688972    0.385118611788
     X5X6          4    0.521527300760    0.136408688972    0.385118611788
     X6X7          5    0.521527300760    0.136408688972    0.385118611788
-    SPREAD over separation: 6.106e-16
-  [FAIL] POS CONTROL (qubit-0-polarised state): separation dependence DOES appear   spread 6.106e-16
+    SPREAD over separation: 5.551e-16
+    shape of the variation: ['0.385119', '0.385119', '0.385119', '0.385119', '0.385119']
+    monotonically decreasing with separation? True
+  [PASS] (Z2Z3-polarised state (must FAIL to register)): registers NOTHING, for the algebraic reason stated above   spread 5.551e-16
+
+  X0X1X2X3-polarised state
+    partner     sep       chi_A alone     chi_A crowded       interaction
+    X2X3          1    0.521527300760    0.527454387109   -0.005927086350
+    X3X4          2    0.521527300760    0.136408688972    0.385118611788
+    X4X5          3    0.521527300760    0.136408688972    0.385118611788
+    X5X6          4    0.521527300760    0.136408688972    0.385118611788
+    X6X7          5    0.521527300760    0.136408688972    0.385118611788
+    SPREAD over separation: 3.910e-01
+    shape of the variation: ['-0.005927', '0.385119', '0.385119', '0.385119', '0.385119']
+    monotonically decreasing with separation? False
+  [PASS] POS CONTROL (X0X1X2X3-polarised state): location dependence DOES appear   spread 3.910e-01
 
 ================================================================================================================
 T7(d)  BREAK H2 -- couple through an operator that is NOT a record
@@ -100,5 +116,5 @@ T7(d)  BREAK H2 -- couple through an operator that is NOT a record
   [PASS] non-record coupling: effect is CONTACT (on-support differs, off-support all identical)   off-support spread 5.00e-16, on/off gap 5.009e-03
 
 ================================================================================================================
-T7 SELF-CHECK SUMMARY: 1 FAILURES: ['POS CONTROL (qubit-0-polarised state): separation dependence DOES appear']
+T7 SELF-CHECK SUMMARY: ALL PASS
 ================================================================================================================

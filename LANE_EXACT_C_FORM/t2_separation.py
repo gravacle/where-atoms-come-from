@@ -230,16 +230,21 @@ for lam in (0.4, 0.8, 1.2):
         ov = len(sA & sB)
         sepv = 0 if ov else min(abs(i-j) for i in sA for j in sB)
         cr = chi_avg(Hr, env, [(MA,0),(MB,0)], lam, [MA], st)[0]
-        key = (sp(vA,vB,n), tuple(sorted(sA)) == tuple(sorted(sB)))
+        # GROUPING KEY.  A first version keyed on whether the two SUPPORTS coincide, which
+        # lumped B = A together with B = Z0Z1 (same support, different logical) and the check
+        # failed.  The correct key is the LOGICAL-CLASS data: the symplectic pairing, and
+        # whether B is the same logical class as A (vA + vB in the stabiliser span).
+        same_class = in_span([(x+y) % 2 for x, y in zip(vA, vB)], S, 2*n)
+        key = (sp(vA,vB,n), same_class)
         grp.setdefault(key, []).append(cr)
         print(f"    {nmB:<12}{str(sorted(sA)):<10}{str(sorted(sB)):<10}{sepv:>4}{ov:>8}"
               f"{sp(vA,vB,n):>4}{cr:>18.12f}{cr/alone if alone else 0:>17.9f}")
-    print("    grouping by (symplectic pairing, is-B-the-same-operator-as-A):")
+    print("    grouping by (symplectic pairing, is-B-the-same-LOGICAL-CLASS-as-A):")
     for k in sorted(grp):
         a = grp[k]
-        print(f"      sp={k[0]} same_op={k[1]}: n={len(a):>2}  chi_A = {np.mean(a):.12f}  "
+        print(f"      sp={k[0]} same_class={k[1]}: n={len(a):>2}  chi_A = {np.mean(a):.12f}  "
               f"spread within group {max(a)-min(a):.3e}")
-    spreads = [max(v)-min(v) for v in grp.values() if len(v) > 1]
+    spreads = [max(v)-min(v) for v in grp.values() if len(v) > 1] or [0.0]
     means = [np.mean(v) for v in grp.values()]
     check(f"lam={lam}: chi_A constant WITHIN a symplectic class (geometry-blind)",
           all(s < 1e-12 for s in spreads), f"  max within-class spread {max(spreads):.3e}")

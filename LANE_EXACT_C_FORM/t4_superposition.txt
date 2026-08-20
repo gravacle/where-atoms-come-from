@@ -1,0 +1,51 @@
+================================================================================================================
+T4(a)  NOISE FLOOR FROM PERMUTATION-EQUIVALENT REPLICAS
+================================================================================================================
+  The exact argument of T2(b) says these configurations must give bit-identical chi.
+  Their observed spread IS the float64 noise floor of the whole pipeline.
+    ('X', 0, 1)     ('X', 2, 3)     ('X', 4, 5)       chi_C = 0.071783219844103
+    ('X', 0, 1)     ('X', 4, 5)     ('X', 6, 7)       chi_C = 0.071783219844103
+    ('X', 2, 3)     ('X', 6, 7)     ('X', 8, 9)       chi_C = 0.071783219844102
+    ('X', 0, 9)     ('X', 1, 8)     ('X', 2, 7)       chi_C = 0.071783219844103
+    ('Z', 0, 1)     ('Z', 2, 3)     ('Z', 4, 5)       chi_C = 0.071783219844103
+    ('X', 0, 1)     ('Z', 2, 3)     ('Z', 4, 5)       chi_C = 0.071783219844103
+  NOISE FLOOR (spread over exactly-equivalent replicas) = 9.437e-16
+  [PASS] noise floor is at float64 resolution   9.437e-16
+
+================================================================================================================
+T4(b)  SUPERPOSITION.  SHARED SITE (test) BESIDE SEPARATE SITES (control), SAME TABLE
+================================================================================================================
+     lam     chi_C alone        Delta_A        Delta_B       Delta_AB   D = dev (TEST)   |D|/(|dA|+|dB|)  D separate (CTRL)
+   0.025  0.001733090789    0.000015151    0.000015151    0.000030064     -0.000000239       0.007877010           8.50e-16
+    0.05  0.006854498282    0.000223661    0.000223661    0.000436800     -0.000010522       0.023521706          -3.22e-16
+     0.1  0.026310949253    0.002739546    0.002739546    0.005373144     -0.000105948       0.019336763           1.42e-16
+     0.2  0.092743324368    0.022905562    0.022905562    0.051374251      0.005563127       0.121436164          -7.63e-16
+     0.4  0.276635159834    0.151009677    0.151009677    0.210226114     -0.091793240       0.303931649           1.28e-15
+     0.8  0.521527300760    0.385118612    0.385118612    0.449744081     -0.320493143       0.416096668          -5.55e-16
+     1.2  0.599566691971    0.472027010    0.472027010    0.529709946     -0.414344073       0.438898691           3.77e-15
+  [PASS] CONTROL: superposition EXACT when sources sit on their own bath sites   max |D_ctrl| = 3.77e-15
+  [PASS] TEST: superposition FAILS on a shared site, above the noise floor   min |D| = 2.387e-07
+
+  SCALING OF THE SUPERPOSITION DEFECT WITH THE COUPLING (this is the FORM question):
+    |D|      ~ lam^3.8339   max |log-residual| 1.414e+00   (n=7 points, lam in [0.025,1.2])
+    |Delta_A| ~ lam^2.7170   max |log-residual| 1.049e+00
+    EXPONENT GAP  1.1169   -- positive means the defect vanishes FASTER than
+    the individual influence, i.e. the LEADING-ORDER response IS additive.
+
+================================================================================================================
+T4(c)  DOES THE THREE-RECORD DEFECT D DEPEND ON THE GEOMETRY OF A, B RELATIVE TO C?
+================================================================================================================
+  A       B         sep(C,A)  sep(C,B)  sep(A,B)        Delta_A        Delta_B                D
+  X2X3    X4X5             1         3         1    0.385118612    0.385118612  -0.320493142660
+  X2X3    X8X9             1         7         5    0.385118612    0.385118612  -0.320493142660
+  X4X5    X6X7             3         5         1    0.385118612    0.385118612  -0.320493142660
+  X8X9    X6X7             7         5         1    0.385118612    0.385118612  -0.320493142660
+  X2X9    X3X8             1         2         1    0.385118612    0.385118612  -0.320493142660
+  X4X7    X5X6             3         4         1    0.385118612    0.385118612  -0.320493142660
+  X2X3    X2X3             1         1         0    0.385118612    0.385118612  -0.418066538001
+  spread of D over all DISTINCT-source geometries: 9.992e-16   (noise floor 9.437e-16)
+  [PASS] three-record defect D is geometry-independent to the noise floor   spread 9.992e-16
+
+================================================================================================================
+T4 SELF-CHECK SUMMARY: ALL PASS
+================================================================================================================

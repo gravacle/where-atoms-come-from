@@ -8576,3 +8576,90 @@ class function → records are transport-invariant, so clause (i) explains every
 as stated.** Transport-fixed records exist, but so do records transport moves. **Bit-ness does not
 force transport-invariance; it merely permits it.** That is allow/require again, and the principal's
 framing was the correct one.
+
+---
+
+## **THE `Z[i]` QUANTISATION THEOREM — A GRAVITY-STRENGTH RESIDUAL HAS NO SLOT TO LIVE IN. NOT UNRESOLVED: EXCLUDED.**
+
+Three probes in exact arithmetic (integers, `F₂`, `Z₄`, Gaussian integers, `Fraction` — no floats),
+each adversarially verified. The principal's governing objection was that gravity is `~10⁻³⁶` of EM,
+twenty orders below the `float64` floor, so its magnitude is unreachable at any `N`.
+
+### P1 — THE QUANTISATION THEOREM
+
+A product of record operators on an abelian stabiliser carrier is a **single signed Pauli** `iᵐW(c)`.
+`Tr(Π iᵐW(c))/Tr(Π)` is **exactly 0** if `c ∉ S` and **exactly a fourth root of unity** if `c ∈ S`.
+By linearity, every Gaussian-integer-coefficient polynomial in record operators has `Π`-trace ratio
+in **`Z[i]`** — and **`Z[i]` contains no element of modulus strictly between 0 and 1.**
+
+> ### **THE INTERVAL `(0,1)` IS EMPTY. SUCH A SCALAR IS EXACTLY ZERO OR HAS MODULUS AT LEAST 1.**
+> ### **A `10⁻³⁶` RESIDUAL CANNOT LIVE IN THE RECORD ALGEBRA'S SCALAR INVARIANTS — NOT BECAUSE WE
+> ### CANNOT RESOLVE IT, BUT BECAUSE THERE IS NO SLOT.**
+
+Swept **40,000 words and integer-coefficient polynomials per `n`** at `n` = 4, 6, 8, 10, 12, 16, 20:
+**minimum non-zero modulus² exactly 1 every time; no value with `0 < |v| < 1` ever found.** Proof
+valid at every `n` — an exact argument, not a trend.
+
+On `D(G)` the floor is coarser but still bounded away from zero: exact spectral projectors have
+denominator `|G|`, so every exact rational lies in `(1/|G|²)Z` — **the witness `352/9` sits exactly on
+that lattice.** Polynomially small in `|G|`, never exponentially small. **Again no `10⁻³⁶` slot.**
+
+### P2 — THE SYMPLECTIC-FORM DETERMINATION THEOREM
+
+Record operators of an abelian stabiliser carrier generate a Pauli group over `F₂^{2k}` with **trivial
+quadratic refinement** (`W(a)² = I` for all `a`), and such a group is **determined up to isomorphism
+by its symplectic form alone.**
+
+> ### **THEREFORE NO SCALAR INVARIANT OF ANY NUMBER OF RECORDS CARRIES INFORMATION BEYOND THE PAIRWISE
+> ### `F₂` PAIRING MATRIX.**
+
+Verified exhaustively: **all 1848 gauge-invariant words of length ≤ 8 in three records** — **ZERO**
+separate two triples sharing the same pairwise signature (`n=4`, `n=6` exhaustive over the complete
+record group; `n=8` on 299 classes). Every word value in `{+1,−1}`.
+
+### NOTHING THREE-BODY EXISTS — AND THE LANE'S OWN CANDIDATE WAS KILLED BY ITS ADVERSARY
+
+One lane proposed **GAP** — the failure of three pairwise minima to be simultaneously realisable — as
+*"the one genuinely three-body object, NOT a function of the six pairwise invariants."*
+
+**It is a function of two-body data, exactly.** A routine handed **only the three two-body tables,
+all record identity erased**, reproduces GAP with **0 mismatches in 16,000 triples** at `n` = 6, 8,
+10, 12. The lane's own test had grouped by a *lossy* summary; re-run with the non-lossy key it gives
+**0 multi-valued groups out of 26,986.**
+
+> **GAP is the ground-state frustration energy of three pairwise couplings on a triangle — the
+> antiferromagnetic Ising triangle, the textbook case of something that looks three-body and is
+> generated entirely by two-body interactions.** Its apparent growth series (0 → 0.9% → 6.3% →
+> 10.4% → 17.9% → 23.7%) is a property of the sampling pool.
+
+### WHERE A RESIDUAL CANNOT HIDE — EXACT ZEROS, NOT BOUNDS
+
+Separation dependence, orientation anisotropy, off-site interaction, and carrier-mediated influence
+are **identically zero at every `N` by argument** — Clifford transitivity on the code space,
+qubit-permutation invariance, the qubit-wise structure of the symplectic form, clause (ii), and the
+absence of bath–bath coupling. **Excluded, not unobserved.**
+
+### **THE VENUE OBJECTION THAT REFRAMES EVERY SEPARATION NULL**
+
+> ### **BOTH CARRIERS HAVE FULL QUBIT-PERMUTATION INVARIANCE, SO THEY CONTAIN NO METRIC STRUCTURE TO
+> ### DETECT — BY CONSTRUCTION. Non-record operators show the same flatness to `6.4e-16`. The correct
+> ### statement is "these carriers have no geometry", NOT "records have no metric form".**
+
+Registered as **D-22**. **Every separation null in three lanes is downstream of this.**
+
+### THE DECISIVE OPEN QUESTION, PROMOTED OUT OF A CAVEAT
+
+**THE DURABILITY–GEOMETRY EXCLUSION.** On a carrier whose record set generates the full logical
+algebra, must every `H` satisfying clause (ii) for **all** records act as a **SCALAR** on the
+protected subspace? The argument: *a Hamiltonian term that keeps a record durable commutes with it,
+hence is diagonal alongside it, hence contributes only a phase; a term that is not diagonal alongside
+it destroys clause (ii).*
+
+- **If it is a theorem:** durability and carrier geometry are **mutually exclusive**, no record-record
+  interaction can **ever** depend on separation at any `N`, and **gravity is ruled out as a metric
+  relation among records permanently** — immune to both the weakness and threshold objections.
+- **If it is false:** **every null in three lanes is a venue artifact** and the separation question
+  reopens on the right venue, where the `XX`-bath result already shows a falloff is achievable.
+
+Registered as **O-42**. **It is the only claim anywhere in the workflow that is about RECORDS rather
+than about a chosen venue, and every null is downstream of it.**
