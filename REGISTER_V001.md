@@ -7774,3 +7774,39 @@ records, where the writer never did.**
 
 **Whichever is chosen DEFINES what "record geometry" means, so it is put to the principal rather than
 picked. Picking wrongly again would only produce another theorem about the wrong object.**
+
+---
+
+# **THE PRINCIPAL FIXES THE CONNECTION — CANDIDATE 3, TRANSPORT ALONG THE CARRIER**
+
+**H-14 is decided, with reasons, and the other two candidates are not discarded but ASSIGNED.**
+
+| candidate | role | why not curvature |
+|---|---|---|
+| **1. intersection pairing** `⟨c_i,c_j⟩` | **TOPOLOGICAL SOURCE**, `T_μν` | **topologically rigid and metric-blind** — it does not change under continuous deformation, and **curvature must vary across paths** |
+| **2. channel_map** | **METRIC / PROPAGATOR**, `g_μν` | it is **adjacency** — the causal graph and transmission capacities. **Curvature is what happens to an internal state MOVING ACROSS that adjacency, not the adjacency** |
+| **3. carrier transport** | **CURVATURE**, `G_μν` | **curvature IS the obstruction to integrability**: carry a frame around a closed loop of carrier edges and measure its failure to return |
+
+> ### **`R[carrier frame transport]` ∝ `⟨c_i,c_j⟩` × `channel_map[α]`**
+> ### **The three are not competing for one slot. They are the three terms of an emergent field equation.**
+
+**Candidate 3 gives the theory a genuine notion of "nearby", spatial extension, and path-dependent
+memory; Candidate 1 ensures curvature is sourced by persistent non-local topological records rather
+than by arbitrary background.**
+
+## **AND IT IS ALREADY IN OUR CARRIER**
+
+**D-1 check first: the classical form is used to say WHAT THE OBJECT IS, never as the test.** The test
+is whether **our** transport closes. That is the line X-6 crossed and this does not.
+
+**Our carrier is a lattice gauge theory: the gauge field lives ON THE LINKS. A link variable IS a
+connection variable, and transport around a face IS the plaquette operator `B_p`.** Regge calculus and
+lattice gauge theory are the standard language for exactly this, and per the principal's standing
+instruction, **using established physics is expected.**
+
+> ### **SO CARRIER CURVATURE IS ALREADY DEFINED IN THIS PROGRAM AND HAS NEVER BEEN LOOKED AT: it is
+> ### the plaquette holonomy, and the code space is the sector where every plaquette is satisfied.**
+
+**The immediate question this raises, and it inverts the expectation:** the code space is defined by
+`B_p = +1` for every `p`, which is **exactly zero holonomy around every face.** If records live only
+there, then **a record does not source curvature — it requires FLATNESS.** Measured next.

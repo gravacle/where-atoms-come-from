@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS |
 |---|---|---|---|---|---|---|---|---|---|
-| 103 | 2 | 8 | 1 | 20 | 3 | 9 | 7 | 3 | 3 |
+| 104 | 2 | 8 | 1 | 20 | 3 | 9 | 7 | 3 | 3 |
 
-**159 rows.**
+**160 rows.**
 
 ---
 
@@ -35,7 +35,8 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **H-11** | WHAT DETERMINES THE CONNECTION? A writer is fixed only up to a unitary preserving every record label, and different admissible choices give holonomy from 0 to 5.169 on the same records. The records fix the fibres, not the transport between them. A connection is extra data, as in gauge theory, and the program has never asked what picks it | **OPEN** | LANE_O23_CONNECTION; candidate: minimality — T-20's flat connection was the minimal-weight writer | — | — |
 | **H-12** | LEAST ACTION MAY SELECT CURVATURE. On a non-code carrier the flat connection has the HIGHEST action of 400 admissible writers, all of which are curved, while \|\|U-I\|\| gives 4.0000 for every one and selects nothing. But \|\|log U\|\| is maximised by involutions and the flat writer is a strict swap, so the effect may be the norm rather than the physics | **FAILED** | OVERTURNED: least action selects the FLAT connection. O-26's 400-of-400 was measured against the canonical flat writer (6.2832), not the cheapest (4.4429). Every selector that discriminates -- weight, \|\|Ht\|\|_F, \|\|Ht\|\|_inf -- picks flat | — | — |
 | **H-13** | THE NEGATIVE HOLDS FOR THE FIVE CLAUSES AS WRITTEN. C-26's argument runs through clause (iv)'s trace balance and clause (iii)'s degeneracy. A record notion dropping or altering either could still force curvature -- but wanting a different answer is not a reason to alter a definition | **OPEN** | created by route 1's closure | — | — |
-| **H-14** | WHAT IS THE CONNECTION BETWEEN RECORDS? H-9 needs transport from one record to the next; the program substituted the WRITER, which flips one record's value instead. Three candidates, all needing a decision: the intersection pairing (ours, operative via G-16), the channel structure (ours, T-6), or transport along the carrier (closest to H-9's 'nearby') | **OPEN** | the import the principal caught in the negative result | — | — |
+| **H-14** | WHAT IS THE CONNECTION BETWEEN RECORDS? H-9 needs transport from one record to the next; the program substituted the WRITER, which flips one record's value instead. Three candidates, all needing a decision: the intersection pairing (ours, operative via G-16), the channel structure (ours, T-6), or transport along the carrier (closest to H-9's 'nearby') | **PROVED** | DECIDED by the principal: curvature is Candidate 3, transport along the carrier. Candidate 1 (intersection pairing) is the topological SOURCE T_uv, being metric-blind and path-independent; Candidate 2 (channel_map) is the METRIC g_uv, being adjacency. R[carrier transport] ~ <c_i,c_j> x channel_map[alpha] | — | — |
+| **H-15** | CARRIER CURVATURE IS ALREADY DEFINED IN THIS PROGRAM AND WAS NEVER LOOKED AT. Our carrier is a lattice gauge theory, the gauge field lives on links, a link variable IS a connection variable, and transport around a face IS the plaquette operator. The code space is the sector with every plaquette satisfied -- zero holonomy around every face | **OPEN** | so a record may REQUIRE flatness rather than source curvature; measured in LANE_H15_CARRIER | — | — |
 
 ## P. THE ROAD TO A FULL PROOF — the controlled plan
 
