@@ -1,0 +1,49 @@
+========================================================================================================
+O-35   A NON-ABELIAN CARRIER WITH RECORDS?
+========================================================================================================
+  carrier                     V  E  F     dim                    multiplicities   odd?   (iv)?
+  Z_2  abelian  ord 2   1x2   2  4  2      16                      [4, 4, 4, 4]  False     yes
+  Z_3  ABELIAN  ord 3   min   1  2  1       9                               [9]   True      NO
+  Z_3  ABELIAN  ord 3   1x2   2  4  2      81                   [9, 18, 18, 36]   True      NO
+  Z_4  abelian  ord 4   1x2   2  4  2     256                 [16, 48, 48, 144]  False     yes
+  D_4  NONABEL  ord 8   min   1  2  1      64                      [22, 24, 18]  False     yes
+  S_3  nonabel  ord 6   min   1  2  1      36                       [8, 13, 15]   True      NO
+  S_3  nonabel  ord 6   1x2   2  4  2    1296                 [8, 61, 394, 833]   True      NO
+
+  clause (i) forces R^2 = I, so Tr(P_E R) = dim(E) mod 2: an ODD eigenspace can never give 0,
+  and clause (iv) needs Tr(P_E R) = 0 on EVERY eigenspace.
+    Z_2  abelian  ord 2   1x2  -> clause (iv) is possible on this carrier
+    Z_3  ABELIAN  ord 3   min  -> clause (iv) UNSATISFIABLE: no record can exist
+    Z_3  ABELIAN  ord 3   1x2  -> clause (iv) UNSATISFIABLE: no record can exist
+    Z_4  abelian  ord 4   1x2  -> clause (iv) is possible on this carrier
+    D_4  NONABEL  ord 8   min  -> clause (iv) is possible on this carrier
+    S_3  nonabel  ord 6   min  -> clause (iv) UNSATISFIABLE: no record can exist
+    S_3  nonabel  ord 6   1x2  -> clause (iv) UNSATISFIABLE: no record can exist
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================
+  THE CONTROLS SEPARATE TWO EXPLANATIONS THAT S_3 ALONE CONFOUNDS.
+  S_3 is non-abelian AND has order 6, which is not a power of two. Z_3 is ABELIAN with order 3;
+  D_4 is NON-ABELIAN with order 8 = 2^3. Whichever of those two fails identifies the cause.
+
+    Z_2  abelian  ord 2   1x2    odd eigenspace present: False  -> records are possible
+    Z_3  ABELIAN  ord 3   min    odd eigenspace present: True   -> no record can exist
+    Z_3  ABELIAN  ord 3   1x2    odd eigenspace present: True   -> no record can exist
+    Z_4  abelian  ord 4   1x2    odd eigenspace present: False  -> records are possible
+    D_4  NONABEL  ord 8   min    odd eigenspace present: False  -> records are possible
+    S_3  nonabel  ord 6   min    odd eigenspace present: True   -> no record can exist
+    S_3  nonabel  ord 6   1x2    odd eigenspace present: True   -> no record can exist
+
+  THE CONTROL OVERTURNS THE DIAGNOSIS. Z_3 is ABELIAN and has NO records. D_4 is NON-ABELIAN
+  and HAS them. So the obstruction is NOT non-abelianness -- it is whether |G| is a POWER OF
+  TWO. Z_2, Z_4 and D_4 have orders 2, 4 and 8 and pass; Z_3 and S_3 have orders 3 and 6 and
+  fail, at both carrier sizes tested.
+
+  WHY: clause (i) makes a record a BIT, R^2 = I, so Tr(P_E R) = dim(E) mod 2 and every
+  eigenspace must be EVEN-dimensional. |G|^E is a power of two exactly when |G| is. A group
+  whose order carries an odd factor produces odd eigenspaces and no record can be written on it.
+
+  D_4 IS A NON-ABELIAN CARRIER WITH RECORDS. It is what O-34's join needs and what AUDIT 2
+  showed D(S_3) could not supply. Had this lane tested only S_3, it would have registered
+  'non-abelian carriers cannot have records', which the D_4 column shows is FALSE.

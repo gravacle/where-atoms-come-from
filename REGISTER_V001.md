@@ -8289,3 +8289,39 @@ stable across a 3× coupling range). **All four used `[[4,2,2]]` or the toric co
 The minimal torus has **one vertex and one face**, so the gauge and flatness projectors have almost
 nowhere to act — **H-4 again**. Whether a larger `S₃` complex has even multiplicities is a question
 about **that carrier**, not about `S₃`. Registered as **O-35**.
+
+---
+
+## O-35 — **THE OBSTRUCTION IS NOT NON-ABELIANNESS. IT IS WHETHER `|G|` IS A POWER OF TWO — AND `D₄` IS A NON-ABELIAN CARRIER WITH RECORDS.**
+
+`LANE_O35_NONABELIAN_CARRIER`. AUDIT 2 found `D(S₃)` has no records. **`S₃` is non-abelian AND has
+order 6, which is not a power of two — two explanations that `S₃` alone cannot separate.** The
+controls that separate them: **`Z₃`, abelian of order 3**, and **`D₄`, non-abelian of order 8 = 2³**.
+
+| carrier | abelian? | order | `V` | `E` | dim | multiplicities | odd? | **records?** |
+|---|---|---|---|---|---|---|---|---|
+| `Z₂` 1×2 | abelian | 2 | 2 | 4 | 16 | [4,4,4,4] | False | **yes** |
+| **`Z₃`** min | **ABELIAN** | **3** | 1 | 2 | 9 | odd present | **True** | **NO** |
+| **`Z₃`** 1×2 | **ABELIAN** | **3** | 2 | 4 | 81 | odd present | **True** | **NO** |
+| `Z₄` 1×2 | abelian | 4 | 2 | 4 | 256 | all even | False | **yes** |
+| **`D₄`** min | **NON-ABELIAN** | **8 = 2³** | 1 | 2 | 64 | all even | **False** | **yes** |
+| `S₃` min | non-abelian | 6 | 1 | 2 | 36 | [8,13,15] | True | **NO** |
+| `S₃` 1×2 | non-abelian | 6 | 2 | 4 | 1296 | [8,61,394,833] | True | **NO** |
+
+> ### **AN ABELIAN GROUP FAILS IT (`Z₃`) AND A NON-ABELIAN GROUP PASSES IT (`D₄`). THE OBSTRUCTION IS
+> ### THE ORDER OF THE GROUP, NOT ITS COMMUTATIVITY: RECORDS EXIST ON `D(G)` EXACTLY WHEN `|G|` IS A
+> ### POWER OF TWO, ACROSS 7 CARRIERS AND TWO CARRIER SIZES.**
+
+**Why.** Clause (i) makes a record a **bit**: `R² = I`, so `Tr(P_E R) ≡ dim(E) (mod 2)` and clause
+(iv) needs **every** eigenspace even-dimensional. `|G|^E` is a power of two exactly when `|G|` is.
+**A group whose order carries an odd factor produces odd eigenspaces, and no record can be written
+on it at all.**
+
+> ### **`D₄` IS A NON-ABELIAN CARRIER WITH RECORDS. IT IS PRECISELY WHAT O-34's JOIN NEEDS AND WHAT
+> ### `D(S₃)` COULD NOT SUPPLY.**
+
+### THE CONTROL IS WHAT MADE THIS RIGHT
+
+Run on `S₃` alone, this lane would have registered *"non-abelian carriers cannot have records"* —
+**which the `D₄` column shows is false.** That is D-15 doing exactly what it was written for, one
+lane after it was written.
