@@ -9706,3 +9706,33 @@ separation-independent and contact-only ones.
 **Named next (T-44):** which falloff exponents a **Γ-constrained** coupling can *reach* — the
 weighted-instrument lane, coupling the exact `w_min = d` cost landscape to a declared mediator.
 Until it runs, **no falloff exponent is earned.**
+
+---
+
+## T-43 — **THE RULE HAS SPOKEN: MIXED_AS_FOUND.** The surface answered more precisely than the rule asked — and left exactly one choice, which is the principal's.
+
+**The corner tier answered outright, and with an identity nobody ordered:** externally certifiable
+content **IS** the stabiliser cut-rank — `CERT = 2·PER − 10 = 8s − 10`, exactly the T-42 interface
+law, verified by three independent routes with explicit outside certificates, robust to every honest
+re-operationalisation the adversary could build. **The area-form aggregate now has operational
+meaning: it counts what the outside world can learn of a region.** Strictly-outside writability is a
+computed locality theorem (`WRITE0 = 0`); interface-layer writability is boundary-degree; stored and
+hidden content are volume. Bonus exact structure: **thickness protection** — a band's record bit is
+certifiable at any width but interface-writable only when thin (1, 2, 1, 0 at widths 1–4+). Scope
+honestly: solid regions with interiors; all-interface geometries (comb, scatter) reach volume and the
+volume-control fires.
+
+**The world tier split, exactly:** the boundary bounds the certification **RATE** (per-epoch
+`= 6n² − 12n + 8`, an exact min-cut, unbeatable by any schedule) — but the certifiable **TOTAL** over
+epochs is the whole stored **volume** (`E_min ≤ 3` on the computed range). The lane kept the split
+uncollapsed, as briefed. *(Corrections per the verifier: 26/26 gates, not 27/27 — sidecar bookkeeping
+error, no number affected; the CAP_depth(1) identity carries no separate weight.)*
+
+**THE RULING (pre-registered rule applied verbatim): MIXED_AS_FOUND.** The rule's phrase "externally
+certifiable content" fixed the instruments but **no time convention** — and the corner, a static code
+state, has no time axis, so the split is invisible there *by construction*, not settled there. Under
+the **simultaneous** reading both tiers are boundary and the rule's first branch fires; under the
+**anytime** reading the world certifies its volume and the interface bounds only rates. **The
+conditional C-77 sentence and the emergent-tier target (the collapse analogue — a dynamics under
+which HIDDEN = STORED − CERT is unstable) are staged, and issue only on the principal's reading.**
+The judge's editorial note, carried at zero weight: a horizon entropy is itself a one-time count.
