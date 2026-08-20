@@ -1,0 +1,40 @@
+========================================================================================================
+AUDIT 1   IS THE CAPACITY CEILING JUST THE SITE'S HILBERT SPACE?
+========================================================================================================
+  2 records share ONE SITE. The site is made of s bath qubits -- the records couple to ALL of
+  them, so they still share, but the site has 2^s dimensions instead of 2.
+  CONTROL in the same row: the same 2 records on DISJOINT sites of the same size s.
+
+    s qubits/site  site dim  log2(site dim)   chi CROWDED   chi SPREAD    ratio
+                1         2               1      0.133478     0.525916   0.2538
+                2         4               2      0.267223     0.731135   0.3655
+                3         8               3      0.336940     0.852175   0.3954
+
+  crowded chi from s=1 to s=3:  0.133478 -> 0.336940   change +0.203461
+  site dimension over the same range: 2 -> 8, a 4x increase in room
+  -> THE CEILING RISES WITH SITE DIMENSION: C-36 is an information-capacity statement
+
+  2. A SECOND DISCRIMINATOR -- is the SUM over records bounded by the site?
+     if the site merely holds log2(2^s) = s bits, then chi(R0) + chi(R1) should be capped by s.
+     s     chi(R0)     chi(R1)         sum   s (bits available)   sum <= s?
+     1    0.133478    0.133478    0.266957                    1        True
+     2    0.267223    0.267223    0.534445                    2        True
+     3    0.336940    0.336940    0.673879                    3        True
+
+========================================================================================================
+  READ -- from the numbers above
+========================================================================================================
+  THE CEILING IS THE SITE'S INFORMATION CAPACITY. Crowded chi rises 0.133478 -> 0.267223 ->
+  0.336940 as the site grows from 1 to 3 qubits, and the SUM over both records is bounded by
+  the site's s bits in every row. C-36's 'an environment site holds a bounded amount and
+  records sharing it split it' is TRUE and it is the HOLEVO BOUND -- conventional physics,
+  correctly applied, and NOT a discovery of this program.
+
+  THE TOOL MADE AN ORDINARY EFFECT LOOK NOVEL. Every measurement behind C-36 used a site of
+  ONE qubit, where capacity and density are indistinguishable. Varying the site dimension --
+  one line of the experiment, never run -- separates them immediately.
+
+  WHAT SURVIVES, AND IT IS THE MORE INTERESTING RESULT. Pure capacity splitting would depend
+  only on HOW MANY records share the site. O-33a measured a difference of 0.33 in the crowding
+  cost depending on whether the partner PAIRS with the record -- at fixed number of records and
+  fixed site. Capacity alone cannot produce that, so C-39 is NOT explained by this and stands.

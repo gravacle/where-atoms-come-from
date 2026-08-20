@@ -8188,3 +8188,43 @@ number was reported.**
 *different* site, so part of that ratio was never crowding. Separating disturbance
 (spread/alone) from crowding (crowded/spread) is what made the effect legible; the conflated panel
 understated the selectivity as 0.226 where it is 0.340.
+
+---
+
+## AUDIT 1 — **C-36 IS THE HOLEVO BOUND. THE TOOL MADE AN ORDINARY EFFECT LOOK NOVEL.**
+
+`LANE_AUDIT_TOOLS`. The principal, mid-run: *"are we sure that we're using the right tools."* Every
+measurement behind C-36 used a bath site of **one qubit**, and a qubit holds one bit — so *"records
+sharing a site split its capacity"* may be nothing but that. **The discriminator was never run:
+vary the site dimension.**
+
+| `s` qubits/site | site dim | **χ CROWDED** | χ SPREAD | `χ(R0)+χ(R1)` | `≤ s` bits? |
+|---|---|---|---|---|---|
+| 1 | 2 | **0.133478** | 0.525916 | 0.266957 | **True** |
+| 2 | 4 | **0.267223** | 0.731135 | 0.534445 | **True** |
+| 3 | 8 | **0.336940** | 0.852175 | 0.673879 | **True** |
+
+> ### **THE CEILING RISES WITH SITE DIMENSION AND THE SUM OVER RECORDS IS BOUNDED BY THE SITE'S BITS
+> ### IN EVERY ROW. C-36 IS THE HOLEVO BOUND — CONVENTIONAL PHYSICS, CORRECTLY APPLIED, AND NOT A
+> ### DISCOVERY OF THIS PROGRAM. IT IS RESCOPED ACCORDINGLY.**
+
+**One qubit per site is a venue where capacity and density are indistinguishable.** One line of the
+experiment — vary the site — separates them immediately, and it was never run. **This is the same
+failure as O-29's abelian carriers: a measurement taken where two explanations cannot be told apart,
+reported as though it distinguished them.**
+
+### WHAT SURVIVES, AND IT IS THE MORE INTERESTING RESULT
+
+**Pure capacity splitting depends only on HOW MANY records share the site.** O-33a measured a
+difference of **0.33** in the crowding cost depending on whether the partner **pairs** with the
+record — at **fixed** record count and **fixed** site. **Capacity alone cannot produce that.**
+**C-39 is not explained by this audit and stands.** So does C-38: a commuting partner on another
+site leaves χ at `1.000000`, which is not a capacity statement at all.
+
+### ROWS CORRECTED
+
+- **C-36** — rescoped: the bounded amount is the site's Holevo capacity; the claim is conventional.
+- **C-37** — **WITHDRAWN as stated.** χ per record does vary with records per site, but the variation
+  is the Holevo bound, so calling it *"the first quantity in this program that knows how much is
+  enclosed"* claimed novelty for a standard result. **What is left of the intent is C-39**, where the
+  pairing modulates a cost that capacity alone would leave flat.
