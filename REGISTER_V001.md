@@ -9775,3 +9775,30 @@ world-tier surfaces carry provenance with pinned sources, corner carriers self-d
 the constructor **refuses** undeclared surfaces once T-46 lands. **And the architecture: THE MODEL
 IS THE OVERALL REPRESENTATION OF THE PROOF** — PROOF_V002 becomes the narration of `project_model`,
 every proof step a model function with its validator gate and grounding. T-16's text carries it.
+
+---
+
+## T-39 — **THE AUDIT RETURNS NON-EMPTY. PF-6 FAILED IN 2026-08-18; ITS SUCCESSOR REGISTERS THREE SURVIVORS.**
+
+Twelve-plus candidates, three rival advocates each, fairness rule enforced (a rival wins only if its
+account *already made* the statement). **The Darwinism advocate claimed nothing whole. The QEC
+advocate claimed six. Device physics claimed two.** Combined:
+
+| survivor | the statement | why no rival owns it |
+|---|---|---|
+| **S-1** | the **durability-clocked certification window**: `CERT_W = min(volume, W·min-cut)`, `W = τ/t_epoch`, crossover `n* ~ 6W` | Darwinism's records are **immortal** — no durability window exists anywhere in its corpus; QEC's memory-time work bounds *storage*, never certification-within-lifetime; engineering takes the rate as a free parameter. *(Provisional on one commissioned literature check.)* |
+| **S-2** | **flash alpha-channel discrimination**: one device carries an α-amplified Arrhenius channel (`A ≈ 240`) and an α-flat tunneling channel | stated by neither the varying-constants wing nor the device wing; falsifier = JEDEC retention-bake channel extraction, data exists, no lab needed |
+| **S-3** | the thickness profile **1, 2, 1, 0** | corollary grade; the schema is QEC's, the non-monotonic integer instance was never stated |
+
+**Everything else falls to named owners, matching the register's own concessions** — including
+alpha's amplification logic, which is **Shlyakhter's move (Oklo, 1976)**, with the rival's own bounds
+rendering any record-derived α bound uncompetitive (every predicted shift `< 3e-4` in `ln τ`).
+
+**The creator step, now T-47:** all three rivals share one structural gap — **no account anywhere
+owns a surviving-record COUNT law.** C-76 killed `k(t_m)` because its width was *chosen*; the natural
+derived clock is the same `W = τ/t_epoch` that survived as S-1. A derived width would make `k(t_m)`
+the one wholly program-owned falsifiable count law.
+
+*Audit note: the enumeration agent's API connection dropped mid-relay; the advocates worked from its
+sealed lane output, and the recorder's descriptive candidate ids are ruled canonical against
+`LANE_T39_A_ENUM`'s sealed list.*
