@@ -12,9 +12,9 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 
 | PROVED | MEASURED | PARTIAL | DEFINED | OPEN | BLOCKED | FAILED | WITHDRAWN | RECLASSIFIED | NOT OURS | FORMAL |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | 2 | 11 | 1 | 25 | 3 | 11 | 9 | 3 | 3 | 166 |
+| 2 | 2 | 11 | 1 | 25 | 3 | 11 | 9 | 3 | 3 | 166 |
 
-**235 rows.**
+**236 rows.**
 
 ---
 
@@ -169,6 +169,7 @@ proofs `PROOF_V001.md` · withdrawn claims `THE_ROAD_V001.md` · narrative `STAT
 | **C-67** | THE ONE RECORD SATISFYING CLAUSES (i)-(iv) EXACTLY IS THE LEAST PROTECTED OBJECT IN THE CENSUS. The CMB photon's polarisation is an exact qubit, exactly durable, exactly degenerate, and its waveplate write genuinely has dE = 0 and is admissible under DEF-A -- and the same waveplate flips it at essentially zero cost, so clause (v) fails outright. Writability in the program's sense and protection in the program's sense are realised by different objects in nature | **FORMAL** | LANE_GR1_CENSUS | — | — |
 | **C-68** | THE WORLD USES ENERGETIC AND KINETIC PROTECTION; THE EXACT CLAUSES ASSUME TOPOLOGICAL PROTECTION. A support-compression argument shows any record whose two states differ only inside a contractible region -- any locally readable record, which is all of them -- has a flipper on that region, so clauses (iv) and (v) are co-satisfiable only on NON-CONTRACTIBLE supports. Nature's one non-contractible record, the superconducting flux quantum, is still flipped by a local phase slip over 0.27 eV; nature's genuinely protected quantities, Chern number and baryon number, are unwritable. At finite T the program's canonical carrier has an O(1) barrier with lifetime independent of L, so one CoCrPt grain outlives a toric code of any size | **FORMAL** | LANE_GR2_PROTECTION; the program's own O-16 measured the same mismatch from inside first | — | — |
 | **C-69** | A CoCrPt HDD GRAIN IS A RECORD OF THIS PROGRAM UNDER THE AMENDED CLAUSES, AND IS NOT ONE UNDER THE EXACT CLAUSES | **PROVED** | LANE_T29_HDD | — | — |
+| **C-70** | THE Z[i] QUANTISATION IS AN ARTIFACT OF EXACTNESS AND THE GRAVITY-STRENGTH EXCLUSION DOES NOT INHERIT TO THE WORLD. On the exact [[4,2,2]] carrier 4000 integer-coefficient polynomials give minimum non-zero modulus exactly 1.0000000000 with nothing strictly inside (0,1), reproducing C-52. The same operation on a metastable thermal record gives <R>_ss = tanh(dE/2kT), a continuous function of the SPLITTING: 0.905, 0.462, 0.149, 0.0500, 0.00500, 5.00e-5, 5.00e-9 as dE/kT falls from 3 to 1e-8. The BARRIER is not the variable -- moving E_b/kT from 60.8 to 15.2 changes the lifetime by 25 orders of magnitude and leaves the value fixed at 0.905148254. This shows nothing FORBIDS a small residual on a real record; it does not show one exists | **PROVED** | LANE_T30_TOLERANCE with the exact carrier as the control in the same table | — | — |
 
 ## C. GRAVITY AT THE RECORD LEVEL
 
