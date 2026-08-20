@@ -9802,3 +9802,19 @@ the one wholly program-owned falsifiable count law.
 *Audit note: the enumeration agent's API connection dropped mid-relay; the advocates worked from its
 sealed lane output, and the recorder's descriptive candidate ids are ruled canonical against
 `LANE_T39_A_ENUM`'s sealed list.*
+
+---
+
+## T-46 — **THE UNIVERSAL RECORD MODEL IS BUILT.** Every registered headline from one entry point; D-25 enforced at the gate.
+
+`model/geometry.py` + ten new `ProjectModel` methods + `validate_geometry.py`: **31 gates, every
+reproduced number checked against its SEALED lane value**, chained to `validate_project` (**11 → 14
+PASS** with the D-25 guard gates, backward compatible). The adversarial checker **re-derived numbers
+beyond the gated range** — `s = 9, 10` interface ranks, `n = 11, 12` world rows, the ungated
+`WRITE_B` sequence — straight from the sealed OUT files, all equal. Deliberately *not* re-homed: the
+lanes' adversarial control batteries, which remain sealed evidence cited from the docstrings.
+
+**The URM's public gate now enforces D-25:** `URM.surface()` **refuses** a world-tier surface without
+provenance (the pinned-source registry carries Weller–Moser, the JEDEC/detrapping class, the ACS
+azobenzene values) and **refuses** a corner carrier that does not self-declare `DEF-A` — the
+idealisation can never silently pose as the world. The refusals are themselves validator gates.

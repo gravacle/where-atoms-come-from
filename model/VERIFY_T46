@@ -1,0 +1,120 @@
+T-46 ADVERSARIAL VERIFICATION -- GEOMETRY layer fold-in (model/geometry.py,
+model/project_model.py additions, model/validate_geometry.py)
+Verifier: independent session, 2026-08-20.  All checks re-run from scratch.
+
+==============================================================================
+1. VALIDATORS RE-RUN (independent invocations)
+==============================================================================
+  python3 model/validate_geometry.py
+    -> GEOMETRY: 31 PASS, 0 FAIL
+    -> CHAIN validate_project.py: PASS (all 11 original PASS lines present)
+    -> OVERALL: PASS, exit code 0            [confirmed: exit checked separately]
+  python3 model/validate_project.py (standalone)
+    -> 11 PASS, 0 FAIL, exit code 0          [backward compatibility intact]
+  Exit-code wiring read in source: sys.exit(0 if (n_fail == 0 and chain_ok) else 1)
+  -- the conjunction, as required.  Gate count in source: 31 check() calls.
+
+==============================================================================
+2. REPRODUCED NUMBERS RE-DERIVED FROM THE SEALED LANE OUTPUTS DIRECTLY
+   (grep of the sealed .txt/.OUT.txt, then the API called fresh; NOT read from
+   the validator).  All EQUAL.
+==============================================================================
+  C-78  LANE_T42_A_DISTANCE/t42_a_toric.OUT.txt lines 36-40: full L=3 metric
+        [[0,3,3,6],[3,0,6,3],[3,6,0,3],[6,3,3,0]] == ProjectModel.distance over
+        the sealed order (00,10,01,11).  Class minima {L,L,2L}, d_code=L at
+        L=2,3,4 likewise equal (lines 10/30/50).
+  C-79  LANE_T42_D_DERIVE/t42d_derive.OUT.txt lines 20-21: IR2(s)=[6..70],
+        capP(s)=[7..215] for s=2..10 == interface_rank(12,s) -- INCLUDING
+        s=9,10 which the validator does not gate.
+  C-79  same file lines 37-39: IFACE(n)/CAP_d1(n) at n=11 (726,602) and n=12
+        (864,728) == world_interface(n) -- both beyond the validator's n<=10.
+  C-80  LANE_O54_A_CORNER/o54a_two_region.OUT.txt: separated row L=10 s=4 g=1
+        (line 71: all zeros) == mutual_interface(10,4,1); single-contact rows
+        L=8 s=3 g=0 (I_IR=2, I_MI=1) and L=10 s=4 g=0 (4, 2) == API; winding
+        w=2 rows at L=8 (I_IR=I_MI=IDENT=2, JNEW=0, caps 2) == winding_interface.
+  C-80  LANE_O54_C_ATTEMPT/o54c_attempts.OUT.txt lines 219-222: venue (3,7)
+        v=(0,1),(0,2),(0,3): (d,w_min,N_min) = (1,1,1),(2,2,1),(3,3,1) ==
+        coupling_cost, coset 2^22 exhaustive as sealed.
+  C-81  LANE_T43_A_CORNER/t43_corner.OUT.txt lines 213-219 (L=12, s=2..11):
+        STORED [7..259], CERT [6..78], W_B [7,19,28,36,...,84], HIDDEN anchor
+        s=3 -> STORED=19 CERT=14 HIDDEN=5 == certifiability -- the full L=12
+        sequences INCLUDING WRITE_B, which the validator does not gate at all.
+        WRITE0 == 0 on every s (line 198's theorem), computed not narrated.
+  C-83  LANE_T45_CLOCK/t45_clock.txt table (lines 6-10): W=1 -> [488, 58808,
+        5988008]; W=10 -> [1000, 588080, 59880080]; W=1000, inf -> volume ==
+        cert_window at n=10,100,1000.
+  C-71/ LANE_T32_REALSOURCE/t32_source.txt lines 14-24: random N=10 M_r =
+  C-72  2.0160e-18, AC-erased N=10 = -1.0080e-18, random N=1e5 = 1.3608e-16
+        (A m^2), ratios 0.400000/0.002700, DC-free 0, DC-SAT ratio 1 at all N
+        == formation_orientation() (seed-7 draw order verified against the
+        sealed script: per N, random then AC-erased, DC-free by np.tile).
+        LANE_T34_NAND/t34_nand.txt line 16: unwritten |sum| 6.088e-18 C vs
+        tolerance 8.011e-16 C == formation_occupancy() (-38 e vs 5000 e;
+        seed-11 order verified: 1000 draws integers(0,2,1000), then
+        integers(-5,6,1000)).
+
+==============================================================================
+3. API-FIDELITY PROBES: UNTESTED CASES (one per function where feasible),
+   checking definition-not-shortcut.  All as the claim rows demand.
+==============================================================================
+  distance:        genuine exhaustive coset search (solve_affine_f2 over the
+                   plaquette-z + logical-pairing system, span_numpy popcount
+                   min; admissible-op counts match the sealed 2^3/2^8/2^15).
+                   UNTESTED L=5 (kernel 2^24, beyond every sealed case):
+                   class minima {5,5,10}, dcode=5 -- the C-78 law emerges from
+                   the search, it is not hard-coded.
+  interface_rank:  cut-rank both sealed routes gated equal by assertion.
+                   UNTESTED offset (3,4) at (12,5): (IR2,capP)=(30,55) equal
+                   to offset (0,0) -- the T42_D translation-invariance row.
+  world_interface: counted by grain loops (verified in source), not closed
+                   forms; untested n=11,12 equal sealed (section 2).
+  mutual_interface: UNTESTED double-contact rows -- L=6 s=3: (I_IR,I_MI,JNEW)
+                   =(5,2,1); L=8 s=4: (9,4,1) == sealed 4(s-2)+1 law rows;
+                   UNTESTED wrap-contact L=9 s=4 g=1: (4,2) == sealed line.
+  coupling_cost:   UNTESTED venue (4,6): v=(1,1) -> (2,2,2), v=(2,1) ->
+                   (3,3,6) == sealed lines 203/205 (2^25 coset); UNTESTED
+                   (3,7) v=(1,0) -> (1,1,1).  d_gen from BFS on generator
+                   supports, w_min from the exhaustive scan -- independent
+                   instruments, law emerges.
+  certifiability:  CERT two routes + r_in witness construction gated by
+                   assertions; UNTESTED s=6..11 at L=12 equal sealed CERT,
+                   STORED, and WRITE_B sequences (section 2).
+  cert_window:     closed form as the builder declared; UNTESTED (n=12, W=2)
+                   -> 1456 = min(1728, 2*728), consistent with the counted
+                   CAP_d1(12)=728 (which IS gated against the sealed count).
+  formation_*:     sealed rng seed + draw order verified against the sealed
+                   scripts line-by-line; values equal sealed printed numbers.
+  Ported code spot-checked against the sealed sources: coset_min_np is
+  o54c_lib.py's 'pop' branch verbatim-in-substance; solve_affine_f2 is
+  t42_lib.py's; rank/basis/kernel are t42_corner.py's.  Logical pairs come
+  from record_model.symplectic_logicals (sealed, model.sha256-verified) --
+  computed, never nominated.
+
+==============================================================================
+4. SEALS AND BACKWARD COMPATIBILITY
+==============================================================================
+  shasum -c on every source-of-truth lane sidecar: LANE_T42_A_DISTANCE,
+  LANE_T42_C_BOUNDCAP, LANE_T42_D_DERIVE, LANE_O54_A_CORNER, LANE_O54_C_ATTEMPT,
+  LANE_T43_A_CORNER, LANE_T43_B_WORLD, LANE_T45_CLOCK, LANE_T32_REALSOURCE,
+  LANE_T34_NAND -- ALL OK.  model.sha256 (count_law, record_model,
+  validate_formation, validate_model + txts) -- ALL OK.
+  git status (read-only): model changes are geometry.py + validate_geometry.py
+  (new) and project_model.py (+104 lines, 0 deletions -- purely additive).
+  No register, no ledger, no REGISTER_V001.md changes.
+  Two OTHER dirty paths observed, NOT the builder's work:
+    - LANE_T44_C_COMPOSE/model/t44c_compose.py (mtime 12:31, before the
+      geometry work): its CURRENT content matches the lane's own
+      SEALS.sha256, so the on-disk file IS the sealed T-44 version; the git
+      baseline is an older draft.  Concurrent T-44 lane activity.
+    - replicate/reproduce_full2.log (mtime 13:02): a running replication-
+      harness log appending IDENTICAL/SKIP rows; a working log, not a sealed
+      artifact.  (One pre-existing row there: LANE_O36_EXACT o36_whyfail.py
+      "DIFFERS (2 lines)" -- unrelated to T-46.)
+
+==============================================================================
+VERDICT: CONFIRMED.  31+11 PASS, exit 0, conjunction wired; every sampled
+number equals its sealed source read directly; untested probes behave per the
+claim-row definitions (algorithms, not shortcuts); sealed lanes, register,
+ledger untouched; model backward compatible.  Only nit: cert_window casts
+W with int(), silently flooring a fractional W -- no sealed case is
+fractional, cosmetic only.

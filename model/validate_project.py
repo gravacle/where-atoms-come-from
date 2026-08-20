@@ -66,6 +66,20 @@ cfg_w = M.configuration(1.602e-17, np.ones(1000))
 cfg_u = M.configuration(1.602e-17, np.zeros(1000))
 check("formation: written ratio = 1", cfg_w['ratio'] == 1.0, f"ratio {cfg_w['ratio']}")
 check("formation: unwritten is null", cfg_u['ratio'] is None and cfg_u['sum'] == 0.0, "sum 0, ratio undefined")
+# D-25: the URM's public gate must REFUSE undeclared surfaces — the guard is tested, not assumed
+from project_model import URM
+try:
+    URM.surface("mystery device", "unknown", 1e-20, 1e-19, 300.0, 1e9)
+    check("D-25 guard refuses undeclared world surface", False, "no refusal raised")
+except ValueError:
+    check("D-25 guard refuses undeclared world surface", True, "ValueError raised")
+try:
+    URM.surface("toy torus", "stabiliser", 0.0, 0.0, 0.0, 0.0, tier="corner")
+    check("D-25 guard requires DEF-A self-declaration", False, "no refusal raised")
+except ValueError:
+    check("D-25 guard requires DEF-A self-declaration", True, "ValueError raised")
+ok = URM.surface("CoCrPt grain", "magnetic anisotropy", 3.0*G.KB*300, 2.0e5*1.26e-24, 300.0, 1e9)
+check("D-25 registry supplies pinned provenance", "Weller" in ok.provenance, ok.provenance[:60])
 print("=" * 78)
 print(f"  {n_pass} PASS, {n_fail} FAIL")
 sys.exit(1 if n_fail else 0)
