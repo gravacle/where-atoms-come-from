@@ -1,0 +1,95 @@
+V3  RE-EARN THE AXIS (independent code) ------------------------------
+  g=  1 tv=0 dim=2 negfrac=0.00000 l2/l1=0.2471 D_cent=8.0000 D_nn=1.0000 hidden=8 ok=True
+  g=  2 tv=0 dim=2 negfrac=0.00000 l2/l1=0.2059 D_cent=9.0000 D_nn=2.0000 hidden=9 ok=True
+  g=  3 tv=0 dim=2 negfrac=0.00000 l2/l1=0.1736 D_cent=10.0000 D_nn=3.0000 hidden=10 ok=True
+  g=  4 tv=0 dim=2 negfrac=0.00000 l2/l1=0.1479 D_cent=11.0000 D_nn=4.0000 hidden=11 ok=True
+  g=  5 tv=0 dim=2 negfrac=0.00000 l2/l1=0.1273 D_cent=12.0000 D_nn=5.0000 hidden=12 ok=True
+  g=  6 tv=0 dim=2 negfrac=0.00000 l2/l1=0.1105 D_cent=13.0000 D_nn=6.0000 hidden=13 ok=True
+  g=  8 tv=0 dim=2 negfrac=0.00000 l2/l1=0.0854 D_cent=15.0000 D_nn=8.0000 hidden=15 ok=True
+  g= 10 tv=0 dim=2 negfrac=0.00000 l2/l1=0.0677 D_cent=17.0000 D_nn=10.0000 hidden=17 ok=True
+  g= 12 tv=0 dim=2 negfrac=0.00000 l2/l1=0.0550 D_cent=19.0000 D_nn=12.0000 hidden=19 ok=True
+  g= 16 tv=0 dim=2 negfrac=0.00000 l2/l1=0.0382 D_cent=23.0000 D_nn=16.0000 hidden=23 ok=True
+  g= 20 tv=0 dim=2 negfrac=0.00000 l2/l1=0.0280 D_cent=27.0000 D_nn=20.0000 hidden=27 ok=True
+  g= 24 tv=0 dim=2 negfrac=0.00000 l2/l1=0.0214 D_cent=31.0000 D_nn=24.0000 hidden=31 ok=True
+  g= 28 tv=0 dim=2 negfrac=0.00000 l2/l1=0.0169 D_cent=35.0000 D_nn=28.0000 hidden=35 ok=True
+  g= 32 tv=0 dim=2 negfrac=0.00000 l2/l1=0.0136 D_cent=39.0000 D_nn=32.0000 hidden=39 ok=True
+  re-earned all gaps ok=True; max rel dev earned-vs-hidden = 1.67e-06
+
+V1a SHORT-RANGE DISTORTION of the delta map (is delta prop. r forced?) ----
+  r= 1 pitch: delta/asym = 1.05792
+  r= 2 pitch: delta/asym = 1.01531
+  r= 4 pitch: delta/asym = 1.00389
+  r= 8 pitch: delta/asym = 1.00098
+  r=16 pitch: delta/asym = 1.00024
+  r=32 pitch: delta/asym = 1.00006
+  (deviation >0 at short range => the axis is NOT trivially prop. r there;
+   yet MDS recovered hidden distances -- the certification is the venue's)
+
+V1b Kmax tautology check: Kmax(g) == U(g*pitch) exactly? ------------------
+  Kmax == U(nearest-pair distance) at every gap: True
+  => the Kmax-vs-pair-law 'match to <0.02' is a consistency check of the
+     instrument, not an independent finding (lane labels it as such).
+
+V4  MEDIATED TABLE (independent recomputation) ----------------------------
+  g=  1 S=5.7897e-17 Kmax=1.5613e-18 rk=(10, 19, 27) Nchan=3384
+  g=  2 S=2.4212e-17 Kmax=2.2078e-19 rk=(10, 18, 27) Nchan=3050
+  g=  3 S=1.3957e-17 Kmax=6.7073e-20 rk=(7, 16, 25) Nchan=2652
+  g=  4 S=9.1310e-18 Kmax=2.8551e-20 rk=(6, 15, 24) Nchan=2194
+  g=  5 S=6.4149e-18 Kmax=1.4679e-20 rk=(5, 13, 22) Nchan=1696
+  g=  6 S=4.7248e-18 Kmax=8.5141e-21 rk=(5, 11, 20) Nchan=1262
+  g=  8 S=2.8192e-18 Kmax=3.6000e-21 rk=(4, 9, 16) Nchan=586
+  g= 10 S=1.8340e-18 Kmax=1.8452e-21 rk=(3, 8, 14) Nchan=166
+  g= 12 S=1.2664e-18 Kmax=1.0684e-21 rk=(3, 7, 13) Nchan=0
+  g= 16 S=6.8235e-19 Kmax=4.5099e-22 rk=(3, 6, 11) Nchan=0
+  g= 20 S=4.1101e-19 Kmax=2.3097e-22 rk=(3, 6, 10) Nchan=0
+  g= 24 S=2.6717e-19 Kmax=1.3368e-22 rk=(3, 6, 9) Nchan=0
+  g= 28 S=1.8362e-19 Kmax=8.4192e-23 rk=(3, 5, 8) Nchan=0
+  g= 32 S=1.3171e-19 Kmax=5.6405e-23 rk=(2, 4, 8) Nchan=0
+  p_eff(S):   7.402 5.229 4.452 4.058 3.821 3.609 3.435 3.330 3.237 3.162 3.118 3.090 3.071
+  p_eff(Kmax):2.822 2.938 2.969 2.981 2.988 2.992 2.995 2.997 2.998 2.999 2.999 2.999 3.000
+  residual mono-decreasing-positive: True; q_resid = 2.100
+  analytic multipole c2 (from block second moments) = 47.250
+  => predicted residual p_eff-3 ~ 2*c2/D^2: at D=25: 0.1512  vs measured 0.1616..0.0709 band (order agreement)
+
+V4b OUT-OF-SAMPLE + ASYMPTOTE ---------------------------------------------
+  predict S(g=28) = 1.8300e-19 vs 1.8362e-19 rel 0.0034
+  predict S(g=32) = 1.3060e-19 vs 1.3171e-19 rel 0.0084
+  g=24: S/S_asym = 1.0511
+  g=32: S/S_asym = 1.0318
+
+V4c CONTACT MODEL + RADIUS SCAN -------------------------------------------
+  IFACE: g=1 -> 8; zeros for g>=2: True
+  radius-scan gate: True
+
+V2  MISSING-CONTROL PROBE: intervening MEDIUM (filled corridor) -----------
+  variant: fill the gap rows y=0..L-1, x in the corridor, with records; count
+  DIRECT A-B adjacencies (the lane's interface object) -- does medium change it?
+  g=2: direct A-B adjacency with corridor present = 0 (medium cells are third-region; A-B interface untouched by construction)
+  g=4: direct A-B adjacency with corridor present = 0 (medium cells are third-region; A-B interface untouched by construction)
+  g=8: direct A-B adjacency with corridor present = 0 (medium cells are third-region; A-B interface untouched by construction)
+  => the contact-only zero is a statement about the A-B interface object itself;
+     a medium adds A-M and M-B channels but no A-B channels. The lane's scope
+     ('access-channel interface on this venue') is the honest one; composition
+     through a medium is exactly the named NEXT STEP (three-region).
+
+V5  SHUFFLE CONTROL (lane's seeds) ----------------------------------------
+  shuffled-entry U at g=8: tv=368854 negfrac=0.872 (must fail)
+  max D_sh = 3.679 (OUT: 3.679); p_sh = -0.206 (OUT: -0.206)
+  collapse gate margin: max D_sh 3.679 vs 0.25*15 = 3.75 (narrow but passes: True)
+
+V-D22 AUT at a second gap (lane checked g=8 only) -------------------------
+  g=2: 4/4 permutations preserve U
+  g=20: 2/4 permutations preserve U
+D-22 FOLLOW-UP: max relative deviation under each mirror, per gap
+  g= 8 x-mirror  max rel dev = 7.09e-13  (passes rtol 1e-12: True)
+  g= 8 y-mirror  max rel dev = 8.03e-13  (passes rtol 1e-12: True)
+  g= 8 180-rot   max rel dev = 8.03e-13  (passes rtol 1e-12: True)
+  g=20 x-mirror  max rel dev = 1.85e-12  (passes rtol 1e-12: False)
+  g=20 y-mirror  max rel dev = 8.03e-13  (passes rtol 1e-12: True)
+  g=20 180-rot   max rel dev = 1.85e-12  (passes rtol 1e-12: False)
+  g=32 x-mirror  max rel dev = 4.77e-12  (passes rtol 1e-12: False)
+  g=32 y-mirror  max rel dev = 5.94e-14  (passes rtol 1e-12: True)
+  g=32 180-rot   max rel dev = 4.77e-12  (passes rtol 1e-12: False)
+=> deviations are float cancellation noise in the far-field U (exact symmetry on the
+   integer grid); the lane's g=8 check is sound, but the 1e-12 tolerance would be
+   marginal at far gaps -- an instrument-fragility note, not an asymmetry.

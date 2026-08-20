@@ -1,0 +1,428 @@
+====================================================================================================
+O-54-A  TWO-REGION INTERFACE vs EARNED SEPARATION -- PURE-GAMMA CORNER TIER
+exact F_2 bitmask arithmetic throughout; no floats; every PASS/FAIL is a computed boolean
+====================================================================================================
+
+SECTION 0 -- VENUE (D-22).  Toric carrier as in C-74/C-79; per L: product of all
+stars = product of all plaquettes = identity, sector ranks = L^2-1, k = 2 logicals.
+  L= 4  n= 32  rank(stars)= 15  rank(plaqs)= 15  k=2  ok=True
+  L= 5  n= 50  rank(stars)= 24  rank(plaqs)= 24  k=2  ok=True
+  L= 6  n= 72  rank(stars)= 35  rank(plaqs)= 35  k=2  ok=True
+  L= 7  n= 98  rank(stars)= 48  rank(plaqs)= 48  k=2  ok=True
+  L= 8  n=128  rank(stars)= 63  rank(plaqs)= 63  k=2  ok=True
+  L= 9  n=162  rank(stars)= 80  rank(plaqs)= 80  k=2  ok=True
+  L=10  n=200  rank(stars)= 99  rank(plaqs)= 99  k=2  ok=True
+  L=11  n=242  rank(stars)=120  rank(plaqs)=120  k=2  ok=True
+  L=12  n=288  rank(stars)=143  rank(plaqs)=143  k=2  ok=True
+
+====================================================================================================
+SECTION 1 -- MAIN SWEEP (INDUCED, pure Gamma: nothing added to the venue).
+A, B = s x s vertex blocks, rows aligned, A at column 0, B at column s+g.
+g = vertex columns strictly between; g_eff = min(g, L-2s-g); dV = C-78 crossing count.
+I_IR = IR2(A)+IR2(B)-IR2(AuB); I_MI = stabiliser mutual information (HIZ, log2 units).
+   L   s   ggeff  dV  SBIR2AIR2BIR2ABI_IRI_MIcapAcapBcapABJNEWIDENT  JC
+   4   2   0   0   1   2   6   6  11   1   0   0   0   1   1   0   1
+   5   2   0   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   5   2   1   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   6   2   0   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   6   2   1   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+   6   2   2   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   6   3   0   0   1   4  14  14  23   5   2   0   0   1   1   0   1
+   7   2   0   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   7   2   1   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+   7   2   2   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+   7   2   3   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   7   3   0   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+   7   3   1   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+   8   2   0   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   8   2   1   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+   8   2   2   2   3   0   6   6  12   0   0   0   0   0   0   0   0
+   8   2   3   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+   8   2   4   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   8   3   0   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+   8   3   1   1   2   0  14  14  28   0   0   0   0   0   0   0   0
+   8   3   2   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+   8   4   0   0   1   6  22  22  35   9   4   0   0   1   1   0   1
+   9   2   0   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   9   2   1   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+   9   2   2   2   3   0   6   6  12   0   0   0   0   0   0   0   0
+   9   2   3   2   3   0   6   6  12   0   0   0   0   0   0   0   0
+   9   2   4   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+   9   2   5   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+   9   3   0   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+   9   3   1   1   2   0  14  14  28   0   0   0   0   0   0   0   0
+   9   3   2   1   2   0  14  14  28   0   0   0   0   0   0   0   0
+   9   3   3   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+   9   4   0   0   1   3  22  22  40   4   2   0   0   0   0   0   0
+   9   4   1   0   1   3  22  22  40   4   2   0   0   0   0   0   0
+  10   2   0   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+  10   2   1   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+  10   2   2   2   3   0   6   6  12   0   0   0   0   0   0   0   0
+  10   2   3   3   4   0   6   6  12   0   0   0   0   0   0   0   0
+  10   2   4   2   3   0   6   6  12   0   0   0   0   0   0   0   0
+  10   2   5   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+  10   2   6   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+  10   3   0   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+  10   3   1   1   2   0  14  14  28   0   0   0   0   0   0   0   0
+  10   3   2   2   3   0  14  14  28   0   0   0   0   0   0   0   0
+  10   3   3   1   2   0  14  14  28   0   0   0   0   0   0   0   0
+  10   3   4   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+  10   4   0   0   1   3  22  22  40   4   2   0   0   0   0   0   0
+  10   4   1   1   2   0  22  22  44   0   0   0   0   0   0   0   0
+  10   4   2   0   1   3  22  22  40   4   2   0   0   0   0   0   0
+  11   2   0   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+  11   2   1   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+  11   2   2   2   3   0   6   6  12   0   0   0   0   0   0   0   0
+  11   2   3   3   4   0   6   6  12   0   0   0   0   0   0   0   0
+  11   2   4   3   4   0   6   6  12   0   0   0   0   0   0   0   0
+  11   2   5   2   3   0   6   6  12   0   0   0   0   0   0   0   0
+  11   2   6   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+  11   2   7   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+  11   3   0   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+  11   3   1   1   2   0  14  14  28   0   0   0   0   0   0   0   0
+  11   3   2   2   3   0  14  14  28   0   0   0   0   0   0   0   0
+  11   3   3   2   3   0  14  14  28   0   0   0   0   0   0   0   0
+  11   3   4   1   2   0  14  14  28   0   0   0   0   0   0   0   0
+  11   3   5   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+  11   4   0   0   1   3  22  22  40   4   2   0   0   0   0   0   0
+  11   4   1   1   2   0  22  22  44   0   0   0   0   0   0   0   0
+  11   4   2   1   2   0  22  22  44   0   0   0   0   0   0   0   0
+  11   4   3   0   1   3  22  22  40   4   2   0   0   0   0   0   0
+  12   2   0   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+  12   2   1   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+  12   2   2   2   3   0   6   6  12   0   0   0   0   0   0   0   0
+  12   2   3   3   4   0   6   6  12   0   0   0   0   0   0   0   0
+  12   2   4   4   5   0   6   6  12   0   0   0   0   0   0   0   0
+  12   2   5   3   4   0   6   6  12   0   0   0   0   0   0   0   0
+  12   2   6   2   3   0   6   6  12   0   0   0   0   0   0   0   0
+  12   2   7   1   2   0   6   6  12   0   0   0   0   0   0   0   0
+  12   2   8   0   1   1   6   6  12   0   0   0   0   0   0   0   0
+  12   3   0   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+  12   3   1   1   2   0  14  14  28   0   0   0   0   0   0   0   0
+  12   3   2   2   3   0  14  14  28   0   0   0   0   0   0   0   0
+  12   3   3   3   4   0  14  14  28   0   0   0   0   0   0   0   0
+  12   3   4   2   3   0  14  14  28   0   0   0   0   0   0   0   0
+  12   3   5   1   2   0  14  14  28   0   0   0   0   0   0   0   0
+  12   3   6   0   1   2  14  14  26   2   1   0   0   0   0   0   0
+  12   4   0   0   1   3  22  22  40   4   2   0   0   0   0   0   0
+  12   4   1   1   2   0  22  22  44   0   0   0   0   0   0   0   0
+  12   4   2   2   3   0  22  22  44   0   0   0   0   0   0   0   0
+  12   4   3   1   2   0  22  22  44   0   0   0   0   0   0   0   0
+  12   4   4   0   1   3  22  22  40   4   2   0   0   0   0   0   0
+
+CONTACT VALUES (every g_eff = 0 row; wrap seams included):
+  L= 4 s=2 g= 0  DOUBLE seam  I_IR=1  I_MI=0  JNEW=1  IDENT=0
+  L= 5 s=2 g= 0  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 5 s=2 g= 1  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 6 s=2 g= 0  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 6 s=2 g= 2  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 6 s=3 g= 0  DOUBLE seam  I_IR=5  I_MI=2  JNEW=1  IDENT=0
+  L= 7 s=2 g= 0  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 7 s=2 g= 3  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 7 s=3 g= 0  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L= 7 s=3 g= 1  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L= 8 s=2 g= 0  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 8 s=2 g= 4  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 8 s=3 g= 0  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L= 8 s=3 g= 2  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L= 8 s=4 g= 0  DOUBLE seam  I_IR=9  I_MI=4  JNEW=1  IDENT=0
+  L= 9 s=2 g= 0  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 9 s=2 g= 5  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L= 9 s=3 g= 0  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L= 9 s=3 g= 3  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L= 9 s=4 g= 0  single seam  I_IR=4  I_MI=2  JNEW=0  IDENT=0
+  L= 9 s=4 g= 1  single seam  I_IR=4  I_MI=2  JNEW=0  IDENT=0
+  L=10 s=2 g= 0  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L=10 s=2 g= 6  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L=10 s=3 g= 0  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L=10 s=3 g= 4  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L=10 s=4 g= 0  single seam  I_IR=4  I_MI=2  JNEW=0  IDENT=0
+  L=10 s=4 g= 2  single seam  I_IR=4  I_MI=2  JNEW=0  IDENT=0
+  L=11 s=2 g= 0  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L=11 s=2 g= 7  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L=11 s=3 g= 0  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L=11 s=3 g= 5  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L=11 s=4 g= 0  single seam  I_IR=4  I_MI=2  JNEW=0  IDENT=0
+  L=11 s=4 g= 3  single seam  I_IR=4  I_MI=2  JNEW=0  IDENT=0
+  L=12 s=2 g= 0  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L=12 s=2 g= 8  single seam  I_IR=0  I_MI=0  JNEW=0  IDENT=0
+  L=12 s=3 g= 0  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L=12 s=3 g= 6  single seam  I_IR=2  I_MI=1  JNEW=0  IDENT=0
+  L=12 s=4 g= 0  single seam  I_IR=4  I_MI=2  JNEW=0  IDENT=0
+  L=12 s=4 g= 4  single seam  I_IR=4  I_MI=2  JNEW=0  IDENT=0
+  exact single-seam form   I_IR = 2(s-2), I_MI = s-2, no joint content : True
+  exact double-seam form   I_IR = 4(s-2)+1, I_MI = 2(s-2), JOINT_NEW = 1
+    (the union winds the torus; ONE genuinely joint record class)     : True
+
+CONVENTION NOTE (g=0, L=8, s=3): edge-union I_IR = 2 ; induced-union variant
+  (seam edges included in the joint region) gives I_IR_ind = 2.  Both reported;
+  the edge-union (disjoint qubit sets) is the mutual-information object (HIZ).
+
+====================================================================================================
+SECTION 2 -- CONTROL (iv): CORRIDOR SWEEP (INSERTED geometry: the region is grown,
+the venue untouched).  A 2-row corridor of length c toward B; a falloff in the
+remaining distance g-c would appear as graded I(c); the law is read from the table.
+   L   s   g   c  I_IR  I_MI    SB
+  10   3   1   0     0     0     0
+  10   3   1   1     0     0     1
+  10   3   2   0     0     0     0
+  10   3   2   1     0     0     0
+  10   3   2   2     0     0     1
+  10   3   3   0     0     0     0
+  10   3   3   1     0     0     0
+  10   3   3   2     0     0     0
+  10   3   3   3     0     0     1
+  10   3   4   0     2     1     2
+  10   3   4   1     2     1     2
+  10   3   4   2     2     1     2
+  10   3   4   3     2     1     2
+  10   3   4   4     3     1     3
+  12   3   1   0     0     0     0
+  12   3   1   1     0     0     1
+  12   3   2   0     0     0     0
+  12   3   2   1     0     0     0
+  12   3   2   2     0     0     1
+  12   3   3   0     0     0     0
+  12   3   3   1     0     0     0
+  12   3   3   2     0     0     0
+  12   3   3   3     0     0     1
+  12   3   4   0     0     0     0
+  12   3   4   1     0     0     0
+  12   3   4   2     0     0     0
+  12   3   4   3     0     0     0
+  12   3   4   4     0     0     1
+  12   3   5   0     0     0     0
+  12   3   5   1     0     0     0
+  12   3   5   2     0     0     0
+  12   3   5   3     0     0     0
+  12   3   5   4     0     0     0
+  12   3   5   5     0     0     1
+  12   3   6   0     2     1     2
+  12   3   6   1     2     1     2
+  12   3   6   2     2     1     2
+  12   3   6   3     2     1     2
+  12   3   6   4     2     1     2
+  12   3   6   5     2     1     2
+  12   3   6   6     3     1     3
+
+====================================================================================================
+SECTION 3 -- CONTROL (ii): NON-CONTRACTIBLE PAIR (INDUCED: the venue's own long-
+range structure).  A, B = winding rings of width w, row gaps (r-w, L-r-w) between.
+   L   wgap1  gap2  I_IR  I_MI  capA  capB capAB  JNEW IDENT
+   8   1   1     5     1     1     1     1     1     0     1
+   8   1   2     4     1     1     1     1     1     0     1
+   8   1   3     3     1     1     1     1     1     0     1
+   8   1   4     2     1     1     1     1     1     0     1
+   8   1   5     1     1     1     1     1     1     0     1
+   8   2   1     3     2     2     2     2     2     0     2
+   8   2   2     2     2     2     2     2     2     0     2
+   8   2   3     1     2     2     2     2     2     0     2
+  10   1   1     7     1     1     1     1     1     0     1
+  10   1   2     6     1     1     1     1     1     0     1
+  10   1   3     5     1     1     1     1     1     0     1
+  10   1   4     4     1     1     1     1     1     0     1
+  10   1   5     3     1     1     1     1     1     0     1
+  10   1   6     2     1     1     1     1     1     0     1
+  10   1   7     1     1     1     1     1     1     0     1
+  10   2   1     5     2     2     2     2     2     0     2
+  10   2   2     4     2     2     2     2     2     0     2
+  10   2   3     3     2     2     2     2     2     0     2
+  10   2   4     2     2     2     2     2     2     0     2
+  10   2   5     1     2     2     2     2     2     0     2
+  12   1   1     9     1     1     1     1     1     0     1
+  12   1   2     8     1     1     1     1     1     0     1
+  12   1   3     7     1     1     1     1     1     0     1
+  12   1   4     6     1     1     1     1     1     0     1
+  12   1   5     5     1     1     1     1     1     0     1
+  12   1   6     4     1     1     1     1     1     0     1
+  12   1   7     3     1     1     1     1     1     0     1
+  12   1   8     2     1     1     1     1     1     0     1
+  12   1   9     1     1     1     1     1     1     0     1
+  12   2   1     7     2     2     2     2     2     0     2
+  12   2   2     6     2     2     2     2     2     0     2
+  12   2   3     5     2     2     2     2     2     0     2
+  12   2   4     4     2     2     2     2     2     0     2
+  12   2   5     3     2     2     2     2     2     0     2
+  12   2   6     2     2     2     2     2     2     0     2
+  12   2   7     1     2     2     2     2     2     0     2
+  distinct (I_MI, IDENT, I_IR) per width: w=1 -> [(1, 1, 1)] ; w=2 -> [(2, 2, 2)]
+
+====================================================================================================
+SECTION 4 -- CONTROL (iii-a): ENCLOSING GEOMETRY (INDUCED).  A = sA x sA block
+inside, B = frame of width w enclosing it, radial gap t swept.
+   L  sA   w   t   q    SB  I_IR  I_MI  capA  capB    JC
+  10   2   2   0   6     4     6     3     0     0     0
+  10   2   2   1   8     0     0     0     0     0     0
+  10   3   2   0   7     8    14     7     0     0     0
+  10   3   2   1   9     0     0     0     0     0     0
+  10   3   1   0   5     8     0     0     0     0     0
+  10   3   1   1   7     0     0     0     0     0     0
+  10   3   1   2   9     0     0     0     0     0     0
+  10   2   1   0   4     4     0     0     0     0     0
+  10   2   1   1   6     0     0     0     0     0     0
+  10   2   1   2   8     0     0     0     0     0     0
+  12   2   2   0   6     4     6     3     0     0     0
+  12   2   2   1   8     0     0     0     0     0     0
+  12   2   2   2  10     0     0     0     0     0     0
+  12   3   2   0   7     8    14     7     0     0     0
+  12   3   2   1   9     0     0     0     0     0     0
+  12   3   2   2  11     0     0     0     0     0     0
+  12   3   1   0   5     8     0     0     0     0     0
+  12   3   1   1   7     0     0     0     0     0     0
+  12   3   1   2   9     0     0     0     0     0     0
+  12   3   1   3  11     0     0     0     0     0     0
+  12   2   1   0   4     4     0     0     0     0     0
+  12   2   1   1   6     0     0     0     0     0     0
+  12   2   1   2   8     0     0     0     0     0     0
+  12   2   1   3  10     0     0     0     0     0     0
+
+====================================================================================================
+SECTION 5 -- CONTROL (iii-b): KITAEV-PRESKILL TRIPARTITE (contact construction,
+owners Kitaev-Preskill 2006 / Levin-Wen 2006): the topological constant KNOWN to
+appear, extracted with the SAME entropy instrument S(R) = |R| - r_in(R).
+Disk = induced edges of a q x q block; edges partitioned A/B/C by midpoint
+(A: top-left, B: top-right, C: bottom).  TEE = SA+SB+SC-SAB-SAC-SBC+SABC.
+  L=12 q= 5 offset=(0,0)  TEE = -1
+  L=12 q= 5 offset=(2,3)  TEE = -1
+  L=12 q= 6 offset=(0,0)  TEE = -1
+  L=12 q= 6 offset=(2,3)  TEE = -1
+  L=12 q= 7 offset=(0,0)  TEE = -1
+  L=12 q= 7 offset=(2,3)  TEE = -1
+  L=12 q= 8 offset=(0,0)  TEE = -1
+  L=12 q= 8 offset=(2,3)  TEE = -1
+  L=12 q= 9 offset=(0,0)  TEE = -1
+  L=12 q= 9 offset=(2,3)  TEE = -1
+  L=12 q=10 offset=(0,0)  TEE = -1
+  L=12 q=10 offset=(2,3)  TEE = -1
+  TEE constant across sizes and offsets: True ; nonzero: True  (value [-1] in log2 units)
+
+====================================================================================================
+SECTION 6 -- CONTROL (v): INSERTED-RANGE ROW (INSERTED -- instrument sensitivity,
+NOT a Gamma venue, NOT a stabiliser code: one open Z-string row of length ell,
+h-edges of row 1, columns 1..ell, added to the rank instrument's generator list.
+Predicted straddle-both onset for L=12, s=3: ell = g+3.  A separation-dependent
+law WOULD register here; whatever this control shows is the COUPLING'S to report,
+never Gamma's (measuring an inserted mediator law and calling it derived is the
+fatal error this label exists to prevent).
+   g  ell  I_IR    SB reach>=g+3?
+   1    2     0     0       False
+   1    3     0     0       False
+   1    4     1     1        True
+   1    5     0     1        True
+   1    6     0     1        True
+   1    7     0     1        True
+   1    8     0     1        True
+   1    9     0     1        True
+   2    2     0     0       False
+   2    3     0     0       False
+   2    4     0     0       False
+   2    5     1     1        True
+   2    6     0     1        True
+   2    7     0     1        True
+   2    8     0     1        True
+   2    9     0     1        True
+   3    2     0     0       False
+   3    3     0     0       False
+   3    4     0     0       False
+   3    5     0     0       False
+   3    6     1     1        True
+   3    7     0     1        True
+   3    8     0     1        True
+   3    9     0     1        True
+   4    2     0     0       False
+   4    3     0     0       False
+   4    4     0     0       False
+   4    5     0     0       False
+   4    6     0     0       False
+   4    7     1     1        True
+   4    8     0     1        True
+   4    9     0     1        True
+   5    2     0     0       False
+   5    3     0     0       False
+   5    4     0     0       False
+   5    5     0     0       False
+   5    6     0     0       False
+   5    7     0     0       False
+   5    8     1     1        True
+   5    9     0     1        True
+
+====================================================================================================
+SECTION 7 -- CONTROL (vi): OFFSET INVARIANCE (D-22 venue symmetry on the numbers).
+  offset (0,0): IR2A,IR2B,IR2AB,I_IR,I_MI,JC = (6, 6, 12, 0, 0, 0)
+  offset (1,2): IR2A,IR2B,IR2AB,I_IR,I_MI,JC = (6, 6, 12, 0, 0, 0)
+  offset (3,5): IR2A,IR2B,IR2AB,I_IR,I_MI,JC = (6, 6, 12, 0, 0, 0)
+  offset (6,7): IR2A,IR2B,IR2AB,I_IR,I_MI,JC = (6, 6, 12, 0, 0, 0)
+
+====================================================================================================
+SECTION 8 -- GATE SUMMARY (each verdict printed FROM the computed boolean):
+  G0_venue                                   PASS
+  G10_offset_invariance                      PASS
+  G1_IR2_two_ways_agree                      PASS
+  G2_contact_necessary_for_nonzero           PASS
+  G2_separated_all_zero                      PASS
+  G3_double_contact_form                     PASS
+  G3_single_contact_form                     PASS
+  G3_wrap_seam_equals_direct_seam            PASS
+  G5_corridor_never_graded                   PASS
+  G5_corridor_wrap_rows_consistent           PASS
+  G6_winding_distance_independent            PASS
+  G6_winding_exact_constant_w                PASS
+  G6_winding_longrange_appears               PASS
+  G7_enclosing_contact_w1_absorbed           PASS
+  G7_enclosing_contact_w2_nonzero            PASS
+  G7_enclosing_separated_zero                PASS
+  G8_KP_constant                             PASS
+  G8_KP_nonzero                              PASS
+  G9_inserted_gives_g_dependence             PASS
+  G9_inserted_straddle_onset_predicted       PASS
+  G9_inserted_unit_shell_at_reach            PASS
+  ALL GATES                                  PASS
+
+====================================================================================================
+SECTION 9 -- THE TWO-REGION LAW (pure Gamma, this venue, exact, gates cited):
+  SEPARATED (g_eff >= 1, contractible pair): I_IR = I_MI = 0 and no joint record
+    content, IDENTICALLY -- not small, not decaying: zero at EVERY positive earned
+    separation, every s, every L to 12 (G2).  Contact of some generator with both
+    regions is NECESSARY for any nonzero value (G2b).
+  CONTACT (one seam):  I_IR = 2(s-2),  I_MI = s-2,  no joint content (G3).  The
+    s=2 case is exactly ZERO: a single-plaquette seam is rank-absorbed -- contact
+    is necessary, NOT sufficient; the seam must carry >= 2 independent straddling
+    constraints.  The same sub-threshold absorption zeroes the 2-row corridor's
+    contact (G5) and the width-1 enclosing frame's contact (G7d).
+  CONTACT (two seams, L = 2s): I_IR = 4(s-2)+1, I_MI = 2(s-2), and JOINT_NEW = 1:
+    the union winds the torus and ONE genuinely joint record class appears --
+    joint content tracks the union's TOPOLOGY, not the separation (G3b).
+  NON-CONTRACTIBLE PAIR: the exact constant w in every column at every distance;
+    the joint structure is pure IDENTIFICATION of wrap classes (G6) -- the venue's
+    long-range structure is visible to the instrument and is distance-independent.
+  ENCLOSING: zero at every positive gap; closed-seam contact registers for width
+    >= 2 frames (G7).  KP tripartite: the known topological constant, TEE = -1,
+    exactly, at every size and offset (G8) -- the instrument sees topological
+    terms where the literature says they exist.
+  INSERTED RANGE: one extra row of reach ell makes the pair relation g-dependent
+    -- a unit shell exactly at the separation the row can just span (G9).  So the
+    instrument WOULD have shown a separation law; pure Gamma has none to show.
+
+HYPOTHESIS VERDICT (computed): pure-Gamma two-region relations on this venue are
+  contact-only or topological -- the hypothesis HOLDS iff all gates pass: HOLDS
+
+====================================================================================================
+SECTION 10 -- FINAL COMPARISON (the ONLY place the target is named, per D-1).
+The comparison target is the Newton-form falloff (interaction weakening smoothly
+and monotonically with separation, 1/r^2 in form).  The pure-Gamma two-region
+relation derived above does NOT have that shape: the exact law is a contact seam
+term plus a topological constant, because every Gamma generator has unit range and
+the venue has zero correlation length.  What Gamma gives at two regions is (a) the
+contact seam law 2(s-2), (b) the topological sector structure (the constant w, the
+wrap-class identification, TEE = -1).  A genuine falloff must therefore enter
+through a term with reach -- the MEDIATOR of the openness clause -- exactly as
+control (v) demonstrates in miniature: one inserted row of reach ell produces a
+separation-dependent shell at the distance it can just span, and that dependence
+is the INSERTED row's law, never Gamma's.  A further honest observation: this
+instrument's codomain is integer rank -- it expresses REACH and TOPOLOGY natively,
+and any smooth graded weakening would have to live in a weighted quantity (the
+coupling's strength, alpha's costs), which is where the mediator increment must
+look.  DIVISION OF LABOR consistent with C-77: Gamma gives the boundary-degree
+law (C-79) and the two-region contact/topological structure (this lane); the
+falloff is the coupling's to give; costs are alpha's.  Nothing in this section
+entered any construction step above.

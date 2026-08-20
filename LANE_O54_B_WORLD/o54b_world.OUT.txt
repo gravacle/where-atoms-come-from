@@ -1,0 +1,243 @@
+====================================================================================================
+O-54-B   TWO-REGION INTERFACE vs EARNED SEPARATION -- WORLD TIER
+====================================================================================================
+
+D-22  VENUE: two L x L blocks on the integer grid, gap g along x.
+  permutations preserving U at g=8: 4/4 (identity, x-mirror, y-mirror, 180-rot)
+  => venue Aut contains Z_2 x Z_2; x-mirror SWAPS the blocks: A and B are exchangeable,
+     so Interface(A,B) is symmetric by venue symmetry .......... PASS
+
+====================================================================================================
+STEP 1  THE EARNED SEPARATION AXIS (T42_B instrument, RECOMPUTED per configuration)
+----------------------------------------------------------------------------------------------------
+  per gap: analysis receives only the 128x128 matrix U; map delta = U^(-1/3)
+  (EARNED by T42_B's two-sided p-scan, reused with citation); triangle scan rtol 1e-9;
+  MDS dim@1%; earned unit = median NN distance in the embedding (float64, sqrt venue).
+
+  TWO earned separations, both read off the embedding: D_cent (between block centroids)
+  and D_nn (nearest cross-block cells) -- each aggregate below is measured against the
+  axis that is its own scale (the strongest single channel lives at the nearest cells).
+
+       g tri-viol  dim@1%  |neg|/l1    l2/l1   D_cent     D_nn   gate
+       1        0       2    0.0000   0.2471    8.000    1.000   PASS
+       2        0       2    0.0000   0.2059    9.000    2.000   PASS
+       3        0       2    0.0000   0.1736   10.000    3.000   PASS
+       4        0       2    0.0000   0.1479   11.000    4.000   PASS
+       5        0       2    0.0000   0.1273   12.000    5.000   PASS
+       6        0       2    0.0000   0.1105   13.000    6.000   PASS
+       8        0       2    0.0000   0.0854   15.000    8.000   PASS
+      10        0       2    0.0000   0.0677   17.000   10.000   PASS
+      12        0       2    0.0000   0.0550   19.000   12.000   PASS
+      16        0       2    0.0000   0.0382   23.000   16.000   PASS
+      20        0       2    0.0000   0.0280   27.000   20.000   PASS
+      24        0       2    0.0000   0.0214   31.000   24.000   PASS
+      28        0       2    0.0000   0.0169   35.000   28.000   PASS
+      32        0       2    0.0000   0.0136   39.000   32.000   PASS
+
+  INSTRUMENT SCOPE (computed, stated openly): dim@1% reads 2 only while l2/l1 > 0.01;
+  at g=32 the two-block venue reaches l2/l1 = 0.0136 -- the sweep ends where
+  the earned-dimension instrument still certifies the venue, not where the law runs out.
+
+  metric + dim 2 re-earned at every gap ........................ PASS
+  D_earned strictly increasing across the sweep (earned data alone) .... PASS
+  axis dynamic range: D_earned 8.00 -> 39.00 (x4.9)
+  D-15 (instrument): SHUFFLED-ENTRY U at g=8: tri-viol 368854, |neg|/l1 0.872 -> must fail to embed .... PASS (fails, as required)
+
+====================================================================================================
+SUB-EXPERIMENT (1)  CONTACT MODEL -- access channels nearest-neighbour only (no mediator)
+----------------------------------------------------------------------------------------------------
+  Interface(A,B) = number of A-B nearest-neighbour adjacencies on the integer grid
+  (C-79's world-tier IFACE, owner LANE_T42_C, counted between regions; EXACT integers).
+
+       g  D_earned  IFACE_contact
+       1     8.000              8
+       2     9.000              0
+       3    10.000              0
+       4    11.000              0
+       5    12.000              0
+       6    13.000              0
+       8    15.000              0
+      10    17.000              0
+      12    19.000              0
+      16    23.000              0
+      20    27.000              0
+      24    31.000              0
+      28    35.000              0
+      32    39.000              0
+
+  RESULT: Interface = 8 at contact (g=1), exactly 0 for every g >= 2,
+  while the earned separation varies by x4.9: the pure-access
+  two-region relation is CONTACT-ONLY -- a topological (adjacency) quantity, carrying
+  NO dependence on the earned separation.
+    zero at every separated gap (exact count) ................. PASS
+    D-15 control (i): adjacent blocks non-zero (8 channels = L) ....... PASS
+    earned axis genuinely varied under the zero ............... PASS
+
+  CONTACT-RADIUS SCAN (control: the zero begins exactly where the declared radius ends,
+  i.e. the zero is the access model's, not the counting instrument's):
+    radius 1 pitch: g=1:8  g=2:0  g=3:0  g=4:0  g=5:0  g=6:0
+    radius 2 pitch: g=1:38  g=2:8  g=3:0  g=4:0  g=5:0  g=6:0
+    radius 3 pitch: g=1:126  g=2:50  g=3:8  g=4:0  g=5:0  g=6:0
+    non-zero exactly for g <= declared radius, zero beyond .... PASS
+  (the falloff-capable control for this flat zero line is sub-experiment (2): the SAME
+   venue and the same earned axis, where channels exist at every separation and the
+   instrument reads a non-flat law -- see below)
+
+====================================================================================================
+SUB-EXPERIMENT (2)  MEDIATED MODEL -- the image-monopole coupling as a DECLARED term
+----------------------------------------------------------------------------------------------------
+  INSERTED: U(r) = kq^2(1/r - 1/sqrt(r^2+4h^2)) between every A-cell and B-cell.
+  Its large-r r^-3 form is the MEDIATOR'S OWN LAW (classical image construction, owner
+  LANE_T34_NAND) -- inserted physics, reportable only as the coupling's contribution.
+  Aggregates of the 64x64 cross-block matrix K (float64; sums exact to machine precision,
+  SVD tolerance stated by threshold):
+
+       g  D_earned   S=sum K (J)    Kmax (J)  rk@1e-2  rk@1e-4  rk@1e-6  N_chan
+       1     8.000    5.7897e-17  1.5613e-18       10       19       27    3384
+       2     9.000    2.4212e-17  2.2078e-19       10       18       27    3050
+       3    10.000    1.3957e-17  6.7073e-20        7       16       25    2652
+       4    11.000    9.1310e-18  2.8551e-20        6       15       24    2194
+       5    12.000    6.4149e-18  1.4679e-20        5       13       22    1696
+       6    13.000    4.7248e-18  8.5141e-21        5       11       20    1262
+       8    15.000    2.8192e-18  3.6000e-21        4        9       16     586
+      10    17.000    1.8340e-18  1.8452e-21        3        8       14     166
+      12    19.000    1.2664e-18  1.0684e-21        3        7       13       0
+      16    23.000    6.8235e-19  4.5099e-22        3        6       11       0
+      20    27.000    4.1101e-19  2.3097e-22        3        6       10       0
+      24    31.000    2.6717e-19  1.3368e-22        3        6        9       0
+      28    35.000    1.8362e-19  8.4192e-23        3        5        8       0
+      32    39.000    1.3171e-19  5.6405e-23        2        4        8       0
+
+  N_chan threshold declared as U(12*pitch) = 1.068e-21 J: the count reaches 0 for
+  g > 12 -- ANY absolute-thresholded channel notion is contact-like with a radius set
+  by the threshold (an induced observation about thresholding, not a falloff law).
+
+  FINITE-DIFFERENCE LOG-LOG EXPONENTS (no fit anywhere). Each aggregate against the
+  earned axis that is its own scale: S (block aggregate) vs D_cent; Kmax (the single
+  strongest channel, which lives at the nearest cells) vs D_nn. The p_pair column is
+  the DECLARED law's own analytic slope at the matching scale (D_cent x declared pitch,
+  T34 GIVEN-DATA) -- labelling of the inserted physics, not a finding.
+          interval  p_eff(S) p_eff(Kmax) p_pair(midpt)
+         1->2          7.402       2.822         2.995
+         2->3          5.229       2.938         2.996
+         3->4          4.452       2.969         2.997
+         4->5          4.058       2.981         2.997
+         5->6          3.821       2.988         2.998
+         6->8          3.609       2.992         2.998
+         8->10         3.435       2.995         2.999
+        10->12         3.330       2.997         2.999
+        12->16         3.237       2.998         2.999
+        16->20         3.162       2.999         2.999
+        20->24         3.118       2.999         3.000
+        24->28         3.090       2.999         3.000
+        28->32         3.071       3.000         3.000
+
+  READINGS (gated):
+    the mediated interface is NON-FLAT: S drops x440 over the sweep
+    (this is the falloff-capable control beside sub-experiment (1)'s zero) .... PASS
+    FINDING (a) -- WHAT AGGREGATION ACTUALLY GIVES (computed, not assumed):
+      the strongest single channel Kmax tracks the inserted pair law on its own earned
+      axis D_nn: far intervals match the declared law's analytic slope to <0.02 .... PASS
+      the BLOCK aggregate S runs STEEPER than the pair law at finite separation
+      (contact interval p_eff = 7.402) and approaches the pair exponent 3 from
+      above: residual p_eff(S)-3 positive and strictly decreasing at every interval .... PASS
+      the residual's own decay exponent (finite differences on the residuals, far range):
+      q = 2.10 -- a ~1/D^2 aggregation correction (multipole-type, from block
+      extent), vanishing as separation grows .... PASS
+      far-range block exponent p_eff(S) = 3.093: the block-level law INHERITS the
+      inserted pair exponent asymptotically; aggregation changes the exponent only by
+      the measured, decaying finite-size correction ............ PASS
+    coupling-weighted interface RANK falls with separation at every declared threshold
+    (monotone non-increasing, all thresholds) ................. PASS
+    near blocks couple through 10 channels @1e-2; far blocks through 2: the
+    mediated interface collapses toward a single aggregate channel .... PASS
+    the rank sequence is threshold-dependent (declared taus differ column to column):
+    reported as the coupling's structure, no universal law claimed
+
+  OUT-OF-SAMPLE (two-point, zero fitted parameters):
+    exponent+amplitude from g=(20,24) -> predict S at g=28: 1.8300e-19 vs 1.8362e-19  rel err 0.0034 .... PASS
+    exponent+amplitude from g=(20,24) -> predict S at g=32: 1.3060e-19 vs 1.3171e-19  rel err 0.0084 .... PASS
+
+====================================================================================================
+STEP 4  D-15 CONTROL -- SHUFFLED POSITIONS (seeded): cells reassigned to positions at
+random; the same 128 positions, the same coupling law, block LABELS kept. The earned
+separation must collapse and the law must break.
+----------------------------------------------------------------------------------------------------
+       g D_earned_sh      S_sh (J)
+       1       1.050    3.5257e-16
+       2       0.600    3.3527e-16
+       3       0.439    3.2308e-16
+       4       0.818    3.3735e-16
+       5       0.590    3.4388e-16
+       6       1.846    3.3234e-16
+       8       0.447    3.4477e-16
+      10       1.906    3.1300e-16
+      12       1.040    3.2729e-16
+      16       2.164    3.1666e-16
+      20       2.606    3.0284e-16
+      24       1.017    3.3099e-16
+      28       3.679    3.3118e-16
+      32       1.094    3.2673e-16
+
+  earned inter-block separation collapses (max 3.68 vs real axis >= 15.00) .... PASS
+  monotone ordering destroyed ................................. PASS
+  far-range exponent of S_sh vs sweep axis: -0.206 (law's 3 gone) .... PASS
+
+====================================================================================================
+FINAL COMPARISON (hidden generator values and the comparison target, here and only here)
+----------------------------------------------------------------------------------------------------
+  (a) earned vs hidden separation: D_earned agrees with the hidden centroid distance
+      (g + 7 pitches) to max relative deviation 0.0000 across the sweep .... PASS
+      (the earning recomputed the axis; nothing was assumed from the generator)
+  (b) inheritance against the inserted law's own asymptote S ~ N_A N_B * 2kq^2h^2 / D^3:
+      g=24: S/S_asym = 1.0511 .... PASS
+      g=32: S/S_asym = 1.0318 .... PASS
+  (c) THE COMPARISON TARGET (named here only): the Newton-form falloff, force ~ r^-2 /
+      potential ~ r^-1 between separated bodies. What this lane finds is NOT that form:
+      the mediated block law is the mediator's own r^-3 (image-dipole), INSERTED, and
+      inherited unchanged by aggregation; the pure-access (Gamma-side) relation is
+      contact-only, i.e. NO falloff at all. The division of labour reads: Gamma gives
+      topological/contact interface structure; ANY genuine falloff, including whatever
+      law the world's mediators actually carry, enters through the coupling term under
+      the openness clause. Nothing here derives, and nothing here credits to Gamma,
+      any specific falloff exponent.
+
+====================================================================================================
+HYPOTHESIS VERDICT
+----------------------------------------------------------------------------------------------------
+  pure-Gamma (access-only) two-region relation topological/contact-only .... PASS
+  genuine falloff present, and it enters through the DECLARED coupling term .... PASS
+  earned axis sound + instrument controls + shuffle control .... PASS
+  => THE HYPOTHESIS HOLDS on this venue: the falloff is not Gamma's to give;
+     it is the mediator's, reported as the coupling's contribution .... PASS
+
+====================================================================================================
+D-24 AUDIT TABLE (every concept used)
+----------------------------------------------------------------------------------------------------
+  record identity           GIVEN-DATA                census flash-gate barrier records, owner LANE_GR1_CENSUS
+  carrier parameters        GIVEN-DATA                q=100e, h=10nm, pitch=40nm, eps_r=3.9, owner LANE_T34_NAND
+  coupling U(r)             INSERTED                  image-monopole law, classical image construction via T34; its r^-3 is the mediator's, never Gamma's
+  map delta=U^(-1/3)        EARNED (T42_B), cited     pinned there from both sides; re-validated here per gap (tv=0, dim 2)
+  classical MDS             BORROWED                  Torgerson-Gower double-centering (the earning instrument)
+  earned separation D       EARNED                    recomputed per gap from U alone; unit = embedding's own median NN distance
+  interface (contact)       EARNED                    C-79 world-tier IFACE (adjacency channels, owner T42_C) counted between regions; exact integers
+  interface (mediated)      DECLARED                  strength/rank/thresholded channels of the cross-block coupling matrix; thresholds declared
+  exponents                 MEASURED                  finite-difference log-log vs earned axis; no fit; out-of-sample checked
+  block-law inheritance     INDUCED                   aggregation over 64x64 grains keeps the far exponent at the inserted pair value (computed)
+  contact-only zero         INDUCED                   consequence of access structure alone; controls: adjacent nonzero, radius scan, mediated non-flat
+  topological MI (corner analogue)NOT USED                  named for orientation; owners Kitaev-Preskill 2006, Levin-Wen 2006
+  Newton-form target        COMPARISON ONLY           named in the final section; no gravitational form in any construction step (D-1)
+  overall energy unit       IMPORTED                  kq2/pitch set scales; every law read on log-log differences, scale-free
+
+EXACT OBJECTS: all contact/adjacency counts, radius-scan counts, N_chan counts (integers on
+the integer grid). FLOAT OBJECTS: 128x128 U per gap (14 gaps + shuffles), 64x64 SVDs,
+MDS eigenproblems; sqrt-irrational venue, tolerances: triangle rtol 1e-9, D4-check rtol 1e-12,
+thresholds as declared. Deviation from exact arithmetic stated openly (as in T42_B).
+
+OVERALL .... PASS
+
+NEXT STEP (named, per program rule): THREE-region composition -- does the mediated block
+law COMPOSE (A-B in the presence of C: superposition vs screening under the image
+construction), and does the coupling-weighted interface at contact (g=1) connect to the
+C-79 world form IFACE^3 = 216 CAP^2 -- i.e. does the mediated rank at contact reproduce
+the access-channel count, tying the coupling's near end to Gamma's topological end?

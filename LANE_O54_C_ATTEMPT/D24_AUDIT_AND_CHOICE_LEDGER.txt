@@ -1,0 +1,123 @@
+LANE_O54_C_ATTEMPT -- D-24 AUDIT AND CHOICE LEDGER
+===================================================
+Assignment: the adversarial construction attempt for O-54 -- try hard to build a
+PURE-GAMMA FALLOFF between two separated regions.  Driver: o54c_attempts.py; full
+computed record: o54c_attempts.OUT.txt (75/75 gates, OVERALL PASS, exact arithmetic).
+
+CHOICE LEDGER (every free choice, why, and what would change if chosen otherwise)
+---------------------------------------------------------------------------------
+C1  Carrier family: toric code venues (8,8), (12,12) for region aggregates; (3,3),
+    (3,7), (4,6) for defect pairs.
+    WHY: the program's established corner venue (C-74 venue checks, C-78 metric, C-79
+    interface rank all live here); exhaustive scans are only honest at these sizes.
+    OTHERWISE: another stabilizer venue changes constants (e.g. wrap weights in the
+    z_min switch) but no measured DEPENDENCE-ON-SEPARATION class changed across the
+    five venues used; a non-stabilizer venue is out of this lane's exhaustive reach
+    and is named in the scope caveat.
+C2  "Handles" realized as plaquette punctures (Bravyi-Kitaev defect route), not a
+    closed genus-2 surface build.
+    WHY: punctures give localized homology classes at two placeable sites -- the
+    homology-lattice coupling question in computable form.
+    OTHERWISE: a closed higher-genus complex is the named next step; the Gram-matrix
+    verdict (topological) is expected to transfer, but that is NOT claimed here.
+C3  Earned separation instrument: BFS on the generator-overlap graph (generators
+    adjacent iff supports intersect), plus BFS on the qubit interaction graph.
+    WHY: computed from (H,{L_k}) support structure alone -- no coordinates imported;
+    C-78 lineage (crossing cost).  The two instruments agree exactly (d_gen = d_q + 1,
+    gated on every pair).
+    OTHERWISE: any coordinate-based distance would be an import (D-24 violation).
+C4  Separated := no single generator touches both regions (straddle count 0);
+    contact rows reported separately and used as D-15 presence controls.
+    WHY: gives "contact-only" a computed meaning instead of a chosen threshold.
+C5  Ground-state / defect-state choice: BOTH Zbar-fixed and Xbar-fixed torus states;
+    BOTH Z-hole-fixed and X-hole-fixed defect states.  Every MI gate quantifies over
+    the choice; values are labeled by state.
+C6  Writer classes scanned: the coupling class (flips the two-defect record) and the
+    local class (flips it via the other conjugate operator).  Completeness of both
+    coset spans is GATED (span = full writer subgroup, dim + commutation argument).
+C7  Degeneracy covariate: direction family (displacement class under the venue
+    translation group, D-22/C-74).  Descriptive only; no headline claim rests on it.
+C8  z_min covariate: the connector's homological crossing type -- fully computed
+    (which wrap classes pair oddly with the connector), and the switch formula
+    z_min = min(4, odd-crossing wrap weight) is gated exactly, including in the
+    full-Pauli space on (3,3).
+
+TOY_SEPARATION (what is the actual surface and what is illustration)
+---------------------------------------------------------------------
+ACTUAL SURFACE: every number in the OUT file -- entropies, mutual informations,
+interface ranks, Gram matrices, writer minima and degeneracies -- is computed exactly
+on the record-model carrier class the program has been using since C-74/C-78/C-79
+(stabilizer venues, admissible ops = H-commuting).  Nothing is a cartoon of something
+else; the exhaustive scans are the object itself at these sizes.
+NOT THE SURFACE (controls): the finite-range ring carriers and the wormhole carrier
+are INSERTED instruments built to prove the detectors can see a falloff and a flat
+shortcut.  Their laws are the controls' laws and are never reported as Gamma's.
+
+D-24 AUDIT TABLE (duplicated from the OUT file)
+------------------------------------------------
+  region (qubit subset)   INSTRUMENT       families gated over ALL placements
+  separation              EARNED           BFS on generator/qubit interaction graphs from
+                                           supports alone; two instruments agree (gated)
+  writer weight           EARNED (C-78)    minimal admissible-writer weight, exhaustive
+  entropy of a region     BORROWED         Fattal-Cubitt-Yamamoto-Bravyi-Chuang 0406168
+  mutual information      BORROWED         Kitaev-Preskill 2006, Levin-Wen 2006;
+                                           Hamma-Ionicioiu-Zanardi 2005 (perimeter law)
+  interface rank          EARNED (C-79)    straddle count, reused, cited
+  defect/hole records     BORROWED         Bravyi-Kitaev quant-ph/9811052; carrier Kitaev
+                                           quant-ph/9707021; OURS: the exhaustively gated
+                                           writer-landscape law and its degeneracy/switch
+                                           structure
+  homology Gram matrix    INDUCED          symplectic pairings of computed classes
+  crossing type           EARNED           computed homological pairing data (covariate)
+  Euclidean coordinates   NOT USED         all distances are BFS on computed graphs
+  classical gravity       NOT USED         D-1 clean; target named only in the final
+                                           comparison section
+  ground-state choice     DECLARED         all gates quantified over both choices
+  INSERTED controls       LABELED          ring carriers, wormhole carrier
+
+INSERTED vs INDUCED
+--------------------
+INDUCED (Gamma's own, reported): patch MI == 0; straddle IR == 0; IR(AuB) contact-only
+step; band MI == 1 (topological constant, both states, both L); hole-annulus MI == 0 /
+== 1 (state-labeled constants); Gram matrices identical at all separations; w_min = d
+(linear, slope 1, intercept 0); N_min growth; z_min topological switch min(4, wrap).
+INSERTED (controls, never Gamma's): ring-carrier MI falloffs [4,2,0] and [6,4,2,0];
+wormhole flat w_min = 1 at every separation.
+
+D-15 LEDGER (a control beside every zero and every flat line)
+--------------------------------------------------------------
+  zero: patch MI == 0          -> contact rows give MI == 2 (presence); ring carriers
+                                  give decreasing MI (the instrument SHOWS falloffs)
+  zero: straddle IR == 0       -> contact rows give straddle 4/16
+  flat: band MI == 1           -> contact rows give 15/23; ring control decreasing
+  flat: annulus MI constants   -> contact rows differ; same ring control
+  flat: Gram constant          -> (structural: same instrument distinguishes the six
+                                  classes' pairings within each matrix)
+  linear: w_min = d            -> flat z_min on the SAME instrument and venue; INSERTED
+                                  wormhole flattens w_min to 1 (detector distinguishes)
+  switch: z_min = min(4,wrap)  -> gated formula + within-type constancy + full-Pauli
+
+D-22 VENUE
+-----------
+Venue Aut for the torus cited from C-74 (established; not recomputed).  Computed here:
+translation invariance of (d_G, MI) rows (gated), axis-vs-diagonal isotropy of w_min at
+equal earned separation (gated), and the same laws on two aspect ratios (4,6)/(3,7).
+
+VERDICT (as data for the registrar; no register write from this lane)
+----------------------------------------------------------------------
+FALLOFF NOT FOUND.  The O-54 hypothesis SURVIVES the adversarial attempt on the corner
+tier: every pure-Gamma two-region quantity measured is topological (constant or set by
+a discrete homological datum), contact-only, or GROWS with earned separation.  The one
+genuine separation law found is w_min = d exactly -- confinement character (cost grows
+linearly, string-tension-like), the OPPOSITE of a falloff -- with degeneracy N_min
+growing (entropy-like).  The adversarial find: the local-record cost SWITCHES
+topologically (min(4, wrap weight)) with the connector's crossing type -- still not a
+falloff (two-valued, d-independent within type, both values present at d=1).
+SCOPE: exhaustive on toric stabilizer venues to 2^25-writer cosets and 288 qubits;
+other venues not excluded; the world tier's exponent-3 falloff (T42_B) remains the
+coupling's contribution under the openness clause, never re-attributed to Gamma.
+
+NEXT STEP (named): couple the linear writer-cost landscape to the mediator (census
+access/coupling term) and derive which falloff exponents are reachable through a
+mediator constrained by Gamma's linear cost; and check whether the genus-proper
+(closed higher-genus) venue preserves w_min = d.

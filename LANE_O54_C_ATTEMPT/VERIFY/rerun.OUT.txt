@@ -1,0 +1,383 @@
+====================================================================================================
+O54-C  ADVERSARIAL ATTEMPT AT A PURE-GAMMA FALLOFF   (exact F_2; no floats on the measurement path)
+====================================================================================================
+
+-- SECTION 0: carrier verification --
+PASS  carrier (8,8): stars x plaqs all commute
+PASS  carrier (8,8): rank(stars)=LxLy-1 and rank(plaqs)=LxLy-1  rs=63 rp=63
+PASS  carrier (8,8): logical pairing matrix as computed conjugate structure
+PASS  carrier (12,12): stars x plaqs all commute
+PASS  carrier (12,12): rank(stars)=LxLy-1 and rank(plaqs)=LxLy-1  rs=143 rp=143
+PASS  carrier (12,12): logical pairing matrix as computed conjugate structure
+PASS  carrier (3,3): stars x plaqs all commute
+PASS  carrier (3,3): rank(stars)=LxLy-1 and rank(plaqs)=LxLy-1  rs=8 rp=8
+PASS  carrier (3,3): logical pairing matrix as computed conjugate structure
+PASS  carrier (3,7): stars x plaqs all commute
+PASS  carrier (3,7): rank(stars)=LxLy-1 and rank(plaqs)=LxLy-1  rs=20 rp=20
+PASS  carrier (3,7): logical pairing matrix as computed conjugate structure
+PASS  carrier (4,6): stars x plaqs all commute
+PASS  carrier (4,6): rank(stars)=LxLy-1 and rank(plaqs)=LxLy-1  rs=23 rp=23
+PASS  carrier (4,6): logical pairing matrix as computed conjugate structure
+
+====================================================================================================
+SECTION A -- attempt (b): two-region interface aggregates vs earned separation
+  EARNED SEPARATION INSTRUMENT: BFS distance on the interaction graph computed from
+  the Hamiltonian generators' supports alone (no coordinates imported); C-78 lineage.
+  SEPARATED := no single generator touches both regions (straddle count 0).
+====================================================================================================
+PASS  A L=8 state Zbar-fixed is pure (independent-generator count == n)  G=128 n=128
+PASS  A L=8 state Xbar-fixed is pure (independent-generator count == n)  G=128 n=128
+
+A.8 two 2x2 patches on the (8,8) torus  (regions: all edges in the window)
+  placement       d_G  straddle  S_A S_B S_AB  MI   IR(AuB)
+  axis x0=2     Zbar-fixed d=1  str=4   6  6  10    2    22
+  axis x0=2     Xbar-fixed d=1  str=4   6  6  10    2    22
+  axis x0=3     Zbar-fixed d=2  str=0   6  6  12    0    28
+  axis x0=3     Xbar-fixed d=2  str=0   6  6  12    0    28
+  axis x0=4     Zbar-fixed d=3  str=0   6  6  12    0    28
+  axis x0=4     Xbar-fixed d=3  str=0   6  6  12    0    28
+  axis x0=5     Zbar-fixed d=2  str=0   6  6  12    0    28
+  axis x0=5     Xbar-fixed d=2  str=0   6  6  12    0    28
+  axis x0=6     Zbar-fixed d=1  str=4   6  6  10    2    22
+  axis x0=6     Xbar-fixed d=1  str=4   6  6  10    2    22
+  diag x0=2     Zbar-fixed d=2  str=0   6  6  12    0    28
+  diag x0=2     Xbar-fixed d=2  str=0   6  6  12    0    28
+  diag x0=3     Zbar-fixed d=4  str=0   6  6  12    0    28
+  diag x0=3     Xbar-fixed d=4  str=0   6  6  12    0    28
+  diag x0=4     Zbar-fixed d=5  str=0   6  6  12    0    28
+  diag x0=4     Xbar-fixed d=5  str=0   6  6  12    0    28
+  diag x0=5     Zbar-fixed d=4  str=0   6  6  12    0    28
+  diag x0=5     Xbar-fixed d=4  str=0   6  6  12    0    28
+PASS  A L=8 patches: MI == 0 on EVERY separated placement, both states  14 separated rows
+PASS  A L=8 patches: D-15 contact control: MI > 0 at contact (both states)  contact MI values [2]
+PASS  A L=8 patches: interface rank between separated regions == 0 (straddle count)
+PASS  A L=8 patches: IR(AuB) constant on separated placements (contact-only step)  sep [28] contact [22]
+PASS  A L=8 D-22 translation: shifted placement gives same (d_G, MI)  (3,0) vs (3,0)
+
+A.8 two width-2 non-contractible bands on the (8,8) torus
+  x0=2   Zbar-fixed d=1  str=16  S_A=15 S_B=15 S_AB=15  MI=15
+  x0=2   Xbar-fixed d=1  str=16  S_A=15 S_B=15 S_AB=15  MI=15
+  x0=3   Zbar-fixed d=2  str=0  S_A=15 S_B=15 S_AB=29  MI=1
+  x0=3   Xbar-fixed d=2  str=0  S_A=15 S_B=15 S_AB=29  MI=1
+  x0=4   Zbar-fixed d=3  str=0  S_A=15 S_B=15 S_AB=29  MI=1
+  x0=4   Xbar-fixed d=3  str=0  S_A=15 S_B=15 S_AB=29  MI=1
+  x0=5   Zbar-fixed d=2  str=0  S_A=15 S_B=15 S_AB=29  MI=1
+  x0=5   Xbar-fixed d=2  str=0  S_A=15 S_B=15 S_AB=29  MI=1
+  x0=6   Zbar-fixed d=1  str=16  S_A=15 S_B=15 S_AB=15  MI=15
+  x0=6   Xbar-fixed d=1  str=16  S_A=15 S_B=15 S_AB=15  MI=15
+PASS  A L=8 bands state Zbar-fixed: MI CONSTANT over all separated separations  constant value = [1] (TOPOLOGICAL, exact)
+PASS  A L=8 bands state Xbar-fixed: MI CONSTANT over all separated separations  constant value = [1] (TOPOLOGICAL, exact)
+PASS  A L=8 bands: D-15 beside the flat line: contact rows exist and differ or equal by computation  contact MI [15] vs separated [1]
+PASS  A L=12 state Zbar-fixed is pure (independent-generator count == n)  G=288 n=288
+PASS  A L=12 state Xbar-fixed is pure (independent-generator count == n)  G=288 n=288
+
+A.12 two 2x2 patches on the (12,12) torus  (regions: all edges in the window)
+  placement       d_G  straddle  S_A S_B S_AB  MI   IR(AuB)
+  axis x0=2     Zbar-fixed d=1  str=4   6  6  10    2    22
+  axis x0=2     Xbar-fixed d=1  str=4   6  6  10    2    22
+  axis x0=3     Zbar-fixed d=2  str=0   6  6  12    0    28
+  axis x0=3     Xbar-fixed d=2  str=0   6  6  12    0    28
+  axis x0=4     Zbar-fixed d=3  str=0   6  6  12    0    28
+  axis x0=4     Xbar-fixed d=3  str=0   6  6  12    0    28
+  axis x0=5     Zbar-fixed d=4  str=0   6  6  12    0    28
+  axis x0=5     Xbar-fixed d=4  str=0   6  6  12    0    28
+  axis x0=6     Zbar-fixed d=5  str=0   6  6  12    0    28
+  axis x0=6     Xbar-fixed d=5  str=0   6  6  12    0    28
+  axis x0=7     Zbar-fixed d=4  str=0   6  6  12    0    28
+  axis x0=7     Xbar-fixed d=4  str=0   6  6  12    0    28
+  axis x0=8     Zbar-fixed d=3  str=0   6  6  12    0    28
+  axis x0=8     Xbar-fixed d=3  str=0   6  6  12    0    28
+  axis x0=9     Zbar-fixed d=2  str=0   6  6  12    0    28
+  axis x0=9     Xbar-fixed d=2  str=0   6  6  12    0    28
+  axis x0=10    Zbar-fixed d=1  str=4   6  6  10    2    22
+  axis x0=10    Xbar-fixed d=1  str=4   6  6  10    2    22
+  diag x0=2     Zbar-fixed d=2  str=0   6  6  12    0    28
+  diag x0=2     Xbar-fixed d=2  str=0   6  6  12    0    28
+  diag x0=3     Zbar-fixed d=4  str=0   6  6  12    0    28
+  diag x0=3     Xbar-fixed d=4  str=0   6  6  12    0    28
+  diag x0=4     Zbar-fixed d=6  str=0   6  6  12    0    28
+  diag x0=4     Xbar-fixed d=6  str=0   6  6  12    0    28
+  diag x0=5     Zbar-fixed d=8  str=0   6  6  12    0    28
+  diag x0=5     Xbar-fixed d=8  str=0   6  6  12    0    28
+  diag x0=6     Zbar-fixed d=9  str=0   6  6  12    0    28
+  diag x0=6     Xbar-fixed d=9  str=0   6  6  12    0    28
+  diag x0=7     Zbar-fixed d=8  str=0   6  6  12    0    28
+  diag x0=7     Xbar-fixed d=8  str=0   6  6  12    0    28
+  diag x0=8     Zbar-fixed d=6  str=0   6  6  12    0    28
+  diag x0=8     Xbar-fixed d=6  str=0   6  6  12    0    28
+  diag x0=9     Zbar-fixed d=4  str=0   6  6  12    0    28
+  diag x0=9     Xbar-fixed d=4  str=0   6  6  12    0    28
+PASS  A L=12 patches: MI == 0 on EVERY separated placement, both states  30 separated rows
+PASS  A L=12 patches: D-15 contact control: MI > 0 at contact (both states)  contact MI values [2]
+PASS  A L=12 patches: interface rank between separated regions == 0 (straddle count)
+PASS  A L=12 patches: IR(AuB) constant on separated placements (contact-only step)  sep [28] contact [22]
+PASS  A L=12 D-22 translation: shifted placement gives same (d_G, MI)  (3,0) vs (3,0)
+
+A.12 two width-2 non-contractible bands on the (12,12) torus
+  x0=2   Zbar-fixed d=1  str=24  S_A=23 S_B=23 S_AB=23  MI=23
+  x0=2   Xbar-fixed d=1  str=24  S_A=23 S_B=23 S_AB=23  MI=23
+  x0=3   Zbar-fixed d=2  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=3   Xbar-fixed d=2  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=4   Zbar-fixed d=3  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=4   Xbar-fixed d=3  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=5   Zbar-fixed d=4  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=5   Xbar-fixed d=4  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=6   Zbar-fixed d=5  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=6   Xbar-fixed d=5  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=7   Zbar-fixed d=4  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=7   Xbar-fixed d=4  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=8   Zbar-fixed d=3  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=8   Xbar-fixed d=3  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=9   Zbar-fixed d=2  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=9   Xbar-fixed d=2  str=0  S_A=23 S_B=23 S_AB=45  MI=1
+  x0=10  Zbar-fixed d=1  str=24  S_A=23 S_B=23 S_AB=23  MI=23
+  x0=10  Xbar-fixed d=1  str=24  S_A=23 S_B=23 S_AB=23  MI=23
+PASS  A L=12 bands state Zbar-fixed: MI CONSTANT over all separated separations  constant value = [1] (TOPOLOGICAL, exact)
+PASS  A L=12 bands state Xbar-fixed: MI CONSTANT over all separated separations  constant value = [1] (TOPOLOGICAL, exact)
+PASS  A L=12 bands: D-15 beside the flat line: contact rows exist and differ or equal by computation  contact MI [23] vs separated [1]
+
+A.ctrl  D-15 INSERTED CONTROL: ring carriers with finite-range pair correlations
+        (correlations INSERTED by construction; this law is the control's, never Gamma's)
+PASS  A.ctrl ring nq=24 r=3: pure (rank == n)
+  ring nq=24 r=3: MI vs window gap: [(0, 4), (1, 2), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0)]
+PASS  A.ctrl ring nq=24 r=3: instrument SHOWS a falloff where one exists (decreasing to 0)
+PASS  A.ctrl ring nq=20 r=5: pure (rank == n)
+  ring nq=20 r=5: MI vs window gap: [(0, 6), (1, 4), (2, 2), (3, 0), (4, 0), (5, 0), (6, 0)]
+PASS  A.ctrl ring nq=20 r=5: instrument SHOWS a falloff where one exists (decreasing to 0)
+PASS  A.ctrl the two inserted ranges give DIFFERENT falloff tails (instrument resolves scale)  last nonzero gaps [1, 2]
+
+====================================================================================================
+SECTION B -- attempt (a): two punctures (enlarged H_1), homology-lattice coupling vs separation
+  Defect record: Z_L = boundary loop of removed plaquette u (= B_u), X_L = dual connector p_uv.
+  Owner of the defect construction: Bravyi-Kitaev quant-ph/9811052; carrier Kitaev quant-ph/9707021.
+====================================================================================================
+PASS  B (4,6): X-writer span independent (dim 25)
+
+B venue (4,6): hole u=(0, 0) against 11 partner holes
+  v        d_gen d_q   Gram-equal  w_min(X-conn) N_min  z_min(loop) N_z   MI(ring,ring) Z-state/X-state
+  (1, 0)     1    0   True          1            1       4         2    [None, None]  ctype=(6,) z_pred=4
+  (2, 0)     2    1   True          2            2       4         2    [0, 3]  ctype=(6,) z_pred=4
+  (0, 1)     1    0   True          1            1       4         3    [None, None]  ctype=(4,) z_pred=4
+  (0, 2)     2    1   True          2            1       4         4    [0, 2]  ctype=(4,) z_pred=4
+  (0, 3)     3    2   True          3            2       4         5    [0, 1]  ctype=(4,) z_pred=4
+  (1, 1)     2    1   True          2            2       4         3    [1, 3]  ctype=(4, 6) z_pred=4
+  (2, 1)     3    2   True          3            6       4         3    [0, 1]  ctype=(4, 6) z_pred=4
+  (1, 2)     3    2   True          3            3       4         4    [0, 1]  ctype=(4, 6) z_pred=4
+  (2, 2)     4    3   True          4           12       4         4    [0, 1]  ctype=(4, 6) z_pred=4
+  (1, 3)     4    3   True          4            8       4         5    [0, 1]  ctype=(4, 6) z_pred=4
+  (2, 3)     5    4   True          5           40       4         5    [0, 1]  ctype=(4, 6) z_pred=4
+PASS  B (4,6): connector admissible and record-conjugate for every pair
+PASS  B (4,6): scan COMPLETENESS: both coset spans equal the full writer subgroups (every span generator commutes with the record operator; dims match)
+PASS  B (4,6): homology-lattice Gram matrix IDENTICAL across ALL separations (TOPOLOGICAL)
+PASS  B (4,6): two earned separation instruments agree: d_gen == d_qubit + 1 on every pair
+PASS  B (4,6): hole-annulus MI (Z-hole-fixed) CONSTANT over separated pairs  value [0] over d_gen [3, 4, 5]
+PASS  B (4,6): hole-annulus MI (X-hole-fixed) CONSTANT over separated pairs  value [1] over d_gen [3, 4, 5]
+PASS  B (3,7): X-writer span independent (dim 22)
+
+B venue (3,7): hole u=(0, 0) against 7 partner holes
+  v        d_gen d_q   Gram-equal  w_min(X-conn) N_min  z_min(loop) N_z   MI(ring,ring) Z-state/X-state
+  (1, 0)     1    0   True          1            1       4         2    [None, None]  ctype=(7,) z_pred=4
+  (0, 1)     1    0   True          1            1       3         1    [None, None]  ctype=(3,) z_pred=3
+  (0, 2)     2    1   True          2            1       3         2    [0, 2]  ctype=(3,) z_pred=3
+  (0, 3)     3    2   True          3            1       3         3    [0, 1]  ctype=(3,) z_pred=3
+  (1, 1)     2    1   True          2            2       3         1    [1, 3]  ctype=(3, 7) z_pred=3
+  (1, 2)     3    2   True          3            3       3         2    [0, 1]  ctype=(3, 7) z_pred=3
+  (1, 3)     4    3   True          4            4       3         3    [0, 1]  ctype=(3, 7) z_pred=3
+PASS  B (3,7): connector admissible and record-conjugate for every pair
+PASS  B (3,7): scan COMPLETENESS: both coset spans equal the full writer subgroups (every span generator commutes with the record operator; dims match)
+PASS  B (3,7): homology-lattice Gram matrix IDENTICAL across ALL separations (TOPOLOGICAL)
+PASS  B (3,7): two earned separation instruments agree: d_gen == d_qubit + 1 on every pair
+PASS  B (3,7): hole-annulus MI (Z-hole-fixed) CONSTANT over separated pairs  value [0] over d_gen [3, 4]
+PASS  B (3,7): hole-annulus MI (X-hole-fixed) CONSTANT over separated pairs  value [1] over d_gen [3, 4]
+
+====================================================================================================
+SECTION C -- attempt (c): minimal admissible-writer weight coupling record A to record B
+  vs earned separation.  C-78 instrument (writer weight = boundary-crossing cost), exhaustive scans.
+====================================================================================================
+
+C venue (4,6):  d_gen | w_min(coupling writer) N_min | z_min(local record) N_z
+   v=(1, 0)   d=1  |  w_min= 1  N_min=    1  |  z_min=4 (pred 4, ctype (6,))  N_z=2   (coset size 2^25 exhaustive)
+   v=(0, 1)   d=1  |  w_min= 1  N_min=    1  |  z_min=4 (pred 4, ctype (4,))  N_z=3   (coset size 2^25 exhaustive)
+   v=(2, 0)   d=2  |  w_min= 2  N_min=    2  |  z_min=4 (pred 4, ctype (6,))  N_z=2   (coset size 2^25 exhaustive)
+   v=(0, 2)   d=2  |  w_min= 2  N_min=    1  |  z_min=4 (pred 4, ctype (4,))  N_z=4   (coset size 2^25 exhaustive)
+   v=(1, 1)   d=2  |  w_min= 2  N_min=    2  |  z_min=4 (pred 4, ctype (4, 6))  N_z=3   (coset size 2^25 exhaustive)
+   v=(0, 3)   d=3  |  w_min= 3  N_min=    2  |  z_min=4 (pred 4, ctype (4,))  N_z=5   (coset size 2^25 exhaustive)
+   v=(2, 1)   d=3  |  w_min= 3  N_min=    6  |  z_min=4 (pred 4, ctype (4, 6))  N_z=3   (coset size 2^25 exhaustive)
+   v=(1, 2)   d=3  |  w_min= 3  N_min=    3  |  z_min=4 (pred 4, ctype (4, 6))  N_z=4   (coset size 2^25 exhaustive)
+   v=(2, 2)   d=4  |  w_min= 4  N_min=   12  |  z_min=4 (pred 4, ctype (4, 6))  N_z=4   (coset size 2^25 exhaustive)
+   v=(1, 3)   d=4  |  w_min= 4  N_min=    8  |  z_min=4 (pred 4, ctype (4, 6))  N_z=5   (coset size 2^25 exhaustive)
+   v=(2, 3)   d=5  |  w_min= 5  N_min=   40  |  z_min=4 (pred 4, ctype (4, 6))  N_z=5   (coset size 2^25 exhaustive)
+PASS  C (4,6): EXACT LAW  w_min == d_gen  on EVERY pair (linear, slope 1, intercept 0, earned units)
+PASS  C (4,6): local-record cost z_min == min(4, odd-crossing wrap-class weight) EXACTLY on every pair (topological switch formula)
+PASS  C (4,6): z_min CONSTANT within each crossing type (d-independent at fixed type: TOPOLOGICAL, not a magnitude law)  type->value {(6,): [4], (4,): [4], (4, 6): [4]}
+PASS  C (4,6): D-15 beside the flat/topological line: the SAME instrument returned the LINEAR law on the coupling class of the SAME venue (flat vs growing distinguished)
+PASS  C (4,6): isotropy in the earned metric: equal d_gen => equal w_min across orientations
+PASS  C (4,6): writer DEGENERACY N_min: within every direction family CONSTANT or GROWING with d, and its ceiling grows (entropy-like; NOT a falloff; NOT a function of d alone)  by family {'axis-x': [(1, 1), (2, 2)], 'axis-y': [(1, 1), (2, 1), (3, 2)], 'dx=1': [(2, 2), (3, 3), (4, 8)], 'dx=2': [(3, 6), (4, 12), (5, 40)]}
+
+C venue (3,7):  d_gen | w_min(coupling writer) N_min | z_min(local record) N_z
+   v=(1, 0)   d=1  |  w_min= 1  N_min=    1  |  z_min=4 (pred 4, ctype (7,))  N_z=2   (coset size 2^22 exhaustive)
+   v=(0, 1)   d=1  |  w_min= 1  N_min=    1  |  z_min=3 (pred 3, ctype (3,))  N_z=1   (coset size 2^22 exhaustive)
+   v=(0, 2)   d=2  |  w_min= 2  N_min=    1  |  z_min=3 (pred 3, ctype (3,))  N_z=2   (coset size 2^22 exhaustive)
+   v=(1, 1)   d=2  |  w_min= 2  N_min=    2  |  z_min=3 (pred 3, ctype (3, 7))  N_z=1   (coset size 2^22 exhaustive)
+   v=(0, 3)   d=3  |  w_min= 3  N_min=    1  |  z_min=3 (pred 3, ctype (3,))  N_z=3   (coset size 2^22 exhaustive)
+   v=(1, 2)   d=3  |  w_min= 3  N_min=    3  |  z_min=3 (pred 3, ctype (3, 7))  N_z=2   (coset size 2^22 exhaustive)
+   v=(1, 3)   d=4  |  w_min= 4  N_min=    4  |  z_min=3 (pred 3, ctype (3, 7))  N_z=3   (coset size 2^22 exhaustive)
+PASS  C (3,7): EXACT LAW  w_min == d_gen  on EVERY pair (linear, slope 1, intercept 0, earned units)
+PASS  C (3,7): local-record cost z_min == min(4, odd-crossing wrap-class weight) EXACTLY on every pair (topological switch formula)
+PASS  C (3,7): z_min CONSTANT within each crossing type (d-independent at fixed type: TOPOLOGICAL, not a magnitude law)  type->value {(7,): [4], (3,): [3], (3, 7): [3]}
+PASS  C (3,7): D-15 beside the flat/topological line: the SAME instrument returned the LINEAR law on the coupling class of the SAME venue (flat vs growing distinguished)
+PASS  C (3,7): isotropy in the earned metric: equal d_gen => equal w_min across orientations
+PASS  C (3,7): writer DEGENERACY N_min: within every direction family CONSTANT or GROWING with d, and its ceiling grows (entropy-like; NOT a falloff; NOT a function of d alone)  by family {'axis-x': [(1, 1)], 'axis-y': [(1, 1), (2, 1), (3, 1)], 'dx=1': [(2, 2), (3, 3), (4, 4)]}
+
+C.red  FULL-PAULI REDUCTION CONTROL on (3,3), holes u=(0,0), v=(2,1)
+PASS  C.red span checks: every span element commutes with Bu; rep p anticommutes
+  full-Pauli coset 2^20 exhaustive: w_min=2;  X-only: w_min=2;  d_gen=2
+PASS  C.red full-Pauli min == X-only min == d_gen (z-parts never lower the coupling cost; supp(P) = supp_x u supp_z >= supp_x, verified exhaustively)
+PASS  C.red span checks (Z side): every span element commutes with p; rep Bu anticommutes
+  full-Pauli Z-record coset 2^20 exhaustive: z_min=3 (topological-switch prediction 3)
+PASS  C.red full-Pauli local-record min == topological-switch prediction (full Pauli space confirms the wrap-class switch; mixed z/x parts never beat it)
+
+C.worm  D-15 INSERTED SHORTCUT CONTROL on (4,6): remove a THIRD plaquette (1,0), making the
+        single edge shared by cells (0,0)-(1,0) an admissible weight-1 coupling writer.
+        The flat law below is the INSERTED carrier's, never Gamma's.
+  v=(2, 0)  d_gen(u,v)=2  ->  w_min with wormhole = 1  (coset 2^26 exhaustive)
+  v=(0, 3)  d_gen(u,v)=3  ->  w_min with wormhole = 1  (coset 2^26 exhaustive)
+  v=(2, 3)  d_gen(u,v)=5  ->  w_min with wormhole = 1  (coset 2^26 exhaustive)
+PASS  C.worm wormhole writer admissible on the modified carrier
+PASS  C.worm INSERTED shortcut makes the coupling cost separation-INDEPENDENT (constant 1): the instrument distinguishes flat from linear; the pure-Gamma carrier chose LINEAR
+
+====================================================================================================
+SECTION D -- systematic falloff search over EVERY measured two-region sequence
+  (separated regime d >= separation threshold; contact steps reported as contact-only)
+====================================================================================================
+  sequence                                       origin    verdict                            rows
+  patch MI (L=8, both states)                    INDUCED   CONSTANT                           [(2, 0), (2, 0), (3, 0), (3, 0), (2, 0), (2, 0), (2, 0), (2, 0), '...']
+  patch straddle IR (L=8)                        INDUCED   CONSTANT                           [(2, 0), (2, 0), (3, 0), (3, 0), (2, 0), (2, 0), (2, 0), (2, 0), '...']
+  patch IR(AuB) (L=8)                            INDUCED   CONSTANT                           [(2, 28), (2, 28), (3, 28), (3, 28), (2, 28), (2, 28), (2, 28), (2, 28), '...']
+  patch S_A (L=8)                                INDUCED   CONSTANT                           [(2, 6), (2, 6), (3, 6), (3, 6), (2, 6), (2, 6), (2, 6), (2, 6), '...']
+  band MI (L=8, Zbar-fixed)                      INDUCED   CONSTANT                           [(2, 1), (3, 1), (2, 1)]
+  band MI (L=8, Xbar-fixed)                      INDUCED   CONSTANT                           [(2, 1), (3, 1), (2, 1)]
+  patch MI (L=12, both states)                   INDUCED   CONSTANT                           [(2, 0), (2, 0), (3, 0), (3, 0), (4, 0), (4, 0), (5, 0), (5, 0), '...']
+  patch straddle IR (L=12)                       INDUCED   CONSTANT                           [(2, 0), (2, 0), (3, 0), (3, 0), (4, 0), (4, 0), (5, 0), (5, 0), '...']
+  patch IR(AuB) (L=12)                           INDUCED   CONSTANT                           [(2, 28), (2, 28), (3, 28), (3, 28), (4, 28), (4, 28), (5, 28), (5, 28), '...']
+  patch S_A (L=12)                               INDUCED   CONSTANT                           [(2, 6), (2, 6), (3, 6), (3, 6), (4, 6), (4, 6), (5, 6), (5, 6), '...']
+  band MI (L=12, Zbar-fixed)                     INDUCED   CONSTANT                           [(2, 1), (3, 1), (4, 1), (5, 1), (4, 1), (3, 1), (2, 1)]
+  band MI (L=12, Xbar-fixed)                     INDUCED   CONSTANT                           [(2, 1), (3, 1), (4, 1), (5, 1), (4, 1), (3, 1), (2, 1)]
+  ring MI (nq=24 r=3)                            INSERTED  DECREASING                         [(0, 4), (1, 2), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0)]
+  ring MI (nq=20 r=5)                            INSERTED  DECREASING                         [(0, 6), (1, 4), (2, 2), (3, 0), (4, 0), (5, 0), (6, 0)]
+  hole-annulus MI ((4, 6),Z-hole-fixed)          INDUCED   CONSTANT                           [(3, 0), (3, 0), (3, 0), (4, 0), (4, 0), (5, 0)]
+  hole-annulus MI ((4, 6),X-hole-fixed)          INDUCED   CONSTANT                           [(3, 1), (3, 1), (3, 1), (4, 1), (4, 1), (5, 1)]
+  hole Gram entry (u-conn pairing) (4, 6)        INDUCED   CONSTANT                           [(1, 1), (2, 1), (1, 1), (2, 1), (3, 1), (2, 1), (3, 1), (3, 1), '...']
+  hole-annulus MI ((3, 7),Z-hole-fixed)          INDUCED   CONSTANT                           [(3, 0), (3, 0), (4, 0)]
+  hole-annulus MI ((3, 7),X-hole-fixed)          INDUCED   CONSTANT                           [(3, 1), (3, 1), (4, 1)]
+  hole Gram entry (u-conn pairing) (3, 7)        INDUCED   CONSTANT                           [(1, 1), (1, 1), (2, 1), (3, 1), (2, 1), (3, 1), (4, 1)]
+  coupling-writer w_min (4, 6)                   INDUCED   INCREASING                         [(1, 1), (2, 2), (1, 1), (2, 2), (3, 3), (2, 2), (3, 3), (3, 3), '...']
+  coupling-writer degeneracy N_min (4, 6)        INDUCED   GROWING per class                  [(1, 1), (2, 2), (1, 1), (2, 1), (3, 2), (2, 2), (3, 6), (3, 3), '...']
+  local-record z_min (4, 6)                      INDUCED   CONSTANT                           [(1, 4), (2, 4), (1, 4), (2, 4), (3, 4), (2, 4), (3, 4), (3, 4), '...']
+  coupling-writer w_min (3, 7)                   INDUCED   INCREASING                         [(1, 1), (1, 1), (2, 2), (3, 3), (2, 2), (3, 3), (4, 4)]
+  coupling-writer degeneracy N_min (3, 7)        INDUCED   GROWING per class                  [(1, 1), (1, 1), (2, 1), (3, 1), (2, 2), (3, 3), (4, 4)]
+  local-record z_min (3, 7)                      INDUCED   TOPOLOGICAL (const per class)      [(1, 4), (1, 3), (2, 3), (3, 3), (2, 3), (3, 3), (4, 3)]
+  wormhole w_min (INSERTED carrier)              INSERTED  CONSTANT                           [(2, 1), (3, 1), (5, 1)]
+PASS  D VERDICT: NO pure-Gamma (INDUCED) quantity decreases with earned separation, globally or within any computed covariate class -- no falloff was constructible  falloff-shaped induced sequences: []
+PASS  D every INDUCED sequence is CONSTANT, TOPOLOGICAL (constant per computed discrete class), or GROWING -- and the growing ones exist (linear writer cost, degeneracy)
+PASS  D the INSERTED controls (finite-range carrier, wormhole carrier) are exactly where the decreasing and shortcut-flat laws live (mediator-shaped; labeled, never Gamma's)
+
+STRUCTURAL OBSERVATION (venue-scoped, corner tier): on a stabilizer venue every Pauli
+expectation is -1, 0 or +1 (P in +/-S or not), so no continuously decaying two-point
+profile exists to be found; a pure-Gamma falloff could only appear as a decreasing
+INTEGER sequence in an aggregate.  Every induced integer aggregate measured above is
+constant, contact-only, or increasing.  This scopes the verdict to the corner tier;
+it does not preclude other venues, and it is why the adversarial attempt ranged over
+aggregates (MI, IR, Gram, writer cost, writer degeneracy) rather than correlators.
+
+====================================================================================================
+GATES: 75/75 passed
+OVERALL PASS  (computed conjunction of 75 gates)
+
+====================================================================================================
+D-24 AUDIT TABLE (every concept used earns its place)
+----------------------------------------------------------------------------------------------------
+  region (qubit subset)   INSTRUMENT       chosen families (patches, bands, hole annuli); results
+                                           gated over ALL placements, not a favored one
+  separation              EARNED           BFS on the interaction/generator-overlap graph computed
+                                           from generator SUPPORTS alone -- no coordinates imported;
+                                           two independent instruments (qubit graph, generator graph)
+                                           agree exactly (d_gen = d_q + 1, gated); C-78 lineage
+  writer weight           EARNED (C-78)    minimal admissible-writer weight, exhaustive coset scans;
+                                           reused instrument, cited, exhaustiveness preserved
+  entropy of a region     BORROWED         S(A) = |A| - dim S_A, Fattal-Cubitt-Yamamoto-Bravyi-Chuang
+                                           quant-ph/0406168; used as instrument, exact integers
+  mutual information      BORROWED         instrument combination; topological MI owners:
+                                           Kitaev-Preskill 2006, Levin-Wen 2006; stabilizer perimeter
+                                           law: Hamma-Ionicioiu-Zanardi 2005
+  interface rank          EARNED (C-79)    straddle count between regions; reused instrument, cited
+  defect/hole records     BORROWED         Bravyi-Kitaev quant-ph/9811052 (construction); carrier
+                                           Kitaev quant-ph/9707021; OURS: the writer-landscape law
+                                           w_min = d_gen gated exhaustively, and its degeneracy count
+  homology Gram matrix    INDUCED          symplectic pairings of computed classes; exact
+  dimension               NOT NEEDED       no dimension claim made in this lane
+  Euclidean coordinates   NOT USED         every distance is BFS on computed graphs
+  linear law (w = d)      EARNED RESULT    exhaustive, exact, isotropy and translation gated
+  classical gravity       NOT USED         no gravitational form in any construction step (D-1);
+                                           the comparison target appears ONLY in the final section
+  ground-state choice     DECLARED         both Zbar-fixed and Xbar-fixed states run; both hole
+                                           states run; every gate quantified over the choice
+  INSERTED controls       LABELED          finite-range ring carrier, wormhole carrier: their laws
+                                           are reported as the controls', never as Gamma's
+----------------------------------------------------------------------------------------------------
+LARGEST EXACT OBJECTS: exhaustive coset scans to 2^25 = 33,554,432 admissible writers per hole pair
+on the (4,6) torus (48 qubits), exact popcount minima with full degeneracy counts; full-Pauli
+exhaustive 2^20 on (3,3); F_2 rank/entropy computations to n = 288 qubits (L = 12 torus).
+No floats on any measurement path.
+
+====================================================================================================
+FINAL COMPARISON SECTION -- the only place the comparison target is named
+====================================================================================================
+
+The comparison target is the Newton-form falloff (phi ~ 1/r, F ~ 1/r^2).
+
+WHAT THE ADVERSARIAL ATTEMPT FOUND (all exact, all gated):
+  (a) HOMOLOGY-LATTICE COUPLING: the Gram/intersection structure of the two-defect class
+      lattice is IDENTICAL at every earned separation -- TOPOLOGICAL.  No falloff.
+  (b) TWO-REGION AGGREGATES: interface rank between separated regions is EXACTLY ZERO
+      (contact-only step); patch MI is EXACTLY ZERO on every separated placement (both
+      states, both venues); band MI is an exact separation-independent CONSTANT
+      (non-contractible pair) -- TOPOLOGICAL.  No falloff.
+  (c) WRITER-WEIGHT LANDSCAPE: the minimal admissible coupling-writer weight obeys the
+      EXACT LAW  w_min = d  (earned separation, slope 1, intercept 0, every pair, every
+      orientation, exhaustive to 2^25) -- a genuine pure-Gamma separation law with the
+      OPPOSITE character of a falloff: the cost GROWS linearly with separation
+      (string-tension/confinement character; lattice-gauge string picture owners:
+      Wegner 1971, Kitaev quant-ph/9707021).  Its degeneracy N_min GROWS with separation
+      (entropy-like).  Nothing decays.
+  (d) THE ADVERSARIAL FIND OF THE LANE: the LOCAL-record writer cost is not always the
+      hole-boundary cost 4 -- it SWITCHES to the venue's wrap-class weight exactly when
+      the connector's homological crossing type contains that class (z_min = min(4,
+      odd-crossing wrap weight), gated exactly on every pair and in the full-Pauli
+      space).  This is the closest thing to a separation effect pure Gamma produced,
+      and it is a TWO-VALUED function of a DISCRETE homological datum -- constant in d
+      within each crossing type, with both values already present at d = 1.  Topological
+      in precisely the hypothesis's sense; not a falloff.
+
+HYPOTHESIS VERDICT: the O-54 hypothesis SURVIVES this adversarial attempt, on the corner
+tier, exhaustively: pure-Gamma two-region relations came out topological, contact-only, or
+LINEARLY GROWING -- never a falloff.  The falloff remains the mediator's to give (the world
+tier's measured exponent-3 law, T42_B, is the coupling's contribution and stays labeled as
+such).  The division of labor C-77 would take as its refined shape -- Gamma gives the
+boundary-degree law and a linear (confinement-character) separation cost; the coupling gives
+the falloff; alpha gives the costs -- is CONSISTENT with everything measured here.
+
+HONEST LIMIT: this is a search over one carrier family (toric venues to 48/288 qubits),
+puncture-realized handles rather than closed higher-genus surfaces, and integer stabilizer
+aggregates.  A pure-Gamma falloff on some other venue is not excluded by this lane; what is
+excluded is its constructibility from these exhaustively-scanned families.
+
+NEXT STEP (named, per program rule): the linear law w_min = d is Gamma's OWN two-region
+relation and it composes with C-79's boundary-degree law.  The named next increment: couple
+the linear writer-cost landscape to the mediator (census access/coupling term) and derive
+which falloff exponents are REACHABLE through a mediator constrained by Gamma's linear cost
+-- i.e., does confinement-grade cost + openness-clause coupling FORCE the mediator's
+exponent family, and does the genus-proper (closed higher-genus) venue preserve the
+linear law?
+
+total runtime 2.5s

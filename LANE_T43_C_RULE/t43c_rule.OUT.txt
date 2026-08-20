@@ -1,0 +1,44 @@
+==============================================================================
+LANE_T43_C_RULE — THE PRE-REGISTERED RULE, APPLIED
+inputs: LANE_T43_A_CORNER (verified), LANE_T43_B_WORLD (verified)
+==============================================================================
+CORNER: CERT degree 1 (boundary), STORED degree 2 (volume);
+        static state -> certifiable content has ONE value; boundary under every reading.
+        corner_boundary = True
+
+WORLD:  CERT/epoch degree 2 (boundary), CERT total degree 3 (volume),
+        STORED degree 3 (volume); E_min = [1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3] — the SPLIT, as found.
+        world_rate_boundary = True; world_total_volume = True
+
+RULE INPUTS (boundary-bounded?):
+  per-epoch/simultaneous  : corner=True, world=True  -> SURFACE_ANSWERED
+  anytime/cumulative      : corner=True, world=False  -> MIXED
+
+RULE OUTPUT (computed): MIXED_AS_FOUND
+
+AS FOUND: certifiable content is boundary-bounded in the corner tier under its only
+reading, and boundary-bounded PER EPOCH in the world tier under every operationalisation
+tried — while the world's certifiable TOTAL over epochs is the whole stored volume
+(E_min <= 3 on range, E_min >= ceil(n^3/L(1)) ~ n/6 by cut arithmetic). The registered
+rule's phrase 'externally certifiable content' does not fix per-epoch vs anytime; the
+branch depends on that unregistered choice, so the rule outputs MIXED, reported as
+found, no forcing. The time-convention disposition belongs to the principal.
+
+------------------------------------------------------------------------------
+[PASS] corner closed form STORED = 2s^2+2s-5
+[PASS] corner closed form CERT   = 8s-10
+[PASS] corner STORED degree == D   (volume)
+[PASS] corner CERT   degree == D-1 (boundary)
+[PASS] corner has no epoch axis (per-use == total, one number)
+[PASS] world closed form CERT/epoch = 6n^2-12n+8
+[PASS] world STORED degree == D (volume)
+[PASS] world CERT/epoch degree == D-1 (boundary)
+[PASS] world CERT total  degree == D (volume)
+[PASS] world total == stored (all records certified at E_min)
+[PASS] world E_min <= 3 on range
+[PASS] per-epoch reading: boundary in BOTH tiers
+[PASS] anytime  reading: NOT boundary in both (world total is volume)
+[PASS] neither reading gives volume-bounded-in-both (surface never declines outright)
+[PASS] rule input is reading-dependent (rule registered no time convention)
+GATES: 15/15   ALL GATES PASS: True
+==============================================================================

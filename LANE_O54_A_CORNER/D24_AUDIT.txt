@@ -1,0 +1,93 @@
+LANE O54_A_CORNER -- D-24 AUDIT (every classical concept earns its place) + CHOICE LEDGER
+==========================================================================================
+
+D-24 AUDIT TABLE
+----------------
+concept                        | status and provenance
+-------------------------------+----------------------------------------------------------
+toric carrier, stars/plaqs     | EARNED venue (C-74, LANE_O50_A_ACTION); machinery copied
+                               | in substance from LANE_T42_C_BOUNDCAP/t42_corner.py (C-79)
+                               | and re-verified in SECTION 0 (ranks, identities, k=2).
+region = induced edge set of a | EARNED convention (C-74 / T42-C), reused unchanged; the
+vertex set                     | edge-union convention for the pair A u B is the disjoint-
+                               | qubit-set union (the mutual-information object); the
+                               | induced-union variant is cross-checked once at contact.
+interface rank IR2 (cut-rank)  | EARNED instrument (C-79, LANE_T42_C): computed by BOTH
+                               | exact expressions used there, gated equal on every region
+                               | (G1).  The cut-rank instrument itself is BORROWED:
+                               | Hamma-Ionicioiu-Zanardi (2005) stabiliser region entropy /
+                               | Kitaev territory.
+mutual combination             | BORROWED SHAPE: I(A:B) = f(A) + f(B) - f(AuB) is the
+I(A:B)=IR(A)+IR(B)-IR(AuB)     | stabilizer mutual-information object up to normalisation
+and I_MI via S(R)=|R|-r_in(R)  | (owners: Hamma-Ionicioiu-Zanardi; topological part:
+                               | Kitaev-Preskill 2006, Levin-Wen 2006).  OURS: the exact
+                               | two-region laws it obeys on this venue (Section 9).
+separation g                   | LATTICE COUNT (vertex columns strictly between blocks).
+earned separation dV           | EARNED metric correspondence (C-78): d_W = minimal
+                               | admissible-writer weight = boundary-crossing cost; dV =
+                               | BFS crossing count between the vertex sets, printed per
+                               | row; dV = g+1 monotone -- the g-sweep IS the sweep in the
+                               | earned separation.  No other distance notion appears.
+record content cap_record      | EARNED instrument (C-74, reused exactly as in T42-C);
+                               | JOINT_NEW / IDENT split of the union's classes is NEW in
+                               | this lane but is pure F_2 rank arithmetic on the same
+                               | objects.
+homology / winding classes     | EARNED (C-74 carrier analysis); used only to NAME the
+                               | non-contractible control geometries.
+corridor, frames, KP sectors   | CONSTRUCTED region families (this lane); no physical
+                               | concept imported -- they are vertex/edge sets.
+temperature, energy, radius,   | NOT USED.
+area, force, potential         |
+Newton-form falloff            | NAMED ONLY in SECTION 10 (final comparison), per D-1 and
+                               | the assignment; enters no construction step.
+
+INSERTED vs INDUCED
+-------------------
+INDUCED (the venue's own):  everything in Sections 1, 3, 4, 5 -- the main sweep, the
+  winding-pair constant, the enclosing sweep, the KP topological constant.  Pure Gamma:
+  nothing added to the stabiliser list, no parameter anywhere.
+INSERTED, and labelled so in the OUT file where they appear:
+  - Section 2 corridor: a REGION deformation (geometry grown, venue untouched).
+  - Section 6 range row: ONE extra Z-row added to the rank instrument's generator list;
+    NOT a stabiliser code, NOT a Gamma venue -- an instrument-sensitivity control only.
+    Its g-dependent shell is the INSERTED row's law; reporting it as Gamma's would be the
+    fatal error named in the brief, and the OUT file says so at the point of use.
+No mediator law is measured in this lane; the mediator belongs to the coupling tier under
+the openness clause and is only PREFIGURED by control (v).
+
+D-15 PAIRING (a control beside every zero and every flat line)
+--------------------------------------------------------------
+zero: separated pairs (G2)         <- beside: contact registers (G3), wrap-contact
+                                      registers (G3c), corridor SB shows geometry reached
+                                      contact (G5), inserted row makes the SAME pair
+                                      g-dependent (G9) -- the instrument would have shown
+                                      a falloff had one existed.
+zero: s=2 contact, w=1 frames,     <- beside: s>=3 contacts and w>=2 frames nonzero with
+      corridor contact                exact forms (G3, G7) -- sub-threshold rank
+                                      absorption, not blindness.
+flat: winding constant w (G6)      <- beside: contractible pairs at the same distances
+                                      give 0; the constant is the venue's topology.
+flat: TEE = -1 (G8)                <- the known-to-appear topological constant
+                                      (Kitaev-Preskill / Levin-Wen), same instrument.
+
+CHOICE LEDGER (every choice that could have gone another way)
+-------------------------------------------------------------
+1. Pair-union convention: edge union (disjoint qubit sets) PRIMARY; induced-union variant
+   cross-checked at one contact row (equal there, both printed).
+2. Blocks row-aligned at fixed offset: justified by D-22 symmetry and checked numerically
+   (G10 offset invariance).
+3. Corridor width 2: width 1 has no v-edges and cannot even form a straddling seam; width
+   2 is the thinnest corridor that can.  Its contact seam is still rank-absorbed -- that
+   is a finding, not a tuning.
+4. Inserted row anchored in A's row 1 starting at column 1: makes the predicted reach
+   threshold exactly ell = g+3; the prediction is checked as a gate, not assumed.
+5. Sweep ceilings: L = 12 (n = 288 qubits, largest exact object; F_2 bitmask width 288),
+   s = 2..4, all g = 0..L-2s (both seams of the torus included).
+6. KP partition by edge midpoints into three pairwise-contacting sectors: any partition of
+   the disk's edges works for the KP combination; constancy across q and offsets is gated.
+
+TOY_SEPARATION
+--------------
+The venue is the program's standing corner tier (C-74/C-79 lineage), not a lane-local toy;
+every instrument reused is the earned one, cited above.  Nothing in this lane feeds the
+world tier; the world-tier two-region relation is a separate assignment.

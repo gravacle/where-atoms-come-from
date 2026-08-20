@@ -1,0 +1,81 @@
+LANE T43_A -- D-24 AUDIT TABLE.  Every concept used, EARNED (with the computation that
+earned it) or BORROWED/IMPORTED (and then absent from every construction step).
+The lane's charge was that certify / learn / write be defined OPERATIONALLY ON THE
+SURFACE, not imported from horizon or information-theory language.  Row by row:
+
+CONCEPT                  STATUS    HOW
+-----------------------  --------  ----------------------------------------------------------
+CERTIFY / LEARN          EARNED    an interior quantity g is certifiable iff an operator h
+(from outside)                     supported entirely outside R exists with g+h in the
+                                   stabiliser span: the code fixes the product g*h, so
+                                   measuring h outside yields g's value.  Pure F_2 span
+                                   membership -- no entropy, no channel capacity, no
+                                   observer model imported.  Counted modulo interior
+                                   stabilisers; TWO independent computational routes agree
+                                   on every one of the 1590 regions.
+WRITE / FLIP             EARNED    a record bit [g] is flipped by writer w iff w
+(from outside)                     anticommutes with g; w must be ADMISSIBLE = commutes
+                                   with every stabiliser generator = creates no syndrome
+                                   (the on-surface admissibility already earned by
+                                   C-74/C-78).  The pairing is class-well-defined BECAUSE
+                                   writers are admissible (computed).  No control-theory
+                                   or thermodynamic notion imported.
+BOUNDARY LAYER B         EARNED    the qubits of R lying in the support of at least one
+                                   straddling generator -- a lattice count.  Its size BQ is
+                                   itself measured (degree 1) and the crossover BQ == |R|
+                                   for small squares is part of the result.
+STORED content (capP)    EARNED    T42_C's capP = 2|R| - r_in recomputed from scratch;
+                                   sealed T42_C anchors reproduced exactly (19, 17, and
+                                   the certifiable count 14 on the anchor shapes).
+r_in (interior           EARNED    two routes: rank-difference formula AND an explicit
+stabiliser rank)                   witness construction (every witness verified supported
+                                   in R); equal on every region.
+admissibility            BORROWED  from the program's own earlier lanes (C-74 writers,
+(zero-syndrome)                    C-78 d_W): commutes with every generator.  On-surface,
+                                   not an import from outside the program.
+cut-rank instrument      BORROWED  Kitaev-Preskill / Hamma-Ionicioiu-Zanardi territory
+                                   (region entropy of stabiliser states).  OURS is the
+                                   IDENTITY: the externally certifiable content EQUALS the
+                                   cut-rank, verified by two routes on every region -- the
+                                   T-42 interface aggregate acquires its operational
+                                   meaning here.
+operator cleaning        BORROWED  Bravyi-Terhal cleaning lemma is the standard owner of
+                                   "logicals avoid correctable regions"; our band
+                                   certifiability/writability profile is the operational-
+                                   record instance, computed independently.
+polynomial degree        EARNED    constant k-th finite differences on exact integer
+(boundary vs volume)               sequences (T42_C's earned instrument); the WRITE_B
+                                   sequence's small-s window is excluded only by the
+                                   COMPUTED crossover condition (BQ == |R|), not by choice.
+region conventions,      BORROWED  C-74 / T42_C (ESTABLISHED): reused identically; the
+census                             1480-rectangle census replicated as the baseline gate.
+Aut(carrier) = 8L^2      BORROWED  C-74 (ESTABLISHED), D-22 venue check only; enters no law.
+dimension (D=2 corner)   IMPORTED  fixed by the carrier; conclusions are stated as exact
+                                   degree-1 vs degree-2 counts on this lattice, never as a
+                                   dimension-dependent formula.
+entanglement entropy,    NOT USED  (the entanglement READING of T-42 is what the rule is
+mutual information                 testing; no entropy quantity is computed or cited in
+                                   any construction step)
+horizon, temperature,    NOT USED
+collapse, 1/4G
+classical gravitational  IMPORTED  named ONLY in the READING section at the end of
+form                               t43_corner.OUT.txt (D-1); no construction step uses it.
+
+D-15 CONTROLS RUN (all computed booleans):
+  * locality zero: WRITE0 == 0 on every region -- flagged as a THEOREM, with the
+    boundary-layer instrument beside it so the zero is not mistaken for a measurement
+  * punctured region: CERT rises by exactly +6 per deep hole (instrument sensitivity)
+  * comb / fully punctured: CERT == STORED == 2|R| -- the outside CAN reach volume-many
+    records when the geometry allows; the boundary-bound is a measurement, not blindness
+  * scatter at matched |R|: CERT_scatter > CERT_block, every seed
+  * non-contractible bands: record bits certifiable (CERT_GI = cap_record) and writable
+    when thin (WRITE_GI_B = cap_record at widths 1-2); the width-3 / width->=4 protection
+    profile reported as found
+  * g=0 adjacency: coupling removed, STORED stays volume-degree, CERT == WRITE == 0
+    identically -- the certifiable count measures adjacency structure, not the counter
+  * wrong-reading guards inherited from T42_C's laws (2*PER-10 fails off-rectangles) are
+    not re-run here; the identity CERT == IR2 transfers their scope
+
+D-22: venue geometry present (Aut = 8L^2, C-74, borrowed).
+NO NARRATED VERDICTS: every PASS/FAIL in t43_corner.OUT.txt is a computed boolean; the
+rule's corner-tier input is a computed conjunction.  Deterministic rerun, byte-identical.

@@ -1,0 +1,159 @@
+====================================================================================================
+T-43-B   EXTERNALLY CERTIFIABLE CONTENT -- WORLD TIER (exact counts, n = 2..12)
+====================================================================================================
+
+(a)+(b)+(c)  THE THREE COUNTS SIDE BY SIDE, per n  (all exact):
+  n  STORED  IFACE CERT/epoch WRITE/epoch  E_min LB_shell  DEPTH_SUM
+  2       8     24          8           8      1        1          8
+  3      27     54         26          26      2        2         28
+  4      64     96         56          56      2        2         72
+  5     125    150         98          98      2        2        153
+  6     216    216        152         152      2        2        288
+  7     343    294        218         218      2        2        496
+  8     512    384        296         296      3        2        800
+  9     729    486        386         386      3        2       1225
+ 10    1000    600        488         488      3        3       1800
+ 11    1331    726        602         602      3        3       2556
+ 12    1728    864        728         728      3        3       3528
+
+GATES -- model replication and the per-epoch capacity:
+  [PASS] IFACE == 6n^2 at every n (the inserted channel count, replicated)
+  [PASS] CAP_depth(1) == n^3 - (n-2)^3 at every n (T42_C replicated)
+  [PASS] DEPTH_SUM recurrence DEPTH_SUM(n) == DEPTH_SUM(n-2) + n^3, every n >= 4 (T42_C)
+  [PASS] shell counts: L(d) == (n-2d+2)^3 - (n-2d)^3 (clamped at 0), every n, every d
+
+THE PER-EPOCH CAPACITY (simultaneous independent certification, exact max-flow):
+  [PASS] CERT/epoch == n^3 - (n-2)^3 == CAP_depth(1) at every n -- THE IDENTITY: allowing chains to any depth buys NOTHING per epoch; grain-disjointness pins the simultaneous capacity to the traversal-free capacity
+  [PASS] CERT/epoch is degree 2 in n (BOUNDARY), read by constant finite differences  order=2
+  [PASS] CERT/epoch < IFACE at every n (the channel bound 6n^2 is never tight; the binding cut is the first grain layer)
+  [PASS] STORED content is degree 3 (VOLUME) -- the census, replicated beside the capacity
+  [PASS] IFACE is degree 2 (BOUNDARY)
+
+(b) WRITABLE-FROM-OUTSIDE per epoch: the identical counting problem BY MODEL STRUCTURE
+    (the access model does not distinguish read-traversal from write-traversal; declared
+    in the header, stated as structure, not a finding).  WRITE/epoch column above.
+
+====================================================================================================
+DEPTH STRUCTURE -- certification cost vs depth, and the shell cuts
+====================================================================================================
+
+Cost of one certification at depth d = d (the chain is the cost; depth is the minimal
+chain length, computed by BFS).  Cost to certify everything once = DEPTH_SUM (table).
+
+witness table, n = 12:  shell d | L(d) | SIM_shell(d) | V_deep(d) | SIM_deep(d)
+     1       728        728       1728       728
+     2       488        488       1000       488
+     3       296        296        512       296
+     4       152        152        216       152
+     5        56         56         64        56
+     6         8          8          8         8
+  [PASS] SIM_shell(d) == L(d) at every n and d: EVERY shell is certifiable whole in ONE epoch, at chain cost d per record
+  [PASS] SIM_deep(k) == L(k) at every n and k: the k-th shell is the exact min-cut for all content at depth >= k -- per epoch, at most L(k) records deeper than k-1 are certifiable, however scheduled
+  [PASS] V_deep(k) == (n-2k+2)^3 (clamped): content at depth >= k is the inner cube -- deep certifiable content shrinks as a VOLUME two layers thinner per step
+
+====================================================================================================
+FIXED EPOCH BUDGET -- N_opt(E), the EXACT effective certifiable content, no heuristics
+====================================================================================================
+
+N_opt(E) = the optimum over ALL E-epoch schedules, computed as ONE exact max-flow on
+the time-expanded network (header: instruments).  Beside it, the shell-cut bound
+UB_shell(E) = min over k of [content at depth < k  +  E * SIM_deep(k)], capped at n^3.
+Scheduling heuristics tried first (shell round-robin, z-slabs, local search) all fell
+short of the cuts; the time-expanded flow replaced them with the true optimum.
+
+  n  N_opt(E) for E=1..E_min  [beside each: /UB_shell(E); * marks UB not met]
+  2  8/8
+  3  26/26  27/27
+  4  56/56  64/64
+  5  98/98  125/125
+  6  152/152  216/216
+  7  218/218  343/343
+  8  296/296  496/512*  512/512
+  9  386/386  664/729*  729/729
+ 10  488/488  856/976*  1000/1000
+ 11  602/602  1072/1204*  1331/1331
+ 12  728/728  1312/1456*  1728/1728
+
+  [PASS] N_opt(1) == CERT/epoch at every n (the two instruments agree where they overlap)
+  [PASS] N_opt(E) <= UB_shell(E) always (the shell cuts are valid bounds)
+  [PASS] the shell cuts are NOT the whole story: N_opt(E) < UB_shell(E) exactly at the computed pairs (n,E) = [(8, 2), (9, 2), (10, 2), (11, 2), (12, 2)] -- at every such pair the time-expanded min cut is strictly inside the shell-cut family (reported as found)
+  [PASS] N_opt(2) on the uncapped range n = 8..12 has CONSTANT SECOND DIFFERENCE 24: degree 2 (BOUNDARY), exact form 2*(6n^2-12n+8) - 12n == 12n^2 - 36n + 16 -- two epochs pay an exact 12n congestion toll against twice the one-epoch capacity
+  [PASS] N_opt(E) >= n^3 - (n-2E)^3 (clamped) at every n, E computed: E epochs certify at least the outer 2E layers' volume (the shell-by-shell schedule is never better)
+
+MINIMAL EPOCHS TO CERTIFY THE WHOLE STORED CONTENT (exact, from the curve):
+    E_min: 2:1, 3:2, 4:2, 5:2, 6:2, 7:2, 8:3, 9:3, 10:3, 11:3, 12:3
+  [PASS] LB_shell <= E_min at every n (cut validity)
+  [PASS] E_min == LB_shell everywhere EXCEPT the computed exceptions {n=8, n=9}, where E_min = 3 > LB_shell = 2: the shell cuts alone under-count the epochs needed (consistent with the N_opt(2) toll: n^3 > 12n^2-36n+16 first at n = 8)
+  [PASS] E_min >= ceil(n^3 / CERT_epoch) at every n (arithmetic floor of the rate bound; over the computed range E_min stays within +1 of it)
+
+PER-EPOCH vs CUMULATIVE -- the split the brief requires, kept explicit (both exact):
+  * PER EPOCH:   certifiable content is BOUNDARY-bounded: 6n^2 - 12n + 8 (degree 2),
+    and no schedule beats it (min-cut).  Per epoch the interface is the whole story.
+  * CUMULATIVE:  re-use over epochs is NOT boundary-bounded: N_opt(E) grows with time
+    (never faster than E * (6n^2-12n+8), and with the computed 12n toll at E = 2), and
+    at E_min <= 3 on the whole computed range the ENTIRE stored volume n^3 is
+    certified.  Certifiable CONTENT, given time, is VOLUME; the boundary bounds the
+    RATE, not the total.
+
+====================================================================================================
+D-15 CONTROLS -- the instrument must be able to see volume, and to lose the geometry
+====================================================================================================
+
+CONTROL 1 -- FULLY-CHANNELLED block: a channel to EVERY grain (punctured geometry).
+    n:              2     3     4     5     6     7     8     9    10    11    12
+    CERT/epoch:     8    27    64   125   216   343   512   729  1000  1331  1728
+  [PASS] fully-channelled CERT/epoch == n^3 at every n, degree 3 (VOLUME): when the outside reaches every cell, the instrument REPORTS volume -- the boundary bound above is a measurement of the access geometry, not blindness  order=3
+  [PASS] fully-channelled E_min == 1 at every n (everything certified in one epoch)
+
+CONTROL 2 -- SHUFFLED channel graph: the same 6n^2 channels attached to seeded-random
+grains (deterministic seed 11, drawn with repetition from the sorted cell list).
+      n channels distinct CERT/epoch max depth  E_min
+      2       24        7          7         2      2
+      3       54       23         23         2      2
+      4       96       53         53         2      2
+      5      150       93         93         3      2
+      6      216      130        130         2      2
+      7      294      195        195         3      2
+      8      384      266        266         3      3
+      9      486      357        357         3      3
+     10      600      447        447         3      3
+     11      726      573        573         3      3
+     12      864      683        683         3      3
+  [PASS] shuffled: CERT/epoch == number of DISTINCT channel-bearing grains at every n (one chain per channel grain; grain-disjointness; the count follows the channel graph, not the block's shape)
+  [PASS] shuffled: the depth structure COLLAPSES -- max depth <= 4 at every n (block: ceil(n/2), = 6 at n=12); the boundary-vs-bulk story above lives in the geometry the shuffle destroys  block max depths: 2:1, 3:2, 4:2, 5:3, 6:3, 7:4, 8:4, 9:5, 10:5, 11:6, 12:6
+  [PASS] shuffled: E_min <= 3 at every n (with channels everywhere in the bulk, the whole volume is certified in a depth-free handful of epochs)  E_min: 2:2, 3:2, 4:2, 5:2, 6:2, 7:2, 8:3, 9:3, 10:3, 11:3, 12:3
+
+====================================================================================================
+D-22 VENUE / INSTRUMENT-INVARIANCE CHECK (n = 5 witness)
+====================================================================================================
+  [PASS] all 48 signed-permutation symmetries of the block preserve the cell set and the computed depth field (the instrument respects the venue's own symmetry)
+
+====================================================================================================
+READING FOR T-43 (world tier only; the rule decides at the register, across tiers)
+====================================================================================================
+
+  STORED content:                 n^3            VOLUME  (degree 3; census, replicated)
+  CERTIFIABLE per epoch:          6n^2-12n+8     BOUNDARY (degree 2; exact min-cut; equals
+                                                 the traversal-free capacity CAP_depth(1) --
+                                                 chains to depth buy nothing per epoch)
+  WRITABLE per epoch:             same count     (model structure, declared)
+  CERTIFIABLE, budget E:          N_opt(E)       exact (time-expanded flow); at E = 2 it is
+                                                 12n^2-36n+16 on the uncapped range --
+                                                 still BOUNDARY order, with a 12n toll
+  CERTIFIABLE cumulative:         whole n^3      at E_min <= 3 on the computed range;
+                                                 E_min >= ceil(n^3/(6n^2-12n+8)) always
+  Depth cost:                     d per record at depth d; shell k is the exact per-epoch
+                                                 min-cut (L(k)) for everything deeper.
+
+  The world tier's honest answer under the pre-registered rule is SPLIT, and the split is
+  the physics: the boundary bounds the certification RATE exactly (per-epoch and even
+  per-epoch-pair capacity are boundary-scaling, and the fully-channelled control shows the
+  instrument would have said volume if the access geometry allowed it); the boundary does
+  NOT bound the certifiable TOTAL (re-use over epochs certifies the whole stored volume,
+  in at most 3 epochs on the computed range, at a rate that keeps E_min >= ~n/6 as n
+  grows -- the cut arithmetic, stated as a bound, not an extrapolation).  Whether
+  'externally certifiable content' in the rule's sense means the per-epoch count
+  (boundary-bounded) or the anytime count (volume) is exactly the per-epoch vs cumulative
+  declaration of D-24 -- reported here as found, both exact, NOT collapsed.
+
+ALL GATES PASS: True

@@ -1,0 +1,70 @@
+LANE T43_A -- EXTERNALLY CERTIFIABLE CONTENT, CORNER TIER.
+
+Runs under the pre-registered decision rule (REGISTER_V001.md, final section, registered
+BEFORE this lane ran): compute how many of a region's volume-many stored records the
+outside world can independently CERTIFY (learn) or WRITE through the interface; the rule,
+not the lane, decides the reading.  This lane returns DATA.
+
+VENUE (identical to LANE_T42_C_BOUNDCAP / LANE_O50_A_ACTION f2lib, the C-74 lane): toric
+code, L in {3,4,5,6,8,10,12}, stars X-type / plaquettes Z-type, region = induced edge set
+of a vertex set; exact F_2 / integer bitmask arithmetic, no floats anywhere.  Largest
+exact object: L=12, n=288 qubits, F_2 vectors of width 576.  1590 regions analysed
+(the full 1480-rectangle C-74 census replicated as baseline, square sweeps to s=11,
+strips, bands, punctured/comb, scatter, offset and venue-size checks, g=0 venues).
+
+OPERATIONAL DEFINITIONS (all on-surface; the D-24 table itemises them):
+  STORED    = T42_C's capP = 2|R| - r_in, recomputed; sealed anchors reproduced
+              (3x3 -> 19, 2x4 -> 17).
+  CERT      = dim of { interior Paulis g : exists h supported ENTIRELY OUTSIDE R with
+              g+h in the stabiliser span } modulo interior stabilisers -- measuring h
+              outside yields g's value because the code fixes g*h.  Computed by TWO
+              independent routes per region (CSS sector ranks; direct span-intersection
+              rank arithmetic with r_in re-derived by explicit interior-element witness
+              construction) -- they agree on every one of the 1590 regions.
+  CERT_GI   = the gauge-invariant (record/logical) part of CERT.
+  WRITE0    = record bits flippable by ADMISSIBLE (zero-syndrome) writers STRICTLY
+              outside: identically 0, computed on every region (the locality theorem).
+  WRITE_B   = same with writers allowed on outside + BOUNDARY LAYER B, where B = qubits
+              of R lying in the support of at least one straddling generator (a lattice
+              count, earned).  Flip-pairing rank is class-well-defined because admissible
+              writers commute with the stabiliser group.
+  WRITE_GI_B= the record/logical part of WRITE_B.
+
+RESULTS (every law an exact equality gated by a computed boolean; degrees by constant
+k-th finite differences, the earned instrument):
+  STORED(s x s)  = 2s^2 + 2s - 5          degree 2  VOLUME
+  CERT(s x s)    = 8s - 10 = 2*PER - 10   degree 1  BOUNDARY  == the T-42 interface law:
+                   the interface aggregate IS the externally certifiable content (identity
+                   verified two routes, every region, L to 12; venue-size independent;
+                   translation invariant)
+  WRITE0         = 0 everywhere;  WRITE_B = STORED for s <= 3 (whole square inside the
+                   boundary layer), and WRITE_B = CERT + 6 = 8s - 4 for every s >= 4:
+                   degree 1  BOUNDARY.  HIDDEN = STORED - CERT = 2s^2 - 6s + 5: degree 2.
+  Strips: CERT == STORED (a region with no interior hides nothing).
+  Bands (C-74 positive control): CERT_GI = cap_record on every band (record bits ARE
+  certifiable through the cut); WRITE_GI_B = 1, 2, 1, 0 at widths 1, 2, 3, >=4 -- THICKNESS
+  PROTECTION: a deep record bit is certifiable (correlations cross any cut) but not
+  writable through the interface layer.  Reported as found.
+
+D-15 CONTROLS (the boundary-bound is a measurement, not blindness of the instrument):
+  (i)  punctures: each deep hole raises CERT by exactly +6 (the interface quantum);
+       comb (fully punctured): CERT == STORED == 2|R| -- volume-many records reachable;
+       scatter at matched |R|: CERT_scatter > CERT_block, every seed.
+  (ii) non-contractible bands: reachability shown (above).
+  (iii) g=0 adjacency: same lattice, coupling removed (single-site constraints, and the
+       free venue): STORED stays VOLUME-degree while CERT == WRITE == 0 identically --
+       certifiability is carried by the adjacency structure, not by the counter.
+
+OWNERS: that operators in a correctable region can be cleaned to its complement, and the
+cut-rank / region entropy of stabiliser states, are BORROWED (Bravyi-Terhal cleaning
+lemma; Kitaev-Preskill / Hamma-Ionicioiu-Zanardi).  OURS: the operational certify/write
+ledger on the record surface, the exact identity certifiable == cut-rank by two routes,
+the locality zero + boundary-layer write instrument, the write law CERT + 6, the
+thickness-protection profile, the puncture/comb/g=0 sensitivity controls, and the corner
+half of the two-tier test under the pre-registered rule.
+
+THE RULE'S CORNER-TIER INPUT (computed conjunction, printed at the end of the OUT):
+certifiable and writable content boundary-degree, stored content volume-degree,
+instrument sensitive in both directions => corner tier: BOUNDARY-BOUNDED (True).
+D-1: the recovery target is named only in the READING section of the OUT.  D-22: venue
+geometry present (Aut = 8L^2, C-74, borrowed).  Deterministic: rerun byte-identical.

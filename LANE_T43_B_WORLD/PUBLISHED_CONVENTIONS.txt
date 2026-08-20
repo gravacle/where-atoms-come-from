@@ -1,0 +1,55 @@
+LANE T43_B -- EXTERNALLY CERTIFIABLE CONTENT, WORLD TIER (census access model).
+
+MODEL (INSERTED, GR1/T42_C): n x n x n block of barrier records, one per grain; outside
+access ONLY through the 6n^2 block-complement face adjacencies; operations traverse grains
+in nearest-neighbour steps.  Exact integers; degrees read by constant finite differences
+(T42_C instrument); no fit, no floats.
+
+DEFINITIONS (declared before the numbers; D-24 table in D24_AUDIT.txt):
+  chain = path of distinct grains from a channel-bearing grain; certification = a chain
+  relays its ENDPOINT's value out (relays read through); write = the same chain inward;
+  independent = grain-disjoint chains; epoch = one synchronous round of grain-disjoint
+  chains (per-step tick reading declared beside it; the split below is invariant).
+
+RESULTS (all exact, n = 2..12; every claim a computed gate; 27/27 PASS):
+
+  STORED                 n^3                     degree 3  VOLUME   (census, replicated)
+  CERT/epoch             6n^2 - 12n + 8          degree 2  BOUNDARY (exact min-cut)
+                         == CAP_depth(1): chains to depth buy NOTHING per epoch -- the
+                         simultaneous capacity is pinned to the traversal-free capacity
+  WRITE/epoch            same count              (model structure, declared, not a finding)
+  SHELL CUTS             SIM_deep(k) == L(k) == (n-2k+2)^3 - (n-2k)^3: shell k is the
+                         exact per-epoch ceiling for everything deeper; every shell is
+                         certifiable whole in one epoch at chain cost d per record
+  BUDGET E (exact)       N_opt(E) by ONE max-flow on a time-expanded network (E copies,
+                         shared unit cert sink per grain; flow decomposition == schedule,
+                         so the optimum is exact -- heuristics fell short and were
+                         replaced, not patched).  N_opt(2) = 12n^2 - 36n + 16 on the
+                         uncapped range n = 8..12 (constant 2nd difference 24): BOUNDARY
+                         order with an exact 12n congestion toll vs 2x one epoch
+  SHELL CUTS NOT WHOLE   N_opt(2) < shell-cut bound at n = 8..12; E_min = 3 > LB_shell = 2
+  STORY                  at n = 8, 9 -- the cut family is controlled, not trusted
+  E_min                  1,2,2,2,2,2,3,3,3,3,3 for n = 2..12; always
+                         >= ceil(n^3/(6n^2-12n+8)) (~ n/6, cut arithmetic, not a fit)
+
+  PER-EPOCH vs CUMULATIVE (the brief's split, kept explicit, both exact):
+    per epoch the certifiable content is BOUNDARY-bounded and no schedule beats it;
+    cumulatively the boundary bounds only the RATE -- the whole stored VOLUME is
+    certified at E_min (<= 3 on the computed range).  Which of the two the T-43 rule's
+    'externally certifiable content' means is the declared epoch/time model choice --
+    reported as found, NOT collapsed, for the register to rule on across both tiers.
+
+CONTROLS (D-15): fully-channelled block -> CERT/epoch = n^3 degree 3, E_min = 1 (the
+instrument sees volume when the geometry allows it); shuffled channels (seed 11) ->
+capacity follows the channel graph, depth structure collapses.  D-22: 48 venue symmetries
+preserve the depth field (computed).  D-1: no classical relation named anywhere.
+
+OWNERS: census + access model -- LANE_GR1_CENSUS / LANE_T42_C_BOUNDCAP (this program).
+Menger / max-flow-min-cut / Dinic and time-expanded flow networks -- BORROWED (Menger
+1927; Ford-Fulkerson 1956; Dinic 1970).  OURS: the operational certify/write framing,
+the CERT/epoch == CAP_depth(1) identity, the shell-cut laws and the computed places they
+fail, the exact N_opt(E) instrument and its 12n-toll closed form, the E_min table, and
+the two-tier certifiability test under the pre-registered T-43 rule.
+
+FILES: t43b_world.py (the construction), t43b_world.OUT.txt (sealed run, 27/27 gates),
+D24_AUDIT.txt, SEALS.sha256.  Reproduce: python3 t43b_world.py (exit 0 iff all gates).

@@ -9668,3 +9668,41 @@ the method. **THE DECISION RULE, REGISTERED BEFORE THE COMPUTATION (T-43):**
 >   **emergent-tier target** (the collapse analogue), not a record-level requirement.
 > - **Volume-bounded** ⟹ the surface declines to answer; the question returns to the principal.
 > - **Mixed/other** ⟹ reported as found; no forcing.
+
+---
+
+## O-54 — **JUDGED: THE HYPOTHESIS HOLDS. NO PURE-Γ FALLOFF EXISTS, AND THE DIVISION OF LABOR IS NOW COMPUTED.** C-77's second increment SATISFIED.
+
+Three probes and a judge, **33/33 gates, 114/114 independent adversarial checks, no fatal
+reinsertion anywhere** — every decaying law in every lane is labeled INSERTED at its point of use,
+and the verifiers confirmed none was reported as Γ's.
+
+**PURE-Γ TWO-REGION STRUCTURE, THE EXACT TAXONOMY** (toric corner to `L=12`, exact `F₂`; world
+access model with the earned axis re-derived from interactions alone):
+
+| character | the law |
+|---|---|
+| **zero beyond contact** | `I_IR = I_MI = 0` **identically** at every positive earned separation — zero, *not decaying* |
+| **contact seams** | `I_IR = 2(s−2)`, `I_MI = s−2`; the `s=2` seam rank-absorbs to exactly zero — contact necessary, not sufficient |
+| **topological constants** | winding `w` at every distance; `TEE = −1` exactly *(Kitaev–Preskill, Levin–Wen; instrument Hamma–Ionicioiu–Zanardi)* |
+| **the one genuine separation law — GROWING** | **`w_min = d` exactly**: minimal admissible coupling-writer weight equals the earned separation, slope 1, intercept 0, exhaustive to `2²⁵` writers per pair. **Confinement character** *(Wegner 1971, Wilson 1974; Bravyi–Kitaev string distance)* — the opposite of a falloff, and **not gravitational** |
+
+**THE FALLOFF ENTERS ONLY THROUGH THE COUPLING.** An inserted reach-`ℓ` row makes the same corner
+pair separation-dependent **exactly at `ℓ = g+3`** — the instrument would have shown a falloff had
+one existed. The world block aggregate **inherits** the declared mediator's inserted exponent, with a
+measured aggregation correction (`q = 2.10`, analytically confirmed, out-of-sample 0.3–0.8%).
+
+> ### **THE DIVISION OF LABOR — C-77's REFINED SHAPE, NOW COMPUTED RATHER THAN ASSERTED:**
+> ### **Γ shapes the boundaries — the boundary-degree law and the two-region character.**
+> ### **The coupling supplies reach and the falloff — the LOCUS where Newton-form would have to
+> ### live under this claim (locus-match made; no exponent earned).**
+> ### **Alpha supplies the costs — unexercised this increment.**
+
+**Register corrections carried:** `dV = g_eff+1` on the torus (the A-lane finding said `g+1`); the
+C-lane relay paraphrase was a transcription erratum, sealed output correct. **Taxonomy amendment
+bound:** pure-Γ two-region relations include a linearly **growing** law, not only
+separation-independent and contact-only ones.
+
+**Named next (T-44):** which falloff exponents a **Γ-constrained** coupling can *reach* — the
+weighted-instrument lane, coupling the exact `w_min = d` cost landscape to a declared mediator.
+Until it runs, **no falloff exponent is earned.**

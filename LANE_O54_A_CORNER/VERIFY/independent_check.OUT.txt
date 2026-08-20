@@ -1,0 +1,35 @@
+A L=12 s=3 g=0 (I_IR,I_MI)                                 got=(2, 1)             want=(2, 1)             OK
+A L=12 s=3 g=1 (I_IR,I_MI)                                 got=(0, 0)             want=(0, 0)             OK
+A L=12 s=3 g=2 (I_IR,I_MI)                                 got=(0, 0)             want=(0, 0)             OK
+A L=12 s=3 g=3 (I_IR,I_MI)                                 got=(0, 0)             want=(0, 0)             OK
+A L=12 s=3 g=4 (I_IR,I_MI)                                 got=(0, 0)             want=(0, 0)             OK
+A L=12 s=3 g=5 (I_IR,I_MI)                                 got=(0, 0)             want=(0, 0)             OK
+A L=12 s=3 g=6 (I_IR,I_MI)                                 got=(2, 1)             want=(2, 1)             OK
+B L=8 s=2 g=0 contact absorbed                             got=(0, 0)             want=(0, 0)             OK
+B L=12 s=4 g=0 contact                                     got=(4, 2)             want=(4, 2)             OK
+C L=8 s=4 double seam                                      got=(9, 4)             want=(9, 4)             OK
+C L=8 s=4 capA,capB,capAB                                  got=(0, 0, 1)          want=(0, 0, 1)          OK
+C L=6 s=3 double seam                                      got=(5, 2)             want=(5, 2)             OK
+C L=6 s=3 capAB                                            got=1                  want=1                  OK
+D L=10 w=1 r0=3                                            got=(1, 1)             want=(1, 1)             OK
+D L=10 w=1 r0=6                                            got=(1, 1)             want=(1, 1)             OK
+D L=10 w=2 r0=4                                            got=(2, 2)             want=(2, 2)             OK
+D L=10 w=2 r0=7                                            got=(2, 2)             want=(2, 2)             OK
+D L=10 w=2 capA,capAB                                      got=(2, 2)             want=(2, 2)             OK
+E KP TEE L=12 q=7 off(2,3)                                 got=-1                 want=-1                 OK
+E KP TEE L=12 q=6 off(0,0)                                 got=-1                 want=-1                 OK
+F insert g=3 ell=2 I_IR                                    got=0                  want=0                  OK
+F insert g=3 ell=3 I_IR                                    got=0                  want=0                  OK
+F insert g=3 ell=4 I_IR                                    got=0                  want=0                  OK
+F insert g=3 ell=5 I_IR                                    got=0                  want=0                  OK
+F insert g=3 ell=6 I_IR                                    got=1                  want=1                  OK
+F insert g=3 ell=7 I_IR                                    got=0                  want=0                  OK
+F insert g=3 ell=8 I_IR                                    got=0                  want=0                  OK
+F insert g=3 ell=9 I_IR                                    got=0                  want=0                  OK
+G L=10 sA=2 w=2 t=0                                        got=(6, 3)             want=(6, 3)             OK
+G L=10 sA=2 w=2 t=1                                        got=(0, 0)             want=(0, 0)             OK
+G L=10 sA=2 w=1 t=0 absorbed                               got=(0, 0)             want=(0, 0)             OK
+H dV sweep L=12 s=2 (audit claims g+1 monotone): [1, 2, 3, 4, 5, 4, 3, 2, 1]
+H dV equals geff+1 (NOT g+1)                               got=[1, 2, 3, 4, 5, 4, 3, 2, 1] want=[1, 2, 3, 4, 5, 4, 3, 2, 1] OK
+
+ALL INDEPENDENT CHECKS PASS

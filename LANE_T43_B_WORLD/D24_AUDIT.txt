@@ -1,0 +1,89 @@
+LANE T43_B -- D-24 AUDIT TABLE.  Every concept used: EARNED (with the computation that
+earned it), DECLARED (a model choice stated before use, entering no conclusion as if
+discovered), or INSERTED/BORROWED (and then absent from every construction step's
+conclusions).  Certify / learn / write are defined operationally ON the surface, in
+access-graph terms only -- nothing about them is imported from information theory,
+thermodynamics, or any classical relation.
+
+CONCEPT                   STATUS     HOW
+------------------------  ---------  ---------------------------------------------------------
+access model (n^3 block,  INSERTED   the GR1/T42_C census access model, declared in the
+6n^2 interface channels,             header; replicated by computed gates (IFACE == 6n^2,
+grain-by-grain traversal)            CAP_depth(1) == n^3-(n-2)^3, DEPTH_SUM recurrence)
+chain                     EARNED     path of pairwise-distinct grains starting at a
+                                     channel-bearing grain; pure graph object
+certify / learn           DECLARED   operational: a chain relays the endpoint's stored value
+(operational)                        out through its entry channel; the chain certifies ONLY
+                                     its endpoint (relays are read through).  Access-graph
+                                     terms only; no imported information measure
+write                     DECLARED   the same chain run inward, flipping the endpoint record;
+                                     the model does not distinguish read-traversal from
+                                     write-traversal, so WRITE-per-epoch == CERT-per-epoch is
+                                     MODEL STRUCTURE, stated as such, never as a finding
+independence              DECLARED   grain-disjoint chains (a shared relay would make two
+                                     certificates depend on one grain's faithful relaying);
+                                     also retires channel multiplicity (a grain hosts <= 1
+                                     chain regardless of its channel count)
+epoch / time              DECLARED   model choice, stated in the header BEFORE the numbers:
+                                     one synchronous round of grain-disjoint chains, each
+                                     chain completing within its epoch.  The alternative
+                                     (one adjacency step per tick) is declared beside it;
+                                     the per-epoch vs cumulative split is the same split in
+                                     either reading.  The split itself is REPORTED, never
+                                     collapsed -- the brief's requirement
+depth                     EARNED     BFS traversal count from the channel-bearing set
+                                     (T42_C instrument); no metric claim
+shells L(d), inner cubes  EARNED     computed counts; closed forms verified by gates at
+V_deep(k)                            every n and d (never assumed)
+simultaneous capacity     EARNED     exact unit-vertex-capacity max-flow; the disjoint-path
+CERT/epoch                           == flow equivalence is BORROWED (Menger 1927;
+                                     Ford-Fulkerson 1956; Dinic 1970).  OURS: the computed
+                                     identity CERT/epoch == CAP_depth(1) (chains to depth
+                                     buy nothing per epoch), and its degree-2 read
+shell cuts SIM_deep(k)    EARNED     exact max-flow per k; OURS: SIM_deep(k) == L(k) at
+                                     every n, k -- and the computed proof that these cuts
+                                     are NOT the whole story (N_opt(2) < UB_shell(2) at
+                                     n = 8..12, E_min > LB_shell at n = 8, 9)
+N_opt(E), E_min           EARNED     ONE exact max-flow on a time-expanded network (E copies
+                                     of the block network coupled only through shared unit
+                                     certification sinks); a flow decomposition IS a
+                                     schedule, so the value is the true optimum over ALL
+                                     schedules -- no heuristic enters any number.  The
+                                     time-expanded construction is BORROWED (flows-over-time
+                                     territory, Ford-Fulkerson).  OURS: its use as the
+                                     certification-epoch optimizer, the exact E = 2 form
+                                     12n^2 - 36n + 16 (constant second difference 24, the
+                                     12n congestion toll), and the E_min table.
+                                     Heuristic schedules tried first (shell round-robin,
+                                     z-slabs, greedy local search) all fell short of the
+                                     shell cuts; they were REPLACED by the exact optimum,
+                                     not patched
+polynomial degree /       EARNED     constant k-th finite differences on exact integer
+boundary vs volume                   sequences (the T42_C instrument; read, not fitted);
+                                     the E = 2 form is read on the uncapped range n = 8..12
+                                     and stated with that scope
+stored content            EARNED     grain count n^3 (census, LANE_GR1_CENSUS), replicated
+                                     as the degree-3 control beside every boundary read
+dimension (3D)            IMPORTED   fixed by the census model; no conclusion uses a
+                                     dimension-dependent form -- all laws are counts on the
+                                     given lattice
+distance, field, metric,  NOT USED
+curvature, entropy,
+temperature
+classical gravitational   NOT NAMED  D-1: no classical relation is named anywhere in the
+relation                             script or its output; the pre-registered T-43 rule is
+                                     applied at the register, not in this lane
+
+D-15 CONTROLS RUN (each principal bound ships a construction that BREAKS it, computed):
+  * fully-channelled block (channel to every grain): CERT/epoch goes n^3, degree 3
+    (VOLUME), E_min == 1 -- the boundary bound is a measurement of the access geometry,
+    not blindness of the instrument
+  * shuffled channel graph (same 6n^2 channels, seeded-random attachment): CERT/epoch
+    follows the channel graph (== distinct channel-bearing grains), the depth structure
+    collapses (max depth <= 4 vs ceil(n/2)), E_min <= 3 with no geometry left
+  * shell-cut bound: shown NOT tight at computed (n, E) pairs -- the bound family itself
+    is controlled, not trusted
+D-22: 48 signed-permutation venue symmetries preserve the cell set and the computed depth
+field (n = 5 witness, computed gate).
+NO NARRATED VERDICTS: every PASS/FAIL line in t43b_world.OUT.txt is a computed boolean;
+ALL GATES PASS: True; exit code 0.

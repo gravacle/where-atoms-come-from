@@ -1,0 +1,44 @@
+================================================================================================
+A1  RIG TEST -- the definition vs two alternative honest operationalisations
+================================================================================================
+    n:                   2     3     4     5     6     7     8     9
+    grain-disjoint:      8    26    56    98   152   218   296   386
+  [OK] independent instrument reproduces CERT/epoch == 6n^2-12n+8 (n=2..9)  degree=2
+  [OK] AUDIT (definitional content): capacity == #channel-bearing grains exactly (upper: grain-disjoint chains use distinct entry grains; lower: each entry grain certifies itself by a length-1 chain) -- the per-epoch boundary bound under THIS definition follows from the entry-set size; what is MEASURED is that the entry set is boundary-sized in this geometry (the controls vary it)
+    edge-disjoint:       8    27    64   125   216   294   384   486   600   726
+    (channel mult.)
+  [OK] alternative (a) EDGE-disjoint: capacity == min(n^3, 6n^2) at every n=2..11 -- the binding cut moves from the grain layer to the CHANNEL COUNT; below n=6 the whole volume fits under the channel count, a small-n saturation, not a scaling
+  [OK] alternative (a) on the uncapped regime n=6..11: degree 2 BOUNDARY -- no flip  degree(n>=6)=2
+    channel-only:        8    27    64   125   216   294   384   486   600   726   864
+  [OK] alternative (b) CHANNEL-disjoint (weakest honest independence): capacity = min(6n^2, n^3); on n >= 6 it is 6n^2, degree 2 BOUNDARY -- even the weakest reading does not go volume per epoch  degree(n>=6)=2
+  [OK] RIG VERDICT: no honest per-epoch operationalisation tried reaches degree 3 in its uncapped regime; the boundary-RATE arm is not an artifact of the grain-disjoint choice
+
+cumulative arm under alternatives: MORE permissive independence certifies the volume at least as fast (any grain-disjoint schedule is also edge-/channel-legal), so E_min <= 3 holds under every alternative; the volume-TOTAL arm is definition-robust in the permissive direction by set inclusion (computed check at n = 4: edge-disjoint 2-epoch optimum >= grain-disjoint's 64):
+  [OK] n=4, E=2 edge-disjoint optimum >= 64 (= whole volume, matching grain-disjoint)  value=64
+
+================================================================================================
+A2  VOLUME-CONTROL SENSITIVITY -- can the instrument actually say volume?  and 1?
+================================================================================================
+    fully-channelled:     8    27    64   125   216   343   512   729
+  [OK] fully-channelled CERT/epoch == n^3 (independent instrument), degree 3 VOLUME  degree=3
+  [OK] single-channel block: CERT/epoch == 1 at n=2..5 -- the instrument spans the whole range down to 1; boundary reads are not an instrument floor  values=[1, 1, 1, 1]
+  [OK] single-channel n=3: N_opt(E) == E for E=1,5 and == min(E,27) at E=26,27 (cumulative volume needs n^3 epochs at rate 1 -- rate bound arithmetic exact)  curve at E=1,5,26,27: [1, 5, 26, 27]
+
+================================================================================================
+A3  SPLIT HONESTY -- both arms recomputed independently
+================================================================================================
+  [OK] per-epoch arm, full range n=2..12: CERT/epoch == 6n^2-12n+8, degree 2
+    N_opt(2), n=8..12 (independent): [496, 664, 856, 1072, 1312]
+  [OK] N_opt(2) == 12n^2 - 36n + 16 at n = 8..12 (independent time-expanded flow)
+  [OK] N_opt(2) second difference constant 24 (degree 2: even a 2-epoch budget is boundary-order)
+  [OK] cumulative arm: N_opt(3) == n^3 at n = 8 and n = 12 (whole stored volume certified at E_min = 3; independent instrument)  n=8:512, n=12:1728
+  [OK] E_min table n=2..7 == 1,2,2,2,2,2 (independent)  {2: 1, 3: 2, 4: 2, 5: 2, 6: 2, 7: 2}
+  [OK] E_min rate-bound arithmetic: ceil(n^3/(6n^2-12n+8)) = [1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3] <= published E_min = [1,2,2,2,2,2,3,3,3,3,3] at every n
+
+================================================================================================
+A5  TABLE CROSS-CHECK -- finding's table vs independent numbers
+================================================================================================
+  [OK] STORED/IFACE/CERT columns match the closed forms at every published n
+  [OK] finding curve entries n=8 [296,496,512] and n=12 [728,1312,1728] match independent N_opt
+
+ALL CHECKS PASS: True
