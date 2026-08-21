@@ -103,7 +103,11 @@ unwritten-equals-absent (algebraic identity certifying the port), X-quadrature p
 own law is modified at a place where the written content is not, by an amount set by the content's
 value and earned separation, through a declared, priced, content-blind mediator — C-80's computed
 division of labor, not a defect. Then commission, in order: **(a)** the two-source composition at 4×4
-— **the mod-2 saturation kill, first, because it is the fastest way the angle dies**; **(b)** the
+— **first, because it is the most informative computation: it measures what composition IS on this
+surface.** Every outcome registers. If two sources superpose, that is the surface's composition law;
+if the response saturates mod 2 or screens, **that too is the surface's composition law** — a finding
+about what accumulation is here, never a failure against a standard imported from elsewhere
+(the principal, 2026-08-20: *"the mechanism for accumulation is whatever it proves to be"*); **(b)** the
 Tier-2 signed kernel over the connected/dynamical string class, classifying `F` vs `D` against
 C-87/C-90's three computed classes per swept `μ`, criticality never assumed (O-58's bit is not
 assumable); **(c)** the Tier-3 grounded `τ` readout. The surviving operator combination (source
@@ -151,9 +155,15 @@ theorem is a result, not a failure.
    control can decide it.
 2. **COMPOSITION** — both energy-channel instruments read **VALUE**, not accumulating **AMOUNT**: the
    Second Lump's response is Z₂-valued and may saturate mod 2; the Clock's screens. The anchor's
-   source standard is sign-definite accumulation. **If the field side cannot compose, the field side
-   and the source side do not meet the way emergence at scale needs.** The composition computations
-   are scheduled first for exactly this reason.
+   sign-definite accumulation standard belongs to the **source side** and is not imported here as a
+   requirement on the field side. **The principal's directive, 2026-08-20, binding:** *we are trying
+   to find gravity emerging; the mechanism for accumulation is whatever it proves to be.* The
+   composition computations are scheduled first because they are the most informative — they measure
+   the surface's own composition law, and every outcome (superposition, mod-2 saturation, screening)
+   registers as a finding about what accumulation is here. How any measured composition law relates
+   to classical gravity's is a question for the comparison tier at scale, under C-77's standing
+   caveat that record-level measures may behave unlike their analogues elsewhere — never a
+   pass/fail at the record level (D-1).
 3. **SHAPE** — all shape-at-scale claims wait on the unbuilt signed connected kernel; below `μ_c` the
    reading is exponentially confined, and whether the surface sits at criticality is O-58's bit.
 4. **O-39's FULL ASK** — metric, connection, deflection remain unconnected to anything computed;

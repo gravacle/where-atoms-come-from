@@ -10343,3 +10343,16 @@ identified; **no field has been measured.**
 
 **Next step named: commission `LANE_T51_A`** — the Second Lump's first computation on the toric 3×3,
 per the commission in `FIELD_INSTRUMENT_V001.md` §1, after T-35's run completes (compute contention).
+
+**Scope correction to the T-51 registration, on the principal's directive (2026-08-20), and it is
+binding on every lane in the sequence:** *"Let's be careful not to be too prescriptive on 'what'
+emergence actually is. We're trying to find gravity emerging. The mechanism for accumulation is
+whatever it proves to be."* The registration above called the two-source composition computation a
+"kill." That framing imported a requirement — that the field side must compose the way the source
+side's accumulation standard does — and it is exactly the class of error D-1 exists to catch, one
+tier up. Corrected in `FIELD_INSTRUMENT_V001.md` and in C-92's row text: the composition computation
+runs first because it is the **most informative**, and **every outcome registers as the surface's own
+composition law** — superposition, mod-2 saturation, screening alike. The source side's sign-definite
+accumulation standard is not imported as a requirement on the field side. How any measured
+composition law relates to classical gravity's is a question for the comparison tier at scale, under
+C-77's standing caveat that record-level measures may behave unlike their analogues elsewhere.
