@@ -10458,3 +10458,38 @@ principal's action, not the registrar's**; (2) the in-house read-retry census �
 route to margin-free absolute staircase positions; (3) the integer survivor census on one magnetic
 sample is lab work, not literature work, and no located publication carries it. **The departure term
 — the count law's wholly-owned content — remains touched by nothing located.**
+
+---
+
+## T-50 PARTIAL LANDING — **THE GATE HALF IS DONE AND INSTALLED; THE OBSERVABLE HALF STAYS OPEN, AND "NO RUNNABLE FORM" IS NOT THE VERDICT** (`LANE_T50/`; the hardened gate live in `model/validate_geometry.py`)
+
+**GATE HALF (`DONE_WHEN` (b)): DONE, judge-verified, registrar-verified.** The hardened C-71/C-72
+formation gate is sealed at `LANE_T50/GATE/` (block `633afb2e…`, harness `24bf34cf…`, matrix
+`6931f774…`, declared seed 20260821) and **installed**: `model/validate_geometry.py` now executes it
+in place of the six erratum-era checks — 33/33, chain PASS. **Every structural check fails at rate
+1.000 under its designated mutation**, deterministic over 50 seeds: S1, the widens successor, at
+1.000 under the two-signed write where the old check measured 0.18; the non-zero-mean residual
+covered in three placements with **constraint-1 invariance MEASURED** (decision checks 0.000 under
+common-mode rows while the raw shadow exponent flips at 1.000); density-falling-with-N at 1.000;
+control A **dropped** (unfailable at any tolerance, verified `Δ = 1..99`) and its slot repaired as
+A2 at power 1.000. No literal expected value sits on any decision path — every decision compares one
+quantity measured in the run against another measured in the same run. The registrar re-ran the
+harness independently: bit-identical to the sealed matrix. The proof's six stale gate cells were
+caught by its own R8 and repointed at the block.
+
+**OBSERVABLE HALF (`DONE_WHEN` (a)): OPEN.** Both designs on the ruled baseline-free differential
+were **REFUTED by independent refuters** — Design One by the median-vs-mean density-shape confound
+(a legal skew-density pattern fires its registered falsifier 30/30 **on correct physics** — the
+constraint-3 confound in a new costume) and by instrument reality (every named stray-field reader
+has zero response at k=0, so its DC positive control cannot pass its own guard); Design Two by a
+blank control page and a zero-mean written-track bow, both firing on healthy physics. **And the
+judge's most important finding cuts the other way: "the occupancy law has no runnable form" is NOT
+the honest verdict** — both refuters' own rebuilds keep the same-read contrast-exponent CORE (it
+honours all three ruling constraints, measured), and both name bounded repairs. **Next step named:
+DESIGN ONE V002 with the eight merged closures** (`LANE_T50/JUDGMENT.txt` §2), re-faced by both
+refuters before anything enters C-72. The judge's caveats carried: when V002 lands, the mutation
+suite gains a median-vs-mean density-skew member and a fixed-pattern member.
+
+**C-72's GROUNDED cell rewritten to the judged text** — the contrast-exponent quantity, what holds
+with its adversarial confirmations, the hardened gate, the two refuted protocols by name, and the
+open repair. **C-72 stays `PARTIAL`, `BLOCKED_BY T-50`. The program still has one `PROVED` row.**

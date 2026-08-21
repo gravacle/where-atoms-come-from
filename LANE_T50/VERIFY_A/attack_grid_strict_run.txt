@@ -1,0 +1,24 @@
+REFUTER A -- STRICT-COMPLIANCE RE-RUN OF THE GRID ESCALATION
+guard admissibility: N_min only where log10(N_max/N_min) >= 1.5 (the registered
+decades rule, binding on sqrt(2) grids); reads failing it are UNWRITTEN.
+1024-sector part, K=256 of 512 disjoint pairs.  master seed SeedSequence(60609)
+
+declared literals: cascade(1.65/0.35) f=0.1431 | cascade(1.7/0.3) f=0.1206
+
+GRID [16, 23, 32, 45, 64, 91, 128, 181, 256, 362, 512, 724, 1024] (13 points, 1.81 decades):
+  cascade 1.65/0.35 vs uniform CLAUSE (b) FIRES 21/21 OK (of 30); states {'OK': 21, 'READS_UNWRITTEN': 9}
+     |delta| med +0.3520 IQR[+0.3405,+0.3784]; margin med +0.0796 IQR[+0.0578,+0.0858]
+     skew beta_WU med +1.3543; band-above 21/21; N_min used: [16, 23, 32]
+  cascade 1.7/0.3  vs uniform  CLAUSE (b) FIRES 5/5 OK (of 30); states {'READS_UNWRITTEN': 25, 'OK': 5}
+     |delta| med +0.3362 IQR[+0.3270,+0.3411]; margin med +0.0457 IQR[+0.0390,+0.0462]
+     skew beta_WU med +1.3339; band-above 5/5; N_min used: [32]
+
+GRID [16, 23, 32, 45, 64, 91, 128, 181, 256, 362, 512, 724, 1024, 1448] (14 points, 1.96 decades):
+  cascade 1.65/0.35 vs uniform CLAUSE (b) FIRES 30/30 OK (of 30); states {'OK': 30}
+     |delta| med +0.3579 IQR[+0.3495,+0.3782]; margin med +0.0832 IQR[+0.0668,+0.1026]
+     skew beta_WU med +1.3584; band-above 30/30; N_min used: [23, 32, 45]
+  cascade 1.7/0.3  vs uniform  CLAUSE (b) FIRES 22/28 OK (of 30); states {'OK': 28, 'READS_UNWRITTEN': 2}
+     |delta| med +0.3169 IQR[+0.2903,+0.3462]; margin med +0.0219 IQR[+0.0030,+0.0454]
+     skew beta_WU med +1.3201; band-above 28/28; N_min used: [32, 45]
+
+END OF STRICT RE-RUN

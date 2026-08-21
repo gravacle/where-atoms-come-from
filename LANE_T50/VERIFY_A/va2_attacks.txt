@@ -1,0 +1,56 @@
+================================================================================================
+va2 -- ATTACKS ON THE SEALED PIPELINE
+================================================================================================
+
+A1 SECTOR-DIFFERENTIAL OFFSETS (the offset the affine proof does NOT cover)
+  occupancy, written-only offset +2 e                  beta_w=+1.998 D=+1.1716 SE=0.1397 ACCUMULATES
+  occupancy, written-only offset +10 e                 beta_w=+1.998 D=+1.1716 SE=0.1397 ACCUMULATES
+  occupancy, written-only offset +20 e                 beta_w=+1.998 D=+1.1716 SE=0.1397 ACCUMULATES
+  occupancy, written-only offset +40 e                 beta_w=+1.999 D=+1.1732 SE=0.1397 ACCUMULATES
+  orientation, track-only offset +0.02 (sd=1)          beta_w=+1.271 D=+0.4411 SE=0.1472 INDETERMINATE dc_loaded=True
+  orientation, track-only offset +0.05 (sd=1)          beta_w=+1.595 D=+0.7646 SE=0.0903 ACCUMULATES dc_loaded=True
+  orientation, track-only offset +0.20 (sd=1)          beta_w=+1.942 D=+1.1117 SE=0.0615 ACCUMULATES dc_loaded=True
+  orientation, track-only offset +1.00 (sd=1)          beta_w=+1.997 D=+1.1666 SE=0.0615 ACCUMULATES dc_loaded=True
+
+A2 WRITTEN-LEG-ONLY DRIFT, orientation random data (mean-centred ramp; the
+   falsifier text claims 'drifting reads' are covered by interleave/null-leg guards)
+  drift amplitude 0.2 x signal across track            beta_w=+1.527 D=+0.6216 SE=0.1393 INDETERMINATE dc_loaded=False
+  drift amplitude 0.5 x signal across track            beta_w=+1.850 D=+0.9439 SE=0.1173 ACCUMULATES dc_loaded=False
+  drift amplitude 1.0 x signal across track            beta_w=+1.939 D=+1.0334 SE=0.1195 ACCUMULATES dc_loaded=False
+  drift amplitude 2.0 x signal across track            beta_w=+1.967 D=+1.0612 SE=0.1214 ACCUMULATES dc_loaded=False
+  CLAUSE (ii) FIRED (ACCUMULATES, dc guard passed, no refusal): 3/4 amplitudes
+  -- ensemble at drift 1.0 x signal, 50 fresh reads:
+     verdicts {'ACCUMULATES': 47, 'INDETERMINATE': 3}, dc_loaded count 0/50
+
+A3 SHARED-SCAN DRIFT CONTROL (same drift on both legs -- the case the guards own)
+  both-leg drift 0.2                                   REFUSED (REFERENCE INCONSISTENCY)
+  both-leg drift 0.5                                   REFUSED (REFERENCE INCONSISTENCY)
+  both-leg drift 1.0                                   REFUSED (REFERENCE INCONSISTENCY)
+
+A4 GRAINS-PER-BIT CLUSTERING (one written bit spans k grains; data DC-balanced)
+  k=  4: dc_loaded misroute 5/50, clause-(ii) fires 0/50, SCREENS 37/50
+  k= 16: dc_loaded misroute 13/50, clause-(ii) fires 0/50, SCREENS 34/50
+  k= 64: dc_loaded misroute 33/50, clause-(ii) fires 0/50, SCREENS 14/50
+  k=64 first z<4 read (seed 2)                         beta_w=+1.064 D=-0.0011 SE=0.1470 SCREENS dc_loaded=False
+
+A5 DENSITY CONFOUNDS BEYOND m3
+  density gradient 0.47 -> 0.53 across sector          REFUSED (DENSITY NOT STATIONARY)
+  density gradient 0.30 -> 0.70 across sector          REFUSED (DENSITY NOT STATIONARY)
+  runs of 96 (0.75x bottom rung)                       REFUSED (DENSITY NOT STATIONARY)
+
+A6 NOMINAL-VS-ACTUAL PARAMETERS (nothing imported means nothing to get wrong;
+   check the claim holds when the model's own constants move)
+  N_E=30 prog_sd=6 DELTA=2                             beta_w=+1.997 D=+0.9905 SE=0.1297 ACCUMULATES
+  N_E=30 prog_sd=10 DELTA=5                            REFUSED (POPULATIONS NOT SEPARABLE)
+  N_E=300 prog_sd=2 DELTA=5                            beta_w=+1.997 D=+0.9661 SE=0.1524 ACCUMULATES
+  small part N=4096, default ladder 128..2048          beta_w=+1.994 D=+1.2796 SE=nan INDETERMINATE
+  small part N=4096, ladder 32..512 (=N/8)             beta_w=+1.990 D=+1.1619 SE=0.2282 ACCUMULATES
+  n_max <= N/16 enforcement: the sealed pipeline accepted n_max=2048 on N=4096 (= N/2): NOT ENFORCED
+  orientation N=4096 with n_max=2048 (= N/2)           REFUSED (REFERENCE RESOLUTION INSUFFICIENT)
+
+A7 dc_loaded FLAG ON HONEST IID DC-BALANCED READS (flag/writing-kind conflation)
+  honest iid random tracks flagged dc_loaded: 3/400 (0.75% routed to a clause predicting D=1 while their D ~ 0)
+
+A8 OCCUPANCY FALSE-SCREENS HUNT (clause (i) against correct physics)
+  every attempt REFUSED
+  clause (i) fires only on SCREENS (D+2SE<0.5); record whether any attempt reached it

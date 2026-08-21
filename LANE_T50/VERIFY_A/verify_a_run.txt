@@ -1,0 +1,151 @@
+REFUTER A (COMPUTATION) -- T-50 DESIGN ONE -- INDEPENDENT VERIFICATION RUN
+date 2026-08-21 | refuter master seed SeedSequence(4242) | numpy 2.0.2
+all pipeline code refuter-owned; model laws: programmed=-100 e, residual U{-5..5} e,
+grains +-1, DC=+1 (model/geometry.py, read-only anchor).
+
+S0 ANCHOR: sealed-page rho min 0.968133568735151 max 0.979798744041764 (brief: 0.968134 / 0.979799)
+
+S1 REBUILD -- 50 independent occupancy reads (f=0.5) and 50 orientation reads,
+   refuter's own pipeline, K=16, 9-point grid (the lane's settings).
+   occ beta_WU        median  +0.9988  IQR [ +0.9926,  +1.0058]   (lane: +0.9998)
+   occ beta_UU        median  +0.5093  IQR [ +0.4740,  +0.5367]   (lane: +0.5003)
+   occ beta_WW        median  +0.4942  IQR [ +0.4554,  +0.5157]   (lane: +0.5152)
+   occ xi             median  +0.4928  IQR [ +0.4561,  +0.5252]   (lane: +0.4993)
+   occ density slope  median  -0.0017  IQR [ -0.0063,  +0.0055]   (lane: +0.0001)
+   occ B1 true 50/50 (lane 49/50); read states: {'OK': 50}
+   ori beta_DATA-U    median  +0.5092  IQR [ +0.4719,  +0.5508]   (lane: +0.4968)
+   ori beta_UU        median  +0.4967  IQR [ +0.4648,  +0.5433]   (lane: +0.5008)
+   ori beta_DC-U      median  +0.9971  IQR [ +0.9939,  +1.0008]   (lane: +0.9993)
+   ori xi             median  +0.0047  IQR [ -0.0429,  +0.0702]   (lane: +0.0075)
+   ori B3 true 47/50 (lane 49/50)
+
+S2 CONSTRAINT-2 -- moment choices, one read each (lane: 0.9934/1.9867/1.0412 and
+   0.4696/0.9314/0.9306):
+   occ  W-U   |D| +1.0131 | uncentred D^2 +2.0259 | centred var +0.9930
+   identity check: 2 x |D| slope = +2.0262 vs D^2 slope +2.0259 (exact: median of a
+   monotone transform)
+   ori DATA-U |D| +0.4474 | uncentred D^2 +0.8874 | centred var +0.9486
+   centred variance ~1 for BOTH encodings: CONFIRMED non-discriminating
+
+S3 COMMON-MODE OFFSET / DRIFT SWEEP (10 reps each, medians; constraint 1):
+   occ offset 0       contrast  +0.9972  raw  +0.9968
+   occ offset +0.5 e  contrast  +0.9954  raw  +0.9965
+   occ offset -0.5 e  contrast  +1.0057  raw  +1.0059
+   occ offset +5 e    contrast  +0.9984  raw  +0.9992
+   occ offset +50 e   contrast  +0.9992  raw  +0.5381
+   occ drift 50 e     contrast  +1.0005  raw  +0.9943
+   ori offset 0       contrast  +0.5177  raw  +0.5060
+   ori offset +0.05   contrast  +0.4936  raw  +0.7780
+   ori offset +0.5    contrast  +0.4758  raw  +1.0045
+
+S4 MUTATIONS (50 seeds each):
+   M1 two-signed write: B1 flips 50/50, registered clause (a) fires 50/50,
+      guard-passing beta_WU median +0.4988 (lane: flips 50/50, fires 50/50, +0.4859)
+   M2 residual mu= +2.0 e: B1 50/50, beta_WU median +1.0002
+   M2 residual mu=+20.0 e: B1 49/50, beta_WU median +0.9982
+   M3 fixed-record aligned        state counts {'VOID_DENSITY': 50}; clause (a) fires 0/50
+   M3 fixed-record random-offset  state counts {'READS_UNWRITTEN': 50}; clause (a) fires 0/50
+
+S5 HONEST FALSE-FIRE, lane settings (K=16, 9 pts) -- registered clause rules:
+   clause (a): 0/200 fires (200 OK reads)
+   clause (b) f=0.35 vs 0.65: 0/200 fires (199 OK reads)
+   clause (c): 0/200 fires
+
+S6 SEAM HAMMER -- low-density occupancy, 150 seeds per f, kappa=8 (the design's
+   guard); counting clause-(a) fires and guard-passing reads below the 0.9 band:
+   f=0.012  unwritten 134/150  OK  11  fires 0  below-band 1  worst beta +0.8815
+   f=0.015  unwritten 124/150  OK  20  fires 0  below-band 1  worst beta +0.8954
+   f=0.020  unwritten  95/150  OK  47  fires 0  below-band 1  worst beta +0.8919
+   f=0.030  unwritten  19/150  OK 120  fires 0  below-band 0  worst beta +0.9142
+
+S7 REGISTERED-MINIMUM READER (K=8, 8-point grid 16..2048) -- the floor the text
+   permits; honest surfaces, 200 seeds each:
+   occ clause (a): 0/200 fires; states {'OK': 189, 'INCONCLUSIVE_CONTROL': 11}
+   ori clause (c): 0/200 fires; states {'OK': 185, 'INCONCLUSIVE_CONTROL': 14, 'INCONCLUSIVE_ZERO_A': 1}; zero-median-A incidents 1
+
+==============================================================================
+S8 ATTACK A -- WITHIN-SECTOR DENSITY SKEW (constraint-3 in a new costume).
+   Legal one-carrier patterns whose MEAN density is flat in N (the registered
+   density check passes) but whose MEDIAN block density rises with N, because
+   the registered statistic median|D_k| reads the TYPICAL block, not the mean.
+   Each pattern is ONE declared literal mask, written identically to every W
+   sector; guard, density check, control band all applied as registered.
+
+   declared literal patterns: cascade(1.5/0.5,8lvl) f=0.1936 | cascade(1.6/0.4,8lvl)
+   f=0.1587 | two-level(0.03/0.95, dense 1/4) f=0.2559
+
+   cascade 1.5/0.5                    K=16   OK 40/40  beta_WU med +1.1013 IQR[+1.0530,+1.1370]
+                                             SE med 0.0565  dens-slope med -0.0041  band-above 20/40
+   cascade 1.5/0.5                    K=64   OK 40/40  beta_WU med +1.1073 IQR[+1.0861,+1.1394]
+                                             SE med 0.0349  dens-slope med -0.0055  band-above 23/40
+   cascade 1.6/0.4                    K=16   OK 33/40  beta_WU med +1.1584 IQR[+1.1043,+1.2107]
+                                             SE med 0.0694  dens-slope med -0.0175  band-above 27/33
+                                             non-OK states: {'VOID_DENSITY': 6, 'INCONCLUSIVE_CONTROL': 1}
+   cascade 1.6/0.4                    K=64   OK 40/40  beta_WU med +1.1608 IQR[+1.1539,+1.1956]
+                                             SE med 0.0355  dens-slope med -0.0093  band-above 40/40
+   two-level 0.03/0.95 1/4            K=16   OK 19/40  beta_WU med +1.3629 IQR[+1.2154,+1.4546]
+                                             SE med 0.1855  dens-slope med +0.0013  band-above 17/19
+                                             non-OK states: {'VOID_DENSITY': 21}
+   two-level 0.03/0.95 1/4            K=64   OK 34/40  beta_WU med +1.2972 IQR[+1.2479,+1.3940]
+                                             SE med 0.1688  dens-slope med -0.0290  band-above 34/34
+                                             non-OK states: {'VOID_DENSITY': 6}
+
+   one cascade(1.6/0.4) read, A_WU(N) table (the shape of the confound):
+      N=   16  A_WU        108.5 e   A_UU      12.5 e   mean f-hat 0.1709
+      N=   32  A_WU        314.0 e   A_UU      19.0 e   mean f-hat 0.1958
+      N=   64  A_WU        597.0 e   A_UU      20.0 e   mean f-hat 0.2109
+      N=  128  A_WU       1858.0 e   A_UU      31.5 e   mean f-hat 0.1664
+      N=  256  A_WU       2709.0 e   A_UU      50.0 e   mean f-hat 0.1556
+      N=  512  A_WU       5500.5 e   A_UU      81.0 e   mean f-hat 0.1370
+      N= 1024  A_WU      12738.0 e   A_UU      82.0 e   mean f-hat 0.1283
+      N= 2048  A_WU      27368.0 e   A_UU     139.5 e   mean f-hat 0.1343
+      N= 4096  A_WU      65049.5 e   A_UU     132.0 e   mean f-hat 0.1587
+
+   REGISTERED CLAUSE (b): the skew pattern paired with uniform f=0.5 on the SAME
+   part, same read (cycle [W1,U,W2,U]); both classes must be guard-passing,
+   density-trend-free, control in band; fire iff |delta beta| - 2 SE_delta > 0.2:
+   cascade 1.5/0.5 vs uniform     K=16  nsect=256: FIRES 0/40 OK reads (of 40 seeds)
+      |delta beta| med +0.0874  fire margin (|d|-2SE-0.2) med -0.2152  states {all OK}
+   cascade 1.5/0.5 vs uniform     K=64  nsect=512: FIRES 0/40 OK reads (of 40 seeds)
+      |delta beta| med +0.1024  fire margin (|d|-2SE-0.2) med -0.1636  states {all OK}
+   cascade 1.6/0.4 vs uniform     K=16  nsect=256: FIRES 0/37 OK reads (of 40 seeds)
+      |delta beta| med +0.1348  fire margin (|d|-2SE-0.2) med -0.2065  states {'VOID_DENSITY': 1, 'INCONCLUSIVE_CONTROL': 2}
+   cascade 1.6/0.4 vs uniform     K=64  nsect=512: FIRES 0/40 OK reads (of 40 seeds)
+      |delta beta| med +0.1703  fire margin (|d|-2SE-0.2) med -0.1151  states {all OK}
+   cascade 1.6/0.4 vs uniform     K=128 nsect=512: FIRES 1/25 OK reads (of 25 seeds)
+      |delta beta| med +0.1873  fire margin (|d|-2SE-0.2) med -0.0746  states {all OK}
+   two-level vs uniform           K=64  nsect=512: FIRES 0/31 OK reads (of 40 seeds)
+      |delta beta| med +0.2859  fire margin (|d|-2SE-0.2) med -0.2891  states {'VOID_DENSITY': 9}
+
+==============================================================================
+S9 ATTACK B -- SECTOR-DIFFERENTIAL BASELINE OFFSETS (the half of constraint 1 the
+   design does not cancel: D cancels only offsets COMMON to the two sectors of a
+   pair; per-sector and per-class response offsets survive the subtraction).
+
+   B-1 iid per-sector offsets (instrument response varying sector to sector):
+   occ sector-offset sd=0.5  : fires 0/40, states {'INCONCLUSIVE_CONTROL': 40}
+   occ sector-offset sd=2    : fires 0/40, states {'INCONCLUSIVE_CONTROL': 40}
+   occ sector-offset sd=5    : fires 0/40, states {'INCONCLUSIVE_CONTROL': 40}
+   ori sector-offset sd=0.02 : fires 0/40, states {'OK': 35, 'INCONCLUSIVE_CONTROL': 5}
+   ori sector-offset sd=0.05 : fires 0/40, states {'INCONCLUSIVE_CONTROL': 34, 'OK': 6}
+   ori sector-offset sd=0.2  : fires 0/40, states {'INCONCLUSIVE_CONTROL': 40}
+
+   B-2 CLASS-CORRELATED read offset on the magnetic surface: the mapper reads
+   WRITTEN sectors (DATA and DC alike) with a small per-cell additive offset that
+   is not magnetization (topography/charging crosstalk).  Medium physics correct
+   (data screens); registered clause (c) fire rate:
+   class offset  0.02 /grain: clause (c) FIRES 0/40, xi med +0.0410, states {'OK': 40}
+   class offset  0.05 /grain: clause (c) FIRES 0/40, xi med +0.2113, states {'OK': 40}
+   class offset  0.10 /grain: clause (c) FIRES 13/40, xi med +0.3649, states {'OK': 39, 'INCONCLUSIVE_CONTROL': 1}
+   class offset  0.20 /grain: clause (c) FIRES 34/40, xi med +0.4595, states {'OK': 40}
+
+S10 SUPPLEMENTARY REBUILDS:
+   R6 dc-free coded: beta_DATA-U median +0.4984 (lane +0.5266)
+   R7 f=0.10       beta_WU median +1.0143
+   R7 f=0.90       beta_WU median +0.9977
+   R7 alternating  beta_WU median +1.0001
+   R8 tilt 30deg: beta_DATA-U +0.4987, beta_DC-U +0.9993 (lane +0.4999/+1.0015)
+   M2-ori biased erase +0.25: clause (c) fires 35/50 if scope ignored (lane 34/50)
+
+elapsed 52.7 s
+END OF REFUTER RUN

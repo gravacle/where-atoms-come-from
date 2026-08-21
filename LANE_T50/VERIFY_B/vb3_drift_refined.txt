@@ -1,0 +1,34 @@
+================================================================================================================
+REFUTER B / ATTACK 2 REFINED -- WRITTEN-TRACK BOW vs A HALF-BALANCED (EVEN) REFERENCE BOW
+================================================================================================================
+
+3a. Reference region FLAT (bow lives on the written track's part of the frame)
+  A_w=0.050 (1 period), A_e=0                      beta_w=+1.373 beta_e=+1.027 D=+0.3458 SE=0.0905 dc=False null=True intl=True res=True  --> INDETERMINATE
+  A_w=0.100 (1 period), A_e=0                      beta_w=+1.708 beta_e=+0.959 D=+0.7493 SE=0.0714 dc=False null=True intl=True res=True  --> ACCUMULATES
+  A_w=0.125 (1 period), A_e=0                      beta_w=+1.769 beta_e=+0.972 D=+0.7973 SE=0.0543 dc=False null=True intl=True res=True  --> ACCUMULATES
+  A_w=0.150 (1 period), A_e=0                      beta_w=+1.850 beta_e=+1.064 D=+0.7867 SE=0.0536 dc=False null=True intl=True res=True  --> ACCUMULATES
+  A_w=0.200 (1 period), A_e=0                      beta_w=+1.903 beta_e=+1.039 D=+0.8644 SE=0.0417 dc=False null=True intl=True res=True  --> ACCUMULATES
+
+3b. Reference region carries an EVEN bow (equal half-means -- interleave guard blind)
+  A_w=0.100, A_e=0.05 (even)                       REFUSED: NULL LEG OUT OF SPEC: beta_e=1.428 outside [0.6,1.4]; correl
+  A_w=0.150, A_e=0.05 (even)                       beta_w=+1.824 beta_e=+1.326 D=+0.4977 SE=0.0473 dc=False null=True intl=True res=True  --> INDETERMINATE
+  A_w=0.150, A_e=0.10 (even)                       REFUSED: NULL LEG OUT OF SPEC: beta_e=1.700 outside [0.6,1.4]; correl
+  A_w=0.200, A_e=0.10 (even)                       REFUSED: NULL LEG OUT OF SPEC: beta_e=1.690 outside [0.6,1.4]; correl
+
+3c. Written bow also EVEN (2 periods; nothing changes -- no guard sees the written leg)
+  A_w=0.125 (2 periods), A_e=0                     beta_w=+1.788 beta_e=+1.078 D=+0.7099 SE=0.0644 dc=False null=True intl=True res=True  --> ACCUMULATES
+  A_w=0.150 (2 periods), A_e=0                     beta_w=+1.837 beta_e=+1.019 D=+0.8183 SE=0.0561 dc=False null=True intl=True res=True  --> ACCUMULATES
+
+3d. RATE at the working point A_w=0.15 (1 period), A_e=0.05 (even), 50 seeds
+  verdicts: {'INDETERMINATE': 19, 'REFUSED': 30, 'SCREENS': 1}
+  D over non-refused reads: mean +0.4509, min +0.4264, max +0.4740
+
+3e. And the SAME even-null trick at smaller written bows -- where does the flip begin?
+  A_w=0.040 (1 period), A_e=0.02 (even)            beta_w=+1.305 beta_e=+1.166 D=+0.1394 SE=0.1112 dc=False null=True intl=True res=True  --> SCREENS
+  A_w=0.060 (1 period), A_e=0.02 (even)            beta_w=+1.448 beta_e=+1.164 D=+0.2839 SE=0.0617 dc=False null=True intl=True res=True  --> SCREENS
+  A_w=0.080 (1 period), A_e=0.02 (even)            beta_w=+1.593 beta_e=+1.010 D=+0.5834 SE=0.0598 dc=False null=True intl=True res=True  --> INDETERMINATE
+
+READING.  The guards watch the null leg's half-mean difference and its slope, and the
+written leg's MEAN (dc balance).  A zero-mean smooth background on the WRITTEN track is
+watched by nothing.  Whatever ACCUMULATES verdicts print above were produced by a
+DC-balanced data track (true state: screening) read with an ordinary scan bow.

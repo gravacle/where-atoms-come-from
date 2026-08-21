@@ -17,6 +17,7 @@ SEALED value copied from the lane's own sealed OUT file.  Sealed sources per sec
 
 Exit code: 0 iff every gate passes AND (unless --no-chain) validate_project.py still
 returns its 11 PASS -- the full-model conjunction."""
+import os
 import sys, os, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from project_model import ProjectModel
@@ -163,127 +164,13 @@ check("C-83 W=inf limit reproduces the volume corner n^3 (DEF-A, t_m -> infinity
       all(M.cert_window(n, float('inf')) == n ** 3 for n in (10, 100, 1000)))
 
 # ---------------------------------------------------------------- C-71/C-72: formation
-# SEALED (t32_source.txt, seed 7): DC-SATURATED ratio 1.000000 at every N; random data
-# sums +4 (N=10) and +270 (N=1e5); AC-erased -2 and +262; DC-free coded exactly 0.
-import geometry as GE
-ori = M.formation_orientation()
-check("C-72 orientation: DC-SATURATED ratio == 1 at every sealed N (accumulates)",
-      all(ori[("DC-SATURATED", N)]["ratio"] == 1.0
-          for N in (10, 100, 1000, 10000, 100000)))
-r10 = round(ori[("random data", 10)]["sum"] / GE.M_GRAIN)
-r1e5 = round(ori[("random data", 100000)]["sum"] / GE.M_GRAIN)
-a10 = round(ori[("AC-erased ctrl", 10)]["sum"] / GE.M_GRAIN)
-a1e5 = round(ori[("AC-erased ctrl", 100000)]["sum"] / GE.M_GRAIN)
-check("C-72 orientation: random data SCREENS -- sealed sums +4 (N=10), +270 (N=1e5) "
-      "(ratios 0.400000, 0.002700)",
-      r10 == 4 and r1e5 == 270 and
-      abs(ori[("random data", 10)]["ratio"] - 0.4) < 1e-12 and
-      abs(ori[("random data", 100000)]["ratio"] - 0.0027) < 1e-12,
-      f"sums {r10}, {r1e5}")
-check("C-72 orientation: AC-erased control screens -- sealed sums -2 (N=10), +262 (N=1e5)",
-      a10 == -2 and a1e5 == 262, f"sums {a10}, {a1e5}")
-check("C-72 orientation: DC-free coded pattern screens EXACTLY (sum 0, ratio 0)",
-      ori[("DC-free coded", 10)]["sum"] == 0.0 and
-      ori[("DC-free coded", 100000)]["sum"] == 0.0 and
-      ori[("DC-free coded", 100000)]["ratio"] == 0.0)
-# SEALED (t34_nand.txt, seed 11): unwritten sum -38 e vs tolerance 5000 e -> null within tolerance.
-occ = M.formation_occupancy()
-import numpy as np
-DELTA_E = 5                       # declared over-erase tolerance, electrons/cell (T-34 surface)
-FRAC = DELTA_E / GE.N_E           # the same tolerance as a fraction of the per-record magnitude
-NS = (1000, 10000, 100000)
-_rng = np.random.default_rng(20260820)     # the treatment's own declared draw
-
-
-def _ratio(v):
-    v = np.asarray(v, dtype=float)
-    a = np.abs(v).sum()
-    return (abs(v.sum()) / a) if a > 0 else None
-
-
-def _floor(f):
-    """Data-independent floor RHO(f) = (N_E f - Delta(1-f)) / (N_E f + Delta(1-f)):  worst case
-       is every residual sitting at the tolerance edge AND opposing the injected sign.  Built
-       from the surface's declared constants, not from any observed result."""
-    num, den = GE.N_E * f - DELTA_E * (1 - f), GE.N_E * f + DELTA_E * (1 - f)
-    return (num / den) if den > 0 else 0.0
-
-
-# --- occupancy: sealed pages at N=1000, declared-seed ensembles above it, treatment applied ---
-occ_lo, ori_hi, floor_ok, occ_detail = {}, {}, True, {}
-_sealed = GE.occupancy_patterns()
-for N in NS:
-    pages = (_sealed["written"] if N == len(_sealed["unwritten_e"])
-             else [_rng.integers(0, 2, N) for _ in range(200)])
-    lo = float("inf")
-    for p in pages:
-        f = float(np.asarray(p).sum()) / len(p)
-        if f == 0.0:
-            continue
-        res = _rng.integers(-DELTA_E, DELTA_E + 1, len(p)).astype(float)
-        r = _ratio(np.where(np.asarray(p) == 1, -float(GE.N_E), res))
-        floor_ok &= (r >= _floor(f) - 1e-12)      # the closed form must bound the measurement
-        lo = min(lo, r)
-    occ_lo[N] = lo
-    hi = -float("inf")
-    for _ in range(200):
-        s = _rng.integers(0, 2, N) * 2.0 - 1.0
-        hi = max(hi, _ratio(s + _rng.uniform(-FRAC, FRAC, N)))
-    ori_hi[N] = hi
-    occ_detail[N] = (lo, hi, lo / hi)
-
-check("C-72 the closed-form floor RHO(f) bounds EVERY treated occupancy page from below "
-      "(pattern dependence is bounded, not absent)", floor_ok,
-      f"floors at f~0.5: {_floor(0.5):.6f}; measured minima "
-      f"{ {N: round(occ_lo[N], 6) for N in NS} }")
-
-check("C-72 DISCRIMINATOR: occupancy's worst treated page out-accumulates orientation's best "
-      "treated random page at every matched N, one instrument, one tolerance",
-      all(occ_lo[N] > ori_hi[N] for N in NS),
-      "  ".join(f"N={N}: occ {occ_lo[N]:.6f} vs ori {ori_hi[N]:.6f} "
-               f"({occ_lo[N]/ori_hi[N]:.0f}x)" for N in NS))
-
-check("C-72 DISCRIMINATOR WIDENS with N (occupancy's floor is N-independent, orientation's "
-      "ceiling falls like 1/sqrt(N)) -- the separation is structural, not a coincidence at "
-      "one page size",
-      (occ_lo[NS[-1]] / ori_hi[NS[-1]]) > (occ_lo[NS[0]] / ori_hi[NS[0]]),
-      f"separation {occ_lo[NS[0]]/ori_hi[NS[0]]:.0f}x at N={NS[0]} -> "
-      f"{occ_lo[NS[-1]]/ori_hi[NS[-1]]:.0f}x at N={NS[-1]}")
-
-# --- D-15 CONTROLS: different configurations, under the SAME treatment, that come out
-#     DIFFERENTLY -- so the reported separation cannot be an artefact of the treatment. -------
-_allp = np.asarray(_sealed["all_programmed"])
-_res = _rng.integers(-DELTA_E, DELTA_E + 1, len(_allp)).astype(float)
-r_allp = _ratio(np.where(_allp == 1, -float(GE.N_E), _res))
-r_unw = _ratio(np.asarray(_sealed["unwritten_e"], dtype=float))
-_ori = GE.orientation_patterns()
-_dc = np.asarray(_ori[("DC-SATURATED", NS[0])], dtype=float)
-r_dc = _ratio(_dc + _rng.uniform(-FRAC, FRAC, len(_dc)))
-
-check("C-72 control A (f=1, occupancy): the ALL-PROGRAMMED page under the SAME treatment sits "
-      "at the f->1 endpoint of the same floor -- the treatment does not degrade a page that "
-      "has no erased cell",
-      abs(r_allp - _floor(1.0)) < 1e-12 and r_allp > occ_lo[NS[0]],
-      f"ratio {r_allp:.9f} vs RHO(1) {_floor(1.0):.9f}")
-
-check("C-72 control B (f=0, occupancy): the UNWRITTEN page through the SAME instrument SCREENS, "
-      "below the orientation ceiling -- screening is a property of the WRITTEN STATE, not of "
-      "the encoding label",
-      r_unw < ori_hi[NS[0]] < occ_lo[NS[0]],
-      f"unwritten {r_unw:.6f} < ori {ori_hi[NS[0]]:.6f} < occ {occ_lo[NS[0]]:.6f}")
-
-check("C-72 control C (orientation, DC-saturated): orientation ACCUMULATES under the identical "
-      "treatment -- so what screens orientation's random page is the DATA, not the tolerance "
-      "we added",
-      r_dc > occ_lo[NS[0]] and r_dc > ori_hi[NS[0]],
-      f"DC-saturated {r_dc:.6f} vs random ceiling {ori_hi[NS[0]]:.6f}")
-
-
-e_sum = round(occ["unwritten"]["sum"] / GE.E_CHARGE)
-check("C-71 occupancy: unwritten null -- sealed sum -38 e within declared tolerance "
-      "+-5e/cell (5000 e)",
-      e_sum == -38 and occ["null_within_tolerance"],
-      f"sum {e_sum} e, tol {round(occ['tolerance'] / GE.E_CHARGE)} e")
+# THE HARDENED CONTRAST GATE (T-50 part b, sealed at LANE_T50/GATE/). Replaces the six checks
+# installed at the T-16 erratum: control A was unfailable at any tolerance and the widens check
+# had 0.18 power under the two-signed mutation. Every structural check below fails at rate 1.000
+# under its designated mutation (LANE_T50/GATE/mutation_matrix.txt, 50 seeds, declared seed
+# 20260821); constraint-1 invariance is MEASURED by the harness, not assumed.
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'LANE_T50', 'GATE',
+          'c72_check_block.py'), encoding='utf-8').read())
 
 # ---------------------------------------------------------------- summary + chain
 print("=" * 78)

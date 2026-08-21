@@ -1,0 +1,25 @@
+====================================================================================================
+REFUTER B / ATTACK 1 -- BLANK PAGE PRESENTED AS THE WRITTEN SECTOR
+====================================================================================================
+
+1a. MODEL RESIDUAL (uniform{-5..5}, the design's own read model), 20 seeds
+  seed 0: verdict=INDETERMINATE  f_hat=0.000000  D=+0.2588  SE=0.1211  guards evaluated: scope&density SKIPPED (f==0)
+  seed 1: verdict=SCREENS  f_hat=0.000000  D=-0.1961  SE=0.2231  guards evaluated: scope&density SKIPPED (f==0)
+  seed 2: verdict=SCREENS  f_hat=0.000000  D=+0.0646  SE=0.1509  guards evaluated: scope&density SKIPPED (f==0)
+  verdicts over 20 blank pages: {'INDETERMINATE': 3, 'SCREENS': 17}
+
+1b. GAUSSIAN RESIDUAL (a real erased distribution has tails), sd = 3 e, 20 seeds
+  verdicts over 20 Gaussian blank pages: {'SCREENS': 17, 'INDETERMINATE': 3}
+  f_hat values: min 0.000000  max 0.000000  (6-sigma band on 32768 cells leaves essentially no outliers)
+
+1c. THE CONTRAST CASE: the same page with a HANDFUL of outlier cells (f > 0 strictly)
+  3 programmed cells (f_hat=0.000092): verdict=REFUSED
+    reason: OUT OF SCOPE: measured programmed fraction f=0.0001 needs n_min=65536 > n_max/4=512; the read is too small to 
+
+READING. The falsifier's clause (i) fires on 'an occupancy-encoded surface whose read
+passes every guard IN THE READ ITSELF ... and returns verdict SCREENS'.  At f_hat = 0.0
+exactly -- the ordinary blank control page -- the sealed estimator SKIPS the scope and
+density guards (both are conditioned on 0.0 < f_hat < 1.0), evaluates every remaining
+guard, and the guards PASS.  Whatever verdict prints above at 1a/1b is the verdict a
+stranger's run reports on a blank page.  The design's own falsifier text asserts the
+mostly-0xFF page REFUSES; f = 0.005 does, f = 0.0 does not.

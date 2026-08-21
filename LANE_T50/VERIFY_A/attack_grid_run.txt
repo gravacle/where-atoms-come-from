@@ -1,0 +1,21 @@
+REFUTER A -- GRID-CHOICE ESCALATION.  Registered-compliant reader: 1024-sector
+part, K=256 pairs, 13-point sqrt(2) grid N=16..1024 (1.8 decades -- the registered
+text requires only >=8 points and >=1.5 decades and leaves the grid to the reader).
+Cascade literal vs uniform f=0.5, SAME part SAME read; all registered non-fire
+rules applied.  master seed SeedSequence(31337)
+
+declared literal patterns: cascade(1.6/0.4) f=0.1562 | cascade(1.7/0.3) f=0.1228
+
+cascade 1.6/0.4 vs uniform:
+   REGISTERED CLAUSE (b) FIRES 0/30 OK reads (of 30 seeds); states {'OK': 30}
+   |delta beta| med +0.1942 IQR[+0.1814,+0.2083]
+   fire margin  med -0.0749 IQR[-0.0927,-0.0659]
+   skew beta_WU med +1.1942 IQR[+1.1820,+1.2084]; band-above 30/30
+
+cascade 1.7/0.3 vs uniform:
+   REGISTERED CLAUSE (b) FIRES 28/30 OK reads (of 30 seeds); states {'OK': 30}
+   |delta beta| med +0.3603 IQR[+0.3440,+0.3787]
+   fire margin  med +0.0412 IQR[+0.0238,+0.0660]
+   skew beta_WU med +1.3608 IQR[+1.3454,+1.3800]; band-above 30/30
+
+END OF GRID ESCALATION

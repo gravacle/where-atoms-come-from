@@ -1,0 +1,12 @@
+SUPPLEMENT -- all four orientation exponents on the stray-field map (20 reps each)
+columns: bDATA-U | bUU (control band needs [0.35,0.65]) | bDC-U | bWW | B3 | fire_c
+  d=0.25: bDATA-U +0.1098 | bUU -0.0159 | bDC-U   nan   | bWW +0.0060 | B3 0/20 | fire_c 0/20
+  d=1.00: bDATA-U +0.1576 | bUU -0.0108 | bDC-U   nan   | bWW +0.0037 | B3 0/20 | fire_c 0/20
+  d=2.00: bDATA-U +0.1889 | bUU +0.0131 | bDC-U   nan   | bWW +0.0103 | B3 0/20 | fire_c 0/20
+
+reading: at every physical standoff -- including a quarter bit cell -- the map's
+block sums are boundary-dominated: EVERY exponent (data, control, DC, W-W) leaves
+its band. Not only does the positive control fail; the U-U control leaves
+[0.35, 0.65], so the read is INCONCLUSIVE twice over, on every stray-field
+instrument, at every height. The 1-vs-1/2 structure exists in the magnetization
+and does not survive the named instrument's transfer function.

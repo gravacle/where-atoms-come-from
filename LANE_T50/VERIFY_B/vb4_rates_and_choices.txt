@@ -1,0 +1,46 @@
+================================================================================================================
+REFUTER B / ATTACKS 3-5 -- RATES, MISROUTING, AND THE READER'S FREE CHOICES
+================================================================================================================
+
+4a. RATE: written bow A_w=0.125 (1 period), reference region flat, 50 seeds, N=2^17
+  verdicts: {'ACCUMULATES': 48, 'INDETERMINATE': 2}
+  D: mean +0.7649  min +0.6674  max +0.8652
+  clause (ii) fire rate = ACCUMULATES / 50 on a healthy DC-balanced (screening) track
+
+4b. DIFFERENTIAL INTER-REGION OFFSET delta on an honestly DC-balanced track (N=2^17)
+    guard threshold: z=4 at delta = 4*sigma/sqrt(N) = 0.0111 of grain amplitude
+  delta=0.005 (background mismatch, balanced data)     beta_w=+0.999 beta_e=+1.101 D=-0.1016 SE=0.0744 dc=False  --> SCREENS
+  delta=0.010 (background mismatch, balanced data)     beta_w=+1.060 beta_e=+0.988 D=+0.0712 SE=0.0836 dc=False  --> SCREENS
+  delta=0.012 (background mismatch, balanced data)     beta_w=+1.082 beta_e=+1.035 D=+0.0463 SE=0.0988 dc=True  --> SCREENS
+  delta=0.020 (background mismatch, balanced data)     beta_w=+1.187 beta_e=+1.025 D=+0.1616 SE=0.1001 dc=True  --> SCREENS
+  delta=0.050 (background mismatch, balanced data)     beta_w=+1.544 beta_e=+1.002 D=+0.5425 SE=0.0356 dc=True  --> INDETERMINATE
+  every dc=True row above is an honestly balanced track ROUTED OUT of the screening
+  clause into the DC clause, whose prediction (D=1) it then contradicts (D~0) --
+  and the falsifier set contains NO clause for the DC route.  Also note the guard
+  threshold TIGHTENS as 1/sqrt(N): the better the read, the more likely the misroute.
+
+4c. OCCUPANCY -- READER FREE CHOICES (honest choices, f=0.5 page, N=2^15)
+  -- quantization: V_t sweep step q, in units of the 10 e erased spread (e_sd~3 e)
+  sweep step q=1 e                                     beta_w=+1.996 beta_e=+0.829 D=+1.1675 SE=0.0985 dc=None  --> ACCUMULATES
+  sweep step q=3 e                                     beta_w=+1.998 beta_e=+1.002 D=+0.9959 SE=0.1103 dc=None  --> ACCUMULATES
+  sweep step q=6 e                                     beta_w=+1.998 beta_e=+1.225 D=+0.7725 SE=0.1185 dc=None  --> ACCUMULATES
+  sweep step q=12 e                                    REFUSED: NULL LEG OUT OF SPEC: beta_e=nan outside [0.6,1.4]; correlat
+  -- floor-clipped erased read (sweep cannot go below the erased nominal): v = max(v, 0)
+  half-censored erased distribution                    beta_w=+1.997 beta_e=+0.895 D=+1.1021 SE=0.0796 dc=None  --> ACCUMULATES
+  -- program disturb: written sector's erased cells shifted up by d e (unwritten range clean)
+  disturb shift d=3 e                                  beta_w=+1.998 beta_e=+0.959 D=+1.0388 SE=0.1479 dc=None  --> ACCUMULATES
+  disturb shift d=9 e                                  beta_w=+1.998 beta_e=+1.109 D=+0.8889 SE=0.0603 dc=None  --> ACCUMULATES
+  disturb shift d=30 e                                 REFUSED: POPULATIONS NOT SEPARABLE: 18.1% of the written sector sits 
+  -- sector length and ladder top (the reader's own sizes)
+  N=8192, ladder 128..512                              beta_w=+1.999 beta_e=+1.064 D=+0.9353 SE=0.1435 dc=None  --> ACCUMULATES
+  N=32768, ladder 128..2048                            beta_w=+1.997 beta_e=+1.049 D=+0.9479 SE=0.1097 dc=None  --> ACCUMULATES
+  N=131072, ladder 128..8192                           beta_w=+1.998 beta_e=+1.057 D=+0.9411 SE=0.0812 dc=None  --> ACCUMULATES
+
+4d. ORIENTATION -- REAL BITS SPAN RUNS OF GRAINS/SAMPLES (balanced data, runs of L)
+  run length L=8 (bit = 8 read samples)                beta_w=+0.967 beta_e=+1.011 D=-0.0448 SE=0.0813 dc=False  --> SCREENS
+  run length L=32 (bit = 32 read samples)              beta_w=+0.987 beta_e=+1.025 D=-0.0378 SE=0.0670 dc=True  --> SCREENS
+  run length L=64 (bit = 64 read samples)              beta_w=+0.940 beta_e=+1.018 D=-0.0778 SE=0.0845 dc=True  --> SCREENS
+  run length L=128 (bit = 128 read samples)            beta_w=+1.141 beta_e=+0.991 D=+0.1500 SE=0.0776 dc=False  --> SCREENS
+  (the sealed ladder starts at 128 samples; the verdict must hold for honest
+   oversampling choices L << n_min and degrade to refusal/indeterminate, never to a
+   false ACCUMULATES, as L approaches n_min)

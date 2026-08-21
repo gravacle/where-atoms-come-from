@@ -1,0 +1,36 @@
+====================================================================================================
+T-50 DESIGN TWO -- ADVERSARIAL MUTATION SUITE -- 50 seeds per row
+====================================================================================================
+
+BASELINE (unmutated occupancy, the D-15 control in a different configuration):
+  claim check ACCUMULATES: 49/50 pass  (expected: pass; this row is what the mutations are measured against)
+
+m1 TWO-SIGNED WRITE: claim check must FAIL (not ACCUMULATES)
+  fail rate: 50/50 = 1.000   verdicts: {'SCREENS': 42, 'INDETERMINATE': 8}
+
+m2 NON-ZERO-MEAN RESIDUAL (mu = 3 e, in-spec, the physically-signed case):
+  claim check moved:      0/50 = 0.000   (contract: 0.000 -- firing here would repeat refuted defect A8/B2, the floor violated by healthy biased physics)
+  sentinel false-fired:   50/50 = 1.000   (contract: 1.000 -- the absolute-zero reference IS corrupted by the bias; this is the measured reason the self-reference is load-bearing)
+
+m3 PROGRAMMED DENSITY FALLING WITH N (fixed 1024-cell record, growing block):
+  pipeline REFUSED: 50/50 = 1.000   (contract: 1.000; any reported verdict is the gate failing to catch the mutation)
+
+m4 COMMON-MODE OFFSET 0.5 e/cell (the T-50 row's computed attack):
+  claim check moved:      0/50 = 0.000   (contract: 0.000)
+  sentinel false-fired:   50/50 = 1.000   (contract: 1.000)
+
+m5 DC-BIASED DATA (55% ones) SOLD AS RANDOM on an orientation track:
+  balance guard routed to DC clause: 50/50 = 1.000   (contract: 1.000; the screening clause must never be applied to DC-loaded data)
+
+====================================================================================================
+SUITE SUMMARY (contract -> measured)
+  baseline claim-check pass ................ 49/50
+  m1 two-signed write, claim FAILS ......... 1.000 -> 1.000
+  m2 biased residual, claim INVARIANT ...... 0.000 -> 0.000
+  m2 biased residual, sentinel FIRES ....... 1.000 -> 1.000
+  m3 falling density, pipeline REFUSES ..... 1.000 -> 1.000
+  m4 0.5e common mode, claim INVARIANT ..... 0.000 -> 0.000
+  m4 0.5e common mode, sentinel FIRES ...... 1.000 -> 1.000
+  m5 DC-loaded data, guard ROUTES .......... 1.000 -> 1.000
+  BOOL SUITE (all contracts met): True
+====================================================================================================

@@ -1,0 +1,43 @@
+REFUTER B (INSTRUMENT) -- T-50 DESIGN TWO (THE SELF-REFERENCED DOUBLING CONTRAST) -- 2026-08-21
+VERDICT: REFUTED (two falsifier clauses fired by ordinary physics; one prediction clause unfalsifiable)
+
+REPRODUCTION (scratchpad/VERIFY_B_rerun/): d2_verify.py and d2_mutation_suite.py re-run from
+copies; outputs BIT-IDENTICAL to the sealed d2_verify.txt and d2_mutation_suite.txt.
+Only change in my copy: MODEL path made absolute for V0.
+
+FILES (script -> sealed output):
+  vb1_blank_page.py    -> vb1_blank_page.txt     KILL 2: blank control page, f_hat = 0.0 exactly,
+                          scope+density guards SKIPPED (both conditioned on 0.0 < f_hat < 1.0);
+                          verdict SCREENS 17/20 (model residual) and 17/20 (Gaussian).
+                          f = 9e-5 and f = 0.005 REFUSE; f = 0.0 does not. Falsifier clause (i)
+                          fires on the first control page any physicist reads. Repeats refuter-A
+                          residual defect 2's structure (void condition and falsifier set do not
+                          cover the same set) at the f = 0 boundary.
+  vb2_written_drift.py -> vb2_written_drift.txt  Guard map: interleave + null-slope guards watch
+                          ONLY the erased region; when drift is shared they refuse (parasitic
+                          defense), when it sits on the written track alone nothing watches it.
+  vb3_drift_refined.py -> vb3_drift_refined.txt  KILL 1 (existence): zero-mean scan bow on the
+                          written track, flat reference region: A_w = 0.10 -> ACCUMULATES on a
+                          DC-balanced (truly screening) track, ALL GUARDS GREEN. Even-symmetric
+                          reference bow also defeats the interleave guard (half-means equal).
+  vb4_rates_and_choices.py -> vb4_rates_and_choices.txt
+                          KILL 1 (rate): A_w = 0.125, 50 seeds -> 48/50 ACCUMULATES (clause (ii)
+                          fire rate 96% on healthy physics).
+                          KILL 3: dc-balance guard z>4 assumes iid per-cell signs; fires at a
+                          1.2% inter-region background mismatch (threshold ~ 4*sigma/sqrt(N),
+                          TIGHTENS with N) and on ordinary multi-sample-per-bit reads (runs
+                          L = 32, 64 -> dc_loaded = True on honestly balanced data). Misrouted
+                          tracks measure D ~ 0 against the DC clause's D = 1, and NO falsifier
+                          clause exists for the DC route.
+                          Occupancy free-choice sweeps (quantization, censoring, disturb, sizes):
+                          ROBUST -- holds or refuses, never flips. Clause (i) structurally
+                          protected for written pages by the null-leg window (beta_w = 2 and
+                          beta_e <= 1.4 force D >= 0.6).
+  vb5_drift_shapes.py  -> vb5_drift_shapes.txt   KILL 1 (robustness): centred LINEAR RAMP (plain
+                          tip/temperature drift) A = 0.125 fires at N = 2^15 and 2^17; at
+                          N = 2^17 an 8% sine fires. Longer reads fire MORE confidently.
+
+WHAT SURVIVES (measured, per the accumulation directive): bit-identical reproduction; exact
+affine invariance (V1); the sentinel contrast (V1b); constraint-2 echo (V2); occupancy
+pattern universality and free-choice robustness (V3, 4c); fixed-record refusal 50/50 (V8, m3);
+all mutation-suite contracts 1.000/0.000 as declared; route genuinely distinct from Design One.

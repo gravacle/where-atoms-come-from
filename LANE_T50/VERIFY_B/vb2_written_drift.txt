@@ -1,0 +1,32 @@
+==============================================================================================================
+REFUTER B / ATTACK 2 -- ZERO-MEAN WRITTEN-TRACK BACKGROUND, DC-BALANCED DATA (healthy = SCREENS)
+==============================================================================================================
+
+2a. BASELINE (no background): the healthy verdict
+  A_w=0.00, A_e=0.00                                   beta_w=+0.981 beta_e=+1.023 D=-0.0418 SE=0.0978 dc_loaded=False null_ok=True intl_ok=True  --> SCREENS
+
+2b. SYMMETRIC background (same amplitude both regions -- the best case for the design)
+  A_w=0.05, A_e=0.05                                   REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  A_w=0.10, A_e=0.10                                   REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  A_w=0.15, A_e=0.15                                   REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  A_w=0.25, A_e=0.25                                   REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+
+2c. ASYMMETRIC background (written region carries more of the frame's bow -- ordinary)
+  A_w=0.100, A_e=0.050                                 REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  A_w=0.125, A_e=0.050                                 REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  A_w=0.150, A_e=0.050                                 REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  A_w=0.150, A_e=0.075                                 REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  A_w=0.200, A_e=0.100                                 REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  A_w=0.250, A_e=0.100                                 REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+
+2d. HOW OFTEN, over 50 seeds, at the ordinary operating point A_w=0.15, A_e=0.05
+  verdicts: {'REFUSED': 50}
+  every ACCUMULATES above is falsifier clause (ii) firing on a DC-balanced, correctly
+  screening track whose only sin is a 15% zero-mean scan background -- with every
+  guard the pipeline owns showing green.
+
+2e. CONTROL: the same background amplitudes on the NULL leg alone (the guarded direction)
+  A_w=0.000, A_e=0.15                                  REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  A_w=0.000, A_e=0.25                                  REFUSED: REFERENCE INCONSISTENCY: the two halves of the reference population di
+  (when the drift sits on the region the guards actually watch, the pipeline behaves;
+   the written track is the unwatched direction)

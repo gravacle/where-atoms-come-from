@@ -1,0 +1,26 @@
+================================================================================================
+va3 -- MUTATION-SUITE REBUILD AND THE CORRELATED-NOISE ATTACK
+================================================================================================
+S1 m1 two-signed, f=0.5: claim fails 50/50 = 1.000  {'SCREENS': 43, 'INDETERMINATE': 7}
+S1 m1 two-signed, f=0.1: claim fails 50/50 = 1.000  {'SCREENS': 42, 'REFUSED': 1, 'INDETERMINATE': 7}
+S1 m1 two-signed, f=0.9: claim fails 50/50 = 1.000  {'SCREENS': 44, 'INDETERMINATE': 6}
+S2 m3 fixed record 1024: REFUSED 50/50 = 1.000
+S2 m3 fixed record 8192: REFUSED 50/50 = 1.000
+S3 m2 decoupled draws: D(mu=0) mean 1.0254 sd 0.1025  D(mu=3) mean 0.9893 sd 0.1009  shift -0.0361
+   (the claim is bias-invariant in DISTRIBUTION, not only under coupled draws)
+S4 sentinel fires: mu=3 -> 50/50 = 1.000; 0.5e common mode -> 50/50 = 1.000  (contracts 1.000)
+S5 m5 data at 51% ones: routed 21/50 = 0.420
+S5 m5 data at 52% ones: routed 50/50 = 1.000
+S5 m5 data at 55% ones: routed 50/50 = 1.000
+
+S6 WRITTEN-LEG AR(1) READ NOISE (rho, amplitude sigma_c x signal), null clean:
+  rho=0.995 sigma_c=0.3: beta_w=+1.282 D=+0.3849 SE=0.1847 INDETERMINATE dc_loaded=False
+  rho=0.999 sigma_c=0.3: beta_w=+1.725 D=+0.6186 SE=0.1128 INDETERMINATE dc_loaded=False
+  rho=0.999 sigma_c=0.6: beta_w=+1.750 D=+0.6432 SE=0.1150 INDETERMINATE dc_loaded=True
+  rho=0.9997 sigma_c=0.5: beta_w=+1.900 D=+1.0389 SE=0.1543 ACCUMULATES dc_loaded=True
+
+S7 CLAUSE-(ii) FIRE RATE vs WRITTEN-LEG DRIFT AMPLITUDE (20 reads each):
+  drift 0.3 x signal: clause (ii) fires 11/20
+  drift 0.4 x signal: clause (ii) fires 18/20
+  drift 0.5 x signal: clause (ii) fires 17/20
+  drift 0.7 x signal: clause (ii) fires 17/20

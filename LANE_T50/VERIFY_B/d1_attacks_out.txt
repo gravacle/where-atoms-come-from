@@ -1,0 +1,76 @@
+REFUTER B -- INSTRUMENT -- ATTACK RUN ON T-50 DESIGN ONE
+pipeline imported from the lane's own t50_contrast.py (sha-sealed); numpy 2.0.2
+refuter master seed: SeedSequence(5150)
+
+ATTACK 1 -- FIXED-PATTERN SECTOR MEANS ON AN HONEST OCCUPANCY PART (f=0.5)
+  per-sector offset ~ N(0,s); s in e/cell; cell noise sigma = 3.1623 e;
+  N_E = 100 e. 30 reps per setting, the lane's own measure_occ pipeline.
+  columns: bWU med | bUU med | xi med | B1 rate | ctlband-out rate (INCONCLUSIVE
+  under the registered text) | code fire_a rate (the sealed pipeline's own bool)
+  s=0.00  e (  0.0% of sigma,  0.00% of N_E): bWU +0.9992 | bUU +0.5057 | xi +0.4944 | B1 29/30 | INCONCLUSIVE  1/30 | code-fire_a  0/30
+  s=0.03  e (  0.9% of sigma,  0.03% of N_E): bWU +1.0019 | bUU +0.5141 | xi +0.4823 | B1 30/30 | INCONCLUSIVE  0/30 | code-fire_a  0/30
+  s=0.05  e (  1.6% of sigma,  0.05% of N_E): bWU +1.0003 | bUU +0.5685 | xi +0.4393 | B1 30/30 | INCONCLUSIVE  0/30 | code-fire_a  0/30
+  s=0.10  e (  3.2% of sigma,  0.10% of N_E): bWU +1.0022 | bUU +0.6358 | xi +0.3580 | B1 18/30 | INCONCLUSIVE 12/30 | code-fire_a  0/30
+  s=0.20  e (  6.3% of sigma,  0.20% of N_E): bWU +0.9990 | bUU +0.7717 | xi +0.2273 | B1  1/30 | INCONCLUSIVE 29/30 | code-fire_a  1/30
+  s=0.30  e (  9.5% of sigma,  0.30% of N_E): bWU +0.9984 | bUU +0.8203 | xi +0.1782 | B1  0/30 | INCONCLUSIVE 30/30 | code-fire_a 10/30
+  s=0.50  e ( 15.8% of sigma,  0.50% of N_E): bWU +0.9998 | bUU +0.9255 | xi +0.0772 | B1  0/30 | INCONCLUSIVE 30/30 | code-fire_a 26/30
+  s=1.00  e ( 31.6% of sigma,  1.00% of N_E): bWU +0.9991 | bUU +0.9583 | xi +0.0404 | B1  0/30 | INCONCLUSIVE 30/30 | code-fire_a 29/30
+
+  TEXT-VS-CODE on the same reads: reads where the sealed pipeline's fire_a is TRUE
+  (falsifier (a) fired on a perfectly accumulating one-carrier part) while the
+  registered text's precedence would mark the read INCONCLUSIVE:
+    s=0.30 e: code fires 5/30; of those, text-inconclusive 5
+    s=0.50 e: code fires 25/30; of those, text-inconclusive 25
+    s=1.00 e: code fires 28/30; of those, text-inconclusive 28
+
+ATTACK 2 -- STRAY-FIELD TRANSFER FUNCTION ON THE ORIENTATION READ
+  v_map = IFFT[ T(k) * FFT(m) ],  T(k) = exp(-|k|d) (1 - exp(-|k|t)),  T(0) = 0.
+  d = standoff in bit cells (bit-cell-resolving scan: d ~ 1-2), t = 0.5.
+  20 reps per setting, the lane's own measure_ori pipeline.
+  columns: bDATA-U | bDC-U (positive control, needs >= 0.9) | B3 rate | fire_c rate
+  d=0.0 cells: bDATA-U +0.4822 | bDC-U +1.0018 | B3 20/20 | fire_c  0/20 | interior mean map value DC +1.00000 vs U -0.00052
+  d=1.0 cells: bDATA-U +0.1553 | bDC-U   nan   | B3  0/20 | fire_c  0/20 | interior mean map value DC +0.00032 vs U -0.00015
+  d=2.0 cells: bDATA-U +0.1744 | bDC-U   nan   | B3  0/20 | fire_c  0/20 | interior mean map value DC +0.00032 vs U -0.00015
+  d=5.0 cells: bDATA-U +0.2344 | bDC-U   nan   | B3  0/20 | fire_c  0/20 | interior mean map value DC +0.00032 vs U -0.00015
+  reading: at d=0 (the model's v_i = m_i, no such instrument) the control passes;
+  at ANY d > 0 -- i.e., on every stray-field map -- the DC sector's interior is
+  indistinguishable from erased, bDC-U collapses to the noise exponent, the positive
+  control FAILS, and the read is INCONCLUSIVE. Clause (c) can never fire; the
+  orientation prediction can never be verified. The exception named in no text:
+  an instrument measuring M directly (polar Kerr microscopy) -- not 'MFM is standard'.
+
+ATTACK 3 -- THE LITERAL SHARED GUARD ON THE ORIENTATION DATA SECTOR
+  median guard ratio median|D_DATA-U(Nmin)| / A_UU(Nmin): 1.000 (guard needs > 8)
+  DATA sector 'reads as unwritten' under the literal shared guard: 30/30 reads
+  reading: the orientation prediction's OWN PREDICTED OUTCOME (screening) places its
+  subject in the guard's void region -- 'no clause applies' -- while the sealed
+  pipeline exempts orientation from the guard without the registered text saying so.
+  Two honest readers of the same text compute different reachable sets for clause (c).
+  The magnetic side also has NO defined f-hat: 'every clause carries the same density
+  check' names an operation that does not exist on an orientation surface.
+
+ATTACK 4 -- MINIMAL-COMPLIANCE READER AT THE SEAM (K=8, 8 points over 1.5 decades)
+  grid [16, 26, 43, 70, 115, 188, 308, 506] (ratio 1.500 decades), K=8, kappa=8 (the registered constant)
+  f=0.050: void 152/200 | guard-passing  48 | worst bWU +0.8022 | bWU<0.9 on 9 reads | clause-(a) fires: code 0, text-precedence 0
+  f=0.060: void 120/200 | guard-passing  80 | worst bWU +0.8267 | bWU<0.9 on 4 reads | clause-(a) fires: code 0, text-precedence 0
+  f=0.070: void 109/200 | guard-passing  91 | worst bWU +0.8718 | bWU<0.9 on 4 reads | clause-(a) fires: code 0, text-precedence 0
+  f=0.080: void  83/200 | guard-passing 117 | worst bWU +0.8538 | bWU<0.9 on 7 reads | clause-(a) fires: code 0, text-precedence 0
+  f=0.100: void  48/200 | guard-passing 152 | worst bWU +0.8660 | bWU<0.9 on 6 reads | clause-(a) fires: code 0, text-precedence 0
+
+ATTACK 5 -- KAPPA=8 UNDER A DIFFERENT (heavier-tailed) NOISE LAW, lane's own grid
+  laplace f=0.015: void  84/100 | passing  16 | worst bWU +0.9183 | bWU<0.9 on 0 | text fires 0
+  laplace f=0.020: void  56/100 | passing  44 | worst bWU +0.9066 | bWU<0.9 on 0 | text fires 0
+  laplace f=0.030: void   8/100 | passing  92 | worst bWU +0.8921 | bWU<0.9 on 1 | text fires 0
+  t3      f=0.015: void  75/100 | passing  25 | worst bWU +0.8971 | bWU<0.9 on 1 | text fires 0
+  t3      f=0.020: void  42/100 | passing  58 | worst bWU +0.9091 | bWU<0.9 on 0 | text fires 0
+  t3      f=0.030: void   6/100 | passing  94 | worst bWU +0.9161 | bWU<0.9 on 0 | text fires 0
+
+ATTACK 6 -- ERASED POPULATION RAILED AT THE READ-WINDOW FLOOR
+  full rail: A_UU(N) = 0 at every N (D_UU == 0 exactly); guard 'A_WU > 8*A_UU'
+  passes vacuously; the log-log fit of the control is log10(0):
+    pipeline outcome: bWU=0.9894 bUU=nan xi=nan B1=False fire_a=False
+  the registered text has NO branch for a railed control population: A_UU = 0 is
+  neither in the control band nor out of it -- the fit does not exist. A reader on
+  the named 'vendor read-retry' access mode gets an undefined protocol, not a verdict.
+
+END OF REFUTER B ATTACK RUN

@@ -1,0 +1,138 @@
+REFUTER B -- THE INSTRUMENT -- T-50 DESIGN ONE (THE SAME-READ CONTRAST EXPONENT)
+(files d1_-prefixed: this directory is shared with the Design Two refutation, VERIFY_B_INDEX.txt)
+DATE 2026-08-21. Charter: a physicist anywhere runs this against their own data;
+sweep every free choice; a falsifier no instrument can trigger, or one ordinary
+physics triggers, is REFUTED. Default REFUTED.
+
+VERDICT: REFUTED.
+
+FILES IN THIS DIRECTORY
+  d1_repro_run.txt       -- full rerun of the lane's t50_contrast.py: BIT-FOR-BIT
+                            identical to the sealed t50_contrast_run.txt (diff empty;
+                            seals verified: a3a243a3.. / 8d6a8d3a.. / 01f20180..)
+  d1_attacks.py/_out.txt -- attacks 1-6 (fixed pattern; stray-field transfer; literal
+                            shared guard; minimal-compliance seam; kappa portability;
+                            railed erased population)
+  d1_supplement.py/_out.txt --  all four orientation exponents on the stray-field map
+
+WHAT SURVIVED (accumulation directive: outcomes measured, not failed)
+  - Reproduction bit-for-bit. The three binding constraints are honoured: the
+    registered observable IS the exponent of the contrast; centred variance is
+    excluded and displayed; density is fixed in the definition and the M3
+    counterexample is voided 50/50.
+  - Common-mode offset and read-long drift immunity is structural and real (R2).
+  - M1 mutation power 50/50 against the old widens check's 9/50 is a genuine gate
+    improvement. 0/600 false fires on iid surfaces confirmed; in ALL of my
+    adversarial sweeps the 2-SE rule produced ZERO text-precedence falsifier fires.
+  - The occupancy electrical half is structurally sound in the iid regime.
+
+THE KILLS
+
+K1 (ATTACK 2 + SUPPLEMENT) -- THE ORIENTATION HALF DOES NOT EXIST ON THE NAMED
+INSTRUMENT. Every named magnetic reader (MFM 'is standard'; scanning Hall; NV)
+maps STRAY FIELD, and every stray-field map has exactly zero response at k=0: a
+uniformly magnetized sector's interior is invisible (Laplace; the transfer
+exp(-|k|d)(1-exp(-|k|t)) vanishes at k=0 for every standoff d>0). Measured on the
+lane's own pipeline: DC-sector interior map value +0.0003 vs +1.0 for the model's
+v_i=m_i idealization; the DC-U contrast never passes its own guard (bDC-U = nan,
+B3 0/20 at d=0.25, 1, 2, 5 cells). Worse: block sums of a high-passed map are
+boundary-dominated, so EVERY exponent collapses (bDATA-U +0.11..+0.19, bUU -0.02..
++0.01, bWW ~0.01) -- the 1-vs-1/2 structure lives in the magnetization and does
+not survive the instrument's transfer function at any height. Clause (c) is a
+falsifier no named instrument can trigger; the orientation prediction can never be
+verified; the cross-encoding discriminator -- the row's entire point -- has no
+runnable orientation side. This repeats the INST-7/INST-8 family (named instrument
+cannot measure the claimed quantity) in a new costume: the VSM was dropped for
+overwriting the state, and MFM was installed without checking that it can see the
+DC signal the positive control demands. An instrument that reads M directly
+(polar/wide-field Kerr) exists and is in no registered sentence.
+
+K2 (ATTACK 3) -- THE SHARED GUARD VOIDS THE ORIENTATION PREDICTION'S OWN SUBJECT.
+Registered text: 'a written sector READS AS UNWRITTEN -- no clause applies -- when
+median|D_WU(N_min)| <= 8 x A_UU(N_min)' and 'every clause carries the SAME guard,
+density check and scope conditions'. Under the PREDICTED screening behaviour the
+DATA sector's guard ratio is 1.000 (measured; 30/30 reads-as-unwritten): the
+prediction's subject sits in its own void region, and the sealed pipeline silently
+applies NO guard and NO density check to orientation (measure_ori) -- the density
+check is not even definable there (no programmed fraction exists on a magnetic
+surface). Two honest readers of the same text compute different reachable sets for
+clause (c). This is the COMP-2/COMP-3 defect family -- the void condition and the
+clause set do not cover the same set -- returning on the orientation side.
+
+K3 (ATTACK 1) -- FIXED-PATTERN STRUCTURE, THE REAL INSTRUMENT'S DOMINANT
+SYSTEMATIC, IS UNTREATED AND FATAL AT THE 0.1% LEVEL. R2's immunity sweep covers
+only a read-global offset and one read-long ramp -- both common-mode by
+construction. A real per-cell read has sector-scale fixed pattern (NAND: wordline/
+layer-position mean Vt structure; MFM: scan-line offsets), which is NOT common to
+the two sectors of a pair and enters D at the signal's own exponent. Measured on a
+PERFECTLY ACCUMULATING one-carrier part: per-sector offsets of s=0.1 e/cell -- 3%
+of the cell noise, 0.1% OF THE PROGRAMMED CHARGE -- already throw 12/30 reads out
+of the control band (INCONCLUSIVE); at 0.2-0.3% of the programmed charge it is
+29-30/30. Real parts sit orders above that level (layer-to-layer Vt structure in
+3D NAND is tens-to-hundreds of mV against a few-V window). De-trending is
+forbidden by the registered text ('no conversion, no reference subtraction'), the
+mutation suite contains no fixed-pattern member, and the 0/600 false-fire figure
+was measured on iid surfaces only. Consequence: on real parts the protocol
+generically returns INCONCLUSIVE forever -- a falsifier no instrument can trigger.
+AND: the sealed pipeline's fire_a omits the text's INCONCLUSIVE precedence (it
+never consults the control band), so the shipped boolean FIRES FALSIFIER (a) on
+the correctly-accumulating part (28/30 reads at s=1 e; every one text-inconclusive)
+-- ordinary physics triggers the falsifier as implemented.
+
+K4 (ATTACKS 4, 5) -- THE PREDICTION'S UNIVERSAL CLAUSE FAILS UNDER REGISTERED
+FREE CHOICES, AND THE KAPPA=8 GUARANTEE DOES NOT TRANSFER. The text permits any
+geometric grid >= 8 points spanning >= 1.5 decades and K >= 8. At the registered
+minima (8 points over exactly 1.5 decades, K=8) the seam moves to f ~ 0.06 and the
+worst guard-passing beta_WU measured is +0.8022, with beta_WU < 0.9 on ~2-5% of
+guard-passing honest reads at every seam density -- the registered sentence
+'kappa = 8 is the smallest scanned value whose worst guard-passing beta is 0.9240'
+is a property of the lane's own grid and noise law, not of the protocol (Laplace/
+t3 residuals at matched sigma on the lane's own grid: worst 0.8921/0.8971).
+No falsifier fired anywhere (the 2-SE rule held, 0 fires in 1000 seam reads), so
+this is not a false-fire -- it is the PREDICTION stated as 'beta_WU = 1 within
+[0.9, 1.1] for EVERY guard-passing data pattern' being measurably false for
+registered-compliant readers, in a way the text presents as measured fact.
+
+K5 (ATTACK 6) -- THE PROTOCOL IS UNDEFINED ON THE NAMED CONSUMER ACCESS MODE.
+Custody literature (cai_procieee.txt ~line 1780): read-retry characterization
+scales floor at GND; the erased distribution below GND is not resolved. A railed
+erased population gives A_UU = 0 identically: the guard passes vacuously, the
+control fit is log10(0), the pipeline returns bUU = nan, and the registered text
+has no branch for it. The reader on 'vendor read-retry commands' -- an access mode
+the text names as sufficient -- gets an undefined protocol, not a verdict.
+
+RESIDUAL DEFECTS (each a required repair, none optional)
+ 1. K1: the magnetic v_i must be a quantity some named instrument actually returns.
+    Either name an M-reading instrument (polar/wide-field Kerr) with its own raw
+    map value, or strike the orientation half from the runnable claim.
+ 2. K2: state the guard's scope PER CLAUSE. The orientation prediction cannot
+    carry the occupancy guard; the magnetic 'density check' must be defined or
+    deleted from 'every clause carries the same...'.
+ 3. K3: the design needs a registered fixed-pattern treatment: either a permitted,
+    exactly-specified within-read de-trending built from the part's own unwritten
+    sectors, or a registered fixed-pattern tolerance with a measured control; and
+    the mutation suite needs a fixed-pattern member.
+ 4. K3: fire_a must carry the text's INCONCLUSIVE precedence (control band checked
+    before any clause fires); as sealed, code and text disagree on the load-bearing
+    boolean.
+ 5. K4: either pin the grid and K exactly in the registered text, or restate the
+    prediction band as grid-relative and re-derive kappa per the reader's declared
+    grid from the reader's own A_UU; the universal 'EVERY guard-passing pattern'
+    clause is false as registered.
+ 6. K5: add the railed-population branch: A_UU(N_min) = 0 (or below quantization)
+    reads as insufficient-access/INCONCLUSIVE, stated in the text.
+ 7. The seam property of kappa is noise-law-dependent (worst guard-passing beta
+    0.8921 under Laplace on the lane's own grid); any kappa guarantee must be
+    stated for the reader's measured noise, not the model's uniform +-5 e.
+
+RECOMMENDATION. The differential-contrast-exponent CORE survives every model-side
+attack I could construct and honours all three binding constraints; the occupancy
+electrical half fails only on instrument systematics that are repairable in the
+text (fixed-pattern treatment, precedence, seam restatement, railed branch). The
+orientation half as registered is not repairable by wording: it needs a different
+named instrument (Kerr-class, M-reading) or removal from the runnable claim. Do
+not register DESIGN ONE as it stands; a V002 carrying repairs 1-7 would face me on
+the fixed-pattern tolerance and the Kerr-instrument raw-value law, and could
+survive.
+
+REFUTER B -- END

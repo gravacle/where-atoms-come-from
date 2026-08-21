@@ -1,0 +1,29 @@
+================================================================================================
+va1 -- REBUILD OF THE DESIGN'S OPERATING POINTS (independent code, independent seeds)
+================================================================================================
+R1 occupancy f=0.5, 200 fresh reads: D mean 1.0198 sd 0.1083 (design: 1.009 / 0.100); mean jk SE 0.1130 calib 0.96 (design 0.90); verdicts {'ACCUMULATES': 196, 'REFUSED': 1, 'INDETERMINATE': 3}
+R1b f=0.01: beta_w=1.9328 beta_e=1.1140 D=+0.8188 SE=0.1489 ACCUMULATES
+R1b f=0.05: beta_w=1.9525 beta_e=1.1704 D=+0.7822 SE=0.0850 ACCUMULATES
+R1b f=0.10: beta_w=1.9771 beta_e=0.9546 D=+1.0225 SE=0.0802 ACCUMULATES
+R1b f=0.30: beta_w=1.9946 beta_e=0.9297 D=+1.0648 SE=0.0963 ACCUMULATES
+R1b f=0.70: beta_w=1.9988 beta_e=1.0329 D=+0.9660 SE=0.0637 ACCUMULATES
+R1b f=0.90: beta_w=1.9996 beta_e=0.8892 D=+1.1104 SE=0.0978 ACCUMULATES
+R1b f=1.00: beta_w=2.0000 beta_e=1.0905 D=+0.9095 SE=0.1443 ACCUMULATES
+R2 orientation random, 200 reads: D mean 0.0102 sd 0.1606 (design: 0.018 / 0.161); calib 0.95 (design 1.00); false ACCUMULATES 0/200; verdicts {'SCREENS': 156, 'INDETERMINATE': 44}
+R2b DC-saturated 2^17: D=+1.0125 ACCUMULATES dc_loaded=True
+
+R3 CROSS-CHECK (same arrays through both implementations):
+  max |D_mine - D_sealed| over 40 paired reads: 3.55e-15
+
+R4 SEALED SEED-11 CONTINUITY (design: 993/1000 D>0.5, mean 0.957, 7 refusals):
+  my numbers: 991/1000 pages D>0.5, mean 0.9566, min 0.6233, max 1.3213, refusals 9
+
+R5 AFFINE INVARIANCE (v -> g(v+b), both sectors), my draws:
+  max |dD| over 5 affine maps: 6.66e-16  (design claims exact cancellation)
+
+R6 PER-READ COVERAGE OF THE STATED PREDICTION (not the falsifier):
+  occupancy: |D-1| > 2SE on 12/199 honest in-scope reads (6.0%)
+  orientation: |D-0| > 2SE on 15/200 honest in-scope reads (7.5%)
+  the falsifier's own bar (SCREENS/ACCUMULATES against the 0.5 midpoint) is what
+  protects the row; the prediction SENTENCE 'D = 1 within 2 jackknife SE' for EVERY
+  in-scope read is a per-read coverage claim and the rate above is its violation rate

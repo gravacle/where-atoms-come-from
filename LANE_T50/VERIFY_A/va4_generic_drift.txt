@@ -1,0 +1,8 @@
+va4 -- GENERIC (ONE-SIDED) DRIFT: the two branches
+  one-sided ramp 0..0.3: D=+0.9513 ACCUMULATES dc_loaded=True
+  one-sided ramp 0..0.6: D=+0.9133 ACCUMULATES dc_loaded=True
+  one-sided ramp 0..1.0: D=+1.2272 ACCUMULATES dc_loaded=True
+  (an AC-coupled / DC-servo'd read channel nulls the track mean in hardware,
+   turning generic drift into the centred case that fires clause (ii))
+  null-leg-only drift 0..0.3: REFUSED REFERENCE INCONSISTENCY   (the guarded leg: refusal expected)
+  null-leg-only drift 0..1.0: REFUSED REFERENCE INCONSISTENCY   (the guarded leg: refusal expected)

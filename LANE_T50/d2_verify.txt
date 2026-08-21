@@ -1,0 +1,102 @@
+====================================================================================================
+T-50 DESIGN TWO -- SELF-REFERENCED DOUBLING CONTRAST -- MODEL-SIDE VERIFICATION
+sector N=32768, ladder [128, 256, 512, 1024, 2048], jackknife 8 segments
+====================================================================================================
+
+V0. CONTINUITY ON THE SEALED SEED-11 PAGES (model/geometry.py, read-only)
+    each sealed 1000-cell page read once: programmed cell -> 100 e, erased cell ->
+    its own cell's sealed unwritten_e residual; ladder {4..64} (small part, small ladder)
+  1000 sealed pages, point-estimate D: min 0.5730  mean 0.9571  max 1.3526  (refusals: 7)
+  pages with D > 0.5: 993/1000
+  NOTE: the sealed set shares ONE residual realisation across pages (refuter A,
+  defect 13) -- this section is CONTINUITY with the sealed object only; the
+  independence claims live in V6, where every read draws its own residual field
+  sealed page 0 (f=0.493), with SE               beta_w=+1.9488 beta_e=+0.9983 D=+0.9505 SE=0.1353  ACCUMULATES
+  sealed page 499 (f=0.502), with SE             beta_w=+1.9275 beta_e=+0.8001 D=+1.1273 SE=0.1578  ACCUMULATES
+  sealed page 999 (f=0.499), with SE             beta_w=+1.9532 beta_e=+1.0971 D=+0.8561 SE=0.1178  ACCUMULATES
+
+V1. AFFINE-INVARIANCE SWEEP (occupancy f=0.5 and orientation random, same seeds)
+    v -> gain*(v + offset), residual bias mu; the T-50 row's 0.5 e/cell attack included
+  occupancy  baseline                            beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  orientation baseline                           beta_w=+1.0413 beta_e=+1.0610 D=-0.0196 SE=0.0728  SCREENS
+  occupancy  offset +0.5 e/cell                  beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  orientation offset +0.005 m/grain              beta_w=+1.0413 beta_e=+1.0610 D=-0.0196 SE=0.0728  SCREENS
+  occupancy  offset -0.5 e/cell                  beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  orientation offset -0.005 m/grain              beta_w=+1.0413 beta_e=+1.0610 D=-0.0196 SE=0.0728  SCREENS
+  occupancy  offset +5.0 e/cell                  beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  orientation offset +0.050 m/grain              beta_w=+1.0413 beta_e=+1.0610 D=-0.0196 SE=0.0728  SCREENS
+  occupancy  offset -5.0 e/cell                  beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  orientation offset -0.050 m/grain              beta_w=+1.0413 beta_e=+1.0610 D=-0.0196 SE=0.0728  SCREENS
+  occupancy  offset +50.0 e/cell                 beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  orientation offset +0.500 m/grain              beta_w=+1.0413 beta_e=+1.0610 D=-0.0196 SE=0.0728  SCREENS
+  occupancy  gain x0.5                           beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  occupancy  gain x2.0                           beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  occupancy  residual bias mu=3 e                beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  occupancy  residual bias mu=5 e                beta_w=+1.9973 beta_e=+1.0464 D=+0.9508 SE=0.1124  ACCUMULATES
+  DECISION V1: max |D shift| occupancy = 0.000000, orientation = 0.000000
+  BOOL V1 (both < 0.05): True
+
+V1b. THE SENTINEL: absolute-zero referencing IS corrupted; self-referencing is not
+     (constraint-1 echo: the T-50 row's 0.5-per-cell common mode, same moment ratio)
+  naive E|Q| exponent (no offset / +0.5)   = 0.5329 -> 1.0000   (the row's 0.493 -> 0.999, same mechanism)
+  naive M2  exponent (no offset / +0.5)    = 1.0742 -> 1.9955   (1 -> 2)
+  self-referenced D (no offset / +0.5)     = +0.0782 -> +0.0782   (SCREENS -> SCREENS)
+  BOOL V1b (naive moves > 0.3; self-ref moves < 0.05): True
+
+V2. CONSTRAINT-2 ECHO: slopes of E|S| / uncentred E[S^2] / centred Var(S)
+    mean over 30 fresh reads each (one read's top-rung noise is not a slope)
+  occupancy  written: E|S| slope 1.000  UNCENTRED 1.997  centred Var 0.923
+  orientation written: E|S| slope 0.541  UNCENTRED 1.073  centred Var 1.017
+  BOOL V2 (centred variance non-discriminating |c1-c2|<0.15; uncentred gap >0.8): True
+
+V3. OCCUPANCY ACROSS DATA PATTERNS (every pattern in scope must ACCUMULATE)
+  random data, f=0.10                            beta_w=+1.9798 beta_e=+0.7621 D=+1.2177 SE=0.0922  ACCUMULATES
+  random data, f=0.30                            beta_w=+1.9936 beta_e=+1.0358 D=+0.9578 SE=0.0649  ACCUMULATES
+  random data, f=0.50                            beta_w=+1.9979 beta_e=+1.0482 D=+0.9498 SE=0.1069  ACCUMULATES
+  random data, f=0.70                            beta_w=+1.9985 beta_e=+1.1758 D=+0.8226 SE=0.0937  ACCUMULATES
+  random data, f=0.90                            beta_w=+1.9999 beta_e=+1.0689 D=+0.9310 SE=0.1464  ACCUMULATES
+  all-programmed (f=1.00)                        beta_w=+2.0000 beta_e=+0.6907 D=+1.3093 SE=0.0644  ACCUMULATES
+  structured runs of 64 (f=0.50)                 beta_w=+2.0000 beta_e=+1.0190 D=+0.9810 SE=0.0800  ACCUMULATES
+  NOTE: run-structured data has super-binomial short-range f_B variance by design;
+        the envelope guard is evaluated -- if it refuses, that is the guard working;
+        at n >> run length the blocks are stationary and the verdict should stand.
+
+V4. ORIENTATION ACROSS WRITE KINDS (track of 2^17 grains -- a track is long)
+  random (real, DC-balanced) data                beta_w=+0.9625 beta_e=+0.9521 D=+0.0104 SE=0.1151  SCREENS
+  DC-saturated                                   beta_w=+2.0000 beta_e=+0.9801 D=+1.0198 SE=0.0644  ACCUMULATES
+    (dc_loaded flag = True: routed to the DC clause, accumulation is C-71's scope, not a C-72 falsification)
+  DC-free coded (alternating)                    REFUSED: REFERENCE RESOLUTION INSUFFICIENT: the written leg's block power at the top rung is within 10x of the reference-mean estimation error; enlarge the reference population or shorten the ladder; no exponent is reported
+    (coded data screens at the read-noise floor; no sqrt(2/piN) constant is asserted
+     anywhere in this design, so the exact-zero pathology of the refuted clause (2)
+     has nothing to contradict)
+
+V5. SMALL-f SCOPE BOUNDARY (guards computed from the read itself)
+  f=0.050                                        beta_w=+1.9531 beta_e=+0.9323 D=+1.0208 SE=0.0681  ACCUMULATES
+  f=0.030                                        beta_w=+1.9543 beta_e=+0.9105 D=+1.0438 SE=0.1473  ACCUMULATES
+  f=0.020                                        beta_w=+1.9300 beta_e=+1.1059 D=+0.8241 SE=0.1639  INDETERMINATE
+  f=0.010                                        beta_w=+1.8886 beta_e=+0.6715 D=+1.2171 SE=0.1073  ACCUMULATES
+  f=0.005                                        REFUSED: OUT OF SCOPE: measured programmed fraction f=0.0052 needs n_min=1024 > n_max/4=512; the read is too small to carry the ladder at this density
+  DECISION V5: no false SCREENS anywhere; below scope the protocol REFUSES with the
+  measured f in the reason -- an outcome, not a failure against an imported standard
+
+V6. FALSE-FIRE PROBABILITY ON HONEST SURFACES (fresh residual field per read)
+  occupancy  (200 reads): ACCUMULATES 198/200, false SCREENS 0/200, refusals 0/200
+  orientation(200 reads): SCREENS     160/200, false ACCUMULATES 0/200, refusals 0/200
+  occupancy  D: mean 1.0085, empirical sd 0.1001, mean jackknife SE 0.1112  (SE calibration ratio 0.90)
+  orientation D: mean 0.0178, empirical sd 0.1610, mean jackknife SE 0.1612  (SE calibration ratio 1.00)
+  BOOL V6 (zero false fires both ways): True
+
+V7. EASY-AXIS DISPERSION 30 deg (the refuted squareness confounder)
+  DC-saturated, 30 deg dispersion                beta_w=+1.9998 beta_e=+1.1230 D=+0.8768 SE=0.0895  ACCUMULATES
+  random data, 30 deg dispersion                 beta_w=+1.0653 beta_e=+1.0729 D=-0.0075 SE=0.1717  SCREENS
+  (D is a sign-structure exponent; dispersion rescales the coefficient and cancels --
+   the observable never claims to be squareness and cannot be confounded by tilt)
+
+V8. FIXED RECORD IN A GROWING BLOCK (constraint-3 echo; refuter A's counterexample)
+  record of 1024 cells in 32768-cell sector      REFUSED: DENSITY NOT STATIONARY: Var(f_B) exceeds 3x the binomial envelope (worst 493.9x); a fixed record in a growing block is this case; no exponent is reported
+  record of 4096 cells in 32768-cell sector      REFUSED: DENSITY NOT STATIONARY: Var(f_B) exceeds 3x the binomial envelope (worst 943.9x); a fixed record in a growing block is this case; no exponent is reported
+  DECISION V8: the guard must REFUSE (density non-stationary), never report a decay
+
+====================================================================================================
+END OF VERIFICATION RUN
+====================================================================================================

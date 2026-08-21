@@ -1,0 +1,30 @@
+REFUTER A -- PRECISION-READER ESCALATION (registered-compliant: K=256 of the
+512 disjoint W1-U pairs on a 1024-sector part, 17-point sqrt(2) grid 16..4096,
+2.4 decades; every declared analysis rule of the registered text applied,
+including the control-band and density non-fire rules).
+master seed SeedSequence(9191)
+
+cascade 1.6/0.4 vs uniform f=0.5:
+   registered clause (b) FIRES 0/30 OK reads (of 30 seeds); states {'OK': 30}
+   |delta beta| med +0.1755 IQR[+0.1659,+0.1860]; fire margin med -0.0610 IQR[-0.0730,-0.0535]
+   skew-pattern beta_WU med +1.1761 IQR[+1.1664,+1.1876]; prediction band-above 30/30
+   [repair diagnostic] MEDIAN per-block f-hat slope on log10 N, skew class: med +0.0406
+
+cascade 1.5/0.5 vs uniform f=0.5:
+   registered clause (b) FIRES 0/30 OK reads (of 30 seeds); states {'OK': 30}
+   |delta beta| med +0.1100 IQR[+0.0982,+0.1186]; fire margin med -0.1269 IQR[-0.1381,-0.1166]
+   skew-pattern beta_WU med +1.1092 IQR[+1.0993,+1.1193]; prediction band-above 21/30
+   [repair diagnostic] MEDIAN per-block f-hat slope on log10 N, skew class: med +0.0341
+
+two-level 0.03/0.95 vs uniform:
+   registered clause (b) FIRES 0/23 OK reads (of 30 seeds); states {'OK': 23, 'VOID_DENSITY': 7}
+   |delta beta| med +0.2797 IQR[+0.2599,+0.3166]; fire margin med -0.1477 IQR[-0.1664,-0.1316]
+   skew-pattern beta_WU med +1.2800 IQR[+1.2591,+1.3166]; prediction band-above 23/23
+   [repair diagnostic] MEDIAN per-block f-hat slope on log10 N, skew class: med +0.0653
+
+repair-diagnostic control -- honest patterns, median f-hat slope (should pass a
+0.05 tolerance):
+   uniform f=0.5    median f-hat slope med +0.0014  max|.| 0.0045
+   uniform f=0.1    median f-hat slope med +0.0045  max|.| 0.0089
+
+END OF PRECISION ESCALATION

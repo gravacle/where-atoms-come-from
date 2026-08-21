@@ -1,0 +1,338 @@
+T-50 DESIGN ONE -- THE SAME-READ CONTRAST EXPONENT -- SEALED VERIFICATION RUN
+lane LANE_T50 | date 2026-08-21 | master seed: SeedSequence(50) | numpy 2.0.2
+model imported read-only from: /Users/bgm/MB Work/where-atoms-come-from/model
+declared constants: GRID=[16, 32, 64, 128, 256, 512, 1024, 2048, 4096] K=16 SECT=4096 KAPPA=8.0 DENS_TOL=0.05 MIN_POINTS=6
+bands: accumulation (0.9, 1.1)  control (0.35, 0.65)  xi>=0.25  rule: inequality by >2 fitted SE
+part geometry per replicate: 256 sectors x 4096 cells = 1,048,576 cells, interleaved
+
+ANCHOR -- lineage to the sealed formation layer (model/geometry.py)
+  sealed-page rho under the model's own residual: min 0.9681335687351511 max 0.9797987440417644
+  (brief's registered figures: 0.9681335687351514 / 0.9797987440417643 -- MATCH)
+  per-cell value law identical to this lane's builder on sealed page 0: PASS
+
+R1 BASELINE -- 50 independent replicates per condition (independent residual fields,
+   COMP-13); matched ensembles, medians with IQR (COMP-12).
+  OCCUPANCY f=0.5 (random data), 50 reps:
+    beta_WU       median  +0.9998   IQR [ +0.9945,  +1.0070]
+    beta_UU       median  +0.5003   IQR [ +0.4652,  +0.5443]
+    beta_WW       median  +0.5152   IQR [ +0.4800,  +0.5495]
+    xi=WU-UU      median  +0.4993   IQR [ +0.4596,  +0.5334]
+    density slope median  +0.0001   IQR [ -0.0042,  +0.0080]
+    guard N_min: always [16]; boolean B1 (occupancy accumulation) true 49/50
+    (B1 non-true seeds and the measured cause -- all are inconclusive-read
+     categories under the registered text, none is a falsifier fire: control-band)
+  ORIENTATION random data / AC-erased / DC-saturated, 50 reps:
+    beta_DATA-U   median  +0.4968   IQR [ +0.4557,  +0.5412]
+    beta_UU       median  +0.5008   IQR [ +0.4654,  +0.5364]
+    beta_DC-U     median  +0.9993   IQR [ +0.9946,  +1.0025]
+    beta_WW       median  +0.5004   IQR [ +0.4550,  +0.5431]
+    xi=DU-UU      median  +0.0075   IQR [ -0.0538,  +0.0468]
+    boolean B3 (orientation screening + positive control) true 49/50
+
+CONSTRAINT-2 TABLE -- one replicate each, all three moment choices, same read:
+  occupancy W-U        median|D| slope +0.9934 | UNCENTRED D^2 slope +1.9867 | CENTRED var slope +1.0412
+  orientation DATA-U   median|D| slope +0.4696 | UNCENTRED D^2 slope +0.9314 | CENTRED var slope +0.9306
+  reading: |D| separates 1 vs 1/2, uncentred D^2 separates 2 vs 1, centred variance is
+  ~1 for BOTH encodings and discriminates nothing -- excluded from the design, and the
+  non-discriminator is carried in this same table (D-15), not hidden.
+
+R2 OFFSET AND DRIFT SWEEP -- 10 reps per setting; contrast exponent vs RAW single-
+   sector exponent in the same table. Offsets are per-cell common-mode across the read.
+   occupancy offsets in e/cell (0.5 = the registrar's constraint-(1) magnitude, one
+   two-hundredth of the programmed charge); orientation offsets in grain-moment units.
+  OCCUPANCY (both corruption directions attempted on the raw statistic):
+    offset 0           contrast beta_WU  +1.0035   raw-W beta  +1.0038
+    offset +0.5 e      contrast beta_WU  +0.9910   raw-W beta  +0.9919
+    offset -0.5 e      contrast beta_WU  +0.9994   raw-W beta  +1.0003
+    offset +5 e        contrast beta_WU  +1.0010   raw-W beta  +1.0026
+    offset +50 e       contrast beta_WU  +0.9966   raw-W beta  +0.4834
+    drift 50 e span    contrast beta_WU  +1.0112   raw-W beta  +1.0050
+    (offset +50 e sits at half the programmed charge: the RAW exponent of an
+    accumulating surface is driven to ~1/2 -- accumulation erased by a baseline --
+    while the contrast holds at ~1.)
+  ORIENTATION (the constraint-(1) direction: screening made to look accumulating):
+    offset 0           contrast beta_DU  +0.5095   raw-DATA beta  +0.5042
+    offset +0.005      contrast beta_DU  +0.4825   raw-DATA beta  +0.4993
+    offset +0.05       contrast beta_DU  +0.4756   raw-DATA beta  +0.7778
+    offset +0.5        contrast beta_DU  +0.4930   raw-DATA beta  +1.0051
+    offset -0.5        contrast beta_DU  +0.5088   raw-DATA beta  +0.9983
+    max contrast-exponent shift under any offset/drift: occupancy 0.0125, orientation 0.0339
+    boolean B4 (offset immunity of the contrast, threshold 0.05): True
+
+UNIT-FREEDOM (INST-3) -- same part, same block choices, values scaled by 0.04 'V/e':
+  beta_WU in e units 0.9969901342 | in volt units 0.9969901342 | difference 3.33e-16
+  (C_fg, volts-per-electron, grain moment: pure prefactors; none appears in the text.)
+
+R3 MUTATION SUITE -- 50 seeds per mutation; measured flip rates of THIS design's
+   decision booleans (D-8: every check shown able to fail; power measured, not asserted).
+  M1 TWO-SIGNED WRITE (occupancy behaving like orientation):
+    B1 (occupancy accumulation) FLIPS 50/50 seeds; falsifier (a) fires 50/50
+    guard-passing beta_WU median +0.4859 (baseline +0.9998): the exponent collapses to
+    the control value -- the design's central claim has a failing branch and it fails
+    at the measured rate above (the old widens check managed 9/50; INST-16).
+  M2 NON-ZERO-MEAN RESIDUAL:
+    occupancy mu= +2.0 e: B1 stays TRUE 49/50, beta_WU median  +0.9978
+    occupancy mu=+20.0 e: B1 stays TRUE 48/50, beta_WU median  +0.9994
+    MEASURED INVARIANCE: a mean offset of the erased population joins the physical
+    written-unwritten difference; the exponent -- the registered claim -- does not
+    move. The mutation that broke the absolute-rho floor (INST-2: 0.665910 against a
+    floor of 0.904548) is STRUCTURALLY NEUTRALIZED by the differential, and the
+    neutralization is shown by measurement here, not asserted.
+    orientation BIASED ERASE (mean +0.25 per grain; the 'AC-erased' sector is in fact
+    one-way written): falsifier (c) fires 34/50 seeds IF the AC-erase-by-procedure
+    scope clause is ignored. This is the measured reason that scope clause exists and
+    is stated in the registered text: a biased erase is a one-way write, and the
+    design then PREDICTS accumulation for its contrast (outcome measured either way).
+  M3 DENSITY FALLING WITH N (refuter A's counterexample: a fixed 512-cell record inside
+    growing blocks; fitted slopes -0.572/-0.889/-0.878 killed the old clause):
+    aligned-block injection (the counterexample's original form): VOIDED 50/50 seeds
+    (density trend beyond 0.05 or guard-void); clause (a) reached on 0/50
+    random-offset injection: VOIDED 50/50; clause (a) reached on 0/50
+    The counterexample cannot reach the row: blocks subsample sectors (the density is
+    the sector's own at every N BY DEFINITION), and the residual paths are closed by
+    the measured density-trend check and the guard.
+
+R4 FALSE-FIRE RATE -- 200 honest seeds per clause (INST-11: ensemble and confidence
+   stated, false-fire measured).
+  clause (a) occupancy accumulation-absent:      0/200 fires
+  clause (b) occupancy pattern-dependence:       0/200 fires (f=0.35 vs 0.65, same part)
+  clause (c) orientation accumulation-present:   0/200 fires
+
+R5 GUARD BEHAVIOUR AT LOW DENSITY -- COMP-2/COMP-3: the void condition and every
+   clause cover the SAME set (one shared guard); the seam is measured.
+   guard must pass by N=128 (leaving 6 points = 1.5 decades); measured A_UU(128) =
+   32.0 e gives an approximate void boundary f* ~ KAPPA*A_UU(128)/(N_E*128) = 0.0200
+   KAPPA SEAM SCAN (how KAPPA=8 was measured into place, not decreed): worst
+   guard-passing beta_WU over f in {0.01, 0.02, 0.03}, 30 seeds each:
+     kappa=5.0  voids 28/90, guard-passing 62, worst beta_WU  +0.8893 (BELOW 0.9)
+     kappa=8.0  voids 53/90, guard-passing 37, worst beta_WU  +0.9240 (>= 0.9)
+   kappa=5 admits a seam seed below the band; kappa=8 is the smallest scanned value
+   that does not. The declared guard is kappa=8.
+    f=0.0020  reads-unwritten 30/30 | clause fires 0 | (all void)
+    f=0.0050  reads-unwritten 30/30 | clause fires 0 | (all void)
+    f=0.0100  reads-unwritten 30/30 | clause fires 0 | (all void)
+    f=0.0150  reads-unwritten 23/30 | clause fires 0 | worst beta_WU  +0.9050, median  +0.9695
+    f=0.0200  reads-unwritten 20/30 | clause fires 0 | worst beta_WU  +0.9329, median  +0.9752
+    f=0.0500  reads-unwritten  0/30 | clause fires 0 | worst beta_WU  +0.9531, median  +0.9980
+    worst guard-passing beta_WU across the sweep:  +0.9050 (at or above the 0.9 band edge);
+    clause fires across the sweep: 0. Below the boundary the sector READS AS
+    UNWRITTEN (measured outcome, no clause fires).
+
+R6 DC-FREE CODED DATA (INST-12) -- 20 reps; the case the absolute ratio got exactly
+   wrong (rho = 0 identically for coded data, the thing real drives write):
+    beta_DATA-U median  +0.5266 -- the differential's unwritten side supplies the
+    fluctuation, so DC-free coded data lands in the SAME control band as random data:
+    one prediction covers both. (W-W contrast for DC-free data is pinned at O(1); its
+    A(N) contains zeros in 20/20 reps -- reported, excluded from fitting, and no
+    registered clause reads it.)
+
+R7 OCCUPANCY PATTERN-INDEPENDENCE -- 20 reps each; the exponent must not move with
+   the pattern (the prefactor may):
+    random f=0.10      beta_WU median  +1.0036  (n=20 guard-passing)
+    random f=0.25      beta_WU median  +0.9994  (n=20 guard-passing)
+    random f=0.50      beta_WU median  +0.9974  (n=20 guard-passing)
+    random f=0.75      beta_WU median  +0.9990  (n=20 guard-passing)
+    random f=0.90      beta_WU median  +0.9998  (n=20 guard-passing)
+    alternating        beta_WU median  +1.0003  (n=20 guard-passing)
+    blocky 1.5f/0.5f   beta_WU median  +1.0103  (n=20 guard-passing)
+    max pairwise spread 0.0129 against the falsifier-(b) threshold 0.2 -> boolean B2
+    (pattern-independence) TRUE
+
+R8 EASY-AXIS TILT (COMP-4/INST-5) -- 20 reps, 30-degree per-grain dispersion on EVERY
+   sector (the configuration that killed rho = M_r/M_s and rho = 1-2eps):
+    beta_DATA-U median  +0.4999 | beta_DC-U median  +1.0015 -- the 1/2-vs-1 structure is
+    tilt-blind: tilt scales every per-cell value by cos(theta), a prefactor. No
+    squareness, no epsilon, no M_r/M_s identification anywhere in this design.
+
+SCOPE MATRIX -- which clause reads which prepared surface (COMP-3, INST-10: clauses
+   are independent kills on distinct surfaces; the guard is shared):
+   surface / preparation               guard  density  clause a   clause b   clause c
+   occupancy, guard-passing pattern     yes    yes      reads      reads       --
+   occupancy, guard-void (low f)        no     --       VOID       VOID        --
+   occupancy, density trend             yes    FAIL     VOID       VOID        --
+   orientation data + AC erase + DC     --     --        --         --        reads
+   orientation, DC control fails        --     --        --         --     INCONCLUSIVE
+   orientation, biased/DC erase         --     --        --         --     OUT OF SCOPE
+
+DECISION BOOLEANS (model-side):
+  B1 occupancy accumulation (exp 1, control 1/2, xi>=0.25, density flat): 49/50 TRUE
+  B2 occupancy pattern-independence (spread 0.0129 < 0.2): TRUE
+  B3 orientation screening with in-read positive control: 49/50 TRUE
+  B4 offset/drift immunity of the contrast exponent (< 0.05): True
+  B5 mutation power measured: M1 flips B1 50/50 (fires clause a 50/50); M3 voided
+     50/50 aligned, 50/50 random-offset; biased-erase scope demo 34/50
+  B6 false fires over 600 honest reads: 0
+
+==============================================================================
+DEFECT TABLE -- the 32 residual defects of ERRATUM_REFUTED.json, tested one by one
+against THIS design. ADDRESSED = eliminated structurally or measured above;
+CONCEDED = a real limit, mitigation named. A second repair repeating any defect is
+dead on arrival; none is repeated.
+==============================================================================
+
+[COMP-1] ADDRESSED
+    Density is fixed IN THE DEFINITION: blocks subsample sectors, so f is the
+    sector's own at every N; the aligned fixed-record counterexample is voided
+    50/50, random-offset 50/50 (R3-M3). No clause carries an unguarded
+    N-decay.
+
+[COMP-2] ADDRESSED
+    ONE self-measured guard is shared by the prediction and EVERY falsifier
+    clause. Mostly-erased parts read as unwritten: R5 f=0.002 voids 30/30 with
+    0 fires; no clause reaches the void region by construction.
+
+[COMP-3] ADDRESSED
+    No f-threshold exists anywhere, so no two clauses can disagree about one.
+    The scope matrix above enumerates the reachable sets; R5 measures the
+    seam: worst guard-passing beta_WU +0.9050 against the 0.9 band edge, 0
+    clause fires across the sweep, and KAPPA itself was measured into place by
+    the seam scan.
+
+[COMP-4] ADDRESSED
+    No M_r/M_s identification. The magnetic observable is the same-map
+    written-unwritten contrast; 30-deg easy-axis dispersion moves nothing (R8:
+    DATA-U +0.4999, DC-U +1.0015) because tilt is a per-cell prefactor.
+
+[COMP-5] ADDRESSED
+    No baseline exists to get wrong: D = sum_W v - sum_U v cancels any
+    common-mode term exactly (cN - cN). R2: contrast exponent shift <= 0.0339
+    under offsets up to half the programmed charge and a read-long drift,
+    while the RAW exponent corrupts in BOTH directions in the same table.
+
+[COMP-6] ADDRESSED
+    Zero datasheet quantities. The partition is the reader's own preparation;
+    inputs are per-cell raw read values and declared analysis constants. The
+    design text never claims a datasheet supplies anything.
+
+[COMP-7] ADDRESSED
+    No Q_p appears. The prediction is an exponent; programmed-charge magnitude
+    is an explicit free prefactor (R7: exponent flat from f=0.10 to 0.90 while
+    the prefactor moves 9x).
+
+[COMP-8] ADDRESSED
+    No floor, so no slack to misreport. Non-zero-mean residual mu=2 and 20 e:
+    B1 stays TRUE 49/50 and 48/50 -- the mutation that broke the floor is
+    structurally neutralized, shown by measurement (R3-M2).
+
+[COMP-9] ADDRESSED
+    No closed-form noise constants are registered. The noise scale is A_UU
+    measured from the same read; the only registered numbers are exponent
+    bands.
+
+[COMP-10] ADDRESSED
+    Every decision boolean has a measured failing branch: M1 flips B1 50/50,
+    M3 voids 50/50 and 50/50. No check is a theorem about its own generator;
+    the checks read fitted exponents that mutations demonstrably move.
+
+[COMP-11] ADDRESSED IN LANE / FLAGGED
+    This lane's suite contains no literal-value comparison; every check is a
+    measured fit against a declared band with its noise floor in the same
+    table. The five orientation literals in model/validate_geometry.py are
+    outside this lane's write scope and are flagged to the registrar (T-50
+    part b); this design does not depend on them.
+
+[COMP-12] ADDRESSED
+    Matched statistics throughout: same K=16, same grid, same replicate counts
+    per condition, medians with IQR; no worst-of-400 against a single sealed
+    draw anywhere.
+
+[COMP-13] ADDRESSED
+    Every replicate draws an independent residual field from the model's own
+    law (R1: 50 independent fields per condition; error bars are over
+    realisations, not one field sliced).
+
+[COMP-14] ADDRESSED
+    Neither 0.00096 nor 0.0027 is used as evidence anywhere in this design;
+    all numbers are computed fresh in this sealed run with declared seeds.
+
+[INST-1] ADDRESSED
+    V_t,neutral is gone. The contrast is translation-free by construction and
+    the exponent is its scale-free summary; R2 sweeps the offsets that drove
+    rho across [0.001, 1.000] and the contrast exponent moves <= 0.0339.
+
+[INST-2] ADDRESSED
+    No Delta appears, so no spread/offset conflation can occur. A common-mode
+    offset cancels; a sector-level mean offset is physical written-unwritten
+    difference and joins the signal (R3-M2, measured).
+
+[INST-3] ADDRESSED
+    No C_fg. Unit-freedom shown exactly: beta identical in e-units and
+    volt-units to 1e-09 (UNIT-FREEDOM block).
+
+[INST-4] ADDRESSED
+    No epsilon exists in the design, so no reader-chosen epsilon can unfalsify
+    anything. Clause (c) reads fitted exponents only.
+
+[INST-5] ADDRESSED
+    rho = 1-2eps is not used. Easy-axis dispersion is a per-cell prefactor and
+    the exponent is blind to it (R8).
+
+[INST-6] ADDRESSED
+    No squareness class, no borrowed figure. Every number in the registered
+    text is either a declared analysis constant or measured from the part.
+
+[INST-7] ADDRESSED
+    Nothing is claimed of any datasheet. N_E=100 e appears ONLY as the model's
+    own parameter inside this model-side run; the exponent is scale-free, so
+    the census's 'tens of electrons' (3D NAND) moves the prefactor only.
+
+[INST-8] ADDRESSED
+    The VSM is dropped. The magnetic read is a bit-cell-resolving scanning
+    magnetometer map (MFM standard) of the written/erased interleave: no
+    saturation step destroys the state, no whole-sample integral, and matched
+    N across encodings is not required because the compared object is a
+    dimensionless exponent.
+
+[INST-9] ADDRESSED
+    'One read' means one instrument, one configuration, one pass, PER SURFACE
+    -- stated. The cross-encoding statement compares dimensionless exponents;
+    no apparatus is claimed to span both surfaces.
+
+[INST-10] ADDRESSED
+    Three clauses, three distinct prepared surfaces (occupancy accumulation;
+    occupancy pattern-pair; orientation with in-read DC control): none is a
+    corollary of another -- see the scope matrix. The floor's no-N corollary
+    structure cannot recur because there is no floor.
+
+[INST-11] ADDRESSED
+    Every threshold carries its ensemble: K>=8 pairs/point, >=8 points, >=1.5
+    decades, the 2-SE rule; measured false-fire rate 0/600 honest reads (R4).
+
+[INST-12] ADDRESSED
+    DC-free coded data -- the case rho got exactly wrong -- lands in the same
+    control band as random data (R6: beta_DATA-U +0.5266) because the
+    unwritten side of the differential supplies the fluctuation. One
+    prediction covers what real drives write.
+
+[INST-13] ADDRESSED
+    As COMP-9: no sqrt(2/piN) constant registered anywhere; the noise scale is
+    measured from the same read.
+
+[INST-14] ADDRESSED
+    No floor check exists. The first check of this design (B1) fails under M1
+    at 50/50 -- measured, in this run, against the named mutation.
+
+[INST-15] ADDRESSED
+    No control compares 1.0 to 1.0: the controls are U-U, W-W and DC-U
+    statistics of populated branches, all measured, all with variance. The
+    pattern table caps at f=0.90 precisely so every control branch has cells
+    to act on.
+
+[INST-16] ADDRESSED
+    The structural-claim boolean's power is measured, not asserted: M1 flips
+    B1 50/50 and fires clause (a) 50/50 (the old widens check: 9/50). The
+    collapse is of the fitted exponent itself, not a fragile max-over-draws.
+
+[INST-17] ADDRESSED
+    Each statistic is computed once by one pipeline and echoed verbatim into
+    this sealed txt; there is no second document to disagree with. Replicates
+    are independent realisations (COMP-13).
+
+[INST-18] CONCEDED IN PART / TARGET SUPPLIED
+    Repointing P-FORM-9/P-ROLES-2's gate cells is the registrar's half of T-50
+    (part b) and outside this lane's write scope. What this lane supplies is
+    the candidate target: the R1/R3 suite with measured failing branches for
+    every boolean. Until the registrar installs and repoints, R8 exposure
+    remains -- named here, not hidden.
+
+END OF SEALED RUN

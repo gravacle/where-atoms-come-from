@@ -1,0 +1,77 @@
+T-50 HARDENED GATE -- ADVERSARIAL MUTATION MATRIX -- 2026-08-21
+block: LANE_T50/GATE/c72_check_block.py   declared seed 20260821
+grid (64, 128, 256, 512, 1024, 2048, 4096, 8192)  K_PAIRS 64  DELTA_E 5  FRAC 0.05  DENSITY_TOL 0.05  seeds per row 50
+====================================================================================================
+
+BASELINE, DECLARED SEED (the block's own full printout):
+----------------------------------------------------------------------------------------------------
+  PASS  C-72 S1 ACCUMULATION (widens successor): the written-vs-unwritten contrast's exponent excess clears the midpoint of the read's own null and doubled null  xi_occ=+0.4664 vs beta_null/2=+0.2675 (b_WU=+1.0014, b_null=+0.5350)
+  PASS  C-72 S2 SCREENING: the orientation data contrast shows NO excess over the same read's null (below the same self-referenced midpoint)  xi_data=-0.0667 vs beta_null/2=+0.2484
+  PASS  C-72 S3 POSITIVE CONTROL (control C successor): the same read's DC-saturated contrast ACCUMULATES -- the instrument demonstrably sees accumulation  xi_dc=+0.5034 vs beta_null/2=+0.2484
+  PASS  C-72 S4 DISCRIMINATOR: the occupancy excess exceeds the orientation data excess by more than half the mean measured null exponent  xi_occ-xi_data=+0.5331 vs (b_null+b_null_ori)/4=+0.2580
+  PASS  C-71 S5 SIGN LAW: every structural pair at every N carries the model's own write-law carrier sign, and the unwritten cross pairs are strictly sign-split (no within-part consistency absent writing)  all_carrier=True uu_cross_maxrun=41/64
+  PASS  C-72 S6 DENSITY GUARD (constraint 3): the read's own per-block programmed fraction shows no trend in N  |slope|=0.0018 vs tol 0.05
+  PASS  C-72 B2 UNWRITTEN NULL (control B repaired): the unwritten pool's cross-family pseudo-contrast shows NO excess over the within-family null  xi_pseudo=+0.0033 vs beta_null/2=+0.2675
+  PASS  C-72 A2 PATTERN ENDPOINT (control A dropped per INST-15, slot repaired): the f=1 all-programmed read through the SAME pipeline accumulates  xi_f1=+0.4648 vs beta_null/2=+0.2675
+  ----- non-decision displays (constraints 1 and 2; never gated) -----
+  NOTE shadow RAW unwritten exponent b_shadow=+0.5895 xi_shadow=+0.0544 -- constraint 1: the raw exponent is not baseline-free; asserted only in the mutation harness
+  NOTE constraint-2 table (occupancy W-U): mean|D| +1.0014 | uncentred D^2 +2.0005 (= 2*beta) | centred var +1.0094 (non-discriminating)
+  NOTE constraint-2 table (orientation DATA-U): mean|D| +0.4302 | uncentred D^2 +0.8869 | centred var +0.8883 (~1 for BOTH encodings)
+  NOTE pattern sweep (displayed, not gated -- no in-suite mutation gives exponent pattern-dependence a failing branch, and a check that cannot fail is the defect this block removes): b_WU(f=0.25)=+1.0013 b_WU(f=0.75)=+1.0025
+  -> declared-seed baseline: 8 PASS, 0 FAIL
+
+INSTALL SIMULATION (block exec'd with a validate_geometry-style check() predefined, as the registrar installs it):
+----------------------------------------------------------------------------------------------------
+  ----- non-decision displays (constraints 1 and 2; never gated) -----
+  NOTE shadow RAW unwritten exponent b_shadow=+0.5895 xi_shadow=+0.0544 -- constraint 1: the raw exponent is not baseline-free; asserted only in the mutation harness
+  NOTE constraint-2 table (occupancy W-U): mean|D| +1.0014 | uncentred D^2 +2.0005 (= 2*beta) | centred var +1.0094 (non-discriminating)
+  NOTE constraint-2 table (orientation DATA-U): mean|D| +0.4302 | uncentred D^2 +0.8869 | centred var +0.8883 (~1 for BOTH encodings)
+  NOTE pattern sweep (displayed, not gated -- no in-suite mutation gives exponent pattern-dependence a failing branch, and a check that cannot fail is the defect this block removes): b_WU(f=0.25)=+1.0013 b_WU(f=0.75)=+1.0025
+  installed-mode run == module-mode run at declared seed: 8 checks, identical names and verdicts  -> OK
+
+MUTATION x CHECK MATRIX (fail count / 50 seeds; '*' = designated FAIL):
+----------------------------------------------------------------------------------------------------
+row          S1     S2     S3     S4     S5     S6     B2     A2   SHADOW
+M0          0      0      0      0      0      0      0      0        0    baseline (no mutation)
+M1         50*     0      0     50*    50*     0      0     50*       0    two-signed write (occupancy behaves like orientation)
+M2a-i       0      0      0      0      0      0      0      0       50*   non-zero-mean in-spec residual: +0.5 e/cell COMMON-MODE offset (the registrar's constraint-1 case; +FRAC/grain on orientation)
+M2a-ii      0      0      0      0      0      0      0      0       50*   non-zero-mean in-spec residual: erased cells U{3..5} e, COMMON (mean +4 e, every cell inside the declared +-5 e)
+M2b         0      0      0      0     50*     0     50*     0       50    non-zero-mean in-spec residual, SECTOR-DIFFERENTIAL (+-4 e by family; the within-part null premise broken from inside spec)
+M3         50*     0      0     50*     0     50*     0      0        0    programmed density falling with N (fixed 32-cell record in a growing block -- refuter A's counterexample)
+M4          0     50*     0     50*     0      0      0      0        0    one-way (DC) data write on the orientation surface
+M5          0      0     50*     0      0      0      0      0        0    AC-erased DC positive control (two-signed write on the DC sectors)
+M6          0      0      0      0     50*     0      0      0        0    carrier sign split across the write (half the sectors hole-signed)
+  every cell deterministic across 50 seeds: designated FAILs at rate 1.000, everything else at rate 0.000  -> OK
+
+FAIL-RATE PER CHECK UNDER ITS DESIGNATED KILLING MUTATION(S):
+----------------------------------------------------------------------------------------------------
+  S1: M1:1.000  M3:1.000   -> rate 1.000
+  S2: M4:1.000   -> rate 1.000
+  S3: M5:1.000   -> rate 1.000
+  S4: M1:1.000  M3:1.000  M4:1.000   -> rate 1.000
+  S5: M1:1.000  M2b:1.000  M6:1.000   -> rate 1.000
+  S6: M3:1.000   -> rate 1.000
+  B2: M2b:1.000   -> rate 1.000
+  A2: M1:1.000   -> rate 1.000
+  (the old widens check measured 0.18 under the two-signed write; S1, its successor, measures 1.000)
+
+MARGINS (the decision constants' measured placement):
+----------------------------------------------------------------------------------------------------
+  S1 baseline margin               min +0.1359  max +0.3288
+  S1 under M1 margin               min -0.3651  max -0.1158
+  S6 baseline |dens_slope|         min +0.0000  max +0.0075
+  S6 under M3 |dens_slope|         min +0.1994  max +0.1994
+  SHADOW baseline xi               min -0.0596  max +0.0544
+  SHADOW under M2a-i xi            min +0.4381  max +0.5352
+  SHADOW under M2a-ii xi           min +0.4141  max +0.5997
+  DENSITY_TOL = 0.05: sits 6.6x above the worst baseline trend (0.0075) and 4.0x below the smallest M3 trend (0.1994) -- measured into place
+
+SUPPLEMENTARY MEASURED-ONLY ROWS (20 seeds; rates reported, nothing asserted):
+----------------------------------------------------------------------------------------------------
+  M7: in-spec read-long drift (-Delta -> +Delta ramp across the whole read)
+      fails: none   shadow flips: 20/20
+  M8: orientation sector-differential in-spec shift (+-FRAC by family)
+      fails: S2:11/20  S4:12/20   shadow flips: 0/20
+====================================================================================================
+VERDICT: baseline all-PASS (50 seeds + declared seed); matrix deterministic; every structural check fails at rate 1.000 under the suite; constraint-1 invariance measured with the shadow flipping at 1.000 under both in-spec non-zero-mean rows; install simulation exact.
+elapsed 37.3 s

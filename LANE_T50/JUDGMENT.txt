@@ -1,0 +1,296 @@
+T-50 JUDGMENT — LANE_T50 — 2026-08-21
+Judge: the T-50 judging instrument (drafts only; the registrar lands).
+Charter: score T-50's DONE_WHEN verbatim against what is on disk. Outcomes are
+measured, never failed against an imported standard (the accumulation directive).
+Nothing outside LANE_T50/ and the scratchpad was written. No git, no reproduce.sh,
+no r3.sh, no ledger or register edits.
+
+====================================================================================
+0. WHAT THE JUDGE VERIFIED DIRECTLY (not taken on report)
+====================================================================================
+- GATE seals: sha256 of c72_check_block.py (633afb2e10c2..), mutation_harness.py
+  (24bf34cffdfc..), mutation_matrix.txt (6931f7742c90..) each match their .sha256
+  sidecars. VERIFIED.
+- GATE reproduction: I re-ran LANE_T50/GATE/mutation_harness.py myself. Exit 0.
+  Output BIT-IDENTICAL to the sealed mutation_matrix.txt (elapsed line aside).
+  Rerun kept at scratchpad/judge_matrix_rerun.txt. VERIFIED.
+- Refuter verdicts read in full: VERIFY_A (Design One, computation refuter,
+  REFUTED), VERIFY_B/d1_VERDICT_B.txt (Design One, instrument refuter, REFUTED),
+  VERIFY_B/VERIFY_B_INDEX.txt (Design Two, instrument refuter, REFUTED).
+- The T-50 plan row, C72_BRIEF_V001.md, ERRATUM_REFUTED.json (32 residual defects
+  of the first repair round), the C-71 and C-72 GROUNDED cells, and
+  CORE_FRAMEWORK_V001.md were read before scoring.
+
+====================================================================================
+1. THE DONE_WHEN, VERBATIM (ledger/plan.tsv, T-50)
+====================================================================================
+"BOTH: (a) a rescoped PREDICTION and FALSIFIER for C-72 on a baseline-free
+differential observable, surviving two independent refuters attacking runnability
+on a real instrument -- or a registered statement that the occupancy law has no
+runnable form and C-72 rescoped to what does; AND (b) THE GATE HARDENED BEFORE
+C-72 RETURNS TO PROVED (the principal's ruling): the structural-claim check must
+fail at a rate of 1.000 under an adversarial mutation suite, not the 0.18 the
+widens check measures today; the suite covers at least the two-signed write, a
+non-zero-mean residual, and a programmed density falling with N; and control A is
+repaired or dropped, its equality half being incapable of failing at any tolerance"
+
+====================================================================================
+2. BRANCH (a) — SCORED: NOT MET, BY EITHER DISJUNCT
+====================================================================================
+Q1: Does at least one design survive BOTH refuters? NO.
+
+DESIGN ONE (the same-read contrast exponent):
+- Refuter A (computation): REFUTED. The kill is D1, a constraint-3/COMP-1
+  recurrence in a new costume: the registered density condition pins the MEAN
+  per-block f-hat while the registered statistic median|D_k| reads the MEDIAN
+  block density. A legal declared pattern with skewed within-sector density
+  (multiplicative cascade; two-level mask) passes guard, density check and control
+  band while REGISTERED FALSIFIER (b) fires 30/30 OK reads for a fully
+  registered-compliant precision reader (K=256, 14-point sqrt2 grid, strict
+  decades-enforced guard), and the prediction's band [0.9,1.1] fails 30/30
+  (beta_WU med +1.358) — a falsifier firing on the model's own correct physics,
+  the automatic-REFUTED trigger. Plus D2 (class-correlated read offset fires
+  clause (c) 13/40 at 0.10/grain, 34/40 at 0.20/grain on a correctly-screening
+  medium), D3 (0.5 e/cell iid sector offsets: 100% INCONCLUSIVE), D4 (kappa=8
+  seam scan underpowered: honest guard-passing beta 0.8815-0.8954 at 150 seeds/f),
+  D5 (A(N)=0 undefined branch), D6 (fire_a omits the registered INCONCLUSIVE
+  precedence).
+- Refuter B (instrument): REFUTED. K1: every named magnetic reader (MFM, scanning
+  Hall, NV) maps stray field with zero response at k=0; a uniformly magnetized
+  sector's interior is invisible; the DC positive control never passes its own
+  guard (bDC-U = nan, B3 0/20 at every standoff) — clause (c) is a falsifier no
+  named instrument can trigger, so the cross-encoding discriminator has no
+  runnable orientation side. K2: under the predicted screening the DATA sector's
+  guard ratio is 1.000 (30/30 reads-as-unwritten) — the orientation prediction's
+  subject sits in its own void region. K3: sector-scale fixed pattern at 0.1% of
+  the programmed charge throws 12/30 reads INCONCLUSIVE on a perfectly
+  accumulating part (real parts sit orders above); and the sealed fire_a fires
+  falsifier (a) on that correctly-accumulating part 28/30 — ordinary physics
+  triggers the falsifier as implemented. K4: at the registered minima the worst
+  guard-passing beta_WU is +0.8022 — the EVERY-quantifier is false for
+  registered-compliant readers. K5: a railed erased population gives A_UU = 0,
+  bUU = nan, no registered branch.
+
+DESIGN TWO (the self-referenced doubling contrast):
+- Refuter B (instrument): REFUTED. A blank control page (f_hat = 0.0 exactly)
+  skips both guards and fires falsifier clause (i) 17/20 on the first control
+  page any physicist reads; a zero-mean scan bow on the written track fires
+  clause (ii) 48/50 (96%) on healthy screening physics with all guards green; a
+  plain centred linear ramp fires more confidently at larger N; the dc-balance
+  guard misroutes honestly balanced multi-sample reads with no falsifier clause
+  on the DC route.
+- No refuter-A verdict on Design Two exists on disk. Moot for the DONE_WHEN:
+  surviving two refuters requires surviving each, and Design Two did not survive
+  the one it faced.
+
+Q2: Is the honest verdict "the occupancy law has no runnable form"? NO — and this
+is measured from the refuters' own findings, not judged from taste:
+- Both refuters, independently, KEPT THE SAME CORE. Refuter A: "The core is worth
+  keeping: the same-read contrast exponent genuinely honours constraints (1) and
+  (2)... The refutation is localized," with closures whose separations are
+  already measured (median-density trend: skew families slope +0.034..+0.065 vs
+  honest <=0.009, so a ~0.02 tolerance separates them; the DC-free-coded in-read
+  detector arms at beta_DCfree-U = 0.498 and would void both of D2's measured
+  fire channels). Refuter B: "the occupancy electrical half fails only on
+  instrument systematics that are repairable in the text," names repairs 1-7,
+  and states a V002 carrying them "could survive."
+- The three binding constraints are honoured by the surviving core and confirmed
+  by both refuters' own rebuilds (contrast-exponent immunity to common-mode
+  offset and drift measured both directions; E|Q| 1 vs 1/2 and uncentred 2 vs 1
+  confirmed; centred variance confirmed non-discriminating; M3 counterexample
+  voided 50/50).
+- A registered "no runnable form" statement would therefore be false to the
+  record in front of me.
+
+THE NAMED, SPECIFIC REPAIR (short of a new design round):
+DESIGN ONE V002 — same observable, same statistic, same three-constraint
+architecture — carrying, as registered text and re-measured mutations:
+ (1) [A-D1] the density condition restated to read the same moment as the
+     statistic: add "MEDIAN per-block f-hat(N) trend-free" with tolerance ~0.02
+     co-tuned against the band edge (or move the statistic to mean_k|D_k| and
+     re-measure tail robustness); put the cascade and two-level literal masks
+     into the mutation suite with measured flip rates; re-derive the prediction's
+     quantifier from the new condition.
+ (2) [A-D2 = B-partial] clause (c) void unless the same read's DC-FREE-CODED data
+     sectors also sit in the control band (the in-read crosstalk detector the
+     design already carries; verified arming on honest reads).
+ (3) [B-1] the magnetic v_i must be a quantity a named M-reading instrument
+     returns (polar/wide-field Kerr) — or the orientation half is struck from the
+     runnable claim and carried as model-side only. This is a scope decision
+     inside V002, not a new design.
+ (4) [B-2] guard scope stated PER CLAUSE; the magnetic density check defined or
+     deleted from "every clause carries the same...".
+ (5) [B-3, A-D3] a registered fixed-pattern treatment (exactly-specified
+     within-read de-trending from the part's own unwritten sectors, or a
+     registered fixed-pattern tolerance with a measured control) plus a
+     fixed-pattern member in the mutation suite; the sector-response-uniformity
+     scope stated honestly.
+ (6) [B-4, A-D6] fire_a carries the text's INCONCLUSIVE precedence verbatim.
+ (7) [B-5, A-D4] grid and K pinned exactly, or the band restated grid-relative
+     with kappa re-derived from the reader's own A_UU and measured noise law.
+ (8) [B-6, A-D5] the railed/zero-A(N) branch registered as
+     insufficient-access/INCONCLUSIVE.
+V002 then faces both refuters again (same lineage refuters share failure modes —
+the V002 commissioning brief must carry both verdicts and ERRATUM_REFUTED.json as
+read-first, per the program's own under-read lesson).
+
+BRANCH (a) VERDICT: OPEN. Neither disjunct is honestly satisfiable today. T-50
+does NOT close on (a).
+
+====================================================================================
+3. BRANCH (b) — SCORED: FIRES. MET IN FULL, VERIFIED BY THE JUDGE.
+====================================================================================
+Clause-by-clause against the sealed matrix (which I re-ran bit-identical):
+
+- "fail at a rate of 1.000 under an adversarial mutation suite, not the 0.18":
+  MET. Every structural check fails at rate 1.000 under its designated killing
+  mutation(s), deterministic across 50 seeds per row: S1 (M1, M3), S2 (M4),
+  S3 (M5), S4 (M1, M3, M4), S5 (M1, M2b, M6), B2 (M2b), A2 (M1), S6 (M3).
+  The old widens check measured 0.18 under the two-signed write; S1, its
+  successor, measures 1.000.
+- "covers at least the two-signed write": MET — M1, four checks at 1.000.
+- "a non-zero-mean residual": MET, in three placements. M2a-i (+0.5 e/cell
+  common-mode — the registrar's own constraint-1 case) and M2a-ii (U{3..5} e
+  common): every DECISION check invariant at 0.000 while the raw shadow exponent
+  flips at 1.000 — constraint 1 measured, not assumed (a common-mode in-spec
+  offset must not flip a baseline-free gate, and the raw statistic's failure is
+  displayed at rate 1.000). M2b (sector-differential +-4 e, the within-part null
+  premise broken from inside spec): S5 and B2 at 1.000.
+- "a programmed density falling with N": MET — M3 (fixed 32-cell record in a
+  growing block, refuter A's counterexample returned): S1, S4, S6 at 1.000;
+  DENSITY_TOL = 0.05 measured into place (6.6x above worst baseline trend, 4.0x
+  below smallest M3 trend).
+- "control A is repaired or dropped": MET on the dropped branch, with the reason
+  the DONE_WHEN itself states verified: RHO(1) = 1 identically at every Delta,
+  zero erased cells for the treatment to act on, unfailable at Delta = 1..99
+  (INST-15). Slot repaired as A2 (f=1 endpoint through the same contrast
+  pipeline), failing branch measured at 1.000 under M1. The C-71 floor-check and
+  -38 e literal drops carry stated reasons; an R8 repointing map (P-FORM-9 ->
+  S1+S4, P-ROLES-2 -> S3+S5) is included — closing the erratum instrument
+  refuter's residual defect on orphaned gate cells.
+- Baseline honest: all-PASS on 50 seeds plus the declared seed 20260821; install
+  simulation identical to module mode; no literal expected value on any decision
+  path; the pattern sweep is displayed, not gated, with the reason stated (no
+  in-suite mutation gives it a failing branch, and a check that cannot fail is
+  the defect the block removes).
+
+JUDGE'S CAVEATS FOR THE REGISTRAR (recorded, none blocking branch (b)):
+ c1. The gate is a MODEL-SIDE regression gate on the model's own structural
+     claims, wired through a contrast pipeline of Design One's shape. The
+     REFUTED status of Design One as a FIELD PROTOCOL does not invalidate it —
+     the refuted defects live at the instrument level (density-shape moment
+     mismatch, fixed pattern, named-instrument transfer functions), which the
+     in-model suite does not traverse — but when V002 lands, two mutations
+     should be appended to the suite: a median-vs-mean density-skew member
+     (refuter A's D1 family) and a fixed-pattern member (refuter B repair 3).
+     Appended, not blocking: today's DONE_WHEN names three mutations and all
+     three are covered at 1.000.
+ c2. Supplementary rows M7 and M8 are measured-only (drift: no decision check
+     fires, shadow 20/20; orientation sector-differential: S2 11/20, S4 12/20)
+     — honest display of a known instrument-level family the suite does not yet
+     gate; consistent with c1.
+
+====================================================================================
+4. VERDICT ON T-50
+====================================================================================
+T-50 is NOT DONE. The DONE_WHEN is a conjunction; (b) is met in full and
+verified, (a) is met by neither disjunct. The T-50 row stays open with:
+- landable now: the hardened gate (LANE_T50/GATE/, three seals verified, matrix
+  reproduced bit-identical by this judge);
+- registered now: the double refutation of Design One and the refutation of
+  Design Two, as measurements;
+- next step (no route closes without one): commission DESIGN ONE V002 per the
+  eight-point repair list in section 2, read-first material: both T-50 refuter
+  verdicts, ERRATUM_REFUTED.json, and this judgment. V002 faces both refuters
+  again before anything is registered into C-72.
+"The occupancy law has no runnable form" is NOT registered — both refuters'
+own measurements contradict it.
+
+====================================================================================
+5. DRAFT REGISTER ENTRY (the registrar lands; drafted for landing verbatim or
+   trimmed)
+====================================================================================
+T-50 PARTIAL LANDING — THE BASELINE-FREE DIFFERENTIAL REPAIR — 2026-08-21.
+GATE HALF (DONE_WHEN (b)): DONE. The hardened C-72 gate is sealed at
+LANE_T50/GATE/ (c72_check_block.py 633afb2e10c2.., mutation_harness.py
+24bf34cffdfc.., mutation_matrix.txt 6931f7742c90..; declared seed 20260821).
+Every structural check fails at rate 1.000 under its designated mutations,
+deterministic over 50 seeds: S1 the widens successor at 1.000 under the
+two-signed write (old check: 0.18) and under density-falling-with-N; the
+non-zero-mean residual covered in three placements, with constraint-1 invariance
+MEASURED (decision checks 0.000 under both common-mode rows while the raw shadow
+exponent flips at 1.000); control A dropped per INST-15 (RHO(1)=1 identically,
+unfailable at any tolerance) and its slot repaired as A2, failing at 1.000; R8
+repointing map included (P-FORM-9 -> S1+S4, P-ROLES-2 -> S3+S5). Judge-verified:
+seals match, harness re-run bit-identical.
+REPAIR HALF (DONE_WHEN (a)): OPEN. Two designs were constructed on the ruled
+baseline-free differential observable and measured against independent refuters.
+DESIGN ONE (same-read contrast exponent): REFUTED twice — computation refuter
+(killer: the density condition pins the mean per-block density while the
+registered statistic reads the median; a legal skew-density pattern fires
+registered falsifier (b) 30/30 on correct physics — the constraint-3 confound in
+a new costume) and instrument refuter (killer: every named magnetic reader maps
+stray field, zero response at k=0; the DC positive control cannot pass its own
+guard, so clause (c) is a falsifier no named instrument can trigger; plus
+fixed-pattern systematics at 0.1% of programmed charge and a code-vs-text
+precedence divergence that fires falsifier (a) on a correctly-accumulating
+part). DESIGN TWO (self-referenced doubling contrast): REFUTED by the instrument
+refuter — a blank control page skips both guards and fires clause (i) 17/20; a
+zero-mean written-track bow fires clause (ii) 48/50 on healthy screening physics.
+MEASURED EITHER WAY: the same-read contrast-exponent CORE survived every
+model-side attack from both refuters and honours all three T-50 constraints
+(offset/drift immunity structural and measured both directions; E|Q| 1 vs 1/2
+and uncentred 2 vs 1 confirmed; density counterexample voided 50/50; M1 gate
+power 50/50 against the old 18%). "The occupancy law has no runnable form" is
+NOT the finding and is not registered: both refuters independently name bounded
+repairs and the instrument refuter states a V002 carrying them could survive.
+NEXT STEP: commission LANE_T50 DESIGN ONE V002 carrying the eight named closures
+(LANE_T50/JUDGMENT.txt section 2): density condition restated to the statistic's
+own moment with the skew masks added to the mutation suite; the DC-free-coded
+in-read crosstalk voider; a named M-reading instrument (Kerr-class) for the
+orientation half or its removal from the runnable claim; per-clause guard scope;
+a registered fixed-pattern treatment and suite member; INCONCLUSIVE precedence
+in the fire booleans; grid/K pinned or the band grid-relative with kappa
+re-derived per reader; the railed-population branch. V002 faces both refuters
+before C-72 is written to. C-72 remains PARTIAL, BLOCKED_BY T-50.
+
+====================================================================================
+6. DRAFT C-72 GROUNDED TEXT (proposed cell, single paragraph, registrar lands)
+====================================================================================
+QUANTITY: the written-minus-unwritten SAME-READ CONTRAST of a part's own raw
+per-cell read values, and its fitted exponent in block size N — dimensionless,
+baseline-free by construction (per-cell common-mode terms enter both sums of
+each within-read pair and cancel; no V_t,neutral, no C_fg, no datasheet number
+in the definition). WHAT HOLDS (computed, adversarially confirmed by two
+independent refuters' own rebuilds): occupancy encoding (one-carrier write)
+gives contrast exponent beta_WU ~ 1 with the same read's unwritten-unwritten
+control at ~1/2, orientation encoding carrying data screens to the control band
+while the same read's DC-saturated sectors accumulate — the encodings separated
+by the EXPONENT OF THE CONTRAST, honouring the T-50 constraints: the raw
+exponent is not baseline-free (a 0.5 e/cell common-mode offset drives the
+orientation raw exponent 0.493 -> 0.999; the contrast is immune, measured both
+directions), centred variance discriminates nothing (~N for both encodings; the
+discriminating moments are E|Q|, 1 vs 1/2, and uncentred <Q^2>, 2 vs 1), and the
+programmed density is held fixed in the observable's definition (the
+fixed-record-in-growing-block confound voided 50/50). THE GATE IS HARDENED
+(T-50 (b), sealed LANE_T50/GATE/): every structural check fails at rate 1.000
+under an adversarial mutation suite covering the two-signed write, non-zero-mean
+residuals in three placements, and density falling with N; constraint-1
+invariance measured (decision checks 0.000 under in-spec common-mode rows, raw
+shadow flipping 1.000); control A dropped per INST-15 and repaired as A2 at
+power 1.000. WHAT DOES NOT HOLD, and why this row is PARTIAL not PROVED: no
+registered field protocol survives refutation yet. The T-16 replacement was
+refuted (V_t,neutral circularity); T-50 DESIGN ONE was refuted by both refuters
+(median-vs-mean density-shape confound fires its falsifier on correct physics;
+no named stray-field instrument can trigger its orientation positive control;
+sector-scale fixed pattern at 0.1% of programmed charge defeats the control
+band); T-50 DESIGN TWO was refuted by the instrument refuter (blank-page and
+written-track-drift fires on healthy physics). NO RUNNABLE PREDICTION STANDS —
+and "no runnable form exists" is NOT established either: both refuters keep the
+same-read contrast-exponent core and name bounded repairs (DESIGN ONE V002,
+eight closures, LANE_T50/JUDGMENT.txt) — T-50. RECORDS VERIFIED: NAND
+floating-gate page (occupancy encoding); DC-saturated CoCrPt track (orientation
+encoding) [T-9 CARRIERS: TWO-CARRIER (NAND-floating-gate; macrospin-CoCrPt)]
+
+====================================================================================
+END OF JUDGMENT
