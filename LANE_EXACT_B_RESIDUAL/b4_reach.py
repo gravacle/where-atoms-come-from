@@ -34,9 +34,17 @@ for r, p, res in zip(rows10, F10['pred'], F10['resid']):
 say("")
 say(f"  fitted coefficients: " + "  ".join(f"{t.split(' ')[0]}={c:.4f}" for t, c in zip(TERMS, F10['coef'])))
 say(f"  rms residual {F10['rms']:.4e}   max|residual| {F10['maxabs']:.4e}   relative rms {F10['relrms']:.3f}")
-json.dump(dict(names=[r['name'] for r in rows10], chi=[float(r['chi']) for r in rows10],
-               resid=list(map(float, F10['resid'])), coef=list(map(float, F10['coef']))),
-          open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'b4_n10.json'), 'w'), indent=0)
+# Store only the precision the lane reports and uses.  Raw LAPACK round-off in the last few
+# binary digits varies across otherwise conforming BLAS builds; sealing those digits would turn
+# an exact-algebra check into a vendor fingerprint.  Twelve decimal places retain substantially
+# more precision than any registered B-lane quantity while making the sidecar reproducible.
+stable = lambda x: round(float(x), 12)
+b4_n10_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'b4_n10.json')
+with open(b4_n10_path, 'w') as b4_n10_file:
+    json.dump(dict(names=[r['name'] for r in rows10], chi=[stable(r['chi']) for r in rows10],
+                   resid=[stable(x) for x in F10['resid']], coef=[stable(x) for x in F10['coef']]),
+              b4_n10_file, indent=2)
+    b4_n10_file.write('\n')
 
 # ---------------------------------------------------------------- n = 12
 say("")
@@ -57,15 +65,21 @@ say(f"  battery done ({time.time()-t1:.0f}s)")
 ops8, _, _ = build_ops(8)
 r8 = run_battery(8, V2b, LAM, NB=NB2, ops=ops8, configs=SUB)
 say("")
-say(f"  {'configuration':<38}{'chi at n=8':>20}{'chi at n=12':>20}{'|difference|':>16}")
+NUMERIC_AGREEMENT_TOL = 1.0e-12
+say(f"  {'configuration':<38}{'chi at n=8':>20}{'chi at n=12':>20}{'agreement':>16}")
 w = 0.0
 for a, b in zip(r8, r12):
     assert a['name'] == b['name']
-    w = max(w, abs(a['chi'] - b['chi']))
-    say(f"  {a['name']:<38}{a['chi']:>20.14f}{b['chi']:>20.14f}{abs(a['chi']-b['chi']):>16.2e}")
+    delta = abs(a['chi'] - b['chi'])
+    w = max(w, delta)
+    say(f"  {a['name']:<38}{a['chi']:>20.12f}{b['chi']:>20.12f}"
+        f"{('PASS' if delta <= NUMERIC_AGREEMENT_TOL else 'FAIL'):>16}")
 say("")
-say(f"  WORST |chi(n=12) - chi(n=8)| over the reduced battery: {w:.3e}")
-say("  -> at a carrier of dimension 4096 the numbers are still identical to the 256-dimensional")
-say("     one, to the float64 floor.  N-INDEPENDENCE IS EXACT, not asymptotic.")
+assert w <= NUMERIC_AGREEMENT_TOL, (w, NUMERIC_AGREEMENT_TOL)
+say("  MAX |chi(n=12) - chi(n=8)| <= declared numerical tolerance 1.0e-12: PASS")
+say("  Raw BLAS-dependent float64-floor digits are deliberately not sealed; the displayed values")
+say("  retain twelve decimal places and the decision path uses the declared tolerance above.")
+say("  -> at carrier dimension 4096 the numerical path agrees with the 256-dimensional one.")
+say("     N-INDEPENDENCE IS EXACT by the B1 algebra; this is its finite-precision consistency check.")
 say("")
 say(f"  elapsed {time.time()-t0:.1f}s")

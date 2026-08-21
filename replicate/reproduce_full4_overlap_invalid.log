@@ -1,0 +1,180 @@
+
+[1m0. ENVIRONMENT[0m
+==============================================================================
+  python  Python 3.9.6
+  numpy   2.0.2
+
+[1m1. SEALS  (SHA-256 over every registered document and lane)[0m
+==============================================================================
+  all 322 manifests verify
+
+[1m2. RE-RUN EVERY LANE SCRIPT AND DIFF AGAINST ITS SEALED OUTPUT[0m
+==============================================================================
+  lane                           script                     result
+  ------------------------------ -------------------------- ------
+  LANE_AA_GAUSS_AT_SURFACE       aa1_gauss_at_surface.py    [32mIDENTICAL[0m
+  LANE_AA_GAUSS_AT_SURFACE       aa2_why_null.py            [32mIDENTICAL[0m
+  LANE_AA_GAUSS_AT_SURFACE       aa3_open_graph.py          [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_area_law_forced.py      [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_thermal.py              [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_trit_forced.py          [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_what_is_a_surface.py    [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_which_entropy.py        [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s1_f2_structure.py         [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s1b_writer_weight_basis.py [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s2_dense_clauses.py        [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s3_chi_scaling.py          [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s4_blocks_additivity.py    [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s5_operator_scalars.py     [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s6_master_table.py         [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           chi_lib.py                 no sealed output — SKIP
+  LANE_ASYM_B_COLLAPSE           fss_lib.py                 no sealed output — SKIP
+  LANE_ASYM_B_COLLAPSE           s1_validate.py             [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s2_combinatorial.py        [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s3_chi.py                  [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s4_fss.py                  [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s5_additivity.py           [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s6_saturating_control.py   [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           s7_synthesis.py            [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        lanelib.py                 no sealed output — SKIP
+  LANE_ASYM_C_EXTENSIVITY        qcore.py                   no sealed output — SKIP
+  LANE_ASYM_C_EXTENSIVITY        s1_block_verify.py         [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s2_exact_additivity.py     [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s3_chi_additivity.py       [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s4_induced_interaction.py  [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s5_master.py               [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s6_carrier_scale.py        [32mIDENTICAL[0m
+  LANE_ASYM_C_EXTENSIVITY        s7_anchor_and_homogeneous.py [32mIDENTICAL[0m
+  LANE_AUDIT_TOOLS               at1_capacity.py            [32mIDENTICAL[0m
+  LANE_AUDIT_TOOLS               at2_s3_clauses.py          [32mIDENTICAL[0m
+  LANE_C86_EXTERNAL              c86_adversarial_check.py   [32mIDENTICAL[0m
+  LANE_C86_EXTERNAL              c86_model_side.py          [32mIDENTICAL[0m
+  LANE_C86_EXTERNAL              c86_nand_arm.py            [32mIDENTICAL[0m
+  LANE_DWELL_SEARCH              arm3_numbers.py            [32mIDENTICAL[0m
+  LANE_EM_EXTENT                 em_extent.py               [32mIDENTICAL[0m
+  LANE_EM_EXTENT                 holonomy.py                [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e0_engine_selfcheck.py     [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e10_gap_characterised.py   [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e11_ledger.py              [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e1_twobody.py              [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e2_threebody.py            [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e3_words_and_gauge.py      [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e4_dg_exact.py             [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e5_separation.py           [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e6_gauge_content_and_quantisation.py no sealed output — SKIP
+  LANE_EXACT_A_ZERO              e7_minimal_intersection.py [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e8_threebody_minimal.py    [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              e9_frustration_gap.py      [32mIDENTICAL[0m
+  LANE_EXACT_A_ZERO              exact_pauli.py             no sealed output — SKIP
+  LANE_EXACT_B_RESIDUAL          b1_exact_reduction.py      [32mIDENTICAL[0m
+  LANE_EXACT_B_RESIDUAL          b2_residual.py             [32mIDENTICAL[0m
+  LANE_EXACT_B_RESIDUAL          b3_noisefloor.py           [32mIDENTICAL[0m
+  LANE_EXACT_B_RESIDUAL          b4_reach.py                [31mDIFFERS (16 lines)[0m
+  LANE_EXACT_B_RESIDUAL          b5_threebody.py            [32mIDENTICAL[0m
+  LANE_EXACT_B_RESIDUAL          b6_hierarchy.py            [32mIDENTICAL[0m
+  LANE_EXACT_B_RESIDUAL          b7_separation.py           [32mIDENTICAL[0m
+  LANE_EXACT_B_RESIDUAL          b8_range.py                [32mIDENTICAL[0m
+  LANE_EXACT_B_RESIDUAL          b9_synthesis.py            [32mIDENTICAL[0m
+  LANE_EXACT_B_RESIDUAL          battery.py                 no sealed output — SKIP
+  LANE_EXACT_B_RESIDUAL          common.py                  no sealed output — SKIP
+  LANE_EXACT_C_FORM              lane_utils.py              no sealed output — SKIP
+  LANE_EXACT_C_FORM              t0_clauses.py              [32mIDENTICAL[0m
+  LANE_EXACT_C_FORM              t1_additivity.py           [32mIDENTICAL[0m
+  LANE_EXACT_C_FORM              t2_separation.py           [32mIDENTICAL[0m
+  LANE_EXACT_C_FORM              t4_superposition.py        [32mIDENTICAL[0m
+  LANE_EXACT_C_FORM              t5_range.py                [32mIDENTICAL[0m
+  LANE_EXACT_C_FORM              t6_scaling.py              [32mIDENTICAL[0m
+  LANE_EXACT_C_FORM              t7_assumptions.py          [32mIDENTICAL[0m
+  LANE_EXACT_C_FORM              t8_weakfield.py            [32mIDENTICAL[0m
+  LANE_F1_ARROW                  f1_arrow.py                [32mIDENTICAL[0m
+  LANE_F1_ARROW                  f1b_invariance.py          [32mIDENTICAL[0m
+  LANE_F7_OCCUPANCY              f10_threshold.py           [32mIDENTICAL[0m
+  LANE_F7_OCCUPANCY              f10b_threshold.py          [32mIDENTICAL[0m
+  LANE_F7_OCCUPANCY              f10c_whatformsit.py        [32mIDENTICAL[0m
+  LANE_F7_OCCUPANCY              f7_davies.py               [32mIDENTICAL[0m
+  LANE_FC_BINARIES               fc1_variant_invariant.py   [32mIDENTICAL[0m
+  LANE_FC_BINARIES               fc2_is_it_dynamical.py     [32mIDENTICAL[0m
+  LANE_FC_BINARIES               fc3_discriminator.py       [32mIDENTICAL[0m
+  LANE_FC_BINARIES               fc4_erratum.py             [32mIDENTICAL[0m
+  LANE_FC_FRAMEWORK              fw1_gauge_or_constraint.py [32mIDENTICAL[0m
+  LANE_FC_FRAMEWORK              fw2_locality.py            [32mIDENTICAL[0m
+  LANE_FT_SHAM                   ft1_sham.py                [32mIDENTICAL[0m
+  LANE_FUNCTION_CONFIG           fc1_function.py            [32mIDENTICAL[0m
+  LANE_G10_NONMANIFOLD           g10_nonmanifold.py         [32mIDENTICAL[0m
+  LANE_G1_RECORD_COUNT           g1_count.py                [32mIDENTICAL[0m
+  LANE_G1_RECORD_COUNT           g1b_groundspace.py         [32mIDENTICAL[0m
+  LANE_G2_GRAVITY_DEF            g2_gaussbonnet.py          [32mIDENTICAL[0m
+  LANE_G7_INDEX                  g7_index.py                [32mIDENTICAL[0m
+  LANE_GR2_PROTECTION            gr2_arrhenius_numbers.py   [32mIDENTICAL[0m
+  LANE_GR3_WRITING               numbers.py                 no sealed output — SKIP
+  LANE_GR4_DERIVE                gr4_numbers.py             no sealed output — SKIP
+  LANE_G_GROUP_REFUTER           g0_validate.py             [32mIDENTICAL[0m
+  LANE_G_GROUP_REFUTER           g1_rank2_abelian.py        [32mIDENTICAL[0m
+  LANE_G_GROUP_REFUTER           g2_nonabelian.py           [32mIDENTICAL[0m
+  LANE_G_GROUP_REFUTER           g2b_fixed_controls.py      [32mIDENTICAL[0m
+  LANE_G_GROUP_REFUTER           g3_schedule.py             [32mIDENTICAL[0m
+  LANE_G_GROUP_REFUTER           glib.py                    no sealed output — SKIP
+  LANE_H15_CARRIER               h15_carrier.py             [32mIDENTICAL[0m
+  LANE_H15_CARRIER               h15b_flux.py               [32mIDENTICAL[0m
+  LANE_O10_SCALING               o10_arbitrary_coupling.py  [32mIDENTICAL[0m
+  LANE_O10_SCALING               o10_proof_check.py         [32mIDENTICAL[0m
+  LANE_O10_SCALING               o10_threshold.py           [32mIDENTICAL[0m
+  LANE_O10_SCALING               o10_two_numbers.py         [32mIDENTICAL[0m
+  LANE_O10_VERIFY                v1_writer_weight.py        [32mIDENTICAL[0m
+  LANE_O10_VERIFY                v2_mutation.py             [32mIDENTICAL[0m
+  LANE_O10_VERIFY                v3_sufficiency.py          [32mIDENTICAL[0m
+  LANE_O11_MEANFORCE             o11_meanforce.py           [32mIDENTICAL[0m
+  LANE_O11_MEANFORCE             o11b_weight1.py            [32mIDENTICAL[0m
+  LANE_O16_DISSIPATIVE           o16_dissipative.py         [32mIDENTICAL[0m
+  LANE_O17_TENSION               o17_resolve.py             [32mIDENTICAL[0m
+  LANE_O18_GAUGENOISE            o18_gauge.py               [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_converse_theorem.py     [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_core.py                 [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_gap_a_compatibility.py  [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_gap_b_flippability.py   [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_lemma_check.py          [32mIDENTICAL[0m
+  LANE_O1_CONVERSE               o1_toric_pauli.py          [32mIDENTICAL[0m
+  LANE_O20_HOMOLOGY              o20_homology.py            [32mIDENTICAL[0m
+  LANE_O20_HOMOLOGY              o20b_pairing.py            [32mIDENTICAL[0m
+  LANE_O23_CONNECTION            o23_connection.py          [32mIDENTICAL[0m
+  LANE_O23_SPLITTING             o2_symmetry.py             [32mIDENTICAL[0m
+  LANE_O23_SPLITTING             o2_topological.py          [32mIDENTICAL[0m
+  LANE_O23_SPLITTING             o3_clauses.py              [32mIDENTICAL[0m
+  LANE_O24_MINIMALITY            o24_minimality.py          [32mIDENTICAL[0m
+  LANE_O25_DENSITY               o25_density.py             [32mIDENTICAL[0m
+  LANE_O26_NONCODE               o26_noncode.py             [32mIDENTICAL[0m
+  LANE_O26_NONCODE               o26b_action.py             [32mIDENTICAL[0m
+  LANE_O27_ACTION                o27_action.py              [32mIDENTICAL[0m
+  LANE_O29_NONABELIAN            o29_s3.py                  [32mIDENTICAL[0m
+  LANE_O29_NONABELIAN            o29b_transport.py          [32mIDENTICAL[0m
+  LANE_O30_DENSITY               o30_density.py             [32mIDENTICAL[0m
+  LANE_O31_PAIRING               o31_pairing.py             [32mIDENTICAL[0m
+  LANE_O32_MAGNITUDE             o32_crowding.py            [32mIDENTICAL[0m
+  LANE_O32_MAGNITUDE             o32b_density.py            [32mIDENTICAL[0m
+  LANE_O33_JOIN                  o33a_abelian.py            [32mIDENTICAL[0m
+  LANE_O34_NONABELIAN_JOIN       o34_join.py                [32mIDENTICAL[0m
+  LANE_O34_NONABELIAN_JOIN       o34b_exists.py             [32mIDENTICAL[0m
+  LANE_O34_NONABELIAN_JOIN       probe.py                   no sealed output — SKIP
+  LANE_O35_NONABELIAN_CARRIER    o35_carrier.py             [32mIDENTICAL[0m
+  LANE_O36_EXACT                 o36_exact.py               [32mIDENTICAL[0m
+  LANE_O36_EXACT                 o36_reconcile.py           [32mIDENTICAL[0m
+  LANE_O36_EXACT                 o36_whyfail.py             [32mIDENTICAL[0m
+  LANE_O38_GAPLESS               o38_falloff.py             [32mIDENTICAL[0m
+  LANE_O38_GAPLESS               o38b_orderparam.py         no sealed output — SKIP
+  LANE_O42_EXCLUSION             o42_exclusion.py           [32mIDENTICAL[0m
+  LANE_O44_ADMISSIBLE            o44_driven.py              [32mIDENTICAL[0m
+  LANE_O46_GAP                   o46_gap.py                 [32mIDENTICAL[0m
+  LANE_O47_BOTH                  o47_both.py                [32mIDENTICAL[0m
+  LANE_O48_A_EXTENSIVE           chain.py                   no sealed output — SKIP
+  LANE_O48_A_EXTENSIVE           s1_clauses.py              [32mIDENTICAL[0m
+  LANE_O48_A_EXTENSIVE           s2_extensive.py            [32mIDENTICAL[0m
+  LANE_O48_A_EXTENSIVE           s3_additive.py             [32mIDENTICAL[0m
+  LANE_O48_A_EXTENSIVE           s4_count.py                [32mIDENTICAL[0m
+  LANE_O48_A_EXTENSIVE           s5_sign_and_carrier.py     [32mIDENTICAL[0m
+  LANE_O48_A_EXTENSIVE           s6_independence.py         [32mIDENTICAL[0m
+  LANE_O48_A_EXTENSIVE           s7_standard.py             [32mIDENTICAL[0m
+  LANE_O48_B_SEPARATION          common.py                  no sealed output — SKIP
+  LANE_O48_B_SEPARATION          mediator.py                no sealed output — SKIP
+  LANE_O48_B_SEPARATION          p1_baseline.py             [32mIDENTICAL[0m
+  LANE_O48_B_SEPARATION          p2a_clauses.py             [32mIDENTICAL[0m
+/private/tmp/claude-501/-Users-bgm-MB-Work/04dac55c-b963-46a5-9ea4-74afb63af51b/scratchpad/r4_snapshot.sh: line 48: 28004 Terminated: 15          ( cd "$lane" && python3 -u "$base" ) > "$out" 2>&1

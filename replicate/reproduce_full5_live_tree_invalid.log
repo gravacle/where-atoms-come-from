@@ -1,0 +1,34 @@
+
+[1m0. ENVIRONMENT[0m
+==============================================================================
+  python  Python 3.9.6
+  numpy   2.0.2
+
+[1m1. SEALS  (SHA-256 over every registered document and lane)[0m
+==============================================================================
+  FAIL  LANE_EXACT_B_RESIDUAL.sha256
+  FAIL  replicate.sha256
+
+[1m2. RE-RUN EVERY LANE SCRIPT AND DIFF AGAINST ITS SEALED OUTPUT[0m
+==============================================================================
+  lane                           script                     result
+  ------------------------------ -------------------------- ------
+  LANE_AA_GAUSS_AT_SURFACE       aa1_gauss_at_surface.py    [32mIDENTICAL[0m
+  LANE_AA_GAUSS_AT_SURFACE       aa2_why_null.py            [32mIDENTICAL[0m
+  LANE_AA_GAUSS_AT_SURFACE       aa3_open_graph.py          [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_area_law_forced.py      [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_thermal.py              [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_trit_forced.py          [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_what_is_a_surface.py    [32mIDENTICAL[0m
+  LANE_AA_MEASURES               aa_which_entropy.py        [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s1_f2_structure.py         [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s1b_writer_weight_basis.py [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s2_dense_clauses.py        [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s3_chi_scaling.py          [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s4_blocks_additivity.py    [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s5_operator_scalars.py     [32mIDENTICAL[0m
+  LANE_ASYM_A_ZERO_OR_GROWING    s6_master_table.py         [32mIDENTICAL[0m
+  LANE_ASYM_B_COLLAPSE           chi_lib.py                 no sealed output — SKIP
+  LANE_ASYM_B_COLLAPSE           fss_lib.py                 no sealed output — SKIP
+  LANE_ASYM_B_COLLAPSE           s1_validate.py             [32mIDENTICAL[0m
+/private/tmp/claude-501/-Users-bgm-MB-Work/04dac55c-b963-46a5-9ea4-74afb63af51b/scratchpad/r5_snapshot.sh: line 48: 30360 Terminated: 15          ( cd "$lane" && python3 -u "$base" ) > "$out" 2>&1

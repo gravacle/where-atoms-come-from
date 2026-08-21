@@ -10652,3 +10652,39 @@ band scoped or withdrawn — **and never "no runnable form."** The judge's §8 f
 principal's eventual ruling: whether that fallback is an acceptable landing zone need not be decided
 now; proceeding with V003 requires no ruling under the standing T-50 commission. C-72 does not
 return to `PROVED`; the DONE_WHEN's conjunction fails on half (a) regardless of the landed half (b).
+
+---
+
+## T-35 / B4 CORRECTION — **THE OLD “HEAVY, NO ACTION” CLASSIFICATION IS SUPERSEDED; THE FLOAT64-FLOOR DIFF IS REPAIRED, BUT T-35 IS NOT COMPLETE**
+
+The `b4_reach` sentence above under **HEAVY, NO ACTION** is superseded. The r4 diff was not timing:
+it comprised the **seven** n=8/n=12 comparison rows and the **one** worst-difference line
+(`LANE_EXACT_B_RESIDUAL/b4_reach.txt:56–68`). The old run's worst raw difference was
+`1.371e-14`; r4's was `9.243e-15`. Every one of the seven differences was at most the now-declared
+`1.0e-12` numerical tolerance, and every pair is equal at the twelve decimals the lane reports.
+Those last float64-floor digits are BLAS-dependent consistency noise, not a changed result.
+
+The bounded repair stores the n=10 sidecar at twelve decimals and writes exactly one terminal LF
+(`LANE_EXACT_B_RESIDUAL/b4_reach.py:36–48`); the n=12 table reports twelve decimals and makes the
+tolerance decision explicit (`LANE_EXACT_B_RESIDUAL/b4_reach.py:65–81`). **No registered number
+changed.** The downstream `b9_synthesis.py` reproduction was byte-identical in r4
+(`replicate/reproduce_full4_overlap_invalid.log:69–77`), so no downstream synthesis or ruling is
+altered.
+
+**CUSTODY CORRECTION, DISCOVERED AFTER THE RUN:** two reproduction processes overlapped while
+writing the same `reproduce_full4.log`. That byte stream is preserved as
+`replicate/reproduce_full4_overlap_invalid.log`, but it is **invalid as T-35 evidence**. No clean
+zero-DIFFERS reproduction, and therefore **no T-35 completion, is claimed here**. This entry lands
+only the bounded B4 reproducibility repair and preserves the invalid log rather than laundering it
+into a completion record.
+
+**SECOND CUSTODY CORRECTION:** after that overlap was discovered, an old session launched another
+snapshot harness at 13:08 with `WAC_ROOT` pointed at the **live repository**, while this B4 repair
+and T-54 work were changing that tree. It was terminated incomplete and its 2,270-byte log is
+preserved, not deleted, as `replicate/reproduce_full5_live_tree_invalid.log`. Because its input tree
+was not fixed and the run did not finish, this second attempt is also **invalid as T-35 evidence**
+and changes none of the no-completion ruling above.
+
+A bounded post-repair rerun of `b9_synthesis.py` is independently byte-identical to its sealed
+7,563-byte output. That light check confirms the downstream result without promoting either invalid
+full-run log into T-35 evidence.

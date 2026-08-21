@@ -53,17 +53,19 @@ n = 12.  carrier dim 4096, code space 1024, joint dim 4096, bath 2 qubits.
   logicals COMPUTED and reduced to the code space (22s)
   battery done (2296s)
 
-  configuration                                   chi at n=8         chi at n=12    |difference|
-  alone                                     0.52152730075953    0.52152730075953        7.99e-15
-  Z1@0                                      0.25408925197375    0.25408925197374        6.05e-15
-  Z1@1                                      0.42257771038892    0.42257771038891        6.11e-15
-  X2@0                                      0.13640868897176    0.13640868897174        1.37e-14
-  X2@1                                      0.52152730075953    0.52152730075954        3.44e-15
-  X2@0,Z2@0                                 0.12444409222100    0.12444409222100        1.12e-15
-  Z1@0,Z1X2@0                               0.16834306500607    0.16834306500607        2.58e-15
+  configuration                                   chi at n=8         chi at n=12       agreement
+  alone                                       0.521527300760      0.521527300760            PASS
+  Z1@0                                        0.254089251974      0.254089251974            PASS
+  Z1@1                                        0.422577710389      0.422577710389            PASS
+  X2@0                                        0.136408688972      0.136408688972            PASS
+  X2@1                                        0.521527300760      0.521527300760            PASS
+  X2@0,Z2@0                                   0.124444092221      0.124444092221            PASS
+  Z1@0,Z1X2@0                                 0.168343065006      0.168343065006            PASS
 
-  WORST |chi(n=12) - chi(n=8)| over the reduced battery: 1.371e-14
-  -> at a carrier of dimension 4096 the numbers are still identical to the 256-dimensional
-     one, to the float64 floor.  N-INDEPENDENCE IS EXACT, not asymptotic.
+  MAX |chi(n=12) - chi(n=8)| <= declared numerical tolerance 1.0e-12: PASS
+  Raw BLAS-dependent float64-floor digits are deliberately not sealed; the displayed values
+  retain twelve decimal places and the decision path uses the declared tolerance above.
+  -> at carrier dimension 4096 the numerical path agrees with the 256-dimensional one.
+     N-INDEPENDENCE IS EXACT by the B1 algebra; this is its finite-precision consistency check.
 
   elapsed 5518.6s
