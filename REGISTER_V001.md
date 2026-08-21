@@ -10078,3 +10078,157 @@ T-48 lane, comparison included. In-lane corrections are in the lanes' own D24_AU
 event redistributes writer measure vs creates/destroys it" as a computable property of the writing
 tier and decide which honest ensemble Γ enforces), with companions ranked: the anisotropy frontier,
 link-indistinguishability forcing the weight measure, E2's decay class at `dE ≠ 0`.
+
+---
+
+## T-16 LANDS — **THE PROOF IS THE MODEL'S NARRATION, AND ITS COMPLETION CRITERION IS A TOOL REFUSAL** (`PROOF_V002.md`; `replicate/check_proof.py`)
+
+The architecture the principal fixed is implemented literally: **`PROOF_V002.md` is the narration of
+the Universal Record Model.** Six sections are the URM's six layers — DEFINITION, LAWS, FORMATION,
+CORNER, GEOMETRY, ROLES — and every claim is one block carrying five cells: the **model function**
+that computes it, the **validator gate** that fires on it, its **grounding** (D-25 provenance, sealed
+lane, or pinned external source), its **ledger rows** with their statuses and T-9 carrier marks, and
+the **scope** that travels with it. §6 is the document's one comparison section. §7 is the restated
+A-PR. §8 is the standing debts, with the full limits statement left where it belongs, at `T-17`.
+
+**The document, in its own printed numbers:** **71 claim blocks · 100 distinct ledger and plan rows
+cited · 40 blocks resting on no `TWO-CARRIER` row and saying so in their scope cell · 9 citing a
+`PROVED` row · 31 carrying no validator gate · 17 with no model function behind them.** Those counts
+are computed from the assembled document at build time and printed in its own front matter, because a
+proof that prints its coverage cannot quietly lose it.
+
+**T-16's DONE_WHEN is enforced by `replicate/check_proof.py`, not asserted.** Eleven rules, each
+tested against a fixture built to break it and only it: R1 the five fields · R2 every cited ID is a
+row in the status ledger or a task in the plan · R3 no `WITHDRAWN`/`FAILED`/`RECLASSIFIED` row is
+leaned on · R4 the printed status equals the ledger's — **the stale-proof failure mode this tool
+exists for** · R5 the printed carrier mark equals the T-9 audit's verdict, or `UNAUDITED` · R6 a block
+resting on no `TWO-CARRIER` row must open its scope cell `SINGLE-CARRIER —` · R7 the model cell names
+a `def` that exists under `model/` · R8 the gate cell names a check that actually fires, f-string
+check names matched by template · R9 the word `PROVED` in prose requires a `PROVED` row · R10 the D-1
+banned-comparison scan, its pattern read from `on_finding.sh` at runtime so there is one copy and not
+two, exempting exactly one comparison section · R11 the coverage summary, printed on every run, pass
+or fail. The tool exits 2 rather than passing when it cannot read the ledger or the audit: **a gate
+that reports PASS because it could not find the record is worse than no gate.**
+**Twenty fixtures**: one valid, one per rule built to break that rule and only that rule, three edge
+cases (bare IDs, a three-column row, a second comparison section), four plan-citation cases and two
+gate-name cases. Every rule fires on its own fixture and on no one else's. Loud-failure paths tested
+in a stub root: a missing ledger, a missing audit, an `on_finding.sh` with no pattern line, a missing
+`model/`, an audit verdict outside the four marks — all exit 2, none exit 0.
+
+**How it was built, and what the adversaries took out of it.** Six layer probes returned structured
+claim tables; six adversarial verifiers, default-refuted with independent machinery, attacked every
+field of every block — **40 of 67 blocks refuted**; six correctors landed the corrections, rejected
+the verifier findings they could demonstrate were wrong, and added two blocks the verifiers found
+missing. Then **four whole-document lenses** — outside-physicist,
+overclaim-hunter, coherence-critic, completeness-critic — each reading the entire document, which no
+earlier agent had done: **59 findings, 6 of them blocking.** A second correction round landed those.
+The blocking one that mattered most was self-inflicted and is worth recording as method: the layer
+headers had been written before `check_proof.py` existed, and one of them asserted flatly that the
+document's own gate was not in the repository while §0.3 told the reader to run it. **Section headers
+now carry no claim that is not also in a block** — the gate parses blocks only, so a substantive
+claim in a header is a claim outside the contract.
+
+**Corrections the round forced, and they are the substance of the landing:** the D-15 inversion in
+`P-FORM-2` (a zero's own configuration named as its positive control); `P-DEF-1` reporting only passes
+while C-69's own DEF-A control — all four exact clauses failing on the same grain — sat in the sealed
+source unquoted, and the demotion substance dropped (**the rates ARE the inserted jump strengths; no
+measured retention datum enters anywhere**); `P-DEF-2` contradicting itself about which lane its two
+positive controls sit in, and compressing the census's declared three-decade latent-image uncertainty
+to "about a decade"; `P-DEF-8` leaning on two control rows C-70's demotion note had already withdrawn;
+`P-FORM-10`'s margin overstated as four orders where the sealed numbers give 3.4.
+
+**Two placement corrections the registrar required.** `P-ROLES-6` stated the Newton verdict inside
+§8; **D-1 permits Newton in the final comparison section only**, so the block was rewritten as what it
+actually is — three of the emergence claim's four conditions are not earned — with the comparison left
+to §6's single block. `P-ROLES-11` said empirical contact outside the two `PROVED` rows is zero; that
+predates `T-41`, and the block now states the contact exactly: the two `PROVED` rows' falsifiers on
+standard instruments, plus three pinned external measured values beside the model's own numbers.
+
+### THE ERRATUM — **C-72 MOVES OFF `PROVED`. THE PROGRAM NOW HAS ONE `PROVED` ROW, AND WRITING THE PROOF IS WHAT FOUND IT.**
+
+The outside-physicist lens took the two `PROVED` rows and asked the bar's own question: could a
+stranger run this? **C-72's registered PREDICTION — the accumulation ratio `|Σ|/Σ|·|` is "1 for every
+data pattern on an occupancy-encoded surface" — is an ALGEBRAIC IDENTITY of scoring an erased cell as
+exactly zero charge.** A cell scored zero enters both sums as nothing, so `|−qS|/(qS) = 1` for every
+0/1 page whatsoever: a check with no branch on which it could have come out otherwise. **The sealed
+lane's own source says so in terms** (`LANE_T34_NAND/t34_nand.py:63-68`: the ratio is 1 IDENTICALLY,
+the draws beneath it a consistency check of the premise and not independent evidence). The same model
+layer, twelve lines away, gives those same erased cells a signed `±5 e` over-erase residual. **The two
+were never combined.** Combine them on the model's own sealed pages and the ratio is
+**`0.968134`–`0.979799`, pattern-dependent, not one page at 1** — which is C-72's **own registered
+FALSIFIER** ("a ratio that depends on the data pattern"), fired by its own model. Reproduced by the
+registrar, by the erratum lane, and by two refuters, all to the last digit.
+
+**What was computed, and survives.** The data-independent floor
+`ρ ≥ (Q_p f − Δ(1−f)) / (Q_p f + Δ(1−f))`, valid above `f = Δ/(Q_p+Δ)` — **confirmed and TIGHT**, the
+minimum attained exactly when every residual sits at `+Δ` (brute-forced over the `(Σr, Σ|r|)` polytope
+at eleven `f`, recovering the closed form to `1e-9`; 20 000 adversarial edge pages, zero violations;
+one cell at `Δ + 1e-9` breaks it). **The floor contains no `N`**, while an orientation surface carrying
+real data screens as `N^{-1/2}` — so **the two encodings differ in kind and their separation grows as
+`√N`**: measured slope `+0.511`, against an all-programmed control at `0.000` and a sampling-noise
+surrogate at `-0.0002`, `11×` at `N=10³` → `112×` at `N=10⁵`.
+
+**What does not survive, and it is why the row moves.** A replacement protocol was drafted and then
+**REFUTED by two independent refuters, both returning REFUTED with their own machinery.** `ρ` is not
+translation-free: mis-setting `V_t,neutral` by under five electrons — 4.8% of the program window,
+about `0.19 V` on a `4 V` window — drives `ρ` below the floor, and five electrons the other way
+returns `ρ = 1.000000` exactly, **restoring the very tautology the erratum exists to destroy.**
+`V_t,neutral` is not a datasheet number, and the proposed text forbade the one reference a `V_t`
+histogram does supply. Its falsifier clauses fire on ordinary physics: a fixed-length record in a
+growing page screens as `N^{-0.57}`; a 5% error in nominal `Q_p` with an in-spec biased residual puts
+a good page below its own floor.
+
+**The ledger, moved:** `C-72` `PROVED → PARTIAL`, `BLOCKED_BY T-50`, its GROUNDED cell rewritten into
+WHAT HOLDS and WHAT DOES NOT. **`C-71` stands**, and the reason is specific and now stated in the row:
+its claim is about the **SIGN**, read as the shift of a programmed page's `V_t` distribution against
+**the same part's own erased population** — a within-part comparison needing no absolute baseline. Its
+PREDICTION gains the guard the erratum earned: the sign claim holds for every page whose `|ΣQ|` clears
+the surface's declared unwritten tolerance, and a page below it is read as unwritten and carries no
+sign claim (net-positive page fraction `0.000` at `f ≥ 0.01`; at `f = 0.005` the page sum `−499 e`
+sits an order inside the declared `5000 e`).
+
+**The gate, replaced.** `model/validate_geometry.py`'s `C-71 occupancy: written ratio == 1 for EVERY
+pattern` compared against a literal and could not fail (`D-8`). It is **removed**, and six checks
+stand in its place — the floor, the discriminator at matched `N`, the widening with `N`, and three
+`D-15` controls in different configurations under the identical treatment. **Three of the six flip
+under a mutation that makes the occupancy write two-signed** — measured, not asserted, and the
+corrector wrote down that it is three and not six when the commissioning brief said six.
+**36/36 geometry gates, chain `PASS`.**
+
+**`ledger/status.py` gained a `blocked` command** in the same landing: `PARTIAL`'s own definition in
+the closed vocabulary is *"one direction proved, the other open — named in `BLOCKED_BY`"*, and until
+now no command could write that column, so the vocabulary's promise was unkeepable through the tool.
+
+**Registrar's slip, logged:** the first `plan.py add` for `T-50` passed a phase number where the phase
+NAME belongs and left `ORDER` empty, which made `plan.py` refuse to render. The row was repaired in
+place — phase, `ROW`, `ORDER` — with its task text and `DONE_WHEN` unchanged.
+
+---
+
+**A finding the proof surfaced about the ledger itself, registered and not silently repaired:** rows
+`X-4`, `T-VI.3` and `T-VI.4` are still `BLOCKED` carrying the texts *"empirical contact is zero"* and
+*"no distinguishing prediction is identified"*. Both predate `T-41` (external anchors pinned) and
+`C-84` (the distinguishing audit returning three survivors, external checks owed). **The rows are
+flagged in `PROOF_V002` §8 and in `REPLICATE.md`; they are not re-audited here.** Their proper home is
+`T-26`'s null re-audit, and a task is appended for it.
+
+**`REPLICATE.md` brought current in the same landing** — it is the document an outside physicist reads
+first, and three of its passages had gone stale against landings that came after them: the reading
+list now carries `PROOF_V002.md` and its gate; the T-9 paragraph now states the audit's real verdicts
+(111 / 21 / 14) instead of the pre-audit apology; and "empirical contact is zero" is replaced by what
+the contact actually is, with the three stale rows named as stale.
+
+**Next step named.** `T-17` — the limits statement inside the proof — is `T-16`'s successor and is now
+unblocked. Beside it the proof states its own standing debt in its front matter, computed rather than
+described: **31 of 71 blocks carry no validator gate, and 40 rest on no
+`TWO-CARRIER` row.** Both numbers are printed, not described.
+
+**Two seal items found while landing, and neither is resealed to make a gate green.**
+`LANE_SCALE_D_THRESHOLD.sha256` was **stale against its own committed content** — every file matches
+`HEAD` and none matched the manifest, so the manifest was committed wrong at `e5198cd`. It is
+regenerated here, which is a statement about what is in the repository and not a claim that the lane
+reproduces; **that lane is still ahead of the in-flight full run and its reproduction is `T-35`'s.**
+`LANE_O48_B_SEPARATION/p2d_largest_exact.txt` was rewritten by the in-flight run in its wall-clock
+`time s` column alone, every physics figure identical; the committed file is restored rather than the
+timings baked into the record. `replicate.sha256` will go stale again while `reproduce_full3.log` is
+still being written, and that is the run, not a defect.

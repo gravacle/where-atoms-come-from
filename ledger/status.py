@@ -5,6 +5,7 @@
   ./ledger/status.py set C-1 PROVED        change one status cell
   ./ledger/status.py set C-1 PROVED "Thm E"   change status and evidence
   ./ledger/status.py text A-GR "new wording"     reword an item (claim unchanged)\n  ./ledger/status.py add ROLE X-7 "item text" OPEN   append a new row
+  ./ledger/status.py blocked C-1 "T-50"          name what a PARTIAL row waits on
 
 Row ORDER IS FILE ORDER and is never sorted, so IDs never renumber and the rendered
 grid is byte-stable unless a cell actually changed. Rows are appended, never deleted:
@@ -206,6 +207,18 @@ def main():
         old = hit[0][7]; hit[0][7] = a[2]
         save(hdr, rows); render()
         print('%s grounded\n  was: %s\n  now: %s' % (rid, old or '(nothing)', a[2]))
+    elif a[0] == 'blocked':
+        # PARTIAL's own definition is "one direction proved, the other open -- NAMED IN BLOCKED_BY".
+        # Until now no command could write that column, so the naming lived in prose and the closed
+        # vocabulary's promise was unkeepable through the tool. It is keepable now.
+        rid = a[1]
+        hit = [r for r in rows if r[0] == rid]
+        if not hit:
+            sys.exit('no such row: %s' % rid)
+        while len(hit[0]) < 8: hit[0].append('')
+        old = hit[0][5]; hit[0][5] = a[2]
+        save(hdr, rows); render()
+        print('%s blocked_by\n  was: %s\n  now: %s' % (rid, old or '(nothing)', a[2]))
     elif a[0] == 'ungrounded':
         bad = [r for r in rows if r[3] == 'PROVED' and not grounded(r)]
         pr = [r for r in rows if r[3] == 'PROVED']

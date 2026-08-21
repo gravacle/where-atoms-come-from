@@ -82,6 +82,16 @@ if [ -z "$pb" ] || [ -z "$pa" ]; then warn "THE_PLAN could not be hashed"
 elif [ "$pb" = "$pa" ]; then ok "the plan regenerates byte-for-byte from ledger/plan.tsv"
 else warn "the committed plan does not match what ledger/plan.py generates"; fi
 
+# 3c. THE PROOF GATE. PROOF_V002 is the model's narration, and its completion criterion — every step
+# citing a ledger row, no step resting on a single carrier unless marked — is a TOOL REFUSAL, not a
+# checklist item. It fires here too, because a proof that goes stale against the ledger is exactly the
+# failure this program keeps paying for: the ledger moves and the document keeps asserting what was
+# withdrawn under it.
+if [ -f PROOF_V002.md ]; then
+  if python3 replicate/check_proof.py >/dev/null 2>&1; then ok "PROOF_V002.md passes its own gate (replicate/check_proof.py)"
+  else warn "PROOF_V002.md FAILS its gate — run: python3 replicate/check_proof.py"; fi
+fi
+
 # 4. the model still validates
 if ( cd model && python3 validate_model.py >/dev/null 2>&1 ); then ok "model/validate_model.py passes"
 else warn "model/validate_model.py FAILS — a finding has broken the first-principles model"; fi

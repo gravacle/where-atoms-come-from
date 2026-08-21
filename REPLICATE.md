@@ -14,6 +14,12 @@ script needs a few minutes; `--quick` skips those.
 `reproduce.sh` **exits non-zero** if any seal fails, any script's output differs from the sealed
 `.txt` beside it, or the status grid does not regenerate byte-for-byte from its ledger.
 
+```bash
+python3 replicate/check_proof.py           # the proof's own gate: refuses a stale claim
+cd model && python3 validate_project.py    # the model's 14 gates
+cd model && python3 validate_geometry.py   # 31 geometry gates; chains the above
+```
+
 ---
 
 ## WHAT IS CLAIMED
@@ -28,7 +34,8 @@ Read in this order. Each is short and each links to the numbers behind it.
 | 3 | `MODEL.md` | **the model** — records constructed from `(H,{L_k})` and nothing else |
 | 4 | `STATUS_LEDGER_V001.md` | **every claim, with its status and its evidence** — generated, never typed |
 | 4b | `THE_PLAN_V001.md` | **the road to a proven process** — every task with a checkable DONE WHEN. `./ledger/plan.py` |
-| 5 | `PROCESS_V002.md` | **the process as it now stands** — every sentence cites a ledger row |
+| 5 | `PROOF_V002.md` | **the proof** — the narration of the Universal Record Model: every claim a model function, its validator gate, its grounding and its ledger row. `python3 replicate/check_proof.py` is its gate |
+| 5a | `PROCESS_V002.md` | **the process as it now stands** — every sentence cites a ledger row |
 | 5b | `RECORD_FORMATION_V001.md` | what a formation process must deliver |
 | 6 | `REGISTER_V001.md` | the append-only record, including **everything withdrawn** |
 
@@ -55,7 +62,23 @@ cd LANE_T9_CARRIERINDEP && python3 t9_sweep.py
 ```
 
 **32 PASS, 0 FAIL** across `[[8,2,2]]` toric, `[[8,1,2]]` **non-manifold**, and `[[4,2,2]]` which is
-not a lattice at all. **A row that survives only one carrier is NOT marked so in the ledger — this sentence was false when written and is corrected here, 2026-08-20, by external review.** The string `SINGLE-CARRIER` appears nowhere in `ledger/status_ledger.tsv`; roughly 24 of 162 rows cite two structurally different carriers. Plan task T-9 was marked DONE while satisfying neither branch of its own DONE_WHEN and is REOPENED.
+not a lattice at all.
+
+**Every row now says what carries it.** `T-9` was reopened by external review — it had been marked
+DONE while satisfying neither branch of its own DONE_WHEN — and the audit was then run for real:
+six probes over all 146 rows in scope, **defaulting every row to `SINGLE-CARRIER`**, with an
+adversarial refuter required to confirm each `TWO-CARRIER` claim against the row's actual result on
+structurally different carriers. Same model at another size or parameter set never counted.
+
+```bash
+cut -f1,2 LANE_T9_AUDIT/T9_carrier_audit.tsv        # the mark on every row
+```
+
+**`SINGLE-CARRIER` 111 · `TWO-CARRIER` 21 · `NOT-CARRIER-SHAPED` 14**, coverage 146/146. Rows
+registered after the audit carry no mark and count as `UNAUDITED`, which is not a `TWO-CARRIER` mark.
+Both `PROVED` rows, `C-71` and `C-72`, are `TWO-CARRIER`. **`PROOF_V002.md` prints the mark beside
+every row it cites, and `check_proof.py` refuses a claim that rests on a single carrier without
+saying so.**
 
 ---
 
@@ -75,10 +98,28 @@ adopted because of it, and every script follows them:
 
 ## WHAT IS **NOT** ESTABLISHED
 
-Stated here so you do not have to find it: **empirical contact is zero.** No number in this program
-came from a measurement, and **no distinguishing prediction has been identified** (`X-4`, `T-VI.3`,
-`T-VI.4`, all BLOCKED). The results are exact statements about a defined object, verified by
-computation. **They are not yet physics in the testable sense**, and the ledger says so on its face.
+Stated here so you do not have to find it.
 
-The road from here is the **`PF` series** in the ledger — the eight steps to a full proof, each with
-a status you can check.
+**Almost everything in this program is `FORMAL`** — real mathematics about the program's own
+stipulated definition, saying nothing by itself about the world (`H-3`, `PARTIAL`). **Exactly two
+rows meet the `PROOF` bar: `C-71` and `C-72`**, each naming its quantity in units, its predicted
+value, its falsifier on a standard instrument, and `RECORDS VERIFIED` on two structurally different
+mechanisms. **Both surfaces are MODELLED** — constants pinned to literature classes, patterns from
+sealed seeds — so what is scored is the encoding-level statement on two real *mechanisms*; **no device
+was measured.** What is offered to you is the falsifier: a Vt-distribution shift on a flash tester, a
+VSM remanence reading against an AC-erased background. `ledger/status.py` enforces the two-surface
+requirement and nothing else; the other three are enforced by the registrar reading the row.
+
+**Empirical contact is thin, and it is no longer zero.** Beyond those two rows it consists of `T-41`'s
+pinned external anchors — published azobenzene half-life, the Weller–Moser magnetic stability rule,
+NAND detrapping activation energy — placed beside the model's own numbers, sources in
+`LANE_T41_EXTERNAL/CITATIONS.md`. **Everything else is the model against its own closed form.**
+
+**Three ledger rows have not caught up with that**, and the honest thing is to say so rather than
+quietly fix them: `X-4`, `T-VI.3` and `T-VI.4` are still `BLOCKED` with texts reading *"empirical
+contact is zero"* and *"no distinguishing prediction"*. Both predate `T-41` and predate `C-84`, which
+registered **three surviving distinguishing statements** after each candidate was attacked by three
+rival advocates. Their external checks are owed. **The rows are flagged, not yet re-audited.**
+
+**No claim here is that gravity has been derived.** `PROOF_V002.md` §6 makes the one comparison the
+program permits and prints, in the same sentences, the three conditions of four that are not earned.
