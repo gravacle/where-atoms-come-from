@@ -1,0 +1,286 @@
+==================================================================================================
+C-86 MODEL SIDE -- k(t_m) AND THE CLOSED FORMS AGAINST THE PINNED ARMS
+==================================================================================================
+
+1. NAND ORDINAL PREDICTIONS (calibration-free under the stated mapping) vs pin N-7
+   Data: Cai et al., Proc. IEEE 105(9) 2017, Table 5 (transcribed in c86_nand_arm.py;
+   TLC, room temperature -- companion study pins 20 C -- 2,000 P/E, normalized-Vt units).
+   NOISE FLOOR: table quantization 0.1 units; no statement below 0.1 units is made.
+
+   MODEL P-ORD-1: signed drift dm_i/dt has sign toward equilibrium and magnitude
+   monotone in |dE_i| (both the displacement and the rate g_u+g_l grow with dE), so the
+   signed 1d->1y drift must be STRICTLY DECREASING in level with EXACTLY ONE sign change.
+   measured drifts: ER:+23.3  P1:+10.0  P2:+6.1  P3:+3.3  P4:+0.4  P5:-2.3  P6:-4.7  P7:-7.3
+   decreasing steps: 7/7, min step 2.4 units (= 24x the 0.1 floor); sign changes: 1 (between P4 and P5)
+   -> P-ORD-1 HOLDS on pin N-7, above floor.
+
+   MODEL P-ORD-2: the first-closing pair is the pair containing the record farthest from
+   equilibrium (largest |dE|): ER-P1 overall; among programmed pairs, the pair farthest
+   from the zero crossing on the fast side: P1-P2.
+   measured d(gap)/yr: ER-P1:-13.3  P1-P2:-3.9  P2-P3:-2.8  P3-P4:-2.9  P4-P5:-2.7  P5-P6:-2.4  P6-P7:-2.6
+   fastest-closing overall: ER-P1; fastest programmed: P1-P2  -> P-ORD-2 HOLDS.
+
+   HONESTY LINE: P-ORD-1/2 are shared with the ENTIRE activated-relaxation class the
+   C-86 row concedes by name (Neel/Street-Woolley/Sharrock; MLC margin engineering).
+   Their agreement supports the model's INPUTS; it does not discriminate the owned law.
+
+2. SMALL-t SHAPE (pin N-7 five-point series; pin N-10 pins log-t from 7 min on 3D)
+   MODEL: a single record approaches equilibrium as 1 - e^(-t/tau) (one rate); a state's
+   mean is an ensemble over ~1e6+ cell-records; with dispersed B_i the ensemble sum gives
+   log-t over a window -- but that form is CONCEDED (Street-Woolley viscosity class) and
+   the dispersion width is unpinned.  Here: slopes d(drift)/d(ln t), displayed, NO FIT.
+   (time labels quantized to days as printed; '3 months' taken as 91 d -- label floor)
+   ER: interval slopes (units per ln t): +3.08, +1.58, +7.93, +4.46
+   P1: interval slopes (units per ln t): +0.46, +0.76, +3.78, +2.74
+   P7: interval slopes (units per ln t): -1.64, -0.89, -1.26, -1.01
+   slopes are non-monotone at the 5-point resolution: the series separates NEITHER the
+   single-exponential approach NOR pure log-t.  Shape row -> not deciding at this floor.
+
+3. D-15 CONTROL (pin N-7 paper, Table 4: cycling 0 -> 3,000 P/E at fixed 1-day retention)
+   0->3k P/E drift: ER:+25.9  P1:+2.4  P2:+0.8  P3:+1.5  P4:+0.8  P5:+0.8  P6:+0.6  P7:+0.8
+   ALL programmed states move UP, no sign change, not monotone-decreasing: the cycling
+   drive fails P-ORD-1's signature, so section 1's structure is retention's own.
+
+4. THE ABSOLUTE STAIRCASE k(t_m) FOR THIS DEVICE -- the executable corner, as a family
+   Pinned: B = 1.0 eV (pin N-5, CLASS) .. 1.1 eV (pins N-2/N-4/N-6, the JEDEC-class and
+   Micron-primary detrapping value); T = 293.15 K (20 C, pin N-8's explicit statement,
+   pin N-7 'room temperature').  UNPINNED: f0 (no public NAND pin exists) and alpha (the
+   normalized-unit -> eV calibration; withheld by pin N-7's own text).  dE_i > 0 only
+   moves a record EARLIER (factor (1+e^(dE_i/kT))/2 > 1 in rate), so the dE = 0 corner
+   t* = e^(B/kT)/(2 f0) is the LATEST possible first drop: k(t_m) = 8 requires
+   t_m <= t*(corner).  The family, swept transparently (D-8: a sweep, not a fit):
+   kT = 0.025262 eV;  e^(B/kT) = 1.555e+17 (B=1.0), 8.147e+18 (B=1.1)
+      f0 (Hz) |    t*corner B=1.0 eV |    t*corner B=1.1 eV
+        1e+09 |               2.5 yr |             129.2 yr
+        1e+10 |               90.0 d |              12.9 yr
+        1e+11 |                9.0 d |               1.3 yr
+        1e+12 |               21.6 h |               47.1 d
+        1e+13 |                2.2 h |                4.7 d
+
+   MEASURED (pin N-7, margin-free): k(1 yr, RT, 2k P/E) = 8 of 8 state-classes alive --
+   no adjacent pair merges inside the public window.  Model + pinned B then EXCLUDES:
+     B = 1.0 eV: survival of the dE=0 corner to 1 yr requires f0 <= 2.47e+09 Hz  (tighter by (1+e^(dE/kT))/2 for every dE_i > 0)
+     B = 1.1 eV: survival of the dE=0 corner to 1 yr requires f0 <= 1.29e+11 Hz  (tighter by (1+e^(dE/kT))/2 for every dE_i > 0)
+   The textbook attempt-frequency decade 1e12-1e13 Hz is EXCLUDED at both pinned B; the
+   surviving region is physically ordinary (<= ~1e11 Hz at B = 1.1).  This is a
+   CONSTRAINT the data places on the model's unpinned constant, not an agreement -- with
+   f0 and alpha both unpinned, the absolute staircase has no public-data comparison.
+
+5. THE BAKE-CLOCK MAPPING AND ITS BAND (the semantic gate for every bake-positioned row)
+   Pinned mapping (pins N-2, N-6): t_use = t_bake * exp(Ea/k (1/T_use - 1/T_bake)),
+   Ea = 1.100 +- 0.001 eV (table inversion) with the CLASS pin 1.0 eV (N-5) as the low
+   edge of the pinned band.  Band of the mapping across the pinned Ea spread:
+     T_bake |  accel @1.0 eV |  accel @1.1 eV | band ratio
+       60 C |      5.968e+01 |      8.983e+01 |       1.51x
+       80 C |      4.291e+02 |      7.867e+02 |       1.83x
+      100 C |      2.497e+03 |      5.460e+03 |       2.19x
+      120 C |      1.215e+04 |      3.112e+04 |       2.56x
+   MODEL'S OWN CLOCK: per record the effective Ea is B_i - dE_i (level-dependent), plus
+   a two-sided correction bounded by a factor 2 in time.  A single-Ea clock is exact
+   ONLY if every record shares B - dE; with dE_i > 0 spanning levels, the model says the
+   1.1 eV bake under-delivers use-aging for EVERY displaced record (its true Ea is
+   smaller), i.e. bake-certified time OVERSTATES delivered aging -> bakes UNDERESTIMATE
+   real retention errors, worst for the largest-dE (outer) levels.
+   MEASURED (pin N-9): bakes underestimate the real 366-day errors, and per-read-voltage
+   error ordering CHANGES with temperature.  SIGN AGREES.  ATTRIBUTION CONFOUNDED: the
+   sources themselves (pins N-3, N-8, N-11) blame two mechanisms with different Ea, a
+   channel the single-escape model does not contain; and the pinned 1.1 eV was itself
+   measured from Delta-VT transients, which under the model mixes B - dE_i values.  So
+   the sign-level agreement is a SHARED NULL of the single-Ea clock -- it cannot
+   discriminate C-86 from mechanism mixing.  Bake-positioned ABSOLUTE times carry a
+   multiplicative band >= 1.5-2.6x (Ea spread) x <= 2x (two-sided correction) BEFORE the
+   unbounded measured mechanism systematic: absolute bake rows are NOT-COMPARABLE.
+
+6. MAGNETIC ARM -- model numbers where the pins admit any
+
+6a. Pin M-1 (Wernsdorfer N=1 Co particle).  MODEL: the record's own Liouvillian mode is
+    ONE exponential at every (T, H) -- measured: exponential at every (T, H) pinned.
+    FORM AGREES; but this is the field-tilted Neel-Brown fragment CONCEDED BY NAME, and
+    the pinned absolutes (E0 = 214,000 K, tau0 = 3e-9 s) are OUTPUTS of fitting that same
+    form -- any absolute 'comparison' is circular by construction.  No census at N = 1.
+
+6b. Pin M-2 (Krause Fe/W(110) per-island ensemble).  Pinned: E_b = E0 + e_DW*N,
+    E0 = 61+-5 meV, e_DW = 7.5+-0.4 meV/row, worked T = 53.6 K; nu0 spans 1e13-1e16 Hz
+    WITHIN one ensemble.  The shared-f0 closed form is scope-excluded by C-86's own
+    register note; this data CONFIRMS the exclusion and the stress is computable:
+    Delta E_b per atomic row / kT = 1.62; ln(nu0 spread) = 6.91
+    -> a forced single f0 can scramble the death ORDER across up to 4.3 adjacent-N islands,
+    and mispositions t*_i by up to e^6.9 ~ 1e3 in time whichever f0 is chosen
+    (half-spread floor: >= e^3.45 = 32x).  Real-media
+    staircases must run through the record-mode instrument (per-record f0_i), exactly as
+    the register's scope note declares.  No census was measured -> owned law untouched.
+
+6c. Pin M-3 (SMTJ, Funatsu 2022; raw dwell times public, Zenodo 6767828).  The one
+    public class carrying BOTH escape rates AND occupancy on one record.  MODEL NUMBERS
+    (parameter-free, the wholly-owned both-values factor at the step):
+       dE/kT |  1+e^(-dE/kT) |  tanh(dE/2kT)
+         0.0 |        2.0000 |        0.0000
+         1.0 |        1.3679 |        0.4621
+         2.0 |        1.1353 |        0.7616
+         3.0 |        1.0498 |        0.9051
+         4.0 |        1.0183 |        0.9640
+    At the balanced field the record lifetime is HALF the per-branch dwell time -- the
+    factor-2 corner that separates C-86's t* from the favored-branch (Sharrock-class)
+    convention, decaying to 1 as e^(-dE/kT).  The paper verifies exponential/Poisson
+    intervals (form AGREES -- conceded fragment) but its Delta values ASSUME tau0 = 1 ns,
+    so comparing t* built from those Deltas against the same dwell data is CIRCULAR (the
+    azobenzene trap, rate-level form).  The non-circular test -- occupancy and summed
+    rate from the RAW dwell sequences with tau0 marginalized -- needs the Zenodo download,
+    which this run did not perform (file-download gate); it stays the named next step.
+    THIS RUN INGESTS NO SMTJ NUMBERS -> row scored NOT-COMPARABLE (this run).
+
+6d. Pins M-4/M-5 (ASI PEEM census movies / SQUID remanence twin).  The ONLY public
+    count-grade time series.  MODEL PREREQUISITE: dE_i is the neighbors' dipolar field
+    and changes as neighbors flip; C-86's staircase is stated for fixed (B_i, dE_i), so
+    no number may be compared before the state-dependent-dE extension exists.  The
+    moment-side twin (M-5) is on DIFFERENT samples: cross-sample comparison is
+    semantics-broken.  NOT-COMPARABLE (extension required / cross-sample).
+
+6e. Pins M-6/M-7/M-8 (York-protocol 'grain census' / MFM heated-stage / multi-barrier
+    particle).  The commissioned census observable does not exist in these classes: the
+    field's census is a FITTED volume distribution (never an integer count), MFM signal
+    is a moment proxy, and real grains are not guaranteed two-state (M-8) -- the
+    two-valuedness check is a precondition the model imposes on any future census run.
+    NOT-COMPARABLE (absent observable / proxy semantics / scope hazard).
+
+6f. THE DEPARTURE TERM sum_dead tanh(dE_i/2kT) -- the wholly-owned discriminator
+    (remanence persists while records die).  It needs census AND remanence on ONE sample
+    with per-record constants.  NO pinned dataset on either arm carries both.  The term
+    is evaluated against nothing in this run; no hypothetical value is printed (D-8).
+
+==================================================================================================
+7. THE COMPARISON TABLE -- measured beside model, tolerance, verdict, why
+==================================================================================================
+
+    C1  N-7 Cai'17 Table 5: signed drift order
+        measured : 7/7 steps decreasing, 1 sign change (P4|P5); min step 2.4u
+        model    : strictly decreasing, exactly 1 crossing (P-ORD-1)
+        tolerance: floor 0.1u; min step 24x floor
+        VERDICT  : AGREES (ordinal)
+        why      : calibration-free under the mapping; but shared with the conceded activated-relaxation class -- supports inputs, does not discriminate the owned law
+
+    C2  N-7: first-closing pair
+        measured : ER-P1 fastest (-13.3u/yr); P1-P2 fastest programmed (-3.9u/yr)
+        model    : pair holding the extreme record: ER-P1; then P1-P2 (P-ORD-2)
+        tolerance: floor 0.1u
+        VERDICT  : AGREES (ordinal)
+        why      : same non-discrimination caveat as C1
+
+    C3  N-7: absolute first drop t*_1
+        measured : no pair merges within 1 yr at RT/2k P/E (k = 8 of 8 alive)
+        model    : t*_1 = f0^-1 e^((B-dE_max)/kT)/(1+e^(-dE_max/kT)); needs f0, alpha
+        tolerance: f0, alpha vendor-withheld
+        VERDICT  : NOT-COMPARABLE (absolute)
+        why      : constraint recorded instead: with pinned B, survival to 1 yr forces f0 <= 2.5e9 Hz (B=1.0) .. 1.3e11 Hz (B=1.1) at the dE=0 corner; 1e12-1e13 Hz excluded
+
+    C4  N-8 HPCA'15 MLC: down-side order
+        measured : dP3 > dP2 > dP1, P1 ~constant (figure-resolution)
+        model    : drift magnitude monotone in level on the down side
+        tolerance: figure-resolution
+        VERDICT  : AGREES (ordinal)
+        why      : same class caveat; the paper itself rejects bake acceleration on record
+
+    C5  N-10 SIGMETRICS'18: small-t form
+        measured : V = A log t + B from 7 min; RBER decade in ~3 h (3D CT)
+        model    : single record: exponential approach; ensemble with dispersed B: log-t (conceded form, dispersion unpinned)
+        tolerance: anonymized axes
+        VERDICT  : NOT-COMPARABLE (owned-law)
+        why      : the log-t form is Street-Woolley-class conceded territory; matching it tests nothing wholly owned; N-7's 5-point series separates neither form (sec 2)
+
+    C6  N-9 HotStorage'21: bake vs real year
+        measured : bakes UNDERESTIMATE 366-day errors; per-voltage ordering changes with T
+        model    : single-Ea clock must fail; direction: bake under-delivers aging for every dE_i > 0
+        tolerance: figure-resolution
+        VERDICT  : AGREES (sign only)
+        why      : shared null of the single-Ea clock -- mechanism mixing (N-3/N-8/N-11) predicts failure too; level-resolved reordering not extractable at figure resolution
+
+    C7  N-11 Malavena fresh-3D bake: level structure
+        measured : Delta-VT NONMONOTONIC in level (depassivation + detrapping, opposite signs)
+        model    : single-channel fixed-(B,dE) predicts monotone
+        tolerance: figure-resolution
+        VERDICT  : NOT-COMPARABLE (premise broken)
+        why      : the source itself identifies a second, chemically distinct channel: the fixed-constants premise fails on fresh 3D; REFUTES any naive single-channel application -- the channel check is now a mandatory precondition. Post-cycled data (same pin): monotone, agrees ordinally at figure resolution
+
+    C8  N-1/N-12 JEDEC & Mielke class: retirement
+        measured : UBER/FFR at vendor margins, ECC-downstream
+        model    : margin-free integer census k(t_m)
+        tolerance: --
+        VERDICT  : NOT-COMPARABLE (semantics)
+        why      : margin-laden drive-level observables are not a census; per-level structure unpublished
+
+    C9  N-2/N-5/N-6: the bake clock itself
+        measured : Ea = 1.100+-0.001 eV (table inversion) vs 1.0 eV class pin
+        model    : per-record effective Ea = B_i - dE_i, level-dependent; correction <= 2x
+        tolerance: band 1.5x (60 C) - 2.6x (120 C)
+        VERDICT  : NOT-COMPARABLE (absolute gate)
+        why      : the clock is one contested convention; every bake-positioned absolute inherits >= 3-5x multiplicative band before the unbounded mechanism systematic
+
+   C10  M-1 Wernsdorfer N=1: escape form
+        measured : P(t) exponential at every (T,H); telegraph residences exponential
+        model    : record mode = ONE exponential
+        tolerance: no bars pinned on tau0
+        VERDICT  : AGREES (form; conceded)
+        why      : field-tilted Neel-Brown is conceded by name; absolutes (E0, tau0) are outputs of the same form -- circular; no census at N=1
+
+   C11  M-2 Krause ensemble: shared-f0 form
+        measured : nu0 spans 1e13-1e16 Hz within ONE ensemble
+        model    : closed form assumes one f0 (declared scope); stress computed: order scrambled up to ~4 adjacent-N islands, positions off up to ~1e3x
+        tolerance: E0 +-5 meV, e_DW +-0.4 meV/row
+        VERDICT  : NOT-COMPARABLE (scope, confirmed)
+        why      : the data confirms the register's own scope exclusion; record-mode instrument route required for real media; no census measured
+
+   C12  M-3 SMTJ Zenodo: both-values factor & occupancy
+        measured : tau_P, tau_AP, occupancy public (raw); exponential/Poisson verified
+        model    : 1/t* = g_u + g_l (factor (1+e^(-dE/kT)) in (1,2]); <m> = tanh(dE/2kT) -- tabulated
+        tolerance: tau0 = 1 ns ASSUMED in source
+        VERDICT  : NOT-COMPARABLE (this run)
+        why      : the ONLY located executable test of an owned corner (the both-values factor); needs the raw download with tau0 marginalized -- not performed this run (download gate); paper-level Delta comparison would be circular
+
+   C13  M-4/M-5 ASI census movies / remanence twin
+        measured : integer vertex counts vs t (PEEM); remanence on different samples
+        model    : staircase stated for FIXED (B_i, dE_i); dipolar dE_i is state-dependent
+        tolerance: --
+        VERDICT  : NOT-COMPARABLE (extension req.)
+        why      : only public count-grade series; comparable only after a state-dependent-dE extension, else any null reads two ways; cross-sample moment comparison semantics-broken
+
+   C14  M-6/M-7/M-8 exchange-bias census / MFM / multi-barrier
+        measured : fitted volume distributions; moment proxies; >2-state reversal
+        model    : integer survivor count of verified two-state records
+        tolerance: --
+        VERDICT  : NOT-COMPARABLE (absent/proxy/scope)
+        why      : the commissioned census observable does not exist publicly in this medium; producing it is lab work; two-valuedness must be verified per record first
+
+   C15  BOTH ARMS: departure term sum_dead tanh(dE_i/2kT)
+        measured : no dataset carries census AND remanence on one sample
+        model    : M(t) = sum_surv m_i + sum_dead tanh(dE_i/2kT)
+        tolerance: --
+        VERDICT  : NOT-COMPARABLE (no data)
+        why      : the wholly-owned discriminator is touched by NOTHING located; this is the promotion gate's operative gap
+
+==================================================================================================
+8. MODEL-SIDE VERDICT (the comparison comes out as it comes out)
+==================================================================================================
+  * Score: 5 AGREES (C1, C2, C4, C6, C10) -- every one either ordinal/sign-level or a
+    conceded fragment; 10 NOT-COMPARABLE; 0 DISAGREES.  No agreement row discriminates
+    the wholly-owned content (integer census, both-values factor, departure term) from
+    the fragments C-86 concedes by name.  The owned content is touched by NO located
+    public dataset.
+  * The run's real products: (i) the f0 exclusion (pinned B + measured 1-yr survival
+    excludes f0 >= ~1e11-1e12 Hz at RT -- a falsifiable constraint any future calibrated
+    dataset must respect); (ii) the quantified bake-clock band (1.5-2.6x from the Ea
+    pins, <= 2x two-sided, unbounded mechanism systematic) gating all absolute bake
+    comparisons; (iii) data-confirmation of the shared-f0 scope exclusion (order
+    scrambling up to ~4 neighbors, ~1e3x positions); (iv) the mandatory channel check
+    (C7): fixed-single-channel premises FAIL on fresh 3D by the sources' own mechanism
+    decomposition.
+  * PROMOTION: this run does NOT support FORMAL -> PROVED.  The strengthened bar asked
+    the external data to reach the owned law; the located data reaches only conceded
+    territory and constraints.  Both readings remain open: law-untested (the data never
+    enters the census regime) vs law-supported (no located datum contradicts it beyond
+    the scope-gated C7/C11 rows).
+  * NEXT STEPS (named): (1) the Zenodo 6767828 grounding run -- occupancy vs summed-rate
+    with tau0 marginalized: the only located executable test of an owned corner;
+    (2) the state-dependent-dE extension, then the ASI PEEM re-analysis (census and
+    moment from the same frames -- the only public route to the departure term);
+    (3) the in-house read-retry census (pin N-7/N-9 methodology, retail chips) for
+    margin-free absolute staircase positions and the f0-exclusion check.

@@ -1,0 +1,148 @@
+==================================================================================================
+C-86 ADVERSARIAL CHECK -- RE-FETCH, RE-DERIVE, ATTACK; DEFAULT REFUTED
+==================================================================================================
+
+1. PIN N-7 (Cai'17 Table 5) -- LANE TRANSCRIPTION vs THE PDF RE-FETCHED THIS RUN
+   means: 40/40 cells IDENTICAL to the source -- transcription CONFIRMED.
+   sigma rows: the PDF's Table 5 bottom block is COMPLETE (no truncation):
+   TRANSCRIPTION ERROR FOUND (lane sigma_1day, P6/P7): lane has 9.3, 8.5;
+   the PDF has 9.5, 9.1.  The wrong pair equals the tail of Table 4's
+   P/E=0 sigma row (…, 9.3, 8.5): a row-slip in a truncated text extraction.  The claim
+   that 1-year P6/P7 sigmas are 'NOT visible' is also false: they are published (12.3, 12.4).
+   IMPACT AUDIT: resolvability lines used only P1..P4 sigmas (correctly transcribed);
+   NO verdict moves.  The pinned range 'sigma 8.5-12.8' is wrong: programmed-state range
+   is 9.1-12.8.  Bonus: with correct values, Table 5's 1-day row equals Table 4's 2,000
+   P/E row in BOTH mean and sigma -- the 2,000 P/E identification gets STRONGER.
+   re-check P1-P2 resolvability: 3.17 -> 2.29 combined-sigma (lane said 3.2 -> 2.3): OK
+   re-check P-ORD-1 on source values: decreasing steps 7/7,
+   min step 2.4 u, sign changes 1: HOLDS as published.
+
+2. PIN N-7 SEMANTICS -- what the source does and does not say (re-fetched text)
+   CONFIRMED VERBATIM: 'absolute threshold voltage values are proprietary information to
+   flash vendors', normalized scale nominal max 512, 0 = GND.
+   NOT IN THE SOURCE: the Proc. IEEE 2017 paper NOWHERE states the retention temperature
+   ('room tem', 'C', 'Celsius', 'ambient': zero hits outside unrelated context).  The
+   'room temperature' semantics is imported from HPCA 2015 -- a DIFFERENT paper on
+   DIFFERENT chips (2y-nm MLC, not this TLC).  The pinned file discloses the import but
+   the dataset's own temperature is UNPINNED; every T-dependent number downstream
+   inherits this.  Also unpinned: whether T was controlled over the year (HotStorage
+   states 'air condition at 25 C'; Cai'17 states nothing).
+
+3. PIN N-6 / N-2 (bake clock) -- INDEPENDENT RE-DERIVATION from the re-fetched slides
+   Slide 5 (verbatim table): 60C 97.65 h | 80C 11.16 h | 100C 1.61 h | 120C 0.28 h,
+   titled 'Baking hours to obtain equivalent retention effects of 25C for 1 year'.
+     60 C -> implied Ea = 1.0997 eV
+     80 C -> implied Ea = 1.0996 eV
+     100 C -> implied Ea = 1.0996 eV
+     120 C -> implied Ea = 1.1006 eV
+   CONFIRMS the lane's inversion (1.100 +- 0.001 eV).  JEDEC-side language CONFIRMED
+   first-hand from the JC-64.8 chair's deck (jedec.org): class table Client 30C/1yr/
+   FFR 3%/UBER 1e-15, Enterprise 40C/3mo/3%/1e-16 -- and, verbatim: retention 'is to be
+   verified both for a temperature-accelerated mechanism (1.1eV) and a non-temperature-
+   accelerated mechanism' -- the two-mechanism caveat is JEDEC's own, as pinned (N-3).
+   Malavena JEDS 2023 re-fetched: 'a single activation energy EA nearly equal to 1.1 eV'
+   and 'normalized to the same arbitrary constant' CONFIRMED VERBATIM; the abstract adds
+   that detrapping and depassivation have 'similar activation energy and comparable
+   magnitude on fresh devices' -- STRENGTHENS row C7's mechanism confounding (an
+   Arrhenius merge at 1.1 eV cannot by itself isolate one channel).
+
+4. ATTACK SUSTAINED -- the f0 'exclusion' rests on TWO free identifications + unpinned T
+   (a) MAPPING SWITCH.  The model-side mapping paragraph declares 'each programmed cell
+       is one record'; section 4 then reads k(1yr) = 8 of 8 from class-level pair
+       non-merging.  Under the file's own cell-level mapping the census is over ~1e6
+       records and the SOURCE ITSELF says cells die inside the window: Cai'17 (re-fetch),
+       'the number of data retention and read disturb errors remains low at LOW retention
+       age' -- i.e. grows with age; pin N-9 measures per-voltage RBER rising over 366
+       days at 25 C.  Cell-level record deaths INSIDE the public year are a measured
+       fact; 'no drop within 1 yr' is true only of the 8-class re-mapping.
+   (b) Ea IDENTIFICATION.  Section 4 sets B = the pinned 1.1 eV; section 5 of the SAME
+       file says the pinned 1.1 eV 'was itself measured from Delta-VT transients, which
+       under the model mixes B - dE_i values'.  Both cannot hold.  If 1.1 eV = mixture
+       of (B - dE_i), then B = 1.1 + dE and the corner bound relaxes by e^(dE/kT):
+         dE = 0.00 eV -> f0max = 1.29e+11 Hz
+         dE = 0.05 eV -> f0max = 9.35e+11 Hz
+         dE = 0.10 eV -> f0max = 6.77e+12 Hz
+         dE = 0.20 eV -> f0max = 3.54e+14 Hz
+       The 'textbook decade 1e12-1e13 Hz excluded' claim dissolves for dE >~ 0.06-0.12 eV,
+       and dE in eV is exactly the unpinned calibration (alpha) the file elsewhere refuses
+       to value.  The free choice was resolved toward the stronger-sounding product.
+   (c) TEMPERATURE.  T = 293.15 K is imported (sec. 2 above).  Sensitivity, B = 1.1 eV:
+         T = 20 C -> f0max = 1.29e+11 Hz
+         T = 25 C -> f0max = 6.22e+10 Hz
+         T = 30 C -> f0max = 3.07e+10 Hz
+   VERDICT: the C3 row's NOT-COMPARABLE stands, but the recorded 'f0 exclusion' is
+   REFUTED AS A PRODUCT.  Honest restatement: CONDITIONAL on (8-class mapping) AND
+   (Ea = B) AND (T = 20 C), survival of class corners to 1 yr needs f0 <= ~1e11 Hz.
+   Same defect infects section 5's 'under-delivers for EVERY displaced record': under
+   the mixture reading, records with dE below the mixture mean have true Ea > 1.1 eV
+   and the bake OVER-delivers for them.  C6 stays a shared null -- 'sign AGREES' is
+   conditional on Ea = B and should carry that flag.
+
+5. ATTACK PARTIAL -- P-ORD-1/2 provenance (rows C1/C2)
+   P-ORD-1's 'exactly one sign change' is guaranteed for ANY drift-toward-equilibrium
+   field once v_eq is free -- and v_eq is located (between P4 and P5) from the SAME
+   table.  Real content: magnitude monotone in |dE| -- which 7/7 decreasing steps do
+   test, above floor.  P-ORD-2's 'fastest programmed pair = P1-P2' needs CONVEXITY of
+   drift vs level on the up side, which the model file asserts ('farthest from the zero
+   crossing on the fast side') but never derives; measured up-side closure rates are
+   3.9 / 2.8 / 2.9 u -- P2-P3 vs P3-P4 differ by 0.1 u = the quantization floor, so the
+   data itself cannot certify convexity.  AGREES verdicts stand as data statements; as
+   MODEL predictions they are under-derived, and both files already concede they are
+   shared with Neel/Street-Woolley/Sharrock-class relaxation -- non-discriminating.
+
+6. MAGNETIC ARM RE-FETCHES
+   M-1 Wernsdorfer: CONFIRMED VERBATIM (tau0 ~= 3e-9 s, E0 = 214 000 K, Hsw0 = 143.05 mT,
+   activated volume ~ (25 nm)^3 ~= SEM volume, P(t) exponential at every (T,H)).
+   M-2 Krause/Triannual: CONFIRMED VERBATIM ('nu0 is on the order of 10^13 and 10^16 Hz'
+   across the islands of one ensemble; E0 = 61+-5 meV; e_DW = 7.5+-0.4 meV/AR;
+   K = 0.55+-0.03 meV/atom; w = 2.15+-0.35 nm).  Re-derived stress numbers:
+     dE_b per row / kT(53.6 K) = 1.62; ln nu0-spread = 6.91;
+     order-scramble reach = 4.3 rows; position floor e^3.45 = 32x: all CONFIRMED.
+   M-3 Funatsu: physics pins CONFIRMED VERBATIM (D = 34 nm, TMR 73%, RA 5.5 Ohm um2,
+   tau_P/tau_AP separate vs H_z, exponential/Poisson verified, shortest relaxation
+   ~0.3 ms, 'attempt frequency tau0 of 1 ns was assumed').
+   *** AVAILABILITY CLAIM REFUTED ***: Zenodo 6767828 is RESTRICTED -- landing page:
+   'This datasets will be Open Access after the paper is published', 0 downloads, files
+   hidden behind login + access request (checked 2026-08-21, paper published 2022).
+   AND the paper's own statement scopes the deposit as 'data that support the plots',
+   not raw dwell-time sequences.  The arm's 'raw data public' / 'raw dwell times:
+   Zenodo 6767828' is wrong on access TODAY and unverified on content depth.  Named
+   next step (1) (the Zenodo grounding run) is NOT executable as written: it needs an
+   access request AND a content check.  Row C12's NOT-COMPARABLE (this run) stands.
+   M-4 Farhan PRL 111, 057204: existence, PEEM method, string->domain regimes confirmed
+   (APS/PubMed 23952441).  M-5..M-8 are CLASS pins at stated depth -- not re-fetched.
+
+==================================================================================================
+7. ADVERSARIAL VERDICT PER COMPARISON ROW (lane verdict -> adversarial disposition)
+==================================================================================================
+     C1  lane: AGREES (ordinal)           adversarial: UPHELD; data re-verified cell-for-cell; non-discriminating (conceded class)
+     C2  lane: AGREES (ordinal)           adversarial: UPHELD as data; model prediction under-derived (convexity unstated, v_eq from same table)
+     C3  lane: NOT-COMPARABLE (abs)       adversarial: UPHELD; but the recorded f0-exclusion product REFUTED AS STATED (sec. 4 above)
+     C4  lane: AGREES (ordinal)           adversarial: UPHELD; HPCA'15 re-fetched, 20 C + 'almost constant' P1 + anti-bake quote verbatim
+     C5  lane: NOT-COMPARABLE (owned)     adversarial: UPHELD
+     C6  lane: AGREES (sign only)         adversarial: UPHELD as shared null; 'EVERY displaced record' derivation wrong under mixture reading
+     C7  lane: NOT-COMPARABLE (premise)   adversarial: UPHELD and STRENGTHENED (Malavena abstract: similar Ea, comparable magnitude)
+     C8  lane: NOT-COMPARABLE (sem.)      adversarial: UPHELD; JEDEC class table re-verified from JEDEC's own deck
+     C9  lane: NOT-COMPARABLE (gate)      adversarial: UPHELD; inversion re-derived independently, 1.100+-0.001 eV confirmed
+    C10  lane: AGREES (form; conceded)    adversarial: UPHELD; Wernsdorfer numbers verbatim; circularity note correct
+    C11  lane: NOT-COMPARABLE (scope)     adversarial: UPHELD; nu0 spread verbatim in source; stress arithmetic re-derived
+    C12  lane: NOT-COMPARABLE (run)       adversarial: UPHELD; but 'raw data public' REFUTED -- Zenodo restricted, content depth unverified
+    C13  lane: NOT-COMPARABLE (ext.)      adversarial: UPHELD; Farhan class existence confirmed
+    C14  lane: NOT-COMPARABLE (absent)    adversarial: UPHELD at CLASS depth (not re-fetched)
+    C15  lane: NOT-COMPARABLE (none)      adversarial: UPHELD; the departure term is touched by nothing located -- the operative gap
+
+PROMOTION QUESTION (the strengthened bar):
+  * Rows satisfying 'measured external number beside the model's, agreeing within stated
+    tolerance' ON OWNED CONTENT: NONE.  The 5 AGREES rows are ordinal/sign/form-level and
+    each sits in territory the C-86 row concedes by name.
+  * Rows FALSIFYING C-86: NONE.  C7 breaks a mapping premise (second channel on fresh 3D),
+    which is scope, not law failure; per the two-way-null rule it cannot be read as a loss.
+  * Honest verdict: NOT-YET-COMPARABLE.  Missing data, named: (i) level-resolved margin-
+    free bake retirement times + absolute calibration (B_i, dE_i in eV, f0, volts) --
+    vendor-held per the sources' own statements; (ii) integer survivor census + remanence
+    on ONE magnetic sample with per-record constants -- not published anywhere located,
+    lab work; (iii) the SMTJ raw dwell data -- RESTRICTED on Zenodo, access request +
+    content check required before next-step (1) can run.
+  * FORMAL stands; FORMAL -> PROVED is NOT supported by this run.  Register corrections
+    owed: the sigma transcription slip (sec. 1), the unpinned N-7 temperature (sec. 2),
+    the conditionalized f0 constraint (sec. 4), the Zenodo access status (sec. 6).

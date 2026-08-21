@@ -10419,3 +10419,42 @@ T-49/O-58 queue. C-93 registered FORMAL and **audited at registration per the T-
 SINGLE-CARRIER (toric family), the second carrier absent by construction — the theorem is *about*
 stabiliser venues, and the metastable tier where it may fail is the responsive-venue question, not a
 second venue for this result.
+
+---
+
+## THE C-86 EXTERNAL RUN — **THE FIRST GENUINELY EXTERNAL COMPARISON TABLE, AND THE HONEST VERDICT IS NOT-YET-COMPARABLE. PROMOTION DOES NOT FIRE.** (`LANE_C86_EXTERNAL/`; C-86 stays `FORMAL`)
+
+The run C-86 has owed since registration: published data hunted on both arms, pinned house-style,
+the model side computed with closed forms evaluated (never re-derived), and the whole thing attacked
+by a refuter who **re-fetched nine sources first-hand** — Cai '17 (Table 5 extracted from the PDF
+itself), the ETH HPCA '15 data, HotStorage '21, Malavena JEDS '23, JEDEC's own committee deck,
+Wernsdorfer's nanomagnet review, Funatsu's superparamagnetic-MTJ telegraph paper and its Zenodo
+deposit. Both lane instruments reproduce byte-identical.
+
+**The table's verdicts, refuter-checked row by row:** five AGREES rows — drift ordering strictly
+decreasing in level with exactly one sign crossing, the extreme-pair identification, magnitude
+monotonicity, the bake-underestimates-aging sign, the nonmonotonic fresh-3D structure — **all
+ordinal/sign-level, and all sitting in conceded territory** (Néel/Street-Woolley/Sharrock, MLC
+margin engineering own them too); every absolute row **NOT-COMPARABLE**, blocked not by physics but
+by **vendor-held calibration**: the volts→eV constant, `f0`, and even the retention temperature are
+withheld or unstated in the public record. **No row meets the promotion standard. No row falsifies**
+(the one broken premise — a second opposite-sign channel on fresh 3D NAND — is a scope finding, and
+the two-way-null rule applies). `FORMAL` stands.
+
+**Corrections the refuter sustained against the lane's own pinning, registered here:** a
+transcription row-slip (Table 5's P6/P7 one-day sigmas are 9.5/9.1, not 9.3/8.5 — the corrected
+range is 9.1–12.8, and the corrected row now equals Table 4's 2,000 P/E row in mean AND sigma,
+*strengthening* the identification); the N-7 retention temperature is nowhere stated in its paper and
+was imported from a different one; the `f0`-exclusion claim ("the textbook 1e12–1e13 Hz decade is
+excluded") holds only CONDITIONAL on the class mapping, `Ea = B`, and `T = 20 °C`, and dissolves
+under the mixture reading at `dE ≳ 0.06 eV`; and the Funatsu Zenodo deposit is **RESTRICTED**, not
+open — "raw data public" was wrong on access and unverified on content.
+
+**Next steps named, in order of promise:** (1) **the SMTJ dwell-time route** — Funatsu's
+superparamagnetic MTJ is a real two-state record with separately published `τ_P`/`τ_AP` and
+Poisson-verified telegraph statistics, the exact object of C-69/C-70; an access request for Zenodo
+6767828 plus a content-depth check must precede any grounding run, **and filing that request is the
+principal's action, not the registrar's**; (2) the in-house read-retry census — the only located
+route to margin-free absolute staircase positions; (3) the integer survivor census on one magnetic
+sample is lab work, not literature work, and no located publication carries it. **The departure term
+— the count law's wholly-owned content — remains touched by nothing located.**

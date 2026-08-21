@@ -1,0 +1,69 @@
+==================================================================================================
+C-86 NAND/MLC ARM -- WHAT THE PUBLIC NUMBERS SAY, COMPUTED, WITH FLOORS
+==================================================================================================
+
+1. THE BAKE-EQUIVALENCE TABLE THE INDUSTRY ACTUALLY USES, INVERTED TO ITS Ea
+   Source: Li/Ye/Kuo/Xue, HotStorage 2021 slides p.5 (public PDF): 1 year at 25 C is
+   declared equivalent to the following bake hours:
+     T_bake (C)     hours   implied Ea (eV)
+             60     97.65             1.100
+             80     11.16             1.100
+            100      1.61             1.100
+            120      0.28             1.101
+   spread 1.100-1.101 eV; JESD218B 6.1.3 states its Annex A stress-time
+   calculation assumes 1.1 eV IN TEXT.  The published table and the standard agree to the
+   0.28-hour quantization of the table's last row: ONE number, 1.1 eV, is what the
+   JEDEC-class world runs on -- and JESD218B 3.19 itself says the OTHER retention
+   mechanism (leak through the transfer dielectric) 'can be weakly accelerated or even
+   decelerated by high temperature', i.e., the standard's own text denies that a single
+   Ea covers retention.  The 1.1 eV is the DETRAPPING channel only.
+
+2. LEVEL-RESOLVED RETENTION DRIFT (Cai et al., Proc. IEEE 105(9) 2017, Table 5; TLC,
+   room temperature, 2,000 P/E; normalized-Vt units, nominal max = 512, GND = 0;
+   absolute volts are vendor-proprietary BY THE PAPER'S OWN STATEMENT)
+
+   NOISE FLOOR: quantization 0.1 units; drift statements below 0.1 units are not made.
+   Per-state sigma at 1 day: ER=48.2, P1=9.7, P2=9.7, P3=9.4, P4=9.3, P5=9.1, P6=9.3, P7=8.5
+
+   (a) per-state mean drift, 1 day -> 1 year (units):
+       ER:+23.3  P1:+10.0  P2:+6.1  P3:+3.3  P4:+0.4  P5:-2.3  P6:-4.7  P7:-7.3
+       sign structure: ER,P1,P2,P3 UP; P4 ~flat (+0.4); P5,P6,P7 DOWN, magnitude
+       increasing with level (P7 largest down-drift).  The paper's own reading: TAT
+       (field-driven, only downward) dominates high states; hole loss lifts low states.
+
+   (b) adjacent-gap trajectories, margin-free (gap = mean[i+1]-mean[i], units):
+           pair      1 day     1 week    1 month   3 months     1 year   d(gap)/yr
+          ER-P1      159.3      154.2      153.0      148.4      146.0       -13.3
+          P1-P2       61.5       60.6       60.1       58.8       57.6        -3.9
+          P2-P3       63.8       63.3       62.9       61.7       61.0        -2.8
+          P3-P4       63.0       62.4       61.9       61.0       60.1        -2.9
+          P4-P5       63.4       62.7       62.3       61.4       60.7        -2.7
+          P5-P6       66.0       65.3       65.1       64.5       63.6        -2.4
+          P6-P7       63.8       63.1       62.7       62.0       61.2        -2.6
+       every programmed-pair gap SHRINKS; the fastest-closing programmed pair over the
+       full year is P1-P2; ER-P1 closes fastest of all (ER rises 23.3).
+
+   (c) resolvability in sigma units (gap / (sigma_i+sigma_j)), where sigma is public:
+       P1-P2: 1-day gap 61.5 = 3.2 combined-sigma; 1-year gap 57.6 = 2.3 combined-sigma
+       P2-P3: 1-day gap 63.8 = 3.3 combined-sigma; 1-year gap 61.0 = 2.5 combined-sigma
+       P3-P4: 1-day gap 63.0 = 3.4 combined-sigma; 1-year gap 60.1 = 2.5 combined-sigma
+       NO adjacent pair approaches merger inside the public window: the first
+       retirement event -- the first step of C-86's staircase -- lies BEYOND one year
+       at room temperature and 2,000 P/E for this chip.  Public data shows the
+       APPROACH to the first drop, never a drop.
+
+3. CONTROL: the same paper's Table 4 (cycling at fixed 1-day retention, 0 -> 3,000 P/E)
+       0->3k P/E drift: ER:+25.9  P1:+2.4  P2:+0.8  P3:+1.5  P4:+0.8  P5:+0.8  P6:+0.6  P7:+0.8
+       cycling moves EVERY programmed state UP (more injection through degraded oxide);
+       retention moves the high states DOWN.  Opposite signatures on P5-P7: the
+       instrument separates the two drives, so 2(a)'s sign structure is retention's own.
+
+==================================================================================================
+VERDICT LINES (data side only; the model-side comparison is a later lane's job):
+  * Level-resolved, margin-free PUBLIC data exists (per-state mean/sigma vs time) but in
+    NORMALIZED units at ROOM temperature, and the staircase's first drop is outside the
+    published window.  JEDEC-class BAKE data with level-resolved retirement positions is
+    not public at any granularity found; drive-level bake results are UBER/margin-defined.
+  * The absolute calibration the parameter-free drop-time formula needs (B_i, dE_i in eV,
+    f0) is vendor-proprietary in every located source.  Order/shape tests are executable;
+    absolute t*_i positions are not, on public data as found.
