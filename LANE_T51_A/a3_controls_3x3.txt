@@ -1,0 +1,120 @@
+========================================================================================
+LANE_T51_A / a3 -- CONTROLS C2, C3, C5 AND THE CONSTRUCTION CERTIFICATES
+date: 2026-08-21   commissioned in FIELD_INSTRUMENT_V001.md section 1
+========================================================================================
+
+DECLARED BEFORE USE: TOL_SWAP = 0.25 (C2 onset agreement); TOL_BACK = 1e-03
+(C5, energy units of the unit stabilizer term; basis: three orders below
+the sector gap ~2 and one order above the largest commissioned far-side
+reading; scale surveyed in the scratchpad BEFORE this sealed run, logged in
+D24_AUDIT.txt); C3 separation criterion as pre-registered in this script's
+header; floors FLOOR_EIG = 1e-11, FLOOR_USE = 1e-09; WITNESS_MIN = 0.9.
+
+INPUTS: gate seal 5d138e87a68401f1... verified; a2 sidecar seal verified.
+Commissioned placements: near 3x3-00H (d_gen=1, w_enc_conn=3), far 3x3-11H
+(d_gen=2, w_enc_conn=5).
+
+----------------------------------------------------------------------------------------
+CONSTRUCTION CERTIFICATES (labeled; computed; never counted as controls)
+----------------------------------------------------------------------------------------
+  [V, B_src] = 0: symplectic pairing of every single-edge Z (18 edges)
+  with both source plaquette operators, both commissioned placements,
+  identically zero: TRUE  -- the source value is an exact sector label;
+  zero back-action on the written VALUE by construction.
+  X-quadrature probe quiescence: symplectic pairing of every single-edge X
+  with both probe star operators identically zero: TRUE  -- the probe bit
+  is conserved by the complementary quadrature (commutation identity).
+
+----------------------------------------------------------------------------------------
+C2 -- GAMMA-EQUIVALENT PLACEMENT SWAP AT EQUAL EARNED SEPARATION (two-way)
+----------------------------------------------------------------------------------------
+  COMPUTED FACT: the far class (d_gen=2, w_enc_conn=5) has exactly one
+  placement (singleton: TRUE) -- no swap partner exists at the far
+  separation; the far-side swap therefore runs at the largest multi-member
+  class, (d_gen=2, w_enc_conn=4): 3x3-01H <-> 3x3-21H.
+
+  near-class swap: 3x3-00H <-> 3x3-00V  [class (d_gen=1, w_enc_conn=3)]
+    3x3-00H: k_hat = 2.977 (drift 0.023)  F(0.05) = -4.088452e-04  wit 0.9964
+    3x3-00V: k_hat = 2.989 (drift 0.011)  F(0.05) = -4.539888e-04  wit 0.9964
+    both onsets bracket w_enc_conn = 3 (TOL_K): TRUE;  |k_a - k_b| = 0.012 <= TOL_SWAP: TRUE
+    F-magnitude ratio (data, not a verdict -- magnitude carries
+    winding furniture on a 3-column torus): 0.901
+    SWAP VERDICT (near-class swap) = TRUE
+
+  far-side swap: 3x3-01H <-> 3x3-21H  [class (d_gen=2, w_enc_conn=4)]
+    3x3-01H: k_hat = 3.983 (drift 0.017)  F(0.05) = +4.300056e-05  wit 0.9964
+    3x3-21H: k_hat = 3.962 (drift 0.040)  F(0.05) = +3.473983e-05  wit 0.9964
+    both onsets bracket w_enc_conn = 4 (TOL_K): TRUE;  |k_a - k_b| = 0.021 <= TOL_SWAP: TRUE
+    F-magnitude ratio (data, not a verdict -- magnitude carries
+    winding furniture on a 3-column torus): 1.238
+    SWAP VERDICT (far-side swap) = TRUE
+
+  C2 = both swap verdicts = TRUE
+
+----------------------------------------------------------------------------------------
+C3 -- THE WINDING-SECTOR SWEEP (mandatory before any sign attribution)
+----------------------------------------------------------------------------------------
+  F in every winding sector (w1, w2) of the sealed zbar1/zbar2 labels
+  [parity p <-> eigenvalue (-1)^p], both commissioned placements, every
+  commissioned lam.  Any sector with |F| < FLOOR_USE would be excluded
+  from the pattern (indeterminate) -- exclusions are printed.
+
+  PLACEMENT 3x3-00H (d_gen=1, w_enc_conn=3):
+    lam    F(+ +)          F(+ -)          F(- +)          F(- -)          wit_min  
+    0.020  -2.953375e-05  -3.196833e-05  -3.196759e-05  -3.465833e-05  0.9994
+    0.050  -4.088452e-04  -4.969432e-04  -4.967583e-04  -6.099556e-04  0.9960
+    0.100  -2.668042e-03  -3.903254e-03  -3.890975e-03  -5.936665e-03  0.9827
+      lam=0.020 sign pattern fit: character c=(0, 0), residual sign s0=-1
+      lam=0.050 sign pattern fit: character c=(0, 0), residual sign s0=-1
+      lam=0.100 sign pattern fit: character c=(0, 0), residual sign s0=-1
+    SEPARATION VERDICT at 3x3-00H (pre-registered criterion): TRUE
+    -> the reading's winding class is c=(0, 0), content-attributed sign s0=-1;
+       sign attribution scope: convention-free (winding-even class).
+    labeled cross-reference (data, not on the decision path): the
+    gate's connected-minimum winding classes at this placement =
+    [(0, 0)]; dynamical class matches the static minimum: TRUE
+
+  PLACEMENT 3x3-11H (d_gen=2, w_enc_conn=5):
+    lam    F(+ +)          F(+ -)          F(- +)          F(- -)          wit_min  
+    0.020  -8.562442e-08  +8.955338e-08  +8.955430e-08  -9.382226e-08  0.9994
+    0.050  -7.819874e-06  +8.720275e-06  +8.721666e-06  -9.828148e-06  0.9960
+    0.100  -2.240696e-04  +2.757358e-04  +2.760711e-04  -3.535493e-04  0.9828
+      lam=0.020 sign pattern fit: character c=(1, 1), residual sign s0=-1
+      lam=0.050 sign pattern fit: character c=(1, 1), residual sign s0=-1
+      lam=0.100 sign pattern fit: character c=(1, 1), residual sign s0=-1
+    SEPARATION VERDICT at 3x3-11H (pre-registered criterion): TRUE
+    -> the reading's winding class is c=(1, 1), content-attributed sign s0=-1;
+       sign attribution scope: licensed ONLY relative to the sealed zbar1/zbar2 representatives (winding-odd class; the gate's exhibit makes this scope binding).
+    labeled cross-reference (data, not on the decision path): the
+    gate's connected-minimum winding classes at this placement =
+    [(1, 1)]; dynamical class matches the static minimum: TRUE
+
+  C3 = sweep separates content sign from winding sign at both commissioned
+  placements = TRUE
+
+----------------------------------------------------------------------------------------
+C5 -- BACK-ACTION (two-way, declared tolerance)
+----------------------------------------------------------------------------------------
+  W = E0(b=-1) - E0(b=+1) in the source's sectors (winding (+1,+1)),
+  probe present (star holes) vs absent (full star set); BA = |difference|.
+
+  PLACEMENT 3x3-00H:
+    lam    W(probe present) W(probe absent)  BA           <=TOL_BACK
+    0.020  -9.469987e-07    -5.818668e-06    4.872e-06   TRUE
+    0.050  -3.619447e-05    -8.765525e-05    5.146e-05   TRUE
+    0.100  -5.559171e-04    -6.749957e-04    1.191e-04   TRUE
+    BACK-ACTION VERDICT at 3x3-00H = TRUE
+
+  PLACEMENT 3x3-11H:
+    lam    W(probe present) W(probe absent)  BA           <=TOL_BACK
+    0.020  -5.808077e-06    -5.818668e-06    1.059e-08   TRUE
+    0.050  -8.672732e-05    -8.765525e-05    9.279e-07   TRUE
+    0.100  -6.500790e-04    -6.749957e-04    2.492e-05   TRUE
+    BACK-ACTION VERDICT at 3x3-11H = TRUE
+
+  C5 = back-action below TOL_BACK = 1e-03 at both commissioned placements,
+  every commissioned lam = TRUE
+
+runtime 0.7 s.  NEXT STEP NAMED: a4 assembles the pre-registered verdicts
+V1-V5 from the sealed sidecars of a1, a2, a3.
+========================================================================================

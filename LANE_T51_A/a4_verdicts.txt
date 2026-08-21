@@ -1,0 +1,96 @@
+========================================================================================
+LANE_T51_A / a4 -- THE MEASUREMENT: PRE-REGISTERED VERDICTS V1-V5
+date: 2026-08-21   (FIELD_INSTRUMENT_V001.md section 1; C-92; gate seal
+5d138e87a68401f1... verified; sidecar seals of a1/a2/a3 verified)
+========================================================================================
+
+CALIBRATION (a1, reproduction, stated first as commissioned): CAL = TRUE
+  contact: quoted -1.99e-03, matched 00V rel diff 1.8e-03; far: quoted +1.94e-04,
+  matched 20V rel diff 1.4e-03 (TOL_CAL_REL = 5e-03).  PORT CERTIFICATE (a2,
+  lam=0.064 vs the gate's sealed prints): TRUE
+
+THE COMMISSIONED READINGS (winding sector (+1,+1); full tables in a2/a3):
+  placement  earned (d_gen, w_conn)   lam    F             
+  3x3-00H    (d_gen=1, w_enc_conn=3)    0.020  -2.953375e-05
+  3x3-00H    (d_gen=1, w_enc_conn=3)    0.050  -4.088452e-04
+  3x3-00H    (d_gen=1, w_enc_conn=3)    0.100  -2.668042e-03
+  3x3-11H    (d_gen=2, w_enc_conn=5)    0.020  -8.562442e-08
+  3x3-11H    (d_gen=2, w_enc_conn=5)    0.050  -7.819874e-06
+  3x3-11H    (d_gen=2, w_enc_conn=5)    0.100  -2.240696e-04
+
+V1  |F| exceeds the same-table measured control floor beyond contact at
+    the larger separation: min over commissioned lams |F(3x3-11H)| = 8.562e-08 >
+    control floor 1.000e-11 (= max(FLOOR_EIG, max certificate residual 8.88e-15))
+    V1 = TRUE
+
+V2  the reading follows earned geometry under the placement swap (C2,
+    both Gamma-equivalent pairs; TOL_K = 0.25, TOL_SWAP = 0.25):
+    near-class swap 3x3-00H <-> 3x3-00V: TRUE
+    far-side swap 3x3-01H <-> 3x3-21H: TRUE
+    [computed fact: the far class is a singleton -- no swap partner exists
+    at (d_gen=2, w_enc_conn=5); the far-side swap ran at (2, 4).]
+    V2 = TRUE
+
+V3  the onset-order bracket contains CONNECTED w_enc at both placements
+    (scored per placement against the sealed gate table, TOL_K = 0.25):
+    3x3-00H: k_hat = 2.977 (drift 0.023) vs w_enc_conn = 3: TRUE
+    3x3-11H: k_hat = 4.948 (drift 0.051) vs w_enc_conn = 5: TRUE
+    V3 = TRUE
+
+V4  back-action below the declared tolerance (C5, TOL_BACK = 1e-03):
+    3x3-00H: max BA over commissioned lams = 1.191e-04: TRUE
+    3x3-11H: max BA over commissioned lams = 2.492e-05: TRUE
+    V4 = TRUE
+
+V5  sign attribution licensed only if the winding-sector sweep separates
+    content sign from winding sign (C3, pre-registered character
+    criterion):
+    3x3-00H: SEPARATED -- winding class c=(0, 0), content sign s0=-1 (convention-free)
+    3x3-11H: SEPARATED -- winding class c=(1, 1), content sign s0=-1 (relative to the sealed zbar1/zbar2 convention ONLY)
+    V5 = TRUE
+
+========================================================================================
+ALL PASS = V1 AND V2 AND V3 AND V4 AND V5 = TRUE
+========================================================================================
+
+BRANCH TAKEN (as pre-registered): the record surface has a field side
+in the only sense it has earned -- a test record's own law is modified
+at a place where the written content is not, by an amount set by the
+content's value and earned separation, through the declared, priced,
+content-blind mediator (C-80's computed division of labor).  Scope
+carried with the claim: sign attribution is licensed per placement
+exactly with the scope C3 printed beside it (convention-free only for
+the winding-even class; otherwise relative to the sealed zbar
+convention); the reading is Z_2-valued in the source and nothing here
+says how it composes -- MEDIATION, COMPOSITION, SHAPE, O-39's full
+ask, and empirical contact all remain exactly as carried in
+FIELD_INSTRUMENT_V001.md section 4.
+
+NEXT STEP NAMED (the commission's own order): (a) the two-source
+composition at 4x4 FIRST -- it measures what composition IS on this
+surface, and every outcome (superposition, mod-2 saturation,
+screening) registers as the surface's own law; then (b) the Tier-2
+signed kernel over the connected/dynamical string class; then (c) the
+Tier-3 grounded tau readout.  The surviving operator combination
+(source Zbar x probe writer amplitude) feeds O-53 its field-side
+candidate.
+
+TOLERANCE REGISTRY (every tolerance used in this lane, declared before
+use in the script that used it):
+  FLOOR_EIG   = 1e-11  absolute eigenvalue-difference noise floor
+  FLOOR_USE   = 1e-09  onset-pair usability floor (= 100 x FLOOR_EIG)
+  TOL_K       = 0.25  onset-vs-integer bracket half-width
+  TOL_SWAP    = 0.25  C2 onset agreement inside a swap pair
+  TOL_BACK    = 1e-03  C5 back-action bound (energy units of the unit
+                      stabilizer term)
+  TOL_CAL_REL = 5e-03  a1 calibration reproduction (3-significant-figure
+                      targets)
+  TOL_PORT_D  = 1e-08  port certificate, Delta vs gate prints
+  TOL_PORT_F  = 1e-03  port certificate, F vs gate prints
+  WITNESS_MIN = 0.9  doublet-identity witness floor
+  eigenvalue solver: dense sector-exact eigh (LAPACK), sector dims 32/256
+  (printed and checked against the declared 2^11 bound before every run);
+  onset grid [0.004, 0.008, 0.016, 0.032, 0.064]; commissioned mediator grid [0.02, 0.05, 0.1].
+
+runtime 0.0 s (assembly only; all numbers from sealed sidecars).
+========================================================================================

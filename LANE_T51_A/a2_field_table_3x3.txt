@@ -1,0 +1,188 @@
+========================================================================================
+LANE_T51_A / a2 -- THE F TABLE AT 3x3 (the commissioned measurement)
+date: 2026-08-21   commissioned in FIELD_INSTRUMENT_V001.md section 1
+========================================================================================
+
+DECLARED BEFORE USE: commissioned mediator grid lam in [0.02, 0.05, 0.1]; onset grid [0.004, 0.008, 0.016, 0.032, 0.064]
+with the gate's estimator (smallest usable pair, usable iff both |F| >=
+FLOOR_USE = 1e-09; drift beside; FLOOR_EIG = 1e-11 beside every F);
+TOL_K = 0.25; WITNESS_MIN = 0.9; port tolerances TOL_PORT_D = 1e-08 (Delta,
+10 printed digits), TOL_PORT_F = 1e-03 (F, 4 printed digits).
+
+GATE INPUT: g1_connected_wenc.txt seal VERIFIED (sha256 5d138e87a68401f1...);
+18 placements parsed; earned quantities below are the gate's sealed table
+(the gate is input, not re-run).
+
+EARNED-SEPARATION CLASSES (d_gen descriptive, w_enc_conn earned):
+  (d_gen=1, w_enc_conn=3): 3x3-00H, 3x3-00V, 3x3-01V, 3x3-02H, 3x3-02V, 3x3-20H, 3x3-22H
+  (d_gen=1, w_enc_conn=4): 3x3-10H, 3x3-10V, 3x3-11V, 3x3-12H, 3x3-12V, 3x3-20V, 3x3-21V, 3x3-22V
+  (d_gen=2, w_enc_conn=4): 3x3-01H, 3x3-21H
+  (d_gen=2, w_enc_conn=5): 3x3-11H
+COMMISSIONED PLACEMENTS BY THE DECLARED RULE:
+  near = 3x3-00H  (d_gen=1, w_enc_conn=3)  [first of the smallest class]
+  far  = 3x3-11H  (d_gen=2, w_enc_conn=5)  [the largest class is a singleton]
+  control rows (C2, a3): 3x3-00V [swap partner of near, same class]; 3x3-01H and 3x3-21H
+  [the two-member class (d_gen=2, w_enc_conn=4)].
+
+VENUE: toric 3x3, 18 edges; full Hilbert space 2^18 = 262144.
+Diagonal conserved algebra: 9 plaquette parities (8 independent) + source
+values + Z-winding pair = 10 bits -> sector dimension 256 = 2^8 <= declared
+bound 2^11 -- CHECKED HERE BEFORE ANY eigh RUN (and asserted inside every
+sector build).  Dense sector eigh at 256 x 256: ~0.5 MB workspace -- fits.
+
+PORT CERTIFICATE (labeled; cross-implementation, not a control): lam=0.064
+  3x3-00H: Delta rel diffs (1.6e-10, 3.3e-10) <= 1e-08: TRUE;  F rel diff 4.8e-05 <= 1e-03: TRUE
+  3x3-11H: Delta rel diffs (3.9e-10, 3.3e-10) <= 1e-08: TRUE;  F rel diff 1.2e-05 <= 1e-03: TRUE
+  PORT CERTIFICATE: TRUE
+
+----------------------------------------------------------------------------------------
+THE F TABLE -- winding sector (+1,+1) (the sealed zbar convention's
+reference sector; the full winding sweep is control C3, script a3).
+Per row: the two exact sectors of ONE Hamiltonian (written b=-1, unwritten
+b=+1), the source-absent configuration beside them, and the certificate
+residual.  Earned separation stated per placement; construction coordinates
+are labels only (D-24).
+----------------------------------------------------------------------------------------
+
+PLACEMENT 3x3-00H -- COMMISSIONED near -- earned (d_gen=1 DESCRIPTIVE, w_enc_conn=3)
+  [construction labels: probe stars (0, 0),(1, 0); source plaquettes (0, 0),(1, 0)]
+  lam    Delta(b=-1)       Delta(b=+1)       F            cert-resid    witness  
+  0.020  +3.919948379e-02  +3.922901754e-02  -2.9534e-05  8.88e-15     0.9994
+  0.050  +9.498225697e-02  +9.539110217e-02  -4.0885e-04  5.33e-15     0.9964
+  0.100  +1.797748982e-01  +1.824429397e-01  -2.6680e-03  0.00e+00     0.9862
+  (cert-resid = |Delta(b=+1) - Delta(source-absent)|: CONSTRUCTION
+  CERTIFICATE of the conserving-quadrature identity, never a control;
+  E0(+1)-E0(absent)-2 residual max 1.1e-14; noise floor FLOOR_EIG = 1e-11
+  beside every F; positive control beside these zeros: the nonzero F
+  rows of this same table in written configurations (D-15).)
+  onset (declared grid [0.004, 0.008, 0.016, 0.032, 0.064]):
+    lam=0.004  F=-2.5193e-07
+    lam=0.008  F=-1.9834e-06
+    lam=0.016  F=-1.5366e-05
+    lam=0.032  F=-1.1526e-04
+    lam=0.064  F=-8.1006e-04
+    pair log-slopes: (0.004,0.008)->2.977; (0.008,0.016)->2.954; (0.016,0.032)->2.907; (0.032,0.064)->2.813
+    k_hat = 2.977 (smallest usable pair; drift 0.023; floors as declared)
+  C4 bracket (computed, both branches reachable): |k_hat - w_enc_conn| = |2.977 - 3| <= TOL_K: TRUE
+  doublet witness >= 0.9 on every row above: TRUE; min band gap 1.630
+
+PLACEMENT 3x3-00V -- control row (C2) -- earned (d_gen=1 DESCRIPTIVE, w_enc_conn=3)
+  [construction labels: probe stars (0, 0),(1, 0); source plaquettes (0, 0),(0, 1)]
+  lam    Delta(b=-1)       Delta(b=+1)       F            cert-resid    witness  
+  0.020  +3.919825441e-02  +3.922901754e-02  -3.0763e-05  8.88e-15     0.9994
+  0.050  +9.493711332e-02  +9.539110217e-02  -4.5399e-04  5.33e-15     0.9964
+  0.100  +1.791257168e-01  +1.824429397e-01  -3.3172e-03  0.00e+00     0.9861
+  (cert-resid = |Delta(b=+1) - Delta(source-absent)|: CONSTRUCTION
+  CERTIFICATE of the conserving-quadrature identity, never a control;
+  E0(+1)-E0(absent)-2 residual max 1.1e-14; noise floor FLOOR_EIG = 1e-11
+  beside every F; positive control beside these zeros: the nonzero F
+  rows of this same table in written configurations (D-15).)
+  onset (declared grid [0.004, 0.008, 0.016, 0.032, 0.064]):
+    lam=0.004  F=-2.5397e-07
+    lam=0.008  F=-2.0157e-06
+    lam=0.016  F=-1.5874e-05
+    lam=0.032  F=-1.2313e-04
+    lam=0.064  F=-9.2773e-04
+    pair log-slopes: (0.004,0.008)->2.989; (0.008,0.016)->2.977; (0.016,0.032)->2.955; (0.032,0.064)->2.914
+    k_hat = 2.989 (smallest usable pair; drift 0.011; floors as declared)
+  C4 bracket (computed, both branches reachable): |k_hat - w_enc_conn| = |2.989 - 3| <= TOL_K: TRUE
+  doublet witness >= 0.9 on every row above: TRUE; min band gap 1.567
+
+PLACEMENT 3x3-01H -- control row (C2) -- earned (d_gen=2 DESCRIPTIVE, w_enc_conn=4)
+  [construction labels: probe stars (0, 0),(1, 0); source plaquettes (0, 1),(1, 1)]
+  lam    Delta(b=-1)       Delta(b=+1)       F            cert-resid    witness  
+  0.020  +3.923022290e-02  +3.922901754e-02  +1.2054e-06  8.88e-15     0.9994
+  0.050  +9.543410273e-02  +9.539110217e-02  +4.3001e-05  5.33e-15     0.9964
+  0.100  +1.830324360e-01  +1.824429397e-01  +5.8950e-04  0.00e+00     0.9862
+  (cert-resid = |Delta(b=+1) - Delta(source-absent)|: CONSTRUCTION
+  CERTIFICATE of the conserving-quadrature identity, never a control;
+  E0(+1)-E0(absent)-2 residual max 1.1e-14; noise floor FLOOR_EIG = 1e-11
+  beside every F; positive control beside these zeros: the nonzero F
+  rows of this same table in written configurations (D-15).)
+  onset (declared grid [0.004, 0.008, 0.016, 0.032, 0.064]):
+    lam=0.004  F=+2.0236e-09
+    lam=0.008  F=+3.1991e-08
+    lam=0.016  F=+4.9969e-07
+    lam=0.032  F=+7.6188e-06
+    lam=0.064  F=+1.1060e-04
+    pair log-slopes: (0.004,0.008)->3.983; (0.008,0.016)->3.965; (0.016,0.032)->3.930; (0.032,0.064)->3.860
+    k_hat = 3.983 (smallest usable pair; drift 0.017; floors as declared)
+  C4 bracket (computed, both branches reachable): |k_hat - w_enc_conn| = |3.983 - 4| <= TOL_K: TRUE
+  doublet witness >= 0.9 on every row above: TRUE; min band gap 1.630
+
+PLACEMENT 3x3-21H -- control row (C2) -- earned (d_gen=2 DESCRIPTIVE, w_enc_conn=4)
+  [construction labels: probe stars (0, 0),(1, 0); source plaquettes (2, 1),(0, 1)]
+  lam    Delta(b=-1)       Delta(b=+1)       F            cert-resid    witness  
+  0.020  +3.923013533e-02  +3.922901754e-02  +1.1178e-06  8.88e-15     0.9994
+  0.050  +9.542584200e-02  +9.539110217e-02  +3.4740e-05  5.33e-15     0.9964
+  0.100  +1.827833923e-01  +1.824429397e-01  +3.4045e-04  0.00e+00     0.9861
+  (cert-resid = |Delta(b=+1) - Delta(source-absent)|: CONSTRUCTION
+  CERTIFICATE of the conserving-quadrature identity, never a control;
+  E0(+1)-E0(absent)-2 residual max 1.1e-14; noise floor FLOOR_EIG = 1e-11
+  beside every F; positive control beside these zeros: the nonzero F
+  rows of this same table in written configurations (D-15).)
+  onset (declared grid [0.004, 0.008, 0.016, 0.032, 0.064]):
+    lam=0.004  F=+1.9950e-09
+    lam=0.008  F=+3.1081e-08
+    lam=0.016  F=+4.7087e-07
+    lam=0.032  F=+6.7131e-06
+    lam=0.064  F=+8.2674e-05
+    pair log-slopes: (0.004,0.008)->3.962; (0.008,0.016)->3.921; (0.016,0.032)->3.834; (0.032,0.064)->3.622
+    k_hat = 3.962 (smallest usable pair; drift 0.040; floors as declared)
+  C4 bracket (computed, both branches reachable): |k_hat - w_enc_conn| = |3.962 - 4| <= TOL_K: TRUE
+  doublet witness >= 0.9 on every row above: TRUE; min band gap 1.572
+
+PLACEMENT 3x3-11H -- COMMISSIONED far -- earned (d_gen=2 DESCRIPTIVE, w_enc_conn=5)
+  [construction labels: probe stars (0, 0),(1, 0); source plaquettes (1, 1),(2, 1)]
+  lam    Delta(b=-1)       Delta(b=+1)       F            cert-resid    witness  
+  0.020  +3.922893192e-02  +3.922901754e-02  -8.5624e-08  8.88e-15     0.9994
+  0.050  +9.538328230e-02  +9.539110217e-02  -7.8199e-06  5.33e-15     0.9964
+  0.100  +1.822188701e-01  +1.824429397e-01  -2.2407e-04  0.00e+00     0.9861
+  (cert-resid = |Delta(b=+1) - Delta(source-absent)|: CONSTRUCTION
+  CERTIFICATE of the conserving-quadrature identity, never a control;
+  E0(+1)-E0(absent)-2 residual max 1.1e-14; noise floor FLOOR_EIG = 1e-11
+  beside every F; positive control beside these zeros: the nonzero F
+  rows of this same table in written configurations (D-15).)
+  onset (declared grid [0.004, 0.008, 0.016, 0.032, 0.064]):
+    lam=0.004  F=-2.8400e-11
+    lam=0.008  F=-9.0094e-10
+    lam=0.016  F=-2.8312e-08
+    lam=0.032  F=-8.7398e-07
+    lam=0.064  F=-2.6050e-05
+    pair log-slopes: (0.016,0.032)->4.948; (0.032,0.064)->4.898
+    k_hat = 4.948 (smallest usable pair; drift 0.051; floors as declared)
+  C4 bracket (computed, both branches reachable): |k_hat - w_enc_conn| = |4.948 - 5| <= TOL_K: TRUE
+  doublet witness >= 0.9 on every row above: TRUE; min band gap 1.591
+
+----------------------------------------------------------------------------------------
+SURVEY -- all 18 placements at lam = 0.05, winding sector (+1,+1), with
+earned class labels (same-table context; nothing narrowed by the placement
+rule).
+----------------------------------------------------------------------------------------
+  placement  d_gen  w_enc_conn F(0.05)        witness 
+  3x3-00H    1      3          -4.088452e-04  0.9964
+  3x3-00V    1      3          -4.539888e-04  0.9964
+  3x3-10H    1      4          +4.175797e-05  0.9964
+  3x3-10V    1      4          +4.307988e-05  0.9964
+  3x3-20H    1      3          -4.147224e-04  0.9964
+  3x3-20V    1      4          +4.307988e-05  0.9964
+  3x3-01H    2      4          +4.300056e-05  0.9964
+  3x3-01V    1      3          -4.539888e-04  0.9964
+  3x3-11H    2      5          -7.819874e-06  0.9964
+  3x3-11V    1      4          +4.307988e-05  0.9964
+  3x3-21H    2      4          +3.473983e-05  0.9964
+  3x3-21V    1      4          +4.307988e-05  0.9964
+  3x3-02H    1      3          -4.088452e-04  0.9964
+  3x3-02V    1      3          -9.079223e-04  0.9964
+  3x3-12H    1      4          +4.175797e-05  0.9964
+  3x3-12V    1      4          +8.596281e-05  0.9964
+  3x3-22H    1      3          -4.147224e-04  0.9964
+  3x3-22V    1      4          +8.596281e-05  0.9964
+
+MEASURED CONTROL FLOOR (feeds V1; the same-table certificate residuals):
+  max certificate residual over the F table = 8.88e-15; control floor =
+  max(FLOOR_EIG, that) = 1.00e-11
+
+runtime 0.8 s.  NEXT STEP NAMED: a3 (controls C2, C3, C5 + certificates),
+then a4 assembles the pre-registered verdicts V1-V5.
+========================================================================================

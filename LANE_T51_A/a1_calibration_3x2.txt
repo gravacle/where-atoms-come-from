@@ -1,0 +1,63 @@
+========================================================================================
+LANE_T51_A / a1 -- THE 3x2 CALIBRATION (reproduction, before any new number)
+date: 2026-08-21   commissioned in FIELD_INSTRUMENT_V001.md section 1
+========================================================================================
+
+DECLARED BEFORE USE: TOL_CAL_REL = 5e-03 (quoted targets carry 3 significant
+figures; half-ulp quantization <= 2.5e-3 relative, 2x taken); onset grid =
+[0.004, 0.008, 0.016, 0.032, 0.064] with FLOOR_USE = 1e-09 and FLOOR_EIG = 1e-11 (the gate's declared
+estimator, unchanged); WITNESS_MIN = 0.9; TOL_K = 0.25.
+
+REPRODUCTION TARGETS (parsed at runtime from the sealed design file
+LANE_T51_IDENT/T51_DESIGN_the-second-lump.json --
+prior data, labeled; never on any physics decision path of this lane):
+  F(contact, lam=0.05) quoted = -1.99e-03
+  F(far,     lam=0.05) quoted = +1.94e-04
+  onset orders quoted         = 3.0 and 3.9 (against w_enc 3 and 4)
+
+VENUE: toric 3x2, 12 edges; full Hilbert space 2^12 = 4096; sector-exact
+blocks via the diagonal conserved algebra (plaquettes, source values,
+Z-winding pair): dimension 32 = 2^5 <= declared bound 2^11 -- checked
+before any eigh call (asserted again inside every sector build).
+
+ALL 9 adjacent source plaquette pairs at 3x2 (probe stars (0, 0),(1, 0)), each
+with earned separation from the gate's geometry machinery (connected w_enc
+earned; d_gen descriptive -- the mixed-type demotion is binding); vertical
+pairs at Ly=2 are doubly adjacent (share two edges) -- the degenerate-proxy
+caveat above.
+
+  tag   src (constr.)      w_conn  w_old  d_gen  F(0.05)        wit      dim   
+  00H   ((0, 0), (1, 0))   3       3      1      -8.950235e-04  0.9937  32
+  10H   ((1, 0), (2, 0))   4       3      1      +1.130978e-04  0.9937  32
+  20H   ((2, 0), (0, 0))   3       3      1      -8.292711e-04  0.9937  32
+  01H   ((0, 1), (1, 1))   3       3      1      -8.950235e-04  0.9937  32
+  11H   ((1, 1), (2, 1))   4       3      1      +1.130978e-04  0.9937  32
+  21H   ((2, 1), (0, 1))   3       3      1      -8.292711e-04  0.9937  32
+  00V   ((0, 0), (0, 1))   3       3      1      -1.993612e-03  0.9937  32
+  10V   ((1, 0), (1, 1))   4       4      1      +1.937313e-04  0.9937  32
+  20V   ((2, 0), (2, 1))   4       4      1      +1.937313e-04  0.9937  32
+  (noise floor FLOOR_EIG = 1e-11 beside every F above; doublet witness
+  >= 0.9 on every row: TRUE)
+
+CALIBRATION REPRODUCTION (comparison against prior data, labeled):
+  contact target -1.99e-03 : best match 00V (w_enc_conn=3) F=-1.993612e-03,
+    rel diff 1.8e-03 <= TOL_CAL_REL, sign match: TRUE
+  far target     +1.94e-04 : best match 20V (w_enc_conn=4) F=+1.937313e-04,
+    rel diff 1.4e-03 <= TOL_CAL_REL, sign match: TRUE
+
+  onset at matched contact placement 00V: k_hat = 3.000 (drift 0.000; grid [0.004, 0.008, 0.016, 0.032, 0.064];
+    floors beside as declared); exploration quoted 3.0 -- labeled
+    cross-reference, |diff| = 0.000; my earned w_enc_conn here = 3,
+    |k_hat - w_enc_conn| <= TOL_K: TRUE (computed, informative)
+  onset at matched far placement 20V: k_hat = 3.997 (drift 0.003; grid [0.004, 0.008, 0.016, 0.032, 0.064];
+    floors beside as declared); exploration quoted 3.9 -- labeled
+    cross-reference, |diff| = 0.097; my earned w_enc_conn here = 4,
+    |k_hat - w_enc_conn| <= TOL_K: TRUE (computed, informative)
+
+CALIBRATION VERDICT (reproduction; computed booleans, both branches
+reachable -- a port that drifted would fail either match):
+  CAL = (contact value reproduced) AND (far value reproduced) = TRUE
+
+runtime 0.0 s.  NEXT STEP NAMED: a2 (the commissioned F table at 3x3)
+runs only with this reproduction stated first, as commissioned.
+========================================================================================

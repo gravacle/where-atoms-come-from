@@ -1,0 +1,473 @@
+========================================================================================
+LANE_T51_A / G1 -- THE CONNECTIVITY GATE: connected w_enc, computed exactly
+date: 2026-08-21   (commissioned in FIELD_INSTRUMENT_V001.md section 1; the
+audit's counterexample and both Second Lump critiques' repairs are binding)
+========================================================================================
+
+DECLARED BEFORE USE: LAMS = [0.004, 0.008, 0.016, 0.032, 0.064]; FLOOR_EIG = 1e-11; FLOOR_USE = 1e-09;
+TOL_K = 0.25; WITNESS_MIN = 0.9; excluded plaquette = first row-major
+non-source plaquette; winding representatives = the venue's sealed zbar1/
+zbar2 (geometry.Torus).  Definitions of eps(t) and CONNECTED: header of
+g1_connected_wenc.py, stated for reimplementation.
+
+CONSTRUCTION CERTIFICATES (labeled; never counted as controls): Z-strings
+commute with every plaquette (symplectic pairing identically 0); [V, B_p] = 0
+exactly, so source value and windings are exact sector labels.
+
+----------------------------------------------------------------------------------------
+SECTION 1 -- THE 3x2 CALIBRATION PLACEMENT (the audit's computed counterexample)
+----------------------------------------------------------------------------------------
+PLACEMENT 3x2-CAL   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (1, 1),(2, 1) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  128 elements enumerated exhaustively (the whole coset; enclosing class 64)
+  OLD-SPEC minimum:       w_enc_old  = 3   (N_min = 1; any connected representative at min: FALSE)
+    old-min witness:      {h(0,0),v(2,0),v(2,1)}  connected=FALSE  winding=(1,0)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 5; winding classes at min: [(0, 1), (1, 1)])
+    conn-min witness:     {h(2,0),h(1,1),v(1,1),v(2,1)}
+  gates: excluded-plaquette invariance lemma PASSED over all valid choices; winding-representative exhibit: 64 parity flips under the shifted W1 representative, all-and-only-winding-odd = TRUE (the declared convention is the sealed zbar1/zbar2); unconstrained minimum 1 agrees with the sealed coset_min_np scan.
+  dynamics (sector-exact; sector dim 32; doublet witness min 0.9897 >= 0.9: TRUE; doublet-to-band gap min 1.736):
+    lam=0.004  Delta(-1)=+7.968510437e-03  Delta(+1)=+7.968505590e-03  F=+4.847e-09
+    lam=0.008  Delta(-1)=+1.587607058e-02  Delta(+1)=+1.587599329e-02  F=+7.729e-08
+    lam=0.016  Delta(-1)=+3.152034796e-02  Delta(+1)=+3.151912030e-02  F=+1.228e-06
+    lam=0.032  Delta(-1)=+6.220700888e-02  Delta(+1)=+6.218766928e-02  F=+1.934e-05
+    lam=0.064  Delta(-1)=+1.217785178e-01  Delta(+1)=+1.214797314e-01  F=+2.988e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.995; (0.008,0.016)->3.990; (0.016,0.032)->3.978; (0.032,0.064)->3.949
+  onset k_hat = 3.995  (smallest usable pair; drift to next pair = 0.005; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : FALSE
+
+  CROSS-REFERENCES (the audit's numbers, quoted as labeled data, NEVER on a
+  decision path): audit coset minimum 3; audit measured onset 4.0
+  (F/lam^4 -> 18.9 over lam = 0.004..0.064).
+    my w_enc_old  = 3  (audit said 3): agree = TRUE
+    my k_hat      = 3.995 (audit said 4.0): |diff| = 0.005
+    my F/lam^4 at lam=0.004 = 18.94 (audit said -> 18.9)
+
+  GATE VERDICT G1a (counterexample resolves; computed, both branches reachable):
+    the CONNECTED minimum matches the measured onset AND the old-spec
+    minimum differs from the connected minimum at this placement:
+    G1a = b_conn AND (w_enc_conn != w_enc_old) AND NOT b_old = TRUE
+
+----------------------------------------------------------------------------------------
+SECTION 2 -- EVERY 3x3 PLACEMENT THE FIRST COMPUTATION WILL USE
+(probe stars (0,0),(1,0); ALL 18 adjacent source plaquette pairs enumerated,
+so every choice of the two commissioned separations -- and the Gamma-
+equivalent placement-swap control -- is covered)
+----------------------------------------------------------------------------------------
+PLACEMENT 3x3-00H   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (0, 0),(1, 0) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 3   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 3   (N_min = 1; any connected representative at min: TRUE)
+    old-min witness:      {h(0,1),v(0,0),v(1,0)}  connected=TRUE  winding=(0,0)
+  CONNECTED minimum:      w_enc_conn = 3   (N_min = 1; winding classes at min: [(0, 0)])
+    conn-min witness:     {h(0,1),v(0,0),v(1,0)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.756):
+    lam=0.004  Delta(-1)=+7.967999118e-03  Delta(+1)=+7.968251053e-03  F=-2.519e-07
+    lam=0.008  Delta(-1)=+1.587198612e-02  Delta(+1)=+1.587396956e-02  F=-1.983e-06
+    lam=0.016  Delta(-1)=+3.148778504e-02  Delta(+1)=+3.150315133e-02  F=-1.537e-05
+    lam=0.032  Delta(-1)=+6.194878287e-02  Delta(+1)=+6.206404711e-02  F=-1.153e-04
+    lam=0.064  Delta(-1)=+1.197632522e-01  Delta(+1)=+1.205733132e-01  F=-8.101e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->2.977; (0.008,0.016)->2.954; (0.016,0.032)->2.907; (0.032,0.064)->2.813
+  onset k_hat = 2.977  (smallest usable pair; drift to next pair = 0.023; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-00V   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (0, 0),(0, 1) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 3   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 3   (N_min = 1; any connected representative at min: TRUE)
+    old-min witness:      {h(0,1),v(0,0),v(1,0)}  connected=TRUE  winding=(0,0)
+  CONNECTED minimum:      w_enc_conn = 3   (N_min = 1; winding classes at min: [(0, 0)])
+    conn-min witness:     {h(0,1),v(0,0),v(1,0)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.717):
+    lam=0.004  Delta(-1)=+7.967997087e-03  Delta(+1)=+7.968251053e-03  F=-2.540e-07
+    lam=0.008  Delta(-1)=+1.587195387e-02  Delta(+1)=+1.587396956e-02  F=-2.016e-06
+    lam=0.016  Delta(-1)=+3.148727738e-02  Delta(+1)=+3.150315133e-02  F=-1.587e-05
+    lam=0.032  Delta(-1)=+6.194092133e-02  Delta(+1)=+6.206404711e-02  F=-1.231e-04
+    lam=0.064  Delta(-1)=+1.196455809e-01  Delta(+1)=+1.205733132e-01  F=-9.277e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->2.989; (0.008,0.016)->2.977; (0.016,0.032)->2.955; (0.032,0.064)->2.914
+  onset k_hat = 2.989  (smallest usable pair; drift to next pair = 0.011; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-10H   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (1, 0),(2, 0) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 3; any connected representative at min: TRUE)
+    old-min witness:      {h(0,0),v(2,0),v(2,1),v(2,2)}  connected=FALSE  winding=(1,0)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 2; winding classes at min: [(0, 1)])
+    conn-min witness:     {h(2,0),h(1,1),v(1,0),v(2,0)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.717):
+    lam=0.004  Delta(-1)=+7.968253072e-03  Delta(+1)=+7.968251053e-03  F=+2.019e-09
+    lam=0.008  Delta(-1)=+1.587400142e-02  Delta(+1)=+1.587396956e-02  F=+3.186e-08
+    lam=0.016  Delta(-1)=+3.150364683e-02  Delta(+1)=+3.150315133e-02  F=+4.955e-07
+    lam=0.032  Delta(-1)=+6.207153203e-02  Delta(+1)=+6.206404711e-02  F=+7.485e-06
+    lam=0.064  Delta(-1)=+1.206796561e-01  Delta(+1)=+1.205733132e-01  F=+1.063e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.980; (0.008,0.016)->3.959; (0.016,0.032)->3.917; (0.032,0.064)->3.829
+  onset k_hat = 3.980  (smallest usable pair; drift to next pair = 0.021; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-10V   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (1, 0),(1, 1) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 3; any connected representative at min: TRUE)
+    old-min witness:      {h(2,0),h(1,1),v(1,0),v(2,0)}  connected=TRUE  winding=(0,1)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 2; winding classes at min: [(0, 1)])
+    conn-min witness:     {h(2,0),h(1,1),v(1,0),v(2,0)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.715):
+    lam=0.004  Delta(-1)=+7.968253076e-03  Delta(+1)=+7.968251053e-03  F=+2.024e-09
+    lam=0.008  Delta(-1)=+1.587400155e-02  Delta(+1)=+1.587396956e-02  F=+3.199e-08
+    lam=0.016  Delta(-1)=+3.150365111e-02  Delta(+1)=+3.150315133e-02  F=+4.998e-07
+    lam=0.032  Delta(-1)=+6.207167164e-02  Delta(+1)=+6.206404711e-02  F=+7.625e-06
+    lam=0.064  Delta(-1)=+1.206842458e-01  Delta(+1)=+1.205733132e-01  F=+1.109e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.983; (0.008,0.016)->3.966; (0.016,0.032)->3.931; (0.032,0.064)->3.863
+  onset k_hat = 3.983  (smallest usable pair; drift to next pair = 0.017; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-20H   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (2, 0),(0, 0) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 3   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 3   (N_min = 1; any connected representative at min: TRUE)
+    old-min witness:      {h(0,1),v(0,0),v(1,0)}  connected=TRUE  winding=(0,0)
+  CONNECTED minimum:      w_enc_conn = 3   (N_min = 1; winding classes at min: [(0, 0)])
+    conn-min witness:     {h(0,1),v(0,0),v(1,0)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.718):
+    lam=0.004  Delta(-1)=+7.967999098e-03  Delta(+1)=+7.968251053e-03  F=-2.520e-07
+    lam=0.008  Delta(-1)=+1.587198547e-02  Delta(+1)=+1.587396956e-02  F=-1.984e-06
+    lam=0.016  Delta(-1)=+3.148776447e-02  Delta(+1)=+3.150315133e-02  F=-1.539e-05
+    lam=0.032  Delta(-1)=+6.194813742e-02  Delta(+1)=+6.206404711e-02  F=-1.159e-04
+    lam=0.064  Delta(-1)=+1.197434172e-01  Delta(+1)=+1.205733132e-01  F=-8.299e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->2.977; (0.008,0.016)->2.955; (0.016,0.032)->2.913; (0.032,0.064)->2.840
+  onset k_hat = 2.977  (smallest usable pair; drift to next pair = 0.022; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-20V   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (2, 0),(2, 1) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 3; any connected representative at min: TRUE)
+    old-min witness:      {h(1,0),h(2,1),v(0,0),v(2,0)}  connected=TRUE  winding=(0,1)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 2; winding classes at min: [(0, 1)])
+    conn-min witness:     {h(1,0),h(2,1),v(0,0),v(2,0)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.715):
+    lam=0.004  Delta(-1)=+7.968253076e-03  Delta(+1)=+7.968251053e-03  F=+2.024e-09
+    lam=0.008  Delta(-1)=+1.587400155e-02  Delta(+1)=+1.587396956e-02  F=+3.199e-08
+    lam=0.016  Delta(-1)=+3.150365111e-02  Delta(+1)=+3.150315133e-02  F=+4.998e-07
+    lam=0.032  Delta(-1)=+6.207167164e-02  Delta(+1)=+6.206404711e-02  F=+7.625e-06
+    lam=0.064  Delta(-1)=+1.206842458e-01  Delta(+1)=+1.205733132e-01  F=+1.109e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.983; (0.008,0.016)->3.966; (0.016,0.032)->3.931; (0.032,0.064)->3.863
+  onset k_hat = 3.983  (smallest usable pair; drift to next pair = 0.017; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-01H   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (0, 1),(1, 1) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 2, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 3; any connected representative at min: TRUE)
+    old-min witness:      {h(0,1),v(0,0),v(1,1),v(1,2)}  connected=TRUE  winding=(1,0)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 3; winding classes at min: [(1, 0)])
+    conn-min witness:     {h(0,1),v(0,0),v(1,1),v(1,2)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.756):
+    lam=0.004  Delta(-1)=+7.968253076e-03  Delta(+1)=+7.968251053e-03  F=+2.024e-09
+    lam=0.008  Delta(-1)=+1.587400155e-02  Delta(+1)=+1.587396956e-02  F=+3.199e-08
+    lam=0.016  Delta(-1)=+3.150365102e-02  Delta(+1)=+3.150315133e-02  F=+4.997e-07
+    lam=0.032  Delta(-1)=+6.207166591e-02  Delta(+1)=+6.206404711e-02  F=+7.619e-06
+    lam=0.064  Delta(-1)=+1.206839104e-01  Delta(+1)=+1.205733132e-01  F=+1.106e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.983; (0.008,0.016)->3.965; (0.016,0.032)->3.930; (0.032,0.064)->3.860
+  onset k_hat = 3.983  (smallest usable pair; drift to next pair = 0.017; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-01V   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (0, 1),(0, 2) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 3   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 3   (N_min = 1; any connected representative at min: TRUE)
+    old-min witness:      {h(0,2),v(0,2),v(1,2)}  connected=TRUE  winding=(0,0)
+  CONNECTED minimum:      w_enc_conn = 3   (N_min = 1; winding classes at min: [(0, 0)])
+    conn-min witness:     {h(0,2),v(0,2),v(1,2)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.717):
+    lam=0.004  Delta(-1)=+7.967997087e-03  Delta(+1)=+7.968251053e-03  F=-2.540e-07
+    lam=0.008  Delta(-1)=+1.587195387e-02  Delta(+1)=+1.587396956e-02  F=-2.016e-06
+    lam=0.016  Delta(-1)=+3.148727738e-02  Delta(+1)=+3.150315133e-02  F=-1.587e-05
+    lam=0.032  Delta(-1)=+6.194092133e-02  Delta(+1)=+6.206404711e-02  F=-1.231e-04
+    lam=0.064  Delta(-1)=+1.196455809e-01  Delta(+1)=+1.205733132e-01  F=-9.277e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->2.989; (0.008,0.016)->2.977; (0.016,0.032)->2.955; (0.032,0.064)->2.914
+  onset k_hat = 2.989  (smallest usable pair; drift to next pair = 0.011; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-11H   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (1, 1),(2, 1) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 5   (d_gen = 2, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 1; any connected representative at min: FALSE)
+    old-min witness:      {h(0,0),v(2,0),v(2,1),v(2,2)}  connected=FALSE  winding=(1,0)
+  CONNECTED minimum:      w_enc_conn = 5   (N_min = 7; winding classes at min: [(1, 1)])
+    conn-min witness:     {h(1,0),h(2,2),v(2,0),v(2,1),v(0,2)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.733):
+    lam=0.004  Delta(-1)=+7.968251024e-03  Delta(+1)=+7.968251053e-03  F=-2.840e-11
+    lam=0.008  Delta(-1)=+1.587396866e-02  Delta(+1)=+1.587396956e-02  F=-9.009e-10
+    lam=0.016  Delta(-1)=+3.150312302e-02  Delta(+1)=+3.150315133e-02  F=-2.831e-08
+    lam=0.032  Delta(-1)=+6.206317313e-02  Delta(+1)=+6.206404711e-02  F=-8.740e-07
+    lam=0.064  Delta(-1)=+1.205472635e-01  Delta(+1)=+1.205733132e-01  F=-2.605e-05
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.016,0.032)->4.948; (0.032,0.064)->4.898
+  onset k_hat = 4.948  (smallest usable pair; drift to next pair = 0.051; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : FALSE
+
+PLACEMENT 3x3-11V   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (1, 1),(1, 2) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 3; any connected representative at min: TRUE)
+    old-min witness:      {h(2,0),h(1,2),v(1,2),v(2,2)}  connected=TRUE  winding=(0,1)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 2; winding classes at min: [(0, 1)])
+    conn-min witness:     {h(2,0),h(1,2),v(1,2),v(2,2)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.715):
+    lam=0.004  Delta(-1)=+7.968253076e-03  Delta(+1)=+7.968251053e-03  F=+2.024e-09
+    lam=0.008  Delta(-1)=+1.587400155e-02  Delta(+1)=+1.587396956e-02  F=+3.199e-08
+    lam=0.016  Delta(-1)=+3.150365111e-02  Delta(+1)=+3.150315133e-02  F=+4.998e-07
+    lam=0.032  Delta(-1)=+6.207167164e-02  Delta(+1)=+6.206404711e-02  F=+7.625e-06
+    lam=0.064  Delta(-1)=+1.206842458e-01  Delta(+1)=+1.205733132e-01  F=+1.109e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.983; (0.008,0.016)->3.966; (0.016,0.032)->3.931; (0.032,0.064)->3.863
+  onset k_hat = 3.983  (smallest usable pair; drift to next pair = 0.017; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-21H   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (2, 1),(0, 1) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 2, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 4; any connected representative at min: TRUE)
+    old-min witness:      {h(0,1),v(0,0),v(1,1),v(1,2)}  connected=TRUE  winding=(1,0)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 3; winding classes at min: [(1, 0)])
+    conn-min witness:     {h(0,1),v(0,0),v(1,1),v(1,2)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.721):
+    lam=0.004  Delta(-1)=+7.968253048e-03  Delta(+1)=+7.968251053e-03  F=+1.995e-09
+    lam=0.008  Delta(-1)=+1.587400064e-02  Delta(+1)=+1.587396956e-02  F=+3.108e-08
+    lam=0.016  Delta(-1)=+3.150362219e-02  Delta(+1)=+3.150315133e-02  F=+4.709e-07
+    lam=0.032  Delta(-1)=+6.207076025e-02  Delta(+1)=+6.206404711e-02  F=+6.713e-06
+    lam=0.064  Delta(-1)=+1.206559873e-01  Delta(+1)=+1.205733132e-01  F=+8.267e-05
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.962; (0.008,0.016)->3.921; (0.016,0.032)->3.834; (0.032,0.064)->3.622
+  onset k_hat = 3.962  (smallest usable pair; drift to next pair = 0.040; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-21V   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (2, 1),(2, 2) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 3; any connected representative at min: TRUE)
+    old-min witness:      {h(1,0),h(2,2),v(0,2),v(2,2)}  connected=TRUE  winding=(0,1)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 2; winding classes at min: [(0, 1)])
+    conn-min witness:     {h(1,0),h(2,2),v(0,2),v(2,2)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.715):
+    lam=0.004  Delta(-1)=+7.968253076e-03  Delta(+1)=+7.968251053e-03  F=+2.024e-09
+    lam=0.008  Delta(-1)=+1.587400155e-02  Delta(+1)=+1.587396956e-02  F=+3.199e-08
+    lam=0.016  Delta(-1)=+3.150365111e-02  Delta(+1)=+3.150315133e-02  F=+4.998e-07
+    lam=0.032  Delta(-1)=+6.207167164e-02  Delta(+1)=+6.206404711e-02  F=+7.625e-06
+    lam=0.064  Delta(-1)=+1.206842458e-01  Delta(+1)=+1.205733132e-01  F=+1.109e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.983; (0.008,0.016)->3.966; (0.016,0.032)->3.931; (0.032,0.064)->3.863
+  onset k_hat = 3.983  (smallest usable pair; drift to next pair = 0.017; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-02H   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (0, 2),(1, 2) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 3   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 3   (N_min = 1; any connected representative at min: TRUE)
+    old-min witness:      {h(0,2),v(0,2),v(1,2)}  connected=TRUE  winding=(0,0)
+  CONNECTED minimum:      w_enc_conn = 3   (N_min = 1; winding classes at min: [(0, 0)])
+    conn-min witness:     {h(0,2),v(0,2),v(1,2)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.756):
+    lam=0.004  Delta(-1)=+7.967999118e-03  Delta(+1)=+7.968251053e-03  F=-2.519e-07
+    lam=0.008  Delta(-1)=+1.587198612e-02  Delta(+1)=+1.587396956e-02  F=-1.983e-06
+    lam=0.016  Delta(-1)=+3.148778504e-02  Delta(+1)=+3.150315133e-02  F=-1.537e-05
+    lam=0.032  Delta(-1)=+6.194878287e-02  Delta(+1)=+6.206404711e-02  F=-1.153e-04
+    lam=0.064  Delta(-1)=+1.197632522e-01  Delta(+1)=+1.205733132e-01  F=-8.101e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->2.977; (0.008,0.016)->2.954; (0.016,0.032)->2.907; (0.032,0.064)->2.813
+  onset k_hat = 2.977  (smallest usable pair; drift to next pair = 0.023; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-02V   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (0, 2),(0, 0) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 3   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 3   (N_min = 2; any connected representative at min: TRUE)
+    old-min witness:      {h(0,1),v(0,0),v(1,0)}  connected=TRUE  winding=(0,0)
+  CONNECTED minimum:      w_enc_conn = 3   (N_min = 2; winding classes at min: [(0, 0)])
+    conn-min witness:     {h(0,1),v(0,0),v(1,0)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.689):
+    lam=0.004  Delta(-1)=+7.967743120e-03  Delta(+1)=+7.968251053e-03  F=-5.079e-07
+    lam=0.008  Delta(-1)=+1.586993819e-02  Delta(+1)=+1.587396956e-02  F=-4.031e-06
+    lam=0.016  Delta(-1)=+3.147140344e-02  Delta(+1)=+3.150315133e-02  F=-3.175e-05
+    lam=0.032  Delta(-1)=+6.181779812e-02  Delta(+1)=+6.206404711e-02  F=-2.462e-04
+    lam=0.064  Delta(-1)=+1.187181490e-01  Delta(+1)=+1.205733132e-01  F=-1.855e-03
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->2.989; (0.008,0.016)->2.977; (0.016,0.032)->2.955; (0.032,0.064)->2.913
+  onset k_hat = 2.989  (smallest usable pair; drift to next pair = 0.011; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-12H   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (1, 2),(2, 2) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 3; any connected representative at min: TRUE)
+    old-min witness:      {h(0,0),v(2,0),v(2,1),v(2,2)}  connected=FALSE  winding=(1,0)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 2; winding classes at min: [(0, 1)])
+    conn-min witness:     {h(2,0),h(1,2),v(1,2),v(2,2)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.717):
+    lam=0.004  Delta(-1)=+7.968253072e-03  Delta(+1)=+7.968251053e-03  F=+2.019e-09
+    lam=0.008  Delta(-1)=+1.587400142e-02  Delta(+1)=+1.587396956e-02  F=+3.186e-08
+    lam=0.016  Delta(-1)=+3.150364683e-02  Delta(+1)=+3.150315133e-02  F=+4.955e-07
+    lam=0.032  Delta(-1)=+6.207153203e-02  Delta(+1)=+6.206404711e-02  F=+7.485e-06
+    lam=0.064  Delta(-1)=+1.206796561e-01  Delta(+1)=+1.205733132e-01  F=+1.063e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.980; (0.008,0.016)->3.959; (0.016,0.032)->3.917; (0.032,0.064)->3.829
+  onset k_hat = 3.980  (smallest usable pair; drift to next pair = 0.021; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-12V   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (1, 2),(1, 0) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 6; any connected representative at min: TRUE)
+    old-min witness:      {h(2,0),h(1,1),v(1,0),v(2,0)}  connected=TRUE  winding=(0,1)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 4; winding classes at min: [(0, 1)])
+    conn-min witness:     {h(2,0),h(1,1),v(1,0),v(2,0)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.688):
+    lam=0.004  Delta(-1)=+7.968255100e-03  Delta(+1)=+7.968251053e-03  F=+4.047e-09
+    lam=0.008  Delta(-1)=+1.587403354e-02  Delta(+1)=+1.587396956e-02  F=+6.398e-08
+    lam=0.016  Delta(-1)=+3.150415065e-02  Delta(+1)=+3.150315133e-02  F=+9.993e-07
+    lam=0.032  Delta(-1)=+6.207928143e-02  Delta(+1)=+6.206404711e-02  F=+1.523e-05
+    lam=0.064  Delta(-1)=+1.207943675e-01  Delta(+1)=+1.205733132e-01  F=+2.211e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.983; (0.008,0.016)->3.965; (0.016,0.032)->3.930; (0.032,0.064)->3.859
+  onset k_hat = 3.983  (smallest usable pair; drift to next pair = 0.017; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-22H   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (2, 2),(0, 2) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 3   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 3   (N_min = 1; any connected representative at min: TRUE)
+    old-min witness:      {h(0,2),v(0,2),v(1,2)}  connected=TRUE  winding=(0,0)
+  CONNECTED minimum:      w_enc_conn = 3   (N_min = 1; winding classes at min: [(0, 0)])
+    conn-min witness:     {h(0,2),v(0,2),v(1,2)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.718):
+    lam=0.004  Delta(-1)=+7.967999098e-03  Delta(+1)=+7.968251053e-03  F=-2.520e-07
+    lam=0.008  Delta(-1)=+1.587198547e-02  Delta(+1)=+1.587396956e-02  F=-1.984e-06
+    lam=0.016  Delta(-1)=+3.148776447e-02  Delta(+1)=+3.150315133e-02  F=-1.539e-05
+    lam=0.032  Delta(-1)=+6.194813742e-02  Delta(+1)=+6.206404711e-02  F=-1.159e-04
+    lam=0.064  Delta(-1)=+1.197434172e-01  Delta(+1)=+1.205733132e-01  F=-8.299e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->2.977; (0.008,0.016)->2.955; (0.016,0.032)->2.913; (0.032,0.064)->2.840
+  onset k_hat = 2.977  (smallest usable pair; drift to next pair = 0.022; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+PLACEMENT 3x3-22V   [construction labels: probe stars (0, 0),(1, 0); source plaquettes (2, 2),(2, 0) -- coordinates are construction data, claims are in earned units]
+  earned separation:      w_enc_conn = 4   (d_gen = 1, DESCRIPTIVE -- mixed-type, demoted per critique repair)
+  coset:                  1024 elements enumerated exhaustively (the whole coset; enclosing class 512)
+  OLD-SPEC minimum:       w_enc_old  = 4   (N_min = 6; any connected representative at min: TRUE)
+    old-min witness:      {h(1,0),h(2,1),v(0,0),v(2,0)}  connected=TRUE  winding=(0,1)
+  CONNECTED minimum:      w_enc_conn = 4   (N_min = 4; winding classes at min: [(0, 1)])
+    conn-min witness:     {h(1,0),h(2,1),v(0,0),v(2,0)}
+  dynamics (sector-exact; sector dim 256; doublet witness min 0.9942 >= 0.9: TRUE; doublet-to-band gap min 1.688):
+    lam=0.004  Delta(-1)=+7.968255100e-03  Delta(+1)=+7.968251053e-03  F=+4.047e-09
+    lam=0.008  Delta(-1)=+1.587403354e-02  Delta(+1)=+1.587396956e-02  F=+6.398e-08
+    lam=0.016  Delta(-1)=+3.150415065e-02  Delta(+1)=+3.150315133e-02  F=+9.993e-07
+    lam=0.032  Delta(-1)=+6.207928143e-02  Delta(+1)=+6.206404711e-02  F=+1.523e-05
+    lam=0.064  Delta(-1)=+1.207943675e-01  Delta(+1)=+1.205733132e-01  F=+2.211e-04
+  onset pair log-slopes (usable pairs, |F| >= FLOOR_USE=1e-09): (0.004,0.008)->3.983; (0.008,0.016)->3.965; (0.016,0.032)->3.930; (0.032,0.064)->3.859
+  onset k_hat = 3.983  (smallest usable pair; drift to next pair = 0.017; noise floor FLOOR_EIG = 1e-11 beside every F above)
+  COMPUTED COMPARISON (TOL_K = 0.25):
+    onset matches CONNECTED minimum  |k_hat - w_enc_conn| <= TOL_K : TRUE
+    onset matches OLD-SPEC minimum   |k_hat - w_enc_old|  <= TOL_K : TRUE
+
+----------------------------------------------------------------------------------------
+SECTION 3 -- THE 3x3 TABLE, GROUPED INTO EARNED-SEPARATION CLASSES
+----------------------------------------------------------------------------------------
+  placement  d_gen  w_enc_old  w_enc_conn k_hat    b_conn   b_old    wit   
+  3x3-00H    1      3          3          2.977    TRUE     TRUE     ok    
+  3x3-00V    1      3          3          2.989    TRUE     TRUE     ok    
+  3x3-10H    1      4          4          3.980    TRUE     TRUE     ok    
+  3x3-10V    1      4          4          3.983    TRUE     TRUE     ok    
+  3x3-20H    1      3          3          2.977    TRUE     TRUE     ok    
+  3x3-20V    1      4          4          3.983    TRUE     TRUE     ok    
+  3x3-01H    2      4          4          3.983    TRUE     TRUE     ok    
+  3x3-01V    1      3          3          2.989    TRUE     TRUE     ok    
+  3x3-11H    2      4          5          4.948    TRUE     FALSE    ok    
+  3x3-11V    1      4          4          3.983    TRUE     TRUE     ok    
+  3x3-21H    2      4          4          3.962    TRUE     TRUE     ok    
+  3x3-21V    1      4          4          3.983    TRUE     TRUE     ok    
+  3x3-02H    1      3          3          2.977    TRUE     TRUE     ok    
+  3x3-02V    1      3          3          2.989    TRUE     TRUE     ok    
+  3x3-12H    1      4          4          3.980    TRUE     TRUE     ok    
+  3x3-12V    1      4          4          3.983    TRUE     TRUE     ok    
+  3x3-22H    1      3          3          2.977    TRUE     TRUE     ok    
+  3x3-22V    1      4          4          3.983    TRUE     TRUE     ok    
+
+  earned-separation classes (d_gen DESCRIPTIVE, w_enc_conn earned):
+    (d_gen=1, w_enc_conn=3): 7 placements: 3x3-00H, 3x3-00V, 3x3-20H, 3x3-01V, 3x3-02H, 3x3-02V, 3x3-22H
+    (d_gen=1, w_enc_conn=4): 8 placements: 3x3-10H, 3x3-10V, 3x3-20V, 3x3-11V, 3x3-21V, 3x3-12H, 3x3-12V, 3x3-22V
+    (d_gen=2, w_enc_conn=4): 2 placements: 3x3-01H, 3x3-21H
+    (d_gen=2, w_enc_conn=5): 1 placements: 3x3-11H
+  the venue affords 2 distinct descriptive d_gen values [1, 2]; the earned
+  quantity w_enc_conn takes values [3, 4, 5] and is PER PLACEMENT (C-93's repair:
+  V3 scores against connected w_enc placement by placement).
+
+  GATE VERDICT G1b (3x3): placements where old-spec and connected minima
+  DIFFER: 1 of 18  [3x3-11H]
+  G1b = (onset matches w_enc_conn at every measurable placement) AND
+        (onset fails w_enc_old at every differing placement) = TRUE
+  all 18 placements measurable at this grid: TRUE
+
+  GATE VERDICT G1 (the connectivity gate) = G1a AND G1b = TRUE
+
+----------------------------------------------------------------------------------------
+SECTION 4 -- PRIOR-ART COMPARISON (built independently FIRST; compared AFTER)
+----------------------------------------------------------------------------------------
+  source: LANE_T51_IDENT/FOURTH_rigidity_OUT.txt (C-93, sealed; read only
+  after every number above was computed).  Tolerances declared:
+  TOL_CMP_F = 1e-4 rel (their 7-digit prints), TOL_CMP_F4 = 1e-3 rel
+  (their 4-digit prints).
+
+  [AGREE] 3x2-CAL static minima (Part B) -- theirs (old=3, conn=4) vs mine (old=3, conn=4)
+  [AGREE] 3x2-CAL F(lam) values (Part C, 5 shared lams) -- worst relative difference 1.6e-06 (tol 1e-04)
+  [AGREE] 3x3 ((1, 1), (2, 1)) static minima (Part E) -- theirs (old=4, conn=5) vs mine (old=4, conn=5)
+  [AGREE] 3x3 ((1, 1), (2, 1)) F(0.064) (Part E) -- theirs -2.6050e-05 vs mine -2.6050e-05 (rel diff 1.2e-05, tol 1e-03)
+  [AGREE] 3x3 ((1, 2), (2, 2)) static minima (Part E) -- theirs (old=4, conn=4) vs mine (old=4, conn=4)
+  [AGREE] 3x3 ((1, 2), (2, 2)) F(0.064) (Part E) -- theirs 1.0630e-04 vs mine 1.0634e-04 (rel diff 4.0e-04, tol 1e-03)
+
+  ESTIMATOR-DISCIPLINE DIFFERENCE, REPORTED (not reconciled): their onset
+  ladders include slope pairs whose |F| sits below this lane's declared
+  FLOOR_USE = 1e-09 (e.g. their first 3x3 ((1,1),(2,1)) rung uses
+  F at lam=[0.004, 0.008], values ['-2.84e-11', '-9.01e-10'] -- below the floor this lane declared);
+  on the smallest pair PASSING my floor the slopes coincide with their
+  corresponding ladder rung to the printed digits.  Their raw F values,
+  where printed, agree with mine (rows above); the ladders differ only in
+  which pairs each lane admits into the estimate.
+
+  CROSS-CHECK TALLY: 6/6 overlapping comparisons AGREE.  Any DIFFER row
+  above stands as a finding; none was reconciled.
+----------------------------------------------------------------------------------------
+runtime 1.4 s; exact F_2 machinery on the geometry path; float tolerances
+declared above for every eigenvalue; every fit carries its noise floor.
+NEXT STEP NAMED (no route closes without one): with the gate landed, the
+first computation (V1-V5 of FIELD_INSTRUMENT_V001.md section 1) scores V3
+against w_enc_conn per placement as computed here; the winding-sector sweep
+(control 3) uses the same declared zbar convention this gate declared.
+========================================================================================

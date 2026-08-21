@@ -1,0 +1,108 @@
+LANE_T51_A / D24_AUDIT -- 2026-08-21 -- the connectivity gate (g1_connected_wenc)
+
+D-24 STATEMENT. Every separation CLAIM in this lane is stated in earned quantities:
+connected w_enc (carries the earned separation) and d_gen (DESCRIPTIVE ONLY -- the
+mixed-type demotion from the Second Lump critique is binding).  Lattice coordinates
+appearing in g1_connected_wenc.txt are construction labels identifying placements;
+no claim is stated in them.
+
+DECLARED CONVENTIONS (also in the sealed txt header, stated before any result):
+enclosure parity over the cycle basis {all plaquette boundaries minus one excluded
+non-source plaquette} + {zbar1, zbar2} (the venue's sealed winding representatives,
+geometry.Torus); excluded-plaquette independence PROVED by computed lemma over all
+valid choices; winding-representative dependence of the parity of winding-odd
+elements MEASURED by computed exhibit (all-and-only winding-odd elements flip under
+a shifted W1 representative) -- the declared zbar convention is the one whose labels
+the dynamics' sector decomposition uses, which is what makes eps(t) the source-value
+sensitivity bit at fixed sector labels.  Connectivity: support-edge graph, adjacency
+= shared lattice vertex, single component.
+
+ERROR LOG.
+  - No computational errors surfaced in either execution; every asserted gate
+    (cycle-basis rank, admissibility of all coset elements, excluded-plaquette
+    lemma, sealed coset_min_np cross-implementation gate, sector dimensions 32/256,
+    doublet witness floor) passed on both runs.
+  - REVISION BEFORE SEAL: the first execution's Section 4 printed the prior-art
+    lines as a raw grep dump; before final sealing it was replaced by the aligned
+    computed comparison (runtime-parsed, tolerances declared, agreement booleans).
+    Sections 0-3 are deterministic and reproduced identically on the rerun; no
+    number changed.  The superseded seal was
+    4cf862b112a9996f81cd074846e6ededb1d33d85d77b295293a4d348fcf3976f; the standing
+    seal is in g1_connected_wenc.txt.sha256.
+
+DISCIPLINE NOTES CARRIED FORWARD TO THE FIRST COMPUTATION.
+  - Estimator-floor difference vs the fourth-angle lane (recorded, not reconciled):
+    their onset ladders admit slope pairs whose |F| sits below this lane's declared
+    FLOOR_USE = 1e-9; underlying F values agree to printed digits everywhere they
+    overlap (6/6 cross-checks AGREE).  V3's estimator should keep the declared-floor
+    discipline of this gate.
+  - Winding character of the minima (feeds control 3, the mandatory winding-sector
+    sweep): at the 3x2 calibration the connected minimum (weight 4) is achieved ONLY
+    in winding-odd classes {(0,1),(1,1)}; at 3x3 placement ((1,1),(2,1)) only in
+    (1,1).  The enclosure parity of winding-odd strings is representative-dependent
+    (the computed exhibit), so the winding-sector sweep is load-bearing before any
+    sign attribution at these venues, exactly as FIELD_INSTRUMENT_V001.md control
+    (3) requires.
+  - At 3x3 the descriptive d_gen classes {1, 2} do NOT determine connected w_enc
+    (d_gen=1 carries w_conn in {3,4}; d_gen=2 carries {4,5}): V3 scores against
+    connected w_enc PER PLACEMENT (C-93's repair), and the placement table in the
+    sealed txt is the per-placement source of those integers.
+
+=====================================================================================
+LANE_T51_A / D24_AUDIT -- 2026-08-21 -- THE MEASUREMENT (a1-a4)
+
+D-24 STATEMENT.  Unchanged from the gate section above: separation claims are stated
+in connected w_enc per placement (earned, from the seal-verified gate table, parsed
+at runtime -- the gate is input, never re-run) with d_gen descriptive; lattice
+coordinates in the sealed outputs are construction labels for placements; no claim
+is stated in them.
+
+DECLARED CONVENTIONS OF THE MEASUREMENT (all stated in script headers before any
+result): winding sectors labeled by the sealed zbar1/zbar2 parities (the same
+convention the gate declared); commissioned mediator grid lam in {0.02, 0.05, 0.10};
+onset estimator and floors identical to the gate's (FLOOR_EIG 1e-11, FLOOR_USE 1e-9,
+TOL_K 0.25); C3's pre-registered character-factorization criterion for "separates
+content sign from winding sign" is in a3's header, with the convention scope
+(winding-odd class -> attribution relative to the sealed zbar representatives ONLY)
+printed beside every license; plaquette terms carried as explicit in-sector
+constants so absolute sector energies and both port/identity certificates are real
+computed comparisons, not a call compared with itself.
+
+TOLERANCE PROVENANCE.  TOL_BACK = 1e-3 (energy units of the unit stabilizer term)
+was fixed from a scratchpad magnitude survey run BEFORE any sealed execution
+(scratchpad explore_t51a.py, outside the repo), then declared in t51a_lib.py and in
+a3's output before results; basis printed there (three orders below the sector gap
+~2, one order above the largest commissioned far-side reading).  Both branches
+remain reachable (a stronger probe or coupling fails it).  TOL_CAL_REL = 5e-3 from
+the 3-significant-figure quantization of the quoted design-exploration targets;
+TOL_PORT_D/TOL_PORT_F from the gate's print precision.  No tolerance was altered
+after any sealed run.
+
+ERROR LOG.
+  - No computational errors surfaced in any sealed execution; every asserted gate
+    (gate-seal verification, 18-placement parse, sector dimensions 32/256 against
+    the declared 2^11 bound, port certificate at lam=0.064, witness floors, sidecar
+    seal verification in a3/a4) passed on first sealed run.  No sealed output was
+    superseded.
+  - a1's far-target best match printed 20V; 10V is degenerate with it (identical F
+    to all printed digits, both w_enc_conn=4) -- the tie is broken by enumeration
+    order and is not a finding.
+
+FINDINGS CARRIED FORWARD (for the register and the composition lane).
+  - ALL PASS = TRUE (a4): V1 8.562e-08 > floor 1e-11 at the far placement; V2 both
+    swaps; V3 brackets 2.977/3 and 4.948/5; V4 max BA 1.191e-04 < 1e-3; V5 licensed
+    at both placements.
+  - The dynamical winding class found by the C3 sweep matches the gate's STATIC
+    connected-minimum winding class at both commissioned placements ((0,0) at
+    3x3-00H, (1,1) at 3x3-11H) -- the sign decomposition is exactly the character of
+    the class the geometry named.  At the far placement the license is
+    convention-scoped (winding-odd); any cross-venue sign claim must carry that
+    scope.
+  - Back-action is strongly separation-ordered (BA at far ~ 200x smaller than near
+    at lam=0.02) -- unrequested structure, possibly useful to the composition lane's
+    weakness budget.
+  - The 18-placement survey at lam=0.05 shows |F| ordered by w_enc_conn class
+    (3: ~4.1e-4..9.1e-4 negative; 4: ~3.5e-5..8.6e-5 positive; 5: 7.8e-6 negative
+    in the reference sector) with magnitude spread INSIDE classes (winding
+    furniture) -- shape claims stay quarantined to the signed-kernel tier as
+    commissioned.
