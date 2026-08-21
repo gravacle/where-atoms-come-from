@@ -10356,3 +10356,33 @@ composition law** — superposition, mod-2 saturation, screening alike. The sour
 accumulation standard is not imported as a requirement on the field side. How any measured
 composition law relates to classical gravity's is a question for the comparison tier at scale, under
 C-77's standing caveat that record-level measures may behave unlike their analogues elsewhere.
+
+---
+
+## T-52 LANDS — **THE CARRIER AUDIT REACHES EVERY ROW, AND THE EMERGENCE CHAIN'S HEAD IS CONFIRMED SINGLE-VENUE** (audit rows C-90 · C-91 · A-PR; the at-registration rule)
+
+The T-9 method applied unchanged to the three post-audit rows, verdicts drafted default-refuted from
+repository evidence and spot-verified by the registrar against the cited lane lines:
+
+- **`C-90` — SINGLE-CARRIER (macrospin-CoCrPt).** The D=3 critical result stands entirely on the one
+  deg-6 grain venue; the D=1/D=2 venues are a cross-dimension discriminator, the exact C-88 demotion
+  pattern, and the adversarial verifier's independent machinery ran on the same carrier. **The
+  fragility flagged at the T-16 landing is now a recorded fact, not a suspicion: the Newton-verdict
+  chain's head stands on one venue.** Its second carrier is real work owed, not a bookkeeping mark.
+- **`C-91` — TWO-CARRIER (spin-chain; toric-2x2; macrospin-CoCrPt).** The headline identity ran with
+  full per-venue gates on the C8 ring, the toric family, and the grain venue — with the scope kept
+  that the corner tier's algebra-earned uniformity is toric-family only and the world tier's
+  E1-criticality and mass-gap closed form are grain-lattice only.
+- **`A-PR` — NOT-CARRIER-SHAPED** (role-assembly, the C-85/G-13 precedent class), all seventeen
+  load-bearing citations verified TWO-CARRIER in the sealed table. **And the refuter surfaced a real
+  breach:** C-72, load-bearing in the EM-world clause, moved to PARTIAL *after* T-15 landed —
+  breaching the restatement's own live-non-PARTIAL gate. Recorded on the A-PR row; until T-50 lands,
+  the EM-world clause rests on C-71 alone; the disposition travels with T-50.
+
+**The rule that stops the debt re-accumulating** is now in `LANE_T9_AUDIT/METHOD.md`: a newly
+registered `FORMAL`/`PROVED`/`MEASURED` row is audited **at registration**, in the same landing.
+`check_proof.py` R5 enforced the propagation mechanically — five blocks failed the moment the
+verdicts landed, and the proof was rebuilt under the new marks (its no-TWO-CARRIER count improving
+40 → 38 because C-91's mark is now real). Zero `UNAUDITED` remains in the audit's scope. T-52's
+DONE_WHEN is met. **Next step named: C-90's second venue** — a structurally different D=3 carrier
+for the critical member — folds into the T-49/O-58 queue where that computation naturally lives.

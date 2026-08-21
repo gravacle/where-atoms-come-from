@@ -14,3 +14,13 @@ NOT-CARRIER-SHAPED 14 (rows whose content is not a computation on a carrier — 
 literature statements, definitional consequences; used sparingly per instruction).
 The two PROVED rows: C-71 and C-72 both TWO-CARRIER (NAND-floating-gate; macrospin-CoCrPt) — the
 PROOF bar's own requirement, independently reconfirmed here.
+
+## THE AT-REGISTRATION RULE (T-52, 2026-08-21)
+
+**A newly registered row at status `FORMAL`, `PROVED`, or `MEASURED` is audited AT REGISTRATION** —
+its verdict row appended to `T9_carrier_audit.tsv` in the same landing that registers it, under this
+method unchanged (default `SINGLE-CARRIER`; a refuter confirms every `TWO-CARRIER` claim on
+structurally different carriers; a dimension discriminator or spot-check never counts). The debt this
+rule closes accumulated once — `C-90`, `C-91` and `A-PR` sat unaudited at the head of the emergence
+chain — and may not re-accumulate. `replicate/check_proof.py`'s R5 reads this table as the record,
+so an unaudited new row surfaces as `UNAUDITED` in the proof until its verdict lands.

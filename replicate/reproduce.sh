@@ -51,7 +51,20 @@ for py in LANE_*/*.py; do
   # Normalize BOTH sides identically before diffing -- never the results, only presentation:
   #   wall-clock timings ("(84s)", "elapsed 241.6s") vary run to run, and scripts that write
   #   their own .txt then print "[written]" leave that marker in captured stdout but not the file.
-  norm(){ sed -E -e 's/\([0-9]+s\)[[:space:]]*$/(Ts)/' -e 's/elapsed [0-9.]+s/elapsed Ts/' "$1" | grep -vx '\[written\]' | sed -e :a -e '/^[[:space:]]*$/{$d;N;ba' -e '}'; }
+  # Wall-clock durations vary run to run and are presentation, never physics. Every rule below is
+  # ANCHORED TO END OF LINE: an unanchored "(Ns)" rule once matched "(2s)" inside a probability
+  # expression, (1-s)/(2s) -- a physics line. The anchor is what keeps this normalisation honest.
+  norm(){ sed -E \
+    -e 's/\(([0-9]+(\.[0-9]+)?)s\)[[:space:]]*$/(Ts)/' \
+    -e 's/: [0-9]+(\.[0-9]+)?s\)[[:space:]]*$/: Ts)/' \
+    -e 's/elapsed [0-9]+(\.[0-9]+)?s[[:space:]]*$/elapsed Ts/' \
+    -e 's/runtime [0-9]+(\.[0-9]+)?s[[:space:]]*$/runtime Ts/' \
+    -e 's/t=[0-9]+(\.[0-9]+)?s[[:space:]]*$/t=Ts/' \
+    -e 's/numeric block: [0-9]+(\.[0-9]+)?s[[:space:]]*$/numeric block: Ts/' \
+    -e 's/, [0-9]+(\.[0-9]+)?s[[:space:]]*$/, Ts/' \
+    -e 's/time: [0-9]+(\.[0-9]+)? s[[:space:]]*$/time: T s/' \
+    -e 's/started [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}[[:space:]]*$/started DATETIME/' \
+    "$1" | grep -vx '\[written\]' | sed -e :a -e '/^[[:space:]]*$/{$d;N;ba' -e '}'; }
   norm "$txt" >"$out.a"; norm "$out" >"$out.b"
   if diff -q "$out.a" "$out.b" >/dev/null 2>&1; then
     printf "  %-30s %-26s \033[32m%s\033[0m\n" "$lane" "$base" "IDENTICAL"

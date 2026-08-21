@@ -25,11 +25,11 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 > existing phase framework; IDs never renumber; phases are not restructured. Modification
 > happens within this framework — status moves and appends only.
 
-**41 of 53 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**42 of 53 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 41 | 1 | 10 | 1 |
+| 42 | 1 | 9 | 1 |
 
 ---
 
@@ -53,7 +53,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | ▶ **T-40** | **THE FULL-PROJECT MODEL (the principal, 2026-08-20: 'we need a model to work on that represents the full project'). One object: the amended definition with tolerances, the two PROVED laws, the formation step and source standards, the DEF-A corner reducing to record_model, and the roles -- with a validation that reproduces every sealed headline number** | **DONE** | model/project_model.py + validate_project.py pass, reproducing the grain tau, the six-mechanism table, and the DEF-A limit dims from one entry point | T-28, T-29, T-33 |
 | ▶ **T-46** | **THE COMPREHENSIVE MODEL (the principal, 2026-08-20): fold the C-77 increment machinery -- earned distance d_W, interface rank and the boundary law, certifiability and the window law, the two-region taxonomy, the encoding-level formation laws -- into project_model as a first-class GEOMETRY layer, so record formation and every registered proof reproduce from ONE entry point rather than scattered lanes** | **DONE** | validate_project reproduces every registered headline number of C-78, C-79, C-80, C-81, C-82, C-83 and the C-71/C-72 encoding laws from the ProjectModel API, each PASS gated against the sealed lane value | T-40 |
 
-## PHASE C  BREAK THE SINGLE CARRIER  —  5/6 done
+## PHASE C  BREAK THE SINGLE CARRIER  —  6/6 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
@@ -62,7 +62,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | ▶ **T-9** | **RE-RUN EVERY LOAD-BEARING ROW ON TWO CARRIERS -- REOPENED 2026-08-20 BY EXTERNAL REVIEW. Marked DONE while satisfying neither branch of its own DONE_WHEN: SINGLE-CARRIER appears zero times in the ledger and only ~24 of 162 rows cite two carriers. REPLICATE.md corrected in place** | **DONE** | every PROVED row either cites two structurally different carriers or is explicitly marked SINGLE-CARRIER in the ledger | T-8 |
 | **T-11** | PF-3B. Clause (v) under DEF-A on the second carrier — does admissible still give zero flippers? | **DONE** | the second carrier reproduces 0 admissible flippers against a nonzero any-unitary control | T-8 |
 | **T-10** | PARAMETER INDEPENDENCE. Show no conclusion moves with beta, lambda, bath size or lattice size | **DONE** | a sweep table per PROVED row showing the conclusion invariant, with the noise floor printed beside every fit | T-9 |
-| **T-52** | EXTEND THE T-9 CARRIER AUDIT TO THE POST-AUDIT ROWS. The audit's discipline -- default SINGLE-CARRIER, an adversarial refuter required to confirm every TWO-CARRIER claim on structurally different carriers -- covered the 146 FORMAL/PROVED/MEASURED rows that existed when it ran. Rows registered since carry no mark and print UNAUDITED, which is not a mark: C-90 and C-91 are the emergence chain's newest and most load-bearing results and are unaudited, and C-88 is SINGLE-CARRIER, so the chain's head stands on one venue. Audit every FORMAL/PROVED/MEASURED row registered after the T-9 landing under the same method (LANE_T9_AUDIT/METHOD.md), append the verdicts to the same TSV, and adopt the standing rule that a newly registered row in those statuses is audited AT REGISTRATION so the debt cannot re-accumulate | TODO | every FORMAL, PROVED and MEASURED row in the ledger carries a T-9 verdict in LANE_T9_AUDIT/T9_carrier_audit.tsv -- no UNAUDITED remains in those statuses -- and the registration rule is stated in METHOD.md | — |
+| **T-52** | EXTEND THE T-9 CARRIER AUDIT TO THE POST-AUDIT ROWS. The audit's discipline -- default SINGLE-CARRIER, an adversarial refuter required to confirm every TWO-CARRIER claim on structurally different carriers -- covered the 146 FORMAL/PROVED/MEASURED rows that existed when it ran. Rows registered since carry no mark and print UNAUDITED, which is not a mark: C-90 and C-91 are the emergence chain's newest and most load-bearing results and are unaudited, and C-88 is SINGLE-CARRIER, so the chain's head stands on one venue. Audit every FORMAL/PROVED/MEASURED row registered after the T-9 landing under the same method (LANE_T9_AUDIT/METHOD.md), append the verdicts to the same TSV, and adopt the standing rule that a newly registered row in those statuses is audited AT REGISTRATION so the debt cannot re-accumulate | **DONE** | every FORMAL, PROVED and MEASURED row in the ledger carries a T-9 verdict in LANE_T9_AUDIT/T9_carrier_audit.tsv -- no UNAUDITED remains in those statuses -- and the registration rule is stated in METHOD.md | — |
 
 ## PHASE D  CLOSE THE OPEN PHYSICS  —  3/5 done
 

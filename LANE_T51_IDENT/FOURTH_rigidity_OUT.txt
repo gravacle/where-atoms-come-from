@@ -1,0 +1,116 @@
+==============================================================================
+PART A -- d_W under content writes (C-78 instrument, per-pair recomputation)
+==============================================================================
+[PASS] A.dW L=2 per-pair recomputation == sealed class matrix  class_min={(0, 0): 0, (0, 1): 2, (1, 0): 2, (1, 1): 4}
+[PASS] A.dW L=2 invariant under all content writes (CERTIFICATE, R-I)  d_W(s+c,s'+c)=d_W(s,s'), all 64 triples
+[PASS] A.dW L=3 per-pair recomputation == sealed class matrix  class_min={(0, 0): 0, (0, 1): 3, (1, 0): 3, (1, 1): 6}
+[PASS] A.dW L=3 invariant under all content writes (CERTIFICATE, R-I)  d_W(s+c,s'+c)=d_W(s,s'), all 64 triples
+[PASS] A.dW L=4 per-pair recomputation == sealed class matrix  class_min={(0, 0): 0, (0, 1): 4, (1, 0): 4, (1, 1): 8}
+[PASS] A.dW L=4 invariant under all content writes (CERTIFICATE, R-I)  d_W(s+c,s'+c)=d_W(s,s'), all 64 triples
+
+==============================================================================
+PART B -- probe writer-cost landscape, hole venue 3x2 (static tier)
+==============================================================================
+  source ((1, 1), (2, 1)): histogram(all) {1: 1, 2: 1, 3: 7, 4: 16, 5: 24, 6: 30, 7: 24, 8: 16, 9: 7, 10: 1, 11: 1}
+    enclosing-class histogram {3: 1, 4: 5, 5: 14, 6: 15, 7: 10, 8: 11, 9: 6, 10: 1, 11: 1}
+    w_direct=1  w_enc(old-spec)=3  w_enc(CONNECTED)=4
+[PASS] B.mixed-span (Y-dressed) min == pure-Z min, source ((1, 1), (2, 1))  1 vs 1
+  source ((0, 1), (2, 1)): histogram(all) {1: 1, 2: 1, 3: 7, 4: 16, 5: 24, 6: 30, 7: 24, 8: 16, 9: 7, 10: 1, 11: 1}
+    enclosing-class histogram {3: 4, 4: 8, 5: 12, 6: 16, 7: 12, 8: 8, 9: 4}
+    w_direct=1  w_enc(old-spec)=3  w_enc(CONNECTED)=3
+[PASS] B.mixed-span (Y-dressed) min == pure-Z min, source ((0, 1), (2, 1))  1 vs 1
+[PASS] B.auditor counterexample reproduced independently: old-spec w_enc=3, CONNECTED w_enc=4 at source ((1,1),(2,1))  got (3, 4)
+  NOTE (R-II): no term of these enumerations takes the written value b as
+  input -- histogram equality between written/unwritten sectors, and between
+  carrier-present/carrier-absent venues (sp(w,p)=0 for all p either way), is
+  an algebraic identity: CERTIFICATE, never counted as a control.  The
+  could-fail shadow of this certificate is Part C's onset-order battery.
+  d_gen probe-to-source ((1, 1), (2, 1)): min 1  (DESCRIPTIVE ONLY -- mixed-type separation carries no sealed law; per the T-51 judgment,
+  d_gen probe-to-source ((0, 1), (2, 1)): min 1  (DESCRIPTIVE ONLY -- mixed-type separation carries no sealed law; per the T-51 judgment,
+  connected w_enc alone carries the earned separation)
+
+==============================================================================
+PART C -- sector-exact dynamics 3x2: rigid integers, responsive amplitudes
+==============================================================================
+  source ((1, 1), (2, 1)) (connected w_enc = 4), winding (0,0):
+      lam    Delta(b=+1)    Delta(b=-1)              F   wit+   wit-
+    0.004   7.968506e-03   7.968510e-03   4.847426e-09  1.000  1.000
+    0.008   1.587599e-02   1.587607e-02   7.728769e-08  1.000  1.000
+    0.016   3.151912e-02   3.152035e-02   1.227653e-06  0.999  0.999
+    0.032   6.218767e-02   6.220701e-02   1.933961e-05  0.997  0.997
+    0.064   1.214797e-01   1.217785e-01   2.987865e-04  0.990  0.990
+    0.050   9.584171e-02   9.595481e-02   1.130978e-04  0.994  0.994
+    onset ladders: Delta+ ['0.994', '0.989', '0.980', '0.966']  Delta- ['0.994', '0.989', '0.981', '0.969']  F ['3.995', '3.990', '3.978', '3.949']
+[PASS] C.((1, 1), (2, 1)) Delta onset = 1 = w_direct in BOTH sectors [integer tier]  slopes 0.966, 0.969
+[PASS] C.((1, 1), (2, 1)) F onset -> CONNECTED w_enc = 4 of this placement  first-rung slope 3.995 (ladder ['3.99', '3.99', '3.98', '3.95'])
+[PASS] C.((1, 1), (2, 1)) F != 0 at lam=0.05 [amplitude tier responds]  F = +1.131e-04
+  source ((0, 1), (2, 1)) (connected w_enc = 3), winding (0,0):
+      lam    Delta(b=+1)    Delta(b=-1)              F   wit+   wit-
+    0.004   7.968506e-03   7.968001e-03  -5.050781e-07  1.000  1.000
+    0.008   1.587599e-02   1.587201e-02  -3.985100e-06  1.000  1.000
+    0.016   3.151912e-02   3.148813e-02  -3.098930e-05  0.999  0.999
+    0.032   6.218767e-02   6.195409e-02  -2.335764e-04  0.997  0.997
+    0.064   1.214797e-01   1.198413e-01  -1.638449e-03  0.990  0.990
+    0.050   9.584171e-02   9.501244e-02  -8.292711e-04  0.994  0.994
+    onset ladders: Delta+ ['0.994', '0.989', '0.980', '0.966']  Delta- ['0.994', '0.988', '0.976', '0.952']  F ['2.980', '2.959', '2.914', '2.810']
+[PASS] C.((0, 1), (2, 1)) Delta onset = 1 = w_direct in BOTH sectors [integer tier]  slopes 0.966, 0.952
+[PASS] C.((0, 1), (2, 1)) F onset -> CONNECTED w_enc = 3 of this placement  first-rung slope 2.980 (ladder ['2.98', '2.96', '2.91', '2.81'])
+[PASS] C.((0, 1), (2, 1)) F != 0 at lam=0.05 [amplitude tier responds]  F = -8.293e-04
+  winding annex, source ((1,1),(2,1)), lam=0.05 (sign is a winding-sector quantity on small tori):
+    winding (0, 0): F = +1.130978e-04
+    winding (1, 0): F = -1.863822e-05
+    winding (0, 1): F = -1.228909e-04
+    winding (1, 1): F = +1.864770e-05
+
+==============================================================================
+PART D -- region response at lam=0 and lam>0 (3x2, source ((1,1),(2,1)))
+==============================================================================
+  R_cross (edge labels) = [2, 5, 9, 11]   R_away = [0, 1, 6, 7]
+  lam=0.00 R_away : trace-dist = 2.914e-16   S(+1)=4.000000  S(-1)=4.000000  dS=+0.000e+00 bits
+[PASS] D.lam=0 R_away: reduced state EXACTLY content-independent  trace-dist 2.9e-16
+  lam=0.00 R_cross: trace-dist = 1.000e+00   S(+1)=3.000000  S(-1)=3.000000  dS=+0.000e+00 bits
+[PASS] D.lam=0 R_cross: reduced STATE responds (it reads the bit)  trace-dist 1.0e+00
+[PASS] D.lam=0 R_cross: ENTROPY (integer tier) exactly unmoved  dS 0.0e+00
+  lam=0.05 R_away : trace-dist = 8.861e-04   S(+1)=2.983856  S(-1)=2.983861  dS=+4.557e-06 bits
+  lam=0.05 R_cross: trace-dist = 1.000e+00   S(+1)=2.989918  S(-1)=2.991721  dS=+1.803e-03 bits
+  cut-rank(R_away) = 7  (state-free by construction: CERTIFICATE -- C-81's static arm on this venue)
+  cut-rank(R_cross) = 5  (state-free by construction: CERTIFICATE -- C-81's static arm on this venue)
+
+==============================================================================
+PART E -- 3x3 confirmation at two earned separations
+==============================================================================
+  source ((1, 1), (2, 1)): w_direct=1 w_enc(old)=4 w_enc(CONN)=5
+    Delta+ onset ['0.994', '0.989', '0.978', '0.958']  Delta- onset ['0.994', '0.989', '0.978', '0.958']  F onset ['4.988', '4.974', '4.948', '4.898']  F(lam=0.064)=-2.605e-05
+[PASS] E.((1, 1), (2, 1)) F onset first rung within 0.15 of CONNECTED w_enc = 5  slope 4.988
+[PASS] E.((1, 1), (2, 1)) Delta onset = 1 both sectors [integer tier]  slopes 0.994, 0.994
+  source ((1, 2), (2, 2)): w_direct=1 w_enc(old)=4 w_enc(CONN)=4
+    Delta+ onset ['0.994', '0.989', '0.978', '0.958']  Delta- onset ['0.994', '0.989', '0.978', '0.959']  F onset ['3.980', '3.959', '3.917', '3.829']  F(lam=0.064)=+1.063e-04
+[PASS] E.((1, 2), (2, 2)) F onset first rung within 0.15 of CONNECTED w_enc = 4  slope 3.980
+[PASS] E.((1, 2), (2, 2)) Delta onset = 1 both sectors [integer tier]  slopes 0.994, 0.994
+
+==============================================================================
+GATE SUMMARY
+==============================================================================
+  [PASS] A.dW L=2 per-pair recomputation == sealed class matrix
+  [PASS] A.dW L=2 invariant under all content writes (CERTIFICATE, R-I)
+  [PASS] A.dW L=3 per-pair recomputation == sealed class matrix
+  [PASS] A.dW L=3 invariant under all content writes (CERTIFICATE, R-I)
+  [PASS] A.dW L=4 per-pair recomputation == sealed class matrix
+  [PASS] A.dW L=4 invariant under all content writes (CERTIFICATE, R-I)
+  [PASS] B.mixed-span (Y-dressed) min == pure-Z min, source ((1, 1), (2, 1))
+  [PASS] B.mixed-span (Y-dressed) min == pure-Z min, source ((0, 1), (2, 1))
+  [PASS] B.auditor counterexample reproduced independently: old-spec w_enc=3, CONNECTED w_enc=4 at source ((1,1),(2,1))
+  [PASS] C.((1, 1), (2, 1)) Delta onset = 1 = w_direct in BOTH sectors [integer tier]
+  [PASS] C.((1, 1), (2, 1)) F onset -> CONNECTED w_enc = 4 of this placement
+  [PASS] C.((1, 1), (2, 1)) F != 0 at lam=0.05 [amplitude tier responds]
+  [PASS] C.((0, 1), (2, 1)) Delta onset = 1 = w_direct in BOTH sectors [integer tier]
+  [PASS] C.((0, 1), (2, 1)) F onset -> CONNECTED w_enc = 3 of this placement
+  [PASS] C.((0, 1), (2, 1)) F != 0 at lam=0.05 [amplitude tier responds]
+  [PASS] D.lam=0 R_away: reduced state EXACTLY content-independent
+  [PASS] D.lam=0 R_cross: reduced STATE responds (it reads the bit)
+  [PASS] D.lam=0 R_cross: ENTROPY (integer tier) exactly unmoved
+  [PASS] E.((1, 1), (2, 1)) F onset first rung within 0.15 of CONNECTED w_enc = 5
+  [PASS] E.((1, 1), (2, 1)) Delta onset = 1 both sectors [integer tier]
+  [PASS] E.((1, 2), (2, 2)) F onset first rung within 0.15 of CONNECTED w_enc = 4
+  [PASS] E.((1, 2), (2, 2)) Delta onset = 1 both sectors [integer tier]
+22/22 gates pass
