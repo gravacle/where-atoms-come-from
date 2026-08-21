@@ -1,0 +1,80 @@
+LANE_T51_REPAIR / QUARANTINE_VERIFY / D24_AUDIT -- 2026-08-21
+
+SCOPE AND CUSTODY.
+This is a no-new-measurement verifier of the existing T51 package.  It read and SHA-256 checked
+26 frozen inputs.  It did not import, execute, or modify any builder,
+sealed program, model, ledger, register, proof, or shared document.  It wrote only in its owned
+LANE_T51_REPAIR/QUARANTINE_VERIFY directory.  Coordinates in the frozen inputs remain construction
+labels; this audit makes no new separation claim.
+
+DEFAULT-REFUTED DISCIPLINE.
+Every component begins REFUTED.  A/B/D were re-adjudicated only from the prior independent
+verifier's frozen raw records.  C was recomputed from every stored F value at the full required
+cross-product near/far/fresh x lambda 0.037/0.071.  E was derived from actual scanner hits; no
+violation count or clean verdict is a literal override.  The overall result remains REFUTED because
+the old ALL-PASS package depends on an UNSCOREABLE V2 and a descriptive-only V4.
+
+OLD C DEFECT, PRESERVED IN PLACE.
+Confirmed: True.
+Source evidence: [{"line": 698, "text": "\"C_winding_attribution\": \"NOT_REFUTED\" if all("}, {"line": 699, "text": "dynamics[p][\"winding\"][str(CHECK_LAMBDA)][\"character\"][\"separated\"]"}, {"line": 700, "text": "for p in (\"near\", \"far\")"}]
+The old code computed both lambdas and fresh placement but its verdict predicate consumed only
+CHECK_LAMBDA=0.037 and only near/far.  This verifier requires all six cells, recomputes characters
+from raw F signs, requires unique fits, stored/recomputed agreement, expected sign-flip behavior,
+and lambda stability.  Result: NOT_REFUTED.
+
+OLD E DEFECT, PRESERVED IN PLACE.
+Confirmed: True.
+Source evidence: [{"line": 437, "needle": "for p in (repo / \"LANE_T51_A\").iterdir()", "text": "for p in (repo / \"LANE_T51_A\").iterdir()"}, {"line": 464, "needle": "\"violation_count\": 0,", "text": "\"violation_count\": 0,"}, {"line": 703, "needle": "\"E_D1_directive_scan\": \"NOT_REFUTED\" if prose[\"violation_count\"] == 0", "text": "\"E_D1_directive_scan\": \"NOT_REFUTED\" if prose[\"violation_count\"] == 0 else \"REFUTED\","}]
+The old top-level iterdir excluded nested verifier/judgment artifacts and returned a literal
+violation_count=0 after a prose assertion.  This verifier uses a frozen 23-file
+hash-enumerated corpus, including nested prior verifier outputs and JUDGMENT_CODEX.  The owned
+verifier tree is explicitly excluded because it contains the regex rules, refutation prose, and
+deliberate positive-control violations.  Integrity manifests/sidecars are excluded as non-claim
+metadata.  Each of the three rule classes has an in-memory positive-control seed.  All controls
+matched: True; decision hits: 0;
+E verdict: NOT_REFUTED.
+
+SCORING-ADMISSIBILITY FINDINGS.
+V2: UNSCOREABLE.  The registered observable is F(D), but the builder's C2 boolean compares onset
+orders; its own output labels F-magnitude ratios data and not a verdict.  The commissioned
+w_enc_conn=5 far class is a singleton, and the replacement pair is w_enc_conn=4.  No F-equivalence
+tolerance was pre-registered, so no honest boolean can be recovered after seeing the values.
+
+V4: QUALIFIED_DESCRIPTIVE_ONLY.  The stored BA values are below TOL_BACK=1e-3, but the builder audit
+states that this threshold was chosen after a same-family scratchpad magnitude survey and set one
+order above the largest commissioned far-side reading.  The numerical comparison may be reported;
+it does not earn a pre-registered adversarial PASS.
+
+ERROR AND CORRECTION LOG.
+No scientific execution occurred.  No prior artifact was superseded.  The first quarantine scan
+returned one E decision hit in a4_verdicts.py because its forward-only three-line window began on
+the wrapped continuation "outcome here is a failure" and omitted the preceding word "no".  The
+window was corrected to carry two lines of preceding and following context; the positive controls
+still match, while the sentence is now deterministically exculpated as an explicit no-failure
+statement.  A second dry adjudication exposed two input-parser defects: Markdown backticks/bold
+prevented exact V1/V3 quote matching, and TOL_BACK was sought in a3 rather than its imported
+t51a_lib definition.  Claim text is now Markdown-normalized and TOL_BACK is parsed from the frozen
+library source.  No scientific number or package artifact changed.  This standing run completed
+with input mismatches=0, C=NOT_REFUTED,
+E=NOT_REFUTED.  Any implementation error found before this file's final generation is
+recorded by updating this paragraph before the directory is handed back; no other error is known.
+
+CUSTODY CORRECTION BEFORE SEALING.
+A pre-landing replay audit found that the first version of this still-unsealed verifier referenced
+the prior drafts only at their untracked, final-looking LANE_T51_A paths.  Exact byte copies were
+preserved under LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT, an explicit non-admissibility
+notice and six-file INPUTS.sha256 were added, and every verifier reference was repointed to those
+copies.  The original untracked files were neither modified nor removed.  The copied historical
+SEALS file proves byte integrity only; it does not validate the old predicates.  This correction
+changes custody paths and input count only, not any scientific value or adjudication.
+
+EXACT DISPOSITION.
+OVERALL_VERDICT=REFUTED
+REGISTERED_RULE_DISPOSITION=UNSCOREABLE
+SCIENTIFIC_DISPOSITION=PARTIAL_POSITIVE
+BRANCH=REPAIR_REQUIRED
+V2_SCORE=NONE_UNSCOREABLE
+V4_SCORE=NONE_QUALIFIED_DESCRIPTION_ONLY
+ALL_PASS_AUTHORIZED=FALSE
+REGISTRATION_AUTHORIZED=FALSE
+REGISTER NOTHING.

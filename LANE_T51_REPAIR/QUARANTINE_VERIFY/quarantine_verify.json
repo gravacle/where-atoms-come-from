@@ -1,0 +1,795 @@
+{
+  "A": {
+    "conditions": {
+      "full_transition_audit_nonempty": true,
+      "mediator_source_pairing_zero": true,
+      "source_changing_transitions_zero": true,
+      "star_source_pairing_zero": true
+    },
+    "default": "REFUTED",
+    "verdict": "NOT_REFUTED"
+  },
+  "B": {
+    "conditions": {
+      "far_connected_minimum_5": true,
+      "far_exhaustive_counts": true,
+      "far_no_lighter_connected": true,
+      "far_old_minimum_4": true,
+      "far_old_witness_disconnected": true,
+      "fresh_connected_minimum_5": true,
+      "fresh_no_lighter_connected": true,
+      "near_connected_minimum_3": true
+    },
+    "default": "REFUTED",
+    "verdict": "NOT_REFUTED"
+  },
+  "C": {
+    "checks": [
+      {
+        "expected_fit": {
+          "character": [
+            0,
+            0
+          ],
+          "content_sign": -1
+        },
+        "expected_flip": false,
+        "lambda": 0.037,
+        "ok": true,
+        "placement": "near",
+        "present": true,
+        "recomputed": {
+          "clears_threshold": true,
+          "finite": true,
+          "fits": [
+            {
+              "character": [
+                0,
+                0
+              ],
+              "content_sign": -1
+            }
+          ],
+          "keys_ok": true,
+          "sign_flip_by_winding_alone": false,
+          "signs": {
+            "00": -1,
+            "01": -1,
+            "10": -1,
+            "11": -1
+          },
+          "unique": true
+        },
+        "stored_matches_recomputation": true
+      },
+      {
+        "expected_fit": {
+          "character": [
+            0,
+            0
+          ],
+          "content_sign": -1
+        },
+        "expected_flip": false,
+        "lambda": 0.071,
+        "ok": true,
+        "placement": "near",
+        "present": true,
+        "recomputed": {
+          "clears_threshold": true,
+          "finite": true,
+          "fits": [
+            {
+              "character": [
+                0,
+                0
+              ],
+              "content_sign": -1
+            }
+          ],
+          "keys_ok": true,
+          "sign_flip_by_winding_alone": false,
+          "signs": {
+            "00": -1,
+            "01": -1,
+            "10": -1,
+            "11": -1
+          },
+          "unique": true
+        },
+        "stored_matches_recomputation": true
+      },
+      {
+        "expected_fit": {
+          "character": [
+            1,
+            1
+          ],
+          "content_sign": -1
+        },
+        "expected_flip": true,
+        "lambda": 0.037,
+        "ok": true,
+        "placement": "far",
+        "present": true,
+        "recomputed": {
+          "clears_threshold": true,
+          "finite": true,
+          "fits": [
+            {
+              "character": [
+                1,
+                1
+              ],
+              "content_sign": -1
+            }
+          ],
+          "keys_ok": true,
+          "sign_flip_by_winding_alone": true,
+          "signs": {
+            "00": -1,
+            "01": 1,
+            "10": 1,
+            "11": -1
+          },
+          "unique": true
+        },
+        "stored_matches_recomputation": true
+      },
+      {
+        "expected_fit": {
+          "character": [
+            1,
+            1
+          ],
+          "content_sign": -1
+        },
+        "expected_flip": true,
+        "lambda": 0.071,
+        "ok": true,
+        "placement": "far",
+        "present": true,
+        "recomputed": {
+          "clears_threshold": true,
+          "finite": true,
+          "fits": [
+            {
+              "character": [
+                1,
+                1
+              ],
+              "content_sign": -1
+            }
+          ],
+          "keys_ok": true,
+          "sign_flip_by_winding_alone": true,
+          "signs": {
+            "00": -1,
+            "01": 1,
+            "10": 1,
+            "11": -1
+          },
+          "unique": true
+        },
+        "stored_matches_recomputation": true
+      },
+      {
+        "expected_fit": {
+          "character": [
+            1,
+            1
+          ],
+          "content_sign": -1
+        },
+        "expected_flip": true,
+        "lambda": 0.037,
+        "ok": true,
+        "placement": "fresh",
+        "present": true,
+        "recomputed": {
+          "clears_threshold": true,
+          "finite": true,
+          "fits": [
+            {
+              "character": [
+                1,
+                1
+              ],
+              "content_sign": -1
+            }
+          ],
+          "keys_ok": true,
+          "sign_flip_by_winding_alone": true,
+          "signs": {
+            "00": -1,
+            "01": 1,
+            "10": 1,
+            "11": -1
+          },
+          "unique": true
+        },
+        "stored_matches_recomputation": true
+      },
+      {
+        "expected_fit": {
+          "character": [
+            1,
+            1
+          ],
+          "content_sign": -1
+        },
+        "expected_flip": true,
+        "lambda": 0.071,
+        "ok": true,
+        "placement": "fresh",
+        "present": true,
+        "recomputed": {
+          "clears_threshold": true,
+          "finite": true,
+          "fits": [
+            {
+              "character": [
+                1,
+                1
+              ],
+              "content_sign": -1
+            }
+          ],
+          "keys_ok": true,
+          "sign_flip_by_winding_alone": true,
+          "signs": {
+            "00": -1,
+            "01": 1,
+            "10": 1,
+            "11": -1
+          },
+          "unique": true
+        },
+        "stored_matches_recomputation": true
+      }
+    ],
+    "default": "REFUTED",
+    "lambda_stability": {
+      "far": true,
+      "fresh": true,
+      "near": true
+    },
+    "noise_floor": 1e-12,
+    "required_lambdas": [
+      0.037,
+      0.071
+    ],
+    "required_placements": [
+      "near",
+      "far",
+      "fresh"
+    ],
+    "signal_threshold": 1e-10,
+    "verdict": "NOT_REFUTED"
+  },
+  "D": {
+    "default": "REFUTED",
+    "method": "pure-stdlib re-fit of recorded off-grid F values; no Hamiltonian run",
+    "rows": [
+      {
+        "bracket_pass": true,
+        "connected_minimum": 3,
+        "finite_nonzero": true,
+        "lambdas": [
+          0.011,
+          0.017,
+          0.026,
+          0.039,
+          0.058
+        ],
+        "ok": true,
+        "placement": "near",
+        "recomputed_k": 2.9475855295050097,
+        "stored_k": 2.947585529505041,
+        "stored_matches": true
+      },
+      {
+        "bracket_pass": true,
+        "connected_minimum": 5,
+        "finite_nonzero": true,
+        "lambdas": [
+          0.011,
+          0.017,
+          0.026,
+          0.039,
+          0.058
+        ],
+        "ok": true,
+        "placement": "far",
+        "recomputed_k": 4.970151384706888,
+        "stored_k": 4.970151384706792,
+        "stored_matches": true
+      },
+      {
+        "bracket_pass": true,
+        "connected_minimum": 5,
+        "finite_nonzero": true,
+        "lambdas": [
+          0.011,
+          0.017,
+          0.026,
+          0.039,
+          0.058
+        ],
+        "ok": true,
+        "placement": "fresh",
+        "recomputed_k": 4.970144786764692,
+        "stored_k": 4.970144786764373,
+        "stored_matches": true
+      }
+    ],
+    "verdict": "NOT_REFUTED"
+  },
+  "E": {
+    "candidate_hits": [
+      {
+        "context": "division of labor, not a defect. Then commission, in order: **(a)** the two-source composition at 4\u00d74 \u2014 **first, because it is the most informative computation: it measures what composition IS on this surface.** Every outcome registers. If two sources superpose, that is the surface's composition law; if the response saturates mod 2 or screens, **that too is the surface's composition law** \u2014 a finding about what accumulation is here, never a failure against a standard imported from elsewhere",
+        "exculpated": true,
+        "exculpation_reason": "explicit_no_failure",
+        "file": "FIELD_INSTRUMENT_V001.md",
+        "line": 107,
+        "match": "mod 2 or screens, **that too is the surface's composition law** \u2014 a finding about what accumulation is here, never a failure",
+        "rule": "outcome_as_failure"
+      },
+      {
+        "context": "sidecar seal verified before use. All verdicts are computed booleans with both branches reachable (D-8); no literal expected value sits on any decision path; the calibration verdict is a reproduction comparison and is reported beside, not inside, V1-V5. Per the principal's binding directive (2026-08-20, quoted in C-92), no outcome here is a failure against an imported standard: every branch registers as",
+        "exculpated": true,
+        "exculpation_reason": "explicit_no_failure",
+        "file": "LANE_T51_A/a4_verdicts.py",
+        "line": 7,
+        "match": "outcome here is a failure",
+        "rule": "outcome_as_failure"
+      }
+    ],
+    "corpus": [
+      {
+        "path": "FIELD_INSTRUMENT_V001.md",
+        "sha256": "e0eecbfb1aa9ef6f934e07fa582a220c2a59435535bbbe3949baf0bca07e7407"
+      },
+      {
+        "path": "LANE_T51_A/D24_AUDIT.txt",
+        "sha256": "c8faf8f26aad5bd84d2dda8767d3e9eb9e8bb2c1c1c3b9f207e91ae5dd17a823"
+      },
+      {
+        "path": "LANE_T51_A/VERIFY/v1_adversarial_rebuild.py",
+        "sha256": "1b715b75edac5941f114d870d6cfd8a5a9a828ed3d9b96683f6797d8ec350628"
+      },
+      {
+        "path": "LANE_T51_A/a1_calibration_3x2.json",
+        "sha256": "3b5b74a64f7904bf42e8d116830fd729d3441053744b172c3c48075b731c4729"
+      },
+      {
+        "path": "LANE_T51_A/a1_calibration_3x2.py",
+        "sha256": "566da7992bcba25b0bc902897a0c1f13644920a586b57f77b7905fe0d57efe38"
+      },
+      {
+        "path": "LANE_T51_A/a1_calibration_3x2.txt",
+        "sha256": "56ff0332485ac019872a03ec7a28e4e6b8b7ac4efc4a5db6732b313e6a3164dc"
+      },
+      {
+        "path": "LANE_T51_A/a2_field_table_3x3.json",
+        "sha256": "d72805a2fb1aadf0964a895e4579f9819daa34f6fb7e1a55d55bd651edc4c872"
+      },
+      {
+        "path": "LANE_T51_A/a2_field_table_3x3.py",
+        "sha256": "253615e2a3a5a4e1b9d3be28adb387efd962db44a19f91be769942f7cc761d6c"
+      },
+      {
+        "path": "LANE_T51_A/a2_field_table_3x3.txt",
+        "sha256": "a7fbf12026592a550e5b320e489256d7221771f6e1ff060a9da9beb75a99970f"
+      },
+      {
+        "path": "LANE_T51_A/a3_controls_3x3.json",
+        "sha256": "6581d4d5f098f953c4ae26f1b7d5240477557adc8ab033416c5464ef27ad865e"
+      },
+      {
+        "path": "LANE_T51_A/a3_controls_3x3.py",
+        "sha256": "43e299638a06d97532c6c71aadeb10dfe9a9ae3953c4d98a793fecba2e62a796"
+      },
+      {
+        "path": "LANE_T51_A/a3_controls_3x3.txt",
+        "sha256": "3cb8612d4aae5d4f052d00e9b2eb803939805c87362965f69f70b092c060adfc"
+      },
+      {
+        "path": "LANE_T51_A/a4_verdicts.py",
+        "sha256": "f3cd4d05a5d51fcfa51b67ffa74b6b5f54a00e00b0a08d3ecd34d91a1556f42a"
+      },
+      {
+        "path": "LANE_T51_A/a4_verdicts.txt",
+        "sha256": "006b045775fce44fe99f6d5cb7cd3dbde63230053712ce3446fd6d42102372d4"
+      },
+      {
+        "path": "LANE_T51_A/g1_connected_wenc.py",
+        "sha256": "255f1f97564359d9ed5eb0eedd822723616b2f5239537233ef8396746184fcd1"
+      },
+      {
+        "path": "LANE_T51_A/g1_connected_wenc.txt",
+        "sha256": "5d138e87a68401f1963ec820cb4607ad0d4a4e82c67b3b58de51041c7f8e547b"
+      },
+      {
+        "path": "LANE_T51_A/t51a_lib.py",
+        "sha256": "f2cc435a755e219990010b02114594fe5500e5d0f9aef3d9bb680835964f99a5"
+      },
+      {
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/v1_independent_rebuild.py",
+        "sha256": "92c091520eb5b6da2ee356f7aab8731932441bb57eb59e2f9bcebc7ae032439e"
+      },
+      {
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/v1_independent_rebuild.json",
+        "sha256": "8c95720cc9f721fea6ce06e56eb1cbcf77e341db72186cf830726b1b8302144a"
+      },
+      {
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/v1_independent_rebuild.txt",
+        "sha256": "bad804807922ce63cffb82752c2e173d967d5ea0c0d01181e696cc03fe528198"
+      },
+      {
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/D24_AUDIT.txt",
+        "sha256": "b7c8c9caa5228281f333df8b9534707b93bb6cd3f3f0d793bc28ac454e6a9d29"
+      },
+      {
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/JUDGMENT_CODEX.txt",
+        "sha256": "fd049d5538c3acc0cd5a15dcf062e0ae58b603470a805638b6ff793bb130c42f"
+      },
+      {
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/README.md",
+        "sha256": "e5dba0b75d005692be4498e93f4a119d5a1ddccda5d0fc6301f5027942acb6c7"
+      }
+    ],
+    "corpus_count": 23,
+    "decision_hit_count": 0,
+    "decision_hits": [],
+    "default": "REFUTED",
+    "positive_controls": {
+      "imported_pass_requirement": {
+        "matched": true,
+        "seed": "A field result is valid only if it matches the classical accumulation standard."
+      },
+      "imported_shape_prescription": {
+        "matched": true,
+        "seed": "The field reading must obey an inverse-square law."
+      },
+      "outcome_as_failure": {
+        "matched": true,
+        "seed": "Screening would be a failure outcome."
+      }
+    },
+    "positive_controls_all_matched": true,
+    "self_reference_exclusions": {
+      "commissioning_briefs": "read as procedure but not part of the claim corpus; they prohibit imported standards and contain quoted attack vocabulary",
+      "nonclaim_integrity_metadata": [
+        "LANE_T51_A.sha256",
+        "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/SEALS.sha256",
+        "LANE_T51_REPAIR/QUARANTINED_DRAFTS/INPUTS.sha256",
+        "*.sha256 sidecars"
+      ],
+      "owned_verifier_tree": "LANE_T51_REPAIR/QUARANTINE_VERIFY/**",
+      "reason": "the verifier source contains rule definitions and deliberate positive-control violations; its generated report names refutations.  Scanning it would test the scanner against itself rather than scan the frozen T51 package"
+    },
+    "verdict": "NOT_REFUTED"
+  },
+  "V2_scored": false,
+  "V4_scored": false,
+  "all_pass_authorized": false,
+  "branch": "REPAIR_REQUIRED",
+  "component_verdicts": {
+    "A": "NOT_REFUTED",
+    "B": "NOT_REFUTED",
+    "C": "NOT_REFUTED",
+    "D": "NOT_REFUTED",
+    "E": "NOT_REFUTED"
+  },
+  "input_integrity": {
+    "builder_manifest_matches_frozen_map": true,
+    "count": 26,
+    "default": "REFUTED",
+    "mismatches": [],
+    "prior_verifier_manifest_matches_frozen_map": true,
+    "quarantine_manifest_matches_frozen_map": true,
+    "rows": [
+      {
+        "actual_sha256": "e0eecbfb1aa9ef6f934e07fa582a220c2a59435535bbbe3949baf0bca07e7407",
+        "expected_sha256": "e0eecbfb1aa9ef6f934e07fa582a220c2a59435535bbbe3949baf0bca07e7407",
+        "ok": true,
+        "path": "FIELD_INSTRUMENT_V001.md"
+      },
+      {
+        "actual_sha256": "15a4d1a83fe92b4282746a35b996c179013a94c942e12e609f7322429bfca1a8",
+        "expected_sha256": "15a4d1a83fe92b4282746a35b996c179013a94c942e12e609f7322429bfca1a8",
+        "ok": true,
+        "path": "LANE_T51_A.sha256"
+      },
+      {
+        "actual_sha256": "c8faf8f26aad5bd84d2dda8767d3e9eb9e8bb2c1c1c3b9f207e91ae5dd17a823",
+        "expected_sha256": "c8faf8f26aad5bd84d2dda8767d3e9eb9e8bb2c1c1c3b9f207e91ae5dd17a823",
+        "ok": true,
+        "path": "LANE_T51_A/D24_AUDIT.txt"
+      },
+      {
+        "actual_sha256": "1b715b75edac5941f114d870d6cfd8a5a9a828ed3d9b96683f6797d8ec350628",
+        "expected_sha256": "1b715b75edac5941f114d870d6cfd8a5a9a828ed3d9b96683f6797d8ec350628",
+        "ok": true,
+        "path": "LANE_T51_A/VERIFY/v1_adversarial_rebuild.py"
+      },
+      {
+        "actual_sha256": "3b5b74a64f7904bf42e8d116830fd729d3441053744b172c3c48075b731c4729",
+        "expected_sha256": "3b5b74a64f7904bf42e8d116830fd729d3441053744b172c3c48075b731c4729",
+        "ok": true,
+        "path": "LANE_T51_A/a1_calibration_3x2.json"
+      },
+      {
+        "actual_sha256": "566da7992bcba25b0bc902897a0c1f13644920a586b57f77b7905fe0d57efe38",
+        "expected_sha256": "566da7992bcba25b0bc902897a0c1f13644920a586b57f77b7905fe0d57efe38",
+        "ok": true,
+        "path": "LANE_T51_A/a1_calibration_3x2.py"
+      },
+      {
+        "actual_sha256": "56ff0332485ac019872a03ec7a28e4e6b8b7ac4efc4a5db6732b313e6a3164dc",
+        "expected_sha256": "56ff0332485ac019872a03ec7a28e4e6b8b7ac4efc4a5db6732b313e6a3164dc",
+        "ok": true,
+        "path": "LANE_T51_A/a1_calibration_3x2.txt"
+      },
+      {
+        "actual_sha256": "d72805a2fb1aadf0964a895e4579f9819daa34f6fb7e1a55d55bd651edc4c872",
+        "expected_sha256": "d72805a2fb1aadf0964a895e4579f9819daa34f6fb7e1a55d55bd651edc4c872",
+        "ok": true,
+        "path": "LANE_T51_A/a2_field_table_3x3.json"
+      },
+      {
+        "actual_sha256": "253615e2a3a5a4e1b9d3be28adb387efd962db44a19f91be769942f7cc761d6c",
+        "expected_sha256": "253615e2a3a5a4e1b9d3be28adb387efd962db44a19f91be769942f7cc761d6c",
+        "ok": true,
+        "path": "LANE_T51_A/a2_field_table_3x3.py"
+      },
+      {
+        "actual_sha256": "a7fbf12026592a550e5b320e489256d7221771f6e1ff060a9da9beb75a99970f",
+        "expected_sha256": "a7fbf12026592a550e5b320e489256d7221771f6e1ff060a9da9beb75a99970f",
+        "ok": true,
+        "path": "LANE_T51_A/a2_field_table_3x3.txt"
+      },
+      {
+        "actual_sha256": "6581d4d5f098f953c4ae26f1b7d5240477557adc8ab033416c5464ef27ad865e",
+        "expected_sha256": "6581d4d5f098f953c4ae26f1b7d5240477557adc8ab033416c5464ef27ad865e",
+        "ok": true,
+        "path": "LANE_T51_A/a3_controls_3x3.json"
+      },
+      {
+        "actual_sha256": "43e299638a06d97532c6c71aadeb10dfe9a9ae3953c4d98a793fecba2e62a796",
+        "expected_sha256": "43e299638a06d97532c6c71aadeb10dfe9a9ae3953c4d98a793fecba2e62a796",
+        "ok": true,
+        "path": "LANE_T51_A/a3_controls_3x3.py"
+      },
+      {
+        "actual_sha256": "3cb8612d4aae5d4f052d00e9b2eb803939805c87362965f69f70b092c060adfc",
+        "expected_sha256": "3cb8612d4aae5d4f052d00e9b2eb803939805c87362965f69f70b092c060adfc",
+        "ok": true,
+        "path": "LANE_T51_A/a3_controls_3x3.txt"
+      },
+      {
+        "actual_sha256": "f3cd4d05a5d51fcfa51b67ffa74b6b5f54a00e00b0a08d3ecd34d91a1556f42a",
+        "expected_sha256": "f3cd4d05a5d51fcfa51b67ffa74b6b5f54a00e00b0a08d3ecd34d91a1556f42a",
+        "ok": true,
+        "path": "LANE_T51_A/a4_verdicts.py"
+      },
+      {
+        "actual_sha256": "006b045775fce44fe99f6d5cb7cd3dbde63230053712ce3446fd6d42102372d4",
+        "expected_sha256": "006b045775fce44fe99f6d5cb7cd3dbde63230053712ce3446fd6d42102372d4",
+        "ok": true,
+        "path": "LANE_T51_A/a4_verdicts.txt"
+      },
+      {
+        "actual_sha256": "255f1f97564359d9ed5eb0eedd822723616b2f5239537233ef8396746184fcd1",
+        "expected_sha256": "255f1f97564359d9ed5eb0eedd822723616b2f5239537233ef8396746184fcd1",
+        "ok": true,
+        "path": "LANE_T51_A/g1_connected_wenc.py"
+      },
+      {
+        "actual_sha256": "5d138e87a68401f1963ec820cb4607ad0d4a4e82c67b3b58de51041c7f8e547b",
+        "expected_sha256": "5d138e87a68401f1963ec820cb4607ad0d4a4e82c67b3b58de51041c7f8e547b",
+        "ok": true,
+        "path": "LANE_T51_A/g1_connected_wenc.txt"
+      },
+      {
+        "actual_sha256": "f2cc435a755e219990010b02114594fe5500e5d0f9aef3d9bb680835964f99a5",
+        "expected_sha256": "f2cc435a755e219990010b02114594fe5500e5d0f9aef3d9bb680835964f99a5",
+        "ok": true,
+        "path": "LANE_T51_A/t51a_lib.py"
+      },
+      {
+        "actual_sha256": "92c091520eb5b6da2ee356f7aab8731932441bb57eb59e2f9bcebc7ae032439e",
+        "expected_sha256": "92c091520eb5b6da2ee356f7aab8731932441bb57eb59e2f9bcebc7ae032439e",
+        "ok": true,
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/v1_independent_rebuild.py"
+      },
+      {
+        "actual_sha256": "8c95720cc9f721fea6ce06e56eb1cbcf77e341db72186cf830726b1b8302144a",
+        "expected_sha256": "8c95720cc9f721fea6ce06e56eb1cbcf77e341db72186cf830726b1b8302144a",
+        "ok": true,
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/v1_independent_rebuild.json"
+      },
+      {
+        "actual_sha256": "bad804807922ce63cffb82752c2e173d967d5ea0c0d01181e696cc03fe528198",
+        "expected_sha256": "bad804807922ce63cffb82752c2e173d967d5ea0c0d01181e696cc03fe528198",
+        "ok": true,
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/v1_independent_rebuild.txt"
+      },
+      {
+        "actual_sha256": "b7c8c9caa5228281f333df8b9534707b93bb6cd3f3f0d793bc28ac454e6a9d29",
+        "expected_sha256": "b7c8c9caa5228281f333df8b9534707b93bb6cd3f3f0d793bc28ac454e6a9d29",
+        "ok": true,
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/D24_AUDIT.txt"
+      },
+      {
+        "actual_sha256": "4f4f01a957d985d941ec468baf053354d27bd651eab295366f542005fb81866c",
+        "expected_sha256": "4f4f01a957d985d941ec468baf053354d27bd651eab295366f542005fb81866c",
+        "ok": true,
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/VERIFY_CODEX/SEALS.sha256"
+      },
+      {
+        "actual_sha256": "fd049d5538c3acc0cd5a15dcf062e0ae58b603470a805638b6ff793bb130c42f",
+        "expected_sha256": "fd049d5538c3acc0cd5a15dcf062e0ae58b603470a805638b6ff793bb130c42f",
+        "ok": true,
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A/JUDGMENT_CODEX.txt"
+      },
+      {
+        "actual_sha256": "e5dba0b75d005692be4498e93f4a119d5a1ddccda5d0fc6301f5027942acb6c7",
+        "expected_sha256": "e5dba0b75d005692be4498e93f4a119d5a1ddccda5d0fc6301f5027942acb6c7",
+        "ok": true,
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/README.md"
+      },
+      {
+        "actual_sha256": "f9777b818df794f27fab89418963a01e49384ea748faed0d6b813e38326d6d24",
+        "expected_sha256": "f9777b818df794f27fab89418963a01e49384ea748faed0d6b813e38326d6d24",
+        "ok": true,
+        "path": "LANE_T51_REPAIR/QUARANTINED_DRAFTS/INPUTS.sha256"
+      }
+    ],
+    "verdict": "NOT_REFUTED"
+  },
+  "metadata": {
+    "date": "2026-08-21",
+    "default": "REFUTED",
+    "mode": "no-new-measurement",
+    "owned_output_directory": "LANE_T51_REPAIR/QUARANTINE_VERIFY"
+  },
+  "old_defects": {
+    "C_defect": {
+      "confirmed": true,
+      "finding": "the old verdict consumed only CHECK_LAMBDA=0.037 and only near/far; it computed but did not predicate on 0.071 or fresh placement",
+      "source_evidence": [
+        {
+          "line": 698,
+          "text": "\"C_winding_attribution\": \"NOT_REFUTED\" if all("
+        },
+        {
+          "line": 699,
+          "text": "dynamics[p][\"winding\"][str(CHECK_LAMBDA)][\"character\"][\"separated\"]"
+        },
+        {
+          "line": 700,
+          "text": "for p in (\"near\", \"far\")"
+        }
+      ]
+    },
+    "E_defect": {
+      "confirmed": true,
+      "finding": "the old scan used a top-level iterdir, explicitly missed nested artifacts, returned literal violation_count=0, and based E on that literal",
+      "source_evidence": [
+        {
+          "line": 437,
+          "needle": "for p in (repo / \"LANE_T51_A\").iterdir()",
+          "text": "for p in (repo / \"LANE_T51_A\").iterdir()"
+        },
+        {
+          "line": 464,
+          "needle": "\"violation_count\": 0,",
+          "text": "\"violation_count\": 0,"
+        },
+        {
+          "line": 703,
+          "needle": "\"E_D1_directive_scan\": \"NOT_REFUTED\" if prose[\"violation_count\"] == 0",
+          "text": "\"E_D1_directive_scan\": \"NOT_REFUTED\" if prose[\"violation_count\"] == 0 else \"REFUTED\","
+        }
+      ]
+    },
+    "old_source_sha256": "92c091520eb5b6da2ee356f7aab8731932441bb57eb59e2f9bcebc7ae032439e"
+  },
+  "overall_verdict": "REFUTED",
+  "registered_rule_disposition": "UNSCOREABLE",
+  "registration_authorized": false,
+  "rule_admissibility": {
+    "items": {
+      "V1": {
+        "min_far_abs_F": 8.56244177782628e-08,
+        "quote": "|F| exceeds the same-table measured control floor beyond contact at the larger separation.",
+        "recorded_control_floor": 1e-11,
+        "status": "NUMERICALLY_SUPPORTED"
+      },
+      "V2": {
+        "defects": {
+          "builder_declares_TOL_SWAP_for_onset": true,
+          "builder_excludes_F_magnitude_from_verdict": true,
+          "commissioned_far_class_is_singleton": true,
+          "commissioned_far_has_w_conn_5": true,
+          "no_F_swap_tolerance_in_preregistered_rule": true,
+          "registered_reading_is_F": true,
+          "substitute_far_side_pair_has_w_conn_4": true
+        },
+        "finding": "the registered reading is F, but the builder scores onset k; the w_conn=5 commissioned far class has no swap and is replaced by a w_conn=4 pair; no pre-registered F-equivalence tolerance exists",
+        "pair_details": [
+          {
+            "F_at_0.05": [
+              -0.0004088451960591044,
+              -0.0004539888497347988
+            ],
+            "F_magnitude_ratio": 0.9005621972828949,
+            "k_difference": 0.01167872396425329,
+            "k_hat": [
+              2.9768820387728714,
+              2.9885607627371247
+            ],
+            "label": "near-class swap",
+            "pair": [
+              "3x3-00H",
+              "3x3-00V"
+            ]
+          },
+          {
+            "F_at_0.05": [
+              4.3000562209627446e-05,
+              3.4739834850583406e-05
+            ],
+            "F_magnitude_ratio": 1.2377883313082392,
+            "k_difference": 0.021101681402267314,
+            "k_hat": [
+              3.982677613486716,
+              3.9615759320844486
+            ],
+            "label": "far-side swap",
+            "pair": [
+              "3x3-01H",
+              "3x3-21H"
+            ]
+          }
+        ],
+        "quote": "the reading follows earned geometry under the placement swap.",
+        "status": "UNSCOREABLE"
+      },
+      "V3": {
+        "quote": "the onset-order bracket contains connected w_enc at both placements",
+        "status": "NUMERICALLY_SUPPORTED"
+      },
+      "V4": {
+        "declared_TOL_BACK": 0.001,
+        "finding": "the recorded comparison is below the threshold, but the threshold was selected after a magnitude survey of the same result family and keyed above the largest far reading; it is not an adversarial pre-registered boolean",
+        "max_recorded_BA": 0.00011907860895554734,
+        "provenance": {
+          "numeric_comparison_true": true,
+          "same_result_magnitude_survey_disclosed": true,
+          "threshold_keyed_above_largest_far_reading": true,
+          "tolerance_absent_from_preregistered_field_document": true
+        },
+        "quote": "back-action below the declared tolerance.",
+        "status": "QUALIFIED_DESCRIPTIVE_ONLY"
+      },
+      "V5": {
+        "quote": "sign attribution licensed only if the winding-sector sweep separates content sign from winding sign.",
+        "status": "NUMERICALLY_SUPPORTED"
+      }
+    },
+    "old_ALL_PASS_is_admissible": false,
+    "quote_presence": {
+      "V1": true,
+      "V2": true,
+      "V3": true,
+      "V4": true,
+      "V5": true
+    },
+    "rule_disposition": "UNSCOREABLE"
+  },
+  "scientific_disposition": "PARTIAL_POSITIVE"
+}

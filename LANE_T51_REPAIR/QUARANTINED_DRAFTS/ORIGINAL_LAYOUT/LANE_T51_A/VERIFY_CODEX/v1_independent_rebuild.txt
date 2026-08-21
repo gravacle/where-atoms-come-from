@@ -1,0 +1,82 @@
+============================================================================================
+LANE_T51_A / VERIFY_CODEX -- INDEPENDENT ADVERSARIAL REBUILD
+date: 2026-08-21   default verdict: REFUTED; changed only by the computations below
+============================================================================================
+
+SCOPE AND INDEPENDENCE
+  Standalone incidence construction; no import from model/, geometry.py, t51a_lib.py,
+  or any builder/verification script.  The pre-existing VERIFY fragment was not run or
+  copied.  Builder artifacts were inputs only.  This verifier does not score V1-V5.
+  Builder manifest: 16 files checked,
+  mismatches = 0.
+
+A -- SECTOR EXACTNESS: NOT_REFUTED
+  Builder: source value is an exact quantum number under V = lambda sum_e Z_e.
+  Rebuild: max star/source symplectic pairing = 0;
+  max mediator/source pairing = 0.
+  Full 3x2 venue audit: 0 source-changing transitions
+  among 16384 nonzero star transitions on 4096 basis states.
+  Both source-hole face parities were also checked equal in every reduced sector.
+
+B -- CONNECTED ENCLOSING MINIMUM: NOT_REFUTED
+  Builder far placement: old minimum 4; connected minimum 5.
+  Rebuild near placement: old minimum 3; connected
+  minimum 3 with 1 minimizers.
+  Rebuild far placement: 1024 endpoint-valid strings,
+  512 enclosing; old minimum 4
+  (witness connected=False), connected minimum
+  5 with 7 minimizers.
+  Exhaustive lighter-string attack: connected enclosing counts below weight 5 =
+  {}.
+  Connected witness: {h(1,1),h(2,2),v(1,0),v(2,1),v(0,2)}.
+  Fresh rotated placement: old minimum 4, connected
+  minimum 5, 7 minimizers,
+  no lighter connected enclosing string {}.
+
+C -- WINDING ATTRIBUTION: NOT_REFUTED
+  Fresh off-grid lambda = 0.037; winding labels 00,01,10,11:
+  near:  00=-1.746174147e-04  01=-2.019306670e-04  10=-2.019004960e-04  11=-2.347736283e-04
+  far:   00=-1.786113453e-06  01=+1.938096156e-06  10=+1.938222185e-06  11=-2.115302415e-06
+  fresh: 00=-1.786113462e-06  01=+1.938222212e-06  10=+1.938096112e-06  11=-2.115302415e-06
+  Near character/content sign = [{'character': [0, 0], 'content_sign': -1}];
+  far = [{'character': [1, 1], 'content_sign': -1}]; fresh = [{'character': [1, 1], 'content_sign': -1}].
+  Moving winding sector alone flips the far reading's sign.  The builder's sealed tables
+  do not make an unscoped sign claim: the reference sector is named and the winding-odd
+  attribution is explicitly restricted to the declared winding representatives.
+
+D -- OFF-GRID ONSET FITS: NOT_REFUTED
+  Measured/declared numerical floor = 1.0e-12; fit points require >=
+  100 times that floor.  Independent estimator:
+  log|F| = a + k log(lambda) + c lambda^2 on lambda = [0.011, 0.017, 0.026, 0.039, 0.058].
+  near: builder k=2.976882; ours k=2.947586,
+  connected minimum=3, floor-induced max |delta k|=2.42e-07,
+  bracket=True.
+  far:  builder k=4.948119; ours k=4.970151,
+  connected minimum=5, floor-induced max |delta k|=2.80e-04,
+  bracket=True.
+  fresh rotated: ours k=4.970145, connected minimum=5,
+  bracket=True.
+  Labeled on-grid cross-check only after rebuild: near |difference|=
+  1.243e-14; far
+  |difference|=2.309e-14.
+
+E -- D-1 / PRINCIPAL-DIRECTIVE PROSE SCAN: NOT_REFUTED
+  15 sealed top-level builder files scanned (txt/json/py).
+  Raw prohibited-shape hits=0;
+  imported-requirement hits=0;
+  outcome-as-failure hits=0.
+  Manual sentence review found no separation-shape requirement, imported standard, or
+  framing of any computed accumulation/composition outcome as failure.
+
+PER-ITEM VERDICTS
+  A_sector_exactness: NOT_REFUTED
+  B_connected_wenc: NOT_REFUTED
+  C_winding_attribution: NOT_REFUTED
+  D_onset_fits: NOT_REFUTED
+  E_D1_directive_scan: NOT_REFUTED
+
+FINDING
+  Winding alone reverses the sign at the connected-minimum-5 placements; this is real
+  small-venue structure, and it is already scoped rather than hidden in the builder outputs.
+  No A-E item was refuted.
+============================================================================================

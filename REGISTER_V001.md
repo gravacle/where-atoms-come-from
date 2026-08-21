@@ -10791,3 +10791,77 @@ with a stated tolerance and power/control semantics. `validate_urm.py` composes 
 before the geometry/project chains, and `replicate/on_finding.sh` invokes that umbrella on every
 landing. The final commit remains contingent on both required landing gates; no failure may be
 narrated past.
+
+---
+
+## T-51 QUARANTINE CORRECTION — **THE OLD ALL-PASS IS INADMISSIBLE; THE CORRECTION LANDS, SCIENTIFIC REGISTRATION DOES NOT** (`LANE_T51_REPAIR/`, sealed correction subset)
+
+**CUSTODY BOUNDARY.** `LANE_T51_A.sha256` remains unchanged at
+`15a4d1a83fe92b4282746a35b996c179013a94c942e12e609f7322429bfca1a8`; the sealed builder is input
+and was not rerun. The tracked `LANE_T51_A/VERIFY/v1_adversarial_rebuild.py` remains an obsolete,
+unexecuted fragment sealed with that historical builder package, not an admissible verifier. The
+untracked, final-looking `LANE_T51_A/VERIFY_CODEX/**` and `JUDGMENT_CODEX.txt` drafts were not
+promoted at those paths. Exact byte copies are preserved under
+`LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/`, with the old nested seals retained as
+integrity evidence only and an explicit instruction that none of the copies may be executed or
+registered. The originals were neither modified nor removed and remain excluded from this landing.
+
+**THE TWO OLD VERIFIER DEFECTS ARE NOW PART OF THE RECORD.** The drafted C verdict consumed only
+`lambda=0.037` at near/far even though its raw artifact also contained `0.071` and the fresh
+placement. The drafted E scan walked only the top level of `LANE_T51_A`, omitted nested artifacts,
+returned a literal `violation_count=0`, and made its verdict depend on that literal. Therefore the
+old A–E all-clear and the judgment built on it never met the default-refuted commission.
+
+**WHAT THE QUARANTINE AUDIT DOES — AND DOES NOT DO.** The clean-clone-replayable correction audit
+hashes 26 frozen inputs with zero mismatch, cross-checks the builder, archived-verifier and
+quarantine-copy manifests, consumes all six C cells (near/far/fresh × `0.037/0.071`), and runs E on
+a closed 23-file claim corpus with three firing positive controls and zero unexculpated decision
+hits. Its overall result remains `REFUTED`, with scientific disposition **PARTIAL POSITIVE / NUMERIC
+SUPPORT ONLY / REPAIR REQUIRED**. A/B/D re-adjudicate the archived verifier's stored records, C
+repairs the predicate over archived raw `F` rows, and V1 reads the builder table and floor. Those
+operations are useful correction evidence, but they are not a fresh independent-own-machinery
+scientific rebuild. Component `NOT_REFUTED` labels must not be promoted into V1–V5 scores.
+
+**THE NO-MEASUREMENT JUDGMENT.** The quarantine correction is **ACCEPTED FOR LANDING**; historical
+scientific terminal registration is **REJECTED**; the required independent-own-machinery verifier
+standard is **NOT MET**. Scoring from `FIELD_INSTRUMENT_V001.md` section 1 is therefore:
+
+1. **V1:** numerically supported only; pending admissible independent verification; no score.
+2. **V2:** **UNSCOREABLE**, never FALSE. FIELD defines the reading as `F(D)`, while the builder
+   scored onset `k`, introduced `TOL_SWAP=0.25` after FIELD, and replaced the singleton commissioned
+   connected-`w_enc=5` far class with a connected-`w_enc=4` pair.
+3. **V3:** numerically supported only; pending admissible independent verification; no score.
+4. **V4:** qualified descriptive comparison only. The stored back-action is below `1e-3`, but that
+   budget was selected after a same-family magnitude survey and placed above the observed scale; it
+   is not a prospective Boolean available to the conjunction.
+5. **V5:** numerically supported only; pending admissible independent verification; no score; the
+   far sign remains relative to the sealed winding representatives.
+
+Neither registered route fires: ALL PASS cannot fire, and V1 has not scored FALSE, so the
+mediator-family negative route cannot fire. **PARTIAL POSITIVE / REPAIR REQUIRED is an
+administrative disposition, not a third terminal branch.** The drafted C-94 row, drafted C-77
+increment and drafted T-51 completion are rejected.
+
+**THE CORRECTION TRAIL IS PRESERVED, NOT CLEANED AWAY.** The quarantine audit first misclassified a
+wrapped explicit no-failure sentence because its scan window omitted preceding context; the window
+was made bidirectional and all positive controls still fired. It then exposed two parser defects:
+Markdown markup blocked exact quote matching, and `TOL_BACK` was sought in the wrong frozen file;
+both were corrected without changing a scientific value. Pre-landing replay review then found the
+audit depended on untracked final-looking paths; byte copies were placed in the quarantined custody
+tree, all references were repointed, and two final runs were byte-identical. The judge's first
+custody check requested the manifest at the wrong directory and its first quote checker assumed a
+wrapped clause occupied one line; both checks were corrected. Final pre-seal review also corrected
+the judge audit's description of `d_gen`: FIELD explicitly treats both `d_gen` and connected
+`w_enc` as earned quantities. Every correction is in the two D24 audits; none changes the judgment.
+
+**LEDGER, PLAN, AND URM DISPOSITION.** No ledger or claims row moves. No C-94 or T-9 registration
+row is added. `T-51` remains `TODO` and open; `T-54` remains `DOING`; no field result enters the
+URM, proof, or claims grid. The continuous URM rule is being applied here precisely by refusing to
+home an invalid result. A future field law may enter only after a complete prospective instrument,
+fresh measurement, independent default-refuted verification, and a no-measurement judgment.
+
+**NEXT BOUNDARY.** Prospective design work remains unsealed and outside this correction landing.
+Before even a geometry selector runs, one coherent fresh rule, all builder/scorer/checker sources,
+the independent budget, verifier briefs, immutable pre-execution audit declaration, and design
+judge packet must be sealed and pushed. The historical exposed rows may inform a declared design;
+they may never score their own repair.

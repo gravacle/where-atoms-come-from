@@ -1,0 +1,72 @@
+================================================================================================
+LANE_T51_REPAIR / QUARANTINE_VERIFY -- NO-NEW-MEASUREMENT DEFAULT-REFUTED AUDIT
+date: 2026-08-21
+================================================================================================
+
+EXACT DISPOSITION
+  OVERALL_VERDICT: REFUTED
+  REGISTERED_RULE_DISPOSITION: UNSCOREABLE
+  SCIENTIFIC_DISPOSITION: PARTIAL_POSITIVE
+  BRANCH: REPAIR_REQUIRED
+  V2_SCORE: NONE (UNSCOREABLE)
+  V4_SCORE: NONE (QUALIFIED DESCRIPTION ONLY)
+  ALL_PASS_AUTHORIZED: FALSE
+  REGISTRATION_AUTHORIZED: FALSE
+  NOTHING IN THIS DIRECTORY IS REGISTRATION EVIDENCE UNTIL A LATER JUDGE ACTS.
+
+INPUT CUSTODY
+  frozen inputs hashed: 26; mismatches: 0
+  builder manifest cross-check: True
+  prior verifier seal cross-check: True
+  quarantine-copy manifest cross-check: True
+  integrity verdict: NOT_REFUTED
+  No builder, sealed program, Hamiltonian, or measurement script was executed.
+
+OLD DEFECTS PRESERVED
+  old C predicate defect confirmed: True
+    old C used only lambda=0.037 and near/far, despite recording 0.071 and fresh.
+  old E predicate defect confirmed: True
+    old E walked only top-level files and returned literal violation_count=0.
+
+A/B/D RECORDED-EVIDENCE RE-ADJUDICATION
+  A sector exactness: NOT_REFUTED
+  B connected minimum: NOT_REFUTED
+  D off-grid onset fit: NOT_REFUTED
+
+C -- STRENGTHENED WINDING ATTRIBUTION
+  verdict: NOT_REFUTED
+  required cross-product: placements near/far/fresh x lambdas 0.037/0.071.
+    near lambda=0.037: ok=True fits=[{'character': [0, 0], 'content_sign': -1}] signs={'00': -1, '01': -1, '10': -1, '11': -1}
+    near lambda=0.071: ok=True fits=[{'character': [0, 0], 'content_sign': -1}] signs={'00': -1, '01': -1, '10': -1, '11': -1}
+    far lambda=0.037: ok=True fits=[{'character': [1, 1], 'content_sign': -1}] signs={'00': -1, '01': 1, '10': 1, '11': -1}
+    far lambda=0.071: ok=True fits=[{'character': [1, 1], 'content_sign': -1}] signs={'00': -1, '01': 1, '10': 1, '11': -1}
+    fresh lambda=0.037: ok=True fits=[{'character': [1, 1], 'content_sign': -1}] signs={'00': -1, '01': 1, '10': 1, '11': -1}
+    fresh lambda=0.071: ok=True fits=[{'character': [1, 1], 'content_sign': -1}] signs={'00': -1, '01': 1, '10': 1, '11': -1}
+
+E -- CLOSED-CORPUS DIRECTIVE SCAN
+  corpus: 23 frozen hash-enumerated claim-bearing files
+  positive controls all matched: True
+  candidate hits: 2; decision hits: 0
+  verdict derived from controls and decision hits: NOT_REFUTED
+  explicit self-reference exclusion: LANE_T51_REPAIR/QUARANTINE_VERIFY/**
+
+PRE-REGISTERED V1--V5 ADMISSIBILITY (NO JUDGE, NO NEW MEASUREMENT)
+  V1: NUMERICALLY_SUPPORTED -- |F| exceeds the same-table measured control floor beyond contact at the larger separation.
+  V2: UNSCOREABLE -- the reading follows earned geometry under the placement swap.
+  V3: NUMERICALLY_SUPPORTED -- the onset-order bracket contains connected w_enc at both placements
+  V4: QUALIFIED_DESCRIPTIVE_ONLY -- back-action below the declared tolerance.
+  V5: NUMERICALLY_SUPPORTED -- sign attribution licensed only if the winding-sector sweep separates content sign from winding sign.
+
+LOAD-BEARING FINDINGS
+  V2 is UNSCOREABLE: FIELD defines the reading as F(D), while C2's boolean uses onset
+  k; the commissioned w_conn=5 far class is a singleton and the substitute swap is
+  w_conn=4; no pre-registered F-equivalence tolerance exists.
+  V4 is QUALIFIED_DESCRIPTIVE_ONLY: max recorded BA is below 1e-3, but the audit
+  discloses that 1e-3 was selected after a magnitude survey and set one order above
+  the largest commissioned far reading.  That does not support an adversarial PASS.
+  Therefore the old ALL PASS assertion and the prior judgment's 'no UNSCOREABLE item'
+  premise are REFUTED.  C and E passing does not cure the scoring defects.
+  A-E NOT_REFUTED is a verifier-component result only; it is not V1-V5 ALL PASS.
+
+FINAL: PARTIAL POSITIVE / REPAIR REQUIRED.  REGISTER NOTHING.
+================================================================================================

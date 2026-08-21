@@ -1,0 +1,224 @@
+============================================================================================
+LANE_T51_A / JUDGMENT_CODEX — INDEPENDENT JUDGE, NO NEW MEASUREMENT
+date: 2026-08-21
+repo state judged: branch main, HEAD 3154a6f; origin/main at the same commit
+============================================================================================
+
+SCOPE
+
+This judgment adds no measurement. No builder or verifier scientific script was run. The judge
+read FIELD_INSTRUMENT_V001.md section 1 verbatim; the sealed builder outputs and their D24 audit;
+all of LANE_T51_A/VERIFY_CODEX, including source, JSON, prose output, seals, and D24 audit; the live
+C-77, C-92, C-93 and T-51 texts; and the T-9 at-registration method. Hash checking is integrity
+checking only: every top-level builder sidecar checked OK, the 16-file builder manifest had zero
+mismatches in the independent verifier, and all four VERIFY_CODEX seals checked OK.
+
+ADMISSIBILITY TO SCORE
+
+The verifier began default REFUTED and returned:
+
+  A sector exactness          NOT_REFUTED
+  B connected w_enc           NOT_REFUTED
+  C winding attribution       NOT_REFUTED
+  D onset fits                NOT_REFUTED
+  E D-1/directive scan        NOT_REFUTED
+
+No verifier item refutes load-bearing work. Therefore no V-item is UNSCOREABLE and V1–V5 may be
+scored from the sealed builder numbers. The verifier's independent machinery also found zero
+source-changing transitions among 16,384 nonzero star transitions on the full 3x2 venue; rebuilt
+the far connected minimum as 5 from 1,024 endpoint-valid strings and 512 enclosing strings, with
+no lighter connected enclosing string; reproduced the on-grid near/far readings to absolute
+differences 1.243e-14 and 2.309e-14; and returned independent off-grid onset estimates 2.947586 and
+4.970151, each inside the declared 0.25 bracket around connected minima 3 and 5. These numbers are
+verifier inputs to the judgment, not judge measurements.
+
+--------------------------------------------------------------------------------------------
+1. THE PRE-REGISTERED RULE, QUOTED VERBATIM AND SCORED
+--------------------------------------------------------------------------------------------
+
+V1 — “|F| exceeds the same-table measured control floor beyond contact at the larger
+separation.”
+
+  Sealed inputs: at the commissioned larger-separation placement, connected w_enc = 5 and
+  |F| = 8.56244177782628e-08, 7.819874076275823e-06, 2.2406959603493704e-04 for
+  lambda = 0.02, 0.05, 0.10. The minimum is 8.56244177782628e-08. The same-table source-absent
+  residual is at most 8.881784197001252e-15 and the declared eigenvalue floor is 1.0e-11, so the
+  sealed control floor is 1.0e-11.
+
+  Computed comparison: 8.56244177782628e-08 > 1.0e-11.
+  V1 = TRUE.
+
+V2 — “the reading follows earned geometry under the placement swap.”
+
+  Sealed inputs: near-class swap onsets 2.9768820387728714 and 2.9885607627371247 both bracket
+  connected w_enc = 3; their difference is 0.0116787239642533 <= TOL_SWAP 0.25. The largest
+  multi-member far-side class swap onsets 3.982677613486716 and 3.9615759320844486 both bracket
+  connected w_enc = 4; their difference is 0.0211016814022674 <= 0.25. The commissioned
+  connected-w_enc = 5 class is a measured singleton, so no equal-class swap exists there; that
+  finite-venue scope is carried and was not concealed.
+
+  Computed conjunction: both registered equal-earned-class swap verdicts are true.
+  V2 = TRUE.
+
+V3 — “the onset-order bracket contains connected w_enc at both placements (scored only after the
+connectivity gate).”
+
+  Gate: TRUE. At 3x2 the old minimum 3 is disconnected, the connected minimum is 4, and the sealed
+  onset is 3.995; at the commissioned 3x3 far placement the old minimum 4 is disconnected, the
+  connected minimum is 5, and exhaustive enumeration found no lighter connected enclosing string.
+  Sealed commissioned comparisons: |2.9768820387728714 - 3| = 0.0231179612271286 <= 0.25 and
+  |4.948119452977745 - 5| = 0.051880547022255 <= 0.25. The independent off-grid estimator also
+  returned 2.947585529505041 and 4.970151384706792, both inside the same brackets, plus a fresh
+  rotated connected-minimum-5 placement at 4.970144786764373.
+
+  Computed conjunction: both commissioned placement brackets contain connected w_enc.
+  V3 = TRUE.
+
+V4 — “back-action below the declared tolerance.”
+
+  Declared tolerance: TOL_BACK = 1.0e-03 in unit-stabilizer energy units. Sealed maxima over the
+  commissioned lambda grid: 1.1907860895554734e-04 at the near placement and
+  2.491671410176366e-05 at the far placement.
+
+  Computed comparisons: 1.1907860895554734e-04 < 1.0e-03 and
+  2.491671410176366e-05 < 1.0e-03.
+  V4 = TRUE.
+
+V5 — “sign attribution licensed only if the winding-sector sweep separates content sign from
+winding sign.”
+
+  Sealed sweep: at the near placement and every commissioned lambda, all four winding-sector signs
+  are negative, giving the unique character c=(0,0) and residual content sign s0=-1. At the far
+  placement and every commissioned lambda, the signs are (-,+,+,-), giving the unique character
+  c=(1,1) and s0=-1. The verifier independently reproduced these characters at fresh lambdas 0.037
+  and 0.071 and on a fresh rotated placement. Moving winding sector alone reverses the far sign;
+  therefore the far sign is licensed only relative to the sealed zbar1/zbar2 representatives. The
+  builder states exactly that scope, so the verifier finding does not refute the licensed claim.
+
+  Computed conjunction: a unique, lambda-stable character factorization exists at both placements.
+  V5 = TRUE.
+
+ALL PASS = V1 AND V2 AND V3 AND V4 AND V5 = TRUE.
+
+--------------------------------------------------------------------------------------------
+2. BRANCH AND NEXT STEP
+--------------------------------------------------------------------------------------------
+
+The ALL-PASS branch fires exactly as pre-registered: the record surface has a field side in the
+only sense it has earned — a test record's own law is modified at a place where the written content
+is not, by an amount set by the content's value and earned separation, through a declared, priced,
+content-blind mediator. This is a finite, mediated, single-carrier, model-surface statement. The far
+sign is convention-scoped; the reading is Z_2-valued in the source; composition, signed-kernel
+shape, the full metric/connection/deflection ask, dynamics of motion, and empirical contact remain
+open. No classical gravitational form was used as a test.
+
+The ranked next step is the two-source composition MEASUREMENT at 4x4. It is first because it
+measures what composition IS on this surface. Under the principal's binding directive — “the
+mechanism for accumulation is whatever it proves to be” — superposition, mod-2 saturation,
+screening, or another computed law each registers as the surface's own composition law. After that:
+the Tier-2 signed kernel over the connected/dynamical string class, then the Tier-3 grounded lifetime
+readout. The surviving source-value × probe-writer-amplitude operator combination feeds O-53 its
+field-side candidate.
+
+--------------------------------------------------------------------------------------------
+3. REGISTRAR-READY C-94 STATUS-LEDGER ROW
+--------------------------------------------------------------------------------------------
+
+The row is eight tab-separated fields in status-ledger order. Status is FORMAL because this is a
+model-surface result with zero empirical contact; T-36 class is MEASURED because its load-bearing
+content is finite numerical diagonalization, not a general theorem.
+
+C-94	GRAVITY	THE SECOND LUMP PASSES THE PRE-REGISTERED FIELD-SIDE RULE — THE RECORD SURFACE HAS A FIELD SIDE IN THE ONLY SENSE IT HAS EARNED. A minimal hole-pair test record's own splitting responds beyond contact to the value of a dual written record through the declared priced content-blind mediator: at the commissioned larger earned separation (connected w_enc=5), min_lambda |F| = 8.56244177782628e-08 exceeds the same-table 1.0e-11 control floor (V1 TRUE). Equal-earned-class placement swaps preserve the connected-w_enc onset brackets and agree within 0.011679 and 0.021102 against TOL_SWAP=0.25 (V2 TRUE; the w_enc=5 class is a singleton, stated). The connectivity gate resolves both counterexamples — 3x2 old 3/disconnected versus connected 4/onset 3.995, and commissioned 3x3 old 4/disconnected versus connected 5/onset 4.948 — and both commissioned onset brackets contain connected w_enc (V3 TRUE). Maximum back-action is 1.190786e-04 near and 2.491671e-05 far, both below TOL_BACK=1.0e-03 (V4 TRUE). The winding sweep factors sign(F)=s0*(-1)^(c.w): near c=(0,0), s0=-1; far c=(1,1), s0=-1, with the far attribution licensed only relative to the sealed zbar representatives (V5 TRUE). ALL PASS. An independent default-refuted rebuild returned NOT_REFUTED on sector exactness, connected w_enc, winding attribution, off-grid onset fits, and the D-1/directive scan; no verdict is UNSCOREABLE. FALSIFIER: any pre-registered V1-V5 condition false, or an independent refutation of its load-bearing sector/connectivity/attribution machinery; none fired. SCOPE: mediated, Z_2-valued, finite toric model venue, single carrier, zero empirical contact; composition, signed-kernel shape, the full geometry-side dynamical ask, and whose field the mediator exposes remain open. NEXT: two-source composition at 4x4 measures the surface's own composition law; every outcome registers.	FORMAL	LANE_T51_A/g1_connected_wenc.txt; LANE_T51_A/a1_calibration_3x2.txt; LANE_T51_A/a2_field_table_3x3.txt; LANE_T51_A/a3_controls_3x3.txt; LANE_T51_A/a4_verdicts.txt; LANE_T51_A/VERIFY_CODEX/v1_independent_rebuild.txt; LANE_T51_A/JUDGMENT_CODEX.txt; seals verified, independent verifier A-E all NOT_REFUTED			[T-36 CLASS: MEASURED | OWNER: ASSEMBLED (Bravyi-Kitaev hole-pair/string construction and sector diagonalization standard; the written-value differential F(D), connected-enclosure gate, five-control battery, and field-side application original)] [T-9 CARRIERS: SINGLE-CARRIER (toric-2x2)]
+
+--------------------------------------------------------------------------------------------
+4. EXACT C-77 INCREMENT TEXT
+--------------------------------------------------------------------------------------------
+
+Insert after the existing increment-3 sentence and before the standing conditional/open-pieces
+text; keep C-77 at CANDIDATE:
+
+4 SATISFIED AT FIRST FIELD-INSTRUMENT LEVEL (C-94): the pre-registered Second Lump rule scored V1=TRUE, V2=TRUE, V3=TRUE, V4=TRUE, V5=TRUE after an independent default-refuted rebuild returned NOT_REFUTED on every A-E attack. A test record's own splitting changes beyond contact with written value through the declared priced mediator, above the same-table floor; placement swaps follow earned geometry; onset brackets contain connected w_enc; back-action stays below its declared tolerance; and winding sweeps separate content sign from winding sign, with the winding-odd far sign explicitly convention-scoped. THIS EARNS ONLY THE MEDIATED FIELD-SIDE STATEMENT: the reading is Z_2-valued and single-carrier; composition, signed-kernel shape, the full metric/connection/deflection dynamics, whose field the mediator exposes, and empirical contact remain open. The two-source 4x4 measurement runs next to determine what composition IS, and every outcome registers as the surface's law under the principal's accumulation directive.
+
+Recommended C-77 EVIDENCE-cell append: “C-94, pre-registered V1-V5 ALL PASS after independent
+default-refuted verification; mediated/single-carrier/model-surface scope retained.”
+
+--------------------------------------------------------------------------------------------
+5. T-9 CARRIER-AUDIT ROW
+--------------------------------------------------------------------------------------------
+
+C-94	SINGLE-CARRIER	toric-2x2	LANE_T51_A/a1_calibration_3x2.txt (3x2 calibration) and a2_field_table_3x3.txt/a3_controls_3x3.txt (3x3 field and controls) are sizes of the same toric stabiliser carrier family; VERIFY_CODEX uses independent incidence/sector machinery, fresh lambdas, and a rotated placement on the same toric family, not a structurally different carrier. Default SINGLE-CARRIER therefore stands. Audited AT REGISTRATION per the T-52 rule.
+
+--------------------------------------------------------------------------------------------
+6. T-51 DISPOSITION AND REGISTER ENTRY
+--------------------------------------------------------------------------------------------
+
+Disposition:
+
+  T-51 -> DONE.
+
+Its DONE_WHEN is met: C-92 defined the field-side observable; C-94 computes it on written and
+unwritten/source-absent configurations with the pre-registered falsifier and all controls; the
+independent verifier did not refute any load-bearing item; and this judgment scores the registered
+rule. C-92 remains DEFINED as the instrument-definition row; C-93 remains FORMAL; C-94 is the new
+FORMAL result row; C-77 remains CANDIDATE with increment 4 added. The negative branch does not fire.
+
+Register entry draft:
+
+## T-51 LANDS — **THE SECOND LUMP SCORES ALL PASS. THE RECORD SURFACE HAS A FIELD SIDE IN THE ONLY SENSE IT HAS EARNED.** (C-94; `LANE_T51_A/`, independently verified and judged)
+
+The pre-registered `FIELD_INSTRUMENT_V001.md` section-1 rule was applied after the unverified
+builder verdict was quarantined. A default-`REFUTED` verifier rebuilt the sector construction,
+connected enclosing minimum, winding attribution, and onset fits with independent incidence and
+sector machinery, fresh off-grid lambda values, and a fresh rotated placement. Its five attacks all
+returned `NOT_REFUTED`: source-changing transitions 0/16,384 on the full 3x2 audit; the commissioned
+far placement rebuilt from 1,024 endpoint-valid strings and 512 enclosing strings with old minimum
+4 disconnected, connected minimum 5, seven minimizers, and no lighter connected enclosing string;
+on-grid `F(0.05)` reproduced to 1.243e-14 near and 2.309e-14 far; off-grid onsets 2.947586 and
+4.970151 bracket connected minima 3 and 5; and the winding characters reproduced at fresh lambda
+values. The judge added no measurement. Builder and verifier seals re-check clean.
+
+**THE SCORED RULE:** `V1 TRUE` — at the larger earned separation, the minimum commissioned
+`|F| = 8.5624418e-08` exceeds the same-table `1.0e-11` floor. `V2 TRUE` — both equal-earned-class swaps
+bracket their connected `w_enc` and agree within 0.011679 and 0.021102 against 0.25; the
+connected-`w_enc=5` class is a singleton and that finite-venue scope is carried. `V3 TRUE` — the
+connectivity gate lands: 3x2 old 3/disconnected versus connected 4/onset 3.995, and commissioned
+3x3 old 4/disconnected versus connected 5/onset 4.948; both commissioned brackets contain the
+connected minimum. `V4 TRUE` — maximum back-action 1.190786e-04 near and 2.491671e-05 far is below
+the declared 1.0e-03 tolerance. `V5 TRUE` — the winding sweep separates the content sign: near
+`c=(0,0), s0=-1`; far `c=(1,1), s0=-1`, licensed only relative to the sealed winding
+representatives. No verifier refutation makes any item unscoreable. **ALL PASS = TRUE.**
+
+**WHAT IS EARNED, AND ONLY THAT:** a test record's own law is modified at a place where the written
+content is not, by an amount set by content value and earned separation, through the declared,
+priced, content-blind mediator. This is the first scored field-side reading of the program, but it
+is mediated, Z_2-valued, finite-venue, `SINGLE-CARRIER (toric-2x2 family)`, and entirely on a model
+surface. The far sign is winding-convention-scoped. Composition, signed-kernel shape, motion,
+metric/connection/deflection, whose field the mediator exposes, and empirical contact remain open.
+No classical gravitational form entered any decision path.
+
+**CORRECTIONS TRAIL, FROM THE TWO D24 AUDITS:** before the gate was sealed, its first execution's
+raw prior-art grep dump was replaced by an aligned runtime-parsed comparison; sections 0-3 and every
+scientific number reproduced unchanged, and the standing gate seal supersedes the logged draft
+seal. The measurement sealed on its first run with no scientific correction; its calibration's
+far-target best-match choice has an exact printed tie with another placement and is enumeration
+order only. Before the verifier was sealed, a host-language popcount incompatibility was replaced
+by `bin(x).count("1")` before any scientific computation, and a prose-regex false match on the suffix
+of `Tier-2` was repaired by tightening its token boundary; no scientific number or verdict changed,
+and no verifier seal was superseded. The verifier's substantive finding — winding alone reverses
+the far sign — is retained in the claim's convention scope, not reconciled away.
+
+**REGISTER DISPOSITION:** C-94 appended `FORMAL`, T-36 `MEASURED`, owner `ASSEMBLED`; T-9 audit
+appended `SINGLE-CARRIER (toric-2x2)` at registration. C-77 increment 4 is `SATISFIED AT FIRST
+FIELD-INSTRUMENT LEVEL` with every carried limit intact. C-92 remains the `DEFINED` instrument row;
+C-93 remains the rigidity theorem. T-51 meets its DONE_WHEN and moves `TODO -> DONE`.
+
+**NEXT STEP, BY THE PRE-REGISTERED ALL-PASS BRANCH:** the two-source composition MEASUREMENT at
+4x4 runs first. It asks what composition IS on this surface. Per the principal's binding directive,
+*“the mechanism for accumulation is whatever it proves to be”*: superposition, mod-2 saturation,
+screening, or another computed rule each registers as the surface's own law. Then come the Tier-2
+signed connected kernel and Tier-3 grounded lifetime readout; the surviving operator combination
+feeds O-53. Separately, C-94's machinery is now eligible for the already-planned T-54 URM fold-in.
+
+============================================================================================
+END JUDGMENT
+============================================================================================

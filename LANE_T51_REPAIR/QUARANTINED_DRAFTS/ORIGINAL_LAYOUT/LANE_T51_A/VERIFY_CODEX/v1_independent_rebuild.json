@@ -1,0 +1,899 @@
+{
+  "A": {
+    "exact": true,
+    "full_venue_states": 4096,
+    "full_venue_transitions": 16384,
+    "mediator_source_symplectic_max": 0,
+    "source_changing_transitions": 0,
+    "star_source_symplectic_max": 0
+  },
+  "B": {
+    "builder_far_claim": {
+      "connected_min": 5,
+      "old_min": 4
+    },
+    "far_rebuild": {
+      "conn_min": 5,
+      "conn_min_count": 7,
+      "conn_windings": [
+        [
+          1,
+          1
+        ]
+      ],
+      "conn_witness": 50448,
+      "conn_witness_edges": [
+        "h(1,1)",
+        "h(2,2)",
+        "v(1,0)",
+        "v(2,1)",
+        "v(0,2)"
+      ],
+      "connected_histogram": {
+        "5": 7,
+        "6": 22,
+        "7": 36,
+        "8": 56,
+        "9": 86,
+        "10": 112,
+        "11": 76,
+        "12": 31,
+        "13": 23,
+        "14": 14,
+        "15": 2,
+        "16": 1,
+        "17": 1
+      },
+      "connector_count": 1024,
+      "cycle_basis_rank": 10,
+      "direct": 1,
+      "direct_edges": [
+        "h(0,0)"
+      ],
+      "enclosing_count": 512,
+      "excluded_face": [
+        0,
+        0
+      ],
+      "lighter_connected_histogram": {},
+      "old_min": 4,
+      "old_min_count": 1,
+      "old_witness": 149505,
+      "old_witness_connected": false,
+      "old_witness_edges": [
+        "h(0,0)",
+        "v(2,0)",
+        "v(2,1)",
+        "v(2,2)"
+      ]
+    },
+    "fresh_rebuild": {
+      "conn_min": 5,
+      "conn_min_count": 7,
+      "conn_windings": [
+        [
+          1,
+          1
+        ]
+      ],
+      "conn_witness": 37312,
+      "conn_witness_edges": [
+        "h(0,2)",
+        "h(1,2)",
+        "h(2,2)",
+        "v(0,1)",
+        "v(0,2)"
+      ],
+      "connected_histogram": {
+        "5": 7,
+        "6": 22,
+        "7": 36,
+        "8": 56,
+        "9": 86,
+        "10": 112,
+        "11": 76,
+        "12": 31,
+        "13": 23,
+        "14": 14,
+        "15": 2,
+        "16": 1,
+        "17": 1
+      },
+      "connector_count": 1024,
+      "cycle_basis_rank": 10,
+      "direct": 512,
+      "direct_edges": [
+        "v(0,0)"
+      ],
+      "enclosing_count": 512,
+      "excluded_face": [
+        0,
+        0
+      ],
+      "lighter_connected_histogram": {},
+      "old_min": 4,
+      "old_min_count": 1,
+      "old_witness": 960,
+      "old_witness_connected": false,
+      "old_witness_edges": [
+        "h(0,2)",
+        "h(1,2)",
+        "h(2,2)",
+        "v(0,0)"
+      ]
+    },
+    "near_rebuild": {
+      "conn_min": 3,
+      "conn_min_count": 1,
+      "conn_windings": [
+        [
+          0,
+          0
+        ]
+      ],
+      "conn_witness": 1544,
+      "conn_witness_edges": [
+        "h(0,1)",
+        "v(0,0)",
+        "v(1,0)"
+      ],
+      "connected_histogram": {
+        "3": 1,
+        "4": 5,
+        "5": 9,
+        "6": 16,
+        "7": 42,
+        "8": 75,
+        "9": 89,
+        "10": 97,
+        "11": 79,
+        "12": 43,
+        "13": 23,
+        "14": 10,
+        "15": 1,
+        "16": 1,
+        "17": 1
+      },
+      "connector_count": 1024,
+      "cycle_basis_rank": 10,
+      "direct": 1,
+      "direct_edges": [
+        "h(0,0)"
+      ],
+      "enclosing_count": 512,
+      "excluded_face": [
+        2,
+        0
+      ],
+      "lighter_connected_histogram": {},
+      "old_min": 3,
+      "old_min_count": 1,
+      "old_witness": 1544,
+      "old_witness_connected": true,
+      "old_witness_edges": [
+        "h(0,1)",
+        "v(0,0)",
+        "v(1,0)"
+      ]
+    }
+  },
+  "C_and_D": {
+    "builder_comparisons": {
+      "far_lambda_0.05": {
+        "abs_difference": 2.3092638912203256e-14,
+        "builder": -7.819874076275823e-06,
+        "ours": -7.819874053183185e-06
+      },
+      "near_lambda_0.05": {
+        "abs_difference": 1.2434497875801753e-14,
+        "builder": -0.0004088451960591044,
+        "ours": -0.0004088451960715389
+      }
+    },
+    "dynamics": {
+      "far": {
+        "fit": {
+          "bracket_pass": true,
+          "connected_min": 5,
+          "curvature": -17.537754632846525,
+          "estimator": "OLS log|F| = a + k log(lambda) + c lambda^2",
+          "k": 4.970151384706792,
+          "local_slopes": [
+            4.968811703856243,
+            4.952316607805217,
+            4.928314506354524,
+            4.893798178631504
+          ],
+          "max_k_shift_from_one_point_at_noise_floor": 0.0002801335281210626,
+          "median_local_slope": 4.94031555707987,
+          "minimum_signal_to_floor": 4397.907815700819,
+          "noise_floor": 1e-12,
+          "rms_log_residual": 0.001081532638096794,
+          "signal_threshold": 1e-10,
+          "usable": 5
+        },
+        "offgrid": [
+          {
+            "F": -4.397907815700819e-09,
+            "band_gap_min": 1.9527336440353356,
+            "delta_minus": 0.02176304109788596,
+            "delta_plus": 0.021763045495793776,
+            "dimension": 256,
+            "lam": 0.011
+          },
+          {
+            "F": -3.8249957867719786e-08,
+            "band_gap_min": 1.9271931264244238,
+            "delta_minus": 0.033440046331618234,
+            "delta_plus": 0.0334400845815761,
+            "dimension": 256,
+            "lam": 0.017
+          },
+          {
+            "F": -3.136565371875122e-07,
+            "band_gap_min": 1.8891944199310302,
+            "delta_minus": 0.050709586449714905,
+            "delta_plus": 0.05070990010625209,
+            "dimension": 256,
+            "lam": 0.026
+          },
+          {
+            "F": -2.3135956013220493e-06,
+            "band_gap_min": 1.8349574275305276,
+            "delta_minus": 0.07515164422375875,
+            "delta_plus": 0.07515395781936007,
+            "dimension": 256,
+            "lam": 0.039
+          },
+          {
+            "F": -1.613611859063724e-05,
+            "band_gap_min": 1.7570531000901504,
+            "delta_minus": 0.10984265197056331,
+            "delta_plus": 0.10985878808915395,
+            "dimension": 256,
+            "lam": 0.058
+          }
+        ],
+        "winding": {
+          "0.037": {
+            "character": {
+              "fits": [
+                {
+                  "character": [
+                    1,
+                    1
+                  ],
+                  "content_sign": -1
+                }
+              ],
+              "separated": true,
+              "sign_flip_by_winding_alone": true,
+              "signs": {
+                "00": -1,
+                "01": 1,
+                "10": 1,
+                "11": -1
+              }
+            },
+            "rows": {
+              "00": {
+                "F": -1.7861134526953037e-06,
+                "band_gap_min": 1.843252010118313,
+                "delta_minus": 0.07142920233675909,
+                "delta_plus": 0.07143098845021179,
+                "dimension": 256,
+                "lam": 0.037
+              },
+              "01": {
+                "F": 1.938096156450797e-06,
+                "band_gap_min": 1.8122887260777176,
+                "delta_minus": 0.07694799202056934,
+                "delta_plus": 0.0769460539244129,
+                "dimension": 256,
+                "lam": 0.037
+              },
+              "10": {
+                "F": 1.938222185415839e-06,
+                "band_gap_min": 1.8342209182458031,
+                "delta_minus": 0.0714588841318946,
+                "delta_plus": 0.07145694590970919,
+                "dimension": 256,
+                "lam": 0.037
+              },
+              "11": {
+                "F": -2.1153024150066813e-06,
+                "band_gap_min": 1.8033945552346324,
+                "delta_minus": 0.07697823052845187,
+                "delta_plus": 0.07698034583086688,
+                "dimension": 256,
+                "lam": 0.037
+              }
+            }
+          },
+          "0.071": {
+            "character": {
+              "fits": [
+                {
+                  "character": [
+                    1,
+                    1
+                  ],
+                  "content_sign": -1
+                }
+              ],
+              "separated": true,
+              "sign_flip_by_winding_alone": true,
+              "signs": {
+                "00": -1,
+                "01": 1,
+                "10": 1,
+                "11": -1
+              }
+            },
+            "rows": {
+              "00": {
+                "F": -4.3100940755991246e-05,
+                "band_gap_min": 1.7046859319552041,
+                "delta_minus": 0.13288419714501742,
+                "delta_plus": 0.13292729808577342,
+                "dimension": 256,
+                "lam": 0.071
+              },
+              "01": {
+                "F": 5.015729604096464e-05,
+                "band_gap_min": 1.6347861498251621,
+                "delta_minus": 0.15362335842365304,
+                "delta_plus": 0.15357320112761208,
+                "dimension": 256,
+                "lam": 0.071
+              },
+              "10": {
+                "F": 5.01798542345e-05,
+                "band_gap_min": 1.686926527880516,
+                "delta_minus": 0.13328206202837478,
+                "delta_plus": 0.13323188217414028,
+                "dimension": 256,
+                "lam": 0.071
+              },
+              "11": {
+                "F": -5.9620995683573597e-05,
+                "band_gap_min": 1.6179058853930002,
+                "delta_minus": 0.154035821172263,
+                "delta_plus": 0.15409544216794657,
+                "dimension": 256,
+                "lam": 0.071
+              }
+            }
+          }
+        }
+      },
+      "fresh": {
+        "fit": {
+          "bracket_pass": true,
+          "connected_min": 5,
+          "curvature": -17.5358398857401,
+          "estimator": "OLS log|F| = a + k log(lambda) + c lambda^2",
+          "k": 4.970144786764373,
+          "local_slopes": [
+            4.968804549231052,
+            4.952311193351368,
+            4.928314958755621,
+            4.893798125274735
+          ],
+          "max_k_shift_from_one_point_at_noise_floor": 0.00028013205701959976,
+          "median_local_slope": 4.940313076053494,
+          "minimum_signal_to_floor": 4397.930908339731,
+          "noise_floor": 1e-12,
+          "rms_log_residual": 0.0010811274314287396,
+          "signal_threshold": 1e-10,
+          "usable": 5
+        },
+        "offgrid": [
+          {
+            "F": -4.397930908339731e-09,
+            "band_gap_min": 1.9527336440353498,
+            "delta_minus": 0.021763041097839775,
+            "delta_plus": 0.021763045495770683,
+            "dimension": 256,
+            "lam": 0.011
+          },
+          {
+            "F": -3.82500395801344e-08,
+            "band_gap_min": 1.9271931264243953,
+            "delta_minus": 0.03344004633161468,
+            "delta_plus": 0.03344008458165426,
+            "dimension": 256,
+            "lam": 0.017
+          },
+          {
+            "F": -3.1365648567316384e-07,
+            "band_gap_min": 1.889194419931032,
+            "delta_minus": 0.0507095864497451,
+            "delta_plus": 0.050709900106230776,
+            "dimension": 256,
+            "lam": 0.026
+          },
+          {
+            "F": -2.3135956457309703e-06,
+            "band_gap_min": 1.8349574275305294,
+            "delta_minus": 0.07515164422375165,
+            "delta_plus": 0.07515395781939738,
+            "dimension": 256,
+            "lam": 0.039
+          },
+          {
+            "F": -1.6136118558662815e-05,
+            "band_gap_min": 1.7570531000901504,
+            "delta_minus": 0.10984265197058818,
+            "delta_plus": 0.10985878808914684,
+            "dimension": 256,
+            "lam": 0.058
+          }
+        ],
+        "winding": {
+          "0.037": {
+            "character": {
+              "fits": [
+                {
+                  "character": [
+                    1,
+                    1
+                  ],
+                  "content_sign": -1
+                }
+              ],
+              "separated": true,
+              "sign_flip_by_winding_alone": true,
+              "signs": {
+                "00": -1,
+                "01": 1,
+                "10": 1,
+                "11": -1
+              }
+            },
+            "rows": {
+              "00": {
+                "F": -1.786113461577088e-06,
+                "band_gap_min": 1.843252010118313,
+                "delta_minus": 0.07142920233674488,
+                "delta_plus": 0.07143098845020646,
+                "dimension": 256,
+                "lam": 0.037
+              },
+              "01": {
+                "F": 1.9382222120611914e-06,
+                "band_gap_min": 1.8342209182457871,
+                "delta_minus": 0.07145888413190704,
+                "delta_plus": 0.07145694590969498,
+                "dimension": 256,
+                "lam": 0.037
+              },
+              "10": {
+                "F": 1.938096112041876e-06,
+                "band_gap_min": 1.8122887260776928,
+                "delta_minus": 0.07694799202057823,
+                "delta_plus": 0.07694605392446618,
+                "dimension": 256,
+                "lam": 0.037
+              },
+              "11": {
+                "F": -2.1153024150066813e-06,
+                "band_gap_min": 1.803394555234627,
+                "delta_minus": 0.07697823052845898,
+                "delta_plus": 0.07698034583087399,
+                "dimension": 256,
+                "lam": 0.037
+              }
+            }
+          },
+          "0.071": {
+            "character": {
+              "fits": [
+                {
+                  "character": [
+                    1,
+                    1
+                  ],
+                  "content_sign": -1
+                }
+              ],
+              "separated": true,
+              "sign_flip_by_winding_alone": true,
+              "signs": {
+                "00": -1,
+                "01": 1,
+                "10": 1,
+                "11": -1
+              }
+            },
+            "rows": {
+              "00": {
+                "F": -4.3100940740004035e-05,
+                "band_gap_min": 1.7046859319552325,
+                "delta_minus": 0.1328841971449748,
+                "delta_plus": 0.1329272980857148,
+                "dimension": 256,
+                "lam": 0.071
+              },
+              "01": {
+                "F": 5.017985420607829e-05,
+                "band_gap_min": 1.6869265278805354,
+                "delta_minus": 0.1332820620283499,
+                "delta_plus": 0.13323188217414383,
+                "dimension": 256,
+                "lam": 0.071
+              },
+              "10": {
+                "F": 5.015729604096464e-05,
+                "band_gap_min": 1.6347861498251604,
+                "delta_minus": 0.15362335842366726,
+                "delta_plus": 0.1535732011276263,
+                "dimension": 256,
+                "lam": 0.071
+              },
+              "11": {
+                "F": -5.962099566936274e-05,
+                "band_gap_min": 1.6179058853929824,
+                "delta_minus": 0.15403582117227188,
+                "delta_plus": 0.15409544216794124,
+                "dimension": 256,
+                "lam": 0.071
+              }
+            }
+          }
+        }
+      },
+      "near": {
+        "fit": {
+          "bracket_pass": true,
+          "connected_min": 3,
+          "curvature": -32.398182125873475,
+          "estimator": "OLS log|F| = a + k log(lambda) + c lambda^2",
+          "k": 2.947585529505041,
+          "local_slopes": [
+            2.9446727530150825,
+            2.914808293744684,
+            2.8706902219786903,
+            2.8061469182406946
+          ],
+          "max_k_shift_from_one_point_at_noise_floor": 2.4180162272458006e-07,
+          "median_local_slope": 2.892749257861687,
+          "minimum_signal_to_floor": 5094512.788517136,
+          "noise_floor": 1e-12,
+          "rms_log_residual": 0.00191357317985436,
+          "signal_threshold": 1e-10,
+          "usable": 5
+        },
+        "offgrid": [
+          {
+            "F": -5.094512788517136e-06,
+            "band_gap_min": 1.9563789724754503,
+            "delta_minus": 0.02175795098300526,
+            "delta_plus": 0.021763045495793776,
+            "dimension": 256,
+            "lam": 0.011
+          },
+          {
+            "F": -1.8357409858893448e-05,
+            "band_gap_min": 1.932900199850506,
+            "delta_minus": 0.03342172717171721,
+            "delta_plus": 0.0334400845815761,
+            "dimension": 256,
+            "lam": 0.017
+          },
+          {
+            "F": -6.333805654001878e-05,
+            "band_gap_min": 1.8980897807896824,
+            "delta_minus": 0.050646562049712074,
+            "delta_plus": 0.05070990010625209,
+            "dimension": 256,
+            "lam": 0.026
+          },
+          {
+            "F": -0.00020284681309057362,
+            "band_gap_min": 1.8486569846661407,
+            "delta_minus": 0.0749511110062695,
+            "delta_plus": 0.07515395781936007,
+            "dimension": 256,
+            "lam": 0.039
+          },
+          {
+            "F": -0.0006177961177815661,
+            "band_gap_min": 1.7781819079370287,
+            "delta_minus": 0.10924099197137238,
+            "delta_plus": 0.10985878808915395,
+            "dimension": 256,
+            "lam": 0.058
+          }
+        ],
+        "winding": {
+          "0.037": {
+            "character": {
+              "fits": [
+                {
+                  "character": [
+                    0,
+                    0
+                  ],
+                  "content_sign": -1
+                }
+              ],
+              "separated": true,
+              "sign_flip_by_winding_alone": false,
+              "signs": {
+                "00": -1,
+                "01": -1,
+                "10": -1,
+                "11": -1
+              }
+            },
+            "rows": {
+              "00": {
+                "F": -0.0001746174147019275,
+                "band_gap_min": 1.8561973959418783,
+                "delta_minus": 0.07125637103550986,
+                "delta_plus": 0.07143098845021179,
+                "dimension": 256,
+                "lam": 0.037
+              },
+              "01": {
+                "F": -0.00020193066696094775,
+                "band_gap_min": 1.8122887260777176,
+                "delta_minus": 0.07674412325745195,
+                "delta_plus": 0.0769460539244129,
+                "dimension": 256,
+                "lam": 0.037
+              },
+              "10": {
+                "F": -0.00020190049604096316,
+                "band_gap_min": 1.8342209182458031,
+                "delta_minus": 0.07125504541366823,
+                "delta_plus": 0.07145694590970919,
+                "dimension": 256,
+                "lam": 0.037
+              },
+              "11": {
+                "F": -0.00023477362829993353,
+                "band_gap_min": 1.8033945552346324,
+                "delta_minus": 0.07674557220256695,
+                "delta_plus": 0.07698034583086688,
+                "dimension": 256,
+                "lam": 0.037
+              }
+            }
+          },
+          "0.071": {
+            "character": {
+              "fits": [
+                {
+                  "character": [
+                    0,
+                    0
+                  ],
+                  "content_sign": -1
+                }
+              ],
+              "separated": true,
+              "sign_flip_by_winding_alone": false,
+              "signs": {
+                "00": -1,
+                "01": -1,
+                "10": -1,
+                "11": -1
+              }
+            },
+            "rows": {
+              "00": {
+                "F": -0.0010749474054581043,
+                "band_gap_min": 1.7311615302376886,
+                "delta_minus": 0.1318523506803153,
+                "delta_plus": 0.13292729808577342,
+                "dimension": 256,
+                "lam": 0.071
+              },
+              "01": {
+                "F": -0.0014140942725013872,
+                "band_gap_min": 1.6347861498251621,
+                "delta_minus": 0.1521591068551107,
+                "delta_plus": 0.15357320112761208,
+                "dimension": 256,
+                "lam": 0.071
+              },
+              "10": {
+                "F": -0.0014125578517614201,
+                "band_gap_min": 1.686926527880516,
+                "delta_minus": 0.13181932432237886,
+                "delta_plus": 0.13323188217414028,
+                "dimension": 256,
+                "lam": 0.071
+              },
+              "11": {
+                "F": -0.0018971323087448866,
+                "band_gap_min": 1.6179058853930002,
+                "delta_minus": 0.15219830985920169,
+                "delta_plus": 0.15409544216794657,
+                "dimension": 256,
+                "lam": 0.071
+              }
+            }
+          }
+        }
+      }
+    },
+    "noise": {
+      "declared_floor": 1e-12,
+      "max_abs_F0": 0.0,
+      "zero_rows": [
+        {
+          "F0": 0.0,
+          "placement": "near",
+          "winding": [
+            0,
+            0
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "near",
+          "winding": [
+            0,
+            1
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "near",
+          "winding": [
+            1,
+            0
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "near",
+          "winding": [
+            1,
+            1
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "far",
+          "winding": [
+            0,
+            0
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "far",
+          "winding": [
+            0,
+            1
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "far",
+          "winding": [
+            1,
+            0
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "far",
+          "winding": [
+            1,
+            1
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "fresh",
+          "winding": [
+            0,
+            0
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "fresh",
+          "winding": [
+            0,
+            1
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "fresh",
+          "winding": [
+            1,
+            0
+          ]
+        },
+        {
+          "F0": 0.0,
+          "placement": "fresh",
+          "winding": [
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "E": {
+    "files": [
+      "D24_AUDIT.txt",
+      "a1_calibration_3x2.json",
+      "a1_calibration_3x2.py",
+      "a1_calibration_3x2.txt",
+      "a2_field_table_3x3.json",
+      "a2_field_table_3x3.py",
+      "a2_field_table_3x3.txt",
+      "a3_controls_3x3.json",
+      "a3_controls_3x3.py",
+      "a3_controls_3x3.txt",
+      "a4_verdicts.py",
+      "a4_verdicts.txt",
+      "g1_connected_wenc.py",
+      "g1_connected_wenc.txt",
+      "t51a_lib.py"
+    ],
+    "manual_adjudication": "no sentence requires a separation shape, imports an external standard, or frames a computed outcome as failure",
+    "raw_hits": {
+      "banned_shape": [],
+      "import_requirement": [],
+      "outcome_failure": []
+    },
+    "violation_count": 0
+  },
+  "metadata": {
+    "bracket_half_width": 0.25,
+    "fit_signal_multiple": 100.0,
+    "fresh_lambdas": [
+      0.011,
+      0.017,
+      0.026,
+      0.039,
+      0.058
+    ],
+    "implementation": "independent incidence construction; no imports from model/ or LANE_T51_A",
+    "input_seals": {
+      "checked": [
+        "LANE_T51_A/D24_AUDIT.txt",
+        "LANE_T51_A/VERIFY/v1_adversarial_rebuild.py",
+        "LANE_T51_A/a1_calibration_3x2.json",
+        "LANE_T51_A/a1_calibration_3x2.py",
+        "LANE_T51_A/a1_calibration_3x2.txt",
+        "LANE_T51_A/a2_field_table_3x3.json",
+        "LANE_T51_A/a2_field_table_3x3.py",
+        "LANE_T51_A/a2_field_table_3x3.txt",
+        "LANE_T51_A/a3_controls_3x3.json",
+        "LANE_T51_A/a3_controls_3x3.py",
+        "LANE_T51_A/a3_controls_3x3.txt",
+        "LANE_T51_A/a4_verdicts.py",
+        "LANE_T51_A/a4_verdicts.txt",
+        "LANE_T51_A/g1_connected_wenc.py",
+        "LANE_T51_A/g1_connected_wenc.txt",
+        "LANE_T51_A/t51a_lib.py"
+      ],
+      "checked_count": 16,
+      "manifest": "LANE_T51_A.sha256",
+      "mismatches": []
+    },
+    "runtime_seconds": 2.3798961639404297,
+    "winding_check_lambdas": [
+      0.037,
+      0.071
+    ]
+  },
+  "verdicts": {
+    "A_sector_exactness": "NOT_REFUTED",
+    "B_connected_wenc": "NOT_REFUTED",
+    "C_winding_attribution": "NOT_REFUTED",
+    "D_onset_fits": "NOT_REFUTED",
+    "E_D1_directive_scan": "NOT_REFUTED"
+  }
+}

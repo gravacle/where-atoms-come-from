@@ -1,0 +1,21 @@
+LANE_T51_A / VERIFY_CODEX / D24_AUDIT -- 2026-08-21
+
+D-24 STATEMENT.
+Every result is stated in exact sector labels and connected enclosing-string weight.  Coordinates
+appear only as construction labels needed to reproduce the finite venue; no claim uses them as a
+separation.  The mixed-type generator distance is not used by this verifier.
+
+INDEPENDENCE STATEMENT.
+The verifier constructs edges, stars, faces, parity sectors, Hamiltonian blocks, connector endpoint
+equations, enclosure coefficients, and connectivity locally.  It imports no program model or lane
+helper.  The existing VERIFY fragment was neither run nor copied.
+
+ERROR AND CORRECTION LOG (all before sealing).
+1. The first scratch execution stopped before any scientific computation because the system Python
+   lacks int.bit_count.  Popcount was changed to bin(x).count("1"); exact F_2 results are unchanged
+   in meaning, and all later assertions passed.
+2. The first prose-scan expression falsely matched the suffix of "Tier-2" as a radial-power token.
+   The boundary was tightened to require a standalone symbol.  The corrected scan has zero raw hits
+   in all three classes.  No scientific number or verdict changed.
+
+No sealed output was superseded.  The standing seals are in SEALS.sha256.

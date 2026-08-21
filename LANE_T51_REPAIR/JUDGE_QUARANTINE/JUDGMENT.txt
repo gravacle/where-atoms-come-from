@@ -1,0 +1,242 @@
+================================================================================================
+LANE_T51_REPAIR / JUDGE_QUARANTINE -- NO-MEASUREMENT HISTORICAL T51 ADJUDICATION
+date: 2026-08-21
+================================================================================================
+
+EXACT DISPOSITION
+
+  CORRECTION_LANDING_VERDICT: ACCEPTED
+  SCIENTIFIC_TERMINAL_VERDICT: REJECTED
+  INDEPENDENT_OWN_MACHINERY_VERIFIER_STANDARD: NOT MET
+  REGISTERED_RULE_DISPOSITION: UNSCOREABLE
+  SCIENTIFIC_DISPOSITION: PARTIAL_POSITIVE (NUMERICAL SUPPORT ONLY)
+  REGISTERED_TERMINAL_BRANCH: NONE
+  ADMINISTRATIVE_DISPOSITION: REPAIR_REQUIRED
+  ALL_PASS_AUTHORIZED: FALSE
+  C-94_AUTHORIZED: FALSE
+  C-77_INCREMENT_AUTHORIZED: FALSE
+  T-51_DONE_AUTHORIZED: FALSE
+
+The quarantine correction may land as an error/custody record.  No T51 scientific claim,
+terminal branch, C-94 row, C-77 increment, proof claim, or DONE state is authorized by this
+judgment.
+
+SCOPE AND DEFAULT
+
+This judge added no measurement.  No builder, Hamiltonian, model, sealed scientific program,
+historical verifier, or quarantine verifier was executed.  The default scientific outcome was
+REJECTED.  The judge read FIELD_INSTRUMENT_V001.md section 1 verbatim; the sealed LANE_T51_A
+package; the byte-identical quarantined VERIFY_CODEX and JUDGMENT_CODEX drafts; the complete
+QUARANTINE_VERIFY source, JSON, prose report, and D24 audit; and the no-measurement adjudication
+framework.  Hash checking was custody checking only and cannot validate a scientific predicate.
+
+The historical ALL-PASS assertion is not presumed.  The archived old judgment is evidence of the
+error being corrected, not judgment authority.  The tracked
+LANE_T51_A/VERIFY/v1_adversarial_rebuild.py is an obsolete, unexecuted fragment and was not run.
+
+-----------------------------------------------------------------------------------------------
+1. INDEPENDENCE DECISION -- NUMERICAL SUPPORT IS NOT ADMISSIBLE VERIFICATION
+-----------------------------------------------------------------------------------------------
+
+QUARANTINE_VERIFY is a useful default-REFUTED correction audit, but it does not satisfy the
+handoff's requirement for an independent verifier with its own scientific machinery:
+
+  A. It reads the archived verifier JSON and tests four stored fields.  It does not compute the
+     mediator/source commutators or a commissioned-venue sector decomposition.  In the archived
+     verifier source, mediator_pairings is inserted as literal zeros; its full transition audit is
+     only the 3x2 venue.  Therefore A is inherited support, not an independent rebuild.
+
+  B. It tests stored connected-minimum values, counts, and histograms.  It does not construct its
+     own endpoint, enclosure, winding, connectivity, excluded-plaquette, or representative-change
+     machinery.  Therefore B is inherited support, not an independent minimality attack.
+
+  C. It correctly repairs the archived predicate: every stored raw F row in the required
+     near/far/fresh x {0.037,0.071} cross-product is consumed, uniqueness and lambda stability are
+     required, and the archived predicate's omissions are exposed.  But those F values were
+     produced by the archived verifier.  Re-adjudicating their signs with new code repairs the
+     Boolean audit; it is not an independent scientific recomputation of the raw rows.
+
+  D. It independently refits the archived off-grid F rows with standard-library linear algebra,
+     but it does not produce an independently declared ladder, numerical floor, or Hamiltonian
+     result.  Therefore D is inherited numerical support, not an independent onset rebuild.
+
+  E. It supplies its own closed, hash-enumerated 23-file claim corpus, three positive controls,
+     actual hit-derived adjudication, and zero unexculpated decision hits.  This repairs the old
+     top-level-only scan and literal violation_count=0 defect.  E is adequate as a correction-audit
+     component, but E cannot cure A-D or make the V1-V5 conjunction scoreable.
+
+QUARANTINE_VERIFY also reads V1's far F values and control floor directly from the builder sidecar;
+it does not independently reproduce the complete far table or same-table floor.  Its A-E
+NOT_REFUTED labels are therefore component-level re-adjudications.  They must not be described as
+the independent-own-machinery verifier required before registration.
+
+Decision:
+
+  INDEPENDENT_OWN_MACHINERY_VERIFIER_STANDARD = NOT MET.
+
+The correction audit's overall REFUTED result, its explicit refusal of registration, its custody
+repair, and its diagnosis of V2/V4 are accepted for landing.  Its numerical support is retained as
+support only.
+
+-----------------------------------------------------------------------------------------------
+2. THE REGISTERED V1-V5 RULE, QUOTED VERBATIM AND SCORED ONLY TO THE LAWFUL EXTENT
+-----------------------------------------------------------------------------------------------
+
+V1 -- "`|F|` exceeds the same-table measured control floor beyond contact at the larger
+separation."
+
+  Recorded support: the sealed builder reports min_lambda |F| = 8.56244177782628e-08 at the
+  commissioned connected-w_enc=5 placement and a recorded control floor of 1.0e-11.  The numerical
+  comparison is supportive.  QUARANTINE_VERIFY did not independently reproduce all far rows or the
+  same-table floor, so the required verifier has not established the clause.
+
+  V1 STATUS: PENDING_ADMISSIBLE_VERIFICATION; NUMERICALLY_SUPPORTED_ONLY.
+  V1 SCORE: NONE.  It is neither scored TRUE nor scored FALSE here.
+
+V2 -- "the reading follows earned geometry under the placement swap."
+
+  FIELD defines the reading as F(D).  The builder instead makes onset order k the decision
+  statistic, adds TOL_SWAP=0.25 after FIELD, and labels the F-magnitude ratios as data rather than a
+  verdict.  The commissioned far connected-w_enc=5 class is a singleton, so the builder substitutes
+  a connected-w_enc=4 pair.  FIELD supplies no statistic, pairing rule, or tolerance that converts
+  those substitutions into the registered Boolean.  The recorded ratios 0.901 and 1.238 are data;
+  they cannot be selected after inspection as passes or failures.
+
+  V2 STATUS: UNSCOREABLE.
+  V2 SCORE: NONE.  UNSCOREABLE IS NOT FALSE.
+
+V3 -- "the onset-order bracket contains **connected** `w_enc` at both placements (scored only
+after the connectivity gate)."
+
+  Recorded support: the sealed builder reports k=2.9768820387728714 against connected w_enc=3 and
+  k=4.948119452977745 against connected w_enc=5.  Archived off-grid records are also supportive.
+  QUARANTINE_VERIFY rechecks stored B/D records rather than independently rebuilding the connected
+  minima and off-grid dynamics, so the required verifier has not established the clause.
+
+  V3 STATUS: PENDING_ADMISSIBLE_VERIFICATION; NUMERICALLY_SUPPORTED_ONLY.
+  V3 SCORE: NONE.
+
+V4 -- "back-action below the declared tolerance."
+
+  Recorded description: the sealed builder reports maximum back-action
+  1.1907860895554734e-04 near and 2.491671410176366e-05 far, each below 1.0e-03.  But
+  FIELD_INSTRUMENT_V001.md fixed no numeric budget, and the builder audit discloses that 1.0e-03 was
+  selected after a same-family scratchpad magnitude survey and placed one order above the largest
+  commissioned far reading.  The arithmetic comparison may be retained; it is not a prospective,
+  adversarial Boolean available to the terminal conjunction.
+
+  V4 STATUS: QUALIFIED_DESCRIPTIVE_ONLY.
+  V4 SCORE: NONE.
+
+V5 -- "sign attribution licensed only if the winding-sector sweep separates content sign from
+winding sign."
+
+  Recorded support: the sealed builder's commissioned-lambda sweep gives near c=(0,0), s0=-1 and
+  far c=(1,1), s0=-1.  The archived off-grid raw rows give the same unique characters at 0.037 and
+  0.071 for near, far, and fresh placements; QUARANTINE_VERIFY now consumes all six cells.  This is
+  supportive, but the raw off-grid rows were not independently recomputed by QUARANTINE_VERIFY.
+  Any eventual far license remains relative only to the sealed zbar1/zbar2 representatives; it is
+  not a convention-free sign.
+
+  V5 STATUS: PENDING_ADMISSIBLE_VERIFICATION; NUMERICALLY_SUPPORTED_ONLY; CONVENTION_SCOPED.
+  V5 SCORE: NONE.
+
+-----------------------------------------------------------------------------------------------
+3. REACHABLE BRANCH AND REGISTRAR AUTHORITY
+-----------------------------------------------------------------------------------------------
+
+The registered terminal routes are ALL PASS and the V1-FALSE mediator-family route.  Neither is
+reachable on the present admissible record:
+
+  - ALL PASS cannot fire: V2 is UNSCOREABLE, V4 is descriptive only, and V1/V3/V5 lack the required
+    independent-own-machinery verification.
+  - The V1-FALSE route cannot fire: V1 has not been scored FALSE and the recorded values are
+    positive support.
+
+No registered terminal branch fires.  PARTIAL POSITIVE / REPAIR REQUIRED is the administrative
+disposition for the identified partial case, not a newly invented terminal branch.  T-51 remains
+open.  The old judgment's ALL PASS, draft C-94 row, draft C-77 increment, and T-51 DONE action are
+rejected.
+
+-----------------------------------------------------------------------------------------------
+4. EXACT SOURCE CUSTODY
+-----------------------------------------------------------------------------------------------
+
+Controlling and builder sources:
+
+  e0eecbfb1aa9ef6f934e07fa582a220c2a59435535bbbe3949baf0bca07e7407  FIELD_INSTRUMENT_V001.md
+  15a4d1a83fe92b4282746a35b996c179013a94c942e12e609f7322429bfca1a8  LANE_T51_A.sha256
+  5d138e87a68401f1963ec820cb4607ad0d4a4e82c67b3b58de51041c7f8e547b  LANE_T51_A/g1_connected_wenc.txt
+  56ff0332485ac019872a03ec7a28e4e6b8b7ac4efc4a5db6732b313e6a3164dc  LANE_T51_A/a1_calibration_3x2.txt
+  a7fbf12026592a550e5b320e489256d7221771f6e1ff060a9da9beb75a99970f  LANE_T51_A/a2_field_table_3x3.txt
+  3cb8612d4aae5d4f052d00e9b2eb803939805c87362965f69f70b092c060adfc  LANE_T51_A/a3_controls_3x3.txt
+  006b045775fce44fe99f6d5cb7cd3dbde63230053712ce3446fd6d42102372d4  LANE_T51_A/a4_verdicts.txt
+
+Quarantined historical drafts, covered by the six-file custody manifest:
+
+  f9777b818df794f27fab89418963a01e49384ea748faed0d6b813e38326d6d24  LANE_T51_REPAIR/QUARANTINED_DRAFTS/INPUTS.sha256
+  92c091520eb5b6da2ee356f7aab8731932441bb57eb59e2f9bcebc7ae032439e  .../VERIFY_CODEX/v1_independent_rebuild.py
+  8c95720cc9f721fea6ce06e56eb1cbcf77e341db72186cf830726b1b8302144a  .../VERIFY_CODEX/v1_independent_rebuild.json
+  bad804807922ce63cffb82752c2e173d967d5ea0c0d01181e696cc03fe528198  .../VERIFY_CODEX/v1_independent_rebuild.txt
+  b7c8c9caa5228281f333df8b9534707b93bb6cd3f3f0d793bc28ac454e6a9d29  .../VERIFY_CODEX/D24_AUDIT.txt
+  4f4f01a957d985d941ec468baf053354d27bd651eab295366f542005fb81866c  .../VERIFY_CODEX/SEALS.sha256
+  fd049d5538c3acc0cd5a15dcf062e0ae58b603470a805638b6ff793bb130c42f  .../JUDGMENT_CODEX.txt
+
+The ellipsis above expands only to
+LANE_T51_REPAIR/QUARANTINED_DRAFTS/ORIGINAL_LAYOUT/LANE_T51_A.  Both the six-file
+INPUTS.sha256 manifest and the nested historical SEALS.sha256 manifest checked clean.  Those seals
+establish byte custody only.
+
+Standing quarantine audit and framework:
+
+  abcc0dd660ee114955152cfdf9c4bc582975fadd65f088622e7ca18bb89ea2dc  LANE_T51_REPAIR/QUARANTINE_VERIFY/quarantine_verify.py
+  299fe3350fc3ec9c6054cc6fb7f8ea7c2f099cc8115e62651ed66b436999f0e2  LANE_T51_REPAIR/QUARANTINE_VERIFY/quarantine_verify.json
+  9e06978c3e4b0f52989d98233e92fd8c112fddec212c403ed0a0a801a4d13bb9  LANE_T51_REPAIR/QUARANTINE_VERIFY/quarantine_verify.txt
+  3a94fbca2ed44e2fea924b3ef0719370eb95b9b9c929ba990fb48997d2ba713d  LANE_T51_REPAIR/QUARANTINE_VERIFY/D24_AUDIT.txt
+  7d9e8da409d3783aa111dfdf34414cc0fe002006307de515dee34144bc468fcc  LANE_T51_REPAIR/JUDGE_DESIGN/T51_NO_MEASUREMENT_ADJUDICATION_FRAMEWORK.md
+
+QUARANTINE_VERIFY reports 26 frozen inputs, zero mismatches, builder-manifest match, archived
+verifier-seal match, quarantine-copy-manifest match, and a 23-file E corpus with three passing
+positive controls and zero decision hits.  These are custody/audit facts, not scientific
+registration evidence.
+
+-----------------------------------------------------------------------------------------------
+5. ATOMIC REGISTRAR OBLIGATIONS
+-----------------------------------------------------------------------------------------------
+
+  1. Land only the quarantine custody copies, correction audit, this no-measurement judgment, their
+     manifests, and the D24 correction trail.  Keep the original final-looking untracked drafts out
+     of the landing; do not execute, promote, or register the archived copies.
+
+  2. Record the exact correction: the old ALL-PASS assertion and judgment are inadmissible; the old
+     C predicate omitted 0.071 and fresh placement from its verdict; the old E scan excluded nested
+     artifacts and returned literal violation_count=0; V2 is UNSCOREABLE; V4 is qualified
+     descriptive only; T-51 remains open.
+
+  3. Append no C-94 row, no C-77 increment, no T-9 carrier-registration row, no proof claim, and no
+     T-51 DONE transition.  Do not treat PARTIAL POSITIVE as a registered terminal branch or as a
+     landed scientific feature.
+
+  4. Before any historical V1/V3/V5 score is used, obtain a sealed, default-REFUTED verifier that
+     owns its scientific machinery: computed sector/mediator exactness on the calibration and
+     commissioned venues; independently rebuilt connected-enclosure geometry and conventions;
+     all required winding cells from independently generated raw rows; an independent off-grid
+     onset ladder, estimator, floor, and perturbation audit; independent reproduction of V1's far
+     readings and floor; and a recursive hit-derived E audit with positive controls.  Do not run the
+     sealed obsolete verifier fragment.
+
+  5. Repair V2 and V4 only prospectively, with operational meaning, pairing, venue eligibility,
+     tolerances, floors, exclusions, and branch rules sealed before any holdout result exists.  Old
+     data may train a declared design but may not score its own repair.  This judgment does not
+     adjudicate or authorize any particular prospective design.
+
+  6. After a valid verifier and any required prospective holdout are sealed, commission a new judge
+     who adds no measurement, quotes V1-V5 verbatim, converts no UNSCOREABLE item to FALSE, and fires
+     only a registered branch whose every precondition is met.
+
+FINAL
+
+  QUARANTINE CORRECTION: ACCEPTED FOR LANDING.
+  HISTORICAL T51 TERMINAL REGISTRATION: REJECTED.
+  T-51: OPEN -- PARTIAL POSITIVE / REPAIR REQUIRED.
+================================================================================================
