@@ -10286,3 +10286,60 @@ replacement is a real improvement on an identity that could never fail. **It is 
 `blocked`: `DONE_WHEN` is what makes "done" checkable rather than a judgement call, and it was
 reachable only at `add` — so sharpening a completion criterion meant retyping the task, in a plan
 whose whole discipline is that it is retrieved and updated and never retyped.
+
+---
+
+## T-51 IDENTIFIES THE INSTRUMENT — **THE FIELD READING IS THE WRITTEN-VALUE DIFFERENTIAL OF A TEST RECORD'S OWN LAW** (C-92; `FIELD_INSTRUMENT_V001.md`; `LANE_T51_IDENT/`)
+
+**The principal's commission, 2026-08-20:** O-39 said the field side was a missing instrument with no
+task for it. The principal directed: *"Let's identify the instrument."* Identified — by a judge panel
+over **three designs from deliberately independent starting points** (a fourth, the geometry-response
+angle, failed in flight and is owed), each attacked by a D-1/D-24 importer-hunter and a measurability
+skeptic. **All six critiques: `VIABLE_WITH_REPAIRS`. No unrepaired D-1 violation found on any path**
+— every critique ran a real search for a classical form functioning as requirement or test. The three
+designs probe **different channels** — carrier-holonomy response of a test record's spectral law,
+bath-mediated induced energy, bath-borne record information in bits — so the verdict is a
+**sequence, not a rivalry**.
+
+**FIRST: THE SECOND LUMP.** The surface's only native test object is another record, so the field
+reading is `F(D) = Δ(b=−1; D) − Δ(b=+1; D)` — the shift of a weak probe record's own tunneling
+splitting with the *value* of distant written content, at earned separation `(d_gen, w_enc)`, through
+the program's own priced mediator. **It is literally O-39's named minimum** — a two-lump induced
+energy as a function of separation — and it was the only design whose first computation **both** its
+critics independently rebuilt from the repository's conventions, reproducing every exploration number
+to three significant figures (`F(contact) = −1.99e−3`, `F(far) = +1.94e−4`, onset orders 3.0/3.9
+against enclosure costs 3/4, unwritten ≡ source-absent at 6e−15). The artifact structure is the
+cleanest achievable: written and unwritten are **two exact sectors of one Hamiltonian**, so the
+mediator's furniture cancels in the differential by construction, and a nonzero `F` requires an
+enclosure-class amplitude — **content-attributable by algebra, not by control**.
+
+**The audit earned its keep before commissioning:** the sign-constrained coset minimum admits
+disconnected representatives the dynamics cancels (computed counterexample at 3×2 — coset minimum 3,
+measured onset 4.0), so **`w_enc` is redefined over CONNECTED enclosing strings and gated before the
+onset verdict is scored.** The winding-sector sweep is mandatory before any sign of `F` is attributed
+to content. Pre-registered rule `V1–V5`, both closures live: **ALL PASS** → the record surface has a
+field side in the only sense it has earned, and the two-source composition at 4×4 runs next — **the
+mod-2 saturation kill, first, because it is the fastest way the angle dies**; **V1 FALSE** after the
+mediator-family sweep → the negative closure is registered, C-80's pure-Γ zero propagates to the
+dynamical probe, **the emergence claim is exhibitable-not-provable, and T-17 carries that sentence.**
+
+**Second and third lanes** (commissioned in order, repairs binding, recorded in the lane): THE
+HANGING CLOCK — bath-suspended two-level clock reading the exact four-term Casimir-style subtraction;
+its own computed design fact: **a degenerate probe is exactly gauged away (contrast ~1e−14), so the
+probe must be a clock**; its non-duplicated deliverable is whether an object at separation comes to
+*hold record bits* or only an energy response. CERT-SHADOW — the certification deficit of a disjoint
+region in **bits**, renamed FORMATION SHADOW until bridged to C-81's `CERT`; **its static arm is a
+cheap provable rigidity theorem to take regardless of ranking** — static certifiability has no field
+side on stabiliser venues, the certification-currency mirror of C-80's zero-beyond-contact.
+
+**What this does not settle, stated at registration so it cannot be discovered later:** every field
+instrument on this surface is **mediated** (C-80), and whose field that is, C-77 must absorb — no
+control can decide it; both energy-channel readings are **VALUE, not accumulating AMOUNT** — if the
+field side cannot compose, the field side and the source side do not meet the way emergence at scale
+needs, which is why the composition kill runs first; all shape-at-scale claims wait on the unbuilt
+signed connected kernel, and criticality is O-58's bit, never assumable; metric, connection and
+deflection remain unconnected to anything computed; **empirical contact: zero.** An instrument is
+identified; **no field has been measured.**
+
+**Next step named: commission `LANE_T51_A`** — the Second Lump's first computation on the toric 3×3,
+per the commission in `FIELD_INSTRUMENT_V001.md` §1, after T-35's run completes (compute contention).
