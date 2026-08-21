@@ -10688,3 +10688,106 @@ and changes none of the no-completion ruling above.
 A bounded post-repair rerun of `b9_synthesis.py` is independently byte-identical to its sealed
 7,563-byte output. That light check confirms the downstream result without promoting either invalid
 full-run log into T-35 evidence.
+
+---
+
+## T-54 / T-55 BOUNDED URM LANDING — **FOUR NON-FIELD FAMILIES ARE HOMED, THE LIVE MODEL-TREE D-25 BYPASS IS CLOSED, T-55 IS DONE; T-54 STAYS DOING AND T-51 IS EXCLUDED** (`LANE_T54_VERIFY/`)
+
+**JUDGMENT BOUNDARY.** The no-new-measurement judge accepts this bounded landing. No sealed lane
+program was rerun by the judge, no new scientific value was added, and no T-51 result is admitted.
+`LANE_T51_A`'s V1–V5 rule remains unscored by an admissible verifier and judge; its field instrument
+is neither registered nor folded into the URM here. This entry lands the four commissioned
+**non-field** families and the D-25 integration only.
+
+**THE TERMINAL STACK, EXACTLY.** `model/validate_urm.py` is the continuous entry point: arrow
+27/27, count law 40/40, reachable classes 52/52, and writing 57/57, hence 176/176 family gates;
+then geometry 33/33 and project/D-25 24/24, hence **233/233** with zero failure. Verifier A confirms
+arrow 9/9, count law 11/11 and D-25 10/10; verifier B confirms classes/writing 26/26; the independent
+integration verifier confirms 25/25 predicates. The assembled post-ledger proof is
+`adc6ccecbff5ecd39c73fd843ae4d441759c87152737d1b4b13e2872b8508f21`: R1–R10 pass, with R11 at
+83 blocks / 115 distinct rows / 48 resting on no TWO-CARRIER row / 10 blocks carrying the program's
+**one** PROVED row. Ten blocks citing PROVED does not mean ten PROVED rows: C-71 remains the only one.
+
+**THE DEFAULT-REFUTED PATH IS PART OF THE RESULT, NOT ERASED BY THE GREEN ENDPOINT.**
+
+1. **Arrow began REFUTED, 13/15.** A custom two-dimensional `RecordModel` with its record omitted
+   silently selected the sealed 256-dimensional toric record and died in an accidental NumPy shape
+   broadcast; `ProjectModel.arrow_observation` also did not expose or forward `model=`. Omitted and
+   dimension-mismatched records now refuse intentionally, the matching-record neighbor computes,
+   and the integrated delegate forwards the custom model. The full repaired family is 27/27.
+
+2. **Count law began REFUTED, 15/17.** `census` accepted both a raw unprovenanced world
+   `RecordSurface` and a false corner declaration whose provenance was not exact `DEF-A`. The
+   observation entry and every public surface-consuming path exercised by the verifier now recheck
+   provenance, including after mutation; valid world and exact-corner neighbors compute. The full
+   repaired family is 40/40.
+
+3. **D-25 was captured REFUTED, 9/10.** The builder scan and an independent AST walker found the
+   same five direct `validate_project.py` sites. They now enter through `URM.surface` or
+   `URM.corner`, and the recursive live-model scan returns zero `RecordSurface` binding/reference
+   outside `project_model.py`. The full project/D-25 validator is 24/24 and the D-25 family is 10/10.
+
+4. **Classes and writing required scientific-API repair before final verification.** Classes now
+   refuses negative coupling price and non-positive/non-integer venue multiplicity beside valid
+   computed neighbors. E1, E2 and both E3 counting rules now refuse signed or overfull probability
+   domains; unit-sum signed kernels are no longer called stochastic/conserving/critical; an extreme
+   Boltzmann underflow declines as `None` instead of reaching `Fraction(1,0)`. The negative and
+   boundary controls execute. Their final suites are 52/52 and 57/57.
+
+5. **Verifier A's two refuted race captures remain in custody.** The first read a tree changing
+   from 26/39 to 27/40 while retaining stale expected counts, and its F-17 parser rejected a valid
+   sealed row whose trailing argmax field contained spaces. The second correctly preserved the
+   initial 13/15 and 15/17 defects, but D-25 integrated during the run and invalidated its stale
+   five-offender expectations; its off-grid count-law probe also chose a no-crossing point and took
+   a logarithm outside the domain. Parser, snapshot custody, expected counts, D-25 expectation and
+   probe were repaired, then the complete verifier reran. These are recorded verifier/race errors
+   where stated, not retroactive API findings.
+
+6. **Verifier B first returned 25/26.** A repeated-key parser selected the M=1400 E4 row instead
+   of the M=2800 E6 row. It was narrowed and the whole verifier reran to 26/26. The same audit caught
+   a real integration-paste defect: `writing_kernel_verdict` divided by `(1-c)` at `c=1`, admitted
+   `c` outside `[0,1]`, and could label a nonconserving kernel critical. The integrated method now
+   refuses the outside domain and returns the conserving critical no-move endpoint with zero link
+   amplitude and `per_crossing=None`.
+
+7. **Integration first returned REFUTED, 22/24.** I15 treated the deliberate
+   `(VenueGraph, cells, idx)` return as a `VenueGraph`; I24 correctly refused while verifier A's
+   terminal artifacts were absent. Tuple comparison and dependency custody were repaired. The
+   final integration rerun is 25/25 and binds the one captured 233-gate umbrella execution.
+
+8. **The proof cutover was twice semantically REFUTED despite a mechanical green gate.** The first
+   assembled version retained pre-T54 claims that C-86/C-87 were absent, D-25 was bypassed and old
+   geometry/project counts were live; the second still said “the two PROVED rows” against the
+   exactly-one invariant. Both were repaired at `proofsrc/`, reassembled and rechecked. After the
+   ledger cutover, the semantic reviewer caught one further claims-grid error — the nonexistent
+   `.reachable_classes` plural instead of live `ProjectModel.reachable_class` — which was repaired
+   through the new field-aware `ledger/claims.py urm` command, not by hand-editing the TSV. The
+   post-ledger semantic verdict is 12/12 CONFIRMED.
+
+**D-25 / T-55, WITH THE RESIDUAL TRAVELLING.** The pinned azobenzene gate puts measured
+`t1/2 = 1.2e5 s` beside model `t1/2 = 4.170e4 s`: -0.46 decades, inside the declared one-decade
+tolerance. The historically wrong midpoint convention is the power control and fails the same gate
+at -5.37 decades. This is **same-source order-of-magnitude consistency** using source-supplied
+`dH` and `dS`, not a parameter-free prediction; Weller-Moser and NAND remain pinned anchors and
+historical comparisons, not equivalent integrated predictions. D-25 is model-tree integrity and
+construction hygiene, **not authentication or a security boundary**: Python metadata remains
+mutable/fabricable, callers outside the scanned tree can instantiate the exported class, and sealed
+legacy lanes remain outside the scan. Consumption refusals close the tested raw/false/mutated paths;
+they do not turn provenance text into cryptographic identity.
+
+**LEDGER AND TASK DISPOSITION.** C-85 was narrowed from the false “every registered headline”
+breadth and old 31/14 counts to the bounded 176 + 33 + 24 = 233 stack, with T-51, full-corpus
+reproduction and T-35 explicitly excluded. D-25 now states its live gates and residual. C-91's
+world-tier denominator remains the corrected **36 gates**, not the earlier erroneous 42. G-C now
+maps the homed count law to `.census`; G-D maps classes to singular `.reachable_class` and keeps
+T-51/T-49 open; G-F drops completed T-55 from NEXT while retaining T-35, T-18 and T-54. The claims
+tool gained narrow `next` and `urm` commands so those updates obey the retrieve-and-update rule.
+No claim status moves. **T-55 moves TODO → DONE. T-54 remains DOING. T-51 remains TODO.**
+
+**THE CONTINUOUS URM RULE NOW EXECUTES.** New features do not merely accumulate beside the model:
+a new surface or corner enters through the URM declaration/refusal doors; a new law enters through
+a `ProjectModel` method and family gate; a new external number enters only as a pinned comparison
+with a stated tolerance and power/control semantics. `validate_urm.py` composes those obligations
+before the geometry/project chains, and `replicate/on_finding.sh` invokes that umbrella on every
+landing. The final commit remains contingent on both required landing gates; no failure may be
+narrated past.

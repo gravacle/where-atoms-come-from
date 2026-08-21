@@ -5,7 +5,8 @@ is the world model — the framework new observations are added INTO.  This docu
 registrar's integration spec.  The builder wrote ONLY:
 
 - `model/arrow.py` — the ported/delegating machinery (new file)
-- `model/checks_arrow.py` — the gate block, 26 checks, all PASS, ~108s (new file)
+- `model/checks_arrow.py` — the gate block, initially 26 checks; 27 after the
+  adversarial custom-model refusal repair, all PASS (new file)
 - this file
 
 Nothing else was touched: not `project_model.py`, not any validator, lane, ledger,
@@ -83,23 +84,25 @@ def arrow_redundancy(self, coupling=None, lam=0.8, t=4.0, env=None):
     import arrow as AW
     return AW.arrow_redundancy(coupling=coupling, lam=lam, t=t, env=env)
 
-def arrow_observation(self, env, coupling, record=None, lam=0.8, t=4.0,
+def arrow_observation(self, env, coupling, record=None, model=None, lam=0.8, t=4.0,
                       tier="world", provenance=None):
     """OBSERVATION ENTRY for the arrow family (T-54/T-55): score a NEW bath/fragment
        observation through the family's own instruments -- I(S:B), whole-bath chi,
        per-fragment chi, and the verdicts (holds_record_bits, entangled_without_record
-       = the F-18 class, redundant_fragments).  D-25 AT THE GATE: world-tier baths
+       = the F-18 class, redundant_fragments).  A custom RecordModel must bring its own
+       explicit record; the toric default is used only with the default model.  D-25 AT
+       THE GATE: world-tier baths
        require provenance; corner baths must self-declare 'DEF-A'.  Every outcome
        registers -- entangled-without-record is a RESULT, not a failure."""
     import arrow as AW
-    return AW.score_bath_observation(env, coupling, record=record, lam=lam, t=t,
+    return AW.score_bath_observation(env, coupling, record=record, model=model, lam=lam, t=t,
                                      tier=tier, provenance=provenance)
 ```
 
 ## 3. Where the checks chain in
 
 `model/checks_arrow.py` exposes `run_arrow_checks(check)` in the `validate_geometry.py`
-idiom (`check(name, cond, detail="")`).  Two integration options, registrar's choice:
+idiom (`check(name, cond, detail="")`).  The builder considered two integration options:
 
 - **Recommended: a sibling `model/validate_arrow.py`** mirroring `validate_geometry.py`'s
   skeleton — its own `check()` counter, `run_arrow_checks(check)`, then the CHAIN section
@@ -110,8 +113,11 @@ idiom (`check(name, cond, detail="")`).  Two integration options, registrar's ch
   `validate_geometry.py` before its summary — one validator, one conjunction, but the
   gate count and runtime both change.
 
-Standalone, today, without any integration: `python3 model/checks_arrow.py`
-(26 PASS, 0 FAIL, exit 0, ~108s).
+**Registrar disposition:** the shared `model/validate_urm.py` umbrella was selected. It
+runs ARROW as a separately counted 27-gate family, then the other three homed families,
+geometry, and project/D-25. The added gate is the custom-model/default-record refusal
+with an explicit matching-record positive control. Standalone remains available at
+27 PASS, 0 FAIL.
 
 ## 4. The observation-entry story
 

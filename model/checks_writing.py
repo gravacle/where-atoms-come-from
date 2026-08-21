@@ -38,6 +38,13 @@ def run_writing_checks(check):
 
     F1 = Fr(1)
 
+    def refuses_value_error(call):
+        try:
+            call()
+        except ValueError:
+            return True
+        return False
+
     # ================================================================ KERNEL TIER (T48_A)
     # ---------------------------------------------------------------- venues from supports
     RING = WR.ring_venue(8)
@@ -244,6 +251,70 @@ def run_writing_checks(check):
           "direction (the computed zero earning E1's direction-uniform amplitude) "
           "beside WRITE dN == +1 (5 fresh directions) and ERASE dN == -1 (D-15)",
           te["transport"] == [0] * 6 and te["write"] == [1] * 5 and te["erase"] == [-1])
+
+    # -------------------------------------------------------- constructor domain gates
+    e1_boundary = WR.ensemble_transport(nbr, Fr(1, deg_w))
+    e1_boundary_v = WR.transport_verdict(nbr, e1_boundary)
+    check("C-91 E1 domain regression: negative and overfull transport amplitudes are "
+          "REFUSED; POSITIVE boundary a=1/deg has nonnegative entries, zero diagonal, "
+          "and remains stochastic+critical (D-15)",
+          refuses_value_error(lambda: WR.ensemble_transport(nbr, -Fr(1, 100))) and
+          refuses_value_error(lambda: WR.ensemble_transport(nbr, Fr(1, 5))) and
+          min(x for row in e1_boundary for x in row.values()) == 0 and
+          e1_boundary_v["nonnegative"] and e1_boundary_v["conserving"] and
+          e1_boundary_v["at_criticality"])
+
+    fresh_count = deg_w - 1
+    e2_boundary = WR.ensemble_trail_retreat(nbr, Fr(1, fresh_count + 1), F1)
+    e2_boundary_v = WR.retreat_verdict(nbr, e2_boundary)
+    check("C-91 E2 domain regression: negative u, negative b, and an overfull attempt "
+          "row are REFUSED; POSITIVE boundary (deg-1)ub+u=1 has zero stay probability "
+          "with deg/fresh-count computed from the venue and is "
+          "nonnegative+doubly-stochastic (D-15)",
+          refuses_value_error(lambda: WR.ensemble_trail_retreat(nbr, -Fr(1, 20), F1)) and
+          refuses_value_error(lambda: WR.ensemble_trail_retreat(nbr, Fr(1, 20), -F1)) and
+          refuses_value_error(lambda: WR.ensemble_trail_retreat(nbr, Fr(1, 2), F1)) and
+          min(x for row in e2_boundary for x in row.values()) == 0 and
+          e2_boundary_v["nonnegative"] and e2_boundary_v["doubly_stochastic"])
+
+    e3h_boundary = WR.ensemble_trail_decay(nbr, Fr(1, deg_w + 1), F1, "H1")
+    e3n_boundary = WR.ensemble_trail_decay(nbr, Fr(1, fresh_count + 1), F1, "NB")
+    e3h_boundary_v = WR.decay_verdict(nbr, e3h_boundary)
+    e3n_boundary_v = WR.decay_verdict_nb(nbr, e3n_boundary)
+    check("C-91 E3 domain regression: negative u/b, overfull H1/NB rows, and an unknown "
+          "counting rule are REFUSED; POSITIVE zero-stay boundaries remain computed "
+          "nonnegative substochastic decay kernels (D-15)",
+          refuses_value_error(lambda: WR.ensemble_trail_decay(
+              nbr, -Fr(1, 20), F1, "H1")) and
+          refuses_value_error(lambda: WR.ensemble_trail_decay(
+              nbr, Fr(1, 20), -F1, "NB")) and
+          refuses_value_error(lambda: WR.ensemble_trail_decay(
+              nbr, Fr(1, 2), F1, "H1")) and
+          refuses_value_error(lambda: WR.ensemble_trail_decay(
+              nbr, Fr(1, 2), F1, "NB")) and
+          refuses_value_error(lambda: WR.ensemble_trail_decay(
+              nbr, Fr(1, 20), F1, "mystery")) and
+          min(x for row in e3h_boundary for x in row.values()) == 0 and
+          min(x for row in e3n_boundary for x in row.values()) == 0 and
+          e3h_boundary_v["nonnegative"] and e3h_boundary_v["substochastic"] and
+          e3n_boundary_v["nonnegative"] and e3n_boundary_v["substochastic"])
+
+    signed_e1 = WR.kernel_pos(nbr, -Fr(1, 5), Fr(1, 5))
+    signed_e2 = WR.kernel_edge(nbr, -Fr(2), Fr(1, 2), Fr(1, 2))
+    signed_v1 = WR.transport_verdict(nbr, signed_e1)
+    signed_v2 = WR.retreat_verdict(nbr, signed_e2)
+    signed_dense = [[Fr(2), -F1], [Fr(0), F1]]
+    check("C-91 stochasticity regression: unit row/column sums cannot hide negative "
+          "entries -- signed E1/E2 kernels and a signed dense control are all reported "
+          "NON-stochastic, while their row-sum zeros remain visible beside them (D-15)",
+          set(WR.srow_sums(signed_e1)) == {F1} and
+          set(WR.srow_sums(signed_e2)) == {F1} and
+          not signed_v1["nonnegative"] and not signed_v1["conserving"] and
+          not signed_v1["at_criticality"] and
+          not signed_v2["nonnegative"] and not signed_v2["conserving"] and
+          not signed_v2["doubly_stochastic"] and
+          not WR.is_stochastic(signed_dense))
+
     db_ok = all(WR.detailed_balance(u, b) == dict(stationary=True, ratio_is_b=True)
                 for u in (Fr(1, 20), Fr(1, 100))
                 for b in (F1, Fr(9, 10), Fr(3, 4), Fr(1, 2), Fr(1, 4), Fr(1, 10)))
@@ -395,15 +466,19 @@ def run_writing_checks(check):
           "with ln(1 + e^{dE/kT}/deg) at every sample within 1e-12", ok_cmp)
 
     # ================================================================ THE D-25 GATE
-    from project_model import URM, RecordSurface
+    from project_model import URM
     eV = 1.602176634e-19
+    mystery = URM.surface("writing refusal probe", "unknown", 1e-20, 1e-19, 300.0, 1e9,
+                          provenance="synthetic check input; provenance removed below")
+    del mystery.provenance
     refused = False
     try:
-        WR.surface_gap(RecordSurface("mystery", "unknown", 1e-20, 1e-19, 300.0, 1e9))
+        WR.surface_gap(mystery)
     except ValueError:
         refused = True
     check("D-25 the writing tier's observation gate REFUSES a world surface without "
-          "provenance (tested, not assumed)", refused)
+          "provenance (the synthetic surface itself entered through URM.surface before "
+          "its provenance was removed; no direct RecordSurface bypass)", refused)
     nand = URM.surface("NAND floating gate", "trapped charge", 0.30 * eV, 1.60 * eV,
                        300.0, 1e13)
     g = WR.surface_gap(nand)
@@ -417,6 +492,16 @@ def run_writing_checks(check):
                       provenance="census GR1 control (not thermally activated)")
     check("C-91 the writing tier DECLINES a non-thermal surface (None, never a number) "
           "exactly as the model's laws do", WR.surface_gap(cmb) is None)
+    extreme = URM.surface("extreme-bias writing probe", "synthetic check", 1e-18, 1e-21,
+                          1.0, 1e9, provenance="computed underflow refusal probe")
+    extreme_dial = WR.surface_boltzmann(extreme)
+    check("C-91/D-25 extreme observation regression: a provenance-valid surface whose "
+          "Boltzmann factor underflows is detected from its computed dial and DECLINED "
+          "as None -- no Fraction(1,0), no fabricated finite gap; NAND beside it is the "
+          "positive resolved control (D-8/D-15)",
+          extreme_dial is not None and extreme_dial["b_underflow"] and
+          extreme_dial["b"] == 0.0 and WR.surface_gap(extreme) is None and
+          g["contained"] and g["bracket"][0] > 0)
 
     # ============================================= API-FIDELITY PROBES BEYOND THE RANGE
     cells6, _i6, nbr6 = WR.torus3(6)

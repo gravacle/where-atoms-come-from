@@ -16,8 +16,9 @@ script needs a few minutes; `--quick` skips those.
 
 ```bash
 python3 replicate/check_proof.py           # the proof's own gate: refuses a stale claim
-cd model && python3 validate_project.py    # the model's 14 gates
-cd model && python3 validate_geometry.py   # 31 geometry gates; chains the above
+python3 model/validate_project.py           # the URM's 24 project/D-25 gates
+python3 model/validate_geometry.py          # 33 geometry gates; chains the above
+python3 model/validate_urm.py               # 176 family gates; full chained conjunction 233
 ```
 
 ---
@@ -66,7 +67,7 @@ not a lattice at all.
 
 **Every row now says what carries it.** `T-9` was reopened by external review — it had been marked
 DONE while satisfying neither branch of its own DONE_WHEN — and the audit was then run for real:
-six probes over all 146 rows in scope, **defaulting every row to `SINGLE-CARRIER`**, with an
+six probes over all 150 rows in scope, **defaulting every row to `SINGLE-CARRIER`**, with an
 adversarial refuter required to confirm each `TWO-CARRIER` claim against the row's actual result on
 structurally different carriers. Same model at another size or parameter set never counted.
 
@@ -74,9 +75,9 @@ structurally different carriers. Same model at another size or parameter set nev
 cut -f1,2 LANE_T9_AUDIT/T9_carrier_audit.tsv        # the mark on every row
 ```
 
-**`SINGLE-CARRIER` 111 · `TWO-CARRIER` 21 · `NOT-CARRIER-SHAPED` 14**, coverage 146/146. Rows
+**`SINGLE-CARRIER` 113 · `TWO-CARRIER` 22 · `NOT-CARRIER-SHAPED` 15**, coverage 150/150. Rows
 registered after the audit carry no mark and count as `UNAUDITED`, which is not a `TWO-CARRIER` mark.
-Both `PROVED` rows, `C-71` and `C-72`, are `TWO-CARRIER`. **`PROOF_V002.md` prints the mark beside
+The one `PROVED` row, `C-71`, is `TWO-CARRIER`. **`PROOF_V002.md` prints the mark beside
 every row it cites, and `check_proof.py` refuses a claim that rests on a single carrier without
 saying so.**
 
@@ -101,16 +102,16 @@ adopted because of it, and every script follows them:
 Stated here so you do not have to find it.
 
 **Almost everything in this program is `FORMAL`** — real mathematics about the program's own
-stipulated definition, saying nothing by itself about the world (`H-3`, `PARTIAL`). **Exactly two
-rows meet the `PROOF` bar: `C-71` and `C-72`**, each naming its quantity in units, its predicted
-value, its falsifier on a standard instrument, and `RECORDS VERIFIED` on two structurally different
-mechanisms. **Both surfaces are MODELLED** — constants pinned to literature classes, patterns from
-sealed seeds — so what is scored is the encoding-level statement on two real *mechanisms*; **no device
-was measured.** What is offered to you is the falsifier: a Vt-distribution shift on a flash tester, a
-VSM remanence reading against an AC-erased background. `ledger/status.py` enforces the two-surface
-requirement and nothing else; the other three are enforced by the registrar reading the row.
+stipulated definition, saying nothing by itself about the world (`H-3`, `PARTIAL`). **Exactly one
+row meets the `PROOF` bar: `C-71`**, naming its quantity in units, its predicted relation, its
+falsifier on a standard instrument, and `RECORDS VERIFIED` on two structurally different
+mechanisms. **Its surfaces are MODELLED** — constants pinned to literature classes, patterns from
+sealed seeds — so what is scored is an encoding-level statement on two real *mechanisms*; **no device
+was measured.** What is offered to you is the falsifier: a within-part Vt-distribution shift on a
+flash tester. `ledger/status.py` enforces the two-surface requirement and nothing else; the other
+three requirements are enforced by the registrar reading the row.
 
-**Empirical contact is thin, and it is no longer zero.** Beyond those two rows it consists of `T-41`'s
+**Empirical contact is thin, and it is no longer zero.** Beyond that row it consists of `T-41`'s
 pinned external anchors — published azobenzene half-life, the Weller–Moser magnetic stability rule,
 NAND detrapping activation energy — placed beside the model's own numbers, sources in
 `LANE_T41_EXTERNAL/CITATIONS.md`. **Everything else is the model against its own closed form.**

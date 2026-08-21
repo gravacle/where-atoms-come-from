@@ -11,7 +11,7 @@ the law enters as a layer method, and the sealed numbers are validator gates.
   LANE_T47_B_STAIRCASE; registered via LANE_T47_D_REGISTER). Importable standalone; `python3
   model/countlaw.py` prints the sealed six-record census as a demo. No file I/O, returns are data.
 - `model/checks_countlaw.py` — the check block, validate_geometry.py idiom:
-  `run_countlaw_checks(check)`. Standalone: `python3 model/checks_countlaw.py` → **39 PASS, 0
+  `run_countlaw_checks(check)`. Standalone: `python3 model/checks_countlaw.py` → **40 PASS, 0
   FAIL, ~2 s** (far under the 120 s budget).
 - this document.
 
@@ -81,7 +81,7 @@ record's own mode is the basin-lumped slow sector, which is exactly what `t31_ba
 ## 2. Where the checks chain in
 
 `model/checks_countlaw.py` exposes `run_countlaw_checks(check)` taking the house
-`check(name, cond, detail="")` callable. Two equivalent hook-ups; the registrar picks:
+`check(name, cond, detail="")` callable. The builder supplied two equivalent hook-ups:
 
 1. **Into the T-54 validator** (recommended once more families land): the umbrella validator
    defines its `check`, then
@@ -91,11 +91,14 @@ record's own mode is the basin-lumped slow sector, which is exactly what `t31_ba
    ```
    and keeps the validate_geometry pattern of chaining `validate_project.py` for the conjunction.
 2. **Interim**: append the same two lines to `validate_geometry.py`'s gate section (it already
-   owns a `check` of the right shape); the summary counts then absorb the 39 gates.
+   owns a `check` of the right shape); the summary counts then absorb the 40 gates.
 
-Standalone remains available either way (`python3 model/checks_countlaw.py`, exit 0 iff all pass).
+**Registrar disposition:** option 1 landed through `model/validate_urm.py`. COUNTLAW is
+kept separately countable at 40 gates, including the consumption-side provenance-bypass
+refusal, before the umbrella chains geometry and project/D-25. Standalone remains
+available (`python3 model/checks_countlaw.py`, exit 0 iff all pass).
 
-What the gates hold (39 checks; D-8: literals only as sealed anchors, stated as such, with a
+What the gates hold (40 checks; D-8: literals only as sealed anchors, stated as such, with a
 computed comparison beside every one; D-15: every zero paired with a positive control):
 
 - **A/B — width**: sealed instrument rates (worst rel 3.3e-13 vs the 12-digit sealed values);
@@ -120,7 +123,9 @@ computed comparison beside every one; D-15: every zero paired with a positive co
   callable with a width-like parameter.
 - **F — observation entry**: registry-provenance NAND surface through `URM.surface()` → census
   (alive at 1e3 s beside dead at 1 y, both routes agreeing); D-25 refusal of an unregistered
-  surface beside the acceptance; `thermal=False` declared in `declined`, never silently counted.
+  surface beside the acceptance; consumption-side refusal of both a provenance-bypassed world
+  surface and a falsely declared corner; `thermal=False` declared in `declined`, never silently
+  counted.
 - **G — beyond the gated range** (definition-not-shortcut): the step located at t*_3 by ±0.1%
   probes; a fresh N=5 ensemble with MIXED per-record f0 (no sealed lane ever mixed f0) — routes
   agree at 301 t_m; T-31 at eps=0.20 (beyond the sealed grid); a 500 K instrument crossing
@@ -135,8 +140,9 @@ all existing machinery:
 1. **Provenance gate (D-25)**: each measured record becomes
    `URM.surface(name, mechanism, dE, E_b, T, f0, provenance="<pinned source>")` — measured
    constants, not fitted to the law; the gate REFUSES a world-tier surface without a pinned
-   source (gated at CL-F2). Non-thermal surfaces may enter; the census will decline them
-   by name rather than mis-count them (CL-F3).
+   source (gated at CL-F2). The census rechecks this invariant and refuses bypassed objects
+   (CL-F3); construction alone is not treated as a security boundary. Non-thermal surfaces may
+   enter; the census will decline them by name rather than mis-count them (CL-F4).
 2. **The law**: `model.census(surfaces, t_m)` returns the predicted integer count k, the dated
    drop schedule (each record's t*, first-to-die first), both widths, and the departure term —
    with `k` and `k_formula` returned together so the instrument/width agreement is checked on

@@ -1,0 +1,99 @@
+LANE_T54_VERIFY / INTEGRATION_CODEX -- D-24 AUDIT
+Date: 2026-08-21
+Default verdict: REFUTED.
+
+INITIAL EXECUTION
+-----------------
+The first independent integration execution is preserved verbatim in
+VERIFY_INTEGRATION.INITIAL_REFUTED.txt: 22 PASS / 2 REFUTE.
+
+I15 was a verifier-instrument error.  classes.corner_venue and the matching ProjectModel
+wrapper deliberately return (VenueGraph, cells, idx), but the verifier treated that tuple
+as VenueGraph.  The repair unpacked both routes and compares all three returned objects.
+No shared model or builder file changed for this repair.
+
+I24 was a real default-refuted dependency state, not a model result: verifier A's final
+transcript and D-24 disposition did not yet exist.  The integration verdict remains
+REFUTED until those artifacts exist and explicitly confirm arrow, countlaw, and D25.
+
+SEMANTIC PROOF REFUTATION
+-------------------------
+The mechanical proof gate passed R1-R11, but a separate semantic cutover scan found
+assembled statements that were false against the integrated tree: P-CORNER-2 said
+URM.surface was called nowhere outside three validator gates; the GEOMETRY intro still
+reported 31 gates and four unmodelled tail blocks; P-ROLES-1 said C-86/C-87 were absent
+and validate_project bypassed D-25; the alpha block said k(t_m)/C-86 was absent; and the
+proof-debt block still reported geometry/project as 36/14 and countlaw outside the URM.
+This is an integration refutation even though R1-R11 passed.  Predicate I25 makes those
+pre-T54 absence/bypass/count phrases forbidden and requires the four integrated model
+entries plus P-DEF-7's honest authentication residual.  The initial passing proof-gate
+capture remains custody evidence, not a terminal semantic verdict.
+
+After those repairs and reassembly, a second semantic pass found another false section
+sentence: “the two PROVED rows named in §0.1,” contradicting the program's exactly-one
+invariant.  It was corrected to “the one PROVED row,” the proof was reassembled again,
+and both mechanical and semantic checks were rerun.  A preflight verifier-spec
+correction also changed I25's proof representatives from arrow_observation/writing_gap
+to the result-block functions the proof actually names, arrow_threshold and
+writing_kernel_verdict.  This did not weaken API coverage: I11 and I18 independently
+execute arrow_observation and writing_gap off sealed grids.
+
+UMBRELLA CUSTODY
+----------------
+validate_urm.py was executed exactly once by this integration verifier.  The deterministic
+count/verdict capture and the source hashes it ran against are in UMBRELLA.OUT.txt.  No
+duration is part of the result.  No sealed lane program was executed by this verifier.
+
+The read-only proof gate was run after proof assembly stabilized.  PROOF_GATE.OUT.txt
+records R1-R11 PASS at 83 blocks, 115 distinct cited rows, 48 blocks resting on no
+TWO-CARRIER row, and 10 blocks carrying a PROVED row, tied to the live proof/gate hashes.
+
+The terminal proof hashes are:
+
+  f5496567630ddaeb983fa070f43e6f1c3b546cc9b4c070054c39de2eff2105c9  PROOF_V002.md
+  00b72d58bb9ff896277d437ac87384b29bc67bee5f23d0065942e31f13ed1bd3  replicate/check_proof.py
+
+SCOPE
+-----
+All files written by this verifier are confined to LANE_T54_VERIFY/INTEGRATION_CODEX.
+No shared model, ledger, register, proof source, manifest, or commit was changed.
+
+TRANSITIVE VERIFIER REFUTATIONS AND REPAIRS
+-------------------------------------------
+Verifier A preserves the initial builder defects.  Arrow was REFUTED at 13/15 because
+a custom two-dimensional RecordModel with omitted record fell into an accidental
+256-dimensional broadcast ValueError and ProjectModel.arrow_observation did not expose
+or forward model=.  Countlaw was REFUTED at 15/17 because census accepted both a raw
+unprovenanced world surface and a false corner whose provenance was not exact DEF-A.
+Its race captures also preserve D-25 at 9 PASS / 1 FAIL with five direct constructions,
+a sealed-row parser error, stale suite counts during concurrent repair, and an off-grid
+math-domain verifier error.  The full repaired rerun confirms arrow 9/9 (family 27/27),
+countlaw 11/11 (family 40/40), and D-25 10/10.
+
+Verifier B preserves its first 25 OK / 1 REFUTE execution, where a repeated-key parser
+selected the E4 M=1400 row instead of E6 M=2800.  After correction and full rerun it
+confirms classes and writing at 26/26, with family suites 52/52 and 57/57.  B also found
+that the draft integration paste mishandled writing_kernel_verdict at c=1 and outside
+[0,1].  The integrated method was repaired; I16 independently confirms both domain
+refusals and the conserving, critical c=1 result with per_crossing=None.
+
+FINAL REPAIRED DISPOSITION
+--------------------------
+VERIFY_INTEGRATION.OUT.txt records 25 PASS / 0 REFUTE / 25 required and final
+CONFIRMED.  The one full umbrella capture records arrow 27, countlaw 40, classes 52,
+writing 57, hence 176 family gates; geometry 33; project/D-25 24; full chain 233, all
+PASS with zero FAIL.  No duration is part of the result.
+
+D-8 found no literal boolean decision predicate in the five integrated check blocks.
+D-15 executed arrow zero/positive observations, countlaw survivor 1/0, all three
+exclusive reachable-class branches, and the critical conserving writer beside its
+nonzero leak determinant.  Off-sealed calls exercised wrapper equality, nondefault
+argument forwarding, refusal contracts, and all 23 integrated ProjectModel/URM layer
+methods or their delegate families.
+
+D-25's remaining scope is explicit.  It is model-tree integrity and hygiene, not
+authentication or a security boundary: metadata remains mutable/fabricable, callers
+outside the scanned model tree can instantiate the exported class, and sealed legacy
+lanes remain outside the AST boundary.  The azobenzene gate is same-source,
+order-of-magnitude consistency using source-supplied inputs, not a parameter-free
+prediction.

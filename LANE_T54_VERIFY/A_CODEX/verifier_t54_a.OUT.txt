@@ -1,0 +1,101 @@
+T-54 VERIFIER A (CODEX) -- ARROW / COUNTLAW / D25
+DEFAULT: REFUTED.  CONFIRMED requires EVERY mandatory test, sealed input, and expected refusal.
+====================================================================================================
+INITIAL BUILDER SNAPSHOT d3b181d41719dd4e605c43cd26c2a261ba5bbf5e (sha256 of git blobs)
+  238eeb5460d3071902434315058abe61fc1183c6230638eaa695f136381278fa  model/arrow.py
+  c2d77190e24edb985398fa0542561a4f394d0f0f73fe00aab4247a6597f9e478  model/checks_arrow.py
+  798da27ff98f89631de14737d85ab62dce8b2e80cd5b6afdd5959709767d8899  INTEGRATION_arrow.md
+  e73dcc30b72ed4cda92b295b5485f1692f12d77022d5541b752639a6d937ff15  model/countlaw.py
+  8016a0b39bc8597a5c499b6f43e7ddabfe3ee39f5a4d84d0c556183428a49f43  model/checks_countlaw.py
+  9fc820d4492c38f966293cbe73a1269ee22cf6ed60decbad4d59223d426286fb  INTEGRATION_countlaw.md
+LIVE REPAIRED SNAPSHOT (sha256)
+  918cf1a2d2cc5261cfae8ea222a6c6d5aa5362ad65c0e08ca00e7d85faff1f8f  model/arrow.py
+  d65df153764373d44f740c33df9e711146b433564bad267e6b62883490b8e7cf  model/checks_arrow.py
+  b6230c4e20ea55c3f479f019e585d786604ce8897c63af33d1ede5ef2a101663  INTEGRATION_arrow.md
+  0e274480e647896ab607cdc591030213fa5fc137b0b2f7379da44b15ba00078c  model/countlaw.py
+  937f611a7de4a95b371a00b28974b34a1a7582a3cc199ee04317e260dac9f3a2  model/checks_countlaw.py
+  23a8cc17d96e550ba9bdeaaf61bc1e8ba897872917798713140f35fb2965bb11  INTEGRATION_countlaw.md
+  345301e177967a83ade0b578b24bc5400dadd6ab97f560e9f8179437c9192230  model/checks_d25.py
+  36bc90f079c835b940f1956874679ac2ae83a0ad8b683a98e10544018010acff  INTEGRATION_d25.md
+  09d477a1b999e388c485d90563b0f919809e601d660704bdf68badea66586e1c  model/project_model.py
+  8a2e9067d31112fd7e1cd50596cdc725f82261cb78d03824094ac6a3b497c6e5  model/validate_project.py
+----------------------------------------------------------------------------------------------------
+INITIAL FAMILY ARROW
+  PASS  sealed input LANE_F1_ARROW.sha256 :: 4 files; ok
+  PASS  sealed input LANE_PF2_DYNAMICAL.sha256 :: 2 files; ok
+  PASS  sealed input LANE_T9_AUDIT.sha256 :: 3 files; ok
+  PASS  standalone checks_arrow.py at pinned builder snapshot :: exit=0; 26 PASS 0 FAIL
+  PASS  sealed F-17 threshold re-derived then API-fresh :: w1=3.886e-15/24; w2=0.11448276/252; sealed=0.11448276
+  PASS  sealed F-18 ledger re-derived then API-fresh :: Ze I=0.04549256 chi=0.000e+00; identity I=2.487e-14
+  PASS  sealed F-19 invariance re-derived then API-fresh :: mutual=3.686e-14; fixed=1.145e-01; covariance=3.886e-15
+  PASS  sealed PF-2 history re-derived then API-fresh :: t=0:0.00000000 t=0.25:0.40660635 t=0.5:0.81447230 t=1:0.97527192 t=2:0.78665760 t=4:0.90811968
+  PASS  sealed F-21 redundancy re-derived then API-fresh :: whole=0.90811968; fragments=['0.789366', '0.048377', '0.678602']
+  PASS  off-grid lambda=0.37 independent API-fidelity :: API=0.050057955850; independent=0.050057955850; not sealed=6.442e-02
+  PASS  world bath without provenance explicitly refused :: ValueError: ARROW GATE REFUSES: a world-tier bath observation requires PROVENANCE -- the real environment it models and its constants' pinned sources (D-25, the principal 2026-08-20: the model is grounded in real record data, never the toy category).
+  PASS  custom-model positive control with explicit record :: I=0.812550167626; chi=0.812550167626
+  FAIL  custom model with omitted record must be intentionally refused :: ValueError: operands could not be broadcast together with shapes (2,2) (256,256) 
+  FAIL  integration method exposes and forwards custom model :: signature=self, env, coupling, record=None, lam=0.8, t=4.0, tier="world", provenance=None
+  PASS  D-8/D-15 static scan :: 26 check call sites; literal-bool lines=[]; fits=[]; controls=True
+  INITIAL VERDICT ARROW: REFUTED (13/15 mandatory tests pass)
+----------------------------------------------------------------------------------------------------
+INITIAL FAMILY COUNTLAW
+  PASS  sealed input LANE_T47_A_WIDTH.sha256 :: 5 files; ok
+  PASS  sealed input LANE_T47_B_STAIRCASE.sha256 :: 4 files; ok
+  PASS  sealed input LANE_T47_D_REGISTER.sha256 :: 1 files; ok
+  PASS  sealed input LANE_T31_ASYMMETRY.sha256 :: 2 files; ok
+  PASS  standalone checks_countlaw.py at pinned builder snapshot :: exit=0; 39 PASS 0 FAIL
+  PASS  sealed instrument rates re-derived then API-fresh :: dE=0.000:1.386491636889e-11; dE=0.050:5.488926847605e-11; dE=0.158:3.134238877190e-09; dE=0.300:7.597477224034e-07
+  PASS  sealed exact width re-derived then API-fresh :: API=2.535960987846706e-20; sealed=2.535960987846706e-20; independent=2.535960987846706e-20
+  PASS  sealed six-record drop schedule re-derived then API-fresh :: r0=7.212449e+10 r1=1.821850e+10 r2=2.952602e+09 r3=4.344239e+08 r4=6.296091e+07 r5=9.104795e+06
+  PASS  sealed staircase re-derived then API-fresh :: k=[6, 6, 5, 4, 2, 1, 0]
+  PASS  sealed T-31 control re-derived then API-fresh :: eps=0:dE=0.0000/0.0000,tau=5.5066e+03/5.5066e+03,v2=2; eps=0.05:dE=0.0698/0.0641,tau=5.5008e+03/5.5147e+03,v2=0; eps=0.1:dE=0.2550/0.2325,tau=5.2452e+03/5.4219e+03,v2=0; eps=0.16:dE=0.5684/0.5124,tau=3.6284e+03/4.1648e+03,v2=0
+  PASS  sealed departure term re-derived then API-fresh :: k=4; departure=5.4339; sealed=5.4339
+  PASS  C-76 chosen-width API is unreachable :: rejected=['width', 'tol', 'delta', 'cluster_width', 'margin']; signature=(surfaces, t_m)
+  PASS  off-grid 500 K API-fidelity bisection :: bisected=0.307068962126 eV; formula=0.307068962126 eV
+  PASS  valid world and DEF-A corner entries accepted :: world='trapped charge; detrapping E_a ~ 1.0 eV across generations; JEDEC 1-yr/30C EOL spec (LANE_T41_EXTERNAL/CITATIONS.md)'; corner='DEF-A'
+  FAIL  raw unprovenanced world surface must be refused at census :: ACCEPTED: {'t_m': 1000.0, 'k': 1, 'k_formula': 1, 'delta_coh': 1.054571817e-37, 'schedule': [{'index': 0, 'name': 'raw world', 'mechanism': 'thermal', 'tier': None, 'provenance': None, 'B': 1.6822854656999999e-19, 'dE': 8.01088317e-21, 'E_b': 1.602176634e-19, 'T': 300.0, 'f0': 1000000000.0, 't_star': 55033035.02859564, 't_star_formula': 55033035.02859562, 'delta_pop': 5.378231204630256e-20, 'alive': True, 'alive_formula': True, 'm_eq': 0.7474020559240037}], 'drop_order': [0], 'departure': 0.0, 'declined':...
+  FAIL  corner census must require exact DEF-A self-declaration :: ACCEPTED: {'t_m': 1000.0, 'k': 1, 'k_formula': 1, 'delta_coh': 1.054571817e-37, 'schedule': [{'index': 0, 'name': 'raw corner', 'mechanism': 'thermal', 'tier': 'corner', 'provenance': 'not DEF-A', 'B': 1.6822854656999999e-19, 'dE': 8.01088317e-21, 'E_b': 1.602176634e-19, 'T': 300.0, 'f0': 1000000000.0, 't_star': 55033035.02859564, 't_star_formula': 55033035.02859562, 'delta_pop': 5.378231204630256e-20, 'alive': True, 'alive_formula': True, 'm_eq': 0.7474020559240037}], 'drop_order': [0], 'departure': 0.0,...
+  PASS  D-8/D-15 static scan :: 37 check call sites; literal-bool lines=[]; fits=[]; controls=True
+  INITIAL VERDICT COUNTLAW: REFUTED (15/17 mandatory tests pass)
+----------------------------------------------------------------------------------------------------
+FINAL FAMILY ARROW
+  PASS  sealed input LANE_F1_ARROW.sha256 after repair :: 4 files; ok
+  PASS  sealed input LANE_PF2_DYNAMICAL.sha256 after repair :: 2 files; ok
+  PASS  sealed input LANE_T9_AUDIT.sha256 after repair :: 3 files; ok
+  PASS  repaired standalone checks_arrow.py :: exit=0; 27 PASS 0 FAIL
+  PASS  repaired custom model omitting record explicitly refuses :: ValueError: ARROW GATE REFUSES: a custom RecordModel requires its record observable explicitly; the toric default record belongs only to the default model.
+  PASS  repaired custom model rejects mismatched record shape :: ValueError: ARROW GATE REFUSES: record shape (256, 256) does not match model dimension 2x2.
+  PASS  repaired custom-model explicit-record positive control :: I=0.896137544081; chi=0.896137544081; fragments=2
+  PASS  repaired integration exposes and forwards custom model :: signature=self, env, coupling, record=None, model=None, lam=0.8, t=4.0, tier="world", provenance=None
+  PASS  repaired D-8/D-15 static scan :: 27 check call sites; literal-bool lines=[]; fits=[]; controls=True
+  FINAL VERDICT ARROW: CONFIRMED (9/9 mandatory tests pass)
+----------------------------------------------------------------------------------------------------
+FINAL FAMILY COUNTLAW
+  PASS  sealed input LANE_T47_A_WIDTH.sha256 after repair :: 5 files; ok
+  PASS  sealed input LANE_T47_B_STAIRCASE.sha256 after repair :: 4 files; ok
+  PASS  sealed input LANE_T47_D_REGISTER.sha256 after repair :: 1 files; ok
+  PASS  sealed input LANE_T31_ASYMMETRY.sha256 after repair :: 2 files; ok
+  PASS  repaired standalone checks_countlaw.py :: exit=0; 40 PASS 0 FAIL
+  PASS  repaired valid world and corner positive control :: k=2; tiers=['world', 'corner']
+  PASS  repaired census refuses raw unprovenanced world :: ValueError: COUNTLAW REFUSES: every census surface must enter through URM.surface with an explicit 'world' or 'corner' tier and the corresponding provenance (D-25).
+  PASS  repaired census refuses false corner declaration :: ValueError: COUNTLAW REFUSES: a corner census surface must carry provenance='DEF-A' from URM.surface; an exact idealisation may not silently pose as world data (D-25).
+  PASS  repaired every public surface consumer refuses post-entry mutation :: record_rate=ValueError: COUNTLAW REFUSES: a world-tier census surface requires pinned provenance from URM.surface (D-25).; drop_time=ValueError: COUNTLAW REFUSES: a world-tier census surface requires pinned provenance from URM.surface (D-25).; drop_time_formula=ValueError: COUNTLAW REFUSES: a world-tier census surface requires pinned provenance from URM.surface (D-25).
+  PASS  repaired off-grid width still equals independent definition :: API=0.337241220321 eV; independent=0.337241220321 eV
+  PASS  repaired D-8/D-15 static scan :: 38 check call sites; literal-bool lines=[]; fits=[]; controls=True
+  FINAL VERDICT COUNTLAW: CONFIRMED (11/11 mandatory tests pass)
+----------------------------------------------------------------------------------------------------
+FINAL FAMILY D25
+  PASS  sealed input LANE_T41_EXTERNAL.sha256 :: 3 files; ok
+  PASS  integrated standalone checks_d25.py :: exit=0; 10 PASS 0 FAIL; zero offenders=True
+  PASS  integrated model tree has zero D-25 construction offenders :: independent=[]; builder=[]
+  PASS  validate_project integration is exactly the minimal URM/D-25 routing patch :: old-occurrences=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; exact-live=True; edits=11
+  PASS  display rows resolve through two explicit provenance aliases :: resolved=['Alanine enantiomer', 'Azobenzene', 'Azobenzene cis/trans', 'CoCrPt HDD grain', 'CoCrPt grain', 'DNA base tautomer', 'Fe(II) spin crossover', 'NAND floating gate']; aliases=True
+  PASS  integration brief carries exact prospective edits, alias option, and chain hook :: seven old/new pairs=True; alias-option=True; chain=True
+  PASS  pinned azobenzene anchor computed independently through fresh API :: t1/2 API=4.170e+04s; measured=1.2e5s; delta=-0.46 decades; midpoint=-5.37
+  PASS  whitespace world provenance explicitly refused :: ValueError: URM REFUSES: a world-tier RecordSurface requires PROVENANCE — the real record it models and its constants' pinned sources (D-25, the principal 2026-08-20: the model is grounded in real record data, never the toy category). Register the source in model.project_model.PROVENANCE or pass provenance=... explicitly.
+  PASS  lowercase corner declaration explicitly refused :: ValueError: URM REFUSES: a corner carrier must self-declare provenance='DEF-A' — the exact idealisation may never silently pose as the world (D-25).
+  PASS  D-8/D-15 static scan :: 10 check call sites; literal-bool lines=[]; fits=[]; controls=True
+  FINAL VERDICT D25: CONFIRMED (10/10 mandatory tests pass)
+====================================================================================================
+INITIAL BUILDER OVERALL: REFUTED
+FINAL REPAIRED OVERALL: CONFIRMED

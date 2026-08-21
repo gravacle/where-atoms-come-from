@@ -1,0 +1,165 @@
+LANE T54_VERIFY / B_CODEX -- D-24 AUDIT AND VERIFIER DISPOSITION
+Verifier re-run: 2026-08-21.  Scope: model/classes.py and model/writing.py repairs.
+Default verdict: REFUTED.  Terminal verdict is reachable only after every required
+shared and family predicate has executed and passed.
+
+FINAL EXECUTION
+---------------
+  python3 -u LANE_T54_VERIFY/B_CODEX/verify_b.py
+  exit 0
+  26 OK, 0 REFUTE, 26 required predicates
+  FAMILY VERDICTS: classes=CONFIRMED; writing=CONFIRMED
+
+The family verdicts here are API/build-family verdicts.  They authorize no register,
+ledger, proof, ProjectModel integration, or landing action.  This verifier edited only
+verify_b.py, VERIFY_B.OUT.txt, and this audit.
+
+INPUT LINEAGE / SEALED-ARTIFACT DISCIPLINE
+------------------------------------------
+The verifier read the five T-44/T-48 lanes as immutable input and executed none of their
+programs.  Every file named by their SEALS.sha256 manifests was hashed in place:
+
+  LANE_T44_A_CORNER       8 entries intact
+  LANE_T44_B_WORLD        6 entries intact
+  LANE_T48_A_DERIVATION   8 entries intact
+  LANE_T48_B_CORNER       8 entries intact
+  LANE_T48_C_WORLD        9 entries intact
+
+The M=2800 deepening is parsed from LANE_T44_B_WORLD/VERIFY/adv_verify.OUT.txt because
+that is the registered C-90 deepening source used by the prior verifier.  It is not one
+of the six paths listed by LANE_T44_B_WORLD/SEALS.sha256; this audit does not pretend
+otherwise.  The primary T44-B output and result are manifest-covered.
+
+Every comparison anchor is parsed from those artifacts before the fresh API call.  No
+expected T-44/T-48 number is read from checks_classes.py or checks_writing.py.  Fresh
+results, exactly matching the parsed displays:
+
+  T44-B G(0), M=1400       [1.503919, 1.554391]
+  T44-B axis 2->4          [0.453369, 0.458705]
+  T44-B axis 4->8          [0.469869, 0.507905]
+  T44-B verifier axis 4->8 [0.480953, 0.493374] at M=2800
+  T44-B verifier coeff     [0.476369, 0.487321] at M=2800
+  T48-A moving counts      1024/2048 and 2304/4608
+  T48-A C8 leak det        269059/4000000
+  T48-B writer tuple       (1,2,2,2,1) on all 48 links at (4,6)
+  T48-C E1 induced mu      1/6
+  T48-C E2 b=1/2 split     (1/7, 2/7)
+  T48-C E3 b=1/2 mu        1/8
+
+The historical T44-B verifier caveat was preserved, not laundered: the fresh M=2800
+axis 4->8 upper bound is 0.493374 < 1/2.  The C-90 coefficient bracket still contains
+the comparison-only owner coefficient.
+
+INDEPENDENT MACHINERY / OFF-SEALED PROBES
+-----------------------------------------
+CLASSES:
+  * A fresh dictionary DP on Z^3, sharing no counting code with classes.py, equals
+    n3_even_row on five targets for m=0..7.
+  * A fresh exact transfer action on off-sealed K4 equals venue_series node-by-node
+    through K=12.  K4's own exact resolvent route locates mu_c=1/3 and class_verdict
+    places mu=1/7 below it.
+  * The D=3 resolvent route freshly locates mu_c=1/6: singular at the computed point,
+    solvable below and above.
+
+WRITING:
+  * Off every sealed world grid, a 5^3 venue at u=3/80, b=5/11 returns E1 mu=1/6;
+    E2 (m_fresh,m_back)=(5/36,11/36); E3-H1 mu=5/41 and ratio=41/30;
+    E3-NB mu=5/36 and ratio=36/25.
+  * Low-level signed kernels with exact unit row sums are reported nonnegative=False,
+    conserving=False, and noncritical/non-doubly-stochastic as applicable.
+
+BUILDER SUITES
+--------------
+The verifier invoked each unsealed model check block standalone, captured its exit code,
+and parsed its terminal count without copying its variable runtime into the transcript:
+
+  model/checks_classes.py   exit 0, 52 PASS, 0 FAIL
+  model/checks_writing.py   exit 0, 57 PASS, 0 FAIL
+
+REFUSAL PROBES: EXACT EXCEPTION CONTRACT
+----------------------------------------
+verify_b.py contains one exception handler in total: `except ValueError`.  AST inspection
+gates that fact.  A refusal passes only if the ValueError message contains the intended
+domain-gate text.  TypeError, ArithmeticError, RuntimeError, bare exceptions, and every
+other exception propagate and make the verifier nonzero.  Positive neighbors are called
+without any exception wrapper.
+
+  INVALID CALL                              REQUIRED REFUSAL             VALID NEIGHBOR
+  negative coupling price                  coupling-price ValueError    mu=0 and 1/4
+  negative venue multiplicity              multiplicity ValueError      +1 edge, mu_c=1
+  E1 a<0 or a>1/deg                        E1 ValueError                a=1/6 boundary, 1/7
+  E2 negative/overfull probability row     E2 ValueError                u=1/6 boundary, 1/7
+  E3 bad name or overfull H1/NB row         E3 ValueError                H1 u=1/7, NB u=1/6
+  world surface with provenance removed    D-25 ValueError              resolved NAND surface
+
+The extreme but provenance-valid surface is not wrapped: its computed Boltzmann factor
+underflows, surface_gap returns None, and the resolved NAND surface returns a contained
+exact-rational bracket.  No Fraction(1,0) is reached.
+
+D-8 SCAN
+--------
+AST scans of both builder check blocks found no check(..., True), check(..., False),
+assert True, or assert False.  Sealed displays are explicitly parsed as anchors.  Fresh
+decision paths use computed values: independent counts, exact resolvents, tail bounds,
+kernel entries, row/column sums, determinants, and verdict booleans.  The refusal helper
+does not turn an arbitrary exception into success.
+
+D-15 CONTROLS RUN (computed, different configurations)
+-------------------------------------------------------
+CLASSES:
+  * exact singular resolvent at the venue's computed mu_c beside solvable probes;
+  * zero walk counts below earned distance beside N_d=1 at the leading stratum;
+  * the published M=1400 interval beside the deeper M=2800 interval that excludes 1/2;
+  * invalid negative price/multiplicity beside accepted neighboring domains.
+
+WRITING:
+  * det(I-K)=0 for the conserving ring beside det(I-K_leak)!=0;
+  * transport dN=0 beside trail write +1 and erase -1;
+  * E1 conservation deficit zero beside E3 loss u>0;
+  * refused overfull rows beside valid zero-stay boundary rows;
+  * extreme-surface decline beside the resolved NAND surface.
+
+EXACT-ARITHMETIC SCAN
+---------------------
+All sampled classes measurement results (Q3, B5, G(0), M=1400/M=2800 ratios and
+coefficient intervals) are Fractions.  All sampled E1/E2/E3 kernel entries and verdict
+values are Fractions.  AST scans find no float literal in the core price, series,
+resolvent, class-verdict, stochasticity, ensemble-constructor, writer-verdict, or
+closed-form-ratio functions.  Floats remain confined to the declared world-surface
+entry/comparison path.
+
+CORRECTION LOG (ERRORS BELONG IN THE LANE)
+------------------------------------------
+The first repaired-verifier execution returned 25 OK / 1 REFUTE because the parser for
+the repeated ('axis',4,8) key selected E4's M=1400 dictionary entry while the fresh side
+was M=2800.  This was a verifier-instrument error, not an API result.  The regex was
+narrowed to the sealed `REFUTE  E6` line, independently spot-checked to parse
+('0.480953','0.493374'), and the entire verifier (including both full builder suites and
+the independent M=2800 reconstruction) was rerun.  The final deterministic transcript
+is 26 OK / 0 REFUTE.
+
+OUT-OF-SCOPE INTEGRATION-PASTE FINDING
+--------------------------------------
+A read-only integration review found that the current INTEGRATION_writing.md draft's
+paste-ready writing_kernel_verdict divides by (1-c) at the valid no-move boundary c=1,
+does not refuse c outside [0,1], and sets critical from det==0 without conditioning on a
+nonnegative conserving kernel.  This verifier did not edit that shared file.  The model
+API verdict above remains CONFIRMED; the integration paste must be repaired before use.
+The required replacement behavior is:
+
+  c = Fr(c)
+  if c < 0 or c > 1:
+      raise ValueError("writing kernel REFUSES: c must lie in [0,1]")
+  K = WW.kernel_uniform(adj, c)
+  conserving = WW.is_doubly_stochastic(K)
+  det = WW.crit_det(K)
+  per_crossing = None if c == 1 else (1 - c) / deg / (1 - c)
+  return dict(deg=deg, conserving=conserving,
+              critical=bool(conserving and det == 0),
+              link_amplitudes=WW.link_amplitudes(adj, K),
+              per_crossing=per_crossing,
+              leak_det=WW.crit_det(WW.leak_kernel(adj, Fr(9, 10))))
+
+The method docstring must state that per_crossing is undefined (None) at c=1 and that
+out-of-domain c is refused.  This is a landing precondition for the integration owner,
+not a mutation made by verifier B.

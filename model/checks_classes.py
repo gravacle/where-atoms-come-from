@@ -38,6 +38,13 @@ from classes import Fraction, ff  # noqa: F811
 
 
 def run_classes_checks(check):
+    def refuses_value_error(call):
+        try:
+            call()
+        except ValueError:
+            return True
+        return False
+
     # ================================================================ A: venue entry (D-25)
     w7, w7_cells, w7_idx = CL.world_venue(7)
     check("C-87 world venue n=7: row sums all exactly 6 == sealed (deg-6 venue, Perron "
@@ -76,6 +83,28 @@ def run_classes_checks(check):
           refused and corner_refused and
           accepted.provenance == "declared test source (this check)" and
           c46.provenance == "DEF-A" and CL.WORLD_VENUE_PROVENANCE in (w7.provenance,))
+    check("D-25 venue-domain regression: the gate REFUSES an empty node list and a "
+          "node list with no adjacency edges; POSITIVE CONTROL: the declared 12-node "
+          "cycle enters and retains its 24 directed edge entries",
+          refuses_value_error(lambda: CL.venue(
+              "empty nodes", [], provenance="computed refusal probe")) and
+          refuses_value_error(lambda: CL.venue(
+              "empty edges", [[]], provenance="computed refusal probe")) and
+          sum(len(r) for r in accepted.adj) == 24)
+    bad_neighbors = (-1, 2, Fraction(1), True)
+    check("D-25 venue-domain regression: every neighbor index is an in-range integer "
+          "(negative, endpoint, rational, and bool probes all REFUSED)",
+          all(refuses_value_error(lambda j=j: CL.venue(
+              "bad neighbor", [[(j, 1)], [(0, 1)]],
+              provenance="computed refusal probe")) for j in bad_neighbors))
+    bad_mults = (0, -1, Fraction(1), True)
+    check("D-25 venue-domain regression: every multiplicity is a STRICTLY POSITIVE "
+          "integer (zero, negative, rational, and bool probes all REFUSED); POSITIVE "
+          "CONTROL: the accepted graph's row sums remain computed positive integers",
+          all(refuses_value_error(lambda m=m: CL.venue(
+              "bad multiplicity", [[(1, m)], [(0, 1)]],
+              provenance="computed refusal probe")) for m in bad_mults) and
+          all(type(r) is int and r > 0 for r in accepted.row_sums()))
 
     # ================================================================ B: mu_c three ways
     w4, _w4_cells, _w4_idx = CL.world_venue(4)
@@ -142,6 +171,21 @@ def run_classes_checks(check):
           "(exactly one class boolean True at every declared mu)",
           all(sum([CL.class_verdict(w4, mu)[k] for k in
                    ("exponential", "critical", "divergent")]) == 1 for mu in sweep))
+    check("C-87 price-domain regression: the two generic public API routes "
+          "venue_series and class_verdict, plus ProjectModel's D=3 coupling route, "
+          "REFUSE a negative coupling price instead of emitting signed-series data",
+          refuses_value_error(lambda: CL.venue_series(ch12, -Fraction(1, 4), 0, [1], 4)) and
+          refuses_value_error(lambda: CL.class_verdict(ch12, -Fraction(1, 4))) and
+          refuses_value_error(lambda: CL.series_3d(-Fraction(1, 12), (1, 0, 0), 8)))
+    check("C-87 price-domain regression: every remaining public price-taking evidence "
+          "route REFUSES negative mu (resolvent, pole, subcritical/divergent, D=2/D=1)",
+          all(refuses_value_error(call) for call in (
+              lambda: CL.resolvent_exact(ch12.adj, -Fraction(1, 4), 0),
+              lambda: CL.annihilates_constant(ch12, -Fraction(1, 4)),
+              lambda: CL.subcritical_row(-Fraction(1, 12), 12, 4),
+              lambda: CL.divergence_witness(-Fraction(1, 4), 8),
+              lambda: CL.series_target_2d(-Fraction(1, 8), 2, 0, 8),
+              lambda: CL.series_target_1d(-Fraction(1, 4), 2, 8))))
 
     # ================================================================ D: subcritical rows
     r12 = CL.subcritical_row(Fraction(1, 12), K=90, dmax=12)

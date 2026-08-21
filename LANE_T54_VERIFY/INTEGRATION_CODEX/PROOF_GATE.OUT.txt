@@ -1,0 +1,20 @@
+PROOF GATE -- PROOF_V002.md
+Exit: 0
+Source sha256: f5496567630ddaeb983fa070f43e6f1c3b546cc9b4c070054c39de2eff2105c9  PROOF_V002.md
+Gate sha256: 00b72d58bb9ff896277d437ac87384b29bc67bee5f23d0065942e31f13ed1bd3  replicate/check_proof.py
+
+R1  PASS  every P- block parses and carries all five fields
+R2  PASS  every cited ID is a row in the ledger
+R3  PASS  no cited row is WITHDRAWN, FAILED or RECLASSIFIED
+R4  PASS  proof statuses equal ledger statuses
+R5  PASS  proof carrier marks equal T-9 audit verdicts
+R6  PASS  no-TWO-CARRIER blocks say SINGLE-CARRIER in scope
+R7  PASS  every model cell names an existing model function
+R8  PASS  every gate cell names a check that fires
+R9  PASS  PROVED prose is backed by a PROVED row
+R10 PASS  no banned comparison outside the comparison section
+R11 PASS  83 blocks; 115 distinct rows cited; 48 resting on no TWO-CARRIER row;
+          10 carrying a PROVED row
+
+GATE PASSED
+No duration is part of this result or its verdict.

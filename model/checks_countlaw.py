@@ -16,7 +16,8 @@ comparison is possible):
   D  the T-31 control carrier       LANE_T47_B_STAIRCASE section F;
                                     LANE_T31_ASYMMETRY/t31_asymmetry.txt (ratio class)
   E  the C-76 gate                  structural -- the chosen-width form is unreachable
-  F  observation entry (D-25)       project_model.URM.surface -> countlaw.census
+  F  observation entry (D-25)       project_model.URM.surface -> countlaw.census,
+                                     with consumption-side bypass refusal
   G  API-fidelity probes BEYOND the gated range (definition-not-shortcut)
 
 D-15: every zero below is gated with a positive control beside it, in the same or the
@@ -378,10 +379,35 @@ def run_countlaw_checks(check):
     check("CL-F2 D-25 refusal at the gate: an unregistered world surface without "
           "provenance raises, beside the accepted registered one (D-15 pair)",
           refused and cw_short['k'] == 1)
+    bypass_world = URM.surface("NAND floating gate", "trapped charge",
+                               0.05 * EV, 1.0 * EV, 358.0, 1e9)
+    bypass_world.provenance = None
+    bypass_corner = corner("declared control", 1.2 * EV, 0.05 * EV, 300.0, 1e9)
+    bypass_corner.provenance = "not DEF-A"
+    refused_bypass = []
+    for bad in (bypass_world, bypass_corner):
+        try:
+            CL.census([bad], 1.0e3)
+            refused_bypass.append(False)
+        except ValueError:
+            refused_bypass.append(True)
+    direct_refused = []
+    for fn in (CL.record_rate, CL.drop_time_formula):
+        try:
+            fn(bypass_world)
+            direct_refused.append(False)
+        except ValueError:
+            direct_refused.append(True)
+    check("CL-F3 every public surface-consuming path REFUSES provenance bypass: census "
+          "rejects a blank world and false-provenance corner; record_rate/drop_time_formula "
+          "reject the blank world, beside the valid NAND census above (D-15 pair)",
+          refused_bypass == [True, True] and direct_refused == [True, True]
+          and cw_short['k'] == 1,
+          f"census={refused_bypass}, direct={direct_refused}, valid k={cw_short['k']}")
     nonth = URM.surface("NAND floating gate", "trapped charge",
                         0.05 * EV, 1.0 * EV, 358.0, 1e9, thermal=False)
     cmix = CL.census([nand, nonth], 1.0e3)
-    check("CL-F3 decline is DECLARED, never silent: thermal=False surface lands in "
+    check("CL-F4 decline is DECLARED, never silent: thermal=False surface lands in "
           "`declined` (len 1), k unchanged beside the thermal control that counts",
           len(cmix['declined']) == 1 and cmix['k'] == 1
           and len(cmix['schedule']) == 1 and cmix['declined'][0]['index'] == 1,

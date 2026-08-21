@@ -15,6 +15,7 @@ SECTIONS = [
     ("1. THE DEFINITION LAYER — what a record is", "DEFINITION", None),
     ("2. THE LAWS LAYER — what a record does in time", "LAWS", None),
     ("3. THE FORMATION LAYER — how a record comes to be", "FORMATION", None),
+    ("3A. THE ARROW LAYER — what the environment learns about the record", "ARROW", None),
     ("4. THE CORNER LAYER — DEF-A, the exact idealisation", "CORNER", None),
     ("5. THE GEOMETRY LAYER — the emergence increments", "GEOMETRY", "EXCEPT:P-GEO-12"),
     ("6. COMPARISON — the one place Newton is named", "GEOMETRY", "ONLY:P-GEO-12"),

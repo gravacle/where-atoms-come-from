@@ -1,0 +1,62 @@
+{
+ "section_intro": "The ARROW layer asks what the environment learns about the record, rather than whether system and environment merely correlate. Its four results are FORMAL statements on one toric-2x2 carrier: the record-information threshold is the carrier distance, a sub-threshold coupling can entangle without carrying a record bit, system-local unitaries cannot erase the joint correlation, and fragment redundancy inherits the same threshold. The validator now reproduces each sealed result through the URM's arrow methods. None is a measurement of a real bath, and no block below upgrades its single-carrier standing.",
+ "claims": [
+  {
+   "id": "P-ARR-1",
+   "headline": "the record-information threshold is the carrier's own distance",
+   "prose": "On the toric-2x2 carrier, the environment's Holevo information about the record observable is zero across all 24 weight-1 observables and turns on at weight 2 = d: the 252-observable weight-2 sweep reaches 0.11448276, equal to the independently computed closed form from the two bath partition functions. The other logical remains at zero in the same instrument. Thus the arrow reported here is record-level in the registered sense: acquiring information about this record requires a coupling whose support reaches its protection threshold.",
+   "model_fn": "ProjectModel.arrow_threshold",
+   "gate_file": "model/checks_arrow.py",
+   "gate_name": "F-17 weight-2 sweep: 252 observables (== 9*C(8,2)), max == chi(Zbar) computed == sealed anchor 0.11448276 -- the threshold sits at weight d",
+   "grounding": "LANE_F1_ARROW/f1_arrow.txt part 4 (sealed threshold sweep and closed form); model/arrow.py arrow_threshold; model/checks_arrow.py F-17 block, including the companion all-weight-1 zero and the unsealed lambda = 0.5 probe",
+   "rows": [
+    "F-17"
+   ],
+   "scope": "SINGLE-CARRIER — the complete sweep is on the toric-2x2 carrier only. The named gate is the positive weight-d half of the threshold; its companion F-17 gate checks all 24 weight-1 zeros, and both run in the same family validator. The result is FORMAL model mathematics about a sealed finite bath, not an observation of a real environment, and it establishes no scaling beyond d = 2.",
+   "action": "NEW"
+  },
+  {
+   "id": "P-ARR-2",
+   "headline": "ambient entanglement can occur while the bath holds zero record bits",
+   "prose": "The four-row coupling ledger separates total system-bath correlation from information about the chosen record. A weight-1 coupling gives I(S:B) = 0.04549256 while chi(record:B) = 0 exactly; the weight-d logical coupling gives 0.11448276 in both columns, coupling to the other logical gives the same total correlation with zero information about this record, and the identity row gives zero in both. Entanglement is therefore not, by itself, the record's arrow.",
+   "model_fn": "ProjectModel.arrow_ledger",
+   "gate_file": "model/checks_arrow.py",
+   "gate_name": "F-18 weight-1 coupling ENTANGLES: I(S:B) == sealed anchor 0.04549256 yet transfers ZERO record bits, chi == 0 -- decoherence and the record's arrow separated (the zero's positive control is the same row's I > 0)",
+   "grounding": "LANE_F1_ARROW/f1b_invariance.txt part (c), sealed four-row coupling ledger; model/arrow.py arrow_ledger; model/checks_arrow.py F-18 block",
+   "rows": [
+    "F-18"
+   ],
+   "scope": "SINGLE-CARRIER — every ledger row uses the same toric-2x2 system and finite model bath. The result is FORMAL and single-carrier; it separates two computed information measures on that construction and does not establish a universal criterion for real environmental decoherence.",
+   "action": "NEW"
+  },
+  {
+   "id": "P-ARR-3",
+   "headline": "a system-local unitary can relocate the label but cannot erase the joint correlation",
+   "prose": "Across 12 seeded system-only unitaries, I(S:B) changes by at most the sealed 3.686e-14 while chi about a fixed, unrotated label moves by 1.145e-01; rotating the state and record together restores covariance to below 1e-8. The copy is relocatable from inside but the joint correlation is not erasable by a unitary acting on the system alone.",
+   "model_fn": "ProjectModel.arrow_invariance",
+   "gate_file": "model/checks_arrow.py",
+   "gate_name": "F-19 I(S:B) invariant under 12 system-only unitaries -- sealed anchor 3.686e-14 reproduced at print precision (the theorem's corroboration)",
+   "grounding": "LANE_F1_ARROW/f1b_invariance.txt parts (a)-(b), sealed; model/arrow.py arrow_invariance; model/checks_arrow.py F-19 invariance, covariance, and fixed-label control gates",
+   "rows": [
+    "F-19"
+   ],
+   "scope": "SINGLE-CARRIER — the numerical corroboration is on one toric-2x2 carrier. Invariance of mutual information under a system-local unitary is a borrowed exact identity; the finite seeded run checks the implementation and does not supply the theorem's warrant or absolute irreversibility under joint operations.",
+   "action": "NEW"
+  },
+  {
+   "id": "P-ARR-4",
+   "headline": "fragment redundancy inherits the record-information threshold",
+   "prose": "At t = 4 under the weight-d coupling, the whole bath holds 0.90811968 bits about the record and the three declared fragments hold 0.789366, 0.048377 and 0.678602 bits. Under the weight-1 coupling the whole bath and every fragment hold exactly zero. The fold-in runs this result through RecordModel.redundancy for the first time and cross-checks it against the independent history instrument on the same state.",
+   "model_fn": "ProjectModel.arrow_redundancy",
+   "gate_file": "model/checks_arrow.py",
+   "gate_name": "F-21 weight-1 coupling: whole bath AND every fragment EXACTLY ZERO through RecordModel.redundancy (positive control: the weight-d row two checks up)",
+   "grounding": "LANE_PF2_DYNAMICAL/pf2_history.txt parts 3-4, sealed whole-bath and fragment values; model/record_model.py RecordModel.redundancy; model/arrow.py arrow_redundancy; model/checks_arrow.py F-21 block",
+   "rows": [
+    "F-21"
+   ],
+   "scope": "SINGLE-CARRIER — the fragment-bit result is toric-2x2 only. The T-9 battery replicated the whole-bath weight-1 null on additional abelian stabiliser variants, not the fragment redundancy, so it does not lift this row's single-carrier mark. The uneven fragment values are reported as measured in the model; uniform redundancy and scaling with bath size are not claimed.",
+   "action": "NEW"
+  }
+ ],
+ "notes": "T-54/T-55 fold-in. Four blocks, one registered claim each; all statuses and carrier marks are filled mechanically at assembly."
+}

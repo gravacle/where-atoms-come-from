@@ -1,92 +1,106 @@
-# THE MODEL — records from `(H, {L_k})` and nothing else
+# THE UNIVERSAL RECORD MODEL — the program's executable representation
 
-`model/record_model.py`
+`model/project_model.py`
+
+```python
+from project_model import URM
+
+m = URM()
+s = m.surface(name, mechanism, dE, E_b, T, f0,
+              provenance="<pinned source>")
+```
+
+The URM is where this program adds observations and laws. `model/record_model.py` remains its
+first-principles corner engine: from `(H, {L_k})` it constructs every record admitted by the five
+clauses. `model/project_model.py` carries that engine into the world tier with declared surfaces,
+provenance refusals, layer methods, and validator gates.
+
+Exactly one ledger row is `PROVED`: `C-71`. The URM does not upgrade a row's status; it makes the
+row's computation, entry conditions, scope, and tests inspectable.
+
+## THE THREE ENTRY DOORS
+
+Every landed feature must use one of these paths:
+
+1. **A new surface or venue** enters through a URM provenance gate. World-tier inputs require a
+   pinned source; exact corners must self-declare `provenance="DEF-A"`. The consuming layer rechecks
+   the declaration where bypass would otherwise be possible.
+2. **A new law** enters as a layer method and a validator gate with a failing branch and a positive
+   control. A sealed lane by itself is evidence, not a URM feature.
+3. **An external number** enters as a pinned comparison beside computed output, with its units,
+   tolerance, extraction semantics, and a power control stated. A source substring is provenance,
+   not empirical confirmation.
+
+Python metadata is enforceable at these program boundaries; it is not a cryptographic custody
+mechanism. Sealed historical lanes may still contain raw constructors, but no new observation can
+silently use them as the public path.
+
+## THE LAYERS
+
+| layer | public URM surface | what it carries |
+|---|---|---|
+| definition/laws | `clauses`, `lifetime`, `steady_value` | the five clauses, rates, and values |
+| formation | `configuration`, `formation_occupancy`, `formation_orientation` | how a record is written and read |
+| corner | `corner` | the DEF-A exact idealisation, with explicit self-declaration on `URM` |
+| geometry/roles | geometry and role delegates | located record geometry and the three-role ledger |
+| arrow | `arrow_threshold`, `arrow_ledger`, `arrow_invariance`, `arrow_history`, `arrow_redundancy`, `arrow_observation` | record-copy threshold, history, and fragments |
+| count law | `census`, `count_widths` | the surviving-record staircase and both durability widths |
+| classes | `coupling_venue`, `reachable_class`, `critical_kernel`, and related delegates | subcritical, critical, and supercritical coupling classes |
+| writing | `writing_kernel_verdict`, `writing_uniformity`, `writing_transport`, `writing_trail_*`, `writing_gap` | conservation, criticality, transport, and trail diagnostics |
+
+The field-instrument family is not listed: T-51 is still independently unverified and nothing from
+that lane is registered or folded into the URM.
+
+## THE CORNER ENGINE
 
 ```python
 from record_model import RecordModel
-m = RecordModel(H, Ls)          # a Hamiltonian and Lindblad operators. THAT IS THE ENTIRE INPUT.
-recs = m.records()              # every record the pair admits
-fam, commuting, writable = m.independence(recs)   # the multi-record structure
+
+r = RecordModel(H, Ls)        # Hamiltonian and Lindblad operators are the entire corner input
+records = r.records()         # every record the pair admits
+family = r.independence(records)
 ```
 
-**No lattice. No gauge group. No temperature. No coupling constant. No code. No geometry.**
-If a value is not derivable from the pair, the model does not have it and does not invent it.
-
-## THE CONSTRUCTION — each step is a registered theorem
+No lattice, gauge group, temperature, coupling constant, code, or geometry is invented on this
+path. If a value is not derivable from `(H, {L_k})`, the corner engine does not have it.
 
 | step | what it computes | theorem |
 |---|---|---|
-| `star_algebra` | `A = alg{I, H, L_k, L_k†}` | **C-9** — `[L,R]=0 ⟺ [L†,R]=0` for Hermitian `R`, so clause (ii) lands in the `*`-algebra's commutant, not the set's |
-| `commutant` | `A'`, by nullspace of the commutator system | **C-9** |
-| `minimal_projections` | eigenprojections of a **generic** Hermitian element of `A'` | **C-10** — a record exists on `E` ⟺ `P_E A P_E` is a **proper** subalgebra |
-| `clause_iii` | non-trivial on some eigenspace | anchor (iii) |
-| `clause_iv` | `Tr(P_E R) = 0` on every eigenspace | **C-11 / O-4** — an *admissible* flipper exists ⟺ trace-balanced |
-| `build_writer` | explicit admissible `U`, `[U,H]=0`, `U†RU = −R` | **C-11** |
-| `commuting_family` | the independent record **bits** | **C-14** |
+| `star_algebra` | `A = alg{I,H,L_k,L_k†}` | C-9 |
+| `commutant` | `A'` | C-9 |
+| `minimal_projections` | a maximal splitting allowed by `A'` | C-10 |
+| `clause_iii` | non-triviality on an eigenspace | anchor (iii) |
+| `clause_iv` | trace balance on every eigenspace | C-11 / O-4 |
+| `build_writer` | an admissible `U`, with `[U,H]=0` and `U†RU=-R` | C-11 |
+| `commuting_family` | independent record bits | C-14 |
 
-## THE COUNT LAW — **C-14**
+The exact corner count is `k = min_E v2(m_E)`: every independent record must halve every
+eigenspace. The naive `floor(log2 min m_E)` control fails on `[3,3]`, `[6,6]`, and `[5,5]`.
+Clause (v) remains carrier data; the model raises rather than inventing locality.
 
-> ### `k = min over eigenspaces of v₂(m_E)`
+## FORMATION AND OBSERVATION
 
-Each independent record must **halve every eigenspace**, so the family size is how many times every
-multiplicity can be halved. **22 spectra, 22 PASS.** The naive `floor(log₂ min m_E)` fails on
-`[3,3]`, `[6,6]`, `[5,5]` — measured `0, 1, 0`.
+`RecordModel.evolve` shares one eigendecomposition across many readouts. `formation`, `redundancy`,
+and the arrow layer then score what the environment and its fragments hold. A coupling may be a
+product operator, a distributed list of system-term/bath-site pairs, or a full interaction operator;
+those are physically different inputs and are not silently interchanged.
 
-**On the toric code the ground multiplicity is 4, so `k = v₂(4) = 2 = 2g`.**
-**The topological formula is a consequence on that carrier, not the source of the count.**
-
-## THE BOUNDARY THE MODEL ENFORCES — **C-15**
-
-**Clauses (i)–(iv) are carrier-free.** **Clause (v) is not.** Protection needs a locality structure,
-which is carrier data. `m.protection()` **raises** rather than supplying a default, so any claim
-resting on (v) visibly inherits a carrier.
-
-## WHAT THE MODEL CANNOT DO
-
-- **Dimension — FIXED (T-3).** The model reaches **dim 256 in seconds**. It never builds the `*`-algebra
-  (O-19) and never builds a basis of the commutant: `minimal_projections` needs **one generic Hermitian
-  element of `A′`**, obtained by projection — twisted averaging over unitary generators, exact block
-  projection for Hermitian ones. A commutant *basis* is still `O(n²)` and stays a lazy property, unused
-  on the critical path.
-- **Clause (v).** By design, above.
-- **Formation.** The model constructs records; forming one needs an environment (see `F-13`).
-
-## FORMATION — the model computes the process, not only the object
-
-```python
-env = Environment(nq=3)                      # a qubit bath at inverse temperature beta
-m.formation(record, coupling, env, lam, t)   # chi(record : bath) after unitary evolution
-m.formation(..., fragment=[0])               # what ONE fragment holds (redundancy)
-m.channel(record, coupling)                  # does this coupling open a channel at all?
-m.channel_map(family, couplings)             # the dependency structure
-m.formation_independence(family, couplings, env)   # can one form without disturbing another?
-m.evolve(coupling, env, lam, t)              # the joint state, so many readouts share ONE eigh
-m.redundancy(record, coupling, env, lam, t)  # what the whole bath and each fragment hold
-```
-
-**`evolve()` exists because `formation()` redid the eigendecomposition per fragment**, which put a
-7-qubit bath out of reach. Anything needing several readouts of the same evolution should use it.
-
-A coupling may be a **product** `A ⊗ probe`, a **distributed** list of `(A_i, j)` pairs, or a full
-interaction operator. **The distinction is not cosmetic** — the lanes distribute each system term to
-a specific bath qubit, and a product ansatz silently returns a different number.
-
-**`channel()` is the criterion (G-16, corrected):** a coupling opens a channel iff **its compression
-onto the code space has a non-zero component along the record**. Anticommuting with the writer is
-implied by this and does not imply it.
-
-## CARRIER INDEPENDENCE
-
-Every carrier-dependent result is verified on **three** carriers — `[[8,2,2]]` toric, `[[8,1,2]]`
-**non-manifold**, and `[[4,2,2]]` which is **not a lattice at all**: `LANE_T9_CARRIERINDEP`,
-**32 PASS, 0 FAIL**. Note **D-12**: a complex can be redrawn as non-manifold without becoming a
-different quantum system — only a change to the **stabiliser group** changes the carrier.
+`channel()` uses the corrected G-16 criterion: the coupling's compression onto the code space must
+have a non-zero component along the record. Anticommuting with the writer is necessary on the gated
+venues and is not sufficient in general.
 
 ## VALIDATION
 
+From the repository root:
+
 ```bash
-cd model && python3 validate_model.py       # existence half — expect 12 PASS, 0 FAIL
-cd model && python3 validate_formation.py   # formation half — expect 17 PASS, 0 FAIL
-cd model && python3 count_law.py            # the count law — expect 22 PASS, 0 FAIL
-cd LANE_T9_CARRIERINDEP && python3 t9_sweep.py   # carrier independence — expect 32 PASS, 0 FAIL
+python3 model/validate_urm.py          # all four landed families, then geometry/project chain
+python3 model/validate_project.py      # URM surface/delegate/D-25 gates
+python3 model/validate_geometry.py     # geometry gates, then project chain
+python3 model/validate_formation.py    # formation engine — 17 checks
+python3 model/validate_model.py        # corner existence engine — 12 checks
+python3 model/count_law.py             # exact corner count — 22 checks
 ```
+
+The family validator is the landing gate for new URM features. Its printed totals are computed by
+the runners; documentation describes the expected composition but the exit status is authoritative.

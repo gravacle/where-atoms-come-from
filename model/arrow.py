@@ -512,8 +512,10 @@ def score_bath_observation(env, coupling, record=None, model=None, lam=0.8, t=4.
        env: a record_model.Environment (the bath spec: qubit count, energies, beta) --
        the observed environment.  coupling: the system operator it couples through (or
        the distributed/full forms RecordModel.formation accepts).  record: the +-1 record
-       observable (default: the carrier's Zbar).  model: a RecordModel (default: the
-       sealed toric venue).
+       observable (default: the carrier's Zbar only when the default toric model is
+       used).  model: a RecordModel (default: the sealed toric venue).  A caller that
+       supplies a custom model must also supply that model's record explicitly; the
+       toric record is never silently paired with a different Hilbert space.
 
        D-25 AT THE GATE: a world-tier observation REFUSES to enter without provenance --
        the real bath it models and its constants' pinned sources; a corner bath must
@@ -536,9 +538,21 @@ def score_bath_observation(env, coupling, record=None, model=None, lam=0.8, t=4.
                 "the real environment it models and its constants' pinned sources (D-25, "
                 "the principal 2026-08-20: the model is grounded in real record data, "
                 "never the toy category).")
-    C = carrier()
-    m = record_model_instance() if model is None else model
-    R = C['Zbar'] if record is None else record
+    if model is None:
+        C = carrier()
+        m = record_model_instance()
+        R = C['Zbar'] if record is None else np.asarray(record)
+    else:
+        m = model
+        if record is None:
+            raise ValueError(
+                "ARROW GATE REFUSES: a custom RecordModel requires its record observable "
+                "explicitly; the toric default record belongs only to the default model.")
+        R = np.asarray(record)
+    if R.shape != (m.n, m.n):
+        raise ValueError(
+            f"ARROW GATE REFUSES: record shape {R.shape} does not match model dimension "
+            f"{m.n}x{m.n}.")
     r = m.evolve(coupling, env, lam=lam, t=t)
     nS = m.n
     chi_whole = env.holevo(r, R, nS)

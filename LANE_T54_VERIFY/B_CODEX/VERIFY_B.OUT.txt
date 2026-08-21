@@ -1,0 +1,31 @@
+T-54 VERIFIER B RE-RUN -- classes + writing (default REFUTED)
+================================================================================================
+OK      S-SEALS  five input manifests intact; 8/6/8/8/9 entries checked
+OK      S-EXCEPTION-HYGIENE  exception handlers=['ValueError']; positive controls are unwrapped
+OK      CL-SUITE  exit=0 summary=('52', '0')
+OK      WR-SUITE  exit=0 summary=('57', '0')
+OK      CL-DP  fresh Z3 dictionary DP == ported counts; five targets, m=0..7
+OK      CL-MUC  fresh exact resolvent route mu_c=1/6
+OK      CL-SEALED  fresh=(('1.503919', '1.554391'), ('0.453369', '0.458705'), ('0.469869', '0.507905'), ('0.480953', '0.493374'), ('0.476369', '0.487321'))
+OK      CL-KERNEL  registered deep caveat retained: r48_hi<1/2; owner coefficient inside
+OK      CL-EXACT  ints/Fractions on sampled and static core measurement paths
+OK      CL-OFF  off-sealed K4 mu_c=1/3; exact independent series
+OK      CL-REFUSE-PRICE  ValueError=classes layer REFUSES: coupling price mu must be nonnegative; valid neighbors mu=0,1/4 returned exact bounds
+OK      CL-REFUSE-VENUE  ValueError=classes layer REFUSES: edge multiplicities must be strictly positive integers; row 0 has -1; +1 neighbor accepted with mu_c=1
+OK      CL-D8  AST scan: no check(..., True/False) or assert True/False
+OK      CL-D15  singular/solvable, below-distance/leading-count, and deep-caveat controls computed
+OK      WR-SEALED-A  moving=1024/2048,2304/4608 det=269059/4000000
+OK      WR-SEALED-B  tuple=(1, 2, 2, 2, 1) on 48 links
+OK      WR-SEALED-C  E1 mu=1/6 E2=1/7,2/7 E3 mu=1/8
+OK      WR-OFF  off-sealed 5^3 exact E1/E2/E3-H1/E3-NB identities
+OK      WR-D15  det zero/leak, transport zero/write-erase, and no-loss/loss controls computed
+OK      WR-REFUSE-E1  ValueError=writing E1 REFUSES: transport probabilities require 0 <= a <= 1/deg; valid a=1/6 and 1/7 controls returned
+OK      WR-REFUSE-E2  ValueError=writing E2 REFUSES: retreat probabilities require u >= 0, b >= 0, and (deg-1)*u*b + u <= 1; valid u=1/6 and 1/7 controls returned
+OK      WR-REFUSE-E3  ValueError=writing E3 REFUSES: decay probabilities require u >= 0, b >= 0, and branch*u*b + u <= 1; valid H1/NB zero-stay boundaries returned
+OK      WR-SIGNED  unit row sums cannot hide signed entries
+OK      WR-SURFACE  ValueError=writing tier REFUSES: a world-tier surface must enter through the D-25 provenance gate (URM.surface) -- the model is grounded in real record data, never the toy category (the principal, 2026-08-20).; resolved NAND returned; underflow surface declined
+OK      WR-EXACT  Fractions dynamically and no float literal in static core measurement functions
+OK      WR-D8  AST scan: no check(..., True/False) or assert True/False
+================================================================================================
+VERIFIER B: 26 OK, 0 REFUTE, 26 required predicates
+FAMILY VERDICTS: classes=CONFIRMED; writing=CONFIRMED

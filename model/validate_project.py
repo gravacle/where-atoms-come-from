@@ -1,14 +1,14 @@
 """EVERY SEALED HEADLINE NUMBER, REPRODUCED THROUGH THE ONE ENTRY POINT."""
 import numpy as np, sys
 import grounded as G
-from project_model import RecordSurface, ProjectModel
+from project_model import URM
 I2 = np.eye(2); X = np.array([[0, 1], [1, 0]], dtype=complex); Z = np.array([[1, 0], [0, -1]], dtype=complex)
 def word(n, s):
     M = np.array([[1]], dtype=complex)
     for c in s: M = np.kron(M, {'I': I2, 'X': X, 'Z': Z}[c])
     return M
 eV = 1.602176634e-19
-M = ProjectModel(); n_pass = 0; n_fail = 0
+M = URM(); n_pass = 0; n_fail = 0
 def check(name, cond, detail=""):
     global n_pass, n_fail
     if cond: n_pass += 1; print(f"  PASS  {name}  {detail}")
@@ -17,7 +17,8 @@ def check(name, cond, detail=""):
 print("VALIDATE THE FULL-PROJECT MODEL")
 print("=" * 78)
 # 1. T-29: the grain's lifetime, sealed 5.6279e16 s
-grain = RecordSurface("CoCrPt grain", "magnetic anisotropy", 3.0 * G.KB * 300, 2.0e5 * 1.26e-24, 300.0, 1e9)
+grain = M.surface("CoCrPt grain", "magnetic anisotropy", 3.0 * G.KB * 300,
+                  2.0e5 * 1.26e-24, 300.0, 1e9)
 tau = M.lifetime(grain)
 # CONVENTION CHANGE (solidity review): activation-energy rates. The check is now INTERNAL
 # consistency against the closed form of the same construction, plus a sanity window; the old
@@ -41,7 +42,7 @@ SURFACES = [("CoCrPt HDD grain", "magnetic anisotropy", 3.0 * G.KB * 300, 60.8 *
             ("Alanine enantiomer", "parity violation", 1.0e-13 * eV, 1.40 * eV, 300.0, 1e13)]
 worst1 = worst2 = 0.0
 for nm, mech, dE, Eb, T, f0 in SURFACES:
-    s = RecordSurface(nm, mech, dE, Eb, T, f0)
+    s = M.surface(nm, mech, dE, Eb, T, f0)
     v = M.steady_value(s); pred = np.tanh(dE / (2 * G.KB * T))
     worst1 = max(worst1, abs(v - pred))
     kT = G.KB * T
@@ -50,15 +51,19 @@ for nm, mech, dE, Eb, T, f0 in SURFACES:
 check("T-33 law 1 on six mechanisms", worst1 < 2e-15, f"worst abs err {worst1:.2e}")
 check("T-33 law 2 on six mechanisms", worst2 < 1e-9, f"worst rel err {worst2:.2e}")
 # 4. T-33: the model DECLINES on the controls
-zirc = RecordSurface("Zircon U-238", "nuclear decay", 4.27e6 * eV, 4.27e6 * eV, 300.0, 1e21)
-cmb = RecordSurface("CMB photon", "free flight", 0.0, 0.0, 2.7, 0.0, thermal=False)
+zirc = M.surface("Zircon U-238", "nuclear decay", 4.27e6 * eV, 4.27e6 * eV,
+                 300.0, 1e21, provenance="control surface, census GR1 entry 3 (zircon U-Pb): "
+                 "decay is temperature-independent; the model must DECLINE")
+cmb = M.surface("CMB photon", "free flight", 0.0, 0.0, 2.7, 0.0, thermal=False,
+                provenance="control surface, census GR1 entry 4 (CMB photon polarisation): "
+                "no bath, free flight; the model must DECLINE")
 check("T-33 declines on zircon", M.lifetime(zirc) is None, "rates unrepresentable -> None")
 check("T-33 declines on the CMB photon", M.lifetime(cmb) is None, "no bath -> None")
 # 5. T-28: the DEF-A corner, sealed dims 96 / 1536 / 24
 for name, H, want in (("[[4,2,2]]", -(word(4, 'XXXX') + word(4, 'ZZZZ')), 96),
                       ("[[6,4,2]]", -(word(6, 'X' * 6) + word(6, 'Z' * 6)), 1536),
                       ("3q Ising", -(word(3, 'ZZI') + word(3, 'IZZ')), 24)):
-    r = M.corner(H)
+    r = M.corner(H, provenance="DEF-A")
     check(f"T-28 corner {name}", r['slow_dim'] == r['commutant_dim'] == want,
           f"slow {r['slow_dim']} = commutant {r['commutant_dim']} = sealed {want}")
 # 6. T-34/T-32 machinery: written vs unwritten ratios
@@ -67,19 +72,22 @@ cfg_u = M.configuration(1.602e-17, np.zeros(1000))
 check("formation: written ratio = 1", cfg_w['ratio'] == 1.0, f"ratio {cfg_w['ratio']}")
 check("formation: unwritten is null", cfg_u['ratio'] is None and cfg_u['sum'] == 0.0, "sum 0, ratio undefined")
 # D-25: the URM's public gate must REFUSE undeclared surfaces — the guard is tested, not assumed
-from project_model import URM
 try:
-    URM.surface("mystery device", "unknown", 1e-20, 1e-19, 300.0, 1e9)
+    M.surface("mystery device", "unknown", 1e-20, 1e-19, 300.0, 1e9)
     check("D-25 guard refuses undeclared world surface", False, "no refusal raised")
 except ValueError:
     check("D-25 guard refuses undeclared world surface", True, "ValueError raised")
 try:
-    URM.surface("toy torus", "stabiliser", 0.0, 0.0, 0.0, 0.0, tier="corner")
+    M.surface("toy torus", "stabiliser", 0.0, 0.0, 0.0, 0.0, tier="corner")
     check("D-25 guard requires DEF-A self-declaration", False, "no refusal raised")
 except ValueError:
     check("D-25 guard requires DEF-A self-declaration", True, "ValueError raised")
-ok = URM.surface("CoCrPt grain", "magnetic anisotropy", 3.0*G.KB*300, 2.0e5*1.26e-24, 300.0, 1e9)
+ok = M.surface("CoCrPt grain", "magnetic anisotropy", 3.0*G.KB*300,
+               2.0e5*1.26e-24, 300.0, 1e9)
 check("D-25 registry supplies pinned provenance", "Weller" in ok.provenance, ok.provenance[:60])
+# D-25 (T-55): construction scan + stage-(2) external-anchor gates — see model/checks_d25.py
+from checks_d25 import run_d25_checks
+run_d25_checks(check)
 print("=" * 78)
 print(f"  {n_pass} PASS, {n_fail} FAIL")
 sys.exit(1 if n_fail else 0)

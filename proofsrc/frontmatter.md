@@ -80,12 +80,13 @@ means the result stands on two structurally different carriers; `SINGLE-CARRIER`
 `NOT-CARRIER-SHAPED` means the result is not the kind of thing a carrier carries.
 
 **`UNAUDITED` means the row carries no mark at all**, and it is not a weaker `SINGLE-CARRIER`. The
-audit's scope was the 146 `FORMAL`, `PROVED` and `MEASURED` rows, so every `DEFINED`, `PARTIAL`,
-`CANDIDATE`, `OPEN` and `BLOCKED` row is unaudited by construction; `C-90` and `C-91` are unaudited
-because they were registered after it ran. **A block resting on no `TWO-CARRIER` row opens its scope
+audit's original scope was the then-live `FORMAL`, `PROVED` and `MEASURED` rows, and its T-52
+extension brought every later in-scope row through the same audit. `DEFINED`, `PARTIAL`, `CANDIDATE`,
+`OPEN` and `BLOCKED` rows remain unaudited unless an extension explicitly reaches them. **A block
+resting on no `TWO-CARRIER` row opens its scope
 cell with `SINGLE-CARRIER —`**, and an unaudited row never lifts that requirement.
 
-**Of the 146 audited rows, 111 are `SINGLE-CARRIER`, 21 are `TWO-CARRIER`, 14 are
+**Of the 150 audited rows, 113 are `SINGLE-CARRIER`, 22 are `TWO-CARRIER`, 15 are
 `NOT-CARRIER-SHAPED`.** That is the program's state, printed rather than described.
 
 ---
@@ -96,16 +97,19 @@ Each line runs from the repository root:
 
 ```bash
 python3 replicate/check_proof.py      # this document's own gate — expect GATE PASSED
-python3 model/validate_project.py     # the URM's gates — expect 14 PASS, 0 FAIL
-python3 model/validate_geometry.py    # the geometry gates and the chain — expect 36/36 and OVERALL: PASS
+python3 model/validate_project.py     # base project + D-25 gates — expect 24 PASS, 0 FAIL
+python3 model/validate_geometry.py    # geometry layer, then project chain — expect 33 + 24 PASS
+python3 model/validate_urm.py         # four folded families, then both chains — expect 176 family / 233 full PASS
 ./replicate/reproduce.sh              # re-runs every lane script against its sealed output
 ```
 
-**The fourth does not pass, and this document will not pretend otherwise.** The most recent completed
+**The fifth does not pass, and this document will not pretend otherwise.** The most recent completed
 run in the repository records **46 differing scripts against 267 identical**
 (`replicate/reproduce_full2.log`): thirteen nondeterministic scripts, unnormalised wall-clock lines,
 one script that aborts, and stale seals. A fresh full run is in flight. **The debt is `T-35`, `TODO`,
-and §8 states it.** The other three pass as written.
+and §8 states it.** The first four commands pass as written. The validator stack contains **24 base
+project/D-25 gates, 33 geometry gates, and 176 folded-family gates: 233 model gates in the full
+umbrella run**; the proof gate is separate.
 
 `check_proof.py` **refuses** a block with a missing field, a row that is in neither the ledger nor the
 plan, a row that is `WITHDRAWN` or `FAILED`, a status or carrier mark that has gone stale against the

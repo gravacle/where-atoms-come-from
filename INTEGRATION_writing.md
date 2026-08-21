@@ -4,15 +4,16 @@ T-54/T-55, family: **writing**.  Built under the principal's directive of 2026-0
 URM is the world model — the framework new observations are added INTO.  The writing tier
 is homed as an extensible object: a new record surface enters through the provenance gate,
 the writing laws enter as layer methods with validator gates, and a new external number
-enters as a gated comparison.  This document is the registrar's integration spec; the
-builder edited **no existing file**.
+enters as a gated comparison.  This document is the registrar's integration spec.  The
+refutation repair remains isolated to the writing module, its checks, and this note;
+ProjectModel and shared validators are not edited here.
 
-## Files delivered (the only writes)
+## Files maintained by this repair
 
 | file | what it is |
 |---|---|
-| `model/writing.py` | the module: ported machinery from LANE_T48_A_DERIVATION / LANE_T48_B_CORNER / LANE_T48_C_WORLD (T-46 fold-in pattern; every function's docstring names claim row C-91, sealed source, owners) |
-| `model/checks_writing.py` | the check block: `run_writing_checks(check)` in the validate_geometry.py idiom; standalone `python3 model/checks_writing.py` → **52 PASS, 0 FAIL, exit 0, ~4.5 s** |
+| `model/writing.py` | the module: ported machinery from LANE_T48_A_DERIVATION / LANE_T48_B_CORNER / LANE_T48_C_WORLD, repaired so E1/E2/E3 constructors refuse signed or overfull probability domains, stochastic verdicts require nonnegative entries as well as normalized sums, and unresolved/underflowed surface dials decline without arithmetic failure. |
+| `model/checks_writing.py` | the check block: `run_writing_checks(check)` in the validate_geometry.py idiom; standalone `python3 model/checks_writing.py` → **57 PASS, 0 FAIL, exit 0, 5.37 s**.  Its provenance refusal probe now constructs through `URM.surface()` and then removes provenance, so this file no longer imports or names `RecordSurface` in code. |
 | `INTEGRATION_writing.md` | this spec |
 
 Sealed numbers reproduced exactly (gated as the sealed anchors they are, stated as such):
@@ -29,6 +30,12 @@ venue 6^3 at fresh (u, b); fresh kernel venue C_12; fresh lazy row c = 2/7; fres
 venue (4,5) including a fresh exhaustive coset scan; the field-kernel entry point at a
 declared anisotropic field.
 
+The five added repair gates are computed negative/positive pairs: E1 domain, E2 domain,
+E3 H1/NB domain and counting selector, signed-unit-sum stochasticity, and extreme
+surface underflow.  The boundary controls (zero stay/diagonal with nonnegative entries)
+pass beside the refused overfull rows (D-15); no sealed output is used to decide them
+(D-8).
+
 ## A. ProjectModel methods to add (paste-ready; delegation style of the GEOMETRY layer)
 
 Add under a new banner after the GEOMETRY section:
@@ -44,19 +51,29 @@ def writing_kernel_verdict(self, venue, c=0):
        kernel venue ('C8' | 'T3' | 'T4' | 'Z27'), with conservation (double
        stochasticity), criticality (exact det(I - K)), link amplitudes, and the
        CTRL-LEAK control beside it.  The sealed identity: conserving <=> critical,
-       per-crossing amplitude 1/deg identically for every trivial-writer share
-       (LANE_T48_A_DERIVATION, sealed).  Owners: unital channels / Birkhoff
-       (re-verified on explicit operators in-lane), Perron, Gershgorin."""
+       per-crossing amplitude 1/deg identically for every trivial-writer share with
+       nonzero crossing probability (LANE_T48_A_DERIVATION, sealed).  c outside
+       [0,1] is refused; at the
+       conserving no-move endpoint c=1 there is no crossing, so per_crossing is
+       None.  Owners: unital channels / Birkhoff (re-verified on explicit
+       operators in-lane), Perron, Gershgorin."""
     import writing as WW
     from fractions import Fraction as Fr
+    try:
+        c = Fr(c)
+    except (TypeError, ValueError, ZeroDivisionError) as exc:
+        raise ValueError("writing_kernel_verdict requires a rational 0 <= c <= 1") from exc
+    if c < 0 or c > 1:
+        raise ValueError("writing_kernel_verdict requires 0 <= c <= 1")
     adj = {"C8": WW.ring_venue(8)["adj"], "T3": WW.plaquette_venue(3)["adj"],
            "T4": WW.plaquette_venue(4)["adj"], "Z27": WW.grain_venue(3)["adj"]}[venue]
     K = WW.kernel_uniform(adj, c)
     deg = WW.venue_degree(adj)
-    return dict(deg=deg, conserving=WW.is_doubly_stochastic(K),
-                critical=WW.crit_det(K) == 0,
+    conserving = WW.is_doubly_stochastic(K)
+    return dict(deg=deg, conserving=conserving,
+                critical=bool(conserving and WW.crit_det(K) == 0),
                 link_amplitudes=WW.link_amplitudes(adj, K),
-                per_crossing=(1 - Fr(c)) / deg / (1 - Fr(c)),
+                per_crossing=(Fr(1, deg) if c < 1 else None),
                 leak_det=WW.crit_det(WW.leak_kernel(adj, Fr(9, 10))))
 
 def writing_uniformity(self, Lx, Ly):
@@ -80,6 +97,7 @@ def writing_transport(self, n, a):
     """C-91 world tier, E1 TRANSPORT (iv' literal): the energy-conserving writer on the
        n^3 census venue at per-attempt amplitude a -- conserving AND critical
        (mu = 1/deg = mu_c) at EVERY dE and barrier; verdicts computed, never narrated
+       after enforcing the probability domain 0 <= a <= 1/deg (invalid rows refuse);
        (LANE_T48_C_WORLD V1, sealed).  Owners: Stinespring (why row sums 1 is the
        dilation's structural property; the sums themselves computed)."""
     import writing as WW
@@ -89,7 +107,9 @@ def writing_transport(self, n, a):
 def writing_trail_retreat(self, n, u, b):
     """C-91 world tier, E2 TRAIL WITH RETREAT: the raw two-rate writer with
        backtracking kept -- conserving at every dE, uniform (1/deg) exactly at dE = 0,
-       split (b, 1)/(5b + 1) beside (LANE_T48_C_WORLD V2, sealed).  Owners:
+       split (b, 1)/(5b + 1) beside.  The constructor computes deg from the venue and
+       refuses u < 0, b < 0, or (deg-1)*u*b + u > 1 before a verdict is formed
+       (LANE_T48_C_WORLD V2, sealed).  Owners:
        Goldstein 1951 / Kac 1974 named for the persistence remark, comparison-only."""
     import writing as WW
     _c, _i, nbr = WW.torus3(n)
@@ -101,7 +121,9 @@ def writing_trail_decay(self, n, u, b, counting="H1"):
        mass ratio mu_c/mu is returned; the closed form ln(1 + e^{dE/kT}/l) is checked
        against it by the validator, never sourced from it (LANE_T48_C_WORLD V3/V4,
        sealed; the DONE_WHEN control).  counting='NB' uses the venue's own
-       directed-edge criticality reference (Hashimoto 1989, earned by row sums)."""
+       directed-edge criticality reference (Hashimoto 1989, earned by row sums).
+       Both counting rules refuse negative or overfull probability rows; any other
+       counting label is refused rather than silently treated as NB."""
     import writing as WW
     _c, _i, nbr = WW.torus3(n)
     W = WW.ensemble_trail_decay(nbr, u, b, counting)
@@ -111,7 +133,9 @@ def writing_trail_decay(self, n, u, b, counting="H1"):
 def writing_gap(self, s, n=4, den=10 ** 9):
     """C-91 + D-25, THE OBSERVATION ENTRY: a real record surface's written-trail mass
        gap.  REFUSES without provenance (build s through URM.surface); declines
-       non-thermal surfaces.  The surface's b = exp(-dE/kT) is bracketed by exact
+       non-thermal surfaces and dials whose exponential underflows or whose declared
+       rational denominator cannot resolve a positive lower bound.  Otherwise the
+       surface's b = exp(-dE/kT) is bracketed by exact
        rationals, the E3 kernel is built and measured exactly at both brackets (u
        independence re-computed at entry), the closed form is checked against every
        computed ratio, and the float gap is certified INSIDE the computed bracket."""
@@ -123,24 +147,15 @@ def writing_gap(self, s, n=4, den=10 ** 9):
 computation it serves is commissioned separately; the entry point lives in the module,
 see C below.)
 
-## B. Where the checks chain in — the decision, as option cards
+## B. Where the checks chain in — registrar disposition
 
-**Option 1 (recommended): a new `model/validate_writing.py`** mirroring
-validate_geometry.py — header naming the sealed sources, local `check()`, call
-`run_writing_checks(check)`, then chain `validate_geometry.py` (which itself chains
-validate_project.py), exit 0 iff conjunction.
-  - keeps validate_geometry.py byte-identical (its 31-gate count is cited in VERIFY_T46);
-  - the chain becomes validate_writing → validate_geometry → validate_project, one entry
-    point for the whole model.
-
-**Option 2: append to `model/validate_geometry.py`** — after the C-71/C-72 formation
-section, before the summary: `from checks_writing import run_writing_checks;`
-`run_writing_checks(check)`.
-  - one validator file, but the T-46 gate count changes (31 → 83) and VERIFY_T46's
-    recorded counts no longer describe the file.
-
-Either way, `reproduce.sh` / model.sha256 sidecars are the registrar's to extend.  The
-check block is import-clean from any cwd (it inserts model/ on sys.path itself).
+The selected architecture is `model/validate_urm.py`: one umbrella runs ARROW 27,
+COUNTLAW 40, CLASSES 52 and WRITING 57 as separately counted families (176 total), then
+chains the historical geometry validator, which chains project/D-25. This preserves
+the meaning and 33-gate count of `validate_geometry.py` while making the integrated
+conjunction one command. `model/validate_urm.py` is also called by
+`replicate/on_finding.sh`; the standalone writing block remains the fast family-local
+diagnostic.
 
 ## C. The observation-entry story — how NEW observations of this family's kind enter
 
@@ -150,7 +165,9 @@ check block is import-clean from any cwd (it inserts model/ on sys.path itself).
    kernel is RUN at both brackets: the surface's mass gap arrives certified inside a
    computed bracket, with the closed form checked against the computed ratios at entry —
    never read off the formula alone.  Non-thermal surfaces decline (None), as the model's
-   laws do.
+   laws do.  A float Boltzmann exponential that underflows, or a positive b below the
+   declared rational resolution, also declines: the instrument will not create
+   `Fraction(1, 0)` or fabricate a certified finite gap.
 
 2. **C-93's named next step** (commissioned separately — NOT run here): *does one written
    record shift dE for an adjacent write?* — the responsive-venue computation, in C-91's
@@ -167,7 +184,8 @@ check block is import-clean from any cwd (it inserts model/ on sys.path itself).
 
 3. **A new ensemble construction or venue** (the O-58 N3 design point, the N5 anisotropy
    frontier): a new honest construction enters as a constructor beside E1/E2/E3 returning
-   dict rows; the verdict instruments and the D-15 controls (CTRL-LEAK, CTRL-BIAS-LINK)
+   nonnegative dict rows in its declared probability domain; the verdict instruments
+   independently recheck nonnegativity and the D-15 controls (CTRL-LEAK, CTRL-BIAS-LINK)
    apply unchanged, and its numbers enter through a new check() gate beside the sealed
    ones.  A new venue enters through `ring_venue` / `plaquette_venue` / `grain_venue` /
    `corner_venue` / `torus3` — all built from carrier supports with deg computed, never
@@ -181,13 +199,12 @@ check block is import-clean from any cwd (it inserts model/ on sys.path itself).
   every member critical) is homed at kernel tier by the ported CTRL-BIAS-LINK
   counterexample with its invariance witness; the anisotropy frontier itself is O-58 N5,
   open, lane-scoped.  Porting the orbit machinery belongs to whichever lane computes N5.
-- **Gate-count note for the register**: the C-91 ledger row's evidence text says "World
-  tier (LANE_T48_C_WORLD, 42 gates)"; the sealed OUT, RESULT.json, and the T48_D judge's
-  own re-count all say **36** (G01–G36; the five V-verdicts are conjunctions of gates,
-  not gates).  126/126 and 112/112 check out as written.  Registrar's call whether the
-  row's narrative wants an erratum; no artifact disagrees with any number, only the row's
-  count of them.
-- **Runtime**: full check block ~4.5 s (two exhaustive coset scans included), well under
+- **Gate-count correction landed**: C-91 now says **36** for LANE_T48_C_WORLD, matching
+  the sealed OUT, RESULT.json and the T48_D judge's G01–G36 recount. The five V-verdicts
+  are conjunctions, not five extra gates. The register carries the erratum; 126/126 and
+  112/112 were unchanged.
+- **Runtime**: full check block **5.37 s** (two exhaustive coset scans included), well under
   the 120 s budget; module import has no side effects.
-- **Collision safety**: no existing file edited; no git run; the three files above are
-  the entire write set.
+- **Collision history**: the bounded family repair edited only `model/writing.py`,
+  `model/checks_writing.py`, and this note. The registrar subsequently integrated the
+  delegate methods and umbrella in a separate, independently checked step.

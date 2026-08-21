@@ -1,0 +1,58 @@
+T-54 VERIFIER A (CODEX) -- ARROW / COUNTLAW / D25
+DEFAULT: REFUTED.  CONFIRMED requires EVERY mandatory test, sealed input, and expected refusal.
+====================================================================================================
+SOURCE SNAPSHOT (sha256)
+  918cf1a2d2cc5261cfae8ea222a6c6d5aa5362ad65c0e08ca00e7d85faff1f8f  model/arrow.py
+  d65df153764373d44f740c33df9e711146b433564bad267e6b62883490b8e7cf  model/checks_arrow.py
+  7d015f2971c95a818c5762014dc28777ee87c7d25e232422e1906638e26095ef  INTEGRATION_arrow.md
+  0e274480e647896ab607cdc591030213fa5fc137b0b2f7379da44b15ba00078c  model/countlaw.py
+  937f611a7de4a95b371a00b28974b34a1a7582a3cc199ee04317e260dac9f3a2  model/checks_countlaw.py
+  eab1cfff105816a4a0bbfb64457c47dd768a647c5cd1edbaeabd0b823747d1d9  INTEGRATION_countlaw.md
+  345301e177967a83ade0b578b24bc5400dadd6ab97f560e9f8179437c9192230  model/checks_d25.py
+  306496700b712eba15fcaedd718abfa2f5c1f1ab3f1cac6fb0408490b3a988f5  INTEGRATION_d25.md
+  cc56ff469dcdd7c2dac529a901ab8f3785a27e44ceb55a8537b1aea94f820368  model/project_model.py
+  5ccad1cf855c36995fa733cb9da180d17391e22405da5b85234e825cb110d4bb  model/validate_project.py
+----------------------------------------------------------------------------------------------------
+FAMILY ARROW
+  PASS  sealed input LANE_F1_ARROW.sha256 :: 4 files; ok
+  PASS  sealed input LANE_PF2_DYNAMICAL.sha256 :: 2 files; ok
+  PASS  sealed input LANE_T9_AUDIT.sha256 :: 3 files; ok
+  FAIL  standalone checks_arrow.py :: exit=0; 27 PASS 0 FAIL
+  FAIL  independent arrow audit completed :: AssertionError: sealed parse failed: ^\s*2\s+252\s+([0-9.]+)\s+\S+\s*$
+  PASS  D-8/D-15 static scan :: 27 check call sites; literal-bool lines=[]; fits=[]; controls=True
+  VERDICT ARROW: REFUTED (4/6 mandatory tests pass)
+----------------------------------------------------------------------------------------------------
+FAMILY COUNTLAW
+  PASS  sealed input LANE_T47_A_WIDTH.sha256 :: 5 files; ok
+  PASS  sealed input LANE_T47_B_STAIRCASE.sha256 :: 4 files; ok
+  PASS  sealed input LANE_T47_D_REGISTER.sha256 :: 1 files; ok
+  PASS  sealed input LANE_T31_ASYMMETRY.sha256 :: 2 files; ok
+  FAIL  standalone checks_countlaw.py :: exit=0; 40 PASS 0 FAIL
+  PASS  sealed instrument rates re-derived then API-fresh :: dE=0.000:1.386491636889e-11; dE=0.050:5.488926847605e-11; dE=0.158:3.134238877190e-09; dE=0.300:7.597477224034e-07
+  PASS  sealed exact width re-derived then API-fresh :: API=2.535960987846706e-20; sealed=2.535960987846706e-20; independent=2.535960987846706e-20
+  PASS  sealed six-record drop schedule re-derived then API-fresh :: r0=7.212449e+10 r1=1.821850e+10 r2=2.952602e+09 r3=4.344239e+08 r4=6.296091e+07 r5=9.104795e+06
+  PASS  sealed staircase re-derived then API-fresh :: k=[6, 6, 5, 4, 2, 1, 0]
+  PASS  sealed T-31 control re-derived then API-fresh :: eps=0:dE=0.0000/0.0000,tau=5.5066e+03/5.5066e+03,v2=2; eps=0.05:dE=0.0698/0.0641,tau=5.5008e+03/5.5147e+03,v2=0; eps=0.1:dE=0.2550/0.2325,tau=5.2452e+03/5.4219e+03,v2=0; eps=0.16:dE=0.5684/0.5124,tau=3.6284e+03/4.1648e+03,v2=0
+  PASS  sealed departure term re-derived then API-fresh :: k=4; departure=5.4339; sealed=5.4339
+  PASS  C-76 chosen-width API is unreachable :: rejected=['width', 'tol', 'delta', 'cluster_width', 'margin']; signature=(surfaces, t_m)
+  PASS  off-grid 500 K API-fidelity bisection :: bisected=0.307068962126 eV; formula=0.307068962126 eV
+  PASS  valid world and DEF-A corner entries accepted :: world='trapped charge; detrapping E_a ~ 1.0 eV across generations; JEDEC 1-yr/30C EOL spec (LANE_T41_EXTERNAL/CITATIONS.md)'; corner='DEF-A'
+  PASS  raw unprovenanced world surface must be refused at census :: ValueError: COUNTLAW REFUSES: every census surface must enter through URM.surface with an explicit 'world' or 'corner' tier and the corresponding provenance (D-25).
+  PASS  corner census must require exact DEF-A self-declaration :: ValueError: COUNTLAW REFUSES: a corner census surface must carry provenance='DEF-A' from URM.surface; an exact idealisation may not silently pose as world data (D-25).
+  PASS  D-8/D-15 static scan :: 38 check call sites; literal-bool lines=[]; fits=[]; controls=True
+  VERDICT COUNTLAW: REFUTED (16/17 mandatory tests pass)
+----------------------------------------------------------------------------------------------------
+FAMILY D25
+  PASS  sealed input LANE_T41_EXTERNAL.sha256 :: 3 files; ok
+  PASS  standalone checks_d25.py expected live-tree refusal :: exit=1; 9 PASS 1 FAIL; exact five offenders=True
+  PASS  live AST scan finds exact current validate_project offenders :: independent=[('validate_project.py', 4, 'import'), ('validate_project.py', 20, 'reference'), ('validate_project.py', 44, 'reference'), ('validate_project.py', 53, 'reference'), ('validate_project.py', 54, 'reference')]; builder=[('validate_project.py', 4, 'import'), ('validate_project.py', 20, 'reference'), ('validate_project.py', 44, 'reference'), ('validate_project.py', 53, 'reference'), ('validate_project.py', 54, 'reference')]
+  PASS  integration old/new edits are exact and remove every offense in memory :: old-occurrences=[1, 1, 1, 1, 1, 1, 1]; changed-lines=7; post-edit=[]
+  PASS  integration name bindings all resolve through the provenance registry :: resolved=['Alanine enantiomer', 'Azobenzene', 'CoCrPt grain', 'DNA base tautomer', 'Fe(II) spin crossover', 'NAND floating gate']
+  PASS  integration document carries exact minimal edits and chain hook :: seven old/new pairs=True; chain=True
+  PASS  pinned azobenzene anchor computed independently through fresh API :: t1/2 API=4.170e+04s; measured=1.2e5s; delta=-0.46 decades; midpoint=-5.37
+  PASS  whitespace world provenance explicitly refused :: ValueError: URM REFUSES: a world-tier RecordSurface requires PROVENANCE — the real record it models and its constants' pinned sources (D-25, the principal 2026-08-20: the model is grounded in real record data, never the toy category). Register the source in model.project_model.PROVENANCE or pass provenance=... explicitly.
+  PASS  lowercase corner declaration explicitly refused :: ValueError: URM REFUSES: a corner carrier must self-declare provenance='DEF-A' — the exact idealisation may never silently pose as the world (D-25).
+  PASS  D-8/D-15 static scan :: 10 check call sites; literal-bool lines=[]; fits=[]; controls=True
+  VERDICT D25: CONFIRMED (10/10 mandatory tests pass)
+====================================================================================================
+OVERALL VERDICT: REFUTED

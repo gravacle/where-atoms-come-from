@@ -1,0 +1,260 @@
+LANE T54_VERIFY / A_CODEX -- D-24 AUDIT AND VERIFIER DISPOSITION
+Verifier: independent Codex session, 2026-08-21.
+Scope: families arrow, countlaw, and d25.
+Default verdict: REFUTED. A family reaches CONFIRMED only if every mandatory
+predicate, sealed-input verification, fresh API comparison, and expected refusal passes.
+
+FINAL EXECUTION
+---------------
+  python3 -B LANE_T54_VERIFY/A_CODEX/verifier_t54_a.py
+  exit 0
+
+  INITIAL BUILDER SNAPSHOT d3b181d41719dd4e605c43cd26c2a261ba5bbf5e
+    arrow:    REFUTED, 13/15 mandatory predicates
+    countlaw: REFUTED, 15/17 mandatory predicates
+    initial builder overall: REFUTED
+
+  FINAL REPAIRED TREE
+    arrow:    CONFIRMED, 9/9 mandatory predicates; checks_arrow 27 PASS / 0 FAIL
+    countlaw: CONFIRMED, 11/11 mandatory predicates; checks_countlaw 40 PASS / 0 FAIL
+    d25:      CONFIRMED, 10/10 mandatory predicates; checks_d25 10 PASS / 0 FAIL
+    final repaired overall: CONFIRMED
+
+The terminal transcript is verifier_t54_a.OUT.txt. Its sha256 at disposition time is
+11da09cd7184296850461738d764a5810ac5fdf80ffdc31b1c7d8af042f2b096.
+The verifier source sha256 is
+051066d79c3cf78c093ff99d3274322c8c72faeed25433c91b34f49e1ae0767d.
+
+These are build/API-family verdicts only. They authorize no register, ledger, proof,
+manifest, claim-status, or landing action. The verifier wrote only files under
+LANE_T54_VERIFY/A_CODEX and did not edit any builder or shared integration file.
+
+TWO-SNAPSHOT CUSTODY AND INITIAL REFUTATIONS
+--------------------------------------------
+The initial arrow/countlaw judgment is tied to git blobs at the commit above, loaded
+with git show and executed in isolated module namespaces. It is not reconstructed from
+the repaired working tree. The final judgment imports and executes the live repaired
+tree. Both judgments appear in the same terminal transcript.
+
+The initial arrow family is REFUTED for two exact reasons:
+
+  1. score_bath_observation(custom 2x2 RecordModel, record omitted) did not make an
+     intentional gate decision. It silently selected the sealed 256x256 toric carrier
+     and crashed with NumPy's accidental broadcast ValueError for shapes (2,2) and
+     (256,256).
+  2. ProjectModel.arrow_observation did not expose or forward model=, so the custom
+     model path could not enter through the integrated API.
+
+The initial countlaw family is REFUTED for two exact reasons:
+
+  1. census accepted a raw, directly constructed, unprovenanced world RecordSurface.
+     It returned k=1 with tier=None and provenance=None.
+  2. census accepted a raw object falsely marked tier="corner" with provenance
+     "not DEF-A". The observation-entry rule was therefore bypassable at consumption.
+
+Passing builder suites did not erase those findings: the pinned standalone suites were
+26 PASS / 0 FAIL (arrow) and 39 PASS / 0 FAIL (countlaw). The independent attacks were
+outside their then-current coverage and were mandatory under default REFUTED.
+
+REPAIR RECHECKS
+---------------
+ARROW:
+  * custom model + omitted record now explicitly refuses with an ARROW/record message;
+  * custom model + mismatched record shape explicitly refuses with an ARROW/dimension
+    message;
+  * custom model + matching explicit record is a positive control and returns
+    I(S:B)=chi=0.896137544081 on the verifier's fresh two-dimensional model;
+  * ProjectModel.arrow_observation exposes model= and forwards model=model;
+  * the complete repaired suite is 27 PASS / 0 FAIL.
+
+COUNTLAW:
+  * census explicitly refuses the raw unprovenanced world object;
+  * census explicitly refuses the false corner declaration unless provenance is
+    exactly DEF-A;
+  * record_rate, drop_time, and drop_time_formula each refuse a valid surface whose
+    provenance is removed after URM entry, so every public surface consumer checked by
+    this verifier enforces the invariant rather than trusting construction alone;
+  * valid world and exact-corner neighbors both succeed (k=2; tiers world/corner);
+  * the fresh off-grid width at B=1.17 eV, T=425 K, f0=3e9 /s, t_m=2.5 s is
+    0.337241220321 eV by both the API and the independently evaluated definition;
+  * the complete repaired suite is 40 PASS / 0 FAIL.
+
+D25:
+  * the pre-integration scan evidence is preserved in
+    verifier_t54_a.CONCURRENT_REPAIR_RACE.OUT.txt: checks_d25 was 9 PASS / 1 FAIL,
+    exit 1, and both the builder scan and the independent AST scan found exactly the
+    five validate_project.py sites at lines 4, 20, 44, 53, and 54;
+  * the final integrated standalone suite is 10 PASS / 0 FAIL, exit 0, and its output
+    contains no OFFENDERS marker;
+  * a verifier-owned recursive AST walker and checks_d25.scan_direct_constructions
+    independently return the empty offender list on the live model tree;
+  * rebuilding validate_project.py from the pinned pre-integration blob with the eleven
+    exact URM/D-25 routing edits yields byte-for-byte the live file. Every old fragment
+    occurs once. This gates the integration footprint against unrelated edits;
+  * the retained display rows "CoCrPt HDD grain" and "Azobenzene cis/trans" resolve
+    through exactly named provenance aliases, each declaring its canonical source row;
+  * the integration brief retains its seven prospective old/new constructor edits, the
+    alternative two-alias strategy selected by the registrar, and the chain hook.
+
+SEALED-INPUT DISCIPLINE AND DIRECT RE-DERIVATIONS
+------------------------------------------------
+Sealed artifacts were INPUT. No sealed program was rerun. Every path in these manifests
+was hashed in place and all matched:
+
+  ARROW
+    LANE_F1_ARROW.sha256          4 files
+    LANE_PF2_DYNAMICAL.sha256     2 files
+    LANE_T9_AUDIT.sha256          3 files
+
+  COUNTLAW
+    LANE_T47_A_WIDTH.sha256       5 files
+    LANE_T47_B_STAIRCASE.sha256   4 files
+    LANE_T47_D_REGISTER.sha256    1 file
+    LANE_T31_ASYMMETRY.sha256     2 files
+
+  D25
+    LANE_T41_EXTERNAL.sha256      3 files
+
+Expected values were parsed from those sealed text outputs before fresh API calls; they
+were not read from the builder check sources. Independent reproductions include:
+
+  ARROW
+    F-17: weight-1 max chi 3.886e-15 over 24 observables; weight-2 max
+          0.11448276 over 252 observables, equal to the sealed 0.11448276.
+    F-18: Ze gives I=0.04549256 and chi=0; identity gives I=2.487e-14.
+    F-19: mutual-information movement 3.686e-14; fixed-label movement 0.1145;
+          covariance 3.886e-15.
+    PF-2: chi(t) at t={0,.25,.5,1,2,4} is
+          {0,.40660635,.81447230,.97527192,.78665760,.90811968}.
+    F-21: whole bath 0.90811968; fragments
+          {0.789366,0.048377,0.678602}.
+    Off sealed grid, lambda=0.37 gives 0.050057955850 by both independent
+    diagonalisation and the API, distinct from the sealed lambda point.
+
+  COUNTLAW
+    Instrument rates for dE={0,.05,.158,.3} eV are
+      {1.386491636889e-11, 5.488926847605e-11,
+       3.134238877190e-09, 7.597477224034e-07} /s.
+    Exact width is 2.535960987846706e-20 J by sealed display, API, and the
+    independently evaluated expression.
+    Six drop times are
+      {7.212449e10,1.821850e10,2.952602e9,
+       4.344239e8,6.296091e7,9.104795e6} s.
+    The dated staircase is {6,6,5,4,2,1,0}; the departure control is k=4,
+    departure=5.4339.
+    The verifier-owned 500 K rate bisection gives 0.307068962126 eV, equal to
+    delta_pop and outside the sealed temperature grid.
+
+  D25 EXTERNAL ANCHOR
+    The source-pinned measured azobenzene half-life, activation enthalpy, and
+    activation entropy are read from LANE_T41_EXTERNAL/CITATIONS.md. A fresh
+    URM.surface + ProjectModel.lifetime calculation gives t1/2=4.170e4 s versus
+    measured 1.2e5 s, -0.46 decades. The historical midpoint convention gives
+    -5.37 decades and therefore fails the same one-decade gate. This is an
+    order-of-magnitude consistency check with source-supplied inputs, not a prediction.
+
+D-8 / D-15 AUDIT
+----------------
+D-8 AST scans found no literal-boolean check conditions and no polyfit, curve_fit, or
+lstsq decision path. Static check-call-site counts are:
+
+  pinned arrow 26; repaired arrow 27;
+  pinned countlaw 37; repaired countlaw 38;
+  d25 10.
+
+Runtime PASS counts may exceed static sites where one site executes over multiple rows;
+the transcript states both kinds of count rather than conflating them.
+
+D-15 controls executed, rather than being narrated:
+
+  ARROW: identity/no-coupling rows beside record-carrying rows; system-local mutual
+  information invariance beside fixed-label movement; undeclared world refusal beside
+  declared entry; matching custom record beside omitted and mismatched record attacks.
+
+  COUNTLAW: symmetric and split carriers; crossing beside no-crossing; record-mode
+  census beside the killed multiplicity shortcut; valid world/DEF-A surfaces beside
+  raw, false-corner, and post-entry-mutation attacks; off-grid bisection beside formula.
+
+  D25: planted direct construction and aliased import beside the clean-tree zero;
+  declared world/DEF-A surfaces beside whitespace and lowercase refusals; the historical
+  midpoint convention beside the accepted source-pinned anchor.
+
+D-24 CONCEPT / OWNER / SCOPE AUDIT
+----------------------------------
+No classical or familiar term is accepted merely by name.
+
+  ARROW / THRESHOLD:
+    The threshold is earned by the carrier's computed homological logicals and the full
+    weight-1/weight-2 observable sweep, not imported from a classical arrow analogy.
+    Holevo information is attributed to Holevo; mutual-information invariance under a
+    system-local unitary is textbook quantum information; the toric carrier is Kitaev's.
+    The threshold-at-distance and decoherence/record separation are program-owned
+    findings. F-17/F-18/F-19 are single-carrier; F-21 fragment values are toric-only;
+    the history is two-carrier. This fold-in does not widen those scopes.
+
+  ARROW / REDUNDANCY:
+    The fragment apparatus is quantum-Darwinism-style and attributed to Zurek and
+    Blume-Kohout/Zurek. The threshold-in-fragments result is the program's assembled
+    finding. "Irreversibility" means the measured relative copy cannot be removed by
+    system-only action on this instrument; it is not an imported thermodynamic claim.
+
+  COUNT LAW:
+    Neel/Street-Woolley/Sharrock, Charap-Lu-He/Weller-Moser, Preisach-Neel, textbook
+    two-state kinetics, Alicki-Fannes-Horodecki/Bravyi-Terhal, and Davies retain the
+    borrowed ownership stated in countlaw.py. The program owns the width derived from
+    its record definition, the two-face unification, the margin-free integer census,
+    and the departure term. A Sharrock-style remanence window is not renamed a record
+    count: the count is earned from each surface's own measured Liouvillian mode.
+    The public signature contains no caller-selected width, tolerance, margin, or
+    clustering knob; all five attempted shortcuts are unreachable.
+
+  D25 / EXTERNAL CONTACT:
+    The azobenzene datum and Eyring parameters belong to the cited literature; the
+    Eyring/Arrhenius formalism is standard. The program owns the scan instrument, gate
+    semantics, and power control. The four-decade envelope is explicitly weak contact,
+    and the Eyring-point comparison is explicitly source-conditioned consistency.
+    Neither is promoted into a prediction or a broader world claim.
+
+CORRECTION LOG -- ERRORS REMAIN IN THE LANE
+-------------------------------------------
+Nothing below is laundered into the final CONFIRMED result. The preserved files are
+part of the audit trail.
+
+1. verifier_t54_a.CONCURRENT_REPAIR_RACE.OUT.txt
+   sha256 8831bb7d32db9458151644b2f1a2fc68e906d281b04a0b02138545693cf1b96d
+
+   Repairs landed while the first verifier was reading the tree. The live suites had
+   already become 27/27 and 40/40, while the verifier still expected 26/26 and 39/39,
+   producing false standalone FAIL rows. Its first F-17 weight-2 regex also assumed a
+   one-token trailing field; the sealed row's argmax field contains spaces, so parsing
+   failed. D25 was still genuinely pre-integration in that capture: 9 PASS / 1 FAIL and
+   the exact five offenders. Overall disposition in that artifact is REFUTED.
+
+2. verifier_t54_a.D25_INTEGRATION_RACE.OUT.txt
+   sha256 f291a4ad3c1dd178c8ba90b413710d089abd9a454cdb45dacc2f77c2a0df8aa0
+
+   This run correctly pinned the initial arrow/countlaw blobs and preserved their real
+   13/15 and 15/17 refutations. While it ran, D25 integration landed: checks_d25 changed
+   from the expected 9/1 refusal to 10/0 clean, so three stale pre-integration D25
+   expectations failed. Separately, the verifier's repaired-countlaw off-grid probe
+   selected parameters beyond the symmetric survival bound and then applied log to the
+   no-crossing domain, producing ValueError: math domain error. That was a verifier
+   instrument error, not an API defect. Overall disposition in that artifact is REFUTED.
+
+3. Final correction and rerun
+
+   The sealed weight-2 parser accepts the full trailing argmax field; suite expectations
+   are 27/0, 40/0, and integrated D25 10/0; D25 is scanned independently for zero live
+   offenders; the countlaw off-grid probe uses a guaranteed-crossing, still-unsealed
+   parameter point. The entire two-snapshot verifier was rerun, not patched by narration.
+   verifier_t54_a.OUT.txt is nonempty, exit 0, and contains only the four expected FAIL
+   rows in the immutable initial builder sections. Every final-family row passes.
+
+FINAL DISPOSITION
+-----------------
+Initial builder state: REFUTED for arrow and countlaw, for the four concrete API-fidelity
+defects above. Repaired live state: arrow CONFIRMED 9/9, countlaw CONFIRMED 11/11, d25
+CONFIRMED 10/10. Final repaired overall: CONFIRMED.
+
+No verifier finding changes a claim status. Registration, ledger mutation, proof assembly,
+commit, push, and any program-level terminal decision remain outside this verifier's scope.

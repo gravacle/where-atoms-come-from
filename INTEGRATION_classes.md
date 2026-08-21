@@ -1,17 +1,18 @@
 # INTEGRATION_classes -- folding the reachable-classes family (C-87, C-90) into the URM
 
-T-54 build-out, family: **classes**.  Builder session 2026-08-21.  The T-46 pattern:
-ported machinery in one new module, sealed numbers gated in one new check block, this
-document tells the registrar exactly what to wire and nothing here edits anything.
+T-54 build-out, family: **classes**.  Builder + refutation-repair session 2026-08-21.
+The T-46 pattern remains: ported machinery in one module, sealed numbers and computed
+API-domain regressions in one check block, and this document tells the registrar what to
+wire.  ProjectModel and shared validators remain registrar work.
 
-## Files delivered (new; nothing existing was touched)
+## Files maintained by this repair
 
 | file | what it is |
 |---|---|
-| `model/classes.py` | the classes layer: venue entry (D-25 gate), mu_c located by the resolvent route (exact rationals), the Gamma-priced series with proven tails, the certified critical kernel, the cross-dimension discriminator, the class-verdict boolean triple.  Ports from LANE_T44_B_WORLD/t44b_lib.py + t44b_world.py, LANE_T44_A_CORNER/t44a_lib.py, and the sealed verifier's deepening loop (VERIFY/adv_verify.py E-section).  Imports nothing heavier than `fractions`/`math` at import time (numpy only if `corner_venue` is called, via the model's own `geometry.Torus`). |
-| `model/checks_classes.py` | `run_classes_checks(check)` -- 47 checks in the validate_geometry.py idiom; standalone `python3 model/checks_classes.py` exits 0 iff all pass.  Measured runtime: **98.6 s** (budget ~120 s; the cost is the M=2800 kernel deepening that the C-90 coefficient bracket requires). |
+| `model/classes.py` | the classes layer: venue entry (D-25 gate), mu_c located by the resolvent route (exact rationals), the Gamma-priced series with proven tails, the certified critical kernel, the cross-dimension discriminator, and the class-verdict boolean triple.  `venue()` now refuses empty adjacency, non-integer/out-of-range neighbors, and non-positive/non-integer multiplicities; every public price-taking path refuses negative mu.  Ports remain those of LANE_T44_B_WORLD, LANE_T44_A_CORNER, and the sealed verifier's deepening loop. |
+| `model/checks_classes.py` | `run_classes_checks(check)` -- **52 checks** in the validate_geometry.py idiom, including computed malformed-venue and negative-price controls; standalone `python3 model/checks_classes.py` exits 0 iff all pass.  Measured runtime: **105.48 s** (the cost is the M=2800 kernel deepening required by the C-90 coefficient bracket). |
 
-Standalone run 2026-08-21: **47 PASS, 0 FAIL, 98.6 s**, exit 0.
+Standalone repair run 2026-08-21: **52 PASS, 0 FAIL, 105.48 s**, exit 0.
 
 ## ProjectModel methods to add (the CLASSES layer)
 
@@ -30,7 +31,9 @@ def coupling_venue(self, name, adj, provenance=None, tier="world", sector=None):
        enters as an adjacency structure through the D-25 provenance gate -- world tier
        REFUSED without a pinned source, corner tier must self-declare 'DEF-A'
        (LANE_T44_B_WORLD S0 / LANE_T44_A_CORNER S0, sealed).  adj: list over nodes of
-       [(neighbor, multiplicity), ...]; sector optionally declares the venue limit
+       [(neighbor, multiplicity), ...]; the gate also refuses empty adjacency,
+       non-integer/out-of-range neighbor indices, and multiplicities that are not
+       strictly positive integers.  sector optionally declares the venue limit
        ("Z3"/"Z2"/"Z1") for the evidence instruments."""
     import classes as CC
     return CC.venue(name, adj, provenance=provenance, tier=tier, sector=sector)
@@ -77,7 +80,9 @@ def reachable_class(self, venue, mu, evidence=False):
        is located.  evidence=True additionally runs the class's own instrument on the
        declared sector: subcritical booleans (ratios <= 1 - 1/20, Cauchy, power
        exclusion), the critical 1/d kernel signature (INV window, deepening-stabilized),
-       or the divergence witness.  (LANE_T44_B_WORLD taxonomy + S2/S3/S4, sealed.)"""
+       or the divergence witness.  A price must be nonnegative; negative mu is refused
+       before any verdict or evidence is emitted.  (LANE_T44_B_WORLD taxonomy +
+       S2/S3/S4, sealed.)"""
     import classes as CC
     return CC.class_verdict(venue, mu, evidence=evidence)
 
@@ -86,7 +91,8 @@ def coupling(self, mu, target, K):
        of mu^weight on the D=3 sector -- exact partial sum (Fraction) with the exact
        geometric tail (6mu)^{K+1}/(1-6mu); leading term N_min mu^d with w_min = d the
        confinement cost (C-80/O-54 standing).  Owners: walk generating functions,
-       Spitzer/Lawler; comparison tier only.  (t44b_lib.py series_3d, verbatim.)"""
+       Spitzer/Lawler; comparison tier only.  Negative mu is refused rather than
+       producing a signed "tail bound".  (t44b_lib.py series_3d, verbatim.)"""
     import classes as CC
     return CC.series_3d(mu, target, K)
 
@@ -94,8 +100,9 @@ def critical_kernel(self, targets, M):
     """C-90: the regularized critical kernel a_M(x) = sum (N_2m(0)-N_2m(x))/36^m at the
        COMPUTED mu_c = 1/6, exact rationals, with certified tails beside it
        (classes.diff_tail_bound / abs_tail_bound; honest for M >~ 1000).  The D=3
-       critical member is the 1/d POWER LAW: exponent bracket contains 1, coefficient
-       bracket [0.476369, 0.487321] onto owner 3/(2 pi) (comparison).  Owners: Polya
+       critical member is the 1/d POWER LAW: the sealed M=1400 exponent bracket contains
+       1; separately, the M=2800 coefficient bracket [0.476369, 0.487321] contains owner
+       3/(2 pi) (comparison).  See the fixed-distance caveat below.  Owners: Polya
        1921 transience, Watson 1939 G(0), Spitzer P26.1 coefficient -- comparisons only.
        (LANE_T44_B_WORLD S4 + register row C-90, sealed.)"""
     import classes as CC
@@ -115,7 +122,7 @@ def class_discriminator(self, K2=6000, K1=80000):
 
 `model/checks_classes.py` exposes `run_classes_checks(check)` exactly like the C-72
 check block: it issues `check(name, cond, detail)` calls and owns no counter.  Because
-the block costs ~99 s (the C-90 M=2800 deepening), the recommendation is a SEPARATE
+the block costs ~105 s (the C-90 M=2800 deepening), the recommendation is a SEPARATE
 validator stage so the fast validators stay fast:
 
 ```python
@@ -134,8 +141,13 @@ run_classes_checks(check)
 
 Alternative (registrar's call): append `from checks_classes import run_classes_checks;
 run_classes_checks(check)` inside validate_geometry.py before the chain -- one edit,
-but it makes the geometry validator ~99 s slower.  The separate stage is the
+but it makes the geometry validator ~105 s slower.  The separate stage is the
 recommendation.
+
+**Registrar disposition:** the separate-stage principle landed as the shared
+`model/validate_urm.py` umbrella rather than a one-family `validate_classes.py`.
+CLASSES remains separately counted at 52 gates inside the 176-family-gate run, and the
+umbrella then chains the unchanged-meaning geometry and project/D-25 validators.
 
 ## The observation-entry story
 
@@ -144,8 +156,9 @@ observations are added INTO.  For this family:
 
 1. **A new record surface's access geometry** (a new venue) enters as an adjacency
    structure with declared provenance through `coupling_venue()` -- the D-25 gate
-   REFUSES a world-tier venue without a pinned source and requires DEF-A
-   self-declaration from idealisations.  Checked end-to-end in the check block on a
+   REFUSES a world-tier venue without a pinned source, requires DEF-A
+   self-declaration from idealisations, and refuses malformed nodes/edges before they
+   can contaminate row sums.  Checked end-to-end in the check block on a
    venue on no sealed grid (n=3): the universal-cover wrap identity, BFS == earned
    separation, and the venue's OWN mu_c re-earned by the resolvent route.
 2. **A new law** would enter as a further layer method whose validator gate reproduces
@@ -155,7 +168,8 @@ observations are added INTO.  For this family:
    triple against the venue's own mu_c, plus evidence booleans; external measured values
    compare against computed intervals ONLY in labeled comparison gates with a stated
    tolerance (COMP_TOL = 1/25), the way Watson/Spitzer/OZ anchors are gated now.
-   No class label is ever asserted; every label is a computed boolean.
+   No class label is ever asserted; every label is a computed boolean, and negative
+   prices are outside the API domain rather than a fourth signed-weight class.
 
 ## What the check block gates (sealed sources)
 
@@ -182,6 +196,10 @@ observations are added INTO.  For this family:
   unswept mu = 1/9; the untested kernel target (10,0,0) strictly interior; the untested
   venue n=3 end-to-end; kernel_pass == crit_kernel_3d at spot depth (one instrument,
   two drivers).
+- **API-domain regressions introduced after adversarial verification**: empty and
+  edge-free graphs refuse; negative/endpoint/rational/bool neighbor indices refuse;
+  zero/negative/rational/bool multiplicities refuse; all public price-taking routes
+  refuse negative mu.  Each refusal has a valid computed graph/price control beside it.
 - **D-15 throughout**: every zero (leading-stratum, parity, resolvent-singular) gated
   with a positive control beside it.  **D-8**: no literal on any decision path; sealed
   anchors gated as the sealed anchors they are, stated as such in the check names.
@@ -204,14 +222,23 @@ observations are added INTO.  For this family:
    (per-target stop depths + snapshots, the sealed verifier's E-section loop) so one
    ~90 s pass serves the M=1400 and M=2800 gates simultaneously; it is gated equal to
    the verbatim port at spot depth in the check block.
-3. **The corner venue is built from the model's own ported carrier** (geometry.Torus
+3. **M=2800 fixed-distance caveat (preserved from independent verification):** when all
+   four targets are deepened to M=2800, the certified fixed-pair ratio for the 4->8 / 8->16
+   increments is `[0.480953, 0.493374]`.  It remains inside the declared INV class window
+   `[2/5, 3/5]` but no longer contains exactly `1/2`.  Deepening truncation at fixed,
+   finite distances exposes finite-distance corrections; it is not the same limit as
+   sending distance outward.  Therefore "the exponent bracket contains 1" stays scoped
+   to the sealed M=1400 interval `[0.469869, 0.507905]`, while the separate M=2800
+   coefficient bracket `[0.476369, 0.487321]` is the tightened comparison that contains
+   `3/(2 pi)`.  Do not narrate the M=2800 fixed-pair ratio as containing `1/2`.
+4. **The corner venue is built from the model's own ported carrier** (geometry.Torus
    plaquette masks) rather than by importing the sealed lane's o54c_lib -- same
    construction rule (shared carrier edges, multiplicity kept), gated against the
    sealed row sums and resolvent numbers.
-4. The generic solvable-beside probe points mu_c*(19/20) and mu_c*(21/20) reproduce the
+5. The generic solvable-beside probe points mu_c*(19/20) and mu_c*(21/20) reproduce the
    sealed 19/120 and 7/40 exactly on the deg-6 venue (gated); the corner lane's own
    sealed probe points 1/8 and 23/100 are gated separately with the same instrument.
-5. Venue provenance lives in `classes.WORLD_VENUE_PROVENANCE` (module-level, pinned);
+6. Venue provenance lives in `classes.WORLD_VENUE_PROVENANCE` (module-level, pinned);
    it is a venue-graph provenance, not a RecordSurface provenance, so it was NOT added
    to `project_model.PROVENANCE` (that registry is for surfaces).  If T-55 wants one
    provenance registry for both, that is a registrar decision.

@@ -123,6 +123,20 @@ def ff(x, nd=6):
     return "%s%d.%0*d" % (sign, scaled // 10 ** nd, nd, scaled % 10 ** nd)
 
 
+def _coupling_price(mu):
+    """Return ``mu`` as an exact, nonnegative coupling price.
+
+    Negative values are perfectly meaningful for some formal matrix resolvents, but they
+    are not prices and invalidate the positive-series/tail arguments carried by this
+    layer.  Keep that domain boundary in one place so no public price-taking route can
+    accidentally emit a negative "tail bound" or a class verdict for signed weights.
+    """
+    mu = Fraction(mu)
+    if mu < 0:
+        raise ValueError("classes layer REFUSES: coupling price mu must be nonnegative")
+    return mu
+
+
 # =====================================================================================
 # 1  VENUE ENTRY -- observation-entry gate (D-25 pattern; C-87 venue lineage)
 # =====================================================================================
@@ -160,7 +174,9 @@ def venue(name, adj, provenance=None, tier="world", sector=None):
     """THE OBSERVATION-ENTRY GATE (D-25, the URM pattern): a new venue graph -- a new
        record surface's access geometry -- enters HERE, as an adjacency structure with
        declared provenance.  REFUSES a world-tier venue without provenance; an exact
-       idealisation (corner tier) must self-declare provenance='DEF-A'.
+       idealisation (corner tier) must self-declare provenance='DEF-A'.  Also REFUSES an
+       empty graph/edge relation, neighbor indices that are not in-range Python integers,
+       and multiplicities that are not strictly positive Python integers.
 
        CLAIM ROW: C-87 (venue lineage; LANE_T44_B_WORLD S0, LANE_T44_A_CORNER S0)."""
     if tier == "corner":
@@ -175,7 +191,49 @@ def venue(name, adj, provenance=None, tier="world", sector=None):
                 "real access geometry it models and its source (D-25; the principal "
                 "2026-08-20: the model is grounded in real record data, never the toy "
                 "category).  Pass provenance=... naming the geometry's pinned source.")
-    return VenueGraph(name, adj, provenance, tier, sector)
+    try:
+        rows = list(adj)
+    except TypeError as exc:
+        raise ValueError(
+            "classes layer REFUSES: venue adjacency must be a nonempty sequence of rows"
+        ) from exc
+    if not rows:
+        raise ValueError(
+            "classes layer REFUSES: venue adjacency must contain at least one node")
+
+    n = len(rows)
+    checked = []
+    edge_count = 0
+    for i, row in enumerate(rows):
+        try:
+            entries = list(row)
+        except TypeError as exc:
+            raise ValueError(
+                "classes layer REFUSES: adjacency row %d is not iterable" % i) from exc
+        clean_row = []
+        for edge in entries:
+            if not isinstance(edge, (tuple, list)) or len(edge) != 2:
+                raise ValueError(
+                    "classes layer REFUSES: every adjacency entry must be "
+                    "(neighbor, multiplicity)")
+            j, mult = edge
+            # bool is deliberately excluded: it is an int subclass in Python, but it is
+            # not a declared node index or edge multiplicity.
+            if type(j) is not int or not (0 <= j < n):
+                raise ValueError(
+                    "classes layer REFUSES: neighbor indices must be integers in "
+                    "[0, %d); row %d has %r" % (n, i, j))
+            if type(mult) is not int or mult <= 0:
+                raise ValueError(
+                    "classes layer REFUSES: edge multiplicities must be strictly "
+                    "positive integers; row %d has %r" % (i, mult))
+            clean_row.append((j, mult))
+            edge_count += 1
+        checked.append(clean_row)
+    if edge_count == 0:
+        raise ValueError(
+            "classes layer REFUSES: venue adjacency must contain at least one edge")
+    return VenueGraph(name, checked, provenance, tier, sector)
 
 
 def torus3_adjacency(n):
@@ -275,8 +333,9 @@ def venue_series(v, mu, src, targets, K):
        exact geometric tail bound (deg mu)^{K+1}/(1 - deg mu) where the venue is
        deg-regular and deg*mu < 1; tail is None otherwise (on a finite venue the sum is
        always finite -- the class statements live in the venue limit; the honest note of
-       LANE_T44_A_CORNER S7).  CLAIM ROW: C-87 (t44a_lib.py series_G_torus idiom)."""
-    mu = Fraction(mu)
+       LANE_T44_A_CORNER S7).  Negative mu is outside the coupling-price domain and is
+       refused before counting.  CLAIM ROW: C-87 (t44a_lib.py series_G_torus idiom)."""
+    mu = _coupling_price(mu)
     counts = walk_counts(v, src, K)
     deg = v.degree()
     tail = None
@@ -305,7 +364,7 @@ def resolvent_exact(adj, mu, src):
        CLAIM ROW: C-87/C-90 mu_c route (LANE_T44_A_CORNER/t44a_lib.py, verbatim; reused
        by LANE_T44_B_WORLD S0)."""
     n = len(adj)
-    mu = Fraction(mu)
+    mu = _coupling_price(mu)
     M = [[Fraction(0)] * n for _ in range(n)]
     for i in range(n):
         M[i][i] = Fraction(1)
@@ -339,7 +398,7 @@ def annihilates_constant(v, mu):
        (locates the resolvent pole AT mu = 1/deg exactly).  (t44a_lib.py
        kernel_at_quarter, generalized to the venue's own computed degree -- the literal
        1/4 was that lane's venue's own number, never this instrument's.)"""
-    mu = Fraction(mu)
+    mu = _coupling_price(mu)
     for row in v.adj:
         s = Fraction(1)
         for _, mult in row:
@@ -464,7 +523,7 @@ def series_3d(mu, target, K):
        exact geometric tail bound (6 mu)^{K+1}/(1-6 mu) (from N_k <= 6^k, the venue's
        row sum).  General-parity target.  CLAIM ROW: C-87 class (1) / C-90 subcritical
        rows (t44b_lib.py, verbatim)."""
-    mu = Fraction(mu)
+    mu = _coupling_price(mu)
     p, q = mu.numerator, mu.denominator
     a, b, c = (abs(t) for t in target)
     u, v = b + c, abs(b - c)
@@ -521,7 +580,7 @@ def subcritical_row(mu, K, dmax):
        label is emitted by the booleans, never asserted.  The Ornstein-Zernike owner rate
        (cosh route, X = 1/(2mu) - 2) is returned as a labeled COMPARISON quantity only.
        CLAIM ROW: C-87 class (1) / C-90 subcritical rows."""
-    mu = Fraction(mu)
+    mu = _coupling_price(mu)
     Gs = {d: series_3d(mu, (d, 0, 0), K) for d in range(1, dmax + 1)}
     rints = {d: ratio_interval(Gs[d + 1], Gs[d]) for d in range(1, dmax)}
     exp_ok = all(hi <= 1 - MARGIN_LT1 for lo, hi in rints.values())
@@ -545,7 +604,7 @@ def divergence_witness(mu, m=WITNESS_M):
        (N_{2(m+1)}(0)/N_2m(0)) mu^2 exceeds 1 + MARGIN_LT1 -- terms GROW, the series
        diverges term-by-term.  Computed booleans over exact rationals.
        CLAIM ROW: C-87 class (3)."""
-    mu = Fraction(mu)
+    mu = _coupling_price(mu)
     NW1 = n3_even_row(m, 0, 0, 0)
     NW2 = n3_even_row(m + 1, 0, 0, 0)
     NH = n3_even_row(m // 2, 0, 0, 0)
@@ -791,7 +850,7 @@ def series_target_2d(mu, a, b, K):
     """Exact S_K = sum_{k<=K} N_k^{Z^2}((a,b)) mu^k plus the exact geometric tail
        (4mu)^{K+1}/(1-4mu).  Rotation bijection owner: Feller I (lane-gated against DP).
        CLAIM ROW: C-87 D=2 rows (t44a_lib.py, verbatim)."""
-    mu = Fraction(mu)
+    mu = _coupling_price(mu)
     p, q = mu.numerator, mu.denominator
     u, v = a + b, a - b
     assert (u - v) % 2 == 0
@@ -823,7 +882,7 @@ def series_target_2d(mu, a, b, K):
 
 def series_target_1d(mu, d, K):
     """Same on the 1D chain; tail from N_k <= 2^k.  (t44a_lib.py, verbatim.)"""
-    mu = Fraction(mu)
+    mu = _coupling_price(mu)
     p, q = mu.numerator, mu.denominator
     s = BinStepper(d)
     k = s.k
@@ -981,8 +1040,9 @@ def class_verdict(v, mu, evidence=False, K=160, dmax=12, M_crit=350):
        window booleans at mu_c, divergence_witness above.  Evidence depths (K, dmax,
        M_crit) are the caller's declared instrument settings; the sealed full-depth
        numbers are gated in checks_classes.py.  DECLINES (applies=False) where the venue
-       is not degree-regular.  CLAIM ROW: C-87 (taxonomy; LANE_T44_B_WORLD)."""
-    mu = Fraction(mu)
+       is not degree-regular.  Negative mu is outside the price domain and is REFUSED,
+       never assigned a class.  CLAIM ROW: C-87 (taxonomy; LANE_T44_B_WORLD)."""
+    mu = _coupling_price(mu)
     loc = mu_c_of(v, certify="full" if v.n <= 100 else "rowsum")
     if not loc.get("located"):
         return dict(applies=False, why=loc.get("why", "mu_c not located"), mu=mu)

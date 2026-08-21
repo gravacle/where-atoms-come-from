@@ -16,7 +16,7 @@ SEALED value copied from the lane's own sealed OUT file.  Sealed sources per sec
   C-72   LANE_T34_NAND/t34_nand.txt                     (occupancy ratio 1; unwritten null)
 
 Exit code: 0 iff every gate passes AND (unless --no-chain) validate_project.py still
-returns its 11 PASS -- the full-model conjunction."""
+returns its 24 PASS (14 project gates + 10 D-25 gates) -- the full-model conjunction."""
 import os
 import sys, os, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -179,7 +179,7 @@ print(f"  GEOMETRY: {n_pass} PASS, {n_fail} FAIL")
 chain_ok = True
 if "--no-chain" not in sys.argv:
     print()
-    print("CHAIN: validate_project.py (the existing 11 model gates must still pass)")
+    print("CHAIN: validate_project.py (all 24 project/D-25 gates must pass)")
     print("-" * 78)
     sys.stdout.flush()   # keep the chained child's output in order in file captures
     here = os.path.dirname(os.path.abspath(__file__))

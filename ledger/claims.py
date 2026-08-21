@@ -4,6 +4,8 @@
   ./ledger/claims.py                  render (and rewrite THE_CLAIMS_V001.md)
   ./ledger/claims.py set G-D STAGE    change one claim's stage
   ./ledger/claims.py anchors G-D "C-77;C-90"   change a claim's anchor rows
+  ./ledger/claims.py next G-D "T-51;T-49"      change the live next-task list
+  ./ledger/claims.py urm G-D "GEOMETRY layer"  change the URM-location cell
 
 Commissioned by the principal, 2026-08-21: a grid of the MAIN claims beside the model — the final
 deliverable being the URM with the ability to prove each of these. House discipline throughout:
@@ -98,6 +100,14 @@ def main():
         hit = [r for r in rows if r[0] == a[1]]
         if not hit: sys.exit("no such claim: %s" % a[1])
         old = hit[0][4]; hit[0][4] = a[2]
+    elif a[0] == "next":
+        hit = [r for r in rows if r[0] == a[1]]
+        if not hit: sys.exit("no such claim: %s" % a[1])
+        old = hit[0][5]; hit[0][5] = a[2]
+    elif a[0] == "urm":
+        hit = [r for r in rows if r[0] == a[1]]
+        if not hit: sys.exit("no such claim: %s" % a[1])
+        old = hit[0][6]; hit[0][6] = a[2]
     else:
         sys.exit(__doc__)
     with open(CLAIMS, "w", newline="") as f:

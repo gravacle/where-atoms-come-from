@@ -1,0 +1,54 @@
+T-54 / T-55 POST-LEDGER SEMANTIC REVIEW
+Date: 2026-08-21
+Default verdict: REFUTED
+Final verdict: CONFIRMED -- 12 PASS / 0 REFUTE / 12 required
+
+INITIAL REFUTATION AND REPAIR
+-----------------------------
+The first post-ledger pass found one live claims-grid error: G-D named the nonexistent
+plural `.reachable_classes`; the integrated API exposes `ProjectModel.reachable_class`.
+The registrar corrected the source through `ledger/claims.py urm` and regenerated
+THE_CLAIMS_V001.md.  The terminal rerun confirms the singular API mapping and preserves
+T-51 as the open field task.  This review made no shared-tree repair.
+
+TERMINAL PREDICATES
+-------------------
+PASS  P01  assembled proof hash is the post-ledger hash below
+PASS  P02  exactly one status row is PROVED: C-71
+PASS  P03  plan reads T-55 DONE, T-54 DOING, T-51 TODO
+PASS  P04  C-85 is bounded to currently homed machinery, not every headline;
+           233/233 is stated, T-51 is excluded/unverified, T-35 remains open,
+           and 21 proof blocks still have no model function
+PASS  P05  D-25 states its residual: model-tree hygiene, not authentication;
+           mutable/fabricable metadata, outside callers and sealed legacy lanes;
+           same-source order-of-magnitude consistency, not a prediction
+PASS  P06  current claims map countlaw to `.census`, classes to the live singular
+           `.reachable_class`, retain T-51, and omit completed T-55 from G-F NEXT
+PASS  P07  proof front matter states 83 blocks, 32 without gates, 21 without model
+           functions, 48 without TWO-CARRIER support, and 10 citing PROVED
+PASS  P08  assembled proof prints T-54 DOING and T-55 DONE
+PASS  P09  assembled proof states the exactly-one-PROVED invariant and names C-71
+PASS  P10  D-25's non-authentication and source-conditioned residual travels in proof
+PASS  P11  C-85's proof positive is bounded to the 176-family / 233-stack result and
+           excludes T-51, every-headline reproduction, and T-35 completion
+PASS  P12  no pre-T54 absence/bypass/old-count phrase or two-PROVED phrase reappears
+
+MECHANICAL PROOF RECHECK
+------------------------
+`python3 -B replicate/check_proof.py` exits 0.  R1-R10 pass.  R11 remains:
+
+  83 blocks / 115 distinct rows / 48 no-TWO-CARRIER / 10 PROVED-carriers
+
+LIVE HASH CUSTODY
+-----------------
+  ea28370d5d7660817f45cafbe0b9e61f056f22060669b7a7a250183115240276  ledger/status_ledger.tsv
+  eb077a61c7c6d9d72c8c1d4de689150452b20a1bfdc16145e718f08da8e6a367  ledger/plan.tsv
+  c92c5314339b620d73d066289e3ecb65ec0e22635d715a8ffc354f016e94de79  ledger/claims.tsv
+  1c6840dc99c62ec6181d33ba3d20a2c3bcc97e9cec1ba88c484b337a4c6fb047  THE_CLAIMS_V001.md
+  adc6ccecbff5ecd39c73fd843ae4d441759c87152737d1b4b13e2872b8508f21  PROOF_V002.md
+  00b72d58bb9ff896277d437ac87384b29bc67bee5f23d0065942e31f13ed1bd3  replicate/check_proof.py
+
+The generated claims view hashes byte-for-byte equal to fresh `./ledger/claims.py`
+output.  No sealed lane was executed.  The 233-gate umbrella was not rerun; its prior
+independent evidence remains the input to this semantic synchronization review.  The
+only write by this review is this file under INTEGRATION_CODEX.

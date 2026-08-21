@@ -57,7 +57,9 @@ WHAT EACH SECTION IMPLEMENTS, WITH ITS CLAIM ROW AND SEALED SOURCE (all C-91, FO
      kernel_pos_field: the C-93 entry            from it)
      point for site-dependent dE
 
-VERDICTS ARE COMPUTED BOOLEANS; RETURNS ARE DATA.  deg is COMPUTED from each venue's own
+VERDICTS ARE COMPUTED BOOLEANS; RETURNS ARE DATA.  A stochastic verdict requires BOTH
+nonnegative entries and normalized row sums; the E1/E2/E3 constructors refuse negative
+or overfull probability rows before building a kernel.  deg is COMPUTED from each venue's own
 rows, never declared; 1/deg is formed from the computed deg; mu_c is located in-lane
 (Perron + sector sandwich + resolvent), never imported as a number (D-8).  Every zero
 carries a positive control beside it in checks_writing.py (D-15).  World-tier surfaces
@@ -140,8 +142,19 @@ def mat_col_sums(K):
     return [sum(K[i][j] for i in range(n)) for j in range(n)]
 
 
+def matrix_nonnegative(K):
+    """Whether every dense-kernel entry is a nonnegative probability weight."""
+    return all(x >= F0 for row in K for x in row)
+
+
+def sparse_nonnegative(W):
+    """Whether every stored entry of a dict-row kernel is nonnegative."""
+    return all(x >= F0 for row in W for x in row.values())
+
+
 def is_stochastic(K):
-    return all(s == F1 for s in mat_row_sums(K))
+    """Exact stochasticity: nonnegative entries AND unit row sums."""
+    return matrix_nonnegative(K) and all(s == F1 for s in mat_row_sums(K))
 
 
 def is_doubly_stochastic(K):
@@ -398,7 +411,8 @@ def glob_kernel(nsynd_bits, deltas, weights, extra_trivial=0):
 
 def dict_doubly_stochastic(synds, T):
     """Exact double stochasticity of a dict-of-dict kernel.  (t48a, verbatim.)"""
-    rows_ok = all(sum(T[s].values()) == F1 for s in synds)
+    nonnegative = all(w >= F0 for s in synds for w in T[s].values())
+    rows_ok = nonnegative and all(sum(T[s].values()) == F1 for s in synds)
     cols = {s: F0 for s in synds}
     for s in synds:
         for t, w in T[s].items():
@@ -458,7 +472,7 @@ def bath_dilation(p):
             T[s][out >> 1] += wb
     return dict(unitary=meq(UtU, eye(4)),
                 conserves_excitation=all(exc[img[i]] == exc[i] for i in range(4)),
-                trace_preserving=all(x == F1 for x in mat_row_sums(T)),
+                trace_preserving=is_stochastic(T),
                 doubly_stochastic=is_doubly_stochastic(T),
                 col_sums=mat_col_sums(T))
 
@@ -762,7 +776,12 @@ def extract_pos(W, nbr):
         c = 1 - r[i]
         cs.add(c)
         for j in nbr[i]:
-            ms.add(r[j] / c)
+            # At the valid no-event boundary c == 0, an induced per-crossing
+            # amplitude is undefined.  Leave the amplitude set empty rather than
+            # manufacturing a number or crashing; verdicts then report non-uniform /
+            # not-at-criticality while retaining the stochastic identity kernel.
+            if c != 0:
+                ms.add(r[j] / c)
     return cs, ms
 
 
@@ -776,6 +795,10 @@ def extract_edge(W, nbr):
             r = W[s]
             c = 1 - r.get(s, F0)
             cs.add(c)
+            if c == 0:
+                # No redistribution event: conditioned fresh/back probabilities do
+                # not exist.  The empty amplitude sets make that explicit downstream.
+                continue
             tot = F0
             for e in range(6):
                 t = row[e] * 6 + e
@@ -871,10 +894,16 @@ def ensemble_transport(nbr, a):
        saddle readings a = u and a = u*b are honest; the sealed result is independent of
        the choice, gated in checks_writing.py).
        THE SEALED IDENTITY (C-91 world tier, LANE_T48_C_WORLD V1): conserving AND
-       critical -- mu = 1/deg = mu_c -- at EVERY dE and EVERY barrier."""
-    deg = len(nbr[0])
+       critical -- mu = 1/deg = mu_c -- at EVERY dE and EVERY barrier.  Domain:
+       0 <= a <= 1/deg; invalid probability rows are REFUSED."""
     a = Fr(a)
-    return kernel_pos(nbr, 1 - deg * a, a)
+    deg = len(nbr[0])
+    diag = F1 - deg * a
+    if a < 0 or diag < 0:
+        raise ValueError(
+            "writing E1 REFUSES: transport probabilities require "
+            "0 <= a <= 1/deg")
+    return kernel_pos(nbr, diag, a)
 
 
 def ensemble_trail_retreat(nbr, u, b):
@@ -884,9 +913,18 @@ def ensemble_trail_retreat(nbr, u, b):
        THE SEALED IDENTITY (C-91 world tier, LANE_T48_C_WORLD V2): conserving at every
        dE; uniform (m_back == m_fresh == 1/deg) EXACTLY at dE = 0 (b = 1) and split
        (b, 1)/(5b + 1) beside; zero stationary spatial drift beside nonzero per-state
-       persistence at dE != 0."""
-    u, v = Fr(u), Fr(u) * Fr(b)
-    return kernel_edge(nbr, 1 - 5 * v - u, v, u)
+       persistence at dE != 0.  Domain: u >= 0, b >= 0,
+       (deg-1)*u*b + u <= 1 with deg computed from the venue; invalid probability rows
+       are REFUSED."""
+    u, b = Fr(u), Fr(b)
+    v = u * b
+    fresh_count = len(nbr[0]) - 1
+    stay = F1 - fresh_count * v - u
+    if u < 0 or b < 0 or stay < 0:
+        raise ValueError(
+            "writing E2 REFUSES: retreat probabilities require u >= 0, b >= 0, "
+            "and (deg-1)*u*b + u <= 1")
+    return kernel_edge(nbr, stay, v, u)
 
 
 def ensemble_trail_decay(nbr, u, b, counting="H1"):
@@ -898,12 +936,21 @@ def ensemble_trail_decay(nbr, u, b, counting="H1"):
        directed-edge operator, earned by the same row-sum instrument).
        THE SEALED IDENTITY (C-91 world tier, LANE_T48_C_WORLD V3): NEVER critical --
        mu = b/(deg*b + 1) (H1) or b/(5b + 1) (NB), f0 and E_b dropping out exactly; the
-       mass gap in closed form ln(mu_c/mu) = ln(1 + e^{dE/kT}/l)."""
-    u, v = Fr(u), Fr(u) * Fr(b)
+       mass gap in closed form ln(mu_c/mu) = ln(1 + e^{dE/kT}/l).  Domain: u,b >= 0
+       and branch*u*b + u <= 1; counting must be exactly H1 or NB."""
+    u, b = Fr(u), Fr(b)
+    if counting not in ("H1", "NB"):
+        raise ValueError("writing E3 REFUSES: counting must be exactly 'H1' or 'NB'")
+    v = u * b
+    branch = len(nbr[0]) if counting == "H1" else len(nbr[0]) - 1
+    stay = F1 - branch * v - u
+    if u < 0 or b < 0 or stay < 0:
+        raise ValueError(
+            "writing E3 REFUSES: decay probabilities require u >= 0, b >= 0, "
+            "and branch*u*b + u <= 1")
     if counting == "H1":
-        deg = len(nbr[0])
-        return kernel_pos(nbr, 1 - deg * v - u, v)
-    return kernel_edge(nbr, 1 - 5 * v - u, v, None)
+        return kernel_pos(nbr, stay, v)
+    return kernel_edge(nbr, stay, v, None)
 
 
 # ---------------------------------------------------------------- verdict instruments
@@ -915,16 +962,19 @@ def transport_verdict(nbr, W):
     deg = len(nbr[0]) if all(len(r) == len(nbr[0]) for r in nbr) else None
     mu_c_ref = Fr(1, deg) if deg else None
     rs = set(srow_sums(W))
-    conserving = rs == {F1}
+    nonnegative = sparse_nonnegative(W)
+    conserving = nonnegative and rs == {F1}
     cs, ms = extract_pos(W, nbr)
     uniform = len(cs) == 1 and len(ms) == 1
     mu = next(iter(ms)) if uniform else None
     c = next(iter(cs)) if uniform else None
     return dict(deg=deg, mu_c_ref=mu_c_ref, row_sums=rs, conserving=conserving,
+                nonnegative=nonnegative, stochastic=conserving,
                 uniform=uniform, mu=mu,
-                at_criticality=bool(uniform and mu == mu_c_ref),
-                op_identity=bool(uniform and op_identity_pos(W, nbr, c, mu)),
-                massless_signature=all(1 - sum(r.values()) == 0 for r in W))
+                at_criticality=bool(conserving and uniform and mu == mu_c_ref),
+                op_identity=bool(nonnegative and uniform and op_identity_pos(W, nbr, c, mu)),
+                massless_signature=bool(conserving and
+                                        all(1 - sum(r.values()) == 0 for r in W)))
 
 
 def retreat_verdict(nbr, W):
@@ -934,14 +984,17 @@ def retreat_verdict(nbr, W):
     deg = len(nbr[0])
     rs = set(srow_sums(W))
     cols = set(scol_sums(W, len(nbr) * 6))
+    nonnegative = sparse_nonnegative(W)
+    conserving = nonnegative and rs == {F1}
     cs, mf, mb, tots = extract_edge(W, nbr)
     m_fresh = next(iter(mf)) if len(mf) == 1 else None
     m_back = next(iter(mb)) if len(mb) == 1 else None
-    return dict(deg=deg, row_sums=rs, conserving=rs == {F1},
-                doubly_stochastic=rs == {F1} and cols == {F1},
+    return dict(deg=deg, row_sums=rs, nonnegative=nonnegative,
+                stochastic=conserving, conserving=conserving,
+                doubly_stochastic=conserving and cols == {F1},
                 m_fresh=m_fresh, m_back=m_back,
-                uniform=bool(m_fresh is not None and m_fresh == m_back),
-                redistribution_exact=tots == {F1},
+                uniform=bool(nonnegative and m_fresh is not None and m_fresh == m_back),
+                redistribution_exact=bool(nonnegative and tots == {F1}),
                 mu_c_ref=Fr(1, deg))
 
 
@@ -954,14 +1007,19 @@ def decay_verdict(nbr, W):
     mu_c_ref = Fr(1, deg)
     rs = set(srow_sums(W))
     beta = next(iter(rs)) if len(rs) == 1 else None
+    nonnegative = sparse_nonnegative(W)
+    substochastic = bool(nonnegative and all(F0 <= x <= F1 for x in rs))
     cs, ms = extract_pos(W, nbr)
     uniform = len(cs) == 1 and len(ms) == 1
     mu = next(iter(ms)) if uniform else None
     return dict(deg=deg, mu_c_ref=mu_c_ref, row_sum=beta,
                 loss=(1 - beta) if beta is not None else None,
-                conserving=rs == {F1}, uniform=uniform, mu=mu,
-                mass_ratio=(mu_c_ref / mu) if mu else None,
-                below_criticality=bool(mu is not None and mu < mu_c_ref))
+                nonnegative=nonnegative, substochastic=substochastic,
+                conserving=bool(nonnegative and rs == {F1}), uniform=uniform, mu=mu,
+                mass_ratio=(mu_c_ref / mu)
+                if substochastic and mu is not None and mu > 0 else None,
+                below_criticality=bool(substochastic and mu is not None
+                                       and F0 <= mu < mu_c_ref))
 
 
 def decay_verdict_nb(nbr, W):
@@ -974,15 +1032,20 @@ def decay_verdict_nb(nbr, W):
     mu_c_nb = Fr(1, deg_nb) if deg_nb else None
     rs = set(srow_sums(W))
     beta = next(iter(rs)) if len(rs) == 1 else None
+    nonnegative = sparse_nonnegative(W)
+    substochastic = bool(nonnegative and all(F0 <= x <= F1 for x in rs))
     cs, mf, mb, tots = extract_edge(W, nbr)
     mu = next(iter(mf)) if len(mf) == 1 else None
     return dict(deg_nb=deg_nb, mu_c_nb=mu_c_nb, row_sum=beta,
                 loss=(1 - beta) if beta is not None else None,
+                nonnegative=nonnegative, substochastic=substochastic,
                 back_channel_empty=mb == set(), mu=mu,
                 redistribution_total=next(iter(tots)) if len(tots) == 1 else None,
-                mass_ratio=(mu_c_nb / mu) if mu else None,
-                below_criticality=bool(mu is not None and mu_c_nb is not None
-                                       and mu < mu_c_nb))
+                mass_ratio=(mu_c_nb / mu)
+                if substochastic and mu_c_nb is not None and mu is not None and mu > 0
+                else None,
+                below_criticality=bool(substochastic and mu is not None
+                                       and mu_c_nb is not None and F0 <= mu < mu_c_nb))
 
 
 def closed_form_gap_ratio(b, l):
@@ -1002,7 +1065,8 @@ def surface_boltzmann(s):
        exact).  D-25 ENFORCED: REFUSES a surface that does not carry provenance (build
        it through URM.surface).  Declines (None) where the surface is not thermally
        activated, exactly as the model's laws do."""
-    if not getattr(s, "provenance", None):
+    provenance = getattr(s, "provenance", None)
+    if not provenance or not str(provenance).strip():
         raise ValueError(
             "writing tier REFUSES: a world-tier surface must enter through the D-25 "
             "provenance gate (URM.surface) -- the model is grounded in real record "
@@ -1010,15 +1074,33 @@ def surface_boltzmann(s):
     if not s.thermal:
         return None
     import grounded as G
-    from math import exp
+    from math import exp, isfinite
     kT = G.KB * s.T
-    return dict(b=exp(-s.dE / kT), u=exp(-s.E_b / kT), dE_over_kT=s.dE / kT)
+    if not isfinite(kT) or kT <= 0:
+        return None
+    dE_over_kT = s.dE / kT
+    try:
+        b = exp(-dE_over_kT)
+        u = exp(-s.E_b / kT)
+    except OverflowError:
+        # A float world-entry dial outside the representable exponential range cannot
+        # be rationally bracketed by this instrument; decline instead of inventing a
+        # finite exact input.
+        return None
+    if not (isfinite(b) and isfinite(u)):
+        return None
+    return dict(b=b, u=u, dE_over_kT=dE_over_kT,
+                b_underflow=bool(b == 0.0 and dE_over_kT > 0))
 
 
 def rational_bracket(x, den):
     """The declared-denominator rational bracket lo <= x <= hi, lo and hi exact
        Fractions with hi - lo == 1/den."""
-    from math import floor
+    from math import floor, isfinite
+    if type(den) is not int or den <= 0:
+        raise ValueError("writing tier REFUSES: bracket denominator must be a positive integer")
+    if not isfinite(x) or x < 0:
+        raise ValueError("writing tier REFUSES: bracketed probability must be finite and nonnegative")
     lo = Fr(floor(x * den), den)
     return lo, lo + Fr(1, den)
 
@@ -1031,15 +1113,25 @@ def surface_gap(s, n=4, den=10 ** 9, u_samples=(Fr(1, 20), Fr(1, 100))):
        venue at every declared u sample (E_b/f0 independence is thereby re-computed for
        THIS surface's entry, not remembered), and the closed form is CHECKED against
        every computed ratio.  The float gap ln(mu_c/mu) is then certified INSIDE the
-       computed bracket.  D-25: refuses without provenance (surface_boltzmann).
+       computed bracket.  D-25: refuses without provenance (surface_boltzmann).  If the
+       floating world-entry exponential underflows to zero, or the declared rational
+       denominator cannot resolve a strictly positive lower bracket, this instrument
+       DECLINES (None): an exact finite gap cannot honestly be certified from that dial.
        Returns dict(b, bracket, computed_ratios, closed_form_agrees, u_independent,
        gap_ln, gap_bracket_ln, contained) or None where the surface declines."""
     from math import log
     dial = surface_boltzmann(s)
     if dial is None:
         return None
+    if dial["b_underflow"]:
+        return None
     _cells, _idx, nbr = torus3(n)
     lo, hi = rational_bracket(dial["b"], den)
+    if lo == 0:
+        # closed_form_gap_ratio(0, deg) is infinite, while the positive true dial is
+        # unresolved inside [0, 1/den].  Declining is the only certified statement at
+        # the caller's declared resolution.
+        return None
     ratios = {}
     agree = True
     for b_r in (lo, hi):

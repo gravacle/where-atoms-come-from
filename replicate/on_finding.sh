@@ -9,9 +9,9 @@ FAIL=0; warn(){ echo "  FAIL  $1"; FAIL=1; }; ok(){ echo "  ok    $1"; }
 echo "DOCUMENTATION GATE"; echo "=================================================================="
 
 # 1. every lane has a sealed manifest that verifies from the repo root
-for d in LANE_* model replicate; do
+for d in LANE_* model replicate proofsrc; do
   [ -d "$d" ] || continue
-  m="$d.sha256"; [ "$d" = "model" ] && m="model.sha256"; [ "$d" = "replicate" ] && m="replicate.sha256"
+  m="$d.sha256"; [ "$d" = "model" ] && m="model.sha256"; [ "$d" = "replicate" ] && m="replicate.sha256"; [ "$d" = "proofsrc" ] && m="proofsrc.sha256"
   if [ ! -f "$m" ]; then warn "$d has no sealed manifest ($m)"
   elif ! shasum -a 256 -c "$m" >/dev/null 2>&1; then warn "$m does not verify"; fi
 done
@@ -108,6 +108,8 @@ if ( cd model && python3 validate_model.py >/dev/null 2>&1 ); then ok "model/val
 else warn "model/validate_model.py FAILS — a finding has broken the first-principles model"; fi
 if ( cd model && python3 validate_formation.py >/dev/null 2>&1 ); then ok "model/validate_formation.py passes (17 formation checks)"
 else warn "model/validate_formation.py FAILS -- a finding has broken the formation half"; fi
+if ( cd model && python3 validate_urm.py >/dev/null 2>&1 ); then ok "model/validate_urm.py passes (four homed families plus geometry/project chain)"
+else warn "model/validate_urm.py FAILS -- the integrated URM no longer holds as one conjunction"; fi
 if ( cd LANE_T9_CARRIERINDEP && python3 t9_sweep.py 2>&1 | grep -q "0 FAIL" ); then ok "carrier independence holds (3 carriers, 32 checks)"
 else warn "LANE_T9_CARRIERINDEP FAILS -- a finding no longer survives a second carrier"; fi
 if ( cd LANE_T10_PARAMS && python3 t10_params.py >/dev/null 2>&1 ); then ok "no conclusion moves with a free parameter (28 settings)"

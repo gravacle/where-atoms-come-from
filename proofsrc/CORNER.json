@@ -9,7 +9,7 @@
    "model_fn": "ProjectModel.corner",
    "gate_file": "model/validate_project.py",
    "gate_name": "T-28 corner [[4,2,2]]",
-   "grounding": "LANE_T28_LIMIT/t28_limit.txt (sealed; three carriers with the dissipative control, dims 96/1536/24); reproduced through the URM's single entry point at model/validate_project.py, 14 PASS / 0 FAIL",
+   "grounding": "LANE_T28_LIMIT/t28_limit.txt (sealed; three carriers with the dissipative control, dims 96/1536/24); reproduced through the URM public entry at model/validate_project.py, whose integrated run is 24 PASS / 0 FAIL (14 project gates plus 10 D-25 gates)",
    "rows": [
     "C-75",
     "O-51"
@@ -20,17 +20,17 @@
   {
    "id": "P-CORNER-2",
    "headline": "the corner carrier must declare itself at the urm's public gate",
-   "prose": "D-25 is enforced at the URM's public gate. URM.surface refuses to build a corner-tier carrier unless the caller passes provenance='DEF-A', and refuses a world-tier surface that carries no provenance at all; both refusals are raised ValueErrors and both are tested by the validator in the failing direction. The exact idealisation therefore cannot silently pose as a real record surface at that gate. The gate covers what is built through it: the sealed lanes this section narrates predate it and construct their carriers directly, so no claim below is marked at construction time.",
-   "model_fn": "URM.surface",
+   "prose": "D-25 is enforced at both public URM constructors. URM.surface refuses a corner-tier surface unless the caller passes provenance='DEF-A' and refuses a world-tier surface without nonblank provenance; URM.corner separately refuses an exact (H,{L_k}) carrier without the same DEF-A declaration. The validator exercises both refusals in the failing direction and routes every live model-tree surface and corner through those entries. Sealed lanes outside model/ predate the gate and remain explicitly outside its construction scan.",
+   "model_fn": "URM.corner",
    "gate_file": "model/validate_project.py",
    "gate_name": "D-25 guard requires DEF-A self-declaration",
-   "grounding": "model/VERIFY_T46 (sealed adversarial check of the T-46 build); the PROVENANCE registry in model/project_model.py, whose own comment records that sealed lanes predate this gate and use the raw class; pinned external anchors in LANE_T41_EXTERNAL/CITATIONS.md",
+   "grounding": "model/VERIFY_T46 (sealed adversarial check of the original T-46 build); model/project_model.py URM.surface and URM.corner; model/validate_project.py (all live surface and corner entries); model/checks_d25.py (AST construction scan and planted positive controls); pinned external anchors in LANE_T41_EXTERNAL/CITATIONS.md",
    "rows": [
     "C-85",
     "D-25"
    ],
-   "scope": "SINGLE-CARRIER \u2014 The guard is a tool refusal that constrains how the model may be called; it establishes nothing about physics. It checks that the caller declared a tier, not that a declared DEF-A carrier is in fact a corner carrier. RecordSurface holds thermal parameters (dE, E_b, T, f0), so it cannot hold a DEF-A (H, {L_k}) carrier at all, and URM.surface is called nowhere in the repository outside the three validator gates \u2014 the only corner-tier call is the one written to raise. This restates P-DEF-7's gate for the corner tier and adds no new result.",
-   "action": "UNCHANGED"
+   "scope": "SINGLE-CARRIER \u2014 This is a repository input-discipline result and establishes nothing about physics. The gates verify an exact declaration, not that a caller's declaration is truthful. The AST refusal closes direct RecordSurface construction inside model/, and the integrated validator uses URM.corner for all three exact carriers; sealed legacy lanes and callers outside the scanned tree remain outside that hygiene boundary. ProjectModel.corner is still the computational delegate beneath URM.corner, so this is a public-contract and model-tree gate, not capability security or provenance authentication. This restates P-DEF-7's residual honestly and adds no physical result.",
+   "action": "CORRECTED"
   },
   {
    "id": "P-CORNER-3",

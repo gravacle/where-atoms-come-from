@@ -1,0 +1,35 @@
+T-54/T-55 INTEGRATED UMBRELLA -- DETERMINISTIC CAPTURE
+Default disposition before execution: REFUTED
+Command: python3 model/validate_urm.py
+Execution count in this integration audit: exactly one
+Exit: 0
+
+SOURCE SNAPSHOT (sha256)
+09d477a1b999e388c485d90563b0f919809e601d660704bdf68badea66586e1c  model/project_model.py
+918cf1a2d2cc5261cfae8ea222a6c6d5aa5362ad65c0e08ca00e7d85faff1f8f  model/arrow.py
+0e274480e647896ab607cdc591030213fa5fc137b0b2f7379da44b15ba00078c  model/countlaw.py
+952a540b888ccd50edb9a52714b74228f17b558ab95c2e678d1bcc7e67837d27  model/classes.py
+117d3c3f6a09dbebabe58e7ec70423993c2199215d78563a2ff80d50044c5fc2  model/writing.py
+d65df153764373d44f740c33df9e711146b433564bad267e6b62883490b8e7cf  model/checks_arrow.py
+937f611a7de4a95b371a00b28974b34a1a7582a3cc199ee04317e260dac9f3a2  model/checks_countlaw.py
+cf3ecaf0b4f7cfec3bc2757b0f5982d90c0ed9e28176807f50aa3027371dd95a  model/checks_classes.py
+e63dbfea20f8d4e8083b18ecfef976ea020bf54f475dd6a2be006eab6e43710a  model/checks_writing.py
+345301e177967a83ade0b578b24bc5400dadd6ab97f560e9f8179437c9192230  model/checks_d25.py
+8a2e9067d31112fd7e1cd50596cdc725f82261cb78d03824094ac6a3b497c6e5  model/validate_project.py
+1c69011aede5f0e6612530b4ee38289c68266a60989e1817c789355fa96798d5  model/validate_geometry.py
+9effd9d418bfcb476185270fc645c4210b4adb07740d22fb54a775ff179b08dc  model/validate_urm.py
+
+DETERMINISTIC RESULT
+ARROW: 27 PASS, 0 FAIL; gates 27/27 (COUNT OK)
+COUNTLAW: 40 PASS, 0 FAIL; gates 40/40 (COUNT OK)
+CLASSES: 52 PASS, 0 FAIL; gates 52/52 (COUNT OK)
+WRITING: 57 PASS, 0 FAIL; gates 57/57 (COUNT OK)
+T-54 FAMILIES: 176 PASS, 0 FAIL; gates 176/176 (COUNT OK)
+GEOMETRY: 33 PASS, 0 FAIL
+PROJECT/D-25: 24 PASS, 0 FAIL
+CHAIN validate_project.py: PASS
+OVERALL geometry/project: PASS (geometry 33/33, chain ok)
+CHAIN validate_geometry.py: PASS
+URM OVERALL: PASS (families 176/176, counts ok, chain ok)
+
+No duration is part of this result or its verdict.

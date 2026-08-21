@@ -1,10 +1,12 @@
 # INTEGRATION_d25 — T-55: the D-25 gate made unbypassable (family d25, 2026-08-21)
 
 Deliverables of this family: `model/checks_d25.py` (the check block; it is also this family's
-module — no separate layer module, per the T-55 brief) and this document. Nothing else was
-touched: no edit to project_model.py, any validate_*.py, geometry.py, grounded.py,
-record_model.py, any lane, the ledger, the register, or any sealed document. The registrar
-applies the edits below.
+module — no separate layer module, per the T-55 brief) and this document.  The later T-54
+core repair also removed `checks_writing.py`'s direct `RecordSurface` import/construction;
+that probe now enters through `URM.surface()` before deliberately removing provenance.
+No edit to project_model.py, any validate_*.py, geometry.py, grounded.py, record_model.py,
+any lane, ledger, register, manifest, or sealed document is made here.  The registrar
+applies the remaining edits below.
 
 ## 1. What this closes (the P-DEF-7 finding)
 
@@ -25,7 +27,17 @@ as GATED checks) was met only by a substring test (`"Weller" in ok.provenance`).
   model's computed lifetime at the pinned dH, with stated tolerance and semantics, plus a
   power control (§4).
 
-## 2. Current offenders (the scan's own output on the pre-integration tree)
+## 2. Current offenders (actual assembled-tree scan after the core repair)
+
+Read-only run on 2026-08-21 (`python3 -B model/checks_d25.py`, 0.28 s) reports exactly:
+
+```
+OFFENDERS validate_project.py:4 (import); validate_project.py:20 (reference);
+validate_project.py:53 (reference); validate_project.py:54 (reference);
+validate_project.py:44 (reference)
+```
+
+Normalized in source order, those are:
 
 ```
 validate_project.py:4  (import)     from project_model import RecordSurface, ProjectModel
@@ -35,14 +47,16 @@ validate_project.py:53 (reference)  zirc = RecordSurface("Zircon U-238", ...)
 validate_project.py:54 (reference)  cmb = RecordSurface("CMB photon", ...)
 ```
 
-One file, five sites. No other file under `model/` binds the name. (The sealed lanes also
+One file, five sites. No other file under `model/` binds the name.  In particular,
+`checks_writing.py` is clean after its URM-routed refusal-probe repair. (The sealed lanes also
 construct directly — LANE_T41_EXTERNAL among them — but they are sealed, predate the gate,
 and lie outside the scanned tree by design: the scan root is `model/`.)
 
 ## 3. The exact minimal edits to `model/validate_project.py` (verbatim old → new)
 
-Each `old` line occurs exactly once; verified by applying all eight to a scratch copy
-(`assert src.count(old) == 1` each) and re-running everything (§6).
+The registrar patch has eight minimal semantic edits: five remove the scanned import/
+constructor sites, two bind existing display rows to existing provenance-registry keys,
+and one chains the ten checks.  Each `old` line occurs exactly once in the assembled tree.
 
 **Edit 1 — line 4 (the import):**
 ```
@@ -100,9 +114,9 @@ new: cmb = URM.surface("CMB photon", "free flight", 0.0, 0.0, 2.7, 0.0, thermal=
 ```
 old: check("D-25 registry supplies pinned provenance", "Weller" in ok.provenance, ok.provenance[:60])
 new: check("D-25 registry supplies pinned provenance", "Weller" in ok.provenance, ok.provenance[:60])
-     # D-25 (T-55): construction scan + stage-(2) external-anchor gates — see model/checks_d25.py
-     from checks_d25 import run_d25_checks
-     run_d25_checks(check)
+# D-25 (T-55): construction scan + stage-(2) external-anchor gates — see model/checks_d25.py
+from checks_d25 import run_d25_checks
+run_d25_checks(check)
 ```
 (The three new lines are inserted at column 0, no indentation.)
 
@@ -176,10 +190,17 @@ How a NEW observation of this family's kind enters the URM:
   input that the same gate measurably rejects (the azobenzene midpoint history is the
   template); (vi) gate any zero with a positive control (D-15).
 
-## 6. Verification record (scratch tree; the real tree untouched)
+## 6. Verification record
 
-The eight edits were applied to a scratch copy of `model/`
-(`assert count(old) == 1` for each — all matched exactly once). On that integrated tree:
+Pre-integration audit that exposed the bypass (preserved as history):
+
+- `python3 -B model/checks_d25.py`: **9 PASS, 1 FAIL, exit 1, 0.28 s**.  The sole
+  failure is the intended construction scan and lists exactly the five sites in §2;
+  all nine refusal/anchor/control checks pass.
+- `python3 -B model/checks_writing.py`: **57 PASS, 0 FAIL, exit 0, 5.37 s**; its
+  D-25 refusal probe uses `URM.surface()` and contributes no scan offender.
+
+Final integrated record after the eight registrar edits:
 
 - `python3 checks_d25.py` standalone: **10 PASS, 0 FAIL, exit 0** (< 5 s).
 - `python3 validate_project.py` (patched): **24 PASS, 0 FAIL, exit 0** — the live file's
@@ -187,11 +208,11 @@ The eight edits were applied to a scratch copy of `model/`
   plus the 10 d25 gates (the run is dominated by the pre-existing T-28 [[6,4,2]]
   eigendecomposition, as before; the d25 block adds < 5 s).
 
-On the LIVE (pre-integration) tree, `python3 model/checks_d25.py` exits 1 with exactly one
-FAIL — check 1 listing §2's offenders. That failure is the finding, by design.
+Edits 1–7 are now landed and edit 8 chains the clean scan plus all nine
+positive/refusal/anchor controls into `validate_project.py`. The live standalone D-25
+block is 10/10; the earlier 9/1 result above is the dated pre-integration state that made
+the five-site bypass visible.
 
-Post-integration count note for the registrar: `validate_project.py` prints **24 PASS**
-(14 + 10), so any harness or narration keyed to a literal PASS count (validate_geometry.py's
-header still says "its 11 PASS", VERIFY_T46 counted 11, replicate expectations) is stale by
-the same increment after this lands; the chain in `validate_geometry.py` keys on exit code
-and is unaffected.
+Post-integration count: `validate_project.py` prints **24 PASS** (14 + 10).
+`validate_geometry.py` now narrates that count correctly, and `validate_urm.py` chains the
+project/D-25 validator after its 176 family gates and the 33 geometry gates.

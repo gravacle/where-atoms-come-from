@@ -127,6 +127,7 @@ def record_rate(s):
        surface DECLINES (not thermally activated, or rates below float range).
        s: a project_model.RecordSurface (E_b in J from the metastable well, per the
        solidity-review convention)."""
+    _require_urm_surface(s)
     opened = s.open_system()
     if opened is None:
         return None
@@ -146,6 +147,7 @@ def drop_time_formula(s):
            t*_i = f0^{-1} exp((B_i - dE_i)/kT) / (1 + e^{-dE_i/kT})
        with B - dE = E_b (the model's own convention map, exact). THE CHECK, NEVER THE
        SOURCE: the census measures through record_rate; this form gates it."""
+    _require_urm_surface(s)
     kT = G.KB * s.T
     with _np.errstate(over='ignore'):
         return float(_np.exp(s.E_b / kT) / (s.f0 * (1.0 + _np.exp(-s.dE / kT))))
@@ -154,6 +156,33 @@ def drop_time_formula(s):
 # =====================================================================================
 # 3  THE CENSUS  (C-86; the ProjectModel-ready layer method)
 # =====================================================================================
+def _require_urm_surface(s):
+    """Enforce D-25 at every public surface-consuming path, even after a bypass.
+
+    Construction through URM.surface is the normal entry path, but provenance must be
+    defended where the observation is consumed as well: RecordSurface is intentionally
+    importable for sealed legacy lanes, so constructor-only enforcement is bypassable.
+    """
+    tier = getattr(s, 'tier', None)
+    provenance = getattr(s, 'provenance', None)
+    if tier == "corner":
+        if provenance != "DEF-A":
+            raise ValueError(
+                "COUNTLAW REFUSES: a corner census surface must carry provenance='DEF-A' "
+                "from URM.surface; an exact idealisation may not silently pose as world data "
+                "(D-25).")
+        return
+    if tier == "world":
+        if not provenance or not str(provenance).strip():
+            raise ValueError(
+                "COUNTLAW REFUSES: a world-tier census surface requires pinned provenance "
+                "from URM.surface (D-25).")
+        return
+    raise ValueError(
+        "COUNTLAW REFUSES: every census surface must enter through URM.surface with an "
+        "explicit 'world' or 'corner' tier and the corresponding provenance (D-25).")
+
+
 def census(surfaces, t_m):
     """THE SURVIVING-RECORD COUNT LAW k(t_m) -- C-86, the URM's wholly-owned falsifiable
        count law (LANE_T47_A_WIDTH section 6 + LANE_T47_B_STAIRCASE sections C/D/G, all
@@ -161,8 +190,10 @@ def census(surfaces, t_m):
 
        surfaces: a LIST of RecordSurface objects -- a real device census enters here,
        each record surface built through URM.surface() so D-25 provenance is already on
-       it (this is the machinery the Saira/Woodside grounding lanes call). t_m: the
-       retention spec, in s.
+       it (this is the machinery the Saira/Woodside grounding lanes call).  The census
+       independently rechecks tier/provenance and REFUSES bypassed raw or mutated
+       surfaces; constructor-only enforcement is not treated as a security boundary.
+       t_m: the retention spec, in s.
 
        THE SIGNATURE IS THE C-76 GATE: (surfaces, t_m) and NOTHING else. No width,
        tolerance, margin, or clustering parameter exists on this path -- the width is
@@ -183,6 +214,7 @@ def census(surfaces, t_m):
     inv_tm = 1.0 / float(t_m)
     rows, declined = [], []
     for i, s in enumerate(surfaces):
+        _require_urm_surface(s)
         rate = record_rate(s)
         if rate is None:
             declined.append(dict(index=i, name=s.name,

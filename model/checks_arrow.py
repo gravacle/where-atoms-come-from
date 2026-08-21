@@ -222,6 +222,31 @@ def run_arrow_checks(check):
           sc_1['entangled_without_record'] and sc_1['I_SB'] > 1e-3
           and sc_1['chi_whole'] < ZERO and sc_1['redundant_fragments'] == 0,
           f"I={sc_1['I_SB']:.6f} chi={sc_1['chi_whole']:.3e}")
+    from record_model import RecordModel
+    Z2 = np.diag([1.0, -1.0])
+    custom = RecordModel(np.zeros((2, 2)), [])
+    custom_refused = False
+    try:
+        AR.score_bath_observation(new_env, Z2, model=custom,
+                                  tier="corner", provenance="DEF-A")
+    except ValueError as exc:
+        custom_refused = "custom RecordModel requires its record" in str(exc)
+    mismatch_refused = False
+    try:
+        AR.score_bath_observation(new_env, Z2, record=C['Zbar'], model=custom,
+                                  tier="corner", provenance="DEF-A")
+    except ValueError as exc:
+        mismatch_refused = "does not match model dimension" in str(exc)
+    custom_scored = AR.score_bath_observation(
+        new_env, Z2, record=Z2, model=custom, tier="corner", provenance="DEF-A")
+    check("ENTRY a custom RecordModel without its own explicit record REFUSES cleanly "
+          "instead of pairing with the toric default; the same 2x2 model scores when its "
+          "2x2 record is supplied (D-15 positive control)",
+          custom_refused and mismatch_refused and custom_scored['chi_whole'] > 0.0
+          and custom_scored['I_SB'] + 1e-9 >= custom_scored['chi_whole'],
+          f"missing/mismatch refused={custom_refused}/{mismatch_refused} "
+          f"chi={custom_scored['chi_whole']:.9f} "
+          f"I={custom_scored['I_SB']:.9f}")
 
 
 if __name__ == "__main__":
