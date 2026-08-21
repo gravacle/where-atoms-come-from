@@ -1,15 +1,23 @@
 W-58b  A CLOCK WHOSE RATE DEPENDS ON THE SYSTEM. No external time anywhere.
+  GATE: the rate observable must not commute with H_S -- ||[A,H_S]|| = 1.422
     lambda  ker dim   ||H|Psi>||   what stays constant across clock readings
   ----------------------------------------------------------------------------------------
-      0.00        1     2.70e-16   12 of 16 directions are exactly constant   (largest variation 0.000)
-      0.15        1     3.06e-16   12 of 16 directions are exactly constant   (largest variation 0.000)
-      0.40        1     2.13e-16   12 of 16 directions are exactly constant   (largest variation 0.000)
-      0.80        1     2.87e-16   12 of 16 directions are exactly constant   (largest variation 0.000)
+      0.00        4     2.94e-16   6 of 16 directions are exactly constant   (largest variation 1.405)
+      0.15        1     2.50e-16   12 of 16 directions are exactly constant   (largest variation 0.000)
+      0.40        1     3.37e-16   12 of 16 directions are exactly constant   (largest variation 0.000)
+      0.80        1     2.71e-16   12 of 16 directions are exactly constant   (largest variation 0.000)
 
   CONTROL -- lambda = 0 must reproduce w58: unitary conditional evolution.
-    worst deviation from unitary evolution at lambda=0: 2.602e-15
+    worst deviation from unitary evolution at lambda=0: 1.851e-15
 
   AND THE POINT: at lambda > 0 is the conditional evolution still unitary with a FIXED H_S?
-    lambda=0.15: worst deviation = 2.602e-15   still the same evolution
-    lambda=0.40: worst deviation = 2.602e-15   still the same evolution
-    lambda=0.80: worst deviation = 2.602e-15   still the same evolution
+    lambda=0.15: worst deviation = 1.851e-15   still the same evolution
+    lambda=0.40: worst deviation = 1.851e-15   still the same evolution
+    lambda=0.80: worst deviation = 1.851e-15   still the same evolution
+
+  KERNEL GATE -- the timeless state must be a HISTORY, i.e. spread over clock readings,
+  not a static eigenstate. Measured as the spread of |<t_k|Psi>|^2 over k.
+    lambda=0.00  ker dim 4  clock readings occupied (participation) = 12.00 of 12   HISTORY
+    lambda=0.15  ker dim 1  clock readings occupied (participation) = 12.00 of 12   HISTORY
+    lambda=0.40  ker dim 1  clock readings occupied (participation) = 12.00 of 12   HISTORY
+    lambda=0.80  ker dim 1  clock readings occupied (participation) = 12.00 of 12   HISTORY

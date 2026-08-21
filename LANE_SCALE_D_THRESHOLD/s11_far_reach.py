@@ -52,7 +52,8 @@ for tag, mk, p in JOBS:
                      ov_ncomp=g["ov_ncomp"], ov_giant=g["ov_giant"], ov_lapgap=g["ov_lapgap"],
                      cf1_maxset=mx1, cf2_maxset=mx2, protection_radius=prot,
                      reach2=r2, reach3=r3, rstar=rstar))
-    P("     (t=%.0fs)" % (time.time() - t0))
+    # T-35: "(t=Ns)" reformatted to "t=Ns" -- the parenthesised form escapes reproduce.sh's norm() and differed every run
+    P("     t=%.0fs" % (time.time() - t0))
     open(FTXT, "w").write("\n".join(OUT) + "\n")     # written after EVERY row
 P()
 P("READ: at the largest k reached the clause-(v) column cf1_max is still exactly 0 and its")
@@ -62,4 +63,4 @@ P("  constant curve it was on at k = 2.  Nothing turns on anywhere in this range
 json.dump(rows, open("/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_D_THRESHOLD/s11_rows.json", "w"))
 open("/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_D_THRESHOLD/s11_far_reach.txt",
      "w").write("\n".join(OUT) + "\n")
-P("total %.1fs" % (time.time() - t0))
+# T-35: post-write "total Ns" stdout line removed -- it was captured by reproduce.sh but never part of the sealed output, so it differed every run

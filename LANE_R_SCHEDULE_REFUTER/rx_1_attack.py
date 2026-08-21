@@ -15,6 +15,8 @@ import numpy as np
 from rx_lib import (Z_closed, logabsZ, schedule_alpha, lam_of_schedule,
                     lam_alpha, orbit_order, lambda_B_finite_orbit)
 
+np.seterr(invalid="ignore")  # T-35 NONDET fix: the expected floor(n^alpha)>int64 cast RuntimeWarning is stderr whose position vs stdout varies with capture buffering; seterr changes reporting only, never a computed value
+
 P_S3 = [0.4, 0.15, 0.15, 0.15, 0.15]
 GEN = (2.0, 1.1000001)   # a NON-resonant nearby connection, for contrast
 

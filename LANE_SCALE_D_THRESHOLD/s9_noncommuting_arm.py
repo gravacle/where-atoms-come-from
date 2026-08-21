@@ -86,7 +86,8 @@ for n in (4, 6, 8):
                      moved_pairing=mv_p))
     P("     record value displacement |d<R_1>|: commuting crowd %.3e   pairing crowd %.3e"
       % (mv_c, mv_p))
-    P("     (t=%.0fs)" % (time.time() - t0))
+    # T-35: "(t=Ns)" reformatted to "t=Ns" -- the parenthesised form escapes reproduce.sh's norm() and differed every run
+    P("     t=%.0fs" % (time.time() - t0))
 
 # D-15 negative control, in the same run
 car = C.family_A(4); fam, part, ch = C.records_of(car)
@@ -108,4 +109,4 @@ P("  That is the honest ceiling on any dynamical statement in this lane that is 
 json.dump(rows, open("/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_D_THRESHOLD/s9_rows.json", "w"))
 open("/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_D_THRESHOLD/s9_noncommuting_arm.txt",
      "w").write("\n".join(OUT) + "\n")
-P("total %.1fs" % (time.time() - t0))
+# T-35: post-write "total Ns" stdout line removed -- it was captured by reproduce.sh but never part of the sealed output, so it differed every run

@@ -128,7 +128,8 @@ for n, nq, layout in ((4, 3, "crowded"), (4, 3, "spread"), (6, 3, "crowded"),
       % (car["label"], k, nq, layout, lam, cm, ca, abs(cm - ca)))
     worst = max(worst, abs(cm - ca))
     val_rows.append((car["label"], k, nq, layout, cm, ca))
-    P("     (t=%.0fs)" % (time.time() - t0))
+    # T-35: "(t=Ns)" reformatted to "t=Ns" -- the parenthesised form escapes reproduce.sh's norm() and differed every run
+    P("     t=%.0fs" % (time.time() - t0))
 P("  worst |analytic - model| = %.3e  ->  %s" % (worst, "VALIDATED" if worst < 1e-9 else "FAILED"))
 VALID = worst < 1e-9
 
@@ -200,4 +201,4 @@ else:
 
 open("/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_D_THRESHOLD/s5_dynamics_chi.txt",
      "w").write("\n".join(OUT) + "\n")
-P("total %.1fs" % (time.time() - t0))
+# T-35: post-write "total Ns" stdout line removed -- it was captured by reproduce.sh but never part of the sealed output, so it differed every run

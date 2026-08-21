@@ -126,4 +126,4 @@ table(inter, COLS_C, "TABLE 3  WHAT ONE CONTIGUOUS REGION CAN WRITE  (BASIS-INVA
 open("/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_D_THRESHOLD/s2_combinatorial_battery.txt",
      "w").write("\n".join(OUT) + "\n")
 json.dump(rows, open("/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_D_THRESHOLD/s2_rows.json", "w"), indent=1)
-P("total %.1fs" % (time.time() - t0))
+# T-35: post-write "total Ns" stdout line removed -- it was captured by reproduce.sh but never part of the sealed output, so it differed every run

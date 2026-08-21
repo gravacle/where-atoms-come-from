@@ -40,8 +40,18 @@ SLOW="o1_gap_a_compatibility.py o1_converse_theorem.py o4_L3.py o4_toric.py veri
 hdr "2. RE-RUN EVERY LANE SCRIPT AND DIFF AGAINST ITS SEALED OUTPUT"
 printf "  %-30s %-26s %s\n" "lane" "script" "result"
 printf "  %-30s %-26s %s\n" "------------------------------" "--------------------------" "------"
+# DATED RECORDS: some sealed outputs are deliberate dated records (corpus audits; discard-verdict
+# annotations) and can NEVER byte-match a fresh run BY DESIGN. They are listed, with reasons, in
+# replicate/dated_records.txt — printed on every run, counted separately, never as DIFFERS and
+# never silently skipped. Adding to that list is a registrar act.
+DATED=0
 for py in LANE_*/*.py; do
   lane="${py%%/*}"; base="$(basename "$py")"; txt="${py%.py}.txt"
+  if [ -f replicate/dated_records.txt ] && grep -q "^$py	" replicate/dated_records.txt; then
+    reason=$(grep "^$py	" replicate/dated_records.txt | cut -f2 | cut -c1-40)
+    printf "  %-30s %-26s \033[36m%s\033[0m\n" "$lane" "$base" "DATED-RECORD ($reason)"
+    DATED=$((DATED+1)); continue
+  fi
   [ -f "$txt" ] || txt="${py%.py}.OUT.txt"
   if [ ! -f "$txt" ]; then printf "  %-30s %-26s %s\n" "$lane" "$base" "no sealed output — SKIP"; continue; fi
   if [ "${1:-}" = "--quick" ] && [[ " $SLOW " == *" $base "* ]]; then
@@ -74,6 +84,8 @@ for py in LANE_*/*.py; do
     FAIL=1
   fi
 done
+
+[ "${DATED:-0}" -gt 0 ] && printf "\n  %d dated-record seals not re-diffed (replicate/dated_records.txt — corpus audits and deliberate lane records)\n" "$DATED"
 
 hdr "3. THE STATUS LEDGER IS GENERATED, NOT TYPED"
 before=$(shasum -a 256 STATUS_LEDGER_V001.md 2>/dev/null | cut -d' ' -f1)

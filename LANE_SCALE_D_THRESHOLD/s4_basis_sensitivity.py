@@ -131,4 +131,4 @@ for key in KEYS:
 json.dump(rows, open("/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_D_THRESHOLD/s4_rows.json", "w"))
 open("/Users/bgm/MB Work/where-atoms-come-from/LANE_SCALE_D_THRESHOLD/s4_basis_sensitivity.txt",
      "w").write("\n".join(OUT) + "\n")
-P("total %.1fs" % (time.time() - t0))
+# T-35: post-write "total Ns" stdout line removed -- it was captured by reproduce.sh but never part of the sealed output, so it differed every run

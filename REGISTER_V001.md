@@ -10493,3 +10493,72 @@ suite gains a median-vs-mean density-skew member and a fixed-pattern member.
 **C-72's GROUNDED cell rewritten to the judged text** — the contrast-exponent quantity, what holds
 with its adversarial confirmations, the hardened gate, the two refuted protocols by name, and the
 open repair. **C-72 stays `PARTIAL`, `BLOCKED_BY T-50`. The program still has one `PROVED` row.**
+
+---
+
+## THE T-35 FIX PASS LANDS — **EVERY DIFFERS IS CLASSIFIED, EVERY SEAL IS HONEST, AND THE DATED-RECORD CLASS IS NOW A HARNESS MECHANISM, NOT A JUDGMENT CALL** (39 lanes; the clean zero-DIFFERS run launches from this commit)
+
+The full reproduction run (`reproduce_full3.log`, 943 lines) ended with 58 DIFFERS. One agent per
+lane classified and repaired each under the established pattern — presentation normalized
+harness-side, real fixes byte-identical twice then resealed, physics never touched to make a diff
+pass. The classes, and what was done:
+
+**TIMING (the majority)** — trailing wall-clock lines in seven formats, all now absorbed by the
+anchored `norm()` (each rule end-of-line-anchored after the first draft matched `(2s)` inside a
+probability expression — a physics line). No file changed.
+
+**DATED RECORDS (13 seals) — the new mechanism.** Eleven corpus-audit scripts grep the repository's
+own documents, so their sealed outputs are audits of the corpus *as of their sealing date* — they can
+never byte-match a fresh run against a grown corpus, by design. Two more are deliberate lane records:
+`o7_writer_shape`'s seal carries the discard-verdict annotation the script never prints (deleting it
+would destroy the lane's own negative finding), and `pf3_admissible`'s seal is the stdout-only
+capture of the probe whose crash IS the dated finding. `replicate/dated_records.txt` now lists all
+thirteen with reasons; `reproduce.sh` prints `DATED-RECORD (reason)` for each on every run — counted
+separately, never as DIFFERS, never silently. Adding a line to that list is a registrar act.
+
+**STALE SEALS FROM PAST FIX COMMITS (8 outputs resealed, each attribution exact from git):**
+`w35_unravel` — the vectorisation-erratum commit fixed `exact_rho` and updated the script's hash but
+left the OUT pre-fix; the resealed control value `⟨R⟩_exact = −0.00042139` is the erratum's own
+corrected physics. `w58_pagewootters` — the ladder-fix landed in the script, its seal never
+refreshed; the resealed kernel dimension 4 is exactly what the register's W-58 entry already
+describes (the sealed 1 was the pre-fix failure mode). `w58b_ratedepends` — same event, the gate
+line. `w30b_alpha_axis` — the seal came from a `steps=200000` variant never committed; resealed to
+the committed script's 20k output (RK4-vs-expm agreement 4.5e−12, the control's purpose intact).
+`S_07_onset` — the seal carried a rank-2 block from an uncommitted longer variant, cited nowhere;
+resealed to the committed script. `RL5` — additive commentary printed by the committed script,
+sealed from a run just before the print was added. `s5_D_decide` — the seal was TRUNCATED mid-file;
+the resealed output adds the D5 charge-vs-multiplicity block, cited nowhere, deterministic twice.
+`t13_bathsize` — truncated before the heavy nq=7 block (per-fragment eigh at 4096², the exact cost
+`record_model.py` documents); the unbounded rerun reproduces the sealed 28 lines byte-for-byte and
+appends the two nq=7 lines, whose relative spread 1.391 matches F-28's registered sequence.
+
+**THE GARBLED SEAL REPAIRED:** `w56_center.OUT.txt` was **0 bytes** — no run had ever completed,
+because `svd(full_matrices=True)` materialized a 68.7 GB U at case 4. The identity-preserving fix
+(`full_matrices=False`; rows ≥ columns always on this path, so the reduced factors equal the full
+ones and the m<n guard never fires) makes the script complete in seconds, deterministic twice, and
+its six case lines agree with the sibling `w56b_symplectic` — the sealed source of every registered
+W-56 number — on every comparable quantity. No registered number ever traced to the broken script.
+
+**NONDETERMINISM FIXED (script edits, minimal, byte-identical twice):** ten scripts across
+O-36 (a deterministic numpy `ComplexWarning` on stderr — `.real` moved before `float()`, value
+bit-identical), O-6, R_SCHEDULE_REFUTER (sealed output updated under the fix pattern), SCALE_A,
+SCALE_B, SCALE_D, W08_M2, W13_RULING, W17_R4, W10_C. Each edit is one seed or one ordering, with the
+reason as a comment.
+
+**HEAVY, NO ACTION:** `b4_reach` (sealed elapsed 5518s; every residual line is a timing form the
+new norm absorbs — the clean run decides). **`LANE_T44_B_WORLD` — C-90's sealed evidence — was
+presentation-only.** All inner `SEALS.sha256` and outer manifests for the eighteen touched lanes
+resealed; the O48 stray `.norm` debris swept.
+
+**DWELL-DATA SEARCH LANDED IN THE SAME ARC** (`LANE_DWELL_SEARCH/`, sealed): three arms and an
+access refuter who re-fetched every top candidate this session. **The single best target for the
+record laws' first real-instrument contact: Saira et al., PRL 109, 180601** — both directional rates
+at three known temperatures, with `dE` sourced twice inside the paper (detailed-balance 1.94±0.05 K
+against Jarzynski 1.91±0.03 K) — **the in-source cross-check that breaks the C-70 circle.** Woodside
+PNAS 2006 runs second: its 20-hairpin SI table was RETRIEVED outright (T = 23±0.5 °C verified,
+transcribed to `WOODSIDE_TABLE1_RETRIEVED.md`). Funatsu's Zenodo deposit re-confirmed RESTRICTED
+(third check); nothing located forces that request as the first move. Refuter corrections carried:
+Lyons demoted (temperature absent from the paper; dE≈0 by construction), two citation errata on the
+hygiene-grade Zenodo set, one figure-caption conflict flagged as a digitization hazard.
+**Next steps named: the clean zero-DIFFERS run (T-35's DONE_WHEN), then LANE_T51_A + T-17; the
+Saira grounding lane queued on the principal's word.**

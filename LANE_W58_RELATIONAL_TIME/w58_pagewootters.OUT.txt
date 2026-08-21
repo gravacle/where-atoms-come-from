@@ -1,16 +1,16 @@
 W-58  RELATIONAL TIME. No external parameter is evolved anywhere in this lane.
   clock dim 12, system dim 4, total 48
 
-  CHECK 1 -- the constraint. kernel dimension of H_tot = 1
-    ||H_tot |Psi>|| = 2.703e-16   SATISFIED
+  CHECK 1 -- the constraint. kernel dimension of H_tot = 4
+    ||H_tot |Psi>|| = 2.864e-16   SATISFIED
 
   CHECK 2 -- does conditioning on the clock reproduce unitary evolution?
     (no target is assumed: the conditional state at k=0 is taken as the initial condition)
       k        t  || cond_k - e^{-iH t} cond_0 ||
       0    0.000                        0.000e+00
-      1    1.000                        3.765e-16
-      2    2.000                        5.290e-16
-      3    3.000                        6.978e-16
-      4    4.000                        6.639e-16
-      5    5.000                        6.584e-16
-    worst over all 12 readings: 2.622e-15   REPRODUCES unitary evolution from a timeless state
+      1    1.000                        4.879e-16
+      2    2.000                        8.368e-16
+      3    3.000                        1.264e-15
+      4    4.000                        1.586e-15
+      5    5.000                        2.855e-15
+    worst over all 12 readings: 4.567e-15   REPRODUCES unitary evolution from a timeless state

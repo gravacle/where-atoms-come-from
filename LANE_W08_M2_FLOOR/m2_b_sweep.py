@@ -107,7 +107,11 @@ for rtag, rlab, W in READY:
             absZ = np.sqrt(np.maximum(0.0,1.0-S))
             g = S/(1.0+absZ)                                   # = 1-|Z_k|
             run_sum += float(g.sum())
-            run_log += float(np.log(absZ).sum())               # -inf if any |Z_k| = 0 exactly
+            # T-35 NONDET fix: log(0) is EXPECTED here (|Z_k|=0 exactly at attained floors, e.g.
+            # RS-P/A_S1PUB); numpy's stderr RuntimeWarning landed in the merged capture at a
+            # buffering-dependent position, so suppress it -- the computation is unchanged.
+            with np.errstate(divide='ignore'):
+                run_log += float(np.log(absZ).sum())           # -inf if any |Z_k| = 0 exactly
             for i,e in enumerate(EPS): counts[i]+=int((g<e).sum())
             hist += np.histogram(np.log10(np.maximum(g,1e-30)),bins=60,range=(-30,0))[0]
             acc=np.minimum(np.minimum.accumulate(g),run_min)

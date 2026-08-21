@@ -95,3 +95,35 @@ D4.  CHARGE x RESONANCE.  DOES 'lambda_B IS A FUNCTION OF L ALONE' SURVIVE?
 ==================================================================================================
 D5.  CHARGE vs LOOP MULTIPLICITY -- S4's CHOICE LEDGER C11, DECIDED.
 ==================================================================================================
+  C11 (closed, never run): 'a_v in {0,1} -- a vertex visited twice by a loop still counts
+  once ... multiplicity would be a different operator and a different construction'.
+
+  DECISION: THEY ARE NOT EQUIVALENT, AND THE INCLUSION IS STRICT.
+     charge:        E_v = q_v (a_v, b_v),   (a_v,b_v) in {0,1}^2   ->  E_v lies on ONE OF FOUR
+                    RAYS  Z(0,0), Z(1,0), Z(0,1), Z(1,1).  The two coordinates are scaled by
+                    the SAME integer.
+     multiplicity:  E_v = (mult_F(v), mult_C(v)) in Z_{>=0}^2, the two coordinates INDEPENDENT.
+                    Realises the whole non-negative quadrant.
+  They coincide exactly on vertices lying on AT MOST ONE loop (there q(a,b) and (m_F,m_C)
+  range over the same set).  They differ precisely AT A PINCH, where charge forces
+  proportionality and multiplicity does not.  Neither exhausts Z^2; THEOREM C-1 covers Z^2 and
+  therefore settles both at once.
+  GL2(Z) elements enumerated with entries in [-3,3]: 232
+
+  TARGET (multiplicity): gamma_F passes the pinch twice -> E = [(np.int64(2), np.int64(1)), (np.int64(1), np.int64(0)), (np.int64(0), np.int64(1))],  p = (np.float64(0.4), np.float64(0.3), np.float64(0.3)),  index of Delta = 2
+  charge assignments (q11,q10,q01) in [-6,6]^3 equivalent to it under GL2(Z) x Z^2 x {+-1} and weight matching:  28
+  and the two are separated by a computable quantity -- lambda_A on a grid:
+     q= (1, 1, 1)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.800000
+     q= (2, 1, 1)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.800000
+     q= (1, 2, 1)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.749133
+     q= (1, 1, 2)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.779007
+     q= (2, 2, 1)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.881197
+     q= (3, 1, 1)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.800000
+     q= (1, 2, 2)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.800000
+     q= (2, 1, 2)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.600000
+     q= (1, 1, 4)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.923225
+     q= (1, 4, 1)  sup_{48x48 grid} | |Z_1|_charge - |Z_1|_mult | = 0.804877
+  closest charge assignment tested: q=(2, 1, 2) at sup-distance 0.600000 -- NOT ZERO.
+  generic schedule-B rate of the multiplicity configuration = -0.767507889  (= m(0.4+0.3X+0.3Y) by Theorem C-3, since it is
+  a 3-point rank-2 configuration).  SO SCHEDULE B AT A GENERIC CONNECTION CANNOT TELL
+  CHARGE FROM MULTIPLICITY EITHER; only schedule A and the resonant set can.

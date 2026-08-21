@@ -472,4 +472,5 @@ say("""
 
 with open("r4_frame.OUT.txt", "w") as fh:
     fh.write("\n".join(OUT) + "\n")
-print("\n[written r4_frame.OUT.txt]")
+# canonical self-writer marker: reproduce.sh norm() strips exactly '[written]' (grep -vx)
+print("\n[written]")

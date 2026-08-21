@@ -72,7 +72,11 @@ def center(B,tol=1e-8):
         for k,b in enumerate(B): M[:,k]=vec(g@b-b@g)
         rows.append(M)
     A=np.vstack(rows)
-    U,sv,Vh=np.linalg.svd(A)
+    # full_matrices=False: identity-preserving here (rows m = 256*n >= n always, so the
+    # reduced sv/Vh equal the full ones and the m<n null-space guard never fires) -- the
+    # full U at case 4 is 65536x65536 = 68.7 GB and made the script nonterminating; the
+    # sealed output was an EMPTY FILE because no run ever completed (T-35 fix).
+    U,sv,Vh=np.linalg.svd(A,full_matrices=False)
     ns=[Vh[i].conj() for i in range(len(Vh)) if (i>=len(sv) or sv[i]<tol*max(1.0,sv[0]))]
     return [sum(c[k]*B[k] for k in range(n)) for c in ns]
 

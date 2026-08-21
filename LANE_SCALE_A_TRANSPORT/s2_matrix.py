@@ -119,7 +119,7 @@ for G in CARRIERS:
         fixd += int(np.sum(mult ** 2)); alld += Q.shape[1] ** 2
     ce = census(G); ph_min = phi(isotypic(G, ce), ce['dims'])[2]
     say(f"  {G.name:<12}{D2:>7}{str(mult2):>34}{str(all(m%2==0 for m in mult2)):>10}"
-        f"{fixd/alld:>14.4f}{ph_min:>14.4f}{time.time()-t0:>7.1f}"
+        f"{fixd/alld:>14.4f}{ph_min:>14.4f}  ({time.time()-t0:.1f}s)"  # wall-clock in anchored (Ns) form so the harness norm() strips it; bare float was unmatched
         + ("" if okdec else "   <-- DECOMPOSITION SELF-CHECK FAILED"))
     scale_rows.append((G.name, G.abelian, D2, fixd / alld, ph_min, okdec))
 say("")

@@ -1,0 +1,303 @@
+T-50 DESIGN ONE V002 -- THE SAME-READ CONTRAST EXPONENT, EIGHT CLOSURES -- SEALED VERIFICATION RUN
+lane LANE_T50/V002 | date 2026-08-21 | master seed SeedSequence(20260821) | numpy 2.0.2
+model imported read-only from: /Users/bgm/MB Work/where-atoms-come-from/model
+PINNED (C7): GRID=[16, 32, 64, 128, 256, 512, 1024, 2048, 4096]  ALL disjoint pairs (>=16) x 4 placements  SECT=4096  NSECT>=256
+THE STATISTIC IS THE POOL: A(N) = median|D| over every disjoint pair x
+  placement -- the statistic, the guard, the control and the certificate all
+  read pools of this one construction (one object, one moment, one population;
+  a K-subsample statistic beside a pool certificate would be two different
+  objects, and the seam leaked between them -- measured in construction,
+  closed by this pinning).
+declared: kappa_void=8  MIN_POINTS=6  DENS_TOL_MED=0.02 on N>=64  bands (0.9, 1.1) / (0.35, 0.65)  xi>=0.25  2-SE rule  certificate B=400
+orientation (C3): polar Kerr microscopy model -- GRAINS/cell=64  PSF sigma=0.7 cells  read noise 0.05  edge margin 4 cells  252 sectors, cycle ['DATA', 'U', 'DCF', 'U', 'DC', 'U']
+interleave: REGISTERED ADDRESS-BALANCED role map, role W iff (s + s//16) even;
+  every address class s mod 16 appears in both roles (C5 rung 1's estimator).
+
+ANCHOR -- lineage to the sealed formation layer (model/geometry.py)
+  sealed-page rho under the model's own residual: min 0.9681335687351511 max 0.9797987440417644
+  (registered figures 0.9681335687351514 / 0.9797987440417643 -- MATCH)
+  per-cell value law identical to this lane's builder on sealed page 0: PASS
+
+R1 OCCUPANCY BASELINE -- 50 independent replicates, f=0.5 random data, the full
+   V002 machinery (rung-1 de-trend, density condition, control, certificate).
+    beta_WU               median   +0.9999   IQR [  +0.9993,   +1.0004]
+    beta_UU               median   +0.4949   IQR [  +0.4805,   +0.5051]
+    beta_WW               median   +0.4971   IQR [  +0.4875,   +0.5122]
+    xi=WU-UU              median   +0.5048   IQR [  +0.4947,   +0.5202]
+    median-density slope  median   -0.0001   IQR [  -0.0005,   +0.0003]
+    guard margin          median  +66.2668   IQR [ +63.4283,  +69.5278]
+    states {OK: 50} | B1 (point claim) TRUE 50/50 | falsifier (a) fires 0/50
+    certificate: bad-surrogate counts over the 50 reads: min 0 max 0
+
+R2 THE DENSITY CONDITION RESTATED TO THE STATISTIC'S OWN MOMENT (C1; closes
+   refuter A's D1). The registered statistic is median_k|D_k(N)|; for a
+   one-carrier write median_k|D_k(N)| = N_E*N*median_k f-hat_k(N) + O(noise) --
+   a monotone transform -- so the density condition reads THE SAME MOMENT of THE
+   SAME POPULATION: the MEDIAN per-block programmed fraction over ALL in-sector
+   block placements of every written sector, deterministic in the declared
+   pattern, trend-free to 0.02 on N >= 64. A sub-tolerance median trend can move
+   the fitted exponent by at most the tolerance itself: 0.02, five times inside
+   the 0.1 band half-width (the co-tuning, structural).
+   THERE IS NO MEAN CONDITION: over the offset-uniform placement population the
+   mean per-block f-hat equals the sector density identically at every N -- a
+   condition with no failing branch, the defect class this program removes
+   (D-8/INST-14). V001's mean check is REPLACED; the M3 family is caught below.
+
+   HONEST PATTERNS -- worst |median-placement slope| over 20 seeds each:
+     f=0.015            worst |slope| 0.0007
+     f=0.02             worst |slope| 0.0029
+     f=0.05             worst |slope| 0.0019
+     f=0.10             worst |slope| 0.0022
+     f=0.25             worst |slope| 0.0009
+     f=0.50             worst |slope| 0.0009
+     f=0.75             worst |slope| 0.0009
+     f=0.90             worst |slope| 0.0023
+     alternating        worst |slope| 0.0000
+     blocky 1.5f/0.5f   worst |slope| 0.0070
+   honest worst overall: 0.0070 (tolerance 0.02 sits 2.9x above it)
+
+   THE SKEW MASKS (refuter A's D1 killers, as declared literals, mask seed 20260821)
+   and the M3 record mask -- slope is DETERMINISTIC in the mask; 50 seeds each
+   through the full pipeline:
+     cascade 1.5/0.5      f=0.3064  slope +0.0361  states {VOID_DENSITY_MEDIAN: 50}
+       reads reaching any clause: 0/50 | falsifier fires: 0/50
+     cascade 1.6/0.4      f=0.2507  slope +0.0537  states {VOID_DENSITY_MEDIAN: 50}
+       reads reaching any clause: 0/50 | falsifier fires: 0/50
+     cascade 1.65/0.35    f=0.2212  slope +0.0615  states {VOID_DENSITY_MEDIAN: 50}
+       reads reaching any clause: 0/50 | falsifier fires: 0/50
+     cascade 1.7/0.3      f=0.1968  slope +0.0878  states {VOID_DENSITY_MEDIAN: 50}
+       reads reaching any clause: 0/50 | falsifier fires: 0/50
+     two-level 0.95/0.03  f=0.2610  slope +0.0806  states {VOID_DENSITY_MEDIAN: 50}
+       reads reaching any clause: 0/50 | falsifier fires: 0/50
+     M3 fixed record 512  f=0.0649  slope +0.0231  states {READS_UNWRITTEN: 50}
+       reads reaching any clause: 0/50 | falsifier fires: 0/50
+   smallest skew-mask slope 0.0361: the tolerance 0.02 sits 1.8x below it.
+   Under V001 these masks passed the mean-density check and fired registered
+   falsifier (b) up to 30/30 on correct physics (VERIFY_A attack_grid_strict:
+   cascade 1.65/0.35, 14-point grid, FIRES 30/30). Under V002 every one is
+   VOID_DENSITY_MEDIAN or READS_UNWRITTEN at rate 1.000 and NO read reaches a
+   clause. The closure is structural: the condition now pins the exact moment
+   the statistic reads, so a one-carrier pattern cannot trend the statistic's
+   typical block without trending the condition's own object.
+
+   CLAUSE (b) HONEST PAIR -- f=0.35 vs f=0.65 on the SAME part, 40 seeds:
+     both classes OK 40/40 | clause (b) fires 0/40
+
+R3 THE POINT CERTIFICATE (C7; closes refuter A's D4 and refuter B's K4 and
+   repair 7). The grid, pairing and placements are PINNED, killing the reader
+   freedom (K=8 / 8-point / sqrt2 grids are gone). Above the void guard there is
+   NO fixed kappa constant: the point-band sentence is asserted only for reads
+   whose OWN CERTIFICATE is clean -- B=400 surrogate ladders resampled from the
+   read's own W-U pair pool (carrying the read's own noise law AND programmed-
+   count shot noise), each run through EXACTLY the pipeline's guard and fit; one
+   surrogate below the band edge and the read is SEAM: measured, 2-SE falsifier
+   still armed, point-band sentence not asserted. Re-derived per reader, from the
+   reader's own draws -- no model constant transfers.
+   Seam ensembles, 150 seeds per f per noise law (Laplace and Student-t3 at
+   matched sigma answer B's attack 5 -- the guarantee is now the reader's own):
+     uniform  f=0.015  void 150 | OK   0 worst   --   | SEAM   0 worst   --   | fires 0
+     uniform  f=0.020  void 142 | OK   8 worst +1.0033 | SEAM   0 worst   --   | fires 0
+     uniform  f=0.030  void   0 | OK 150 worst +0.9881 | SEAM   0 worst   --   | fires 0
+     laplace  f=0.015  void 150 | OK   0 worst   --   | SEAM   0 worst   --   | fires 0
+     laplace  f=0.020  void 136 | OK  14 worst +0.9918 | SEAM   0 worst   --   | fires 0
+     laplace  f=0.030  void   0 | OK 150 worst +0.9955 | SEAM   0 worst   --   | fires 0
+     t3       f=0.015  void 150 | OK   0 worst   --   | SEAM   0 worst   --   | fires 0
+     t3       f=0.020  void 126 | OK  24 worst +0.9865 | SEAM   0 worst   --   | fires 0
+     t3       f=0.030  void   0 | OK 150 worst +0.9917 | SEAM   0 worst   --   | fires 0
+   Mid-density control (the attack-4 region), 50 seeds each, uniform law:
+     f=0.05  void  0 | OK 50 worst +0.9987 | SEAM  0 worst   --   | fires 0
+     f=0.10  void  0 | OK 50 worst +0.9922 | SEAM  0 worst   --   | fires 0
+   WORST CERTIFIED (OK) beta_WU ANYWHERE ABOVE: +0.9865 (band edge 0.9); falsifier
+   fires across every ensemble above: 0. On the pinned pool statistic a read
+   either reads as unwritten or certifies -- refuter B's +0.8022 and refuter A's
+   0.8815-0.8954 guard-passing families were creatures of the K=8..16 subset
+   statistic, and the pinning removed them. The SEAM state remains registered
+   and EXERCISED: a genuinely screening surface cannot certify and lands SEAM
+   with the 2-SE falsifier armed (the two-signed member of the sealed suite,
+   where clause (a) then fires at rate 1.000).
+
+R4 THE FIXED-PATTERN TREATMENT (C5; closes refuter B's K3 and refuter A's D3).
+   Two registered rungs. RUNG 1 (always on, same read): subtract per address
+   class the mean of the SAME READ'S unwritten sectors of that class -- removes
+   the named dominant systematics (wordline/layer structure, scan-line offsets),
+   which are ADDRESS-STRUCTURED. RUNG 2 (escalation, the part's own unwritten
+   sectors in a second preparation): erase the whole part, read it, subtract each
+   sector's calibration mean; removes ANY static per-sector pattern. The U-U
+   control band IS the fixed-pattern detector; INCONCLUSIVE_CONTROL is its named
+   outcome, and the INCONCLUSIVE precedence (C6) is wired into fire_a, so the
+   sealed-V001 defect -- fire_a firing on a correctly-accumulating part -- is
+   structurally gone: one implementation, states before fires.
+   iid per-sector offsets N(0,s) e/cell (refuter B's attack 1), 30 reps each:
+   s in e/cell | rung 1 only: states, fire_a | with rung 2: states, B1, fire_a
+     s=0.00  rung1 {OK: 30} fire_a 0
+            rung2 {OK: 30} B1 30/30 fire_a 0  worst |beta-1| 0.0014
+     s=0.05  rung1 {OK: 30} fire_a 0
+            rung2 {OK: 30} B1 30/30 fire_a 0  worst |beta-1| 0.0022
+     s=0.10  rung1 {INCONCLUSIVE_CONTROL: 3, OK: 27} fire_a 0
+            rung2 {OK: 30} B1 30/30 fire_a 0  worst |beta-1| 0.0033
+     s=0.20  rung1 {INCONCLUSIVE_CONTROL: 30} fire_a 0
+            rung2 {OK: 30} B1 30/30 fire_a 0  worst |beta-1| 0.0020
+     s=0.50  rung1 {INCONCLUSIVE_CONTROL: 30} fire_a 0
+            rung2 {OK: 30} B1 30/30 fire_a 0  worst |beta-1| 0.0021
+     s=1.00  rung1 {INCONCLUSIVE_CONTROL: 30} fire_a 0
+            rung2 {OK: 30} B1 30/30 fire_a 0  worst |beta-1| 0.0026
+   Sealed V001 at s=0.5-1.0 e: code fire_a 26-29/30 on a perfectly accumulating
+   part (refuter B, attack 1). V002: fire_a 0/30 at every s (precedence), the
+   read names its own state, and rung 2 RECOVERS THE VERDICT -- the protocol no
+   longer returns INCONCLUSIVE forever on real parts (A-D3 closed).
+   Address-structured pattern (deck profile), amplitude sweep, 30 reps each:
+     amp=0.5 e  no treatment {INCONCLUSIVE_CONTROL: 30} -> rung 1 {OK: 30}
+     amp=5.0 e  no treatment {READS_UNWRITTEN: 30} -> rung 1 {OK: 30}
+     amp=50.0 e  no treatment {READS_UNWRITTEN: 30} -> rung 1 {OK: 30}
+   Rung integrity on honest reads (no fixed pattern), 20 reps: rung 2 applied
+   anyway must not distort:
+     max |beta_WU shift| vs baseline median: 0.0019; all states OK: True
+   SCOPE, STATED: a per-sector-random response OFFSET that is not static across
+   the two preparations is indistinguishable inside one read from a physical
+   sector-mean difference; the control band detects it and the read registers
+   INCONCLUSIVE_CONTROL -- an insufficient-instrument outcome, named, never a
+   clause fire. Response GAIN nonuniformity scales pair prefactors and is caught
+   by the same control when it matters (measured outcome).
+
+R5 THE ORIENTATION HALF ON THE NAMED M-READING INSTRUMENT (C3; closes refuter
+   B's K1/K2, refuter A's D2). INSTRUMENT: polar Kerr microscopy (wide-field
+   MOKE imaging). WHAT IT MEASURES, VERIFIED BEFORE NAMING: the polar Kerr
+   rotation of reflected polarized light is proportional to the LOCAL out-of-
+   plane magnetization M_z within the optical spot and penetration depth -- the
+   uniform-film Kerr hysteresis loop is the standard demonstration that the
+   response at k=0 is NONZERO (a saturated uniform film gives the full rotation),
+   where every stray-field mapper (MFM, scanning Hall, NV) has transfer
+   exp(-|k|d)(1-exp(-|k|t)) = 0 at k=0. v_i = the raw analyzer-difference signal
+   per resolved cell, in the instrument's own units; the magneto-optic
+   proportionality is a prefactor and cancels from the exponent. REQUIREMENT:
+   bit-cell length >= the microscope's declared resolution -- the reader's own
+   writer sets the bit length (spin-stand / drive write clock), so this is a
+   preparation choice, not a device constant.
+   Model: cell = mean of 64 grain moments, optical PSF sigma 0.7 cells,
+   read noise 0.05; blocks sit >= 4 cells from sector boundaries.
+   k=0 SENSITIVITY, MEASURED ON THE MODEL: DC-sector interior mean map value
+     Kerr read:        DC +1.00015   AC-erased -0.00007
+     stray-field read: DC +0.00007   AC-erased -0.00014  (the K1 kill, reproduced)
+   GUARD SCOPE (C4; closes K2): the DATA sector carries NO void guard -- its
+   predicted state is screening, and V001's shared guard voided the prediction's
+   own subject. Admissibility is carried by the SAME READ'S DC-saturated positive
+   control (guard + accumulation band), the U-U control band, and the DC-free
+   voider. The density condition is occupancy-only: no programmed fraction exists
+   on an orientation surface; the orientation analogue is the declared write
+   pattern itself, verified from the reader's own write record.
+
+   BASELINE -- 50 reps, random data, honest Kerr read:
+     beta_DATA-U          median  +0.4973   IQR [ +0.4826,  +0.5163]
+     beta_UU              median  +0.5049   IQR [ +0.4916,  +0.5163]
+     beta_DC-U            median  +1.0000   IQR [ +0.9998,  +1.0001]
+     beta_DCF-U (voider)  median  +0.5043   IQR [ +0.4800,  +0.5180]
+     xi=DU-UU             median  -0.0068   IQR [ -0.0243,  +0.0154]
+     states {OK: 50} | B3 true 50/50 | fire_c 0/50
+     the voider ARMS on honest reads (beta_DCF-U in the control band): clause
+     (c) remains reachable -- and the same read shows the instrument seeing
+     accumulation at k=0 (beta_DC-U ~ 1).
+
+   THE IN-READ CROSSTALK VOIDER (C2; closes A-D2): a per-cell additive offset on
+   WRITTEN sectors only (topography/charging crosstalk, not magnetization),
+   40 reps per level -- refuter A measured clause (c) firing 13/40 at 0.10 and
+   34/40 at 0.20 per grain on a correctly-screening medium:
+     offset 0.02/grain: states {INCONCLUSIVE_CROSSTALK: 40} | fire_c 0/40
+     offset 0.05/grain: states {INCONCLUSIVE_CROSSTALK: 40} | fire_c 0/40
+     offset 0.10/grain: states {INCONCLUSIVE_CROSSTALK: 40} | fire_c 0/40
+     offset 0.20/grain: states {INCONCLUSIVE_CROSSTALK: 40} | fire_c 0/40
+     The crosstalk rides every written class equally; the DC-free-coded sectors
+     can only leave the control band through such an additive artifact, so the
+     voider trips and the read is INCONCLUSIVE_CROSSTALK -- fire_c 0/40 at every
+     level, closing D2's both measured fire channels.
+   BIASED ERASE +0.25/grain (V001 policed this by a scope CLAUSE; V002 detects
+   it -- the erase-mean artifact enters every written-minus-U contrast the same
+   way and trips the same voider), 30 reps:
+     states {INCONCLUSIVE_CROSSTALK: 30} | fire_c 0/30 (V001: 34-35/50 when the scope clause was ignored)
+   CLAUSE (c) IS TRIGGERABLE (the answer to 'a falsifier no instrument can
+   trigger'): data written 75%% one-way -- genuinely accumulating data -- through
+   the same Kerr model, 30 reps:
+     states {OK: 30} | fire_c 30/30 -- the clause fires when and only when the physics
+     it names is present, on the instrument the text names.
+   THE STRAY-FIELD MEMBER (K1's instrument, self-detected): the same surface read
+   through T(k) = exp(-|k|d)(1-exp(-|k|t)), d=1 cell, 30 reps:
+     states {INCONCLUSIVE_DC_CONTROL: 30} -- a reader on MFM/Hall/NV gets INCONCLUSIVE_DC_CONTROL from the
+     read's own positive control, never a silent void: the instrument requirement
+     is load-bearing and SELF-MEASURED.
+   SCAN-LINE FIXED PATTERN (K3's magnetic face) and rung 2, 20 reps each:
+     s=0.05  raw {INCONCLUSIVE_CONTROL: 20} -> rung 2 {INCONCLUSIVE_CROSSTALK: 1, OK: 19}
+     s=0.20  raw {INCONCLUSIVE_DC_CONTROL: 20} -> rung 2 {OK: 20}
+   EASY-AXIS TILT 30 deg (the COMP-4/INST-5 configuration), 20 reps:
+     beta_DATA-U median +0.4924 | beta_DC-U median +0.9994 -- tilt is a per-cell
+     prefactor; no squareness, no epsilon, no M_r/M_s anywhere in this design.
+
+R6 THE RAILED-POPULATION BRANCH (C8; closes refuter B's K5, refuter A's D5).
+   Erased population railed at the read floor (custody: read-retry scales floor
+   at GND; the erased distribution below GND is not resolved), 30 reps:
+     states {INCONCLUSIVE_RAILED: 30} | fire_a 0/30 | any nan reaching a decision: False
+     A_UU(16) = 0 reads INSUFFICIENT ACCESS: the guard is never evaluated (no
+     vacuous pass), nothing is fitted, the reader is told which access mode
+     suffices (per-cell analog read that resolves the erased distribution).
+
+R7 FALSE-FIRE RATE -- 200 honest seeds per clause, full V002 machinery:
+     clause (a): 0/200   clause (b): 0/200   clause (c): 0/200
+
+R8 COMMON-MODE OFFSET AND DRIFT (the T-50 constraint-1 sweep, carried and re-run
+   through V002; 10 reps per setting; contrast vs the UNTREATED raw single-
+   sector exponent -- the corruption the contrast is immune to. The pipeline's
+   rung-1 de-trend incidentally protects even the treated raw ladder against a
+   global offset, so the shadow is computed on the read AS TAKEN):
+     offset 0           contrast beta_WU  +1.0003   raw-W beta  +1.0002
+     offset +0.5 e      contrast beta_WU  +0.9999   raw-W beta  +1.0000
+     offset -0.5 e      contrast beta_WU  +1.0002   raw-W beta  +1.0001
+     offset +5 e        contrast beta_WU  +1.0003   raw-W beta  +1.0002
+     offset +50 e       contrast beta_WU  +1.0006   raw-W beta  +0.5004
+     drift 50 e span    contrast beta_WU  +0.9981   raw-W beta  +0.9994
+     offset 0           contrast beta_DU  +0.5158   raw-DATA beta  +0.5151
+     offset +0.05       contrast beta_DU  +0.4911   raw-DATA beta  +0.7851
+     offset +0.5        contrast beta_DU  +0.5095   raw-DATA beta  +1.0026
+     max contrast shift: occupancy 0.0022, orientation 0.0247 -> B4 (immunity): True
+
+R9 CONSTRAINT-2 TABLE -- the three moment choices on the SAME pool, one read
+   each:
+     occupancy W-U        median|D| +1.0002 | UNCENTRED D^2 +2.0005 | CENTRED var +0.9865
+     orientation DATA-U   median|D| +0.4894 | UNCENTRED D^2 +0.9787 | CENTRED var +0.9977
+     |D| separates 1 vs 1/2, uncentred D^2 separates 2 vs 1, centred variance
+     ~1 for BOTH encodings: excluded from the design and displayed here (D-15).
+   UNIT FREEDOM (INST-3): beta_WU in e units 0.9993936384 | x0.04 'V/e' 0.9993936384 | diff 3.22e-15
+
+R10 OCCUPANCY PATTERN-INDEPENDENCE over the CONDITION-PASSING patterns (the C1
+    quantifier re-derived: every pattern passing guard + density condition +
+    control), 20 reps each:
+     random f=0.10      beta_WU median  +1.0240  (n=20, OK 20)
+     random f=0.25      beta_WU median  +1.0010  (n=20, OK 20)
+     random f=0.50      beta_WU median  +0.9999  (n=20, OK 20)
+     random f=0.75      beta_WU median  +0.9999  (n=20, OK 20)
+     random f=0.90      beta_WU median  +0.9968  (n=20, OK 20)
+     alternating        beta_WU median  +1.0000  (n=20, OK 20)
+     blocky 1.5f/0.5f   beta_WU median  +1.0093  (n=20, OK 20)
+     max pairwise spread 0.0272 vs the clause-(b) threshold 0.2 -> B2: True
+
+GUARD-SCOPE TABLE (C4) -- which condition guards which clause; no unguarded
+clause, no clause reading a voided surface:
+  condition                          clause(a) clause(b) clause(c) point-claim
+  occ void guard (kappa_void=8)         yes       yes       --        yes
+  occ density-median (C1)               yes       yes       --        yes
+  occ control band / FP detector        yes       yes       --        yes
+  occ point certificate (C7)            --        OK-only   --        yes
+  occ railed branch (C8)                yes       yes       --        yes
+  ori DC positive control (C3/C4)       --        --        yes       --
+  ori U-U control band                  --        --        yes       --
+  ori DC-free voider (C2)               --        --        yes       --
+  (clause (a) fires in states OK and SEAM under the 2-SE rule; clause (b)
+  requires both classes OK; clause (c) requires state OK. The DATA sector
+  carries no void guard: its predicted state is screening.)
+
+DECISION BOOLEANS (model-side):
+  B1 occupancy accumulation (state OK, bands, xi):        50/50 TRUE
+  B2 pattern-independence (spread 0.0272 < 0.2):            True
+  B3 orientation screening + in-read positive control:    50/50 TRUE
+  B4 offset/drift immunity of the contrast (< 0.05):      True
+  B5 false fires over 600 honest reads:                   0
+  B6 worst CERTIFIED beta_WU across every seam ensemble:  +0.9865 (edge 0.9)
+
+END OF SEALED RUN

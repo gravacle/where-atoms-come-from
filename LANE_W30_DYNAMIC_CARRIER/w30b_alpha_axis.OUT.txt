@@ -41,8 +41,6 @@ W-30b v2   3x3 patch Z_2, physical dim 16. R = rim loop. EXACT Lindblad exponent
     g2= 20.00  max||[H,L_el]|| =    22.6274   ||[H,R]||/dim =   80.0000
 
   CONTROL D -- is the exponential right? Compare against fine-step RK integration.
-    g2= 0.00  RK4(200k steps) <R>(5) = 1.000000000   exact expm = 1.000000000   diff = 4.44e-15
-    g2= 0.50  RK4(200k steps) <R>(5) = 0.008885279   exact expm = 0.008885279   diff = 1.38e-15
-    g2= 2.00  RK4(200k steps) <R>(5) = 0.066375389   exact expm = 0.066375389   diff = 1.39e-14
-
-[exited with code 0]
+    g2= 0.00  RK4(20k steps)   <R>(5) = 1.000000000   exact expm = 1.000000000   diff = 4.44e-15
+    g2= 0.50  RK4(20k steps)   <R>(5) = 0.008885279   exact expm = 0.008885279   diff = 2.87e-15
+    g2= 2.00  RK4(20k steps)   <R>(5) = 0.066375389   exact expm = 0.066375389   diff = 4.52e-12

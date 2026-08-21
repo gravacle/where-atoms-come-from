@@ -23,9 +23,11 @@ for gs in (group_dihedral(4), group_Zn(2)):
     edims = []
     for val, P, m in es:
         chiE = np.array([np.trace(P @ g) for g in As])
-        mult = [int(round(float(((np.conj(table[r, cls_of[i]]) * chiE[i]).sum()
-                                 if False else sum(np.conj(table[r, cls_of[i]]) * chiE[i]
-                                                   for i in range(len(els)))) / len(els)).real))
+        # .real BEFORE float(): float(complex) emitted a ComplexWarning on stderr every run, and
+        # reproduce.sh captures stderr (2>&1) -- the cast already used the real part, value bit-identical.
+        mult = [int(round(float((((np.conj(table[r, cls_of[i]]) * chiE[i]).sum()
+                                  if False else sum(np.conj(table[r, cls_of[i]]) * chiE[i]
+                                                    for i in range(len(els)))) / len(els)).real)))
                 for r in range(len(di))]
         exact += sum(x * x for x in mult)
         edims.append(int(m))

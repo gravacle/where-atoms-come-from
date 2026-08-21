@@ -152,7 +152,7 @@ if __name__ == "__main__":
     t0 = time.time()
     s_res = -1 / (20 * mp.pi)
     res = run("sub", (s_res % 1, 11, 20), K_BIG, CPS_BIG)
-    print(f"    [{time.time()-t0:.1f}s]")
+    print(f"    ({time.time()-t0:.1f}s)")  # T-35: parens, not brackets, so the harness norm() catches this trailing duration
     for ci, (lab, p) in enumerate(CASES):
         print(f"\n    {lab}   m(P) = {mp.nstr(mP[lab],15)}   m(Q_(11,20)) = {mp.nstr(mQ[lab],15)}"
               f"   effect = {float(abs(mQ[lab]-mP[lab])):.3e}")
@@ -174,7 +174,7 @@ if __name__ == "__main__":
     aD = (2 - mp.cbrt(2)) % 1
     bD = (mp.cbrt(4) - 1) % 1
     dio = run("pair", (aD, bD), K_MED, CPS_MED)
-    print(f"    [{time.time()-t0:.1f}s]")
+    print(f"    ({time.time()-t0:.1f}s)")  # T-35: parens, not brackets, so the harness norm() catches this trailing duration
     for ci, (lab, p) in enumerate(CASES):
         row = "   ".join(f"K={cp:.0e}: {dio[cp][ci]:.10f} (err {float(abs(mp.mpf(dio[cp][ci])-mP[lab])):.1e})"
                          for cp in CPS_MED)
@@ -191,7 +191,7 @@ if __name__ == "__main__":
     aV = (-1 / (2 * mp.pi)) % 1
     bV = (mp.sqrt(2) / (2 * mp.pi)) % 1
     ver = run("pair", (aV, bV), K_MED, CPS_MED)
-    print(f"    [{time.time()-t0:.1f}s]")
+    print(f"    ({time.time()-t0:.1f}s)")  # T-35: parens, not brackets, so the harness norm() catches this trailing duration
     for ci, (lab, p) in enumerate(CASES):
         row = "   ".join(f"K={cp:.0e}: {ver[cp][ci]:.10f} (err {float(abs(mp.mpf(ver[cp][ci])-mP[lab])):.1e})"
                          for cp in CPS_MED)
@@ -205,7 +205,7 @@ if __name__ == "__main__":
     aW = (-1 / (2 * mp.pi)) % 1
     bW = (mp.mpf(3) / (2 * mp.pi)) % 1
     w = run("pair", (aW, bW), 50_000_000, [10 ** 7, 50_000_000])
-    print(f"    [{time.time()-t0:.1f}s]")
+    print(f"    ({time.time()-t0:.1f}s)")  # T-35: parens, not brackets, so the harness norm() catches this trailing duration
     for ci, (lab, p) in enumerate(CASES):
         row = "   ".join(f"K={cp:.0e}: {w[cp][ci]:.10f} (err {float(abs(mp.mpf(w[cp][ci])-mP[lab])):.1e})"
                          for cp in [10 ** 7, 50_000_000])

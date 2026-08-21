@@ -44,8 +44,9 @@ def orbit_min_dist(A1, A2, z1, z2, N, chunk=2_000_000):
     k0 = 0; best = np.inf
     while k0 < N:
         n = min(chunk, N - k0)
-        i1 = np.full(n, a1, dtype=np.uint64); i1[0] = cur1 + a1
-        i2 = np.full(n, a2, dtype=np.uint64); i2[0] = cur2 + a2
+        with np.errstate(over="ignore"):  # uint64 wraparound IS the intended mod-2^64 arithmetic; numpy's overflow warning lands at a buffering-dependent position in captured output (T-35)
+            i1 = np.full(n, a1, dtype=np.uint64); i1[0] = cur1 + a1
+            i2 = np.full(n, a2, dtype=np.uint64); i2[0] = cur2 + a2
         x1 = np.cumsum(i1, dtype=np.uint64); x2 = np.cumsum(i2, dtype=np.uint64)
         cur1 = x1[-1]; cur2 = x2[-1]
         d1 = np.abs((x1.astype(np.float64) - float(z1)) / TWO64)

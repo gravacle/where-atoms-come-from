@@ -107,7 +107,7 @@ def run(car, do_numeric=True, do_model=False):
           % (mults, sum(mults), "OK" if sum(mults) == dim else "MISMATCH"))
         rows = []
         for i, v in enumerate(fam):
-            sys.stderr.write("      record %d/%d  t=%.1fs\n" % (i + 1, k, time.time() - t0)); sys.stderr.flush()
+            # T-35: stderr progress marker removed -- reproduce.sh captures 2>&1, so it appeared as extra lines vs the sealed output
             R = xz_to_matrix(v, n)
             c_i = (np.linalg.norm(R - R.conj().T) < 1e-9 and
                    np.linalg.norm(R @ R - np.eye(dim)) < 1e-9)
@@ -135,7 +135,7 @@ def run(car, do_numeric=True, do_model=False):
             res["n_minimal_projections"] = len(M.projs)
         P("  numeric block: %.1fs" % (time.time() - t0))
     # clause (v) with its positive control IN THE SAME TABLE
-    sys.stderr.write("      clause v scan\n"); sys.stderr.flush()
+    # T-35: stderr progress marker removed -- reproduce.sh captures 2>&1, so it appeared as an extra line vs the sealed output
     P("  CLAUSE (v) region scan   [r=1 is the claim, r>=2 is the POSITIVE CONTROL]")
     P("     region_size  records_flippable_by_one_region   dim_of_local_logical_group")
     for r, f, d in clause_v_scan(car, fam, max_r=min(4, n - 1)):

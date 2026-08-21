@@ -1,0 +1,21 @@
+# DATED RECORDS — sealed outputs that are DELIBERATE DATED RECORDS, not regenerable captures.
+# reproduce.sh prints DATED-RECORD for these instead of byte-diffing, and counts them separately —
+# never as DIFFERS, never silently. Two honest reasons a seal can be a record rather than a capture:
+#   CORPUS  — the script audits the repository's own documents, so its sealed output is an audit of
+#             the corpus AS OF ITS SEALING DATE; the corpus has grown since, by design.
+#   RECORD  — the seal carries a deliberate lane verdict the script does not print (a discard
+#             annotation, a stdout-only capture of a crash that IS the finding).
+# Adding a line here is a REGISTRAR act and every addition is registered. Format: path<TAB>reason
+LANE_W10_B_MULTISET/b5_custody.py	CORPUS
+LANE_W10_B_MULTISET_REFUTE_1/r3_connections_and_custody.py	CORPUS
+LANE_W10_B_MULTISET_REFUTE_2/r5_report_vs_artifact.py	CORPUS
+LANE_W10_D_SCOPE/w10d_7_corpus.py	CORPUS
+LANE_W10_D_SCOPE_REFUTE_2/r2_4_coverage.py	CORPUS
+LANE_W11_R_CLOCK/w11c_6_bytes.py	CORPUS
+LANE_W11_R_STEELMAN_CROSS/x_g_citations.py	CORPUS
+LANE_W13_L_LITERATURE_REFUTE/RL8_grep_audit.py	CORPUS
+LANE_W15_BINARY_AUDIT/w15_count.py	CORPUS
+LANE_W17_R2_DISPOSITION/cutoff_guard.py	CORPUS
+LANE_W17_REGISTRAR_VERIFY/v17.py	CORPUS
+LANE_O78_FRACTON_NONABELIAN/o7_writer_shape.py	RECORD (seal carries the deliberate discard-verdict annotation the script never prints; deleting it would destroy the lane's own negative finding)
+LANE_PF3_ADMISSIBLE2/pf3_admissible.py	RECORD (stdout-only capture of the probe whose crash IS the dated finding; the harness's 2>&1 capture now sees the traceback the seal deliberately did not)
