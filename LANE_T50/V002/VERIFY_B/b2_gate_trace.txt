@@ -1,0 +1,61 @@
+REFUTER B -- V002: full gate trace of a low-density skew read
+
+A. cascade 1.5/0.5 at f0=0.05 (C1 slope +0.0194, UNDER the 0.02 tolerance):
+  [cascade 1.5/0.5 f0=0.05] seed 101
+    GATE 1 railed?  A_UU(16) = 11.3838  -> pass
+    pairs available: 128 (need >= 16)
+    GATE 2 void guard: first N_min with A_WU > 8*A_UU -> i0=3 (N=128)  margin=8.57  -> pass
+    GATE 3 density-median: slope on N>=64 = +0.0194  (tolerance 0.02)  -> PASS
+    GATE 4 control band: beta_UU = +0.5016 in [0.35, 0.65]?  -> pass
+    GATE 5 certificate: 383 guard-passing surrogates, 0 below-band  -> state OK
+    ===> beta_WU = +1.2577  (registered point-band prediction: [0.90, 1.10])
+         xi = +0.7562 (>= 0.25: True)
+         POINT-BAND PREDICTION HOLDS: False  <-- FALSE on this legal, certified, guard-passing one-carrier pattern
+
+  [cascade 1.5/0.5 f0=0.05] seed 102
+    GATE 1 railed?  A_UU(16) = 10.6099  -> pass
+    pairs available: 128 (need >= 16)
+    GATE 2 void guard: first N_min with A_WU > 8*A_UU -> i0=3 (N=128)  margin=8.02  -> pass
+    GATE 3 density-median: slope on N>=64 = +0.0194  (tolerance 0.02)  -> PASS
+    GATE 4 control band: beta_UU = +0.4866 in [0.35, 0.65]?  -> pass
+    GATE 5 certificate: 208 guard-passing surrogates, 0 below-band  -> state OK
+    ===> beta_WU = +1.2383  (registered point-band prediction: [0.90, 1.10])
+         xi = +0.7517 (>= 0.25: True)
+         POINT-BAND PREDICTION HOLDS: False  <-- FALSE on this legal, certified, guard-passing one-carrier pattern
+
+  [cascade 1.5/0.5 f0=0.05] seed 103
+    GATE 1 railed?  A_UU(16) = 12.9849  -> pass
+    pairs available: 128 (need >= 16)
+    GATE 2 void guard: first N_min with A_WU > 8*A_UU -> i0=3 (N=128)  margin=8.87  -> pass
+    GATE 3 density-median: slope on N>=64 = +0.0194  (tolerance 0.02)  -> PASS
+    GATE 4 control band: beta_UU = +0.4525 in [0.35, 0.65]?  -> pass
+    GATE 5 certificate: 377 guard-passing surrogates, 0 below-band  -> state OK
+    ===> beta_WU = +1.2201  (registered point-band prediction: [0.90, 1.10])
+         xi = +0.7676 (>= 0.25: True)
+         POINT-BAND PREDICTION HOLDS: False  <-- FALSE on this legal, certified, guard-passing one-carrier pattern
+
+  [cascade 1.5/0.5 f0=0.05] seed 104
+    GATE 1 railed?  A_UU(16) = 11.9905  -> pass
+    pairs available: 128 (need >= 16)
+    GATE 2 void guard: first N_min with A_WU > 8*A_UU -> i0=None (N=None)  margin=nan  -> READS_UNWRITTEN
+    -> state READS_UNWRITTEN (this seed); try another
+
+  [cascade 1.5/0.5 f0=0.05] seed 105
+    GATE 1 railed?  A_UU(16) = 12.2593  -> pass
+    pairs available: 128 (need >= 16)
+    GATE 2 void guard: first N_min with A_WU > 8*A_UU -> i0=None (N=None)  margin=nan  -> READS_UNWRITTEN
+    -> state READS_UNWRITTEN (this seed); try another
+
+B. THE SAME SHAPE at f0=0.5 (what V002's R2 tested) -- correctly voided:
+  [cascade 1.5/0.5 f0=0.50] seed 201
+    GATE 1 railed?  A_UU(16) = 11.7686  -> pass
+    pairs available: 128 (need >= 16)
+    GATE 2 void guard: first N_min with A_WU > 8*A_UU -> i0=0 (N=16)  margin=24.19  -> pass
+    GATE 3 density-median: slope on N>=64 = +0.0361  (tolerance 0.02)  -> VOID_DENSITY_MEDIAN
+    -> state VOID_DENSITY_MEDIAN
+
+The design verified skew masks VOID at f0=0.5 (R2) and low-density UNIFORM
+patterns PASS (R2 honest table, f=0.05 uniform slope 0.0019). It never tested
+the low-density SKEW corner, where the median trend falls under the absolute
+0.02 tolerance while the relative confound (slope/(medf*ln10)) does not -- and
+the point-band prediction is asserted and false there.

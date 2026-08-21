@@ -1,0 +1,37 @@
+REFUTER B -- V002 ATTACK 2: co-tuning is dimensionally wrong; certificate one-sided
+all reads through the LANE'S OWN sealed measure_occ / point_certificate
+
+PART A -- the exponent shift the C1 tolerance actually permits.
+Each row: a cascade mask at base density f0, its DETERMINISTIC C1 slope, its
+effective medf, the design's structural prediction slope/(medf*ln10), and the
+MEASURED certified beta_WU-1 (median of state-OK reads, 40 seeds). C1 PASS means
+the read is admitted by the density condition (|slope| <= 0.02).
+
+  mask                    C1slope    medf    pred dB    meas dB     C1 OK/40
+  cascade 1.4/0.6 f0=0.05  +0.0075  0.0391    +0.0831    +0.0490   PASS    40
+  cascade 1.5/0.5 f0=0.05  +0.0194  0.0396    +0.2134    +0.2330   PASS    22
+  cascade 1.5/0.5 f0=0.07  +0.0222  0.0552    +0.1751       +nan   void     0
+  cascade 1.6/0.4 f0=0.06  +0.0276  0.0391    +0.3069       +nan   void     0
+  cascade 1.5/0.5 f0=0.04  +0.0167  0.0327    +0.2211    +0.2242   PASS     4
+  cascade 1.4/0.6 f0=0.04  +0.0049  0.0312    +0.0676    +0.0721   PASS    39
+  cascade 1.3/0.7 f0=0.05  +0.0059  0.0352    +0.0723    +0.0471   PASS    40
+  cascade 1.5/0.5 f0=0.10  +0.0268  0.0728    +0.1599       +nan   void     0
+
+  The measured certified shift tracks slope/(medf*ln10), NOT the tolerance.
+  Every C1-PASS row above is a legal one-carrier pattern that is guard-passing,
+  density-median-trend-free, control-in-band and CERTIFIED (state OK), for which
+  the registered point-band prediction beta_WU in [0.9,1.1] is ASSERTED -- and
+  the measured certified beta_WU is outside it. This is refuter A's D1 family
+  (the automatic-REFUTED trigger the judgment names) returning through the gap
+  between an ABSOLUTE tolerance and a RELATIVE confound.
+
+PART B -- the point certificate guards only the LOWER band edge.
+point_certificate(wu_p, uu_A) counts a surrogate BAD iff its fitted slope <
+BAND_ACC[0] = 0.90. It never tests the upper edge 1.10. So a read whose own
+ladder tilts UP certifies OK. Demonstration on the attack-1 read (cascade
+1.5/0.5 f0=0.05), 40 seeds -- certified reads and where their beta_WU sits:
+  state OK 35/40 | of them beta_WU above 1.1: 35, in band: 0, below 0.9: 0
+  certificate bad-surrogate counts on these OK reads: min 0 max 0
+  Every certified read sits ABOVE the band, and the certificate reports 0 bad
+  surrogates on all of them: it cannot see an up-tilt. The point-band sentence
+  ([0.9, 1.1], two-sided) is protected by a one-sided certificate.

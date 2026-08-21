@@ -1,0 +1,17 @@
+REFUTER A2 -- ATTACK 1: clause (c) vs ordinary biased data
+sealed pipeline measure_ori, all registered guards; 40 seeds per bias
+bias b = 2*p1 - 1 (fraction of one-way excess in the reader's own data)
+
+  p1=0.50 (b=0.00): states {'OK': 40} | fire_c 0/40 | xi med -0.0017 | bDU med +0.5000
+  p1=0.52 (b=0.04): states {'OK': 40} | fire_c 0/40 | xi med +0.2266 | bDU med +0.7313
+  p1=0.55 (b=0.10): states {'OK': 40} | fire_c 40/40 | xi med +0.4171 | bDU med +0.9135
+  p1=0.60 (b=0.20): states {'OK': 40} | fire_c 40/40 | xi med +0.4866 | bDU med +0.9815
+  p1=0.65 (b=0.30): states {'OK': 40} | fire_c 40/40 | xi med +0.4931 | bDU med +0.9957
+  p1=0.75 (b=0.50): states {'OK': 40} | fire_c 40/40 | xi med +0.4991 | bDU med +0.9966
+
+Independent rebuild (my own Kerr model and fits, no lane code):
+  p1=0.55: my fire_c 20/20 | xi med +0.4049
+  p1=0.60: my fire_c 20/20 | xi med +0.4923
+  p1=0.75: my fire_c 20/20 | xi med +0.4862
+
+END ATTACK 1

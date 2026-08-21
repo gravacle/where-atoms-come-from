@@ -1,0 +1,16 @@
+REFUTER A2 -- ATTACK 3: seam re-sweep at real seed counts
+sealed measure_occ; hunting certified-below-band and weak certificates
+
+  uniform f=0.018 n=600 states {'READS_UNWRITTEN': 598, 'OK': 2}
+          OK 2 worst +0.9971 | below-band-certified 0 | SEAM 0 worst -- | fires 0 | cert_pass min 285 med 287
+  uniform f=0.020 n=600 states {'READS_UNWRITTEN': 559, 'OK': 41}
+          OK 41 worst +0.9947 | below-band-certified 0 | SEAM 0 worst -- | fires 0 | cert_pass min 191 med 295
+  uniform f=0.022 n=600 states {'OK': 255, 'READS_UNWRITTEN': 345}
+          OK 255 worst +0.9902 | below-band-certified 0 | SEAM 0 worst -- | fires 0 | cert_pass min 194 med 348
+  uniform f=0.025 n=600 states {'OK': 541, 'READS_UNWRITTEN': 58, 'INCONCLUSIVE_CONTROL': 1}
+          OK 541 worst +0.9907 | below-band-certified 0 | SEAM 0 worst -- | fires 0 | cert_pass min 202 med 400
+  t3      f=0.020 n=300 states {'OK': 38, 'READS_UNWRITTEN': 262}
+          OK 38 worst +0.9986 | below-band-certified 0 | SEAM 0 worst -- | fires 0 | cert_pass min 191 med 317
+
+TOTAL certified reads 877 | certified below 0.9: 0 | worst certified +0.9902
+END ATTACK 3

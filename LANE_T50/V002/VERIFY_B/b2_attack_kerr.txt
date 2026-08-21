@@ -1,0 +1,19 @@
+REFUTER B -- V002 ATTACK 3: Kerr multiplicative pattern-correlated weight
+measured = M*(1 + g*b), b = up-domain indicator; read otherwise the lane's own
+kerr model. Screening DATA (p1=0.5). Does the DCF voider catch it, or does
+clause (c) FIRE on correct screening physics? 30 seeds per level.
+
+  gain g | states | fire_c | beta_DATA-U med | beta_DCF-U med | beta_DC-U med
+  g=0.00  {OK: 30}  fire_c 0/30  +0.4989  +0.4985  +1.0000
+  g=0.05  {INCONCLUSIVE_CROSSTALK: 30}  fire_c 0/30  +0.6286  +0.9749  +1.0000
+  g=0.10  {INCONCLUSIVE_CROSSTALK: 30}  fire_c 0/30  +0.7639  +1.0025  +0.9998
+  g=0.20  {INCONCLUSIVE_CROSSTALK: 30}  fire_c 0/30  +0.8952  +0.9986  +0.9999
+  g=0.40  {INCONCLUSIVE_CROSSTALK: 30}  fire_c 0/30  +0.9725  +1.0000  +1.0000
+
+  Reading: if the DCF voider (INCONCLUSIVE_CROSSTALK) catches it, the design is
+  safe on this vector -- a named non-verdict. If clause (c) fires with state OK,
+  it is a false fire on correct screening physics (the risk-#1 exposure realised).
+
+PART C -- reseed of attack 1 (cascade 1.5/0.5 f0=0.05), fresh master seed,
+60 seeds: the point-band violation is not a seed artifact.
+  state OK 46/60 | certified beta_WU above 1.1: 46/46 | median +1.2335 | max +1.2691

@@ -1,0 +1,34 @@
+REFUTER B -- V002 ATTACK 1: C1 tolerance is absolute, the confound is relative
+masks built by the LANE'S OWN builders (mask seed 20260821); measured by the lane's
+own sealed measure_occ; 30 seeds per configuration; attack master seed 777001
+tolerance DENS_TOL_MED = 0.02 (absolute f units per decade)
+
+MASK LADDER -- deterministic density-median slope by base density f0:
+  (V002's sealed R2 measured these same shapes at f0=0.5: slopes
+   0.0361..0.0878, all VOID at 1.000. Watch the slope scale with f0.)
+  cascade 1.50/0.50 f0=0.50  f=0.3064  slope +0.0361  voided
+  cascade 1.50/0.50 f0=0.20  f=0.1594  slope +0.0392  voided
+  cascade 1.50/0.50 f0=0.10  f=0.0955  slope +0.0268  voided
+  cascade 1.50/0.50 f0=0.05  f=0.0520  slope +0.0194  PASSES C1
+  cascade 1.60/0.40 f0=0.50  f=0.2507  slope +0.0537  voided
+  cascade 1.60/0.40 f0=0.20  f=0.1321  slope +0.0465  voided
+  cascade 1.60/0.40 f0=0.10  f=0.0820  slope +0.0366  voided
+  cascade 1.60/0.40 f0=0.05  f=0.0481  slope +0.0243  voided
+  cascade 1.70/0.30 f0=0.50  f=0.1968  slope +0.0878  voided
+  cascade 1.70/0.30 f0=0.20  f=0.1057  slope +0.0601  voided
+  cascade 1.70/0.30 f0=0.10  f=0.0713  slope +0.0480  voided
+  cascade 1.70/0.30 f0=0.05  f=0.0432  slope +0.0311  voided
+
+UNIFORM f=0.50 PARTNER: OK 30/30  beta_WU median +1.0001
+
+THE GUARD-PASSING SKEW FAMILY -- full sealed pipeline per read:
+  cascade 1.50/0.50 f0=0.05  states {OK: 20, READS_UNWRITTEN: 10}
+    OK (CERTIFIED) 20/30  beta_WU median +1.2322  IQR [+1.2204, +1.2415]  max +1.2478
+    density-median slope of these OK reads: median +0.0194 (tolerance 0.02)
+    POINT-BAND VIOLATIONS among CERTIFIED reads: above 1.1: 20/20, below 0.9: 0/20
+    CLAUSE (b) vs uniform f=0.5 (both OK, registered rule): FIRES 0/600 pairings  fire margin median -0.1239
+
+SUMMARY: certified point-band violations 20; clause-(b) fires on legal
+one-carrier pattern pairs 0. Certificate one-sidedness check: point_certificate
+counts a surrogate bad only if its fitted slope < 0.90 (the lower edge);
+an up-tilted ladder certifies OK by construction.

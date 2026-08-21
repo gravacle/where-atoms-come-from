@@ -1,0 +1,12 @@
+REFUTER A2 -- ATTACK 4: multiplicative class artifacts, sealed measure_ori
+
+  gain on all written (DATA,DCF,DC)  g=0.05 states {'OK': 20} | fire_c 0/20 | xi med +0.0072
+  gain on all written (DATA,DCF,DC)  g=0.20 states {'OK': 20} | fire_c 0/20 | xi med -0.0012
+  gain on all written (DATA,DCF,DC)  g=1.00 states {'OK': 20} | fire_c 0/20 | xi med -0.0053
+  gain on DATA only (pattern-corr.)  g=0.20 states {'OK': 20} | fire_c 0/20 | xi med -0.0117
+  gain on DATA only (pattern-corr.)  g=1.00 states {'OK': 20} | fire_c 0/20 | xi med -0.0021
+
+(a multiplicative artifact scales a screening contrast without creating
+ accumulation: expected no fire, no void -- the artifact is INVISIBLE to
+ the voider, exactly the design's named residual exposure; measured here)
+END ATTACK 4

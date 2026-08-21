@@ -1,0 +1,116 @@
+REFUTER A (COMPUTATION) -- T-50 DESIGN ONE V002 -- VERIFY_A2 -- 2026-08-21
+Charter: default REFUTED; a falsifier firing on correct physics = REFUTED.
+Read-first consumed in full: JUDGMENT.txt, both V001 refuter verdicts + working,
+sealed t50_design.md/t50_contrast.py, ERRATUM_REFUTED.json, C72_BRIEF_V001.md,
+the C-72 GROUNDED cell, all five V002 deliverables + sidecars.
+
+VERDICT: REFUTED.
+
+REPRODUCTION AND SEALS (verified, not taken on report)
+- All five .sha256 sidecars match (v2_design.md 736bd070.., v2_pipeline.py
+  3d81297d.., v2_mutations.py e6200ab2.., v2_run.txt 96a468ce..,
+  v2_mutations.txt bb569b8d..).
+- v2_pipeline.py and v2_mutations.py re-run by me: BIT-IDENTICAL to both sealed
+  outputs (diff empty, exit 0 both). repro_* files in this directory.
+- Independent rebuild from the registered TEXT (a1_rebuild.py, my own code):
+  beta_WU +0.9997 (lane +0.9999), beta_UU +0.4888 (+0.4949), xi +0.5099
+  (+0.5048), B1 30/30, fires 0. The lane's four skew masks + M3: my own
+  deterministic median ladder reproduces the sealed slopes EXACTLY (+0.0361,
+  +0.0878, +0.0806, +0.0231) -> all VOID, confirming C1 against the D1 family.
+
+THE KILLS
+
+K1 (a2_databias.py) -- CLAUSE (c) FIRES ON ORDINARY BIASED DATA AT RATE 1.000.
+The orientation prediction (design section 3) predicts screening only "for
+random AND DC-free-coded data", but clause (c) as registered (section 4), as
+scoped (the guard-scope table lists only the DC control, U-U control, DCF
+voider), and as implemented (measure_ori never reads the declared pattern)
+carries NO condition on the DATA class's balance. The C-72 cell itself says
+orientation encoding accumulates in proportion to one-way writing -- so a
+biased payload accumulating is the MECHANISM WORKING. Measured on the sealed
+pipeline, all guards green, state OK: p1=0.55 (10% one-way excess): fire_c
+40/40; p1=0.60: 40/40; p1=0.75: 40/40; boundary p1=0.53: 4/30, p1=0.54: 28/30.
+Confirmed with my own independent Kerr rebuild: 20/20 at p1=0.55/0.60/0.75.
+Real payloads (headers, padding, unscrambled spin-stand patterns) routinely
+carry >6-8% DC content; nothing registered forbids or detects it. The design's
+own MU11 seals this fire at 1.000 and presents it as the triggerability
+answer -- "fires when and only when the physics it names is present" conflates
+"accumulation present" with "claim false". Prediction and falsifier quantify
+over different data sets: the B-K2/COMP-3 defect (two honest readers compute
+different reachable/fire sets), now on the fire side, and a registered
+falsifier firing on correct physics: the automatic-REFUTED trigger.
+
+K2 (a3_masks.py) -- THE CERTIFIED POINT-BAND SENTENCE IS FALSE FOR LEGAL
+DECLARED LITERALS. The C1 condition checks the median ladder only on N >= 64;
+the exponent fit starts at the guard point (N=16). Periodic island literals
+(period dividing 64/128) make every checked window's count EXACTLY constant --
+checked slope +0.00000, the condition passes with zero margin consumed --
+while deterministically suppressing the unchecked N=16/32 fit points. The
+point certificate counts only surrogates fitting BELOW the lower band edge
+(point_certificate: `< BAND_ACC[0]`): the upper edge is uncertified, and the
+surrogates inherit the same bend, so the reads CERTIFY. Sealed pipeline,
+30 seeds per mask, all states OK, fire_a 0:
+  island P=64  L=18: certified beta range [+0.9864, +1.1600], B1 fails 7/30
+  island P=64  L=20: [+1.0100, +1.1666], med +1.0868, B1 fails 9/30
+  island P=128 L=50: [+1.0114, +1.2192], B1 fails 11/30
+  island P=128 L=52: [+1.0157, +1.2116], med +1.1230, B1 fails 19/30
+  hole   P=64  L=17: [+0.9683, +0.9802], med +0.9730
+The registered sentences "beta_WU = 1 within [0.9, 1.1] ... for every
+certified guard-passing data pattern" and "the exponent is
+pattern-INDEPENDENT" are measurably false (certified medians move 0.973 ->
+1.123; single certified reads to +1.219) for one-carrier patterns passing
+every registered condition. No clause reaches it: clause (b) island-vs-uniform
+on the same part, sealed machinery: |delta beta| med 0.0968, fires 0/30 (the
+excursion lives at the low-N points both patterns share the SE penalty on).
+This is the B-K4 family -- a universal registered sentence false for
+compliant readers -- which the T-50 judgment scored as a kill in V001. The
+design's C1 claim "the channel is closed identically, not at a measured
+power" is thereby overstated: below N=64 the channel is open, capped only by
+the void-guard floor at the single first-admissible point and the periodic
+median symmetry at P/2 (a measured cap, ~+0.22 at the worst certified read).
+
+WHAT SURVIVED (accumulation directive: measured, named)
+- C7/the pool pinning + certificate, LOWER edge, at real seed counts
+  (a4_seam.py): 877 certified reads across f=0.018-0.025 uniform + t3 at 600
+  (300) seeds per point: certified-below-0.9 count 0; worst certified beta_WU
+  +0.9902; SEAM 0; fires 0; weakest certificate cert_pass 191/400. My V001
+  D4 family (guard-passing 0.8815-0.8954) is confirmed gone.
+- C1 vs the ENTIRE declared-skew family of my V001 kill: every cascade/
+  two-level/M3 mask VOID at deterministic slopes matching my own ladder.
+- C2: additive class crosstalk and biased erase void, never fire (verified in
+  the sealed run I reproduced bit-identical); multiplicative gain artifacts
+  (all-written and DATA-only, g=0.05-1.0, a5_gain.py): no false fires, no
+  voids -- exactly the conservative behavior honest-risk 1 names.
+- C5/C6: fire_a = 0 on every read I ran anywhere (incl. all mask and seam
+  ensembles); the precedence assert never tripped.
+- C8, anchor, R1/R5 baselines, R8/R9 architecture: confirmed.
+
+RESIDUAL DEFECTS (non-kill)
+ 1. INSUFFICIENT_GEOMETRY is a reachable pipeline state absent from the
+    registered state list (C6/C8 text) -- code-vs-text divergence, non-firing.
+ 2. Rung 2's calibration read injects per-sector mean noise that raises
+    beta_UU by ~+0.06 (my rebuild: 0.4888 -> 0.5575), consuming ~40% of the
+    control band's upper headroom; R4 displays only the beta_WU shift
+    (0.0019). Lost-verdict exposure on noisier instruments, never a false
+    fire -- but undisplayed.
+ 3. Design R5/MU11 text: "when and only when the physics it names is present"
+    -- the "only when" is false (K1).
+
+BOUNDED REPAIRS NAMED (the next step; both are text+suite, not new designs)
+ R1. Register the orientation data-balance condition the design already half
+     names (C4: "the declared write pattern itself, verified from the reader's
+     own write record"): a threshold on the write record's one-way excess
+     co-tuned against the measured fire boundary (b ~ 0.06-0.08), a named
+     non-firing state (e.g. VOID_DATA_BALANCE) wired before fire_c, and two
+     suite members (balanced: no fire; biased: voided at 1.000, 0 fires).
+ R2. Certify BOTH band edges in point_certificate and extend the density-
+     median condition to the fit's own window (or pin the fit start at N=64),
+     re-measuring the honest sparse-pattern median bias at N=16-32 for the
+     co-tuning; add a periodic-island literal to the mutation suite.
+V003 (or V002.1) then faces both refuters again.
+
+FILES: a1_rebuild.py/.txt, a2_databias.py/.txt, a2b_bias_boundary.txt,
+a3_masks.py/.txt, a4_seam.py/.txt, a5_gain.py/.txt, repro_pipeline.txt,
+repro_mutations.txt, repro_*_diff.txt (empty = bit-identical).
+
+REFUTER A -- END

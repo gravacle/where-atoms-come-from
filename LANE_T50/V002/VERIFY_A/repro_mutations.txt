@@ -1,0 +1,84 @@
+T-50 DESIGN ONE V002 -- ADVERSARIAL MUTATION SUITE -- SEALED RUN
+suite master seed SeedSequence(50002) | 30 seeds per member | numpy 2.0.2
+bar: every structural decision fails at rate 1.000 under its designated
+member; invariance rows must NOT flip (0.000) with the raw shadow displayed;
+the C6 precedence invariant is asserted on every read (a fire in a non-
+OK/SEAM state aborts this suite).
+
+M0 BASELINE (no mutation) -- the suite's own honest branch:
+   occupancy: state OK 30/30 = 1.000 | B1 30/30 = 1.000 | fires 0
+   orientation: state OK 30/30 = 1.000 | B3 30/30 = 1.000 | fires 0
+
+MU1 TWO-SIGNED WRITE (occupancy behaving like orientation) -- designated kill
+    of decision S1 (B1, the accumulation claim):
+    B1 FLIPS 30/30 = 1.000 | falsifier (a) fires 30/30 = 1.000 | beta_WU median +0.4928
+MU2 NON-ZERO-MEAN RESIDUAL AND COMMON-MODE OFFSET -- INVARIANCE rows (the
+    T-50 constraint-1 architecture: decisions must NOT move; the raw statistic's
+    corruption is displayed as the shadow):
+    (the shadow is the UNTREATED raw single-sector exponent -- the corruption
+    the contrast is immune to; the treated pipeline never sees it):
+    mu=+2 e        B1 flips 0/30 = 0.000 | untreated-raw shadow beta  +0.9998
+    mu=+20 e       B1 flips 0/30 = 0.000 | untreated-raw shadow beta  +0.9999
+    offset +0.5 e  B1 flips 0/30 = 0.000 | untreated-raw shadow beta  +0.9999
+    offset +50 e   B1 flips 0/30 = 0.000 | untreated-raw shadow beta  +0.5119
+MU3 FIXED 512-CELL RECORD IN GROWING BLOCKS (the M3 counterexample, as the
+    declared literal mask) -- designated kill of the guard/density pair:
+    VOIDED (READS_UNWRITTEN or VOID_DENSITY_MEDIAN) 30/30 = 1.000 | fires 0 | states {READS_UNWRITTEN: 30}
+MU4-MU6 THE SKEW MASKS (refuter A's D1; the judge's carried density-skew
+    member) -- designated kills of decision S2 (the density-median condition):
+    MU4 cascade 1.5/0.5      VOIDED 30/30 = 1.000 | fires 0 | states {VOID_DENSITY_MEDIAN: 30}
+    MU5 cascade 1.7/0.3      VOIDED 30/30 = 1.000 | fires 0 | states {VOID_DENSITY_MEDIAN: 30}
+    MU6 two-level 0.95/0.03  VOIDED 30/30 = 1.000 | fires 0 | states {VOID_DENSITY_MEDIAN: 30}
+MU7 IID PER-SECTOR FIXED PATTERN s=0.5 e/cell (refuter B's K3 level 5x; the
+    judge's carried fixed-pattern member) -- designated kill of decision S4
+    (the control-band fixed-pattern detector), rung 1 only:
+    INCONCLUSIVE_CONTROL 30/30 = 1.000 | fires 0 (sealed V001: fire_a 26/30 here)
+    ...and rung 2 (the calibration read) RECOVERS the verdict:
+    rung-2 B1 recovery 30/30 = 1.000
+MU8 RAILED ERASED POPULATION (K5/D5) -- designated kill of decision S5
+    (the insufficient-access branch):
+    INCONCLUSIVE_RAILED 30/30 = 1.000 | fires 0 | no nan reaches any decision
+MU9 STRAY-FIELD INSTRUMENT (K1: MFM/Hall/NV transfer, T(0)=0, d=1 cell) --
+    designated kill of decision S6 (the orientation positive control):
+    INCONCLUSIVE_DC_CONTROL 30/30 = 1.000 -- the named-instrument requirement is
+    load-bearing and self-measured: a stray-field reader is told, by the read's
+    own control, that this instrument cannot run the protocol.
+MU10 CLASS-CORRELATED CROSSTALK (A-D2: +0.10 and +0.20 per grain on written
+    sectors) -- designated kill of decision S7 (the DC-free voider, C2):
+    offset 0.10: INCONCLUSIVE_CROSSTALK 30/30 = 1.000 | fire_c 0 (V001: 13/40)
+    offset 0.20: INCONCLUSIVE_CROSSTALK 30/30 = 1.000 | fire_c 0 (V001: 34/40)
+MU11 GENUINELY ACCUMULATING DATA (75% one-way): clause (c)'s OWN firing branch
+    -- the falsifier is triggerable on the named instrument:
+    state OK 30/30 = 1.000 | fire_c 30/30 = 1.000
+MU12 BIASED ERASE +0.25/grain (V001 policed by scope clause; V002 detects):
+    INCONCLUSIVE_CROSSTALK 30/30 = 1.000 | fire_c 0 (V001: fired 34-35/50 when the
+    scope clause was ignored -- the clause is replaced by a detector)
+
+==========================================================================
+DESIGNATION MATRIX -- decision x designated member -> achieved (bar):
+  M0-occ all-pass              all OK, B1 true, 0 fires MET
+  M0-ori all-pass              all OK, B3 true, 0 fires MET
+  S1 <- MU1                    flip 1.000               MET
+  S1 fire <- MU1               fire 1.000               MET
+  S-inv <- MU2 mu=+2 e         flip 0.000               MET
+  S-inv <- MU2 mu=+20 e        flip 0.000               MET
+  S-inv <- MU2 offset +0.5 e   flip 0.000               MET
+  S-inv <- MU2 offset +50 e    flip 0.000               MET
+  S3 <- MU3                    voided 1.000, 0 fires    MET
+  S2 <- MU4                    voided 1.000, 0 fires    MET
+  S2 <- MU5                    voided 1.000, 0 fires    MET
+  S2 <- MU6                    voided 1.000, 0 fires    MET
+  S4 <- MU7                    detect 1.000, 0 fires    MET
+  S4 rung2 recovery            recover 1.000            MET
+  S5 <- MU8                    detect 1.000, 0 fires    MET
+  S6 <- MU9                    detect 1.000             MET
+  S7 <- MU10 c=0.10            void 1.000, 0 fires      MET
+  S7 <- MU10 c=0.20            void 1.000, 0 fires      MET
+  S8 <- MU11                   fire 1.000               MET
+  S7 <- MU12                   void 1.000, 0 fires      MET
+
+SUITE VERDICT: ALL DESIGNATED CELLS MET -- every structural decision has a
+measured failing branch at its designated rate; the invariance rows hold
+with the raw shadow shown; no fire boolean was ever True outside the
+registered firing states (asserted on every read of every member).
+END OF MUTATION SUITE

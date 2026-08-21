@@ -1,0 +1,38 @@
+REFUTER A2 -- ATTACK 2: periodic island literals vs the C1 window
+deterministic median ladder (V.dens_med_ladder), then 30 seeds through
+the sealed measure_occ; DENS_TOL_MED=0.02 on N>=64
+
+  island P=64 L=18   f=0.2812  fmed ladder 0.0625 0.2812 0.2812 0.2812 0.2812 0.2812 0.2812 0.2812 0.2812
+                     checked-window slope +0.00000 (PASSES)
+                     states {'OK': 30} | fire_a 0/30 | B1 23 | beta med +1.0438 | certified range [+0.9864, +1.1600]
+
+  island P=64 L=20   f=0.3125  fmed ladder 0.1250 0.3125 0.3125 0.3125 0.3125 0.3125 0.3125 0.3125 0.3125
+                     checked-window slope +0.00000 (PASSES)
+                     states {'OK': 30} | fire_a 0/30 | B1 21 | beta med +1.0868 | certified range [+1.0100, +1.1666]
+
+  island P=128 L=50  f=0.3906  fmed ladder 0.0625 0.2812 0.3906 0.3906 0.3906 0.3906 0.3906 0.3906 0.3906
+                     checked-window slope +0.00000 (PASSES)
+                     states {'OK': 30} | fire_a 0/30 | B1 19 | beta med +1.0608 | certified range [+1.0114, +1.2192]
+
+  island P=128 L=52  f=0.4062  fmed ladder 0.1250 0.3125 0.4062 0.4062 0.4062 0.4062 0.4062 0.4062 0.4062
+                     checked-window slope +0.00000 (PASSES)
+                     states {'OK': 30} | fire_a 0/30 | B1 11 | beta med +1.1230 | certified range [+1.0157, +1.2116]
+
+  island P=128 L=54  f=0.4219  fmed ladder 0.1875 0.3438 0.4219 0.4219 0.4219 0.4219 0.4219 0.4219 0.4219
+                     checked-window slope +0.00000 (PASSES)
+                     states {'OK': 30} | fire_a 0/30 | B1 18 | beta med +1.0713 | certified range [+1.0135, +1.2090]
+
+  island P=128 L=60  f=0.4688  fmed ladder 0.3750 0.4375 0.4688 0.4688 0.4688 0.4688 0.4688 0.4688 0.4688
+                     checked-window slope +0.00000 (PASSES)
+                     states {'OK': 30} | fire_a 0/30 | B1 30 | beta med +1.0274 | certified range [+0.9952, +1.0918]
+
+  hole   P=64 L=17   f=0.7344  fmed ladder 1.0000 0.7500 0.7344 0.7344 0.7344 0.7344 0.7344 0.7344 0.7344
+                     checked-window slope +0.00000 (PASSES)
+                     states {'OK': 30} | fire_a 0/30 | B1 30 | beta med +0.9730 | certified range [+0.9683, +0.9802]
+
+CLAUSE (b): island literal (W1) vs uniform f=0.5 (W2), same part, same
+read, sealed machinery (measure_occ with wsel/shared as measure_occ2):
+  states (W1,W2): {('OK', 'OK'): 30}
+  |delta beta| med 0.0968  fire margin med +0.0089  clause (b) FIRES 0/30
+
+END ATTACK 2

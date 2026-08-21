@@ -10622,3 +10622,33 @@ stage moves are registrar acts with register entries; the grid is a VIEW of the 
 never a second source of truth. Wired into `on_finding.sh` beside the status and plan grids
 (byte-for-byte regeneration + the refusal must hold). This grid is not the ROAD list and does not
 replace it — it is the claim-level companion the ROAD's tasks serve.
+
+---
+
+## T-50 V002 — **REFUTED BY BOTH REFUTERS; THE JUDGE RULES ONE MORE NAMED REPAIR, AND THE TERMINAL BOUNDARY IS REGISTERED HERE, BEFORE V003 RUNS** (`LANE_T50/V002/`, sealed)
+
+Design One V002 carried the eight closures and fell to **one family plus one**: B-K1 and A-K2 are the
+V001 density-shape confound returned through two gaps the new C1 condition left open — it bounded the
+ABSOLUTE density-median slope where the exponent confound is RELATIVE (`slope/(medf·ln10)`), and its
+window started at N=64 while the fit started at the guard point — enabled by B-K2, the one-sided
+point certificate. A-K1: orientation falsifier (c) fires at rate 1.000 on ordinarily biased data the
+prediction makes no claim about — healthy physics firing a falsifier, the automatic-REFUTED trigger.
+**Judge-verified as facts of the sealed pipeline text itself** (line numbers in the judgment), and
+both refuters killed through the lane's own sealed instruments.
+
+**The branch was scored, not waved off.** Four refuted protocol texts now stand. "No runnable form"
+is NOT taken, for measured reasons: each kill has a **named identity-level repair** (the decisive
+one: `beta_WU − 1` EQUALS the relative trend of `medf` over the fit's own window, so bounding that
+quantity bounds the confound itself, not a corner of it); the kept core contradicted the no-form
+statement for the **third consecutive judgment** (independent rebuild from the registered text alone
+`beta_WU +0.9997`; 877/877 certified honest reads, worst `+0.9902`, **zero false occupancy fires in
+any round including under the kills**); and **the orientation half survived whole** — polar Kerr at
+k=0 sound, the design's own named worst risk caught by the read's own DC-free voider at every gain.
+
+**THE TERMINAL BOUNDARY, registered so the next judgment inherits a closed choice:** if V003 falls
+to **another D1-family kill**, the outcome is the **fallback rescope** — the falsifier-grade 2-SE
+claim, which has never fired falsely in any round, becomes the registered prediction, with the point
+band scoped or withdrawn — **and never "no runnable form."** The judge's §8 flag stands for the
+principal's eventual ruling: whether that fallback is an acceptable landing zone need not be decided
+now; proceeding with V003 requires no ruling under the standing T-50 commission. C-72 does not
+return to `PROVED`; the DONE_WHEN's conjunction fails on half (a) regardless of the landed half (b).

@@ -1,0 +1,18 @@
+REFUTER A2 -- INDEPENDENT REBUILD (my code, from the registered text)
+
+R1 cross-check: 30 reads f=0.5, full machinery, B=200 certificate:
+  beta_WU med +0.9997 (lane +0.9999) | beta_UU med +0.4888 (lane +0.4949) | xi med +0.5099 (lane +0.5048)
+  states {'OK': 30} | B1 30/30 | fires 0
+
+R2 cross-check: my deterministic median ladder on the lane's skew masks:
+  cascade 1.5/0.5  slope +0.0361 -> VOID (lane: VOID at 1.000)
+  cascade 1.7/0.3  slope +0.0878 -> VOID (lane: VOID at 1.000)
+  two-level        slope +0.0806 -> VOID (lane: VOID at 1.000)
+  M3 record        slope +0.0231 -> VOID (lane: VOID at 1.000)
+
+RUNG-2 INJECTION CHECK (my worry: calibration-mean noise ~N*sd/64*sqrt2
+enters the pools; does beta_UU stay in band?): 15 honest reads, rung 2
+applied with a fp=0 calibration read:
+  beta_UU med +0.5575 (no-rung2 ~0.495; band [0.35,0.65]) | beta_WU med +1.0000
+
+END REBUILD

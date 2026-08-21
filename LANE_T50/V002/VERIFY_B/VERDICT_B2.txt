@@ -1,0 +1,171 @@
+REFUTER B -- THE INSTRUMENT -- T-50 DESIGN ONE V002 (THE SAME-READ CONTRAST EXPONENT,
+EIGHT CLOSURES). DATE 2026-08-21. Default REFUTED. Charter: a physicist anywhere runs
+this from the protocol alone; sweep every free choice; a falsifier no instrument can
+trigger, or a PREDICTION that is false on ordinary correct physics, is REFUTED.
+
+VERDICT: REFUTED.
+
+Localized. The ORIENTATION half survived every instrument attack I could construct
+(below). The OCCUPANCY half -- the runnable NAND primary both prior refuters kept --
+is refuted: the registered POINT-BAND PREDICTION is false on a legal, certified,
+guard-passing one-carrier pattern. This is refuter A's D1 family (the automatic-
+REFUTED trigger the judgment names, JUDGMENT.txt sec.2) returning through a gap the
+eight closures did not cover: C1 bounds an ABSOLUTE density trend while the exponent
+confound is RELATIVE.
+
+FILES IN THIS DIRECTORY
+  b2_repro_run.txt / b2_repro_mut.txt -- full rerun of the sealed pipeline and the
+     mutation suite. Pipeline BODY bit-identical to v2_run.txt (diff empty below the
+     two date/seed header lines); suite bit-identical to v2_mutations.txt; suite exit 0.
+     The seals are honest and deterministic. Sidecars verified (all five match).
+  b2_attack_scale.py/.txt     -- the C1 tolerance/scale gap on the lane's own masks
+  b2_attack_cotuning.py/.txt  -- the co-tuning claim measured false; certificate one-sided
+  b2_gate_trace.py/.txt       -- one low-density skew read traced through EVERY gate
+  b2_attack_kerr.py/.txt       -- the Kerr multiplicative-artifact probe (survived) + reseed
+
+================================================================================
+THE KILL -- K1(V002): THE POINT-BAND PREDICTION IS FALSE ON A LEGAL ONE-CARRIER
+PATTERN, BECAUSE C1'S TOLERANCE IS ABSOLUTE AND THE CONFOUND IS RELATIVE.
+================================================================================
+The design's registered PREDICTION (v2_design.md sec.3, the C-72 clause):
+  "the point-band claim (certified reads -- state OK): beta_WU = 1 within [0.9, 1.1],
+   beta_UU = 1/2 within [0.35, 0.65], xi >= 0.25, for every certified guard-passing
+   data pattern -- the exponent is pattern-INDEPENDENT."
+
+The load-bearing structural justification (v2_design.md C1 / v2_pipeline.py comment):
+  "A sub-tolerance median trend can move the fitted exponent by at most the tolerance
+   itself: 0.02, five times inside the 0.1 band half-width."
+
+That justification is DIMENSIONALLY WRONG. By the design's OWN identity
+median|D(N)| = N_E * N * medf(N), the fitted exponent is
+   beta_WU = 1 + d log(medf)/d log N = 1 + slope/(medf * ln10),
+where slope = d(medf)/d log10 N is exactly the ABSOLUTE quantity C1 bounds (<= 0.02).
+The exponent shift is slope/(medf*ln10) -- RELATIVE to medf. The "at most 0.02" claim
+holds only near medf ~ 0.43 (where 1/(medf*ln10) ~ 1). Below that the same absolute
+tolerance permits an unbounded exponent shift: at medf = 0.04 the amplification is
+~11x, so a slope of 0.019 (UNDER tolerance) becomes an exponent shift of ~0.21.
+
+MEASURED on the lane's OWN sealed measure_occ / point_certificate, with masks built by
+the lane's OWN cascade_mask builder (declared literal patterns, mask seed 20260821):
+
+  cascade 1.5/0.5 at base density f0=0.05:
+    deterministic C1 density-median slope +0.0194  (PASSES the 0.02 tolerance)
+    full gate trace (b2_gate_trace.txt, seeds 101-103), each read:
+      GATE 1 railed?          A_UU(16) ~ 11-13         pass
+      GATE 2 void guard       margin 8.0-8.9 > 8       pass (N_min = 128)
+      GATE 3 density-median    slope +0.0194 <= 0.02    PASS
+      GATE 4 control band      beta_UU +0.45..+0.50     pass
+      GATE 5 point certificate 208-383 surrogates, 0 below-band   -> state OK
+      ===> beta_WU = +1.258 / +1.238 / +1.220  (registered band [0.90, 1.10])
+           xi ~ +0.75 (>= 0.25 holds)
+    Over 40 seeds (b2_attack_cotuning.txt): 35/40 reach state OK; of those, 35/35 sit
+    ABOVE 1.1, median beta_WU +1.23, 0 in band, 0 below. Reseeded (fresh master seed,
+    60 seeds, b2_attack_kerr.txt Part C): 46/60 OK, 46/46 above 1.1, median +1.2335,
+    max +1.2691. Not a seed artifact.
+
+The measured certified exponent shift tracks slope/(medf*ln10), NOT the tolerance
+(b2_attack_cotuning.txt Part A): predicted +0.2134 vs measured +0.2330; predicted
++0.2211 vs measured +0.2242; and a milder cascade 1.4/0.6 f0=0.05 predicted +0.083 vs
+measured +0.049. The co-tuning sentence is false by an order of magnitude.
+
+WHY THE EIGHT CLOSURES DID NOT CATCH IT. R2 tested skew masks only at f0=0.5 (where
+they void, slopes 0.036-0.088) and low-density patterns only when UNIFORM (f=0.05
+uniform slope 0.0019). It never tested the low-density SKEW corner -- the diagonal
+where the median trend falls under the ABSOLUTE 0.02 tolerance while the RELATIVE
+confound does not. R10's pattern-independence check (B2) tested only f >= 0.10. C1
+closed D1 at the moment level but left it open at the SCALE level.
+
+TWO REGISTERED CLAIMS FALSIFIED ON CORRECT PHYSICS, neither protected by the 2-SE rule
+(the shift is on the UPPER side, and the certificate is one-sided -- see K2):
+  (i)  the point-band prediction "beta_WU = 1 within [0.9, 1.1]" -- measured +1.22..+1.27
+       on certified reads;
+  (ii) "the exponent is pattern-INDEPENDENT" -- uniform f=0.5 gives beta_WU +1.00,
+       low-f cascade gives +1.23 on the same part geometry; the exponent depends on
+       the declared pattern.
+Every cell above is a one-carrier occupancy page (every programmed cell = -N_E, one
+sign; the mask only chooses WHICH cells are programmed). This is the D1 confound the
+judgment calls the automatic-REFUTED trigger, surviving into V002.
+
+================================================================================
+K2(V002): THE POINT CERTIFICATE (C7) IS ONE-SIDED -- IT GUARDS ONLY THE LOWER EDGE.
+================================================================================
+point_certificate() counts a surrogate BAD iff its fitted slope < BAND_ACC[0] = 0.90
+(v2_pipeline.py line ~414). It never tests the upper edge 1.10. So a read whose own
+ladder tilts UP certifies OK: on the K1 reads above, the certificate reported 0 bad
+surrogates on every state-OK read while beta_WU sat at +1.23. The point-band sentence
+is two-sided ([0.9, 1.1]); the certificate that is supposed to gate it is one-sided.
+This is why the K1 reads reach state OK rather than SEAM -- the machinery that was
+built to make the point sentence self-certifying cannot see the failure that occurs.
+
+================================================================================
+WHAT I ATTACKED AND COULD NOT BREAK (accumulation directive: outcomes measured)
+================================================================================
+- REPRODUCTION. Pipeline body and mutation suite both bit-identical to the seals;
+  suite exit 0; all five sha256 sidecars match. The run is honest and deterministic.
+
+- THE ORIENTATION HALF SURVIVED (B-K1/K2 genuinely closed). Polar Kerr microscopy is
+  the physically correct instrument: unlike MFM/scanning-Hall/NV (stray-field maps,
+  transfer = 0 at k=0), polar Kerr rotation reads the LOCAL out-of-plane magnetization
+  with NONZERO k=0 response -- the uniform-film hysteresis loop is the textbook
+  demonstration. The model preserves k=0 (PSF is a low-pass; DC interior +1.00015 vs
+  stray +0.00007, reproduced). The positive control is real and non-vacuous
+  (beta_DC-U +1.0000, B3 50/50) and clause (c) has a real firing branch (75%-one-way
+  data fires 30/30, MU11). A stray-field instrument is self-detected 30/30 (MU9).
+
+- THE KERR MULTIPLICATIVE ARTIFACT (risk #1) did not yield a false fire. I built the
+  concrete pattern-correlated multiplicative weight measured = M*(1 + g*b), b = up-
+  domain indicator (b2_attack_kerr.txt). It is caught by the DCF voider
+  (INCONCLUSIVE_CROSSTALK at every gain 0.05-0.40, fire_c 0/30), because the DC-free
+  code carries up-domains too and its own beta leaves the control band. The design is
+  more robust on this vector than its own honest-risk framing suggested; a residual
+  DATA-randomness-orthogonal multiplicative artifact remains named but I could not
+  realise it as a false fire.
+
+- THE FALSE-FIRE DISCIPLINE HELD, EVEN UNDER MY KILL. No registered FALSIFIER fired on
+  the low-f skew pattern: clause (a) fires only below 0.9 (my reads are above), and
+  clause (b) is 2-SE-protected (my mask-vs-uniform pairing fired 0/600, margin -0.12).
+  The kill is on the PREDICTION, not a mis-firing falsifier -- so C6 precedence, the
+  2-SE rule, and the 0/600 honest false-fire figure all stand. Constraint-1 immunity
+  (offset/drift, both directions), the fixed-pattern rungs (C5: rung-2 recovers B1
+  1.000, the V001 28/30 false-fire genuinely gone via C6 precedence), the railed
+  branch (C8), and zero datasheet inputs (input availability genuinely good) all
+  survived my attacks.
+
+================================================================================
+RESIDUAL DEFECTS (each a required repair)
+================================================================================
+1. K1: C1's density condition must bound the RELATIVE trend, not the absolute one.
+   The exponent confound is slope/(medf*ln10); the correct condition is
+   |slope / medf| <= tol_rel (e.g. bound |d log(medf)/d log N| directly), or add a
+   lower-density scope bound to the point-band prediction, and add a LOW-DENSITY SKEW
+   mask (cascade at f0 ~ 0.05) to the mutation suite. As registered the point-band
+   prediction and the pattern-independence clause are false for a registered-compliant
+   reader who declares such a pattern.
+2. K2: the point certificate must guard the UPPER band edge as well as the lower one
+   (count surrogates fitting ABOVE 1.1 too), or state the point band as one-sided.
+   As written it certifies up-tilted reads.
+3. The co-tuning sentence in v2_design.md C1 ("at most the tolerance itself: 0.02") is
+   quantitatively false and must be removed or corrected -- it is the load-bearing
+   justification for the tolerance and it does not hold below medf ~ 0.43.
+4. The R2 honest/skew separation ("tolerance 2.9x above honest, 1.8x below the
+   smallest mask") is a property of f0=0.5 masks only; the separation vanishes and
+   inverts at low base density. Any tolerance claim must be stated over the full
+   admissible density range, including low-density skew.
+
+================================================================================
+RECOMMENDATION
+================================================================================
+Do not register the V002 PREDICTION/FALSIFIER into C-72 as it stands. The occupancy
+point-band prediction -- the substantive "exponent is 1, pattern-independent"
+accumulation law that is the row's distinctive content -- is false on a legal,
+certified, guard-passing one-carrier pattern, reproduced across seeds and master
+seeds, through the design's own sealed pipeline. The orientation half is genuinely
+repaired (Kerr correctly named, k=0 sound, positive control and clause-(c) firing
+branch real) and the false-fire discipline is intact; the defect is localized to C1's
+absolute-vs-relative tolerance gap and the one-sided certificate (K1/K2), both
+repairable in a V003. A V003 that bounds the relative density trend, adds the low-
+density skew member to the suite, and makes the certificate two-sided would face me
+again on whether the relative-trend condition itself has a failing branch (D-8) and on
+the low-density guard-passing regime.
+
+REFUTER B -- END

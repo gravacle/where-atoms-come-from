@@ -1,0 +1,326 @@
+T-50 JUDGMENT — DESIGN ONE V002 — LANE_T50/V002 — 2026-08-21
+Judge: the T-50 judging instrument (drafts only; the registrar lands; the final
+status call on C-72 is the principal's). Charter: score T-50 DONE_WHEN branch (a)
+verbatim against what is on disk; add no measurement; outcomes are measured, never
+failed against an imported standard (the accumulation directive). Nothing outside
+LANE_T50/V002/ and the scratchpad was written. No git, no reproduce.sh, no r3.sh,
+no ledger or register edit.
+
+====================================================================================
+0. WHAT THE JUDGE VERIFIED DIRECTLY (custody and text; no new measurement)
+====================================================================================
+- Seals: all five V002 sidecars re-hashed by me and MATCH (v2_design.md 736bd070..,
+  v2_pipeline.py 3d81297d.., v2_mutations.py e6200ab2.., v2_run.txt 96a468ce..,
+  v2_mutations.txt bb569b8d..).
+- Reproduction: refuter A's repro_pipeline_diff.txt and repro_mutations_diff.txt are
+  both ZERO BYTES on disk (bit-identical reruns); refuter B's b2_repro_run.txt is
+  byte-length-identical to v2_run.txt and B states body-identical below the two
+  header lines. The sealed run is honest and deterministic — both refuters concur.
+- The kills verified at the SEALED-CODE level by reading v2_pipeline.py:
+  (i) line 414: `if fit_loglog(...)[0] < BAND_ACC[0]` — point_certificate counts a
+  surrogate bad ONLY below the lower band edge; the upper edge 1.10 is never
+  tested. B-K2 and the certifying half of A-K2 are facts of the sealed text.
+  (ii) DENS_MED_I0 = 2 — the C1 median condition is evaluated on N ≥ 64 while the
+  exponent fit starts at the guard point (N = 16 admissible). A-K2's unchecked
+  window is a fact of the sealed text.
+  (iii) line 607: `fire_c = (xi − 2·SE ≥ 0.25) and (bCU − 2·SE ≥ 0.9)` — no
+  data-balance condition exists anywhere on the clause-(c) path, and the §5
+  guard-scope table registers none. A-K1's scope gap is a fact of the sealed text.
+- Refuter working read in full: VERDICT_A2.txt + a1–a5 outputs; VERDICT_B2.txt +
+  b2_* outputs. Every headline number quoted in the two verdicts appears in the
+  corresponding sealed attack output. Both refuters built their kill masks with the
+  LANE'S OWN builders and ran them through the LANE'S OWN sealed measure_occ /
+  measure_ori — the kills are measurements of V002 as sealed, not of rebuilt code.
+- Read-first consumed in full before scoring: LANE_T50/JUDGMENT.txt; both V001
+  refuter verdicts and working (VERIFY_A/, VERIFY_B/d1_*); sealed t50_design.md and
+  t50_contrast.py; ERRATUM_REFUTED.json (32 defects); C72_BRIEF_V001.md; the C-72
+  GROUNDED cell as it now reads; the T-50 plan row; all five V002 deliverables.
+
+====================================================================================
+1. BRANCH (a), SCORED VERBATIM: DOES V002 SURVIVE BOTH REFUTERS? NO.
+====================================================================================
+The DONE_WHEN's first disjunct requires "a rescoped PREDICTION and FALSIFIER for
+C-72 on a baseline-free differential observable, surviving two independent refuters
+attacking runnability on a real instrument." V002 survived NEITHER.
+
+VERDICT ON V002: REFUTED, by both refuters, each with the automatic-REFUTED
+trigger class and each localized. Three substantive kills:
+
+A-K1 — REGISTERED FALSIFIER (c) FIRES ON CORRECT PHYSICS AT RATE 1.000.
+The prediction claims screening only "for random AND DC-free-coded data"; clause
+(c) as registered, scoped, and implemented carries no condition on the data's
+balance. A payload with 10% one-way excess (p1 = 0.55) fires clause (c) 40/40
+through the sealed pipeline with every guard green and state OK (boundary measured:
+4/30 at b = 0.06, 28/30 at b = 0.08); confirmed 20/20 by A's independent Kerr
+rebuild. The C-72 cell itself says orientation accumulates in proportion to one-way
+writing — a biased payload accumulating is the MECHANISM WORKING, and real payloads
+routinely carry that much DC content. Prediction and falsifier quantify over
+different data sets: the B-K2/COMP-3 family on the fire side. This is a falsifier
+triggerable by ordinary healthy physics — the bar's verbatim disqualifier. The
+design's own MU11 sealed this fire at 1.000 and presented it as the triggerability
+answer; its "fires when and only when the physics it names is present" conflates
+"accumulation present" with "claim false."
+
+B-K1 — THE POINT-BAND PREDICTION IS FALSE ON A LEGAL, CERTIFIED, GUARD-PASSING
+ONE-CARRIER PATTERN: C1'S TOLERANCE IS ABSOLUTE, THE CONFOUND IS RELATIVE.
+By the design's own identity median|D(N)| = N_E·N·medf(N), the exponent is
+beta_WU = 1 + slope/(medf·ln10): the shift is the density-median slope RELATIVE to
+medf. C1 bounds the ABSOLUTE slope at 0.02, and its load-bearing sentence ("can
+move the fitted exponent by at most the tolerance itself: 0.02") holds only near
+medf ≈ 0.43. At medf ≈ 0.04 the amplification is ~11x. Measured on the lane's own
+sealed machinery: cascade 1.5/0.5 at f0 = 0.05 has deterministic C1 slope +0.0194
+(PASSES), every gate passes, the certificate reports 0 bad surrogates, state OK —
+and certified beta_WU = +1.22 to +1.27 (35/35 above 1.1 over 40 seeds; reseeded
+46/46, median +1.2335). The measured shift tracks slope/(medf·ln10) to ~10%
+(predicted +0.2134 vs measured +0.2330). Both registered sentences — "beta_WU = 1
+within [0.9, 1.1] for every certified guard-passing data pattern" and "the
+exponent is pattern-INDEPENDENT" — are measurably false on correct one-carrier
+physics. V002's R2 tested skew at f0 = 0.5 (voids) and low density only uniform
+(passes honestly); it never tested the low-density-skew DIAGONAL.
+
+A-K2 — THE SAME PREDICTION IS FALSE THROUGH A SECOND GAP: THE UNCHECKED WINDOW.
+Periodic island literals make the CHECKED ladder (N ≥ 64) exactly flat (slope
++0.00000) while deterministically suppressing the unchecked N = 16/32 fit points:
+certified beta_WU to +1.2192 (island P=128 L=50), certified medians moved 0.973 →
+1.123 by pattern choice, all states OK, fire_a 0, clause (b) unable to reach it
+(fires 0/30). C1's "closed identically, not at a measured power" is overstated:
+below N = 64 the channel is open.
+
+B-K2 — THE POINT CERTIFICATE IS ONE-SIDED. It guards only the lower band edge
+(sealed line 414), so every up-tilted read in both kills above certified OK with 0
+bad surrogates. The machinery built to make the two-sided point sentence
+self-certifying cannot see the failure mode that occurs.
+
+FAMILY DIAGNOSIS (for the repair, and for the under-read register): B-K1 and A-K2
+are ONE family — refuter A's V001 D1, the density-shape confound reaching the
+fitted exponent through a gap in C1's coverage — entering through two different
+gaps (the scale gap; the window gap). A-K1 is the quantifier-set family (B-K2/
+COMP-3) moved to the fire side. Nothing in either kill touches the observable, the
+contrast, the pool statistic, or the three binding constraints.
+
+====================================================================================
+2. WHAT SURVIVED, AND IT GREW THIS ROUND (measured, both refuters, named)
+====================================================================================
+- The CORE, third consecutive round: A's independent rebuild from the registered
+  text alone lands beta_WU +0.9997, beta_UU +0.4888, xi +0.5099; the three binding
+  constraints re-confirmed.
+- C7's lower edge at real seed counts: 877 certified reads across f = 0.018–0.025
+  under uniform and t3 noise — certified below 0.9: ZERO, worst certified +0.9902,
+  0 SEAM, 0 fires. A's V001 D4 family (guard-passing 0.88s) and B's V001 +0.8022
+  are confirmed gone.
+- THE ORIENTATION HALF SURVIVED WHOLE — B's own words: polar Kerr is the physically
+  correct M-reading instrument (nonzero k = 0; stray-field readers self-detected
+  30/30); the positive control is real (beta_DC-U +1.0000, B3 50/50); B's
+  construction of the design's own honest-risk-1 attack (multiplicative
+  pattern-correlated Kerr weight) was CAUGHT by the DCF voider at every gain
+  (INCONCLUSIVE_CROSSTALK, fire_c 0/30) — the design measured MORE robust on this
+  vector than its own risk framing claimed.
+- C1 kills the ENTIRE V001 declared-skew family at f0 = 0.5 (A reproduced the
+  sealed mask slopes exactly); C2 voids additive crosstalk and the biased erase;
+  C5/C6: fire_a 0 everywhere either refuter ran, the precedence assert never
+  tripped; C8, the anchor, the zero-datasheet-input list: confirmed.
+- THE OCCUPANCY FALSIFIER DISCIPLINE HELD EVEN UNDER THE KILLS: on B's kill reads
+  no registered falsifier mis-fired (clause (a) fires only below the band; clause
+  (b) 2-SE-protected, 0/600). Both occupancy kills are on the PREDICTION sentence.
+  Clause (c) is the one falsifier that fired on healthy physics (A-K1), and its
+  defect is scope, not discipline.
+- Residual defects carried (non-kill, each a required V003 item): A-r1
+  INSUFFICIENT_GEOMETRY is a reachable state absent from the registered state
+  list; A-r2 rung 2 raises beta_UU ~+0.06 (0.4888 → 0.5575), ~40% of the control
+  band's upper headroom, undisplayed in R4; A-r3/B-r3 the MU11 "when and only
+  when" sentence and the C1 co-tuning sentence are false as written; B-r4 the
+  honest/skew separation figures are an f0 = 0.5 property and invert at low
+  density.
+
+====================================================================================
+3. THE RULING: ONE MORE NAMED REPAIR — THE NO-RUNNABLE-FORM BRANCH IS LIVE
+   AND IS NOT TAKEN
+====================================================================================
+THE BRANCH IS LIVE. The record now holds FOUR refuted protocol texts on this row's
+prediction: the T-16 erratum replacement (two refuters), Design One V001 (two
+refuters), Design Two (instrument refuter), Design One V002 (two refuters) — three
+of them on T-50 itself. The commissioning rule names the branch live after three.
+So the choice is scored, not waved off.
+
+TO TAKE IT, these findings would have to be conceded UNFIXABLE:
+ (1) A-K1 — clause (c)'s missing data-balance scope. Not concedable: the design's
+     own C4 already names "the declared write pattern itself, verified from the
+     reader's own write record" as the orientation density analogue; the repair
+     wires a condition the text already gestures at, with a fire boundary A has
+     already measured (b ≈ 0.06–0.08). A quantifier alignment, not a new mechanism.
+ (2) B-K1 + A-K2 — the D1 family's two remaining gaps. Not concedable: by the
+     design's own identity, beta_WU − 1 EQUALS the relative trend
+     d log10 medf / d log10 N over the fit's window. A condition bounding THAT
+     quantity over THAT window is not another corner patch — it bounds the
+     confound itself, identically, at every density, on every window point,
+     closing the family at the identity level (the claim C1 made, now at the
+     correct scale and over the correct window). Both refuters name this repair;
+     its failing branch already exists in their own measurements (mask relative
+     trends 0.07–0.31 vs honest ≲ 0.02).
+ (3) B-K2 — the one-sided certificate. Not concedable: a symmetry completion of
+     an existing mechanism whose lower edge both refuters just confirmed working
+     at 877/877.
+
+AND THE KEPT-CORE MEASUREMENTS STILL CONTRADICT THE STATEMENT — for the third
+consecutive judgment, more strongly each round: a physicist running V002 on honest
+data GETS the right answer with zero false fires (877 certified reads, worst
++0.9902; independent rebuild from the text alone +0.9997); the orientation half
+now survives every instrument attack its refuter could construct, including the
+design's own named worst risk. What is false is the universal certified point-band
+sentence on adversarial legal patterns and one falsifier's scope — quantifier
+defects of the registered TEXT, not the absence of a runnable measurement. Refuter
+B's recommendation names a V003 explicitly; refuter A names the repairs "text +
+suite, not new designs." A registered "the occupancy law has no runnable form"
+would be false to the record in front of me.
+
+RULING: commission DESIGN ONE V003 — the LAST repair of this lineage before the
+branch question must be answered from the record rather than argued. THE NAMED
+BOUNDARY FOR NEXT TIME, so the next judgment inherits a closed choice, not an open
+one: if V003 is killed by ANOTHER D1-family recurrence (a guard-passing certified
+regime where the point sentence is false, or a D-8 finding that the relative-trend
+condition cannot fail), the record will then support NOT "no runnable form" but the
+NAMED FALLBACK RESCOPE: register the falsifier-grade 2-SE claim (which no round
+has ever fired falsely: 0 false fires across V001, V002, both designs, every
+ensemble of every refuter) as C-72's prediction, with the point-band sentence
+scoped to measured density regimes or withdrawn. "No runnable form" would require
+the 2-SE claim ALSO to fall, and nothing in three rounds has touched it.
+
+====================================================================================
+4. THE NAMED REPAIR — DESIGN ONE V003 (each item carries its D-8 obligation:
+   a measured failing branch, or the condition is not registered)
+====================================================================================
+ (1) [B-K1 + A-K2 — ONE condition closing the D1 family at the identity level]
+     Replace C1's absolute tolerance with a bound on the RELATIVE trend
+     |d log10 medf / d log10 N| ≤ tol_rel, evaluated over THE FIT'S OWN admissible
+     window (from the guard point i0 onward) — subsuming both the scale gap and
+     the window gap — OR pin the fit start at N = 64 and bound the relative trend
+     there. tol_rel is co-tuned by measurement over the FULL admissible density
+     range INCLUDING the low-density-skew diagonal and the island literals, with
+     the honest sparse-pattern discrete-median bias at N = 16–32 re-measured (A's
+     R2 instruction), and the band arithmetic stated correctly this time
+     (tol_rel bounds the exponent shift identically; it must sit inside the 0.1
+     half-band with named margin). Failing branch: every cascade and island mask
+     of both kills, at measured rates.
+ (2) [B-K2, A-K2] point_certificate counts surrogates outside BOTH band edges for
+     the point sentence (the lower-edge count alone still governs SEAM/falsifier
+     arming). Failing branch: the K1/K2 kill reads must fail certification or
+     void, measured at rate.
+ (3) [A-K1] Register the orientation data-balance condition on the reader's own
+     write record: threshold on the declared pattern's one-way excess, co-tuned
+     against the measured fire boundary (b ≈ 0.06–0.08) with named margin; a
+     named NON-FIRING state (per the accumulation directive: a biased payload
+     accumulating registers as the mechanism working — e.g. VOID_DATA_BALANCE /
+     recorded accumulation-by-bias), wired into the state machine BEFORE fire_c
+     (C6 discipline); the §5 guard-scope table gains the row so prediction and
+     falsifier quantify over the SAME set. Failing branch: biased payloads voided
+     at 1.000 with fire_c 0; balanced payloads leave clause (c) armed (MU pair).
+ (4) [A-r1] INSUFFICIENT_GEOMETRY registered in the state list; code equals text.
+ (5) [A-r2] Rung 2's beta_UU shift displayed in R4 beside the beta_WU shift, with
+     the control-band headroom consumption stated.
+ (6) [A-r3, B-r3] The false sentences REMOVED, reasons registered: C1's "at most
+     the tolerance itself" (dimensionally wrong below medf ≈ 0.43) and MU11's
+     "when and only when" (false per A-K1). No narration in their place.
+ (7) [B-r4] Every honest/adversarial separation figure restated over the full
+     admissible density range, or scoped to its measured range.
+ (8) SUITE APPENDS (V003's own suite; the sealed GATE append remains the
+     registrar's, pending a surviving design, per judgment caveat c1): the
+     low-density skew cascade (f0 ≈ 0.04–0.05), a periodic island literal, the
+     biased/balanced orientation pair, an upper-edge certificate member. Every
+     designated cell at its measured rate; the precedence assert stays.
+V003 then faces BOTH refuters again — same lineage, so their read-first is this
+judgment, both V002 verdicts with working, the V002 seals, ERRATUM_REFUTED.json,
+and LANE_T50/JUDGMENT.txt. B has pre-named his V003 questions (does the
+relative-trend condition have a failing branch; the low-density guard-passing
+regime) — the lane must measure both BEFORE sealing, per the under-read lesson:
+V001 died where it wasn't read, V002 died where it wasn't swept (the diagonal, the
+window, the fire-side quantifier). The construction instruction that follows from
+three rounds: sweep the CROSS-TERMS of every registered condition's coverage
+(density x shape, window x condition, prediction-set x falsifier-set), not the
+axes.
+
+====================================================================================
+5. VERDICT ON T-50
+====================================================================================
+T-50 remains NOT DONE. Branch (b) stands MET (landed by the registrar; unaffected
+by this round — the two judge-carried gate members remain appendable only when a
+design survives). Branch (a) remains OPEN: the first disjunct fails (V002 refuted
+by both refuters), and the second disjunct (register "no runnable form") is
+refused for the reasons in §3 — the refuters' own kept-core measurements
+contradict it. Next step named (no route closes without one): commission DESIGN
+ONE V003 per §4. C-72 remains PARTIAL, BLOCKED_BY T-50. Nothing from V002's §3–§4
+is registered into C-72.
+
+====================================================================================
+6. DRAFT REGISTER ENTRY (the registrar lands, verbatim or trimmed)
+====================================================================================
+T-50 DESIGN ONE V002 — REFUTED BY BOTH REFUTERS — 2026-08-21. The eight-closure
+rebuild (LANE_T50/V002/, five seals verified, reproduced bit-identical by both
+refuters) was measured against the recommissioned refuters. Computation refuter:
+REFUTED — (K1) registered falsifier (c) fires at 1.000 on ordinary biased data
+(p1 = 0.55; boundary b ≈ 0.06–0.08) with all guards green, the prediction and
+falsifier quantifying over different data sets; (K2) periodic island literals make
+the checked density ladder exactly flat while suppressing the unchecked N = 16/32
+fit points — certified beta_WU to +1.2192, pattern moves certified medians 0.973 →
+1.123. Instrument refuter: REFUTED, localized — (K1) C1's density tolerance is
+ABSOLUTE while the exponent confound is RELATIVE (beta_WU − 1 = slope/(medf·ln10)
+by the design's own identity): a low-density skew cascade passes every gate,
+certifies with 0 bad surrogates, and lands certified beta_WU +1.22 to +1.27,
+reproduced across master seeds; (K2) the point certificate guards only the lower
+band edge, so up-tilted reads self-certify. Both occupancy kills are refuter A's
+V001 D1 family through two uncovered gaps (scale; window); the orientation kill is
+the quantifier-set family on the fire side. MEASURED EITHER WAY: the core held a
+third round (independent rebuild from the registered text: beta_WU +0.9997); the
+certificate's lower edge is confirmed at 877/877 certified honest reads, worst
++0.9902, zero false occupancy fires anywhere including under the kills; the
+ORIENTATION HALF SURVIVED WHOLE — polar Kerr correctly named (k = 0 sound,
+positive control real), and the instrument refuter's realization of the design's
+own worst named risk (multiplicative pattern-correlated Kerr artifact) was caught
+by the DCF voider at every gain. "The occupancy law has no runnable form" is NOT
+registered: the branch is live (four refuted protocol texts) and was scored — the
+kills are quantifier defects of the registered text with named, bounded,
+identity-level repairs, both refuters recommend a V003, and the kept-core
+measurements contradict the statement. NEXT STEP: commission DESIGN ONE V003 per
+LANE_T50/V002/JUDGMENT_V002.txt §4 (the relative-trend condition over the fit's
+own window closing the D1 family at the identity level; the two-sided certificate;
+the orientation data-balance condition; four text repairs; four suite appends),
+faced by both refuters again. NAMED BOUNDARY: another D1-family kill supports the
+fallback rescope (falsifier-grade 2-SE claim, never fired falsely in any round, as
+the registered prediction; point band scoped or withdrawn), not "no runnable
+form". C-72 remains PARTIAL, BLOCKED_BY T-50.
+
+====================================================================================
+7. DRAFT C-72 GROUNDED DELTA (registrar lands; replaces the corresponding
+   sentences of the current cell's WHAT-DOES-NOT-HOLD clause)
+====================================================================================
+Replace: "T-50 DESIGN ONE was refuted by both refuters (median-vs-mean
+density-shape confound ...); T-50 DESIGN TWO was refuted by the instrument refuter
+(...). NO RUNNABLE PREDICTION STANDS — and 'no runnable form exists' is NOT
+established either: both refuters keep the same-read contrast-exponent core and
+name bounded repairs (DESIGN ONE V002, eight closures, LANE_T50/JUDGMENT.txt) —
+T-50."
+With: "T-50 DESIGN ONE was refuted by both refuters (density-shape confound); T-50
+DESIGN TWO by the instrument refuter (blank-page and written-track-drift fires);
+DESIGN ONE V002 (eight closures) was refuted by both recommissioned refuters — the
+density-shape family returned through C1's absolute-vs-relative scale gap and its
+unchecked low-N window (certified guard-passing beta_WU to +1.27 on legal
+one-carrier patterns), and orientation falsifier (c) fires on ordinarily biased
+data its prediction makes no claim about. NO RUNNABLE PREDICTION STANDS — and 'no
+runnable form exists' is NOT established either, scored against the live branch: the
+V002 orientation half survived whole (polar Kerr, k=0 sound, the named worst risk
+caught by the read's own voider), the certificate's lower edge held at 877/877
+honest certified reads (worst +0.9902, zero false occupancy fires in any round),
+and both refuters name bounded identity-level repairs (DESIGN ONE V003,
+LANE_T50/V002/JUDGMENT_V002.txt §4) — T-50."
+
+====================================================================================
+8. FOR THE PRINCIPAL (flagged, not ruled here)
+====================================================================================
+C-72 does NOT return to PROVED: DONE_WHEN half (a) remains unmet, so the
+conjunction fails regardless of half (b). No principal ruling is required to
+proceed with V003 under the standing T-50 commission. The one item flagged for the
+principal's eventual ruling: whether the §3 fallback rescope (falsifier-grade 2-SE
+claim as the registered prediction, point band scoped) is an acceptable landing
+zone should V003 fail on the named boundary — deciding that NOW is not required,
+but the boundary is registered so the next judgment inherits a closed choice.
+
+END OF JUDGMENT — LANE_T50/V002/JUDGMENT_V002.txt
