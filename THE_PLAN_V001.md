@@ -25,11 +25,11 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 > existing phase framework; IDs never renumber; phases are not restructured. Modification
 > happens within this framework — status moves and appends only.
 
-**43 of 53 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
+**43 of 55 tasks done.**  ▶ marks the CRITICAL PATH — the chain the claim rests on.
 
 | DONE | DOING | TODO | BLOCKED |
 |---|---|---|---|
-| 43 | 1 | 8 | 1 |
+| 43 | 1 | 10 | 1 |
 
 ---
 
@@ -42,7 +42,7 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | **T-2** | ONE CURRENT STATEMENT OF THE PROCESS. The register is 6000+ lines and append-only; THE_CLAIM predates most of the work. Write the process as it now stands, in mapped terms | **DONE** | PROCESS_V002.md states the process end to end, every sentence cites a ledger row, and no withdrawn claim appears | T-1 |
 | **T-36** | DIFFERENTIATED RECLASSIFICATION of the 162 FORMAL rows -- THEOREM / EXACT / MEASURED / DEFINED with an OWNER field separating original from standard (Kitaev, KL, KLV, Holevo, RKKY) -- per the editor's verdict | **DONE** | every FORMAL row carries a class and an owner, and the ~20 standard-results restatements are marked BORROWED | — |
 
-## PHASE B  MAKE THE MODEL THE PROCESS MODEL  —  6/6 done
+## PHASE B  MAKE THE MODEL THE PROCESS MODEL  —  6/8 done
 
 | # | task | status | DONE WHEN | depends |
 |---|---|:---:|---|---|
@@ -52,6 +52,8 @@ converts H-3, H-5 and H-6 from open hazards into standing acceptance criteria.**
 | **T-7** | VALIDATE THE FORMATION HALF. Every formation result in the register re-derived through the model rather than a one-off lane script | **DONE** | validate_model.py covers F-20, F-21, F-23, G-16, C-17, C-18 and passes | T-6 |
 | ▶ **T-40** | **THE FULL-PROJECT MODEL (the principal, 2026-08-20: 'we need a model to work on that represents the full project'). One object: the amended definition with tolerances, the two PROVED laws, the formation step and source standards, the DEF-A corner reducing to record_model, and the roles -- with a validation that reproduces every sealed headline number** | **DONE** | model/project_model.py + validate_project.py pass, reproducing the grain tau, the six-mechanism table, and the DEF-A limit dims from one entry point | T-28, T-29, T-33 |
 | ▶ **T-46** | **THE COMPREHENSIVE MODEL (the principal, 2026-08-20): fold the C-77 increment machinery -- earned distance d_W, interface rank and the boundary law, certifiability and the window law, the two-region taxonomy, the encoding-level formation laws -- into project_model as a first-class GEOMETRY layer, so record formation and every registered proof reproduce from ONE entry point rather than scattered lanes** | **DONE** | validate_project reproduces every registered headline number of C-78, C-79, C-80, C-81, C-82, C-83 and the C-71/C-72 encoding laws from the ProjectModel API, each PASS gated against the sealed lane value | T-40 |
+| **T-54** | HOME THE UNHOMED MACHINERY IN THE URM (the build-out audit, the principal 2026-08-21: the URM is the world model and must carry the complete picture). The proof's own cells record what the model does not yet carry: 24 blocks name no model function, and four result families live only in sealed lanes -- (a) the ARROW/redundancy family F-17/F-18/F-19/F-21 (section 3's header says it is owed a LAYER; RecordModel.redundancy is called by no validator); (b) the count law k(t_m) with its derived width and drop times (C-86 -- LANE_T47 machinery, count_law.py adjacent but unhomed); (c) the reachable-classes machinery (C-87 -- appears nowhere in model/); (d) the E1/E2/E3 writing-tier ensembles (C-91 -- which C-93's responsive-venue computation needs: does one written record shift dE for an adjacent write?). Plus (e) the Second Lump field instrument F(D) once LANE_T51_A's pre-registered rule is scored. Fold each in by the T-46 pattern: ported machinery, docstrings naming claim row + sealed source + owners, validator gates that reproduce sealed numbers plus API-fidelity probes beyond the gated range | TODO | every PROOF_V002 block's model cell names a URM function OR its scope states plainly why that block is permanent narration; the five families above are model layers/functions with validator gates in the T-46 pattern; validate_project.py and validate_geometry.py pass; the proof's front-matter no-model count falls to the stated permanent-narration set | — |
+| **T-55** | THE D-25 GATE MUST BE UNBYPASSABLE (the proof's own finding, P-DEF-7): the provenance guard exists and is tested, but the program's OWN validators construct RecordSurface directly -- so not one number in the proof actually passed through URM.surface()'s refusal. And D-25 stage (2) has only a substring test ('Weller' in provenance) where a gated check should place a pinned external measured value BESIDE a model number with a stated tolerance. A guard the house walks around is a checkbox with extra steps | TODO | every validator and model-side instrument constructs world-tier surfaces through URM.surface() and corner carriers through the DEF-A self-declaration (grep-checkable: no direct RecordSurface() call outside project_model.py); at least one validator check compares a pinned external measured value against a model number with a stated tolerance; the bypass is closed by tool refusal or its residual necessity stated in the proof | — |
 
 ## PHASE C  BREAK THE SINGLE CARRIER  —  6/6 done
 

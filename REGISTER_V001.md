@@ -10582,3 +10582,23 @@ the two checks still owed). **T-17's DONE_WHEN was sharpened first** — its 202
 "says plainly that this is a mathematical result with no empirical contact," which is no longer what
 the record carries; the criterion now requires stating the empirical status *exactly as the record
 carries it*, which is both stricter and true. T-17 `DONE`. **T-18 is the last task of phase F.**
+
+---
+
+## THE URM BUILD-OUT AUDIT — **THE PLAN DID NOT COVER THE MODEL'S OWN GAPS; NOW IT DOES** (T-54, T-55 appended)
+
+The principal asked whether the plan carries ALL tasks needed to build the URM out fully — the world
+model, complete picture, rooted in the world. **It did not.** The physics tasks were all present;
+the MODEL-HOMING debts — recorded in the proof's own cells but tasked nowhere — were: 24 blocks with
+no model function and 38 with no gate; the arrow/redundancy family owed a layer (§3's own header);
+the count law, the reachable classes, and the E1/E2/E3 writing-tier ensembles living only in sealed
+lanes (`C-86` and `C-87` appear nowhere in `model/`, and `C-93`'s responsive-venue computation needs
+`C-91`'s ensembles homed); the field instrument's fold-in unscheduled; and **P-DEF-7's integrity
+finding** — the D-25 provenance gate is real, tested, and bypassed by the program's own validators,
+so not one number in the proof actually passed through it.
+
+**Appended, phase B (the model phase, appends-only per the lock):** `T-54` — home the five unhomed
+families by the T-46 pattern, DONE_WHEN checkable against the proof's own computed front-matter
+counts; `T-55` — make D-25 unbypassable (no direct `RecordSurface()` outside the model, grep-checkable)
+and put at least one pinned external measured value beside a model number in a gated check with a
+stated tolerance, replacing the substring test. Plan now 44/55.
