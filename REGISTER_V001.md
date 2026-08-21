@@ -10386,3 +10386,36 @@ verdicts landed, and the proof was rebuilt under the new marks (its no-TWO-CARRI
 40 → 38 because C-91's mark is now real). Zero `UNAUDITED` remains in the audit's scope. T-52's
 DONE_WHEN is met. **Next step named: C-90's second venue** — a structurally different D=3 carrier
 for the critical member — folds into the T-49/O-58 queue where that computation naturally lives.
+
+---
+
+## THE OWED FOURTH DESIGN LANDS AS A THEOREM — **THE EARNED METRIC IS CONTENT-RIGID ON STABILISER VENUES, AND THE FIELD CAN ONLY LIVE ONE TIER DOWN** (C-93; `LANE_T51_IDENT/FOURTH_*`)
+
+The geometry-response angle, which failed in flight during the T-51 round, is delivered — and its
+honest branch fired: **not an instrument, a rigidity theorem**, exactly the outcome the commission
+named as a result rather than a failure. Three size-free mechanisms, 22/22 gates, **every
+load-bearing number reproduced by the critic's independently written machinery** (own F₂ kit,
+enumeration, partial trace), verdict RIGIDITY_CONFIRMED with six repairs adopted, none touching a
+number: writers translate labels state-independently (`d_W` exactly content-blind, per-pair at
+L=2,3,4); the writer-class landscape is defined by pairings against operators, never states; and a
+region's reduced state responds to a distant write **iff** it supports an enclosure detector under
+the winding-preserving representative convention (unrestricted the iff fails 45/495; restricted,
+0/495 exhaustively at 3×2).
+
+**Why this strengthens rather than weakens the instrument:** the integer tier carrying no field is
+what forces the field reading into the real-valued amplitude over the rigid classes — which is
+literally the Second Lump's `F`, with the onset locked to **connected `w_enc`** placement by
+placement (3.995→4, 2.980→3, 4.988→5, 3.980→4, and the critic's off-script fifth placement
+4.987→5). The lane also found a **second counterexample to the unconnected spec at the commissioned
+3×3 venue itself** (old-spec 4, connected 5, onset 4.99): `LANE_T51_A`'s V3 scores against connected
+`w_enc` per placement, and its brief now carries the cross-check. The winding annex independently
+confirms V5's necessity — the sign is winding-sector-resolved.
+
+**The responsive-venue statement, delivered:** all three rigidity mechanisms require stabiliser
+exactness; none survives real-valued costs. The metastable/world tier is where the metric itself
+could respond, measurable in C-91's own currency — **does one written record shift `dE` for an
+adjacent write in the E1/E2/E3 writing tier?** ("bias is mass.") That computation naturally joins the
+T-49/O-58 queue. C-93 registered FORMAL and **audited at registration per the T-52 rule**:
+SINGLE-CARRIER (toric family), the second carrier absent by construction — the theorem is *about*
+stabiliser venues, and the metastable tier where it may fail is the responsive-venue question, not a
+second venue for this result.

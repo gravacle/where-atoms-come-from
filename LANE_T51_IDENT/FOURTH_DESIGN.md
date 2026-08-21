@@ -310,3 +310,18 @@ world tier is where the question lives.
 
 *Files: `FOURTH_DESIGN.md` (this document), `FOURTH_rigidity.py` (computation, sealed
 machinery read-only), `FOURTH_rigidity_OUT.txt` (output, 22/22 gates).*
+
+---
+
+## REGISTRAR NOTE — THE CRITIQUE'S SIX REPAIRS ARE ADOPTED (2026-08-21)
+
+`FOURTH_CRITIQUE.md` verdict: **RIGIDITY_CONFIRMED**, repairs binding, none touching a number. As
+registered, the theorem carries them: **F-1** R-III(b)'s iff holds under the **winding-preserving
+representative convention** (unrestricted, 45/495 counterexamples; restricted, 0/495 — the same
+declared winding-class convention the judgment binds to `w_enc`); **F-2** the `δS = +1.80e−3` exhibit
+is the source's own dressing entropy (R_cross is the source plaquette's own support) and carries no
+field-side language — only the away-value `+4.6e−6` may, and it has no measured floor yet; **F-3**
+the theorem excludes the integer **tier**, not rival real-valued channels; **F-4** scope is the
+metric AS SEALED (Pauli tier; O-4's general admissible unitaries are the boundary); **F-5** minima,
+not histograms, are the 3×3 exhibits; **F-6** onset estimator = first rung, with the tabulated noise
+floor (3×3 first-rung `F ~ 2.8e−11` against an eigh floor `~1e−13`).

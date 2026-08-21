@@ -171,6 +171,16 @@ theorem is a result, not a failure.
 5. **EMPIRICAL CONTACT: ZERO** (X-4) — every venue here is a model venue; the PROOF bar (two
    structurally different real record surfaces) has not been approached by any of this.
 
-Also carried: the fourth design angle (geometry response — is the earned metric itself responsive to
-content, or provably rigid?) never reached the judge and is owed; O-53 remains uncomputed regardless
-of which lane fires.
+The fourth design angle was delivered after this document's first sealing, **as a theorem (C-93,
+RIGIDITY_CONFIRMED by independent rebuild): the earned metric is exactly content-rigid on stabiliser
+venues** — writers translate labels state-independently, the writer-class landscape is defined by
+pairings against operators never states, and a region's reduced state responds to a distant write iff
+it supports an enclosure detector under the winding-preserving convention. **The theorem strengthens
+lane 1**: the field reading can only live in the real-valued amplitude over the rigid classes — which
+is the Second Lump's `F` — with the onset locked to **connected `w_enc` per placement** (a second
+counterexample to the unconnected spec was found at the commissioned 3×3 venue itself: old-spec 4,
+connected 5, onset 4.99 — so `V3` scores against connected `w_enc` placement by placement). The
+responsive-venue statement it owes is delivered too: all three mechanisms require stabiliser
+exactness, so the metastable/world tier — real free-energy costs, C-91's own currency — is where the
+metric itself could respond; the named computation is whether one written record shifts `dE` for an
+adjacent write in the E1/E2/E3 writing tier. O-53 remains uncomputed regardless of which lane fires.
