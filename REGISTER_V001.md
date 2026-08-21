@@ -10562,3 +10562,23 @@ Lyons demoted (temperature absent from the paper; dE≈0 by construction), two c
 hygiene-grade Zenodo set, one figure-caption conflict flagged as a digitization hazard.
 **Next steps named: the clean zero-DIFFERS run (T-35's DONE_WHEN), then LANE_T51_A + T-17; the
 Saira grounding lane queued on the principal's word.**
+
+---
+
+## T-17 LANDS — **THE PROOF STATES ITS OWN LIMITS, IN THE PROOF** (`PROOF_V002.md` §9, seven blocks)
+
+The limits section is §9, gate-passing like every other section: the three `BLOCKED` rows named
+verbatim **with their own staleness stated** (their texts predate T-41, C-84 and C-71's promotion,
+and their re-audit is T-26's — cited as they stand, not silently repaired); the empirical status
+exactly (one `PROVED` row on modelled surfaces, falsifier unrun by anyone; three pinned anchors; one
+external run whose honest verdict was NOT-YET-COMPARABLE; C-72 `PARTIAL` with no runnable prediction
+and no-runnable-form not established either); the formal wall (145 of 270 rows are mathematics about
+a definition the program wrote — H-3's question is now T-53, and until it lands every FORMAL result
+is conditional on that definition); the emergence claim's unearned conditions in one list, O-55/56/57
+beside them, the field side identified-not-measured, the chain's head single-venue; carrier breadth
+measured (113/22/15); the relocated problems stated as relocated, never solved (F-7, X-3, O-21,
+O-53); and the document's own blind spots (31 ungated blocks, 13 dated-record seals, T-35 and T-18
+the two checks still owed). **T-17's DONE_WHEN was sharpened first** — its 2026-08-19 text said
+"says plainly that this is a mathematical result with no empirical contact," which is no longer what
+the record carries; the criterion now requires stating the empirical status *exactly as the record
+carries it*, which is both stricter and true. T-17 `DONE`. **T-18 is the last task of phase F.**

@@ -118,7 +118,7 @@ next heading; only R10's `D-1` scan reads the whole file. **Every section header
 §0 included, cites no ledger row and is enforced by nothing but that scan** — which is why the headers
 below carry no claim that is not also in a block. Closing that gap is the gate's own standing debt.
 
-**What this document does not have, stated up front.** Of the 71 claims below, **31 carry no validator gate** and **17 have no model function behind them**. **38 rest on no `TWO-CARRIER` row** and open their scope cell saying so. **9 cite a `PROVED` row.** The blocks without a gate are
+**What this document does not have, stated up front.** Of the 78 claims below, **38 carry no validator gate** and **24 have no model function behind them**. **43 rest on no `TWO-CARRIER` row** and open their scope cell saying so. **10 cite a `PROVED` row.** The blocks without a gate are
 narration over sealed lane output, and each one says so in its scope cell. Closing that gap — every
 claim in this proof gated by a check in `model/` — is the proof's own standing debt.
 
@@ -964,10 +964,10 @@ The three corner role rows are marked SINGLE-CARRIER by the sealed T-9 audit, ea
 
 ## 8. STANDING DEBTS — what is not established
 
-**This section is not the limits statement.** The full limits statement — every `BLOCKED` row named,
-and the plain sentence about what this program is and is not — is task `T-17`, and it belongs in this
-document's next pass. What follows are the standing debts as facts, each with its ledger row, so that
-nothing below has to be discovered by reading between the lines of the sections above.
+**This section is the debts; §9 is the limits.** What follows are the standing debts as facts, each
+with its ledger row, so that nothing has to be discovered by reading between the lines of the
+sections above. The limits statement itself — every `BLOCKED` row named, and the plain sentences
+about what this program is and is not — is §9, `T-17`'s deliverable.
 
 
 ### P-ROLES-6 — three of the four conditions on the emergence claim are not earned
@@ -1065,3 +1065,95 @@ THE PROGRAM HAS EXACTLY ONE ROW AT STATUS PROVED. Until this document was writte
 | **grounding** | ledger/status_ledger.tsv, C-72's STATUS (PARTIAL), BLOCKED_BY (T-50) and GROUNDED cells — WHAT HOLDS and WHAT DOES NOT, with the 0.968134-0.979799 range — and C-71 as the single PROVED row; ledger/plan.tsv, T-50 (phase F), whose TASK cell carries both refuters' grounds and whose DONE_WHEN carries the two admissible outcomes; LANE_T34_NAND/t34_nand.py:63-68 (the lane's own statement that the ratio is 1 IDENTICALLY) and LANE_T34_NAND/t34_nand.txt (sealed, seed 11); model/geometry.py:924-942 (the seed-11 pages and the +-5 e residual field) with :893-894 (N_E = 100 e); model/validate_geometry.py:190-279 (the six checks and the three D-15 controls) and its run output for this document |
 | **rows** | `C-71` (PROVED, TWO-CARRIER) · `C-72` (PARTIAL, TWO-CARRIER) · `T-50` (TODO, PLAN) · `T-16` (DONE, PLAN) |
 | **scope** | C-71 and C-72 both carry the TWO-CARRIER mark; T-50 and T-16 are plan tasks and are not carrier evidence. This block states a status change and a debt, not a physical result, and it states what survives so the change is not read as more than it is: nothing here withdraws the encoding-level kernel, and the row is PARTIAL rather than WITHDRAWN precisely because the floor and the discriminator hold. No device was measured for any figure quoted: the pages, the residual and the orientation grains are all modelled from sealed seeds against constants pinned to literature classes. The separation figures are the named validator's own run under its declared draw, at one page size per column and 200 draws per orientation column, and are not an ensemble with an error bar; the ledger's 0.968134-0.979799 range is a different realisation, the 1000 sealed pages scored against ONE shared residual field, so the two sets of numbers are not interchangeable and neither is quoted as the other. THE SIX CHECKS ARE NOT EQUALLY STRONG AND THE REFUTATIONS SAY SO, which is carried here rather than left out: the floor check is a theorem about the generator inside the declared physics and survived 20000 and 200000 adversarial draws with zero violations, control A compares two quantities that are both 1.0 identically once a page has no erased cell, and the WIDENS check was measured failing on only 9 of 50 seeds under the erratum's own designated mutation. What carries weight is the matched-N discriminator named as this block's gate, together with controls B and C, which put the unwritten page and the DC-saturated page on opposite sides of the orientation ceiling under one treatment. Only the -38 e null in this file runs through the model function named above; the discriminator is computed inside the validator from the sealed patterns plus that file's own declared draw. The classical-gravity comparison is section 6's and nothing in this block is one (D-1). GATE REPOINTED at the T-50 landing: the erratum-era check this cell named is replaced by the hardened contrast block (sealed LANE_T50/GATE/, executed by model/validate_geometry.py). |
+
+
+---
+
+## 9. THE LIMITS — what this program is and is not (T-17)
+
+This section is T-17's deliverable: the proof stating its own limits, in one place, each with its row. It repeats no §8 detail at length — where a debt is already a block above, this section points at it. Nothing here is softened: a limit stated plainly in the document that carries the results is the difference between a program and a pitch.
+
+
+### P-LIM-1 — the three BLOCKED rows, named, with their texts' own staleness stated
+
+Three ledger rows stand at BLOCKED, and this proof names all of them. X-4: "empirical contact is zero and no distinguishing prediction is identified." T-VI.3: "a distinguishing prediction." T-VI.4: "empirical contact." Their texts are themselves part of the limit: all three were written before T-41 pinned three external measured anchors, before C-84's audit returned three surviving distinguishing statements with external checks owed, and before C-71 was promoted — so the rows overstate the emptiness in their own words. They are cited here as they stand, not silently repaired; their re-audit belongs to T-26's venue pass, and until it runs the honest reading is the narrow one this section's next block states exactly.
+
+| | |
+|---|---|
+| **model** | none |
+| **gate** | none |
+| **grounding** | ledger/status_ledger.tsv rows X-4, T-VI.3, T-VI.4 (verbatim); the T-16 landing's stale-row flag (REGISTER_V001.md); T-26's plan row |
+| **rows** | `X-4` (BLOCKED, UNAUDITED) · `T-VI.3` (BLOCKED, UNAUDITED) · `T-VI.4` (BLOCKED, UNAUDITED) · `T-26` (TODO, PLAN) |
+| **scope** | SINGLE-CARRIER — none of the cited rows carries a mark (BLOCKED rows are outside the audit's scope; T-26 is a plan task). This block names limits; it establishes nothing. |
+
+### P-LIM-2 — the empirical status, exactly: one proved row on modelled surfaces, three pinned anchors, no falsifier yet run
+
+The program's whole empirical contact is: ONE row at PROVED — C-71, the encoding-level sign law, whose two RECORDS VERIFIED surfaces are MODELLED from literature-pinned constants, with no device measured and its falsifier not yet run by anyone; THREE pinned external anchors placed beside model numbers (azobenzene half-life, the Weller–Moser stability rule, NAND detrapping energy — T-41); and one completed external comparison run whose honest verdict was NOT-YET-COMPARABLE — five ordinal agreements in conceded territory, every absolute row blocked by vendor-held calibration (the C-86 register entry). C-72 stands at PARTIAL with NO runnable prediction: three protocols have been refuted by independent refuters, and "no runnable form exists" is not established either — the repair is T-50's open half. The nearest identified route to a real-instrument contact is the Saira single-electron-box dataset (both directional rates at three temperatures, dE sourced twice in-paper), queued as a grounding lane. Everything else in this document is mathematics about the program's own objects.
+
+| | |
+|---|---|
+| **model** | none |
+| **gate** | none |
+| **grounding** | C-71 and C-72 GROUNDED cells; LANE_T41_EXTERNAL/CITATIONS.md; LANE_C86_EXTERNAL/ (sealed, NOT-YET-COMPARABLE); LANE_DWELL_SEARCH/RANKED_VERDICT.md (sealed) |
+| **rows** | `C-71` (PROVED, TWO-CARRIER) · `C-72` (PARTIAL, TWO-CARRIER) · `C-86` (FORMAL, TWO-CARRIER) · `T-50` (TODO, PLAN) |
+| **scope** | C-71, C-72 and C-86 carry the TWO-CARRIER mark; T-50 is a plan task. The falsifiers named in C-71 are runnable on standard instruments and have not been run; a modelled-surface scoring is not an instrument reading, and this proof claims nowhere that it is. |
+
+### P-LIM-3 — the formal wall: nearly everything here is about a stipulated definition, and why-this-definition is open
+
+145 of the ledger's 270 rows are FORMAL: real mathematics about the program's OWN definition of a record, which the world was never consulted about until the census — and the census's verdict was that zero of ~20 real records satisfy the exact clauses while all pass the amended ones. The amendment has a mechanism-level justification (the world protects by barriers; the exact clauses assume topology; O-16 measured the mismatch from inside), but a definition amended until the world passed it has not thereby been EARNED: H-3 stands PARTIAL, and its question — why THIS definition — is now the task T-53, with the necessity-per-clause standard as its decisive test. Until T-53 lands, every FORMAL result in this document is conditional on a definition the program wrote.
+
+| | |
+|---|---|
+| **model** | none |
+| **gate** | none |
+| **grounding** | the ledger's status tally; CORE_FRAMEWORK_V001.md (the amended definition and DEF-A); the O-51 adoption entry; T-53's plan row |
+| **rows** | `H-3` (PARTIAL, UNAUDITED) · `O-51` (DEFINED, UNAUDITED) · `T-53` (TODO, PLAN) |
+| **scope** | SINGLE-CARRIER — H-3 is PARTIAL and unaudited, O-51 is DEFINED. This block is the H-3 caveat stated as a limit of the whole document, per the anchor's own standing acceptance criterion. |
+
+### P-LIM-4 — what the emergence claim has not earned, in one list
+
+The Newton verdict is MATCHES AT MEMBER LEVEL and nothing stronger, and the unearned conditions are: occupancy of criticality (the conservation bit — T-49, one computable bit with stakes priced per branch); design-point enforcement (O-58 N3); norm selection (O-58 N4); ensemble-weight symmetry (O-58 N5, the anisotropy frontier). Beside them: no universal coefficient exists (O-55 — 32 on the corner against 216 on the world tier, nothing playing a coupling constant's role); no thermodynamic conjugate pair is earned (O-56); no collapse analogue is derived (O-57). The field side is IDENTIFIED, NOT MEASURED (C-92): every field instrument on this surface is mediated, whose field a mediated reading is must be absorbed by C-77, and the earned metric itself is provably rigid at the integer tier (C-93) — so if a field exists here it lives one tier down, and its first scored computation is in flight as this section is written. The head of the computed chain, C-90, stands on ONE venue.
+
+| | |
+|---|---|
+| **model** | none |
+| **gate** | none |
+| **grounding** | O-58's live text; the C-92 and C-93 register entries; FIELD_INSTRUMENT_V001.md §4; the T-52 audit extension entry |
+| **rows** | `C-77` (CANDIDATE, UNAUDITED) · `O-58` (OPEN, UNAUDITED) · `O-55` (OPEN, UNAUDITED) · `O-56` (OPEN, UNAUDITED) · `O-57` (OPEN, UNAUDITED) · `C-92` (DEFINED, UNAUDITED) · `C-93` (FORMAL, SINGLE-CARRIER) · `C-90` (FORMAL, SINGLE-CARRIER) · `T-49` (TODO, PLAN) |
+| **scope** | SINGLE-CARRIER — c-91 aside, the emergence chain's newest rows are SINGLE-CARRIER or DEFINED; C-77 is CANDIDATE. Nothing in this list is a defect being hidden — each is a named, computable condition, and D-1 forbids treating any of them as a classical-shaped requirement at the record level. |
+
+### P-LIM-5 — carrier breadth, measured: most of this program stands on one carrier
+
+The T-9 audit, extended at T-52 to every in-scope row, marks 113 rows SINGLE-CARRIER, 22 TWO-CARRIER, and 15 NOT-CARRIER-SHAPED. Both load-bearing world laws are TWO-CARRIER, and the roles statement cites only marked rows — but the corpus's breadth is what the numbers say, and the chain's head (C-90) is single-venue with its second venue named as owed work. Every block in this proof prints its own marks; 38 blocks rest on no TWO-CARRIER row and say so in their scope cells.
+
+| | |
+|---|---|
+| **model** | none |
+| **gate** | none |
+| **grounding** | LANE_T9_AUDIT/T9_carrier_audit.tsv (150 audited rows); this document's own computed front-matter statistics |
+| **rows** | `C-90` (FORMAL, SINGLE-CARRIER) · `C-91` (FORMAL, TWO-CARRIER) · `A-PR` (FORMAL, NOT-CARRIER-SHAPED) |
+| **scope** | The marks say what carries a row, never whether it is true. The at-registration rule in LANE_T9_AUDIT/METHOD.md prevents this debt from re-accumulating. |
+
+### P-LIM-6 — what is relocated, not solved: the outcome problem, objectivity, and the extensivity question
+
+The measurement question itself — what makes a system OCCUPY a definite record value — is F-7, correctly typed and OPEN, and the outcome problem behind it (which unravelling is physical) is X-3, marked NOT OURS: this program relocated it and claims no progress on it. Objectivity requires equivalent environment fragments and the account does not derive their equivalence (O-21 — measured inequivalence 0.657 against 0.159 on one bath). Whether every extensive durable operator's extensive part is a multiple of the identity — the question that would connect the source standards to O-39's field side — is O-53, uncomputed. A theory of record formation does not need the outcome problem solved, as thermodynamics did not need its microscopic foundations to be a theory; but the boundary is stated here so no reader mistakes relocation for solution.
+
+| | |
+|---|---|
+| **model** | none |
+| **gate** | none |
+| **grounding** | F-7, X-3, O-21, O-53 ledger rows verbatim; W-35's register entry (the relocation) |
+| **rows** | `F-7` (OPEN, UNAUDITED) · `X-3` (NOT OURS, UNAUDITED) · `O-21` (OPEN, UNAUDITED) · `O-53` (OPEN, UNAUDITED) |
+| **scope** | SINGLE-CARRIER — none of the cited rows carries a TWO-CARRIER mark (F-7 and O-53 are OPEN; X-3 is NOT OURS; O-21 is OPEN). Stated as limits; no claim advanced. |
+
+### P-LIM-7 — the document's own limits: gate coverage, dated seals, and the two checks still owed
+
+This proof's completion criterion is enforced by replicate/check_proof.py, and what that gate does NOT reach is stated in §0.3: section prose, and every number quoted in a block's own paragraph. 31 of 71 blocks carry no validator gate and 17 no model function, printed in the front matter on every build. Thirteen sealed lane outputs are DATED RECORDS — corpus audits and deliberate lane verdicts — listed with reasons in replicate/dated_records.txt and never byte-diffed, by registered policy. The reproduction criterion (zero DIFFERS on a clean run, T-35) and the external check (a stranger reproducing from REPLICATE.md alone on a clean clone, T-18) are the two checks still owed; at this writing the clean run is in flight, and T-18 is the program's standing invitation.
+
+| | |
+|---|---|
+| **model** | none |
+| **gate** | none |
+| **grounding** | replicate/check_proof.py; replicate/dated_records.txt; this document's front matter; the T-35 fix-pass register entry |
+| **rows** | `T-35` (TODO, PLAN) · `T-18` (BLOCKED, PLAN) · `T-19` (DOING, PLAN) |
+| **scope** | SINGLE-CARRIER — all three are plan tasks; no carrier mark applies. A gate that names its own blind spots is the only kind this program trusts. |
