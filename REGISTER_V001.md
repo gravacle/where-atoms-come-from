@@ -10232,3 +10232,57 @@ reproduces; **that lane is still ahead of the in-flight full run and its reprodu
 `time s` column alone, every physics figure identical; the committed file is restored rather than the
 timings baked into the record. `replicate.sha256` will go stale again while `reproduce_full3.log` is
 still being written, and that is the run, not a defect.
+
+---
+
+## THE C-72 RULING — **THE PRINCIPAL SIGNS OPTION A. THE STANDARD HELD, AND THE REPAIR IS DIRECTED.** (`C72_BRIEF_V001.md`; `T-50` rewritten)
+
+**The principal, 2026-08-20, ruling on the `T-16` erratum:** *"Sign the ruling as Option A, register
+the defect, and let `T-50` earn the repair. The standard held."*
+
+**`C-72` stands at `PARTIAL`, `BLOCKED_BY T-50`. `C-71` stands at `PROVED`. The program reports one
+`PROVED` row.** The ruling was put with its counter-argument attached — that `PARTIAL` understates a
+discriminator which is computed, adversarially confirmed and structural — and Option A was taken with
+that in view. The brief the ruling was made on is `C72_BRIEF_V001.md`, sealed and committed here so
+that what was in front of the principal is part of the record and not a summary of it.
+
+**THE REPAIR IS DIRECTED, AND THE DIRECTION IS THE RULING'S:** *stop trying to rescue an absolute
+single-page ratio.* `T-50` is rewritten around a **baseline-free differential observable** — the
+contrast between written and unwritten sectors of the **same part in the same read**, whose exponent
+in block size separates the encodings. **Three constraints were computed before the task was written,
+because each is a way the repair could reproduce the defect in a new costume:**
+
+1. **THE RAW SCALING EXPONENT IS NOT BASELINE-FREE, AND THIS IS THE ONE THAT MATTERS.** A common-mode
+   offset of **`0.5 e` per cell — one two-hundredth of the programmed charge — drives the ORIENTATION
+   exponent from `0.493` to `0.999`**, making a screening surface indistinguishable from an
+   accumulating one. At `2.0 e` it is `1.000`. The **written-minus-unwritten contrast holds at `0.999`
+   at every offset tested.** So the contrast and the exponent are **not alternatives**: the contrast is
+   what makes the observable baseline-free, the exponent is what makes it untunable, and the repair
+   needs the exponent **of** the contrast.
+2. **CENTRED VARIANCE DISCRIMINATES NOTHING.** `Var(Q)` scales as `N` for **both** encodings —
+   measured `N^0.97` for occupancy against `N^1.00` for orientation. The discriminating statistic is
+   `E|Q|` (exponents `1` against `1/2`) or the **uncentred** `⟨Q²⟩` (`2` against `1`).
+3. **THE PROGRAMMED DENSITY MUST BE FIXED IN THE OBSERVABLE'S DEFINITION.** A fixed-length record in a
+   growing block gives an occupancy surface the orientation exponent — fitted `−0.572`, `−0.889`,
+   `−0.878` — which is refuter A's counterexample returning through the new door.
+
+**THE GATE IS A PRECONDITION ON `C-72`'S RETURN, by the ruling.** `T-50`'s `DONE_WHEN` now carries both
+halves: the observable **and** a hardened gate. The structural-claim check must fail at rate `1.000`
+under an adversarial mutation suite covering at least the two-signed write, a non-zero-mean residual,
+and a programmed density falling with `N`; and `control A` is repaired or dropped.
+
+**A CORRECTION TO THIS SESSION'S OWN COMMIT MESSAGE, logged rather than left standing.** `091573f`
+says the six replacement checks have "real failing branches." **They do not, uniformly.** Under the
+designated two-signed-write mutation the registrar measures **four of six** flipping — `floor`,
+`discriminator`, `control A`, `control B` — while **`widens` PASSES**, and `widens` is precisely the
+check that gates the structural claim the surviving argument rests on; refuter B measured it failing
+on **9 of 50 seeds**, about `0.18` power. `control A`'s equality half cannot fail at any tolerance —
+verified passing at `Δ = 1, 5, 20, 50, 90, 99` — because `RHO(1) ≡ 1` and the all-programmed page has
+zero erased cells for the treatment to act on; its force comes from its second conjunct alone. The
+replacement is a real improvement on an identity that could never fail. **It is not yet a clean gate,
+`PROOF_V002`'s own scope cells say so, and `T-50` now owns closing it.**
+
+**`ledger/plan.py` gained `donewhen`** in this landing, for the same reason `status.py` gained
+`blocked`: `DONE_WHEN` is what makes "done" checkable rather than a judgement call, and it was
+reachable only at `add` — so sharpening a completion criterion meant retyping the task, in a plan
+whose whole discipline is that it is retrieved and updated and never retyped.

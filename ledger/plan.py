@@ -4,6 +4,7 @@
   ./ledger/plan.py                 render the plan (and rewrite THE_PLAN_V001.md)
   ./ledger/plan.py set T-4 DONE    change one task's status
   ./ledger/plan.py add 4 T-20 "task text" TODO "done when..."   append a task
+  ./ledger/plan.py donewhen T-20 "done when..."   sharpen one task's completion criterion
 
 Same discipline as the status ledger: ledger/plan.tsv is the source of truth, the document is
 generated, row order is file order, IDs never renumber, tasks append and are never deleted.
@@ -96,6 +97,15 @@ def main():
         hit = [r for r in rows if r[0] == a[1]]
         if not hit: sys.exit('no such task: %s' % a[1])
         old = hit[0][2]; hit[0][2] = a[2]
+    elif a[0] == 'donewhen':
+        # DONE_WHEN is what makes 'done' checkable rather than a judgement call, so it is the one
+        # column that must be rewritable when a task's completion criterion is sharpened by what the
+        # work found. It was reachable only at 'add', which meant sharpening it required retyping the
+        # task -- and the plan is retrieved and updated, never retyped.
+        hit = [r for r in rows if r[0] == a[1]]
+        if not hit: sys.exit('no such task: %s' % a[1])
+        while len(hit[0]) < 9: hit[0].append('')
+        old = hit[0][4]; hit[0][4] = a[2]
     elif a[0] == 'dep':
         # DEPENDS is the plan's real logic -- a task blocked by another must be able to say so
         # without hand-editing the TSV, which the gate forbids.
