@@ -10602,3 +10602,23 @@ families by the T-46 pattern, DONE_WHEN checkable against the proof's own comput
 counts; `T-55` — make D-25 unbypassable (no direct `RecordSurface()` outside the model, grep-checkable)
 and put at least one pinned external measured value beside a model number in a gated check with a
 stated tolerance, replacing the substring test. Plan now 44/55.
+
+---
+
+## THE CLAIMS GRID — **THE HEADLINE CLAIMS, THEIR STAGE, AND THEIR ANCHORS' LIVE STATUSES, BESIDE THE MODEL** (`THE_CLAIMS_V001.md`; `ledger/claims.tsv` + `claims.py`)
+
+**Commissioned by the principal, 2026-08-21:** a status grid of the main claims the program works to
+prove — the final deliverable being **the URM with the ability to prove each of them.** Built in the
+house pattern: the TSV is truth, the grid is generated, rows append and never renumber — and two
+disciplines make it safe at this altitude. **Anchor statuses are read LIVE from the status ledger at
+render time**, so the claims grid cannot silently go stale against the record (C-72's demotion, for
+instance, shows in G-B's anchor line on every render without anyone editing the grid). And **the
+tool refuses `PROVED-AT-BAR` unless every anchor row is `PROVED`** — the principal's bar held at
+claim level exactly as `status.py` holds it at row level. Six claims: THE DEFINITION
+(`GROUNDED-NOT-EARNED`), RECORD FORMATION (`WORLD-CONTACT-PARTIAL` — the only claim with a `PROVED`
+anchor), THE RECORD LAWS (`FORMAL-COMPLETE`), GRAVITY EMERGENCE (`MEMBER-LEVEL-MATCH`), THE THREE
+ROLES (`STATED-ON-TWO-CARRIERS`), THE PROOF ITSELF (`IN-CONSTRUCTION`). Stage vocabulary closed;
+stage moves are registrar acts with register entries; the grid is a VIEW of the ledger and plan,
+never a second source of truth. Wired into `on_finding.sh` beside the status and plan grids
+(byte-for-byte regeneration + the refusal must hold). This grid is not the ROAD list and does not
+replace it — it is the claim-level companion the ROAD's tasks serve.

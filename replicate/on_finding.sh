@@ -74,6 +74,17 @@ else warn "IMPORT SCAN — classical-gravity metric in a LIVE ledger claim (CORE
 rg=$(grep -ocniE "$PAT" REGISTER_V001.md 2>/dev/null || echo 0)
 printf "  \033[2m note  %s historical hits in the append-only register (informational)\033[0m\n" "$rg"
 
+# 3a3. THE CLAIMS GRID is generated too, and its refusal must hold (a claim may not say
+# PROVED-AT-BAR unless every anchor row is PROVED -- the principal's bar, held claim-level).
+cb=$(shasum -a 256 THE_CLAIMS_V001.md 2>/dev/null | cut -d' ' -f1)
+if ! rcc=$(./ledger/claims.py 2>&1 >/dev/null); then
+  warn "ledger/claims.py REFUSED TO RENDER: $rcc"
+else
+  [ -n "$cb" ] && [ "$cb" = "$(shasum -a 256 THE_CLAIMS_V001.md | cut -d' ' -f1)" ] \
+    && ok "the claims grid regenerates byte-for-byte from ledger/claims.tsv" \
+    || warn "the committed claims grid does not match what the ledger generates"
+fi
+
 # 3b. THE PLAN is generated too
 pb=$(shasum -a 256 THE_PLAN_V001.md 2>/dev/null | cut -d' ' -f1)
 ./ledger/plan.py >/dev/null 2>&1
