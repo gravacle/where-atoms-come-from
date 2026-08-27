@@ -1,0 +1,89 @@
+{
+  "result_id": "GRA-O-GF-CONTRACT-V002-REPAIR3",
+  "date": "2026-08-22",
+  "overall_result": "PASS_NARROW_IMMUTABLE_CUSTODY_REPAIR",
+  "scientific_result": "NO_PROOF_OUTPUT",
+  "refutation": {
+    "exact_mutation": "corrupt REAL.PLATFORM.FORMATION parent digest for REAL.PLATFORM.SOURCE without changing either artifact",
+    "repair2_laundering_reproduced": true,
+    "repair2_candidate_accepted": true,
+    "repair2_actual_platform_present": true,
+    "repair2_promoted_claims": [
+      "GF0",
+      "GF1",
+      "GF2",
+      "GF3",
+      "GE1",
+      "GE2"
+    ],
+    "repair3_disposition": "REFUSE_ARTIFACT_PARENT_HASH_MISMATCH",
+    "repair3_actual_platform_present": false,
+    "repair3_authoritative_outputs": "GF0_THROUGH_UGE_NO_PROOF_OUTPUT"
+  },
+  "fixed_suite": {
+    "case_count": 59,
+    "prior_repair2_cases": 54,
+    "new_custody_cases": 5,
+    "new_cases": [
+      "exact corrupted parent digest",
+      "wrong child artifact digest",
+      "unknown parent",
+      "parent self-cycle",
+      "orphan artifact"
+    ],
+    "scalar_list_regression_confirmed": true,
+    "mixed_list_regression_confirmed": true,
+    "typed_lifecycle_positive_control": true,
+    "input_byte_identity_asserted_for_new_cases": true,
+    "final_passes": 2,
+    "pass_1": "PASS_59_OF_59",
+    "pass_2": "PASS_59_OF_59",
+    "failed_cases_each_pass": 0,
+    "identical_result_payload_sha256": "043761bf06a90025dff7940e91bd1af4ed72db515555eeece004de8e8f613223",
+    "prior_repair2_result_payload_sha256": "564429f111bd975572a9bee443c334fe4630c7d3abc2c1d2cd28898700dfb947"
+  },
+  "repair_invariants": {
+    "repair1_receives_original_instance_first": true,
+    "repair1_called_once_by_repair3": true,
+    "observation_validator_receives_same_original_instance": true,
+    "observation_validation_is_read_only": true,
+    "repair2_projection_invoked": false,
+    "candidate_reconstructed": false,
+    "candidate_re_evaluated": false,
+    "artifact_or_payload_rewritten": false,
+    "digest_or_parent_rewritten": false,
+    "binding_or_registry_rewritten": false,
+    "typed_failure_only_removes_authority": true,
+    "repair1_failure_cannot_be_repaired_by_observation_success": true
+  },
+  "nongeometric_boundary": {
+    "metric_required_at_GF0_or_GF1": false,
+    "geometry_required_at_GF0_or_GF1": false,
+    "stress_energy_required_at_GF0_or_GF1": false,
+    "clarification_parent": "LANE_GRA_S_JOINT_SEED_DECISION/PRINCIPAL_CLARIFICATION_001.md",
+    "clarification_sha256": "2268762250f69c1ee8297ecd22cc3e67d490ccfb44062bf94ec18db9f768b8cb",
+    "clarification_use": "UNCHANGED_PARENT_NOT_A_REPAIR3_PREDICATE"
+  },
+  "version_custody": {
+    "sealed_v001_modified": false,
+    "sealed_v001_verifier_modified": false,
+    "sealed_v002_modified": false,
+    "sealed_repair1_modified": false,
+    "sealed_repair2_modified": false,
+    "sealed_v001_manifest_sha256": "e177f8845a430155684b8c98552b48857352e4d1dc4b8e5af3d1008a59ee2bec",
+    "sealed_v001_verifier_manifest_sha256": "837da7c23374a033396c352dd30b15ad4403d02be29dcbacb4ff976bcb903475",
+    "sealed_v002_manifest_sha256": "274b19ce8c640f41b37421c961d6e06668501e6020064894fb6ebd6327d565c2",
+    "sealed_repair1_manifest_sha256": "89a77c7394c69b3c5233a6fa91646ebf406feb3445be39dd3a1fceabcf8f3c2a",
+    "sealed_repair2_manifest_sha256": "02f4fcebd15680dfc0bd46b14a7a9be90368e17dc0f7fb98654598a14d88730b",
+    "new_files_confined_to": "LANE_GRA_O_GF_CONTRACT/V002/REPAIR3"
+  },
+  "implementation_hashes_before_result_and_manifest": {
+    "CONTRACT_V002_REPAIR3.md": "aa9ab0ff6f5cb326930df53bf52b5d6631d4b7d0ed16f228fea2b5a793dd0c7c",
+    "ADVERSARIAL_MATRIX_V002_REPAIR3.md": "378b5eaed9d9fac5560024d5a7b172524438923e6d376a3a52e0ff59d0360c36",
+    "D24_AUDIT_V002_REPAIR3.txt": "5a11ae94e6176fc8e1181df00a200bd16b04b72915421824da3abb62ce970826",
+    "validator_v002_repair3.py": "9ec57140c694e9f282a0147722a2aad62e60e1d8bf1fed0c732a6ccb0ff3aa3d",
+    "mutation_suite_v002_repair3.py": "55c7ba4beddedf530402687df96ac513dc06d4c3338976901c515a2071f37e17"
+  },
+  "actual_platform_present": false,
+  "first_scientific_blocker": "No actual admitted platform-specific JOINT_SEED packet satisfies the closed V002 plus Repair1 plus Repair2 plus Repair3 contract."
+}

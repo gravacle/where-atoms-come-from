@@ -31,13 +31,19 @@ Layers, each resting on registered rows:
                (C-87, C-90)                                              -> .coupling_venue, .reachable_class, ...
   WRITING      conserving/critical writer kernels and the surface gap
                (C-91)                                                    -> .writing_*
-  ROLES        the three role sentences, honestly scoped                 -> .roles
+  ROLES        the four role sentences, honestly scoped                  -> .roles
+  U-DCL        adopted working postulate plus exact conditional universal
+               Coverage-U theorem; natural validity remains open          -> .udcl_postulate,
+                                                                             .udcl_postulate_certificate
 
-A RecordSurface is what a physicist supplies: their own device or specimen's constants, in SI.
-New observations enter through the URM gate: a new surface carries provenance; a new law is a
-layer method with a validator gate and claim row; a new external number is a pinned comparison
-with stated tolerance, semantics, and a power control.  validate_urm.py is the integrated
-conjunction; validate_project.py preserves the public-entry and backward-compatibility gates."""
+A RecordSurface is a physicist-supplied parameterization of a device or specimen in SI; it is
+not by itself real-world validation.  Actual measurements enter separately through
+URM.world_observation(), whose closed bundle preserves raw-source custody, normalization, units,
+coverage, and provenance while issuing no scientific verdict.  A new law is a layer method with
+a validator gate and claim row; agreement with the world requires a prospectively frozen
+prediction and an actual-surface comparison with stated tolerance, semantics, and a power
+control.  validate_urm.py is the integrated conjunction; validate_project.py preserves the
+public-entry and backward-compatibility gates."""
 import numpy as np
 import grounded as G
 
@@ -532,16 +538,256 @@ class ProjectModel:
     # ---------------------------------------------------------------- ROLES (honestly scoped)
     def roles(self):
         return {
-            "EM": "supplies the carrier: in the corner, both boundary maps of the chain complex "
-                  "(A-EM, FORMAL); in the world, every terrestrial census record's mechanism is "
-                  "electromagnetic at bottom (census GR1). Restatement for the world = TD-2/T-15.",
-            "GAMMA": "in the corner: record space, writer, protection via homology (A-GR, FORMAL; "
-                     "C-74 exact on the torus). In the world: protection is by BARRIERS, of which "
-                     "homology is the E_b -> infinity idealisation (census GR2). The world-level "
-                     "emergence claim has no falsifiable statement yet = TD-1/T-37.",
-            "ALPHA": "in the corpus: a generic coupling, nothing dimensionful (T-22, FORMAL). Under "
-                     "the amended laws every terrestrial barrier is an EM energy scale, so alpha's "
-                     "VALUE may enter record durability through E_b = TD-3/T-38, undecided.",
+            "EM": "world-tier EM is a physically instantiated write/hold/read mechanism in declared "
+                  "record packets, not a universally proved substrate of every record. A conserved "
+                  "current reaches Maxwell response only under the separate MCR action, gauge, "
+                  "boundary, and Ward packet; compact U(1) emergence remains open.",
+            "GAMMA": "For the first qualified positive-margin binary record, complete-query "
+                     "squared-fidelity gamma_Q obeys D_TV>=B_rec>0 => gamma_Q<=1-B_rec^2<1, "
+                     "so I_gamma=-log(gamma_Q)>0: the gamma-information seed is present at "
+                     "record formation, but is not microscopic classical gravity. State-family "
+                     "gamma_state supplies an exact rank-three QFI coframe candidate. At the "
+                     "isotropic S_4 point, GSGB's s_gamma=ell_F^2 f P matches EO's "
+                     "q_EO=(4a^2/3)P under ell_F^2 f=4a^2/3. Equivalently, ET's "
+                     "Bures-line q_gamma=(ell_B^2 f/4)P requires ell_B^2 f=16a^2/3, "
+                     "with ell_B=2 ell_F; away from isotropy an explicit tetrad/null "
+                     "binding is required. The "
+                     "restrictive same-parent Gaussian influence gamma_IF + complete-control + "
+                     "known-temperature KMS + causal/contact packet reconstructs a dressed "
+                     "retarded response. The three gamma objects require a separate common "
+                     "read/dilation theorem before identification. Generic gamma is not a force "
+                     "and determines neither time orientation nor curvature. With the separately "
+                     "supplied ER routing law, the same retained record can control exact common "
+                     "two-probe Lorentz holonomy. Because that routing is supplied, this is an "
+                     "intermediate witness, not the final same-world theorem; global same-sector "
+                     "ancestry and physical soldering remain open.",
+            "ALPHA": "Alpha is not a standalone theory in the URM; SAI/AWAI is the "
+                     "empirically anchored same-visible-U(1) inheritance theorem. Independent "
+                     "measurement anchors the actual visible-parent coupling at chi_0. For any "
+                     "record r, ACTVIS(r,W_obs) together with SAI1--SAI8 implies "
+                     "alpha_r(chi)=T_{chi<-chi_0}[alpha_obs(chi_0)]. ACTVIS independently "
+                     "establishes ancestry to the same visible photon eigenmode and parent action. "
+                     "Thus an ACTVIS record cannot choose a private record- or region-level alpha; "
+                     "an aligned inequivalent value falsifies its same-sector assignment or at "
+                     "least one SAI premise. Bare REC, DCL_phys, and URFT establish neither "
+                     "ACTVIS nor compact U(1). Finite active-EM recordhood ALLOWS multiple alphas "
+                     "across parent models; complete-universe numerical REQUIRE and any parent "
+                     "SELECT law remain open. AWAI proves inheritance of the empirically anchored "
+                     "value, not a parameter-free prediction of that parent value or a derivation "
+                     "of gravity or G.",
+            "GRAVITY": "Classical gravity is not placed on the microscopic record surface; the first "
+                       "qualified positive-margin binary record already carries the nonzero "
+                       "gamma-information seed described above. In the declared "
+                       "F3-QIRN successor calculations, retained-record loading can carry the exact U_d "
+                       "cycle sector through 4 U_d chi_0^R(0)=1 into open classical degree plateaus. "
+                       "An exact finite custody-handoff model forms derivative pair memory, composes finite "
+                       "serial paths and a symmetric equal-depth branch/rejoin cycle, and supplies extensive "
+                       "reversible active/quarantine BREAK; on serial support the same interaction has an "
+                       "exact open one-dimensional TFIM phase for U_d>2h. On independently earned bipartite "
+                       "support, degree lock is an exact discrete Gauss sector and the existing link flip "
+                       "derives alternating-cycle ring dynamics. On supplied z=4,d*=2 diamond ice, the exact "
+                       "leading F3 Hamiltonian reaches the published pure-kinetic U(1) liquid; independently, "
+                       "the actual hard-core carrier makes every fixed even cubic torus a local two-switch "
+                       "free-energy basin in an open controlled regime, while the saturated carrier makes "
+                       "periodic diamond a saddle. On supplied cubic eligibility, d*=3 is exactly the "
+                       "zero-charge spin-half U(1) quantum-link sector. Formed pair memory can lawfully gate "
+                       "that successor field, but unchanged BS09 hopping follows occupied G_n rather than the "
+                       "full degree-six eligibility graph, so the saturated carrier margin is not additive and "
+                       "no direct K_e T_e law is installed. One joint trace has a nonzero carrier-incidence "
+                       "backresponse, and its complete h^2 Y^2 dressing gives carrier density and hopping "
+                       "response rather than symmetric-detuning electric stiffness. The exact full thermal square has open "
+                       "positive and negative response regions and multiple tuned crossings, so beta U_d=1 is not universal. "
+                       "Exact physical shared-edge composition preserves both one-cell anchor signs; its sector-correct "
+                       "global gluing contrast and a distinct same-six-site pinned-ensemble Mobius finite difference are "
+                       "nonzero and sign-changing. This remains a two-cell, one-carrier dilute result, and the pinning "
+                       "controller/work is not yet physically completed. "
+                       "The unchanged qutrit law already supplies the fixed-content hard-core two-carrier sector, with "
+                       "(J_e^psi)^2=q_u+q_v-2q_uq_v. Its exact 1920-state trace proves that finite signs depend on collision "
+                       "algebra and number preparation; the allowed global rule N_m=m is not a selected fixed-density phase "
+                       "or a full-content trace. The exact fixed-width transfer limit proves that the matched canonical "
+                       "and grand intensive responses agree but remain analytic at finite temperature, so a strip zero is "
+                       "a crossover rather than a phase transition. On a supplied two-dimensional square sheet, the unchanged "
+                       "incidence trace is exactly a record-occupation-dependent Ising interaction and one witness straddles "
+                       "its thermodynamic critical surface. A second exact theorem restores positive degree lock and proves "
+                       "open blank-boundary-disordered/occupied-carrier-ordered regions at a BS13-stable witness. A typed "
+                       "volume-wise composition routes actual FPMH derivative records into active storage or retained "
+                       "quarantine and switches those carrier responses while conserving total formed-relation occupation "
+                       "across KEEP/BREAK. This is conditional formation-to-phase causation through active occupation, not "
+                       "a history-only effect at matched active state. A fixed-separate-marginal controller construction "
+                       "is rejected as record causation because its decoder cancels record ancestry end to end. A distinct "
+                       "pair-rebinding circuit changes the phase through active joint correlation while complete separate "
+                       "fields, sharp counts, spectra, and mutual information remain matched. Heterogeneous accumulation "
+                       "is controlled by contour/path topology rather than scalar density: equal-density placements have "
+                       "different exact responses. FPMH composition fixes 32 formation episodes, eight active authenticated "
+                       "records, and 24 quarantined formed excitations while retaining that response difference. F3 reads "
+                       "the active pattern rather than provenance, and the route topology is supplied. The reciprocal audit "
+                       "proves that the sealed h=t=0 hold has zero retarded carrier-to-incidence and carrier-to-pair-memory "
+                       "response. Restoring the inherited BS06 flip gives an exact finite carrier-conditioned Rabi channel, "
+                       "but no common-background collective limit is earned and fixed-time local response is O(N^-2). "
+                       "The minimal incidence degree defect acquires "
+                       "second-order line-graph hopping but fails the isolated finite-residue pole gate because a flat cycle "
+                       "fiber touches the dispersive band and the degree residue vanishes; inherited flip scaling also gives "
+                       "vanishing thermodynamic bandwidth. These results do not yet supply autonomous support, nonzero-dynamics "
+                       "phase persistence, a common metric, or gravity. "
+                       "A lawful joint endpoint trace also has an exact open conditional ALLOW-side bias without K_e T_e, "
+                       "but physical sector access and matched occupied-n switching remain open. Qualified retained occupation changes virtual "
+                       "degree-defect denominators and therefore produces an exact record-patterned electric "
+                       "potential and plaquette stiffness without a geometry reward. If one collective phase "
+                       "carries paired electric and magnetic stiffnesses to the same IR scale, they determine "
+                       "an optical cone and coupling and can carry sectoral tidal curvature. Maxwell conformal "
+                       "invariance still leaves the spatial-volume factor needed for nonzero static G00 "
+                       "unresolved in the U(1) sector alone. A calibrated same-parent massive probe would fix "
+                       "N=omega0/mu and A=omega0/(mu c), but without an earned proper mass, clock, residue, or "
+                       "cell scale an exact compensator leaves that volume unidentifiable for one uncontrolled "
+                       "probe. Several fixed-mass probes provide an exact scale-free alternative: a common static "
+                       "metric exists exactly when their cone identities agree and their coordinate-gap ratios "
+                       "are spatially constant. Those conditions determine the N,A profiles and coordinate G00 "
+                       "up to one global scale; a varying gap ratio falsifies common fixed-mass geometry. Current "
+                       "F3 has not yet earned the required independently resolved continuum species. Its two bare content "
+                       "labels give duplicate rank-one carrier rows, while its storage qutrits do not propagate between "
+                       "vertices. The minimal bare incidence degree-defect candidate has failed the stable-pole gate "
+                       "at its first controlled hopping order. Exact screening of its already-present carrier-dressed "
+                       "one-hole continuation permits static dressing or binding but proves an isolation-bandwidth "
+                       "dichotomy: exact-complement touching cannot create a uniform gap, while a uniformly isolated "
+                       "continuation has bandwidth O(N^-1) under inherited h_N=Omega/N. Finite-density, controlled "
+                       "gap-closing/double-scaling, and higher-sector routes remain open. The exact finite-density boundary "
+                       "has an O(1) channel only with macroscopic Johnson coherence: authenticated classical word accumulation "
+                       "and the conditioned dressed Gibbs state have c_J=0 and O(N^-1) escape curvature. Separately, the "
+                       "earned Q_uv^auth is a partial set-valued authenticated custody field: declared support is symmetric, "
+                       "writer provenance directed, and untested pairs are undefined rather than zero. Explicit common-parent "
+                       "products realize every supplied finite graph, so URFT/FPMH alone entails no sparsity, dimension, or "
+                       "locality. Its exact common-generator kappa_(v<-u) seminorm distinguishes a direct generator block from "
+                       "two-step-only influence. The unchanged one-pair FPMH/PESC composition passes it exactly: "
+                       "kappa_KEEP(v<-u)=kappa_KEEP(u<-v)=abs(t_psi)/hbar, while both matched BREAK blocks vanish under the "
+                       "same complete Hamiltonian. On one complete finite declared census, this composition gives "
+                       "kappa_(v<-u)=abs(t_psi) S_uv^auth/hbar in both directions on every pair, so direct influence support "
+                       "is exactly active authenticated support. The fixed-number finite-time signal equals the carrier transition "
+                       "amplitude and obeys separate factorial and Lieb--Robinson-type graph-distance bounds conditional on a supplied "
+                       "maximum degree. This earns a supplied-network relational propagation cone without K_eT_e; endpoint reciprocity "
+                       "is not carrier-to-record back-reaction. In the complete existing post-formation source-off parent, the full "
+                       "authenticated support projector S_e=F_e Z_e^KEEP P_e^K commutes with the Hamiltonian, so every support-word "
+                       "probability is frozen for arbitrary complete states. This proves passive graph retention but closes autonomous "
+                       "or corrective selection of the authenticated graph by existing source-off terms; successor incidence may still "
+                       "evolve inside fixed authenticated eligibility. The exact K_(6,6), degree-three hostile screen proves finite "
+                       "component-merger and fragment access, but the completed known one-carrier diagonal response gives the fragmented "
+                       "2K_(3,3) graph strictly lower fixed-graph free energy at finite temperature. Physical zero-temperature band bottoms "
+                       "tie, and graph entropy is separate. The exact carrier-dressed h^4Y switch coefficient cancels at symmetric "
+                       "detuning; in the controlled detuned domain its correction is below 3/16 per labeled switch and 1/48 on the "
+                       "normalized merger block, so it cannot reverse the pure switch. The reciprocal Hermitian amplitude is not merger "
+                       "tension. The exact all-orders-in-carrier diagonal response at O(h^2) is a Sylvester/Liouville inverse. In the "
+                       "finite K_(6,6) witness its relative fragment/connected sign changes with temperature, while proper cold degenerate "
+                       "perturbation returns to fragment preference. It is real feedback, not a universal connector. The exact dense-eligibility "
+                       "count is exp[d n log n+O(n)], whereas a prospectively fixed finite-complexity local family has rank at most "
+                       "exp[2n log n+O(n)]. Under the explicit endpoint-extensive width premise osc(H_n)<=w n, its fixed-temperature Gibbs "
+                       "weight vanishes for d>=3 even with off-diagonal graph dynamics. This is not yet a full-parent verdict: dense eligibility "
+                       "has n^2 physical relation resources, fixed switch amplitude can have Theta(n^2) width, and enlarged record/factor/event "
+                       "locality is a separate representation. Counting active pair tokens as factor vertices gives average degree below four "
+                       "but does not cure hubs: complete endpoint projection has maximum degree N-1 and radius-three saturation. The present "
+                       "carrier law propagates directly on that endpoint projection; the record token is a preparation ancestor, not an "
+                       "intermediate site. Existing URFT/FPMH does not imply a uniform active endpoint capacity. The explicit missing "
+                       "UCAIC_sigma(B) premise assigns every simultaneous active relation distinct named endpoint ports until BREAK/deactivation "
+                       "and forbids a direct bypass. Conditional on it, Delta(K)<=B, M<=BN/2, fixed-size cell embeddings are O(N), and the DV "
+                       "cone constant is size independent. UCAIC is not derived or adopted and selects no connectedness or dimension. The strongest "
+                       "finite-dimensional capacity route is now exact: a full Cartesian m-bit code in one D-dimensional endpoint-accessible carrier "
+                       "requires 2^m<=D under perfect whole-word decoding, while jointly randomized bit reads obey sum_i[1-h_2(p_i)]<=log_2D, with "
+                       "jointly stable averaged RMR/gamma corollaries. Parity, central fanout, external edge memories, and shared buses prove that ordinary "
+                       "per-context RMR/gamma and finite endpoint dimension do not derive episode-faithful ownership, persistence, uniform accessible "
+                       "dimension, or no bypass. History-wise phase inheritance is exact once one complete physical formation instrument is branchwise "
+                       "closed on a prospectively fixed realized phase Phi: finite induction covers every nonterminal active/reject/quarantine successor "
+                       "without selecting an outcome, while terminal outcomes end their histories. K_j is the complete typed phase state, A_j its "
+                       "authenticated support word, and G_j its simple active endpoint projection; EB bounds G_j, DW freezes A_j and G_j between writer "
+                       "windows, and DV supplies the controlled simple one-episode cone. Snapshot control alone does not derive the update law: alternating "
+                       "bounded supports, monotone binary-tree growth, and four-cell cacti are exact countermodels. The isolated candidate is a recursive "
+                       "same-parent writer law with phase-local writers, complete grammar closure, and bypass rejection/quarantine; it is not derived by "
+                       "current FPMH. The complete "
+                       "dense-parent ledger now proves O(n) width for the exact degree-locked compression under explicit bounded edge/bulk/port "
+                       "premises, an intensive one-toggle boundary for h_n=Omega/n, O(1) exact-Y second-order width under a uniform Sylvester gap, "
+                       "and O(n^-2) leading switch width, but no all-orders effective-width theorem. The full soft degree penalty has Theta(n^3) "
+                       "width. On the clean classical symmetric slice, Z1/Zd=n^2 exp(-2 beta U_d), and every fixed finite-maximum-degree family has "
+                       "weight at most exp[-n log n+O(n)] at fixed finite temperature and fixed couplings. Thus fixed soft degree preference does not "
+                       "thermally produce finite valence on that slice; hard capacity, formation-time rank reduction, growing scales, zero-temperature "
+                       "control, and nonequilibrium protection remain escapes, and the claim is not exported to the nonzero carrier/current/port parent. "
+                       "Conditional UCAIC plus a connected attaching lineage of bounded authenticated cells gives connected endpoint/cell-dual graphs "
+                       "and a linear cell census, but a diamondized trivalent tree satisfies those conditions while its balls grow as 9*2^k-8. The exact "
+                       "sufficient missing law is a physically counted all-ball frontier bound |partial B|<=A|B|^(1-1/D); conditionally it gives "
+                       "|B(v,r)|<=(1+Ar/D)^D and excludes uniform expanders. A,D are supplied frontier data, not a derived dimension; physical "
+                       "front collision, coalescence, or sealing remains to be derived or falsified from the formation/work/port ledger. "
+                       "One exact conditional mechanism now reaches that frontier law: complete future-equivalent AB/BA event-front coalescence, "
+                       "plus an explicit authenticated class/edge/cell lift and bounded named ports, gives N_0^2 support with the uniform all-root "
+                       "bound |partial B|<=8 sqrt(2)|B|^(1/2); finite count caps compose with EF, while constitutive merger BREAK restores the "
+                       "binary tree and exponential growth. Current FPMH/F3 does not instantiate the complete merger observable or its drift/variance, "
+                       "and the tuned cycle zero is not a front-balance law. Keeping the append arrows gives a conditional truncated operational "
+                       "1+1 causal-diamond poset: t=#A+#B, x=#A-#B, reachability iff Delta t>=|Delta x| on the parity lattice, and "
+                       "tau_comb^2=4(|I|-ell-1). This is not yet a physical spacetime-event census; the one-class/one-event lift, uniform event-volume "
+                       "density, conformal factor, calibration, and common probes remain open. Higher-rank raw orthants are polyhedral and are not "
+                       "invertibly linearly equivalent to higher-dimensional Lorentz cones. The exact OPEN-token ledger xi=G-C-2P-Q supplies a "
+                       "conditional drift trichotomy, but zero drift yields only a fixed-exploration high-probability square-root bound, not history-wise "
+                       "or simultaneous all-ball SAF; a branchwise seal-credit/lifetime invariant and token-to-boundary map remain required. Finally, a "
+                       "turn phase genuinely tensor-local to a redundant full-word history factor, or restricted to one fixed front block, is exactly "
+                       "front-invisible under partial trace and every CN-descending future. This does not cover a Q-controlled phase on CN's minimal rank "
+                       "encoding, whose labels are reused across front sectors. A canonical coherent checkerboard-like construction would use a front-active "
+                       "coin/conditioned shift before persistent recording; more generally, recombination must become front-active or use a fully owned "
+                       "history-to-front descent break. Current F3/PESC installs no earned implementation of that join. "
+                       "The exact positive complement retains every complete history as an OPEN active disposition (q,c), or an explicit terminal label, "
+                       "plus a blind residual rank z. Right congruence is the recursive append gate, reference-stable Z descent prevents residual leakage, "
+                       "and failure of the further CPTP C descent is exactly the condition for bounded memory to affect the scored front. For uniform "
+                       "k=|C|, active RFCD layers obey F_n<=sum_i min(k,binom(n,i))<=2+k(n-1); arbitrary refined graph balls grow by at most k and degree "
+                       "is at most k Delta+k-1. Last-symbol chirality gives exactly F_n=2n and cumulative count 1+R(R+1), whereas FULL-RESIDUAL BREAK "
+                       "restores 2^n. This does not restore interference between orthogonally tagged histories. No displayed current-parent variable "
+                       "supplies the required statistic or coin: transported content is bounded but propagation-blind, FPMH direction is provenance while "
+                       "active K is undirected, and K,n are edge-indexed. "
+                       "A prospective extension closes the corresponding finite propagation calculation on one supplied fixed authenticated support. "
+                       "Reusing the existing qutrit occupied contents as probe chirality, but newly instantiating an onsite coin and content-conditioned "
+                       "transfer, gives an exact one-carrier conditioned shift. A single complete route/SWAP unitary gives chirality KEEP versus a Q-only "
+                       "C-descending BREAK with displaced content retained in garbage. Structural formation history is fixed and blind; the interfering "
+                       "alternatives are unrecorded probe paths, so persistent orthogonal path records recover the incoherent EJ limit. In the padded bulk, "
+                       "cos Omega(k)=cos(ka)cos(theta) and |v_g|<=a/Delta tau; scaling a/Delta tau=c and theta=mc^2 Delta tau/hbar has principal limit "
+                       "H_eff=hbar c k sigma_z+mc^2 sigma_x. This proves a prospective conditional 1+1 relativistic probe architecture, not a current-parent "
+                       "matter law. The coin, conditioned transfer, front embedding, coherent-before-terminal-REC schedule, physical scale, 3+1 support, "
+                       "common metric, and gravity remain unearned. "
+                       "A finite coin cannot repair that missing support: the principal differential rank is at most the number of independent support "
+                       "characters, and internal noncommutativity does not alter the raw positive-append orthant. On a separately supplied signed "
+                       "rank-three support, an exact Pauli split-step walk has an isotropic Weyl infrared principal cone and an explicitly anisotropic "
+                       "ultraviolet dispersion. Four channels with Gram entries 1 and -1/3 give a coordinate-free local tetrahedral frame; exact "
+                       "scalar-square isotropy is equivalent to Clifford anticommutators, and an exact nonzero Dirac mass requires internal dimension "
+                       "at least four. Two independently prepared probes passing the same scoped Clifford test establish a common-cone candidate only "
+                       "for those probes. Signed support, inverse channels, global gluing/holonomy, the coin, probe species, physical scale, universality, "
+                       "curvature, and gravity remain unearned. "
+                       "The corresponding conformal-scale bridge is exact at conditional finite 1+1 scope. If a branch-stable proper angular frequency "
+                       "mu_*, an independently calibrated common null speed c_*, the EL-step/EI-layer clock lock, and an independently falsifiable "
+                       "one-base-Q-cell/one-physical-cell binding are physically supplied, then Delta tau=theta/mu_*, a=c_*Delta tau, "
+                       "ds^2=-c_*^2 dT^2+dX^2=-4a^2 du dv, and v_square=2a^2. Complete intervals obey "
+                       "V_2=(a^2/2)tau_comb^2=2a^2(|I|-ell-1), and exact M3 refinement is the phase-square law. Without the independent frequency "
+                       "standard, an exact Weyl compensator preserves RFCD order, EL phase, dimensionless momentum, and the speed ratio while scaling "
+                       "metric and volume. Gamma, record counts, and order therefore do not secretly fix the physical scale. The calibration/cell "
+                       "binding, physical 3+1 support, continuum, curvature, common stress response, and gravity remain unearned. "
+                       "The sealed bounded q=4 stream witness supplies an explicit compatible record-front merger with exact complete-port S_4 "
+                       "covariance. Conditional clock/cell calibration turns its count contrasts into the exact rank-three A_3 tetrahedral frame "
+                       "and a local 3+1 Lorentz-signature simplex. Matching its isotropic EO quadratic form to the QFI coframe uses the explicit "
+                       "GSGB ell_F^2 f=4a^2/3 scale/soldering premise, equivalently ET's "
+                       "ell_B^2 f=16a^2/3 with ell_B=2 ell_F; it is not derived, and anisotropic matching requires an explicit "
+                       "tetrad/null binding. The Boolean-cell theorem defines a common two-probe Lorentz connection, and the "
+                       "ER witness proves that one qualified retained record can control nontrivial versus identity holonomy with identical signed "
+                       "module inventory. This is common-connection curvature, not Levi-Civita curvature: ER fails the natural-coframe torsion "
+                       "equation. GSGB therefore establishes a typed gamma-to-gravity connection lane, not a completed physical chain. The final "
+                       "real-world target is one same-world derivation from qualified record to gamma seed, physical QFI/EO soldering, selected "
+                       "Levi-Civita curvature under refinement, and universal stress/Einstein-Hilbert response, with neither geometry nor routing "
+                       "inserted as a premise. GSGB-JOIN, "
+                       "QFI-to-physical-coframe G-SOLDER, compatible torsion-free connection selection, controlled refinement, and the downstream "
+                       "gravity gates remain open. "
+                       "Nonlinear off-diagonal h^4Y^2/h^6Y remains open, but the active need is a scale-stable capacity/formation law. Any candidate must "
+                       "reverse or bypass this adverse component tension "
+                       "without inserting connectivity, then derive stable sparse connected support, degree, dimension, and distance, "
+                       "an isolated finite-residue local pole, and physical thermodynamic propagation. These results "
+                       "are not yet one autonomous thermodynamic gravity parent. "
+                       "After one common smooth Lorentzian metric is earned, a positive "
+                       "matched total Ricci coefficient, including the finite-shell contribution, "
+                       "conditionally supplies the full nonlinear "
+                       "leading-derivative Einstein-Hilbert action and complete-stress back-reaction; a "
+                       "composite metric also requires the explicit-force and dense-tangent-span gates. "
+                       "Autonomous support/phase selection, physical multi-species/common-volume realization, "
+                       "the common metric, symmetric rank-two order, global same-sector ancestry, physical soldering/refinement, "
+                       "the coefficient sign, the absolute scale, and observed SI G remain open.",
         }
 
 
@@ -571,11 +817,13 @@ PROVENANCE = {
 class URM(ProjectModel):
     """The public gate of the Universal Record Model.
 
-       D-25 is enforced at both observation constructors: surface() REFUSES a world-tier
-       surface without provenance, and corner() REFUSES an exact carrier that does not
-       self-declare DEF-A.  New laws enter as ProjectModel layer methods plus validator
-       gates and claim rows; new external numbers enter only as pinned comparisons with
-       stated tolerance, semantics, and a power control."""
+       D-25 is enforced at both model-carrier constructors: surface() REFUSES a world-tier
+       parameterization without provenance, and corner() REFUSES an exact carrier that does
+       not self-declare DEF-A.  world_observation() is the distinct measurement-input door;
+       passing its custody contract is necessary but is not validation of a theory.  New laws
+       enter as ProjectModel layer methods plus validator gates and claim rows; new external
+       numbers enter only as pinned comparisons with stated tolerance, semantics, and a power
+       control."""
 
     @staticmethod
     def surface(name, mechanism, dE, E_b, T, f0, thermal=True, provenance=None, tier="world"):
@@ -596,6 +844,180 @@ class URM(ProjectModel):
         s.provenance = provenance or PROVENANCE.get(name) or ("DEF-A" if tier == "corner" else None)
         s.tier = tier
         return s
+
+    @staticmethod
+    def world_observation(manifest_path):
+        """Load one physicist-supplied, content-addressed observation bundle.
+
+        This is the URM's measurement input door.  It validates the closed schema,
+        units, custody hashes, registered normalization, and declared coverage.  It
+        deliberately returns no formation or gravity verdict: agreement with a
+        prospectively frozen theory must be scored by a separate scientific layer.
+        """
+        from world_observation import load_world_observation
+
+        return load_world_observation(manifest_path)
+
+    @staticmethod
+    def world_observation_certificate(manifest_path):
+        """Return the non-scientific custody/coverage certificate for an observation."""
+        return URM.world_observation(manifest_path).certificate()
+
+    @staticmethod
+    def formation_input(manifest_path):
+        """Load one closed V002 physical formation input without scoring science."""
+        from formation_input import load_formation_input
+
+        return load_formation_input(manifest_path)
+
+    @staticmethod
+    def formation_input_certificate(manifest_path):
+        """Return structural custody and D-to-V eligibility; authorize no claim."""
+        return URM.formation_input(manifest_path).certificate()
+
+    @staticmethod
+    def formation_execution(manifest_path, execution_envelope_path):
+        """Attach generic frozen-predicate outputs without a scientific verdict."""
+        from formation_input import attach_formation_execution
+
+        return attach_formation_execution(
+            URM.formation_input(manifest_path), execution_envelope_path
+        )
+
+    @staticmethod
+    def formation_validation(manifest_path):
+        """Assess only whether distinct DEVELOPMENT and VALIDATION data are eligible."""
+        from formation_input import assess_validation_pair
+
+        return assess_validation_pair(URM.formation_input(manifest_path))
+
+    @staticmethod
+    def gamma_flow(manifest_path):
+        """Evaluate one closed origin-neutral gamma-flow envelope through Repair3."""
+        from gamma_flow import load_gamma_flow
+
+        return load_gamma_flow(manifest_path)
+
+    @staticmethod
+    def gamma_flow_certificate(manifest_path):
+        """Return the derived gamma-flow certificate; no input outcome is trusted."""
+        return URM.gamma_flow(manifest_path).certificate()
+
+    @staticmethod
+    def gamma_flow_states(manifest_path):
+        """Return the four internal discovery states without promoting proof output."""
+        return dict(URM.gamma_flow(manifest_path).internal_discovery_states)
+
+    @staticmethod
+    def gamma_flow_proof_outputs(manifest_path):
+        """Return Repair3-bounded authoritative proof mappings for GF0 through UGE."""
+        return dict(URM.gamma_flow(manifest_path).proof_outputs)
+
+    @staticmethod
+    def proof_frontier(manifest_path):
+        """Load the public-data proof frontier without promoting either proof."""
+        from proof_frontier import load_proof_frontier
+
+        return load_proof_frontier(manifest_path)
+
+    @staticmethod
+    def proof_frontier_certificate(manifest_path):
+        """Return missing blockers, runnable work, and theory states with zero proof output."""
+        return URM.proof_frontier(manifest_path).certificate()
+
+    @staticmethod
+    def proof_frontier_proof_states(manifest_path):
+        """Return blocker or nonauthoritative input states; authorize no readiness/proof."""
+        return dict(URM.proof_frontier(manifest_path).proof_states)
+
+    @staticmethod
+    def proof_frontier_theory_states(manifest_path):
+        """Return theory support states under the strict unavailable-data fallback rule."""
+        return dict(URM.proof_frontier(manifest_path).theory_states)
+
+    @staticmethod
+    def proof_frontier_execution_frontier(manifest_path):
+        """Return available unrun obligations even when other obligations lack data."""
+        return list(URM.proof_frontier(manifest_path).available_execution_frontier)
+
+    @staticmethod
+    def udcl_postulate():
+        """Expose the pinned U-DCL postulate and transitive axiomatic closure only.
+
+        The separate CACNM theorem can transport an exact reference margin through a
+        finite DAG only with common complete ports and full-channel certificates; it
+        creates neither approximate DCL_phys nor REC. The separate FDFU theorem derives
+        such a finite DAG for bounded finite-horizon recurrent missions whose every
+        feedback cycle has positive total lower delay; it excludes instantaneous loops,
+        Zeno accumulation, unbounded spawning/horizons, and hidden cross-use memory.
+        """
+        from udcl_postulate import udcl_postulate
+
+        return udcl_postulate()
+
+    @staticmethod
+    def udcl_postulate_certificate():
+        """Return its immutable zero-input certificate; natural validity stays open."""
+        from udcl_postulate import udcl_postulate_certificate
+
+        return udcl_postulate_certificate()
+
+    @staticmethod
+    def historywise_gravity_discriminant():
+        """Expose the pinned finite-group formal discriminant; authorize no physics."""
+        from historywise_gravity_discriminant import historywise_gravity_discriminant
+
+        return historywise_gravity_discriminant()
+
+    @staticmethod
+    def historywise_gravity_discriminant_certificate():
+        """Return its immutable zero-input certificate with every claim ceiling intact."""
+        from historywise_gravity_discriminant import (
+            historywise_gravity_discriminant_certificate,
+        )
+
+        return historywise_gravity_discriminant_certificate()
+
+    @staticmethod
+    def gravity_formation_theory():
+        """Expose the hash-pinned closed working theory; accept no data or solver input."""
+        from gravity_formation_theory import gravity_formation_theory
+
+        return gravity_formation_theory()
+
+    @staticmethod
+    def gravity_formation_theory_certificate():
+        """Return its immutable zero-input certificate with empirical ceilings intact."""
+        from gravity_formation_theory import gravity_formation_theory_certificate
+
+        return gravity_formation_theory_certificate()
+
+    def roles(self):
+        """Keep the historical role ledger, but replace its superseded gravity frontier."""
+        roles = super().roles()
+        roles["GRAVITY"] = (
+            "Gravity Formation Theory is closed as an exact transitive composition inside "
+            "the adopted AURFT/U-DCL + RGRL working theory and the typed EIR-1--EIR-6 "
+            "endpoint premises. RGRL is adopted, not empirically confirmed. Under the adopted "
+            "clarification, RGRL-C supplies full-rank or declared dense-range off-shell "
+            "constitutive ancestry on the local spatial-metric tangent; it does not by itself "
+            "supply an on-shell force law. The on-shell H^R kernel is separately established "
+            "or measured, and the GI21 compatibility/type join is open. On the V002 well-posed "
+            "retarded quotient with no unresolved zero mode, the same complete dressed source, "
+            "remainder, and physical solution data give exactly zero on-shell response, and H^R "
+            "may vanish without reducing the off-shell rank. The old local "
+            "RGRL-C SPAG force/common-freefall labels are retired; future work separates the "
+            "zero-prediction complete-source-matched discovery lane from the independently "
+            "source-calibrated G cross-check. Conditional on AFR and the microscopic equal-depth/"
+            "equal-q_J-norm null-step law, record-front refinement converges to a smooth local "
+            "mathematical 3+1 Lorentz cone; at the S4-symmetric J=0 point, pair memory supplies "
+            "six formal spatial cone-metric variations. AFR, the null-step dynamics, physical "
+            "gluing and volume, common-probe identification, and gravity dynamics remain open. "
+            "Numerical G requires a full dressed finite-apparatus forward model and bounded "
+            "remainders generally yield an identified interval or set, not a bare k=0 ratio. See "
+            "gravity_formation_theory_certificate() for pinned custody and exact ceilings."
+        )
+        return roles
 
     def corner(self, H, Ls=(), provenance=None):
         """D-25-gated DEF-A entry to the exact commutant corner."""

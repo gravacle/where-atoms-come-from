@@ -1,0 +1,81 @@
+T-53A D-24 AUDIT — REGISTRAR WORKING RECORD
+============================================================
+
+Scope
+-----
+This lane is a retrospective actual-surface measurement exercise.  It is not a
+confirmatory record-formation experiment, a general-law verdict, or authority to change
+T-53.  The source outcomes were public before the source was selected.
+
+Custody and reproducibility
+---------------------------
+- Frozen Zenodo record: 10.5281/zenodo.14564186, CC BY 4.0.
+- Frozen source archive SHA-256:
+  202a932bcf30af20087c21277c9d19f2b7217a69d849a198db9016f170f330ab
+- acquire.py was rerun offline into a new temporary directory.  A recursive byte
+  comparison against raw/ returned no differences.
+- analyze.py was run twice after the final source edit.  Both runs produced:
+  RESULT.json  20d69c40e9218bbb4a95870fb35fd2900594821d95a4b2a493e6887f384ad0d9
+  RESULT.txt   4deb5ca6d959723e037d26e820fb4bd011013a7fac3abd8c7718f14212019b5f
+- After adversarial repairs, model/checks_lakeshore_vsm.py returned 11/11 PASS and
+  model/checks_world_observation.py returned 28/28 PASS.
+
+Corrections and failed checks preserved
+---------------------------------------
+1. An initial determinism command compared compact JSON printed on stdout with the
+   indented RESULT.json artifact.  cmp returned exit 1 even though the before/after
+   artifact hashes were identical.  The invalid format comparison was discarded; the
+   two-run artifact hashes above are the determinism evidence.
+2. An initial py_compile invocation used PYTHONDONTWRITEBYTECODE=1, but py_compile still
+   attempted to write under the user cache and received PermissionError.  The compile
+   check was rerun with the task-specific PYTHONPYCACHEPREFIX
+   /private/tmp/wac-t53a-pycache and passed for acquire.py, analyze.py,
+   lakeshore_vsm.py, and checks_lakeshore_vsm.py.  No repository cache was created.
+3. The first independent input-contract audit accepted eight invalid constructions:
+   duplicate JSON names, an unterminated CSV quote, a fragmented bundle-wide
+   BEFORE/WRITE/HOLD/READ union, normalized-data substitution without a source join, a
+   symlinked manifest, a hard-linked source alias, and reuse of the data file as the
+   protocol.  The contract was repaired with duplicate-name and strict-CSV parsing,
+   event-joined full-process coverage, a registered in-process normalization adapter,
+   lexical-root/symlink checks, physical-file identity checks, and a registered protocol
+   marker.  The frozen pre-repair verifier remains in INGEST_VERIFY/.
+4. The first post-repair audit then accepted a symlinked immediate bundle directory, a
+   malformed raw Lake Shore CSV, a declared sample with no observation rows, and a
+   RATE_STABILITY scope whose declared sample set was not represented.  The loader now
+   refuses a symlinked submitted directory, the instrument reader uses strict CSV, and
+   the observed record set must equal the declared sample set.  That refutation remains
+   in INGEST_VERIFY_POST_REPAIR/.
+5. The next audit showed that merely observing a declared sample was still insufficient:
+   RATE_STABILITY accepted one sample with only POST_WRITE while another supplied the
+   bundle's RATE row.  It also found that the instrument adapter ignored a nonempty ninth
+   data cell and accepted a changed table-header suffix.  Scope requirements are now
+   checked per sample, and the registered Lake Shore export header and nine-cell data
+   rows are exact.  The frozen 51/54 refutation remains in INGEST_VERIFY_FINAL/.
+6. Every repair above is input-contract work only.  No repair changes the 760 normalized
+   observations or their SHA-256
+   82fca51d5f7923107763b01340a85842d5a06d770ecc88e8e518a696a2e3a891,
+   and no audit outcome authorizes a formation, gravity, or universal verdict.
+7. Per the principal's anti-loop boundary, the final V1 closure was bounded to the fixed
+   prior 54-case matrix.  INGEST_VERIFY_CLOSURE/ returned 54/54, the actual 760-row
+   reconstruction passed, and two runs were byte-identical.  V1 is frozen at that
+   boundary; new contract work is permitted only when an actual physics dataset exposes
+   a required physical input that V1 cannot represent.
+8. The first exploratory normalized-response run correctly refused its frozen grid:
+   V001 required `x=0` without extrapolation, but the Lake Shore export's first nominal
+   zero-field pulse is finite and gives the smallest `x` slightly above zero.  V001 is
+   preserved as invalid.  V002 makes the sole mechanical change `x=0.05..1.50`; the
+   analysis remains retrospective and carries no binary scientific verdict.
+9. Before accepting the V002 output, a protocol-to-code audit found that the shared DCD
+   helper selected a zero bracket but the exploratory protocol required exactly one
+   strict retained-moment sign change.  The analysis now checks that cardinality
+   explicitly before using the helper.  All five specimens passed and the reported
+   numerical result was unchanged.
+
+Scientific guardrail
+--------------------
+The measured response may support only the reported real-surface observations: opposite
+writer directions leave opposite remanent states after removal of the field; a declared
+small reverse pulse leaves most remanence; and a finite reverse-field scale changes the
+sign.  The data lack blinded randomized write histories, an independent no-write cohort,
+long-time retention, observer-fragment redundancy, and a second mechanism.  They cannot
+establish a general record-formation law or universality.

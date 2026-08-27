@@ -1,0 +1,139 @@
+{
+  "columns": [
+    "row_id",
+    "record_id",
+    "event_id",
+    "stage",
+    "role",
+    "time",
+    "coordinate",
+    "value",
+    "writer_field_T",
+    "source_time_s",
+    "protocol_segment"
+  ],
+  "controls": [
+    "OPPOSITE_WRITE",
+    "LOW_PERTURBATION"
+  ],
+  "data_file": "world_observation.csv",
+  "data_sha256": "82fca51d5f7923107763b01340a85842d5a06d770ecc88e8e518a696a2e3a891",
+  "evidence_class": "ACTUAL_SURFACE_MEASUREMENT",
+  "extra_columns": [
+    {
+      "name": "writer_field_T",
+      "type": "float",
+      "unit": "T"
+    },
+    {
+      "name": "source_time_s",
+      "type": "float",
+      "unit": "s"
+    },
+    {
+      "name": "protocol_segment",
+      "type": "string",
+      "unit": "1"
+    }
+  ],
+  "instrument_id": "LAKE-SHORE-8600-VSM-EM7-CSB",
+  "normalization": {
+    "adapter_id": "LAKESHORE_VSM_WRITER_OFF_V001",
+    "adapter_sha256": "68221ff4deab5442370e4be57db44916810dd534676d6ead39f378e905370bf1",
+    "source_paths": [
+      "raw/U1537A-24H-4W-126cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "raw/U1537A-24H-4W-126cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+      "raw/U1537A-25H-4W-80cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "raw/U1537A-25H-4W-80cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+      "raw/U1537A-26H-4W-62cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "raw/U1537A-26H-4W-62cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+      "raw/U1537A-29f-3W-20cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "raw/U1537A-29f-3W-20cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+      "raw/U1537A-31F-4W-40cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "raw/U1537A-31F-4W-40cm-hys-dcd-forc1 Step 2 Remanence Curves.csv"
+    ]
+  },
+  "observation_scope": "WRITE_POST_ONLY",
+  "protocol_frozen_at_utc": "2026-08-22T08:16:07Z",
+  "protocol_path": "OBSERVATION_PROTOCOL.md",
+  "protocol_sha256": "1d32ac55feced8e15d1183e8652dfe7f7d74d19aa1ac0b68fc8b288ae12c6b70",
+  "protocol_timing": "RETROSPECTIVE_POST_OUTCOME",
+  "run_id": "U1537-VSM-HYS-DCD-RETROSPECTIVE-V001",
+  "sample_ids": [
+    "U1537A-24H-4W-126cm",
+    "U1537A-25H-4W-80cm",
+    "U1537A-26H-4W-62cm",
+    "U1537A-29f-3W-20cm",
+    "U1537A-31F-4W-40cm"
+  ],
+  "schema": "WAC_WORLD_OBSERVATION_V001",
+  "source_artifacts": [
+    {
+      "media_type": "text/x-python",
+      "path": "export_world_observation.py",
+      "sha256": "74f2952cedeef3c01b776ca3fa3632e56941d85513f585218f76fb12108bfc54"
+    },
+    {
+      "media_type": "application/json",
+      "path": "raw/SOURCE.json",
+      "sha256": "76d214c1e0cad7a3416d039fa92d0872565f736f885df5b9014678f9719a3e90"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-24H-4W-126cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "sha256": "bd322e82eea29611f62d9da491e97e7de37e38e7efc69a1537795a27968e8250"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-24H-4W-126cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+      "sha256": "0cb396d2982de372de223e088a67b8a88fda31ca687c74a59977307f251fcedd"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-25H-4W-80cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "sha256": "5d5920959586e29c1b094179fefffc9a7d226d4a6e4d6ad2dc328b7ea790c1ac"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-25H-4W-80cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+      "sha256": "1a1785eacf669761f4e662da78452104b090a7b4e93bc9e76f106407c6a1d168"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-26H-4W-62cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "sha256": "a8b5210b539de2f1e58a737ec5635a604d616773002378946c883c05f6bb5eca"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-26H-4W-62cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+      "sha256": "22bc457ca94f3e04e0976f5a7472aa47494e11b047438687ce2a37ece0adc382"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-29f-3W-20cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "sha256": "d45328fe753fe3d6c14bc7ed4199ede063787b7773afe19f55d585874d9fd263"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-29f-3W-20cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+      "sha256": "122f5d80ed1c19bcb175e927a454cdd18838e7138b0f3df9278a2d1ef0d880c7"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-31F-4W-40cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+      "sha256": "d999a25c5685e0c014b19502de499bb276bd3f6ba57ed2058ced230e51f0aff6"
+    },
+    {
+      "media_type": "text/csv",
+      "path": "raw/U1537A-31F-4W-40cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+      "sha256": "6057232c50c8ab670294979986656f5793899498db539f8e27b2eaa6516489c5"
+    }
+  ],
+  "source_uri": "https://doi.org/10.5281/zenodo.14564186",
+  "surface_id": "IODP-U1537-MAGNETIC-REMANENCE",
+  "units": {
+    "coordinate": "T",
+    "time": "ordinal",
+    "value": "A m^2"
+  }
+}

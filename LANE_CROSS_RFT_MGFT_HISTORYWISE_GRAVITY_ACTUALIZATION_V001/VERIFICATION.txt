@@ -1,0 +1,89 @@
+EXECUTED CHECKS
+
+PASS  G1_swap_squares_to_identity
+PASS  G1_laplacian_swap_invariant
+PASS  G1_binary_history_action_is_free
+PASS  W1_source_swap_exact
+PASS  W1_source_swap_closes
+PASS  W1_source_contrasts_sum_zero
+PASS  W1_potential_swap_exact
+PASS  W1_potential_swap_closes
+PASS  W1_poisson_plus_exact
+PASS  W1_poisson_minus_exact
+PASS  W1_gauge_plus_exact
+PASS  W1_gauge_minus_exact
+PASS  W1_metric_plus_exact
+PASS  W1_metric_minus_is_cell_swap
+PASS  W1_all_cell_metrics_lorentzian
+PASS  W1_all_metric_determinants_exact
+PASS  W1_action_plus_exact
+PASS  W1_action_minus_exact
+PASS  W1_invariant_action_ties_orbit
+PASS  W1_gravity_residual_plus_zero
+PASS  W1_gravity_residual_minus_zero
+PASS  HGA1_both_orbit_histories_admissible
+PASS  HGA1_endogenous_gravity_not_singleton
+PASS  HGA1_no_fixed_definite_history
+PASS  HGA1_feedback_plus_fixed
+PASS  HGA1_feedback_minus_fixed
+PASS  HGA1_nonlinear_feedback_equivariant
+PASS  HGA1a_unique_flow_equivariant
+PASS  HGA1a_symmetric_input_has_fixed_history
+PASS  HGA1a_symmetric_input_not_free_outcome
+PASS  HGA1b_distribution_update_equivariant
+PASS  HGA1b_uniform_law_is_fixed
+PASS  HGA1b_definite_vertices_not_fixed
+PASS  HGA2_mean_potential_zero
+PASS  HGA2_mean_source_zero
+PASS  HGA2_mean_metric_background_exact
+PASS  HGA2_mean_pair_swap_fixed
+PASS  HGA2_fixed_input_has_no_free_orbit_output
+PASS  D1_boundary_swap_exact
+PASS  D1_coupling_table_exact
+PASS  D1_boundary_coupling_jointly_invariant
+PASS  D1_fixed_boundary_plus_selects_plus
+PASS  D1_fixed_boundary_minus_selects_minus
+PASS  D1_selector_jointly_equivariant
+PASS  HGA3_history_stabilizer_trivial
+PASS  HGA3_boundary_stabilizer_trivial
+PASS  HGA3_positive_stabilizer_inclusion
+PASS  HGA3_orbit_cardinality_bound_saturated
+PASS  HGA3_fixed_scalar_fails_inclusion
+PASS  HGA3_Z2_stabilizer_criterion_truth_table
+PASS  OP_same_density_decomposition_exact
+PASS  OP_nonlinear_direct_output_exact
+PASS  OP_nonlinear_forgotten_label_output_exact
+PASS  OP_preparation_context_TV_one_fifth
+PASS  OP_transpose_Bell_ancillary_expectation_negative_half
+PASS  OP_complete_standard_route_admits_gate
+PASS  OP_unfrozen_premise_abandonment_blocks_gate
+PASS  OP_named_frozen_prediction_route_admits_gate
+PASS  D2_all_eleven_physical_admission_gates_required
+PASS  D2_finite_theorem_does_not_establish_orientation
+PASS  D2_finite_metric_does_not_establish_GR
+PASS  D2_boundary_table_does_not_derive_Born
+PASS  D2_failed_D_does_not_logically_force_Q
+PASS  D2_unexplained_random_boundary_relocates_draw
+TOTAL 64/64 PASS
+VERDICT FINITE_EQUIVARIANT_GRAVITY_NONSELECTION_AND_ORIENTING_INPUT_CRITERION_EXACT__PHYSICAL_GARH_D_OPEN
+
+REPRODUCTION AND SCOPE CHECKS
+
+PASS  Python bytecode compilation with a writable task-specific cache.
+PASS  No carriage-return or control-byte corruption found.
+PASS  HGA1, HGA1a, HGA1b, HGA2, and HGA3 independently audited and accepted.
+PASS  Gauge/diffeomorphism quotient counting and generic pre-G3 Y_H typing accepted.
+PASS  History law mu_C^hist is distinct from spacetime volume mu_H^vol.
+PASS  Standard operational route requires every finite ancilla dimension, equivalently n=dim(H_in).
+PASS  Restricted ancillary families are only restricted composability and use the named, frozen departure route.
+PASS  Positive boundary construction is an algebraic orienting-input witness, not a physical-field result.
+PASS  Stochastic GARH-Q taxonomy, GARH-D gates, and D-to-Q non-implication accepted.
+PASS  Page-Geilker and other primary-source claims accepted at their stated narrow scope.
+
+INDEPENDENT AUDIT VERDICT
+
+ACCEPT_EXACT_FINITE_GROUP_NONSELECTION_AND_STABILIZER_CRITERION__FINITE_WITNESSES_EXACT__PHYSICAL_GARH_D_GARH_Q_ACTUALIZATION_BORN_GR_AND_RECORD_CAUSED_GRAVITY_OPEN
+
+EXECUTABLE CEILING
+
+The 64 checks reproduce exact finite rational and Z2 witnesses plus the claim-gate ledger. They do not machine-prove the general finite-group theorem, establish a physical orienting input, choose GARH-D or GARH-Q, derive a Born law, reconstruct a physical metric, derive general relativity, or prove that records cause gravity.

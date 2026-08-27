@@ -1,0 +1,186 @@
+{
+  "absent_actual_platform_control": {
+    "accepted": true,
+    "actual_platform_present": false,
+    "all_authoritative_outputs_no_proof": true,
+    "input_byte_identity_preserved": true,
+    "pass": true
+  },
+  "audit_id": "GRA-O-GF-CONTRACT-V002-REPAIR3-VERIFY-CODEX",
+  "exact_repair2_parent_hash_laundering": {
+    "input_byte_identity_preserved": true,
+    "pass": true,
+    "repair1_refused_original": true,
+    "repair2_actual_platform_present": true,
+    "repair2_laundering_reproduced": true,
+    "repair3_actual_platform_present": false,
+    "repair3_no_proof_output": true,
+    "repair3_refused_original": true,
+    "valid_observation_could_not_promote_repair1_refusal": true
+  },
+  "first_decisive_defect": null,
+  "immutable_original_call_order": {
+    "call_order": [
+      "repair1",
+      "observation"
+    ],
+    "input_byte_identity_preserved": true,
+    "observation_call_count": 1,
+    "observation_read_only": true,
+    "pass": true,
+    "repair1_call_count": 1,
+    "repair2_projection_or_evaluator_invoked": false,
+    "same_original_object": true
+  },
+  "independent_refusal_cases": [
+    {
+      "accepted": false,
+      "actual_platform_present": false,
+      "case": "wrong_child_digest",
+      "expected": "ARTIFACT_HASH_MISMATCH:REAL.PLATFORM.FORMATION",
+      "input_byte_identity_preserved": true,
+      "no_proof_output": true,
+      "pass": true
+    },
+    {
+      "accepted": false,
+      "actual_platform_present": false,
+      "case": "unknown_parent",
+      "expected": "ARTIFACT_PARENT_UNRESOLVED",
+      "input_byte_identity_preserved": true,
+      "no_proof_output": true,
+      "pass": true
+    },
+    {
+      "accepted": false,
+      "actual_platform_present": false,
+      "case": "self_cycle",
+      "expected": "ARTIFACT_DAG_SELF_LOOP",
+      "input_byte_identity_preserved": true,
+      "no_proof_output": true,
+      "pass": true
+    },
+    {
+      "accepted": false,
+      "actual_platform_present": false,
+      "case": "orphan",
+      "expected": "ARTIFACT_ORPHAN:VERIFY.REPAIR3.ORPHAN",
+      "input_byte_identity_preserved": true,
+      "no_proof_output": true,
+      "pass": true
+    },
+    {
+      "accepted": false,
+      "actual_platform_present": false,
+      "case": "scalar_observation_[0]",
+      "expected": "FORMATION_OBSERVATION_MEMBER_NOT_OBJECT",
+      "input_byte_identity_preserved": true,
+      "no_proof_output": true,
+      "pass": true
+    },
+    {
+      "accepted": false,
+      "actual_platform_present": false,
+      "case": "mixed_object_scalar_observations",
+      "expected": "FORMATION_OBSERVATION_MEMBER_NOT_OBJECT",
+      "input_byte_identity_preserved": true,
+      "no_proof_output": true,
+      "pass": true
+    }
+  ],
+  "manifest_verification": [
+    {
+      "entries": 5,
+      "failures": [],
+      "manifest_sha256": "e177f8845a430155684b8c98552b48857352e4d1dc4b8e5af3d1008a59ee2bec",
+      "pass": true,
+      "path": "LANE_GRA_O_GF_CONTRACT/MANIFEST.sha256"
+    },
+    {
+      "entries": 3,
+      "failures": [],
+      "manifest_sha256": "837da7c23374a033396c352dd30b15ad4403d02be29dcbacb4ff976bcb903475",
+      "pass": true,
+      "path": "LANE_GRA_O_GF_CONTRACT/VERIFY_CODEX/MANIFEST.sha256"
+    },
+    {
+      "entries": 12,
+      "failures": [],
+      "manifest_sha256": "274b19ce8c640f41b37421c961d6e06668501e6020064894fb6ebd6327d565c2",
+      "pass": true,
+      "path": "LANE_GRA_O_GF_CONTRACT/V002/MANIFEST_V002.sha256"
+    },
+    {
+      "entries": 6,
+      "failures": [],
+      "manifest_sha256": "89a77c7394c69b3c5233a6fa91646ebf406feb3445be39dd3a1fceabcf8f3c2a",
+      "pass": true,
+      "path": "LANE_GRA_O_GF_CONTRACT/V002/REPAIR1/MANIFEST_V002_REPAIR1.sha256"
+    },
+    {
+      "entries": 6,
+      "failures": [],
+      "manifest_sha256": "02f4fcebd15680dfc0bd46b14a7a9be90368e17dc0f7fb98654598a14d88730b",
+      "pass": true,
+      "path": "LANE_GRA_O_GF_CONTRACT/V002/REPAIR2/MANIFEST_V002_REPAIR2.sha256"
+    },
+    {
+      "entries": 6,
+      "failures": [],
+      "manifest_sha256": "a0d5eacb33641b7ae32f1dfce149a3cda9a10d4839d76304236b6ec7827b9911",
+      "pass": true,
+      "path": "LANE_GRA_O_GF_CONTRACT/V002/REPAIR3/MANIFEST_V002_REPAIR3.sha256"
+    }
+  ],
+  "nongeometric_gf0_gf1_boundary": {
+    "gf0_expressions": [
+      "gf0_candidate = PASS iff custody, platform candidate, gamma, seed, calibrated transport, and ancestry pass",
+      "gf0_authoritative = PASS iff gf0_candidate and actual platform"
+    ],
+    "gf1_expression": "GF0 plus FORM.ALLOW0, GAMMA.PROCESS, SEED.PHI, SCALE.CALIBRATED_TRANSPORT, and ANCESTRY.FULL_PATH",
+    "gravity_gate_required_by_gf0_or_gf1": false,
+    "metric_identifier_is_only_internal_transport_compatibility_not_candidate_field": true,
+    "pass": true,
+    "required_t_lab_stress_energy_geometry_fields": []
+  },
+  "repair3_suite_twice": {
+    "byte_identical_payloads": true,
+    "case_count_each": [
+      59,
+      59
+    ],
+    "failed_count_each": [
+      0,
+      0
+    ],
+    "pass": true,
+    "result_payload_sha256_each": [
+      "043761bf06a90025dff7940e91bd1af4ed72db515555eeece004de8e8f613223",
+      "043761bf06a90025dff7940e91bd1af4ed72db515555eeece004de8e8f613223"
+    ],
+    "run_1": "PASS",
+    "run_2": "PASS"
+  },
+  "scientific_result": "NO_PROOF_OUTPUT",
+  "scope": "TERMINAL_BOUNDED_INDEPENDENT_QA",
+  "section_passes": {
+    "absent_platform_no_proof": true,
+    "identity_order_monotonicity": true,
+    "independent_cases": true,
+    "manifests": true,
+    "nongeometric_boundary": true,
+    "repair2_laundering_repair3_refusal": true,
+    "suite_twice": true,
+    "typed_positive": true
+  },
+  "typed_positive_control": {
+    "accepted": true,
+    "actual_platform_present": true,
+    "gf0_through_ge2_promoted": true,
+    "input_byte_identity_preserved": true,
+    "pass": true,
+    "scientific_weight": "TEST_CONTROL_ONLY",
+    "typed_observation_valid": true
+  },
+  "verdict": "PASS"
+}

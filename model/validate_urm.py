@@ -3,8 +3,19 @@
 The four family blocks remain independently countable and keep their sealed-lane
 semantics: ARROW 27, COUNTLAW 40, CLASSES 52, WRITING 57 (176 gates total).  The
 chain then runs validate_geometry.py, which in turn runs validate_project.py and its
-D-25 construction/anchor gates.  Exit code is zero only when every family gate, the
-declared gate counts, geometry, and project validation all pass.
+D-25 construction/anchor gates, followed by the separate 44-check world-observation
+input contract, the separate 38-check generic formation-input contract, and the
+separate 48-check origin-neutral gamma-flow contract.  The first two input contracts
+and the gamma-flow synthetic fixture carry zero scientific weight.  The chain then
+runs the 82-check public-data proof frontier, whose blocker and nonauthoritative
+input/theory states never authorize scientific readiness or proof.  Exit code is zero
+only when every family gate, the declared gate counts, geometry/project validation,
+all four independent data/frontier contracts, the zero-input U-DCL adoption/theorem
+certificate, the zero-input historywise-gravity formal discriminant, and the bounded
+Gravity Formation Theory custody/ceiling gate pass.  The U-DCL gateway certifies a
+program postulate and conditional theorem, not natural validity; the GFT gateway
+certifies the adopted working-theory closure and off-shell/on-shell response
+clarification, not empirical RGRL confirmation.
 
 Use --no-chain to run only the four T-54 family blocks.
 """
@@ -69,7 +80,14 @@ print("=" * 78)
 print(f"  T-54 FAMILIES: {n_pass} PASS, {n_fail} FAIL; "
       f"gates {n_pass + n_fail}/176 ({'COUNT OK' if count_shape_ok else 'COUNT MISMATCH'})")
 
-chain_ok = True
+geometry_ok = True
+world_input_ok = True
+formation_input_ok = True
+gamma_flow_ok = True
+proof_frontier_ok = True
+udcl_postulate_ok = True
+historywise_gravity_ok = True
+gravity_formation_theory_ok = True
 if "--no-chain" not in sys.argv:
     print()
     print("CHAIN: validate_geometry.py (which chains the 24-gate project/D-25 validator)")
@@ -77,15 +95,142 @@ if "--no-chain" not in sys.argv:
     sys.stdout.flush()
     result = subprocess.run([sys.executable, os.path.join(HERE, "validate_geometry.py")],
                             cwd=HERE)
-    chain_ok = result.returncode == 0
+    geometry_ok = result.returncode == 0
     print("-" * 78)
-    print(f"  CHAIN validate_geometry.py: {'PASS' if chain_ok else 'FAIL'}")
+    print(f"  CHAIN validate_geometry.py: {'PASS' if geometry_ok else 'FAIL'}")
+    print()
+    print("CHAIN: validate_world_observation.py (44 input checks; zero scientific weight)")
+    print("-" * 78)
+    sys.stdout.flush()
+    result = subprocess.run(
+        [sys.executable, os.path.join(HERE, "validate_world_observation.py")], cwd=HERE
+    )
+    world_input_ok = result.returncode == 0
+    print("-" * 78)
+    print(
+        "  CHAIN validate_world_observation.py: "
+        + ("PASS" if world_input_ok else "FAIL")
+    )
+    print()
+    print("CHAIN: validate_formation_input.py (38 input checks; zero scientific weight)")
+    print("-" * 78)
+    sys.stdout.flush()
+    result = subprocess.run(
+        [sys.executable, os.path.join(HERE, "validate_formation_input.py")], cwd=HERE
+    )
+    formation_input_ok = result.returncode == 0
+    print("-" * 78)
+    print(
+        "  CHAIN validate_formation_input.py: "
+        + ("PASS" if formation_input_ok else "FAIL")
+    )
+    print()
+    print("CHAIN: validate_gamma_flow.py (48 checks; synthetic proof weight zero)")
+    print("-" * 78)
+    sys.stdout.flush()
+    result = subprocess.run(
+        [sys.executable, os.path.join(HERE, "validate_gamma_flow.py")], cwd=HERE
+    )
+    gamma_flow_ok = result.returncode == 0
+    print("-" * 78)
+    print(
+        "  CHAIN validate_gamma_flow.py: "
+        + ("PASS" if gamma_flow_ok else "FAIL")
+    )
+    print()
+    print("CHAIN: validate_proof_frontier.py (82 checks; missing data typed, proof output zero)")
+    print("-" * 78)
+    sys.stdout.flush()
+    result = subprocess.run(
+        [sys.executable, os.path.join(HERE, "validate_proof_frontier.py")], cwd=HERE
+    )
+    proof_frontier_ok = result.returncode == 0
+    print("-" * 78)
+    print(
+        "  CHAIN validate_proof_frontier.py: "
+        + ("PASS" if proof_frontier_ok else "FAIL")
+    )
+    print()
+    print(
+        "CHAIN: validate_udcl_postulate.py "
+        "(adopted working postulate and conditional theorem; natural validity open)"
+    )
+    print("-" * 78)
+    sys.stdout.flush()
+    result = subprocess.run(
+        [sys.executable, os.path.join(HERE, "validate_udcl_postulate.py")],
+        cwd=HERE,
+    )
+    udcl_postulate_ok = result.returncode == 0
+    print("-" * 78)
+    print(
+        "  CHAIN validate_udcl_postulate.py: "
+        + ("PASS" if udcl_postulate_ok else "FAIL")
+    )
+    print()
+    print(
+        "CHAIN: validate_historywise_gravity_discriminant.py "
+        "(formal finite-group discriminant; zero physical or empirical proof weight)"
+    )
+    print("-" * 78)
+    sys.stdout.flush()
+    result = subprocess.run(
+        [
+            sys.executable,
+            os.path.join(HERE, "validate_historywise_gravity_discriminant.py"),
+        ],
+        cwd=HERE,
+    )
+    historywise_gravity_ok = result.returncode == 0
+    print("-" * 78)
+    print(
+        "  CHAIN validate_historywise_gravity_discriminant.py: "
+        + ("PASS" if historywise_gravity_ok else "FAIL")
+    )
+    print()
+    print(
+        "CHAIN: validate_gravity_formation_theory.py "
+        "(adopted closure/response clarification; empirical RGRL and numerical-G derivation open)"
+    )
+    print("-" * 78)
+    sys.stdout.flush()
+    result = subprocess.run(
+        [sys.executable, os.path.join(HERE, "validate_gravity_formation_theory.py")],
+        cwd=HERE,
+    )
+    gravity_formation_theory_ok = result.returncode == 0
+    print("-" * 78)
+    print(
+        "  CHAIN validate_gravity_formation_theory.py: "
+        + ("PASS" if gravity_formation_theory_ok else "FAIL")
+    )
 
 print("=" * 78)
-overall = n_fail == 0 and count_shape_ok and chain_ok
+overall = (
+    n_fail == 0
+    and count_shape_ok
+    and geometry_ok
+    and world_input_ok
+    and formation_input_ok
+    and gamma_flow_ok
+    and proof_frontier_ok
+    and udcl_postulate_ok
+    and historywise_gravity_ok
+    and gravity_formation_theory_ok
+)
 print(f"  URM OVERALL: {'PASS' if overall else 'FAIL'} "
       f"(families {n_pass}/{n_pass + n_fail}, "
       f"counts {'ok' if count_shape_ok else 'MISMATCH'}"
-      + ("" if "--no-chain" in sys.argv else f", chain {'ok' if chain_ok else 'FAILED'}")
+      + ("" if "--no-chain" in sys.argv else
+         f", model chain {'ok' if geometry_ok else 'FAILED'}, "
+         f"world input {'ok' if world_input_ok else 'FAILED'}, "
+         f"formation input {'ok' if formation_input_ok else 'FAILED'}, "
+         f"gamma flow {'ok' if gamma_flow_ok else 'FAILED'}, "
+         f"proof frontier {'ok' if proof_frontier_ok else 'FAILED'}, "
+         f"U-DCL adoption/theorem {'ok' if udcl_postulate_ok else 'FAILED'}, "
+         f"historywise-gravity formal discriminant "
+         f"{'ok' if historywise_gravity_ok else 'FAILED'}, "
+         f"Gravity Formation Theory "
+         f"{'ok' if gravity_formation_theory_ok else 'FAILED'}")
       + f"; {time.time() - t0:.1f} s)")
 sys.exit(0 if overall else 1)

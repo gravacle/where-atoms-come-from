@@ -1,0 +1,70 @@
+{
+  "result_id": "GRA-O-GF-CONTRACT-V002",
+  "date": "2026-08-22",
+  "overall_result": "PASS_EXECUTABLE_CONTRACT_SYNTHETIC_ONLY",
+  "scientific_result": "NO_PROOF_OUTPUT",
+  "v001": {
+    "bytes_modified": false,
+    "independent_disposition": "REFUTED",
+    "original_contradictory_witness_sha256": "d55aaab13a908afc9425746ddd18ae85924fb5ece338b215c574c6fe38320855"
+  },
+  "principal_decision": {
+    "decision": "SELECT_JOINT_SEED",
+    "artifact": "LANE_GRA_S_JOINT_SEED_DECISION/PRINCIPAL_DECISION.md",
+    "sha256": "962de48aa3ced22887200933d1dd397951a2dd25cc8bf9ea335893fc888ef82d"
+  },
+  "synthetic_positive": {
+    "artifacts": 142,
+    "gate_inputs": 24,
+    "gravity_rows": 14,
+    "milestone_domains": 7,
+    "accepted": true,
+    "custody": "QUALIFIED",
+    "atomic_gates": "24/24 PASS",
+    "product_reproduction": "PASS",
+    "product_scientific_weight": "NONE",
+    "actual_platform_present": false,
+    "authoritative_GF0_through_UGE": "NO_PROOF_OUTPUT"
+  },
+  "fixed_suite": {
+    "case_count": 43,
+    "positive_controls": 1,
+    "original_witness_cases": 1,
+    "v001_bypass_families": 19,
+    "v004_transport_refinement_guards": 20,
+    "strict_parser_guards": 2,
+    "final_passes": 2,
+    "pass_1": "PASS_43_OF_43",
+    "pass_2": "PASS_43_OF_43",
+    "failed_cases_each_pass": 0,
+    "identical_result_payload_sha256": "d0aa881de40b56ebd09b0d996cfd6419268e89fee951882e0f9039c5f9f080d6"
+  },
+  "structural_checks": {
+    "result": "PASS",
+    "schema_draft": "https://json-schema.org/draft/2020-12/schema",
+    "schema_definitions": 8,
+    "schema_local_references": 35,
+    "schema_unresolved_references": 0,
+    "frozen_framework_hashes": "13/13",
+    "v001_manifest": "5/5",
+    "v001_verifier_manifest": "3/3",
+    "duplicate_keys_rejected": true,
+    "nonfinite_numbers_rejected": true
+  },
+  "implementation_hashes_before_result_and_manifest": {
+    "CONTRACT_V002.md": "f97ad99a1bb43f28188e6b3d79d9b1c8360ca3139cc2dd0cd7a3c901d295ed1d",
+    "INSTANCE_V002.schema.json": "8f8e917a8b7bc50af5515836a5fdd956d5086a3f8b33d0f45fbbfbcc160ce8a3",
+    "validator_v002.py": "a27efd37f871e5ff2a0ede8fbbaa390d01c19da6f2cc2f400814745ac7e23839",
+    "synthetic_positive_fixture_v002.py": "08ed04c673bde7ac7c24e5f7b47255bb5ed5c223b7ae39cd973486abf25aefcd",
+    "mutation_suite_v002.py": "f2e5f9557a74a3eb73a7be803e5e0e20358c7cfcc61ddacbf3425985655ea6eb",
+    "structural_checks_v002.py": "28e69e548a1d62c04eff13484f4d44999ac593a1f9cd32a8df8313487ae50e1f"
+  },
+  "scope": {
+    "shared_files_modified": false,
+    "shared_urm_code_modified": false,
+    "platform_instantiated": false,
+    "validation_opened": false,
+    "universal_proof_engine_claimed": false
+  },
+  "first_scientific_blocker": "An actual admitted platform-specific JOINT_SEED packet is absent; GF0 and every downstream authoritative proof output remain unavailable."
+}

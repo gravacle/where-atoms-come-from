@@ -18,7 +18,8 @@ script needs a few minutes; `--quick` skips those.
 python3 replicate/check_proof.py           # the proof's own gate: refuses a stale claim
 python3 model/validate_project.py           # the URM's 24 project/D-25 gates
 python3 model/validate_geometry.py          # 33 geometry gates; chains the above
-python3 model/validate_urm.py               # 176 family gates; full chained conjunction 233
+python3 model/validate_historywise_gravity_discriminant.py  # 84 formal-only custody/ceiling checks
+python3 model/validate_urm.py               # 176 family gates plus model/data/frontier/formal chains
 ```
 
 ---

@@ -1,0 +1,93 @@
+{
+  "audit_id": "GRA-O-GF-CONTRACT-V002-REPAIR2-VERIFY-CODEX",
+  "audit_date": "2026-08-22",
+  "subject": "GRA-O-GF-CONTRACT-V002-REPAIR2",
+  "overall_result": "REFUTED",
+  "scientific_result": "NO_PROOF_OUTPUT",
+  "manifest_checks": {
+    "v002": {"result": "PASS", "matched_entries": 12, "total_entries": 12},
+    "repair1": {"result": "PASS", "matched_entries": 6, "total_entries": 6},
+    "repair2": {"result": "PASS", "matched_entries": 6, "total_entries": 6}
+  },
+  "fixed_suite": {
+    "result": "PASS",
+    "runs": 2,
+    "case_count_each_run": 54,
+    "failed_count_each_run": 0,
+    "identical_result_payload_sha256": "564429f111bd975572a9bee443c334fe4630c7d3abc2c1d2cd28898700dfb947",
+    "typed_lifecycle_positive_control_each_run": true
+  },
+  "repair1_scalar_inconsistency_and_repair2_refusal": {
+    "result": "PASS",
+    "mutation": "REAL.PLATFORM.FORMATION.observations=[0]",
+    "repair1_accepted": true,
+    "repair1_actual_platform_present": true,
+    "repair1_promoted_claims": ["GF0", "GF1", "GF2", "GF3", "GE1", "GE2"],
+    "repair2_accepted": false,
+    "repair2_actual_platform_present": false,
+    "repair2_diagnostic": "FORMATION_OBSERVATION_MEMBER_NOT_OBJECT",
+    "repair2_authoritative_outputs": "SEVEN_NO_PROOF_OUTPUT"
+  },
+  "typed_observation_join_checks": {
+    "result": "PASS",
+    "independent_case_count": 15,
+    "failed_case_count": 0,
+    "covered": [
+      "event stability",
+      "surface membership and stability",
+      "stage and role identity",
+      "timezone-aware pre-freeze ordered time",
+      "finite certified value",
+      "unit stability",
+      "source membership and stability",
+      "lifecycle coverage and cardinality",
+      "predicate uniqueness",
+      "reproducibility"
+    ]
+  },
+  "synthetic_and_incomplete_nonpromotion_controls_before_counterexample": {
+    "result": "PASS",
+    "case_count": 4,
+    "failed_case_count": 0
+  },
+  "GF0_GF1_nongeometric_boundary": {
+    "result": "PASS",
+    "gravitational_geometry_required": false,
+    "spacetime_metric_required": false,
+    "stress_energy_required": false,
+    "typed_control_GF0": "PASSES_DECLARED_DOMAIN",
+    "typed_control_GF1": "PASSES_DECLARED_DOMAIN"
+  },
+  "first_scientific_state_inconsistency": {
+    "id": "FORMATION_SOURCE_PARENT_HASH_MISMATCH_LAUNDERED",
+    "reproduced": true,
+    "mutation": {
+      "artifact_id": "REAL.PLATFORM.FORMATION",
+      "parent_artifact_id": "REAL.PLATFORM.SOURCE",
+      "field": "parents[].sha256",
+      "correct_sha256": "252769ceef4757cb00b12f94a561b118fe4aba37dbaf5a8f611acd112bfa107b",
+      "submitted_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "payload_or_artifact_digest_changed": false
+    },
+    "repair1_original_candidate": {
+      "accepted": false,
+      "custody_disposition": "REFUSE",
+      "diagnostic": "ARTIFACT_PARENT_HASH_MISMATCH:REAL.PLATFORM.FORMATION:REAL.PLATFORM.SOURCE",
+      "actual_platform_present": false,
+      "authoritative_outputs": "SEVEN_NO_PROOF_OUTPUT"
+    },
+    "repair2_same_submitted_candidate": {
+      "accepted": true,
+      "custody_disposition": "QUALIFIED",
+      "custody_errors": [],
+      "formation_observation_repair2_valid": true,
+      "actual_platform_present": true,
+      "promoted_claims": ["GF0", "GF1", "GF2", "GF3", "GE1", "GE2"],
+      "UGE": "NO_PROOF_OUTPUT"
+    },
+    "cause": "Repair2 ignores this original artifact error, then its compatibility projection rewrites every resolved parent hash before Repair1 evaluates the copy.",
+    "subject_lines": "validator_v002_repair2.py:72,195-202,226-228"
+  },
+  "subject_files_modified": false,
+  "audit_files_confined_to": "LANE_GRA_O_GF_CONTRACT/V002/REPAIR2/VERIFY_CODEX"
+}

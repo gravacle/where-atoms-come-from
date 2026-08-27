@@ -1,0 +1,1545 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://where-atoms-come-from.invalid/contracts/FORMATION_PROTOCOL_V001.schema.json",
+  "title": "Frozen causally controlled physical record-formation protocol V001",
+  "description": "Instantiation contract for a prospective BEFORE -> FORMATION/SHAM -> COMMON-HOLD -> READ test using either a randomized intervention or a prospective natural contrast on an engineered/exogenous or autonomous/endogenous actual physical surface. Response-blind archival holdouts are admissible. This schema supplies no universal numerical tolerance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_id",
+    "contract_version",
+    "registration",
+    "site",
+    "scope",
+    "unified_dynamics",
+    "sequence",
+    "causal_design",
+    "before",
+    "formation_interaction",
+    "sham",
+    "common_hold",
+    "read",
+    "analysis",
+    "uncertainty_system",
+    "transition_assays",
+    "data_custody",
+    "urm_execution",
+    "independent_reproduction"
+  ],
+  "properties": {
+    "protocol_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract_version": {
+      "const": "FORMATION_PROTOCOL_V001"
+    },
+    "registration": {
+      "$ref": "#/$defs/registration"
+    },
+    "site": {
+      "$ref": "#/$defs/site"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "unified_dynamics": {
+      "$ref": "#/$defs/unifiedDynamics"
+    },
+    "sequence": {
+      "const": [
+        "BEFORE",
+        "FORMATION_OR_SHAM",
+        "COMMON_HOLD",
+        "READ"
+      ]
+    },
+    "causal_design": {
+      "$ref": "#/$defs/causalDesign"
+    },
+    "before": {
+      "$ref": "#/$defs/beforeStage"
+    },
+    "formation_interaction": {
+      "$ref": "#/$defs/formationStage"
+    },
+    "sham": {
+      "$ref": "#/$defs/shamStage"
+    },
+    "common_hold": {
+      "$ref": "#/$defs/holdStage"
+    },
+    "read": {
+      "$ref": "#/$defs/readStage"
+    },
+    "analysis": {
+      "$ref": "#/$defs/analysis"
+    },
+    "uncertainty_system": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/uncertaintyEntry"
+      }
+    },
+    "transition_assays": {
+      "$ref": "#/$defs/transitionAssays"
+    },
+    "data_custody": {
+      "$ref": "#/$defs/dataCustody"
+    },
+    "urm_execution": {
+      "$ref": "#/$defs/urmExecution"
+    },
+    "independent_reproduction": {
+      "$ref": "#/$defs/independentReproduction"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "properties": {
+              "interaction_origin": {
+                "const": "AUTONOMOUS_ENDOGENOUS"
+              }
+            },
+            "required": [
+              "interaction_origin"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "formation_interaction": {
+            "required": [
+              "endogenous_interaction",
+              "endogenous_to_hold_boundary"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "properties": {
+              "interaction_origin": {
+                "const": "ENGINEERED_EXOGENOUS"
+              }
+            },
+            "required": [
+              "interaction_origin"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "formation_interaction": {
+            "required": [
+              "external_writer",
+              "writer_target_coupling",
+              "writer_off_boundary"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "properties": {
+              "provenance_hypothesis": {
+                "const": "DERIVATIVE_FROM_PARENT_RECORD"
+              }
+            },
+            "required": [
+              "provenance_hypothesis"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "required": [
+              "parent_record"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "site": {
+            "properties": {
+              "role": {
+                "const": "INDEPENDENT_REPRODUCTION"
+              }
+            },
+            "required": [
+              "role"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "independent_reproduction": {
+            "properties": {
+              "declaration_status": {
+                "const": "SIGNED"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "nonEmpty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "timePoint": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "quantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "unit",
+        "prospective_rationale"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "prospective_rationale": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "positiveDuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "unit",
+        "prospective_rationale"
+      ],
+      "properties": {
+        "value": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "prospective_rationale": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "registration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "registered_at",
+        "registration_hash",
+        "public_location",
+        "data_source",
+        "frozen_before_numerical_access_or_unblinding",
+        "numerical_access_log_hash",
+        "archival_custody_proof",
+        "amendment_policy"
+      ],
+      "properties": {
+        "status": {
+          "const": "FROZEN_BEFORE_OUTCOME_ACCESS_OR_UNBLINDING"
+        },
+        "registered_at": {
+          "$ref": "#/$defs/timePoint"
+        },
+        "registration_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "public_location": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "data_source": {
+          "enum": [
+            "PROSPECTIVE_NEW_ACQUISITION",
+            "RESPONSE_BLIND_ARCHIVAL_HOLDOUT"
+          ]
+        },
+        "frozen_before_numerical_access_or_unblinding": {
+          "const": true
+        },
+        "numerical_access_log_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "archival_custody_proof": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "amendment_policy": {
+          "const": "NO_OUTCOME_CONDITIONED_AMENDMENT; ANY_CHANGE_CREATES_A_NEW_VERSION"
+        }
+      }
+    },
+    "site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "site_id",
+        "role",
+        "institution",
+        "operators",
+        "physical_location"
+      ],
+      "properties": {
+        "site_id": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "role": {
+          "enum": [
+            "ORIGINATING",
+            "INDEPENDENT_REPRODUCTION"
+          ]
+        },
+        "institution": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "operators": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmpty"
+          }
+        },
+        "physical_location": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actual_surface_id",
+        "surface_class",
+        "bona_fide_record_surface_rationale",
+        "sample_population",
+        "target_state_coordinate",
+        "state_representation",
+        "single_trial_state_resolution",
+        "earlier_event_X",
+        "causal_signal_precedes_target_update_and_closure_assay",
+        "interaction_origin",
+        "provenance_hypothesis",
+        "operating_range",
+        "exclusions"
+      ],
+      "properties": {
+        "actual_surface_id": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "surface_class": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "bona_fide_record_surface_rationale": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "sample_population": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "target_state_coordinate": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "state_representation": {
+          "enum": [
+            "DISCRETE",
+            "CONTINUOUS",
+            "COUNT_VALUED",
+            "FIELD_VALUED",
+            "DISTRIBUTED",
+            "MIXED"
+          ]
+        },
+        "single_trial_state_resolution": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "earlier_event_X": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "causal_signal_precedes_target_update_and_closure_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "interaction_origin": {
+          "enum": [
+            "ENGINEERED_EXOGENOUS",
+            "AUTONOMOUS_ENDOGENOUS"
+          ]
+        },
+        "provenance_hypothesis": {
+          "enum": [
+            "PRIMARY_DIRECT_FROM_EVENT",
+            "DERIVATIVE_FROM_PARENT_RECORD"
+          ]
+        },
+        "parent_record": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "parent_record_id",
+            "parent_target_state",
+            "parent_X_information_assay",
+            "copy_path_hypothesis"
+          ],
+          "properties": {
+            "parent_record_id": {
+              "$ref": "#/$defs/nonEmpty"
+            },
+            "parent_target_state": {
+              "$ref": "#/$defs/nonEmpty"
+            },
+            "parent_X_information_assay": {
+              "$ref": "#/$defs/nonEmpty"
+            },
+            "copy_path_hypothesis": {
+              "const": "X_TO_PARENT_RECORD_TO_COPY_INTERACTION_TO_TARGET"
+            }
+          }
+        },
+        "operating_range": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "exclusions": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "primitive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "physical_definition",
+        "measurement_protocol",
+        "unit",
+        "uncertainty_entry_id"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "physical_definition": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "measurement_protocol": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "unit": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "uncertainty_entry_id": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "modePrediction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "availability_prediction",
+        "predicted_event_level_distribution",
+        "derivation_from_primitives",
+        "causal_transduction_C_psi_prediction",
+        "causal_transduction_assay",
+        "surface_closure_gate_G_t_prediction",
+        "surface_closure_gate_assay",
+        "falsifier"
+      ],
+      "properties": {
+        "availability_prediction": {
+          "enum": [
+            "PREDICTED_ACTIVE",
+            "PREDICTED_INACTIVE"
+          ]
+        },
+        "predicted_event_level_distribution": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "derivation_from_primitives": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "causal_transduction_C_psi_prediction": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "causal_transduction_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "surface_closure_gate_G_t_prediction": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "surface_closure_gate_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "falsifier": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "unifiedDynamics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "law_release_id",
+        "law_release_hash",
+        "C_psi_specification",
+        "K_theta_specification",
+        "M_phi_specification",
+        "G_t_specification",
+        "hold_specialization",
+        "provenance_graph_specification",
+        "measurable_primitives",
+        "training_data_boundary",
+        "held_out_data_boundary",
+        "mode_predictions"
+      ],
+      "properties": {
+        "law_release_id": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "law_release_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "C_psi_specification": {
+          "const": "C_t = C_psi(X, W_t; p_C)"
+        },
+        "K_theta_specification": {
+          "const": "R_(t+) ~ K_theta(R_t, C_t, B_t, G_t; p_S)"
+        },
+        "M_phi_specification": {
+          "const": "Y_t ~ M_phi(R_t, Q_t; p_I)"
+        },
+        "G_t_specification": {
+          "const": "G_t = MEASURABLE_SURFACE_CLOSURE_GATE"
+        },
+        "hold_specialization": {
+          "const": "K_theta(R_t, OFF, H, CLOSED; p_S)"
+        },
+        "provenance_graph_specification": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "measurable_primitives": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/primitive"
+          }
+        },
+        "training_data_boundary": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "held_out_data_boundary": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "mode_predictions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary_formation",
+            "derivative_copy_formation",
+            "autonomous_endogenous_interaction",
+            "engineered_exogenous_interaction",
+            "writer_off_persistence",
+            "read_only_or_preexisting",
+            "rewriting",
+            "erasure",
+            "transient_response",
+            "no_change"
+          ],
+          "properties": {
+            "primary_formation": {
+              "$ref": "#/$defs/modePrediction"
+            },
+            "derivative_copy_formation": {
+              "$ref": "#/$defs/modePrediction"
+            },
+            "autonomous_endogenous_interaction": {
+              "$ref": "#/$defs/modePrediction"
+            },
+            "engineered_exogenous_interaction": {
+              "$ref": "#/$defs/modePrediction"
+            },
+            "writer_off_persistence": {
+              "$ref": "#/$defs/modePrediction"
+            },
+            "read_only_or_preexisting": {
+              "$ref": "#/$defs/modePrediction"
+            },
+            "rewriting": {
+              "$ref": "#/$defs/modePrediction"
+            },
+            "erasure": {
+              "$ref": "#/$defs/modePrediction"
+            },
+            "transient_response": {
+              "$ref": "#/$defs/modePrediction"
+            },
+            "no_change": {
+              "$ref": "#/$defs/modePrediction"
+            }
+          }
+        }
+      }
+    },
+    "causalDesign": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "design",
+        "arms",
+        "attrition_rule",
+        "deviation_rule"
+      ],
+      "properties": {
+        "design": {
+          "enum": [
+            "RANDOMIZED_INTERVENTION",
+            "PROSPECTIVE_NATURAL_CONTRAST"
+          ]
+        },
+        "arms": {
+          "const": [
+            "FORMATION",
+            "SHAM"
+          ]
+        },
+        "randomized_intervention": {
+          "$ref": "#/$defs/randomizedIntervention"
+        },
+        "prospective_natural_contrast": {
+          "$ref": "#/$defs/prospectiveNaturalContrast"
+        },
+        "attrition_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "deviation_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "design": {
+                "const": "RANDOMIZED_INTERVENTION"
+              }
+            },
+            "required": [
+              "design"
+            ]
+          },
+          "then": {
+            "required": [
+              "randomized_intervention"
+            ],
+            "not": {
+              "required": [
+                "prospective_natural_contrast"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "design": {
+                "const": "PROSPECTIVE_NATURAL_CONTRAST"
+              }
+            },
+            "required": [
+              "design"
+            ]
+          },
+          "then": {
+            "required": [
+              "prospective_natural_contrast"
+            ],
+            "not": {
+              "required": [
+                "randomized_intervention"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "randomizedIntervention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "concealed_assignment_method",
+        "allocation_commitment_hash",
+        "blocking_variables",
+        "balance_or_sampling_law",
+        "blind_holders",
+        "unblind_trigger"
+      ],
+      "properties": {
+        "concealed_assignment_method": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "allocation_commitment_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "blocking_variables": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "balance_or_sampling_law": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "blind_holders": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "unblind_trigger": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "prospectiveNaturalContrast": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "independently_measured_forcing",
+        "forcing_data_hash",
+        "allocation_or_sampling_law",
+        "prospective_matching_rule",
+        "negative_control_types",
+        "matched_negative_controls",
+        "response_blind_analysis",
+        "blindness_custody_hash",
+        "alternative_cause_falsifiers",
+        "blind_holders",
+        "unblind_trigger"
+      ],
+      "properties": {
+        "independently_measured_forcing": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "forcing_data_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "allocation_or_sampling_law": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "prospective_matching_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "negative_control_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "NEGATIVE_TIME",
+              "NEGATIVE_SURFACE"
+            ]
+          }
+        },
+        "matched_negative_controls": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "response_blind_analysis": {
+          "const": true
+        },
+        "blindness_custody_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "alternative_cause_falsifiers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/falsifier"
+          }
+        },
+        "blind_holders": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "unblind_trigger": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "beforeStage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_state_acquisition",
+        "event_level_state_required",
+        "X_information_statistic",
+        "absence_floor_entry_id",
+        "arm_equivalence_rule",
+        "sensitivity_to_claimed_post_hold_scale",
+        "read_disturbance_control",
+        "raw_data_roles"
+      ],
+      "properties": {
+        "target_state_acquisition": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "event_level_state_required": {
+          "const": true
+        },
+        "X_information_statistic": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "absence_floor_entry_id": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "arm_equivalence_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "sensitivity_to_claimed_post_hold_scale": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "read_disturbance_control": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "raw_data_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmpty"
+          }
+        }
+      }
+    },
+    "formationStage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bounded_interaction_definition",
+        "causal_transduction_C_psi",
+        "causal_transduction_physical_assay",
+        "surface_closure_gate_G_t",
+        "surface_closure_physical_assay",
+        "physical_start_assay",
+        "physical_cessation_assay",
+        "causal_signal_absent_or_blocked_in_sham",
+        "environmental_matching",
+        "raw_data_roles"
+      ],
+      "properties": {
+        "bounded_interaction_definition": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "causal_transduction_C_psi": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "causal_transduction_physical_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "surface_closure_gate_G_t": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "surface_closure_physical_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "physical_start_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "physical_cessation_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "causal_signal_absent_or_blocked_in_sham": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "environmental_matching": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "external_writer": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "writer_target_coupling": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "writer_off_boundary": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "endogenous_interaction": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "enable_expose_or_route_operation": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "endogenous_to_hold_boundary": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "raw_data_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmpty"
+          }
+        }
+      }
+    },
+    "shamStage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operation",
+        "absent_blocked_or_scrambled_causal_signal",
+        "proof_comparator_does_not_carry_causal_signal",
+        "preserved_conditions",
+        "sham_falsifier",
+        "raw_data_roles"
+      ],
+      "properties": {
+        "operation": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "absent_blocked_or_scrambled_causal_signal": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "proof_comparator_does_not_carry_causal_signal": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "preserved_conditions": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "sham_falsifier": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "raw_data_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmpty"
+          }
+        }
+      }
+    },
+    "holdStage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mission_time_tau_m",
+        "writer_or_interaction_off_assay",
+        "common_environment_definition",
+        "arm_equivalence_assay",
+        "environmental_covariates",
+        "hold_dynamics_prediction",
+        "hold_falsifier",
+        "raw_data_roles"
+      ],
+      "properties": {
+        "mission_time_tau_m": {
+          "$ref": "#/$defs/positiveDuration"
+        },
+        "writer_or_interaction_off_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "common_environment_definition": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "arm_equivalence_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "environmental_covariates": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmpty"
+          }
+        },
+        "hold_dynamics_prediction": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "hold_falsifier": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "raw_data_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmpty"
+          }
+        }
+      }
+    },
+    "readStage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Q_intervention",
+        "event_level_readout_Y",
+        "target_state_inference",
+        "no_formation_replay_assay",
+        "destructive_or_nondestructive",
+        "disturbance_assay",
+        "disturbance_bound_entry_id",
+        "instrument_error_entry_ids",
+        "raw_data_roles"
+      ],
+      "properties": {
+        "Q_intervention": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "event_level_readout_Y": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "target_state_inference": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "no_formation_replay_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "destructive_or_nondestructive": {
+          "enum": [
+            "DESTRUCTIVE",
+            "NONDESTRUCTIVE"
+          ]
+        },
+        "disturbance_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "disturbance_bound_entry_id": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "instrument_error_entry_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmpty"
+          }
+        },
+        "raw_data_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmpty"
+          }
+        }
+      }
+    },
+    "falsifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "physical_quantity",
+        "decision_rule",
+        "triggered_outcome"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "physical_quantity": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "decision_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "triggered_outcome": {
+          "enum": [
+            "UNSCOREABLE",
+            "MIXTURE_OR_UNRESOLVED",
+            "READ_OR_PREEXISTING",
+            "TRANSIENT_RESPONSE",
+            "NO_RECORD"
+          ]
+        }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_level_information_statistic_J",
+        "state_estimator",
+        "causal_contrast",
+        "uncertainty_propagation",
+        "missingness_rule",
+        "exclusion_rule",
+        "multiplicity_rule",
+        "stopping_rule",
+        "outcome_precedence",
+        "falsifiers"
+      ],
+      "properties": {
+        "event_level_information_statistic_J": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "state_estimator": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "causal_contrast": {
+          "const": "FORMATION_MINUS_SHAM_RELATIVE_TO_BEFORE_AT_TAU_M"
+        },
+        "uncertainty_propagation": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "missingness_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "exclusion_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "multiplicity_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "stopping_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "outcome_precedence": {
+          "const": [
+            "UNSCOREABLE",
+            "MIXTURE_OR_UNRESOLVED",
+            "READ_OR_PREEXISTING",
+            "TRANSIENT_RESPONSE",
+            "NO_RECORD",
+            "PRIMARY_FORMATION_CONFIRMED",
+            "DERIVATIVE_FORMATION_CONFIRMED"
+          ]
+        },
+        "falsifiers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/falsifier"
+          }
+        }
+      }
+    },
+    "uncertaintyEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "quantity",
+        "unit",
+        "calibration_method",
+        "blind_calibration_data_hash",
+        "floor_or_bound",
+        "decision_rule",
+        "prospective_rationale"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "quantity": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "unit": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "calibration_method": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "blind_calibration_data_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "floor_or_bound": {
+          "$ref": "#/$defs/quantity"
+        },
+        "decision_rule": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "prospective_rationale": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "assayDisposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "disposition",
+        "same_law_prediction",
+        "causal_transduction_C_psi_assay",
+        "surface_closure_gate_G_t_assay",
+        "falsifier",
+        "companion_protocol_hash"
+      ],
+      "properties": {
+        "disposition": {
+          "enum": [
+            "RUN_IN_THIS_PROTOCOL",
+            "PREDICTED_UNAVAILABLE",
+            "SEPARATE_FROZEN_COMPANION"
+          ]
+        },
+        "same_law_prediction": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "causal_transduction_C_psi_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "surface_closure_gate_G_t_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "falsifier": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "companion_protocol_hash": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "const": "NOT_APPLICABLE"
+            }
+          ]
+        }
+      }
+    },
+    "modeThreeWayAssay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "disposition",
+        "same_law_prediction",
+        "causal_transduction_C_psi_assay",
+        "surface_closure_gate_G_t_assay",
+        "confirmed_outcome",
+        "confirmed_predicate",
+        "refuted_outcome",
+        "refuted_predicate",
+        "unscoreable_outcome",
+        "unscoreable_predicate",
+        "companion_protocol_hash"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "PERSISTENCE",
+            "READ_ONLY",
+            "REWRITE",
+            "ERASURE"
+          ]
+        },
+        "disposition": {
+          "enum": [
+            "RUN_IN_THIS_PROTOCOL",
+            "PREDICTED_UNAVAILABLE",
+            "SEPARATE_FROZEN_COMPANION"
+          ]
+        },
+        "same_law_prediction": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "causal_transduction_C_psi_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "surface_closure_gate_G_t_assay": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "confirmed_outcome": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "confirmed_predicate": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "refuted_outcome": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "refuted_predicate": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "unscoreable_outcome": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "unscoreable_predicate": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "companion_protocol_hash": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "const": "NOT_APPLICABLE"
+            }
+          ]
+        }
+      }
+    },
+    "transitionAssays": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_formation",
+        "derivative_copy_formation",
+        "persistence",
+        "read_only",
+        "rewriting",
+        "erasure"
+      ],
+      "properties": {
+        "primary_formation": {
+          "$ref": "#/$defs/assayDisposition"
+        },
+        "derivative_copy_formation": {
+          "$ref": "#/$defs/assayDisposition"
+        },
+        "persistence": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/modeThreeWayAssay"
+            },
+            {
+              "properties": {
+                "mode": {
+                  "const": "PERSISTENCE"
+                },
+                "confirmed_outcome": {
+                  "const": "PERSISTENCE_CONFIRMED"
+                },
+                "refuted_outcome": {
+                  "const": "PERSISTENCE_REFUTED"
+                },
+                "unscoreable_outcome": {
+                  "const": "PERSISTENCE_UNSCOREABLE"
+                }
+              }
+            }
+          ]
+        },
+        "read_only": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/modeThreeWayAssay"
+            },
+            {
+              "properties": {
+                "mode": {
+                  "const": "READ_ONLY"
+                },
+                "confirmed_outcome": {
+                  "const": "READ_ONLY_CONFIRMED"
+                },
+                "refuted_outcome": {
+                  "const": "READ_ONLY_REFUTED"
+                },
+                "unscoreable_outcome": {
+                  "const": "READ_ONLY_UNSCOREABLE"
+                }
+              }
+            }
+          ]
+        },
+        "rewriting": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/modeThreeWayAssay"
+            },
+            {
+              "properties": {
+                "mode": {
+                  "const": "REWRITE"
+                },
+                "confirmed_outcome": {
+                  "const": "REWRITE_CONFIRMED"
+                },
+                "refuted_outcome": {
+                  "const": "REWRITE_REFUTED"
+                },
+                "unscoreable_outcome": {
+                  "const": "REWRITE_UNSCOREABLE"
+                }
+              }
+            }
+          ]
+        },
+        "erasure": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/modeThreeWayAssay"
+            },
+            {
+              "properties": {
+                "mode": {
+                  "const": "ERASURE"
+                },
+                "confirmed_outcome": {
+                  "const": "ERASURE_CONFIRMED"
+                },
+                "refuted_outcome": {
+                  "const": "ERASURE_REFUTED"
+                },
+                "unscoreable_outcome": {
+                  "const": "ERASURE_UNSCOREABLE"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "dataCustody": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_manifest_format",
+        "hash_algorithm",
+        "clock_and_timebase",
+        "event_label_custodian",
+        "raw_data_immutability",
+        "missing_object_inventory_required",
+        "deviation_log_required"
+      ],
+      "properties": {
+        "raw_manifest_format": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "hash_algorithm": {
+          "const": "SHA-256"
+        },
+        "clock_and_timebase": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "event_label_custodian": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "raw_data_immutability": {
+          "const": "CONTENT_ADDRESSED_APPEND_ONLY"
+        },
+        "missing_object_inventory_required": {
+          "const": true
+        },
+        "deviation_log_required": {
+          "const": true
+        }
+      }
+    },
+    "urmExecution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public_release_id",
+        "source_hash",
+        "formation_contract_hash",
+        "official_input_contract",
+        "declarative_instrument_mapping",
+        "source_modification_allowed",
+        "surface_specific_science_code_allowed",
+        "environment_lock_hash",
+        "raw_to_urm_manifest_required"
+      ],
+      "properties": {
+        "public_release_id": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "source_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "formation_contract_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "official_input_contract": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "declarative_instrument_mapping": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "source_modification_allowed": {
+          "const": false
+        },
+        "surface_specific_science_code_allowed": {
+          "const": false
+        },
+        "environment_lock_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "raw_to_urm_manifest_required": {
+          "const": true
+        }
+      }
+    },
+    "independentReproduction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "declaration_status",
+        "independent_actual_specimens_instances_or_archives",
+        "own_apparatus",
+        "newly_measured_raw_data",
+        "event_reproduction_mode",
+        "private_project_assistance",
+        "copied_outcome_data",
+        "custom_science_logic",
+        "same_mission_time",
+        "own_blind_calibration",
+        "public_materials_only",
+        "signed_declaration_location"
+      ],
+      "properties": {
+        "declaration_status": {
+          "enum": [
+            "NOT_APPLICABLE_ORIGINATING_SITE",
+            "SIGNED"
+          ]
+        },
+        "independent_actual_specimens_instances_or_archives": {
+          "const": true
+        },
+        "own_apparatus": {
+          "const": true
+        },
+        "newly_measured_raw_data": {
+          "const": true
+        },
+        "event_reproduction_mode": {
+          "enum": [
+            "RECREATED_REPEATABLE_EVENT",
+            "INDEPENDENT_MATERIAL_CARRYING_UNIQUE_NATURAL_EVENT"
+          ]
+        },
+        "private_project_assistance": {
+          "const": false
+        },
+        "copied_outcome_data": {
+          "const": false
+        },
+        "custom_science_logic": {
+          "const": false
+        },
+        "same_mission_time": {
+          "const": true
+        },
+        "own_blind_calibration": {
+          "const": true
+        },
+        "public_materials_only": {
+          "const": true
+        },
+        "signed_declaration_location": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    }
+  }
+}

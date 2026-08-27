@@ -1,0 +1,619 @@
+{
+  "actual": {
+    "adapter_hash_bound": true,
+    "all_role_identities_disjoint": true,
+    "data_sha256": "82fca51d5f7923107763b01340a85842d5a06d770ecc88e8e518a696a2e3a891",
+    "exact_ten_sources": true,
+    "independent_exact_bytes": true,
+    "pass": true,
+    "registered_equals_independent": true,
+    "registered_exact_bytes": true,
+    "source_registry_matches": true,
+    "sources_are_artifacts": true
+  },
+  "actual_bundle_pass": true,
+  "cases": {
+    "case_count": 54,
+    "cases": [
+      {
+        "detail": "{\n  \"coverage\": {\n    \"controls\": [\n      \"OPPOSITE_WRITE\"\n    ],\n    \"coordinate_range\": [\n      0.0,\n      0.0\n    ],\n    \"event_count\": 1,\n    \"record_ids\": [\n      \"sample-a\"\n    ],\n    \"roles\": [\n      \"RECORD_READOUT\"\n    ],\n    \"row_count\": 2,\n    \"stages\": [\n      \"POST_WRITE\"\n    ],\n    \"time_range\": [\n      0.0,\n      1.0\n    ],\n    \"value_range\": [\n      -2.0,\n      2.0\n    ]\n  },\n  \"custody_validation\": \"CONTENT_HASHED_NOT_PHYSICAL_ORIGIN_AUTHENTICATED\",\n  \"data_sha256\": \"11c923556cf62ddec31af3b83c75a6acba008cda9226e85cc17955049df487cc\",\n  \"evidence_class\": \"SYNTHETIC_TEST_ONLY\",\n ",
+        "expectation_met": true,
+        "expected": "ACCEPT",
+        "group": "prior54",
+        "name": "valid_baseline",
+        "observed": "ACCEPT",
+        "scope_classification": "CONFIGURATION_EVIDENCE_ONLY"
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: manifest key closure failed; missing=[], extra=['unexpected']",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "open_outer_manifest",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: source_artifacts[0] has an open or incomplete schema",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "open_source_artifact_schema",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: extra_columns[0] must have exact name/type/unit keys",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "open_extra_column_schema",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: units must contain exact time/coordinate/value keys",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "open_units_schema",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: normalization must have exact adapter_id/adapter_sha256/source_paths keys",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "open_normalization_schema",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: protocol_path must be a safe relative path",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "parent_path_component",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: protocol_path must be a safe relative path",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "absolute_protocol_path",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: source_artifacts[0].path escapes the observation bundle through a symlink",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "source_file_symlink_outside",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: source_artifacts[0].path escapes the observation bundle through a symlink",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "nested_directory_symlink_outside",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: duplicate resolved source artifact raw-alias.csv",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "duplicate_source_symlink_alias",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: data_sha256 mismatch",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "data_hash_drift",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: protocol_sha256 mismatch",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "protocol_hash_drift",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: source artifact hash mismatch for raw.csv",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "source_hash_drift",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: CSV header differs from closed columns",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "wrong_csv_header",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: CSV row 2 has excess cells",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "csv_excess_cell",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: CSV row 2 has missing cells",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "csv_missing_cell",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: row 2 value is non-finite",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "nan_core_value",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: row 2 time is non-finite",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "positive_infinite_time",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: row 2 quality does not match declared type float: WORLD OBSERVATION REFUSES: row 2 quality is non-finite",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "negative_infinite_extra",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: duplicate row_id r1",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "duplicate_row_id",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: row 3 time decreases within record/event",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "decreasing_time_same_record_event",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: protocol_frozen_at_utc is not a real UTC date",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "impossible_utc_date",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: source_uri must use https, doi, or urn",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "unregistered_uri_scheme",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: observation_scope is not registered",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "unregistered_scope",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: FULL_WRITE_HOLD_READ lacks a complete joined trajectory for every sample",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "full_scope_missing_stages",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: NONE cannot be combined with another control",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "none_control_combined",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: duplicate JSON member name 'schema'",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "duplicate_outer_json_member",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: duplicate JSON member name 'time'",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "duplicate_nested_json_member",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: CSV is unreadable: unexpected end of data",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "malformed_normalized_csv_quote",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: FULL_WRITE_HOLD_READ lacks a complete joined trajectory for every sample",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "fragmented_full_trajectory",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: normalized CSV is not the registered adapter output for the frozen sources",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "normalized_value_without_source_derivation",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: test-only normalization cannot certify actual-surface evidence",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "test_adapter_cannot_self_declare_actual",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "{\n  \"coverage\": {\n    \"controls\": [\n      \"OPPOSITE_WRITE\"\n    ],\n    \"coordinate_range\": [\n      0.0,\n      0.0\n    ],\n    \"event_count\": 1,\n    \"record_ids\": [\n      \"sample-a\"\n    ],\n    \"roles\": [\n      \"RECORD_READOUT\"\n    ],\n    \"row_count\": 2,\n    \"stages\": [\n      \"POST_WRITE\"\n    ],\n    \"time_range\": [\n      0.0,\n      1.0\n    ],\n    \"value_range\": [\n      -2.0,\n      2.0\n    ]\n  },\n  \"custody_validation\": \"CONTENT_HASHED_NOT_PHYSICAL_ORIGIN_AUTHENTICATED\",\n  \"data_sha256\": \"11c923556cf62ddec31af3b83c75a6acba008cda9226e85cc17955049df487cc\",\n  \"evidence_class\": \"SYNTHETIC_TEST_ONLY\",\n ",
+        "expectation_met": true,
+        "expected": "ACCEPT",
+        "group": "prior54",
+        "name": "self_declared_prospective_timing_boundary",
+        "observed": "ACCEPT",
+        "scope_classification": "CONFIGURATION_EVIDENCE_ONLY"
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: submitted manifest must not be a symlink",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "linked_manifest_file",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: duplicate physical source artifact raw-hard.csv",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "duplicate_source_hardlink",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: manifest, protocol, and data must be distinct physical files",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "protocol_and_data_same_file",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: protocol document marker is not registered",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "invalid_protocol_marker",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "{\n  \"coverage\": {\n    \"controls\": [\n      \"OPPOSITE_WRITE\"\n    ],\n    \"coordinate_range\": [\n      0.0,\n      0.0\n    ],\n    \"event_count\": 1,\n    \"record_ids\": [\n      \"sample-a\"\n    ],\n    \"roles\": [\n      \"ENVIRONMENT\",\n      \"RECORD_READOUT\",\n      \"WRITER_CONTROL\"\n    ],\n    \"row_count\": 4,\n    \"stages\": [\n      \"BEFORE\",\n      \"HOLD\",\n      \"READ\",\n      \"WRITE\"\n    ],\n    \"time_range\": [\n      0.0,\n      3.0\n    ],\n    \"value_range\": [\n      0.0,\n      1.0\n    ]\n  },\n  \"custody_validation\": \"CONTENT_HASHED_NOT_PHYSICAL_ORIGIN_AUTHENTICATED\",\n  \"data_sha256\": \"c8054eda50cbf4d4f5b4b5b83461",
+        "expectation_met": true,
+        "expected": "ACCEPT",
+        "group": "prior54",
+        "name": "valid_joined_full_trajectory",
+        "observed": "ACCEPT",
+        "scope_classification": "FULL_PROCESS_COVERAGE_ONLY"
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: complete trajectory lacks a WRITER_CONTROL row at WRITE",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "joined_full_missing_writer_role",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: complete trajectory lacks a readout row at READ",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "joined_full_missing_readout_role",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: row 5 time decreases within record/event",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "joined_full_time_order_violation",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: FULL_WRITE_HOLD_READ lacks a complete joined trajectory for every sample",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "full_second_sample_incomplete",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: normalization adapter hash mismatch",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "normalization_adapter_hash_drift",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: normalization adapter 'UNREGISTERED' is not registered",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "unregistered_normalization_adapter",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: normalization source is absent from source_artifacts",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "normalization_source_not_in_artifacts",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: source artifact source-data.csv aliases a manifest role file",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "source_and_data_hardlink_identity",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: submitted manifest bundle directory must not be a symlink",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "linked_parent_directory",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: registered normalization adapter failed: ValueError: VSM REFUSES: malformed CSV: unexpected end of data",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "malformed_raw_lakeshore_csv",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: every declared sample must have at least one observation row",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "declared_sample_without_rows",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: every declared sample must have at least one observation row",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "rate_scope_missing_sample",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: RATE_STABILITY_ONLY requires a RATE row for every sample",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "rate_scope_observed_sample_lacks_rate",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: registered normalization adapter failed: ValueError: VSM REFUSES: data row 1250 differs from the registered 9-cell schema",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "raw_lakeshore_nonempty_trailing_cell",
+        "observed": "REFUSE",
+        "scope_classification": null
+      },
+      {
+        "detail": "WORLD OBSERVATION REFUSES: registered normalization adapter failed: ValueError: VSM REFUSES: data-table header differs from the registered export schema",
+        "expectation_met": true,
+        "expected": "REFUSE",
+        "group": "prior54",
+        "name": "raw_lakeshore_table_header_drift",
+        "observed": "REFUSE",
+        "scope_classification": null
+      }
+    ],
+    "first_failed_prior_case": null,
+    "pass": true,
+    "prior54_all_pass": true,
+    "prior54_count": 54,
+    "three_prior_survivors_now_refuse": true,
+    "unexpected_cases": []
+  },
+  "default": "REFUTED",
+  "final_pins": {
+    "actual": {
+      "LANE_T53_A_WORLD_WRITE/OBSERVATION_PROTOCOL.md": "1d32ac55feced8e15d1183e8652dfe7f7d74d19aa1ac0b68fc8b288ae12c6b70",
+      "LANE_T53_A_WORLD_WRITE/export_world_observation.py": "74f2952cedeef3c01b776ca3fa3632e56941d85513f585218f76fb12108bfc54",
+      "LANE_T53_A_WORLD_WRITE/raw/SOURCE.json": "76d214c1e0cad7a3416d039fa92d0872565f736f885df5b9014678f9719a3e90",
+      "LANE_T53_A_WORLD_WRITE/world_observation.csv": "82fca51d5f7923107763b01340a85842d5a06d770ecc88e8e518a696a2e3a891",
+      "LANE_T53_A_WORLD_WRITE/world_observation.json": "15352eaa9c6363c5ff16c02c7c75887941999c9ab914c758c4218ff25b7e1d20",
+      "LANE_T53_A_WORLD_WRITE/world_observation_certificate.json": "04beada93f26d2c7f4d3e7b88f016e4b4f27c70e38d8f8812f7e352c3eba0faf",
+      "model/checks_lakeshore_vsm.py": "ee2b79c12921123ad08e0f8d19cbfd8884e129743692ee67e1630b1565de8ffa",
+      "model/checks_world_observation.py": "76a96bda992bfcf83345190175eff8b9f45030caefd58c92c3f3c3ccad88746d",
+      "model/lakeshore_vsm.py": "68221ff4deab5442370e4be57db44916810dd534676d6ead39f378e905370bf1",
+      "model/run_world_observation.py": "7a10ad8ee91b5283c00f42492eac7dada2df2a434610f2f467abfe9b1c0fb922",
+      "model/world_observation.py": "8e511fad0862afa4d48be24b29feca688c4817418e6a83c614d44ca8e760b81f"
+    },
+    "expected": {
+      "LANE_T53_A_WORLD_WRITE/OBSERVATION_PROTOCOL.md": "1d32ac55feced8e15d1183e8652dfe7f7d74d19aa1ac0b68fc8b288ae12c6b70",
+      "LANE_T53_A_WORLD_WRITE/export_world_observation.py": "74f2952cedeef3c01b776ca3fa3632e56941d85513f585218f76fb12108bfc54",
+      "LANE_T53_A_WORLD_WRITE/raw/SOURCE.json": "76d214c1e0cad7a3416d039fa92d0872565f736f885df5b9014678f9719a3e90",
+      "LANE_T53_A_WORLD_WRITE/world_observation.csv": "82fca51d5f7923107763b01340a85842d5a06d770ecc88e8e518a696a2e3a891",
+      "LANE_T53_A_WORLD_WRITE/world_observation.json": "15352eaa9c6363c5ff16c02c7c75887941999c9ab914c758c4218ff25b7e1d20",
+      "LANE_T53_A_WORLD_WRITE/world_observation_certificate.json": "04beada93f26d2c7f4d3e7b88f016e4b4f27c70e38d8f8812f7e352c3eba0faf",
+      "model/checks_lakeshore_vsm.py": "ee2b79c12921123ad08e0f8d19cbfd8884e129743692ee67e1630b1565de8ffa",
+      "model/checks_world_observation.py": "76a96bda992bfcf83345190175eff8b9f45030caefd58c92c3f3c3ccad88746d",
+      "model/lakeshore_vsm.py": "68221ff4deab5442370e4be57db44916810dd534676d6ead39f378e905370bf1",
+      "model/run_world_observation.py": "7a10ad8ee91b5283c00f42492eac7dada2df2a434610f2f467abfe9b1c0fb922",
+      "model/world_observation.py": "8e511fad0862afa4d48be24b29feca688c4817418e6a83c614d44ca8e760b81f"
+    },
+    "pass": true
+  },
+  "first_failed_prior_case": null,
+  "initial_pins": {
+    "actual": {
+      "LANE_T53_A_WORLD_WRITE/OBSERVATION_PROTOCOL.md": "1d32ac55feced8e15d1183e8652dfe7f7d74d19aa1ac0b68fc8b288ae12c6b70",
+      "LANE_T53_A_WORLD_WRITE/export_world_observation.py": "74f2952cedeef3c01b776ca3fa3632e56941d85513f585218f76fb12108bfc54",
+      "LANE_T53_A_WORLD_WRITE/raw/SOURCE.json": "76d214c1e0cad7a3416d039fa92d0872565f736f885df5b9014678f9719a3e90",
+      "LANE_T53_A_WORLD_WRITE/world_observation.csv": "82fca51d5f7923107763b01340a85842d5a06d770ecc88e8e518a696a2e3a891",
+      "LANE_T53_A_WORLD_WRITE/world_observation.json": "15352eaa9c6363c5ff16c02c7c75887941999c9ab914c758c4218ff25b7e1d20",
+      "LANE_T53_A_WORLD_WRITE/world_observation_certificate.json": "04beada93f26d2c7f4d3e7b88f016e4b4f27c70e38d8f8812f7e352c3eba0faf",
+      "model/checks_lakeshore_vsm.py": "ee2b79c12921123ad08e0f8d19cbfd8884e129743692ee67e1630b1565de8ffa",
+      "model/checks_world_observation.py": "76a96bda992bfcf83345190175eff8b9f45030caefd58c92c3f3c3ccad88746d",
+      "model/lakeshore_vsm.py": "68221ff4deab5442370e4be57db44916810dd534676d6ead39f378e905370bf1",
+      "model/run_world_observation.py": "7a10ad8ee91b5283c00f42492eac7dada2df2a434610f2f467abfe9b1c0fb922",
+      "model/world_observation.py": "8e511fad0862afa4d48be24b29feca688c4817418e6a83c614d44ca8e760b81f"
+    },
+    "expected": {
+      "LANE_T53_A_WORLD_WRITE/OBSERVATION_PROTOCOL.md": "1d32ac55feced8e15d1183e8652dfe7f7d74d19aa1ac0b68fc8b288ae12c6b70",
+      "LANE_T53_A_WORLD_WRITE/export_world_observation.py": "74f2952cedeef3c01b776ca3fa3632e56941d85513f585218f76fb12108bfc54",
+      "LANE_T53_A_WORLD_WRITE/raw/SOURCE.json": "76d214c1e0cad7a3416d039fa92d0872565f736f885df5b9014678f9719a3e90",
+      "LANE_T53_A_WORLD_WRITE/world_observation.csv": "82fca51d5f7923107763b01340a85842d5a06d770ecc88e8e518a696a2e3a891",
+      "LANE_T53_A_WORLD_WRITE/world_observation.json": "15352eaa9c6363c5ff16c02c7c75887941999c9ab914c758c4218ff25b7e1d20",
+      "LANE_T53_A_WORLD_WRITE/world_observation_certificate.json": "04beada93f26d2c7f4d3e7b88f016e4b4f27c70e38d8f8812f7e352c3eba0faf",
+      "model/checks_lakeshore_vsm.py": "ee2b79c12921123ad08e0f8d19cbfd8884e129743692ee67e1630b1565de8ffa",
+      "model/checks_world_observation.py": "76a96bda992bfcf83345190175eff8b9f45030caefd58c92c3f3c3ccad88746d",
+      "model/lakeshore_vsm.py": "68221ff4deab5442370e4be57db44916810dd534676d6ead39f378e905370bf1",
+      "model/run_world_observation.py": "7a10ad8ee91b5283c00f42492eac7dada2df2a434610f2f467abfe9b1c0fb922",
+      "model/world_observation.py": "8e511fad0862afa4d48be24b29feca688c4817418e6a83c614d44ca8e760b81f"
+    },
+    "pass": true
+  },
+  "input_closure_pass": true,
+  "official": {
+    "certificate_sha256": "04beada93f26d2c7f4d3e7b88f016e4b4f27c70e38d8f8812f7e352c3eba0faf",
+    "checks": [
+      {
+        "expected": "WORLD_OBSERVATION_CHECKS: 28/28 PASS",
+        "name": "checks_world_observation.py",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "WORLD_OBSERVATION_CHECKS: 28/28 PASS"
+      },
+      {
+        "expected": "LAKESHORE_VSM_CHECKS: 11/11 PASS",
+        "name": "checks_lakeshore_vsm.py",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "LAKESHORE_VSM_CHECKS: 11/11 PASS"
+      }
+    ],
+    "cli_returncodes": [
+      0,
+      0,
+      0
+    ],
+    "pass": true,
+    "safety": {
+      "custody_validation": "CONTENT_HASHED_NOT_PHYSICAL_ORIGIN_AUTHENTICATED",
+      "independent_reproduction_attested": false,
+      "normalized_source_join": "VERIFIED",
+      "public_urm_registration_authorized": false,
+      "record_formation_proof_authorized": false,
+      "row_count": 760,
+      "scientific_verdict": "NONE_NOT_SCORED",
+      "scope_classification": "CONFIGURATION_EVIDENCE_ONLY",
+      "universal_claim_authorized": false
+    },
+    "safety_pass": true,
+    "stored_certificate_identical": true,
+    "three_runs_identical": true
+  },
+  "public_urm_registration_authorized": false,
+  "record_formation_proof_authorized": false,
+  "schema": "WAC_T53A_INGEST_CLOSURE_V001",
+  "scientific_claim_scored": false,
+  "universal_claim_authorized": false,
+  "verdict": "NOT_REFUTED",
+  "verifier_sha256": "585b9cf112d41f07e3d162381c0a3590389e616d8e49c763401ff565a75c34ad"
+}

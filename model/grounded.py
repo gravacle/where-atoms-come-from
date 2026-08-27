@@ -76,17 +76,57 @@ def lifetime(H, Ls, R):
 
 # ------------------------------------------------------------------ the amended clauses, checked
 def clause_ii(H, Ls, R, t_m):
-    """DURABLE TO t_m. Returns the record's decay rate and whether it survives."""
+    """DURABLE TO t_m for a certified record mode, modulo the identity.
+
+       A scalar Rayleigh quotient is a valid mode rate only when the centered
+       observable is actually an eigenoperator of the adjoint dynamics.  Without
+       that check, H=Z/2 and R=X has quotient zero even though X rotates into Y.
+
+       Constants are quotiented out because adding c*I changes no contrast between
+       states.  If the remaining adjoint action is not one-dimensional, this
+       scalar interface declines to certify durability; callers needing a retained
+       multidimensional sector must use the full finite-time semigroup/conorm.
+    """
     n = np.asarray(H).shape[0]
     Lad = liouvillian(H, Ls).conj().T
-    v = np.asarray(R, dtype=complex).reshape(-1, 1, order='F')
-    v = v / np.linalg.norm(v)
-    # |quotient|, NOT |Re quotient|: a purely rotating observable (quotient = i*omega) does not
-    # decay but its value oscillates -- it is not durable. The same error C-75 records as corrected
-    # in slow_modes was still live here; found by the solidity review.
-    rate = abs(complex((v.conj().T @ Lad @ v)[0, 0]))
+    I = np.eye(n, dtype=complex)
+    Rc = np.asarray(R, dtype=complex) - np.trace(R) * I / n
+    norm_Rc = float(np.linalg.norm(Rc))
+
+    # The identity itself is stationary.  Clause (iii') is responsible for
+    # rejecting it as a non-record; clause (ii') only reports durability.
+    if norm_Rc == 0.0:
+        return dict(rate=0.0, tau=np.inf, durable=True, delta=HBAR / t_m,
+                    mode_certified=True, mode_residual=0.0,
+                    reason='identity_only')
+
+    v = Rc.reshape(-1, 1, order='F') / norm_Rc
+    Lv = Lad @ v
+
+    # Work in the observable quotient by constants.  This retains the usual
+    # population mode: an asymmetric two-state bath maps Z to lambda*Z+c*I.
+    ivec = I.reshape(-1, 1, order='F')
+    Lv_contrast = Lv - ivec * complex((ivec.conj().T @ Lv)[0, 0]) / n
+    eigenvalue = complex((v.conj().T @ Lv_contrast)[0, 0])
+    residual = float(np.linalg.norm(Lv_contrast - eigenvalue * v))
+    numerical_floor = (256.0 * np.finfo(float).eps
+                       * max(1.0, float(np.linalg.norm(Lad))))
+    mode_certified = residual <= numerical_floor
+
+    if not mode_certified:
+        return dict(rate=np.inf, tau=0.0, durable=False, delta=HBAR / t_m,
+                    mode_certified=False, mode_residual=residual,
+                    mode_floor=numerical_floor, eigenvalue=eigenvalue,
+                    reason='record_not_one_dimensional_mode')
+
+    # Full modulus, not only the real part: a certified eigenoperator with a
+    # purely imaginary eigenvalue rotates and therefore is not value-durable.
+    rate = abs(eigenvalue)
     return dict(rate=rate, tau=(1.0 / rate if rate > 0 else np.inf),
-                durable=rate <= 1.0 / t_m + 1e-300, delta=HBAR / t_m)
+                durable=rate <= 1.0 / t_m + 1e-300, delta=HBAR / t_m,
+                mode_certified=True, mode_residual=residual,
+                mode_floor=numerical_floor, eigenvalue=eigenvalue,
+                reason='certified_contrast_mode')
 
 
 def clause_iii(dE_config, T, C_v):

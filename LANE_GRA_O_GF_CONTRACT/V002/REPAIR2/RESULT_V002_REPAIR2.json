@@ -1,0 +1,76 @@
+{
+  "result_id": "GRA-O-GF-CONTRACT-V002-REPAIR2",
+  "date": "2026-08-22",
+  "overall_result": "PASS_NARROW_OBSERVATION_REPAIR",
+  "scientific_result": "NO_PROOF_OUTPUT",
+  "refutation": {
+    "exact_mutation": "REAL.PLATFORM.FORMATION.observations=[0]",
+    "repair1_escape_reproduced": true,
+    "repair1_candidate_accepted": true,
+    "repair1_actual_platform_present": true,
+    "repair1_promoted_claims": ["GF0", "GF1", "GF2", "GF3", "GE1", "GE2"],
+    "repair2_disposition": "REFUSE_FORMATION_OBSERVATION_MEMBER_NOT_OBJECT",
+    "repair2_actual_platform_present": false,
+    "repair2_authoritative_outputs": "GF0_THROUGH_UGE_NO_PROOF_OUTPUT"
+  },
+  "fixed_suite": {
+    "case_count": 54,
+    "prior_repair1_cases": 47,
+    "new_observation_cases": 7,
+    "new_cases": [
+      "scalar observation list",
+      "mixed dictionary and scalar list",
+      "empty observation object",
+      "unknown observation key",
+      "missing observation identity",
+      "nonfinite observation value",
+      "cross-event lifecycle"
+    ],
+    "typed_lifecycle_positive_control": true,
+    "final_passes": 2,
+    "pass_1": "PASS_54_OF_54",
+    "pass_2": "PASS_54_OF_54",
+    "failed_cases_each_pass": 0,
+    "identical_result_payload_sha256": "564429f111bd975572a9bee443c334fe4630c7d3abc2c1d2cd28898700dfb947",
+    "prior_repair1_result_payload_sha256": "6126960565ddb29f9754811dca16dacbac2062499b0e08a04f1dacbe849ef61b"
+  },
+  "repair_invariants": {
+    "all_members_typed_before_field_access": true,
+    "exact_observation_keys": true,
+    "nonempty_stable_event_identity": true,
+    "nonempty_stable_surface_identity": true,
+    "exact_stage_role_identity": true,
+    "timezone_aware_ordered_pre_freeze_times": true,
+    "finite_certified_values": true,
+    "stable_unit_identity": true,
+    "stable_joined_source_identity": true,
+    "formation_closure_persistence_coverage": true,
+    "no_member_filtering": true
+  },
+  "nongeometric_boundary": {
+    "metric_required_at_GF0_or_GF1": false,
+    "geometry_required_at_GF0_or_GF1": false,
+    "stress_energy_required_at_GF0_or_GF1": false,
+    "clarification_parent": "LANE_GRA_S_JOINT_SEED_DECISION/PRINCIPAL_CLARIFICATION_001.md",
+    "clarification_sha256": "2268762250f69c1ee8297ecd22cc3e67d490ccfb44062bf94ec18db9f768b8cb",
+    "clarification_use": "RECORDED_FOR_LATER_GAMMA_FLOW_SCHEMA_NOT_A_REPAIR2_PREDICATE"
+  },
+  "version_custody": {
+    "sealed_v001_modified": false,
+    "sealed_v001_verifier_modified": false,
+    "sealed_v002_modified": false,
+    "sealed_repair1_modified": false,
+    "sealed_v002_manifest_sha256": "274b19ce8c640f41b37421c961d6e06668501e6020064894fb6ebd6327d565c2",
+    "sealed_repair1_manifest_sha256": "89a77c7394c69b3c5233a6fa91646ebf406feb3445be39dd3a1fceabcf8f3c2a",
+    "new_files_confined_to": "LANE_GRA_O_GF_CONTRACT/V002/REPAIR2"
+  },
+  "implementation_hashes_before_result_and_manifest": {
+    "CONTRACT_V002_REPAIR2.md": "dcbc09678668f3c0936d06ab09edd2e3ad21ac860073f7f25882c66b1103afef",
+    "ADVERSARIAL_MATRIX_V002_REPAIR2.md": "d6c2a3f05d1f0880d197eb1612ec5a6d7796e671f0b52f050b5afb50abb5c8fc",
+    "D24_AUDIT_V002_REPAIR2.txt": "921bbe36dbcbc7993e9cda7a96d6d8664386b68ab55fd589d6b8925638265c84",
+    "validator_v002_repair2.py": "72d396d78623ac78e8bff6335efb96a9aaf935999973623ef862ea9c76316ab9",
+    "mutation_suite_v002_repair2.py": "30e6faaba1726327c38eed8a9071e100b29a5a19ecb8f2ac80a5e2e479a2d448"
+  },
+  "actual_platform_present": false,
+  "first_scientific_blocker": "No actual admitted platform-specific JOINT_SEED packet satisfies the closed V002 plus Repair1 plus Repair2 contract."
+}

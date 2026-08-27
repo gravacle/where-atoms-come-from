@@ -1,0 +1,403 @@
+{
+  "document_id": "OPERATIONAL_FORMATION_GATE_V001",
+  "version": "001",
+  "status": "FROZEN_DEFAULT_REFUTED_NOT_YET_APPLIED",
+  "decision_date": "2026-08-22",
+  "theory_authority": "PRINCIPAL_DECISION.md",
+  "human_mirror": "OPERATIONAL_FORMATION_GATE_V001.md",
+  "unit_of_judgment": "one prospectively closed claim about one target state on one bona-fide actual physical record surface",
+  "theory_scope": {
+    "one_theory": true,
+    "coupling_object": "C_t = C_psi(X, W_t; p_C)",
+    "state_transition_object": "R_(t+) ~ K_theta(R_t, C_t, B_t, G_t; p_S)",
+    "readout_object": "Y_t ~ M_phi(R_t, Q_t; p_I)",
+    "closure_object": "G_t",
+    "hold_object": "K_theta(R_t, OFF, H, CLOSED; p_S)",
+    "provenance_object": "G_X",
+    "measurable_inputs": [
+      "p_C",
+      "p_S",
+      "p_I"
+    ],
+    "state_representations": [
+      "DISCRETE",
+      "CONTINUOUS",
+      "COUNT_VALUED",
+      "FIELD_VALUED",
+      "DISTRIBUTED",
+      "MIXED"
+    ],
+    "typed_modes": [
+      "PRIMARY_FORMATION",
+      "DERIVATIVE_COPY_FORMATION",
+      "AUTONOMOUS_ENDOGENOUS_INTERACTION",
+      "ENGINEERED_EXOGENOUS_INTERACTION",
+      "WRITER_OFF_PERSISTENCE",
+      "READ_ONLY_OR_PREEXISTING",
+      "REWRITING",
+      "ERASURE",
+      "TRANSIENT_RESPONSE",
+      "NO_CHANGE"
+    ],
+    "retrospective_taxonomy_is_sufficient": false
+  },
+  "claim_tuple": [
+    "S",
+    "T",
+    "X",
+    "P",
+    "D_causal",
+    "A",
+    "I_f",
+    "C_psi",
+    "G_t",
+    "H",
+    "tau_m",
+    "Q",
+    "Z",
+    "J",
+    "U",
+    "K_theta",
+    "M_phi",
+    "G_X",
+    "F",
+    "V_URM"
+  ],
+  "no_universal_numeric_tolerances": true,
+  "causal_designs": {
+    "closed_enum": [
+      "RANDOMIZED_INTERVENTION",
+      "PROSPECTIVE_NATURAL_CONTRAST"
+    ],
+    "randomized_intervention": "controllable causal coupling with concealed FORMATION versus SHAM allocation",
+    "prospective_natural_contrast": "uncontrollable event with independently measured forcing, prospectively matched negative time or surface controls, blind response analysis, and explicit alternative-cause falsifiers"
+  },
+  "surface_specific_values_must_be_prospective": [
+    "mission_time",
+    "operating_range",
+    "calibration_uncertainty",
+    "detection_floor",
+    "absence_floor",
+    "equivalence_margin",
+    "read_disturbance_bound",
+    "sample_design",
+    "decision_threshold"
+  ],
+  "normative_clauses": [
+    {
+      "id": "FG-001",
+      "statement": "The claim tuple, admissible operating range, population, exclusions, analysis, uncertainty system, mission time, falsifiers, and immutable URM release SHALL be content-hashed and time-fixed before outcome-bearing acquisition or, for a response-blind archival holdout, before any numerical access or unblinding."
+    },
+    {
+      "id": "FG-002",
+      "statement": "The scored evidence SHALL be raw observations from an identified bona-fide actual physical surface; simulation, synthetic data, model output, and software self-tests SHALL NOT satisfy this clause."
+    },
+    {
+      "id": "FG-003",
+      "statement": "The causal signal from the declared event X SHALL precede the target update it explains, and X or its independently measured forcing SHALL precede the physical closure gate and READ; labels, timing, balance or sampling law, and blind provenance SHALL be recorded independently of the target readout."
+    },
+    {
+      "id": "FG-004",
+      "statement": "The causal design SHALL be fixed as RANDOMIZED_INTERVENTION when the formation coupling is controllable or PROSPECTIVE_NATURAL_CONTRAST when the event is uncontrollable, and no other design SHALL support a positive classification."
+    },
+    {
+      "id": "FG-005",
+      "statement": "RANDOMIZED_INTERVENTION SHALL use concealed FORMATION versus SHAM assignment differing only in the declared coupling, while PROSPECTIVE_NATURAL_CONTRAST SHALL use independently measured forcing, prospectively matched negative time or surface controls, blind response analysis, and explicit alternative-cause falsifiers; allocation, attrition, exclusions, and deviations SHALL be fully reported in either design."
+    },
+    {
+      "id": "FG-006",
+      "statement": "Before the formation interval, the declared target coordinate SHALL carry no resolvable information about X under the prospective statistic and calibration-derived absence floor, with sensitivity sufficient to detect an effect of the post-hold claimed scale."
+    },
+    {
+      "id": "FG-007",
+      "statement": "The candidate carrier SHALL be a definite physical target on every scored trial, resolved as a registered operational state or state-equivalence class within prospective instrument uncertainty; an ensemble-average response without event-level target states SHALL NOT satisfy this clause."
+    },
+    {
+      "id": "FG-008",
+      "statement": "The start and cessation of the formation interaction SHALL be detected by a prospectively registered physical boundary assay, and no formation input or causally equivalent surrogate SHALL remain active during the common hold."
+    },
+    {
+      "id": "FG-009",
+      "statement": "FORMATION and SHAM targets SHALL undergo the same declared hold or storage environment after interaction cessation, and retained information SHALL be scored at the prospectively declared mission time tau_m rather than only while or immediately after the interaction is active."
+    },
+    {
+      "id": "FG-010",
+      "statement": "The registered read Q SHALL recover information about X from the target without replaying, recreating, or supplying the formation interaction, and its measured disturbance and error SHALL remain within prospectively declared instrument-specific bounds; a destructive read is admissible if it does not recreate formation and the pre-read target state remains identifiable."
+    },
+    {
+      "id": "FG-011",
+      "statement": "Relative to both BEFORE and SHAM under the frozen analysis, FORMATION SHALL cause a calibration-resolved increase in event-level accessible information about X that survives to tau_m, with the registered uncertainty interval clearing the prospective information floor and every named causal falsifier remaining untriggered."
+    },
+    {
+      "id": "FG-012",
+      "statement": "A positive target directly coupled to X SHALL be classified PRIMARY_FORMATION_CONFIRMED, while a positive target written through an identified parent record SHALL be classified DERIVATIVE_FORMATION_CONFIRMED and SHALL carry an unbroken machine-readable lineage edge to that parent."
+    },
+    {
+      "id": "FG-013",
+      "statement": "Primary versus derivative provenance and engineered versus autonomous interaction origin SHALL be reported as independent axes, and ambiguity between primary and derivative provenance SHALL block both positive classifications."
+    },
+    {
+      "id": "FG-014",
+      "statement": "Calibration, raw-data custody, missingness, exclusions, multiplicity, stopping, randomization checks, contamination controls, read back-action, and all surface-specific uncertainty floors SHALL follow their prospective rules without outcome-conditioned repair."
+    },
+    {
+      "id": "FG-015",
+      "statement": "At least one independent external team SHALL repeat the complete physical protocol on its own actual specimens or instances with its own apparatus and newly acquired raw data, without private project assistance, copied outcome data, or custom science logic."
+    },
+    {
+      "id": "FG-016",
+      "statement": "The originating and independent raw bundles SHALL each run through the same immutable public URM formation contract without source modification or surface-specific science code; only validated declarative instrument mappings admitted by that release are allowed."
+    },
+    {
+      "id": "FG-017",
+      "statement": "PRIMARY_FORMATION_CONFIRMED and DERIVATIVE_FORMATION_CONFIRMED SHALL remain unavailable unless FG-001 through FG-016 and FG-019 through FG-026 all pass in both the originating experiment and the independent reproduction wherever the clause applies."
+    },
+    {
+      "id": "FG-018",
+      "statement": "Fragment redundancy SHALL be measured and reported when available as record strength, reach, or robustness, but SHALL NOT be treated as a constitutive requirement and SHALL NOT rescue failure of any mandatory formation clause."
+    },
+    {
+      "id": "FG-019",
+      "statement": "Primary formation, derivative copying, autonomous or endogenous formation, engineered or exogenous formation, writer-off persistence, read-only or preexisting information, rewriting, erasure, transient response, and no change SHALL be represented as typed causal paths through one K_theta and M_phi with one event-provenance graph, not as separately scoped theories."
+    },
+    {
+      "id": "FG-020",
+      "statement": "K_theta, its writer-off hold dynamics, and M_phi SHALL be derived or predicted prospectively from declared measurable physical primitives and SHALL predict held-out event-level outcome distributions and mode-specific falsifiers; retrospective trajectory labels or outcome-fitted science branches SHALL NOT satisfy this clause."
+    },
+    {
+      "id": "FG-021",
+      "statement": "R SHALL admit discrete, continuous, count-valued, field-valued, distributed, or mixed physical representations, and definite state SHALL mean an actual per-specimen state or trajectory resolved within prospective uncertainty rather than an assumed binary bit or point microstate."
+    },
+    {
+      "id": "FG-022",
+      "statement": "Every claimed active or inactive mode SHALL prospectively derive a measurable and falsifiable causal transduction C_psi and surface closure gate G_t from physical primitives, binding X through C_psi into K_theta under G_t and then setting the formation input OFF for post-closure hold dynamics."
+    },
+    {
+      "id": "FG-023",
+      "statement": "READ_ONLY SHALL have a frozen three-way predicate that confirms recovery of preexisting target information by M_phi without causal information creation or formation replay, refutes that branch under adequate sensitivity when recovery fails or Q creates or supplies formation, and otherwise returns READ_ONLY_UNSCOREABLE."
+    },
+    {
+      "id": "FG-024",
+      "statement": "PERSISTENCE SHALL have a frozen three-way predicate that confirms survival of closure-time target information under K_theta with C_psi OFF through tau_m, refutes the registered retention prediction under adequate sensitivity, and otherwise returns PERSISTENCE_UNSCOREABLE."
+    },
+    {
+      "id": "FG-025",
+      "statement": "REWRITE SHALL have a frozen three-way predicate that confirms a causal K_theta transition from prospectively identified old content or lineage to prospectively identified new content or lineage that persists through its declared post-rewrite hold, refutes that prediction under adequate sensitivity, and otherwise returns REWRITE_UNSCOREABLE."
+    },
+    {
+      "id": "FG-026",
+      "statement": "ERASURE SHALL have a frozen three-way predicate that confirms causal loss of prospectively identified accessible target information under K_theta through its declared post-erasure hold, refutes that prediction under adequate sensitivity, and otherwise returns ERASURE_UNSCOREABLE; read failure or hidden information alone SHALL NOT confirm erasure."
+    }
+  ],
+  "mandatory_positive_clause_ids": [
+    "FG-001",
+    "FG-002",
+    "FG-003",
+    "FG-004",
+    "FG-005",
+    "FG-006",
+    "FG-007",
+    "FG-008",
+    "FG-009",
+    "FG-010",
+    "FG-011",
+    "FG-012",
+    "FG-013",
+    "FG-014",
+    "FG-015",
+    "FG-016",
+    "FG-019",
+    "FG-020",
+    "FG-021",
+    "FG-022",
+    "FG-023",
+    "FG-024",
+    "FG-025",
+    "FG-026"
+  ],
+  "guardrail_clause_ids": [
+    "FG-017",
+    "FG-018"
+  ],
+  "positive_predicate": {
+    "default": false,
+    "originating_site": "all mandatory_positive_clause_ids pass",
+    "external_site": "at least one eligible independent external site passes every applicable mandatory_positive_clause_id",
+    "provenance": "lineage_class is unambiguous",
+    "missing_or_indeterminate_is_pass": false
+  },
+  "outcome_precedence": [
+    {
+      "rank": 1,
+      "outcome": "UNSCOREABLE",
+      "definition": "required prospective fields, actual-data identity, integrity, sensitivity, intervention validity, uncertainty closure, public-URM execution, or eligible independent reproduction are absent or invalid, so the constitutive predicate cannot be decided."
+    },
+    {
+      "rank": 2,
+      "outcome": "MIXTURE_OR_UNRESOLVED",
+      "definition": "valid evidence reveals an unregistered mixture, incompatible site results, unresolved causal alternatives, or ambiguous primary-versus-derivative provenance that the frozen rule cannot separate."
+    },
+    {
+      "rank": 3,
+      "outcome": "READ_OR_PREEXISTING",
+      "definition": "the declared target was already informative about `X` before the alleged formation interval, or the alleged interaction only read, selected, exposed, or relabeled existing target information without causally creating previously absent information there."
+    },
+    {
+      "rank": 4,
+      "outcome": "TRANSIENT_RESPONSE",
+      "definition": "a causal target response or information increase exists during or immediately after the formation interval but fails the frozen retention decision at `tau_m` under common hold."
+    },
+    {
+      "rank": 5,
+      "outcome": "NO_RECORD",
+      "definition": "with adequate registered sensitivity, the formation contrast creates no calibration-resolved event-level information about `X` in the definite target state, even if a non-informative physical response occurs."
+    },
+    {
+      "rank": 6,
+      "outcome": "PRIMARY_FORMATION_CONFIRMED",
+      "definition": "every applicable clause passes at the originating and eligible independent sites and the unambiguous lineage is direct from `X` to the target."
+    },
+    {
+      "rank": 7,
+      "outcome": "DERIVATIVE_FORMATION_CONFIRMED",
+      "definition": "every applicable clause passes at the originating and eligible independent sites, the target lacked prior information, and the unambiguous lineage identifies a causal parent-record-to-target transfer."
+    }
+  ],
+  "mode_specific_predicates": {
+    "READ_ONLY": [
+      {
+        "outcome": "READ_ONLY_CONFIRMED",
+        "predicate": "`I_pre` is present above its prospective floor, `M_phi` predicts `I_Q` within uncertainty, `Q` recovers that information without a calibration-resolved causal increase in target information, no formation input is supplied, and read disturbance remains within its prospective bound."
+      },
+      {
+        "outcome": "READ_ONLY_REFUTED",
+        "predicate": "sensitivity is adequate and either the registered recovery fails or `Q` measurably creates, supplies, or replays formation rather than only reading the existing target."
+      },
+      {
+        "outcome": "READ_ONLY_UNSCOREABLE",
+        "predicate": "the pre-read state, `Q` coupling, disturbance, sensitivity, public-URM execution, or independent reproduction is unresolved or invalid."
+      }
+    ],
+    "PERSISTENCE": [
+      {
+        "outcome": "PERSISTENCE_CONFIRMED",
+        "predicate": "`I_close` is present, the physical assays certify closure and `C_psi=OFF`, and `I_tau` satisfies the frozen `K_theta` retention prediction within prospective uncertainty at the declared mission time."
+      },
+      {
+        "outcome": "PERSISTENCE_REFUTED",
+        "predicate": "those causal and boundary assays are valid, sensitivity is adequate, and `I_tau` violates the frozen retention prediction or falls on its prospectively declared non-retained side."
+      },
+      {
+        "outcome": "PERSISTENCE_UNSCOREABLE",
+        "predicate": "closure, input-off status, common hold, sensitivity, public-URM execution, or independent reproduction is unresolved or invalid."
+      }
+    ],
+    "REWRITE": [
+      {
+        "outcome": "REWRITE_CONFIRMED",
+        "predicate": "the target's causal transition from `L_old` to the prospectively predicted `L_new` is resolved relative to SHAM, matches `K_theta`, preserves the new provenance edge, and persists through the declared post-rewrite hold with formation input off."
+      },
+      {
+        "outcome": "REWRITE_REFUTED",
+        "predicate": "causal controls and sensitivity are adequate and the registered transition or post-rewrite retention prediction fails."
+      },
+      {
+        "outcome": "REWRITE_UNSCOREABLE",
+        "predicate": "old/new content, lineage, coupling, closure, hold, sensitivity, public-URM execution, or independent reproduction is unresolved or invalid."
+      }
+    ],
+    "ERASURE": [
+      {
+        "outcome": "ERASURE_CONFIRMED",
+        "predicate": "the erase coupling causes the prospectively predicted loss of `I_old` relative to SHAM under `K_theta`, the loss survives the post-erasure hold, and independent alternate reads and carrier assays exclude mere read failure or reversible hiding within their prospective sensitivity."
+      },
+      {
+        "outcome": "ERASURE_REFUTED",
+        "predicate": "causal controls and sensitivity are adequate and the target retains recoverable `I_old` contrary to the frozen erasure prediction."
+      },
+      {
+        "outcome": "ERASURE_UNSCOREABLE",
+        "predicate": "loss cannot be separated from instrument failure, inaccessible-but-retained information, closure or hold failure, inadequate sensitivity, public-URM failure, or missing independent reproduction."
+      }
+    ]
+  },
+  "operation_axes": {
+    "interaction_origin": [
+      "ENGINEERED_EXOGENOUS",
+      "AUTONOMOUS_ENDOGENOUS"
+    ],
+    "information_provenance": [
+      "PRIMARY_DIRECT_FROM_EVENT",
+      "DERIVATIVE_FROM_PARENT_RECORD"
+    ],
+    "axes_are_independent": true
+  },
+  "required_evidence_classes": [
+    "closed protocol instance",
+    "actual surface and apparatus identity",
+    "raw BEFORE observations",
+    "raw interaction-boundary observations",
+    "raw FORMATION and SHAM observations",
+    "raw COMMON-HOLD observations",
+    "raw mission-time READ observations",
+    "read-back-action observations",
+    "independently held event labels and timestamps",
+    "auditable causal-design allocation or sampling and attrition records",
+    "independently measured natural forcing and matched negative controls when applicable",
+    "response-blind archival custody when applicable",
+    "interaction-cessation and common-hold certificates",
+    "prospective uncertainty and sensitivity system",
+    "event-level target states and information statistic",
+    "causal falsifier vector",
+    "event-provenance graph",
+    "raw-to-URM transformation manifest",
+    "immutable URM release and environment locks",
+    "complete custody hashes and missing-object inventory",
+    "independent-site declarations",
+    "frozen C_psi, G_t, K_theta, and M_phi specifications",
+    "measurable-primitive inputs",
+    "held-out predictive distributions",
+    "mode-specific falsifiers"
+  ],
+  "actual_data_rule": {
+    "requires_physical_measurement": true,
+    "data_must_be_newly_generated": false,
+    "response_blind_archival_holdout_allowed": true,
+    "archival_holdout_requires_freeze_before_numerical_access_or_unblinding": true,
+    "outcome_accessed_deposit_can_satisfy_prospective_gate_for_that_team": false,
+    "simulation_can_satisfy_physical_predicate": false,
+    "synthetic_control_can_satisfy_physical_predicate": false
+  },
+  "independent_reproduction_rule": {
+    "minimum_eligible_external_teams": 1,
+    "independent_actual_specimens_instances_or_archives": true,
+    "own_apparatus": true,
+    "newly_measured_raw_data": true,
+    "unique_natural_event_must_be_recreated": false,
+    "same_unique_event_may_be_carried_by_independent_material": true,
+    "public_only_assistance": true,
+    "private_project_coaching": false,
+    "copied_outcome_data": false,
+    "custom_science_logic": false,
+    "same_frozen_mission_time": true,
+    "independent_blind_calibration_floors": true,
+    "same_immutable_public_URM_source": true
+  },
+  "copy_rule": {
+    "causal_copy_can_form_target_record": true,
+    "target_must_previously_lack_declared_information": true,
+    "lineage_edge_required": true,
+    "copy_may_be_reported_as_primary": false
+  },
+  "redundancy_rule": {
+    "constitutive": false,
+    "measured_when_available": true,
+    "allowed_interpretations": [
+      "strength",
+      "reach",
+      "robustness"
+    ]
+  },
+  "universal_guardrail": "Local confirmations do not establish universal coverage; any new bona-fide surface requiring a new constitutive term or outcome-fitted science branch reopens the general theory.",
+  "program_completion_asserted": false
+}

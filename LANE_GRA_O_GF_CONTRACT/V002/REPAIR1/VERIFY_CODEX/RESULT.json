@@ -1,0 +1,73 @@
+{
+  "audit_id": "GRA-O-GF-CONTRACT-V002-REPAIR1-VERIFY-CODEX",
+  "audit_date": "2026-08-22",
+  "subject": "GRA-O-GF-CONTRACT-V002-REPAIR1",
+  "overall_result": "REFUTED",
+  "scientific_result": "NO_PROOF_OUTPUT",
+  "manifest_checks": {
+    "sealed_v002": {
+      "result": "PASS",
+      "matched_entries": 12,
+      "total_entries": 12
+    },
+    "repair1": {
+      "result": "PASS",
+      "matched_entries": 6,
+      "total_entries": 6
+    }
+  },
+  "legacy_regression": {
+    "reproduced": true,
+    "legacy_accepted": true,
+    "legacy_actual_platform_present": true,
+    "legacy_promoted_claims": [
+      "GF0",
+      "GF1",
+      "GF2",
+      "GF3",
+      "GE1",
+      "GE2"
+    ],
+    "repair_disposition": "REFUSE",
+    "repair_diagnostic": "PLATFORM_INSTANCE_SCHEMA_INVALID",
+    "repair_actual_platform_present": false,
+    "repair_authoritative_outputs": "SEVEN_NO_PROOF_OUTPUT"
+  },
+  "fixed_suite": {
+    "result": "PASS",
+    "runs": 2,
+    "case_count_each_run": 47,
+    "failed_count_each_run": 0,
+    "identical_result_payload_sha256": "6126960565ddb29f9754811dca16dacbac2062499b0e08a04f1dacbe849ef61b"
+  },
+  "first_scientific_state_inconsistency": {
+    "id": "FORMATION_NONOBJECT_OBSERVATION_ACCEPTED",
+    "mutation": "REAL.PLATFORM.FORMATION.observations = [0]",
+    "artifact_hash_and_parent_closure_recomputed": true,
+    "observed": {
+      "accepted": true,
+      "custody_disposition": "QUALIFIED",
+      "platform_repair1_valid": true,
+      "actual_platform_present": true,
+      "formation_gate": "PASS",
+      "authoritative_pass_claims": [
+        "GF0",
+        "GF1",
+        "GF2",
+        "GF3",
+        "GE1",
+        "GE2"
+      ],
+      "uge": "NO_PROOF_OUTPUT"
+    },
+    "required": {
+      "accepted": false,
+      "actual_platform_present": false,
+      "diagnostic": "PLATFORM_FORMATION_EVIDENCE_INVALID",
+      "authoritative_outputs": "SEVEN_NO_PROOF_OUTPUT"
+    },
+    "cause": "The formation predicate filters observation validation to dict entries, so a nonempty list with no dict entries passes vacuously."
+  },
+  "subject_files_modified": false,
+  "audit_files_confined_to": "LANE_GRA_O_GF_CONTRACT/V002/REPAIR1/VERIFY_CODEX"
+}

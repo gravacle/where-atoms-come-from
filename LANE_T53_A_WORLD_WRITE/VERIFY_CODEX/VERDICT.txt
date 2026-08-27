@@ -1,0 +1,83 @@
+INDEPENDENT VSM RAW-MEASUREMENT VERIFICATION
+Verdict: NOT_REFUTED
+Scope: raw-integrity-and-measurement-only
+
+Default rule: REFUTED unless every declared predicate executes and succeeds.
+Predicates executed: 21/21
+Predicates succeeded: 21/21
+
+Independent numerical results:
+- U1537A-24H-4W-126cm
+  hysteresis H=0 remanence after +field history: 7.0407291842780635e-07 A m^2
+  hysteresis H=0 remanence after -field history: -7.0341958864585153e-07 A m^2
+  branch-magnitude asymmetry: 9.2835987214336861e-04
+  DCD retained fraction at largest reverse pulse <=1 mT: 9.8090033651385555e-01
+  DCD sign-change pulse field: -3.8585434234653458e-02 T
+  DCD final reverse pulse: -2.4999994288731977e+00 T; retained moment -6.9475788569048984e-07 A m^2
+- U1537A-25H-4W-80cm
+  hysteresis H=0 remanence after +field history: 3.2394073316915220e-07 A m^2
+  hysteresis H=0 remanence after -field history: -3.2252054544842546e-07 A m^2
+  branch-magnitude asymmetry: 4.3937286507360063e-03
+  DCD retained fraction at largest reverse pulse <=1 mT: 9.7899399817924204e-01
+  DCD sign-change pulse field: -4.4980197233943676e-02 T
+  DCD final reverse pulse: -2.5000001364941546e+00 T; retained moment -3.1966757832211059e-07 A m^2
+- U1537A-26H-4W-62cm
+  hysteresis H=0 remanence after +field history: 8.0912457922536891e-07 A m^2
+  hysteresis H=0 remanence after -field history: -8.0873373391588376e-07 A m^2
+  branch-magnitude asymmetry: 4.8316382999730450e-04
+  DCD retained fraction at largest reverse pulse <=1 mT: 9.8228712957250885e-01
+  DCD sign-change pulse field: -4.0244931313726723e-02 T
+  DCD final reverse pulse: -2.4999987593516879e+00 T; retained moment -7.9803950785972095e-07 A m^2
+- U1537A-29f-3W-20cm
+  hysteresis H=0 remanence after +field history: 2.8551019567447401e-07 A m^2
+  hysteresis H=0 remanence after -field history: -2.8489368780589598e-07 A m^2
+  branch-magnitude asymmetry: 2.1616538261147286e-03
+  DCD retained fraction at largest reverse pulse <=1 mT: 9.8208405004207411e-01
+  DCD sign-change pulse field: -4.0860926033997130e-02 T
+  DCD final reverse pulse: -2.4999998749368655e+00 T; retained moment -2.8014451810546005e-07 A m^2
+- U1537A-31F-4W-40cm
+  hysteresis H=0 remanence after +field history: 1.9595755986269297e-07 A m^2
+  hysteresis H=0 remanence after -field history: -1.9444560813244223e-07 A m^2
+  branch-magnitude asymmetry: 7.7455915023188701e-03
+  DCD retained fraction at largest reverse pulse <=1 mT: 9.7590824791604058e-01
+  DCD sign-change pulse field: -3.6776979527986801e-02 T
+  DCD final reverse pulse: -2.5000000804175002e+00 T; retained moment -1.9195306521305247e-07 A m^2
+
+What these files support:
+- The supplied files are byte-identical to the ten measurements pinned by SOURCE.json.
+- Five distinctly labeled physical sediment specimens underwent externally applied magnetic-field histories.
+- Both hysteresis branches retain nonzero, history-dependent moments at interpolated zero applied field.
+- The DCD protocol explicitly records moments away from the applied reverse-pulse field, and retained response remains measurable after low-field pulses.
+- Each DCD series has an independently recomputable sign-change threshold and an opposite-sign retained response after the final reverse pulse.
+
+What these files do not support:
+- A general or universal law of record formation, or universal formation terms.
+- Necessity or sufficiency of any proposed record-formation criterion.
+- Prospective or blinded prediction, randomized message writing, a no-write control, or long common-hold survival.
+- Coverage of any surface class beyond these five magnetic sediment specimens, much less any and every bona-fide record surface.
+- Redundant-carrier formation, independent-physicist reproduction, or a released-URM reproduction.
+- Gravity emergence or any gravity observable.
+- Completion of T53, a ledger status change, registration, or a program-level proof claim.
+
+Predicate ledger:
+- source_manifest_parseable: SUCCEEDED
+- source_identity_fixed: SUCCEEDED
+- manifest_has_ten_unique_measurements: SUCCEEDED
+- raw_directory_membership_exact: SUCCEEDED
+- manifest_sizes_all_match: SUCCEEDED
+- manifest_md5_all_match: SUCCEEDED
+- manifest_sha256_all_match: SUCCEEDED
+- five_physical_sample_pairs_exact: SUCCEEDED
+- hysteresis_headers_define_applied_field_protocol: SUCCEEDED
+- hysteresis_rows_all_finite_and_good: SUCCEEDED
+- hysteresis_paths_traverse_both_directions: SUCCEEDED
+- hysteresis_zero_field_interpolants_unique: SUCCEEDED
+- hysteresis_writer_off_remanence_opposes_by_history: SUCCEEDED
+- dcd_headers_define_writer_off_read_protocol: SUCCEEDED
+- dcd_rows_all_finite_and_good: SUCCEEDED
+- dcd_reverse_pulse_paths_complete: SUCCEEDED
+- dcd_low_field_retention_computable: SUCCEEDED
+- dcd_sign_change_threshold_unique: SUCCEEDED
+- dcd_independent_threshold_agrees_with_embedded_extraction: SUCCEEDED
+- dcd_final_reverse_pulse_reverses_sign: SUCCEEDED
+- scientific_scope_explicitly_bounded: SUCCEEDED

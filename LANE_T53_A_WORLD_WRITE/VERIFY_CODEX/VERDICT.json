@@ -1,0 +1,978 @@
+{
+  "adjudication": {
+    "does_not_support": [
+      "A general or universal law of record formation, or universal formation terms.",
+      "Necessity or sufficiency of any proposed record-formation criterion.",
+      "Prospective or blinded prediction, randomized message writing, a no-write control, or long common-hold survival.",
+      "Coverage of any surface class beyond these five magnetic sediment specimens, much less any and every bona-fide record surface.",
+      "Redundant-carrier formation, independent-physicist reproduction, or a released-URM reproduction.",
+      "Gravity emergence or any gravity observable.",
+      "Completion of T53, a ledger status change, registration, or a program-level proof claim."
+    ],
+    "supports": [
+      "The supplied files are byte-identical to the ten measurements pinned by SOURCE.json.",
+      "Five distinctly labeled physical sediment specimens underwent externally applied magnetic-field histories.",
+      "Both hysteresis branches retain nonzero, history-dependent moments at interpolated zero applied field.",
+      "The DCD protocol explicitly records moments away from the applied reverse-pulse field, and retained response remains measurable after low-field pulses.",
+      "Each DCD series has an independently recomputable sign-change threshold and an opposite-sign retained response after the final reverse pulse."
+    ]
+  },
+  "default_rule": "REFUTED unless every declared predicate executes and succeeds",
+  "errors": [],
+  "predicate_summary": {
+    "all_executed_exactly_once": true,
+    "executed": 21,
+    "required": 21,
+    "succeeded": 21
+  },
+  "predicates": [
+    {
+      "evidence": {
+        "type": "dict"
+      },
+      "executed": true,
+      "name": "source_manifest_parseable",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "archive_sha256": "202a932bcf30af20087c21277c9d19f2b7217a69d849a198db9016f170f330ab",
+        "doi": "10.5281/zenodo.14564186",
+        "license": "cc-by-4.0",
+        "record_id": "14564186",
+        "related_publication_doi": "10.1029/2025PA005360"
+      },
+      "executed": true,
+      "name": "source_identity_fixed",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "entries": 10,
+        "unique_names": 10
+      },
+      "executed": true,
+      "name": "manifest_has_ten_unique_measurements",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "expected": [
+          "SOURCE.json",
+          "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+          "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+          "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+          "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+          "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 2 Remanence Curves.csv"
+        ],
+        "observed": [
+          "SOURCE.json",
+          "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+          "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+          "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+          "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+          "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv",
+          "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 2 Remanence Curves.csv"
+        ]
+      },
+      "executed": true,
+      "name": "raw_directory_membership_exact",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": 83392,
+          "observed": 83392
+        },
+        "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": 12254,
+          "observed": 12254
+        },
+        "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": 83375,
+          "observed": 83375
+        },
+        "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": 12245,
+          "observed": 12245
+        },
+        "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": 83408,
+          "observed": 83408
+        },
+        "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": 12257,
+          "observed": 12257
+        },
+        "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": 83403,
+          "observed": 83403
+        },
+        "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": 12253,
+          "observed": 12253
+        },
+        "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": 83377,
+          "observed": 83377
+        },
+        "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": 12248,
+          "observed": 12248
+        }
+      },
+      "executed": true,
+      "name": "manifest_sizes_all_match",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "521fb4ef089b42dbf72620c3cfe6d28f",
+          "observed": "521fb4ef089b42dbf72620c3cfe6d28f"
+        },
+        "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "a0fd56f33e4ac600db8b7f63022fa941",
+          "observed": "a0fd56f33e4ac600db8b7f63022fa941"
+        },
+        "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "33b6b7c500243e685fd4b8e04029913d",
+          "observed": "33b6b7c500243e685fd4b8e04029913d"
+        },
+        "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "8e0549f1892b2961ec58cb3a5ebde96f",
+          "observed": "8e0549f1892b2961ec58cb3a5ebde96f"
+        },
+        "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "09c95c31278354be320d19116dad9a94",
+          "observed": "09c95c31278354be320d19116dad9a94"
+        },
+        "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "03ffd10bd1cc9a14d8fe294ac157a04d",
+          "observed": "03ffd10bd1cc9a14d8fe294ac157a04d"
+        },
+        "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "85a108fab4436de7a8fa9988a8fd3f6f",
+          "observed": "85a108fab4436de7a8fa9988a8fd3f6f"
+        },
+        "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "3e2eed532b50c97f3e5919a4b2a53416",
+          "observed": "3e2eed532b50c97f3e5919a4b2a53416"
+        },
+        "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "312515c01660281ead4c8e76644e87b6",
+          "observed": "312515c01660281ead4c8e76644e87b6"
+        },
+        "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "f67644009806b15820e84b50f48e4630",
+          "observed": "f67644009806b15820e84b50f48e4630"
+        }
+      },
+      "executed": true,
+      "name": "manifest_md5_all_match",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "bd322e82eea29611f62d9da491e97e7de37e38e7efc69a1537795a27968e8250",
+          "observed": "bd322e82eea29611f62d9da491e97e7de37e38e7efc69a1537795a27968e8250"
+        },
+        "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "0cb396d2982de372de223e088a67b8a88fda31ca687c74a59977307f251fcedd",
+          "observed": "0cb396d2982de372de223e088a67b8a88fda31ca687c74a59977307f251fcedd"
+        },
+        "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "5d5920959586e29c1b094179fefffc9a7d226d4a6e4d6ad2dc328b7ea790c1ac",
+          "observed": "5d5920959586e29c1b094179fefffc9a7d226d4a6e4d6ad2dc328b7ea790c1ac"
+        },
+        "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "1a1785eacf669761f4e662da78452104b090a7b4e93bc9e76f106407c6a1d168",
+          "observed": "1a1785eacf669761f4e662da78452104b090a7b4e93bc9e76f106407c6a1d168"
+        },
+        "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "a8b5210b539de2f1e58a737ec5635a604d616773002378946c883c05f6bb5eca",
+          "observed": "a8b5210b539de2f1e58a737ec5635a604d616773002378946c883c05f6bb5eca"
+        },
+        "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "22bc457ca94f3e04e0976f5a7472aa47494e11b047438687ce2a37ece0adc382",
+          "observed": "22bc457ca94f3e04e0976f5a7472aa47494e11b047438687ce2a37ece0adc382"
+        },
+        "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "d45328fe753fe3d6c14bc7ed4199ede063787b7773afe19f55d585874d9fd263",
+          "observed": "d45328fe753fe3d6c14bc7ed4199ede063787b7773afe19f55d585874d9fd263"
+        },
+        "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "122f5d80ed1c19bcb175e927a454cdd18838e7138b0f3df9278a2d1ef0d880c7",
+          "observed": "122f5d80ed1c19bcb175e927a454cdd18838e7138b0f3df9278a2d1ef0d880c7"
+        },
+        "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv": {
+          "expected": "d999a25c5685e0c014b19502de499bb276bd3f6ba57ed2058ced230e51f0aff6",
+          "observed": "d999a25c5685e0c014b19502de499bb276bd3f6ba57ed2058ced230e51f0aff6"
+        },
+        "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 2 Remanence Curves.csv": {
+          "expected": "6057232c50c8ab670294979986656f5793899498db539f8e27b2eaa6516489c5",
+          "observed": "6057232c50c8ab670294979986656f5793899498db539f8e27b2eaa6516489c5"
+        }
+      },
+      "executed": true,
+      "name": "manifest_sha256_all_match",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "step1_samples": [
+          "U1537A-24H-4W-126cm",
+          "U1537A-25H-4W-80cm",
+          "U1537A-26H-4W-62cm",
+          "U1537A-29f-3W-20cm",
+          "U1537A-31F-4W-40cm"
+        ],
+        "step2_samples": [
+          "U1537A-24H-4W-126cm",
+          "U1537A-25H-4W-80cm",
+          "U1537A-26H-4W-62cm",
+          "U1537A-29f-3W-20cm",
+          "U1537A-31F-4W-40cm"
+        ]
+      },
+      "executed": true,
+      "name": "five_physical_sample_pairs_exact",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "acquisition_mode": "Continuous",
+          "initial_curve": "False",
+          "max_field": "1.5 T",
+          "measurement_marker": true,
+          "table": "##DATA TABLE Moment (m) [A\u00b7m\u00b2] vs Field (\u00b50H) [T]"
+        },
+        "U1537A-25H-4W-80cm": {
+          "acquisition_mode": "Continuous",
+          "initial_curve": "False",
+          "max_field": "1.5 T",
+          "measurement_marker": true,
+          "table": "##DATA TABLE Moment (m) [A\u00b7m\u00b2] vs Field (\u00b50H) [T]"
+        },
+        "U1537A-26H-4W-62cm": {
+          "acquisition_mode": "Continuous",
+          "initial_curve": "False",
+          "max_field": "1.5 T",
+          "measurement_marker": true,
+          "table": "##DATA TABLE Moment (m) [A\u00b7m\u00b2] vs Field (\u00b50H) [T]"
+        },
+        "U1537A-29f-3W-20cm": {
+          "acquisition_mode": "Continuous",
+          "initial_curve": "False",
+          "max_field": "1.5 T",
+          "measurement_marker": true,
+          "table": "##DATA TABLE Moment (m) [A\u00b7m\u00b2] vs Field (\u00b50H) [T]"
+        },
+        "U1537A-31F-4W-40cm": {
+          "acquisition_mode": "Continuous",
+          "initial_curve": "False",
+          "max_field": "1.5 T",
+          "measurement_marker": true,
+          "table": "##DATA TABLE Moment (m) [A\u00b7m\u00b2] vs Field (\u00b50H) [T]"
+        }
+      },
+      "executed": true,
+      "name": "hysteresis_headers_define_applied_field_protocol",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "finite": true,
+          "rows": 1202,
+          "statuses_good": true,
+          "step_iteration_expected": true,
+          "timestamps_nondecreasing": true
+        },
+        "U1537A-25H-4W-80cm": {
+          "finite": true,
+          "rows": 1202,
+          "statuses_good": true,
+          "step_iteration_expected": true,
+          "timestamps_nondecreasing": true
+        },
+        "U1537A-26H-4W-62cm": {
+          "finite": true,
+          "rows": 1202,
+          "statuses_good": true,
+          "step_iteration_expected": true,
+          "timestamps_nondecreasing": true
+        },
+        "U1537A-29f-3W-20cm": {
+          "finite": true,
+          "rows": 1202,
+          "statuses_good": true,
+          "step_iteration_expected": true,
+          "timestamps_nondecreasing": true
+        },
+        "U1537A-31F-4W-40cm": {
+          "finite": true,
+          "rows": 1202,
+          "statuses_good": true,
+          "step_iteration_expected": true,
+          "timestamps_nondecreasing": true
+        }
+      },
+      "executed": true,
+      "name": "hysteresis_rows_all_finite_and_good",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "ascending_end_T": 1.500242448136466,
+          "ascending_start_T": -1.5000927230189982,
+          "descending_end_T": -1.5001961868189653,
+          "descending_start_T": 1.500370361982332,
+          "segment_ids": [
+            0,
+            1
+          ]
+        },
+        "U1537A-25H-4W-80cm": {
+          "ascending_end_T": 1.5002407211873192,
+          "ascending_start_T": -1.500100111391021,
+          "descending_end_T": -1.5001953165787028,
+          "descending_start_T": 1.500362874538052,
+          "segment_ids": [
+            0,
+            1
+          ]
+        },
+        "U1537A-26H-4W-62cm": {
+          "ascending_end_T": 1.5002446800696125,
+          "ascending_start_T": -1.500100456538645,
+          "descending_end_T": -1.5001950111540523,
+          "descending_start_T": 1.5003723590535933,
+          "segment_ids": [
+            0,
+            1
+          ]
+        },
+        "U1537A-29f-3W-20cm": {
+          "ascending_end_T": 1.5002445016449477,
+          "ascending_start_T": -1.5000892885889074,
+          "descending_end_T": -1.500195783552361,
+          "descending_start_T": 1.5003707985139836,
+          "segment_ids": [
+            0,
+            1
+          ]
+        },
+        "U1537A-31F-4W-40cm": {
+          "ascending_end_T": 1.500244308965701,
+          "ascending_start_T": -1.50009796806326,
+          "descending_end_T": -1.500197122865312,
+          "descending_start_T": 1.5003689228720032,
+          "segment_ids": [
+            0,
+            1
+          ]
+        }
+      },
+      "executed": true,
+      "name": "hysteresis_paths_traverse_both_directions",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "ascending_zero_field_bracket_T": [
+            -0.004721150630727722,
+            0.00027293930209207643
+          ],
+          "ascending_zero_field_remanence_Am2": -7.034195886458515e-07,
+          "branch_magnitude_asymmetry_fraction": 0.0009283598721433686,
+          "descending_zero_field_bracket_T": [
+            0.004767515789116031,
+            -0.00022914639992501753
+          ],
+          "descending_zero_field_remanence_Am2": 7.040729184278064e-07
+        },
+        "U1537A-25H-4W-80cm": {
+          "ascending_zero_field_bracket_T": [
+            -0.004591433183472886,
+            0.00040049911183366225
+          ],
+          "ascending_zero_field_remanence_Am2": -3.2252054544842546e-07,
+          "branch_magnitude_asymmetry_fraction": 0.004393728650736006,
+          "descending_zero_field_bracket_T": [
+            0.004567796307620429,
+            -0.00043099921327697404
+          ],
+          "descending_zero_field_remanence_Am2": 3.239407331691522e-07
+        },
+        "U1537A-26H-4W-62cm": {
+          "ascending_zero_field_bracket_T": [
+            -0.004745635335470271,
+            0.0002495383993852991
+          ],
+          "ascending_zero_field_remanence_Am2": -8.087337339158838e-07,
+          "branch_magnitude_asymmetry_fraction": 0.0004831638299973045,
+          "descending_zero_field_bracket_T": [
+            0.004770902185752579,
+            -0.00022543939635649867
+          ],
+          "descending_zero_field_remanence_Am2": 8.091245792253689e-07
+        },
+        "U1537A-29f-3W-20cm": {
+          "ascending_zero_field_bracket_T": [
+            -0.004754737530598259,
+            0.00023746429843034492
+          ],
+          "ascending_zero_field_remanence_Am2": -2.84893687805896e-07,
+          "branch_magnitude_asymmetry_fraction": 0.0021616538261147286,
+          "descending_zero_field_bracket_T": [
+            0.00475348408144692,
+            -0.00024288602741709612
+          ],
+          "descending_zero_field_remanence_Am2": 2.85510195674474e-07
+        },
+        "U1537A-31F-4W-40cm": {
+          "ascending_zero_field_bracket_T": [
+            -0.0047484331883954674,
+            0.00024803825627885644
+          ],
+          "ascending_zero_field_remanence_Am2": -1.9444560813244223e-07,
+          "branch_magnitude_asymmetry_fraction": 0.00774559150231887,
+          "descending_zero_field_bracket_T": [
+            0.0047713732508471605,
+            -0.00022425580339095137
+          ],
+          "descending_zero_field_remanence_Am2": 1.9595755986269297e-07
+        }
+      },
+      "executed": true,
+      "name": "hysteresis_zero_field_interpolants_unique",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "after_negative_field_history_Am2": -7.034195886458515e-07,
+          "after_positive_field_history_Am2": 7.040729184278064e-07
+        },
+        "U1537A-25H-4W-80cm": {
+          "after_negative_field_history_Am2": -3.2252054544842546e-07,
+          "after_positive_field_history_Am2": 3.239407331691522e-07
+        },
+        "U1537A-26H-4W-62cm": {
+          "after_negative_field_history_Am2": -8.087337339158838e-07,
+          "after_positive_field_history_Am2": 8.091245792253689e-07
+        },
+        "U1537A-29f-3W-20cm": {
+          "after_negative_field_history_Am2": -2.84893687805896e-07,
+          "after_positive_field_history_Am2": 2.85510195674474e-07
+        },
+        "U1537A-31F-4W-40cm": {
+          "after_negative_field_history_Am2": -1.9444560813244223e-07,
+          "after_positive_field_history_Am2": 1.9595755986269297e-07
+        }
+      },
+      "executed": true,
+      "name": "hysteresis_writer_off_remanence_opposes_by_history",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "dcd": "True",
+          "final_field": "2.5 T",
+          "irm": "False",
+          "measure_at_applied_fields": "False",
+          "measurement_marker": true,
+          "pause_at_zero_field": "0 s",
+          "points": "150",
+          "saturation_field": "2.5 T"
+        },
+        "U1537A-25H-4W-80cm": {
+          "dcd": "True",
+          "final_field": "2.5 T",
+          "irm": "False",
+          "measure_at_applied_fields": "False",
+          "measurement_marker": true,
+          "pause_at_zero_field": "0 s",
+          "points": "150",
+          "saturation_field": "2.5 T"
+        },
+        "U1537A-26H-4W-62cm": {
+          "dcd": "True",
+          "final_field": "2.5 T",
+          "irm": "False",
+          "measure_at_applied_fields": "False",
+          "measurement_marker": true,
+          "pause_at_zero_field": "0 s",
+          "points": "150",
+          "saturation_field": "2.5 T"
+        },
+        "U1537A-29f-3W-20cm": {
+          "dcd": "True",
+          "final_field": "2.5 T",
+          "irm": "False",
+          "measure_at_applied_fields": "False",
+          "measurement_marker": true,
+          "pause_at_zero_field": "0 s",
+          "points": "150",
+          "saturation_field": "2.5 T"
+        },
+        "U1537A-31F-4W-40cm": {
+          "dcd": "True",
+          "final_field": "2.5 T",
+          "irm": "False",
+          "measure_at_applied_fields": "False",
+          "measurement_marker": true,
+          "pause_at_zero_field": "0 s",
+          "points": "150",
+          "saturation_field": "2.5 T"
+        }
+      },
+      "executed": true,
+      "name": "dcd_headers_define_writer_off_read_protocol",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "finite": true,
+          "rows": 150,
+          "statuses_good": true,
+          "step_iteration_segment_expected": true,
+          "timestamps_nondecreasing": true
+        },
+        "U1537A-25H-4W-80cm": {
+          "finite": true,
+          "rows": 150,
+          "statuses_good": true,
+          "step_iteration_segment_expected": true,
+          "timestamps_nondecreasing": true
+        },
+        "U1537A-26H-4W-62cm": {
+          "finite": true,
+          "rows": 150,
+          "statuses_good": true,
+          "step_iteration_segment_expected": true,
+          "timestamps_nondecreasing": true
+        },
+        "U1537A-29f-3W-20cm": {
+          "finite": true,
+          "rows": 150,
+          "statuses_good": true,
+          "step_iteration_segment_expected": true,
+          "timestamps_nondecreasing": true
+        },
+        "U1537A-31F-4W-40cm": {
+          "finite": true,
+          "rows": 150,
+          "statuses_good": true,
+          "step_iteration_segment_expected": true,
+          "timestamps_nondecreasing": true
+        }
+      },
+      "executed": true,
+      "name": "dcd_rows_all_finite_and_good",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "absolute_pulse_magnitude_nondecreasing": true,
+          "final_pulse_field_T": -2.4999994288731977,
+          "first_point_nearest_zero": true,
+          "first_pulse_field_T": -1.7616834194576243e-06
+        },
+        "U1537A-25H-4W-80cm": {
+          "absolute_pulse_magnitude_nondecreasing": true,
+          "final_pulse_field_T": -2.5000001364941546,
+          "first_point_nearest_zero": true,
+          "first_pulse_field_T": 9.378050791447445e-08
+        },
+        "U1537A-26H-4W-62cm": {
+          "absolute_pulse_magnitude_nondecreasing": true,
+          "final_pulse_field_T": -2.499998759351688,
+          "first_point_nearest_zero": true,
+          "first_pulse_field_T": -8.608811885173187e-07
+        },
+        "U1537A-29f-3W-20cm": {
+          "absolute_pulse_magnitude_nondecreasing": true,
+          "final_pulse_field_T": -2.4999998749368655,
+          "first_point_nearest_zero": true,
+          "first_pulse_field_T": -9.068815541873217e-07
+        },
+        "U1537A-31F-4W-40cm": {
+          "absolute_pulse_magnitude_nondecreasing": true,
+          "final_pulse_field_T": -2.5000000804175,
+          "first_point_nearest_zero": true,
+          "first_pulse_field_T": -2.6941078094033516e-06
+        }
+      },
+      "executed": true,
+      "name": "dcd_reverse_pulse_paths_complete",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "computed_minus_embedded_Hr_T": 4.163336342344337e-17,
+          "computed_sign_change_field_T": -0.03858543423465346,
+          "final_reverse_pulse_field_T": -2.4999994288731977,
+          "final_writer_off_moment_Am2": -6.947578856904898e-07,
+          "initial_near_zero_pulse_field_T": -1.7616834194576243e-06,
+          "initial_writer_off_moment_Am2": 6.913415110937991e-07,
+          "instrument_embedded_Hr_T": -0.0385854342346535,
+          "low_field_retained_fraction": 0.9809003365138556,
+          "low_field_reverse_pulse_T": -0.0009526830915756812,
+          "low_field_writer_off_moment_Am2": 6.78137120877905e-07,
+          "sign_change_moment_bracket_Am2": [
+            1.9875136768999353e-08,
+            -1.1640954524301602e-08
+          ]
+        },
+        "U1537A-25H-4W-80cm": {
+          "computed_minus_embedded_Hr_T": 2.0816681711721685e-17,
+          "computed_sign_change_field_T": -0.044980197233943676,
+          "final_reverse_pulse_field_T": -2.5000001364941546,
+          "final_writer_off_moment_Am2": -3.196675783221106e-07,
+          "initial_near_zero_pulse_field_T": 9.378050791447445e-08,
+          "initial_writer_off_moment_Am2": 3.1883158578826817e-07,
+          "instrument_embedded_Hr_T": -0.0449801972339437,
+          "low_field_retained_fraction": 0.978993998179242,
+          "low_field_reverse_pulse_T": -0.0009530663224139278,
+          "low_field_writer_off_moment_Am2": 3.1213420891668467e-07,
+          "sign_change_moment_bracket_Am2": [
+            7.792484778467023e-09,
+            -3.4233671605934687e-09
+          ]
+        },
+        "U1537A-26H-4W-62cm": {
+          "computed_minus_embedded_Hr_T": -2.0816681711721685e-17,
+          "computed_sign_change_field_T": -0.04024493131372672,
+          "final_reverse_pulse_field_T": -2.499998759351688,
+          "final_writer_off_moment_Am2": -7.98039507859721e-07,
+          "initial_near_zero_pulse_field_T": -8.608811885173187e-07,
+          "initial_writer_off_moment_Am2": 7.947923420032638e-07,
+          "instrument_embedded_Hr_T": -0.0402449313137267,
+          "low_field_retained_fraction": 0.9822871295725089,
+          "low_field_reverse_pulse_T": -0.0009517547261592999,
+          "low_field_writer_off_moment_Am2": 7.807142882325977e-07,
+          "sign_change_moment_bracket_Am2": [
+            1.754647633733353e-08,
+            -1.986784307086092e-08
+          ]
+        },
+        "U1537A-29f-3W-20cm": {
+          "computed_minus_embedded_Hr_T": -2.7755575615628914e-17,
+          "computed_sign_change_field_T": -0.04086092603399713,
+          "final_reverse_pulse_field_T": -2.4999998749368655,
+          "final_writer_off_moment_Am2": -2.8014451810546005e-07,
+          "initial_near_zero_pulse_field_T": -9.068815541873217e-07,
+          "initial_writer_off_moment_Am2": 2.794514577705961e-07,
+          "instrument_embedded_Hr_T": -0.0408609260339971,
+          "low_field_retained_fraction": 0.9820840500420741,
+          "low_field_reverse_pulse_T": -0.0009522698653862143,
+          "low_field_writer_off_moment_Am2": 2.7444481943750864e-07,
+          "sign_change_moment_bracket_Am2": [
+            9.897683119769903e-09,
+            -2.902265840372764e-09
+          ]
+        },
+        "U1537A-31F-4W-40cm": {
+          "computed_minus_embedded_Hr_T": 0.0,
+          "computed_sign_change_field_T": -0.0367769795279868,
+          "final_reverse_pulse_field_T": -2.5000000804175,
+          "final_writer_off_moment_Am2": -1.9195306521305247e-07,
+          "initial_near_zero_pulse_field_T": -2.6941078094033516e-06,
+          "initial_writer_off_moment_Am2": 1.916822801292992e-07,
+          "instrument_embedded_Hr_T": -0.0367769795279868,
+          "low_field_retained_fraction": 0.9759082479160406,
+          "low_field_reverse_pulse_T": -0.0009515880811331415,
+          "low_field_writer_off_moment_Am2": 1.8706431815753606e-07,
+          "sign_change_moment_bracket_Am2": [
+            5.478127953350861e-09,
+            -2.6318386134393654e-09
+          ]
+        }
+      },
+      "executed": true,
+      "name": "dcd_low_field_retention_computable",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": -0.03858543423465346,
+        "U1537A-25H-4W-80cm": -0.044980197233943676,
+        "U1537A-26H-4W-62cm": -0.04024493131372672,
+        "U1537A-29f-3W-20cm": -0.04086092603399713,
+        "U1537A-31F-4W-40cm": -0.0367769795279868
+      },
+      "executed": true,
+      "name": "dcd_sign_change_threshold_unique",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": 4.163336342344337e-17,
+        "U1537A-25H-4W-80cm": 2.0816681711721685e-17,
+        "U1537A-26H-4W-62cm": -2.0816681711721685e-17,
+        "U1537A-29f-3W-20cm": -2.7755575615628914e-17,
+        "U1537A-31F-4W-40cm": 0.0
+      },
+      "executed": true,
+      "name": "dcd_independent_threshold_agrees_with_embedded_extraction",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "U1537A-24H-4W-126cm": {
+          "final_Am2": -6.947578856904898e-07,
+          "initial_Am2": 6.913415110937991e-07
+        },
+        "U1537A-25H-4W-80cm": {
+          "final_Am2": -3.196675783221106e-07,
+          "initial_Am2": 3.1883158578826817e-07
+        },
+        "U1537A-26H-4W-62cm": {
+          "final_Am2": -7.98039507859721e-07,
+          "initial_Am2": 7.947923420032638e-07
+        },
+        "U1537A-29f-3W-20cm": {
+          "final_Am2": -2.8014451810546005e-07,
+          "initial_Am2": 2.794514577705961e-07
+        },
+        "U1537A-31F-4W-40cm": {
+          "final_Am2": -1.9195306521305247e-07,
+          "initial_Am2": 1.916822801292992e-07
+        }
+      },
+      "executed": true,
+      "name": "dcd_final_reverse_pulse_reverses_sign",
+      "succeeded": true
+    },
+    {
+      "evidence": {
+        "does_not_support": [
+          "A general or universal law of record formation, or universal formation terms.",
+          "Necessity or sufficiency of any proposed record-formation criterion.",
+          "Prospective or blinded prediction, randomized message writing, a no-write control, or long common-hold survival.",
+          "Coverage of any surface class beyond these five magnetic sediment specimens, much less any and every bona-fide record surface.",
+          "Redundant-carrier formation, independent-physicist reproduction, or a released-URM reproduction.",
+          "Gravity emergence or any gravity observable.",
+          "Completion of T53, a ledger status change, registration, or a program-level proof claim."
+        ],
+        "supports": [
+          "The supplied files are byte-identical to the ten measurements pinned by SOURCE.json.",
+          "Five distinctly labeled physical sediment specimens underwent externally applied magnetic-field histories.",
+          "Both hysteresis branches retain nonzero, history-dependent moments at interpolated zero applied field.",
+          "The DCD protocol explicitly records moments away from the applied reverse-pulse field, and retained response remains measurable after low-field pulses.",
+          "Each DCD series has an independently recomputable sign-change threshold and an opposite-sign retained response after the final reverse pulse."
+        ]
+      },
+      "executed": true,
+      "name": "scientific_scope_explicitly_bounded",
+      "succeeded": true
+    }
+  ],
+  "samples": [
+    {
+      "dcd": {
+        "computed_minus_embedded_Hr_T": 4.163336342344337e-17,
+        "computed_sign_change_field_T": -0.03858543423465346,
+        "final_reverse_pulse_field_T": -2.4999994288731977,
+        "final_writer_off_moment_Am2": -6.947578856904898e-07,
+        "initial_near_zero_pulse_field_T": -1.7616834194576243e-06,
+        "initial_writer_off_moment_Am2": 6.913415110937991e-07,
+        "instrument_embedded_Hr_T": -0.0385854342346535,
+        "low_field_retained_fraction": 0.9809003365138556,
+        "low_field_reverse_pulse_T": -0.0009526830915756812,
+        "low_field_writer_off_moment_Am2": 6.78137120877905e-07,
+        "sign_change_moment_bracket_Am2": [
+          1.9875136768999353e-08,
+          -1.1640954524301602e-08
+        ]
+      },
+      "files": {
+        "dcd": "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+        "hysteresis": "U1537A-24H-4W-126cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv"
+      },
+      "hysteresis": {
+        "ascending_zero_field_bracket_T": [
+          -0.004721150630727722,
+          0.00027293930209207643
+        ],
+        "ascending_zero_field_remanence_Am2": -7.034195886458515e-07,
+        "branch_magnitude_asymmetry_fraction": 0.0009283598721433686,
+        "descending_zero_field_bracket_T": [
+          0.004767515789116031,
+          -0.00022914639992501753
+        ],
+        "descending_zero_field_remanence_Am2": 7.040729184278064e-07
+      },
+      "sample_id": "U1537A-24H-4W-126cm"
+    },
+    {
+      "dcd": {
+        "computed_minus_embedded_Hr_T": 2.0816681711721685e-17,
+        "computed_sign_change_field_T": -0.044980197233943676,
+        "final_reverse_pulse_field_T": -2.5000001364941546,
+        "final_writer_off_moment_Am2": -3.196675783221106e-07,
+        "initial_near_zero_pulse_field_T": 9.378050791447445e-08,
+        "initial_writer_off_moment_Am2": 3.1883158578826817e-07,
+        "instrument_embedded_Hr_T": -0.0449801972339437,
+        "low_field_retained_fraction": 0.978993998179242,
+        "low_field_reverse_pulse_T": -0.0009530663224139278,
+        "low_field_writer_off_moment_Am2": 3.1213420891668467e-07,
+        "sign_change_moment_bracket_Am2": [
+          7.792484778467023e-09,
+          -3.4233671605934687e-09
+        ]
+      },
+      "files": {
+        "dcd": "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+        "hysteresis": "U1537A-25H-4W-80cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv"
+      },
+      "hysteresis": {
+        "ascending_zero_field_bracket_T": [
+          -0.004591433183472886,
+          0.00040049911183366225
+        ],
+        "ascending_zero_field_remanence_Am2": -3.2252054544842546e-07,
+        "branch_magnitude_asymmetry_fraction": 0.004393728650736006,
+        "descending_zero_field_bracket_T": [
+          0.004567796307620429,
+          -0.00043099921327697404
+        ],
+        "descending_zero_field_remanence_Am2": 3.239407331691522e-07
+      },
+      "sample_id": "U1537A-25H-4W-80cm"
+    },
+    {
+      "dcd": {
+        "computed_minus_embedded_Hr_T": -2.0816681711721685e-17,
+        "computed_sign_change_field_T": -0.04024493131372672,
+        "final_reverse_pulse_field_T": -2.499998759351688,
+        "final_writer_off_moment_Am2": -7.98039507859721e-07,
+        "initial_near_zero_pulse_field_T": -8.608811885173187e-07,
+        "initial_writer_off_moment_Am2": 7.947923420032638e-07,
+        "instrument_embedded_Hr_T": -0.0402449313137267,
+        "low_field_retained_fraction": 0.9822871295725089,
+        "low_field_reverse_pulse_T": -0.0009517547261592999,
+        "low_field_writer_off_moment_Am2": 7.807142882325977e-07,
+        "sign_change_moment_bracket_Am2": [
+          1.754647633733353e-08,
+          -1.986784307086092e-08
+        ]
+      },
+      "files": {
+        "dcd": "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+        "hysteresis": "U1537A-26H-4W-62cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv"
+      },
+      "hysteresis": {
+        "ascending_zero_field_bracket_T": [
+          -0.004745635335470271,
+          0.0002495383993852991
+        ],
+        "ascending_zero_field_remanence_Am2": -8.087337339158838e-07,
+        "branch_magnitude_asymmetry_fraction": 0.0004831638299973045,
+        "descending_zero_field_bracket_T": [
+          0.004770902185752579,
+          -0.00022543939635649867
+        ],
+        "descending_zero_field_remanence_Am2": 8.091245792253689e-07
+      },
+      "sample_id": "U1537A-26H-4W-62cm"
+    },
+    {
+      "dcd": {
+        "computed_minus_embedded_Hr_T": -2.7755575615628914e-17,
+        "computed_sign_change_field_T": -0.04086092603399713,
+        "final_reverse_pulse_field_T": -2.4999998749368655,
+        "final_writer_off_moment_Am2": -2.8014451810546005e-07,
+        "initial_near_zero_pulse_field_T": -9.068815541873217e-07,
+        "initial_writer_off_moment_Am2": 2.794514577705961e-07,
+        "instrument_embedded_Hr_T": -0.0408609260339971,
+        "low_field_retained_fraction": 0.9820840500420741,
+        "low_field_reverse_pulse_T": -0.0009522698653862143,
+        "low_field_writer_off_moment_Am2": 2.7444481943750864e-07,
+        "sign_change_moment_bracket_Am2": [
+          9.897683119769903e-09,
+          -2.902265840372764e-09
+        ]
+      },
+      "files": {
+        "dcd": "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+        "hysteresis": "U1537A-29f-3W-20cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv"
+      },
+      "hysteresis": {
+        "ascending_zero_field_bracket_T": [
+          -0.004754737530598259,
+          0.00023746429843034492
+        ],
+        "ascending_zero_field_remanence_Am2": -2.84893687805896e-07,
+        "branch_magnitude_asymmetry_fraction": 0.0021616538261147286,
+        "descending_zero_field_bracket_T": [
+          0.00475348408144692,
+          -0.00024288602741709612
+        ],
+        "descending_zero_field_remanence_Am2": 2.85510195674474e-07
+      },
+      "sample_id": "U1537A-29f-3W-20cm"
+    },
+    {
+      "dcd": {
+        "computed_minus_embedded_Hr_T": 0.0,
+        "computed_sign_change_field_T": -0.0367769795279868,
+        "final_reverse_pulse_field_T": -2.5000000804175,
+        "final_writer_off_moment_Am2": -1.9195306521305247e-07,
+        "initial_near_zero_pulse_field_T": -2.6941078094033516e-06,
+        "initial_writer_off_moment_Am2": 1.916822801292992e-07,
+        "instrument_embedded_Hr_T": -0.0367769795279868,
+        "low_field_retained_fraction": 0.9759082479160406,
+        "low_field_reverse_pulse_T": -0.0009515880811331415,
+        "low_field_writer_off_moment_Am2": 1.8706431815753606e-07,
+        "sign_change_moment_bracket_Am2": [
+          5.478127953350861e-09,
+          -2.6318386134393654e-09
+        ]
+      },
+      "files": {
+        "dcd": "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 2 Remanence Curves.csv",
+        "hysteresis": "U1537A-31F-4W-40cm-hys-dcd-forc1 Step 1 Hysteresis Measurement.csv"
+      },
+      "hysteresis": {
+        "ascending_zero_field_bracket_T": [
+          -0.0047484331883954674,
+          0.00024803825627885644
+        ],
+        "ascending_zero_field_remanence_Am2": -1.9444560813244223e-07,
+        "branch_magnitude_asymmetry_fraction": 0.00774559150231887,
+        "descending_zero_field_bracket_T": [
+          0.0047713732508471605,
+          -0.00022425580339095137
+        ],
+        "descending_zero_field_remanence_Am2": 1.9595755986269297e-07
+      },
+      "sample_id": "U1537A-31F-4W-40cm"
+    }
+  ],
+  "schema": "wacf.independent-vsm-raw-verification.v1",
+  "source_manifest_sha256": "76d214c1e0cad7a3416d039fa92d0872565f736f885df5b9014678f9719a3e90",
+  "verdict": "NOT_REFUTED",
+  "verdict_scope": "raw-integrity-and-measurement-only",
+  "verifier_sha256": "ffe19bb8bfd6a48f888bba454ca7d4ce50abf4df0c2d8cd9b3bbff51210601a8"
+}
