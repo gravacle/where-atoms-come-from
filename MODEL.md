@@ -559,14 +559,17 @@ in the certificate is fixed false.
 ## GRAVITY FORMATION THEORY CERTIFICATE
 
 The two zero-argument Gravity Formation Theory methods verify the exact closure
-and audit; six pinned core theorem/audit pairs; twenty pinned no-laboratory
+and audit; six pinned core theorem/audit pairs; twenty-seven pinned no-laboratory
 advance pairs; and the adopted clarification chain consisting of its final
 adoption record and seal, the clarification source, and V002. The advance
 custody now includes the q4 front/support/response sequence; the finite TT
 composite-cumulant screen; the projected-ice constraint-origin screen; the
-fixed-parent collective-metric origin screen; two public-data passes; the
+fixed-parent collective-metric origin screen; the source-rank/degree-pair
+geometric-strain sequence; two public-data passes; the
 finite-apparatus and NIST/BIPM \(G\)-readiness results; and the HUST-2018
-processed dual-method forward. The methods return a recursively immutable
+processed dual-method forward, history diagnostic, nominal-kernel
+reconstruction, conditional homogeneous-\(G\) quotient, and five-clock
+common-potential screen. The methods return a recursively immutable
 status certificate and accept neither data nor solver parameters.
 
 The certificate now makes the adopted distinction explicit. RGRL-C supplies
@@ -633,6 +636,48 @@ absent. The result is therefore a real processed-coefficient forward and
 limited figure-level response extraction, not a full `GC16` execution, a new
 \(G\), confirmation of RGRL/GFT, or evidence for a lineage gravitational
 charge.
+
+Two bounded continuations sharpen what that release can and cannot establish.
+Equal-configuration ToS endpoint returns yield exact return/differential ranks,
+reused-endpoint Gram matrices, and telescoping identities, together with a
+reproducible source-present-minus-background residual. The source-present and
+background panels are separate same-ordinal acquisitions, no row covariance is
+published, and no matched no-excursion arm exists. The result is therefore a
+history-confound diagnostic, not causal memory, record lineage, `beta_TM`,
+gravity emergence, `GC16`, or a new \(G\).
+
+The public unprocessed mass and dimension fields also determine exact
+conditional homogeneous AAF/ToS Newtonian functionals and highly converged
+numerical source coefficients. Their local sensitivity classes reproduce the
+published geometry classes, while the nominal coefficients differ from the
+authors' processed values by roughly `41--53 ppm` for AAF and `91--103 ppm`
+for ToS. Four AAF pair distances plus a centroid leave two shear degrees of
+freedom, so the pairwise-centred placement is a premise rather than a unique
+public reconstruction. The scalar discrepancies do not identify the omitted
+clamp, coating, density, CMM, shape, transfer, or complete-stress remainder.
+
+Composing the released corrected response fields with those nominal kernels,
+without importing an accepted value of \(G\), gives three exact conditional AAF
+quotients at `r_norm=0` between `6.6740227e-11` and `6.6742605e-11` SI. The
+seven ToS rows give zero-fibre-correction anchors between `6.6734516e-11` and
+`6.6736824e-11` SI plus exact affine correction families. These are not full-
+apparatus estimates: the public packet does not identify the matched
+mass-multipole/CMM numerator, covariance, or signed ToS correction. An equally
+public normalization collision shifts the AAF quotient by about `1631.54 ppm`
+and the ToS anchors by `152--153 ppm`, proving that total inertia cannot replace
+the missing source multipole. Thus no public physical \(G\) point or compact
+interval, new \(G\), `GC16`, or GFT confirmation is promoted.
+
+The public five-clock component has likewise been advanced without assigning
+it more evidential weight than it owns. Its ten separately reanalyzed processed
+pair heights form a complete K5 edge vector. The cut rank is four, the cycle
+dimension six, and all 37 simple cycles were checked. Exact marginal-box
+optimization gives \(\rho_*=27/82<1\), so one five-node scalar intersects every
+reported marginal `1 sigma` interval. The mapping to height already assumes GR
+and common local \(g\), the pair estimates share clocks and runs, and no joint
+covariance is deposited. This is deterministic processed node-scalar
+compatibility, not a chi-square, joint coverage statement, independent GR or
+common-metric test, lineage result, or gravity-emergence evidence.
 
 The original `AFR` theorem remains one conditional raw-front refinement route.
 A distinct audited collective route now proves the exact finite identity
@@ -749,14 +794,40 @@ tensor configuration channels, a nondegenerate conjugate response, and the
 independent vector-plus-scalar null structure. Adopted RGRL-B supplies that
 architecture as a working law, not as its microscopic F3 derivation.
 
-The single next no-laboratory calculation is `Q4-BLOCK-STRAIN-CTP`. It must
-insert the complete six-channel BS20 strain source into every microscopic term
-before the fixed Feshbach reduction, retain all contacts and term weights, and
-at zero source return exactly the frozen through-order-eight H6+H8 parent. One
-calculation must extract the retarded poles and residues, first nonzero
-commutator moment and rank, and the Ward/constraint closure of the complete
-ungauge-fixed blocked CTP action. No rescue interaction, tensor projector, or
-post-result source reweighting is permitted. The consolidated no-laboratory
+The first `Q4-BLOCK-STRAIN-CTP` prerequisite has now been executed rather than
+left as a generic next calculation. Four tetrahedral one-edge dyads span exact
+`A1+T2` rank four and have the two-dimensional diagonal-traceless `E` sector as
+their linear source null. Every FQ17a additive multi-edge weight remains in
+that span. Fixed source-before-Feshbach reduction preserves the null, and a
+general `O(j^2)` contact may alter the `E` Hessian but cannot manufacture a
+linear source-off `Q_E` or its spectral residue.
+
+The complete branch-relative census freezes the covering-matched periodic
+family `L=5*2^r` and the reduced CW/FM pure-incidence Hamiltonian. Its complete
+prospectively frozen microscopic linear source has exact rank four, while every
+projected word through order eight has rank at most four. The occurrence-one
+degree-square tensor is one lawful prospective additive query, not a tensor
+uniquely forced by the source-free Hamiltonian. Carrier, storage, formation,
+feedback, boundary, controller, and port sectors are excluded by the selected
+reduced parent rather than proved absent in a physical BS completion. Thus the
+unreduced physical source remains underdetermined.
+
+The next test has now isolated a single constitutive boundary. Existing
+degree/link/ice pair operators carry the missing `E` query and have nonzero
+block-local H6 matrix elements, but `H[0]` does not choose their geometric
+source derivative: identical source-off dynamics admits both the rank-four
+additive family and a rank-six root-pair family. One compact sufficient law is
+`DPAR`, which makes the existing pair energy respond to affine sibling-root
+length with `g(1)=1` and `g'(1)!=0`. Differentiation then produces the root
+dyads, preserves the one-edge source, source-before-Feshbach ordering, and
+`H[0]`, and conditionally gives exact microscopic rank six plus nonzero local
+H6 `E` response.
+
+`DPAR` is neither inherited nor adopted and is not proved unique. It replaces
+the degree-source deformation instead of double-counting its scalar channel;
+its direct ice-projected image is only rank-three `A1+E`. Full state-dependent
+CTP rank, uniform response, pole/residue, Ward/constraint closure, a protected
+tensor pole, and gravity remain separate. The consolidated no-laboratory
 disposition is recorded in
 [`NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md`](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
 

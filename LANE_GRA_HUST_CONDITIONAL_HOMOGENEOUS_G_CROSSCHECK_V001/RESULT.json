@@ -1,0 +1,469 @@
+{
+  "AAF": [
+    {
+      "id": "AAF-I",
+      "local_uncertainty_diagnostics": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 1.4467243161181801e-15,
+        "kernel_public_input_RSS_component_SI": 7.135887582467863e-16,
+        "linear_sum_of_reported_standard_components_SI": 1.0747738491117395e-15,
+        "mechanical_correction_standard_component_SI": 1.3008835180441128e-16,
+        "response_standard_component_SI": 2.31096739060542e-16,
+        "zero_covariance_partial_RSS_SI": 7.612736682532734e-16
+      },
+      "mechanical_correction_central_ppm": "455.40",
+      "mechanical_correction_standard_u_ppm": "1.95",
+      "mechanical_factor_held_at_displayed_value": 1.0004554,
+      "nominal_homogeneous_kernel_kg_m-3": 6926.660438859097,
+      "normalization_collision": {
+        "collision_minus_primary_relative_ppm": 1631.5379525907263,
+        "conditional_G_if_missing_mass_has_zero_m2_torque_SI": 6.685124860458325e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 6915.377737623663,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic keeps the measured full inertia while omitting the unreported mass from the m=2 numerator. Its different quotient shows the numerical consequence of that mismatch; it is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674534e-11,
+        "primary_minus_authors_relative_ppm": -44.70847166334009,
+        "processed_coefficient_displayed_factor_forward_G_SI": 6.674532803595313e-11,
+        "processed_kernel_kg_m-3": 6926.352,
+        "processed_minus_nominal_kernel_kg_m-3": -0.308438859097,
+        "processed_minus_nominal_relative_ppm": -44.529230473986324,
+        "ratio_identity_residual": -4.951641461135784e-18,
+        "role": "POST_CALCULATION_ONLY. The processed scalar locates the authors' model-minus-homogeneous remainder but is not an independent mass-map input and is not used in the primary quotient. The local displayed-factor forward is distinct from the upstream component-reconstructed factor, whose extra digits are retained only as a comparator.",
+        "upstream_component_reconstructed_processed_forward_G_SI": 6.674532777558953e-11
+      },
+      "primary_conditional_G_SI": 6.674235591785795e-11,
+      "primary_equation": "G=alpha_t*f_m/(K_hom+r_norm), evaluated at r_norm=0",
+      "r_norm_premise": "The real apparatus normalized m=2 source coefficient equals the pairwise-centred homogeneous coefficient. This is a conditional model premise, not a public-data result.",
+      "response_alpha_nrad_s-2": 462.0912,
+      "response_class": "Published campaign-average angular-acceleration response, already corrected for the air-density effect; not raw encoder data. It is a response numerator distinct from the processed source coefficient."
+    },
+    {
+      "id": "AAF-II",
+      "local_uncertainty_diagnostics": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 1.4462065322884343e-15,
+        "kernel_public_input_RSS_component_SI": 7.132852894669113e-16,
+        "linear_sum_of_reported_standard_components_SI": 1.0166910559422213e-15,
+        "mechanical_correction_standard_component_SI": 1.3008420228826137e-16,
+        "response_standard_component_SI": 1.7332156418704863e-16,
+        "zero_covariance_partial_RSS_SI": 7.454784829001532e-16
+      },
+      "mechanical_correction_central_ppm": "455.40",
+      "mechanical_correction_standard_u_ppm": "1.95",
+      "mechanical_factor_held_at_displayed_value": 1.0004554,
+      "nominal_homogeneous_kernel_kg_m-3": 6926.700007763433,
+      "normalization_collision": {
+        "collision_minus_primary_relative_ppm": 1631.5379525906349,
+        "conditional_G_if_missing_mass_has_zero_m2_torque_SI": 6.6849116205088e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 6915.417242074988,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic keeps the measured full inertia while omitting the unreported mass from the m=2 numerator. Its different quotient shows the numerical consequence of that mismatch; it is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674375e-11,
+        "primary_minus_authors_relative_ppm": -52.78409159838936,
+        "processed_coefficient_displayed_factor_forward_G_SI": 6.674375374074366e-11,
+        "processed_kernel_kg_m-3": 6926.334,
+        "processed_minus_nominal_kernel_kg_m-3": -0.366007763433,
+        "processed_minus_nominal_relative_ppm": -52.84013498820205,
+        "ratio_identity_residual": -2.159733375821778e-18,
+        "role": "POST_CALCULATION_ONLY. The processed scalar locates the authors' model-minus-homogeneous remainder but is not an independent mass-map input and is not used in the primary quotient. The local displayed-factor forward is distinct from the upstream component-reconstructed factor, whose extra digits are retained only as a comparator.",
+        "upstream_component_reconstructed_processed_forward_G_SI": 6.674375348038621e-11
+      },
+      "primary_conditional_G_SI": 6.674022699178638e-11,
+      "primary_equation": "G=alpha_t*f_m/(K_hom+r_norm), evaluated at r_norm=0",
+      "r_norm_premise": "The real apparatus normalized m=2 source coefficient equals the pairwise-centred homogeneous coefficient. This is a conditional model premise, not a public-data result.",
+      "response_alpha_nrad_s-2": 462.0791,
+      "response_class": "Published campaign-average angular-acceleration response, already corrected for the air-density effect; not raw encoder data. It is a response numerator distinct from the processed source coefficient."
+    },
+    {
+      "id": "AAF-III",
+      "local_uncertainty_diagnostics": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 1.4462580520304894e-15,
+        "kernel_public_input_RSS_component_SI": 7.133106995817908e-16,
+        "linear_sum_of_reported_standard_components_SI": 8.05273534883746e-16,
+        "mechanical_correction_standard_component_SI": 5.339270931114228e-18,
+        "response_standard_component_SI": 8.662356437084092e-17,
+        "zero_covariance_partial_RSS_SI": 7.185710151796056e-16
+      },
+      "mechanical_correction_central_ppm": "25.74",
+      "mechanical_correction_standard_u_ppm": "0.08",
+      "mechanical_factor_held_at_displayed_value": 1.00002574,
+      "nominal_homogeneous_kernel_kg_m-3": 6926.700007763433,
+      "normalization_collision": {
+        "collision_minus_primary_relative_ppm": 1631.5379525906349,
+        "conditional_G_if_missing_mass_has_zero_m2_torque_SI": 6.685149764172696e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 6915.417242074988,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic keeps the measured full inertia while omitting the unreported mass from the m=2 numerator. Its different quotient shows the numerical consequence of that mismatch; it is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674534999999999e-11,
+        "primary_minus_authors_relative_ppm": -41.13321227696012,
+        "processed_coefficient_displayed_factor_forward_G_SI": 6.674535087056349e-11,
+        "processed_kernel_kg_m-3": 6926.415,
+        "processed_minus_nominal_kernel_kg_m-3": -0.285007763433,
+        "processed_minus_nominal_relative_ppm": -41.146254798614606,
+        "ratio_identity_residual": -6.908046287852938e-17,
+        "role": "POST_CALCULATION_ONLY. The processed scalar locates the authors' model-minus-homogeneous remainder but is not an independent mass-map input and is not used in the primary quotient. The local displayed-factor forward is distinct from the upstream component-reconstructed factor, whose extra digits are retained only as a comparator.",
+        "upstream_component_reconstructed_processed_forward_G_SI": 6.674535082204988e-11
+      },
+      "primary_conditional_G_SI": 6.674260454934994e-11,
+      "primary_equation": "G=alpha_t*f_m/(K_hom+r_norm), evaluated at r_norm=0",
+      "r_norm_premise": "The real apparatus normalized m=2 source coefficient equals the pairwise-centred homogeneous coefficient. This is a conditional model premise, not a public-data result.",
+      "response_alpha_nrad_s-2": 462.2941,
+      "response_class": "Published campaign-average angular-acceleration response, already corrected for the air-density effect; not raw encoder data. It is a response numerator distinct from the processed source coefficient."
+    }
+  ],
+  "AAF_figure_level_unbound_response": {
+    "campaign_kernel_binding": null,
+    "conditional_G_withheld": true,
+    "reason": "This is the strongest released-file-level response numerator, but the public segment is representative rather than a campaign-average alpha_t and is not lawfully bound to one AAF kernel row.",
+    "sample_count": 7200,
+    "two_hour_source_harmonic_nrad_s-2": 461.99346479501804
+  },
+  "TOS": [
+    {
+      "forward_id": "fiber_1_first",
+      "id": "TOS-I-F1-first",
+      "local_uncertainty_diagnostics_at_c_f_zero": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 8.411077364029388e-16,
+        "kernel_public_input_RSS_component_SI": 5.970692908661862e-16,
+        "linear_sum_of_reported_standard_components_SI": 1.2847233164333513e-15,
+        "mechanical_correction_standard_component_SI": 5.338855221650695e-18,
+        "response_standard_component_SI": 6.823151703455145e-16,
+        "zero_covariance_partial_RSS_SI": 9.06683094115114e-16
+      },
+      "magnetic_factor_minus_one_held_at_displayed_value": 4.7e-07,
+      "mechanical_correction_central_ppm": "0.47",
+      "mechanical_correction_standard_u_ppm": "0.08",
+      "nominal_homogeneous_kernel_kg_m-3": 24915.18396314044,
+      "normalization_collision_at_c_f_zero": {
+        "collision_minus_primary_relative_ppm": 152.2584142541605,
+        "conditional_G_SI": 6.674588271155859e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 24911.39099425079,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic uses the homogeneous-core numerator with the full inertia. It is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674153999999999e-11,
+        "c_dynamic_required_with_processed_kernel_ppm": -6.09796385722361,
+        "c_total_required_with_homogeneous_kernel_ppm": 87.18518634148661,
+        "meaning": "The first inferred correction combines the independent-kernel gap with the missing ToS correction. The second uses the authors' processed kernel and reproduces the already known unowned dynamic bracket. Both are post-comparison identities, not inputs.",
+        "primary_anchor_minus_authors_relative_ppm": -87.17754477766022,
+        "processed_kernel_kg_m-3": 24912.86,
+        "processed_minus_nominal_kernel_kg_m-3": -2.32396314044,
+        "processed_minus_nominal_relative_ppm": -93.27497416346893
+      },
+      "primary_affine_family": {
+        "c_f_definition": "c_f=-Delta_K/(I*Delta_omega2)",
+        "equation": "G(c_f)=Delta_omega2/K_hom*(1+delta_m+c_f), at r_norm=0",
+        "intercept_SI": 6.673572163640811e-11,
+        "public_identified_interval": null,
+        "reason": "The public fields pinned by the forward lane do not supply the signed row-level Delta_K correction or a deterministic compact bound for this independently reconstructed family.",
+        "slope_dG_dc_f_SI": 6.67356902706337e-11
+      },
+      "primary_magnetic_only_G_anchor_SI": 6.673572163640811e-11,
+      "r_norm_premise": "The real apparatus normalized near-minus-far stiffness kernel equals the homogeneous coefficient; this is conditional.",
+      "response_Delta_omega2_s-2": 1.662732e-06,
+      "response_class": "Published mean stiffness response. It is a processed response summary, and the Supplement states that the source-gravity nonlinearity was corrected synchronously in Delta_omega2. It is therefore not a source-model-free raw numerator."
+    },
+    {
+      "forward_id": "fiber_1_repeated",
+      "id": "TOS-I-F1-repeat",
+      "local_uncertainty_diagnostics_at_c_f_zero": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 8.41103543748138e-16,
+        "kernel_public_input_RSS_component_SI": 5.970666073189423e-16,
+        "linear_sum_of_reported_standard_components_SI": 1.3248787656961046e-15,
+        "mechanical_correction_standard_component_SI": 5.338911028019251e-18,
+        "response_standard_component_SI": 7.22473247349143e-16,
+        "zero_covariance_partial_RSS_SI": 9.372751093897315e-16
+      },
+      "magnetic_factor_minus_one_held_at_displayed_value": 4.7e-07,
+      "mechanical_correction_central_ppm": "0.47",
+      "mechanical_correction_standard_u_ppm": "0.08",
+      "nominal_homogeneous_kernel_kg_m-3": 24914.429047780784,
+      "normalization_collision_at_c_f_zero": {
+        "collision_minus_primary_relative_ppm": 152.2584142542931,
+        "conditional_G_SI": 6.674658039770582e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 24910.636193815848,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic uses the homogeneous-core numerator with the full inertia. It is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674222e-11,
+        "c_dynamic_required_with_processed_kernel_ppm": -5.766384733496562,
+        "c_total_required_with_homogeneous_kernel_ppm": 86.92085148640705,
+        "meaning": "The first inferred correction combines the independent-kernel gap with the missing ToS correction. The second uses the authors' processed kernel and reproduces the already known unowned dynamic bracket. Both are post-comparison identities, not inputs.",
+        "primary_anchor_minus_authors_relative_ppm": -86.91325606295385,
+        "processed_kernel_kg_m-3": 24912.12,
+        "processed_minus_nominal_kernel_kg_m-3": -2.309047780784,
+        "processed_minus_nominal_relative_ppm": -92.6791369112139
+      },
+      "primary_affine_family": {
+        "c_f_definition": "c_f=-Delta_K/(I*Delta_omega2)",
+        "equation": "G(c_f)=Delta_omega2/K_hom*(1+delta_m+c_f), at r_norm=0",
+        "intercept_SI": 6.673641921634293e-11,
+        "public_identified_interval": null,
+        "reason": "The public fields pinned by the forward lane do not supply the signed row-level Delta_K correction or a deterministic compact bound for this independently reconstructed family.",
+        "slope_dG_dc_f_SI": 6.673638785024065e-11
+      },
+      "primary_magnetic_only_G_anchor_SI": 6.673641921634293e-11,
+      "r_norm_premise": "The real apparatus normalized near-minus-far stiffness kernel equals the homogeneous coefficient; this is conditional.",
+      "response_Delta_omega2_s-2": 1.662699e-06,
+      "response_class": "Published mean stiffness response. It is a processed response summary, and the Supplement states that the source-gravity nonlinearity was corrected synchronously in Delta_omega2. It is therefore not a source-model-free raw numerator."
+    },
+    {
+      "forward_id": "fiber_2",
+      "id": "TOS-I-F2",
+      "local_uncertainty_diagnostics_at_c_f_zero": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 8.411086396253457e-16,
+        "kernel_public_input_RSS_component_SI": 5.970702246834611e-16,
+        "linear_sum_of_reported_standard_components_SI": 2.7235076456814358e-15,
+        "mechanical_correction_standard_component_SI": 7.941625377829968e-17,
+        "response_standard_component_SI": 2.047021167219675e-15,
+        "zero_covariance_partial_RSS_SI": 2.133798362923062e-15
+      },
+      "magnetic_factor_minus_one_held_at_displayed_value": 7.13e-06,
+      "mechanical_correction_central_ppm": "7.13",
+      "mechanical_correction_standard_u_ppm": "1.19",
+      "nominal_homogeneous_kernel_kg_m-3": 24914.429047780784,
+      "normalization_collision_at_c_f_zero": {
+        "collision_minus_primary_relative_ppm": 152.2584142542931,
+        "conditional_G_SI": 6.674698478594109e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 24910.636193815848,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic uses the homogeneous-core numerator with the full inertia. It is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674236999999999e-11,
+        "c_dynamic_required_with_processed_kernel_ppm": -8.373283206119886,
+        "c_total_required_with_homogeneous_kernel_ppm": 83.10998689630676,
+        "meaning": "The first inferred correction combines the independent-kernel gap with the missing ToS correction. The second uses the authors' processed kernel and reproduces the already known unowned dynamic bracket. Both are post-comparison identities, not inputs.",
+        "primary_anchor_minus_authors_relative_ppm": -83.1024877288595,
+        "processed_kernel_kg_m-3": 24912.15,
+        "processed_minus_nominal_kernel_kg_m-3": -2.279047780784,
+        "processed_minus_nominal_relative_ppm": -91.47501539823578
+      },
+      "primary_affine_family": {
+        "c_f_definition": "c_f=-Delta_K/(I*Delta_omega2)",
+        "equation": "G(c_f)=Delta_omega2/K_hom*(1+delta_m+c_f), at r_norm=0",
+        "intercept_SI": 6.673682354301607e-11,
+        "public_identified_interval": null,
+        "reason": "The public fields pinned by the forward lane do not supply the signed row-level Delta_K correction or a deterministic compact bound for this independently reconstructed family.",
+        "slope_dG_dc_f_SI": 6.673634771285687e-11
+      },
+      "primary_magnetic_only_G_anchor_SI": 6.673682354301607e-11,
+      "r_norm_premise": "The real apparatus normalized near-minus-far stiffness kernel equals the homogeneous coefficient; this is conditional.",
+      "response_Delta_omega2_s-2": 1.662698e-06,
+      "response_class": "Published mean stiffness response. It is a processed response summary, and the Supplement states that the source-gravity nonlinearity was corrected synchronously in Delta_omega2. It is therefore not a source-model-free raw numerator."
+    },
+    {
+      "forward_id": "fiber_3_first",
+      "id": "TOS-I-F3-first",
+      "local_uncertainty_diagnostics_at_c_f_zero": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 8.239626378309059e-16,
+        "kernel_public_input_RSS_component_SI": 5.803533676739717e-16,
+        "linear_sum_of_reported_standard_components_SI": 1.3864440917016475e-15,
+        "mechanical_correction_standard_component_SI": 3.336814137001142e-18,
+        "response_standard_component_SI": 8.027539098906746e-16,
+        "zero_covariance_partial_RSS_SI": 9.9057306926035e-16
+      },
+      "magnetic_factor_minus_one_held_at_displayed_value": 3.2e-07,
+      "mechanical_correction_central_ppm": "0.32",
+      "mechanical_correction_standard_u_ppm": "0.05",
+      "nominal_homogeneous_kernel_kg_m-3": 24914.243522929413,
+      "normalization_collision_at_c_f_zero": {
+        "collision_minus_primary_relative_ppm": 152.2584142541476,
+        "conditional_G_SI": 6.67464652594681e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 24910.4506972079,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic uses the homogeneous-core numerator with the full inertia. It is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674273999999999e-11,
+        "c_dynamic_required_with_processed_kernel_ppm": -5.663133151127404,
+        "c_total_required_with_homogeneous_kernel_ppm": 96.43786112189753,
+        "meaning": "The first inferred correction combines the independent-kernel gap with the missing ToS correction. The second uses the authors' processed kernel and reproduces the already known unowned dynamic bracket. Both are post-comparison identities, not inputs.",
+        "primary_anchor_minus_authors_relative_ppm": -96.4285309034361,
+        "processed_kernel_kg_m-3": 24911.7,
+        "processed_minus_nominal_kernel_kg_m-3": -2.543522929413,
+        "processed_minus_nominal_relative_ppm": -102.09111615498622
+      },
+      "primary_affine_family": {
+        "c_f_definition": "c_f=-Delta_K/(I*Delta_omega2)",
+        "equation": "G(c_f)=Delta_omega2/K_hom*(1+delta_m+c_f), at r_norm=0",
+        "intercept_SI": 6.673630409563332e-11,
+        "public_identified_interval": null,
+        "reason": "The public fields pinned by the forward lane do not supply the signed row-level Delta_K correction or a deterministic compact bound for this independently reconstructed family.",
+        "slope_dG_dc_f_SI": 6.673628274002283e-11
+      },
+      "primary_magnetic_only_G_anchor_SI": 6.673630409563332e-11,
+      "r_norm_premise": "The real apparatus normalized near-minus-far stiffness kernel equals the homogeneous coefficient; this is conditional.",
+      "response_Delta_omega2_s-2": 1.662684e-06,
+      "response_class": "Published mean stiffness response. It is a processed response summary, and the Supplement states that the source-gravity nonlinearity was corrected synchronously in Delta_omega2. It is therefore not a source-model-free raw numerator."
+    },
+    {
+      "forward_id": "fiber_3_repeated",
+      "id": "TOS-I-F3-repeat",
+      "local_uncertainty_diagnostics_at_c_f_zero": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 8.239613129576994e-16,
+        "kernel_public_input_RSS_component_SI": 5.803524152543396e-16,
+        "linear_sum_of_reported_standard_components_SI": 1.2660286422692162e-15,
+        "mechanical_correction_standard_component_SI": 3.3368052756214e-18,
+        "response_standard_component_SI": 6.8233942173925505e-16,
+        "zero_covariance_partial_RSS_SI": 8.957718161565778e-16
+      },
+      "magnetic_factor_minus_one_held_at_displayed_value": 3.2e-07,
+      "mechanical_correction_central_ppm": "0.32",
+      "mechanical_correction_standard_u_ppm": "0.05",
+      "nominal_homogeneous_kernel_kg_m-3": 24914.29470199404,
+      "normalization_collision_at_c_f_zero": {
+        "collision_minus_primary_relative_ppm": 152.25841425415004,
+        "conditional_G_SI": 6.674628800483214e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 24910.50186848127,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic uses the homogeneous-core numerator with the full inertia. It is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674266e-11,
+        "c_dynamic_required_with_processed_kernel_ppm": -5.457494519400271,
+        "c_total_required_with_homogeneous_kernel_ppm": 97.89501452142937,
+        "meaning": "The first inferred correction combines the independent-kernel gap with the missing ToS correction. The second uses the authors' processed kernel and reproduces the already known unowned dynamic bracket. Both are post-comparison identities, not inputs.",
+        "primary_anchor_minus_authors_relative_ppm": -97.88540070533598,
+        "processed_kernel_kg_m-3": 24911.72,
+        "processed_minus_nominal_kernel_kg_m-3": -2.57470199404,
+        "processed_minus_nominal_relative_ppm": -103.34235926951331
+      },
+      "primary_affine_family": {
+        "c_f_definition": "c_f=-Delta_K/(I*Delta_omega2)",
+        "equation": "G(c_f)=Delta_omega2/K_hom*(1+delta_m+c_f), at r_norm=0",
+        "intercept_SI": 6.673612686798176e-11,
+        "public_identified_interval": null,
+        "reason": "The public fields pinned by the forward lane do not supply the signed row-level Delta_K correction or a deterministic compact bound for this independently reconstructed family.",
+        "slope_dG_dc_f_SI": 6.6736105512428e-11
+      },
+      "primary_magnetic_only_G_anchor_SI": 6.673612686798176e-11,
+      "r_norm_premise": "The real apparatus normalized near-minus-far stiffness kernel equals the homogeneous coefficient; this is conditional.",
+      "response_Delta_omega2_s-2": 1.662683e-06,
+      "response_class": "Published mean stiffness response. It is a processed response summary, and the Supplement states that the source-gravity nonlinearity was corrected synchronously in Delta_omega2. It is therefore not a source-model-free raw numerator."
+    },
+    {
+      "forward_id": "fiber_4_first",
+      "id": "TOS-II-F4-first",
+      "local_uncertainty_diagnostics_at_c_f_zero": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 9.612024819730978e-16,
+        "kernel_public_input_RSS_component_SI": 6.622116997763818e-16,
+        "linear_sum_of_reported_standard_components_SI": 1.5873541379385296e-15,
+        "mechanical_correction_standard_component_SI": 5.338759860281662e-18,
+        "response_standard_component_SI": 9.198036783018663e-16,
+        "zero_covariance_partial_RSS_SI": 1.1333982725834788e-15
+      },
+      "magnetic_factor_minus_one_held_at_displayed_value": 2.7e-07,
+      "mechanical_correction_central_ppm": "0.27",
+      "mechanical_correction_standard_u_ppm": "0.08",
+      "nominal_homogeneous_kernel_kg_m-3": 25005.34271885324,
+      "normalization_collision_at_c_f_zero": {
+        "collision_minus_primary_relative_ppm": 153.46949767244203,
+        "conditional_G_SI": 6.674475798452495e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 25001.505750324683,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic uses the homogeneous-core numerator with the full inertia. It is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674017e-11,
+        "c_dynamic_required_with_processed_kernel_ppm": -6.9772296174490736,
+        "c_total_required_with_homogeneous_kernel_ppm": 84.71972237233629,
+        "meaning": "The first inferred correction combines the independent-kernel gap with the missing ToS correction. The second uses the authors' processed kernel and reproduces the already known unowned dynamic bracket. Both are post-comparison identities, not inputs.",
+        "primary_anchor_minus_authors_relative_ppm": -84.71252267862069,
+        "processed_kernel_kg_m-3": 25003.05,
+        "processed_minus_nominal_kernel_kg_m-3": -2.29271885324,
+        "processed_minus_nominal_relative_ppm": -91.68915935358736
+      },
+      "primary_affine_family": {
+        "c_f_definition": "c_f=-Delta_K/(I*Delta_omega2)",
+        "equation": "G(c_f)=Delta_omega2/K_hom*(1+delta_m+c_f), at r_norm=0",
+        "intercept_SI": 6.67345162718353e-11,
+        "public_identified_interval": null,
+        "reason": "The public fields pinned by the forward lane do not supply the signed row-level Delta_K correction or a deterministic compact bound for this independently reconstructed family.",
+        "slope_dG_dc_f_SI": 6.673449825352077e-11
+      },
+      "primary_magnetic_only_G_anchor_SI": 6.67345162718353e-11,
+      "r_norm_premise": "The real apparatus normalized near-minus-far stiffness kernel equals the homogeneous coefficient; this is conditional.",
+      "response_Delta_omega2_s-2": 1.668719e-06,
+      "response_class": "Published mean stiffness response. It is a processed response summary, and the Supplement states that the source-gravity nonlinearity was corrected synchronously in Delta_omega2. It is therefore not a source-model-free raw numerator."
+    },
+    {
+      "forward_id": "fiber_4_repeated",
+      "id": "TOS-II-F4-repeat",
+      "local_uncertainty_diagnostics_at_c_f_zero": {
+        "ceiling": "First-order propagation of released response standard uncertainty, nominal-kernel public-input sensitivity, and Supplementary-Table-1 magnetic-correction standard uncertainty. The RSS assumes zero cross covariance. No uncertainty is available for the full normalized-kernel remainder; for ToS the missing signed fibre correction is also unquantified. None of these numbers is a coverage interval.",
+        "kernel_axis_box_diagnostic_component_SI": 9.440315331212573e-16,
+        "kernel_public_input_RSS_component_SI": 6.457436565409593e-16,
+        "linear_sum_of_reported_standard_components_SI": 1.570889239022924e-15,
+        "mechanical_correction_standard_component_SI": 5.338825718312661e-18,
+        "response_standard_component_SI": 9.198067567636522e-16,
+        "zero_covariance_partial_RSS_SI": 1.1238584620898698e-15
+      },
+      "magnetic_factor_minus_one_held_at_displayed_value": 2.7e-07,
+      "mechanical_correction_central_ppm": "0.27",
+      "mechanical_correction_standard_u_ppm": "0.08",
+      "nominal_homogeneous_kernel_kg_m-3": 25005.25902954411,
+      "normalization_collision_at_c_f_zero": {
+        "collision_minus_primary_relative_ppm": 153.46949767229844,
+        "conditional_G_SI": 6.674558133647473e-11,
+        "core_numerator_over_full_I_kernel_kg_m-3": 25001.422073857342,
+        "meaning": "This deliberately incomplete mixed-normalization diagnostic uses the homogeneous-core numerator with the full inertia. It is not a physical apparatus coefficient or a second realized apparatus map."
+      },
+      "post_calculation_comparator": {
+        "authors_derived_G_SI": 6.674104999999999e-11,
+        "c_dynamic_required_with_processed_kernel_ppm": -6.780266165937789,
+        "c_total_required_with_homogeneous_kernel_ppm": 85.56941703996723,
+        "meaning": "The first inferred correction combines the independent-kernel gap with the missing ToS correction. The second uses the authors' processed kernel and reproduces the already known unowned dynamic bracket. Both are post-comparison identities, not inputs.",
+        "primary_anchor_minus_authors_relative_ppm": -85.56207244147343,
+        "processed_kernel_kg_m-3": 25002.95,
+        "processed_minus_nominal_kernel_kg_m-3": -2.30902954411,
+        "processed_minus_nominal_relative_ppm": -92.3417566433463
+      },
+      "primary_affine_family": {
+        "c_f_definition": "c_f=-Delta_K/(I*Delta_omega2)",
+        "equation": "G(c_f)=Delta_omega2/K_hom*(1+delta_m+c_f), at r_norm=0",
+        "intercept_SI": 6.673533949744507e-11,
+        "public_identified_interval": null,
+        "reason": "The public fields pinned by the forward lane do not supply the signed row-level Delta_K correction or a deterministic compact bound for this independently reconstructed family.",
+        "slope_dG_dc_f_SI": 6.673532147890826e-11
+      },
+      "primary_magnetic_only_G_anchor_SI": 6.673533949744507e-11,
+      "r_norm_premise": "The real apparatus normalized near-minus-far stiffness kernel equals the homogeneous coefficient; this is conditional.",
+      "response_Delta_omega2_s-2": 1.6687339999999999e-06,
+      "response_class": "Published mean stiffness response. It is a processed response summary, and the Supplement states that the source-gravity nonlinearity was corrected synchronously in Delta_omega2. It is therefore not a source-model-free raw numerator."
+    }
+  ],
+  "TOS_figure_level_released_response_diagnostic": {
+    "A_B_A_magnetic_only_G_anchor_SI": 6.673623904485339e-11,
+    "ceiling": "The A-B-A value is extracted from overlapping figure-level three-day period summaries and has no independent coverage assignment. The quadratic value is a drift diagnostic. Both retain c_f and r_norm unknown and are not extra G measurements.",
+    "quadratic_drift_diagnostic_G_anchor_SI": 6.673641568497424e-11,
+    "row_binding": "TOS-I-F1-repeat",
+    "table_response_magnetic_only_G_anchor_SI": 6.673641921634293e-11
+  },
+  "claim_ceiling": "These are conditional model quotients and affine anchors, not a new measurement or an independently identified deterministic compact interval for G from this family, not GC16, and not RGRL or Gravity Formation Theory confirmation. The authors' processed-model G summaries remain post-calculation comparators.",
+  "model": {
+    "AAF": "alpha_t=G*(K_hom+r_norm)/f_m",
+    "TOS": "Delta_omega2=G*(K_hom+r_norm)/(1+delta_m+c_f)",
+    "full_apparatus_identifiability": "r_norm is not numerically identified from unprocessed public mass fields; c_f is additionally unavailable for ToS."
+  },
+  "numerator_custody": {
+    "campaign_response_ceiling": "Table alpha_t and Delta_omega2 are corrected response summaries, not raw observations. In particular Delta_omega2 includes a source-gravity nonlinearity correction. The quotients are therefore conditional cross-checks, not fully independent measurements.",
+    "released_file_level_noncircularity": "The local replay never uses accepted G or a processed source coefficient to extract the figure-level response harmonics/contrasts. This is computational nonuse, not statistical or model independence."
+  },
+  "primary_calculation_order": [
+    "validate upstream hashes",
+    "extract only nominal kernels, public-input sensitivities, response summaries, and displayed mechanical factors",
+    "compute AAF r_norm=0 conditional quotients",
+    "compute ToS r_norm=0,c_f=0 anchors and affine c_f families",
+    "compute mixed-normalization diagnostics",
+    "only then open processed coefficient and derived-G comparators"
+  ],
+  "schema": "WAC_HUST_CONDITIONAL_HOMOGENEOUS_G_CROSSCHECK_V001",
+  "status": "AAF_RNORM0_CONDITIONAL_QUOTIENTS_COMPUTED__TOS_RNORM0_CF0_ANCHORS_AND_AFFINE_CF_FAMILIES_COMPUTED__NO_PUBLIC_INDEPENDENT_DETERMINISTIC_G_INTERVAL__MATCHED_FULL_NUMERATOR_AND_TOS_DELTAK_REMAIN_MISSING__NO_NEW_G"
+}

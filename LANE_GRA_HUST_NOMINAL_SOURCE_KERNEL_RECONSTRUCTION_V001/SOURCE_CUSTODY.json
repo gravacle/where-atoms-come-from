@@ -1,0 +1,72 @@
+{
+  "schema": "WAC_HUST_NOMINAL_KERNEL_SOURCE_CUSTODY_V001",
+  "article": {
+    "title": "Measurements of the gravitational constant using two independent methods",
+    "authors_short": "Li et al.",
+    "journal": "Nature 560, 582-588 (2018)",
+    "doi": "10.1038/s41586-018-0431-5",
+    "article_url": "https://www.nature.com/articles/s41586-018-0431-5",
+    "retrieved_utc_date": "2026-08-27"
+  },
+  "official_primary_sources": [
+    {
+      "id": "supplement",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_MOESM1_ESM.pdf",
+      "lane_path": "SOURCE/41586_2018_431_MOESM1_ESM.pdf",
+      "sha256": "5b61d5c831be98c46e47fcc32f1ade0a680b4af6354d2bc34859d94b22279ffb",
+      "role": "method equations, alignment domain, mechanical inertia, processed coefficient comparators"
+    },
+    {
+      "id": "extended_data_table_1",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_Tab1_ESM.jpg",
+      "lane_path": "SOURCE/41586_2018_431_Tab1_ESM.jpg",
+      "sha256": "c84bc71bcd0115ccbbbdddd70dd1d755ffdabd37c91772f30cb51a264a200195",
+      "role": "pendulum dimensions and masses"
+    },
+    {
+      "id": "extended_data_table_2",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_Tab2_ESM.jpg",
+      "lane_path": "SOURCE/41586_2018_431_Tab2_ESM.jpg",
+      "sha256": "96c40827af03f4de0715ea77bc69c0612d3ef94dc15eff035213e8a4dc0649c1",
+      "role": "source sphere diameters, masses, and nonsphericity"
+    },
+    {
+      "id": "extended_data_table_4",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_Tab4_ESM.jpg",
+      "lane_path": "SOURCE/41586_2018_431_Tab4_ESM.jpg",
+      "sha256": "567e5c8b953cba86e642bfd01b3880b262873606e2c69af44fa13a9ff4f629ce",
+      "role": "sphere-centre coordinate separations and temperatures"
+    },
+    {
+      "id": "extended_data_figure_3",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_Fig6_ESM.jpg",
+      "lane_path": "SOURCE/41586_2018_431_Fig6_ESM.jpg",
+      "sha256": "f29cdc1909149fc3a03264299889ef7f8346eb0fae6d7415cebbcf3d14163312",
+      "role": "nominal source layout and sphere labels"
+    },
+    {
+      "id": "main_table_1",
+      "url": "https://www.nature.com/articles/s41586-018-0431-5/tables/1",
+      "lane_path": "SOURCE/nature_main_table1_error_budget.html",
+      "sha256": "23436d4be7600a7a9dffa02cc4167a20b6eea032a181e77899bb57bb90aa02e9",
+      "role": "official geometry and calibration sensitivity classes"
+    }
+  ],
+  "official_live_caption_source": {
+    "id": "extended_data_table_4_caption",
+    "url": "https://www.nature.com/articles/s41586-018-0431-5/tables/5",
+    "verified_utc_date": "2026-08-27",
+    "role": "official temperature-transport statement: TOS coefficient below 0.11 micrometre/C; AAF upper horizontal coefficient -1.9(1) micrometre/C; lower horizontal and vertical distances constant within 2 micrometres over 4 C",
+    "custody_ceiling": "The official caption was independently checked live during hostile audit but is not a separately pinned raw publisher object in this lane; the numerical transcription is therefore source-located but not hash-pinned."
+  },
+  "transcriptions": {
+    "SOURCE_FIELDS.json": "unprocessed public geometry and independent mechanical fields only",
+    "PUBLISHED_COMPARATORS.json": "processed Supplementary Tables 2/3 coefficients, quarantined for post-calculation comparison"
+  },
+  "inherited_gc16_dependencies": {
+    "theorem_sha256": "cbf0733633ba93756b08dded7486a9be76beb572807693455c761bd36a8f0f5b",
+    "protocol_sha256": "6ec7d8f0ce9a184d25612107dbfc294dd22d124ebe859831401e9cc0c8e8b819",
+    "executable_sha256": "6c17498d2d65f6420498ac559a97a2c3bbf49e110dd971da34b4c9c9bea2e4e4"
+  },
+  "custody_ceiling": "The official release supplies scalar dimensions, masses, pair separations, uncertainties, and processed coefficients; it does not publicly supply the full finite-element mass maps, individual 3D CMM coordinates, the two AAF shear coordinates left free by pair-distance data plus overall centring, or the row-level transfer/covariance packet needed for a full GC16 evaluation."
+}

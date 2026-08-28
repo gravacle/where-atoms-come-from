@@ -1,0 +1,62 @@
+{
+  "schema": "WAC_HUST_TOS_ROUNDTRIP_SOURCE_CUSTODY_V001",
+  "article": {
+    "title": "Measurements of the gravitational constant using two independent methods",
+    "authors_short": "Li et al.",
+    "journal": "Nature 560, 582-588 (2018)",
+    "doi": "10.1038/s41586-018-0431-5",
+    "article_url": "https://www.nature.com/articles/s41586-018-0431-5"
+  },
+  "source": {
+    "classification": "OFFICIAL_FIGURE_LEVEL_THREE_DAY_PERIOD_SUMMARIES__RAW_LIKE_INTERMEDIATE__NOT_EVENT_LEVEL",
+    "official_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_MOESM3_ESM.xlsx",
+    "reused_parent_path": "../LANE_GRA_HUST_2018_DUAL_METHOD_G_FORWARD_V001/SOURCE/41586_2018_431_MOESM3_ESM.xlsx",
+    "bytes": 4169004,
+    "sha256": "331ea6ee8a6a2558d4f6a8ffa4cd52e4c5d52d47f2e2a697889d0d3c8a3ad27a",
+    "copied_into_this_lane": false
+  },
+  "scored_ranges": [
+    {
+      "sheet": "a",
+      "range": "B3:D22",
+      "role": "source-masses-present near/far period summaries",
+      "rows": 20,
+      "near_values": 10,
+      "far_values": 10
+    },
+    {
+      "sheet": "b",
+      "range": "B3:D22",
+      "role": "source-masses-absent background near/far period summaries",
+      "rows": 20,
+      "near_values": 10,
+      "far_values": 10
+    }
+  ],
+  "read_only_spreadsheet_inspection": {
+    "library": "bundled @oai/artifact-tool from the configured workspace runtime",
+    "operations": [
+      "imported the pinned workbook without saving or editing it",
+      "inspected the six-sheet inventory",
+      "inspected values and formulas in a!B2:D22 and b!B2:D22",
+      "rendered both scored ranges for visual verification"
+    ],
+    "observed_headers": [
+      "Time (day)",
+      "Period at near position (s)",
+      "Period at far position (s)"
+    ],
+    "workbook_modified": false
+  },
+  "panel_semantics": {
+    "present_absent_source": "inherited from the pinned article-level custody and audited parent theorem",
+    "worksheet_headers_alone": "encode time, near position, and far position; they do not encode a matched cross-panel trial",
+    "cross_panel_index": "sequence ordinal only; not simultaneous, randomized, or authenticated matching"
+  },
+  "parent_custody": {
+    "path": "../LANE_GRA_HUST_2018_DUAL_METHOD_G_FORWARD_V001/SOURCE_CUSTODY.json",
+    "sha256": "76040b79f3ead7970298df5b784e3cab0ea637351b6dc881be1afe6796a6e474",
+    "official_release_files_inventoried": 7
+  },
+  "custody_ceiling": "The source owns figure-level three-day summaries only. It does not own event-level angle streams, row covariance, complete mechanical state, lineage factors, a matched present/absent trial, or a matched history intervention."
+}

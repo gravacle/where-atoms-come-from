@@ -1,0 +1,79 @@
+{
+  "schema": "WAC_CLOCK_K5_SOURCE_CUSTODY_V001",
+  "reacquired_local_date": "2026-08-27",
+  "reacquired_utc_date": "2026-08-28",
+  "repository": {
+    "title": "NatComm_Redshift_ProcessData",
+    "doi": "10.5281/zenodo.8184043",
+    "record_url": "https://zenodo.org/records/8184043",
+    "api_url": "https://zenodo.org/api/records/8184043",
+    "license_in_api_metadata": "cc-by-4.0",
+    "creators": [
+      "Xin Zheng",
+      "Jonathan Dolde",
+      "Matthew C Cambria",
+      "Hong Ming Lim",
+      "Shimon Kolkowitz"
+    ]
+  },
+  "official_article": {
+    "title": "A lab-based test of the gravitational redshift with a miniature clock network",
+    "doi": "10.1038/s41467-023-40629-8",
+    "url": "https://www.nature.com/articles/s41467-023-40629-8",
+    "method_semantics": [
+      "Five clock ensembles produce ten simultaneous pairwise comparisons.",
+      "For the second analysis, each pair was re-analyzed individually over the same 14-run raw data with pair-specific corrections and a weighted mean.",
+      "Figure 4 maps each measured pairwise gravitational redshift to an inferred height difference using Delta h=(delta f/f)c^2/g while explicitly assuming general relativity and one independently measured local g.",
+      "Pairs share clocks and measurement runs; the paper accounts for shared-clock covariance in the per-run gradient error estimation, but the deposited process data contain no ten-edge pair covariance matrix for this new closure diagnostic."
+    ]
+  },
+  "files": [
+    {
+      "name": "Fig1.csv",
+      "official_url": "https://zenodo.org/api/records/8184043/files/Fig1.csv/content",
+      "bytes": 25550,
+      "published_md5": "a829e2044f0ef2dd450435d7b790e8c7",
+      "sha256": "5ff66b2229f9c3b57d0fd2fa27e38aa773e9bfb597441c22393f9a65a36fed61",
+      "shape": "721 x 5"
+    },
+    {
+      "name": "Fig2.csv",
+      "official_url": "https://zenodo.org/api/records/8184043/files/Fig2.csv/content",
+      "bytes": 2876,
+      "published_md5": "8edb5d957e81a07b07e9d350afe43e3a",
+      "sha256": "2df463bc8840f1b366d6acd9e361bf58322b844b72f6309641fc66e60735bc30",
+      "shape": "12 x 17"
+    },
+    {
+      "name": "Fig3.csv",
+      "official_url": "https://zenodo.org/api/records/8184043/files/Fig3.csv/content",
+      "bytes": 958,
+      "published_md5": "257eab6f29cf3480c536cac73ed3998a",
+      "sha256": "a4384040d5678893b4df15ea0be2980661023305f5009de876179fab1dea632f",
+      "shape": "16 x 6"
+    },
+    {
+      "name": "Fig4.csv",
+      "official_url": "https://zenodo.org/api/records/8184043/files/Fig4.csv/content",
+      "bytes": 369,
+      "published_md5": "53987b91b94d75d844f865ac0a778e75",
+      "sha256": "3c14df355b5cf1e6dcf138cf3b3de750f59ad270091e7874c70ad05204fa988d",
+      "shape": "3 x 20",
+      "scored": true,
+      "content": "ten pairwise inferred height differences and ten marginal 1-sigma uncertainties in cm"
+    }
+  ],
+  "spreadsheet_inspection": {
+    "library": "bundled @oai/artifact-tool from the configured workspace runtime",
+    "mode": "read-only CSV import, inspect, render, and visual verification",
+    "all_four_csvs_inspected_and_rendered": true,
+    "source_bytes_modified": false
+  },
+  "parent_frozen_custody": {
+    "search_custody_path": "../LANE_GRA_SPAG_PUBLIC_DATA_SECOND_PASS_V001/SEARCH_CUSTODY.json",
+    "search_custody_sha256": "a9924636c082fa3177aed69e6e332c0e2b0b26464335bc4b49cc14318c205b37",
+    "independent_hostile_audit_path": "../LANE_GRA_SPAG_PUBLIC_DATA_SECOND_PASS_V001/INDEPENDENT_HOSTILE_AUDIT.md",
+    "independent_hostile_audit_sha256": "668abf36aea57e3465562465a6b77dff1ce65f0a4a41ae548fbea2f20a90c5e5"
+  },
+  "custody_ceiling": "The deposit owns processed pairwise outputs, not the run-wise ten-edge vectors, shared covariance matrices, ellipse fits, or raw analysis code."
+}

@@ -1,0 +1,277 @@
+{
+  "schema": "WAC_HUST_2018_PUBLIC_GEOMETRY_FIELDS_V001",
+  "units": "SI unless a key says otherwise",
+  "field_rule": "Values are manual transcriptions of the pinned official Nature Extended Data Tables 1, 2 and 4, Supplementary Table 1, Supplementary Table 3 campaign temperatures, and the official Nature Extended Data Table 4 caption. Parenthetical uncertainties are one standard deviation. No processed gravity coefficient is present in this file.",
+  "conditional_layout_premise": {
+    "TOS": "The two sphere centres are placed at plus/minus half the reported separation on a line through the nominal rotation axis, consistent with the published symmetric nominal layout and the reported alignment of the source-set centre. This omits measured residual CMM offsets.",
+    "AAF": "Each reported horizontal pair is centred separately on the nominal rotation axis and each reported vertical column is centred separately about the pendulum mid-plane. The four public pair separations and a zero overall centroid alone leave two shear degrees of freedom; the pairwise-centred realization is therefore an explicit conditional premise, not a uniquely published set of individual 3D CMM coordinates."
+  },
+  "geometry_reference_temperatures_C": {
+    "TOS-I_pendulum_and_source_dimensions": 20.2,
+    "TOS-II_pendulum_and_source_dimensions": 21.5,
+    "AAF_pendulum_source_dimensions_and_four_distances": 23.7
+  },
+  "pendulums": {
+    "TOS-I": {
+      "id": "Pendulum 1",
+      "length_m": 0.09100575,
+      "u_length_m": 1.1e-7,
+      "width_m": 0.01108688,
+      "u_width_m": 9e-8,
+      "height_m": 0.03066846,
+      "u_height_m": 1.2e-7,
+      "mass_kg": 0.06809937,
+      "u_mass_kg": 2.2e-7,
+      "supplement_full_apparatus_I_kg_m2": 4.7705e-5,
+      "u_supplement_full_apparatus_I_kg_m2": 1e-9
+    },
+    "TOS-II": {
+      "id": "Pendulum 2",
+      "length_m": 0.09100336,
+      "u_length_m": 1.7e-7,
+      "width_m": 0.01104448,
+      "u_width_m": 1.3e-7,
+      "height_m": 0.03000446,
+      "u_height_m": 1.3e-7,
+      "mass_kg": 0.06635715,
+      "u_mass_kg": 2.2e-7,
+      "supplement_full_apparatus_I_kg_m2": 4.6477e-5,
+      "u_supplement_full_apparatus_I_kg_m2": 1e-9
+    },
+    "AAF": {
+      "id": "Pendulum 3",
+      "length_m": 0.09105243,
+      "u_length_m": 2.9e-7,
+      "width_m": 0.0040024,
+      "u_width_m": 8e-8,
+      "height_m": 0.04992441,
+      "u_height_m": 2.4e-7,
+      "mass_kg": 0.0400379,
+      "u_mass_kg": 3e-7,
+      "supplement_full_apparatus_I_kg_m2": 2.776e-5,
+      "u_supplement_full_apparatus_I_kg_m2": 1e-8
+    }
+  },
+  "source_spheres": {
+    "TOS-I": [
+      {
+        "id": "1",
+        "diameter_m": 0.05715072,
+        "u_diameter_m": 2.5e-7,
+        "mass_kg": 0.778163,
+        "u_mass_kg": 8e-7,
+        "nonsphericity_m": 2.2e-7,
+        "u_nonsphericity_m": 3e-8
+      },
+      {
+        "id": "3",
+        "diameter_m": 0.05714577,
+        "u_diameter_m": 2.5e-7,
+        "mass_kg": 0.7779649,
+        "u_mass_kg": 8e-7,
+        "nonsphericity_m": 2.3e-7,
+        "u_nonsphericity_m": 3e-8
+      }
+    ],
+    "TOS-II": [
+      {
+        "id": "2",
+        "diameter_m": 0.05715236,
+        "u_diameter_m": 3e-7,
+        "mass_kg": 0.7781789,
+        "u_mass_kg": 6e-7,
+        "nonsphericity_m": 2.3e-7,
+        "u_nonsphericity_m": 3e-8
+      },
+      {
+        "id": "4",
+        "diameter_m": 0.05715187,
+        "u_diameter_m": 3.1e-7,
+        "mass_kg": 0.7781754,
+        "u_mass_kg": 6e-7,
+        "nonsphericity_m": 2.7e-7,
+        "u_nonsphericity_m": 9e-8
+      }
+    ],
+    "AAF": [
+      {
+        "id": "7",
+        "diameter_m": 0.1270003,
+        "u_diameter_m": 8e-7,
+        "mass_kg": 8.5435826,
+        "u_mass_kg": 5.3e-6,
+        "nonsphericity_m": 7.5e-7,
+        "u_nonsphericity_m": 6e-8
+      },
+      {
+        "id": "9",
+        "diameter_m": 0.1269957,
+        "u_diameter_m": 9e-7,
+        "mass_kg": 8.5414167,
+        "u_mass_kg": 5.3e-6,
+        "nonsphericity_m": 7.5e-7,
+        "u_nonsphericity_m": 6e-8
+      },
+      {
+        "id": "10",
+        "diameter_m": 0.1269934,
+        "u_diameter_m": 8e-7,
+        "mass_kg": 8.5405282,
+        "u_mass_kg": 5.2e-6,
+        "nonsphericity_m": 7.2e-7,
+        "u_nonsphericity_m": 6e-8
+      },
+      {
+        "id": "12",
+        "diameter_m": 0.1269887,
+        "u_diameter_m": 1e-6,
+        "mass_kg": 8.5415575,
+        "u_mass_kg": 5.3e-6,
+        "nonsphericity_m": 8.9e-7,
+        "u_nonsphericity_m": 1.1e-7
+      }
+    ]
+  },
+  "aaf_distances_23p7C": {
+    "S7_9_m": 0.3422874,
+    "u_S7_9_m": 1.9e-6,
+    "S10_12_m": 0.3423074,
+    "u_S10_12_m": 1.9e-6,
+    "S7_10_m": 0.1397997,
+    "u_S7_10_m": 1.5e-6,
+    "S9_12_m": 0.1397822,
+    "u_S9_12_m": 1.7e-6,
+    "upper_horizontal_temperature_coefficient_m_per_C": -1.9e-6,
+    "u_upper_horizontal_temperature_coefficient_m_per_C": 1e-7
+  },
+  "aaf_campaigns": [
+    {
+      "id": "AAF-I",
+      "average_temperature_C": 22.8
+    },
+    {
+      "id": "AAF-II",
+      "average_temperature_C": 23.7
+    },
+    {
+      "id": "AAF-III",
+      "average_temperature_C": 23.7
+    }
+  ],
+  "tos_runs": [
+    {
+      "id": "TOS-I-F1-first",
+      "apparatus": "TOS-I",
+      "temperature_C": 20.3,
+      "sphere_center_distance_m": 0.15719245,
+      "u_sphere_center_distance_m": 3.4e-7
+    },
+    {
+      "id": "TOS-I-F1-repeat",
+      "apparatus": "TOS-I",
+      "temperature_C": 20.3,
+      "sphere_center_distance_m": 0.15719363,
+      "u_sphere_center_distance_m": 3.4e-7
+    },
+    {
+      "id": "TOS-I-F2",
+      "apparatus": "TOS-I",
+      "temperature_C": 20.3,
+      "sphere_center_distance_m": 0.15719363,
+      "u_sphere_center_distance_m": 3.4e-7
+    },
+    {
+      "id": "TOS-I-F3-first",
+      "apparatus": "TOS-I",
+      "temperature_C": 20.1,
+      "sphere_center_distance_m": 0.15719392,
+      "u_sphere_center_distance_m": 3.3e-7
+    },
+    {
+      "id": "TOS-I-F3-repeat",
+      "apparatus": "TOS-I",
+      "temperature_C": 20.1,
+      "sphere_center_distance_m": 0.15719384,
+      "u_sphere_center_distance_m": 3.3e-7
+    },
+    {
+      "id": "TOS-II-F4-first",
+      "apparatus": "TOS-II",
+      "temperature_C": 21.5,
+      "sphere_center_distance_m": 0.15716476,
+      "u_sphere_center_distance_m": 3.7e-7
+    },
+    {
+      "id": "TOS-II-F4-repeat",
+      "apparatus": "TOS-II",
+      "temperature_C": 21.5,
+      "sphere_center_distance_m": 0.15716489,
+      "u_sphere_center_distance_m": 3.6e-7
+    }
+  ],
+  "main_table1_geometry_sensitivity_ppm": {
+    "AAF-I": {
+      "pendulum_dimensions": 0.16,
+      "source_masses": 0.32,
+      "horizontal_distance": 8.98,
+      "vertical_distance": 5.79
+    },
+    "AAF-II": {
+      "pendulum_dimensions": 0.16,
+      "source_masses": 0.31,
+      "horizontal_distance": 8.98,
+      "vertical_distance": 5.79
+    },
+    "AAF-III": {
+      "pendulum_dimensions": 0.16,
+      "source_masses": 0.31,
+      "horizontal_distance": 8.98,
+      "vertical_distance": 5.79
+    },
+    "TOS-I-F1-first": {
+      "pendulum_dimensions": 1.82,
+      "source_masses": 0.73,
+      "horizontal_distance": 8.73
+    },
+    "TOS-I-F1-repeat": {
+      "pendulum_dimensions": 1.82,
+      "source_masses": 0.73,
+      "horizontal_distance": 8.73
+    },
+    "TOS-I-F2": {
+      "pendulum_dimensions": 1.82,
+      "source_masses": 0.73,
+      "horizontal_distance": 8.73
+    },
+    "TOS-I-F3-first": {
+      "pendulum_dimensions": 1.82,
+      "source_masses": 0.55,
+      "horizontal_distance": 8.47
+    },
+    "TOS-I-F3-repeat": {
+      "pendulum_dimensions": 1.82,
+      "source_masses": 0.55,
+      "horizontal_distance": 8.47
+    },
+    "TOS-II-F4-first": {
+      "pendulum_dimensions": 2.73,
+      "source_masses": 0.55,
+      "horizontal_distance": 9.53
+    },
+    "TOS-II-F4-repeat": {
+      "pendulum_dimensions": 2.73,
+      "source_masses": 0.55,
+      "horizontal_distance": 9.27
+    }
+  },
+  "source_locations": {
+    "pendulum_dimensions": "SOURCE/41586_2018_431_Tab1_ESM.jpg; Extended Data Table 1",
+    "sphere_parameters": "SOURCE/41586_2018_431_Tab2_ESM.jpg; Extended Data Table 2",
+    "distances": "SOURCE/41586_2018_431_Tab4_ESM.jpg; Extended Data Table 4",
+    "distance_temperature_caption": "https://www.nature.com/articles/s41586-018-0431-5/tables/5; official Extended Data Table 4 caption (upper AAF horizontal coefficient -1.9(1) micrometre/C; lower horizontal and vertical distances constant within 2 micrometres over 4 C)",
+    "nominal_layout": "SOURCE/41586_2018_431_Fig6_ESM.jpg; Extended Data Figure 3",
+    "campaign_temperatures": "SOURCE/41586_2018_431_MOESM1_ESM.pdf; PDF page 21, printed Supplement page 20, Supplementary Table 3",
+    "mechanical_inertias": "SOURCE/41586_2018_431_MOESM1_ESM.pdf; PDF page 19, printed Supplement page 18, Supplementary Table 1",
+    "error_budget": "SOURCE/nature_main_table1_error_budget.html; official Nature main Table 1"
+  }
+}

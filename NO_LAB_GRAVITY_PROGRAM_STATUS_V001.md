@@ -11,15 +11,19 @@ source.
 The no-laboratory program has materially advanced all three requested tracks.
 The q4 construction now supplies exact bulk/refinement geometry, finite
 programmed realization, conditional rank-six link-pair response, a finite
-composite-cumulant precursor, and an exact current-parent constraint and
-collective-metric census. That census finds one scalar compact-\(U(1)\)
-constraint species and distinguishes a six-dimensional static co-metric
-tangent from zero retarded dynamical rank in the favorable FI bulk screen,
-without erasing FJ's separate conditional rank-six response. The official
-HUST-2018 release also executes a real processed dual-method ordinary-gravity
-forward, but neither it nor the other public packets contains the complete
-fields needed for the lineage intervention or a full independent \(G\)
-cross-check.
+composite-cumulant precursor, and exact current-parent constraint, metric, and
+source-rank censuses. The source audit has now executed the frozen
+`Q4-BLOCK-STRAIN-CTP` prerequisite rather than merely naming it: four
+tetrahedral edge dyads span `A1+T2` with an exact two-dimensional `E` null. On
+one covering-matched reduced CW/FM pure-ice family, the complete prospectively
+frozen linear source and all through-order-eight projected words retain that
+null. The result is exact for that reduced branch; the complete unreduced BS
+physical source remains underdetermined. The official HUST-2018 release also
+supports a real processed dual-method ordinary-gravity forward, a conditional
+homogeneous finite-source reconstruction, and a descriptive history diagnostic.
+The clock-network release supplies a covariance-honest common-node-potential
+compatibility check. None of these public packets contains the complete fields
+needed for the lineage intervention or a full independent \(G\) cross-check.
 
 ## 1. F3 front dynamics, gluing, volume, and microscopic RGRL route
 
@@ -124,13 +128,58 @@ FJ remains a separate positive result: its unprojected active pair operators
 have exact conditional finite rank-six response under programmed `H_resp`.
 They lack a continuum tensor solder and the vector-plus-scalar null packet.
 
-The single next theoretical calculation is `Q4-BLOCK-STRAIN-CTP`. It must
-source every microscopic term before the fixed Feshbach reduction, retain all
-contacts, return exactly the frozen H6+H8 parent at zero source, and extract the
-pole/residue, first nonzero commutator moment, and ungauge-fixed
-Ward/constraint closure together. No rescue interaction or post-result source
-weighting is allowed. This is a current-construction test, not a thermodynamic
-no-go.
+The source-before-Feshbach calculation has now reached its first decisive
+boundary. For the FQ17a additive edge rule, the four tetrahedral dyads have
+
+\[
+\operatorname{span}\{n_an_a^{\mathsf T}\}_{a=1}^4=A_1\oplus T_2,
+\qquad \ker \mathcal Q=E,
+\qquad \dim E=2.
+\]
+
+Additive multi-edge weights, fixed Feshbach reduction, H6/H8 histories,
+resolvents, folds, and scalar identities cannot manufacture the missing linear
+`E` conjugate. General `O(j^2)` contacts may contain `E` Hessians, but they have
+zero linear `Q_E` at source off. The complete reduced CW/FM inventory makes the
+result branch-relative and exact: carrier, storage, formation, feedback,
+boundary, controller, and port terms are excluded by the selected reduced
+Hamiltonian rather than silently assigned zero. The broader BS parent still
+requires those physical weights to be frozen before its complete rank can be
+claimed.
+
+This is progress, not a no-go for tensor emergence. It identifies the next
+physics question narrowly: whether an already inherited angular, pair, root,
+or nonlocal field-strength observable lawfully supplies the missing `E`
+directions while leaving the source-off parent unchanged. An arbitrary
+cross-dyad weight would be a new source postulate, not a derivation. Only after
+that source has full off-shell rank is it meaningful to demand the complete
+pole/residue, commutator-moment, and ungauge-fixed Ward/constraint packet from
+one CTP calculation.
+
+That question has now been reduced to one constitutive boundary. The existing
+degree interaction contains the physical pair operators whose ice-restricted
+nonconstant span is exactly `E`, and inherited H6 dynamics gives them nonzero
+block-local matrix elements. But the source-free Hamiltonian does not determine
+which geometric source derivative acts on those operators. Two prospective
+families have identical `H[0]`: the frozen additive family has microscopic rank
+four, while a sibling-root pair family has rank six. Thus operator availability
+and dynamical response do not by themselves derive physical strain.
+
+One compact sufficient premise is the degree-pair affine-response law `DPAR`:
+
+\[
+{U_d\over2}P_{ab}\longmapsto {U_d\over2}
+g\!\left({|F(n_b-n_a)|^2\over|n_b-n_a|^2}\right)P_{ab},
+\qquad g(1)=1,quad g'(1)\ne0.
+\]
+
+Differentiation then yields the six root dyads, preserves the one-edge
+`A1+T2` source, source-before-Feshbach ordering, and the exact source-off
+Hamiltonian, and conditionally gives microscopic rank six plus nonzero local
+H6 `E` response. `DPAR` is one sufficient law, not proved unique, inherited,
+or adopted. Its direct ice-projected root-pair image is only `A1+E` rank three;
+full state-dependent CTP rank, uniform response, Ward structure, and a tensor
+pole remain separate calculations.
 
 ## 2. Experimental lanes without a laboratory
 
@@ -149,6 +198,26 @@ work can be completed and rerun against future releases. The KEEP/BREAK lineage
 effect itself cannot be measured without a qualifying existing dataset or a new
 acquisition. The present result is an exact data-design ceiling, not a physical
 null.
+
+Two released-data calculations sharpen that boundary without pretending to be
+the missing intervention. First, equal-configuration HUST ToS endpoint returns
+give an exact reused-endpoint weight/rank ledger and a reproducible
+source-present-minus-background history residual. The panels are separate,
+same-ordinal acquisitions and no matched no-excursion arm exists, so the result
+is a history-confound diagnostic—not causal memory, lineage, `beta_TM`, or
+gravity emergence. Second, the ten processed pairwise clock-height differences
+on the complete five-clock graph have exact cut rank four and cycle dimension
+six. They are not algebraically forced to close, yet one five-node scalar lies
+inside all ten reported marginal `1 sigma` intervals, with
+
+\[
+\rho_*={27\over82}<1.
+\]
+
+The pairs share clocks and runs and the release has no joint covariance. This
+is therefore deterministic marginal-box compatibility with a common node
+scalar, not a chi-square, joint coverage statement, independent test of GR, or
+evidence for a common gravitational metric.
 
 ## 3. Calibrated physical source model and `G` cross-check
 
@@ -186,6 +255,56 @@ source and laboratory-background harmonics. These checks validate the separate
 operator/stiffness and source/forcing ownership positions of the finite-
 apparatus model.
 
+The unprocessed public mass and dimension fields now support a stronger but
+still conditional source calculation. For a declared homogeneous centred
+cuboid and homogeneous source spheres at an explicit nominal placement, the
+Newtonian AAF forcing and ToS stiffness functionals are exact, and the published
+geometry-sensitivity classes are independently recovered. Their displayed
+coefficients are highly converged numerical quadratures, not certified exact
+numbers. The nominal calculations differ from the authors' processed source
+coefficients by roughly `41--53 ppm` in AAF and `91--103 ppm` in ToS. Those
+differences locate the net omitted apparatus model; they do not identify a
+unique clamp, coating, density, CMM, or shape remainder.
+
+The hostile reconstruction proves why the remaining source ceiling is
+structural. Four public AAF pair distances plus a centroid leave two shear
+degrees of freedom: a second sphere layout can preserve every published
+distance while changing the source coefficient. Pairwise-centred placement is
+therefore an explicit conditional premise, and only partial public temperature
+transport is possible. This substantially advances the source kernel needed by
+`GC16`, while showing exactly which coordinate, transfer, covariance, and
+complete-stress fields a real \(G\) cross-check still needs.
+
+The response and kernel lanes can now be composed without importing an
+accepted value of \(G\). Writing the full normalized source coefficient as
+\(K_{\rm full}=K_{\rm hom}+r_{\rm norm}\), the three AAF campaigns give
+
+\[
+G(r_{\rm norm})={\alpha_t f_m\over K_{\rm hom}+r_{\rm norm}},
+\]
+
+and evaluate at the explicit homogeneous anchor `r_norm=0` to
+`6.6740227--6.6742605e-11` SI. The seven ToS rows analogously give
+`6.6734516--6.6736824e-11` SI at the additional zero signed-fibre-correction
+anchor, together with exact affine correction families. These are real
+conditional quotients, not estimates of the full apparatus coupling. A second
+equally public normalization that assigns the unreported mass its measured
+inertia but zero relevant torque shifts the AAF quotient by about
+`1631.54 ppm` and the ToS anchors by `152--153 ppm`. That constructive collision proves
+that total inertia does not identify the missing source multipole.
+
+The conditional quotient lane also closes several tempting shortcuts. The AAF
+campaign responses were corrected for air density and are not raw encoder
+data; the ToS responses were synchronously corrected for source-mass
+gravitational nonlinearity. Processed source coefficients and the authors'
+derived rows enter only after the primary calculation. Because the public
+packet supplies neither a bounded admissible full mass-map domain and
+covariance nor the signed ToS correction ledger, it owns no identified
+physical \(G\) point or compact interval. The minimal completion is the matched
+full mass-multipole/CMM numerator divided by the same full inertia, with
+covariance; ToS additionally needs the signed row-level fibre correction and,
+for a fully independent numerator, the uncorrected event/correction ledger.
+
 The ceiling remains exact. The released \(\Delta C_g/I\) and
 \(\sum P_{g,l,2}\) are processed source coefficients, not public finite
 mass-coordinate calculations. Event-level observations, complete transfer,
@@ -207,7 +326,11 @@ misreported as a new measurement of its numerical coupling.
 Without a laboratory, the program can continue exact microscopic algebra,
 finite and thermodynamic response calculations, protocol design, public-data
 searches, and processed real-apparatus forwards. The immediate theory target is
-the single preregistered `Q4-BLOCK-STRAIN-CTP` calculation. Public data have
-already executed part of the ordinary-source forward architecture, but cannot
-supply the missing matched lineage intervention or complete independently
-calibrated `GC16` packet. Those are empirical ceilings, not physical nulls.
+no longer a generic block-strain calculation: it is to derive `DPAR` from a
+physical realization of the existing degree-pair energy, or else keep it as an
+explicit unadopted conditional premise while testing its full CTP and
+Ward/constraint consequences. Public data have
+already executed part of the ordinary-source forward architecture and two
+useful necessary-condition diagnostics, but cannot supply the missing matched
+lineage intervention or complete independently calibrated `GC16` packet. Those
+are empirical ceilings, not physical nulls.

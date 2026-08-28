@@ -1,0 +1,1097 @@
+{
+  "AAF": [
+    {
+      "core_torque_divided_by_full_I_forbidden_mix_kg_m-3": 6915.377737623663,
+      "definition": "2*abs(mean_phi[(torque/(G*I0))*exp(-2i*phi)])",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.06987204898693028,
+      "id": "AAF-I",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_AAF(X | P_pairwise-centred), where X is a chosen input domain and P_pairwise-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_AAF(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 8.98,
+        "pendulum_dimensions": 0.16,
+        "source_masses": 0.32,
+        "vertical_distance": 5.79
+      },
+      "nominal_homogeneous_coefficient_kg_m-3": 6926.660438859097,
+      "normalization_rule": "The numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "AAF-I",
+        "processed_coefficient_kg_m-3": 6926.352,
+        "processed_minus_nominal_relative_ppm": -44.53121341463668,
+        "processed_minus_nominal_remainder_kg_m-3": -0.3084388590968956,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -0.45649658381140606,
+          -0.16038113438238516
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.074,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.14805772471451045
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 2.3456834242097102e-05,
+            "input_standard_uncertainty": 2.4e-07,
+            "relative_ppm": 0.003386456496481688
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.00017603304240765283,
+            "input_standard_uncertainty": 2.9e-07,
+            "relative_ppm": 0.025413840329185745
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0,
+            "input_standard_uncertainty": 3e-07,
+            "relative_ppm": 0.0
+          },
+          "S1012": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.043951183075478184,
+            "input_standard_uncertainty": 1.9e-06,
+            "relative_ppm": 6.345219816018214
+          },
+          "S710": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.026546935661826865,
+            "input_standard_uncertainty": 1.5e-06,
+            "relative_ppm": 3.8325735606868365
+          },
+          "S79": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.04401444302720847,
+            "input_standard_uncertainty": 1.9021303845951256e-06,
+            "relative_ppm": 6.354352637280159
+          },
+          "S912": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.030084516447459464,
+            "input_standard_uncertainty": 1.7e-06,
+            "relative_ppm": 4.343293093838266
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010699039034989255,
+            "input_standard_uncertainty": 8e-08,
+            "relative_ppm": 0.15446172263572816
+          },
+          "m10": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010540794883127091,
+            "input_standard_uncertainty": 5.2e-06,
+            "relative_ppm": 0.15217715631031106
+          },
+          "m12": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.001074446319762501,
+            "input_standard_uncertainty": 5.3e-06,
+            "relative_ppm": 0.15511750998140084
+          },
+          "m7": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010744815172074595,
+            "input_standard_uncertainty": 5.3e-06,
+            "relative_ppm": 0.15512259142653148
+          },
+          "m9": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010745776098701754,
+            "input_standard_uncertainty": 5.3e-06,
+            "relative_ppm": 0.1551364642969521
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.1501440569272745,
+        "linearized_axis_box_relative_ppm": 21.676254849300065,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 10.691692680507465,
+        "rss_standard_uncertainty_kg_m-3": 0.07405772471451047
+      },
+      "quadrature": {
+        "coarse_azimuth_samples": 256,
+        "coarse_coefficient_kg_m-3": 6926.6604388591,
+        "coarse_tensor_Gauss_order": 12,
+        "primary_azimuth_samples": 512,
+        "primary_minus_coarse_kg_m-3": -3.637978807091713e-12,
+        "primary_tensor_Gauss_order": 16
+      },
+      "sensitivity_groups": {
+        "horizontal_distances_ppm": 8.979956121969613,
+        "pendulum_dimensions_ppm": 0.15657507824515537,
+        "source_masses_ppm": 0.3087874183495256,
+        "vertical_distances_ppm": 5.792479175366879
+      },
+      "supplement_full_apparatus_I_kg_m2": 2.776e-05,
+      "temperature_C": 22.8,
+      "temperature_corrected_S7_9_m": 0.34228911,
+      "temperature_transport": "For AAF-I, only S7,9 is transported from the published 23.7 C reference using the published upper-pair coefficient; all other geometry fields remain at their 23.7 C table values. For AAF-II/III the campaign and reference temperatures coincide. This is a partial public temperature transport; no complete campaign-temperature mass map is claimed.",
+      "uniform_cuboid_I0_kg_m2": 2.771478228086099e-05
+    },
+    {
+      "core_torque_divided_by_full_I_forbidden_mix_kg_m-3": 6915.417242074988,
+      "definition": "2*abs(mean_phi[(torque/(G*I0))*exp(-2i*phi)])",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.0698712439623159,
+      "id": "AAF-II",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_AAF(X | P_pairwise-centred), where X is a chosen input domain and P_pairwise-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_AAF(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 8.98,
+        "pendulum_dimensions": 0.16,
+        "source_masses": 0.31,
+        "vertical_distance": 5.79
+      },
+      "nominal_homogeneous_coefficient_kg_m-3": 6926.700007763433,
+      "normalization_rule": "The numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "AAF-II",
+        "processed_coefficient_kg_m-3": 6926.334,
+        "processed_minus_nominal_relative_ppm": -52.84292721562624,
+        "processed_minus_nominal_remainder_kg_m-3": -0.36600776343311736,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -0.5150367777590057,
+          -0.21697874910722897
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.075,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.1490290143258884
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 2.3461636374122463e-05,
+            "input_standard_uncertainty": 2.4e-07,
+            "relative_ppm": 0.0033871304297611693
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.00017603126343601616,
+            "input_standard_uncertainty": 2.9e-07,
+            "relative_ppm": 0.025413438323981196
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 4.547473508864641e-13,
+            "input_standard_uncertainty": 3e-07,
+            "relative_ppm": 6.565137083701963e-11
+          },
+          "S1012": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.043951183075478184,
+            "input_standard_uncertainty": 1.9e-06,
+            "relative_ppm": 6.345183568830432
+          },
+          "S710": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.02654720104601438,
+            "input_standard_uncertainty": 1.5e-06,
+            "relative_ppm": 3.832589980259042
+          },
+          "S79": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.04396575164673777,
+            "input_standard_uncertainty": 1.9e-06,
+            "relative_ppm": 6.347286817309976
+          },
+          "S912": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.030084817156421195,
+            "input_standard_uncertainty": 1.7e-06,
+            "relative_ppm": 4.343311695714001
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010699100475903833,
+            "input_standard_uncertainty": 8e-08,
+            "relative_ppm": 0.154461727285898
+          },
+          "m10": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010540794883127091,
+            "input_standard_uncertainty": 5.2e-06,
+            "relative_ppm": 0.15217628699543767
+          },
+          "m12": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010744463193077536,
+            "input_standard_uncertainty": 5.3e-06,
+            "relative_ppm": 0.15511662380405034
+          },
+          "m7": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.00107449379083846,
+            "input_standard_uncertainty": 5.3e-06,
+            "relative_ppm": 0.15512347721630337
+          },
+          "m9": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010745898853201652,
+            "input_standard_uncertainty": 5.3e-06,
+            "relative_ppm": 0.15513735027008044
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.1500959653562859,
+        "linearized_axis_box_relative_ppm": 21.669188096504616,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 10.687486717039393,
+        "rss_standard_uncertainty_kg_m-3": 0.07402901432588839
+      },
+      "quadrature": {
+        "coarse_azimuth_samples": 256,
+        "coarse_coefficient_kg_m-3": 6926.700007763437,
+        "coarse_tensor_Gauss_order": 12,
+        "primary_azimuth_samples": 512,
+        "primary_minus_coarse_kg_m-3": -3.637978807091713e-12,
+        "primary_tensor_Gauss_order": 16
+      },
+      "sensitivity_groups": {
+        "horizontal_distances_ppm": 8.97493200327182,
+        "pendulum_dimensions_ppm": 0.1565750321607444,
+        "source_masses_ppm": 0.3087874348748403,
+        "vertical_distances_ppm": 5.792503987301868
+      },
+      "supplement_full_apparatus_I_kg_m2": 2.776e-05,
+      "temperature_C": 23.7,
+      "temperature_corrected_S7_9_m": 0.3422874,
+      "temperature_transport": "For AAF-I, only S7,9 is transported from the published 23.7 C reference using the published upper-pair coefficient; all other geometry fields remain at their 23.7 C table values. For AAF-II/III the campaign and reference temperatures coincide. This is a partial public temperature transport; no complete campaign-temperature mass map is claimed.",
+      "uniform_cuboid_I0_kg_m2": 2.771478228086099e-05
+    },
+    {
+      "core_torque_divided_by_full_I_forbidden_mix_kg_m-3": 6915.417242074988,
+      "definition": "2*abs(mean_phi[(torque/(G*I0))*exp(-2i*phi)])",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.0698712439623159,
+      "id": "AAF-III",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_AAF(X | P_pairwise-centred), where X is a chosen input domain and P_pairwise-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_AAF(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 8.98,
+        "pendulum_dimensions": 0.16,
+        "source_masses": 0.31,
+        "vertical_distance": 5.79
+      },
+      "nominal_homogeneous_coefficient_kg_m-3": 6926.700007763433,
+      "normalization_rule": "The numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "AAF-III",
+        "processed_coefficient_kg_m-3": 6926.415,
+        "processed_minus_nominal_relative_ppm": -41.147947882560665,
+        "processed_minus_nominal_remainder_kg_m-3": -0.2850077634329864,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -0.4330367777588748,
+          -0.136978749107098
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.074,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.1480290143258884
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 2.3461636374122463e-05,
+            "input_standard_uncertainty": 2.4e-07,
+            "relative_ppm": 0.0033871304297611693
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.00017603126343601616,
+            "input_standard_uncertainty": 2.9e-07,
+            "relative_ppm": 0.025413438323981196
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 4.547473508864641e-13,
+            "input_standard_uncertainty": 3e-07,
+            "relative_ppm": 6.565137083701963e-11
+          },
+          "S1012": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.043951183075478184,
+            "input_standard_uncertainty": 1.9e-06,
+            "relative_ppm": 6.345183568830432
+          },
+          "S710": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.02654720104601438,
+            "input_standard_uncertainty": 1.5e-06,
+            "relative_ppm": 3.832589980259042
+          },
+          "S79": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.04396575164673777,
+            "input_standard_uncertainty": 1.9e-06,
+            "relative_ppm": 6.347286817309976
+          },
+          "S912": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.030084817156421195,
+            "input_standard_uncertainty": 1.7e-06,
+            "relative_ppm": 4.343311695714001
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010699100475903833,
+            "input_standard_uncertainty": 8e-08,
+            "relative_ppm": 0.154461727285898
+          },
+          "m10": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010540794883127091,
+            "input_standard_uncertainty": 5.2e-06,
+            "relative_ppm": 0.15217628699543767
+          },
+          "m12": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010744463193077536,
+            "input_standard_uncertainty": 5.3e-06,
+            "relative_ppm": 0.15511662380405034
+          },
+          "m7": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.00107449379083846,
+            "input_standard_uncertainty": 5.3e-06,
+            "relative_ppm": 0.15512347721630337
+          },
+          "m9": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0010745898853201652,
+            "input_standard_uncertainty": 5.3e-06,
+            "relative_ppm": 0.15513735027008044
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.1500959653562859,
+        "linearized_axis_box_relative_ppm": 21.669188096504616,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 10.687486717039393,
+        "rss_standard_uncertainty_kg_m-3": 0.07402901432588839
+      },
+      "quadrature": {
+        "coarse_azimuth_samples": 256,
+        "coarse_coefficient_kg_m-3": 6926.700007763437,
+        "coarse_tensor_Gauss_order": 12,
+        "primary_azimuth_samples": 512,
+        "primary_minus_coarse_kg_m-3": -3.637978807091713e-12,
+        "primary_tensor_Gauss_order": 16
+      },
+      "sensitivity_groups": {
+        "horizontal_distances_ppm": 8.97493200327182,
+        "pendulum_dimensions_ppm": 0.1565750321607444,
+        "source_masses_ppm": 0.3087874348748403,
+        "vertical_distances_ppm": 5.792503987301868
+      },
+      "supplement_full_apparatus_I_kg_m2": 2.776e-05,
+      "temperature_C": 23.7,
+      "temperature_corrected_S7_9_m": 0.3422874,
+      "temperature_transport": "For AAF-I, only S7,9 is transported from the published 23.7 C reference using the published upper-pair coefficient; all other geometry fields remain at their 23.7 C table values. For AAF-II/III the campaign and reference temperatures coincide. This is a partial public temperature transport; no complete campaign-temperature mass map is claimed.",
+      "uniform_cuboid_I0_kg_m2": 2.771478228086099e-05
+    }
+  ],
+  "TOS": [
+    {
+      "apparatus": "TOS-I",
+      "core_curvature_divided_by_full_I_forbidden_mix_kg_m-3": 24911.39099425079,
+      "definition": "d(torque/(G*I0))/dphi at phi=0 minus its value at phi=pi/2",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.004181565700171863,
+      "far_Cg_over_I_kg_m-3": -5975.387654091591,
+      "id": "TOS-I-F1-first",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_TOS(X | P_axis-centred), where X is a chosen input domain and P_axis-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_TOS(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 8.73,
+        "pendulum_dimensions": 1.82,
+        "source_masses": 0.73
+      },
+      "near_Cg_over_I_kg_m-3": 18939.79630904885,
+      "nominal_homogeneous_Delta_Cg_over_I_kg_m-3": 24915.18396314044,
+      "normalization_rule": "The curvature numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "TOS-I-F1-first",
+        "processed_coefficient_kg_m-3": 24912.86,
+        "processed_minus_nominal_relative_ppm": -93.28367519584044,
+        "processed_minus_nominal_remainder_kg_m-3": -2.323963140439446,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -2.7768736126108755,
+          -1.8710526682680162
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.23,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.45291047217142977
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.010739602716057561,
+            "input_standard_uncertainty": 1.2e-07,
+            "relative_ppm": 0.4310464948581485
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0378481865482172,
+            "input_standard_uncertainty": 1.1e-07,
+            "relative_ppm": 1.5190811596739617
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 3.637978807091713e-12,
+            "input_standard_uncertainty": 2.2e-07,
+            "relative_ppm": 1.4601452722459407e-10
+          },
+          "S": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.21752287390336278,
+            "input_standard_uncertainty": 3.4e-07,
+            "relative_ppm": 8.730534529673474
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.022291756215054193,
+            "input_standard_uncertainty": 9e-08,
+            "relative_ppm": 0.8947056641457198
+          },
+          "m1": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.012808810362912482,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.5140965598272101
+          },
+          "m2": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.012808810364731471,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.5140965599002174
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.31402004011397366,
+        "linearized_axis_box_relative_ppm": 12.603560968224745,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 8.946772076867083,
+        "rss_standard_uncertainty_kg_m-3": 0.22291047217142979
+      },
+      "quadrature": {
+        "coarse_coefficient_kg_m-3": 24915.183963140258,
+        "coarse_tensor_Gauss_order": 16,
+        "primary_minus_coarse_kg_m-3": 1.8189894035458565e-10,
+        "primary_tensor_Gauss_order": 20
+      },
+      "sensitivity_groups": {
+        "horizontal_distance_ppm": 8.730534529673474,
+        "pendulum_dimensions_ppm": 1.814912360380059,
+        "source_masses_ppm": 0.7270423273286157
+      },
+      "sphere_center_distance_m": 0.15719245,
+      "supplement_full_apparatus_I_kg_m2": 4.7705e-05,
+      "temperature_C": 20.3,
+      "temperature_transport": "The run-specific source separation is used at its table temperature. TOS-I pendulum/source dimensions remain at their published 20.2 C reference while runs are at 20.1 or 20.3 C; TOS-II fields and runs are at 21.5 C. No unpublished full thermal transport is inserted.",
+      "uniform_cuboid_I0_kg_m2": 4.769773761810675e-05
+    },
+    {
+      "apparatus": "TOS-I",
+      "core_curvature_divided_by_full_I_forbidden_mix_kg_m-3": 24910.636193815848,
+      "definition": "d(torque/(G*I0))/dphi at phi=0 minus its value at phi=pi/2",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.004182155700171858,
+      "far_Cg_over_I_kg_m-3": -5975.288090326565,
+      "id": "TOS-I-F1-repeat",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_TOS(X | P_axis-centred), where X is a chosen input domain and P_axis-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_TOS(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 8.73,
+        "pendulum_dimensions": 1.82,
+        "source_masses": 0.73
+      },
+      "near_Cg_over_I_kg_m-3": 18939.14095745422,
+      "nominal_homogeneous_Delta_Cg_over_I_kg_m-3": 24914.429047780784,
+      "normalization_rule": "The curvature numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "TOS-I-F1-repeat",
+        "processed_coefficient_kg_m-3": 24912.12,
+        "processed_minus_nominal_relative_ppm": -92.68772712982583,
+        "processed_minus_nominal_remainder_kg_m-3": -2.309047780785477,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -2.7619481671041384,
+          -1.8561473944668152
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.23,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.4529003863186615
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.010738994058556273,
+            "input_standard_uncertainty": 1.2e-07,
+            "relative_ppm": 0.4310351257883998
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.03784602918494784,
+            "input_standard_uncertainty": 1.1e-07,
+            "relative_ppm": 1.5190405974131362
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 1.8189894035458565e-12,
+            "input_standard_uncertainty": 2.2e-07,
+            "relative_ppm": 7.300947575629447e-11
+          },
+          "S": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.21751309617684456,
+            "input_standard_uncertainty": 3.4e-07,
+            "relative_ppm": 8.730406615367365
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.022290714037808357,
+            "input_standard_uncertainty": 9e-08,
+            "relative_ppm": 0.8946909437522926
+          },
+          "m1": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.01280842226515233,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.5140965598926024
+          },
+          "m2": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.012808422263333341,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.5140965598195929
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.3140056779884617,
+        "linearized_axis_box_relative_ppm": 12.603366402106397,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 8.946638347247921,
+        "rss_standard_uncertainty_kg_m-3": 0.22290038631866144
+      },
+      "quadrature": {
+        "coarse_coefficient_kg_m-3": 24914.4290477806,
+        "coarse_tensor_Gauss_order": 16,
+        "primary_minus_coarse_kg_m-3": 1.8553691916167736e-10,
+        "primary_tensor_Gauss_order": 20
+      },
+      "sensitivity_groups": {
+        "horizontal_distance_ppm": 8.730406615367365,
+        "pendulum_dimensions_ppm": 1.8148684528320636,
+        "source_masses_ppm": 0.7270423273178449
+      },
+      "sphere_center_distance_m": 0.15719363,
+      "supplement_full_apparatus_I_kg_m2": 4.7705e-05,
+      "temperature_C": 20.3,
+      "temperature_transport": "The run-specific source separation is used at its table temperature. TOS-I pendulum/source dimensions remain at their published 20.2 C reference while runs are at 20.1 or 20.3 C; TOS-II fields and runs are at 21.5 C. No unpublished full thermal transport is inserted.",
+      "uniform_cuboid_I0_kg_m2": 4.769773761810675e-05
+    },
+    {
+      "apparatus": "TOS-I",
+      "core_curvature_divided_by_full_I_forbidden_mix_kg_m-3": 24910.636193815848,
+      "definition": "d(torque/(G*I0))/dphi at phi=0 minus its value at phi=pi/2",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.004182155700171858,
+      "far_Cg_over_I_kg_m-3": -5975.288090326565,
+      "id": "TOS-I-F2",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_TOS(X | P_axis-centred), where X is a chosen input domain and P_axis-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_TOS(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 8.73,
+        "pendulum_dimensions": 1.82,
+        "source_masses": 0.73
+      },
+      "near_Cg_over_I_kg_m-3": 18939.14095745422,
+      "nominal_homogeneous_Delta_Cg_over_I_kg_m-3": 24914.429047780784,
+      "normalization_rule": "The curvature numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "TOS-I-F2",
+        "processed_coefficient_kg_m-3": 24912.15,
+        "processed_minus_nominal_relative_ppm": -91.4833838421414,
+        "processed_minus_nominal_remainder_kg_m-3": -2.279047780783003,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -2.7319481671016645,
+          -1.8261473944643414
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.23,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.4529003863186615
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.010738994058556273,
+            "input_standard_uncertainty": 1.2e-07,
+            "relative_ppm": 0.4310351257883998
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.03784602918494784,
+            "input_standard_uncertainty": 1.1e-07,
+            "relative_ppm": 1.5190405974131362
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 1.8189894035458565e-12,
+            "input_standard_uncertainty": 2.2e-07,
+            "relative_ppm": 7.300947575629447e-11
+          },
+          "S": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.21751309617684456,
+            "input_standard_uncertainty": 3.4e-07,
+            "relative_ppm": 8.730406615367365
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.022290714037808357,
+            "input_standard_uncertainty": 9e-08,
+            "relative_ppm": 0.8946909437522926
+          },
+          "m1": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.01280842226515233,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.5140965598926024
+          },
+          "m2": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.012808422263333341,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.5140965598195929
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.3140056779884617,
+        "linearized_axis_box_relative_ppm": 12.603366402106397,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 8.946638347247921,
+        "rss_standard_uncertainty_kg_m-3": 0.22290038631866144
+      },
+      "quadrature": {
+        "coarse_coefficient_kg_m-3": 24914.4290477806,
+        "coarse_tensor_Gauss_order": 16,
+        "primary_minus_coarse_kg_m-3": 1.8553691916167736e-10,
+        "primary_tensor_Gauss_order": 20
+      },
+      "sensitivity_groups": {
+        "horizontal_distance_ppm": 8.730406615367365,
+        "pendulum_dimensions_ppm": 1.8148684528320636,
+        "source_masses_ppm": 0.7270423273178449
+      },
+      "sphere_center_distance_m": 0.15719363,
+      "supplement_full_apparatus_I_kg_m2": 4.7705e-05,
+      "temperature_C": 20.3,
+      "temperature_transport": "The run-specific source separation is used at its table temperature. TOS-I pendulum/source dimensions remain at their published 20.2 C reference while runs are at 20.1 or 20.3 C; TOS-II fields and runs are at 21.5 C. No unpublished full thermal transport is inserted.",
+      "uniform_cuboid_I0_kg_m2": 4.769773761810675e-05
+    },
+    {
+      "apparatus": "TOS-I",
+      "core_curvature_divided_by_full_I_forbidden_mix_kg_m-3": 24910.4506972079,
+      "definition": "d(torque/(G*I0))/dphi at phi=0 minus its value at phi=pi/2",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.004182300700171851,
+      "far_Cg_over_I_kg_m-3": -5975.263621572914,
+      "id": "TOS-I-F3-first",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_TOS(X | P_axis-centred), where X is a chosen input domain and P_axis-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_TOS(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 8.47,
+        "pendulum_dimensions": 1.82,
+        "source_masses": 0.55
+      },
+      "near_Cg_over_I_kg_m-3": 18938.9799013565,
+      "nominal_homogeneous_Delta_Cg_over_I_kg_m-3": 24914.243522929413,
+      "normalization_rule": "The curvature numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "TOS-I-F3-first",
+        "processed_coefficient_kg_m-3": 24911.7,
+        "processed_minus_nominal_relative_ppm": -102.10153981513004,
+        "processed_minus_nominal_remainder_kg_m-3": -2.5435229294125747,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -2.980182592058286,
+          -2.1068632667668634
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.22,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.4366596626457114
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.010738844475781661,
+            "input_standard_uncertainty": 1.2e-07,
+            "relative_ppm": 0.4310323316017369
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.03784549900410639,
+            "input_standard_uncertainty": 1.1e-07,
+            "relative_ppm": 1.5190306287757107
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 5.4569682106375694e-12,
+            "input_standard_uncertainty": 2.2e-07,
+            "relative_ppm": 2.190300582723042e-10
+          },
+          "S": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.21111331993233762,
+            "input_standard_uncertainty": 3.3e-07,
+            "relative_ppm": 8.473599438732482
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.02229045791682438,
+            "input_standard_uncertainty": 9e-08,
+            "relative_ppm": 0.8946873259992774
+          },
+          "m1": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.012808326884623966,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.514096559778591
+          },
+          "m2": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.012808326886442956,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.514096559851601
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.30760477510557394,
+        "linearized_axis_box_relative_ppm": 12.34654284495843,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 8.696216782432657,
+        "rss_standard_uncertainty_kg_m-3": 0.21665966264571138
+      },
+      "quadrature": {
+        "coarse_coefficient_kg_m-3": 24914.243522929242,
+        "coarse_tensor_Gauss_order": 16,
+        "primary_minus_coarse_kg_m-3": 1.709850039333105e-10,
+        "primary_tensor_Gauss_order": 20
+      },
+      "sensitivity_groups": {
+        "horizontal_distance_ppm": 8.473599438732482,
+        "pendulum_dimensions_ppm": 1.814857662007822,
+        "source_masses_ppm": 0.7270423272598598
+      },
+      "sphere_center_distance_m": 0.15719392,
+      "supplement_full_apparatus_I_kg_m2": 4.7705e-05,
+      "temperature_C": 20.1,
+      "temperature_transport": "The run-specific source separation is used at its table temperature. TOS-I pendulum/source dimensions remain at their published 20.2 C reference while runs are at 20.1 or 20.3 C; TOS-II fields and runs are at 21.5 C. No unpublished full thermal transport is inserted.",
+      "uniform_cuboid_I0_kg_m2": 4.769773761810675e-05
+    },
+    {
+      "apparatus": "TOS-I",
+      "core_curvature_divided_by_full_I_forbidden_mix_kg_m-3": 24910.50186848127,
+      "definition": "d(torque/(G*I0))/dphi at phi=0 minus its value at phi=pi/2",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.004182260700171858,
+      "far_Cg_over_I_kg_m-3": -5975.270371561813,
+      "id": "TOS-I-F3-repeat",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_TOS(X | P_axis-centred), where X is a chosen input domain and P_axis-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_TOS(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 8.47,
+        "pendulum_dimensions": 1.82,
+        "source_masses": 0.55
+      },
+      "near_Cg_over_I_kg_m-3": 18939.02433043223,
+      "nominal_homogeneous_Delta_Cg_over_I_kg_m-3": 24914.29470199404,
+      "normalization_rule": "The curvature numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "TOS-I-F3-repeat",
+        "processed_coefficient_kg_m-3": 24911.72,
+        "processed_minus_nominal_relative_ppm": -103.35304001646855,
+        "processed_minus_nominal_remainder_kg_m-3": -2.57470199403906,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -3.011362321559471,
+          -2.138041666518649
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.22,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.4366603275204112
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.010738885739556281,
+            "input_standard_uncertainty": 1.2e-07,
+            "relative_ppm": 0.4310331024019259
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.03784564526540635,
+            "input_standard_uncertainty": 1.1e-07,
+            "relative_ppm": 1.519033378953232
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 3.637978807091713e-12,
+            "input_standard_uncertainty": 2.2e-07,
+            "relative_ppm": 1.4601973889313306e-10
+          },
+          "S": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.21111396330343268,
+            "input_standard_uncertainty": 3.3e-07,
+            "relative_ppm": 8.473607855595345
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.022290528570010792,
+            "input_standard_uncertainty": 9e-08,
+            "relative_ppm": 0.894688323977596
+          },
+          "m1": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.012808353194486699,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.5140965597337042
+          },
+          "m2": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.012808353196305688,
+            "input_standard_uncertainty": 8e-07,
+            "relative_ppm": 0.5140965598067141
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.30760572927283647,
+        "linearized_axis_box_relative_ppm": 12.346555780614535,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 8.696225605096982,
+        "rss_standard_uncertainty_kg_m-3": 0.21666032752041117
+      },
+      "quadrature": {
+        "coarse_coefficient_kg_m-3": 24914.294701993866,
+        "coarse_tensor_Gauss_order": 16,
+        "primary_minus_coarse_kg_m-3": 1.7462298274040222e-10,
+        "primary_tensor_Gauss_order": 20
+      },
+      "sensitivity_groups": {
+        "horizontal_distance_ppm": 8.473607855595345,
+        "pendulum_dimensions_ppm": 1.8148606389478346,
+        "source_masses_ppm": 0.7270423271963802
+      },
+      "sphere_center_distance_m": 0.15719384,
+      "supplement_full_apparatus_I_kg_m2": 4.7705e-05,
+      "temperature_C": 20.1,
+      "temperature_transport": "The run-specific source separation is used at its table temperature. TOS-I pendulum/source dimensions remain at their published 20.2 C reference while runs are at 20.1 or 20.3 C; TOS-II fields and runs are at 21.5 C. No unpublished full thermal transport is inserted.",
+      "uniform_cuboid_I0_kg_m2": 4.769773761810675e-05
+    },
+    {
+      "apparatus": "TOS-II",
+      "core_curvature_divided_by_full_I_forbidden_mix_kg_m-3": 25001.505750324683,
+      "definition": "d(torque/(G*I0))/dphi at phi=0 minus its value at phi=pi/2",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.004170645924151839,
+      "far_Cg_over_I_kg_m-3": -5986.141584327324,
+      "id": "TOS-II-F4-first",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_TOS(X | P_axis-centred), where X is a chosen input domain and P_axis-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_TOS(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 9.53,
+        "pendulum_dimensions": 2.73,
+        "source_masses": 0.55
+      },
+      "near_Cg_over_I_kg_m-3": 19019.201134525916,
+      "nominal_homogeneous_Delta_Cg_over_I_kg_m-3": 25005.34271885324,
+      "normalization_rule": "The curvature numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "TOS-II-F4-first",
+        "processed_coefficient_kg_m-3": 25003.05,
+        "processed_minus_nominal_relative_ppm": -91.69756702647238,
+        "processed_minus_nominal_remainder_kg_m-3": -2.29271885324124,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -2.7908487780599396,
+          -1.7945889284225407
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.25,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.49812992481869955
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.011495411539726774,
+            "input_standard_uncertainty": 1.3e-07,
+            "relative_ppm": 0.4597182157819289
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.0589450403367664,
+            "input_standard_uncertainty": 1.7e-07,
+            "relative_ppm": 2.3572978382865406
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 1.8189894035458565e-12,
+            "input_standard_uncertainty": 2.2e-07,
+            "relative_ppm": 7.274403010579053e-11
+          },
+          "S": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.23819324076612247,
+            "input_standard_uncertainty": 3.7e-07,
+            "relative_ppm": 9.525693906467998
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.03224778149706253,
+            "input_standard_uncertainty": 1.3e-07,
+            "relative_ppm": 1.28963565345373
+          },
+          "m1": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.009639967987823184,
+            "input_standard_uncertainty": 6e-07,
+            "relative_ppm": 0.38551633129807183
+          },
+          "m2": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.009639967987823184,
+            "input_standard_uncertainty": 6e-07,
+            "relative_ppm": 0.38551633129807183
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.36016141011714353,
+        "linearized_axis_box_relative_ppm": 14.403378276659085,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 9.923076344465347,
+        "rss_standard_uncertainty_kg_m-3": 0.24812992481869955
+      },
+      "quadrature": {
+        "coarse_coefficient_kg_m-3": 25005.342718853055,
+        "coarse_tensor_Gauss_order": 16,
+        "primary_minus_coarse_kg_m-3": 1.8553691916167736e-10,
+        "primary_tensor_Gauss_order": 20
+      },
+      "sensitivity_groups": {
+        "horizontal_distance_ppm": 9.525693906467998,
+        "pendulum_dimensions_ppm": 2.7260510000678906,
+        "source_masses_ppm": 0.5452024242380525
+      },
+      "sphere_center_distance_m": 0.15716476,
+      "supplement_full_apparatus_I_kg_m2": 4.6477e-05,
+      "temperature_C": 21.5,
+      "temperature_transport": "The run-specific source separation is used at its table temperature. TOS-I pendulum/source dimensions remain at their published 20.2 C reference while runs are at 20.1 or 20.3 C; TOS-II fields and runs are at 21.5 C. No unpublished full thermal transport is inserted.",
+      "uniform_cuboid_I0_kg_m2": 4.6469868292656225e-05
+    },
+    {
+      "apparatus": "TOS-II",
+      "core_curvature_divided_by_full_I_forbidden_mix_kg_m-3": 25001.422073857342,
+      "definition": "d(torque/(G*I0))/dphi at phi=0 minus its value at phi=pi/2",
+      "exact_minimum_homogeneous_sphere_to_cuboid_clearance_over_azimuth_m": 0.004170710924151846,
+      "far_Cg_over_I_kg_m-3": -5986.130585850858,
+      "id": "TOS-II-F4-repeat",
+      "identified_set": {
+        "conditional_homogeneous_functional": "K_TOS(X | P_axis-centred), where X is a chosen input domain and P_axis-centred is the explicit nominal placement premise",
+        "full_apparatus_from_unprocessed_public_fields": "K_TOS(X)+r_missing; the pinned release does not numerically bound the central clamp/coating/density/3D-coordinate remainder"
+      },
+      "main_table1_group_comparator_ppm": {
+        "horizontal_distance": 9.27,
+        "pendulum_dimensions": 2.73,
+        "source_masses": 0.55
+      },
+      "near_Cg_over_I_kg_m-3": 19019.128443693255,
+      "nominal_homogeneous_Delta_Cg_over_I_kg_m-3": 25005.25902954411,
+      "normalization_rule": "The curvature numerator and inertia must describe the same mass distribution. The displayed mixed number is an identifiability diagnostic, not an alternative result.",
+      "post_calculation_processed_comparator": {
+        "band_ceiling": "This is interval addition of two quoted one-standard-uncertainty half widths under unknown covariance. It is not an independent reconstruction or coverage interval.",
+        "id": "TOS-II-F4-repeat",
+        "processed_coefficient_kg_m-3": 25002.95,
+        "processed_minus_nominal_relative_ppm": -92.35028443086402,
+        "processed_minus_nominal_remainder_kg_m-3": -2.309029544110672,
+        "remainder_band_from_summed_1sigma_half_widths_kg_m-3": [
+          -2.800985118474834,
+          -1.8170739697465101
+        ],
+        "role": "POST_CALCULATION_ONLY__NOT_A_KERNEL_INPUT",
+        "u_processed_coefficient_kg_m-3": 0.25,
+        "unknown_covariance_conservative_sum_of_1sigma_half_widths_kg_m-3": 0.49195557436416176
+      },
+      "public_input_sensitivity": {
+        "components": {
+          "H": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.011495339438624796,
+            "input_standard_uncertainty": 1.3e-07,
+            "relative_ppm": 0.4597168709607429
+          },
+          "L": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.058944669075572165,
+            "input_standard_uncertainty": 1.7e-07,
+            "relative_ppm": 2.3572908805275135
+          },
+          "M": {
+            "coefficient_standard_sensitivity_kg_m-3": 1.8189894035458565e-12,
+            "input_standard_uncertainty": 2.2e-07,
+            "relative_ppm": 7.27442735704799e-11
+          },
+          "S": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.23175443412765162,
+            "input_standard_uncertainty": 3.6e-07,
+            "relative_ppm": 9.268227689776449
+          },
+          "W": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.03224761487581418,
+            "input_standard_uncertainty": 1.3e-07,
+            "relative_ppm": 1.289633306246232
+          },
+          "m1": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.009639935728046112,
+            "input_standard_uncertainty": 6e-07,
+            "relative_ppm": 0.3855163314507738
+          },
+          "m2": {
+            "coefficient_standard_sensitivity_kg_m-3": 0.009639935726227122,
+            "input_standard_uncertainty": 6e-07,
+            "relative_ppm": 0.38551633137802954
+          }
+        },
+        "coverage_ceiling": "RSS is first-order standard-uncertainty propagation. The L1 number is a local linearized axis-box diagnostic. Neither is an exact confidence or coverage theorem.",
+        "linearized_axis_box_half_width_kg_m-3": 0.353721928973755,
+        "linearized_axis_box_relative_ppm": 14.145901410412485,
+        "method": "symmetric one-standard-uncertainty finite perturbations",
+        "rss_relative_ppm": 9.676187480333205,
+        "rss_standard_uncertainty_kg_m-3": 0.24195557436416176
+      },
+      "quadrature": {
+        "coarse_coefficient_kg_m-3": 25005.25902954393,
+        "coarse_tensor_Gauss_order": 16,
+        "primary_minus_coarse_kg_m-3": 1.8189894035458565e-10,
+        "primary_tensor_Gauss_order": 20
+      },
+      "sensitivity_groups": {
+        "horizontal_distance_ppm": 9.268227689776449,
+        "pendulum_dimensions_ppm": 2.726043646283695,
+        "source_masses_ppm": 0.5452024244025677
+      },
+      "sphere_center_distance_m": 0.15716489,
+      "supplement_full_apparatus_I_kg_m2": 4.6477e-05,
+      "temperature_C": 21.5,
+      "temperature_transport": "The run-specific source separation is used at its table temperature. TOS-I pendulum/source dimensions remain at their published 20.2 C reference while runs are at 20.1 or 20.3 C; TOS-II fields and runs are at 21.5 C. No unpublished full thermal transport is inserted.",
+      "uniform_cuboid_I0_kg_m2": 4.6469868292656225e-05
+    }
+  ],
+  "calculation_order": [
+    "AAF ideal homogeneous coefficient from Extended Data Tables 1, 2 and 4",
+    "ToS ideal homogeneous stiffness coefficients from Extended Data Tables 1, 2 and 4",
+    "public-input sensitivity propagation and main Table 1 comparison",
+    "post-calculation comparison to processed Supplementary Tables 2 and 3"
+  ],
+  "claim_ceiling": [
+    "no new or re-estimated value of G",
+    "no RGRL or Gravity Formation Theory confirmation",
+    "no claim of complete conserved-stress ownership",
+    "no claim that a uniform nominal kernel equals the full HUST apparatus coefficient",
+    "no use of a published processed coefficient as a calculation input",
+    "no certified exact numerical value or rigorous quadrature error bound",
+    "no claim that the conditional pairwise-centred AAF placement is uniquely fixed by the public pair distances"
+  ],
+  "conditional_model_domain": {
+    "detector": "uniform centred rectangular cuboid with Extended Data Table 1 dimensions and mass",
+    "layout": "explicit nominal pairwise-centred realization consistent with Extended Data Figure 3; reported horizontal and vertical separations are retained independently, but the unpublished individual 3D CMM coordinates are not thereby reconstructed",
+    "numerics": "tensor Gauss-Legendre cubature plus the exact analytic ToS azimuth derivative; the reported values are converged numerical evaluations without a certified quadrature error bound",
+    "physics": "quasistatic Newtonian component of the declared weak-field Einstein endpoint",
+    "sources": "mutually disjoint homogeneous spheres; shell theorem makes each source exactly a point mass at its stated centre for this domain"
+  },
+  "identifiability_ceiling": {
+    "full_kernel_identified_set": "K_full=K_homogeneous(X)+r_missing is non-singleton and is not numerically bounded by the pinned unprocessed public fields. Supplementary Tables 2 and 3 publish a processed scalar image, but using it locates rather than independently reconstructs r_missing.",
+    "missing_public_geometry_fields": [
+      "three-dimensional mass-coordinate or density map for clamp and ferrule",
+      "coating mass/thickness map and density-inhomogeneity field",
+      "individual three-dimensional CMM sphere centres relative to the rotation axis",
+      "the two AAF shear coordinates left free by four pair separations plus overall centring",
+      "source nonsphericity and density multipoles beyond the scalar summaries",
+      "campaign covariance tying dimensions, masses, distances, alignment, and corrections"
+    ],
+    "proved_collision": "Extended Data Table 1 gives only the core cuboid while Supplementary Table 1 gives the inertia of the full pendulum assembly. Many unreported clamp/coating/ferrule mass maps share those scalars but produce different torque/curvature numerators. Mixing the core numerator with full-assembly inertia is therefore not a lawful reconstruction."
+  },
+  "residual_gap_to_GC16": {
+    "conclusion": "The public release now supports a geometry-first nominal kernel and a sharp remainder ceiling, but not a real-data evaluation of GC16.",
+    "now_supplied": [
+      "AAF nominal m=2 finite-source forcing coefficient in the conditional homogeneous domain",
+      "seven ToS nominal near-minus-far finite-source stiffness coefficients in that domain",
+      "public geometry sensitivity ledger and a post-calculation central-remainder diagnostic"
+    ],
+    "still_missing": [
+      "full detector/source/support/drive mass and stress measures with conserved-stress ownership",
+      "row-level source trajectory and phase referenced event stream",
+      "complete torsion and auxiliary-mode transfer including damping, coupling, and calibration covariance",
+      "readout gain, delay, filters, nuisance design, and row-level observation covariance",
+      "signed physical remainder ledger and bounds before the retarded inverse",
+      "prospective held-out/null rows and independent source-scale covariance"
+    ]
+  },
+  "schema": "WAC_HUST_NOMINAL_SOURCE_KERNEL_RECONSTRUCTION_RESULT_V001",
+  "source_and_dependency_hashes": {
+    "GC16 executable": "6c17498d2d65f6420498ac559a97a2c3bbf49e110dd971da34b4c9c9bea2e4e4",
+    "GC16 protocol": "6ec7d8f0ce9a184d25612107dbfc294dd22d124ebe859831401e9cc0c8e8b819",
+    "GC16 theorem": "cbf0733633ba93756b08dded7486a9be76beb572807693455c761bd36a8f0f5b",
+    "SOURCE/41586_2018_431_Fig6_ESM.jpg": "f29cdc1909149fc3a03264299889ef7f8346eb0fae6d7415cebbcf3d14163312",
+    "SOURCE/41586_2018_431_MOESM1_ESM.pdf": "5b61d5c831be98c46e47fcc32f1ade0a680b4af6354d2bc34859d94b22279ffb",
+    "SOURCE/41586_2018_431_Tab1_ESM.jpg": "c84bc71bcd0115ccbbbdddd70dd1d755ffdabd37c91772f30cb51a264a200195",
+    "SOURCE/41586_2018_431_Tab2_ESM.jpg": "96c40827af03f4de0715ea77bc69c0612d3ef94dc15eff035213e8a4dc0649c1",
+    "SOURCE/41586_2018_431_Tab4_ESM.jpg": "567e5c8b953cba86e642bfd01b3880b262873606e2c69af44fa13a9ff4f629ce",
+    "SOURCE/nature_main_table1_error_budget.html": "23436d4be7600a7a9dffa02cc4167a20b6eea032a181e77899bb57bb90aa02e9"
+  },
+  "status": "AAF_CONDITIONAL_HOMOGENEOUS_SOURCE_KERNEL_RECONSTRUCTED__TOS_CONDITIONAL_HOMOGENEOUS_STIFFNESS_KERNEL_RECONSTRUCTED__PUBLIC_GEOMETRY_SENSITIVITIES_RECOVERED__FULL_CENTRAL_REMAINDER_NOT_IDENTIFIED_FROM_UNPROCESSED_PUBLIC_FIELDS__GC16_NOT_CLOSED__NO_NEW_G"
+}
