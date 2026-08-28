@@ -77,6 +77,35 @@ def identity(n: int):
     return [[1 if i == j else 0 for j in range(n)] for i in range(n)]
 
 
+def kron(a, b):
+    return [
+        [a[i // len(b)][j // len(b[0])] * b[i % len(b)][j % len(b[0])]
+         for j in range(len(a[0]) * len(b[0]))]
+        for i in range(len(a) * len(b))
+    ]
+
+
+def add_matrix(*matrices):
+    return [
+        [sum(matrix[i][j] for matrix in matrices)
+         for j in range(len(matrices[0][0]))]
+        for i in range(len(matrices[0]))
+    ]
+
+
+def scale_matrix(scalar, matrix):
+    return [[scalar * value for value in row] for row in matrix]
+
+
+def matvec(matrix, vector):
+    return [sum(matrix[i][j] * vector[j] for j in range(len(vector)))
+            for i in range(len(matrix))]
+
+
+def commutator(a, b):
+    return add_matrix(matmul(a, b), scale_matrix(-1, matmul(b, a)))
+
+
 def equal_matrix(a, b, tol: float = 1e-12) -> bool:
     return len(a) == len(b) and len(a[0]) == len(b[0]) and all(
         abs(a[i][j] - b[i][j]) <= tol
@@ -172,22 +201,54 @@ def main() -> int:
     q.check(adjacency_ok, "saturated physical support equals q4 append incidence B_N")
     q.check(guard_zero_ok, "all parent-guard adjacency columns are zero")
 
-    # A nonedge K=0,n=0 has no local transition under all displayed hold
-    # operators: controlled X vanishes, and n, nT, nJ^2 are zero/diagonal.
-    nonedge_terms = {
-        "KX_control": 0,
-        "incidence_occupation": 0,
-        "carrier_hop_control": 0,
-        "current_square_control": 0,
-    }
-    q.check(all(value == 0 for value in nonedge_terms.values()),
-            "declared K=0,n=0 nonedge block is locally invariant")
+    # Exact local K/n operator replay.  Basis order is |K,n>.  The qualified
+    # hold contains P_K X_n plus terms diagonal/controlled in n, but no raw
+    # I_K X_n.  The blank nonedge is then a reducing one-dimensional block.
+    i2 = identity(2)
+    x2 = [[0, 1], [1, 0]]
+    p1 = [[0, 0], [0, 1]]
+    p_k = kron(p1, i2)
+    p_n = kron(i2, p1)
+    h_control = 0.37
+    delta = 0.91
+    h_qualified = add_matrix(
+        scale_matrix(-h_control, kron(p1, x2)),
+        scale_matrix(delta, p_n),
+    )
+    blank_nonedge = [1, 0, 0, 0]
+    qualified_image = matvec(h_qualified, blank_nonedge)
+    q.check(all(abs(value) <= 1e-12 for value in qualified_image[1:]),
+            "qualified K=0,n=0 nonedge block is exactly invariant")
+    q.check(equal_matrix(commutator(h_qualified, p_k), [[0] * 4 for _ in range(4)]),
+            "qualified hold exactly conserves K support")
+    q.check(not equal_matrix(commutator(h_qualified, p_n), [[0] * 4 for _ in range(4)]),
+            "K-gated actuator may evolve active n while conserving K")
+    q.check(not equal_matrix(p_k, p_n), "K support and active n are distinct factors")
+
+    h_fd_slice = scale_matrix(delta, p_n)
+    q.check(equal_matrix(commutator(h_fd_slice, p_n), [[0] * 4 for _ in range(4)]),
+            "FD comparator with both flip actuators off conserves saturated n")
+
+    h_with_raw = add_matrix(
+        h_qualified,
+        scale_matrix(-0.23, kron(i2, x2)),
+    )
+    raw_image = matvec(h_with_raw, blank_nonedge)
+    q.check(any(abs(value) > 1e-12 for value in raw_image[1:]),
+            "raw ungated X would violate blank-nonedge quarantine")
 
     required_phrases = [
         "fixed orthogonal finite program",
         "one active BQ4 factor is not a tensor product",
         "supplied cap, address maps, edge list",
-        "passive retention only",
+        "passive support retention only",
+        "raw ungated flip would take a",
+        "but not the subsequently active",
+        "merely stroboscopic echo",
+        "[H_{\\rm hold},\\Pi_{p_N,E_N}]=0",
+        "premise of the qualified",
+        "qualified raw-flip-free",
+        "keep both the raw ungated BS06 flip and the PESC `K`-gated incidence flip exactly zero",
         "Physical energies, port matrices, and calibration remain supplied",
         "positive uniform child/parent detuning",
         "Omega_2(E_N)=\\varnothing",
@@ -196,8 +257,11 @@ def main() -> int:
         "visible electromagnetism",
         "gravity closure",
     ]
+    normalized_text = " ".join(text.split())
     for phrase in required_phrases:
-        q.check(phrase in text, f"mandatory ceiling present: {phrase}")
+        normalized_phrase = " ".join(phrase.split())
+        q.check(normalized_phrase in normalized_text,
+                f"mandatory ceiling present: {phrase}")
 
     forbidden_promotions = [
         "autonomous q4 support selection is proved",

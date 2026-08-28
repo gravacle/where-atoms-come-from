@@ -108,6 +108,14 @@ def main() -> int:
         == "FINITE_LOCAL_EDGE_BINDING_PROGRAMMABLE__GLOBAL_U1_CONDITIONAL_ON_"
         "SUPPLIED_REGULAR_COMPLETION_AND_LEADING_ORDER"
     )
+    assert (
+        certificate["exact_results"]["q4_programmed_floquet_detuning"]
+        == "EXACT_CHILD_ONLY_PHASE_AND_UNIFORM_PARENT_CHILD_QUASIENERGY_SEPARATION_"
+        "FOR_SUPPLIED_REPEATABLE_DUAL_FLIP_FREE_SCHEDULE"
+    )
+    assert certificate["exact_results"]["q4_static_source_off_child_parent_stagger"] == "ABSENT"
+    assert certificate["exact_results"]["q4_ice_local_diagonal_module"] == "A1_PLUS_E_PLUS_T2_EXACT"
+    assert certificate["exact_results"]["q4_ice_symmetric_fisher_T2_first_derivative"] == "EXACTLY_ZERO_BY_COMPLEMENT_PARITY"
     microscopic = certificate["microscopic_parent_boundary"]
     assert (
         microscopic["scalar_carrier_transfer_on_supplied_saturated_q4_support"]
@@ -120,11 +128,34 @@ def main() -> int:
     )
     assert microscopic["finite_programmed_solder_is_autonomous_support_selection"] is False
     assert microscopic["interpair_retarded_kernel"] == "EXACTLY_ZERO_UNDER_INHERITED_DYNAMICS"
+    assert microscopic["programmed_floquet_detuning_is_autonomous_phase"] is False
+    assert (
+        microscopic["physical_q4_link_pair_response"]
+        == "EXACT_FINITE_LOCAL_AND_SHARED_LINK_RESPONSE_WITH_OPERATOR_SPREADING"
+    )
+    assert (
+        microscopic["physical_q4_link_walsh_pairs"]
+        == "EXACT_OPERATOR_REALIZATION_ON_FPMH_QUALIFIED_FINITE_PROGRAMMED_LINK_FACTORS"
+    )
+    assert (
+        microscopic["q4_pair_operator_realization"]
+        == "EXACT_FINITE_WALSH_ALGEBRA__FULL_PMMDC_AND_METRIC_SOLDER_OPEN"
+    )
+    assert microscopic["physical_q4_link_pairs_are_automatically_PMMDC_records"] is False
+    assert microscopic["ice_ring_response_pole"] == "FINITE_2J6_NOT_MASSLESS_TENSOR"
+    assert microscopic["direct_gaussian_composite_tensor_route"] == "EXACT_CONDITIONAL_NO_GO"
     assert microscopic["new_interaction_or_second_field_adopted"] is False
+    assert certificate["kernel_reduction"]["gaussian_maxwell_one_link_pole"] == "SPIN_1_PHOTON_CONDITIONAL_ON_MAXWELL_IR"
+    assert certificate["kernel_reduction"]["gaussian_maxwell_isolated_helicity2_pole"] == "ABSENT_IN_DIRECT_COMPOSITE_ROUTE"
     assert certificate["numerical_G"]["parameter_free_microscopic_record_derivation"] is False
     assert certificate["numerical_G"]["bounded_remainder_output"] == "IDENTIFIED_INTERVAL_OR_SET_NOT_AUTOMATIC_POINT_VALUE"
     assert certificate["numerical_G"]["calibrated_nonsingular_row_identifies"] == "P_EQUALS_G_TIMES_SOURCE_SCALE"
     assert certificate["numerical_G"]["synthetic_validation"] == "PASS_15_OF_15_WITH_ARBITRARY_NONEMPIRICAL_G"
+    assert certificate["numerical_G"]["nist_bipm_analysis_observations"] == 8
+    assert certificate["numerical_G"]["nist_bipm_G_only_jacobian_rank"] == 1
+    assert certificate["numerical_G"]["nist_bipm_full_GC16_fit_ready"] is False
+    assert certificate["numerical_G"]["nist_bipm_public_missing_field_count"] == 10
+    assert certificate["numerical_G"]["nist_bipm_independent_G_crosscheck_performed"] is False
     assert certificate["SPAG"]["executed_by_this_surface"] is False
     assert certificate["SPAG"]["full_RGRL_confirmation"] is False
     assert certificate["SPAG"]["old_local_RGRL_C_force_column_labels"] == "RETIRED_FOR_FUTURE_CLAIMS"
@@ -133,21 +164,44 @@ def main() -> int:
     assert certificate["SPAG"]["public_data_substitute_executed"] is True
     assert certificate["SPAG"]["public_same_parent_eight_cell_support"] == "ABSENT"
     assert certificate["SPAG"]["public_beta_TM_identifiable"] is False
+    assert certificate["SPAG"]["public_second_pass_frozen_query_count"] == 28
+    assert certificate["SPAG"]["public_second_pass_new_lineage_roots"] == 0
+    assert certificate["SPAG"]["public_second_pass_component_roots"] == 2
+    assert certificate["SPAG"]["public_second_pass_result_is_exhaustive_world_search"] is False
+    assert certificate["SPAG"]["panda_response_holdout_opened"] is False
     assert certificate["program_authorizations"]["old_SPAG_local_RGRL_C_force_labels_authorized"] is False
-    assert certificate["custody"]["artifact_count"] == 34
+    assert (
+        certificate["program_authorizations"][
+            "autonomous_q4_support_or_full_pair_field_lift_derived"
+        ]
+        is False
+    )
+    assert certificate["custody"]["artifact_count"] == 46
     assert len(certificate["custody"]["core_source_pairs"]) == 6
     assert (
         certificate["custody"]["core_source_pairs"][4]["label"]
         == "f3_record_front_lorentz_cone_refinement"
     )
     advance_custody = certificate["custody"]["advance_source_pairs"]
-    assert len(advance_custody) == 8
+    assert len(advance_custody) == 14
     assert tuple(item["label"] for item in advance_custody) == tuple(
         label for label, _, _ in gft._ADVANCE_SOURCE_PAIRS
     )
     assert advance_custody[3]["label"] == "f3_q4_carrier_lift_derivability_boundary"
     assert advance_custody[4]["label"] == "q4_pair_field_lift_derivability_boundary"
     assert advance_custody[5]["label"] == "f3_q4_finite_programmed_support_solder"
+    assert advance_custody[6]["label"] == "f3_q4_programmed_floquet_detuning"
+    assert advance_custody[7]["label"] == "f3_q4_authenticated_link_pair_response"
+    assert advance_custody[8]["label"] == "f3_q4_ice_hybrid_tensor_response"
+    assert advance_custody[9]["label"] == "f3_q4_maxwell_composite_pole_screen"
+    assert advance_custody[11]["label"] == "spag_public_data_second_pass"
+    assert advance_custody[11]["audit_path"] == (
+        "LANE_GRA_SPAG_PUBLIC_DATA_SECOND_PASS_V001/POST_INTEGRATION_CUSTODY_REAUDIT.md"
+    )
+    assert advance_custody[11]["audit_sha256"] == (
+        "dcc170c2674fe0020f679e523ab40689be7efd32e05e71fe7600d9bbf4047e97"
+    )
+    assert advance_custody[13]["label"] == "nist_bipm_g_forward_readiness"
     clarification_custody = certificate["custody"]["adopted_clarification_chain"]
     assert len(clarification_custody) == 4
     assert tuple(item["label"] for item in clarification_custody) == tuple(
@@ -192,7 +246,12 @@ def main() -> int:
             gft._CORE_SOURCE_PAIRS[4][1][0],
             gft._ADVANCE_SOURCE_PAIRS[3][1][0],
             gft._ADVANCE_SOURCE_PAIRS[4][2][0],
-            gft._ADVANCE_SOURCE_PAIRS[7][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[6][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[8][2][0],
+            gft._ADVANCE_SOURCE_PAIRS[9][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[11][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[11][2][0],
+            gft._ADVANCE_SOURCE_PAIRS[13][1][0],
         )
         for relative in tamper_targets:
             target = copied_root / relative

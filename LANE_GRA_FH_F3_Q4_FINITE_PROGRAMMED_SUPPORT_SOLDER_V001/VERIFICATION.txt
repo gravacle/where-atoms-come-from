@@ -15,11 +15,23 @@ PASS  pulse maps |K=1,n=0> to i|K=1,n=1>
 PASS  pulse is identity on the K=0 nonedge block
 PASS  saturated physical support equals q4 append incidence B_N
 PASS  all parent-guard adjacency columns are zero
-PASS  declared K=0,n=0 nonedge block is locally invariant
+PASS  qualified K=0,n=0 nonedge block is exactly invariant
+PASS  qualified hold exactly conserves K support
+PASS  K-gated actuator may evolve active n while conserving K
+PASS  K support and active n are distinct factors
+PASS  FD comparator with both flip actuators off conserves saturated n
+PASS  raw ungated X would violate blank-nonedge quarantine
 PASS  mandatory ceiling present: fixed orthogonal finite program
 PASS  mandatory ceiling present: one active BQ4 factor is not a tensor product
 PASS  mandatory ceiling present: supplied cap, address maps, edge list
-PASS  mandatory ceiling present: passive retention only
+PASS  mandatory ceiling present: passive support retention only
+PASS  mandatory ceiling present: raw ungated flip would take a
+PASS  mandatory ceiling present: but not the subsequently active
+PASS  mandatory ceiling present: merely stroboscopic echo
+PASS  mandatory ceiling present: [H_{\rm hold},\Pi_{p_N,E_N}]=0
+PASS  mandatory ceiling present: premise of the qualified
+PASS  mandatory ceiling present: qualified raw-flip-free
+PASS  mandatory ceiling present: keep both the raw ungated BS06 flip and the PESC `K`-gated incidence flip exactly zero
 PASS  mandatory ceiling present: Physical energies, port matrices, and calibration remain supplied
 PASS  mandatory ceiling present: positive uniform child/parent detuning
 PASS  mandatory ceiling present: Omega_2(E_N)=\varnothing
@@ -35,4 +47,4 @@ PASS  dependency present: LANE_CROSS_RFT_GRA_DW_F3_AUTHENTICATED_SUPPORT_SECTOR_
 PASS  dependency present: LANE_GRA_FF_F3_Q4_CARRIER_LIFT_DERIVABILITY_NO_GO_V001
 PASS  display-math delimiters balanced
 PASS  Markdown backticks balanced
-SUMMARY 37/37 checks passed
+SUMMARY 49/49 checks passed

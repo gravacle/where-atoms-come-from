@@ -3484,6 +3484,50 @@ The statements above are synthesized from the following local results:
 - [running-alpha complete-stress and influence-gamma bridge](LANE_CROSS_RFT_MGFT_RUNNING_ALPHA_COMPLETE_STRESS_V001/RESULT.md)
 - [founding design and alpha-input decision](FOUNDING_DESIGN_V001.md)
 
+## No-laboratory F3/q4 continuation
+
+The latest no-laboratory calculation closes several previously separate
+finite-parent gaps without claiming that a controller is a law of nature. The
+corrected programmed support theorem requires both the raw BS06 incidence flip
+and the PESC `K`-gated flip to be off or continuously cancelled during a claimed
+invariant hold. On that joint sector, the existing next-slab onsite term can be
+scheduled with the inherited hopping term to give an exact child-only phase, a
+uniform parent/child Floquet quasienergy separation, and an exact parent branch
+`f(B^dagger B)`. The static source-off stagger remains absent, so this is an
+owned finite control result rather than an autonomous detuned phase.
+
+The physical q4 links also carry more response than the earlier static FPMH
+register screen showed. Their six Walsh-pair operators have exact nonzero
+finite `A1/E/T2` response before ice projection, neighboring cells share an
+exact link kernel, and the inherited degree term spreads operator support. In
+the two-in/two-out ice fiber, however, the six-pair count collapses: one-link
+contrasts span `T2`, centered pairs span only `E`, and pair `A1` is fixed. An
+independently owned scalar yields an exact `A1+E+T2` representation candidate,
+but the direct symmetric Fisher `T2` derivative vanishes by complement parity.
+On a supplied compatible completed ice domain, inherited ring dynamics make
+`E/T2` nonconserved and give a finite response at the ring scale; this is not a
+massless tensor.
+
+The infrared pole classification removes the most tempting overpromotion. At
+the separately supplied complement-symmetric Gaussian-Maxwell fixed point, the
+correctly oriented one-link flux has the spin-one photon pole. The centered
+even pair channel has a two-photon continuum and contact terms. A local
+tetrahedral `S4` decomposition is therefore not evidence for continuum
+helicity two. The lawful next theoretical calculation is the inherited
+non-Gaussian even-channel TT kernel; if it supplies no isolated protected pole,
+the successor must be a distinct same-parent rank-two constrained collective
+architecture rather than a relabeling of the photon or its continuum.
+
+The two empirical substitutes now have equally sharp ceilings. A second
+28-query public search retained no same-parent lineage dataset, although a
+strontium-clock network and levitated femtonewton calibration improve protocol
+design. The NIST/BIPM public apparatus reduces exactly to eight torque summary
+observations in the finite-apparatus forward map, but free source scale,
+configuration-remainder aliasing, missing covariance, and ten absent fields
+prevent an independent real `G` fit. These are readiness results, not physical
+nulls or new numerical constants. The consolidated disposition is
+[the no-laboratory gravity program status](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
+
 ## Bottom line
 
 The present theory does not say that microscopic records contain little pieces

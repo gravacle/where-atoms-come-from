@@ -16,7 +16,7 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V003"
+SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V004"
 CLAIM_CLASS = (
     "ADOPTED_RGRL_OFFSHELL_ANCESTRY_AND_EXACT_CONDITIONAL_WORKING_THEORY_"
     "CLOSURE_WITH_SEPARATE_ONSHELL_RESPONSE_CEILING"
@@ -195,11 +195,55 @@ _ADVANCE_SOURCE_PAIRS = (
         "f3_q4_finite_programmed_support_solder",
         (
             "LANE_GRA_FH_F3_Q4_FINITE_PROGRAMMED_SUPPORT_SOLDER_V001/THEOREM.md",
-            "40f70b76dd1b9ab32c2c47cece371cd9bf97247f18073e283c0a898f50b947e6",
+            "2b88febc569efa0de0238e8000d018bf3f798a8ebed2e4ff1327f053d6bd9284",
         ),
         (
-            "LANE_GRA_FH_F3_Q4_FINITE_PROGRAMMED_SUPPORT_SOLDER_V001/INDEPENDENT_AUDIT.md",
-            "dd512525d8d763fbec27fc7a4fd17b13e7999ec5f3446ee90e031500971dec3e",
+            "LANE_GRA_FH_F3_Q4_FINITE_PROGRAMMED_SUPPORT_SOLDER_V001/INDEPENDENT_REAUDIT.md",
+            "5c275748d54743ef44098f74c4c5698aead0845d51e6c2dcf32a1bef63f0c7bf",
+        ),
+    ),
+    (
+        "f3_q4_programmed_floquet_detuning",
+        (
+            "LANE_GRA_FI_F3_Q4_PROGRAMMED_FLOQUET_DETUNING_V001/THEOREM.md",
+            "09a9e2ee46acf10dbde91e9578576cb537fe5aff4a9dea513d4c1f208e62de4c",
+        ),
+        (
+            "LANE_GRA_FI_F3_Q4_PROGRAMMED_FLOQUET_DETUNING_V001/INDEPENDENT_REAUDIT.md",
+            "7ed8f5ddff642fa45c36718be0346ee25280ed20f1e04a2ec2038393654ea244",
+        ),
+    ),
+    (
+        "f3_q4_authenticated_link_pair_response",
+        (
+            "LANE_GRA_FJ_F3_Q4_AUTHENTICATED_LINK_PAIR_RESPONSE_V001/THEOREM.md",
+            "05f4a619a6f80aa40c48570ab4035ab874426502a31468a08f435e66610bd769",
+        ),
+        (
+            "LANE_GRA_FJ_F3_Q4_AUTHENTICATED_LINK_PAIR_RESPONSE_V001/INDEPENDENT_AUDIT.md",
+            "44690ad431c85af7a4947a431a4c57ad4cd8b19a346e3d26720b341f77256f90",
+        ),
+    ),
+    (
+        "f3_q4_ice_hybrid_tensor_response",
+        (
+            "LANE_GRA_FK_F3_Q4_ICE_HYBRID_TENSOR_RESPONSE_V001/THEOREM.md",
+            "cd9d6c2ad704136b8fb89dea54fdcfa3fc57d393bf37762ddd5bfe5dc8bbab98",
+        ),
+        (
+            "LANE_GRA_FK_F3_Q4_ICE_HYBRID_TENSOR_RESPONSE_V001/INDEPENDENT_AUDIT.md",
+            "c52eab9d701d1c6e82f1d7ec395841f4d2810e96cccbc3e2504760b6742e81e4",
+        ),
+    ),
+    (
+        "f3_q4_maxwell_composite_pole_screen",
+        (
+            "LANE_GRA_FL_F3_Q4_MAXWELL_COMPOSITE_POLE_SCREEN_V001/THEOREM.md",
+            "98e2b3bc7a1c998d7839dc1a6b435cc1c8ed6d5a622ba45f63571be9ef646452",
+        ),
+        (
+            "LANE_GRA_FL_F3_Q4_MAXWELL_COMPOSITE_POLE_SCREEN_V001/INDEPENDENT_AUDIT.md",
+            "327bf6a4476c4c6382757dc156a96c6032233d34c25c1f7935e2582acf6c607a",
         ),
     ),
     (
@@ -214,6 +258,17 @@ _ADVANCE_SOURCE_PAIRS = (
         ),
     ),
     (
+        "spag_public_data_second_pass",
+        (
+            "LANE_GRA_SPAG_PUBLIC_DATA_SECOND_PASS_V001/PUBLIC_DATA_SECOND_PASS.md",
+            "3d4300b9c2998aab4a485771f097f860e570a3931b8a948be9e1b034925931a8",
+        ),
+        (
+            "LANE_GRA_SPAG_PUBLIC_DATA_SECOND_PASS_V001/POST_INTEGRATION_CUSTODY_REAUDIT.md",
+            "dcc170c2674fe0020f679e523ab40689be7efd32e05e71fe7600d9bbf4047e97",
+        ),
+    ),
+    (
         "calibrated_finite_apparatus_g_crosscheck",
         (
             "LANE_GRA_GC_CALIBRATED_FINITE_APPARATUS_G_CROSSCHECK_V001/THEOREM.md",
@@ -222,6 +277,17 @@ _ADVANCE_SOURCE_PAIRS = (
         (
             "LANE_GRA_GC_CALIBRATED_FINITE_APPARATUS_G_CROSSCHECK_V001/HOSTILE_SELF_AUDIT.md",
             "d00b69cbc9bf2d352a003502976bf6ccb35af0176b71f70b58b0530b174e1315",
+        ),
+    ),
+    (
+        "nist_bipm_g_forward_readiness",
+        (
+            "LANE_GRA_FI_NIST_BIPM_G_FORWARD_READINESS_V001/READINESS.md",
+            "824fd6ea9dc62e564f18875f90f460a1358b9d9acb84a99a6a04d984c6a6d0ef",
+        ),
+        (
+            "LANE_GRA_FI_NIST_BIPM_G_FORWARD_READINESS_V001/INDEPENDENT_AUDIT.md",
+            "6917298439d708931fa50201459659b10802aa13a36c6f39cf2dfdf80840b90e",
         ),
     ),
 )
@@ -405,7 +471,30 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "q4_finite_programmed_support_solder": (
                     "EXACT_FOR_SUPPLIED_FINITE_HARDWARE_ADDRESS_EDGE_LIST_CAP_SCHEDULE_AND_PORTS"
                 ),
+                "q4_finite_programmed_hold_condition": (
+                    "RAW_AND_K_GATED_INCIDENCE_FLIPS_EXACTLY_OFF_OR_CONTINUOUSLY_CANCELLED"
+                ),
+                "q4_programmed_floquet_detuning": (
+                    "EXACT_CHILD_ONLY_PHASE_AND_UNIFORM_PARENT_CHILD_QUASIENERGY_SEPARATION_"
+                    "FOR_SUPPLIED_REPEATABLE_DUAL_FLIP_FREE_SCHEDULE"
+                ),
+                "q4_programmed_floquet_parent_branch": (
+                    "EXACT_FUNCTION_OF_B_DAGGER_B_WITH_CONTROLLED_SIBLING_KERNEL"
+                ),
+                "q4_static_source_off_child_parent_stagger": "ABSENT",
                 "q4_raw_finite_slab_global_d2_ice": "EXACTLY_EMPTY",
+                "q4_ice_local_diagonal_module": "A1_PLUS_E_PLUS_T2_EXACT",
+                "q4_ice_one_link_module": "T2_RANK_3_EXACT",
+                "q4_ice_pair_module": "A1_PLUS_E_RANK_3__CENTERED_TANGENT_E_RANK_2",
+                "q4_ice_hybrid_tensor_representation": (
+                    "INDEPENDENT_A1_PLUS_PAIR_E_PLUS_ONE_LINK_T2_EXACT_ISOMORPHISM_CANDIDATE"
+                ),
+                "q4_ice_symmetric_fisher_T2_first_derivative": "EXACTLY_ZERO_BY_COMPLEMENT_PARITY",
+                "q4_ice_ring_E_T2_dynamics": "EXACT_FINITE_COMMUTATORS_AND_LINKED_RING_RESPONSE",
+                "q4_ice_global_ring_domain": "REQUIRES_COMPATIBLE_BOUNDARY_PERIODIC_OR_CONTROLLED_INFINITE_COMPLETION",
+                "q4_gaussian_maxwell_pole_screen": (
+                    "EXACT_CONDITIONAL_SPIN1_LINK_POLE_PAIR_CONTINUUM_NO_ISOLATED_HELICITY2"
+                ),
             },
             "kernel_reduction": {
                 "scope": "Q4_TETRAHEDRAL_S4_FIXED_POINT_LOCAL_OR_K_ZERO",
@@ -420,6 +509,19 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "offshell_metric_tangent_rank": "FULL_ON_ADMITTED_SIX_DIRECTIONS",
                 "onshell_H_R_nonzero": "NOT_IMPLIED_AND_MAY_VANISH_IN_FULLY_MATCHED_LANE",
                 "GI21_compatibility_type_join": "OPEN",
+                "finite_physical_link_pair_response": (
+                    "EXACT_A1_E_T2_RESPONSE_ON_UNCONSTRAINED_FOUR_LINK_BLOCK"
+                ),
+                "finite_adjacent_cell_pair_kernel": "EXACT_NONZERO_SHARED_LINK_RESPONSE",
+                "ice_projected_pair_tangent": "E_ONLY_RANK_2",
+                "ice_hybrid_symmetric_tensor_representation": "A1_PLUS_E_PLUS_T2_CANDIDATE_EXACT",
+                "ice_physical_metric_T2_linear_response": "OPEN__DIRECT_SYMMETRIC_QUERY_ZERO",
+                "gaussian_maxwell_one_link_pole": "SPIN_1_PHOTON_CONDITIONAL_ON_MAXWELL_IR",
+                "gaussian_maxwell_centered_pair_spectrum": (
+                    "TWO_PHOTON_CONTINUUM_PLUS_CONTACTS_CONDITIONAL_ON_MAXWELL_IR"
+                ),
+                "gaussian_maxwell_isolated_helicity2_pole": "ABSENT_IN_DIRECT_COMPOSITE_ROUTE",
+                "finite_group_S4_label_determines_continuum_spin": False,
             },
             "microscopic_parent_boundary": {
                 "scalar_carrier_transfer_on_supplied_saturated_q4_support": (
@@ -431,13 +533,34 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 ),
                 "finite_programmed_solder_is_autonomous_support_selection": False,
                 "finite_programmed_solder_is_scalable_thermodynamic_instantiation": False,
-                "positive_child_parent_carrier_detuning": "NOT_OWNED_BY_CURRENT_SOURCE_OFF_PARENT",
+                "positive_child_parent_carrier_detuning": "NOT_OWNED_BY_CURRENT_STATIC_SOURCE_OFF_PARENT",
+                "positive_programmed_floquet_carrier_detuning": (
+                    "EXACT_ON_SUPPLIED_REPEATABLE_DUAL_FLIP_FREE_CONTROLLER_SCHEDULE"
+                ),
+                "programmed_floquet_detuning_is_autonomous_phase": False,
                 "full_hopping_and_d2_ice_same_n_coexistence": "EXACTLY_INCOMPATIBLE",
                 "six_static_pair_registers": "EXACT_FINITE_S4_REPRESENTATION",
                 "inherited_pair_projector_dynamics": "CONSERVE_EVERY_PAIR_PROJECTOR",
                 "interpair_retarded_kernel": "EXACTLY_ZERO_UNDER_INHERITED_DYNAMICS",
-                "q4_pair_solder": "OPEN",
-                "noncommuting_pair_field_dynamics": "OPEN",
+                "physical_q4_link_walsh_pairs": (
+                    "EXACT_OPERATOR_REALIZATION_ON_FPMH_QUALIFIED_FINITE_PROGRAMMED_LINK_FACTORS"
+                ),
+                "physical_q4_link_pair_response": (
+                    "EXACT_FINITE_LOCAL_AND_SHARED_LINK_RESPONSE_WITH_OPERATOR_SPREADING"
+                ),
+                "physical_q4_link_pairs_are_automatically_PMMDC_records": False,
+                "q4_pair_operator_realization": (
+                    "EXACT_FINITE_WALSH_ALGEBRA__FULL_PMMDC_AND_METRIC_SOLDER_OPEN"
+                ),
+                "noncommuting_pair_field_dynamics": (
+                    "EXACT_FINITE_LINK_AND_ICE_RING_DYNAMICS__THERMODYNAMIC_TENSOR_FIELD_OPEN"
+                ),
+                "ice_hybrid_tensor_solder": (
+                    "EXACT_REPRESENTATION_CANDIDATE__PHYSICAL_METRIC_T2_RESPONSE_AND_CALIBRATION_OPEN"
+                ),
+                "ice_ring_response_pole": "FINITE_2J6_NOT_MASSLESS_TENSOR",
+                "direct_gaussian_composite_tensor_route": "EXACT_CONDITIONAL_NO_GO",
+                "next_tensor_route": "INHERITED_NON_GAUSSIAN_TT_KERNEL_OR_DISTINCT_RANK2_CONSTRAINED_PHASE",
                 "new_interaction_or_second_field_adopted": False,
             },
             "numerical_G": {
@@ -456,6 +579,13 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "free_global_source_scale_degeneracy": "F_G_S_EQUALS_F_GQ_S_OVER_Q",
                 "independent_source_interval_maps_to_G_interval": "G_IN_P_MINUS_OVER_S_PLUS_TO_P_PLUS_OVER_S_MINUS",
                 "synthetic_validation": "PASS_15_OF_15_WITH_ARBITRARY_NONEMPIRICAL_G",
+                "nist_bipm_public_reduced_forward": "DELTA_N_J_EQUALS_G_A_J_PLUS_R_J_EXACT",
+                "nist_bipm_analysis_observations": 8,
+                "nist_bipm_nominal_source_stiffness": "ZERO_AT_TORQUE_EXTREMA",
+                "nist_bipm_G_only_jacobian_rank": 1,
+                "nist_bipm_full_GC16_fit_ready": False,
+                "nist_bipm_public_missing_field_count": 10,
+                "nist_bipm_independent_G_crosscheck_performed": False,
             },
             "SPAG": {
                 "status": "HISTORICAL_AUDITED_PROTOCOL_SUPERSEDED_FOR_FUTURE_ONSHELL_USE",
@@ -478,6 +608,12 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "page_geilker_generous_proxy_rank": "2_OF_8",
                 "nist_bipm_planning_envelope_nN_m": "0.00019286904345467502_TO_0.000578607130364025",
                 "public_result_is_lineage_null": False,
+                "public_second_pass_executed": True,
+                "public_second_pass_frozen_query_count": 28,
+                "public_second_pass_new_lineage_roots": 0,
+                "public_second_pass_component_roots": 2,
+                "public_second_pass_result_is_exhaustive_world_search": False,
+                "panda_response_holdout_opened": False,
             },
             "scientific_status": {
                 "nature_obeys_RGRL": "NOT_ESTABLISHED_BY_THIS_CERTIFICATE",
@@ -493,7 +629,13 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "public_same_parent_lineage_estimand": "NOT_IDENTIFIED_IN_ADMITTED_DATA",
                 "finite_apparatus_G_measurement": "NOT_PERFORMED",
                 "autonomous_q4_support_selection": "OPEN",
-                "q4_pair_field_lift": "OPEN",
+                "autonomous_q4_detuning_phase": "OPEN",
+                "q4_pair_field_lift": "PARTIAL_FINITE_OPERATOR_AND_RESPONSE_REALIZATION",
+                "physical_metric_pair_solder": "OPEN",
+                "thermodynamic_massless_tensor_phase": "OPEN",
+                "compatible_global_ice_completion": "SUPPLIED_NOT_DERIVED",
+                "direct_gaussian_composite_helicity2_route": "CLOSED_NEGATIVE",
+                "inherited_non_gaussian_TT_kernel": "OPEN",
                 "caller_input_scientific_weight": "ZERO",
             },
             "program_authorizations": {
@@ -509,7 +651,14 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "numerical_G_derived_from_records": False,
                 "public_data_lineage_null_authorized": False,
                 "finite_apparatus_G_measurement_authorized": False,
-                "q4_support_or_pair_lift_claimed_derived": False,
+                "autonomous_q4_support_or_full_pair_field_lift_derived": False,
+                "programmed_floquet_detuning_derived": True,
+                "autonomous_q4_detuning_phase_derived": False,
+                "finite_physical_link_pair_response_derived": True,
+                "physical_metric_pair_solder_derived": False,
+                "ice_hybrid_tensor_representation_derived": True,
+                "massless_tensor_from_ice_ring_response_derived": False,
+                "gaussian_composite_helicity2_pole_derived": False,
                 "gravity_solver": False,
                 "caller_data_admitted": False,
             },
@@ -530,6 +679,13 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "static_pair_register_promotes_propagating_pair_field": False,
                 "public_data_design_ceiling_promotes_empirical_null": False,
                 "synthetic_finite_apparatus_G_fit_promotes_measurement": False,
+                "programmed_floquet_gap_promotes_static_or_autonomous_detuning": False,
+                "finite_link_pair_response_promotes_PMMDC_solder_or_metric": False,
+                "ice_representation_isomorphism_promotes_physical_metric": False,
+                "finite_ring_response_promotes_massless_tensor": False,
+                "spin1_photon_or_two_photon_continuum_promotes_graviton": False,
+                "public_component_dataset_promotes_lineage_estimand": False,
+                "nist_summary_reduction_promotes_independent_G_measurement": False,
             },
             "custody": {
                 "verification": "TWO_PASS_EXACT_SHA256_WITH_SYMLINK_REFUSAL",

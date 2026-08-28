@@ -8,11 +8,12 @@
 
 **Claim class:** exact finite q4 slab census; exact reversible programmed
 site/edge preparation using already admitted BQ4/FPMH/PESC/F3 hardware types;
-exact nonedge/guard quarantine and history-blind fixed-program hold; exact
-finite FD support inheritance; exact raw-slab FE boundary obstruction
+exact nonedge/guard quarantine under a qualified raw-flip-free,
+history-blind fixed-program hold; exact finite FD support inheritance; exact
+raw-slab FE boundary obstruction
 
 **Status:**
-`FINITE_Q4_SITE_EDGE_SOLDER_PROGRAMMABLE_WITH_EXISTING_TYPES__REVERSIBLE_FIXED_ORTHOGONAL_PROGRAM_AND_COMPLETE_CUSTODY_EXACT__NONEDGE_GUARD_QUARANTINE_EXACT__FD_SUPPORT_PART_CLOSED_BUT_POSITIVE_DETUNING_OPEN__RAW_FINITE_SLAB_GLOBAL_D2_ICE_EMPTY__FE_LOCAL_INTERIOR_SUPPORT_ONLY__AUTONOMOUS_SELECTION_SCALING_AND_SAME_N_COEXISTENCE_OPEN`
+`FINITE_Q4_SITE_EDGE_SOLDER_PROGRAMMABLE_WITH_EXISTING_TYPES__REVERSIBLE_FIXED_ORTHOGONAL_PROGRAM_AND_COMPLETE_CUSTODY_EXACT__QUALIFIED_RAW_FLIP_FREE_NONEDGE_GUARD_QUARANTINE_EXACT__FD_SUPPORT_PART_CLOSED_BUT_POSITIVE_DETUNING_OPEN__RAW_FINITE_SLAB_GLOBAL_D2_ICE_EMPTY__FE_LOCAL_INTERIOR_SUPPORT_ONLY__AUTONOMOUS_SELECTION_SCALING_AND_SAME_N_COEXISTENCE_OPEN`
 
 **Not claimed:** derivation of many coexisting F3 sites from one active BQ4
 front; autonomous choice, correction, energetic stabilization, or scalable
@@ -256,16 +257,30 @@ derive or measure them.  QED.
 ## 4. Exact padding/nonedge quarantine and history-blind hold
 
 After (FH16), turn off source, writer, route, copy, and preparation pulses and
-quarantine the old source.  Retain all their factors.  In the hold, use only
-the already admitted PESC/F3 terms.  Every nonedge satisfies `K_e=0,n_e=0`.
-The `K_eX_(n_e)` term vanishes there; degree and incidence energies are
-diagonal in `n`; and the BS09/BS11 carrier terms contain `n_e` as a
-multiplicative control.  Hence
+quarantine the old source.  Retain all their factors.  Throughout any hold in
+which the explicit `D_N\setminus E_N` nonedges are required to remain blank,
+the fixed program also keeps the **raw ungated** BS06 term
+`-h_N sum_(e in D_N) X_e` exactly zero in the hold generator, either by
+switching it off or by continuous exact cancellation.  A merely
+stroboscopic echo which leaves and later returns to the blank sector does not
+establish the instantaneous invariant-subspace statement below; under such an
+echo only the declared sampling-time return map, not (FH17)--(FH19) as
+Hamiltonian identities, would be earned.  If an incidence-changing actuator
+is used in the qualified hold, it is the already admitted PESC
+`-h sum_e P^K_e X_e`, whose controller/work schedule is retained.  This
+qualification is necessary: the raw ungated flip would take a
+`K_e=0,n_e=0` nonedge out of the blank block.
+
+All remaining terms are already admitted PESC/F3 terms.  Every nonedge
+satisfies `K_e=0,n_e=0`.  The `K_eX_(n_e)` term vanishes there; degree and
+incidence energies are diagonal in `n`; and the BS09/BS11 carrier terms
+contain `n_e` as a multiplicative control.  Hence
 
 \[
  \mathcal H_{\rm quar}=
- \operatorname{span}\{|K_e=0,n_e=0\rangle:
-                         e\in D_N\setminus E_N\}             \tag{FH17}
+ \left(\bigotimes_{e\in D_N\setminus E_N}
+ \operatorname{span}\{|0\rangle_{K_e}|0\rangle_{n_e}\}\right)
+ \otimes\mathcal H_{\rm rest}                               \tag{FH17}
 \]
 
 is invariant.  Every guard carrier begins blank.  It has no occupied
@@ -276,17 +291,23 @@ fixed admitted block; it is not a claim that guards are selected by an energy
 minimum.
 
 Let `H_hist` include every BQ4 order/provenance/scaffolding/routing factor and
-every compiler formation/route history.  On the fixed support block, the
-hold has the exact form
+every compiler formation/route history.  Let `Pi_(p_N,E_N)` fix the orthogonal
+program and authenticated `K` support word, but not the subsequently active
+`n` word.  On that fixed support block, the qualified hold has the exact form
 
 \[
+ [H_{\rm hold},\Pi_{p_N,E_N}]=0,
+ \qquad
  \Pi_{p_N,E_N}H_{\rm hold}\Pi_{p_N,E_N}
  =\Pi_{p_N,E_N}\otimes I_{\rm hist}
   \otimes H_{\rm F3}^{(N)}(E_N),                            \tag{FH18}
 \]
 
 up to independent port Hamiltonians that act as identity on support and
-formation history.  ASSC additionally gives
+formation history.  This factorization is a premise of the qualified
+fixed-program hold: every history-writing coupling is off and the remaining
+controller/port evolution is independent of formation history.  It is not a
+claim about an arbitrary source-off F3 Hamiltonian.  ASSC additionally gives
 
 \[
  [H_{\rm hold},P^K_e]=0,
@@ -297,12 +318,14 @@ for every authenticated-support word `s`.
 
 ### Theorem `FPSS-3` -- exact quarantine and passive hold
 
-The programmed q4 support, blank nonedges, and blank padding carriers are
-exact invariant sectors of the declared source-off hold, and carrier/link
+The programmed q4 `K` support, blank nonedges, and blank padding carriers are
+exact invariant sectors of the qualified source-off hold, and carrier/link
 evolution is blind to the retained BQ4 and compiler histories as in (FH18).
-This is passive retention only.  Equation (FH19) conserves every wrong,
-dense, disconnected, and non-q4 support word just as exactly; it supplies no
-selection, correction, attraction basin, or scalable preparation law.
+The optional saturated `n` word is not asserted to remain fixed when the
+`K`-gated actuator is on.  This is passive support retention only.  Equation
+(FH19) conserves every wrong, dense, disconnected, and non-q4 `K` support
+word just as exactly; it supplies no selection, correction, attraction basin,
+or scalable preparation law.
 
 The fixed-orthogonal-program premise is load-bearing.  If different support
 programs were coherently superposed, the subsequent controlled F3 evolution
@@ -314,7 +337,11 @@ would not be the single history-blind block (FH18).
 On the saturated output (FH15), restrict to one carrier of one fixed content,
 exclude the invariant blank guards, and set the optional diagonal comparator
 coefficients to their already lawful zero values, in particular
-`lambda_J=0`.  The BS09 off-diagonal
+`lambda_J=0`.  During this FD carrier comparator, keep both the raw ungated
+BS06 flip and the PESC `K`-gated incidence flip exactly zero in the generator.
+All retained incidence terms are then diagonal in `n`, so the saturated `n`
+word is an invariant block rather than merely an instantaneous preparation
+output.  The BS09 off-diagonal
 carrier block between the two active layers is exactly
 
 \[
@@ -406,7 +433,8 @@ The strongest earned statement is:
 \begin{gathered}
 \text{A supplied finite q4 slab can be reversibly programmed into}\
 \text{the existing F3/PESC site, support, and link hardware with exact}\
-\text{padding/nonedge quarantine and a fixed-program history-blind hold.}
+\text{padding/nonedge quarantine in a qualified raw-flip-free,}\
+\text{fixed-program history-blind hold.}
 \end{gathered}}                                                   \tag{FH26}
 \]
 

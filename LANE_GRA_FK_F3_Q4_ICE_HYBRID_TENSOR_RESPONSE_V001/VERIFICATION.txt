@@ -1,0 +1,25 @@
+GRA-FK-F3-Q4-IHTR-V001 verification
+Date: 2026-08-27
+
+Command:
+python3 LANE_GRA_FK_F3_Q4_ICE_HYBRID_TENSOR_RESPONSE_V001/verify_ice_hybrid_tensor_response.py
+
+Result:
+SUMMARY 74/74 PASS
+VERDICT ICE_MODULE_AND_ABSTRACT_HYBRID_REPRESENTATION_PASS__SYMMETRIC_FISHER_PAIR_E_PASS_BUT_T2_FIRST_ORDER_ZERO__RING_RESPONSE_PASS__PHYSICAL_METRIC_MASSLESS_TENSOR_AND_GRAVITY_OPEN
+
+Pinned theorem dependencies:
+CW     5e68e4a8c62ad89cff309781a5cb54e071092e82594e60c04e7992414bc18dbe
+FE     4cc63e3e5853b4250a2a5b78256d41b83b195cf527901819a62a04ef53f8d932
+FH     2b88febc569efa0de0238e8000d018bf3f798a8ebed2e4ff1327f053d6bd9284
+FH-A2  5c275748d54743ef44098f74c4c5698aead0845d51e6c2dcf32a1bef63f0c7bf
+FJ     05f4a619a6f80aa40c48570ab4035ab874426502a31468a08f435e66610bd769
+FJ-A1  44690ad431c85af7a4947a431a4c57ad4cd8b19a346e3d26720b341f77256f90
+PMMDC  495e4e99171f4e3e5809f24e5a9a5b68116e996f4f29115bd22f780127d4714e
+
+The replay verifies the exact local S4 decomposition, the abstract hybrid
+representation rank, the symmetric-ice Fisher-query T2 first-order no-go and
+pair-E normalization, the inherited 63/8 ring coefficient, all 64 Walsh
+parities, exact commutators, the compressed finite response, the corrected
+global-support/flippability domain, final FH/FJ audit custody, claim ceilings,
+balanced display math, and absence of CR/BS/FF control bytes in THEOREM.md.

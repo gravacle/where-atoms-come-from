@@ -50,7 +50,7 @@ silently use them as the public path.
 | physics-role status | `roles` | claim-scoped EM, gamma, Alpha-inheritance, and gravity status, including the exact first-record gamma-information seed, the SAI/AWAI actual-visible-sector theorem, the adopted off-shell/on-shell RGRL distinction, and the conditional record-front cone refinement; descriptive metadata, not a gravity solver |
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
-| Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for adopted RGRL, its adopted off-shell/on-shell clarification, V002 dressed-response ceilings, the conditional record-front cone theorem, and the exact conditional working-theory closure; empirical RGRL/EIR/AFR confirmation, the GI21 type join, and microscopic numerical-(G) derivation remain open |
+| Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for adopted RGRL, its adopted off-shell/on-shell clarification, V002 dressed-response ceilings, the conditional record-front cone theorem, audited q4/no-laboratory microscopic advances, and the exact conditional working-theory closure; empirical RGRL/EIR/AFR confirmation, the GI21 type join, a protected tensor phase, and microscopic numerical-(G) derivation remain open |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -559,14 +559,16 @@ in the certificate is fixed false.
 ## GRAVITY FORMATION THEORY CERTIFICATE
 
 The two zero-argument Gravity Formation Theory methods verify the exact closure
-and audit; six pinned core theorem/audit pairs; eight pinned no-laboratory
+and audit; six pinned core theorem/audit pairs; fourteen pinned no-laboratory
 advance pairs; and the adopted clarification chain consisting of its final
 adoption record and seal, the clarification source, and V002. The advance
 custody covers the q4 collective-cone, common-child/refinement,
 diamond-support, carrier-lift boundary, pair-field boundary, finite programmed
-support-solder, public-data substitute, and finite-apparatus \(G\) results. The
-methods return a recursively immutable status certificate and accept neither
-data nor solver parameters.
+support-solder, programmed Floquet detuning, authenticated link-pair response,
+ice hybrid-tensor and Maxwell pole screens, two public-data passes, and both
+the finite-apparatus and NIST/BIPM \(G\)-readiness results. The methods return a
+recursively immutable status certificate and accept neither data nor solver
+parameters.
 
 The certificate now makes the adopted distinction explicit. RGRL-C supplies
 full-rank or declared dense-range **off-shell constitutive ancestry** on the
@@ -589,6 +591,14 @@ uncertainties give only an optimistic planning envelope of
 `0.000192869--0.000578607 nN m`, not an achieved SPAG limit.  This is an exact
 data-design ceiling, not evidence that a lineage response is zero.
 
+A bounded second pass froze 28 public searches and retained no new qualifying
+same-parent lineage root. It did retain a blinded five-ensemble strontium-clock
+network and a levitated femtonewton gravity-drive workbook as protocol
+components. Neither contains the randomized lineage cells, complete run-level
+covariance, and source ownership needed for \(\beta_{TM}\); the Panda response
+holdout remained closed. The search is reproducible at the query/custody level
+but non-exhaustive because returned-hit rankings were not frozen.
+
 The independently source-calibrated \(G\) lane now has the requested finite-
 apparatus forward model: exact declared extended-source Newtonian torque and
 stiffness kernels, a calibrated two-mode dressed Schur response, single
@@ -600,15 +610,28 @@ source scale obeys \(F(G,s)=F(Gq,s/q)\); an independent
 that calculation, not a measurement of \(G\), a record-derived numerical
 constant, or a lineage source law.
 
+The public NIST/BIPM apparatus has also been reduced to
+\(\Delta N_j=GA_j+r_j\), with
+\(A_j=16\Gamma_jm_sm_t/R_s\), for four configurations in free and servo modes.
+The eight summary observations have a nonzero source column and nominal zero
+source stiffness at the torque extrema. The `G`-only Jacobian has rank one, but
+a free source scale identifies only `Gs`, and one unrestricted remainder per
+configuration exactly aliases the source column. Ten run-level, covariance,
+geometry, and ownership fields remain absent, so this is a real-apparatus
+readiness result rather than an independent numerical \(G\) fit.
+
 The original `AFR` theorem remains one conditional raw-front refinement route.
 A distinct audited collective route now proves the exact finite identity
 \(B_N^\dagger B_N=4I+A_N\), the `A3` root second moment
 \(\sum_{a<b}\alpha_{ab}\alpha_{ab}^{\mathsf T}=16I/3\), the cell covolume
 \(16a_*^3/(3\sqrt3)\), and a refining mathematical affine three-manifold
-atlas.  A prospectively detuned F3-form transfer has the exact Schur sibling
-kernel, and a separately supplied shift-symmetric massless action on that
+atlas. A supplied repeatable hop/next-slab-onsite schedule now gives an exact
+child-only phase, uniform parent/child Floquet quasienergy separation, and an
+exact dressed-parent function of \(B_N^\dagger B_N\). It does not supply a
+static source-off stagger or an autonomous phase. A separately supplied
+shift-symmetric massless action on that
 support has the smooth infrared principal cone
-\(-\omega^2+c_*^2|k|^2=0\).  The detuned carrier lift, pair-field type lift,
+\(-\omega^2+c_*^2|k|^2=0\). The autonomous detuned phase, physical metric solder,
 massless phase, finite-speed clock scaling, common probes, physical volume,
 tensor constraints, stress vertex, and gravity remain open.  A separate
 Clifford stencil theorem supplies an exact prospective first-order Weyl
@@ -632,26 +655,49 @@ the unchanged one-carrier F3 restriction already gives the exact scalar
 incidence transfer \(H_1=C I+\epsilon_\psi I+\lambda_JD-tA\); no new hopping law
 is needed for that restricted result. Current BQ4 counters and append keys do
 not, however, constitute coexisting F3 sites and edges, and the source-off
-parent owns no positive child/parent detuning. Moreover, the full degree-four
+parent owns no static positive child/parent detuning. The programmed Floquet
+gap closes that finite controlled operation only. Moreover, the full degree-four
 carrier slice and the `d_*=2` diamond-ice slice are exactly disjoint when they
 use the same binary incidence field. Six lawful FPMH records can supply a
 static `S4` pair-register representation, but inherited dynamics conserve every
-pair projector, so all interpair retarded kernels vanish. A physical pair
-solder and noncommuting pair-field dynamics therefore remain real missing
-physics; neither a new interaction nor a second field has been adopted.
+pair projector, so all interpair retarded kernels vanish in that register
+construction. On the physical programmed q4 links, however, the same six Walsh
+functions now have exact finite local and shared-link response under inherited
+link dynamics. This is a physical Walsh-operator-algebra realization, not a
+physical PMMDC solder, automatic record qualification, or a metric field;
+neither a new interaction nor a second field has been adopted.
 
 The finite site/edge portion of that support solder is nevertheless now closed
 as an exact **programmed preparation**. Given a supplied finite F3 array,
 address maps, q4 edge list, cap, sources, controller schedule, and complete
 ports, existing FPMH/PESC gates reversibly write and hold the q4 support word,
 quarantine every nonedge and guard, and make BS09 propagate on the exact finite
-q4 incidence matrix. This removes a finite hardware-type obstruction and
+q4 incidence matrix. During the claimed invariant hold, both the raw BS06 flip
+and the PESC `K`-gated incidence flip must be off or continuously cancelled; a
+stroboscopic return alone does not preserve the carrier evolution. This removes
+a finite hardware-type obstruction and
 materially advances the acoustic route. It does not make one BQ4 front into
 many physical sites, autonomously select or stabilize the graph, derive the
-positive child detuning, or establish a scalable phase. The raw finite q4 slab
+static child detuning, or establish a scalable phase. The raw finite q4 slab
 also has an extreme child of degree one, so its global `d_*=2` ice sector is
 exactly empty; only deep-interior local diamond inheritance survives without a
 separately supplied regular boundary completion.
+
+On a compatible completed ice domain, the physical one-link sector is exact
+`T2`, the centered pair tangent is exact rank-two `E`, and pair `A1` is fixed.
+An independently owned scalar plus one-link `T2` plus pair `E` is therefore an
+exact symmetric-tensor representation candidate, while the direct symmetric
+ice Fisher query has zero first-order `T2` response. Inherited sixth-order ring
+dynamics make `E` and `T2` nonconserved and give a finite linked-ring response,
+but its pole is finite rather than a massless tensor. At a separately supplied
+Gaussian-Maxwell infrared fixed point, the oriented one-link channel carries
+the spin-one photon pole and the centered even pair channel carries a
+two-photon continuum plus contacts. Local `S4` tensor counting therefore does
+not yield an isolated helicity-two pole. The direct Gaussian composite shortcut
+is closed; inherited non-Gaussian TT dynamics or a distinct same-parent
+rank-two constrained phase is the next physics target. The consolidated
+no-laboratory disposition is recorded in
+[`NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md`](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
 
 ## VALIDATION
 

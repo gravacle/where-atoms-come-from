@@ -1,0 +1,543 @@
+{
+  "accepted_G_or_CODATA_used": false,
+  "claim_ceiling": {
+    "full_GC16_forward_fit_executed": false,
+    "independent_real_G_estimate": false,
+    "lineage_or_gravity_emergence_test": false,
+    "paper_summary_ratio_reproduced": true
+  },
+  "fields_blocking_full_real_G_fit": [
+    "event-level free-deflection angle/time/frequency data with run and source-position labels",
+    "event-level servo voltage, capacitance-gradient, residual-twist, controller, and timing data",
+    "complete source/test/disk finite-element mass-coordinate and density files used to compute Gamma and its trajectory derivatives",
+    "row-level source/test mass and geometry calibration records plus their joint covariance and global source-scale interval",
+    "full mechanical transfer including total inertia, frequency-dependent torsion response, damping, gimbal/support modes, and any auxiliary-mode couplings",
+    "raw autocollimator calibration curve/ensemble and row-level readout transfer covariance",
+    "eight-row torque observation covariance; Table 18 is only a four-by-four covariance summary of already-derived G values",
+    "signed row-level physical remainder columns/bounds for gas thermal torque, background torque, disk model, local gravity, source drive/support reaction, electromagnetic and controller effects",
+    "complete conserved apparatus stress/source ledger and finite-dither correction to the nominal k_g=0 extremum",
+    "predeclared raw-data nuisance design, held-out rows, likelihood domain, and covariance treatment required by the GC protocol"
+  ],
+  "jacobian_and_identifiability": {
+    "G_and_free_global_source_scale": {
+      "G_separately_identifiable": false,
+      "identified_combination": "p=G*s",
+      "jacobian_rank": 1,
+      "parameter_count": 2
+    },
+    "G_only_identifiable_if_calibration_and_remainders_fixed": true,
+    "G_only_source_column_rank": 1,
+    "G_plus_one_common_remainder_per_configuration": {
+      "G_column_in_nuisance_span": true,
+      "G_identifiable": false,
+      "design_rank": 4,
+      "design_shape": [
+        8,
+        5
+      ],
+      "nuisance_rank": 4
+    },
+    "G_plus_one_free_remainder_per_row": {
+      "G_column_in_nuisance_span": true,
+      "G_identifiable": false,
+      "design_rank": 8,
+      "design_shape": [
+        8,
+        9
+      ]
+    },
+    "G_plus_two_common_method_offsets": {
+      "G_identifiable_under_this_extra_restriction_only": true,
+      "design_rank": 3,
+      "design_shape": [
+        8,
+        3
+      ],
+      "nuisance_rank": 2
+    }
+  },
+  "page_table_custody": {
+    "autocollimator_summary": {
+      "locators": [
+        "Table 14",
+        "equation (62)"
+      ],
+      "pdf_page": 25,
+      "printed_page": 24
+    },
+    "background_and_inertia_checks": {
+      "locators": [
+        "Tables 12-13",
+        "sections 8.2-8.4"
+      ],
+      "pdf_page": 23,
+      "printed_page": 22
+    },
+    "free_transfer_and_nominal_zero_source_stiffness": {
+      "locators": [
+        "equations (6)-(10)",
+        "text below equation (7)"
+      ],
+      "pdf_page": 7,
+      "printed_page": 6
+    },
+    "full_mass_integration_comparators": {
+      "locators": [
+        "Table 10",
+        "sections 6.7-6.9"
+      ],
+      "pdf_page": 18,
+      "printed_page": 17
+    },
+    "geometry_and_torque": {
+      "locators": [
+        "Figure 3",
+        "equations (1)-(5)"
+      ],
+      "pdf_page": 6,
+      "printed_page": 5
+    },
+    "mass_integration_sensitivity": {
+      "locators": [
+        "Table 6",
+        "equations (26)-(33)"
+      ],
+      "pdf_page": 15,
+      "printed_page": 14
+    },
+    "mode_sensitivities": {
+      "locators": [
+        "Table 1",
+        "equation (21)"
+      ],
+      "pdf_page": 10,
+      "printed_page": 9
+    },
+    "nominal_parameters": {
+      "locators": [
+        "Table 2"
+      ],
+      "pdf_page": 11,
+      "printed_page": 10
+    },
+    "torque_rows_and_derived_G": {
+      "locators": [
+        "Tables 15-16"
+      ],
+      "pdf_page": 26,
+      "printed_page": 25
+    },
+    "uncertainty_and_correlation": {
+      "locators": [
+        "Tables 17-18",
+        "equation (63)"
+      ],
+      "pdf_page": 27,
+      "printed_page": 26
+    }
+  },
+  "paper_consensus_or_dark_uncertainty_model_used": false,
+  "published_fields": {
+    "capacitance_gradient_pF_per_rad": {
+      "k12": -0.006,
+      "k13": 0.262,
+      "k23": -0.266
+    },
+    "capacitance_pF": {
+      "C12": 5.6,
+      "C13": 22.03,
+      "C23": 23.4
+    },
+    "disk_moment_of_inertia_kg_m2": 0.00745,
+    "four_derived_G_covariance_inputs": {
+      "order": [
+        "Copper_servo",
+        "Copper_free",
+        "Sapphire_servo",
+        "Sapphire_free"
+      ],
+      "table_16_displayed_relative_u_ppm_rounded": [
+        23.0,
+        30.0,
+        38.0,
+        94.0
+      ],
+      "table_16_value_SI": [
+        6.673642e-11,
+        6.674021e-11,
+        6.672637e-11,
+        6.673636e-11
+      ],
+      "table_17_18_combined_relative_u_ppm": [
+        23.2,
+        30.3,
+        37.5,
+        93.9
+      ]
+    },
+    "pendulum_period_s": 121.0,
+    "source_mass_kg": {
+      "Copper": 11.19168,
+      "Sapphire": 5.0156
+    },
+    "table_15": [
+      {
+        "Gamma": 0.485613,
+        "Rs_mm": 213.968,
+        "configuration": "Sapphire",
+        "mode": "free",
+        "source_type": "Sapphire",
+        "torque_nN_m": 13.9799,
+        "type_A_u_nN_m": 0.0002
+      },
+      {
+        "Gamma": 0.485613,
+        "Rs_mm": 213.968,
+        "configuration": "Sapphire",
+        "mode": "servo",
+        "source_type": "Sapphire",
+        "torque_nN_m": 13.9778,
+        "type_A_u_nN_m": 0.0003
+      },
+      {
+        "Gamma": 0.485637,
+        "Rs_mm": 213.9642,
+        "configuration": "Copper_0_deg",
+        "mode": "free",
+        "source_type": "Copper",
+        "torque_nN_m": 31.1979,
+        "type_A_u_nN_m": 0.0003
+      },
+      {
+        "Gamma": 0.485637,
+        "Rs_mm": 213.9642,
+        "configuration": "Copper_0_deg",
+        "mode": "servo",
+        "source_type": "Copper",
+        "torque_nN_m": 31.1962,
+        "type_A_u_nN_m": 0.0004
+      },
+      {
+        "Gamma": 0.485467,
+        "Rs_mm": 213.9817,
+        "configuration": "Copper_120_deg",
+        "mode": "free",
+        "source_type": "Copper",
+        "torque_nN_m": 31.1842,
+        "type_A_u_nN_m": 0.0003
+      },
+      {
+        "Gamma": 0.485467,
+        "Rs_mm": 213.9817,
+        "configuration": "Copper_120_deg",
+        "mode": "servo",
+        "source_type": "Copper",
+        "torque_nN_m": 31.1828,
+        "type_A_u_nN_m": 0.0006
+      },
+      {
+        "Gamma": 0.485464,
+        "Rs_mm": 213.9822,
+        "configuration": "Copper_240_deg",
+        "mode": "free",
+        "source_type": "Copper",
+        "torque_nN_m": 31.1856,
+        "type_A_u_nN_m": 0.0002
+      },
+      {
+        "Gamma": 0.485464,
+        "Rs_mm": 213.9822,
+        "configuration": "Copper_240_deg",
+        "mode": "servo",
+        "source_type": "Copper",
+        "torque_nN_m": 31.1836,
+        "type_A_u_nN_m": 0.0003
+      }
+    ],
+    "table_18_correlation": [
+      [
+        1.0,
+        0.42,
+        0.38,
+        0.12
+      ],
+      [
+        0.42,
+        1.0,
+        0.23,
+        0.23
+      ],
+      [
+        0.38,
+        0.23,
+        1.0,
+        0.25
+      ],
+      [
+        0.12,
+        0.23,
+        0.25,
+        1.0
+      ]
+    ],
+    "table_1_relative_sensitivity_of_inferred_G": {
+      "Idisk": {
+        "free": 0.11,
+        "servo": 0.0
+      },
+      "Rs": {
+        "free": -5.4,
+        "servo": -5.4
+      },
+      "Rt": {
+        "free": 2.4,
+        "servo": 4.4
+      },
+      "ms": {
+        "free": -1.0,
+        "servo": -1.0
+      },
+      "mt": {
+        "free": -0.1,
+        "servo": -1.0
+      },
+      "phi_t": {
+        "free": 1.0,
+        "servo": -1.0
+      }
+    },
+    "test_mass": {
+      "height_m": 0.05491,
+      "inner_radius_m": 0.002502,
+      "mass_circle_radius_m": 0.1200315,
+      "mass_kg": 1.150156,
+      "outer_radius_m": 0.027481
+    }
+  },
+  "reduced_forward": {
+    "GC_mapping": "A_j is the finite two-state contrast analogue of GC source column a; it is not silently relabeled as the infinitesimal trajectory derivative",
+    "formula": "Delta_N_j = G * A_j + r_j; A_j = 16*Gamma_j*ms_j*mt/Rs_j",
+    "nominal_source_gravitational_stiffness": 0.0,
+    "nominal_source_stiffness_basis": "paper states source-mass contribution has zero second derivative at torque extrema",
+    "observation": "published calibrated torque difference Delta_N",
+    "rows": [
+      {
+        "Gamma": 0.485613,
+        "Rs_mm": 213.968,
+        "configuration": "Sapphire",
+        "finite_contrast_source_column_kg2_per_m": 209.479294634547,
+        "jacobian_d_torque_d_G_kg2_per_m": 209.479294634547,
+        "mode": "free",
+        "source_type": "Sapphire",
+        "summary_ratio_G_SI": 6.673642864985311e-11,
+        "torque_nN_m": 13.9799,
+        "type_A_only_ratio_u_SI_denominator_fixed": 9.547482979113313e-16,
+        "type_A_only_relative_u": 1.4306253978926886e-05,
+        "type_A_u_nN_m": 0.0002
+      },
+      {
+        "Gamma": 0.485613,
+        "Rs_mm": 213.968,
+        "configuration": "Sapphire",
+        "finite_contrast_source_column_kg2_per_m": 209.479294634547,
+        "jacobian_d_torque_d_G_kg2_per_m": 209.479294634547,
+        "mode": "servo",
+        "source_type": "Sapphire",
+        "summary_ratio_G_SI": 6.672640379272503e-11,
+        "torque_nN_m": 13.9778,
+        "type_A_only_ratio_u_SI_denominator_fixed": 1.4321224468669968e-15,
+        "type_A_only_relative_u": 2.1462604987909395e-05,
+        "type_A_u_nN_m": 0.0003
+      },
+      {
+        "Gamma": 0.485637,
+        "Rs_mm": 213.9642,
+        "configuration": "Copper_0_deg",
+        "finite_contrast_source_column_kg2_per_m": 467.45807830150454,
+        "jacobian_d_torque_d_G_kg2_per_m": 467.45807830150454,
+        "mode": "free",
+        "source_type": "Copper",
+        "summary_ratio_G_SI": 6.673946060223555e-11,
+        "torque_nN_m": 31.1979,
+        "type_A_only_ratio_u_SI_denominator_fixed": 6.417687786892919e-16,
+        "type_A_only_relative_u": 9.61603184829748e-06,
+        "type_A_u_nN_m": 0.0003
+      },
+      {
+        "Gamma": 0.485637,
+        "Rs_mm": 213.9642,
+        "configuration": "Copper_0_deg",
+        "finite_contrast_source_column_kg2_per_m": 467.45807830150454,
+        "jacobian_d_torque_d_G_kg2_per_m": 467.45807830150454,
+        "mode": "servo",
+        "source_type": "Copper",
+        "summary_ratio_G_SI": 6.673582391248964e-11,
+        "torque_nN_m": 31.1962,
+        "type_A_only_ratio_u_SI_denominator_fixed": 8.556917049190562e-16,
+        "type_A_only_relative_u": 1.2822074483430676e-05,
+        "type_A_u_nN_m": 0.0004
+      },
+      {
+        "Gamma": 0.485467,
+        "Rs_mm": 213.9817,
+        "configuration": "Copper_120_deg",
+        "finite_contrast_source_column_kg2_per_m": 467.25622533807865,
+        "jacobian_d_torque_d_G_kg2_per_m": 467.25622533807865,
+        "mode": "free",
+        "source_type": "Copper",
+        "summary_ratio_G_SI": 6.673897170109822e-11,
+        "torque_nN_m": 31.1842,
+        "type_A_only_ratio_u_SI_denominator_fixed": 6.420460204311627e-16,
+        "type_A_only_relative_u": 9.620256411900897e-06,
+        "type_A_u_nN_m": 0.0003
+      },
+      {
+        "Gamma": 0.485467,
+        "Rs_mm": 213.9817,
+        "configuration": "Copper_120_deg",
+        "finite_contrast_source_column_kg2_per_m": 467.25622533807865,
+        "jacobian_d_torque_d_G_kg2_per_m": 467.25622533807865,
+        "mode": "servo",
+        "source_type": "Copper",
+        "summary_ratio_G_SI": 6.67359754863362e-11,
+        "torque_nN_m": 31.1828,
+        "type_A_only_ratio_u_SI_denominator_fixed": 1.2840920408623253e-15,
+        "type_A_only_relative_u": 1.924137665636184e-05,
+        "type_A_u_nN_m": 0.0006
+      },
+      {
+        "Gamma": 0.485464,
+        "Rs_mm": 213.9822,
+        "configuration": "Copper_240_deg",
+        "finite_contrast_source_column_kg2_per_m": 467.2522460694667,
+        "jacobian_d_torque_d_G_kg2_per_m": 467.2522460694667,
+        "mode": "free",
+        "source_type": "Copper",
+        "summary_ratio_G_SI": 6.67425363116684e-11,
+        "torque_nN_m": 31.1856,
+        "type_A_only_ratio_u_SI_denominator_fixed": 4.280343255327357e-16,
+        "type_A_only_relative_u": 6.413216356266996e-06,
+        "type_A_u_nN_m": 0.0002
+      },
+      {
+        "Gamma": 0.485464,
+        "Rs_mm": 213.9822,
+        "configuration": "Copper_240_deg",
+        "finite_contrast_source_column_kg2_per_m": 467.2522460694667,
+        "jacobian_d_torque_d_G_kg2_per_m": 467.2522460694667,
+        "mode": "servo",
+        "source_type": "Copper",
+        "summary_ratio_G_SI": 6.673825596841307e-11,
+        "torque_nN_m": 31.1836,
+        "type_A_only_ratio_u_SI_denominator_fixed": 6.420514882991034e-16,
+        "type_A_only_relative_u": 9.620441514129222e-06,
+        "type_A_u_nN_m": 0.0003
+      }
+    ]
+  },
+  "schema": "WAC_NIST_BIPM_G_FORWARD_READINESS_V001",
+  "source": {
+    "dependency_sha256": {
+      "gc_model": "6c17498d2d65f6420498ac559a97a2c3bbf49e110dd971da34b4c9c9bea2e4e4",
+      "gc_protocol": "6ec7d8f0ce9a184d25612107dbfc294dd22d124ebe859831401e9cc0c8e8b819",
+      "gc_theorem": "cbf0733633ba93756b08dded7486a9be76beb572807693455c761bd36a8f0f5b",
+      "pdf": "c79552d62f4d4f4e85cfbbb00f135c1d985b596d9cdcde9bee57cfe4618f33dc"
+    },
+    "paper": "Schlamminger_et_al_Metrologia_63_025012_2026",
+    "pdf_pages": 31,
+    "sha256": "c79552d62f4d4f4e85cfbbb00f135c1d985b596d9cdcde9bee57cfe4618f33dc",
+    "title": "Redetermination of the gravitational constant with the BIPM torsion balance at NIST"
+  },
+  "status": "PUBLIC_SUMMARY_REDUCED_TORQUE_FORWARD_EXACT__FULL_GC16_REAL_APPARATUS_FIT_NOT_READY",
+  "supported_diagnostics_not_real_estimates": {
+    "table_15_diagonal_Type_A_only": {
+      "explicit_extra_assumptions": [
+        "eight torque summaries independent",
+        "published denominators fixed exactly",
+        "all physical remainders zero",
+        "no calibration covariance"
+      ],
+      "formal_WLS_G_SI": 6.673920939386688e-11,
+      "formal_relative_u": 3.711907486082985e-06,
+      "formal_standard_u_SI": 2.4772977096435433e-16,
+      "status": "ALGEBRA_DIAGNOSTIC_ONLY__NOT_A_G_ESTIMATE"
+    },
+    "table_17_RSS_check_ppm": {
+      "category_order": [
+        "Mass integration",
+        "Autocollimator non-linearity",
+        "Type A",
+        "Capacitance measurement",
+        "Voltages measurement",
+        "Zero torque",
+        "Pressure correction",
+        "SM MCR",
+        "Mass of one SM",
+        "Mass of one TM",
+        "MOI disk",
+        "TM MCR",
+        "Anelasticity",
+        "Period measurement"
+      ],
+      "maximum_rounding_difference_ppm": 0.06341305046707646,
+      "printed": [
+        23.2,
+        30.3,
+        37.5,
+        93.9
+      ],
+      "recomputed": [
+        23.22627822101509,
+        30.318146381334067,
+        37.56341305046708,
+        93.86772608303666
+      ]
+    },
+    "table_18_four_derived_G_covariance": {
+      "correlation_condition_number": 3.6643354400698898,
+      "correlation_eigenvalues": [
+        0.5000073063097613,
+        0.7657792988635237,
+        0.9020189020219755,
+        1.8321944928047393
+      ],
+      "correlation_rank": 4,
+      "covariance_SI": [
+        [
+          2.3971862678170824e-30,
+          1.3150140056603196e-30,
+          1.4721879350525188e-30,
+          1.1642875250356395e-30
+        ],
+        [
+          1.3150140056603196e-30,
+          4.089407552121659e-30,
+          1.1638226375260284e-30,
+          2.914648188284073e-30
+        ],
+        [
+          1.4721879350525188e-30,
+          1.1638226375260284e-30,
+          6.261199387561264e-30,
+          3.9200976297886824e-30
+        ],
+        [
+          1.1642875250356395e-30,
+          2.914648188284073e-30,
+          3.9200976297886824e-30,
+          3.926957626068599e-29
+        ]
+      ],
+      "formal_GLS_relative_u": 2.120877984725252e-05,
+      "formal_GLS_standard_u_SI": 1.4153914783378332e-15,
+      "formal_GLS_value_SI": 6.673611063585958e-11,
+      "formal_GLS_weights": [
+        0.6178171789312468,
+        0.25432341839375666,
+        0.12668451771642006,
+        0.0011748849585766449
+      ],
+      "status": "DERIVED_G_SUMMARY_COVARIANCE_DIAGNOSTIC_ONLY__EXCLUDES_DARK_UNCERTAINTY_AND_IS_NOT_GC16_RAW_COVARIANCE"
+    }
+  }
+}

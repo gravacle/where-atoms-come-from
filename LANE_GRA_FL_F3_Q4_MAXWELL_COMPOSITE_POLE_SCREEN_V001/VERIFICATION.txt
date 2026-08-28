@@ -1,0 +1,126 @@
+# Verification transcript
+
+Command:
+
+```text
+python3 LANE_GRA_FL_F3_Q4_MAXWELL_COMPOSITE_POLE_SCREEN_V001/verify_maxwell_composite_pole_screen.py
+```
+
+Output:
+
+```text
+PASS dependency exists: LANE_GRA_FJ_F3_Q4_AUTHENTICATED_LINK_PAIR_RESPONSE_V001/THEOREM.md
+PASS dependency hash frozen: LANE_GRA_FJ_F3_Q4_AUTHENTICATED_LINK_PAIR_RESPONSE_V001/THEOREM.md
+PASS dependency hash printed in theorem: LANE_GRA_FJ_F3_Q4_AUTHENTICATED_LINK_PAIR_RESPONSE_V001/THEOREM.md
+PASS dependency exists: LANE_GRA_FJ_F3_Q4_AUTHENTICATED_LINK_PAIR_RESPONSE_V001/INDEPENDENT_AUDIT.md
+PASS dependency hash frozen: LANE_GRA_FJ_F3_Q4_AUTHENTICATED_LINK_PAIR_RESPONSE_V001/INDEPENDENT_AUDIT.md
+PASS dependency hash printed in theorem: LANE_GRA_FJ_F3_Q4_AUTHENTICATED_LINK_PAIR_RESPONSE_V001/INDEPENDENT_AUDIT.md
+PASS dependency exists: LANE_CROSS_ALPHA_GRA_CW_F3_PURE_KINETIC_U1_SUPPORT_SCREEN_V001/THEOREM.md
+PASS dependency hash frozen: LANE_CROSS_ALPHA_GRA_CW_F3_PURE_KINETIC_U1_SUPPORT_SCREEN_V001/THEOREM.md
+PASS dependency hash printed in theorem: LANE_CROSS_ALPHA_GRA_CW_F3_PURE_KINETIC_U1_SUPPORT_SCREEN_V001/THEOREM.md
+PASS dependency exists: LANE_CROSS_ALPHA_GRA_CW_F3_PURE_KINETIC_U1_SUPPORT_SCREEN_V001/PRIMARY_SOURCES.md
+PASS dependency hash frozen: LANE_CROSS_ALPHA_GRA_CW_F3_PURE_KINETIC_U1_SUPPORT_SCREEN_V001/PRIMARY_SOURCES.md
+PASS dependency hash printed in theorem: LANE_CROSS_ALPHA_GRA_CW_F3_PURE_KINETIC_U1_SUPPORT_SCREEN_V001/PRIMARY_SOURCES.md
+PASS ice fiber has exactly six states
+PASS every enumerated state obeys the ice rule
+PASS nonconstant one-link span has rank three
+PASS pair span including its constant has rank three
+PASS connected pair span has rank two
+PASS pair A1 sum is the fixed value minus two
+PASS all three opposite-edge pair identities hold on ice
+PASS complement makes every one-link value odd
+PASS complement makes every pair value even
+PASS edge A1/E/T2 projector ranks are one, two, three
+PASS edge projectors resolve identity
+PASS edge projectors are idempotent
+PASS edge projectors are mutually orthogonal
+PASS ice projection kills pair T2 exactly
+PASS connected response kills constant pair A1
+PASS all connected pair variation lies in E
+PASS all 24 S4 actions preserve the stated sector projectors
+PASS one-link sum-zero and pair T2 modules have identical S4 characters
+PASS tetrahedral bond vectors sum to zero
+PASS tetrahedral Gram matrix is exact
+PASS tetrahedral frame is complete
+PASS oriented epsilon equals e dot local electric flux on every ice state
+PASS local electric-flux image spans three dimensions
+PASS incidence-corrected flux glues consistently across the two sublattices
+PASS all 24 S4 permutations realize the full tetrahedral polar O(3) action
+PASS polar symmetric-traceless rank two restricts as E plus T2
+PASS odd S4 permutations are the improper classes of full T_d
+PASS sample 1 transverse vector projector is symmetric
+PASS sample 1 transverse vector projector is idempotent
+PASS sample 1 vector photon space has rank two
+PASS sample 1 longitudinal vector is removed
+PASS sample 1 complete link residue has rank two
+PASS sample 1 link residue is positive semidefinite
+PASS sample 2 transverse vector projector is symmetric
+PASS sample 2 transverse vector projector is idempotent
+PASS sample 2 vector photon space has rank two
+PASS sample 2 longitudinal vector is removed
+PASS sample 2 complete link residue has rank two
+PASS sample 2 link residue is positive semidefinite
+PASS sample 3 transverse vector projector is symmetric
+PASS sample 3 transverse vector projector is idempotent
+PASS sample 3 vector photon space has rank two
+PASS sample 3 longitudinal vector is removed
+PASS sample 3 complete link residue has rank two
+PASS sample 3 link residue is positive semidefinite
+PASS electric-field positive-frequency pole residue is linear in momentum
+PASS omega-squared and k-squared Maxwell numerators differ by an analytic contact
+PASS TT projector is symmetric
+PASS TT projector is idempotent
+PASS TT helicity space has rank two
+PASS TT projector removes the tensor trace
+PASS TT projector is transverse
+PASS vector pole transforms with helicity angle theta
+PASS TT pole transforms with helicity angle two theta
+PASS spin-one and helicity-two residues are not the same representation
+PASS linear Maxwell field is complement odd
+PASS normal-ordered bilinear is complement even
+PASS odd field has a nonzero one-particle matrix element
+PASS even bilinear has zero one-particle matrix element
+PASS even bilinear has a nonzero two-particle matrix element
+PASS sampled two-photon energies obey the triangle threshold
+PASS two-photon kinematics continuously fills energies above threshold
+PASS two-photon continuum begins on the Maxwell light cone
+PASS field-strength bilinear onset is operator dependent, not universally power suppressed
+PASS required claim boundary present: exact conditional deduction
+PASS required claim boundary present: zero-charge lattice Gauss law with correct incidence signs
+PASS required claim boundary present: primary-source custody is arXiv v3
+PASS required claim boundary present: not an internal finite-F3 theorem
+PASS required claim boundary present: Source-free Gaussian Maxwell duality exchanges those names
+PASS required claim boundary present: one linearly dispersing transverse spin-one photon
+PASS required claim boundary present: positive-frequency complex pole residue
+PASS required claim boundary present: no one-photon pole, by (FL16)
+PASS required claim boundary present: two-photon continuum beginning at `|omega|=c|k|`
+PASS required claim boundary present: no universal threshold exponent is asserted
+PASS required claim boundary present: not a helicity-two pole
+PASS required claim boundary present: T_d \simeq S_4
+PASS required claim boundary present: proper-rotation subgroup alone is `A_4`
+PASS required claim boundary present: Finite-group labels therefore do not determine continuum spin
+PASS required claim boundary present: This is a no-go for the **direct Gaussian composite route**
+PASS required claim boundary present: complete F3 all-orders phase and volume-uniform stability
+PASS required claim boundary present: No `j-j` attraction or fitted tensor interaction may be inserted
+PASS required claim boundary present: rank-two Gauss/diffeomorphism-type constraint and Ward identity
+PASS required claim boundary present: they may not be renamed as the graviton
+PASS required claim boundary present: separately owned local ice-sector theorem is a consistency cross-check
+PASS required claim boundary present: dependency hash will be pinned only after its hostile audit is final
+PASS required claim boundary present: do not form a circular proof chain
+PASS forbidden promotion absent: the F3 photon is visible electromagnetism
+PASS forbidden promotion absent: the pair observable is the graviton
+PASS forbidden promotion absent: unconditional helicity-two pole
+PASS forbidden promotion absent: MAXWELL-IR is an internal theorem
+PASS forbidden promotion absent: universal threshold suppression
+PASS equation tags FL01-FL23 are unique and ordered
+PASS display-math delimiters are balanced
+PASS Markdown backticks are balanced
+PASS theorem has no trailing whitespace
+PASS theorem has no forbidden control characters
+
+Maxwell composite pole screen verification: 108 passed, 0 failed
+Exact sector ranks: one-link=3, pair-total=3, pair-connected=2, pair-T2=0
+Conditional IR spectrum: spin-1 pole in odd link channel; two-photon continuum in even pair channel
+Helicity-2 isolated pole: absent at the Gaussian Maxwell fixed point
+```
+
