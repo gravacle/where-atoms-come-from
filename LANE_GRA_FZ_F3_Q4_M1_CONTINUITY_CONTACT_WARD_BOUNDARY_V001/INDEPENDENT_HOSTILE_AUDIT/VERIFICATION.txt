@@ -1,0 +1,20 @@
+Command:
+python3 INDEPENDENT_HOSTILE_AUDIT/independent_verify_fz.py
+
+Decisive output:
+PASS all projected incidence-charge eigenvalues d_v-2 vanish exactly
+PASS all 840 directed ring hits remain in C_180 with consistent owners
+PASS independent ring inventory has 420 undirected H6 transitions
+PASS independent pair construction reproduces exact FZ05 remainder
+PASS naive 720+720 derivative recovers the frozen homogeneous ring row
+PASS independent ring construction reproduces exact ring obstruction
+PASS independent six-coordinate TT projector is idempotent and rank two
+PASS FZ11 has the correct sign and solves i[H,P]+L=0 off energy blocks
+PASS a nonzero complete degenerate-energy block is an exact ad_H obstruction
+PASS FZ12 retarded sign matches e^{+i omega t} and the equal-time contact
+PAIR_WITNESS [(0, '-14'), (2, '28'), (8, '14'), (10, '14'), (24, '14'), (26, '-14'), (34, '-28'), (42, '-14'), (48, '-14'), (56, '-14'), (58, '28')]
+RING_WITNESS [(2, '-20/3'), (10, '-20/3'), (13, '10/3'), (17, '-32/3'), (18, '-25/3'), (25, '-50/3'), (34, '20/3'), (41, '50/3'), (42, '20/3'), (48, '20/3'), (49, '50/3'), (53, '-10/3'), (56, '25/3'), (57, '14/3'), (58, '5/3'), (61, '-10/3')]
+SUMMARY 68/68 independent hostile FZ checks passed
+VERDICT PASS
+CEILING exact projected-charge identity, supplied-embedding longitudinal diagnostics, exact TT algebra, and algebraic Ward dependency only; no physical discrete divergence, current, Ward closure, continuum, gravity, or G
+

@@ -258,7 +258,20 @@ rather than add a new homogeneous direction. The exact hierarchy remains
 remove it, so it is not a physical threshold. This closure is restricted to
 `k=0`, FV-PURE, the selected FO winding component, fixed through H6 and modulo
 identity. The immediate theory target is now the native-support/nonzero-
-momentum source response. The finite conserved directions remain
+momentum source response.
+
+That target is now closed at the first nonzero quotient momentum. Keeping the
+native support of every pair, gap, hopping-numerator, fold, and Hermitian ring
+insertion gives exact `m=0` recovery and, over `Q(zeta_240)`, the same three
+diagonal coefficients at `m=1`. Hence `f_E(x)` survives unchanged at the
+tested nonzero momentum, while the ring remains a nonzero independent
+off-diagonal source. At `x=2/5` and `x=1/2`, the sampled finite hierarchy is
+`6 -> 6 -> 6 -> 6 -> 6`, the TT ground-image rank is two, and four nonzero
+FO poles respond. The spatial contraction `k_i Q^{ij}` is nonzero: naive
+transversality is excluded, but a spacetime Ward test remains unformed because
+the temporal density, current, and contact terms have not yet been derived.
+The next target is that typed continuity/contact construction, followed by
+finite-family common-cone scaling. The finite conserved directions remain
 component-specific and are not Ward identities or a tensor pole.
 
 ## 2. Experimental lanes without a laboratory
@@ -461,9 +474,12 @@ searches, and processed real-apparatus forwards. The physical-realization lane
 now conditionally derives the Coulomb form of `DPAR`, and the explicit
 `FV-PURE` completion gives formal projected off-shell rank six. The complete
 homogeneous generated source response through H6 is now exact and hostile-
-audited; the immediate theory target is its native-support, nonzero-momentum
-lift, followed by properly typed CTP, Ward/constraint, and pole tests. Public data have
-already executed part of the ordinary-source forward architecture and two
+audited. Its native-support `m=1` lift is also exact: the homogeneous diagonal
+renormalization survives, an independent ring direction remains, and the
+sampled response has six finite channels. The immediate target is now the
+properly typed temporal-density/current/contact construction and its Ward or
+constraint test, followed by finite-family common-cone and pole scaling. Public
+data have already executed part of the ordinary-source forward architecture and two
 useful necessary-condition diagnostics, but cannot supply the missing matched
 lineage intervention or complete independently calibrated `GC16` packet. Those
 are empirical ceilings, not physical nulls.

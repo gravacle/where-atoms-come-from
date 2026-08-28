@@ -1,0 +1,21 @@
+{
+  "lane": "LANE_GRA_GA_F3_Q4_FU09B_ENCODED_CHARGE_CURRENT_LIFT_V001",
+  "status": "PASS",
+  "checks": "34/34",
+  "encoded_link_dimension": 2,
+  "physical_pair_dimension": 4,
+  "q4_encoded_dimension": 16,
+  "q4_physical_dimension": 256,
+  "unitary_equivalence_on_fixed_total_charge": true,
+  "internal_continuity": "qdot_L + I_LR = 0; Qdot_R - I_LR = 0",
+  "outer_port_boundary": "Qdot_R - I_LR + I_Rpartial = 0",
+  "m1_allocation": "co-located witness only; displaced reservoir requires connector current",
+  "fv_pure_fy": "nonidentity results preserved only on GA-CLOSED-FULL-CODE-SCALAR-HOLD modulo one common identity/reference shift across encoded P+Q",
+  "counterexamples": [
+    "active reservoir-only outer port leaks from encoded hold",
+    "source-independent reservoir linear bias descends to nonidentity Z and changes source-off gaps",
+    "shared reservoir charging descends to cross-link ZZ",
+    "strain-dependent reservoir or port term adds a spatial source"
+  ],
+  "ceiling": "U(1) charge/current ancestry only; no spatial bond current, vertex divergence, T0j, metric Ward, gravity, or G"
+}

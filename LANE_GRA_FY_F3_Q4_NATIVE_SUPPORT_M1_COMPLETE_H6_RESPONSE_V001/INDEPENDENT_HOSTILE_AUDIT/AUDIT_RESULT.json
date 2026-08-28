@@ -1,0 +1,73 @@
+{
+  "lane": "LANE_GRA_FY_F3_Q4_NATIVE_SUPPORT_M1_COMPLETE_H6_RESPONSE_V001",
+  "disposition": "PASS",
+  "independent_checks": {
+    "passed": 184,
+    "total": 184
+  },
+  "frozen_builder_checks": {
+    "full_replay": "72/72",
+    "packet_custody": "58/58",
+    "exact_h2": "4/4"
+  },
+  "remaining_material_defects": [],
+  "algorithmic_independence": {
+    "quotient": "reconstructed from Z30 shifts (0,1,5,19)",
+    "perturbation": "count-state path dynamic program",
+    "folds": "formal native dual-series fixed point through t^3",
+    "number_field": "closed Phi_240(z)=Phi_30(z^8) degree-64 reduction",
+    "response": "independently rebuilt 180-state Hamiltonian and native source matrices"
+  },
+  "source_off_coefficients": {
+    "a2": "-60",
+    "a4": "-35",
+    "a6": "-893/9"
+  },
+  "exact_m1_diagonal_lift": {
+    "H2": "-1",
+    "H4": "-37/12",
+    "H6": "-16247/900"
+  },
+  "exact_ring_result": {
+    "undirected_entries": 420,
+    "translation_orbits": 14,
+    "histories_per_orientation": 720,
+    "nonzero_offdiagonal_witness": {
+      "matrix_entry": [0, 1],
+      "tensor_component": 0,
+      "cyclotomic_remainder": [
+        [2, "5/12"], [10, "5/12"], [13, "1/3"],
+        [17, "2/3"], [18, "5/12"], [25, "1/3"],
+        [34, "-5/12"], [41, "-1/3"], [42, "-5/12"],
+        [48, "-5/12"], [49, "-1/3"], [53, "-1/3"],
+        [56, "-5/12"], [57, "-1"], [61, "-1/3"]
+      ]
+    }
+  },
+  "exact_conjugacy": "Q_29 = Q_1^dagger under zeta_240 -> zeta_240^-1",
+  "samples": [
+    {
+      "x": "2/5",
+      "ranks_operator_adH_spectral_static_M1_TT": [6, 6, 6, 6, 6, 2],
+      "pole_gaps": [
+        3.194109035554332,
+        3.490165912028476,
+        6.166688337463908,
+        9.139267639373482
+      ],
+      "pole_ranks": [1, 3, 1, 1]
+    },
+    {
+      "x": "1/2",
+      "ranks_operator_adH_spectral_static_M1_TT": [6, 6, 6, 6, 6, 2],
+      "pole_gaps": [
+        3.194109035554332,
+        3.490165912028476,
+        6.166688337463908,
+        9.139267639373482
+      ],
+      "pole_ranks": [1, 3, 1, 1]
+    }
+  ],
+  "claim_ceiling": "finite Z30 m=1 selected 180-state component through H6 under FV-PURE; sampled response only; no positive Ward, continuum locality, massless pole, RGRL-B, gravity, G, or Newton claim"
+}

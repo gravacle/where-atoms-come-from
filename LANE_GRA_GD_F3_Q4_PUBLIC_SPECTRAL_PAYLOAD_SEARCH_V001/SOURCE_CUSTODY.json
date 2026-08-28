@@ -1,0 +1,114 @@
+{
+  "lane": "LANE_GRA_GD_F3_Q4_PUBLIC_SPECTRAL_PAYLOAD_SEARCH_V001",
+  "retrieved_utc_date": "2026-08-28",
+  "local_dependencies": [
+    {
+      "path": "../LANE_GRA_GC_F3_Q4_FINITE_FAMILY_COMMON_CONE_BOUNDARY_V001/THEOREM.md",
+      "sha256": "f74b8e5e8f28643a207e0ad26b378c1989d1fbe8007cca2044661951395dc98f",
+      "role": "GC16--GC19 target"
+    },
+    {
+      "path": "../LANE_GRA_GC_F3_Q4_FINITE_FAMILY_COMMON_CONE_BOUNDARY_V001/RESULT.md",
+      "sha256": "f658f3ee4fbc143f42077faea5b8b98d184cd5359a908703d9435f0c902cf3f1",
+      "role": "GC claim ceiling"
+    },
+    {
+      "path": "../LANE_GRA_FY_F3_Q4_NATIVE_SUPPORT_M1_COMPLETE_H6_RESPONSE_V001/THEOREM.md",
+      "sha256": "8db3dd16c36e0205b5c98fc3154e8a2f1876d243c3c1d2068424c1276ee68f28",
+      "role": "native-source parent"
+    },
+    {
+      "path": "../LANE_GRA_FL_F3_Q4_MAXWELL_COMPOSITE_POLE_SCREEN_V001/THEOREM.md",
+      "sha256": "98e2b3bc7a1c998d7839dc1a6b435cc1c8ed6d5a622ba45f63571be9ef646452",
+      "role": "Maxwell/source spectral ceiling"
+    }
+  ],
+  "primary_roots": [
+    {
+      "id": "SHANNON-2012-ARXIV-SOURCE",
+      "url": "https://arxiv.org/e-print/1105.4196",
+      "sha256": "e0ed17fb05a443c8adc04a04cdf122f0bdd9da3631b0a1f4ab5be180d05daad6",
+      "inventory": "paper.tex; 6 EPS; 1 PDF",
+      "raw_numeric_arrays": false,
+      "program_source": false
+    },
+    {
+      "id": "SIKORA-2011-ARXIV-SOURCE",
+      "url": "https://arxiv.org/e-print/1105.1322",
+      "sha256": "c69f465001be8bbcf77446d5f8258781136bda070e8d8d058158d42e73817521",
+      "inventory": "1 TeX; 25 EPS",
+      "raw_numeric_arrays": false,
+      "program_source": false
+    },
+    {
+      "id": "HUANG-2018-ARXIV-SOURCE",
+      "url": "https://arxiv.org/e-print/1707.00099",
+      "sha256": "da3dce95864b8ae4551a38b8e9f64a571fcefc24c8f23924bce85162c0e670f4",
+      "inventory": "main.tex; 5 PDF figures",
+      "raw_numeric_arrays": false,
+      "program_source": false
+    },
+    {
+      "id": "HKU-QFI-2026-DATA-METADATA",
+      "url": "https://api.figshare.com/v2/articles/32404548",
+      "doi": "10.25442/hku.32404548.v1",
+      "sha256": "7e2e4bb8db3bb529970ed63794654e6666d7cfb902c3337c4baa23d1c6a44f46",
+      "license": "CC BY-NC 4.0",
+      "class": "derived figure tables"
+    },
+    {
+      "id": "HKU-QFI-2026-CODE-METADATA",
+      "url": "https://api.figshare.com/v2/articles/32412273",
+      "doi": "10.25442/hku.32412273.v1",
+      "sha256": "cc41ffa163c01a63d47a9bd493ad74638434efe39639b7bad5f91ffad6ebd568",
+      "license": "CC BY-NC 4.0",
+      "class": "QMC and ED/DSSF source code"
+    }
+  ],
+  "hku_data_files": [
+    ["fig1a.dat", "e87cc97d677394f046dc34469d123ff7ffee19191bb8c63cba046ececf82eae6"],
+    ["fig1b.dat", "7dd4ffaf5e4742cae0732c113c02faa9c0b5b3017231fa053affe07024c4bf05"],
+    ["fig1c.dat", "7e7d8ca17298bce9fbe906f71ccabf5b379d6f7a2a7cb8624943e888eb662639"],
+    ["fig1d.dat", "6d43a759f16d39b16dfc628756afb893613e83da2f70c7de80d2d30e89a111a7"],
+    ["fig2a.dat", "12841827cb8ca37eedaa1194a9b902036cee3106ff6f757247696537772b7295"],
+    ["fig2b.dat", "94bd82c592f0c62c5658759e81779799a144a71ceb19f25e5e48b607f144ab77"],
+    ["fig3a.dat", "e6a6df40cefafff0438d891b3b2c130710aac2cb19f4bed107c8eeeebdb415e8"],
+    ["fig3b.dat", "ec3f8e6ccad838da40315bae7321f4038ab5327e5ed0b075601a009f2db417b4"],
+    ["fig3c.dat", "27d8745be30de4954dd9ffcf6766920e43ec10aef63061dbd445dddc81674d45"],
+    ["fig3d.dat", "e7087cea7fc0fbba0d00d3e5473ffe14b761c7cdabfbc638a2554a0531f467aa"]
+  ],
+  "hku_code_files": [
+    ["QED-main.zip", "7234ace4a363f163a5a3765be9188dfb5284ed40c61cf878d5732525c01da799"],
+    ["initmulflux.f90", "0e70b16ec0651af9de6b84c19864a2c8201ed24280a32d71e736bbb687cefb12"],
+    ["Pyrochlore.f90", "81c5a77543110269f10bf21bc878a2c3ea38118c6b53f1991ebb796ad5de9a76"],
+    ["Pyrochlore_Con.f90", "2e6dea1e3f37df491a76ff3a1f807c65f34fe0e0de3a05c34df7c4fe83a546d9"]
+  ],
+  "repository_searches": [
+    {
+      "provider": "Figshare",
+      "query": "quantum spin ice",
+      "limit": 100,
+      "response_sha256": "5c1daf429dbba5c64d1b109e2a0f45a38c521ddfe83a73e3561954343dcafc28"
+    },
+    {
+      "provider": "Zenodo",
+      "query": "quantum spin ice",
+      "limit": 25,
+      "response_sha256": "d30193745585daf5618c83b24346ebd127275c8cb94934eb745d4b98acac897f"
+    },
+    {
+      "provider": "Zenodo",
+      "query": "quantum dimer diamond",
+      "limit": 25,
+      "response_sha256": "6188c261ddde2be553af6fcd25fd39c8bfec2b6489a996eac77a83eef0cab0a2"
+    }
+  ],
+  "inspection_notes": {
+    "qed_archive_commit_comment": "f672e0c9e6648c90c9c9564bbd8d93d0061d7899",
+    "qed_native_max_body": 3,
+    "qed_ring_exchange": "explicit runtime rejection; no native 4-body or 6-body ring",
+    "qmc_released_operator": "full XXZ sublattice spin correlators",
+    "qmc_covariance": "not released in data and not written by inspected averaged-output path"
+  },
+  "custody_ceiling": "external file hashes were computed from retrieved public bytes; binaries are not vendored in this lane"
+}

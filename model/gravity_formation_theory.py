@@ -16,7 +16,7 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V010"
+SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V011"
 CLAIM_CLASS = (
     "ADOPTED_RGRL_OFFSHELL_ANCESTRY_AND_EXACT_CONDITIONAL_WORKING_THEORY_"
     "CLOSURE_WITH_SEPARATE_ONSHELL_RESPONSE_CEILING"
@@ -814,7 +814,29 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "q4_FX_ground_retarded_rank": 2,
                 "q4_FX_first_nonzero_moment_rank": 2,
                 "q4_FX_finite_root_is_physical_threshold": False,
-                "q4_FX_nonzero_momentum_source": "OPEN_NOT_COMPUTED",
+                "q4_FX_nonzero_momentum_source": "SUPERSEDED_BY_EXACT_FY_M1_REFINEMENT",
+                "q4_FY_scope": (
+                    "NATIVE_SUPPORT_M1_SELECTED_FO180_FV_PURE_THROUGH_H6__"
+                    "SAMPLED_FINITE_RESPONSE"
+                ),
+                "q4_FY_support_species": ("A", "B", "E0", "E1", "E2", "E3"),
+                "q4_FY_exact_m0_recovery": True,
+                "q4_FY_exact_field": "Q_ZETA240_MOD_PHI240",
+                "q4_FY_conjugate_mode": "Q29_EQUALS_Q1_DAGGER",
+                "q4_FY_diagonal_lift_coefficients": (
+                    "MINUS1",
+                    "MINUS37_OVER12",
+                    "MINUS16247_OVER900",
+                ),
+                "q4_FY_same_fE_as_homogeneous": True,
+                "q4_FY_ring_offdiagonal_independent": True,
+                "q4_FY_response_samples_x": ("2_OVER5", "1_OVER2"),
+                "q4_FY_sampled_rank_hierarchy": "6_TO_6_TO_6_TO_6_TO_6",
+                "q4_FY_TT_ground_image_rank": 2,
+                "q4_FY_response_gap_count": 4,
+                "q4_FY_residue_ranks": (1, 3, 1, 1),
+                "q4_FY_naive_spatial_transversality": False,
+                "q4_FY_temporal_density_current_contact": "OPEN_NOT_CONSTRUCTED",
             },
             "kernel_reduction": {
                 "scope": "Q4_TETRAHEDRAL_S4_FIXED_POINT_LOCAL_OR_K_ZERO",
@@ -972,7 +994,9 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "complete_generated_H6_diagonal_and_fold_response": (
                     "EXACT_PAIR_SOURCE_RENORMALIZATION_PLUS_IDENTITIES_ON_SELECTED_K0_COMPONENT"
                 ),
-                "native_support_nonzero_momentum_H6_response": "OPEN_IN_PROGRESS",
+                "native_support_nonzero_momentum_H6_response": (
+                    "EXACT_M1_DIAGONAL_LIFT_PLUS_INDEPENDENT_RING__SAMPLED_FINITE_RESPONSE"
+                ),
                 "full_state_dependent_CTP_Ward_response": "OPEN_NOT_COMPUTED",
                 "new_interaction_or_second_field_adopted": False,
             },
@@ -1146,11 +1170,12 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                     "ADDITIVE_AND_COMPLETE_REDUCED_SOURCE_RANK4_WITH_E_NULL2__"
                     "PAIR_RESOLVED_COULOMB_DPAR_CONDITIONALLY_REALIZED__"
                     "FV_PURE_PROJECTED_OFFSHELL_RANK6__"
-                    "COMPLETE_HOMOGENEOUS_H6_RESPONSE_5_TO_3_TO_2_TO_2"
+                    "COMPLETE_HOMOGENEOUS_H6_RESPONSE_5_TO_3_TO_2_TO_2__"
+                    "NATIVE_M1_H6_SAMPLED_RESPONSE_6_TO_6_TO_6_TO_6_TO_6"
                 ),
                 "next_no_lab_gravity_calculation": (
-                    "NATIVE_SUPPORT_M1_COMPLETE_H6_SOURCE_RESPONSE_"
-                    "THEN_PROPERLY_TYPED_CTP_WARD_AND_POLE_TESTS"
+                    "TYPED_TEMPORAL_DENSITY_CURRENT_CONTACT_WARD_INTERFACE__"
+                    "THEN_FINITE_FAMILY_COMMON_CONE_AND_POLE_SCALING"
                 ),
                 "hust_public_G_forward": (
                     "PROCESSED_DUAL_CHANNEL_CLOSED__FULL_GC16_NOT_READY__NO_NEW_G"
@@ -1216,7 +1241,7 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "q4_FV_projected_offshell_rank6_executed": True,
                 "q4_FW_witness_finite_response_executed": True,
                 "q4_complete_generated_H6_source_response_executed": True,
-                "q4_native_support_nonzero_momentum_response_executed": False,
+                "q4_native_support_nonzero_momentum_response_executed": True,
                 "q4_physical_metric_source_derived": False,
                 "q4_full_CTP_Ward_response_executed": False,
                 "hust_processed_dual_channel_forward_executed": True,
@@ -1274,6 +1299,9 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "FW_finite_witness_rank2_promotes_complete_response_or_Ward_tensor_pole": False,
                 "FX_complete_homogeneous_rank2_promotes_local_Ward_tensor_pole_or_gravity": False,
                 "FX_finite_polynomial_zero_promotes_physical_threshold": False,
+                "FY_native_m1_response_promotes_continuum_locality_Ward_or_gravity": False,
+                "FY_nonzero_spatial_contraction_promotes_complete_Ward_failure": False,
+                "FY_sampled_rank6_promotes_generic_in_x_rank6": False,
                 "HUST_history_residual_promotes_lineage_gravity": False,
                 "Bense_path_dependence_promotes_causal_lineage_or_gravity": False,
                 "HUST_nominal_kernel_promotes_full_apparatus_G": False,

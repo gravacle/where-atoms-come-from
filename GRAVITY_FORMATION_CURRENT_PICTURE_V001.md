@@ -1266,6 +1266,7 @@ fine-structure constant \(\alpha\).
 | Coulomb projected source rank | Under explicit `S10/FV-PURE`, the direct pair source gives `E` rank two and the exact H6 Hermitian ring source gives `A1+T2` rank four; six projected matrix-element witnesses have determinant `-4678629417/256`. | **Exact conditional projected off-shell rank six through H8; 89/89 plus 83/83 scientific hostile checks** | `FV-PURE` is stronger than the physical-solder premises. Formal operator rank is not complete CTP/Ward response, a tensor pole, gravity, or `G`. |
 | Finite homogeneous `FV-WITNESS` response | On the FO 180-state component, the two rank-closing pieces obey the exact hierarchy family rank six to component rank five modulo identity to commutator rank three to ground retarded/first-moment rank two, with two exact rank-one residues. | **Exact conditional finite response; 114/114 plus 144/144 hostile replay** | Generated `Q_diag^(2,4,6)` derivatives and folds are omitted and can change the complete response. Component-specific conservation is not a Ward identity; no tensor pole, gravity, or `G` follows. |
 | Complete homogeneous H6 source response | Exact enumeration of every diagonal H2/H4/H6 closed word and BW/Feshbach fold gives `Q_diag^(2,4,6)` equal to the direct Coulomb pair source times `-x^2`, `-(37/12)x^4`, and `-(16247/900)x^6`, respectively, plus retained Hilbert identities. Hence `rho_E=rho[1-x^2-(37/12)x^4-(16247/900)x^6]`, and the complete homogeneous hierarchy remains `5 -> 3 -> 2 -> 2` with the same two poles. | **Exact conditional complete homogeneous source theorem on the selected FO component; 109/109 plus 139/139 independent hostile replay** | “Complete” is restricted to `k=0`, FV-PURE, the selected 180-state winding component, modulo identity and fixed through H6. The finite polynomial zero is a truncation stratum, not a threshold. Local/nonzero-momentum source density, other components, H8+, CTP/Ward closure, a tensor pole, gravity, and `G` remain open. |
+| Native-support `m=1` H6 response | Retaining every source insertion at its physical `A/B` vertex or link midpoint gives exact `m=0` recovery and preserves the three diagonal `f_E` coefficients exactly at `m=1` over `Q(zeta_240)`. The ring remains a nonzero independent off-diagonal source. At `x=2/5,1/2`, all five finite rank gates equal six, TT ground-image rank is two, and four nonzero poles respond with residue ranks `(1,3,1,1)`. | **Exact conditional native-source theorem plus sampled finite response; 72/72, packet 58/58, exact H2 4/4** | Finite Z30, FV-PURE, selected component, through H6, and sampled in `x`. The nonzero spatial contraction excludes naive transversality but does not substitute for temporal density, current, contact terms, or a spacetime Ward theorem. No continuum locality, massless pole, RGRL-B, gravity, or `G` follows. |
 | HUST ToS round-trip history diagnostic | Equal-configuration endpoint returns give exact rank, reused-endpoint Gram, and telescoping ledgers plus reproducible source-present-minus-background residuals. | **Official-data history-confound diagnostic; 2187 plus 2208 hostile checks** | Same ordinal does not mean matched/randomized; no covariance or matched no-excursion arm exists. No causal memory, lineage, `beta_TM`, gravity emergence, `GC16`, or new \(G\) follows. |
 | HUST conditional nominal source kernel | Public masses, dimensions, separations, and temperatures determine exact conditional homogeneous Newtonian functionals and converged numerical AAF/ToS source coefficients, with independently recovered sensitivity classes. | **Conditional finite-source reconstruction; 101/101 plus 94/94 hostile replay** | Public AAF distances leave two coordinate-shear freedoms; thermal transport is partial and processed-minus-nominal is only a scalar model discrepancy. The full mass/stress remainder, `GC16`, and a new \(G\) remain open. |
 | Five-clock common-node scalar compatibility | The ten processed pair heights have exact K5 cut rank four and cycle dimension six; all 37 cycles were checked and the marginal-box optimum is \(\rho_*=27/82<1\). | **Exact graph theorem on official processed outputs; 661/661 plus 548/548 hostile replay** | The height conversion assumes GR/common local \(g\), pairs share clocks/runs, and joint covariance is absent. This is node-scalar compatibility, not a joint statistical result or independent gravity, metric, lineage, or emergence evidence. |
@@ -3516,6 +3517,7 @@ The statements above are synthesized from the following local results:
 - [Coulomb projected source-rank theorem](LANE_GRA_FV_F3_Q4_COULOMB_DPAR_PROJECTED_SOURCE_RANK_V001/THEOREM.md)
 - [finite homogeneous `FV-WITNESS` response](LANE_GRA_FW_F3_Q4_COULOMB_PROJECTED_RESPONSE_V001/THEOREM.md)
 - [complete homogeneous H6 source response](LANE_GRA_FX_F3_Q4_COULOMB_COMPLETE_H6_SOURCE_RESPONSE_V001/THEOREM.md)
+- [native-support nonzero-momentum H6 response](LANE_GRA_FY_F3_Q4_NATIVE_SUPPORT_M1_COMPLETE_H6_RESPONSE_V001/THEOREM.md)
 - [Bense public mechanical-history frontier](LANE_GRA_BENSE_PUBLIC_MEMORY_HISTORY_FRONTIER_V001/THEOREM.md)
 - [HUST calibrated-source identifiability](LANE_GRA_HUST_PUBLIC_CALIBRATED_SOURCE_IDENTIFIABILITY_V001/THEOREM.md)
 - [bounded HUST public completion search](LANE_GRA_HUST_PUBLIC_COMPLETION_SEARCH_V001/THEOREM.md)
@@ -3710,9 +3712,36 @@ constant term, it cannot cancel the `E` source order by order. Its evaluated
 through-H6 polynomial has a unique positive zero near `0.5398271903`, but H8+
 is uncontrolled there; this is a finite truncation stratum, not a physical
 threshold or gravity onset. The result is complete only at `k=0` on the
-selected FO 180-state component. Native-support/nonzero-momentum response is
-the immediate successor; no finite conservation law is promoted to a Ward
-identity, tensor pole, RGRL-B, gravity, or \(G\).
+selected FO 180-state component.
+
+That native-support successor is now exact at the first nonzero quotient
+momentum. Each pair, gap, hopping-numerator, fold, and Hermitian ring insertion
+is retained at its physical `A/B` vertex or link midpoint before Fourier
+resolution. The uniform sum recovers FX/FW exactly, while reduction over
+`Q(zeta_240)` proves at `m=1`
+
+\[
+Q_{\rm diag}^{(2,4,6)}(1)
+=\left(-1,-{37\over12},-{16247\over900}\right)Q_{\rm pair}(1),
+\]
+
+with the corresponding powers of `x` understood. Thus the same `f_E(x)`
+dresses the diagonal nonidentity source at both `m=0` and the tested `m=1`.
+The ring has an exact nonzero off-diagonal cyclotomic remainder and remains an
+independent source direction. At the preregistered samples `x=2/5` and
+`x=1/2`, the finite hierarchy is `6 -> 6 -> 6 -> 6 -> 6`, the two TT
+contractions have ground-image rank two, and four nonzero FO poles respond
+with residue ranks `(1,3,1,1)`.
+
+This is a complete native-source finite-graph step, not yet a spacetime Ward
+theorem. The purely spatial contraction `k_i Q^{ij}` is nonzero, so naive
+spatial transversality is ruled out. That is not a failure of the physical
+Ward route: the parent packet has not yet supplied the temporal density,
+current, or contact terms whose combination is tested by continuity. The
+immediate proof target is therefore the typed nonzero-momentum
+continuity/contact identity, followed by finite-family scaling toward a common
+cone. No finite conservation law is promoted to a Ward identity, tensor pole,
+RGRL-B, gravity, or \(G\).
 
 The public-data boundary has advanced in four complementary ways. The official
 HUST-2018 release recovers one figure-level ToS stiffness response and

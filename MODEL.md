@@ -50,7 +50,7 @@ silently use them as the public path.
 | physics-role status | `roles` | claim-scoped EM, gamma, Alpha-inheritance, and gravity status, including the exact first-record gamma-information seed, the SAI/AWAI actual-visible-sector theorem, the adopted off-shell/on-shell RGRL distinction, and the conditional record-front cone refinement; descriptive metadata, not a gravity solver |
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
-| Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for adopted RGRL, its adopted off-shell/on-shell clarification, V002 dressed-response ceilings, the conditional record-front cone theorem, the conditional pair-resolved Coulomb `DPAR` realization, FV projected rank six, finite `FV-WITNESS`, and complete homogeneous H6 response, audited public history/source/search advances, and the exact conditional working-theory closure; native-support/nonzero-momentum response, the spatial CTP/Ward packet, empirical RGRL/EIR/AFR confirmation, the GI21 type join, a protected tensor phase, and microscopic numerical-(G) derivation remain open |
+| Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for adopted RGRL, its adopted off-shell/on-shell clarification, V002 dressed-response ceilings, the conditional record-front cone theorem, the conditional pair-resolved Coulomb `DPAR` realization, FV projected rank six, finite `FV-WITNESS`, complete homogeneous H6 response, and the native-support `m=1` H6 response, audited public history/source/search advances, and the exact conditional working-theory closure; the typed temporal-density/current/contact Ward packet, finite-family common-cone scaling, empirical RGRL/EIR/AFR confirmation, the GI21 type join, a protected tensor phase, and microscopic numerical-(G) derivation remain open |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -866,9 +866,17 @@ f_E(x)=1-x^2-{37\over12}x^4-{16247\over900}x^6,
 
 The complete homogeneous hierarchy therefore remains `5 -> 3 -> 2 -> 2`
 with the same two poles. The finite polynomial zero near `0.5398271903` is a
-through-H6 truncation stratum, not a threshold. Native-support/nonzero-momentum
-response is the immediate successor; spatial CTP rank, Ward/constraint
-closure, a protected tensor pole, and gravity remain separate. The consolidated no-
+through-H6 truncation stratum, not a threshold. Retaining each source
+insertion's native `A/B` vertex or link-midpoint support before Fourier
+resolution now proves exact `m=0` recovery and the same three `f_E`
+coefficients at `m=1` over `Q(zeta_240)`. The ring remains a nonzero
+independent off-diagonal source. At the two declared samples, the finite
+hierarchy is `6 -> 6 -> 6 -> 6 -> 6`, TT ground-image rank is two, and four
+nonzero poles respond with residue ranks `1,3,1,1`. The nonzero spatial
+contraction rules out naive transversality; the typed temporal density,
+current, and contact terms needed for a spacetime Ward test remain the
+immediate successor. Finite-family common-cone scaling, a protected tensor
+pole, and gravity remain separate. The consolidated no-
 laboratory disposition is recorded in
 [`NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md`](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
 

@@ -42,7 +42,7 @@ def main() -> int:
     certificate = theory.certificate()
     assert theory.closure_sha256 == gft._CLOSURE_PAIR[0][1]
     assert theory.audit_sha256 == gft._CLOSURE_PAIR[1][1]
-    assert gft.SCHEMA == "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V010"
+    assert gft.SCHEMA == "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V011"
     assert certificate["schema"] == gft.SCHEMA
     assert certificate["claim_class"] == gft.CLAIM_CLASS
     assert (
@@ -234,7 +234,37 @@ def main() -> int:
     assert certificate["exact_results"]["q4_FX_ground_retarded_rank"] == 2
     assert certificate["exact_results"]["q4_FX_first_nonzero_moment_rank"] == 2
     assert certificate["exact_results"]["q4_FX_finite_root_is_physical_threshold"] is False
-    assert certificate["exact_results"]["q4_FX_nonzero_momentum_source"] == "OPEN_NOT_COMPUTED"
+    assert certificate["exact_results"]["q4_FX_nonzero_momentum_source"] == (
+        "SUPERSEDED_BY_EXACT_FY_M1_REFINEMENT"
+    )
+    assert certificate["exact_results"]["q4_FY_scope"] == (
+        "NATIVE_SUPPORT_M1_SELECTED_FO180_FV_PURE_THROUGH_H6__"
+        "SAMPLED_FINITE_RESPONSE"
+    )
+    assert certificate["exact_results"]["q4_FY_support_species"] == (
+        "A", "B", "E0", "E1", "E2", "E3"
+    )
+    assert certificate["exact_results"]["q4_FY_exact_m0_recovery"] is True
+    assert certificate["exact_results"]["q4_FY_exact_field"] == "Q_ZETA240_MOD_PHI240"
+    assert certificate["exact_results"]["q4_FY_conjugate_mode"] == "Q29_EQUALS_Q1_DAGGER"
+    assert certificate["exact_results"]["q4_FY_diagonal_lift_coefficients"] == (
+        "MINUS1", "MINUS37_OVER12", "MINUS16247_OVER900"
+    )
+    assert certificate["exact_results"]["q4_FY_same_fE_as_homogeneous"] is True
+    assert certificate["exact_results"]["q4_FY_ring_offdiagonal_independent"] is True
+    assert certificate["exact_results"]["q4_FY_response_samples_x"] == (
+        "2_OVER5", "1_OVER2"
+    )
+    assert certificate["exact_results"]["q4_FY_sampled_rank_hierarchy"] == (
+        "6_TO_6_TO_6_TO_6_TO_6"
+    )
+    assert certificate["exact_results"]["q4_FY_TT_ground_image_rank"] == 2
+    assert certificate["exact_results"]["q4_FY_response_gap_count"] == 4
+    assert certificate["exact_results"]["q4_FY_residue_ranks"] == (1, 3, 1, 1)
+    assert certificate["exact_results"]["q4_FY_naive_spatial_transversality"] is False
+    assert certificate["exact_results"]["q4_FY_temporal_density_current_contact"] == (
+        "OPEN_NOT_CONSTRUCTED"
+    )
     microscopic = certificate["microscopic_parent_boundary"]
     assert (
         microscopic["scalar_carrier_transfer_on_supplied_saturated_q4_support"]
@@ -306,7 +336,9 @@ def main() -> int:
     assert microscopic["complete_generated_H6_diagonal_and_fold_response"] == (
         "EXACT_PAIR_SOURCE_RENORMALIZATION_PLUS_IDENTITIES_ON_SELECTED_K0_COMPONENT"
     )
-    assert microscopic["native_support_nonzero_momentum_H6_response"] == "OPEN_IN_PROGRESS"
+    assert microscopic["native_support_nonzero_momentum_H6_response"] == (
+        "EXACT_M1_DIAGONAL_LIFT_PLUS_INDEPENDENT_RING__SAMPLED_FINITE_RESPONSE"
+    )
     assert microscopic["full_state_dependent_CTP_Ward_response"] == "OPEN_NOT_COMPUTED"
     assert microscopic["new_interaction_or_second_field_adopted"] is False
     assert certificate["kernel_reduction"]["gaussian_maxwell_one_link_pole"] == "SPIN_1_PHOTON_CONDITIONAL_ON_MAXWELL_IR"
@@ -523,7 +555,7 @@ def main() -> int:
     assert certificate["program_authorizations"]["q4_FV_projected_offshell_rank6_executed"] is True
     assert certificate["program_authorizations"]["q4_FW_witness_finite_response_executed"] is True
     assert certificate["program_authorizations"]["q4_complete_generated_H6_source_response_executed"] is True
-    assert certificate["program_authorizations"]["q4_native_support_nonzero_momentum_response_executed"] is False
+    assert certificate["program_authorizations"]["q4_native_support_nonzero_momentum_response_executed"] is True
     assert certificate["program_authorizations"]["q4_physical_metric_source_derived"] is False
     assert certificate["program_authorizations"]["q4_full_CTP_Ward_response_executed"] is False
     assert certificate["program_authorizations"]["hust_processed_dual_channel_forward_executed"] is True
@@ -556,11 +588,12 @@ def main() -> int:
         "ADDITIVE_AND_COMPLETE_REDUCED_SOURCE_RANK4_WITH_E_NULL2__"
         "PAIR_RESOLVED_COULOMB_DPAR_CONDITIONALLY_REALIZED__"
         "FV_PURE_PROJECTED_OFFSHELL_RANK6__"
-        "COMPLETE_HOMOGENEOUS_H6_RESPONSE_5_TO_3_TO_2_TO_2"
+        "COMPLETE_HOMOGENEOUS_H6_RESPONSE_5_TO_3_TO_2_TO_2__"
+        "NATIVE_M1_H6_SAMPLED_RESPONSE_6_TO_6_TO_6_TO_6_TO_6"
     )
     assert certificate["scientific_status"]["next_no_lab_gravity_calculation"] == (
-        "NATIVE_SUPPORT_M1_COMPLETE_H6_SOURCE_RESPONSE_"
-        "THEN_PROPERLY_TYPED_CTP_WARD_AND_POLE_TESTS"
+        "TYPED_TEMPORAL_DENSITY_CURRENT_CONTACT_WARD_INTERFACE__"
+        "THEN_FINITE_FAMILY_COMMON_CONE_AND_POLE_SCALING"
     )
     assert certificate["scientific_status"]["hust_public_G_forward"] == (
         "PROCESSED_DUAL_CHANNEL_CLOSED__FULL_GC16_NOT_READY__NO_NEW_G"
@@ -606,6 +639,9 @@ def main() -> int:
     assert certificate["nonpromotion"]["FW_finite_witness_rank2_promotes_complete_response_or_Ward_tensor_pole"] is False
     assert certificate["nonpromotion"]["FX_complete_homogeneous_rank2_promotes_local_Ward_tensor_pole_or_gravity"] is False
     assert certificate["nonpromotion"]["FX_finite_polynomial_zero_promotes_physical_threshold"] is False
+    assert certificate["nonpromotion"]["FY_native_m1_response_promotes_continuum_locality_Ward_or_gravity"] is False
+    assert certificate["nonpromotion"]["FY_nonzero_spatial_contraction_promotes_complete_Ward_failure"] is False
+    assert certificate["nonpromotion"]["FY_sampled_rank6_promotes_generic_in_x_rank6"] is False
     assert certificate["nonpromotion"]["HUST_history_residual_promotes_lineage_gravity"] is False
     assert certificate["nonpromotion"]["Bense_path_dependence_promotes_causal_lineage_or_gravity"] is False
     assert certificate["nonpromotion"]["HUST_nominal_kernel_promotes_full_apparatus_G"] is False
@@ -751,7 +787,8 @@ def main() -> int:
     assert "pair-resolved elastance" in gravity_role
     assert "six family operators" in gravity_role and "commutator rank three" in gravity_role
     assert "fE=1-x^2-(37/12)x^4-(16247/900)x^6" in gravity_role
-    assert "Native-support/nonzero-momentum" in gravity_role
+    assert "native A/B vertex" in gravity_role and "Q(zeta_240)" in gravity_role
+    assert "temporal-density/current/contact" in gravity_role
     assert "HUST-2018" in gravity_role and "full GC16 or a new G" in gravity_role
     assert "three conditional AAF quotients" in gravity_role
     assert "no physical G point or interval is public" in gravity_role
