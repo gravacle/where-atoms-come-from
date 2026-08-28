@@ -1262,10 +1262,17 @@ fine-structure constant \(\alpha\).
 | Additive q4 block-strain source rank | Four microscopic tetrahedral edge dyads span exact `A1+T2` rank four, with the two-dimensional diagonal-traceless `E` sector in the linear source null. Additive multi-edge weights and fixed Feshbach reduction retain the null. | **Exact source-class obstruction; 68/68 plus 105/105 hostile replay** | General `O(j^2)` contacts may contain `E` Hessians but have zero source-off linear `Q_E`. Non-edge, root/cross-dyad, rotated-coframe, nonlocal, and thermodynamic variables remain outside the theorem. |
 | Complete reduced CW/FM source census | On the covering-matched periodic family `L=5*2^r`, the prospectively frozen reduced pure-ice source has exact microscopic rank four and through-order-eight effective rank at most four. | **Exact branch-relative source theorem; 75/75 plus 129/129 hostile replay** | The degree-square tensor is one lawful prospective occurrence-one choice, not forced by `H[0]`. Omitted BS sectors are excluded by the reduced Hamiltonian, not proved absent in a physical completion. The complete unreduced source remains underdetermined. |
 | Degree-pair geometric-strain boundary | Existing degree/link/ice pair operators carry the missing `E` query and have nonzero local H6 matrix elements, but identical `H[0]` admits rank-four additive and rank-six root-pair source derivatives. `DPAR` is one sufficient affine law that differentiates to root dyads without adding source-off dynamics. | **Exact underdetermination plus conditional microscopic rank theorem; 105/105 plus 646/646 hostile replay** | `DPAR` is neither inherited nor adopted and is not proved unique. Direct ice-projected root-pair rank is three (`A1+E`); full state-dependent CTP rank, uniform response, Ward packet, tensor pole, gravity, and `G` remain open. |
+| Pair-resolved Coulomb `DPAR` realization | A symmetric lumped node is `A1`-only, while a fully grounded pair-resolved four-terminal elastance reproduces `U_d(d-2)^2`; a complete central kernel gives `lambda=r0 V'(r0)/(2V(r0))`, and ideal fixed-coupling Coulomb gives `lambda=-1/2`. | **Exact conditional local physical completion; 492/492 plus 661/661 hostile replay** | Global shared-link ownership, local gauge dressing, ports, remainder noncancellation, current-F3 inheritance, visible EM, transverse Maxwell stiffness, gravity, and `G` remain open. |
+| Coulomb projected source rank | Under explicit `S10/FV-PURE`, the direct pair source gives `E` rank two and the exact H6 Hermitian ring source gives `A1+T2` rank four; six projected matrix-element witnesses have determinant `-4678629417/256`. | **Exact conditional projected off-shell rank six through H8; 89/89 plus 83/83 scientific hostile checks** | `FV-PURE` is stronger than the physical-solder premises. Formal operator rank is not complete CTP/Ward response, a tensor pole, gravity, or `G`. |
+| Finite homogeneous `FV-WITNESS` response | On the FO 180-state component, the two rank-closing pieces obey the exact hierarchy family rank six to component rank five modulo identity to commutator rank three to ground retarded/first-moment rank two, with two exact rank-one residues. | **Exact conditional finite response; 114/114 plus 144/144 hostile replay** | Generated `Q_diag^(2,4,6)` derivatives and folds are omitted and can change the complete response. Component-specific conservation is not a Ward identity; no tensor pole, gravity, or `G` follows. |
+| Complete homogeneous H6 source response | Exact enumeration of every diagonal H2/H4/H6 closed word and BW/Feshbach fold gives `Q_diag^(2,4,6)` equal to the direct Coulomb pair source times `-x^2`, `-(37/12)x^4`, and `-(16247/900)x^6`, respectively, plus retained Hilbert identities. Hence `rho_E=rho[1-x^2-(37/12)x^4-(16247/900)x^6]`, and the complete homogeneous hierarchy remains `5 -> 3 -> 2 -> 2` with the same two poles. | **Exact conditional complete homogeneous source theorem on the selected FO component; 109/109 plus 139/139 independent hostile replay** | “Complete” is restricted to `k=0`, FV-PURE, the selected 180-state winding component, modulo identity and fixed through H6. The finite polynomial zero is a truncation stratum, not a threshold. Local/nonzero-momentum source density, other components, H8+, CTP/Ward closure, a tensor pole, gravity, and `G` remain open. |
 | HUST ToS round-trip history diagnostic | Equal-configuration endpoint returns give exact rank, reused-endpoint Gram, and telescoping ledgers plus reproducible source-present-minus-background residuals. | **Official-data history-confound diagnostic; 2187 plus 2208 hostile checks** | Same ordinal does not mean matched/randomized; no covariance or matched no-excursion arm exists. No causal memory, lineage, `beta_TM`, gravity emergence, `GC16`, or new \(G\) follows. |
 | HUST conditional nominal source kernel | Public masses, dimensions, separations, and temperatures determine exact conditional homogeneous Newtonian functionals and converged numerical AAF/ToS source coefficients, with independently recovered sensitivity classes. | **Conditional finite-source reconstruction; 101/101 plus 94/94 hostile replay** | Public AAF distances leave two coordinate-shear freedoms; thermal transport is partial and processed-minus-nominal is only a scalar model discrepancy. The full mass/stress remainder, `GC16`, and a new \(G\) remain open. |
 | Five-clock common-node scalar compatibility | The ten processed pair heights have exact K5 cut rank four and cycle dimension six; all 37 cycles were checked and the marginal-box optimum is \(\rho_*=27/82<1\). | **Exact graph theorem on official processed outputs; 661/661 plus 548/548 hostile replay** | The height conversion assumes GR/common local \(g\), pairs share clocks/runs, and joint covariance is absent. This is node-scalar compatibility, not a joint statistical result or independent gravity, metric, lineage, or emergence evidence. |
 | HUST conditional homogeneous-`G` quotient | Combining the independently reconstructed homogeneous kernel with the released corrected response fields, without an accepted-`G` input, gives three AAF quotients at `r_norm=0` and seven exact affine ToS families. A second public normalization changes the quotients by `1631.54 ppm` in AAF and `152--153 ppm` in ToS. | **Exact conditional arithmetic and constructive source-identifiability obstruction; 223/223 plus 255/255 hostile replay** | The homogeneous remainder and ToS signed correction are premises, not identified public fields. The responses are corrected rather than raw, and no matched full multipole/CMM numerator or covariance is public. This is no new `G`, `GC16`, RGRL/GFT confirmation, or lineage result. |
+| HUST calibrated partial source | Public central corrections, signed ToS anelastic corrections, and author-rule covariance reconstruct calibrated partial kernels and narrow processed-kernel comparator gaps to about `19--30 ppm` in AAF and `0.6--12.1 ppm` in ToS. | **Exact calibrated partial forward and identifiability boundary; 192/192 plus 303/303 hostile replay** | The comparator remainder is inferable from the authors' processed kernel but not independently owned. A row-bound harmonic remainder or physical maps remain necessary; no new `G` follows. |
+| Bense public mechanical history | Four files contain 101,628 samples, 38 monotone branches, 97 within-file opposite-history comparisons, and 34 force-event proxies, establishing repeated-input same-apparatus mechanical path dependence. | **Retrospective development evidence; 432/432 plus 379/379 hostile replay** | No authenticated event-bound lineage, sufficient matched control, randomized KEEP/BREAK, common future query, covariance, or gravity observable exists. This is not causal lineage or gravity evidence. |
+| Bounded HUST completion search | The declared official-release, DOI-registry, repository, institutional, code-host, and dissertation surfaces yielded no qualifying independently owned remainder, physical map, or raw response packet; two dissertation leads were retained for acquisition only. | **Dated bounded readiness search; 48/48 plus 103/103 hostile replay** | It is non-exhaustive, neither lead's payload was inspected, and no numerical `G` advance follows. Targeted lawful acquisition or an author request is next. |
 
 The labels “exact” and “proved” in this document always inherit the domain and
 premises of the cited lane. They do not turn a conditional bridge into evidence
@@ -3505,6 +3512,14 @@ The statements above are synthesized from the following local results:
 - [HUST nominal finite-source kernel reconstruction](LANE_GRA_HUST_NOMINAL_SOURCE_KERNEL_RECONSTRUCTION_V001/THEOREM.md)
 - [five-clock common-node scalar cycle theorem](LANE_GRA_CLOCK_K5_COMMON_POTENTIAL_CYCLE_CLOSURE_V001/THEOREM.md)
 - [HUST conditional homogeneous-`G` cross-check](LANE_GRA_HUST_CONDITIONAL_HOMOGENEOUS_G_CROSSCHECK_V001/THEOREM.md)
+- [pair-resolved Coulomb `DPAR` realization](LANE_GRA_FU_F3_Q4_PAIR_RESOLVED_MAXWELL_DPAR_DERIVATION_V001/THEOREM.md)
+- [Coulomb projected source-rank theorem](LANE_GRA_FV_F3_Q4_COULOMB_DPAR_PROJECTED_SOURCE_RANK_V001/THEOREM.md)
+- [finite homogeneous `FV-WITNESS` response](LANE_GRA_FW_F3_Q4_COULOMB_PROJECTED_RESPONSE_V001/THEOREM.md)
+- [complete homogeneous H6 source response](LANE_GRA_FX_F3_Q4_COULOMB_COMPLETE_H6_SOURCE_RESPONSE_V001/THEOREM.md)
+- [Bense public mechanical-history frontier](LANE_GRA_BENSE_PUBLIC_MEMORY_HISTORY_FRONTIER_V001/THEOREM.md)
+- [HUST calibrated-source identifiability](LANE_GRA_HUST_PUBLIC_CALIBRATED_SOURCE_IDENTIFIABILITY_V001/THEOREM.md)
+- [bounded HUST public completion search](LANE_GRA_HUST_PUBLIC_COMPLETION_SEARCH_V001/THEOREM.md)
+- [targeted no-laboratory data-acquisition packet](NO_LAB_GRAVITY_DATA_ACQUISITION_PACKET_V001.md)
 - [founding design and alpha-input decision](FOUNDING_DESIGN_V001.md)
 
 ## No-laboratory F3/q4 continuation
@@ -3624,14 +3639,80 @@ g\!\left({|F(n_b-n_a)|^2\over|n_b-n_a|^2}\right)P_{ab},
 \qquad g(1)=1,quad g'(1)\ne0.
 \]
 
-If independently derived or calibrated, differentiation supplies the six root
-dyads, leaves the one-edge source and `H[0]` unchanged, preserves
-source-before-Feshbach ordering, and gives exact microscopic rank six plus
-nonzero block-local H6 `E` response. `DPAR` is one sufficient premise, not
-proved unique, inherited, or adopted. It replaces the degree-source deformation
-rather than adding a second `A1` source. Direct ice projection has rank three
-`A1+E`; uniform response, full state-dependent CTP rank, the Ward packet, a
-tensor pole, and gravity remain open.
+The physical-realization screen now derives this form conditionally. A
+tetrahedrally symmetric single-node capacitance has an `A1`-only first
+variation and exact `E` nullity two. A fully grounded pair-resolved
+four-terminal elastance can instead reproduce `U_d(d-2)^2` on all sixteen q4
+states, and a complete central mutual kernel gives
+
+\[
+\lambda=g'(1)={r_0V'(r_0)\over2V(r_0)}.
+\]
+
+The ideal fixed-coupling Coulomb kernel therefore gives `lambda=-1/2` and the
+conditional coefficient match
+
+\[
+U_d={2\kappa^2\alpha(\mu_0)\hbar c\over\epsilon_r r_0}.
+\]
+
+This is a local physical completion, not an inheritance from current F3,
+visible-electromagnetism identification, transverse Maxwell stiffness, or
+numerical-alpha derivation. Global shared-link ownership, local gauge
+dressing, complete ports, and remainder noncancellation stay explicit.
+
+With the stronger `S10 / FV-PURE` premise identifying that Coulomb pair term
+and the unchanged one-edge term as the complete nonidentity first source
+derivative, the projected formal rank closes. The direct source supplies
+nonidentity `E` rank two. Exact differentiation of all 720 H6 histories and
+3600 endpoint-referenced denominators supplies Hermitian ring `A1+T2` rank
+four. Six actual projected matrix-element witnesses give
+
+\[
+\det W=-{4678629417\over256}\ne0,
+\qquad \operatorname{rank}_{\rm nonid}=2_E+1_{A_1}+3_{T_2}=6.
+\]
+
+`FV-PURE` is not implied by FU's physical-solder conditions; a retained
+residual kernel with a different strain law requires a fresh calculation.
+The conclusion is off-shell and formal through H8. State-dependent CTP
+response, a Ward packet, a tensor pole, and gravity remain open.
+
+The first exact source-to-response composition is now available for FV's two
+explicit rank-closing pieces,
+
+\[
+Q_{\rm FV-WITNESS}=Q_{\rm pair}^{(0)}+Q_{{\rm ring,irr}}^{(6)}.
+\]
+
+On the exact FO 180-state homogeneous translation-closed component, the
+family-wise rank-six witness restricts to operator rank five modulo identity,
+then commutator rank three, and unique-ground-state retarded and first-moment
+rank two. The ground response consists of two orthogonal rank-one residues at
+`2+2 sqrt(2)` and `4+2 sqrt(2)` in `J6` units. This does not contradict FV:
+the smaller component and uniform query create exact identities and
+component-specific conserved directions. It also does not finish the fixed-
+order source. The generated `Q_diag^(2,4,6)` derivatives and folds are absent
+from `FV-WITNESS`, so they were computed separately rather than assumed.
+Exact enumeration of every diagonal closed word and fold through H6 gives
+
+\[
+{Q_{\rm eff}^{(\le6)}\over J_6}
+=\rho f_E(x)D+R+\rho s(x)I,
+\qquad
+f_E(x)=1-x^2-{37\over12}x^4-{16247\over900}x^6.
+\]
+
+Thus the generated terms introduce no new homogeneous nonidentity direction:
+they dress the same Coulomb-pair `E` source. The complete homogeneous ranks
+remain `5 -> 3 -> 2 -> 2`, with the same two exact poles. Since `f_E` has unit
+constant term, it cannot cancel the `E` source order by order. Its evaluated
+through-H6 polynomial has a unique positive zero near `0.5398271903`, but H8+
+is uncontrolled there; this is a finite truncation stratum, not a physical
+threshold or gravity onset. The result is complete only at `k=0` on the
+selected FO 180-state component. Native-support/nonzero-momentum response is
+the immediate successor; no finite conservation law is promoted to a Ward
+identity, tensor pole, RGRL-B, gravity, or \(G\).
 
 The public-data boundary has advanced in four complementary ways. The official
 HUST-2018 release recovers one figure-level ToS stiffness response and
@@ -3662,10 +3743,55 @@ numerical cross-check. With
 families. No accepted or CODATA \(G\) enters. But an equally public
 normalization collision shifts AAF by about `1631.54 ppm` and ToS by
 `152--153 ppm`, proving that total inertia does not identify the matched source
-multipole. The AAF and ToS responses are already corrected; the full
-mass-multipole/CMM numerator, covariance, signed ToS correction, and
-uncorrected event ledger remain absent. The public packet therefore owns no
-physical \(G\) point or compact interval.
+multipole.
+
+The public central correction tables now push the calculation further. Keeping
+numerator and inertia ownership together gives calibrated partial AAF kernels
+near `6926.505--6926.546 kg m^-3` and ToS kernels near
+`24911.971--25003.125 kg m^-3`. The signed ToS anelastic corrections
+`-6.01`, `-8.38`, `-5.68`, and `-6.92 ppm` are public, so that central line is
+no longer free. At zero independent remainder the partial forwards span
+`6.6741755--6.6744092e-11` SI in AAF and
+`6.6739974--6.6742407e-11` SI in ToS. The residual comparator gaps narrow to
+about `19--30 ppm` and `0.6--12.1 ppm`, respectively. The authors' processed
+kernel makes a comparator remainder numerically inferable, but it is not an
+independently owned physical-source reconstruction. One independently owned
+normalized harmonic remainder per evaluated row—or the physical maps needed
+to compute it—is still necessary for a row-wise source cross-check. Raw event,
+correction, design, and covariance fields remain necessary for an independent
+response refit. The public packet therefore owns no independently
+reconstructed deterministic or coverage-certified physical \(G\) interval.
+
+A subsequent dated completion search found no qualifying independently owned
+remainder, physical map, or raw response/design/covariance packet on its
+declared official-release, DOI-registry, repository, institutional, code-host,
+or dissertation surfaces. It retained one confirmed 2021 HUST AAF
+dissertation lead and one unverified title-only possible ToS lead as
+acquisition targets, not evidence. Literal endpoint searches are reproducible;
+index-mediated aggregate searches are frozen curator records rather than
+completeness certificates. The result redirects effort from repeated generic
+web searches to targeted lawful acquisition or author requests and does not
+claim that the missing payload is absent from the world.
+
+The resulting [no-laboratory data-acquisition packet](NO_LAB_GRAVITY_DATA_ACQUISITION_PACKET_V001.md)
+now states both minimal requests and the calculations they unlock: an
+event-keyed `MATCHED_ENDPOINT_QUERY_TABLE` for a paired KEEP/BREAK lineage
+estimate, and one independently reconstructible released-row-bound harmonic
+remainder `r_i` for an independent source-side row evaluation using the
+released response summary. The larger HUST
+raw event/design/covariance bundle is kept separate because it is needed for a
+historical raw-response refit, not the first source-side row calculation.
+
+A separate public mechanical-history dataset supplies retrospective
+development evidence but not the missing causal intervention. Across four
+files it contains 101,628 samples, 38 monotone branches, 97 within-file
+opposite-history comparisons, and 34 force-event proxies. It proves
+same-apparatus mechanical path dependence under repeated input. It lacks an
+event-bound authenticated lineage variable, sufficient matched controls,
+randomized KEEP/BREAK, a common future query, and any gravity observable. The
+97 comparisons are not independent trials, and the internal freeze was not
+externally timestamped. This result applies to the audited candidate set and
+does not claim that no better public dataset exists.
 
 Finally, the processed five-clock network passes an exact common-node-scalar
 necessary condition without an invented covariance. The K5 cut rank is four,

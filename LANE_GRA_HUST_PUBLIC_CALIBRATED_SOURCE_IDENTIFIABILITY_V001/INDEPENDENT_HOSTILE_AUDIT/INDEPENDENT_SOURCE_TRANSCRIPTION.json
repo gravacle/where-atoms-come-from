@@ -1,0 +1,68 @@
+{
+  "audit_schema": "WAC_HUST_CALIBRATED_SOURCE_HOSTILE_TRANSCRIPTION_V001",
+  "date": "2026-08-27",
+  "ownership": "Independent visual/manual transcription from the hash-pinned primary article Extended Data Tables 3 and 5 and Supplementary Tables 2-4; official Table 1 is parsed directly by the audit executable.",
+  "units": {
+    "all_corrections": "ppm correction to reported G",
+    "response_AAF": "nrad s^-2",
+    "response_TOS": "s^-2",
+    "kernel": "kg m^-3"
+  },
+  "AAF_order": ["AAF-I", "AAF-II", "AAF-III"],
+  "AAF": {
+    "omega_d_rad_s": [0.007853982, 0.005235988, 0.005235988],
+    "coating_central_ppm": [-9.10, -9.09, -9.10],
+    "coating_standard_u_ppm": [0.34, 0.34, 0.34],
+    "clamp_central_ppm": [5.75, 5.85, 5.73],
+    "clamp_standard_u_ppm": [0.15, 0.21, 0.11],
+    "ferrule_central_ppm": [22.52, 22.84, 22.45],
+    "ferrule_standard_u_ppm": [0.69, 1.03, 0.47],
+    "others_central_ppm": [3.23, 3.29, 3.21],
+    "others_standard_u_ppm": [0.29, 0.29, 0.29],
+    "magnetic_damper_central_ppm": [455.40, 455.40, 25.74],
+    "magnetic_damper_standard_u_ppm": [1.95, 1.95, 0.08],
+    "air_density_central_ppm": [149.90, 147.33, 148.27],
+    "air_density_standard_u_ppm": [1.00, 1.51, 1.13],
+    "data_average_central_ppm": [2.57, 1.14, 1.14],
+    "data_average_standard_u_ppm": [0.01, 0.01, 0.01],
+    "numeric_derivative_central_ppm": [2058.71, 914.35, 914.35],
+    "numeric_derivative_standard_u_ppm": [0.01, 0.01, 0.01],
+    "published_processed_kernel_kg_m-3": [6926.352, 6926.334, 6926.415],
+    "published_corrected_response": [462.0912, 462.0791, 462.2941]
+  },
+  "TOS_order": [
+    "TOS-I-F1-first",
+    "TOS-I-F1-repeat",
+    "TOS-I-F2",
+    "TOS-I-F3-first",
+    "TOS-I-F3-repeat",
+    "TOS-II-F4-first",
+    "TOS-II-F4-repeat"
+  ],
+  "TOS": {
+    "coating_central_ppm": [-1.70, -1.70, -1.70, -1.70, -1.70, -1.52, -1.52],
+    "coating_standard_u_ppm": [0.86, 0.86, 0.86, 0.86, 0.86, 0.73, 0.73],
+    "clamp_central_ppm": [70.66, 70.66, 70.65, 70.73, 70.73, 68.58, 68.58],
+    "clamp_standard_u_ppm": [0.14, 0.14, 0.14, 0.14, 0.14, 0.33, 0.33],
+    "ferrule_central_ppm": [12.10, 12.10, 12.91, 12.70, 12.70, 12.85, 12.85],
+    "ferrule_standard_u_ppm": [0.05, 0.05, 0.05, 0.06, 0.06, 0.05, 0.05],
+    "others_central_ppm": [9.27, 9.27, 10.19, 9.51, 9.51, 8.79, 8.79],
+    "others_standard_u_ppm": [0.40, 0.40, 0.37, 0.39, 0.39, 0.26, 0.26],
+    "anelastic_central_ppm": [-6.01, -6.01, -8.38, -5.68, -5.68, -6.92, -6.92],
+    "anelastic_standard_u_ppm": [3.00, 3.00, 4.19, 2.84, 2.84, 3.46, 3.46],
+    "magnetic_damper_central_ppm": [0.47, 0.47, 7.13, 0.32, 0.32, 0.27, 0.27],
+    "magnetic_damper_standard_u_ppm": [0.08, 0.08, 1.19, 0.05, 0.05, 0.08, 0.08],
+    "thermoelastic_central_ppm": [-73.13, 65.08, 723.89, -146.56, -85.51, -90.92, -145.59],
+    "thermoelastic_standard_u_ppm": [0.71, 0.71, 3.41, 0.77, 0.61, 0.97, 1.46],
+    "gravitational_nonlinearity_central_ppm": [19.72, 22.14, 13.94, 15.96, 14.02, 17.90, 18.01],
+    "gravitational_nonlinearity_standard_u_ppm": [0.62, 0.62, 0.62, 0.62, 0.62, 0.22, 0.22],
+    "published_processed_kernel_kg_m-3": [24912.86, 24912.12, 24912.15, 24911.70, 24911.72, 25003.05, 25002.95],
+    "published_corrected_response": [0.000001662732, 0.000001662699, 0.000001662698, 0.000001662684, 0.000001662683, 0.000001668719, 0.000001668734]
+  },
+  "source_semantics": {
+    "AAF_response": "Supplementary Table 3 states that alpha_t at 2 omega_d has been corrected for the air-density effect. Section 4 supplies exact attenuation formulae for averaging and two numerical derivatives.",
+    "TOS_response": "The primary article and Supplementary Section 3 state that thermoelastic, fibre-nonlinearity, and source-gravitational-nonlinearity effects were corrected synchronously in determining Delta omega squared.",
+    "TOS_dynamic_sign": "Supplementary Section 1 gives a correction bracket containing the anelastic term and magnetic-damper term; Extended Data Table 3 prints the current fibre anelastic corrections with explicit negative signs and the magnetic corrections with positive signs.",
+    "processed_kernel_ceiling": "Supplementary Tables 2 and 3 publish authors-processed source coefficients. They are public numerical comparators, not an independently reconstructible physical source from the released raw maps."
+  }
+}

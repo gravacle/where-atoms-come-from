@@ -16,7 +16,7 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V008"
+SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V010"
 CLAIM_CLASS = (
     "ADOPTED_RGRL_OFFSHELL_ANCESTRY_AND_EXACT_CONDITIONAL_WORKING_THEORY_"
     "CLOSURE_WITH_SEPARATE_ONSHELL_RESPONSE_CEILING"
@@ -433,6 +433,83 @@ _ADVANCE_SOURCE_PAIRS = (
             "fcd2fa0fcc6dd70cbd1397f3043659627e561606649279deca5d2fb135eb4e9d",
         ),
     ),
+    (
+        "f3_q4_pair_resolved_coulomb_dpar_realization",
+        (
+            "LANE_GRA_FU_F3_Q4_PAIR_RESOLVED_MAXWELL_DPAR_DERIVATION_V001/THEOREM.md",
+            "f088346f72861b3b11ae737fe6b882d43da9e747fc1d1d1f6bd446a7fd2b6272",
+        ),
+        (
+            "LANE_GRA_FU_F3_Q4_PAIR_RESOLVED_MAXWELL_DPAR_DERIVATION_V001/INDEPENDENT_HOSTILE_AUDIT.md",
+            "6f859779566177b5999cfe02c01cd569c5bd7b0b4ec2b21b0b3e79ebf26f9277",
+        ),
+    ),
+    (
+        "f3_q4_coulomb_projected_source_rank",
+        (
+            "LANE_GRA_FV_F3_Q4_COULOMB_DPAR_PROJECTED_SOURCE_RANK_V001/THEOREM.md",
+            "6fc221a31151340b91a946d33e442971c1373500e067c354b6c610e3964edb1c",
+        ),
+        (
+            "LANE_GRA_FV_F3_Q4_COULOMB_DPAR_PROJECTED_SOURCE_RANK_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "3801fd9ba6ba3c0fe80c9f4792abfdeb6dd7c37c7145663be05b4d56f8160723",
+        ),
+    ),
+    (
+        "f3_q4_coulomb_fv_witness_finite_response",
+        (
+            "LANE_GRA_FW_F3_Q4_COULOMB_PROJECTED_RESPONSE_V001/THEOREM.md",
+            "db3e12d50fd1cb41cddc722a0445cdeaef6a52d49704fa6df1028dfd9abcba1b",
+        ),
+        (
+            "LANE_GRA_FW_F3_Q4_COULOMB_PROJECTED_RESPONSE_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "77ecf5f906c09fc171c20e8b1c431ac76a8db7d19369a74506d49877428ba463",
+        ),
+    ),
+    (
+        "bense_public_memory_history_frontier",
+        (
+            "LANE_GRA_BENSE_PUBLIC_MEMORY_HISTORY_FRONTIER_V001/THEOREM.md",
+            "9eef510038cf541f70b22082613231024e42d81e17818fb0cf8b866df540f75c",
+        ),
+        (
+            "LANE_GRA_BENSE_PUBLIC_MEMORY_HISTORY_FRONTIER_V001/INDEPENDENT_HOSTILE_AUDIT.md",
+            "d4592d19ca0219a601b45074d30fcae6c9d9319a01881d27e98d523b617e3689",
+        ),
+    ),
+    (
+        "hust_public_calibrated_source_identifiability",
+        (
+            "LANE_GRA_HUST_PUBLIC_CALIBRATED_SOURCE_IDENTIFIABILITY_V001/THEOREM.md",
+            "ce2177498cdae8a4fe611deb8a84526554177bd33b9fa59eff48f7b5f7391aa2",
+        ),
+        (
+            "LANE_GRA_HUST_PUBLIC_CALIBRATED_SOURCE_IDENTIFIABILITY_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "95693c55b483243034358d29dfe6dbe0b4ac4a4e96a906a0c0e72c4b1db68232",
+        ),
+    ),
+    (
+        "hust_public_bounded_completion_search",
+        (
+            "LANE_GRA_HUST_PUBLIC_COMPLETION_SEARCH_V001/THEOREM.md",
+            "b763e8d313aa034368f297ffd49bbad016209f4ad70f84a33082c3b049ec733a",
+        ),
+        (
+            "LANE_GRA_HUST_PUBLIC_COMPLETION_SEARCH_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "faf1b012878b3b4c7daa335a9a9520e23eaa7cc3688f53d7e2a950a7c971c02c",
+        ),
+    ),
+    (
+        "f3_q4_coulomb_complete_h6_homogeneous_response",
+        (
+            "LANE_GRA_FX_F3_Q4_COULOMB_COMPLETE_H6_SOURCE_RESPONSE_V001/THEOREM.md",
+            "2bf65e602dfbb5cf8cad7b69d5f22aa8ae01904924e320006322e251fc9ca5a4",
+        ),
+        (
+            "LANE_GRA_FX_F3_Q4_COULOMB_COMPLETE_H6_SOURCE_RESPONSE_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "57ccae45274bdb6f118e8bf98c4be1b2cea279658f96ad004380b19383a4dac8",
+        ),
+    ),
 )
 
 _EXPECTED_ARTIFACTS = _CLOSURE_PAIR + tuple(
@@ -692,6 +769,52 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "q4_DPAR_conditional_microscopic_source_rank": 6,
                 "q4_DPAR_direct_ice_projected_image": "RANK3_A1_PLUS_E",
                 "q4_DPAR_local_H6_E_response": "EXACT_NONZERO_ON_EXPLICIT_PERIODIC_WITNESSES",
+                "q4_lumped_tetrahedral_capacitance_first_variation": (
+                    "A1_ONLY__E_NULLITY_2_EXACT"
+                ),
+                "q4_pair_resolved_grounded_elastance_match": (
+                    "EXACT_UD_D_MINUS_2_SQUARED_ON_ALL_16_Q4_STATES"
+                ),
+                "q4_central_kernel_DPAR_slope": "LAMBDA_EQUALS_R0_VPRIME_OVER_2V",
+                "q4_ideal_fixed_coupling_coulomb_lambda": "MINUS_ONE_HALF",
+                "q4_ideal_coulomb_Ud_relation": (
+                    "2_KAPPA_SQUARED_ALPHA_MU0_HBAR_C_OVER_EPSILON_R_R0"
+                ),
+                "q4_pair_resolved_DPAR_realization_scope": (
+                    "EXACT_CONDITIONAL_LOCAL_PHYSICAL_COMPLETION__NOT_CURRENT_F3_"
+                    "GLOBAL_SHARED_LINK_VISIBLE_U1_OR_TRANSVERSE_MAXWELL_STIFFNESS"
+                ),
+                "q4_FV_PURE_status": (
+                    "EXPLICIT_S10_COMPLETE_NONIDENTITY_SOURCE_PREMISE__STRONGER_THAN_FU_S1_TO_S9"
+                ),
+                "q4_FV_direct_projected_nonidentity_E_rank": 2,
+                "q4_FV_H6_Hermitian_ring_nonidentity_rank": 4,
+                "q4_FV_H6_Hermitian_ring_sectors": "A1_PLUS_T2",
+                "q4_FV_projected_nonidentity_source_rank": 6,
+                "q4_FV_operator_witness_determinant": "MINUS_4678629417_OVER_256",
+                "q4_FV_formal_through_H8_rank": 6,
+                "q4_FV_complete_CTP_Ward_tensor_response": "OPEN_NOT_COMPUTED",
+                "q4_FW_source_scope": "FV_WITNESS_PAIR0_PLUS_RING6_IRREDUCIBLE_ONLY",
+                "q4_FW_FV_family_offshell_rank": 6,
+                "q4_FW_component_operator_rank_mod_identity": 5,
+                "q4_FW_commutator_rank": 3,
+                "q4_FW_ground_retarded_rank": 2,
+                "q4_FW_first_nonzero_moment_rank": 2,
+                "q4_FW_exact_gap_1_J6": "2_PLUS_2_SQRT2",
+                "q4_FW_exact_gap_2_J6": "4_PLUS_2_SQRT2",
+                "q4_FW_residue_ranks": (1, 1),
+                "q4_FW_generated_diagonal_and_fold_scope": "OMITTED_NOT_UPPER_BOUND",
+                "q4_FX_scope": (
+                    "COMPLETE_HOMOGENEOUS_K0_SELECTED_FO180_FV_PURE_THROUGH_H6_MOD_IDENTITY"
+                ),
+                "q4_FX_source_off_coefficients": ("MINUS60", "MINUS35", "MINUS893_OVER9"),
+                "q4_FX_fE": "1_MINUS_X2_MINUS_37_OVER12_X4_MINUS_16247_OVER900_X6",
+                "q4_FX_component_operator_rank_mod_identity": 5,
+                "q4_FX_commutator_rank": 3,
+                "q4_FX_ground_retarded_rank": 2,
+                "q4_FX_first_nonzero_moment_rank": 2,
+                "q4_FX_finite_root_is_physical_threshold": False,
+                "q4_FX_nonzero_momentum_source": "OPEN_NOT_COMPUTED",
             },
             "kernel_reduction": {
                 "scope": "Q4_TETRAHEDRAL_S4_FIXED_POINT_LOCAL_OR_K_ZERO",
@@ -758,8 +881,22 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "DPAR_conditional_microscopic_source_rank": 6,
                 "DPAR_direct_ice_projected_image": "RANK3_A1_PLUS_E",
                 "DPAR_full_CTP_rank": "OPEN_NOT_COMPUTED",
+                "pair_resolved_central_kernel_DPAR": (
+                    "EXACT_CONDITIONAL_LOCAL_PHYSICAL_REALIZATION"
+                ),
+                "ideal_coulomb_DPAR_lambda": "MINUS_ONE_HALF",
+                "FV_PURE_complete_source_premise": "EXPLICIT_NOT_DERIVED_FROM_FU",
+                "FV_projected_offshell_operator_rank": 6,
+                "FV_projected_rank_sectors": "A1_1_PLUS_E_2_PLUS_T2_3",
+                "FW_finite_homogeneous_response_hierarchy": "6_TO_5_TO_3_TO_2_TO_2",
+                "FW_scope": "FV_WITNESS_SUBOPERATOR_NOT_COMPLETE_H6_SOURCE_OR_CTP",
+                "FW_component_conservation_is_Ward_identity": False,
+                "FX_complete_homogeneous_H6_response_hierarchy": "5_TO_3_TO_2_TO_2",
+                "FX_generated_diagonal_source_direction": "PAIR_SOURCE_PLUS_HILBERT_IDENTITY_ONLY",
+                "FX_finite_polynomial_zero_is_threshold": False,
                 "next_collective_metric_calculation": (
-                    "DERIVE_DPAR_PHYSICAL_REALIZATION_THEN_FULL_CTP_WARD_RESPONSE"
+                    "NATIVE_SUPPORT_NONZERO_MOMENTUM_COMPLETE_H6_RESPONSE_THEN_"
+                    "PROPERLY_TYPED_CTP_WARD_RESPONSE"
                 ),
             },
             "microscopic_parent_boundary": {
@@ -825,6 +962,17 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "DPAR_status": "SUFFICIENT_CONDITIONAL_LAW__NEITHER_INHERITED_NOR_ADOPTED",
                 "DPAR_conditional_microscopic_rank": 6,
                 "DPAR_direct_ice_projected_rank": 3,
+                "DPAR_pair_resolved_coulomb_realization": (
+                    "EXACT_CONDITIONAL_LOCAL_COMPLETION__GLOBAL_F3_GAUGE_SOLDER_OPEN"
+                ),
+                "FV_PURE_projected_offshell_rank6": "EXACT_CONDITIONAL_ON_EXPLICIT_S10",
+                "FV_WITNESS_finite_homogeneous_response": (
+                    "EXACT_6_TO_5_TO_3_TO_2_TO_2__NOT_COMPLETE_H6_SOURCE"
+                ),
+                "complete_generated_H6_diagonal_and_fold_response": (
+                    "EXACT_PAIR_SOURCE_RENORMALIZATION_PLUS_IDENTITIES_ON_SELECTED_K0_COMPONENT"
+                ),
+                "native_support_nonzero_momentum_H6_response": "OPEN_IN_PROGRESS",
                 "full_state_dependent_CTP_Ward_response": "OPEN_NOT_COMPUTED",
                 "new_interaction_or_second_field_adopted": False,
             },
@@ -890,6 +1038,36 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "hust_public_physical_G_point_or_compact_interval_identified": False,
                 "hust_AAF_normalization_collision_ppm": "1631P537953",
                 "hust_ToS_normalization_collision_ppm": "152P258414_TO_153P469498",
+                "hust_calibrated_partial_AAF_kernel_kg_m_minus3": (
+                    "6926P5053_TO_6926P5456_APPROXIMATE"
+                ),
+                "hust_calibrated_partial_ToS_kernel_kg_m_minus3": (
+                    "24911P97_TO_25003P12_APPROXIMATE"
+                ),
+                "hust_public_signed_ToS_anelastic_corrections_ppm": (
+                    "MINUS6P01",
+                    "MINUS8P38",
+                    "MINUS5P68",
+                    "MINUS6P92",
+                ),
+                "hust_calibrated_partial_AAF_zero_remainder_G_SI": (
+                    "6P6741755E_MINUS11_TO_6P6744092E_MINUS11"
+                ),
+                "hust_calibrated_partial_ToS_zero_remainder_G_SI": (
+                    "6P6739974E_MINUS11_TO_6P6742407E_MINUS11"
+                ),
+                "hust_processed_kernel_comparator_gap_AAF_ppm": "18P86_TO_29P95_APPROXIMATE",
+                "hust_processed_kernel_comparator_gap_ToS_ppm": "0P57_TO_12P11_APPROXIMATE",
+                "hust_author_rule_covariance_ppm": ("11P616", "11P637"),
+                "hust_independently_owned_physical_harmonic_remainder": "NOT_PUBLICLY_OWNED",
+                "hust_raw_event_design_covariance_refit_ready": False,
+                "hust_public_completion_search_status": (
+                    "BOUNDED_NO_QUALIFYING_ROOT_ON_DECLARED_SURFACES"
+                ),
+                "hust_public_completion_search_world_exhaustive": False,
+                "hust_public_completion_search_acquisition_leads": 2,
+                "hust_public_completion_search_confirmed_dissertation_leads": 1,
+                "hust_public_completion_search_numerical_G_advanced": False,
             },
             "SPAG": {
                 "status": "HISTORICAL_AUDITED_PROTOCOL_SUPERSEDED_FOR_FUTURE_ONSHELL_USE",
@@ -918,6 +1096,12 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "public_second_pass_component_roots": 2,
                 "public_second_pass_result_is_exhaustive_world_search": False,
                 "panda_response_holdout_opened": False,
+                "bense_public_history_samples": 101628,
+                "bense_public_history_branches": 38,
+                "bense_public_history_within_file_comparisons": 97,
+                "bense_public_history_force_event_proxies": 34,
+                "bense_matched_endpoint_lineage_estimand_identified": False,
+                "bense_gravity_observable_present": False,
             },
             "scientific_status": {
                 "nature_obeys_RGRL": "NOT_ESTABLISHED_BY_THIS_CERTIFICATE",
@@ -960,11 +1144,13 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 ),
                 "q4_source_rank_boundary": (
                     "ADDITIVE_AND_COMPLETE_REDUCED_SOURCE_RANK4_WITH_E_NULL2__"
-                    "DPAR_CONDITIONALLY_REPAIRS_MICROSCOPIC_RANK_TO6"
+                    "PAIR_RESOLVED_COULOMB_DPAR_CONDITIONALLY_REALIZED__"
+                    "FV_PURE_PROJECTED_OFFSHELL_RANK6__"
+                    "COMPLETE_HOMOGENEOUS_H6_RESPONSE_5_TO_3_TO_2_TO_2"
                 ),
                 "next_no_lab_gravity_calculation": (
-                    "DERIVE_DPAR_PHYSICAL_REALIZATION_OR_RETAIN_EXPLICIT_CONDITIONAL_PREMISE_"
-                    "THEN_TEST_FULL_CTP_WARD_RESPONSE"
+                    "NATIVE_SUPPORT_M1_COMPLETE_H6_SOURCE_RESPONSE_"
+                    "THEN_PROPERLY_TYPED_CTP_WARD_AND_POLE_TESTS"
                 ),
                 "hust_public_G_forward": (
                     "PROCESSED_DUAL_CHANNEL_CLOSED__FULL_GC16_NOT_READY__NO_NEW_G"
@@ -976,8 +1162,16 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                     "THREE_AAF_QUOTIENTS_AND_SEVEN_TOS_AFFINE_FAMILIES_COMPUTED__"
                     "NO_PUBLIC_PHYSICAL_G_POINT_OR_COMPACT_INTERVAL__NO_NEW_G"
                 ),
+                "hust_public_calibrated_source": (
+                    "CENTRAL_CORRECTIONS_AND_SIGNED_TOS_ANAELASTICITY_RECOVERED__"
+                    "ONE_INDEPENDENT_ROW_HARMONIC_REMAINDER_STILL_REQUIRED"
+                ),
+                "hust_public_completion_search": (
+                    "NO_QUALIFYING_ROOT_ON_DECLARED_BOUNDED_SURFACE__"
+                    "TARGETED_ACQUISITION_OR_AUTHOR_REQUEST_NEXT"
+                ),
                 "public_history_and_clock_diagnostics": (
-                    "HISTORY_CONFOUND_MAPPED_AND_K5_NODE_SCALAR_COMPATIBILITY_PASSED__"
+                    "HUST_AND_BENSE_HISTORY_CONFOUNDS_MAPPED_AND_K5_NODE_SCALAR_COMPATIBILITY_PASSED__"
                     "NO_LINEAGE_OR_INDEPENDENT_GRAVITY_RESULT"
                 ),
                 "caller_input_scientific_weight": "ZERO",
@@ -1018,12 +1212,20 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "q4_DPAR_adopted": False,
                 "q4_DPAR_inherited_from_current_parent": False,
                 "q4_DPAR_conditional_microscopic_rank6_derived": True,
+                "q4_pair_resolved_coulomb_DPAR_realization_executed": True,
+                "q4_FV_projected_offshell_rank6_executed": True,
+                "q4_FW_witness_finite_response_executed": True,
+                "q4_complete_generated_H6_source_response_executed": True,
+                "q4_native_support_nonzero_momentum_response_executed": False,
                 "q4_physical_metric_source_derived": False,
                 "q4_full_CTP_Ward_response_executed": False,
                 "hust_processed_dual_channel_forward_executed": True,
                 "hust_roundtrip_history_diagnostic_executed": True,
                 "hust_nominal_source_kernel_reconstruction_executed": True,
                 "hust_conditional_homogeneous_G_crosscheck_executed": True,
+                "hust_calibrated_partial_source_reconstruction_executed": True,
+                "hust_bounded_public_completion_search_executed": True,
+                "bense_public_history_development_analysis_executed": True,
                 "clock_K5_common_node_compatibility_executed": True,
                 "hust_full_GC16_executed": False,
                 "inherited_protected_tensor_pole_derived": False,
@@ -1067,9 +1269,17 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "hust_processed_forward_promotes_new_G_or_GFT_confirmation": False,
                 "rank4_additive_source_promotes_all_physical_source_no_go": False,
                 "DPAR_conditional_rank6_promotes_inherited_physical_metric_source": False,
+                "pair_resolved_coulomb_DPAR_promotes_visible_EM_or_global_F3_solder": False,
+                "FV_projected_rank6_promotes_complete_CTP_or_tensor_response": False,
+                "FW_finite_witness_rank2_promotes_complete_response_or_Ward_tensor_pole": False,
+                "FX_complete_homogeneous_rank2_promotes_local_Ward_tensor_pole_or_gravity": False,
+                "FX_finite_polynomial_zero_promotes_physical_threshold": False,
                 "HUST_history_residual_promotes_lineage_gravity": False,
+                "Bense_path_dependence_promotes_causal_lineage_or_gravity": False,
                 "HUST_nominal_kernel_promotes_full_apparatus_G": False,
                 "HUST_conditional_homogeneous_quotient_promotes_new_or_independent_G": False,
+                "HUST_processed_comparator_remainder_promotes_independent_source_ownership": False,
+                "HUST_bounded_no_root_search_promotes_global_data_nonexistence": False,
                 "clock_K5_compatibility_promotes_independent_GR_or_common_metric": False,
             },
             "custody": {

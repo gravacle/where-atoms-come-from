@@ -1,0 +1,87 @@
+{
+  "schema": "WAC_HUST_PUBLIC_COMPLETION_SEARCH_RESULT_V001",
+  "date": "2026-08-27",
+  "status": "PASS_BOUNDED_SEARCH_NO_QUALIFYING_PUBLIC_ROOT_LOCATED",
+  "target": "HUST-2018 independently owned calibrated-source and raw-response completion objects for a G cross-check",
+  "result": {
+    "qualifying_public_completion_root_located": false,
+    "numerical_G_crosscheck_advanced": false,
+    "prior_calibrated_forward_family_changed": false,
+    "search_surface_exhaustive_of_world": false,
+    "new_acquisition_leads": 2
+  },
+  "missing_objects": [
+    {
+      "id": "row_harmonic_remainders",
+      "required_payload": "independently owned normalized physical-harmonic remainder r_i with released-row binding, units and sign convention",
+      "status": "NOT_LOCATED_IN_BOUNDED_PUBLIC_SEARCH",
+      "closure_if_acquired": "row-wise point evaluation of the calibrated public forward"
+    },
+    {
+      "id": "measured_planar_density_map",
+      "required_payload": "measured density map used for the pendulum plate with coordinates, units and campaign version",
+      "status": "NOT_LOCATED_IN_BOUNDED_PUBLIC_SEARCH",
+      "closure_if_acquired": "one input to physical-harmonic source reconstruction"
+    },
+    {
+      "id": "source_sphere_density_orientation_maps",
+      "required_payload": "source-sphere density maps plus run-specific orientations and sphere/run identity",
+      "status": "NOT_LOCATED_IN_BOUNDED_PUBLIC_SEARCH",
+      "closure_if_acquired": "source multipole/harmonic contribution reconstruction"
+    },
+    {
+      "id": "cmm_residual_coordinates",
+      "required_payload": "individual residual three-dimensional CMM coordinates including the two AAF shear coordinates, frame definition and run binding",
+      "status": "NOT_LOCATED_IN_BOUNDED_PUBLIC_SEARCH",
+      "closure_if_acquired": "realized geometry rather than nominal-geometry propagation"
+    },
+    {
+      "id": "attachment_coating_maps",
+      "required_payload": "attachment, coating, clamp and ferrule CAD or measured mass maps with material densities and coordinate registration",
+      "status": "NOT_LOCATED_IN_BOUNDED_PUBLIC_SEARCH",
+      "closure_if_acquired": "physical rather than category-correction treatment of omitted pendulum bodies"
+    },
+    {
+      "id": "aaf_shelf_deformation_compensation_maps",
+      "required_payload": "AAF shelf, deformation and compensation mass/geometry maps with realized configuration binding",
+      "status": "NOT_LOCATED_IN_BOUNDED_PUBLIC_SEARCH",
+      "closure_if_acquired": "remaining AAF apparatus-field reconstruction"
+    },
+    {
+      "id": "campaign_raw_correction_covariance_packet",
+      "required_payload": "campaign-bound encoder/time-series samples, event/exclusion ledger, correction operators and versions, fit design matrix and raw covariance or sufficient statistics",
+      "status": "NOT_LOCATED_IN_BOUNDED_PUBLIC_SEARCH",
+      "closure_if_acquired": "independent raw-response and uncertainty/covariance refit"
+    }
+  ],
+  "targeted_acquisition_leads": [
+    {
+      "method": "AAF",
+      "author": "Jun-Fei Wu",
+      "title": "角加速度法测量万有引力常数G的改进实验",
+      "record_type": "CONFIRMED_HUST_2021_DOCTORAL_DISSERTATION_LEAD",
+      "year": 2021,
+      "payload_inspected": false,
+      "claim": "ACQUISITION_TARGET_ONLY"
+    },
+    {
+      "method": "possible ToS title match",
+      "author": null,
+      "reported_author_string": "Jian-Ping Liu (not authenticated by the discoverable exact-title metadata)",
+      "title": "基于高Q值石英丝的扭秤周期法测量万有引力常数G",
+      "record_type": "UNVERIFIED_TITLE_ONLY_BIBLIOGRAPHIC_LEAD",
+      "year": null,
+      "institution": null,
+      "metadata_caveat": "The discoverable exact-title hit is mismerged into a same-name public-administration profile. It authenticates neither author identity, institution, year nor dissertation type. Resolve an authoritative record before citing any of those fields.",
+      "payload_inspected": false,
+      "claim": "ACQUISITION_TARGET_ONLY"
+    }
+  ],
+  "next_action": {
+    "priority_1": "Request from the corresponding authors an export of one independently reconstructible normalized r_i per released row, or the physical maps required to compute it.",
+    "priority_2": "Obtain lawful institutional/subscription access to the confirmed AAF dissertation and resolve the unverified ToS title against an authoritative bibliographic record before payload inspection or citation.",
+    "priority_3": "For a raw-response cross-check, request the campaign sample, event/correction/operator and design/covariance packet as one version-bound bundle.",
+    "generic_search_recommendation": "Do not repeat a broad generic web search until a new repository, accession identifier or author-supplied filename is available."
+  },
+  "ceiling": "This dated bounded search is neither proof of global nonexistence nor a numerical G result. It leaves the parent calibrated partial families unchanged."
+}

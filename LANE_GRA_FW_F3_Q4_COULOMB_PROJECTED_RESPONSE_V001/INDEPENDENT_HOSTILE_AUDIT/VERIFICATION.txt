@@ -1,0 +1,18 @@
+FW FV-WITNESS independent hostile audit
+Audit date: 2026-08-28
+
+Independent command:
+  python3 INDEPENDENT_HOSTILE_AUDIT/audit_fw_witness_response.py
+
+Independent result:
+  SUMMARY 144/144 independent hostile-audit checks passed
+  HIERARCHY FV_family=6 component_mod_I=5 adH=3 ground_retarded=2 M1=2
+  POLES exact gaps 2+2sqrt2 and 4+2sqrt2; projector residues rank1+rank1
+  VERDICT PASS for FV-WITNESS only; complete Qdiag/CTP/Ward/helicity/gravity open
+
+Builder command:
+  python3 verify_projected_response.py
+
+Builder result:
+  SUMMARY 114/114 projected-response checks passed
+  CEILING FV-WITNESS only; Qdiag(2,4,6)/Ward/RGRLB/gravity/G open

@@ -1,0 +1,21 @@
+FX complete-H6 source-response independent hostile audit
+Audit date: 2026-08-28
+
+Independent command:
+  python3 INDEPENDENT_HOSTILE_AUDIT/audit_complete_h6_source.py
+
+Independent result:
+  SUMMARY 139/139 independent hostile-audit checks passed
+  EXACT a2=-60 a4=-35 a6=-893/9; all 18 derivative rows replayed
+  EXACT fE=1-x^2-(37/12)x^4-(16247/900)x^6
+  HIERARCHY generic=5,3,2,2 finite_root=4,2,2,2
+  VERDICT PASS; finite homogeneous selected FO component through H6 only
+
+Builder command:
+  python3 derive_complete_h6_source.py
+
+Builder result:
+  SUMMARY 109/109 complete-H6 source-response checks passed
+  GENERIC_RANKS operator_mod_identity=5 adH=3 retarded=2 M1=2
+  TRUNCATED_ROOT x=0.5398271903 ranks=4,2,2,2; NOT_A_THRESHOLD
+  CEILING finite homogeneous fixed-through-H6 FV-PURE; H8+/Ward/RGRLB/gravity/G open

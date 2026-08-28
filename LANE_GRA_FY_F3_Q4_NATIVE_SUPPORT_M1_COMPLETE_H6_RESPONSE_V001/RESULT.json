@@ -1,0 +1,70 @@
+{
+  "lane": "LANE_GRA_FY_F3_Q4_NATIVE_SUPPORT_M1_COMPLETE_H6_RESPONSE_V001",
+  "status": "PASS",
+  "full_replay": "72/72",
+  "structural_replay": "23/23",
+  "exact_h2_replay": "4/4",
+  "component": {
+    "cells": 30,
+    "vertices": 60,
+    "links": 120,
+    "states": 180,
+    "translation_orbits": 6,
+    "ring_transitions": 420,
+    "ring_translation_orbits": 14,
+    "momentum": 1,
+    "conjugate_momentum": 29
+  },
+  "source_off": ["-60", "-35", "-893/9"],
+  "exact_m1_diagonal_lift": [
+    {"order": 2, "coefficient": "-1"},
+    {"order": 4, "coefficient": "-37/12"},
+    {"order": 6, "coefficient": "-16247/900"}
+  ],
+  "exact_ring_result": "nonzero independent off-diagonal m=1 source",
+  "best_fit_residual_checksums": {
+    "diag2": 3.3254104879636183e-15,
+    "diag4": 1.6540786729433476e-15,
+    "diag6": 1.6634967054251794e-15,
+    "ring": 1.0
+  },
+  "pair_longitudinal_ratio": 1.2101189613741714,
+  "samples": [
+    {
+      "x": "2/5",
+      "rho": "15625/504",
+      "ranks": {
+        "operator": 6,
+        "commutator": 6,
+        "ground_spectral": 6,
+        "static_spectral_kernel": 6,
+        "M1": 6,
+        "TT_ground_image": 2
+      },
+      "pole_gaps": [3.194109035554332, 3.490165912028476, 6.166688337463908, 9.139267639373482],
+      "pole_ranks": [1, 3, 1, 1],
+      "pole_traces": [9.816166704195178, 74.80077589507677, 3.1241630768225432, 2.3140965261643627e-05],
+      "TT_gram_eigenvalues": [3.2251529915487787, 31.446472610221065],
+      "longitudinal_ratio": 1.2121223623274917
+    },
+    {
+      "x": "1/2",
+      "rho": "512/63",
+      "ranks": {
+        "operator": 6,
+        "commutator": 6,
+        "ground_spectral": 6,
+        "static_spectral_kernel": 6,
+        "M1": 6,
+        "TT_ground_image": 2
+      },
+      "pole_gaps": [3.194109035554332, 3.490165912028476, 6.166688337463908, 9.139267639373482],
+      "pole_ranks": [1, 3, 1, 1],
+      "pole_traces": [0.2808490831869739, 1.5930428467592814, 0.03124407035482055, 4.177439406545563e-07],
+      "TT_gram_eigenvalues": [0.045581883045349214, 0.33963260384359883],
+      "longitudinal_ratio": 1.2735155285274338
+    }
+  ],
+  "two_link_threshold_proxy": [2.0596745056914583, 9, 22],
+  "claim_ceiling": "finite Z30 graph momentum on the selected FO component through H6 under FV-PURE; sampled response only; no positive Ward, continuum locality, massless-pole, RGRL-B, gravity, G, or Newton claim"
+}

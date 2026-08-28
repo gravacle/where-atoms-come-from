@@ -1,0 +1,29 @@
+{
+  "audit_schema": "WAC_HUST_CALIBRATED_SOURCE_REACQUISITION_V001",
+  "date": "2026-08-27",
+  "method": "Fresh HTTPS GET to each custody URL into /private/tmp, followed by independent byte count and SHA-256 comparison; reacquired binaries were not added to the repository.",
+  "objects": [
+    {
+      "id": "official_supplement",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_MOESM1_ESM.pdf",
+      "bytes": 2711453,
+      "fresh_sha256": "5b61d5c831be98c46e47fcc32f1ade0a680b4af6354d2bc34859d94b22279ffb",
+      "sealed_sha256_match": true
+    },
+    {
+      "id": "official_main_table_1",
+      "url": "https://www.nature.com/articles/s41586-018-0431-5/tables/1",
+      "bytes": 193307,
+      "fresh_sha256": "23436d4be7600a7a9dffa02cc4167a20b6eea032a181e77899bb57bb90aa02e9",
+      "sealed_sha256_match": true
+    },
+    {
+      "id": "main_article_public_university_mirror",
+      "url": "https://materias.df.uba.ar/f1a2018c2/files/2012/07/medicion-de-G_paper.pdf",
+      "bytes": 7999835,
+      "fresh_sha256": "40756ec0fb8f00c1fde31020b294521a3b220a196bef884a2ea5f3534d77dfaa",
+      "sealed_sha256_match": true,
+      "ceiling": "The mirror is not a publisher host; identity is supported by byte-for-byte hash stability plus publisher metadata/DOI content already disclosed in SOURCE_CUSTODY.json."
+    }
+  ]
+}

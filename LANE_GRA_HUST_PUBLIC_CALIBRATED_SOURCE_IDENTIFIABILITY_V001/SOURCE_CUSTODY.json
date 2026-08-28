@@ -1,0 +1,72 @@
+{
+  "schema": "WAC_HUST_PUBLIC_CALIBRATED_SOURCE_CUSTODY_V001",
+  "date": "2026-08-27",
+  "article": {
+    "title": "Measurements of the gravitational constant using two independent methods",
+    "authors_short": "Li et al.",
+    "journal": "Nature 560, 582-588 (2018)",
+    "doi": "10.1038/s41586-018-0431-5",
+    "publisher_url": "https://www.nature.com/articles/s41586-018-0431-5"
+  },
+  "sources": [
+    {
+      "id": "main_article_public_mirror",
+      "url": "https://materias.df.uba.ar/f1a2018c2/files/2012/07/medicion-de-G_paper.pdf",
+      "lane_path": "SOURCE/HUST_2018_main_article_public_mirror.pdf",
+      "sha256": "40756ec0fb8f00c1fde31020b294521a3b220a196bef884a2ea5f3534d77dfaa",
+      "role": "primary article text and publisher-produced Extended Data Tables 1-5",
+      "custody_note": "This is a nonpublisher public University of Buenos Aires mirror of the publisher-produced primary article PDF, not a publisher-hosted URL. PDF metadata, title, authors, DOI, journal pagination, and the official Nature article record were cross-checked."
+    },
+    {
+      "id": "official_supplement",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_MOESM1_ESM.pdf",
+      "lane_path": "SOURCE/41586_2018_431_MOESM1_ESM.pdf",
+      "sha256": "5b61d5c831be98c46e47fcc32f1ade0a680b4af6354d2bc34859d94b22279ffb",
+      "role": "method equations, correction-transfer formulae, multipole coefficients, response summaries, nonlinearity corrections, and correlation rules"
+    },
+    {
+      "id": "official_main_table_1",
+      "url": "https://www.nature.com/articles/s41586-018-0431-5/tables/1",
+      "lane_path": "SOURCE/nature_main_table1_error_budget.html",
+      "sha256": "23436d4be7600a7a9dffa02cc4167a20b6eea032a181e77899bb57bb90aa02e9",
+      "role": "campaign error-budget categories and one-standard-deviation uncertainties"
+    }
+  ],
+  "sealed_dependencies": {
+    "nominal_kernel_theorem": {
+      "path": "../LANE_GRA_HUST_NOMINAL_SOURCE_KERNEL_RECONSTRUCTION_V001/THEOREM.md",
+      "sha256": "cd729640537d66c52da0c9209fb94c1a95ff1a9dc7580ac4b6a9e4a7cea8e67c"
+    },
+    "nominal_kernel_result": {
+      "path": "../LANE_GRA_HUST_NOMINAL_SOURCE_KERNEL_RECONSTRUCTION_V001/RESULT.json",
+      "sha256": "1dc31ef45bbd5d8441867b2575e2dec9d5290ee6f1a57f71781f80e0730cd875"
+    },
+    "nominal_geometry_fields": {
+      "path": "../LANE_GRA_HUST_NOMINAL_SOURCE_KERNEL_RECONSTRUCTION_V001/SOURCE_FIELDS.json",
+      "sha256": "8540b9162df4363f64f892bbc2a56cfa542bb43767f605844bc9aa94da5571d8"
+    },
+    "nominal_kernel_executable": {
+      "path": "../LANE_GRA_HUST_NOMINAL_SOURCE_KERNEL_RECONSTRUCTION_V001/reconstruct_hust_nominal_source_kernels.py",
+      "sha256": "4abac89235677b1757d66539e20fe21d3b8f9a5468796f976f701dc9ab074d59"
+    },
+    "conditional_G_theorem": {
+      "path": "../LANE_GRA_HUST_CONDITIONAL_HOMOGENEOUS_G_CROSSCHECK_V001/THEOREM.md",
+      "sha256": "3ddcdcc8d4ef9f905c9ff3e07e813efc2848317e0f2cde4141798b9143c0e3a8"
+    },
+    "conditional_G_result": {
+      "path": "../LANE_GRA_HUST_CONDITIONAL_HOMOGENEOUS_G_CROSSCHECK_V001/RESULT.json",
+      "sha256": "84a7d78a3a618345f89aa93639563077ee2de8043d46e2c91763a8604c7751eb"
+    },
+    "conditional_G_executable": {
+      "path": "../LANE_GRA_HUST_CONDITIONAL_HOMOGENEOUS_G_CROSSCHECK_V001/calculate_conditional_homogeneous_g.py",
+      "sha256": "d47578841b208ebeaf4f677528fdd03ecc3330349c8b1f597838b0971e2eea51"
+    }
+  },
+  "input_exclusion": {
+    "accepted_or_CODATA_G": "ABSENT",
+    "historical_G_values": "ABSENT_FROM_PRIMARY_CALCULATION",
+    "authors_derived_campaign_G": "POST_CALCULATION_COMPARATOR_ONLY, inherited from the conditional lane and never used to form a calibrated kernel or forward quotient",
+    "authors_processed_source_coefficients": "POST_CALCULATION_COMPARATOR_ONLY, used only after the public independent partial kernel is fixed"
+  },
+  "custody_ceiling": "The main article states that the full supporting data are available from the corresponding authors on reasonable request. The public packet does not contain the measured planar density map, source-sphere density maps and run orientations, individual residual CMM coordinates, attachment/coating CAD maps, shelf/deformation mass maps, or campaign raw fit/covariance packet."
+}

@@ -1,0 +1,57 @@
+Independent hostile verification
+Date: 2026-08-27
+Protocol: GRA-BENSE-PMHF-V001
+
+COMMAND
+python3 independent_hostile_verify.py
+
+OUTPUT
+SUMMARY 379/379 independent hostile checks passed
+DISPOSITION PASS__REPAIRED_CORE_SCOPE_CAVEATS_EXECUTABLY_BOUND__PUBLIC_MECHANICAL_HISTORY_DEVELOPMENT_EVIDENCE__CONSTITUTIVE_LINEAGE_AND_GRAVITY_UNIDENTIFIED
+
+COMMAND
+python3 analyze_public_history.py --check
+
+OUTPUT
+PASS: RESULT.json matches deterministic recomputation
+
+COMMAND
+python3 verify_lane.py
+
+OUTPUT
+PASS: 432/432 independent checks passed
+
+COMMAND CLASS
+PYTHONPYCACHEPREFIX=/private/tmp/bense_independent_pycache python3 -m py_compile analyze_public_history.py verify_lane.py independent_hostile_verify.py
+parse every lane JSON file
+scan every non-PDF lane file for forbidden control bytes
+
+OUTPUT
+PASS: Python compile
+PASS: all lane JSON parsed
+PASS: text/code/data files contain no forbidden control bytes
+
+FROZEN BUILDER SEAL
+3ec5525012efa28847a7dcfb10dc945786d00fc0bfcb7e6d65b7475d496e62ce  LANE_SEAL.json
+
+INDEPENDENT AUDIT PAYLOAD
+d4592d19ca0219a601b45074d30fcae6c9d9319a01881d27e98d523b617e3689  INDEPENDENT_HOSTILE_AUDIT.md
+391af1e9b28ee981a64dda67474ab1dc4ff5eeb679eb6e14e10ca392301bd7aa  independent_hostile_verify.py
+
+The independent verifier imports no builder module. It binds the frozen
+builder bytes, exact local source bytes, repository-ID/checksum transcription,
+and the earlier selection audit; reparses 101,628 raw samples; independently
+reconstructs 38 monotone branches, 97 complete overlap comparisons, 34
+publication-rule event proxies, returned extrema, six accumulator cycles, and
+the three-loop repeat diagnostic; constructs a finite observational-equivalence
+witness for lineage nonidentifiability; and enforces the development-only,
+no-gravity claim ceiling. It also checks the repaired deterministic fields for
+the internal non-timestamped freeze, audited-candidate-set search scope,
+nonindependence of the 97 within-file comparisons, and per-file same-apparatus
+scope.
+
+The repaired core itself no longer treats local hashes as an external
+timestamp and no longer presents the audited candidate set or within-file
+comparisons as exhaustive or independent. Publication safety remains limited
+to retrospective development evidence; the independent audit has no remaining
+unincorporated wording caveat.

@@ -1,0 +1,145 @@
+{
+  "schema": "WAC_HUST_PUBLIC_COMPLETION_SEARCH_LEDGER_V001",
+  "date": "2026-08-27",
+  "target_doi": "10.1038/s41586-018-0431-5",
+  "search_question": "Does an authoritative public object supply an independently reconstructible HUST-2018 harmonic remainder, its full physical source maps, or the campaign raw/correction/covariance packet?",
+  "qualification_rule": {
+    "campaign_provenance": true,
+    "publicly_inspectable_payload": true,
+    "contains_missing_numeric_object": true,
+    "units_run_binding_and_coordinate_convention_sufficient_for_reuse": true
+  },
+  "search_evidence_scope": {
+    "reproducible_literal_endpoint_entries": [
+      "nature_official_release_inventory",
+      "nature_data_availability",
+      "crossref_doi_relation",
+      "datacite_exact_related_identifier",
+      "figshare_exact_resource_doi",
+      "zenodo_exact_doi",
+      "hust_institutional_pages"
+    ],
+    "curator_recorded_nonexecutably_frozen_entries": [
+      "dryad_osf_targeted",
+      "china_scientific_data_surfaces",
+      "public_code_hosts",
+      "campaign_dissertation_catalogues"
+    ],
+    "ceiling": "Zero-root assertions for aggregate index-mediated entries are dated curator records, not executable completeness certificates."
+  },
+  "surfaces": [
+    {
+      "id": "nature_official_release_inventory",
+      "authority": "publisher",
+      "query_or_url": "https://www.nature.com/articles/s41586-018-0431-5",
+      "mode": "direct article and associated-object inventory inspection",
+      "result": "Seven associated public objects: Supplementary Information; Supplementary Data for Supplementary Fig. 1; Source Data for Figs. 2 and 3; Source Data for Extended Data Figs. 2, 4 and 5.",
+      "qualifying_completion_roots": 0,
+      "reason": "All seven objects were previously inventoried by the HUST dual-method forward lane; only its locally acquired subset is hash-pinned as binaries. None of the seven inventoried release objects contains the full requested maps or raw/correction/covariance packet."
+    },
+    {
+      "id": "nature_data_availability",
+      "authority": "publisher/primary article",
+      "query_or_url": "https://www.nature.com/articles/s41586-018-0431-5",
+      "mode": "direct data-availability inspection",
+      "result": "The article states that data supporting the findings are available from the corresponding authors on reasonable request.",
+      "qualifying_completion_roots": 0,
+      "reason": "An on-request statement is an acquisition route, not a publicly inspectable payload."
+    },
+    {
+      "id": "crossref_doi_relation",
+      "authority": "DOI registry",
+      "query_or_url": "https://api.crossref.org/works/10.1038/s41586-018-0431-5",
+      "mode": "exact DOI metadata and relation inspection",
+      "result": "The relation object was empty; no related dataset DOI was registered.",
+      "qualifying_completion_roots": 0,
+      "reason": "No dataset relation was exposed by this registry record."
+    },
+    {
+      "id": "datacite_exact_related_identifier",
+      "authority": "dataset DOI registry",
+      "query_or_url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41586-018-0431-5%22&page%5Bsize%5D=100",
+      "mode": "exact related-identifier API search",
+      "result": "Three records were returned; all were 2026 works by Ali Attar that reference the HUST DOI, not HUST-author/institution campaign-data deposits.",
+      "qualifying_completion_roots": 0,
+      "reason": "Citation relation and unrelated provenance fail the admission rule."
+    },
+    {
+      "id": "figshare_exact_resource_doi",
+      "authority": "research-data repository",
+      "query_or_url": "POST https://api.figshare.com/v2/articles/search; POST https://api.figshare.com/v2/collections/search",
+      "request_body": {
+        "resource_doi": "10.1038/s41586-018-0431-5"
+      },
+      "mode": "exact resource_doi POST to both literal endpoints",
+      "result": "Empty article result and empty collection result.",
+      "qualifying_completion_roots": 0,
+      "reason": "No exact resource-DOI deposit was returned."
+    },
+    {
+      "id": "zenodo_exact_doi",
+      "authority": "research-data repository",
+      "query_or_url": "https://zenodo.org/api/records?q=%2210.1038%5C%2Fs41586-018-0431-5%22&size=25",
+      "mode": "exact escaped DOI API search",
+      "result": "Two later 2026 records were returned; both merely reference the HUST paper and are not HUST campaign deposits.",
+      "qualifying_completion_roots": 0,
+      "reason": "Unrelated provenance and no requested campaign payload."
+    },
+    {
+      "id": "dryad_osf_targeted",
+      "authority": "research-data repositories",
+      "query_or_url": "dryad.org and osf.io exact DOI/title domain searches",
+      "mode": "index-mediated domain-restricted exact DOI and exact-title searches",
+      "reproducibility": "CURATOR_RECORDED_NONEXECUTABLE",
+      "result": "No relevant HUST campaign deposit was located.",
+      "qualifying_completion_roots": 0,
+      "reason": "No candidate payload reached admission review; index-mediated discovery is not asserted exhaustive."
+    },
+    {
+      "id": "china_scientific_data_surfaces",
+      "authority": "Chinese scientific-data discovery surfaces",
+      "query_or_url": "scidb.cn; science-data.cn; cstr.cn; chinascientificdata.com",
+      "mode": "domain-restricted exact DOI/title searches",
+      "reproducibility": "CURATOR_RECORDED_NONEXECUTABLE",
+      "result": "No relevant HUST campaign-data object was located.",
+      "qualifying_completion_roots": 0,
+      "reason": "No candidate numeric payload reached admission review; discovery is bounded to the named surfaces."
+    },
+    {
+      "id": "hust_institutional_pages",
+      "authority": "HUST institutional websites",
+      "query_or_url": "https://ngl.hust.edu.cn/info/1238/3516.htm and https://phys.hust.edu.cn/info/1211/3362.htm",
+      "mode": "direct inspection of the two named literal URLs only",
+      "result": "Official bibliographic/news pages link to the Nature article but expose no additional data attachment.",
+      "qualifying_completion_roots": 0,
+      "reason": "No inspectable missing numeric object."
+    },
+    {
+      "id": "public_code_hosts",
+      "authority": "public code/repository indexes",
+      "query_or_url": "github.com; gitlab.com; gitee.com",
+      "mode": "exact DOI and exact-title searches",
+      "reproducibility": "CURATOR_RECORDED_NONEXECUTABLE",
+      "result": "No relevant author/team campaign repository was located.",
+      "qualifying_completion_roots": 0,
+      "reason": "No candidate campaign-provenance payload."
+    },
+    {
+      "id": "campaign_dissertation_catalogues",
+      "authority": "HUST/CNKI-facing thesis discovery metadata",
+      "query_or_url": "https://cnki.istiz.org.cn/kcms/detail/search.aspx?dbcode=CJFD&sfield=kw&skey=%E8%A7%92%E5%8A%A0%E9%80%9F%E5%BA%A6",
+      "mode": "campaign-author, method and title searches; HUST library discovery inspection",
+      "reproducibility": "CURATOR_RECORDED_NONEXECUTABLE",
+      "result": "One confirmed campaign dissertation lead was found: Jun-Fei Wu's 2021 HUST AAF doctoral dissertation. One additional high-Q-silica-fibre ToS title string is an unverified bibliographic lead only; the discoverable metadata do not authenticate author, institution, year or document type. No openly inspectable payload was located.",
+      "qualifying_completion_roots": 0,
+      "reason": "Catalogue metadata alone cannot establish the presence or values of the missing numeric maps/raw packet."
+    }
+  ],
+  "counts": {
+    "declared_surface_entries": 11,
+    "qualifying_completion_roots": 0,
+    "new_targeted_acquisition_leads": 2
+  },
+  "bounded_conclusion": "Within the explicitly named public surfaces queried on 2026-08-27, no publicly inspectable object satisfying the completion-root admission rule was located.",
+  "non_exhaustive_ceiling": "This result does not establish that the requested data do not exist, are absent from all public surfaces, or cannot be recovered from authors, institutional/subscription holdings, or future releases."
+}

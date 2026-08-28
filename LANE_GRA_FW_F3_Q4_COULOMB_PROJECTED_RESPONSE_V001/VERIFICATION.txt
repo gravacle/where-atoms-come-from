@@ -1,0 +1,37 @@
+Command:
+python3 LANE_GRA_FW_F3_Q4_COULOMB_PROJECTED_RESPONSE_V001/verify_projected_response.py
+
+Pre-manifest scientific replay: 106/106 checks passed.
+
+Frozen dependencies: FO theorem, independent audit, and verifier; repaired FV
+theorem, result, verifier, manifest, and seal.  FV is conditional on FU/FV
+S1--S10 and FV-PURE.
+
+Sector: 180 states, 420 inherited H6 transitions, homogeneous momentum zero.
+Source scored: FV-WITNESS only, consisting of Q_pair^(0) plus the irreducible
+differentiated Q_ring^(6).  Generated Q_diag^(2,4,6), differentiated folds,
+and identity/reference derivatives are not scored.
+
+FV-WITNESS ranks:
+- operator rank modulo identity: 5;
+- source-to-commutator rank: 3;
+- unique-ground-state retarded rank: 2;
+- first nonzero commutator moment M1 rank: 2.
+
+Spectral support:
+- delta1 = 2 + 2 sqrt(2), residue rank 1;
+- delta2 = 4 + 2 sqrt(2), residue rank 1;
+- no third source-vector component in the exact zero-momentum block.
+
+The algebraic certificate uses the exact integer 6 x 6 translation block,
+closed-form normalized ground vector, rational polynomial projectors onto
+energies zero and two, and exact denominator-twelve source blocks.  Complete
+180-state diagonalization and degenerate-eigenspace sums independently replay
+the same residues.
+
+Ceiling: FV-WITNESS finite-sector result only.  The complete fixed-order
+source response, local/nonzero-momentum source, Ward/RGRL-B structure,
+thermodynamic tensor pole, gravity, and G remain open.
+
+After sealing, the verifier additionally checks seven builder payload hashes
+and exact manifest membership, for an expected sealed replay of 114/114.

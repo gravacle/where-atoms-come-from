@@ -1,0 +1,90 @@
+{
+  "schema": "WAC_HUST_PUBLIC_COMPLETION_SEARCH_CUSTODY_V001",
+  "date": "2026-08-27",
+  "article": {
+    "title": "Measurements of the gravitational constant using two independent methods",
+    "authors_short": "Li et al.",
+    "journal": "Nature 560, 582-588 (2018)",
+    "doi": "10.1038/s41586-018-0431-5",
+    "publisher_url": "https://www.nature.com/articles/s41586-018-0431-5"
+  },
+  "hash_pinned_dependencies": [
+    {
+      "path": "../LANE_GRA_HUST_PUBLIC_CALIBRATED_SOURCE_IDENTIFIABILITY_V001/THEOREM.md",
+      "sha256": "ce2177498cdae8a4fe611deb8a84526554177bd33b9fa59eff48f7b5f7391aa2",
+      "role": "exact identifiability result and missing-object frontier"
+    },
+    {
+      "path": "../LANE_GRA_HUST_PUBLIC_CALIBRATED_SOURCE_IDENTIFIABILITY_V001/SOURCE_CUSTODY.json",
+      "sha256": "15615db166d816cad83dc9e7a7bfe6ee5253275a88c4841424f3308e96cd489d",
+      "role": "three-source calibrated-lane custody packet; not the seven-object Nature inventory"
+    },
+    {
+      "path": "../LANE_GRA_HUST_2018_DUAL_METHOD_G_FORWARD_V001/SOURCE_CUSTODY.json",
+      "sha256": "76040b79f3ead7970298df5b784e3cab0ea637351b6dc881be1afe6796a6e474",
+      "role": "previously inventoried seven-object Nature release surface and locally acquired subset"
+    },
+    {
+      "path": "../LANE_GRA_HUST_PUBLIC_CALIBRATED_SOURCE_IDENTIFIABILITY_V001/RESULT.json",
+      "sha256": "8b4ec6841a1032680218383778552e685f172eada6fbcd79edebfae5fc5d976f",
+      "role": "calibrated forward families and row-level identifiability result"
+    },
+    {
+      "path": "../LANE_GRA_HUST_PUBLIC_CALIBRATED_SOURCE_IDENTIFIABILITY_V001/INDEPENDENT_HOSTILE_AUDIT/AUDIT_RESULT.json",
+      "sha256": "7491007370ab60e23c59732c747889e0c87e76b4f115e2c1fb15a69a8e7f6f60",
+      "role": "independent audit status of the parent theorem"
+    }
+  ],
+  "search_evidence": {
+    "ledger": "SEARCH_LEDGER.json",
+    "query_date": "2026-08-27",
+    "type": "dated normalized query ledger",
+    "live_result_caveat": "Repository indexes are mutable. Counts and classifications record the query-date state and are not asserted timeless or exhaustive."
+  },
+  "primary_authoritative_roots": [
+    {
+      "id": "nature_article_and_release",
+      "url": "https://www.nature.com/articles/s41586-018-0431-5",
+      "role": "official associated-object inventory and data-availability statement"
+    },
+    {
+      "id": "crossref_record",
+      "url": "https://api.crossref.org/works/10.1038/s41586-018-0431-5",
+      "role": "registered DOI relations"
+    },
+    {
+      "id": "datacite_exact_relation_query",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41586-018-0431-5%22&page%5Bsize%5D=100",
+      "role": "dataset DOI records that explicitly relate to the target DOI"
+    },
+    {
+      "id": "figshare_public_api",
+      "urls": [
+        "https://api.figshare.com/v2/articles/search",
+        "https://api.figshare.com/v2/collections/search"
+      ],
+      "request_body": {
+        "resource_doi": "10.1038/s41586-018-0431-5"
+      },
+      "role": "exact resource-DOI POSTs to article and collection endpoints"
+    },
+    {
+      "id": "zenodo_public_api",
+      "url": "https://zenodo.org/api/records",
+      "role": "exact DOI repository search"
+    },
+    {
+      "id": "hust_newtonian_gravity_page",
+      "url": "https://ngl.hust.edu.cn/info/1238/3516.htm",
+      "role": "official institutional bibliographic page"
+    },
+    {
+      "id": "hust_physics_news_page",
+      "url": "https://phys.hust.edu.cn/info/1211/3362.htm",
+      "role": "official institutional article page"
+    }
+  ],
+  "new_binary_sources_acquired": 0,
+  "new_qualifying_completion_roots": 0,
+  "custody_ceiling": "No newly located public object passed the completion-root admission rule, so no external binary was promoted into source custody. One confirmed dissertation catalogue record and one unverified title-only bibliographic string are retained only as acquisition leads, not evidentiary payloads."
+}

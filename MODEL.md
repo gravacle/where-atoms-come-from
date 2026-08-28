@@ -50,7 +50,7 @@ silently use them as the public path.
 | physics-role status | `roles` | claim-scoped EM, gamma, Alpha-inheritance, and gravity status, including the exact first-record gamma-information seed, the SAI/AWAI actual-visible-sector theorem, the adopted off-shell/on-shell RGRL distinction, and the conditional record-front cone refinement; descriptive metadata, not a gravity solver |
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
-| Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for adopted RGRL, its adopted off-shell/on-shell clarification, V002 dressed-response ceilings, the conditional record-front cone theorem, audited q4/no-laboratory microscopic advances, and the exact conditional working-theory closure; empirical RGRL/EIR/AFR confirmation, the GI21 type join, a protected tensor phase, and microscopic numerical-(G) derivation remain open |
+| Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for adopted RGRL, its adopted off-shell/on-shell clarification, V002 dressed-response ceilings, the conditional record-front cone theorem, the conditional pair-resolved Coulomb `DPAR` realization, FV projected rank six, finite `FV-WITNESS`, and complete homogeneous H6 response, audited public history/source/search advances, and the exact conditional working-theory closure; native-support/nonzero-momentum response, the spatial CTP/Ward packet, empirical RGRL/EIR/AFR confirmation, the GI21 type join, a protected tensor phase, and microscopic numerical-(G) derivation remain open |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -559,13 +559,13 @@ in the certificate is fixed false.
 ## GRAVITY FORMATION THEORY CERTIFICATE
 
 The two zero-argument Gravity Formation Theory methods verify the exact closure
-and audit; six pinned core theorem/audit pairs; twenty-seven pinned no-laboratory
+and audit; six pinned core theorem/audit pairs; thirty-four pinned no-laboratory
 advance pairs; and the adopted clarification chain consisting of its final
 adoption record and seal, the clarification source, and V002. The advance
 custody now includes the q4 front/support/response sequence; the finite TT
 composite-cumulant screen; the projected-ice constraint-origin screen; the
 fixed-parent collective-metric origin screen; the source-rank/degree-pair
-geometric-strain sequence; two public-data passes; the
+geometric-strain sequence and complete homogeneous H6 response; two public-data passes; the
 finite-apparatus and NIST/BIPM \(G\)-readiness results; and the HUST-2018
 processed dual-method forward, history diagnostic, nominal-kernel
 reconstruction, conditional homogeneous-\(G\) quotient, and five-clock
@@ -661,12 +661,36 @@ without importing an accepted value of \(G\), gives three exact conditional AAF
 quotients at `r_norm=0` between `6.6740227e-11` and `6.6742605e-11` SI. The
 seven ToS rows give zero-fibre-correction anchors between `6.6734516e-11` and
 `6.6736824e-11` SI plus exact affine correction families. These are not full-
-apparatus estimates: the public packet does not identify the matched
-mass-multipole/CMM numerator, covariance, or signed ToS correction. An equally
+apparatus estimates: at that calculation stage the matched mass-multipole/CMM
+numerator, covariance, and signed ToS correction had not been independently
+reconstructed. An equally
 public normalization collision shifts the AAF quotient by about `1631.54 ppm`
 and the ToS anchors by `152--153 ppm`, proving that total inertia cannot replace
 the missing source multipole. Thus no public physical \(G\) point or compact
 interval, new \(G\), `GC16`, or GFT confirmation is promoted.
+
+The disclosed central correction tables now recover calibrated partial source
+kernels and the signed ToS anelastic corrections, so the signed central ToS
+line is no longer free. The resulting zero-independent-remainder forwards span
+approximately `6.6741755--6.6744092e-11` SI for AAF and
+`6.6739974--6.6742407e-11` SI for ToS; processed-kernel comparator gaps narrow
+to about `19--30 ppm` and `0.6--12.1 ppm`. The authors' processed kernel makes
+the remaining scalar inferable but does not independently own its physical
+provenance. One independently reconstructible released-row-bound harmonic
+remainder—or the physical maps needed to calculate it—would unlock an
+independent source-side row evaluation using the released response summary. A
+hostile-audited bounded search found no such
+public root on its declared surfaces and retained two dissertation leads only
+for targeted acquisition. The search is non-exhaustive and advances no
+numerical \(G\).
+
+A separate four-file public mechanical archive establishes repeated-input,
+same-apparatus path dependence across 101,628 samples. It does not contain the
+authenticated lineage, randomized paired KEEP/BREAK intervention, matched
+conventional state, common future query, covariance, or gravity observable
+needed for a causal lineage or gravity estimate. Those two data blockers and
+the calculations an admitted payload would unlock are now stated in
+[`NO_LAB_GRAVITY_DATA_ACQUISITION_PACKET_V001.md`](NO_LAB_GRAVITY_DATA_ACQUISITION_PACKET_V001.md).
 
 The public five-clock component has likewise been advanced without assigning
 it more evidential weight than it owns. Its ten separately reanalyzed processed
@@ -812,23 +836,40 @@ feedback, boundary, controller, and port sectors are excluded by the selected
 reduced parent rather than proved absent in a physical BS completion. Thus the
 unreduced physical source remains underdetermined.
 
-The next test has now isolated a single constitutive boundary. Existing
-degree/link/ice pair operators carry the missing `E` query and have nonzero
-block-local H6 matrix elements, but `H[0]` does not choose their geometric
-source derivative: identical source-off dynamics admits both the rank-four
-additive family and a rank-six root-pair family. One compact sufficient law is
-`DPAR`, which makes the existing pair energy respond to affine sibling-root
-length with `g(1)=1` and `g'(1)!=0`. Differentiation then produces the root
-dyads, preserves the one-edge source, source-before-Feshbach ordering, and
-`H[0]`, and conditionally gives exact microscopic rank six plus nonzero local
-H6 `E` response.
+The constitutive boundary has now advanced beyond a named `DPAR` candidate.
+Existing degree/link/ice pair operators carry the missing `E` query and have
+nonzero block-local H6 matrix elements, while `H[0]` alone still does not choose
+their geometric derivative. A tetrahedrally symmetric lumped capacitance is
+exactly `A1`-only, but a fully grounded pair-resolved four-terminal elastance
+conditionally reproduces `U_d(d-2)^2`. A complete central kernel yields
+`lambda=r0 V'(r0)/(2V(r0))`; ideal fixed-coupling Coulomb gives
+`lambda=-1/2` and the corresponding conditional `U_d`--alpha--length relation.
+This is a local physical completion, not yet current-F3 inheritance, visible
+EM, or a global gauge-invariant shared-link solder.
 
-`DPAR` is neither inherited nor adopted and is not proved unique. It replaces
-the degree-source deformation instead of double-counting its scalar channel;
-its direct ice-projected image is only rank-three `A1+E`. Full state-dependent
-CTP rank, uniform response, pole/residue, Ward/constraint closure, a protected
-tensor pole, and gravity remain separate. The consolidated no-laboratory
-disposition is recorded in
+Under the additional explicit `S10/FV-PURE` complete-source premise, exact
+Feshbach differentiation gives projected off-shell nonidentity rank six:
+direct `E` rank two plus H6 ring `A1+T2` rank four, certified by six actual
+matrix-element witnesses. The first finite dynamical composition then applies
+the two explicit rank-closing pieces to the FO 180-state homogeneous component.
+Its exact hierarchy is family rank six, component operator rank five modulo
+identity, commutator rank three, and ground retarded/first-moment rank two, with
+two rank-one residues. Generated `Q_diag^(2,4,6)` derivatives and folds are not
+in that witness packet, so the complete homogeneous source was calculated
+separately. Every such term reduces exactly to the direct pair source plus a
+Hilbert identity, giving
+
+\[
+f_E(x)=1-x^2-{37\over12}x^4-{16247\over900}x^6,
+\qquad \rho_E=\rho f_E(x).
+\]
+
+The complete homogeneous hierarchy therefore remains `5 -> 3 -> 2 -> 2`
+with the same two poles. The finite polynomial zero near `0.5398271903` is a
+through-H6 truncation stratum, not a threshold. Native-support/nonzero-momentum
+response is the immediate successor; spatial CTP rank, Ward/constraint
+closure, a protected tensor pole, and gravity remain separate. The consolidated no-
+laboratory disposition is recorded in
 [`NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md`](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
 
 ## VALIDATION

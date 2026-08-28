@@ -1,0 +1,189 @@
+{
+  "schema": "WAC_HUST_PUBLIC_CALIBRATED_SOURCE_FIELDS_V001",
+  "date": "2026-08-27",
+  "units": "SI except corrections and standard uncertainties explicitly labelled ppm",
+  "transcription_rule": "Central corrections and parenthetical one-standard-deviation uncertainties are manual transcriptions of Li et al. (2018), Extended Data Tables 3 and 5, Supplementary Tables 1-4, and main Table 1. No accepted, recommended, or CODATA value of G is an input.",
+  "apparatus_inventory": {
+    "TOS": {
+      "pendulum": "Al-coated fused-silica rectangular block; nominal 91 x 11 x 31 mm^3 and 68 g; exact campaign dimensions and masses are inherited from the sealed nominal-kernel lane",
+      "main_fibre": "fused silica, 40-60 micrometre diameter, 900 mm length; 5 nm Ge plus 10 nm Bi conductive coating",
+      "prehanger": "tungsten, 50 mm length, 80 micrometre diameter",
+      "source_bodies": "two SS316 stainless-steel spheres per apparatus, about 57.2 mm diameter and 778 g each",
+      "environment": "pendulum and sources in the same approximately 1e-5 Pa vacuum chamber; no air-displacement correction",
+      "source_support": "three-point mounts on ULE-glass disk; source turntable switches near/far by 90 degrees",
+      "shield": "hollow gold-coated aluminium cylinder",
+      "unmodelled_body_classes": [
+        "measured planar pendulum density map",
+        "source-sphere density maps and run-specific random orientations",
+        "individual residual CMM coordinates and alignments",
+        "coating-thickness map",
+        "clamp and ferrule geometry",
+        "mirror, glues, edge flaws, silica rod"
+      ]
+    },
+    "AAF": {
+      "pendulum": "approximately 400 nm Au/Cu-coated fused-silica rectangular block; nominal 91 x 4 x 50 mm^3 and 40 g; exact campaign dimensions and mass are inherited from the sealed nominal-kernel lane",
+      "main_fibre": "tungsten, 870 mm length, 25 micrometre diameter",
+      "source_bodies": "four SS316 stainless-steel spheres, about 127.0 mm diameter and 8.541 kg each",
+      "environment": "pendulum in vacuum; source spheres in air outside the chamber",
+      "source_support": "three-point mounts on a two-layer ULE-glass shelf mounted to a source turntable",
+      "co_moving_compensation": "fabricated copper and aluminium blocks reduce the shelf/rotor gravitational harmonic to the reported campaign residuals",
+      "lab_background_compensation": "eight approximately 34 kg lead blocks provide preliminary compensation of the lab-fixed gradient",
+      "unmodelled_body_classes": [
+        "measured planar pendulum density map",
+        "source-sphere density maps and campaign-specific random orientations",
+        "individual 3D CMM coordinates, including two shear degrees not fixed by four public pair distances plus overall centring",
+        "coating-thickness map",
+        "clamp and ferrule geometry",
+        "mirror, glues, edge flaws, silica rod",
+        "ULE shelf, rotating parts, compensation-block and deformation mass maps"
+      ]
+    }
+  },
+  "AAF": {
+    "AAF-I": {
+      "omega_d_rad_s": 0.007853982,
+      "mass_model_G_corrections_ppm": {
+        "coating": [-9.10, 0.34],
+        "clamp": [5.75, 0.15],
+        "ferrule": [22.52, 0.69],
+        "others": [3.23, 0.29]
+      },
+      "mechanical_damper_G_correction_ppm": [455.40, 1.95],
+      "air_density_G_correction_ppm": [149.90, 1.00],
+      "data_average_G_correction_ppm": [2.57, 0.01],
+      "numeric_derivative_G_correction_ppm": [2058.71, 0.01],
+      "rotating_gravity_gradient_standard_u_ppm": 1.86,
+      "shelf_deformation_standard_u_ppm": 1.51,
+      "magnetic_field_standard_u_ppm": 3.98,
+      "angle_encoder_standard_u_ppm": 0.72,
+      "residual_twist_standard_u_ppm": 0.03
+    },
+    "AAF-II": {
+      "omega_d_rad_s": 0.005235988,
+      "mass_model_G_corrections_ppm": {
+        "coating": [-9.09, 0.34],
+        "clamp": [5.85, 0.21],
+        "ferrule": [22.84, 1.03],
+        "others": [3.29, 0.29]
+      },
+      "mechanical_damper_G_correction_ppm": [455.40, 1.95],
+      "air_density_G_correction_ppm": [147.33, 1.51],
+      "data_average_G_correction_ppm": [1.14, 0.01],
+      "numeric_derivative_G_correction_ppm": [914.35, 0.01],
+      "rotating_gravity_gradient_standard_u_ppm": 1.35,
+      "shelf_deformation_standard_u_ppm": 1.51,
+      "magnetic_field_standard_u_ppm": 3.98,
+      "angle_encoder_standard_u_ppm": 0.72,
+      "residual_twist_standard_u_ppm": 0.61
+    },
+    "AAF-III": {
+      "omega_d_rad_s": 0.005235988,
+      "mass_model_G_corrections_ppm": {
+        "coating": [-9.10, 0.34],
+        "clamp": [5.73, 0.11],
+        "ferrule": [22.45, 0.47],
+        "others": [3.21, 0.29]
+      },
+      "mechanical_damper_G_correction_ppm": [25.74, 0.08],
+      "air_density_G_correction_ppm": [148.27, 1.13],
+      "data_average_G_correction_ppm": [1.14, 0.01],
+      "numeric_derivative_G_correction_ppm": [914.35, 0.01],
+      "rotating_gravity_gradient_standard_u_ppm": 1.72,
+      "shelf_deformation_standard_u_ppm": 1.51,
+      "magnetic_field_standard_u_ppm": 0.90,
+      "angle_encoder_standard_u_ppm": 0.72,
+      "residual_twist_standard_u_ppm": 0.45
+    }
+  },
+  "TOS": {
+    "TOS-I-F1-first": {
+      "mass_model_G_corrections_ppm": {"coating": [-1.70, 0.86], "clamp": [70.66, 0.14], "ferrule": [12.10, 0.05], "others": [9.27, 0.40]},
+      "anelastic_G_correction_ppm": [-6.01, 3.00],
+      "magnetic_damper_G_correction_ppm": [0.47, 0.08],
+      "thermoelastic_G_correction_ppm": [-73.13, 0.71],
+      "gravitational_nonlinearity_G_correction_ppm": [19.72, 0.62]
+    },
+    "TOS-I-F1-repeat": {
+      "mass_model_G_corrections_ppm": {"coating": [-1.70, 0.86], "clamp": [70.66, 0.14], "ferrule": [12.10, 0.05], "others": [9.27, 0.40]},
+      "anelastic_G_correction_ppm": [-6.01, 3.00],
+      "magnetic_damper_G_correction_ppm": [0.47, 0.08],
+      "thermoelastic_G_correction_ppm": [65.08, 0.71],
+      "gravitational_nonlinearity_G_correction_ppm": [22.14, 0.62]
+    },
+    "TOS-I-F2": {
+      "mass_model_G_corrections_ppm": {"coating": [-1.70, 0.86], "clamp": [70.65, 0.14], "ferrule": [12.91, 0.05], "others": [10.19, 0.37]},
+      "anelastic_G_correction_ppm": [-8.38, 4.19],
+      "magnetic_damper_G_correction_ppm": [7.13, 1.19],
+      "thermoelastic_G_correction_ppm": [723.89, 3.41],
+      "gravitational_nonlinearity_G_correction_ppm": [13.94, 0.62]
+    },
+    "TOS-I-F3-first": {
+      "mass_model_G_corrections_ppm": {"coating": [-1.70, 0.86], "clamp": [70.73, 0.14], "ferrule": [12.70, 0.06], "others": [9.51, 0.39]},
+      "anelastic_G_correction_ppm": [-5.68, 2.84],
+      "magnetic_damper_G_correction_ppm": [0.32, 0.05],
+      "thermoelastic_G_correction_ppm": [-146.56, 0.77],
+      "gravitational_nonlinearity_G_correction_ppm": [15.96, 0.62]
+    },
+    "TOS-I-F3-repeat": {
+      "mass_model_G_corrections_ppm": {"coating": [-1.70, 0.86], "clamp": [70.73, 0.14], "ferrule": [12.70, 0.06], "others": [9.51, 0.39]},
+      "anelastic_G_correction_ppm": [-5.68, 2.84],
+      "magnetic_damper_G_correction_ppm": [0.32, 0.05],
+      "thermoelastic_G_correction_ppm": [-85.51, 0.61],
+      "gravitational_nonlinearity_G_correction_ppm": [14.02, 0.62]
+    },
+    "TOS-II-F4-first": {
+      "mass_model_G_corrections_ppm": {"coating": [-1.52, 0.73], "clamp": [68.58, 0.33], "ferrule": [12.85, 0.05], "others": [8.79, 0.26]},
+      "anelastic_G_correction_ppm": [-6.92, 3.46],
+      "magnetic_damper_G_correction_ppm": [0.27, 0.08],
+      "thermoelastic_G_correction_ppm": [-90.92, 0.97],
+      "gravitational_nonlinearity_G_correction_ppm": [17.90, 0.22]
+    },
+    "TOS-II-F4-repeat": {
+      "mass_model_G_corrections_ppm": {"coating": [-1.52, 0.73], "clamp": [68.58, 0.33], "ferrule": [12.85, 0.05], "others": [8.79, 0.26]},
+      "anelastic_G_correction_ppm": [-6.92, 3.46],
+      "magnetic_damper_G_correction_ppm": [0.27, 0.08],
+      "thermoelastic_G_correction_ppm": [-145.59, 1.46],
+      "gravitational_nonlinearity_G_correction_ppm": [18.01, 0.22]
+    }
+  },
+  "covariance_inputs": {
+    "AAF_order": ["AAF-I", "AAF-II", "AAF-III"],
+    "AAF_systematic_standard_u_ppm": {
+      "pendulum_dimensions": [0.16, 0.16, 0.16], "attitude": [0.06, 0.06, 0.03], "density_inhomogeneity": [0.46, 0.46, 0.46], "coating": [0.34, 0.34, 0.34], "clamp_ferrule": [0.70, 1.05, 0.48], "others": [0.29, 0.29, 0.29], "source_masses": [0.32, 0.31, 0.31], "horizontal_distance": [8.98, 8.98, 8.98], "vertical_distance": [5.79, 5.79, 5.79], "positions_alignment": [0.57, 0.62, 0.35], "fibre_anelasticity": [0.01, 0.01, 0.01], "thermal": [0.91, 0.91, 0.91], "time_base": [0.01, 0.01, 0.01], "rotating_gravity_gradient": [1.86, 1.35, 1.72], "shelf_deformation": [1.51, 1.51, 1.51], "magnetic_damper": [1.95, 1.95, 0.08], "air_density": [1.00, 1.51, 1.13], "magnetic_field": [3.98, 3.98, 0.90], "angle_encoder": [0.72, 0.72, 0.72], "residual_twist": [0.03, 0.61, 0.45]
+    },
+    "AAF_statistical_standard_u_ppm": [3.44, 2.60, 1.34],
+    "AAF_total_standard_u_ppm": [12.45, 12.27, 11.21],
+    "AAF_reported_combined_standard_u_ppm": 11.61,
+    "TOS_order": ["TOS-I-F1-first", "TOS-I-F1-repeat", "TOS-I-F2", "TOS-I-F3-first", "TOS-I-F3-repeat", "TOS-II-F4-first", "TOS-II-F4-repeat"],
+    "TOS_systematic_standard_u_ppm": {
+      "pendulum_dimensions": [1.82, 1.82, 1.82, 1.82, 1.82, 2.73, 2.73], "attitude": [0.01, 0.02, 0.01, 0.05, 0.03, 0.02, 0.02], "density_inhomogeneity": [0.20, 0.20, 0.20, 0.20, 0.20, 0.20, 0.20], "coating": [0.86, 0.86, 0.86, 0.86, 0.86, 0.73, 0.73], "clamp_ferrule": [0.15, 0.15, 0.15, 0.15, 0.15, 0.33, 0.33], "others": [0.40, 0.40, 0.37, 0.39, 0.39, 0.26, 0.26], "source_masses": [0.73, 0.73, 0.73, 0.55, 0.55, 0.55, 0.55], "horizontal_distance": [8.73, 8.73, 8.73, 8.47, 8.47, 9.53, 9.27], "positions_alignment": [1.51, 1.60, 0.64, 1.81, 1.85, 0.63, 0.68], "fibre_nonlinearity": [1.45, 1.45, 4.84, 1.10, 1.03, 1.67, 1.26], "fibre_anelasticity": [3.00, 3.00, 4.19, 2.84, 2.84, 3.46, 3.46], "thermal": [0.71, 0.71, 3.41, 0.77, 0.61, 0.97, 1.46], "time_base": [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01], "gravitational_nonlinearity": [0.62, 0.62, 0.62, 0.62, 0.62, 0.22, 0.22], "magnetic_damper": [0.08, 0.08, 1.19, 0.05, 0.05, 0.08, 0.08], "magnetic_field": [2.08, 2.08, 2.08, 2.08, 2.08, 0.71, 0.71], "electrostatic": [0.17, 0.17, 0.17, 0.17, 0.17, 0.17, 0.17]
+    },
+    "TOS_statistical_standard_u_ppm": [10.22, 10.83, 30.67, 12.03, 10.22, 13.78, 13.78],
+    "TOS_total_standard_u_ppm": [14.29, 14.74, 32.88, 15.46, 14.09, 17.49, 17.35],
+    "TOS_combined_fibre_standard_u_ppm": [13.67, 32.88, 13.96, 15.59]
+  },
+  "correlation_semantics": {
+    "AAF": "The Supplement treats the same non-statistical error item as 100% correlated among AAF-I/II/III and the statistical alpha_t errors as independent.",
+    "TOS": "For repeated runs with the same fibre, the absent-source background Delta omega squared contribution is shared, while the present-source statistical contributions are independent; all other same error items are 100% correlated. Across fibres, statistical Delta omega squared is independent and same non-statistical items are conservatively treated as 100% correlated.",
+    "ceiling": "These are the authors' category-level standard-uncertainty combination assumptions. They are not a measured raw-data covariance matrix and do not establish a confidence or coverage interval. Rounded published totals limit covariance reconstruction precision."
+  },
+  "published_bound_fragments": {
+    "TOS_source_center_of_mass_eccentricity_upper_m": 3e-7,
+    "AAF_source_center_of_mass_eccentricity_upper_m": 1.3e-6,
+    "TOS_source_set_axis_alignment_upper_m": 5e-6,
+    "TOS_turntable_to_fibre_axis_alignment_upper_m": 1.9e-5,
+    "AAF_nominal_source_position_offset_upper_m": 3e-5,
+    "AAF_turntable_axis_misalignment_upper_m": 8.5e-5,
+    "AAF_pendulum_to_source_height_difference_upper_m": 2.7e-4,
+    "AAF_co_moving_background_residual_G_ppm_upper": 2.0,
+    "TOS_lab_background_nonlinearity_G_ppm_upper": 0.14,
+    "ceiling": "These bound individual disclosed effects. They do not jointly bound the full normalized kernel remainder because the necessary maps, orientations, supports, covariance and joint domain are not public."
+  },
+  "source_locations": {
+    "apparatus_and_main_corrections": "SOURCE/HUST_2018_main_article_public_mirror.pdf, article pp. 582-587 and Extended Data Tables 1-5; DOI 10.1038/s41586-018-0431-5",
+    "method_equations_and_supplement_tables": "SOURCE/41586_2018_431_MOESM1_ESM.pdf, Supplementary Information Sections 1-6 and Tables 1-4",
+    "error_budget": "SOURCE/nature_main_table1_error_budget.html, official Nature Table 1",
+    "geometry_and_nominal_kernels": "hash-pinned sealed dependency LANE_GRA_HUST_NOMINAL_SOURCE_KERNEL_RECONSTRUCTION_V001"
+  }
+}

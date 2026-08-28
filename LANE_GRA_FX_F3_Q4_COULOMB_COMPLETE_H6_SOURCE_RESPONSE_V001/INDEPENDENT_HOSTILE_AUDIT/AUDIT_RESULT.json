@@ -1,0 +1,81 @@
+{
+  "schema": "WAC_FX_COMPLETE_H6_SOURCE_INDEPENDENT_HOSTILE_AUDIT_V001",
+  "date": "2026-08-28",
+  "audited_lane": "LANE_GRA_FX_F3_Q4_COULOMB_COMPLETE_H6_SOURCE_RESPONSE_V001",
+  "disposition": "PASS",
+  "independent_checks": {
+    "passed": 139,
+    "total": 139
+  },
+  "builder_checks": {
+    "passed": 109,
+    "total": 109
+  },
+  "remaining_material_defects": [],
+  "finite_component": {
+    "states": 180,
+    "undirected_ring_transitions": 420,
+    "translation_orbits": 6,
+    "orbit_length": 30,
+    "source_momentum": 0,
+    "maximum_fixed_order": 6
+  },
+  "independent_enumeration": {
+    "nonempty_virtual_subsets": 1728600,
+    "signature_family_weights": 13725,
+    "fold_method": "dual formal-series fixed point in t=h^2 through t^3",
+    "history_method": "count-state dynamic program with interleaved numerator and resolvent derivatives"
+  },
+  "source_off_coefficients": {
+    "a2": "-60",
+    "a4": "-35",
+    "a6": "-893/9"
+  },
+  "diagonal_reduction": {
+    "Qdiag2": "Ud x^2 (-D-40 I)",
+    "Qdiag4": "Ud x^4 (-(37/12) D-20 I)",
+    "Qdiag6": "Ud x^6 (-(16247/900) D-(374/135) I)",
+    "fE": "1-x^2-(37/12)x^4-(16247/900)x^6",
+    "rhoE": "rho fE",
+    "rho": "8/(63 x^6)"
+  },
+  "exact_hierarchy": {
+    "generic_operator_rank_mod_identity": 5,
+    "generic_source_to_commutator_rank": 3,
+    "generic_ground_retarded_spectral_rank": 2,
+    "generic_first_commutator_moment_rank": 2,
+    "finite_root_operator_rank_mod_identity": 4,
+    "finite_root_source_to_commutator_rank": 2,
+    "finite_root_ground_retarded_spectral_rank": 2,
+    "finite_root_first_commutator_moment_rank": 2
+  },
+  "poles": [
+    {
+      "gap": "2+2 sqrt(2)",
+      "residue_rank": 1,
+      "E_amplitude": "rhoE"
+    },
+    {
+      "gap": "4+2 sqrt(2)",
+      "residue_rank": 1,
+      "E_amplitude": "0"
+    }
+  ],
+  "finite_polynomial_root": {
+    "unique_positive_decimal": "0.5398271903...",
+    "exact_bracket": "1/2 < x0 < 27/50",
+    "physical_threshold": false,
+    "reason": "H8 and higher orders are uncontrolled"
+  },
+  "scope": {
+    "validated": "complete homogeneous nonidentity source modulo H_id on the selected FO 180-state component, under FV-PURE, fixed through H6",
+    "not_validated": [
+      "local or nonzero-momentum source",
+      "other ice components or a thermodynamic limit",
+      "H8 and higher completion or convergence",
+      "CTP response or Ward identity",
+      "thermodynamic massless tensor or helicity two",
+      "RGRL-B, gravity emergence, G, or Newton's constant"
+    ]
+  }
+}

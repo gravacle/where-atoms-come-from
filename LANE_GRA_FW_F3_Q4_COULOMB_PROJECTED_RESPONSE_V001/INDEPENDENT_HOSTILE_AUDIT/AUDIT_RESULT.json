@@ -1,0 +1,66 @@
+{
+  "schema": "WAC_FW_FV_WITNESS_INDEPENDENT_HOSTILE_AUDIT_V001",
+  "date": "2026-08-28",
+  "audited_lane": "LANE_GRA_FW_F3_Q4_COULOMB_PROJECTED_RESPONSE_V001",
+  "disposition": "PASS_AFTER_PRE_FREEZE_WITNESS_SCOPE_REPAIR",
+  "independent_checks": {
+    "passed": 144,
+    "total": 144
+  },
+  "builder_checks": {
+    "passed": 114,
+    "total": 114
+  },
+  "pre_freeze_material_defect": {
+    "id": "M1_COMPLETE_SOURCE_SCOPE",
+    "description": "The candidate calculation used only Q_pair^(0)+Q_ring,irr^(6), while FV13 retains uncomputed generated Q_diag^(2,4,6) derivatives and folds.",
+    "repair": "The frozen theorem defines FV-WITNESS, explicitly omits the generated diagonal terms, and states rank two is not an upper bound on the complete fixed-order or CTP response.",
+    "status": "REPAIRED_BEFORE_AUDITED_HASH_FREEZE"
+  },
+  "remaining_material_defects": [],
+  "exact_hierarchy": {
+    "fv_family_offshell_nonidentity_rank": 6,
+    "fv_witness_component_rank_mod_identity": 5,
+    "source_to_commutator_rank": 3,
+    "ground_retarded_spectral_rank": 2,
+    "first_nonzero_commutator_moment_rank": 2
+  },
+  "finite_component": {
+    "states": 180,
+    "undirected_ring_transitions": 420,
+    "translation_orbits": 6,
+    "orbit_length": 30,
+    "source_momentum": 0
+  },
+  "exact_relations": {
+    "A1": "Q_A=(60 rho I+11 H)/sqrt(3)",
+    "E_conserved": "Q_Ec=16 sqrt(6) rho I",
+    "T2_conserved": "[H,Q_Tyz]=0",
+    "Tyz_ground_eigenvalue": "3 sqrt(2)-6",
+    "ground_dark": "Q_dark centered annihilates the ground but [H,Q_dark] is nonzero"
+  },
+  "poles": [
+    {
+      "gap": "2+2 sqrt(2)",
+      "residue_rank": 1,
+      "residue_norm": "2 rho^2+9"
+    },
+    {
+      "gap": "4+2 sqrt(2)",
+      "residue_rank": 1,
+      "residue_norm": "9"
+    }
+  ],
+  "scope": {
+    "validated": "FV-WITNESS=Q_pair^(0)+Q_ring,irr^(6) on one homogeneous FO 180-state component",
+    "not_validated": [
+      "generated Q_diag^(2,4,6) derivatives and differentiated folds",
+      "complete fixed-order FV or CTP response",
+      "local or nonzero-momentum source response",
+      "complete-sector or thermodynamic limit",
+      "Ward identity or helicity-two pole",
+      "RGRL-B, gravity emergence, or numerical G"
+    ],
+    "immediate_successor": "Compute generated Q_diag^(2,4,6) derivatives/folds on the same FO component and rerun the complete rank/response hierarchy."
+  }
+}
