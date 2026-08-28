@@ -1255,6 +1255,10 @@ fine-structure constant \(\alpha\).
 | Boolean common-frame connection | One q=4 Boolean interval is an exact cubical incidence cell. Two admitted probe blocks extracting one coefficient map share a Lorentz link; elementary child-based route holonomy is gauge-covariant, and identity plaquettes are exactly path-flat on the count complex. The `E/T_2` response normalization is unequal and `S_4` alone does not force spin-two dynamics. | **Exact conditional flat-seed, common-link, holonomy, and response no-go theorem; EP independent hostile audit PASS and 986/986 checks** | A lawful physical realization of the extracted link, shared-face/torsion closure, connection selection, refinement, complete lineage intervention, a protected pole, and gravity remain open. A common Lorentz connection is not yet a Levi--Civita connection. |
 | Record-conditioned tetrahedral holonomy | With the separately supplied ER routing law, one qualified retained binary record controls the placement of the same signed compact gate inventory. KEEP gives common two-probe Lorentz holonomy `H=(142)!=I`; BREAK gives `H=I`, with no hidden spin-central sign. Intrinsic face-set matching passes. | **Exact finite conditional record-to-common-connection-curvature witness; ER independent hostile audit PASS and 227/227 checks** | The routing law and complete EP35/EP36 stress/lineage packet are premises. The natural constant-coframe torsion equation fails in both arms, so this is supplied common-connection curvature, not Levi--Civita/Regge curvature, continuum curvature, or gravity. |
 | Gamma--soldering--gravity connection lane | Every first qualified positive-margin binary record has `I_gamma=-log gamma_Q>0`; conditionally independent physical fragments add it. The sealed record/connection, QFI/coframe, influence-gamma/response, protected-tensor, and induced-action interfaces form one typed conditional route. At the isotropic `S_4` point, GSGB's `s_gamma=ell_F^2 f P` matches EO's `q_EO=(4a^2/3)P` under `ell_F^2 f=4a^2/3`. ET's equivalent Bures-line convention is `q_gamma=(ell_B^2 f/4)P`, `ell_B^2 f=16a^2/3`, with `ell_B=2 ell_F`. | **GSGB final sealed; first-record seed presence exact and typed connection lane established; independent hostile audit ACCEPT and 121/121 checks** | This is an intermediate theorem lane, not the final real-world gravity theorem. The scale lock is a soldering premise, not a derived prediction; away from isotropy an explicit tetrad/null binding is required. `GSGB-JOIN`, physical `G-SOLDER`, selected compatible torsion-free/Levi--Civita connection, controlled common refinement, same-world universal stress/Einstein--Hilbert response, and the remaining RIEHB coefficient/remainder/dense-variation gates remain open. The final proof may insert neither geometry nor routing. Gamma is neither a force nor curvature. |
+| Finite inherited TT composite screen | On one exact 180-state translation-closed H6 sector, the connected two-`Q` susceptibility, four-`Q` cumulant, and scalar composite Legendre quartic are nonzero. Four finite selected composite poles are resolved; the lowest lies above the finite two-one-link threshold proxy and shares its energy with one-link response. | **Exact finite composite precursor and negative below-proxy screen; 161/161 after hostile typing repair** | Four `Q` insertions are eight one-link operators. Composite-source amputation is not four-one-link external-leg amputation or channel-2PI subtraction. No thermodynamic no-bound-state theorem, helicity two, Ward identity, RGRL-B, or gravity follows. |
+| Projected-ice constraint origin | The q4/F3 projected branch owns one scalar compact-\(U(1)\) Gauss species, preserved by H6/H8 closed rings. Its four pair identities factor through that scalar law and generate no new gauge orbit. | **Exact finite/local constraint census; 78/78 plus 114/114 hostile replay** | The unprojected one-link term violates the projected Gauss law. Matching `S4` dimensions or final polarization counts does not supply the independent rank-three vector plus scalar RGRL-B packet. This is not a thermodynamic no-go. |
+| Fixed-parent collective metric origin | Six q4 root dyads span the static co-metric tangent, but the favorable translation-complete FI source algebra has \(\operatorname{rank}(\delta c\mapsto\delta B)=6\) and \(\operatorname{rank}\chi^R=0\). FJ separately retains an exact conditional finite rank-six pair response but lacks tensor solder and the rank-two null packet. | **Exact current-object inventory and obstruction; 97/97 plus 110/110 hostile replay** | No present object simultaneously owns six tensor configurations, nondegenerate conjugates, and vector-plus-scalar constraints. This does not exclude a thermodynamic collective composite. `Q4-BLOCK-STRAIN-CTP` is the frozen next test. |
+| HUST-2018 processed ordinary-gravity forward | Official period summaries recover one ToS stiffness response; three AAF processed source-response forwards close within `0.2 ppm` without accepted \(G\); a representative acceleration stream separates the source and laboratory harmonics. | **Real-data processed forward; 111/111 plus 104/104 hostile replay** | Processed coefficients do not replace mass geometry, transfer, corrections, calibration, covariance, or the complete stress ledger. No new \(G\), full `GC16`, RGRL/GFT confirmation, or lineage charge follows. |
 
 The labels “exact” and “proved” in this document always inherit the domain and
 premises of the cited lane. They do not turn a conditional bridge into evidence
@@ -3483,6 +3487,10 @@ The statements above are synthesized from the following local results:
 - [alpha gauge-normalization and conditional RG theorem](LANE_RFT_ALPHA_GAUGE_NORMALIZATION_V001/THEOREM.md)
 - [same-sector alpha inheritance and active-EM record-world theorem](LANE_RFT_ALPHA_SECTOR_INHERITANCE_V001/RESULT.md)
 - [running-alpha complete-stress and influence-gamma bridge](LANE_CROSS_RFT_MGFT_RUNNING_ALPHA_COMPLETE_STRESS_V001/RESULT.md)
+- [finite inherited q4 TT composite-cumulant screen](LANE_GRA_FO_F3_Q4_FINITE_TT_FOUR_POINT_V001/THEOREM.md)
+- [projected-ice RGRL-B constraint-origin screen](LANE_GRA_FP_F3_Q4_RGRLB_CONSTRAINT_ORIGIN_SCREEN_V001/RESULT.md)
+- [fixed-parent collective metric origin screen](LANE_GRA_FQ_F3_Q4_COLLECTIVE_METRIC_ORIGIN_SCREEN_V001/RESULT.md)
+- [HUST-2018 dual-method ordinary-gravity forward](LANE_GRA_HUST_2018_DUAL_METHOD_G_FORWARD_V001/THEOREM.md)
 - [founding design and alpha-input decision](FOUNDING_DESIGN_V001.md)
 
 ## No-laboratory F3/q4 continuation
@@ -3519,34 +3527,60 @@ but its `T2` term is a vector-mean dyad rather than an independent tensor mode;
 unlabelled complement symmetrization cancels it. This closes the local Fisher
 shortcut without prejudging nonlocal or noncommuting even rank-two variables.
 
-The infrared pole classification removes the most tempting overpromotion. At
-the separately supplied complement-symmetric Gaussian-Maxwell fixed point, the
-correctly oriented one-link flux has the spin-one photon pole. The centered
-even pair channel has a two-photon continuum and contact terms. A local
-tetrahedral `S4` decomposition is therefore not evidence for continuum
-helicity two. The inherited non-Gaussian lane has now reached the next exact
-boundary. The compact order-six ring Hamiltonian is already interacting, and
-on the declared finite girth-six support its order-eight correction contains
-only scalar diagonal terms, dressed hexagons, and new alternating octagons,
-with `J8=429 h^8/(16 U_d^7)` and `V8=0`. A finite-range bare vertex is allowed
-and analytic, but its normalized TT projection has not yet been calculated. A
-strict single insertion establishes no new isolated pole; it does not exclude
-binding after nonperturbative iteration or exact diagonalization. The lawful
-next calculation is therefore the connected TT four-point function,
-amputation, channel-2PI kernel, spectral/resummed pole test, and finite-volume
-helicity, Ward, common-cone, and residue gates. If those fail, the successor
-must be a distinct same-parent rank-two constrained collective architecture
-rather than a relabeling of the photon or its continuum.
+The finite inherited TT screen now resolves the next boundary without
+overpromoting it. On one exact 180-state translation-closed H6 sector, the
+zero-frequency connected two-`Q` susceptibility and four-`Q` cumulant are
+nonzero, and the composite Legendre quartic is positive in both susceptibility
+eigenchannels. The hostile audit repaired a material type error: four bilinear
+`Q` insertions form an eight-one-link object, so composite-source amputation is
+not four-one-link external-leg amputation or channel-2PI subtraction. Four
+finite selected composite poles are present, but the lowest lies above the
+finite two-one-link threshold proxy and is not energy-exclusive from one-link
+response. This earns a finite composite precursor, not a bound graviton or a
+thermodynamic no-pole theorem.
 
-The two empirical substitutes now have equally sharp ceilings. A second
-28-query public search retained no same-parent lineage dataset, although a
-strontium-clock network and levitated femtonewton calibration improve protocol
-design. The NIST/BIPM public apparatus reduces exactly to eight torque summary
-observations in the finite-apparatus forward map, but free source scale,
-configuration-remainder aliasing, missing covariance, and ten absent fields
-prevent an independent real `G` fit. These are readiness results, not physical
-nulls or new numerical constants. The consolidated disposition is
-[the no-laboratory gravity program status](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
+The constraint-origin screen is equally sharp. The projected q4/F3 ice branch
+owns one scalar compact-\(U(1)\) Gauss species. H6 and H8 closed rings preserve
+it; the unprojected one-link term does not. The four local pair identities
+factor through that scalar law and are kinematic zero operators rather than
+four first-class generators. The branch therefore does not microscopically
+derive the independent rank-three vector plus scalar Ward/constraint packet of
+RGRL-B.
+
+The complete fixed-parent inventory separates two formerly blurred ranks. The
+six q4 root dyads span the static co-metric tangent, but in the favorable
+translation-complete FI functional branch their dressed source operators
+commute and are conserved:
+
+\[
+\operatorname{rank}(\delta c\mapsto\delta B)=6,\qquad
+\operatorname{rank}\chi^R_{\mathcal S\mathcal S}=0.
+\]
+
+FJ remains a genuine, distinct positive result: its six unprojected active pair
+operators have an exact conditional rank-six spectral response under the
+programmed `H_resp`. They still lack a continuum tensor solder and the required
+null packet. No present object owns all three roles at once.
+
+The resulting single next calculation is `Q4-BLOCK-STRAIN-CTP`. It freezes one
+same-parent periodic/refining q4-diamond-ice family, inserts the complete BS20
+strain source before the fixed order-eight Feshbach reduction, and derives all
+ring-source weights and contacts from the microscopic virtual histories. One
+CTP calculation must return the pole/residue packet, first nonzero commutator
+moment and rank, and ungauge-fixed Ward/constraint closure. At zero source it
+must be exactly the frozen H6+H8 parent; no rescue dynamics may be added.
+
+The public-data boundary has also advanced. The official HUST-2018 release
+recovers one figure-level ToS stiffness response and reproduces all three AAF
+processed source-response forwards within `0.2 ppm` without an accepted value
+of \(G\). This validates the separate operator/stiffness and source/forcing
+ownership positions in a real dual-method apparatus. The already-derived
+combined outcomes differ by `44.948 ppm`; the descriptive `2.720` ratio is
+valid only if their cross-covariance is set to zero and is retained solely as a
+systematics stress. Missing mass-coordinate geometry, complete transfer,
+correction/remainder ownership, source calibration, covariance, and apparatus
+stress still prevent full `GC16` or a new \(G\). The consolidated disposition
+is [the no-laboratory gravity program status](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
 
 ## Bottom line
 

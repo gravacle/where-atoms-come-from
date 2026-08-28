@@ -1,0 +1,36 @@
+GRA-FQ-F3-Q4-CMOS-V001 verification
+Date: 2026-08-27
+
+Command:
+  python3 LANE_GRA_FQ_F3_Q4_COLLECTIVE_METRIC_ORIGIN_SCREEN_V001/verify_collective_metric_origin_screen.py
+
+Result:
+  VERIFICATION PASSED: 97/97
+
+Dependency replay:
+  sha256sum -c LANE_GRA_FQ_F3_Q4_COLLECTIVE_METRIC_ORIGIN_SCREEN_V001/DEPENDENCIES.sha256
+  14/14 dependencies OK
+
+Verified exactly:
+  - q4 count-front tangent rank 3;
+  - six tetrahedral/A3 dyads have rank 6 and isotropic second moment;
+  - six periodic even root operators are independent and mutually commuting;
+  - a nontrivial f(K) and all f-prime-dressed source derivatives commute;
+  - inherited root-channel Kubo commutator numerators vanish;
+  - six-state ice one-link, pair, and centered-pair ranks are 3, 3, and 2;
+  - the local 1+3+2 diagonal function algebra is commuting;
+  - the frozen FJ unprojected conditional response has nonzero A1/E/T2
+    eigenvalues and exact six-by-six rank 6 at imaginary frequency;
+  - Maxwell, tensor-vector, and tensor-scalar symbol ranks are 1, 3, and 1;
+  - the TT quotient has dimension 2;
+  - the double curl is self-adjoint with rank 3; and
+  - identifying conserved stress with the double curl gives pulled-back
+    symplectic rank 0; and
+  - the successor text freezes the zero-source parent identity, microscopic
+    source/Feshbach ledger, and ungauge-fixed Ward/constraint test.
+
+Not verified by this finite replay:
+  - thermodynamic `Q4-BLOCK-STRAIN-CTP` response;
+  - a tensor pole or Ward identity;
+  - physical RGRL-B instantiation;
+  - gravity or numerical G.

@@ -1,0 +1,572 @@
+{
+  "AAF_figure_level_acceleration_stream": {
+    "AAF_I_2p5mHz_control_amplitude_nrad_s-2": 2.3436319732980193,
+    "background_grid_Hz": {
+      "maximum": 0.0011,
+      "minimum": 0.0005,
+      "step": 1e-07
+    },
+    "caption_scored_time_range_s": [
+      1.0,
+      7200.0
+    ],
+    "caption_scored_two_hour_sample_count": 7200,
+    "claim": "FIGURE_LEVEL_SPECTRAL_SEPARABILITY_DIAGNOSTIC__NOT_CAMPAIGN_ALPHA_OR_G_EXTRACTION",
+    "source_frequency_Hz_fixed_from_AAF_II_III": 0.0016666666666666668,
+    "source_only_fit_amplitude_nrad_s-2": 463.5681210173395,
+    "two_tone_background_amplitude_nrad_s-2": 77.85005910756898,
+    "two_tone_best_background_frequency_Hz": 0.0007397,
+    "two_tone_residual_rms_nrad_s-2": 15.710326418514784,
+    "two_tone_source_amplitude_nrad_s-2": 461.99346479501804,
+    "workbook_available_sample_count": 9999,
+    "workbook_time_range_s": [
+      1.0,
+      9999.0
+    ]
+  },
+  "AAF_three_processed_coefficient_forwards": [
+    {
+      "I": 2.776e-05,
+      "I_m": 2.401e-05,
+      "K": 6.313e-09,
+      "K_m": 1.199e-05,
+      "P_abs_kg_m-3": 6926.352,
+      "P_u_kg_m-3": 0.074,
+      "alpha_nrad_s-2": 462.0912,
+      "alpha_u_nrad_s-2": 0.0016,
+      "id": "AAF-I",
+      "magnetic_damper_factor": 1.000455396097372,
+      "magnetic_damper_ppm": 455.3960973721072,
+      "published_G_e-11": 6.674534,
+      "published_G_summary_SI_comparison_only": 6.674534e-11,
+      "published_G_u_e-11": 8.3e-05,
+      "raw_alpha_over_P_SI": 6.671494604952219e-11,
+      "recomputed_G_SI": 6.674532777558953e-11,
+      "recomputed_minus_published_relative_ppm": -0.1831500218152371
+    },
+    {
+      "I": 2.776e-05,
+      "I_m": 2.401e-05,
+      "K": 6.313e-09,
+      "K_m": 1.199e-05,
+      "P_abs_kg_m-3": 6926.334,
+      "P_u_kg_m-3": 0.075,
+      "alpha_nrad_s-2": 462.0791,
+      "alpha_u_nrad_s-2": 0.0012,
+      "id": "AAF-II",
+      "magnetic_damper_factor": 1.000455396097372,
+      "magnetic_damper_ppm": 455.3960973721072,
+      "published_G_e-11": 6.674375,
+      "published_G_summary_SI_comparison_only": 6.674375e-11,
+      "published_G_u_e-11": 8.2e-05,
+      "raw_alpha_over_P_SI": 6.671337247092041e-11,
+      "recomputed_G_SI": 6.674375348038621e-11,
+      "recomputed_minus_published_relative_ppm": 0.05214549991805484
+    },
+    {
+      "I": 2.776e-05,
+      "I_m": 2.404e-05,
+      "K": 6.313e-09,
+      "K_m": 0.0002124,
+      "P_abs_kg_m-3": 6926.415,
+      "P_u_kg_m-3": 0.074,
+      "alpha_nrad_s-2": 462.2941,
+      "alpha_u_nrad_s-2": 0.0006,
+      "id": "AAF-III",
+      "magnetic_damper_factor": 1.0000257392731349,
+      "magnetic_damper_ppm": 25.739273134872676,
+      "published_G_e-11": 6.674535,
+      "published_G_summary_SI_comparison_only": 6.674534999999999e-11,
+      "published_G_u_e-11": 7.5e-05,
+      "raw_alpha_over_P_SI": 6.674363288945292e-11,
+      "recomputed_G_SI": 6.674535082204988e-11,
+      "recomputed_minus_published_relative_ppm": 0.01231621205022293
+    }
+  ],
+  "GC16_execution": {
+    "closure_gained": [
+      "one Figure-2 ToS source-present/background period contrast recovered by A-B-A",
+      "same ToS contrast independently recovered by panel-wise common-quadratic drift fits and background subtraction",
+      "seven ToS processed response/source quotients and the known magnetic term evaluated",
+      "three AAF processed response/source/mechanical equations reproduced within printed rounding",
+      "29 AAF derived outcomes regroup to the three published campaign central means",
+      "two-tone fit separates the approximately 462 nrad/s2 source response from the approximately 77 nrad/s2 lab-fixed background in the released two-hour stream",
+      "cross-method 44.95 ppm source-model stress quantified without accepted G"
+    ],
+    "full_real_apparatus_execution": false,
+    "identifiability": "PROCESSED_COEFFICIENT_RATIOS_IDENTIFIED__RAW_GEOMETRY_TRANSFER_REMAINDER_AND_GLOBAL_SOURCE_SCALE_NOT_SEPARATELY_REIDENTIFIED",
+    "missing_fields": [
+      "event-level 0.5 s ToS angle and environmental channels with run/configuration labels",
+      "full 20 kHz AAF encoder/controller records and campaign-level alpha time series",
+      "finite source/detector mass-coordinate-density files used to compute Delta_Cg and P_g,l,m",
+      "row-level trajectory, source-scale calibration, and their joint covariance",
+      "complete frequency-dependent torsion/support/auxiliary-mode transfer and readout calibration",
+      "signed row-level correction and physical-remainder ledger, including ToS Delta_K ownership",
+      "observation, calibration, campaign, and cross-method covariance matrices",
+      "complete conserved apparatus stress/source ledger including drive and support reactions",
+      "predeclared nuisance design, likelihood domain, null rows, and held-out rows required by GC protocol"
+    ]
+  },
+  "ToS_figure_level_response": {
+    "A_B_A_background_subtracted_delta_omega2_s-2": 1.6626945111323172e-06,
+    "A_B_A_minus_printed_delta_omega2_s-2": -4.488867682738283e-12,
+    "A_B_A_minus_printed_in_printed_sigma": -0.2493815379299046,
+    "A_B_A_response_over_processed_source_coefficient_SI": 6.67423933062428e-11,
+    "ceiling": "THE_40_PERIOD_VALUES_ARE_THREE_DAY_PERIOD_SUMMARIES_NOT_0p5_SECOND_ANGLE_DATA;_DELTA_Cg_OVER_I_IS_A_PROCESSED_GEOMETRY_COEFFICIENT",
+    "common_quadratic_background": {
+      "claim": "MINIMAL_COMMON_CURVATURE_DRIFT_DIAGNOSTIC__NOT_AUTHORS_EVENT_LEVEL_FIT",
+      "design_rank": 4,
+      "model": "omega2=b0+b1*t_scaled+b2*t_scaled^2+delta*near_indicator",
+      "near_minus_far_delta_omega2_s-2": -5.044473430670186e-10,
+      "residual_rms_s-2": 4.5740930903667815e-11,
+      "row_count": 20
+    },
+    "common_quadratic_background_subtracted_delta_omega2_s-2": 1.6626989120180067e-06,
+    "common_quadratic_minus_printed_delta_omega2_s-2": -8.798199324579377e-14,
+    "common_quadratic_minus_printed_in_printed_sigma": -0.0048878885136552095,
+    "common_quadratic_present": {
+      "claim": "MINIMAL_COMMON_CURVATURE_DRIFT_DIAGNOSTIC__NOT_AUTHORS_EVENT_LEVEL_FIT",
+      "design_rank": 4,
+      "model": "omega2=b0+b1*t_scaled+b2*t_scaled^2+delta*near_indicator",
+      "near_minus_far_delta_omega2_s-2": 1.6621944646749398e-06,
+      "residual_rms_s-2": 4.2671660643210314e-11,
+      "row_count": 20
+    },
+    "common_quadratic_response_over_processed_source_coefficient_SI": 6.674256996265299e-11,
+    "printed_repeated_fiber_1_delta_Cg_over_I_kg_m-3": 24912.12,
+    "printed_repeated_fiber_1_delta_omega2_s-2": 1.662699e-06,
+    "printed_repeated_fiber_1_delta_omega2_standard_u_s-2": 1.8e-11,
+    "source_absent_background_panel_b": {
+      "contrast_count": 18,
+      "f_n_f_count": 9,
+      "maximum_delta_omega2_s-2": -4.090996701556354e-10,
+      "mean_delta_omega2_s-2": -4.964938724048171e-10,
+      "minimum_delta_omega2_s-2": -5.7847248042045e-10,
+      "n_f_n_count": 9,
+      "uncertainty_status": "OVERLAPPING_TRIPLETS__NO_INDEPENDENCE_OR_COVERAGE_CLAIM"
+    },
+    "source_present_panel_a": {
+      "contrast_count": 18,
+      "f_n_f_count": 9,
+      "maximum_delta_omega2_s-2": 1.6622576600309373e-06,
+      "mean_delta_omega2_s-2": 1.6621980172599123e-06,
+      "minimum_delta_omega2_s-2": 1.6621098184191275e-06,
+      "n_f_n_count": 9,
+      "uncertainty_status": "OVERLAPPING_TRIPLETS__NO_INDEPENDENCE_OR_COVERAGE_CLAIM"
+    }
+  },
+  "ToS_seven_processed_coefficient_forwards": [
+    {
+      "delta_Cg_over_I_kg_m-3": 24912.86,
+      "delta_Cg_over_I_standard_u_kg_m-3": 0.23,
+      "fiber": "fiber_1",
+      "id": "fiber_1_first",
+      "magnetic_damper_factor_minus_one": 4.723346027087773e-07,
+      "magnetic_damper_ppm": 0.47233460270877725,
+      "magnetic_only_minus_published_relative_ppm": 6.100332792469132,
+      "magnetic_only_ratio_SI": 6.674194714560507e-11,
+      "mean_delta_omega2_s-2": 1.662732e-06,
+      "mean_delta_omega2_standard_u_s-2": 1.7e-11,
+      "published_G_summary_SI_comparison_only": 6.674153999999999e-11,
+      "published_G_summary_standard_u_SI": 9.5e-16,
+      "raw_response_over_source_ratio_SI": 6.674191562108887e-11,
+      "unowned_full_bracket_residual_ppm": -6.1002984599323185
+    },
+    {
+      "delta_Cg_over_I_kg_m-3": 24912.12,
+      "delta_Cg_over_I_standard_u_kg_m-3": 0.23,
+      "fiber": "fiber_1",
+      "id": "fiber_1_repeated",
+      "magnetic_damper_factor_minus_one": 4.723346027087773e-07,
+      "magnetic_damper_ppm": 0.47233460270877725,
+      "magnetic_only_minus_published_relative_ppm": 5.768749889778491,
+      "magnetic_only_ratio_SI": 6.674260501917427e-11,
+      "mean_delta_omega2_s-2": 1.662699e-06,
+      "mean_delta_omega2_standard_u_s-2": 1.8e-11,
+      "published_G_summary_SI_comparison_only": 6.674222e-11,
+      "published_G_summary_standard_u_SI": 9.8e-16,
+      "raw_response_over_source_ratio_SI": 6.674257349434733e-11,
+      "unowned_full_bracket_residual_ppm": -5.768719336329831
+    },
+    {
+      "delta_Cg_over_I_kg_m-3": 24912.15,
+      "delta_Cg_over_I_standard_u_kg_m-3": 0.23,
+      "fiber": "fiber_2",
+      "id": "fiber_2",
+      "magnetic_damper_factor_minus_one": 7.12980547520228e-06,
+      "magnetic_damper_ppm": 7.12980547520228,
+      "magnetic_only_minus_published_relative_ppm": 8.373099091185665,
+      "magnetic_only_ratio_SI": 6.674292884047758e-11,
+      "mean_delta_omega2_s-2": 1.662698e-06,
+      "mean_delta_omega2_standard_u_s-2": 5.1e-11,
+      "published_G_summary_SI_comparison_only": 6.674236999999999e-11,
+      "published_G_summary_standard_u_SI": 2.19e-15,
+      "raw_response_over_source_ratio_SI": 6.67424529797709e-11,
+      "unowned_full_bracket_residual_ppm": -8.373088681068452
+    },
+    {
+      "delta_Cg_over_I_kg_m-3": 24911.7,
+      "delta_Cg_over_I_standard_u_kg_m-3": 0.22,
+      "fiber": "fiber_3",
+      "id": "fiber_3_first",
+      "magnetic_damper_factor_minus_one": 3.2372247260361713e-07,
+      "magnetic_damper_ppm": 0.32372247260361714,
+      "magnetic_only_minus_published_relative_ppm": 5.666885902755325,
+      "magnetic_only_ratio_SI": 6.67431182234924e-11,
+      "mean_delta_omega2_s-2": 1.662684e-06,
+      "mean_delta_omega2_standard_u_s-2": 2.0000000000000002e-11,
+      "published_G_summary_SI_comparison_only": 6.674273999999999e-11,
+      "published_G_summary_standard_u_SI": 1.03e-15,
+      "raw_response_over_source_ratio_SI": 6.674309661725214e-11,
+      "unowned_full_bracket_residual_ppm": -5.666855623864819
+    },
+    {
+      "delta_Cg_over_I_kg_m-3": 24911.72,
+      "delta_Cg_over_I_standard_u_kg_m-3": 0.22,
+      "fiber": "fiber_3",
+      "id": "fiber_3_repeated",
+      "magnetic_damper_factor_minus_one": 3.2372247260361713e-07,
+      "magnetic_damper_ppm": 0.32372247260361714,
+      "magnetic_only_minus_published_relative_ppm": 5.461245049076524,
+      "magnetic_only_ratio_SI": 6.674302449802149e-11,
+      "mean_delta_omega2_s-2": 1.662683e-06,
+      "mean_delta_omega2_standard_u_s-2": 1.7e-11,
+      "published_G_summary_SI_comparison_only": 6.674266e-11,
+      "published_G_summary_standard_u_SI": 9.399999999999999e-16,
+      "raw_response_over_source_ratio_SI": 6.674300289181156e-11,
+      "unowned_full_bracket_residual_ppm": -5.461216991964335
+    },
+    {
+      "delta_Cg_over_I_kg_m-3": 25003.05,
+      "delta_Cg_over_I_standard_u_kg_m-3": 0.25,
+      "fiber": "fiber_4",
+      "id": "fiber_4_first",
+      "magnetic_damper_factor_minus_one": 2.7258995342440615e-07,
+      "magnetic_damper_ppm": 0.2725899534244062,
+      "magnetic_only_minus_published_relative_ppm": 6.979866386425115,
+      "magnetic_only_ratio_SI": 6.67406358374692e-11,
+      "mean_delta_omega2_s-2": 1.668719e-06,
+      "mean_delta_omega2_standard_u_s-2": 2.2999999999999998e-11,
+      "published_G_summary_SI_comparison_only": 6.674017e-11,
+      "published_G_summary_standard_u_SI": 1.1699999999999999e-15,
+      "raw_response_over_source_ratio_SI": 6.674061764464735e-11,
+      "unowned_full_bracket_residual_ppm": -6.97981957087368
+    },
+    {
+      "delta_Cg_over_I_kg_m-3": 25002.95,
+      "delta_Cg_over_I_standard_u_kg_m-3": 0.25,
+      "fiber": "fiber_4",
+      "id": "fiber_4_repeated",
+      "magnetic_damper_factor_minus_one": 2.7258995342440615e-07,
+      "magnetic_damper_ppm": 0.2725899534244062,
+      "magnetic_only_minus_published_relative_ppm": 6.782900277890747,
+      "magnetic_only_ratio_SI": 6.674150269788659e-11,
+      "mean_delta_omega2_s-2": 1.6687339999999999e-06,
+      "mean_delta_omega2_standard_u_s-2": 2.2999999999999998e-11,
+      "published_G_summary_SI_comparison_only": 6.674104999999999e-11,
+      "published_G_summary_standard_u_SI": 1.16e-15,
+      "raw_response_over_source_ratio_SI": 6.674148450482843e-11,
+      "unowned_full_bracket_residual_ppm": -6.782856119436076
+    }
+  ],
+  "already_derived_outcome_rows": {
+    "AAF_29_already_derived_G_rows_by_campaign": {
+      "AAF-I": {
+        "arithmetic_mean_G_e-11": 6.67453375,
+        "count": 4,
+        "maximum_G_e-11": 6.674585,
+        "minimum_G_e-11": 6.674473,
+        "rows": [
+          {
+            "G_e-11": 6.674534,
+            "u_e-11": 0.000104,
+            "workbook_row": 3
+          },
+          {
+            "G_e-11": 6.674585,
+            "u_e-11": 9.9e-05,
+            "workbook_row": 4
+          },
+          {
+            "G_e-11": 6.674473,
+            "u_e-11": 0.000107,
+            "workbook_row": 5
+          },
+          {
+            "G_e-11": 6.674543,
+            "u_e-11": 9.5e-05,
+            "workbook_row": 6
+          }
+        ]
+      },
+      "AAF-II": {
+        "arithmetic_mean_G_e-11": 6.674375,
+        "count": 10,
+        "maximum_G_e-11": 6.674447,
+        "minimum_G_e-11": 6.674302,
+        "rows": [
+          {
+            "G_e-11": 6.674431,
+            "u_e-11": 8.5e-05,
+            "workbook_row": 9
+          },
+          {
+            "G_e-11": 6.674399,
+            "u_e-11": 8.5e-05,
+            "workbook_row": 10
+          },
+          {
+            "G_e-11": 6.674416,
+            "u_e-11": 8.6e-05,
+            "workbook_row": 11
+          },
+          {
+            "G_e-11": 6.674424,
+            "u_e-11": 9e-05,
+            "workbook_row": 12
+          },
+          {
+            "G_e-11": 6.674302,
+            "u_e-11": 8.6e-05,
+            "workbook_row": 13
+          },
+          {
+            "G_e-11": 6.674304,
+            "u_e-11": 8.3e-05,
+            "workbook_row": 14
+          },
+          {
+            "G_e-11": 6.674327,
+            "u_e-11": 8.5e-05,
+            "workbook_row": 15
+          },
+          {
+            "G_e-11": 6.674338,
+            "u_e-11": 8.7e-05,
+            "workbook_row": 16
+          },
+          {
+            "G_e-11": 6.674362,
+            "u_e-11": 8.5e-05,
+            "workbook_row": 17
+          },
+          {
+            "G_e-11": 6.674447,
+            "u_e-11": 8.6e-05,
+            "workbook_row": 18
+          }
+        ]
+      },
+      "AAF-III": {
+        "arithmetic_mean_G_e-11": 6.6745348,
+        "count": 15,
+        "maximum_G_e-11": 6.674607,
+        "minimum_G_e-11": 6.674468,
+        "rows": [
+          {
+            "G_e-11": 6.674519,
+            "u_e-11": 7.8e-05,
+            "workbook_row": 21
+          },
+          {
+            "G_e-11": 6.674468,
+            "u_e-11": 7.9e-05,
+            "workbook_row": 22
+          },
+          {
+            "G_e-11": 6.674534,
+            "u_e-11": 8e-05,
+            "workbook_row": 23
+          },
+          {
+            "G_e-11": 6.674516,
+            "u_e-11": 8e-05,
+            "workbook_row": 24
+          },
+          {
+            "G_e-11": 6.674495,
+            "u_e-11": 8e-05,
+            "workbook_row": 25
+          },
+          {
+            "G_e-11": 6.67456,
+            "u_e-11": 8.4e-05,
+            "workbook_row": 26
+          },
+          {
+            "G_e-11": 6.674539,
+            "u_e-11": 8.4e-05,
+            "workbook_row": 27
+          },
+          {
+            "G_e-11": 6.674555,
+            "u_e-11": 8.1e-05,
+            "workbook_row": 28
+          },
+          {
+            "G_e-11": 6.67452,
+            "u_e-11": 8.1e-05,
+            "workbook_row": 29
+          },
+          {
+            "G_e-11": 6.674551,
+            "u_e-11": 7.9e-05,
+            "workbook_row": 30
+          },
+          {
+            "G_e-11": 6.674607,
+            "u_e-11": 7.9e-05,
+            "workbook_row": 31
+          },
+          {
+            "G_e-11": 6.67458,
+            "u_e-11": 8.4e-05,
+            "workbook_row": 32
+          },
+          {
+            "G_e-11": 6.674497,
+            "u_e-11": 8e-05,
+            "workbook_row": 33
+          },
+          {
+            "G_e-11": 6.674538,
+            "u_e-11": 8e-05,
+            "workbook_row": 34
+          },
+          {
+            "G_e-11": 6.674543,
+            "u_e-11": 8.2e-05,
+            "workbook_row": 35
+          }
+        ]
+      }
+    },
+    "AAF_combined_G_e-11": 6.674484,
+    "AAF_combined_u_e-11": 7.8e-05,
+    "ToS_combined_G_e-11": 6.674184,
+    "ToS_combined_u_e-11": 7.8e-05,
+    "ToS_seven_already_derived_G_rows": [
+      {
+        "G_e-11": 6.674154,
+        "number": 1,
+        "u_e-11": 9.5e-05
+      },
+      {
+        "G_e-11": 6.674222,
+        "number": 2,
+        "u_e-11": 9.8e-05
+      },
+      {
+        "G_e-11": 6.674237,
+        "number": 3,
+        "u_e-11": 0.000219
+      },
+      {
+        "G_e-11": 6.674274,
+        "number": 4,
+        "u_e-11": 0.000103
+      },
+      {
+        "G_e-11": 6.674266,
+        "number": 5,
+        "u_e-11": 9.4e-05
+      },
+      {
+        "G_e-11": 6.674017,
+        "number": 6,
+        "u_e-11": 0.000117
+      },
+      {
+        "G_e-11": 6.674105,
+        "number": 7,
+        "u_e-11": 0.000116
+      }
+    ]
+  },
+  "claim_ceiling": {
+    "RGRL_or_GFT_confirmed": false,
+    "accepted_G_used_as_input": false,
+    "full_GC16_execution": false,
+    "lineage_charge_inferred": false,
+    "new_G_measurement": false,
+    "raw_event_level_reanalysis": false,
+    "strongest_claim": "OFFICIAL_HUST_RELEASE_CLOSES_A_REAL_PROCESSED_SOURCE_RESPONSE_FORWARD_AND_LIMITED_FIGURE_LEVEL_RESPONSE_EXTRACTION__NOT_THE_CALIBRATED_FULL_APPARATUS_G_CROSSCHECK"
+  },
+  "cross_method_source_model_stress": {
+    "AAF_combined_SI": 6.674484e-11,
+    "AAF_minus_ToS_SI": 2.9999999999998862e-15,
+    "ToS_combined_SI": 6.674184e-11,
+    "cross_method_covariance_released": false,
+    "difference_relative_to_midpoint_ppm": 44.94830495447016,
+    "interpretation": "SOURCE_MODEL_AND_SYSTEMATICS_STRESS_ONLY__NOT_NEW_PHYSICS_AND_NOT_A_NEW_G_ESTIMATE",
+    "quoted_standard_u_SI": {
+      "AAF": 7.8e-16,
+      "ToS": 7.8e-16
+    },
+    "z_if_and_only_if_cross_method_covariance_is_zero": 2.719641466102003
+  },
+  "exact_equations": {
+    "AAF": "G=(alpha_t(2*omega_d)/abs(sum_l>=2 P_g,l,2))*[1+(K/K_m)*(I_m/I)]",
+    "GC16_target": "y=C*[(p*a+r_theta+lambda*r_x/d_x)/(d_theta-p*k_g-lambda^2/d_x)+d_h]+B*eta+epsilon",
+    "ToS": "G=(Delta_omega2/(Delta_Cg/I))*[1-Delta_K/(I*Delta_omega2)+I_m*K^2/(I*K_m^2)]"
+  },
+  "next_step": "OBTAIN_OR_RECONSTRUCT_THE_AUTHORS_FINITE_MASS_GEOMETRY_FILES_FULL_TRANSFER_AND_ROW_COVARIANCE;_THEN_RECOMPUTE_DELTA_Cg_AND_P_FROM_GEOMETRY_AND_RUN_GC16_WITH_THE_COMPLETE_REMAINDER_LEDGER",
+  "public_field_inventory": {
+    "already_derived": {
+      "AAF_G_rows": 29,
+      "AAF_combined_G_rows": 1,
+      "ToS_G_rows": 7,
+      "ToS_combined_G_rows": 1
+    },
+    "processed_source_response_coefficients_in_pdf": {
+      "AAF_sum_P_and_mean_alpha_rows": 3,
+      "ToS_Delta_Cg_over_I_and_mean_Delta_omega2_rows": 7
+    },
+    "raw_like_or_intermediate": {
+      "AAF_acceleration_1_second_samples": 9999,
+      "AAF_residual_and_free_twist_PSD_rows": "sheet_d_large_frequency_domain_arrays",
+      "ToS_source_absent_background_period_summaries": 20,
+      "ToS_source_present_period_summaries": 20
+    }
+  },
+  "schema": "WAC_HUST_2018_DUAL_METHOD_G_FORWARD_V001",
+  "source": {
+    "article_url": "https://www.nature.com/articles/s41586-018-0431-5",
+    "dependency_sha256": {
+      "figure2_xlsx": "331ea6ee8a6a2558d4f6a8ffa4cd52e4c5d52d47f2e2a697889d0d3c8a3ad27a",
+      "gc_model": "6c17498d2d65f6420498ac559a97a2c3bbf49e110dd971da34b4c9c9bea2e4e4",
+      "gc_protocol": "6ec7d8f0ce9a184d25612107dbfc294dd22d124ebe859831401e9cc0c8e8b819",
+      "gc_theorem": "cbf0733633ba93756b08dded7486a9be76beb572807693455c761bd36a8f0f5b",
+      "supplementary_pdf": "5b61d5c831be98c46e47fcc32f1ade0a680b4af6354d2bc34859d94b22279ffb"
+    },
+    "doi": "10.1038/s41586-018-0431-5",
+    "paper": "Li_et_al_Nature_560_582_588_2018",
+    "pdf_page_custody": {
+      "AAF_coefficients": "PDF page 21; Supplementary Table 3",
+      "ToS_and_AAF_equations": "PDF pages 4-6; printed SI pages 3-5",
+      "ToS_coefficients": "PDF page 20; Supplementary Table 2",
+      "two_stage_mechanics": "PDF page 19; Supplementary Table 1"
+    },
+    "pinned_official_files": [
+      {
+        "file": "SOURCE/41586_2018_431_MOESM1_ESM.pdf",
+        "role": "equations_and_supplementary_tables_1_to_4",
+        "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_MOESM1_ESM.pdf"
+      },
+      {
+        "file": "SOURCE/41586_2018_431_MOESM3_ESM.xlsx",
+        "role": "official_source_data_for_main_Figure_2",
+        "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0431-5/MediaObjects/41586_2018_431_MOESM3_ESM.xlsx"
+      }
+    ],
+    "workbook_dimensions": {
+      "a": "B2:D22",
+      "b": "B2:D22",
+      "c": "B1:F10",
+      "d": "B2:G129604",
+      "e": "B2:C10001",
+      "f": "A1:I39"
+    }
+  },
+  "status": "OFFICIAL_FIGURE_LEVEL_TOS_RESPONSE_RECOVERED__THREE_PROCESSED_AAF_SOURCE_RESPONSE_FORWARDS_REPRODUCED__FULL_GC16_NOT_EXECUTABLE__NO_NEW_G"
+}

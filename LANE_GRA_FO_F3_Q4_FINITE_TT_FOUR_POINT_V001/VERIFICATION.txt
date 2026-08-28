@@ -1,0 +1,42 @@
+Finite TT composite-cumulant verification: 161 passed, 0 failed
+
+Periodic quotient:
+- cells: 30
+- vertices: 60
+- links: 120
+- complete elementary hexagons: 120
+
+Inherited ring sector:
+- exact ice states: 180
+- undirected hexagon-flip transitions: 420
+- ring degree range: 4..6
+- translation action: six free orbits of length 30
+- independent reduction: thirty Hermitian 6 x 6 momentum blocks reproduce
+  the complete 180 x 180 sector spectrum
+- E0/J6: -4.828427124746193 = -2(1+sqrt(2))
+- lowest sector gap/J6: 0.364325509608438
+
+Selected momentum-one TT plus-cosine channel:
+- W2: 1.130847135995723 / J6
+- W3: 0 within 2e-13
+- W4: -0.136825085605100 / J6^3
+- composite-source Gamma4: 0.083666214307836 J6
+- finite poles/J6: 3.194109035554332, 3.490165912028476,
+  6.166688337463908, 9.139267639373482
+- finite two-one-link threshold proxy/J6: 2.059674505691458
+
+Disposition:
+- inherited compact H6 has nonzero static connected two-Q and four-Q
+  composite cumulants;
+- independent augmented linear solves reproduce W2, W4, and the scalar
+  composite-source Legendre coefficient;
+- a quadratic composite can be non-Gaussian even when the underlying field is
+  Gaussian, so this does not establish a connected/amputated four-one-link
+  interaction;
+- no below-proxy or energy-exclusive tensor candidate is identified at m=1,
+  but this is not a no-bound-state theorem;
+- the sharp next datum is the normalized frequency- and relative-momentum-
+  resolved connected four-one-link function, followed by external-leg
+  amputation and channel-2PI subtraction;
+- all eight final dependency hashes, five local sealed-file hashes, and their
+  in-memory tamper rejections pass.

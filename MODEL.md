@@ -559,17 +559,15 @@ in the certificate is fixed false.
 ## GRAVITY FORMATION THEORY CERTIFICATE
 
 The two zero-argument Gravity Formation Theory methods verify the exact closure
-and audit; six pinned core theorem/audit pairs; sixteen pinned no-laboratory
+and audit; six pinned core theorem/audit pairs; twenty pinned no-laboratory
 advance pairs; and the adopted clarification chain consisting of its final
 adoption record and seal, the clarification source, and V002. The advance
-custody covers the q4 collective-cone, common-child/refinement,
-diamond-support, carrier-lift boundary, pair-field boundary, finite programmed
-support-solder, programmed Floquet detuning, authenticated link-pair response,
-ice hybrid-tensor, Maxwell-pole, inherited order-eight TT-kernel, and local
-Fisher-solder screens, two public-data passes, and both the finite-apparatus and
-NIST/BIPM \(G\)-readiness results. The methods return a
-recursively immutable status certificate and accept neither data nor solver
-parameters.
+custody now includes the q4 front/support/response sequence; the finite TT
+composite-cumulant screen; the projected-ice constraint-origin screen; the
+fixed-parent collective-metric origin screen; two public-data passes; the
+finite-apparatus and NIST/BIPM \(G\)-readiness results; and the HUST-2018
+processed dual-method forward. The methods return a recursively immutable
+status certificate and accept neither data nor solver parameters.
 
 The certificate now makes the adopted distinction explicit. RGRL-C supplies
 full-rank or declared dense-range **off-shell constitutive ancestry** on the
@@ -620,6 +618,21 @@ a free source scale identifies only `Gs`, and one unrestricted remainder per
 configuration exactly aliases the source column. Ten run-level, covariance,
 geometry, and ownership fields remain absent, so this is a real-apparatus
 readiness result rather than an independent numerical \(G\) fit.
+
+The official HUST-2018 release goes materially beyond that PDF-only boundary.
+Its time-of-swing data recover one figure-level gravitational stiffness
+response, while its angular-acceleration-feedback tables reproduce all three
+published processed source-response forwards to within `0.2 ppm`, without
+inserting an accepted value of \(G\). This independently exercises the two
+ordinary-gravity ownership positions—operator/stiffness and source/forcing—and
+supports the finite-apparatus non-double-counting architecture. The released
+source coefficients are already processed, however, and the mass-coordinate
+geometry, complete transfer, correction/remainder ownership, source-scale
+calibration, conserved apparatus-stress ledger, and joint covariance remain
+absent. The result is therefore a real processed-coefficient forward and
+limited figure-level response extraction, not a full `GC16` execution, a new
+\(G\), confirmation of RGRL/GFT, or evidence for a lineage gravitational
+charge.
 
 The original `AFR` theorem remains one conditional raw-front refinement route.
 A distinct audited collective route now proves the exact finite identity
@@ -686,37 +699,65 @@ separately supplied regular boundary completion.
 
 On a compatible completed ice domain, the physical one-link sector is exact
 `T2`, the centered pair tangent is exact rank-two `E`, and pair `A1` is fixed.
-An independently owned scalar plus one-link `T2` plus pair `E` is therefore an
-exact symmetric-tensor representation candidate, while the direct symmetric
-ice Fisher query has zero first-order `T2` response. Inherited sixth-order ring
-dynamics make `E` and `T2` nonconserved and give a finite linked-ring response,
-but its pole is finite rather than a massless tensor. At a separately supplied
-Gaussian-Maxwell infrared fixed point, the oriented one-link channel carries
-the spin-one photon pole and the centered even pair channel carries a
-two-photon continuum plus contacts. Local `S4` tensor counting therefore does
-not yield an isolated helicity-two pole. The direct Gaussian composite shortcut
-is closed.
+FJ nevertheless establishes an exact conditional rank-six spectral response
+for the six unprojected active pair operators under its programmed `H_resp`,
+including nearest-cell response and finite spreading. That is a real
+six-channel response result, but it does not identify the `S4` edge module with
+one continuum symmetric tensor or supply its Ward/constraint packet. The local
+Fisher screen remains negative: its complement-broken rank-six covariance map
+borrows a vector-mean dyad, and complement symmetrization removes that term.
 
-The local Fisher route has now been exhausted exactly within its lawful scope:
-`F=4 diag(w)-m m^T`; the odd `T2` first derivative vanishes; and the second
-jet is an `S4`, but not `O(3)`, isomorphism. A complement-broken background plus
-an independent scalar can give a rank-six background-control-to-covariance
-map, but its `T2` term is a vector-mean dyad, not an independent tensor mode,
-and unlabelled complement symmetrization cancels it. Nonlocal or noncommuting
-even rank-two variables remain open.
+The inherited finite H6 ring model has now been screened exactly on one
+180-state translation-closed periodic sector. Its zero-frequency connected
+two-`Q` susceptibility and four-`Q` cumulant are nonzero, and the scalar
+composite-source Legendre quartic is positive in both susceptibility
+eigenchannels. The essential hostile-audit repair is its type: because each
+`Q` is bilinear, the four-`Q` cumulant is an eight-one-link object. Composite
+Legendre amputation does not amputate four independent one-link legs or perform
+a two-particle-reducible subtraction. The four selected finite composite poles
+therefore establish a finite composite precursor only. The lowest is above the
+finite two-one-link threshold proxy and is not energy-exclusive from one-link
+response, so no below-proxy or uniquely tensor-like candidate was identified;
+this is not a thermodynamic no-bound-state theorem.
 
-The unchanged compact order-six ice model is already interacting. At the
-declared finite girth-six support and symmetric-detuning boundary, its exact
-order-eight correction consists only of scalar diagonal terms, dressed
-hexagons, and new alternating octagons, with
-`J8=429 h^8/(16 U_d^7)` and `V8=0`. This supplies an allowed finite-range bare
-even-channel vertex but not its normalized TT projection. A strict single
-insertion establishes no new isolated pole; the remaining direct calculation
-is the connected TT four-point function, amputation, channel-2PI kernel,
-nonperturbative spectral/resummation test, and finite-volume helicity, Ward,
-common-cone, and residue gates. A negative result there would leave a distinct
-same-parent constrained rank-two phase as the lawful route. The consolidated
-no-laboratory disposition is recorded in
+The projected q4/F3 ice branch inherits exactly one local constraint species:
+the scalar Abelian compact-\(U(1)\) Gauss law, with incidence rank
+\(|V|-1\) on a connected finite graph and one global dependency. The closed H6
+and H8 rings preserve it; the unprojected one-link tunnelling term does not.
+The four apparent pair relations factor through that scalar law and are zero
+operators on the ice fiber, not four independent first-class generators.
+Neither the matching `S4` module count nor the equality of final polarization
+counts supplies the independent rank-three vector plus scalar constraint
+packet required by RGRL-B. This is a finite/current-parent result, not a
+thermodynamic no-go.
+
+The fixed-parent collective inventory now separates static and dynamical rank
+exactly. The six q4 root dyads span the full static co-metric coefficient
+tangent,
+\[
+\operatorname{rank}(\delta c\mapsto\delta B)=6,
+\]
+but on the maximally favorable translation-complete realization of FI's
+inherited functional form \(H_F=f_F(K)\), the corresponding dressed root
+sources commute with one another and with \(H_F\), so
+\[
+\operatorname{rank}\chi^R_{\mathcal S\mathcal S}=0.
+\]
+This does not erase FJ's distinct conditional rank-six response. It shows that
+no presently constructed same-parent object simultaneously owns six collective
+tensor configuration channels, a nondegenerate conjugate response, and the
+independent vector-plus-scalar null structure. Adopted RGRL-B supplies that
+architecture as a working law, not as its microscopic F3 derivation.
+
+The single next no-laboratory calculation is `Q4-BLOCK-STRAIN-CTP`. It must
+insert the complete six-channel BS20 strain source into every microscopic term
+before the fixed Feshbach reduction, retain all contacts and term weights, and
+at zero source return exactly the frozen through-order-eight H6+H8 parent. One
+calculation must extract the retarded poles and residues, first nonzero
+commutator moment and rank, and the Ward/constraint closure of the complete
+ungauge-fixed blocked CTP action. No rescue interaction, tensor projector, or
+post-result source reweighting is permitted. The consolidated no-laboratory
+disposition is recorded in
 [`NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md`](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
 
 ## VALIDATION

@@ -16,7 +16,7 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V006"
+SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V007"
 CLAIM_CLASS = (
     "ADOPTED_RGRL_OFFSHELL_ANCESTRY_AND_EXACT_CONDITIONAL_WORKING_THEORY_"
     "CLOSURE_WITH_SEPARATE_ONSHELL_RESPONSE_CEILING"
@@ -269,6 +269,39 @@ _ADVANCE_SOURCE_PAIRS = (
         ),
     ),
     (
+        "f3_q4_finite_tt_composite_cumulant_screen",
+        (
+            "LANE_GRA_FO_F3_Q4_FINITE_TT_FOUR_POINT_V001/THEOREM.md",
+            "44fc28edc9820d2b4ea67cef9f83beef60e53bfe6407b582ffbeccfe42f756c5",
+        ),
+        (
+            "LANE_GRA_FO_F3_Q4_FINITE_TT_FOUR_POINT_V001/INDEPENDENT_AUDIT.md",
+            "84d8c02c3e560198f6a9fae04f5ee81bc72c98354e02f1f58d506a8c3171c453",
+        ),
+    ),
+    (
+        "f3_q4_rgrlb_constraint_origin_screen",
+        (
+            "LANE_GRA_FP_F3_Q4_RGRLB_CONSTRAINT_ORIGIN_SCREEN_V001/THEOREM.md",
+            "8c4cf9d29e48b7116be05d05e6a11513e662443882390aa4f61cd194f5c23dc6",
+        ),
+        (
+            "LANE_GRA_FP_F3_Q4_RGRLB_CONSTRAINT_ORIGIN_SCREEN_V001/INDEPENDENT_HOSTILE_AUDIT.md",
+            "48350331885e06c5b4fbcd4fa21ccaa876b499e6bb0fd27a644a4fef9574c8e0",
+        ),
+    ),
+    (
+        "f3_q4_collective_metric_origin_screen",
+        (
+            "LANE_GRA_FQ_F3_Q4_COLLECTIVE_METRIC_ORIGIN_SCREEN_V001/THEOREM.md",
+            "07445c035ed4c5167a5a20280c4db69a5101eeb71831cdeb126b29702d04b69d",
+        ),
+        (
+            "LANE_GRA_FQ_F3_Q4_COLLECTIVE_METRIC_ORIGIN_SCREEN_V001/INDEPENDENT_HOSTILE_AUDIT.md",
+            "91aa35170432684a47278e46ee2b9d56658a43acc8acbbb84480d047cdbe6dcf",
+        ),
+    ),
+    (
         "spag_public_data_substitute",
         (
             "LANE_GRA_SPAG_PUBLIC_DATA_SUBSTITUTE_V001/PUBLIC_DATA_SUBSTITUTE.md",
@@ -310,6 +343,17 @@ _ADVANCE_SOURCE_PAIRS = (
         (
             "LANE_GRA_FI_NIST_BIPM_G_FORWARD_READINESS_V001/INDEPENDENT_AUDIT.md",
             "6917298439d708931fa50201459659b10802aa13a36c6f39cf2dfdf80840b90e",
+        ),
+    ),
+    (
+        "hust_2018_dual_method_g_forward",
+        (
+            "LANE_GRA_HUST_2018_DUAL_METHOD_G_FORWARD_V001/THEOREM.md",
+            "44eb8c81a3d84dfa6829bcd6971d0261215877af0529318eab5cedbd3980c340",
+        ),
+        (
+            "LANE_GRA_HUST_2018_DUAL_METHOD_G_FORWARD_V001/INDEPENDENT_HOSTILE_AUDIT.md",
+            "e8625b4cbf67d73927db495e8111e3ffbd4e85f46b80183e55fbf8b4391d0b2e",
         ),
     ),
 )
@@ -539,6 +583,29 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 ),
                 "q4_ice_order8_octagon_coefficient": "J8_EQUALS_429_H8_OVER_16_UD7",
                 "q4_ice_order8_diagonal_potential": "V8_EQUALS_ZERO",
+                "q4_finite_tt_periodic_quotient": (
+                    "30_CELLS_60_VERTICES_120_LINKS_120_ELEMENTARY_HEXAGONS"
+                ),
+                "q4_finite_tt_ring_sector": (
+                    "180_STATES_420_TRANSITIONS_TRANSLATION_CLOSED_H6_ONLY"
+                ),
+                "q4_finite_tt_composite_cumulant": (
+                    "W2_1P130847135995723_OVER_J6__W4_MINUS_0P136825085605100_OVER_J6_CUBED__"
+                    "GAMMA4_COMP_0P083666214307836_J6"
+                ),
+                "q4_finite_tt_lowest_pole_vs_two_link_proxy": (
+                    "3P194109035554332_J6_ABOVE_2P059674505691458_J6"
+                ),
+                "q4_projected_ice_constraint_species": "ONE_SCALAR_U1_GAUSS_ONLY",
+                "q4_pair_relations_constraint_status": (
+                    "ALGEBRAIC_ZERO_OPERATORS_NOT_NEW_FIRST_CLASS_GENERATORS"
+                ),
+                "q4_A3_static_cometric_tangent_rank": 6,
+                "q4_inherited_even_bulk_Kubo_dynamic_rank": 0,
+                "q4_fixed_parent_collective_metric_origin": (
+                    "NO_PRESENT_OBJECT_JOINTLY_OWNS_SIX_CONFIG_CHANNELS_"
+                    "INDEPENDENT_CONJUGATES_AND_VECTOR3_PLUS_SCALAR_NULL_PACKET"
+                ),
             },
             "kernel_reduction": {
                 "scope": "Q4_TETRAHEDRAL_S4_FIXED_POINT_LOCAL_OR_K_ZERO",
@@ -576,6 +643,29 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                     "CONNECTED_FOUR_POINT_THEN_AMPUTATION_THEN_CHANNEL_2PI_THEN_"
                     "BETHE_SALPETER_OR_SPECTRAL_THEN_FINITE_VOLUME_HELICITY_WARD_"
                     "COMMON_CONE_RESIDUE"
+                ),
+                "finite_TT_composite_cumulant_kind": (
+                    "FOUR_Q_EIGHT_ONE_LINK_NOT_CONNECTED_FOUR_ONE_LINK_OR_PHOTON_AMPUTATED"
+                ),
+                "finite_TT_composite_legendre_quartic": (
+                    "POSITIVE_IN_BOTH_SUSCEPTIBILITY_EIGENCHANNELS"
+                ),
+                "finite_TT_pole_screen": (
+                    "NO_BELOW_PROXY_OR_ENERGY_EXCLUSIVE_CANDIDATE__NOT_A_NO_BOUND_STATE_THEOREM"
+                ),
+                "projected_ice_constraint_packet": "ONE_SCALAR_U1_NOT_RGRLB",
+                "projected_ice_equal_two_polarizations_implies_RGRLB": False,
+                "A3_static_metric_span": "RANK6_COEFFICIENT_TANGENT",
+                "A3_inherited_even_source_Kubo_rank": 0,
+                "FJ_unprojected_pair_response": (
+                    "EXACT_CONDITIONAL_RANK6_A1_E_T2_RESPONSE_WITH_NEAREST_CELL_SPREADING"
+                ),
+                "current_fixed_parent_metric_packet": (
+                    "NO_JOINT_SIX_CONFIG_PLUS_CONJUGATE_PLUS_VECTOR3_SCALAR_NULL_OBJECT_"
+                    "IN_CONSTRUCTED_CATALOG__NOT_THERMODYNAMIC_NO_GO"
+                ),
+                "next_collective_metric_calculation": (
+                    "Q4_BLOCK_STRAIN_CTP_SOURCE_BEFORE_FESHBACH_WITH_H_SOURCE_OFF_UNCHANGED"
                 ),
             },
             "microscopic_parent_boundary": {
@@ -622,6 +712,15 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "inherited_order8_operator_boundary": (
                     "EXACT_J8_AND_V8_ZERO__HEXAGON_DRESSING_COEFFICIENTS_TYPED_NOT_ALL_REDUCED"
                 ),
+                "finite_TT_composite_precursor": (
+                    "EXACT_STATIC_TWO_Q_AND_FOUR_Q_CUMULANTS_AND_FINITE_SPECTRUM"
+                ),
+                "connected_four_one_link_channel_2PI": "OPEN_NOT_COMPUTED_BY_FO",
+                "inherited_projected_constraint_architecture": "SCALAR_U1_ONLY",
+                "microscopic_RGRLB_from_current_q4_ice": "NOT_DERIVED",
+                "six_A3_static_deformation_coefficients": "EXACT_RANK6",
+                "six_A3_dynamic_metric_fields": "ABSENT_IN_INHERITED_EVEN_BULK_SCREEN",
+                "q4_block_strain_CTP_status": "FROZEN_NEXT_CALCULATION_NOT_EXECUTED",
                 "new_interaction_or_second_field_adopted": False,
             },
             "numerical_G": {
@@ -647,6 +746,18 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "nist_bipm_full_GC16_fit_ready": False,
                 "nist_bipm_public_missing_field_count": 10,
                 "nist_bipm_independent_G_crosscheck_performed": False,
+                "hust_public_forward_status": (
+                    "PROCESSED_DUAL_CHANNEL_FORWARD_CLOSED__FULL_GC16_NOT_READY"
+                ),
+                "hust_tos_A_B_A_delta_omega2_s_minus2": "1.6626945111323172e-6",
+                "hust_tos_quadratic_delta_omega2_s_minus2": "1.6626989120180067e-6",
+                "hust_aaf_processed_forward_count": 3,
+                "hust_aaf_max_rounding_difference_ppm": "LESS_THAN_0P2",
+                "hust_cross_method_separation_ppm": "44.9483_DESCRIPTIVE_ONLY",
+                "hust_cross_method_z_condition": "2P7196_ONLY_IF_CROSS_COVARIANCE_ZERO",
+                "hust_accepted_G_input_used": False,
+                "hust_full_GC16_fit_ready": False,
+                "hust_independent_G_crosscheck_performed": False,
             },
             "SPAG": {
                 "status": "HISTORICAL_AUDITED_PROTOCOL_SUPERSEDED_FOR_FUTURE_ONSHELL_USE",
@@ -697,14 +808,28 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "compatible_global_ice_completion": "SUPPLIED_NOT_DERIVED",
                 "direct_gaussian_composite_helicity2_route": "CLOSED_NEGATIVE",
                 "inherited_non_gaussian_TT_kernel": (
-                    "LEADING_H6_INTERACTION_IDENTIFIED__NORMALIZED_CONNECTED_TT_FOUR_POINT_OPEN"
+                    "FINITE_COMPOSITE_CUMULANT_AND_SPECTRUM_COMPUTED__"
+                    "CONNECTED_FOUR_ONE_LINK_CHANNEL_2PI_OPEN"
                 ),
-                "normalized_connected_TT_four_point": "OPEN",
+                "normalized_connected_TT_four_point": (
+                    "OPEN__FO_COMPUTED_FOUR_Q_COMPOSITE_NOT_THIS_OBJECT"
+                ),
                 "nonperturbative_TT_pole_Ward_common_cone_residue": "OPEN",
                 "local_ice_fisher_T2_solder": (
                     "CLOSED_NEGATIVE_FOR_LOCAL_DIAGONAL_COMPLEMENT_PRESERVING_FAMILIES"
                 ),
                 "independent_even_rank2_collective_variable": "OPEN",
+                "current_q4_ice_RGRLB_constraint_origin": (
+                    "CLOSED_NEGATIVE_FOR_CURRENT_FINITE_LOCAL_Q4_ICE_BRANCH__"
+                    "THERMODYNAMIC_COLLECTIVE_ORIGIN_OPEN"
+                ),
+                "current_fixed_parent_collective_metric_origin": (
+                    "CLOSED_NEGATIVE_FOR_CONSTRUCTED_OBJECT_CATALOG__NOT_THERMODYNAMIC_NO_GO"
+                ),
+                "next_no_lab_gravity_calculation": "Q4_BLOCK_STRAIN_CTP",
+                "hust_public_G_forward": (
+                    "PROCESSED_DUAL_CHANNEL_CLOSED__FULL_GC16_NOT_READY__NO_NEW_G"
+                ),
                 "caller_input_scientific_weight": "ZERO",
             },
             "program_authorizations": {
@@ -731,6 +856,15 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "complement_preserving_local_fisher_T2_solder_derived": False,
                 "generic_broken_background_covariance_rank6_with_separate_scalar_derived": True,
                 "order8_inherited_loop_operator_boundary_derived": True,
+                "finite_TT_composite_cumulant_and_spectrum_derived": True,
+                "connected_four_one_link_channel_2PI_derived": False,
+                "q4_scalar_U1_constraint_only_derived": True,
+                "microscopic_RGRLB_from_current_q4_ice_derived": False,
+                "six_static_cometric_deformations_derived": True,
+                "six_dynamic_metric_fields_from_inherited_even_bulk_derived": False,
+                "q4_block_strain_CTP_executed": False,
+                "hust_processed_dual_channel_forward_executed": True,
+                "hust_full_GC16_executed": False,
                 "inherited_protected_tensor_pole_derived": False,
                 "gravity_solver": False,
                 "caller_data_admitted": False,
@@ -762,8 +896,14 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "control_sign_conditioning_promotes_endogenous_metric_solder": False,
                 "bare_vertex_analyticity_promotes_dressed_1PI_analyticity": False,
                 "strict_single_insertion_boundary_promotes_nonperturbative_no_pole": False,
+                "four_Q_composite_cumulant_promotes_four_link_1PI_or_binding": False,
+                "finite_threshold_proxy_promotes_thermodynamic_no_bound_state": False,
+                "equal_two_polarizations_promotes_RGRLB": False,
+                "six_static_deformation_coefficients_promote_dynamic_metric_fields": False,
+                "current_catalog_obstruction_promotes_thermodynamic_no_go": False,
                 "public_component_dataset_promotes_lineage_estimand": False,
                 "nist_summary_reduction_promotes_independent_G_measurement": False,
+                "hust_processed_forward_promotes_new_G_or_GFT_confirmation": False,
             },
             "custody": {
                 "verification": "TWO_PASS_EXACT_SHA256_WITH_SYMLINK_REFUSAL",

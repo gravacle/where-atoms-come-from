@@ -8,14 +8,18 @@ source.
 
 ## Result
 
-The no-laboratory program materially advances all three requested tracks, but
-it does not turn missing physical observations into mathematical premises. The
-front/gluing calculation now supplies an exact q4 relational bulk, calibrated
-cell volume, finite programmed physical realization, a scheduled carrier gap,
-and finite physical link-pair response. Public data can refine protocols and
-source models but still cannot execute the matched lineage intervention. The
-ordinary-source `G` calculation is reduced to a real public apparatus map, with
-the exact missing fields for an independent fit exposed.
+The no-laboratory program has materially advanced all three requested tracks.
+The q4 construction now supplies exact bulk/refinement geometry, finite
+programmed realization, conditional rank-six link-pair response, a finite
+composite-cumulant precursor, and an exact current-parent constraint and
+collective-metric census. That census finds one scalar compact-\(U(1)\)
+constraint species and distinguishes a six-dimensional static co-metric
+tangent from zero retarded dynamical rank in the favorable FI bulk screen,
+without erasing FJ's separate conditional rank-six response. The official
+HUST-2018 release also executes a real processed dual-method ordinary-gravity
+forward, but neither it nor the other public packets contains the complete
+fields needed for the lineage intervention or a full independent \(G\)
+cross-check.
 
 ## 1. F3 front dynamics, gluing, volume, and microscopic RGRL route
 
@@ -76,41 +80,57 @@ stabilization of that broken background are not derived. The local Fisher
 shortcut to an endogenous tensor metric is closed, while nonlocal or
 noncommuting even rank-two collective variables remain open.
 
-At the separately supplied Gaussian-Maxwell infrared fixed point, the correctly
-oriented one-link channel carries the spin-one photon pole. The centered even
-pair channel carries a two-photon continuum and contact terms, not an isolated
-helicity-two pole. Thus local `S4` tensor counting does not turn the Maxwell
-photon or a photon pair into a graviton. This eliminates the direct Gaussian
-composite shortcut and concentrates the next calculation on inherited
-non-Gaussian even-channel dynamics or, if that fails, a distinct same-parent
-rank-two constrained collective architecture.
-
-The inherited non-Gaussian calculation has advanced beyond a nomination. The
-compact hard-core order-six ring Hamiltonian is already interacting; Gaussian
-Maxwell theory is only its infrared fixed point. On the supplied finite simple
-coordination-four bipartite girth-six-or-greater support, at `d_*=2`, `E_R=0`,
-symmetric detuning, and the fixed Feshbach convention, the unchanged F3 parent
-produces through order eight only a scalar diagonal, dressed hexagon
-transitions, and new alternating-octagon rings. The new coefficient is exact,
+At the separately supplied Gaussian-Maxwell infrared fixed point, the oriented
+one-link channel carries the spin-one photon pole and the centered even pair
+channel carries a two-photon continuum plus contacts. The through-order-eight
+parent remains exact,
 
 \[
-J_8={429h^8\over16U_d^7},\qquad V_8=0.
+J_8={429h^8\over16U_d^7},\qquad V_8=0,
 \]
 
-A bare finite-range even-channel vertex is analytic, while its normalized TT
-projection has not yet been evaluated. A strict single insertion does not
-establish a new isolated pole, but this is not a nonperturbative no-pole
-theorem: an iterated kernel or exact spectrum could still bind or shift a
-state. The decisive no-lab sequence is now the normalized connected TT
-four-point function, external-leg amputation, channel-2PI separation,
-Bethe--Salpeter or spectral analysis, and finally finite-volume survival,
-helicity, Ward, common-cone, and thermodynamic-residue tests.
+but its finite inherited TT screen must be typed carefully.
 
-What remains theoretically open is narrow and physical: autonomous/scalable
-support and detuning; a nonzero calibrated physical `T2` metric solder; a
-thermodynamic protected helicity-two pole with the correct constraints and Ward
-identity; common probes and volume; complete-stress coupling; and the
-microscopic realization of RGRL-B. These are not additional record definitions.
+On one exact 180-state translation-closed H6 sector, the connected two-`Q`
+susceptibility and four-`Q` cumulant are nonzero, and both susceptibility
+eigenchannels have positive scalar composite Legendre quartics. Because `Q` is
+bilinear, however, four `Q` insertions form an eight-one-link object.
+Composite-source Legendre amputation is not four-one-link external-leg
+amputation or a channel-2PI subtraction. The four selected finite composite
+poles therefore establish a precursor only. The lowest lies above the finite
+two-one-link threshold proxy and is not energy-exclusive from one-link
+response; this is neither a bound-graviton result nor a thermodynamic
+no-bound-state theorem.
+
+The projected q4/F3 ice branch owns exactly one local constraint species: the
+scalar Abelian compact-\(U(1)\) Gauss law, with incidence rank \(|V|-1\) on a
+connected finite graph. H6/H8 closed rings preserve it and the unprojected
+single-link term does not. The four local pair identities factor through that
+scalar law and generate no independent gauge orbit. Thus the current branch
+does not derive the rank-three vector plus independent scalar packet required
+by RGRL-B.
+
+The collective-metric inventory gives the decisive rank distinction:
+
+\[
+\operatorname{rank}(\delta c\mapsto\delta B)=6,\qquad
+\operatorname{rank}\chi^R_{\mathcal S\mathcal S}=0
+\]
+
+on the favorable translation-complete FI functional screen. The first rank is
+the six q4 root-dyad static co-metric tangent; the second follows because the
+dressed source operators commute with one another and with the FI Hamiltonian.
+FJ remains a separate positive result: its unprojected active pair operators
+have exact conditional finite rank-six response under programmed `H_resp`.
+They lack a continuum tensor solder and the vector-plus-scalar null packet.
+
+The single next theoretical calculation is `Q4-BLOCK-STRAIN-CTP`. It must
+source every microscopic term before the fixed Feshbach reduction, retain all
+contacts, return exactly the frozen H6+H8 parent at zero source, and extract the
+pole/residue, first nonzero commutator moment, and ungauge-fixed
+Ward/constraint closure together. No rescue interaction or post-result source
+weighting is allowed. This is a current-construction test, not a thermodynamic
+no-go.
 
 ## 2. Experimental lanes without a laboratory
 
@@ -157,20 +177,37 @@ exactly aliases the source column. The public summary omits ten required
 run-level/source/covariance fields, so the full real-apparatus fit and an
 independent numerical `G` cross-check cannot honestly be executed from the PDF.
 
+The official HUST-2018 release supplies the strongest public execution so far.
+Its ToS period summaries recover one background-subtracted stiffness response,
+and direct substitution into the published AAF equation reproduces all three
+processed campaign forwards within `0.2 ppm`, without importing an accepted
+\(G\). A representative one-second acceleration stream also separates the
+source and laboratory-background harmonics. These checks validate the separate
+operator/stiffness and source/forcing ownership positions of the finite-
+apparatus model.
+
+The ceiling remains exact. The released \(\Delta C_g/I\) and
+\(\sum P_{g,l,2}\) are processed source coefficients, not public finite
+mass-coordinate calculations. Event-level observations, complete transfer,
+signed corrections/remainders, independent source-scale calibration, conserved
+apparatus stress, and joint covariance are absent. HUST therefore closes a
+real processed-coefficient forward and limited figure-level extraction, not
+the full `GC16` likelihood, a new \(G\), RGRL/GFT confirmation, or a
+record-lineage gravitational charge.
+
 This leaves the no-lab `G` lane at a strong readiness boundary: the physical
 forward law, units, source ownership, rank conditions, and missing-data request
-are complete. What remains empirical is the released apparatus packet and its
+are complete. What remains empirical is the complete apparatus packet and its
 independent source calibration. Nothing in this boundary weakens the proposed
 origin and form of gravity; it only prevents a public summary from being
 misreported as a new measurement of its numerical coupling.
 
 ## Disposition
 
-Without a laboratory, the program can finish exact microscopic algebra,
-finite-model dynamics, continuum spectral screens, protocol design, public-data
-searches, and real-apparatus readiness calculations. It cannot manufacture the
-two observations that carry empirical weight: a matched lineage intervention
-and a fully calibrated independent `G` dataset. The theoretical gravity lane
-therefore continues on the exact connected-four-point/spectral tensor test and
-microscopic RGRL-B route, while the empirical lanes remain frozen,
-reproducible, and ready for qualifying public data or a future acquisition.
+Without a laboratory, the program can continue exact microscopic algebra,
+finite and thermodynamic response calculations, protocol design, public-data
+searches, and processed real-apparatus forwards. The immediate theory target is
+the single preregistered `Q4-BLOCK-STRAIN-CTP` calculation. Public data have
+already executed part of the ordinary-source forward architecture, but cannot
+supply the missing matched lineage intervention or complete independently
+calibrated `GC16` packet. Those are empirical ceilings, not physical nulls.
