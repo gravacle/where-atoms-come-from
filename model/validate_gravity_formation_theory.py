@@ -42,7 +42,7 @@ def main() -> int:
     certificate = theory.certificate()
     assert theory.closure_sha256 == gft._CLOSURE_PAIR[0][1]
     assert theory.audit_sha256 == gft._CLOSURE_PAIR[1][1]
-    assert gft.SCHEMA == "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V011"
+    assert gft.SCHEMA == "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V013"
     assert certificate["schema"] == gft.SCHEMA
     assert certificate["claim_class"] == gft.CLAIM_CLASS
     assert (
@@ -265,6 +265,54 @@ def main() -> int:
     assert certificate["exact_results"]["q4_FY_temporal_density_current_contact"] == (
         "OPEN_NOT_CONSTRUCTED"
     )
+    assert certificate["exact_results"]["q4_FZ_projected_incidence_charge"] == (
+        "ZERO_OPERATOR_ON_SELECTED_ICE_COMPONENT"
+    )
+    assert certificate["exact_results"]["q4_FZ_H6_incidence_continuity"] == (
+        "EXACT_TRIVIAL_ZERO_CHARGE_CONTINUITY"
+    )
+    assert certificate["exact_results"]["q4_FZ_supplied_embedding_source_contraction"] == (
+        "NONZERO_EXACT"
+    )
+    assert certificate["exact_results"]["q4_FZ_TT_projector_rank"] == 2
+    assert certificate["exact_results"]["q4_FZ_full_spacetime_Ward"] == (
+        "OPEN_UNDECIDED_WITHOUT_PHYSICAL_DIVERGENCE_TEMPORAL_CURRENT_CONTACT"
+    )
+    assert certificate["exact_results"]["q4_GA_fixed_total_charge_code_lift"] == (
+        "EXACT_UNITARY_EQUIVALENCE"
+    )
+    assert certificate["exact_results"]["q4_GA_internal_charge_continuity"] == (
+        "QDOT_L_PLUS_I_LR_ZERO__QDOT_R_MINUS_I_LR_ZERO"
+    )
+    assert certificate["exact_results"]["q4_GB_local_ring_energy_continuity"] == "EXACT"
+    assert certificate["exact_results"]["q4_GB_local_momentum_density_and_Ward"] == (
+        "OPEN_NOT_DERIVED"
+    )
+    assert certificate["exact_results"]["q4_GC_family"] == (
+        "G_L_WITH_L_EQUALS_5_TIMES_2_TO_R"
+    )
+    assert certificate["exact_results"]["q4_GC_kmin"] == "3PI_OVER_2_L_ASTAR"
+    assert certificate["exact_results"]["q4_GC_exact_TT_projector_rank"] == 2
+    assert certificate["exact_results"]["q4_GC_count_normalization_is_physical_canonical"] is False
+    assert certificate["exact_results"]["q4_GC_massless_common_cone_pole"] == (
+        "OPEN_NOT_ESTABLISHED"
+    )
+    assert certificate["exact_results"]["q4_GD_recoil_gate"] == (
+        "B1_ALGEBRAIC_EXISTENCE_ON_COMMON_AUXILIARY_MECHANICAL_TORUS"
+    )
+    assert certificate["exact_results"]["q4_GD_physical_diamond_placement"] == (
+        "OPEN_NOT_DERIVED"
+    )
+    assert certificate["exact_results"]["q4_public_GC_FY_spectral_payload_found"] is False
+    assert certificate["exact_results"]["q4_GF_G2_observable_contract"] == (
+        "V005_NARROW_DESIGN_CONTRACT_INDEPENDENTLY_SEALED"
+    )
+    assert certificate["exact_results"]["q4_GF_amplitude_classifier"] == (
+        "DISJOINT_TOTAL_LOWER_AND_UPPER_BOUNDED__ANCESTRY_SEPARATE"
+    )
+    assert certificate["exact_results"]["q4_GF_matched_spectral_physics"] == (
+        "OPEN_UNEXECUTED"
+    )
     microscopic = certificate["microscopic_parent_boundary"]
     assert (
         microscopic["scalar_carrier_transfer_on_supplied_saturated_q4_support"]
@@ -413,8 +461,8 @@ def main() -> int:
     )
     assert certificate["kernel_reduction"]["FX_finite_polynomial_zero_is_threshold"] is False
     assert certificate["kernel_reduction"]["next_collective_metric_calculation"] == (
-        "NATIVE_SUPPORT_NONZERO_MOMENTUM_COMPLETE_H6_RESPONSE_THEN_"
-        "PROPERLY_TYPED_CTP_WARD_RESPONSE"
+        "SAME_ANCESTRY_CANONICALLY_NORMALIZED_MASSLESS_HELICITY2_POLE_"
+        "WITH_COMMON_CONE_AND_FACTORIZATION"
     )
     assert certificate["numerical_G"]["parameter_free_microscopic_record_derivation"] is False
     assert certificate["numerical_G"]["bounded_remainder_output"] == "IDENTIFIED_INTERVAL_OR_SET_NOT_AUTOMATIC_POINT_VALUE"
@@ -556,6 +604,15 @@ def main() -> int:
     assert certificate["program_authorizations"]["q4_FW_witness_finite_response_executed"] is True
     assert certificate["program_authorizations"]["q4_complete_generated_H6_source_response_executed"] is True
     assert certificate["program_authorizations"]["q4_native_support_nonzero_momentum_response_executed"] is True
+    assert certificate["program_authorizations"]["q4_m1_continuity_contact_Ward_boundary_executed"] is True
+    assert certificate["program_authorizations"]["q4_encoded_charge_current_lift_executed"] is True
+    assert certificate["program_authorizations"]["q4_fixed_support_energy_continuity_executed"] is True
+    assert certificate["program_authorizations"]["q4_local_momentum_Ward_derived"] is False
+    assert certificate["program_authorizations"]["q4_finite_family_common_cone_boundary_executed"] is True
+    assert certificate["program_authorizations"]["q4_same_ancestry_massless_helicity2_pole_derived"] is False
+    assert certificate["program_authorizations"]["q4_translation_owning_recoil_B1_executed"] is True
+    assert certificate["program_authorizations"]["q4_physical_diamond_recoil_placement_derived"] is False
+    assert certificate["program_authorizations"]["q4_qualifying_public_spectral_payload_found"] is False
     assert certificate["program_authorizations"]["q4_physical_metric_source_derived"] is False
     assert certificate["program_authorizations"]["q4_full_CTP_Ward_response_executed"] is False
     assert certificate["program_authorizations"]["hust_processed_dual_channel_forward_executed"] is True
@@ -592,8 +649,17 @@ def main() -> int:
         "NATIVE_M1_H6_SAMPLED_RESPONSE_6_TO_6_TO_6_TO_6_TO_6"
     )
     assert certificate["scientific_status"]["next_no_lab_gravity_calculation"] == (
-        "TYPED_TEMPORAL_DENSITY_CURRENT_CONTACT_WARD_INTERFACE__"
-        "THEN_FINITE_FAMILY_COMMON_CONE_AND_POLE_SCALING"
+        "ALL_GL_NATIVE_H6_LEDGER__THEN_MATCHED_MASSLESS_HELICITY2_POLE__"
+        "THEN_SOFT_UNIVERSALITY__THEN_EINSTEIN_SELF_COUPLING"
+    )
+    assert certificate["scientific_status"]["phase_A_candidate_status"] == (
+        "FULLY_SEALED_FY_NATIVE_RESPONSE_AND_GC_FINITE_FAMILY_KINEMATICS"
+    )
+    assert certificate["scientific_status"]["direct_shortcut_G1_status"] == (
+        "SEALED_B1_TOTAL_MOMENTUM_OWNERSHIP_ON_AUXILIARY_TORUS"
+    )
+    assert certificate["scientific_status"]["direct_shortcut_G2_status"] == (
+        "V005_OBSERVABLE_CONTRACT_SEALED__MATCHED_MASSLESS_HELICITY2_PHYSICS_OPEN"
     )
     assert certificate["scientific_status"]["hust_public_G_forward"] == (
         "PROCESSED_DUAL_CHANNEL_CLOSED__FULL_GC16_NOT_READY__NO_NEW_G"
@@ -642,6 +708,12 @@ def main() -> int:
     assert certificate["nonpromotion"]["FY_native_m1_response_promotes_continuum_locality_Ward_or_gravity"] is False
     assert certificate["nonpromotion"]["FY_nonzero_spatial_contraction_promotes_complete_Ward_failure"] is False
     assert certificate["nonpromotion"]["FY_sampled_rank6_promotes_generic_in_x_rank6"] is False
+    assert certificate["nonpromotion"]["FZ_zero_projected_charge_promotes_complete_Ward_packet"] is False
+    assert certificate["nonpromotion"]["GA_internal_charge_current_promotes_spatial_momentum_current"] is False
+    assert certificate["nonpromotion"]["GB_ring_energy_continuity_promotes_local_stress_Ward"] is False
+    assert certificate["nonpromotion"]["GC_affine_TT_kinematics_promotes_massless_common_cone_pole"] is False
+    assert certificate["nonpromotion"]["GD_auxiliary_recoil_promotes_physical_spacetime_placement"] is False
+    assert certificate["nonpromotion"]["public_QFI_QMC_root_promotes_GC_FY_spectral_evidence"] is False
     assert certificate["nonpromotion"]["HUST_history_residual_promotes_lineage_gravity"] is False
     assert certificate["nonpromotion"]["Bense_path_dependence_promotes_causal_lineage_or_gravity"] is False
     assert certificate["nonpromotion"]["HUST_nominal_kernel_promotes_full_apparatus_G"] is False
@@ -649,14 +721,14 @@ def main() -> int:
     assert certificate["nonpromotion"]["HUST_processed_comparator_remainder_promotes_independent_source_ownership"] is False
     assert certificate["nonpromotion"]["HUST_bounded_no_root_search_promotes_global_data_nonexistence"] is False
     assert certificate["nonpromotion"]["clock_K5_compatibility_promotes_independent_GR_or_common_metric"] is False
-    assert certificate["custody"]["artifact_count"] == 86
+    assert certificate["custody"]["artifact_count"] == 102
     assert len(certificate["custody"]["core_source_pairs"]) == 6
     assert (
         certificate["custody"]["core_source_pairs"][4]["label"]
         == "f3_record_front_lorentz_cone_refinement"
     )
     advance_custody = certificate["custody"]["advance_source_pairs"]
-    assert len(advance_custody) == 34
+    assert len(advance_custody) == 42
     assert tuple(item["label"] for item in advance_custody) == tuple(
         label for label, _, _ in gft._ADVANCE_SOURCE_PAIRS
     )
@@ -668,6 +740,16 @@ def main() -> int:
     assert advance_custody[8]["label"] == "f3_q4_ice_hybrid_tensor_response"
     assert advance_custody[9]["label"] == "f3_q4_maxwell_composite_pole_screen"
     assert advance_custody[10]["label"] == "f3_q4_inherited_tt_kernel_boundary"
+    assert tuple(item["label"] for item in advance_custody[-8:]) == (
+        "f3_q4_native_support_m1_complete_h6_response",
+        "f3_q4_m1_continuity_contact_ward_boundary",
+        "f3_q4_fu09b_encoded_charge_current_lift",
+        "f3_q4_fixed_support_energy_momentum_ward_boundary",
+        "f3_q4_finite_family_common_cone_boundary",
+        "f3_q4_translation_owning_recoil_parent",
+        "f3_q4_public_spectral_payload_search",
+        "f3_q4_canonical_ir_ancestry_observable_contract",
+    )
     assert advance_custody[10]["source_sha256"] == (
         "78f0687c9f597c96d235224dad45c204d12d7e6c973c270e3305a901efc75b25"
     )
@@ -788,7 +870,9 @@ def main() -> int:
     assert "six family operators" in gravity_role and "commutator rank three" in gravity_role
     assert "fE=1-x^2-(37/12)x^4-(16247/900)x^6" in gravity_role
     assert "native A/B vertex" in gravity_role and "Q(zeta_240)" in gravity_role
-    assert "temporal-density/current/contact" in gravity_role
+    assert "FZ proves the selected projected incidence charge is identically zero" in gravity_role
+    assert "GD closes the direct route's G1 total-momentum gate" in gravity_role
+    assert "same-ancestry canonically normalized massless helicity-two pole" in gravity_role
     assert "HUST-2018" in gravity_role and "full GC16 or a new G" in gravity_role
     assert "three conditional AAF quotients" in gravity_role
     assert "no physical G point or interval is public" in gravity_role

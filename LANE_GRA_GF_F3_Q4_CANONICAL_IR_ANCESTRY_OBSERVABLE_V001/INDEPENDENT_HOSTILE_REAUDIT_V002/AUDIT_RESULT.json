@@ -1,0 +1,22 @@
+{
+  "target": "LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001",
+  "target_revision": "V002",
+  "verdict": "REJECT_REPAIR_REQUIRED",
+  "independent_checks": "153/153",
+  "author_replay": "94/94",
+  "repaired_gates_passed": [
+    "unitary Poincare/little-group helicity +2,-2 and scalar-doublet rejection",
+    "TT k=0 exclusion with separately typed homogeneous data",
+    "basis-invariant degenerate-ground query",
+    "affine versus physical binding",
+    "complete momentum registry and cover behavior",
+    "normalized ancestry and factorization design",
+    "strict design-only ceiling"
+  ],
+  "material_defect": "canonical-amplitude PASS and FAIL overlap when Z_Q^can remains finite full rank but normalized ancestry tends to zero",
+  "counterexample": "Delta_L=1/L, R_L=(L/2)I, N_can=I, Z_can=I, S_L=L^2 I, Omega_L=(1/(2L))I -> 0",
+  "outer_g2": "correctly blocks positive G2 but does not make the amplitude label single-valued",
+  "minimal_repair": "remove ancestry failure from canonical-amplitude FAIL and retain it as the separate ancestry/G2 gate; add the overlap regression",
+  "ge_repin": "FORBIDDEN_UNTIL_REPAIR_AND_NEW_INDEPENDENT_PASS",
+  "ceiling": "no positive G2, G3, gravity, or G"
+}

@@ -1267,6 +1267,13 @@ fine-structure constant \(\alpha\).
 | Finite homogeneous `FV-WITNESS` response | On the FO 180-state component, the two rank-closing pieces obey the exact hierarchy family rank six to component rank five modulo identity to commutator rank three to ground retarded/first-moment rank two, with two exact rank-one residues. | **Exact conditional finite response; 114/114 plus 144/144 hostile replay** | Generated `Q_diag^(2,4,6)` derivatives and folds are omitted and can change the complete response. Component-specific conservation is not a Ward identity; no tensor pole, gravity, or `G` follows. |
 | Complete homogeneous H6 source response | Exact enumeration of every diagonal H2/H4/H6 closed word and BW/Feshbach fold gives `Q_diag^(2,4,6)` equal to the direct Coulomb pair source times `-x^2`, `-(37/12)x^4`, and `-(16247/900)x^6`, respectively, plus retained Hilbert identities. Hence `rho_E=rho[1-x^2-(37/12)x^4-(16247/900)x^6]`, and the complete homogeneous hierarchy remains `5 -> 3 -> 2 -> 2` with the same two poles. | **Exact conditional complete homogeneous source theorem on the selected FO component; 109/109 plus 139/139 independent hostile replay** | “Complete” is restricted to `k=0`, FV-PURE, the selected 180-state winding component, modulo identity and fixed through H6. The finite polynomial zero is a truncation stratum, not a threshold. Local/nonzero-momentum source density, other components, H8+, CTP/Ward closure, a tensor pole, gravity, and `G` remain open. |
 | Native-support `m=1` H6 response | Retaining every source insertion at its physical `A/B` vertex or link midpoint gives exact `m=0` recovery and preserves the three diagonal `f_E` coefficients exactly at `m=1` over `Q(zeta_240)`. The ring remains a nonzero independent off-diagonal source. At `x=2/5,1/2`, all five finite rank gates equal six, TT ground-image rank is two, and four nonzero poles respond with residue ranks `(1,3,1,1)`. | **Exact conditional native-source theorem plus sampled finite response; 72/72, packet 58/58, exact H2 4/4** | Finite Z30, FV-PURE, selected component, through H6, and sampled in `x`. The nonzero spatial contraction excludes naive transversality but does not substitute for temporal density, current, contact terms, or a spacetime Ward theorem. No continuum locality, massless pole, RGRL-B, gravity, or `G` follows. |
+| Typed `m=1` Ward boundary | On the selected ice component `d_v-2` is the zero operator and H6 preserves it, so this charge gives only trivial continuity. The complete FY source has an exact nonzero contraction under the supplied embedding, while the rational TT projector is exactly rank two and both TT images respond at the two frozen samples. | **Exact boundary theorem; author 49/49, hostile 68/68, packet 11/11** | Zero temporal/current/contact slots are excluded only for the supplied contraction or a later physical divergence proved equivalent to it. The physical bond divergence, temporal density/current, contacts, and full Ward identity remain undecided. |
+| Encoded charge/current lift | FU09b's physical four-state link/reservoir factor has an exact fixed-total-charge two-state code, exact internal and outer-port continuity, and preserves the full encoded `P+Q` FY/FV nonidentity physics on the declared source-independent scalar hold. | **Exact fixed-charge lift; author 34/34, hostile 59/59, packet 11/11** | Active reservoir ports, biases, shared charging, or strain-dependent reservoir terms break the hold. This owns charge/current ancestry, not spatial bond current, `T^{0j}`, a metric Ward identity, gravity, or `G`. |
+| Fixed-support energy/momentum boundary | The inherited 120 local H6 ring terms admit exact local energy continuity on the FO component. The six translation orbits carry a global `Z30` representation label. | **Exact energy-continuity and momentum-boundary theorem; author 30/30, hostile 52/52, packet 11/11** | A global translation label is not a selected local momentum density. Support/recoil/controller/port momentum, `T^{0j}`, contacts, and the stress Ward packet remain open. |
+| Finite-family common-cone boundary | The covering family `G_L`, `L=5*2^r`, has exact affine geometry, `2L^3` vertices, `4L^3` links, `6L^3` native supports, `4L^3` H6 rings, reciprocal momenta with `|k_min|=3 pi/(2La_*)`, and a scale-invariant rank-two TT projector. | **Exact Phase A family kinematics; author 55/55, hostile 66/66, packet 11/11** | FY's `1/sqrt(2L^3)` is count normalization, not yet canonical physical normalization. No matched-family gap/residue sequence, common massless cone, or pole is proved. |
+| Translation-owning recoil parent (`G1`) | Dressing the fixed-charge transfer by a relative mechanical Weyl kick gives exact equal-and-opposite factor/edge impulse and one closed total-momentum ledger while preserving inherited `P+Q` and FY source physics modulo a common scalar. | **Direct-shortcut `G1` sealed; author 144/144, hostile 154/154, packet 12/12** | This is algebraic existence on the declared auxiliary mechanical torus. Arbitrary recoil wavevectors and delocalized momentum states do not derive physical diamond-space placement or the full local stress packet. |
+| Public spectral-payload search | A bounded search found no public release that directly instantiates the GC/FY spectral target. Zhou et al. 2026 supplies public QFI tables and pyrochlore QMC/ED code as a possible simulation substrate. | **Bounded readiness result; 47/47** | The released data do not contain the pure-H6 native tensor source, raw TT correlator/covariance, rays, normalization, pole projectors, or same-clock comparator. It is enabling infrastructure, not G2 evidence. |
+| Canonical IR ancestry observable (`G2` contract) | GF V005 freezes the affine/physical source distinction, every nonzero momentum and TT ray, basis-safe ground and pole projectors, normalized Phase-A ancestry, a disjoint and total canonical-amplitude classifier with lower and upper singular-value bounds, a Poincare little-group helicity-`+/-2` gate that rejects a scalar doublet, and LSZ/retarded factorization interfaces. | **Narrow design contract independently sealed; author 104/104, hostile 270/270, packet 50/50** | This is the prospective decision rule, not the decision data. The all-`G_L` native ledger, canonical map, matched spectrum, physical scale binding, helicity payload, stability, and multipoint data remain open. No positive G2, G3, gravity, or `G` follows. |
 | HUST ToS round-trip history diagnostic | Equal-configuration endpoint returns give exact rank, reused-endpoint Gram, and telescoping ledgers plus reproducible source-present-minus-background residuals. | **Official-data history-confound diagnostic; 2187 plus 2208 hostile checks** | Same ordinal does not mean matched/randomized; no covariance or matched no-excursion arm exists. No causal memory, lineage, `beta_TM`, gravity emergence, `GC16`, or new \(G\) follows. |
 | HUST conditional nominal source kernel | Public masses, dimensions, separations, and temperatures determine exact conditional homogeneous Newtonian functionals and converged numerical AAF/ToS source coefficients, with independently recovered sensitivity classes. | **Conditional finite-source reconstruction; 101/101 plus 94/94 hostile replay** | Public AAF distances leave two coordinate-shear freedoms; thermal transport is partial and processed-minus-nominal is only a scalar model discrepancy. The full mass/stress remainder, `GC16`, and a new \(G\) remain open. |
 | Five-clock common-node scalar compatibility | The ten processed pair heights have exact K5 cut rank four and cycle dimension six; all 37 cycles were checked and the marginal-box optimum is \(\rho_*=27/82<1\). | **Exact graph theorem on official processed outputs; 661/661 plus 548/548 hostile replay** | The height conversion assumes GR/common local \(g\), pairs share clocks/runs, and joint covariance is absent. This is node-scalar compatibility, not a joint statistical result or independent gravity, metric, lineage, or emergence evidence. |
@@ -3518,6 +3525,15 @@ The statements above are synthesized from the following local results:
 - [finite homogeneous `FV-WITNESS` response](LANE_GRA_FW_F3_Q4_COULOMB_PROJECTED_RESPONSE_V001/THEOREM.md)
 - [complete homogeneous H6 source response](LANE_GRA_FX_F3_Q4_COULOMB_COMPLETE_H6_SOURCE_RESPONSE_V001/THEOREM.md)
 - [native-support nonzero-momentum H6 response](LANE_GRA_FY_F3_Q4_NATIVE_SUPPORT_M1_COMPLETE_H6_RESPONSE_V001/THEOREM.md)
+- [typed `m=1` continuity/contact/Ward boundary](LANE_GRA_FZ_F3_Q4_M1_CONTINUITY_CONTACT_WARD_BOUNDARY_V001/THEOREM.md)
+- [FU09b encoded charge/current lift](LANE_GRA_GA_F3_Q4_FU09B_ENCODED_CHARGE_CURRENT_LIFT_V001/THEOREM.md)
+- [fixed-support energy/momentum Ward boundary](LANE_GRA_GB_F3_Q4_FIXED_SUPPORT_ENERGY_MOMENTUM_WARD_BOUNDARY_V001/THEOREM.md)
+- [finite-family common-cone boundary](LANE_GRA_GC_F3_Q4_FINITE_FAMILY_COMMON_CONE_BOUNDARY_V001/THEOREM.md)
+- [translation-owning recoil parent](LANE_GRA_GD_F3_Q4_TRANSLATION_OWNING_RECOIL_PARENT_V001/THEOREM.md)
+- [bounded public spectral-payload search](LANE_GRA_GD_F3_Q4_PUBLIC_SPECTRAL_PAYLOAD_SEARCH_V001/RESULT.md)
+- [canonical IR ancestry-observable contract](LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001/THEOREM.md)
+- [GF V005 independent hostile re-audit](LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001/INDEPENDENT_HOSTILE_REAUDIT_V005/INDEPENDENT_HOSTILE_REAUDIT_V005.md)
+- [direct Gravity Formation shortcut plan](GRAVITY_DIRECT_SHORTCUT_PROOF_PLAN_V001.md)
 - [Bense public mechanical-history frontier](LANE_GRA_BENSE_PUBLIC_MEMORY_HISTORY_FRONTIER_V001/THEOREM.md)
 - [HUST calibrated-source identifiability](LANE_GRA_HUST_PUBLIC_CALIBRATED_SOURCE_IDENTIFIABILITY_V001/THEOREM.md)
 - [bounded HUST public completion search](LANE_GRA_HUST_PUBLIC_COMPLETION_SEARCH_V001/THEOREM.md)
@@ -3735,13 +3751,17 @@ with residue ranks `(1,3,1,1)`.
 
 This is a complete native-source finite-graph step, not yet a spacetime Ward
 theorem. The purely spatial contraction `k_i Q^{ij}` is nonzero, so naive
-spatial transversality is ruled out. That is not a failure of the physical
-Ward route: the parent packet has not yet supplied the temporal density,
-current, or contact terms whose combination is tested by continuity. The
-immediate proof target is therefore the typed nonzero-momentum
-continuity/contact identity, followed by finite-family scaling toward a common
-cone. No finite conservation law is promoted to a Ward identity, tensor pole,
-RGRL-B, gravity, or \(G\).
+spatial transversality is ruled out. FZ now closes the corresponding boundary:
+the selected projected incidence charge is the zero operator, and the full
+physical Ward route remains undecided without a selected divergence, temporal
+current, and contacts. GA supplies an exact fixed-charge current lift; GB
+supplies exact local ring-energy continuity; neither is silently promoted to
+local stress. GC extends the same source to `G_L`, owns exact reciprocal
+momenta and rank-two TT kinematics, and states the prospective pole/common-cone
+test. GD then owns exact total momentum on the direct route's declared recoil
+parent. No finite conservation law is promoted to a Ward identity or tensor
+pole. The immediate proof target is now the same-ancestry massless helicity-two
+pole; gravity and \(G\) have not yet been inferred from Phase A or `G1`.
 
 The public-data boundary has advanced in four complementary ways. The official
 HUST-2018 release recovers one figure-level ToS stiffness response and
@@ -4220,6 +4240,29 @@ complex nonlinear response and graded Ward packets, the numerical value of
 \(G_{\rm lin}\), the causal/common-cone orientation, free and boundary fields,
 nonlinear Ward passage, and strong-field/global dynamics. This is now a physics
 frontier, not an invitation to build more abstract causal machinery.
+
+The current no-laboratory route is narrower still. FY and GC jointly provide
+the Phase A birth certificate: one native record-derived tensor source and one
+exact covering/momentum/TT family. FZ, GA, and GB have already exposed which
+charge, current, energy, contact, and local-momentum statements are proved and
+which are not. GD then closes `G1` by giving the unchanged source exact total-
+momentum ownership on its declared auxiliary recoil parent. The load-bearing
+successor is not another general stress census. It is the same-ancestry pole
+test
+
+\[
+ \Delta_L(k)/|k|\longrightarrow c_T>0,
+ \qquad \operatorname{rank}P_{\rm pole}=2,
+ \qquad Z_{\rm pole}^{\rm canon}\not\longrightarrow0.
+\]
+
+If that `G2` gate passes with a common cone, positivity, stability, and a
+factorizing pole, the `G3` longitudinal-decoupling theorem tests whether the
+same field must couple universally to total momentum. Consistent self-coupling
+and the static exchange calculation then form `G4` and `G5`. This is the direct
+proof route from the record-derived tensor to gravity. The full B2--B4 local
+stress/contact construction remains available as fallback or corroboration if
+pole-level longitudinal decoupling cannot be earned directly.
 
 The public underdamped archive contains a real common temporal mission but cannot
 identify the predeclared response map. Page--Geilker shows branch-following

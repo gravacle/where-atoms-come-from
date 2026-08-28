@@ -1,0 +1,15 @@
+COMMAND
+python3 LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001/INDEPENDENT_HOSTILE_REAUDIT_V002/independent_reaudit_gf_v002.py
+
+RESULT
+SUMMARY 153/153 independent GF V002 hostile checks passed
+VERDICT REJECT -- REPAIR_REQUIRED
+MATERIAL one exact input triggers canonical-amplitude PASS and FAIL simultaneously
+MINIMAL_REPAIR remove normalized-ancestry failure from the amplitude FAIL branch and retain it as the separate ancestry/G2 gate; add the overlap regression
+CEILING no GE repin; no positive G2, G3, gravity, or G
+
+TARGET
+theorem 31badeb91a40b325becf966d1c898bd9d0c4bf539b1f7f19bea5df0a82ab7a14
+contract c0466ef9cdc82f528cb117e9e76b82e646c6199593186b9df7dbe045570705e7
+author verifier a245d7211ee8291b4a9fcb46b98747a4f685b04388c24cfbab879fe45476acea
+author manifest 75db50a0353d00c856bad35d1f5ad60531aedcf20b0ef9c3078033b5cf0f34fa

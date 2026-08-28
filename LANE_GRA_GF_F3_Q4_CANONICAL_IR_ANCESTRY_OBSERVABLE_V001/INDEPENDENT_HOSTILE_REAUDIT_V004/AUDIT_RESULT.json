@@ -1,0 +1,24 @@
+{
+  "target": "LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001",
+  "target_revision": "V004",
+  "verdict": "REJECT_REPAIR_REQUIRED",
+  "independent_checks": "208/208",
+  "author_replay": "102/102",
+  "v003_regression": "PASS: every full-rank raw no-D case is INDETERMINATE regardless of scaling",
+  "bounded_four_case_partition": "PASS: total and disjoint over all enumerated rank/map/lower combinations with finite canonical upper bound",
+  "ancestry_separation": "PASS: amplitude PASS plus ancestry FAIL remains overall G2 FAIL",
+  "material_defect": "finite sigma_max is required for PASS but upper-bound divergence is absent from FAIL and from the executable classifier",
+  "counterexample": "N_raw=I_2, applicable D_L=diag(L,1), N_can=diag(L^2,1), Z_can=diag(L,1): prose predicates are all false while author canonical_outcome returns PASS",
+  "minimal_repair": "add canonical upper-bound input; PASS requires a uniform finite sigma_max and applicable-D upper divergence is FAIL; retain full-rank no-D INDETERMINATE",
+  "prior_rejections": "V003 rejection bytes are pinned and recursively preserve V002 and V001",
+  "rechecked_gates": [
+    "unitary Poincare/little-group helicity +2,-2 and scalar-doublet rejection",
+    "TT k=0 exclusion and degenerate-ground query",
+    "affine versus physical binding",
+    "complete momentum registry and cover behavior",
+    "normalized ancestry and factorization design",
+    "strict design-only ceiling"
+  ],
+  "ge_repin": "FORBIDDEN_UNTIL_REPAIR_AND_NEW_INDEPENDENT_PASS",
+  "ceiling": "no positive G2, G3, gravity, or G"
+}

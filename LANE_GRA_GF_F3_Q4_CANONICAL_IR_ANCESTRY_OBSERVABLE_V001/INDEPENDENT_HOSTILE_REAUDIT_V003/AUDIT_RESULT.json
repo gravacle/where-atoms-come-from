@@ -1,0 +1,24 @@
+{
+  "target": "LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001",
+  "target_revision": "V003",
+  "verdict": "REJECT_REPAIR_REQUIRED",
+  "independent_checks": "190/190",
+  "author_replay": "101/101",
+  "v002_regression": "PASS: canonical amplitude PASS, normalized ancestry FAIL, overall G2 FAIL",
+  "classifier_disjointness": "PASS on all frozen defined branches",
+  "material_defect": "canonical-amplitude PASS/FAIL/INDETERMINATE is not total for a full-rank nonvanishing raw numerator with no applicable frozen D",
+  "counterexample": "N_raw,L=I_2 for every nonzero IR size, no applicable same-parent D: frozen predicates are (false,false,false), while author canonical_outcome returns FAIL",
+  "outer_g2": "remains conservative but cannot supply or reconcile the missing component label",
+  "minimal_repair": "classify every full-rank raw source with no applicable prospectively frozen same-parent D as INDETERMINATE and report raw scaling; keep normalized ancestry separate",
+  "prior_rejections": "V001 and V002 rejection bytes preserved by PRIOR_REJECTIONS_CUSTODY.sha256",
+  "rechecked_gates": [
+    "unitary Poincare/little-group helicity +2,-2 and scalar-doublet rejection",
+    "TT k=0 exclusion and degenerate-ground query",
+    "affine versus physical binding",
+    "complete momentum registry and cover behavior",
+    "normalized ancestry and factorization design",
+    "strict design-only ceiling"
+  ],
+  "ge_repin": "FORBIDDEN_UNTIL_REPAIR_AND_NEW_INDEPENDENT_PASS",
+  "ceiling": "no positive G2, G3, gravity, or G"
+}

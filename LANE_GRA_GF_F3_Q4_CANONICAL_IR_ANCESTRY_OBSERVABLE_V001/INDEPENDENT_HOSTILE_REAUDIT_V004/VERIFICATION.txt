@@ -1,0 +1,17 @@
+COMMAND
+python3 LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001/INDEPENDENT_HOSTILE_REAUDIT_V004/independent_reaudit_gf_v004.py
+
+RESULT
+SUMMARY 208/208 independent GF V004 hostile checks passed
+VERDICT REJECT -- REPAIR_REQUIRED
+MATERIAL finite-sigma_max PASS requirement is neither implemented nor complemented by FAIL
+COUNTEREXAMPLE N_raw=I_2, applicable D_L=diag(L,1), Z_can,L=diag(L,1): no prose branch applies while author executable returns PASS
+MINIMAL_REPAIR add canonical upper-bound input; PASS requires uniform finite sigma_max and FAIL includes unbounded sigma_max; retain the V003 no-D repair
+CEILING no GE repin; no positive G2, G3, gravity, or G
+
+TARGET V004
+theorem db8bfa8141d4cf3414cc7caeab19507bef07136ff9edfe2779a09a95bcdf8869
+contract ff3fd30e303dd9175f2c7c134cac45e2ac5d4018463bdabdb64eb552bee8bac4
+result-json 74c8155840710ad6927e8850c31afe5a1da4e78530d3fa0e5322c7966ee9b5e9
+author-verifier f4502348376bf463306589383081422838ab7883c3bfe8f5027179183f53535d
+author-manifest 15b285a28084d21c5de86a5fd9c966dc1d2c4f069cb03cbfb754c73273fbcde5

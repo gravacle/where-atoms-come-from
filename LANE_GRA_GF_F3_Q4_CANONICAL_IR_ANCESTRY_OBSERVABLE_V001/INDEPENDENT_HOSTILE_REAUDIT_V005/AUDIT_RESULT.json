@@ -1,0 +1,24 @@
+{
+  "target": "LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001",
+  "target_revision": "V005",
+  "verdict": "PASS_NARROW_DESIGN_CONTRACT_SEAL",
+  "independent_checks": "270/270",
+  "author_replay": "104/104",
+  "classifier": "disjoint and total over raw rank, applicable-map availability, canonical lower limit, canonical upper limit, and arbitrary no-D raw scaling",
+  "regressions": {
+    "V002": "amplitude PASS plus ancestry FAIL gives overall G2 FAIL",
+    "V003": "every full-rank raw no-D family is INDETERMINATE regardless of raw scaling",
+    "V004": "N_raw=I_2 and applicable D_L=diag(L,1) gives unbounded sigma_max and FAIL"
+  },
+  "rechecked_gates": [
+    "unitary Poincare/little-group helicity +2,-2 and scalar-doublet rejection",
+    "TT k=0 exclusion and degenerate-ground query",
+    "affine versus physical binding",
+    "complete momentum registry and cover behavior",
+    "normalized ancestry and factorization design",
+    "strict design-only ceiling"
+  ],
+  "prior_rejections": "V004 rejection bytes are pinned and recursively preserve V003, V002, and V001",
+  "ge_status": "NOT_AUDITED_NOT_REPINNED",
+  "ceiling": "design contract only; no matched-family pole evidence, positive G2, G3, gravity, or G"
+}

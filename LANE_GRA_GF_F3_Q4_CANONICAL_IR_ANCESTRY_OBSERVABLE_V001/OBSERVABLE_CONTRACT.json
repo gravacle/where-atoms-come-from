@@ -1,0 +1,115 @@
+{
+  "lane": "LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001",
+  "version": "V005",
+  "revision_status": "REPAIRED_AFTER_V004_REJECTION_AWAITING_INDEPENDENT_SEAL",
+  "claim_type": "prospective C1/G2 observable design only",
+  "family": {
+    "sizes": "L=5*2^r, r>=0",
+    "cells": "L^3",
+    "cell_volume": "v3=16*a_*^3/(3*sqrt(3))",
+    "affine_volume": "V_L=L^3*v3",
+    "physical_binding": "physical-volume language requires one independently audited and sealed FD certificate binding the same a_*, v3, and cell map for every sector; no sector-dependent length rescaling"
+  },
+  "source": {
+    "parent_derivative": "q_x^{ij}(n)=-2 partial H_L[j]/partial j_{ij,x}(-n) at j=0, including the complete native support ledger",
+    "count_mode": "Q_cnt^{ij}([n])=(2*L^3)^(-1/2) sum_x exp(2*pi*i*n.x/L) q_x^{ij}([n])",
+    "affine_mode": "Q_aff^{ij}([n])=sqrt(2/v3)*Q_cnt^{ij}([n])=V_L^(-1/2) sum_x exp(2*pi*i*n.x/L) q_x^{ij}([n])",
+    "physical_volume_mode": "after the single independently custodied FD binding, Q_vol=Q_aff with no additional factor",
+    "conjugate_source": "j_aff=sqrt(v3/2)*j_cnt, so j_aff:Q_aff=j_cnt:Q_cnt; after binding the same pair is denoted j_vol:Q_vol",
+    "tt_mode": "Q_aff^TT([n])=Pi_TT(k_[n]) Q_aff([n]) only for [n]!=[0]",
+    "post_result_rescaling": "forbidden"
+  },
+  "ground": {
+    "allowed": "rank(P0)=1 or rho0=P0/rank(P0) fixed prospectively in one exact ground/flux/boundary sector",
+    "basis_rule": "an individual vector in a degenerate ground space is never load bearing",
+    "correlator_rule": "all residues and ancestry Grams use the same rho0; for rank one rho0=|0><0|",
+    "translation_rule": "rho0 is translation invariant so disconnected nonzero-character components vanish"
+  },
+  "clock": {
+    "premise": "U_d>0 and h!=0",
+    "energy": "E_*=J6=(63/8)*U_d*(h/U_d)^6>0",
+    "time": "t_*=hbar/J6",
+    "dimensionless_energy": "delta=Delta/J6",
+    "dimensionless_momentum": "p=a_* k",
+    "rule": "tensor, EM, and matter probes use the same H_L, J6 clock, bound a_* scale, flux/boundary sector, and momentum classes"
+  },
+  "momenta": {
+    "classes": "[n] in (Z/LZ)^3",
+    "representative": "lexicographically first minimizer of q(n)=4 sum_i n_i^2-(sum_i n_i)^2 over the integer class",
+    "vector": "k_[n]=(2*pi/L) A^(-T) hat(n)",
+    "raw_all_classes_required": true,
+    "tt_domain": "all nonzero characters only",
+    "zero_character": "store unprojected homogeneous tensor and scalar/point-group sector data; Pi_TT(0) is undefined and forbidden",
+    "rays": [[1, 0, 0], [1, 1, 0], [1, -1, 0]],
+    "ray_q": [3, 4, 8],
+    "conjugates_required": true
+  },
+  "cluster": {
+    "projector": "P_C,L([n]) is the sum of complete exact energy-and-quantum-number projectors in the prospectively selected two-polarization cluster",
+    "coalescing_rule": "all split members are retained; diameter(Delta_C)/|k| -> 0",
+    "basis_rule": "no individual eigenvector inside a degenerate eigenspace is load bearing",
+    "physical_rank": "rank P_C=2 after exact sector typing; accidental extra states are included and trigger the extra-mode gate",
+    "raw_residue": "R_raw,AB(C)=Tr[rho0 Q_vol,A^TT P_C Q_vol,B^TT dagger]_c",
+    "raw_numerator": "N_raw,AB(C)=sum_s 2*Delta_s*R_raw,AB(s) in the frozen even-Euclidean convention"
+  },
+  "canonical_source_binding": {
+    "raw_vertex": "Z_Q^raw is the unique positive square root of N_raw on the Frobenius TT image and is always reported",
+    "derived_map": "a canonical claim requires a same-parent D_L(k) derived and frozen before response inspection; N_can=D N_raw D^dagger and Z_Q^can=sqrt(N_can)",
+    "identity_rule": "D=I is the raw reporting convention and does not by itself deconvolve a derivative source",
+    "pass": "an applicable frozen D exists and liminf sigma_min(Z_Q^can)>0 with finite sigma_max on every declared ray",
+    "fail": "persistent raw rank loss, or canonical rank/lower-bound loss or upper-bound divergence after an applicable frozen D",
+    "indeterminate": "raw numerator remains full rank but no applicable same-parent canonical D has been derived, whether the raw vertex is nonvanishing or carries a controlled momentum power; this is neither positive G2 nor source-channel refutation",
+    "separation_rule": "canonical amplitude and normalized ancestry are reported independently; amplitude PASS plus ancestry FAIL gives overall G2 FAIL"
+  },
+  "ancestry": {
+    "source_gram": "S_AB=Tr[rho0 delta Q_vol,A^TT delta Q_vol,B^TT dagger]",
+    "cluster_gram": "R_AB=Tr[rho0 delta Q_vol,A^TT P_C delta Q_vol,B^TT dagger]",
+    "normalized_matrix": "Omega=S^(-1/2) R S^(-1/2), equivalently generalized eigenvalues R v=eta S v",
+    "pass": "S is positive definite and liminf eta_min>0 on every declared nonzero IR ray",
+    "fail": "S is singular in a required TT direction or eta_min -> 0"
+  },
+  "representation": {
+    "poincare": "the same pole bundle converges to a unitary massless Poincare representation in the measured common cone with covariant projectors, residues, and amputated vertices",
+    "rotation_covariance": "U(R) P_C(k) U(R)^dagger=P_C(Rk)",
+    "little_group": "on the complexified two-state fiber, rotation about k has eigenvalues exp(+2 i theta), exp(-2 i theta), equivalently helicities +2,-2",
+    "fail": "helicity 0 or +/-1, scalar doublet, noncovariant momentum-dependent TT identification, or absence of the continuum representation",
+    "g3_boundary": "longitudinal/gauge-null amplitude decoupling and soft universality remain G3"
+  },
+  "spectral_pass": [
+    "Delta_alpha,L(k)/|k| -> one finite c_T>0 on all declared nonzero rays",
+    "cluster splitting is o(|k|)",
+    "rank P_C=2 and rank R_C=2",
+    "the representation gate proves helicities +2,-2 and rejects a scalar doublet",
+    "canonical amplitude outcome is PASS, not INDETERMINATE",
+    "the pole is isolated below continuum or protected as an exact delta function at threshold",
+    "no negative-norm or additional longitudinal long-range mode",
+    "the result is uniform on a frozen neighborhood of admitted inherited higher operators"
+  ],
+  "common_cone": {
+    "observable": "c_hat_X^2=lim ((E_X(k)^2-E_X(0)^2)/J6^2)/(|k|*a_*)^2 for X in {TT, EM, admitted matter probe}",
+    "pass": "one positive isotropic value for every sector and ray using the independently bound common clock and length scale",
+    "ceiling": "equal slopes are not a Poincare or boost-covariance proof"
+  },
+  "factorization": {
+    "asymptotic_route": "stable isolated helicity-typed states admit LSZ limits with the same Z_Q^can and volume-uniform amputated vertices",
+    "retarded_1pi_route": "G^R_QO=Z_Q^can D_C^(-1) Gamma_hO+analytic and D_C (Z_Q^can)^+ G^R has a finite source-independent limit in the same canonical field basis",
+    "pass": "at least one route holds for the same projector, clock, source, representation, and IR sequence with a controlled analytic remainder",
+    "ceiling": "factorization readiness is not longitudinal decoupling or the G3 soft theorem"
+  },
+  "payload": {
+    "required": [
+      "complete native q_x^{ij}([n]) ledger on every scored G_L",
+      "rank-one P0 or fixed rho0 plus exact sector and shared H_L/J6/a_* metadata",
+      "full nonzero-k TT correlator or spectral projectors with covariance",
+      "all raw classes, three nonzero rays and conjugates, plus separately typed k=0 homogeneous data",
+      "cluster gaps, projectors, raw and canonical residue matrices, continuum thresholds and ancestry Grams",
+      "Poincare pole-bundle covariance and little-group helicity +/-2 data",
+      "matched EM and matter-probe dispersions under the same clock",
+      "higher-operator deformation ledger",
+      "multipoint data sufficient for one factorization route",
+      "independently audited and sealed FD physical cell/scale binding certificate"
+    ]
+  },
+  "status": "REPAIRED_V005_AWAITING_INDEPENDENT_AUDIT_PHYSICS_UNEXECUTED",
+  "ceiling": "no matched-family pole data, no Poincare/helicity result, no positive G2, no G3 soft theorem, no gravity, and no G"
+}

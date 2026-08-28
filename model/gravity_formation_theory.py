@@ -16,7 +16,7 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V011"
+SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V013"
 CLAIM_CLASS = (
     "ADOPTED_RGRL_OFFSHELL_ANCESTRY_AND_EXACT_CONDITIONAL_WORKING_THEORY_"
     "CLOSURE_WITH_SEPARATE_ONSHELL_RESPONSE_CEILING"
@@ -510,6 +510,94 @@ _ADVANCE_SOURCE_PAIRS = (
             "57ccae45274bdb6f118e8bf98c4be1b2cea279658f96ad004380b19383a4dac8",
         ),
     ),
+    (
+        "f3_q4_native_support_m1_complete_h6_response",
+        (
+            "LANE_GRA_FY_F3_Q4_NATIVE_SUPPORT_M1_COMPLETE_H6_RESPONSE_V001/THEOREM.md",
+            "8db3dd16c36e0205b5c98fc3154e8a2f1876d243c3c1d2068424c1276ee68f28",
+        ),
+        (
+            "LANE_GRA_FY_F3_Q4_NATIVE_SUPPORT_M1_COMPLETE_H6_RESPONSE_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "f9baf2b21ead24d947866192eb7f0cb6d4e353ffb2b1107569cc442564804f21",
+        ),
+    ),
+    (
+        "f3_q4_m1_continuity_contact_ward_boundary",
+        (
+            "LANE_GRA_FZ_F3_Q4_M1_CONTINUITY_CONTACT_WARD_BOUNDARY_V001/THEOREM.md",
+            "c0750b7d8a6a7f1b12d3ef76e8d5a6a3754a86e714f75b7efc203a56c7cfeaf9",
+        ),
+        (
+            "LANE_GRA_FZ_F3_Q4_M1_CONTINUITY_CONTACT_WARD_BOUNDARY_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "a6ad33451d21f94a530a8b06a89b12c4e1a085de284e353fdaa9893f5748b63e",
+        ),
+    ),
+    (
+        "f3_q4_fu09b_encoded_charge_current_lift",
+        (
+            "LANE_GRA_GA_F3_Q4_FU09B_ENCODED_CHARGE_CURRENT_LIFT_V001/THEOREM.md",
+            "374168c75f928cdbce55ca790157ba00df2d3a7f2045611d805d1b1b3c090336",
+        ),
+        (
+            "LANE_GRA_GA_F3_Q4_FU09B_ENCODED_CHARGE_CURRENT_LIFT_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "651ba2ef0cfba5d87faaa370030df3efca8a08413931236f1142b72289eaa83b",
+        ),
+    ),
+    (
+        "f3_q4_fixed_support_energy_momentum_ward_boundary",
+        (
+            "LANE_GRA_GB_F3_Q4_FIXED_SUPPORT_ENERGY_MOMENTUM_WARD_BOUNDARY_V001/THEOREM.md",
+            "60555987258ac723ac86a1f879dbea3222fc60496350390d880de5d346dff1fa",
+        ),
+        (
+            "LANE_GRA_GB_F3_Q4_FIXED_SUPPORT_ENERGY_MOMENTUM_WARD_BOUNDARY_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "ccedbf8067d15cb716a6871a1f5e07c3098fecad9cd84e9e0b6c568cdbee388d",
+        ),
+    ),
+    (
+        "f3_q4_finite_family_common_cone_boundary",
+        (
+            "LANE_GRA_GC_F3_Q4_FINITE_FAMILY_COMMON_CONE_BOUNDARY_V001/THEOREM.md",
+            "f74b8e5e8f28643a207e0ad26b378c1989d1fbe8007cca2044661951395dc98f",
+        ),
+        (
+            "LANE_GRA_GC_F3_Q4_FINITE_FAMILY_COMMON_CONE_BOUNDARY_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "2588d4b11bf83b6db78e0ee86a1d9edb6767063ae2735f4b2a3b2a3a6b771585",
+        ),
+    ),
+    (
+        "f3_q4_translation_owning_recoil_parent",
+        (
+            "LANE_GRA_GD_F3_Q4_TRANSLATION_OWNING_RECOIL_PARENT_V001/THEOREM.md",
+            "c1fde7eca80d8d555e42556b3573c0444e6ac9ce5001a26b15c0eb04e125a4a6",
+        ),
+        (
+            "LANE_GRA_GD_F3_Q4_TRANSLATION_OWNING_RECOIL_PARENT_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "d1d74fe66e5f2d888a18348e2e347a8abe32260ba50f94562422a8a688166341",
+        ),
+    ),
+    (
+        "f3_q4_public_spectral_payload_search",
+        (
+            "LANE_GRA_GD_F3_Q4_PUBLIC_SPECTRAL_PAYLOAD_SEARCH_V001/RESULT.md",
+            "a750daa417a1ffc70aed572fb3e4127617904dcad2c682df8cf1ea5cc65c07d4",
+        ),
+        (
+            "LANE_GRA_GD_F3_Q4_PUBLIC_SPECTRAL_PAYLOAD_SEARCH_V001/VERIFICATION.txt",
+            "c7d4af7e5454ba17ba2430fa59f018fc4402196699181599700d9983b0c5dfa3",
+        ),
+    ),
+    (
+        "f3_q4_canonical_ir_ancestry_observable_contract",
+        (
+            "LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001/THEOREM.md",
+            "928541b88f2c306905d715ea1e7b7ea0ab0f59d405134fe768f0d3f126c62e91",
+        ),
+        (
+            "LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001/INDEPENDENT_HOSTILE_REAUDIT_V005/INDEPENDENT_HOSTILE_REAUDIT_V005.md",
+            "63fdc94ba5e726f6b2bccccd2c85d9481ad93e66b99b1e8e0f8c68ced3f06025",
+        ),
+    ),
 )
 
 _EXPECTED_ARTIFACTS = _CLOSURE_PAIR + tuple(
@@ -837,6 +925,63 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "q4_FY_residue_ranks": (1, 3, 1, 1),
                 "q4_FY_naive_spatial_transversality": False,
                 "q4_FY_temporal_density_current_contact": "OPEN_NOT_CONSTRUCTED",
+                "q4_FZ_projected_incidence_charge": (
+                    "ZERO_OPERATOR_ON_SELECTED_ICE_COMPONENT"
+                ),
+                "q4_FZ_H6_incidence_continuity": (
+                    "EXACT_TRIVIAL_ZERO_CHARGE_CONTINUITY"
+                ),
+                "q4_FZ_supplied_embedding_source_contraction": "NONZERO_EXACT",
+                "q4_FZ_TT_projector_rank": 2,
+                "q4_FZ_full_spacetime_Ward": (
+                    "OPEN_UNDECIDED_WITHOUT_PHYSICAL_DIVERGENCE_TEMPORAL_CURRENT_CONTACT"
+                ),
+                "q4_GA_fixed_total_charge_code_lift": "EXACT_UNITARY_EQUIVALENCE",
+                "q4_GA_internal_charge_continuity": (
+                    "QDOT_L_PLUS_I_LR_ZERO__QDOT_R_MINUS_I_LR_ZERO"
+                ),
+                "q4_GA_outer_port_continuity": (
+                    "QDOT_R_MINUS_I_LR_PLUS_I_RBOUNDARY_ZERO"
+                ),
+                "q4_GA_FY_nonidentity_preservation": (
+                    "EXACT_ONLY_ON_FULL_CODE_SOURCE_INDEPENDENT_SCALAR_HOLD"
+                ),
+                "q4_GA_spatial_bond_current_or_T0J": "OPEN_NOT_DERIVED",
+                "q4_GB_local_ring_energy_continuity": "EXACT",
+                "q4_GB_translation_kind": "GLOBAL_Z30_REPRESENTATION_LABEL_ONLY",
+                "q4_GB_local_momentum_density_and_Ward": "OPEN_NOT_DERIVED",
+                "q4_GC_family": "G_L_WITH_L_EQUALS_5_TIMES_2_TO_R",
+                "q4_GC_vertices_links_native_supports_H6": (
+                    "2L3__4L3__6L3__4L3"
+                ),
+                "q4_GC_kmin": "3PI_OVER_2_L_ASTAR",
+                "q4_GC_exact_TT_projector_rank": 2,
+                "q4_GC_count_normalization_is_physical_canonical": False,
+                "q4_GC_massless_common_cone_pole": "OPEN_NOT_ESTABLISHED",
+                "q4_GD_recoil_gate": (
+                    "B1_ALGEBRAIC_EXISTENCE_ON_COMMON_AUXILIARY_MECHANICAL_TORUS"
+                ),
+                "q4_GD_total_momentum_ownership": (
+                    "EXACT_EQUAL_AND_OPPOSITE_FACTOR_EDGE_IMPULSE_WITH_ADMITTED_BOUNDARY"
+                ),
+                "q4_GD_FY_source_preservation": (
+                    "EXACT_ON_SOURCE_INDEPENDENT_FULL_CODE_SCALAR_HOLD"
+                ),
+                "q4_GD_physical_diamond_placement": "OPEN_NOT_DERIVED",
+                "q4_public_GC_FY_spectral_payload_found": False,
+                "q4_public_spectral_enabling_root": (
+                    "ZHOU_2026_QFI_TABLES_AND_PYROCHLORE_QMC_ED_CODE_ONLY"
+                ),
+                "q4_GF_G2_observable_contract": (
+                    "V005_NARROW_DESIGN_CONTRACT_INDEPENDENTLY_SEALED"
+                ),
+                "q4_GF_amplitude_classifier": (
+                    "DISJOINT_TOTAL_LOWER_AND_UPPER_BOUNDED__ANCESTRY_SEPARATE"
+                ),
+                "q4_GF_helicity_gate": (
+                    "POINCARE_LITTLE_GROUP_PLUS_MINUS2_REQUIRED__SCALAR_DOUBLET_REJECTED"
+                ),
+                "q4_GF_matched_spectral_physics": "OPEN_UNEXECUTED",
             },
             "kernel_reduction": {
                 "scope": "Q4_TETRAHEDRAL_S4_FIXED_POINT_LOCAL_OR_K_ZERO",
@@ -917,8 +1062,8 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "FX_generated_diagonal_source_direction": "PAIR_SOURCE_PLUS_HILBERT_IDENTITY_ONLY",
                 "FX_finite_polynomial_zero_is_threshold": False,
                 "next_collective_metric_calculation": (
-                    "NATIVE_SUPPORT_NONZERO_MOMENTUM_COMPLETE_H6_RESPONSE_THEN_"
-                    "PROPERLY_TYPED_CTP_WARD_RESPONSE"
+                    "SAME_ANCESTRY_CANONICALLY_NORMALIZED_MASSLESS_HELICITY2_POLE_"
+                    "WITH_COMMON_CONE_AND_FACTORIZATION"
                 ),
             },
             "microscopic_parent_boundary": {
@@ -996,6 +1141,25 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 ),
                 "native_support_nonzero_momentum_H6_response": (
                     "EXACT_M1_DIAGONAL_LIFT_PLUS_INDEPENDENT_RING__SAMPLED_FINITE_RESPONSE"
+                ),
+                "typed_m1_continuity_contact_Ward_boundary": (
+                    "EXACT_ZERO_PROJECTED_CHARGE_AND_NONZERO_SUPPLIED_EMBEDDING_"
+                    "CONTRACTION__FULL_WARD_UNDECIDED"
+                ),
+                "encoded_charge_current_lift": (
+                    "EXACT_FIXED_CHARGE_CODE_AND_INTERNAL_OUTER_CONTINUITY__"
+                    "SPATIAL_CURRENT_OPEN"
+                ),
+                "fixed_support_energy_momentum_boundary": (
+                    "EXACT_RING_ENERGY_CONTINUITY__LOCAL_MOMENTUM_OPEN"
+                ),
+                "finite_family_common_cone_boundary": (
+                    "EXACT_AFFINE_SOURCE_MOMENTUM_TT_KINEMATICS__"
+                    "POLE_AND_CANONICAL_RESIDUE_OPEN"
+                ),
+                "translation_owning_recoil_parent": (
+                    "EXACT_B1_AUXILIARY_TORUS_TOTAL_MOMENTUM_OWNERSHIP__"
+                    "PHYSICAL_PLACEMENT_OPEN"
                 ),
                 "full_state_dependent_CTP_Ward_response": "OPEN_NOT_COMPUTED",
                 "new_interaction_or_second_field_adopted": False,
@@ -1173,9 +1337,22 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                     "COMPLETE_HOMOGENEOUS_H6_RESPONSE_5_TO_3_TO_2_TO_2__"
                     "NATIVE_M1_H6_SAMPLED_RESPONSE_6_TO_6_TO_6_TO_6_TO_6"
                 ),
+                "phase_A_candidate_status": (
+                    "FULLY_SEALED_FY_NATIVE_RESPONSE_AND_GC_FINITE_FAMILY_KINEMATICS"
+                ),
+                "direct_shortcut_G1_status": (
+                    "SEALED_B1_TOTAL_MOMENTUM_OWNERSHIP_ON_AUXILIARY_TORUS"
+                ),
+                "direct_shortcut_G2_status": (
+                    "V005_OBSERVABLE_CONTRACT_SEALED__MATCHED_MASSLESS_HELICITY2_PHYSICS_OPEN"
+                ),
+                "direct_shortcut_G3_status": (
+                    "SOFT_FACTOR_DEPENDENCY_THEOREM_IN_PROGRESS__"
+                    "POSITIVE_CLOSURE_REQUIRES_G2"
+                ),
                 "next_no_lab_gravity_calculation": (
-                    "TYPED_TEMPORAL_DENSITY_CURRENT_CONTACT_WARD_INTERFACE__"
-                    "THEN_FINITE_FAMILY_COMMON_CONE_AND_POLE_SCALING"
+                    "ALL_GL_NATIVE_H6_LEDGER__THEN_MATCHED_MASSLESS_HELICITY2_POLE__"
+                    "THEN_SOFT_UNIVERSALITY__THEN_EINSTEIN_SELF_COUPLING"
                 ),
                 "hust_public_G_forward": (
                     "PROCESSED_DUAL_CHANNEL_CLOSED__FULL_GC16_NOT_READY__NO_NEW_G"
@@ -1242,6 +1419,15 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "q4_FW_witness_finite_response_executed": True,
                 "q4_complete_generated_H6_source_response_executed": True,
                 "q4_native_support_nonzero_momentum_response_executed": True,
+                "q4_m1_continuity_contact_Ward_boundary_executed": True,
+                "q4_encoded_charge_current_lift_executed": True,
+                "q4_fixed_support_energy_continuity_executed": True,
+                "q4_local_momentum_Ward_derived": False,
+                "q4_finite_family_common_cone_boundary_executed": True,
+                "q4_same_ancestry_massless_helicity2_pole_derived": False,
+                "q4_translation_owning_recoil_B1_executed": True,
+                "q4_physical_diamond_recoil_placement_derived": False,
+                "q4_qualifying_public_spectral_payload_found": False,
                 "q4_physical_metric_source_derived": False,
                 "q4_full_CTP_Ward_response_executed": False,
                 "hust_processed_dual_channel_forward_executed": True,
@@ -1302,6 +1488,12 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "FY_native_m1_response_promotes_continuum_locality_Ward_or_gravity": False,
                 "FY_nonzero_spatial_contraction_promotes_complete_Ward_failure": False,
                 "FY_sampled_rank6_promotes_generic_in_x_rank6": False,
+                "FZ_zero_projected_charge_promotes_complete_Ward_packet": False,
+                "GA_internal_charge_current_promotes_spatial_momentum_current": False,
+                "GB_ring_energy_continuity_promotes_local_stress_Ward": False,
+                "GC_affine_TT_kinematics_promotes_massless_common_cone_pole": False,
+                "GD_auxiliary_recoil_promotes_physical_spacetime_placement": False,
+                "public_QFI_QMC_root_promotes_GC_FY_spectral_evidence": False,
                 "HUST_history_residual_promotes_lineage_gravity": False,
                 "Bense_path_dependence_promotes_causal_lineage_or_gravity": False,
                 "HUST_nominal_kernel_promotes_full_apparatus_G": False,

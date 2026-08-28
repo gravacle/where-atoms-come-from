@@ -1,0 +1,17 @@
+COMMAND
+python3 LANE_GRA_GF_F3_Q4_CANONICAL_IR_ANCESTRY_OBSERVABLE_V001/INDEPENDENT_HOSTILE_REAUDIT_V003/independent_reaudit_gf_v003.py
+
+RESULT
+SUMMARY 190/190 independent GF V003 hostile checks passed
+VERDICT REJECT -- REPAIR_REQUIRED
+MATERIAL canonical-amplitude PASS/FAIL/INDETERMINATE is disjoint but not total
+COUNTEREXAMPLE N_raw,L=I_2, full rank and nonvanishing, with no applicable frozen D: no prose branch applies while the author executable returns FAIL
+MINIMAL_REPAIR classify every full-rank raw source with no applicable same-parent D as INDETERMINATE and report its raw scaling; keep ancestry separate
+CEILING no GE repin; no positive G2, G3, gravity, or G
+
+TARGET V003
+theorem 8bd228871e7c64eadfd009e0abb9f7dbfd95ac7e4fdd67d343f69a4ea18002e1
+contract 5d09c0b68ec2089b77085b9edf70b39cf4fe8ab285c8063c800cef1c60d5ee39
+result-json ce2245a321ec4bcff0d46ee680899e874b75668d9160b7f6bd8431c83f08bc21
+author-verifier 7c4b5877e81c1dbda9612ef954b43211901711d1e6e57a5586d17a6a11664b69
+author-manifest 2a2fa56eb2c4d20cb1f31f3f80af7342485ca48ecc62bb310f7c9bf053edd91b

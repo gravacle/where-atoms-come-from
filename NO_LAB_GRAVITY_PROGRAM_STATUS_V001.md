@@ -1,7 +1,7 @@
 # No-laboratory gravity program status
 
 **Version:** `V001`  
-**Date:** 2026-08-27  
+**Date:** 2026-08-28
 **Scope:** physics and proof work that can be completed without a new laboratory
 acquisition. This is a status synthesis, not an additional postulate or proof
 source.
@@ -257,8 +257,8 @@ rather than add a new homogeneous direction. The exact hierarchy remains
 `x=0.5398271903` is only a through-H6 cancellation stratum; H8+ can move or
 remove it, so it is not a physical threshold. This closure is restricted to
 `k=0`, FV-PURE, the selected FO winding component, fixed through H6 and modulo
-identity. The immediate theory target is now the native-support/nonzero-
-momentum source response.
+identity. The native-support/nonzero-momentum source response was therefore
+the immediate successor and is now complete at the first quotient momentum.
 
 That target is now closed at the first nonzero quotient momentum. Keeping the
 native support of every pair, gap, hopping-numerator, fold, and Hermitian ring
@@ -268,11 +268,17 @@ tested nonzero momentum, while the ring remains a nonzero independent
 off-diagonal source. At `x=2/5` and `x=1/2`, the sampled finite hierarchy is
 `6 -> 6 -> 6 -> 6 -> 6`, the TT ground-image rank is two, and four nonzero
 FO poles respond. The spatial contraction `k_i Q^{ij}` is nonzero: naive
-transversality is excluded, but a spacetime Ward test remains unformed because
-the temporal density, current, and contact terms have not yet been derived.
-The next target is that typed continuity/contact construction, followed by
-finite-family common-cone scaling. The finite conserved directions remain
-component-specific and are not Ward identities or a tensor pole.
+transversality is excluded. The FZ boundary then proves that the projected
+incidence charge is identically zero and cannot repair that contraction by
+itself; the full physical Ward statement remains undecided because the parent
+still does not select the needed divergence, current, and contacts. GA and GB
+separately close exact charge/current ancestry and ring-energy continuity
+without overpromoting them to local momentum. GC closes the covering-family
+geometry and TT kinematics, and GD closes total-momentum ownership on the
+declared auxiliary recoil torus. The finite conserved directions remain
+component-specific and are not Ward identities or a tensor pole. The direct
+target is now the same-ancestry canonically normalized massless helicity-two
+pole.
 
 ## 2. Experimental lanes without a laboratory
 
@@ -466,6 +472,66 @@ independent source calibration. Nothing in this boundary weakens the proposed
 origin and form of gravity; it only prevents a public summary from being
 misreported as a new measurement of its numerical coupling.
 
+## Phase A completion boundary and the direct route to gravity
+
+The native FY source now has exact local-coefficient ancestry on a covering
+family rather than being geometrically unrelated to larger quotients.  This is
+not yet the complete native source ledger on every member.  For `G_L`,
+`L=5*2^r`, GC owns the affine cell geometry, reciprocal momentum family,
+
+\[
+ |k_{\min}(L)|={3\pi\over2La_*},
+\]
+
+the exact rank-two TT quotient, and the prospective gap/residue/common-cone
+test. FZ proves that the selected projected incidence charge is identically
+zero and therefore cannot complete FY's Ward packet; it also proves that the
+full FY source is nontransverse under the supplied embedding. GA supplies an
+exact fixed-charge internal/outer current lift, and GB supplies exact local
+ring-energy continuity, while both preserve the boundary that no physical
+local momentum density or complete spacetime Ward packet has yet been derived.
+These are closed, useful boundaries; the broader B2--B4 stress construction is
+now fallback or corroboration rather than the critical path.
+
+FY's final deterministic custody replay has now passed `107/107`, after
+reproducing the independent `184/184` physics replay, `58/58` packet replay,
+and `4/4` exact H2 replay.  Phase A is therefore fully sealed at its stated
+finite-native-source plus covering-family ceiling.
+
+The direct shortcut's first dynamical premise is also sealed. GD constructs a
+translation-owning recoil parent with exact equal-and-opposite impulse and one
+closed total-momentum ledger while preserving the FY/FV source physics modulo
+one common scalar. Its ceiling is physical placement: the algebra lives on the
+declared auxiliary mechanical torus and does not yet localize recoil on the
+diamond support. This is sufficient for `G1`, not for gravity by itself.
+
+GF V005 also seals the prospective `G2` observable contract.  Its independent
+`270/270` hostile replay proves that the canonical-amplitude classifier is
+disjoint and total, treats normalized ancestry separately, rejects a
+rank-two scalar doublet in favor of a genuine Poincare little-group
+helicity-`+/-2` pole, and retains the strict design-only ceiling.  The contract
+does not contain the matched spectral payload and therefore is not a positive
+`G2` result.
+
+The remaining load-bearing no-lab chain is therefore
+
+\[
+ Q^{TT}_{\rm record}
+ \xrightarrow{G2}h^{TT}_{\rm IR}
+ \xrightarrow{G3}\hbox{universal soft coupling}
+ \xrightarrow{G4}\hbox{Einstein self-coupling}
+ \xrightarrow{G5}\hbox{Newtonian response}.
+\]
+
+The immediate `G2` execution begins with the all-`G_L` native H6 ledger, then
+must demonstrate a healthy same-ancestry massless helicity-two pole with
+nonvanishing canonical residue and one common cone. `G3` then uses its
+longitudinal decoupling and the already owned total momentum to force universal
+soft coupling. `G4` and `G5` test whether that same field closes to the
+Einstein--Hilbert response and the attractive `1/r` law. No qualifying public
+spectral packet was located; public QFI/QMC material is a simulation substrate,
+not a substitute for this calculation.
+
 ## Disposition
 
 Without a laboratory, the program can continue exact microscopic algebra,
@@ -476,9 +542,12 @@ now conditionally derives the Coulomb form of `DPAR`, and the explicit
 homogeneous generated source response through H6 is now exact and hostile-
 audited. Its native-support `m=1` lift is also exact: the homogeneous diagonal
 renormalization survives, an independent ring direction remains, and the
-sampled response has six finite channels. The immediate target is now the
-properly typed temporal-density/current/contact construction and its Ward or
-constraint test, followed by finite-family common-cone and pole scaling. Public
+sampled response has six finite channels. The Ward, charge/current, energy, and
+finite-family boundaries are now exact, Phase A is fully sealed, the
+total-momentum `G1` gate is sealed, and the GF V005 `G2` decision contract is
+independently sealed. The immediate target is the all-`G_L` native H6 ledger
+and matched same-ancestry massless helicity-two pole, followed by the `G3`
+soft-universality theorem. Public
 data have already executed part of the ordinary-source forward architecture and two
 useful necessary-condition diagnostics, but cannot supply the missing matched
 lineage intervention or complete independently calibrated `GC16` packet. Those
