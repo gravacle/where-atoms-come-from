@@ -58,6 +58,24 @@ periodic, or controlled infinite-support ice domain, the inherited ring
 dynamics make `E` and `T2` nonconserved and produce a finite linked-ring
 response; they do not yet produce a massless tensor.
 
+The exact Fisher boundary is now complete for local diagonal,
+complement-preserving six-state ice families. Its covariance is
+
+\[
+F=4\operatorname{diag}(w)-m m^{\mathsf T}.
+\]
+
+The odd `T2` source has zero first derivative. Its second jet is an exact
+`S4` isomorphism `Sym^2(T2) -> A1+E+T2`, but it is not `O(3)`-equivariant and
+therefore is not a linear metric tangent. Breaking complement symmetry can
+make the background-control-to-covariance map full rank after adding an
+independent scalar, but the `T2` term is a vector-mean dyad, not an independent
+tensor mode. Unlabelled `+m/-m` symmetrization cancels it exactly; retaining
+the conditional sign requires a control-sign record. Preparation and
+stabilization of that broken background are not derived. The local Fisher
+shortcut to an endogenous tensor metric is closed, while nonlocal or
+noncommuting even rank-two collective variables remain open.
+
 At the separately supplied Gaussian-Maxwell infrared fixed point, the correctly
 oriented one-link channel carries the spin-one photon pole. The centered even
 pair channel carries a two-photon continuum and contact terms, not an isolated
@@ -66,6 +84,27 @@ photon or a photon pair into a graviton. This eliminates the direct Gaussian
 composite shortcut and concentrates the next calculation on inherited
 non-Gaussian even-channel dynamics or, if that fails, a distinct same-parent
 rank-two constrained collective architecture.
+
+The inherited non-Gaussian calculation has advanced beyond a nomination. The
+compact hard-core order-six ring Hamiltonian is already interacting; Gaussian
+Maxwell theory is only its infrared fixed point. On the supplied finite simple
+coordination-four bipartite girth-six-or-greater support, at `d_*=2`, `E_R=0`,
+symmetric detuning, and the fixed Feshbach convention, the unchanged F3 parent
+produces through order eight only a scalar diagonal, dressed hexagon
+transitions, and new alternating-octagon rings. The new coefficient is exact,
+
+\[
+J_8={429h^8\over16U_d^7},\qquad V_8=0.
+\]
+
+A bare finite-range even-channel vertex is analytic, while its normalized TT
+projection has not yet been evaluated. A strict single insertion does not
+establish a new isolated pole, but this is not a nonperturbative no-pole
+theorem: an iterated kernel or exact spectrum could still bind or shift a
+state. The decisive no-lab sequence is now the normalized connected TT
+four-point function, external-leg amputation, channel-2PI separation,
+Bethe--Salpeter or spectral analysis, and finally finite-volume survival,
+helicity, Ward, common-cone, and thermodynamic-residue tests.
 
 What remains theoretically open is narrow and physical: autonomous/scalable
 support and detuning; a nonzero calibrated physical `T2` metric solder; a
@@ -132,6 +171,6 @@ finite-model dynamics, continuum spectral screens, protocol design, public-data
 searches, and real-apparatus readiness calculations. It cannot manufacture the
 two observations that carry empirical weight: a matched lineage intervention
 and a fully calibrated independent `G` dataset. The theoretical gravity lane
-therefore continues on the inherited non-Gaussian tensor kernel and microscopic
-RGRL-B route, while the empirical lanes remain frozen, reproducible, and ready
-for qualifying public data or a future acquisition.
+therefore continues on the exact connected-four-point/spectral tensor test and
+microscopic RGRL-B route, while the empirical lanes remain frozen,
+reproducible, and ready for qualifying public data or a future acquisition.

@@ -91,8 +91,9 @@ multi-species common-metric iff, plus the conditional induced
 Einstein--Hilbert back-reaction mechanism, followed by the explicit bounded
 q=4 record-stream witness, the conditional `A_3` tetrahedral `3+1` contrast
 spacetime, the Boolean common-frame holonomy theorem, the exact
-record-conditioned two-probe tetrahedral holonomy witness, and the sealed GSGB
-gamma--soldering--gravity connection lane
+record-conditioned two-probe tetrahedral holonomy witness, the sealed GSGB
+gamma--soldering--gravity connection lane, the local q4-ice Fisher-solder
+boundary, and the inherited order-eight TT-kernel boundary
 
 **Purpose:** claim-safe synthesis of the Record Formation Theory (RFT),
 Macroscopic Gravity Formation Theory (MGFT), and historywise-actualization
@@ -3508,15 +3509,34 @@ On a supplied compatible completed ice domain, inherited ring dynamics make
 `E/T2` nonconserved and give a finite response at the ring scale; this is not a
 massless tensor.
 
+The local Fisher question is now closed at exact algebraic scope. For every
+local diagonal six-state distribution,
+`F=4 diag(w)-m m^T`. Complement-preserving families have only an `E` linear
+tangent, even after a separate scalar supplies `A1`. The odd `T2` second jet is
+an exact `S4` isomorphism but is not `O(3)`-equivariant. A complement-broken
+vector background plus a scalar can make the covariance-control map rank six,
+but its `T2` term is a vector-mean dyad rather than an independent tensor mode;
+unlabelled complement symmetrization cancels it. This closes the local Fisher
+shortcut without prejudging nonlocal or noncommuting even rank-two variables.
+
 The infrared pole classification removes the most tempting overpromotion. At
 the separately supplied complement-symmetric Gaussian-Maxwell fixed point, the
 correctly oriented one-link flux has the spin-one photon pole. The centered
 even pair channel has a two-photon continuum and contact terms. A local
 tetrahedral `S4` decomposition is therefore not evidence for continuum
-helicity two. The lawful next theoretical calculation is the inherited
-non-Gaussian even-channel TT kernel; if it supplies no isolated protected pole,
-the successor must be a distinct same-parent rank-two constrained collective
-architecture rather than a relabeling of the photon or its continuum.
+helicity two. The inherited non-Gaussian lane has now reached the next exact
+boundary. The compact order-six ring Hamiltonian is already interacting, and
+on the declared finite girth-six support its order-eight correction contains
+only scalar diagonal terms, dressed hexagons, and new alternating octagons,
+with `J8=429 h^8/(16 U_d^7)` and `V8=0`. A finite-range bare vertex is allowed
+and analytic, but its normalized TT projection has not yet been calculated. A
+strict single insertion establishes no new isolated pole; it does not exclude
+binding after nonperturbative iteration or exact diagonalization. The lawful
+next calculation is therefore the connected TT four-point function,
+amputation, channel-2PI kernel, spectral/resummed pole test, and finite-volume
+helicity, Ward, common-cone, and residue gates. If those fail, the successor
+must be a distinct same-parent rank-two constrained collective architecture
+rather than a relabeling of the photon or its continuum.
 
 The two empirical substitutes now have equally sharp ceilings. A second
 28-query public search retained no same-parent lineage dataset, although a

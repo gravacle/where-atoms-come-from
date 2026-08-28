@@ -116,6 +116,49 @@ def main() -> int:
     assert certificate["exact_results"]["q4_static_source_off_child_parent_stagger"] == "ABSENT"
     assert certificate["exact_results"]["q4_ice_local_diagonal_module"] == "A1_PLUS_E_PLUS_T2_EXACT"
     assert certificate["exact_results"]["q4_ice_symmetric_fisher_T2_first_derivative"] == "EXACTLY_ZERO_BY_COMPLEMENT_PARITY"
+    assert certificate["exact_results"]["q4_ice_fisher_covariance"] == "F_EQUALS_4_DIAG_W_MINUS_M_M_TRANSPOSE_EXACT"
+    assert (
+        certificate["exact_results"]["q4_ice_odd_T2_fisher_second_jet"]
+        == "S4_ISOMORPHISM_SYM2_T2_TO_A1_E_T2__NOT_O3_EQUIVARIANT"
+    )
+    assert (
+        certificate["exact_results"]["q4_ice_complement_preserving_fisher_tangent"]
+        == "E_ONLY__A1_PLUS_E_WITH_SEPARATE_SCALAR"
+    )
+    assert (
+        certificate["exact_results"][
+            "q4_ice_generic_broken_background_covariance_map_with_separate_scalar_rank"
+        ]
+        == 6
+    )
+    assert (
+        certificate["exact_results"]["q4_ice_broken_background_T2_origin"]
+        == "VECTOR_MEAN_DYAD_NOT_INDEPENDENT_TENSOR"
+    )
+    assert certificate["exact_results"]["q4_ice_unlabelled_complement_T2"] == "CANCELS_EXACTLY"
+    assert (
+        certificate["exact_results"]["q4_ice_complement_symmetrized_conditional_T2"]
+        == "RETENTION_REQUIRES_CONTROL_SIGN_RECORD"
+    )
+    assert certificate["exact_results"]["q4_ice_broken_background_preparation_and_stabilization"] == "NOT_DERIVED"
+    assert (
+        certificate["exact_results"]["q4_ice_order6_interaction"]
+        == "COMPACT_HARDCORE_RING_ALREADY_NON_GAUSSIAN"
+    )
+    assert (
+        certificate["exact_results"]["q4_ice_order8_scope"]
+        == "SUPPLIED_FINITE_SIMPLE_Z4_BIPARTITE_GIRTH_GE6_SUPPORT__DSTAR2_ER0_"
+        "SYMMETRIC_DETUNING__FIXED_FESHBACH_CONVENTION"
+    )
+    assert (
+        certificate["exact_results"]["q4_ice_order8_endpoint_topologies"]
+        == "SCALAR_DIAGONAL_PLUS_DRESSED_HEXAGON_PLUS_NEW_ALTERNATING_OCTAGON"
+    )
+    assert (
+        certificate["exact_results"]["q4_ice_order8_octagon_coefficient"]
+        == "J8_EQUALS_429_H8_OVER_16_UD7"
+    )
+    assert certificate["exact_results"]["q4_ice_order8_diagonal_potential"] == "V8_EQUALS_ZERO"
     microscopic = certificate["microscopic_parent_boundary"]
     assert (
         microscopic["scalar_carrier_transfer_on_supplied_saturated_q4_support"]
@@ -144,9 +187,36 @@ def main() -> int:
     assert microscopic["physical_q4_link_pairs_are_automatically_PMMDC_records"] is False
     assert microscopic["ice_ring_response_pole"] == "FINITE_2J6_NOT_MASSLESS_TENSOR"
     assert microscopic["direct_gaussian_composite_tensor_route"] == "EXACT_CONDITIONAL_NO_GO"
+    assert (
+        microscopic["ice_T2_fisher_solder_boundary"]
+        == "SECOND_JET_OR_VECTOR_BACKGROUND_ONLY__INDEPENDENT_LINEAR_TENSOR_SOLDER_OPEN"
+    )
+    assert (
+        microscopic["inherited_order8_operator_boundary"]
+        == "EXACT_J8_AND_V8_ZERO__HEXAGON_DRESSING_COEFFICIENTS_TYPED_NOT_ALL_REDUCED"
+    )
     assert microscopic["new_interaction_or_second_field_adopted"] is False
     assert certificate["kernel_reduction"]["gaussian_maxwell_one_link_pole"] == "SPIN_1_PHOTON_CONDITIONAL_ON_MAXWELL_IR"
     assert certificate["kernel_reduction"]["gaussian_maxwell_isolated_helicity2_pole"] == "ABSENT_IN_DIRECT_COMPOSITE_ROUTE"
+    assert (
+        certificate["kernel_reduction"]["ice_local_fisher_metric_full_linear_tensor_tangent"]
+        == "ABSENT_WITH_COMPLEMENT_PRESERVED"
+    )
+    assert (
+        certificate["kernel_reduction"]["ice_broken_background_full_rank_kind"]
+        == "BACKGROUND_CONTROL_TO_COVARIANCE_MAP_NOT_SIX_MODE_FISHER_METRIC"
+    )
+    assert (
+        certificate["kernel_reduction"]["inherited_TT_bare_vertex"]
+        == "FINITE_RANGE_ANALYTIC__TT_PROJECTION_ALLOWED_NOT_EVALUATED"
+    )
+    assert certificate["kernel_reduction"]["inherited_TT_strict_single_insertion_new_pole"] == "NOT_ESTABLISHED"
+    assert (
+        certificate["kernel_reduction"]["inherited_TT_decisive_sequence"]
+        == "CONNECTED_FOUR_POINT_THEN_AMPUTATION_THEN_CHANNEL_2PI_THEN_"
+        "BETHE_SALPETER_OR_SPECTRAL_THEN_FINITE_VOLUME_HELICITY_WARD_"
+        "COMMON_CONE_RESIDUE"
+    )
     assert certificate["numerical_G"]["parameter_free_microscopic_record_derivation"] is False
     assert certificate["numerical_G"]["bounded_remainder_output"] == "IDENTIFIED_INTERVAL_OR_SET_NOT_AUTOMATIC_POINT_VALUE"
     assert certificate["numerical_G"]["calibrated_nonsingular_row_identifies"] == "P_EQUALS_G_TIMES_SOURCE_SCALE"
@@ -176,14 +246,33 @@ def main() -> int:
         ]
         is False
     )
-    assert certificate["custody"]["artifact_count"] == 46
+    assert certificate["program_authorizations"]["complement_preserving_local_fisher_T2_solder_derived"] is False
+    assert certificate["program_authorizations"]["generic_broken_background_covariance_rank6_with_separate_scalar_derived"] is True
+    assert certificate["program_authorizations"]["order8_inherited_loop_operator_boundary_derived"] is True
+    assert certificate["program_authorizations"]["inherited_protected_tensor_pole_derived"] is False
+    assert (
+        certificate["scientific_status"]["inherited_non_gaussian_TT_kernel"]
+        == "LEADING_H6_INTERACTION_IDENTIFIED__NORMALIZED_CONNECTED_TT_FOUR_POINT_OPEN"
+    )
+    assert certificate["scientific_status"]["normalized_connected_TT_four_point"] == "OPEN"
+    assert certificate["scientific_status"]["nonperturbative_TT_pole_Ward_common_cone_residue"] == "OPEN"
+    assert (
+        certificate["scientific_status"]["local_ice_fisher_T2_solder"]
+        == "CLOSED_NEGATIVE_FOR_LOCAL_DIAGONAL_COMPLEMENT_PRESERVING_FAMILIES"
+    )
+    assert certificate["nonpromotion"]["second_fisher_jet_promotes_linear_metric_tangent"] is False
+    assert certificate["nonpromotion"]["broken_vector_background_rank_promotes_tensor_mode"] is False
+    assert certificate["nonpromotion"]["control_sign_conditioning_promotes_endogenous_metric_solder"] is False
+    assert certificate["nonpromotion"]["bare_vertex_analyticity_promotes_dressed_1PI_analyticity"] is False
+    assert certificate["nonpromotion"]["strict_single_insertion_boundary_promotes_nonperturbative_no_pole"] is False
+    assert certificate["custody"]["artifact_count"] == 50
     assert len(certificate["custody"]["core_source_pairs"]) == 6
     assert (
         certificate["custody"]["core_source_pairs"][4]["label"]
         == "f3_record_front_lorentz_cone_refinement"
     )
     advance_custody = certificate["custody"]["advance_source_pairs"]
-    assert len(advance_custody) == 14
+    assert len(advance_custody) == 16
     assert tuple(item["label"] for item in advance_custody) == tuple(
         label for label, _, _ in gft._ADVANCE_SOURCE_PAIRS
     )
@@ -194,14 +283,28 @@ def main() -> int:
     assert advance_custody[7]["label"] == "f3_q4_authenticated_link_pair_response"
     assert advance_custody[8]["label"] == "f3_q4_ice_hybrid_tensor_response"
     assert advance_custody[9]["label"] == "f3_q4_maxwell_composite_pole_screen"
-    assert advance_custody[11]["label"] == "spag_public_data_second_pass"
-    assert advance_custody[11]["audit_path"] == (
-        "LANE_GRA_SPAG_PUBLIC_DATA_SECOND_PASS_V001/POST_INTEGRATION_CUSTODY_REAUDIT.md"
+    assert advance_custody[10]["label"] == "f3_q4_inherited_tt_kernel_boundary"
+    assert advance_custody[10]["source_sha256"] == (
+        "78f0687c9f597c96d235224dad45c204d12d7e6c973c270e3305a901efc75b25"
+    )
+    assert advance_custody[10]["audit_sha256"] == (
+        "53893c7198241f0f8f6aa766f3595fb75b83d208581833c32656b28d7c7f02b9"
+    )
+    assert advance_custody[11]["label"] == "f3_q4_ice_t2_fisher_solder_boundary"
+    assert advance_custody[11]["source_sha256"] == (
+        "be69f15d611827db9841bd932042604deb4f82a777ff9da28b80e4493cef7596"
     )
     assert advance_custody[11]["audit_sha256"] == (
+        "32297dc0c4b0454c4a4be88d3763eb679b4ca89bb2385010ba8c2b77f2df47d2"
+    )
+    assert advance_custody[13]["label"] == "spag_public_data_second_pass"
+    assert advance_custody[13]["audit_path"] == (
+        "LANE_GRA_SPAG_PUBLIC_DATA_SECOND_PASS_V001/POST_INTEGRATION_CUSTODY_REAUDIT.md"
+    )
+    assert advance_custody[13]["audit_sha256"] == (
         "dcc170c2674fe0020f679e523ab40689be7efd32e05e71fe7600d9bbf4047e97"
     )
-    assert advance_custody[13]["label"] == "nist_bipm_g_forward_readiness"
+    assert advance_custody[15]["label"] == "nist_bipm_g_forward_readiness"
     clarification_custody = certificate["custody"]["adopted_clarification_chain"]
     assert len(clarification_custody) == 4
     assert tuple(item["label"] for item in clarification_custody) == tuple(
@@ -228,6 +331,9 @@ def main() -> int:
     assert "off-shell constitutive ancestry" in gravity_role
     assert "give exactly zero on-shell response" in gravity_role
     assert "SPAG force/common-freefall labels are retired" in gravity_role
+    assert "complete local diagonal Fisher boundary" in gravity_role
+    assert "J8=429 h^8/(16 U_d^7)" in gravity_role
+    assert "normalized connected TT four-point" in gravity_role
     alpha_role = URM().roles()["ALPHA"]
     assert "Alpha is not a standalone theory" in alpha_role
     assert "ACTVIS(r,W_obs) together with SAI1--SAI8 implies" in alpha_role
@@ -249,9 +355,13 @@ def main() -> int:
             gft._ADVANCE_SOURCE_PAIRS[6][1][0],
             gft._ADVANCE_SOURCE_PAIRS[8][2][0],
             gft._ADVANCE_SOURCE_PAIRS[9][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[10][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[10][2][0],
             gft._ADVANCE_SOURCE_PAIRS[11][1][0],
             gft._ADVANCE_SOURCE_PAIRS[11][2][0],
             gft._ADVANCE_SOURCE_PAIRS[13][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[13][2][0],
+            gft._ADVANCE_SOURCE_PAIRS[15][1][0],
         )
         for relative in tamper_targets:
             target = copied_root / relative

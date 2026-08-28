@@ -16,7 +16,7 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V004"
+SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V006"
 CLAIM_CLASS = (
     "ADOPTED_RGRL_OFFSHELL_ANCESTRY_AND_EXACT_CONDITIONAL_WORKING_THEORY_"
     "CLOSURE_WITH_SEPARATE_ONSHELL_RESPONSE_CEILING"
@@ -244,6 +244,28 @@ _ADVANCE_SOURCE_PAIRS = (
         (
             "LANE_GRA_FL_F3_Q4_MAXWELL_COMPOSITE_POLE_SCREEN_V001/INDEPENDENT_AUDIT.md",
             "327bf6a4476c4c6382757dc156a96c6032233d34c25c1f7935e2582acf6c607a",
+        ),
+    ),
+    (
+        "f3_q4_inherited_tt_kernel_boundary",
+        (
+            "LANE_GRA_FM_F3_Q4_INHERITED_TT_KERNEL_BOUNDARY_V001/THEOREM.md",
+            "78f0687c9f597c96d235224dad45c204d12d7e6c973c270e3305a901efc75b25",
+        ),
+        (
+            "LANE_GRA_FM_F3_Q4_INHERITED_TT_KERNEL_BOUNDARY_V001/INDEPENDENT_AUDIT.md",
+            "53893c7198241f0f8f6aa766f3595fb75b83d208581833c32656b28d7c7f02b9",
+        ),
+    ),
+    (
+        "f3_q4_ice_t2_fisher_solder_boundary",
+        (
+            "LANE_GRA_FN_F3_Q4_ICE_T2_FISHER_SOLDER_BOUNDARY_V001/THEOREM.md",
+            "be69f15d611827db9841bd932042604deb4f82a777ff9da28b80e4493cef7596",
+        ),
+        (
+            "LANE_GRA_FN_F3_Q4_ICE_T2_FISHER_SOLDER_BOUNDARY_V001/INDEPENDENT_AUDIT.md",
+            "32297dc0c4b0454c4a4be88d3763eb679b4ca89bb2385010ba8c2b77f2df47d2",
         ),
     ),
     (
@@ -495,6 +517,28 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "q4_gaussian_maxwell_pole_screen": (
                     "EXACT_CONDITIONAL_SPIN1_LINK_POLE_PAIR_CONTINUUM_NO_ISOLATED_HELICITY2"
                 ),
+                "q4_ice_fisher_covariance": "F_EQUALS_4_DIAG_W_MINUS_M_M_TRANSPOSE_EXACT",
+                "q4_ice_odd_T2_fisher_second_jet": (
+                    "S4_ISOMORPHISM_SYM2_T2_TO_A1_E_T2__NOT_O3_EQUIVARIANT"
+                ),
+                "q4_ice_complement_preserving_fisher_tangent": "E_ONLY__A1_PLUS_E_WITH_SEPARATE_SCALAR",
+                "q4_ice_generic_broken_background_covariance_map_with_separate_scalar_rank": 6,
+                "q4_ice_broken_background_T2_origin": "VECTOR_MEAN_DYAD_NOT_INDEPENDENT_TENSOR",
+                "q4_ice_unlabelled_complement_T2": "CANCELS_EXACTLY",
+                "q4_ice_complement_symmetrized_conditional_T2": (
+                    "RETENTION_REQUIRES_CONTROL_SIGN_RECORD"
+                ),
+                "q4_ice_broken_background_preparation_and_stabilization": "NOT_DERIVED",
+                "q4_ice_order6_interaction": "COMPACT_HARDCORE_RING_ALREADY_NON_GAUSSIAN",
+                "q4_ice_order8_scope": (
+                    "SUPPLIED_FINITE_SIMPLE_Z4_BIPARTITE_GIRTH_GE6_SUPPORT__DSTAR2_ER0_"
+                    "SYMMETRIC_DETUNING__FIXED_FESHBACH_CONVENTION"
+                ),
+                "q4_ice_order8_endpoint_topologies": (
+                    "SCALAR_DIAGONAL_PLUS_DRESSED_HEXAGON_PLUS_NEW_ALTERNATING_OCTAGON"
+                ),
+                "q4_ice_order8_octagon_coefficient": "J8_EQUALS_429_H8_OVER_16_UD7",
+                "q4_ice_order8_diagonal_potential": "V8_EQUALS_ZERO",
             },
             "kernel_reduction": {
                 "scope": "Q4_TETRAHEDRAL_S4_FIXED_POINT_LOCAL_OR_K_ZERO",
@@ -522,6 +566,17 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 ),
                 "gaussian_maxwell_isolated_helicity2_pole": "ABSENT_IN_DIRECT_COMPOSITE_ROUTE",
                 "finite_group_S4_label_determines_continuum_spin": False,
+                "ice_local_fisher_metric_full_linear_tensor_tangent": "ABSENT_WITH_COMPLEMENT_PRESERVED",
+                "ice_broken_background_full_rank_kind": "BACKGROUND_CONTROL_TO_COVARIANCE_MAP_NOT_SIX_MODE_FISHER_METRIC",
+                "inherited_TT_bare_vertex": (
+                    "FINITE_RANGE_ANALYTIC__TT_PROJECTION_ALLOWED_NOT_EVALUATED"
+                ),
+                "inherited_TT_strict_single_insertion_new_pole": "NOT_ESTABLISHED",
+                "inherited_TT_decisive_sequence": (
+                    "CONNECTED_FOUR_POINT_THEN_AMPUTATION_THEN_CHANNEL_2PI_THEN_"
+                    "BETHE_SALPETER_OR_SPECTRAL_THEN_FINITE_VOLUME_HELICITY_WARD_"
+                    "COMMON_CONE_RESIDUE"
+                ),
             },
             "microscopic_parent_boundary": {
                 "scalar_carrier_transfer_on_supplied_saturated_q4_support": (
@@ -561,6 +616,12 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "ice_ring_response_pole": "FINITE_2J6_NOT_MASSLESS_TENSOR",
                 "direct_gaussian_composite_tensor_route": "EXACT_CONDITIONAL_NO_GO",
                 "next_tensor_route": "INHERITED_NON_GAUSSIAN_TT_KERNEL_OR_DISTINCT_RANK2_CONSTRAINED_PHASE",
+                "ice_T2_fisher_solder_boundary": (
+                    "SECOND_JET_OR_VECTOR_BACKGROUND_ONLY__INDEPENDENT_LINEAR_TENSOR_SOLDER_OPEN"
+                ),
+                "inherited_order8_operator_boundary": (
+                    "EXACT_J8_AND_V8_ZERO__HEXAGON_DRESSING_COEFFICIENTS_TYPED_NOT_ALL_REDUCED"
+                ),
                 "new_interaction_or_second_field_adopted": False,
             },
             "numerical_G": {
@@ -635,7 +696,15 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "thermodynamic_massless_tensor_phase": "OPEN",
                 "compatible_global_ice_completion": "SUPPLIED_NOT_DERIVED",
                 "direct_gaussian_composite_helicity2_route": "CLOSED_NEGATIVE",
-                "inherited_non_gaussian_TT_kernel": "OPEN",
+                "inherited_non_gaussian_TT_kernel": (
+                    "LEADING_H6_INTERACTION_IDENTIFIED__NORMALIZED_CONNECTED_TT_FOUR_POINT_OPEN"
+                ),
+                "normalized_connected_TT_four_point": "OPEN",
+                "nonperturbative_TT_pole_Ward_common_cone_residue": "OPEN",
+                "local_ice_fisher_T2_solder": (
+                    "CLOSED_NEGATIVE_FOR_LOCAL_DIAGONAL_COMPLEMENT_PRESERVING_FAMILIES"
+                ),
+                "independent_even_rank2_collective_variable": "OPEN",
                 "caller_input_scientific_weight": "ZERO",
             },
             "program_authorizations": {
@@ -659,6 +728,10 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "ice_hybrid_tensor_representation_derived": True,
                 "massless_tensor_from_ice_ring_response_derived": False,
                 "gaussian_composite_helicity2_pole_derived": False,
+                "complement_preserving_local_fisher_T2_solder_derived": False,
+                "generic_broken_background_covariance_rank6_with_separate_scalar_derived": True,
+                "order8_inherited_loop_operator_boundary_derived": True,
+                "inherited_protected_tensor_pole_derived": False,
                 "gravity_solver": False,
                 "caller_data_admitted": False,
             },
@@ -684,6 +757,11 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "ice_representation_isomorphism_promotes_physical_metric": False,
                 "finite_ring_response_promotes_massless_tensor": False,
                 "spin1_photon_or_two_photon_continuum_promotes_graviton": False,
+                "second_fisher_jet_promotes_linear_metric_tangent": False,
+                "broken_vector_background_rank_promotes_tensor_mode": False,
+                "control_sign_conditioning_promotes_endogenous_metric_solder": False,
+                "bare_vertex_analyticity_promotes_dressed_1PI_analyticity": False,
+                "strict_single_insertion_boundary_promotes_nonperturbative_no_pole": False,
                 "public_component_dataset_promotes_lineage_estimand": False,
                 "nist_summary_reduction_promotes_independent_G_measurement": False,
             },

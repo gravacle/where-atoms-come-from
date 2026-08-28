@@ -559,14 +559,15 @@ in the certificate is fixed false.
 ## GRAVITY FORMATION THEORY CERTIFICATE
 
 The two zero-argument Gravity Formation Theory methods verify the exact closure
-and audit; six pinned core theorem/audit pairs; fourteen pinned no-laboratory
+and audit; six pinned core theorem/audit pairs; sixteen pinned no-laboratory
 advance pairs; and the adopted clarification chain consisting of its final
 adoption record and seal, the clarification source, and V002. The advance
 custody covers the q4 collective-cone, common-child/refinement,
 diamond-support, carrier-lift boundary, pair-field boundary, finite programmed
 support-solder, programmed Floquet detuning, authenticated link-pair response,
-ice hybrid-tensor and Maxwell pole screens, two public-data passes, and both
-the finite-apparatus and NIST/BIPM \(G\)-readiness results. The methods return a
+ice hybrid-tensor, Maxwell-pole, inherited order-eight TT-kernel, and local
+Fisher-solder screens, two public-data passes, and both the finite-apparatus and
+NIST/BIPM \(G\)-readiness results. The methods return a
 recursively immutable status certificate and accept neither data nor solver
 parameters.
 
@@ -694,8 +695,27 @@ Gaussian-Maxwell infrared fixed point, the oriented one-link channel carries
 the spin-one photon pole and the centered even pair channel carries a
 two-photon continuum plus contacts. Local `S4` tensor counting therefore does
 not yield an isolated helicity-two pole. The direct Gaussian composite shortcut
-is closed; inherited non-Gaussian TT dynamics or a distinct same-parent
-rank-two constrained phase is the next physics target. The consolidated
+is closed.
+
+The local Fisher route has now been exhausted exactly within its lawful scope:
+`F=4 diag(w)-m m^T`; the odd `T2` first derivative vanishes; and the second
+jet is an `S4`, but not `O(3)`, isomorphism. A complement-broken background plus
+an independent scalar can give a rank-six background-control-to-covariance
+map, but its `T2` term is a vector-mean dyad, not an independent tensor mode,
+and unlabelled complement symmetrization cancels it. Nonlocal or noncommuting
+even rank-two variables remain open.
+
+The unchanged compact order-six ice model is already interacting. At the
+declared finite girth-six support and symmetric-detuning boundary, its exact
+order-eight correction consists only of scalar diagonal terms, dressed
+hexagons, and new alternating octagons, with
+`J8=429 h^8/(16 U_d^7)` and `V8=0`. This supplies an allowed finite-range bare
+even-channel vertex but not its normalized TT projection. A strict single
+insertion establishes no new isolated pole; the remaining direct calculation
+is the connected TT four-point function, amputation, channel-2PI kernel,
+nonperturbative spectral/resummation test, and finite-volume helicity, Ward,
+common-cone, and residue gates. A negative result there would leave a distinct
+same-parent constrained rank-two phase as the lawful route. The consolidated
 no-laboratory disposition is recorded in
 [`NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md`](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
 
