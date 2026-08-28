@@ -1,0 +1,114 @@
+{
+  "accepted_G_used_as_input": false,
+  "bare_operator_relative_product_shift": 0.0054287555534302725,
+  "checks": [
+    {
+      "detail": "dipole_norm=3.469447e-17, quadrupole_trace=2.385245e-18, quadrupole_norm=1.807026e-01",
+      "name": "balanced source has zero monopole/dipole derivative and nonzero STF quadrupole derivative",
+      "pass": true
+    },
+    {
+      "detail": "analytic=7.5637152048555514e+00, finite_difference=7.5637152008312114e+00",
+      "name": "point torque is minus the angle derivative of the exact potential",
+      "pass": true
+    },
+    {
+      "detail": "analytic=2.7916745762927631e-01, finite_difference=2.7916745892753170e-01",
+      "name": "source trajectory column is the analytic geometry derivative",
+      "pass": true
+    },
+    {
+      "detail": "analytic=-6.9791864407319073e+00, finite_difference=-6.9791864398816017e+00",
+      "name": "gravitational stiffness is the analytic torsion-angle derivative",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "nonoverlapping uniform-sphere kernel equals the center-mass kernel",
+      "pass": true
+    },
+    {
+      "detail": "minimum endpoint determinant=1.582730e-11",
+      "name": "declared positive-G scan remains inside the static stable quotient",
+      "pass": true
+    },
+    {
+      "detail": "max_abs_difference=3.388545e-21",
+      "name": "Schur-complement response equals the full coupled two-mode solve",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "same-source same-remainder same-data response is exactly zero",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "uncalibrated global source scale is exactly degenerate with G",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "observation and independent calibration covariance are combined once",
+      "pass": true
+    },
+    {
+      "detail": "interval=[7.3115999999999993e-11,7.3240166666666657e-11], truth=7.3185477609181933e-11",
+      "name": "blinded synthetic product lies in the profiled covariance interval",
+      "pass": true
+    },
+    {
+      "detail": "G_interval=[7.3042957042957048e-11,7.3313480146813465e-11]",
+      "name": "independently calibrated source-scale interval propagates to G",
+      "pass": true
+    },
+    {
+      "detail": "relative_error=6.862551e-05",
+      "name": "blinded synthetic product point estimate is accurate",
+      "pass": true
+    },
+    {
+      "detail": "four-real-dof Mahalanobis=1.081333",
+      "name": "held-out configurations agree without refitting G or nuisance",
+      "pass": true
+    },
+    {
+      "detail": "relative_shift=5.428756e-03",
+      "name": "omitting the dressed operator produces a detectable calibration shift",
+      "pass": true
+    }
+  ],
+  "checks_passed": 15,
+  "checks_total": 15,
+  "claim_class": "SYNTHETIC_FORWARD_MODEL_VALIDATION_ONLY",
+  "covariance_linearization_product": 7e-11,
+  "held_out_mahalanobis_four_real_dof": 1.0813328131329758,
+  "lineage_charge_inferred": false,
+  "profiled_nuisance_at_best": [
+    -0.8853829286618217,
+    1.0605338530122246
+  ],
+  "profiled_product_best": 7.31905e-11,
+  "profiled_product_interval_95_grid": [
+    7.311599999999999e-11,
+    7.324016666666666e-11
+  ],
+  "propagated_G_interval_95_grid_SI": [
+    7.304295704295705e-11,
+    7.331348014681347e-11
+  ],
+  "prospective_product_scan_SI": [
+    1e-12,
+    1.5e-10
+  ],
+  "prospective_product_scan_points": 6001,
+  "schema": "WAC_CALIBRATED_FINITE_APPARATUS_G_CROSSCHECK_V001",
+  "scientific_ceiling": "NO_MEASUREMENT_OF_G__NO_LINEAGE_SOURCE__NO_RGRL_EMPIRICAL_PASS__FINITE_APPARATUS_FORWARD_AND_IDENTIFIABILITY_MODEL_ONLY",
+  "source_scale_interval": [
+    0.999,
+    1.001
+  ],
+  "synthetic_product_truth": 7.318547760918193e-11,
+  "synthetic_source_scale": 1.0006,
+  "synthetic_truth_G_SI": 7.314159265358979e-11
+}

@@ -559,11 +559,14 @@ in the certificate is fixed false.
 ## GRAVITY FORMATION THEORY CERTIFICATE
 
 The two zero-argument Gravity Formation Theory methods verify the exact closure
-and audit; six pinned theorem/audit pairs; and the adopted clarification
-chain consisting of its final adoption record and seal, the clarification
-source, and V002. The added theorem pair is the F3 record-front Lorentz-cone
-refinement theorem and its hostile audit. The methods return a recursively
-immutable status certificate and accept neither data nor solver parameters.
+and audit; six pinned core theorem/audit pairs; eight pinned no-laboratory
+advance pairs; and the adopted clarification chain consisting of its final
+adoption record and seal, the clarification source, and V002. The advance
+custody covers the q4 collective-cone, common-child/refinement,
+diamond-support, carrier-lift boundary, pair-field boundary, finite programmed
+support-solder, public-data substitute, and finite-apparatus \(G\) results. The
+methods return a recursively immutable status certificate and accept neither
+data nor solver parameters.
 
 The certificate now makes the adopted distinction explicit. RGRL-C supplies
 full-rank or declared dense-range **off-shell constitutive ancestry** on the
@@ -575,17 +578,80 @@ zero response. `GI21`, the physical
 compatibility/type join between those derivatives, remains open and is not
 supplied by RGRL-C.
 
-The frozen SPAG V001 artifact remains historical, but its local-RGRL-C
-force/common-freefall verdict labels are retired for future claims. Future work
-separates a complete-source-matched discovery lane with a zero physical
-prediction from an independently source-calibrated \(G\) cross-check. Under
-`AFR` and the microscopic equal-depth/equal-\(q_J\)-norm null-step law, the cone
-theorem exactly derives convergence to a smooth local **mathematical** `3+1`
-Lorentz cone and, at the `S4`-symmetric \(J=0\) point, six formal spatial
-cone-metric variations. It does not derive `AFR`, the null-step dynamics,
-physical gluing or volume, common-probe identification, or gravity dynamics. A numerical \(G\) calculation
-requires the full dressed finite-apparatus forward model; bounded remainder
-generally yields an identified interval or set rather than a bare `k=0` ratio.
+The frozen SPAG V001 artifact remains historical, and its local-RGRL-C
+force/common-freefall verdict labels are retired.  The no-laboratory public-data
+substitute has now executed the corrected complete-source-matched Lane A.  None
+of the admitted Page--Geilker, Fuchs, NIST/BIPM, or Panda packets contains the
+randomized same-parent eight-cell lineage intervention; even the deliberately
+generous Page--Geilker proxy has support and rank `2/8`.  Those packets therefore
+do not identify the lineage interaction \(\beta_{TM}\).  The NIST/BIPM summary
+uncertainties give only an optimistic planning envelope of
+`0.000192869--0.000578607 nN m`, not an achieved SPAG limit.  This is an exact
+data-design ceiling, not evidence that a lineage response is zero.
+
+The independently source-calibrated \(G\) lane now has the requested finite-
+apparatus forward model: exact declared extended-source Newtonian torque and
+stiffness kernels, a calibrated two-mode dressed Schur response, single
+derivative ownership, and the exact same-source/remainder/data zero.  A
+nonsingular calibrated row identifies the product \(p=Gs\), while a free global
+source scale obeys \(F(G,s)=F(Gq,s/q)\); an independent
+\(s\in[s_-,s_+]\) calibration converts a product interval to
+\(G\in[p_-/s_+,p_+/s_-]\).  The `15/15` execution is synthetic validation of
+that calculation, not a measurement of \(G\), a record-derived numerical
+constant, or a lineage source law.
+
+The original `AFR` theorem remains one conditional raw-front refinement route.
+A distinct audited collective route now proves the exact finite identity
+\(B_N^\dagger B_N=4I+A_N\), the `A3` root second moment
+\(\sum_{a<b}\alpha_{ab}\alpha_{ab}^{\mathsf T}=16I/3\), the cell covolume
+\(16a_*^3/(3\sqrt3)\), and a refining mathematical affine three-manifold
+atlas.  A prospectively detuned F3-form transfer has the exact Schur sibling
+kernel, and a separately supplied shift-symmetric massless action on that
+support has the smooth infrared principal cone
+\(-\omega^2+c_*^2|k|^2=0\).  The detuned carrier lift, pair-field type lift,
+massless phase, finite-speed clock scaling, common probes, physical volume,
+tensor constraints, stress vertex, and gravity remain open.  A separate
+Clifford stencil theorem supplies an exact prospective first-order Weyl
+candidate on the same `A3` roots; it is not current F3 or gravity.
+
+The two consecutive q4 front cosets also have a newly exact support-shape
+identity: their translation-invariant append-incidence completion is the
+standard diamond net, with `A3`/FCC translations, two cosets, tetrahedral
+degree four, girth six, and exact local exhaustion by deep nonnegative q4
+slabs.  This removes the previously independent diamond-shape premise from the
+existing `d_*=2` F3 calculation.  The later finite programmed support-solder
+binds the deep-interior local edges, where the leading operator has
+\(J_6=63h^6/(8U_d^5)\) and \(V_6=0\).  The raw slab has no global `d_*=2`
+sector, so the published `mu=0` spin-one U(1)-liquid comparator still requires
+a supplied regular completion. Autonomous support selection/stability, an
+unbounded or selected periodic realization, volume-uniform all-orders control,
+visible electromagnetism, tensor gravity, and RGRL-B remain open.
+
+The current-parent boundary is now sharp. On any supplied saturated q4 support,
+the unchanged one-carrier F3 restriction already gives the exact scalar
+incidence transfer \(H_1=C I+\epsilon_\psi I+\lambda_JD-tA\); no new hopping law
+is needed for that restricted result. Current BQ4 counters and append keys do
+not, however, constitute coexisting F3 sites and edges, and the source-off
+parent owns no positive child/parent detuning. Moreover, the full degree-four
+carrier slice and the `d_*=2` diamond-ice slice are exactly disjoint when they
+use the same binary incidence field. Six lawful FPMH records can supply a
+static `S4` pair-register representation, but inherited dynamics conserve every
+pair projector, so all interpair retarded kernels vanish. A physical pair
+solder and noncommuting pair-field dynamics therefore remain real missing
+physics; neither a new interaction nor a second field has been adopted.
+
+The finite site/edge portion of that support solder is nevertheless now closed
+as an exact **programmed preparation**. Given a supplied finite F3 array,
+address maps, q4 edge list, cap, sources, controller schedule, and complete
+ports, existing FPMH/PESC gates reversibly write and hold the q4 support word,
+quarantine every nonedge and guard, and make BS09 propagate on the exact finite
+q4 incidence matrix. This removes a finite hardware-type obstruction and
+materially advances the acoustic route. It does not make one BQ4 front into
+many physical sites, autonomously select or stabilize the graph, derive the
+positive child detuning, or establish a scalable phase. The raw finite q4 slab
+also has an extreme child of degree one, so its global `d_*=2` ice sector is
+exactly empty; only deep-interior local diamond inheritance survives without a
+separately supplied regular boundary completion.
 
 ## VALIDATION
 

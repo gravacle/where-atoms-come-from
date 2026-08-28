@@ -91,20 +91,63 @@ def main() -> int:
     assert certificate["exact_results"]["cone_refinement_is_full_RGRL_or_gravity_dynamics"] is False
     assert certificate["exact_results"]["refined_cone_kind"] == "LOCAL_MATHEMATICAL_3PLUS1_LORENTZ_CONE"
     assert certificate["exact_results"]["six_mode_cone_tangent_scope"] == "J0_S4_SYMMETRIC_POINT"
+    assert (
+        certificate["exact_results"]["q4_common_child_incidence_identity"]
+        == "B_DAGGER_B_EQUALS_4I_PLUS_A_EXACT"
+    )
+    assert (
+        certificate["exact_results"]["q4_affine_refinement"]
+        == "EXACT_MATHEMATICAL_ATLAS_NOT_PHYSICAL_MANIFOLD"
+    )
+    assert (
+        certificate["exact_results"]["q4_acoustic_cone"]
+        == "EXACT_ONLY_FOR_SEPARATELY_SUPPLIED_MASSLESS_ACTION"
+    )
+    assert (
+        certificate["exact_results"]["q4_diamond_u1_inheritance"]
+        == "FINITE_LOCAL_EDGE_BINDING_PROGRAMMABLE__GLOBAL_U1_CONDITIONAL_ON_"
+        "SUPPLIED_REGULAR_COMPLETION_AND_LEADING_ORDER"
+    )
+    microscopic = certificate["microscopic_parent_boundary"]
+    assert (
+        microscopic["scalar_carrier_transfer_on_supplied_saturated_q4_support"]
+        == "EXACT_FROM_UNCHANGED_F3_ONE_CARRIER_RESTRICTION"
+    )
+    assert microscopic["full_hopping_and_d2_ice_same_n_coexistence"] == "EXACTLY_INCOMPATIBLE"
+    assert (
+        microscopic["finite_programmed_site_edge_solder"]
+        == "EXACT_REVERSIBLE_FIXED_ORTHOGONAL_PROGRAM_WITH_SUPPLIED_PHYSICAL_ANTECEDENTS"
+    )
+    assert microscopic["finite_programmed_solder_is_autonomous_support_selection"] is False
+    assert microscopic["interpair_retarded_kernel"] == "EXACTLY_ZERO_UNDER_INHERITED_DYNAMICS"
+    assert microscopic["new_interaction_or_second_field_adopted"] is False
     assert certificate["numerical_G"]["parameter_free_microscopic_record_derivation"] is False
     assert certificate["numerical_G"]["bounded_remainder_output"] == "IDENTIFIED_INTERVAL_OR_SET_NOT_AUTOMATIC_POINT_VALUE"
+    assert certificate["numerical_G"]["calibrated_nonsingular_row_identifies"] == "P_EQUALS_G_TIMES_SOURCE_SCALE"
+    assert certificate["numerical_G"]["synthetic_validation"] == "PASS_15_OF_15_WITH_ARBITRARY_NONEMPIRICAL_G"
     assert certificate["SPAG"]["executed_by_this_surface"] is False
     assert certificate["SPAG"]["full_RGRL_confirmation"] is False
     assert certificate["SPAG"]["old_local_RGRL_C_force_column_labels"] == "RETIRED_FOR_FUTURE_CLAIMS"
     assert certificate["SPAG"]["lane_A"] == "COMPLETE_SOURCE_MATCHED_DISCOVERY_WITH_ZERO_PHYSICAL_PREDICTION"
     assert certificate["SPAG"]["lane_B"] == "INDEPENDENT_SOURCE_CALIBRATED_G_CROSS_CHECK"
+    assert certificate["SPAG"]["public_data_substitute_executed"] is True
+    assert certificate["SPAG"]["public_same_parent_eight_cell_support"] == "ABSENT"
+    assert certificate["SPAG"]["public_beta_TM_identifiable"] is False
     assert certificate["program_authorizations"]["old_SPAG_local_RGRL_C_force_labels_authorized"] is False
-    assert certificate["custody"]["artifact_count"] == 18
+    assert certificate["custody"]["artifact_count"] == 34
     assert len(certificate["custody"]["core_source_pairs"]) == 6
     assert (
         certificate["custody"]["core_source_pairs"][4]["label"]
         == "f3_record_front_lorentz_cone_refinement"
     )
+    advance_custody = certificate["custody"]["advance_source_pairs"]
+    assert len(advance_custody) == 8
+    assert tuple(item["label"] for item in advance_custody) == tuple(
+        label for label, _, _ in gft._ADVANCE_SOURCE_PAIRS
+    )
+    assert advance_custody[3]["label"] == "f3_q4_carrier_lift_derivability_boundary"
+    assert advance_custody[4]["label"] == "q4_pair_field_lift_derivability_boundary"
+    assert advance_custody[5]["label"] == "f3_q4_finite_programmed_support_solder"
     clarification_custody = certificate["custody"]["adopted_clarification_chain"]
     assert len(clarification_custody) == 4
     assert tuple(item["label"] for item in clarification_custody) == tuple(
@@ -139,12 +182,17 @@ def main() -> int:
     with tempfile.TemporaryDirectory(prefix="wac-gft-tamper-") as temporary:
         copied_root = Path(temporary)
         for relative, _ in gft._EXPECTED_ARTIFACTS:
-            shutil.copy2(gft._REPOSITORY_ROOT / relative, copied_root / relative)
+            copied = copied_root / relative
+            copied.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(gft._REPOSITORY_ROOT / relative, copied)
         tamper_targets = (
             gft._CLOSURE_PAIR[0][0],
             gft._ADOPTED_CLARIFICATION_CHAIN[0][1][0],
             gft._ADOPTED_CLARIFICATION_CHAIN[3][1][0],
             gft._CORE_SOURCE_PAIRS[4][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[3][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[4][2][0],
+            gft._ADVANCE_SOURCE_PAIRS[7][1][0],
         )
         for relative in tamper_targets:
             target = copied_root / relative

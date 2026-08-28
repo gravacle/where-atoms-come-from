@@ -16,7 +16,7 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V002"
+SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V003"
 CLAIM_CLASS = (
     "ADOPTED_RGRL_OFFSHELL_ANCESTRY_AND_EXACT_CONDITIONAL_WORKING_THEORY_"
     "CLOSURE_WITH_SEPARATE_ONSHELL_RESPONSE_CEILING"
@@ -135,9 +135,104 @@ _CORE_SOURCE_PAIRS = (
     ),
 )
 
+_ADVANCE_SOURCE_PAIRS = (
+    (
+        "f3_q4_clifford_collective_cone",
+        (
+            "LANE_GRA_FC_F3_Q4_CLIFFORD_COLLECTIVE_CONE_V001/THEOREM.md",
+            "28b6319e3187337da8ebef2212b030ff6e5b9f8168d9844ae172d94f3e0641a6",
+        ),
+        (
+            "LANE_GRA_FC_F3_Q4_CLIFFORD_COLLECTIVE_CONE_V001/REAUDIT.md",
+            "0dc9acedd88f8d0ff22c94df747f7d0a529fc6920dada73ebb3da3b52d1b3789",
+        ),
+    ),
+    (
+        "f3_q4_common_child_acoustic_cone",
+        (
+            "LANE_GRA_FD_F3_Q4_COMMON_CHILD_ACOUSTIC_CONE_V001/THEOREM.md",
+            "60d012766675c12e82dd1731e202a6c0ed48f24e2697f589b63eecc3cb650287",
+        ),
+        (
+            "LANE_GRA_FD_F3_Q4_COMMON_CHILD_ACOUSTIC_CONE_V001/REAUDIT.md",
+            "03ba3b2a5d66a40f54b5c2d9e6fe52535a3fad81e196aed2e3bbe7558fe63510",
+        ),
+    ),
+    (
+        "f3_q4_diamond_ice_support_join",
+        (
+            "LANE_GRA_FE_F3_Q4_DIAMOND_ICE_CARRIER_JOIN_V001/THEOREM.md",
+            "4cc63e3e5853b4250a2a5b78256d41b83b195cf527901819a62a04ef53f8d932",
+        ),
+        (
+            "LANE_GRA_FE_F3_Q4_DIAMOND_ICE_CARRIER_JOIN_V001/INDEPENDENT_AUDIT.md",
+            "9d7ef0419b3022dba0db1add7a46d145ebe4b6ec035f73a9b760e63b978d1b2b",
+        ),
+    ),
+    (
+        "f3_q4_carrier_lift_derivability_boundary",
+        (
+            "LANE_GRA_FF_F3_Q4_CARRIER_LIFT_DERIVABILITY_NO_GO_V001/THEOREM.md",
+            "4c5d476e007f36b20f3e34964607c013ab28ae16bf884c063b7f4ac954178e5a",
+        ),
+        (
+            "LANE_GRA_FF_F3_Q4_CARRIER_LIFT_DERIVABILITY_NO_GO_V001/INDEPENDENT_AUDIT.md",
+            "655e4a0f90953cc71cd6a12175d9b1d243a6f63d8d1c73140dd6ce3a426a90be",
+        ),
+    ),
+    (
+        "q4_pair_field_lift_derivability_boundary",
+        (
+            "LANE_GRA_FG_Q4_PAIR_FIELD_LIFT_DERIVABILITY_V001/THEOREM.md",
+            "fff521ae41e3f8b83a4738ff96a99715e89f90e2d64724786da8a3ed4732e838",
+        ),
+        (
+            "LANE_GRA_FG_Q4_PAIR_FIELD_LIFT_DERIVABILITY_V001/INDEPENDENT_AUDIT.md",
+            "ab2d4a0a7e10186973bc63043e8b31a7bc6f351c92cc24543de9be99706f13ef",
+        ),
+    ),
+    (
+        "f3_q4_finite_programmed_support_solder",
+        (
+            "LANE_GRA_FH_F3_Q4_FINITE_PROGRAMMED_SUPPORT_SOLDER_V001/THEOREM.md",
+            "40f70b76dd1b9ab32c2c47cece371cd9bf97247f18073e283c0a898f50b947e6",
+        ),
+        (
+            "LANE_GRA_FH_F3_Q4_FINITE_PROGRAMMED_SUPPORT_SOLDER_V001/INDEPENDENT_AUDIT.md",
+            "dd512525d8d763fbec27fc7a4fd17b13e7999ec5f3446ee90e031500971dec3e",
+        ),
+    ),
+    (
+        "spag_public_data_substitute",
+        (
+            "LANE_GRA_SPAG_PUBLIC_DATA_SUBSTITUTE_V001/PUBLIC_DATA_SUBSTITUTE.md",
+            "5b8455c062766acd25fb40f82ade6ded47f4b7c8443bcde178ba71cf2e451c4f",
+        ),
+        (
+            "LANE_GRA_SPAG_PUBLIC_DATA_SUBSTITUTE_V001/AUDIT.md",
+            "031af32f79fa93b15e885ba861b29b45500836cdb351b7dfc029070c491233ca",
+        ),
+    ),
+    (
+        "calibrated_finite_apparatus_g_crosscheck",
+        (
+            "LANE_GRA_GC_CALIBRATED_FINITE_APPARATUS_G_CROSSCHECK_V001/THEOREM.md",
+            "cbf0733633ba93756b08dded7486a9be76beb572807693455c761bd36a8f0f5b",
+        ),
+        (
+            "LANE_GRA_GC_CALIBRATED_FINITE_APPARATUS_G_CROSSCHECK_V001/HOSTILE_SELF_AUDIT.md",
+            "d00b69cbc9bf2d352a003502976bf6ccb35af0176b71f70b58b0530b174e1315",
+        ),
+    ),
+)
+
 _EXPECTED_ARTIFACTS = _CLOSURE_PAIR + tuple(
     artifact
     for _, theorem, audit in _CORE_SOURCE_PAIRS
+    for artifact in (theorem, audit)
+) + tuple(
+    artifact
+    for _, theorem, audit in _ADVANCE_SOURCE_PAIRS
     for artifact in (theorem, audit)
 ) + tuple(artifact for _, artifact in _ADOPTED_CLARIFICATION_CHAIN)
 
@@ -296,6 +391,21 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "fixed_finite_additive_direction_set_obstruction": "EXACT",
                 "cone_refinement_is_full_RGRL_or_gravity_dynamics": False,
                 "scalar_gamma_or_count_determines_kernel_curvature_or_G": False,
+                "q4_common_child_incidence_identity": "B_DAGGER_B_EQUALS_4I_PLUS_A_EXACT",
+                "q4_A3_root_second_moment": "SUM_ALPHA_ALPHA_T_EQUALS_16I_OVER_3_EXACT",
+                "q4_A3_cell_covolume": "16_A_STAR_CUBED_OVER_3_SQRT_3_EXACT",
+                "q4_affine_refinement": "EXACT_MATHEMATICAL_ATLAS_NOT_PHYSICAL_MANIFOLD",
+                "q4_acoustic_cone": "EXACT_ONLY_FOR_SEPARATELY_SUPPLIED_MASSLESS_ACTION",
+                "q4_clifford_cone": "EXACT_PROSPECTIVE_STENCIL_NOT_CURRENT_F3",
+                "q4_diamond_support_completion": "EXACT_TRANSLATION_COMPLETION_AND_DEEP_LOCAL_EXHAUSTION",
+                "q4_diamond_u1_inheritance": (
+                    "FINITE_LOCAL_EDGE_BINDING_PROGRAMMABLE__GLOBAL_U1_CONDITIONAL_ON_"
+                    "SUPPLIED_REGULAR_COMPLETION_AND_LEADING_ORDER"
+                ),
+                "q4_finite_programmed_support_solder": (
+                    "EXACT_FOR_SUPPLIED_FINITE_HARDWARE_ADDRESS_EDGE_LIST_CAP_SCHEDULE_AND_PORTS"
+                ),
+                "q4_raw_finite_slab_global_d2_ice": "EXACTLY_EMPTY",
             },
             "kernel_reduction": {
                 "scope": "Q4_TETRAHEDRAL_S4_FIXED_POINT_LOCAL_OR_K_ZERO",
@@ -311,6 +421,25 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "onshell_H_R_nonzero": "NOT_IMPLIED_AND_MAY_VANISH_IN_FULLY_MATCHED_LANE",
                 "GI21_compatibility_type_join": "OPEN",
             },
+            "microscopic_parent_boundary": {
+                "scalar_carrier_transfer_on_supplied_saturated_q4_support": (
+                    "EXACT_FROM_UNCHANGED_F3_ONE_CARRIER_RESTRICTION"
+                ),
+                "q4_label_to_coexisting_F3_site_edge_solder": "NOT_DERIVED_BY_CURRENT_PARENT",
+                "finite_programmed_site_edge_solder": (
+                    "EXACT_REVERSIBLE_FIXED_ORTHOGONAL_PROGRAM_WITH_SUPPLIED_PHYSICAL_ANTECEDENTS"
+                ),
+                "finite_programmed_solder_is_autonomous_support_selection": False,
+                "finite_programmed_solder_is_scalable_thermodynamic_instantiation": False,
+                "positive_child_parent_carrier_detuning": "NOT_OWNED_BY_CURRENT_SOURCE_OFF_PARENT",
+                "full_hopping_and_d2_ice_same_n_coexistence": "EXACTLY_INCOMPATIBLE",
+                "six_static_pair_registers": "EXACT_FINITE_S4_REPRESENTATION",
+                "inherited_pair_projector_dynamics": "CONSERVE_EVERY_PAIR_PROJECTOR",
+                "interpair_retarded_kernel": "EXACTLY_ZERO_UNDER_INHERITED_DYNAMICS",
+                "q4_pair_solder": "OPEN",
+                "noncommuting_pair_field_dynamics": "OPEN",
+                "new_interaction_or_second_field_adopted": False,
+            },
             "numerical_G": {
                 "positive_total_endpoint_coefficient": "CONDITIONAL_RESULT_IN_THE_TYPED_ENDPOINT",
                 "endpoint_matching": "G_EFF_EQUALS_G_END",
@@ -321,6 +450,12 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "calibration_performed_by_this_certificate": False,
                 "parameter_free_microscopic_record_derivation": False,
                 "gamma_or_record_count_calculates_G": False,
+                "finite_apparatus_forward_model": "EXACT_DECLARED_EXTENDED_SOURCE_AND_TWO_MODE_SCHUR_RESPONSE",
+                "same_source_remainder_data_response": "EXACTLY_ZERO",
+                "calibrated_nonsingular_row_identifies": "P_EQUALS_G_TIMES_SOURCE_SCALE",
+                "free_global_source_scale_degeneracy": "F_G_S_EQUALS_F_GQ_S_OVER_Q",
+                "independent_source_interval_maps_to_G_interval": "G_IN_P_MINUS_OVER_S_PLUS_TO_P_PLUS_OVER_S_MINUS",
+                "synthetic_validation": "PASS_15_OF_15_WITH_ARBITRARY_NONEMPIRICAL_G",
             },
             "SPAG": {
                 "status": "HISTORICAL_AUDITED_PROTOCOL_SUPERSEDED_FOR_FUTURE_ONSHELL_USE",
@@ -336,6 +471,13 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "full_RGRL_confirmation": False,
                 "executed_by_this_surface": False,
                 "confirmatory_requirement": "NEW_HASHED_ACQUISITION_DISJOINT_RUN_B_AND_ALL_FROZEN_GATES",
+                "public_data_substitute_executed": True,
+                "public_packets_admitted": ("PAGE_GEILKER", "FUCHS", "NIST_BIPM_2026", "PANDA_HOLDOUT_PRESERVED"),
+                "public_same_parent_eight_cell_support": "ABSENT",
+                "public_beta_TM_identifiable": False,
+                "page_geilker_generous_proxy_rank": "2_OF_8",
+                "nist_bipm_planning_envelope_nN_m": "0.00019286904345467502_TO_0.000578607130364025",
+                "public_result_is_lineage_null": False,
             },
             "scientific_status": {
                 "nature_obeys_RGRL": "NOT_ESTABLISHED_BY_THIS_CERTIFICATE",
@@ -348,6 +490,10 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "AFR_and_null_step_physical_instantiation": "OPEN",
                 "GI21_compatibility_type_join": "OPEN",
                 "lineage_source_functional": "OPEN",
+                "public_same_parent_lineage_estimand": "NOT_IDENTIFIED_IN_ADMITTED_DATA",
+                "finite_apparatus_G_measurement": "NOT_PERFORMED",
+                "autonomous_q4_support_selection": "OPEN",
+                "q4_pair_field_lift": "OPEN",
                 "caller_input_scientific_weight": "ZERO",
             },
             "program_authorizations": {
@@ -361,6 +507,9 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "old_SPAG_local_RGRL_C_force_labels_authorized": False,
                 "full_RGRL_experimentally_closed": False,
                 "numerical_G_derived_from_records": False,
+                "public_data_lineage_null_authorized": False,
+                "finite_apparatus_G_measurement_authorized": False,
+                "q4_support_or_pair_lift_claimed_derived": False,
                 "gravity_solver": False,
                 "caller_data_admitted": False,
             },
@@ -375,6 +524,12 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "custody_promotes_physical_evidence": False,
                 "conditional_closure_promotes_unconditional_actual_world_theorem": False,
                 "S4_symmetry_promotes_compatible_O3": False,
+                "mathematical_q4_refinement_promotes_physical_spacetime": False,
+                "supplied_massless_action_promotes_current_F3_massless_phase": False,
+                "q4_diamond_shape_promotes_autonomous_support_or_gravity": False,
+                "static_pair_register_promotes_propagating_pair_field": False,
+                "public_data_design_ceiling_promotes_empirical_null": False,
+                "synthetic_finite_apparatus_G_fit_promotes_measurement": False,
             },
             "custody": {
                 "verification": "TWO_PASS_EXACT_SHA256_WITH_SYMLINK_REFUSAL",
@@ -389,6 +544,10 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "core_source_pairs": tuple(
                     _pair_certificate(custody, label, theorem, audit)
                     for label, theorem, audit in _CORE_SOURCE_PAIRS
+                ),
+                "advance_source_pairs": tuple(
+                    _pair_certificate(custody, label, theorem, audit)
+                    for label, theorem, audit in _ADVANCE_SOURCE_PAIRS
                 ),
                 "adopted_clarification_chain": tuple(
                     _artifact_certificate(custody, label, artifact)
