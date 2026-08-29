@@ -6,6 +6,28 @@
 acquisition. This is a status synthesis, not an additional postulate or proof
 source.
 
+## 2026-08-29 route correction
+
+The later G2 protected-particle ladder is no longer load bearing.  Independent
+review found that its transferred GI no-binding conclusion is invalid, and
+the repository's earlier induced-action theorem already proves that a
+separate spin-two premise is unnecessary once a common metric, complete
+covariant response, positive Ricci coefficient, and full variational closure
+are earned.  The authoritative continuation is now
+`GRAVITY_RECORD_FIRST_DIRECT_PROOF_PLAN_V001.md`:
+
+\[
+ \text{record memory}\to\text{metric/curvature}
+ \to\text{complete conserved response}
+ \to\sqrt{-g}R\to\text{Einstein/Newton gravity}.
+\]
+
+The Phase A tensor-source calculations remain useful as polarization and
+effective-action input.  They are not a metric perturbation or a graviton.
+The B2--B4 temporal/current/contact work is restored to the critical path.
+Any contrary G2 language later in this historical status document is
+superseded by this addendum.
+
 ## Result
 
 The no-laboratory program has materially advanced all three requested tracks.

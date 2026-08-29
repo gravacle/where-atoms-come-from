@@ -1,5 +1,13 @@
 # Gravity Formation direct-shortcut proof plan
 
+> **Supersession note (2026-08-29).** This document records a sufficient
+> particle-first route through a protected massless helicity-two response. It
+> is no longer the load-bearing Gravity Formation plan. The authoritative
+> route is `GRAVITY_RECORD_FIRST_DIRECT_PROOF_PLAN_V001.md`, which derives
+> geometry, conserved response, Einstein--Hilbert stiffness, and the
+> Newton/Einstein limit without requiring a microscopic or composite graviton.
+> Results from this route remain usable only within their proved ceilings.
+
 **Version:** V001  
 **Date:** 2026-08-28  
 **Scope:** no-laboratory theoretical and computational closure  

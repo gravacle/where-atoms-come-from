@@ -42,9 +42,13 @@ def main() -> int:
     certificate = theory.certificate()
     assert theory.closure_sha256 == gft._CLOSURE_PAIR[0][1]
     assert theory.audit_sha256 == gft._CLOSURE_PAIR[1][1]
-    assert gft.SCHEMA == "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V013"
+    assert gft.SCHEMA == "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V014"
     assert certificate["schema"] == gft.SCHEMA
     assert certificate["claim_class"] == gft.CLAIM_CLASS
+    assert certificate["claim_class"] == (
+        "ADOPTED_RGRL_RECORD_FIRST_NO_GRAVITON_PREMISE_EXACT_AXIOMATIC_WORKING_THEORY_"
+        "CLOSURE_WITH_GUARDED_OBSERVED_G_ENDPOINT"
+    )
     assert (
         certificate["rgrl"]["status"]
         == "ADOPTED_WORKING_RECORD_GEOMETRY_REALIZATION_POSTULATE"
@@ -74,9 +78,68 @@ def main() -> int:
         certificate["program_authorizations"]["exact_conditional_working_theory_closure"]
         is True
     )
+    closure = certificate["conditional_closure"]
+    assert closure["closure_id"] == "GFT-RF-WORKING-CLOSURE-V001"
+    assert closure["short_theorem_label"] == "GFT-WC"
+    assert closure["status"] == "EXACT_AXIOMATIC_WORKING_THEORY_CLOSURE"
+    assert closure["premises"] == (
+        "WTC_H1_ADOPTED_RGRL_A_THROUGH_C",
+        "WTC_H2_QUALIFIED_OBSERVABLE_MEMORY_REALIZATION",
+        "WTC_H3_COMPLETE_SAME_METRIC_LEADING_RESPONSE_CLASS",
+        "WTC_H4_COMPLETE_WARD_STATIONARITY_AND_CONSTRAINT_CUSTODY",
+        "WTC_H5_GUARDED_ACTUAL_WORLD_ENDPOINT_MATCHING",
+    )
+    assert closure["common_physical_metric"] == (
+        "EXACT_UNDER_WTC_H3_SAME_METRIC_IDENTIFICATION_NOT_RGRL_A_ALONE"
+    )
+    assert closure["all_ten_metric_equations"] == (
+        "EXACT_UNDER_EX_WITH_COMPLETE_WARD_AND_INITIAL_CONSTRAINT_CUSTODY"
+    )
+    assert closure["graviton_premise_required"] is False
+    assert closure["microscopic_F3_derivation_required_for_working_closure"] is False
+    assert (
+        closure["observed_G_endpoint"]
+        == "GUARDED_CALIBRATION_OF_POSITIVE_TOTAL_LEADING_RICCI_COEFFICIENT"
+    )
+    assert certificate["program_authorizations"]["record_first_no_graviton_premise_working_closure"] is True
+    assert certificate["program_authorizations"]["guarded_observed_G_total_coefficient_matching_derived"] is True
+    assert certificate["program_authorizations"]["observed_G_value_loaded"] is False
+    assert certificate["program_authorizations"]["parameter_free_G_from_records_derived"] is False
+    assert certificate["program_authorizations"]["strict_EH_coefficient_origin_derived"] is False
+    assert certificate["program_authorizations"]["physical_metric_pair_solder_derived_from_microscopic_F3"] is False
     assert certificate["program_authorizations"]["empirical_RGRL_confirmation"] is False
     assert certificate["program_authorizations"]["gravity_solver"] is False
     assert certificate["program_authorizations"]["caller_data_admitted"] is False
+    assert certificate["exact_results"]["observable_pair_memory_coordinate"] == (
+        "C_EQUALS_EXPECTATION_Y__NATURAL_J_REMAINS_CONTROL"
+    )
+    assert certificate["exact_results"]["record_first_working_gravity_theory"] == (
+        "CLOSED_AS_EXACT_IMPLICATION_INSIDE_EXPLICIT_WTC_H1_THROUGH_H5"
+    )
+    assert certificate["exact_results"]["pair_memory_metric_tangent"] == (
+        "AT_SYMMETRIC_LOCALIZATION_POINT__SIX_TETRAHEDRAL_PAIR_COLUMNS_SPAN_SYM2_RANK6"
+    )
+    assert certificate["exact_results"]["pair_memory_intrinsic_curvature_symbol"] == (
+        "FLAT_REFERENCE_OR_LOCALLY_FROZEN_PRINCIPAL_SYMBOL_AT_NONZERO_K__"
+        "RANK3_WITH_PURE_GRADIENT_KERNEL3__TRACE1_PLUS_TIDAL2_QUOTIENT"
+    )
+    assert certificate["exact_results"]["pair_memory_source_reciprocity"] == (
+        "EXACT_FINITE_FULL_SUPPORT_COMMUTING_PAIR_SECTOR_UNDER_GK_S1_THROUGH_GK_S5_"
+        "AND_COMPLETE_DPAR_WHOLE_PAIR_SOURCE__RANK6_IFF_COMPLETE_WHOLE_PAIR_TANGENT_RANK6"
+    )
+    assert certificate["exact_results"]["bare_flip_recoil_embedding_Ward_route"] == (
+        "CLOSED_NEGATIVE_FOR_DIRECT_SCALAR_WEIGHTED_GD_PROJECTION_AT_DECLARED_FZ_EMBEDDING"
+    )
+    assert certificate["exact_results"]["leading_EH_classification_requires_graviton"] is False
+    assert certificate["exact_results"]["observed_G_matching"] == (
+        "C_R_EFFECTIVE_EQUALS_1_OVER_16PI_G_OBS_AFTER_LEADING_REMAINDER_CONTROL"
+    )
+    assert certificate["exact_results"]["reciprocal_macroscopic_backreaction"] == (
+        "COMPLETE_STRESS_CHANGES_THE_SAME_METRIC_THAT_CONTROLS_LATER_MATTER_EM_CLOCK_PROBE_AND_RECORD_PROPAGATION"
+    )
+    assert certificate["exact_results"]["physical_volume_and_common_probe_identification"] == (
+        "SUPPLIED_BY_WTC_H1_H3_WORKING_PREMISES__OPEN_FROM_MICROSCOPIC_F3"
+    )
     assert len(certificate["kernel_reduction"]["S4_response_form_factors"]) == 3
     assert len(certificate["kernel_reduction"]["compatible_O3_reduction"]) == 2
     assert certificate["kernel_reduction"]["nonzero_spatial_momentum_classification"] == "OPEN"
@@ -630,6 +693,20 @@ def main() -> int:
         == "FINITE_COMPOSITE_CUMULANT_AND_SPECTRUM_COMPUTED__"
         "CONNECTED_FOUR_ONE_LINK_CHANNEL_2PI_OPEN"
     )
+    assert certificate["scientific_status"]["gravity_formation_working_theory"] == (
+        "CLOSED_AXIOMATICALLY_UNDER_EXPLICIT_WTC_H1_THROUGH_H5"
+    )
+    assert certificate["scientific_status"]["WTC_response_packet"] == (
+        "EXPLICIT_CONDITIONAL_INPUT_NOT_ESTABLISHED_BY_THIS_CERTIFICATE"
+    )
+    assert certificate["scientific_status"]["observed_G_endpoint_matching"] == (
+        "CLOSED_AS_GUARDED_CALIBRATION_OF_TOTAL_LEADING_COEFFICIENT"
+    )
+    assert certificate["scientific_status"]["numerical_G_from_record_variables"] == "OPEN_NOT_DERIVED"
+    assert certificate["scientific_status"]["strict_EH_coefficient_origin"] == "OPEN_NOT_DERIVED"
+    assert certificate["scientific_status"]["physical_metric_pair_solder"] == (
+        "SUPPLIED_BY_WTC_H2_H3_WORKING_PREMISES__OPEN_FROM_MICROSCOPIC_F3"
+    )
     assert certificate["scientific_status"]["normalized_connected_TT_four_point"] == (
         "OPEN__FO_COMPUTED_FOUR_Q_COMPOSITE_NOT_THIS_OBJECT"
     )
@@ -649,8 +726,8 @@ def main() -> int:
         "NATIVE_M1_H6_SAMPLED_RESPONSE_6_TO_6_TO_6_TO_6_TO_6"
     )
     assert certificate["scientific_status"]["next_no_lab_gravity_calculation"] == (
-        "ALL_GL_NATIVE_H6_LEDGER__THEN_MATCHED_MASSLESS_HELICITY2_POLE__"
-        "THEN_SOFT_UNIVERSALITY__THEN_EINSTEIN_SELF_COUPLING"
+        "MICROSCOPIC_F3_DERIVATION_OF_RGRLB_VIA_COMPLETE_TRANSLATION_OWNING_"
+        "MAXWELL_TERMINAL_RESERVOIR_SUPPORT_PARENT__THEN_CTP_WARD_AND_SCALING"
     )
     assert certificate["scientific_status"]["phase_A_candidate_status"] == (
         "FULLY_SEALED_FY_NATIVE_RESPONSE_AND_GC_FINITE_FAMILY_KINEMATICS"
@@ -659,7 +736,10 @@ def main() -> int:
         "SEALED_B1_TOTAL_MOMENTUM_OWNERSHIP_ON_AUXILIARY_TORUS"
     )
     assert certificate["scientific_status"]["direct_shortcut_G2_status"] == (
-        "V005_OBSERVABLE_CONTRACT_SEALED__MATCHED_MASSLESS_HELICITY2_PHYSICS_OPEN"
+        "V005_OBSERVABLE_CONTRACT_SEALED__HISTORICAL_PARTICLE_ROUTE_NON_LOAD_BEARING"
+    )
+    assert certificate["scientific_status"]["direct_shortcut_G3_status"] == (
+        "HISTORICAL_PARTICLE_ROUTE_NOT_CURRENT__POSITIVE_WORKING_CLOSURE_DOES_NOT_REQUIRE_G2"
     )
     assert certificate["scientific_status"]["hust_public_G_forward"] == (
         "PROCESSED_DUAL_CHANNEL_CLOSED__FULL_GC16_NOT_READY__NO_NEW_G"
@@ -721,14 +801,19 @@ def main() -> int:
     assert certificate["nonpromotion"]["HUST_processed_comparator_remainder_promotes_independent_source_ownership"] is False
     assert certificate["nonpromotion"]["HUST_bounded_no_root_search_promotes_global_data_nonexistence"] is False
     assert certificate["nonpromotion"]["clock_K5_compatibility_promotes_independent_GR_or_common_metric"] is False
-    assert certificate["custody"]["artifact_count"] == 102
+    assert certificate["nonpromotion"]["working_closure_promotes_microscopic_F3_derivation"] is False
+    assert certificate["nonpromotion"]["observed_G_matching_promotes_parameter_free_G_derivation"] is False
+    assert certificate["nonpromotion"]["observed_G_matching_promotes_strict_EH_coefficient_origin"] is False
+    assert certificate["nonpromotion"]["EH_metric_classification_requires_or_promotes_graviton"] is False
+    assert certificate["nonpromotion"]["PMICS_or_PMSR_alone_promotes_gravity"] is False
+    assert certificate["custody"]["artifact_count"] == 108
     assert len(certificate["custody"]["core_source_pairs"]) == 6
     assert (
         certificate["custody"]["core_source_pairs"][4]["label"]
         == "f3_record_front_lorentz_cone_refinement"
     )
     advance_custody = certificate["custody"]["advance_source_pairs"]
-    assert len(advance_custody) == 42
+    assert len(advance_custody) == 45
     assert tuple(item["label"] for item in advance_custody) == tuple(
         label for label, _, _ in gft._ADVANCE_SOURCE_PAIRS
     )
@@ -740,7 +825,7 @@ def main() -> int:
     assert advance_custody[8]["label"] == "f3_q4_ice_hybrid_tensor_response"
     assert advance_custody[9]["label"] == "f3_q4_maxwell_composite_pole_screen"
     assert advance_custody[10]["label"] == "f3_q4_inherited_tt_kernel_boundary"
-    assert tuple(item["label"] for item in advance_custody[-8:]) == (
+    assert tuple(item["label"] for item in advance_custody[-11:]) == (
         "f3_q4_native_support_m1_complete_h6_response",
         "f3_q4_m1_continuity_contact_ward_boundary",
         "f3_q4_fu09b_encoded_charge_current_lift",
@@ -749,6 +834,9 @@ def main() -> int:
         "f3_q4_translation_owning_recoil_parent",
         "f3_q4_public_spectral_payload_search",
         "f3_q4_canonical_ir_ancestry_observable_contract",
+        "q4_pair_memory_intrinsic_curvature_symbol",
+        "q4_pair_memory_source_reciprocity",
+        "f3_q4_flip_recoil_embedding_ward_obstruction",
     )
     assert advance_custody[10]["source_sha256"] == (
         "78f0687c9f597c96d235224dad45c204d12d7e6c973c270e3305a901efc75b25"
@@ -834,6 +922,18 @@ def main() -> int:
     assert advance_custody[33]["audit_sha256"] == (
         "57ccae45274bdb6f118e8bf98c4be1b2cea279658f96ad004380b19383a4dac8"
     )
+    assert advance_custody[42]["label"] == "q4_pair_memory_intrinsic_curvature_symbol"
+    assert advance_custody[42]["source_sha256"] == (
+        "47f155990137f7467be00e9f7d2cd80633ad35df0639583b72b3262ec44f54a5"
+    )
+    assert advance_custody[43]["label"] == "q4_pair_memory_source_reciprocity"
+    assert advance_custody[43]["audit_sha256"] == (
+        "7ae0ea79477a853e11c993a2f7148c91a8b1b2b98dd8d5283805ba9ab0394370"
+    )
+    assert advance_custody[44]["label"] == "f3_q4_flip_recoil_embedding_ward_obstruction"
+    assert advance_custody[44]["source_sha256"] == (
+        "0aa68588d224052dc6bc2b8321156c6feca516918e074bb17ae328e9bb9335df"
+    )
     clarification_custody = certificate["custody"]["adopted_clarification_chain"]
     assert len(clarification_custody) == 4
     assert tuple(item["label"] for item in clarification_custody) == tuple(
@@ -871,8 +971,9 @@ def main() -> int:
     assert "fE=1-x^2-(37/12)x^4-(16247/900)x^6" in gravity_role
     assert "native A/B vertex" in gravity_role and "Q(zeta_240)" in gravity_role
     assert "FZ proves the selected projected incidence charge is identically zero" in gravity_role
-    assert "GD closes the direct route's G1 total-momentum gate" in gravity_role
-    assert "same-ancestry canonically normalized massless helicity-two pole" in gravity_role
+    assert "GD closes the historical direct route's G1 total-momentum gate" in gravity_role
+    assert "No graviton premise is required" in gravity_role
+    assert "microscopic derivation of RGRL-B" in gravity_role
     assert "HUST-2018" in gravity_role and "full GC16 or a new G" in gravity_role
     assert "three conditional AAF quotients" in gravity_role
     assert "no physical G point or interval is public" in gravity_role
@@ -930,6 +1031,12 @@ def main() -> int:
             gft._ADVANCE_SOURCE_PAIRS[32][2][0],
             gft._ADVANCE_SOURCE_PAIRS[33][1][0],
             gft._ADVANCE_SOURCE_PAIRS[33][2][0],
+            gft._ADVANCE_SOURCE_PAIRS[42][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[42][2][0],
+            gft._ADVANCE_SOURCE_PAIRS[43][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[43][2][0],
+            gft._ADVANCE_SOURCE_PAIRS[44][1][0],
+            gft._ADVANCE_SOURCE_PAIRS[44][2][0],
         )
         for relative in tamper_targets:
             target = copied_root / relative

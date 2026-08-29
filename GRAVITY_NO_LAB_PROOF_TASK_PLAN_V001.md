@@ -5,12 +5,13 @@
 **Scope:** work that can be performed with theory, exact computation, published
 simulations, and public data; no new laboratory access assumed
 
-**Supersession note:**
-[`GRAVITY_DIRECT_SHORTCUT_PROOF_PLAN_V001.md`](GRAVITY_DIRECT_SHORTCUT_PROOF_PLAN_V001.md)
-is the authoritative load-bearing route to Gravity Formation closure.  The
-full B2--B4 stress/contact sequence and broader D sequence below remain useful
-fallbacks and corroboration, but they are not prerequisites if the direct
-same-ancestry soft-spin-two route closes.
+**Route correction (2026-08-29):**
+[`GRAVITY_RECORD_FIRST_DIRECT_PROOF_PLAN_V001.md`](GRAVITY_RECORD_FIRST_DIRECT_PROOF_PLAN_V001.md)
+is now the authoritative load-bearing route to Gravity Formation closure.
+The full B2--B4 stress/contact sequence and the induced-action D sequence are
+again on the critical path.  The former protected-spin-two shortcut is an
+optional downstream consistency route, not a prerequisite and not a decision
+test for record-first Gravity Formation.
 
 ## 1. Closure target
 
@@ -20,18 +21,19 @@ The target is not the vague statement that the existing finite response
 \[
 \text{record formation}
 \longrightarrow
-\text{native tensor source}
+\text{record-conditioned metric and intrinsic curvature}
 \longrightarrow
 \text{conserved stress/current packet}
 \longrightarrow
-\text{protected massless TT response on a common cone}
+\text{positive common Einstein--Hilbert stiffness}
 \longrightarrow
-\text{universal stress coupling and back-reaction}.
+\text{universal stress coupling, Newtonian identity, and back-reaction}.
 \]
 
 The program has **not reached Gravity Formation Theory closure** merely by
-constructing a tensor source, a Ward identity, or a massless TT mode.  Those
-are necessary gates.  Closure requires the same derived field to act as
+constructing a tensor source, a Ward identity, or a massless TT mode.  The
+last is not a prerequisite on the active induced-action route.  Closure
+requires the same derived geometry to act as
 gravity: it must couple universally to complete stress, generate causal
 long-range back-reaction, recover the Newtonian/weak-field Einstein limit,
 and exhibit the claimed record-formation ancestry.  No earlier stopping point

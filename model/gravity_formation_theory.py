@@ -1,9 +1,10 @@
-"""Zero-input URM certificate for the closed working Gravity Formation Theory.
+"""Zero-input URM certificate for the record-first working Gravity Formation Theory.
 
 This surface verifies a narrow set of pinned source, adoption, seal, and audit
 bytes and reports their exact claim ceilings, including the adopted
-off-shell/on-shell clarification.  It accepts no observations, parameters, or
-caller-selected roots; it is not a gravity solver, an RGRL experiment, or a
+off-shell/on-shell clarification and guarded observed-G endpoint.  It accepts
+no observations, parameters, or caller-selected roots; it is not a gravity
+solver, an RGRL experiment, a microscopic F3 derivation, or a parameter-free
 numerical-G calculation.
 """
 
@@ -16,22 +17,22 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V013"
+SCHEMA = "WAC_GRAVITY_FORMATION_THEORY_CERTIFICATE_V014"
 CLAIM_CLASS = (
-    "ADOPTED_RGRL_OFFSHELL_ANCESTRY_AND_EXACT_CONDITIONAL_WORKING_THEORY_"
-    "CLOSURE_WITH_SEPARATE_ONSHELL_RESPONSE_CEILING"
+    "ADOPTED_RGRL_RECORD_FIRST_NO_GRAVITON_PREMISE_EXACT_AXIOMATIC_WORKING_THEORY_"
+    "CLOSURE_WITH_GUARDED_OBSERVED_G_ENDPOINT"
 )
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 
 _CLOSURE_PAIR = (
     (
-        "GRAVITY_FORMATION_THEORY_CLOSURE_V001.md",
-        "63c37c85442fa96739591a1380a41ee29a9f6f66a6ca0afd5b3470d22fdce028",
+        "GRAVITY_RECORD_FIRST_WORKING_THEORY_CLOSURE_V001.md",
+        "cf9229586268f054b473b1641085ebafc3bca01fa0691a191cbda923ae1fa7f2",
     ),
     (
-        "GRAVITY_FORMATION_THEORY_CLOSURE_V001.AUDIT.md",
-        "afb3602c07ca4c15e99d3f1d18432d11629f05184b207d4dc09336ef437657c2",
+        "GRAVITY_RECORD_FIRST_WORKING_THEORY_CLOSURE_V001.AUDIT.md",
+        "9c5ac602afb18057e178670f31763e34cc012d31b4c2145db14fe1295240f6fa",
     ),
 )
 
@@ -598,6 +599,39 @@ _ADVANCE_SOURCE_PAIRS = (
             "63fdc94ba5e726f6b2bccccd2c85d9481ad93e66b99b1e8e0f8c68ced3f06025",
         ),
     ),
+    (
+        "q4_pair_memory_intrinsic_curvature_symbol",
+        (
+            "LANE_CROSS_RFT_GRA_GJ_Q4_PAIR_MEMORY_INTRINSIC_CURVATURE_SYMBOL_V001/THEOREM.md",
+            "47f155990137f7467be00e9f7d2cd80633ad35df0639583b72b3262ec44f54a5",
+        ),
+        (
+            "LANE_CROSS_RFT_GRA_GJ_Q4_PAIR_MEMORY_INTRINSIC_CURVATURE_SYMBOL_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "86f1925ca8b4ab6cecb259d9a7d34fe680896144bb7288e1fd2e1e47b56a2402",
+        ),
+    ),
+    (
+        "q4_pair_memory_source_reciprocity",
+        (
+            "LANE_CROSS_RFT_GRA_GK_Q4_PAIR_MEMORY_SOURCE_RECIPROCITY_V001/THEOREM.md",
+            "9d79e42d128dd3bae72adc12c26aa27d4e4102bfec917a43d1d6c6688ea49ec7",
+        ),
+        (
+            "LANE_CROSS_RFT_GRA_GK_Q4_PAIR_MEMORY_SOURCE_RECIPROCITY_V001/INDEPENDENT_HOSTILE_AUDIT/INDEPENDENT_HOSTILE_AUDIT.md",
+            "7ae0ea79477a853e11c993a2f7148c91a8b1b2b98dd8d5283805ba9ab0394370",
+        ),
+    ),
+    (
+        "f3_q4_flip_recoil_embedding_ward_obstruction",
+        (
+            "LANE_GRA_GJ_F3_Q4_FLIP_RECOIL_EMBEDDING_WARD_OBSTRUCTION_V001/THEOREM.md",
+            "0aa68588d224052dc6bc2b8321156c6feca516918e074bb17ae328e9bb9335df",
+        ),
+        (
+            "LANE_GRA_GJ_F3_Q4_FLIP_RECOIL_EMBEDDING_WARD_OBSTRUCTION_V001/INDEPENDENT_HOSTILE_AUDIT.md",
+            "7013189221f8101d0f6db1022932eb574fbb1af1f4d53e532619f029891753a2",
+        ),
+    ),
 )
 
 _EXPECTED_ARTIFACTS = _CLOSURE_PAIR + tuple(
@@ -738,30 +772,62 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 ),
             },
             "conditional_closure": {
-                "closure_id": "GFT-CLOSURE-V001",
-                "status": "EXACT_TRANSITIVE_CONDITIONAL_SYNTHESIS",
+                "closure_id": "GFT-RF-WORKING-CLOSURE-V001",
+                "short_theorem_label": "GFT-WC",
+                "status": "EXACT_AXIOMATIC_WORKING_THEORY_CLOSURE",
                 "premises": (
-                    "AURFT_UDCL",
-                    "ADOPTED_RGRL_A_THROUGH_C",
-                    "TYPED_HEALTHY_SAME_PARENT_EIR_1_THROUGH_6",
+                    "WTC_H1_ADOPTED_RGRL_A_THROUGH_C",
+                    "WTC_H2_QUALIFIED_OBSERVABLE_MEMORY_REALIZATION",
+                    "WTC_H3_COMPLETE_SAME_METRIC_LEADING_RESPONSE_CLASS",
+                    "WTC_H4_COMPLETE_WARD_STATIONARITY_AND_CONSTRAINT_CUSTODY",
+                    "WTC_H5_GUARDED_ACTUAL_WORLD_ENDPOINT_MATCHING",
                 ),
                 "scope": "DECLARED_CONNECTED_INFRARED_DOMAIN",
-                "common_physical_metric": "EXACT_CONDITIONAL_ON_EIR_1_NOT_RGRL_ALONE",
-                "leading_nonlinear_Einstein_response": "EXACT_CONDITIONAL_ON_EIR_1_THROUGH_6_IN_DECLARED_LOCAL_METRIC_ONLY_CLASS",
+                "common_physical_metric": "EXACT_UNDER_WTC_H3_SAME_METRIC_IDENTIFICATION_NOT_RGRL_A_ALONE",
+                "leading_nonlinear_Einstein_response": "EXACT_UNDER_WTC_H3_H4_IN_DECLARED_LOCAL_METRIC_ONLY_TWO_DERIVATIVE_CLASS",
+                "all_ten_metric_equations": "EXACT_UNDER_EX_WITH_COMPLETE_WARD_AND_INITIAL_CONSTRAINT_CUSTODY",
+                "observed_G_endpoint": "GUARDED_CALIBRATION_OF_POSITIVE_TOTAL_LEADING_RICCI_COEFFICIENT",
+                "graviton_premise_required": False,
+                "microscopic_F3_derivation_required_for_working_closure": False,
             },
             "exact_results": {
+                "record_first_working_gravity_theory": (
+                    "CLOSED_AS_EXACT_IMPLICATION_INSIDE_EXPLICIT_WTC_H1_THROUGH_H5"
+                ),
+                "observable_pair_memory_coordinate": "C_EQUALS_EXPECTATION_Y__NATURAL_J_REMAINS_CONTROL",
+                "pair_memory_metric_tangent": (
+                    "AT_SYMMETRIC_LOCALIZATION_POINT__SIX_TETRAHEDRAL_PAIR_COLUMNS_SPAN_SYM2_RANK6"
+                ),
+                "pair_memory_intrinsic_curvature_symbol": (
+                    "FLAT_REFERENCE_OR_LOCALLY_FROZEN_PRINCIPAL_SYMBOL_AT_NONZERO_K__"
+                    "RANK3_WITH_PURE_GRADIENT_KERNEL3__TRACE1_PLUS_TIDAL2_QUOTIENT"
+                ),
+                "pair_memory_source_reciprocity": (
+                    "EXACT_FINITE_FULL_SUPPORT_COMMUTING_PAIR_SECTOR_UNDER_GK_S1_THROUGH_GK_S5_"
+                    "AND_COMPLETE_DPAR_WHOLE_PAIR_SOURCE__RANK6_IFF_COMPLETE_WHOLE_PAIR_TANGENT_RANK6"
+                ),
+                "bare_flip_recoil_embedding_Ward_route": (
+                    "CLOSED_NEGATIVE_FOR_DIRECT_SCALAR_WEIGHTED_GD_PROJECTION_AT_DECLARED_FZ_EMBEDDING"
+                ),
+                "leading_EH_classification_requires_graviton": False,
+                "observed_G_matching": "C_R_EFFECTIVE_EQUALS_1_OVER_16PI_G_OBS_AFTER_LEADING_REMAINDER_CONTROL",
+                "reciprocal_macroscopic_backreaction": (
+                    "COMPLETE_STRESS_CHANGES_THE_SAME_METRIC_THAT_CONTROLS_LATER_MATTER_EM_CLOCK_PROBE_AND_RECORD_PROPAGATION"
+                ),
                 "first_record_gamma_seed": "EXACT_FOR_A_QUALIFIED_POSITIVE_MARGIN_RECORD",
                 "causal_volume_metric": "EXACT_INSIDE_ADOPTED_RGRL_A",
                 "six_mode_lineage_ancestry": "EXACT_INSIDE_ADOPTED_RGRL_B_C",
                 "six_mode_ancestry_kind": "OFFSHELL_FORMAL_SPATIAL_METRIC_TANGENT",
-                "common_physical_metric": "EXACT_CONDITIONAL_ON_EIR_1",
-                "leading_nonlinear_Einstein_response": "EXACT_CONDITIONAL_ON_FULL_EIR_1_THROUGH_6_IN_DECLARED_IR_CLASS",
+                "common_physical_metric": "EXACT_INSIDE_WTC_H3_SAME_METRIC_RESPONSE_CLASS",
+                "leading_nonlinear_Einstein_response": "EXACT_INSIDE_WTC_H3_H4_LOCAL_METRIC_ONLY_TWO_DERIVATIVE_CLASS",
                 "record_front_lorentz_cone_refinement": (
                     "EXACT_CONDITIONAL_ON_AFR_AND_MICROSCOPIC_EQUAL_DEPTH_EQUAL_QJ_NORM_NULL_STEPS"
                 ),
                 "refined_cone_kind": "LOCAL_MATHEMATICAL_3PLUS1_LORENTZ_CONE",
                 "six_mode_cone_tangent_scope": "J0_S4_SYMMETRIC_POINT",
-                "physical_volume_and_common_probe_identification": "OPEN",
+                "physical_volume_and_common_probe_identification": (
+                    "SUPPLIED_BY_WTC_H1_H3_WORKING_PREMISES__OPEN_FROM_MICROSCOPIC_F3"
+                ),
                 "fixed_finite_additive_direction_set_obstruction": "EXACT",
                 "cone_refinement_is_full_RGRL_or_gravity_dynamics": False,
                 "scalar_gamma_or_count_determines_kernel_curvature_or_G": False,
@@ -1293,11 +1359,17 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
             },
             "scientific_status": {
                 "nature_obeys_RGRL": "NOT_ESTABLISHED_BY_THIS_CERTIFICATE",
-                "EIR_packet": "TYPED_CONDITIONAL_INPUT_NOT_ESTABLISHED_BY_THIS_CERTIFICATE",
+                "gravity_formation_working_theory": (
+                    "CLOSED_AXIOMATICALLY_UNDER_EXPLICIT_WTC_H1_THROUGH_H5"
+                ),
+                "WTC_response_packet": "EXPLICIT_CONDITIONAL_INPUT_NOT_ESTABLISHED_BY_THIS_CERTIFICATE",
+                "EIR_packet": "HISTORICAL_TYPED_CONDITIONAL_INPUT_ABSORBED_INTO_WTC_H3_H4",
                 "empirical_RGRL_confirmation": "OPEN_NOT_PERFORMED",
                 "empirical_lineage_gravity_confirmation": "OPEN_NOT_PERFORMED",
                 "response_form_factor_measurement": "OPEN_NOT_PERFORMED",
-                "numerical_G_calibration": "REQUIRES_OBSERVATION_NOT_CALLER_INPUT",
+                "observed_G_endpoint_matching": "CLOSED_AS_GUARDED_CALIBRATION_OF_TOTAL_LEADING_COEFFICIENT",
+                "numerical_G_from_record_variables": "OPEN_NOT_DERIVED",
+                "strict_EH_coefficient_origin": "OPEN_NOT_DERIVED",
                 "deeper_microscopic_RGRL_derivation": "OPEN",
                 "AFR_and_null_step_physical_instantiation": "OPEN",
                 "GI21_compatibility_type_join": "OPEN",
@@ -1307,7 +1379,9 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "autonomous_q4_support_selection": "OPEN",
                 "autonomous_q4_detuning_phase": "OPEN",
                 "q4_pair_field_lift": "PARTIAL_FINITE_OPERATOR_AND_RESPONSE_REALIZATION",
-                "physical_metric_pair_solder": "OPEN",
+                "physical_metric_pair_solder": (
+                    "SUPPLIED_BY_WTC_H2_H3_WORKING_PREMISES__OPEN_FROM_MICROSCOPIC_F3"
+                ),
                 "thermodynamic_massless_tensor_phase": "OPEN",
                 "compatible_global_ice_completion": "SUPPLIED_NOT_DERIVED",
                 "direct_gaussian_composite_helicity2_route": "CLOSED_NEGATIVE",
@@ -1344,15 +1418,14 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                     "SEALED_B1_TOTAL_MOMENTUM_OWNERSHIP_ON_AUXILIARY_TORUS"
                 ),
                 "direct_shortcut_G2_status": (
-                    "V005_OBSERVABLE_CONTRACT_SEALED__MATCHED_MASSLESS_HELICITY2_PHYSICS_OPEN"
+                    "V005_OBSERVABLE_CONTRACT_SEALED__HISTORICAL_PARTICLE_ROUTE_NON_LOAD_BEARING"
                 ),
                 "direct_shortcut_G3_status": (
-                    "SOFT_FACTOR_DEPENDENCY_THEOREM_IN_PROGRESS__"
-                    "POSITIVE_CLOSURE_REQUIRES_G2"
+                    "HISTORICAL_PARTICLE_ROUTE_NOT_CURRENT__POSITIVE_WORKING_CLOSURE_DOES_NOT_REQUIRE_G2"
                 ),
                 "next_no_lab_gravity_calculation": (
-                    "ALL_GL_NATIVE_H6_LEDGER__THEN_MATCHED_MASSLESS_HELICITY2_POLE__"
-                    "THEN_SOFT_UNIVERSALITY__THEN_EINSTEIN_SELF_COUPLING"
+                    "MICROSCOPIC_F3_DERIVATION_OF_RGRLB_VIA_COMPLETE_TRANSLATION_OWNING_"
+                    "MAXWELL_TERMINAL_RESERVOIR_SUPPORT_PARENT__THEN_CTP_WARD_AND_SCALING"
                 ),
                 "hust_public_G_forward": (
                     "PROCESSED_DUAL_CHANNEL_CLOSED__FULL_GC16_NOT_READY__NO_NEW_G"
@@ -1381,6 +1454,11 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
             "program_authorizations": {
                 "working_RGRL_postulate_adopted": True,
                 "exact_conditional_working_theory_closure": True,
+                "record_first_no_graviton_premise_working_closure": True,
+                "guarded_observed_G_total_coefficient_matching_derived": True,
+                "observed_G_value_loaded": False,
+                "parameter_free_G_from_records_derived": False,
+                "strict_EH_coefficient_origin_derived": False,
                 "exact_conditional_EIR_composition": True,
                 "offshell_onshell_clarification_adopted": True,
                 "empirical_RGRL_confirmation": False,
@@ -1395,7 +1473,7 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "programmed_floquet_detuning_derived": True,
                 "autonomous_q4_detuning_phase_derived": False,
                 "finite_physical_link_pair_response_derived": True,
-                "physical_metric_pair_solder_derived": False,
+                "physical_metric_pair_solder_derived_from_microscopic_F3": False,
                 "ice_hybrid_tensor_representation_derived": True,
                 "massless_tensor_from_ice_ring_response_derived": False,
                 "gaussian_composite_helicity2_pole_derived": False,
@@ -1445,6 +1523,11 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
             },
             "nonpromotion": {
                 "adoption_promotes_empirical_confirmation": False,
+                "working_closure_promotes_microscopic_F3_derivation": False,
+                "observed_G_matching_promotes_parameter_free_G_derivation": False,
+                "observed_G_matching_promotes_strict_EH_coefficient_origin": False,
+                "EH_metric_classification_requires_or_promotes_graviton": False,
+                "PMICS_or_PMSR_alone_promotes_gravity": False,
                 "conditional_EIR_composition_promotes_executed_EIR_packet": False,
                 "kernel_reduction_promotes_measured_form_factors": False,
                 "positive_G_sign_promotes_numerical_G_derivation": False,
@@ -1510,7 +1593,10 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                     "source_sha256": custody.digest_for(closure_path),
                     "audit_path": closure_audit_path,
                     "audit_sha256": custody.digest_for(closure_audit_path),
-                    "audit_verdict": "CLEAN_WITHIN_EXPLICIT_CONDITIONAL_AND_EMPIRICAL_CEILINGS",
+                    "audit_verdict": (
+                        "ACCEPT_CLEAN_EXACT_AXIOMATIC_WORKING_THEORY_CLOSURE_WITH_"
+                        "EMPIRICAL_MICROSCOPIC_AND_G_ORIGIN_CEILINGS"
+                    ),
                 },
                 "core_source_pairs": tuple(
                     _pair_certificate(custody, label, theorem, audit)

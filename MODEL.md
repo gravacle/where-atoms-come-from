@@ -50,7 +50,7 @@ silently use them as the public path.
 | physics-role status | `roles` | claim-scoped EM, gamma, Alpha-inheritance, and gravity status, including the exact first-record gamma-information seed, the SAI/AWAI actual-visible-sector theorem, the adopted off-shell/on-shell RGRL distinction, and the conditional record-front cone refinement; descriptive metadata, not a gravity solver |
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
-| Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for adopted RGRL, its adopted off-shell/on-shell clarification, V002 dressed-response ceilings, the conditional record-front cone theorem, the conditional pair-resolved Coulomb `DPAR` realization, FV projected rank six, fully sealed Phase A native-support/family response, the FZ/GA/GB Ward boundaries, GC finite-family geometry, sealed GD total-momentum ownership, the independently sealed GF V005 G2 observable contract, audited public searches, and the exact conditional working-theory closure; the all-`G_L` ledger, matched same-ancestry massless helicity-two pole, soft universality, Einstein self-coupling, empirical RGRL/EIR/AFR confirmation, and microscopic numerical-(G) derivation remain open |
+| Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for the hostile-audited record-first working-theory closure under adopted RGRL and explicit WTC hypotheses; observable pair-memory curvature capacity and source reciprocity; the narrow bare flip/recoil Ward obstruction; earlier F3/Phase-A boundaries; and audited public searches. No graviton premise is required for the Einstein--Hilbert classification. Empirical RGRL confirmation, microscopic F3 derivation of RGRL-B, strict origin of the full Einstein--Hilbert coefficient, and a parameter-free numerical \(G\) remain open. |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -559,7 +559,7 @@ in the certificate is fixed false.
 ## GRAVITY FORMATION THEORY CERTIFICATE
 
 The two zero-argument Gravity Formation Theory methods verify the exact closure
-and audit; six pinned core theorem/audit pairs; thirty-four pinned no-laboratory
+and audit; six pinned core theorem/audit pairs; forty-five pinned no-laboratory
 advance pairs; and the adopted clarification chain consisting of its final
 adoption record and seal, the clarification source, and V002. The advance
 custody now includes the q4 front/support/response sequence; the finite TT
@@ -571,6 +571,42 @@ processed dual-method forward, history diagnostic, nominal-kernel
 reconstruction, conditional homogeneous-\(G\) quotient, and five-clock
 common-potential screen. The methods return a recursively immutable
 status certificate and accept neither data nor solver parameters.
+
+The authoritative V014 closure is now
+[`GRAVITY_RECORD_FIRST_WORKING_THEORY_CLOSURE_V001.md`](GRAVITY_RECORD_FIRST_WORKING_THEORY_CLOSURE_V001.md),
+with an independent hostile `ACCEPT/CLEAN` audit.  It closes the working theory
+as an exact implication from adopted RGRL plus the explicit `WTC-H2--H5`
+memory-realization, same-metric response-class, complete Ward/constraint, and
+guarded endpoint hypotheses.  It does not wait for a graviton or helicity pole:
+within the declared local four-dimensional metric-only two-derivative class,
+the leading action is Einstein--Hilbert directly.  After the form, source
+normalization, and metric scale are fixed independently and same-leading-order
+remainders are excluded or controlled, observed \(G\) calibrates the positive
+total coefficient \(C_R^{\rm eff}=1/(16\pi G_{\rm obs})\).  That is not a
+parameter-free calculation of \(G\) or a proof that the entire coefficient was
+induced microscopically by records.
+
+Two newly pinned bounded witnesses inform that closure without being inflated
+into gravity by themselves; a third closes one false microscopic route and is
+not a dependency of the closure.  In this q4 pair chart, the observable memory
+coordinate is \(C_{ab}=\langle Y_{ab}\rangle\), while \(J_{ab}\) remains a
+preparation control.  At the symmetric localization point its six
+tetrahedral columns span \(\operatorname{Sym}^2(V)\); at a flat reference,
+or for the locally frozen principal symbol, every nonzero spatial momentum has
+curvature rank three with a three-dimensional pure-gradient kernel, leaving
+one trace and two tidal quotient directions.  The finite full-support
+commuting pair sector under the declared `GK-S1--GK-S5` and complete DPAR
+whole-pair-source premises has exact reciprocal response only when the complete
+whole-pair tangent itself has rank six.  Separately, the directly projected
+scalar-weighted GD flip/recoil density cannot satisfy the declared FZ Ward
+embedding.  This closes that narrow assignment, not native position-weighted,
+interaction-dressed, support-owned, or boundary-complete alternatives.
+
+The detailed ledger below preserves the development history and exact ceilings
+of earlier routes.  Any statement there that a physical solder, particle pole,
+or gravity endpoint is "open" refers to derivation from those microscopic
+routes; it does not reopen the V014 working-theory implication, where the
+corresponding infrared content is supplied explicitly by `WTC-H1--H5`.
 
 The certificate now makes the adopted distinction explicit. RGRL-C supplies
 full-rank or declared dense-range **off-shell constitutive ancestry** on the
@@ -879,19 +915,28 @@ slot, while the full Ward question remains undecided without a physical
 divergence, current, and contacts. GA supplies an exact fixed-charge current
 lift, GB exact local ring-energy continuity, and GC the covering family
 `G_L`, exact momentum lattice, rank-two TT quotient, and
-`|k_min|=3 pi/(2 L a_*)`; none of those results substitutes for a massless
-pole. FY's terminal custody replay passes `107/107`, making the Phase A
-source/family packet fully sealed. GD closes the shortcut's `G1` total-momentum gate by an exact
-equal-and-opposite recoil construction on the declared auxiliary torus while
-preserving the FY source. GF V005 independently seals the prospective `G2`
-observable contract: it separates canonical amplitude from ancestry, gives a
-disjoint and total PASS/FAIL/INDETERMINATE classifier with lower and upper
-singular-value bounds, and requires an actual Poincare little-group
-helicity-`+/-2` pole rather than a rank-two scalar doublet. The direct successor
-is therefore to complete the native `G_L` H6 ledger and execute the matched
-same-ancestry massless-helicity-two calculation. The consolidated no-
-laboratory disposition is recorded in
-[`NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md`](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md).
+`|k_min|=3 pi/(2 L a_*)`. FY's terminal custody replay passes `107/107`, making
+the Phase A source/family packet fully sealed. GD closes the historical
+particle route's `G1` total-momentum gate on its declared auxiliary recoil
+torus, and GF V005 seals that route's prospective `G2` observable contract.
+Those results remain valid at their stated ceilings, but the graviton/helicity
+route is no longer load-bearing for the working-theory theorem.
+
+The deeper no-laboratory route now asks whether the adopted RGRL-B source,
+Ward, contact, and propagation content can be derived from the F3 parent. The
+bare directly projected scalar-weighted flip/recoil assignment has failed its
+exact Ward test. A six-oscillator pair mediator reproduces the F3 degree term
+and ideal-Coulomb `DPAR`, but its internal oscillators do not own spatial
+momentum. The shortest surviving parent therefore carries the full grounded
+pair-resolved Maxwell/elastance block together with dynamical terminals,
+reservoir/reference, and support sectors so that total stress and momentum are
+physically owned. That microscopic derivation, its full CTP/Ward calculation,
+and finite-family/common-cone scaling continue as a deeper test of RGRL rather
+than a prerequisite for the already audited axiomatic working closure. The
+historical no-laboratory disposition remains in
+[`NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md`](NO_LAB_GRAVITY_PROGRAM_STATUS_V001.md),
+while the active route is recorded in
+[`GRAVITY_RECORD_FIRST_DIRECT_PROOF_PLAN_V001.md`](GRAVITY_RECORD_FIRST_DIRECT_PROOF_PLAN_V001.md).
 
 ## VALIDATION
 
