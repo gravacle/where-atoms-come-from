@@ -1,6 +1,6 @@
 # Current continuation pointer
 
-**Date:** 2026-08-31
+**Date:** 2026-09-01
 
 **Authority:** this file identifies the current work program.  Dated
 `HANDOFF_*.md` files are provenance and are not authoritative unless this file
@@ -41,7 +41,7 @@ certificate plus the full URM chain pass.
 ## Newest sealed microscopic checkpoint
 
 The additive URM surface `gravity_microscopic_progress` now packages the
-author-frozen, independently audited direct F3 chain through `GL6AZ` without
+author-frozen, independently audited direct F3 chain through `GL6BA` without
 changing the V014 working-theory meaning.  The earlier `GL6T--GL6AI` results
 remain intact: record-gated complete finite pair response, exact
 interaction-owned nonfactorization, the record-authenticated finite FPSS
@@ -119,7 +119,20 @@ The newly registered sealed chain establishes:
     selected-factor bound `D_TV<=Kbar_3(M_beta)/(2R)`.  The bare F3 ray admits
     every positive `R`, so a selected physical member/clock bind decides the
     inside-domain exact-norm route versus an outside-domain sharper
-    finite-mission theorem or direct calculation (`GL6AZ`).
+    finite-mission theorem or direct calculation (`GL6AZ`); and
+15. the direct full-F3 finite-mission branch: for every finite physical `R`
+    and finite `sigma_obs`, and every complete finite authenticated
+    all-formed/`MATCH` FPSS exterior containing the collar strictly in its
+    interior,
+    `D_TV(p^Omega,p^(L))<=min(1,(3L^2+3L+1)*T_(2L+1)(48R*abs(sigma_obs)))`.
+    The exact collar has `12(3L^2+3L+1)` crossing pairs, reproduces ordinary
+    Taylor coefficients through order `4L+1`, and directly licenses `R=2`
+    and `R=5/2` with arguments `96|sigma_obs|` and `120|sigma_obs|`.  The
+    all-formed/`MATCH` premise is prospectively selected, while the binary
+    marginal sums every retained flag value and performs no postselection.
+    The induced cut is a proof device and the quasi-local limit only a
+    mathematical corollary; no `R`, clock, state, gravity, or `G` is selected
+    or derived (`GL6BA`).
 
 The `v/g=0` liquid/linear-mode literature is registered as controlled
 numerical and effective evidence, not a phase, gap, or pole proof.  The exact
@@ -127,8 +140,9 @@ open gates are: isotropic `v/g=0` phase control and the selected finite-to-GNS
 bridge; exact all-time finite-`h/U_d` closure or sufficient control of the
 retained prethermal remainder; one selected physical member's same-parent
 matrix elements and formation-to-query clock bind; exact norms and `Kbar_3`
-inside the corrected domain, or a sharper finite-mission theorem/direct
-calculation outside it; physical preparation,
+for the prethermal route, or a selected `GL6BA` tolerance, collar radius,
+reduced postformation state, and controlled interior calculation for the
+direct full-F3 route; physical preparation,
 homogenization, and causal update of the retained coefficient field; nonzero
 selected propagation and lineage-visible response; calibrated physical scales,
 one cone, and the rank-six constitutive join; common coupling, complete
@@ -139,7 +153,7 @@ isotropic or selected-GNS theorem.  The GL6AY custody retains both the original
 hostile FAIL audit of the invalid global-projector/subspace formulation and
 the independent post-repair PASS audit of the local-collar formulation.
 Failure of the corrected sufficient domain is not physical phase failure.
-Unaudited work beyond `GL6AZ` is deliberately excluded.
+Unaudited work beyond `GL6BA` is deliberately excluded.
 
 ## Transfer disposition
 
@@ -198,11 +212,11 @@ claim is therefore non-authoritative.
 ## Checkpoint base
 
 The current Git base is
-`36842b80e7ba55a49879446e5bd7c6370a643ce9`.  The working tree contains many
+`af0a5add6d846ffc3cd2edede85ac4500bb8b4d1`.  The working tree contains many
 older user-owned and generated changes.  Any new checkpoint must stage only
 the explicitly reviewed continuation files and must not sweep unrelated
 changes into the commit.
 
 The reviewed, hash-pinned proposed stage inventory is
-`CHECKPOINT_2026-08-31_GL6AZ_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
+`CHECKPOINT_2026-09-01_GL6BA_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
 only: the Git index must remain untouched until that inventory is reviewed.

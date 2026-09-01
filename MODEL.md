@@ -51,7 +51,7 @@ silently use them as the public path.
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
 | Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for the hostile-audited record-first working-theory closure under adopted RGRL and explicit WTC hypotheses; observable pair-memory curvature capacity and source reciprocity; the narrow bare flip/recoil Ward obstruction; earlier F3/Phase-A boundaries; and audited public searches. No graviton premise is required for the Einstein--Hilbert classification. Empirical RGRL confirmation, microscopic F3 derivation of RGRL-B, strict origin of the full Einstein--Hilbert coefficient, and a parameter-free numerical \(G\) remain open. |
-| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive zero-input checkpoint over the independently audited GL6T--GL6AZ chain: the earlier record-gated response/atlas/envelope and authenticated bulk dynamics; the native degree-two sector and complete order-six hexagon Hamiltonian; the exact `v/g=0` crosswalk; exact first-character and anisotropic finite-size closure; a record-conditioned pure-loop clock plus typed `Sym^2` atlas; all-fixed-controlled-order port/twist stability; the repaired finite-coupling normal form/local-collar theorem; and GL6AZ's corrected high-branch application domain, physical-input identifiability boundary, authenticated selected-factor binary-marginal bound, and inside/outside-domain fork. GL6AY's compact application hypothesis is retained as superseded history. It does not change V014 or promote failure of a sufficient prethermal condition to phase failure, the prethermal horizon to an all-time phase or selected GNS state, formal generator coordinates to a physical metric, or any result to gravity, Einstein dynamics, or \(G\). |
+| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive V006 zero-input checkpoint over the independently audited GL6T--GL6BA chain: the earlier record-gated response/atlas/envelope and authenticated bulk dynamics; the native degree-two sector and complete order-six hexagon Hamiltonian; the exact `v/g=0` crosswalk; exact first-character and anisotropic finite-size closure; a record-conditioned pure-loop clock plus typed `Sym^2` atlas; all-fixed-controlled-order port/twist stability; the repaired finite-coupling normal form/local-collar theorem; GL6AZ's corrected high-branch application domain and identifiability boundary; and GL6BA's exact full-F3 authenticated binary-pair collar for every finite coupling ratio and finite mission time. GL6AY's compact application hypothesis is retained as superseded history. The direct collar neither relicenses that prethermal theorem outside its corrected domain nor selects `R`, a clock, or a state. It does not change V014 or promote failure of a sufficient prethermal condition to phase failure, a finite-mission collar to an all-time phase or selected GNS state, formal generator coordinates to a physical metric, or any result to gravity, Einstein dynamics, or \(G\). |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -610,7 +610,7 @@ routes; it does not reopen the V014 working-theory implication, where the
 corresponding infrared content is supplied explicitly by `WTC-H1--H5`.
 
 The separate additive microscopic-progress surface freezes the newer direct F3
-chain through GL6AZ without revising that V014 statement.  On GL6T's declared
+chain through GL6BA without revising that V014 statement.  On GL6T's declared
 `N=0`, `U_d=0`, `h,Delta>0`, `0<vartheta<2*pi` comparator, formed KEEP opens a
 full six-direction q4 pair response while matched BREAK is zero.  Restoring
 the inherited degree interaction gives
@@ -882,12 +882,65 @@ sharper finite-mission local-observable theorem or a direct controlled
 calculation.  Extrapolating `n_*` or adding clock calibration cannot license an
 out-of-domain application.
 
+`GL6BA` now executes the finite-mission theorem branch named by `GL6AZ`
+without altering that correction.  It compares the exact full F3 evolution
+with a spatial collar of the same full Hamiltonian; it does not substitute the
+`GL6AY` locked normal form.  Let
+\[
+ B_L=\{x\in A_3:d_{A_3}(x,0)\le L\},\qquad
+ \Lambda_L=B_L\times\{1,2,3,4\},
+\]
+so that
+\[
+ |B_L|=\frac{10L^3+15L^2+11L+3}{3},\qquad
+ C_L=12(3L^2+3L+1)
+\]
+for the physical shared-child pairs crossing the cell collar.  For every
+complete finite authenticated all-formed/`MATCH` FPSS exterior
+`Omega in F_L` in which `Lambda_L` is strictly interior, use the common
+postformation state and its exact reduction to the collar.  With
+\(T_d(x)=\sum_{k=d}^{\infty}x^k/k!\), the selected binary pair marginal obeys
+the exact state-independent exterior certificate
+\[
+ \boxed{D_{\rm TV}(p^\Omega,p^{(L)})\le
+ \min\!\left\{1,(3L^2+3L+1)
+ T_{2L+1}(48R|\sigma_{\rm obs}|)\right\}.}
+\]
+
+This holds for every finite physical `R>0` and every finite mission duration;
+the decoupled `R=0` case is exactly zero.  In particular `R=2` and `R=5/2`
+are directly licensed with tail arguments `96|sigma_obs|` and
+`120|sigma_obs|`.  Neither value is selected as the physical member.  The
+all-formed/`MATCH` active member is a prospectively selected premise, not an
+observed-success condition: the pair coarsening sums every retained route,
+clock, status, authentication, and failure flag, and therefore performs no
+postselection.  The bound is only for that binary pair marginal, not the joint
+retained-flag distribution or a random route mixture.
+
+The exact interaction-cluster geometry places `m` pair insertions inside cell
+radius `ceil(m/2)`.  Separately, the ordinary-time Taylor coefficients of the
+full and collared dynamics agree through order `4L+1`; the first
+algebraically possible exterior word is order `4L+2`.  The finite-time result
+comes from the factorial-tail bound above, not from truncating that Taylor
+series.  The induced collar cut is only a proof device inside the complete
+finite authenticated mission.  The `GL6AK` quasi-local limit inherits the
+same estimate only as a mathematical corollary, not as one infinite
+authenticated record.
+
+What remains is to select or calibrate one `R`, bind `t_F` and `t_Q` to the
+same mission clock, choose a tolerance/certified collar, and supply the exact
+reduced postformation collar state for a numerical probability.  `GL6BA`
+selects none of that payload and proves no phase, physical cone, metric,
+stress tensor, graviton, Ricci/Einstein dynamics, gravity identification, or
+Newton constant `G`.
+
 The held-open gates are isotropic `v/g=0` phase control and the selected
 finite-to-GNS bridge; exact all-time closure at finite `h/U_d` or sufficient
 control of the retained prethermal remainder; one selected physical F3
 member's matrix elements and same-parent clock bind for `R` and `sigma_obs`;
-then either exact norms/`bar K_3` on the inside branch or a sharper
-finite-mission theorem/direct calculation on the outside branch; physical
+then either exact norms/`bar K_3` for the prethermal route or a selected
+`GL6BA` tolerance, collar radius, reduced postformation state, and controlled
+interior evaluation for the direct full-F3 route; physical
 preparation, homogenization, and causal updating of the retained coefficient
 field; a nonzero selected propagation/lineage-visible response; calibrated
 physical scales, one cone, and the rank-six constitutive join; common coupling,
@@ -1239,7 +1292,7 @@ python3 model/count_law.py             # exact corner count — 22 checks
 python3 model/validate_udcl_postulate.py  # 32 adoption/theorem custody and ceiling checks
 python3 model/validate_historywise_gravity_discriminant.py  # 84 formal-only checks
 python3 model/validate_gravity_formation_theory.py  # bounded zero-input custody/ceiling gate
-python3 model/validate_gravity_microscopic_progress.py  # 46 sealed-progress/ceiling checks
+python3 model/validate_gravity_microscopic_progress.py  # 163 sealed-progress/ceiling checks
 ```
 
 The family validator is the landing gate for new URM features. Its printed totals are computed by

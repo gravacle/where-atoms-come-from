@@ -1,0 +1,61 @@
+GL6BA distinct hostile audit verification
+Date: 2026-09-01
+
+Frozen author hashes:
+THEOREM d7ce0a7527a68f49e6ea2ee8edbb400a142fbb49297d8fe99cae78ffa0154ab0
+MANIFEST 6e14332230f713d51e393a5889fe78964fe0e63588b4b841533fa6af7ef19103
+SEAL_FILE 34f29b3c03d53c4dbc9736d1bf7a7785e0a49a2aad04299b69a3804290c5971e
+
+Author constructive replay, normal:
+PASS: 636296/636296 GL6BA constructive checks
+
+Author constructive replay, optimized (-O):
+PASS: 636296/636296 GL6BA constructive checks
+
+Author packet replay, normal:
+PASS: 135/135 GL6BA packet checks
+
+Author packet replay, optimized (-O):
+PASS: 135/135 GL6BA packet checks
+
+Independent hostile mathematical replay, normal:
+PASS__INDEPENDENT_GL6BA_HOSTILE_REPLAY__2008230/2008230
+
+Independent hostile mathematical replay, optimized (-O):
+PASS__INDEPENDENT_GL6BA_HOSTILE_REPLAY__2008230/2008230
+
+Direct dependency custody replays:
+PASS: 240/240 GL6AZ packet checks
+PASS__GL6AZ_HOSTILE_AUDIT_PACKET__355/355
+PASS 104/104
+PASS__GL6AK_AUDIT_PACKET__26/26
+
+Independently reconstructed hostile results:
+- every finite FPSS star obeys the same local degree-square expansion;
+- every active link has two endpoints, fixing the onsite coefficient at -6R,
+  while every surviving uniquely owned pair retains coefficient 2R;
+- A3 shell and ball counts are 10*L^2+2 and
+  (10*L^3+15*L^2+11*L+3)/3;
+- the exact crossing-pair count is 12*(3*L^2+3*L+1);
+- every inside crossing endpoint is at link distance at least 2*L, sharply;
+- the exact Duhamel coefficient is 1/12 per crossing/source-link pair and the
+  operator bound is 2*(3*L^2+3*L+1)*T_(2*L+1)(48*R*abs(s));
+- L=0 starts at T_1, while x=0 has exact zero collar error;
+- the first possible ordinary-Taylor exterior term is order 4*L+2, so all
+  coefficients through 4*L+1 match;
+- the finite-parent state and its exact collar reduction give binary D_TV
+  equal to one-half the pair-expectation difference, capped at one;
+- deterministic pair coarsening sums every flag outcome and introduces no
+  postselection inside the prospectively selected all-formed/MATCH factor;
+- the physical theorem ranges over complete finite authenticated FPSS
+  exteriors; induced opens and the GL6AK limit remain mathematical corollaries;
+- R=2 and R=5/2 have finite certificates for every finite mission duration
+  without ADHH or GL6AY extrapolation;
+- no numerical member, clock, state, graviton, Ricci form, gravity, or G is
+  manufactured.
+
+Audit packet replay, normal:
+PASS__GL6BA_HOSTILE_AUDIT_PACKET__257/257
+
+Audit packet replay, optimized (-O):
+PASS__GL6BA_HOSTILE_AUDIT_PACKET__257/257

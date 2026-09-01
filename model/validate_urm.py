@@ -17,7 +17,8 @@ progress checkpoint pass.  The U-DCL gateway certifies a
 program postulate and conditional theorem, not natural validity; the GFT gateway
 certifies the adopted working-theory closure and off-shell/on-shell response
 clarification, not empirical RGRL confirmation.  The microscopic checkpoint preserves
-the V014 meaning and does not promote a quasi-local envelope to gravity.
+the V014 meaning and does not promote a quasi-local envelope or finite-mission
+collar to gravity or G.
 
 Use --no-chain to run only the four T-54 family blocks.
 """
@@ -210,7 +211,7 @@ if "--no-chain" not in sys.argv:
     print()
     print(
         "CHAIN: validate_gravity_microscopic_progress.py "
-        "(sealed GL6T--GL6AZ progress; GL6AY normal form/prethermal horizon licensed only on the corrected GL6AZ high-branch domain; selected member/mission, exact all-time phase, GNS bridge, isotropy, physical metric/constitutive join, stress, native operator, Einstein comparison, and G open)"
+        "(sealed GL6T--GL6BA progress; GL6AY normal form/prethermal horizon remains licensed only on the corrected GL6AZ high branch; GL6BA adds the exact full-F3 authenticated binary-pair finite-mission collar for every finite R/time, including R=2 and R=5/2, without selecting a member, clock, state, gravity, or G)"
     )
     print("-" * 78)
     sys.stdout.flush()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed zero-input validator for the GL6T--GL6AZ URM checkpoint."""
+"""Fail-closed zero-input validator for the GL6T--GL6BA URM checkpoint."""
 
 from __future__ import annotations
 
@@ -51,6 +51,7 @@ def main() -> int:
     certificate = progress.certificate()
     check(progress.claim_class == gmp.CLAIM_CLASS)
     check(certificate["schema"] == gmp.SCHEMA)
+    check(gmp.SCHEMA == "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V006")
     check(certificate["claim_class"] == gmp.CLAIM_CLASS)
     check(certificate["relationship_to_V014"] == "ADDITIVE_PROGRESS_SURFACE__V014_MEANING_UNCHANGED")
     check(isinstance(certificate, MappingProxyType))
@@ -62,20 +63,39 @@ def main() -> int:
     check(type_error(lambda: mutate(certificate, "schema", "changed")))
     check(type_error(lambda: mutate(certificate["exact_results"], "gravity", True)))
 
-    check(certificate["custody"]["packet_count"] == 22)
+    check(certificate["custody"]["packet_count"] == 23)
     check(tuple(row["gate"] for row in certificate["custody"]["packets"]) == (
         "GL6T", "GL6U", "GL6AA", "GL6AF", "GL6AG", "GL6AH", "GL6AI",
         "GL6AK", "GL6AM", "GL6AN", "GL6AO", "GL6AP", "GL6AQ", "GL6AR",
         "GL6AS", "GL6AT", "GL6AU", "GL6AV", "GL6AW", "GL6AX", "GL6AY",
-        "GL6AZ",
+        "GL6AZ", "GL6BA",
     ))
-    check(certificate["custody"]["declared_hash_rows_checked"] == 1075)
+    check(certificate["custody"]["declared_hash_rows_checked"] == 1115)
     check(all(row["audit_disposition"].startswith("PASS") for row in certificate["custody"]["packets"]))
     check(all(len(row["author_claim_sha256"]) == 64 for row in certificate["custody"]["packets"]))
     check(all(len(row["audit_sha256"]) == 64 for row in certificate["custody"]["packets"]))
     check(certificate["custody"]["packets"][7]["audit_claim_file"] == "POSTFREEZE_AUDIT.md")
     check(certificate["custody"]["packets"][15]["author_claim_file"] == "RESULT.md")
     check(certificate["custody"]["packets"][15]["theorem_sha256"] is None)
+    ba_packet = certificate["custody"]["packets"][-1]
+    check(ba_packet["author_directory"] == (
+        "LANE_CROSS_RFT_GRA_GL6BA_AUTHENTICATED_PAIR_FINITE_MISSION_COLLAR_V001"
+    ))
+    check(ba_packet["audit_directory"] == (
+        "AUDIT_G_GL6BA_AUTHENTICATED_PAIR_FINITE_MISSION_COLLAR_V001"
+    ))
+    check(ba_packet["theorem_sha256"] == (
+        "d7ce0a7527a68f49e6ea2ee8edbb400a142fbb49297d8fe99cae78ffa0154ab0"
+    ))
+    check(ba_packet["audit_sha256"] == (
+        "03bda2dba369211542dfef1af065490e21033483443cd6a67a21b06bf74e0bc9"
+    ))
+    check(ba_packet["audit_disposition"] == (
+        "PASS__FULL_F3_FINITE_FPSS_COLLAR_EXACT__FINITE_BOUNDARY_COEFFICIENTS_"
+        "CROSSING_CENSUS_PORT_DISTANCE_DUHAMEL_AND_TAYLOR_CONSTANTS_EXACT__"
+        "AUTHENTICATED_BINARY_MARGINAL_ONLY__ALL_FINITE_R_AND_TIME__"
+        "R2_AND_R5_OVER2_LICENSED_WITHOUT_ADHH__NO_GRAVITY_PROMOTION"
+    ))
     check(certificate["custody"]["historical_audit_count"] == 1)
     check(len(certificate["custody"]["historical_audits"]) == 1)
     check(certificate["custody"]["historical_audits"][0]["gate"] == "GL6AY_PRE_REPAIR_FAIL")
@@ -178,6 +198,7 @@ def main() -> int:
         "all_fixed_order_port_and_twist_stability",
         "finite_coupling_prethermal_locked_bridge",
         "record_authenticated_prethermal_mission_identifiability",
+        "authenticated_pair_finite_mission_collar",
     ))
     check(exact["record_gated_local_pair_response"]["open_domain_rank"] == 6)
     check(exact["record_gated_local_pair_response"]["matched_BREAK"] == "D_BREAK=0")
@@ -364,6 +385,56 @@ def main() -> int:
     check("SHARPER_FINITE_MISSION_LOCAL_OBSERVABLE_THEOREM" in az["outside_domain_branch"])
     check("SUFFICIENT_NOT_NECESSARY_DOMAIN" in az["exact_ceiling"])
 
+    ba = exact["authenticated_pair_finite_mission_collar"]
+    check("DOES_NOT_CHANGE_GL6AZ_CORRECTED_PRETHERMAL_DOMAIN" in (
+        ba["relationship_to_GL6AZ"]
+    ))
+    check(ba["full_parent"] == (
+        "H/h=R*N_def-sum_p(X_p)__R=U_d/h__N_def=sum_v(k_v-2)^2"
+    ))
+    check(ba["dimensionless_inputs"] == "R=U_d/h__sigma_obs=h*(t_Q-t_F)/hbar")
+    check("EVERY_FINITE_PHYSICAL_R>0" in ba["validity"])
+    check("R=0_DECOUPLED_CASE_EXACT" in ba["validity"])
+    check("NO_LARGE_R_OR_PRETHERMAL_HYPOTHESIS" in ba["validity"])
+    check(ba["primary_physical_scope"] == (
+        "EVERY_COMPLETE_FINITE_AUTHENTICATED_ALL-FORMED/MATCH_FPSS_"
+        "EXTERIOR_Omega_IN_F_L_WITH_Lambda_L_STRICTLY_INTERIOR"
+    ))
+    check("abs(B_L)=(10*L^3+15*L^2+11*L+3)/3" in ba["collar"])
+    check(ba["cross_boundary_pairs"] == "12*(3*L^2+3*L+1)")
+    check(ba["influence_argument"] == "48*R*abs(sigma_obs)")
+    check(ba["operator_error"] == (
+        "norm(tau_sigma^(R,Omega)(M_beta)-tau_sigma^(R,L)(M_beta))<="
+        "min(2,2*(3*L^2+3*L+1)*T_(2*L+1)(48*R*abs(sigma_obs)))"
+    ))
+    check(ba["binary_pair_DTV"] == (
+        "D_TV(p^Omega,p^(L))<=min(1,(3*L^2+3*L+1)*"
+        "T_(2*L+1)(48*R*abs(sigma_obs)))"
+    ))
+    check("EXACT_REDUCTION_OF_THE_SAME_COMPLETE_MISSION" in ba["state_ownership"])
+    check("PROSPECTIVELY_SELECTED_ACTIVE_MEMBER" in ba["no_postselection_scope"])
+    check("PAIR_COARSENING_SUMS_EVERY_RETAINED_FLAG_VALUE" in (
+        ba["no_postselection_scope"]
+    ))
+    check("NO_OBSERVED_SUCCESS_POSTSELECTION" in ba["no_postselection_scope"])
+    check("NOT_FULL_FLAG_OUTPUT_TV" in ba["no_postselection_scope"])
+    check(ba["interaction_cluster_radius"] == "ceil(m/2)_FOR_m_PAIR_INSERTIONS")
+    check("MATCH_THROUGH_ORDER_4*L+1" in ba["ordinary_taylor_match"])
+    check("POSSIBLE_EXTERIOR_WORD_ORDER_4*L+2" in ba["ordinary_taylor_match"])
+    check("T_(2*L+1)(48*R*abs(sigma_obs))<=delta" in ba["certified_radius"])
+    check("SUFFICIENT_NOT_OPTIMAL" in ba["certified_radius"])
+    check(ba["admitted_members"] == (
+        "R=2_GIVES_96*abs(sigma_obs)__"
+        "R=5/2_GIVES_120*abs(sigma_obs)__BOTH_DIRECTLY_LICENSED"
+    ))
+    check("ONLY_A_PROOF_DEVICE" in ba["collar_cut_scope"])
+    check("NOT_ONE_INFINITE_AUTHENTICATED_RECORD_OR_MISSION" in ba["quasilocal_scope"])
+    check("SUPPLY_THE_SELECTED_COLLAR_REDUCED_POSTFORMATION_STATE" in (
+        ba["remaining_physical_payload"]
+    ))
+    check("NO_SELECTED_R_sigma_obs_CLOCK_STATE" in ba["exact_ceiling"])
+    check("NO_GRAVITON_RICCI_EINSTEIN_GRAVITY_OR_G" in ba["exact_ceiling"])
+
     evidence = certificate["controlled_evidence"]
     check(tuple(evidence) == ("quantum_ice_v_over_g_zero",))
     check(evidence["quantum_ice_v_over_g_zero"]["claim_class"] == (
@@ -375,9 +446,30 @@ def main() -> int:
     check(certificate["open_gates"][0].startswith("ISOTROPIC_V_OVER_G_ZERO_PHASE_CONTROL"))
     check(certificate["open_gates"][1].startswith("EXACT_ALL_TIME_FINITE_H_OVER_U_D"))
     check(certificate["open_gates"][2].startswith("SELECTED_PHYSICAL_F3_MEMBER"))
-    check(certificate["open_gates"][3].startswith("INSIDE_DOMAIN_EXACT_NORMS"))
+    check(certificate["open_gates"][3].startswith(
+        "INSIDE_DOMAIN_EXACT_NORMS_AND_Kbar_3_FOR_THE_PRETHERMAL_ROUTE"
+    ))
     check(certificate["open_gates"][-1] == "MICROSCOPIC_RICCI_COEFFICIENT_AND_G_MODEL")
     check(all(value is False for value in certificate["ceilings"].values()))
+    check(certificate["ceilings"][
+        "finite_mission_collar_selects_physical_R_sigma_clock_or_state"
+    ] is False)
+    check(certificate["ceilings"][
+        "finite_mission_collar_is_one_fixed_collar_for_unbounded_time"
+    ] is False)
+    check(certificate["ceilings"][
+        "finite_mission_binary_pair_DTV_is_full_retained_flag_TV"
+    ] is False)
+    check(certificate["ceilings"][
+        "induced_collar_cut_is_a_separately_authenticated_physical_mission"
+    ] is False)
+    check(certificate["ceilings"][
+        "quasilocal_limit_is_one_infinite_authenticated_record"
+    ] is False)
+    check(certificate["ceilings"]["full_F3_finite_mission_collar_is_gravity_or_G"] is False)
+    check(certificate["custody"]["verification"].endswith(
+        "GL6BA_FINITE_MISSION_COLLAR_CUSTODY"
+    ))
     check(certificate["executable_scope"]["caller_arguments"] == 0)
     check(certificate["executable_scope"]["physics_recalculated"] is False)
     check(certificate["executable_scope"]["gravity_solver"] is False)
@@ -390,7 +482,7 @@ def main() -> int:
     check(delegated["ceilings"]["gravity_derived_here"] is False)
     check(delegated["ceilings"]["G_calculated_here"] is False)
 
-    expected = 122
+    expected = 163
     check(passed + 1 == expected)
     print(f"GRAVITY MICROSCOPIC PROGRESS: {passed}/{expected} PASS")
     return 0

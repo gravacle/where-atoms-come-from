@@ -1,4 +1,4 @@
-"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6AZ.
+"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6BA.
 
 This additive surface verifies the frozen theorem/audit packets that establish
 record-gated finite response, interaction-owned nonfactorization, an
@@ -10,7 +10,9 @@ theorems; the exact record-conditioned pure-loop clock/typed-atlas bridge;
 all-fixed-controlled-order port/twist stability; the finite-coupling
 prethermal locked bridge; and its corrected source-proof application domain,
 physical-input identifiability boundary, authenticated binary-marginal bound,
-and inside/outside-domain fork. It deliberately does not alter the V014
+and inside/outside-domain fork; and the exact full-F3 authenticated-pair
+finite-mission collar for every finite coupling ratio and finite mission time.
+It deliberately does not alter the V014
 working-theory certificate and does not promote fixed-order control to exact
 finite-coupling closure, the sufficient prethermal domain to a necessary
 phase condition, the prethermal normal form to an all-time phase, or any
@@ -29,8 +31,8 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V005"
-CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6AZ_WITH_CORRECTED_PRETHERMAL_DOMAIN_IDENTIFIABILITY_AND_STRICT_GRAVITY_CEILINGS"
+SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V006"
+CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6BA_WITH_CORRECTED_PRETHERMAL_DOMAIN_DIRECT_FINITE_MISSION_COLLAR_AND_STRICT_GRAVITY_CEILINGS"
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 _HASH_ROW = re.compile(r"^([0-9a-f]{64})  ([^\r\n]+)$")
@@ -331,6 +333,18 @@ _PACKETS = (
         "9954328b6939e12c0b2f712bf6373d8a5c2a4cfafd77ab85aa133b27a4a9f707",
         "1d7cd10a59469139edf4b2836ce95820f605069ef3e6bc0d56bf4df58009b869",
         "PASS__REPAIRED_HIGH_BRANCH_PRETHERMAL_APPLICATION_AND_RECORD_MARGINAL_IDENTIFIABILITY__SELECTED_MEMBER_AND_MISSION_DATA_OPEN",
+    ),
+    _PacketPin(
+        "GL6BA",
+        "LANE_CROSS_RFT_GRA_GL6BA_AUTHENTICATED_PAIR_FINITE_MISSION_COLLAR_V001",
+        "d7ce0a7527a68f49e6ea2ee8edbb400a142fbb49297d8fe99cae78ffa0154ab0",
+        "6e14332230f713d51e393a5889fe78964fe0e63588b4b841533fa6af7ef19103",
+        "34f29b3c03d53c4dbc9736d1bf7a7785e0a49a2aad04299b69a3804290c5971e",
+        "AUDIT_G_GL6BA_AUTHENTICATED_PAIR_FINITE_MISSION_COLLAR_V001",
+        "03bda2dba369211542dfef1af065490e21033483443cd6a67a21b06bf74e0bc9",
+        "a91fde1a69983815d9238306a273638fdd22aa009a16380d22c94cd5d5d186b9",
+        "e45a27a04a8318472fdceff354179d5be13adee2d63c13e7f5b9671c0ff71965",
+        "PASS__FULL_F3_FINITE_FPSS_COLLAR_EXACT__FINITE_BOUNDARY_COEFFICIENTS_CROSSING_CENSUS_PORT_DISTANCE_DUHAMEL_AND_TAYLOR_CONSTANTS_EXACT__AUTHENTICATED_BINARY_MARGINAL_ONLY__ALL_FINITE_R_AND_TIME__R2_AND_R5_OVER2_LICENSED_WITHOUT_ADHH__NO_GRAVITY_PROMOTION",
     ),
 )
 
@@ -1041,6 +1055,82 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                         "MISSION_NUMBER__NO_ALL_TIME_PHASE_SELECTED_GNS_GRAVITY_OR_G"
                     ),
                 },
+                "authenticated_pair_finite_mission_collar": {
+                    "relationship_to_GL6AZ": (
+                        "DIRECT_FULL_F3_SUCCESSOR_FOR_THE_LAWFUL_FINITE_MISSION_BRANCH__"
+                        "DOES_NOT_CHANGE_GL6AZ_CORRECTED_PRETHERMAL_DOMAIN_OR_RELICENSE_GL6AY"
+                    ),
+                    "full_parent": (
+                        "H/h=R*N_def-sum_p(X_p)__R=U_d/h__"
+                        "N_def=sum_v(k_v-2)^2"
+                    ),
+                    "dimensionless_inputs": (
+                        "R=U_d/h__sigma_obs=h*(t_Q-t_F)/hbar"
+                    ),
+                    "validity": (
+                        "EVERY_FINITE_PHYSICAL_R>0_AND_EVERY_FINITE_sigma_obs__"
+                        "R=0_DECOUPLED_CASE_EXACT__NO_LARGE_R_OR_PRETHERMAL_HYPOTHESIS"
+                    ),
+                    "primary_physical_scope": (
+                        "EVERY_COMPLETE_FINITE_AUTHENTICATED_ALL-FORMED/MATCH_FPSS_"
+                        "EXTERIOR_Omega_IN_F_L_WITH_Lambda_L_STRICTLY_INTERIOR"
+                    ),
+                    "collar": (
+                        "B_L={x_in_A3:d_A3(x,0)<=L}__Lambda_L=B_L_x_{1,2,3,4}__"
+                        "abs(B_L)=(10*L^3+15*L^2+11*L+3)/3"
+                    ),
+                    "cross_boundary_pairs": "12*(3*L^2+3*L+1)",
+                    "influence_argument": "48*R*abs(sigma_obs)",
+                    "operator_error": (
+                        "norm(tau_sigma^(R,Omega)(M_beta)-tau_sigma^(R,L)(M_beta))<="
+                        "min(2,2*(3*L^2+3*L+1)*T_(2*L+1)(48*R*abs(sigma_obs)))"
+                    ),
+                    "binary_pair_DTV": (
+                        "D_TV(p^Omega,p^(L))<=min(1,(3*L^2+3*L+1)*"
+                        "T_(2*L+1)(48*R*abs(sigma_obs)))"
+                    ),
+                    "state_ownership": (
+                        "omega_L=EXACT_REDUCTION_OF_THE_SAME_COMPLETE_MISSION_"
+                        "POSTFORMATION_STATE_omega_Omega"
+                    ),
+                    "no_postselection_scope": (
+                        "ALL-FORMED/MATCH_IS_A_PROSPECTIVELY_SELECTED_ACTIVE_MEMBER__"
+                        "PAIR_COARSENING_SUMS_EVERY_RETAINED_FLAG_VALUE__"
+                        "NO_OBSERVED_SUCCESS_POSTSELECTION__NOT_FULL_FLAG_OUTPUT_TV"
+                    ),
+                    "interaction_cluster_radius": "ceil(m/2)_FOR_m_PAIR_INSERTIONS",
+                    "ordinary_taylor_match": (
+                        "FULL_AND_COLLARED_COEFFICIENTS_MATCH_THROUGH_ORDER_4*L+1__"
+                        "FIRST_ALGEBRAICALLY_POSSIBLE_EXTERIOR_WORD_ORDER_4*L+2"
+                    ),
+                    "certified_radius": (
+                        "L_cert(R,abs(sigma_obs),delta)=min{L>=0:"
+                        "(3*L^2+3*L+1)*T_(2*L+1)(48*R*abs(sigma_obs))<=delta}__"
+                        "FINITE_FOR_EVERY_FINITE_INPUT_TRIPLE__SUFFICIENT_NOT_OPTIMAL"
+                    ),
+                    "admitted_members": (
+                        "R=2_GIVES_96*abs(sigma_obs)__"
+                        "R=5/2_GIVES_120*abs(sigma_obs)__BOTH_DIRECTLY_LICENSED"
+                    ),
+                    "collar_cut_scope": (
+                        "INDUCED_FINITE_OPEN_COLLAR_IS_ONLY_A_PROOF_DEVICE_INSIDE_"
+                        "THE_COMPLETE_AUTHENTICATED_FINITE_FPSS_MISSION"
+                    ),
+                    "quasilocal_scope": (
+                        "GL6AK_LIMIT_IS_ONLY_A_MATHEMATICAL_COROLLARY__"
+                        "NOT_ONE_INFINITE_AUTHENTICATED_RECORD_OR_MISSION"
+                    ),
+                    "remaining_physical_payload": (
+                        "SELECT_OR_CALIBRATE_ONE_R__BIND_t_F_AND_t_Q_TO_THE_SAME_CLOCK__"
+                        "SUPPLY_THE_SELECTED_COLLAR_REDUCED_POSTFORMATION_STATE_FOR_A_"
+                        "NUMERICAL_PROBABILITY"
+                    ),
+                    "exact_ceiling": (
+                        "NO_SELECTED_R_sigma_obs_CLOCK_STATE_OR_OPTIMAL_COLLAR__"
+                        "NO_FULL_RETAINED_FLAG_TV__NO_ALL_TIME_SINGLE_COLLAR__"
+                        "NO_GRAVITON_RICCI_EINSTEIN_GRAVITY_OR_G"
+                    ),
+                },
             },
             "controlled_evidence": {
                 "quantum_ice_v_over_g_zero": {
@@ -1057,7 +1147,7 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "ISOTROPIC_V_OVER_G_ZERO_PHASE_CONTROL_AND_SELECTED_FINITE_TO_GNS_BRIDGE",
                 "EXACT_ALL_TIME_FINITE_H_OVER_U_D_LOCKED_PHASE_OR_CONTROL_OF_THE_PRETHERMAL_REMAINDER",
                 "SELECTED_PHYSICAL_F3_MEMBER_SAME_PARENT_MATRIX_ELEMENTS_AND_CLOCK_BIND_FOR_R_AND_SIGMA_OBS",
-                "INSIDE_DOMAIN_EXACT_NORMS_AND_Kbar_3_OR_OUTSIDE_DOMAIN_SHARPER_FINITE_MISSION_THEOREM_OR_DIRECT_CALCULATION",
+                "INSIDE_DOMAIN_EXACT_NORMS_AND_Kbar_3_FOR_THE_PRETHERMAL_ROUTE_OR_SELECTED_GL6BA_COLLAR_TOLERANCE_RADIUS_REDUCED_POSTFORMATION_STATE_AND_CONTROLLED_INTERIOR_EVALUATION",
                 "PHYSICAL_PREPARATION_HOMOGENIZATION_AND_CAUSAL_UPDATE_OF_RETAINED_COEFFICIENT_FIELD",
                 "NONZERO_SELECTED_PROPAGATION_AND_RETAINED_LINEAGE_VISIBLE_STATIONARY_RESPONSE",
                 "CALIBRATED_PHYSICAL_MOMENTUM_LENGTH_TIME_SINGLE_CONE_AND_RANK6_CONSTITUTIVE_JOIN",
@@ -1093,6 +1183,12 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "bare_F3_lock_ray_selects_R": False,
                 "authenticated_binary_marginal_bound_is_complete_flag_output_TV": False,
                 "native_calibration_formula_supplies_selected_physical_numbers": False,
+                "finite_mission_collar_selects_physical_R_sigma_clock_or_state": False,
+                "finite_mission_collar_is_one_fixed_collar_for_unbounded_time": False,
+                "finite_mission_binary_pair_DTV_is_full_retained_flag_TV": False,
+                "induced_collar_cut_is_a_separately_authenticated_physical_mission": False,
+                "quasilocal_limit_is_one_infinite_authenticated_record": False,
+                "full_F3_finite_mission_collar_is_gravity_or_G": False,
                 "formal_global_or_fractional_q_is_authenticated_record_field": False,
                 "homogeneous_q6_clock_rescaling_supplies_physical_cone_or_curvature": False,
                 "typed_Sym2_source_read_atlas_is_rank6_metric_constitutive_law": False,
@@ -1113,7 +1209,8 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "verification": (
                     "PINNED_PRIMARY_HASHES__SEALED_MANIFESTS__INDEPENDENT_AUDIT_"
                     "DISPOSITIONS__TOP_PACKET_DECLARED_DEPENDENCY_ROWS__"
-                    "GL6AY_FAIL_REPAIR_PASS_CUSTODY__GL6AZ_DOMAIN_CORRECTION_CUSTODY"
+                    "GL6AY_FAIL_REPAIR_PASS_CUSTODY__GL6AZ_DOMAIN_CORRECTION_CUSTODY__"
+                    "GL6BA_FINITE_MISSION_COLLAR_CUSTODY"
                 ),
             },
             "executable_scope": {

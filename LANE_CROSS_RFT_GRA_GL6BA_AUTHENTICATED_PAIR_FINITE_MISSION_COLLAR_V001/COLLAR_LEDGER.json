@@ -1,0 +1,42 @@
+{
+  "lane": "GL6BA_V001",
+  "full_parent": "H/h = R*N_def - sum_p X_p",
+  "dimensionless_inputs": {
+    "R": "U_d/h",
+    "sigma_obs": "h*(t_Q-t_F)/hbar"
+  },
+  "pair_support_size": 2,
+  "link_degree": 6,
+  "influence_argument": "48*R*abs(sigma_obs)",
+  "cell_shell": "10*L^2+2",
+  "cell_ball": "(10*L^3+15*L^2+11*L+3)/3",
+  "cross_boundary_pairs": "12*(3*L^2+3*L+1)",
+  "cluster_cell_radius": "ceil(m/2) for m interaction-picture pair insertions",
+  "ordinary_taylor_match": "B_L matches through order 4*L+1",
+  "operator_error": "min(2, 2*(3*L^2+3*L+1)*T_(2*L+1)(48*R*abs(s)))",
+  "binary_pair_DTV": "for every complete finite all-formed/MATCH FPSS Omega in F_L: min(1, (3*L^2+3*L+1)*T_(2*L+1)(48*R*abs(sigma_obs)))",
+  "analytic_tail": "for 0<x<d=2*L+1: T_d(x) <= (e*x/d)^d; T_d(0)=0",
+  "collar_scope": "induced finite open restriction is a proof device inside a finite authenticated FPSS ancestry",
+  "quasilocal_scope": "GL6AK limit is a mathematical completion, not one infinite authenticated record",
+  "admitted_members": [
+    {"R": "2", "tail_argument": "96*abs(sigma_obs)"},
+    {"R": "5/2", "tail_argument": "120*abs(sigma_obs)"}
+  ],
+  "minimal_physical_payload": [
+    "A_X=h",
+    "Delta_def=2*U_d",
+    "same-clock t_F and t_Q",
+    "proof full F3 parent governs [t_F,t_Q]",
+    "reduced postformation collar state for numerical probability"
+  ],
+  "ceilings": [
+    "no selected numerical R",
+    "no selected numerical sigma_obs",
+    "no optimality claim for L_cert",
+    "no full retained-flag TV bound",
+    "no graviton",
+    "no Ricci",
+    "no gravity",
+    "no G"
+  ]
+}
