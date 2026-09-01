@@ -1,0 +1,68 @@
+{
+  "status": "AUTHOR_FROZEN_HOSTILE_PRESCREEN_CLEAN_POSTFREEZE_AUDIT_REQUIRED",
+  "parent": {
+    "N": 1,
+    "active_links": 16,
+    "within_cell_interactions": 24,
+    "shared_child_bridges": 6,
+    "total_interactions": 30,
+    "witness": {
+      "h": "E_0",
+      "U_d": "E_0",
+      "Delta": "6 E_0",
+      "d_star": 2,
+      "delta": 0
+    }
+  },
+  "matched_intervention": {
+    "reference_source_pattern": "0000",
+    "receiver_cells": [1, 2, 3],
+    "receiver_formed_keep_links_per_cell": 4,
+    "varied_factors": "source-cell-0 physical K-support word only",
+    "held_fixed": "receiver formation, Hamiltonian terms, read, clock, raw Hilbert space, and all non-source event values",
+    "absolute_neighbor_formula_used": false
+  },
+  "embedding": {
+    "pair_order": ["01", "02", "03", "12", "13", "23"],
+    "E_rows": [[1, 1], [-1, 0], [0, -1], [0, -1], [-1, 0], [1, 1]],
+    "definition": "mu_i^E = E^T m_i",
+    "w_ab_type": "column vector E_(ab),:^T in R^2"
+  },
+  "branch_replay": {
+    "all_order_twelve_patterns": 16,
+    "explicit_reference": ["0000"],
+    "explicit_singles": ["1000", "0100", "0010", "0001"],
+    "explicit_pairs": ["1100", "1010", "1001", "0110", "0101", "0011"]
+  },
+  "local_pair": {
+    "matched_orders_below_4_zero": true,
+    "signed_raw_order_4": 96,
+    "coefficient": "4",
+    "direction": "w_ab",
+    "next_possible_order": 6
+  },
+  "matched_receiver": {
+    "matched_orders_below_12_zero": true,
+    "signed_raw_order_12": -63371264,
+    "raw_magnitude_q": 63371264,
+    "coefficient": "-5626/42525",
+    "formula": "Delta mu_c^E = coefficient * u^12 * kappa_c * w_0c + O(u^14)",
+    "order_12_nonzero_iff": "kappa_c = 1",
+    "odd_order_13_zero": true
+  },
+  "remote_pair_mobius": {
+    "all_six_pairs_all_three_receivers_orders_below_16_zero": true,
+    "signed_raw_order_16": 123422773248,
+    "coefficient": "1116019/189189000",
+    "formula": "raw_pair_Mobius_c_ab = signed_raw_order_16 * indicator(c in {a,b}) * w_0c"
+  },
+  "bridge_off": {
+    "role": "Hamiltonian term-ablation factorization diagnostic",
+    "authenticated_physical_switch_claimed": false,
+    "removed_interactions": 6,
+    "retained_within_cell_interactions": 24,
+    "cell_components": 4,
+    "matched_receiver_contrast": "exactly zero for every source pattern and all tau by tensor factorization",
+    "replayed_patterns_through_order_16": 11
+  }
+}

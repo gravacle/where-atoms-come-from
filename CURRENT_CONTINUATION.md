@@ -1,6 +1,6 @@
 # Current continuation pointer
 
-**Date:** 2026-08-29
+**Date:** 2026-08-31
 
 **Authority:** this file identifies the current work program.  Dated
 `HANDOFF_*.md` files are provenance and are not authoritative unless this file
@@ -37,6 +37,36 @@ accepted the exact target bytes with no material defect.  The authoritative
 target/audit hashes are packaged in
 `GRAVITY_RECORD_FIRST_WORKING_THEORY_CLOSURE_V001.sha256`, and the V014 URM
 certificate plus the full URM chain pass.
+
+## Newest sealed microscopic checkpoint
+
+The additive URM surface `gravity_microscopic_progress` now packages the
+author-frozen, independently audited direct F3 chain through `GL6AI` without
+changing the V014 working-theory meaning.  Its load-bearing results are:
+
+1. on GL6T's declared `N=0`, `U_d=0`, `h,Delta>0`,
+   `0<vartheta<2*pi` comparator, formed KEEP opens the complete finite
+   six-pair response while matched BREAK is zero;
+2. the inherited degree interaction creates the exact nonfactorization
+   `y-x*z^2=-(16/3)h^3 U_d (tau/hbar)^4+O((tau/hbar)^6)` (`GL6U`);
+3. independently formed node-ID and port records authenticate the finite FPSS
+   shared-child atlas and its transition cocycles (`GL6AA`);
+4. formation-pattern changes produce an exact fixed-frame source threshold and
+   a matched neighboring response (`GL6AF/GL6AG`);
+5. on the sealed `delta=0` slice, the general finite parent carries a
+   homogeneous direct-edge order-six `A1+T2` signal, exact direct `E` null, and
+   cancellation of the displayed helper-assisted `E` terms at complete
+   homogeneous interior incidence (`GL6AH`); and
+6. the same parent has a slab-size-independent exponentially quasi-local
+   relational-influence envelope with conservative bound
+   `lambda_F3=48|U_d|/hbar` (`GL6AI`).
+
+The last item is an analytic upper envelope, not exact finite-speed support, a
+Lorentz cone, a common physical cone, gravity, or `G`.  The exact next gates are
+the stationary bulk infrared law, common physical cone, complete
+stress/Ward/contact ownership, native continuum operator, held-out
+Ricci/Einstein comparison, and microscopic Ricci coefficient/`G_model`.
+Mutable work beyond `GL6AI` is deliberately excluded from this checkpoint.
 
 ## Transfer disposition
 
@@ -94,8 +124,12 @@ claim is therefore non-authoritative.
 
 ## Checkpoint base
 
-The last pre-transfer Git checkpoint is
-`f476bcc530ef41bbc84f1a18d3313d13ba54cc15`.  The working tree contains many
+The current Git base is
+`e91bbc1d4c60e0ab24b15e52e7263715be90b47c`.  The working tree contains many
 older user-owned and generated changes.  Any new checkpoint must stage only
 the explicitly reviewed continuation files and must not sweep unrelated
 changes into the commit.
+
+The reviewed, hash-pinned proposed stage inventory is
+`CHECKPOINT_2026-08-31_GL6AI_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
+only: the Git index must remain untouched until that inventory is reviewed.

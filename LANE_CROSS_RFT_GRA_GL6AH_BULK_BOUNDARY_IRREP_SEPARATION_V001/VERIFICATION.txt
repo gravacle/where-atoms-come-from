@@ -1,0 +1,18 @@
+GL6AH V001 author-freeze verification
+Date: 2026-08-31
+
+PASS__GL6AH_MUTABLE_PACKET__60/60
+PASS__GL6AH_LOCAL_BULK_BOUNDARY__177/177
+PASS__GL6AH_N1_CONNECTOR_SUPPORTS__1293/1293
+
+Independent hostile pre-freeze review:
+- author packet/local/support replay: 1530/1530
+- independent all-(d,c,x) chain-orbit replay: 96/96
+- independent detuning replay: 49/49
+- frozen GL6AG reconciliation: 62/62
+- total exact checks: 1737/1737
+- manual proof/scope axes: 10/10 CLEAN
+
+The exact q6 coefficient and connector-tag polynomial remain delta=0-only.
+Finite-order continuity gives only the stated open detuning neighborhood of
+nonzero direct response.  Post-freeze custody/replay audit remains required.

@@ -992,6 +992,20 @@ class URM(ProjectModel):
 
         return gravity_formation_theory_certificate()
 
+    @staticmethod
+    def gravity_microscopic_progress():
+        """Expose sealed F3 progress through GL6AI without changing V014 semantics."""
+        from gravity_microscopic_progress import gravity_microscopic_progress
+
+        return gravity_microscopic_progress()
+
+    @staticmethod
+    def gravity_microscopic_progress_certificate():
+        """Return exact microscopic results and the still-open IR/gravity gates."""
+        from gravity_microscopic_progress import gravity_microscopic_progress_certificate
+
+        return gravity_microscopic_progress_certificate()
+
     def roles(self):
         """Keep the historical role ledger, but replace its superseded gravity frontier."""
         roles = super().roles()

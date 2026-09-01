@@ -1,0 +1,25 @@
+GL6AF independent post-freeze hostile audit verification
+Date: 2026-08-31
+
+python3 -B independent_gl6af_replay.py
+PASS__INDEPENDENT_GL6AF_REPLAY__22035/22035
+PAULI=ALL_16_PATTERNS_COMPLETE_6X6_DOUBLE_COMMUTATOR_EXACT
+RANKS=FORMED_COUNT_0_1_TO0_2_TO1_3_4_TO2
+COEFFICIENT=TWO_FORMED_MINUS16_H_X_ONE_MINUS_Z_WTW
+MIXING=BROKEN_S4_FIXED_E_RESTRICTION_NOT_INVARIANT_BLOCK
+BRANCH=ORTHOGONAL_K_PROJECTORS_H_M_GL6V_SOURCE_PRESERVE_SECTORS
+CTP=BRANCHWISE_SLOPE_PLUS8_ESTAR2_H_X_ONE_MINUS_Z_OVER_HBAR2
+ANCESTRY=PHYSICAL_K_MEDIATOR_NOT_SEMANTIC_REC_OR_PAIR_RECORD
+SCOPE=NO_COLLECTIVE_STIFFNESS_BULK_STRESS_RICCI_GRAVITY_G
+
+python3 -B verify_audit.py
+PASS GL6AF exact formation-pattern checks 33/33
+PASS GL6AF packet checks 72/72
+PASS__GL6AF_HOSTILE_AUDIT__106/106
+
+Independent hostile disposition: PASS.
+The fixed E-plane result is a restricted source/read bilinear under partial
+formation patterns, not an invariant E2 Schur block.  Physical K support is
+the response mediator; semantic REC and the pair observables are not promoted
+to dynamical charges or records.  Collective stiffness, bulk propagation,
+gravity, and G remain open.

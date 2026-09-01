@@ -11,11 +11,13 @@ runs the 82-check public-data proof frontier, whose blocker and nonauthoritative
 input/theory states never authorize scientific readiness or proof.  Exit code is zero
 only when every family gate, the declared gate counts, geometry/project validation,
 all four independent data/frontier contracts, the zero-input U-DCL adoption/theorem
-certificate, the zero-input historywise-gravity formal discriminant, and the bounded
-Gravity Formation Theory custody/ceiling gate pass.  The U-DCL gateway certifies a
+certificate, the zero-input historywise-gravity formal discriminant, the bounded
+Gravity Formation Theory custody/ceiling gate, and the additive sealed microscopic-
+progress checkpoint pass.  The U-DCL gateway certifies a
 program postulate and conditional theorem, not natural validity; the GFT gateway
 certifies the adopted working-theory closure and off-shell/on-shell response
-clarification, not empirical RGRL confirmation.
+clarification, not empirical RGRL confirmation.  The microscopic checkpoint preserves
+the V014 meaning and does not promote a quasi-local envelope to gravity.
 
 Use --no-chain to run only the four T-54 family blocks.
 """
@@ -88,6 +90,7 @@ proof_frontier_ok = True
 udcl_postulate_ok = True
 historywise_gravity_ok = True
 gravity_formation_theory_ok = True
+gravity_microscopic_progress_ok = True
 if "--no-chain" not in sys.argv:
     print()
     print("CHAIN: validate_geometry.py (which chains the 24-gate project/D-25 validator)")
@@ -204,6 +207,23 @@ if "--no-chain" not in sys.argv:
         "  CHAIN validate_gravity_formation_theory.py: "
         + ("PASS" if gravity_formation_theory_ok else "FAIL")
     )
+    print()
+    print(
+        "CHAIN: validate_gravity_microscopic_progress.py "
+        "(sealed GL6T--GL6AI progress; stationary IR, common cone, Einstein comparison, and G open)"
+    )
+    print("-" * 78)
+    sys.stdout.flush()
+    result = subprocess.run(
+        [sys.executable, os.path.join(HERE, "validate_gravity_microscopic_progress.py")],
+        cwd=HERE,
+    )
+    gravity_microscopic_progress_ok = result.returncode == 0
+    print("-" * 78)
+    print(
+        "  CHAIN validate_gravity_microscopic_progress.py: "
+        + ("PASS" if gravity_microscopic_progress_ok else "FAIL")
+    )
 
 print("=" * 78)
 overall = (
@@ -217,6 +237,7 @@ overall = (
     and udcl_postulate_ok
     and historywise_gravity_ok
     and gravity_formation_theory_ok
+    and gravity_microscopic_progress_ok
 )
 print(f"  URM OVERALL: {'PASS' if overall else 'FAIL'} "
       f"(families {n_pass}/{n_pass + n_fail}, "
@@ -231,6 +252,8 @@ print(f"  URM OVERALL: {'PASS' if overall else 'FAIL'} "
          f"historywise-gravity formal discriminant "
          f"{'ok' if historywise_gravity_ok else 'FAILED'}, "
          f"Gravity Formation Theory "
-         f"{'ok' if gravity_formation_theory_ok else 'FAILED'}")
+         f"{'ok' if gravity_formation_theory_ok else 'FAILED'}, "
+         f"microscopic progress "
+         f"{'ok' if gravity_microscopic_progress_ok else 'FAILED'}")
       + f"; {time.time() - t0:.1f} s)")
 sys.exit(0 if overall else 1)

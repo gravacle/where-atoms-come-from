@@ -1,0 +1,28 @@
+{
+  "lane": "GL6AI V001",
+  "status": "AUTHOR_FROZEN_AFTER_HOSTILE_PRESCREEN_123777_OF_123777__POSTFREEZE_AUDIT_REQUIRED",
+  "parent_hamiltonian": "H=-h sum_e beta_e X_e + Delta sum_e n_e + Ud sum_v(d_v-dstar)^2",
+  "exact_split": {
+    "onsite": "sum_e[-h beta_e X_e + (Delta+2 Ud(1-2 dstar)) n_e]",
+    "pair": "sum_{e~f} 2 Ud n_e n_f",
+    "pair_norm_J": "2 |Ud|"
+  },
+  "topology": {
+    "link_degree_exact": "2+|supp(child(e))|",
+    "uniform_link_degree": 6,
+    "cell_distance": "||m-n||_1/2",
+    "distance_inequality": "d_link(e,f)>=d_cell(parent(e),parent(f))"
+  },
+  "influence_matrix": {
+    "offdiagonal": "J on line-graph adjacency",
+    "diagonal": "J deg(e), required for non-advancing support dressing",
+    "row_sum_bound": "2 J Delta_L"
+  },
+  "certified_constants": {
+    "lambda_F3": "4 J Delta_L/hbar = 48 |Ud|/hbar",
+    "v_mu": "lambda_F3 exp(mu)/mu",
+    "v_mu_1": "48 e |Ud|/hbar"
+  },
+  "source_contrast": "branch-normalized beta_s=1 minus beta_s=0 on the common active-link factor with every beta_e,e!=s fixed; V_s=-h X_s; no sham/BREAK ancestry conflation",
+  "ceiling": "uniform exponentially quasi-local relational-influence envelope only; analytic tails are not exact finite-speed support; no Lorentz/common physical cone, stationary mode, Ricci, gravity, or G"
+}

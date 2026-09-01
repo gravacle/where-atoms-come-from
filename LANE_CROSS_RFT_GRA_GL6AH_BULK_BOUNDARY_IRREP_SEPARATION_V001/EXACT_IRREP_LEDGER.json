@@ -1,0 +1,68 @@
+{
+  "lane": "GL6AH V001",
+  "status": "author frozen after hostile pre-freeze review 1737/1737; post-freeze custody/replay audit required",
+  "witness": {
+    "h": "E0",
+    "Ud": "E0",
+    "d_star": 2,
+    "Delta": "6 E0",
+    "delta": 0,
+    "pair_order": ["01", "02", "03", "12", "13", "23"]
+  },
+  "direct_edge": {
+    "matched_source": "only the direct source-port physical K changes against sham",
+    "raw_below_order_6": [0, 0, 0, 0, 0, 0],
+    "raw_order_6": "-128 h^4 Ud^2 u_b^in",
+    "tag_polynomial_at_h_Ud_1_delta_0": "-128 g^2",
+    "expectation_order_6_at_witness": "+(8/45) (E0 tau/hbar)^6 u_b^in",
+    "irrep_decomposition": "u_b^in=(1/2) one+(1/2) s_b in A1+T2",
+    "E_projection": "zero at every order for the direct one-port block",
+    "general_N_basis": "linked-word saturation plus local S4; not extrapolated from N=1"
+  },
+  "helper_chain": {
+    "raw_E_order_12": "+63371264 w_bd",
+    "factorial": "63371264/12! = 5626/42525",
+    "endpoint_vector": "eta_n^(b)=sum_{d!=b} r_{n,d} w_bd",
+    "homogeneous_interior": "r_{n,d}=3 for all d, hence eta_n^(b)=0"
+  },
+  "alternate_path_exclusion": {
+    "motif": "two-connector source-helper-receiver path without the direct bridge",
+    "raw_full_pair_below_order_14": 0,
+    "raw_full_pair_order_14": "-14721024 u_b^in",
+    "E_projection_order_14": 0,
+    "scope": "bounded distance-two lemma only"
+  },
+  "pair_source_chain": {
+    "scope": "source pair includes the direct source port; displayed chain family only outside N=1 witness",
+    "raw_E_order_16": "-123422773248 w_bd",
+    "factorial": "123422773248/16! = 1116019/189189000",
+    "endpoint_helper_family": "-123422773248 eta_n^(b)"
+  },
+  "N1_connector_support_census": {
+    "literal_connector_subsets": 64,
+    "q6_nonzero_supports": [
+      {"support": ["01"], "value": "-128 u_0^in"}
+    ],
+    "q12_nonzero_supports": [
+      {"support": ["01", "12"], "value": "+63371264 w_02"},
+      {"support": ["01", "13"], "value": "+63371264 w_03"}
+    ],
+    "q16_nonzero_supports": [
+      {"support": ["01", "12"], "value": "-123422773248 w_02"},
+      {"support": ["01", "13"], "value": "-123422773248 w_03"}
+    ],
+    "full_q12": "-63371264 w_01",
+    "full_q16": "+123422773248 w_01",
+    "all_other_supports": 0
+  },
+  "scope": {
+    "physical_K_not_semantic_REC": true,
+    "pair_mean_called_record": false,
+    "term_ablation_called_physical_switch": false,
+    "fixed_frame_E_only": true,
+    "bulk_shear_claimed": false,
+    "stationary_mode_claimed": false,
+    "common_cone_claimed": false,
+    "Ricci_or_gravity_or_G_claimed": false
+  }
+}

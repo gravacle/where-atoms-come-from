@@ -51,6 +51,7 @@ silently use them as the public path.
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
 | Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for the hostile-audited record-first working-theory closure under adopted RGRL and explicit WTC hypotheses; observable pair-memory curvature capacity and source reciprocity; the narrow bare flip/recoil Ward obstruction; earlier F3/Phase-A boundaries; and audited public searches. No graviton premise is required for the Einstein--Hilbert classification. Empirical RGRL confirmation, microscopic F3 derivation of RGRL-B, strict origin of the full Einstein--Hilbert coefficient, and a parameter-free numerical \(G\) remain open. |
+| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive zero-input checkpoint over the independently audited GL6T--GL6AI chain: record-gated local pair response, interaction-owned nonfactorization, a record-authenticated finite FPSS atlas, matched neighbor response, homogeneous direct-edge `A1+T2` propagation with the displayed boundary/shear separation, and a uniform quasi-local influence envelope. It does not change V014 or promote the envelope to a Lorentz cone, gravity, Einstein dynamics, or \(G\). |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -608,6 +609,39 @@ or gravity endpoint is "open" refers to derivation from those microscopic
 routes; it does not reopen the V014 working-theory implication, where the
 corresponding infrared content is supplied explicitly by `WTC-H1--H5`.
 
+The separate additive microscopic-progress surface freezes the newer direct F3
+chain through GL6AI without revising that V014 statement.  On GL6T's declared
+`N=0`, `U_d=0`, `h,Delta>0`, `0<vartheta<2*pi` comparator, formed KEEP opens a
+full six-direction q4 pair response while matched BREAK is zero.  Restoring
+the inherited degree interaction gives
+the exact interaction-owned defect
+\[
+ y-xz^2=-\frac{16}{3}h^3U_d(\tau/\hbar)^4+O((\tau/\hbar)^6).
+\]
+Independently formed node-ID and port records authenticate the finite FPSS
+shared-child atlas and its transition cocycles.  On the sealed `delta=0` slice,
+on every general-`N` direct edge, a matched retained source first reaches the
+neighboring six-pair mean as
+\[
+ \Delta Q_{n,6}=-128h^4U_d^2u_b^{\rm in},\qquad
+ u_b^{\rm in}=\tfrac12\mathbf1+\tfrac12s_b\in A_1\oplus T_2,
+\]
+with exact direct `E` null at every order.  The displayed helper-assisted `E`
+terms cancel at a complete homogeneous interior endpoint, so those particular
+terms are boundary-owned; this does not prove that every later shear response
+is boundary-owned.  Finally, the same finite parent has the uniform analytic
+tail
+\[
+ \|[\tau_t(A_e),B_f]\|\le 2\|A_e\|\|B_f\|
+ e^{-\mu[d_{\mathcal G_N}(m,n)-v_\mu|t|]},\quad
+ v_\mu=\frac{48|U_d|}{\hbar}\frac{e^\mu}{\mu}.
+\]
+This is a quasi-local upper envelope, not exact finite-speed support or a
+physical cone.  The held-open gates are the stationary bulk infrared law,
+common physical cone, complete stress/Ward/contact ownership, native continuum
+operator, held-out Ricci/Einstein comparison, and microscopic coefficient/
+`G_model` calculation.
+
 The certificate now makes the adopted distinction explicit. RGRL-C supplies
 full-rank or declared dense-range **off-shell constitutive ancestry** on the
 local spatial-metric tangent; it does not by itself supply an on-shell force
@@ -952,6 +986,7 @@ python3 model/count_law.py             # exact corner count — 22 checks
 python3 model/validate_udcl_postulate.py  # 32 adoption/theorem custody and ceiling checks
 python3 model/validate_historywise_gravity_discriminant.py  # 84 formal-only checks
 python3 model/validate_gravity_formation_theory.py  # bounded zero-input custody/ceiling gate
+python3 model/validate_gravity_microscopic_progress.py  # 46 sealed-progress/ceiling checks
 ```
 
 The family validator is the landing gate for new URM features. Its printed totals are computed by
