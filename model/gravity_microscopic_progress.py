@@ -1,4 +1,4 @@
-"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6AY.
+"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6AZ.
 
 This additive surface verifies the frozen theorem/audit packets that establish
 record-gated finite response, interaction-owned nonfactorization, an
@@ -7,11 +7,14 @@ degree locking, the complete order-six locked Hamiltonian, thermodynamic
 locked sectors, collective-response constraints, and the exact quantum-ice
 comparison point; the first-character and anisotropic finite-size closure
 theorems; the exact record-conditioned pure-loop clock/typed-atlas bridge;
-all-fixed-controlled-order port/twist stability; and the finite-coupling
-prethermal locked bridge. It deliberately does not alter the V014
+all-fixed-controlled-order port/twist stability; the finite-coupling
+prethermal locked bridge; and its corrected source-proof application domain,
+physical-input identifiability boundary, authenticated binary-marginal bound,
+and inside/outside-domain fork. It deliberately does not alter the V014
 working-theory certificate and does not promote fixed-order control to exact
-finite-coupling closure, the prethermal normal form to an all-time phase, or
-any result to a selected GNS mode, isotropic propagation, physical metric,
+finite-coupling closure, the sufficient prethermal domain to a necessary
+phase condition, the prethermal normal form to an all-time phase, or any
+result to a selected GNS mode, isotropic propagation, physical metric,
 gravity, Einstein dynamics, or a numerical value of G.
 """
 
@@ -26,8 +29,8 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V004"
-CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6AY_WITH_STRICT_FINITE_COUPLING_GNS_METRIC_AND_GRAVITY_CEILINGS"
+SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V005"
+CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6AZ_WITH_CORRECTED_PRETHERMAL_DOMAIN_IDENTIFIABILITY_AND_STRICT_GRAVITY_CEILINGS"
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 _HASH_ROW = re.compile(r"^([0-9a-f]{64})  ([^\r\n]+)$")
@@ -317,6 +320,18 @@ _PACKETS = (
         "3f787b28c44bb896aaff2e98c84691a7fa86bcddb3e5b2b4b6934c8a6b398bf1",
         "PASS__FINITE_COUPLING_PRETHERMAL_BRIDGE__LOCAL_COLLAR_TYPED__GLOBAL_PROJECTOR_CLAIMS_REMOVED",
     ),
+    _PacketPin(
+        "GL6AZ",
+        "LANE_CROSS_RFT_GRA_GL6AZ_RECORD_AUTHENTICATED_PRETHERMAL_MISSION_IDENTIFIABILITY_V001",
+        "bcca352d9e58deba63a068a29f94a0e19fb88ae9994391ab1b5053120587ba44",
+        "a932e083b5dd629e41f0014d52bf1c65f982612b55314e1e03e082b0feb8ebc7",
+        "620eb8bcb254b0296bd4d2f7e81a0b3e78c0d0b9ce80ad257e97a4db394f392d",
+        "AUDIT_G_GL6AZ_RECORD_AUTHENTICATED_PRETHERMAL_MISSION_IDENTIFIABILITY_V001",
+        "72c3c6552a89a3d5b977fb7ff566d558ed70d9c14b2caac64c8602609356498f",
+        "9954328b6939e12c0b2f712bf6373d8a5c2a4cfafd77ab85aa133b27a4a9f707",
+        "1d7cd10a59469139edf4b2836ce95820f605069ef3e6bc0d56bf4df58009b869",
+        "PASS__REPAIRED_HIGH_BRANCH_PRETHERMAL_APPLICATION_AND_RECORD_MARGINAL_IDENTIFIABILITY__SELECTED_MEMBER_AND_MISSION_DATA_OPEN",
+    ),
 )
 
 
@@ -450,8 +465,11 @@ def _verify_seal(directory: str, expected_seal: str, expected_manifest: str) -> 
     path = _root_path(relative)
     if _sha256(path) != expected_seal:
         _refuse(f"seal-file hash mismatch: {relative}")
-    expected_text = f"{expected_manifest}  {directory}/MANIFEST.sha256\n"
-    if _strict_text(path) != expected_text:
+    expected_texts = {
+        f"{expected_manifest}  {directory}/MANIFEST.sha256\n",
+        f"{expected_manifest}  MANIFEST.sha256\n",
+    }
+    if _strict_text(path) not in expected_texts:
         _refuse(f"seal does not exactly bind the pinned manifest: {relative}")
 
 
@@ -902,16 +920,25 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 },
                 "finite_coupling_prethermal_locked_bridge": {
                     "parent": "H=U_d*N_def-h*sum_e(X_e);N_def=sum_v(k_v-2)^2",
-                    "normal_form_hypotheses": (
+                    "historical_GL6AY_compact_application_hypotheses": (
                         "U_d>=9*pi*v_0/kappa_0__n_*>=1__"
                         "nu_0=(54*pi/kappa_0^2)*(d_0+2*v_0)__"
                         "n_*=floor((U_d/nu_0)/(1+ln(U_d/nu_0))^3)-2"
                     ),
+                    "historical_application_status": (
+                        "SUPERSEDED_NOT_ERASED_BY_GL6AZ_RESTORED_SOURCE_PROOF_DOMAIN"
+                    ),
+                    "current_application_license": (
+                        "ONLY_UNDER_GL6AZ_CORRECTED_HIGH_BRANCH_R>=9*pi*vbar_0/kappa_0__"
+                        "R>=nubar_0__n_*(R)>=1"
+                    ),
                     "exact_normal_form": (
+                        "LICENSED_ONLY_UNDER_GL6AZ_CORRECTED_DOMAIN__"
                         "Y_L*H_L*Y_L^*=U_d*N_def+D_hat_L+V_hat_L__"
                         "[D_hat_L,N_def]=0__REMAINDER_RETAINED"
                     ),
                     "remainder_bound": (
+                        "LICENSED_ONLY_UNDER_GL6AZ_CORRECTED_DOMAIN__"
                         "norm_str_kappa_*(V_hat_L)<=(2/3)^n_*v_0__"
                         "kappa_*=kappa_0/(1+log(n_*+1))"
                     ),
@@ -919,19 +946,26 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                         "N_S=sum_(v:supp(q_v^2)_subset_S)q_v^2__"
                         "P_S^0=chi(N_S=0)__Phi(S)=P_S^0*D_hat(S)*P_S^0"
                     ),
+                    "local_collar_status": (
+                        "VALID_STRUCTURAL_RESULT_FOR_ANY_LICENSED_NORMAL_FORM__"
+                        "NOT_ERASED_BY_GL6AZ"
+                    ),
                     "locked_endpoint_port_law": (
                         "NONZERO_<n'|Phi(S)|n>_FOR_GLOBALLY_LOCKED_ENDPOINTS_"
                         "IMPLIES_Delta_N_a=0_FOR_ALL_FOUR_PORTS"
                     ),
                     "finite_second_twist_moment": (
-                        "D_2(L)<=4*C_geo^2*sup_m(m^4*exp(-kappa_*m))*"
+                        "FOR_A_GL6AZ_LICENSED_NORMAL_FORM__D_2(L)<="
+                        "4*C_geo^2*sup_m(m^4*exp(-kappa_*m))*"
                         "norm_str_kappa_*(D_hat_L)<infinity"
                     ),
                     "effective_gap_dichotomy": (
-                        "GROUND_DEGENERATE_OR_Delta_L^eff<="
+                        "FOR_A_GL6AZ_LICENSED_NORMAL_FORM__GROUND_DEGENERATE_OR_"
+                        "Delta_L^eff<="
                         "2*pi^2*D_2(L)*L0*L2/L1+T_L"
                     ),
                     "local_observable_horizon": (
+                        "LICENSED_ONLY_UNDER_GL6AZ_CORRECTED_DOMAIN__"
                         "norm(tau_t^H(O)-tau_t^(U_d*N_def+D_hat)(O))<="
                         "K_3(O)/U_d_FOR_t<=t_*=exp(r_1*n_*),0<r_1<ln(3/2)/4"
                     ),
@@ -940,9 +974,71 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                         "P_L_TO_P_L_RETURN_REQUIRES_WINDING_AND_AT_LEAST_2*L_min_LINKS"
                     ),
                     "exact_ceiling": (
-                        "EXACT_NORMAL_FORM_WITH_RETAINED_REMAINDER_AND_PRETHERMAL_"
-                        "LOCAL_SHADOWING__NOT_EXACT_ALL_TIME_LOCKED_PHASE_OR_"
-                        "GLOBAL_DRESSED_SUBSPACE_CLOSENESS"
+                        "CORRECTED_DOMAIN_CONDITIONAL_EXACT_NORMAL_FORM_WITH_RETAINED_"
+                        "REMAINDER_AND_PRETHERMAL_LOCAL_SHADOWING__NOT_EXACT_ALL_TIME_"
+                        "LOCKED_PHASE_OR_GLOBAL_DRESSED_SUBSPACE_CLOSENESS"
+                    ),
+                },
+                "record_authenticated_prethermal_mission_identifiability": {
+                    "dimensionless_inputs": (
+                        "R=U_d/h__sigma_obs=h*(t_Q-t_F)/hbar"
+                    ),
+                    "normalized_source_constants": (
+                        "nubar_0=(54*pi/kappa_0^2)*(dbar_0+2*vbar_0)"
+                    ),
+                    "corrected_source_proof_domain": (
+                        "kappa_0>0__R>=9*pi*vbar_0/kappa_0__R>=nubar_0__"
+                        "n_*(R)>=1__0<r_1<ln(3/2)/4__"
+                        "sigma_obs<=exp(r_1*n_*(R))"
+                    ),
+                    "restored_high_branch": "R/nubar_0>=1",
+                    "n_star": (
+                        "n_*(R)=floor((R/nubar_0)/(1+ln(R/nubar_0))^3)-2"
+                    ),
+                    "first_smallness_floor": (
+                        "R>=36*pi*e=307.4304320162484"
+                    ),
+                    "restored_scale_separation_floor": (
+                        "R>=432*pi*e^2=10028.190682380982"
+                    ),
+                    "complete_universal_floor": (
+                        "R>=x_*432*pi*e^2=18665728.0078_(18,665,728.0078)__"
+                        "x_*=1861.32559690908"
+                    ),
+                    "authenticated_binary_marginal": (
+                        "D_TV(p^H,p^eff)<=Kbar_3(M_beta)/(2*R)__"
+                        "SELECTED_READY_MATCH_ACTIVE_FACTOR__COMPLETE_FLAGS_RETAINED__"
+                        "NO_POSTSELECTION"
+                    ),
+                    "native_calibration": (
+                        "A_X=abs(<n^e|H|n>)=h__Delta_def=<n^e|H|n^e>-<n|H|n>="
+                        "2*U_d__R=Delta_def/(2*A_X)"
+                    ),
+                    "mission_clock": (
+                        "sigma_obs=A_X*(t_Q-t_F)/hbar__SAME_REGISTERED_CLOCK_AND_"
+                        "SAME_F3_POSTFORMATION_GENERATOR_REQUIRED"
+                    ),
+                    "non_identifiability": (
+                        "BARE_F3_LOCK_RAY_ADMITS_EVERY_POSITIVE_R__CURRENT_CUSTODY_"
+                        "SELECTS_NEITHER_R_NOR_ONE_NUMERICAL_SIGMA_OBS"
+                    ),
+                    "admitted_member_boundary": (
+                        "R_IN_{2,5/2}_FAILS_EVEN_FIRST_SUFFICIENT_FLOOR__"
+                        "THEOREM_APPLICATION_REJECTED_NOT_PHYSICAL_PHASE"
+                    ),
+                    "inside_domain_branch": (
+                        "CALIBRATE_SELECTED_MEMBER_AND_MISSION__VERIFY_ALL_DOMAIN_"
+                        "INEQUALITIES__EVALUATE_EXACT_NORMALIZED_NORMS_AND_Kbar_3__"
+                        "APPLY_AUTHENTICATED_BINARY_MARGINAL_BOUND"
+                    ),
+                    "outside_domain_branch": (
+                        "GL6AY_DOES_NOT_CERTIFY__USE_SHARPER_FINITE_MISSION_LOCAL_"
+                        "OBSERVABLE_THEOREM_OR_DIRECT_CONTROLLED_SELECTED_MISSION_"
+                        "CALCULATION__DO_NOT_EXTRAPOLATE_n_*"
+                    ),
+                    "exact_ceiling": (
+                        "SUFFICIENT_NOT_NECESSARY_DOMAIN__NO_SELECTED_MEMBER_OR_"
+                        "MISSION_NUMBER__NO_ALL_TIME_PHASE_SELECTED_GNS_GRAVITY_OR_G"
                     ),
                 },
             },
@@ -960,7 +1056,8 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
             "open_gates": (
                 "ISOTROPIC_V_OVER_G_ZERO_PHASE_CONTROL_AND_SELECTED_FINITE_TO_GNS_BRIDGE",
                 "EXACT_ALL_TIME_FINITE_H_OVER_U_D_LOCKED_PHASE_OR_CONTROL_OF_THE_PRETHERMAL_REMAINDER",
-                "PHYSICAL_U_D_OVER_H_AND_CLOCK_CALIBRATION_FOR_A_DECLARED_RECORD_RETENTION_HORIZON",
+                "SELECTED_PHYSICAL_F3_MEMBER_SAME_PARENT_MATRIX_ELEMENTS_AND_CLOCK_BIND_FOR_R_AND_SIGMA_OBS",
+                "INSIDE_DOMAIN_EXACT_NORMS_AND_Kbar_3_OR_OUTSIDE_DOMAIN_SHARPER_FINITE_MISSION_THEOREM_OR_DIRECT_CALCULATION",
                 "PHYSICAL_PREPARATION_HOMOGENIZATION_AND_CAUSAL_UPDATE_OF_RETAINED_COEFFICIENT_FIELD",
                 "NONZERO_SELECTED_PROPAGATION_AND_RETAINED_LINEAGE_VISIBLE_STATIONARY_RESPONSE",
                 "CALIBRATED_PHYSICAL_MOMENTUM_LENGTH_TIME_SINGLE_CONE_AND_RANK6_CONSTITUTIVE_JOIN",
@@ -991,6 +1088,11 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "local_collar_port_law_is_full_Hilbert_space_port_symmetry": False,
                 "local_observable_horizon_is_selected_GNS_or_isotropic_propagation": False,
                 "prethermal_horizon_without_U_d_over_h_and_clock_calibration_is_physical_record_lifetime": False,
+                "GL6AY_compact_domain_is_current_application_license": False,
+                "failure_of_GL6AZ_sufficient_domain_is_physical_phase_failure": False,
+                "bare_F3_lock_ray_selects_R": False,
+                "authenticated_binary_marginal_bound_is_complete_flag_output_TV": False,
+                "native_calibration_formula_supplies_selected_physical_numbers": False,
                 "formal_global_or_fractional_q_is_authenticated_record_field": False,
                 "homogeneous_q6_clock_rescaling_supplies_physical_cone_or_curvature": False,
                 "typed_Sym2_source_read_atlas_is_rank6_metric_constitutive_law": False,
@@ -1011,7 +1113,7 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "verification": (
                     "PINNED_PRIMARY_HASHES__SEALED_MANIFESTS__INDEPENDENT_AUDIT_"
                     "DISPOSITIONS__TOP_PACKET_DECLARED_DEPENDENCY_ROWS__"
-                    "GL6AY_FAIL_REPAIR_PASS_CUSTODY"
+                    "GL6AY_FAIL_REPAIR_PASS_CUSTODY__GL6AZ_DOMAIN_CORRECTION_CUSTODY"
                 ),
             },
             "executable_scope": {

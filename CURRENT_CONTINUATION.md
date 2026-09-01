@@ -41,7 +41,7 @@ certificate plus the full URM chain pass.
 ## Newest sealed microscopic checkpoint
 
 The additive URM surface `gravity_microscopic_progress` now packages the
-author-frozen, independently audited direct F3 chain through `GL6AY` without
+author-frozen, independently audited direct F3 chain through `GL6AZ` without
 changing the V014 working-theory meaning.  The earlier `GL6T--GL6AI` results
 remain intact: record-gated complete finite pair response, exact
 interaction-owned nonfactorization, the record-authenticated finite FPSS
@@ -99,21 +99,36 @@ The newly registered sealed chain establishes:
     the quasi-local centered-sector bound
     `Delta_L<=2pi^2 D_2 L0 L2/L1+T_L`; this is not uniform all-orders or exact
     finite-coupling closure (`GL6AX`); and
-13. under explicit strong-support/small-`h/U_d` hypotheses, an exact
+13. under the complete corrected strong-support/high-branch domain, an exact
     finite-coupling quasi-local normal form
     `YHY*=U_d N_def+D_hat+V_hat`, with `[D_hat,N_def]=0` and retained
     quasi-exponentially small `V_hat`; the locally typed collar interaction
     `Phi(S)=P_S^0 D_hat(S) P_S^0` has exact locked-endpoint port `U(1)^4`,
     finite `D_2`, and a local-observable shadowing horizon
     `t<=exp(r_1 n_*)`.  Local charged leakage may occur without winding, so
-    this is prethermal control, not an exact all-time locked phase (`GL6AY`).
+    this is prethermal control, not an exact all-time locked phase.  The
+    historical compact application hypothesis is superseded, not erased
+    (`GL6AY`); and
+14. the corrected application domain
+    `R>=9pi vbar_0/kappa_0`, `R>=nubar_0`, `n_*(R)>=1`,
+    `sigma_obs<=exp(r_1 n_*)`, with `R=U_d/h` and
+    `sigma_obs=h(t_Q-t_F)/hbar`; the three sufficient-domain floors
+    `36pi e=307.430432...`, `432pi e^2=10028.190682...`, and
+    `R>=18,665,728.0078`; the exact calibration
+    `R=Delta_def/(2A_X)`, `sigma_obs=A_X(t_Q-t_F)/hbar`; and the authenticated
+    selected-factor bound `D_TV<=Kbar_3(M_beta)/(2R)`.  The bare F3 ray admits
+    every positive `R`, so a selected physical member/clock bind decides the
+    inside-domain exact-norm route versus an outside-domain sharper
+    finite-mission theorem or direct calculation (`GL6AZ`).
 
 The `v/g=0` liquid/linear-mode literature is registered as controlled
 numerical and effective evidence, not a phase, gap, or pole proof.  The exact
 open gates are: isotropic `v/g=0` phase control and the selected finite-to-GNS
 bridge; exact all-time finite-`h/U_d` closure or sufficient control of the
-retained prethermal remainder; physical `U_d/h` and clock calibration against
-a declared record-retention horizon; physical preparation,
+retained prethermal remainder; one selected physical member's same-parent
+matrix elements and formation-to-query clock bind; exact norms and `Kbar_3`
+inside the corrected domain, or a sharper finite-mission theorem/direct
+calculation outside it; physical preparation,
 homogenization, and causal update of the retained coefficient field; nonzero
 selected propagation and lineage-visible response; calibrated physical scales,
 one cone, and the rank-six constitutive join; common coupling, complete
@@ -123,7 +138,8 @@ coefficient/`G_model`.  The exact anisotropic finite-size closure is not an
 isotropic or selected-GNS theorem.  The GL6AY custody retains both the original
 hostile FAIL audit of the invalid global-projector/subspace formulation and
 the independent post-repair PASS audit of the local-collar formulation.
-Unaudited work beyond `GL6AY` is deliberately excluded.
+Failure of the corrected sufficient domain is not physical phase failure.
+Unaudited work beyond `GL6AZ` is deliberately excluded.
 
 ## Transfer disposition
 
@@ -182,11 +198,11 @@ claim is therefore non-authoritative.
 ## Checkpoint base
 
 The current Git base is
-`c3d4ff68fe1126e6cb0a6a5c76bc3390bae3191c`.  The working tree contains many
+`36842b80e7ba55a49879446e5bd7c6370a643ce9`.  The working tree contains many
 older user-owned and generated changes.  Any new checkpoint must stage only
 the explicitly reviewed continuation files and must not sweep unrelated
 changes into the commit.
 
 The reviewed, hash-pinned proposed stage inventory is
-`CHECKPOINT_2026-08-31_GL6AY_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
+`CHECKPOINT_2026-08-31_GL6AZ_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
 only: the Git index must remain untouched until that inventory is reviewed.

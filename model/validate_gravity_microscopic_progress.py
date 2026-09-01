@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed zero-input validator for the GL6T--GL6AY URM checkpoint."""
+"""Fail-closed zero-input validator for the GL6T--GL6AZ URM checkpoint."""
 
 from __future__ import annotations
 
@@ -62,13 +62,14 @@ def main() -> int:
     check(type_error(lambda: mutate(certificate, "schema", "changed")))
     check(type_error(lambda: mutate(certificate["exact_results"], "gravity", True)))
 
-    check(certificate["custody"]["packet_count"] == 21)
+    check(certificate["custody"]["packet_count"] == 22)
     check(tuple(row["gate"] for row in certificate["custody"]["packets"]) == (
         "GL6T", "GL6U", "GL6AA", "GL6AF", "GL6AG", "GL6AH", "GL6AI",
         "GL6AK", "GL6AM", "GL6AN", "GL6AO", "GL6AP", "GL6AQ", "GL6AR",
         "GL6AS", "GL6AT", "GL6AU", "GL6AV", "GL6AW", "GL6AX", "GL6AY",
+        "GL6AZ",
     ))
-    check(certificate["custody"]["declared_hash_rows_checked"] == 1012)
+    check(certificate["custody"]["declared_hash_rows_checked"] == 1075)
     check(all(row["audit_disposition"].startswith("PASS") for row in certificate["custody"]["packets"]))
     check(all(len(row["author_claim_sha256"]) == 64 for row in certificate["custody"]["packets"]))
     check(all(len(row["audit_sha256"]) == 64 for row in certificate["custody"]["packets"]))
@@ -176,6 +177,7 @@ def main() -> int:
         "anisotropic_folner_twist_closure",
         "all_fixed_order_port_and_twist_stability",
         "finite_coupling_prethermal_locked_bridge",
+        "record_authenticated_prethermal_mission_identifiability",
     ))
     check(exact["record_gated_local_pair_response"]["open_domain_rank"] == 6)
     check(exact["record_gated_local_pair_response"]["matched_BREAK"] == "D_BREAK=0")
@@ -307,7 +309,20 @@ def main() -> int:
     check(exact["finite_coupling_prethermal_locked_bridge"]["parent"] == (
         "H=U_d*N_def-h*sum_e(X_e);N_def=sum_v(k_v-2)^2"
     ))
+    check("U_d>=9*pi*v_0/kappa_0" in (
+        exact["finite_coupling_prethermal_locked_bridge"]
+        ["historical_GL6AY_compact_application_hypotheses"]
+    ))
+    check(exact["finite_coupling_prethermal_locked_bridge"]["historical_application_status"] == (
+        "SUPERSEDED_NOT_ERASED_BY_GL6AZ_RESTORED_SOURCE_PROOF_DOMAIN"
+    ))
+    check("R>=nubar_0" in (
+        exact["finite_coupling_prethermal_locked_bridge"]["current_application_license"]
+    ))
     check("REMAINDER_RETAINED" in (
+        exact["finite_coupling_prethermal_locked_bridge"]["exact_normal_form"]
+    ))
+    check("LICENSED_ONLY_UNDER_GL6AZ_CORRECTED_DOMAIN" in (
         exact["finite_coupling_prethermal_locked_bridge"]["exact_normal_form"]
     ))
     check("P_S^0=chi(N_S=0)" in (
@@ -322,9 +337,32 @@ def main() -> int:
     check("P_L_TO_Q_L_LEAKAGE_NEEDS_NO_WINDING" in (
         exact["finite_coupling_prethermal_locked_bridge"]["topology_boundary"]
     ))
+    check("NOT_ERASED_BY_GL6AZ" in (
+        exact["finite_coupling_prethermal_locked_bridge"]["local_collar_status"]
+    ))
     check("NOT_EXACT_ALL_TIME_LOCKED_PHASE" in (
         exact["finite_coupling_prethermal_locked_bridge"]["exact_ceiling"]
     ))
+    az = exact["record_authenticated_prethermal_mission_identifiability"]
+    check(az["dimensionless_inputs"] == "R=U_d/h__sigma_obs=h*(t_Q-t_F)/hbar")
+    check("R>=nubar_0" in az["corrected_source_proof_domain"])
+    check(az["restored_high_branch"] == "R/nubar_0>=1")
+    check(az["first_smallness_floor"] == "R>=36*pi*e=307.4304320162484")
+    check(az["restored_scale_separation_floor"] == (
+        "R>=432*pi*e^2=10028.190682380982"
+    ))
+    check("18665728.0078" in az["complete_universal_floor"])
+    check("D_TV(p^H,p^eff)<=Kbar_3(M_beta)/(2*R)" in (
+        az["authenticated_binary_marginal"]
+    ))
+    check("NO_POSTSELECTION" in az["authenticated_binary_marginal"])
+    check("R=Delta_def/(2*A_X)" in az["native_calibration"])
+    check("sigma_obs=A_X*(t_Q-t_F)/hbar" in az["mission_clock"])
+    check("ADMITS_EVERY_POSITIVE_R" in az["non_identifiability"])
+    check("R_IN_{2,5/2}" in az["admitted_member_boundary"])
+    check("APPLY_AUTHENTICATED_BINARY_MARGINAL_BOUND" in az["inside_domain_branch"])
+    check("SHARPER_FINITE_MISSION_LOCAL_OBSERVABLE_THEOREM" in az["outside_domain_branch"])
+    check("SUFFICIENT_NOT_NECESSARY_DOMAIN" in az["exact_ceiling"])
 
     evidence = certificate["controlled_evidence"]
     check(tuple(evidence) == ("quantum_ice_v_over_g_zero",))
@@ -333,10 +371,11 @@ def main() -> int:
     ))
     check("0.6_plus_or_minus_0.1" in evidence["quantum_ice_v_over_g_zero"]["Benton"])
 
-    check(len(certificate["open_gates"]) == 10)
+    check(len(certificate["open_gates"]) == 11)
     check(certificate["open_gates"][0].startswith("ISOTROPIC_V_OVER_G_ZERO_PHASE_CONTROL"))
     check(certificate["open_gates"][1].startswith("EXACT_ALL_TIME_FINITE_H_OVER_U_D"))
-    check(certificate["open_gates"][2].startswith("PHYSICAL_U_D_OVER_H_AND_CLOCK_CALIBRATION"))
+    check(certificate["open_gates"][2].startswith("SELECTED_PHYSICAL_F3_MEMBER"))
+    check(certificate["open_gates"][3].startswith("INSIDE_DOMAIN_EXACT_NORMS"))
     check(certificate["open_gates"][-1] == "MICROSCOPIC_RICCI_COEFFICIENT_AND_G_MODEL")
     check(all(value is False for value in certificate["ceilings"].values()))
     check(certificate["executable_scope"]["caller_arguments"] == 0)
@@ -351,7 +390,7 @@ def main() -> int:
     check(delegated["ceilings"]["gravity_derived_here"] is False)
     check(delegated["ceilings"]["G_calculated_here"] is False)
 
-    expected = 101
+    expected = 122
     check(passed + 1 == expected)
     print(f"GRAVITY MICROSCOPIC PROGRESS: {passed}/{expected} PASS")
     return 0

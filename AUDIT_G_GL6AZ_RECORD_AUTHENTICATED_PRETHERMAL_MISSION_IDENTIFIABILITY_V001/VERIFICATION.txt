@@ -1,0 +1,53 @@
+GL6AZ distinct post-repair hostile audit verification
+Date: 2026-08-31
+
+Frozen author hashes:
+THEOREM bcca352d9e58deba63a068a29f94a0e19fb88ae9994391ab1b5053120587ba44
+MANIFEST a932e083b5dd629e41f0014d52bf1c65f982612b55314e1e03e082b0feb8ebc7
+SEAL_FILE 620eb8bcb254b0296bd4d2f7e81a0b3e78c0d0b9ce80ad257e97a4db394f392d
+
+Author constructive replay, normal:
+PASS: 519660/519660 GL6AZ constructive checks
+
+Author constructive replay, optimized (-O):
+PASS: 519660/519660 GL6AZ constructive checks
+
+Author packet replay, normal:
+PASS: 240/240 GL6AZ packet checks
+
+Author packet replay, optimized (-O):
+PASS: 240/240 GL6AZ packet checks
+
+Independent hostile mathematical replay, normal:
+PASS__INDEPENDENT_GL6AZ_POST_REPAIR_REPLAY__455034/455034
+
+Independent hostile mathematical replay, optimized (-O):
+PASS__INDEPENDENT_GL6AZ_POST_REPAIR_REPLAY__455034/455034
+
+Direct dependency audit custody replays:
+PASS__GL6AY_POST_REPAIR_HOSTILE_AUDIT_PACKET__207/207
+PASS__GL6AM_HOSTILE_AUDIT_PACKET__54/54
+PASS__GL6V_AUDIT_PACKET__8/8
+PASS__GL6AN_HOSTILE_AUDIT_PACKET__58/58
+PASS__HOSTILE_H6DRMSB__99/99
+UDCL TYPED CONDITIONAL COVERAGE LOGIC AND CUSTODY: 72/72 PASS
+
+Reconstructed hostile results:
+- the omitted source-proof condition R>=nubar_0 is restored;
+- the spurious low-ratio branch is excluded constructively;
+- x_*=1861.32559690908 and the complete universal sufficient-domain floor
+  R>=18665728.0078 are independently reproduced;
+- one-flip A_X=h and diagonal separation Delta_def=2 U_d are exact;
+- the licensed integer d_*=3 witness realizes every positive R;
+- grouped identical four-cell potentials retain a norm witness >=h;
+- the selected ready/MATCH binary pair marginal has the exact TV factor 1/2;
+- t_Q is the pre-read sampling endpoint and the full retained flag TV is not
+  claimed;
+- same-parent member/clock binding remains physical input;
+- inside-domain and outside-domain continuations are explicit.
+
+Audit packet replay, normal:
+PASS__GL6AZ_HOSTILE_AUDIT_PACKET__355/355
+
+Audit packet replay, optimized (-O):
+PASS__GL6AZ_HOSTILE_AUDIT_PACKET__355/355

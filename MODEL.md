@@ -51,7 +51,7 @@ silently use them as the public path.
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
 | Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for the hostile-audited record-first working-theory closure under adopted RGRL and explicit WTC hypotheses; observable pair-memory curvature capacity and source reciprocity; the narrow bare flip/recoil Ward obstruction; earlier F3/Phase-A boundaries; and audited public searches. No graviton premise is required for the Einstein--Hilbert classification. Empirical RGRL confirmation, microscopic F3 derivation of RGRL-B, strict origin of the full Einstein--Hilbert coefficient, and a parameter-free numerical \(G\) remain open. |
-| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive zero-input checkpoint over the independently audited GL6T--GL6AY chain: the earlier record-gated response/atlas/envelope and authenticated bulk dynamics; the native degree-two sector and complete order-six hexagon Hamiltonian; the exact `v/g=0` crosswalk; exact first-character and anisotropic finite-size closure; a record-conditioned pure-loop clock plus typed `Sym^2` atlas; all-fixed-controlled-order port/twist stability; and a repaired, independently re-audited finite-coupling prethermal normal form with retained remainder and locally typed locked interaction. Controlled phase evidence is labeled as evidence, not proof. It does not change V014 or promote fixed-order control to exact finite-coupling closure, the prethermal horizon to an all-time phase or selected GNS state, formal generator coordinates to a physical metric, or any result to gravity, Einstein dynamics, or \(G\). |
+| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive zero-input checkpoint over the independently audited GL6T--GL6AZ chain: the earlier record-gated response/atlas/envelope and authenticated bulk dynamics; the native degree-two sector and complete order-six hexagon Hamiltonian; the exact `v/g=0` crosswalk; exact first-character and anisotropic finite-size closure; a record-conditioned pure-loop clock plus typed `Sym^2` atlas; all-fixed-controlled-order port/twist stability; the repaired finite-coupling normal form/local-collar theorem; and GL6AZ's corrected high-branch application domain, physical-input identifiability boundary, authenticated selected-factor binary-marginal bound, and inside/outside-domain fork. GL6AY's compact application hypothesis is retained as superseded history. It does not change V014 or promote failure of a sufficient prethermal condition to phase failure, the prethermal horizon to an all-time phase or selected GNS state, formal generator coordinates to a physical metric, or any result to gravity, Einstein dynamics, or \(G\). |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -610,7 +610,7 @@ routes; it does not reopen the V014 working-theory implication, where the
 corresponding infrared content is supplied explicitly by `WTC-H1--H5`.
 
 The separate additive microscopic-progress surface freezes the newer direct F3
-chain through GL6AY without revising that V014 statement.  On GL6T's declared
+chain through GL6AZ without revising that V014 statement.  On GL6T's declared
 `N=0`, `U_d=0`, `h,Delta>0`, `0<vartheta<2*pi` comparator, formed KEEP opens a
 full six-direction q4 pair response while matched BREAK is zero.  Restoring
 the inherited degree interaction gives
@@ -792,13 +792,16 @@ order; it is not a uniform all-orders convergence or exact finite-coupling
 phase theorem.
 
 `GL6AY` then gives the first rigorous finite-coupling bridge for the exact F3
-parent
+parent, but its physical application must now be read through the corrected
+`GL6AZ` domain below.  The historical compact `GL6AY` application omitted the
+source proof's separate scale condition; that hypothesis remains in custody
+as superseded history rather than being erased.  The parent is
 \[
  H=U_dN_{\rm def}-h\sum_eX_e,
  \qquad N_{\rm def}=\sum_v(k_v-2)^2.
 \]
-Under the pinned strong-support hypotheses and explicit small-`h/U_d`
-condition, a volume-uniform quasi-local frame gives the exact identity
+On the `GL6AZ`-licensed high branch, under the complete pinned strong-support
+hypotheses, a volume-uniform quasi-local frame gives the exact identity
 \[
  Y_LH_LY_L^*=U_dN_{\rm def}+\widehat D_L+\widehat V_L,
  \quad[\widehat D_L,N_{\rm def}]=0,
@@ -813,9 +816,11 @@ is local rather than a nonexistent global compression:
  \quad\Phi(S)=P_S^0\widehat D(S)P_S^0.
 \]
 On globally locked endpoints each `Phi(S)` conserves all four ports, inherits
-a finite `D_2`, and therefore satisfies the `GL6AX` twist bound.  For every
-local observable and `0<r_1<ln(3/2)/4`, the full dynamics shadows the exact
-defect-conserving normal-form dynamics as
+a finite `D_2`, and therefore satisfies the `GL6AX` twist bound.  This local
+collar/topology result survives the application correction.  For every local
+observable and `0<r_1<ln(3/2)/4`, and only inside the corrected application
+domain, the full dynamics shadows the exact defect-conserving normal-form
+dynamics as
 \[
  \|\tau_t^H(O)-\tau_t^{U_dN_{\rm def}+\widehat D}(O)\|
  \le K_3(O)/U_d,
@@ -829,10 +834,60 @@ gravity, and `G` remain open.  Custody retains the original audit that rejected
 an invalid global-projector/subspace claim and the independent post-repair
 PASS audit of the local-collar formulation.
 
+`GL6AZ` restores the source proof's missing scale condition and reduces the
+application to two dimensionless physical inputs,
+\[
+ R=\frac{U_d}{h},\qquad
+ \sigma_{\rm obs}=\frac{h(t_Q-t_F)}{\hbar}.
+\]
+The complete proof-licensed application domain is
+\[
+ \kappa_0>0,\quad
+ R\ge\frac{9\pi\bar v_0}{\kappa_0},\quad
+ R\ge\bar\nu_0,\quad n_*(R)\ge1,\quad
+ 0<r_1<\frac{\ln(3/2)}4,\quad
+ \sigma_{\rm obs}\le e^{r_1n_*(R)},
+\]
+with the restored high branch `R/bar_nu_0>=1`.  Three different necessary
+floors for this sufficient proof domain are
+\[
+ R\ge36\pi e\simeq307.430432,
+ \qquad R\ge432\pi e^2\simeq10028.190682,
+ \qquad R\ge18{,}665{,}728.0078.
+\]
+They are floors of this theorem's sufficient domain, not necessary conditions
+for a physical phase.  In particular the admitted examples `R=2,5/2` lie
+outside the theorem without thereby being physically refuted.
+
+For the complete flag-retaining read on its declared ready/`MATCH` active
+factor, the theorem propagates the local operator error to the authenticated
+binary pair marginal without postselection:
+\[
+ D_{\rm TV}(p^H,p^{\rm eff})
+ \le\frac{\bar K_3(M_\beta)}{2R}.
+\]
+The native same-parent calibration is exact,
+\[
+ A_X=|\langle n^e|H|n\rangle|=h,
+ \qquad\Delta_{\rm def}=2U_d,
+ \qquad R=\frac{\Delta_{\rm def}}{2A_X},
+ \qquad\sigma_{\rm obs}=\frac{A_X(t_Q-t_F)}{\hbar}.
+\]
+The bare F3 lock ray admits every positive `R`, so these equations specify the
+measurement/calculation procedure but do not manufacture a selected physical
+number.  A selected member and same-parent formation-to-query clock bind decide
+the lawful fork: inside the full domain, evaluate the exact normalized norms
+and `bar K_3` and apply the marginal bound; outside it, replace `GL6AY` with a
+sharper finite-mission local-observable theorem or a direct controlled
+calculation.  Extrapolating `n_*` or adding clock calibration cannot license an
+out-of-domain application.
+
 The held-open gates are isotropic `v/g=0` phase control and the selected
 finite-to-GNS bridge; exact all-time closure at finite `h/U_d` or sufficient
-control of the retained prethermal remainder; physical `U_d/h` and clock
-calibration against a declared record-retention horizon; physical
+control of the retained prethermal remainder; one selected physical F3
+member's matrix elements and same-parent clock bind for `R` and `sigma_obs`;
+then either exact norms/`bar K_3` on the inside branch or a sharper
+finite-mission theorem/direct calculation on the outside branch; physical
 preparation, homogenization, and causal updating of the retained coefficient
 field; a nonzero selected propagation/lineage-visible response; calibrated
 physical scales, one cone, and the rank-six constitutive join; common coupling,

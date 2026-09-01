@@ -1,0 +1,47 @@
+{
+  "lane": "GL6AZ_V001",
+  "disposition": "PASS__TWO_SCALAR_APPLICATION_GATE_IDENTIFIED__CURRENT_CUSTODY_NONIDENTIFIABLE",
+  "dimensionless_inputs": {
+    "R": "U_d/h",
+    "sigma_obs": "h*(t_Q-t_F)/hbar"
+  },
+  "application_gate": [
+    "R >= 9*pi*vbar_0/kappa_0",
+    "R >= nubar_0",
+    "n_star(R) >= 1",
+    "0 < r_1 < ln(3/2)/4",
+    "sigma_obs <= exp(r_1*n_star(R))"
+  ],
+  "authenticated_binary_read_error": "D_TV <= Kbar_3(M_beta)/(2*R)",
+  "native_acquisition": {
+    "A_X": "abs(<n^e|H|n>) = h",
+    "Delta_def": "<n^e|H|n^e>-<n|H|n> = 2*U_d",
+    "R": "Delta_def/(2*A_X)",
+    "sigma_obs": "A_X*(t_Q-t_F)/hbar"
+  },
+  "admitted_members": [
+    {"x_h_over_Ud": "2/5", "R_Ud_over_h": "5/2"},
+    {"x_h_over_Ud": "1/2", "R_Ud_over_h": "2"}
+  ],
+  "proof_domain_floors": {
+    "first_smallness_only": "R >= 36*pi*e",
+    "restored_scale_separation_only": "R >= 432*pi*e^2",
+    "complete_high_branch_universal": "R >= 18665728.0078"
+  },
+  "decision_fork": {
+    "inside_domain": "evaluate exact normalized norms and Kbar_3, then apply TV certificate",
+    "outside_domain": "use a sharper finite-mission theorem or direct controlled local calculation"
+  },
+  "interpretation": "theorem-domain failure, not physical-phase failure",
+  "ceilings": [
+    "no numerical R",
+    "no numerical sigma_obs",
+    "no numerical Kbar_3",
+    "no exact all-time phase",
+    "no selected GNS",
+    "no graviton",
+    "no Ricci",
+    "no gravity",
+    "no G"
+  ]
+}
