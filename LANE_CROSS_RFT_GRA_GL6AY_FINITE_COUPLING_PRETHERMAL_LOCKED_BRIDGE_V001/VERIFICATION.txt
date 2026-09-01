@@ -1,0 +1,33 @@
+GL6AY finite-coupling prethermal locked bridge verification
+Date: 2026-08-31
+
+Primary-source inspection (official version-pinned arXiv HTML): PASS
+  arXiv:1509.05386v3, Sections 2.2 and 3.1--3.3
+  arXiv:1704.08703v2, Appendix A
+  arXiv:1105.0675v1, Section 4
+
+Dependency custody replay:
+PASS__GL6AN_PACKET__79/79
+PASS__GL6AN_HOSTILE_AUDIT_PACKET__58/58
+PASS__GL6AO_PACKET__82/82
+PASS__GL6AO_HOSTILE_AUDIT_PACKET__156/156
+PASS__GL6AX_PACKET__155/155
+PASS__GL6AX_HOSTILE_AUDIT_PACKET__270/270
+
+Initial hostile audit disposition:
+FAIL__REPAIR_REQUIRED__GLOBAL_LOCK_PROJECTOR_AND_DRESSED_SUBSPACE_SCOPE
+
+Author repair:
+PASS__LOCAL_COLLAR_PROJECTOR_REPLACES_INFINITE_GLOBAL_P
+PASS__LOCAL_POTENTIAL_OBSERVABLE_DRESSING_ONLY
+
+Constructive replay, normal mode:
+PASS__GL6AY_FINITE_COUPLING_PRETHERMAL_LOCKED_BRIDGE__11145/11145
+
+Constructive replay, optimized mode:
+PASS__GL6AY_FINITE_COUPLING_PRETHERMAL_LOCKED_BRIDGE__11145/11145
+
+Author packet verifier:
+PASS__GL6AY_PACKET__219/219
+
+Distinct independent hostile re-audit: required after repaired author freeze

@@ -1,4 +1,4 @@
-"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6AW.
+"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6AY.
 
 This additive surface verifies the frozen theorem/audit packets that establish
 record-gated finite response, interaction-owned nonfactorization, an
@@ -6,10 +6,13 @@ authenticated finite relational atlas, quasi-local bulk dynamics, native
 degree locking, the complete order-six locked Hamiltonian, thermodynamic
 locked sectors, collective-response constraints, and the exact quantum-ice
 comparison point; the first-character and anisotropic finite-size closure
-theorems; and the exact record-conditioned pure-loop clock/typed-atlas bridge.
-It deliberately does not alter the V014 working-theory certificate and does
-not promote these results to an all-orders phase, selected GNS mode, physical
-metric, gravity, Einstein dynamics, or a numerical value of G.
+theorems; the exact record-conditioned pure-loop clock/typed-atlas bridge;
+all-fixed-controlled-order port/twist stability; and the finite-coupling
+prethermal locked bridge. It deliberately does not alter the V014
+working-theory certificate and does not promote fixed-order control to exact
+finite-coupling closure, the prethermal normal form to an all-time phase, or
+any result to a selected GNS mode, isotropic propagation, physical metric,
+gravity, Einstein dynamics, or a numerical value of G.
 """
 
 from __future__ import annotations
@@ -23,8 +26,8 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V003"
-CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6AW_WITH_STRICT_GNS_METRIC_AND_GRAVITY_CEILINGS"
+SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V004"
+CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6AY_WITH_STRICT_FINITE_COUPLING_GNS_METRIC_AND_GRAVITY_CEILINGS"
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 _HASH_ROW = re.compile(r"^([0-9a-f]{64})  ([^\r\n]+)$")
@@ -43,6 +46,19 @@ class _PacketPin:
     audit_seal_sha256: str
     disposition: str
     author_claim_file: str = "THEOREM.md"
+    audit_claim_file: str = "AUDIT.md"
+
+
+@dataclass(frozen=True)
+class _HistoricalAuditPin:
+    label: str
+    audit_dir: str
+    audit_sha256: str
+    audit_manifest_sha256: str
+    audit_seal_sha256: str
+    disposition: str
+    custody_list_relative: str
+    custody_list_sha256: str
     audit_claim_file: str = "AUDIT.md"
 
 
@@ -277,6 +293,44 @@ _PACKETS = (
         "42eab5756a691b89e5d46cb88d4669f95d0b35f2c21dd59982c804506593684a",
         "PASS__EXACT_FINITE_CENTERED_SECTOR_DICHOTOMY__ANISOTROPIC_FOLNER_CLOSURE__GNS_AND_PHYSICAL_PROMOTION_EXPLICITLY_OPEN",
     ),
+    _PacketPin(
+        "GL6AX",
+        "LANE_CROSS_RFT_GRA_GL6AX_ALL_FIXED_ORDER_TWIST_STABILITY_V001",
+        "bbdeffc955c5dbc2ce1bec00578ab925e531413188f47893e867b99c6ff6c56d",
+        "e10907affe77c84ae175aa60a6ae60429d3393ea117be32c81ede45e23357f36",
+        "619234ef81e5d739aa7c166d567844ac1c2773b5b316bce64edf57c0f87e3263",
+        "AUDIT_G_GL6AX_ALL_FIXED_ORDER_TWIST_STABILITY_V001",
+        "3985fbd100abbeb5b9bb0f59913d2c1b05bb6d6f947ef3ec1494290b63f09751",
+        "63a131d6a034fe7fdfa494c3906c260226ff5c128c99794f5cca3df3a840399d",
+        "e5bd150832d1ffe9e3517f669987fc06eb188479479c80681593563a20a1a63c",
+        "PASS__EXACT_ALL_FIXED_ORDER_PORT_CONSERVATION_AND_ANISOTROPIC_TWIST_STABILITY__FINITE_COUPLING_AND_PHYSICAL_PROMOTION_OPEN",
+    ),
+    _PacketPin(
+        "GL6AY",
+        "LANE_CROSS_RFT_GRA_GL6AY_FINITE_COUPLING_PRETHERMAL_LOCKED_BRIDGE_V001",
+        "5b86ab5eb2998eb719dffd09e05add131863fd2a3290d87fb749dc8aebc1891c",
+        "e81ec1cfd4bdcdc43b4709b8f90f9eceac3dfba82be80701dd4a2a7e08de089b",
+        "740f051b3347d7387e481a9991f536bd61a7e47ad51d80b680475dff394e5cbb",
+        "AUDIT_G_GL6AY_FINITE_COUPLING_PRETHERMAL_LOCKED_BRIDGE_POST_REPAIR_V001",
+        "9828df0f2a376ed1615a617772b87a667a6e31ed77cc2237b72cbdc196f2556e",
+        "77af0925b66f5c854285f25d574d4a995ba173337c77e634d8da94f2a86c2975",
+        "3f787b28c44bb896aaff2e98c84691a7fa86bcddb3e5b2b4b6934c8a6b398bf1",
+        "PASS__FINITE_COUPLING_PRETHERMAL_BRIDGE__LOCAL_COLLAR_TYPED__GLOBAL_PROJECTOR_CLAIMS_REMOVED",
+    ),
+)
+
+
+_HISTORICAL_AUDITS = (
+    _HistoricalAuditPin(
+        "GL6AY_PRE_REPAIR_FAIL",
+        "AUDIT_G_GL6AY_FINITE_COUPLING_PRETHERMAL_LOCKED_BRIDGE_V001",
+        "2aeac383cc42e27e1a9ef6c8a13f80bcc55c3ed4396759bd930727c7ed711748",
+        "687755718fa49553f33a738f7313d6ad89ae62b026be761f47860317ce9497e8",
+        "cd78cb4a4a34843f637e6e5a168a02c1baf95c9a2c898a428b1b1adda48febaa",
+        "FAIL__REPAIR_REQUIRED__GLOBAL_LOCK_PROJECTOR_AND_DRESSED_SUBSPACE_SCOPE",
+        "AUDIT_G_GL6AY_FINITE_COUPLING_PRETHERMAL_LOCKED_BRIDGE_POST_REPAIR_V001/PRIOR_AUDIT_CUSTODY.sha256",
+        "4510198150c07dfd6f5dea4321eb5c8f2e5ba2a619ca0839b25b79736665ab25",
+    ),
 )
 
 
@@ -351,7 +405,12 @@ def _declared_target(declaring_relative: str, target_relative: str) -> tuple[str
     return target_relative, root_candidate
 
 
-def _verify_hash_list(relative: str, visited: set[str]) -> int:
+def _verify_hash_list(
+    relative: str,
+    visited: set[str],
+    *,
+    recurse_same_packet: bool = True,
+) -> int:
     """Verify one declared hash list and recursively follow declared hash lists."""
     if relative in visited:
         return 0
@@ -375,7 +434,7 @@ def _verify_hash_list(relative: str, visited: set[str]) -> int:
             PurePosixPath(canonical_relative).parent
             == PurePosixPath(relative).parent
         )
-        if same_packet and target.name in {
+        if recurse_same_packet and same_packet and target.name in {
             "MANIFEST.sha256",
             "DEPENDENCIES.sha256",
             "AUDITED_TARGETS.sha256",
@@ -399,12 +458,14 @@ def _verify_seal(directory: str, expected_seal: str, expected_manifest: str) -> 
 @dataclass(frozen=True)
 class _Custody:
     packet_rows: tuple[Mapping[str, Any], ...]
+    historical_audit_rows: tuple[Mapping[str, Any], ...]
     declared_hash_rows_checked: int
 
 
 def _verify_custody() -> _Custody:
     visited: set[str] = set()
     rows = []
+    historical_rows = []
     checked = 0
     for pin in _PACKETS:
         author_claim_relative = f"{pin.author_dir}/{pin.author_claim_file}"
@@ -428,8 +489,11 @@ def _verify_custody() -> _Custody:
         _verify_seal(pin.audit_dir, pin.audit_seal_sha256, pin.audit_manifest_sha256)
 
         audit_text = _strict_text(_root_path(audit_claim_relative))
-        marker = f"**Disposition:** `{pin.disposition}`"
-        if marker not in audit_text:
+        markers = (
+            f"**Disposition:** `{pin.disposition}`",
+            f"**Disposition:**\n`{pin.disposition}`",
+        )
+        if not any(marker in audit_text for marker in markers):
             _refuse(f"{pin.label} accepted audit disposition is absent")
         rows.append(
             MappingProxyType(
@@ -455,6 +519,52 @@ def _verify_custody() -> _Custody:
             )
         )
 
+    for pin in _HISTORICAL_AUDITS:
+        audit_claim_relative = f"{pin.audit_dir}/{pin.audit_claim_file}"
+        audit_manifest_relative = f"{pin.audit_dir}/MANIFEST.sha256"
+        if _sha256(_root_path(audit_claim_relative)) != pin.audit_sha256:
+            _refuse(f"{pin.label} historical audit-claim hash mismatch")
+        if _sha256(_root_path(audit_manifest_relative)) != pin.audit_manifest_sha256:
+            _refuse(f"{pin.label} historical audit-manifest hash mismatch")
+        if _sha256(_root_path(pin.custody_list_relative)) != pin.custody_list_sha256:
+            _refuse(f"{pin.label} historical custody-list hash mismatch")
+        _verify_seal(pin.audit_dir, pin.audit_seal_sha256, pin.audit_manifest_sha256)
+
+        # The frozen FAIL audit correctly points at the pre-repair author bytes,
+        # which the repair replaced. Verify every audit-packet byte declared by
+        # its own manifest, but do not recurse into its intentionally historical
+        # AUDITED_TARGETS author snapshot. The post-repair custody list then
+        # independently pins the FAIL audit, manifest, and seal as history.
+        checked += _verify_hash_list(
+            audit_manifest_relative,
+            visited,
+            recurse_same_packet=False,
+        )
+        checked += _verify_hash_list(pin.custody_list_relative, visited)
+        audit_text = _strict_text(_root_path(audit_claim_relative))
+        markers = (
+            f"**Disposition:** `{pin.disposition}`",
+            f"**Disposition:**\n`{pin.disposition}`",
+        )
+        if not any(marker in audit_text for marker in markers):
+            _refuse(f"{pin.label} historical audit disposition is absent")
+        historical_rows.append(
+            MappingProxyType(
+                {
+                    "gate": pin.label,
+                    "audit_directory": pin.audit_dir,
+                    "audit_claim_file": pin.audit_claim_file,
+                    "audit_sha256": pin.audit_sha256,
+                    "audit_manifest_sha256": pin.audit_manifest_sha256,
+                    "audit_seal_sha256": pin.audit_seal_sha256,
+                    "audit_disposition": pin.disposition,
+                    "custody_list": pin.custody_list_relative,
+                    "custody_list_sha256": pin.custody_list_sha256,
+                    "status": "SUPERSEDED_BY_REPAIRED_AUTHOR_AND_POST_REPAIR_PASS",
+                }
+            )
+        )
+
     # Close the most exposed read-time race over the primary claim bytes.
     for pin in _PACKETS:
         if _sha256(
@@ -465,7 +575,12 @@ def _verify_custody() -> _Custody:
             _root_path(f"{pin.audit_dir}/{pin.audit_claim_file}")
         ) != pin.audit_sha256:
             _refuse(f"{pin.label} audit claim changed during verification")
-    return _Custody(tuple(rows), checked)
+    for pin in _HISTORICAL_AUDITS:
+        if _sha256(
+            _root_path(f"{pin.audit_dir}/{pin.audit_claim_file}")
+        ) != pin.audit_sha256:
+            _refuse(f"{pin.label} historical audit changed during verification")
+    return _Custody(tuple(rows), tuple(historical_rows), checked)
 
 
 def _freeze(value: Any) -> Any:
@@ -760,6 +875,76 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                         "ISOTROPIC_SCALING_SELECTED_GNS_AND_HIGHER_ORDER_STABILITY_OPEN"
                     ),
                 },
+                "all_fixed_order_port_and_twist_stability": {
+                    "premise": (
+                        "NATIVE_A3_DISPLACEMENTS__FINITE_CONTRACTIBLE_LOCKED_ENDPOINTS__"
+                        "CANONICAL_WORD_OR_EXPANDED_FESHBACH_COEFFICIENT"
+                    ),
+                    "contractible_port_law": "Delta_N_a=0_FOR_a=0,1,2,3",
+                    "torus_winding_law": (
+                        "Delta_N_j=L_j*W_j_FOR_j=0,1,2__"
+                        "Delta_N_3=-sum_j(L_j*W_j)"
+                    ),
+                    "minimum_winding_hamming_distance": "2*L_min",
+                    "fixed_order_scope": "EVERY_FIXED_CONTROLLED_ORDER_r<2*L_min",
+                    "local_second_twist_density": (
+                        "D_2(L)=(1/V)*sum_X norm([A_X,[A_X,Phi_L(X)]])"
+                    ),
+                    "quasilocal_gap_dichotomy": (
+                        "GROUND_DEGENERATE_OR_Delta_L<=2*pi^2*D_2*L0*L2/L1+T_L"
+                    ),
+                    "folner_sequence": "(L0,L1,L2)=(m,2*m^3,m)",
+                    "folner_bound": "Delta_L<=pi^2*D_2/m+T_L->0",
+                    "exact_ceiling": (
+                        "ALL_FIXED_CONTROLLED_LOCAL_ORDERS_ONLY__NO_UNIFORM_"
+                        "FINITE_COUPLING_EXACT_PORT_SYMMETRY_OR_PHASE_CLOSURE"
+                    ),
+                },
+                "finite_coupling_prethermal_locked_bridge": {
+                    "parent": "H=U_d*N_def-h*sum_e(X_e);N_def=sum_v(k_v-2)^2",
+                    "normal_form_hypotheses": (
+                        "U_d>=9*pi*v_0/kappa_0__n_*>=1__"
+                        "nu_0=(54*pi/kappa_0^2)*(d_0+2*v_0)__"
+                        "n_*=floor((U_d/nu_0)/(1+ln(U_d/nu_0))^3)-2"
+                    ),
+                    "exact_normal_form": (
+                        "Y_L*H_L*Y_L^*=U_d*N_def+D_hat_L+V_hat_L__"
+                        "[D_hat_L,N_def]=0__REMAINDER_RETAINED"
+                    ),
+                    "remainder_bound": (
+                        "norm_str_kappa_*(V_hat_L)<=(2/3)^n_*v_0__"
+                        "kappa_*=kappa_0/(1+log(n_*+1))"
+                    ),
+                    "local_collar": (
+                        "N_S=sum_(v:supp(q_v^2)_subset_S)q_v^2__"
+                        "P_S^0=chi(N_S=0)__Phi(S)=P_S^0*D_hat(S)*P_S^0"
+                    ),
+                    "locked_endpoint_port_law": (
+                        "NONZERO_<n'|Phi(S)|n>_FOR_GLOBALLY_LOCKED_ENDPOINTS_"
+                        "IMPLIES_Delta_N_a=0_FOR_ALL_FOUR_PORTS"
+                    ),
+                    "finite_second_twist_moment": (
+                        "D_2(L)<=4*C_geo^2*sup_m(m^4*exp(-kappa_*m))*"
+                        "norm_str_kappa_*(D_hat_L)<infinity"
+                    ),
+                    "effective_gap_dichotomy": (
+                        "GROUND_DEGENERATE_OR_Delta_L^eff<="
+                        "2*pi^2*D_2(L)*L0*L2/L1+T_L"
+                    ),
+                    "local_observable_horizon": (
+                        "norm(tau_t^H(O)-tau_t^(U_d*N_def+D_hat)(O))<="
+                        "K_3(O)/U_d_FOR_t<=t_*=exp(r_1*n_*),0<r_1<ln(3/2)/4"
+                    ),
+                    "topology_boundary": (
+                        "LOCAL_P_L_TO_Q_L_LEAKAGE_NEEDS_NO_WINDING__PORT_CHANGING_"
+                        "P_L_TO_P_L_RETURN_REQUIRES_WINDING_AND_AT_LEAST_2*L_min_LINKS"
+                    ),
+                    "exact_ceiling": (
+                        "EXACT_NORMAL_FORM_WITH_RETAINED_REMAINDER_AND_PRETHERMAL_"
+                        "LOCAL_SHADOWING__NOT_EXACT_ALL_TIME_LOCKED_PHASE_OR_"
+                        "GLOBAL_DRESSED_SUBSPACE_CLOSENESS"
+                    ),
+                },
             },
             "controlled_evidence": {
                 "quantum_ice_v_over_g_zero": {
@@ -774,7 +959,8 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
             },
             "open_gates": (
                 "ISOTROPIC_V_OVER_G_ZERO_PHASE_CONTROL_AND_SELECTED_FINITE_TO_GNS_BRIDGE",
-                "CONTROLLED_ALL_ORDERS_FINITE_H_OVER_U_D_SURVIVAL_OF_THE_ORDER6_LOCKED_PHASE",
+                "EXACT_ALL_TIME_FINITE_H_OVER_U_D_LOCKED_PHASE_OR_CONTROL_OF_THE_PRETHERMAL_REMAINDER",
+                "PHYSICAL_U_D_OVER_H_AND_CLOCK_CALIBRATION_FOR_A_DECLARED_RECORD_RETENTION_HORIZON",
                 "PHYSICAL_PREPARATION_HOMOGENIZATION_AND_CAUSAL_UPDATE_OF_RETAINED_COEFFICIENT_FIELD",
                 "NONZERO_SELECTED_PROPAGATION_AND_RETAINED_LINEAGE_VISIBLE_STATIONARY_RESPONSE",
                 "CALIBRATED_PHYSICAL_MOMENTUM_LENGTH_TIME_SINGLE_CONE_AND_RANK6_CONSTITUTIVE_JOIN",
@@ -800,6 +986,11 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "diamond_embedding_supplies_physical_scale": False,
                 "static_exponent_premise_is_proved_from_first_principles": False,
                 "anisotropic_finite_twist_closure_is_isotropic_or_GNS_gaplessness": False,
+                "all_fixed_controlled_orders_are_exact_finite_coupling_closure": False,
+                "prethermal_normal_form_is_exact_all_time_locked_phase": False,
+                "local_collar_port_law_is_full_Hilbert_space_port_symmetry": False,
+                "local_observable_horizon_is_selected_GNS_or_isotropic_propagation": False,
+                "prethermal_horizon_without_U_d_over_h_and_clock_calibration_is_physical_record_lifetime": False,
                 "formal_global_or_fractional_q_is_authenticated_record_field": False,
                 "homogeneous_q6_clock_rescaling_supplies_physical_cone_or_curvature": False,
                 "typed_Sym2_source_read_atlas_is_rank6_metric_constitutive_law": False,
@@ -814,10 +1005,13 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
             "custody": {
                 "packet_count": len(custody.packet_rows),
                 "packets": custody.packet_rows,
+                "historical_audit_count": len(custody.historical_audit_rows),
+                "historical_audits": custody.historical_audit_rows,
                 "declared_hash_rows_checked": custody.declared_hash_rows_checked,
                 "verification": (
                     "PINNED_PRIMARY_HASHES__SEALED_MANIFESTS__INDEPENDENT_AUDIT_"
-                    "DISPOSITIONS__TOP_PACKET_DECLARED_DEPENDENCY_ROWS"
+                    "DISPOSITIONS__TOP_PACKET_DECLARED_DEPENDENCY_ROWS__"
+                    "GL6AY_FAIL_REPAIR_PASS_CUSTODY"
                 ),
             },
             "executable_scope": {

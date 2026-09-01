@@ -210,7 +210,7 @@ if "--no-chain" not in sys.argv:
     print()
     print(
         "CHAIN: validate_gravity_microscopic_progress.py "
-        "(sealed GL6T--GL6AW progress; GNS bridge, physical metric/constitutive join, stress, native operator, Einstein comparison, and G open)"
+        "(sealed GL6T--GL6AY progress; exact finite-coupling normal form with retained remainder and prethermal local horizon; exact all-time phase, GNS bridge, isotropy, physical metric/constitutive join, stress, native operator, Einstein comparison, and G open)"
     )
     print("-" * 78)
     sys.stdout.flush()

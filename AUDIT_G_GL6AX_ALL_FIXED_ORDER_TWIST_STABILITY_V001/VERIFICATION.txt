@@ -1,0 +1,37 @@
+GL6AX distinct hostile audit verification
+Date: 2026-08-31
+
+Frozen author manifest SHA-256:
+e10907affe77c84ae175aa60a6ae60429d3393ea117be32c81ede45e23357f36
+
+Author exact replay, normal mode:
+PASS__GL6AX_ALL_FIXED_ORDER_TWIST_STABILITY__542791/542791
+
+Author exact replay, optimized mode:
+PASS__GL6AX_ALL_FIXED_ORDER_TWIST_STABILITY__542791/542791
+
+Author packet verifier, normal mode:
+PASS__GL6AX_PACKET__155/155
+
+Author packet verifier, optimized mode:
+PASS__GL6AX_PACKET__155/155
+
+Independent hostile replay, normal mode:
+PASS__INDEPENDENT_GL6AX_HOSTILE_REPLAY__35867/35867
+
+Independent hostile replay, optimized mode:
+PASS__INDEPENDENT_GL6AX_HOSTILE_REPLAY__35867/35867
+
+The independent replay imports no author code.  It checks the unimodular
+affine kernel, nonsimple and self-touching alternating walks, explicit locked
+wrapping pairs in every direction, an actual degree-four crossed-winding
+difference, the exact seam relation and `2L_min` threshold, termwise U(1)
+averaging, complex-current cancellation, the double-commutator coefficient,
+centered translation character, anisotropic constants, long-hop failure,
+and the sharp wrapping-tail norm allowance.
+
+Audit packet verifier, normal mode:
+PASS__GL6AX_HOSTILE_AUDIT_PACKET__270/270
+
+Audit packet verifier, optimized mode:
+PASS__GL6AX_HOSTILE_AUDIT_PACKET__270/270

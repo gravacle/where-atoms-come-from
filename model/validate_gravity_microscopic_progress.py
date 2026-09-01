@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed zero-input validator for the GL6T--GL6AW URM checkpoint."""
+"""Fail-closed zero-input validator for the GL6T--GL6AY URM checkpoint."""
 
 from __future__ import annotations
 
@@ -62,19 +62,28 @@ def main() -> int:
     check(type_error(lambda: mutate(certificate, "schema", "changed")))
     check(type_error(lambda: mutate(certificate["exact_results"], "gravity", True)))
 
-    check(certificate["custody"]["packet_count"] == 19)
+    check(certificate["custody"]["packet_count"] == 21)
     check(tuple(row["gate"] for row in certificate["custody"]["packets"]) == (
         "GL6T", "GL6U", "GL6AA", "GL6AF", "GL6AG", "GL6AH", "GL6AI",
         "GL6AK", "GL6AM", "GL6AN", "GL6AO", "GL6AP", "GL6AQ", "GL6AR",
-        "GL6AS", "GL6AT", "GL6AU", "GL6AV", "GL6AW",
+        "GL6AS", "GL6AT", "GL6AU", "GL6AV", "GL6AW", "GL6AX", "GL6AY",
     ))
-    check(certificate["custody"]["declared_hash_rows_checked"] == 910)
+    check(certificate["custody"]["declared_hash_rows_checked"] == 1012)
     check(all(row["audit_disposition"].startswith("PASS") for row in certificate["custody"]["packets"]))
     check(all(len(row["author_claim_sha256"]) == 64 for row in certificate["custody"]["packets"]))
     check(all(len(row["audit_sha256"]) == 64 for row in certificate["custody"]["packets"]))
     check(certificate["custody"]["packets"][7]["audit_claim_file"] == "POSTFREEZE_AUDIT.md")
     check(certificate["custody"]["packets"][15]["author_claim_file"] == "RESULT.md")
     check(certificate["custody"]["packets"][15]["theorem_sha256"] is None)
+    check(certificate["custody"]["historical_audit_count"] == 1)
+    check(len(certificate["custody"]["historical_audits"]) == 1)
+    check(certificate["custody"]["historical_audits"][0]["gate"] == "GL6AY_PRE_REPAIR_FAIL")
+    check(certificate["custody"]["historical_audits"][0]["audit_disposition"] == (
+        "FAIL__REPAIR_REQUIRED__GLOBAL_LOCK_PROJECTOR_AND_DRESSED_SUBSPACE_SCOPE"
+    ))
+    check(certificate["custody"]["historical_audits"][0]["status"] == (
+        "SUPERSEDED_BY_REPAIRED_AUTHOR_AND_POST_REPAIR_PASS"
+    ))
 
     exact = certificate["exact_results"]
     expected_legacy_exact = {
@@ -165,6 +174,8 @@ def main() -> int:
         "vg0_first_character_static_closure",
         "record_conditioned_collective_clock_and_typed_atlas",
         "anisotropic_folner_twist_closure",
+        "all_fixed_order_port_and_twist_stability",
+        "finite_coupling_prethermal_locked_bridge",
     ))
     check(exact["record_gated_local_pair_response"]["open_domain_rank"] == 6)
     check(exact["record_gated_local_pair_response"]["matched_BREAK"] == "D_BREAK=0")
@@ -278,6 +289,42 @@ def main() -> int:
     check("SELECTED_GNS" in (
         exact["anisotropic_folner_twist_closure"]["closure_scope"]
     ))
+    check(exact["all_fixed_order_port_and_twist_stability"]["contractible_port_law"] == (
+        "Delta_N_a=0_FOR_a=0,1,2,3"
+    ))
+    check(exact["all_fixed_order_port_and_twist_stability"]["minimum_winding_hamming_distance"] == (
+        "2*L_min"
+    ))
+    check("r<2*L_min" in (
+        exact["all_fixed_order_port_and_twist_stability"]["fixed_order_scope"]
+    ))
+    check("T_L" in (
+        exact["all_fixed_order_port_and_twist_stability"]["quasilocal_gap_dichotomy"]
+    ))
+    check("NO_UNIFORM_FINITE_COUPLING" in (
+        exact["all_fixed_order_port_and_twist_stability"]["exact_ceiling"]
+    ))
+    check(exact["finite_coupling_prethermal_locked_bridge"]["parent"] == (
+        "H=U_d*N_def-h*sum_e(X_e);N_def=sum_v(k_v-2)^2"
+    ))
+    check("REMAINDER_RETAINED" in (
+        exact["finite_coupling_prethermal_locked_bridge"]["exact_normal_form"]
+    ))
+    check("P_S^0=chi(N_S=0)" in (
+        exact["finite_coupling_prethermal_locked_bridge"]["local_collar"]
+    ))
+    check("D_2(L)<=" in (
+        exact["finite_coupling_prethermal_locked_bridge"]["finite_second_twist_moment"]
+    ))
+    check("0<r_1<ln(3/2)/4" in (
+        exact["finite_coupling_prethermal_locked_bridge"]["local_observable_horizon"]
+    ))
+    check("P_L_TO_Q_L_LEAKAGE_NEEDS_NO_WINDING" in (
+        exact["finite_coupling_prethermal_locked_bridge"]["topology_boundary"]
+    ))
+    check("NOT_EXACT_ALL_TIME_LOCKED_PHASE" in (
+        exact["finite_coupling_prethermal_locked_bridge"]["exact_ceiling"]
+    ))
 
     evidence = certificate["controlled_evidence"]
     check(tuple(evidence) == ("quantum_ice_v_over_g_zero",))
@@ -286,8 +333,10 @@ def main() -> int:
     ))
     check("0.6_plus_or_minus_0.1" in evidence["quantum_ice_v_over_g_zero"]["Benton"])
 
-    check(len(certificate["open_gates"]) == 9)
+    check(len(certificate["open_gates"]) == 10)
     check(certificate["open_gates"][0].startswith("ISOTROPIC_V_OVER_G_ZERO_PHASE_CONTROL"))
+    check(certificate["open_gates"][1].startswith("EXACT_ALL_TIME_FINITE_H_OVER_U_D"))
+    check(certificate["open_gates"][2].startswith("PHYSICAL_U_D_OVER_H_AND_CLOCK_CALIBRATION"))
     check(certificate["open_gates"][-1] == "MICROSCOPIC_RICCI_COEFFICIENT_AND_G_MODEL")
     check(all(value is False for value in certificate["ceilings"].values()))
     check(certificate["executable_scope"]["caller_arguments"] == 0)
@@ -302,7 +351,7 @@ def main() -> int:
     check(delegated["ceilings"]["gravity_derived_here"] is False)
     check(delegated["ceilings"]["G_calculated_here"] is False)
 
-    expected = 82
+    expected = 101
     check(passed + 1 == expected)
     print(f"GRAVITY MICROSCOPIC PROGRESS: {passed}/{expected} PASS")
     return 0
