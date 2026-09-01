@@ -51,7 +51,7 @@ silently use them as the public path.
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
 | Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for the hostile-audited record-first working-theory closure under adopted RGRL and explicit WTC hypotheses; observable pair-memory curvature capacity and source reciprocity; the narrow bare flip/recoil Ward obstruction; earlier F3/Phase-A boundaries; and audited public searches. No graviton premise is required for the Einstein--Hilbert classification. Empirical RGRL confirmation, microscopic F3 derivation of RGRL-B, strict origin of the full Einstein--Hilbert coefficient, and a parameter-free numerical \(G\) remain open. |
-| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive zero-input checkpoint over the independently audited GL6T--GL6AI chain: record-gated local pair response, interaction-owned nonfactorization, a record-authenticated finite FPSS atlas, matched neighbor response, homogeneous direct-edge `A1+T2` propagation with the displayed boundary/shear separation, and a uniform quasi-local influence envelope. It does not change V014 or promote the envelope to a Lorentz cone, gravity, Einstein dynamics, or \(G\). |
+| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive zero-input checkpoint over the independently audited GL6T--GL6AW chain: the earlier record-gated response/atlas/envelope and authenticated bulk dynamics; the native degree-two sector and complete order-six hexagon Hamiltonian; the exact `v/g=0` crosswalk; exact first-character and anisotropic finite-size closure theorems; and a record-conditioned pure-loop clock plus typed `Sym^2` atlas. Controlled phase evidence is labeled as evidence, not proof. It does not change V014 or promote finite-size closure to selected-GNS gaplessness, formal generator coordinates to a physical metric, or any result to gravity, Einstein dynamics, or \(G\). |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -610,7 +610,7 @@ routes; it does not reopen the V014 working-theory implication, where the
 corresponding infrared content is supplied explicitly by `WTC-H1--H5`.
 
 The separate additive microscopic-progress surface freezes the newer direct F3
-chain through GL6AI without revising that V014 statement.  On GL6T's declared
+chain through GL6AW without revising that V014 statement.  On GL6T's declared
 `N=0`, `U_d=0`, `h,Delta>0`, `0<vartheta<2*pi` comparator, formed KEEP opens a
 full six-direction q4 pair response while matched BREAK is zero.  Restoring
 the inherited degree interaction gives
@@ -637,10 +637,152 @@ tail
  v_\mu=\frac{48|U_d|}{\hbar}\frac{e^\mu}{\mu}.
 \]
 This is a quasi-local upper envelope, not exact finite-speed support or a
-physical cone.  The held-open gates are the stationary bulk infrared law,
-common physical cone, complete stress/Ward/contact ownership, native continuum
-operator, held-out Ricci/Einstein comparison, and microscopic coefficient/
-`G_model` calculation.
+physical cone.
+
+The next sealed packets then pass from that finite envelope to a genuine
+quasi-local thermodynamic object.  On the selected homogeneous all-formed
+`A3 x {1,2,3,4}` F3 member, `GL6AK` proves boundary-independent strongly
+continuous bulk dynamics and existence (not physical selection) of at least
+one joint translation/time/`S4`-invariant state.  `GL6AM` proves that finite
+authenticated pulse/read windows converge to boundary-independent bulk
+functionals and types their retarded kernel exactly as
+\[
+ G^R_{\beta\alpha}(t)=\frac{iE_*^2}{2\hbar}\Theta(t)\,
+ \omega([\tau_t(M_\beta),M_\alpha]).
+\]
+The associated finite-window correlation measure is positive; the commutator
+measure need not be positive without passivity or KMS, and neither result
+selects a state or proves a nonzero pole.
+
+On the strict, nonempty native ray
+\(U_d>0\), \(d_*>2\), \(\Delta=4U_d(d_*-2)\), `GL6AN` reduces the parent to
+\[
+ H=-h\sum_eX_e+U_d\sum_v(k_v-2)^2+C.
+\]
+The local degree-two variations are exactly the pair-`E` sector, while
+\([H,k_v-2]=-ih\sum_{e\ni v}Y_e\) proves that degree lock is not itself an
+exact linear Ward conservation law.  On the declared period-four,
+girth-at-least-six quotient, `GL6AO` completes the canonical effective
+Hamiltonian through sixth order:
+\[
+ H_{\rm eff}=CP-\frac{M}{2}\frac{h^2}{U_d}P
+ -\frac{7M}{24}\frac{h^4}{U_d^3}P
+ -\frac{h^6}{U_d^5}\left[\frac{893M}{1080}P
+ +\frac{63}{8}\sum_cT_c\right]+O(h^8/U_d^7).
+\]
+The diagonal sixth-order term is common and the only configuration-changing
+term at this order is the alternating-hexagon move with coefficient `-63/8`.
+This is a controlled linked expansion, not an all-orders phase theorem.
+
+The remaining sealed results sharply delimit what this collective dynamics
+does and does not yet establish.  `GL6AP` finds
+\(\ker B(1)=T_2\), whereas locked pair fluctuations are `E`, with
+\(\operatorname{Hom}_{S_4}(T_2,E)=0\); a linear identification is therefore
+forbidden, while native hexagons break uniform pair-`E` conservation.
+`GL6AQ` proves an authenticated pair-`E` read variance
+\((8/3)\|c\|^2\), the direct obstruction \(P_{\rm lock}X_eP_{\rm lock}=0\),
+and the first retained-support gate
+\[
+ -\frac{63}{8}\frac{h^6}{U_d^5}\prod_{e\in c}\kappa_e,
+\]
+but a product trace state refutes any universal nonzero stationary contrast.
+`GL6AR` constructs the finite and quasi-local pure-hexagon dynamics, its native
+cut-flux sectors, Perron--Frobenius component theory, and the conditional
+finite-size bound
+\[
+ \Delta_L\le
+ \frac{18t\|w\|_\infty^2L}{\operatorname{Var}(F_L)},\qquad
+ t=\frac{63}{8}\frac{h^6}{U_d^5};
+\]
+the selected infinite-volume GNS bridge remains open.  `GL6AS` derives a
+centered port-`T2` conservation law and single-mode bound
+\(\Delta_{T_2}(\chi;u)\le f_u(\chi)/S_u^+(\chi)\); its two small-character
+modes require declared positive coherent Hessians and are neither physical
+momentum modes nor a cone.  Its algebraic
+\(\operatorname{Sym}^2_0(T_2)=E\oplus T_2\) decomposition is not a stress or
+spin-two theorem.
+
+Finally, `GL6AT` maps the displayed order-six locked interaction exactly to
+the fully packed loop/quantum-ice comparison family
+\[
+ H(v)=-g\sum_cT_c+v\sum_cF_c,
+ \qquad g=\frac{63}{8}\frac{h^6}{U_d^5},
+ \qquad \frac vg=0,
+\]
+distinct from the Rokhsar--Kivelson point `v/g=1`.  Published numerical and
+effective evidence at `v/g=0` supports an infrared liquid interpretation, but
+is recorded only as controlled evidence, not a mathematical phase, gap, or
+pole theorem.
+
+`GL6AU` converts that evidence question into one exact finite-component
+test.  On a translation-stable periodic component, at
+\(q_L=2\pi/L\),
+\[
+ \Delta_C(L)\le
+ \frac{6J\sin^2(\pi/L)}{S_{u,L}(q_L)},
+ \qquad J=\frac{63}{8}\frac{h^6}{U_d^5}.
+\]
+Therefore any proved lower bound
+\(S_{u,L}(q_L)\ge sL^{-\alpha}\) with \(\alpha<2\) forces
+\(\Delta_C(L)\le(6\pi^2J/s)L^{\alpha-2}\to0\); the evidence-supported
+`alpha=1` law gives `O(J/L)`.  This is an exact implication, not a proof of
+the static lower bound or of the selected infinite-volume GNS bridge.
+
+`GL6AW` then supplies an independent exact finite-size route that does not
+assume that static bound.  In the nonempty centered port sector on rectangular
+tori with even \(L_1\) and odd \(L_0,L_2\), a one-port twist has translation
+character `-1`.  The controlling sector consequently has either exact
+translation-related ground-component degeneracy or a same-component
+orthogonal excitation satisfying
+\[
+ \Delta_C\le2JV[1-\cos(2\pi/L_1)]
+ \le4\pi^2J\frac{L_0L_2}{L_1}.
+\]
+Along the three-dimensional Følner sequence
+\((L_0,L_1,L_2)=(m,2m^3,m)\), `m` odd, this becomes
+\(\Delta_C\le2\pi^2J/m\to0\) in the stable-component branch.  The theorem is
+anisotropic and finite-sector: it does not prove isotropic scaling, select the
+all-sector ground, or transport the trial outside the full zero-energy
+subspace of a chosen GNS limit.
+
+Between those two closure results, `GL6AV` proves how retained formation enters
+the leading collective generator.  For an authenticated finite binary word,
+the isolated order-six off-diagonal component is
+\[
+ H_{\rm hex}(\boldsymbol\kappa)
+ =-J\sum_c\left(\prod_{e\in c}\kappa_e\right)\tau_c.
+\]
+In the formal homogeneous pure-loop family,
+\(H(q)=q^6H(1)\) and
+\(\alpha_t^{(q)}=\alpha_{q^6t}^{(1)}\), so a fixed invariant state's
+correlations and spectrum undergo exact collective-clock rescaling.  A
+fractional or infinite/global `q` is not an authenticated physical record
+field without a preparation/homogenization theorem, and nonuniform retained
+words may have lower-order configuration-dependent diagonal shifts.
+
+The same packet derives the formal tetrahedral orientation map
+\[
+ J_d=J\prod_{a\ne d}\kappa_a^2,
+ \qquad\delta\log J_d=6s-2(r_c)_d.
+\]
+Its image is exactly `A1+T2`; the tetrahedral evaluation of a spatial
+symmetric tensor has rank four and kernel `E`.  Together with the
+authenticated pair-`E` query coordinate this gives the typed representation
+atlas
+\((A_1\oplus T_2)\oplus E\cong\operatorname{Sym}^2(\mathbb R^3)\).
+It is not yet one physical six-direction metric tangent: the first four
+entries are formal generator coefficients, the last two are query/read
+coordinates, and no reciprocal rank-six constitutive join or causal memory
+updater has been derived.
+
+The held-open gates are isotropic `v/g=0` phase control and the selected
+finite-to-GNS bridge; all-orders survival at finite `h/U_d`; physical
+preparation, homogenization, and causal updating of the retained coefficient
+field; a nonzero selected propagation/lineage-visible response; calibrated
+physical scales, one cone, and the rank-six constitutive join; common coupling,
+complete stress/Ward/contact custody, and RGRL-B; a native continuum operator;
+its held-out Ricci/Einstein comparison; and the microscopic Ricci
+coefficient/`G_model` calculation.
 
 The certificate now makes the adopted distinction explicit. RGRL-C supplies
 full-rank or declared dense-range **off-shell constitutive ancestry** on the

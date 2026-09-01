@@ -994,7 +994,7 @@ class URM(ProjectModel):
 
     @staticmethod
     def gravity_microscopic_progress():
-        """Expose sealed F3 progress through GL6AI without changing V014 semantics."""
+        """Expose sealed F3 progress through GL6AW without changing V014 semantics."""
         from gravity_microscopic_progress import gravity_microscopic_progress
 
         return gravity_microscopic_progress()

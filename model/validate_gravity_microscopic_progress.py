@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed zero-input validator for the GL6T--GL6AI URM checkpoint."""
+"""Fail-closed zero-input validator for the GL6T--GL6AW URM checkpoint."""
 
 from __future__ import annotations
 
@@ -55,23 +55,29 @@ def main() -> int:
     check(certificate["relationship_to_V014"] == "ADDITIVE_PROGRESS_SURFACE__V014_MEANING_UNCHANGED")
     check(isinstance(certificate, MappingProxyType))
     check(isinstance(certificate["exact_results"], MappingProxyType))
+    check(isinstance(certificate["controlled_evidence"], MappingProxyType))
     check(isinstance(certificate["custody"]["packets"], tuple))
     check(refused(lambda: gmp._root_path("../outside")))
     check(refused(lambda: gmp._verify_seal(gmp._PACKETS[-1].author_dir, "0" * 64, "0" * 64)))
     check(type_error(lambda: mutate(certificate, "schema", "changed")))
     check(type_error(lambda: mutate(certificate["exact_results"], "gravity", True)))
 
-    check(certificate["custody"]["packet_count"] == 7)
+    check(certificate["custody"]["packet_count"] == 19)
     check(tuple(row["gate"] for row in certificate["custody"]["packets"]) == (
-        "GL6T", "GL6U", "GL6AA", "GL6AF", "GL6AG", "GL6AH", "GL6AI"
+        "GL6T", "GL6U", "GL6AA", "GL6AF", "GL6AG", "GL6AH", "GL6AI",
+        "GL6AK", "GL6AM", "GL6AN", "GL6AO", "GL6AP", "GL6AQ", "GL6AR",
+        "GL6AS", "GL6AT", "GL6AU", "GL6AV", "GL6AW",
     ))
-    check(certificate["custody"]["declared_hash_rows_checked"] == 404)
+    check(certificate["custody"]["declared_hash_rows_checked"] == 910)
     check(all(row["audit_disposition"].startswith("PASS") for row in certificate["custody"]["packets"]))
-    check(all(len(row["theorem_sha256"]) == 64 for row in certificate["custody"]["packets"]))
+    check(all(len(row["author_claim_sha256"]) == 64 for row in certificate["custody"]["packets"]))
     check(all(len(row["audit_sha256"]) == 64 for row in certificate["custody"]["packets"]))
+    check(certificate["custody"]["packets"][7]["audit_claim_file"] == "POSTFREEZE_AUDIT.md")
+    check(certificate["custody"]["packets"][15]["author_claim_file"] == "RESULT.md")
+    check(certificate["custody"]["packets"][15]["theorem_sha256"] is None)
 
     exact = certificate["exact_results"]
-    expected_exact = {
+    expected_legacy_exact = {
         "record_gated_local_pair_response": {
             "premise": "N=0;U_d=0;h>0;Delta>0;0<vartheta<2*pi",
             "KEEP": "D=-8*h*x*I6-4*h*x*z^2*A_L",
@@ -138,7 +144,28 @@ def main() -> int:
             ),
         },
     }
-    check(exact == expected_exact)
+    check(all(exact[key] == value for key, value in expected_legacy_exact.items()))
+    check(tuple(exact) == (
+        "record_gated_local_pair_response",
+        "interaction_owned_nonfactorization",
+        "authenticated_finite_atlas",
+        "formation_pattern_source_threshold",
+        "matched_neighbor_response",
+        "homogeneous_direct_edge_propagation",
+        "uniform_quasilocal_influence_envelope",
+        "authenticated_a3_bulk_dynamics",
+        "authenticated_finite_window_bulk_response",
+        "native_degree_lock_sector",
+        "complete_order6_locked_hamiltonian",
+        "locked_ir_representation_and_response_boundary",
+        "authenticated_E_loop_selection_boundary",
+        "locked_hexagon_thermodynamic_sector",
+        "native_hexagon_collective_response",
+        "order6_quantum_ice_crosswalk",
+        "vg0_first_character_static_closure",
+        "record_conditioned_collective_clock_and_typed_atlas",
+        "anisotropic_folner_twist_closure",
+    ))
     check(exact["record_gated_local_pair_response"]["open_domain_rank"] == 6)
     check(exact["record_gated_local_pair_response"]["matched_BREAK"] == "D_BREAK=0")
     check("U_d" in exact["interaction_owned_nonfactorization"])
@@ -164,8 +191,103 @@ def main() -> int:
     check(exact["uniform_quasilocal_influence_envelope"]["lambda_F3"] == "48*abs(U_d)/hbar")
     check("UPPER_ENVELOPE_ONLY" in exact["uniform_quasilocal_influence_envelope"]["v_1"])
 
-    check(len(certificate["open_gates"]) == 6)
-    check(certificate["open_gates"][0].startswith("STATIONARY_BULK_IR_LAW"))
+    check(exact["authenticated_a3_bulk_dynamics"] == {
+        "premise": "SELECTED_HOMOGENEOUS_ALL_FORMED_F3_MEMBER_ON_A3_X_FOUR_PORTS",
+        "site_set": "L=A3_x_{1,2,3,4}",
+        "pair_interaction_degree": 6,
+        "lambda_F3": "48*abs(U_d)/hbar",
+        "boundary_comparison": (
+            "norm(tau_t^S(A)-tau_t^R(A))<=3*norm(A)*abs(X)*"
+            "sum_{r=R}^infinity(2r+1)^3*T_{r-r_X+1}(lambda_F3*abs(t))"
+        ),
+        "bulk_limit": "BOUNDARY_INDEPENDENT_STRONGLY_CONTINUOUS_QUASILOCAL_DYNAMICS",
+        "stationary_state": "AT_LEAST_ONE_JOINT_TIME_TRANSLATION_S4_INVARIANT_STATE_EXISTS_NOT_SELECTED",
+        "spectral_measure": "mu_AB(B)=mu_A1(B)*P_A1+mu_E(B)*P_E+mu_T2(B)*P_T2",
+    })
+    check(exact["authenticated_finite_window_bulk_response"]["retarded_kernel"] == (
+        "G^R_{beta,alpha}(t)=i*E_star^2/(2*hbar)*Theta(t)*"
+        "omega([tau_t(M_beta),M_alpha])"
+    ))
+    check(exact["authenticated_finite_window_bulk_response"]["commutator_measure"] == (
+        "NOT_POSITIVE_WITHOUT_PASSIVITY_OR_KMS"
+    ))
+    check(exact["native_degree_lock_sector"]["hamiltonian"] == (
+        "H=-h*sum_e X_e+U_d*sum_v(k_v-2)^2+C"
+    ))
+    check(exact["native_degree_lock_sector"]["linear_Ward_no_go"] == (
+        "[H,k_v-2]=-i*h*sum_{e_incident_v}Y_e"
+    ))
+    check("893M/1080" in exact["complete_order6_locked_hamiltonian"]["formula"])
+    check(exact["complete_order6_locked_hamiltonian"]["hexagon_amplitude"] == "-63/8")
+    check(exact["locked_ir_representation_and_response_boundary"]["mismatch"] == (
+        "Hom_S4(T2,E)=0"
+    ))
+    check(exact["authenticated_E_loop_selection_boundary"]["uniform_locked_variance"] == (
+        "(8/3)*norm(c)^2"
+    ))
+    check("product_{e_in_C}kappa_e" in (
+        exact["authenticated_E_loop_selection_boundary"]["retained_support_gate"]
+    ))
+    check(exact["locked_hexagon_thermodynamic_sector"]["finite_component"] == (
+        "H_C=-t*A_C;Delta_C=t*(rho_C-lambda_2(C))"
+    ))
+    check(exact["locked_hexagon_thermodynamic_sector"]["variance_bound"] == (
+        "Delta_L<=18*t*norm(w)_infinity^2*L/Var(F_L)"
+    ))
+    check(exact["native_hexagon_collective_response"]["conserved_density"] == (
+        "CENTERED_PORT_T2"
+    ))
+    check(exact["native_hexagon_collective_response"]["single_mode_bound"] == (
+        "Delta_T2(chi;u)<=f_u(chi)/S_u_plus(chi)"
+    ))
+    check(exact["order6_quantum_ice_crosswalk"]["exact_parameter"] == "v/g=0")
+    check(exact["order6_quantum_ice_crosswalk"]["distinct_RK_point"] == "v/g=1")
+    check(exact["vg0_first_character_static_closure"]["oscillator_bound"] == (
+        "f_u(q_L)<=6*J*sin(pi/L)^2"
+    ))
+    check(exact["vg0_first_character_static_closure"]["component_gap_bound"] == (
+        "Delta_C(L)<=6*J*sin(pi/L)^2/S_u,L(q_L)"
+    ))
+    check("alpha<2" in (
+        exact["vg0_first_character_static_closure"]["static_exponent_premise"]
+    ))
+    check("O(J/L)" in (
+        exact["vg0_first_character_static_closure"]["alpha_one_consequence"]
+    ))
+    check("product_{e_in_c}kappa_e" in (
+        exact["record_conditioned_collective_clock_and_typed_atlas"]["record_conditioned_loop"]
+    ))
+    check("q^6*H_hex(1)" in (
+        exact["record_conditioned_collective_clock_and_typed_atlas"]["homogeneous_formal_family"]
+    ))
+    check(exact["record_conditioned_collective_clock_and_typed_atlas"]["tetrahedral_evaluation"] == (
+        "rank(E)=4;im(E)=A1_plus_T2;ker(E)=E"
+    ))
+    check("NOT_ONE_PHYSICAL_METRIC_TANGENT" in (
+        exact["record_conditioned_collective_clock_and_typed_atlas"]["typed_atlas"]
+    ))
+    check(exact["anisotropic_folner_twist_closure"]["translation_character"] == (
+        "Y*U0*Y^-1=-U0"
+    ))
+    check("4*pi^2*J*L0*L2/L1" in (
+        exact["anisotropic_folner_twist_closure"]["gap_bound"]
+    ))
+    check(exact["anisotropic_folner_twist_closure"]["folner_sequence"] == (
+        "(L0,L1,L2)=(m,2*m^3,m);m>=5_ODD"
+    ))
+    check("SELECTED_GNS" in (
+        exact["anisotropic_folner_twist_closure"]["closure_scope"]
+    ))
+
+    evidence = certificate["controlled_evidence"]
+    check(tuple(evidence) == ("quantum_ice_v_over_g_zero",))
+    check(evidence["quantum_ice_v_over_g_zero"]["claim_class"] == (
+        "NUMERICAL_AND_EFFECTIVE_EVIDENCE_NOT_A_PHASE_GAP_OR_POLE_THEOREM"
+    ))
+    check("0.6_plus_or_minus_0.1" in evidence["quantum_ice_v_over_g_zero"]["Benton"])
+
+    check(len(certificate["open_gates"]) == 9)
+    check(certificate["open_gates"][0].startswith("ISOTROPIC_V_OVER_G_ZERO_PHASE_CONTROL"))
     check(certificate["open_gates"][-1] == "MICROSCOPIC_RICCI_COEFFICIENT_AND_G_MODEL")
     check(all(value is False for value in certificate["ceilings"].values()))
     check(certificate["executable_scope"]["caller_arguments"] == 0)
@@ -180,7 +302,7 @@ def main() -> int:
     check(delegated["ceilings"]["gravity_derived_here"] is False)
     check(delegated["ceilings"]["G_calculated_here"] is False)
 
-    expected = 46
+    expected = 82
     check(passed + 1 == expected)
     print(f"GRAVITY MICROSCOPIC PROGRESS: {passed}/{expected} PASS")
     return 0

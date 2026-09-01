@@ -1,0 +1,19 @@
+GL6AK V001 independent hostile pre-freeze audit
+Date: 2026-08-31
+
+python3 independent_gl6ak_replay.py
+PASS 79644/79644
+
+python3 verify_mutable_audit.py
+PASS 15/15
+
+Author packet replay (run independently before audit construction):
+python3 ../LANE_CROSS_RFT_GRA_GL6AK_A3_QUASILOCAL_BULK_DYNAMICS_V001/verify_a3_bulk_dynamics.py
+PASS 6304/6304
+
+python3 ../LANE_CROSS_RFT_GRA_GL6AK_A3_QUASILOCAL_BULK_DYNAMICS_V001/verify_mutable_packet.py
+PASS 26/26
+
+Disposition: CLEAN_PREFREEZE.  This audit is intentionally unmanifested and
+unsealed until a distinct post-freeze custody review pins the final author
+theorem, manifest, and seal.

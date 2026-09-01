@@ -1,0 +1,43 @@
+GL6AM V001 AUTHOR VERIFICATION
+Date: 2026-08-31
+Status: AUTHOR DRAFT; HOSTILE SELF-SCOPE COMPLETE; INDEPENDENT REVIEW REQUIRED
+
+Exact structural replay:
+PASS__GL6AM_AUTHENTICATED_BULK_RESPONSE__3999/3999
+
+Final packet/custody replay:
+PASS__GL6AM_PACKET__131/131
+
+Pinned parent custody replays:
+PASS__GL6AA_AUDIT_PACKET__8/8
+PASS__GL6AF_AUDIT_PACKET__8/8
+PASS__GL6AG_AUDIT_PACKET__18/18
+PASS__GL6V_AUDIT_PACKET__8/8
+PASS__GL6W_AUDIT_PACKET__8/8
+PASS__GL6AI_AUDIT_PACKET__18/18
+PASS__GL6AK_POSTFREEZE_HOSTILE_AUDIT__87/87
+PASS__INDEPENDENT_GL6AK_POSTFREEZE_SPOT__33398/33398
+
+The structural replay independently checks:
+
+- the local `A3 x 4` degree-six adjacency and symmetric shared-child relation;
+- the exact rank `1+2+3` orthogonal `A1/E/T2` projectors and their covariance
+  under all twenty-four `S4` permutations;
+- positive semidefiniteness of nonnegative scalar sector measures;
+- finite-window Liouvillian positivity as an exact Gram/projection identity;
+- the `GL6W` half-source pulse derivative sign;
+- exact cancellation of `-hX_p` by
+  `V_kappa=h(1-kappa_p)X_p` for all sixteen one-cell support words;
+- `lambda_F3=48|U_d|/hbar`, factorial-tail recursion, monotonicity, and cubic-
+  shell suppression;
+- all forty-two sealed/hostile-audited dependency hashes;
+- required positivity, causality, defect, sector, and overclaim boundaries in
+  the theorem and response ledger.
+
+The mathematical proof additionally uses the sealed `GL6AK` norm estimate:
+finite product telescoping gives (AM07), unitary cocycle Duhamel comparison
+gives (AM23)--(AM24), and the route-uniform `GL6AI` bound gives (AM25a).
+Those are analytic norm identities, not numerical extrapolations.
+
+No `SEAL.sha256` is present.  This self-reviewed author packet must not be
+treated as independently audited or frozen.

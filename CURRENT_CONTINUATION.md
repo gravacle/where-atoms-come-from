@@ -41,32 +41,71 @@ certificate plus the full URM chain pass.
 ## Newest sealed microscopic checkpoint
 
 The additive URM surface `gravity_microscopic_progress` now packages the
-author-frozen, independently audited direct F3 chain through `GL6AI` without
-changing the V014 working-theory meaning.  Its load-bearing results are:
+author-frozen, independently audited direct F3 chain through `GL6AW` without
+changing the V014 working-theory meaning.  The earlier `GL6T--GL6AI` results
+remain intact: record-gated complete finite pair response, exact
+interaction-owned nonfactorization, the record-authenticated finite FPSS
+atlas, formation-pattern source and matched-neighbor response, homogeneous
+direct-edge `A1+T2` propagation with exact direct `E` null, and the uniform
+quasi-local upper envelope `lambda_F3=48|U_d|/hbar`.
 
-1. on GL6T's declared `N=0`, `U_d=0`, `h,Delta>0`,
-   `0<vartheta<2*pi` comparator, formed KEEP opens the complete finite
-   six-pair response while matched BREAK is zero;
-2. the inherited degree interaction creates the exact nonfactorization
-   `y-x*z^2=-(16/3)h^3 U_d (tau/hbar)^4+O((tau/hbar)^6)` (`GL6U`);
-3. independently formed node-ID and port records authenticate the finite FPSS
-   shared-child atlas and its transition cocycles (`GL6AA`);
-4. formation-pattern changes produce an exact fixed-frame source threshold and
-   a matched neighboring response (`GL6AF/GL6AG`);
-5. on the sealed `delta=0` slice, the general finite parent carries a
-   homogeneous direct-edge order-six `A1+T2` signal, exact direct `E` null, and
-   cancellation of the displayed helper-assisted `E` terms at complete
-   homogeneous interior incidence (`GL6AH`); and
-6. the same parent has a slab-size-independent exponentially quasi-local
-   relational-influence envelope with conservative bound
-   `lambda_F3=48|U_d|/hbar` (`GL6AI`).
+The newly registered sealed chain establishes:
 
-The last item is an analytic upper envelope, not exact finite-speed support, a
-Lorentz cone, a common physical cone, gravity, or `G`.  The exact next gates are
-the stationary bulk infrared law, common physical cone, complete
-stress/Ward/contact ownership, native continuum operator, held-out
-Ricci/Einstein comparison, and microscopic Ricci coefficient/`G_model`.
-Mutable work beyond `GL6AI` is deliberately excluded from this checkpoint.
+1. a boundary-independent strongly continuous quasi-local F3 dynamics and
+   existence, not selection, of an invariant bulk state (`GL6AK`);
+2. boundary-independent finite authenticated pulse/read functionals with exact
+   retarded kernel
+   `G^R=(i E_*^2/(2 hbar)) Theta(t) omega([tau_t(M_beta),M_alpha])`, while
+   positivity of the correlation measure does not imply a nonzero retarded
+   response (`GL6AM`);
+3. the strict native degree-two lock
+   `H=-h sum_e X_e+U_d sum_v(k_v-2)^2+C`, its linear Ward no-go, and locked
+   pair variations exactly in `E` (`GL6AN`);
+4. the complete order-six locked Hamiltonian
+   `H_eff=scalar-(h^6/U_d^5)[(893M/1080)P+(63/8)sum_c T_c]+O(h^8/U_d^7)`,
+   with no order-six flippability potential and only the alternating-hexagon
+   configuration change (`GL6AO`);
+5. the exact `T2` link-kernel versus `E` pair-sector representation mismatch,
+   an authenticated nonzero local `E` read, the direct locked-source
+   obstruction, and the six-retained-support amplitude
+   `-(63/8)(h^6/U_d^5) product_e kappa_e` (`GL6AP/GL6AQ`);
+6. finite and quasi-local pure-hexagon dynamics, native cut-flux sectors,
+   Perron--Frobenius components, and the conditional finite-size gap bound
+   `Delta_L<=18 t ||w||_infinity^2 L/Var(F_L)`, with the GNS bridge still open
+   (`GL6AR`);
+7. exact centered port-`T2` continuity and its single-mode bound, plus a
+   conditional two-mode harmonic character response; neither character nor
+   `Sym^2_0(T2)=E+T2` has been promoted to physical momentum, stress, or a cone
+   (`GL6AS`);
+8. an exact order-six crosswalk to the fully packed loop/quantum-ice family at
+   `v/g=0`, `g=(63/8)h^6/U_d^5`, distinct from the RK point `v/g=1` (`GL6AT`).
+9. the exact first-character finite-component bound
+   `Delta_C<=6J sin^2(pi/L)/S_T(2pi/L)`, so any static exponent `alpha<2`
+   closes that selected component gap; `alpha=1` gives `O(J/L)`, while the
+   static lower bound and selected GNS bridge remain unproved (`GL6AU`);
+10. the exact retained-support product law
+    `J_c=J product_(e in c) kappa_e` and formal homogeneous collective-clock
+    rescaling `H(q)=q^6 H(1)`, together with the typed representation atlas
+    `(A1+T2)+E=Sym^2(R3)`; this is future-generator conditioning plus a
+    source/read atlas, not an authenticated global fractional field, physical
+    metric, rank-six constitutive law, or two-way feedback (`GL6AV`); and
+11. an unconditional finite centered-sector dichotomy on odd-transverse-area
+    rectangular tori: exact translation-related ground-component degeneracy,
+    or `Delta_C<=4pi^2 J L0 L2/L1`; along `(m,2m^3,m)` the stable-component
+    branch closes as `2pi^2J/m` (`GL6AW`).
+
+The `v/g=0` liquid/linear-mode literature is registered as controlled
+numerical and effective evidence, not a phase, gap, or pole proof.  The exact
+open gates are: isotropic `v/g=0` phase control and the selected finite-to-GNS
+bridge; all-orders finite-`h/U_d` survival; physical preparation,
+homogenization, and causal update of the retained coefficient field; nonzero
+selected propagation and lineage-visible response; calibrated physical scales,
+one cone, and the rank-six constitutive join; common coupling, complete
+stress/Ward/contact ownership, and RGRL-B; a native continuum operator;
+held-out Ricci/Einstein comparison; and the microscopic Ricci
+coefficient/`G_model`.  The exact anisotropic finite-size closure is not an
+isotropic or selected-GNS theorem.  Unaudited work beyond `GL6AW` is
+deliberately excluded.
 
 ## Transfer disposition
 
@@ -125,11 +164,11 @@ claim is therefore non-authoritative.
 ## Checkpoint base
 
 The current Git base is
-`e91bbc1d4c60e0ab24b15e52e7263715be90b47c`.  The working tree contains many
+`c3d4ff68fe1126e6cb0a6a5c76bc3390bae3191c`.  The working tree contains many
 older user-owned and generated changes.  Any new checkpoint must stage only
 the explicitly reviewed continuation files and must not sweep unrelated
 changes into the commit.
 
 The reviewed, hash-pinned proposed stage inventory is
-`CHECKPOINT_2026-08-31_GL6AI_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
+`CHECKPOINT_2026-08-31_GL6AW_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
 only: the Git index must remain untouched until that inventory is reviewed.

@@ -1,0 +1,27 @@
+# Dependencies and custody
+
+## Sole logical parent
+
+GL6AP uses the frozen GL6AN theorem and its distinct sealed hostile audit:
+
+```text
+32f597edc51a609a37b86144487cd7db3bd2f14a65adb754a893d47ef6807e81  LANE_CROSS_RFT_GRA_GL6AN_NATIVE_DEGREE_LOCK_SECTOR_THEOREM_V001/THEOREM.md
+24a71c01ed1b7a92830e92ec7682882c892667289e2794dafb4af5905ad71b2e  LANE_CROSS_RFT_GRA_GL6AN_NATIVE_DEGREE_LOCK_SECTOR_THEOREM_V001/MANIFEST.sha256
+a946902f027c555f91cd1f2e9ce93e3182f8edeca319955cd691a0bc929fba51  LANE_CROSS_RFT_GRA_GL6AN_NATIVE_DEGREE_LOCK_SECTOR_THEOREM_V001/SEAL.sha256
+8754210b2ff0077e8cec4c5ce0f771ba40cfee2b8957d37f5be64a50ba49d0b4  AUDIT_G_GL6AN_NATIVE_DEGREE_LOCK_SECTOR_THEOREM_V001/AUDIT.md
+9cdbf177bafcfb15dfdc575c17efe06e902f003c18ce3ff38132686fb5418f1f  AUDIT_G_GL6AN_NATIVE_DEGREE_LOCK_SECTOR_THEOREM_V001/VERIFICATION.txt
+73b618e88b96d40ca40e32bd33ab578df98ed20af9fc359d90bfe4ae75f5c91b  AUDIT_G_GL6AN_NATIVE_DEGREE_LOCK_SECTOR_THEOREM_V001/MANIFEST.sha256
+d0a50cda599842d8854db0bc2ab9e665f823e2ab7e2048a0eafa672ae3ad7b7e  AUDIT_G_GL6AN_NATIVE_DEGREE_LOCK_SECTOR_THEOREM_V001/SEAL.sha256
+```
+
+These seven rows are repeated in `DEPENDENCIES.sha256` and will be checked
+fail-closed.  GL6AN carries the transitive GL6AK authenticated-incidence and
+stationary spectral-measure ancestry.  No mutable GL6AL reconnaissance is a
+premise.
+
+## New author artifact
+
+The GL6AP verifier uses only the Python standard library and imports no GL6AN
+author code.  Any future manifest/seal freezes custody only and is not an
+independent audit.
+
