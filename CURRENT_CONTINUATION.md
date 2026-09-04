@@ -1,6 +1,6 @@
 # Current continuation pointer
 
-**Date:** 2026-09-01
+**Date:** 2026-09-04
 
 **Authority:** this file identifies the current work program.  Dated
 `HANDOFF_*.md` files are provenance and are not authoritative unless this file
@@ -38,10 +38,49 @@ target/audit hashes are packaged in
 `GRAVITY_RECORD_FIRST_WORKING_THEORY_CLOSURE_V001.sha256`, and the V014 URM
 certificate plus the full URM chain pass.
 
+## 2026-09-04 authoritative transfer checkpoint
+
+The shortest microscopic route is now the **direct Ward route**, not a
+particle/graviton route and not the unresolved orientation-average route.
+The independently audited `GL6CR` classifier proves that the complete cubic
+rank-two response space has dimension nine and that imposing the longitudinal
+Ward null gives a `180 x 9` exact system of rank eight.  Its sole ray is
+
+`(0,2,-2,0,-2,-2,4,-1,1)=16 x Einstein/Fierz-Pauli`.
+
+Therefore the remaining decisive step is no longer to guess the tensor form:
+derive that Ward null from the complete physical F3 same-state `1PI`/quotient
+kernel.  If it is derived, rotational completion and the Einstein/Fierz--Pauli
+form follow together.  `GL6CR` classifies this implication; it does not insert
+or prove the physical F3 Ward identity.
+
+The audited `GL6CH--GL6CQ` chain supplies the missing record-dependent
+order-six future writer, rank-six same-parent source/read/writer access, a
+global Fourier tensor writer, a genuine finite-component stationary-response
+channel, the complete pure-`T2` first-source term through order six, tensor
+matching, and observable same-state moment equations.  The audited `GL6CS`
+fixed-cell result then proves why one record or one bounded cell was never
+expected to display classical gravity: for `r=h/U_d`,
+
+`K_EE=O(r^-6/U_d), K_ET=O(U_d^-1), K_TT^ct=O(r^2/U_d), K_TT^wr=O(r^6/U_d)`.
+
+Matching the sectors therefore requires a collective enhancement of order
+`r^-8` on the contact route or `r^-12` on the writer route, or another derived
+same-order owner.  This is the exact **accumulation horizon**.  It is not a
+proof that a critical sequence exists or that the relevant limits fail to
+commute.  `GL6CP` is excluded from promotion because its audit disposition is
+`REPAIR_REQUIRED`; it is optional because the direct Ward route bypasses it.
+
+The additive URM surface is V008 through `GL6CS`.  It deliberately keeps
+`gravity_derived_here=False` and `G_calculated_here=False`; adopted-RGRL
+working-theory closure and deeper microscopic F3 derivation remain separate
+proof levels.  Sections below retain the earlier route history and remain
+useful only where they do not conflict with this checkpoint.
+
 ## Newest sealed microscopic checkpoint
 
 The additive URM surface `gravity_microscopic_progress` now packages the
-author-frozen, independently audited direct F3 chain through `GL6BC` without
+author-frozen, independently audited direct F3 chain through `GL6CS` without
 changing the V014 working-theory meaning.  The earlier `GL6T--GL6AI` results
 remain intact: record-gated complete finite pair response, exact
 interaction-owned nonfactorization, the record-authenticated finite FPSS
@@ -186,7 +225,8 @@ isotropic or selected-GNS theorem.  The GL6AY custody retains both the original
 hostile FAIL audit of the invalid global-projector/subspace formulation and
 the independent post-repair PASS audit of the local-collar formulation.
 Failure of the corrected sufficient domain is not physical phase failure.
-Unaudited work beyond `GL6BC` is deliberately excluded.
+The audited `GL6CH--GL6CS` continuation is promoted only through the exact
+V008 ceilings above.  `GL6CP` remains excluded as `REPAIR_REQUIRED`.
 
 ## Transfer disposition
 
@@ -244,12 +284,12 @@ claim is therefore non-authoritative.
 
 ## Checkpoint base
 
-The current Git base is
-`c476782658b1a4c70b1a193306108c8b9deb9d5a`.  The working tree contains many
+The last committed Git base before the V008 transfer commit is
+`dd5d63e12234721d2dc7ec0af08879cf5d23ef95`.  The working tree contains many
 older user-owned and generated changes.  Any new checkpoint must stage only
 the explicitly reviewed continuation files and must not sweep unrelated
 changes into the commit.
 
-The reviewed, hash-pinned proposed stage inventory is
-`CHECKPOINT_2026-09-01_GL6BC_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
-only: the Git index must remain untouched until that inventory is reviewed.
+The committed GL6BC stage inventory is
+`CHECKPOINT_2026-09-01_GL6BC_URM_STAGE_MANIFEST_V001.txt`.  Any transfer commit
+must use a new exact stage inventory and must not sweep unrelated changes.

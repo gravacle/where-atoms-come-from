@@ -1,0 +1,411 @@
+{
+  "T2_projection": {
+    "consequence": "a T2-only test sees only two of the four rotational coefficients and cannot certify the full tensor operator",
+    "dimension": 2
+  },
+  "constant_symbols": {
+    "S4_dimension": 3,
+    "SO3_dimension": 2,
+    "consequence": "one independent constant splitting distinguishes E2 and T2 traceless response; rotational completion removes it"
+  },
+  "direct_cubic_gauge_shortcut": {
+    "condition": "K^(2)(k) x(k,xi)=0 for every k and xi, where D_C x=k odot xi",
+    "consequence": "on the full cubic S4 family, the direct longitudinal Ward/gauge null implies SO3 rotational completion and the Einstein/Fierz-Pauli ray; orientation averaging is not an independent algebraic prerequisite if this null is derived physically",
+    "constraint_rank_on_S4_nine_space": 8,
+    "equals_Einstein_ray": true,
+    "guard": "the gauge null is a target condition here, not yet derived for the complete same-state F3 1PI kernel",
+    "homogeneous_cubic_monomials": [
+      [
+        0,
+        0,
+        3
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        3,
+        0
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "null_dimension": 1,
+    "unique_null_ray_in_invariant_basis": [
+      "0",
+      "2",
+      "-2",
+      "0",
+      "-2",
+      "-2",
+      "4",
+      "-1",
+      "1"
+    ]
+  },
+  "einstein_reference": {
+    "coordinates_in_SO3_basis": [
+      "1/2",
+      "-1/2",
+      "-1",
+      "1/2"
+    ],
+    "coordinates_in_invariant_basis": [
+      "0",
+      "1/8",
+      "-1/8",
+      "0",
+      "-1/8",
+      "-1/8",
+      "1/4",
+      "-1/16",
+      "1/16"
+    ],
+    "gauge_constraints_on_general_SO3_coefficients_abcd": [
+      [
+        "2",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "2"
+      ],
+      [
+        "0",
+        "2",
+        "0",
+        "2"
+      ]
+    ],
+    "generic_momentum": [
+      2,
+      3,
+      5
+    ],
+    "guard": "held-out algebraic 1PI reference only; the microscopic object currently derived is a connected response and must be completed and lawfully inverted",
+    "rank": 3,
+    "unique_gauge_null_ray": [
+      1,
+      -1,
+      -2,
+      1
+    ]
+  },
+  "general_SO3_bilinear": "a |k|^2 h:g + b |k|^2 tr(h)tr(g) + c (h k).(g k) + d[tr(h)(k g k)+tr(g)(k h k)]",
+  "lane": "GL6CR",
+  "metric_solder": {
+    "coordinate_order": [
+      "xx",
+      "yy",
+      "zz",
+      "xy",
+      "xz",
+      "yz"
+    ],
+    "definition": "D_C(e_ab)=v_a odot v_b with v_a=T_a/2",
+    "matrix": [
+      [
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "1/2"
+      ],
+      [
+        "-1/2",
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "1/2",
+        "-1/2"
+      ],
+      [
+        "-1/2",
+        "-1/2",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      [
+        "0",
+        "0",
+        "-1/2",
+        "1/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0",
+        "0",
+        "1/2",
+        "0"
+      ],
+      [
+        "-1/2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/2"
+      ]
+    ],
+    "rank": 6
+  },
+  "pair_order": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "quadratic_symbols": {
+    "S4_dimension_character": "9",
+    "S4_dimension_reynolds": 9,
+    "SO3_self_adjoint_dimension": 4,
+    "T2_block_ABC_by_invariant_basis": [
+      [
+        "0",
+        "8",
+        "0"
+      ],
+      [
+        "4",
+        "-4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "8"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-16",
+        "0"
+      ],
+      [
+        "-8",
+        "8",
+        "0"
+      ]
+    ],
+    "T2_extension_mismatch_B_plus_C": [
+      "8",
+      "-4",
+      "0",
+      "0",
+      "0",
+      "8",
+      "0",
+      "-16",
+      "8"
+    ],
+    "T2_guard": "B+C=0 is only one projection of the five full-six-channel conditions",
+    "five_residual_covectors_on_invariant_coordinates": [
+      [
+        "0",
+        "0",
+        "-1",
+        "-1/2",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-2/3",
+        "1/3",
+        "-2/3",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "8/3",
+        "-4/3",
+        "2/3",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "-11/18",
+        "2/9",
+        "-5/18",
+        "-1/12",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "4/9",
+        "-7/18",
+        "1/9",
+        "-1/6",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "invariant_basis_labels": [
+      "Reynolds[K_00*k_0k_0]",
+      "Reynolds[K_00*k_1k_1]",
+      "Reynolds[K_00*k_1k_2]",
+      "Reynolds[K_01*k_0k_0]",
+      "Reynolds[K_01*k_2k_2]",
+      "Reynolds[K_01*k_0k_1]",
+      "Reynolds[K_01*k_0k_2]",
+      "Reynolds[K_05*k_0k_0]",
+      "Reynolds[K_05*k_1k_1]"
+    ],
+    "matching_codimension": 5,
+    "necessary_and_sufficient_test": "a full S4 quadratic symbol is SO3-extendible iff all five displayed residual covectors vanish",
+    "rotational_basis_labels": [
+      "r2_Frobenius",
+      "r2_trace_trace",
+      "hk_dot_gk",
+      "trace_h_kgk_plus_trace_g_khk"
+    ],
+    "rotational_coordinates_in_invariant_basis": [
+      [
+        "5/16",
+        "5/8",
+        "0",
+        "-1/4",
+        "-1/8",
+        "0",
+        "0",
+        "1/32",
+        "1/16"
+      ],
+      [
+        "1/16",
+        "1/8",
+        "0",
+        "1/4",
+        "1/8",
+        "0",
+        "0",
+        "1/32",
+        "1/16"
+      ],
+      [
+        "1/16",
+        "1/4",
+        "1/4",
+        "-1/4",
+        "1/8",
+        "1/8",
+        "0",
+        "1/32",
+        "0"
+      ],
+      [
+        "-1/8",
+        "1/4",
+        "1/4",
+        "0",
+        "1/4",
+        "0",
+        "1/2",
+        "-1/16",
+        "1/8"
+      ]
+    ]
+  },
+  "scope": "full six-pair algebraic symmetry classification only; no phase, continuum, Ricci, gravity, or G"
+}

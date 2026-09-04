@@ -1,0 +1,42 @@
+{
+  "disposition": "PASS",
+  "independent_results": {
+    "CS10_common_two_removed_prefactors": {
+      "EE": "(8/63)a_E^2 r^-6/U_d",
+      "ET": "(5/6)a_E/U_d",
+      "TT_writer": "(175/32)r^6/U_d"
+    },
+    "TT_contact": "r^2/(4U_d)",
+    "eligible_locked_ring_incidences": 24,
+    "every_ring_delta": "nonzero pure E2 with norm squared 16",
+    "fixed_component_exponents": {
+      "EE": -6,
+      "ET": 0,
+      "TT_contact": 2,
+      "TT_writer": 6
+    },
+    "fixed_frame_bounded_match": "impossible as r->0 because at least one E2 eigenresponse is strictly O(r^-6) while the entire bounded T2 block is O(r^2)",
+    "full_spectral_prefactors": {
+      "EE": "(16/63)a_E^2 r^-6/U_d",
+      "ET": "(5/3)a_E/U_d",
+      "TT_writer": "(175/16)r^6/U_d"
+    },
+    "required_enhancement_without_orientation_mixing": {
+      "contact": "O(r^-8)",
+      "writer_susceptibility": "O(r^-12)"
+    },
+    "solder_relation": "h_E/2=h_T"
+  },
+  "nonmaterial_notes": [
+    "CS10 lists the factors after removing the common spectral factor 2 already explicit in CS08; the full response coefficients are twice those entries, with identical powers.",
+    "RESULT.md has a TeX typo `,qquad` instead of `,\\qquad`.",
+    "The scientific audit used six frozen author bytes; final author custody was added without changing those bytes, and the resealed audit pins all twelve final target bytes."
+  ],
+  "schema": "AUDIT_G_GL6CS_STRICT_LOCK_ACCUMULATION_HORIZON_V001",
+  "scope": {
+    "CP_status": "orientation averaging remains a logically valid escape class, but the frozen GL6CP packet is REPAIR_REQUIRED and is not promoted here",
+    "not_proved": "existence or noncommutation of thermodynamic limits, realization of an orientation law or critical enhancement, finite-r phase, full rotational completion, 1PI/Ricci/Einstein dynamics, gravity, or G",
+    "proved": "fixed finite component strict-lock obstruction and the enhancement powers required of a nonuniform accumulation"
+  },
+  "target_directory": "LANE_CROSS_RFT_GRA_GL6CS_STRICT_LOCK_SIX_PAIR_SCALE_SEPARATION_V001"
+}

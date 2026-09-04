@@ -1,0 +1,39 @@
+{
+  "schema": "GL6CM_GLOBAL_H6_STATIONARY_WRITER_RESPONSE_V001",
+  "verdict": "PASS_WRITER_ONLY_SPECTRAL_RESPONSE_WITH_STRICT_TWO_OVERLAP_WITNESS",
+  "source_free_component": {
+    "hamiltonian": "H0=-J sum_c T_c",
+    "J": "(63/8)h^6/U_d^5",
+    "domain": "one finite connected locked flip-graph component"
+  },
+  "writer": {
+    "operator": "B_j=sum_c x_c(j)T_c",
+    "x_c": "sum_{v in c} j_v^T Theta_{v,c}",
+    "lambda_T": "(105/16)h^6/U_d^6",
+    "scope": "complete off-diagonal first-T2 source block at order h^6 only"
+  },
+  "spectral_response": {
+    "formula": "K_spec(j,k)=2 lambda_T^2 Re <0|B_j Q(H0-E0)^-1 Q B_k|0>",
+    "sign": "positive semidefinite",
+    "reciprocity": true,
+    "kernel": "K_spec(j,j)=0 iff Q B_j|0>=0",
+    "common_cycle_rescaling": "null"
+  },
+  "pair_source_pullback": "K_T_spec=W^T K W",
+  "two_overlap": {
+    "isolated_K2_curvature": "0",
+    "star_curvature": "-sqrt(2)(w0-w1)^2/(4J)",
+    "literal_Q4_negative_energy_hessian": "-(175sqrt(2)/32)h^6/U_d^7",
+    "unit_Q4_negative_energy_hessian": "-(175sqrt(2)/64)h^6/U_d^7",
+    "spectral_only_inverse": "(16sqrt(2)/175)U_d^7/h^6"
+  },
+  "excluded": [
+    "possible diagonal order-h6 first-source vertex",
+    "source-second Feshbach contact",
+    "record authentication or autonomous record generation of the source",
+    "complete physical source Hessian",
+    "dense linked-cluster or thermodynamic phase",
+    "real-time bulk response",
+    "metric, Ricci, Einstein, gravity, or Newton G"
+  ]
+}

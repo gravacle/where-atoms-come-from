@@ -1,0 +1,147 @@
+{
+  "audit": "GL6CO independent hostile reconstruction",
+  "ceiling": "matching theorem only; no stationary bulk symbol, coefficient calculation, common state, E2 completion, 1PI inversion, metric, Ricci, gravity, or G",
+  "checks": 277,
+  "common_sublattice_normalization": {
+    "CL_chart": "j_P=j_++j_-, j_C=j_+-j_-; B_+=B_P+B_C",
+    "equivalent_unnormalized_rule": "retain mu^2 cycle block and multiply every displayed contact coefficient by 2",
+    "normalized_contact_block": "g_ct(8+Re C)",
+    "normalized_cycle_block": "(mu^2/2) B_+^* K_cycle B_+",
+    "normalized_extension_equation": "(mu^2/2)[-4 kappa+8(c+d)]+g_ct(8/3)(2p-1)=0",
+    "normalized_reference_equation": "(mu^2/2)[-2 kappa+8b]+g_ct(4/3)(1-4p)=0",
+    "normalized_writer": "B_+/sqrt(2)"
+  },
+  "conditional_total": {
+    "normalized_extension": "(mu^2/2)[-4 kappa+8(c+d)]+[h^2/(4U_d^3)](8/3)(2p-1)=0",
+    "normalized_reference_additional": "(mu^2/2)[-2 kappa+8b]+[h^2/(4U_d^3)](4/3)(1-4p)=0",
+    "one_particle_irreducible_guard": "a response Hessian must be lawfully inverted/completed before comparison with a 1PI Ricci kernel",
+    "same_state_guard": "both blocks must belong to one stationary state and one source-first functional"
+  },
+  "contact": {
+    "A": "(4/3)(1-4p)",
+    "B": "0",
+    "C_and_mismatch": "(8/3)(2p-1)",
+    "Q4_witness": "p=109/128 gives mismatch 15/8",
+    "connected_functional_sign": "+(h^2/(4U_d^3))G",
+    "constant_common": "(16/3)(1+2p)",
+    "energy_hessian_sign": "-(h^2/(4U_d^3))G",
+    "gamma": "(8/3)(4p-1)"
+  },
+  "disposition": "PASS",
+  "group_and_invariants": {
+    "basis_labels": [
+      "alpha",
+      "eta",
+      "b",
+      "c",
+      "d"
+    ],
+    "constant_invariant_dimension": "2",
+    "group_order": 24,
+    "quadratic_invariant_dimension": "5",
+    "solder": [
+      [
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      [
+        "1/2",
+        "-1/2",
+        "1/2",
+        "-1/2"
+      ],
+      [
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "1/2"
+      ]
+    ]
+  },
+  "power_counting": {
+    "contact": "O(h^2/U_d^3)",
+    "cycle": "mu^2/J=O(h^6/U_d^7)",
+    "meaning": "isolated strong-lock repetition cannot generically cancel a nonzero leading contact mismatch"
+  },
+  "tensor_extension_and_reference": {
+    "SO3_extension_iff": "B+C=0",
+    "cycle_condition": "c+d=kappa/2",
+    "orthonormal_T_components": "(h_yz,h_zx,h_xy)=-(x1,x2,x3)/sqrt(2)",
+    "pair_solder": "(1/4) sum_ab j_ab(T_a T_b^T+T_b T_a^T)",
+    "reference_TT": "D-O",
+    "reference_additional_condition": "A=0 iff b=kappa/4",
+    "reference_matrix": [
+      [
+        -38,
+        5,
+        37,
+        15,
+        10,
+        6
+      ],
+      [
+        5,
+        100,
+        20,
+        -30,
+        20,
+        0
+      ],
+      [
+        37,
+        20,
+        4,
+        -30,
+        -20,
+        24
+      ],
+      [
+        15,
+        -30,
+        -30,
+        4,
+        -6,
+        -10
+      ],
+      [
+        10,
+        20,
+        -20,
+        -6,
+        9,
+        -15
+      ],
+      [
+        6,
+        0,
+        24,
+        -10,
+        -15,
+        25
+      ]
+    ],
+    "reference_rank": 3
+  },
+  "writer": {
+    "offset_count": 12,
+    "offset_norm_squared": "11/4",
+    "offset_second_moment": "11 I",
+    "pullback": {
+      "A": "-2 kappa+8 b",
+      "B": "-16 kappa+8 c",
+      "C": "12 kappa+8 d",
+      "alpha_eta_through_k2": "zero",
+      "constant": "8 kappa I"
+    },
+    "writer_digest": "758c1da77563edf1772ef80443401585a81859b563bbcf13d6cbc9c42eb85ad4",
+    "zero_mode_raw_writer": "B_raw(0)=-2 T; orthonormal pair basis is B_raw/sqrt(2)"
+  }
+}

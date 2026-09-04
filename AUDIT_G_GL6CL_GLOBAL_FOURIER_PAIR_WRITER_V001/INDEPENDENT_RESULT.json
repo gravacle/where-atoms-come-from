@@ -1,0 +1,66 @@
+{
+  "common_expansion": {
+    "T2_SO3_scope": "T2 is not SO(3)-closed: a 45-degree rotation maps xy shear into diagonal E2.",
+    "canonical_direct_AT_determinant": "768-1408|k|^2+1072|k|^4-(416/3)sum_i k_i^4+O(|k|^6)",
+    "orthonormal_T_normal": "8I-2|k|^2I+12kk^T-28diag(k_i^2)+O(|k|^4)",
+    "scope_conclusion": "The T2-T2 block alone diagnoses neither physical isotropy nor anisotropy; a normalized E2+T2 completion is required."
+  },
+  "disposition": "PASS",
+  "finite_momentum": {
+    "all_three_columns_identical": true,
+    "complete_common_T_rank": 1,
+    "k": "(pi/4)(1,1,1)",
+    "q": "(pi,0,0)",
+    "symbolic_rows_hash": "a19b79740ca16f6e68e14a5169001b2150f5aab80b2f9956cbb4c6e2e0c3d2cf"
+  },
+  "geometry": {
+    "all_radius_squared": "11/4",
+    "canonical_hash": "6714f9ed36be8195f76ca169c1ce6d65c8a52d320735c57fc3d4f7bd0130a37a",
+    "centered_offsets": 12,
+    "fourth_diagonal": ["83/4", "83/4", "83/4"],
+    "fourth_mixed": ["19/4", "19/4", "19/4"],
+    "orientations": 4,
+    "second_moment": [["11", "0", "0"], ["0", "11", "0"], ["0", "0", "11"]]
+  },
+  "relative_sector": {
+    "canonical_hash": "6e228a73be515dacaae06fdff1035c9e958315ff03cea07da3125429e4323297",
+    "exact_face_diagonal_column_dependencies": 6,
+    "face_diagonal_leading_rank": 2,
+    "generic_leading_rank": 3,
+    "minor_sum": "9 sum_i k_i^6-9 sum_{i!=j}k_i^4 k_j^2+58 kx^2 ky^2 kz^2",
+    "zero_rank": 0
+  },
+  "schema": "AUDIT_G_GL6CL_INDEPENDENT_V001",
+  "smooth_ball": {
+    "analytic_left_inverse": "[C(k)^*C(k)]^-1 C(k)^*",
+    "frobenius_bound_squared_coefficient": "363/4",
+    "full_rank_condition": "|k|^4<32/363",
+    "minimum_zero_T_singular_value_squared": "8"
+  },
+  "uniform_A1": {
+    "denominator_derivative": "+315/4 h^6/U_d^6",
+    "identity": "sum_{a<b} Z_a Z_b=2(n-2)^2-2",
+    "occupancy_values": {"0": 6, "1": 0, "2": -2, "3": 0, "4": 6},
+    "six_vertex_sum": "+315/4 h^6/U_d^6",
+    "storage_shift": "U_d -> U_d+2q, plus scalar -2q"
+  },
+  "writer_scope": {
+    "A1_plus_E_access": "locked diagonal read D",
+    "complete_arbitrary_profile": "B_plus P_T and B_minus P_T only",
+    "not_established": "arbitrary-profile off-diagonal A1/E completion, autonomous source, stationary response, continuum geometry, gravity, or G",
+    "unprojected_canonical_direct_row": "bookkeeping only"
+  },
+  "zero_mode": {
+    "canonical_direct_normal": "24 P_A + 8 P_T",
+    "canonical_direct_rank": 4,
+    "combined_determinant": "524288",
+    "combined_normal": "4 P_A + 16 P_E + 8 P_T",
+    "combined_rank": 6,
+    "complete_tensor_writer_normal": "8 P_T",
+    "complete_tensor_writer_rank": 3,
+    "locked_read_normal": "4 P_A + 16 P_E",
+    "locked_read_rank": 3,
+    "unsoldered_all_momentum_rank_ceiling": 10,
+    "unsoldered_rank": 9
+  }
+}

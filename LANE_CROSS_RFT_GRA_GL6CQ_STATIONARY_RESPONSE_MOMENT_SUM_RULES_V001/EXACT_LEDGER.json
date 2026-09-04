@@ -1,0 +1,62 @@
+{
+  "bare_cycle_susceptibility": "K_bare_dd'(R)=2 Re <0|T_0d Q(H0-E0)^(-1)Q T_Rd'|0>",
+  "centered_fourier": "K_dd'(k)=sum_R exp(i k.X_Rdd') K_bare_dd'(R)",
+  "check_count": 26,
+  "contact": {
+    "A": "(4/3)(1-4p)",
+    "B": "0",
+    "C": "(8/3)(2p-1)",
+    "p": "same-state equal-partner probability"
+  },
+  "convergence": {
+    "critical_limit": "if the second moment diverges, b,c,d and the analytic k^2 sum rules are undefined; nonanalytic |k|^sigma or k^2 log|k| behavior must be treated directly",
+    "remainder": "finite second moment gives o(k^2); finite fourth moment plus inversion gives O(k^4); exponential moment gives analyticity",
+    "sufficient_for_coefficients": "sum_R (1+|X_Rdd'|^2)|K_bare_dd'(R)|<infinity entrywise"
+  },
+  "moments": {
+    "contractions": {
+      "M_cross": "sum_{i!=j} M_TT,ij^{ij}=-6d",
+      "M_parallel": "sum_i M_TT,ii^{ii}=-6(b+c)",
+      "M_perp": "sum_{i!=m} M_TT,ii^{mm}=-12 b",
+      "Z_T": "sum_i Q_i^T Z Q_i=3 kappa"
+    },
+    "expansion": "K(k)=Z-(1/2)k_m k_n M^{mn}+o(k^2)",
+    "projected_coefficients": {
+      "alpha": "-M_AA_trace/6",
+      "b": "-M_perp/12",
+      "c": "-M_parallel/6+M_perp/12",
+      "d": "-M_cross/6",
+      "eta": "-(M_AT,x^yz+M_AT,y^zx+M_AT,z^xy)/3",
+      "kappa": "Z_T/3"
+    },
+    "second": "M_dd'^{mn}=sum_R X_Rdd'^m X_Rdd'^n K_bare_dd'(R)",
+    "zeroth": "Z_dd'=sum_R K_bare_dd'(R)"
+  },
+  "normalization": {
+    "CL_mu": "(105/8)h^6/U_d^6=2 lambda_T",
+    "CM_lambda_T": "(105/16)h^6/U_d^6",
+    "GL6BV_normalized_common_pullback": "Hhat_T^H6=(mu^2/2) B_T^* K_bare B_T",
+    "GL6CL_common_coordinate": "j_plus=(j_P+j_C)/2",
+    "GL6CL_common_pullback": "H_T^H6=mu^2 B_T^* K_bare B_T",
+    "contact_scale": "g_ct=h^2/(4U_d^3), with no mu factor",
+    "cycle_kernel": "bare: no lambda_T^2 and no mu^2",
+    "identity": "for pure T2, j.Theta_ab=2 j_ab, hence lambda_T(j.Theta)=mu j_ab",
+    "orthonormal_common_coordinate": "jhat_plus=(j_P+j_C)/sqrt(2)=sqrt(2)j_plus"
+  },
+  "observable_sum_rules": {
+    "guard": "K_bare moments and p are evaluated in the same stationary state; mu is applied exactly once outside K_bare and 1/2 converts to the orthonormal GL6BV common source",
+    "reference_shape": "-(mu^2/2)[Z_T+M_perp]+2g_ct(1-4p)=0",
+    "tensor_gradient_extension": "(mu^2/2)[-2 Z_T+M_perp-2M_parallel-2M_cross]+4g_ct(2p-1)=0",
+    "unrescaled_extension_coefficients": ["-4/3", "2/3", "-4/3", "-4/3"],
+    "unrescaled_reference_coefficients": ["-2/3", "-2/3", "0", "0"],
+    "zero_momentum_guard": "the conditions do not remove or interpret the zero-momentum (k=0) tensor term and do not prove background stationarity, masslessness, or a gauge null"
+  },
+  "schema": "GL6CQ_STATIONARY_RESPONSE_MOMENT_SUM_RULES_V001",
+  "scope": "exact moment/sum-rule theorem for the same-state contact plus two-writer spectral sector; no phase, full source-first closure, 1PI inversion, Ricci, gravity, or G",
+  "writer_pullback": {
+    "A": "-2 kappa+8b",
+    "B": "-16 kappa+8c",
+    "C": "12 kappa+8d",
+    "extension_mismatch": "-4 kappa+8(c+d)"
+  }
+}

@@ -1,0 +1,580 @@
+{
+  "ceiling": "exact symmetry/matching theorem only; coefficients kappa,b,c,d and same-state p are not derived, GL6CN diagonal h6 source is not included, E2 completion and 1PI inversion are absent, and no phase/spacetime/metric/Ricci/Einstein/gravity/G claim is made",
+  "classification": {
+    "constant_invariant_dimension": "2",
+    "cycle_solder_A_plus_V": [
+      [
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      [
+        "1/2",
+        "-1/2",
+        "1/2",
+        "-1/2"
+      ],
+      [
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "1/2"
+      ]
+    ],
+    "group_order": 24,
+    "quadratic_basis": [
+      "A-A: alpha |k|^2",
+      "A-V: eta (ky kz,kz kx,kx ky)",
+      "V-V: b |k|^2 I",
+      "V-V: c diag(kx^2,ky^2,kz^2)",
+      "V-V: d (k k^T-diag(kx^2,ky^2,kz^2))"
+    ],
+    "quadratic_invariant_dimension": "5"
+  },
+  "common_source_normalization": {
+    "GL6CL_coordinates": "j_P=j_plus+j_minus; j_C=j_plus-j_minus, so j_plus=(j_P+j_C)/2",
+    "normalized_cycle_hessian": "Hhat=(mu^2/2)B_T^*K_cycle B_T",
+    "normalized_writer": "delta a=(mu/sqrt(2))B_T jhat_plus",
+    "orthonormal_common_coordinate": "jhat_plus=(j_P+j_C)/sqrt(2)=sqrt(2)j_plus"
+  },
+  "conditional_same_state_total": {
+    "SO3_extension_condition": "(mu^2/2)[-4 kappa+8(c+d)]+[h^2/(4U_d^3)](8/3)(2p-1)=0",
+    "guard": "displayed sum is lawful only after one stationary state and one complete source-first functional own both blocks; no cancellation or phase is asserted",
+    "mu": "(105/8)h^6/U_d^6",
+    "reference_FP_additional_condition": "(mu^2/2)[-2 kappa+8b]+[h^2/(4U_d^3)](4/3)(1-4p)=0"
+  },
+  "full_tensor_reference_kill_test": {
+    "T_T_block": [
+      [
+        "4",
+        "-6",
+        "-10"
+      ],
+      [
+        "-6",
+        "9",
+        "-15"
+      ],
+      [
+        "-10",
+        "-15",
+        "25"
+      ]
+    ],
+    "bilinear_matrix": [
+      [
+        "-38",
+        "5",
+        "37",
+        "15",
+        "10",
+        "6"
+      ],
+      [
+        "5",
+        "100",
+        "20",
+        "-30",
+        "20",
+        "0"
+      ],
+      [
+        "37",
+        "20",
+        "4",
+        "-30",
+        "-20",
+        "24"
+      ],
+      [
+        "15",
+        "-30",
+        "-30",
+        "4",
+        "-6",
+        "-10"
+      ],
+      [
+        "10",
+        "20",
+        "-20",
+        "-6",
+        "9",
+        "-15"
+      ],
+      [
+        "6",
+        "0",
+        "24",
+        "-10",
+        "-15",
+        "25"
+      ]
+    ],
+    "disposition": "held-out full-solder kill test only; cross blocks and rank-three quotient are mandatory for any later Ricci claim",
+    "orthonormal_T_solder": "if x are coordinates on T_i/sqrt(2), then (h_yz,h_zx,h_xy)=(-1/sqrt(2))(x1,x2,x3); the common congruence factor does not change matching relations",
+    "pair_basis": [
+      "A",
+      "E1",
+      "E2",
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "rank": 3,
+    "test_momentum": [
+      "2",
+      "3",
+      "5"
+    ]
+  },
+  "general_centered_cycle_symbol": {
+    "A_plus_V_basis": "S^T K_cycle(k) S",
+    "D": "diag(kx^2,ky^2,kz^2)",
+    "O": "k k^T-D",
+    "constant_tensor_guard": "nonzero kappa is local susceptibility/background-potential data; no zero-derivative, background-stationarity, masslessness, or Einstein-Hilbert condition is proved",
+    "formula": "[[alpha |k|^2, eta q(k)^T],[eta q(k), kappa I+b|k|^2 I+cD+dO]]+O(|k|^4)",
+    "normalization": "K_cycle=K_bare with K_bare_cc'=2 Re <0|T_c R T_c'|0>; it contains no writer factor",
+    "positivity": "kappa>=0 and, for a nonnegative analytic A branch, alpha>=0; higher-order Schur constraints not classified",
+    "q": "(ky kz,kz kx,kx ky)",
+    "relation_to_GL6CM": "GL6CM CM10 equals lambda_T^2 K_bare; the actual common pair-source-to-cycle-amplitude derivative here is mu B_T",
+    "stationary_common_null": "K_cycle(0)u=0 removes the constant A1 coefficient",
+    "units_and_scale": "kappa,alpha,eta,b,c,d have inverse-energy units and scale as O(1/J) in the isolated spectral regime"
+  },
+  "h2_contact_separate_block": {
+    "Q4_orbit_witness_only": "p=109/128 gives zeta=199/96 and mismatch 15/8; this orbit mixture is not proved stationary under the H6 Hamiltonian",
+    "Q_a_orthonormal_T_coordinates": [
+      [
+        [
+          "1/3",
+          "1/3",
+          "1/3"
+        ],
+        [
+          "1/3",
+          "1/3",
+          "1/3"
+        ],
+        [
+          "1/3",
+          "1/3",
+          "1/3"
+        ]
+      ],
+      [
+        [
+          "1/3",
+          "-1/3",
+          "-1/3"
+        ],
+        [
+          "-1/3",
+          "1/3",
+          "1/3"
+        ],
+        [
+          "-1/3",
+          "1/3",
+          "1/3"
+        ]
+      ],
+      [
+        [
+          "1/3",
+          "-1/3",
+          "1/3"
+        ],
+        [
+          "-1/3",
+          "1/3",
+          "-1/3"
+        ],
+        [
+          "1/3",
+          "-1/3",
+          "1/3"
+        ]
+      ],
+      [
+        [
+          "1/3",
+          "1/3",
+          "-1/3"
+        ],
+        [
+          "1/3",
+          "1/3",
+          "-1/3"
+        ],
+        [
+          "-1/3",
+          "-1/3",
+          "1/3"
+        ]
+      ]
+    ],
+    "SO3_mismatch_B_plus_C": "(8/3)(2p-1)",
+    "constant_common_T": "8+gamma=(16/3)(1+2p)",
+    "contact_alone_SO3_condition": "p=1/2",
+    "gamma": "(8/3)(4p-1)",
+    "overall_scale": "g_ct=h^2/(4U_d^3) in the connected-functional sign convention",
+    "quadratic_A": "-(4/3)zeta-4/9=(4/3)(1-4p)",
+    "quadratic_B": "0",
+    "quadratic_C": "(4/3)zeta-8/9=(8/3)(2p-1)",
+    "same_state_guard": "p must be evaluated in the same stationary state as the H6 cycle response before blocks may be added",
+    "state_parameter": "p=Pr[sigma_v(a)=sigma_w(a)]",
+    "sum_theta_squared_Q_a": [
+      [
+        {
+          "(0, 0, 2)": "4/3",
+          "(0, 2, 0)": "4/3",
+          "(2, 0, 0)": "4/3"
+        },
+        {
+          "(1, 1, 0)": "8/3"
+        },
+        {
+          "(1, 0, 1)": "8/3"
+        }
+      ],
+      [
+        {
+          "(1, 1, 0)": "8/3"
+        },
+        {
+          "(0, 0, 2)": "4/3",
+          "(0, 2, 0)": "4/3",
+          "(2, 0, 0)": "4/3"
+        },
+        {
+          "(0, 1, 1)": "8/3"
+        }
+      ],
+      [
+        {
+          "(1, 0, 1)": "8/3"
+        },
+        {
+          "(0, 1, 1)": "8/3"
+        },
+        {
+          "(0, 0, 2)": "4/3",
+          "(0, 2, 0)": "4/3",
+          "(2, 0, 0)": "4/3"
+        }
+      ]
+    ],
+    "zeta": "4p-4/3"
+  },
+  "lane": "GL6CO",
+  "strong_lock_power_counting": {
+    "J": "(63/8)h^6/U_d^5",
+    "consequence": "isolated strong-lock cycle repetition cannot generically cancel a nonzero leading contact mismatch order by order; a match requires finite-ratio/collective stationary response, an independently vanishing leading relation, or another same-order block",
+    "contact": "h^2/(4U_d^3)=O(h^2/U_d^3)",
+    "cycle_pullback": "mu^2/J=O(h^6/U_d^7)",
+    "guard": "power counting only; no phase transition is claimed",
+    "spectral_coefficients": "kappa,b,c,d=O(1/J)"
+  },
+  "writer_pullback": {
+    "SO3_TT_general_form": "u |k|^2 I+v[(|k|^2 I-D)+O]",
+    "SO3_extension_iff": "B+C=0 iff c+d=kappa/2",
+    "bare_constant_cycle_response": "b=c=d=0 gives B+C=-4 kappa, so fails for nonzero kappa",
+    "basis_pullbacks_orthonormal_T": {
+      "ALPHA": [
+        [
+          {},
+          {},
+          {}
+        ],
+        [
+          {},
+          {},
+          {}
+        ],
+        [
+          {},
+          {},
+          {}
+        ]
+      ],
+      "B": [
+        [
+          {
+            "(0, 0, 2)": "8",
+            "(0, 2, 0)": "8",
+            "(2, 0, 0)": "8"
+          },
+          {},
+          {}
+        ],
+        [
+          {},
+          {
+            "(0, 0, 2)": "8",
+            "(0, 2, 0)": "8",
+            "(2, 0, 0)": "8"
+          },
+          {}
+        ],
+        [
+          {},
+          {},
+          {
+            "(0, 0, 2)": "8",
+            "(0, 2, 0)": "8",
+            "(2, 0, 0)": "8"
+          }
+        ]
+      ],
+      "C": [
+        [
+          {
+            "(2, 0, 0)": "8"
+          },
+          {},
+          {}
+        ],
+        [
+          {},
+          {
+            "(0, 2, 0)": "8"
+          },
+          {}
+        ],
+        [
+          {},
+          {},
+          {
+            "(0, 0, 2)": "8"
+          }
+        ]
+      ],
+      "D": [
+        [
+          {},
+          {
+            "(1, 1, 0)": "8"
+          },
+          {
+            "(1, 0, 1)": "8"
+          }
+        ],
+        [
+          {
+            "(1, 1, 0)": "8"
+          },
+          {},
+          {
+            "(0, 1, 1)": "8"
+          }
+        ],
+        [
+          {
+            "(1, 0, 1)": "8"
+          },
+          {
+            "(0, 1, 1)": "8"
+          },
+          {}
+        ]
+      ],
+      "ETA": [
+        [
+          {},
+          {},
+          {}
+        ],
+        [
+          {},
+          {},
+          {}
+        ],
+        [
+          {},
+          {},
+          {}
+        ]
+      ],
+      "KAPPA": [
+        [
+          {
+            "(0, 0, 0)": "8",
+            "(0, 0, 2)": "-2",
+            "(0, 2, 0)": "-2",
+            "(2, 0, 0)": "-18"
+          },
+          {
+            "(1, 1, 0)": "12"
+          },
+          {
+            "(1, 0, 1)": "12"
+          }
+        ],
+        [
+          {
+            "(1, 1, 0)": "12"
+          },
+          {
+            "(0, 0, 0)": "8",
+            "(0, 0, 2)": "-2",
+            "(0, 2, 0)": "-18",
+            "(2, 0, 0)": "-2"
+          },
+          {
+            "(0, 1, 1)": "12"
+          }
+        ],
+        [
+          {
+            "(1, 0, 1)": "12"
+          },
+          {
+            "(0, 1, 1)": "12"
+          },
+          {
+            "(0, 0, 0)": "8",
+            "(0, 0, 2)": "-18",
+            "(0, 2, 0)": "-2",
+            "(2, 0, 0)": "-2"
+          }
+        ]
+      ]
+    },
+    "composed_coefficients": {
+      "A": "-2 kappa+8 b",
+      "B": "-16 kappa+8 c",
+      "C": "12 kappa+8 d",
+      "cubic_mismatch_B_plus_C": "-4 kappa+8(c+d)"
+    },
+    "condition_count": "one independent linear condition; not automatic and not impossible",
+    "positive_matching_witness": "kappa=1, alpha=1, eta=0, b=c=d=1/4; K_VV=I+(|k|^2 I+k k^T)/4 is positive near zero",
+    "reference_FP_TT_shape": "2D-k k^T=D-O",
+    "reference_FP_additional_condition": "A=0 iff b=kappa/4, in addition to c+d=kappa/2",
+    "reference_warning": "algebraic T-block proportionality is not a Ricci proof; full E2-T2/E2-E2 completion, contact, and response-to-1PI inversion remain required",
+    "writer_unscaled_rational_T_basis": [
+      [
+        {
+          "(0, 0, 0)": "-2",
+          "(0, 0, 2)": "1/4",
+          "(0, 1, 1)": "1/2",
+          "(0, 2, 0)": "1/4",
+          "(1, 0, 1)": "-3/2",
+          "(1, 1, 0)": "-3/2",
+          "(2, 0, 0)": "9/4"
+        },
+        {
+          "(0, 0, 0)": "-2",
+          "(0, 0, 2)": "1/4",
+          "(0, 1, 1)": "-3/2",
+          "(0, 2, 0)": "9/4",
+          "(1, 0, 1)": "1/2",
+          "(1, 1, 0)": "-3/2",
+          "(2, 0, 0)": "1/4"
+        },
+        {
+          "(0, 0, 0)": "-2",
+          "(0, 0, 2)": "9/4",
+          "(0, 1, 1)": "-3/2",
+          "(0, 2, 0)": "1/4",
+          "(1, 0, 1)": "-3/2",
+          "(1, 1, 0)": "1/2",
+          "(2, 0, 0)": "1/4"
+        }
+      ],
+      [
+        {
+          "(0, 0, 0)": "-2",
+          "(0, 0, 2)": "1/4",
+          "(0, 1, 1)": "1/2",
+          "(0, 2, 0)": "1/4",
+          "(1, 0, 1)": "3/2",
+          "(1, 1, 0)": "3/2",
+          "(2, 0, 0)": "9/4"
+        },
+        {
+          "(0, 0, 0)": "2",
+          "(0, 0, 2)": "-1/4",
+          "(0, 1, 1)": "3/2",
+          "(0, 2, 0)": "-9/4",
+          "(1, 0, 1)": "1/2",
+          "(1, 1, 0)": "-3/2",
+          "(2, 0, 0)": "-1/4"
+        },
+        {
+          "(0, 0, 0)": "2",
+          "(0, 0, 2)": "-9/4",
+          "(0, 1, 1)": "3/2",
+          "(0, 2, 0)": "-1/4",
+          "(1, 0, 1)": "-3/2",
+          "(1, 1, 0)": "1/2",
+          "(2, 0, 0)": "-1/4"
+        }
+      ],
+      [
+        {
+          "(0, 0, 0)": "2",
+          "(0, 0, 2)": "-1/4",
+          "(0, 1, 1)": "1/2",
+          "(0, 2, 0)": "-1/4",
+          "(1, 0, 1)": "3/2",
+          "(1, 1, 0)": "-3/2",
+          "(2, 0, 0)": "-9/4"
+        },
+        {
+          "(0, 0, 0)": "-2",
+          "(0, 0, 2)": "1/4",
+          "(0, 1, 1)": "3/2",
+          "(0, 2, 0)": "9/4",
+          "(1, 0, 1)": "1/2",
+          "(1, 1, 0)": "3/2",
+          "(2, 0, 0)": "1/4"
+        },
+        {
+          "(0, 0, 0)": "2",
+          "(0, 0, 2)": "-9/4",
+          "(0, 1, 1)": "-3/2",
+          "(0, 2, 0)": "-1/4",
+          "(1, 0, 1)": "3/2",
+          "(1, 1, 0)": "1/2",
+          "(2, 0, 0)": "-1/4"
+        }
+      ],
+      [
+        {
+          "(0, 0, 0)": "2",
+          "(0, 0, 2)": "-1/4",
+          "(0, 1, 1)": "1/2",
+          "(0, 2, 0)": "-1/4",
+          "(1, 0, 1)": "-3/2",
+          "(1, 1, 0)": "3/2",
+          "(2, 0, 0)": "-9/4"
+        },
+        {
+          "(0, 0, 0)": "2",
+          "(0, 0, 2)": "-1/4",
+          "(0, 1, 1)": "-3/2",
+          "(0, 2, 0)": "-9/4",
+          "(1, 0, 1)": "1/2",
+          "(1, 1, 0)": "3/2",
+          "(2, 0, 0)": "-1/4"
+        },
+        {
+          "(0, 0, 0)": "-2",
+          "(0, 0, 2)": "9/4",
+          "(0, 1, 1)": "3/2",
+          "(0, 2, 0)": "1/4",
+          "(1, 0, 1)": "3/2",
+          "(1, 1, 0)": "1/2",
+          "(2, 0, 0)": "1/4"
+        }
+      ]
+    ]
+  }
+}

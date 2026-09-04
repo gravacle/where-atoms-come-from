@@ -1,0 +1,17 @@
+GL6CS frozen author verification
+
+Command:
+  python3 derive_strict_lock_scale_separation.py
+
+Expected output:
+  PASS__GL6CS_STRICT_LOCK_SCALE_SEPARATION__110/110
+  LOCKED_RING_CHANGE=PURE_E2_NONZERO;24/24
+  FIXED_COMPONENT_EXPONENTS=EE_-6;ET_0;TT_CONTACT_2;TT_WRITER_6
+  FIXED_FRAME_STRICT_LOCK_ROTATIONAL_EQUALITY=IMPOSSIBLE_FOR_BOUNDED_COEFFICIENTS
+  ESCAPES=AUTHENTICATED_ORIENTATION_MIXING;COLLECTIVE_SINGULAR_LIMIT;FINITE_R;NEW_SAME_ORDER_BLOCK
+
+Packet command:
+  python3 verify_packet.py
+
+The packet verifier checks exact replay, dependency hashes, frozen ledger,
+scope ceilings, complete local manifest coverage, and the one-file seal.

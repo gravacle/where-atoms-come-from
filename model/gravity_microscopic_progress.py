@@ -1,4 +1,4 @@
-"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6BC.
+"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6CS.
 
 This additive surface verifies the frozen theorem/audit packets that establish
 record-gated finite response, interaction-owned nonfactorization, an
@@ -13,14 +13,19 @@ physical-input identifiability boundary, authenticated binary-marginal bound,
 and inside/outside-domain fork; and the exact full-F3 authenticated-pair
 finite-mission collar for every finite coupling ratio and finite mission time;
 the sharp selected-mission non-identifiability boundary and exact conditional
-prepared-blank five-state calculation; and the one-tail lineage-contrast
+prepared-blank five-state calculation; the one-tail lineage-contrast
 certificate plus exact reciprocal retained-support obstruction of the current
-source-off/frozen postformation parent.  It deliberately does not alter the V014
-working-theory certificate and does not promote fixed-order control to exact
+source-off/frozen postformation parent; and the audited GL6CH--GL6CS extension:
+an exact record-dependent order-six future writer, rank-six same-parent operator
+access, global Fourier tensor access, finite-component stationary response,
+complete T2 first-source custody through order six, observable same-state moment
+tests, the direct Ward classifier with its unique Einstein/Fierz--Pauli ray, and
+the fixed-cell accumulation-horizon obstruction.  It deliberately does not
+alter the V014 working-theory certificate and does not promote fixed-order control to exact
 finite-coupling closure, the sufficient prethermal domain to a necessary
 phase condition, the prethermal normal form to an all-time phase, or any
-result to a selected GNS mode, isotropic propagation, physical metric,
-gravity, Einstein dynamics, or a numerical value of G.
+result to a selected GNS mode, isotropic propagation, physical metric, a
+physical F3 Ward identity, gravity, Einstein dynamics, or a numerical value of G.
 """
 
 from __future__ import annotations
@@ -34,8 +39,8 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V007"
-CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6BC_WITH_CORRECTED_PRETHERMAL_DOMAIN_DIRECT_FINITE_MISSION_COLLAR_PARTIAL_IDENTIFIABILITY_RECIPROCAL_SUPPORT_OBSTRUCTION_AND_STRICT_GRAVITY_CEILINGS"
+SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V008"
+CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6CS_WITH_RECORD_DEPENDENT_FUTURE_WRITER_GLOBAL_TENSOR_RESPONSE_OBSERVABLE_MOMENT_TESTS_DIRECT_WARD_EINSTEIN_CLASSIFIER_ACCUMULATION_HORIZON_AND_STRICT_GRAVITY_CEILINGS"
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 _HASH_ROW = re.compile(r"^([0-9a-f]{64})  ([^\r\n]+)$")
@@ -53,6 +58,7 @@ class _PacketPin:
     audit_manifest_sha256: str
     audit_seal_sha256: str
     disposition: str
+    audit_acceptance_marker: str | None = None
     author_claim_file: str = "THEOREM.md"
     audit_claim_file: str = "AUDIT.md"
 
@@ -373,6 +379,132 @@ _PACKETS = (
         "4fcc42e7f65965957386f3d75d141df7c49b76ee086d6eb5c920d38c42b90655",
         "PASS__ONE_TAIL_COLLAR_INTERVAL_EXACT__ALL_BREAK_BINARY_PAIR_STATIC_UNDER_FULL_DECLARED_SCHEDULE__FINITE_SUPPORT_WORD_PROBABILITIES_CONSERVED__BOTH_RETARDED_ORIENTATIONS_ZERO_FOR_ALLOWED_COMMUTANT_ALGEBRA__FIXED_FINITE_CYLINDER_ZERO_STABLE_UNDER_REFINEMENT__FORWARD_POSITIVE_CONTROL_EXACT__FRESH_SOURCE_DEPENDENT_WRITER_INSTRUMENT_MISSING_AT_OPERATIONAL_TYPE_LEVEL__NO_FUTURE_RESPONSE_GRAVITY_OR_G_PROMOTION",
     ),
+    _PacketPin(
+        "GL6CH",
+        "LANE_CROSS_RFT_GRA_GL6CH_GLOBAL_H6_TENSOR_WRITER_V001",
+        "286277511fde0bceb6865f2257d1ca81d9f1522b6a4ea98e1e87336aef6c0704",
+        "a895ecdb1ab5340634808c0d6d379e96a0b161f8756d44ba2460ac5c404a34e5",
+        "e61abdab6ea225bb1c52c3d2f4e2050dc3dae4f70c0be1ba7712e369cc7ff61a",
+        "AUDIT_G_GL6CH_GLOBAL_H6_TENSOR_WRITER_V001",
+        "18e97ff08dba9160d02ef0e6273aac04cb3ea133c8f2672b3c880c3dd791d940",
+        "3ecc58613828b0b55789386dc8051034f07b01b3b4301bd5eb4744ffe62d151c",
+        "56d1105f3a37c9dfe1ec3f8932a60b5e9bd8e2ddf1b766f2924892803f46c25f",
+        "PASS__COMPLETE_ORDER6_T2_FUTURE_WRITER_OPERATOR_JET__NO_PHASE_RICCI_GRAVITY_OR_G_PROMOTION",
+        "**Verdict:** `PASS`.",
+        audit_claim_file="AUDIT_REPORT.md",
+    ),
+    _PacketPin(
+        "GL6CJ",
+        "LANE_CROSS_RFT_GRA_GL6CJ_SAME_PARENT_SIX_DIRECTION_PAIR_OPERATOR_COMPOSITION_V001",
+        "1dac7d0b5afa276cc1f1aeed57945692ac9b7fa37ea5eb6a68c078782cd0a3e1",
+        "20b0d3bd4b9fd89860dc2754e1a4a05ac6fb42017eec589a6400809123e4e993",
+        "5712bfd7745a4ffe660b0dc69dfae49a1a24ad157e11055222c47b06765a7466",
+        "AUDIT_G_GL6CJ_SAME_PARENT_SIX_DIRECTION_PAIR_OPERATOR_COMPOSITION_V001",
+        "f07f5cd575503db6cd7b7bc2f282165413fefc3c1fc2427e4ccf78003fed2534",
+        "b8074bf180b93963eb3e40e9b4dd808365c777cde955128c86c3dfa5b7631d9d",
+        "0c39c2477df9a72113bf6b5e7fadb517c677ff32b31ba8842fa54daad1a79a79",
+        "PASS_AFTER_REPAIR__SAME_PARENT_SIX_DIRECTION_PAIR_OPERATOR_ACCESS_RANK6__NO_METRIC_RICCI_GRAVITY_OR_G_PROMOTION",
+        "**Final verdict:** `PASS` after repair.",
+        audit_claim_file="AUDIT_REPORT.md",
+    ),
+    _PacketPin(
+        "GL6CL",
+        "LANE_CROSS_RFT_GRA_GL6CL_GLOBAL_FOURIER_PAIR_WRITER_V001",
+        "3de8df2696844d7db6a513a01302db29dd8a91a07992cd658954d25228f55914",
+        "b77feaa5deddcff5ffd61244f1d8d2f127e8aa8c9049acedc5c2138a89adbbdd",
+        "5266c0e73df950a122517415af2ee1c4b511d7bd506e0667a86fee26bfba0c34",
+        "AUDIT_G_GL6CL_GLOBAL_FOURIER_PAIR_WRITER_V001",
+        "8a9d911cb3f97178c26728bc6141a45288e3a55316adaac105641c3c9a8944ed",
+        "1c26108660831cacdb1ebb532373d8a55a4c262a6ace9d6ed1dbd5b585565462",
+        "492adee6cb578e3d3bb5337ff58a66296b7088e3872e84cdbe7b5518d5887260",
+        "PASS__GLOBAL_FOURIER_T2_WRITER_AND_ANALYTIC_RANK_NEIGHBORHOOD__NO_ISOTROPY_METRIC_GRAVITY_OR_G_PROMOTION",
+        "**Disposition:** **PASS**",
+        audit_claim_file="AUDIT_REPORT.md",
+    ),
+    _PacketPin(
+        "GL6CM",
+        "LANE_CROSS_RFT_GRA_GL6CM_GLOBAL_H6_STATIONARY_WRITER_RESPONSE_V001",
+        "8ce9d3872a7af52a2e08d5426e3c95aaa466606c765ec66b403b08249d059e92",
+        "61232da026192a717b09b903bdca9c72f0abfa7a00a002e301f6bb80873397b9",
+        "f9be064a6eea4630b548eafa4d56ea8c475f9a850fe267451ab6a5995ce37881",
+        "AUDIT_G_GL6CM_GLOBAL_H6_STATIONARY_WRITER_RESPONSE_V001",
+        "899fdae72cec819a7fd09091b21d6dc6df96f31069ccdb0f20779752dcb45e79",
+        "18c92722df392cc089d96664a4b7654841123d4d03b8d4b4aa9bff9ed1ae58f7",
+        "7d7075f869664bfb8ce71b8f70adafe6c77db8c2e04dcf510cebb06843bf7cdf",
+        "PASS__FINITE_COMPONENT_SAME_STATE_STATIONARY_WRITER_RESPONSE__NO_SELECTED_BULK_PHASE_RICCI_GRAVITY_OR_G_PROMOTION",
+        "**Verdict:** **PASS** on the declared finite-component, writer-only spectral",
+        audit_claim_file="AUDIT_REPORT.md",
+    ),
+    _PacketPin(
+        "GL6CN",
+        "LANE_CROSS_RFT_GRA_GL6CN_COMPLETE_DIAGONAL_H6_T2_FIRST_SOURCE_V001",
+        "bb88909569c65503a0c6b49b2334a5a8ba6d722f84aa1a8e780997d22880cb71",
+        "79cd181ce77f5f663f2847c4b816fb8cbe32344ef8d2b9bb222ff902a9966c10",
+        "10d77b4d9b6ba648aec88d26ab0a2f9554fb80e4c07a1c0c8e576e0fac0f1909",
+        "AUDIT_G_GL6CN_COMPLETE_DIAGONAL_H6_T2_FIRST_SOURCE_V001",
+        "25b5deea86ee0d8e278effd23fc8edba9a9540f320f3eb87abcf6fab888e9256",
+        "992ee161d17efe47035ac67aa572d948876200aa24096da5241ac1ea244d0951",
+        "a8d07af4dcaebeccdeb1591cb38ed4a85c463753168e07df892ed9ded64b4619",
+        "PASS__COMPLETE_T2_FIRST_SOURCE_THROUGH_H6__NO_ALL_ORDERS_SOURCE_CLOSURE_RICCI_GRAVITY_OR_G",
+        "**PASS**, within the exact domain and ceilings stated by the target.",
+        audit_claim_file="AUDIT_REPORT.md",
+    ),
+    _PacketPin(
+        "GL6CO",
+        "LANE_CROSS_RFT_GRA_GL6CO_CYCLE_RESPONSE_TENSOR_MATCHING_V001",
+        "710a95d1ea2d85aef4a4e143575ff39738ee9400411ccc293dc45659acc4f598",
+        "f085a73c4d7590a44ac89117f53bdb00583646153396a16552a84829ebd323b6",
+        "1f9847a10993954ba6baca4b5b127f0f9c215c2a172faa0f0a0e533bb3ea7657",
+        "AUDIT_G_GL6CO_CYCLE_RESPONSE_TENSOR_MATCHING_V001",
+        "fea6065c4da6e86995ce1417b07f526d9da3d3f508c3d2303465dd8b4571d387",
+        "8a8af63065f9ff990eac2a981986e7439fe4829b7cadae90932cd6a490bc018b",
+        "ceddd84fce64fe4c49e8e7965173896e11b7187850125f717f851f1a2ce9835d",
+        "PASS_AFTER_AUTHOR_REPAIR__CYCLE_RESPONSE_TENSOR_MATCHING_AND_NORMALIZED_COMMON_FACTOR__NO_RICCI_GRAVITY_OR_G",
+        "**Disposition:** **PASS_AFTER_AUTHOR_REPAIR**",
+        audit_claim_file="AUDIT_REPORT.md",
+    ),
+    _PacketPin(
+        "GL6CQ",
+        "LANE_CROSS_RFT_GRA_GL6CQ_STATIONARY_RESPONSE_MOMENT_SUM_RULES_V001",
+        "8244568746efe960cdf1bc142474b6455a162c4ba80ef9387a30c968aeb4ded4",
+        "bc0c979698a0738db9c841bfabd718023940fe3a43d397f04332bbe5009fe469",
+        "e9d9255beea2e377b5b12638120e688ca5f0534f695a56b132712e8a5abdc961",
+        "AUDIT_G_GL6CQ_CYCLE_RESPONSE_MOMENT_SUM_RULES_V001",
+        "ea34d96347a2118c52e39087efc0f871ba12484c6de73cd8fc7931b62e7a846a",
+        "73dbae6ccdbcde066445ac43e580180329059515afa806f9a60f4fd8d313397c",
+        "d4700af563085bfdc6e118505d1023dc63aaffcfaac9ea923fa7c4bd2280217c",
+        "PASS__OBSERVABLE_SAME_STATE_MOMENT_SUM_RULES__TESTS_NOT_STATE_SATISFACTION__NO_RICCI_GRAVITY_OR_G",
+        "**PASS**, within the exact analytic, same-state, and sector ceilings stated",
+        audit_claim_file="AUDIT_REPORT.md",
+    ),
+    _PacketPin(
+        "GL6CR",
+        "LANE_CROSS_RFT_GRA_GL6CR_FULL_PAIR_ROTATIONAL_COMPLETION_V001",
+        "2b3903b85bebad8718ee31fad1d88577008daada7562a078cf26d9acd2e4dfb8",
+        "825cccc8232bbc292b55f9bab72410a60e209243ec3822c116658c2a2a55ab4c",
+        "ed06c8c30d04d04e067de34dadff2bdcc9d93542faef630ac37bfd7ea9d127a5",
+        "AUDIT_G_GL6CR_FULL_PAIR_ROTATIONAL_COMPLETION_V001",
+        "ce307504587c50628b9204436f267c794d7325318c995fff78cd1c96faffafa1",
+        "522c45f60360b62937f3000277b29d0a61873c88cca3cc4fc79c74ad1147048d",
+        "7db0c45a52f62ba25c804066cf7c75dd27cdd456cfec0ea4a2486d9ec2da2964",
+        "PASS__DIRECT_CUBIC_WARD_CLASSIFIER_HAS_UNIQUE_EINSTEIN_RAY__PHYSICAL_F3_WARD_1PI_GRAVITY_AND_G_OPEN",
+        "PASS__GL6CR_INDEPENDENT_HOSTILE_AUDIT__S4_DIMENSION_9__SO3_DIMENSION_4__FIVE_RELATIONS_NECESSARY_AND_SUFFICIENT__T2_TEST_ONE_PROJECTION__DIRECT_WARD_180_BY_9_RANK_8_NULLITY_1__UNIQUE_EINSTEIN_RAY__PHYSICAL_F3_WARD_1PI_GRAVITY_G_OPEN",
+        audit_claim_file="AUDIT_REPORT.md",
+    ),
+    _PacketPin(
+        "GL6CS",
+        "LANE_CROSS_RFT_GRA_GL6CS_STRICT_LOCK_SIX_PAIR_SCALE_SEPARATION_V001",
+        "6a6fbbf7abd05392347d51a7892ccfef83247ebd014b54c45b641400999a192b",
+        "14f9980c6edab8cbfb22b7d8a4fe25e132b15599a76a5c98d06d55515f4723ed",
+        "5d83d46ebd604b211612eec557875815c63a82d2f858762343a9062eb32ffe8f",
+        "AUDIT_G_GL6CS_STRICT_LOCK_ACCUMULATION_HORIZON_V001",
+        "eab5d41a0f3c5c5371f38b4a0a0f40b604f144ef45ac6e86f6f5960103a36bfe",
+        "b1293ed2ba17bd28075f314cb0f7dbcb437fa3163996072f27447231e2cc7ae7",
+        "da0ddc0ea1f21c7d8af04cd1eae438240a0f72315015bac30fcfa9bd3fed931c",
+        "PASS__STRICT_LOCK_FIXED_COMPONENT_SCALE_SEPARATION_AND_ACCUMULATION_HORIZON__NO_GLOBAL_NO_GO_PHASE_GRAVITY_OR_G",
+        "## Disposition: PASS",
+        audit_claim_file="AUDIT_REPORT.md",
+    ),
 )
 
 
@@ -548,12 +680,16 @@ def _verify_custody() -> _Custody:
         _verify_seal(pin.audit_dir, pin.audit_seal_sha256, pin.audit_manifest_sha256)
 
         audit_text = _strict_text(_root_path(audit_claim_relative))
-        markers = (
-            f"**Disposition:** `{pin.disposition}`",
-            f"**Disposition:**\n`{pin.disposition}`",
-        )
-        if not any(marker in audit_text for marker in markers):
-            _refuse(f"{pin.label} accepted audit disposition is absent")
+        if pin.audit_acceptance_marker is not None:
+            if pin.audit_acceptance_marker not in audit_text:
+                _refuse(f"{pin.label} exact audit acceptance marker is absent")
+        else:
+            markers = (
+                f"**Disposition:** `{pin.disposition}`",
+                f"**Disposition:**\n`{pin.disposition}`",
+            )
+            if not any(marker in audit_text for marker in markers):
+                _refuse(f"{pin.label} accepted audit disposition is absent")
         rows.append(
             MappingProxyType(
                 {
@@ -574,6 +710,7 @@ def _verify_custody() -> _Custody:
                     "audit_manifest_sha256": pin.audit_manifest_sha256,
                     "audit_seal_sha256": pin.audit_seal_sha256,
                     "audit_disposition": pin.disposition,
+                    "audit_acceptance_marker": pin.audit_acceptance_marker,
                 }
             )
         )
@@ -1326,6 +1463,106 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                         "METRIC_WARD_COMMON_COUPLING_RICCI_EINSTEIN_GRAVITY_OR_G"
                     ),
                 },
+                "complete_order6_t2_future_writer": {
+                    "off_diagonal": (
+                        "H_eff(j_T)_off^(6)=-(63/8)*(h^6/U_d^5)*sum_c(T_c)+"
+                        "(105/16)*(h^6/U_d^6)*sum_c(T_c)*"
+                        "sum_(v_in_c)(j_T,v dot Theta_v,c)+O(j_T^2,h^8)"
+                    ),
+                    "canonical_gradient": "(105/8)*e_ab",
+                    "frame_sum": "sum_d(u_d*u_d^T)=32*P_T",
+                    "scope": (
+                        "EXACT_ORDER6_RECORD_DEPENDENT_FUTURE_WRITER_OPERATOR_JET__"
+                        "AUTHENTICATED_FRESH_RECORD_INSTRUMENT_AND_PHASE_SELECTION_OPEN"
+                    ),
+                },
+                "same_parent_six_direction_pair_operator_access": {
+                    "read_gram": "D_v^*D_v=4*P_A+16*P_E",
+                    "writer_gram": "W_v^*W_v=8*P_T",
+                    "combined_gram": "C_v^*C_v=4*P_A+16*P_E+8*P_T",
+                    "rank": 6,
+                    "scope": "EXACT_SOURCE_READ_WRITER_OPERATOR_ACCESS__NOT_A_METRIC",
+                },
+                "global_fourier_tensor_writer": {
+                    "zero_mode": "B_+(0)^*B_+(0)=8*P_T",
+                    "analytic_rank_domain": "rank(B_+(k))=3_FOR_abs(k)^4<32/363",
+                    "quadratic_jet": (
+                        "N_T(k)=8I-2*abs(k)^2*I+12*k*k^T-"
+                        "28*diag(k_x^2,k_y^2,k_z^2)+O(abs(k)^4)"
+                    ),
+                    "scope": "GLOBAL_FOURIER_WRITER_CHART__NOT_CALIBRATED_SPACETIME",
+                },
+                "finite_component_stationary_writer_response": {
+                    "kernel": (
+                        "K_spec_jk=2*lambda_T^2*Re<0|B_j*Q*(H_0-E_0)^(-1)*"
+                        "Q*B_k|0>"
+                    ),
+                    "coupling": "lambda_T=(105/16)*(h^6/U_d^6)",
+                    "properties": "EXACT_RECIPROCITY_POSITIVITY_AND_NONZERO_TWO_OVERLAP_WITNESS",
+                    "scope": "FINITE_COMPONENT_WRITER_ONLY__SELECTED_BULK_PHASE_OPEN",
+                },
+                "complete_t2_first_source_through_h6": {
+                    "formula": (
+                        "partial_epsilon H_eff(epsilon*j_T)|_0^[0,2,4,6]="
+                        "(105/16)*(h^6/U_d^6)*sum_c(T_c)*"
+                        "sum_(v_in_c)(j_T,v dot Theta_v,c)+"
+                        "O(h^8*norm(j_T)/U_d^8)"
+                    ),
+                    "diagonal_vertex": "PURE_T2_FIRST_SOURCE_VANISHES_POINTWISE_THROUGH_ORDER6",
+                    "scope": "COMPLETE_THROUGH_H6__NOT_ALL_ORDERS_SOURCE_CLOSURE",
+                },
+                "cycle_response_tensor_extension_test": {
+                    "t2_kernel": (
+                        "H_T(k)/mu^2=8*kappa*I+(-2*kappa+8*b)*abs(k)^2*I+"
+                        "(-16*kappa+8*c)*D(k)+(12*kappa+8*d)*O(k)+O(abs(k)^4)"
+                    ),
+                    "rotational_extendibility": "c+d=kappa/2",
+                    "fierz_pauli_t2_shape": "b=kappa/4",
+                    "normalized_common_factor": "cycle_contribution_is_(mu^2/2)_not_mu^2",
+                    "scope": "TENSOR_MATCHING_TEST__NOT_RICCI_OR_GRAVITY",
+                },
+                "stationary_response_observable_moment_rules": {
+                    "coefficients": (
+                        "kappa=Z_T/3;alpha=-tr(M_AA)/6;"
+                        "eta=-(M_AT,x^yz+M_AT,y^zx+M_AT,z^xy)/3;"
+                        "b=-M_perp/12;c=-M_parallel/6+M_perp/12;"
+                        "d=-M_cross/6"
+                    ),
+                    "rotational_match": (
+                        "(mu^2/2)*[-2Z_T+M_perp-2M_parallel-2M_cross]+"
+                        "4g_ct*(2p-1)=0"
+                    ),
+                    "fierz_pauli_match": (
+                        "-(mu^2/2)*(Z_T+M_perp)+2g_ct*(1-4p)=0"
+                    ),
+                    "scope": "EXACT_TESTS_ON_ONE_SELECTED_SAME_STATE__STATE_SATISFACTION_OPEN",
+                },
+                "direct_cubic_ward_einstein_classifier": {
+                    "cubic_kernel_dimension": 9,
+                    "ward_map": "x(k,xi)=k_sym_tensor_xi",
+                    "ward_coefficient_matrix": "180_BY_9_RANK8_NULLITY1",
+                    "unique_ray": "(0,2,-2,0,-2,-2,4,-1,1)=16*EINSTEIN_FIERZ_PAULI",
+                    "consequence": (
+                        "PHYSICAL_F3_WARD_NULL_IMPLIES_SO3_COMPLETION_AND_"
+                        "EINSTEIN_FIERZ_PAULI_FORM_TOGETHER"
+                    ),
+                    "scope": "CLASSIFIER_ONLY__PHYSICAL_F3_WARD_IDENTITY_1PI_GRAVITY_AND_G_OPEN",
+                },
+                "strict_lock_accumulation_horizon": {
+                    "record_change": "P_A*DeltaM=0;P_T*DeltaM=0;P_E*DeltaM=DeltaM;norm(DeltaM)^2=16",
+                    "spatial_normalization": "D^*D=(1/2)*P_A+2*P_E+P_T__h_E/2=h_T",
+                    "fixed_component_powers": (
+                        "K_EE=O(r^-6/U_d);K_ET=O(U_d^-1);"
+                        "K_TT_ct=O(r^2/U_d);K_TT_wr=O(r^6/U_d)"
+                    ),
+                    "required_enhancement": (
+                        "CONTACT_ROUTE_CHI_ct=O(r^-8)__WRITER_ROUTE_CHI_wr=O(r^-12)"
+                    ),
+                    "scope": (
+                        "FIXED_COMPONENT_OBSTRUCTION_AND_ACCUMULATION_HORIZON__"
+                        "NO_PROOF_OF_NONCOMMUTING_LIMITS_OR_COLLECTIVE_CRITICAL_SEQUENCE"
+                    ),
+                },
             },
             "controlled_evidence": {
                 "quantum_ice_v_over_g_zero": {
@@ -1345,7 +1582,11 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "INSIDE_DOMAIN_EXACT_NORMS_AND_Kbar_3_FOR_THE_PRETHERMAL_ROUTE_OR_SELECTED_GL6BA_COLLAR_TOLERANCE_RADIUS_STATE_SET_AND_CONTROLLED_INTERIOR_EVALUATION",
                 "SELECTED_KEEP_BREAK_COLLAR_STATE_TIME_AND_STRICT_MARGIN_d_L_GREATER_THAN_delta_L_FOR_A_MODERATE_R_FULL_PARENT_SIGNAL",
                 "PHYSICAL_PREPARATION_HOMOGENIZATION_AND_CAUSAL_UPDATE_OF_RETAINED_COEFFICIENT_FIELD",
-                "PROSPECTIVE_FUTURE_RECORD_RECIPROCITY_BY_A_COMPLETE_SOURCE_DEPENDENT_FORMATION_INSTRUMENT_OR_SEPARATE_REPEATED_URFT_FORMATION_COMPOSITION_WITH_THE_ACCUMULATED_F3_COLLECTIVE_STATE",
+                "AUTHENTICATE_THE_ORDER6_PAIR_SOURCE_WRITER_AS_A_COMPLETE_SAME_PARENT_FRESH_RECORD_FORMATION_INSTRUMENT_OR_COMPOSE_IT_WITH_REPEATED_URFT_FORMATION",
+                "SELECT_A_THERMODYNAMIC_STATIONARY_STATE_AND_ESTABLISH_ITS_REQUIRED_ZEROTH_AND_SECOND_RESPONSE_MOMENTS",
+                "COMPLETE_ALL_OWNER_ONCE_SOURCE_SECOND_A1_E2_T2_CONTACT_AND_SPECTRAL_BLOCKS_IN_THAT_SAME_STATE",
+                "CONVERT_THE_CONNECTED_RESPONSE_TO_THE_LAWFUL_1PI_OR_QUOTIENT_KERNEL_AND_PROVE_BACKGROUND_STATIONARITY_AND_MASSLESSNESS",
+                "DERIVE_THE_LONGITUDINAL_WARD_NULL_FROM_F3_RELATIONAL_REDUNDANCY_RATHER_THAN_INSERTING_IT",
                 "NONZERO_SELECTED_PROPAGATION_AND_RETAINED_LINEAGE_VISIBLE_STATIONARY_RESPONSE",
                 "CALIBRATED_PHYSICAL_MOMENTUM_LENGTH_TIME_SINGLE_CONE_AND_RANK6_CONSTITUTIVE_JOIN",
                 "COMMON_COUPLING_COMPLETE_STRESS_WARD_CONTACT_OWNERSHIP_AND_RGRL_B",
@@ -1398,6 +1639,19 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "current_source_off_reciprocity_zero_is_a_universal_gravity_no_go": False,
                 "missing_operational_writer_requires_a_unique_new_Hamiltonian_term": False,
                 "repeated_URFT_formation_collective_phase_route_is_derived_here": False,
+                "h6_pair_source_writer_is_authenticated_record_formation": False,
+                "six_direction_pair_operator_access_is_a_physical_metric": False,
+                "global_Fourier_writer_chart_is_calibrated_spacetime": False,
+                "finite_component_writer_response_is_a_selected_bulk_phase": False,
+                "complete_t2_first_source_through_h6_is_all_orders_source_closure": False,
+                "t2_extension_condition_is_full_rotational_or_Ricci_completion": False,
+                "observable_moment_equations_are_satisfied_by_a_selected_state": False,
+                "connected_response_is_the_physical_1PI_quotient_kernel": False,
+                "direct_Ward_classifier_derives_the_F3_Ward_identity": False,
+                "Einstein_ray_classification_is_gravity_or_G": False,
+                "GL6CP_REPAIR_REQUIRED_is_promotable": False,
+                "fixed_cell_scale_obstruction_is_a_global_no_go": False,
+                "fixed_cell_scale_obstruction_proves_noncommuting_limits": False,
                 "one_way_lineage_gated_pair_response_is_gravity_or_G": False,
                 "formal_global_or_fractional_q_is_authenticated_record_field": False,
                 "homogeneous_q6_clock_rescaling_supplies_physical_cone_or_curvature": False,
@@ -1421,7 +1675,9 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                     "DISPOSITIONS__TOP_PACKET_DECLARED_DEPENDENCY_ROWS__"
                     "GL6AY_FAIL_REPAIR_PASS_CUSTODY__GL6AZ_DOMAIN_CORRECTION_CUSTODY__"
                     "GL6BA_FINITE_MISSION_COLLAR_CUSTODY__GL6BB_PARTIAL_"
-                    "IDENTIFIABILITY_CUSTODY__GL6BC_RECIPROCAL_SUPPORT_CUSTODY"
+                    "IDENTIFIABILITY_CUSTODY__GL6BC_RECIPROCAL_SUPPORT_CUSTODY__"
+                    "GL6CH_TO_GL6CS_WRITER_RESPONSE_WARD_CLASSIFIER_AND_"
+                    "ACCUMULATION_HORIZON_CUSTODY"
                 ),
             },
             "executable_scope": {

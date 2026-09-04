@@ -51,7 +51,7 @@ silently use them as the public path.
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
 | Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for the hostile-audited record-first working-theory closure under adopted RGRL and explicit WTC hypotheses; observable pair-memory curvature capacity and source reciprocity; the narrow bare flip/recoil Ward obstruction; earlier F3/Phase-A boundaries; and audited public searches. No graviton premise is required for the Einstein--Hilbert classification. Empirical RGRL confirmation, microscopic F3 derivation of RGRL-B, strict origin of the full Einstein--Hilbert coefficient, and a parameter-free numerical \(G\) remain open. |
-| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive V007 zero-input checkpoint over the independently audited GL6T--GL6BC chain: the earlier record-gated response/atlas/envelope and authenticated bulk dynamics; the native degree-two sector and complete order-six hexagon Hamiltonian; the exact `v/g=0` crosswalk; exact first-character and anisotropic finite-size closure; a record-conditioned pure-loop clock plus typed `Sym^2` atlas; all-fixed-controlled-order port/twist stability; the repaired finite-coupling normal form/local-collar theorem; GL6AZ's corrected high-branch application domain; GL6BA's exact full-F3 authenticated binary-pair collar; GL6BB's sharp state-free `[0,1]` identifiability boundary and conditional prepared-blank five-state bounds; and GL6BC's one-tail `KEEP/BREAK` certificate plus exact reciprocal retained-support zero for the declared source-off/frozen postformation parent. GL6AY's compact application hypothesis is retained as superseded history. The direct collar does not relicense that prethermal theorem outside its corrected domain, and the later results select no member, clock, state, or future writer. The surface does not change V014 or promote failure of a sufficient prethermal condition to phase failure, a finite-mission collar to an all-time phase or selected GNS state, the current-parent reciprocal zero to a universal gravity no-go, formal generator coordinates to a physical metric, or any result to gravity, Einstein dynamics, or \(G\). |
+| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive V008 zero-input checkpoint over the independently audited GL6T--GL6CS chain. In addition to the V007 finite response, F3 bulk, locked-sector, collar, identifiability, and reciprocal-lineage results, V008 pins the exact order-six record-dependent future writer; rank-six same-parent source/read/writer access; its global Fourier tensor chart and finite-component stationary response; complete pure-`T2` first-source custody through order six; normalized tensor matching and observable same-state moment tests; the direct cubic Ward classifier whose exact rank-eight Ward system leaves the unique Einstein/Fierz--Pauli ray; and the fixed-cell scale-separation theorem that identifies an `r^-8` contact or `r^-12` writer accumulation requirement. These are a controlled microscopic path, not yet the derivation of the physical F3 Ward identity, a selected bulk phase, calibrated spacetime, gravity, Einstein dynamics, or \(G\). GL6CP remains excluded because its hostile audit requires repair. V014 working-theory semantics are unchanged. |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -610,7 +610,7 @@ routes; it does not reopen the V014 working-theory implication, where the
 corresponding infrared content is supplied explicitly by `WTC-H1--H5`.
 
 The separate additive microscopic-progress surface freezes the newer direct F3
-chain through GL6BC without revising that V014 statement.  On GL6T's declared
+chain through GL6CS without revising that V014 statement.  On GL6T's declared
 `N=0`, `U_d=0`, `h,Delta>0`, `0<vartheta<2*pi` comparator, formed KEEP opens a
 full six-direction q4 pair response while matched BREAK is zero.  Restoring
 the inherited degree interaction gives
@@ -1388,6 +1388,56 @@ historical no-laboratory disposition remains in
 while the active route is recorded in
 [`GRAVITY_RECORD_FIRST_DIRECT_PROOF_PLAN_V001.md`](GRAVITY_RECORD_FIRST_DIRECT_PROOF_PLAN_V001.md).
 
+### V008 direct-Ward and accumulation checkpoint
+
+The audited GL6CH--GL6CQ continuation closes the former “missing writer” as a
+microscopic operator problem.  The order-six source derivative is
+
+\[
+ [H_{\rm eff}(j_T)]_{\rm off}^{(6)}=
+ -\frac{63}{8}\frac{h^6}{U_d^5}\sum_cT_c+
+ \frac{105}{16}\frac{h^6}{U_d^6}\sum_cT_c
+ \sum_{v\in c}j_{T,v}\!\cdot\Theta_{v,c}+O(j_T^2,h^8),
+\]
+
+and the six-direction same-parent source/read/writer composition has
+`rank(C_v)=6`.  Its global tensor writer remains rank three near zero
+momentum, it has an exact finite-component stationary-response channel, and
+the state-dependent coefficients reduce to explicit zeroth- and second-moment
+sum rules.  These results prove a record-dependent response mechanism; they
+do not yet select the thermodynamic state or identify the connected response
+with the physical `1PI`/quotient kernel.
+
+GL6CR gives the most direct remaining algebraic route.  The complete cubic
+rank-two kernel space is nine-dimensional.  Requiring
+`K^(2)(k)(k sym xi)=0` produces an exact `180 x 9` matrix of rank eight and
+the unique ray
+
+\[
+ (0,2,-2,0,-2,-2,4,-1,1)=16\,(\text{Einstein/Fierz--Pauli}).
+\]
+
+Thus a Ward null derived from the physical F3 parent would simultaneously
+earn rotational completion and the Einstein/Fierz--Pauli form; the URM does
+not pretend that the classifier itself derives that Ward identity.
+
+GL6CS explains why the program must pass to an accumulation horizon rather
+than identify one cell with classical gravity.  With `r=h/U_d`, the fixed
+component scales as
+
+\[
+ K_{EE}=O(r^{-6}/U_d),\quad K_{ET}=O(U_d^{-1}),\quad
+ K_{TT}^{\rm ct}=O(r^2/U_d),\quad K_{TT}^{\rm wr}=O(r^6/U_d).
+\]
+
+The contact route therefore needs collective enhancement `O(r^-8)`, and the
+writer route `O(r^-12)`, to meet the common spatial normalization.  This is a
+proved fixed-cell obstruction and a calculated accumulation target, not a
+proof that F3 realizes the critical sequence.  The optional GL6CP
+orientation-average packet remains unpromoted because its hostile audit found
+an ill-defined quotient-moment criterion.  The direct Ward route does not
+depend on it.
+
 ## VALIDATION
 
 From the repository root:
@@ -1402,7 +1452,7 @@ python3 model/count_law.py             # exact corner count — 22 checks
 python3 model/validate_udcl_postulate.py  # 32 adoption/theorem custody and ceiling checks
 python3 model/validate_historywise_gravity_discriminant.py  # 84 formal-only checks
 python3 model/validate_gravity_formation_theory.py  # bounded zero-input custody/ceiling gate
-python3 model/validate_gravity_microscopic_progress.py  # 163 sealed-progress/ceiling checks
+python3 model/validate_gravity_microscopic_progress.py  # 247 sealed-progress/ceiling checks
 ```
 
 The family validator is the landing gate for new URM features. Its printed totals are computed by

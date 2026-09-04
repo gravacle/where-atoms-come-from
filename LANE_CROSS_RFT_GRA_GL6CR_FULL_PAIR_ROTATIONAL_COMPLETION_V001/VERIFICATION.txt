@@ -1,0 +1,18 @@
+GL6CR frozen author verification
+
+Command:
+  python3 derive_full_pair_rotational_completion.py
+
+Expected output:
+  PASS__GL6CR_FULL_PAIR_ROTATIONAL_COMPLETION__599/599
+  CONSTANT_DIMENSIONS=S4_3;SO3_2;ONE_SPLITTING_CONDITION
+  QUADRATIC_DIMENSIONS=S4_9;SO3_4;FIVE_MATCHING_CONDITIONS
+  T2_RESTRICTION_DIMENSION=2;FULL_E2_T2_COMPLETION_MANDATORY
+  EINSTEIN_REFERENCE=ONE_RAY_INSIDE_SO3_FAMILY;RESPONSE_TO_1PI_OPEN
+  DIRECT_CUBIC_GAUGE_NULL=RANK8;UNIQUE_EINSTEIN_RAY;SO3_FOLLOWS
+
+Packet command:
+  python3 verify_packet.py
+
+The packet verifier checks exact replay, dependency hashes, frozen ledger,
+claim ceilings, complete local manifest coverage, and the one-file seal.
