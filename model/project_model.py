@@ -994,14 +994,14 @@ class URM(ProjectModel):
 
     @staticmethod
     def gravity_microscopic_progress():
-        """Expose sealed F3 progress through GL6BA without changing V014 semantics."""
+        """Expose sealed F3 progress through GL6BC without changing V014 semantics."""
         from gravity_microscopic_progress import gravity_microscopic_progress
 
         return gravity_microscopic_progress()
 
     @staticmethod
     def gravity_microscopic_progress_certificate():
-        """Return exact microscopic results and the still-open IR/gravity gates."""
+        """Return exact collar, identifiability, reciprocity, and open-gate results."""
         from gravity_microscopic_progress import gravity_microscopic_progress_certificate
 
         return gravity_microscopic_progress_certificate()

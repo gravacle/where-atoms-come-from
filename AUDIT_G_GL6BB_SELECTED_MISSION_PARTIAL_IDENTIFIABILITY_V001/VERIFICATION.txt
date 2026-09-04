@@ -1,0 +1,72 @@
+GL6BB distinct hostile audit verification
+Date: 2026-09-01
+
+Frozen author hashes:
+THEOREM ed67f9d3bcd972fd4298c927280bbb522b9e129c5b0c15166a18c7e640ef6f88
+MANIFEST 8ba5883baea82eff8e758f059e0db35011bbe5eb2c1bcae5486090d3237e53c5
+SEAL_FILE b6094f1a8569cc960afc10f1e2a608c194430d4c6cf0797a64a2498f0e1f0fe8
+
+Author constructive replay, normal:
+PASS: 198747 exact GL6BB checks
+
+Author constructive replay, optimized (-O):
+PASS: 198747 exact GL6BB checks
+
+Author packet replay, normal:
+PASS: 221/221 GL6BB packet checks
+
+Author packet replay, optimized (-O):
+PASS: 221/221 GL6BB packet checks
+
+Independent hostile mathematical replay, normal:
+PASS__INDEPENDENT_GL6BB_HOSTILE_REPLAY__42886/42886
+
+Independent hostile mathematical replay, optimized (-O):
+PASS__INDEPENDENT_GL6BB_HOSTILE_REPLAY__42886/42886
+
+Direct dependency custody replays:
+PASS: 49/49 FPSS checks
+PASS__GL6AN_PACKET__79/79
+GL6AN exact verification: PASS (1056/1056)
+PASS__GL6AN_HOSTILE_AUDIT_PACKET__58/58
+PASS__INDEPENDENT_GL6AN_HOSTILE_REPLAY__3939/3939
+PASS__H6DRMSB__81/81
+PASS__HOSTILE_H6DRMSB__99/99
+PASS: 240/240 GL6AZ packet checks
+PASS: 519660/519660 GL6AZ constructive checks
+PASS__GL6AZ_HOSTILE_AUDIT_PACKET__355/355
+PASS__INDEPENDENT_GL6AZ_POST_REPAIR_REPLAY__455034/455034
+PASS: 135/135 GL6BA packet checks
+PASS: 636296/636296 GL6BA constructive checks
+PASS__GL6BA_HOSTILE_AUDIT_PACKET__257/257
+PASS__INDEPENDENT_GL6BA_HOSTILE_REPLAY__2008230/2008230
+
+Independently reconstructed hostile results:
+- the strict d_star=3 GL6AN witness realizes every positive R and selects none;
+- R=2 and R=5/2 remain diagnostic H6 members rather than a selection;
+- current custody supplies no numerical or commonly bounded same-clock sigma;
+- blank and saturated FPSS incidence preparations are distinct lawful options;
+- both collar and complete-exterior binary observables have sharp state-free
+  range [0,1] at fixed R and sigma, without claiming endpoint preparation;
+- the robust hull retains each q with its own exterior error, and trace distance
+  contributes eta rather than 2 eta;
+- the exact 16-state L=0 Hamiltonian has a five-dimensional blank cyclic space
+  with Dicke diagonals R*(0,-6,-10,-12,-12), negative coupling squares
+  (4,6,6,4), and pair-plus weights (1,1/2,1/3,1/2,1);
+- zero blank energy and ||sum X||=4 give q>=1-1/(3R), hence 5/6 and 13/15;
+- the GL6BA L=0 probability error is min(1,exp(48R|sigma|)-1), yielding the
+  exactly clipped 11/6-exp(96|sigma|) and 28/15-exp(120|sigma|) lower terms;
+- no read or flag outcome is postselected, and the same-clock sampling endpoint
+  excludes terminal-read pulse time;
+- sigma is the sole new datum only in the prepared-blank two-member scenario;
+  one actual selected mission still needs the complete authenticated tuple;
+- exact rational calculator polynomials, tail majorants, exterior certificates,
+  parsing, clipping, and fail-closed paths agree independently in normal/-O;
+- no author/dependency hidden control code point or custody mismatch was found;
+- no graviton, Ricci/Einstein premise, gravity identification, or G is used.
+
+Audit packet replay, normal:
+PASS__GL6BB_HOSTILE_AUDIT_PACKET__PASS
+
+Audit packet replay, optimized (-O):
+PASS__GL6BB_HOSTILE_AUDIT_PACKET__PASS

@@ -1,0 +1,79 @@
+GL6BC distinct hostile audit verification
+Date: 2026-09-01
+
+Frozen author hashes:
+THEOREM 6355e6e1dda470e363122f5e3342c01346dc81e8992d05b1436f30b899041ea6
+MANIFEST 614570080fd9ce3ebac3edfef4c74ede52766c96948659eba643e2b3b286ab5a
+SEAL_FILE c6ccb51c0796ef889b471fde9c691407cdda16d23239deb917cc4d6b0405cd03
+
+Author constructive replay, normal:
+PASS: 29552/29552 GL6BC constructive checks
+
+Author constructive replay, optimized (-O):
+PASS: 29552/29552 GL6BC constructive checks
+
+Author packet replay, normal:
+PASS: 137/137 GL6BC packet checks
+
+Author packet replay, optimized (-O):
+PASS: 137/137 GL6BC packet checks
+
+Direct dependency packet/custody replays, normal and optimized (-O):
+PASS__GL6BA_HOSTILE_AUDIT_PACKET__257/257
+PASS__GL6AI_AUDIT_PACKET__18/18
+PASS__GL6T_AUDIT_PACKET__8/8
+PASS__GL6V_AUDIT_PACKET__8/8
+PASS 204/204 GRA-DQ constructive checks
+
+Heavy independent dependency replays, normal and optimized (-O):
+PASS__INDEPENDENT_GL6BA_HOSTILE_REPLAY__2008230/2008230
+PASS__INDEPENDENT_GL6AI_REPLAY__273976/273976
+PASS__INDEPENDENT_GL6T_REPLAY__178/178
+PASS__INDEPENDENT_GL6V_REPLAY__70946/70946
+
+Independent GL6BC hostile replay, normal:
+PASS__INDEPENDENT_GL6BC_HOSTILE_REPLAY__60118/60118
+COLLAR=ALL_BREAK_EXACT;ONE_KEEP_TAIL;STRICT_MARGIN_CERTIFICATE
+SUPPORT=FINITE_WORD_PROJECTORS_CONSERVED_BY_FULL_DECLARED_SCHEDULE
+KERNEL=BOTH_RETARDED_ORIENTATIONS_ZERO_FOR_COMPLETE_COMMUTANT_ALGEBRA
+SCOPE=UNCONDITIONED_COMPLETE_READ;FINITE_CYLINDERS_UNDER_EXHAUSTION
+MISSING=ONE_SOURCE_DEPENDENT_FRESH_WRITER_INSTRUMENT_AT_OPERATIONAL_TYPE_LEVEL
+
+Independent GL6BC hostile replay, optimized (-O):
+PASS__INDEPENDENT_GL6BC_HOSTILE_REPLAY__60118/60118
+COLLAR=ALL_BREAK_EXACT;ONE_KEEP_TAIL;STRICT_MARGIN_CERTIFICATE
+SUPPORT=FINITE_WORD_PROJECTORS_CONSERVED_BY_FULL_DECLARED_SCHEDULE
+KERNEL=BOTH_RETARDED_ORIENTATIONS_ZERO_FOR_COMPLETE_COMMUTANT_ALGEBRA
+SCOPE=UNCONDITIONED_COMPLETE_READ;FINITE_CYLINDERS_UNDER_EXHAUSTION
+MISSING=ONE_SOURCE_DEPENDENT_FRESH_WRITER_INSTRUMENT_AT_OPERATIONAL_TYPE_LEVEL
+
+Independently reconstructed hostile results:
+- fixing a route word changes only onsite one-link rotations, so the GL6BA
+  collar proof retains the exact 48*R rate and one KEEP tail;
+- the all-BREAK Hamiltonian and every declared GL6V source/read operation
+  commute with the scored pair, making its exterior/collar marginal exactly
+  identical for arbitrary states;
+- a two-tail negative control violates the one-tail interval as soon as the
+  BREAK arm is allowed to move, confirming that exact staticity is essential;
+- every finite support-word projector commutes with the full declared
+  generator and piecewise source/read propagator;
+- both retarded commutator orientations vanish on the complete allowed
+  commutant algebra, while explicit K writers and route swaps do not;
+- complete nonselective reads preserve route marginals, although conditioning
+  on correlated outcomes can update Bayesian route posteriors;
+- the exhaustion statement is valid for fixed finite cylinder observables,
+  not an unconstructed infinite support-word product;
+- the two-link forward positive control gives sin^2(2*s)/2 and reaches 1/2;
+- the current parent has no j-dependent fresh formation instrument; an
+  identity-spectator carrier gives zero and the derivative is otherwise
+  undefined;
+- W_j is minimal only at the operational type level, not a uniquely derived
+  Hamiltonian term and not an assumed nonzero response;
+- no selected moderate-R signal, future-record response, metric/Ward/common
+  coupling, Ricci/Einstein dynamics, gravity, or G is promoted.
+
+Audit packet replay, normal:
+PASS__GL6BC_HOSTILE_AUDIT_PACKET__312/312
+
+Audit packet replay, optimized (-O):
+PASS__GL6BC_HOSTILE_AUDIT_PACKET__312/312

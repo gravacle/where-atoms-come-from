@@ -211,7 +211,7 @@ if "--no-chain" not in sys.argv:
     print()
     print(
         "CHAIN: validate_gravity_microscopic_progress.py "
-        "(sealed GL6T--GL6BA progress; GL6AY normal form/prethermal horizon remains licensed only on the corrected GL6AZ high branch; GL6BA adds the exact full-F3 authenticated binary-pair finite-mission collar for every finite R/time, including R=2 and R=5/2, without selecting a member, clock, state, gravity, or G)"
+        "(sealed GL6T--GL6BC progress; GL6AY remains licensed only on the corrected GL6AZ high branch; GL6BA supplies the exact full-F3 finite-mission collar; GL6BB fixes the sharp state-free [0,1] boundary and conditional prepared-blank five-state bounds; GL6BC adds the one-tail KEEP/BREAK certificate and exact current-parent reciprocal support zero without selecting a mission, future writer, gravity, or G)"
     )
     print("-" * 78)
     sys.stdout.flush()

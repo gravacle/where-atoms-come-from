@@ -1,0 +1,57 @@
+GL6BB V001 author verification
+Date: 2026-09-01
+
+Constructive replay, normal interpreter:
+PASS: 198747 exact GL6BB checks
+
+Constructive replay, optimized interpreter (-O):
+PASS: 198747 exact GL6BB checks
+
+Syntax compilation with a sandbox-local bytecode cache:
+PASS: calculate_prepared_blank_collar0.py
+PASS: verify_selected_mission_partial_identifiability.py
+
+Pinned dependency replay:
+PASS: 49/49 FPSS checks
+PASS__GL6AN_PACKET__79/79
+PASS__H6DRMSB__81/81
+PASS: 240/240 GL6AZ packet checks
+PASS: 135/135 GL6BA packet checks
+PASS__GL6BA_HOSTILE_AUDIT_PACKET__257/257
+
+Exact reconstructed results:
+- the bare strict F3 lock ray admits every positive R;
+- R=2 and R=5/2 are two admitted diagnostic H6 members, not a selection;
+- current custody gives no numerical or finitely bounded same-clock sigma_obs;
+- the F3/FPSS family does not select one reduced postformation state;
+- with unrestricted state information, the exact binary interval is sharply
+  [0,1] even at fixed R, sigma_obs, and collar;
+- pointwise robust composition is [max(0,inf(q-epsilon)),
+  min(1,sup(q+epsilon))];
+- the prepared-blank L=0 collar reduces exactly from 16 basis states to five
+  Dicke levels;
+- the exact pair-plus Dicke weights are 1, 1/2, 1/3, 1/2, 1;
+- energy conservation gives q_blank_L0(R,s)>=1-1/(3R) for every real s;
+- the admitted-member bounds are 5/6 for R=2 and 13/15 for R=5/2;
+- the full finite-mission intervals retain the exact sealed GL6BA L=0
+  exterior error min(1,exp(48R*abs(sigma_obs))-1).
+
+Calculator audit:
+- sigma_obs is a required command-line input and has no physical default;
+- decimal/fraction inputs are parsed exactly;
+- the 16-state propagator polynomial uses exact rational arithmetic;
+- the omitted propagator and exponential tails use exact rational geometric
+  majorants;
+- zero duration returns the exact full interval [1,1];
+- internal nonphysical regression inputs exercise both admitted members and
+  the honest [0,1] clipping path.
+
+Strict interpretation:
+No numerical mission is manufactured.  The prepared-blank result is a
+conditional branch, not the repository-selected state.  A same-clock value or
+finite interval for sigma_obs is the one new datum needed to evaluate the
+prepared-blank two-member scenario; a single actual mission still needs the
+authenticated (R,sigma_obs,omega_L) tuple.  No graviton, Ricci/Einstein form,
+gravity, or G is used or inferred.
+
+Packet manifest/seal replay follows only after this transcript is frozen.

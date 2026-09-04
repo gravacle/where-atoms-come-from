@@ -1,0 +1,41 @@
+{
+  "lane": "GL6BB_V001",
+  "selected_mission_triple": ["R", "sigma_obs", "omega_L"],
+  "current_custody": {
+    "R": "not selected; bare strict F3 lock ray admits every R>0",
+    "admitted_h6_scenarios": ["2", "5/2"],
+    "sigma_obs": "not numerical and no finite upper bound is selected",
+    "omega_L": "not selected; prepared blank and optional saturated incidence are distinct lawful options"
+  },
+  "state_free_probability_interval": ["0", "1"],
+  "collar_error": "epsilon_L(R,s)=min(1,(3L^2+3L+1)*T_(2L+1)(48R*abs(s)))",
+  "robust_interval": "[max(0,inf_c(q_c-epsilon_c)), min(1,sup_c(q_c+epsilon_c))]",
+  "trace_distance_rule": "D_tr(omega,omega_hat)<=eta adds eta to the binary probability half-width",
+  "prepared_blank_L0": {
+    "active_qubits": 4,
+    "exact_reduced_dimension": 5,
+    "pair_plus_weights_by_dicke_k": ["1", "1/2", "1/3", "1/2", "1"],
+    "all_time_collar_lower_bound": "1-1/(3R)",
+    "R_2_lower_bound": "5/6",
+    "R_5_over_2_lower_bound": "13/15",
+    "exterior_error": "min(1,exp(48R*abs(sigma_obs))-1)"
+  },
+  "minimal_new_datum_for_prepared_blank_two_member_scenario": "a same-clock numerical sigma_obs or finite interval",
+  "minimal_actual_mission_payload": [
+    "A_X=h and Delta_def=2U_d, or authenticated R",
+    "same-clock t_F,t_Q and proof the full F3 parent governs the interval, or authenticated sigma_obs",
+    "reduced postformation collar state or certified state uncertainty set",
+    "complete finite FPSS exterior custody for the selected collar"
+  ],
+  "ceilings": [
+    "no selected physical member",
+    "no invented observation time",
+    "no selected postformation state",
+    "no preparation claim for arbitrary spectral endpoint states",
+    "no uniform finite collar for unbounded time",
+    "no graviton",
+    "no Ricci",
+    "no gravity",
+    "no G"
+  ]
+}

@@ -51,7 +51,7 @@ silently use them as the public path.
 | U-DCL working postulate | `udcl_postulate`, `udcl_postulate_certificate` | the checksum-pinned adoption decision, typed conditional theorem, and full transitive axiomatic closure `U-DCL -> universal Coverage-U`; zero caller inputs; natural validity, actualization, Born selection, A5, and gravity remain open |
 | formal historywise-gravity discriminant | `historywise_gravity_discriminant`, `historywise_gravity_discriminant_certificate` | a zero-input, custody-pinned finite-group nonselection/stabilizer theorem certificate; no gravity solver, outcome selector, physical GARH-D/Q decision, Born law, GR derivation, or empirical proof |
 | Gravity Formation Theory | `gravity_formation_theory`, `gravity_formation_theory_certificate` | a zero-input, hash-pinned certificate for the hostile-audited record-first working-theory closure under adopted RGRL and explicit WTC hypotheses; observable pair-memory curvature capacity and source reciprocity; the narrow bare flip/recoil Ward obstruction; earlier F3/Phase-A boundaries; and audited public searches. No graviton premise is required for the Einstein--Hilbert classification. Empirical RGRL confirmation, microscopic F3 derivation of RGRL-B, strict origin of the full Einstein--Hilbert coefficient, and a parameter-free numerical \(G\) remain open. |
-| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive V006 zero-input checkpoint over the independently audited GL6T--GL6BA chain: the earlier record-gated response/atlas/envelope and authenticated bulk dynamics; the native degree-two sector and complete order-six hexagon Hamiltonian; the exact `v/g=0` crosswalk; exact first-character and anisotropic finite-size closure; a record-conditioned pure-loop clock plus typed `Sym^2` atlas; all-fixed-controlled-order port/twist stability; the repaired finite-coupling normal form/local-collar theorem; GL6AZ's corrected high-branch application domain and identifiability boundary; and GL6BA's exact full-F3 authenticated binary-pair collar for every finite coupling ratio and finite mission time. GL6AY's compact application hypothesis is retained as superseded history. The direct collar neither relicenses that prethermal theorem outside its corrected domain nor selects `R`, a clock, or a state. It does not change V014 or promote failure of a sufficient prethermal condition to phase failure, a finite-mission collar to an all-time phase or selected GNS state, formal generator coordinates to a physical metric, or any result to gravity, Einstein dynamics, or \(G\). |
+| microscopic gravity progress | `gravity_microscopic_progress`, `gravity_microscopic_progress_certificate` | an additive V007 zero-input checkpoint over the independently audited GL6T--GL6BC chain: the earlier record-gated response/atlas/envelope and authenticated bulk dynamics; the native degree-two sector and complete order-six hexagon Hamiltonian; the exact `v/g=0` crosswalk; exact first-character and anisotropic finite-size closure; a record-conditioned pure-loop clock plus typed `Sym^2` atlas; all-fixed-controlled-order port/twist stability; the repaired finite-coupling normal form/local-collar theorem; GL6AZ's corrected high-branch application domain; GL6BA's exact full-F3 authenticated binary-pair collar; GL6BB's sharp state-free `[0,1]` identifiability boundary and conditional prepared-blank five-state bounds; and GL6BC's one-tail `KEEP/BREAK` certificate plus exact reciprocal retained-support zero for the declared source-off/frozen postformation parent. GL6AY's compact application hypothesis is retained as superseded history. The direct collar does not relicense that prethermal theorem outside its corrected domain, and the later results select no member, clock, state, or future writer. The surface does not change V014 or promote failure of a sufficient prethermal condition to phase failure, a finite-mission collar to an all-time phase or selected GNS state, the current-parent reciprocal zero to a universal gravity no-go, formal generator coordinates to a physical metric, or any result to gravity, Einstein dynamics, or \(G\). |
 
 The field-instrument family is not listed: T-51 is still independently unverified and nothing from
 that lane is registered or folded into the URM.
@@ -610,7 +610,7 @@ routes; it does not reopen the V014 working-theory implication, where the
 corresponding infrared content is supplied explicitly by `WTC-H1--H5`.
 
 The separate additive microscopic-progress surface freezes the newer direct F3
-chain through GL6BA without revising that V014 statement.  On GL6T's declared
+chain through GL6BC without revising that V014 statement.  On GL6T's declared
 `N=0`, `U_d=0`, `h,Delta>0`, `0<vartheta<2*pi` comparator, formed KEEP opens a
 full six-direction q4 pair response while matched BREAK is zero.  Restoring
 the inherited degree interaction gives
@@ -934,16 +934,126 @@ selects none of that payload and proves no phase, physical cone, metric,
 stress tensor, graviton, Ricci/Einstein dynamics, gravity identification, or
 Newton constant `G`.
 
+`GL6BB` makes that remaining input boundary sharp.  The selected-mission
+triple is
+\[
+ (R,\sigma_{\rm obs},\omega_L).
+\]
+The bare strict lock ray admits every positive `R`; `R=2` and `R=5/2` are
+diagnostic members, not a selection.  Current custody supplies neither one
+numerical or commonly bounded same-clock `sigma_obs` nor one selected reduced
+postformation state.  Even after `R`, time, and collar are fixed, unitary
+conjugation preserves both spectral endpoints of the binary pair observable,
+so the exact state-free probability range is sharply `[0,1]`.  This is a
+nonidentifiability theorem: it does not authenticate preparation of every
+algebraic endpoint state.  For a supplied correlated uncertainty set, the
+strongest inherited pointwise interval is
+\[
+ \left[\max\{0,\inf_c(q_c-\varepsilon_c)\},
+       \min\{1,\sup_c(q_c+\varepsilon_c)\}\right],
+\]
+with each collar value kept with its own `GL6BA` error; a trace-distance state
+radius `eta` adds `eta`, not `2 eta`, to the binary half-width.
+
+The already authenticated prepared-blank branch does permit one exact
+conditional calculation.  At `L=0`, its sixteen-state parent reduces exactly
+to five Dicke levels with pair-plus weights
+`(1,1/2,1/3,1/2,1)` and Hamiltonian
+\[
+ K_R=\begin{pmatrix}
+ 0&-2&0&0&0\\
+ -2&-6R&-\sqrt6&0&0\\
+ 0&-\sqrt6&-10R&-\sqrt6&0\\
+ 0&0&-\sqrt6&-12R&-2\\
+ 0&0&0&-2&-12R
+ \end{pmatrix}.
+\]
+Writing `G=N(7-N)`, blank energy conservation gives
+`R<G>=-<sum_a X_a><=4`, hence for every real `s`
+\[
+ 1-\frac1{3R}\le q_0^{\rm blank}(R,s)\le1,
+ \qquad q_0^{\rm blank}(2,s)\ge\frac56,
+ \qquad q_0^{\rm blank}(5/2,s)\ge\frac{13}{15}.
+\]
+After restoring the exact `GL6BA` exterior error
+`min(1,exp(48R|sigma_obs|)-1)`, the complete finite conditional intervals are
+\[
+ R=2:\ [\max\{0,11/6-e^{96|\sigma_{\rm obs}|}\},1],
+ \qquad
+ R=5/2:\ [\max\{0,28/15-e^{120|\sigma_{\rm obs}|}\},1].
+\]
+One same-clock `sigma_obs` value or finite interval is the sole new datum only
+for this explicitly declared prepared-blank two-member scenario.  It is not
+the sole datum for an actual selected mission, which still requires the
+authenticated `(R,sigma_obs,omega_L)` tuple, governing full-F3 interval, and
+complete finite FPSS exterior custody.
+
+`GL6BC` next separates finite forward calculability from reciprocal record
+response.  In the matched all-`KEEP` versus whole-lineage all-`BREAK`
+comparison, the `BREAK` link generator is diagonal and its scored binary pair
+marginal is exactly static under the complete declared schedule.  Therefore,
+with
+\[
+ \delta_L=\min\{1,(3L^2+3L+1)
+ T_{2L+1}(48R|\sigma_{\rm obs}|)\},
+\]
+the collared and complete-exterior contrasts satisfy the one-tail certificate
+\[
+ \boxed{\max(0,d_L-\delta_L)\le d_\Omega
+ \le\min(1,d_L+\delta_L)},
+ \qquad d_L>\delta_L\Longrightarrow d_\Omega>0.
+\]
+The improvement is specific to the exact all-`BREAK` control; two nontrivial
+arms generally pay two tails.  It conditions on the explicit finite
+all-link route products and scores only the pair marginal, not orthogonal
+route flags.
+
+For the deliberately source-off, frozen postformation parent, every retained
+support-word projector `Pi_beta` commutes with the full generator and every
+registered `GL6V` pair-source/read operation.  Consequently, for complete
+unconditioned reads,
+\[
+ \Pr_j(\beta)=\Pr_0(\beta),\qquad
+ \chi^R_{\Pi_\beta,B}=\chi^R_{B,\Pi_\beta}=0
+\]
+for every allowed scored link/pair/source-read operator `B`, every state and
+time, every collar, and every complete finite exterior.  Conditioning on a
+correlated outcome may update a Bayesian route posterior; that is not a
+`K`-changing channel or retarded back-reaction.  The exact zero passes to
+larger collars and inherited exhaustion only for each fixed finite
+support-word cylinder.  It neither constructs one infinite route-word
+projector nor freezes the entire reduced `K` density matrix, and writer or
+route operations are outside the zero's operator algebra.
+
+The missing operational reciprocity test is one prospectively fixed,
+same-parent, source-dependent future formation instrument `W_j` for a fresh
+`K_new`, with the candidate-field derivative and every controller, work,
+heat, resource/reference, boundary, clock, failure, query, and port channel
+owned.  Without `W_j` the later-formation derivative is undefined; merely
+appending an untouched ready carrier gives exact zero.  This is minimal only
+as the operational type needed to define the test.  It neither selects a
+unique new Hamiltonian term nor says that gravity requires inserting a
+future-writer Hamiltonian.  A distinct prospective phase route may instead
+require composing ordinary URFT formation repeatedly with the accumulated F3
+collective state; that composition remains open and is not derived here.
+Thus the current-parent reciprocal zero is not a no-go against future writer
+extensions or collective phase mechanisms, and the one-way forward response
+is not a metric, Ward packet, Ricci/Einstein law, gravity, or `G` result.
+
 The held-open gates are isotropic `v/g=0` phase control and the selected
 finite-to-GNS bridge; exact all-time closure at finite `h/U_d` or sufficient
-control of the retained prethermal remainder; one selected physical F3
-member's matrix elements and same-parent clock bind for `R` and `sigma_obs`;
-then either exact norms/`bar K_3` for the prethermal route or a selected
-`GL6BA` tolerance, collar radius, reduced postformation state, and controlled
-interior evaluation for the direct full-F3 route; physical
-preparation, homogenization, and causal updating of the retained coefficient
-field; a nonzero selected propagation/lineage-visible response; calibrated
-physical scales, one cone, and the rank-six constitutive join; common coupling,
+control of the retained prethermal remainder; one authenticated actual
+`(R,sigma_obs,omega_L)` mission, or the explicitly conditional prepared-blank
+two-member scenario with a same-clock `sigma_obs`; then either exact
+norms/`bar K_3` for the prethermal route or a selected `GL6BA` tolerance,
+collar radius, state set, and controlled interior evaluation for the direct
+full-F3 route; a selected moderate-`R` `KEEP/BREAK` collar calculation with
+strict margin `d_L>delta_L`; physical preparation, homogenization, and causal
+updating of the retained coefficient field; prospective future-record
+reciprocity through a complete source-dependent formation instrument, or the
+separate repeated-URFT-formation composition with the accumulated F3
+collective state; a nonzero selected propagation/lineage-visible response;
+calibrated physical scales, one cone, and the rank-six constitutive join; common coupling,
 complete stress/Ward/contact custody, and RGRL-B; a native continuum operator;
 its held-out Ricci/Einstein comparison; and the microscopic Ricci
 coefficient/`G_model` calculation.

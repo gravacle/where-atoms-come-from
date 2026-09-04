@@ -1,4 +1,4 @@
-"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6BA.
+"""Zero-input URM checkpoint for sealed microscopic-gravity progress through GL6BC.
 
 This additive surface verifies the frozen theorem/audit packets that establish
 record-gated finite response, interaction-owned nonfactorization, an
@@ -11,8 +11,11 @@ all-fixed-controlled-order port/twist stability; the finite-coupling
 prethermal locked bridge; and its corrected source-proof application domain,
 physical-input identifiability boundary, authenticated binary-marginal bound,
 and inside/outside-domain fork; and the exact full-F3 authenticated-pair
-finite-mission collar for every finite coupling ratio and finite mission time.
-It deliberately does not alter the V014
+finite-mission collar for every finite coupling ratio and finite mission time;
+the sharp selected-mission non-identifiability boundary and exact conditional
+prepared-blank five-state calculation; and the one-tail lineage-contrast
+certificate plus exact reciprocal retained-support obstruction of the current
+source-off/frozen postformation parent.  It deliberately does not alter the V014
 working-theory certificate and does not promote fixed-order control to exact
 finite-coupling closure, the sufficient prethermal domain to a necessary
 phase condition, the prethermal normal form to an all-time phase, or any
@@ -31,8 +34,8 @@ from types import MappingProxyType
 from typing import Any, Mapping, NoReturn
 
 
-SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V006"
-CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6BA_WITH_CORRECTED_PRETHERMAL_DOMAIN_DIRECT_FINITE_MISSION_COLLAR_AND_STRICT_GRAVITY_CEILINGS"
+SCHEMA = "WAC_GRAVITY_MICROSCOPIC_PROGRESS_CERTIFICATE_V007"
+CLAIM_CLASS = "SEALED_MICROSCOPIC_F3_PROGRESS_THROUGH_GL6BC_WITH_CORRECTED_PRETHERMAL_DOMAIN_DIRECT_FINITE_MISSION_COLLAR_PARTIAL_IDENTIFIABILITY_RECIPROCAL_SUPPORT_OBSTRUCTION_AND_STRICT_GRAVITY_CEILINGS"
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 _HASH_ROW = re.compile(r"^([0-9a-f]{64})  ([^\r\n]+)$")
@@ -345,6 +348,30 @@ _PACKETS = (
         "a91fde1a69983815d9238306a273638fdd22aa009a16380d22c94cd5d5d186b9",
         "e45a27a04a8318472fdceff354179d5be13adee2d63c13e7f5b9671c0ff71965",
         "PASS__FULL_F3_FINITE_FPSS_COLLAR_EXACT__FINITE_BOUNDARY_COEFFICIENTS_CROSSING_CENSUS_PORT_DISTANCE_DUHAMEL_AND_TAYLOR_CONSTANTS_EXACT__AUTHENTICATED_BINARY_MARGINAL_ONLY__ALL_FINITE_R_AND_TIME__R2_AND_R5_OVER2_LICENSED_WITHOUT_ADHH__NO_GRAVITY_PROMOTION",
+    ),
+    _PacketPin(
+        "GL6BB",
+        "LANE_CROSS_RFT_GRA_GL6BB_SELECTED_MISSION_PARTIAL_IDENTIFIABILITY_V001",
+        "ed67f9d3bcd972fd4298c927280bbb522b9e129c5b0c15166a18c7e640ef6f88",
+        "8ba5883baea82eff8e758f059e0db35011bbe5eb2c1bcae5486090d3237e53c5",
+        "b6094f1a8569cc960afc10f1e2a608c194430d4c6cf0797a64a2498f0e1f0fe8",
+        "AUDIT_G_GL6BB_SELECTED_MISSION_PARTIAL_IDENTIFIABILITY_V001",
+        "7fc77b9bb0054494c3b9e1120840e6899c06961cf1d26a2ef2fe2bd6cd08e3f2",
+        "7a30a2bc03ff5a4e47e31ff375e5aea46fb6845e494620444831b2288b95dc62",
+        "f3c993d1967cc42a01b2ebe00da3b1c8c1056e7a2e64db8ea8bb68c76abbe1f1",
+        "PASS__THREE_INPUTS_UNSELECTED__STATE_FREE_ZERO_ONE_SHARP__PREPARED_BLANK_L0_DICKE5_EXACT__ENERGY_BOUND_AND_MEMBER_VALUES_EXACT__GL6BA_ERROR_PROPAGATION_AND_CLIPPING_EXACT__SIGMA_ONLY_CLAIM_CONFINED_TO_PREPARED_BLANK_TWO_MEMBER_SCENARIO__CALCULATOR_CERTIFICATES_SOUND__NO_POSTSELECTION_GRAVITY_OR_G_PROMOTION",
+    ),
+    _PacketPin(
+        "GL6BC",
+        "LANE_CROSS_RFT_GRA_GL6BC_FINITE_COLLAR_RECIPROCAL_LINEAGE_OBSTRUCTION_V001",
+        "6355e6e1dda470e363122f5e3342c01346dc81e8992d05b1436f30b899041ea6",
+        "614570080fd9ce3ebac3edfef4c74ede52766c96948659eba643e2b3b286ab5a",
+        "c6ccb51c0796ef889b471fde9c691407cdda16d23239deb917cc4d6b0405cd03",
+        "AUDIT_G_GL6BC_FINITE_COLLAR_RECIPROCAL_LINEAGE_OBSTRUCTION_V001",
+        "a4979ef8d0183576e5ba32db7f6f7184e0afabe29f62bfa9f1edb2ce80c6ac45",
+        "420d1f3013ebb123e271a2a5a66c35fc04e6f188dd48255806a6fefb1b9e32d9",
+        "4fcc42e7f65965957386f3d75d141df7c49b76ee086d6eb5c920d38c42b90655",
+        "PASS__ONE_TAIL_COLLAR_INTERVAL_EXACT__ALL_BREAK_BINARY_PAIR_STATIC_UNDER_FULL_DECLARED_SCHEDULE__FINITE_SUPPORT_WORD_PROBABILITIES_CONSERVED__BOTH_RETARDED_ORIENTATIONS_ZERO_FOR_ALLOWED_COMMUTANT_ALGEBRA__FIXED_FINITE_CYLINDER_ZERO_STABLE_UNDER_REFINEMENT__FORWARD_POSITIVE_CONTROL_EXACT__FRESH_SOURCE_DEPENDENT_WRITER_INSTRUMENT_MISSING_AT_OPERATIONAL_TYPE_LEVEL__NO_FUTURE_RESPONSE_GRAVITY_OR_G_PROMOTION",
     ),
 )
 
@@ -1131,6 +1158,174 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                         "NO_GRAVITON_RICCI_EINSTEIN_GRAVITY_OR_G"
                     ),
                 },
+                "selected_mission_partial_identifiability": {
+                    "relationship_to_GL6BA": (
+                        "SHARP_INPUT_CUSTODY_BOUNDARY_AND_CONDITIONAL_PREPARED_BLANK_"
+                        "CALCULATION__EVERY_GL6BA_SCOPE_AND_ERROR_CEILING_RETAINED"
+                    ),
+                    "selected_mission_triple": "(R,sigma_obs,omega_L)",
+                    "current_custody": (
+                        "R_UNSELECTED_WITH_EVERY_POSITIVE_VALUE_ADMITTED_ON_THE_BARE_"
+                        "LOCK_RAY__R_IN_{2,5/2}_ARE_DIAGNOSTIC_MEMBERS_ONLY__"
+                        "sigma_obs_HAS_NO_SELECTED_NUMBER_OR_COMMON_FINITE_BOUND__"
+                        "omega_L_UNSELECTED_WITH_BLANK_AND_SATURATED_BRANCHES_LAWFUL"
+                    ),
+                    "sharp_state_free_probability_interval": (
+                        "{q_L(R,s,omega_L):omega_L_DENSITY_STATE}=[0,1]__"
+                        "COMPLETE_FINITE_EXTERIOR_BINARY_INTERVAL_ALSO_[0,1]_AT_FIXED_R_AND_s"
+                    ),
+                    "sharpness_scope": (
+                        "PRESENT_CUSTODY_NONIDENTIFIABILITY__SPECTRAL_ENDPOINTS_ARE_"
+                        "ALGEBRAICALLY_ATTAINED__NO_AUTHENTICATED_PREPARATION_CIRCUIT_"
+                        "FOR_EVERY_ENDPOINT_STATE_IS_CLAIMED"
+                    ),
+                    "pointwise_robust_interval": (
+                        "[max(0,inf_c(q_c-epsilon_c)),min(1,sup_c(q_c+epsilon_c))]__"
+                        "EACH_COLLAR_VALUE_REMAINS_PAIRED_WITH_ITS_OWN_GL6BA_ERROR"
+                    ),
+                    "trace_distance_state_radius": (
+                        "D_tr(omega,omega_hat)<=eta_ADDS_eta_NOT_2eta_TO_THE_BINARY_"
+                        "PROBABILITY_HALF_WIDTH"
+                    ),
+                    "prepared_blank_scope": (
+                        "CONDITIONAL_ALREADY_AUTHENTICATED_BRANCH_ONLY__NOT_THE_"
+                        "REPOSITORY_SELECTED_OR_ACTUAL_POSTFORMATION_STATE"
+                    ),
+                    "prepared_blank_L0_dimension": 5,
+                    "prepared_blank_L0_hamiltonian": (
+                        "K_R=[[0,-2,0,0,0],[-2,-6R,-sqrt(6),0,0],"
+                        "[0,-sqrt(6),-10R,-sqrt(6),0],"
+                        "[0,0,-sqrt(6),-12R,-2],[0,0,0,-2,-12R]]"
+                    ),
+                    "prepared_blank_pair_plus_weights": "(1,1/2,1/3,1/2,1)",
+                    "prepared_blank_energy_identity": (
+                        "K_R=-sum_a(X_a)-R*G__G=N*(7-N)__"
+                        "R*expectation(G)=-expectation(sum_a(X_a))<=4"
+                    ),
+                    "prepared_blank_all_time_collar_bound": (
+                        "1-1/(3R)<=q_0^blank(R,s)<=1_FOR_EVERY_REAL_s"
+                    ),
+                    "prepared_blank_admitted_member_bounds": (
+                        "q_0^blank(2,s)>=5/6__q_0^blank(5/2,s)>=13/15"
+                    ),
+                    "L0_exterior_error": (
+                        "epsilon_0(R,s)=min(1,exp(48*R*abs(s))-1)"
+                    ),
+                    "conditional_complete_mission_intervals": (
+                        "R=2:[max(0,11/6-exp(96*abs(sigma_obs))),1]__"
+                        "R=5/2:[max(0,28/15-exp(120*abs(sigma_obs))),1]"
+                    ),
+                    "sigma_only_scope": (
+                        "ONE_SAME_CLOCK_NUMERICAL_sigma_obs_OR_FINITE_INTERVAL_IS_THE_"
+                        "SOLE_NEW_DATUM_ONLY_FOR_THE_DECLARED_PREPARED_BLANK_TWO_MEMBER_"
+                        "SCENARIO__A_MEMBER_SELECTION_BIT_IS_ADDITIONALLY_NEEDED_FOR_ONE_"
+                        "MEMBER_PREDICTION"
+                    ),
+                    "actual_selected_mission_payload": (
+                        "AUTHENTICATED_(R,sigma_obs,omega_L)_WITH_GOVERNING_FULL_F3_"
+                        "INTERVAL_AND_COMPLETE_FINITE_FPSS_EXTERIOR_CUSTODY__EQUIVALENTLY_"
+                        "A_X_Delta_def_SAME_CLOCK_t_F_t_Q_AND_CERTIFIED_STATE_SET"
+                    ),
+                    "calculator_scope": (
+                        "sigma_obs_REQUIRED_WITH_NO_PHYSICAL_DEFAULT__EXACT_RATIONAL_"
+                        "POLYNOMIAL_AND_ANALYTIC_REMAINDER_CERTIFICATES_FAIL_CLOSED"
+                    ),
+                    "exact_ceiling": (
+                        "NO_SELECTED_MEMBER_TIME_OR_STATE__NO_UNIFORM_FINITE_COLLAR_FOR_"
+                        "UNBOUNDED_TIME__NO_COMPLETE_PARENT_SUBSTITUTION_WITHOUT_GL6BA_"
+                        "ERROR__NO_GRAVITON_RICCI_EINSTEIN_GRAVITY_OR_G"
+                    ),
+                },
+                "finite_collar_reciprocal_lineage_obstruction": {
+                    "relationship_to_GL6BA_GL6BB": (
+                        "ONE_TAIL_FULL_PARENT_FORWARD_CONTRAST_CERTIFICATE_PLUS_EXACT_"
+                        "RECIPROCAL_SUPPORT_BOUNDARY__NO_MISSION_INPUT_SELECTION"
+                    ),
+                    "current_parent_schedule": (
+                        "SOURCE_OFF_FROZEN_POSTFORMATION_FREE_INTERVAL__FORMATION_WRITER_"
+                        "ROUTE_AND_TERMINAL_QUERY_PULSES_OFF__ONLY_REGISTERED_GL6V_"
+                        "PAIR_SOURCE_READ_OPERATIONS_AND_DISJOINT_NONDEMOLITION_SPECTATORS"
+                    ),
+                    "route_lift": (
+                        "Hbar_R=sum_e[-P_e^K*X_e-6R*n_e]+"
+                        "2R*sum_(e~f)(n_e*n_f)+H_nd"
+                    ),
+                    "route_projector": (
+                        "Pi_beta=product_e(P_e^K)^beta_e*(I-P_e^K)^(1-beta_e)"
+                    ),
+                    "collar_tail": (
+                        "delta_L(R,s)=min(1,(3L^2+3L+1)*"
+                        "T_(2L+1)(48R*abs(s)))"
+                    ),
+                    "all_BREAK_exact_control": (
+                        "p^(Omega,BREAK)=p^(L,BREAK)__PAIR_OBSERVABLE_EXACTLY_STATIC_"
+                        "FOR_ARBITRARY_STATES_UNDER_THE_FULL_DECLARED_SCHEDULE"
+                    ),
+                    "one_tail_contrast_interval": (
+                        "max(0,d_L-delta_L)<=d_Omega<=min(1,d_L+delta_L)"
+                    ),
+                    "positive_certificate": (
+                        "d_L>delta_L_IMPLIES_d_Omega>0_FOR_EVERY_DECLARED_COMPLETE_"
+                        "FINITE_AUTHENTICATED_EXTERIOR"
+                    ),
+                    "one_tail_scope": (
+                        "SPECIFIC_TO_MATCHED_ALL_KEEP_VERSUS_WHOLE_LINEAGE_ALL_BREAK_"
+                        "WITH_EXACT_DIAGONAL_BREAK_CONTROL__TWO_NONTRIVIAL_ARMS_PAY_TWO_TAILS"
+                    ),
+                    "support_word_conservation": (
+                        "Pr_j(beta)=Pr_0(beta)_FOR_EVERY_FINITE_RETAINED_SUPPORT_WORD__"
+                        "EVERY_INDIVIDUAL_P_e^K_AND_EVERY_FINITE_PRODUCT_OR_MARGINAL"
+                    ),
+                    "retarded_reciprocity_zero": (
+                        "chi^R_(Pi_beta,B)=chi^R_(B,Pi_beta)=0_FOR_EVERY_STATE_TIME_"
+                        "COLLAR_AND_COMPLETE_FINITE_EXTERIOR"
+                    ),
+                    "zero_algebra_scope": (
+                        "B_IN_THE_DECLARED_SCORED_LINK_PAIR_SOURCE_READ_COMMUTANT__"
+                        "WRITER_AND_ROUTE_OPERATIONS_ARE_NOT_ALLOWED_B_OPERATORS"
+                    ),
+                    "read_scope": (
+                        "COMPLETE_UNCONDITIONED_READ_PRESERVES_ROUTE_MARGINALS__"
+                        "CONDITIONING_ON_A_CORRELATED_OUTCOME_MAY_UPDATE_A_BAYESIAN_"
+                        "ROUTE_POSTERIOR_WITHOUT_K_CHANGE_OR_RETARDED_BACK_REACTION"
+                    ),
+                    "refinement_scope": (
+                        "EXACT_ZERO_IN_EACH_FINITE_COLLAR_AND_FINITE_EXTERIOR__"
+                        "PRESERVED_UNDER_EXHAUSTION_FOR_EVERY_FIXED_FINITE_SUPPORT_WORD_"
+                        "CYLINDER__NO_INFINITE_ROUTE_WORD_PROJECTOR_IS_CONSTRUCTED"
+                    ),
+                    "forward_positive_control": (
+                        "AT_U_d=0_D_TV(KEEP,BREAK)=sin^2(2s)/2_ON_THE_TWO_LINK_BLANK_"
+                        "SUBBLOCK_WHILE_SUPPORT_RECIPROCITY_REMAINS_ZERO"
+                    ),
+                    "missing_operational_channel": (
+                        "ONE_COMPLETE_SAME_PARENT_j_DEPENDENT_FUTURE_WRITER_FORMATION_"
+                        "INSTRUMENT_W_j_FOR_FRESH_K_new_WITH_CANDIDATE_FIELD_DERIVATIVE_"
+                        "AND_ALL_WORK_CONTROLLER_RESOURCE_BOUNDARY_CLOCK_FAILURE_QUERY_"
+                        "AND_PORT_CHANNELS_OWNED"
+                    ),
+                    "future_writer_boundary": (
+                        "WITHOUT_W_j_THE_FUTURE_FORMATION_DERIVATIVE_IS_UNDEFINED__"
+                        "AN_EXPLICIT_IDENTITY_SPECTATOR_K_new_GIVES_EXACT_ZERO"
+                    ),
+                    "operational_minimality": (
+                        "MINIMAL_ONLY_AS_THE_OPERATIONAL_TYPE_NEEDED_TO_DEFINE_THE_"
+                        "LATER_FORMATION_RECIPROCITY_TEST__NOT_A_UNIQUE_HAMILTONIAN_TERM_"
+                        "NOT_A_CLAIM_THAT_GRAVITY_REQUIRES_INSERTING_A_NEW_WRITER_"
+                        "HAMILTONIAN_AND_NOT_AN_ASSUMED_NONZERO_RESPONSE"
+                    ),
+                    "nonexclusive_phase_route": (
+                        "SEPARATE_PROSPECTIVE_ROUTE_MAY_COMPOSE_ORDINARY_URFT_FORMATION_"
+                        "REPEATEDLY_WITH_THE_ACCUMULATED_F3_COLLECTIVE_STATE__OPEN_AND_"
+                        "NOT_DERIVED_BY_THIS_CHECKPOINT"
+                    ),
+                    "exact_ceiling": (
+                        "ZERO_IS_ONLY_FOR_THE_CURRENT_SOURCE_OFF_FROZEN_POSTFORMATION_"
+                        "PARENT_AND_DECLARED_SCHEDULE__NOT_A_NO_GO_AGAINST_FUTURE_WRITER_"
+                        "EXTENSIONS_OR_PHASE_MECHANISMS__NO_SELECTED_MODERATE_R_SIGNAL_"
+                        "METRIC_WARD_COMMON_COUPLING_RICCI_EINSTEIN_GRAVITY_OR_G"
+                    ),
+                },
             },
             "controlled_evidence": {
                 "quantum_ice_v_over_g_zero": {
@@ -1146,9 +1341,11 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
             "open_gates": (
                 "ISOTROPIC_V_OVER_G_ZERO_PHASE_CONTROL_AND_SELECTED_FINITE_TO_GNS_BRIDGE",
                 "EXACT_ALL_TIME_FINITE_H_OVER_U_D_LOCKED_PHASE_OR_CONTROL_OF_THE_PRETHERMAL_REMAINDER",
-                "SELECTED_PHYSICAL_F3_MEMBER_SAME_PARENT_MATRIX_ELEMENTS_AND_CLOCK_BIND_FOR_R_AND_SIGMA_OBS",
-                "INSIDE_DOMAIN_EXACT_NORMS_AND_Kbar_3_FOR_THE_PRETHERMAL_ROUTE_OR_SELECTED_GL6BA_COLLAR_TOLERANCE_RADIUS_REDUCED_POSTFORMATION_STATE_AND_CONTROLLED_INTERIOR_EVALUATION",
+                "SELECTED_AUTHENTICATED_ACTUAL_MISSION_TRIPLE_(R,sigma_obs,omega_L)_OR_DECLARED_PREPARED_BLANK_TWO_MEMBER_SCENARIO_WITH_SAME_CLOCK_sigma_obs",
+                "INSIDE_DOMAIN_EXACT_NORMS_AND_Kbar_3_FOR_THE_PRETHERMAL_ROUTE_OR_SELECTED_GL6BA_COLLAR_TOLERANCE_RADIUS_STATE_SET_AND_CONTROLLED_INTERIOR_EVALUATION",
+                "SELECTED_KEEP_BREAK_COLLAR_STATE_TIME_AND_STRICT_MARGIN_d_L_GREATER_THAN_delta_L_FOR_A_MODERATE_R_FULL_PARENT_SIGNAL",
                 "PHYSICAL_PREPARATION_HOMOGENIZATION_AND_CAUSAL_UPDATE_OF_RETAINED_COEFFICIENT_FIELD",
+                "PROSPECTIVE_FUTURE_RECORD_RECIPROCITY_BY_A_COMPLETE_SOURCE_DEPENDENT_FORMATION_INSTRUMENT_OR_SEPARATE_REPEATED_URFT_FORMATION_COMPOSITION_WITH_THE_ACCUMULATED_F3_COLLECTIVE_STATE",
                 "NONZERO_SELECTED_PROPAGATION_AND_RETAINED_LINEAGE_VISIBLE_STATIONARY_RESPONSE",
                 "CALIBRATED_PHYSICAL_MOMENTUM_LENGTH_TIME_SINGLE_CONE_AND_RANK6_CONSTITUTIVE_JOIN",
                 "COMMON_COUPLING_COMPLETE_STRESS_WARD_CONTACT_OWNERSHIP_AND_RGRL_B",
@@ -1189,6 +1386,19 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                 "induced_collar_cut_is_a_separately_authenticated_physical_mission": False,
                 "quasilocal_limit_is_one_infinite_authenticated_record": False,
                 "full_F3_finite_mission_collar_is_gravity_or_G": False,
+                "state_free_zero_one_interval_authenticates_every_endpoint_preparation": False,
+                "prepared_blank_branch_is_repository_selected_or_actual_state": False,
+                "sigma_obs_is_the_sole_missing_datum_for_an_actual_selected_mission": False,
+                "prepared_blank_L0_is_the_complete_parent_without_GL6BA_error": False,
+                "one_tail_contrast_bound_applies_when_both_arms_have_nontrivial_tails": False,
+                "collared_KEEP_BREAK_contrast_is_positive_without_d_L_greater_than_delta_L": False,
+                "retained_support_word_conservation_fixes_the_entire_K_density_matrix": False,
+                "reciprocal_support_zero_includes_writer_or_route_operations": False,
+                "finite_cylinder_refinement_constructs_one_infinite_route_word_projector": False,
+                "current_source_off_reciprocity_zero_is_a_universal_gravity_no_go": False,
+                "missing_operational_writer_requires_a_unique_new_Hamiltonian_term": False,
+                "repeated_URFT_formation_collective_phase_route_is_derived_here": False,
+                "one_way_lineage_gated_pair_response_is_gravity_or_G": False,
                 "formal_global_or_fractional_q_is_authenticated_record_field": False,
                 "homogeneous_q6_clock_rescaling_supplies_physical_cone_or_curvature": False,
                 "typed_Sym2_source_read_atlas_is_rank6_metric_constitutive_law": False,
@@ -1210,7 +1420,8 @@ def _certificate(custody: _Custody) -> Mapping[str, Any]:
                     "PINNED_PRIMARY_HASHES__SEALED_MANIFESTS__INDEPENDENT_AUDIT_"
                     "DISPOSITIONS__TOP_PACKET_DECLARED_DEPENDENCY_ROWS__"
                     "GL6AY_FAIL_REPAIR_PASS_CUSTODY__GL6AZ_DOMAIN_CORRECTION_CUSTODY__"
-                    "GL6BA_FINITE_MISSION_COLLAR_CUSTODY"
+                    "GL6BA_FINITE_MISSION_COLLAR_CUSTODY__GL6BB_PARTIAL_"
+                    "IDENTIFIABILITY_CUSTODY__GL6BC_RECIPROCAL_SUPPORT_CUSTODY"
                 ),
             },
             "executable_scope": {

@@ -41,7 +41,7 @@ certificate plus the full URM chain pass.
 ## Newest sealed microscopic checkpoint
 
 The additive URM surface `gravity_microscopic_progress` now packages the
-author-frozen, independently audited direct F3 chain through `GL6BA` without
+author-frozen, independently audited direct F3 chain through `GL6BC` without
 changing the V014 working-theory meaning.  The earlier `GL6T--GL6AI` results
 remain intact: record-gated complete finite pair response, exact
 interaction-owned nonfactorization, the record-authenticated finite FPSS
@@ -132,20 +132,53 @@ The newly registered sealed chain establishes:
     marginal sums every retained flag value and performs no postselection.
     The induced cut is a proof device and the quasi-local limit only a
     mathematical corollary; no `R`, clock, state, gravity, or `G` is selected
-    or derived (`GL6BA`).
+    or derived (`GL6BA`); and
+16. the sharp selected-mission boundary: current custody selects none of
+    `(R,sigma_obs,omega_L)`, and with state unrestricted the exact binary
+    interval remains `[0,1]` even at fixed `R`, time, and collar.  In the
+    explicitly conditional prepared-blank `L=0` branch, the exact parent
+    reduces to five Dicke states with pair-plus weights
+    `(1,1/2,1/3,1/2,1)` and all-time bound
+    `q>=1-1/(3R)`, hence `5/6` at `R=2` and `13/15` at `R=5/2`.  Restoring
+    the exact `GL6BA` exterior error gives lower terms
+    `max(0,11/6-exp(96|sigma_obs|))` and
+    `max(0,28/15-exp(120|sigma_obs|))`.  A same-clock `sigma_obs` value or
+    finite interval is the sole new datum only for that declared two-member
+    blank scenario; an actual mission still requires the complete
+    authenticated tuple and exterior custody (`GL6BB`); and
+17. a matched all-`KEEP`/whole-lineage all-`BREAK` collar certificate
+    `max(0,d_L-delta_L)<=d_Omega<=min(1,d_L+delta_L)`, where the exactly
+    static `BREAK` arm removes one generic tail and `d_L>delta_L` certifies a
+    nonzero complete-finite-parent contrast.  For the deliberately source-off,
+    frozen postformation parent, every finite retained support-word
+    probability is conserved and both retarded orientations with the allowed
+    pair/source-read algebra vanish exactly.  This zero survives refinement
+    for each fixed finite support-word cylinder, not for an invented infinite
+    route-word projector.  A complete source-dependent future formation
+    instrument for a fresh carrier is the minimal operational type needed to
+    define the later-formation reciprocity test: absent it the derivative is
+    undefined, while an untouched spectator gives exact zero.  This does not
+    require a unique new Hamiltonian or say that gravity must insert one; a
+    separate prospective phase route may instead compose ordinary URFT
+    formation repeatedly with the accumulated F3 collective state.  That
+    route remains open (`GL6BC`).
 
 The `v/g=0` liquid/linear-mode literature is registered as controlled
 numerical and effective evidence, not a phase, gap, or pole proof.  The exact
 open gates are: isotropic `v/g=0` phase control and the selected finite-to-GNS
 bridge; exact all-time finite-`h/U_d` closure or sufficient control of the
-retained prethermal remainder; one selected physical member's same-parent
-matrix elements and formation-to-query clock bind; exact norms and `Kbar_3`
-for the prethermal route, or a selected `GL6BA` tolerance, collar radius,
-reduced postformation state, and controlled interior calculation for the
-direct full-F3 route; physical preparation,
-homogenization, and causal update of the retained coefficient field; nonzero
-selected propagation and lineage-visible response; calibrated physical scales,
-one cone, and the rank-six constitutive join; common coupling, complete
+retained prethermal remainder; an authenticated actual
+`(R,sigma_obs,omega_L)` mission, or the conditional prepared-blank two-member
+scenario with a same-clock `sigma_obs`; exact norms and `Kbar_3` for the
+prethermal route, or a selected `GL6BA` tolerance, collar radius, state set,
+and controlled interior calculation for the direct full-F3 route; a selected
+moderate-`R` `KEEP/BREAK` collar state/time with strict margin
+`d_L>delta_L`; physical preparation, homogenization, and causal update of the
+retained coefficient field; prospective future-record reciprocity through a
+complete source-dependent formation instrument, or the separate repeated
+ordinary-URFT-formation composition with the accumulated F3 collective
+state; nonzero selected propagation and lineage-visible response; calibrated
+physical scales, one cone, and the rank-six constitutive join; common coupling, complete
 stress/Ward/contact ownership, and RGRL-B; a native continuum operator;
 held-out Ricci/Einstein comparison; and the microscopic Ricci
 coefficient/`G_model`.  The exact anisotropic finite-size closure is not an
@@ -153,7 +186,7 @@ isotropic or selected-GNS theorem.  The GL6AY custody retains both the original
 hostile FAIL audit of the invalid global-projector/subspace formulation and
 the independent post-repair PASS audit of the local-collar formulation.
 Failure of the corrected sufficient domain is not physical phase failure.
-Unaudited work beyond `GL6BA` is deliberately excluded.
+Unaudited work beyond `GL6BC` is deliberately excluded.
 
 ## Transfer disposition
 
@@ -212,11 +245,11 @@ claim is therefore non-authoritative.
 ## Checkpoint base
 
 The current Git base is
-`af0a5add6d846ffc3cd2edede85ac4500bb8b4d1`.  The working tree contains many
+`c476782658b1a4c70b1a193306108c8b9deb9d5a`.  The working tree contains many
 older user-owned and generated changes.  Any new checkpoint must stage only
 the explicitly reviewed continuation files and must not sweep unrelated
 changes into the commit.
 
 The reviewed, hash-pinned proposed stage inventory is
-`CHECKPOINT_2026-09-01_GL6BA_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
+`CHECKPOINT_2026-09-01_GL6BC_URM_STAGE_MANIFEST_V001.txt`.  It is a proposal
 only: the Git index must remain untouched until that inventory is reviewed.
