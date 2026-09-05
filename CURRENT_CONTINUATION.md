@@ -1,10 +1,48 @@
 # Current continuation pointer
 
-**Date:** 2026-09-04
+**Date:** 2026-09-05
 
 **Authority:** this file identifies the current work program.  Dated
 `HANDOFF_*.md` files are provenance and are not authoritative unless this file
 explicitly cites them.
+
+**Transfer checkpoint:** for the L=4-to-new-Mac transition, use
+[`HANDOFF_2026-09-05_GATE_A_L4_TO_L8_MAC_TRANSFER.md`](HANDOFF_2026-09-05_GATE_A_L4_TO_L8_MAC_TRANSFER.md)
+before all older handoff documents.  It is the authoritative transfer packet
+for this checkpoint and records the completed L=4 verification commands.
+
+## User-approved gate schedule
+
+The authoritative schedule for progress questions is
+[`GRAVITY_GATE_EXECUTION_PLAN_V001.md`](GRAVITY_GATE_EXECUTION_PLAN_V001.md).
+It names Gate A through Gate E, the two proof milestones, their effort
+estimates, and the explicit fail-closed transition conditions.  Use that
+schedule whenever asked “where are we in the plan?”  The current location is
+**Gate A: global owner-once action and audit**; the unaliased `m001` 300-ray
+flight and its separate result audit are complete, but no (L=8) accumulation
+run is authorized until Gate A is physically complete.
+
+### Gate-A measurement checkpoint — 2026-09-05
+
+`RESULT_G_GL6FJ_M001_FULL_CU_C64_RESPONSE_V003/` is the authenticated,
+closed L=4 `m001` finite selected-component response.  Its separate
+result-level audit is `AUDIT_G_GL6FJ_M001_RESULT_V001/`; both ordinary and
+optimized verification pass.  The audit independently reconstructs all 300
+raw rays, all six owner matrices, and all 18 checkpoints.  At its final
+checkpoint, the finite response eigenvalue interval is
+`[3.3147386524, 177.5395794604]`, the anomalous/normal Frobenius ratio is
+`0.05686612196`, six T=256 windows retain `[85,88,75,96,87,84]` source
+lineages, and the independent owner recombination residual is
+`6.73e-16`.
+
+This is only a finite, unaliased, selected-component measurement baseline.
+No external certified source-visible range/error bar, physical 1PI/Schur
+quotient, physical Ward null, Einstein ray, infrared limit, exchange
+potential, gravity result, `C_R`, or `G` follows.  The global physical action
+remains owner-incomplete.  `DEVELOPMENT_G_GL6GK_F3_MDC_GLOBAL_OWNER_ONCE_DESCENT_V001/`
+now gives the exact conditional metric-representative identity that a
+completed F3-MDC owner compilation must instantiate; it is not bare-F3
+derivation.  Continue Gate A from that specific physical-owner gap.
 
 ## Current route
 

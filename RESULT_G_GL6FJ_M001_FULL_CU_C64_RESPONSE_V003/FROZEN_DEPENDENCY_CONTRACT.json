@@ -1,0 +1,68 @@
+{
+  "schema": "GL6FJ_TYPED_DEPENDENCY_CONTRACT_V003",
+  "status": "GL6FG_V003_GL6FH_V004_GL6FI_V003_AUDITED__TARGET_AUDIT_PENDING__LAUNCH_LOCKED",
+  "ledger_sha256": "7e5af71881129bf428f40e8d951b29cdf28693aafa54587527e9144f1fcddf31",
+  "entry_count": 76,
+  "roles": {
+    "runtime_input": {
+      "promotion_state": "AUTHENTICATED_INPUT",
+      "paths": [
+        "../DEVELOPMENT_G_GL6ER_COMPILED_FULL_CU_H6_PATH_SCORE_ENGINE_V001/LOCAL_OWNER_TABLES.bin",
+        "../DEVELOPMENT_G_GL6ER_COMPILED_FULL_CU_H6_PATH_SCORE_ENGINE_V002/compiled_full_cu_h6_engine_v002.cpp",
+        "../DEVELOPMENT_G_GL6FA_DIRECTIONALLY_CONTRACTED_CU_STAY_ENGINE_V002/v001_engine_with_renamed_entrypoint.inc",
+        "../DEVELOPMENT_G_GL6FE_M123_M002_FULL_CU_C64_RESPONSE_V001/joint_full_cu_c64_projection_v001.cpp"
+      ]
+    },
+    "audited_reduction_gate": {
+      "promotion_state": "AUDITED_LOAD_BEARING",
+      "paths": [
+        "../DEVELOPMENT_G_GL6FG_SIGNED_CHARACTER_ACOUSTIC_REDUCTION_GATE_V003/EXACT_RESULT.json",
+        "../DEVELOPMENT_G_GL6FG_SIGNED_CHARACTER_ACOUSTIC_REDUCTION_GATE_V003/MANIFEST.sha256",
+        "../DEVELOPMENT_G_GL6FG_SIGNED_CHARACTER_ACOUSTIC_REDUCTION_GATE_V003/SEAL.sha256",
+        "../AUDIT_G_GL6FG_SIGNED_CHARACTER_ACOUSTIC_REDUCTION_GATE_V003/INDEPENDENT_RESULT.json",
+        "../AUDIT_G_GL6FG_SIGNED_CHARACTER_ACOUSTIC_REDUCTION_GATE_V003/MANIFEST.sha256",
+        "../AUDIT_G_GL6FG_SIGNED_CHARACTER_ACOUSTIC_REDUCTION_GATE_V003/SEAL.sha256"
+      ]
+    },
+    "audited_acoustic_gate": {
+      "promotion_state": "AUDITED_LOAD_BEARING",
+      "paths": [
+        "../DEVELOPMENT_G_GL6FH_PARENT_DERIVED_ACOUSTIC_BUNDLE_GATE_V004/EXACT_RESULT.json",
+        "../DEVELOPMENT_G_GL6FH_PARENT_DERIVED_ACOUSTIC_BUNDLE_GATE_V004/THEOREM.md",
+        "../DEVELOPMENT_G_GL6FH_PARENT_DERIVED_ACOUSTIC_BUNDLE_GATE_V004/MANIFEST.sha256",
+        "../DEVELOPMENT_G_GL6FH_PARENT_DERIVED_ACOUSTIC_BUNDLE_GATE_V004/SEAL.sha256",
+        "../AUDIT_G_GL6FH_PARENT_DERIVED_ACOUSTIC_BUNDLE_GATE_V004/INDEPENDENT_RESULT.json",
+        "../AUDIT_G_GL6FH_PARENT_DERIVED_ACOUSTIC_BUNDLE_GATE_V004/MANIFEST.sha256",
+        "../AUDIT_G_GL6FH_PARENT_DERIVED_ACOUSTIC_BUNDLE_GATE_V004/SEAL.sha256"
+      ]
+    },
+    "audited_orbit_gate": {
+      "promotion_state": "AUDITED_LOAD_BEARING",
+      "paths": [
+        "../DEVELOPMENT_G_GL6FI_MINIMAL_OFF_NYQUIST_WARD_ORBIT_GATE_V003/EXACT_RESULT.json",
+        "../DEVELOPMENT_G_GL6FI_MINIMAL_OFF_NYQUIST_WARD_ORBIT_GATE_V003/THEOREM.md",
+        "../DEVELOPMENT_G_GL6FI_MINIMAL_OFF_NYQUIST_WARD_ORBIT_GATE_V003/MANIFEST.sha256",
+        "../DEVELOPMENT_G_GL6FI_MINIMAL_OFF_NYQUIST_WARD_ORBIT_GATE_V003/SEAL.sha256",
+        "../AUDIT_G_GL6FI_MINIMAL_OFF_NYQUIST_WARD_ORBIT_GATE_V003/INDEPENDENT_RESULT.json",
+        "../AUDIT_G_GL6FI_MINIMAL_OFF_NYQUIST_WARD_ORBIT_GATE_V003/MANIFEST.sha256",
+        "../AUDIT_G_GL6FI_MINIMAL_OFF_NYQUIST_WARD_ORBIT_GATE_V003/SEAL.sha256"
+      ]
+    },
+    "retained_evidence": {
+      "promotion_state": "AUTHENTICATED_INPUT",
+      "path_rule": "EVERY_LEDGER_PATH_NOT_LISTED_IN_ANOTHER_ROLE",
+      "expected_count": 52
+    }
+  },
+  "launch_gate": {
+    "audited_roles": [
+      "audited_reduction_gate",
+      "audited_acoustic_gate",
+      "audited_orbit_gate"
+    ],
+    "pending_roles": [],
+    "all_upstream_roles_independently_audited": true,
+    "own_distinct_audit_required": true,
+    "launch_authorized": false
+  }
+}

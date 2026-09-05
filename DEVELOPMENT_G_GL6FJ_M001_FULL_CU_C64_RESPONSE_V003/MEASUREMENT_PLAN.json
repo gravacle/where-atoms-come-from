@@ -1,0 +1,65 @@
+{
+  "schema": "GL6FJ_M001_FULL_CU_C64_RESPONSE_PLAN_V003",
+  "status": "LAUNCH_BINDING__UPSTREAM_CHAIN_AUDITED__TARGET_AUDIT_REQUIRED",
+  "dependency_state": {
+    "gl6fg_v003": "INDEPENDENTLY_AUDITED_LOAD_BEARING",
+    "gl6fh_v004": "INDEPENDENTLY_AUDITED_LOAD_BEARING",
+    "gl6fi_v003": "INDEPENDENTLY_AUDITED_LOAD_BEARING",
+    "upstream_chain_current": true,
+    "target_independent_audit": "OPEN",
+    "launch_authorized": false
+  },
+  "physics_domain": {
+    "L": 4,
+    "volume": 64,
+    "character": [0, 0, 1],
+    "character_label": "m001",
+    "self_conjugate": false,
+    "real_source_channels": 24,
+    "symmetric_entries": 300,
+    "canonical_scalar_runs": 300,
+    "redundant_scalar_runs": 0,
+    "total_scalar_runs": 300
+  },
+  "schedule": {
+    "population": 1024,
+    "burn": 2560,
+    "windows": 6,
+    "window_length": 256,
+    "checkpoints": [64, 128, 256],
+    "stay_units": 4096,
+    "writer_units": 64,
+    "random_seed": 96511001,
+    "population_or_seed_ladder": false
+  },
+  "symmetry_controls": {
+    "signed_minus_lift": [0, 0, -1],
+    "signed_conjugate_profiles_checked": true,
+    "translation_forced_anomalous_expectation_zero": true,
+    "finite_run_anomalous_zero_imposed": false,
+    "integer_lift_centering_phases_retained": true,
+    "real_source_chart_unaliased": true
+  },
+  "owners": [
+    "stay_contact",
+    "writer_contact",
+    "stay_spectral",
+    "writer_spectral",
+    "stay_writer_interference",
+    "disconnected"
+  ],
+  "output": {
+    "result_packet": "RESULT_G_GL6FJ_M001_FULL_CU_C64_RESPONSE_V003",
+    "raw_files": 300,
+    "result_payload_files": 312,
+    "write_once_staging": true,
+    "atomic_no_replace_promotion": true
+  },
+  "claim_ceiling": {
+    "full_m001_response_only": true,
+    "m123_composition_performed": false,
+    "range_inverse_performed": false,
+    "physical_ward_rank_claimed": false,
+    "gravity_claimed": false
+  }
+}
