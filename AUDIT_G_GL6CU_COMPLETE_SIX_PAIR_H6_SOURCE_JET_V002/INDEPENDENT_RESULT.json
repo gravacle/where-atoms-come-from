@@ -1,0 +1,48 @@
+{
+  "schema": "AUDIT_G_GL6CU_COMPLETE_SIX_PAIR_H6_SOURCE_JET_V002",
+  "date": "2026-09-04",
+  "target": "LANE_CROSS_RFT_GRA_GL6CU_COMPLETE_SIX_PAIR_H6_SOURCE_JET_V002",
+  "target_manifest_sha256": "58f313b1053756473fa8bfd1ff23b25e2f1740b1903bb366771e26cd3b3c89ec",
+  "disposition": "PASS",
+  "independent_checks": 2769,
+  "v001_repairs": {
+    "packet_verifier": "closed; theorem and fail-closed verifier agree; one exact 21849 replay plus non-replay packet custody passes 188/188",
+    "support_scope": "4096 graph-wide supports enumerated; 3904 selected-row nonbare Jets computed; 192 cycles inactive on that row",
+    "compact_ledger": "1654 classes hash-committed; eight literal first stencils; sealed executable reconstructs all classes",
+    "ctp_custody": "defining functional and both branch signs are stated in V002 and BV theorem/manifest/seal are pinned"
+  },
+  "independent_reconstruction": {
+    "q4_nodes": 128,
+    "q4_edges": 256,
+    "six_cycle_supports_by_dfs": 256,
+    "active_cycles_on_selected_row": 64,
+    "inactive_cycle_supports": 192,
+    "diagonal_supports": 3840,
+    "graph_wide_geometric_supports": 4096,
+    "selected_row_nonbare_operator_jets": 3904,
+    "literal_stencil_records_tested": 8,
+    "scalar_pullbacks_per_literal_stencil": 4,
+    "mixed_hessian_polarization_per_literal_stencil": true,
+    "cycle_minimal_histories": 720,
+    "cycle_source_free": "-63/8",
+    "canonical_hermiticity": true
+  },
+  "ctp_and_half_source": {
+    "raw_direct_same_branch": "-sigma K'' delta(t-s)",
+    "raw_direct_mixed_branch": "0",
+    "physical_map": "j_A=-(E_star/2)J_A",
+    "physical_energy_hessian": "(E_star^2/4)K''",
+    "physical_retarded_direct_contact": "-(E_star^2/2)K'' delta(t-s)"
+  },
+  "compact_ledger_alone_is_full_coefficient_export": false,
+  "sealed_executable_reconstructs_all_committed_classes": true,
+  "promotion_allowed_at_operator_source_jet_scope": true,
+  "stationary_connected_response_earned": false,
+  "one_PI_quotient_earned": false,
+  "ward_null_earned": false,
+  "gl6cr_invocation_allowed": false,
+  "einstein_shape_earned": false,
+  "gravity_earned": false,
+  "C_R_earned": false,
+  "G_earned": false
+}

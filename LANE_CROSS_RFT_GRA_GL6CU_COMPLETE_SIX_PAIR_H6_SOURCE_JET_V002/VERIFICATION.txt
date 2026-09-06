@@ -1,0 +1,32 @@
+GL6CU V002 AUTHOR VERIFICATION — 2026-09-04
+
+COMMAND
+python3 -B LANE_CROSS_RFT_GRA_GL6CU_COMPLETE_SIX_PAIR_H6_SOURCE_JET_V002/derive_complete_six_pair_h6_source_jet.py
+
+OUTPUT
+PASS__GL6CU_V002_COMPLETE_SIX_PAIR_H6_SOURCE_JET__21849/21849
+CENSUS=4096_GEOMETRIC_SUPPORTS_ENUMERATED;3904_SELECTED_ROW_NONBARE_JETS_COMPUTED;192_INACTIVE_CYCLES
+OWNERS=128_BARE+256_LINK+768_WEDGE+512_STAR+2304_PATH+64_ACTIVE_CYCLE_JETS
+STENCILS=1654_CLASSES_HASH_COMMITTED_AND_EXECUTABLY_RECONSTRUCTED;8_LITERAL_FIRST_STENCILS_STORED
+DIAGONAL_VALUES=h2:-128,h4:-224/3,h6:-28576/135
+ACTIVE_CYCLE_WRITERS=64;H6=-63/8;FIRST_RAW=105/8;SECOND=NONZERO
+CTP=DEFINED_Z_PLUS_MINUS_AND_W_MINUS_I_LOG_Z;DIRECT_CONTACT=-SIGMA_ENERGY_HESSIAN_DELTA
+RUNTIME_SECONDS=395.437
+
+EXACT_LEDGER_SHA256=75c08daa934ab2de4a3300a6abb2a9fe4be72f99ce9790e7a73287d322c16de0
+RESULT_SHA256_WITHOUT_RUNTIME=ead9b2a97a3d902c8dbc3a79b4d6eb13aeb184b3687963abbbf8ecd57bc4816f
+
+The exact run reconstructs all 1654 local stencil classes, verifies their
+aggregate hashes, enumerates all 4096 graph-wide geometric supports, and
+computes exactly 3904 selected-row nonbare operator Jets.  The 192 inactive
+cycle supports are not differentiated.
+
+The CTP convention is defined inside the theorem and pinned to the GL6BV
+theorem/manifest/seal regression.  `H=H0+jM`; direct branch contact is
+`-sigma` times the energy Hessian, and downstream `H=H0-JY` has `Y=-V` for
+the same source coordinate.
+
+CLAIM_SCOPE=selected-branch_and_incident-cycle_canonical_effective-Hamiltonian_source_Jet
+NOT_CLAIMED=stationary_connected_response;global_locked-manifold_matrix;1PI_or_Schur_quotient;Ward;Ricci;gravity;G
+SOURCE_FIELD_GUARD=delta_j_is_not_delta_C
+HOSTILE_AUDIT=NOT_INCLUDED;fresh_independent_audit_required_before_promotion
