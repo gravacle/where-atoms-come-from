@@ -80,19 +80,80 @@ leak nor an emergent Ward remainder.  It is an exact partial owner balance
 that must be combined with state, measure, retained-field, boundary,
 matching, constraint, and lawful quotient owners.
 
+## Audited L=4 single-history UV witness — PASS, CONDITIONAL
+
+`DEVELOPMENT_G_GATE_A_UV_L4_SINGLE_HISTORY_LEDGER_V001/` and its distinct
+audit `AUDIT_G_GATE_A_UV_L4_SINGLE_HISTORY_LEDGER_V001/` now provide one
+fully declared finite F3 write history on
+
+$$
+G_4=(\\mathbb Z/4\\mathbb Z)^3.
+$$
+
+The source controller, fixed-content writer, and blank retained target are
+co-located at one cell; the other 63 cells are blank spectators during the
+declared exact terms-off write slice.  All six spatial boundary transfer
+terms of the one-cell region vanish individually.  This is a conditional
+F3-MDC member with an explicit source attachment, not a bare-F3 derivation of
+that attachment.
+
+The audited raw source coefficient and fixed pulse are
+
+$$
+r_0={14441248\\over6075},\\qquad
+j_R(t;\\epsilon)={\\hbar r_0\\epsilon\\over\\tau}
+\\mathbf 1_{[0,\\tau]}(t),\\qquad
+\\epsilon_\\star={\\pi\\over4r_0},\\qquad
+\\Phi_\\star={\\pi\\over4}.
+$$
+
+The hostile audit independently reconstructs the F3 blank-target unitary and
+the source integral, rather than assigning the write term from the retained
+charge.  It obtains
+
+$$
+\\Delta Q_R={1\\over2},\\qquad
+J_{+x}=J_{-x}=J_{+y}=J_{-y}=J_{+z}=J_{-z}=0,\\qquad W_R={1\\over2},
+$$
+
+and hence the exact single-history balance
+
+$$
+\\boxed{\\Delta Q_R+\\sum_{e\\in\\partial R}J_e-W_R
+={1\\over2}+0-{1\\over2}=0.}
+$$
+
+The target verifier passes `10/10`; the independent reconstruction passes
+`10/10`; and audit custody/anti-circularity checks pass `24/24`.  The audit
+finds no hidden boundary current or fitted cancellation **within this
+declared terms-off witness**.  It explicitly retains the source attachment as
+a declared, falsifiable F3-MDC member and refuses a bare-F3 or gravity
+promotion.
+
+| Component | Disposition | Reason |
+| --- | --- | --- |
+| Retained charge | `EXACT_UNITARY_WITNESS` | The audited blank-target F3 unitary gives `Q_R(0)=0`, `Q_R(tau)=1/2`. |
+| Boundary current | `EXACT_ZERO_ON_DECLARED_TERMS_OFF_SLICE` | Each of the six physical spatial transfer terms is zero in this history. |
+| Source write | `EXACT_UNITARY_WITNESS_WITH_DECLARED_ATTACHMENT` | `W_R` is the independently evaluated Heisenberg source integral. |
+| Source attachment | `CONDITIONAL_F3_MDC_MEMBER__NOT_BARE_F3_DERIVED` | The raw-Jet-to-writer map is explicit and audited, but not yet uniquely derived by the complete parent. |
+
 ## Gate dispositions
 
-### Gate A–UV — OPEN
+### Gate A–UV — SINGLE-HISTORY WITNESS CLOSED; PLAN-LEVEL GATE OPEN
 
-The two-tier structure is adopted, but Gate A–UV is **not yet certified
-closed**.  The following remain required:
+The two-tier structure now has one independently audited, exact physical
+ledger witness.  This closes the **single-history** Gate-A UV requirement.
+The plan-level Gate A remains open because the witness is a controlled source
+attachment rather than the complete global F3-MDC owner compilation.  The
+following remain required for plan-level closure:
 
-1. one complete finite update/CTP ledger that identifies \(Q,J,W\) on the
-   same physical history;
-2. exact transported pairwise seam cancellation for that physical \(J\),
-   not only the existing algebraic overlap cochain;
-3. a complete owner-once classification of the residual; and
-4. no unowned term in the discrete balance law.
+1. derive rather than select the raw-Jet-to-writer/source attachment from the
+   complete F3 parent;
+2. test a nontrivial transported physical seam current on an active
+   multi-cell history, not only the exact zero-current terms-off witness;
+3. compile the full global owner-once action and classify its residual; and
+4. show that no unowned term remains after state, measure, retained field,
+   boundary, matching, constraint, and lawful quotient owners are included.
 
 This is a discrete requirement.  It does not require
 \(\delta_{\rm dual}(4)=0\), a smooth manifold, or a continuum gauge quotient.
